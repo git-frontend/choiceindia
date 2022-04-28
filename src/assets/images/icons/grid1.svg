@@ -1,0 +1,31 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="36" height="36">
+	<title>grid1-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="8.6" y1="-13.5" x2="8.6" y2="48.2" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00efd1"/>
+			<stop offset="1" stop-color="#00acea"/>
+		</linearGradient>
+		<linearGradient id="g2" x1="27.4" y1="-13.5" x2="27.4" y2="48.2" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00efd1"/>
+			<stop offset="1" stop-color="#00acea"/>
+		</linearGradient>
+		<linearGradient id="g3" x1="8.6" y1="-13.5" x2="8.6" y2="48.2" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00efd1"/>
+			<stop offset="1" stop-color="#00acea"/>
+		</linearGradient>
+		<linearGradient id="g4" x1="27.4" y1="-13.5" x2="27.4" y2="48.2" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00efd1"/>
+			<stop offset="1" stop-color="#00acea"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+		.s1 { fill: url(#g2) } 
+		.s2 { fill: url(#g3) } 
+		.s3 { fill: url(#g4) } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m16.2 1c0.2 0.2 0.4 0.5 0.4 0.9v13.4c0 0.3-0.2 0.7-0.4 0.9-0.2 0.2-0.6 0.4-0.9 0.4h-13.4c-0.4 0-0.7-0.2-0.9-0.4-0.3-0.2-0.4-0.6-0.4-0.9v-13.4c0-0.4 0.1-0.7 0.4-0.9 0.2-0.3 0.5-0.4 0.9-0.4h13.4c0.3 0 0.7 0.1 0.9 0.4zm-2.2 2.2h-10.8v10.8h10.8z"/>
+	<path id="Layer" fill-rule="evenodd" class="s1" d="m35 1c0.3 0.2 0.4 0.5 0.4 0.9v13.4c0 0.3-0.1 0.7-0.4 0.9-0.2 0.2-0.5 0.4-0.9 0.4h-13.4c-0.3 0-0.7-0.2-0.9-0.4-0.2-0.2-0.4-0.6-0.4-0.9v-13.4c0-0.4 0.2-0.7 0.4-0.9 0.2-0.3 0.6-0.4 0.9-0.4h13.4c0.4 0 0.7 0.1 0.9 0.4zm-2.2 2.2h-10.8v10.8h10.8z"/>
+	<path id="Layer" fill-rule="evenodd" class="s2" d="m16.2 19.8c0.2 0.2 0.4 0.6 0.4 0.9v13.4c0 0.4-0.2 0.7-0.4 0.9-0.2 0.3-0.6 0.4-0.9 0.4h-13.4c-0.4 0-0.7-0.1-0.9-0.4-0.3-0.2-0.4-0.5-0.4-0.9v-13.4c0-0.3 0.1-0.7 0.4-0.9 0.2-0.2 0.5-0.4 0.9-0.4h13.4c0.3 0 0.7 0.2 0.9 0.4zm-2.2 2.2h-10.8v10.8h10.8z"/>
+	<path id="Layer" fill-rule="evenodd" class="s3" d="m35 19.8c0.3 0.2 0.4 0.6 0.4 0.9v13.4c0 0.4-0.1 0.7-0.4 0.9-0.2 0.3-0.5 0.4-0.9 0.4h-13.4c-0.3 0-0.7-0.1-0.9-0.4-0.2-0.2-0.4-0.5-0.4-0.9v-13.4c0-0.3 0.2-0.7 0.4-0.9 0.2-0.2 0.6-0.4 0.9-0.4h13.4c0.4 0 0.7 0.2 0.9 0.4zm-2.2 2.2h-10.8v10.8h10.8z"/>
+</svg>

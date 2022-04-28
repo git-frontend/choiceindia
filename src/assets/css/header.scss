@@ -1,0 +1,58 @@
+@import 'common.scss';
+
+.main-header{
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    padding: 2rem 0;
+    .flex-nav{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .nav-header{
+            width: calc(100% - 200px);
+            display: flex;
+            justify-content: flex-end;
+            >ul{
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                align-items: center;
+                >li{
+                    margin: 0 1rem;
+                    a{
+                        font-size: 1.5rem;
+                        color: #221F20;
+                        font-family: 'PoppinsMedium';
+                        text-decoration: none;
+                        white-space: nowrap;
+                    }
+                    &.login-btn{
+                        margin-left: 5rem;
+                        a{
+                            font-family: 'PoppinsSemiBold';
+                        }
+                    }
+                    &.get-btn{
+                        a{
+                            background: #221F20;
+                            color: #F7F7F7;
+                            display: block;
+                            padding: 1rem 2rem;
+                            border-radius: 18px;
+                            &:hover{
+                                background: #FFCE02;
+                                color: #221F20;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

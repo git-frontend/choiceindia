@@ -1,0 +1,171 @@
+@import 'common.scss';
+
+.main-footer{
+    .footer-top-sec{
+        background: #221F20;
+        padding: 4rem 0;
+        .top-sec-sub{
+            margin-bottom: 3rem;
+        }
+        .top-sec-quick-links{
+           .quick-links-list{
+               display: flex;
+               flex-wrap: wrap;
+               .reset{
+                   width: 33.33%;
+                   padding: 0;
+                   margin: 0;
+                   >li{
+                       margin-bottom: 1rem;
+                       h4{
+                        color: #F5F5F5;
+                        font-size: 1.2rem;
+                        font-family: 'PoppinsBold';
+                       }
+                       a{
+                           color: #F5F5F5;
+                           font-size: 1rem;
+                           text-decoration: none;
+                           &:hover{
+                               color: #FFCE02;
+                           }
+                       }
+                   }
+               }
+           }
+        }
+        .footer-cont-details{
+            text-align: right;
+            p{
+                color: #F5F5F5;
+                font-size: 1.1rem;
+                position: relative;
+                padding-right: 2.5rem;
+                margin-bottom: 2.5rem;
+                .fa{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    right: 0;
+                    font-size: 1.5rem;
+                    color: #F5F5F5;
+                }
+                svg{
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                    right: 0;
+                    font-size: 1.5rem;
+                    color: #F5F5F5;
+                }
+                a{
+                    color: #F5F5F5;
+                    text-decoration: none;
+                    &:hover{
+                        color: #FFCE02;
+                    }
+                }
+            }
+
+        }
+        .top-social-extra-links{
+            margin-top: 3rem;
+            .links-wrap-social{
+                display: flex;
+                flex-wrap: wrap;
+                .wrap-app-links{
+                    display: flex;
+                    margin-top: 1rem;
+                    a{
+                        margin-right: 1.5rem;
+                        text-decoration: none;
+                        -webkit-transform: perspective(1px) translateZ(0);
+                        transform: perspective(1px) translateZ(0);
+                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                        -webkit-transition-duration: 0.3s;
+                        transition-duration: 0.3s;
+                        -webkit-transition-property: transform;
+                        transition-property: transform;
+                        -webkit-transition-timing-function: ease-out;
+                        transition-timing-function: ease-out;
+                        position: relative;
+                        img{
+                            display: block;
+                        }
+                        &:hover{
+                            -webkit-transform: translateY(-8px);
+                            transform: translateY(-8px);
+                        }
+                    }
+                }
+                .footer-social-links{
+                    display: flex;
+                    margin-top: 1rem;
+                    a{
+                        width: 2.875rem;
+                        height: 2.875rem;
+                        display: block;
+                        text-decoration: none;
+                        background: #F5F5F5;
+                        border-radius: 50%;
+                        color: #221F20;
+                        position: relative;
+                        margin-left: 1rem;
+                        -webkit-transform: perspective(1px) translateZ(0);
+                        transform: perspective(1px) translateZ(0);
+                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                        -webkit-transition-duration: 0.3s;
+                        transition-duration: 0.3s;
+                        -webkit-transition-property: transform;
+                        transition-property: transform;
+                        -webkit-transition-timing-function: ease-out;
+                        transition-timing-function: ease-out;
+                        position: relative;
+                        .fa{
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        svg{
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%, -50%);
+                        }
+                        &:hover{
+                            -webkit-transform: translateY(-8px);
+                            transform: translateY(-8px);
+                        }
+                    }
+                }
+            }
+            .extra-links-right{
+                margin-top: 1rem;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: flex-end;
+                > li{
+                    margin-left:2.5rem;
+                    color: #9A9A9A;
+                    font-family: 'PoppinsMedium';
+                    font-size: 1.2rem;
+                    a{
+                        color: #9A9A9A;
+                        font-family: 'PoppinsMedium';
+                        text-decoration: none;
+                    }
+                    .fa-heart{
+                        color: #EF5350;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
