@@ -12,12 +12,13 @@ body{
         font-size: 66px;
         line-height: 99px;
         padding-bottom: 35px;
+        padding-top: 20px;
         font-family: 'PoppinsBold';
     }
     .para{
         font-weight: 400;
         font-size: 21px;
-        line-height: 42px;
+        line-height: 38px;
         color: #707070;
         font-family: 'PoppinsRegular';
     }
@@ -31,5 +32,153 @@ body{
         bottom: -9rem;
         background: url(../images/about-us/bannerbg.png) no-repeat bottom right;
         background-size: contain;
+        z-index: -1;
+    }
+}
+
+.heading{
+    font-style: normal;
+    font-weight: 600;
+    font-size: 56px;
+    line-height: 84px;
+    text-align: center;
+    text-shadow:0 0 4px #00000040;
+    font-family: 'PoppinsSemiBold';
+    padding-bottom: 54px;
+}
+// Management team
+
+.managementteam{
+    padding: 175px 0;
+   
+    .team-list-slider{
+        .team-item{
+            width: 90% !important;
+            position: relative;
+            
+            .namedesg{
+               position: absolute;
+                top: 80%;
+                left: 0;
+                right: 0;
+                width: 100%;
+                color: #fff;
+               
+                text-align: center;
+                background: #221F2080;
+                border-radius: 0px 0px 20px 20px;
+                
+                h5{
+                   margin: 0;
+                   padding: 15px;
+                }
+               
+                .designation{
+                    font-family: 'PoppinsRegular';
+                    color: #fff;
+                    font-size: 14px;
+                    line-height: 27px;
+                    text-align: center;
+                    opacity: 0;
+                    display: none;
+                    transition: 0.3s ease-in-out;
+                    
+                }
+            }
+            &:hover h5{
+                margin-top: 0;
+                padding:11px 0 0px;
+            }
+            &:hover .designation{
+                opacity: 1;
+                display: block;
+                margin-bottom: 7px;
+                margin-top: 0;
+            }
+            &:hover .namedesg{
+                top: 73%;
+            }
+
+            &:hover .img-itm{
+                opacity: 0.3;
+            }
+           
+        }
+        
+      
+
+    }
+}
+
+
+// Clients
+
+.Clients{
+    padding: 175px 0;
+   .client-list{
+       .client-item{
+           width: 25%;
+       }
+   }
+}
+
+
+// journey
+
+.Journey{
+    padding: 175px 0;
+    .journeyinfo{
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 40px;
+        color: #707070;
+        font-family: 'PoppinsRegular';
+       margin: 0 auto;
+       text-align: center;
+        width: 80%;
+        padding-bottom: 84px;
+        
+    }
+    .Journeyyear{
+        .Journeynumber{
+            .Journey-item{
+             
+                text-align: center;
+                margin: 0 auto;
+                display: flex !important;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .year{
+                    background: #F3FAFF;
+                    width: 210px;
+                    height: 210px;
+                    border-radius: 50%;
+                    .number{
+                        color: #221F20;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 48px;
+                        line-height: 72px;
+                        font-family: 'PoppinsSemiBold';
+                        top: 32%;
+                        position: relative;
+                    }
+                }
+                .subtext{
+                    padding-top: 25px;
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 30px;
+                    color: #707070;
+                    font-family: 'PoppinsRegular';
+                
+                }
+            }
+        }
     }
 }
