@@ -1,0 +1,35 @@
+@import 'common.scss';
+body{
+    background-color:  #fff;
+}
+
+.bannersection{
+    padding: 175px 0;
+    position: relative;
+    .title{
+        color: #221F20;
+        font-weight: 700;
+        font-size: 66px;
+        line-height: 99px;
+        padding-bottom: 35px;
+        font-family: 'PoppinsRegular';
+    }
+    .para{
+        font-weight: 400;
+        font-size: 21px;
+        line-height: 42px;
+        color: #707070;
+        font-family: 'PoppinsRegular';
+    }
+    ::before{
+        content: '';
+        width: 20rem;
+        height: 50rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -9rem;
+        background: url(../images/about-us/bannerbg.png) no-repeat bottom right;
+        background-size: contain;
+    }
+}
