@@ -361,6 +361,23 @@
                     text-align: left;
                     bottom: -7.5rem;
                     padding-left: 4rem;
+                    li{
+                        margin: 0;
+                        button{
+                            &::before{
+                                color: #797A7D;
+                                font-size: 1rem;
+                                line-height: 1rem;
+                            }
+                        }
+                        &.active{
+                            button{
+                                &::before{
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -408,14 +425,25 @@
     }
     &::before{
         content: '';
-        width: 60rem;
+        width: 74rem;
         height: 50rem;
         display: block;
         position: absolute;
         left: 0;
         top: 50%;
         transform: translate(0, -50%);
-        background: url(../images/clipath-img5.svg) no-repeat top left;
+        background: url(../images/Vector.png) no-repeat top left;
+        background-size: contain;
+    }
+    &::after{
+        content: "";
+        width: 13rem;
+        height: 32rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        background: url(../images/single-cirlce.png) no-repeat top right;
         background-size: contain;
     }
 }
@@ -427,7 +455,7 @@
     }
     .testimonial-slider{
         .slider-item{
-            display: flex;
+            display: flex !important;
             align-items: center;
             flex-wrap: wrap;
             .slider-item-img{
@@ -444,7 +472,7 @@
                     align-items: center;
                     justify-content: space-between;
                     margin-bottom: 2rem;
-                    .fa{
+                    .fa-twitter{
                         color: #0C71B9;
                         font-size: 2.4rem;
 
@@ -482,11 +510,19 @@
             bottom: 6rem;
             background: #FFFFFF;
             &::before{
-                content: "\f178";
-                font: normal normal normal 14px/1 FontAwesome;
+                content: "";
+                background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAYAAACaq43EAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEJSURBVHgBxdU/joJAFMfx35vd2MgmHMEb7JabrWg2Zrvtt3BvIBh78AL+uYHGeAajFmqlnYeRygjPkbFQE5VinnwTCMxM+EACgWAx1x9XElJzJtWP29+te2sVLLYHKqw3cBo5jVmIZ8Fx92ehUfOkD/AXWG63Hi1Kn38EIk/rXumrht1quBSH8+IicB5cDH6Ei8L3cDpOOs2ZhzT1IBgxatmnpmPi4DUbTdI5hOOLm6Awg5k5UEq9QzBm/Oq9a2T0CE/I8SehxqIT2orb1UgcLgfTOoG756g5FOwtmBxfqP41ak4LQM1QAagZLgA1UxYr+9MPIt6cLjzYdqr/t9Za/R8TEhc50EI7AF3Dhj6FCM4LAAAAAElFTkSuQmCC) no-repeat;
+                background-size: contain;
                 display: block;
                 font-size: 2.5rem;
                 color: #9F9F9F;
+                width: 2rem;
+                height: 1.5rem;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                filter: grayscale(20);
             }
             &.slick-disabled{
                 box-shadow: none;
@@ -494,7 +530,7 @@
             }
             &:hover{
                 &::before{
-                    color: #0C71B9;
+                    filter: inherit;
                 }
             }
            
@@ -511,11 +547,19 @@
             left: inherit;
             right: 5rem;
             &::before{
-                content: "\f177";
-                font: normal normal normal 14px/1 FontAwesome;
+                content: "";
+                background: url(../images/arrow2.png) no-repeat;
+                background-size: contain;
                 display: block;
                 font-size: 2.5rem;
                 color: #9F9F9F;
+                width: 2rem;
+                height: 1.5rem;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                filter: grayscale(20);
             }
             &.slick-disabled{
                 box-shadow: none;
@@ -523,7 +567,7 @@
             }
             &:hover{
                 &::before{
-                    color: #0C71B9;
+                    filter: inherit;
                 }
             }
            
