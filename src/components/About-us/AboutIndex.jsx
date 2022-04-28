@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from './Banner';
-
+import Vissionmission from './Vissionmission';
 function AboutIndex() {
 
   return (
@@ -9,8 +9,9 @@ function AboutIndex() {
       
      
        <div className="mainwrapper">
-       <Banner />
-
+         <Banner />
+         <Vissionmission />
+          
        </div>
       
     
