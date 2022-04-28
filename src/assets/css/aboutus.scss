@@ -1,4 +1,4 @@
-@import 'common.scss';
+@import '../css/common.scss';
 body{
     background-color:  #fff;
 }
@@ -12,7 +12,7 @@ body{
         font-size: 66px;
         line-height: 99px;
         padding-bottom: 35px;
-        font-family: 'PoppinsRegular';
+        font-family: 'PoppinsBold';
     }
     .para{
         font-weight: 400;
