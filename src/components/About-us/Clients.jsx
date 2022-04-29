@@ -29,7 +29,7 @@ function Clients() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                    <   h3 className="heading">Our Marquee Clients</h3>
+                    <h2 className="heading">Our Marquee Clients</h2>
                     </div>
                 </div>
                 <div className="row">
@@ -44,26 +44,26 @@ function Clients() {
                        
                         
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={libertyinsurance} className="img-fluid" />
                         </span>
                         
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={aadhar} className="img-fluid" />
                         </span>
                        
                         
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={navkar} className="img-fluid" />
                         </span>
                        
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={idea} className="img-fluid" />
                         </span>
@@ -78,13 +78,13 @@ function Clients() {
                        
                         
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={libertyinsurance} className="img-fluid" />
                         </span>
                         
                       </div>
-                      <div className="team-item">
+                      <div className="client-item">
                         <span className="img-itm">
                           <img src={navkar} className="img-fluid" />
                         </span>

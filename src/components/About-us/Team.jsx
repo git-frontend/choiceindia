@@ -14,7 +14,7 @@ function Team() {
     const settings = {
         infinite: true,
         speed: 1500,
-        arrows: false,
+        arrows: true,
         slidesToShow: 3,
         autoplay: false,
         margin:15,
@@ -29,7 +29,7 @@ function Team() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                    <   h3 className="heading">Management Team</h3>
+                    <h2 className="heading">Management Team</h2>
                     </div>
                 </div>
                 <div className="row">
@@ -41,7 +41,7 @@ function Team() {
                           <img src={image1} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5>Name</h5>
+                            <h5>CA Ram Ratan Chirania</h5>
                             <p className="designation">Designation</p>
                         </div>
                        
@@ -52,7 +52,7 @@ function Team() {
                           <img src={image2} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5 className="name">Name</h5>
+                            <h5 className="name">Sumeet Bagadia</h5>
                             <p className="designation">Designation</p>
                         </div>
                         

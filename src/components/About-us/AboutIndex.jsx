@@ -5,6 +5,9 @@ import Vissionmission from './Vissionmission';
 import Team from './Team';
 import Clients from './Clients';
 import Journey from './Journey';
+import CoreValues from './CoreValues';
+import WhatWeOffer from './WhatWeOffer';
+
 function AboutIndex() {
 
   return (
@@ -13,10 +16,13 @@ function AboutIndex() {
      
        <div className="mainwrapper">
          <Banner />
-         <Vissionmission />
          <Team />
-         <Clients />
          <Journey />
+         <Vissionmission />
+         <CoreValues />
+         <WhatWeOffer />
+         <Clients />
+         
        </div>
       
     
