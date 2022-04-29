@@ -13,11 +13,28 @@ function EverydayFinance() {
         infinite: true,
         speed: 1500,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         autoplay: false,
         dots:true,
         autoplaySpeed: 1000,
         slidesToScroll: 3,
+        responsive: [
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2,
+              adaptiveHeight: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
     };
 
     return (

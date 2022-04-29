@@ -35,7 +35,7 @@ function HomeTestimonial() {
 						</div>
 					</div>
 					<div class="row d-flex justify-content-center">
-						<div class="col-md-10">
+						<div class="col-lg-10">
               <Slider {...settings2} className="testimonial-slider">
 								<div class="slider-item">
 									<div class="slider-item-img">

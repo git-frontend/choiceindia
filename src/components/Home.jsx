@@ -40,7 +40,7 @@ function Home() {
       <section class="count-value-section">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-7">
+						<div class="col-lg-7">
 							<div class="count-value-list">
 								<div class="count-value-item">
 									<h4>2 Lakh+</h4>
@@ -60,7 +60,7 @@ function Home() {
 								</div>
 							</div>
 						</div>
-						<div class="col-md-5">
+						<div class="col-lg-5">
 							<div class="heading-sec">
 								<h3 class="title-first">We value trust above everything</h3>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
