@@ -22,7 +22,7 @@ body{
         color: #707070;
         font-family: 'PoppinsRegular';
     }
-    ::before{
+    &:before{
         content: '';
         width: 20rem;
         height: 50rem;
@@ -30,7 +30,7 @@ body{
         position: absolute;
         right: 0;
         bottom: -9rem;
-        background: url(../images/about-us/bannerbg.png) no-repeat bottom right;
+        background: url(../images/about-us/Group.svg) no-repeat bottom right;
         background-size: contain;
         z-index: -1;
     }
@@ -162,7 +162,21 @@ body{
 // Clients
 
 .Clients{
-    padding: 8.125rem 0;
+    padding: 8.125rem 0 18rem;
+    position: relative;
+    &:after{
+        content: '';
+        display: block;
+        position: absolute;
+        height: 450px;
+        width: 450px;
+        top: 45%;
+        left: -43px;
+        background: url('../images/about-us/lastsectionbefore.png') no-repeat;
+        z-index: -1;
+        background-size: contain;
+        background-position: left;
+    }
    .client-list{
        .slick-list{
            .slick-track{
@@ -471,7 +485,7 @@ body{
         height: 450px;
         width: 317px;
         top: 65%;
-        right: 72px;
+        right: 0;
         background: url('../images/about-us/offerbefore.png') no-repeat;
         z-index: -1;
         background-size: cover;
