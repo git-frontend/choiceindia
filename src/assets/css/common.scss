@@ -1,4 +1,4 @@
-
+@import "../css/customvariable.scss";
 // fonts
 
 @font-face {
@@ -48,7 +48,19 @@ html{
     @media only screen and (max-width: 1570px) {
         font-size: 12px;
       }
-    
+     
+      @media (max-width: $lg) {
+        font-size: 14px;
+      }
+      @media (max-width: $md) {
+        font-size: 11px;
+      }
+      @media (max-width: $sm) {
+        font-size: 10px;
+      }
+      @media (max-width: 320px) {
+        font-size: 8px;
+      }
 }
 body{
     font-family: 'PoppinsRegular';
