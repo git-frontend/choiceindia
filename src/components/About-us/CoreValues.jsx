@@ -33,13 +33,13 @@ function CoreValues() {
                
 
                   <div className="wrap">
-                    <div className="col-md-5">
+                    <div className="col-md-5 col-12">
                         <div className="card">
                           <h2 className="cardtile">Our Core Values</h2>
                           <p  className="cardsubtext">Who we are is reflected in what we practice. Our values are the guiding light for everything we do at choice.</p>
                         </div>
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-md-7 col-12">
                       <div className="team-list">
                         <Slider {...settings} className="team-list-slider">
                           <div className="team-item pr-5">
