@@ -16,8 +16,9 @@ function EverydayFinance() {
         slidesToShow: 4,
         autoplay: false,
         dots:true,
-        autoplaySpeed: 1000,
-        slidesToScroll: 3,
+        autoplay:true,
+        autoplaySpeed: 2000,
+        slidesToScroll: 2,
         responsive: [
           {
             breakpoint: 992,

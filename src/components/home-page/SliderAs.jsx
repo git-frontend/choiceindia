@@ -36,9 +36,9 @@ export default class AsNavFor extends Component {
       speed: 1500,
       arrows: false,
       slidesToShow: 3,
-      autoplay: false,
+      autoplay: true,
       dots:true,
-      autoplaySpeed: 1000,
+      autoplaySpeed: 2000,
       slidesToScroll: 1,
       swipeToSlide: true,
       responsive: [
