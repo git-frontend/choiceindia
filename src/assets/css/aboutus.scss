@@ -3,6 +3,11 @@ body{
     background-color:  #fff;
 }
 
+.mainwrapper{
+    overflow: hidden;
+    width: 100%;
+}
+
 .bannersection{
     padding:18rem 0 10rem;
     position: relative;
@@ -33,6 +38,9 @@ body{
         background: url(../images/about-us/Group.svg) no-repeat bottom right;
         background-size: contain;
         z-index: -1;
+        @media (max-width:767px) {
+            display: none;
+        }
     }
 }
 
@@ -63,6 +71,9 @@ body{
         z-index: -1;
         background-size: contain;
         background-position: left;
+        @media (max-width:767px) {
+            display: none;
+        }
     }
     
     .heading{
@@ -73,6 +84,11 @@ body{
         .team-item{
             width: 90% !important;
             position: relative;
+            @media (max-width:767px) {
+                width:95% !important;
+                display: block !important;
+                margin: 0 auto;
+             }
             .namedesg{
                position: absolute;
                 top: 75%;
@@ -83,6 +99,9 @@ body{
                 text-align: center;
                 background: #221F2080;
                 border-radius: 0px 0px 20px 20px;
+                @media (max-width:767px) {
+                    top: 78%;
+                 }
                 h5{
                    margin: 0;
                    padding: 15px;
@@ -116,6 +135,7 @@ body{
             }
             &:hover .namedesg{
                 top: 72%;
+                
             }
 
             &:hover .img-itm{
@@ -125,6 +145,9 @@ body{
         }
         .slick-arrow {
             z-index: 1;
+            @media (max-width:767px) {
+                top: 65%;
+             }
         }
         .slick-next:before{
             content: url('../images/about-us/next.png');
@@ -139,7 +162,13 @@ body{
             justify-content: center;
             align-items: center;
             opacity: 1;
-        
+            
+            @media (max-width:767px) {
+                height: 4rem;
+                width: 4rem;
+                top: 134px;
+                 right: 136px;
+             }
         }
         .slick-prev:before{
             content: url('../images/about-us/prev.png');
@@ -154,6 +183,12 @@ body{
             justify-content: center;
             align-items: center;
             opacity: 1;
+            @media (max-width:767px) {
+                height: 4rem;
+                width: 4rem;
+                top: 134px;
+                left: 136px;
+             }
         }
     }
 }
@@ -197,6 +232,9 @@ body{
 .Journey{
     padding: 12rem 0;
     position: relative;
+    @media (max-width:767px) {
+    padding: 8rem 0;
+     }
     &:after{
         content: '';
         display: block;
@@ -209,6 +247,9 @@ body{
         z-index: -1;
         background-size: cover;
         background-position: right;
+        @media (max-width:767px) {
+            display: none;
+        }
     }
     .heading{
         padding-bottom: 20px;
@@ -223,6 +264,10 @@ body{
         text-align: center;
         width: 80%;
         padding-bottom: 5.25rem;
+        @media (max-width:767px) {
+            font-size: 1.8rem;
+            width: 95%;
+             }
     }
     .Journeyyear{
         .Journeynumber{
@@ -300,6 +345,7 @@ body{
 .Vissionmissionsection{
     padding: 10rem 0 20rem;
     position: relative;
+    
     &:after{
         content: '';
         display: block;
@@ -312,6 +358,9 @@ body{
         z-index: -1;
         background-size: cover;
         background-position: right;
+        @media (max-width:767px) {
+            display: none;
+        }
     }
     .heading{
         text-align: left;
@@ -333,6 +382,9 @@ body{
     }
     .leftimages{
         position: relative;
+        @media (max-width:767px) {
+            display: none;
+        }
         &::before{
             content: '';
             display: block;
@@ -343,6 +395,9 @@ body{
             top: -12%;
             left: 0;
             z-index: -1;
+            @media (max-width:767px) {
+                display: none;
+            }
         }
         &::after{
             content: '';
@@ -387,6 +442,9 @@ body{
         background-color: #F3FAFF;
         display: flex;
         width: 100%;
+        @media (max-width:767px) {
+           flex-direction: column;
+        }
         .card{
             top: -42%;
             padding: 2.5rem 2.1875rem;
@@ -395,6 +453,11 @@ body{
             background: #FFFFFF;
             box-shadow: 0px 0px 15px 1px #C2C2C2;
             border-radius: 1.25rem;
+            @media (max-width:767px) {
+                top: 0;
+                width: 100%;
+                right: 0;
+            }
            .cardtile{
                 color: #221F20;
                 font-weight: 600;
@@ -412,6 +475,9 @@ body{
             }
         }
         .team-list{
+            @media (max-width:767px) {
+               margin-top: 4rem;
+            }
             .team-list-slider{
                 .team-item{
                     .namedesg{
