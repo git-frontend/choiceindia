@@ -66,6 +66,9 @@
             }
          
     }
+    @media (max-width: 767px){
+        padding: 1rem 0;
+    }
 }
 
 
@@ -87,6 +90,7 @@ nav .navbar-collapse.collapse{
         display: block;
         background: #F7F7F7;
         padding: 2rem;
+        margin-top: 1rem;
     }
 }
 nav .navbar-collapse{

@@ -56,7 +56,11 @@ function ChoiceFinx() {
                         </a>
                       </div>
                     </div>
-                    <div className="expl-app">
+                  </div>
+                  <div className="finx-app-img workImages">
+                    <img src={ImageSub9} className="" alt="" />
+                  </div>
+                  <div className="expl-app">
                       <a href="#">
                         <span className="btn-bg">Explore App</span>
                       </a>
@@ -67,12 +71,9 @@ function ChoiceFinx() {
                         <img src={ImageSub11} className="ico-img" />
                       </a>
                     </div>
-                  </div>
-                  <div className="finx-app-img workImages">
-                    <img src={ImageSub9} className="" alt="" />
-                  </div>
                 </div>
               </div>
+              
             </div>
           </div>
         </section>

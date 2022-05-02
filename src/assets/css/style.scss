@@ -34,6 +34,9 @@
     .title-first{
         text-align: center;
         margin-bottom:8rem;
+        @media (max-width: 768px){
+            margin-bottom: 3rem;
+        }
     }
     .main-services-list{
         position: relative;
@@ -93,6 +96,9 @@
                             }
                         }
                     }
+                }
+                @media (max-width: 767px){
+                 bottom: 0;
                 }
             }
         }
@@ -179,17 +185,7 @@
                 }
                 }
             }
-            .expl-app{
-                display: flex;
-                align-items: center;
-                margin-top: 5rem;
-                a{
-                    margin-right: 2rem;
-                    .ico-img{
-                        width: 5rem;
-                    }
-                }
-            }
+            
             @media (max-width: 767px){
                 width: 100%;
                 padding: 0;
@@ -202,6 +198,11 @@
             top: 0;
             img{
                 width: 100%;
+                @media (max-width: 767px){
+                    width: 80%;
+                    margin: 0 auto;
+                    display: block;
+                }
             }
             @media (max-width: 767px){
                 width: 100%;
@@ -216,6 +217,21 @@
     @media (max-width: 992px){
         background: #F3FAFF;
         padding: 7rem 0;
+    }
+    .expl-app{
+        display: flex;
+        align-items: center;
+        margin-top: 5rem;
+        width: 100%;
+        a{
+            margin-right: 2rem;
+            .ico-img{
+                width: 5rem;
+            }
+        }
+        @media (max-width:767px){
+           justify-content: center;
+        }
     }
 }
 
@@ -294,6 +310,9 @@
                     left: 2rem;
                     background: #FFCE02;
                 }
+                @media (max-width: 767px){
+                    width: 100%;
+                }
             }
             .item-cont-descr{
                 padding: 1.5rem 0;
@@ -321,6 +340,9 @@
         top: 11rem;
         background: url(../images/clipath-img3.png) no-repeat top right;
         background-size: contain;
+        @media (max-width: 767px){
+            display: none;
+        }
     }
     &::after{
         content: '';
@@ -332,6 +354,9 @@
         bottom: -22rem;
         background: url(../images/clipath-img4.png) no-repeat top left;
         background-size: contain;
+        @media (max-width: 767px){
+            display: none;
+        }
     }
     @media (max-width: 992px){
         padding: 8rem 0 12rem 0;
@@ -480,6 +505,9 @@
                 bottom: inherit;
             }
         }
+        @media (max-width: 768px){
+            padding-top: 3rem;
+        }
    
     }
     .btn-bg{
@@ -526,9 +554,15 @@
                 font-size: 3.5rem;
                 font-family: 'PoppinsSemiBold';
                 color: #221F20;
+                @media (max-width: 768px){
+                    font-size: 2.5rem;
+                }
             }
             &:first-child{
                 margin-left: 0;
+            }
+            @media (max-width: 768px){
+                padding: 1rem;
             }
         }
     }
@@ -566,7 +600,7 @@
         }
     }
     @media (max-width: 992px){
-        padding: 10rem 0 10rem 0;
+        padding: 10rem 0 0 0;
     }
 }
 
@@ -590,6 +624,9 @@
                     width: 40%;
                     padding: 0 4rem;
                     padding-left: 0;
+                }
+                @media (max-width: 767px){
+                    width: 100%;
                 }
             }
             .slider-item-des{
@@ -628,6 +665,9 @@
                 @media (max-width: 1025px){
                     width: 60%;
                 }
+                @media (max-width: 767px){
+                    width: 100%;
+                }
             }
         }
         .slick-next{
@@ -665,6 +705,7 @@
             }
             @media (max-width: 992px){
                 bottom: -20px;
+                right: 0;
             }
            
         }
@@ -705,6 +746,7 @@
             }
             @media (max-width: 992px){
                 bottom: -20px;
+                right: 7rem;
             }
            
         }
