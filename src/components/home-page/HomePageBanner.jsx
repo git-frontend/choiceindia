@@ -13,8 +13,8 @@ function HomePageBanner() {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className="banner-caption">
-                                    <h3>Experience<br />
-                                        The Joy of Earning</h3>
+                                    <h1>Experience<br />
+                                        The Joy of Earning</h1>
                                 </div>
                             </div>
                         </div>

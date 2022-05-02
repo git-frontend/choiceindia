@@ -8,7 +8,7 @@ import React from "react";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick";
-
+import SliderAs from './SliderAs.jsx'
 
 function FablesStories() {
 
@@ -39,28 +39,9 @@ function FablesStories() {
 						<div class="col-md-12">
 							<div class="stories-sec-main">
 								<div class="stories-sec-left">
-                <img src={ImageSub20} alt="" />
+                					<img src={ImageSub20} alt="" />
 								</div>
-								<div class="stories-sec-right">
-									<h4>What are NFTs?</h4>
-									<p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
-								</div>
-								<div class="sec-slider-cont">
-                <Slider {...settings1} className="stories-sec-slider">
-										<div class="itm-img">
-                    <img src={ImageSub21} alt="" />
-										</div>
-										<div class="itm-img">
-                    <img src={ImageSub22} alt="" />
-										</div>
-										<div class="itm-img">
-                    <img src={ImageSub23} alt="" />
-										</div>
-										<div class="itm-img">
-                    <img src={ImageSub24} alt="" />
-										</div>
-									</Slider>
-								</div>
+								<SliderAs />
 							</div>
 						</div>
 					</div>

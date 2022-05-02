@@ -150,7 +150,7 @@
                 align-items: center;
                 justify-content: flex-end;
                 > li{
-                    margin-left:2.5rem;
+                    margin-left:2rem;
                     color: #9A9A9A;
                     font-family: 'PoppinsMedium';
                     font-size: 1.2rem;
@@ -183,6 +183,7 @@
         font-family: 'PoppinsMedium';
         font-size: 1.2rem;
         text-decoration: none;
+        cursor: pointer;
     }
 }
 
