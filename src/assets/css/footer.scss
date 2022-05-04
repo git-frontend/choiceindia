@@ -49,6 +49,10 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: #F5F5F5;
+                    @media (max-width: 768px){
+                        right: inherit;
+                        left: 0;
+                    }
                 }
                 svg{
                     position: absolute;
@@ -57,6 +61,10 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: #F5F5F5;
+                    @media (max-width: 768px){
+                        right: inherit;
+                        left: 0;
+                    }
                 }
                 a{
                     color: #F5F5F5;
@@ -65,17 +73,23 @@
                         color: #FFCE02;
                     }
                 }
+                @media (max-width: 768px){
+                    padding-left: 2.5rem;
+                }
             }
-
+            @media (max-width: 768px){
+                text-align: left;
+                margin-top: 2rem;
+            }
         }
         .top-social-extra-links{
-            margin-top: 3rem;
+            margin-top: 2.5rem;
             .links-wrap-social{
                 display: flex;
                 flex-wrap: wrap;
                 .wrap-app-links{
                     display: flex;
-                    margin-top: 1rem;
+                    margin-top: 2rem;
                     a{
                         margin-right: 1.5rem;
                         text-decoration: none;
@@ -100,7 +114,7 @@
                 }
                 .footer-social-links{
                     display: flex;
-                    margin-top: 1rem;
+                    margin-top: 2rem;
                     a{
                         width: 2.875rem;
                         height: 2.875rem;
@@ -162,6 +176,14 @@
                     .fa-heart{
                         color: #EF5350;
                     }
+                    @media (max-width: 768px){
+                        margin: 0.5rem;
+                        font-size: 1.1rem;
+                    }
+                }
+                @media (max-width: 768px){
+                    margin-top: 2rem;
+                    justify-content: flex-start;
                 }
             }
         }

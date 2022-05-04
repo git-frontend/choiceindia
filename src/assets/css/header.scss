@@ -66,6 +66,9 @@
             }
          
     }
+    @media (max-width: 767px){
+        padding: 1rem 0;
+    }
 }
 
 
@@ -87,8 +90,20 @@ nav .navbar-collapse.collapse{
         display: block;
         background: #F7F7F7;
         padding: 2rem;
+        margin-top: 1rem;
     }
 }
 nav .navbar-collapse{
     transition: .6s all ease-in-out;
+}
+
+.navbar-toggler{
+    border: 0;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    .MuiSvgIcon-root{
+        width: 2em;
+        height: 2em;
+    }
 }
