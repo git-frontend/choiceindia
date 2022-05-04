@@ -11,6 +11,9 @@ body{
 .bannersection{
     padding:18rem 0 10rem;
     position: relative;
+    @media (max-width:767px) {
+        padding:8rem 0 4rem;
+    }
     .title{
         color: #221F20;
         font-weight: 700;
@@ -29,17 +32,24 @@ body{
     }
     &:before{
         content: '';
-        width: 20rem;
-        height: 50rem;
+        width: 29rem;
+        height: 97rem;
         display: block;
         position: absolute;
         right: 0;
-        bottom: -9rem;
+        bottom: -27rem;
         background: url(../images/about-us/Group.svg) no-repeat bottom right;
         background-size: contain;
         z-index: -1;
         @media (max-width:767px) {
             display: none;
+        }
+    }
+    .rightsec{
+        padding-left: 2rem;
+        @media (max-width:767px) {
+           padding-left: 0;
+           padding-top: 2rem;
         }
     }
 }
@@ -59,6 +69,9 @@ body{
 .managementteam{
     padding: 8.125rem 0 10rem;
     position: relative;
+    @media (max-width:767px) {
+        padding:4rem 0;
+    }
     &:after{
         content: '';
         display: block;
@@ -78,6 +91,9 @@ body{
     
     .heading{
         padding-bottom: 60px;
+        @media (max-width:767px) {
+            padding-bottom: 40px;
+        }
     }
     .team-list-slider{
         position: relative;
@@ -102,6 +118,9 @@ body{
                 @media (max-width:767px) {
                     top: 78%;
                  }
+                 @media (min-width:769px) and (max-width:1024px) {
+                    top: 68%;
+                 }
                 h5{
                    margin: 0;
                    padding: 15px;
@@ -110,6 +129,9 @@ body{
                    text-align: center;
                    font-family: 'PoppinsSemiBold';
                    font-weight: 600;
+                   @media (min-width:769px) and (max-width:1024px) {
+                    font-size: 1.3rem;
+                 }
                 }
                 .designation{
                     font-family: 'PoppinsRegular';
@@ -135,7 +157,9 @@ body{
             }
             &:hover .namedesg{
                 top: 72%;
-                
+                @media (min-width:769px) and (max-width:1024px) {
+                    top: 63%;
+                 }
             }
 
             &:hover .img-itm{
@@ -166,8 +190,9 @@ body{
             @media (max-width:767px) {
                 height: 4rem;
                 width: 4rem;
-                top: 134px;
-                 right: 136px;
+                top: -50px;
+                 right: 19px;
+                 content: url('../images/about-us/next-resp.png');
              }
         }
         .slick-prev:before{
@@ -186,8 +211,9 @@ body{
             @media (max-width:767px) {
                 height: 4rem;
                 width: 4rem;
-                top: 134px;
-                left: 136px;
+                top: -50px;
+                left: 19px;
+                content: url('../images/about-us/prev-resp.png');
              }
         }
     }
@@ -199,6 +225,9 @@ body{
 .Clients{
     padding: 8.125rem 0 18rem;
     position: relative;
+    @media (max-width:767px) {
+        padding: 8rem 0;
+         }
     &:after{
         content: '';
         display: block;
@@ -230,10 +259,10 @@ body{
 // journey
 
 .Journey{
-    padding: 12rem 0;
+    padding: 8rem 0;
     position: relative;
     @media (max-width:767px) {
-    padding: 8rem 0;
+    padding: 4rem 0;
      }
     &:after{
         content: '';
@@ -278,6 +307,8 @@ body{
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+                position: relative;
+                
                 .year{
                     background: #F3FAFF;
                     width: 13.125rem;
@@ -307,12 +338,21 @@ body{
                     font-family: 'PoppinsRegular';
                     width: 55%;
                     margin: 0 auto;
+                    @media (max-width:767px) {
+                        font-size: 1.5rem;
+                    }
+                    @media (min-width:769px) and (max-width:1024px) {
+                        width: 81%;
+                     }
                 }
             }
         }
         .slick-dots{
             text-align: center;
             bottom: -85px;
+            @media (max-width:767px) {
+                bottom: -30px;
+            }
                 li{
                     width: 12px;
                     height: 12px;
@@ -343,16 +383,24 @@ body{
 // vissionmission
 
 .Vissionmissionsection{
-    padding: 10rem 0 20rem;
+    padding:15rem 0 25rem;
     position: relative;
-    
+    @media (max-width:767px) {
+        padding: 8rem 0 5rem;
+          }
+    .order2{
+        @media (max-width:767px) {
+           order: 2;
+           padding: 8rem 0 13rem;
+             }
+    }
     &:after{
         content: '';
         display: block;
         position: absolute;
         height: 450px;
         width: 300px;
-        top: 56%;
+        top: 61%;
         right: -0;
         background: url('../images/about-us/circle.png') no-repeat;
         z-index: -1;
@@ -362,29 +410,10 @@ body{
             display: none;
         }
     }
-    .heading{
-        text-align: left;
-        padding-bottom: 0;
-    }
-    .yellow{
-        color: #FFCE02;
-        font-size: 1.375rem;
-        line-height: 2.125rem;
-        font-weight: 400;
-        font-family: 'PoppinsRegular';       
-    }
-    .para{
-        color: #707070;
-        font-size:1.5rem ;
-        line-height:  2.125rem;
-        font-weight: 400;
-        font-family: 'PoppinsRegular';    
-    }
+    
     .leftimages{
         position: relative;
-        @media (max-width:767px) {
-            display: none;
-        }
+        padding: 0 1.5rem;
         &::before{
             content: '';
             display: block;
@@ -393,7 +422,7 @@ body{
             width: 200px;
             background: url('../images/about-us/vissionbefore.png') no-repeat;
             top: -12%;
-            left: 0;
+            left: 32px;
             z-index: -1;
             @media (max-width:767px) {
                 display: none;
@@ -407,14 +436,37 @@ body{
             width: 200px;
             background: url('../images/about-us/vissionbefore.png') no-repeat;
             bottom: -12%;
-            right: 23%;
+            right: 12%;
             z-index: -1;
         
         }
         img{
-            width: 90% !important;
-        
+            // width: 90% !important;
+            // @media (max-width:767px) {
+            //  width: 100%;
+            //      }
     }
+    }
+    .rightsec{
+        padding-left: 2rem;
+        .heading{
+            text-align: left;
+            padding-bottom: 0;
+        }
+        .yellow{
+            color: #FFCE02;
+            font-size: 1.375rem;
+            line-height: 2.125rem;
+            font-weight: 400;
+            font-family: 'PoppinsRegular';       
+        }
+        .para{
+            color: #707070;
+            font-size:1.5rem ;
+            line-height:  2.125rem;
+            font-weight: 400;
+            font-family: 'PoppinsRegular';    
+        }
     }
    
 }
@@ -444,6 +496,7 @@ body{
         width: 100%;
         @media (max-width:767px) {
            flex-direction: column;
+           padding: 7rem 3.5rem;
         }
         .card{
             top: -42%;
@@ -465,6 +518,9 @@ body{
                 line-height: 2.5rem;
                 font-family: 'PoppinsSemiBold';
                 padding-bottom: 15px;
+                @media (min-width:769px) and (max-width:1024px) {
+                    font-size:2rem;
+                 }
             }
             .cardsubtext{
                 font-size: 1.625rem;
@@ -472,36 +528,67 @@ body{
                 font-weight: 400;
                 font-family: 'PoppinsRegular';    
                 color: #707070;
+                @media (min-width:769px) and (max-width:1024px) {
+                    font-size:1.3rem;
+                    line-height: 2srem;
+                 }
             }
         }
         .team-list{
             @media (max-width:767px) {
-               margin-top: 4rem;
+               margin-top: 5rem;
+            }
+            .img-itm{
+                img{
+                    @media (max-width:767px) {
+                        margin: 0 auto;
+                     }
+                   
+                }
             }
             .team-list-slider{
                 .team-item{
+                    @media (max-width:767px) {
+                        text-align: center;
+                     }
                     .namedesg{
                         margin-top: 1.25rem;
+                        width: 84%;
+                        @media (max-width:767px) {
+                            margin-top: 2rem;
+                            width: 100%;
+                         }
                         .title{
                             color: #221F20;
                             font-weight: 600;
                             font-size: 1.875rem;
                             line-height: 2.5rem;
                             font-family: 'PoppinsSemiBold';
-                            margin-bottom: 5px;
+                            margin-bottom: 18px;
+                            @media (min-width:769px) and (max-width:1024px) {
+                                font-size: 1.5rem;
+                             }
                         }
                         .text{
                             font-size: 1.5rem;
                             line-height: 1.875rem;
                             font-weight: 400;
-                            font-family: 'PoppinsRegular';      
+                            font-family: 'PoppinsRegular';  
+                            @media (min-width:769px) and (max-width:1024px) {
+                                font-size: 1.3rem;
+                             }    
                         }
                     }
                 }
                 .slick-dots{
                     text-align: left;
                     padding-left: 7%;
-                    
+                    bottom:-43px;
+                    @media (max-width:767px) {
+                       text-align: center;
+                       padding-left: 0;
+                       bottom: -35px;
+                     }
                         li{
                             width: 12px;
                             height: 12px;
@@ -544,6 +631,9 @@ body{
 .Offer{
     padding: 9.375rem 0;
     position: relative;
+    @media (max-width:767px) {
+        padding: 0  0 8rem;
+      }
     &:after{
         content: '';
         display: block;
@@ -556,6 +646,9 @@ body{
         z-index: -1;
         background-size: cover;
         background-position: right;
+        @media (max-width:767px) {
+            display: none;
+          }
     }
     .offer-list{
         .card{
@@ -564,9 +657,14 @@ body{
             background: #FFFFFF;
             box-shadow: 0px 0px 15px 1px #C2C2C2;
             border-radius: 1.25rem;
-            min-height: 18rem;
+            min-height: 19rem;
             margin: 1.5625rem 1rem;
-          
+            @media (max-width:767px) {
+                width: 95% !important;
+              }
+              @media (min-width:769px) and (max-width:1024px) {
+                min-height: 23rem;
+             } 
             .namedesg{
                 margin-top: 13px;
                 .title{
@@ -575,6 +673,10 @@ body{
                     line-height: 2.25rem;
                     font-weight: 600;
                     font-family: 'PoppinsSemiBold';
+                    margin-bottom: 20px;
+                    @media (max-width:767px) {
+                        font-size: 1.7rem;
+                      }
             }
             .text{
                 font-size: 1.25rem;
@@ -582,13 +684,17 @@ body{
                 font-weight: 400;
                 font-family: 'PoppinsRegular';    
                 color: #707070;
+                @media (max-width:767px) {
+                    font-size: 1.5rem;
+                    margin-top: 1.5rem;
+                  }
             }
             }
        
         }
         .slick-dots{
             text-align: center;
-            bottom: -85px;
+            bottom: -55px;
                 li{
                     width: 12px;
                     height: 12px;
