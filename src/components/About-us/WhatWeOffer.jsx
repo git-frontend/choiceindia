@@ -1,9 +1,5 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import TaxAdvisory from '../../assets/images/about-us/tax-advisory.png';
 import EquityBroking from '../../assets/images/about-us/equity-broking.png';
 import WealthManagement from '../../assets/images/about-us/wealth-management.png';
