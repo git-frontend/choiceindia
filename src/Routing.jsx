@@ -8,10 +8,11 @@ function Routing() {
         <>
             <Router>
                 <Routes>
-                    <Route exact  path='/' element={< Home/>} />
+                    <Route exact path='/' element={< Home />} />
+
+                    <Route exact path='/AboutIndex' element={< AboutIndex />} />
                     <Route path="*" element={<ErrorPage />} />
-                    <Route exact  path='/AboutIndex' element={< AboutIndex/>} />
-                </Routes>    
+                </Routes>
             </Router>
         </>
     )
