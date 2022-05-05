@@ -1,14 +1,8 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import image1 from '../../assets/images/about-us/kamal.png';
 import image2 from '../../assets/images/about-us/sunilbagadia.png';
 import image3 from '../../assets/images/about-us/arunpoddar.png';
-// import image1 from '../../assets/images/about-us/banner.png';
-// import image1 from '../../assets/images/about-us/banner.png';
 import Slider from "react-slick";
 function Team() {
     const settings = {
