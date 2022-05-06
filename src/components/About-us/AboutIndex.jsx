@@ -8,6 +8,11 @@ import Journey from './Journey';
 import CoreValues from './CoreValues';
 import WhatWeOffer from './WhatWeOffer';
 
+import "../../assets/css/aboutus.scss";
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+
 function AboutIndex() {
 
   return (

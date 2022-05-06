@@ -1,6 +1,5 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
 import vissionmission from '../../assets/images/about-us/vissionmission.png';
 
 function Vissionmission() {

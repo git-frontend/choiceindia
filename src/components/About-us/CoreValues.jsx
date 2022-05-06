@@ -1,9 +1,6 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+
 import Innovation from '../../assets/images/about-us/innovation.png';
 import Optimism from '../../assets/images/about-us/Optimism.png';
 import Consistency from '../../assets/images/about-us/Consistency.png';

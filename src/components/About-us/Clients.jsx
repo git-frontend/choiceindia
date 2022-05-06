@@ -1,9 +1,6 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import "../../../node_modules/slick-carousel/slick/slick.css";
-import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+
 import nitiaayog from '../../assets/images/about-us/nitiaayog.svg';
 import libertyinsurance from '../../assets/images/about-us/libertyinsurance.svg';
 import aadhar from '../../assets/images/about-us/aadhar.svg';

@@ -1,6 +1,5 @@
 
 import React from "react";
-import "../../assets/css/aboutus.scss";
 import Bannerimage from '../../assets/images/about-us/banner.png';
 function Banner() {
 
