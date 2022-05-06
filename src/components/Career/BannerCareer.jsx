@@ -14,7 +14,7 @@ function BannerCareer() {
         arrows: false,
         slidesToShow: 1,
         dots:false,
-        autoplay:false,
+        autoplay:true,
         autoplaySpeed: 2000,
         centerMode: true,
         infinite: true,
