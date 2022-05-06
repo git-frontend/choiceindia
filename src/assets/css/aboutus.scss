@@ -721,3 +721,14 @@ body{
             }
     }
 }
+
+
+.bannersection{
+    position: relative;
+    overflow: hidden;
+    .services-list-slider{
+        .slick-slide{
+            padding:0 50px 50px 0;
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@import 'common.scss';
+@import 'customvariable.scss';
 
 .home-banner{
     position: relative;
@@ -48,6 +48,9 @@
                 .img-itm{
                     display: block;
                     margin-bottom: 1rem;
+                    @media (max-width: $sm){
+                        display: inline-block;
+                    }
                 }
                 h5{
                     font-size: 2rem;
@@ -74,9 +77,14 @@
                             max-width: 100%;
                         }
                     }
+                    @media (max-width: $sm){
+                        justify-content: center;
+                    }
                 }
                 @media (max-width: $sm){
                     padding-right: 0;
+                    text-align: center;
+                    padding:1rem;
                 }
             }
             .slick-dots{
@@ -187,6 +195,7 @@
             @media (max-width: $sm){
                 width: 100%;
                 padding: 0;
+                text-align: center;
             }
         }
         .finx-app-img{
@@ -298,6 +307,7 @@
                 }
                 @media (max-width: $sm){
                     width: 100%;
+                    text-align: center;
                 }
             }
             &:hover{
@@ -310,10 +320,28 @@
                 }
                 @media (max-width: $sm){
                     width: 100%;
+                    text-align: center;
+                }
+                .item-cont-descr{
+                    p{
+                        overflow: inherit;
+                        text-overflow: inherit;
+                        white-space: initial;
+                        display: -webkit-box;
+                        -webkit-line-clamp: inherit;
+                    }
                 }
             }
             .item-cont-descr{
                 padding: 1.5rem 0;
+                p{
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: initial;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                }
             }
             @media (max-width: $sm){
                 width: 100%;
@@ -399,6 +427,7 @@
                 }
                 @media (max-width: $sm){
                     width: 96%;
+                    text-align: center;
                 }
             }
             @media (max-width: $md){
@@ -453,6 +482,7 @@
             @media (max-width: $sm){
                 width: 100%;
                 padding-left: 0;
+                text-align: center;
             }
         }
         .sec-slider-cont{
@@ -534,6 +564,9 @@
         @media (max-width: $md){
             padding-left: 0;
             padding-top: 4rem;
+        }
+        @media (max-width: $sm){
+            text-align: center;
         }
     }
     .count-value-list{
@@ -835,6 +868,7 @@
                 width: 90%;
                 margin-left: 0;
                 margin-bottom: 3rem;
+                text-align: center;
             }
         }
         @media (max-width: $sm){

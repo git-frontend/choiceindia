@@ -27,12 +27,28 @@
                 margin: 0 1rem;
                 a{
                     font-size: 1.5rem;
-                    color: #221F20;
+                    color: #221f20bf;
                     font-family: 'PoppinsMedium';
                     text-decoration: none;
                     white-space: nowrap;
+                    position: relative;
                     @media screen and (max-width: 1170px) {
                         font-size: 1.4rem;
+                    }
+                    &:hover{
+                        color: $headingtext;
+                        &::before{
+                            content: '';
+                            width: 0.5rem;
+                            height: 0.5rem;
+                            display: block;
+                            background: $headingtext;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                        }
                     }
                 }
                 &.login-btn{
@@ -46,14 +62,17 @@
                 }
                 &.get-btn{
                     a{
-                        background: #221F20;
+                        background: $headingtext;
                         color: #F7F7F7;
                         display: block;
                         padding: 1rem 2rem;
                         border-radius: 18px;
                         &:hover{
-                            background: #FFCE02;
-                            color: #221F20;
+                            background: $bgcolor-yello;
+                            color: $headingtext;
+                            &::before{
+                                display: none;
+                            }
                         }
                         @media screen and (max-width: 1170px) {
                             padding: 0.5rem 1.5rem;

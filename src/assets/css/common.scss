@@ -1,46 +1,6 @@
 @import "../css/customvariable.scss";
-// fonts
+@import "../css/fonts.scss";
 
-@font-face {
-    font-family: 'PoppinsMedium';
-    src: url('../fonts/PoppinsMedium.eot');
-    src: url('../fonts/PoppinsMedium.eot') format('embedded-opentype'),
-         url('../fonts/PoppinsMedium.woff2') format('woff2'),
-         url('../fonts/PoppinsMedium.woff') format('woff'),
-         url('../fonts/PoppinsMedium.ttf') format('truetype'),
-         url('../fonts/PoppinsMedium.svg#PoppinsMedium') format('svg');
-}
-
-
-@font-face {
-    font-family: 'PoppinsRegular';
-    src: url('../fonts/PoppinsRegular.eot');
-    src: url('../fonts/PoppinsRegular.eot') format('embedded-opentype'),
-         url('../fonts/PoppinsRegular.woff2') format('woff2'),
-         url('../fonts/PoppinsRegular.woff') format('woff'),
-         url('../fonts/PoppinsRegular.ttf') format('truetype'),
-         url('../fonts/PoppinsRegular.svg#PoppinsRegular') format('svg');
-}
-
-@font-face {
-    font-family: 'PoppinsSemiBold';
-    src: url('../fonts/PoppinsSemiBold.eot');
-    src: url('../fonts/PoppinsSemiBold.eot') format('embedded-opentype'),
-         url('../fonts/PoppinsSemiBold.woff2') format('woff2'),
-         url('../fonts/PoppinsSemiBold.woff') format('woff'),
-         url('../fonts/PoppinsSemiBold.ttf') format('truetype'),
-         url('../fonts/PoppinsSemiBold.svg#PoppinsSemiBold') format('svg');
-}
-
-@font-face {
-    font-family: 'PoppinsBold';
-    src: url('../fonts/PoppinsBold.eot');
-    src: url('../fonts/PoppinsBold.eot') format('embedded-opentype'),
-         url('../fonts/PoppinsBold.woff2') format('woff2'),
-         url('../fonts/PoppinsBold.woff') format('woff'),
-         url('../fonts/PoppinsBold.ttf') format('truetype'),
-         url('../fonts/PoppinsBold.svg#PoppinsBold') format('svg');
-}
 
 
 html{
@@ -71,7 +31,7 @@ body{
 
 .title-first{
     font-size: 3.5rem;
-    color: #221F20;
+    color: $headingtext;
     text-shadow:0 0 4px #00000040;
     font-family: 'PoppinsSemiBold';
     @media (max-width: 767px){
@@ -81,7 +41,7 @@ body{
 
 .title-secnd{
     font-size: 3rem;
-    color: #221F20;
+    color: $headingtext;
     font-family: 'PoppinsSemiBold';
     @media (max-width: 767px){
         font-size: 1.8rem;

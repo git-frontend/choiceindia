@@ -25,73 +25,73 @@ function HomeTestimonial() {
         <div>
 
 
-<section class="home-testimonial">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="col-md-8">
-							<div class="heading-sec mb-5">
-								<h3 class="title-first ">We are Only as Good as our Clients say WE ARE </h3>								
+<section className="home-testimonial">
+				<div className="container">
+					<div className="row d-flex justify-content-center">
+						<div className="col-md-8">
+							<div className="heading-sec mb-5">
+								<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>								
 							</div>
 						</div>
 					</div>
-					<div class="row d-flex justify-content-center">
-						<div class="col-lg-10">
+					<div className="row d-flex justify-content-center">
+						<div className="col-lg-10">
               <Slider {...settings2} className="testimonial-slider">
-								<div class="slider-item">
-									<div class="slider-item-img">
-                   <img src={ImageSub25} alt="" class="" />
+								<div className="slider-item">
+									<div className="slider-item-img">
+                   <img src={ImageSub25} alt="" className="" />
 									</div>
-									<div class="slider-item-des">
-										<div class="item-des-name-value">
+									<div className="slider-item-des">
+										<div className="item-des-name-value">
                      <FontAwesomeIcon icon={faTwitter} /> 
 											<h4>Sachin Chadda</h4>
 											<h6>@SachinChadda</h6>
 											<h6>21 Aug 2021</h6>
 										</div>
-										<div class="item-des-cont">
+										<div className="item-des-cont">
 											<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
 										</div>
-										<div class="likes-view">
+										<div className="likes-view">
                     <FontAwesomeIcon icon={faHeart} /> 
 											<h5>27</h5>
 										</div>
 									</div>
 								</div>
-								<div class="slider-item">
-									<div class="slider-item-img">
-                  <img src={ImageSub25} alt="" class="" />
+								<div className="slider-item">
+									<div className="slider-item-img">
+                  <img src={ImageSub25} alt="" className="" />
 									</div>
-									<div class="slider-item-des">
-										<div class="item-des-name-value">
+									<div className="slider-item-des">
+										<div className="item-des-name-value">
                     <FontAwesomeIcon icon={faTwitter} /> 
 											<h4>Sachin Chadda</h4>
 											<h6>@SachinChadda</h6>
 											<h6>21 Aug 2021</h6>
 										</div>
-										<div class="item-des-cont">
+										<div className="item-des-cont">
 											<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
 										</div>
-										<div class="likes-view">
+										<div className="likes-view">
                      <FontAwesomeIcon icon={faHeart} /> 
 											<h5>27</h5>
 										</div>
 									</div>
 								</div>
-								<div class="slider-item">
-									<div class="slider-item-img">
-                   <img src={ImageSub25} alt="" class="" />
+								<div className="slider-item">
+									<div className="slider-item-img">
+                   <img src={ImageSub25} alt="" className="" />
 									</div>
-									<div class="slider-item-des">
-										<div class="item-des-name-value">
+									<div className="slider-item-des">
+										<div className="item-des-name-value">
                      <FontAwesomeIcon icon={faTwitter} /> 
 											<h4>Sachin Chadda</h4>
 											<h6>@SachinChadda</h6>
 											<h6>21 Aug 2021</h6>
 										</div>
-										<div class="item-des-cont">
+										<div className="item-des-cont">
 											<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
 										</div>
-										<div class="likes-view">
+										<div className="likes-view">
                      <FontAwesomeIcon icon={faHeart} /> 
 											<h5>27</h5>
 										</div>

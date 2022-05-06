@@ -40,7 +40,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#US-Mexico</span>	
                         </div>	
                         <div className="item-cont-descr">
-                            <p>Some Americans are going to Mexico for cheaper petrol</p>
+                            <p>Some Americans are going to Mexico for cheaper petrol Bitcoin entrepreneur Bitcoin entrepreneur</p>
                         </div>
                         </div>
                         <div className="insights-list-item">
@@ -49,7 +49,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#Bitcoin</span>	
                         </div>	
                         <div className="item-cont-descr">
-                            <p>Bitcoin entrepreneur Bitcoin entrepreneur</p>
+                            <p>Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur</p>
                         </div>
                         </div>
                         <div className="insights-list-item">
@@ -58,7 +58,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#Metaverse </span>	
                         </div>
                         <div className="item-cont-descr">
-                            <p>Bitcoin entrepreneur Bitcoin entrepreneur</p>
+                            <p>Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur</p>
                         </div>	
                         </div>
                         <div className="insights-list-item">
@@ -67,7 +67,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#Budget2022</span>	
                         </div>	
                         <div className="item-cont-descr">
-                            <p>Bitcoin entrepreneur Bitcoin entrepreneur</p>
+                            <p>Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur</p>
                         </div>
                         </div>
                     </div>	

@@ -4,7 +4,6 @@ import  ImageSub21  from '../../assets/images/slide-img2.png';
 import  ImageSub22  from '../../assets/images/slide-img3.png';
 import  ImageSub23  from '../../assets/images/slide-img4.png';
 import  ImageSub24  from '../../assets/images/slide-img5.png';
-
 export default class AsNavFor extends Component {
   constructor(props) {
     super(props);
@@ -13,14 +12,12 @@ export default class AsNavFor extends Component {
       nav2: null
     };
   }
-
   componentDidMount() {
     this.setState({
       nav1: this.slider1,
       nav2: this.slider2
     });
   }
-
   render() {
     const settings = {
       dots: false,
@@ -30,7 +27,6 @@ export default class AsNavFor extends Component {
       slidesToShow: 1,
       slidesToScroll: 1
     };
-
     const settings1 = {
       infinite: true,
       speed: 1500,
@@ -59,10 +55,8 @@ export default class AsNavFor extends Component {
         },
       ],
     };
-
     return (
       <div className="stories-sec-right">
-
               <div class="">
               <Slider {...settings}
           asNavFor={this.state.nav2}
@@ -70,30 +64,30 @@ export default class AsNavFor extends Component {
         className='slider1'>
           <div>
                 <div class="stories-sec-right-des">
-									<h4>What are NFTs?</h4>
-									<p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
-								</div>
+                  <h4>What are NFTs?</h4>
+                  <p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
+                </div>
           </div>
           <div>
                 <div class="stories-sec-right-des">
-									<h4>What are NFTs?</h4>
-									<p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
-								</div>
+                  <h4>What are NFTs?</h4>
+                  <p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
+                </div>
           </div>
           <div>
                 <div class="stories-sec-right-des">
-									<h4>What are NFTs?</h4>
-									<p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
-								</div>
+                  <h4>What are NFTs?</h4>
+                  <p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
+                </div>
           </div>
           <div>
                 <div class="stories-sec-right-des">
-									<h4>What are NFTs?</h4>
-									<p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
-								</div>
+                  <h4>What are NFTs?</h4>
+                  <p>Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million through an NFT Auction...</p>
+                </div>
           </div>
         </Slider>
-								</div>
+                </div>
                 <div class="sec-slider-cont">
                 <Slider {...settings1}
           asNavFor={this.state.nav1}
@@ -114,14 +108,8 @@ export default class AsNavFor extends Component {
               <div class="itm-img">
                 <img src={ImageSub24} alt="" />
               </div>
-          
         </Slider>
-              
-								</div>
-        
-        
-        
-        
+                </div>
       </div>
     );
   }

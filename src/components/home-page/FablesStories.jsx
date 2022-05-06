@@ -26,28 +26,28 @@ function FablesStories() {
     return (
         <div>
 
-            <section class="fables-stories">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
-							<div class="heading-sec">
-								<h3 class="title-first">Fables - Stories that Matter </h3>								
+            <section className="fables-stories">
+				<div className="container">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="heading-sec">
+								<h3 className="title-first">Fables - Stories that Matter </h3>								
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="stories-sec-main">
-								<div class="stories-sec-left">
+					<div className="row">
+						<div className="col-md-12">
+							<div className="stories-sec-main">
+								<div className="stories-sec-left">
                 					<img src={ImageSub20} alt="" />
 								</div>
 								<SliderAs />
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 mt-5 d-flex justify-content-center">
-							<a href="#" class="btn-bg">
+					<div className="row">
+						<div className="col-md-12 mt-5 d-flex justify-content-center">
+							<a href="#" className="btn-bg">
 								View All
 							</a>
 						</div>

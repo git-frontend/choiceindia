@@ -1,0 +1,72 @@
+@import 'common.scss';
+
+
+.career-list-slider{
+    .slick-slide{
+        padding:0 2rem;
+        img{
+            width: 100%;
+        }
+    }
+}
+
+.our-values{
+    padding: 13rem 0;
+    .heading-sec{
+        text-align: center;
+    }
+}
+
+.career-main{
+    .bannersection{
+        padding-bottom: 0;
+       
+    }
+
+    .benefits-perks{
+        background: $primary;
+        padding: 10rem 0;
+        .heading-sec{
+            .title-first{
+                color: $whiteColor;
+                text-align: center;
+            }
+        }
+        .perks-list{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 6rem;
+            justify-content: space-between;
+            .perks-list-itm{
+                width: 46%;
+                display: flex;
+                margin-left: 2%;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-bottom: 3rem;
+                img{
+                    width: 3.5rem;
+                }
+                h4{
+                    color: $whiteColor;
+                    width: calc(100% - 5rem);
+                    padding-left: 3rem;
+                }
+            }
+        }
+    }
+
+    .career-team{
+        padding: 15rem 0 5rem 0;
+    }
+}
+
+.culture-values{
+    padding: 10rem 0;
+    .culture-values-img{
+        .shdow{
+            box-shadow: 0 0 4px #ccc;
+        }
+    }
+}

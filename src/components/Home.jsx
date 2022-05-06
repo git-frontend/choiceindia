@@ -37,32 +37,32 @@ function Home() {
 
        <FablesStories />
        
-      <section class="count-value-section">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7">
-							<div class="count-value-list">
-								<div class="count-value-item">
+      <section className="count-value-section">
+				<div className="container">
+					<div className="row">
+						<div className="col-lg-7">
+							<div className="count-value-list">
+								<div className="count-value-item">
 									<h4>2 Lakh+</h4>
 									<h6>Clients</h6>
 								</div>
-								<div class="count-value-item">
+								<div className="count-value-item">
 									<h4>2,200+</h4>
 									<h6>Employees</h6>
 								</div>
-								<div class="count-value-item">
+								<div className="count-value-item">
 									<h4>55+</h4>
 									<h6>Offices</h6>
 								</div>
-								<div class="count-value-item">
+								<div className="count-value-item">
 									<h4>13,000+</h4>
 									<h6>Partners</h6>
 								</div>
 							</div>
 						</div>
-						<div class="col-lg-5">
-							<div class="heading-sec">
-								<h3 class="title-first">We value trust above everything</h3>
+						<div className="col-lg-5">
+							<div className="heading-sec">
+								<h3 className="title-first">We value trust above everything</h3>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
 							</div>
 						</div>
