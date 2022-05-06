@@ -698,6 +698,9 @@
                     h6{
                         color: #9F9F9F;
                         padding-left: 1rem;
+                        @media (max-width: $sm){
+                            padding-left: 0.5rem;
+                        }
                     }
                 }
                 .likes-view{
