@@ -36,7 +36,7 @@ function Journey() {
     <div>
       
         <section className="Journey">
-            <div className="container-fluid">
+            <div className="container">
                 <div className="row">
                     <div className="col-md-10 mx-auto">
                     <h2 className="heading">Our Journey</h2>
