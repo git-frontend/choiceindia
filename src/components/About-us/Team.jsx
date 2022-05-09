@@ -107,7 +107,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image4} className="img-fluid" />
+                          <img src={image6} className="img-fluid" />
                         </span>
                         <div className="namedesg">
                             <h5>Sundar Sanmukhani</h5>
