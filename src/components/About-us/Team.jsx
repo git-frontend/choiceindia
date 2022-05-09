@@ -1,8 +1,12 @@
 
 import React from "react";
-import image1 from '../../assets/images/about-us/kamal.png';
-import image2 from '../../assets/images/about-us/sunilbagadia.png';
-import image3 from '../../assets/images/about-us/arunpoddar.png';
+
+import image1 from '../../assets/images/about-us/kamal-poddar.png';
+import image2 from '../../assets/images/about-us/ajay-kejriwal.png';
+import image3 from '../../assets/images/about-us/sunil-bagaria.png';
+import image4 from '../../assets/images/about-us/ram-ratan-chirania.png';
+import image5 from '../../assets/images/about-us/sumeet-bagadia.png';
+import image6 from '../../assets/images/about-us/sundar-sanmukhani.png';
 import Slider from "react-slick";
 function Team() {
     const settings = {
@@ -53,8 +57,8 @@ function Team() {
                           <img src={image1} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5>CA Ram Ratan Chirania</h5>
-                            <p className="designation">Designation</p>
+                            <h5>Kamal Poddar</h5>
+                            <p className="designation">Managing Director</p>
                         </div>
                        
                         
@@ -64,9 +68,10 @@ function Team() {
                           <img src={image2} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5 className="name">Sumeet Bagadia</h5>
+                            <h5>Ajay Kejriwal</h5>
                             <p className="designation">Designation</p>
                         </div>
+                       
                         
                       </div>
                       <div className="team-item">
@@ -74,22 +79,42 @@ function Team() {
                           <img src={image3} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5>Name</h5>
+                            <h5>Sunil Bagaria</h5>
                             <p className="designation">Designation</p>
+                        </div>
+                       
+                        
+                      </div>
+                     <div className="team-item">
+                        <span className="img-itm">
+                          <img src={image4} className="img-fluid" />
+                        </span>
+                        <div className="namedesg">
+                            <h5 className="name">CA Ram Ratan Chirania</h5>
+                            <p className="designation">Director</p>
                         </div>
                         
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image1} className="img-fluid" />
+                          <img src={image5} className="img-fluid" />
                         </span>
                         <div className="namedesg">
-                            <h5>Name</h5>
+                            <h5>Sumeet Bagadia</h5>
+                            <p className="designation">Director</p>
+                        </div>
+                        
+                      </div>
+                      <div className="team-item">
+                        <span className="img-itm">
+                          <img src={image4} className="img-fluid" />
+                        </span>
+                        <div className="namedesg">
+                            <h5>Sundar Sanmukhani</h5>
                             <p className="designation">Designation</p>
                         </div>
                         
                       </div>
-                    
                     </Slider>
                   </div>
                 </div>

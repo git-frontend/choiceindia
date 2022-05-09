@@ -18,7 +18,7 @@ body{
         color: #221F20;
         font-weight: 700;
         font-size: 4.125rem;
-        line-height: 99px;
+        line-height: 6.1875rem;
         padding-bottom: 2.1875rem;
         padding-top: 1.25rem;
         font-family: 'PoppinsBold';
@@ -30,21 +30,7 @@ body{
         color: #707070;
         font-family: 'PoppinsRegular';
     }
-    &:before{
-        content: '';
-        width: 29rem;
-        height: 97rem;
-        display: block;
-        position: absolute;
-        right: 0;
-        bottom: -27rem;
-        background: url(../images/about-us/Group.svg) no-repeat bottom right;
-        background-size: contain;
-        z-index: -1;
-        @media (max-width:767px) {
-            display: none;
-        }
-    }
+    
     .rightsec{
         padding-left: 2rem;
         @media (max-width:767px) {
@@ -72,14 +58,29 @@ body{
     @media (max-width:767px) {
         padding:4rem 0;
     }
+    &:before{
+        content: '';
+        width: 22em;
+        height: 57rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top:-40rem;
+        background: url(../images/about-us/Group.svg) no-repeat bottom right;
+        background-size: contain;
+        z-index: -1;
+        @media (max-width:767px) {
+            display: none;
+        }
+    }
     &:after{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 450px;
+        height: 28.125rem;
+        width: 28.125rem;
         bottom: -45%;
-        left: -43px;
+        left: -2.6875rem;
         background: url('../images/about-us/zigzag.png') no-repeat;
         z-index: -1;
         background-size: contain;
@@ -90,9 +91,9 @@ body{
     }
     
     .heading{
-        padding-bottom: 60px;
+        padding-bottom: 3.75rem;
         @media (max-width:767px) {
-            padding-bottom: 40px;
+            padding-bottom: 2.5rem;
         }
     }
     .team-list-slider{
@@ -107,7 +108,7 @@ body{
              }
             .namedesg{
                position: absolute;
-                top: 75%;
+                bottom: 0;
                 left: 0;
                 right: 0;
                 width: 100%;
@@ -115,15 +116,16 @@ body{
                 text-align: center;
                 background: #221F2080;
                 border-radius: 0px 0px 20px 20px;
+                transition: 0.3s ease-in-out;
                 @media (max-width:767px) {
-                    top: 78%;
+                    bottom: 0;
                  }
-                 @media (min-width:769px) and (max-width:1024px) {
-                    top: 68%;
-                 }
+                //  @media (min-width:769px) and (max-width:1024px) {
+                //     top: 68%;
+                //  }
                 h5{
                    margin: 0;
-                   padding: 15px;
+                   padding: 0.9375rem;
                    font-size: 1.625rem;
                    line-height: 2.4375rem;
                    text-align: center;
@@ -162,9 +164,9 @@ body{
                  }
             }
 
-            &:hover .img-itm{
-                opacity: 0.3;
-            }
+            // &:hover .img-itm{
+            //     opacity: 0.3;
+            // }
            
         }
         .slick-arrow {
@@ -176,12 +178,12 @@ body{
         .slick-next:before{
             content: url('../images/about-us/next.png');
             position: absolute;
-            height: 6rem;
-            width: 6rem;
+            height: 5.5rem;
+            width: 5.5rem;
             background-color: #221F20;
             border-radius: 50%;
             top: -70%;
-            right: 1.25rem;
+            right: 2.25rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -190,7 +192,7 @@ body{
             @media (max-width:767px) {
                 height: 4rem;
                 width: 4rem;
-                top: -50px;
+                top: -3.125rem;
                  right: 19px;
                  content: url('../images/about-us/next-resp.png');
              }
@@ -198,8 +200,8 @@ body{
         .slick-prev:before{
             content: url('../images/about-us/prev.png');
             position: absolute;
-            height: 6rem;
-            width: 6rem;
+            height: 5.5rem;
+            width: 5.5rem;
             background-color: #221F20;
             border-radius: 50%;
             top: -70%;
@@ -211,8 +213,8 @@ body{
             @media (max-width:767px) {
                 height: 4rem;
                 width: 4rem;
-                top: -50px;
-                left: 19px;
+                top: -3.125rem;
+                left: 1.1875rem;
                 content: url('../images/about-us/prev-resp.png');
              }
         }
@@ -232,10 +234,10 @@ body{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 450px;
+        height: 28.125rem;
+        width: 28.125rem;
         top: 45%;
-        left: -43px;
+        left: -2.6875rem;
         background: url('../images/about-us/lastsectionbefore.png') no-repeat;
         z-index: -1;
         background-size: contain;
@@ -268,8 +270,8 @@ body{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 300px;
+        height: 28.125rem;
+        width: 18.75rem;
         bottom: -28%;
         right: -0;
         background: url('../images/about-us/zigzagopp.png') no-repeat;
@@ -281,7 +283,7 @@ body{
         }
     }
     .heading{
-        padding-bottom: 20px;
+        padding-bottom: 1.25rem;
     }
     .journeyinfo{
         font-weight: 400;
@@ -349,9 +351,9 @@ body{
         }
         .slick-dots{
             text-align: center;
-            bottom: -85px;
+            bottom: -5.3125rem;
             @media (max-width:767px) {
-                bottom: -30px;
+                bottom: -1.875rem;
             }
                 li{
                     width: 12px;
@@ -398,8 +400,8 @@ body{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 300px;
+        height: 28.125rem;
+        width: 18.75rem;
         top: 61%;
         right: -0;
         background: url('../images/about-us/circle.png') no-repeat;
@@ -419,10 +421,10 @@ body{
             display: block;
             position: absolute;
             height: 5.1875rem;
-            width: 200px;
+            width: 12.5rem;
             background: url('../images/about-us/vissionbefore.png') no-repeat;
             top: -12%;
-            left: 32px;
+            left: 2rem;
             z-index: -1;
             @media (max-width:767px) {
                 display: none;
@@ -433,7 +435,7 @@ body{
             display: block;
             position: absolute;
             height: 5.1875rem;
-            width: 200px;
+            width: 12.5rem;
             background: url('../images/about-us/vissionbefore.png') no-repeat;
             bottom: -12%;
             right: 12%;
@@ -479,8 +481,8 @@ body{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 300px;
+        height: 28.125rem;
+        width: 22.75rem;
         top: 56%;
         left: -0;
         background: url('../images/about-us/leftcircle.png') no-repeat;
@@ -530,7 +532,7 @@ body{
                 color: #707070;
                 @media (min-width:769px) and (max-width:1024px) {
                     font-size:1.3rem;
-                    line-height: 2srem;
+                    line-height: 2rem;
                  }
             }
         }
@@ -638,8 +640,8 @@ body{
         content: '';
         display: block;
         position: absolute;
-        height: 450px;
-        width: 317px;
+        height: 28.125rem;
+        width: 19.8125rem;
         top: 65%;
         right: 0;
         background: url('../images/about-us/offerbefore.png') no-repeat;
@@ -694,7 +696,7 @@ body{
         }
         .slick-dots{
             text-align: center;
-            bottom: -55px;
+            bottom: -5.4375rem;
                 li{
                     width: 12px;
                     height: 12px;
@@ -728,7 +730,7 @@ body{
     overflow: hidden;
     .services-list-slider{
         .slick-slide{
-            padding:0 50px 50px 0;
+            padding:0 3.125rem 3.125rem 0;
         }
     }
 }
