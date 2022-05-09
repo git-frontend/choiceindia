@@ -15,6 +15,11 @@
                 max-width: 110px;
             }
         }
+       
+    }
+    .navbar-toggler{ 
+        outline: none !important;
+        box-shadow: inherit;
     }
     .nav-header{
 
@@ -50,6 +55,9 @@
                             margin: 0 auto;
                         }
                     }
+                    @media (max-width: $md){
+
+                    }
                 }
                 &.login-btn{
                     margin-left: 5rem;
@@ -67,6 +75,7 @@
                         display: block;
                         padding: 1rem 2rem;
                         border-radius: 18px;
+                        text-align: center;
                         &:hover{
                             background: $bgcolor-yello;
                             color: $headingtext;
@@ -82,8 +91,14 @@
                 @media screen and (max-width: 1170px) {
                     margin: 0 0.6rem;
                 }
+                @media (max-width: $md){
+                    width: 100%;
+                    text-align: left;
+                    border-bottom: 1px solid #ccc;
+                    padding: 0.4rem 1em;
+                }
             }
-         
+       
     }
     @media (max-width: 767px){
         padding: 1rem 0;
@@ -108,8 +123,9 @@ nav .navbar-collapse.collapse{
         height: auto !important;
         display: block;
         background: #F7F7F7;
-        padding: 2rem;
+        padding: 0;
         margin-top: 1rem;
+        box-shadow: 0 1px 5px #767676dd;
     }
 }
 nav .navbar-collapse{
