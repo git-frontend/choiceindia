@@ -122,16 +122,16 @@ body{
                 text-align: center;
                 background: #221F2080;
                 border-radius: 0px 0px 20px 20px;
-                transition:  1s ease ;
+                transition:  1s all ease-in;
                 @media (max-width:767px) {
-                    bottom: 0;
+                    bottom: -37px;
                  }
                 //  @media (min-width:769px) and (max-width:1024px) {
                 //     top: 68%;
                 //  }
                 h5{
                    margin: 0;
-                   padding: 0.9375rem;
+                   padding: 0.75rem;
                    font-size: 1.625rem;
                    line-height: 2.4375rem;
                    text-align: center;
@@ -145,33 +145,18 @@ body{
                     font-family: 'PoppinsRegular';
                     color: #fff;
                     font-size: 1.125rem;
-                    line-height: 1.6875rem;
+                    line-height: 1.5rem;
                     text-align: center;
                     opacity: 1;
                     display: block;
                     
                 }
             }
-            &:hover h5{
-                margin-top: 0;
-                padding:11px 0 0px;
-            }
-            &:hover .designation{
-                opacity: 1;
-                display: block;
-                margin-bottom: 7px;
-                margin-top: 0;
-            }
+         
+           
             &:hover .namedesg{
                 bottom: 0;
-                // @media (min-width:769px) and (max-width:1024px) {
-                //     top: 63%;
-                //  }
             }
-
-            // &:hover .img-itm{
-            //     opacity: 0.3;
-            // }
            
         }
         .slick-arrow {
