@@ -19,7 +19,15 @@ function BannerCareer() {
         centerMode: true,
         infinite: true,
         centerPadding: '30%',
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              centerPadding: '8%',
+            }
+          },
+        ]
     };
 
   return (
@@ -46,7 +54,7 @@ function BannerCareer() {
     <section className='our-values'>
         <div className='container'>
             <div className="row justify-content-center">
-                <div className="col-xl-7 col-md-8">
+                <div className="col-xl-7 col-md-10">
                 <div className="heading-sec">
                     <h3 className="title-first">Our Values</h3>
                     <p>We’ve built our workplace upon efficient functional teams that foster leadership, support, and peer learning. At Choice, we treasure our employees who contribute in creating value for the company with diligence, integrity, and innovation.</p>

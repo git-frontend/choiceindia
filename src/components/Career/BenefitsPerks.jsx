@@ -29,7 +29,7 @@ function BenefitsPerks() {
             </div>
         </div>
         <div className='row justify-content-center'>
-            <div className='col-xl-7 col-md-9'>
+            <div className='col-xl-7 col-md-10'>
                 <div className='perks-list'>
                     <div className='perks-list-itm'>
                         <img src={CareerImage5} />
