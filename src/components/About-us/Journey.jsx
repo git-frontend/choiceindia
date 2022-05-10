@@ -18,8 +18,8 @@ function Journey() {
           {
             breakpoint: 992,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 3,
+              slidesToScroll: 3,
               adaptiveHeight: true,
             },
           },
