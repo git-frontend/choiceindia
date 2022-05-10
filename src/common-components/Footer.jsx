@@ -6,7 +6,7 @@ import  ImageFooter3  from '../assets/images/sgbdownarrow.svg';
 import  ImageFooter4  from '../assets/images/sgbuparrow.svg';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock, faLocationDot, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faClock, faLocationDot, faPhone, faEnvelope, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
 import React from "react";
 import $ from 'jquery';
@@ -157,7 +157,7 @@ function Footer() {
                         <div className="col-md-5">
                           <ul className="extra-links-right">
                             <li>
-                              Made with <i className="fa fa-heart" aria-hidden="true"></i> in India
+                              Made with  <FontAwesomeIcon icon={faHeart} />  in India
                             </li>
                             <li>
                               <a href="#">Privacy Policy</a>
