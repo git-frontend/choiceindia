@@ -44,19 +44,19 @@ function Home() {
 							<div className="count-value-list">
 								<div className="count-value-item">
 									<h4>2 Lakh+</h4>
-									<h6>Clients</h6>
+									<h5>Clients</h5>
 								</div>
 								<div className="count-value-item">
 									<h4>2,200+</h4>
-									<h6>Employees</h6>
+									<h5>Employees</h5>
 								</div>
 								<div className="count-value-item">
 									<h4>55+</h4>
-									<h6>Offices</h6>
+									<h5>Offices</h5>
 								</div>
 								<div className="count-value-item">
 									<h4>13,000+</h4>
-									<h6>Partners</h6>
+									<h5>Partners</h5>
 								</div>
 							</div>
 						</div>
