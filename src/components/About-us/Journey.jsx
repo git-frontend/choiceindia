@@ -5,7 +5,7 @@ import React from "react";
 import Slider from "react-slick";
 function Journey() {
     const settings = {
-        infinite: true,
+        infinite: false,
         speed: 1500,
         arrows: false,
         slidesToShow: 4,

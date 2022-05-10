@@ -312,53 +312,80 @@ body{
              }
     }
     .Journeyyear{
+    
         .Journeynumber{
-            .Journey-item{
-                text-align: center;
+            &:before{
+                content: "";
+                display: block;
+                position: absolute;
+                border: none;
+                border-top: 1px dotted #000;
+                top: 0;
+                left: 0;
+                height: 5px;
+                width: 80%;
+                top: 32%;
                 margin: 0 auto;
-                display: flex !important;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                
-                .year{
-                    background: #F3FAFF;
-                    width: 13.125rem;
-                    height: 13.125rem;
-                    border-radius: 50%;
-                    .number{
-                        color: $primary;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-size: 3rem;
-                        line-height: 4.5rem;
-                        font-family: 'PoppinsSemiBold';
-                        top: 32%;
-                        position: relative;
-                    }
-                }
-                .subtext{
-                    padding-top: 1.5625rem;
-                    display: flex;
-                    justify-content: center;
-                    text-align: center;
-                    font-weight: 400;
-                    font-size: 1.25rem;
-                    line-height: 1.875rem;
-                    color: #707070;
-                    font-family: 'PoppinsRegular';
-                    width: 55%;
-                    margin: 0 auto;
-                    @media (max-width:767px) {
-                        font-size: 1.5rem;
-                    }
-                    @media (min-width:769px) and (max-width:1024px) {
-                        width: 81%;
+                right: 0;
+                @media (max-width:767px) {
+                  display: none;
                      }
+            }
+            .slick-slide{
+             
+               
+                .Journey-item{
+                    text-align: center;
+                    margin: 0 auto;
+                    display: flex !important;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    // min-sheight: 315px;
+                 
+                 
+                    .year{
+                        background: #F3FAFF;
+                        width: 13.125rem;
+                        height: 13.125rem;
+                        border-radius: 50%;
+                        z-index: 1;
+                        .number{
+                            color: $primary;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            font-size: 3rem;
+                            line-height: 4.5rem;
+                            font-family: 'PoppinsSemiBold';
+                            top: 32%;
+                            position: relative;
+                        }
+                    }
+                    .subtext{
+                        padding-top: 1.5625rem;
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
+                        font-weight: 400;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                        color: #707070;
+                        font-family: 'PoppinsRegular';
+                        width: 55%;
+                        margin: 0 auto;
+                        min-height: 100px;
+                        @media (max-width:767px) {
+                            font-size: 1.5rem;
+                        }
+                        @media (min-width:769px) and (max-width:1024px) {
+                            width: 81%;
+                         }
+                    }
                 }
             }
+            
         }
         .slick-dots{
             text-align: center;
