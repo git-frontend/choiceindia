@@ -2,7 +2,7 @@
 
 .main-footer{
     .footer-top-sec{
-        background: #221F20;
+        background: $bgcolordark;
         padding: 4rem 0;
         .top-sec-sub{
             margin-bottom: 3rem;
@@ -18,16 +18,16 @@
                    >li{
                        margin-bottom: 1rem;
                        h4{
-                        color: #F5F5F5;
+                        color: $lightColor;
                         font-size: 1.2rem;
                         font-family: 'PoppinsBold';
                        }
                        a{
-                           color: #F5F5F5;
+                           color: $lightColor;
                            font-size: 1rem;
                            text-decoration: none;
                            &:hover{
-                               color: #FFCE02;
+                               color: $bgcolor-yello;
                            }
                        }
                    }
@@ -37,7 +37,7 @@
         .footer-cont-details{
             text-align: right;
             p{
-                color: #F5F5F5;
+                color: $lightColor;
                 font-size: 1.1rem;
                 position: relative;
                 padding-right: 2.5rem;
@@ -48,7 +48,7 @@
                     transform: translate(0, -50%);
                     right: 0;
                     font-size: 1.5rem;
-                    color: #F5F5F5;
+                    color: $lightColor;
                     @media (max-width: 768px){
                         right: inherit;
                         left: 0;
@@ -60,17 +60,17 @@
                     transform: translate(0, -50%);
                     right: 0;
                     font-size: 1.5rem;
-                    color: #F5F5F5;
+                    color: $lightColor;
                     @media (max-width: 768px){
                         right: inherit;
                         left: 0;
                     }
                 }
                 a{
-                    color: #F5F5F5;
+                    color: $lightColor;
                     text-decoration: none;
                     &:hover{
-                        color: #FFCE02;
+                        color: $bgcolor-yello;
                     }
                 }
                 @media (max-width: 768px){
@@ -120,9 +120,9 @@
                         height: 2.875rem;
                         display: block;
                         text-decoration: none;
-                        background: #F5F5F5;
+                        background: $lightColor;
                         border-radius: 50%;
-                        color: #221F20;
+                        color: $bgcolordark;
                         position: relative;
                         margin-left: 1rem;
                         -webkit-transform: perspective(1px) translateZ(0);
@@ -195,13 +195,13 @@
     padding: 4rem 0;
     background: #292728;
     p{
-        color: #ffffff;
+        color: $whiteColor;
         font-family: 'PoppinsMedium';
         font-size: 1.2rem;
         line-height: 2.8;
     }
     .moreless-button{
-        color: #ffffff;
+        color: $whiteColor;
         font-family: 'PoppinsMedium';
         font-size: 1.2rem;
         text-decoration: none;

@@ -1,6 +1,6 @@
 
 import  CareerImage13 from '../../assets/images/career/bg1.jpg';
-import React from "react";
+import React from 'react';
 // import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 function CareerTeam() {
@@ -30,7 +30,7 @@ function CareerTeam() {
 
       <div className="explore-opportunities">
             <img src={CareerImage13} className='bg-img' />
-            {/* <div className='opportunities-cont'>
+            <div className='opportunities-cont'>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
@@ -47,26 +47,15 @@ function CareerTeam() {
                             </div>
                         </div>
                         <div className='col-md-5'>
-                            <div className=''>
-                                <MDBDropdown>
-                                    <MDBDropdownToggle>Mumbai</MDBDropdownToggle>
-                                    <MDBDropdownMenu>
-                                        <MDBDropdownItem>
-                                        <MDBDropdownLink href="#">Action</MDBDropdownLink>
-                                        </MDBDropdownItem>
-                                        <MDBDropdownItem>
-                                        <MDBDropdownLink href="#">Another action</MDBDropdownLink>
-                                        </MDBDropdownItem>
-                                        <MDBDropdownItem>
-                                        <MDBDropdownLink href="#">Something else here</MDBDropdownLink>
-                                        </MDBDropdownItem>
-                                    </MDBDropdownMenu>
-                                    </MDBDropdown>
+                            <div className='cust-dropdown'>
+                   
+
+                                
                             </div>
                         </div>
                     </div>
                 </div>
-            </div> */}
+            </div> 
       </div>
     </section>
       
