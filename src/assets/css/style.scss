@@ -14,7 +14,9 @@
         .banner-caption{
             text-align: left;
             h1{
-                font-size: 4.125rem;
+                font-size: 4.4rem;
+                line-height: 70px;
+
                 font-family: 'PoppinsBold';
                 color: $headingtext;
                 @media (max-width: $md){
@@ -42,7 +44,7 @@
         position: relative;
         z-index: 9;
         .services-list-slider{
-            padding-bottom: 3rem;
+            padding-bottom: 9rem;
             .service-item{
                 padding-right: 7rem;
                 .img-itm{
@@ -130,7 +132,7 @@
         display: block;
         position: absolute;
         right: 0;
-        bottom: -9rem;
+        bottom: -6rem;
         background: url(../images/clipath-img2.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $md){
@@ -247,7 +249,7 @@
 
 .market-insights-sec{
     background: $whiteColor;
-    padding:30rem 0 12rem 0;
+    padding:32rem 0 12rem 0;
     position: relative;
     .heading-sec{
         text-align: center;
@@ -366,7 +368,7 @@
         display: block;
         position: absolute;
         right: 0;
-        top: 11rem;
+        top: 14rem;
         background: url(../images/clipath-img3.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $sm){
@@ -416,14 +418,14 @@
                     max-width: 100%;
                 }
                 h4{
-                    font-size: 1.625rem;
+                    font-size: 1.8rem;
                     font-family: 'PoppinsSemiBold';
                     color: $whiteColor;
-                    margin: 1rem 0;
+                    margin: 1.7rem 0 1rem 0;
                 }
                 p{
-                    font-size: 1.125rem;
-                    line-height: 1.7rem;
+                    font-size: 1.3rem;
+                    line-height: 2rem;
                     margin-bottom: 0;
                     color: $whiteColor;
                 }
@@ -444,7 +446,7 @@
 }
 
 .fables-stories{
-    padding: 15rem 0 0 0;
+    padding: 18rem 0 0 0;
     position: relative;
     overflow: hidden;
     .heading-sec{
