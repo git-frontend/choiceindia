@@ -96,7 +96,7 @@
                 width: 100%;
                 left: 0;
                 .ttl1{
-                    font-size: 4.125rem;
+                    font-size: 4.5rem;
                     color: #F5F5F5;
                     font-family: 'PoppinsBold';
                     margin-bottom: 4rem;
@@ -119,13 +119,40 @@
                             position: absolute;
                             right: 3px;
                             top: 3.5px;
-                            background: #221F20;
+                            background: $bgcolordark;
                             color: #F7F7F7;
                             display: block;
                             padding: 0.5rem 2rem;
                             border-radius: 7px;
                             border: 0;
                             outline: none;
+                        }
+                    }
+                }
+                .cust-dropdown{
+                    .dropdown{
+                        width: 100%;
+                        .dropdown-toggle{
+                            width: 100%;
+                            background: $whiteColor;
+                            font-size: 1.4rem;
+                            text-align: left;
+                            padding: 0.8rem 1rem;
+                            border-radius: 7px;
+                            border: 0;
+                            &::after{
+                                background: $bgcolordark;
+                                right: 4px;
+                                position: absolute;
+                                width: 3rem;
+                                height: 3rem;
+                                border-radius: 7px;
+                                top: 4px;
+                            }
+                        }
+                        .dropdown-menu{
+                            width: 100%;
+                            font-size: 1.4rem;
                         }
                     }
                 }

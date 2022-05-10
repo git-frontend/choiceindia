@@ -1,0 +1,123 @@
+@import 'customvariable.scss';
+
+.App-main{
+    .banner-app{
+        position: relative;
+        .ban-img{
+            width: 100%;
+        }
+        .app-banner-caption{
+            position: absolute;
+            left: 0;
+            width: 100%;
+            top: 50%;
+            transform: translate(0, -50%);
+            z-index: 9;
+            color: $whiteColor;
+            .big-ttl{
+                color: $whiteColor;
+            }
+            p{
+                color: $whiteColor;
+            }
+            .wrap-app-links{
+                margin: 4rem 0;
+                display: flex;
+                flex-wrap: wrap;
+                .link-nrl{
+                    margin-right: 2.5rem;
+                    text-decoration: none;
+                        -webkit-transform: perspective(1px) translateZ(0);
+                        transform: perspective(1px) translateZ(0);
+                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                        -webkit-transition-duration: 0.3s;
+                        transition-duration: 0.3s;
+                        -webkit-transition-property: transform;
+                        transition-property: transform;
+                        -webkit-transition-timing-function: ease-out;
+                        transition-timing-function: ease-out;
+                        position: relative;
+                    .img-ico{
+                        width: 17rem;
+                        display: block;
+                    }
+                    &:hover{
+                        transform: translateY(-8px);
+                    }
+                }
+            }
+        }
+    }
+
+    .app-benefits-section{
+        padding: 15rem 0;
+        position: relative;
+        .heading-sec{
+            .title-first{
+                font-size: 3rem;
+            }
+            p{
+                margin: 2rem 0 3rem 0;
+            }
+        }
+        .benifit-value-list{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            position: relative;
+            flex-direction: row-reverse;
+            .benifit-value-item{
+                border: 0;
+                box-shadow: 0px 0px 8px #E0EFE4;
+                border-radius: 20px;
+                padding: 2rem 2.5rem;
+                width: 44%;
+                margin-right: 6%;
+                margin-bottom: 5%;
+                text-align: center;
+                background: #E0EFE4;
+                h4{
+                    font-size: 1.78rem;
+                    line-height: 1.5;
+                    font-family: "PoppinsSemiBold";
+                    color: #221F20;
+                }
+                &:first-child{
+                    margin-right: 0;
+                }
+            }
+        }
+        &::before{
+            content: '';
+            width: 74rem;
+            height: 27rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            background: url(../images/app/vector-line.svg) no-repeat top right;
+            background-size: contain;
+            @media (max-width: 1025px){
+                width: 54rem;
+                height: 40rem;
+            }
+            @media (max-width: $md){
+                display: none;
+            }
+        }
+    }
+}
+
+.trade-benefits-section{
+    background: #E0D6F4;
+    padding: 10rem 0;
+    .reset{
+        margin: 3rem 0 4rem;
+        li{
+            font-size: 2rem;
+            font-family: 'PoppinsMedium';
+            margin-bottom: 1rem;
+        }
+    }
+}
