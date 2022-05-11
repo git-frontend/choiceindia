@@ -109,6 +109,36 @@
     }
     .app-cont-sec{
         background: $whiteColor;
+        padding: 13rem 0;
+        .heading-sec{
+            text-align: center;
+        }
+        .cont-sec-list{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 5rem 0;
+            .cont-sec-item{
+                width: 33.33%;
+                padding: 2rem;
+                .title-secnd{
+                    font-size: 3rem;
+                    margin-bottom: 0.5rem;
+                }
+                p{
+                    color: $headingtext;
+                }
+            }
+        }
+        .wrap-app-links{
+            .link-nrl{
+                display: block;
+                margin: 0 1.5rem;
+                .img-ico{
+                    width: 14rem;
+                }
+            }
+        }
     }
 }
 

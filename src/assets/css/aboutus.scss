@@ -238,15 +238,15 @@ body{
     &:after{
         content: '';
         display: block;
-        position: absolute;
-        height: 28.125rem;
-        width: 28.125rem;
-        top: 45%;
+        height: 48.125rem;
+        width: 38.125rem;
+        bottom: -14rem;
         left: -2.6875rem;
         background: url('../images/about-us/lastsectionbefore.png') no-repeat;
         z-index: -1;
-        background-size: contain;
+        background-size: cover;
         background-position: left;
+        position: absolute;
     }
    .client-list{
        .slick-list{
