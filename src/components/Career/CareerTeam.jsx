@@ -55,9 +55,9 @@ function CareerTeam() {
                                 </Dropdown.Toggle>
 
                                 <Dropdown.Menu>
-                                    <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                                    <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-1">Delhi</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Bangalore</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Hyderabad</Dropdown.Item>
                                 </Dropdown.Menu>
                                 </Dropdown>
 
