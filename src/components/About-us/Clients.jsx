@@ -11,6 +11,7 @@ function Clients() {
     const settings = {
         infinite: true,
         speed: 1500,
+        height: 100,
         arrows: false,
         slidesToShow: 5,
         autoplay: false,
@@ -22,8 +23,8 @@ function Clients() {
           {
             breakpoint: 992,
             settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToShow: 3,
+              slidesToScroll: 3,
               adaptiveHeight: true,
             },
           },
