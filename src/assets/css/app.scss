@@ -140,6 +140,43 @@
             }
         }
     }
+    .app-banner-bottom{
+        background: #F3FAFF;
+        padding: 10rem 0;
+        .content-list{
+                position: relative;
+            .content-list-itm{
+                padding-left: 30px;
+                margin-bottom: 36px;
+                position: relative;
+                &.active{
+                    content: '';
+                    background: #FFCE02;
+                    width: 6px;
+                    height: 100%;
+                    border-radius: 8px;
+                    position: absolute;
+                    left: -2px;
+                    display: block;
+                }
+                .single-ttl{
+                    font-family: 'PoppinsSemiBold';
+                    font-size: 1.75rem;
+                }
+            }
+            &::before{
+                content: '';
+                background: #FFCE02;
+                width: 3px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0.1;
+                border-radius: 2px;
+            }
+        }
+    }
 }
 
 .trade-benefits-section{
