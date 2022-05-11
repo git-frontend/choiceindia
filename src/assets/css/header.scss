@@ -1,109 +1,140 @@
 @import 'common.scss';
 
-.main-header{
-    position: absolute;
-    background: transparent;
-    width: 100%;
-    z-index: 99;
-    top: 0;
-    left: 0;
-    padding: 2rem 0;
-    .navbar{
-        box-shadow: inherit;
-        .logo-main{
-            @media screen and (max-width: 1170px) {
-                max-width: 110px;
+.Header{
+    .main-header{
+        position: absolute;
+        background: transparent;
+        width: 100%;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        padding: 2rem 0;
+        .navbar{
+            box-shadow: inherit;
+            .logo-main{
+                @media screen and (max-width: 1170px) {
+                    max-width: 110px;
+                }
             }
+           
         }
-       
-    }
-    .navbar-toggler{ 
-        outline: none !important;
-        box-shadow: inherit;
-    }
-    .nav-header{
-
-            display: flex;
-            padding: 0;
-            margin: 0;
-            list-style: none;
-            align-items: center;
-            >li{
-                margin: 0 1rem;
-                a{
-                    font-size: 1.5rem;
-                    color: #221f20bf;
-                    font-family: 'PoppinsMedium';
-                    text-decoration: none;
-                    white-space: nowrap;
-                    position: relative;
-                    @media screen and (max-width: 1170px) {
-                        font-size: 1.4rem;
-                    }
-                    &:hover{
-                        color: $headingtext;
-                        &::before{
-                            content: '';
-                            width: 0.5rem;
-                            height: 0.5rem;
-                            display: block;
-                            background: $headingtext;
-                            position: absolute;
-                            bottom: 0;
-                            left: 0;
-                            right: 0;
-                            margin: 0 auto;
+        .navbar-toggler{ 
+            outline: none !important;
+            box-shadow: inherit;
+        }
+        .nav-header{
+    
+                display: flex;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                align-items: center;
+                >li{
+                    margin: 0 1rem;
+                    a{
+                        font-size: 1.5rem;
+                        color: #221f20bf;
+                        font-family: 'PoppinsMedium';
+                        text-decoration: none;
+                        white-space: nowrap;
+                        position: relative;
+                        @media screen and (max-width: 1170px) {
+                            font-size: 1.4rem;
                         }
-                    }
-                    @media (max-width: $md){
-
-                    }
-                }
-                &.login-btn{
-                    margin-left: 5rem;
-                    a{
-                        font-family: 'PoppinsSemiBold';
-                    }
-                    @media screen and (max-width: 1170px) {
-                        margin-left: 1rem;
-                    }
-                }
-                &.get-btn{
-                    a{
-                        background: $headingtext;
-                        color: #F7F7F7;
-                        display: block;
-                        padding: 1rem 2rem;
-                        border-radius: 18px;
-                        text-align: center;
                         &:hover{
-                            background: $bgcolor-yello;
                             color: $headingtext;
                             &::before{
-                                display: none;
+                                content: '';
+                                width: 0.5rem;
+                                height: 0.5rem;
+                                display: block;
+                                background: $headingtext;
+                                position: absolute;
+                                bottom: 0;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
                             }
                         }
+                        @media (max-width: $md){
+    
+                        }
+                    }
+                    &.login-btn{
+                        margin-left: 5rem;
+                        a{
+                            font-family: 'PoppinsSemiBold';
+                        }
                         @media screen and (max-width: 1170px) {
-                            padding: 0.5rem 1.5rem;
-                        }   
+                            margin-left: 1rem;
+                        }
+                    }
+                    &.get-btn{
+                        a{
+                            background: $headingtext;
+                            color: #F7F7F7;
+                            display: block;
+                            padding: 1rem 2rem;
+                            border-radius: 18px;
+                            text-align: center;
+                            &:hover{
+                                background: $bgcolor-yello;
+                                color: $headingtext;
+                                &::before{
+                                    display: none;
+                                }
+                            }
+                            @media screen and (max-width: 1170px) {
+                                padding: 0.5rem 1.5rem;
+                            }   
+                        }
+                    }
+                    @media screen and (max-width: 1170px) {
+                        margin: 0 0.6rem;
+                    }
+                    @media (max-width: $md){
+                        width: 100%;
+                        text-align: left;
+                        border-bottom: 1px solid #ccc;
+                        padding: 0.4rem 1em;
                     }
                 }
-                @media screen and (max-width: 1170px) {
-                    margin: 0 0.6rem;
-                }
-                @media (max-width: $md){
-                    width: 100%;
-                    text-align: left;
-                    border-bottom: 1px solid #ccc;
-                    padding: 0.4rem 1em;
+           
+        }
+        @media (max-width: 767px){
+            padding: 1rem 0;
+        }
+        .logo-light{
+            display: none;
+        }
+    }
+    &.header-light{
+       
+        .main-header{
+            .logo-light{
+                display: block;
+            }
+            .logo-dark{
+                display: none;
+            }
+            .nav-header{
+                >li{
+                    a{
+                        color: $whiteColor;
+                    }
+                    &.get-btn{
+                        a{
+                            background: $whiteColor;
+                            color: $headingtext;
+                        }
+                    }
                 }
             }
-       
+        }
     }
-    @media (max-width: 767px){
-        padding: 1rem 0;
-    }
+
 }
+
 
 
 nav{

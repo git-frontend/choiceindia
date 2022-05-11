@@ -7,6 +7,7 @@ import  HomeFeatures from './home-page/HomeFeatures.jsx'
 import  FablesStories from './home-page/FablesStories.jsx'
 import  HomeTestimonial from './home-page/HomeTestimonial.jsx'
 import  SecurityPrivacy from './home-page/SecurityPrivacy.jsx'
+import  HomeHeader from './home-page/HomeHeader.jsx'
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 
 
@@ -24,6 +25,8 @@ function Home() {
     <div className="Home">
 
       <main>
+
+       <HomeHeader />
 
        <HomePageBanner />
 
