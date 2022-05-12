@@ -240,6 +240,7 @@
             @media (max-width: $sm){
                 margin-right: 1rem;
             }
+      
         }
         @media (max-width:$sm){
            justify-content: center;
@@ -262,8 +263,8 @@
         flex-wrap: wrap;
         margin-top: 5rem;
         .insights-list-item{
-            width: 19%;
-            margin-left: 4%;
+            width: 17%;
+            margin-left: 6%;
             transition: width 1.5s;
             .insights-item-cont{
                 border-radius: 36px;

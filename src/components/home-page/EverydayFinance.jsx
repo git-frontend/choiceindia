@@ -11,12 +11,12 @@ function EverydayFinance() {
 
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         arrows: false,
         slidesToShow: 4,
         autoplay: true,
         dots:true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 4000,
         slidesToScroll: 2,
         responsive: [
           {

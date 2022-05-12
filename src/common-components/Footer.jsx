@@ -2,27 +2,12 @@ import "../assets/css/footer.scss"
 import  ImageFooter0  from '../assets/images/footer-logo.svg';
 import  ImageFooter1  from '../assets/images/icons/google-play.svg';
 import  ImageFooter2  from '../assets/images/icons/app-store.svg';
-import  ImageFooter3  from '../assets/images/sgbdownarrow.svg';
-import  ImageFooter4  from '../assets/images/sgbuparrow.svg';
 import "../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
 import React from "react";
-import $ from 'jquery';
 
-$(document).ready(function () {
-
-  $('.moreless-button').click(function() {
-    $('.moretext').slideToggle();
-    if ($('.moreless-button').text() == "Read more") {
-      $(this).text("Read less")
-    } else {
-      $(this).text("Read more")
-    }
-  });
-  
-});
 
 function Footer() {
     return (
@@ -182,7 +167,7 @@ function Footer() {
                         <p>&copy; Choiceinternational. CIN - U65999MH2010PTC198714. All Rights Reserved. <br/>
 Registered with the Securities and Exchange Board of India (SEBI) as a Non-Individual Investment Mutual Fund Distributor (ARN-78908) and with Pension Fund Regulatory and Development Authority (PFRDA) as NPS POP (POPSE52022022).<br/>
                         </p>
-                        <p className="moretext">
+                        <p>
                         SEBI Reg No. Broking - INZ000160131; Depository Participant - IN - DP - 416 - 2019 , Depository Participant Number: CDSL - 12088800, Trading and clearing member of NSE, NSEFO & NSECDS (13773), MCX (40585), NCDEX (1006) and BSE(3299).<br/>
 Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br/>
  
@@ -199,7 +184,7 @@ Disclaimer: We are doing pro trading (Confirm with RMS/management, whether we av
 &copy; Choice International Limited. All Rights Reserved.<br/>
                         </p>
                       </div>
-                      <a className="moreless-button">Read more</a>
+                      {/* <a className="moreless-button">Read more</a> */}
                         </div>
                     </div>
                 </div>
