@@ -14,13 +14,13 @@ function AppBannerBottom() {
       
             <div className='app-banner-bottom'>
                 <div className='container'>
-                <Row className="app-trade-easy-div">
+                <div className="app-trade-easy-div row">
                     
                     
 
-                    <Col className='col-md-4'>
+                    <div className='col-md-4'>
                         <div className='content-list'>
-                        <div className="content-list-itm"
+                        <div className="content-list-itm list-itm-active"
                             
                             onClick={()=> setIsShown2(0)}
                         >
@@ -36,7 +36,7 @@ function AppBannerBottom() {
                         
                         >
                             
-                            <h4 className="single-ttl">Trading Simplified</h4>
+                            <h4 className="single-ttl">Wealth Pool</h4>
                             <p className="para">
                               Smoothly grow your investment portfolio with mutual funds
                             </p>
@@ -45,7 +45,31 @@ function AppBannerBottom() {
                         <div className="content-list-itm"
                         onClick={() => setIsShown2(2)}
                             >
-                            <h4 className="single-ttl">Trading Simplified</h4>
+                            <h4 className="single-ttl">Insuring Future</h4>
+                            <p className="para">
+                              Smoothly grow your investment portfolio with mutual funds
+                            </p>
+                        </div>
+                        <div className="content-list-itm"
+                        onClick={() => setIsShown2(3)}
+                            >
+                            <h4 className="single-ttl">Swift Loans</h4>
+                            <p className="para">
+                              Smoothly grow your investment portfolio with mutual funds
+                            </p>
+                        </div>
+                        <div className="content-list-itm"
+                        onClick={() => setIsShown2(4)}
+                            >
+                            <h4 className="single-ttl">Readymade Baskets</h4>
+                            <p className="para">
+                              Smoothly grow your investment portfolio with mutual funds
+                            </p>
+                        </div>
+                        <div className="content-list-itm"
+                        onClick={() => setIsShown2(5)}
+                            >
+                            <h4 className="single-ttl">Financial Planning</h4>
                             <p className="para">
                               Smoothly grow your investment portfolio with mutual funds
                             </p>
@@ -53,8 +77,8 @@ function AppBannerBottom() {
                         </div>
 
 
-                    </Col>
-                    <Col className='col-md-8'>
+                    </div>
+                    <div className='col-md-8'>
                         
                             <div className="trade-easy-images-div">
                                <img src={imageData[isShown2].image}
@@ -64,8 +88,8 @@ function AppBannerBottom() {
                     
 
                         
-                    </Col>
-             </Row>
+                    </div>
+             </div>
                 </div>
             </div>
              

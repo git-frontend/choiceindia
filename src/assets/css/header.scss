@@ -121,11 +121,18 @@
                 >li{
                     a{
                         color: $whiteColor;
+                        @media (max-width: $md){
+                            color: $headingtext;
+                        }
                     }
                     &.get-btn{
                         a{
                             background: $whiteColor;
                             color: $headingtext;
+                            @media (max-width: $md){
+                                background: $headingtext;
+                                color: $whiteColor;
+                            }
                         }
                     }
                 }
@@ -171,5 +178,17 @@ nav .navbar-collapse{
     .MuiSvgIcon-root{
         width: 2em;
         height: 2em;
+        
+    }
+    @media (max-width: $sm-x){
+        padding: 0 !important;
+    }
+}
+
+.header-light{
+    .navbar-toggler{
+        .MuiSvgIcon-root{
+            color: $whiteColor;
+        }
     }
 }

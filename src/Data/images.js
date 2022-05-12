@@ -1,19 +1,19 @@
 
-
+import  ImageSub0  from '../assets/images/app/mobile1.png';
 const imageData =
 [
     {
-        "image":"https://choiceindia.com/assets/images/online-trading-app-customizable-preferences.png",
+        "image":`${ImageSub0}`,
         
         
     },
     {
-        "image":"https://choiceindia.com/assets/images/consolidated-scrip-overview-jiffy-trading-app.png",
+        "image":`${ImageSub0}`,
         
         
     },
     {
-        "image":"https://choiceindia.com/assets/images/share-market-app-clean-simple-ui.png",
+        "image":`${ImageSub0}`,
     
         
     }
