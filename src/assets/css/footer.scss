@@ -177,7 +177,7 @@
                         font-family: $font-family-poppins-medium;
                         text-decoration: none;
                     &:hover{
-                            color: #FFCE02;
+                            color: $yellowColor;
                         }
                     }
                    
@@ -201,7 +201,7 @@
 
 .footer-bottom{
     padding: 4rem 0;
-    background: #292728;
+    background: $bgcolor-graydark;
     p{
         color: $whiteColor;
         font-family: $font-family-poppins-medium;

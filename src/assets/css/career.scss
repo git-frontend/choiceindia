@@ -102,7 +102,7 @@
                 .ttl1{
                     font-size: 4.5rem;
                     color: $lightColor;
-                    font-family: 'PoppinsBold';
+                    font-family: $font-family-poppins-bold;
                     margin-bottom: 3rem;
                     span{
                         color: $bgcolor-yellow;
@@ -190,7 +190,7 @@
         padding: 0 0 25rem 0;
         .ttl2{
             font-size: 2rem;
-            font-family: 'PoppinsSemiBold';
+            font-family: $font-family-poppins-semibold;
         }
         .jobs-list{
             margin-top: 2rem;
