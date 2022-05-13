@@ -2,6 +2,7 @@
 
 
 .career-list-slider{
+ 
     .slick-slide{
         padding:0 2rem;
         outline: none;
@@ -15,10 +16,12 @@
             padding: 0 1rem;
         }
     }
+   
 }
 
 .our-values{
     padding: 13rem 0;
+    position: relative;
     .heading-sec{
         text-align: center;
         @media (max-width: $sm){
@@ -28,19 +31,38 @@
     @media (max-width: $md){
         padding: 5rem 0 0 0;
     }
+    &:before{
+        content: "";
+        width: 22em;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -150px;
+        background: url('../images/career/ourvalubefore.png') no-repeat bottom right;
+        background-size: contain;
+        z-index: -1;
+        @media (max-width: $sm){
+           display: none;
+        }
+    }
 }
 
-.career-main{
+.career-main{ 
+  
+    
     .bannersection{
         padding-bottom: 0;
         @media (max-width: $md){
             padding-top: 10rem;
         }
+       
     }
 
     .benefits-perks{
         background: $primary;
         padding: 15rem 0;
+        position: relative;
         .heading-sec{
             .title-first{
                 color: $whiteColor;
@@ -80,10 +102,26 @@
         @media (max-width: $md){
             padding: 6rem 0 3rem 0;
         }
+        &:before{
+            content: "";
+            width: 24em;
+            height: 44rem;
+            display: block;
+            position: absolute;
+            left: -99px;
+            top: -401px;
+            background: url('../images/career/culturebefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: -1;
+            @media (max-width: $sm){
+            display: none;
+            }
+        }
     }
 
     .career-team{
         padding: 22rem 0 5rem 0;
+        position: relative;
         .explore-opportunities{
             position: relative;
             padding-top: 7rem;
@@ -183,11 +221,26 @@
                 padding: 0 2rem;        
             }
         }
-       
+        &:before{
+            content: "";
+            width: 26em;
+            height: 57rem;
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: -14%;
+            background: url('../images/career/ourteambefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: 1;
+            @media (max-width: $sm){
+            display: none;
+            }
+        } 
     }
 
     .career-jobs{
         padding: 0 0 25rem 0;
+        position: relative;
         .ttl2{
             font-size: 2rem;
             font-family: $font-family-poppins-semibold;
@@ -218,12 +271,29 @@
         @media (max-width: $md){
             padding: 0 0 5rem 0;
         }
+        &:before{
+            content: "";
+            width: 26em;
+            height: 50rem;
+            display: block;
+            position: absolute;
+            left: 0px;
+            bottom: -24%;
+            background: url('../images/career/marketingjobbefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: -1;
+            @media (max-width: $sm){
+            display: none;
+            }
+        } 
+
     }
     
 }
 
 .culture-values{
     padding: 13rem 0 27rem 0;
+    
     .culture-values-img{
         .shdow{
             box-shadow: 0 0 4px #ccc;
