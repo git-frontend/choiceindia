@@ -10,14 +10,14 @@ import image6 from '../../assets/images/about-us/sundar-sanmukhani.png';
 import Slider from "react-slick";
 function Team() {
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 1500,
         arrows: true,
         slidesToShow: 3,
-        autoplay: false,
+        autoplay: true,
         margin:15,
         dots:false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3800,
         slidesToScroll: 3,
         responsive: [
           {

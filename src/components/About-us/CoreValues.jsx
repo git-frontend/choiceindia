@@ -56,39 +56,9 @@ function CoreValues() {
                     <div className="col-md-7 col-12">
                       <div className="team-list">
                         <Slider {...settings} className="team-list-slider">
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                              <img src={Innovation} className="img-fluid" />
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Innovation</h4>
-                                <p className="text">The only way to win is by being creative</p>
-                            </div>
-                          
-                            
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                            <img src={Consistency} className="img-fluid" />
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Consistency</h4>
-                                <p className="text">Only factor which is more important than perfection</p>
-                            </div>
-                          
-                            
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                            <img src={Empowerment} className="img-fluid" />
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Empowerment</h4>
-                                <p className="text">Hustle today to empower your tomorrow</p>
-                            </div>
-                          
-                            
-                          </div>
+                         
+                         
+                        
                           <div className="team-item pr-5">
                             <span className="img-itm">
                             <img src={Commitment} className="img-fluid" />
@@ -120,7 +90,39 @@ function CoreValues() {
                                 <p className="text">Positivity is a virtue that comes by practice</p>
                             </div> 
                           </div>
-                        
+                          <div className="team-item pr-5">
+                            <span className="img-itm">
+                              <img src={Innovation} className="img-fluid" />
+                            </span>
+                            <div className="namedesg">
+                                <h4 className="title">Innovation</h4>
+                                <p className="text">The only way to win is by being creative</p>
+                            </div>
+                          
+                            
+                          </div>
+                          <div className="team-item pr-5">
+                            <span className="img-itm">
+                            <img src={Consistency} className="img-fluid" />
+                            </span>
+                            <div className="namedesg">
+                                <h4 className="title">Consistency</h4>
+                                <p className="text">Only factor which is more important than perfection</p>
+                            </div>
+                          
+                            
+                          </div>
+                            <div className="team-item pr-5">
+                            <span className="img-itm">
+                            <img src={Empowerment} className="img-fluid" />
+                            </span>
+                            <div className="namedesg">
+                                <h4 className="title">Empowerment</h4>
+                                <p className="text">Hustle today to empower your tomorrow</p>
+                            </div>
+                          
+                            
+                          </div>
                         </Slider>
                       </div>
                     </div>
