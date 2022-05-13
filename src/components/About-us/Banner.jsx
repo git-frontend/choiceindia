@@ -9,7 +9,7 @@ function Banner() {
      
     <section className="bannersection">
         <div className="container">
-            <div className="row gx-5">
+            <div className="row gx-5 align-items-center">
                 <div className="col-md-6">
                     <h1 className="title">About Us</h1>
 

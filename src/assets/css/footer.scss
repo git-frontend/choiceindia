@@ -153,6 +153,7 @@
                         &:hover{
                             -webkit-transform: translateY(-8px);
                             transform: translateY(-8px);
+                            background-color: #FFCE02;
                         }
                     }
                 }
@@ -175,7 +176,11 @@
                         color: #9A9A9A;
                         font-family: 'PoppinsMedium';
                         text-decoration: none;
+                    &:hover{
+                            color: #FFCE02;
+                        }
                     }
+                   
                     .fa-heart{
                         color: #EF5350;
                     }

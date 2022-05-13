@@ -58,7 +58,7 @@
 
     .benefits-perks{
         background: $primary;
-        padding: 10rem 0;
+        padding: 15rem 0;
         .heading-sec{
             .title-first{
                 color: $whiteColor;
@@ -222,6 +222,7 @@
                 margin-bottom: 1rem;
                 .sec-ttl{
                     color: $subtext;
+                    font-size: 1.4rem;
                     .apl-btn{
                         color: $bgcolor-yello;
                         text-decoration: none;
@@ -240,7 +241,7 @@
 }
 
 .culture-values{
-    padding: 10rem 0;
+    padding: 13rem 0 27rem 0;
     .culture-values-img{
         .shdow{
             box-shadow: 0 0 4px #ccc;

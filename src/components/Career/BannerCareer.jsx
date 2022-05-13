@@ -11,6 +11,7 @@ import Slider from "react-slick";
 function BannerCareer() {
 
     const settings = {
+      speed: 1500,
         arrows: false,
         slidesToShow: 1,
         dots:false,

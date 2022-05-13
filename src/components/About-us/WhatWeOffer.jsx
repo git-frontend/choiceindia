@@ -55,9 +55,9 @@ function WhatWeOffer() {
                         <Slider {...settings} className="offer-slider">
                       
                             <div className="card ">
-                              <span className="img-itm">
+                              <div className="img-itm">
                                 <img src={EquityBroking} className="img-fluid" />
-                              </span>
+                              </div>
                               <div className="namedesg">
                                   <h4 className="title">Equity Broking</h4>
                                   <p className="text">Invest in Capital Markets with our smart insights &amp; recommendations.</p>
@@ -77,9 +77,9 @@ function WhatWeOffer() {
                          
                          
                           <div className="card ">
-                            <span className="img-itm">
+                            <div className="img-itm">
                               <img src={Insurance} className="img-fluid" />
-                            </span>
+                            </div>
                             <div className="namedesg">
                                 <h4 className="title">Insurance</h4>
                                 <p className="text">We help you in finding the right insurance policies for unforeseen events.</p>
@@ -88,9 +88,9 @@ function WhatWeOffer() {
                           
                          
                           <div className="card ">
-                            <span className="img-itm">
+                            <div className="img-itm">
                               <img src={Loans} className="img-fluid" />
-                            </span>
+                            </div>
                             <div className="namedesg">
                                 <h4 className="title">Loans</h4>
                                 <p className="text">Choice Retail Loans team covers all loan requirements under one single umbrella.</p>
@@ -99,9 +99,9 @@ function WhatWeOffer() {
                         
                           
                             <div className="card">
-                              <span className="img-itm">
+                              <div className="img-itm">
                                 <img src={CapitalAdvisory} className="img-fluid" />
-                              </span>
+                              </div>
                               <div className="namedesg">
                                   <h4 className="title">Capital Advisory</h4>
                                   <p className="text">We help institutions optimise capital flows, transactions and liquidity.</p>
@@ -110,9 +110,9 @@ function WhatWeOffer() {
                    
                         
                             <div className="card">
-                              <span className="img-itm">
+                              <div className="img-itm">
                                 <img src={ManagementConsult} className="img-fluid" />
-                              </span>
+                              </div>
                               <div className="namedesg">
                                   <h4 className="title">Management Consult...</h4>
                                   <p className="text">Our team closely work with business leaders focusing on solving thier problems.</p>
@@ -121,9 +121,9 @@ function WhatWeOffer() {
                     
                          
                           <div className="card">
-                            <span className="img-itm">
+                            <div className="img-itm">
                               <img src={GovernmentAdvisory} className="img-fluid" />
-                            </span>
+                            </div>
                             <div className="namedesg">
                                 <h4 className="title">Government Advisory</h4>
                                 <p className="text">We help governments with development and financial projects for national interest</p>
@@ -132,9 +132,9 @@ function WhatWeOffer() {
                          
                          
                           <div className="card">
-                            <span className="img-itm">
+                            <div className="img-itm">
                               <img src={TaxAdvisory} className="img-fluid" />
-                            </span>
+                            </div>
                             <div className="namedesg">
                                 <h4 className="title">Tax Advisory</h4>
                                 <p className="text">Our team is well equipped with everything to deliver efficient tax management.</p>

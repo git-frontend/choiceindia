@@ -77,23 +77,39 @@ function Journey() {
                                2011
                               </div>
                           </div>
-                          <div className="subtext"><p>Group  Incorporation</p></div>
+                          <div className="subtext"><p>SEBI Liscense</p></div>
                       </div>
                       <div className="Journey-item">
                           <div className="year">
                               <div className="number">
-                                1992
+                                2017
                               </div>
                           </div>
-                          <div className="subtext"><p>Group  Incorporation</p></div>
+                          <div className="subtext"><p>Launch of  Mutual Fund App - Investica</p></div>
                       </div>
                       <div className="Journey-item">
                           <div className="year">
                               <div className="number">
-                                1992
+                                2018
                               </div>
                           </div>
-                          <div className="subtext"><p>Group  Incorporation</p></div>
+                          <div className="subtext"><p>Launched Trading App - Jiffy</p></div>
+                      </div>
+                      <div className="Journey-item">
+                          <div className="year">
+                              <div className="number">
+                                2022
+                              </div>
+                          </div>
+                          <div className="subtext"><p>Listing on NSE</p></div>
+                      </div>
+                      <div className="Journey-item">
+                          <div className="year">
+                              <div className="number">
+                                2023
+                              </div>
+                          </div>
+                          <div className="subtext"><p>Launched Personal Finance App - ChoiceFInX</p></div>
                       </div>
                     </Slider>
                   </div>
