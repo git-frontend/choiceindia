@@ -42,7 +42,7 @@
         background: url('../images/career/ourvalubefore.png') no-repeat bottom right;
         background-size: contain;
         z-index: -1;
-        @media (max-width: $sm){
+        @media (max-width: $sm-x){
            display: none;
         }
     }
@@ -113,7 +113,7 @@
             background: url('../images/career/culturebefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: -1;
-            @media (max-width: $sm){
+            @media (max-width: $sm-x){
             display: none;
             }
         }
@@ -232,7 +232,7 @@
             background: url('../images/career/ourteambefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: 1;
-            @media (max-width: $sm){
+            @media (max-width: $sm-x){
             display: none;
             }
         } 
@@ -282,7 +282,7 @@
             background: url('../images/career/marketingjobbefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: -1;
-            @media (max-width: $sm){
+            @media (max-width: $sm-x){
             display: none;
             }
         } 

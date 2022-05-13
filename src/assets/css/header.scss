@@ -124,6 +124,12 @@
                         @media (max-width: $md){
                             color: $primary;
                         }
+                        &:hover{
+                            &::before{
+                                content: '';
+                                background: $whiteColor;
+                            }
+                        }
                     }
                     &.get-btn{
                         a{
@@ -132,6 +138,10 @@
                             @media (max-width: $md){
                                 background: $primary;
                                 color: $whiteColor;
+                            }
+                            &:hover{
+                                background: $bgcolor-yello;
+                                color: $headingtext;
                             }
                         }
                     }

@@ -12,14 +12,14 @@ function AppTradeBenefits() {
       <section className="trade-benefits-section">
 				<div className="container">
 					<div className="row">
-						<div className="col-lg-12">
+						<div className="col-lg-9 col-md-12">
                 <div className='trade-benefits-sub'>
                 <div className="heading-sec">
 								 <h2 className="title-secnd">Trade with the best mobile trading app in India and avail lucrative benefits.</h2>               
 							  </div>
 
                     <ul className='reset'>
-                      <li>Free* Demat Account Opening</li>
+                      <li>Free* <span className='clr-cng'>Demat Account Opening</span></li>
                       <li>Zero Account Opening Fees*</li>
                       <li>Low Brokerage Charges</li>
                       <li>Trade at 2 Paise*</li>

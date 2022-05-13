@@ -183,6 +183,16 @@
             .link-nrl{
                 display: block;
                 margin: 0 1.5rem;
+                -webkit-transform: perspective(1px) translateZ(0);
+                        transform: perspective(1px) translateZ(0);
+                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                        -webkit-transition-duration: 0.3s;
+                        transition-duration: 0.3s;
+                        -webkit-transition-property: transform;
+                        transition-property: transform;
+                        -webkit-transition-timing-function: ease-out;
+                        transition-timing-function: ease-out;
+                        position: relative;
                 .img-ico{
                     width: 14rem;
                     @media (max-width: $sm-x){
@@ -192,6 +202,9 @@
                 @media (max-width: $sm-x){
                     margin: 0 0.5rem;
                 }
+                &:hover{
+                    transform: translateY(-8px);
+                }
             }
         }
         @media (max-width: $sm-x){
@@ -200,11 +213,12 @@
     }
     .app-banner-bottom{
         background: #F3FAFF;
-        padding: 10rem 0;
+        padding: 13rem 0 10rem 0;
         
         .content-list{
                 position: relative;
                 padding: 2.5rem 0;
+                margin-top: 1rem;
             .content-list-itm{
                 padding-left: 3rem;
                 margin-bottom: 5rem;
@@ -359,6 +373,9 @@
             margin-bottom: 1rem;
             @media (max-width: $sm-x){
                 font-size: 1.5rem;
+            }
+            .clr-cng{
+                color: #0066B3;
             }
         }
     }
