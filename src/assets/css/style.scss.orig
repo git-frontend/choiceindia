@@ -240,6 +240,9 @@
             @media (max-width: $sm){
                 margin-right: 1rem;
             }
+<<<<<<< HEAD
+      
+=======
            
         }
 
@@ -257,6 +260,7 @@
            
             
            
+>>>>>>> f5a686e59d9b4fec314d60495a4c89fc61b54f28
         }
 
        
