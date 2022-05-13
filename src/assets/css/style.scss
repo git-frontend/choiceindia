@@ -94,7 +94,7 @@
                     margin: 0;
                     button{
                         &::before{
-                            color: #797A7D;
+                            color: $dotColorgray;
                             font-size: 1rem;
                             line-height: 1rem;
                         }
@@ -289,7 +289,7 @@
                     -o-transition: 0.70s;
                     transform: rotate(-90deg);
                     bottom: 8rem;
-                    background: #DDD7D5;
+                    background: $bgcolor-fadegray;
                     border-radius: 10px;
                     color: $primary;
                     width: 14rem;
@@ -521,7 +521,7 @@
                         margin: 0;
                         button{
                             &::before{
-                                color: #797A7D;
+                                color: $dotColorgray;
                                 font-size: 1rem;
                                 line-height: 1rem;
                             }
@@ -701,7 +701,7 @@
                         font-size: 1.8rem;
                     }
                     h6{
-                        color: #9F9F9F;
+                        color: $darkColorgray;
                         font-size: 1.2rem;
                         padding-left: 2.5rem;
                         @media (max-width: $sm){
@@ -721,7 +721,7 @@
                     h5{
                         margin: 0;
                         margin-left: 0.5rem;
-                        color: #9F9F9F;
+                        color: $darkColorgray;
                     }
                 }
                 @media (max-width: 1025px){
@@ -747,7 +747,7 @@
                 background-size: contain;
                 display: block;
                 font-size: 2.5rem;
-                color: #9F9F9F;
+                color: $darkColorgray;
                 width: 2rem;
                 height: 1.5rem;
                 position: absolute;
@@ -788,7 +788,7 @@
                 background-size: contain;
                 display: block;
                 font-size: 2.5rem;
-                color: #9F9F9F;
+                color: $darkColorgray;
                 width: 2rem;
                 height: 1.5rem;
                 position: absolute;
@@ -945,7 +945,7 @@
         margin: 0;
         button{
             &::before{
-                color: #797A7D;
+                color: $graycolor;
                 font-size: 1rem;
                 line-height: 1rem;
             }
@@ -954,7 +954,7 @@
             button{
                 &::before{
                     opacity: 1;
-                    color: #797A7D;
+                    color: $graycolor;
                 }
             }
         }
