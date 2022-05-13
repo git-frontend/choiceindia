@@ -2,7 +2,7 @@ import React from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { useState } from 'react';
-import imageData from '../../Data/images';
+import imageData from '../../Data/Strategies';
 
 
 function AppStrategies() {
@@ -22,7 +22,7 @@ function AppStrategies() {
                       </div>
                   </div>
                     <div className='row d-flex justify-content-center'>
-                        <div className='col-md-10'>
+                        <div className='col-md-9'>
                         <div className="row app-trade-easy-div d-flex align-items-center">
                     
                     <div className='col-md-5'>

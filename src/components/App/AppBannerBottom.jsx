@@ -14,11 +14,13 @@ function AppBannerBottom() {
       
             <div className='app-banner-bottom'>
                 <div className='container'>
-                <div className="app-trade-easy-div row">
+                  <div className='row justify-content-center'>
+                    <div className='col-md-10'>
+                    <div className="app-trade-easy-div row">
                     
                     
 
-                    <div className='col-md-4'>
+                    <div className='col-md-5'>
                         <div className='content-list'>
                         <div className="content-list-itm list-itm-active"
                             
@@ -78,7 +80,7 @@ function AppBannerBottom() {
 
 
                     </div>
-                    <div className='col-md-8'>
+                    <div className='col-md-7'>
                         
                             <div className="trade-easy-images-div">
                                <img src={imageData[isShown2].image}
@@ -89,7 +91,9 @@ function AppBannerBottom() {
 
                         
                     </div>
-             </div>
+                </div>
+                    </div>
+                  </div>
                 </div>
             </div>
              
