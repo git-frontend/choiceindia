@@ -5,6 +5,10 @@
         position: relative;
         .ban-img{
             width: 100%;
+            @media (max-width: $sm-x){
+                height: 350px;
+                object-fit: cover;
+            }
         }
         .app-banner-caption{
             position: absolute;
@@ -16,6 +20,9 @@
             color: $whiteColor;
             .big-ttl{
                 color: $whiteColor;
+                @media (max-width: $sm-x){
+                    font-size: 2rem;
+                }
             }
             p{
                 color: $whiteColor;
@@ -40,24 +47,39 @@
                     .img-ico{
                         width: 17rem;
                         display: block;
+                        @media (max-width: $sm-x){
+                            width: 8rem;
+                        }
                     }
                     &:hover{
                         transform: translateY(-8px);
                     }
+                    @media (max-width: $sm-x){
+                        margin-right: 1rem;
+                    }
+                }
+                @media (max-width: $sm-x){
+                    margin: 2rem 0;
                 }
             }
         }
     }
 
     .app-benefits-section{
-        padding: 15rem 0;
+        padding: 15rem 0 20rem 0;
         position: relative;
         .heading-sec{
             .title-first{
                 font-size: 3rem;
+                @media (max-width: $sm-x){
+                    font-size: 2rem;
+                }
             }
             p{
                 margin: 2rem 0 3rem 0;
+            }
+            @media (max-width: $sm-x){
+                margin-bottom: 4rem;
             }
         }
         .benifit-value-list{
@@ -81,9 +103,21 @@
                     line-height: 1.5;
                     font-family: "PoppinsSemiBold";
                     color: #221F20;
+                    @media (max-width: $sm-x){
+                        font-size: 1.4rem;
+                        line-height: 1.3;
+                    }
                 }
                 &:first-child{
                     margin-right: 0;
+                    @media (max-width: $sm-x){
+                        margin-right: 2%;
+                    }
+                }
+                @media (max-width: $sm-x){
+                    margin: 2%;
+                    width: 46%;
+                    padding: 1rem;
                 }
             }
         }
@@ -106,6 +140,211 @@
                 display: none;
             }
         }
+        @media (max-width: $sm-x){
+            padding: 5rem 0;
+            text-align: center;
+        }
+    }
+    .app-cont-sec{
+        background: $whiteColor;
+        padding: 13rem 0;
+        .heading-sec{
+            text-align: center;
+        }
+        .cont-sec-list{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            margin: 5rem 0;
+            padding: 0;
+            .cont-sec-item{
+                width: 33.33%;
+                padding: 2rem;
+                .title-secnd{
+                    font-size: 3rem;
+                    margin-bottom: 0.5rem;
+                    @media (max-width: $sm-x){
+                        font-size: 2rem;
+                    }
+                }
+                p{
+                    color: $headingtext;
+                }
+                @media (max-width: $sm-x){
+                    width: 100%;
+                    padding: 1rem;
+                }
+            }
+            @media (max-width: $sm-x){
+                margin: 1rem 0;
+            }
+        }
+        .wrap-app-links{
+            .link-nrl{
+                display: block;
+                margin: 0 1.5rem;
+                .img-ico{
+                    width: 14rem;
+                    @media (max-width: $sm-x){
+                        width: 12rem;
+                    }
+                }
+                @media (max-width: $sm-x){
+                    margin: 0 0.5rem;
+                }
+            }
+        }
+        @media (max-width: $sm-x){
+            padding: 5rem 0;
+        }
+    }
+    .app-banner-bottom{
+        background: #F3FAFF;
+        padding: 10rem 0;
+        
+        .content-list{
+                position: relative;
+                padding: 2.5rem 0;
+            .content-list-itm{
+                padding-left: 3rem;
+                margin-bottom: 5rem;
+                position: relative;
+                &.list-itm-active{
+                    &::before{
+                        content: '';
+                    background: #FFCE02;
+                    width: 6px;
+                    height: 100%;
+                    border-radius: 8px;
+                    position: absolute;
+                    left: -2px;
+                    display: block;
+                    }
+                    .single-ttl{
+                        color: $headingtext;
+                    }
+                    .para{
+                        display: block;
+                    }
+                }
+                .single-ttl{
+                    font-family: 'PoppinsSemiBold';
+                    font-size: 1.75rem;
+                    color: #9F9F9F;
+                }
+                .para{
+                    display: none;
+                }
+                &:last-child{
+                    margin-bottom: 0;
+                }
+               
+            }
+            &::before{
+                content: '';
+                background: #FFCE02;
+                width: 3px;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                opacity: 0.1;
+                border-radius: 2px;
+            }
+        }
+        .trade-easy-images-div{
+            display: flex;
+            justify-content: center;
+            padding: 0 2rem;
+            .single-trade-easy-images{
+                max-width: 100%;
+            }
+        }
+    }
+
+    .app-strategies-bottom{
+        padding-bottom: 10rem;
+        .content-list{
+            padding-left: 5rem;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            .content-list-itm{
+                border: 2px solid #F5F5F5;
+                border-radius: 20px;
+                padding: 2rem 1.5rem;
+                margin-bottom: 3rem;
+                position: relative;
+                width: 90%;
+                h4{
+                    font-family: "PoppinsSemiBold";
+                    font-size: 1.5rem;
+                    color: $headingtext;
+                    position: relative;
+                    z-index: 99;
+                   
+                }
+                .para{
+                    color: #707070;
+                    position: relative;
+                    z-index: 99;
+                    margin-bottom: 0;
+                }
+                &.list-itm-active{
+                    background: #F5F5F5;
+                    left: -10%;
+                    &::before{
+                        content: '';
+                        width: 5rem;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: -10px;
+                        background: $bgcolor-yello;
+                        border-radius: 20px 0 0 20px;
+                    }
+                    &::after{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 20px;
+                        background: #F5F5F5;
+                    }
+                    @media (max-width: $sm){
+                        left: 0;
+                    }
+                }
+                @media (max-width: $sm){
+                    width: 100%;
+                }
+            }
+            @media (max-width: $sm){
+                padding-left: 1rem;
+             }
+        }
+        .title-secnd{
+            text-align: center;
+            margin-bottom: 8rem;
+            @media (max-width: $sm){
+                margin-bottom: 3rem;
+            }
+        }
+        .trade-easy-images-div{
+            .single-trade-easy-images{
+                max-width: 100%;
+            }
+            @media (max-width: $sm){
+                margin-bottom: 3rem;
+            }
+        }
+        @media (max-width: $sm){
+            padding-bottom: 3rem;
+        }
     }
 }
 
@@ -118,6 +357,12 @@
             font-size: 2rem;
             font-family: 'PoppinsMedium';
             margin-bottom: 1rem;
+            @media (max-width: $sm-x){
+                font-size: 1.5rem;
+            }
         }
+    }
+    @media (max-width: $sm-x){
+        padding: 5rem 1rem;
     }
 }

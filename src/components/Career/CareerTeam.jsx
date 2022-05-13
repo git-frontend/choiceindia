@@ -1,6 +1,7 @@
 
 import  CareerImage13 from '../../assets/images/career/bg1.jpg';
 import React from 'react';
+import {Dropdown} from 'react-bootstrap';
 // import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 function CareerTeam() {
@@ -48,7 +49,17 @@ function CareerTeam() {
                         </div>
                         <div className='col-md-5'>
                             <div className='cust-dropdown'>
-                   
+                            <Dropdown>
+                                <Dropdown.Toggle variant="Info" id="dropdown-basic">
+                                  Mumbai
+                                </Dropdown.Toggle>
+
+                                <Dropdown.Menu>
+                                    <Dropdown.Item href="#/action-1">Delhi</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-2">Bangalore</Dropdown.Item>
+                                    <Dropdown.Item href="#/action-3">Hyderabad</Dropdown.Item>
+                                </Dropdown.Menu>
+                                </Dropdown>
 
                                 
                             </div>

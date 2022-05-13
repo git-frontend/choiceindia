@@ -16,7 +16,7 @@ function FablesStories() {
         infinite: true,
         speed: 1500,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 4,
         autoplay: false,
         dots:true,
         autoplaySpeed: 1000,

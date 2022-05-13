@@ -7,6 +7,7 @@ import Clients from './Clients';
 import Journey from './Journey';
 import CoreValues from './CoreValues';
 import WhatWeOffer from './WhatWeOffer';
+import AboutHeader from './AboutHeader';
 
 import "../../assets/css/aboutus.scss";
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -20,6 +21,7 @@ function AboutIndex() {
       
      
        <div className="mainwrapper">
+         <AboutHeader />
          <Banner />
          <Team />
          <Journey />
