@@ -240,7 +240,26 @@
             @media (max-width: $sm){
                 margin-right: 1rem;
             }
+           
         }
+
+        .media{
+            &:hover{
+                .black{
+                
+                    fill: #221F20;
+                } 
+                .yellow{
+                    fill: #FFCE02;
+                   
+                }
+            }
+           
+            
+           
+        }
+
+       
         @media (max-width:$sm){
            justify-content: center;
         }
