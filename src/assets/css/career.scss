@@ -2,6 +2,7 @@
 
 
 .career-list-slider{
+ 
     .slick-slide{
         padding:0 2rem;
         outline: none;
@@ -15,10 +16,12 @@
             padding: 0 1rem;
         }
     }
+   
 }
 
 .our-values{
     padding: 13rem 0;
+    position: relative;
     .heading-sec{
         text-align: center;
         @media (max-width: $sm){
@@ -27,6 +30,21 @@
     }
     @media (max-width: $md){
         padding: 5rem 0 0 0;
+    }
+    &:before{
+        content: "";
+        width: 22em;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -150px;
+        background: url('../images/career/ourteambefore.png') no-repeat bottom right;
+        background-size: contain;
+        z-index: -1;
+        @media (max-width: $sm){
+           display: none;
+        }
     }
 }
 
