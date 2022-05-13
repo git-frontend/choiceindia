@@ -168,7 +168,7 @@
                     }
                 }
                 p{
-                    color: $headingtext;
+                    color: $primary;
                 }
                 @media (max-width: $sm-x){
                     width: 100%;
@@ -221,7 +221,7 @@
                     display: block;
                     }
                     .single-ttl{
-                        color: $headingtext;
+                        color: $primary;
                     }
                     .para{
                         display: block;
@@ -279,7 +279,7 @@
                 h4{
                     font-family: "PoppinsSemiBold";
                     font-size: 1.5rem;
-                    color: $headingtext;
+                    color: $primary;
                     position: relative;
                     z-index: 99;
                    
@@ -301,7 +301,7 @@
                         position: absolute;
                         top: 0;
                         left: -10px;
-                        background: $bgcolor-yello;
+                        background: $bgcolor-yellow;
                         border-radius: 20px 0 0 20px;
                     }
                     &::after{

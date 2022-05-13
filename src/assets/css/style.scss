@@ -17,8 +17,8 @@
                 font-size: 4.4rem;
                 line-height: 70px;
 
-                font-family: 'PoppinsBold';
-                color: $headingtext;
+                font-family: $font-family-poppins-bold;
+                color: $primary;
                 @media (max-width: $md){
                     font-size: 3rem;
                 }
@@ -56,18 +56,18 @@
                 }
                 h5{
                     font-size: 2rem;
-                    font-family: 'PoppinsSemiBold';
+                    font-family: $font-family-poppins-semibold;
                     text-transform: capitalize;
                     margin-bottom: 1rem;
                 }
                 p{
-                    font-family: 'PoppinsRegular';
+                    font-family: $font-family-poppins-regular;
                     font-size: 1.5rem;
                     line-height: 2.25rem;
                 }
                 a{
-                    font-family: 'PoppinsMedium';
-                    color: $headingtext;
+                    font-family: $font-family-poppins-medium;
+                    color: $primary;
                     text-decoration: none;
                     font-size: 1.375rem;
                     display: flex;
@@ -176,15 +176,15 @@
                     height: 100%;
                     h4{
                         font-size: 1.625rem;
-                        font-family: 'PoppinsSemiBold';
-                        color: $headingtext;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
                         margin: 1rem 0;
                     }
                     p{
                         font-size: 1.125rem;
                         line-height: 1.7rem;
                         margin-bottom: 0;
-                        color: $headingtext;
+                        color: $primary;
                     }
                 }
                 @media (max-width: $sm){
@@ -291,7 +291,7 @@
                     bottom: 8rem;
                     background: #DDD7D5;
                     border-radius: 10px;
-                    color: $headingtext;
+                    color: $primary;
                     width: 14rem;
                     padding: 0.5rem 1rem;
                     text-align: left;
@@ -299,7 +299,7 @@
                         transform: rotate(0);
                         bottom: 2rem;
                         left: 2rem;
-                        background: #FFCE02;
+                        background: $bgcolor-yellow;
                     }
                 }
             }
@@ -309,7 +309,7 @@
                     transform: rotate(0);
                     bottom: 2rem;
                     left: 2rem;
-                    background: #FFCE02;
+                    background: $bgcolor-yellow;
                 }
                 @media (max-width: $sm){
                     width: 100%;
@@ -322,21 +322,21 @@
                     transform: rotate(0);
                     bottom: 2rem;
                     left: 2rem;
-                    background: #FFCE02;
+                    background: $bgcolor-yellow;
                 }
                 @media (max-width: $sm){
                     width: 100%;
                     text-align: center;
                 }
-                .item-cont-descr{
-                    p{
-                        // overflow: inherit;
-                        // text-overflow: inherit;
-                        // white-space: initial;
-                        // display: -webkit-box;
-                        // -webkit-line-clamp: inherit;
-                    }
-                }
+                // .item-cont-descr{
+                //     p{
+                //         overflow: inherit;
+                //         text-overflow: inherit;
+                //         white-space: initial;
+                //         display: -webkit-box;
+                //         -webkit-line-clamp: inherit;
+                //     }
+                // }
             }
             .item-cont-descr{
                 padding: 1.5rem 0;
@@ -420,7 +420,7 @@
                 }
                 h4{
                     font-size: 1.8rem;
-                    font-family: 'PoppinsSemiBold';
+                    font-family: $font-family-poppins-semibold;
                     color: $whiteColor;
                     margin: 1.7rem 0 1rem 0;
                 }
@@ -474,8 +474,8 @@
             padding-top: 5rem;
             h4{
                 font-size: 2.25rem;
-                color: $headingtext;
-                font-family: 'PoppinsSemiBold';
+                color: $primary;
+                font-family: $font-family-poppins-semibold;
                 margin-bottom: 2rem;
             }
             p{
@@ -601,8 +601,8 @@
             background: $whiteColor;
             h4{
                 font-size: 3.5rem;
-                font-family: 'PoppinsSemiBold';
-                color: $headingtext;
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
                 @media (max-width: $sm-x){
                     font-size: 2.5rem;
                 }
@@ -696,7 +696,7 @@
 
                     }
                     h4{
-                        font-family: 'RedHatDisplayBold';
+                        font-family: $font-family-RedHat-Bold;
                         padding-left: 1rem;
                         font-size: 1.8rem;
                     }
@@ -887,13 +887,13 @@
                 height: 100%;
                 h4{
                     font-size: 2rem;
-                    font-family: 'PoppinsSemiBold';
+                    font-family: $font-family-poppins-semibold;
                     margin: 1rem 0 1rem 0;
                 }
             }
             &::before{
                 content: '';
-                background: #FFCE02;
+                background: $bgcolor-yellow;
                 width: 100%;
                 height: 100%;
                 display: block;
@@ -911,7 +911,7 @@
             }
             &:hover{
                 .bx-item-cont{
-                    border: 3px solid #FFCE02;
+                    border: 3px solid $bgcolor-yellow;
                     box-shadow: none;
                 }
                 &::before{

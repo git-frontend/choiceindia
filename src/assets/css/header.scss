@@ -34,7 +34,7 @@
                     a{
                         font-size: 1.5rem;
                         color: #221f20bf;
-                        font-family: 'PoppinsMedium';
+                        font-family: $font-family-poppins-medium;
                         text-decoration: none;
                         white-space: nowrap;
                         position: relative;
@@ -42,13 +42,13 @@
                             font-size: 1.4rem;
                         }
                         &:hover{
-                            color: $headingtext;
+                            color: $primary;
                             &::before{
                                 content: '';
                                 width: 0.5rem;
                                 height: 0.5rem;
                                 display: block;
-                                background: $headingtext;
+                                background: $primary;
                                 position: absolute;
                                 bottom: 0;
                                 left: 0;
@@ -63,7 +63,7 @@
                     &.login-btn{
                         margin-left: 5rem;
                         a{
-                            font-family: 'PoppinsSemiBold';
+                            font-family: $font-family-poppins-semibold;
                         }
                         @media screen and (max-width: 1170px) {
                             margin-left: 1rem;
@@ -71,15 +71,15 @@
                     }
                     &.get-btn{
                         a{
-                            background: $headingtext;
+                            background: $primary;
                             color: #F7F7F7;
                             display: block;
                             padding: 1rem 2rem;
                             border-radius: 18px;
                             text-align: center;
                             &:hover{
-                                background: $bgcolor-yello;
-                                color: $headingtext;
+                                background: $bgcolor-yellow;
+                                color: $primary;
                                 &::before{
                                     display: none;
                                 }
@@ -122,15 +122,15 @@
                     a{
                         color: $whiteColor;
                         @media (max-width: $md){
-                            color: $headingtext;
+                            color: $primary;
                         }
                     }
                     &.get-btn{
                         a{
                             background: $whiteColor;
-                            color: $headingtext;
+                            color: primary;
                             @media (max-width: $md){
-                                background: $headingtext;
+                                background: $primary;
                                 color: $whiteColor;
                             }
                         }
@@ -150,9 +150,9 @@ nav{
     padding-top: .5rem;
     padding-bottom: .5rem;
 }
-nav .navbar-collapse.collapse{
-    // display: block;
-}
+// nav .navbar-collapse.collapse{
+//     display: block;
+// }
 @media (max-width: 991px){
     nav .navbar-collapse.collapse{
         overflow: hidden;

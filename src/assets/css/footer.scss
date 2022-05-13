@@ -20,14 +20,14 @@
                        h4{
                         color: $lightColor;
                         font-size: 1.4rem;
-                        font-family: 'PoppinsBold';
+                        font-family: font-family-poppins-bold;
                        }
                        a{
                            color: $lightColor;
                            font-size: 1.2rem;
                            text-decoration: none;
                            &:hover{
-                               color: $bgcolor-yello;
+                               color: $bgcolor-yellow;
                            }
                        }
                    }
@@ -73,7 +73,7 @@
                     color: $lightColor;
                     text-decoration: none;
                     &:hover{
-                        color: $bgcolor-yello;
+                        color: $bgcolor-yellow;
                     }
                 }
                 @media (max-width: 768px){
@@ -153,7 +153,7 @@
                         &:hover{
                             -webkit-transform: translateY(-8px);
                             transform: translateY(-8px);
-                            background-color: #FFCE02;
+                            background-color: $bgcolor-yellow;
                         }
                     }
                 }
@@ -170,11 +170,11 @@
                 > li{
                     margin-left:2rem;
                     color: #9A9A9A;
-                    font-family: 'PoppinsMedium';
+                    font-family: $font-family-poppins-medium;
                     font-size: 1.2rem;
                     a{
                         color: #9A9A9A;
-                        font-family: 'PoppinsMedium';
+                        font-family: $font-family-poppins-medium;
                         text-decoration: none;
                     &:hover{
                             color: #FFCE02;
@@ -204,13 +204,13 @@
     background: #292728;
     p{
         color: $whiteColor;
-        font-family: 'PoppinsMedium';
+        font-family: $font-family-poppins-medium;
         font-size: 1.1rem;
         line-height: 2.8;
     }
     .moreless-button{
         color: $whiteColor;
-        font-family: 'PoppinsMedium';
+        font-family: $font-family-poppins-medium;
         font-size: 1.2rem;
         text-decoration: none;
         cursor: pointer;
