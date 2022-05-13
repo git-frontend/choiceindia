@@ -1,7 +1,7 @@
 
 import  CareerImage13 from '../../assets/images/career/bg1.jpg';
 import React from 'react';
-import { Dropdown } from 'react-bootstrap';
+import {Dropdown} from 'react-bootstrap';
 // import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 function CareerTeam() {
