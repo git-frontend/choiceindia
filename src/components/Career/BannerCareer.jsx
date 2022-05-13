@@ -11,12 +11,12 @@ import Slider from "react-slick";
 function BannerCareer() {
 
     const settings = {
-      speed: 1500,
+        speed: 2000,
         arrows: false,
         slidesToShow: 1,
         dots:false,
         autoplay:true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 800,
         centerMode: true,
         infinite: true,
         centerPadding: '30%',

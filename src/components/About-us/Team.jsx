@@ -11,13 +11,13 @@ import Slider from "react-slick";
 function Team() {
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed: 4000,
         arrows: true,
         slidesToShow: 3,
         autoplay: true,
         margin:15,
         dots:false,
-        autoplaySpeed: 3800,
+        autoplaySpeed: 800,
         slidesToScroll: 3,
         responsive: [
           {

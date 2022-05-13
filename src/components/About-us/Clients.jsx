@@ -10,14 +10,14 @@ import Slider from "react-slick";
 function Clients() {
     const settings = {
         infinite: true,
-        speed: 1500,
+        speed:3500,
         height: 100,
         arrows: false,
         slidesToShow: 5,
-        autoplay: false,
+        autoplay: true,
         margin:20,
         dots:false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 800,
         slidesToScroll: 5,
         responsive: [
           {
