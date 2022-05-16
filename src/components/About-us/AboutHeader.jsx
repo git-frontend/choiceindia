@@ -1,6 +1,6 @@
 import "../../assets/css/header.scss"
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
-import MenuHeader from '../../common-components/MenuHeader';
+import MenuHeader from '../Common-features/MenuHeader';
 
 
 function AboutHeader() {

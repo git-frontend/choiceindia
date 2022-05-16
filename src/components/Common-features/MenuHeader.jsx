@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import  ImageSub0  from '../assets/images/logo.svg';
-import  ImageSub1  from '../assets/images/logo-white.svg';
+import  ImageSub0  from '../../assets/images/logo.svg';
+import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {Link} from 'react-router-dom';
 
 
