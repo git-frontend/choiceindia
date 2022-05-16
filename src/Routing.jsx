@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import ErrorPage from './components/Common-features/ErrorPage';
 
-import ErrorPage from './common-components/ErrorPage';
 import Home from './components/Home';
 import AboutIndex from './components/About-us/AboutIndex';
 import Career from './components/Career/Career';
