@@ -134,7 +134,7 @@
                     &.get-btn{
                         a{
                             background: $whiteColor;
-                            color: primary;
+                            color: $primary;
                             @media (max-width: $md){
                                 background: $primary;
                                 color: $whiteColor;

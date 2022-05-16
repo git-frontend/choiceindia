@@ -12,7 +12,7 @@ function AppTradeBenefits() {
       <section className="trade-benefits-section">
 				<div className="container">
 					<div className="row">
-						<div className="col-lg-9 col-md-12">
+						<div className="col-lg-11 col-md-12">
                 <div className='trade-benefits-sub'>
                 <div className="heading-sec">
 								 <h2 className="title-secnd">Trade with the best mobile trading app in India and avail lucrative benefits.</h2>               
