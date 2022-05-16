@@ -15,7 +15,7 @@ function AppTradeBenefits() {
 						<div className="col-lg-11 col-md-12">
                 <div className='trade-benefits-sub'>
                 <div className="heading-sec">
-								 <h2 className="title-secnd">Trade with the best mobile trading app in India and avail lucrative benefits.</h2>               
+								 <h2 className="title-secnd"><i class="bi bi-arrow-left"></i>Trade with the best mobile trading app in India and avail lucrative benefits.</h2>               
 							  </div>
 
                     <ul className='reset'>

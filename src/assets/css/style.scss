@@ -234,13 +234,16 @@
         width: 100%;
         a{
             margin-right: 2rem;
+            transition: transform 0.8s ease;
             .ico-img{
                 width: 5rem;
             }
             @media (max-width: $sm){
                 margin-right: 1rem;
             }
-           
+           &:hover{
+            transform: translateY(-8px);
+           }
         }
 
         .media{
