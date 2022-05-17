@@ -14,7 +14,7 @@
             bottom: -22rem;
             background: url(../images/app/bannerbefore.png) no-repeat bottom left;
             background-size: contain;
-            @media (max-width:$sm) {
+            @media (max-width:$sm-x) {
                 display: none;
             }
         }
@@ -58,7 +58,7 @@
                     background-color: #0066B3;
                     width: 17%;
                     border-radius: 100px;
-                    padding: 12px;
+                    padding: 10px;
                     margin-right: 2.5rem;
                     text-decoration: none;
                         -webkit-transform: perspective(1px) translateZ(0);
@@ -83,21 +83,31 @@
                     }
                     .whitecolor{
                         color: #FFFFFF;
-                        font-size: 18px;
+                        font-size: 20px;
+                        @media (max-width: $sm-x){
+                            font-size:16px;
+                        }
                     }
                     .blackcolor{
                        color:  #13151A;
-                       font-size: 18px;
+                       font-size: 20px;
+                       @media (max-width: $sm-x){
+                        font-size:16px;
+                    }
                     }
                     &:hover{
                         transform: translateY(-8px);
                     }
                     @media (max-width: $sm-x){
                         margin-right: 1rem;
-                        width: 57%;
+                        width: 42%;
                         margin-bottom: 1rem;
+                        padding: 8px;
                     }
                     @media (min-width:$sm-x) and (max-width: $md){
+                        width: 23%;
+                      }
+                      @media (min-width:769px) and (max-width:1024px){
                         width: 23%;
                       }
                 }
@@ -245,15 +255,15 @@
             display: flex;
             flex-wrap: wrap;
             .link-nrl{
-                display: flex;
-                align-items: center;
-                justify-content: space-evenly;
-                background-color: #0066B3;
-                width: 17%;
-                border-radius: 100px;
-                padding: 12px;
-                margin-right: 2.5rem;
-                text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    background-color: #0066B3;
+                    width: 17%;
+                    border-radius: 100px;
+                    padding: 12px;
+                    margin-right: 2.5rem;
+                    text-decoration: none;
                     -webkit-transform: perspective(1px) translateZ(0);
                     transform: perspective(1px) translateZ(0);
                     box-shadow: 0 0 1px rgb(0 0 0 / 0%);
@@ -264,6 +274,9 @@
                     -webkit-transition-timing-function: ease-out;
                     transition-timing-function: ease-out;
                     position: relative;
+                    @media (max-width: $sm-x){
+                       padding: 8px;
+                    }
                     &.black{
                         background-color: #221F20;
                     }
@@ -276,18 +289,24 @@
                 }
                 .whitecolor{
                     color: #FFFFFF;
-                    font-size: 18px;
+                    font-size: 20px;
+                    @media (max-width: $sm-x){
+                        font-size: 16px;
+                    }
                 }
                 .blackcolor{
                    color:  #13151A;
-                   font-size: 18px;
+                   font-size: 20px;
+                   @media (max-width: $sm-x){
+                    font-size: 16px;
+                }
                 }
                 &:hover{
                     transform: translateY(-8px);
                 }
                 @media (max-width: $sm-x){
                     margin-right: 1rem;
-                    width: 57%;
+                    width: 42%;
                     margin-bottom: 1rem;
                 }
                 @media (min-width:$sm-x) and (max-width: $md){
@@ -296,7 +315,6 @@
             }
             @media (max-width: $sm-x){
                 margin: 2rem 0;
-                flex-direction: column;
             }
          
         }
