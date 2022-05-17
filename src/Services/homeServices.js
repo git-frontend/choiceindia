@@ -1,7 +1,7 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
 
-export default {
+ const homeServices = {
 
 
     /** get market Insights and fabal */
@@ -31,3 +31,4 @@ export default {
 
   },
 };
+export default homeServices

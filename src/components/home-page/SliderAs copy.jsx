@@ -6,12 +6,12 @@ import  ImageSub23  from '../../assets/images/slide-img4.png';
 import  ImageSub24  from '../../assets/images/slide-img5.png';
 
 export default function SliderAs() {
-  const [nav1, setNav1] = React.useState(null)
-  const [nav2, setNav2] = React.useState(null)
+  const [nav1, setNav1] = useState(null)
+  const [nav2, setNav2] = useState(null)
     let slider1 = []
     let slider2 = []
 
-    React.useEffect(() => {
+    useEffect(() => {
         setNav1(slider1)
         setNav2(slider2)
     }, [slider1, slider2])

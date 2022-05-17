@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import  ImageSub0  from '../../assets/images/logo.svg';
@@ -6,14 +6,10 @@ import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {Link} from 'react-router-dom';
 
 
-export default class Header extends Component {
-    constructor(){
-        super();
-        this.state={
-            show: true,
-        }
-    }
-    render() {
+export default function Header() {
+
+    const [show, setShow] = useState(true)
+    
         return (
           
             <nav className="navbar navbar-expand-lg">
@@ -23,10 +19,10 @@ export default class Header extends Component {
                         <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
                     </a>
                     <button className="navbar-toggler border" 
-                    onClick={ ()=>{ this.setState({show: !this.state.show}) } } >
-                        {this.state.show ? <MenuIcon /> : <CloseIcon />}
+                    onClick={ ()=>{ setShow(false) } } >
+                        { show ? <MenuIcon /> : <CloseIcon />}
                     </button>
-                        <div className={this.state.show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
+                        <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
                             <li className="nav-item">
                                 <Link to= '/AboutIndex' className="single-nav-links nav-link">About</Link>
@@ -59,4 +55,4 @@ export default class Header extends Component {
           
         )
     }
-}
+

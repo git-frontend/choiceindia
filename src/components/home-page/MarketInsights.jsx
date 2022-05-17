@@ -1,6 +1,3 @@
-
-import ImageSub12 from '../../assets/images/market-img1.png';
-import ImageSub13 from '../../assets/images/market-img2.png';
 import React, { useEffect, useState } from "react";
 // import $ from 'jquery';
 import homeServices from '../../Services/homeServices';
@@ -10,10 +7,10 @@ import homeServices from '../../Services/homeServices';
 
 //     $('.insights-list-item').hover(
 //       function(){ 
-//         $(".insights-list-item.insights-list-active").addClass('inactive').removeClass('insights-list-active');
+//         $(".insights-list-item.insights-list-active").addclassName('inactive').removeclassName('insights-list-active');
 //       },
 //       function(){ 
-//         $(".insights-list-item.inactive").addClass('insights-list-active').removeClass('inactive'); 
+//         $(".insights-list-item.inactive").addclassName('insights-list-active').removeclassName('inactive'); 
 //       }
 //     );
 
@@ -42,7 +39,7 @@ function MarketInsights() {
     useEffect(() => {
         setTrigger(true)
 
-        if (trigger==true) {
+        if (trigger===true) {
             loadMarketinsite();
         }
 
@@ -65,11 +62,11 @@ function MarketInsights() {
                             <div className="market-insights-list">
                                 {
                                     fabal.slice(0, 4).map((response, index) => {
-                                        let classNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
+                                        let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
 
                                         return (
 
-                                            <div key={response.id} className={classNm} onMouseOver={() => setSelectedId(change)} onMouseLeave={() => setSelectedId(0)}  >
+                                            <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(change)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
                                                     <img src={response.feature_image} alt="" />
                                                     <span className="ttl-sm" >{response.meta_title || '-'}</span>

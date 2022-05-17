@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ImageSub1 from '../../assets/images/home-banner.jpg';
 import homeServices from '../../Services/homeServices';
 
 
@@ -13,7 +12,6 @@ function HomePageBanner() {
         homeServices.homePrimaryBanner().then(
             res => {
                 setPrimary(res.data.data);
-                console.log('primary', primary);
             }
         )
     };
@@ -21,7 +19,7 @@ function HomePageBanner() {
     /**onInIt Home Primary Banner */
     useEffect(() => {
         setTrigger(true)
-        if (trigger==true) {
+        if (trigger===true) {
             loadPrimarybanner();
         }
 

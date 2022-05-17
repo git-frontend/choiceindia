@@ -1,12 +1,47 @@
 import React from 'react';
 import { useState } from 'react';
 import imageData from '../../Data/images';
+import Slider from 'react-slick';
 
 
 function AppBannerBottom() {
-  const [isShown1, setIsShown1] = useState(true);
+  const [isShown1, setIsShown1] = useState(0);
   const [isShown2, setIsShown2] = useState(0);
+  const[change,setChange] = useState([1,2,3,4,5]);
   console.log("image", imageData)
+
+  const settings1 = {
+		infinite: true,
+		speed: 1500,
+    vertical:true,
+    focusOnSelect:true,
+    touchMove:true,
+		arrows: false,
+		slidesToShow: 6,
+		autoplay: true,
+		dots: false,
+		autoplaySpeed: 1000,
+		slidesToScroll: 1,
+		swipeToSlide: true,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+				},
+			},
+		],
+	};
+
   return (
     <div className='App-main'>
       
@@ -20,67 +55,39 @@ function AppBannerBottom() {
 
                     <div className='col-md-5'>
                         <div className='content-list'>
-                        <div className="content-list-itm list-itm-active"
-                            
-                            onClick={()=> setIsShown2(0)}
-                        >
-                            
-                            <h4 className="single-ttl">Trading Simplified</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
-
-                        <div className="content-list-itm"
-                        onClick={() => setIsShown2(1)}
+                        <Slider {...settings1}
+                        afterChange={(ev) => {
+                          setIsShown2(ev)
+                        }}
                         
                         >
-                            
-                            <h4 className="single-ttl">Wealth Pool</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
 
-                        <div className="content-list-itm"
-                        onClick={() => setIsShown2(2)}
-                            >
-                            <h4 className="single-ttl">Insuring Future</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
-                        <div className="content-list-itm"
-                        onClick={() => setIsShown2(3)}
-                            >
-                            <h4 className="single-ttl">Swift Loans</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
-                        <div className="content-list-itm"
-                        onClick={() => setIsShown2(4)}
-                            >
-                            <h4 className="single-ttl">Readymade Baskets</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
-                        <div className="content-list-itm"
-                        onClick={() => setIsShown2(5)}
-                            >
-                            <h4 className="single-ttl">Financial Planning</h4>
-                            <p className="para">
-                              Smoothly grow your investment portfolio with mutual funds
-                            </p>
-                        </div>
+                        {
+                          imageData?.map((response,index) =>{
+                    let classNm="content-list-itm " + ((index === isShown2) ? "list-itm-active":"")
+                            
+                              return(
+                                
+                                  <div className={classNm} onClick={() => setIsShown2(index)} onChange={()=> setIsShown2(index)} >   
+                                  <h4 className="single-ttl">{response.title}</h4>
+                                  <p className="para">
+                                 {response.description}
+                                  </p>
+                              </div>
+                              )
+
+
+                          })
+                      }
+                      </Slider>
+                      
                         </div>
 
 
                     </div>
                     <div className='col-md-7'>
                         
-                            <div className="trade-easy-images-div">
+                            <div className="trade-easy-images-div" >
                                <img src={imageData[isShown2].image}
                                 
                                     className="single-trade-easy-images"></img> 

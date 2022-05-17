@@ -1,6 +1,3 @@
-import ImageSub2 from '../../assets/images/icons/stock.svg';
-import ImageSub3 from '../../assets/images/icons/money-bag.svg';
-import ImageSub4 from '../../assets/images/icons/insurance.svg';
 import ImageSub5 from '../../assets/images/icons/arrow-left-circle-fill.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
@@ -32,7 +29,7 @@ function EverydayFinance() {
   useEffect(() => {
     setTrigger(true)
 
-    if (trigger==true) {
+    if (trigger===true) {
       loadSecondarybanner();
     }
 
@@ -43,10 +40,10 @@ function EverydayFinance() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     dots: true,
     autoplaySpeed: 1000,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
