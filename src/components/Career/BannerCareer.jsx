@@ -16,11 +16,14 @@ function BannerCareer() {
         slidesToShow: 1,
         dots:false,
         autoplay:true,
-        autoplaySpeed: 800,
+        autoplaySpeed: 0,
         centerMode: true,
         infinite: true,
         centerPadding: '30%',
         slidesToScroll: 1,
+        loop:true,
+         slide: 'div',
+         cssEase: 'linear',
         responsive: [
           {
             breakpoint: 768,

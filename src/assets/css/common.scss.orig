@@ -23,7 +23,7 @@ html{
       }
 }
 body{
-    font-family: $font-family-poppins-regular, sans-serif;
+    font-family: $font-family-poppins-regular;
     font-size: 1.375rem;
     color: $primary;
 }
@@ -41,8 +41,14 @@ body{
 
 .title-secnd{
     font-size: 3rem;
+<<<<<<< HEAD
     color: $primary;
     font-family: $font-family-poppins-semibold;
+=======
+    line-height: 1.4;
+    color: $headingtext;
+    font-family: 'PoppinsSemiBold';
+>>>>>>> 38fbce32fa21570a773fe881f7e9c1ba06000ce8
     @media (max-width: 767px){
         font-size: 1.8rem;
     }

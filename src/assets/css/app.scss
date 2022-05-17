@@ -2,13 +2,30 @@
 
 .App-main{
     .banner-app{
+       
         position: relative;
+        &:before{
+            content:'';
+            width: 22em;
+            height: 42rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -22rem;
+            background: url(../images/app/bannerbefore.png) no-repeat bottom left;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
         .ban-img{
             width: 100%;
+          
             @media (max-width: $sm-x){
                 height: 350px;
                 object-fit: cover;
             }
+            
         }
         .app-banner-caption{
             position: absolute;
@@ -63,11 +80,27 @@
                 }
             }
         }
+       
     }
 
     .app-benefits-section{
         padding: 15rem 0 20rem 0;
         position: relative;
+        &:after{
+            content:'';
+            width: 36em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -22rem;
+            background: url(../images/app/appbefore.png) no-repeat bottom left;
+            background-size: contain;
+            z-index: -1;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
         .heading-sec{
             .title-first{
                 font-size: 3rem;
@@ -102,7 +135,7 @@
                     font-size: 1.78rem;
                     line-height: 1.5;
                     font-family: "PoppinsSemiBold";
-                    color: #221F20;
+                    color: $primary;
                     @media (max-width: $sm-x){
                         font-size: 1.4rem;
                         line-height: 1.3;
@@ -168,7 +201,7 @@
                     }
                 }
                 p{
-                    color: $headingtext;
+                    color: $primary;
                 }
                 @media (max-width: $sm-x){
                     width: 100%;
@@ -214,7 +247,21 @@
     .app-banner-bottom{
         background: #F3FAFF;
         padding: 13rem 0 10rem 0;
-        
+        position: relative;
+        &:after{
+            content:'';
+            width: 22em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -13rem;
+            background: url(../images/app/sliderbefore.png) no-repeat bottom right;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
         .content-list{
                 position: relative;
                 padding: 2.5rem 0;
@@ -226,7 +273,7 @@
                 &.list-itm-active{
                     &::before{
                         content: '';
-                    background: #FFCE02;
+                    background: $bgcolor-yellow;
                     width: 6px;
                     height: 100%;
                     border-radius: 8px;
@@ -235,16 +282,16 @@
                     display: block;
                     }
                     .single-ttl{
-                        color: $headingtext;
+                        color: $primary;
                     }
                     .para{
                         display: block;
                     }
                 }
                 .single-ttl{
-                    font-family: 'PoppinsSemiBold';
+                    font-family: $font-family-poppins-semibold;
                     font-size: 1.75rem;
-                    color: #9F9F9F;
+                    color: $darkColorgray;
                 }
                 .para{
                     display: none;
@@ -256,7 +303,7 @@
             }
             &::before{
                 content: '';
-                background: #FFCE02;
+                background: $bgcolor-yellow;
                 width: 3px;
                 height: 100%;
                 position: absolute;
@@ -278,6 +325,35 @@
 
     .app-strategies-bottom{
         padding-bottom: 10rem;
+        position: relative;
+        &:before{
+            content:'';
+            width: 22em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -26rem;
+            background: url(../images/app/realtimebefore.png) no-repeat bottom right;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+        &:after{
+            content:'';
+            width: 25em;
+            height: 32rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -9rem;
+            background: url(../images/app/realtimeafter.png) no-repeat bottom left;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
         .content-list{
             padding-left: 5rem;
             display: flex;
@@ -291,21 +367,21 @@
                 position: relative;
                 width: 90%;
                 h4{
-                    font-family: "PoppinsSemiBold";
+                    font-family: $font-family-poppins-semibold;
                     font-size: 1.5rem;
-                    color: $headingtext;
+                    color: $primary;
                     position: relative;
                     z-index: 99;
                    
                 }
                 .para{
-                    color: #707070;
+                    color: $secondary;
                     position: relative;
                     z-index: 99;
                     margin-bottom: 0;
                 }
                 &.list-itm-active{
-                    background: #F5F5F5;
+                    background: $bgolor-lightwhite;
                     left: -10%;
                     &::before{
                         content: '';
@@ -315,7 +391,7 @@
                         position: absolute;
                         top: 0;
                         left: -10px;
-                        background: $bgcolor-yello;
+                        background: $bgcolor-yellow;
                         border-radius: 20px 0 0 20px;
                     }
                     &::after{
@@ -327,7 +403,7 @@
                         left: 0;
                         top: 0;
                         border-radius: 20px;
-                        background: #F5F5F5;
+                        background: $bgolor-lightwhite;
                     }
                     @media (max-width: $sm){
                         left: 0;
@@ -363,13 +439,28 @@
 }
 
 .trade-benefits-section{
-    background: #E0D6F4;
+    background:$bgcolor-lightgray;
     padding: 10rem 0;
+    position: relative;
+    &:after{
+        content:'';
+        width: 33em;
+        height: 45rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -22rem;
+        background: url(../images/app/wealthbefore.png) no-repeat bottom right;
+        background-size: contain;
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
     .reset{
         margin: 3rem 0 4rem;
         li{
             font-size: 2rem;
-            font-family: 'PoppinsMedium';
+            font-family:$font-family-poppins-medium;
             margin-bottom: 1rem;
             @media (max-width: $sm-x){
                 font-size: 1.5rem;

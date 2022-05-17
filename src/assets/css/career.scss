@@ -140,10 +140,10 @@
                 .ttl1{
                     font-size: 4.5rem;
                     color: $lightColor;
-                    font-family: 'PoppinsBold';
+                    font-family: $font-family-poppins-bold;
                     margin-bottom: 3rem;
                     span{
-                        color: $bgcolor-yello;
+                        color: $bgcolor-yellow;
                     }
                     @media (max-width: $md){
                         font-size: 3.5rem;
@@ -169,7 +169,7 @@
                             right: 3px;
                             top: 3.5px;
                             background: $bgcolordark;
-                            color: #F7F7F7;
+                            color: $whiteColorlight;
                             display: block;
                             padding: 0.5rem 2rem;
                             border-radius: 7px;
@@ -243,7 +243,7 @@
         position: relative;
         .ttl2{
             font-size: 2rem;
-            font-family: 'PoppinsSemiBold';
+            font-family: $font-family-poppins-semibold;
         }
         .jobs-list{
             margin-top: 2rem;
@@ -256,10 +256,10 @@
                 border-bottom: 1px solid #E5E5E5;
                 margin-bottom: 1rem;
                 .sec-ttl{
-                    color: $subtext;
+                    color: $secondary;
                     font-size: 1.4rem;
                     .apl-btn{
-                        color: $bgcolor-yello;
+                        color: $bgcolor-yellow;
                         text-decoration: none;
                     }
                     @media (max-width: $sm){

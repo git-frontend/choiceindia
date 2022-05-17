@@ -16,20 +16,20 @@ body{
         padding:8rem 0 4rem;
     }
     .title{
-        color: $headingtext;
+        color: $primary;
         font-weight: 700;
         font-size: 4.125rem;
         line-height: 6.1875rem;
         padding-bottom: 2.1875rem;
         padding-top: 1.25rem;
-        font-family: 'PoppinsBold';
+        font-family: $font-family-poppins-bold;
     }
     .para{
         font-weight: 400;
         font-size: 1.75rem;
         line-height: 2.375rem;
-        color: $subtext;
-        font-family: 'PoppinsRegular';
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
     }
     
     .rightsec{
@@ -48,7 +48,7 @@ body{
     line-height: 5.25rem;
     text-align: center;
     text-shadow:0 0 4px #00000040;
-    font-family: 'PoppinsSemiBold';
+    font-family: $font-family-poppins-semibold;
     padding-bottom: 3.375rem;
     @media (max-width:$sm) {
        font-size: 3rem;
@@ -136,14 +136,14 @@ body{
                    font-size: 1.625rem;
                    line-height: 2.4375rem;
                    text-align: center;
-                   font-family: 'PoppinsSemiBold';
+                   font-family: $font-family-poppins-semibold;
                    font-weight: 600;
                    @media (min-width:769px) and (max-width:1024px) {
                     font-size: 1.3rem;
                  }
                 }
                 .designation{
-                    font-family: 'PoppinsRegular';
+                    font-family: $font-family-poppins-regular;
                     color: $whiteColor;
                     font-size: 1.125rem;
                     line-height: 1.5rem;
@@ -160,69 +160,69 @@ body{
             }
            
         }
-        // .slick-arrow {
-        //     z-index: 1;
-        //     @media (max-width:$sm) {
-        //         top: 65%;
-        //      }
+        .slick-arrow {
+            z-index: 1;
+            @media (max-width:$sm) {
+                top: 65%;
+             }
          
-        // }
-        // .slick-next:before{
-        //     content: url('../images/about-us/next.png');
-        //     position: absolute;
-        //     height: 5.5rem;
-        //     width: 5.5rem;
-        //     background-color: $headingtext;
-        //     border-radius: 50%;
-        //     top: -70%;
-        //     right: 28px;
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        //     opacity: 1;
+        }
+        .slick-next:before{
+            content: url('../images/about-us/next.png');
+            position: absolute;
+            height: 5.5rem;
+            width: 5.5rem;
+            background-color: $primary;
+            border-radius: 50%;
+            top: -70%;
+            right: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
             
-        //     @media (max-width:$sm) {
-        //         height: 3.8rem;
-        //         width: 3.8rem;
-        //         top: -3.125rem;
-        //          right:2rem;
-        //          content: url('../images/about-us/next-resp.png');
-        //      }
+            @media (max-width:$sm) {
+                height: 3.8rem;
+                width: 3.8rem;
+                top: -3.125rem;
+                 right:2rem;
+                 content: url('../images/about-us/next-resp.png');
+             }
             
-        // }
-        // .slick-prev:before{
-        //     content: url('../images/about-us/prev.png');
-        //     position: absolute;
-        //     height: 5.5rem;
-        //     width: 5.5rem;
-        //     background-color: $headingtext;
-        //     border-radius: 50%;
-        //     top: -70%;
-        //     left: -7px;
-        //     display: flex;
-        //     justify-content: center;
-        //     align-items: center;
-        //     opacity: 1;
-        //     @media (max-width:$sm) {
-        //         height: 3.8rem;
-        //         width: 3.8rem;
-        //         top: -3.125rem;
-        //         left: 2rem;
-        //         content: url('../images/about-us/prev-resp.png');
-        //      }
-        //      &.disabled{
-        //         cursor: not-allowed;
-        //         background-color: #B6AAA7 !important;
-        //     }
-        // }
-    //     .slick-disabled{
-    //         &:before{
-    //            cursor: not-allowed;
-    //            opacity: 25% !important;
+        }
+        .slick-prev:before{
+            content: url('../images/about-us/prev.png');
+            position: absolute;
+            height: 5.5rem;
+            width: 5.5rem;
+            background-color: $primary;
+            border-radius: 50%;
+            top: -70%;
+            left: -7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            @media (max-width:$sm) {
+                height: 3.8rem;
+                width: 3.8rem;
+                top: -3.125rem;
+                left: 2rem;
+                content: url('../images/about-us/prev-resp.png');
+             }
+             &.disabled{
+                cursor: not-allowed;
+                background-color: #B6AAA7 !important;
+            }
+        }
+        .slick-disabled{
+            &:before{
+               cursor: not-allowed;
+               opacity: 0% !important;
                
-    //         }
+            }
           
-    //    }
+       }
     }
 }
 
@@ -302,8 +302,8 @@ body{
         font-weight: 400;
         font-size: 1.875rem;
         line-height: 2.5rem;
-        color: $subtext;
-        font-family: 'PoppinsRegular';
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
         margin: 0 auto;
         text-align: center;
         width: 80%;
@@ -321,7 +321,7 @@ body{
                 display: block;
                 position: absolute;
                 border: none;
-                border-top: 1px dashed $subtext;
+                border-top: 1px dashed $secondary;
                 top: 0;
                 left: 0;
                 height: 5px;
@@ -360,7 +360,7 @@ body{
                             justify-content: center;
                             font-size: 3rem;
                             line-height: 4.5rem;
-                            font-family: 'PoppinsSemiBold';
+                            font-family: $font-family-poppins-semibold;
                             top: 32%;
                             position: relative;
                         }
@@ -373,8 +373,8 @@ body{
                         font-weight: 400;
                         font-size: 1.25rem;
                         line-height: 1.875rem;
-                        color: $subtext;
-                        font-family: 'PoppinsRegular';
+                        color: $secondary;
+                        font-family: $font-family-poppins-regular;
                         width: 55%;
                         margin: 0 auto;
                         min-height: 100px;
@@ -482,12 +482,12 @@ body{
             z-index: -1;
         
         }
-        img{
-            // width: 90% !important;
-            // @media (max-width:$sm) {
-            //  width: 100%;
-            //      }
-    }
+    //     img{
+    //         width: 90% !important;
+    //         @media (max-width:$sm) {
+    //          width: 100%;
+    //              }
+    // }
     }
     .rightsec{
         padding-left: 2rem;
@@ -496,18 +496,18 @@ body{
             padding-bottom: 0;
         }
         .yellow{
-            color: $bgcolor-yello;
+            color: $bgcolor-yellow;
             font-size: 1.5rem;
             line-height: 2.125rem;
             font-weight: 600;
-            font-family: 'PoppinsRegular';       
+            font-family: $font-family-poppins-regular;       
         }
         .para{
-            color: $subtext;
+            color: $secondary;
             font-size:1.5rem ;
             line-height:  2.125rem;
             font-weight: 400;
-            font-family: 'PoppinsRegular';    
+            font-family: $font-family-poppins-regular;    
         }
     }
    
@@ -554,11 +554,11 @@ body{
                 right: 0;
             }
            .cardtile{
-                color: $headingtext;
+                color: $primary;
                 font-weight: 600;
                 font-size:2.75rem;
                 line-height: 2.5rem;
-                font-family: 'PoppinsSemiBold';
+                font-family: $font-family-poppins-semibold;
                 padding-bottom: 15px;
                 @media (max-width:$sm) {
                     font-size: 2.5rem;
@@ -571,8 +571,8 @@ body{
                 font-size: 1.625rem;
                 line-height: 2.4375rem;
                 font-weight: 400;
-                font-family: 'PoppinsRegular';    
-                color: $subtext;
+                font-family: $font-family-poppins-regular;    
+                color: $secondary;
                 margin: 0;
                 @media (min-width:769px) and (max-width:1024px) {
                     font-size:1.3rem;
@@ -606,11 +606,11 @@ body{
                             width: 100%;
                          }
                         .title{
-                            color: $headingtext;
+                            color: $primary;
                             font-weight: 600;
                             font-size: 1.875rem;
                             line-height: 2.5rem;
-                            font-family: 'PoppinsSemiBold';
+                            font-family: $font-family-poppins-semibold;
                             margin-bottom: 18px;
                             @media (min-width:769px) and (max-width:1024px) {
                                 font-size: 1.5rem;
@@ -620,7 +620,7 @@ body{
                             font-size: 1.5rem;
                             line-height: 1.875rem;
                             font-weight: 400;
-                            font-family: 'PoppinsRegular';  
+                            font-family: $font-family-poppins-regular;  
                             @media (min-width:769px) and (max-width:1024px) {
                                 font-size: 1.3rem;
                              }    
@@ -643,7 +643,7 @@ body{
                            &:before{
                                height: 10px;
                                width: 10px;
-                               background-color: $subtext;
+                               background-color: $secondary;
                                content: '';
                                border-radius: 50%;
                            }
@@ -682,13 +682,13 @@ body{
         padding: 0  0 8rem;
       }
     &:after{
-        content: '';
+        content: "";
         display: block;
         position: absolute;
-        height: 28.125rem;
-        width: 19.8125rem;
+        height: 39.125rem;
+        width: 29.8125rem;
         top: 65%;
-        right: 0;
+        right: -73px;
         background: url('../images/about-us/offerbefore.png') no-repeat;
         z-index: -1;
         background-size: cover;
@@ -718,11 +718,11 @@ body{
             .namedesg{
                 margin-top: 13px;
                 .title{
-                    color: $headingtext;
+                    color: $primary;
                     font-size: 1.5rem;
                     line-height: 2.25rem;
                     font-weight: 600;
-                    font-family: 'PoppinsSemiBold';
+                    font-family: $font-family-poppins-semibold;
                     margin-bottom: 20px;
                     @media (max-width:$sm) {
                         font-size: 1.7rem;
@@ -732,8 +732,8 @@ body{
                 font-size: 1.25rem;
                 line-height: 1.875rem;
                 font-weight: 400;
-                font-family: 'PoppinsRegular';    
-                color: $subtext;
+                font-family: $font-family-poppins-regular;    
+                color: $secondary;
                 margin: 0;
                 @media (max-width:$sm) {
                     font-size: 1.5rem;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
-import  ImageSub0  from '../assets/images/logo.svg';
-import  ImageSub1  from '../assets/images/logo-white.svg';
+import  ImageSub0  from '../../assets/images/logo.svg';
+import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {Link} from 'react-router-dom';
 
 
@@ -29,7 +29,7 @@ export default class Header extends Component {
                         <div className={this.state.show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
                             <li className="nav-item">
-                                <Link to= '/AboutIndex' className="single-nav-links">About</Link>
+                                <Link to= '/AboutIndex' className="single-nav-links nav-link">About</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to= '/app' className="single-nav-links nav-link">App</Link>
