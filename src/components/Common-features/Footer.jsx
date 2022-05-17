@@ -19,7 +19,7 @@ function Footer() {
                   <div className="col-md-12">
                     <div className="top-sec-sub">
                       <div className="footer-logo">
-                        <img src={ImageFooter0} className="" />
+                        <img src={ImageFooter0} className=""  alt='Loading'/>
                       </div>
                     </div>
                     <div className="top-sec-quick-links">
@@ -111,10 +111,10 @@ function Footer() {
                           <div className="links-wrap-social">
                             <div className="wrap-app-links">
                               <a href="#" target="_blank">
-                                <img src={ImageFooter1} className="img-fluid" />
+                                <img src={ImageFooter1} className="img-fluid" alt='Loading'/>
                               </a>
                               <a href="#" target="_blank">
-                                <img src={ImageFooter2} className="img-fluid" />
+                                <img src={ImageFooter2} className="img-fluid" alt='Loading'/>
                               </a>
                             </div>
                             <div className="footer-social-links">

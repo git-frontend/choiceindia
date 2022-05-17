@@ -87,7 +87,7 @@ function EverydayFinance() {
                           </span>
                           <h5>{response.title || '-'}</h5>
                           <p>{response.discription || '-'}</p>
-                          <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5} /></span></a>
+                          <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
                         </div>
 
                       )

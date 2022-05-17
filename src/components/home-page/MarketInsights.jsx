@@ -19,7 +19,7 @@ import homeServices from '../../Services/homeServices';
 function MarketInsights() {
 
     const [selectedId, setSelectedId] = useState(0);
-    const [change, setChange] = useState([1, 2, 3, 4]);
+    // const [change, setChange] = useState([1, 2, 3, 4]);
     const [trigger, setTrigger] = useState(false)
     const [fabal, setFabal] = useState([]);
 
@@ -66,7 +66,7 @@ function MarketInsights() {
 
                                         return (
 
-                                            <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(change)} onMouseLeave={() => setSelectedId(0)}  >
+                                            <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
                                                     <img src={response.feature_image} alt="" />
                                                     <span className="ttl-sm" >{response.meta_title || '-'}</span>

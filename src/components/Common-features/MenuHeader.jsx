@@ -1,9 +1,9 @@
-import React, { Component,useState } from 'react'
+import React, { useState } from 'react'
 import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import  ImageSub0  from '../../assets/images/logo.svg';
 import  ImageSub1  from '../../assets/images/logo-white.svg';
-import {Link} from 'react-router-dom';
+import {Link,NavLink} from 'react-router-dom';
 
 
 export default function Header() {
@@ -25,25 +25,31 @@ export default function Header() {
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
                             <li className="nav-item">
-                                <Link to= '/AboutIndex' className="single-nav-links nav-link">About</Link>
+                                <NavLink to= '/AboutIndex' activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                  }}  className="single-nav-links nav-link">About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/app' className="single-nav-links nav-link">App</Link>
+                                <NavLink to= '/app' activeStyle={{
+                                    fontWeight: "bold",
+                                    color: "red"
+                                  }} className="single-nav-links nav-link">App</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/' className="single-nav-links nav-link">Services</Link>
+                                <NavLink to= '/'  className="single-nav-links nav-link">Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/' className="single-nav-links nav-link">Research</Link>
+                                <NavLink to= '/' className="single-nav-links nav-link">Research</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/Career' className="single-nav-links nav-link">Careers</Link>
+                                <NavLink to= '/Career'  className="single-nav-links nav-link">Careers</NavLink>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/' className="single-nav-links nav-link">Contact</Link>
+                                <NavLink to= '/' className="single-nav-links nav-link">Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <Link to= '/AboutIndex' className="single-nav-links nav-link">Log In</Link>
+                                <NavLink to= '/AboutIndex' className="single-nav-links nav-link">Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
                                 <a className="nav-link" href="#">Get Started</a>

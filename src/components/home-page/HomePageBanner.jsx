@@ -34,7 +34,7 @@ function HomePageBanner() {
                     return (
 
                         <section key={response.id} className="home-banner">
-                            <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" />
+                            <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" />
                             <div className="banner-desc">
                                 <div className="container">
                                     <div className="row">

@@ -36,21 +36,21 @@ function ChoiceFinx() {
                     <div className="finx-app-list workList">
                       <div className="app-list-item">
                         <a href="#" data-img={ImageSub9}>
-                          <img src={ImageSub6} alt="" className="img-fluid" />
+                          <img src={ImageSub6} alt="Loading" className="img-fluid" />
                           <h4>Wealth Store</h4>
                           <p>Nurture your financial freedom with endless possibilities</p>
                         </a>
                       </div>
                       <div className="app-list-item">
                         <a href="#" data-img={ImageSub9}>
-                          <img src={ImageSub7} alt="" className="img-fluid" />
+                          <img src={ImageSub7} alt="Loading" className="img-fluid" />
                           <h4>Elegant UI &amp; UX</h4>
                           <p>Aiming for an intuitive interface for seamless navigation.</p>
                         </a>
                       </div>
                       <div className="app-list-item">
                         <a href="#" data-img={ImageSub9}>
-                          <img src={ImageSub8} alt="" className="img-fluid" />
+                          <img src={ImageSub8} alt="Loading" className="img-fluid" />
                           <h4>Speedy Execution</h4>
                           <p>Built to deliver a blazing fast experience without hiccups.</p>
                         </a>
@@ -58,7 +58,7 @@ function ChoiceFinx() {
                     </div>
                   </div>
                   <div className="finx-app-img workImages">
-                    <img src={ImageSub9} className="" alt="" />
+                    <img src={ImageSub9} className="" alt="Loading" />
                   </div>
                   <div className="expl-app">
                       <a href="#">
