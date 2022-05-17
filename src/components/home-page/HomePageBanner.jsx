@@ -1,4 +1,4 @@
-import  ImageSub1  from '../../assets/images/home-banner.jpg';
+import  ImageSub1  from '../../assets/images/banner.png';
 
 
 function HomePageBanner() {
@@ -7,15 +7,17 @@ function HomePageBanner() {
 
 
             <section className="home-banner">
-                <img src={ImageSub1} className="banner-img" />
                 <div className="banner-desc">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12">
+                            <div className="col-md-6">
                                 <div className="banner-caption">
                                     <h1>Experience<br />
                                         The Joy of Earning</h1>
                                 </div>
+                            </div>
+                            <div className="col-md-6">
+                            <img src={ImageSub1} className="banner-img" />
                             </div>
                         </div>
                     </div>

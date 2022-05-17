@@ -1,18 +1,20 @@
 @import 'customvariable.scss';
 
 .home-banner{
-    position: relative;
+    padding: 8rem 0 0;
+    background-color: #EFEDF2;
     .banner-img{
         width: 100%;
     }
     .banner-desc{
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        left: 0;
-        width: 100%;
+      
         .banner-caption{
             text-align: left;
+            position: relative;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 0;
+            width: 100%;
             h1{
                 font-size: 4.4rem;
                 line-height: 70px;
@@ -24,6 +26,7 @@
                 }
                 @media (max-width: $sm){
                     font-size: 2rem;
+                    line-height: 40px;
                 }
             }
         }

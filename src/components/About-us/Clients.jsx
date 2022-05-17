@@ -9,16 +9,18 @@ import idea from '../../assets/images/about-us/idea.svg';
 import Slider from "react-slick";
 function Clients() {
     const settings = {
-        infinite: true,
-        speed:2000,
-        height: 100,
-        arrows: false,
-        slidesToShow: 5,
-        autoplay: true,
-        margin:20,
-        dots:false,
-        autoplaySpeed: 800,
-        slidesToScroll: 1,
+      speed: 2000,
+      autoplay: true,
+      autoplaySpeed: 0,
+      centerMode: false,
+      cssEase: 'linear',
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      variableWidth: true,
+      infinite: true,
+      initialSlide: 1,
+      arrows: false,
+      buttons: false,
         responsive: [
           {
             breakpoint: 992,
@@ -49,9 +51,9 @@ function Clients() {
                 </div>
                 <div className="row">
                 <div className="col-md-12">
-                  <div className="client-list">
-                  <Slider {...settings} className="client-list-slider">
-                      <div className="client-item">
+                  <div className="client-list marquee">
+                  <Slider {...settings} className="client-list-slider ">
+                      <div className="client-item ">
                         <span className="img-itm">
                           <img src={nitiaayog} className="img-fluid" />
                         </span>
