@@ -1,54 +1,103 @@
-import  ImageSub2  from '../../assets/images/icons/stock.svg';
-import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
-import  ImageSub4  from '../../assets/images/icons/insurance.svg';
-import  ImageSub5  from '../../assets/images/icons/arrow-left-circle-fill.svg';
+import ImageSub2 from '../../assets/images/icons/stock.svg';
+import ImageSub3 from '../../assets/images/icons/money-bag.svg';
+import ImageSub4 from '../../assets/images/icons/insurance.svg';
+import ImageSub5 from '../../assets/images/icons/arrow-left-circle-fill.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import homeServices from '../../Services/homeServices';
 
 function EverydayFinance() {
 
-    const settings = {
-        infinite: true,
-        speed: 2000,
-        arrows: false,
-        slidesToShow: 4,
-        autoplay: true,
-        dots:true,
-        autoplaySpeed: 4000,
-        slidesToScroll: 2,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-    };
-
-    return (
-        <div>
+  const [secondary, setSecondary] = useState([]);
+  const [trigger, setTrigger] = useState(false)
 
 
-<section className="main-services">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-12">
-                  <h3 className="title-first">Everyday Finance in one Place</h3>
-                </div>
-              </div>
-              <div className="row">
+  /** load Every Day Finance */
+  function loadSecondarybanner() {
+
+    homeServices.homeSecondaryBanner().then(
+
+      res => {
+
+        setSecondary(res.data.data);
+
+      }
+    )
+  };
+
+
+  /**onInIt Every Day Finance */
+  useEffect(() => {
+    setTrigger(true)
+
+    if (trigger==true) {
+      loadSecondarybanner();
+    }
+
+  }, [trigger])
+
+  const settings = {
+    infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 4,
+    autoplay: false,
+    dots: true,
+    autoplaySpeed: 1000,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
+
+  return (
+    <div>
+      <section className="main-services">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h3 className="title-first">Everyday Finance in one Place</h3>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="main-services-list">
+                <Slider {...settings} className="services-list-slider">
+                  {
+                    secondary.map((response) => {
+
+
+                      return (
+                        <div key={response.id} className="service-item">
+                          <span className="img-itm">
+                            <img src={`https://cmsapi.choiceindia.com/assets/${response.icon}`} className="img-fluid" alt='Loading' />
+                          </span>
+                          <h5>{response.title || '-'}</h5>
+                          <p>{response.discription || '-'}</p>
+                          <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5} /></span></a>
+                        </div>
+
+                      )
+                    })
+                  }
+
+                  {/*  <div className="row">
                 <div className="col-md-12">
                   <div className="main-services-list">
                     <Slider {...settings} className="services-list-slider">
@@ -102,16 +151,19 @@ function EverydayFinance() {
                       </div>
                     </Slider>
                   </div>
-                </div>
+              </div> */}
+                </Slider>
               </div>
             </div>
-          </section>
-
-
-
+          </div>
         </div>
+      </section>
 
-    );
+
+
+    </div>
+
+  );
 }
 
 export default EverydayFinance;
