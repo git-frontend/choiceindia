@@ -9,7 +9,7 @@ function AppStrategies() {
   
     const settings1 = {
           infinite: true,
-          speed: 1500,
+          speed: 2500,
           vertical:true,
           focusOnSelect:true,
           touchMove:true,
@@ -17,7 +17,7 @@ function AppStrategies() {
           slidesToShow: 4,
           autoplay: true,
           dots: false,
-          autoplaySpeed: 1000,
+          autoplaySpeed: 2000,
           slidesToScroll: 1,
           swipeToSlide: true,
           responsive: [
@@ -68,7 +68,7 @@ function AppStrategies() {
                         
                     </div>
     
-                            <div className='col-md-5'>
+                            <div className='col-md-7'>
                             <div className='content-list'>
                             <Slider {...settings1}
                             afterChange={(ev) => {

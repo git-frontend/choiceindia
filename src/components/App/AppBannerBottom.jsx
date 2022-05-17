@@ -3,6 +3,8 @@ import { useState } from 'react';
 import imageData from '../../Data/images';
 import Slider from 'react-slick';
 
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
 function AppBannerBottom() {
   const [isShown1, setIsShown1] = useState(0);
@@ -12,7 +14,7 @@ function AppBannerBottom() {
 
   const settings1 = {
 		infinite: true,
-		speed: 1500,
+		speed: 2500,
     vertical:true,
     focusOnSelect:true,
     touchMove:true,
@@ -20,7 +22,7 @@ function AppBannerBottom() {
 		slidesToShow: 6,
 		autoplay: true,
 		dots: false,
-		autoplaySpeed: 1000,
+		autoplaySpeed: 2000,
 		slidesToScroll: 1,
 		swipeToSlide: true,
 		responsive: [

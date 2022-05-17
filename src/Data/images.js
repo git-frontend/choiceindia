@@ -12,34 +12,34 @@ const imageData =
     },
     {
         "image":`${image10}`,
-        "title":'Trading Simplified',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "title":'Wealth Pool',
+        "description":'Grow your Investments smoothly in Mutual  Funds'
         
         
     },
     {
         "image":`${ImageSub0}`,
-        "title":'Trading Simplified',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "title":'Insuring Future',
+        "description":'Get insured as per your need for everything right here'
     
         
     }
     ,{
         "image":`${image10}`,
-        "title":'Trading Simplified',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "title":'Swift Loans',
+        "description":'Your reliable money lender amidst trying times'
 
     }
     ,{
 
         "image":`${ImageSub0}`,
-        "title":'Trading Simplified',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "title":'Readymade Baskets',
+        "description":'Try our curated baskets to invest on autopilot'
     }
     ,{
         "image":`${image10}`,
-        "title":'Trading Simplified',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "title":'Financial Planning',
+        "description":'An automated financial planner to handle your fiscal needs'
 
     }
 ]
