@@ -1,0 +1,37 @@
+@import 'customvariable.scss';
+
+// banner
+
+.banner-contact{
+    position: relative;
+    padding-bottom: 4rem;
+    .ban-img{
+        width: 100%;
+    }
+    .banner-caption{
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 40%;
+        transform: translate(0, -50%);
+        z-index: 9;
+        color: #221F20;
+    }
+    .form{
+        position: absolute;
+        background-color: #221F20;
+        left: 0;
+        right: 0;
+        width: 80%;
+        bottom: -38%;
+        margin: 0 auto;
+        transform: translate(0, -50%);
+        z-index: 9;
+        padding: 3rem;
+    }
+   
+}
+
+.contactdetail{
+    padding:20rem 0;
+}

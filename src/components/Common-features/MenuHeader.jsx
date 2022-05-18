@@ -29,7 +29,7 @@ export default class Header extends Component {
                         <div className={this.state.show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
                             <li className="nav-item">
-                                <Link to= '/AboutIndex' className="single-nav-links nav-link">About</Link>
+                                <Link to= '/About-us' className="single-nav-links nav-link">About</Link>
                             </li>
                             <li className="nav-item">
                                 <Link to= '/app' className="single-nav-links nav-link">App</Link>
@@ -44,10 +44,10 @@ export default class Header extends Component {
                                 <Link to= '/Career' className="single-nav-links nav-link">Careers</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to= '/' className="single-nav-links nav-link">Contact</Link>
+                                <Link to= '/Contact' className="single-nav-links nav-link">Contact</Link>
                             </li>
                             <li className="nav-item login-btn">
-                                <Link to= '/AboutIndex' className="single-nav-links nav-link">Log In</Link>
+                                <Link to= '/AboutUs' className="single-nav-links nav-link">Log In</Link>
                             </li>
                             <li className="nav-item get-btn">
                                 <a className="nav-link" href="#">Get Started</a>
