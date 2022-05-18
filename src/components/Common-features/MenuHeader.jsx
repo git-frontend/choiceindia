@@ -9,6 +9,7 @@ import {Link,NavLink} from 'react-router-dom';
 export default function Header() {
 
     const [show, setShow] = useState(true)
+   
     
         return (
           
@@ -25,34 +26,28 @@ export default function Header() {
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">
                             <li className="nav-item">
-                                <NavLink to= '/AboutIndex' activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "red"
-                                  }}  className="single-nav-links nav-link">About</NavLink>
+                                <NavLink to= '/AboutIndex' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/app' activeStyle={{
-                                    fontWeight: "bold",
-                                    color: "red"
-                                  }} className="single-nav-links nav-link">App</NavLink>
+                                <NavLink to= '/app' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/'  className="single-nav-links nav-link">Services</NavLink>
+                                <NavLink to= '/'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/' className="single-nav-links nav-link">Research</NavLink>
+                                <NavLink to= '/'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/Career'  className="single-nav-links nav-link">Careers</NavLink>
+                                <NavLink to= '/Career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/' className="single-nav-links nav-link">Contact</NavLink>
+                                <NavLink to= '/' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <NavLink to= '/AboutIndex' className="single-nav-links nav-link">Log In</NavLink>
+                                <NavLink to= '/AboutIndex' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
-                                <a className="nav-link" href="#">Get Started</a>
+                                <a className="nav-link"  href="#">Get Started</a>
                             </li>
                         </ul>
                     </div>
