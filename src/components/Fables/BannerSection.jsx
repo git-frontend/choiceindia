@@ -1,5 +1,6 @@
 import React from "react";
-
+import  Blog1  from '../../assets/images/fable/blog1.png';
+import  Blog2  from '../../assets/images/fable/blog2.png';
 
 function BannerSection() {
 
@@ -7,18 +8,56 @@ function BannerSection() {
         <div>
 
             <section className="fables-banner">
-				<div className="container-fluid">
+				<div className="container">
 					<div className="row">
-						<div className="col-md-6">
-							ghgjh
-						</div>
-						<div className="col-md-6">
-							ghgjh
-						</div>
+						<div className="col-md-12 d-flex justify-content-between">
+							<div className="fables-caption-left">
+								<h2 className="big-ttl">
+									Fables
+									<span>Stories that Matter</span> 
+								</h2>
+							</div>
+							<div className="fables-caption-right">
+								<div className="heading-sec">
+									<h3 className="title-secnd">Trending </h3>
+								</div>
+								<div className="fable-trending-list">
+									<a href="#" className="trending-itm">
+										<div className="trending-itm-img">
+											<img src={Blog1} alt="" className="img-blog"/>
+										</div>
+										<div className="trending-itm-des">
+											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+										</div>
+									</a>
+									<a href="#" className="trending-itm">
+										<div className="trending-itm-img">
+											<img src={Blog1} alt="" className="img-blog"/>
+										</div>
+										<div className="trending-itm-des">
+											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+										</div>
+									</a>
+									<a href="#" className="trending-itm">
+										<div className="trending-itm-img">
+											<img src={Blog1} alt="" className="img-blog"/>
+										</div>
+										<div className="trending-itm-des">
+											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+										</div>
+									</a>
+									<a href="#" className="trending-itm">
+										<div className="trending-itm-img">
+											<img src={Blog1} alt="" className="img-blog"/>
+										</div>
+										<div className="trending-itm-des">
+											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>	
 					</div>
-					
-						
-					
 				</div>
 			</section>
 

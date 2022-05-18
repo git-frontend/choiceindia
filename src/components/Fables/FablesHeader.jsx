@@ -5,7 +5,7 @@ import MenuHeader from '../Common-features/MenuHeader';
 
 function FablesHeader() {
     return (
-      <div className="Header header-light">
+      <div className="Header">
         <header className="main-header">
           <MenuHeader />
         </header>
