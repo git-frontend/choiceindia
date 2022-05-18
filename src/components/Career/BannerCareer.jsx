@@ -2,7 +2,6 @@ import  CareerImage0  from '../../assets/images/career/slide1.jpg';
 import  CareerImage1  from '../../assets/images/career/slide2.jpg';
 import  CareerImage2  from '../../assets/images/career/slide3.jpg';
 import  CareerImage3  from '../../assets/images/career/slide4.jpg';
-import  CareerImage5  from '../../assets/images/career/money.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -41,16 +40,16 @@ function BannerCareer() {
     <section className="bannersection">
           <Slider {...settings} className="career-list-slider">
                 <div>
-                  <img src={CareerImage0} className="img-fluid" />
+                  <img src={CareerImage0} className="img-fluid" alt='Loading' />
                 </div>
                 <div>
-                  <img src={CareerImage1} className="img-fluid" />
+                  <img src={CareerImage1} className="img-fluid" alt='Loading'/>
                 </div>
                 <div>
-                  <img src={CareerImage2} className="img-fluid" />
+                  <img src={CareerImage2} className="img-fluid" alt='Loading' />
                 </div>
                 <div>
-                  <img src={CareerImage1} className="img-fluid" />
+                  <img src={CareerImage1} className="img-fluid" alt='Loading' />
                 </div>
               </Slider>
     </section>
@@ -82,7 +81,7 @@ function BannerCareer() {
                 </div>
                 <div className="col-xl-6 col-md-6">
                   <div className='culture-values-img'>
-                      <img src={CareerImage3} className='img-fluid shdow' alt="" />
+                      <img src={CareerImage3} className='img-fluid shdow' alt="Loading" />
                   </div>
                 </div>
             </div>

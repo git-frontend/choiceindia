@@ -31,28 +31,28 @@ function Footer() {
                                 <h4>Services</h4>
                               </li>
                               <li>
-                                <a href="#">Equity Broking</a>
+                                <a href="/">Equity Broking</a>
                               </li>
                               <li>
-                                <a href="#">Wealth Mangement</a>
+                                <a href="/">Wealth Mangement</a>
                               </li>
                               <li>
-                                <a href="#">Insurance</a>
+                                <a href="/">Insurance</a>
                               </li>
                               <li>
-                                <a href="#">Loans</a>
+                                <a href="/">Loans</a>
                               </li>
                               <li>
-                                <a href="#">Merchant Banking</a>
+                                <a href="/">Merchant Banking</a>
                               </li>
                               <li>
-                                <a href="#">Management Consultancy</a>
+                                <a href="/">Management Consultancy</a>
                               </li>
                               <li>
-                                <a href="#">Government Advisory</a>
+                                <a href="/">Government Advisory</a>
                               </li>
                               <li>
-                                <a href="#">Tax Advisory</a>
+                                <a href="/">Tax Advisory</a>
                               </li>
                             </ul>
                             <ul className="reset"> 
@@ -60,22 +60,22 @@ function Footer() {
                                 <h4>Company</h4>
                               </li>
                               <li>
-                                <a href="#">Our Team</a>
+                                <a href="/">Our Team</a>
                               </li>
                               <li>
-                                <a href="#">Investors</a>
+                                <a href="/">Investors</a>
                               </li>
                               <li>
-                                <a href="#">Pricing</a>
+                                <a href="/">Pricing</a>
                               </li>
                               <li>
-                                <a href="#">Careers</a>
+                                <a href="/">Careers</a>
                               </li>
                               <li>
-                                <a href="#">Contact Us</a>
+                                <a href="/">Contact Us</a>
                               </li>
                               <li>
-                                <a href="#">FAQ’s</a>
+                                <a href="/">FAQ’s</a>
                               </li>
                             </ul>
                             <ul className="reset"> 
@@ -83,13 +83,13 @@ function Footer() {
                                 <h4>Research</h4>
                               </li>
                               <li>
-                                <a href="#">Fundamental</a>
+                                <a href="/">Fundamental</a>
                               </li>
                               <li>
-                                <a href="#">Technical</a>
+                                <a href="/">Technical</a>
                               </li>
                               <li>
-                                <a href="#">Fables</a>
+                                <a href="/">Fables</a>
                               </li>
                             </ul>
                           </div>
@@ -110,30 +110,30 @@ function Footer() {
                         <div className="col-md-7">
                           <div className="links-wrap-social">
                             <div className="wrap-app-links">
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                                 <img src={ImageFooter1} className="img-fluid" alt='Loading'/>
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                                 <img src={ImageFooter2} className="img-fluid" alt='Loading'/>
                               </a>
                             </div>
                             <div className="footer-social-links">
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                                 <FontAwesomeIcon icon={faFacebookF} /> 
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                                 <FontAwesomeIcon icon={faTwitter} />
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                               <FontAwesomeIcon icon={faLinkedinIn} />
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                               <FontAwesomeIcon icon={faInstagram} />
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                               <FontAwesomeIcon icon={faYoutube} />
                               </a>
-                              <a href="#" target="_blank">
+                              <a href="/" target="_blank">
                               <FontAwesomeIcon icon={faTelegramPlane} />
                               </a>
                             </div>
@@ -145,10 +145,10 @@ function Footer() {
                               Made with  <FontAwesomeIcon icon={faHeart} />  in India
                             </li>
                             <li>
-                              <a href="#">Privacy Policy</a>
+                              <a href="/">Privacy Policy</a>
                             </li>
                             <li>
-                              <a href="#">Terms &amp; Conditions</a>
+                              <a href="/">Terms &amp; Conditions</a>
                             </li>
                           </ul>
                         </div>

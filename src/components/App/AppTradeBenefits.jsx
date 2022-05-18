@@ -25,7 +25,7 @@ function AppTradeBenefits() {
                       <li>Trade at 2 Paise*</li>
                       <li>Free Research with 80% success ratio</li>
                     </ul>
-                    <a href="#" className="btn-bg">Get Started</a>
+                    <a href="/" className="btn-bg">Get Started</a>
                 </div>
 						</div>
 					</div>
@@ -61,11 +61,11 @@ function AppTradeBenefits() {
                   </ul>
                 </div>
                 <div className="wrap-app-links d-flex justify-content-center">
-                    <a href="#" target="_blank" className='link-nrl'>
-                      <img src={ImageFooter1} className="img-ico" />
+                    <a href="/" target="_blank" className='link-nrl'>
+                      <img src={ImageFooter1} className="img-ico" alt='Loading' />
                     </a>
-                    <a href="#" target="_blank" className='link-nrl'>
-                      <img src={ImageFooter3} className="img-ico" />
+                    <a href="/" target="_blank" className='link-nrl'>
+                      <img src={ImageFooter3} className="img-ico" alt='Loading' />
                     </a>
                   </div>
             </div>

@@ -87,7 +87,7 @@ function EverydayFinance() {
                           </span>
                           <h5>{response.title || '-'}</h5>
                           <p>{response.discription || '-'}</p>
-                          <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
+                          <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
                         </div>
 
                       )
@@ -104,7 +104,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Stocks</h5>
                         <p>Facilitating trade on equities, commodities &amp; currencies with ease</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                       <div className="service-item">
                         <span className="img-itm">
@@ -112,7 +112,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Mutual Funds</h5>
                         <p>Compare and invest in funds of all categories and segments with ease</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                       <div className="service-item">
                         <span className="img-itm">
@@ -120,7 +120,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Insurance</h5>
                         <p>Get insured as per your need for everything right here</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                       <div className="service-item">
                         <span className="img-itm">
@@ -128,7 +128,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Stocks</h5>
                         <p>Facilitating trade on equities, commodities &amp; currencies with ease</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                       <div className="service-item">
                         <span className="img-itm">
@@ -136,7 +136,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Mutual Funds</h5>
                         <p>Compare and invest in funds of all categories and segments with ease</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                       <div className="service-item">
                         <span className="img-itm">
@@ -144,7 +144,7 @@ function EverydayFinance() {
                         </span>
                         <h5>Insurance</h5>
                         <p>Get insured as per your need for everything right here</p>
-                        <a href="#">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
+                        <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5}  /></span></a>
                       </div>
                     </Slider>
                   </div>

@@ -138,7 +138,7 @@ function FablesStories() {
 					</div>
 					<div className="row">
 						<div className="col-md-12 mt-5 d-flex justify-content-center">
-							<a href="#" className="btn-bg">
+							<a href="/" className="btn-bg">
 								View All
 							</a>
 						</div>

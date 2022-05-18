@@ -3,7 +3,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import CloseIcon from '@material-ui/icons/Close';
 import  ImageSub0  from '../../assets/images/logo.svg';
 import  ImageSub1  from '../../assets/images/logo-white.svg';
-import {Link,NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 
 
 export default function Header() {
@@ -47,7 +47,7 @@ export default function Header() {
                                 <NavLink to= '/AboutIndex' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
-                                <a className="nav-link"  href="#">Get Started</a>
+                                <a className="nav-link"  href="/">Get Started</a>
                             </li>
                         </ul>
                     </div>

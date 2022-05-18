@@ -3,8 +3,6 @@ import  ImageSub6  from '../../assets/images/icons/shopping-cart.svg';
 import  ImageSub7  from '../../assets/images/icons/grid1.svg';
 import  ImageSub8  from '../../assets/images/icons/speed.svg';
 import  ImageSub9  from '../../assets/images/app-img1.png';
-import  ImageSub10  from '../../assets/images/icons/play-store.svg';
-import  ImageSub11  from '../../assets/images/icons/Apple.svg';
 import React from "react";
 import $ from 'jquery';
 
@@ -35,21 +33,21 @@ function ChoiceFinx() {
                     </div>
                     <div className="finx-app-list workList">
                       <div className="app-list-item">
-                        <a href="#" data-img={ImageSub9}>
+                        <a href="/" data-img={ImageSub9}>
                           <img src={ImageSub6} alt="Loading" className="img-fluid" />
                           <h4>Wealth Store</h4>
                           <p>Nurture your financial freedom with endless possibilities</p>
                         </a>
                       </div>
                       <div className="app-list-item">
-                        <a href="#" data-img={ImageSub9}>
+                        <a href="/" data-img={ImageSub9}>
                           <img src={ImageSub7} alt="Loading" className="img-fluid" />
                           <h4>Elegant UI &amp; UX</h4>
                           <p>Aiming for an intuitive interface for seamless navigation.</p>
                         </a>
                       </div>
                       <div className="app-list-item">
-                        <a href="#" data-img={ImageSub9}>
+                        <a href="/" data-img={ImageSub9}>
                           <img src={ImageSub8} alt="Loading" className="img-fluid" />
                           <h4>Speedy Execution</h4>
                           <p>Built to deliver a blazing fast experience without hiccups.</p>
@@ -61,10 +59,10 @@ function ChoiceFinx() {
                     <img src={ImageSub9} className="" alt="Loading" />
                   </div>
                   <div className="expl-app">
-                      <a href="#">
+                      <a href="/">
                         <span className="btn-bg">Explore App</span>
                       </a>
-                      <a href="#">
+                      <a href="/">
                         {/* <img src={ImageSub10} className="ico-img" /> */}
                         <svg width="55" height="55" className="media" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle className="yellow" cx="36" cy="36.3379" r="35" fill="white" stroke="#B6AAA7" strokeOpacity="0.47"/>
@@ -93,7 +91,7 @@ function ChoiceFinx() {
                         
 
                       </a>
-                      <a href="#">
+                      <a href="/">
                         {/* <img src={ImageSub11} className="ico-img" /> */}
                         <svg width="55" height="55" className="media" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle className="yellow" cx="36" cy="36.3379" r="35" fill="white" stroke="#DDD7D5"/>
