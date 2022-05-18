@@ -14,7 +14,7 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
-function AboutIndex() {
+function AboutUs() {
 
   return (
     <div>
@@ -37,4 +37,4 @@ function AboutIndex() {
   );
 }
 
-export default AboutIndex;
+export default AboutUs;
