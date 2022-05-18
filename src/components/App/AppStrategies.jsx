@@ -61,7 +61,7 @@ function AppStrategies() {
                                     <div className="trade-easy-images-div">
                                         <img src={imageData[isShown3].image}
 
-                                            className="single-trade-easy-images"></img>
+                                            className="single-trade-easy-images" alt='Loading'></img>
                                     </div>
 
 

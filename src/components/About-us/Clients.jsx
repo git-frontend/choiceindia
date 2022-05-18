@@ -55,7 +55,7 @@ function Clients() {
                   <Slider {...settings} className="client-list-slider ">
                       <div className="client-item ">
                         <span className="img-itm">
-                          <img src={nitiaayog} className="img-fluid" />
+                          <img src={nitiaayog} className="img-fluid" alt="loading"/>
                         </span>
                        
                        
@@ -63,33 +63,33 @@ function Clients() {
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={libertyinsurance} className="img-fluid" />
+                          <img src={libertyinsurance} className="img-fluid" alt="loading" />
                         </span>
                         
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={aadhar} className="img-fluid" />
+                          <img src={aadhar} className="img-fluid" alt="loading" />
                         </span>
                        
                         
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={navkar} className="img-fluid" />
+                          <img src={navkar} className="img-fluid" alt="loading" />
                         </span>
                        
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={idea} className="img-fluid" />
+                          <img src={idea} className="img-fluid" alt="loading" />
                         </span>
                        
                         
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={nitiaayog} className="img-fluid" />
+                          <img src={nitiaayog} className="img-fluid" alt="loading" />
                         </span>
                        
                        
@@ -97,13 +97,13 @@ function Clients() {
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={libertyinsurance} className="img-fluid" />
+                          <img src={libertyinsurance} className="img-fluid" alt="loading" />
                         </span>
                         
                       </div>
                       <div className="client-item">
                         <span className="img-itm">
-                          <img src={navkar} className="img-fluid" />
+                          <img src={navkar} className="img-fluid" alt="loading" />
                         </span>
                        
                       </div>

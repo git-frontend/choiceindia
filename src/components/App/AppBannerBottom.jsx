@@ -88,7 +88,7 @@ function AppBannerBottom() {
                   <div className="trade-easy-images-div" >
                     <img src={imageData[isShown2].image}
 
-                      className="single-trade-easy-images"></img>
+                      className="single-trade-easy-images" alt="loading"></img>
                   </div>
 
 

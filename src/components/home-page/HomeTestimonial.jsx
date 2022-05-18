@@ -1,7 +1,4 @@
 import  ImageSub25  from '../../assets/images/testimonial1.png';
-import  ImageSub26  from '../../assets/images/img-small1.png';
-import  ImageSub27  from '../../assets/images/img-small2.png';
-import  ImageSub28  from '../../assets/images/img-small3.png';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";

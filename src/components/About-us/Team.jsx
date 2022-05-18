@@ -54,7 +54,7 @@ function Team() {
                   <Slider {...settings} className="team-list-slider">
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image1} className="img-fluid" />
+                          <img src={image1} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Kamal Poddar</h5>
@@ -65,7 +65,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image2} className="img-fluid" />
+                          <img src={image2} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Ajay Kejriwal</h5>
@@ -76,7 +76,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image3} className="img-fluid" />
+                          <img src={image3} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5>Sunil Bagaria</h5>
@@ -87,7 +87,7 @@ function Team() {
                       </div>
                      <div className="team-item">
                         <span className="img-itm">
-                          <img src={image4} className="img-fluid" />
+                          <img src={image4} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5 className="name">CA Ram Ratan Chirania</h5>
@@ -97,7 +97,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image5} className="img-fluid" />
+                          <img src={image5} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sumeet Bagadia</h5>
@@ -107,7 +107,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image6} className="img-fluid" />
+                          <img src={image6} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sundar Sanmukhani</h5>
