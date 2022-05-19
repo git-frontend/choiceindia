@@ -35,7 +35,7 @@ function BannerSection() {
 											<img src={Blog1} alt="" className="img-blog"/>
 										</div>
 										<div className="trending-itm-des">
-											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+											<p>RBL Bank Management Upheaval &amp; The Chaos Around It</p>
 										</div>
 									</a>
 									<a href="#" className="trending-itm">
@@ -43,7 +43,7 @@ function BannerSection() {
 											<img src={Blog1} alt="" className="img-blog"/>
 										</div>
 										<div className="trending-itm-des">
-											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+											<p>Amazon-Reliance Territorial Fight In The Indian Retail Jungle</p>
 										</div>
 									</a>
 									<a href="#" className="trending-itm">
@@ -51,7 +51,7 @@ function BannerSection() {
 											<img src={Blog1} alt="" className="img-blog"/>
 										</div>
 										<div className="trending-itm-des">
-											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
+											<p>What will be the future of Cryptocurrencies in India?</p>
 										</div>
 									</a>
 								</div>
