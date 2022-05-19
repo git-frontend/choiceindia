@@ -1,203 +1,240 @@
-import  ImageSub25  from '../../assets/images/testimonial1.png';
+import ImageSub25 from '../../assets/images/testimonial1.png';
+import ImageSub23 from '../../assets/images/img-small3.png';
+import ImageSub22 from '../../assets/images/img-small2.png';
+import ImageSub21 from '../../assets/images/img-small1.png';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
-import { faTwitter} from '@fortawesome/free-brands-svg-icons'
+import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
+import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
+import { useState, useRef } from 'react';
+
 
 function HomeTestimonial() {
 
- const settings2 = {
-  infinite: false,
-  speed: 1500,
-  fade:true,
-  arrows: true,
-  slidesToShow: 1,
-  autoplay: false,
-  dots:false,
-  autoplaySpeed: 1000,
-  slidesToScroll: 1,
-};
+	const settings2 = {
+		infinite: false,
+		speed: 1500,
+		fade: true,
+		arrows: true,
+		slidesToShow: 1,
+		autoplay: false,
+		dots: false,
+		autoplaySpeed: 1000,
+		slidesToScroll: 1,
+	};
 
-    return (
-        <div>
+	 // const breakPoints = [
+    //     { width: 1, itemsToShow: 1 },
+    //     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+    //     { width: 768, itemsToShow: 3 },
+    //     { width: 1200, itemsToShow: 3 }
+    // ];
+
+    // const dataObj = [
+    //     {
+    //         "img": ImageSub25, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+    //         "des": "They will never share your private data without your consent. They are market leader for right reasons." +
+    //             "They are the best brokers in town and provide the best services to their clients."
+    //     },
+
+    //     {
+    //         "img": ImageSub23, "name": "Elon Musk", "tag": "@ElonMusk", "date": "15 Nov 2005", "likes": "100",
+    //         "des": "Do more with buttons. Control button states or create groups " +
+    //             " of buttons for more components like toolbars."
+    //     },
+
+    //     {
+    //         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
+    //         "des": "<a>s don’t support the disabled attribute, so you must add the" +
+    //             ".disabled class to make it visually appear disabled."
+    //     },
 
 
-		{/* <section className="home-testimonial home-testimonial-new">
+    //     {
+    //         "img": ImageSub22, "name": "Kovac", "tag": "@Slokovia", "date": "10 May 2010", "likes": "84",
+    //         "des": " If you create a new HTML document and test this example out by pasting all of" +
+    //             "the above code and markup into it, you'll see."
+    //     }
+    // ]
 
-						<div className="container">
-							<div className="row d-flex justify-content-center">
-								<div className="col-md-8">
-									<div className="heading-sec mb-5">
-										<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>								
+    const [valRight, setValRight] = useState(() => 0);
+
+
+    const [dataObj, setdataObj] = useState(() => [
+        {
+            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
+                "They are the best brokers in town and provide the best services to their clients."
+        },
+
+		{
+            "img": ImageSub21, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
+            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+        },
+
+
+        {
+            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
+                "They are the best brokers in town and provide the best services to their clients."
+        },
+
+        
+
+        {
+            "img": ImageSub23, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
+            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+        }
+    ])
+	const [counterRight, setcounterRight] = useState(() => 1);
+	const [disableRight, setdisableRight] = useState(() => false);
+	const [disableLeft, setdisableLeft] = useState(() => true);
+
+    const counter = useRef(0);
+    function toggleForward() {
+
+		console.log('DDDD',counterRight);
+		if(counterRight === 0 ){
+			setdisableLeft(true);
+			setdisableRight(false);
+		}else if(counterRight === 3){
+			setdisableLeft(false);
+			setdisableRight(true);
+		}else{
+			setdisableLeft(false);
+			setdisableRight(false);
+		}
+
+		setcounterRight( counterRight + 1);
+		
+        counter.current = counter.current + 1;
+
+        if (valRight == 3) {
+            setValRight(prevCount => prevCount * 0);
+        } else {
+            setValRight(prevCount => prevCount + 1);
+            let temp;
+            //  temp = setdataObj((oldArray) => [...oldArray,oldArray.shift()])
+            temp = dataObj.shift();
+            //  setdataObj((oldArray) => [...oldArray,oldArray.push(temp)])
+            dataObj.push(temp);
+            // setdataObj((oldArray) => [...oldArray, oldArray.pop()])
+        }
+
+    }
+    // console.log('counter', counter);
+    // console.log('data', dataObj);
+    function toggleBackward() {
+
+		if(counterRight === 3){
+			setdisableLeft(false);
+			setdisableRight(true);
+		}else if(counterRight > 2){
+			setdisableLeft(false);
+			setdisableRight(false);
+		}else{
+			setdisableLeft(true);
+			setdisableRight(false);
+		}
+
+		setcounterRight(counterRight - 1);
+		console.log('FFFFF',counterRight);
+
+        if (valRight == 0) {
+            setValRight(prevCount => 3)
+        } else {
+            setValRight(prevCount => prevCount - 1);
+            let temp = dataObj.pop();
+            // console.log('temp', temp)
+            // console.log(dataObj);
+            dataObj.unshift(temp);
+            // console.log('after left', dataObj)
+        }
+    }
+
+
+	return (
+		<div>
+
+			<section className="home-testimonial home-testimonial-new">
+				<div className="container">
+					<div className="row d-flex justify-content-center">
+						<div className="col-md-8">
+							<div className="heading-sec mb-5">
+								<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>
+							</div>
+						</div>
+					</div>
+
+					<div className="row d-flex justify-content-center">
+
+						<div className="col-lg-10">
+				
+						
+
+						<div>
+							
+						</div>
+							<div className="testimonial-slider">
+								<div className='imgsub22'>
+									<img src={dataObj[1].img} alt="" />
+								</div>
+
+								<div className='imgsub21'>
+									<img src={dataObj[2].img} alt="" />
+								</div>
+
+								<div className='imgsub23'>
+									<img src={dataObj[3].img} alt="" />
+								</div>
+								<div className="slider-item">
+									<div className="slider-item-img">
+										<img src={dataObj[0].img} alt="" className="main-img-slide" />
+									</div>
+									<div className="slider-item-des">
+										<div className="item-des-name-value">
+											<FontAwesomeIcon icon={faTwitter} />
+											<h4>{dataObj[0].name}</h4>
+											<h6>{dataObj[0].tag}</h6>
+											<h6>{dataObj[0].date}</h6>
+										</div>
+										<div className="item-des-cont">
+											<p>{dataObj[0].des}</p>
+										</div>
+										
+										<div className="likes-view">
+											<div className='likes-view-left'>
+												<FontAwesomeIcon icon={faHeart} />
+												<h5>{dataObj[0].likes}</h5>
+											</div>
+											
+											<div className='right-btn-extr'>
+												<button className='btn btn-outline-primary leftt-btn' disabled={disableLeft} onClick={toggleBackward} >
+													<FontAwesomeIcon icon={faArrowLeftLong} />	
+												</button>
+												<button className='btn btn-outline-primary rightt-btn btn-xl' disabled={disableRight} onClick={toggleForward} >
+													<FontAwesomeIcon icon={faArrowRightLong} />
+												</button>
+											</div>
+										</div>
+
 									</div>
 								</div>
 							</div>
-							<div className="row d-flex justify-content-center">
-								<div className="col-lg-12">
-									<Slider {...settings2} className="testimonial-slider">
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<div className='other-slide-list'>
-													<div className='slide-list-itm slide-list-itm1'>
-														<img src={ImageSub27} />
-													</div>
-													<div className='slide-list-itm slide-list-itm2'>
-														<img src={ImageSub26} />
-													</div>
-													<div className='slide-list-itm slide-list-itm3'>
-														<img src={ImageSub28} />
-													</div>
-												</div>
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-													<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-													<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-													<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-									</Slider>
-								</div>
-							</div>	
 						</div>
-		</section> */}
-
-		<section className="home-testimonial">
-						<div className="container">
-							<div className="row d-flex justify-content-center">
-								<div className="col-lg-8">
-									<div className="heading-sec mb-5">
-										<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>								
-									</div>
-								</div>
-							</div>
-							<div className="row d-flex justify-content-center">
-								<div className="col-lg-10">
-									<Slider {...settings2} className="testimonial-slider">
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-													<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-												<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-										<div className="slider-item">
-											<div className="slider-item-img">
-												<img src={ImageSub25} alt="" className="actv-img" />
-											</div>
-											<div className="slider-item-des">
-												<div className="item-des-name-value">
-													<FontAwesomeIcon icon={faTwitter} /> 
-													<h4>Sachin Chadda</h4>
-													<h6>@SachinChadda</h6>
-													<h6>21 Aug 2021</h6>
-												</div>
-												<div className="item-des-cont">
-													<p>They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients.</p>
-												</div>
-												<div className="likes-view">
-													<FontAwesomeIcon icon={faHeart} /> 
-													<h5>27</h5>
-												</div>
-											</div>
-										</div>
-									</Slider>
-								</div>
-							</div>	
-						</div>
-		</section>
+					</div>
+				</div>
+			</section>
 
 
+		</div>
 
-        </div>
-
-    );
+	);
 }
 
 export default HomeTestimonial;
