@@ -84,7 +84,7 @@ function AppStrategies() {
 
                                                     return (
 
-                                                        <div className={classNm} onClick={() => setIsShown3(index)} onChange={() => setIsShown3(index)} >
+                                                        <div key={response.id} className={classNm} onClick={() => setIsShown3(index)} onChange={() => setIsShown3(index)} >
                                                             <h4 className="single-ttl">{response.title}</h4>
                                                             <p className="para">
                                                                 {response.description}

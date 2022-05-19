@@ -15,10 +15,10 @@ export default function Header() {
           
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <a className="navbar-brand logo-main" href="/">
+                <NavLink className="navbar-brand logo-main" to="/">
                         <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" />
                         <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
-                    </a>
+                        </NavLink>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>{ setShow(false) } } >
                         { show ? <MenuIcon /> : <CloseIcon />}
@@ -47,7 +47,7 @@ export default function Header() {
                                 <NavLink to= '/about-us' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
-                                <a className="nav-link"  href="/">Get Started</a>
+                            <NavLink className="nav-link"  to= "/">Get Started</NavLink>
                             </li>
                         </ul>
                     </div>

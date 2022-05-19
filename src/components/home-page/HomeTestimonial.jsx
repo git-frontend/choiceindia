@@ -1,11 +1,9 @@
-import ImageSub25 from '../../assets/images/testimonial1.png';
 import ImageSub23 from '../../assets/images/img-small3.png';
 import ImageSub22 from '../../assets/images/img-small2.png';
 import ImageSub21 from '../../assets/images/img-small1.png';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
-import Slider from "react-slick";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -16,17 +14,17 @@ import { useState, useRef } from 'react';
 
 function HomeTestimonial() {
 
-	const settings2 = {
-		infinite: false,
-		speed: 1500,
-		fade: true,
-		arrows: true,
-		slidesToShow: 1,
-		autoplay: false,
-		dots: false,
-		autoplaySpeed: 1000,
-		slidesToScroll: 1,
-	};
+	// const settings2 = {
+	// 	infinite: false,
+	// 	speed: 1500,
+	// 	fade: true,
+	// 	arrows: true,
+	// 	slidesToShow: 1,
+	// 	autoplay: false,
+	// 	dots: false,
+	// 	autoplaySpeed: 1000,
+	// 	slidesToScroll: 1,
+	// };
 
 	 // const breakPoints = [
     //     { width: 1, itemsToShow: 1 },
@@ -114,7 +112,7 @@ function HomeTestimonial() {
 		
         counter.current = counter.current + 1;
 
-        if (valRight == 3) {
+        if (valRight === 3) {
             setValRight(prevCount => prevCount * 0);
         } else {
             setValRight(prevCount => prevCount + 1);
@@ -145,7 +143,7 @@ function HomeTestimonial() {
 		setcounterRight(counterRight - 1);
 		console.log('FFFFF',counterRight);
 
-        if (valRight == 0) {
+        if (valRight === 0) {
             setValRight(prevCount => 3)
         } else {
             setValRight(prevCount => prevCount - 1);
@@ -182,19 +180,19 @@ function HomeTestimonial() {
 						</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-									<img src={dataObj[1].img} alt="" />
+									<img src={dataObj[1].img} alt="Loading" />
 								</div>
 
 								<div className='imgsub21'>
-									<img src={dataObj[2].img} alt="" />
+									<img src={dataObj[2].img} alt="Loading" />
 								</div>
 
 								<div className='imgsub23'>
-									<img src={dataObj[3].img} alt="" />
+									<img src={dataObj[3].img} alt="Loading" />
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-										<img src={dataObj[0].img} alt="" className="main-img-slide" />
+										<img src={dataObj[0].img} alt="Loading" className="main-img-slide" />
 									</div>
 									<div className="slider-item-des">
 										<div className="item-des-name-value">
