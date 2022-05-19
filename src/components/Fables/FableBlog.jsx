@@ -18,12 +18,12 @@ function FableBlog() {
 								</div>
 								<div className="single-blog-con">
 									<div className="single-blog-img">
-										<img src={Blog2} />
+										<img src={Blog2} alt="loading" />
 									</div>
 									<div className="single-blog-des">
 										<h3>What are NFTs?</h3>
 										<p className="des-cont">Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million... 
-										<a href="#">Read More</a></p>
+										<a href="/">Read More</a></p>
 									</div>
 								</div>
 							</div>
@@ -35,46 +35,46 @@ function FableBlog() {
 								</div>
 								<div className="all-latest-blog-list">
 									<div className="latest-blog-itm">
-										<a href="#" className="blog-itm">
+										<a href="/" className="blog-itm">
 											<div className="blog-itm-des">
 												<p className="itm-des-cont">Amazon-Reliance Territorial Fight In The Indian Retail Jungle</p>
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="" className="img-blog"/>
+												<img src={Blog3} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
 									<div className="latest-blog-itm">
-										<a href="#" className="blog-itm">
+										<a href="/" className="blog-itm">
 											<div className="blog-itm-des">
 												<p className="itm-des-cont">RBL Bank Management Upheaval &amp; The Chaos Around It</p>
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="" className="img-blog"/>
+												<img src={Blog3} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
 									<div className="latest-blog-itm">
-										<a href="#" className="blog-itm">
+										<a href="/" className="blog-itm">
 											<div className="blog-itm-des">
 												<p className="itm-des-cont">What will be the future of Cryptocurrencies in India?</p>
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="" className="img-blog"/>
+												<img src={Blog3} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
 									<div className="latest-blog-itm">
-										<a href="#" className="blog-itm">
+										<a href="/" className="blog-itm">
 											<div className="blog-itm-des">
 												<p className="itm-des-cont">Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="" className="img-blog"/>
+												<img src={Blog3} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
