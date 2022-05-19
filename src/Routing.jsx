@@ -13,7 +13,7 @@ function Routing() {
             <Router>
                 <Routes>
                     <Route exact path='/' element={< Home />} />
-                    <Route exact  path='/AboutIndex' element={< AboutIndex/>} />
+                    <Route exact  path='/about-us' element={< AboutIndex/>} />
                     <Route exact  path='/Career' element={< Career/>} />
                     <Route exact  path='/App' element={< App/>} />
                     <Route exact  path='/Fables' element={< Fables/>} />
