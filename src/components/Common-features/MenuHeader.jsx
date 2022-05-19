@@ -44,7 +44,7 @@ export default function Header() {
                                 <NavLink to= '/' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <NavLink to= '/AboutIndex' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
+                                <NavLink to= '/about-us' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
                                 <a className="nav-link"  href="/">Get Started</a>
