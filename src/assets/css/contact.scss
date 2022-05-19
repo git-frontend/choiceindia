@@ -19,19 +19,24 @@
     }
     .form{
         position: absolute;
-        background-color: #221F20;
-        left: 0;
-        right: 0;
-        width: 80%;
-        bottom: -38%;
-        margin: 0 auto;
-        transform: translate(0, -50%);
-        z-index: 9;
-        padding: 3rem;
+    background-color: #221F20;
+    left: 0;
+    right: 0;
+    width: 85%;
+    top: 99%;
+    margin: 0 auto;
+    transform: translate(0, -50%);
+    z-index: 9;
+    padding: 3rem;
+}
     }
    
-}
+
 
 .contactdetail{
-    padding:20rem 0;
+    padding:20rem 0 0 0;
+
+    .mt-10{margin-top:10rem;}
+   .map{height: 200px}
+   
 }
