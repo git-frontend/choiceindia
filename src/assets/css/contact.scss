@@ -309,11 +309,12 @@
         min-height: 40px;
         position: relative;
         color: #221f2040;
+        font-size: 1.25rem;
         &::after{
             content: url('../images/contact/down-arrow.svg');
             position: absolute;
             display: block;
-            height: 25px;
+            height: 27px;
             width: 25px;
             background: #221F20;
             border-radius: 7px;
@@ -321,6 +322,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 auto;
         }
     }
     .dropdown-menu{
