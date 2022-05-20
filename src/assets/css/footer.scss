@@ -101,6 +101,9 @@
                     @media (max-width: 768px){
                         width: 100%;
                     }
+                    @media (min-width:769px) and (max-width:1024px){
+                        flex-direction: column;
+                    }
                         a{
                             display: flex;
                             align-items: center;
@@ -121,10 +124,20 @@
                             -webkit-transition-timing-function: ease-out;
                             transition-timing-function: ease-out;
                             position: relative;
-                            @media (max-width: 768px){
+                            @media (max-width: 767px){
                               width: 100%;
 
                             }
+                            @media (min-width:767px) and (max-width: 768px){
+                                width: 34%;
+                                margin-bottom: 1rem;
+  
+                              }
+                              @media (min-width:769px) and (max-width: 1024px){
+                                width: 64%;
+                                margin-bottom: 1rem;
+  
+                              }
                             img{
                                 display: block;
                             }
