@@ -81,11 +81,8 @@ function Contactbanner() {
              
            </div>
 
-            <div className="mt-3 d-flex justify-content-between">
-            <label htmlFor="fileInput" className="attachment">Attachment</label>
-  
-<input type="file" style={{display: "none"}}  id="fileInput" />
-
+            <div className="uploadbtn mt-3 d-flex justify-content-between">
+            <input id="upload" Value="Attachement" type="file" accept="image/*" />
 
 
               <Button variant="primary" type="submit" className="sendbtn">

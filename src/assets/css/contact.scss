@@ -1,7 +1,7 @@
 @import 'customvariable.scss';
 
 // banner
-body{
+.contactbody{
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
 }
 
@@ -130,15 +130,22 @@ body{
                 }
            }
 
-           .attachment{
+           .uploadbtn {
+            position: relative;
+            margin-bottom: 3rem;
+            input{
+             color: red;
+             position: absolute;
+         }
+         input::-webkit-file-upload-button {
              background-color: transparent;
-             color: #F5F5F5;
-             font-size: 1rem;
-             line-height: 24px;
-             font-weight: 400;
-             font-family: 'PoppinsRegular';
+                      color: #F5F5F5;
+                      font-size: 1rem;
+                      line-height: 24px;
+                      font-weight: 400;
+                      border: none;
+                      font-family: 'PoppinsRegular';
            }
-
            .sendbtn{
             background-color: #FFCE02;
             border: none;
@@ -148,11 +155,18 @@ body{
             font-size: 1.25rem;
             font-family: 'PoppinsRegular';
             padding: 0.8rem 2rem;
+            position: absolute;
+            right: 0;
            }
         }
-    }
-   
 
+           
+        }
+    }
+  
+ 
+  
+ 
 
 .contactdetail{
     padding:20rem 0 0 0;

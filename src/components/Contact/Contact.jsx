@@ -9,7 +9,7 @@ import "../../assets/css/contact.scss";
 function Contact() {
 
   return (
-    <div>
+    <div class="contactbody">
        <ContactHeader />
        <Contactbanner />
        <Contactdetail />
