@@ -118,7 +118,7 @@
     &::after{
         content: '';
         width: 21rem;
-        height: 40rem;
+        height: 42rem;
         display: block;
         position: absolute;
         background: url(../images/fable/circle-right.svg) no-repeat top left;
@@ -141,7 +141,7 @@
                 align-items: center;
                 .blog-itm-des{
                     width: 70%;
-                    padding: 0 2rem;
+                    // padding: 0 2rem;
                     .itm-des-cont{
                         font-size: 1.65rem;
                         color: $primary;
