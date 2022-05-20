@@ -1,5 +1,13 @@
+@import 'header.scss';
 @import 'customvariable.scss';
 
+
+
+.whitemenu{
+    background-color: #fff !important;
+
+    @extend .main-header;
+}
 // banner
 .contactbody{
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
@@ -9,6 +17,14 @@
 .banner-contact{
     position: relative;
     padding-bottom: 4rem;
+    margin-top: 8rem;
+    @media (max-width: 767px){
+       
+        margin-top: 6rem;
+     }
+     @media (min-width:767px) and (max-width: 1024px){
+        margin-top: 7rem;
+     }
     .ban-img{
         width: 100%;
     }
@@ -35,19 +51,31 @@
         left: 0;
         right: 0;
         width: 85%;
-        top: 118%;
+        top: 127%;
         margin: 0 auto;
         transform: translate(0, -50%);
         z-index: 9;
         padding: 3rem;
         @media (max-width: 767px){
             margin-top: 17rem;
+            top: 138%;
+            padding: 3rem 2rem;
          }
+         @media (min-width:767px) and (max-width: 768px){
+          top: 150%;
+         }
+         @media (min-width:769px) and (max-width:1024px){
+            top: 145%;
+           }
         .writebtn{
             position: absolute;
-            top: -7%;
+            top: -6%;
             left: 0;
             border-radius: 0;
+            @media (max-width: 1024px){
+                top:-6%;
+             }
+
         }
         .writeus{
             background-color: #FFCE02;
@@ -65,30 +93,52 @@
                 border: 1px solid #F5F5F5;
                 filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
                 border-radius: 3px;
-                padding: 0.7rem;
+                padding:14px 12px;
+                @media (max-width: 767px){
+                    padding: 12px 10px;
+                 }
+               
+            }
+          ::placeholder{
+                color: #F5F5F5;
+                font-weight: 400;
+                font-family: "PoppinsRegular";
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                @media (max-width: 767px){
+                    font-size: 1.2rem;
+                 }
             }
             .formlabel{
                 color: #F5F5F5;
-                font-size: 1rem;
+                font-size: 1.5rem;
                 line-height: 2.25rem;
-                font-weight: 400;
-                font-family: 'PoppinsRegular';
+                font-weight: 600;
+                font-family: "PoppinsRegular";
+                margin-bottom: 1.0625rem;
+                @media (max-width: 767px){
+                    font-size: 1.2rem;
+                 }
             }
             
         }
         .formlabel{
             color: #F5F5F5;
-            font-size: 1rem;
+            font-size: 1.5rem;
             line-height: 2.25rem;
-            font-weight: 400;
-            font-family: 'PoppinsRegular';
+            font-weight: 600;
+            font-family: "PoppinsRegular";
+            margin-bottom: 1.0625rem;
+            @media (max-width: 767px){
+                font-size: 1.2rem;
+             }
         }
         .cust-dropdown{
             background: transparent;
             border: 1px solid #F5F5F5;
             filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
             border-radius: 3px;
-            padding: 0.2rem;
+            padding: 10px;
             .dropdown-toggle{
                 width: 100%;
                 text-align: left;
@@ -98,6 +148,14 @@
                 position: relative;
                 color: #F5F5F5;
                 font-weight: 400;
+                font-family: "PoppinsRegular";
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                @media (max-width: 767px){
+                    font-size: 1.2rem;
+                    
+                    padding: 0 10px;
+                 }
                 &::after{
                     content: url('../images/contact/soliddownarrow.svg');
                     position: absolute;
@@ -110,10 +168,12 @@
                     justify-content: center;
                     align-items: center;
                 }
+             
             }
             .dropdown-menu{
                 width: 100%;
             }
+           
            }
 
            .messagefield{
@@ -124,9 +184,15 @@
                     background: transparent;
                     border: 1px solid #F5F5F5;
                     color: #F5F5F5;
-                    font-weight: 500;
-                    font-size: 14px;
-                    padding: 0.8rem;
+                font-weight: 400;
+                font-family: "PoppinsRegular";
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                padding: 14px;
+                @media (max-width: 767px){
+                    font-size: 1.2rem;
+                    padding: 12px 10px;
+                 }
                 }
            }
 
@@ -171,7 +237,11 @@
 .contactdetail{
     padding:20rem 0 0 0;
     margin-top: 33rem;
+    margin-top: 46rem;
     position: relative;
+    @media (max-width: 1024px){
+        margin-top: 46rem;
+      }
     &:before{
         content: '';
         position: absolute;
@@ -186,6 +256,9 @@
     }
     .mt-10{
         margin-top:10rem;
+        @media (max-width: 767px){
+            margin-top:6rem;
+          }
     }
     .detailwrap{
         @media (max-width: 767px){
