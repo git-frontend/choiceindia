@@ -82,7 +82,7 @@ function Contactbanner() {
            </div>
 
             <div className="uploadbtn mt-3 d-flex justify-content-between">
-            <input id="upload" type="file" accept="image/*" />
+            <input id="upload" Value="Attachement" type="file" accept="image/*" />
 
 
               <Button variant="primary" type="submit" className="sendbtn">
