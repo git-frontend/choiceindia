@@ -64,23 +64,23 @@ function Contactbanner() {
               <Form.Control type="name" placeholder="Enter Phone Number" className="formcontrol" />
             </Form.Group>
             </div>
-            <label className="formlabel"> Purpose</label>
+            <label className="formlabel mt-3"> Purpose</label>
             <div className='cust-dropdown'>
            
                      <Dropdown >
                    
                         <Dropdown.Toggle variant="Info" id="dropdown-basic" className="formcontrol" >
-                        Select Your City
+                        Feedback
                         </Dropdown.Toggle>
 
                         <Dropdown.Menu>
-                           <Dropdown.Item href="#/action-1">Delhi</Dropdown.Item>
-                           <Dropdown.Item href="#/action-2">Bangalore</Dropdown.Item>
-                           <Dropdown.Item href="#/action-3">Hyderabad</Dropdown.Item>
+                           <Dropdown.Item href="#/action-1">Review</Dropdown.Item>
+                           <Dropdown.Item href="#/action-2">View</Dropdown.Item>
+                           <Dropdown.Item href="#/action-3">feedbacl</Dropdown.Item>
                         </Dropdown.Menu>
                      </Dropdown>
             </div>
-            <label className="formlabel mt-3"> Your Question</label>
+            <label className="formlabel mt-5"> Your Question</label>
            <div className=" messagefield">
               <textarea className="messagearea" name="comment" form="usrform">Enter text here...</textarea>
              

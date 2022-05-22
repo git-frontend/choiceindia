@@ -22,8 +22,8 @@ function FableBlog() {
 									</div>
 									<div className="single-blog-des">
 										<h3>What are NFTs?</h3>
-										<p className="des-cont">Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million... 
-										<a href="/">Read More</a></p>
+										<p className="des-cont mt-3">Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million... 
+										<a href="/" className="fw-bold">Read More</a></p>
 									</div>
 								</div>
 							</div>
