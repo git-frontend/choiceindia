@@ -5,8 +5,8 @@ import MenuHeader from '../Common-features/MenuHeader';
 
 function ContactHeader() {
     return (
-      <div className="Header header-light">
-        <header className="main-header whitemenu">
+      <div className="Header">
+        <header className="main-header">
           <MenuHeader />
         </header>
       </div>
