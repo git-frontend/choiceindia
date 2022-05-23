@@ -103,7 +103,7 @@
           ::placeholder{
                 color: $lightColor;
                 font-weight: 400;
-                font-family: "PoppinsRegular";
+                font-family: $font-family-poppins-regular;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 @media (max-width: $sm){
@@ -115,7 +115,7 @@
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 font-weight: 600;
-                font-family: "PoppinsRegular";
+                font-family: $font-family-poppins-regular;
                 margin-bottom: 1.0625rem;
                 @media (max-width: $sm){
                     font-size: 1.2rem;
@@ -128,7 +128,7 @@
             font-size: 1.5rem;
             line-height: 2.25rem;
             font-weight: 600;
-            font-family: "PoppinsRegular";
+            font-family: $font-family-poppins-regular;
             margin-bottom: 1.0625rem;
             @media (max-width: $sm){
                 font-size: 1.2rem;
@@ -149,7 +149,7 @@
                 position: relative;
                 color: $lightColor;
                 font-weight: 400;
-                font-family: "PoppinsRegular";
+                font-family: $font-family-poppins-regular;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 @media (max-width: $sm){
@@ -186,7 +186,7 @@
                     border: 1px solid $lightColor;
                     color: $lightColor;
                 font-weight: 400;
-                font-family: "PoppinsRegular";
+                font-family: $font-family-poppins-regular;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 padding: 14px;
@@ -207,7 +207,7 @@
             font-size: 1.5rem;
             line-height: 2.25rem;
             font-weight: 400;
-            font-family: "PoppinsRegular";
+            font-family:$font-family-poppins-regular;
             margin-bottom: 1.0625rem;
             display: flex;
             @media (max-width: $sm){
@@ -225,16 +225,16 @@
                       line-height: 24px;
                       font-weight: 400;
                       border: none;
-                      font-family: 'PoppinsRegular';
+                      font-family: $font-family-poppins-regular;
            }
            .sendbtn{
-            background-color: #FFCE02;
+            background-color: $bgcolor-yellow;
             border: none;
             color: $primary;
             font-weight: 600;
             line-height:1.875rem;
             font-size: 1.25rem;
-            font-family: 'PoppinsRegular';
+            font-family:$font-family-poppins-regular;
             padding: 0.8rem 2rem;
             position: absolute;
             right: 0;
