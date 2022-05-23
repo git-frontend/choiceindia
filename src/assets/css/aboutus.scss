@@ -348,7 +348,7 @@ body{
                  
                  
                     .year{
-                        background: #F3FAFF;
+                        background: $abt-bg;
                         width: 13.125rem;
                         height: 13.125rem;
                         border-radius: 50%;
@@ -533,7 +533,7 @@ body{
     .wrap{
         position: relative;
         padding: 3.125rem;
-        background-color: #F3FAFF;
+        background-color: $abt-bg;
         display: flex;
         width: 100%;
         @media (max-width:$sm) {
@@ -546,7 +546,7 @@ body{
             width: 67%;
             right: -9%;
             background: $whiteColor;
-            box-shadow: 0px 0px 15px 1px #C2C2C2;
+            @extend .box-shadow;
             border-radius: 1.25rem;
             @media (max-width:$sm) {
                 top: 0;
@@ -702,7 +702,7 @@ body{
             width: 90% !important;
             padding: 2.5rem 1.25rem;
             background: $whiteColor;
-            box-shadow: 0px 0px 15px 1px #C2C2C2;
+            @extend .box-shadow;
             border-radius: 1.25rem;
             min-height: 21rem;
             margin: 1.5625rem 1rem;
