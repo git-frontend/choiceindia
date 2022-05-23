@@ -1,4 +1,4 @@
-
+@import '../css/common.scss';
 @import '../css/customvariable.scss';
 
 
@@ -44,7 +44,7 @@
     .fables-caption-right{
         width: 40%;
         padding: 2.5rem;
-        box-shadow: 0px 0px 10px 1px #C2C2C2;
+        @extend .box-shadow;
         position: relative;
         border-radius: 24px 0 0 24px;
         .fable-trending-list{
@@ -255,7 +255,7 @@
                             width: 0.5rem;
                             height: 0.5rem;
                             display: block;
-                            background: #221F20;
+                            background: $bgcolordark;
                             position: absolute;
                             bottom: -0.5rem;
                             left: 0;
@@ -270,7 +270,7 @@
                             width: 0.5rem;
                             height: 0.5rem;
                             display: block;
-                            background: #221F20;
+                            background: $bgcolordark;
                             position: absolute;
                             bottom: -0.5rem;
                             left: 0;
@@ -293,7 +293,7 @@
         .tab-blog-item{
             width: 30%;
             margin-left: 3%;
-            box-shadow: 0px 0px 15px 1px #C2C2C2;
+            @extend .box-shadow;
             border-radius: 20px;
             background: $whiteColor;
             text-decoration: none;

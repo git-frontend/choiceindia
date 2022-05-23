@@ -107,7 +107,7 @@
                             display: flex;
                             align-items: center;
                             justify-content: space-evenly;
-                            background-color: #0066B3;
+                            background-color: $bgcolor-blue;
                             // width: 35%;
                             border-radius: 100px;
                             padding: 0.5rem 1.5rem;
@@ -123,11 +123,11 @@
                             -webkit-transition-timing-function: ease-out;
                             transition-timing-function: ease-out;
                             position: relative;
-                            @media (max-width: 767px){
+                            @media (max-width: $sm){
                               width: 100%;
 
                             }
-                            @media (min-width:767px) and (max-width: 768px){
+                            @media (min-width:$sm) and (max-width: $sm-x){
                                 width: 34%;
                                 margin-bottom: 1rem;
   
@@ -137,7 +137,7 @@
                                 margin-bottom: 1rem;
   
                               }
-                              @media (min-width:1025px) and (max-width: 1200px){
+                              @media (min-width:1025px) and (max-width: $lg){
                                 width: 55%;
                                 margin-bottom: 1rem;
   
@@ -151,13 +151,15 @@
                         .whitecolor{
                             color: #FFFFFF;
                             font-size: 15px;
+                            color: $whiteColor;
+                            font-size: 16px;
                         }
                         .blackcolor{
-                           color:  #13151A;
+                           color:  $blackColorlight;
                            font-size: 16px;
                         }
                         &.white{
-                            background-color: #F5F5F5;
+                            background-color: $bgolor-lightwhite;
                         }
                         &:hover{
                             -webkit-transform: translateY(-8px);
@@ -234,12 +236,12 @@
                     .fa-heart{
                         color: #EF5350;
                     }
-                    @media (max-width: 768px){
+                    @media (max-width: $sm-x){
                         margin: 0.5rem;
                         font-size: 1.1rem;
                     }
                 }
-                @media (max-width: 768px){
+                @media (max-width: $sm-x){
                     margin-top: 2rem;
                     justify-content: flex-start;
                 }

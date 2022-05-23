@@ -32,7 +32,7 @@ body{
 .title-first{
     font-size: 3.5rem;
     color: $primary;
-    text-shadow:0 0 4px #00000040;
+    // text-shadow:0 0 4px #00000040;
     font-family: $font-family-poppins-semibold;
     @media (max-width: 767px){
         font-size: 2rem;
@@ -107,3 +107,10 @@ body{
     }
 }
 
+/*box shadow*/
+.box-shadow{
+    box-shadow: 0px 0px 15px 1px #C2C2C2;
+}
+.light-box-shadow{
+    box-shadow: 0px 0px 8px #E0EFE4;
+}

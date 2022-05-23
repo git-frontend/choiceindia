@@ -1,4 +1,5 @@
 @import 'customvariable.scss';
+@import '../css/common.scss';
 
 .App-main{
     .banner-app{
@@ -56,7 +57,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
-                    background-color: #0066B3;
+                    background-color: $bgcolor-blue;
                     width: 17%;
                     border-radius: 100px;
                     padding: 10px;
@@ -73,7 +74,7 @@
                         transition-timing-function: ease-out;
                         position: relative;
                         &.white{
-                            background-color: #F5F5F5;
+                            background-color: $bgolor-lightwhite;
                         }
                     .img-ico{
                         width: 17rem;
@@ -90,7 +91,7 @@
                         }
                     }
                     .blackcolor{
-                       color:  #13151A;
+                       color:  $blackColorlight;
                        font-size: 20px;
                        @media (max-width: $sm-x){
                         font-size:16px;
@@ -162,7 +163,7 @@
             flex-direction: row-reverse;
             .benifit-value-item{
                 border: 0;
-                box-shadow: 0px 0px 8px #E0EFE4;
+                @extend .light-box-shadow;
                 border-radius: 20px;
                 padding: 2rem 2.5rem;
                 width: 44%;
@@ -173,7 +174,7 @@
                 h4{
                     font-size: 1.78rem;
                     line-height: 1.5;
-                    font-family: "PoppinsSemiBold";
+                    font-family: $font-family-poppins-semibold;
                     color: $primary;
                     @media (max-width: $sm-x){
                         font-size: 1.4rem;
@@ -259,7 +260,7 @@
                     display: flex;
                     align-items: center;
                     justify-content: space-evenly;
-                    background-color: #0066B3;
+                    background-color: $bgcolor-blue;
                     width: 17%;
                     border-radius: 100px;
                     padding: 12px;
@@ -279,7 +280,7 @@
                        padding: 8px;
                     }
                     &.black{
-                        background-color: $primary;
+                        background-color: $bgcolordark;
                     }
                 .img-ico{
                     width: 17rem;
@@ -296,7 +297,7 @@
                     }
                 }
                 .blackcolor{
-                   color:  #13151A;
+                   color:  $blackColorlight;
                    font-size: 20px;
                    @media (max-width: $sm-x){
                     font-size: 16px;
@@ -324,7 +325,7 @@
         }
     }
     .app-banner-bottom{
-        background: #F3FAFF;
+        background: $abt-bg;
         padding: 13rem 0 10rem 0;
         position: relative;
         &:after{
@@ -439,7 +440,7 @@
             justify-content: flex-end;
             flex-wrap: wrap;
             .content-list-itm{
-                border: 2px solid #F5F5F5;
+                border: 2px solid $bgolor-lightwhite;
                 border-radius: 20px;
                 padding: 2rem 1.5rem;
                 margin-bottom: 3rem;
@@ -545,7 +546,7 @@
                 font-size: 1.5rem;
             }
             .clr-cng{
-                color: #0066B3;
+                color: $blueColortext;
             }
         }
     }
