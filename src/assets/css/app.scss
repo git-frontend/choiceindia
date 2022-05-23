@@ -1,14 +1,33 @@
 @import 'customvariable.scss';
+@import '../css/common.scss';
 
 .App-main{
     .banner-app{
+       
         position: relative;
+        &:before{
+            content:'';
+            width: 22em;
+            height: 42rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -22rem;
+            background: url(../images/app/bannerbefore.png) no-repeat bottom left;
+            background-size: contain;
+            z-index: 1;
+            @media (max-width:$sm-x) {
+                display: none;
+            }
+        }
         .ban-img{
             width: 100%;
+          
             @media (max-width: $sm-x){
                 height: 350px;
                 object-fit: cover;
             }
+            
         }
         .app-banner-caption{
             position: absolute;
@@ -18,6 +37,9 @@
             transform: translate(0, -50%);
             z-index: 9;
             color: $whiteColor;
+            @media (max-width: $sm-x){
+                top: 57%;
+            }
             .big-ttl{
                 color: $whiteColor;
                 @media (max-width: $sm-x){
@@ -32,6 +54,13 @@
                 display: flex;
                 flex-wrap: wrap;
                 .link-nrl{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    background-color: $bgcolor-blue;
+                    width: 17%;
+                    border-radius: 100px;
+                    padding: 10px;
                     margin-right: 2.5rem;
                     text-decoration: none;
                         -webkit-transform: perspective(1px) translateZ(0);
@@ -44,6 +73,9 @@
                         -webkit-transition-timing-function: ease-out;
                         transition-timing-function: ease-out;
                         position: relative;
+                        &.white{
+                            background-color: $bgolor-lightwhite;
+                        }
                     .img-ico{
                         width: 17rem;
                         display: block;
@@ -51,23 +83,64 @@
                             width: 8rem;
                         }
                     }
+                    .whitecolor{
+                        color: $whiteColor;
+                        font-size: 20px;
+                        @media (max-width: $sm-x){
+                            font-size:16px;
+                        }
+                    }
+                    .blackcolor{
+                       color:  $blackColorlight;
+                       font-size: 20px;
+                       @media (max-width: $sm-x){
+                        font-size:16px;
+                    }
+                    }
                     &:hover{
                         transform: translateY(-8px);
                     }
                     @media (max-width: $sm-x){
                         margin-right: 1rem;
+                        width: 42%;
+                        margin-bottom: 1rem;
+                        padding: 8px;
                     }
+                    @media (min-width:$sm-x) and (max-width: $md){
+                        width: 23%;
+                      }
+                      @media (min-width:769px) and (max-width:1024px){
+                        width: 23%;
+                      }
                 }
                 @media (max-width: $sm-x){
                     margin: 2rem 0;
+                    flex-direction: column;
                 }
+             
             }
         }
+       
     }
 
     .app-benefits-section{
         padding: 15rem 0 20rem 0;
         position: relative;
+        &:after{
+            content:'';
+            width: 36em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: -22rem;
+            background: url(../images/app/appbefore.png) no-repeat bottom left;
+            background-size: contain;
+            z-index: -1;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
         .heading-sec{
             .title-first{
                 font-size: 3rem;
@@ -90,7 +163,7 @@
             flex-direction: row-reverse;
             .benifit-value-item{
                 border: 0;
-                box-shadow: 0px 0px 8px #E0EFE4;
+                @extend .light-box-shadow;
                 border-radius: 20px;
                 padding: 2rem 2.5rem;
                 width: 44%;
@@ -101,7 +174,7 @@
                 h4{
                     font-size: 1.78rem;
                     line-height: 1.5;
-                    font-family: "PoppinsSemiBold";
+                    font-family: $font-family-poppins-semibold;
                     color: $primary;
                     @media (max-width: $sm-x){
                         font-size: 1.4rem;
@@ -180,39 +253,79 @@
             }
         }
         .wrap-app-links{
+            margin: 4rem 0;
+            display: flex;
+            flex-wrap: wrap;
             .link-nrl{
-                display: block;
-                margin: 0 1.5rem;
-                -webkit-transform: perspective(1px) translateZ(0);
-                        transform: perspective(1px) translateZ(0);
-                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-                        -webkit-transition-duration: 0.3s;
-                        transition-duration: 0.3s;
-                        -webkit-transition-property: transform;
-                        transition-property: transform;
-                        -webkit-transition-timing-function: ease-out;
-                        transition-timing-function: ease-out;
-                        position: relative;
-                .img-ico{
-                    width: 14rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    background-color: $bgcolor-blue;
+                    width: 17%;
+                    border-radius: 100px;
+                    padding: 12px;
+                    margin-right: 2.5rem;
+                    text-decoration: none;
+                    -webkit-transform: perspective(1px) translateZ(0);
+                    transform: perspective(1px) translateZ(0);
+                    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                    -webkit-transition-duration: 0.3s;
+                    transition-duration: 0.3s;
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    -webkit-transition-timing-function: ease-out;
+                    transition-timing-function: ease-out;
+                    position: relative;
                     @media (max-width: $sm-x){
-                        width: 12rem;
+                       padding: 8px;
+                    }
+                    &.black{
+                        background-color: $bgcolordark;
+                    }
+                .img-ico{
+                    width: 17rem;
+                    display: block;
+                    @media (max-width: $sm-x){
+                        width: 8rem;
                     }
                 }
-                @media (max-width: $sm-x){
-                    margin: 0 0.5rem;
+                .whitecolor{
+                    color: $whiteColor;
+                    font-size: 20px;
+                    @media (max-width: $sm-x){
+                        font-size: 16px;
+                    }
+                }
+                .blackcolor{
+                   color:  $blackColorlight;
+                   font-size: 20px;
+                   @media (max-width: $sm-x){
+                    font-size: 16px;
+                }
                 }
                 &:hover{
                     transform: translateY(-8px);
                 }
+                @media (max-width: $sm-x){
+                    margin-right: 1rem;
+                    width: 42%;
+                    margin-bottom: 1rem;
+                }
+                @media (min-width:$sm-x) and (max-width: $md){
+                    width: 23%;
+                  }
             }
+            @media (max-width: $sm-x){
+                margin: 2rem 0;
+            }
+         
         }
         @media (max-width: $sm-x){
             padding: 5rem 0;
         }
     }
     .app-banner-bottom{
-        background: #F3FAFF;
+        background: $abt-bg;
         padding: 13rem 0 10rem 0;
         
         .content-list{
@@ -278,13 +391,14 @@
 
     .app-strategies-bottom{
         padding-bottom: 10rem;
+
         .content-list{
             padding-left: 5rem;
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
             .content-list-itm{
-                border: 2px solid #F5F5F5;
+                border: 2px solid $bgolor-lightwhite;
                 border-radius: 20px;
                 padding: 2rem 1.5rem;
                 margin-bottom: 3rem;
@@ -372,6 +486,21 @@
 .trade-benefits-section{
     background:$bgcolor-lightgray;
     padding: 10rem 0;
+    position: relative;
+    &:after{
+        content:'';
+        width: 33em;
+        height: 45rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -22rem;
+        background: url(../images/app/wealthbefore.png) no-repeat bottom right;
+        background-size: contain;
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
     .reset{
         margin: 3rem 0 4rem;
         li{
@@ -382,7 +511,7 @@
                 font-size: 1.5rem;
             }
             .clr-cng{
-                color: #0066B3;
+                color: $blueColortext;
             }
         }
     }

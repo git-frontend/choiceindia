@@ -46,7 +46,10 @@ function WhatWeOffer() {
             <div className="container">
                   <div className="row">
                     <div className="col-md-12">
-                    <h2 className="heading">What we Offer</h2>
+                      <div className="heading-sec text-center">
+                        <h3 className="title-first">What we Offer</h3>
+                        <p>We offer a wide range of customized services, empowering our clients to manage their finances under one roof</p>
+                      </div>
                     </div>
                   </div>
                 <div className="row">

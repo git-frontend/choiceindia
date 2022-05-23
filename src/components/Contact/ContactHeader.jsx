@@ -3,7 +3,7 @@ import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import MenuHeader from '../Common-features/MenuHeader';
 
 
-function FablesHeader() {
+function ContactHeader() {
     return (
       <div className="Header">
         <header className="main-header">
@@ -13,5 +13,7 @@ function FablesHeader() {
     );
   }
   
-  export default FablesHeader;
+  export default ContactHeader;
+ 
+
   

@@ -7,6 +7,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
 
+
 function BannerCareer() {
 
     const settings = {
@@ -23,6 +24,8 @@ function BannerCareer() {
         loop:true,
          slide: 'div',
          cssEase: 'linear',
+         pauseOnFocus: false,
+         pauseOnHover: false,
         responsive: [
           {
             breakpoint: 768,
@@ -52,6 +55,27 @@ function BannerCareer() {
                   <img src={CareerImage1} className="img-fluid" alt='Loading' />
                 </div>
               </Slider>
+
+              {/* <Marquee direction="left" speed={100} delay={1} className="career-list-slider">
+                <div className="image_wrapper">
+                  <img src={CareerImage0} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage1} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage2} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage0} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage1} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage2} alt="" />
+                </div>
+              </Marquee> */}
     </section>
 
     <section className='our-values'>
