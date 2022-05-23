@@ -32,10 +32,10 @@ export default function Header() {
                                 <NavLink to= '/app' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                                <NavLink to= '/Services'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                                <NavLink to= '/Research'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to= '/Career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
@@ -44,7 +44,7 @@ export default function Header() {
                                 <NavLink to= '/Contact' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <NavLink to= '/' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
+                                <NavLink to= '/Log In' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
                             <NavLink className="nav-link"  to= "/">Get Started</NavLink>
