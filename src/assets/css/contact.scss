@@ -116,14 +116,9 @@
                 font-weight: 600;
                 font-family: "PoppinsRegular";
                 margin-bottom: 1.0625rem;
-                display: flex;
                 @media (max-width: $sm){
                     font-size: 1.2rem;
                  }
-                
-            }
-            .filename{
-                padding-left: 20px;
             }
             
         }
@@ -204,8 +199,23 @@
            .uploadbtn {
             position: relative;
             margin-bottom: 3rem;
-            
-           ]
+            align-items: center;
+           }
+           .attachement{
+            color: $lightColor;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 400;
+            font-family: "PoppinsRegular";
+            margin-bottom: 1.0625rem;
+            display: flex;
+            @media (max-width: $sm){
+                font-size: 1.2rem;
+             }
+           }
+           .filename{
+               padding-left: 20px;
+           }
 
          input::-webkit-file-upload-button {
              background-color: transparent;
@@ -232,7 +242,8 @@
 
            
         }
-    }
+    
+
   
  
   

@@ -101,11 +101,10 @@ function Contactbanner() {
         />
         
         <label
-        className="formlabel mt-3"
+        className="attachement mt-3"
           style={{ cursor:"pointer" }}
           onClick={() => inputRef.click()}
-        >
-        Attachment <p class="filename"> {data} </p>
+        >Attachment <p class="filename"> {data} </p>
         </label>
        
             
