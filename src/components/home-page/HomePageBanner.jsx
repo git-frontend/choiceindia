@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 
+// import { LazyLoadImage } from 'react-lazy-load-image-component';
+// import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function HomePageBanner() {
 
@@ -19,7 +21,7 @@ function HomePageBanner() {
     /**onInIt Home Primary Banner */
     useEffect(() => {
         setTrigger(true)
-        if (trigger===true) {
+        if (trigger === true) {
             loadPrimarybanner();
         }
 
@@ -54,7 +56,7 @@ function HomePageBanner() {
                 })
 
             }
-            
+
         </div>
 
     );
