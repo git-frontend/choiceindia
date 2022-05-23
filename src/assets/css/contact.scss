@@ -3,11 +3,11 @@
 
 
 
-.whitemenu{
-    background-color: #fff !important;
+// .whitemenu{
+//     background-color: #fff !important;
 
-    @extend .main-header;
-}
+//     @extend .main-header;
+// }
 // banner
 .contactbody{
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
@@ -18,11 +18,11 @@
     position: relative;
     padding-bottom: 4rem;
     margin-top: 8rem;
-    @media (max-width: 767px){
+    @media (max-width: $sm){
        
         margin-top: 6rem;
      }
-     @media (min-width:767px) and (max-width: 1024px){
+     @media (min-width:$sm) and (max-width: 1024px){
         margin-top: 7rem;
      }
     .ban-img{
@@ -36,9 +36,9 @@
         top: 40%;
         transform: translate(0, -50%);
         z-index: 9;
-        color: #221F20;
+        color: $primary;
         .big-ttl{
-            @media (max-width: 767px){
+            @media (max-width: $sm){
                font-size: 3rem;
                line-height: 1;
             }
@@ -47,7 +47,7 @@
    
     .form{
         position: absolute;
-        background-color: #221F20;
+        background-color: $primary;
         left: 0;
         right: 0;
         width: 85%;
@@ -56,12 +56,12 @@
         transform: translate(0, -50%);
         z-index: 9;
         padding: 3rem;
-        @media (max-width: 767px){
+        @media (max-width: $sm){
             margin-top: 17rem;
             top: 138%;
             padding: 3rem 2rem;
          }
-         @media (min-width:767px) and (max-width: 768px){
+         @media (min-width:$sm) and (max-width: $sm-x){
           top: 150%;
          }
          @media (min-width:769px) and (max-width:1024px){
@@ -80,7 +80,7 @@
         .writeus{
             background-color: #FFCE02;
             border: none;
-            color: #221F20;
+            color: $primary;
             font-weight: 700;
             line-height: 34px;
             padding: 1.2rem ;
@@ -90,52 +90,52 @@
             width: 49%;
             .formcontrol{
                 background: transparent;
-                border: 1px solid #F5F5F5;
+                border: 1px solid $lightColor;
                 filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
                 border-radius: 3px;
                 padding:14px 12px;
-                @media (max-width: 767px){
+                @media (max-width: $sm){
                     padding: 12px 10px;
                  }
                
             }
           ::placeholder{
-                color: #F5F5F5;
+                color: $lightColor;
                 font-weight: 400;
                 font-family: "PoppinsRegular";
                 font-size: 1.5rem;
                 line-height: 2.25rem;
-                @media (max-width: 767px){
+                @media (max-width: $sm){
                     font-size: 1.2rem;
                  }
             }
             .formlabel{
-                color: #F5F5F5;
+                color: $lightColor;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 font-weight: 600;
                 font-family: "PoppinsRegular";
                 margin-bottom: 1.0625rem;
-                @media (max-width: 767px){
+                @media (max-width: $sm){
                     font-size: 1.2rem;
                  }
             }
             
         }
         .formlabel{
-            color: #F5F5F5;
+            color: $lightColor;
             font-size: 1.5rem;
             line-height: 2.25rem;
             font-weight: 600;
             font-family: "PoppinsRegular";
             margin-bottom: 1.0625rem;
-            @media (max-width: 767px){
+            @media (max-width: $sm){
                 font-size: 1.2rem;
              }
         }
         .cust-dropdown{
             background: transparent;
-            border: 1px solid #F5F5F5;
+            border: 1px solid $lightColor;
             filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
             border-radius: 3px;
             padding: 10px;
@@ -146,12 +146,12 @@
                 align-items: center;
                 justify-content: space-between;
                 position: relative;
-                color: #F5F5F5;
+                color: $lightColor;
                 font-weight: 400;
                 font-family: "PoppinsRegular";
                 font-size: 1.5rem;
                 line-height: 2.25rem;
-                @media (max-width: 767px){
+                @media (max-width: $sm){
                     font-size: 1.2rem;
                     
                     padding: 0 10px;
@@ -182,14 +182,14 @@
                     min-height: 200px;
                     width: 100%;
                     background: transparent;
-                    border: 1px solid #F5F5F5;
-                    color: #F5F5F5;
+                    border: 1px solid $lightColor;
+                    color: $lightColor;
                 font-weight: 400;
                 font-family: "PoppinsRegular";
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 padding: 14px;
-                @media (max-width: 767px){
+                @media (max-width: $sm){
                     font-size: 1.2rem;
                     padding: 12px 10px;
                  }
@@ -205,7 +205,7 @@
          }
          input::-webkit-file-upload-button {
              background-color: transparent;
-                      color: #F5F5F5;
+                      color: $lightColor;
                       font-size: 1rem;
                       line-height: 24px;
                       font-weight: 400;
@@ -215,7 +215,7 @@
            .sendbtn{
             background-color: #FFCE02;
             border: none;
-            color: #221F20;
+            color: $primary;
             font-weight: 600;
             line-height:1.875rem;
             font-size: 1.25rem;
@@ -256,48 +256,48 @@
     }
     .mt-10{
         margin-top:10rem;
-        @media (max-width: 767px){
+        @media (max-width: $sm){
             margin-top:6rem;
           }
     }
     .detailwrap{
-        @media (max-width: 767px){
+        @media (max-width: $sm){
            flex-direction: column;
          }
     }
     .address{
-        @media (max-width: 767px){
+        @media (max-width: $sm){
             text-align: left !important;
             margin-top: 3rem;
           }
     }
   .maintitle{
-    color: #221F20;
+    color: $primary;
     font-weight: 600;
     font-size: 1.875rem;
     line-height: 2.8125rem;
     font-family: 'PoppinsMedium';
   }
   .subtext{
-    color: #707070;
+    color: $secondary;
     font-weight: 400;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 2.125rem;
     font-family: 'PoppinsRegular';
   }
   .subhead{
-    color: #221F20;
+    color: $primary;
     font-weight: 400;
     font-size: 1.25rem;
     line-height: 2.125rem;
     font-family: 'PoppinsRegular';
   }
    .cust-dropdown{
-    background: #FFFFFF;
+    background: $whiteColor;
     box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
     border-radius: 7px;
     margin-top: 4.5625rem;
-    @media (max-width: 767px){
+    @media (max-width: $sm){
         margin-top: 3rem;
       }
     .dropdown-toggle{
@@ -308,15 +308,16 @@
         justify-content: space-between;
         min-height: 40px;
         position: relative;
-        color: #221f2040;
-        font-size: 1.25rem;
+        color: #221F2040;
+        font-size: 1.4rem;
         &::after{
             content: url('../images/contact/down-arrow.svg');
             position: absolute;
             display: block;
-            height: 27px;
+            height: 25px;
             width: 25px;
-            background: #221F20;
+            border: none;
+            background: $primary;
             border-radius: 7px;
             right: 10px;
             display: flex;
@@ -337,4 +338,8 @@
 
 .mb-0{
     margin-bottom: 0;
+}
+
+.attach{
+    cursor: pointer;
 }
