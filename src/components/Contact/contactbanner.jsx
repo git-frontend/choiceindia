@@ -1,11 +1,16 @@
 
-import React from "react";
+import React,{useState} from "react";
 import Bannerimage from '../../assets/images/contact/contactbanner.png';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 import {Dropdown} from 'react-bootstrap';
 function Contactbanner() {
+     
+  let inputRef="";
+  const[data,setData]=useState("");
+
+
 
   return (
     <div>
@@ -82,10 +87,28 @@ function Contactbanner() {
            </div>
 
             <div className="uploadbtn mt-3 d-flex justify-content-between">
+            {/**<input  type="file" id="selected" accept="image/*" title="" hidden />
+  <label htmlFor="icon-button-file"  className="formlabel mt-3 attach">Attachment</label>*/}
+  
+            <input
+          type="file"
+          accept="image/*"
+          hidden={true}
+          ref={refParam => inputRef = refParam}
+          onChange={(e)=>{
+            setData(e.target.value)
+          }}
+        />
         
-            <input id="upload"  placeholder="A red placeholder text.." type="file" accept="image/*" />
-
-
+        <label
+        className="formlabel mt-3"
+          style={{ cursor:"pointer" }}
+          onClick={() => inputRef.click()}
+        >
+        Attachment <p> {data} </p>
+        </label>
+       
+            
               <Button variant="primary" type="submit" className="sendbtn">
                 Send
               </Button>
