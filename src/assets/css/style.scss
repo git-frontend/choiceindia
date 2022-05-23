@@ -172,7 +172,7 @@
                     margin-left: 4%;
                 a{
                     background: $whiteColor;
-                    @extend .box-shadow;
+                    box-shadow: 0px 0px 15px 1px #C2C2C2;
                     border-radius: 20px;
                     padding: 2rem;
                     text-decoration: none;
