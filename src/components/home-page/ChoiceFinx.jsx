@@ -3,8 +3,7 @@ import  ImageSub6  from '../../assets/images/icons/shopping-cart.svg';
 import  ImageSub7  from '../../assets/images/icons/grid1.svg';
 import  ImageSub8  from '../../assets/images/icons/speed.svg';
 import  ImageSub9  from '../../assets/images/app-img1.png';
-import  ImageSub10  from '../../assets/images/icons/play-store.svg';
-import  ImageSub11  from '../../assets/images/icons/Apple.svg';
+
 import React from "react";
 import $ from 'jquery';
 

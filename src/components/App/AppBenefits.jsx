@@ -1,5 +1,3 @@
-import  ImageFooter1  from '../../assets/images/icons/google-play.svg';
-import  ImageFooter3  from '../../assets/images/icons/app-store-dark.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";

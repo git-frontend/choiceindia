@@ -1,9 +1,6 @@
 
 import  ImageSub20  from '../../assets/images/slide-img1.png';
-import  ImageSub21  from '../../assets/images/slide-img2.png';
-import  ImageSub22  from '../../assets/images/slide-img3.png';
-import  ImageSub23  from '../../assets/images/slide-img4.png';
-import  ImageSub24  from '../../assets/images/slide-img5.png';
+
 import React from "react";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"

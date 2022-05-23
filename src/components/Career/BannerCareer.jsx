@@ -2,7 +2,7 @@ import  CareerImage0  from '../../assets/images/career/slide1.jpg';
 import  CareerImage1  from '../../assets/images/career/slide2.jpg';
 import  CareerImage2  from '../../assets/images/career/slide3.jpg';
 import  CareerImage3  from '../../assets/images/career/slide4.jpg';
-import  CareerImage5  from '../../assets/images/career/money.svg';
+
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";

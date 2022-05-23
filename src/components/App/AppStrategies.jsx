@@ -4,7 +4,7 @@ import imageData from '../../Data/Strategies';
 
 
 function AppStrategies() {
-  const [isShown1, setIsShown1] = useState(true);
+//   const [isShown1, setIsShown1] = useState(true);
   const [isShown2, setIsShown2] = useState(0);
   console.log("image", imageData)
   return (
