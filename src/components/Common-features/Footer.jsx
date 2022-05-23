@@ -107,7 +107,7 @@ function Footer() {
                     </div>
                     <div className="top-social-extra-links">
                       <div className="row align-items-center">
-                        <div className="col-md-8">
+                        <div className="col-md-7">
                           <div className="links-wrap-social">
                             <div className="wrap-app-links">
                             <a href="#" target="_blank" className='link-nrl'>
@@ -151,7 +151,7 @@ function Footer() {
                             </div>
                           </div>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-5">
                           <ul className="extra-links-right">
                             <li>
                               Made with  <FontAwesomeIcon icon={faHeart} />  in India

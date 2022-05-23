@@ -97,7 +97,6 @@
                 .wrap-app-links{
                     display: flex;
                     margin-top: 2rem;
-                    width: 100%;
                     @media (max-width: 768px){
                         width: 100%;
                     }
@@ -111,8 +110,8 @@
                             background-color: #0066B3;
                             // width: 35%;
                             border-radius: 100px;
-                            padding: 8px 12px;
-                            margin-right: 2.5rem;
+                            padding: 0.5rem 1.5rem;
+                            margin-right: 1.5rem;
                             text-decoration: none;
                             -webkit-transform: perspective(1px) translateZ(0);
                             transform: perspective(1px) translateZ(0);
@@ -147,11 +146,11 @@
                                 display: block;
                             }
                             span{
-                                padding-left: 15px;
+                                padding-left: 10px;
                             }
                         .whitecolor{
                             color: #FFFFFF;
-                            font-size: 16px;
+                            font-size: 15px;
                         }
                         .blackcolor{
                            color:  #13151A;

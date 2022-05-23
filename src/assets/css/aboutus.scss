@@ -780,6 +780,9 @@ body{
                    }
             }
     }
+    .heading-sec{
+        margin-bottom: 4rem;
+    }
 }
 
 
@@ -790,5 +793,20 @@ body{
         .slick-slide{
             padding:0 3.125rem 3.125rem 0;
         }
+    }
+}
+
+
+.client-list-slider{
+    .image_wrapper{
+        padding: 0 1%;
+        width: 20%;
+        text-align: center;
+        img{
+            max-width:100%;
+        }
+    }
+    .overlay{
+        display: none;
     }
 }

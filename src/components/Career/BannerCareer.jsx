@@ -3,43 +3,46 @@ import  CareerImage1  from '../../assets/images/career/slide2.jpg';
 import  CareerImage2  from '../../assets/images/career/slide3.jpg';
 import  CareerImage3  from '../../assets/images/career/slide4.jpg';
 import  CareerImage5  from '../../assets/images/career/money.svg';
-import "../../../node_modules/slick-carousel/slick/slick.css"
-import "../../../node_modules/slick-carousel/slick/slick-theme.css"
+// import "../../../node_modules/slick-carousel/slick/slick.css"
+// import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
-import Slider from "react-slick";
+// import Slider from "react-slick";
+import Marquee from 'react-fast-marquee';
 
 function BannerCareer() {
 
-    const settings = {
-        speed: 2000,
-        arrows: false,
-        slidesToShow: 1,
-        dots:false,
-        autoplay:true,
-        autoplaySpeed: 0,
-        centerMode: true,
-        infinite: true,
-        centerPadding: '30%',
-        slidesToScroll: 1,
-        loop:true,
-         slide: 'div',
-         cssEase: 'linear',
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              centerPadding: '8%',
-            }
-          },
-        ]
-    };
+    // const settings = {
+    //     speed: 2000,
+    //     arrows: false,
+    //     slidesToShow: 1,
+    //     dots:false,
+    //     autoplay:true,
+    //     autoplaySpeed: 0,
+    //     centerMode: true,
+    //     infinite: true,
+    //     centerPadding: '30%',
+    //     slidesToScroll: 1,
+    //     loop:true,
+    //      slide: 'div',
+    //      cssEase: 'linear',
+    //      pauseOnFocus: false,
+    //      pauseOnHover: false,
+    //     responsive: [
+    //       {
+    //         breakpoint: 768,
+    //         settings: {
+    //           centerPadding: '8%',
+    //         }
+    //       },
+    //     ]
+    // };
 
   return (
     <div className='career-main'>
       
      
     <section className="bannersection">
-          <Slider {...settings} className="career-list-slider">
+          {/* <Slider {...settings} className="career-list-slider">
                 <div>
                   <img src={CareerImage0} className="img-fluid" />
                 </div>
@@ -52,7 +55,28 @@ function BannerCareer() {
                 <div>
                   <img src={CareerImage1} className="img-fluid" />
                 </div>
-              </Slider>
+              </Slider> */}
+
+              <Marquee direction="left" speed={100} delay={1} className="career-list-slider">
+                <div className="image_wrapper">
+                  <img src={CareerImage0} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage1} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage2} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage0} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage1} alt="" />
+                </div>
+                <div className="image_wrapper">
+                  <img src={CareerImage2} alt="" />
+                </div>
+              </Marquee>
     </section>
 
     <section className='our-values'>

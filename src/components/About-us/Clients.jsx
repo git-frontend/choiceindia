@@ -1,5 +1,6 @@
 
 import React from "react";
+import Marquee from 'react-fast-marquee';
 
 import nitiaayog from '../../assets/images/about-us/nitiaayog.svg';
 import libertyinsurance from '../../assets/images/about-us/libertyinsurance.svg';
@@ -52,7 +53,7 @@ function Clients() {
                 <div className="row">
                 <div className="col-md-12">
                   <div className="client-list marquee">
-                  <Slider {...settings} className="client-list-slider ">
+                  {/* <Slider {...settings} className="client-list-slider ">
                       <div className="client-item ">
                         <span className="img-itm">
                           <img src={nitiaayog} className="img-fluid" />
@@ -108,8 +109,41 @@ function Clients() {
                        
                       </div>
 
-                    </Slider>
+                    </Slider> */}
                   </div>
+
+                  <Marquee direction="left" speed={100} delay={1} className="client-list-slider">
+                    <div className="image_wrapper">
+                      <img src={nitiaayog} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={libertyinsurance} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={aadhar} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={navkar} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={idea} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={nitiaayog} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={libertyinsurance} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={aadhar} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={navkar} alt="" />
+                    </div>
+                    <div className="image_wrapper">
+                      <img src={idea} alt="" />
+                    </div>
+                </Marquee>
                 </div>
               </div>
             </div>

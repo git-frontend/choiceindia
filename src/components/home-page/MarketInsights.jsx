@@ -58,7 +58,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#Metaverse </span>	
                         </div>
                         <div className="item-cont-descr">
-                            <p>Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur</p>
+                            <p>Taste of colour in the Meta</p>
                         </div>	
                         </div>
                         <div className="insights-list-item">
@@ -67,7 +67,7 @@ function MarketInsights() {
                             <span className="ttl-sm">#Budget2022</span>	
                         </div>	
                         <div className="item-cont-descr">
-                            <p>Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur Bitcoin entrepreneur</p>
+                            <p>Culture Ministry gets ₹3000 Cr</p>
                         </div>
                         </div>
                     </div>	

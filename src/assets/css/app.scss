@@ -14,6 +14,7 @@
             bottom: -22rem;
             background: url(../images/app/bannerbefore.png) no-repeat bottom left;
             background-size: contain;
+            z-index: 1;
             @media (max-width:$sm-x) {
                 display: none;
             }
@@ -82,7 +83,7 @@
                         }
                     }
                     .whitecolor{
-                        color: #FFFFFF;
+                        color: $whiteColor;
                         font-size: 20px;
                         @media (max-width: $sm-x){
                             font-size:16px;
@@ -278,7 +279,7 @@
                        padding: 8px;
                     }
                     &.black{
-                        background-color: #221F20;
+                        background-color: $primary;
                     }
                 .img-ico{
                     width: 17rem;
@@ -288,7 +289,7 @@
                     }
                 }
                 .whitecolor{
-                    color: #FFFFFF;
+                    color: $whiteColor;
                     font-size: 20px;
                     @media (max-width: $sm-x){
                         font-size: 16px;
