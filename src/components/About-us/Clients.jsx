@@ -1,6 +1,6 @@
 
 import React from "react";
-// import Marquee from 'react-fast-marquee';
+import Marquee from 'react-fast-marquee';
 
 import nitiaayog from '../../assets/images/about-us/nitiaayog.svg';
 import libertyinsurance from '../../assets/images/about-us/libertyinsurance.svg';
@@ -112,7 +112,7 @@ function Clients() {
                     </Slider> */}
                   </div>
 
-                  {/* <Marquee direction="left" speed={100} delay={1} className="client-list-slider">
+                   <Marquee direction="left" speed={100} delay={1} className="client-list-slider">
                     <div className="image_wrapper">
                       <img src={nitiaayog} alt="" />
                     </div>
@@ -143,7 +143,7 @@ function Clients() {
                     <div className="image_wrapper">
                       <img src={idea} alt="" />
                     </div>
-                </Marquee> */}
+                </Marquee> 
                 </div>
               </div>
             </div>
