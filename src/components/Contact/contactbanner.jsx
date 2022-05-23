@@ -105,7 +105,7 @@ function Contactbanner() {
           style={{ cursor:"pointer" }}
           onClick={() => inputRef.click()}
         >
-        Attachment <p> {data} </p>
+        Attachment <p class="filename"> {data} </p>
         </label>
        
             

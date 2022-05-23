@@ -116,9 +116,14 @@
                 font-weight: 600;
                 font-family: "PoppinsRegular";
                 margin-bottom: 1.0625rem;
+                display: flex;
                 @media (max-width: $sm){
                     font-size: 1.2rem;
                  }
+                
+            }
+            .filename{
+                padding-left: 20px;
             }
             
         }
@@ -199,10 +204,9 @@
            .uploadbtn {
             position: relative;
             margin-bottom: 3rem;
-            input{
-             color: red;
-             position: absolute;
-         }
+            
+           ]
+
          input::-webkit-file-upload-button {
              background-color: transparent;
                       color: $lightColor;
