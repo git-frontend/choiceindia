@@ -9,36 +9,31 @@ import navkar from '../../assets/images/about-us/navkar.svg';
 import idea from '../../assets/images/about-us/idea.svg';
 import Slider from "react-slick";
 function Clients() {
+    // const settings = {
+    //   speed: 2000,
+    //   autoplay: true,
+    //   autoplaySpeed:200,
+    //   speed:100,
+    //   centerMode: false,
+    //   cssEase: 'linear',
+    //   slidesToShow: 6,
+    //   slidesToScroll:1,
+    //   variableWidth: true,
+    //   infinite: true,
+    //   initialSlide: 1,
+    //   arrows: false,
+    //   buttons: false,
+      
+    // };
     const settings = {
-      speed: 2000,
-      autoplay: true,
-      autoplaySpeed: 0,
-      centerMode: false,
-      cssEase: 'linear',
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      variableWidth: true,
+      slidesToShow: 6,
+      slidesToScroll:1,
       infinite: true,
-      initialSlide: 1,
+      autoplay: true,
+      speed: 9000,
+      autoplaySpeed: 0,
+      cssEase: 'linear',
       arrows: false,
-      buttons: false,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 3,
-              slidesToScroll: 3,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-            },
-          },
-        ],
     };
   return (
     <div>
@@ -52,8 +47,8 @@ function Clients() {
                 </div>
                 <div className="row">
                 <div className="col-md-12">
-                  <div className="client-list marquee">
-                  {/* <Slider {...settings} className="client-list-slider ">
+                  <div className="client-list">
+                   <Slider {...settings} className="client-list-slider ">
                       <div className="client-item ">
                         <span className="img-itm">
                           <img src={nitiaayog} className="img-fluid" alt="loading"/>
@@ -109,10 +104,10 @@ function Clients() {
                        
                       </div>
 
-                    </Slider> */}
+                    </Slider>
                   </div>
 
-                   <Marquee direction="left" speed={100} delay={1} className="client-list-slider">
+                  { /**<Marquee direction="left" speed={100} delay={1} className="client-list-slider">
                     <div className="image_wrapper">
                       <img src={nitiaayog} alt="" />
                     </div>
@@ -143,7 +138,7 @@ function Clients() {
                     <div className="image_wrapper">
                       <img src={idea} alt="" />
                     </div>
-                </Marquee> 
+                  </Marquee>*/} 
                 </div>
               </div>
             </div>
