@@ -3,6 +3,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
+import EveryFinance from "../../Data/EverydayFinance"
 import homeServices from '../../Services/homeServices';
 
 function EverydayFinance() {
@@ -77,16 +78,16 @@ function EverydayFinance() {
               <div className="main-services-list">
                 <Slider {...settings} className="services-list-slider">
                   {
-                    secondary.map((response) => {
+                    EveryFinance.map((response) => {
 
 
                       return (
                         <div key={response.id} className="service-item">
                           <span className="img-itm">
-                            <img src={`https://cmsapi.choiceindia.com/assets/${response.icon}`} className="img-fluid" alt='Loading' />
+                            <img src={response.image} className="img-fluid" alt='Loading' />
                           </span>
                           <h5>{response.title || '-'}</h5>
-                          <p>{response.discription || '-'}</p>
+                          <p>{response.description || '-'}</p>
                           <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
                         </div>
 
