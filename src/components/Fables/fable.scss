@@ -1,5 +1,5 @@
-@import '../css/common.scss';
-@import '../css/customvariable.scss';
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
 
 
 .fables-banner{
@@ -107,7 +107,7 @@
         height: 40rem;
         display: block;
         position: absolute;
-        background: url(../images/fable/circle-left.svg) no-repeat top left;
+        background: url(../../assets/images/fable/circle-left.svg) no-repeat top left;
         background-size: contain;
         left: 0;
         top: -13rem;
@@ -121,7 +121,7 @@
         height: 42rem;
         display: block;
         position: absolute;
-        background: url(../images/fable/circle-right.svg) no-repeat top left;
+        background: url(../../assets/images/fable/circle-right.svg) no-repeat top left;
         background-size: contain;
         right: 0;
         bottom: -0rem;
@@ -345,7 +345,7 @@
         height: 46rem;
         display: block;
         position: absolute;
-        background: url(../images/fable/circle-left.svg) no-repeat top left;
+        background: url(../../assets/images/fable/circle-left.svg) no-repeat top left;
         background-size: contain;
         left: 0;
         bottom: -8rem;

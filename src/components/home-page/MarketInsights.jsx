@@ -2,20 +2,7 @@
 import  ImageSub12  from '../../assets/images/market-img1.png';
 import  ImageSub13  from '../../assets/images/market-img2.png';
 import React from "react";
-import $ from 'jquery';
 
-$(document).ready(function () {
-
-    $('.insights-list-item').hover(
-      function(){ 
-        $(".insights-list-item.insights-list-active").addClass('inactive').removeClass('insights-list-active');
-      },
-      function(){ 
-        $(".insights-list-item.inactive").addClass('insights-list-active').removeClass('inactive'); 
-      }
-    );
-    
-  });
 
 function MarketInsights() {
     return (

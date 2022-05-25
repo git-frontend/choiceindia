@@ -1,4 +1,4 @@
-@import 'customvariable.scss';
+@import '../../assets/css/customvariable.scss';
 
 .home-banner{
     padding: 8rem 0 0;
@@ -123,7 +123,7 @@
         position: absolute;
         left: 0;
         top: -9rem;
-        background: url(../images/clipath-img1-svg.png) no-repeat top left;
+        background: url(../../assets/images/clipath-img1-svg.png) no-repeat top left;
         background-size: contain;
         @media (max-width: $md){
             display: none;
@@ -137,7 +137,7 @@
         position: absolute;
         right: 0;
         bottom: -6rem;
-        background: url(../images/clipath-img2.png) no-repeat top right;
+        background: url(../../assets/images/clipath-img2.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $md){
             display: none;
@@ -149,7 +149,7 @@
 }
 
 .choice-finx{
-    background: url(../images/bg-img1.png) no-repeat #F3FAFF;
+    background: url(../../assets/images/bg-img1.png) no-repeat #F3FAFF;
     background-size: 100% 100%;
     padding-top: 10rem;
     position: relative;
@@ -395,7 +395,7 @@
         position: absolute;
         right: 0;
         top: 14rem;
-        background: url(../images/clipath-img3.png) no-repeat top right;
+        background: url(../../assets/images/clipath-img3.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $sm){
             display: none;
@@ -409,7 +409,7 @@
         position: absolute;
         left: 0;
         bottom: -22rem;
-        background: url(../images/clipath-img4.png) no-repeat top left;
+        background: url(../../assets/images/clipath-img4.png) no-repeat top left;
         background-size: contain;
         @media (max-width: $sm){
             display: none;
@@ -652,7 +652,7 @@
         left: 0;
         top: 50%;
         transform: translate(0, -50%);
-        background: url(../images/Vector.png) no-repeat top left;
+        background: url(../../assets/images/Vector.png) no-repeat top left;
         background-size: contain;
         @media (max-width: 1025px){
             width: 54rem;
@@ -670,7 +670,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        background: url(../images/single-cirlce.png) no-repeat top right;
+        background: url(../../assets/images/single-cirlce.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $md){
             display: none;
@@ -812,7 +812,7 @@
             right: 5rem;
             &::before{
                 content: "";
-                background: url(../images/arrow2.png) no-repeat;
+                background: url(../../assets/images/arrow2.png) no-repeat;
                 background-size: contain;
                 display: block;
                 font-size: 2.5rem;
@@ -865,7 +865,7 @@
         position: absolute;
         right: 0;
         bottom: -20rem;
-        background: url(../images/clipath-img6.png) no-repeat top right;
+        background: url(../../assets/images/clipath-img6.png) no-repeat top right;
         background-size: contain;
         @media (max-width: $sm){
             display: none;
@@ -879,7 +879,7 @@
         position: absolute;
         left: 0;
         bottom: -15rem;
-        background: url(../images/clipath-img7.png) no-repeat top left;
+        background: url(../../assets/images/clipath-img7.png) no-repeat top left;
         background-size: contain;
         @media (max-width: $sm){
             display: none;

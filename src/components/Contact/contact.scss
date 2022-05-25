@@ -1,5 +1,5 @@
-@import 'header.scss';
-@import 'customvariable.scss';
+@import '../../assets/css/header.scss';
+@import '../../assets/css/customvariable.scss';
 
 
 
@@ -161,7 +161,7 @@
                     padding: 0 10px;
                  }
                 &::after{
-                    content: url('../images/contact/soliddownarrow.svg');
+                    content: url('../../assets/images/contact/soliddownarrow.svg');
                     position: absolute;
                     display: block;
                     height: 11px;
@@ -269,7 +269,7 @@
         width: 21rem;
         right: 0;
         top: -10%;
-        background: url('../images/contact/contactbefore.png');
+        background: url('../../assets/images/contact/contactbefore.png');
         background-size: contain;
         background-repeat: no-repeat;
     }
@@ -330,7 +330,7 @@
         color: #221F2040;
         font-size: 1.4rem;
         &::after{
-            content: url('../images/contact/down-arrow.svg');
+            content: url('../../assets/images/contact/down-arrow.svg');
             position: absolute;
             display: block;
             height: 25px;

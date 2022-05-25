@@ -5,17 +5,7 @@ import  ImageSub8  from '../../assets/images/icons/speed.svg';
 import  ImageSub9  from '../../assets/images/app-img1.png';
 
 import React from "react";
-import $ from 'jquery';
 
-$(document).ready(function () {
-
-    $(".workList a").hover(function() {
-		var s = $(this).data("img");
-		$(".workImages img").attr("src", s);
-	});
-
-    
-  });
 
 function ChoiceFinx() {
     return (

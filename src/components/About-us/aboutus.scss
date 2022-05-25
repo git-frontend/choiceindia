@@ -1,5 +1,5 @@
-@import '../css/common.scss';
-@import '../css/customvariable.scss';
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
 body{
     background-color:  $whiteColor;
 }
@@ -71,7 +71,7 @@ body{
         position: absolute;
         right: 0;
         top:-40rem;
-        background: url(../images/about-us/Group.svg) no-repeat bottom right;
+        background: url(../../assets/images/about-us/Group.svg) no-repeat bottom right;
         background-size: contain;
         z-index: -1;
         @media (max-width:$sm) {
@@ -86,7 +86,7 @@ body{
         width: 32.125rem;
         bottom: -34%;
         left: -2.6875rem;
-        background: url('../images/about-us/zigzag.png') no-repeat;
+        background: url('../../assets/images/about-us/zigzag.png') no-repeat;
         z-index: -1;
         background-size: contain;
         background-position: left;
@@ -168,7 +168,7 @@ body{
          
         }
         .slick-next:before{
-            content: url('../images/about-us/next.png');
+            content: url('../../assets/images/about-us/next.png');
             position: absolute;
             height: 5.5rem;
             width: 5.5rem;
@@ -186,12 +186,12 @@ body{
                 width: 3.8rem;
                 top: -3.125rem;
                  right:2rem;
-                 content: url('../images/about-us/next-resp.png');
+                 content: url('../../assets/images/about-us/next-resp.png');
              }
             
         }
         .slick-prev:before{
-            content: url('../images/about-us/prev.png');
+            content: url('../../assets/images/about-us/prev.png');
             position: absolute;
             height: 5.5rem;
             width: 5.5rem;
@@ -208,7 +208,7 @@ body{
                 width: 3.8rem;
                 top: -3.125rem;
                 left: 2rem;
-                content: url('../images/about-us/prev-resp.png');
+                content: url('../../assets/images/about-us/prev-resp.png');
              }
              &.disabled{
                 cursor: not-allowed;
@@ -242,7 +242,7 @@ body{
         width: 38.125rem;
         bottom: -14rem;
         left: -2.6875rem;
-        background: url('../images/about-us/lastsectionbefore.png') no-repeat;
+        background: url('../../assets/images/about-us/lastsectionbefore.png') no-repeat;
         z-index: -1;
         background-size: cover;
         background-position: left;
@@ -287,7 +287,7 @@ body{
         width: 18.75rem;
         bottom: -28%;
         right: -0;
-        background: url('../images/about-us/zigzagopp.png') no-repeat;
+        background: url('../../assets/images/about-us/zigzagopp.png') no-repeat;
         z-index: -1;
         background-size: cover;
         background-position: right;
@@ -444,7 +444,7 @@ body{
     width: 27.75rem;
     bottom: -84px;
     right: 0;
-        background: url('../images/about-us/circle.png') no-repeat;
+        background: url('../../assets/images/about-us/circle.png') no-repeat;
         z-index: -1;
         background-size: cover;
         background-position: right;
@@ -462,7 +462,7 @@ body{
             position: absolute;
             height: 5.1875rem;
             width: 12.5rem;
-            background: url('../images/about-us/vissionbefore.png') no-repeat;
+            background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
             top: -12%;
             left: 2rem;
             z-index: -1;
@@ -476,7 +476,7 @@ body{
             position: absolute;
             height: 5.1875rem;
             width: 12.5rem;
-            background: url('../images/about-us/vissionbefore.png') no-repeat;
+            background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
             bottom: -12%;
             right: 12%;
             z-index: -1;
@@ -525,7 +525,7 @@ body{
         width: 22.75rem;
         top: 56%;
         left: -0;
-        background: url('../images/about-us/leftcircle.png') no-repeat;
+        background: url('../../assets/images/about-us/leftcircle.png') no-repeat;
         z-index: -1;
         background-size: cover;
         background-position: right;
@@ -689,7 +689,7 @@ body{
         width: 29.8125rem;
         top: 65%;
         right: -73px;
-        background: url('../images/about-us/offerbefore.png') no-repeat;
+        background: url('../../assets/images/about-us/offerbefore.png') no-repeat;
         z-index: -1;
         background-size: cover;
         background-position: right;
