@@ -26,6 +26,7 @@
                            color: $lightColor;
                            font-size: 1.2rem;
                            text-decoration: none;
+                           font-family: $font-family-poppins-regular, sans-serif;
                            &:hover{
                                color: $bgcolor-yellow;
                            }
@@ -157,6 +158,7 @@
                         .blackcolor{
                            color:  $blackColorlight;
                            font-size: 16px;
+                           font-family: $font-family-poppins-regular, sans-serif;
                         }
                         &.white{
                             background-color: $bgolor-lightwhite;
@@ -174,6 +176,7 @@
                         width: 2.875rem;
                         height: 2.875rem;
                         display: block;
+                        font-size:1.375rem;
                         text-decoration: none;
                         background: $lightColor;
                         border-radius: 50%;
@@ -190,6 +193,7 @@
                         -webkit-transition-timing-function: ease-out;
                         transition-timing-function: ease-out;
                         position: relative;
+                        
                         .fa{
                             position: absolute;
                             left: 50%;

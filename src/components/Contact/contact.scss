@@ -176,6 +176,7 @@
             }
             .dropdown-menu{
                 width: 100%;
+                font-family: $font-family-poppins-regular, sans-serif;
             }
            
            }
@@ -329,6 +330,7 @@
         position: relative;
         color: #221F2040;
         font-size: 1.4rem;
+        font-family: $font-family-poppins-regular, sans-serif;
         &::after{
             content: url('../../assets/images/contact/down-arrow.svg');
             position: absolute;
@@ -347,6 +349,7 @@
     }
     .dropdown-menu{
         width: 100%;
+        font-family: $font-family-poppins-regular, sans-serif;
     }
    }
 }

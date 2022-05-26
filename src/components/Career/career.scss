@@ -89,6 +89,7 @@
                     color: $whiteColor;
                     width: calc(100% - 5rem);
                     padding-left: 3rem;
+                    font-family: $font-family-poppins-regular, sans-serif;
                 }
                 @media (max-width: $sm){
                    width: 80%;
@@ -163,17 +164,21 @@
                             border-radius: 7px;
                             border: 0;
                             outline: none;
+                            font-size: 1.375rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
                         }
                         .btn-submit{
                             position: absolute;
                             right: 3px;
                             top: 3.5px;
+                            font-size: 1.375rem;
                             background: $bgcolordark;
                             color: $whiteColorlight;
                             display: block;
                             padding: 0.5rem 2rem;
                             border-radius: 7px;
                             border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
                             outline: none;
                             @media (max-width: $sm){
                                 padding: 0.5rem 1rem;
@@ -193,6 +198,7 @@
                             padding: 0.8rem 1rem;
                             border-radius: 7px;
                             border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
                             &::after{
                                 background:url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
                                 right: 4px;
@@ -207,6 +213,7 @@
                         .dropdown-menu{
                             width: 100%;
                             font-size: 1.4rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
                         }
                     }
                 }
@@ -258,6 +265,7 @@
                 .sec-ttl{
                     color: $secondary;
                     font-size: 1.4rem;
+                    font-family: $font-family-poppins-medium;
                     .apl-btn{
                         color: $bgcolor-yellow;
                         text-decoration: none;
