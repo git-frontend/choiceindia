@@ -8,34 +8,36 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { Dropdown } from 'react-bootstrap';
 function Contactbanner() {
-  const initialValues = { firstName: "", lastName: "", phone: "", email: "", purpose: "", yquestion: "" }
+  
 
   let inputRef = "";
   const [data, setData] = useState("");
-  const [detail, setDetail] = useState(initialValues)
+
 
   const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
 
 
   const schema = yup.object().shape({
-    firstName: yup.string().max(20).required("FirstName is required"),
-    lastName: yup.string().max(20).required("LastName is required"),
-    phone: yup.string().matches(phoneRegExp, 'Invalid Phone number').required("Phone no is required"),
+    firstName: yup.string().required("FirstName is required"),
+    lastName: yup.string().required("LastName is required"),
+    phone: yup.string().required("Phone no is required").matches(phoneRegExp,"Invalid number"),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
-    yquestion: yup.string().required("Need to fill your question")
+    purpose:yup.string().required("Need to choose purpose"),
+    yquestion: yup.string().max(40).required("Need to fill your question")
 
   })
 
 
 
-  const { register, handleSubmit, formState: { errors, isValid } } = useForm({
+  const { register, handleSubmit, formState: { errors, isValid },reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
-  const submitFormData = (FormData) => {
 
-    setDetail(FormData)
-    console.log("data", detail)
+
+  const submitFormData = (FormData) => {
+    console.log("data",FormData );
+    reset();
 
   }
 
@@ -43,8 +45,6 @@ function Contactbanner() {
 
   return (
     <div>
-
-
       <section className="banner-contact">
         <img src={Bannerimage} className="ban-img" />
         <div className='banner-caption'>
@@ -70,14 +70,14 @@ function Contactbanner() {
             <div className="row d-flex justify-content-between">
               <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                 <Form.Label className="formlabel">First Name</Form.Label>
-                <Form.Control type="name" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
+                <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
                 <span className="text-danger"> {errors?.firstName?.message} </span>
               </Form.Group>
 
 
               <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
                 <Form.Label className="formlabel"> Last Name</Form.Label>
-                <Form.Control type="name" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
+                <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
                 <span className="text-danger"> {errors?.lastName?.message} </span>
               </Form.Group>
             </div>
@@ -85,24 +85,23 @@ function Contactbanner() {
             <div className="row mt-3 d-flex justify-content-between">
               <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                 <Form.Label className="formlabel">Email</Form.Label>
-                <Form.Control type="name" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
+                <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
                 <span className="text-danger"> {errors?.email?.message} </span>
               </Form.Group>
 
               <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
                 <Form.Label className="formlabel"> Phone</Form.Label>
-                <Form.Control type="name" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('phone')} />
+                <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('phone')} />
                 <span className="text-danger"> {errors?.phone?.message} </span>
               </Form.Group>
             </div>
 
            
             <Form.Group className="mb-3">
-            
               <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
               <div className='cust-dropdown'>
-
-              <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle">
+              <div className="downar"></div>
+              <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
                 <option className="option">Feedback</option>
                 <option className="option">View</option>
                 <option className="option">Review</option>
@@ -115,7 +114,7 @@ function Contactbanner() {
 
             <label className="formlabel mt-5"> Your Question</label>
             <div className=" messagefield">
-              <textarea className="messagearea" placeholder="Enter text here..." name="comment" form="usrform" {...register('yquestion')} />
+              <textarea className="messagearea" placeholder="Enter text here..." {...register('yquestion')} />
               <span className="text-danger"> {errors?.yquestion?.message} </span>
             </div>
 
@@ -141,17 +140,13 @@ function Contactbanner() {
               </label>
 
 
-              <Button variant="primary" onClick={submitFormData}
+              <Button variant="primary" 
                 disabled={!isValid}
                 type="submit" className="sendbtn">
                 Send
               </Button>
             </div>
-
-
           </Form>
-
-
         </div>
       </section>
 
