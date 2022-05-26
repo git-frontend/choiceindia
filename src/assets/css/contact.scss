@@ -143,7 +143,13 @@
             filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
             border-radius: 3px;
             padding: 10px;
-            .dropdown-toggle{
+
+            
+            .dropdowntoggle{
+                background: transparent;
+                border: 0px solid $lightColor;
+                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                border-radius: 0px;
                 width: 100%;
                 text-align: left;
                 display: flex;
@@ -166,7 +172,7 @@
                     display: block;
                     height: 11px;
                     width: 16px;
-                    color: transparent;
+                    color: $lightColor;
                     right: 10px;
                     display: flex;
                     justify-content: center;
@@ -174,8 +180,12 @@
                 }
              
             }
-            .dropdown-menu{
-                width: 100%;
+            .option{
+                
+                color: $primary;
+                background: transparent;
+                border: 0px solid $lightColor;
+                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
             }
            
            }
@@ -311,43 +321,46 @@
     line-height: 2.125rem;
     font-family: 'PoppinsRegular';
   }
-   .cust-dropdown{
-    background: $whiteColor;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-    margin-top: 4.5625rem;
-    @media (max-width: $sm){
-        margin-top: 3rem;
-      }
-    .dropdown-toggle{
+  .cust-dropdown{
+    background: transparent;
+    border: 1px solid $lightColor;
+    filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+    border-radius: 3px;
+    padding: 10px;
+   
+    
+    .dropdowntoggle{
+        background: transparent;
+        border: 0px solid $lightColor;
+        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+        border-radius: 0px;
         width: 100%;
         text-align: left;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 40px;
         position: relative;
-        color: #221F2040;
-        font-size: 1.4rem;
-        &::after{
-            content: url('../images/contact/down-arrow.svg');
-            position: absolute;
-            display: block;
-            height: 25px;
-            width: 25px;
-            border: none;
-            background: $primary;
-            border-radius: 7px;
-            right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-        }
+        color: $lightColor;
+        font-weight: 400;
+        font-family: $font-family-poppins-regular;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        @media (max-width: $sm){
+            font-size: 1.2rem;
+            
+            padding: 0 10px;
+         }
+        
+     
     }
-    .dropdown-menu{
-        width: 100%;
+    .option{
+        
+        color: $primary;
+        background: transparent;
+        border: 0px solid $lightColor;
+        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
     }
+   
    }
 }
 

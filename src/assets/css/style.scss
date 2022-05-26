@@ -1,35 +1,34 @@
 @import 'customvariable.scss';
 
-.home-banner {
-    position: relative;
 
-    .banner-img {
+.home-banner{
+    padding: 8rem 0 0;
+    background-color: #EFEDF2;
+    .banner-img{
         width: 100%;
     }
-
-    .banner-desc {
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        left: 0;
-        width: 100%;
-
-        .banner-caption {
+    .banner-desc{
+      
+        .banner-caption{
             text-align: left;
-
-            h1 {
+            position: relative;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: 0;
+            width: 100%;
+            h1{
                 font-size: 4.4rem;
                 line-height: 70px;
 
-                font-family: 'PoppinsBold';
-
-                // color: $headingtext;
-                @media (max-width: $md) {
+                font-family: $font-family-poppins-bold;
+                color: $primary;
+                @media (max-width: $md){
                     font-size: 3rem;
+                    line-height: 4rem;
                 }
-
-                @media (max-width: $sm) {
+                @media (max-width: $sm){
                     font-size: 2rem;
+                    line-height: 40px;
                 }
             }
         }
