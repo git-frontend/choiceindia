@@ -1,5 +1,5 @@
 import React from "react";
-import  Blog1  from '../../assets/images/fable/blog1.png';
+
 import  Blog2  from '../../assets/images/fable/blog-big.png';
 import  Blog3  from '../../assets/images/fable/blog2.png';
 
