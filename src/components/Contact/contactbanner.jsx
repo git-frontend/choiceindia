@@ -3,6 +3,8 @@ import React,{useState} from "react";
 import Bannerimage from '../../assets/images/contact/contactbanner.png';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLink } from '@fortawesome/free-solid-svg-icons'
 
 import {Dropdown} from 'react-bootstrap';
 function Contactbanner() {
@@ -104,11 +106,11 @@ function Contactbanner() {
         className="attachement mt-3"
           style={{ cursor:"pointer" }}
           onClick={() => inputRef.click()}
-        >Attachment <p class="filename"> {data} </p>
+        >Attachment <FontAwesomeIcon icon={faLink} /> <p class="filename"> {data} </p>
         </label>
        
             
-              <Button variant="primary" type="submit" className="sendbtn">
+              <Button variant="primary" type="submit" className="btn-bg btn-bg-dark sendbtn">
                 Send
               </Button>
             </div>
