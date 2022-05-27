@@ -48,7 +48,20 @@ function Clients() {
                 <div className="row">
                 <div className="col-md-12">
                   <div className="client-list">
-                   <Slider {...settings} className="client-list-slider ">
+                  <div class="Marquee">
+                  <div class="Marquee-content">
+                    <div class="Marquee-tag"> <img src={nitiaayog} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={libertyinsurance} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={aadhar} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={navkar} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={idea} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={nitiaayog} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={libertyinsurance} className="img-fluid" alt='Loading' /></div>
+                    <div class="Marquee-tag"> <img src={navkar} className="img-fluid" alt='Loading' /></div>
+                 
+                  </div>
+                </div>
+                   {/* <Slider {...settings} className="client-list-slider ">
                       <div className="client-item ">
                         <span className="img-itm">
                           <img src={nitiaayog} className="img-fluid" alt="loading"/>
@@ -104,7 +117,7 @@ function Clients() {
                        
                       </div>
 
-                    </Slider>
+                    </Slider> */}
                   </div>
 
                   { /**<Marquee direction="left" speed={100} delay={1} className="client-list-slider">
