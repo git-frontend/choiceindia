@@ -13,8 +13,16 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
     "@testing-library/user-event": "^13.5.0",
+<<<<<<< HEAD
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
+=======
+<<<<<<< HEAD
+    "axios": "^0.27.2",
+    "bootstrap": "^5.1.3",
+=======
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b
+>>>>>>> d5bd37e6f448c97e00f73497dabbdf88a0b0f638
     "bootstrap-icons": "^1.8.2",
     "mdb-react-ui-kit": "^3.0.0",
     "react": "^18.0.0",

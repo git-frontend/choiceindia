@@ -104,7 +104,78 @@
                     @media (min-width:769px) and (max-width:1200px){
                         flex-direction: column;
                     }
+<<<<<<< HEAD
                        
+=======
+<<<<<<< HEAD
+                       
+=======
+                        a{
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            background-color: $bgcolor-blue;
+                            // width: 35%;
+                            border-radius: 100px;
+                            padding: 0.5rem 1.5rem;
+                            margin-right: 1.5rem;
+                            text-decoration: none;
+                            -webkit-transform: perspective(1px) translateZ(0);
+                            transform: perspective(1px) translateZ(0);
+                            box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+                            -webkit-transition-duration: 0.3s;
+                            transition-duration: 0.3s;
+                            -webkit-transition-property: transform;
+                            transition-property: transform;
+                            -webkit-transition-timing-function: ease-out;
+                            transition-timing-function: ease-out;
+                            position: relative;
+                            @media (max-width: $sm){
+                              width: 100%;
+
+                            }
+                            @media (min-width:$sm) and (max-width: $sm-x){
+                                width: 34%;
+                                margin-bottom: 1rem;
+  
+                              }
+                              @media (min-width:769px) and (max-width: 1024px){
+                                width: 58%;
+                                margin-bottom: 1rem;
+  
+                              }
+                              @media (min-width:1025px) and (max-width: $lg){
+                                width: 55%;
+                                margin-bottom: 1rem;
+  
+                              }
+                            img{
+                                display: block;
+                            }
+                            span{
+                                padding-left: 10px;
+                            }
+                        .whitecolor{
+                            color: #FFFFFF;
+                            font-size: 15px;
+                            color: $whiteColor;
+                            font-size: 16px;
+                        }
+                        .blackcolor{
+                           color:  $blackColorlight;
+                           font-size: 16px;
+                           font-family: $font-family-poppins-regular, sans-serif;
+                        }
+                        &.white{
+                            background-color: $bgolor-lightwhite;
+                        }
+                        &:hover{
+                            -webkit-transform: translateY(-8px);
+                            transform: translateY(-8px);
+                        }
+                    }
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b
+>>>>>>> d5bd37e6f448c97e00f73497dabbdf88a0b0f638
                 }
                 .footer-social-links{
                     display: flex;
