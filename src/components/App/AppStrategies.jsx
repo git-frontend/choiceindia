@@ -15,7 +15,7 @@ function AppStrategies() {
         touchMove: true,
         arrows: false,
         slidesToShow: 4,
-        autoplay: true,
+        autoplay: false,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,

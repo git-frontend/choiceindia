@@ -85,6 +85,7 @@
             line-height: 34px;
             padding: 1.2rem ;
             // font-size: 24px;
+            font-family: $font-family-poppins-semibold;
         }
         .formgrp{
             width: 49%;
@@ -286,7 +287,7 @@
     margin-top: 46rem;
     position: relative;
     @media (max-width: 1024px){
-        margin-top: 46rem;
+        margin-top: 50rem;
       }
     &:before{
         content: '';
@@ -327,8 +328,8 @@
   .subtext{
     color: $secondary;
     font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 2.125rem;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
     font-family: 'PoppinsRegular';
   }
   .subhead{
@@ -352,23 +353,21 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        min-height: 40px;
+        min-height: 48px;
         position: relative;
         color: #221F2040;
         font-size: 1.4rem;
+        padding: 0 2rem;
         font-family: $font-family-poppins-regular, sans-serif;
         &::after{
-            content: url('../../assets/images/contact/down-arrow.svg');
+            background:url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
+            right: 4px;
             position: absolute;
-            display: block;
-            height: 11px;
-            width: 16px;
-            color: $lightColor;
-            right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 7px;
+            top: 4px;
+            background-size: 1.2rem;
         }
      
 
@@ -391,7 +390,20 @@
         border: 0px solid $lightColor;
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
     }
+    .dropdown-menu{
+        width: 100%;
+        .dropdown-item{
+            font-size: 1.4rem;
+            font-family: "PoppinsRegular", sans-serif, sans-serif;
+        }
+    }
    
+   }
+   .flex-column-left{
+       width: 35%;
+       @media (max-width: $sm){
+           width: 100%;
+       }
    }
 }
 

@@ -48,6 +48,9 @@
             }
             p{
                 color: $whiteColor;
+                .strng{
+                    font-family: $font-family-poppins-semibold;
+                }
             }
             .wrap-app-links{
                 margin: 4rem 0;
@@ -198,25 +201,7 @@
             display: flex;
             flex-wrap: wrap;
             .link-nrl{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    background-color: $bgcolor-blue;
-                    width: 17%;
-                    border-radius: 100px;
-                    padding: 12px;
-                    margin-right: 2.5rem;
-                    text-decoration: none;
-                    -webkit-transform: perspective(1px) translateZ(0);
-                    transform: perspective(1px) translateZ(0);
-                    box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-                    -webkit-transition-duration: 0.3s;
-                    transition-duration: 0.3s;
-                    -webkit-transition-property: transform;
-                    transition-property: transform;
-                    -webkit-transition-timing-function: ease-out;
-                    transition-timing-function: ease-out;
-                    position: relative;
+                    
                     @media (max-width: $sm-x){
                        padding: 8px;
                     }
@@ -230,13 +215,7 @@
                         width: 8rem;
                     }
                 }
-                .whitecolor{
-                    color: $whiteColor;
-                    font-size: 20px;
-                    @media (max-width: $sm-x){
-                        font-size: 16px;
-                    }
-                }
+         
                 .blackcolor{
                    color:  $blackColorlight;
                    font-size: 20px;
@@ -289,18 +268,18 @@
                 padding: 2.5rem 0;
                 margin-top: 1rem;
             .content-list-itm{
-                padding-left: 3rem;
+                padding-left: 3.5rem;
                 margin-bottom: 5rem;
                 position: relative;
                 &.list-itm-active{
                     &::before{
-                        content: '';
+                    content: '';
                     background: $bgcolor-yellow;
-                    width: 6px;
+                    width: 8px;
                     height: 100%;
                     border-radius: 8px;
                     position: absolute;
-                    left: -2px;
+                    left: 0;
                     display: block;
                     }
                     .single-ttl{
@@ -329,7 +308,7 @@
                 width: 3px;
                 height: 100%;
                 position: absolute;
-                left: 0;
+                left: 3px;
                 top: 0;
                 opacity: 0.1;
                 border-radius: 2px;
@@ -377,7 +356,7 @@
             }
         }
         .content-list{
-            padding-left: 5rem;
+            padding-left: 3rem;
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
@@ -401,6 +380,7 @@
                     position: relative;
                     z-index: 99;
                     margin-bottom: 0;
+                    font-size: 1.3rem;
                 }
                 &.list-itm-active{
                     background: $bgolor-lightwhite;
@@ -487,15 +467,31 @@
     }
     .reset{
         margin: 3rem 0 4rem;
+        padding: 0;
         li{
             font-size: 2rem;
             font-family:$font-family-poppins-medium;
             margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2.3rem;
+            list-style: none;
             @media (max-width: $sm-x){
                 font-size: 1.5rem;
             }
             .clr-cng{
                 color: $blueColortext;
+            }
+            &::before{
+                content: '';
+                width: 0.9rem;
+                height: 0.9rem;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(0, -50%);
+                background: $primary;
+                border-radius: 50%;
             }
         }
     }
