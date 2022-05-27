@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 // import $ from 'jquery';
 import homeServices from '../../Services/homeServices';
 
+<<<<<<< HEAD
 
 // $(document).ready(function () {
 
@@ -15,6 +16,12 @@ import homeServices from '../../Services/homeServices';
 //     );
 
 //   });
+=======
+import  ImageSub12  from '../../assets/images/market-img1.png';
+import  ImageSub13  from '../../assets/images/market-img2.png';
+import React from "react";
+
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b
 
 function MarketInsights() {
 

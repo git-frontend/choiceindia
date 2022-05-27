@@ -1,5 +1,5 @@
-@import 'header.scss';
-@import 'customvariable.scss';
+@import '../../assets/css/header.scss';
+@import '../../assets/css/customvariable.scss';
 
 
 
@@ -190,6 +190,7 @@
                     
                     padding: 0 10px;
                  }
+<<<<<<< HEAD:src/assets/css/contact.scss
                 
             }
             .option{
@@ -198,6 +199,25 @@
                 background: transparent;
                 border: 0px solid $lightColor;
                 filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+=======
+                &::after{
+                    content: url('../../assets/images/contact/soliddownarrow.svg');
+                    position: absolute;
+                    display: block;
+                    height: 11px;
+                    width: 16px;
+                    color: transparent;
+                    right: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+             
+            }
+            .dropdown-menu{
+                width: 100%;
+                font-family: $font-family-poppins-regular, sans-serif;
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b:src/components/Contact/contact.scss
             }
            
            }
@@ -288,7 +308,7 @@
         width: 21rem;
         right: 0;
         top: -10%;
-        background: url('../images/contact/contactbefore.png');
+        background: url('../../assets/images/contact/contactbefore.png');
         background-size: contain;
         background-repeat: no-repeat;
     }
@@ -330,6 +350,7 @@
     line-height: 2.125rem;
     font-family: 'PoppinsRegular';
   }
+<<<<<<< HEAD:src/assets/css/contact.scss
   .cust-dropdown{
     background: transparent;
     border: 1px solid $lightColor;
@@ -341,6 +362,29 @@
 
         &::after{
             content: url('../images/contact/soliddownarrow.svg');
+=======
+   .cust-dropdown{
+    background: $whiteColor;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    margin-top: 4.5625rem;
+    @media (max-width: $sm){
+        margin-top: 3rem;
+      }
+    .dropdown-toggle{
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 40px;
+        position: relative;
+        color: #221F2040;
+        font-size: 1.4rem;
+        font-family: $font-family-poppins-regular, sans-serif;
+        &::after{
+            content: url('../../assets/images/contact/down-arrow.svg');
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b:src/components/Contact/contact.scss
             position: absolute;
             display: block;
             height: 11px;
@@ -364,6 +408,7 @@
         filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
         border-radius: 0px;
         width: 100%;
+<<<<<<< HEAD:src/assets/css/contact.scss
         text-align: left;
         display: flex;
         align-items: center;
@@ -381,6 +426,9 @@
          }
         
      
+=======
+        font-family: $font-family-poppins-regular, sans-serif;
+>>>>>>> 0f873d355d7851ae0392f461898c0c9c554bc56b:src/components/Contact/contact.scss
     }
     .option{
         

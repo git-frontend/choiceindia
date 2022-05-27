@@ -1,5 +1,4 @@
 import "../../assets/css/header.scss"
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import MenuHeader from '../Common-features/MenuHeader';
 
 
