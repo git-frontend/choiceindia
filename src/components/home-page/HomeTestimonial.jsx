@@ -119,9 +119,9 @@ function HomeTestimonial() {
 		<section className="home-testimonial">
 						<div className="container">
 							<div className="row d-flex justify-content-center">
-								<div className="col-lg-8">
+								<div className="col-lg-12">
 									<div className="heading-sec mb-5">
-										<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>								
+										<h3 className="title-first ">We are Only as Good as our Clients say <br/> WE ARE </h3>								
 									</div>
 								</div>
 							</div>

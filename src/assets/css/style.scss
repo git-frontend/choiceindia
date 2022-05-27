@@ -175,20 +175,24 @@
                     box-shadow: 0px 0px 15px 1px #C2C2C2;
                     border-radius: 20px;
                     padding: 2rem;
+                    padding-right: 1rem;
                     text-decoration: none;
                     display: block;
                     height: 100%;
                     h4{
-                        font-size: 1.625rem;
+                        font-size: 1.8rem;
                         font-family: $font-family-poppins-semibold;
                         color: $primary;
-                        margin: 1rem 0;
+                        margin: 1.4rem 0;
                     }
                     p{
-                        font-size: 1.125rem;
-                        line-height: 1.7rem;
+                        font-size: 1.3rem;
+                        line-height: 2rem;
                         margin-bottom: 0;
                         color: $primary;
+                    }
+                    .sm-img{
+                        height: 45px;
                     }
                 }
                 @media (max-width: $sm){
@@ -289,7 +293,7 @@
         margin-top: 5rem;
         .insights-list-item{
             width: 17%;
-            margin-left: 6%;
+            margin-left: 5%;
             transition: width 1.5s;
             .insights-item-cont{
                 border-radius: 36px;
@@ -297,8 +301,9 @@
                 position: relative;
                 img{
                     width: 100%;
-                    height: 420px;
+                    height: 450px;
                     object-fit: cover;
+                    border-radius: 30px;
                     @media (max-width: $sm){
                         height: auto;
                     }
@@ -306,7 +311,7 @@
                 .ttl-sm{
                     display: inline-block;
                     position: absolute;
-                    left: -2rem;
+                    left: -4rem;
                     transition: 0.70s;
                     -webkit-transition: 0.70s;
                     -moz-transition: 0.70s;
@@ -317,8 +322,9 @@
                     background: $bgcolor-fadegray;
                     border-radius: 10px;
                     color: $primary;
-                    width: 14rem;
-                    padding: 0.5rem 1rem;
+                    width: 17rem;
+                    padding: 0.8rem 1.8rem;
+                    font-size: 1.5rem;
                     text-align: left;
                     @media (max-width: $sm){
                         transform: rotate(0);
@@ -372,6 +378,7 @@
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
+                    font-size: 1.5rem;
                 }
             }
             @media (max-width: $sm){
@@ -444,14 +451,14 @@
                     max-width: 100%;
                 }
                 h4{
-                    font-size: 1.8rem;
+                    font-size: 1.9rem;
                     font-family: $font-family-poppins-semibold;
                     color: $whiteColor;
-                    margin: 1.7rem 0 1rem 0;
+                    margin: 2rem 0 1.5rem 0;
                 }
                 p{
-                    font-size: 1.3rem;
-                    line-height: 2rem;
+                    font-size: 1.4rem;
+                    line-height: 2.3rem;
                     margin-bottom: 0;
                     color: $whiteColor;
                 }
@@ -914,9 +921,13 @@
                 margin: 0 auto;
                 height: 100%;
                 h4{
-                    font-size: 2rem;
+                    font-size: 2.2rem;
                     font-family: $font-family-poppins-semibold;
                     margin: 1rem 0 1rem 0;
+                }
+                p{
+                    margin: 0;
+                    font-size: 1.6rem;
                 }
             }
             &::before{
