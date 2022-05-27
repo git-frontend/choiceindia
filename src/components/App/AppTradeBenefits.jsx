@@ -24,7 +24,7 @@ function AppTradeBenefits() {
                       <li>Trade at 2 Paise*</li>
                       <li>Free Research with 80% success ratio</li>
                     </ul>
-                    <a href="#" className="btn-bg">Get Started</a>
+                    <a href="/" className="btn-bg">Get Started</a>
                 </div>
 						</div>
 					</div>

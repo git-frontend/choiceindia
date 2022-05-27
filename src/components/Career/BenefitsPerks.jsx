@@ -32,35 +32,35 @@ function BenefitsPerks() {
             <div className='col-xl-7 col-md-10'>
                 <div className='perks-list'>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage5} />
+                        <img src={CareerImage5} alt='Loading'/>
                         <h4>Advance Stipend </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage6} />  
+                        <img src={CareerImage6} alt='Loading'/>  
                         <h4>Profit Sharing </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage7} />
+                        <img src={CareerImage7} alt='Loading' />
                         <h4>Team Outings  </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage8} />
+                        <img src={CareerImage8} alt='Loading' />
                         <h4>Health Insurance </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage9} />
+                        <img src={CareerImage9} alt='Loading' />
                         <h4>Skill Upgradation </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage10} />
+                        <img src={CareerImage10} alt='Loading' />
                         <h4>Free Internet  </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage11} />
+                        <img src={CareerImage11} alt='Loading' />
                         <h4>1:1 sessions with Ankur</h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage12} />
+                        <img src={CareerImage12} alt='Loading' />
                         <h4>Free Therapy sessions </h4>
                     </div>
                 </div>

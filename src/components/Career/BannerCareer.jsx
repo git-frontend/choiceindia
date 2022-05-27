@@ -44,16 +44,16 @@ function BannerCareer() {
     <section className="bannersection">
           <Slider {...settings} className="career-list-slider">
                 <div>
-                  <img src={CareerImage0} className="img-fluid" />
+                  <img src={CareerImage0} className="img-fluid" alt='Loading' />
                 </div>
                 <div>
-                  <img src={CareerImage1} className="img-fluid" />
+                  <img src={CareerImage1} className="img-fluid" alt='Loading'/>
                 </div>
                 <div>
-                  <img src={CareerImage2} className="img-fluid" />
+                  <img src={CareerImage2} className="img-fluid" alt='Loading' />
                 </div>
                 <div>
-                  <img src={CareerImage1} className="img-fluid" />
+                  <img src={CareerImage1} className="img-fluid" alt='Loading' />
                 </div>
               </Slider>
 
@@ -106,7 +106,7 @@ function BannerCareer() {
                 </div>
                 <div className="col-xl-6 col-md-6">
                   <div className='culture-values-img'>
-                      <img src={CareerImage3} className='img-fluid shdow' alt="" />
+                      <img src={CareerImage3} className='img-fluid shdow' alt="Loading" />
                   </div>
                 </div>
             </div>

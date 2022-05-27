@@ -17,7 +17,7 @@ function AppBenefits() {
 							<div className="heading-sec">
 								<h2 className="title-secnd">App with <br/>Multiple Benefits</h2>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
-                <a href="#" className="btn-bg">Sign Up</a>
+                <a href="/" className="btn-bg">Sign Up</a>
 							</div>
 						</div>
 						<div className="col-lg-8 d-flex justify-content-end">

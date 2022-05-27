@@ -76,7 +76,22 @@
                         @media (max-width: $md){
     
                         }
-                        
+                        &.active-header{
+                            color: $primary;
+                            &::before{
+                                content: "";
+                                width: 0.7rem;
+                                height: 0.7rem;
+                                display: block;
+                                background: $bgcolordark;
+                                position: absolute;
+                                bottom: -5px;
+                                left: 0;
+                                right: 0;
+                                margin: 0 auto;
+                                border-radius: 2px;
+                            }
+                        }
                     }
                     &.login-btn{
                         margin-left: 5rem;
@@ -148,6 +163,11 @@
                                 background: $whiteColor;
                             }
                         }
+                        &.active-header{
+                            &::before{
+                                background: $whiteColor;
+                            }
+                        }
                     }
                     &.get-btn{
                         a{
@@ -169,6 +189,9 @@
     }
 
 }
+
+
+
 
 
 
@@ -220,3 +243,4 @@ nav .navbar-collapse{
         }
     }
 }
+

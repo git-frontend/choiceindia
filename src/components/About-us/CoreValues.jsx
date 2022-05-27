@@ -61,7 +61,7 @@ function CoreValues() {
                         
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Commitment} className="img-fluid" />
+                            <img src={Commitment} className="img-fluid" alt="Loading"  />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Commitment</h4>
@@ -72,7 +72,7 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Honesty} className="img-fluid" />
+                            <img src={Honesty} className="img-fluid" alt="Loading"  />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Honesty</h4>
@@ -83,7 +83,7 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                              <img src={Optimism} className="img-fluid" />
+                              <img src={Optimism} className="img-fluid" alt="Loading" />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Optimism</h4>
@@ -92,7 +92,7 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                              <img src={Innovation} className="img-fluid" />
+                              <img src={Innovation} className="img-fluid" alt="Loading" />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Innovation</h4>
@@ -103,7 +103,7 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Consistency} className="img-fluid" />
+                            <img src={Consistency} className="img-fluid" alt="Loading" />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Consistency</h4>
@@ -114,7 +114,7 @@ function CoreValues() {
                           </div>
                             <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Empowerment} className="img-fluid" />
+                            <img src={Empowerment} className="img-fluid" alt="Loading"  />
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Empowerment</h4>

@@ -30,7 +30,7 @@ function CareerTeam() {
       </div>
 
       <div className="explore-opportunities">
-            <img src={CareerImage13} className='bg-img' />
+            <img src={CareerImage13} className='bg-img' alt='Loading'/>
             <div className='opportunities-cont'>
                 <div className='container'>
                     <div className='row'>

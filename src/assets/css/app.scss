@@ -268,21 +268,7 @@
     .app-banner-bottom{
         background: $abt-bg;
         padding: 13rem 0 10rem 0;
-        position: relative;
-        &:after{
-            content:'';
-            width: 22em;
-            height: 49rem;
-            display: block;
-            position: absolute;
-            right: 0;
-            bottom: -13rem;
-            background: url(../images/app/sliderbefore.png) no-repeat bottom right;
-            background-size: contain;
-            @media (max-width:$sm) {
-                display: none;
-            }
-        }
+        
         .content-list{
                 position: relative;
                 padding: 2.5rem 0;
@@ -318,7 +304,7 @@
                     display: none;
                 }
                 &:last-child{
-                    margin-bottom: 0;
+                   
                 }
                
             }
@@ -346,35 +332,7 @@
 
     .app-strategies-bottom{
         padding-bottom: 10rem;
-        position: relative;
-        &:before{
-            content:'';
-            width: 22em;
-            height: 49rem;
-            display: block;
-            position: absolute;
-            right: 0;
-            top: -26rem;
-            background: url(../images/app/realtimebefore.png) no-repeat bottom right;
-            background-size: contain;
-            @media (max-width:$sm) {
-                display: none;
-            }
-        }
-        &:after{
-            content:'';
-            width: 25em;
-            height: 32rem;
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: -9rem;
-            background: url(../images/app/realtimeafter.png) no-repeat bottom left;
-            background-size: contain;
-            @media (max-width:$sm) {
-                display: none;
-            }
-        }
+
         .content-list{
             padding-left: 5rem;
             display: flex;
@@ -386,7 +344,7 @@
                 padding: 2rem 1.5rem;
                 margin-bottom: 3rem;
                 position: relative;
-                width: 90%;
+                width: 90% !important;
                 h4{
                     font-family: $font-family-poppins-semibold;
                     font-size: 1.5rem;
@@ -404,6 +362,7 @@
                 &.list-itm-active{
                     background: $bgolor-lightwhite;
                     left: -10%;
+                    width: 85% !important;
                     &::before{
                         content: '';
                         width: 5rem;
@@ -436,6 +395,12 @@
             }
             @media (max-width: $sm){
                 padding-left: 1rem;
+             }
+             .slick-slide{
+                 > div{
+                     display: flex;
+                     justify-content: flex-end;
+                 }
              }
         }
         .title-secnd{
@@ -493,5 +458,18 @@
     }
     @media (max-width: $sm-x){
         padding: 5rem 1rem;
+    }
+}
+
+.content-list{
+    .slick-track{
+        height: auto !important;
+        .slick-slide{
+            &:last-child{
+                .content-list-itm{
+                    margin: 0;
+                }
+            }
+        }
     }
 }

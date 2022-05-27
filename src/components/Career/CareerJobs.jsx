@@ -20,19 +20,19 @@ function CareerJobs() {
                             <h5 className="sec-ttl">Social Media Manager</h5>
                             <h5 className="sec-ttl">Full Time | 4-8 years</h5>
                             <h5 className="sec-ttl">Mumbai</h5>
-                            <h5 className="sec-ttl"><a href="#" className="apl-btn">Apply Now</a></h5>
+                            <h5 className="sec-ttl"><a href="/" className="apl-btn">Apply Now</a></h5>
                         </div>
                         <div className="jobs-list-itm">
                             <h5 className="sec-ttl">Social Media Manager</h5>
                             <h5 className="sec-ttl">Full Time | 4-8 years</h5>
                             <h5 className="sec-ttl">Mumbai</h5>
-                            <h5 className="sec-ttl"><a href="#" className="apl-btn">Apply Now</a></h5>
+                            <h5 className="sec-ttl"><a href="/" className="apl-btn">Apply Now</a></h5>
                         </div>
                         <div className="jobs-list-itm">
                             <h5 className="sec-ttl">Social Media Manager</h5>
                             <h5 className="sec-ttl">Full Time | 4-8 years</h5>
                             <h5 className="sec-ttl">Mumbai</h5>
-                            <h5 className="sec-ttl"><a href="#" className="apl-btn">Apply Now</a></h5>
+                            <h5 className="sec-ttl"><a href="/" className="apl-btn">Apply Now</a></h5>
                         </div>
                     </div>
                 </div>

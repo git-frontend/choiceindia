@@ -10,7 +10,7 @@ function BannerCareer() {
       
      
     <section className="banner-app">
-         <img src={AppImage0} className="ban-img"/>
+         <img src={AppImage0} className="ban-img" alt='Loading'/>
          <div className='app-banner-caption'>
             <div className='container'>
                 <div className='row'>
