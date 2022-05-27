@@ -1,4 +1,4 @@
-import "./home-page/style.scss"
+
 import  HomePageBanner from './home-page/HomePageBanner.jsx'
 import  EverydayFinance from './home-page/EverydayFinance.jsx'
 import  ChoiceFinx from './home-page/ChoiceFinx.jsx'
@@ -8,7 +8,7 @@ import  FablesStories from './home-page/FablesStories.jsx'
 import  HomeTestimonial from './home-page/HomeTestimonial.jsx'
 import  SecurityPrivacy from './home-page/SecurityPrivacy.jsx'
 import  HomeHeader from './home-page/HomeHeader.jsx'
-
+import "./home-page/style.scss"
 
 
 
