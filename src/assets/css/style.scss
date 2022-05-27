@@ -197,6 +197,26 @@
                 .app-list-item {
                     width: 29.33%;
                     margin-left: 4%;
+                a{
+                    background: $whiteColor;
+                    box-shadow: 0px 0px 15px 1px #C2C2C2;
+                    border-radius: 20px;
+                    padding: 2rem;
+                    padding-right: 1rem;
+                    text-decoration: none;
+                    display: block;
+                    height: 100%;
+                    h4{
+                        font-size: 1.8rem;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        margin: 1.4rem 0;
+                    }
+                    p{
+                        font-size: 1.3rem;
+                        line-height: 2rem;
+                        margin-bottom: 0;
+                        color: $primary;
 
                     a {
                         background: $whiteColor;
@@ -225,6 +245,9 @@
                     @media (max-width: $sm) {
                         width: 97%;
                         margin-bottom: 2rem;
+                    }
+                    .sm-img{
+                        height: 45px;
                     }
                 }
             }
@@ -323,7 +346,7 @@
 
                 img {
                     width: 100%;
-                    height: 420px;
+                    height: 450px;
                     object-fit: cover;
 
                     @media (max-width: $sm) {
@@ -334,7 +357,7 @@
                 .ttl-sm {
                     display: inline-block;
                     position: absolute;
-                    left: -2rem;
+                    left: -4rem;
                     transition: 0.70s;
                     -webkit-transition: 0.70s;
                     -moz-transition: 0.70s;
@@ -410,6 +433,7 @@
                     display: -webkit-box;
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
+                    font-size: 1.5rem;
                 }
             }
 
@@ -500,7 +524,7 @@
                     font-size: 1.8rem;
                     font-family: 'PoppinsSemiBold';
                     color: $whiteColor;
-                    margin: 1.7rem 0 1rem 0;
+                    margin: 2rem 0 1.5rem 0;
                 }
 
                 p {
@@ -1101,6 +1125,10 @@
                     font-size: 2rem;
                     font-family: 'PoppinsSemiBold';
                     margin: 1rem 0 1rem 0;
+                }
+                p{
+                    margin: 0;
+                    font-size: 1.6rem;
                 }
             }
 
