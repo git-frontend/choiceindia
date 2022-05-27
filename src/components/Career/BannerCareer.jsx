@@ -56,66 +56,22 @@ function BannerCareer() {
                   <img src={CareerImage1} className="img-fluid" alt='Loading' />
                 </div>
               </Slider> */}
-          <div class="marquee">
-            <div class="marquee-content"> 
-              <div class="marquee-item">
-                <img src={CareerImage0} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-                <img src={CareerImage1} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-                <img src={CareerImage2} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage0} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage1} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage0} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage2} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage1} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-                <img src={CareerImage0} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-                <img src={CareerImage1} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-                <img src={CareerImage2} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage0} alt="" />
-              </div>
-              
-              <div class="marquee-item">
-              <img src={CareerImage1} alt="" />
-              </div>
-              
-              
-              
-              
-              
-            </div>
-          </div>
+       <div class="Marquee">
+        <div class="Marquee-content">
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+           <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+        </div>
+      </div>
               {/* <Marquee direction="left" speed={100} delay={1} className="career-list-slider">
                 <div className="image_wrapper">
                   <img src={CareerImage0} alt="" />
