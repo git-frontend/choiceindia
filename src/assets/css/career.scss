@@ -311,3 +311,29 @@
 }
 
 
+
+
+    
+    .marquee-content {
+      display: flex;
+      animation: scrolling 10s linear infinite;
+      transition: 0.5s ease-in-out;
+    }
+    
+    .marquee-item {
+      flex: 0 0 218.56px;
+      margin: 0  13.66px;
+    }
+    
+    .marquee-item img {
+      display: block;
+      width: 100%;
+      height: 400px;
+      width: 400px;
+    }
+    
+    @keyframes scrolling {
+      0% { transform: translateX(0); }
+      100% { transform: translatex(-1000px); }
+    }
+    

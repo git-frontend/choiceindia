@@ -42,7 +42,7 @@ function BannerCareer() {
       
      
     <section className="bannersection">
-          <Slider {...settings} className="career-list-slider">
+          {/* <Slider {...settings} className="career-list-slider">
                 <div>
                   <img src={CareerImage0} className="img-fluid" alt='Loading' />
                 </div>
@@ -55,8 +55,67 @@ function BannerCareer() {
                 <div>
                   <img src={CareerImage1} className="img-fluid" alt='Loading' />
                 </div>
-              </Slider>
-
+              </Slider> */}
+          <div class="marquee">
+            <div class="marquee-content"> 
+              <div class="marquee-item">
+                <img src={CareerImage0} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+                <img src={CareerImage1} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+                <img src={CareerImage2} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage0} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage1} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage0} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage2} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage1} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+                <img src={CareerImage0} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+                <img src={CareerImage1} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+                <img src={CareerImage2} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage0} alt="" />
+              </div>
+              
+              <div class="marquee-item">
+              <img src={CareerImage1} alt="" />
+              </div>
+              
+              
+              
+              
+              
+            </div>
+          </div>
               {/* <Marquee direction="left" speed={100} delay={1} className="career-list-slider">
                 <div className="image_wrapper">
                   <img src={CareerImage0} alt="" />
