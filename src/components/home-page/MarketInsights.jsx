@@ -3,6 +3,25 @@ import homeServices from '../../Services/homeServices';
 
 
 
+// $(document).ready(function () {
+
+//     $('.insights-list-item').hover(
+//       function(){ 
+//         $(".insights-list-item.insights-list-active").addclassName('inactive').removeclassName('insights-list-active');
+//       },
+//       function(){ 
+//         $(".insights-list-item.inactive").addclassName('insights-list-active').removeclassName('inactive'); 
+//       }
+//     );
+
+//   });
+
+import  ImageSub12  from '../../assets/images/market-img1.png';
+import  ImageSub13  from '../../assets/images/market-img2.png';
+
+
+
+
 function MarketInsights() {
 
     const [selectedId, setSelectedId] = useState(0);
