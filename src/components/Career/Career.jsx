@@ -4,7 +4,7 @@ import BannerCareer from './BannerCareer';
 import BenefitsPerks from './BenefitsPerks';
 import CareerTeam from './CareerTeam';
 import CareerJobs from './CareerJobs';
-import "../../assets/css/career.scss";
+import "./career.scss";
 import CareerHeader from './CareerHeader.jsx';
 
 function Career() {

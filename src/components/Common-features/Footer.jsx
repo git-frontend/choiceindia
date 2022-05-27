@@ -1,6 +1,5 @@
 import "../../assets/css/footer.scss"
 import  ImageFooter0  from '../../assets/images/footer-logo.svg';
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
