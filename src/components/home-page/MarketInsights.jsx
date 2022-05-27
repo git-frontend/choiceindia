@@ -18,7 +18,6 @@ import homeServices from '../../Services/homeServices';
 
 import  ImageSub12  from '../../assets/images/market-img1.png';
 import  ImageSub13  from '../../assets/images/market-img2.png';
-import React from "react";
 
 
 

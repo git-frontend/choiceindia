@@ -1,6 +1,6 @@
 
 // import logo from './logo.svg';
-import './App.css';
+// import './App.css';
 import '../src/assets/css/common.scss'
 
 // import Routing from './Routing';
