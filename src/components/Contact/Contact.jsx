@@ -3,7 +3,7 @@ import React from "react";
 import Contactbanner from './contactbanner';
 import Contactdetail from './Contactdetail';
 import ContactHeader from './ContactHeader';
-import "../../assets/css/contact.scss";
+import "./contact.scss";
 
 
 function Contact() {

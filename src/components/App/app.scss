@@ -1,5 +1,5 @@
-@import 'customvariable.scss';
-@import '../css/common.scss';
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
 
 .App-main{
     .banner-app{
@@ -13,7 +13,7 @@
             position: absolute;
             left: 0;
             bottom: -22rem;
-            background: url(../images/app/bannerbefore.png) no-repeat bottom left;
+            background: url(../../assets/images/app/bannerbefore.png) no-repeat bottom left;
             background-size: contain;
             z-index: 1;
             @media (max-width:$sm-x) {
@@ -75,7 +75,7 @@
             position: absolute;
             left: 0;
             top: -22rem;
-            background: url(../images/app/appbefore.png) no-repeat bottom left;
+            background: url(../../assets/images/app/appbefore.png) no-repeat bottom left;
             background-size: contain;
             z-index: -1;
             @media (max-width:$sm) {
@@ -144,7 +144,7 @@
             right: 0;
             top: 50%;
             transform: translate(0, -50%);
-            background: url(../images/app/vector-line.svg) no-repeat top right;
+            background: url(../../assets/images/app/vector-line.svg) no-repeat top right;
             background-size: contain;
             @media (max-width: 1025px){
                 width: 54rem;
@@ -268,7 +268,25 @@
     .app-banner-bottom{
         background: $abt-bg;
         padding: 13rem 0 10rem 0;
+<<<<<<< HEAD:src/assets/css/app.scss
         
+=======
+        position: relative;
+        &:after{
+            content:'';
+            width: 22em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: -13rem;
+            background: url(../../assets/images/app/sliderbefore.png) no-repeat bottom right;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+>>>>>>> material-remove:src/components/App/app.scss
         .content-list{
                 position: relative;
                 padding: 2.5rem 0;
@@ -332,7 +350,39 @@
 
     .app-strategies-bottom{
         padding-bottom: 10rem;
+<<<<<<< HEAD:src/assets/css/app.scss
 
+=======
+        position: relative;
+        &:before{
+            content:'';
+            width: 22em;
+            height: 49rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: -26rem;
+            background: url(../../assets/images/app/realtimebefore.png) no-repeat bottom right;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+        &:after{
+            content:'';
+            width: 25em;
+            height: 32rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            bottom: -9rem;
+            background: url(../../assets/images/app/realtimeafter.png) no-repeat bottom left;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+>>>>>>> material-remove:src/components/App/app.scss
         .content-list{
             padding-left: 5rem;
             display: flex;
@@ -436,7 +486,7 @@
         position: absolute;
         right: 0;
         bottom: -22rem;
-        background: url(../images/app/wealthbefore.png) no-repeat bottom right;
+        background: url(../../assets/images/app/wealthbefore.png) no-repeat bottom right;
         background-size: contain;
         @media (max-width:$sm) {
             display: none;
