@@ -235,12 +235,17 @@
             font-family:$font-family-poppins-regular;
             margin-bottom: 1.0625rem;
             display: flex;
+            align-items: center;
+            .fa-link{
+                margin-left: 1rem;
+            }
             @media (max-width: $sm){
                 font-size: 1.2rem;
              }
            }
            .filename{
                padding-left: 20px;
+               margin: 0;
            }
 
          input::-webkit-file-upload-button {
@@ -253,16 +258,8 @@
                       font-family: $font-family-poppins-regular;
            }
            .sendbtn{
-            background-color: $bgcolor-yellow;
-            border: none;
-            color: $primary;
-            font-weight: 600;
-            line-height:1.875rem;
-            font-size: 1.25rem;
-            font-family:$font-family-poppins-regular;
-            padding: 0.8rem 2rem;
-            position: absolute;
-            right: 0;
+            min-width: 11rem;
+            border-radius: 10px;
            }
         }
 
@@ -353,6 +350,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 auto;
         }
      
 

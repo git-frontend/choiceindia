@@ -53,66 +53,7 @@
                 margin: 4rem 0;
                 display: flex;
                 flex-wrap: wrap;
-                .link-nrl{
-                    display: flex;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    background-color: $bgcolor-blue;
-                    width: 17%;
-                    border-radius: 100px;
-                    padding: 10px;
-                    margin-right: 2.5rem;
-                    text-decoration: none;
-                        -webkit-transform: perspective(1px) translateZ(0);
-                        transform: perspective(1px) translateZ(0);
-                        box-shadow: 0 0 1px rgb(0 0 0 / 0%);
-                        -webkit-transition-duration: 0.3s;
-                        transition-duration: 0.3s;
-                        -webkit-transition-property: transform;
-                        transition-property: transform;
-                        -webkit-transition-timing-function: ease-out;
-                        transition-timing-function: ease-out;
-                        position: relative;
-                        &.white{
-                            background-color: $bgolor-lightwhite;
-                        }
-                    .img-ico{
-                        width: 17rem;
-                        display: block;
-                        @media (max-width: $sm-x){
-                            width: 8rem;
-                        }
-                    }
-                    .whitecolor{
-                        color: $whiteColor;
-                        font-size: 20px;
-                        @media (max-width: $sm-x){
-                            font-size:16px;
-                        }
-                    }
-                    .blackcolor{
-                       color:  $blackColorlight;
-                       font-size: 20px;
-                       @media (max-width: $sm-x){
-                        font-size:16px;
-                    }
-                    }
-                    &:hover{
-                        transform: translateY(-8px);
-                    }
-                    @media (max-width: $sm-x){
-                        margin-right: 1rem;
-                        width: 42%;
-                        margin-bottom: 1rem;
-                        padding: 8px;
-                    }
-                    @media (min-width:$sm-x) and (max-width: $md){
-                        width: 23%;
-                      }
-                      @media (min-width:769px) and (max-width:1024px){
-                        width: 23%;
-                      }
-                }
+               
                 @media (max-width: $sm-x){
                     margin: 2rem 0;
                     flex-direction: column;
