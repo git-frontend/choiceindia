@@ -2,7 +2,7 @@
 
 
 .home-banner{
-    padding: 8rem 0 0;
+    padding: 4rem 0 0;
     background-color: #EFEDF2;
     .banner-img{
         width: 100%;
@@ -12,13 +12,13 @@
         .banner-caption{
             text-align: left;
             position: relative;
-            top: 50%;
+            top: 42%;
             transform: translate(0, -50%);
             left: 0;
             width: 100%;
             h1{
                 font-size: 4.4rem;
-                line-height: 70px;
+                line-height: 58px;
 
                 font-family: $font-family-poppins-bold;
                 color: $primary;
@@ -177,24 +177,20 @@
     padding-top: 10rem;
     position: relative;
     z-index: 9;
-
-    .finx-section {
+    .finx-section{
         display: flex;
         flex-wrap: wrap;
         position: relative;
         margin-bottom: -15rem;
-
-        .finx-left-cont {
+        .finx-left-cont{
             width: 80%;
             padding-right: 6%;
-
-            .finx-app-list {
+            .finx-app-list{
                 display: flex;
                 flex-wrap: wrap;
                 margin-top: 6.5rem;
                 margin-left: -4%;
-
-                .app-list-item {
+                .app-list-item{
                     width: 29.33%;
                     margin-left: 4%;
                 a{
@@ -202,91 +198,105 @@
                     box-shadow: 0px 0px 15px 1px #C2C2C2;
                     border-radius: 20px;
                     padding: 2rem;
-                    padding-right: 1rem;
                     text-decoration: none;
                     display: block;
                     height: 100%;
                     h4{
-                        font-size: 1.8rem;
+                        font-size: 1.625rem;
                         font-family: $font-family-poppins-semibold;
                         color: $primary;
-                        margin: 1.4rem 0;
+                        margin: 1rem 0;
                     }
                     p{
-                        font-size: 1.3rem;
-                        line-height: 2rem;
+                        font-size: 1.125rem;
+                        line-height: 1.7rem;
                         margin-bottom: 0;
                         color: $primary;
                         font-family: $font-family-poppins-regular, sans-serif;
                     }
                 }
+                @media (max-width: $sm){
+                    width: 97%;
+                    margin-bottom: 2rem;
+                }
+                }
             }
-
-            @media (max-width: $sm) {
+            
+            @media (max-width: $sm){
                 width: 100%;
                 padding: 0;
                 text-align: center;
             }
         }
-
-        
-    }
-    .finx-app-img {
-        width: 20%;
-        position: absolute;
-        right: 0;
-        top: 0;
-
-        img {
-            width: 100%;
-
-            @media (max-width: $sm) {
-                width: 80%;
-                margin: 0 auto;
-                display: block;
+        .finx-app-img{
+            width: 20%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            img{
+                width: 100%;
+                @media (max-width: $sm){
+                    width: 80%;
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+            @media (max-width: $sm){
+                width: 100%;
+                position: relative;
+                margin-top: 2rem;
             }
         }
-
-        @media (max-width: $sm) {
-            width: 100%;
-            position: relative;
-            margin-top: 2rem;
+        @media (max-width: $md){
+            margin: 0;
         }
     }
-
-    @media (max-width: $md) {
-        margin: 0;
-    }
-    @media (max-width: $md) {
-        background: #F3FAFF;
+    @media (max-width: $md){
+        background: $abt-bg;
         padding: 7rem 0;
     }
-
-    .expl-app {
+    .expl-app{
         display: flex;
         align-items: center;
         margin-top: 5rem;
         width: 100%;
-
-        a {
+        a{
             margin-right: 2rem;
-
-            .ico-img {
+            transition: transform 0.8s ease;
+            .ico-img{
                 width: 5rem;
             }
-
-            @media (max-width: $sm) {
+            @media (max-width: $sm){
                 margin-right: 1rem;
             }
+           &:hover{
+            transform: translateY(-8px);
+           }
         }
 
-        @media (max-width:$sm) {
-            justify-content: center;
+        .media{
+            &:hover{
+                .black{
+                
+                    fill: #221F20;
+                } 
+                .yellow{
+                    fill: #FFCE02;
+                   
+                }
+            }
+           
+            
+           
+        }
+
+       
+        @media (max-width:$sm){
+           justify-content: center;
         }
     }
 }
 
-}
 
 
 

@@ -1,6 +1,7 @@
 @import 'common.scss';
 
 .Header{
+    margin-bottom: 10rem;
     .main-header{
         position: absolute;
         background: transparent;
@@ -87,7 +88,7 @@
                                 display: block;
                                 background: $bgcolordark;
                                 position: absolute;
-                                bottom: -5px;
+                                bottom: 0px;
                                 left: 0;
                                 right: 0;
                                 margin: 0 auto;
