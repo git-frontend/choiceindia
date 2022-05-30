@@ -14,7 +14,7 @@ export default function ScrolltoTop() {
 
             }
         })
-    }, [scroll])
+    }, [])
   
     const scrollTop  = () =>{
         window.scrollTo({
@@ -32,11 +32,12 @@ export default function ScrolltoTop() {
         <button style={{
             position:'fixed',
             right:"50px",
-            bottom:"50px",
-            height:"50px",
-            width:"50px",
+            bottom:"10px",
+            boxShadow:"0px 3px 3px 0px #DDD7D5",
             backgroundColor:"#FFCE02",
-            fontSize:"50px"
+            borderRadius:"10px",
+            fontSize:"20px",
+            opacity:"100px"
 
         }}  
         onClick = {scrollTop} >
