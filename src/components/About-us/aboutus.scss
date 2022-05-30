@@ -10,7 +10,7 @@ body{
 }
 
 .bannersection{
-    padding:3rem 0 8rem;
+    padding:0 0 8rem;
     position: relative;
     @media (max-width:$sm) {
         padding:8rem 0 4rem;
@@ -759,6 +759,7 @@ body{
                 li{
                     width: 12px;
                     height: 12px;
+                    margin: 0 5px;
                 button{
                    &:before{
                        height: 10px;

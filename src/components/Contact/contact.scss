@@ -17,14 +17,7 @@
 .banner-contact{
     position: relative;
     padding-bottom: 4rem;
-    margin-top: 10rem;
-    @media (max-width: $sm){
-       
-        margin-top: 6rem;
-     }
-     @media (min-width:$sm) and (max-width: 1024px){
-        margin-top: 7rem;
-     }
+
     .ban-img{
         width: 100%;
     }

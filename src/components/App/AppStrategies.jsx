@@ -56,7 +56,7 @@ function AppStrategies() {
                         <div className='col-md-9'>
                             <div className="row app-trade-easy-div d-flex align-items-center">
 
-                                <div className='col-md-5'>
+                                <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
                                         <img src={imageData[isShown3].image}
@@ -68,7 +68,7 @@ function AppStrategies() {
 
                                 </div>
 
-                                <div className='col-md-7'>
+                                <div className='col-md-8'>
                                     <div className='content-list'>
                                         <Slider {...settings1}
                                             afterChange={(ev) => {

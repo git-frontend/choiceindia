@@ -39,7 +39,7 @@
 .link-nrl{
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     background-color: $bgcolor-blue;
     width: 17%;
     border-radius: 100px;
@@ -118,7 +118,7 @@
             transform: translateY(-8px);
         }
         @media (max-width: $sm){
-            width: 100%;
+            // width: 100%;
 
           }
           @media (min-width:$sm) and (max-width: $sm-x){
@@ -143,5 +143,7 @@
               padding-left: 10px;
           }
       }
-
+      .ico-sm{
+          margin-right: 0.8rem;
+      }
 }

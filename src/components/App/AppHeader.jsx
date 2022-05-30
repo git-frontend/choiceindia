@@ -4,7 +4,7 @@ import MenuHeader from '../Common-features/MenuHeader';
 
 function AppHeader() {
     return (
-      <div className="Header header-light">
+      <div className="Header">
         <header className="main-header">
           <MenuHeader />
         </header>
