@@ -1,40 +1,11 @@
 import ImageSub5 from '../../assets/images/icons/arrow-left-circle-fill.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Slider from "react-slick";
 import EveryFinance from "../../Data/EverydayFinance"
-import homeServices from '../../Services/homeServices';
 
 function EverydayFinance() {
-
-  const [secondary, setSecondary] = useState([]);
-  const [trigger, setTrigger] = useState(false)
-
-
-  /** load Every Day Finance */
-  function loadSecondarybanner() {
-
-    homeServices.homeSecondaryBanner().then(
-
-      res => {
-
-        setSecondary(res.data.data);
-
-      }
-    )
-  };
-
-
-  /**onInIt Every Day Finance */
-  useEffect(() => {
-    setTrigger(true)
-
-    if (trigger===true) {
-      loadSecondarybanner();
-    }
-
-  }, [trigger])
 
   const settings = {
     infinite: true,

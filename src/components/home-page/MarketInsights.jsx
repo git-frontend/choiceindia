@@ -1,20 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import $ from 'jquery';
 import homeServices from '../../Services/homeServices';
-
-
-// $(document).ready(function () {
-
-//     $('.insights-list-item').hover(
-//       function(){ 
-//         $(".insights-list-item.insights-list-active").addclassName('inactive').removeclassName('insights-list-active');
-//       },
-//       function(){ 
-//         $(".insights-list-item.inactive").addclassName('insights-list-active').removeclassName('inactive'); 
-//       }
-//     );
-
-//   });
 
 function MarketInsights() {
 

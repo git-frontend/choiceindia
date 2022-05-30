@@ -6,7 +6,8 @@ import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { Dropdown } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faLink } from '@fortawesome/free-solid-svg-icons'
 function Contactbanner() {
   
 
@@ -46,7 +47,7 @@ function Contactbanner() {
   return (
     <div>
       <section className="banner-contact">
-        <img src={Bannerimage} className="ban-img" />
+        <img src={Bannerimage} className="ban-img" alt="Loading" />
         <div className='banner-caption'>
           <div className='container'>
             <div className='row'>
@@ -122,27 +123,31 @@ function Contactbanner() {
               {/**<input  type="file" id="selected" accept="image/*" title="" hidden />
   <label htmlFor="icon-button-file"  className="formlabel mt-3 attach">Attachment</label>*/}
 
+            <div className="">
               <input
-                type="file"
-                accept="image/*"
-                hidden={true}
-                ref={refParam => inputRef = refParam}
-                onChange={(e) => {
-                  setData(e.target.value)
-                }}
-              />
+                  type="file"
+                  accept="image/*"
+                  hidden={true}
+                  ref={refParam => inputRef = refParam}
+                  onChange={(e) => {
+                    setData(e.target.value)
+                  }}
+                />
 
-              <label
-                className="attachement mt-3"
-                style={{ cursor: "pointer" }}
-                onClick={() => inputRef.click()}
-              >Attachment <p class="filename"> {data} </p>
-              </label>
+                <label
+                  className="attachement mt-3"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => inputRef.click()}
+                >Attachment <FontAwesomeIcon icon={faLink} /><p class="filename"> {data} </p>
+                </label>
+            </div>
+
+             
 
 
               <Button variant="primary" 
                 disabled={!isValid}
-                type="submit" className="sendbtn">
+                type="submit" className="btn-bg btn-bg-dark sendbtn">
                 Send
               </Button>
             </div>

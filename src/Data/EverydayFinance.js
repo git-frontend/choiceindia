@@ -5,6 +5,7 @@ import  ImageSub4  from '../assets/images/icons/insurance.svg';
 const EveryFinance = 
 [
     {
+        id:1,
         image:`${ImageSub2}`,
         title:"Stocks",
         description:"Facilitating trade on equities, commodities & currencies with ease",
@@ -12,6 +13,7 @@ const EveryFinance =
 
     },
     {
+        id:2,
         image:`${ImageSub3}`,
         title:"Mutual Funds",
         description:"Compare and invest in funds of all categories and segments with ease",
@@ -19,6 +21,7 @@ const EveryFinance =
 
     },
     {
+        id:3,
         image:`${ImageSub4}`,
         title:"Insurance",
         description:"Get insured as per your need for everything right here",
@@ -26,6 +29,7 @@ const EveryFinance =
 
     },
     {
+        id:4,
         image:`${ImageSub2}`,
         title:"Stocks",
         description:"Facilitating trade on equities, commodities & currencies with ease",
@@ -33,6 +37,7 @@ const EveryFinance =
 
     },
     {
+        id:5,
         image:`${ImageSub3}`,
         title:"Mutual Funds",
         description:"Compare and invest in funds of all categories and segments with ease",
@@ -40,6 +45,7 @@ const EveryFinance =
 
     },
     {
+        id:6,
         image:`${ImageSub4}`,
         title:"Insurance",
         description:"Get insured as per your need for everything right here",

@@ -15,6 +15,7 @@ export default function Header() {
           
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
+                
                 <NavLink className="navbar-brand logo-main" to="/">
                         <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" />
                         <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />

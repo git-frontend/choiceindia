@@ -1,6 +1,7 @@
 @import 'common.scss';
 
 .Header{
+    margin-bottom: 10rem;
     .main-header{
         position: absolute;
         background: transparent;
@@ -12,8 +13,10 @@
         .navbar{
             box-shadow: inherit;
             .logo-main{
+                margin-right: 3rem;
                 @media screen and (max-width: 1170px) {
                     max-width: 110px;
+                    margin-right: 0;
                 }
             }
            
@@ -85,7 +88,7 @@
                                 display: block;
                                 background: $bgcolordark;
                                 position: absolute;
-                                bottom: -5px;
+                                bottom: 0px;
                                 left: 0;
                                 right: 0;
                                 margin: 0 auto;
@@ -94,7 +97,7 @@
                         }
                     }
                     &.login-btn{
-                        margin-left: 5rem;
+                        margin-left: 3rem;
                         a{
                             font-family: $font-family-poppins-semibold;
                         }

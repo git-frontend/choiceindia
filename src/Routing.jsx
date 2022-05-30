@@ -7,11 +7,13 @@ import Career from './components/Career/Career';
 import App from './components/App/App';
 import Fables from './components/Fables/Fables';
 import Contact from './components/Contact/Contact';
+import ScrolltoTop from './components/Common-features/ScrolltoTop';
 
 function Routing() {
     return (
         <>
             <Router>
+            <ScrolltoTop />
                 <Routes>
                     <Route exact path='/' element={< Home />} />
                     <Route exact  path='/About-us' element={< AboutUs/>} />

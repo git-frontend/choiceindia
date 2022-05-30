@@ -1,4 +1,4 @@
-import "../../assets/css/fable.scss"
+import "./fable.scss"
 import React from "react";
 import BannerSection from "./BannerSection";
 import FableBlog from "./FableBlog";

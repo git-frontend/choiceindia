@@ -1,8 +1,29 @@
-import React from "react";
-import  Blog1  from '../../assets/images/fable/blog1.png';
+import React,{useState,useEffect} from "react";
+import homeServices from '../../Services/homeServices';
 
 
 function BannerSection() {
+
+	const[data,setData] = useState([]);
+	const [trigger, setTrigger] = useState();
+
+	function loadFableList(){
+		homeServices.marketInsiteFabal().then (
+			res=>{
+				setData(res.data.posts);
+
+			}
+		)	
+	}
+	useEffect(() => {
+
+		setTrigger(true)
+		if (trigger === true) {
+			loadFableList()
+		}
+
+	}, [trigger])
+
 
     return (
         <div>
@@ -22,15 +43,31 @@ function BannerSection() {
 									<h3 className="title-secnd">Trending </h3>
 								</div>
 								<div className="fable-trending-list">
-									<a href="/" className="trending-itm">
-										<div className="trending-itm-img">
-											<img src={Blog1} alt="loading" className="img-blog"/>
-										</div>
-										<div className="trending-itm-des">
-											<p>Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
-										</div>
-									</a>
-									<a href="/" className="trending-itm">
+
+								{
+									data.slice(0,4).map((response, index) => {
+
+										return(
+                                       <div>
+									   <a href="/" className="trending-itm">
+									   <div className="trending-itm-img">
+										   <img src={response.feature_image} alt="loading" className="img-blog"/>
+									   </div>
+									   <div className="trending-itm-des">
+										   <p>{response.meta_description}</p>
+									   </div>
+								   </a>
+
+
+									   </div>
+											
+										)
+
+									})
+								}
+
+						
+									{/**<a href="/" className="trending-itm">
 										<div className="trending-itm-img">
 											<img src={Blog1} alt="loading" className="img-blog"/>
 										</div>
@@ -53,7 +90,7 @@ function BannerSection() {
 										<div className="trending-itm-des">
 											<p>What will be the future of Cryptocurrencies in India?</p>
 										</div>
-									</a>
+							</a>*/}
 								</div>
 							</div>
 						</div>	

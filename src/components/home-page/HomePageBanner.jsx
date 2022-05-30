@@ -35,12 +35,12 @@ function HomePageBanner() {
 
                     return (
 
-                        <section className="home-banner">
+                        <section className="home-banner" key={response.id}>
                             <div className="banner-desc">
                                 <div className="container">
                                     <div className="row">
                                         <div className="col-md-6">
-                                            <div className="banner-caption">
+                                            <div className="banner-caption" >
 
                                                 <h1>{response.title}</h1>
                                                 <h1>{response.description}</h1>
