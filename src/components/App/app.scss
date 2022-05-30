@@ -137,6 +137,13 @@
                     padding: 1rem;
                 }
             }
+            @media (max-width: $md){
+                width: 100%;
+                margin-top: 8rem;
+            }
+            @media (max-width: $sm-x){
+                margin-top: 0;
+            }
         }
         &::before{
             content: '';
@@ -322,6 +329,9 @@
                 max-width: 100%;
             }
         }
+        @media (max-width: $sm-x){
+            padding: 4rem 0 5rem 0;
+        }
     }
 
     .app-strategies-bottom{
@@ -417,7 +427,7 @@
                 }
             }
             @media (max-width: $sm){
-                padding-left: 1rem;
+                padding-left: 0;
              }
              .slick-slide{
                  > div{

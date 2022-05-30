@@ -15,7 +15,7 @@ function AppStrategies() {
         touchMove: true,
         arrows: false,
         slidesToShow: 4,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,
@@ -24,7 +24,7 @@ function AppStrategies() {
             {
                 breakpoint: 992,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 4,
                     slidesToScroll: 1,
                     adaptiveHeight: true,
                 },
@@ -32,7 +32,7 @@ function AppStrategies() {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 4,
                     slidesToScroll: 1,
                 },
             },
