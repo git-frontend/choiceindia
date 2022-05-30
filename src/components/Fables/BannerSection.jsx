@@ -1,34 +1,28 @@
 import React,{useState,useEffect} from "react";
-import  Blog1  from '../../assets/images/fable/blog1.png';
 import homeServices from '../../Services/homeServices';
 
 
 function BannerSection() {
 
 	const[data,setData] = useState([]);
-	const[check,setCheck]=useState();
+	const [trigger, setTrigger] = useState();
 
 	function loadFableList(){
 		homeServices.marketInsiteFabal().then (
 			res=>{
 				setData(res.data.posts);
-				console.log("data",data);
-				console.log(res.data.posts)
 
 			}
-
-		)
-
-		
+		)	
 	}
 	useEffect(() => {
 
-		setCheck(true)
-		if (check === true) {
+		setTrigger(true)
+		if (trigger === true) {
 			loadFableList()
 		}
 
-	}, [check])
+	}, [trigger])
 
 
     return (

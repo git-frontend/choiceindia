@@ -47,7 +47,7 @@ function Contactbanner() {
   return (
     <div>
       <section className="banner-contact">
-        <img src={Bannerimage} className="ban-img" />
+        <img src={Bannerimage} className="ban-img" alt="Loading" />
         <div className='banner-caption'>
           <div className='container'>
             <div className='row'>

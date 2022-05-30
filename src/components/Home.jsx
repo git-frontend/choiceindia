@@ -34,6 +34,8 @@ function Home() {
 
        <MarketInsights />
 
+	   
+
        <HomeFeatures />
 
        <FablesStories />
@@ -76,9 +78,11 @@ function Home() {
       <SecurityPrivacy />
 
       
-
+	  
 
       </main>
+
+	  
 
     </div>
   );
