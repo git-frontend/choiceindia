@@ -11,72 +11,29 @@ import Slider from "react-slick";
 
 function BannerCareer() {
 
-    const settings = {
-        speed: 2000,
-        arrows: false,
-        slidesToShow: 1,
-        dots:false,
-        autoplay:true,
-        autoplaySpeed: 0,
-        centerMode: true,
-        infinite: true,
-        centerPadding: '30%',
-        slidesToScroll: 1,
-        loop:true,
-         slide: 'div',
-         cssEase: 'linear',
-         pauseOnFocus: false,
-         pauseOnHover: false,
-        responsive: [
-          {
-            breakpoint: 768,
-            settings: {
-              centerPadding: '8%',
-            }
-          },
-        ]
-    };
-
   return (
     <div className='career-main'>
       
      
     <section className="bannersection">
-          <Slider {...settings} className="career-list-slider">
-                <div>
-                  <img src={CareerImage0} className="img-fluid" alt='Loading' />
-                </div>
-                <div>
-                  <img src={CareerImage1} className="img-fluid" alt='Loading'/>
-                </div>
-                <div>
-                  <img src={CareerImage2} className="img-fluid" alt='Loading' />
-                </div>
-                <div>
-                  <img src={CareerImage1} className="img-fluid" alt='Loading' />
-                </div>
-              </Slider>
-
-              {/* <Marquee direction="left" speed={100} delay={1} className="career-list-slider">
-                <div className="image_wrapper">
-                  <img src={CareerImage0} alt="" />
-                </div>
-                <div className="image_wrapper">
-                  <img src={CareerImage1} alt="" />
-                </div>
-                <div className="image_wrapper">
-                  <img src={CareerImage2} alt="" />
-                </div>
-                <div className="image_wrapper">
-                  <img src={CareerImage0} alt="" />
-                </div>
-                <div className="image_wrapper">
-                  <img src={CareerImage1} alt="" />
-                </div>
-                <div className="image_wrapper">
-                  <img src={CareerImage2} alt="" />
-                </div>
-              </Marquee> */}
+         
+       <div class="Marquee">
+        <div class="Marquee-content">
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+           <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+        </div>
+      </div>
+             
     </section>
 
     <section className='our-values'>

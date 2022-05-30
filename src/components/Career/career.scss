@@ -1,4 +1,4 @@
-@import 'customvariable.scss';
+@import '../../assets/css/customvariable.scss';
 
 
 .career-list-slider{
@@ -39,7 +39,7 @@
         position: absolute;
         right: 0;
         top: -150px;
-        background: url('../images/career/ourvalubefore.png') no-repeat bottom right;
+        background: url('../../assets/images/career/ourvalubefore.png') no-repeat bottom right;
         background-size: contain;
         z-index: -1;
         @media (max-width: $sm-x){
@@ -76,12 +76,12 @@
             margin-top: 6rem;
             justify-content: space-between;
             .perks-list-itm{
-                width: 46%;
+                width: 40%;
                 display: flex;
                 margin-left: 2%;
                 flex-wrap: wrap;
                 align-items: center;
-                margin-bottom: 3rem;
+                margin-bottom: 4rem;
                 img{
                     width: 3.5rem;
                 }
@@ -89,6 +89,7 @@
                     color: $whiteColor;
                     width: calc(100% - 5rem);
                     padding-left: 3rem;
+                    font-family: $font-family-poppins-regular, sans-serif;
                 }
                 @media (max-width: $sm){
                    width: 80%;
@@ -110,7 +111,7 @@
             position: absolute;
             left: -99px;
             top: -401px;
-            background: url('../images/career/culturebefore.png') no-repeat bottom right;
+            background: url('../../assets/images/career/culturebefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: -1;
             @media (max-width: $sm-x){
@@ -163,17 +164,21 @@
                             border-radius: 7px;
                             border: 0;
                             outline: none;
+                            font-size: 1.375rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
                         }
                         .btn-submit{
                             position: absolute;
                             right: 3px;
                             top: 3.5px;
+                            font-size: 1.375rem;
                             background: $bgcolordark;
                             color: $whiteColorlight;
                             display: block;
                             padding: 0.5rem 2rem;
                             border-radius: 7px;
                             border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
                             outline: none;
                             @media (max-width: $sm){
                                 padding: 0.5rem 1rem;
@@ -193,8 +198,9 @@
                             padding: 0.8rem 1rem;
                             border-radius: 7px;
                             border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
                             &::after{
-                                background:url(../images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
+                                background:url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
                                 right: 4px;
                                 position: absolute;
                                 width: 3rem;
@@ -207,6 +213,7 @@
                         .dropdown-menu{
                             width: 100%;
                             font-size: 1.4rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
                         }
                     }
                 }
@@ -229,7 +236,7 @@
             position: absolute;
             right: 0px;
             top: -14%;
-            background: url('../images/career/ourteambefore.png') no-repeat bottom right;
+            background: url('../../assets/images/career/ourteambefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: 1;
             @media (max-width: $sm-x){
@@ -258,6 +265,7 @@
                 .sec-ttl{
                     color: $secondary;
                     font-size: 1.4rem;
+                    font-family: $font-family-poppins-medium;
                     .apl-btn{
                         color: $bgcolor-yellow;
                         text-decoration: none;
@@ -279,7 +287,7 @@
             position: absolute;
             left: 0px;
             bottom: -24%;
-            background: url('../images/career/marketingjobbefore.png') no-repeat bottom right;
+            background: url('../../assets/images/career/marketingjobbefore.png') no-repeat bottom right;
             background-size: contain;
             z-index: -1;
             @media (max-width: $sm-x){
@@ -292,7 +300,7 @@
 }
 
 .culture-values{
-    padding: 13rem 0 27rem 0;
+    padding: 0 0 27rem 0;
     
     .culture-values-img{
         .shdow{
@@ -309,5 +317,72 @@
         padding: 5rem 2rem;
     }
 }
+.Marquee {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1em;
+    color: #fff;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .Marquee-content {
+        display: flex;
+        animation: marquee 10s linear infinite running;
+        &:hover{
+            animation-play-state: paused;
+        }
+        .Marquee-tag {
+            width:450px;
+            height: 450px;
+            margin: 0 0.5em;
+            padding: 0.5em;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 10s ease;
+            &:hover{
+                background: rgba(255,255,255,0.5);
+                transform: scale(1);
+                cursor: pointer;
+            }
+          }
+      }
+  }
+ 
 
-
+ 
+  @-moz-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @-webkit-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @-o-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  
