@@ -1,4 +1,6 @@
 import React,{useState,useEffect} from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
 
 export default function ScrolltoTop() {
 
@@ -30,19 +32,13 @@ export default function ScrolltoTop() {
 {
     scroll && (
         <button style={{
-            position:'fixed',
-            right:"50px",
-            bottom:"10px",
-            boxShadow:"0px 3px 3px 0px #DDD7D5",
-            backgroundColor:"#FFCE02",
-            borderRadius:"10px",
-            fontSize:"20px",
-            opacity:"100px"
+           
+            
 
         }}  
-        onClick = {scrollTop} >
+        onClick = {scrollTop} className="scroll-top">
         
-        ^</button>
+        <FontAwesomeIcon icon={faAngleUp} /></button>
     )
 
 }
