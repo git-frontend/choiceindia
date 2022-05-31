@@ -43,8 +43,8 @@ function EverydayFinance() {
     slidesToShow: 4,
     autoplay: true,
     dots: true,
-    autoplaySpeed: 1000,
-    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    slidesToScroll: 2,
     responsive: [
       {
         breakpoint: 992,

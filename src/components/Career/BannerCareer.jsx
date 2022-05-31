@@ -17,20 +17,14 @@ function BannerCareer() {
      
     <section className="bannersection">
          
-       <div class="Marquee">
-        <div class="Marquee-content">
-          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
-           <div class="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div class="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+       <div className="Marquee">
+        <div className="Marquee-content">
+          <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
         </div>
       </div>
              
