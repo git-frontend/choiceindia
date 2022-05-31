@@ -28,7 +28,7 @@ return (
       <div className="container mt-10 "  >
          <div className="d-flex justify-content-between detailwrap">
             
-            <div className='d-flex flex-column '>
+            <div className='d-flex flex-column flex-column-left'>
                <div>
                   <p className="maintitle">120+ branches and partner offices</p>
                   <p className="subhead">Locate and office in your city</p>

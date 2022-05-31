@@ -208,7 +208,7 @@
                         margin: 1rem 0;
                     }
                     p{
-                        font-size: 1.125rem;
+                        font-size: 1.3rem;
                         line-height: 1.7rem;
                         margin-bottom: 0;
                         color: $primary;
@@ -381,7 +381,7 @@
         margin-top: 5rem;
 
         .insights-list-item {
-            width: 19%;
+            width: 17%;
             margin-left: 4%;
             transition: width 1.5s;
 
@@ -436,7 +436,7 @@
             }
 
             &.insights-list-active {
-                width: 30%;
+                width: 35%;
 
                 .ttl-sm {
                     transform: rotate(0);
@@ -876,7 +876,7 @@
 
         .imgsub22 {
             position: absolute;
-            left: 80px;
+            left: 135px;
             top: -40px;
             width: 60px;
 

@@ -25,16 +25,18 @@ function AppBannerBottom() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 6,
           slidesToScroll: 1,
+          autoplay: false,
           adaptiveHeight: true,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 6,
           slidesToScroll: 1,
+          autoplay: false,
         },
       },
     ],

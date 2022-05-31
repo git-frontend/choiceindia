@@ -2,6 +2,7 @@ import  CareerImage0  from '../../assets/images/career/slide1.jpg';
 import  CareerImage1  from '../../assets/images/career/slide2.jpg';
 import  CareerImage2  from '../../assets/images/career/slide3.jpg';
 import  CareerImage3  from '../../assets/images/career/slide4.jpg';
+
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -12,6 +13,8 @@ function BannerCareer() {
 
   return (
     <div className='career-main'>
+      
+     
     <section className="bannersection">
         <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
           <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>

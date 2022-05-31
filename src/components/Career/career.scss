@@ -320,7 +320,7 @@
 .Marquee {
     width: 100%;
     box-sizing: border-box;
-    padding: 1em;
+    padding: 0;
     color: #fff;
     font-weight: 200;
     display: flex;
@@ -334,7 +334,7 @@
         }
         .Marquee-tag {
             width:450px;
-            height: 450px;
+            height: 370px;
             margin: 0 0.5em;
             padding: 0.5em;
             background: rgba(255,255,255,0.1);

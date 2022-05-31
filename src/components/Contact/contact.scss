@@ -17,14 +17,7 @@
 .banner-contact{
     position: relative;
     padding-bottom: 4rem;
-    margin-top: 10rem;
-    @media (max-width: $sm){
-       
-        margin-top: 6rem;
-     }
-     @media (min-width:$sm) and (max-width: 1024px){
-        margin-top: 7rem;
-     }
+
     .ban-img{
         width: 100%;
     }
@@ -33,7 +26,7 @@
         position: absolute;
         left: 0;
         width: 100%;
-        top: 40%;
+        top: 50%;
         transform: translate(0, -50%);
         z-index: 9;
         color: $primary;
@@ -45,17 +38,188 @@
         }
     }
    
-    .form{
+ 
+
+           
+        }
+    
+
+  
+ 
+  
+ 
+
+.contactdetail{
+    padding:15rem 0 0 0;
+    position: relative;
+    @media (max-width: 1024px){
+        
+      }
+    &:before{
+        content: '';
         position: absolute;
+        display: block;
+        height: 57rem;
+        width: 21rem;
+        right: 0;
+        top: -10%;
+        background: url('../../assets/images/contact/contactbefore.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .mt-10{
+        margin-top:10rem;
+        @media (max-width: $sm){
+            margin-top:6rem;
+          }
+    }
+    .detailwrap{
+        @media (max-width: $sm){
+           flex-direction: column;
+         }
+    }
+    .address{
+        @media (max-width: $sm){
+            text-align: left !important;
+            margin-top: 3rem;
+          }
+    }
+  .maintitle{
+    color: $primary;
+    font-weight: 600;
+    font-size: 1.875rem;
+    line-height: 2.8125rem;
+    font-family: 'PoppinsMedium';
+  }
+  .subtext{
+    color: $secondary;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 2.5rem;
+    font-family: 'PoppinsRegular';
+  }
+  .subhead{
+    color: $primary;
+    font-weight: 400;
+    font-size: 1.25rem;
+    line-height: 2.125rem;
+    font-family: 'PoppinsRegular';
+  }
+   .cust-dropdown{
+    background: $whiteColor;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 7px;
+    margin-top: 4.5625rem;
+    @media (max-width: $sm){
+        margin-top: 3rem;
+      }
+    .dropdown-toggle{
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        position: relative;
+        color: #221F2040;
+        font-size: 1.4rem;
+        padding: 0 2rem;
+        font-family: $font-family-poppins-regular, sans-serif;
+        &::after{
+            background:url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
+            right: 4px;
+            position: absolute;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 7px;
+            top: 4px;
+            background-size: 1.2rem;
+        }
+     
+
+
+    }
+   
+    
+    .dropdowntoggle{
+        background: transparent;
+        border: 0px solid $lightColor;
+        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+        border-radius: 0px;
+        width: 100%;
+        font-family: $font-family-poppins-regular, sans-serif;
+    }
+    .option{
+        
+        color: $primary;
+        background: transparent;
+        border: 0px solid $lightColor;
+        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+    }
+    .dropdown-menu{
+        width: 100%;
+        .dropdown-item{
+            font-size: 1.4rem;
+            font-family: "PoppinsRegular", sans-serif, sans-serif;
+        }
+    }
+   
+   }
+   .flex-column-left{
+       width: 35%;
+       @media (max-width: $sm){
+           width: 100%;
+       }
+   }
+}
+
+.text-right{
+    text-align: right !important;
+}
+
+.mb-0{
+    margin-bottom: 0;
+}
+
+.attach{
+    cursor: pointer;
+}
+
+
+
+
+.cnt-banner-bottm{
+    position: relative;
+    margin-top: -140px;
+    .writebtn{
+        position: relative;
+        left: 0;
+        border-radius: 0;
+       display: inline-block;
+       .writeus{
+            background-color: $bgcolor-yellow;
+            border: none;
+            color: $primary;
+            font-weight: 700;
+            padding: 1.5rem 2.5rem;
+            font-size: 1.375rem;
+            display: inline-block;
+            // font-size: 24px;
+            font-family: $font-family-poppins-semibold;
+        }
+    }
+    
+    .form{
+        position: relative;
         background-color: $primary;
         left: 0;
         right: 0;
-        width: 85%;
-        top: 127%;
+        width: 100%;
+        // top: 127%;
         margin: 0 auto;
-        transform: translate(0, -50%);
+        // transform: translate(0, -50%);
         z-index: 9;
-        padding: 3rem;
+        padding: 3rem 2.8rem;
         @media (max-width: $sm){
             margin-top: 17rem;
             top: 138%;
@@ -67,25 +231,7 @@
          @media (min-width:769px) and (max-width:1024px){
             top: 145%;
            }
-        .writebtn{
-            position: absolute;
-            top: -5.5%;
-            left: 0;
-            border-radius: 0;
-            @media (max-width: 1024px){
-                top:-5.5%;
-             }
-
-        }
-        .writeus{
-            background-color: #FFCE02;
-            border: none;
-            color: $primary;
-            font-weight: 700;
-            line-height: 34px;
-            padding: 1.2rem ;
-            // font-size: 24px;
-        }
+        
         .formgrp{
             width: 49%;
             .formcontrol{
@@ -143,13 +289,13 @@
             border-radius: 3px;
             padding: 10px;
             position: relative;
-
+    
             .downar{
                 position: absolute;
                 right: 10px;
                 top:20px;
-
-
+    
+    
                 &::after{
                     content: url('../../assets/images/contact/soliddownarrow.svg');
                     position: absolute;
@@ -163,10 +309,10 @@
                     align-items: center;
                 }
              
-
-
+    
+    
             }
-
+    
             
             .dropdowntoggle{
                 background: $primary;
@@ -209,7 +355,7 @@
             }
            
            }
-
+    
            .messagefield{
                
                 .messagearea{
@@ -229,7 +375,7 @@
                  }
                 }
            }
-
+    
            .uploadbtn {
             position: relative;
             margin-bottom: 3rem;
@@ -255,7 +401,7 @@
                padding-left: 20px;
                margin: 0;
            }
-
+    
          input::-webkit-file-upload-button {
              background-color: transparent;
                       color: $lightColor;
@@ -270,139 +416,11 @@
             border-radius: 10px;
            }
         }
-
-           
-        }
-    
-
-  
- 
-  
- 
-
-.contactdetail{
-    padding:20rem 0 0 0;
-    margin-top: 33rem;
-    margin-top: 46rem;
-    position: relative;
-    @media (max-width: 1024px){
-        margin-top: 46rem;
-      }
-    &:before{
-        content: '';
-        position: absolute;
-        display: block;
-        height: 57rem;
-        width: 21rem;
-        right: 0;
-        top: -10%;
-        background: url('../../assets/images/contact/contactbefore.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    .mt-10{
-        margin-top:10rem;
-        @media (max-width: $sm){
-            margin-top:6rem;
-          }
-    }
-    .detailwrap{
-        @media (max-width: $sm){
-           flex-direction: column;
-         }
-    }
-    .address{
-        @media (max-width: $sm){
-            text-align: left !important;
-            margin-top: 3rem;
-          }
-    }
-  .maintitle{
-    color: $primary;
-    font-weight: 600;
-    font-size: 1.875rem;
-    line-height: 2.8125rem;
-    font-family: 'PoppinsMedium';
-  }
-  .subtext{
-    color: $secondary;
-    font-weight: 400;
-    font-size: 1.5rem;
-    line-height: 2.125rem;
-    font-family: 'PoppinsRegular';
-  }
-  .subhead{
-    color: $primary;
-    font-weight: 400;
-    font-size: 1.25rem;
-    line-height: 2.125rem;
-    font-family: 'PoppinsRegular';
-  }
-   .cust-dropdown{
-    background: $whiteColor;
-    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
-    border-radius: 7px;
-    margin-top: 4.5625rem;
-    @media (max-width: $sm){
-        margin-top: 3rem;
-      }
-    .dropdown-toggle{
-        width: 100%;
-        text-align: left;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        min-height: 40px;
-        position: relative;
-        color: #221F2040;
-        font-size: 1.4rem;
-        font-family: $font-family-poppins-regular, sans-serif;
-        &::after{
-            content: url('../../assets/images/contact/down-arrow.svg');
-            position: absolute;
-            display: block;
-            height: 11px;
-            width: 16px;
-            color: $lightColor;
-            right: 10px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto;
-        }
-     
-
-
-    }
-   
-    
-    .dropdowntoggle{
-        background: transparent;
-        border: 0px solid $lightColor;
-        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-        border-radius: 0px;
-        width: 100%;
-        font-family: $font-family-poppins-regular, sans-serif;
-    }
-    .option{
-        
-        color: $primary;
-        background: transparent;
-        border: 0px solid $lightColor;
-        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-    }
-   
-   }
 }
 
-.text-right{
-    text-align: right !important;
-}
 
-.mb-0{
-    margin-bottom: 0;
-}
-
-.attach{
-    cursor: pointer;
+.text-danger{
+    font-family: $font-family-poppins-regular;
+    margin-top: 0.5rem;
+    display: block;
 }

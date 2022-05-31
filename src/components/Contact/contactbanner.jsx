@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLink } from '@fortawesome/free-solid-svg-icons';
 import {IoMdInformationCircleOutline} from 'react-icons/io';
 function Contactbanner() {
-
+  
 
   let inputRef = "";
   const [data, setData] = useState("");
@@ -61,6 +61,7 @@ function Contactbanner() {
             </div>
           </div>
         </div>
+      </section>
 
         <div className="form">
           <div className="writebtn">
