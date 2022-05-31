@@ -9,7 +9,8 @@ import "./contact.scss";
 function Contact() {
 
   return (
-    <div class="contactbody">
+    <div className="contactbody">
+
        <ContactHeader />
        <Contactbanner />
        <Contactdetail />
