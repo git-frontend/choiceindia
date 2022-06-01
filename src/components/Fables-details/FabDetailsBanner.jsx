@@ -31,7 +31,7 @@ function Fabdetailsbanner() {
                             </li>
                         </ul>
                         <div className="imgblock">
-                        <img src={Bannerimage} className="img-fluid" />
+                        <img src={Bannerimage} className="img-fluid" alt="Loading" />
                         </div>
                     </div>
                    
