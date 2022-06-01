@@ -154,7 +154,6 @@ function Contactbanner() {
             </div>
           </Form>
         </div>
-      </section>
 
 
 

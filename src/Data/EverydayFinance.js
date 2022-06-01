@@ -75,7 +75,7 @@ const EveryFinance =
 
     },
     {
-        id:9        
+        id:9,        
         image:`${ImageSub10}`,
         title:"Corporate FD’s",
         description:"Grow your funds with a fixed rate of Corporate FDs without market volatility",

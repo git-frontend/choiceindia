@@ -31,11 +31,7 @@ export default function ScrolltoTop() {
     <div>
 {
     scroll && (
-        <button style={{
-           
-            
-
-        }}  
+        <button 
         onClick = {scrollTop} className="scroll-top">
         
         <FontAwesomeIcon icon={faAngleUp} /></button>
