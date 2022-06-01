@@ -31,7 +31,7 @@ function Contactbanner() {
 
 
 
-  const { register, handleSubmit, formState: { errors, isValid }, reset } = useForm({
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
@@ -63,12 +63,15 @@ function Contactbanner() {
         </div>
       </section>
 
-        <div className="form">
-          <div className="writebtn">
-            <span className="writeus">
-              Write to Us
-            </span>
-          </div>
+      <section className="cnt-banner-bottm">
+      <div className="container">
+      <div className="writebtn">
+          <span className="writeus">
+            Write to Us
+          </span>
+      </div>
+      <div className="form">
+
           <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
             <div className="row d-flex justify-content-between">
               <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
@@ -147,17 +150,20 @@ function Contactbanner() {
 
 
 
-              <Button variant="primary"
-                type="submit" className="btn-bg btn-bg-dark sendbtn">
-                Send
-              </Button>
-            </div>
-          </Form>
-        </div>
+              <Button variant="primary" 
+                      type="submit" className="btn-bg btn-bg-dark sendbtn">
+                      Send
+                    </Button>
+                  </div>
+                </Form>
+              </div>
+              </div>
+        </section>
 
 
 
     </div>
+
   );
 }
 
