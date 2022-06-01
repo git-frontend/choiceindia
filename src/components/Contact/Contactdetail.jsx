@@ -38,9 +38,9 @@ return (
               
                 <Form.Select variant="Info" id="dropdown-basic" >
                   <option selected>Select Your City</option>
-                  <option >Feedback</option>
-                  <option >View</option>
-                  <option >Review</option>
+                  <option >Delhi</option>
+                  <option >Bangalore</option>
+                  <option >Hyderabad</option>
 
                 </Form.Select>
             

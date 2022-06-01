@@ -3,12 +3,16 @@ import  ImageSub6  from '../../assets/images/icons/shopping-cart.svg';
 import  ImageSub7  from '../../assets/images/icons/grid1.svg';
 import  ImageSub8  from '../../assets/images/icons/speed.svg';
 import  ImageSub9  from '../../assets/images/app-img1.png';
-import React from "react";
+import React,{useState} from "react";
+import FinxImage from '../../Data/finximage';
 
 
 
 
 function ChoiceFinx() {
+
+  const [store, setstore] = useState(0)
+
     return (
         <div>
 
@@ -24,7 +28,23 @@ function ChoiceFinx() {
                       <p>SuperApp - Designed to deliver customized wealth solutions to cater <br/>all financial needs</p>
                     </div>
                     <div className="finx-app-list workList">
-                      <div className="app-list-item">
+                    {
+                      FinxImage.slice(0,3).map((response,index)=>{
+
+                        return(
+                          <div className="app-list-item">
+                        <a href="/" data-img={ImageSub9} onMouseOver={()=>{setstore(index)}}>
+                          <img src={response.icon} alt="Loading" className="img-fluid" />
+                          <h4>{response.title}</h4>
+                          <p>{response.description}</p>
+                        </a>
+                      </div>
+
+
+                        )
+                      })
+                    }
+                   { /**  <div className="app-list-item">
                         <a href="/" data-img={ImageSub9}>
                           <img src={ImageSub6} alt="Loading" className="img-fluid" />
                           <h4>Wealth Store</h4>
@@ -44,11 +64,11 @@ function ChoiceFinx() {
                           <h4>Speedy Execution</h4>
                           <p>Built to deliver a blazing fast experience without hiccups.</p>
                         </a>
-                      </div>
+    </div>*/}
                     </div>
                   </div>
                   <div className="finx-app-img workImages">
-                    <img src={ImageSub9} className="" alt="Loading" />
+                    <img src={FinxImage[store].image} className="" alt="Loading" />
                   </div>
                   <div className="expl-app">
                       <a href="/">
