@@ -2,6 +2,7 @@ import React from "react";
 import pin from '../../assets/images/contact/pin.svg';
 import clock from '../../assets/images/contact/clock.png';
 import {Dropdown} from 'react-bootstrap';
+import { Form } from "react-bootstrap";
 function Contactdetail() {
 return (
 <div>
@@ -34,17 +35,15 @@ return (
                   <p className="subhead">Locate and office in your city</p>
                </div>
                <div className='cust-dropdown'>
-                     <Dropdown>
-                        <Dropdown.Toggle variant="Info" id="dropdown-basic">
-                        Select Your City
-                        </Dropdown.Toggle>
+              
+                <Form.Select variant="Info" id="dropdown-basic" >
+                  <option selected>Select Your City</option>
+                  <option >Feedback</option>
+                  <option >View</option>
+                  <option >Review</option>
 
-                        <Dropdown.Menu>
-                           <Dropdown.Item href="#/action-1">Delhi</Dropdown.Item>
-                           <Dropdown.Item href="#/action-2">Bangalore</Dropdown.Item>
-                           <Dropdown.Item href="#/action-3">Hyderabad</Dropdown.Item>
-                        </Dropdown.Menu>
-                     </Dropdown>
+                </Form.Select>
+            
                </div>
             </div>
             <div className="text-right address">
