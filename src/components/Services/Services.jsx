@@ -19,7 +19,6 @@ function Services() {
           <ServiceTabs />
           <EquityBroking />
           <WealthManagement />
-          <Insurance />
        </div>
       
     
