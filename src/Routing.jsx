@@ -7,6 +7,7 @@ import Career from './components/Career/Career';
 import App from './components/App/App';
 import Fables from './components/Fables/Fables';
 import Contact from './components/Contact/Contact';
+import Services from './components/Services/Services';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 
 import FablesDetails from './components/Fables-details/FablesDetails';
@@ -23,6 +24,7 @@ function Routing() {
                     <Route exact  path='/Fables' element={< Fables/>} />
                     <Route exact  path='/Contact' element={< Contact/>} />
                     <Route exact  path='/Fables-Details' element={< FablesDetails/>} />
+                    <Route exact  path='/Services' element={< Services/>} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>    
             </Router>
