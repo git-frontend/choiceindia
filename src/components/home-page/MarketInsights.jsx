@@ -54,10 +54,10 @@ function MarketInsights() {
                                             <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
                                                     <img src={response.feature_image} alt="" />
-                                                    <span className="ttl-sm" >{response.meta_title || '-'}</span>
+                                                    <span className="ttl-sm" >{response.title || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
-                                                    <p>{response.meta_description}</p>
+                                                    <p>{response.excerpt}</p>
                                                 </div>
                                             </div>
                                             

@@ -7,7 +7,7 @@ import Clients from './Clients';
 import Journey from './Journey';
 import CoreValues from './CoreValues';
 import WhatWeOffer from './WhatWeOffer';
-import AboutHeader from './AboutHeader';
+// import AboutHeader from './AboutHeader';
 
 import "./aboutus.scss";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -20,7 +20,7 @@ function AboutUs() {
       
      
        <div className="mainwrapper">
-         <AboutHeader />
+         
          <Banner />
          <Team />
          <Journey />

@@ -8,12 +8,17 @@ import App from './components/App/App';
 import Fables from './components/Fables/Fables';
 import Contact from './components/Contact/Contact';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
+import Faq from './components/FAQ/Faq';
+// import Header from './components/Common-features/MenuHeader';
+import Header from './components/Contact/ContactHeader';
+
 
 function Routing() {
     return (
         <>
             <Router>
             <ScrolltoTop />
+            <Header/>
                 <Routes>
                     <Route exact path='/' element={< Home />} />
                     <Route exact  path='/About-us' element={< AboutUs/>} />
@@ -21,6 +26,7 @@ function Routing() {
                     <Route exact  path='/App' element={< App/>} />
                     <Route exact  path='/Fables' element={< Fables/>} />
                     <Route exact  path='/Contact' element={< Contact/>} />
+                    <Route exact  path='/FAQ' element={<Faq/>} />
 
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>    

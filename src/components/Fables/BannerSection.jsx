@@ -48,7 +48,7 @@ function BannerSection() {
 									data.slice(0,4).map((response, index) => {
 
 										return(
-                                       <div>
+                                       <div key={response.id}>
 									   <a href="/" className="trending-itm">
 									   <div className="trending-itm-img">
 										   <img src={response.feature_image} alt="loading" className="img-blog"/>
