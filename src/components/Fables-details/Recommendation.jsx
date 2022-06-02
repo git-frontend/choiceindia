@@ -12,6 +12,9 @@ function Recommendation() {
             <div className="container">
             <div className="row">
 						<div className="col-md-12">
+							<h2>Recommended for you</h2>
+						</div>
+						<div className="col-md-12">
 							<div className="blog-list">
 								<a href="/" className="blog-item">
 									<div className="blog-item-img">
