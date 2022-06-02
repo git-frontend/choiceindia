@@ -20,6 +20,9 @@ function BannerCareer() {
           <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
           <div className="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
           <div className="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
+          <div className="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
           </Marquee>     
     </section>
 

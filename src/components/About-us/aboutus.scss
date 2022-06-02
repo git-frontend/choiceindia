@@ -13,7 +13,7 @@ body{
     padding:0 0 8rem;
     position: relative;
     @media (max-width:$sm) {
-        padding:8rem 0 4rem;
+        padding:0 0 4rem;
     }
     .title{
         color: $primary;

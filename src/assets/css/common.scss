@@ -55,6 +55,13 @@ body{
     }
 }
 
+.title-fourth{
+    font-size: 1.6rem;
+    margin: 1.5rem 0;
+    font-family: $font-family-poppins-semibold;
+    color: $primary;
+}
+
 
 
 
@@ -73,13 +80,18 @@ body{
         @media (max-width: 767px){
             font-size: 1.4rem;
         }
+        &.nm-text{
+            font-size: 1.375rem;
+            line-height: 2.15rem;
+            color: $primary;
+        }
     }
     .title-secnd{
         margin-bottom: 2rem;
     }
     .title-first{
         text-shadow: inherit;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 }
 

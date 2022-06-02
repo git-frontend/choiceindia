@@ -113,6 +113,22 @@
     @media (max-width: $sm){
         margin-top: 3rem;
       }
+    .form-select{
+        width: 100%;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 48px;
+        position: relative;
+        color: $primary;
+        font-size: 1.4rem;
+        padding: 0 2rem;
+        font-family: $font-family-poppins-regular, sans-serif;
+        outline: none;
+        border: 0;
+        box-shadow: inherit;
+    }
     .dropdown-toggle{
         width: 100%;
         text-align: left;
@@ -294,6 +310,7 @@
                 position: absolute;
                 right: 10px;
                 top:20px;
+                z-index: 99;
     
     
                 &::after{
