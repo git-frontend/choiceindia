@@ -78,9 +78,9 @@
 
     padding: 4rem;
 
-    .sec{
+    .sec {
         margin-left: 3rem;
-    margin-top: 4rem;
+        margin-top: 4rem;
     }
 
     .security-privacy {
@@ -89,14 +89,14 @@
         overflow: hidden;
 
         .heading-sec {
-    margin-bottom: 8rem;
-    width: 100%;
+            margin-bottom: 8rem;
+            width: 100%;
 
-     .title-first{
+            .title-first {
 
-    margin-bottom: 1rem;
-    position: absolute;
-     }
+                margin-bottom: 1rem;
+                position: absolute;
+            }
         }
 
         @media (max-width: $md) {
@@ -227,59 +227,65 @@
     }
 
 
-    .faq-accordion{
+    .faq-accordion {
 
-        .faq-container{
+        .faq-container {
             display: flex;
 
-            .faq-contents{
+            .faq-contents {
 
-                border: 2px solid black;
-                
+               
+
             }
         }
-        
+
     }
 
-    .faq-container{
-        
+    .faq-container {
+
         padding: 13rem 0 10rem 0;
         position: relative;
-       
-        .accordion-list{
-            border: 2px solid red;
+
+        .accordion-list {
+            
             width: 67%;
         }
-        .accordion-lists{
-            border: 2px solid red;
+
+        .accordion-lists {
+           
             width: 30%;
         }
-        
-        .content-list{
+
+        .content-list {
             position: relative;
             padding: 2.5rem 0;
             margin-top: 1rem;
-            .content-list-itm{
+
+            .content-list-itm {
                 padding-left: 3.5rem;
                 margin-bottom: 5rem;
                 position: relative;
-                &.list-itm-active{
-                    &::before{
-                    content: '';
-                    background: $bgcolor-yellow;
-                    width: 8px;
-                    height: 100%;
-                    border-radius: 8px;
-                    position: absolute;
-                    left: 0;
-                    display: block;
+
+                &.list-itm-active {
+                    font-weight: bold;
+
+                    &::before {
+                        content: '';
+                        background: $bgcolor-yellow;
+                        width: 8px;
+                        height: 100%;
+                        border-radius: 8px;
+                        position: absolute;
+                        left: 0;
+                        display: block;
                     }
-                   
+
                 }
-               
-               
+
+
             }
-            &::before{
+
+            &::before {
                 content: '';
                 background: $bgcolor-yellow;
                 width: 3px;
@@ -291,15 +297,37 @@
                 border-radius: 2px;
             }
         }
-        .trade-easy-images-div{
+        .accordion-item{
+
+        }
+
+        .accordion-button {
+            font-size: unset;
+            font-weight: 700;
+            color:black;
+
+        }
+        .collapsed{
+            
+            color: rgb(80, 79, 79) !important;
+        }
+
+        .accordion-body {
+            padding: 1rem 1.25rem;
+            font-size: x-large;
+        }
+
+        .trade-easy-images-div {
             display: flex;
             justify-content: center;
             padding: 0 2rem;
-            .single-trade-easy-images{
+
+            .single-trade-easy-images {
                 max-width: 100%;
             }
         }
-        @media (max-width: $sm-x){
+
+        @media (max-width: $sm-x) {
             padding: 4rem 0 5rem 0;
         }
     }
