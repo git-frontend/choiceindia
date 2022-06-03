@@ -2,6 +2,8 @@
 import React from "react";
 import Contactbanner from './contactbanner';
 import Contactdetail from './Contactdetail';
+
+
 import "./contact.scss";
 
 

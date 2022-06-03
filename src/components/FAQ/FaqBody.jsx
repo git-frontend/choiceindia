@@ -30,7 +30,7 @@ export default function FaqBody() {
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
-                                        <img src={Image2} className="" alt="" />
+                   <img src={Image2} className="" alt="" />
 										<h4>Security</h4>
 										<p>We follow Industry leading security protocols.</p>
 									</div>
