@@ -90,7 +90,7 @@ export default function FaqBody() {
 			</section>
 
             <section className='faq-accordion'>
-            <div>
+            <div className='faq-header'>
               <h1>Loans</h1>
             </div>
              <div className='faq-container'>
@@ -114,8 +114,8 @@ export default function FaqBody() {
             <p>Modification</p>
             </div>
             </div>
-            <div className='content-list accordion-list'>
-            <Accordion defaultActiveKey="0">
+            <div className='content-list accordion-list '>
+            <Accordion defaultActiveKey="0" >
   <Accordion.Item eventKey="0">
     <Accordion.Header>How do i open an account online?</Accordion.Header>
     <Accordion.Body>
@@ -128,6 +128,48 @@ export default function FaqBody() {
     You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
     </Accordion.Body>
   </Accordion.Item>
+  <Accordion.Item eventKey="2">
+  <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+  <Accordion.Body>
+  You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+  </Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="3">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="4">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="5">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="6">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="7">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
+<Accordion.Item eventKey="8">
+<Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
+<Accordion.Body>
+You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes 
+</Accordion.Body>
+</Accordion.Item>
 </Accordion>
 
             </div>
