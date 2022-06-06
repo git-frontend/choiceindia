@@ -51,12 +51,25 @@
                 margin-top: 4rem;
                 padding-right: 0.4rem;
 
+
+
                 .form-control {
                     width: 77%;
                     /* height: 46px; */
                     font-size: 1.6rem;
                     margin-left: 3rem;
                     border: 0px;
+
+                    @media (max-width: $md) {
+                        font-size: 1.3rem;
+
+                    }
+
+                    @media (max-width: $sm) {
+                        font-size: 1rem;
+
+                    }
+
                 }
 
                 .btn {
@@ -66,6 +79,17 @@
                     margin: auto;
                     font-weight: 700;
                     font-size: 1.5rem;
+
+                    @media (max-width: $md) {
+                        font-size: 1.3rem;
+
+                    }
+
+                    @media (max-width: $sm) {
+                        font-size: 1rem;
+
+                    }
+
                 }
             }
 
@@ -84,7 +108,7 @@
     }
 
     .security-privacy {
-        padding: 5rem 0 20rem 0;
+        padding: 5rem 0 10rem 0;
         position: relative;
         overflow: hidden;
 
@@ -228,32 +252,41 @@
 
 
     .faq-accordion {
+        .faq-header {
+
+            margin-left: 5rem;
+
+            h1 {
+                font-size: 4rem;
+                font-weight: 700;
+            }
+
+        }
 
         .faq-container {
             display: flex;
 
-            .faq-contents {
 
-               
-
-            }
         }
 
     }
 
     .faq-container {
-
-        padding: 13rem 0 10rem 0;
         position: relative;
 
+        .faq-dis {
+            display: flex;
+        }
+
         .accordion-list {
-            
+
             width: 67%;
         }
 
         .accordion-lists {
-           
+
             width: 30%;
+            margin: 5rem;
         }
 
         .content-list {
@@ -266,8 +299,17 @@
                 margin-bottom: 5rem;
                 position: relative;
 
+                p {
+                    font-size: 2rem;
+                    font-weight: 900;
+                    color: #d0cadb;
+                }
+
                 &.list-itm-active {
-                    font-weight: bold;
+                    p{
+                        color: black;
+                    }
+                    
 
                     &::before {
                         content: '';
@@ -285,36 +327,55 @@
 
             }
 
-            &::before {
-                content: '';
-                background: $bgcolor-yellow;
-                width: 3px;
-                height: 100%;
-                position: absolute;
-                left: 3px;
-                top: 0;
-                opacity: 0.1;
-                border-radius: 2px;
-            }
+            // &::before {
+            //     content: '';
+            //     background: $bgcolor-yellow;
+            //     width: 3px;
+            //     height: 100%;
+            //     position: absolute;
+            //     left: 3px;
+            //     top: 0;
+            //     opacity: 0.1;
+            //     border-radius: 2px;
+            // }
         }
-        .accordion-item{
+
+        .accordion {
+            margin-top: -3rem;
+
+        }
+
+        .accordion-item {
+
+            box-shadow: 0px 0px 0px 0.1px #C2C2C2 !important;
+            padding: 10px;
+            border-radius: 1rem;
+            margin: 2rem;
+
+
+
+
+
 
         }
 
         .accordion-button {
             font-size: unset;
             font-weight: 700;
-            color:black;
+            color: black;
+            background: none;
+            box-shadow: none;
 
         }
-        .collapsed{
-            
+
+        .collapsed {
+
             color: rgb(80, 79, 79) !important;
         }
 
         .accordion-body {
             padding: 1rem 1.25rem;
-            font-size: x-large;
+            font-size: 1.6rem;
         }
 
         .trade-easy-images-div {
