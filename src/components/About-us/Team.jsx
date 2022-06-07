@@ -8,8 +8,6 @@ import image4 from '../../assets/images/about-us/ram-ratan-chirania.png';
 import image5 from '../../assets/images/about-us/sumeet-bagadia.png';
 import image6 from '../../assets/images/about-us/sundar-sanmukhani.png';
 import Slider from "react-slick";
-import LazyLoader from '../Common-features/LazyLoader';
-
 function Team() {
     const settings = {
         infinite: false,
@@ -56,8 +54,7 @@ function Team() {
                   <Slider {...settings} className="team-list-slider">
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image1} className="img-fluid" alt="Loading" />
-                          {/* <img src={image1} className="img-fluid" alt="loading" /> */}
+                          <img src={image1} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Kamal Poddar</h5>
@@ -68,8 +65,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image2} className="img-fluid" alt="Loading" />
-                          {/* <img src={image2} className="img-fluid" alt="loading" /> */}
+                          <img src={image2} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Ajay Kejriwal</h5>
@@ -80,8 +76,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image3} className="img-fluid" alt="Loading" />
-                          {/* <img src={image3} className="img-fluid" alt="loading"/> */}
+                          <img src={image3} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5>Sunil Bagaria</h5>
@@ -92,8 +87,7 @@ function Team() {
                       </div>
                      <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image4} className="img-fluid" alt="Loading" />
-                          {/* <img src={image4} className="img-fluid" alt="loading"/> */}
+                          <img src={image4} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5 className="name">CA Ram Ratan Chirania</h5>
@@ -103,8 +97,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image5} className="img-fluid" alt="Loading" />
-                          {/* <img src={image5} className="img-fluid" alt="loading" /> */}
+                          <img src={image5} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sumeet Bagadia</h5>
@@ -114,8 +107,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image6} className="img-fluid" alt="Loading" />
-                          {/* <img src={image6} className="img-fluid" alt="loading" /> */}
+                          <img src={image6} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sundar Sanmukhani</h5>

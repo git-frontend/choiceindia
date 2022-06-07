@@ -21,6 +21,8 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
+const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
+const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
 
 function Routing() {
     return (
@@ -35,32 +37,50 @@ function Routing() {
                         </React.Suspense>} />
                     {/* <Route exact path='/' element={< Home />} /> */}
                     
-                    <Route exact path='/About-us' element={
+                    <Route exact path='/about-us' element={
                         <React.Suspense fallback='About...'>
                             < LazyAbout />
                         </React.Suspense>
                     } />
 
-                        <Route exact path='/Career' element={
+                        <Route exact path='/career' element={
                         <React.Suspense fallback='Career...'>
                             < LazyCareer />
                         </React.Suspense>} />
 
-                           <Route exact path='/App' element={
+                           <Route exact path='/app' element={
                         <React.Suspense fallback='App...'>
                             < LazyApp />
                         </React.Suspense>
                     } />
 
-                        <Route exact path='/Fables' element={
+                        <Route exact path='/fables' element={
                         <React.Suspense fallback='Fables...'>
                             < LazyFables />
                         </React.Suspense>
                     } />
 
-                      <Route exact path='/Contact' element={
+                      <Route exact path='/contact' element={
                         <React.Suspense fallback='Contact...'>
                             < LazyContact />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/services' element={
+                        <React.Suspense fallback='Contact...'>
+                            < LazyServices />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/services' element={
+                        <React.Suspense fallback='Contact...'>
+                            < LazyServices />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/faq' element={
+                        <React.Suspense fallback='Contact...'>
+                            < LazyFaq />
                         </React.Suspense>
                     } />
 
