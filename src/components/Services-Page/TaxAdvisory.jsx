@@ -18,7 +18,7 @@ function TaxAdvisory() {
                     </div>
                 </div>
             </div>
-            <div className="row gx-5 mb-5 align-item-center">
+            <div className="row gx-5 mb-5 align-items-center">
                 <div className="col-md-6">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
