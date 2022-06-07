@@ -259,6 +259,7 @@
             h1 {
                 font-size: 4rem;
                 font-weight: 700;
+
             }
 
         }
@@ -290,6 +291,7 @@
         }
 
         .content-list {
+            font-family: $font-family-poppins-bold;
             position: relative;
             padding: 2.5rem 0;
             margin-top: 1rem;
@@ -376,6 +378,8 @@
         .accordion-body {
             padding: 1rem 1.25rem;
             font-size: 1.6rem;
+            font-family: $font-family-poppins-regular, sans-serif;
+            color: rgb(20, 20, 20) !important;
         }
 
         .trade-easy-images-div {

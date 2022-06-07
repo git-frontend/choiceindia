@@ -33,6 +33,10 @@ export class API_URLS {
 
    secondaryURL='/items/second_banner'
 
+   /** contact form */
+
+   contactURL='contact-us/'
+
 
 
 
@@ -90,5 +94,11 @@ getHomeSecondaryBannerURL(){
 
     return this.bannerURL + this.secondaryURL
 }
+
+
+getContactFormURL(){
+    return this.bannerURL + this.contactURL
+}
+
 
 }

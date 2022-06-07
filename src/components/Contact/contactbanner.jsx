@@ -7,11 +7,12 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLink } from '@fortawesome/free-solid-svg-icons';
+import { faGlassMartiniAlt, faLink } from '@fortawesome/free-solid-svg-icons';
 import {IoMdInformationCircleOutline} from 'react-icons/io';
+import contactService from '../../Services/contactService'
 function Contactbanner() {
   
-
+ const [datas, setdatas] = useState()
   let inputRef = "";
   const [data, setData] = useState("");
 
@@ -20,12 +21,12 @@ function Contactbanner() {
 
 
   const schema = yup.object().shape({
-    firstName: yup.string().required("FirstName is required"),
-    lastName: yup.string().required("LastName is required"),
-    phone: yup.string().required("Phone no is required").matches(phoneRegExp, "Invalid number"),
-    email: yup.string().email(" Invalid Email ").required("Email Id is required"),
-    purpose: yup.string().required("Need to choose purpose"),
-    yquestion: yup.string().max(40).required("Need to fill your question")
+    firstName : yup.string().required("FirstName is required"),
+    lastName : yup.string().required("LastName is required"),
+    mobile : yup.string().required("Phone no is required").matches(phoneRegExp, "Invalid number"),
+    email : yup.string().email(" Invalid Email ").required("Email Id is required"),
+    purpose : yup.string().required("Need to choose purpose"),
+    question : yup.string().max(40).required("Need to fill your question")
 
   })
 
@@ -35,13 +36,21 @@ function Contactbanner() {
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
-
-
   const submitFormData = (FormData) => {
+    setdatas(FormData)
     console.log("data", FormData);
     reset();
+    contactService.contactForm(FormData).then(res=>{
+
+      console.log("submitdata",res)
+
+
+      })
+   
 
   }
+
+
 
 
 
@@ -97,8 +106,8 @@ function Contactbanner() {
 
               <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
                 <Form.Label className="formlabel"> Phone <IoMdInformationCircleOutline /> </Form.Label>
-                <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('phone')} />
-                <span className="text-danger"> {errors?.phone?.message} </span>
+                <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
+                <span className="text-danger"> {errors?.mobile?.message} </span>
               </Form.Group>
             </div>
 
@@ -120,8 +129,8 @@ function Contactbanner() {
 
             <label className="formlabel mt-5"> Your Question <IoMdInformationCircleOutline /></label>
             <div className=" messagefield">
-              <textarea className="messagearea" placeholder="Enter text here..." {...register('yquestion')} />
-              <span className="text-danger"> {errors?.yquestion?.message} </span>
+              <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
+              <span className="text-danger"> {errors?.question?.message} </span>
             </div>
 
             <div className="uploadbtn mt-3 d-flex justify-content-between">
