@@ -36,7 +36,7 @@ return (
                <div className='cust-dropdown'>
               
                 <Form.Select variant="Info" id="dropdown-basic" >
-                  <option selected>Select Your City</option>
+                  <option defaultValue>Select Your City</option>
                   <option >Delhi</option>
                   <option >Bangalore</option>
                   <option >Hyderabad</option>

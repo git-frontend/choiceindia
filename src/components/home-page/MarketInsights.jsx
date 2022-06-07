@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
+import {link} from 'react-dom';
+import { Link } from "react-router-dom";
 
 function MarketInsights() {
 
@@ -70,9 +72,9 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <a href="/" className="btn-bg">
+                            <Link to="/fables" className="btn-bg">
                                 Read More
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

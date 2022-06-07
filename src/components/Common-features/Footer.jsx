@@ -6,6 +6,8 @@ import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegra
 import React from "react";
 
 
+
+
 function Footer() {
     return (
       <div className="Footer">
@@ -16,7 +18,8 @@ function Footer() {
                   <div className="col-md-12">
                     <div className="top-sec-sub">
                       <div className="footer-logo">
-                        <img src={ImageFooter0} className=""  alt='Loading'/>
+                      
+                      <img src={ImageFooter0} className=""  alt='Loading'/>
                       </div>
                     </div>
                     <div className="top-sec-quick-links">
@@ -66,13 +69,13 @@ function Footer() {
                                 <a href="/">Pricing</a>
                               </li>
                               <li>
-                                <a href="/">Careers</a>
+                                <a href="/career">Careers</a>
                               </li>
                               <li>
-                                <a href="/">Contact Us</a>
+                                <a href="/contact">Contact Us</a>
                               </li>
                               <li>
-                                <a href="/">FAQ’s</a>
+                                <a href="/faq">FAQ’s</a>
                               </li>
                             </ul>
                             <ul className="reset"> 

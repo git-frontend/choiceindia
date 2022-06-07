@@ -60,7 +60,7 @@ function Fabdetailsbanner() {
                 
 
                   <div className="col-md-1">
-                      <div class="right-social-links">
+                      <div className="right-social-links">
                             <ul>
                                 <li> <a href="/" target="_blank">
                                     <FontAwesomeIcon icon={faFacebookF} /> 

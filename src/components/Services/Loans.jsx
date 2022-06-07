@@ -45,7 +45,7 @@ function Loans() {
                     </div>
                 </div>
             </div>
-            <div class="row"><div class="col-md-12 mt-5 d-flex justify-content-center"><a href="/" class="btn-bg">Explore</a></div></div>
+            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
         </div>
     </section>
       
