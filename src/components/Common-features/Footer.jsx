@@ -67,13 +67,13 @@ function Footer() {
                                 <a href="/">Pricing</a>
                               </li>
                               <li>
-                                <a href="/">Careers</a>
+                                <a href="/career">Careers</a>
                               </li>
                               <li>
-                                <a href="/">Contact Us</a>
+                                <a href="/contact">Contact Us</a>
                               </li>
                               <li>
-                                <a href="/">FAQ’s</a>
+                                <a href="/faq">FAQ’s</a>
                               </li>
                             </ul>
                             <ul className="reset"> 

@@ -49,7 +49,7 @@ function HomeTestimonial() {
     //     {
     //         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
     //         "des": "<a>s don’t support the disabled attribute, so you must add the" +
-    //             ".disabled class to make it visually appear disabled."
+    //             ".disabled className to make it visually appear disabled."
     //     },
 
 
