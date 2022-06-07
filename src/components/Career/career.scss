@@ -53,9 +53,7 @@
     
     .bannersection{
         padding-bottom: 0;
-        @media (max-width: $md){
-            padding-top: 10rem;
-        }
+        
        
     }
 
@@ -386,3 +384,12 @@
     }
   }
   
+.marquee{
+    .Marquee-tag{
+        padding: 0 0.5%;
+        width: 20%;
+        @media (max-width:$sm) {
+            width: 15%;
+        }
+    }
+}

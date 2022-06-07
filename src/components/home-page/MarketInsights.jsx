@@ -59,7 +59,7 @@ function MarketInsights() {
                                                     <span className="ttl-sm" >{response.meta_title || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
-                                                    <p>{response.meta_description}</p>
+                                                    <p>{response.excerpt}</p>
                                                 </div>
                                             </div>
                                             

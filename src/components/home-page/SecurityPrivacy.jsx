@@ -8,7 +8,7 @@ function SecurityPrivacy() {
         <div>
 
 
-<section className="security-privacy same-list-bx"> 
+			<section className="security-privacy same-list-bx"> 
 				<div className="container">	
 					<div className="row d-flex justify-content-center">
 						<div className="col-md-8">

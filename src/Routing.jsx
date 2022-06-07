@@ -26,6 +26,7 @@ function Routing() {
         <>
             <Router>
             <ScrolltoTop />
+            <Header/>
                 <Routes>
                 <Route exact path='/' element={
                         <React.Suspense fallback='Loading...'>

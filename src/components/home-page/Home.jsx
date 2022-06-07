@@ -1,14 +1,14 @@
 
-import  HomePageBanner from './home-page/HomePageBanner.jsx'
-import  EverydayFinance from './home-page/EverydayFinance.jsx'
-import  ChoiceFinx from './home-page/ChoiceFinx.jsx'
-import  MarketInsights from './home-page/MarketInsights.jsx'
-import  HomeFeatures from './home-page/HomeFeatures.jsx'
-import  FablesStories from './home-page/FablesStories.jsx'
-import  HomeTestimonial from './home-page/HomeTestimonial.jsx'
-import  SecurityPrivacy from './home-page/SecurityPrivacy.jsx'
-import  HomeHeader from './home-page/HomeHeader.jsx'
-import "./home-page/style.scss"
+import  HomePageBanner from './HomePageBanner.jsx'
+import  EverydayFinance from './EverydayFinance.jsx'
+import  ChoiceFinx from './ChoiceFinx.jsx'
+import  MarketInsights from './MarketInsights.jsx'
+import  HomeFeatures from './HomeFeatures.jsx'
+import  FablesStories from './FablesStories.jsx'
+import  HomeTestimonial from './HomeTestimonial.jsx'
+import  SecurityPrivacy from './SecurityPrivacy.jsx'
+// import  HomeHeader from './home-page/HomeHeader.jsx'
+import "./style.scss"
 
 
 
@@ -24,9 +24,10 @@ function Home() {
 
       <main>
 
-       <HomeHeader />
-
+      
+    
        <HomePageBanner />
+	
 
        <EverydayFinance />
         

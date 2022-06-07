@@ -1,7 +1,6 @@
 import React from "react";
 import pin from '../../assets/images/contact/pin.svg';
 import clock from '../../assets/images/contact/clock.png';
-import {Dropdown} from 'react-bootstrap';
 import { Form } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader'; 
 
@@ -65,7 +64,7 @@ return (
          <div className='row'>
             <div className='map '>
                <div style={{width: "100%"}}>
-                  <iframe width="100%" height="400" class="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                  <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
             </div>
          </div>
       </div>

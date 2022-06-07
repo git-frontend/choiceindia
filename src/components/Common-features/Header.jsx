@@ -1,5 +1,5 @@
-import "../assets/css/header.scss"
-import MenuHeader from './MenuHeader.jsx';
+import "../../assets/css/header.scss"
+import MenuHeader from '../Common-features/MenuHeader';
 
 function Header() {
     return (

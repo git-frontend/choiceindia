@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import MenuIcon from '@material-ui/icons/Menu';
-import CloseIcon from '@material-ui/icons/Close';
 import  ImageSub0  from '../../assets/images/logo.svg';
 import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {NavLink} from 'react-router-dom';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header() {
 
@@ -22,7 +21,7 @@ export default function Header() {
                         </NavLink>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>{ setShow(false) } } >
-                        { show ? <MenuIcon /> : <CloseIcon />}
+                        { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
                     </button>
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
                         <ul className="navbar-nav ms-auto nav-header">

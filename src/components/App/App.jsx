@@ -6,13 +6,12 @@ import AppStrategies from './AppStrategies';
 import AppBenefits from './AppBenefits';
 import AppTradeBenefits from './AppTradeBenefits';
 import "./app.scss";
-import AppHeader from './AppHeader.jsx';
+// import AppHeader from './AppHeader.jsx';
 
 function App() {
 
   return (
     <div>
-      <AppHeader />
       <BannerApp />
       <AppBannerBottom />
       <AppBenefits />

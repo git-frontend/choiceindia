@@ -5,13 +5,13 @@ import BenefitsPerks from './BenefitsPerks';
 import CareerTeam from './CareerTeam';
 import CareerJobs from './CareerJobs';
 import "./career.scss";
-import CareerHeader from './CareerHeader.jsx';
+// import CareerHeader from './CareerHeader.jsx';
 
 function Career() {
 
   return (
     <div>
-      <CareerHeader />
+     
       <BannerCareer />
       <BenefitsPerks />
       <CareerTeam />

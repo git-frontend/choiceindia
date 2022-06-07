@@ -14,6 +14,7 @@
             box-shadow: inherit;
             .logo-main{
                 margin-right: 3rem;
+                width: 150px;
                 @media screen and (max-width: 1170px) {
                     max-width: 110px;
                     margin-right: 0;
@@ -24,6 +25,8 @@
         .navbar-toggler{ 
             outline: none !important;
             box-shadow: inherit;
+            font-size: 2.2rem;
+            padding: 0.5rem 1rem !important;
         }
         .nav-header{
     

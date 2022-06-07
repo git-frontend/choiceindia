@@ -48,8 +48,8 @@ function HomePageBanner() {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                        <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.images}`} threshold={[0, 0.5, 1]} className="banner-img" alt="Loading"/>
-                                                {/* <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" /> */}
+                                     
+                                                 <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" />
                                         </div>
                                     </div>
                                 </div>
