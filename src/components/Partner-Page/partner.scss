@@ -1,4 +1,5 @@
 @import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
 
 .bloc-tabs {
     display: flex;
@@ -83,6 +84,7 @@
 
 .benefits-partnering{
     padding: 10rem 0;
+    position: relative;
     .partnering-list{
         margin-top: 5rem;
         .partnering-list-itm{
@@ -109,6 +111,21 @@
             }
         }
     }
+    &::after{
+        content: '';
+        display: block;
+        height: 30.125rem;
+        width: 18.125rem;
+        top: -2rem;
+        right: 0;
+        background: url('../../assets/images/partner/clip-top.png') no-repeat top right;
+        z-index: 0;
+        background-size: contain;
+        position: absolute;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
 }
 
 .middle-bar-cont{
@@ -126,6 +143,118 @@
         .btn-bg{
             background: $whiteColor !important;
             color: $primary !important;
+        }
+    }
+}
+
+.partner-work{
+    padding: 12rem 0;
+    .partner-work-steps{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin-top: 5rem;
+        .work-steps-itm{
+            width: 19%;
+            text-align: center;
+            span{
+                display: block;
+                margin: 0 auto;
+                width: 130px;
+                height: 130px;
+                border-radius: 50%;
+                background: $whiteColor;
+                @extend .box-shadow;
+                display: flex;
+                align-items: center;
+                position: relative;
+                justify-content: center;
+                border: 2px solid #C2C2C2;
+                h6{
+                 background: #0066B3;
+                 width: 30px;
+                 height: 30px;
+                 display: flex;
+                 align-items: center;
+                 justify-content: center;
+                 border-radius: 50%;
+                 color: $whiteColor;
+                 font-family: $font-family-poppins-medium;
+                 font-size: 1.2rem;
+                 position: absolute;
+                 left: 0;
+                 top: 0;
+                }
+            }
+            h5{
+                font-size: 1.3rem;
+                font-family: $font-family-poppins-medium;
+                color: $primary;
+                margin-top: 3rem;
+            }
+        }
+    }
+}
+
+.choice-connect-work{
+    background: $abt-bg;
+    padding: 8rem 0 20rem 0;
+    position: relative;
+    overflow: hidden;
+    .connect-work-list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-left: -4%;
+        position: relative;
+        z-index: 9;
+        margin-top: 6rem;
+        .work-list-itm{
+            width: 29%;
+            margin-left: 4%;
+            @extend .box-shadow;
+            padding: 2rem 3rem;
+            text-align: center;
+            border-radius: 18px;
+            background: $whiteColor;
+            margin-bottom: 4rem;
+            h4{
+                margin: 2rem 0 1rem 0;
+                font-family: $font-family-poppins-semibold;
+            }
+        }
+    }
+    
+    &::before{
+        content: '';
+        display: block;
+        height: 48.125rem;
+        width: 38.125rem;
+        bottom: -14rem;
+        left: -2.6875rem;
+        background: url('../../assets/images/partner/clip-bottom.png') no-repeat top left;
+        z-index: 0;
+        background-size: contain;
+        background-position: left;
+        position: absolute;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    &::after{
+        content: '';
+        display: block;
+        height: 38.125rem;
+        width: 18.125rem;
+        top: -2rem;
+        right: 0;
+        background: url('../../assets/images/partner/clip-img1.png') no-repeat top right;
+        z-index: 0;
+        background-size: contain;
+        position: absolute;
+        @media (max-width:$md) {
+            display: none;
         }
     }
 }

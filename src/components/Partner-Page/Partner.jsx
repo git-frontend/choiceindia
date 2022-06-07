@@ -1,6 +1,8 @@
 import "./partner.scss"
 import Contactbanner from './PartnerBannerTab';
 import PartnerBenifits from './PartnerBenifits';
+import HowItWorks from './HowItWorks';
+import WhyChoiceConnect from './WhyChoiceConnect';
 
 function Partner() {
 
@@ -11,6 +13,8 @@ function Partner() {
 
         <Contactbanner />
         <PartnerBenifits />
+        <HowItWorks />
+        <WhyChoiceConnect />
 
         
     
