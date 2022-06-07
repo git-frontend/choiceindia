@@ -2,8 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
+import Header from './components/Contact/ContactHeader';
 
-const LazyHome = React.lazy(() => import('./components/Home'));
+const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
 const LazyAbout = React.lazy(() => import('./components/About-us/AboutUs'));
