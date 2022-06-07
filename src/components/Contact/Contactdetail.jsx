@@ -8,7 +8,7 @@ function Contactdetail() {
 
    const [skeleton, setSkeleton] = useState(() => true);
 
-   const myTimeout = setTimeout(myGreeting, 8000);
+   const myTimeout = setTimeout(myGreeting, 2000);
 
    function myGreeting() {
      setSkeleton(() => false);
