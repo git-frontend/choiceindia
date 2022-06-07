@@ -2,6 +2,8 @@ import React from "react";
 import pin from '../../assets/images/contact/pin.svg';
 import clock from '../../assets/images/contact/clock.png';
 import { Form } from "react-bootstrap";
+import LazyLoader from '../Common-features/LazyLoader'; 
+
 function Contactdetail() {
 return (
 <div>
@@ -10,14 +12,16 @@ return (
          <div className="row gap-5">
             <div className="col-md-5">
                <div className="">
-                  <img src={pin} alt="Loading" />
+               <LazyLoader src={pin} className="" alt="Loading" />
+                  {/* <img src={pin} alt="Loading" /> */}
                   <p className="mt-3 maintitle">The Office </p>
                   <p className="subtext">Choice Wealth Management Pvt. Ltd. <br/>Choice House, Shree Shakambhari Corporate Park, <br/>Plt No: -156-158, J.B. Nagar, Andheri (East), <br/>Mumbai - 400 099</p>
                </div>
             </div>
             <div className="col-md-4">
                <div className="">
-                  <img src={clock} alt="Loading" />
+               <LazyLoader src={clock} className="" alt="Loading" />
+                  {/* <img src={clock} alt="Loading" /> */}
                   <p className="mt-3 maintitle">Business Hours</p>
                   <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm <br/>
                   Saturday: 10:00 am - 4:00 pm</p>

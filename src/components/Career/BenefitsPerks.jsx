@@ -7,7 +7,7 @@ import  CareerImage10 from '../../assets/images/career/wifi.svg';
 import  CareerImage11 from '../../assets/images/career/headset.svg';
 import  CareerImage12 from '../../assets/images/career/yoga-mat.svg';
 import React from "react";
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function BenefitsPerks() {
 
@@ -32,35 +32,43 @@ function BenefitsPerks() {
             <div className='col-xl-7 col-md-10'>
                 <div className='perks-list'>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage5} alt='Loading'/>
+                    <LazyLoader src={CareerImage5}  alt="Loading" />
+                        {/* <img src={CareerImage5} alt='Loading'/> */}
                         <h4>Advance Stipend </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage6} alt='Loading'/>  
+                    <LazyLoader src={CareerImage6} alt="Loading" />
+                        {/* <img src={CareerImage6} alt='Loading'/>   */}
                         <h4>Profit Sharing </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage7} alt='Loading' />
+                    <LazyLoader src={CareerImage7} alt="Loading" />
+                        {/* <img src={CareerImage7} alt='Loading' /> */}
                         <h4>Team Outings  </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage8} alt='Loading' />
+                    <LazyLoader src={CareerImage8} alt="Loading" />
+                        {/* <img src={CareerImage8} alt='Loading' /> */}
                         <h4>Health Insurance </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage9} alt='Loading' />
+                    <LazyLoader src={CareerImage9} alt="Loading" />
+                        {/* <img src={CareerImage9} alt='Loading' /> */}
                         <h4>Skill Upgradation </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage10} alt='Loading' />
+                    <LazyLoader src={CareerImage10} alt="Loading" />
+                        {/* <img src={CareerImage10} alt='Loading' /> */}
                         <h4>Free Internet  </h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage11} alt='Loading' />
+                    <LazyLoader src={CareerImage11} alt="Loading" />
+                        {/* <img src={CareerImage11} alt='Loading' /> */}
                         <h4>1:1 sessions with Ankur</h4>
                     </div>
                     <div className='perks-list-itm'>
-                        <img src={CareerImage12} alt='Loading' />
+                    <LazyLoader src={CareerImage12} alt="Loading" />
+                        {/* <img src={CareerImage12} alt='Loading' /> */}
                         <h4>Free Therapy sessions </h4>
                     </div>
                 </div>

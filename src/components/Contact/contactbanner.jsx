@@ -50,27 +50,68 @@ function Contactbanner() {
 
   }
 
+  const [main, setMain] = useState(true);
+  // const [first, setFirst] = useState(true);
+  // const [second, setSecond] = useState(true);
+  // const [fimg, setImg] = useState(true);
 
+  const myTimeout = setTimeout(myGreeting, 2000);
 
+  function myGreeting() {
+    setMain(() => false);
+    // setFirst(() => false);
+    // setSecond(() => false);
+    // setImg(() => false);
+  }
+
+  // useEffect(() => {
+  //   myTimeout();
+  // },[])
 
 
   return (
     <div>
-      <section className="banner-contact">
-        <img src={Bannerimage} className="ban-img" alt="Loading" />
-        <div className='banner-caption'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className='caption-cont'>
-                  <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
+      {
+        main ?
+          <div className="banner-parent-temp">
+            <section className="banner-contact1">
+              <div className="banner-content-temp">
+                <h2></h2>
+                <p></p>
+              </div>
+              <div className="banner-img-temp">
+                <div className="img-temp">
 
                 </div>
               </div>
-            </div>
+            </section>
+          </div> :
+          <div className="banner-parent">
+            <section className="banner-contact">
+              {/* {
+          main ? <img src={""} className="ban-img1" alt="Loading" /> :
+            <img src={Bannerimage} className="ban-img" alt="Loading" />
+        } */}
+              <img src={Bannerimage} className="ban-img" alt="Loading" />
+              <div className='banner-caption'>
+                <div className='container'>
+                  <div className='row'>
+                    <div className='col-md-12'>
+                      <div className='caption-cont'>
+
+                        {/* {
+                    main ? <h1 className='big-ttl' > <br /> </h1> :
+                      <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
+                  } */}
+                        <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
           </div>
-        </div>
-      </section>
+    }
 
       <section className="cnt-banner-bottm">
       <div className="container">

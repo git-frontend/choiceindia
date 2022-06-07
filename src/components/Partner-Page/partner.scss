@@ -1,0 +1,131 @@
+@import '../../assets/css/customvariable.scss';
+
+.bloc-tabs {
+    display: flex;
+  }
+  .tabs {
+  
+    padding: 15px;
+    text-align: center;
+    width: 50%;
+    cursor: pointer;
+    box-sizing: content-box;
+    position: relative;
+    outline: none;
+  }
+
+  
+ 
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    background: $whiteColor;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+  }
+
+  .active-content {
+    display: block;
+  }
+  
+
+  .banner-tabs{
+      .content-tabs{
+          .banner-tab-cont{
+              display: flex;
+              align-items: flex-start;
+              .tab-cont-left{
+                  width: 60%;
+                  padding-top: 5rem;
+                  padding-right: 3rem;
+                  .btn-bg{
+                      margin-top: 2rem;
+                  }
+              }
+              .tab-cont-right{
+                  width: 40%;
+                  img{
+                      width: 100%;
+                  }
+              }
+          }
+      }
+      .bloc-tabs{
+          .tabs{
+              background: transparent;
+              border: 0;
+              &.active-tabs{
+                  border: 0;
+                  &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: calc(100% + 2px);
+                    height: 5px;
+                    background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+                    border-radius: 4px;
+                  }
+              }
+              h4{
+                  font-family: $font-family-poppins-semibold;
+                  margin-top: 1.5rem;
+              }
+          }
+      }
+  }
+
+
+.benefits-partnering{
+    padding: 10rem 0;
+    .partnering-list{
+        margin-top: 5rem;
+        .partnering-list-itm{
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            .list-itm-img{
+                width: 41px;
+            }
+            .list-itm-descr{
+                width: calc(100% - 50px);
+                padding-left: 2rem;
+                padding-top: 0.5rem;
+                h5{
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.5rem;
+                }
+                p{
+                    font-size: 1.1rem;
+                    line-height: 1.8rem;
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+.middle-bar-cont{
+    padding: 3rem 0;
+    background: $bgcolor-blue-light;
+    
+    .bar-cont-des{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .title-fourth{
+            font-size: 2rem;
+        }
+        .btn-bg{
+            background: $whiteColor !important;
+            color: $primary !important;
+        }
+    }
+}

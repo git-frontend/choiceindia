@@ -1,6 +1,7 @@
 
 import React from "react";
 import vissionmission from '../../assets/images/about-us/vissionmission.png';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function Vissionmission() {
 
@@ -13,7 +14,8 @@ function Vissionmission() {
           <div className="row align-items-center gx-5">
             <div className="col-md-5 order2">
               <div className="leftimages" >
-              <img src={vissionmission} alt="Banner " className="img-fluid "></img>
+              <LazyLoader src={vissionmission} className="img-fluid" alt="Banner" />
+              {/* <img src={vissionmission} alt="Banner " className="img-fluid "></img> */}
               </div>
              
             </div>

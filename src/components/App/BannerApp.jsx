@@ -2,6 +2,7 @@ import  AppImage0  from '../../assets/images/app/banner-app.jpg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
+import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerCareer() {
 
@@ -10,7 +11,8 @@ function BannerCareer() {
       
      
     <section className="banner-app">
-         <img src={AppImage0} className="ban-img" alt='Loading'/>
+    <LazyLoader src={AppImage0} className="ban-img" alt="Loading" />
+         {/* <img src={AppImage0} className="ban-img" alt='Loading'/> */}
          <div className='app-banner-caption'>
             <div className='container'>
                 <div className='row'>

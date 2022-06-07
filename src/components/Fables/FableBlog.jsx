@@ -2,6 +2,7 @@ import React from "react";
 
 import  Blog2  from '../../assets/images/fable/blog-big.png';
 import  Blog3  from '../../assets/images/fable/blog2.png';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function FableBlog() {
 
@@ -18,7 +19,8 @@ function FableBlog() {
 								</div>
 								<div className="single-blog-con">
 									<div className="single-blog-img">
-										<img src={Blog2} alt="loading" />
+									<LazyLoader src={Blog2} className="img-blog" alt="Loading" />
+										{/* <img src={Blog2} className="img-blog" alt="loading" /> */}
 									</div>
 									<div className="single-blog-des">
 										<h3>What are NFTs?</h3>
@@ -41,7 +43,8 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="loading" className="img-blog"/>
+											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
 									</div>
@@ -52,7 +55,8 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="loading" className="img-blog"/>
+											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
 									</div>
@@ -63,7 +67,8 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="loading" className="img-blog"/>
+											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
 									</div>
@@ -74,7 +79,8 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-												<img src={Blog3} alt="loading" className="img-blog"/>
+											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
 									</div>

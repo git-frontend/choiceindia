@@ -1,7 +1,7 @@
 import  ImageSub9  from '../../assets/images/app-img1.png';
 import React,{useState} from "react";
 import FinxImage from '../../Data/finximage';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 
 
@@ -30,7 +30,8 @@ function ChoiceFinx() {
                         return(
                           <div className="app-list-item" key={response.id}>
                         <a href="/" data-img={ImageSub9} onMouseOver={()=>{setstore(index)}}>
-                          <img src={response.icon} alt="Loading" className="img-fluid" />
+                        <LazyLoader src={response.icon} className="img-fluid" alt="Loading" />
+                          {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
                           <h4>{response.title}</h4>
                           <p>{response.description}</p>
                         </a>
@@ -64,7 +65,8 @@ function ChoiceFinx() {
                     </div>
                   </div>
                   <div className="finx-app-img workImages">
-                    <img src={FinxImage[store].image} className="" alt="Loading" />
+                  <LazyLoader src={FinxImage[store].image} className="" alt="Loading" />
+                    {/* <img src={FinxImage[store].image} className="" alt="Loading" /> */}
                   </div>
                   <div className="expl-app">
                       <a href="/">

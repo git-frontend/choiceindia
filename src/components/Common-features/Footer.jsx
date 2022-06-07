@@ -4,9 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane} from '@fortawesome/free-brands-svg-icons'
 import React from "react";
-
-
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function Footer() {
     return (
@@ -18,8 +16,8 @@ function Footer() {
                   <div className="col-md-12">
                     <div className="top-sec-sub">
                       <div className="footer-logo">
-                      
-                      <img src={ImageFooter0} className=""  alt='Loading'/>
+                      <LazyLoader src={ImageFooter0} className="" alt="Loading" />
+                        {/* <img src={ImageFooter0} className=""  alt='Loading'/> */}
                       </div>
                     </div>
                     <div className="top-sec-quick-links">
