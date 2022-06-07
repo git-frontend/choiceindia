@@ -4,6 +4,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick";
 import homeServices from '../../Services/homeServices';
 import fableData from '../../Data/homeFable'
+import LazyLoader from '../Common-features/LazyLoader';
 
 function FablesStories() {
 
@@ -81,11 +82,13 @@ function FablesStories() {
 											fslider?
 
 												<div>
-													<img src={fslider[sliderimag].feature_image} alt="Loading" />
+													 <LazyLoader src={fslider[sliderimag].feature_image} alt="Loading" />
+													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
 												<div>
-													<img src={fableData[0].feature_image} alt="Loading" />
+													<LazyLoader src={fableData[0].feature_image} alt="Loading" />
+													{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
 												</div>
 										}
 
@@ -123,7 +126,8 @@ function FablesStories() {
 													return (
 
 														<div className="itm-img" key={response.id} >
-															<img src={response.feature_image} alt="Loading" />
+															<LazyLoader src={response.feature_image} alt="Loading" />
+															{/* <img src={response.feature_image} alt="Loading" /> */}
 														</div>
 
 													)

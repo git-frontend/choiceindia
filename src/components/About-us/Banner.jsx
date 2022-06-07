@@ -1,6 +1,8 @@
 
 import React from "react";
 import Bannerimage from '../../assets/images/about-us/banner.png';
+import LazyLoader from '../Common-features/LazyLoader';
+
 function Banner() {
 
   return (
@@ -20,7 +22,8 @@ function Banner() {
                 <div className="col-md-6">
                     <div className="rightsec">
 
-                    <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
+                    <LazyLoader src={Bannerimage} alt="Banner Images" className="img-fluid " />
+                    {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                     </div>
                 </div>
             </div>
