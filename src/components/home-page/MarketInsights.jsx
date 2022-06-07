@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
-
-
-import {link} from 'react-dom';
-
-
 import { Link } from "react-router-dom";
 
 function MarketInsights() {
