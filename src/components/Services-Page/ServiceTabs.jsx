@@ -4,7 +4,7 @@ import WealthManagement from '../../assets/images/services/wealth-management.svg
 import Insurance from '../../assets/images/services/insurance.svg';
 import Loans from '../../assets/images/services/loans.svg';
 import CapitalAdvisory from '../../assets/images/services/capital-advisory.svg';
-import ManagementConsult from '../../assets/images/services/management-consult.svg';
+import ManagementConsultancy from '../../assets/images/services/management-consult.svg';
 import GovernmentAdvisory from '../../assets/images/services/government-advisory.svg';
 
 
@@ -51,8 +51,8 @@ function ServiceTabs() {
 								</div>
 								<div className="same-list-bx-item">
 									<a href='\' className="bx-item-cont">
-                                      <img src={ManagementConsult} className="" alt="Management Consult..." />
-										<h4 className='title-fourth'>Management Consult...</h4>
+                                      <img src={ManagementConsultancy} className="" alt="Management Consultancy" />
+										<h4 className='title-fourth'>Management Consultancy</h4>
 									</a>
 								</div>
 								<div className="same-list-bx-item">

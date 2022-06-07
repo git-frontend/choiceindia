@@ -7,13 +7,14 @@ import Career from './components/Career/Career';
 import App from './components/App/App';
 import Fables from './components/Fables/Fables';
 import Contact from './components/Contact/Contact';
-import Services from './components/Services/Services';
+import Services from './components/Services-Page/Services';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import Faq from './components/FAQ/Faq';
 // import Header from './components/Common-features/MenuHeader';
 import Header from './components/Contact/ContactHeader';
 
 import FablesDetails from './components/Fables-details/FablesDetails';
+import Partner from './components/Partner/Partner';
 function Routing() {
     return (
         <>
@@ -30,6 +31,7 @@ function Routing() {
                     <Route exact  path='/FAQ' element={<Faq/>} />                    
                     <Route exact  path='/Fables-Details' element={< FablesDetails/>} />
                     <Route exact  path='/Services' element={< Services/>} />
+                    <Route exact  path='/Partner' element={< Partner/>} />
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>    
             </Router>
