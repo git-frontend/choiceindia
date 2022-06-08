@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/insurance-banner.jpg';
+import Bannerimage from '../../assets/images/services/insurance-banner.webp';
 
 function Insurance() {
 

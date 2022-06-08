@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/capital-advisory-banner.jpg';
+import Bannerimage from '../../assets/images/services/capital-advisory-banner.webp';
 
 function CapitalAdvisory() {
 

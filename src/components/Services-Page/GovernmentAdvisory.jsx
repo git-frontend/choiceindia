@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/government-advisory-banner.jpg';
+import Bannerimage from '../../assets/images/services/government-advisory-banner.webp';
 
 function GovernmentAdvisory() {
 

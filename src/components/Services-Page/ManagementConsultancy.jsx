@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/management-consult-banner.jpg';
+import Bannerimage from '../../assets/images/services/management-consult-banner.webp';
 
 function ManagementConsultancy() {
 
