@@ -38,6 +38,7 @@
           .banner-tab-cont{
               display: flex;
               align-items: flex-start;
+              flex-wrap: wrap;
               .tab-cont-left{
                   width: 60%;
                   padding-top: 5rem;
@@ -45,11 +46,19 @@
                   .btn-bg{
                       margin-top: 2rem;
                   }
+                  @media (max-width:$sm-x) {
+                    width: 100%;
+                    padding:3rem 0;
+                    text-align: center;
+                  }
               }
               .tab-cont-right{
                   width: 40%;
                   img{
                       width: 100%;
+                  }
+                  @media (max-width:$sm-x) {
+                    width: 100%;
                   }
               }
           }
@@ -76,6 +85,11 @@
               h4{
                   font-family: $font-family-poppins-semibold;
                   margin-top: 1.5rem;
+              }
+              img{
+                @media (max-width:$sm-x) {
+                    width: 50px;
+                }
               }
           }
       }
@@ -136,13 +150,17 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         .title-fourth{
             font-size: 2rem;
         }
         .btn-bg{
             background: $whiteColor !important;
             color: $primary !important;
+        }
+        @media (max-width:$sm-x) {
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
         }
     }
 }
@@ -186,6 +204,10 @@
                  left: 0;
                  top: 0;
                 }
+                @media (max-width:$md) {
+                    width: 110px;
+                    height: 110px;
+                }
             }
             h5{
                 font-size: 1.3rem;
@@ -193,7 +215,18 @@
                 color: $primary;
                 margin-top: 3rem;
             }
+            @media (max-width:$sm-x) {
+                width: 33.33%;
+                margin-bottom: 3rem;
+            }
+            @media (max-width:$xs) {
+                width: 49.33%;
+                margin-bottom: 3rem;
+            }
         }
+    }
+    @media (max-width:$sm-x) {
+        padding: 6rem 0 3rem 0;
     }
 }
 
@@ -209,6 +242,7 @@
         margin-left: -4%;
         position: relative;
         z-index: 9;
+        justify-content: center;
         margin-top: 6rem;
         .work-list-itm{
             width: 29%;
@@ -220,8 +254,22 @@
             background: $whiteColor;
             margin-bottom: 4rem;
             h4{
-                margin: 2rem 0 1rem 0;
+                margin: 2.5rem 0 1.5rem 0;
                 font-family: $font-family-poppins-semibold;
+            }
+            p{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: initial;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
+            @media (max-width:$sm-x) {
+                width: 46%;
+            }
+            @media (max-width:$xs   ) {
+                width: 90%;
             }
         }
     }
