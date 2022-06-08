@@ -4,10 +4,27 @@
 
 
 .service-banner{
-    padding-bottom: 20rem;
+    padding-bottom: 15rem;
     overflow: inherit;
+    position: relative;
     .bnr-left{
         padding-right: 4rem;
+        .title{
+            color: $primary;
+            font-weight: 700;
+            font-size: 4.125rem;
+            line-height: 6.1875rem;
+            padding-bottom: 2.1875rem;
+            padding-top: 1.25rem;
+            font-family: $font-family-poppins-bold;
+        }
+        .para{
+            font-weight: 400;
+            font-size: 1.75rem;
+            line-height: 2.375rem;
+            color: $secondary;
+            font-family: $font-family-poppins-regular;
+        }
         @media (max-width: $md) {
             padding-right: 0;
             .title{
@@ -33,7 +50,7 @@
         display: block;
         position: absolute;
         right: 0;
-        bottom: -6rem;
+        bottom: -10rem;
         background: url(../../assets/images/services/clip-path1.png) no-repeat top right;
         background-size: contain;
 
@@ -53,6 +70,7 @@
 
 .services-same-list-bx{
     position: relative;
+    padding: 5rem 0 10rem 0;
     .same-list-bx-list{
         margin-left: -1.5%;
         .same-list-bx-item{
@@ -88,8 +106,8 @@
     }
     &::after {
         content: '';
-        width: 17rem;
-        height: 42rem;
+        width: 9rem;
+        height: 35rem;
         display: block;
         position: absolute;
         left: 0;
@@ -104,11 +122,15 @@
     &::before{
         display:none;
     }
+    @media (max-width: $sm) {
+        padding: 5rem 0 2rem 0;
+    }
 }
 
 .service-tab-cont{
+    padding-bottom: 8rem;
     .heading-sec{
-        margin-bottom:10rem;
+        margin-bottom:8rem;
         @media (max-width: $sm) {
             margin-bottom: 0;
         }
@@ -145,6 +167,7 @@
     &.service-tab-lst-itm{
         padding-bottom: 20rem;
         position: relative;
+        overflow: hidden;
         &::before {
             content: '';
             width: 25rem;
