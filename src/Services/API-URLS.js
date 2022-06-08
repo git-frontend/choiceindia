@@ -23,7 +23,7 @@ export class API_URLS {
 
 
   /**Market Insights , fabal URL */
-  addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
+  addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
 
   /** Primary banner */
 
