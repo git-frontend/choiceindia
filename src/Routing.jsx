@@ -14,7 +14,7 @@ import Faq from './components/FAQ/Faq';
 import Header from './components/Contact/ContactHeader';
 
 import FablesDetails from './components/Fables-details/FablesDetails';
-import Partner from './components/Partner/Partner';
+import Partner from './components/Partner-Page/Partner';
 function Routing() {
     return (
         <>
