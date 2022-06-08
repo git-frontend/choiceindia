@@ -53,8 +53,11 @@
     
     .bannersection{
         padding-bottom: 0;
-        
-       
+        .client-list-slider{
+            .overlay{
+                display: none;
+            }
+        }
     }
 
     .benefits-perks{

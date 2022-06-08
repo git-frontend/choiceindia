@@ -15,7 +15,7 @@ function Fabdetailsbanner() {
               <div className="row ">
                     <div className="col-md-12">
                         <p className="text-center date">Published August 21, 2021</p>
-                        <h2 className="heading"> Shein setting a trend again for fashionistas – It’s a <br />comeback</h2>
+                        <h2 className="heading title-secnd text-center"> Shein setting a trend again for fashionistas – It’s a <br />comeback</h2>
                         <ul className="tabs">
                             <li>
                                 International
