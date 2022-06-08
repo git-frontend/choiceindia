@@ -8,7 +8,7 @@ function Fablesdetails() {
 
   return (
     <div>
-      <FablesDetailsHeader/>
+      
       <Fabdetailsbanner />
       <Recommendation />
     
