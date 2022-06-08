@@ -107,7 +107,7 @@ body{
             width: 90% !important;
             position: relative;
             overflow: hidden;
-            border-radius: 0px 0px 20px 20px;
+            border-radius: 20px;
             @media (max-width:$sm) {
                 width:95% !important;
                 display: block !important;
@@ -115,7 +115,8 @@ body{
              }
             .namedesg{
                position: absolute;
-                bottom: -37px;
+                bottom: 0;
+                transform: translateY(2.5rem);
                 left: 0;
                 right: 0;
                 width: 100%;
@@ -155,7 +156,7 @@ body{
          
            
             &:hover .namedesg{
-                bottom: 0;
+                transform: translateY(0);
             }
            
         }

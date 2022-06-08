@@ -1,13 +1,13 @@
 
 import React from "react";
-import TaxAdvisory from '../../assets/images/about-us/tax-advisory.png';
-import EquityBroking from '../../assets/images/about-us/equity-broking.png';
-import WealthManagement from '../../assets/images/about-us/wealth-management.png';
-import Insurance from '../../assets/images/about-us/insurance.png';
-import Loans from '../../assets/images/about-us/loans.png';
-import CapitalAdvisory from '../../assets/images/about-us/capital-advisory.png';
-import ManagementConsult from '../../assets/images/about-us/management-consult.png';
-import GovernmentAdvisory from '../../assets/images/about-us/government-advisory.png';
+import TaxAdvisory from '../../assets/images/services/tax-advisory.svg';
+import EquityBroking from '../../assets/images/services/equity-broking.svg';
+import WealthManagement from '../../assets/images/services/wealth-management.svg';
+import Insurance from '../../assets/images/services/insurance.svg';
+import Loans from '../../assets/images/services/loans.svg';
+import CapitalAdvisory from '../../assets/images/services/capital-advisory.svg';
+import ManagementConsultancy from '../../assets/images/services/management-consult.svg';
+import GovernmentAdvisory from '../../assets/images/services/government-advisory.svg';
 
 import Slider from "react-slick";
 function WhatWeOffer() {
@@ -114,10 +114,10 @@ function WhatWeOffer() {
                         
                             <div className="card">
                               <div className="img-itm">
-                                <img src={ManagementConsult} className="img-fluid" alt='Loading' />
+                                <img src={ManagementConsultancy} className="img-fluid" alt='Loading' />
                               </div>
                               <div className="namedesg">
-                                  <h4 className="title">Management Consult...</h4>
+                                  <h4 className="title">Management Consultancy</h4>
                                   <p className="text">Our team closely work with business leaders focusing on solving thier problems.</p>
                               </div>
                             </div>
