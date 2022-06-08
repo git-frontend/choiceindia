@@ -16,7 +16,7 @@ function BannerCareer() {
       
      
     <section className="bannersection">
-        <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
+        <Marquee direction="left" speed={150}  delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
           <div className="Marquee-tag"> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
           <div className="Marquee-tag"> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
           <div className="Marquee-tag"> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>

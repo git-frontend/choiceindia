@@ -23,6 +23,9 @@ const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
 const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
+const LazyFableDetail = React.lazy(()=> import('./components/Fables-details/FablesDetails'));
+const Lazypartner = React.lazy(()=> import('./components/Partner-Page/Partner'))
+
 
 function Routing() {
     return (
@@ -67,20 +70,27 @@ function Routing() {
                     } />
 
                     <Route exact path='/services' element={
-                        <React.Suspense fallback='Contact...'>
+                        <React.Suspense fallback='services...'>
                             < LazyServices />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/services' element={
-                        <React.Suspense fallback='Contact...'>
-                            < LazyServices />
-                        </React.Suspense>
-                    } />
 
                     <Route exact path='/faq' element={
-                        <React.Suspense fallback='Contact...'>
+                        <React.Suspense fallback='faq...'>
                             < LazyFaq />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/fablesdetail' element={
+                        <React.Suspense fallback='fablesdetail...'>
+                            < LazyFableDetail />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/partner' element={
+                        <React.Suspense fallback='partner...'>
+                            < Lazypartner />
                         </React.Suspense>
                     } />
 
