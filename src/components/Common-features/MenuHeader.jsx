@@ -8,6 +8,8 @@ import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 export default function Header() {
 
     const [show, setShow] = useState(true)
+
+  
    
     
         return (
@@ -20,7 +22,7 @@ export default function Header() {
                         <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
                         </NavLink>
                     <button className="navbar-toggler border" 
-                    onClick={ ()=>{ setShow(false) } } >
+                    onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
                     </button>
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
