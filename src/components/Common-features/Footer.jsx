@@ -137,13 +137,13 @@ function Footer() {
                           <a href="https://www.linkedin.com/company/choice-broking/" target="_blank">
                             <FontAwesomeIcon icon={faLinkedinIn} />
                           </a>
-                          <a href="/" target="_blank">
+                          <a href="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
                             <FontAwesomeIcon icon={faInstagram} />
                           </a>
                           <a href="https://www.youtube.com/user/ChoiceBroking" target="_blank">
                             <FontAwesomeIcon icon={faYoutube} />
                           </a>
-                          <a href="/" target="_blank">
+                          <a href="https://t.me/CEBPL" target="_blank">
                             <FontAwesomeIcon icon={faTelegramPlane} />
                           </a>
                         </div>
