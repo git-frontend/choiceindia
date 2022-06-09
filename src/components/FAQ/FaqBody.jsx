@@ -19,77 +19,73 @@ export default function FaqBody() {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-md-12">
-							<div className="same-list-bx-list">
-								<div className="same-list-bx-item">
-									<div className="bx-item-cont">
-										<img src={Image1} className="" alt="" />
-										<h4>Regulated</h4>
-										<p>Regulated by SEBI, IRDAI, AMFI, BSE, NSE, MCX, MCDEX.</p>
-									</div>
-								</div>
-								<div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                   <img src={Image2} className="" alt="" />
-										<h4>Security</h4>
-										<p>We follow Industry leading security protocols.</p>
-									</div>
-								</div>
-								<div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                <div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                <div className='row sec'>
-                                <div className='col-md-12'>
-                                <div className='same-list-bx-list'>
-                                <div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                <div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                <div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                <div className="same-list-bx-item">
-									<div className="bx-item-cont">
-                                      <img src={Image3} className="" alt="" />
-										<h4>Privacy</h4>
-										<p>We will never share your data without your consent.</p>
-									</div>
-								</div>
-                                </div>
-							</div>
-                            </div>
-                            </div>
-						</div>
-					</div>
+          <div className="col-md-12">
+            <div className="same-list-bx-list">
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image1} className="" alt="" />
+                  <h4>My Account</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image2} className="" alt="" />
+                  <h4>Stocks</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>Derivatives</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>Mutual Funds</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>Insurance</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>Loans</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>NPS</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+              <div className="same-list-bx-item">
+                <div className="bx-item-cont">
+                  <img src={Image3} className="" alt="" />
+                  <h4>Bonds / FD’s</h4>
+                  <p>Explore the world of Corporate Industry with our blogs, news, research.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
 				</div>
 			</section>
 
-            <section className='faq-accordion'>
+        <section className='faq-accordion'>
+            <div className='container'>
             <div className='faq-header'>
               <h1>Loans</h1>
             </div>
@@ -105,7 +101,7 @@ export default function FaqBody() {
             <p>Login Credentials</p>
             </div>
             <div className='content-list-itm'>
-            <p>DP ID & Bank Details</p>
+            <p>DP ID &amp; Bank Details</p>
             </div>
             <div className='content-list-itm'>
             <p> profile</p>
@@ -174,7 +170,8 @@ You can open AlphaBee account online using the Android or iOS app or via the web
 
             </div>
             </div>
-            </section>
+            </div>
+        </section>
     </div>
     </>
   )

@@ -193,6 +193,9 @@
                 .app-list-item{
                     width: 29.33%;
                     margin-left: 4%;
+                    img{
+                        height: 40px;
+                    }
                 a{
                     background: $whiteColor;
                     box-shadow: 0px 0px 15px 1px #C2C2C2;
