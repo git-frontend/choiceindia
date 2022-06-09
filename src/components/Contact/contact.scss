@@ -556,6 +556,9 @@
         }
 
         .sendbtn {
+            position: absolute;
+            right: 0px;
+            top: -2px;
             min-width: 11rem;
             border-radius: 10px;
         }

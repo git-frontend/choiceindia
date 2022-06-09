@@ -184,31 +184,6 @@ function Contactbanner() {
                   </div>
 
                   <div className="uploadbtn mt-3 d-flex justify-content-between">
-                    {/**<input  type="file" id="selected" accept="image/*" title="" hidden />
-                  <label htmlFor="icon-button-file"  className="formlabel mt-3 attach">Attachment</label>*/}
-
-                    <div className="">
-                      <input
-                        type="file"
-                        accept="image/*"
-                        hidden={true}
-                        ref={refParam => inputRef = refParam}
-                        onChange={(e) => {
-                          setData(e.target.value)
-                        }}
-                      />
-
-                      <label
-                        className="attachement mt-3"
-                        style={{ cursor: "pointer" }}
-                        onClick={() => inputRef.click()}
-                      >Attachment <FontAwesomeIcon icon={faLink} /><p className="filename"> {data} </p>
-                      </label>
-                    </div>
-
-
-
-
                     <Button variant="primary"
                       type="submit" className="btn-bg btn-bg-dark sendbtn">
                       Send

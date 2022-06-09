@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import React from "react";
+import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Footer() {
@@ -16,7 +17,7 @@ function Footer() {
               <div className="col-md-12">
                 <div className="top-sec-sub">
                   <div className="footer-logo">
-                    <LazyLoader src={ImageFooter0} className="" alt="Loading" />
+                   <Link to="/"><LazyLoader src={ImageFooter0} className="" alt="Loading" /></Link>
                     {/* <img src={ImageFooter0} className=""  alt='Loading'/> */}
                   </div>
                 </div>
@@ -29,16 +30,16 @@ function Footer() {
                             <h4>Services</h4>
                           </li>
                           <li>
-                            <a href="/">Equity Broking</a>
+                            <a href="https://choiceindia.com/equity-stock-trading">Equity Broking</a>
                           </li>
                           <li>
-                            <a href="/">Wealth Mangement</a>
+                            <a href="https://choiceindia.com/wealth-management-services">Wealth Mangement</a>
                           </li>
                           <li>
-                            <a href="/">Insurance</a>
+                            <a href="https://choiceindia.com/insurance-policy">Insurance</a>
                           </li>
                           <li>
-                            <a href="/">Loans</a>
+                            <a href="https://choiceindia.com/loan-against-securities-shares">Loans</a>
                           </li>
                           <li>
                             <a href="/">Merchant Banking</a>
@@ -58,7 +59,7 @@ function Footer() {
                             <h4>Company</h4>
                           </li>
                           <li>
-                            <a href="/">Our Team</a>
+                            <a href="https://choiceindia.com/our-team">Our Team</a>
                           </li>
                           <li>
                             <a href="/">Investors</a>
@@ -67,13 +68,13 @@ function Footer() {
                             <a href="/">Pricing</a>
                           </li>
                           <li>
-                            <a href="/career">Careers</a>
+                            <Link to="/career">Careers</Link>
                           </li>
                           <li>
-                            <a href="/contact">Contact Us</a>
+                            <Link to="/contact">Contact Us</Link>
                           </li>
                           <li>
-                            <a href="/faq">FAQ’s</a>
+                            <Link to="/faq">FAQ’s</Link>
                           </li>
                         </ul>
                         <ul className="reset">
@@ -81,13 +82,13 @@ function Footer() {
                             <h4>Research</h4>
                           </li>
                           <li>
-                            <a href="/">Fundamental</a>
+                            <a href="https://choiceindia.com/research-listing-new">Fundamental</a>
                           </li>
                           <li>
-                            <a href="/">Technical</a>
+                            <a href="https://choiceindia.com/research-listing-new">Technical</a>
                           </li>
                           <li>
-                            <a href="/">Fables</a>
+                             <Link to="/fables">Fables</Link>
                           </li>
                         </ul>
                       </div>

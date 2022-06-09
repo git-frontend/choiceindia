@@ -41,7 +41,7 @@ function ChoiceFinx() {
                   </div>
                   <div className="finx-app-list workList">
                     {
-                      FinxImage.slice(0, 3).map((response, index) => {
+                      FinxImage.slice(0,3).map((response, index) => {
 
                         return (
                           <div className="app-list-item" key={response.id}>

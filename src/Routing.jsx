@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
+import Footer from './components/Common-features/Footer';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -22,7 +23,7 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
-const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
+const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(()=> import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(()=> import('./components/Partner-Page/Partner'))
 
@@ -96,6 +97,7 @@ function Routing() {
 
                     <Route path="*" element={<ErrorPage />} />
                 </Routes>    
+                <Footer/>
             </Router>
         </>
     )

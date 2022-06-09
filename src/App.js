@@ -15,7 +15,7 @@ function App() {
     <div className="App">
    
       <Body></Body>
-      <Footer></Footer>
+      
     </div>
   );
 }

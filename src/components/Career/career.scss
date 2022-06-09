@@ -49,14 +49,17 @@
 }
 
 .career-main{ 
-  
-    
+
     .bannersection{
         padding-bottom: 0;
         .client-list-slider{
             .overlay{
-                display: none;
+                display: none;    
             }
+        .img-fluid{
+            width:55rem;
+            
+        }
         }
     }
 

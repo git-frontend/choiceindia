@@ -54,10 +54,10 @@ const handleManagement = () =>{
 	scrollToRef(event5);
 }
 const handleTax = () =>{
-	scrollToRef(event6);
+	scrollToRef(event7);
 }
 const handleGovt = () =>{
-	scrollToRef(event7);
+	scrollToRef(event6);
 }
 
     return (
