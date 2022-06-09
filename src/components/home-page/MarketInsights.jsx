@@ -13,7 +13,7 @@ function MarketInsights() {
 
     /** load market insights and fabal */
     function loadMarketinsite() {
-        homeServices.marketInsiteFabal().then(
+        homeServices.marketInsite().then(
             res => {
                 setFabal(res.data.posts);
             }

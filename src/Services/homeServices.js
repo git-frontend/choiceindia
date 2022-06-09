@@ -5,13 +5,24 @@ import { API_URLS } from "./API-URLS";
 
 
     /** get market Insights and fabal */
-  marketInsiteFabal: function () {
+  marketInsite: function () {
     let api = new API_URLS()
     let url = api.getMarketinsiteURL()
     return axios.get(url).then((data) => {
       return data
     })
   },
+
+     /** fabal story lists */
+     fabalStory: function () {
+      let api = new API_URLS()
+      let url = api.getFableStoryURL()
+      return axios.get(url).then((data) => {
+        return data
+      })
+    },
+
+
 
 
   homePrimaryBanner: function(){

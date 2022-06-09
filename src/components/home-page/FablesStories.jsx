@@ -17,7 +17,7 @@ function FablesStories() {
 
 	function loadFabalList() {
 
-		homeServices.marketInsiteFabal().then(
+		homeServices.fabalStory().then(
 			res => {
 				setfslider(res.data.posts);
 			}

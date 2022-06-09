@@ -23,7 +23,14 @@ export class API_URLS {
 
 
   /**Market Insights , fabal URL */
-  addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
+
+  addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
+
+  /**fablestories blog  */
+  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
+
+/**fables trending blog  */
+  fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
 
   /** Primary banner */
 
@@ -70,6 +77,7 @@ setServerURL = (url) => {
  * @param {*} url 
  */
  setBannerURL = (url) => {
+
     this.bannerURL = url;
 }
 
@@ -78,11 +86,28 @@ setServerURL = (url) => {
 
 
 /** Get Market Insite and fabal List URL */
+
 getMarketinsiteURL() {
+
     return this.serverURL + this.addMarketInsiteURL
 }
 
+/** Get Fabal Stories List URL */
+
+getFableStoryURL() {
+
+    return this.serverURL + this.fablesStoryURL
+}
+
+/** Get fabal Trending List URL */
+
+getFableTrendingURL() {
+
+    return this.serverURL + this.fabletrendingURL
+}
+
 /** Get home Banner URL */
+
 getHomePrimaryBannerURL(){
 
     return this.bannerURL + this.primaryURL
@@ -90,6 +115,7 @@ getHomePrimaryBannerURL(){
 
 
 /** Get Secondary Banner URL */
+
 getHomeSecondaryBannerURL(){
 
     return this.bannerURL + this.secondaryURL
