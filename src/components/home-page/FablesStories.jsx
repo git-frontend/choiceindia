@@ -5,6 +5,7 @@ import Slider from "react-slick";
 import homeServices from '../../Services/homeServices';
 import fableData from '../../Data/homeFable'
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function FablesStories() {
 
@@ -142,9 +143,9 @@ function FablesStories() {
 					</div>
 					<div className="row">
 						<div className="col-md-12 mt-5 d-flex justify-content-center">
-							<a href="/" className="btn-bg">
+						<Link to="/fables" className="btn-bg">
 								View All
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>
