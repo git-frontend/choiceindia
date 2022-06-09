@@ -48,10 +48,10 @@ function Footer() {
                             <a href="/">Management Consultancy</a>
                           </li>
                           <li>
-                            <a href="/">Government Advisory</a>
+                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory">Government Advisory</a>
                           </li>
                           <li>
-                            <a href="/">Tax Advisory</a>
+                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory">Tax Advisory</a>
                           </li>
                         </ul>
                         <ul className="reset">
@@ -62,7 +62,7 @@ function Footer() {
                             <a href="https://choiceindia.com/our-team">Our Team</a>
                           </li>
                           <li>
-                            <a href="/">Investors</a>
+                            <a href="https://choiceindia.com/investors">Investors</a>
                           </li>
                           <li>
                             <a href="/">Pricing</a>
@@ -156,7 +156,7 @@ function Footer() {
                           Made with  <FontAwesomeIcon icon={faHeart} />  in India
                         </li>
                         <li>
-                          <a href="/">Privacy Policy</a>
+                          <a href="https://choiceindia.com/privacy-policy">Privacy Policy</a>
                         </li>
                         <li>
                           <a href="/">Terms &amp; Conditions</a>
