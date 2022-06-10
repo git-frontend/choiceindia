@@ -34,6 +34,7 @@
   
 
   .banner-tabs{
+      margin-bottom:6rem;
       .content-tabs{
           .banner-tab-cont{
               display: flex;
@@ -96,28 +97,35 @@
   }
 
 
-.benefits-partnering{
-    padding: 10rem 0;
+.benefits-partnering {
+    padding: 7rem 0;
     position: relative;
-    .partnering-list{
+
+    background-color: $bgcolor-cream;
+    .partnering-list {
         margin-top: 5rem;
-        .partnering-list-itm{
+
+        .partnering-list-itm {
             display: flex;
             align-items: flex-start;
             flex-wrap: wrap;
             margin-bottom: 2rem;
-            .list-itm-img{
+
+            .list-itm-img {
                 width: 41px;
             }
-            .list-itm-descr{
+
+            .list-itm-descr {
                 width: calc(100% - 50px);
                 padding-left: 2rem;
                 padding-top: 0.5rem;
-                h5{
+
+                h5 {
                     font-family: $font-family-poppins-semibold;
                     font-size: 1.5rem;
                 }
-                p{
+
+                p {
                     font-size: 1.2rem;
                     line-height: 1.8rem;
                     margin-top: 1.5rem;
@@ -125,7 +133,8 @@
             }
         }
     }
-    &::after{
+
+    &::after {
         content: '';
         display: block;
         height: 30.125rem;
@@ -136,27 +145,38 @@
         z-index: 0;
         background-size: contain;
         position: absolute;
+
         @media (max-width:$md) {
             display: none;
         }
     }
 }
 
-.middle-bar-cont{
+.middle-bar-cont {
     padding: 3rem 0;
-    background: $bgcolor-blue-light;
-    
-    .bar-cont-des{
+    background: $bgcolordark;
+    border-radius: 15px;
+
+
+    .bar-cont-des {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        .title-fourth{
+
+
+        .title-fourth {
             font-size: 2rem;
         }
-        .btn-bg{
+
+        h3 {
+            color: $whiteColor;
+        }
+
+        .btn-bg {
             background: $whiteColor !important;
             color: $primary !important;
         }
+
         @media (max-width:$sm-x) {
             flex-wrap: wrap;
             justify-content: center;
