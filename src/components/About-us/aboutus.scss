@@ -273,13 +273,15 @@ body{
 
 // journey
 
-.Journey{
+.Journey {
     padding: 8rem 0;
     position: relative;
+
     @media (max-width:$sm) {
-    padding: 4rem 0;
-     }
-    &:after{
+        padding: 4rem 0;
+    }
+
+    &:after {
         content: '';
         display: block;
         position: absolute;
@@ -291,14 +293,17 @@ body{
         z-index: -1;
         background-size: cover;
         background-position: right;
+
         @media (max-width:$sm) {
             display: none;
         }
     }
-    .heading{
+
+    .heading {
         padding-bottom: 1.25rem;
     }
-    .journeyinfo{
+
+    .journeyinfo {
         font-weight: 400;
         font-size: 1.875rem;
         line-height: 2.5rem;
@@ -308,15 +313,17 @@ body{
         text-align: center;
         width: 80%;
         padding-bottom: 5.25rem;
+
         @media (max-width:$sm) {
             font-size: 1.8rem;
             width: 95%;
-             }
+        }
     }
-    .Journeyyear{
-    
-        .Journeynumber{
-            &:before{
+
+    .Journeyyear {
+
+        .Journeynumber {
+            &:before {
                 content: "";
                 display: block;
                 position: absolute;
@@ -329,14 +336,16 @@ body{
                 top: 32%;
                 margin: 0 auto;
                 right: 0;
+
                 @media (max-width:$sm) {
-                  display: none;
-                     }
+                    display: none;
+                }
             }
-            .slick-slide{
-             
-               
-                .Journey-item{
+
+            .slick-slide {
+
+
+                .Journey-item {
                     text-align: center;
                     margin: 0 auto;
                     display: flex !important;
@@ -345,16 +354,17 @@ body{
                     align-items: center;
                     position: relative;
                     // min-sheight: 315px;
-                 
-                 
-                    .year{
-                        background: $abt-bg;
+
+
+                    .year {
+                        background: $bgcolordark;
                         width: 13.125rem;
                         height: 13.125rem;
                         border-radius: 50%;
                         z-index: 1;
-                        .number{
-                            color: $primary;
+
+                        .number {
+                            color: $whiteColor;
                             display: flex;
                             align-items: center;
                             justify-content: center;
@@ -365,7 +375,8 @@ body{
                             position: relative;
                         }
                     }
-                    .subtext{
+
+                    .subtext {
                         padding-top: 1.5625rem;
                         display: flex;
                         justify-content: center;
@@ -378,48 +389,51 @@ body{
                         width: 55%;
                         margin: 0 auto;
                         min-height: 100px;
+
                         @media (max-width:$sm) {
                             font-size: 1.5rem;
                         }
+
                         @media (min-width:769px) and (max-width:1024px) {
                             width: 81%;
-                         }
+                        }
                     }
                 }
             }
-            
         }
-        .slick-dots{
+
+        .slick-dots {
             text-align: center;
             bottom: -5.3125rem;
+
             @media (max-width:$sm) {
                 bottom: -1.875rem;
             }
-                li{
-                    width: 12px;
-                    height: 12px;
-                    margin: 0 0.5rem;
-                button{
-                   &:before{
-                       height: 10px;
-                       width: 10px;
-                       background: #E6E7E8;
-                       content: '';
-                       border-radius: 50%;
-                   }
-                 
-                }
 
-              
+            li {
+                width: 12px;
+                height: 12px;
+                margin: 0 0.5rem;
+
+                button {
+                    &:before {
+                        height: 10px;
+                        width: 10px;
+                        background: #E6E7E8;
+                        content: '';
+                        border-radius: 50%;
+                    }
                 }
-                .slick-active{
-                    button{
-                        &:before{
-                            background-color: #797A7D;
-                            }
-                        }
-                   }
             }
+
+            .slick-active {
+                button {
+                    &:before {
+                        background-color: #797A7D;
+                    }
+                }
+            }
+        }
     }
 }
 
