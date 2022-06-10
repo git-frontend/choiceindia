@@ -70,6 +70,7 @@
     .whitecolor{
         color: $whiteColor;
         font-size: 1.7rem;
+        padding-left: 1rem;
         @media (max-width: $sm-x){
             font-size:16px;
         }
