@@ -69,10 +69,7 @@
 
                     }
 
-                    @media (max-width: $sm) {
-                        font-size: 1rem;
-
-                    }
+                    
 
                 }
 
@@ -86,11 +83,6 @@
                     font-family: $font-family-poppins-semibold;
                     @media (max-width: $md) {
                         font-size: 1.3rem;
-
-                    }
-
-                    @media (max-width: $sm) {
-                        font-size: 1rem;
 
                     }
 
@@ -134,7 +126,7 @@
         }
 
         @media (max-width: $md) {
-            padding: 5rem 0 7rem 0;
+            padding: 5rem 0 5rem 0;
         }
 
         &::before {
@@ -286,7 +278,7 @@
         .faq-container {
             display: flex;
             flex-wrap: wrap;
-
+            align-items: flex-start;
         }
         &::before {
             content: "";
@@ -303,7 +295,9 @@
                 display: none;
             }
         }
-
+        @media (max-width: $sm) {
+            padding: 0;
+        }
     }
 
     .faq-container {
@@ -317,12 +311,22 @@
         .accordion-list {
 
             width: 70%;
+            @media (max-width: $sm){
+                width: 100%;
+                padding: 0 !important; 
+            }
         }
 
         .accordion-lists {
 
             width: 30%;
             margin: 0;
+            @media (max-width: $sm){
+                width: 100%;
+                display: flex;
+                overflow: auto;
+                padding: 0 !important;
+            }
         }
 
         .content-list {
@@ -342,6 +346,9 @@
                     color: $darkColorgray;
                     margin: 0;
                     padding: 0;
+                    @media (max-width: $sm){
+                        white-space: nowrap;
+                    }
                 }
 
                 &.list-itm-active {
@@ -360,10 +367,19 @@
                         left: 0;
                         top: 0;
                         display: block;
+                        @media (max-width: $sm){
+                            width: 100%;
+                            top: inherit;
+                            bottom: 0;
+                            height: 4px;
+                        }
                     }
 
                 }
-
+                @media (max-width: $sm){
+                    padding: 1.5rem 1rem;
+                    margin-bottom: 1rem;
+                }
 
             }
 
@@ -437,7 +453,7 @@
         }
 
         @media (max-width: $sm-x) {
-            padding: 4rem 0 5rem 0;
+            padding: 0rem 0 5rem 0;
         }
     }
 
