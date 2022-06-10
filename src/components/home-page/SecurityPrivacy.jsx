@@ -31,7 +31,7 @@ function SecurityPrivacy() {
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
 									<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className="" alt="Loading"/>
-                                        <img src={Image2} className="" alt="" />
+                                       {/* <img src={Image2} className="" alt="" />*/}
 										<h4>Security</h4>
 										<p>We follow Industry leading security protocols.</p>
 									</div>

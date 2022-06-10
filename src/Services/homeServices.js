@@ -13,6 +13,19 @@ import { API_URLS } from "./API-URLS";
     })
   },
 
+
+  fablesBlog: function (id){
+    console.log("data",id)
+
+    let api = new API_URLS()
+    let url = api.getFableblogURL(id)
+    return axios.get(url).then((data)=> {
+
+      return data
+
+    })
+  },
+
      /** fabal story lists */
      fabalStory: function () {
       let api = new API_URLS()

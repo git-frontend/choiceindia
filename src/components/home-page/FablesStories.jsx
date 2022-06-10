@@ -8,8 +8,9 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 
 function FablesStories() {
-
+     let Id;
 	const [fslider, setfslider] = useState();
+	const [blog,setblog] =useState();
 	const [trigger, setTrigger] = useState();
 	const [sliderimag, setSliderImag] = useState(0);
 
@@ -25,11 +26,24 @@ function FablesStories() {
 
 	}
 
+	/** get fables Blog */
+
+	function loadFableBlog(Id){
+		homeServices.fablesBlog(Id).then(
+
+			res => {
+				setblog(res.data.posts)
+
+			}
+		)
+	}
+
 	useEffect(() => {
 
 		setTrigger(true)
 		if (trigger === true) {
 			loadFabalList()
+			
 		}
 
 	}, [trigger])
@@ -119,15 +133,26 @@ function FablesStories() {
 											focusOnSelect={true}
 											afterChange={(ev) => {
 												setSliderImag(ev)
+												
 											}}
+
+											
 											className='stories-sec-slider'>
 											{
-												fslider?.map((response, i) => {
+												fslider?.map((response,index) => {
+													// console.log("index id",index)
+
+													Id=fslider[sliderimag].id;
 
 													return (
 
-														<div className="itm-img" key={response.id} >
-															<LazyLoader src={response.feature_image} alt="Loading" />
+														<div className="itm-img" key={response.id} onClick={()=>{
+															loadFableBlog(Id);
+
+															console.log("kkkk",Id);
+														}} >
+														
+															<LazyLoader src={response.feature_image}  alt="Loading" />
 															{/* <img src={response.feature_image} alt="Loading" /> */}
 														</div>
 

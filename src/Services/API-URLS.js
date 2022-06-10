@@ -32,6 +32,10 @@ export class API_URLS {
 /**fables trending blog  */
   fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
 
+  /** fables blogs  */
+
+  fableBlogURL = 'content/posts/{id}/?key=280c55197998a010569e5d612a'
+
   /** Primary banner */
 
     primaryURL='/items/banners?filter[banner_type][_eq]=primary'
@@ -104,6 +108,13 @@ getFableStoryURL() {
 getFableTrendingURL() {
 
     return this.serverURL + this.fabletrendingURL
+}
+
+/** get fables blog data */
+
+getFableblogURL(id){
+
+    return this.serverURL + `content/posts/${id}/?key=280c55197998a010569e5d612a`
 }
 
 /** Get home Banner URL */

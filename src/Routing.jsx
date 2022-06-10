@@ -4,6 +4,7 @@ import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
 import Footer from './components/Common-features/Footer';
+import OpentoTop from './components/Common-features/OpentoTop';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -33,6 +34,7 @@ function Routing() {
         <>
             <Router>
             <ScrolltoTop />
+            <OpentoTop/>
             <Header/>
                 <Routes>
                 <Route exact path='/' element={
