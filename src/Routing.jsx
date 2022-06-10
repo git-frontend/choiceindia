@@ -22,50 +22,58 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 
+const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
+
 function Routing() {
     return (
         <>
             <Router>
-            <ScrolltoTop />
-            <Header/>
+                <ScrolltoTop />
+                <Header />
                 <Routes>
-                <Route exact path='/' element={
+                    <Route exact path='/' element={
                         <React.Suspense fallback='Loading...'>
                             < LazyHome />
                         </React.Suspense>} />
                     {/* <Route exact path='/' element={< Home />} /> */}
-                    
+
                     <Route exact path='/About-us' element={
                         <React.Suspense fallback='About...'>
                             < LazyAbout />
                         </React.Suspense>
                     } />
 
-                        <Route exact path='/Career' element={
+                    <Route exact path='/Career' element={
                         <React.Suspense fallback='Career...'>
                             < LazyCareer />
                         </React.Suspense>} />
 
-                           <Route exact path='/App' element={
+                    <Route exact path='/App' element={
                         <React.Suspense fallback='App...'>
                             < LazyApp />
                         </React.Suspense>
                     } />
 
-                        <Route exact path='/Fables' element={
+                    <Route exact path='/Fables' element={
                         <React.Suspense fallback='Fables...'>
                             < LazyFables />
                         </React.Suspense>
                     } />
 
-                      <Route exact path='/Contact' element={
+                    <Route exact path='/Contact' element={
                         <React.Suspense fallback='Contact...'>
                             < LazyContact />
                         </React.Suspense>
                     } />
 
+                    <Route exact path='/services' element={
+                        <React.Suspense fallback='services...'>
+                            < LazyServices />
+                        </React.Suspense>
+                    } />
+
                     <Route path="*" element={<ErrorPage />} />
-                </Routes>    
+                </Routes>
             </Router>
         </>
     )
