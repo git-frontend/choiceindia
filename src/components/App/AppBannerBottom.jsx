@@ -89,7 +89,7 @@ function AppBannerBottom() {
                 <div className='col-md-7'>
 
                   <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} alt={"Loading"} />
+                  <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" alt="Loading" />
                     {/* <img src={imageData[isShown2].image}
 
                       className="single-trade-easy-images" alt="loading"></img> */}

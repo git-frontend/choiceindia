@@ -37,7 +37,7 @@ function Routing() {
             <OpentoTop/>
             <Header/>
                 <Routes>
-                    <Route exact path='/' element={
+                <Route exact path='/' element={
                         <React.Suspense>
                             < LazyHome />
                         </React.Suspense>} />
@@ -49,25 +49,24 @@ function Routing() {
                         </React.Suspense>
                     } />
 
-
-                    <Route exact path='/career' element={
+                        <Route exact path='/career' element={
                         <React.Suspense>
                             < LazyCareer />
                         </React.Suspense>} />
 
-                    <Route exact path='/app' element={
+                           <Route exact path='/app' element={
                         <React.Suspense>
                             < LazyApp />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/fables' element={
+                        <Route exact path='/fables' element={
                         <React.Suspense>
                             < LazyFables />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/contact' element={
+                      <Route exact path='/contact' element={
                         <React.Suspense>
                             < LazyContact />
                         </React.Suspense>

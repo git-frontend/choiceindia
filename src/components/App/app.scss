@@ -1,18 +1,7 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
-@keyframes hideMe {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
 
 .App-main {
-animation: hideMe 4s forwards;    
     .banner-app {
         position: relative;
         overflow: hidden;
@@ -549,7 +538,6 @@ animation: hideMe 4s forwards;
 }
 
 .trade-benefits-section{
- animation: hideMe 4s forwards;
     background:url(../../assets/images/app/banner-botttom.jpg) no-repeat;
     background-size: cover;
     padding: 10rem 0;
@@ -692,7 +680,6 @@ animation: hideMe 4s forwards;
 }
 
 .content-list{
-    animation: hideMe 4s forwards;
     .slick-track{
         height: auto !important;
         .slick-slide{

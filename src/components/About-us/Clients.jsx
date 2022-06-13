@@ -25,44 +25,44 @@ function Clients() {
 
                 <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
                   <div className="image_wrapper">
-                    <LazyLoader src={nitiaayog} alt={""} />
-                    {/* <img src={nitiaayog} alt="" /> */}
+                    {/**<LazyLoader src={nitiaayog} alt="" />*/}
+                     <img src={nitiaayog} alt="" /> 
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={libertyinsurance} alt={""} />
-                    {/* <img src={libertyinsurance} alt="" /> */}
+                    {/**<LazyLoader src={libertyinsurance} alt="" >*/}
+                     <img src={libertyinsurance} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={aadhar} alt={""} />
-                    {/* <img src={aadhar} alt="" /> */}
+                    {/**<LazyLoader src={aadhar} alt="" />*/}
+                    <img src={aadhar} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={navkar} alt={""} />
-                    {/* <img src={navkar} alt="" /> */}
+                    {/**<LazyLoader src={navkar} alt="" />*/}
+                    <img src={navkar} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={idea} alt={""} />
-                    {/* <img src={idea} alt="" /> */}
+                    {/**<LazyLoader src={idea} alt="" />*/}
+                    <img src={idea} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={nitiaayog} alt={""} />
-                    {/* <img src={nitiaayog} alt="" /> */}
+                    {/**<LazyLoader src={nitiaayog} alt="" />*/}
+                    <img src={nitiaayog} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={libertyinsurance} alt={""} />
-                    {/* <img src={libertyinsurance} alt="" /> */}
+                    {/**<LazyLoader src={libertyinsurance} alt="" />*/}
+                     <img src={libertyinsurance} alt="" />
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={aadhar} alt={""} />
-                    {/* <img src={aadhar} alt="" /> */}
+                      {/**<LazyLoader src={aadhar} alt="" />*/}
+                     <img src={aadhar} alt="" /> 
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={navkar} alt={""} />
-                    {/* <img src={navkar} alt="" /> */}
+                    {/**<LazyLoader src={navkar} alt="" />*/}
+                     <img src={navkar} alt="" /> 
                   </div>
                   <div className="image_wrapper">
-                    <LazyLoader src={idea} alt={""} />
-                    {/* <img src={idea} alt="" /> */}
+                    {/**<LazyLoader src={idea} alt="" />*/}
+                    <img src={idea} alt="" /> 
                   </div>
                 </Marquee>
 

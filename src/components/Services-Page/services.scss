@@ -2,18 +2,8 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-@keyframes hideMe {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 .service-banner{
-    animation: hideMe 4s forwards;
     padding-bottom: 20rem;
     overflow: inherit;
     .bnr-left{
@@ -117,7 +107,6 @@
 }
 
 .service-tab-cont{
-    animation: hideMe 4s forwards;
     .heading-sec{
         margin-bottom:10rem;
         @media (max-width: $sm) {

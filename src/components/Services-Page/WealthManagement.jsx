@@ -1,7 +1,6 @@
 
 import React from "react";
 import Bannerimage from '../../assets/images/services/wealth-management-banner.webp';
-import LazyLoader from "../Common-features/LazyLoader";
 
 function WealthManagement() {
 
@@ -22,8 +21,7 @@ function WealthManagement() {
             <div className="row gx-5 align-items-center mb-5">
                 <div className="col-md-6">
                     <div className="rightsec">
-                    <LazyLoader src={Bannerimage} className={'img-fluid'} alt={'Banner Images'}/>
-                        {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
+                        <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
                 <div className="col-md-6">

@@ -22,7 +22,7 @@ function SecurityPrivacy() {
 							<div className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
-										<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className={""} alt={"Loading"} />
+									<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className="" alt="Loading"/>
 										{/* <img src={Image1} className="" alt="" /> */}
 										<h4>Regulated</h4>
 										<p>Regulated by SEBI, IRDAI, AMFI, BSE, NSE, MCX, MCDEX.</p>
@@ -30,16 +30,16 @@ function SecurityPrivacy() {
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
-										<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className={""} alt={"Loading"} />
-										{/* <img src={Image2} className="" alt="" /> */}
+									<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className="" alt="Loading"/>
+                                       {/* <img src={Image2} className="" alt="" />*/}
 										<h4>Security</h4>
 										<p>We follow Industry leading security protocols.</p>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
-										<LazyLoader src={Image3} threshold={[0, 0.5, 1]} className={""} alt={"Loading"} />
-										{/* <img src={Image3} className="" alt="" /> */}
+									<LazyLoader src={Image3} threshold={[0, 0.5, 1]} className="" alt="Loading"/>
+                                      {/* <img src={Image3} className="" alt="" /> */}
 										<h4>Privacy</h4>
 										<p>We will never share your data without your consent.</p>
 									</div>

@@ -14,7 +14,7 @@ function FablesStories() {
 	const [trigger, setTrigger] = useState();
 	const [sliderimag, setSliderImag] = useState(0);
 
-	/** get list of fabal */
+/** get list of fabal */
 
 	function loadFabalList() {
 

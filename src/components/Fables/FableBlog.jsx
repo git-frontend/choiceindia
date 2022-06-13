@@ -5,7 +5,6 @@ import  BlogThumbnail1  from '../../assets/images/fable/thumnail1.jpg';
 import  BlogThumbnail2  from '../../assets/images/fable/thumnail2.jpg';
 import  BlogThumbnail3  from '../../assets/images/fable/thumnail3.jpg';
 import  BlogThumbnail4  from '../../assets/images/fable/thumnail4.jpg';
-import LazyLoader from '../Common-features/LazyLoader';
 
 function FableBlog() {
 
@@ -22,8 +21,7 @@ function FableBlog() {
 								</div>
 								<div className="single-blog-con">
 									<div className="single-blog-img">
-									<LazyLoader src={Blog2} className={"img-blog"} alt={"Loading"} />
-										{/* <img src={Blog2} className="img-blog" alt="loading" /> */}
+										<img src={Blog2} alt="loading" />
 									</div>
 									<div className="single-blog-des">
 										<h3>What are NFTs?</h3>
@@ -44,8 +42,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
-												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
+												<img src={BlogThumbnail3} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
@@ -56,8 +53,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
-												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
+												<img src={BlogThumbnail4} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
@@ -68,8 +64,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
-												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
+												<img src={BlogThumbnail2} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>
@@ -80,8 +75,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
-												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
+												<img src={BlogThumbnail1} alt="loading" className="img-blog"/>
 											</div>
 										</a>
 									</div>

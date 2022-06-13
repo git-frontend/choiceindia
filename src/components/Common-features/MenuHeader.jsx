@@ -4,7 +4,6 @@ import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
-import LazyLoader from '../Common-features/LazyLoader';
 
 export default function Header() {
 
@@ -19,10 +18,8 @@ export default function Header() {
                 <div className="container">
                 
                 <NavLink className="navbar-brand logo-main" to="/">
-                <LazyLoader src={ImageSub0} className={"img-fluid logo-dark"} alt={"Choice India"} />
-                        {/* <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" /> */}
-                        <LazyLoader src={ImageSub1} className={"img-fluid logo-light"} alt={"Choice India"} />
-                        {/* <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" /> */}
+                        <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" />
+                        <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
                         </NavLink>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>setShow(!show)} >

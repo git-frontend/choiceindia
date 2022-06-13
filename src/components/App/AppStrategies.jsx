@@ -59,7 +59,7 @@ function AppStrategies() {
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className={"single-trade-easy-images"} alt={"Loading"} />
+                                    <LazyLoader src={imageData[isShown3].image} className="single-trade-easy-images" alt="Loading" />
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}

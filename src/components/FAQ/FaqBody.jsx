@@ -1,16 +1,16 @@
-import React, { useRef } from 'react';
+import React,{useRef} from 'react';
 import Image1 from '../../assets/images/icons/auction.svg';
 import Image2 from '../../assets/images/icons/shield2.svg';
 import Image3 from '../../assets/images/icons/padlock.svg';
 import { Accordion } from 'react-bootstrap';
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop) 
 
 export default function FaqBody() {
 
   const Ref = useRef(null);
 
-  const handleFocus = () => {
+  const handleFocus=()=>{
     scrollToRef(Ref);
 
   };
@@ -32,33 +32,29 @@ export default function FaqBody() {
               <div className="col-md-12">
                 <div className="same-list-bx-list">
                   <div className="same-list-bx-item">
-                    <div className="bx-item-cont" onClick={handleFocus}>
-                      <LazyLoader src={Image1} className={""} alt={""} />
-                      {/* <img src={Image1} className="" alt="" /> */}
+                    <div className="bx-item-cont"  onClick={handleFocus}>
+                      <img src={Image1} className="" alt="" />
                       <h4>Regulated</h4>
                       <p>Regulated by SEBI, IRDAI, AMFI, BSE, NSE, MCX, MCDEX.</p>
                     </div>
                   </div>
                   <div className="same-list-bx-item">
                     <div className="bx-item-cont" onClick={handleFocus}>
-                      <LazyLoader src={Image2} className={""} alt={""} />
-                      {/* <img src={Image2} className="" alt="" /> */}
+                      <img src={Image2} className="" alt="" />
                       <h4>Security</h4>
                       <p>We follow Industry leading security protocols.</p>
                     </div>
                   </div>
                   <div className="same-list-bx-item">
                     <div className="bx-item-cont" onClick={handleFocus}>
-                      <LazyLoader src={Image3} className={""} alt={""} />
-                      {/* <img src={Image3} className="" alt="" /> */}
+                      <img src={Image3} className="" alt="" />
                       <h4>Privacy</h4>
                       <p>We will never share your data without your consent.</p>
                     </div>
                   </div>
                   <div className="same-list-bx-item">
                     <div className="bx-item-cont" onClick={handleFocus}>
-                      <LazyLoader src={Image3} className={""} alt={""} />
-                      {/* <img src={Image3} className="" alt="" /> */}
+                      <img src={Image3} className="" alt="" />
                       <h4>Privacy</h4>
                       <p>We will never share your data without your consent.</p>
                     </div>
@@ -68,32 +64,28 @@ export default function FaqBody() {
                       <div className='same-list-bx-list'>
                         <div className="same-list-bx-item">
                           <div className="bx-item-cont" onClick={handleFocus}>
-                            <LazyLoader src={Image3} className={""} alt={""} />
-                            {/* <img src={Image3} className="" alt="" /> */}
+                            <img src={Image3} className="" alt="" />
                             <h4>Privacy</h4>
                             <p>We will never share your data without your consent.</p>
                           </div>
                         </div>
                         <div className="same-list-bx-item">
                           <div className="bx-item-cont" onClick={handleFocus}>
-                            <LazyLoader src={Image3} className={""} alt={""} />
-                            {/* <img src={Image3} className="" alt="" /> */}
+                            <img src={Image3} className="" alt="" />
                             <h4>Privacy</h4>
                             <p>We will never share your data without your consent.</p>
                           </div>
                         </div>
                         <div className="same-list-bx-item">
                           <div className="bx-item-cont" onClick={handleFocus}>
-                            <LazyLoader src={Image3} className={""} alt={""} />
-                            {/* <img src={Image3} className="" alt="" /> */}
+                            <img src={Image3} className="" alt="" />
                             <h4>Privacy</h4>
                             <p>We will never share your data without your consent.</p>
                           </div>
                         </div>
                         <div className="same-list-bx-item">
                           <div className="bx-item-cont" onClick={handleFocus}>
-                            <LazyLoader src={Image3} className={""} alt={""} />
-                            {/* <img src={Image3} className="" alt="" /> */}
+                            <img src={Image3} className="" alt="" />
                             <h4>Privacy</h4>
                             <p>We will never share your data without your consent.</p>
                           </div>
@@ -123,7 +115,7 @@ export default function FaqBody() {
                 <p>Login Credentials</p>
               </div>
               <div className='content-list-itm'>
-                <p>DP ID &amp; Bank Details</p>
+                <p>DP ID & Bank Details</p>
               </div>
               <div className='content-list-itm'>
                 <p> profile</p>
