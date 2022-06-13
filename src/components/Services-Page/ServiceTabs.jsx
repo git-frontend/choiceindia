@@ -1,3 +1,6 @@
+import Slider from "react-slick";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import TaxAdvisory from '../../assets/images/services/tax-advisory.svg';
 import EquityBroking from '../../assets/images/services/equity-broking.svg';
 import WealthManagement from '../../assets/images/services/wealth-management.svg';
@@ -60,6 +63,35 @@ const handleGovt = () =>{
 	scrollToRef(event6);
 }
 
+const settings = {
+	infinite: false,
+	speed: 1500,
+	arrows: false,
+	slidesToShow: 4,
+	autoplay: false,
+	margin:15,
+	dots:true,
+	autoplaySpeed: 1000,
+	slidesToScroll: 4,
+	responsive: [
+	  {
+		breakpoint: 992,
+		settings: {
+		  slidesToShow: 3,
+		  slidesToScroll: 3,
+		  adaptiveHeight: true,
+		},
+	  },
+	  {
+		breakpoint: 600,
+		settings: {
+		  slidesToShow: 1,
+		  slidesToScroll: 1,
+		},
+	  },
+	],
+};
+
     return (
         <div>
 
@@ -69,7 +101,8 @@ const handleGovt = () =>{
 					
 					<div className="row">
 						<div className="col-md-12">
-							<div className="same-list-bx-list">
+							{/* <div className="same-list-bx-list"> */}
+							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleFocus}>
 										<img src={EquityBroking} className="" alt="Equity Broking" />
@@ -118,7 +151,7 @@ const handleGovt = () =>{
 										<h4 className='title-fourth'>Tax Advisory</h4>
 									</div>
 								</div>
-							</div>
+							</Slider>
 						</div>
 					</div>
 				</div>

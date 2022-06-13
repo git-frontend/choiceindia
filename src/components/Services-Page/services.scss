@@ -53,18 +53,22 @@
 
 .services-same-list-bx{
     position: relative;
-    padding-bottom:10rem;
+    padding-bottom:14rem;
     .same-list-bx-list{
-        margin-left: -1.5%;
+        margin-left: 0%;
+        .slick-list{
+            padding: 1.5rem 2rem;
+        }
         .same-list-bx-item{
-            width: 23.5%;
+            width: 90% !important;
             text-align: center;
-            margin-left: 1.5%;
-            margin-bottom: 4rem;
+            margin: 0 auto;
+            cursor: pointer;
             .bx-item-cont{
                 text-decoration: none;
                 border: 3px solid transparent;
-                @extend .box-shadow;
+                box-shadow: none;
+                padding: 4rem 2rem;
                 h4{
                     font-size: 1.5rem;
                     margin-top: 2rem;
@@ -77,6 +81,7 @@
                 }
                 img{
                     width: 65px;
+                    margin:0 auto;
                 }
             }
             @media (max-width: 800px) {
@@ -84,6 +89,29 @@
             }
             @media (max-width: $sm) {
                 width: 90%;
+            }
+        }
+        .slick-dots {
+            bottom: -4rem;
+            li {
+                margin: 0;
+        
+                button {
+                    &::before {
+                        color: #447EC1;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                    }
+                }
+        
+                &.slick-active {
+                    button {
+                        &::before {
+                            opacity: 1;
+                            color: #447EC1;
+                        }
+                    }
+                }
             }
         }
     }
