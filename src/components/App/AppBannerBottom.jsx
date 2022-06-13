@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import imageData from '../../Data/images';
 import Slider from 'react-slick';
+import LazyLoader from '../Common-features/LazyLoader';
 
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
@@ -88,9 +89,10 @@ function AppBannerBottom() {
                 <div className='col-md-7'>
 
                   <div className="trade-easy-images-div" >
-                    <img src={imageData[isShown2].image}
+                  <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" alt="Loading" />
+                    {/* <img src={imageData[isShown2].image}
 
-                      className="single-trade-easy-images" alt="loading"></img>
+                      className="single-trade-easy-images" alt="loading"></img> */}
                   </div>
 
 

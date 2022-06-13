@@ -2,7 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import imageData from '../../Data/Strategies';
 import Slider from 'react-slick';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function AppStrategies() {
     const [isShown3, setIsShown3] = useState(0);
@@ -59,9 +59,10 @@ function AppStrategies() {
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <img src={imageData[isShown3].image}
+                                    <LazyLoader src={imageData[isShown3].image} className="single-trade-easy-images" alt="Loading" />
+                                        {/* <img src={imageData[isShown3].image}
 
-                                            className="single-trade-easy-images" alt='Loading'></img>
+                                            className="single-trade-easy-images" alt='Loading'></img> */}
                                     </div>
 
 

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
+import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function MarketInsights() {
 
@@ -11,7 +13,7 @@ function MarketInsights() {
 
     /** load market insights and fabal */
     function loadMarketinsite() {
-        homeServices.marketInsiteFabal().then(
+        homeServices.marketInsite().then(
             res => {
                 setFabal(res.data.posts);
             }
@@ -53,8 +55,9 @@ function MarketInsights() {
 
                                             <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
-                                                    <img src={response.feature_image} alt="" />
-                                                    <span className="ttl-sm" >{response.title || '-'}</span>
+                                                <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt="Loading"/>
+                                                    {/* <img src={response.feature_image} alt="" /> */}
+                                                    <span className="ttl-sm" >{response.meta_title || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
                                                     <p>{response.excerpt}</p>
@@ -70,9 +73,9 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <a href="/" className="btn-bg">
+                            <Link to="/" className="btn-bg">
                                 Read More
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>

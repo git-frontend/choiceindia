@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
-import homeServices from '../../Services/homeServices';
-
+import fableServices from '../../Services/fableServices';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerSection() {
 
@@ -8,7 +8,7 @@ function BannerSection() {
 	const [trigger, setTrigger] = useState();
 
 	function loadFableList(){
-		homeServices.marketInsiteFabal().then (
+		fableServices.fabalTrending().then (
 			res=>{
 				setData(res.data.posts);
 
@@ -51,7 +51,8 @@ function BannerSection() {
                                        <div key={response.id}>
 									   <a href="/" className="trending-itm">
 									   <div className="trending-itm-img">
-										   <img src={response.feature_image} alt="loading" className="img-blog"/>
+									   <LazyLoader src={response.feature_image} className="img-blog" alt="Loading" />
+										   {/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
 									   </div>
 									   <div className="trending-itm-des">
 										   <p>{response.meta_description}</p>

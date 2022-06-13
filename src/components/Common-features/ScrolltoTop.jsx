@@ -2,6 +2,7 @@ import React,{useState,useEffect} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faAngleUp } from '@fortawesome/free-solid-svg-icons'
 
+
 export default function ScrolltoTop() {
 
     const [scroll, setScroll] = useState(false);

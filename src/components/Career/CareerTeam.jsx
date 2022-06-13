@@ -13,7 +13,8 @@ function CareerTeam() {
       
      
     
-  <section className='career-team'>
+
+  <section className='career-team'>
       <div className='container'>
         <div className='row'>
             <div className='col-md-12'>
@@ -74,4 +75,4 @@ function CareerTeam() {
   );
 }
 
-export default CareerTeam;
+export default CareerTeam;
