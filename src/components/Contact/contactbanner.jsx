@@ -70,28 +70,7 @@ function Contactbanner() {
 
 
   return (
-    <div>
-      {
-        main ?
-          <div className="banner-parent-temp">
-            <section className="banner-contact1">
-              <div className="banner-content-temp">
-                <h2></h2>
-                <p></p>
-              </div>
-              <div className="banner-img-temp">
-                <div className="img-temp">
-
-                </div>
-              </div>
-            </section>
-{/* 
-            <section className="banner-contact-form">
-              <div>
-
-              </div>
-            </section> */}
-          </div> :
+    <div> 
           <div className="banner-parent">
             <section className="banner-contact">
               {/* {
@@ -117,11 +96,10 @@ function Contactbanner() {
               </div>
             </section>
           </div>
-      }
+      
 
 
-      {
-        main? <div></div>: 
+       
         <section className="cnt-banner-bottm">
         <div className="container">
           <div className="writebtn">
@@ -218,7 +196,6 @@ function Contactbanner() {
           </div>
         </div>
       </section>
-      }
      
 
 

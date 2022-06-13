@@ -1,8 +1,18 @@
 @import '../../assets/css/customvariable.scss';
 
 
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .career-list-slider{
- 
+    animation: hideMe 4s forwards; 
     .slick-slide{
         padding:0 2rem;
         outline: none;
@@ -20,6 +30,7 @@
 }
 
 .our-values{
+    animation: hideMe 4s forwards;
     padding: 13rem 0;
     position: relative;
     .heading-sec{
@@ -49,7 +60,7 @@
 }
 
 .career-main{ 
-  
+    animation: hideMe 4s forwards;
     
     .bannersection{
         padding-bottom: 0;
@@ -298,6 +309,7 @@
 }
 
 .culture-values{
+    animation: hideMe 4s forwards;
     padding: 0 0 27rem 0;
     
     .culture-values-img{
@@ -316,6 +328,7 @@
     }
 }
 .Marquee {
+    animation: hideMe 4s forwards;
     width: 100%;
     box-sizing: border-box;
     padding: 0;

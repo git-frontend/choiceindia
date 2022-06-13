@@ -32,42 +32,42 @@ function Routing() {
                 <Header />
                 <Routes>
                     <Route exact path='/' element={
-                        <React.Suspense fallback='Loading...'>
+                        <React.Suspense>
                             < LazyHome />
                         </React.Suspense>} />
                     {/* <Route exact path='/' element={< Home />} /> */}
 
                     <Route exact path='/About-us' element={
-                        <React.Suspense fallback='About...'>
+                        <React.Suspense>
                             < LazyAbout />
                         </React.Suspense>
                     } />
 
                     <Route exact path='/Career' element={
-                        <React.Suspense fallback='Career...'>
+                        <React.Suspense>
                             < LazyCareer />
                         </React.Suspense>} />
 
                     <Route exact path='/App' element={
-                        <React.Suspense fallback='App...'>
+                        <React.Suspense>
                             < LazyApp />
                         </React.Suspense>
                     } />
 
                     <Route exact path='/Fables' element={
-                        <React.Suspense fallback='Fables...'>
+                        <React.Suspense>
                             < LazyFables />
                         </React.Suspense>
                     } />
 
                     <Route exact path='/Contact' element={
-                        <React.Suspense fallback='Contact...'>
+                        <React.Suspense>
                             < LazyContact />
                         </React.Suspense>
                     } />
 
                     <Route exact path='/services' element={
-                        <React.Suspense fallback='services...'>
+                        <React.Suspense>
                             < LazyServices />
                         </React.Suspense>
                     } />

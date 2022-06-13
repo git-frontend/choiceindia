@@ -19,7 +19,7 @@ function FableBlog() {
 								</div>
 								<div className="single-blog-con">
 									<div className="single-blog-img">
-									<LazyLoader src={Blog2} className="img-blog" alt="Loading" />
+									<LazyLoader src={Blog2} className={"img-blog"} alt={"Loading"} />
 										{/* <img src={Blog2} className="img-blog" alt="loading" /> */}
 									</div>
 									<div className="single-blog-des">
@@ -43,7 +43,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
 												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
@@ -55,7 +55,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
 												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
@@ -67,7 +67,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
 												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>
@@ -79,7 +79,7 @@ function FableBlog() {
 												<h6 className="tag-act">@SachinChadda</h6>
 											</div>
 											<div className="blog-itm-img">
-											<LazyLoader src={Blog3} className="img-blog" alt="Loading" />
+											<LazyLoader src={Blog3} className={"img-blog"} alt={"Loading"} />
 												{/* <img src={Blog3} alt="loading" className="img-blog"/> */}
 											</div>
 										</a>

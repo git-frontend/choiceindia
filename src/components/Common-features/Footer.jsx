@@ -16,7 +16,7 @@ function Footer() {
                   <div className="col-md-12">
                     <div className="top-sec-sub">
                       <div className="footer-logo">
-                      <LazyLoader src={ImageFooter0} className="" alt="Loading" />
+                      <LazyLoader src={ImageFooter0} className={""} alt={"Loading"} />
                         {/* <img src={ImageFooter0} className=""  alt='Loading'/> */}
                       </div>
                     </div>

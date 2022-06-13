@@ -1,7 +1,18 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .App-main{
+    animation: hideMe 4s forwards;    
     .banner-app{
        
         position: relative;
@@ -458,6 +469,7 @@
 }
 
 .trade-benefits-section{
+    animation: hideMe 4s forwards;
     background:$bgcolor-lightgray;
     padding: 10rem 0;
     position: relative;
@@ -511,6 +523,7 @@
 }
 
 .content-list{
+    animation: hideMe 4s forwards;
     .slick-track{
         height: auto !important;
         .slick-slide{

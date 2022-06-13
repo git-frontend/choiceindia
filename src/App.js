@@ -13,8 +13,9 @@ import Body from './components/Body/Body';
 function App() {
   return (
     <div className="App">
-   
+      <div className='App-body'>
       <Body></Body>
+      </div>
       <Footer></Footer>
     </div>
   );

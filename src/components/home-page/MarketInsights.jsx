@@ -3,7 +3,7 @@ import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
-import {link} from 'react-dom';
+import { link } from 'react-dom';
 
 
 import { Link } from "react-router-dom";
@@ -31,7 +31,7 @@ function MarketInsights() {
     useEffect(() => {
         setTrigger(true)
 
-        if (trigger===true) {
+        if (trigger === true) {
             loadMarketinsite();
         }
 
@@ -60,7 +60,7 @@ function MarketInsights() {
 
                                             <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
-                                                <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt="Loading"/>
+                                                    <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                     {/* <img src={response.feature_image} alt="" /> */}
                                                     <span className="ttl-sm" >{response.meta_title || '-'}</span>
                                                 </div>
@@ -68,7 +68,7 @@ function MarketInsights() {
                                                     <p>{response.excerpt}</p>
                                                 </div>
                                             </div>
-                                            
+
                                         )
 
                                     })

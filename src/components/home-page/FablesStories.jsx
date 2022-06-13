@@ -12,7 +12,7 @@ function FablesStories() {
 	const [trigger, setTrigger] = useState();
 	const [sliderimag, setSliderImag] = useState(0);
 
-/** get list of fabal */
+	/** get list of fabal */
 
 	function loadFabalList() {
 
@@ -79,15 +79,15 @@ function FablesStories() {
 								<div className="stories-sec-left">
 									<div>
 										{
-											fslider?
+											fslider ?
 
 												<div>
-													 <LazyLoader src={fslider[sliderimag].feature_image} alt="Loading" />
+													<LazyLoader src={fslider[sliderimag].feature_image} alt={"Loading"} />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
 												<div>
-													<LazyLoader src={fableData[0].feature_image} alt="Loading" />
+													<LazyLoader src={fableData[0].feature_image} alt={"Loading"} />
 													{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
 												</div>
 										}
@@ -98,7 +98,7 @@ function FablesStories() {
 								<div className="stories-sec-right">
 									<div className="">
 										{
-											fslider?
+											fslider ?
 
 												<div className="stories-sec-right-des">
 													<h4>{fslider[sliderimag].title}</h4>
@@ -108,7 +108,7 @@ function FablesStories() {
 													<h4>{fableData[0].title}</h4>
 													<p>{fableData[0].excerpt}</p>
 												</div>
-												
+
 										}
 									</div>
 									<div className="sec-slider-cont fables-parent">
@@ -126,7 +126,7 @@ function FablesStories() {
 													return (
 
 														<div className="itm-img" key={response.id} >
-															<LazyLoader src={response.feature_image} alt="Loading" />
+															<LazyLoader src={response.feature_image} alt={"Loading"} />
 															{/* <img src={response.feature_image} alt="Loading" /> */}
 														</div>
 

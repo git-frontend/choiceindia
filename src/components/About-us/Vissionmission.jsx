@@ -14,7 +14,7 @@ function Vissionmission() {
           <div className="row align-items-center gx-5">
             <div className="col-md-5 order2">
               <div className="leftimages" >
-              <LazyLoader src={vissionmission} className="img-fluid" alt="Banner" />
+              <LazyLoader src={vissionmission} className={"img-fluid"} alt={"Banner"} />
               {/* <img src={vissionmission} alt="Banner " className="img-fluid "></img> */}
               </div>
              

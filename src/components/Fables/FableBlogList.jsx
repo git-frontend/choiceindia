@@ -60,7 +60,7 @@ function FableBlogList() {
 							<div className="tab-blog-list">
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
+									<LazyLoader src={Blog1} className={""} alt={"Loading"} />
 										{/* <img src={Blog1} className="" alt="loading" /> */}
 									</div>
 									<div className="blog-item-des">
@@ -74,7 +74,7 @@ function FableBlogList() {
 								</a>
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
+									<LazyLoader src={Blog1} className={""} alt={"Loading"} />
 										{/* <img src={Blog1} className="" alt="loading" /> */}
 									</div>
 									<div className="blog-item-des">
@@ -88,7 +88,7 @@ function FableBlogList() {
 								</a>
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
+									<LazyLoader src={Blog1} className={""} alt={"Loading"} />
 										{/* <img src={Blog1} className="" alt="loading" /> */}
 									</div>
 									<div className="blog-item-des">

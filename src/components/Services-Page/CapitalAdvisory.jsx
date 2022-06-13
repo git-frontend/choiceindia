@@ -1,6 +1,7 @@
 
 import React from "react";
 import Bannerimage from '../../assets/images/services/capital-advisory-banner.jpg';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function CapitalAdvisory() {
 
@@ -21,7 +22,8 @@ function CapitalAdvisory() {
             <div className="row gx-5 mb-5">
                 <div className="col-md-6">
                     <div className="rightsec">
-                        <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
+                        <LazyLoader src={Bannerimage} className={'img-fluid'} alt={'Banner Images'}/>
+                        {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                     </div>
                 </div>
                 <div className="col-md-6">

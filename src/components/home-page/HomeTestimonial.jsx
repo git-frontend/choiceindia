@@ -26,134 +26,134 @@ function HomeTestimonial() {
 	// 	slidesToScroll: 1,
 	// };
 
-	 // const breakPoints = [
-    //     { width: 1, itemsToShow: 1 },
-    //     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-    //     { width: 768, itemsToShow: 3 },
-    //     { width: 1200, itemsToShow: 3 }
-    // ];
+	// const breakPoints = [
+	//     { width: 1, itemsToShow: 1 },
+	//     { width: 550, itemsToShow: 2, itemsToScroll: 2 },
+	//     { width: 768, itemsToShow: 3 },
+	//     { width: 1200, itemsToShow: 3 }
+	// ];
 
-    // const dataObj = [
-    //     {
-    //         "img": ImageSub25, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-    //         "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-    //             "They are the best brokers in town and provide the best services to their clients."
-    //     },
+	// const dataObj = [
+	//     {
+	//         "img": ImageSub25, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+	//         "des": "They will never share your private data without your consent. They are market leader for right reasons." +
+	//             "They are the best brokers in town and provide the best services to their clients."
+	//     },
 
-    //     {
-    //         "img": ImageSub23, "name": "Elon Musk", "tag": "@ElonMusk", "date": "15 Nov 2005", "likes": "100",
-    //         "des": "Do more with buttons. Control button states or create groups " +
-    //             " of buttons for more components like toolbars."
-    //     },
+	//     {
+	//         "img": ImageSub23, "name": "Elon Musk", "tag": "@ElonMusk", "date": "15 Nov 2005", "likes": "100",
+	//         "des": "Do more with buttons. Control button states or create groups " +
+	//             " of buttons for more components like toolbars."
+	//     },
 
-    //     {
-    //         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
-    //         "des": "<a>s don’t support the disabled attribute, so you must add the" +
-    //             ".disabled className to make it visually appear disabled."
-    //     },
-
-
-    //     {
-    //         "img": ImageSub22, "name": "Kovac", "tag": "@Slokovia", "date": "10 May 2010", "likes": "84",
-    //         "des": " If you create a new HTML document and test this example out by pasting all of" +
-    //             "the above code and markup into it, you'll see."
-    //     }
-    // ]
-
-    const [valRight, setValRight] = useState(() => 0);
+	//     {
+	//         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
+	//         "des": "<a>s don’t support the disabled attribute, so you must add the" +
+	//             ".disabled className to make it visually appear disabled."
+	//     },
 
 
-    const [dataObj, setdataObj] = useState(() => [
-        {
-            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-                "They are the best brokers in town and provide the best services to their clients."
-        },
+	//     {
+	//         "img": ImageSub22, "name": "Kovac", "tag": "@Slokovia", "date": "10 May 2010", "likes": "84",
+	//         "des": " If you create a new HTML document and test this example out by pasting all of" +
+	//             "the above code and markup into it, you'll see."
+	//     }
+	// ]
+
+	const [valRight, setValRight] = useState(() => 0);
+
+
+	const [dataObj, setdataObj] = useState(() => [
+		{
+			"img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+			"des": "They will never share your private data without your consent. They are market leader for right reasons." +
+				"They are the best brokers in town and provide the best services to their clients."
+		},
 
 		{
-            "img": ImageSub21, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
-        },
+			"img": ImageSub21, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
+			"des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+		},
 
 
-        {
-            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-                "They are the best brokers in town and provide the best services to their clients."
-        },
+		{
+			"img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
+			"des": "They will never share your private data without your consent. They are market leader for right reasons." +
+				"They are the best brokers in town and provide the best services to their clients."
+		},
 
-        
 
-        {
-            "img": ImageSub23, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
-        }
-    ])
+
+		{
+			"img": ImageSub23, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
+			"des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+		}
+	])
 	const [counterRight, setcounterRight] = useState(() => 1);
 	const [disableRight, setdisableRight] = useState(() => false);
 	const [disableLeft, setdisableLeft] = useState(() => true);
 
-    const counter = useRef(0);
-    function toggleForward() {
+	const counter = useRef(0);
+	function toggleForward() {
 
-		console.log('DDDD',counterRight);
-		if(counterRight === 0 ){
+		console.log('DDDD', counterRight);
+		if (counterRight === 0) {
 			setdisableLeft(true);
 			setdisableRight(false);
-		}else if(counterRight === 3){
+		} else if (counterRight === 3) {
 			setdisableLeft(false);
 			setdisableRight(true);
-		}else{
+		} else {
 			setdisableLeft(false);
 			setdisableRight(false);
 		}
 
-		setcounterRight( counterRight + 1);
-		
-        counter.current = counter.current + 1;
+		setcounterRight(counterRight + 1);
 
-        if (valRight === 3) {
-            setValRight(prevCount => prevCount * 0);
-        } else {
-            setValRight(prevCount => prevCount + 1);
-            let temp;
-            //  temp = setdataObj((oldArray) => [...oldArray,oldArray.shift()])
-            temp = dataObj.shift();
-            //  setdataObj((oldArray) => [...oldArray,oldArray.push(temp)])
-            dataObj.push(temp);
-            // setdataObj((oldArray) => [...oldArray, oldArray.pop()])
-        }
+		counter.current = counter.current + 1;
 
-    }
-    // console.log('counter', counter);
-    // console.log('data', dataObj);
-    function toggleBackward() {
+		if (valRight === 3) {
+			setValRight(prevCount => prevCount * 0);
+		} else {
+			setValRight(prevCount => prevCount + 1);
+			let temp;
+			//  temp = setdataObj((oldArray) => [...oldArray,oldArray.shift()])
+			temp = dataObj.shift();
+			//  setdataObj((oldArray) => [...oldArray,oldArray.push(temp)])
+			dataObj.push(temp);
+			// setdataObj((oldArray) => [...oldArray, oldArray.pop()])
+		}
 
-		if(counterRight === 3){
+	}
+	// console.log('counter', counter);
+	// console.log('data', dataObj);
+	function toggleBackward() {
+
+		if (counterRight === 3) {
 			setdisableLeft(false);
 			setdisableRight(true);
-		}else if(counterRight > 2){
+		} else if (counterRight > 2) {
 			setdisableLeft(false);
 			setdisableRight(false);
-		}else{
+		} else {
 			setdisableLeft(true);
 			setdisableRight(false);
 		}
 
 		setcounterRight(counterRight - 1);
-		console.log('FFFFF',counterRight);
+		console.log('FFFFF', counterRight);
 
-        if (valRight === 0) {
-            setValRight(prevCount => 3)
-        } else {
-            setValRight(prevCount => prevCount - 1);
-            let temp = dataObj.pop();
-            // console.log('temp', temp)
-            // console.log(dataObj);
-            dataObj.unshift(temp);
-            // console.log('after left', dataObj)
-        }
-    }
+		if (valRight === 0) {
+			setValRight(prevCount => 3)
+		} else {
+			setValRight(prevCount => prevCount - 1);
+			let temp = dataObj.pop();
+			// console.log('temp', temp)
+			// console.log(dataObj);
+			dataObj.unshift(temp);
+			// console.log('after left', dataObj)
+		}
+	}
 
 
 	return (
@@ -172,30 +172,30 @@ function HomeTestimonial() {
 					<div className="row d-flex justify-content-center">
 
 						<div className="col-lg-10">
-				
-						
 
-						<div>
-							
-						</div>
+
+
+							<div>
+
+							</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-								<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} alt={"Loading"} />
 									{/* <img src={dataObj[1].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub21'>
-								<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} alt={"Loading"} />
 									{/* <img src={dataObj[2].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub23'>
-								<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} alt={"Loading"} />
 									{/* <img src={dataObj[3].img} alt="Loading" /> */}
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-									<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className="main-img-slide" alt="Loading"/>
+										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"main-img-slide"} alt={"Loading"} />
 										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
 									</div>
 									<div className="slider-item-des">
@@ -208,16 +208,16 @@ function HomeTestimonial() {
 										<div className="item-des-cont">
 											<p>{dataObj[0].des}</p>
 										</div>
-										
+
 										<div className="likes-view">
 											<div className='likes-view-left'>
 												<FontAwesomeIcon icon={faHeart} />
 												<h5>{dataObj[0].likes}</h5>
 											</div>
-											
+
 											<div className='right-btn-extr'>
 												<button className='btn btn-outline-primary leftt-btn' disabled={disableLeft} onClick={toggleBackward} >
-													<FontAwesomeIcon icon={faArrowLeftLong} />	
+													<FontAwesomeIcon icon={faArrowLeftLong} />
 												</button>
 												<button className='btn btn-outline-primary rightt-btn btn-xl' disabled={disableRight} onClick={toggleForward} >
 													<FontAwesomeIcon icon={faArrowRightLong} />

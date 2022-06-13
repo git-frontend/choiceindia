@@ -1,7 +1,18 @@
 @import '../../assets/css/customvariable.scss';
 
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 
 .home-banner{
+    animation: hideMe 4s forwards; 
     padding: 4rem 0 0;
     background-color: #EFEDF2;
     .banner-img{
@@ -36,6 +47,7 @@
 }
 
 .main-services {
+    animation: hideMe 4s forwards; 
     padding: 20rem 0 15rem 0;
     position: relative;
 
@@ -172,6 +184,7 @@
 }
 
 .choice-finx{
+    animation: hideMe 4s forwards; 
     background: url(../../assets/images/bg-img1.png) no-repeat #F3FAFF;
     background-size: 100% 100%;
     padding-top: 10rem;

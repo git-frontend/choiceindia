@@ -8,19 +8,29 @@ import Journey from './Journey';
 import CoreValues from './CoreValues';
 import WhatWeOffer from './WhatWeOffer';
 // import AboutHeader from './AboutHeader';
-
-
+import { useState } from "react";
+import Template2 from '../Common-features/Template2';
 import "./aboutus.scss";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 function AboutUs() {
 
+  const [skeleton, setSkeleton] = useState(true);
+
+  setTimeout(myGreeting, 1000);
+
+  
+  function myGreeting() {
+    setSkeleton(() => false);
+  }
+
   return (
     <div>
       
-     
-       <div className="mainwrapper">
+      {
+        skeleton ? <Template2/>:
+        <div className="mainwrapper">
          
          <Banner />
          <Team />
@@ -31,6 +41,7 @@ function AboutUs() {
          <Clients />
          
        </div>
+      }
       
     
     </div>

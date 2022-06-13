@@ -56,7 +56,7 @@ function Team() {
                   <Slider {...settings} className="team-list-slider">
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image1} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image1} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image1} className="img-fluid" alt="loading" /> */}
                         </span>
                         <div className="namedesg">
@@ -68,7 +68,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image2} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image2} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image2} className="img-fluid" alt="loading" /> */}
                         </span>
                         <div className="namedesg">
@@ -80,7 +80,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image3} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image3} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image3} className="img-fluid" alt="loading"/> */}
                         </span>
                         <div className="namedesg">
@@ -92,7 +92,7 @@ function Team() {
                       </div>
                      <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image4} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image4} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image4} className="img-fluid" alt="loading"/> */}
                         </span>
                         <div className="namedesg">
@@ -103,7 +103,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image5} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image5} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image5} className="img-fluid" alt="loading" /> */}
                         </span>
                         <div className="namedesg">
@@ -114,7 +114,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                        <LazyLoader src={image6} className="img-fluid" alt="Loading" />
+                        <LazyLoader src={image6} className={"img-fluid"} alt={"Loading"} />
                           {/* <img src={image6} className="img-fluid" alt="loading" /> */}
                         </span>
                         <div className="namedesg">

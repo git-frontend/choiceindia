@@ -51,7 +51,7 @@ function BannerSection() {
                                        <div key={response.id}>
 									   <a href="/" className="trending-itm">
 									   <div className="trending-itm-img">
-									   <LazyLoader src={response.feature_image} className="img-blog" alt="Loading" />
+									   <LazyLoader src={response.feature_image} className={"img-blog"} alt={"Loading"} />
 										   {/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
 									   </div>
 									   <div className="trending-itm-des">
