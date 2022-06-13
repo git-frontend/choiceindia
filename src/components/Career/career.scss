@@ -12,7 +12,7 @@
 }
 
 .career-list-slider{
-    animation: hideMe 4s forwards; 
+ 
     .slick-slide{
         padding:0 2rem;
         outline: none;
@@ -64,8 +64,15 @@
     
     .bannersection{
         padding-bottom: 0;
-        
-       
+        .client-list-slider{
+            .overlay{
+                display: none;    
+            }
+        .img-fluid{
+            width:55rem;
+            
+        }
+        }
     }
 
     .benefits-perks{

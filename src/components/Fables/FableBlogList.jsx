@@ -1,6 +1,8 @@
 import React from "react";
-import  Blog1  from '../../assets/images/fable/blog-list.png';
-import LazyLoader from '../Common-features/LazyLoader'; 
+import  Blog1  from '../../assets/images/fable/blog-img1.jpg';
+import  Blog2  from '../../assets/images/fable/blog-img2.jpg';
+import  Blog3  from '../../assets/images/fable/blog-img3.jpg';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function FableBlogList() {
 
@@ -43,12 +45,6 @@ function FableBlogList() {
 							</li>
 							<li>
 								<a href="/" className="link-txt">Trades</a>
-							</li>
-							<li>
-								<a href="/" className="link-txt">Banking</a>
-							</li>
-							<li>
-								<a href="/" className="link-txt">Technology</a>
 							</li>
 						</ul>
 					</div>

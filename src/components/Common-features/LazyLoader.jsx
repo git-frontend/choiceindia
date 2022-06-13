@@ -13,7 +13,7 @@ export default function LazyLoader({ src,className, alt }) {
             if (entry.intersectionRatio > 0.5) {
               ref.current.src = temp;
               io.current.unobserve(ref.current);
-              console.log('Ref',ref.current);
+              
             }
           });
         },

@@ -27,6 +27,7 @@
             background: url(../../assets/images/app/bannerbefore.png) no-repeat bottom left;
             background-size: contain;
             z-index: 1;
+
             @media (max-width:$sm-x) {
                 display: none;
             }
@@ -78,11 +79,13 @@
        
     }
 
-    .app-benefits-section{
-        padding: 15rem 0 20rem 0;
+    .app-benefits-section {
+        padding: 10rem 0 10rem 0;
         position: relative;
-        &:after{
-            content:'';
+        background-color: $bgcolordark;
+
+        &:after {
+            content: '';
             width: 36em;
             height: 49rem;
             display: block;
@@ -105,6 +108,7 @@
             }
             p{
                 margin: 2rem 0 3rem 0;
+                color: $lightColor;
             }
             @media (max-width: $sm-x){
                 margin-bottom: 4rem;
@@ -118,15 +122,16 @@
             flex-direction: row-reverse;
             .benifit-value-item{
                 border: 0;
-                @extend .light-box-shadow;
+                /*@extend .light-box-shadow;*/
                 border-radius: 20px;
                 padding: 2rem 2.5rem;
                 width: 44%;
                 margin-right: 6%;
                 margin-bottom: 5%;
                 text-align: center;
-                background: #E0EFE4;
-                h4{
+                background: #25B8AF;
+
+                h4 {
                     font-size: 1.78rem;
                     line-height: 1.5;
                     font-family: $font-family-poppins-semibold;
@@ -347,6 +352,7 @@
 
     .app-strategies-bottom{
         padding-bottom: 10rem;
+        padding-top: 10rem;
         position: relative;
         &:before{
             content:'';

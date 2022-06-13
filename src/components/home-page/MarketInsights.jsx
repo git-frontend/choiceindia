@@ -1,11 +1,6 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
-
-
-import { link } from 'react-dom';
-
-
 import { Link } from "react-router-dom";
 
 function MarketInsights() {
@@ -18,7 +13,7 @@ function MarketInsights() {
 
     /** load market insights and fabal */
     function loadMarketinsite() {
-        homeServices.marketInsiteFabal().then(
+        homeServices.marketInsite().then(
             res => {
                 setFabal(res.data.posts);
             }
@@ -31,7 +26,7 @@ function MarketInsights() {
     useEffect(() => {
         setTrigger(true)
 
-        if (trigger === true) {
+        if (trigger===true) {
             loadMarketinsite();
         }
 
@@ -68,7 +63,7 @@ function MarketInsights() {
                                                     <p>{response.excerpt}</p>
                                                 </div>
                                             </div>
-
+                                            
                                         )
 
                                     })
@@ -78,7 +73,7 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <Link to="/fables" className="btn-bg">
+                            <Link to="/" className="btn-bg">
                                 Read More
                             </Link>
                         </div>

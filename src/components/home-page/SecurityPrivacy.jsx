@@ -1,19 +1,19 @@
-import Image1 from '../../assets/images/icons/auction.svg';
-import Image2 from '../../assets/images/icons/shield2.svg';
-import Image3 from '../../assets/images/icons/padlock.svg';
+import  Image1  from '../../assets/images/icons/auction.svg';
+import  Image2  from '../../assets/images/icons/shield2.svg';
+import  Image3  from '../../assets/images/icons/padlock.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function SecurityPrivacy() {
-	return (
-		<div>
+    return (
+        <div>
 
 
-			<section className="security-privacy same-list-bx">
-				<div className="container">
+			<section className="security-privacy same-list-bx"> 
+				<div className="container">	
 					<div className="row d-flex justify-content-center">
 						<div className="col-md-8">
 							<div className="heading-sec">
-								<h3 className="title-first ">Security &amp; Privacy </h3>
+								<h3 className="title-first ">Security &amp; Privacy </h3>								
 							</div>
 						</div>
 					</div>
@@ -52,9 +52,9 @@ function SecurityPrivacy() {
 
 
 
-		</div>
+        </div>
 
-	);
+    );
 }
 
 export default SecurityPrivacy;

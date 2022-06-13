@@ -5,10 +5,12 @@ import Slider from "react-slick";
 import homeServices from '../../Services/homeServices';
 import fableData from '../../Data/homeFable'
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function FablesStories() {
-
+     let Id;
 	const [fslider, setfslider] = useState();
+	const [blog,setblog] =useState();
 	const [trigger, setTrigger] = useState();
 	const [sliderimag, setSliderImag] = useState(0);
 
@@ -16,7 +18,7 @@ function FablesStories() {
 
 	function loadFabalList() {
 
-		homeServices.marketInsiteFabal().then(
+		homeServices.fabalStory().then(
 			res => {
 				setfslider(res.data.posts);
 			}
@@ -24,11 +26,24 @@ function FablesStories() {
 
 	}
 
+	/** get fables Blog */
+
+	function loadFableBlog(Id){
+		homeServices.fablesBlog(Id).then(
+
+			res => {
+				setblog(res.data.posts)
+
+			}
+		)
+	}
+
 	useEffect(() => {
 
 		setTrigger(true)
 		if (trigger === true) {
 			loadFabalList()
+			
 		}
 
 	}, [trigger])
@@ -79,15 +94,15 @@ function FablesStories() {
 								<div className="stories-sec-left">
 									<div>
 										{
-											fslider ?
+											fslider?
 
 												<div>
-													<LazyLoader src={fslider[sliderimag].feature_image} alt={"Loading"} />
+													 <LazyLoader src={fslider[sliderimag].feature_image} alt="Loading" />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
 												<div>
-													<LazyLoader src={fableData[0].feature_image} alt={"Loading"} />
+													<LazyLoader src={fableData[0].feature_image} alt="Loading" />
 													{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
 												</div>
 										}
@@ -98,7 +113,7 @@ function FablesStories() {
 								<div className="stories-sec-right">
 									<div className="">
 										{
-											fslider ?
+											fslider?
 
 												<div className="stories-sec-right-des">
 													<h4>{fslider[sliderimag].title}</h4>
@@ -108,7 +123,7 @@ function FablesStories() {
 													<h4>{fableData[0].title}</h4>
 													<p>{fableData[0].excerpt}</p>
 												</div>
-
+												
 										}
 									</div>
 									<div className="sec-slider-cont fables-parent">
@@ -118,15 +133,26 @@ function FablesStories() {
 											focusOnSelect={true}
 											afterChange={(ev) => {
 												setSliderImag(ev)
+												
 											}}
+
+											
 											className='stories-sec-slider'>
 											{
-												fslider?.map((response, i) => {
+												fslider?.map((response) => {
+													// console.log("index id",index)
+
+													Id=fslider[sliderimag].id;
 
 													return (
 
-														<div className="itm-img" key={response.id} >
-															<LazyLoader src={response.feature_image} alt={"Loading"} />
+														<div className="itm-img" key={response.id} onClick={()=>{
+															loadFableBlog(Id);
+
+															console.log("kkkk",Id);
+														}} >
+														
+															<LazyLoader src={response.feature_image}  alt="Loading" />
 															{/* <img src={response.feature_image} alt="Loading" /> */}
 														</div>
 
@@ -142,9 +168,9 @@ function FablesStories() {
 					</div>
 					<div className="row">
 						<div className="col-md-12 mt-5 d-flex justify-content-center">
-							<a href="/" className="btn-bg">
+						<Link to="/fables" className="btn-bg">
 								View All
-							</a>
+							</Link>
 						</div>
 					</div>
 				</div>

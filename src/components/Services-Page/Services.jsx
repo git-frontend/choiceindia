@@ -13,6 +13,8 @@ import { useState } from 'react';
 // import GovernmentAdvisory from './GovernmentAdvisory';
 // import TaxAdvisory from './TaxAdvisory';
 
+
+import "../home-page/style.scss"
 import "./services.scss";
 
 function Services() {

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
+import Footer from './components/Common-features/Footer';
+import OpentoTop from './components/Common-features/OpentoTop';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -21,46 +23,51 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
-
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
+const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
+const LazyFableDetail = React.lazy(()=> import('./components/Fables-details/FablesDetails'));
+const Lazypartner = React.lazy(()=> import('./components/Partner-Page/Partner'))
+
 
 function Routing() {
     return (
         <>
             <Router>
-                <ScrolltoTop />
-                <Header />
+            <ScrolltoTop />
+            <OpentoTop/>
+            <Header/>
                 <Routes>
                     <Route exact path='/' element={
                         <React.Suspense>
                             < LazyHome />
                         </React.Suspense>} />
                     {/* <Route exact path='/' element={< Home />} /> */}
-
-                    <Route exact path='/About-us' element={
+                    
+                    <Route exact path='/about-us' element={
                         <React.Suspense>
                             < LazyAbout />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/Career' element={
+
+                    <Route exact path='/career' element={
                         <React.Suspense>
                             < LazyCareer />
                         </React.Suspense>} />
 
-                    <Route exact path='/App' element={
+                    <Route exact path='/app' element={
                         <React.Suspense>
                             < LazyApp />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/Fables' element={
+                    <Route exact path='/fables' element={
                         <React.Suspense>
                             < LazyFables />
                         </React.Suspense>
                     } />
 
-                    <Route exact path='/Contact' element={
+                    <Route exact path='/contact' element={
                         <React.Suspense>
                             < LazyContact />
                         </React.Suspense>
@@ -72,8 +79,28 @@ function Routing() {
                         </React.Suspense>
                     } />
 
+
+                    <Route exact path='/faq' element={
+                        <React.Suspense>
+                            < LazyFaq />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/fablesdetail' element={
+                        <React.Suspense>
+                            < LazyFableDetail />
+                        </React.Suspense>
+                    } />
+
+                    <Route exact path='/partner' element={
+                        <React.Suspense>
+                            < Lazypartner />
+                        </React.Suspense>
+                    } />
+
                     <Route path="*" element={<ErrorPage />} />
-                </Routes>
+                </Routes>    
+                <Footer/>
             </Router>
         </>
     )

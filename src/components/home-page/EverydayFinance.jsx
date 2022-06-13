@@ -15,14 +15,14 @@ function EverydayFinance() {
     slidesToShow: 4,
     autoplay: true,
     dots: true,
-    autoplaySpeed: 2000,
-    slidesToScroll: 2,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           adaptiveHeight: true,
         },
       },

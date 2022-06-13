@@ -7,7 +7,23 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function ChoiceFinx() {
 
-  const [store, setstore] = useState(0)
+  const [store, setstore] = useState(0);
+  const [checkdevice, setcheckdevice] = useState(false);
+
+
+
+  function Detect() {
+    
+
+    if (/Android|webOS|windows phone|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
+
+      setcheckdevice(false)
+
+    } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
+
+      setcheckdevice(true)
+    }
+  }
 
   return (
     <div>
@@ -25,11 +41,11 @@ function ChoiceFinx() {
                   </div>
                   <div className="finx-app-list workList">
                     {
-                      FinxImage.slice(0, 3).map((response, index) => {
+                      FinxImage.slice(0,3).map((response, index) => {
 
                         return (
                           <div className="app-list-item" key={response.id}>
-                            <a href="/" data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
+                        <a href="/" data-img={ImageSub9} onMouseOver={()=>{setstore(index)}}>
                               <LazyLoader src={response.icon} className={"img-fluid"} alt={"Loading"} />
                               {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
                               <h4>{response.title}</h4>
@@ -65,14 +81,23 @@ function ChoiceFinx() {
                   </div>
                 </div>
                 <div className="finx-app-img workImages">
-                  <LazyLoader src={FinxImage[store].image} className={""} alt={"Loading"} />
+                  <LazyLoader src={FinxImage[store].image} className="" alt="Loading" />
                   {/* <img src={FinxImage[store].image} className="" alt="Loading" /> */}
                 </div>
-                <div className="expl-app">
-                  <a href="/">
-                    <span className="btn-bg">Explore App</span>
-                  </a>
-                  <a href="/">
+                <div className="expl-app" onClick={() => Detect()}>
+                  {
+                    checkdevice === true ?
+
+                      <a href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1'  >
+                        <span  className="btn-bg">Explore App</span>
+                      </a>
+                      :
+                      <a href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy'  >
+                        <span className="btn-bg">Explore App</span>
+                      </a>
+                  }
+
+                  <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank">
                     {/* <img src={ImageSub10} className="ico-img" /> */}
                     <svg width="55" height="55" className="media" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle className="yellow" cx="36" cy="36.3379" r="35" fill="white" stroke="#B6AAA7" strokeOpacity="0.47" />
@@ -101,7 +126,7 @@ function ChoiceFinx() {
 
 
                   </a>
-                  <a href="/">
+                  <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank">
                     {/* <img src={ImageSub11} className="ico-img" /> */}
                     <svg width="55" height="55" className="media" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <circle className="yellow" cx="36" cy="36.3379" r="35" fill="white" stroke="#DDD7D5" />

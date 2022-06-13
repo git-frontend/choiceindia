@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import homeServices from '../../Services/homeServices';
+import fableServices from '../../Services/fableServices';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerSection() {
@@ -8,7 +8,7 @@ function BannerSection() {
 	const [trigger, setTrigger] = useState();
 
 	function loadFableList(){
-		homeServices.marketInsiteFabal().then (
+		fableServices.fabalTrending().then (
 			res=>{
 				setData(res.data.posts);
 

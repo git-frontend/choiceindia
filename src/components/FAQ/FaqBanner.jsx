@@ -1,7 +1,8 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import image1 from "../../assets/images/Faq/faq1.png";
+import image1 from "../../assets/images/Faq/faq-banner.jpg";
 import LazyLoader from '../Common-features/LazyLoader';
+
 
 function FaqBanner() {
 
@@ -31,13 +32,20 @@ function FaqBanner() {
                                     </div>
                                 </div>
                             </div>
+                            <div>
+                            
+                            </div>
+
                         </div>
                     </div>
-                </section>
-
+                </div>
             </div>
-
-
+         </div>
+    </section>
+        
+        </div>
+        
+        
         </>
     )
 
