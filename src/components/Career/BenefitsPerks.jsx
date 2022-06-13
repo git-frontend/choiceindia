@@ -14,13 +14,13 @@ function BenefitsPerks() {
     
 
   return (
-    <div className='career-main'>
+      <div className='career-main' >
       
      
     
 
-    <section className='benefits-perks'>
-      <div className='container'>
+          <section className='benefits-perks container'>
+      
         <div className='row'>
             <div className='col-md-12'>
               <div className="heading-sec">
@@ -66,7 +66,7 @@ function BenefitsPerks() {
                 </div>
             </div>
         </div>
-      </div>
+     
     </section>
       
     
