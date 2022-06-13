@@ -16,7 +16,7 @@ function AppTradeBenefits() {
       <section className="trade-benefits-section">
 				<div className="container">
 					<div className="row justify-content-end">
-						<div className="col-md-5">
+						<div className="col-xl-5 col-md-12">
                 <div className="benefits-list-top">
                     <div className="list-top-itm">
                         <h3><span className="sm-ico"><FaRupeeSign /></span>0</h3>

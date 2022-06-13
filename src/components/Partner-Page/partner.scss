@@ -98,7 +98,7 @@
 
 
 .benefits-partnering {
-    padding: 7rem 0;
+    padding: 7rem 0 10rem 0;
     position: relative;
 
     background-color: $bgcolor-cream;
@@ -145,6 +145,7 @@
         z-index: 0;
         background-size: contain;
         position: absolute;
+        display: none;
 
         @media (max-width:$md) {
             display: none;
@@ -153,10 +154,11 @@
 }
 
 .middle-bar-cont {
-    padding: 3rem 0;
+    padding: 3rem;
     background: $bgcolordark;
     border-radius: 15px;
-
+    position: relative;
+    margin-top: -5.5rem;
 
     .bar-cont-des {
         display: flex;
@@ -193,6 +195,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 5rem;
+        position: relative;
         .work-steps-itm{
             width: 19%;
             text-align: center;
@@ -203,7 +206,6 @@
                 height: 130px;
                 border-radius: 50%;
                 background: $whiteColor;
-                @extend .box-shadow;
                 display: flex;
                 align-items: center;
                 position: relative;
@@ -242,6 +244,24 @@
             @media (max-width:$xs) {
                 width: 49.33%;
                 margin-bottom: 3rem;
+            }
+        }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border: none;
+            border-top: 1px dashed $darkColorgray;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 80%;
+            top: 32%;
+            margin: 0 auto;
+            right: 0;
+
+            @media (max-width:$sm) {
+                display: none;
             }
         }
     }
