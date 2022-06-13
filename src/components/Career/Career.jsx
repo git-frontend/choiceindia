@@ -2,8 +2,8 @@
 import React from "react";
 import BannerCareer from './BannerCareer';
 import BenefitsPerks from './BenefitsPerks';
-import CareerTeam from './CareerTeam';
-import CareerJobs from './CareerJobs';
+//import CareerTeam from './CareerTeam';
+//import CareerJobs from './CareerJobs';
 import "./career.scss";
 // import CareerHeader from './CareerHeader.jsx';
 
@@ -14,8 +14,8 @@ function Career() {
      
       <BannerCareer />
       <BenefitsPerks />
-      <CareerTeam />
-      <CareerJobs />
+      {/*<CareerTeam />
+      <CareerJobs />*/}
      
     
     

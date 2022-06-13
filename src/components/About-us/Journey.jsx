@@ -38,9 +38,9 @@ function Journey() {
         <section className="Journey">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-10 mx-auto">
+                    <div className="col-md-12 mx-auto">
                     <h2 className="heading">Our Journey</h2>
-                    <p className="journeyinfo">Our long journey has several milestones but the most important one has been our client’s trust which we cherish the most.</p>
+                    <p className="journeyinfo">Our long journey has several milestones but <br/> the most important one has been our client’s trust which we cherish the most.</p>
                     </div>
                 </div>
                 <div className="row">
