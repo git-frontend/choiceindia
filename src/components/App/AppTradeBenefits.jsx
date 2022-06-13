@@ -57,6 +57,7 @@ function AppTradeBenefits() {
                         </div>
                     </div>
                 </div>
+                <h3 className="benefits-ttl">Open Demat Account with <span>Choice</span></h3>
 						</div>
 					</div>
 				</div>

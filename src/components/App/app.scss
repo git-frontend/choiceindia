@@ -538,7 +538,7 @@
 }
 
 .trade-benefits-section{
-    background:url(../../assets/images/app/banner-botttom.jpg) no-repeat;
+    background:url(../../assets/images/app/banner-botttom.jpg) no-repeat bottom left;
     background-size: cover;
     padding: 10rem 0;
     position: relative;
@@ -676,6 +676,14 @@
                 }
             }
         }   
+    }
+    .benefits-ttl{
+        font-size: 2.4rem;
+        margin-top: 3rem;
+        font-family:$font-family-poppins-medium;
+        span{
+            font-family: $font-family-poppins-semibold;
+        }
     }
 }
 
