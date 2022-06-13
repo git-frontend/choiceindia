@@ -7,6 +7,7 @@ import {IoMdSearch} from 'react-icons/io';
 import  Vector1  from '../../assets/images/app/clip-arrow.svg';
 import  Vector2  from '../../assets/images/app/sector.svg';
 
+
 function AppTradeBenefits() {
 
   return (

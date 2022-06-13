@@ -14,7 +14,7 @@ function EquityBroking() {
                 <div className="col-md-12">
                     <div className="heading-sec">
                         <h3 className="title-first ">Equity Broking </h3>				
-                        <p className="nm-text">Choice allows you to trade in equities at your fingertips with best in class technology & unbeatable research calls.  Invest in Capital Markets with smart insights &amp; recommendations from our research desk to get returns in multifolds</p>
+                        <p className="nm-text">Choice allows you to trade in equities at your fingertips with best in className technology & unbeatable research calls.  Invest in Capital Markets with smart insights &amp; recommendations from our research desk to get returns in multifolds</p>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@ function EquityBroking() {
                     </div>
                 </div>
             </div>
-            <div class="row"><div class="col-md-12 mt-5 d-flex justify-content-center"><a href="/" class="btn-bg">Explore</a></div></div>
+            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
         </div>
     </section>
       

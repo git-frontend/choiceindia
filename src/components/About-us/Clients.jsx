@@ -6,6 +6,7 @@ import libertyinsurance from '../../assets/images/about-us/libertyinsurance.svg'
 import aadhar from '../../assets/images/about-us/aadhar.svg';
 import navkar from '../../assets/images/about-us/navkar.svg';
 import idea from '../../assets/images/about-us/idea.svg';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function Clients() {
   return (
@@ -21,44 +22,54 @@ function Clients() {
           <div className="row">
             <div className="col-md-12">
               <div className="client-list">
-                
-                  <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
-                   <div className="image_wrapper">
-                     <img src={nitiaayog} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={libertyinsurance} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={aadhar} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={navkar} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={idea} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={nitiaayog} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={libertyinsurance} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={aadhar} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={navkar} alt="" />
-                   </div>
-                   <div className="image_wrapper">
-                     <img src={idea} alt="" />
-                   </div>
-                 </Marquee>
 
+                <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={nitiaayog} alt="" />*/}
+                     <img src={nitiaayog} alt="" /> 
                   </div>
-                </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={libertyinsurance} alt="" >*/}
+                     <img src={libertyinsurance} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={aadhar} alt="" />*/}
+                    <img src={aadhar} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={navkar} alt="" />*/}
+                    <img src={navkar} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={idea} alt="" />*/}
+                    <img src={idea} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={nitiaayog} alt="" />*/}
+                    <img src={nitiaayog} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={libertyinsurance} alt="" />*/}
+                     <img src={libertyinsurance} alt="" />
+                  </div>
+                  <div className="image_wrapper">
+                      {/**<LazyLoader src={aadhar} alt="" />*/}
+                     <img src={aadhar} alt="" /> 
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={navkar} alt="" />*/}
+                     <img src={navkar} alt="" /> 
+                  </div>
+                  <div className="image_wrapper">
+                    {/**<LazyLoader src={idea} alt="" />*/}
+                    <img src={idea} alt="" /> 
+                  </div>
+                </Marquee>
+
               </div>
             </div>
+          </div>
+        </div>
       </section>
 
 

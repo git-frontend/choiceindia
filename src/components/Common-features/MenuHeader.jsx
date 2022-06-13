@@ -8,6 +8,8 @@ import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 export default function Header() {
 
     const [show, setShow] = useState(true)
+
+  
    
     
         return (
@@ -20,7 +22,7 @@ export default function Header() {
                         <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
                         </NavLink>
                     <button className="navbar-toggler border" 
-                    onClick={ ()=>{ setShow(false) } } >
+                    onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
                     </button>
                         <div className={ show ? 'collapse navbar-collapse' : 'collapse navbar-collapse active'}>
@@ -32,22 +34,22 @@ export default function Header() {
                                 <NavLink to= '/app' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/Services'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                                <NavLink to= '/services'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/Research'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                                <NavLink to= '/research'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/Career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
+                                <NavLink to= '/career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/Contact' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
+                                <NavLink to= '/contact' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <NavLink to= '/Log In' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
+                                <NavLink to= '/log in' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
                             </li>
                             <li className="nav-item get-btn">
-                            <NavLink className="nav-link"  to= "/">Get Started</NavLink>
+                            <a className="nav-link"  href= "https://choiceindia.com/open-free-demat-account">Get Started</a>
                             </li>
                         </ul>
                     </div>
