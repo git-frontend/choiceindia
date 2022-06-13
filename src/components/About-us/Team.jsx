@@ -1,12 +1,12 @@
 
 import React from "react";
 
-import image1 from '../../assets/images/about-us/kamal-poddar.png';
-import image2 from '../../assets/images/about-us/ajay-kejriwal.png';
-import image3 from '../../assets/images/about-us/sunil-bagaria.png';
-import image4 from '../../assets/images/about-us/ram-ratan-chirania.png';
-import image5 from '../../assets/images/about-us/sumeet-bagadia.png';
-import image6 from '../../assets/images/about-us/sundar-sanmukhani.png';
+import image1 from '../../assets/images/about-us/kamal-poddar.webp';
+import image2 from '../../assets/images/about-us/ajay-kejriwal.webp';
+import image3 from '../../assets/images/about-us/sunil-bagaria.webp';
+import image4 from '../../assets/images/about-us/ram-ratan-chirania.webp';
+import image5 from '../../assets/images/about-us/sumeet-bagadia.webp';
+import image6 from '../../assets/images/about-us/sundar-sanmukhani.webp';
 import Slider from "react-slick";
 function Team() {
     const settings = {

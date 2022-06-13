@@ -1,6 +1,7 @@
 import React from "react";
-import  Blog1  from '../../assets/images/fable/blog-list.png';
-import LazyLoader from '../Common-features/LazyLoader'; 
+import  Blog1  from '../../assets/images/fable/blog-img1.jpg';
+import  Blog2  from '../../assets/images/fable/blog-img2.jpg';
+import  Blog3  from '../../assets/images/fable/blog-img3.jpg';
 
 function FableBlogList() {
 
@@ -44,12 +45,6 @@ function FableBlogList() {
 							<li>
 								<a href="/" className="link-txt">Trades</a>
 							</li>
-							<li>
-								<a href="/" className="link-txt">Banking</a>
-							</li>
-							<li>
-								<a href="/" className="link-txt">Technology</a>
-							</li>
 						</ul>
 					</div>
 				</div>
@@ -60,8 +55,7 @@ function FableBlogList() {
 							<div className="tab-blog-list">
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
-										{/* <img src={Blog1} className="" alt="loading" /> */}
+										<img src={Blog1} className="" alt="loading" />
 									</div>
 									<div className="blog-item-des">
 										<h4>Shein setting a trend again for fashionistas – It’s a comeback</h4>
@@ -74,8 +68,7 @@ function FableBlogList() {
 								</a>
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
-										{/* <img src={Blog1} className="" alt="loading" /> */}
+										<img src={Blog2} className="" alt="loading" />
 									</div>
 									<div className="blog-item-des">
 										<h4>How Indian Telcos are gearing up for 5G?</h4>
@@ -88,8 +81,7 @@ function FableBlogList() {
 								</a>
 								<a href="/" className="tab-blog-item">
 									<div className="blog-item-img">
-									<LazyLoader src={Blog1} className="" alt="Loading" />
-										{/* <img src={Blog1} className="" alt="loading" /> */}
+										<img src={Blog3} className="" alt="loading" />
 									</div>
 									<div className="blog-item-des">
 										<h4>The journey of Idea cellular from idea to VI</h4>

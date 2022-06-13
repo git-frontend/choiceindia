@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/equity-broking-banner.jpg';
+import Bannerimage from '../../assets/images/services/equity-broking-banner.webp';
 
 function EquityBroking() {
 

@@ -24,7 +24,8 @@
             font-family: 'PoppinsRegular';
         }
         .heading{
-            padding: 1rem 0 3rem 0;
+            padding-bottom: 2.5rem;
+            text-align: center;
             @media screen and (max-width: $sm) {
                 font-size: 2rem;
                 line-height: 1.9375rem;

@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/banner-top.jpg';
+import Bannerimage from '../../assets/images/services/banner-top.webp';
 function Banner() {
 
   return (
