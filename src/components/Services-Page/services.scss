@@ -4,7 +4,7 @@
 
 
 .service-banner{
-    padding-bottom: 20rem;
+    padding-bottom: 10rem;
     overflow: inherit;
     .bnr-left{
         padding-right: 4rem;
@@ -26,7 +26,7 @@
             padding-left: 0;
         }
     }
-    &::after {
+    /*&::after {
         content: '';
         width: 25rem;
         height: 40rem;
@@ -40,7 +40,7 @@
         @media (max-width: $md) {
             display: none;
         }
-    }
+    }*/
     @media (max-width: $md) {
         padding-bottom: 5rem;
     }
@@ -53,6 +53,7 @@
 
 .services-same-list-bx{
     position: relative;
+    padding-bottom:10rem;
     .same-list-bx-list{
         margin-left: -1.5%;
         .same-list-bx-item{
@@ -108,7 +109,7 @@
 
 .service-tab-cont{
     .heading-sec{
-        margin-bottom:10rem;
+        margin-bottom:0rem;
         @media (max-width: $sm) {
             margin-bottom: 0;
         }
