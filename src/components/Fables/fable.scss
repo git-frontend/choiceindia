@@ -260,7 +260,7 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            overflow: auto;
+            overflow: inherit;
             top: -5rem;
             justify-content: space-between;
 
@@ -275,8 +275,10 @@
                     font-family: $font-family-poppins-medium;
                     border: 0;
                     font-size: 1.375rem;
-
-                    &.link-active {
+                    @media (max-width: $md) {
+                        padding: 1rem 0;
+                    }
+                    &.link-active{
                         font-family: $font-family-poppins-semibold;
 
                         &::before {
@@ -291,6 +293,9 @@
                             right: 0;
                             margin: 0 auto;
                             border-radius: 2px;
+                            @media (max-width: $md) {
+                                bottom: 0;
+                            }
                         }
                     }
 
@@ -307,9 +312,15 @@
                             right: 0;
                             margin: 0 auto;
                             border-radius: 2px;
+                            @media (max-width: $md) {
+                                bottom: 0;
+                            }
                         }
                     }
                 }
+            }
+            @media (max-width: $md) {
+                overflow: auto;
             }
         }
     }
