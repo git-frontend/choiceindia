@@ -57,7 +57,7 @@ body{
 // Management team
 
 .managementteam{
-    padding: 8.125rem 0 10rem;
+    padding: 8.125rem 0 13rem;
     position: relative;
 
     @media (max-width:$sm) {
@@ -96,7 +96,7 @@ body{
     }
     
     .heading{
-        padding-bottom: 3.75rem;
+        padding-bottom: 4.5rem;
         @media (max-width:$sm) {
             padding-bottom: 2.5rem;
         }
@@ -108,6 +108,9 @@ body{
             position: relative;
             overflow: hidden;
             border-radius: 20px;
+            background: #ad8b73;
+            padding: 1rem 1rem 0 1rem;
+            transition:  0.3s all ease-in;
             @media (max-width:$sm) {
                 width:95% !important;
                 display: block !important;
@@ -116,21 +119,16 @@ body{
             .namedesg{
                position: absolute;
                 bottom: 0;
-                transform: translateY(2.5rem);
+                transform: translateY(8.5rem);
                 left: 0;
                 right: 0;
                 width: 100%;
                 color: $whiteColor;
                 text-align: center;
                 background: #221F2080;
-                border-radius: 0px 0px 20px 20px;
+                border-radius:0;
                 transition:  0.3s all ease-in;
-                @media (max-width:$sm) {
-                    bottom: -37px;
-                 }
-                //  @media (min-width:769px) and (max-width:1024px) {
-                //     top: 68%;
-                //  }
+
                 h5{
                    margin: 0;
                    padding: 0.75rem;
@@ -155,8 +153,18 @@ body{
             }
          
            
-            &:hover .namedesg{
-                transform: translateY(0);
+            &:hover{
+                background: #363233;
+                .namedesg{
+                    transform: translateY(0);
+                }
+            }
+            .img-itm{
+                display: block;
+                margin: 0 auto;
+                img{
+                    margin: 0 auto;
+                }
             }
            
         }
@@ -223,6 +231,9 @@ body{
             }
           
        }
+       .slick-dots{
+        bottom: -80px;
+       }
     }
 }
 
@@ -278,7 +289,7 @@ body{
     position: relative;
 
     @media (max-width:$sm) {
-        padding: 4rem 0;
+        padding: 8rem 0 0 0;
     }
 
     &:after {
@@ -478,7 +489,8 @@ body{
             height: 5.1875rem;
             width: 12.5rem;
             background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
-            top: -12%;
+            background-size: contain;
+            top: -13%;
             left: 2rem;
             z-index: -1;
             @media (max-width:$sm) {
@@ -492,7 +504,8 @@ body{
             height: 5.1875rem;
             width: 12.5rem;
             background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
-            bottom: -12%;
+            background-size: contain;
+            bottom: -13%;
             right: 12%;
             z-index: -1;
         

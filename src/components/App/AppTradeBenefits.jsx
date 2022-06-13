@@ -2,6 +2,10 @@
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
+import {FaRupeeSign} from 'react-icons/fa';
+import {IoMdSearch} from 'react-icons/io';
+import  Vector1  from '../../assets/images/app/clip-arrow.svg';
+import  Vector2  from '../../assets/images/app/sector.svg';
 
 function AppTradeBenefits() {
 
@@ -10,21 +14,47 @@ function AppTradeBenefits() {
 
       <section className="trade-benefits-section">
 				<div className="container">
-					<div className="row">
-						<div className="col-lg-11 col-md-12">
-                <div className='trade-benefits-sub'>
-                <div className="heading-sec">
-								 <h2 className="title-secnd">Trade with the best mobile trading app in India and <br/> avail lucrative benefits.</h2>               
-							  </div>
-
-                    <ul className='reset'>
-                      <li>Free* <span className='clr-cng'>Demat Account Opening</span></li>
-                      <li>Zero Account Opening Fees*</li>
-                      <li>Low Brokerage Charges</li>
-                      <li>Trade at 2 Paise*</li>
-                      <li>Free Research with 80% success ratio</li>
-                    </ul>
-                    <a href="/" className="btn-bg">Get Started</a>
+					<div className="row justify-content-end">
+						<div className="col-md-5">
+                <div className="benefits-list-top">
+                    <div className="list-top-itm">
+                        <h3><span className="sm-ico"><FaRupeeSign /></span>0</h3>
+                        <h4>Account Opening</h4>
+                        <h6>Charges &amp; AMC for 1st Year</h6>
+                    </div>
+                    <div className="list-top-itm">
+                        <h3><IoMdSearch /></h3>
+                        <h4>Expert Research</h4>
+                        <h6>Advisory</h6>
+                    </div>
+                    <div className="list-top-itm">
+                        <h3><span className="sm-ico"><FaRupeeSign /></span>10</h3>
+                        <h4>Lowest DP</h4>
+                        <h6>Charges</h6>
+                    </div>
+                </div>
+                <div className="free-tool-sec">
+                  <h4 className="tool-ttl">Free Tools worth  <FaRupeeSign className="ico"/>50000</h4>
+                    <div className="tool-sec-list">
+                        <div className="sec-list-itm">
+                            <div className="list-itm-lft">
+                                <img src={Vector1} className="sm-img" alt="Signal"/>
+                                <h5>Signal</h5>
+                            </div>
+                            <div className="list-itm-rht">
+                              <h6>An Automated Research Engine with 5 Customised strategies</h6>
+                            </div>
+                        </div>
+                        <div className="sec-list-itm">
+                            <div className="list-itm-lft">
+                                <img src={Vector2} className="sm-img" alt="Stratezy"/>
+                                <h5>Stratezy</h5>
+                            </div>
+                            <div className="list-itm-rht">
+                              <h6>Create, Backtest and Optimize Strategies on Past Data</h6>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 						</div>
 					</div>

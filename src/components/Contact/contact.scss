@@ -32,12 +32,14 @@
         color: $primary;
         .big-ttl{
             @media (max-width: $sm){
-               font-size: 3rem;
-               line-height: 1;
+               font-size: 2.5rem;
+               line-height: 1.2;
             }
         }
     }
-   
+    @media (max-width: $sm){
+        padding-bottom: 0;
+    }
  
 
            
@@ -50,7 +52,7 @@
  
 
 .contactdetail{
-    padding:15rem 0 0 0;
+    padding:5rem 0 0 0;
     position: relative;
     @media (max-width: 1024px){
         
@@ -237,15 +239,14 @@
         z-index: 9;
         padding: 3rem 2.8rem;
         @media (max-width: $sm){
-            margin-top: 17rem;
-            top: 138%;
+            
             padding: 3rem 2rem;
          }
          @media (min-width:$sm) and (max-width: $sm-x){
-          top: 150%;
+         
          }
          @media (min-width:769px) and (max-width:1024px){
-            top: 145%;
+           
            }
         
         .formgrp{
@@ -285,7 +286,9 @@
                     font-size: 1.2rem;
                  }
             }
-            
+            @media (max-width: $xs){
+                width: 100%;
+            }
         }
         .formlabel{
             color: $lightColor;
@@ -432,6 +435,10 @@
             min-width: 11rem;
             border-radius: 10px;
            }
+        }
+        @media (max-width: $sm){
+            margin-top: 0;
+            padding-top: 2.5rem;
         }
 }
 
