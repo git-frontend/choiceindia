@@ -4,16 +4,16 @@
 .App-main {
     .banner-app {
         position: relative;
-
+        overflow: hidden;
         &:before {
-            content: '';
-            width: 22em;
-            height: 42rem;
+            content: "";
+            width: 15rem;
+            height: 23rem;
             display: block;
             position: absolute;
             left: 0;
-            bottom: -22rem;
-            background: url(../../assets/images/app/bannerbefore.png) no-repeat bottom left;
+            bottom: -12rem;
+            background: url(../../assets/images/app/bannerbefore.svg) no-repeat bottom left;
             background-size: contain;
             z-index: 1;
 
@@ -398,7 +398,7 @@
         padding-bottom: 10rem;
         padding-top: 10rem;
         position: relative;
-
+        overflow: hidden;
         &:before {
             content: '';
             width: 22em;
@@ -538,18 +538,19 @@
 }
 
 .trade-benefits-section{
-    background:$bgcolor-lightgray;
+    background:url(../../assets/images/app/banner-botttom.jpg) no-repeat;
+    background-size: cover;
     padding: 10rem 0;
     position: relative;
     &:after{
         content:'';
-        width: 33em;
-        height: 45rem;
+        width: 7rem;
+        height: 19rem;
         display: block;
         position: absolute;
-        right: 0;
-        bottom: -22rem;
-        background: url(../../assets/images/app/wealthbefore.png) no-repeat bottom right;
+        left:0;
+        top: 1rem;
+        background: url(../../assets/images/app/wealthbefore.png) no-repeat top left;
         background-size: contain;
         @media (max-width:$sm) {
             display: none;
@@ -587,6 +588,94 @@
     }
     @media (max-width: $sm-x){
         padding: 5rem 1rem;
+    }
+
+    .benefits-list-top{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+        .list-top-itm{
+            h3{
+                font-size: 4rem;
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
+                display: flex;
+                line-height: 0.8;
+                min-height: 4rem;
+                .sm-ico{
+                    vertical-align: super;
+                    font-size: 1.5rem;
+                }
+            }
+            h4{
+                font-family: $font-family-poppins-semibold;
+            }
+            h6{
+                font-family: $font-family-poppins-regular;
+            }
+        }
+    }
+    .free-tool-sec{
+        position: relative;
+        border: 1px solid #838383;
+        border-radius: 18px;
+        padding: 2rem 0.5rem;
+        .tool-ttl{
+            font-family: $font-family-poppins-semibold;
+            position: absolute;
+            top: -9px;
+            background: #dbdadf;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            max-width: 230px;
+            font-size: 1.3rem;
+            .ico{
+                font-size: 1rem;
+                vertical-align: inherit;
+            }
+        }
+        .tool-sec-list{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .sec-list-itm{
+                width: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                padding: 0 1.8rem;
+                align-items: center;
+                border-right: 1px solid #838383;
+                .list-itm-lft{
+                    h5{
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        margin-top: 0.4rem;
+                        font-size: 1.1rem;
+                    }
+                    .sm-img{
+                        width: 20px;
+                        margin: 0 auto;
+                        display: block;
+                    }
+                }
+                .list-itm-rht{
+                    width: calc(100% - 75px);
+                    h6{
+                        font-family: $font-family-poppins-regular;
+                        line-height: 1.3;
+                    }
+                }
+                &:last-child{
+                    border-right: 0;
+                }
+            }
+        }   
     }
 }
 
