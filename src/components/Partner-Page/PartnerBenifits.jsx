@@ -30,7 +30,7 @@ function PartnerBenifits() {
                 </div>
                 <div className="row align-items-center">
                     <div className="col-md-6">
-                       <img src={BenefitsBanner} alt="Benefits of Partnering with Us" className="img-fluid" />
+                          <img src={BenefitsBanner} alt="Benefits of Partnering with Us" className={"img-fluid"} />
                     </div>
                     <div className="col-md-6">
                         <div className="partnering-list">
@@ -89,7 +89,7 @@ function PartnerBenifits() {
             <div className="container">
                 <div className="bar-cont-des">
                     <h3 className="title-fourth">Begin your Enterpreneurial Journey with Choice</h3>
-                    <a href="#" className="btn-bg">Get Started</a>
+                      <a href="#" className="btn-bg-yellow ">Get Started</a>
                 </div>
             </div>
         </section>
