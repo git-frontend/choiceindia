@@ -139,7 +139,7 @@ function FablesStories() {
 											
 											className='stories-sec-slider'>
 											{
-												fslider?.map((response,index) => {
+												fslider?.map((response) => {
 													// console.log("index id",index)
 
 													Id=fslider[sliderimag].id;
