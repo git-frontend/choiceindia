@@ -7,20 +7,21 @@ import image3 from '../../assets/images/about-us/sunil-bagaria.webp';
 import image4 from '../../assets/images/about-us/ram-ratan-chirania.webp';
 import image5 from '../../assets/images/about-us/sumeet-bagadia.webp';
 import image6 from '../../assets/images/about-us/sundar-sanmukhani.webp';
+import image7 from '../../assets/images/about-us/person-img.webp';
 import Slider from "react-slick";
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Team() {
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 2000,
-        arrows: true,
-        slidesToShow: 3,
-        autoplay: true,
+        arrows: false,
+        slidesToShow: 4,
+        autoplay: false,
         margin:15,
-        dots:false,
+        dots:true,
         autoplaySpeed: 800,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         responsive: [
           {
             breakpoint: 992,

@@ -2,8 +2,8 @@
 import React from "react";
 import BannerCareer from './BannerCareer';
 import BenefitsPerks from './BenefitsPerks';
-import CareerTeam from './CareerTeam';
-import CareerJobs from './CareerJobs';
+//import CareerTeam from './CareerTeam';
+//import CareerJobs from './CareerJobs';
 import "./career.scss";
 import Template1 from '../Common-features/Template1';
 import { useState } from 'react';
