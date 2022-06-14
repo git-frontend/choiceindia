@@ -18,34 +18,35 @@ function EquityBroking() {
                     </div>
                 </div>
             </div>
-            <div className="row gx-5 align-items-center mb-5">
+            <div className="row gx-5 align-items-center">
                 <div className="col-md-4">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
                 <div className="col-md-8">
-                          <div className="row gx-5 benifit-list">
-                              <div className="benifit-list-itm col-md-6">
+                    <div className="row gx-5 benifit-list">
+                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Public Offer</h5>
                             <p>Our team understands the dynamics of various industries for assisting our clients looking for going public.</p>
-                       </div>
-                              <div className="benifit-list-itm col-md-6">
+                        </div>
+                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Financial Planning</h5>
                             <p>We provide a gamut of services to address every requirement of the corporates.</p>
-                       </div>
-                              <div className="benifit-list-itm col-md-6">
+                        </div>
+                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Portfolio Management Services</h5>
                             <p>It’s a division responsible for growing your business while partnering with your firm for a progressive synergy.</p>
-                       </div>
-                              <div className="benifit-list-itm col-md-6">
+                        </div>
+                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Bonds &amp; Derivatives</h5>
                             <p>We have advised numerous companies across industries and concluded dozens of transactions. </p>
-                       </div>
+                        </div>
                     </div>
+                    <a href="/" className="btn-bg">Explore</a>
                 </div>
             </div>
-            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
+            
         </div>
     </section>
       

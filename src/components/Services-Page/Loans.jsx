@@ -19,12 +19,12 @@ function Loans() {
                 </div>
             </div>
             <div className="row gx-5 mb-5 align-items-center">
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <div className="benifit-list">
                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Personal Loans</h5>
@@ -43,9 +43,10 @@ function Loans() {
                             <p>We help businesses  to cover thier financing needs through our easy business loans with competitive interest rates.</p>
                        </div>
                     </div>
+                    <a href="/" className="btn-bg">Explore</a>
                 </div>
             </div>
-            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
+            
         </div>
     </section>
       
