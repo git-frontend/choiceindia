@@ -762,6 +762,7 @@ body{
             border-radius: 1.25rem;
             min-height: 21rem;
             margin: 1.5625rem 1rem;
+            border: 1px solid transparent;
             @media (max-width:$sm) {
                 width: 95% !important;
                 justify-content: center;
