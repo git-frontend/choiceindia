@@ -91,7 +91,7 @@ function PartnerBenifits() {
                 <div className="middle-bar-cont">
                     <div className="bar-cont-des">
                         <h3 className="title-fourth">Begin your Enterpreneurial Journey with Choice</h3>
-                        <a href="#" className="btn-bg btn-bg-yellow ">Get Started</a>
+                        <a href="#" className="btn-bg btn-bg-dark">Get Started</a>
                     </div>
                 </div>
             </div>
