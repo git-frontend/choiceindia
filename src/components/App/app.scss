@@ -610,11 +610,15 @@
                 }
                 @media (max-width: $sm) {
                     font-size: 3rem;
+                    min-height: 4rem;
                 }
             }
             h4{
                 font-family: $font-family-poppins-semibold;
                 font-size: 2rem;
+                @media (max-width: $sm) {
+                    font-size: 1.6rem;
+                }
             }
             h6{
                 font-family: $font-family-poppins-regular;
