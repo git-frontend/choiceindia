@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import pin from '../../assets/images/contact/pin.svg';
 import clock from '../../assets/images/contact/clock.png';
 import { Form } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader'; 
+import contactMap from "../../Data/ContactMapData";
+
 
 function Contactdetail() {
 
+   let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
    const [skeleton, setSkeleton] = useState(() => true);
-
+   const [MapNumber, setMapNumber] = useState(() => 0);
    const myTimeout = setTimeout(myGreeting, 2000);
-
    function myGreeting() {
      setSkeleton(() => false);
    }
-   // window.onload = () => {
-   //    setSkeleton(() => false);
-   // }
 
+   function selectCity(event) {
+      setMapNumber(() => event.target.value);
+   }
    
 return (
 
@@ -121,22 +123,19 @@ skeleton?
                </div>
                <div className='cust-dropdown'>
               
-                <Form.Select variant="Info" id="dropdown-basic" >
+                <Form.Select variant="Info" id="dropdown-basic" onChange={selectCity}>
                   <option defaultValue>Select Your City</option>
-                  <option >Delhi</option>
-                  <option >Bangalore</option>
-                  <option >Hyderabad</option>
-
+                  <option value="0" >Pune</option>
+                  <option value="1">Mumbai</option>
                 </Form.Select>
-            
                </div>
             </div>
             <div className="text-right address">
-               <p className="maintitle">Bhopal, Madhya Pradesh</p>
-               <p className="subtext mb-0">(+91) - 8080-80-8875</p>
-               <p className="subtext">support@choiceindia.com</p>
-               <p className="subtext">Behari Complex, R-2, Ram Gopal Maheshwari Marg,<br/>
-                  Opp Harsh Express,Near Bank, Zone-I,Maharana <br/>Pratap Nagar, Bhopal, Madhya Pradesh 462011
+               <p className="maintitle">{contactMap[MapNumber].city}</p>
+               <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p>
+               <p className="subtext">{contactMap[MapNumber].support}</p>
+               <p className="subtext">{contactMap[MapNumber].address1}<br/>
+                  {contactMap[MapNumber].address2} <br/>{contactMap[MapNumber].address3}
                </p>
             </div>
          </div>
@@ -146,7 +145,7 @@ skeleton?
          <div className='row'>
             <div className='map '>
                <div style={{width: "100%"}}>
-                  <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                  <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={contactMap[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
             </div>
          </div>
       </div>

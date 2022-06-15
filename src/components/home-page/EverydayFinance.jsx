@@ -16,7 +16,7 @@ function EverydayFinance() {
     autoplay: true,
     dots: true,
     autoplaySpeed: 3000,
-    slidesToScroll: 1,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 992,
@@ -61,7 +61,7 @@ function EverydayFinance() {
                           </span>
                           <h5>{response.title || '-'}</h5>
                           <p>{response.description || '-'}</p>
-                          <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
+                          {/* <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a> */}
                         </div>
 
                       )
