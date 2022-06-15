@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/about-us/about-us-webp/banner.png';
+import Bannerimage from '../../assets/images/about-us/banner.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Banner() {
