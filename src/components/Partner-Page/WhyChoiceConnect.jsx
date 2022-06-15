@@ -23,19 +23,16 @@ function WhyChoiceConnect() {
 
         <section className="choice-connect-work">
             <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                      <div className="heading-sec">
-                        <h3 className="title-first">Why Choice Connect ?</h3>
-                      </div>
-                    </div>
-                </div>
+                
                 <div className="row">
                     <div className="col-md-12">
                       <div className="connect-work-list">
                         <div className="work-list-itm-cont">
-                            <h3>Lineage</h3>
-                            <p>Backed by the Choice Group - a conglomerate with 25+ years of financial experience.</p>
+                            <h2 className="title-first">Why Choice Connect ?</h2>
+                            <div className="itm-cont-box">
+                              <h3>Lineage</h3>
+                              <p>Backed by the Choice Group - a conglomerate with 25+ years of financial experience.</p>
+                            </div>
                         </div>
                         <div className="work-list-itm">
                           <div className="bx-item-cont">
@@ -82,7 +79,7 @@ function WhyChoiceConnect() {
                       </div>
                     </div>
                 </div>
-                <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Read More</a></div></div>
+                
             </div>
         </section>
 
