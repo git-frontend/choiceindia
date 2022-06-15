@@ -1,10 +1,11 @@
 @import 'common.scss';
 
 .Header{
-    
     .main-header{
-        position: relative;
-        background: transparent;
+        // position: relative;
+        // background: transparent;
+        position: fixed !important;
+        background: white !important;
         width: 100%;
         z-index: 99;
         top: 0;
@@ -100,7 +101,7 @@
                         }
                     }
                     &.login-btn{
-                        margin-left: 3rem;
+                        // margin-left: 3rem;
                         a{
                             font-family: $font-family-poppins-semibold;
                         }
