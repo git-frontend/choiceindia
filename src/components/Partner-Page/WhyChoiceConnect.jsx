@@ -23,50 +23,63 @@ function WhyChoiceConnect() {
 
         <section className="choice-connect-work">
             <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                      <div className="heading-sec text-center">
-                        <h3 className="title-first">Why Choice Connect ?</h3>
-                      </div>
-                    </div>
-                </div>
+                
                 <div className="row">
                     <div className="col-md-12">
                       <div className="connect-work-list">
+                        <div className="work-list-itm-cont">
+                            <h2 className="title-first">Why Choice Connect ?</h2>
+                            <div className="itm-cont-box">
+                              <h3>Lineage</h3>
+                              <p>Backed by the Choice Group - a conglomerate with 25+ years of financial experience.</p>
+                            </div>
+                        </div>
                         <div className="work-list-itm">
+                          <div className="bx-item-cont">
                             <img src={Rating} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                            <h4>Lineage</h4>
+                           
+                          </div>
                         </div>
                         <div className="work-list-itm">
-                            <img src={Cogwheel} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                            <div className="bx-item-cont">
+                              <img src={Cogwheel} alt="" />
+                              <h4>Multifaceted</h4>
+                             
+                          </div>
                         </div>
                         <div className="work-list-itm">
-                            <img src={Network} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                          <div className="bx-item-cont">
+                                <img src={Network} alt="" />
+                                <h4>Network</h4>
+                               
+                            </div>
                         </div>
                         <div className="work-list-itm">
-                            <img src={Billfold} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                          <div className="bx-item-cont">
+                                <img src={Billfold} alt="" />
+                                <h4>Security</h4>
+                               
+                            </div>
                         </div>
                         <div className="work-list-itm">
-                            <img src={Team} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                          <div className="bx-item-cont">
+                                <img src={Team} alt="" />
+                                <h4>Infrastructure</h4>
+                               
+                            </div>
                         </div>
                         <div className="work-list-itm">
-                            <img src={Smartphone} alt="" />
-                            <h4>Lorem Ipsum</h4>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. printing and typesetting industry</p>
+                          <div className="bx-item-cont">
+                                <img src={Smartphone} alt="" />
+                                <h4>Flexibility</h4>
+                               
+                            </div>
                         </div>
                       </div>
                     </div>
                 </div>
-                <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Read More</a></div></div>
+                
             </div>
         </section>
 

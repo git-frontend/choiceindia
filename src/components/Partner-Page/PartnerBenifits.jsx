@@ -1,6 +1,6 @@
 
 import React from "react";
-import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.webp';
+import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.png';
 import  NoCash  from '../../assets/images/partner/no-cash.svg';
 import  Service  from '../../assets/images/partner/service.svg';
 import  ZeroRupees  from '../../assets/images/partner/zero-rupees.svg';
