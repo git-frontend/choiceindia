@@ -114,10 +114,12 @@ function FablesStories() {
 									<div className="">
 										{
 											fslider ?
-												<Link to={`/fablesdetail/${fslider[sliderimag].id}`}><div className="stories-sec-right-des">
-													<h4>{fslider[sliderimag].title}</h4>
-													<p>{fslider[sliderimag].excerpt}</p>
-												</div></Link>
+												<div className="stories-sec-right-des">
+													<Link to={`/fablesdetail/${fslider[sliderimag].id}`}>
+														<h4>{fslider[sliderimag].title}</h4>
+														<p>{fslider[sliderimag].excerpt}</p>
+													</Link>
+												</div>
 												:
 												<div className="stories-sec-right-des">
 													<h4>{fableData[0].title}</h4>
