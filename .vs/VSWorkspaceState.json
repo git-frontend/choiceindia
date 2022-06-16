@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
+    "\\src\\assets",
     "\\src\\components",
-    "\\src\\components\\App"
+    "\\src\\components\\Contact"
   ],
-  "SelectedNode": "\\src\\components\\App\\AppBannerBottom.jsx",
+  "SelectedNode": "\\src\\components\\Contact\\contact.scss",
   "PreviewInSolutionExplorer": false
 }
