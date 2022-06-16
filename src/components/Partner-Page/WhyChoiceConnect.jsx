@@ -34,7 +34,7 @@ function WhyChoiceConnect() {
                               <p>Backed by the Choice Group - a conglomerate with 25+ years of financial experience.</p>
                             </div>
                         </div>
-                        <div className="work-list-itm">
+                        <div className="work-list-itm work-list-itm-active">
                           <div className="bx-item-cont">
                             <img src={Rating} alt="" />
                             <h4>Lineage</h4>

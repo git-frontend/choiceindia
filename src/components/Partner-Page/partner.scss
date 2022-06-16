@@ -374,6 +374,18 @@
                     visibility: visible;
                 }
             }
+            &.work-list-itm-active{
+                .bx-item-cont {
+                    border: 3px solid #FFCE02;
+                    box-shadow: none;
+                }
+
+                &::before {
+                    transform: rotate(4deg);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
     @media (max-width:$xs   ) {
