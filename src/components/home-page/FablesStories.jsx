@@ -55,7 +55,7 @@ function FablesStories() {
 		slidesToShow: 3,
 		autoplay: true,
 		dots: true,
-		autoplaySpeed: 2000,
+		autoplaySpeed: 3000,
 		slidesToScroll: 2,
 		swipeToSlide: true,
 		responsive: [
