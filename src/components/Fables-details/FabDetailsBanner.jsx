@@ -20,8 +20,12 @@ function Fabdetailsbanner() {
     const [single_detail, setSingle_Detail] = useState(() => null);
     const [IsDetail, setIsDetail] = useState(() => false);
     const { id } = useParams();
+    const [htmlContent , sethtmlContent] = useState(() => '');
 
-    console.log('ID is', id);
+    function createMarkup(){
+        return {__html: htmlContent};
+    }
+    // const htmlCss = "<p>Hello from the other side</p>";
 
     useEffect(() => {
         getSingleFablesDetail();
@@ -30,13 +34,15 @@ function Fabdetailsbanner() {
     function getSingleFablesDetail() {
         homeServices.fablesBlog(id).then(
             res => {
-                console.log('DDDDDD', res.data.posts);
                 if (res.data.posts) {
-                    setSingle_Detail(() => res.data.posts)
+                    setSingle_Detail(() => res.data.posts);
+                    sethtmlContent(() => res.data.posts[0].html);
+                    // htmlContent = res.data.posts[0].html;
+                    // console.log(htmlContent);
+                    // console.log(res.data.posts[0].html);
                     // single_detail = res.data.posts;
                     setIsDetail(() => true);
                 }
-                console.log('Single Detail', single_detail[0].title);
             }
         )
     }
@@ -76,24 +82,7 @@ function Fabdetailsbanner() {
                             <div className="row">
                                 <div className="col-md-11">
 
-                                    <div className="textwrap">
-                                        <p>{single_detail[0].html || 'Temp text'}</p>
-                                        {/* <p>It’s happening!!</p>
-                  <p>We have a great news for all the fashionistas and shopaholics out there. You can now buy the latest trends in fashion wear and make your wardrobe infinite through ordering from Shein. Yes, the hottest fast fashion brand is making its entry in the Indian market, but there is a twist. Shein will make a comeback through Amazon.<br />
-                      Now, for those of you who doesn’t know about Shein. It is a one of the world's leading fast-fashion stores. Although this $15 billion corporation is based in China, it ships to more than 220 countries and territories worldwide.</p>
-                  <p>Shein tends to focus in women's clothing and accessories, but it also sells kids clothes, men's clothing, home decor, and other miscellaneous items. There are even outfits and accessories for dogs and cats on the site.
-                      Infact, Shein is particularly popular among Gen Zers and Millennials because of it’s low-cost, latest styles and high-end brands. In addition, Shein's work frequently goes viral on social media after being shared by influencers and content creators.</p>
-                  <p>All in all..</p>
-                  <p>It was a great success in India until June 2020, when it was banned, along with a slew of other Chinese apps, for evading tax rules. In 2020, as part of India’s clampdown on Chinese apps, the Home Ministry had blocked the site.<br />
-                      And then, the Pandora's box gets opened<br />
-                      After a probe by Mumbai Customs over suspicions that Chinese shopping sites were paying fewer customs than they were due, the site had to temporarily halt shipping orders and commence client refunds in 2019.<br />
-                      Chinese shopping sites shipping to India were investigated for taking advantage of a loophole that permitted Indian citizens to acquire duty-free gifts and samples from outside worth less than $5,000. Numerous businesses were reported to take advantage of this loophole to avoid paying taxes on parcels.</p>
-                  <p>Finally, following growing tensions on the Indo-China border, various Chinese apps popular in India were banned in June 2020 as part of a bigger crackdown by the Indian government. The apps included TikTok, Shareit, UC Browser, Weibo, WeChat, AliExpress, Shein, among them. The apps were ordered to be taken down from the Google Play Store and the Apple App Store.
-                      But, now Shein is relaunching in India. It has been included to Amazon Fashion's Prime Day 2021 sale, which will take place on July 26 and 27. It will certainly be a seller on Amazon. But, for now, Shein's own Indian e-commerce site is still unavailable.</p>
-                  <p>In point of fact, Shein is not the only Chinese site making a comeback in India</p>
-                  <p>PUBG Mobile was the first prohibited app to resurface under a new name and with a new owner. In July, PUBG Mobile was renamed Battlegrounds Mobile India by Krafton, a South Korean company. Shein, on the other hand, appears to be following a completely different path to re-enter India.</p>
-                  <p>Whatever the case may be, the buzz of Shein’s comeback has got, it’s fans excited, that is evident from the shein memes that have been flooded over twitter’s timeline. Have a look at some of them: -</p> */}
-                                    </div>
+                                    <div className="textwrap" dangerouslySetInnerHTML={createMarkup()}/>
                                 </div>
 
 
