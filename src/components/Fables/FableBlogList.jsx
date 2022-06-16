@@ -95,7 +95,7 @@ function FableBlogList() {
                             </div>
                         </div>
                     </div>
-                    <div class="row"><div class="col-md-12 d-flex justify-content-center"><a href="#"><span class="btn-bg">Explore App</span></a></div></div>
+                    <div class="row"><div class="col-md-12 d-flex justify-content-center"><a href="#"><span class="btn-bg">Explore All</span></a></div></div>
                 </div>
 
             </section>

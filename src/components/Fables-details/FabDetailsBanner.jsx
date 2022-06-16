@@ -30,8 +30,8 @@ function Fabdetailsbanner() {
                                 Trending
                             </li>
                         </ul>
-                        <div className="imgblock">
-                        <img src={Bannerimage} className="img-fluid" alt="Loading" />
+                        <div >
+                              <img src={Bannerimage} className="img-fluid imgblock" alt="Loading" />
                         </div>
                     </div>
                    
