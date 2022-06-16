@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import  ImageSub0  from '../../assets/images/logo.svg';
-import  ImageSub1  from '../../assets/images/logo-white.svg';
+//import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
@@ -19,8 +19,8 @@ export default function Header() {
                 
                 <NavLink className="navbar-brand logo-main" to="/">
                         <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" />
-                        <img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
-                        </NavLink>
+                        {/*<img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
+  */}                      </NavLink>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }

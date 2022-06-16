@@ -8,7 +8,7 @@ function WealthManagement() {
     <div>
       
      
-    <section className="bannersection service-tab-cont" id="EquityBroking">
+          <section className="bannersection service-tab-cont bg-rightsection" id="EquityBroking">
         <div className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12">

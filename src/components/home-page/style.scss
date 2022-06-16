@@ -54,6 +54,7 @@
 
         .services-list-slider {
             padding-bottom: 9rem;
+
             .service-item {
                 padding-right: 7rem;
 
@@ -140,7 +141,7 @@
         position: absolute;
         left: 0;
         top: -9rem;
-        background: url(../../assets/images/clipath-img1-svg.png) no-repeat top left;
+        background: url(../../assets/images/home-bgtop-01.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $md) {
@@ -156,7 +157,7 @@
         position: absolute;
         right: 0;
         bottom: -6rem;
-        background: url(../../assets/images/clipath-img2.png) no-repeat top right;
+        background: url(../../assets/images/home-bgmiddle-02.png) no-repeat top right;
         background-size: contain;
 
         @media (max-width: $md) {
@@ -359,7 +360,7 @@
 }
 
 
-    
+
 
 
 
@@ -423,11 +424,12 @@
                     text-overflow: ellipsis;
                     white-space: initial;
                     display: -webkit-box;
-                    -webkit-line-clamp:1;
+                    -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
                     font-family: $font-family-poppins-regular;
                     font-size: 1.4rem;
-                    @media (max-width: $sm){
+
+                    @media (max-width: $sm) {
                         transform: rotate(0);
                         bottom: 2rem;
                         left: 2rem;
@@ -517,7 +519,7 @@
         position: absolute;
         right: 0;
         top: 14rem;
-        background: url(../../assets/images/clipath-img3.png) no-repeat top right;
+        background: url(../../assets/images/home-bgmi-04.png) no-repeat top right;
         background-size: contain;
 
         @media (max-width: $sm) {
@@ -533,7 +535,7 @@
         position: absolute;
         left: 0;
         bottom: -22rem;
-        background: url(../../assets/images/clipath-img4.png) no-repeat top left;
+        background: url(../../assets/images/home-bg-feature-05.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $sm) {
@@ -553,6 +555,7 @@
 
 .features-cont {
     padding: 5rem 0 0 0;
+    position:relative;
 
     .heading-sec {
         text-align: center;
@@ -606,6 +609,22 @@
             @media (max-width: $md) {
                 margin-left: -5%;
             }
+        }
+    }
+
+    &::before {
+        content: "";
+        width: 13rem;
+        height: 32rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -32rem;
+        background: url(../../assets/images/home-bgfables-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
         }
     }
 }
@@ -742,7 +761,6 @@
         @media (max-width: $sm-x) {
             padding-top: 3rem;
         }
-
     }
 
     .btn-bg {
@@ -755,6 +773,23 @@
 
     @media (max-width: $md) {
         padding: 7rem 0 0 0;
+    }
+
+    &::after {
+        content: '';
+        width: 20rem;
+        height: 26rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        z-index:-99;
+        top: 30rem;
+        background: url(../../assets/images/home-bgfables-left.png) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $sm) {
+            display: none;
+        }
     }
 }
 
@@ -835,7 +870,7 @@
         left: 0;
         top: 50%;
         transform: translate(0, -50%);
-        background: url(../../assets/images/Vector.png) no-repeat top left;
+        background: url(../../assets/images/home-valuesection-bg.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: 1025px) {
@@ -856,7 +891,7 @@
         position: absolute;
         right: 0;
         top: 0;
-        background: url(../../assets/images/single-cirlce.png) no-repeat top right;
+        background: url(../../assets/images/home-single-cirlce.png) no-repeat top right;
         background-size: contain;
 
         @media (max-width: $md) {
@@ -923,19 +958,19 @@
         }
     }
 }
-    
+
 
 
 .home-testimonial {
     // border: 2px solid black;
     padding: 10rem 0;
+    position: relative;
 
     .title-first {
         text-align: center;
     }
 
     .testimonial-slider {
-
         // border: 2px solid red;
         .slider-item {
             display: flex !important;
@@ -978,7 +1013,6 @@
                     .fa-twitter {
                         color: #0C71B9;
                         font-size: 2.4rem;
-
                     }
 
                     h4 {
@@ -992,7 +1026,8 @@
                         font-size: 1.2rem;
                         padding-left: 2.5rem;
                         font-family: $font-family-poppins-regular, sans-serif;
-                        @media (max-width: $sm){
+
+                        @media (max-width: $sm) {
                             padding-left: 0.5rem;
                             padding-top: 0.5rem;
                             width: 50%;
@@ -1011,7 +1046,8 @@
                     font-size: 1.375rem;
                     font-family: $font-family-poppins-regular, sans-serif;
                     justify-content: space-between;
-                    .fa-heart{
+
+                    .fa-heart {
                         color: #F13859;
                     }
 
@@ -1104,7 +1140,6 @@
                 bottom: -20px;
                 right: 0;
             }
-
         }
 
         .slick-prev {
@@ -1150,12 +1185,27 @@
                 bottom: -20px;
                 right: 7rem;
             }
-
         }
     }
 
     @media (max-width: $md) {
         padding: 5rem 0;
+    }
+
+    &::after {
+        content: "";
+        width: 64rem;
+        height: 58rem;
+        display: block;
+        position: absolute;
+        right: 1px;
+        top: -382px;
+        background: url(../../assets/images/home-bgclient-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
     }
 }
 
@@ -1182,7 +1232,7 @@
         position: absolute;
         right: 0;
         bottom: -20rem;
-        background: url(../../assets/images/clipath-img6.png) no-repeat top right;
+        background: url(../../assets/images/home-bgbtm-right.png) no-repeat top right;
         background-size: contain;
 
         @media (max-width: $sm) {
@@ -1198,7 +1248,7 @@
         position: absolute;
         left: 0;
         bottom: -15rem;
-        background: url(../../assets/images/clipath-img7.png) no-repeat top left;
+        background: url(../../assets/images/home-bgbtm-left.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $sm) {

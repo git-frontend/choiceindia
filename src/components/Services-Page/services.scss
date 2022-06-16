@@ -154,7 +154,7 @@
         position: absolute;
         left: 0;
         bottom: 0;
-        background: url(../../assets/images/services/clip-path2.png) no-repeat top left;
+        background: url(../../assets/images/services/serv-bg-top.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $sm) {
@@ -167,57 +167,89 @@
     }
 }
 
-.service-tab-cont{
+.service-tab-cont {
+    &.bg-rightsection {
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 10rem;
+            height: 33rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: url(../../assets/images/services/serv-bgright.png) no-repeat top right;
+            background-size: contain;
+
+            @media (max-width: $sm) {
+                display: none;
+            }
+        }
+    }
+
     padding-bottom: 12rem;
-    .heading-sec{
-        margin-bottom:5rem;
+    position: relative;
+
+    .heading-sec {
+        margin-bottom: 5rem;
+
         @media (max-width: $sm) {
             margin-bottom: 0;
         }
     }
-    .benifit-list{
-        
+
+    .benifit-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        .benifit-list-itm{
+
+        .benifit-list-itm {
             width: 47%;
             margin-top: 1rem;
             margin-bottom: 3rem;
-            .title-fourth{
+
+            .title-fourth {
                 margin-top: 0;
             }
-            p{
+
+            p {
                 font-size: 1.3rem;
             }
-            
         }
+
         @media (max-width: $sm) {
-           padding-left: 0;
-           padding-top: 3rem;
+            padding-left: 0;
+            padding-top: 3rem;
         }
     }
-    .btn-bg{
-       
+
+    .btn-bg {
+
         @media (max-width: $sm) {
             margin-left: 0;
             margin: 0 auto;
             display: block;
             max-width: 100px;
-         }
+        }
     }
-    .rightsec{
+
+    .rightsec {
         padding-left: 0;
-        img{
+
+        img {
             border-radius: 20px;
         }
     }
+
     @media (max-width: $sm) {
         padding-bottom: 7rem;
     }
-    &.service-tab-lst-itm{
+
+    &.service-tab-lst-itm {
         padding-bottom: 20rem;
         position: relative;
+
         &::before {
             content: '';
             width: 18rem;
@@ -226,15 +258,16 @@
             position: absolute;
             left: 0;
             bottom: -13rem;
-            background: url(../../assets/images/services/clip-path3.png) no-repeat top left;
+            background: url(../../assets/images/services/serv-bg-bottom.png) no-repeat top left;
             background-size: contain;
-    
+
             @media (max-width: $md) {
                 display: none;
             }
         }
+
         @media (max-width: $md) {
-           padding-bottom: 5rem;
+            padding-bottom: 5rem;
         }
     }
 }

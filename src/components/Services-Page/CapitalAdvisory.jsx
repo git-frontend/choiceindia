@@ -8,7 +8,7 @@ function CapitalAdvisory() {
     <div>
       
      
-    <section className="bannersection service-tab-cont" id="CapitalAdvisory">
+          <section className="bannersection service-tab-cont bg-rightsection" id="CapitalAdvisory">
         <div className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12">
