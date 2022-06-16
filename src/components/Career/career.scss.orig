@@ -1,0 +1,466 @@
+@import '../../assets/css/customvariable.scss';
+
+
+.career-list-slider{
+ 
+    .slick-slide{
+        padding:0 2rem;
+        outline: none;
+        div{
+            outline: none;
+        }
+        img{
+            width: 100%;
+        }
+        @media (max-width: $md){
+            padding: 0 1rem;
+        }
+    }
+   
+}
+
+.our-values{
+    padding: 13rem 0;
+    position: relative;
+    .heading-sec{
+        text-align: center;
+        @media (max-width: $sm){
+            padding: 0 2rem;
+        }
+    }
+    @media (max-width: $md){
+        padding: 5rem 0 0 0;
+    }
+    &:before{
+        content: "";
+        width: 22em;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -150px;
+        background: url('../../assets/images/career/ourvalubefore.png') no-repeat bottom right;
+        background-size: contain;
+        z-index: -1;
+        @media (max-width: $sm-x){
+           display: none;
+        }
+    }
+}
+
+<<<<<<< HEAD
+.career-main {
+
+
+
+    .bannersection {
+        padding-bottom: 0;
+=======
+.career-main{ 
+
+    .bannersection{
+        padding-bottom: 0;
+        .client-list-slider{
+            .overlay{
+                display: none;    
+            }
+        .img-fluid{
+            width:55rem;
+            
+        }
+        }
+>>>>>>> ce39248a2ded82f480168797f3af03454984314e
+    }
+
+    .benefits-perks {
+        background: $primary;
+        padding: 12rem 0;
+        position: absolute;
+        border-radius: 20px;
+        top: -479px;
+        
+        right: 0;
+        left: 0;
+
+        .heading-sec {
+            .title-first {
+                color: $whiteColor;
+                text-align: center;
+            }
+        }
+
+        .perks-list {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            margin-top: 6rem;
+            justify-content: space-between;
+
+            .perks-list-itm {
+                width: 40%;
+                display: flex;
+                margin-left: 2%;
+                flex-wrap: wrap;
+                align-items: center;
+                margin-bottom: 4rem;
+
+                img {
+                    width: 3.5rem;
+                }
+
+                h4 {
+                    color: $whiteColor;
+                    width: calc(100% - 5rem);
+                    padding-left: 3rem;
+                    font-family: $font-family-poppins-regular, sans-serif;
+                }
+
+                @media (max-width: $sm) {
+                    width: 80%;
+                }
+            }
+
+            @media (max-width: $sm) {
+                justify-content: center;
+                margin-top: 2rem;
+            }
+        }
+
+        @media (max-width: $md) {
+            padding: 6rem 0 3rem 0;
+        }
+
+        &:before {
+            content: "";
+            width: 24em;
+            height: 44rem;
+            display: block;
+            position: absolute;
+            left: -99px;
+            top: -401px;
+            background: url('../../assets/images/career/culturebefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: -1;
+
+            @media (max-width: $sm-x) {
+                display: none;
+            }
+        }
+    }
+
+    .career-team {
+        padding: 22rem 0 0rem 0;
+        position: relative;
+        background-color: $bgcolor-green;
+
+        .heading-sec {
+            .title-first {
+                color: $whiteColor;
+            }
+
+            p {
+                color: $lightColor;
+            }
+        }
+
+        .explore-opportunities {
+            position: relative;
+            padding-top: 7rem;
+
+            .bg-img {
+                width: 100%;
+
+                @media (max-width: $md) {
+                    height: 400px;
+                    object-fit: cover;
+                }
+            }
+
+            .opportunities-cont {
+                position: absolute;
+                bottom: 3rem;
+                width: 100%;
+                left: 0;
+
+                .ttl1 {
+                    font-size: 4.5rem;
+                    color: $lightColor;
+                    font-family: $font-family-poppins-bold;
+                    margin-bottom: 3rem;
+
+                    span {
+                        color: $bgcolor-yellow;
+                    }
+
+                    @media (max-width: $md) {
+                        font-size: 3.5rem;
+                    }
+
+                    @media (max-width: $sm) {
+                        font-size: 2.4rem;
+                    }
+                }
+
+                .job-search {
+                    margin: 0.5rem 0;
+
+                    .form1 {
+                        width: 100%;
+                        position: relative;
+
+                        .input-field {
+                            width: 100%;
+                            padding: 0.8rem 1rem;
+                            border-radius: 7px;
+                            border: 0;
+                            outline: none;
+                            font-size: 1.375rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
+                        }
+
+                        .btn-submit {
+                            position: absolute;
+                            right: 3px;
+                            top: 3.5px;
+                            font-size: 1.375rem;
+                            background: $bgcolordark;
+                            color: $whiteColorlight;
+                            display: block;
+                            padding: 0.5rem 2rem;
+                            border-radius: 7px;
+                            border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
+                            outline: none;
+
+                            @media (max-width: $sm) {
+                                padding: 0.5rem 1rem;
+                            }
+                        }
+                    }
+                }
+
+                .cust-dropdown {
+                    margin: 0.5rem 0;
+
+                    .dropdown {
+                        width: 100%;
+
+                        .dropdown-toggle {
+                            width: 100%;
+                            background: $whiteColor;
+                            font-size: 1.4rem;
+                            text-align: left;
+                            padding: 0.8rem 1rem;
+                            border-radius: 7px;
+                            border: 0;
+                            font-family: $font-family-poppins-regular, sans-serif;
+
+                            &::after {
+                                background: url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
+                                right: 4px;
+                                position: absolute;
+                                width: 3rem;
+                                height: 3rem;
+                                border-radius: 7px;
+                                top: 4px;
+                                background-size: 1.2rem;
+                            }
+                        }
+
+                        .dropdown-menu {
+                            width: 100%;
+                            font-size: 1.4rem;
+                            font-family: $font-family-poppins-regular, sans-serif;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $md) {
+            padding: 8rem 0 5rem 0;
+        }
+
+        @media (max-width: $sm) {
+            text-align: center;
+
+            .heading-sec {
+                padding: 0 2rem;
+            }
+        }
+
+        &:before {
+            content: "";
+            width: 26em;
+            height: 57rem;
+            display: block;
+            position: absolute;
+            right: 0px;
+            top: -14%;
+            background: url('../../assets/images/career/ourteambefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: 1;
+
+            @media (max-width: $sm-x) {
+                display: none;
+            }
+        }
+    }
+
+    .career-jobs {
+        padding: 5rem 0 25rem 0;
+        position: relative;
+
+        .ttl2 {
+            font-size: 2rem;
+            font-family: $font-family-poppins-semibold;
+        }
+
+        .jobs-list {
+            margin-top: 2rem;
+
+            .jobs-list-itm {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem 0;
+                border-bottom: 1px solid #E5E5E5;
+                margin-bottom: 1rem;
+
+                .sec-ttl {
+                    color: $secondary;
+                    font-size: 1.4rem;
+                    font-family: $font-family-poppins-medium;
+
+                    .apl-btn {
+                        color: $bgcolor-yellow;
+                        text-decoration: none;
+                    }
+
+                    @media (max-width: $sm) {
+                        width: 50%;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $md) {
+            padding: 0 0 5rem 0;
+        }
+
+        &:before {
+            content: "";
+            width: 26em;
+            height: 50rem;
+            display: block;
+            position: absolute;
+            left: 0px;
+            bottom: -24%;
+            background: url('../../assets/images/career/marketingjobbefore.png') no-repeat bottom right;
+            background-size: contain;
+            z-index: -1;
+
+            @media (max-width: $sm-x) {
+                display: none;
+            }
+        }
+    }
+}
+
+.culture-values{
+    padding: 0 0 50rem 0;
+    
+    .culture-values-img{
+        .shdow{
+            box-shadow: 0 0 4px #ccc;
+        }
+    }
+    .heading-sec{
+        @media (max-width: $sm){
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+    }
+    @media (max-width: $md){
+        padding: 5rem 2rem;
+    }
+}
+.Marquee {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
+    color: #fff;
+    font-weight: 200;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    .Marquee-content {
+        display: flex;
+        animation: marquee 10s linear infinite running;
+        &:hover{
+            animation-play-state: paused;
+        }
+        .Marquee-tag {
+            width:450px;
+            height: 370px;
+            margin: 0 0.5em;
+            padding: 0.5em;
+            background: rgba(255,255,255,0.1);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 10s ease;
+            &:hover{
+                background: rgba(255,255,255,0.5);
+                transform: scale(1);
+                cursor: pointer;
+            }
+          }
+      }
+  }
+ 
+
+ 
+  @-moz-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @-webkit-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @-o-keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translate(-50%);
+    }
+  }
+  
+.marquee{
+    .Marquee-tag{
+        padding: 0 0.5%;
+        width: 20%;
+        @media (max-width:$sm) {
+            width: 15%;
+        }
+    }
+}
