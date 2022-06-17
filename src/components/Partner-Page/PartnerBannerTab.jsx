@@ -5,16 +5,10 @@ import  StckImage  from '../../assets/images/partner/stock-banner.png';
 import  MutualFundsImage  from '../../assets/images/partner/mutual-funds-banner.png';
 import  InsuranceImage  from '../../assets/images/partner/insurance-banner.png';
 import  LoansImage  from '../../assets/images/partner/loans-banner.png';
-import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.png';
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
 import  ImageSub4  from '../../assets/images/icons/insurance.svg';
 import  ImageSub5  from '../../assets/images/icons/loan.svg';
-import  NoCash  from '../../assets/images/partner/no-cash.svg';
-import  Service  from '../../assets/images/partner/service.svg';
-import  ZeroRupees  from '../../assets/images/partner/zero-rupees.svg';
-import  CashFlow  from '../../assets/images/partner/cash-flow.svg';
-import  Clock  from '../../assets/images/partner/clock.svg';
 
 
 
