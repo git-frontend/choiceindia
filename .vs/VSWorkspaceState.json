@@ -3,9 +3,8 @@
     "",
     "\\src",
     "\\src\\assets",
-    "\\src\\components",
-    "\\src\\components\\Contact"
+    "\\src\\components"
   ],
-  "SelectedNode": "\\src\\components\\Contact\\contact.scss",
+  "SelectedNode": "\\src\\components\\Contact",
   "PreviewInSolutionExplorer": false
 }
