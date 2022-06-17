@@ -25,7 +25,7 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
-const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
+const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'))
 
