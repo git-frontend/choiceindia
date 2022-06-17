@@ -3,12 +3,6 @@
 
 
 
-// .whitemenu{
-//     background-color: #fff !important;
-
-//     @extend .main-header;
-// }
-// banner
 .contactbody {
     height: inherit;
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
@@ -16,7 +10,7 @@
 
 /** temporarychanges */
 .banner-parent-temp {
-    // border:2px solid red;
+  
     position: relative;
     background-color: #F4F6F7;
     height: 800px;
@@ -31,10 +25,10 @@
     width: 100%;
 
     .banner-img-temp {
-        // border:2px solid red;
+       
         width: 60%;
         height: 500px;
-        // background: #eee;
+      
         .img-temp {
             width: 600px;
             height: 500px;
@@ -47,7 +41,7 @@
     }
 
     .banner-content-temp {
-        // border:2px solid green;
+       
         width: 40%;
         height: 500px;
 
@@ -62,7 +56,7 @@
 
         h2,
         p {
-            // border:2px solid black;
+           
             height: 30px;
             margin-left: 100px;
             margin-bottom: 20px;
@@ -95,8 +89,6 @@
 
 /** changes below */
 .banner-parent {
-    // border:2px solid blue;
-    // height: 813px;
     width: 100%;
 }
 
@@ -175,7 +167,7 @@
         font-weight: 600;
         font-size: 1.875rem;
         line-height: 2.8125rem;
-        font-family: 'PoppinsMedium';
+        font-family: $font-family-poppins-medium;
     }
 
     .subtext {
@@ -183,7 +175,7 @@
         font-weight: 400;
         font-size: 1.4rem;
         line-height: 2.5rem;
-        font-family: 'PoppinsRegular';
+        font-family: $font-family-poppins-regular;
     }
 
     .subhead {
@@ -191,7 +183,7 @@
         font-weight: 400;
         font-size: 1.25rem;
         line-height: 2.125rem;
-        font-family: 'PoppinsRegular';
+        font-family: $font-family-poppins-regular;
     }
 
     .cust-dropdown {
@@ -316,7 +308,6 @@
             padding: 1.5rem 2.5rem;
             font-size: 1.375rem;
             display: inline-block;
-            // font-size: 24px;
             font-family: $font-family-poppins-semibold;
         }
     }
@@ -554,13 +545,11 @@
 
 /** skeleton css*/
 .contactdetail-skeleton {
-    // border: 2px solid red;
     position: relative;
     background-color: #F4F6F7;
 }
 
 .skeleton-child-img {
-    // border:2px solid black;
     width: 100px;
     height: 100px;
     color: transparent;
