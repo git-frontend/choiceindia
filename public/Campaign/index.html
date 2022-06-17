@@ -107,8 +107,8 @@
                                           </div>
                                       </div>
                                       </div>
-                                      <div class="form-group">
-                                          <button type="button" class="form-btn"><span>Send OTP</span></button>
+                                      <div class="form-group" id="">
+                                          { /**<button type="button" class="form-btn"><span>Send OTP</span></button>*/}
                                       </div>
                                   </fieldset>
                                       <div><span id="formError" class="errormsg"></span></div>
@@ -401,7 +401,7 @@
                 <h2 class="title">Demat account Features</h2>
                 <div class='row pb52'>
                   <div class='col-md-6'>
-                    <img src=./images/features-of-dematr-account.png class="img-fluid" alt=" Featues of Demat Account" />
+                    <img src="./images/features-of-dematr-account.png" class="img-fluid" alt=" Featues of Demat Account" />
                   </div>
                   <div class='col-md-6'>
                     <p class='subtext'>Now that we know that there are certain types of Demat accounts and it is a necessity when you want to invest in the share market. There are different features associated with a Demat account and now let us have a look at that.</p>
@@ -959,6 +959,9 @@
             </div>
            
         </section>
+
+
+     <!-- For Footer Section -->
   
         <div class="Footer">
           <footer class="main-footer">
@@ -1045,11 +1048,11 @@
                         </div>
                         <div class="col-md-5">
                           <div class="footer-cont-details">
-                            <p class="d-flex align-items-center">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<img src="./images/location.svg" class="img-fluid pl10"></p>
+                            <p class="d-flex align-items-center">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<img src="./images/location.svg" class="img-fluid pl10" /></p>
                             <p class="d-flex align-items-center">Monday - Friday : 08:30 am - 7:00 pm <br/>
-                              Saturday : 10:00 am - 4:00 pm <img src="./images/clock.svg" class="img-fluid pl10"></p>
-                            <p class="d-flex align-items-center"><a href="tel:02267079999">+91-022-6707 9999</a>  <img src="./images/call.svg" class="img-fluid pl10"> </p>
-                            <p class="d-flex align-items-center"><a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a>  <img src="./images/envelop.svg" class="img-fluid pl10"> </p>
+                              Saturday : 10:00 am - 4:00 pm <img src="./images/clock.svg" class="img-fluid pl10" /></p>
+                            <p class="d-flex align-items-center"><a href="tel:02267079999">+91-022-6707 9999</a>  <img src="./images/call.svg" class="img-fluid pl10" /> </p>
+                            <p class="d-flex align-items-center"><a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a>  <img src="./images/envelop.svg" class="img-fluid pl10" /> </p>
                           </div>
                         </div>
                       </div>
@@ -1080,22 +1083,22 @@
                             </div>
                             <div class="footer-social-links">
                               <a href="/" target="_blank">
-                              <img src="./images/facebook.svg" class="mediaimg img-fluid">
+                              <img src="./images/facebook.svg" class="mediaimg img-fluid" />
                               </a>
                               <a href="/" target="_blank">
-                                <img src="./images/linkdln.svg" class="mediaimg img-fluid">
+                                <img src="./images/linkdln.svg" class="mediaimg img-fluid" />
                               </a>
                               <a href="#" target="_blank" >
-                                <img src="./images/twitter.svg" class="mediaimg img-fluid">
+                                <img src="./images/twitter.svg" class="mediaimg img-fluid" />
                               </a>
                               <a href="/" target="_blank">
-                                <img src="./images/instagram.svg" class="mediaimg img-fluid">
+                                <img src="./images/instagram.svg" class="mediaimg img-fluid" />
                               </a>
                               <a href="/" target="_blank" >
-                                <img src="./images/youtube.svg" class="mediaimg img-fluid">
+                                <img src="./images/youtube.svg" class="mediaimg img-fluid" />
                               </a>
                               <a href="/" target="_blank" >
-                                <img src="./images/telegram.svg" class="mediaimg img-fluid">
+                                <img src="./images/telegram.svg" class="mediaimg img-fluid" />
                               </a>
                             </div>
                           </div>
@@ -1103,7 +1106,7 @@
                         <div class="col-md-5">
                           <ul class="extra-links-right">
                             <li>
-                              Made with  <img src="./images/heart.png" class="img-fluid">  in India
+                              Made with  <img src="./images/heart.png" class="img-fluid" />  in India
                             </li>
                             <li>
                               <a href="/">Privacy Policy</a>
@@ -1156,17 +1159,21 @@
   
         </main>
   
-        
-  
-      </div>
+      </div> 
+      
+      <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js" integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
-    <!-- We will put our React component inside this div. -->
-    <div id="like_button_container" param="some info"></div>
-    
-    <script>
-      function myFunction(x) {
-        x.classList.toggle("change");
-      }
-      </script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- Load our React component -->
+    <script src="index.js</script>
   </body>
 </html>
