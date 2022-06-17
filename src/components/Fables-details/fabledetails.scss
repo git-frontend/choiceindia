@@ -25,6 +25,7 @@
         }
         .heading{
             padding-bottom: 2.5rem;
+            text-align: center;
             @media screen and (max-width: $sm) {
                 font-size: 2rem;
                 line-height: 1.9375rem;
@@ -59,6 +60,7 @@
         .imgblock{
             margin-top: 5rem;
             border-radius: 30px;
+            width:100%;
            
         }
         .textwrap{
@@ -109,7 +111,7 @@
 
 
     .recommendation{
-        padding:4rem 0 8rem;
+        padding:4rem 0 20rem;
         position: relative;
         &::after{
             position: absolute;

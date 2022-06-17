@@ -21,7 +21,7 @@ const EveryFinance =
         id:2,
         image:`${ImageSub3}`,
         title:"Mutual Funds",
-        description:"Compare and invest in funds of all categories and segments with ease",
+        description:"Get insured as per your need for everything right here",
 
 
     },
@@ -29,7 +29,7 @@ const EveryFinance =
         id:3,
         image:`${ImageSub4}`,
         title:"Insurance",
-        description:"Get insured as per your need for everything right here",
+        description:"Hassle free Personal loans with minimum documentation",
 
 
     },
@@ -38,7 +38,7 @@ const EveryFinance =
         id:4,
         image:`${ImageSub5}`,
         title:"Loans",
-        description:"Hassle free Personal loans with minimum documentation",
+        description:"A National Scheme to facilitate a regular income post retirement",
 
 
     },
@@ -46,7 +46,7 @@ const EveryFinance =
         id:5,
         image:`${ImageSub6}`,
         title:"NPS",
-        description:"A National Scheme to facilitate a regular income post retirement",
+        description:"Enhance returns and lower down risk by investing in various debt instruments ",
 
 
     },
@@ -54,7 +54,7 @@ const EveryFinance =
         id:6,       
         image:`${ImageSub7}`,
         title:"Bonds",
-        description:"Enhance returns and lower down risk by investing in various debt instruments ",
+        description:"Popular Investment Avenue for Long Term Tax savers",
 
 
     },
@@ -62,7 +62,7 @@ const EveryFinance =
         id:7,      
         image:`${ImageSub8}`,
         title:"PPF",
-        description:"Popular Investment Avenue for Long Term Tax savers",
+        description:"A tax-free investment instrument for the salaried class",
 
 
     },
@@ -70,7 +70,7 @@ const EveryFinance =
         id:8,        
         image:`${ImageSub9}`,
         title:"EPF",
-        description:"a tax-free investment instrument for the salaried class",
+        description:"Grow your funds with a fixed rate of Corporate FDs without market volatility",
 
 
     },

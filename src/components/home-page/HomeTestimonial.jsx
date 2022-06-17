@@ -10,7 +10,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons'
 import { faArrowRightLong } from '@fortawesome/free-solid-svg-icons'
 import { faArrowLeftLong } from '@fortawesome/free-solid-svg-icons'
 import { useState, useRef } from 'react';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function HomeTestimonial() {
 
@@ -49,7 +49,7 @@ function HomeTestimonial() {
     //     {
     //         "img": ImageSub24, "name": "Leo Messi", "tag": "@LeoMessi", "date": "25 Jun 2015", "likes": "57",
     //         "des": "<a>s don’t support the disabled attribute, so you must add the" +
-    //             ".disabled class to make it visually appear disabled."
+    //             ".disabled className to make it visually appear disabled."
     //     },
 
 
@@ -180,19 +180,23 @@ function HomeTestimonial() {
 						</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-									<img src={dataObj[1].img} alt="Loading" />
+								<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									{/* <img src={dataObj[1].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub21'>
-									<img src={dataObj[2].img} alt="Loading" />
+								<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									{/* <img src={dataObj[2].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub23'>
-									<img src={dataObj[3].img} alt="Loading" />
+								<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} alt="Loading"/>
+									{/* <img src={dataObj[3].img} alt="Loading" /> */}
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-										<img src={dataObj[0].img} alt="Loading" className="main-img-slide" />
+									<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className="main-img-slide" alt="Loading"/>
+										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
 									</div>
 									<div className="slider-item-des">
 										<div className="item-des-name-value">

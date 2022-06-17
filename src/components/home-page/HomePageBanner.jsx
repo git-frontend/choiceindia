@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
 
-// import { LazyLoadImage } from 'react-lazy-load-image-component';
-// import 'react-lazy-load-image-component/src/effects/blur.css';
-
 function HomePageBanner() {
 
     const [primary, setPrimary] = useState([]);
@@ -48,8 +45,8 @@ function HomePageBanner() {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                        <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.images}`} threshold={[0, 0.5, 1]} className="banner-img" alt="Loading"/>
-                                                {/* <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" /> */}
+                                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className={"banner-img"} alt={"Loading"} />
+                                            {/* <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" /> */}
                                         </div>
                                     </div>
                                 </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import image1 from "../../assets/images/Faq/faq1.png";
+import image1 from "../../assets/images/Faq/faq-banner.jpg";
 
 
 function FaqBanner() {
@@ -16,9 +16,9 @@ function FaqBanner() {
          <div className='app-banner-caption'>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-12'>
+                    <div className='col-md-6'>
                         <div className='caption-cont'>
-                            <h1 className='faq-title'>How can I help you ?</h1>
+                            <h1 className='big-ttl faq-title'>How can I help you ?</h1>
                             <div className="faq-search">
                             <Form.Control type="text" placeholder="Search for your issue" />
                             <Button variant="warning">Search</Button>

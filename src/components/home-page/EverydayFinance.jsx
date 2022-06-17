@@ -4,6 +4,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
 import EveryFinance from "../../Data/EverydayFinance"
+import LazyLoader from '../Common-features/LazyLoader';
 
 function EverydayFinance() {
 
@@ -14,14 +15,14 @@ function EverydayFinance() {
     slidesToShow: 4,
     autoplay: true,
     dots: true,
-    autoplaySpeed: 2000,
-    slidesToScroll: 2,
+    autoplaySpeed: 3000,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 992,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           adaptiveHeight: true,
         },
       },
@@ -55,11 +56,12 @@ function EverydayFinance() {
                       return (
                         <div key={response.id} className="service-item">
                           <span className="img-itm">
-                            <img src={response.image} className="img-fluid" alt='Loading' />
+                          <LazyLoader src={response.image} className="img-fluid" alt="Loading" />
+                            {/* <img src={response.image} className="img-fluid" alt='Loading' /> */}
                           </span>
                           <h5>{response.title || '-'}</h5>
                           <p>{response.description || '-'}</p>
-                          <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a>
+                          {/* <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a> */}
                         </div>
 
                       )

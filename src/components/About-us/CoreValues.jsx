@@ -1,13 +1,13 @@
 
 import React from "react";
 
-import Innovation from '../../assets/images/about-us/innovation.png';
-import Optimism from '../../assets/images/about-us/Optimism.png';
-import Consistency from '../../assets/images/about-us/Consistency.png';
-import Empowerment from '../../assets/images/about-us/Empowerment.png';
-import Commitment from '../../assets/images/about-us/commitment.png';
-import Honesty from '../../assets/images/about-us/Honesty.png';
-
+import Innovation from '../../assets/images/about-us/innovation.svg';
+import Optimism from '../../assets/images/about-us/Optimism.svg';
+import Consistency from '../../assets/images/about-us/Consistency.svg';
+import Empowerment from '../../assets/images/about-us/Empowerment.svg';
+import Commitment from '../../assets/images/about-us/Commitment.svg';
+import Honesty from '../../assets/images/about-us/Honesty.svg';
+import LazyLoader from '../Common-features/LazyLoader';
 import Slider from "react-slick";
 function CoreValues() {
     const settings = {
@@ -61,7 +61,8 @@ function CoreValues() {
                         
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Commitment} className="img-fluid" alt="Loading"  />
+                            <LazyLoader src={Commitment} className="img-fluid" alt="Loading" />
+                            {/* <img src={Commitment} className="img-fluid" alt="Loading"  /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Commitment</h4>
@@ -72,7 +73,8 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Honesty} className="img-fluid" alt="Loading"  />
+                            <LazyLoader src={Honesty} className="img-fluid" alt="Loading" />
+                            {/* <img src={Honesty} className="img-fluid" alt="Loading"  /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Honesty</h4>
@@ -83,7 +85,8 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                              <img src={Optimism} className="img-fluid" alt="Loading" />
+                            <LazyLoader src={Optimism} className="img-fluid" alt="Loading" />
+                              {/* <img src={Optimism} className="img-fluid" alt="Loading" /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Optimism</h4>
@@ -92,7 +95,8 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                              <img src={Innovation} className="img-fluid" alt="Loading" />
+                            <LazyLoader src={Innovation} className="img-fluid" alt="Loading" />
+                              {/* <img src={Innovation} className="img-fluid" alt="Loading" /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Innovation</h4>
@@ -103,7 +107,8 @@ function CoreValues() {
                           </div>
                           <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Consistency} className="img-fluid" alt="Loading" />
+                            <LazyLoader src={Consistency} className="img-fluid" alt="Loading" />
+                            {/* <img src={Consistency} className="img-fluid" alt="Loading" /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Consistency</h4>
@@ -114,7 +119,8 @@ function CoreValues() {
                           </div>
                             <div className="team-item pr-5">
                             <span className="img-itm">
-                            <img src={Empowerment} className="img-fluid" alt="Loading"  />
+                            <LazyLoader src={Empowerment} className="img-fluid" alt="Loading" />
+                            {/* <img src={Empowerment} className="img-fluid" alt="Loading"  /> */}
                             </span>
                             <div className="namedesg">
                                 <h4 className="title">Empowerment</h4>

@@ -1,8 +1,8 @@
 
-import  CareerImage13 from '../../assets/images/career/bg1.jpg';
+import  CareerImage13 from '../../assets/images/career/team-bg.webp';
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
-// import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
+import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
 
 function CareerTeam() {
 
@@ -14,7 +14,7 @@ function CareerTeam() {
      
     
 
-    <section className='career-team'>
+  <section className='career-team'>
       <div className='container'>
         <div className='row'>
             <div className='col-md-12'>

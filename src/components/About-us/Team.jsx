@@ -1,24 +1,25 @@
 
 import React from "react";
 
-import image1 from '../../assets/images/about-us/kamal-poddar.png';
-import image2 from '../../assets/images/about-us/ajay-kejriwal.png';
-import image3 from '../../assets/images/about-us/sunil-bagaria.png';
-import image4 from '../../assets/images/about-us/ram-ratan-chirania.png';
-import image5 from '../../assets/images/about-us/sumeet-bagadia.png';
-import image6 from '../../assets/images/about-us/sundar-sanmukhani.png';
+//import image1 from '../../assets/images/about-us/kamal-poddar.webp';
+//import image2 from '../../assets/images/about-us/ajay-kejriwal.webp';
+//import image3 from '../../assets/images/about-us/sunil-bagaria.webp';
+//import image4 from '../../assets/images/about-us/ram-ratan-chirania.webp';
+//import image5 from '../../assets/images/about-us/sumeet-bagadia.webp';
+//import image6 from '../../assets/images/about-us/sundar-sanmukhani.webp';
+import image7 from '../../assets/images/about-us/person-img.webp';
 import Slider from "react-slick";
 function Team() {
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 2000,
-        arrows: true,
-        slidesToShow: 3,
-        autoplay: true,
+        arrows: false,
+        slidesToShow: 4,
+        autoplay: false,
         margin:15,
-        dots:false,
+        dots:true,
         autoplaySpeed: 800,
-        slidesToScroll: 1,
+        slidesToScroll: 4,
         responsive: [
           {
             breakpoint: 992,
@@ -54,7 +55,7 @@ function Team() {
                   <Slider {...settings} className="team-list-slider">
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image1} className="img-fluid" alt="loading" />
+                          <img src={image7} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Kamal Poddar</h5>
@@ -65,7 +66,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image2} className="img-fluid" alt="loading" />
+                          <img src={image7} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Ajay Kejriwal</h5>
@@ -76,7 +77,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image3} className="img-fluid" alt="loading"/>
+                          <img src={image7} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5>Sunil Bagaria</h5>
@@ -87,7 +88,7 @@ function Team() {
                       </div>
                      <div className="team-item">
                         <span className="img-itm">
-                          <img src={image4} className="img-fluid" alt="loading"/>
+                          <img src={image7} className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
                             <h5 className="name">CA Ram Ratan Chirania</h5>
@@ -97,7 +98,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image5} className="img-fluid" alt="loading" />
+                          <img src={image7} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sumeet Bagadia</h5>
@@ -107,7 +108,7 @@ function Team() {
                       </div>
                       <div className="team-item">
                         <span className="img-itm">
-                          <img src={image6} className="img-fluid" alt="loading" />
+                          <img src={image7} className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
                             <h5>Sundar Sanmukhani</h5>
