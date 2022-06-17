@@ -45,7 +45,7 @@
                   padding-top: 5rem;
                   padding-right: 3rem;
                   .btn-bg{
-                      margin-top: 2rem;
+                      margin-top: 4rem;
                   }
                   @media (max-width:$sm-x) {
                     width: 100%;
@@ -98,7 +98,7 @@
 
 
 .benefits-partnering {
-    padding: 7rem 0;
+    padding: 7rem 0 10rem 0;
     position: relative;
 
     background-color: $bgcolor-cream;
@@ -145,6 +145,7 @@
         z-index: 0;
         background-size: contain;
         position: absolute;
+        display: none;
 
         @media (max-width:$md) {
             display: none;
@@ -153,10 +154,11 @@
 }
 
 .middle-bar-cont {
-    padding: 3rem 0;
+    padding: 3rem;
     background: $bgcolordark;
     border-radius: 15px;
-
+    position: relative;
+    margin-top: -5.5rem;
 
     .bar-cont-des {
         display: flex;
@@ -165,17 +167,14 @@
 
 
         .title-fourth {
-            font-size: 2rem;
+            font-size: 2.5rem;
         }
 
         h3 {
             color: $whiteColor;
         }
 
-        .btn-bg {
-            background: $whiteColor !important;
-            color: $primary !important;
-        }
+       
 
         @media (max-width:$sm-x) {
             flex-wrap: wrap;
@@ -193,6 +192,7 @@
         align-items: center;
         justify-content: center;
         margin-top: 5rem;
+        position: relative;
         .work-steps-itm{
             width: 19%;
             text-align: center;
@@ -203,7 +203,6 @@
                 height: 130px;
                 border-radius: 50%;
                 background: $whiteColor;
-                @extend .box-shadow;
                 display: flex;
                 align-items: center;
                 position: relative;
@@ -244,6 +243,24 @@
                 margin-bottom: 3rem;
             }
         }
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            border: none;
+            border-top: 1px dashed $darkColorgray;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 80%;
+            top: 32%;
+            margin: 0 auto;
+            right: 0;
+
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
     }
     @media (max-width:$sm-x) {
         padding: 6rem 0 3rem 0;
@@ -252,27 +269,63 @@
 
 .choice-connect-work{
     background: $abt-bg;
-    padding: 8rem 0 20rem 0;
+    padding:12rem 0 8rem 0;
     position: relative;
     overflow: hidden;
     .connect-work-list{
         display: flex;
-        align-items: center;
+        align-items:flex-start;
         flex-wrap: wrap;
-        margin-left: -4%;
+        margin-left: -2%;
         position: relative;
         z-index: 9;
         justify-content: center;
-        margin-top: 6rem;
+        margin-top: 0;
+        .work-list-itm-cont{
+            width: 48%;
+            margin-left: 2%;
+            .itm-cont-box{
+                max-width: 300px;
+                margin-top: 3rem;
+                h3{
+                    font-family: $font-family-poppins-semibold;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    font-size: 1.275rem;
+                }
+            }
+            @media (max-width:$sm-x) {
+                width: 42%;
+            }
+            @media (max-width:$xs) {
+                width: 90%;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+        }
+        
         .work-list-itm{
-            width: 29%;
-            margin-left: 4%;
-            @extend .box-shadow;
-            padding: 2rem 3rem;
+            width: 23%;
+            margin-left: 2%;
             text-align: center;
             border-radius: 18px;
-            background: $whiteColor;
+            position: relative;
+
             margin-bottom: 4rem;
+            .bx-item-cont {
+                background: $whiteColor;
+                padding: 3rem 2rem;
+                border: 3px solid transparent;
+                @extend .box-shadow;
+                border-radius: 20px;
+                position: relative;
+                z-index: 9;
+                width: 97%;
+                display: block;
+                margin: 0 auto;
+                height: 100%;
+            }
             h4{
                 margin: 2.5rem 0 1.5rem 0;
                 font-family: $font-family-poppins-semibold;
@@ -291,38 +344,52 @@
             @media (max-width:$xs   ) {
                 width: 90%;
             }
+            &::before {
+                content: '';
+                background: #FFCE02;
+                width: 100%;
+                height: 100%;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 20px;
+                transition: 0.70s;
+                -webkit-transition: 0.70s;
+                -moz-transition: 0.70s;
+                -ms-transition: 0.70s;
+                -o-transition: 0.70s;
+                opacity: 0;
+                visibility: hidden;
+            }
+            &:hover {
+                .bx-item-cont {
+                    border: 3px solid #FFCE02;
+                    box-shadow: none;
+                }
+
+                &::before {
+                    transform: rotate(4deg);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            &.work-list-itm-active{
+                .bx-item-cont {
+                    border: 3px solid #FFCE02;
+                    box-shadow: none;
+                }
+
+                &::before {
+                    transform: rotate(4deg);
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
         }
     }
-    
-    &::before{
-        content: '';
-        display: block;
-        height: 48.125rem;
-        width: 38.125rem;
-        bottom: -14rem;
-        left: -2.6875rem;
-        background: url('../../assets/images/partner/clip-bottom.png') no-repeat top left;
-        z-index: 0;
-        background-size: contain;
-        background-position: left;
-        position: absolute;
-        @media (max-width:$md) {
-            display: none;
-        }
+    @media (max-width:$xs   ) {
+       padding: 6rem 0;
     }
-    &::after{
-        content: '';
-        display: block;
-        height: 38.125rem;
-        width: 18.125rem;
-        top: -2rem;
-        right: 0;
-        background: url('../../assets/images/partner/clip-img1.png') no-repeat top right;
-        z-index: 0;
-        background-size: contain;
-        position: absolute;
-        @media (max-width:$md) {
-            display: none;
-        }
-    }
+ 
 }

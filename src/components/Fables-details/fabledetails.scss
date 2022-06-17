@@ -60,6 +60,7 @@
         .imgblock{
             margin-top: 5rem;
             border-radius: 30px;
+            width:100%;
            
         }
         .textwrap{
@@ -110,7 +111,7 @@
 
 
     .recommendation{
-        padding:4rem 0 8rem;
+        padding:4rem 0 20rem;
         position: relative;
         &::after{
             position: absolute;

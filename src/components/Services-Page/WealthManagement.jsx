@@ -8,7 +8,7 @@ function WealthManagement() {
     <div>
       
      
-    <section className="bannersection service-tab-cont" id="EquityBroking">
+          <section className="bannersection service-tab-cont bg-rightsection" id="EquityBroking">
         <div className="container">
             <div className="row d-flex justify-content-center">
                 <div className="col-md-12">
@@ -19,12 +19,12 @@ function WealthManagement() {
                 </div>
             </div>
             <div className="row gx-5 align-items-center mb-5">
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <div className="benifit-list">
                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Asset Allocation</h5>
@@ -43,9 +43,10 @@ function WealthManagement() {
                             <p>Our team understands the dynamics of various industries for assisting our clients looking for going public.</p>
                        </div>
                     </div>
+                    <a href="/" className="btn-bg">Explore</a>
                 </div>
             </div>
-            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
+            
         </div>
     </section>
       

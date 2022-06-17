@@ -42,7 +42,7 @@ function Footer() {
                             <a href="https://choiceindia.com/loan-against-securities-shares">Loans</a>
                           </li>
                           <li>
-                            <a href="/">Merchant Banking</a>
+                          <a href="/">Capital Advisory</a>
                           </li>
                           <li>
                             <a href="/">Management Consultancy</a>

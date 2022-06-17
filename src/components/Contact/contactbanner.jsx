@@ -183,7 +183,7 @@ function Contactbanner() {
                     <span className="text-danger"> {errors?.question?.message} </span>
                   </div>
 
-                  <div className="uploadbtn mt-3 d-flex justify-content-between">
+                  <div className="uploadbtn mt-3 d-flex ">
                     <Button variant="primary"
                       type="submit" className="btn-bg btn-bg-dark sendbtn">
                       Send

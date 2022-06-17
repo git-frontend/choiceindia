@@ -98,7 +98,7 @@
 /** changes below */
 .banner-parent {
     // border:2px solid blue;
-    height: 813px;
+    // height: 813px;
     width: 100%;
 }
 
@@ -310,7 +310,7 @@
 .cnt-banner-bottm {
     
     position: relative;
-    margin-top: -140px;
+    margin-top: -208px;
     animation: hideMe 4s forwards;
     .writebtn {
         position: relative;
@@ -517,8 +517,8 @@
 
         .uploadbtn {
             position: relative;
-            margin-bottom: 3rem;
-            align-items: center;
+            margin-bottom: 0rem;
+            justify-content:flex-end;
         }
 
         .attachement {

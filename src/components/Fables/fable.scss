@@ -2,11 +2,12 @@
 @import '../../assets/css/customvariable.scss';
 
 
-.fables-banner{
+.fables-banner {
     padding-top: 1rem;
     overflow-x: hidden;
     padding-bottom: 1rem;
-    .fables-caption-left{
+
+    .fables-caption-left {
         width: 58%;
         padding: 5rem;
         padding-left: 0;
@@ -15,14 +16,17 @@
         position: relative;
         border-radius: 0 24px 24px 0;
         background: $bgcolor-yellow;
-        .big-ttl{
+
+        .big-ttl {
             position: relative;
-            span{
+
+            span {
                 font-family: $font-family-poppins-regular;
                 display: block;
             }
         }
-        &::before{
+
+        &::before {
             content: '';
             width: 350%;
             height: 100%;
@@ -31,44 +35,53 @@
             left: -350%;
             top: 0;
             background: $bgcolor-yellow;
+
             @media screen and (max-width: $sm) {
                 display: none;
             }
         }
+
         @media screen and (max-width: $sm) {
             width: 100%;
             padding: 3rem 2rem;
             border-radius: 20px;
         }
     }
-    .fables-caption-right{
+
+    .fables-caption-right {
         width: 40%;
         padding: 2.5rem;
         @extend .box-shadow;
         position: relative;
         border-radius: 24px 0 0 24px;
-        .fable-trending-list{
-            .trending-itm{
+
+        .fable-trending-list {
+            .trending-itm {
                 display: flex;
                 align-items: center;
                 margin-bottom: 1.5rem;
                 text-decoration: none;
-                .trending-itm-img{
+
+                .trending-itm-img {
                     width: 30%;
-                    img{
+
+                    img {
                         width: 100%;
                         border-radius: 10px;
                         height: 100px;
                         object-fit: cover;
+
                         @media (max-width: $md) {
                             height: 70px;
                         }
                     }
                 }
-                .trending-itm-des{
+
+                .trending-itm-des {
                     width: 70%;
                     padding-left: 2rem;
-                    p{
+
+                    p {
                         color: $primary;
                         overflow: hidden;
                         text-overflow: ellipsis;
@@ -80,7 +93,8 @@
                 }
             }
         }
-        &::before{
+
+        &::before {
             content: '';
             width: 500%;
             height: 100%;
@@ -89,11 +103,13 @@
             right: -497%;
             top: 0;
             background: $whiteColor;
-            box-shadow: 15px 0px 10px 1px #c2c2c2;
+
+            box-shadow: 5px 0px 8px 0 #f0f0f0;
             @media screen and (max-width: $sm) {
                 display: none;
             }
         }
+
         @media screen and (max-width: $sm) {
             margin-top: 4rem;
             width: 100%;
@@ -103,52 +119,60 @@
     }
 }
 
-.blog-middle-cont{
+.blog-middle-cont {
     position: relative;
     padding: 10rem 0;
-    &::before{
+
+    &::before {
         content: '';
         width: 21rem;
         height: 40rem;
         display: block;
         position: absolute;
-        background: url(../../assets/images/fable/circle-left.svg) no-repeat top left;
+        background: url(../../assets/images/fable/fable-circle-left.svg) no-repeat top left;
         background-size: contain;
         left: 0;
         top: -13rem;
+
         @media screen and (max-width: $md) {
             display: none;
         }
     }
-    &::after{
+
+    &::after {
         content: '';
         width: 21rem;
         height: 42rem;
         display: block;
         position: absolute;
-        background: url(../../assets/images/fable/circle-right.svg) no-repeat top left;
+        background: url(../../assets/images/fable/fable-circle-right.svg) no-repeat top left;
         background-size: contain;
         right: 0;
         bottom: -0rem;
+
         @media screen and (max-width: $md) {
             display: none;
         }
     }
-    .all-latest-blog-list{
+
+    .all-latest-blog-list {
         position: relative;
         z-index: 99;
-        margin-top:10rem;
-        .latest-blog-itm{
+        margin-top: 10rem;
+
+        .latest-blog-itm {
             margin-bottom: 2.5rem;
-            .blog-itm{
+
+            .blog-itm {
                 display: flex;
                 text-decoration: none;
                 align-items: center;
-                .blog-itm-des{
+
+                .blog-itm-des {
                     width: 70%;
                     padding-right: 3rem;
                     // padding: 0 2rem;
-                    .itm-des-cont{
+                    .itm-des-cont {
                         font-size: 1.765rem;
                         line-height: 2.6rem;
                         color: $primary;
@@ -160,18 +184,22 @@
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
                     }
-                    .tag-act{
+
+                    .tag-act {
                         color: $darkColorgray;
                         font-family: $font-family-poppins-regular;
                     }
                 }
-                .blog-itm-img{
+
+                .blog-itm-img {
                     width: 30%;
-                    .img-blog{
+
+                    .img-blog {
                         width: 100%;
                         height: 155px;
                         object-fit: cover;
                         border-radius: 20px;
+
                         @media (max-width: $md) {
                             height: 80px;
                             object-fit: cover;
@@ -180,23 +208,26 @@
                     }
                 }
             }
-           
         }
     }
-    .single-blog-con{
-        .single-blog-img{
+
+    .single-blog-con {
+        .single-blog-img {
             margin-bottom: 2rem;
-            img{
+
+            img {
                 width: 100%;
             }
         }
-        .single-blog-des{
-            h3{
+
+        .single-blog-des {
+            h3 {
                 font-size: 2.25rem;
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
             }
-            .des-cont{
+
+            .des-cont {
                 color: $secondary;
                 // overflow: hidden;
                 text-overflow: ellipsis;
@@ -204,29 +235,35 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 2;
                 -webkit-box-orient: vertical;
-                a{
+
+                a {
                     color: $bluetext;
                     text-decoration: none;
                 }
             }
         }
     }
-    .blog-middle-left{
-        
-        .heading-sec{
+
+    .blog-middle-left {
+
+        .heading-sec {
             padding-bottom: 2rem;
-            @media (max-width: $md){
+
+            @media (max-width: $md) {
                 padding-right: 0;
             }
         }
+
         @media screen and (max-width: $sm) {
             padding-right: 0;
         }
     }
-    .blog-middle-right{
+
+    .blog-middle-right {
         padding-left: 3rem;
-        .heading-sec{
-            p{
+
+        .heading-sec {
+            p {
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: initial;
@@ -235,35 +272,41 @@
                 -webkit-box-orient: vertical;
             }
         }
+
         @media screen and (max-width: $sm) {
             padding-left: 0;
         }
     }
+
     @media screen and (max-width: $md) {
         padding: 10rem 0;
     }
 }
 
 
-.fable-blog-List{
-    padding: 2rem 0 25rem 0;
+.fable-blog-List {
+    padding: 2rem 0 15rem 0;
     position: relative;
     overflow: hidden;
-    .fable-list-menu{
+
+    .fable-list-menu {
         margin-bottom: 3rem;
         position: relative;
-        > ul{
+
+        > ul {
             display: flex;
             align-items: center;
             list-style: none;
             padding: 0;
             margin: 0;
-            overflow: auto;
+            overflow: inherit;
             top: -5rem;
             justify-content: space-between;
-            >li{
+
+            > li {
                 margin: 0 2rem;
-                .link-txt{
+
+                .link-txt {
                     color: #221F20BF;
                     display: block;
                     position: relative;
@@ -271,9 +314,15 @@
                     font-family: $font-family-poppins-medium;
                     border: 0;
                     font-size: 1.375rem;
-                    &.link-active{
+
+                    @media (max-width: $md) {
+                        padding: 1rem 0;
+                    }
+
+                    &.link-active {
                         font-family: $font-family-poppins-semibold;
-                        &::before{
+
+                        &::before {
                             content: "";
                             width: 0.5rem;
                             height: 0.5rem;
@@ -285,10 +334,15 @@
                             right: 0;
                             margin: 0 auto;
                             border-radius: 2px;
+
+                            @media (max-width: $md) {
+                                bottom: 0;
+                            }
                         }
                     }
-                    &:hover{
-                        &::before{
+
+                    &:hover {
+                        &::before {
                             content: "";
                             width: 0.5rem;
                             height: 0.5rem;
@@ -300,35 +354,49 @@
                             right: 0;
                             margin: 0 auto;
                             border-radius: 2px;
+
+                            @media (max-width: $md) {
+                                bottom: 0;
+                            }
                         }
                     }
                 }
             }
+
+            @media (max-width: $md) {
+                overflow: auto;
+            }
         }
     }
-    .tab-blog-list{
+
+    .tab-blog-list {
         display: flex;
         margin-top: 4rem;
         margin-left: -3%;
         position: relative;
         flex-wrap: wrap;
         z-index: 9;
-        .tab-blog-item{
+        padding-bottom: 8rem;
+
+        .tab-blog-item {
             width: 30%;
             margin-left: 3%;
             @extend .box-shadow;
             border-radius: 20px;
             background: $whiteColor;
             text-decoration: none;
-            .blog-item-img{
-                img{
+
+            .blog-item-img {
+                img {
                     width: 100%;
                     border-radius: 20px 20px 0 0;
                 }
             }
-            .blog-item-des{
+
+            .blog-item-des {
                 padding: 2rem;
-                h4{
+
+                h4 {
                     font-size: 1.5rem;
                     line-height: 1.6;
                     color: $primary;
@@ -341,7 +409,8 @@
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                 }
-                p{
+
+                p {
                     font-size: 1.3rem;
                     color: $secondary;
                     overflow: hidden;
@@ -351,32 +420,37 @@
                     -webkit-line-clamp: 2;
                     -webkit-box-orient: vertical;
                 }
-                .sm-text{
+
+                .sm-text {
                     font-size: 1rem;
                     color: $secondary;
                     font-family: $font-family-poppins-regular;
                 }
             }
+
             @media screen and (max-width: $sm) {
                 width: 97%;
                 margin-bottom: 3rem;
             }
         }
     }
-    &::before{
+
+    &::before {
         content: '';
         width: 24rem;
         height: 46rem;
         display: block;
         position: absolute;
-        background: url(../../assets/images/fable/circle-left.svg) no-repeat top left;
+        background: url(../../assets/images/fable/fable-circle-left.svg) no-repeat top left;
         background-size: contain;
         left: 0;
         bottom: -8rem;
+
         @media screen and (max-width: $md) {
             display: none;
         }
     }
+
     @media screen and (max-width: $md) {
         padding: 2rem 0 10rem 0;
     }
