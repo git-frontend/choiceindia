@@ -34,7 +34,6 @@
         // border:2px solid red;
         width: 60%;
         height: 500px;
-
         // background: #eee;
         .img-temp {
             width: 600px;
@@ -73,7 +72,6 @@
             background-size: 200% 100%;
             animation: 1.5s shine linear infinite;
         }
-
     }
 }
 
@@ -127,10 +125,6 @@
             }
         }
     }
-
-
-
-
 }
 
 
@@ -139,7 +133,8 @@
     position: relative;
     animation: hideMe 4s forwards;
 
-    @media (max-width: 1024px) {}
+    @media (max-width: 1024px) {
+    }
 
     &:before {
         content: '';
@@ -249,9 +244,6 @@
                 top: 4px;
                 background-size: 1.2rem;
             }
-
-
-
         }
 
 
@@ -265,7 +257,6 @@
         }
 
         .option {
-
             color: $primary;
             background: transparent;
             border: 0px solid $lightColor;
@@ -280,7 +271,6 @@
                 font-family: "PoppinsRegular", sans-serif, sans-serif;
             }
         }
-
     }
 
     .flex-column-left {
@@ -308,10 +298,10 @@
 
 
 .cnt-banner-bottm {
-    
     position: relative;
     margin-top: -208px;
     animation: hideMe 4s forwards;
+
     .writebtn {
         position: relative;
         left: 0;
@@ -373,7 +363,6 @@
                 @media (max-width: $sm) {
                     padding: 12px 10px;
                 }
-
             }
 
             ::placeholder {
@@ -400,7 +389,6 @@
                     font-size: 1.2rem;
                 }
             }
-
         }
 
         .formlabel {
@@ -443,9 +431,6 @@
                     justify-content: center;
                     align-items: center;
                 }
-
-
-
             }
 
 
@@ -468,7 +453,6 @@
 
                 @media (max-width: $sm) {
                     font-size: 1.2rem;
-
                     padding: 0 10px;
                 }
 
@@ -484,14 +468,12 @@
                     justify-content: center;
                     align-items: center;
                 }
-
             }
 
             .dropdown-menu {
                 width: 100%;
                 font-family: $font-family-poppins-regular, sans-serif;
             }
-
         }
 
         .messagefield {
@@ -518,7 +500,7 @@
         .uploadbtn {
             position: relative;
             margin-bottom: 0rem;
-            justify-content:flex-end;
+            justify-content: flex-end;
         }
 
         .attachement {
