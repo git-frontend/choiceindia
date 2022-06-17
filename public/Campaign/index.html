@@ -2,61 +2,117 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Add React in One Minute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>What is Demat Account? Meaning, Opening Process, Types & Benefits</title>
+    <meta name="description" content="A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice." />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link rel='stylesheet' type='text/css' media='screen' href='css/landingpage.css'>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
   </head>
   <body>
-    <div className="Home" id="root">
+    <div class="Home" id="root">
 
         <main>
+          <div class="Header">
+            <header class="main-header">
+              <nav class="navbar navbar-expand-lg ">
+                <div class="container">
+                    <a href="#" class="navbar-brand logo-main">
+                      <span>
+                        <img src="./images/choicelogo.png" class="img-fluid logo-dark" alt="Choice India" />
+                      </span>
+                      
+                    </a>
+                   
+                    <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="myFunction(this)">
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav me-auto nav-header mb-2 mb-lg-0">
+                        <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">About </a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">App</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Services</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Research</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Careers</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Contact</a>
+                        </li>
+                        <li class="nav-item login-btn">
+                          <a href= '/Log In' class="nav-link">Log In</a>
+                      </li>
+                      <li class="nav-item get-btn">
+                        <a class="nav-link"  to= "/">Get Started</a>
+                        </li>
+                      </ul>
+                     
+                  </div>
+                 
+                </div>
+              </nav>
+             
+            </header>
+          </div>
+        <section class="bannersection">
+          <div class="container">
+              <div class="row  align-items-center">
+                  <div class="col-md-7">
+                      <h1 class="title text-center">Demat Account</h1>
   
-        <section className="bannersection">
-          <div className="container">
-              <div className="row  align-items-center">
-                  <div className="col-md-7">
-                      <h1 className="title">Demat Account</h1>
-  
-                      <p className="para">A Perfect Guide for Beginners</p>
+                      <p class="para">A Perfect Guide for Beginners</p>
                        <hr />       
                       
-                      <div className="bannertext">
-                          <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must <a href="https://choiceindia.com/open-free-demat-account" className="linking"> open a Demat account.</a></p>
+                      <div class="bannertext">
+                          <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must <a href="https://choiceindia.com/open-free-demat-account" class="linking"> open a Demat account.</a></p>
                           <p> Demat account is necessary to start your investment journey into the stock market.</p>
                           <p>Let’s get started to understand everything about the Demat account through this guide.</p>
                       </div>
                   </div>
-                  <div className="col-md-5">
-                      <div className="rightsec">
-                          <div className="signal-form" id="form-banner" >
-                          <form id="enq_form" className="mt-4 enq-form">
+                  <div class="col-md-5">
+                      <div class="rightsec">
+                          <div class="signal-form" id="form-banner" >
+                          <form id="enq_form" class="mt-4 enq-form">
                                   <fieldset>
                              
-                                      <div className="title-form">
-                                          <h3 className="formtitle">Open Free Account</h3>
+                                      <div class="title-form">
+                                          <h3 class="formtitle">Open Free Account</h3>
                                       </div>
                               
-                                      <div className="form-group">
+                                      <div class="form-group">
                                           <label htmlFor="mobile-number" hidden>Mobile Number</label>
-                                          <input type="tel" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder=" "  required  aria-describedby="Mobile Number*" autoComplete="off" /> 
-                                          <label className="hello">Mobile Number</label>
+                                          <input type="tel" class="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder=" "  required  aria-describedby="Mobile Number*" autoComplete="off" /> 
+                                          <label class="hello">Mobile Number</label>
                                           <div>
-                                              <span id="mobile_no_error" className="errormsg"></span>
+                                              <span id="mobile_no_error" class="errormsg"></span>
                                           </div>
                                       </div>
                                 
-                                      <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                                          <label><input type="checkbox"  className="checkbox termcon" id="terms_and_conditions"  disabled required value="1" />
+                                      <div class="form-group tnc d-flex align-items-top align-items-top-check">
+                                          <label><input type="checkbox"  class="checkbox termcon" id="terms_and_conditions"  disabled required value="1" />
                                           </label> 
-                                      <div className="termcon termcon1">
-                                          <div> I agree that I have read &amp; accept the<a href="<?php echo TERM_USE; ?>" target="_blank" className="tc"> Terms &amp; Conditions</a>
+                                      <div class="termcon termcon1">
+                                          <div> I agree that I have read &amp; accept the<a href="#" target="_blank" class="tc"> Terms &amp; Conditions</a>
                                           </div>
                                       </div>
                                       </div>
-                                      <div className="form-group">
-                                          <button type="button" className="form-btn"><span>Send OTP</span></button>
+                                      <div class="form-group">
+                                          <button type="button" class="form-btn"><span>Send OTP</span></button>
                                       </div>
                                   </fieldset>
-                                      <div><span id="formError" className="errormsg"></span></div>
-                                      <div><span id="error-msg" className="errormsg"></span></div>
+                                      <div><span id="formError" class="errormsg"></span></div>
+                                      <div><span id="error-msg" class="errormsg"></span></div>
                               </form>
                           </div>
                       </div>
@@ -65,89 +121,89 @@
           </div>
       </section>
   
-        <section className="tablecontent">
-          <div className="container">
-              <div className="row  align-items-center">
-                  <div className="col-md-12">
-                      <h2 className="title">Table of Content</h2>
+        <section class="tablecontent">
+          <div class="container">
+              <div class="row  align-items-center">
+                  <div class="col-md-12">
+                      <h2 class="title">Table of Content</h2>
                   </div>
                  
-                          <div className="col-md-12">
-                              <div className="same-bx-list">
+                          <div class="col-md-12">
+                              <div class="same-bx-list">
                               
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterone} className="" alt="Meaning of Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/demat-account-meaning.svg' class="" alt="Meaning of Demat Account" />
                                           <h4>Chapter 1</h4>
                                           <p>Meaning of Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chaptertwo} className="" alt="How Demat Account Works" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/how-does-demat-account-works.svg' class="" alt="How Demat Account Works" />
                                           <h4>Chapter 2</h4>
                                           <p>How Demat Account Works</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterthree} className="" alt="Types of Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/demat-account-types.svg' class="" alt="Types of Demat Account" />
                                           <h4>Chapter 3</h4>
                                           <p>Types of Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterfour} className="" alt="Advantages of Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/demat-account-benefits.svg' class="" alt="Advantages of Demat Account" />
                                           <h4>Chapter 4</h4>
                                           <p>Advantages of Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterfive} className="" alt="Demat Account Featues" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/features-of-demat-account.svg' class="" alt="Demat Account Featues" />
                                           <h4>Chapter 5</h4>
                                           <p>Demat Account Features</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chaptersix} className="" alt="How to Open Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/how-to-open-a-demat-account.svg' class="" alt="How to Open Demat Account" />
                                           <h4>Chapter 6</h4>
                                           <p>How to Open Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterseven} className="" alt="How to Choose Best Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/best-demat-account.svg' class="" alt="How to Choose Best Demat Account" />
                                           <h4>Chapter 7</h4>
                                           <p>How to Best Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chaptereight} className="" alt="Uses of Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/demat-account-uses.svg' class="" alt="Uses of Demat Account" />
                                           <h4>Chapter 8</h4>
                                           <p>Uses of Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapternine} className="" alt="Demat Account vs Trading Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/difference-between-demat-account-and-trading-account.svg' class="" alt="Demat Account vs Trading Account" />
                                           <h4>Chapter 9</h4>
                                           <p>Demat Vs Trading Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterten} className="" alt="How to Close Demat Account" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/how-to-deactivate-demat-account.svg' class="" alt="How to Close Demat Account" />
                                           <h4>Chapter 10</h4>
                                           <p>How To Close Demat Account</p>
                                       </div>
                                   </div>
-                                  <div className="same-bx-item">
-                                      <div className="item-cont">
-                                          <img src={Chapterelevens} className="" alt="Demat Account FAQs" />
+                                  <div class="same-bx-item">
+                                      <div class="item-cont">
+                                          <img src='./images/demat-account-faq.svg' class="" alt="Demat Account FAQs" />
                                           <h4>Chapter 11</h4>
                                           <p>Demat Account FAQs</p>
                                       </div>
@@ -159,270 +215,270 @@
           </div>
       </section>
   
-        <section className='dematacount'>
-          <div className='container'>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>chapter 1</p>
-                <h2 className="title">Meaning of Demat Account</h2>
-                <div className='row  pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecone} className="img-fluid" alt="" />
+        <section class='dematacount'>
+          <div class='container'>
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>chapter 1</p>
+                <h2 class="title">Meaning of Demat Account</h2>
+                <div class='row  pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/best-demat-account.png' class="img-fluid" alt="Demat Account Meaning" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>In the first chapter, you are going to understand Demat account meaning and what Dematerialisation is.</p>
-                    <p className='subtext'>
+                  <div class='col-md-6'>
+                    <p class='subtext'>In the first chapter, you are going to understand Demat account meaning and what Dematerialisation is.</p>
+                    <p class='subtext'>
                     Let’s understand it.
                     </p>
                   </div>
                 </div>
                
                <div>
-                <h3 className="subhead">What is a Demat Account?</h3>
-                <p className='subheadtxt'>Let's start with the Demat account in full form; Dematerialised Account, yes! That's the <a href='https://choiceindia.com/blog/demat-account-full-form/' className='linking'> full form of Demat account.</a></p>
-                <p className='subheadtxt'>If you are looking to open a Demat account, you first need to understand what a Demat account is? A Demat account allows holding shares and securities in electronic form. </p>
-                <p className='subheadtxt'>A Demat account allows the investors to buy and hold shares in it; not only this, a Demat account holds all investments made by an individual in shares, ETFs, government securities and mutual funds in one place. 
+                <h3 class="subhead">What is a Demat Account?</h3>
+                <p class='subheadtxt'>Let's start with the Demat account in full form; Dematerialised Account, yes! That's the <a href='https://choiceindia.com/blog/demat-account-full-form/' class='linking'> full form of Demat account.</a></p>
+                <p class='subheadtxt'>If you are looking to open a Demat account, you first need to understand what a Demat account is? A Demat account allows holding shares and securities in electronic form. </p>
+                <p class='subheadtxt'>A Demat account allows the investors to buy and hold shares in it; not only this, a Demat account holds all investments made by an individual in shares, ETFs, government securities and mutual funds in one place. 
                   The Indian Stock market went through a digitisation process through Demat and enforced better and enhanced governance by SEBI. Moreover, the Demat Account reduces the risk of storing, damage, theft, and malpractices by storing securities in electronic format. </p>
-                <p className='subheadtxt'> Earlier, the account opening process was manual, and it took ages to get the account activated, but now anyone can open a Demat Account within 5 minutes. Even the pandemic worked as a catalyst, and many people got involved in share trading.  </p>
-                <p className='subheadtxt'> Let's understand this better.</p>
+                <p class='subheadtxt'> Earlier, the account opening process was manual, and it took ages to get the account activated, but now anyone can open a Demat Account within 5 minutes. Even the pandemic worked as a catalyst, and many people got involved in share trading.  </p>
+                <p class='subheadtxt'> Let's understand this better.</p>
                </div>
                <div>
-                <h3 className="subhead">What is Dematerialisation?</h3>
-                <p className='subheadtxt'>Converting physical share certificates into an electronic form is the process known as <a href='https://choiceindia.com/blog/dematerialisation/' className='linking'> Dematerialisation</a>. Dematerialisation makes shares accessible anywhere throughout the world. </p>
-                <p className='subheadtxt'>Any person who wants to invest in trade online must open a Demat account with a Depository Participant (DP). The whole concept of Dematerialisation is to eliminate physical share certificates and facilitate a seamless tracking and monitoring of holdings.</p>
-                <p className='subheadtxt'> Long back, the share certificate issuance process was cumbersome and time-consuming. Still, Demat has transformed and sped up the entire process and helped store security certificates digitally. </p>
-                <p className='subheadtxt'>Post your <a href='https://choiceindia.com/blog/demat-account-activation-time/' className='linking'> Demat account activation</a> and your paper certificates digitally by submitting all your physical securities through a Dematerialisation Request Form (DRF). Also, deface each physical certificate by mentioning "Surrendered for Dematerialisation" on it. Post that, you will get an acknowledgement slip when you surrender your share certificates. 
+                <h3 class="subhead">What is Dematerialisation?</h3>
+                <p class='subheadtxt'>Converting physical share certificates into an electronic form is the process known as <a href='https://choiceindia.com/blog/dematerialisation/' class='linking'> Dematerialisation</a>. Dematerialisation makes shares accessible anywhere throughout the world. </p>
+                <p class='subheadtxt'>Any person who wants to invest in trade online must open a Demat account with a Depository Participant (DP). The whole concept of Dematerialisation is to eliminate physical share certificates and facilitate a seamless tracking and monitoring of holdings.</p>
+                <p class='subheadtxt'> Long back, the share certificate issuance process was cumbersome and time-consuming. Still, Demat has transformed and sped up the entire process and helped store security certificates digitally. </p>
+                <p class='subheadtxt'>Post your <a href='https://choiceindia.com/blog/demat-account-activation-time/' class='linking'> Demat account activation</a> and your paper certificates digitally by submitting all your physical securities through a Dematerialisation Request Form (DRF). Also, deface each physical certificate by mentioning "Surrendered for Dematerialisation" on it. Post that, you will get an acknowledgement slip when you surrender your share certificates. 
   </p>
                </div>
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
   
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 2</p>
-                <h2 className="title">How Demat Account Works?</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersectwo} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 2</p>
+                <h2 class="title">How Demat Account Works?</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/how-does-demat-account-works.png' class="img-fluid" alt="How Does Demat Account Works" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>The Demat account in India works in a straightforward process where the account holds the shares electronically.</p>
-                    <p  className='subtext'>
+                  <div class='col-md-6'>
+                    <p class='subtext'>The Demat account in India works in a straightforward process where the account holds the shares electronically.</p>
+                    <p  class='subtext'>
                     Demat accounts let the investors invest in shares and securities in electronic form that is accessible anywhere around the world.
                     </p>
                   </div>
                 </div>
                
                <div>
-                <h3 className='subhead'>How Does a Demat Account Work?</h3>
-                <p className='subheadtxt'>Every stock broker charges a Demat Account opening charges for the services rendered and the maintenance of the account throughout life. </p>
-                <p className='subheadtxt'><a href='https://choiceindia.com/blog/how-demat-account-works/' className='linking'> Demat accounts work</a> just like a bank account. For a Demat account to work to its fullest potential, you need to link it with a trading account. Your DP (Depository Participant) puts the investors' buy order forwards to the stock exchange whenever you buy a company's shares through any trading platform.</p>
-                <p className='subheadtxt'> After that, the exchange matches the investor's 'buy' request with another investor or trader's corresponding 'sell' request. Once the order matches, an order from the stock exchange is sent to a clearance house, settling the trade.</p>
-                <p className='subheadtxt'>   After the transaction is settled, the number of shares investors have bought is credited to their Demat Account by the trading day's end. Likewise, the Demat account of the seller is debited for the number of shares that were sold.</p>
+                <h3 class='subhead'>How Does a Demat Account Work?</h3>
+                <p class='subheadtxt'>Every stock broker charges a Demat Account opening charges for the services rendered and the maintenance of the account throughout life. </p>
+                <p class='subheadtxt'><a href='https://choiceindia.com/blog/how-demat-account-works/' class='linking'> Demat accounts work</a> just like a bank account. For a Demat account to work to its fullest potential, you need to link it with a trading account. Your DP (Depository Participant) puts the investors' buy order forwards to the stock exchange whenever you buy a company's shares through any trading platform.</p>
+                <p class='subheadtxt'> After that, the exchange matches the investor's 'buy' request with another investor or trader's corresponding 'sell' request. Once the order matches, an order from the stock exchange is sent to a clearance house, settling the trade.</p>
+                <p class='subheadtxt'>   After the transaction is settled, the number of shares investors have bought is credited to their Demat Account by the trading day's end. Likewise, the Demat account of the seller is debited for the number of shares that were sold.</p>
                </div>
                <div>
-                <h3 className='subhead'>Trading and Savings Account: The Integrated Approach!</h3>
-                <p className='subheadtxt'>Without a trading account, you can't do anything with your Demat account. You'll have to <a href='https://choiceindia.com/open-trading-account' className='linking'>open a trading account </a> to invest. A trading account helps complete the monetary transactions involved in buying and selling the shares. </p>
-                <p className='subheadtxt'>Demat, Trading and Savings accounts are interlinked but work separately for a smooth trading process. The foremost step for opening a Demat account is to have a savings bank account. Moreover, the Demat account holds the security bought while the savings account funds the transaction.</p>
-                <p className='note'> Note: A trading account is imperative if you want to invest or trade. Presently, most brokers open a trading account along with a Demat account.</p>
+                <h3 class='subhead'>Trading and Savings Account: The Integrated Approach!</h3>
+                <p class='subheadtxt'>Without a trading account, you can't do anything with your Demat account. You'll have to <a href='https://choiceindia.com/open-trading-account' class='linking'>open a trading account </a> to invest. A trading account helps complete the monetary transactions involved in buying and selling the shares. </p>
+                <p class='subheadtxt'>Demat, Trading and Savings accounts are interlinked but work separately for a smooth trading process. The foremost step for opening a Demat account is to have a savings bank account. Moreover, the Demat account holds the security bought while the savings account funds the transaction.</p>
+                <p class='note'> Note: A trading account is imperative if you want to invest or trade. Presently, most brokers open a trading account along with a Demat account.</p>
                
                </div>
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
              
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 3</p>
-                <h2 className="title">Types of Demat Account</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecthree} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 3</p>
+                <h2 class="title">Types of Demat Account</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/demat-account-types.png' class="img-fluid" alt="Demat Account Types" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>If you want to earn money in the stock market, then you need to have an activated Demat account. </p>
-                    <p  className='subtext'>
-                        There are various <a href='https://choiceindia.com/blog/demat-account-types/' className='linking'>types of Demat accounts</a> in India which help a wide variety of individuals to enter the stock market and earn good profits from it. 
+                  <div class='col-md-6'>
+                    <p class='subtext'>If you want to earn money in the stock market, then you need to have an activated Demat account. </p>
+                    <p  class='subtext'>
+                        There are various <a href='https://choiceindia.com/blog/demat-account-types/' class='linking'>types of Demat accounts</a> in India which help a wide variety of individuals to enter the stock market and earn good profits from it. 
                     </p>
-                    <p  className='subtext'>Let us now have a look at its types.</p>
+                    <p  class='subtext'>Let us now have a look at its types.</p>
                   </div>
                 </div>
                
                <div>
-                <h3 className='subhead'>What are the Types of Demat Accounts?</h3>
-                <p className='subheadtxt'>Majorly, there are three types of Demat accounts:</p>
-                <ul className='numberlist'>
-                  <li>
-                    <p className='subheadtxt'><h4>1. Regular Demat account: </h4> A regular Demat account is used by those residing in India. A regular Demat account is opened by the various depository participants in the stock market, which in turn is regulated and managed by the two depositories.
+                <h3 class='subhead'>What are the Types of Demat Accounts?</h3>
+                <p class='subheadtxt'>Majorly, there are three types of Demat accounts:</p>
+                <ul class='numberlist'>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'><h4 class="inline">1. Regular Demat account: </h4> A regular Demat account is used by those residing in India. A regular Demat account is opened by the various depository participants in the stock market, which in turn is regulated and managed by the two depositories.
                     </p>
-                    <p className='subheadtxt'> And the best part about owning it is that you don’t have to wait for days or weeks to buy or sell your shares. It happens within minutes and therefore you get the chance to earn profits as well.</p>
-                    <p className='subheadtxt'> You can open a regular Demat account with the stockbroker of your choice and also switch and transfer the shares depending on your requirements.</p>
+                    <p class='subheadtxt'> And the best part about owning it is that you don’t have to wait for days or weeks to buy or sell your shares. It happens within minutes and therefore you get the chance to earn profits as well.</p>
+                    <p class='subheadtxt'> You can open a regular Demat account with the stockbroker of your choice and also switch and transfer the shares depending on your requirements.</p>
                   </li>
-                  <li>
-                    <p className='subheadtxt'><h4>2. Repatriable Demat Account: <a href='https://choiceindia.com/nri-demat-account' className='linking'>(NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'><h4 class="inline">2. Repatriable Demat Account: <a href='https://choiceindia.com/nri-demat-account' class='linking'>(NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
                   
                   </li>
-                  <li>
-                    <p className='subheadtxt'><h4>3. Non-Repatriable Demat Account:</h4>  Like a Repatriable Demat Account, the funds cannot be transferred abroad in this type of Demat account. Also, an investor would require an NRO bank account associated with it.</p>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'><h4 class="inline">3. Non-Repatriable Demat Account:</h4>  Like a Repatriable Demat Account, the funds cannot be transferred abroad in this type of Demat account. Also, an investor would require an NRO bank account associated with it.</p>
                   
                   </li>
                 </ul>
                </div>
            
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
              
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 4</p>
-                <h2 className="title">Benefits of Demat Account</h2>
-                <div className='row'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecfour} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 4</p>
+                <h2 class="title">Benefits of Demat Account</h2>
+                <div class='row'>
+                  <div class='col-md-6'>
+                    <img src='./images/demat-account-benefits.png' class="img-fluid" alt="Demat Account Benefits" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>Since the introduction of Dematerialization, there have been a lot of changes in the stock market. Wondering if the <a href='https://choiceindia.com/blog/is-demat-account-safe/' className='linking'>Demat account is safe</a>, then let's tell you that the introduction of materialised accounts has reduced the scams in the stock market, and rightly it has managed to do so.</p>
-                    <p className='subtext'>
-                    But apart from this, there are various other <a href='https://choiceindia.com/blog/benefits-of-a-demat-account/' className='linking'>benefits of Demat accounts</a> as well.
+                  <div class='col-md-6'>
+                    <p class='subtext'>Since the introduction of Dematerialization, there have been a lot of changes in the stock market. Wondering if the <a href='https://choiceindia.com/blog/is-demat-account-safe/' class='linking'>Demat account is safe</a>, then let's tell you that the introduction of materialised accounts has reduced the scams in the stock market, and rightly it has managed to do so.</p>
+                    <p class='subtext'>
+                    But apart from this, there are various other <a href='https://choiceindia.com/blog/benefits-of-a-demat-account/' class='linking'>benefits of Demat accounts</a> as well.
                     </p>
                   </div>
                 </div>
                
                <div>
-                <h3 className="subhead">Advantages of Demat Account</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">Advantages of Demat Account</h3>
+                <ul class='bullet'>
                   <li>
-                    <h4 className='listhead'>Safety and security</h4>
-                    <p className='subheadtxt'>The safety offered by a Demat account is the greatest advantage. When financial assets used to be held in physical form, it was at risk of getting lost or stolen.</p>
-                    <p className='subheadtxt'> The investor would then have to go through paperwork and operational challenges to recover those assets, and still, there would never be any guarantee of recovery.</p>
+                    <h4 class='listhead'>Safety and security</h4>
+                    <p class='subheadtxt'>The safety offered by a Demat account is the greatest advantage. When financial assets used to be held in physical form, it was at risk of getting lost or stolen.</p>
+                    <p class='subheadtxt'> The investor would then have to go through paperwork and operational challenges to recover those assets, and still, there would never be any guarantee of recovery.</p>
                   </li>
                   <li>
-                    <h4 className='listhead'>Faster and smoother settlements</h4>
-                    <p className='subheadtxt'>Before the Demat account, it used to take around 14 days because of the physical movement of physical shares from the seller and then to the RTA and finally to the buyer.</p>
-                    <p className='subheadtxt'> Now, with the help of the Demat account, the settlement cycle has come down to T+2 days, saving the investors time, effort, and energy</p>
+                    <h4 class='listhead'>Faster and smoother settlements</h4>
+                    <p class='subheadtxt'>Before the Demat account, it used to take around 14 days because of the physical movement of physical shares from the seller and then to the RTA and finally to the buyer.</p>
+                    <p class='subheadtxt'> Now, with the help of the Demat account, the settlement cycle has come down to T+2 days, saving the investors time, effort, and energy</p>
                   </li>
                   <li>
-                    <h4 className='listhead'>Reduction in errors</h4>
-                    <p className='subheadtxt'>Earlier, due to a lot of manual processes, there were a lot of errors as well. These are often called 'Vanda' trades or error trades. With everything being digital now, these erroneous trades have reduced significantly.</p>
+                    <h4 class='listhead'>Reduction in errors</h4>
+                    <p class='subheadtxt'>Earlier, due to a lot of manual processes, there were a lot of errors as well. These are often called 'Vanda' trades or error trades. With everything being digital now, these erroneous trades have reduced significantly.</p>
                     
                   </li>
                   <li>
-                    <h4 className='listhead'>Easy transmission</h4>
-                    <p className='subheadtxt'>Since the shares are in electronic form, in case of the death of a Demat account holder, the ownership of the assets held in the Demat account can be easily transferred to the next of kin.</p>
-                    <p className='subheadtxt'> However, this is only possible by opening a joint Demat account or adding the next of kin as a nominee. Also, this is not possible when shares are held physically, and the legal heir had to go through too many procedures to claim rights on the financial assets of the deceased Demat account holder.</p>
+                    <h4 class='listhead'>Easy transmission</h4>
+                    <p class='subheadtxt'>Since the shares are in electronic form, in case of the death of a Demat account holder, the ownership of the assets held in the Demat account can be easily transferred to the next of kin.</p>
+                    <p class='subheadtxt'> However, this is only possible by opening a joint Demat account or adding the next of kin as a nominee. Also, this is not possible when shares are held physically, and the legal heir had to go through too many procedures to claim rights on the financial assets of the deceased Demat account holder.</p>
                     
                   </li>
                   <li>
-                    <h4 className='listhead'>Better liquidity</h4>
-                    <p className='subheadtxt'>Easy transfer is one of the Demat account's greatest advantages because it facilitates easy liquidation of assets. You can easily, i.e., sell or take a loan against shares, mutual funds, etc., if you are holding these financial assets in a Demat account.</p>
+                    <h4 class='listhead'>Better liquidity</h4>
+                    <p class='subheadtxt'>Easy transfer is one of the Demat account's greatest advantages because it facilitates easy liquidation of assets. You can easily, i.e., sell or take a loan against shares, mutual funds, etc., if you are holding these financial assets in a Demat account.</p>
                     
                   </li>
                   <li>
-                    <h4 className='listhead'>Elimination of Odd-lot problems</h4>
-                    <p className='subheadtxt'>Demat account has solved the odd-lot problem. Earlier, physical shares were sold in lots, but you can buy and sell even just one share with Demat accounts.</p>
+                    <h4 class='listhead'>Elimination of Odd-lot problems</h4>
+                    <p class='subheadtxt'>Demat account has solved the odd-lot problem. Earlier, physical shares were sold in lots, but you can buy and sell even just one share with Demat accounts.</p>
                     
                   </li>
                   <li>
-                    <p className='listhead'>One storage for all assets</p>
-                    <p className='subheadtxt'>A Demat account stores all your financial assets, including bonds, debentures, ETFs, unit-linked insurance policies etc. Therefore, the Demat account holds assets under one roof making maintenance and tracking easy.</p>
-                    <p className='subheadtxt'> It also helps when it comes to filing taxes as you have all your records maintained in one place.</p>
+                    <p class='listhead'>One storage for all assets</p>
+                    <p class='subheadtxt'>A Demat account stores all your financial assets, including bonds, debentures, ETFs, unit-linked insurance policies etc. Therefore, the Demat account holds assets under one roof making maintenance and tracking easy.</p>
+                    <p class='subheadtxt'> It also helps when it comes to filing taxes as you have all your records maintained in one place.</p>
                     
                   </li>
                   
                 </ul>
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 5</p>
-                <h2 className="title">Demat account Features</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecfive} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 5</p>
+                <h2 class="title">Demat account Features</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src=./images/features-of-dematr-account.png class="img-fluid" alt=" Featues of Demat Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>Now that we know that there are certain types of Demat accounts and it is a necessity when you want to invest in the share market. There are different features associated with a Demat account and now let us have a look at that.</p>
+                  <div class='col-md-6'>
+                    <p class='subtext'>Now that we know that there are certain types of Demat accounts and it is a necessity when you want to invest in the share market. There are different features associated with a Demat account and now let us have a look at that.</p>
                    
                   </div>
                 </div>
                
                <div>
-                <h3 className="subhead">List of Demat Account Features</h3>
-                <ul className='bullet'>
-                  <li>
+                <h3 class="subhead">List of Demat Account Features</h3>
+                <ul class='bullet'>
+                  <li class="subheadtxt">
                    
-                    <p className='subheadtxt'> <h4 className='listhead inline'>Easily buy and sell  </h4>- With the introduction of Demat accounts, you can easily buy and sell shares sitting at the comfort of your home. Earlier this used to take from a few days to even weeks because of the physical form of shares. </p>
-                    <p className='subheadtxt'> Further, it has made it very convenient for investors to transfer their shares. They can take the help of Delivery Instruction Slip (DIS) and very smoothly carry on this process.</p>
-                    <p className='subheadtxt'> So all the work that used to happen physically before now happens electronically. The entire journey of a user in the stock market has now become easier.</p>
+                    <p class='subheadtxt'> <h4 class='listhead inline'>Easily buy and sell  </h4> - With the introduction of Demat accounts, you can easily buy and sell shares sitting at the comfort of your home. Earlier this used to take from a few days to even weeks because of the physical form of shares.</p>
+                    <p class='subheadtxt'> Further, it has made it very convenient for investors to transfer their shares. They can take the help of Delivery Instruction Slip (DIS) and very smoothly carry on this process.</p>
+                    <p class='subheadtxt'> So all the work that used to happen physically before now happens electronically. The entire journey of a user in the stock market has now become easier.</p>
                   </li>
-                  <li>
-                    <p className='subheadtxt'> <h4 className='listhead inline'> Loan Against your Securities </h4> - Another service that the Demat account offers is that you can pledge your securities. It works as collateral against your loan and you can effectively trade even if you are running short on capital. </p>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'> <h4 class='listhead inline'> Loan Against your Securities </h4> - Another service that the Demat account offers is that you can pledge your securities. It works as collateral against your loan and you can effectively trade even if you are running short on capital.</p>
                 
                   </li>
-                  <li>
-                    <p className='subheadtxt'> <h4 className='listhead inline'> Receive Bonus </h4> -  Whenever you invest in a share of a company, you get the part ownership that also makes you eligible to receive any bonus shares that the company provides. </p>
-                    <p className='subheadtxt'> With the introduction of the Demat account, it is now easier to receive the stock split shares as they directly reflect on your Demat account.</p>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'> <h4 class='listhead inline'> Receive Bonus </h4> -  Whenever you invest in a share of a company, you get the part ownership that also makes you eligible to receive any bonus shares that the company provides. </p>
+                    <p class='subheadtxt'> With the introduction of the Demat account, it is now easier to receive the stock split shares as they directly reflect on your Demat account.</p>
                   </li>
                  
-                  <li>
-                    <p className='subheadtxt'> <h4 className='listhead inline'>  Easy to access</h4> -  Gone are the days when you had to rely on different stockbrokers to keep an eye on your investments. Now you can access your holdings, your portfolio, and the status of your account from anywhere and at your own ease.  </p>
-                    <p className='subheadtxt'> Gone are the days when you had to rely on different stockbrokers to keep an eye on your investments. Now you can access your holdings, your portfolio, and the status of your account from anywhere and at your own ease. </p>
-                    <p className='subheadtxt'> Let us answer this question in the next segment.</p>
+                  <li class="subheadtxt">
+                    <p class='subheadtxt'> <h4 class='listhead inline'>  Easy to access</h4> -  Gone are the days when you had to rely on different stockbrokers to keep an eye on your investments. Now you can access your holdings, your portfolio, and the status of your account from anywhere and at your own ease.  </p>
+                    <p class='subheadtxt'> Gone are the days when you had to rely on different stockbrokers to keep an eye on your investments. Now you can access your holdings, your portfolio, and the status of your account from anywhere and at your own ease. </p>
+                    <p class='subheadtxt'> Let us answer this question in the next segment.</p>
   
                   </li>
                  
                 </ul>
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 6</p>
-                <h2 className="title">How to Open a Demat Account?</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecsix} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 6</p>
+                <h2 class="title">How to Open a Demat Account?</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/how-to-open-a-demat-account.png' class="img-fluid" alt=" How to Open a Demat Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>Various stockbrokers are available in India, including full service, discount and hybrid brokers. You can always choose to open your Demat account with any one of them, depending on the services you want. These days everything has gone digital; even the stockbroking world has transformed entirely. </p>
-                    <p className='subtext'>
-                    Now, many people prefer to open their Demat account online, but still, some people go for the offline process. Let’s understand <a href='https://choiceindia.com/blog/how-to-open-demat-account/' className='linking'>how to open a demat account</a> online and offline.
+                  <div class='col-md-6'>
+                    <p class='subtext'>Various stockbrokers are available in India, including full service, discount and hybrid brokers. You can always choose to open your Demat account with any one of them, depending on the services you want. These days everything has gone digital; even the stockbroking world has transformed entirely. </p>
+                    <p class='subtext'>
+                    Now, many people prefer to open their Demat account online, but still, some people go for the offline process. Let’s understand <a href='https://choiceindia.com/blog/how-to-open-demat-account/' class='linking'>how to open a demat account</a> online and offline.
   
                     </p>
                   </div>
                 </div>
                
                <div>
-                <h3 className="subhead">Demat Account Opening: Offline</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">Demat Account Opening: Offline</h3>
+                <ul class='bullet'>
                   <li>
                    
-                    <p className='subheadtxt'>Visit the nearest branch of your stockbroker. (With Choice India, you can also open your Demat account online for free) </p>
+                    <p class='subheadtxt'>Visit the nearest branch of your stockbroker. (With Choice India, you can also open your Demat account online for free) </p>
                     
                   </li>
                   <li>
             
-                    <p className='subheadtxt'>Fill out the <a href='https://choiceindia.com/blog/demat-account-opening-form/' className='linking'> Demat account opening form</a> (it is available on any official broker's website)</p>
+                    <p class='subheadtxt'>Fill out the <a href='https://choiceindia.com/blog/demat-account-opening-form/' class='linking'> Demat account opening form</a> (it is available on any official broker's website)</p>
                     
                   </li>
                   <li>
-                    <p className='subheadtxt'> Submit the form with KYC documents</p>
+                    <p class='subheadtxt'> Submit the form with KYC documents</p>
                     
                     
                   </li>
                   <li>
                    
-                    <p className='subheadtxt'>  After successfully verifying your documents, your Demat account will be opened and activated.</p>
+                    <p class='subheadtxt'>  After successfully verifying your documents, your Demat account will be opened and activated.</p>
                     
                   </li>
                  
@@ -430,242 +486,242 @@
                 </ul>
                </div>
                <div>
-                <h3 className="subhead">Demat Account Opening: Online</h3>
-                <p className='subheadtxt'>Choice India lets you open a Demat account online; the process is easy and seamless. If you want to open your Demat account online, follow these steps: </p>
-                <ul className='bullet'>
+                <h3 class="subhead">Demat Account Opening: Online</h3>
+                <p class='subheadtxt'>Choice India lets you open a Demat account online; the process is easy and seamless. If you want to open your Demat account online, follow these steps: </p>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt'>Open Choice India's official website </p>
+                    <p class='subheadtxt'>Open Choice India's official website </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Click on the <a href='https://choiceindia.com/open-free-demat-account' className='linking'>'open Demat account.'</a></p>
+                    <p class='subheadtxt'> Click on the <a href='https://choiceindia.com/open-free-demat-account' class='linking'>'open Demat account.'</a></p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Then enter your primary details such as name, phone number, and the name of your city.</p>
+                    <p class='subheadtxt'> Then enter your primary details such as name, phone number, and the name of your city.</p>
                   </li>
                   <li>
-                    <p className='subheadtxt'>  Next, enter your DOB and PAN card details. </p>
+                    <p class='subheadtxt'>  Next, enter your DOB and PAN card details. </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'>  Next, enter your phone number and email ID. You will then receive OTPs, verify your account with that OTP, and you will be redirected to a new window.</p>
+                    <p class='subheadtxt'>  Next, enter your phone number and email ID. You will then receive OTPs, verify your account with that OTP, and you will be redirected to a new window.</p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Again enter your basic details, then choose an AMC plan. (Choice India offers you the option to choose your own Demat account AMC charges) </p>
+                    <p class='subheadtxt'> Again enter your basic details, then choose an AMC plan. (Choice India offers you the option to choose your own Demat account AMC charges) </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'>  Upload all the necessary documents, and then you will be directed to the NSDL website for e-sign. </p>
+                    <p class='subheadtxt'>  Upload all the necessary documents, and then you will be directed to the NSDL website for e-sign. </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Enter your Aadhar details (make sure your phone number is linked with your Aadhar card), and you will get an OTP.</p>
+                    <p class='subheadtxt'> Enter your Aadhar details (make sure your phone number is linked with your Aadhar card), and you will get an OTP.</p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> After successfully verifying, your Demat account will be opened and activated.</p>
+                    <p class='subheadtxt'> After successfully verifying, your Demat account will be opened and activated.</p>
                   </li>
                 </ul>
-                <p className='subheadtxt'>Choice India takes less than or up to 4 hours for verification. If there's an issue that you are facing with the <a href='https://choiceindia.com/blog/demat-account-opening-process/' className='linking'>Demat account opening process</a>, the Choice India team will call you and help you with the process.</p>
+                <p class='subheadtxt'>Choice India takes less than or up to 4 hours for verification. If there's an issue that you are facing with the <a href='https://choiceindia.com/blog/demat-account-opening-process/' class='linking'>Demat account opening process</a>, the Choice India team will call you and help you with the process.</p>
                </div>
   
                <div>
-                <h3 className="subhead">Documents Required for Demat Account Opening:</h3>
-                <p className='subheadtxt'>For opening a Demat account, you must have certain documents with you. Here's the list of <a href='https://choiceindia.com/blog/documents-required-for-demat-account-opening/'  className='linking'> documents required for Demat account opening:</a></p>
-                <ul className='bullet'>
+                <h3 class="subhead">Documents Required for Demat Account Opening:</h3>
+                <p class='subheadtxt'>For opening a Demat account, you must have certain documents with you. Here's the list of <a href='https://choiceindia.com/blog/documents-required-for-demat-account-opening/'  class='linking'> documents required for Demat account opening:</a></p>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt'>Identity Proof ( Aadhar card, PAN card, any other identity proof issued by the government of India) </p>
+                    <p class='subheadtxt'>Identity Proof ( Aadhar card, PAN card, any other identity proof issued by the government of India) </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Proof of Address (Aadhar card, utility bills, rent agreement, registry of house, etc.) </p>
+                    <p class='subheadtxt'> Proof of Address (Aadhar card, utility bills, rent agreement, registry of house, etc.) </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Proof of Income (ITR statements, bank statements of the last 6 months, salary slip, etc.) </p>
+                    <p class='subheadtxt'> Proof of Income (ITR statements, bank statements of the last 6 months, salary slip, etc.) </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Bank details </p>
+                    <p class='subheadtxt'> Bank details </p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Photographs</p>
+                    <p class='subheadtxt'> Photographs</p>
                   </li>
                   <li>
-                    <p className='subheadtxt'> Signature</p>
+                    <p class='subheadtxt'> Signature</p>
                   </li>
                   
                 </ul>
-                <p className='note pb52'>Note- For activating certain segments like the derivatives segment, income proofs are required.</p>
+                <p class='note pb52'>Note- For activating certain segments like the derivatives segment, income proofs are required.</p>
                </div>
   
                <div>
-                <h3 className="subhead">Demat Account Charges</h3>
-                <p className='subheadtxt'>If you want to avail a service, you need to pay for it, right?</p>
-                <p className='subheadtxt'>Similarly, you need to pay some basic charges when opening a Demat account with a stockbroker. </p>
-                <p className='subheadtxt'>Mostly the below-mentioned two charges are levied on clients by stockbrokers:</p>
-                <ul className='numberlist'>
-                  <li>
-                    <p className='subheadtxt'><h4 className='inline'> 1. Demat account opening charges: </h4> Earlier, <a href='https://choiceindia.com/blog/demat-account-opening-charges/' className='linking'>Demat account opening charges</a> levied by the stockbrokers were very high. Most stockbrokers are now offering free Demat accounts; however, any stock broker may charge upto INR 500. Open a free Demat Account with Choice India.
+                <h3 class="subhead">Demat Account Charges</h3>
+                <p class='subheadtxt'>If you want to avail a service, you need to pay for it, right?</p>
+                <p class='subheadtxt'>Similarly, you need to pay some basic charges when opening a Demat account with a stockbroker. </p>
+                <p class='subheadtxt'>Mostly the below-mentioned two charges are levied on clients by stockbrokers:</p>
+                <ul class='numberlist'>
+                  <li class='subheadtxt'> 
+                    <p ><h4 class='inline'> 1. Demat account opening charges: </h4> Earlier, <a href='https://choiceindia.com/blog/demat-account-opening-charges/' class='linking'>Demat account opening charges</a> levied by the stockbrokers were very high. Most stockbrokers are now offering free Demat accounts; however, any stock broker may charge upto INR 500. Open a free Demat Account with Choice India.
                     </p>
                     
                   </li>
-                  <li>
-                    <p className='subheadtxt'><h4 className='inline'> 2. AMC charges: </h4> The annual charges that an investor pays to their brokers are AMC charges. Most stockbrokers charge it annually, while some charge it quarterly or monthly. The <a href='https://choiceindia.com/blog/demat-account-amc-charges/' className='linking'>AMC charges</a> may vary from one stock broker to another. However, if you open a Demat account with Choice India, you get to select from the following plans:</p>
-                        <ul className='nestedbullet'>
+                  <li class='subheadtxt'>
+                    <p ><h4 class='inline'> 2. AMC charges: </h4> The annual charges that an investor pays to their brokers are AMC charges. Most stockbrokers charge it annually, while some charge it quarterly or monthly. The <a href='https://choiceindia.com/blog/demat-account-amc-charges/' class='linking'>AMC charges</a> may vary from one stock broker to another. However, if you open a Demat account with Choice India, you get to select from the following plans:</p>
+                        <ul class='nestedbullet'>
                           <li>
-                            <p className='subheadtxt'>
+                            <p class='subheadtxt'>
                             Regular plan in which you need to pay ₹200+ GST from the second year onwards. </p>
                           </li>
                           <li>
-                            <p className='subheadtxt'>  ₹1500+GST- Choosing this plan means you don't have to pay AMC charges for a lifetime. </p>
+                            <p class='subheadtxt'>  ₹1500+GST- Choosing this plan means you don't have to pay AMC charges for a lifetime. </p>
                           </li>
                           <li>
-                            <p className='subheadtxt'>  ₹3000+GST- You will get the entire amount back when you close your account in the refundable AMC plan.</p>
+                            <p class='subheadtxt'>  ₹3000+GST- You will get the entire amount back when you close your account in the refundable AMC plan.</p>
                           </li>
                          
                         </ul>
                   </li>
                   
                 </ul>
-                <p className='subheadtxt'>These charges are levied when you open a Demat Account.</p>
+                <p class='subheadtxt'>These charges are levied when you open a Demat Account.</p>
                </div>
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
             
            
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 7</p>
-                <h2 className="title">How Can You Choose the Best Demat Account in India?</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecseven} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 7</p>
+                <h2 class="title">How Can You Choose the Best Demat Account in India?</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/best-demat-account.png' class="img-fluid" alt="Best Demat Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>When you start trading, you need to open a Demat and Trading Account with the help of the stockbroker. A Demat account is necessary for online trading, so you must open the best Demat account for beginners.</p>
+                  <div class='col-md-6'>
+                    <p class='subtext'>When you start trading, you need to open a Demat and Trading Account with the help of the stockbroker. A Demat account is necessary for online trading, so you must open the best Demat account for beginners.</p>
                    
                   </div>
                 </div>
                
                <div>
-               <p className='subheadtxt'> Don't you want the best Demat account in India? You will have to choose a depository that would suit trading and share exchange needs. Consequently, you must select the Demat account that best suits your needs.</p>
-               <p className='subheadtxt'> Want to know how to choose the best Demat account? After all, it's nothing other than just an account to hold your shares, but you must research a lot before choosing the best Demat account in India.</p>
-               <p className='subheadtxt'> Don't you want the best Demat account in India? You will have to choose a depository that would suit trading and share exchange needs. Consequently, you must select the Demat account that best suits your needs. Want to know how to choose the best Demat account? After all, it's nothing other than just an account to hold your shares, but you must research a lot before choosing the best Demat account in India.</p>
-               <p className='subheadtxt paraspace'> Here are a few things you can look for before opening a Demat account:
+               <p class='subheadtxt'> Don't you want the best Demat account in India? You will have to choose a depository that would suit trading and share exchange needs. Consequently, you must select the Demat account that best suits your needs.</p>
+               <p class='subheadtxt'> Want to know how to choose the best Demat account? After all, it's nothing other than just an account to hold your shares, but you must research a lot before choosing the best Demat account in India.</p>
+               <p class='subheadtxt'> Don't you want the best Demat account in India? You will have to choose a depository that would suit trading and share exchange needs. Consequently, you must select the Demat account that best suits your needs. Want to know how to choose the best Demat account? After all, it's nothing other than just an account to hold your shares, but you must research a lot before choosing the best Demat account in India.</p>
+               <p class='subheadtxt paraspace'> Here are a few things you can look for before opening a Demat account:
   </p>
-                <h3 className="subhead">Ease of Opening:</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">Ease of Opening:</h3>
+                <ul class='bullet'>
                   <li>
                    
-                    <p className='subheadtxt'> SEBI has mandated a complete process of opening a Demat Account that the service provider must follow. However, service providers have the liberty to a certain extent. For instance, anyone can open a Demat Account through the e-KYC account opening by authenticating their Aadhar data. </p>
-                    <p className='subheadtxt paraspace'> In e-KYC, the time to trade must be less than 2 days, whereas, in a physical account opening, the trading time should be less than 5 days.</p>
+                    <p class='subheadtxt'> SEBI has mandated a complete process of opening a Demat Account that the service provider must follow. However, service providers have the liberty to a certain extent. For instance, anyone can open a Demat Account through the e-KYC account opening by authenticating their Aadhar data. </p>
+                    <p class='subheadtxt paraspace'> In e-KYC, the time to trade must be less than 2 days, whereas, in a physical account opening, the trading time should be less than 5 days.</p>
                    
                   </li>
                 
                 </ul>
-                <h3 className="subhead">User Interface:</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">User Interface:</h3>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt paraspace'>This is one crucial point that you need to look for. All brokers have their inbuilt software, which the investor can download. Not only this, the user needs to check out the web app as well. Jiffy by Choice India offers a simple and clean user interface, where traders can search and navigate their orders and a seamless trading experience with just a few single clicks.</p>
+                    <p class='subheadtxt paraspace'>This is one crucial point that you need to look for. All brokers have their inbuilt software, which the investor can download. Not only this, the user needs to check out the web app as well. Jiffy by Choice India offers a simple and clean user interface, where traders can search and navigate their orders and a seamless trading experience with just a few single clicks.</p>
                     
                   </li>
                 
                 </ul>
-                <h3 className="subhead">Trading Cost and Brokerage:</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">Trading Cost and Brokerage:</h3>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt paraspace'>There's fierce competition; many brokers are offering low broking costs. You need to figure out which trading company or broker you want to open your Demat account with. You need to bargain with a broker for trading, whereas if you are an investor, it is highly unlikely your broker will reduce brokerage. Moreover, brokers earn from frequency (the number of times an investor trades).</p>
+                    <p class='subheadtxt paraspace'>There's fierce competition; many brokers are offering low broking costs. You need to figure out which trading company or broker you want to open your Demat account with. You need to bargain with a broker for trading, whereas if you are an investor, it is highly unlikely your broker will reduce brokerage. Moreover, brokers earn from frequency (the number of times an investor trades).</p>
                     
                   </li>
                 
                 </ul>
-                <h3 className="subhead">Minimum AMC:</h3>
-                <ul className='bullet'>
+                <h3 class="subhead">Minimum AMC:</h3>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt'>Demat Account has some charges, even if you keep your account idle. Presently, there's no fee for opening a Demat Account. Still, when you calculate the cost of Demat, you must look at the overall costs. There is a yearly maintenance charge billed every year. </p></li>
-                   <li> <p className='subheadtxt'>An amount is charged when a debit from the investor's Demat account. Also, there are costs charged if you request a physical transaction copy or a physical copy of the Demat holdings.</p>
+                    <p class='subheadtxt'>Demat Account has some charges, even if you keep your account idle. Presently, there's no fee for opening a Demat Account. Still, when you calculate the cost of Demat, you must look at the overall costs. There is a yearly maintenance charge billed every year. </p></li>
+                   <li> <p class='subheadtxt'>An amount is charged when a debit from the investor's Demat account. Also, there are costs charged if you request a physical transaction copy or a physical copy of the Demat holdings.</p>
                     
                   </li>
                 
                 </ul>
-                {/* <h3 className="subhead">Day Trading Square off Timing:</h3>
-                <ul className='bullet'>
+             <h3 class="subhead">Day Trading Square off Timing:</h3>
+                <ul class='bullet'>
                   <li>
-                    <p className='subheadtxt'>If you are into intraday trading, you have to square off the position. If not, the broker initiates it himself; you must figure out the timing of such initiation (Usually sometime before the market closure).</p>
+                    <p class='subheadtxt'>If you are into intraday trading, you have to square off the position. If not, the broker initiates it himself; you must figure out the timing of such initiation (Usually sometime before the market closure).</p>
                     
                   </li>
                 
-                </ul> */}
+                </ul>
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 8</p>
-                <h2 className="title">How to Use a Demat Account?</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chapterseceight} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 8</p>
+                <h2 class="title">How to Use a Demat Account?</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/demat-account-uses.png' class="img-fluid" alt="Uses of Demat Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>Using a Demat Account is quite straightforward. An individual can open a Demat account by registering with an investment broker or a sub-broker. You need an active internet connection, user Id &amp; Password to access your Demat Account.</p>
+                  <div class='col-md-6'>
+                    <p class='subtext'>Using a Demat Account is quite straightforward. An individual can open a Demat account by registering with an investment broker or a sub-broker. You need an active internet connection, user Id &amp; Password to access your Demat Account.</p>
                    
                   </div>
                 </div>
                
                <div>
-               <p className='subheadtxt'> The very first step you need to take while opening a Demat account is figuring out a DP (Depository Participant) who acts as an agent to the depository.</p>
-                <p className='subheadtxt'>You will have to fill out the account opening form and submit the identity proof, PAN card, proof of address and a photograph (passport-size). A detailed description of all the acceptable </p>
-                <p className='subheadtxt'>Once you agree to the terms and agreement and the charges, an in-person verification is initiated. Post successful processing and verification of the application, a client ID or an account number is given out along with a transaction password. You can then access your Demat account online, which stores your shares, stocks, bonds, equities, mutual funds and other derivatives. </p>
-                <p className='subheadtxt paraspace'>Besides some debt instruments like bank and company fixed deposits, a single Demat account can hold most instruments. To better use your Demat account, you will need a trading account and a Depository Participant (DP) who connects you to a depository.</p>
+               <p class='subheadtxt'> The very first step you need to take while opening a Demat account is figuring out a DP (Depository Participant) who acts as an agent to the depository.</p>
+                <p class='subheadtxt'>You will have to fill out the account opening form and submit the identity proof, PAN card, proof of address and a photograph (passport-size). A detailed description of all the acceptable </p>
+                <p class='subheadtxt'>Once you agree to the terms and agreement and the charges, an in-person verification is initiated. Post successful processing and verification of the application, a client ID or an account number is given out along with a transaction password. You can then access your Demat account online, which stores your shares, stocks, bonds, equities, mutual funds and other derivatives. </p>
+                <p class='subheadtxt paraspace'>Besides some debt instruments like bank and company fixed deposits, a single Demat account can hold most instruments. To better use your Demat account, you will need a trading account and a Depository Participant (DP) who connects you to a depository.</p>
               
-               <p className='notehead'>Presently, India has two depositories:</p>
-               <p className='subheadtxt mb-0 pb-0'> National Securities Depository Limited (NSDL) </p>
-               <p className='subheadtxt mt-0  paraspace'>  Central Depository Services (India) Limited (CDSL) </p>
-               <p className='subheadtxt'>  There are multiple <a href='https://choiceindia.com/blog/what-is-the-use-of-demat-account/' className='linking'>uses of a Demat account</a>. With a Demat account, you can access beneficial information, check live share market updates and monitor and analyse your different investments. You are updated and receive share market news related to your investments. </p>
-               <p className='subheadtxt'> The Depository Participant will send regular messages related to the merger, buyback, dividend declaration, results, etc. You also have access to analyst reports based on company performance, historical information, and financial projection to help make informed investment decisions. Track your performance across your portfolio of different investment products and make necessary modifications to suit your risk profile and return expectations.</p>
+               <p class='notehead'>Presently, India has two depositories:</p>
+               <p class='subheadtxt mb-0 pb-0'> National Securities Depository Limited (NSDL) </p>
+               <p class='subheadtxt mt-0  paraspace'>  Central Depository Services (India) Limited (CDSL) </p>
+               <p class='subheadtxt'>  There are multiple <a href='https://choiceindia.com/blog/what-is-the-use-of-demat-account/' class='linking'>uses of a Demat account</a>. With a Demat account, you can access beneficial information, check live share market updates and monitor and analyse your different investments. You are updated and receive share market news related to your investments. </p>
+               <p class='subheadtxt'> The Depository Participant will send regular messages related to the merger, buyback, dividend declaration, results, etc. You also have access to analyst reports based on company performance, historical information, and financial projection to help make informed investment decisions. Track your performance across your portfolio of different investment products and make necessary modifications to suit your risk profile and return expectations.</p>
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 9</p>
-                <h2 className="title">Demat Account Vs Trading Account</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecnine} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 9</p>
+                <h2 class="title">Demat Account Vs Trading Account</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/difference-between-demat-account-and-trading-account.png' class="img-fluid" alt="Difference Between Demat Account and Trading Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>For an investor to trade or invest, both Demat and Trading account is required; however, there are certain <a href='https://choiceindia.com/blog/difference-between-demat-and-trading-account/' className='linking'>differences between Demat account and trading account</a>.</p>
+                  <div class='col-md-6'>
+                    <p class='subtext'>For an investor to trade or invest, both Demat and Trading account is required; however, there are certain <a href='https://choiceindia.com/blog/difference-between-demat-and-trading-account/' class='linking'>differences between Demat account and trading account</a>.</p>
                    
                   </div>
                 </div>
                
                <div>
-               <h3 className="subhead">Difference Between Demat Account and Trading Account?</h3>
+               <h3 class="subhead">Difference Between Demat Account and Trading Account?</h3>
               
-                <ul className='bullet mt10'>
-                  <li>
+                <ul class='bullet mt10'>
+                  <li class='subheadtxt '>
                   
-                    <p className='subheadtxt '> <h4 className='listhead inline'>Key role: </h4>-  A Demat account ensures safety, whereas a trading account is used to purchase/sell shares.</p>
+                    <p > <h4 class='listhead inline'>Key role: </h4>-  A Demat account ensures safety, whereas a trading account is used to purchase/sell shares.</p>
                   
                   </li>
-                  <li>
+                  <li class='subheadtxt '>
                  
                  
-                    <p className='subheadtxt'> <h4 className='listhead inline'>  Nature: </h4> -  A Demat account works just like a savings account, but just like a savings account holds money, a Demat account allows investors to store financial instruments in electronic form, debited or credited accordingly. </p>
-                    <p className='subheadtxt'>    On the other hand, a trading account functions more like a current bank account that funds the trade transactions. Eventually, you will need a Demat and Trading Account to trade in the stock market.</p>
+                    <p class='subheadtxt'> <h4 class='listhead inline'>  Nature: </h4> -  A Demat account works just like a savings account, but just like a savings account holds money, a Demat account allows investors to store financial instruments in electronic form, debited or credited accordingly. </p>
+                    <p class='subheadtxt'>    On the other hand, a trading account functions more like a current bank account that funds the trade transactions. Eventually, you will need a Demat and Trading Account to trade in the stock market.</p>
                   </li>
-                  <li>
+                  <li class='subheadtxt '>
                  
-                    <p className='subheadtxt'> <h4 className='listhead inline'>  Function difference: </h4> -   A Demat account is used to hold securities in an electronic format, whereas a trading account facilitates buying/selling of shares in the stock market.</p>
+                    <p class='subheadtxt'> <h4 class='listhead inline'>  Function difference: </h4> -   A Demat account is used to hold securities in an electronic format, whereas a trading account facilitates buying/selling of shares in the stock market.</p>
                     
                   </li>
                  
-                  <li>
+                  <li class='subheadtxt '>
                    
-                    <p className='subheadtxt'> <h4 className='listhead inline' > Measurement of time:</h4> -  A Demat account holds your shares; it is measured as a stock at a specific point in time, that is, by the end of each financial year. However, a trading account is a flow statement reflecting your trading transactions measured over time.</p>
+                    <p class='subheadtxt'> <h4 class='listhead inline' > Measurement of time:</h4> -  A Demat account holds your shares; it is measured as a stock at a specific point in time, that is, by the end of each financial year. However, a trading account is a flow statement reflecting your trading transactions measured over time.</p>
                   
   
                   </li>
@@ -675,184 +731,184 @@
               
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 10</p>
-                <h2 className="title">How to Close Demat Account?</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chaptersecten} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 10</p>
+                <h2 class="title">How to Close Demat Account?</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/how-to-deactivate-demat-account.png' class="img-fluid" alt="How to Deactivate Demat Account" />
                   </div>
-                  <div className='col-md-6'>
-                    <p className='subtext'>If you’re decided to close your existing Demat account with any stock broker you need to understand how to close it, types and the entire process. </p>
-                    <p className='subtext'>Let’s understand it…</p>
+                  <div class='col-md-6'>
+                    <p class='subtext'>If you’re decided to close your existing Demat account with any stock broker you need to understand how to close it, types and the entire process. </p>
+                    <p class='subtext'>Let’s understand it…</p>
                    
                   </div>
                 </div>
                
                <div>
                
-               <h3 className="subhead">How to Deactivate or Close Your Demat Account?</h3>
+               <h3 class="subhead">How to Deactivate or Close Your Demat Account?</h3>
               
-                    <p className='subheadtxt'> Any Demat account that is inactive and does not see any transactions for several months becomes dormant. However, the stockbroker or DP is legally liable to manage the Demat account for the investor's safety and keep track of whether the investor purchases or sells any share. </p>
-                    <p className='subheadtxt'>Therefore, for the services rendered to maintain the Demat account, the stockbroker charges the investors. The maintenance charges are called Annual Maintenance Charges, and the investor has to pay even in the case of no trading. </p>
-                    <p className='subheadtxt'>Moreover, dormant Demat accounts are like a jackpot for scammers who engage in the process of front running. They illegally gain access to inactive or dormant Demat accounts to buy and sell securities based on insider trading to make sure their Demat account is not visible in the scam. </p>
-                    <p className='subheadtxt'> Therefore, you need to know <a href='https://choiceindia.com/blog/how-to-close-a-demat-account/' className='linking'>how to close your Demat account</a> to stop incurring unnecessary charges and save yourself from being a part of a front-running scam.</p>
+                    <p class='subheadtxt'> Any Demat account that is inactive and does not see any transactions for several months becomes dormant. However, the stockbroker or DP is legally liable to manage the Demat account for the investor's safety and keep track of whether the investor purchases or sells any share. </p>
+                    <p class='subheadtxt'>Therefore, for the services rendered to maintain the Demat account, the stockbroker charges the investors. The maintenance charges are called Annual Maintenance Charges, and the investor has to pay even in the case of no trading. </p>
+                    <p class='subheadtxt'>Moreover, dormant Demat accounts are like a jackpot for scammers who engage in the process of front running. They illegally gain access to inactive or dormant Demat accounts to buy and sell securities based on insider trading to make sure their Demat account is not visible in the scam. </p>
+                    <p class='subheadtxt'> Therefore, you need to know <a href='https://choiceindia.com/blog/how-to-close-a-demat-account/' class='linking'>how to close your Demat account</a> to stop incurring unnecessary charges and save yourself from being a part of a front-running scam.</p>
                  
-                    <h3 className="subhead">What are the Types of Demat Account Closure?</h3>
-                    <ul className='bullet'>
-                      <li>
-                        <p className='subheadtxt'> 
-                        <h4 className='listhead inline'>Transfer and account closure:  </h4>- Suppose your Demat account has some holdings, and you haven't made full payment for the pending payments to the Depository Participant. You will then have first to transfer the holdings to a different Demat account; as soon as the holdings and charges are transferred, you can raise a request to your DP to close the Demat account.</p>
+                    <h3 class="subhead">What are the Types of Demat Account Closure?</h3>
+                    <ul class='bullet'>
+                      <li class='subheadtxt'>
+                        <p > 
+                        <h4 class='listhead inline'>Transfer and account closure:  </h4>- Suppose your Demat account has some holdings, and you haven't made full payment for the pending payments to the Depository Participant. You will then have first to transfer the holdings to a different Demat account; as soon as the holdings and charges are transferred, you can raise a request to your DP to close the Demat account.</p>
                         
                       </li>
                      
-                      <li>
-                        <p className='subheadtxt paraspace'> <h4 className='listhead inline'>   Full account closure: </h4> -  If you have no holdings in your Demat account and have cleared all your pending payments to the DP, you can raise a request to your DP for your Demat Account closure.</p>
+                      <li class='subheadtxt'>
+                        <p class=' paraspace'> <h4 class='listhead inline'>   Full account closure: </h4> -  If you have no holdings in your Demat account and have cleared all your pending payments to the DP, you can raise a request to your DP for your Demat Account closure.</p>
                         
                       </li>
                      
                     </ul>
                   
   
-                    <h3 className="subhead">Close Demat Account: The Process</h3>
-                    <ul className='bullet'>
+                    <h3 class="subhead">Close Demat Account: The Process</h3>
+                    <ul class='bullet'>
                       <li>
-                        <p className='subheadtxt'> 
+                        <p class='subheadtxt'> 
                         Suppose you want to close your Demat account. In that case, you need to physically visit the Depository Participant's office and submit a Demat account closure form and the required document. </p>
                         
                       </li>
                      
                       <li>
-                        <p className='subheadtxt'> You can always download this form from the DP's website.</p>
+                        <p class='subheadtxt'> You can always download this form from the DP's website.</p>
                         
                       </li>
                       <li>
-                        <p className='subheadtxt'>  You will have to fill in the form with the required details and sign it. All the holders must sign the closure request form if it is a joint account.</p>
+                        <p class='subheadtxt'>  You will have to fill in the form with the required details and sign it. All the holders must sign the closure request form if it is a joint account.</p>
                          
                       </li>
                      <li>
-                     <p className='subheadtxt'> Most importantly, the Power of Attorney (POA) holder does not have to sign the closure request form. </p>
+                     <p class='subheadtxt'> Most importantly, the Power of Attorney (POA) holder does not have to sign the closure request form. </p>
                      </li>
                      <li>
-                     <p className='subheadtxt'>  The entire closure process takes at least 7-10 business days after submitting the account closure form. </p>
+                     <p class='subheadtxt'>  The entire closure process takes at least 7-10 business days after submitting the account closure form. </p>
                      </li>
                      <li>
-                     <p className='subheadtxt paraspace'> There aren't any charges for account closure; however, you must remember that the account should not have any dues remaining for the account.</p>
+                     <p class='subheadtxt paraspace'> There aren't any charges for account closure; however, you must remember that the account should not have any dues remaining for the account.</p>
                      </li>
                     </ul>
                  
-                    <h3 className="subhead">Details You Will Need to Close a Demat account:</h3>
-                    <p className='subheadtxt'> If you are closing your Demat account, you must furnish some legal documents to prove your ownership of the Demat account and its holdings.</p>
+                    <h3 class="subhead">Details You Will Need to Close a Demat account:</h3>
+                    <p class='subheadtxt'> If you are closing your Demat account, you must furnish some legal documents to prove your ownership of the Demat account and its holdings.</p>
                     
-                    <h4 className='subhead'>What Do You Need?</h4>
-                    <ul className='numberlist'>
-                    <li className='number'>
-                      <p className='subheadtxt'>Your Demat account's ID and your DP ID </p>
+                    <h4 class='subhead'>What Do You Need?</h4>
+                    <ul class='numberlist'>
+                    <li class='number'>
+                      <p class='subheadtxt'>Your Demat account's ID and your DP ID </p>
                      
                     </li>
-                    <li className='number'>
-                    <p className='subheadtxt'>Your KYC details, including your name and address, must be the same as mentioned in your Demat account. </p>
+                    <li class='number'>
+                    <p class='subheadtxt'>Your KYC details, including your name and address, must be the same as mentioned in your Demat account. </p>
                     </li>
-                    <li className='number'>
-                    <p className='subheadtxt'>Application with the reason for closing your account. </p>
+                    <li class='number'>
+                    <p class='subheadtxt'>Application with the reason for closing your account. </p>
                     </li>
-                    <li className='number'>
-                    <p className='subheadtxt'>Self-attested Identity proof</p>
+                    <li class='number'>
+                    <p class='subheadtxt'>Self-attested Identity proof</p>
                     </li>
                     </ul>
                </div>
               
-               <hr className='m52' />
+               <hr class='m52' />
                 </div>
                 
             </div>
-            <div className='row'>
-              <div className='col-md-12 col-sm-12 col-lg-8'>
-                <p className='chapter'>Chapter 11</p>
-                <h2 className="title">Demat Account FAQs</h2>
-                <div className='row pb52'>
-                  <div className='col-md-6'>
-                    <img src={Chapterseceleven} className="img-fluid" alt="" />
+            <div class='row'>
+              <div class='col-md-12 col-sm-12 col-lg-8'>
+                <p class='chapter'>Chapter 11</p>
+                <h2 class="title">Demat Account FAQs</h2>
+                <div class='row pb52'>
+                  <div class='col-md-6'>
+                    <img src='./images/demat-account-faq .png' class="img-fluid" alt="Demat Account Related FAQs" />
                   </div>
-                  <div className='col-md-6'>
+                  <div class='col-md-6'>
                   
                   </div>
                 </div>
                
                <div>
                
-               <h4 className="subhead">Who Can Open A Demat Account?</h4>
+               <h4 class="subhead">Who Can Open A Demat Account?</h4>
               
-                    <p className='subheadtxt'>SEBI has laid out certain guidelines as to who is eligible to open a Demat account in India. Anyone who falls under the following criteria can open a Demat account. Let us quickly have a look at the same.</p>
+                    <p class='subheadtxt'>SEBI has laid out certain guidelines as to who is eligible to open a Demat account in India. Anyone who falls under the following criteria can open a Demat account. Let us quickly have a look at the same.</p>
                    
                  
-                    <ul className='bullet'>
+                    <ul class='bullet'>
                     <li>
-                      <p className='subheadtxt'>Anyone who is a resident of India.</p>
+                      <p class='subheadtxt'>Anyone who is a resident of India.</p>
                     </li>
                     <li>
-                      <p className='subheadtxt'> The member of any HUF family</p>
+                      <p class='subheadtxt'> The member of any HUF family</p>
                     </li>
                     <li>
-                      <p className='subheadtxt'>  NRIs can also open an NRI Demat account in India.</p>
+                      <p class='subheadtxt'>  NRIs can also open an NRI Demat account in India.</p>
                     </li>
                     <li>
-                      <p className='subheadtxt'>  Even if you are a minor (below the age of 18), you can <a href='https://choiceindia.com/minor-demat-account' className='linking'>open a Demat account for minors</a>. There is no <a href='https://choiceindia.com/blog/age-limit-for-demat-account/' className='linking'>age limit for Demat account</a>.  </p>
+                      <p class='subheadtxt'>  Even if you are a minor (below the age of 18), you can <a href='https://choiceindia.com/minor-demat-account' class='linking'>open a Demat account for minors</a>. There is no <a href='https://choiceindia.com/blog/age-limit-for-demat-account/' class='linking'>age limit for Demat account</a>.  </p>
                     </li>
                     <li>
-                      <p className='subheadtxt'> A company that is taxed under the taxation policy of India is also eligible to open a Demat account.</p>
+                      <p class='subheadtxt'> A company that is taxed under the taxation policy of India is also eligible to open a Demat account.</p>
                     </li>
                   
                     
                 </ul>
-                <p className='subheadtxt paraspace'> Now that we have talked about the criteria of opening a Demat account, let us have a look at how you can complete the entire process.</p>
+                <p class='subheadtxt paraspace'> Now that we have talked about the criteria of opening a Demat account, let us have a look at how you can complete the entire process.</p>
                     
                     
                     
-                    <h4 className="subhead">How many Demat accounts can one have?</h4>
-                    <p className='subheadtxt paraspace'> Any individual investor can have 4 Demat accounts, but each has to be with a different Depository Participant. SEBI has set no limits, yet you should know that holding Demat accounts are not free.</p>
-                    
-  
-                    <h4 className="subhead">How to check my Demat account?</h4>
-                    <p className='subheadtxt paraspace'>To check your Demat account, you will have to visit the CDSL website and log in. Then Enter your 10 digit PAN card number and 16 digits Demat account number. After that, enter your DOB, complete the captcha process, and generate OTP; once it's all done, you can check your Demat account through CDSL.</p>
+                    <h4 class="subhead">How many Demat accounts can one have?</h4>
+                    <p class='subheadtxt paraspace'> Any individual investor can have 4 Demat accounts, but each has to be with a different Depository Participant. SEBI has set no limits, yet you should know that holding Demat accounts are not free.</p>
                     
   
-                    <h4 className="subhead ">How can I transfer shares from one Demat account to another?</h4>
-                    <p className='subheadtxt paraspace'>The investor will have to fill the DIS and submit it to the current broker; then, the broker will forward the DIS request to the depository. The. The depository will share the existing holdings with your preferred Demat account.</p>
+                    <h4 class="subhead">How to check my Demat account?</h4>
+                    <p class='subheadtxt paraspace'>To check your Demat account, you will have to visit the CDSL website and log in. Then Enter your 10 digit PAN card number and 16 digits Demat account number. After that, enter your DOB, complete the captcha process, and generate OTP; once it's all done, you can check your Demat account through CDSL.</p>
                     
-                    <h4 className="subhead ">How can I find the Demat account number from PAN?</h4>
-                    <p className='subheadtxt paraspace'>The simplest way to find your Demat account number from your PAN card is to search your mailbox. Search the PAN card number in your mailbox, and you will find mails from CDSL &amp; NSDL; there, you will see the Demat account number. </p>
-                    
-                    <h4 className="subhead">When is the iex bonus share credited to the Demat account?</h4>
-                    <p className='subheadtxt paraspace'>It generally takes 15 business days to reflect bonus shares in your account, but it depends on the RTA.</p>
-                    
-                    <h4 className="subhead">How to log in to a Demat account?</h4>
-                    <p className='subheadtxt paraspace'>Login depends on your <a href='https://jiffy.choiceindia.com/' className='linking'>trading platform</a>; every stockbroker has a different app with a different user interface. So, it depends on which app or stockbroker you are using.</p>
   
-                    <h4 className="subhead">How to change the nominee into a Demat account?</h4>
-                    <p className='subheadtxt paraspace'>Firstly, you need to download the nominee modification form from the DP's website, fill out the form, update the nominee's information, and get it signed. Later, send the nominee modification form and the hard copy of your Demat account information to your stockbrokers' headquarter.</p>
+                    <h4 class="subhead ">How can I transfer shares from one Demat account to another?</h4>
+                    <p class='subheadtxt paraspace'>The investor will have to fill the DIS and submit it to the current broker; then, the broker will forward the DIS request to the depository. The. The depository will share the existing holdings with your preferred Demat account.</p>
+                    
+                    <h4 class="subhead ">How can I find the Demat account number from PAN?</h4>
+                    <p class='subheadtxt paraspace'>The simplest way to find your Demat account number from your PAN card is to search your mailbox. Search the PAN card number in your mailbox, and you will find mails from CDSL &amp; NSDL; there, you will see the Demat account number. </p>
+                    
+                    <h4 class="subhead">When is the iex bonus share credited to the Demat account?</h4>
+                    <p class='subheadtxt paraspace'>It generally takes 15 business days to reflect bonus shares in your account, but it depends on the RTA.</p>
+                    
+                    <h4 class="subhead">How to log in to a Demat account?</h4>
+                    <p class='subheadtxt paraspace'>Login depends on your <a href='https://jiffy.choiceindia.com/' class='linking'>trading platform</a>; every stockbroker has a different app with a different user interface. So, it depends on which app or stockbroker you are using.</p>
   
-                    <h4 className="subhead">Who can open a Demat Account?</h4>
-                    <p className='subheadtxt paraspace'>Any resident of India who has a PAN card is eligible to open a Demat account.</p>
+                    <h4 class="subhead">How to change the nominee into a Demat account?</h4>
+                    <p class='subheadtxt paraspace'>Firstly, you need to download the nominee modification form from the DP's website, fill out the form, update the nominee's information, and get it signed. Later, send the nominee modification form and the hard copy of your Demat account information to your stockbrokers' headquarter.</p>
+  
+                    <h4 class="subhead">Who can open a Demat Account?</h4>
+                    <p class='subheadtxt paraspace'>Any resident of India who has a PAN card is eligible to open a Demat account.</p>
                     
-                    <h4 className="subhead">What is the Age limit for Demat Account?</h4>
-                    <p className='subheadtxt paraspace'>There is no age restriction for Demat account holders; even a minor can open a Demat account.</p>
+                    <h4 class="subhead">What is the Age limit for Demat Account?</h4>
+                    <p class='subheadtxt paraspace'>There is no age restriction for Demat account holders; even a minor can open a Demat account.</p>
                     
-                    <h4 className="subhead">How much time is required for Demat account activation?</h4>
-                    <p className='subheadtxt paraspace'>Presently, opening a Demat account does not take more than 5 minutes. However, <a href='https://choiceindia.com/blog/demat-account-activation-time/' className='linking'>Demat account activation time</a> may take up to 4 hours if you open a Demat account with Choice India.
+                    <h4 class="subhead">How much time is required for Demat account activation?</h4>
+                    <p class='subheadtxt paraspace'>Presently, opening a Demat account does not take more than 5 minutes. However, <a href='https://choiceindia.com/blog/demat-account-activation-time/' class='linking'>Demat account activation time</a> may take up to 4 hours if you open a Demat account with Choice India.
   </p>
   
-                    <h4 className="subhead">Can I Open a Demat Account Without an Aadhar Card?</h4>
-                    <p className='subheadtxt'>A Demat account with an Aadhar card is possible! </p>
-                    <p className='subheadtxt paraspace'>Currently, the Government is planning to revisit the e-KYC process and linking Aadhaar to Demat, trading, or bank accounts is not mandatory. Therefore, opening a <a href='https://choiceindia.com/blog/can-i-open-demat-account-without-aadhar-card/' className='linking'>Demat account without an Aadhar card</a> is possible.</p>
+                    <h4 class="subhead">Can I Open a Demat Account Without an Aadhar Card?</h4>
+                    <p class='subheadtxt'>A Demat account with an Aadhar card is possible! </p>
+                    <p class='subheadtxt paraspace'>Currently, the Government is planning to revisit the e-KYC process and linking Aadhaar to Demat, trading, or bank accounts is not mandatory. Therefore, opening a <a href='https://choiceindia.com/blog/can-i-open-demat-account-without-aadhar-card/' class='linking'>Demat account without an Aadhar card</a> is possible.</p>
   
-                    <h4 className="subhead">Can I Open a Demat Account Without a PAN Card?</h4>
-                    <p className='subheadtxt'>Unfortunately, a <a href='https://choiceindia.com/blog/can-i-open-demat-account-without-pan-card/' className='linking'>Demat account without a PAN card</a> is not possible. SEBI has mandated a PAN card for opening a Demat account. The investor/trader needs to show the original PAN Card while opening the Demat account.</p>
+                    <h4 class="subhead">Can I Open a Demat Account Without a PAN Card?</h4>
+                    <p class='subheadtxt'>Unfortunately, a <a href='https://choiceindia.com/blog/can-i-open-demat-account-without-pan-card/' class='linking'>Demat account without a PAN card</a> is not possible. SEBI has mandated a PAN card for opening a Demat account. The investor/trader needs to show the original PAN Card while opening the Demat account.</p>
   
                     
                  
@@ -864,36 +920,38 @@
             <div class="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
               <button class=" primary-orange-btn scroll-top-account openbtn">Open Free Account</button>
             </div>
-  
+            <button class="scroll-top">
+              <svg aria-hidden="true" height="20" width="20" focusable="false" data-prefix="fas" data-icon="angle-up" class="svg-inline--fa fa-angle-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z"></path></svg>
+            </button>
           </div>
         
         </section>
   
-        <section className="stickybottom">
-            <div className="container mx-auto">
-            <div className="d-flex justify-content-around">
-              <div><h2 className="text"><span>Open Free</span> Demat Account</h2></div>
+        <section class="stickybottom">
+            <div class="container mx-auto">
+            <div class="d-flex justify-content-around">
+              <div><h2 class="text"><span>Open Free</span> Demat Account</h2></div>
              
-              <form className="d-flex justify-content-around">
-                  <div className="form-group ">
+              <form class="d-flex justify-content-around">
+                  <div class="form-group ">
                      
-                      <input type="tel" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number "  required  aria-describedby="Mobile Number*" autoComplete="off" /> 
+                      <input type="tel" class="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number "  required  aria-describedby="Mobile Number*" autoComplete="off" /> 
                      
                       <div>
-                      <span id="mobile_no_error" className="errormsg"></span>
+                      <span id="mobile_no_error" class="errormsg"></span>
                       </div>
                   </div>
-                  <div className="form-group tnc d-flex align-items-top align-items-top-check">
+                  <div class="form-group tnc d-flex align-items-top align-items-top-check">
                           <label>
-                              <input type="checkbox"  className="checkbox termcon" id="terms_and_conditions"  disabled required value="1" />
+                              <input type="checkbox"  class="checkbox termcon" id="terms_and_conditions"  disabled required value="1" />
                           </label> 
-                      <div className="termcon termcon1 ">
-                          <div> I agree that I have read &amp; accept the<a href="<?php echo TERM_USE; ?>" target="_blank" className="tc"> Terms &amp; Conditions</a>
+                      <div class="termcon termcon1 ">
+                          <div> I agree that I have read &amp; accept the<a href="<?php echo TERM_USE; ?>" target="_blank" class="tc"> Terms &amp; Conditions</a>
                           </div>
                       </div>
                   </div>
-                  <div className="form-group">
-                      <button type="button" className="form-btn sendotp"><span>Send OTP</span></button>
+                  <div class="form-group">
+                      <button type="button" class="form-btn sendotp"><span>Send OTP</span></button>
                   </div>
               </form>
              
@@ -902,7 +960,198 @@
            
         </section>
   
-       
+        <div class="Footer">
+          <footer class="main-footer">
+            <div class="footer-top-sec">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="top-sec-sub">
+                      <div class="footer-logo">
+                        <img src='./images/footer-logo.svg' class=""  alt='Loading'/>
+                      </div>
+                    </div>
+                    <div class="top-sec-quick-links">
+                      <div class="row">
+                        <div class="col-md-7">
+                          <div class="quick-links-list">
+                            <ul class="reset"> 
+                              <li>
+                                <h4>Services</h4>
+                              </li>
+                              <li>
+                                <a href="/">Equity Broking</a>
+                              </li>
+                              <li>
+                                <a href="/">Wealth Mangement</a>
+                              </li>
+                              <li>
+                                <a href="/">Insurance</a>
+                              </li>
+                              <li>
+                                <a href="/">Loans</a>
+                              </li>
+                              <li>
+                                <a href="/">Merchant Banking</a>
+                              </li>
+                              <li>
+                                <a href="/">Management Consultancy</a>
+                              </li>
+                              <li>
+                                <a href="/">Government Advisory</a>
+                              </li>
+                              <li>
+                                <a href="/">Tax Advisory</a>
+                              </li>
+                            </ul>
+                            <ul class="reset"> 
+                              <li>
+                                <h4>Company</h4>
+                              </li>
+                              <li>
+                                <a href="/">Our Team</a>
+                              </li>
+                              <li>
+                                <a href="/">Investors</a>
+                              </li>
+                              <li>
+                                <a href="/">Pricing</a>
+                              </li>
+                              <li>
+                                <a href="/">Careers</a>
+                              </li>
+                              <li>
+                                <a href="/">Contact Us</a>
+                              </li>
+                              <li>
+                                <a href="/">FAQ’s</a>
+                              </li>
+                            </ul>
+                            <ul class="reset"> 
+                              <li>
+                                <h4>Research</h4>
+                              </li>
+                              <li>
+                                <a href="/">Fundamental</a>
+                              </li>
+                              <li>
+                                <a href="/">Technical</a>
+                              </li>
+                              <li>
+                                <a href="/">Fables</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <div class="footer-cont-details">
+                            <p class="d-flex align-items-center">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<img src="./images/location.svg" class="img-fluid pl10"></p>
+                            <p class="d-flex align-items-center">Monday - Friday : 08:30 am - 7:00 pm <br/>
+                              Saturday : 10:00 am - 4:00 pm <img src="./images/clock.svg" class="img-fluid pl10"></p>
+                            <p class="d-flex align-items-center"><a href="tel:02267079999">+91-022-6707 9999</a>  <img src="./images/call.svg" class="img-fluid pl10"> </p>
+                            <p class="d-flex align-items-center"><a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a>  <img src="./images/envelop.svg" class="img-fluid pl10"> </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="top-social-extra-links">
+                      <div class="row align-items-center">
+                        <div class="col-md-7">
+                          <div class="links-wrap-social">
+                            <div class="wrap-app-links">
+                            <a href="/" target="_blank" class='link-nrl link-nrl-sm'>
+                              <svg width="25" height="25" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M0.549316 4.31975C0.549316 3.28063 0.84049 2.49725 1.31842 1.99816L1.3579 1.96035L22.8228 23.0876V23.4841L1.3579 44.6114L1.31843 44.5736C0.840494 44.0745 0.549316 43.2911 0.549316 42.252V4.31975Z" fill="white" stroke="#0066B3" strokeWidth="0.25"/>
+                              <path d="M38.4983 25.5919L38.4983 25.5919L30.1199 30.2505L30.1199 30.2505L30.0386 30.2957L23.0737 23.4752V23.0907L30.042 16.2717L38.4982 20.9723C38.4982 20.9723 38.4983 20.9723 38.4983 20.9723C39.6724 21.6258 40.2283 22.4683 40.2283 23.2827C40.2283 24.0971 39.6724 24.9392 38.4983 25.5919Z" fill="white" stroke="#0066B3" strokeWidth="0.25"/>
+                              <path d="M1.62287 45.1122L22.8585 23.4627L29.9121 30.6537L4.95617 45.111C4.95616 45.111 4.95615 45.111 4.95613 45.111C3.56725 45.9149 2.36921 45.8304 1.62287 45.1122Z" fill="white" stroke="#0066B3" strokeWidth="0.25"/>
+                              <path d="M1.62287 1.45625C2.36922 0.738031 3.56727 0.653568 4.95617 1.4575L29.9121 15.9147L22.8585 23.1058L1.62287 1.45625Z" fill="white" stroke="#0066B3" strokeWidth="0.25"/>
+                              </svg>
+
+                                <span class='whitecolor'>Google Play</span>
+                              </a>
+                              <a href="/" target="_blank" class='link-nrl link-nrl-sm white'>
+                              <svg width="25" height="25" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path fillRule="evenodd" clipRule="evenodd" d="M25.6833 21.0736C25.7212 18.1304 27.2631 15.4118 29.7687 13.8702C28.1808 11.6007 25.6166 10.2135 22.8495 10.1268C19.9383 9.82102 17.1161 11.8701 15.6326 11.8701C14.1204 11.8701 11.8364 10.1572 9.3768 10.2078C6.14068 10.3124 3.19687 12.1091 1.62242 14.9404C-1.73041 20.7496 0.770502 29.2872 3.98224 33.9829C5.58914 36.2823 7.46714 38.8507 9.92447 38.7597C12.3291 38.6599 13.2272 37.2252 16.1298 37.2252C19.0055 37.2252 19.8481 38.7597 22.3553 38.7017C24.9356 38.6598 26.5613 36.3922 28.1118 34.071C29.2664 32.4327 30.1548 30.6219 30.7442 28.7058C27.6796 27.4087 25.6869 24.4036 25.6833 21.0736Z" fill="#13151A"/>
+                              <path fillRule="evenodd" clipRule="evenodd" d="M20.704 7.28729C22.0332 5.49957 22.6881 3.20176 22.5295 0.881836C20.4987 1.1208 18.6228 2.20817 17.2756 3.9273C15.9453 5.62345 15.2714 7.84247 15.4023 10.0956C17.4603 10.1193 19.4143 9.08428 20.704 7.28729Z" fill="#13151A"/>
+                            </svg>
+
+                                <span class='blackcolor'>App Store</span>
+                              </a>
+                            </div>
+                            <div class="footer-social-links">
+                              <a href="/" target="_blank">
+                              <img src="./images/facebook.svg" class="mediaimg img-fluid">
+                              </a>
+                              <a href="/" target="_blank">
+                                <img src="./images/linkdln.svg" class="mediaimg img-fluid">
+                              </a>
+                              <a href="#" target="_blank" >
+                                <img src="./images/twitter.svg" class="mediaimg img-fluid">
+                              </a>
+                              <a href="/" target="_blank">
+                                <img src="./images/instagram.svg" class="mediaimg img-fluid">
+                              </a>
+                              <a href="/" target="_blank" >
+                                <img src="./images/youtube.svg" class="mediaimg img-fluid">
+                              </a>
+                              <a href="/" target="_blank" >
+                                <img src="./images/telegram.svg" class="mediaimg img-fluid">
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-5">
+                          <ul class="extra-links-right">
+                            <li>
+                              Made with  <img src="./images/heart.png" class="img-fluid">  in India
+                            </li>
+                            <li>
+                              <a href="/">Privacy Policy</a>
+                            </li>
+                            <li>
+                              <a href="/">Terms &amp; Conditions</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                        <div class="article">
+                        <p>&copy; Choiceinternational. CIN - U65999MH2010PTC198714. All Rights Reserved. <br/>
+      Registered with the Securities and Exchange Board of India (SEBI) as a Non-Individual Investment Mutual Fund Distributor (ARN-78908) and with Pension Fund Regulatory and Development Authority (PFRDA) as NPS POP (POPSE52022022).<br/>
+                        </p>
+                        <p>
+                        SEBI Reg No. Broking - INZ000160131; Depository Participant - IN - DP - 416 - 2019 , Depository Participant Number: CDSL - 12088800, Trading and clearing member of NSE, NSEFO & NSECDS (13773), MCX (40585), NCDEX (1006) and BSE(3299).<br/>
+      Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br/>
+
+      SEBI Regional Office: Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra<br/>
+      *0.20% brokerage on delivery trades<br/>
+      &amp; 0.02% on Equity Intraday trades<br/>
+      **Equity Futures: 0.02% per executed order &amp; Equity Options: Flat ₹25 per lot.<br/>
+      ***Currency Futures: 0.02% per executed order &amp; Currency Options ₹20 per lot <br/>
+      ****Commodity Futures: 0.02% per executed order &amp; Commodity Options ₹50 per lot<br/>
+      Brokerage will not exceed the SEBI prescribed limit.<br/>
+      Investments in securities markets are subject to market risks, read all the related documents carefully before investing.<br/><br/>
+      Disclaimer: We are doing pro trading (Confirm with RMS/management, whether we avail pro trading or not) Refer SEBI Chapter/Master Circular_Section 9_Protrading.<br/>
+      *Investment in securities market is subject to market risks, read all the related documents carefully before investing.<br/>
+      &copy; Choice International Limited. All Rights Reserved.<br/>
+                        </p>
+                      </div>
+                      {/* <a class="moreless-button">Read more</a> */}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</div>
         
   
         </main>
@@ -914,15 +1163,10 @@
     <!-- We will put our React component inside this div. -->
     <div id="like_button_container" param="some info"></div>
     
-    <script
-      src="https://unpkg.com/react@18/umd/react.development.js"
-      crossorigin
-    ></script>
-    <script
-      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
-      crossorigin
-    ></script>
-    <!-- Load our React component -->
-    <script src="Home.js"></script>
+    <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+      </script>
   </body>
 </html>
