@@ -5,6 +5,7 @@ import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
 import Footer from './components/Common-features/Footer';
 import OpentoTop from './components/Common-features/OpentoTop';
+import '../src/assets/css/common.scss';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -25,81 +26,83 @@ const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
 const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
-const LazyFableDetail = React.lazy(()=> import('./components/Fables-details/FablesDetails'));
-const Lazypartner = React.lazy(()=> import('./components/Partner-Page/Partner'))
+const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
+const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'))
 
 
 function Routing() {
     return (
         <>
             <Router>
-            <ScrolltoTop />
-            <OpentoTop/>
-            <Header/>
-                <Routes>
-                <Route exact path='/' element={
-                        <React.Suspense fallback='Loading...'>
-                            < LazyHome />
-                        </React.Suspense>} />
-                    {/* <Route exact path='/' element={< Home />} /> */}
-                    
-                    <Route exact path='/about-us' element={
-                        <React.Suspense fallback='About...'>
-                            < LazyAbout />
-                        </React.Suspense>
-                    } />
+                <ScrolltoTop />
+                <OpentoTop />
+                <Header />
+                <div className='App-Body'>
+                    <Routes>
+                        <Route exact path='/' element={
+                            <React.Suspense>
+                                < LazyHome />
+                            </React.Suspense>} />
+                        {/* <Route exact path='/' element={< Home />} /> */}
+
+                        <Route exact path='/about-us' element={
+                            <React.Suspense>
+                                < LazyAbout />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/career' element={
-                        <React.Suspense fallback='Career...'>
-                            < LazyCareer />
-                        </React.Suspense>} />
+                            <React.Suspense>
+                                < LazyCareer />
+                            </React.Suspense>} />
 
-                           <Route exact path='/app' element={
-                        <React.Suspense fallback='App...'>
-                            < LazyApp />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/app' element={
+                            <React.Suspense>
+                                < LazyApp />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/fables' element={
-                        <React.Suspense fallback='Fables...'>
-                            < LazyFables />
-                        </React.Suspense>
-                    } />
+                            <React.Suspense>
+                                < LazyFables />
+                            </React.Suspense>
+                        } />
 
-                      <Route exact path='/contact' element={
-                        <React.Suspense fallback='Contact...'>
-                            < LazyContact />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/contact' element={
+                            <React.Suspense>
+                                < LazyContact />
+                            </React.Suspense>
+                        } />
 
-                    <Route exact path='/services' element={
-                        <React.Suspense fallback='services...'>
-                            < LazyServices />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/services' element={
+                            <React.Suspense>
+                                < LazyServices />
+                            </React.Suspense>
+                        } />
 
 
-                    <Route exact path='/faq' element={
-                        <React.Suspense fallback='faq...'>
-                            < LazyFaq />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/faq' element={
+                            <React.Suspense>
+                                < LazyFaq />
+                            </React.Suspense>
+                        } />
 
-                    <Route exact path='/fablesdetail' element={
-                        <React.Suspense fallback='fablesdetail...'>
-                            < LazyFableDetail />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/fablesdetail/:id' element={
+                            <React.Suspense>    
+                                < LazyFableDetail />
+                            </React.Suspense>
+                        } />
 
-                    <Route exact path='/partner' element={
-                        <React.Suspense fallback='partner...'>
-                            < Lazypartner />
-                        </React.Suspense>
-                    } />
+                        <Route exact path='/partner' element={
+                            <React.Suspense>
+                                < Lazypartner />
+                            </React.Suspense>
+                        } />
 
-                    <Route path="*" element={<ErrorPage />} />
-                </Routes>    
-                <Footer/>
+                        <Route path="*" element={<ErrorPage />} />
+                    </Routes>
+                </div>
+                <Footer />
             </Router>
         </>
     )

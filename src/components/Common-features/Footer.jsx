@@ -30,16 +30,16 @@ function Footer() {
                             <h4>Services</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/equity-stock-trading">Equity Broking</a>
+                            <a href="https://choiceindia.com/equity-stock-trading" target="_blank">Equity Broking</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/wealth-management-services">Wealth Mangement</a>
+                            <a href="https://choiceindia.com/wealth-management-services" target="_blank">Wealth Mangement</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/insurance-policy">Insurance</a>
+                            <a href="https://choiceindia.com/insurance-policy" target="_blank">Insurance</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/loan-against-securities-shares">Loans</a>
+                            <a href="https://choiceindia.com/loan-against-securities-shares" target="_blank">Loans</a>
                           </li>
                           <li>
                           <a href="/">Capital Advisory</a>
@@ -48,10 +48,10 @@ function Footer() {
                             <a href="/">Management Consultancy</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory">Government Advisory</a>
+                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Government Advisory</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory">Tax Advisory</a>
+                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Tax Advisory</a>
                           </li>
                         </ul>
                         <ul className="reset">
@@ -59,10 +59,10 @@ function Footer() {
                             <h4>Company</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/our-team">Our Team</a>
+                            <a href="https://choiceindia.com/our-team" target="_blank">Our Team</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/investors">Investors</a>
+                            <a href="https://choiceindia.com/investors" target="_blank">Investors</a>
                           </li>
                           <li>
                             <a href="/">Pricing</a>
@@ -82,10 +82,10 @@ function Footer() {
                             <h4>Research</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/research-listing-new">Fundamental</a>
+                            <a href="https://choiceindia.com/research-listing-new" target="_blank">Fundamental</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/research-listing-new">Technical</a>
+                            <a href="https://choiceindia.com/research-listing-new" target="_blank">Technical</a>
                           </li>
                           <li>
                              <Link to="/fables">Fables</Link>
@@ -98,8 +98,8 @@ function Footer() {
                         <p>Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
                         <p>Monday - Friday : 08:30 am - 7:00 pm <br />
                           Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                        <p><a href="tel:02267079999">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                        <p><a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a>  <FontAwesomeIcon icon={faEnvelope} /> </p>
+                        <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                        <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                       </div>
                     </div>
                   </div>
@@ -117,7 +117,7 @@ function Footer() {
                               <path d="M1.62287 1.45625C2.36922 0.738031 3.56727 0.653568 4.95617 1.4575L29.9121 15.9147L22.8585 23.1058L1.62287 1.45625Z" fill="white" stroke="#0066B3" strokeWidth="0.25" />
                             </svg>
 
-                            <span className='whitecolor'>Google Play</span>
+                            <span className='whitecolor' target="_blank">Google Play</span>
                           </a>
                           <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
                             <svg width="25" height="25" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,7 +125,7 @@ function Footer() {
                               <path fillRule="evenodd" clipRule="evenodd" d="M20.704 7.28729C22.0332 5.49957 22.6881 3.20176 22.5295 0.881836C20.4987 1.1208 18.6228 2.20817 17.2756 3.9273C15.9453 5.62345 15.2714 7.84247 15.4023 10.0956C17.4603 10.1193 19.4143 9.08428 20.704 7.28729Z" fill="#13151A" />
                             </svg>
 
-                            <span className='blackcolor'>App Store</span>
+                            <span className='blackcolor' target="_blank">App Store</span>
                           </a>
                         </div>
                         <div className="footer-social-links">
@@ -156,10 +156,10 @@ function Footer() {
                           Made with  <FontAwesomeIcon icon={faHeart} />  in India
                         </li>
                         <li>
-                          <a href="https://choiceindia.com/privacy-policy">Privacy Policy</a>
+                          <a href="https://choiceindia.com/privacy-policy" target="_blank">Privacy Policy</a>
                         </li>
                         <li>
-                          <a href="/">Terms &amp; Conditions</a>
+                          <a href="/" target="_blank">Terms &amp; Conditions</a>
                         </li>
                       </ul>
                     </div>

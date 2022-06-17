@@ -139,11 +139,11 @@
 
     &::before {
         content: '';
-        width: 20rem;
-        height: 50rem;
+        width: 17rem;
+        height: 38rem;
         display: block;
         position: absolute;
-        left: 0;
+        left: 2px;
         top: -9rem;
         background: url(../../assets/images/home-bgtop-01.png) no-repeat top left;
         background-size: contain;
@@ -715,6 +715,13 @@
                 width: 100%;
                 padding-left: 0;
                 text-align: center;
+            }
+
+            .stories-sec-right-des{
+                a{
+                    text-decoration: none;
+                    color: $primary;
+                }
             }
         }
 

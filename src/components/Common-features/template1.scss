@@ -1,0 +1,298 @@
+$breakpoint-mobile: 480px;
+$breakpoint-tablets: 768px;
+$breakpoint-smlaptops: 1024px;
+$breakpoint-lgdesktops: 1200px;
+$breakpoint-xlTV: 1201px;
+
+.template-parent {
+    // border:2px solid red;
+    padding-top: 2rem;
+    background-color: #F4F6F7;
+}
+
+@mixin margin-rem {
+    width: auto;
+    margin: 2rem;
+}
+
+@mixin skeleton {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@mixin skeletonhide {
+    animation: hideMe 4s forwards;
+}
+
+/** keyframes added */
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.template-banner {
+    width: 100%;
+    height: 30rem;
+    // border:2px solid red;
+
+    // @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+    //     margin: 2rem;
+    // }
+
+    div {
+        .template-banner-div {
+            // border:2px solid red;
+            @include skeleton;
+            width: 80%;
+            height: 25rem;
+            margin: 2rem 15rem 0rem 15rem;
+
+            @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+                @include margin-rem;
+            }
+
+            @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+                @include margin-rem;
+            }
+
+            @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+                @include margin-rem;
+            }
+        }
+    }
+}
+
+.template-child-4 {
+    width: 100%;
+    height: 40rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+
+
+    @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+        // border:2px solid green;
+        display: block;
+        @include margin-rem;
+        height: fit-content;
+    }
+
+    @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+        display: block;
+        @include margin-rem;
+        height: fit-content;
+    }
+
+    div {
+        @include skeleton;
+        width: 20rem;
+        height: 4rem;
+        margin: 2rem;
+
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid black;
+            @include margin-rem;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+            @include margin-rem;
+        }
+
+    }
+}
+
+
+.template-child-3 {
+    // border:2px solid black;
+    width: 100%;
+    height: 60vh;
+    display: flex;
+
+
+    @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+        // border:2px solid pink;
+        display: block;
+        height: fit-content;
+    }
+
+    @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+        display: block;
+        height: fit-content;
+    }    
+
+    @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+        display: block;
+        height: fit-content;
+    }
+
+    @media (min-width:1024px) and (max-width: $breakpoint-lgdesktops) {
+        height: fit-content;
+    }
+
+    .template-child3-content {
+        // border:2px solid pink;
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid brown;
+            display: block;
+            width: 100%;
+            margin: auto;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+            display: block;
+            width: 100%;
+            height: fit-content;
+        }
+
+        @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+            display: block;
+            width: 100%;
+            height: fit-content;
+        }  
+
+        p {
+            // border:2px solid blue;
+            @include skeleton;
+            width: 40%;
+            height: 3rem;
+            margin-left: 15rem;
+
+            @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+                // border:2px solid orange;
+                @include margin-rem;
+            }
+
+            @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+                @include margin-rem;
+            }
+
+            @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+                @include margin-rem;
+            }  
+            
+        }
+    }
+
+    .template-child3-img {
+        // border:2px solid green;
+        width: 50%;
+        height: 30rem;
+        margin: 5rem;
+        @include skeleton;
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid yellow;
+            width: auto;
+            margin: 1rem;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid yellow;
+            width: auto;
+            margin: 1rem;
+        }
+
+        @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+            width: auto;
+            margin: 1rem;
+        }  
+    }
+}
+
+
+.template-child-2 {
+    // border:2px solid brown;
+    width: 100%;
+    height: 50%;
+
+    h1 {
+        margin: 5rem 20rem 5rem 20rem;
+        width: 70%;
+        height: 4rem;
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid blue;
+            @include margin-rem;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+            // border:2px solid yellow;
+            @include margin-rem;
+        }
+
+        @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+            @include margin-rem;
+        }  
+    }
+
+    p {
+        margin: 3rem 30rem 3rem 30rem;
+        width: 50%;
+        height: 20rem;
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid violet;
+            @include margin-rem;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+            // border:2px solid violet;
+            @include margin-rem;
+        }
+
+        @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+            @include margin-rem;
+        } 
+    }
+
+    h1,
+    p {
+        @include skeleton;
+    }
+}
+
+.template-child-5 {
+    width: 100%;
+    height: 40rem;
+
+    div {
+        @include skeleton;
+        width: 80%;
+        height: 30rem;
+        margin: 5rem 15rem 5rem 15rem;
+
+        @media (min-width:320px) and (max-width: $breakpoint-mobile) {
+            // border:2px solid lightblue;
+            @include margin-rem;
+        }
+
+        @media (min-width:481px) and (max-width: $breakpoint-tablets) {
+            // border:2px solid violet;
+            @include margin-rem;
+        }
+
+        @media (min-width:769px) and (max-width: $breakpoint-smlaptops) {
+            @include margin-rem;
+        } 
+    }
+}
