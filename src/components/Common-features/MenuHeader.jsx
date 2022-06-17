@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  ImageSub0  from '../../assets/images/logo.svg';
+import  ImageSub0  from '../../assets/images/logo-old.svg';
 //import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'

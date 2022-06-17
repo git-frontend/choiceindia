@@ -8,10 +8,6 @@ p{
     line-height: 2.15rem;
 }
 
-.App-Body{
-    min-height: 100vh;
-    margin-top: 12rem;
-}
 
 html{
     
@@ -119,3 +115,11 @@ body{
 }
 
 
+
+.App-Body{
+    min-height: 100vh;
+    margin-top: 9rem;
+    @media screen and (max-width: $md) {
+        margin-top: 6.6rem;
+    }
+}

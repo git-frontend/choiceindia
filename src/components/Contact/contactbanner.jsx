@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import Bannerimage from '../../assets/images/contact/contactbanner.png';
+import Bannerimage from '../../assets/images/contact/contactbanner.webp';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';

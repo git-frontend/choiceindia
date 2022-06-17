@@ -3,12 +3,6 @@
 
 
 
-// .whitemenu{
-//     background-color: #fff !important;
-
-//     @extend .main-header;
-// }
-// banner
 .contactbody {
     height: inherit;
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
@@ -16,7 +10,7 @@
 
 /** temporarychanges */
 .banner-parent-temp {
-    // border:2px solid red;
+  
     position: relative;
     background-color: #F4F6F7;
     height: 800px;
@@ -31,11 +25,10 @@
     width: 100%;
 
     .banner-img-temp {
-        // border:2px solid red;
+       
         width: 60%;
         height: 500px;
-
-        // background: #eee;
+      
         .img-temp {
             width: 600px;
             height: 500px;
@@ -48,7 +41,7 @@
     }
 
     .banner-content-temp {
-        // border:2px solid green;
+       
         width: 40%;
         height: 500px;
 
@@ -63,7 +56,7 @@
 
         h2,
         p {
-            // border:2px solid black;
+           
             height: 30px;
             margin-left: 100px;
             margin-bottom: 20px;
@@ -73,7 +66,6 @@
             background-size: 200% 100%;
             animation: 1.5s shine linear infinite;
         }
-
     }
 }
 
@@ -97,8 +89,6 @@
 
 /** changes below */
 .banner-parent {
-    // border:2px solid blue;
-    // height: 813px;
     width: 100%;
 }
 
@@ -123,14 +113,10 @@
         .big-ttl {
             @media (max-width: $sm) {
                 font-size: 3rem;
-                line-height: 1;
+                line-height: 1.5;
             }
         }
     }
-
-
-
-
 }
 
 
@@ -139,7 +125,8 @@
     position: relative;
     animation: hideMe 4s forwards;
 
-    @media (max-width: 1024px) {}
+    @media (max-width: 1024px) {
+    }
 
     &:before {
         content: '';
@@ -180,7 +167,7 @@
         font-weight: 600;
         font-size: 1.875rem;
         line-height: 2.8125rem;
-        font-family: 'PoppinsMedium';
+        font-family: $font-family-poppins-medium;
     }
 
     .subtext {
@@ -188,7 +175,7 @@
         font-weight: 400;
         font-size: 1.4rem;
         line-height: 2.5rem;
-        font-family: 'PoppinsRegular';
+        font-family: $font-family-poppins-regular;
     }
 
     .subhead {
@@ -196,7 +183,7 @@
         font-weight: 400;
         font-size: 1.25rem;
         line-height: 2.125rem;
-        font-family: 'PoppinsRegular';
+        font-family: $font-family-poppins-regular;
     }
 
     .cust-dropdown {
@@ -249,9 +236,6 @@
                 top: 4px;
                 background-size: 1.2rem;
             }
-
-
-
         }
 
 
@@ -265,7 +249,6 @@
         }
 
         .option {
-
             color: $primary;
             background: transparent;
             border: 0px solid $lightColor;
@@ -280,7 +263,6 @@
                 font-family: "PoppinsRegular", sans-serif, sans-serif;
             }
         }
-
     }
 
     .flex-column-left {
@@ -289,6 +271,9 @@
         @media (max-width: $sm) {
             width: 100%;
         }
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0 0 0;
     }
 }
 
@@ -308,10 +293,10 @@
 
 
 .cnt-banner-bottm {
-    
     position: relative;
     margin-top: -208px;
     animation: hideMe 4s forwards;
+
     .writebtn {
         position: relative;
         left: 0;
@@ -326,7 +311,6 @@
             padding: 1.5rem 2.5rem;
             font-size: 1.375rem;
             display: inline-block;
-            // font-size: 24px;
             font-family: $font-family-poppins-semibold;
         }
     }
@@ -344,19 +328,11 @@
         padding: 3rem 2.8rem;
 
         @media (max-width: $sm) {
-            margin-top: 17rem;
-            top: 138%;
+            
             padding: 3rem 2rem;
         }
 
-        @media (min-width:$sm) and (max-width: $sm-x) {
-            top: 150%;
-        }
-
-        @media (min-width:769px) and (max-width:1024px) {
-            top: 145%;
-        }
-
+       
         .formgrp {
             width: 49%;
 
@@ -373,7 +349,6 @@
                 @media (max-width: $sm) {
                     padding: 12px 10px;
                 }
-
             }
 
             ::placeholder {
@@ -400,7 +375,6 @@
                     font-size: 1.2rem;
                 }
             }
-
         }
 
         .formlabel {
@@ -443,9 +417,6 @@
                     justify-content: center;
                     align-items: center;
                 }
-
-
-
             }
 
 
@@ -468,7 +439,6 @@
 
                 @media (max-width: $sm) {
                     font-size: 1.2rem;
-
                     padding: 0 10px;
                 }
 
@@ -484,14 +454,12 @@
                     justify-content: center;
                     align-items: center;
                 }
-
             }
 
             .dropdown-menu {
                 width: 100%;
                 font-family: $font-family-poppins-regular, sans-serif;
             }
-
         }
 
         .messagefield {
@@ -518,7 +486,7 @@
         .uploadbtn {
             position: relative;
             margin-bottom: 0rem;
-            justify-content:flex-end;
+            justify-content: flex-end;
         }
 
         .attachement {
@@ -560,6 +528,12 @@
             border-radius: 10px;
         }
     }
+    @media (max-width: $md) {
+        margin-top: -158px;
+    }
+    @media (max-width: $sm) {
+        margin-top: 0;
+    }
 }
 
 
@@ -572,13 +546,11 @@
 
 /** skeleton css*/
 .contactdetail-skeleton {
-    // border: 2px solid red;
     position: relative;
     background-color: #F4F6F7;
 }
 
 .skeleton-child-img {
-    // border:2px solid black;
     width: 100px;
     height: 100px;
     color: transparent;
