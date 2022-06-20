@@ -27,7 +27,8 @@ const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
 const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
-const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'))
+const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
+const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'))
 
 
 function Routing() {
@@ -98,6 +99,14 @@ function Routing() {
                                 < Lazypartner />
                             </React.Suspense>
                         } />
+
+                        <Route exact path='/Investor-info' element={
+                            <React.Suspense>
+                                < LazyInvestorInfo />
+                            </React.Suspense>
+                        } />
+
+                      
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
