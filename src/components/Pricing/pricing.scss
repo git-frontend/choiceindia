@@ -4,6 +4,37 @@
 
 .pricing-banner-tabs{
     padding-top: 5rem;
+    position: relative;
+    &::after {
+        content: '';
+        width: 28rem;
+        height: 44rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top:0;
+        background: url(../../assets/images/pricing/banner-bg-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::before {
+        content: '';
+        width: 28rem;
+        height: 44rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom:7rem;
+        background: url(../../assets/images/pricing/banner-bg-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
     .heading-sec-top{
         margin-bottom: 6rem;
         @media (max-width: $sm-x) {
@@ -15,6 +46,8 @@
         flex-wrap: wrap;
         margin-left: -3%;
         padding-bottom: 9rem;
+        position: relative;
+        z-index: 9;
         .tabs{
             width: 23%;
             margin-left: 2%;
@@ -181,6 +214,8 @@
                     border-radius: 20px;
                     margin-bottom: 3rem;
                     overflow: hidden;
+                    position: relative;
+                    z-index: 9;
                     background: $whiteColor;
                     @extend.box-shadow;
                     .box-sub-head{
