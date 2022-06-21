@@ -3,9 +3,10 @@ import React from "react";
 import Banner from './Banner';
 import InvestorInfoMenu from './InvestorInfoMenu';
 import Yeardetail from './Yeardetail';
+
 import { AiFillCaretUp } from "react-icons/ai";
 import "./investorsinfo.scss";
-
+import "./navbar.scss";
 function InvestorInfo() {
 
   return (
@@ -45,6 +46,7 @@ function InvestorInfo() {
 
           <InvestorInfoMenu />
           <Yeardetail />
+         
        </div>
       
     

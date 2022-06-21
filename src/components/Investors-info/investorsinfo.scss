@@ -17,6 +17,9 @@ body{
             background-color: #221F20;
             width: 25%;
             margin: 0 auto;
+            @media screen and (max-width:767px) {
+                width: 100%;
+         }
             h1{
                 color: #F5F5F5;
                 text-align: left;
@@ -29,10 +32,19 @@ body{
                 font-size: 4.125rem;
                 line-height: 6.1875rem;
                 font-family: $font-family-poppins-bold;
+                @media screen and (max-width:767px) {
+                    top: 0;
+                    font-size: 3rem;
+                    line-height: 4rem;
+                    padding: 2rem;
+             }
             }
         }
         .img{
             width: 75%;
+            @media screen and (max-width:767px) {
+                   display: none; 
+            }
         }
     }
  
@@ -40,12 +52,18 @@ body{
 
 .countsect{
     padding:9.125rem 0;
+    @media screen and (max-width:767px) {
+        padding:5.125rem 0;
+ }
     .counttext{
         color: #221F20;
         font-size: 3.5rem;
         line-height: 5.25rem;
         font-family: $font-family-poppins-regular;
         font-weight: 600;
+        @media screen and (max-width:767px) {
+            font-size: 2rem;
+     }
     }
     .count{
        
@@ -57,6 +75,9 @@ body{
             font-family: $font-family-poppins-bold;
             display: flex;
             align-items: center;
+            @media screen and (max-width:767px) {
+                font-size: 3.125rem;
+            }
             .green{
                 color: #0BA04A;
             }
@@ -125,7 +146,7 @@ body{
         font-family: $font-family-poppins-regular;
         font-weight: 600;
         text-align: center;
-        padding-bottom: 76px;
+        padding-bottom: 4.75rem;
     }
     .wrap{
         background: #FFFFFF;
@@ -135,7 +156,7 @@ body{
         margin-bottom: 1.875rem;
         .head{
             color: #221F20;
-            font-size: 1.625rem;
+            font-size: 1.8rem;
             line-height: 2.4375rem;
             font-weight: 600;
             font-family: $font-family-poppins-regular;
@@ -146,14 +167,14 @@ body{
         }
         .subtext{
             color: #707070;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             line-height: 2rem;
             font-weight: 400;
             font-family: $font-family-poppins-regular;
         }
         .links{
             color: #0066B3;
-            font-size: 1.25rem;
+            font-size: 1.5rem;
             line-height: 1.875rem;
             font-weight: 600;
             font-family: $font-family-poppins-regular;
@@ -171,7 +192,7 @@ body{
             }
             .subhead{
                 color: #221F20;
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 line-height: 1.25rem;
                 font-weight: 500;
                 font-family: $font-family-poppins-regular;
@@ -184,14 +205,14 @@ body{
             .info{
                 width: 80%;
                 color: #707070;
-                font-size: 1.25rem;
+                font-size: 1.5rem;
                 line-height: 1.875rem;
                 font-weight: 400;
                 font-family: $font-family-poppins-regular;
                 @media screen and (max-width:767px) {
                     width: 70%;
                     font-size: 1.4rem;
-                    
+                    word-break: break-all;
                 }
             }
         }
@@ -220,7 +241,7 @@ body{
                 text-decoration: none;
                 font-family: $font-family-poppins-medium;
                 border: 0;
-                font-size: 1.5rem;
+                font-size: 1.75rem;
                 background: inherit;
                 border: 0;
 
@@ -301,7 +322,7 @@ body{
                         
                       .accordion-button{
                         padding: 1.875rem 1.5625rem;
-                        font-size: 1.375rem;
+                        font-size: 1.75rem;
                         color: #221F20;
                         line-height: 33px; 
                         font-family: $font-family-poppins-medium;
@@ -311,9 +332,10 @@ body{
                             box-shadow: none;
                         }
                         &:after{
-                            background: url('../../assets/images/investor-info/plus.svg') no-repeat;
-                            height: 1.4375rem;
-                            width: 1.4375rem;
+                            background: url('../../assets/images/investor-info/plus.svg') no-repeat ;
+                            height: 1.5rem;
+                            width: 1.5rem;
+                            background-size: cover;
                         }
                        
                       }
@@ -325,6 +347,7 @@ body{
                       }
                       .accordion-body{
                         padding: 0px 1.5625rem 1.875rem;
+                        font-size: 1.5rem;
                         .listing{
                             list-style: none;
                             padding-left: 0;
@@ -332,7 +355,7 @@ body{
                         .list{
                             margin-bottom: 20px;
                             color: #707070;
-                            font-size: 1.25rem;
+                            font-size: 1.5rem;
                             line-height: 1.875rem;
                             font-weight: 400;
                             font-family: $font-family-poppins-regular;

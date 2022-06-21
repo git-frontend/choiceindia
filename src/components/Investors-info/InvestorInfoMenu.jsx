@@ -1,5 +1,7 @@
 
 import React from "react";
+import Navbar from './Navbar';
+
 function InvestorInfoMenu() {
 
   return (
@@ -11,6 +13,7 @@ function InvestorInfoMenu() {
             <div className="row">
                 <div className="col-md-12">
                     <h2 className="title">Investor Info</h2>
+                    <Navbar />
                 </div>
               
             </div>
