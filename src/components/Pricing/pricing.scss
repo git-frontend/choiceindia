@@ -134,6 +134,10 @@
                 }
             }
 
+            @media (max-width: $md) {
+                width: 48%;
+            }
+
             @media (max-width: $sm) {
                 width: 90%;
                 margin: 0 auto;
@@ -143,6 +147,7 @@
         }
         @media (max-width: $sm) {
             margin-left: 0;
+            padding-bottom: 4rem;
         }
     }
     .content-tabs{
@@ -286,7 +291,7 @@
                             }
                         }
                     }
-                    @media (max-width: $sm-x) {
+                    @media (max-width: $sm) {
                         width: 97%;
                     }
                 }
@@ -296,3 +301,110 @@
     }
 }
 
+
+
+
+.pricing-demat-account{
+    background: #25B8AF;
+    padding: 10rem 0;
+    .demat-account-form{
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        background: $whiteColor;
+        padding: 3rem 2rem 2rem 2rem;
+        max-width: 30rem;
+        .sub-formgrp{
+            margin-bottom: 1.5rem;
+            .formcontrol{
+                background: $whiteColor;
+                outline: none;
+                box-shadow: inherit;
+                border: 1px solid #0068B3;
+                padding: 1.4rem 1.5rem;
+                border-radius: 12px;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.2rem;
+            }
+            &.cust-checkbox{
+                display: flex;
+                align-items: flex-start;
+                .form-check{
+                    margin-right: 0;
+                }
+                .lbl{
+                    font-size: 1.2rem;
+                    color: $secondary;
+                    font-family: $font-family-poppins-regular;
+                    .link-tc{
+                        color: #0068B3;
+                        font-family:$font-family-poppins-semibold;
+                        text-decoration: none;
+                        display: block;
+                    }
+                }
+            }
+            .sendbtn{
+                width: 100%;
+            }
+        }
+        .form-ttl{
+            text-align: center;
+            font-size: 2rem;
+            font-family: $font-family-poppins-semibold;
+            color: $primary;
+            margin-bottom: 3rem;
+        }
+        @media (max-width: $sm-x) {
+            width: 100%;
+            max-width: inherit;
+        }
+    }
+    .demat-account-features{
+        .title-secnd{
+            color: $whiteColor;
+            margin-bottom: 3.5rem;
+            @media (max-width: $sm) {
+                text-align: center;
+            }
+        }
+        .img-demat-arrow{
+            max-width: 70%;
+            position: relative;
+            left: -50%;
+            margin-left: 100%;
+            display: block;
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        .account-features-list{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: -4%;
+            .feat-list-itm{
+                width: 46%;
+                margin-left: 4%;
+                margin-bottom: 3rem;
+                padding: 2rem 2rem 1rem 2rem;
+                border: 2px solid $whiteColor;
+                border-radius: 20px;
+                h4{
+                    font-size: 1.8rem;
+                    font-family: $font-family-poppins-semibold;
+                    color: $whiteColor;
+                    margin-bottom: 1rem;
+                }
+                p{
+                    color: $whiteColor;
+                    font-size: 1.2rem;
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+    }
+    @media (max-width: $sm-x) {
+        padding: 5rem 0;
+    }
+
+}

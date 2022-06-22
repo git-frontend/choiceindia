@@ -1,10 +1,13 @@
 
-import  ImageSub0  from '../assets/images/app/mobile1.png';
-import  image10  from '../assets/images/app-img1.png';
+import  ImageSub0  from '../assets/images/app/insuring-future.webp';
+import  ImageSub1  from '../assets/images/app/readymade-baskets.webp';
+import  ImageSub2  from '../assets/images/app/trading-simplified.webp';
+import  ImageSub3  from '../assets/images/app/wealth-pool.webp';
+
 const imageData =
 [
     {
-        "image":`${ImageSub0}`,
+        "image":`${ImageSub2}`,
         "id": 5,
         "title":'Trading Simplified',
         "description":'Smoothly grow your investment portfolio with mutual funds'
@@ -12,7 +15,7 @@ const imageData =
         
     },
     {
-        "image":`${image10}`,
+        "image":`${ImageSub3}`,
         "id": 4,
         "title":'Wealth Pool',
         "description":'Grow your Investments smoothly in Mutual  Funds'
@@ -28,7 +31,7 @@ const imageData =
         
     }
     ,{
-        "image":`${image10}`,
+        "image":`${ImageSub3}`,
         "id": 0,
         "title":'Swift Loans',
         "description":'Your reliable money lender amidst trying times'
@@ -36,13 +39,13 @@ const imageData =
     }
     ,{
 
-        "image":`${ImageSub0}`,
+        "image":`${ImageSub1}`,
         "id": 1,
         "title":'Readymade Baskets',
         "description":'Try our curated baskets to invest on autopilot'
     }
     ,{
-        "image":`${image10}`,
+        "image":`${ImageSub1}`,
         "id": 2,
         "title":'Financial Planning',
         "description":'An automated financial planner to handle your fiscal needs'

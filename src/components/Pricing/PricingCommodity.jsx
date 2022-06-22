@@ -14,7 +14,7 @@ function PricingEquity() {
 
       <div className="banner-tab-cont">
         <div className="heading-sec">
-          <h3 className="title-secnd">Commodity Futures</h3>
+          <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
         <div className="pricing-table-tab">
           <div className="table-responsive">
@@ -92,7 +92,7 @@ function PricingEquity() {
           </div>
           <div className="calc-box">
             <div className="box-sub">
-              <h3 className="box-sub-head">Equity Delivery</h3>
+              <h3 className="box-sub-head">Commodity Futures</h3>
               <div className="calc-input-list">
                 <div className="input-itm">
                   <h5>Buy Price</h5>
