@@ -50,11 +50,11 @@ function AppBannerBottom() {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
-              <div className="app-trade-easy-div row">
+              <div className="app-trade-easy-div row align-items-center">
 
 
 
-                <div className='col-md-7'>
+                <div className='col-md-6'>
                   <div className='content-list'>
                     <Slider {...settings1}
                       afterChange={(ev) => {
@@ -86,7 +86,7 @@ function AppBannerBottom() {
 
 
                 </div>
-                <div className='col-md-4'>
+                <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
                   <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" alt="Loading" />
