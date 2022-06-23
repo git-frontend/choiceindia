@@ -18,7 +18,7 @@ export default function Header() {
                 <div className="container">
                 
                 <NavLink className="navbar-brand logo-main" to="/">
-                        <img src={ImageSub0} className="img-fluid logo-dark" alt="Choice India" />
+                        <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice India" />
                         {/*<img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
   */}                      </NavLink>
                     <button className="navbar-toggler border" 
