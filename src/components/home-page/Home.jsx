@@ -9,7 +9,7 @@ import  HomeTestimonial from './HomeTestimonial.jsx'
 import  SecurityPrivacy from './SecurityPrivacy.jsx'
 // import  HomeHeader from './home-page/HomeHeader.jsx'
 import "./style.scss"
-
+import videoBg from '../../assets/vedio/videoBg.webm'
 
 
 
@@ -24,9 +24,20 @@ function Home() {
 
       <main>
 
-      
+      <div className='home-banner-ved'>
+        <div className="overlay"></div>
+        <video src={videoBg} autoPlay loop muted className='banner-ved' />
+		<div className='banner-ved-des'>
+			<div className='container'>
+				<div className='banner-caption' >
+					<h1>Experience</h1>
+					<h1>The Joy of Earning</h1>
+				</div>
+			</div>
+		</div>
+    	</div>
     
-       <HomePageBanner />
+       {/* <HomePageBanner /> */}
 	
 
        <EverydayFinance />
