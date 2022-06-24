@@ -33,6 +33,7 @@
         color: $bgcolordark !important;
         &:hover{
             background: $whiteColor !important;
+            @extend.box-shadow;
         }
     }
 }

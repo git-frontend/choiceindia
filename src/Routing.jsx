@@ -27,7 +27,8 @@ const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
 const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
-const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'))
+const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
+const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
 
 
 function Routing() {
@@ -96,6 +97,12 @@ function Routing() {
                         <Route exact path='/partner' element={
                             <React.Suspense>
                                 < Lazypartner />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/pricing' element={
+                            <React.Suspense>
+                                < Lazypricing />
                             </React.Suspense>
                         } />
 

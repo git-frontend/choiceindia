@@ -1,10 +1,10 @@
 
 import React from "react";
 import { useState } from "react";
-import  StckImage  from '../../assets/images/partner/stock-banner.png';
-import  MutualFundsImage  from '../../assets/images/partner/mutual-funds-banner.png';
-import  InsuranceImage  from '../../assets/images/partner/insurance-banner.png';
-import  LoansImage  from '../../assets/images/partner/loans-banner.png';
+import  StckImage  from '../../assets/images/partner/partners-stock-banner.gif';
+import  MutualFundsImage  from '../../assets/images/partner/partners-mutual-funds-banner.gif';
+import  InsuranceImage  from '../../assets/images/partner/partners-insurance-banner.gif';
+import  LoansImage  from '../../assets/images/partner/partners-loans-banner.gif';
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
 import  ImageSub4  from '../../assets/images/icons/insurance.svg';
