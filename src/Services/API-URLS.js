@@ -7,7 +7,9 @@ const config = {
     liveServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
     UATServerURL:"https://choiceindia.com/blog/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
-    UATBannerURL : "https://cmsapi.choiceindia.com/"
+    UATBannerURL : "https://cmsapi.choiceindia.com/",
+    livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
+    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/"
     
   
 }
@@ -20,6 +22,10 @@ export class API_URLS {
 
   /** banner URL */
    bannerURL ="https://cmsapi.choiceindia.com/"
+
+   /** faq URL */
+   faqURL="https://choicebroking.freshdesk.com/api/v2/"
+
 
 
   /**Market Insights , fabal URL */
@@ -48,6 +54,11 @@ export class API_URLS {
 
    contactURL='contact-us/'
 
+   /** Faq category section */
+
+   faqCategoryURL='solutions/categories'
+
+
 
 
 
@@ -63,8 +74,10 @@ export class API_URLS {
      */
   setConfig(configKey) {
     this.setServerURL(config[configKey + 'ServerURL'])
-
+    
     this.setBannerURL(config[configKey + 'BannerURL'])
+
+    this.setfaqURL(config[configKey + 'faqURL'])
 }
 
 /**
@@ -83,6 +96,15 @@ setServerURL = (url) => {
  setBannerURL = (url) => {
 
     this.bannerURL = url;
+}
+
+/**
+ * Set faq URL 
+ * @param {*} url 
+ */
+ setfaqURL = (url) => {
+
+    this.faqURL = url;
 }
 
 
@@ -135,6 +157,21 @@ getHomeSecondaryBannerURL(){
 
 getContactFormURL(){
     return this.bannerURL + this.contactURL
+}
+
+getFaqCategoryURL(){
+    return this.faqURL + this.faqCategoryURL
+}
+
+getFaqfolderURL(id){
+   
+    
+    return this.faqURL + `solutions/categories/${id}/folders`
+}
+
+getFaqArticleURL(id){
+
+    return this.faqURL + `solutions/folders/${id}/articles`
 }
 
 
