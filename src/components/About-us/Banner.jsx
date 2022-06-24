@@ -22,7 +22,7 @@ function Banner() {
                 <div className="col-md-6">
                     <div className="rightsec">
 
-                    <LazyLoader src={Bannerimage} alt="Banner Images" width="826" height="646" className="img-fluid " />
+                              <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"826"} height={"646"} />
                             {/*  <img src={Bannerimage} alt="Banner Images" width="826" height="646" className="img-fluid "></img> */}
                     </div>
                 </div>
