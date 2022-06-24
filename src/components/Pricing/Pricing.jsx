@@ -1,5 +1,6 @@
 import "./pricing.scss"
 import PricingBannerTab from './PricingBannerTab';
+import OpenFreeAccount from './OpenFreeAccount';
 
 
 
@@ -11,6 +12,7 @@ function Pricing() {
     <div>
 
         <PricingBannerTab />
+        <OpenFreeAccount />
 
 
         

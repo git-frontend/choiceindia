@@ -252,6 +252,8 @@
                                 border-radius: 4px;
                                 font-size: 1.5rem;
                                 text-align: center;
+                                -webkit-appearance: none; 
+                                margin: 0; 
                             }
                             h5{
                                 font-size: 1.5rem;
@@ -261,6 +263,13 @@
                             @media (max-width: $sm) {
                                 width: 27.33%;
                                 margin-left: 6%;
+                            }
+                            .formgrp{
+                                input[type=number]::-webkit-inner-spin-button, 
+                                input[type=number]::-webkit-outer-spin-button { 
+                                  -webkit-appearance: none; 
+                                  margin: 0; 
+                                }
                             }
                         }
                         @media (max-width: $sm) {
@@ -307,58 +316,7 @@
 .pricing-demat-account{
     background: #25B8AF;
     padding: 10rem 0;
-    .demat-account-form{
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
-        border-radius: 20px;
-        background: $whiteColor;
-        padding: 3rem 2rem 2rem 2rem;
-        max-width: 30rem;
-        .sub-formgrp{
-            margin-bottom: 1.5rem;
-            .formcontrol{
-                background: $whiteColor;
-                outline: none;
-                box-shadow: inherit;
-                border: 1px solid #0068B3;
-                padding: 1.4rem 1.5rem;
-                border-radius: 12px;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.2rem;
-            }
-            &.cust-checkbox{
-                display: flex;
-                align-items: flex-start;
-                .form-check{
-                    margin-right: 0;
-                }
-                .lbl{
-                    font-size: 1.2rem;
-                    color: $secondary;
-                    font-family: $font-family-poppins-regular;
-                    .link-tc{
-                        color: #0068B3;
-                        font-family:$font-family-poppins-semibold;
-                        text-decoration: none;
-                        display: block;
-                    }
-                }
-            }
-            .sendbtn{
-                width: 100%;
-            }
-        }
-        .form-ttl{
-            text-align: center;
-            font-size: 2rem;
-            font-family: $font-family-poppins-semibold;
-            color: $primary;
-            margin-bottom: 3rem;
-        }
-        @media (max-width: $sm-x) {
-            width: 100%;
-            max-width: inherit;
-        }
-    }
+    
     .demat-account-features{
         .title-secnd{
             color: $whiteColor;

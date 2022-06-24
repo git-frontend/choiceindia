@@ -30,13 +30,13 @@ const imageData =
     
         
     }
-    ,{
-        "image":`${ImageSub3}`,
-        "id": 0,
-        "title":'Swift Loans',
-        "description":'Your reliable money lender amidst trying times'
+    // ,{
+    //     "image":`${ImageSub3}`,
+    //     "id": 0,
+    //     "title":'Swift Loans',
+    //     "description":'Your reliable money lender amidst trying times'
 
-    }
+    // }
     ,{
 
         "image":`${ImageSub1}`,
@@ -44,13 +44,13 @@ const imageData =
         "title":'Readymade Baskets',
         "description":'Try our curated baskets to invest on autopilot'
     }
-    ,{
-        "image":`${ImageSub1}`,
-        "id": 2,
-        "title":'Financial Planning',
-        "description":'An automated financial planner to handle your fiscal needs'
+    // ,{
+    //     "image":`${ImageSub1}`,
+    //     "id": 2,
+    //     "title":'Financial Planning',
+    //     "description":'An automated financial planner to handle your fiscal needs'
 
-    }
+    // }
 ]
 
 export default imageData

@@ -98,7 +98,7 @@ function PricingEquity() {
                   <h5>Buy Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                      <Form.Control type="text" name="firstName" placeholder="10000" className="formcontrol" />
+                      <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
                     </Form.Group>
                   </Form>
                 </div>
@@ -106,7 +106,7 @@ function PricingEquity() {
                   <h5>Buy Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                      <Form.Control type="text" name="firstName" placeholder="10000" className="formcontrol" />
+                      <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
                     </Form.Group>
                   </Form>
                 </div>
@@ -114,7 +114,7 @@ function PricingEquity() {
                   <h5>Buy Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                      <Form.Control type="text" name="firstName" placeholder="10000" className="formcontrol" />
+                      <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
                     </Form.Group>
                   </Form>
                 </div>

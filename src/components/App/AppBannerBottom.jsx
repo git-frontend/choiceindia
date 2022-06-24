@@ -16,7 +16,7 @@ function AppBannerBottom() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 6,
+    slidesToShow: 4,
     autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
@@ -26,7 +26,7 @@ function AppBannerBottom() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 1,
           autoplay: false,
           adaptiveHeight: true,
@@ -35,7 +35,7 @@ function AppBannerBottom() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 1,
           autoplay: false,
         },
