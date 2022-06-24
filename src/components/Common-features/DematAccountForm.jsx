@@ -15,11 +15,11 @@ function DematAccountForm() {
                 <h3 className="form-ttl">Open Free Account</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                        <div className="sub-formgrp">
+                        {/* <div className="sub-formgrp">
                             <Form.Control type="text" name="firstName" placeholder="Name" className="formcontrol" />
-                        </div>
+                        </div> */}
                         <div className="sub-formgrp">
-                            <Form.Control type="text" name="firstName" placeholder="Mobile Number" className="formcontrol" />
+                            <Form.Control type="number" name="firstName" placeholder="Mobile Number" className="formcontrol" />
                         </div>
 
 
