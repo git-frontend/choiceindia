@@ -19,17 +19,21 @@ function Loans() {
                 </div>
             </div>
             <div className="row gx-5 mb-5 align-items-center">
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <div className="benifit-list">
                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Personal Loans</h5>
                             <p>We provide personal loans for your urgent financial needs through hassle free process.</p>
-                       </div>
+                              </div>
+                              <div className="benifit-list-itm">
+                                  <h5 className="title-fourth">Business Loans</h5>
+                                  <p>We help businesses  to cover thier financing needs through our easy business loans with competitive interest rates.</p>
+                              </div>
                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Home Loan</h5>
                             <p>Choice provides home loans to help you fulfill your dream of owning a house with ease.</p>
@@ -38,14 +42,12 @@ function Loans() {
                             <h5 className="title-fourth">Loan Against Securities</h5>
                             <p>We offer our clients the chance to raise quick funds by pledging their investments.</p>
                        </div>
-                       <div className="benifit-list-itm">
-                            <h5 className="title-fourth">Business Loans</h5>
-                            <p>We help businesses  to cover thier financing needs through our easy business loans with competitive interest rates.</p>
-                       </div>
+                       
                     </div>
+                    <a href="/" className="btn-bg">Explore</a>
                 </div>
             </div>
-            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
+            
         </div>
     </section>
       

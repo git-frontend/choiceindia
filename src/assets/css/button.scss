@@ -1,3 +1,4 @@
+@import "../css/customvariable.scss";
 
 .btn-bg{
     font-family: $font-family-poppins-semibold;
@@ -36,7 +37,7 @@
     }
 }
 
-.link-nrl{
+.link-nrl {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,95 +58,110 @@
     transition-timing-function: ease-out;
     position: relative;
     font-family: $font-family-poppins-regular;
-        &.white{
-            background-color: $bgolor-lightwhite;
-        }
-    .img-ico{
+
+    &.white {
+        background-color: $bgolor-lightwhite;
+    }
+
+    .img-ico {
         width: 17rem;
         display: block;
-        @media (max-width: $sm-x){
+
+        @media (max-width: $sm-x) {
             width: 8rem;
         }
     }
-    .whitecolor{
+
+    .whitecolor {
         color: $whiteColor;
         font-size: 1.7rem;
-        padding-left: 1rem;
-        @media (max-width: $sm-x){
-            font-size:16px;
+
+        @media (max-width: $sm-x) {
+            font-size: 16px;
         }
     }
-    .blackcolor{
-       color:  $blackColorlight;
-       font-size: 20px;
-       @media (max-width: $sm-x){
-        font-size:16px;
+
+    .blackcolor {
+        color: $blackColorlight;
+        font-size: 20px;
+
+        @media (max-width: $sm-x) {
+            font-size: 16px;
+        }
     }
-    }
-    &:hover{
+
+    &:hover {
         transform: translateY(-8px);
     }
-    @media (max-width: $sm-x){
+
+    @media (max-width: $sm-x) {
         margin-right: 1rem;
         width: 42%;
         margin-bottom: 1rem;
         padding: 8px;
     }
 
-      &.link-nrl-sm{
-          width: auto;
-          padding: 0.5rem 1.5rem;
-          margin-right: 1.5rem;
-          .whitecolor{
-            color: #FFFFFF;
+    &.link-nrl-sm {
+        width: auto;
+        padding: 0.5rem 1.5rem;
+        margin-right: 1.5rem;
+
+        .whitecolor {
+            color: $whiteColor;
             font-size: 15px;
             color: $whiteColor;
             font-size: 16px;
         }
-        .blackcolor{
-           color:  $blackColorlight;
-           font-size: 16px;
+
+        .blackcolor {
+            color: $blackColorlight;
+            font-size: 16px;
         }
-        &.white{
+
+        &.white {
             background-color: $bgolor-lightwhite;
         }
-        &:hover{
+
+        &:hover {
             -webkit-transform: translateY(-8px);
             transform: translateY(-8px);
         }
-        @media (max-width: $sm){
+
+        @media (max-width: $sm) {
             // width: 100%;
+        }
 
-          }
-          @media (min-width:$sm) and (max-width: $sm-x){
-              width: 34%;
-              margin-bottom: 1rem;
+        @media (min-width:$sm) and (max-width: $sm-x) {
+            width: 34%;
+            margin-bottom: 1rem;
+        }
 
-            }
-            @media (min-width:769px) and (max-width: 1024px){
-              width: 58%;
-              margin-bottom: 1rem;
+        @media (min-width:769px) and (max-width: 1024px) {
+            width: 58%;
+            margin-bottom: 1rem;
+        }
 
-            }
-            @media (min-width:1025px) and (max-width: $lg){
-              width: 55%;
-              margin-bottom: 1rem;
+        @media (min-width:1025px) and (max-width: $lg) {
+            width: 55%;
+            margin-bottom: 1rem;
+        }
 
-            }
-          img{
-              display: block;
-          }
-          span{
-              padding-left: 10px;
-          }
-      }
-      .ico-sm{
-          margin-right: 0.8rem;
-      }
+        img {
+            display: block;
+        }
+
+        span {
+            padding-left: 10px;
+        }
+    }
+
+    .ico-sm {
+        margin-right: 0.8rem;
+    }
 }
 
 // Scroll top
-.scroll-top{
+.scroll-top {
     position: fixed;
     right: 30px;
     bottom: 30px;
@@ -155,12 +171,12 @@
     border: 0;
     font-size: 1.9rem;
     z-index: 999;
-    color: #fff;
+    color: $whiteColor;
     background: $bgcolor-yellow;
     box-shadow: 0px 0px 8px #d6d6d6;
-    .fa-angle-up{
+
+    .fa-angle-up {
         animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
-        
     }
 }
 

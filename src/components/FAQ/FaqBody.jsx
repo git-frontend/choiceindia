@@ -59,10 +59,7 @@ export default function FaqBody() {
                       <p>We will never share your data without your consent.</p>
                     </div>
                   </div>
-                  <div className='row sec'>
-                    <div className='col-md-12'>
-                      <div className='same-list-bx-list'>
-                        <div className="same-list-bx-item">
+                  <div className="same-list-bx-item">
                           <div className="bx-item-cont" onClick={handleFocus}>
                             <img src={Image3} className="" alt="" />
                             <h4>Privacy</h4>
@@ -90,9 +87,6 @@ export default function FaqBody() {
                             <p>We will never share your data without your consent.</p>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
@@ -100,6 +94,7 @@ export default function FaqBody() {
         </section>
 
         <section className='faq-accordion' ref={Ref}>
+          <div className='container'>
           <div className='faq-header'>
             <h1>Loans</h1>
           </div>
@@ -115,7 +110,7 @@ export default function FaqBody() {
                 <p>Login Credentials</p>
               </div>
               <div className='content-list-itm'>
-                <p>DP ID & Bank Details</p>
+                <p>DP ID &amp; Bank Details</p>
               </div>
               <div className='content-list-itm'>
                 <p> profile</p>
@@ -183,6 +178,7 @@ export default function FaqBody() {
               </Accordion>
 
             </div>
+          </div>
           </div>
         </section>
       </div>

@@ -4,8 +4,24 @@
 
 
 .service-banner{
-    padding-bottom: 20rem;
+    padding-bottom: 7rem;
     overflow: inherit;
+    .title{
+        color: $primary;
+        font-weight: 700;
+        font-size: 4.125rem;
+        line-height: 6.1875rem;
+        padding-bottom: 2.1875rem;
+        padding-top: 1.25rem;
+        font-family: $font-family-poppins-bold;
+    }
+    .para{
+        font-weight: 400;
+        font-size: 1.75rem;
+        line-height: 2.375rem;
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
+    }
     .bnr-left{
         padding-right: 4rem;
         @media (max-width: $md) {
@@ -26,7 +42,7 @@
             padding-left: 0;
         }
     }
-    &::after {
+    /*&::after {
         content: '';
         width: 25rem;
         height: 40rem;
@@ -40,7 +56,7 @@
         @media (max-width: $md) {
             display: none;
         }
-    }
+    }*/
     @media (max-width: $md) {
         padding-bottom: 5rem;
     }
@@ -51,21 +67,31 @@
     
 }
 
-.services-same-list-bx{
+.services-same-list-bx {
     position: relative;
-    .same-list-bx-list{
-        margin-left: -1.5%;
-        .same-list-bx-item{
-            width: 23.5%;
+    padding-bottom: 14rem;
+
+    .same-list-bx-list {
+        margin-left: 0%;
+
+        .slick-list {
+            padding: 1.5rem 2rem;
+        }
+
+        .same-list-bx-item {
+            width: 90% !important;
             text-align: center;
-            margin-left: 1.5%;
-            margin-bottom: 4rem;
-            .bx-item-cont{
+            margin: 0 auto;
+            cursor: pointer;
+
+            .bx-item-cont {
                 text-decoration: none;
                 border: 3px solid transparent;
-                @extend .box-shadow;
-                h4{
-                    font-size: 1.5rem;
+                box-shadow: none;
+                padding: 4rem 2rem;
+
+                h4 {
+                    font-size: 1.625rem;
                     margin-top: 2rem;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -73,95 +99,175 @@
                     display: -webkit-box;
                     -webkit-line-clamp: 1;
                     -webkit-box-orient: vertical;
+
+                    @media (max-width: $sm) {
+                        font-size: 2rem;
+                    }
                 }
-                img{
+
+                img {
                     width: 65px;
+                    margin: 0 auto;
                 }
             }
+
             @media (max-width: 800px) {
                 width: 48.5%;
             }
+
             @media (max-width: $sm) {
                 width: 90%;
             }
         }
+
+        .slick-dots {
+            bottom: -4rem;
+
+            li {
+                margin: 0;
+
+                button {
+                    &::before {
+                        color: #447EC1;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        &::before {
+                            opacity: 1;
+                            color: #447EC1;
+                        }
+                    }
+                }
+            }
+        }
     }
+
     &::after {
         content: '';
-        width: 17rem;
-        height: 42rem;
+        width: 9rem;
+        height: 29rem;
         display: block;
         position: absolute;
         left: 0;
-        bottom: 8rem;
-        background: url(../../assets/images/services/clip-path2.png) no-repeat top left;
+        bottom: 0;
+        background: url(../../assets/images/services/serv-bg-top.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $sm) {
             display: none;
         }
     }
-    &::before{
-        display:none;
+
+    &::before {
+        display: none;
     }
 }
 
-.service-tab-cont{
-    .heading-sec{
-        margin-bottom:10rem;
+.service-tab-cont {
+    &.bg-rightsection {
+        position: relative;
+
+        &::after {
+            content: '';
+            width: 10rem;
+            height: 33rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background: url(../../assets/images/services/serv-bgright.png) no-repeat top right;
+            background-size: contain;
+
+            @media (max-width: $sm) {
+                display: none;
+            }
+        }
+    }
+
+    padding-bottom: 12rem;
+    position: relative;
+
+    .heading-sec {
+        margin-bottom: 5rem;
+
         @media (max-width: $sm) {
             margin-bottom: 0;
         }
     }
-    .benifit-list{
-        padding-left: 4rem;
-        .benifit-list-itm{
+
+    .benifit-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .benifit-list-itm {
+            width: 47%;
             margin-top: 1rem;
-            margin-bottom: 4.5rem;
-            .title-fourth{
+            margin-bottom: 3rem;
+
+            .title-fourth {
                 margin-top: 0;
             }
-            p{
+
+            p {
                 font-size: 1.3rem;
             }
-            &:last-child{
-                margin-bottom: 0;
-            }
         }
+
         @media (max-width: $sm) {
-           padding-left: 0;
-           padding-top: 3rem;
+            padding-left: 0;
+            padding-top: 3rem;
         }
     }
-    .rightsec{
+
+    .btn-bg {
+
+        @media (max-width: $sm) {
+            margin-left: 0;
+            margin: 0 auto;
+            display: block;
+            max-width: 100px;
+        }
+    }
+
+    .rightsec {
         padding-left: 0;
-        img{
+
+        img {
             border-radius: 20px;
         }
     }
+
     @media (max-width: $sm) {
         padding-bottom: 7rem;
     }
-    &.service-tab-lst-itm{
+
+    &.service-tab-lst-itm {
         padding-bottom: 20rem;
         position: relative;
+
         &::before {
             content: '';
-            width: 25rem;
+            width: 18rem;
             height: 40rem;
             display: block;
             position: absolute;
-            right: 0;
+            left: 0;
             bottom: -13rem;
-            background: url(../../assets/images/services/clip-path3.png) no-repeat top right;
+            background: url(../../assets/images/services/serv-bg-bottom.png) no-repeat top left;
             background-size: contain;
-    
+
             @media (max-width: $md) {
                 display: none;
             }
         }
+
         @media (max-width: $md) {
-           padding-bottom: 5rem;
+            padding-bottom: 5rem;
         }
     }
 }

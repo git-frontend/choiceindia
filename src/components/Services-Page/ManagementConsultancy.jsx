@@ -19,12 +19,12 @@ function ManagementConsultancy() {
                 </div>
             </div>
             <div className="row gx-5 mb-5 align-items-center">
-                <div className="col-md-6">
+                <div className="col-md-4">
                     <div className="rightsec">
                         <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-8">
                     <div className="benifit-list">
                        <div className="benifit-list-itm">
                             <h5 className="title-fourth">Business &amp; Transaction Advisory</h5>
@@ -43,9 +43,9 @@ function ManagementConsultancy() {
                             <p>Our team provides organisation-wide services to corporates regarding administration, compliance and corporate filings.</p>
                        </div>
                     </div>
+                    <a href="/" className="btn-bg">Explore</a>
                 </div>
             </div>
-            <div className="row"><div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/" className="btn-bg">Explore</a></div></div>
         </div>
     </section>
       

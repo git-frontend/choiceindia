@@ -1,6 +1,6 @@
 
 import React from "react";
-import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.png';
+import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.webp';
 import  NoCash  from '../../assets/images/partner/no-cash.svg';
 import  Service  from '../../assets/images/partner/service.svg';
 import  ZeroRupees  from '../../assets/images/partner/zero-rupees.svg';
@@ -85,14 +85,18 @@ function PartnerBenifits() {
             </div>
         </section>
 
-        <section className="middle-bar-cont">
+
+        <section className="middle-main-cont">
             <div className="container">
-                <div className="bar-cont-des">
-                    <h3 className="title-fourth">Begin your Enterpreneurial Journey with Choice</h3>
-                      <a href="#" className="btn-bg-yellow ">Get Started</a>
+                <div className="middle-bar-cont">
+                    <div className="bar-cont-des">
+                        <h3 className="title-fourth">Begin your Enterpreneurial Journey with Choice</h3>
+                        <a href="#" className="btn-bg btn-bg-dark">Get Started</a>
+                    </div>
                 </div>
             </div>
         </section>
+        
     
     </div>
   );

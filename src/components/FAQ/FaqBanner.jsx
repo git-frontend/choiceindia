@@ -1,6 +1,6 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
-import image1 from "../../assets/images/Faq/faq-banner.jpg";
+import image1 from "../../assets/images/Faq/faq-banner.webp";
 
 
 function FaqBanner() {
