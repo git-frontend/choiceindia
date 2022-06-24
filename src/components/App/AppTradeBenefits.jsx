@@ -4,7 +4,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import {FaRupeeSign} from 'react-icons/fa';
 import {IoMdSearch} from 'react-icons/io';
-import  Vector1  from '../../assets/images/app/clip-arrow.svg';
+import Vector1 from '../../assets/images/app/signal-arrow.svg';
 import  Vector2  from '../../assets/images/app/sector.svg';
 
 
@@ -38,8 +38,8 @@ function AppTradeBenefits() {
                   <h4 className="tool-ttl">Free Tools worth  <FaRupeeSign className="ico"/>50000</h4>
                     <div className="tool-sec-list">
                         <div className="sec-list-itm">
-                            <div className="list-itm-lft">
-                                <img src={Vector1} className="sm-img" alt="Signal"/>
+                                      <div className="list-itm-lft">
+                                          <img src={Vector1} className="sm-img" alt="Signal" width="33" height="30" />
                                 <h5>Signal</h5>
                             </div>
                             <div className="list-itm-rht">
@@ -47,8 +47,8 @@ function AppTradeBenefits() {
                             </div>
                         </div>
                         <div className="sec-list-itm">
-                            <div className="list-itm-lft">
-                                <img src={Vector2} className="sm-img" alt="Stratezy"/>
+                                      <div className="list-itm-lft">
+                                          <img src={Vector2} className="sm-img" alt="Stratezy" width="31" height="31" />
                                 <h5>Stratezy</h5>
                             </div>
                             <div className="list-itm-rht">
