@@ -3,7 +3,7 @@ import { Accordion } from 'react-bootstrap';
 import faqService from '../../Services/faqService';
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 export default function FaqBody() {
   let value=[];
@@ -14,14 +14,19 @@ export default function FaqBody() {
   const[article,setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [selected, setSelected] = useState(0);
+  
  
 
-  const Ref = useRef(null);
+  // const Ref = useRef(null);
 
-  function handleFocus ()
-  {
-    scrollToRef(Ref);
-  };
+  // function handleFocus ()
+  // {
+  //   scrollToRef(Ref);
+  // };
+  const testRef = useRef(null);
+  function scrollToElement (){
+    testRef.current.scrollIntoView();
+  } 
 
 
 
@@ -81,16 +86,16 @@ export default function FaqBody() {
                   {
                     list.map((response, i) => {
 
-                      // let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : '')
+                      let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : '')
 
                       
                       return (
-                        <div key={response.id} className="same-list-bx-item" onClick={() => {
+                        <div key={response.id} className={classNameNm2} onClick={() => {
                           
                           loadfaqFolder(response.id);
                           setList2(response.name)
-                          // setSelected(i)
-                          handleFocus();
+                          setSelected(i)
+                          scrollToElement();
                         }}>
                           <div className="bx-item-cont"  >
                             {/** <img src={Image1} className="" alt="" /> */}
@@ -158,12 +163,12 @@ export default function FaqBody() {
           </div>
         </section>
 
-        <section className='faq-accordion' >
+        <section className='faq-accordion' ref={testRef} >
           <div className='container'>
             <div className='faq-header'>
               <h1>{list2}</h1>
             </div>
-            <div className='faq-container' ref={Ref}>
+            <div className='faq-container'>
               <div className='content-list accordion-lists' >
                 {
                   folder.map((response, index) => {
