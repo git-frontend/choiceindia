@@ -24,7 +24,7 @@ function Home() {
 
       <main>
 
-      <div className='home-banner-ved'>
+      {/* <div className='home-banner-ved'>
         <div className="overlay"></div>
         <video src={videoBg} autoPlay loop muted className='banner-ved' />
 		<div className='banner-ved-des'>
@@ -35,9 +35,9 @@ function Home() {
 				</div>
 			</div>
 		</div>
-    	</div>
+    	</div> */}
     
-       {/* <HomePageBanner /> */}
+       <HomePageBanner />
 	
 
        <EverydayFinance />
