@@ -105,49 +105,49 @@ const settings = {
 							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleFocus}>
-										<img src={EquityBroking} className="" alt="Equity Broking" />
+										<img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Equity Broking</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div  className="bx-item-cont" onClick={handleWealth}>
-                                        <img src={WealthManagement} className="" alt="Wealth Management" />
+										<img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Wealth Management</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleInsurance}>
-                                      <img src={Insurance} className="" alt="Insurance" />
+										<img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Insurance</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleLoan}>
-                                      <img src={Loans} className="" alt="Loans" />
+										<img src={Loans} className="" alt="Loans" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Loans</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleCapital}>
-                                      <img src={CapitalAdvisory} className="" alt="Capital Advisory" />
+										<img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Capital Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleManagement}>
-                                      <img src={ManagementConsultancy} className="" alt="Management Consultancy" />
+										<img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Management Consultancy</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleGovt}>
-                                      <img src={GovernmentAdvisory} className="" alt="Government Advisory" />
+										<img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Government Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleTax}>
-                                      <img src={TaxAdvisory} className="" alt="Tax Advisory" />
+										<img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} />
 										<h4 className='title-fourth'>Tax Advisory</h4>
 									</div>
 								</div>
