@@ -41,7 +41,7 @@ function OpenFreeAccount() {
                             
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
-                            {/* <DematAccountForm /> */}
+                            <DematAccountForm />
                         </div>
                     </div>
                 </div>
