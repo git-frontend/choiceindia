@@ -1,228 +1,207 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
-.detailbanner {
-    padding: 3rem 0;
-    position: relative;
-
-    &::before {
-        position: absolute;
-        display: block;
-        content: '';
-        height: 65rem;
-        width: 12rem;
-        top: 11%;
-        left: 0;
-        background: url(../../assets/images/fabledetails/detailbefore.png) no-repeat top left;
-        z-index: -1;
-
-        @media screen and (max-width: $sm) {
-            display: none;
-        }
-    }
-
-    .date {
-        color: $darkColorgray;
-        font-size: 1.75rem;
-        line-height: 1.75rem;
-        font-family: $font-family-poppins-regular;
-    }
-
-    .heading {
-        padding-bottom: 2.5rem;
-        text-align: center;
-
-        @media screen and (max-width: $sm) {
-            font-size: 2rem;
-            line-height: 1.9375rem;
-        }
-    }
-
-    .tabs {
-        display: flex;
-        justify-content: space-around;
-        width: 45%;
-        margin: 0 auto;
-
-        @media screen and (max-width: $sm) {
-            width: 100%;
-            justify-content: center;
-            padding-left: 0;
-        }
-
-        li {
-            list-style: none;
-            background-color: $lightColor;
-            border-radius: 8px;
-            padding: 0.5rem 2rem;
-            font-size: 1.25rem;
-            color: $darkColorgray;
-            margin-right: 3%;
-
-            @media screen and (max-width: $sm) {
-                padding: 0.5rem 1rem;
-                margin: 0 0.5rem;
-                margin-right: 0%;
-            }
-        }
-    }
-
-    .imgblock {
-        margin-top: 5rem;
-        border-radius: 30px;
-        width: 100%;
-    }
-
-    .textwrap {
-        margin-top: 4rem;
-        font-size: 1.25rem;
-        line-height: 2rem;
-        color: $primary;
-        text-align: justify;
-    }
-
-    .right-social-links {
-        position: sticky;
-        top: 0;
-        margin-top: 4rem;
-
-        ul {
-            @media screen and (max-width: $sm) {
-                display: flex;
-                justify-content: space-around;
-            }
-
-            li {
-                background-color: $blackColorlight;
-                padding: 0.5rem;
-                border-radius: 50%;
-                height: 30px;
-                width: 30px;
-                list-style: none;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-bottom: 1rem;
-
-                &:hover {
-                    background-color: $yellowColor;
-                    transform: translateY(-2px);
-                }
-
-                a {
-                    color: $whiteColor;
-                    font-size: 16px;
-                }
-            }
-        }
-    }
-
-    .imgwrap {
-        margin-top: 3rem;
-    }
-}
-
-
-.recommendation {
-    padding: 4rem 0 20rem;
-    position: relative;
-
-    &::after {
-        position: absolute;
-        display: block;
-        content: '';
-        height: 70rem;
-        width: 26rem;
-        top: 64px;
-        right: 5px;
-        background: url(../../assets/images/fabledetails/recomendbefore.png) no-repeat bottom right;
-        z-index: -1;
-    }
-
-    h2 {
-        color: $primary;
-        font-weight: 600;
-        line-height: 3rem;
-        font-size: 2rem;
-        font-family: $font-family-poppins-semibold;
-    }
-
-    .blog-list {
-        display: flex;
-        margin-top: 4rem;
-        margin-left: -3%;
+    .detailbanner{
+        padding: 3rem 0;
         position: relative;
-        flex-wrap: wrap;
-        z-index: 9;
-
-        .blog-item {
-            width: 22%;
-            margin-left: 3%;
-            // @extend .box-shadow;
-            border-radius: 20px;
-            background: $whiteColor;
-            text-decoration: none;
-
-            .blog-item-img {
-                img {
-                    width: 100%;
-                    border-radius: 20px 20px 0 0;
+            &::before{
+                position: absolute;
+                display: block;
+                content: '';
+                height: 65rem;
+                width: 12rem;
+                top: 11%;
+                left: 0;
+                background: url(../../assets/images/fabledetails/detailbefore.png) no-repeat top left;
+                z-index: -1;
+                @media screen and (max-width: $sm) {
+                  display: none;
                 }
             }
-
-            .item-des {
-                padding: 2rem;
-                box-shadow: 0px 0px 15px 1px #c2c2c2;
-                border-radius: 0px 0px 20px 20px;
-
-                @media (min-width:769px) and (max-width: 1024px) {
-                    padding: 1rem;
-                }
-
-                h4 {
-                    font-size: 1.5rem;
-                    line-height: 1.6;
-                    color: $primary;
-                    font-family: $font-family-poppins-medium;
-                    margin-bottom: 1.5rem;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: initial;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-
-                    @media (min-width:$sm-x) and (max-width: 1024px) {
-                        font-size: 1rem;
-                    }
-                }
-
-                p {
-                    font-size: 1.3rem;
-                    color: $secondary;
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: initial;
-                    display: -webkit-box;
-                    -webkit-line-clamp: 2;
-                    -webkit-box-orient: vertical;
-                }
-
-                .sm-text {
-                    font-size: 1rem;
-                    color: $darkColorgray;
-                    line-height: 24px;
-
-                    @media (min-width:$sm-x) and (max-width: 1024px) {
-                        font-size: 0.8rem;
-                    }
-                }
-            }
-
+        .date{
+            color: #9F9F9F;
+            font-size: 1.75rem;
+            line-height: 1.75rem;
+            font-family: 'PoppinsRegular';
+        }
+        .heading{
+            padding-bottom: 2.5rem;
+            text-align: center;
             @media screen and (max-width: $sm) {
-                width: 97%;
-                margin-bottom: 3rem;
+                font-size: 2rem;
+                line-height: 1.9375rem;
+            }
+        }
+        .tabs{
+            display: flex;
+            justify-content: space-around;
+            width: 45%;
+            margin: 0 auto;
+            
+            @media screen and (max-width: $sm) {
+                width: 100%;
+                justify-content: center;
+                padding-left: 0;
+            }
+            li{
+                list-style: none;
+                background-color: $lightColor;
+                border-radius: 8px;
+                padding: 0.5rem 2rem;
+                font-size: 1.25rem;
+                color: $darkColorgray;
+                margin-right: 3%;
+                @media screen and (max-width: $sm) {
+                    padding: 0.5rem 1rem;
+                    margin: 0 0.5rem;
+                    margin-right: 0%;
+                }
+            }
+        }
+        .imgblock{
+            margin-top: 5rem;
+            border-radius: 30px;
+           
+        }
+        .textwrap{
+            margin-top: 4rem;
+            font-size: 1.25rem;
+            line-height: 2rem;
+            color: $primary;
+            text-align: justify;
+           
+        }
+        .right-social-links{
+            position: sticky;
+            top: 0;
+            margin-top: 4rem;
+            ul{
+                @media screen and (max-width: $sm) {
+                  display: flex;
+                  justify-content: space-around;
+                }
+                li{
+                    background-color: $blackColorlight;
+                    padding: 0.5rem;
+                    border-radius: 50%;
+                    height: 30px;
+                    width: 30px;
+                    list-style: none;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 1rem;
+                    &:hover{
+                        background-color: $yellowColor;
+                        transform: translateY(-2px);
+                    }
+                    a{
+                        color: $whiteColor;
+                        font-size: 16px;
+                    }
+                }
+            }
+           
+        }
+        .imgwrap{
+            margin-top: 3rem;
+        }
+      
+    }
+
+
+    .recommendation{
+        padding:4rem 0 8rem;
+        position: relative;
+        &::after{
+            position: absolute;
+            display: block;
+            content: '';
+            height: 70rem;
+            width: 26rem;
+            top: 64px;
+            right: 5px;
+            background: url(../../assets/images/fabledetails/recomendbefore.png) no-repeat bottom right;
+            z-index: -1;
+        }
+        h2{
+            color: $primary;
+            font-weight: 600;
+            line-height: 3rem;
+            font-size: 2rem;
+            font-family: 'PoppinsSemiBold';
+        }
+        .blog-list{
+            display: flex;
+            margin-top: 4rem;
+            margin-left: -3%;
+            position: relative;
+            flex-wrap: wrap;
+            z-index: 9;
+           
+            .blog-item{
+                width: 22%;
+                margin-left: 3%;
+                // @extend .box-shadow;
+                border-radius: 20px;
+                background: $whiteColor;
+                text-decoration: none;
+                :hover{
+                    cursor: pointer;
+                }
+                
+                .blog-item-img{
+                    img{
+                        width: 100%;
+                        border-radius: 20px 20px 0 0;
+                    }
+                }
+                .item-des{
+                    padding: 2rem;
+                    box-shadow: 0px 0px 15px 1px #c2c2c2;
+                    border-radius: 0px 0px 20px 20px;
+                    @media (min-width:769px) and (max-width: 1024px) {
+                        padding: 1rem;
+                      }
+                    h4{
+                        font-size: 1.5rem;
+                        line-height: 1.6;
+                        color: $primary;
+                        font-family: $font-family-poppins-medium;
+                        margin-bottom: 1.5rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: initial;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        @media (min-width:$sm-x) and (max-width: 1024px) {
+                            font-size: 1rem;
+                          }
+                    }
+                    p{
+                        font-size: 1.3rem;
+                        color: $secondary;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: initial;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                    }
+                    .sm-text{
+                        font-size: 1rem;
+                        color: $darkColorgray;
+                        line-height: 24px;
+                        @media (min-width:$sm-x) and (max-width: 1024px) {
+                            font-size: 0.8rem;
+                          }
+                    }
+                }
+                @media screen and (max-width: $sm) {
+                    width: 97%;
+                    margin-bottom: 3rem;
+                }
             }
         }
     }
-}
  
