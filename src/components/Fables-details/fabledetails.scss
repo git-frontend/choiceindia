@@ -145,6 +145,10 @@
                 border-radius: 20px;
                 background: $whiteColor;
                 text-decoration: none;
+                :hover{
+                    cursor: pointer;
+                }
+                
                 .blog-item-img{
                     img{
                         width: 100%;
