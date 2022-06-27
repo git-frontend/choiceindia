@@ -12,7 +12,7 @@ function FaqBanner() {
         <div className="faq-main">
 
         <section className="banner-app">
-         <img src={image1} className="ban-img" alt='Loading'/>
+                    <img src={image1} className="ban-img" alt='Loading' width={"1519"} height={"669"}/>
          <div className='app-banner-caption'>
             <div className='container'>
                 <div className='row'>

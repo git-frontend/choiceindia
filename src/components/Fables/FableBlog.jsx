@@ -21,7 +21,7 @@ function FableBlog() {
                                 </div>
                                 <div className="single-blog-con">
                                     <div className="single-blog-img">
-                                        <img src={Blog2} alt="loading" />
+                                        <img src={Blog2} alt="loading" width={"532"} height={"533"} />
                                     </div>
                                     <div className="single-blog-des">
                                         <h3>What are NFTs?</h3>
@@ -42,7 +42,7 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail3} alt="loading" className="img-blog" />
+                                                <img src={BlogThumbnail3} alt="loading" className="img-blog" width={"215"} height={"155"} />
                                             </div>
                                         </a>
                                     </div>
@@ -53,7 +53,7 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail4} alt="loading" className="img-blog" />
+                                                <img src={BlogThumbnail4} alt="loading" className="img-blog" width={"215"} height={"155"} />
                                             </div>
                                         </a>
                                     </div>
@@ -64,7 +64,7 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail2} alt="loading" className="img-blog" />
+                                                <img src={BlogThumbnail2} alt="loading" className="img-blog" width={"215"} height={"155"}/>
                                             </div>
                                         </a>
                                     </div>
@@ -75,7 +75,7 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail1} alt="loading" className="img-blog" />
+                                                <img src={BlogThumbnail1} alt="loading" className="img-blog" width={"215"} height={"155"}/>
                                             </div>
                                         </a>
                                     </div>
