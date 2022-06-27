@@ -10,19 +10,19 @@
 	padding-top: 7.5rem;
 	background:$whiteColor;
 	background-size: 100% 100%;
-	padding-bottom: 80px;
+	padding-bottom: 5rem;
 	position: relative;
 	.wrap-banner {
 		position: relative;
 		flex-wrap: wrap;
 		display: flex;
 		justify-content: end;
-		padding-top: 40px;
+		padding-top: 2.5rem;
 		.page2-banner-caption {
 			position: absolute;
 			width: 60%;
 			left: 0;
-			top: 70px;
+			top: 4.375rem;
 			h3 {
 				font-size:3.9375rem;
 				color: $primary;
@@ -48,23 +48,26 @@
 		}
 		.page2-banner-img {
 			position: relative;
-
+			left: -9rem;
 			.srch-icon-bg {
 				box-shadow: 0px 8px 20px #00000036;
 				background: $whiteColor;
-				width: 90px;
-				height: 90px;
+				width: 5.625rem;
+				height: 5.625rem;
 				display: block;
 				border-radius: 8px;
 				text-align: center;
-				line-height: 90px;
+				line-height: 5.625rem;
 				top: 48%;
 				position: absolute;
-				left: 20px;
+				left: 1.25rem;
 				img {
 					max-width: 100%;
 					vertical-align: middle;
 				}
+			}
+			@media only screen and (max-width: $md) {
+				left: 0;
 			}
 		}
 		@media only screen and (max-width: $md) {
@@ -77,18 +80,34 @@
 		}
 	}
 	@media only screen and (max-width: $sm-x) {
-		padding-top: 1.5rem;
+		padding-top: 2.5rem;
 	}
+	&::after {
+        content: "";
+        width: 30rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -12rem;
+        background: url(../../assets/images/sumeet-bagadia/top-bg.png) no-repeat top right;
+        background-size: contain;
+		z-index: 99;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
 }
 @media only screen and (max-width: 992px) {
 	.landing-page2-banner {
 		.wrap-banner {
 			.page2-banner-caption {
 				h3 {
-					font-size: 32px;
+					font-size: 2rem;
 				}
 				p {
-					font-size: 18px !important;
+					font-size: 1.125rem !important;
 				}
 			}
 		}
@@ -106,7 +125,7 @@
 			}
 			justify-content: center;
 		}
-		padding-top: 110px;
+		padding-top: 6.875rem;
 	}
 }
 
@@ -115,16 +134,16 @@
 
 
 .about-cont {
-	padding: 8.75rem 0;
+	padding: 5rem 0;
 	background: $whiteColor;
     position: relative;
     &:after{
         position: absolute;
         display: block;
         content: '';
-        height: 40rem;
+        height: 30rem;
         width: 20rem;
-        bottom: 0;
+        bottom: -13rem;
         left: 0; 
         // z-index: -1;
         background: url(../../assets/images/home-bgtop.png) no-repeat bottom left;
@@ -132,10 +151,10 @@
     }
 	.abt-cont-des {
 		background: #FFFBEA;
-		padding: 50px;
-		border-radius: 16px;
+		padding: 3.125rem 5rem;
+		border-radius: 1rem;
         position: relative;
-		z-index: 9;
+		z-index: 99;
        
 		p {
 			display: inline;
@@ -149,7 +168,7 @@
 			}
 		}
 		.moreless-button {
-			font-size: 18px;
+			font-size: 1.525rem;
 			text-decoration: none;
 			font-weight: bold;
 			color: $bgcolor-blue;
@@ -164,7 +183,7 @@
 	.about-cont {
 		.abt-cont-des {
 			.moreless-button {
-				font-size: 16px;
+				font-size: 1rem;
 			}
 		}
 	}
@@ -172,7 +191,7 @@
 @media (max-width: $sm-x) {
 	.about-cont {
 		.abt-cont-des {
-			padding: 30px 25px;
+			padding: 1.875rem 1.5625rem;
 			text-align: center;
 		}
 	}
@@ -253,27 +272,27 @@
     background: $abt-bg;
     padding: 1rem 4rem 3rem 4rem;
     padding-right: 0;
-    border-radius: 20px;
-    margin-left: 20px;
+    border-radius: 1.25rem;
+    margin-left: 1.25rem;
 	overflow: hidden;
 	.sm-slider-bg {
 		margin-left: -50px;
 		.slick-track {
 			display: flex;
-			padding: 30px 0;
+			padding: 1.875rem 0;
 			.slick-slide {
 				background: $whiteColor;
-				border-radius: 20px;
+				border-radius: 1.25rem;
 				text-align: center;
 				height: auto;
-				margin: 0 55px 0 0;
+				margin: 0 3.4375rem 0 0;
 				box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
 				h4 {
-					font-size: 20px;
+					font-size: 1.75rem;
 					color: $secondary;
-					line-height: 28px;
+					line-height: 1.75rem;
 					font-weight: 400;
-					padding: 8px 0;
+					padding: 1rem 0 1rem 0;
 					margin: 10px 0;
 					// font-family: $font-family_1;
 					span {
@@ -326,15 +345,18 @@
 
 					}
 				}
+				.item-slider{
+					padding-bottom: 1rem;
+				}
 			}
 		}
 		.slick-arrow {
 			top: inherit !important;
 			bottom: -3rem;
 			z-index: 99;
-			width: 40px;
-			height: 40px;
-			right: 25px;
+			width: 3.5rem;
+			height: 3.5rem;
+			right: 1.5625rem;
 			border: 1px solid #ffffff38;
 			border-radius: 50%;
 			background: $whiteColor;
@@ -342,8 +364,8 @@
 				content: '';
 				background: url(../../assets/images/icons/arrow-thin.svg) no-repeat;
 				background-size: contain;
-				width: 17px;
-				height: 9px;
+				width: 1.5rem;
+				height: 1rem;
 				display: block;
 				position: absolute;
 				left: 50%;
@@ -363,8 +385,8 @@
 				content: '';
 				background: url(../../assets/images/icons/arrow-thin-left.svg) no-repeat;
 				background-size: contain;
-				width: 17px;
-				height: 9px;
+				width: 1.5rem;
+				height: 1rem;
 				
 			}
 		}
@@ -375,7 +397,7 @@
 			display: flex !important;
 			flex-wrap: wrap;
 			width: 75%;
-			left: 50px;
+			left:50px;
 			>li{
 				width: 25%;
 				margin: 0;
@@ -409,7 +431,7 @@
 			list-style: none;
 			flex-wrap: wrap;
 			padding: 0;
-			margin-top: 50px;
+			margin-top: 3.125rem;
 			width: 80%;
 			li {
 				width: 25%;
@@ -428,33 +450,33 @@
 			.slick-track {
 				.slick-slide {
 					h4 {
-						font-size: 16px;
+						font-size: 1rem;
 					}
 				}
 			}
 			.slick-arrow.slick-prev {
 				&::before {
-					width: 13px;
+					width: 0.8125rem;
 					background-size: contain;
-					height: 13px;
+					height: 0.8125rem;
 				}
-				right: 43px;
+				right: 2.6875rem;
 			}
 			.slick-arrow {
 				&::before {
-					width: 13px;
+					width: 0.8125rem;
 					background-size: contain;
-					height: 13px;
+					height: 0.8125rem;
 				}
-				width: 28px;
-				height: 28px;
-				bottom: -62px;
+				width: 1.75rem;
+				height: 1.75rem;
+				bottom: -3.875rem;
 				right: 5px;
 			}
 		}
 		.sm-slider-thumb {
 			.reset {
-				margin-top: 30px;
+				margin-top: 1.875rem;
 			}
 		}
 	}
@@ -479,7 +501,7 @@
 }
 @media only screen and (max-width: $sm-x) {
 	.bg-class-right {
-		padding: 30px 15px;
+		padding: 1.875rem 0.9375rem;
 	}
 }
 
@@ -494,7 +516,7 @@
 	.bg-acnt-sub {
 		background: $primary;
 		padding: 6.1875rem 4.875rem;
-		border-radius: 16px;
+		border-radius: 1rem;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
@@ -509,16 +531,7 @@
             font-family: $font-family-poppins-bold;
 		}
 		.acnt-sub-btn {
-			background: $yellowColor;
-			color: $primary;
-			border: 1px solid $yellowColor;
-			padding: 15px 30px;
-			font-size: 20px;
-			font-weight: 600;
-			border-radius: 18px;
-			transition-duration: 0.6s;
-			text-decoration: none;
-            font-family: $font-family-poppins-semibold;
+			
 			&:hover {
 				background: $whiteColor;
 				color: $blueColortext;
@@ -539,17 +552,17 @@
 			.acnt-sub-btn {
 				display: block;
 				text-align: center;
-				margin-top: 48px;
+				margin-top: 3rem;
 			}
 			display: block;
-			padding: 70px 20px;
+			padding: 4.375rem 1.25rem;
 		}
 	}
 }
 .print-media {
-	padding: 135px 0 300px 0;   
+	padding: 8.4375rem 0 18.75rem 0;   
 	background-size: 100% 120%;
-	margin-bottom: -210px;
+	margin-bottom: -13.125rem;
 	position: relative;
     .bg-class-left{
         text-align: left;
@@ -590,7 +603,7 @@
 		li {
 			width: 33.33%;
 			display: flex;
-			margin-bottom: 30px;
+			margin-bottom: 1.875rem;
 			justify-content: center;
 			img {
 				max-width: 100%;
@@ -611,10 +624,10 @@
 				width: 20.33%;
 				margin: 0 6%;
 			}
-			margin-top: 30px;
+			margin-top: 1.875rem;
 			margin-left: -6%;
 		}
-		padding: 15px 0 260px 0;
+		padding: 0.9375rem 0 16.25rem 0;
 		text-align: center;
 	}
 }
@@ -622,8 +635,8 @@
 .social-share {
 	.social-share-box {
 		background: #25B8AF;
-		padding: 60px 100px;
-		border-radius: 16px;
+		padding: 3.75rem 6.25rem;
+		border-radius: 1rem;
 		text-align: center;
         color: $whiteColor;
         .title-sm-new{
@@ -645,7 +658,7 @@
 
         }
 		.social-list {
-			margin-top: 50px;
+			margin-top: 3.125rem;
 			ul {
 				display: flex;
 				align-items: center;
@@ -655,16 +668,16 @@
 				flex-wrap: wrap;
 				justify-content: center;
 				li {
-					margin: 10px 25px;
+					margin: 0.625rem 3.5rem;
 					a {
 						text-decoration: none;
 						transition-duration: 0.6s;
 						span {
-							width: 66px;
-							height: 66px;
+							width: 4.125rem;
+							height: 4.125rem;
 							display: block;
 							margin: 0 auto;
-							margin-bottom: 15px;
+							margin-bottom: 0.9375rem;
 							border-radius: 50%;
 							background: $whiteColor;
 							position: relative;
@@ -673,7 +686,7 @@
 								position: absolute;
 								left: 50%;
 								top: 50%;
-								font-size: 3rem;
+								font-size: 2.5rem;
 								transform: translate(-50%, -50%);
 								color: $primary;
 								@media only screen and (max-width: $sm-x) {
@@ -683,7 +696,7 @@
 						}
 						h6 {
 							color: $whiteColor;
-							font-size: 16px;
+							font-size: 1rem;
 							font-weight: 400;
 						}
 						&:hover {
@@ -709,18 +722,18 @@
 						a {
 							span {
 								i {
-									font-size: 25px;
+									font-size: 1.5625rem;
 								}
-								width: 43px;
-								height: 43px;
+								width: 2.6875rem;
+								height: 2.6875rem;
 							}
 						}
-						margin: 10px 12px;
+						margin: 0.625rem 0.75rem;
 					}
 				}
 			}
 			display: block;
-			padding: 60px 20px 40px 20px;
+			padding: 3.75rem 1.25rem 2.5rem 1.25rem;
 		}
 	}
 }
@@ -732,7 +745,7 @@
 					li {
 						a {
 							h6 {
-								font-size: 12px;
+								font-size: 0.75rem;
 							}
 						}
 					}
@@ -743,10 +756,10 @@
 }
 .sumit-bg-tips {
 	background: #FFFBEA;
-	padding: 180px 0 80px 0;
-	margin-top: -100px;
+	padding: 11.25rem 0 5rem 0;
+	margin-top: -6.25rem;
 	.bg-acnt-sub {
-		border-radius: 16px;
+		border-radius: 1rem;
 		display: flex;
 		align-items: center;
 		padding: 0;
@@ -760,18 +773,7 @@
 			max-width: 60%;
 		}
 		.acnt-sub-btn {
-			background: $primary;
-			color: $whiteColor;
-			padding: 12px 30px;
-			font-size: 20px;
-			font-weight: 400;
-			border-radius: 18px;
-			text-decoration: none;
-			font-family: 'Roboto', sans-serif;
-			border: 1px solid $whiteColor;
-			transition-duration: 0.6s;
-			width: 216px;
-			text-align: center;
+			
 			&:hover {
 				background: $whiteColor;
 				color: $blueColortext;
@@ -785,14 +787,14 @@
 			.title-sm-new {
 				width: auto;
 				text-align: center;
-				padding: 20px 0;
+				padding: 1.25rem 0;
 				max-width: 100%;
 			}
 			display: block;
 			padding: 0;
 			text-align: center;
 		}
-		padding: 150px 0 50px 0;
+		padding: 9.375rem 0 3.125rem 0;
 	}
 }
 

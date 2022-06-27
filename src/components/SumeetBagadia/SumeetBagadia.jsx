@@ -78,7 +78,7 @@ function SumeetBagadia() {
                 <h3 class="title-sm-new">
                   Sign up for exclusive trading tips from Sumeet Bagadia?
                 </h3>
-                <a href="#home-bg" class="acnt-sub-btn">Open My Account</a>
+                <a href="#home-bg" class="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</a>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@ function SumeetBagadia() {
                 <h3 className="title-sm-new">
                   Get Sumeet Bagadia's trading tips and recommendations?
                 </h3>
-                <a href="#home-bg" className="acnt-sub-btn">Sign up</a>
+                <a href="#home-bg" className="btn-bg acnt-sub-btn">Sign up</a>
               </div>
             </div>
           </div>
