@@ -6,7 +6,6 @@ import faqService from '../../Services/faqService';
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 export default function FaqBody() {
-  let value=[];
   const [list, setList] = useState([]);
   const [list2, setList2] = useState("General");
   const [trigger, setTrigger] = useState(false);
@@ -14,6 +13,7 @@ export default function FaqBody() {
   const[article,setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [selected, setSelected] = useState(0);
+  const [active,setActive]=useState(true)
   
  
 
@@ -86,7 +86,7 @@ export default function FaqBody() {
                   {
                     list.map((response, i) => {
 
-                      let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : '')
+                      let classNameNm2 = ((i === selected) ? ' bx-item-cont-active' : "same-list-bx-item")
 
                       
                       return (
@@ -94,6 +94,7 @@ export default function FaqBody() {
                           
                           loadfaqFolder(response.id);
                           setList2(response.name)
+                          setSelectedId(0)
                           setSelected(i)
                           scrollToElement();
                         }}>
@@ -215,14 +216,16 @@ export default function FaqBody() {
                     
           
                     return(
-
-                      <Accordion.Item key={res.id} eventKey={index}>
+                    <div>
+                    <Accordion.Item key={res.id} eventKey={index}>
                     <Accordion.Header>{res.title}</Accordion.Header>
+                    {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                     <Accordion.Body>
                      {res.description_text}
                     </Accordion.Body>
-                  </Accordion.Item>
-
+                    {/**</div>*/}
+                    </Accordion.Item>
+                    </div>
 
                     )
                   })
