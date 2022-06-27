@@ -17,12 +17,12 @@ function BannerCareer() {
      
     <section className="bannersection">
         <Marquee direction="left" speed={100}   delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
-          <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
-          <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" alt='Loading' /></div>
-          <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" alt='Loading' /></div>
-          <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"}  alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
+                  <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
           </Marquee>     
     </section>
 
@@ -53,7 +53,7 @@ function BannerCareer() {
                 </div>
                 <div className="col-xl-6 col-md-6">
                   <div className='culture-values-img'>
-                      <img src={CareerImage3} className='img-fluid shdow' alt="Loading" />
+                              <img src={CareerImage3} className='img-fluid shdow' alt="Loading" width={"642"} height={"567"} />
                   </div>
                 </div>
             </div>
