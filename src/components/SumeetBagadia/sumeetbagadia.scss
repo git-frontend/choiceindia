@@ -220,10 +220,11 @@
 .bg-class-right {
     position: relative;
     background: $abt-bg;
-    padding: 1rem 4rem 4rem 4rem;
+    padding: 1rem 4rem 3rem 4rem;
     padding-right: 0;
     border-radius: 20px;
     margin-left: 20px;
+	overflow: hidden;
 	.sm-slider-bg {
 		margin-left: -50px;
 		.slick-track {
@@ -298,7 +299,7 @@
 		}
 		.slick-arrow {
 			top: inherit !important;
-			bottom: -4rem;
+			bottom: -3rem;
 			z-index: 99;
 			width: 40px;
 			height: 40px;
@@ -337,24 +338,34 @@
 		}
 		.slick-dots{
 			position: relative;
-			top: inherit;
+			top: 1.3rem;
 			bottom: inherit;
 			display: flex !important;
 			flex-wrap: wrap;
-			width: 80%;
+			width: 75%;
+			left: 50px;
 			>li{
 				width: 25%;
 				margin: 0;
 				button{
 					width: 100%;
 					background: #F4F4F4;
-					height: 2px;
+					height: 4px;
 					padding: 0;
 					&::before{
 						display: none;
 					}
 				}
+				&.slick-active{
+					button{
+						background: $yellowColor;
+						border-radius: 3px;
+					}
+				}
 			}
+			@media only screen and (min-width: 1200px) {
+				width: 71%;
+			  }
 		}
 	}
 	.sm-slider-thumb {
