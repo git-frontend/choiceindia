@@ -28,6 +28,9 @@
 				color: $primary;
 				font-family: $font-family-poppins-bold;
 				margin: 10px 0 20px 0;
+				@media only screen and (max-width: $md) {
+					font-size: 3rem;
+				}
 				
 			}
 			p {
@@ -36,12 +39,16 @@
 				font-family: $font-family-poppins-regular;
                 color: $secondary;
 			}
+			@media only screen and (max-width: $md) {
+				position: relative;
+				top: inherit;
+				width: 100%;
+				text-align: center;
+			}
 		}
 		.page2-banner-img {
 			position: relative;
-			img{
-				max-width: 100%;
-			}
+
 			.srch-icon-bg {
 				box-shadow: 0px 8px 20px #00000036;
 				background: $whiteColor;
@@ -60,6 +67,17 @@
 				}
 			}
 		}
+		@media only screen and (max-width: $md) {
+			padding-top: 0;
+
+		}
+		@media only screen and (max-width: $sm-x) {
+			padding-bottom: 5rem;
+
+		}
+	}
+	@media only screen and (max-width: $sm-x) {
+		padding-top: 1.5rem;
 	}
 }
 @media only screen and (max-width: 992px) {
@@ -76,7 +94,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm-x) {
 	.landing-page2-banner {
 		.wrap-banner {
 			.page2-banner-caption {
@@ -135,7 +153,11 @@
 			text-decoration: none;
 			font-weight: bold;
 			color: $bgcolor-blue;
+			padding: 0;
 		}
+	}
+	@media only screen and (max-width: $md) {
+		padding: 2.7rem 0;
 	}
 }
 @media only screen and (max-width: 640px) {
@@ -147,7 +169,7 @@
 		}
 	}
 }
-@media (max-width: 768px) {
+@media (max-width: $sm-x) {
 	.about-cont {
 		.abt-cont-des {
 			padding: 30px 25px;
@@ -187,7 +209,7 @@
     cursor: pointer;
     display: inline-block;
     padding: 0 .5em;
-    color: #666;
+   
     font-size: .9em;
     line-height: 2;
     border-radius: .25em;
@@ -204,16 +226,25 @@
 		padding-right: 5rem;
         .title-sm-new{
             font-size: 3rem;
-            line-height: 4.5rem;
+            line-height: 4rem;
+			margin-bottom: 1.5rem;
             color: $primary;
             font-family: $font-family-poppins-bold;
-           
+			@media only screen and (max-width: $sm) {
+				font-size: 2.3rem;
+			}
         }
         .sml-para{
             color: $secondary;
             font-family: $font-family-poppins-regular;
             font-size: 1.625rem;
+			line-height: 2.5rem;
         }
+		@media only screen and (max-width: $md) {
+			padding-right: 0;
+			text-align: center;
+			margin-bottom: 3rem;
+		}
     }
   
 
@@ -322,6 +353,7 @@
 			&.slick-disabled{
 				background: inherit;
 				cursor: not-allowed;
+				opacity: 0.5;
 			}
 		}
 		.slick-arrow.slick-prev {
@@ -365,6 +397,9 @@
 			}
 			@media only screen and (min-width: 1200px) {
 				width: 71%;
+			  }
+			  @media only screen and (max-width: 992px) {
+				left: 2rem;
 			  }
 		}
 	}
@@ -429,7 +464,7 @@
 		.sm-slider-bg {
 			.slick-track {
 				.slick-slide {
-					margin: 0;
+					margin: 0 2rem;
 				}
 			}
 			margin-left: 0;
@@ -438,17 +473,19 @@
 			opacity: 0;
 			visibility: hidden;
 		}
-		padding: 40px;
+		padding: 2rem;
 		margin-left: 0;
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm-x) {
 	.bg-class-right {
 		padding: 30px 15px;
 	}
 }
 
-
+@media only screen and (max-width: $sm-x) {
+	padding: 2rem 0;
+}
     
 }
 
@@ -489,12 +526,15 @@
 		}
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm-x) {
 	.sumit-bg-acnt {
 		.bg-acnt-sub {
 			.title-sm-new {
 				width: auto;
 				text-align: center;
+				max-width: 100%;
+				font-size: 2.3rem;
+				line-height: 3.5rem;
 			}
 			.acnt-sub-btn {
 				display: block;
@@ -520,16 +560,24 @@
         width: 100%;
         .title-sm-new{
             font-size: 3rem;
-            line-height: 4.5rem;
+            line-height: 4rem;
+			margin-bottom: 1.5rem;
             color: $primary;
             font-family: $font-family-poppins-bold;
-           
+			@media only screen and (max-width: $sm-x) {
+				font-size: 2.3rem;
+				line-height: 3rem;
+			}
         }
         .sml-para{
             color: $secondary;
             font-family: $font-family-poppins-regular;
             font-size: 1.625rem;
+			line-height: 2.5rem;
         }
+		@media only screen and (max-width: $sm-x) {
+			text-align: center;
+		}
     }
 	.reset {
 		list-style: none;
@@ -583,6 +631,11 @@
             line-height: 4.5rem;
             color: $whiteColor;
             font-family: $font-family-poppins-semibold;
+			@media only screen and (max-width: $sm-x) {
+				font-size: 2.3rem;
+				line-height: 3rem;
+				margin-bottom: 1.5rem;
+			}
            
         }
         .sml-para{
@@ -620,9 +673,12 @@
 								position: absolute;
 								left: 50%;
 								top: 50%;
-								font-size: 35px;
+								font-size: 3rem;
 								transform: translate(-50%, -50%);
 								color: $primary;
+								@media only screen and (max-width: $sm-x) {
+									font-size: 2.3rem;
+								}
 							}
 						}
 						h6 {
@@ -644,7 +700,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm-x) {
 	.social-share {
 		.social-share-box {
 			.social-list {
@@ -693,7 +749,7 @@
 		border-radius: 16px;
 		display: flex;
 		align-items: center;
-		padding: 0 100px;
+		padding: 0;
 		justify-content: space-between;
 		.title-sm-new {
 			margin: 0;
@@ -701,6 +757,7 @@
             line-height: 4.5rem;
             color: $primary;
             font-family: $font-family-poppins-bold;
+			max-width: 60%;
 		}
 		.acnt-sub-btn {
 			background: $primary;
@@ -717,33 +774,25 @@
 			text-align: center;
 			&:hover {
 				background: $whiteColor;
-				color: #0068B3;
+				color: $blueColortext;
 			}
 		}
 	}
 }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: $sm-x) {
 	.sumit-bg-tips {
 		.bg-acnt-sub {
 			.title-sm-new {
 				width: auto;
 				text-align: center;
 				padding: 20px 0;
+				max-width: 100%;
 			}
 			display: block;
 			padding: 0;
+			text-align: center;
 		}
 		padding: 150px 0 50px 0;
 	}
 }
 
-.my-carousel-progress {
-    background: #ccc;
-  }
-  
-  .my-carousel-progress-bar {
-    background: greenyellow;
-    height: 2px;
-    transition: width 400ms ease;
-    width: 0;
-  }

@@ -31,7 +31,8 @@ function Home() {
 			<div className='container'>
 				<div className='banner-caption' >
 					<h1>Experience</h1>
-					<h1>The Joy of Earning</h1>
+					<h1>The Joy of</h1>
+					<h1>Earning</h1>
 				</div>
 			</div>
 		</div>
