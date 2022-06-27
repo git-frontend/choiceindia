@@ -8,9 +8,11 @@
         z-index: 9999;
         top: 0;
         left: 0;
+        box-shadow: 0px 0px 8px #F0F0F0;
         padding: 2rem 0;
+        
         .navbar{
-            box-shadow: inherit;
+            box-shadow: none;
             .logo-main{
                 margin-right: 3rem;
                 width: 150px;

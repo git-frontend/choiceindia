@@ -12,12 +12,13 @@ function Slidersec() {
         dots: false,
         arrows: true,
         autoplay: true,
-        infinite:true,
+        infinite:false,
         fade: false,
         autoplay: false,
         centerMode: true,
         Padding: '0 55px 0 30px',
         autoplaySpeed: 7000,
+        dots:true,
         responsive: [
         {
           breakpoint: 992,

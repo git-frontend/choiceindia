@@ -14,6 +14,7 @@ import  Image101  from '../../assets/images/sumeet-bagadia/Business_Standard.png
 import  Image11 from '../../assets/images/sumeet-bagadia/Navbharat_Times.png';
 import  Image12  from '../../assets/images/sumeet-bagadia/FC.png';
 import Slidersec from './Slidersec';
+import DematAccountForm from '../Common-features/DematAccountForm'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function SumeetBagadia() {
@@ -24,7 +25,7 @@ function SumeetBagadia() {
     <div>
     <section className="bannersec" id="home-bg">
         <div className="container">
-            <div className="row">
+            <div className="row align-items-start">
                 <div className="col-md-8 col-sm-6">
                     <div className="wrap-banner">
                         <div className="page2-banner-caption">
@@ -40,9 +41,8 @@ function SumeetBagadia() {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-4 col-sm-6">
-                    
-                      
+                <div className="col-md-4 col-sm-6 d-flex justify-content-end">
+                  <DematAccountForm />
                 </div>
             </div>
             

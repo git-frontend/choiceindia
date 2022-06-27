@@ -7,7 +7,7 @@
 
 
 .bannersec{
-	padding-top: 7.5rem 0;
+	padding-top: 7.5rem;
 	background:$whiteColor;
 	background-size: 100% 100%;
 	padding-bottom: 80px;
@@ -39,6 +39,9 @@
 		}
 		.page2-banner-img {
 			position: relative;
+			img{
+				max-width: 100%;
+			}
 			.srch-icon-bg {
 				box-shadow: 0px 8px 20px #00000036;
 				background: $whiteColor;
@@ -217,7 +220,7 @@
 .bg-class-right {
     position: relative;
     background: $abt-bg;
-    padding: 1rem 4rem 3rem 4rem;
+    padding: 1rem 4rem 4rem 4rem;
     padding-right: 0;
     border-radius: 20px;
     margin-left: 20px;
@@ -259,7 +262,7 @@
 					justify-content: center;
 					flex-wrap: wrap;
 					list-style: none;
-					border-top: 1px solid #EEEBEA;
+					position: relative;
 					padding: 15px 0;
 					li {
 						width: 50%;
@@ -278,28 +281,46 @@
 							color: $primary;
 						}
 					}
+					&::before{
+						content: '';
+						width: 85%;
+						left: 0;
+						right: 0;
+						height: 1px;
+						background: #EEEBEA;
+						position: absolute;
+						top: 0;
+						margin: 0 auto;
+
+					}
 				}
 			}
 		}
 		.slick-arrow {
 			top: inherit !important;
-			bottom: -88px;
+			bottom: -4rem;
 			z-index: 99;
 			width: 40px;
 			height: 40px;
 			right: 25px;
 			border: 1px solid #ffffff38;
 			border-radius: 50%;
+			background: $whiteColor;
 			&::before {
 				content: '';
-				// background: url(../images/landing-sumeet/right-arrow.svg) no-repeat;
+				background: url(../../assets/images/icons/arrow-thin.svg) no-repeat;
+				background-size: contain;
 				width: 17px;
-				height: 17px;
+				height: 9px;
 				display: block;
 				position: absolute;
 				left: 50%;
 				top: 50%;
 				transform: translate(-50%, -50%);
+			}
+			&.slick-disabled{
+				background: inherit;
+				cursor: not-allowed;
 			}
 		}
 		.slick-arrow.slick-prev {
@@ -307,9 +328,32 @@
 			right: 75px;
 			&::before {
 				content: '';
-				// background: url(../images/landing-sumeet/left-arrow.svg) no-repeat;
+				background: url(../../assets/images/icons/arrow-thin-left.svg) no-repeat;
+				background-size: contain;
 				width: 17px;
-				height: 17px;
+				height: 9px;
+				
+			}
+		}
+		.slick-dots{
+			position: relative;
+			top: inherit;
+			bottom: inherit;
+			display: flex !important;
+			flex-wrap: wrap;
+			width: 80%;
+			>li{
+				width: 25%;
+				margin: 0;
+				button{
+					width: 100%;
+					background: #F4F4F4;
+					height: 2px;
+					padding: 0;
+					&::before{
+						display: none;
+					}
+				}
 			}
 		}
 	}
