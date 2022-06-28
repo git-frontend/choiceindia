@@ -88,7 +88,7 @@ function SumeetBagadia() {
 
       <section className="print-media">
         <div className="container">
-          <div className="row">
+          <div className="row align-items-center">
             <div className="col-md-5 pt6">
               <div className="bg-class-left">
                 <h3 className="title-sm-new">Featured On Print And Electronic Media</h3>

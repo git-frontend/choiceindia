@@ -49,6 +49,7 @@
 		.page2-banner-img {
 			position: relative;
 			left: -9rem;
+			top: 4rem;
 			.srch-icon-bg {
 				box-shadow: 0px 8px 20px #00000036;
 				background: $whiteColor;
@@ -68,6 +69,7 @@
 			}
 			@media only screen and (max-width: $md) {
 				left: 0;
+				top: inherit;
 			}
 		}
 		@media only screen and (max-width: $md) {
@@ -134,7 +136,7 @@
 
 
 .about-cont {
-	padding: 5rem 0;
+	padding: 8rem 0 5rem 0;
 	background: $whiteColor;
     position: relative;
     &:after{
@@ -143,28 +145,35 @@
         content: '';
         height: 30rem;
         width: 20rem;
-        bottom: -13rem;
+        bottom: -12rem;
         left: 0; 
         // z-index: -1;
         background: url(../../assets/images/home-bgtop.png) no-repeat bottom left;
         background-size: contain;
+		@media only screen and (max-width: $md) {
+			display: none;
+		}
     }
 	.abt-cont-des {
 		background: #FFFBEA;
 		padding: 3.125rem 5rem;
-		border-radius: 1rem;
+		border-radius: 30px;
         position: relative;
 		z-index: 99;
        
 		p {
 			display: inline;
-            font-size: 1.75rem !important;
-			line-height: 2.8rem !important;
+            font-size: 1.65rem;
+			line-height: 2.8rem;
 			font-family: $font-family-poppins-regular;
             color: $secondary;
 			strong {
 				color:$primary;
 				font-weight: 900;
+			}
+			@media only screen and (max-width: $sm-x) {
+				font-size: 1.575rem;
+				line-height: 2.8rem;
 			}
 		}
 		.moreless-button {
@@ -183,7 +192,7 @@
 	.about-cont {
 		.abt-cont-des {
 			.moreless-button {
-				font-size: 1rem;
+				font-size: 1.4rem;
 			}
 		}
 	}
@@ -270,7 +279,7 @@
 .bg-class-right {
     position: relative;
     background: $abt-bg;
-    padding: 1rem 4rem 3rem 4rem;
+    padding: 2rem 4rem 3rem 4rem;
     padding-right: 0;
     border-radius: 1.25rem;
     margin-left: 1.25rem;
@@ -422,6 +431,7 @@
 			  }
 			  @media only screen and (max-width: 992px) {
 				left: 2rem;
+				width: 69%;
 			  }
 		}
 	}
@@ -456,21 +466,21 @@
 			}
 			.slick-arrow.slick-prev {
 				&::before {
-					width: 0.8125rem;
+					width: 1.5rem;
 					background-size: contain;
 					height: 0.8125rem;
 				}
-				right: 2.6875rem;
+				right: 4rem;
 			}
 			.slick-arrow {
 				&::before {
-					width: 0.8125rem;
+					width: 1.5rem;
 					background-size: contain;
 					height: 0.8125rem;
 				}
-				width: 1.75rem;
-				height: 1.75rem;
-				bottom: -3.875rem;
+				width: 2.75rem;
+				height: 2.75rem;
+				bottom: -2.125rem;
 				right: 5px;
 			}
 		}
@@ -501,7 +511,7 @@
 }
 @media only screen and (max-width: $sm-x) {
 	.bg-class-right {
-		padding: 1.875rem 0.9375rem;
+		padding: 1.875rem 0;
 	}
 }
 
@@ -513,6 +523,8 @@
 
 .sumit-bg-acnt {
     padding: 9rem 0;
+	position: relative;
+	overflow: hidden;
 	.bg-acnt-sub {
 		background: $primary;
 		padding: 6.1875rem 4.875rem;
@@ -520,7 +532,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-        
+        position: relative;
+		z-index: 9;
 		.title-sm-new {
 			margin: 0;
 			max-width: 52%;   
@@ -538,6 +551,25 @@
 			}
 		}
 	}
+	@media only screen and (max-width: $sm-x) {
+		padding: 4rem 0 6rem 0;
+	}
+	&::after {
+        content: "";
+        width: 25rem;
+        height: 35rem;
+        display: block;
+        position: absolute;
+		right: -6rem;
+		top: 2rem;
+        background: url(../../assets/images/sumeet-bagadia/top-bg.png) no-repeat top right;
+        background-size: contain;
+		z-index: 0;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
 }
 @media only screen and (max-width: $sm-x) {
 	.sumit-bg-acnt {
@@ -560,15 +592,13 @@
 	}
 }
 .print-media {
-	padding: 8.4375rem 0 18.75rem 0;   
+	padding: 8.5rem 0 12rem 0;   
 	background-size: 100% 120%;
-	margin-bottom: -13.125rem;
+	margin-bottom: 0;
 	position: relative;
     .bg-class-left{
         text-align: left;
         position: relative;
-        top: 42%;
-        transform: translate(0, -50%);
         left: 0;
         width: 100%;
         .title-sm-new{
@@ -627,7 +657,7 @@
 			margin-top: 1.875rem;
 			margin-left: -6%;
 		}
-		padding: 0.9375rem 0 16.25rem 0;
+		padding: 0.9375rem 0 10rem 0;
 		text-align: center;
 	}
 }
@@ -655,6 +685,12 @@
             color: $whiteColor;
             font-family: $font-family-poppins-regular;
             font-size: 1.625rem;
+			@media only screen and (max-width: 640px) {
+				font-size: 1.5rem;
+				br{
+					display: none;
+				}
+			}
 
         }
 		.social-list {
@@ -724,11 +760,11 @@
 								i {
 									font-size: 1.5625rem;
 								}
-								width: 2.6875rem;
-								height: 2.6875rem;
+								
 							}
 						}
 						margin: 0.625rem 0.75rem;
+						width: 16%;
 					}
 				}
 			}
@@ -756,8 +792,8 @@
 }
 .sumit-bg-tips {
 	background: #FFFBEA;
-	padding: 11.25rem 0 5rem 0;
-	margin-top: -6.25rem;
+	padding: 15rem 0 5rem 0;
+	margin-top: -9rem;
 	.bg-acnt-sub {
 		border-radius: 1rem;
 		display: flex;
@@ -789,6 +825,9 @@
 				text-align: center;
 				padding: 1.25rem 0;
 				max-width: 100%;
+				font-size: 2.3rem;
+				line-height: 3rem;
+				margin-bottom: 1rem;
 			}
 			display: block;
 			padding: 0;
