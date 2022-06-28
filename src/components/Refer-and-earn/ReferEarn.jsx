@@ -1,12 +1,18 @@
+import React from "react";
 import "./refer-earn.scss"
+import Banner from './Banner';
+import HowChoice from './HowChoice';
+import TermCondition from './TermCondition';
+import EarnUp from './EarnUp';
 
 function ReferEarn() {
 
-
-
   return (
     <div>
-      Refer Earn
+          <Banner />
+          <HowChoice />
+          <TermCondition />
+          <EarnUp />
 
     </div>
   );
