@@ -101,7 +101,7 @@
         }
     }
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $md) {
 	.landing-page2-banner {
 		.wrap-banner {
 			.page2-banner-caption {
@@ -188,7 +188,7 @@
 		padding: 2.7rem 0;
 	}
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $xs) {
 	.about-cont {
 		.abt-cont-des {
 			.moreless-button {
@@ -389,7 +389,7 @@
 		}
 		.slick-arrow.slick-prev {
 			left: inherit;
-			right: 75px;
+			right: 6rem;
 			&::before {
 				content: '';
 				background: url(../../assets/images/icons/arrow-thin-left.svg) no-repeat;
@@ -426,10 +426,10 @@
 					}
 				}
 			}
-			@media only screen and (min-width: 1200px) {
+			@media only screen and (min-width: $lg) {
 				width: 71%;
 			  }
-			  @media only screen and (max-width: 992px) {
+			  @media only screen and (max-width: $md) {
 				left: 2rem;
 				width: 69%;
 			  }
@@ -454,7 +454,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $xs) {
 	.bg-class-right {
 		.sm-slider-bg {
 			.slick-track {
@@ -491,7 +491,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $md) {
 	.bg-class-right {
 		.sm-slider-bg {
 			.slick-track {
@@ -647,7 +647,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: $md) {
 	.print-media {
 		.reset {
 			li {
@@ -657,7 +657,7 @@
 			margin-top: 1.875rem;
 			margin-left: -6%;
 		}
-		padding: 0.9375rem 0 10rem 0;
+		padding: 0.9375rem 0 6rem 0;
 		text-align: center;
 	}
 }
@@ -685,7 +685,7 @@
             color: $whiteColor;
             font-family: $font-family-poppins-regular;
             font-size: 1.625rem;
-			@media only screen and (max-width: 640px) {
+			@media only screen and (max-width: $xs) {
 				font-size: 1.5rem;
 				br{
 					display: none;
@@ -773,7 +773,7 @@
 		}
 	}
 }
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: $xs) {
 	.social-share {
 		.social-share-box {
 			.social-list {
@@ -833,7 +833,7 @@
 			padding: 0;
 			text-align: center;
 		}
-		padding: 9.375rem 0 3.125rem 0;
+		
 	}
 }
 

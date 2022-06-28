@@ -36,7 +36,7 @@ function OpenFreeAccount() {
                                         <p>Trading Platform ( Web &amp; App )</p>
                                     </div>
                                 </div>
-                                <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-demat-arrow"/>
+                                <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-fluid img-demat-arrow" width="449" height="164"/>
                             </div>
                             
                         </div>
