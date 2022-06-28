@@ -30,6 +30,7 @@ const LazyFableDetail = React.lazy(() => import('./components/Fables-details/Fab
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
 const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
 const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/SumeetBagadia'));
+const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 
 function Routing() {
     return (
@@ -108,6 +109,12 @@ function Routing() {
                         <Route exact path='/Sumeet-Bagadia' element={
                             <React.Suspense>
                                 < Lazymarketing />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/refer-and-earn' element={
+                            <React.Suspense>
+                                < Lazyrefer />
                             </React.Suspense>
                         } />
 
