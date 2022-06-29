@@ -13,7 +13,7 @@ function SocialConnect() {
             <div className="col-md-12">
               <div className="social-share-box">
                 <h3 className="title-sm-new">Get Daily Insights And Weekly Podcasts</h3>
-                <p className="sml-para">Catch Mr Sumeet Bagadia go live daily with stock market tips, weekly market update <br /> podcasts and daily intraday and investment calls. Connect with us:</p>
+                <p className="sml-para p-4">Catch Mr Sumeet Bagadia go live daily with stock market tips, weekly market update <br /> podcasts and daily intraday and investment calls. Connect with us:</p>
                 <div className="social-list">
                   <ul>
                     <li>

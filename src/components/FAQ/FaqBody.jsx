@@ -71,7 +71,7 @@ export default function FaqBody() {
             <div className="row d-flex justify-content-center">
               <div className="col-md-12">
                 <div className="heading-sec">
-                  <h3 className="title-first ">Looking for an Answer? </h3>
+                  <h3 className="title-first ">Looking for an Answer?</h3>
                 </div>
               </div>
             </div>
