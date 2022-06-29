@@ -86,11 +86,11 @@ export default function FaqBody() {
                   {
                     list.map((response, i) => {
 
-                      let classNameNm2 = ((i === selected) ? ' bx-item-cont-active' : "same-list-bx-item")
+                      let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
 
                       
                       return (
-                        <div key={response.id} className={classNameNm2} onClick={() => {
+                        <div key={response.id} className={classNameNm2}  onClick={() => {
                           
                           loadfaqFolder(response.id);
                           setList2(response.name)
