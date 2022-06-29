@@ -21,7 +21,7 @@ function Loans() {
             <div className="row gx-5 mb-5 align-items-center">
                 <div className="col-md-4">
                     <div className="rightsec">
-                        <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
+                              <img src={Bannerimage} alt="Banner Images" className="img-fluid " width={"410"} height={"431"}></img>
                     </div>
                 </div>
                 <div className="col-md-8">

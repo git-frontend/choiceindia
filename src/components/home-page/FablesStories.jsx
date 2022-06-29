@@ -97,7 +97,7 @@ function FablesStories() {
 											fslider ?
 
 												<div>
-													<LazyLoader src={fslider[sliderimag].feature_image} alt="Loading" />
+													<LazyLoader src={fslider[sliderimag].feature_image} width={"521"} height={"450"} alt="Loading" />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
@@ -154,7 +154,7 @@ function FablesStories() {
 															console.log("kkkk", Id);
 														}} >
 
-															<LazyLoader src={response.feature_image} alt="Loading" />
+															<LazyLoader src={response.feature_image} alt="Loading" width={"312"} height={"200"} />
 															{/* <img src={response.feature_image} alt="Loading" /> */}
 														</div>
 

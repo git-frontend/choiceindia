@@ -55,7 +55,7 @@ function FableBlogList() {
                             <div className="tab-blog-list">
                                 <a href="/" className="tab-blog-item">
                                     <div className="blog-item-img">
-                                        <img src={Blog1} className="" alt="loading" />
+                                        <img src={Blog1} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
                                     <div className="blog-item-des">
                                         <h4>Shein setting a trend again for fashionistas – It’s a comeback</h4>
@@ -68,7 +68,7 @@ function FableBlogList() {
                                 </a>
                                 <a href="/" className="tab-blog-item">
                                     <div className="blog-item-img">
-                                        <img src={Blog2} className="" alt="loading" />
+                                        <img src={Blog2} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
                                     <div className="blog-item-des">
                                         <h4>How Indian Telcos are gearing up for 5G?</h4>
@@ -81,7 +81,7 @@ function FableBlogList() {
                                 </a>
                                 <a href="/" className="tab-blog-item">
                                     <div className="blog-item-img">
-                                        <img src={Blog3} className="" alt="loading" />
+                                        <img src={Blog3} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
                                     <div className="blog-item-des">
                                         <h4>The journey of Idea cellular from idea to VI</h4>

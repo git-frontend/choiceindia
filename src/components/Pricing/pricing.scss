@@ -3,17 +3,17 @@
 
 
 .pricing-banner-tabs{
-    padding-top: 5rem;
+    padding: 5rem 0 10rem 0;
     position: relative;
     &::after {
         content: '';
-        width: 28rem;
-        height: 44rem;
+        width: 21rem;
+        height: 20rem;
         display: block;
         position: absolute;
-        right: 0;
-        top:0;
-        background: url(../../assets/images/pricing/banner-bg-right.png) no-repeat top right;
+        left: 2rem;
+        bottom:0;
+        background: url(../../assets/images/pricing/bg2.png) no-repeat top left;
         background-size: contain;
 
         @media (max-width: $md) {
@@ -83,6 +83,7 @@
                 }
                 .tab-ico{
                     width: 50px;
+                    height: 50px;
                 }
                 @media (max-width: $sm-x) {
                     text-align: center;
@@ -169,7 +170,7 @@
             @extend.box-shadow;
             border-radius: 18px;
             padding: 2rem 1rem;
-            margin-bottom: 7rem;
+            margin-bottom: 9rem;
                 .pricing-data{
                     tbody{
                         td{
@@ -205,6 +206,9 @@
                 .term-para{
                     padding: 2rem;
                     margin-top: 1rem;
+                }
+                @media (max-width: $sm-x) {
+                    margin-bottom: 5rem;
                 }
            } 
 
@@ -254,6 +258,9 @@
                                 text-align: center;
                                 -webkit-appearance: none; 
                                 margin: 0; 
+                                &::placeholder{
+                                    color: $primary;
+                                }
                             }
                             h5{
                                 font-size: 1.5rem;
@@ -296,6 +303,8 @@
                                 }
                                 &:last-child{
                                     border: 0;
+                                    margin-bottom: 0;
+                                    padding-bottom: 0;
                                 }
                             }
                         }
@@ -307,6 +316,9 @@
             }
            }
         }
+    }
+    @media (max-width: $sm-x) {
+        padding: 5rem 0;
     }
 }
 

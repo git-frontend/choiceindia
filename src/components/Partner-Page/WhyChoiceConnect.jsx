@@ -40,7 +40,7 @@ function WhyChoiceConnect() {
                 {/* work-list-itm-active */}
                 <div className={'work-list-itm ' + defaultOption}>
                   <div className="bx-item-cont" onMouseOver={() => { setData(() => 0) }}>
-                    <img src={Rating} alt="" />
+                                      <img src={Rating} alt="" width={"72"} height={"71"} />
                     <h4>Lineage</h4>
 
                   </div>
@@ -50,7 +50,7 @@ function WhyChoiceConnect() {
                     setData(() => 1);
                     setdefaultOption(() => '');
                   }}>
-                    <img src={Cogwheel} alt="" />
+                                      <img src={Cogwheel} alt="" width={"70"} height={"71"}/>
                     <h4>Multifaceted</h4>
 
                   </div>
@@ -60,7 +60,7 @@ function WhyChoiceConnect() {
                     setData(() => 2);
                     setdefaultOption(() => '');
                   }}>
-                    <img src={Network} alt="" />
+                                      <img src={Network} alt="" width={"72"} height={"71"} />
                     <h4>Network</h4>
 
                   </div>
@@ -70,7 +70,7 @@ function WhyChoiceConnect() {
                     setData(() => 3);
                     setdefaultOption(() => '');
                   }}>
-                    <img src={Billfold} alt="" />
+                                      <img src={Billfold} alt="" width={"72"} height={"71"}/>
                     <h4>Security</h4>
 
                   </div>
@@ -80,7 +80,7 @@ function WhyChoiceConnect() {
                     setData(() => 4);
                     setdefaultOption(() => '');
                   }}>
-                    <img src={Team} alt="" />
+                                      <img src={Team} alt="" width={"70"} height={"71"}/>
                     <h4>Infrastructure</h4>
 
                   </div>
@@ -90,7 +90,7 @@ function WhyChoiceConnect() {
                     setData(() => 5);
                     setdefaultOption(() => '');
                   }}>
-                    <img src={Smartphone} alt="" />
+                                      <img src={Smartphone} alt="" width={"70"} height={"71"}/>
                     <h4>Flexibility</h4>
 
                   </div>
