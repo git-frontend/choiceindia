@@ -197,7 +197,8 @@ p {
 .franchise-banner {
     background-size: 100% 100%;
     position: relative;
-    padding: 6rem 0;
+    padding: 5rem 0 0 0;
+    background: #f4f4f4;
 
     .caption-banner {
         padding: 1rem 0 0 0;
@@ -209,10 +210,9 @@ p {
         .tlt2 {
             font-size: 3rem;
             line-height: 3rem;
-            color: #231F20;
+            color: $primary;
             margin-top: 0;
-            font-family: 'GreycliffCF-Heavy';
-            font-weight: bold;
+            font-family: $font-family-poppins-semibold;            
             margin-bottom: 0;
             display: flex;
             align-items: center;
@@ -228,8 +228,8 @@ p {
 
         .tlt1 {
             font-size: 5.25rem;
-            font-family: 'GreycliffCF-Heavy';
-            color: #0068B3;
+            font-family: $font-family-poppins-bold;
+            color: $primary;
             margin: 1rem 0;
         }
 
@@ -259,8 +259,8 @@ p {
     }
 
     .caption-blue-bar {
-        background: #0068B3;
-        border-radius: 74px;
+        background: $primary;
+        border-radius: 12px 12px 0 0;
         padding: 2rem 2rem;
 
         ul {
@@ -273,22 +273,24 @@ p {
 
             li {
                 width: 30%;
-                font-size: 1.188rem;
+                font-size: 1.675rem;
                 color: #ffffff;
-                font-family: 'robotoregular';
+                font-family: $font-family-poppins-regular;
                 position: relative;
-                font-weight: 400;
-                padding-left: 2.6rem;
+                padding-top: 3.5rem;
+                text-align: center;
 
                 &::before {
                     content: '';
-                   /* background: url(../images/sub-broker2/tick-icon.svg) no-repeat;*/
-                    width: 2rem;
-                    height: 2rem;
+                    background: url(../../assets/images/sub-broker/check-circle.svg) no-repeat;
+                    width: 2.8rem;
+                    height: 2.8rem;
                     background-size: contain;
                     position: absolute;
                     left: 0;
-                    top: 0.6rem;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 0;
                 }
 
                 &:nth-child(2n) {
@@ -297,8 +299,8 @@ p {
                 }
 
                 span {
-                    font-weight: bold;
-                    font-family: 'robotobold';
+                    font-family: $font-family-poppins-semibold;
+                    display: block;
                 }
             }
         }
@@ -593,9 +595,7 @@ p {
     }
 }
 
-.franchise-form {
-    margin-left: 1rem;
-}
+
 
 .otp-dialog {
     .dialog-content {
@@ -616,9 +616,7 @@ p {
     padding: 100px 0;
 }
 
-section {
-    padding: 30px 0;
-}
+
 
 .form-card {
     padding: 50px;
@@ -1173,8 +1171,16 @@ section {
 }
 
 .broker-benifits {
-    background: #0068b30a;
-    padding: 6rem 0 4rem;
+    background: #25b8af1a;
+    padding: 15rem 0 0 0;
+    position: relative;
+    
+    .titl3{
+        font-size: 3.25rem;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        margin-bottom: 5rem;
+    }
 
     .benifits-list {
         display: flex;
@@ -1188,19 +1194,20 @@ section {
 
             .benifits-item {
                 width: 100%;
-                padding: 2rem 1.5rem;
-                border-radius: 8px;
-                margin-bottom: 1.5rem;
+                padding: 3rem 2rem;
+                border-radius: 24px;
+                margin-bottom: 4rem;
                 transition-duration: 0.6s;
-
+                text-align: center;
+                border: 1px solid transparent;
                 span {
                     display: block;
-                    margin-bottom: 1.5rem;
+                    margin-bottom: 3rem;
                 }
 
                 &:hover {
-                    background: #ffffff;
-                    box-shadow: 10px 6px 26px #00000012;
+                    background: $whiteColor;
+                    border: 1px solid rgba(37, 184, 175, 0.5);
 
                     span {
                         overflow: hidden;
@@ -1214,11 +1221,10 @@ section {
                 }
 
                 h4 {
-                    font-size: 1.375rem;
-                    line-height: 2rem;
-                    color: #3E3D3F;
-                    font-weight: bold;
-                    font-family: 'robotoregular';
+                    font-size: 1.475rem;
+                    line-height: 2.2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
                 }
             }
 
@@ -1246,8 +1252,8 @@ section {
 
         .sl-slider.sl-slider-active {
             .benifits-item {
-                background: #ffffff;
-                box-shadow: 10px 6px 26px #00000012;
+                background: $whiteColor;
+                border: 1px solid rgba(37, 184, 175, 0.5);
             }
         }
 
@@ -1315,28 +1321,24 @@ section {
         position: absolute;
         width: 21%;
         right: 0;
-        bottom: -125px;
-        padding: 2rem;
+        bottom: -5.5rem;
+        padding: 4rem 2rem;
         background: #25B8AF;
         background-size: 100% 100%;
-        border-radius: 8px;
+        border-radius: 24px;
         z-index: 99;
+        text-align: center;
 
         h3 {
-            font-size: 1.75rem;
-            color: #ffffff;
-            font-family: 'GreycliffCFBold';
+            font-size: 1.5rem;
+            color: $whiteColor;
             margin: 0;
+            font-family: $font-family-poppins-medium;
         }
 
         p {
-            color: #ffffff;
-            font-size: 1.125rem;
-            line-height: 1.5rem;
-            font-family: 'robotoregular';
-            font-weight: 400;
-            opacity: 0.9;
-            margin: 1.5rem 0 3rem 0;
+            color: $whiteColor;            
+            margin: 2rem 0 3rem 0;
         }
 
         @media (max-width: 992px) {
@@ -1372,41 +1374,68 @@ section {
 }
 
 .sell-more {
-    padding: 8rem 0 6rem 0;
+    padding: 16rem 0 10rem 0;
     position: relative;
+
 
     &::before {
         content: '';
-        /*background: url(../images/sub-broker2/dots-img.svg) no-repeat;*/
-        background-size: contain;
-        width: 8rem;
-        height: 8rem;
+        width: 18rem;
+        height: 40rem;
         display: block;
         position: absolute;
-        left: 5%;
-        bottom: -15%;
-        z-index: 9;
+        left: 0;
+        top: -10rem;
+        background: url(../../assets/images/sub-broker/bg-top-left.png) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 18rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 7%;
+        background: url(../../assets/images/sub-broker/bg-top-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
     }
 
-    p {
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-        font-family: 'robotoregular';
-        font-weight: 400;
-        opacity: 0.9;
-        margin: 1.5rem 0 3rem 0;
+    
+
+    .sell-left-sec{
+        p {
+            font-size: 1.675rem;
+            line-height: 2.5rem;
+            font-family: $font-family-poppins-regular;
+            color: $primary;
+            margin: 1.5rem 0 3rem 0;
+        }
+        .title-secnd{
+            margin-bottom: 4rem;
+        }
     }
 
     .sell-more-list {
         display: flex;
         flex-wrap: wrap;
         margin-left: -3%;
-
+        padding-left: 5rem;
+        position: relative;
+        z-index: 9;
         .more-list-item {
             width: 47%;
             margin-left: 3%;
             border: 1px solid #0068B3;
-            border-radius: 8px;
+            border-radius: 18px;
             background: #ffffff;
             display: flex;
             align-items: center;
@@ -1414,7 +1443,7 @@ section {
             margin-bottom: 2rem;
             padding: 2rem;
             transition-duration: 0.6s;
-
+            min-height: 110px;
             &:hover {
                 box-shadow: 10px 6px 26px #00000012;
                 border: 1px solid transparent;
@@ -1432,31 +1461,19 @@ section {
                 overflow: hidden;
                 position: relative;
                 display: inline-block;
-
-                &::before {
-                    content: '';
-                    width: 30px;
-                    height: 30px;
-                    border-radius: 50%;
-                    background: #3e3d3f1f;
-                    position: absolute;
-                    left: 3;
-                    top: 2;
-                }
-
                 img {
                     position: relative;
+                    max-width: 45px;
                 }
             }
 
             .itm-ttl {
                 width: calc(100% - 80px);
-                padding-left: 1rem;
-                line-height: 1.2;
-                font-size: 1.375rem;
-                color: #3E3D3F;
-                font-family: 'robotoregular';
-                font-weight: bold;
+                padding-left: 2rem;
+                line-height: 1.6;
+                font-size: 1.575rem;
+                color: $primary;
+                font-family: $font-family-poppins-medium;
                 margin: 0;
             }
         }
@@ -1468,29 +1485,27 @@ section {
 }
 
 .franchise-abt {
-    /*background: url(../images/sub-broker2/bg.png) no-repeat;*/
-    background-size: cover;
-    background-attachment: fixed;
+    
+    background:$primary;
     padding: 8rem 0;
     position: relative;
 
     .ttl-wht {
-        font-size: 2.25rem;
-        font-family: 'GreycliffCF-Heavy';
-        color: #ffffff;
+        font-size: 3.25rem;
+        font-family:$font-family-poppins-semibold;
+        color: $whiteColor;
         text-align: center;
-        margin: 0;
+        margin-bottom: 3rem;
     }
 
     p {
-        font-size: 1.125rem;
-        line-height: 1.5rem;
-        font-family: 'robotoregular';
-        font-weight: 400;
-        opacity: 0.9;
-        color: #ffffff;
-        margin: 1.5rem 0 3rem 0;
+        
+        font-family: $font-family-poppins-regular;
+        color: $whiteColor;
+        margin: 1.5rem 0 5rem 0;
         text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.8;
     }
 
     .counter-list {
@@ -1499,50 +1514,41 @@ section {
 
         .count-item {
             width: 25%;
-            text-align: left;
+            text-align: center;
 
             h3 {
                 font-size: 3rem;
-                font-family: 'GreycliffCF-Heavy';
-                color: #00BC70;
+                font-family: $font-family-poppins-bold;
+                color: $yellowColor;
                 margin: 0;
                 margin-bottom: 1.25rem;
             }
 
             h6 {
-                font-size: 1.125rem;
+                font-size: 1.325rem;
                 color: #ffffff;
-                font-family: 'robotoregular';
-                font-weight: 400;
+                font-family: $font-family-poppins-medium;
             }
         }
     }
 
-    &::before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        display: block;
-        background: #0068B3;
-        opacity: 0.9;
-    }
+  
 }
 
 .franchise-eligb {
-    padding: 6.5rem 0 5rem 0;
+    padding: 10rem 0 7rem 0;
 
     .eligb-left-sec {
         padding-top: 6.25rem;
         padding-right: 6.25rem;
 
-        p {
-            font-size: 1.125rem;
-            line-height: 1.5rem;
-            font-family: 'robotoregular';
-            font-weight: 400;
+        
+        .titl3{
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            font-size: 2.8rem;
+            line-height: 4rem;
+            margin-bottom: 3rem;
         }
     }
 
@@ -1552,7 +1558,7 @@ section {
         justify-content: end;
 
         .slider-eligb {
-            max-width: 272px;
+            width: 230px;
             background: #ffffff;
             box-shadow: 10px 6px 26px #0000001A;
             border-radius: 8px;
@@ -1560,8 +1566,9 @@ section {
             left: 0;
             top: 50%;
             transform: translate(0, -50%);
-            padding: 2rem;
+            padding: 3rem 3rem;
             z-index: 99;
+            box-shadow: 0px 0px 8px #F0F0F0;
 
             .slick-slide {
                 img {
@@ -1569,10 +1576,10 @@ section {
                 }
 
                 h4 {
-                    font-size: 1.375rem;
-                    line-height: 1.8rem;
-                    color: #231F20;
-                    font-family: 'GreycliffCF-Heavy';
+                    font-size: 1.575rem;
+                    line-height: 2.2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
                     margin: 0;
                     margin-top: 1rem;
                 }
@@ -1580,8 +1587,8 @@ section {
 
             &::before {
                 content: '';
-                background: #0068B3;
-                width: 2px;
+                background: $bgcolor-blue;
+                width: 0.2rem;
                 height: 78%;
                 top: 12%;
                 position: absolute;
@@ -1593,7 +1600,7 @@ section {
                 position: relative;
                 top: inherit;
                 bottom: inherit;
-                margin-top: 23px;
+                margin-top: 2.3rem;
                 display: flex !important;
                 justify-content: flex-start;
                 padding-left: 0;
@@ -1663,11 +1670,45 @@ section {
 }
 
 .franchise-offers {
-    padding: 12rem 0 6.5rem 0;
-    background: #0068b30a;
+    padding: 10rem 0 15rem 0;
+    background:$whiteColor;
+    position: relative;
+    &::before {
+        content: '';
+        width: 28rem;
+        height: 31rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/sub-broker/bg-bottom.png) no-repeat top left;
+        background-size: contain;
 
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 18rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -10rem;
+        background: url(../../assets/images/sub-broker/bg-top-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
     .titl3 {
         text-align: center;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
     }
 
     .sml-para-dv {
@@ -1675,26 +1716,26 @@ section {
     }
 
     .offers-table-sec {
-        box-shadow: 10px 6px 26px #00000012;
-        border: 1px solid #54545466;
+        border: 1px solid rgba(194, 194, 194, 0.3);
         border-radius: 8px;
         background: #ffffff;
-        padding: 2rem 2rem;
-        padding-bottom: 1rem;
-        margin-top: 2.5rem;
-
+        padding: 0;
+        margin-top: 3.5rem;
+        position: relative;
+        z-index: 9;
         .table-striped {
-            font-family: 'robotoregular';
+            margin: 0;
 
             thead {
                 th {
                     font-size: 1.375rem;
-                    color: #231F20;
-                    font-weight: bold;
-                    text-align: left;
-                    padding: 1rem 1.5rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    text-align: center;
+                    font-weight: 500;
+                    padding: 2rem 1.5rem;
                     border: 0;
-                    vertical-align: middle;
+                    vertical-align: top;
 
                     @media (max-width: 768px) {
                         white-space: nowrap;
@@ -1707,23 +1748,20 @@ section {
 
                 td {
                     border: 0;
-                    color: #231F20;
-                    font-weight: 400;
-                    font-size: 1rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-regular;
+                    font-size: 1.375rem;
                     text-align: center;
-                    padding: 1.275rem;
+                    padding: 1.375rem;
                     box-shadow: inherit;
                 }
 
-                td.charges-heads {
-                    font-weight: bold;
-                }
             }
 
             > tbody {
                 > tr {
                     &:nth-of-type(odd) {
-                        background-color: #0068b312;
+                        background-color:$bgolor-lightwhite;
                     }
                 }
             }
@@ -1747,21 +1785,24 @@ section {
 }
 
 .box-mid-blue {
-    padding: 30px 0;
+    padding: 2rem 0 0 0;
     position: relative;
     background: transparent;
-    margin-bottom: -100px;
 
     .mid-blue-cont {
-        background: #0068B3;
-        padding: 3rem 3.5rem;
-        box-shadow: 10px 6px 26px #00000029;
-        border-radius: 8px;
-
+        background: #FFFBEA;
+        padding: 4rem 5rem;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 9;
         h4 {
-            font-size: 1.875rem;
-            color: #FFFFFF;
-            font-family: 'GreycliffCFBold';
+            font-size: 2.3rem;
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            margin: 0;
         }
     }
 }
@@ -2150,9 +2191,12 @@ section {
 
     .box-mid-blue {
         .mid-blue-cont {
+            flex-wrap: wrap;
+            justify-content: center;
             h4 {
                 text-align: center;
                 margin-bottom: 2rem;
+                width: 100%;
             }
         }
     }
@@ -2614,4 +2658,9 @@ section {
     51% {
         opacity: 1;
     }
+}
+
+.franchise-form{
+    position: relative;
+    top: 6rem;
 }

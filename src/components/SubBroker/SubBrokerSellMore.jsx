@@ -11,21 +11,21 @@ const SubBrokerSellMore = () => {
         <div>            
             <section className="sell-more">
                 <div className="container">
-                    <div className="row">
+                    <div className="row align-items-center">
                         <div className="col-md-12 col-lg-4">
-                        <div className="row">
-                            <div className="col-md-12">
-                            <div className="wow fadeInLeft" data-wow-delay="0.5s">
-                                <h2 className="titl3">Sell More. Earn More!</h2>
-                                <p className="sml-para-dv">Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Sub Broker have the option to offer the entire range of financial products.</p>
-                                <a href="#join-now" className="franchise-same-btn hide-mb"><span>Start Now</span> </a>
+                            <div className="row">
+                                <div className="col-md-12">
+                                    <div className="sell-left-sec">
+                                        <h2 className="title-secnd">Sell More. Earn More!</h2>
+                                        <p className="sml-para-dv">Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Sub Broker have the option to offer the entire range of financial products.</p>
+                                        <a href="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </a>
+                                    </div>
+                                </div>
                             </div>
-                            </div>
-                        </div>
                         </div>
                         <div className="col-md-12 col-lg-8">
                             <div className="sell-more-list">
-                                <div className="more-list-item wow fadeInRight" data-wow-delay="0.8s">
+                                <div className="more-list-item">
                                     <span>
                                         <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" />
                                     </span>
@@ -50,7 +50,7 @@ const SubBrokerSellMore = () => {
                                 <h3 className="itm-ttl">Retail Loans</h3>
                             </div>
                             </div>
-                            <a href="#join-now" className="franchise-same-btn hide-desk"><span>Start Now</span> </a>
+                            
                         </div>
                     </div>
                 </div>

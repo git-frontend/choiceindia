@@ -56,6 +56,15 @@ body{
     }
 }
 
+.title-third{
+    font-size: 3.25rem;
+    color: $primary;
+    font-family: $font-family-poppins-semibold;
+    @media (max-width: 767px){
+        font-size: 1.8rem;
+    }
+}
+
 .title-fourth{
     font-size: 1.6rem;
     margin: 1.5rem 0;

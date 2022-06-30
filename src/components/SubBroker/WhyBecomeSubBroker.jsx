@@ -5,14 +5,14 @@ function WhyBecomeSubBroker () {
         <div>
             <section className="franchise-abt">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
+                    <div className="row justify-content-center">
+                        <div className="col-xl-10 col-md-12">
                             <h2 className="ttl-wht">Why Become a Choice Sub Broker?</h2>
                             <p className="sml-para-dv">As a SEBI Sub Broker, you can be a part of the well-known and respected Choice group. Register with any Stock Exchange (NSE/BSE) and be a Sub Broker in the Stock Market with a reputed brand.</p>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-md-12">
+                    <div className="row justify-content-center">
+                        <div className="col-xl-10 col-md-12">
                             <div className="counter-list">
                                 <div className="count-item wow fadeInUp" data-wow-delay="0.5s">
                                     <h3><span className="counter">4</span>L+</h3>

@@ -1,6 +1,6 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
-
+import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise.png';
+import SubBrokerForm from './SubBrokerForm'
 
 function BannerSBroker() {
 
@@ -10,7 +10,7 @@ function BannerSBroker() {
 
             <section className="franchise-banner" >
                 <div className="container">
-                    <div className="row">
+                    <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
@@ -19,26 +19,26 @@ function BannerSBroker() {
                                     <h2 className="tlt2">without Deposit*</h2>
                                 </div>
                                 <div className="right-sec">
-                                   {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-responsive" />*/}
+                                   <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-responsive" />
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
                                 <ul>
                                     <li>
-                                        <span>Highest</span><br /> Revenue Sharing
+                                        <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                        Upto ₹ <span>1000</span> Per Account Incentive*
+                                    <span>Upto ₹ 1000 Per</span> Account Incentive*
                                     </li>
                                     <li>
-                                        <span>Lifetime</span><br /> Income Source
+                                        <span>Lifetime</span> Income Source
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 ">
-                            <div className="franchise-form" id="form-banner">
-                               {/* <OpenAccountForm />*/}
+                            <div className="franchise-form justify-content-end d-flex" id="form-banner">
+                                <SubBrokerForm />
                             </div>
                         </div>
                     </div>

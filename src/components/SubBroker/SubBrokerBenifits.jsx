@@ -84,7 +84,7 @@ function SubBrokerBenifits() {
                     <div className="item-next1">
                         <h3>Become a Choice Sub Broker</h3>
                         <p>Start Sub Broker franchise with a trustworthy partner that can help you to grow up.</p>
-                        <a href="#" className="franchise-same-btn"><span>Join Now</span> </a>
+                        <a href="#" className="btn-bg btn-bg-dark"><span>Join Now</span> </a>
                     </div>
                 </div>
                 </div>
