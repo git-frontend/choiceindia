@@ -83,7 +83,7 @@ function Routing() {
                         } />
 
 
-                        <Route exact path='/faq' element={
+                        <Route exact path='/Faq' element={
                             <React.Suspense>
                                 < LazyFaq />
                             </React.Suspense>
