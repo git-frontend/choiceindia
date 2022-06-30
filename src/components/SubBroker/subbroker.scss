@@ -1,198 +1,7 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-.subv2-main {
-    font-size: 16px;
-    font-family: 'robotoregular';
-    scroll-behavior: smooth;
-}
 
-.choice-franchise-body {
-    background: #005cb908;
-}
-
-.signal-form {
-    position: relative;
-    z-index: 1;
-
-    .form-check-input {
-        margin: 4px 0 0;
-    }
-}
-
-input[type="radio"] {
-    margin: 4px 5px 0 0;
-}
-
-.termcon1 {
-    width: calc(100% - 20px);
-    font-size: 16px;
-}
-
-.form-group {
-    a {
-        font-weight: 700;
-        font-size: 16px;
-        color: #337ab7;
-    }
-}
-
-.form-btn {
-    font-size: 1.25rem;
-    background: #ffca05;
-    color: #231F20;
-    text-align: center;
-    display: inline-block;
-    overflow: hidden;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    padding: 0rem 3rem;
-    font-weight: 700;
-    border-radius: 30px;
-    text-decoration: none !important;
-    outline: none;
-    border: 0;
-    font-family: 'robotobold';
-    position: relative;
-    width: 100%;
-
-    span {
-        position: relative;
-        display: inline-block;
-        z-index: 1;
-    }
-
-    &:hover {
-        background: #231F20;
-
-        span {
-            color: #ffffff;
-            -webkit-animation: toTopFromBottom 0.7s forwards;
-            -moz-animation: toTopFromBottom 0.7s forwards;
-            animation: toTopFromBottom 0.7s forwards;
-        }
-    }
-}
-
-.write {
-    &:focus {
-        ~ {
-            .hello {
-                display: block;
-                top: -11px;
-                font-size: 16px;
-                color: rgba(0, 0, 0, 0.6);
-                background-color: #fff;
-                padding: 0 5px;
-            }
-        }
-    }
-
-    &:not(:placeholder-shown).write {
-        &:not(:focus) {
-            ~ {
-                .hello {
-                    display: block;
-                    top: -11px;
-                    font-size: 16px;
-                    color: rgba(0, 0, 0, 0.6);
-                    background-color: #fff;
-                    padding: 0 5px;
-                }
-            }
-        }
-    }
-}
-
-.mobilewrite {
-    &:focus {
-        ~ {
-            .hello {
-                top: -11px;
-                background: #fff;
-                font-size: 16px;
-                color: rgba(0, 0, 0, 0.6);
-                padding: 0 5px;
-            }
-        }
-    }
-
-    &:not(:placeholder-shown).mobilewrite {
-        &:not(:focus) {
-            ~ {
-                .hello {
-                    top: -11px;
-                    background: #fff;
-                    font-size: 16px;
-                    color: rgba(0, 0, 0, 0.6);
-                    padding: 0 5px;
-                }
-            }
-        }
-    }
-}
-
-a {
-    outline: none;
-}
-
-p {
-    opacity: 1;
-}
-
-.franchise-header-sec {
-    .header-sec-inner {
-        padding: 10px 0;
-        border-bottom: 1px solid #70707040;
-    }
-
-    .top-btn {
-        font-size: 1rem;
-        color: #FFFFFF;
-        background: #0068B3;
-        border: 0;
-        outline: none;
-        box-shadow: none;
-        border-radius: 27px;
-        text-decoration: none;
-        padding: 0.6rem 3rem;
-        display: inline-block;
-        position: relative;
-        overflow: hidden;
-
-        span {
-            position: relative;
-            display: inline-block;
-            font-family: 'robotoregular';
-        }
-
-        &:hover {
-            span {
-                color: #fff;
-                -webkit-animation: toTopFromBottom 0.5s forwards;
-                -moz-animation: toTopFromBottom 0.5s forwards;
-                animation: toTopFromBottom 0.5s forwards;
-            }
-
-            background: #231F20;
-        }
-    }
-}
-
-.franchise-header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    z-index: 99;
-    background: transparent;
-
-    .jiffy-franchise-logo {
-        max-height: 48px;
-        margin: 2rem 0 0 0;
-    }
-}
 
 .franchise-banner {
     background-size: 100% 100%;
@@ -233,25 +42,7 @@ p {
             margin: 1rem 0;
         }
 
-        h4 {
-            font-size: 2rem;
-            color: #ffffff;
-            font-family: 'GreycliffCF-Regular';
-            margin-bottom: 4rem;
-        }
-
-        h5 {
-            font-size: 2rem;
-            color: #ffffff;
-            font-family: 'GreycliffCFBold';
-            margin-bottom: 2rem;
-        }
-
-        .franchise-same-btn {
-            background: #060842;
-            height: 4.5rem;
-            line-height: 4.5rem;
-        }
+      
 
         .left-sec {
             padding-top: 1rem;
@@ -274,7 +65,7 @@ p {
             li {
                 width: 30%;
                 font-size: 1.675rem;
-                color: #ffffff;
+                color: $whiteColor;
                 font-family: $font-family-poppins-regular;
                 position: relative;
                 padding-top: 3.5rem;
@@ -307,100 +98,17 @@ p {
     }
 }
 
-.franchise-same-btn {
-    font-size: 1.25rem;
-    background: #ffca05;
-    color: #231F20;
-    text-align: center;
-    display: inline-block;
-    overflow: hidden;
-    height: 3.3rem;
-    line-height: 3.3rem;
-    padding: 0rem 3rem;
-    font-weight: 400;
-    border-radius: 30px;
-    text-decoration: none !important;
-    outline: none;
-    border: 0;
-    font-family: 'robotoregular';
-    position: relative;
 
-    span {
-        position: relative;
-        display: inline-block;
-        z-index: 1;
-    }
-
-    &:hover {
-        background: #231F20;
-
-        span {
-            color: #ffffff;
-            -webkit-animation: toTopFromBottom 0.7s forwards;
-            -moz-animation: toTopFromBottom 0.7s forwards;
-            animation: toTopFromBottom 0.7s forwards;
-        }
-    }
-
-    &:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-}
 
 .franchise-features {
     padding: 6rem 0 6rem 0;
-    font-family: 'robotoregular';
+   
     overflow: hidden;
 
     .row {
         margin: 0;
 
-        .franchise-features-slider {
-            position: static;
-            position: relative;
-            width: 95%;
-            margin: 0 auto;
-
-            .slick-slide {
-                transform: scale(0.7);
-                text-align: center;
-                transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-                opacity: 0.16;
-                margin-bottom: 3rem;
-
-                img {
-                    display: inline-block;
-                    max-width: 100%;
-                }
-
-                h4 {
-                    color: #3E404F;
-                    font-size: 2rem;
-                    font-weight: 500;
-                    font-family: 'GreycliffCF-Medium';
-                    margin-bottom: 2rem;
-                }
-            }
-
-            .slick-slide.slick-center {
-                transform: scale(1);
-                opacity: 1;
-            }
-
-            .slick-arrow {
-                position: absolute;
-                top: 50%;
-                transform: translate(0, -50%);
-                left: 0;
-                border: 1px solid #3E404F;
-            }
-
-            .slick-arrow.slick-next {
-                left: inherit;
-                right: 0;
-            }
-        }
+      
     }
 }
 
@@ -409,32 +117,6 @@ p {
     text-align: center;
     position: relative;
 
-    h1 {
-        font-family: 'GreycliffCF-Heavy';
-        color: #231F20;
-        opacity: 0.05;
-        text-transform: uppercase;
-        position: relative;
-        font-size: 7.167rem;
-        font-weight: bold;
-        padding: 0;
-        margin: 0;
-    }
-
-    h3 {
-        font-family: 'GreycliffCFBold';
-        color: #231F20;
-        position: relative;
-        font-size: 2.5rem;
-        padding: 0;
-        margin: 0;
-        font-weight: bold;
-        top: 50%;
-        position: absolute;
-        left: 0;
-        right: 0;
-        transform: translate(0, -50%);
-    }
 }
 
 .franchise-benifits {
@@ -444,7 +126,7 @@ p {
     .franchise-benifits-cont {
         display: flex;
         width: 100%;
-        background: #2D77F4;
+        background: $bluetext;
         align-items: end;
         border-radius: 15px;
         padding: 1.25rem;
@@ -458,7 +140,7 @@ p {
             padding: 1.35rem 1.5rem;
             padding: 2.35rem;
             padding-right: 3rem;
-            background: #2D77F4;
+            background: $bluetext;
             border-radius: 0;
             border-left: 1px solid #4389ff;
 
@@ -475,21 +157,10 @@ p {
                 }
             }
 
-            h4 {
-                font-size: 1.8rem;
-                color: #3E404F;
-                font-family: 'GreycliffCF-Regular';
-                font-weight: 400;
-                text-transform: capitalize;
-                margin-top: 4rem;
-                min-height: 4.5rem;
-                line-height: 2.2rem;
-                color: #ffffff;
-                opacity: 1;
-            }
+            
 
             &:hover {
-                background: #ffffff;
+                background: $whiteColor;
                 border-radius: 15px;
                 box-shadow: 0px 6px 18px #00000029;
 
@@ -536,34 +207,8 @@ p {
             position: relative;
             padding-right: 3rem;
 
-            h3 {
-                font-family: 'GreycliffCFBold';
-                font-size: 1.5rem;
-                display: flex;
-                margin: 0;
-                padding: 0;
-                color: #3E404F;
-                align-items: center;
 
-                span {
-                    padding-right: 1.5rem;
-                    font-size: 2.5rem;
-                    font-weight: bold;
-                }
-            }
-
-            &::before {
-                content: '';
-                width: 2.667rem;
-                height: 2.667rem;
-                border-radius: 50%;
-                border: 1px solid #3E404F;
-                display: block;
-                position: absolute;
-                right: 0;
-                top: 0;
-                /*background: url(../images/sub-broker2/plus1.svg) no-repeat center;*/
-            }
+           
         }
 
         .accordion-content-franchise {
@@ -582,134 +227,10 @@ p {
         }
     }
 
-    .content-entry-franchise.open {
-        .article-title-franchise {
-            h3 {
-                color: #005CB9;
-            }
-
-            &::before {
-                /* background: url(../images/sub-broker2/minus1.svg) no-repeat center; */
-            }
-        }
-    }
+    
 }
 
 
-
-.otp-dialog {
-    .dialog-content {
-        width: 300px;
-        width: 300px;
-    }
-
-    .dialog-section {
-        overflow-x: hidden;
-        overflow-x: hidden;
-    }
-}
-
-.open-account-form {
-    /* background: url("../../../assets/images/demat-banner.png") no-repeat; */
-    background-size: cover;
-    background-position: bottom center;
-    padding: 100px 0;
-}
-
-
-
-.form-card {
-    padding: 50px;
-    background: #ffffff;
-    border-radius: 30px;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
-}
-
-.head-title {
-    color: #8a97a0;
-    font-weight: 600;
-    font-size: 22px;
-    line-height: 32px;
-    margin-top: 0;
-    text-align: center;
-}
-
-.sub-head-title {
-    color: #8a97a0;
-    font-weight: 600;
-    line-height: 32px;
-    margin-top: 0;
-    text-align: center;
-    font-size: 14px;
-}
-
-.br-line1 {
-    background: #fe616e;
-    width: 50px;
-    height: 4px;
-    margin: 10px auto 20px auto;
-}
-
-.m-auto {
-    margin: 0 auto;
-}
-
-.container {
-    max-width: 1200px;
-}
-
-.btn-gradient {
-    font-size: 18px;
-    font-weight: bold;
-    width: 100%;
-    max-width: 150px;
-    float: none;
-    display: block;
-}
-
-.otp-input {
-    /* background-image: url(../../../assets/images/otp4col.svg); */
-    background-position: left bottom;
-    background-size: 85% auto;
-    background-repeat: no-repeat;
-    width: 290px;
-    margin: 0 auto;
-    position: relative;
-    margin-right: -25px;
-
-    &:before {
-        content: "";
-        width: 0%;
-        background: #ffffff;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: 10%;
-    }
-
-    input {
-        width: 100%;
-        outline: none;
-        letter-spacing: 30px;
-        font-size: 20px;
-        border: none;
-        background: transparent;
-        padding-left: 6px;
-        padding-bottom: 5px;
-    }
-}
-
-.resend-btn {
-    background: transparent;
-    text-align: center;
-    display: block;
-    width: 100%;
-    color: #337ab7;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-}
 
 .demat-banner {
     .card-body {
@@ -724,211 +245,21 @@ p {
 .faqSection {
     padding: 100px 0;
     background: #fafbfd;
-    background: #ffffff;
+    background: $whiteColor;
 }
 
-.input-group {
-    width: 100%;
-    border-bottom: 1px solid #e3e3e3;
-    padding: 0px 10px;
 
-    .form-control {
-        border: none;
-        border-radius: 0px;
-        height: 45px;
-        font-size: 16px;
-        padding-left: 0px;
-        padding-right: 0px;
-        color: #000000;
-        outline: none;
-        background: transparent;
-        box-shadow: none;
 
-        &:focus {
-            border-color: #e3e3e3;
-            outline: none;
-            box-shadow: none;
-        }
-    }
 
-    .input-group-addon {
-        background: #ffffff;
-        color: #c7c7c7;
-        border-radius: 0px;
-        font-size: 20px;
-        border-color: #e3e3e3;
-        border: none;
-        padding-left: 0px;
 
-        &:last-child {
-            padding-right: 0px;
-            padding-left: 12px;
-        }
 
-        button {
-            padding: 0;
-            background: transparent;
-            box-shadow: none;
-            color: #c7c7c7;
-        }
-    }
-}
 
-.btn-primary {
-    border: none;
-    border-radius: 30px;
-    box-shadow: -1px 0px 8px 6px rgba(241, 242, 255, 0.76);
-    padding: 10px 20px;
-    background-image: linear-gradient(to right, #ffc174 0%, #fe616e 100%);
-    text-transform: uppercase;
-}
 
-.error {
-    color: red;
-    font-size: 14px;
-    padding-top: 5px;
-    margin: 0;
-}
 
-.svg-wrap {
-    margin-top: 50px;
-}
 
-.segments-wrapper {
-    padding: 50px 0;
 
-    .segments {
-        padding: 90px 0px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* background-image: url("../../../assets/images/different-segments.png"); */
-        background-position: bottom center;
-        background-size: contain;
-        background-repeat: no-repeat;
 
-        div {
-            padding: 0 25px;
-        }
 
-        img {
-            display: block;
-            margin: 0 auto;
-        }
-
-        p {
-            margin-top: 15px;
-            text-align: center;
-            color: #000000;
-            font-weight: 700;
-
-            span {
-                display: block;
-            }
-        }
-    }
-}
-
-.customer-service {
-    padding: 50px 0;
-    background: #f5f5f5;
-    color: #8a97a0;
-    font-weight: bold;
-    font-size: 21px;
-}
-
-.demat-offer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 30px 0 70px 0;
-
-    .offers {
-        width: 48%;
-        padding: 30px;
-        box-shadow: 0px 3px 7px #fe646e;
-        display: flex;
-        align-items: center;
-        border-radius: 10px;
-        min-height: 135px;
-        box-shadow: 0px 3px 6px #2D77F499;
-
-        i {
-            font-size: 60px;
-            color: #fe6b74;
-            margin-right: 30px;
-            color: #2D77F4;
-        }
-
-        .offer-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #333333;
-        }
-    }
-}
-
-.contact-wrapper {
-    padding: 70px;
-    margin-top: 100px;
-    text-align: center;
-    /* background: url("../../../assets/images/blue-theme/contact-bg.png") no-repeat; */
-    background-size: cover;
-    background-position: center;
-    border-radius: 15px;
-    overflow: hidden;
-
-    h2 {
-        color: #ffffff;
-        margin-bottom: 50px;
-        margin-top: 0px;
-        font-size: 34px;
-        font-weight: 600;
-        font-family: "Montserrat";
-    }
-
-    .btn-wrap {
-        .btn-white {
-            padding: 10px 30px;
-            font-size: 20px;
-            color: #fe646e;
-            background: #ffffff;
-            box-shadow: 0px 1px 12px rgba(0, 0, 0, 0.2);
-            box-shadow: 0px 1px 10px #00000014;
-            border-radius: 5px;
-            color: #2D77F4;
-            font-family: 'PassengerSansRegular';
-
-            + {
-                .btn-white {
-                    margin-left: 40px;
-                }
-            }
-        }
-    }
-}
-
-.btn-2 {
-    margin-right: 20% !important;
-}
-
-.mr-2 {
-    margin-left: 1%;
-}
-
-.close-btn {
-    &::after {
-        float: right;
-        font-size: 28px;
-        font-weight: 400;
-        display: inline-block;
-        content: "\00d7";
-        padding: -9px;
-        margin: -10px;
-        margin-right: 10px;
-        cursor: pointer;
-    }
-}
 
 .ul-p {
     font-size: 1.333rem;
@@ -937,20 +268,11 @@ p {
     padding-left: 18px;
 }
 
-.disclaimer {
-    padding-top: 20px;
-    margin-bottom: -10%;
-    text-align: center;
 
-    .details {
-        width: 82%;
-        padding-left: 211px;
-    }
-}
 
 .franchise-how-works {
     padding: 7rem 0 !important;
-    background: #ffffff;
+    background: $whiteColor;
 
     .franchise-works-cont {
         margin-left: 4rem;
@@ -1003,7 +325,7 @@ p {
 
             p {
                 font-size: 12rem;
-                color: #2D77F4;
+                color: $bluetext;
                 font-family: 'GreycliffCF-Heavy';
                 font-weight: 800;
                 margin: 0;
@@ -1057,8 +379,8 @@ p {
         }
 
         &:hover {
-            border: 1px solid #2D77F4;
-            color: #2D77F4;
+            border: 1px solid $bluetext;
+            color: $bluetext;
         }
     }
 
@@ -1088,7 +410,7 @@ p {
                 height: 6px;
                 margin: 0 5px;
                 opacity: 0.2;
-                background: #2D77F4;
+                background: $bluetext;
                 border-radius: 50%;
 
                 &::before {
@@ -1103,8 +425,8 @@ p {
             opacity: 1;
 
             button {
-                border-color: #0068B3;
-                background-color: #0068B3;
+                border-color: $blueColortext;
+                background-color: $blueColortext;
                 width: 26px;
             }
         }
@@ -1113,7 +435,7 @@ p {
 
 .vedio-sec {
     padding: 100px 0 80px 0;
-    background: #ffffff;
+    background: $whiteColor;
 
     .vedio-item {
         display: block;
@@ -1133,13 +455,13 @@ p {
 
             h4 {
                 font-size: 2rem;
-                color: #FFFFFF;
+                color: $whiteColor;
                 font-family: 'GreycliffCF-Heavy';
             }
 
             h5 {
                 font-size: 1.5rem;
-                color: #FFFFFF;
+                color: $whiteColor;
                 font-family: 'GreycliffCFBold';
             }
         }
@@ -1235,7 +557,7 @@ p {
 
         .sl-slider.slick-center {
             .benifits-item {
-                background: #ffffff;
+                background: $whiteColor;
                 box-shadow: 10px 6px 26px #00000012;
 
                 span {
@@ -1294,7 +616,7 @@ p {
                     -ms-border-radius: 2px;
                     -o-border-radius: 2px;
                     border-radius: 2px;
-                    background-color: #0068b34d;
+                    background-color: #0068B34d;
                     border: none;
                     position: relative;
                     z-index: 1;
@@ -1309,8 +631,8 @@ p {
             li.slick-active {
 
                 button {
-                    border-color: #0068B3;
-                    background-color: #0068B3;
+                    border-color: $blueColortext;
+                    background-color: $blueColortext;
                     width: 26px;
                 }
             }
@@ -1352,7 +674,7 @@ p {
 }
 
 .broker-franchise-wrapper {
-    background: #ffffff;
+    background: $whiteColor;
     overflow: hidden;
     width: 100%;
     margin: 0 auto;
@@ -1434,9 +756,9 @@ p {
         .more-list-item {
             width: 47%;
             margin-left: 3%;
-            border: 1px solid #0068B3;
+            border: 1px solid $blueColortext;
             border-radius: 18px;
-            background: #ffffff;
+            background: $whiteColor;
             display: flex;
             align-items: center;
             flex-wrap: wrap;
@@ -1526,7 +848,7 @@ p {
 
             h6 {
                 font-size: 1.325rem;
-                color: #ffffff;
+                color: $whiteColor;
                 font-family: $font-family-poppins-medium;
             }
         }
@@ -1559,7 +881,7 @@ p {
 
         .slider-eligb {
             width: 230px;
-            background: #ffffff;
+            background: $whiteColor;
             box-shadow: 10px 6px 26px #0000001A;
             border-radius: 8px;
             position: absolute;
@@ -1621,7 +943,7 @@ p {
                         -ms-border-radius: 2px;
                         -o-border-radius: 2px;
                         border-radius: 2px;
-                        background-color: #0068b34d;
+                        background-color: #0068B34d;
                         border: none;
                         position: relative;
                         z-index: 1;
@@ -1635,8 +957,8 @@ p {
 
                 li.slick-active {
                     button {
-                        border-color: #0068B3;
-                        background-color: #0068B3;
+                        border-color: $blueColortext;
+                        background-color: $blueColortext;
                         width: 26px;
                     }
                 }
@@ -1718,7 +1040,7 @@ p {
     .offers-table-sec {
         border: 1px solid rgba(194, 194, 194, 0.3);
         border-radius: 8px;
-        background: #ffffff;
+        background: $whiteColor;
         padding: 0;
         margin-top: 3.5rem;
         position: relative;
@@ -1774,7 +1096,7 @@ p {
         margin-top: 1.5rem;
 
         .trm-link {
-            color: #0068B3;
+            color: $blueColortext;
             font-size: 1rem;
             text-decoration: underline;
             font-weight: 400;
@@ -1866,7 +1188,7 @@ p {
                 position: sticky;
                 bottom: 0;
                 left: 0;
-                background: #fff;
+                background: $whiteColor;
                 filter: blur(25px);
                 z-index: 9;
             }
@@ -1885,7 +1207,7 @@ p {
                     width: 0.625rem;
                     height: 0.625rem;
                     border-radius: 50%;
-                    background: #0068B3;
+                    background: $blueColortext;
                     display: block;
                     position: absolute;
                     left: 0;
@@ -1911,8 +1233,8 @@ p {
 
     &::-webkit-scrollbar-thumb {
         border-radius: 0;
-        -webkit-box-shadow: inset 0 0 6px #0068B3;
-        background-color: #0068b3;
+        -webkit-box-shadow: inset 0 0 6px $blueColortext;
+        background-color: $blueColortext;
         border-radius: 10px;
     }
 }
@@ -2573,7 +1895,7 @@ p {
 
             .slick-center {
                 .benifits-item {
-                    background: #ffffff;
+                    background: $whiteColor;
                     box-shadow: 10px 6px 26px #00000012;
                 }
             }
