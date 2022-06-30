@@ -9,45 +9,45 @@ body{
     padding: 0 !important;
 }
 
-.bannersection{
-    .wrap{
+.bannersection {
+    .wrap {
         display: flex;
         // max-height: 647px;
-        .text{
+        .text {
             background-color: #221F20;
             width: 25%;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             @media screen and (max-width:767px) {
                 width: 100%;
-         }
-            h1{
+            }
+
+            h1 {
                 color: #F5F5F5;
-                text-align: left;
-                position: relative;
-                top: 50%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
                 font-size: 4.125rem;
                 line-height: 6.1875rem;
                 font-family: $font-family-poppins-bold;
+
                 @media screen and (max-width:767px) {
                     top: 0;
                     font-size: 3rem;
                     line-height: 4rem;
                     padding: 2rem;
-             }
+                }
             }
         }
-        .img{
+
+        .img {
             width: 75%;
+
             @media screen and (max-width:767px) {
-                   display: none; 
+                display: none;
             }
         }
     }
- 
 }
 
 .countsect{
