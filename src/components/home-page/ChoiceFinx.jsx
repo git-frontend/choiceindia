@@ -46,11 +46,11 @@ function ChoiceFinx() {
                         return (
                           <div className="app-list-item" key={response.id}>
                             <a href="/" data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
-                              <LazyLoader src={response.icon} className="img-fluid" alt="Loading" />
+                                    <LazyLoader src={response.icon} className="img-fluid" alt="Loading" width={"40"} height={"40"} />
                               {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
                               <h4>{response.title}</h4>
                               <p>{response.description}</p>
-                            </a>
+                            </a> 
                           </div>
 
 
@@ -81,7 +81,7 @@ function ChoiceFinx() {
                   </div>
                 </div>
                 <div className="finx-app-img workImages">
-                  <LazyLoader src={FinxImage[store].image} className="" alt="Loading" />
+                                  <LazyLoader src={FinxImage[store].image} className="" alt="Loading" width={"260"} height={"527"}/>
                   {/* <img src={FinxImage[store].image} className="" alt="Loading" /> */}
                 </div>
                 <div className="expl-app" onClick={() => Detect()}>

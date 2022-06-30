@@ -6,8 +6,7 @@ import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGlassMartiniAlt, faLink } from '@fortawesome/free-solid-svg-icons';
+
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import contactService from '../../Services/contactService'
 function Contactbanner() {
@@ -98,7 +97,7 @@ function Contactbanner() {
           main ? <img src={""} className="ban-img1" alt="Loading" /> :
             <img src={Bannerimage} className="ban-img" alt="Loading" />
         } */}
-              <img src={Bannerimage} className="ban-img" alt="Loading" />
+                          <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"}  />
               <div className='banner-caption'>
                 <div className='container'>
                   <div className='row'>

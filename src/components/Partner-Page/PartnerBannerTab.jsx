@@ -1,20 +1,14 @@
 
 import React from "react";
 import { useState } from "react";
-import  StckImage  from '../../assets/images/partner/stock-banner.png';
-import  MutualFundsImage  from '../../assets/images/partner/mutual-funds-banner.png';
-import  InsuranceImage  from '../../assets/images/partner/insurance-banner.png';
-import  LoansImage  from '../../assets/images/partner/loans-banner.png';
-import  BenefitsBanner  from '../../assets/images/partner/benifit-banner.png';
+import  StckImage  from '../../assets/images/partner/partners-stock-banner.gif';
+import  MutualFundsImage  from '../../assets/images/partner/partners-mutual-funds-banner.gif';
+import  InsuranceImage  from '../../assets/images/partner/partners-insurance-banner.gif';
+import  LoansImage  from '../../assets/images/partner/partners-loans-banner.gif';
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
 import  ImageSub4  from '../../assets/images/icons/insurance.svg';
 import  ImageSub5  from '../../assets/images/icons/loan.svg';
-import  NoCash  from '../../assets/images/partner/no-cash.svg';
-import  Service  from '../../assets/images/partner/service.svg';
-import  ZeroRupees  from '../../assets/images/partner/zero-rupees.svg';
-import  CashFlow  from '../../assets/images/partner/cash-flow.svg';
-import  Clock  from '../../assets/images/partner/clock.svg';
 
 
 
@@ -47,7 +41,7 @@ function PartnerBannerTab() {
                         <a href="/" className="btn-bg">Register</a>
                       </div>
                       <div className="tab-cont-right">
-                          <img src={StckImage} alt="Become a Stock Market Agent" />
+                                  <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} />
                       </div>
                   </div>    
               </div>
@@ -64,7 +58,7 @@ function PartnerBannerTab() {
                         <a href="/" className="btn-bg">Register</a>
                       </div>
                       <div className="tab-cont-right">
-                          <img src={MutualFundsImage} alt="Become a Stock Market Agent" />
+                                  <img src={MutualFundsImage} alt="Become a Stock Market Agent" width={"521"} height={"453"}/>
                       </div>
                   </div>
               </div>
@@ -81,7 +75,7 @@ function PartnerBannerTab() {
                         <a href="/" className="btn-bg">Register</a>
                       </div>
                       <div className="tab-cont-right">
-                          <img src={InsuranceImage} alt="Become a Stock Market Agent" />
+                                  <img src={InsuranceImage} alt="Become a Stock Market Agent" width={"521"} height={"453"}/>
                       </div>
                   </div>
               </div>
@@ -98,7 +92,7 @@ function PartnerBannerTab() {
                         <a href="/" className="btn-bg">Register</a>
                       </div>
                       <div className="tab-cont-right">
-                          <img src={LoansImage} alt="Become a Stock Market Agent" />
+                                  <img src={LoansImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} />
                       </div>
                   </div>
               </div>
@@ -109,7 +103,7 @@ function PartnerBannerTab() {
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(1)}
               >
-                <img src={ImageSub2} alt="Stocks" />
+                          <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} />
                 <h4>Stocks</h4>
                 
               </button>
@@ -117,7 +111,7 @@ function PartnerBannerTab() {
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}
               >
-                <img src={ImageSub3} alt="Mutual Funds" />
+                          <img src={ImageSub3} alt="Mutual Funds" width={"71"} height={"71"} />
                 <h4>Mutual Funds</h4>
                 
               </button>
@@ -126,7 +120,7 @@ function PartnerBannerTab() {
                 onClick={() => toggleTab(3)}
               >
 
-               <img src={ImageSub4} alt="Insurance" />
+                          <img src={ImageSub4} alt="Insurance" width={"70"} height={"70"}/>
                 <h4>Insurance</h4>
                 
               </button>
@@ -134,7 +128,7 @@ function PartnerBannerTab() {
                 className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(4)}
               >
-                <img src={ImageSub5} alt="Loans" />
+                          <img src={ImageSub5} alt="Loans" width={"70"} height={"71"}/>
                 <h4>Loans</h4>
                 
               </button>

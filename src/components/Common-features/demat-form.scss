@@ -1,0 +1,68 @@
+
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+.demat-account-form{
+    box-shadow: 0px 0px 15px #00000040;
+    border-radius: 20px;
+    background: $whiteColor;
+    padding: 3rem 2rem 2rem 2rem;
+    max-width: 30rem;
+    position: relative;
+    z-index: 999;
+    .sub-formgrp{
+        margin-bottom: 1.5rem;
+        .formcontrol{
+            background: $whiteColor;
+            outline: none;
+            box-shadow: inherit;
+            border: 1px solid #0068B3;
+            padding: 1.4rem 1.5rem;
+            border-radius: 12px;
+            font-family: $font-family-poppins-regular;
+            font-size: 1.2rem;
+            
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
+        }
+        &.cust-checkbox{
+            display: flex;
+            align-items: flex-start;
+            .form-check{
+                margin-right: 0;
+            }
+            .lbl{
+                font-size: 1.2rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+                .link-tc{
+                    color: #0068B3;
+                    font-family:$font-family-poppins-semibold;
+                    text-decoration: none;
+                    display: block;
+                }
+            }
+        }
+        .sendbtn{
+            width: 100%;
+            &:hover{
+                background: $primary !important;
+                color: $whiteColor !important;
+            }
+        }
+    }
+    .form-ttl{
+        text-align: center;
+        font-size: 2rem;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        margin-bottom: 3rem;
+    }
+    @media (max-width: $sm-x) {
+        width: 100%;
+        max-width: inherit;
+    }
+}

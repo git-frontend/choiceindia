@@ -4,7 +4,7 @@
     font-family: $font-family-poppins-semibold;
     color: $whiteColor !important;
     background: $bgcolordark !important;
-    padding: 1.3rem 2rem !important;
+    padding: 1.3rem 3rem !important;
     display: inline-block;
     border-radius: 16px !important;
     min-width: 16rem;
@@ -33,6 +33,7 @@
         color: $bgcolordark !important;
         &:hover{
             background: $whiteColor !important;
+            @extend.box-shadow;
         }
     }
 }
@@ -105,7 +106,7 @@
         width: auto;
         padding: 0.5rem 1.5rem;
         margin-right: 1.5rem;
-
+        white-space: nowrap;
         .whitecolor {
             color: $whiteColor;
             font-size: 15px;
@@ -152,6 +153,9 @@
 
         span {
             padding-left: 10px;
+        }
+        @media (max-width: $sm-x) {
+            margin-right: 0.5rem;
         }
     }
 

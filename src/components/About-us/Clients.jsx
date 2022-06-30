@@ -26,43 +26,43 @@ function Clients() {
                 <Marquee direction="left" speed={150} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider">
                   <div className="image_wrapper">
                     {/**<LazyLoader src={nitiaayog} alt="" />*/}
-                     <img src={nitiaayog} alt="" /> 
+                     <img src={nitiaayog} width="209" height="191" alt="" /> 
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={libertyinsurance} alt="" >*/}
-                     <img src={libertyinsurance} alt="" />
+                     <img src={libertyinsurance} width="313" height="111" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={aadhar} alt="" />*/}
-                    <img src={aadhar} alt="" />
+                    <img src={aadhar} width="183" height="118" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={navkar} alt="" />*/}
-                    <img src={navkar} alt="" />
+                    <img src={navkar} width="307" height="208" alt="" />
                   </div>
                   <div className="image_wrapper">
-                    {/**<LazyLoader src={idea} alt="" />*/}
-                    <img src={idea} alt="" />
+                                      {/**<LazyLoader src={idea} alt="" />*/}
+                                      <img src={idea} width="120" height="124" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={nitiaayog} alt="" />*/}
-                    <img src={nitiaayog} alt="" />
+                    <img src={nitiaayog} width="209" height="191" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={libertyinsurance} alt="" />*/}
-                     <img src={libertyinsurance} alt="" />
+                     <img src={libertyinsurance} width="313" height="111" alt="" />
                   </div>
                   <div className="image_wrapper">
                       {/**<LazyLoader src={aadhar} alt="" />*/}
-                     <img src={aadhar} alt="" /> 
+                                      <img src={aadhar} width="183" height="118" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={navkar} alt="" />*/}
-                     <img src={navkar} alt="" /> 
+                                      <img src={navkar} width="307" height="208" alt="" />
                   </div>
                   <div className="image_wrapper">
                     {/**<LazyLoader src={idea} alt="" />*/}
-                    <img src={idea} alt="" /> 
+                                      <img src={idea} width="120" height="124" alt="" />
                   </div>
                 </Marquee>
 

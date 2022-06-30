@@ -21,7 +21,7 @@ function Insurance() {
             <div className="row gx-5 align-items-center mb-5">
                 <div className="col-md-4">
                     <div className="rightsec">
-                        <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img>
+                              <img src={Bannerimage} alt="Banner Images" className="img-fluid " width={"410"} height={"294"}></img>
                     </div>
                 </div>
                 <div className="col-md-8">

@@ -1,0 +1,7 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 10" width="21" height="10">
+	<title>arrow-thin-svg</title>
+	<style>
+		.s0 { fill: #221f20 } 
+	</style>
+	<path id="Layer" class="s0" d="m0 5.1l4.9-4.6 1 0.9-3.2 3.1h18.2v1.2h-18.2l3.2 3.1-1 0.8z"/>
+</svg>

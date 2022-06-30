@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 
-export default function LazyLoader({ src,className, alt }) {
+export default function LazyLoader({ src,className, alt , width, height}) {
   const ref = useRef(null);
   const io = useRef(null);
   const temp = src;
@@ -33,5 +33,5 @@ export default function LazyLoader({ src,className, alt }) {
 
   }, [ref,temp]);
 
-  return <img ref={ref} className={className} alt={alt} />;
+  return <img ref={ref} className={className} alt={alt} width={width} height={height} />;
 }
