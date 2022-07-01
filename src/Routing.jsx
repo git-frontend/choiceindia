@@ -25,7 +25,7 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
-const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
+const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
 const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
@@ -33,6 +33,7 @@ const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/Sumeet
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
+const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 
 function Routing() {
     return (
@@ -122,6 +123,11 @@ function Routing() {
                         <Route exact path='/Sumeet-Bagadia' element={
                             <React.Suspense>
                                 < Lazymarketing />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/Sub-Broker' element={
+                            <React.Suspense>
+                                < Lazysubbroker />
                             </React.Suspense>
                         } />
 
