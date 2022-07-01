@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\assets",
+    "\\src\\assets\\css",
     "\\src\\components",
-    "\\src\\components\\SumeetBagadia"
+    "\\src\\components\\CodeConduct"
   ],
-  "SelectedNode": "\\src\\components\\SumeetBagadia\\sumeetbagadia.scss",
+  "SelectedNode": "\\src\\Routing.jsx",
   "PreviewInSolutionExplorer": false
 }
