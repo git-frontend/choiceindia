@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise.png';
+import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
 import SubBrokerForm from './SubBrokerForm'
 
 function BannerSBroker() {
