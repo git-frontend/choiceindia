@@ -1,0 +1,439 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+body{
+    background-color:  $whiteColor;
+}
+
+.p0{
+    padding: 0 !important;
+}
+
+.bannersection {
+    .wrap {
+        display: flex;
+        // max-height: 647px;
+        .text {
+            background-color: $bgcolordark;
+            width: 25%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media screen and (max-width:767px) {
+                width: 100%;
+            }
+
+            h1 {
+                color: $lightColor;
+                font-size: 4.125rem;
+                line-height: 6.1875rem;
+                font-family: $font-family-poppins-bold;
+
+                @media screen and (max-width:767px) {
+                    top: 0;
+                    font-size: 3rem;
+                    line-height: 4rem;
+                    padding: 2rem;
+                }
+            }
+        }
+
+        .img {
+            width: 75%;
+
+            @media screen and (max-width:767px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.countsect {
+    padding: 9.125rem 0;
+
+    @media screen and (max-width:767px) {
+        padding: 5.125rem 0;
+    }
+
+    .counttext {
+        color: $primary;
+        font-size: 3.5rem;
+        line-height: 5.25rem;
+        font-family: $font-family-poppins-regular;
+        font-weight: 600;
+
+        @media screen and (max-width:767px) {
+            font-size: 2rem;
+        }
+    }
+
+    .count {
+
+        .number {
+            font-size: 4.125rem;
+            line-height: 6.1875rem;
+            font-weight: 700;
+            font-family: $font-family-poppins-bold;
+            display: flex;
+            align-items: center;
+
+            @media screen and (max-width:767px) {
+                font-size: 3.125rem;
+            }
+
+            .green {
+                color: #0BA04A;
+            }
+
+            .result {
+                display: flex;
+                flex-direction: column;
+                padding-left: 10px;
+
+                svg {
+                    height: 1.875rem;
+                    width: 1.875rem;
+                }
+
+                .percentage {
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    color: $primary;
+
+                    .green {
+                        color: #0BA04A;
+                    }
+                }
+            }
+        }
+    }
+
+    .subtextwrap {
+
+        .nse {
+            width: 30%;
+
+            .subtext {
+                color: #707070;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+            }
+        }
+
+        .time {
+            width: 70%;
+
+            .subtext {
+                color: #707070;
+                font-size: 1.375rem;
+                line-height: 2.25rem;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+            }
+        }
+    }
+}
+
+.Investormenu {
+    padding: 2rem 0 9.125rem;
+    position: relative;
+
+    &:after {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 40rem;
+        width: 25rem;
+        left: 0;
+        top: -9%;
+        z-index: -1;
+        background: url('../../assets/images/investor-info/investorinfoafterimage.png') top left no-repeat;
+        background-size: contain;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 40rem;
+        width: 43rem;
+        right: 0;
+        bottom: -76px;
+        z-index: -1;
+        background: url('../../assets/images/investor-info/info-bottom.png') bottom right no-repeat;
+        background-size: contain;
+    }
+
+    .title {
+        color: $primary;
+        font-size: 3.5rem;
+        line-height: 5.25rem;
+        font-family: $font-family-poppins-regular;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 4.75rem;
+    }
+
+    .wrap {
+        background: $whiteColor;
+        border: 1px solid rgba(194, 194, 194, 0.3);
+        padding: 1.875rem 1.5625rem;
+        border-radius: 1.25rem;
+        margin-bottom: 1.875rem;
+
+        .head {
+            color: $primary;
+            font-size: 1.8rem;
+            line-height: 2.4375rem;
+            font-weight: 600;
+            font-family: $font-family-poppins-regular;
+            padding-bottom: 10px;
+
+            @media screen and (max-width:767px) {
+                font-size: 1.5rem;
+            }
+        }
+
+        .subtext {
+            color: #707070;
+            font-size: 1.5rem;
+            line-height: 2rem;
+            font-weight: 400;
+            font-family: $font-family-poppins-regular;
+        }
+
+        .links {
+            color: #0066B3;
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+            font-weight: 600;
+            font-family: $font-family-poppins-regular;
+            text-decoration: none;
+        }
+
+        .detail {
+            display: flex;
+            border-bottom: 1px solid rgba(194, 194, 194, 0.3);
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+
+            &:last-child {
+                border-bottom: none;
+                margin-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .subhead {
+                color: $primary;
+                font-size: 1.5rem;
+                line-height: 1.25rem;
+                font-weight: 500;
+                font-family: $font-family-poppins-regular;
+                width: 20%;
+
+                @media screen and (max-width:767px) {
+                    width: 30%;
+                    font-size: 1.4rem;
+                }
+            }
+
+            .info {
+                width: 80%;
+                color: #707070;
+                font-size: 1.5rem;
+                line-height: 1.875rem;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+
+                @media screen and (max-width:767px) {
+                    width: 70%;
+                    font-size: 1.4rem;
+                    word-break: break-all;
+                }
+            }
+        }
+    }
+}
+
+.Yeardetail {
+    .investor-info-tabs {
+        margin-bottom: 3rem;
+        position: relative;
+
+        .yearlist {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow: inherit;
+            top: -5rem;
+            justify-content: space-between;
+
+            .tabs {
+                color: #221F20BF;
+                display: block;
+                position: relative;
+                text-decoration: none;
+                font-family: $font-family-poppins-medium;
+                border: 0;
+                font-size: 1.75rem;
+                background: inherit;
+                border: 0;
+
+                @media (max-width: $md) {
+                    padding: 1rem 0;
+                }
+
+                &.active-tabs {
+                    font-family: $font-family-poppins-semibold;
+
+                    &::before {
+                        content: "";
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        display: block;
+                        background: $bgcolordark;
+                        position: absolute;
+                        bottom: -0.5rem;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        border-radius: 2px;
+
+                        @media (max-width: $md) {
+                            bottom: 0;
+                        }
+                    }
+                }
+
+                &:hover {
+                    &::before {
+                        content: "";
+                        width: 0.5rem;
+                        height: 0.5rem;
+                        display: block;
+                        background: $bgcolordark;
+                        position: absolute;
+                        bottom: -0.5rem;
+                        left: 0;
+                        right: 0;
+                        margin: 0 auto;
+                        border-radius: 2px;
+
+                        @media (max-width: $md) {
+                            bottom: 0;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: $md) {
+                overflow: auto;
+            }
+        }
+
+        .content-tabs {
+            flex-grow: 1;
+
+            .banner-tab-cont {
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+
+                .tab-cont-left {
+                    width: 100%;
+                    padding-top: 5rem;
+                    padding-right: 3rem;
+
+                    .btn-bg {
+                        margin-top: 4rem;
+                    }
+
+                    @media (max-width:$sm-x) {
+                        width: 100%;
+                        padding: 3rem 0;
+                        text-align: center;
+                    }
+
+                    .accordion-item {
+                        background: $whiteColor;
+                        border: 1px solid rgba(194, 194, 194, 0.3);
+                        border-radius: 1.25rem;
+                        margin-bottom: 1.875rem;
+
+                        .accordion-button {
+                            padding: 1.875rem 1.5625rem;
+                            font-size: 1.75rem;
+                            color: #221F20;
+                            line-height: 33px;
+                            font-family: $font-family-poppins-medium;
+                            background: transparent;
+
+                            &:focus {
+                                border: none;
+                                box-shadow: none;
+                            }
+
+                            &:after {
+                                background: url('../../assets/images/investor-info/plus.svg') no-repeat;
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                background-size: cover;
+                            }
+                        }
+
+                        .accordion-button:not(.collapsed) {
+                            &:after {
+                                background: none;
+                            }
+                        }
+
+                        .accordion-body {
+                            padding: 0px 1.5625rem 1.875rem;
+                            font-size: 1.5rem;
+
+                            .listing {
+                                list-style: none;
+                                padding-left: 0;
+                            }
+
+                            .list {
+                                margin-bottom: 20px;
+                                color: #707070;
+                                font-size: 1.5rem;
+                                line-height: 1.875rem;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                            }
+                        }
+
+                        .accordion-button:not(.collapsed) {
+                            color: #221F20;
+                            background-color: transparent;
+                            box-shadow: none;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .content {
+            background: $whiteColor;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+
+        .active-content {
+            display: block;
+        }
+    }
+}
+
