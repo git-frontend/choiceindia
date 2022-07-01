@@ -116,7 +116,7 @@ body{
             width: 30%;
 
             .subtext {
-                color: #707070;
+                color:$secondary;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
                 font-weight: 400;
@@ -128,7 +128,7 @@ body{
             width: 70%;
 
             .subtext {
-                color: #707070;
+                color:$secondary;
                 font-size: 1.375rem;
                 line-height: 2.25rem;
                 font-weight: 400;
@@ -199,7 +199,7 @@ body{
         }
 
         .subtext {
-            color: #707070;
+            color:$secondary;
             font-size: 1.5rem;
             line-height: 2rem;
             font-weight: 400;
@@ -207,7 +207,7 @@ body{
         }
 
         .links {
-            color: #0066B3;
+            color: $blueColortext;
             font-size: 1.5rem;
             line-height: 1.875rem;
             font-weight: 600;
@@ -243,7 +243,7 @@ body{
 
             .info {
                 width: 80%;
-                color: #707070;
+                color:$secondary;
                 font-size: 1.5rem;
                 line-height: 1.875rem;
                 font-weight: 400;
@@ -369,7 +369,7 @@ body{
                         .accordion-button {
                             padding: 1.875rem 1.5625rem;
                             font-size: 1.75rem;
-                            color: #221F20;
+                            color: $primary;
                             line-height: 33px;
                             font-family: $font-family-poppins-medium;
                             background: transparent;
@@ -404,7 +404,7 @@ body{
 
                             .list {
                                 margin-bottom: 20px;
-                                color: #707070;
+                                color: $secondary;
                                 font-size: 1.5rem;
                                 line-height: 1.875rem;
                                 font-weight: 400;
@@ -413,7 +413,7 @@ body{
                         }
 
                         .accordion-button:not(.collapsed) {
-                            color: #221F20;
+                            color: $primary;
                             background-color: transparent;
                             box-shadow: none;
                         }
