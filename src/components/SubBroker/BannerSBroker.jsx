@@ -19,7 +19,7 @@ function BannerSBroker() {
                                     <h2 className="tlt2">without Deposit*</h2>
                                 </div>
                                 <div className="right-sec">
-                                   <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-responsive" />
+                                   <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid"  />
                                 </div>
                             </div>
                             <div className="caption-blue-bar">

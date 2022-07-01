@@ -14,20 +14,20 @@ function WhyBecomeSubBroker () {
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">
                             <div className="counter-list">
-                                <div className="count-item wow fadeInUp" data-wow-delay="0.5s">
+                                <div className="count-item">
                                     <h3><span className="counter">4</span>L+</h3>
 
                                     <h6>Clients</h6>
                                 </div>
-                                <div className="count-item wow fadeInUp" data-wow-delay="0.8s">
+                                <div className="count-item">
                                     <h3><span className="counter">50</span></h3>
                                     <h6>Local Offices</h6>
                                 </div>
-                                <div className="count-item wow fadeInUp" data-wow-delay="1s">
+                                <div className="count-item">
                                     <h3><span className="counter">3000</span>+</h3>
                                     <h6>Franchises</h6>
                                 </div>
-                                <div className="count-item wow fadeInUp" data-wow-delay="1.5s">
+                                <div className="count-item">
                                     <h3><span className="counter">1500</span>+</h3>
                                     <h6>Employees</h6>
                                 </div>

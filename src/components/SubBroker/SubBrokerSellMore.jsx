@@ -27,25 +27,25 @@ const SubBrokerSellMore = () => {
                             <div className="sell-more-list">
                                 <div className="more-list-item">
                                     <span>
-                                        <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" />
+                                        <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
                                     </span>
                                     <h3 className="itm-ttl">Equity, Commodity &amp; Currency Broking</h3>
                                 </div>
-                                <div className="more-list-item wow fadeInRight" data-wow-delay="0.8s">
+                                <div className="more-list-item wow fadeInRight">
                                 <span>
-                                        <img src={MF} alt="Equity, Commodity &amp; Currency Broking" />
+                                        <img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
                                 </span>
                                 <h3 className="itm-ttl">Mutual Funds Distribution</h3>
                                 </div>
-                                <div className="more-list-item wow fadeInRight" data-wow-delay="0.8s">
+                                <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking" />
+                                        <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/>
                                     </span>
                                     <h3 className="itm-ttl">Insurance</h3>
                                 </div>
-                                <div className="more-list-item wow fadeInRight" data-wow-delay="0.8s">
+                                <div className="more-list-item wow fadeInRight">
                                 <span>
-                                        <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" />
+                                        <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
                                 </span>
                                 <h3 className="itm-ttl">Retail Loans</h3>
                             </div>
