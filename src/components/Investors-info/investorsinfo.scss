@@ -14,7 +14,7 @@ body{
         display: flex;
         // max-height: 647px;
         .text {
-            background-color: #221F20;
+            background-color: $bgcolordark;
             width: 25%;
             margin: 0 auto;
             display: flex;
@@ -26,7 +26,7 @@ body{
             }
 
             h1 {
-                color: #F5F5F5;
+                color: $lightColor;
                 font-size: 4.125rem;
                 line-height: 6.1875rem;
                 font-family: $font-family-poppins-bold;
@@ -50,61 +50,72 @@ body{
     }
 }
 
-.countsect{
-    padding:9.125rem 0;
+.countsect {
+    padding: 9.125rem 0;
+
     @media screen and (max-width:767px) {
-        padding:5.125rem 0;
- }
-    .counttext{
-        color: #221F20;
+        padding: 5.125rem 0;
+    }
+
+    .counttext {
+        color: $primary;
         font-size: 3.5rem;
         line-height: 5.25rem;
         font-family: $font-family-poppins-regular;
         font-weight: 600;
+
         @media screen and (max-width:767px) {
             font-size: 2rem;
-     }
+        }
     }
-    .count{
-       
-        .number{
-         
+
+    .count {
+
+        .number {
             font-size: 4.125rem;
             line-height: 6.1875rem;
             font-weight: 700;
             font-family: $font-family-poppins-bold;
             display: flex;
             align-items: center;
+
             @media screen and (max-width:767px) {
                 font-size: 3.125rem;
             }
-            .green{
+
+            .green {
                 color: #0BA04A;
             }
-            .result{
+
+            .result {
                 display: flex;
                 flex-direction: column;
-                padding-left: 10px ;
-                svg{
+                padding-left: 10px;
+
+                svg {
                     height: 1.875rem;
                     width: 1.875rem;
                 }
-                .percentage{
+
+                .percentage {
                     font-size: 1.5rem;
                     line-height: 2.25rem;
-                    color: #221F20;
-                    .green{
+                    color: $primary;
+
+                    .green {
                         color: #0BA04A;
                     }
                 }
             }
         }
     }
-    .subtextwrap{
-        
-        .nse{
+
+    .subtextwrap {
+
+        .nse {
             width: 30%;
-            .subtext{
+
+            .subtext {
                 color: #707070;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
@@ -112,9 +123,11 @@ body{
                 font-family: $font-family-poppins-regular;
             }
         }
-        .time{
+
+        .time {
             width: 70%;
-            .subtext{
+
+            .subtext {
                 color: #707070;
                 font-size: 1.375rem;
                 line-height: 2.25rem;
@@ -125,22 +138,38 @@ body{
     }
 }
 
-.Investormenu{
-    padding: 2rem  0 9.125rem;
+.Investormenu {
+    padding: 2rem 0 9.125rem;
     position: relative;
-    &:after{
+
+    &:after {
         content: '';
         position: absolute;
         display: block;
-        height: 53rem;
-        width: 18rem;
+        height: 40rem;
+        width: 25rem;
         left: 0;
-        top: -12%;
+        top: -9%;
         z-index: -1;
         background: url('../../assets/images/investor-info/investorinfoafterimage.png') top left no-repeat;
+        background-size: contain;
     }
-    .title{
-        color: #221F20;
+
+    &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        height: 40rem;
+        width: 43rem;
+        right: 0;
+        bottom: -76px;
+        z-index: -1;
+        background: url('../../assets/images/investor-info/info-bottom.png') bottom right no-repeat;
+        background-size: contain;
+    }
+
+    .title {
+        color: $primary;
         font-size: 3.5rem;
         line-height: 5.25rem;
         font-family: $font-family-poppins-regular;
@@ -148,31 +177,36 @@ body{
         text-align: center;
         padding-bottom: 4.75rem;
     }
-    .wrap{
-        background: #FFFFFF;
+
+    .wrap {
+        background: $whiteColor;
         border: 1px solid rgba(194, 194, 194, 0.3);
         padding: 1.875rem 1.5625rem;
         border-radius: 1.25rem;
         margin-bottom: 1.875rem;
-        .head{
-            color: #221F20;
+
+        .head {
+            color: $primary;
             font-size: 1.8rem;
             line-height: 2.4375rem;
             font-weight: 600;
             font-family: $font-family-poppins-regular;
-            padding-bottom:10px;
+            padding-bottom: 10px;
+
             @media screen and (max-width:767px) {
                 font-size: 1.5rem;
             }
         }
-        .subtext{
+
+        .subtext {
             color: #707070;
             font-size: 1.5rem;
             line-height: 2rem;
             font-weight: 400;
             font-family: $font-family-poppins-regular;
         }
-        .links{
+
+        .links {
             color: #0066B3;
             font-size: 1.5rem;
             line-height: 1.875rem;
@@ -180,35 +214,41 @@ body{
             font-family: $font-family-poppins-regular;
             text-decoration: none;
         }
-        .detail{
+
+        .detail {
             display: flex;
             border-bottom: 1px solid rgba(194, 194, 194, 0.3);
             padding-bottom: 8px;
             margin-bottom: 8px;
-            &:last-child{
+
+            &:last-child {
                 border-bottom: none;
                 margin-bottom: 0;
                 padding-bottom: 0;
             }
-            .subhead{
-                color: #221F20;
+
+            .subhead {
+                color: $primary;
                 font-size: 1.5rem;
                 line-height: 1.25rem;
                 font-weight: 500;
                 font-family: $font-family-poppins-regular;
                 width: 20%;
+
                 @media screen and (max-width:767px) {
                     width: 30%;
                     font-size: 1.4rem;
                 }
             }
-            .info{
+
+            .info {
                 width: 80%;
                 color: #707070;
                 font-size: 1.5rem;
                 line-height: 1.875rem;
                 font-weight: 400;
                 font-family: $font-family-poppins-regular;
+
                 @media screen and (max-width:767px) {
                     width: 70%;
                     font-size: 1.4rem;
@@ -216,14 +256,14 @@ body{
                 }
             }
         }
-        
     }
 }
 
-.Yeardetail{
-    .investor-info-tabs{
+.Yeardetail {
+    .investor-info-tabs {
         margin-bottom: 3rem;
         position: relative;
+
         .yearlist {
             display: flex;
             align-items: center;
@@ -233,7 +273,7 @@ body{
             overflow: inherit;
             top: -5rem;
             justify-content: space-between;
-    
+
             .tabs {
                 color: #221F20BF;
                 display: block;
@@ -291,99 +331,109 @@ body{
                     }
                 }
             }
-    
+
             @media (max-width: $md) {
                 overflow: auto;
             }
         }
-        .content-tabs{
-            flex-grow : 1;
-            .banner-tab-cont{
+
+        .content-tabs {
+            flex-grow: 1;
+
+            .banner-tab-cont {
                 display: flex;
                 align-items: flex-start;
                 flex-wrap: wrap;
-                .tab-cont-left{
+
+                .tab-cont-left {
                     width: 100%;
                     padding-top: 5rem;
                     padding-right: 3rem;
-                    .btn-bg{
+
+                    .btn-bg {
                         margin-top: 4rem;
                     }
+
                     @media (max-width:$sm-x) {
-                      width: 100%;
-                      padding:3rem 0;
-                      text-align: center;
+                        width: 100%;
+                        padding: 3rem 0;
+                        text-align: center;
                     }
-                    .accordion-item{
-                        background: #FFFFFF;
+
+                    .accordion-item {
+                        background: $whiteColor;
                         border: 1px solid rgba(194, 194, 194, 0.3);
                         border-radius: 1.25rem;
                         margin-bottom: 1.875rem;
-                        
-                      .accordion-button{
-                        padding: 1.875rem 1.5625rem;
-                        font-size: 1.75rem;
-                        color: #221F20;
-                        line-height: 33px; 
-                        font-family: $font-family-poppins-medium;
-                        background: transparent;
-                        &:focus{
-                            border: none;
+
+                        .accordion-button {
+                            padding: 1.875rem 1.5625rem;
+                            font-size: 1.75rem;
+                            color: #221F20;
+                            line-height: 33px;
+                            font-family: $font-family-poppins-medium;
+                            background: transparent;
+
+                            &:focus {
+                                border: none;
+                                box-shadow: none;
+                            }
+
+                            &:after {
+                                background: url('../../assets/images/investor-info/plus.svg') no-repeat;
+                                height: 1.5rem;
+                                width: 1.5rem;
+                                background-size: cover;
+                            }
+                        }
+
+                        .accordion-button:not(.collapsed) {
+                            &:after {
+                                background: none;
+                            }
+                        }
+
+                        .accordion-body {
+                            padding: 0px 1.5625rem 1.875rem;
+                            font-size: 1.5rem;
+
+                            .listing {
+                                list-style: none;
+                                padding-left: 0;
+                            }
+
+                            .list {
+                                margin-bottom: 20px;
+                                color: #707070;
+                                font-size: 1.5rem;
+                                line-height: 1.875rem;
+                                font-weight: 400;
+                                font-family: $font-family-poppins-regular;
+                            }
+                        }
+
+                        .accordion-button:not(.collapsed) {
+                            color: #221F20;
+                            background-color: transparent;
                             box-shadow: none;
                         }
-                        &:after{
-                            background: url('../../assets/images/investor-info/plus.svg') no-repeat ;
-                            height: 1.5rem;
-                            width: 1.5rem;
-                            background-size: cover;
-                        }
-                       
-                      }
-                      .accordion-button:not(.collapsed){
-                        &:after{
-                            background:none;
-                            
-                        }
-                      }
-                      .accordion-body{
-                        padding: 0px 1.5625rem 1.875rem;
-                        font-size: 1.5rem;
-                        .listing{
-                            list-style: none;
-                            padding-left: 0;
-                        }
-                        .list{
-                            margin-bottom: 20px;
-                            color: #707070;
-                            font-size: 1.5rem;
-                            line-height: 1.875rem;
-                            font-weight: 400;
-                            font-family: $font-family-poppins-regular;
-                        }
-                      }
-                      .accordion-button:not(.collapsed){
-                        color: #221F20;
-                        background-color: transparent;
-                        box-shadow: none;
-                      }
                     }
                 }
             }
         }
 
-     
-          .content {
+
+        .content {
             background: $whiteColor;
             padding: 0;
             width: 100%;
             height: 100%;
             display: none;
-          }
-        
-          .active-content {
+        }
+
+        .active-content {
             display: block;
-          }
-          
+        }
     }
 }
 
