@@ -64,10 +64,10 @@ const WhyChoice = () => {
                 <div className="row  d-flex justify-content-center">
                     <div className="col-md-10 col-lg-10">
                         <div className="availablewrap">
-                        <div className="col-md-5">
+                        <div className="col-md-4">
                             <h2 className="wraptitle">We’re <br /> Available On</h2>
                         </div>
-                            <div className="col-md-7">
+                            <div className="col-md-8">
                                 <div className="iconwrap">
                                     <a href="<?php echo JIFFY_URL;  ?>" target="_blank">
                                         <div className="icon">
