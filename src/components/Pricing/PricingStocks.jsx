@@ -103,7 +103,7 @@ function PricingStocks() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Sell Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -111,7 +111,7 @@ function PricingStocks() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Quantity</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -176,7 +176,7 @@ function PricingStocks() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Sell Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -184,7 +184,7 @@ function PricingStocks() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Quantity</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />

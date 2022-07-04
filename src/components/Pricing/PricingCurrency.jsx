@@ -42,7 +42,7 @@ function PricingEquity() {
               <tbody>
                 <tr>
                   <td>
-                    <h5>Equity <br /> Intraday</h5>
+                    <h5>Curency <br /> Futures</h5>
                   </td>
                   <td>
                     <h6>0.02%</h6>
@@ -62,7 +62,7 @@ function PricingEquity() {
                 </tr>
                 <tr>
                   <td>
-                    <h5>Equity <br />Delivery</h5>
+                    <h5>Currency <br />Options</h5>
                   </td>
                   <td>
                     <h6>₹ 20 per lot</h6>
@@ -103,7 +103,7 @@ function PricingEquity() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Sell Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -111,7 +111,7 @@ function PricingEquity() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Quantity</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -176,7 +176,7 @@ function PricingEquity() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Sell Price</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />
@@ -184,7 +184,7 @@ function PricingEquity() {
                   </Form>
                 </div>
                 <div className="input-itm">
-                  <h5>Buy Price</h5>
+                  <h5>Quantity</h5>
                   <Form>
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                       <Form.Control type="number" name="firstName" placeholder="10000" className="formcontrol" />

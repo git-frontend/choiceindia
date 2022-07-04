@@ -8,6 +8,8 @@
     background: $whiteColor;
     padding: 3rem 2rem 2rem 2rem;
     max-width: 30rem;
+    position: relative;
+    z-index: 999;
     .sub-formgrp{
         margin-bottom: 1.5rem;
         .formcontrol{
@@ -15,10 +17,16 @@
             outline: none;
             box-shadow: inherit;
             border: 1px solid #0068B3;
-            padding: 1.4rem 1.5rem;
+            padding: 1.6rem 1.5rem;
             border-radius: 12px;
             font-family: $font-family-poppins-regular;
             font-size: 1.2rem;
+            
+        }
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+            -webkit-appearance: none; 
+            margin: 0; 
         }
         &.cust-checkbox{
             display: flex;

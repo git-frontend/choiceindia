@@ -29,7 +29,12 @@ const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
 const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
-
+const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/SumeetBagadia'));
+const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
+const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
+const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
+const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
+const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
 
 function Routing() {
     return (
@@ -100,9 +105,41 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+                        <Route exact path='/Investor-info' element={
+                            <React.Suspense>
+                                < LazyInvestorInfo />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/code-conduct' element={
+                            <React.Suspense>
+                                < LazyCodeConduct />
+                            </React.Suspense>
+                        } />
+
                         <Route exact path='/pricing' element={
                             <React.Suspense>
                                 < Lazypricing />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/Sumeet-Bagadia' element={
+                            <React.Suspense>
+                                < Lazymarketing />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/Sub-Broker' element={
+                            <React.Suspense>
+                                < Lazysubbroker />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/refer-and-earn' element={
+                            <React.Suspense>
+                                < Lazyrefer />
+                                </React.Suspense>
+                        } />
+                        <Route exact path='/Open-Demat-Account' element={
+                            <React.Suspense>
+                                < Lazyopendemat />
                             </React.Suspense>
                         } />
 

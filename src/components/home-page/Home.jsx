@@ -24,20 +24,21 @@ function Home() {
 
       <main>
 
-      {/* <div className='home-banner-ved'>
+      <div className='home-banner-ved'>
         <div className="overlay"></div>
         <video src={videoBg} autoPlay loop muted className='banner-ved' />
 		<div className='banner-ved-des'>
 			<div className='container'>
 				<div className='banner-caption' >
 					<h1>Experience</h1>
-					<h1>The Joy of Earning</h1>
+					<h1>The Joy of</h1>
+					<h1>Earning</h1>
 				</div>
 			</div>
 		</div>
-    	</div> */}
+    	</div>
     
-       <HomePageBanner />
+       {/* <HomePageBanner /> */}
 	
 
        <EverydayFinance />
