@@ -34,6 +34,7 @@ const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
+const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
 
 function Routing() {
     return (
@@ -134,6 +135,11 @@ function Routing() {
                         <Route exact path='/refer-and-earn' element={
                             <React.Suspense>
                                 < Lazyrefer />
+                                </React.Suspense>
+                        } />
+                        <Route exact path='/Open-Demat-Account' element={
+                            <React.Suspense>
+                                < Lazyopendemat />
                             </React.Suspense>
                         } />
 
