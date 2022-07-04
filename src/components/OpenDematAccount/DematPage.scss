@@ -124,9 +124,9 @@
 
 	.slick-dots {
 		position: absolute;
-		top: 88%;
+		bottom: 0;
 		width: 100%;
-		left: -32.25rem;
+		left: -33.25rem;
 		text-align: left;
 		display: flex !important;
 		flex-wrap: wrap;
@@ -159,19 +159,34 @@
 		}
 	}
 
+	.adv-sect-slider{
+		.slick-track{
+			display: flex;
+			.slick-slide{
+				float: none;
+				min-height: inherit;
+				margin: 0 10px;
+				height: auto;
+				> div{
+					height: 100%;
+				} 
+			}
+		}
+	}
+
 	.card {
 		background-color: $whiteColor;
 		padding: 2.625rem;
 		text-align: center;
 		background-color: transparent;
 		border: 1px solid $bgcolor-blue;
-		border-radius: 1.875rem;
-		min-height: 30rem;
+		border-radius: 18px;
+		height: 100%;
 		transition: 0.6s;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
-		margin: 0 10px;
+		
 
 		@media (max-width:$sm) {
 			width: 90%;
@@ -195,7 +210,6 @@
 
 		.icon-wrap {
 			background: $bgcolor-blue;
-			margin: 1rem 0;
 			text-align: center;
 			padding: 1rem 0;
 			max-width: 5rem;
@@ -204,7 +218,8 @@
 			align-items: center;
 			justify-content: center;
 			width: 100%;
-			margin-bottom: 2.5rem;
+			margin: 0 auto;
+			margin-bottom: 2rem;
 		}
 
 		.card-block {
@@ -223,6 +238,8 @@
 				font-weight: 500;
 				line-height: 2.063rem;
 				color: $primary;
+				padding: 0;
+				margin: 0;
 			}
 		}
 	}

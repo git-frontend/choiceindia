@@ -20,13 +20,14 @@ function WhyOpenFreeDematAccount() {
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
+    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          adaptiveHeight: true,
+          adaptiveHeight: false,
         },
       },
       {
@@ -52,10 +53,8 @@ function WhyOpenFreeDematAccount() {
                         </div>
                         <div className="col-md-8">
                             <div className="pl-4">
-                                <Slider {...settings} id="advslider" className="">
-
-                                    <div className="item" data-toggle="modal" data-target="#myModal1">
-                                        <div className="card adv-card">
+                                <Slider {...settings} id="advslider" className="adv-sect-slider">
+                                <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image7} className="img-fluid" alt="Low Brokerage" />
                                             </div>
@@ -65,8 +64,6 @@ function WhyOpenFreeDematAccount() {
                                                 <p>Low brokerage charges; as less as 2 Paisa*</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="item " data-toggle="modal" data-target="#myModal2">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image8} alt="Free call Trade Facility" className="img-fluid lazyload" />
@@ -77,9 +74,6 @@ function WhyOpenFreeDematAccount() {
                                                 <p> Our customers can opt to execute trade over the phone free of cost.</p>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="item" data-toggle="modal" data-target="#myModal5">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image9} alt="Paperless Account Opening" className="img-fluid lazyload" />
@@ -92,9 +86,6 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="item" data-toggle="modal" data-target="#myModal4">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 {/* <img src={Image10} alt="Advanced Platform" className="img-fluid lazyload" /> */}
@@ -107,8 +98,6 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="item" data-toggle="modal" data-target="#myModal3">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 {/* <img src={Image11} alt="Earn More From Referrals" className="img-fluid lazyload" /> */}
@@ -121,8 +110,6 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-
                                 </Slider>
                             </div>
                         </div>
