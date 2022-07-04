@@ -37,12 +37,12 @@ function Fablesdetails() {
   function loadFabalList() {
     homeServices.fabalStory().then(
       res => {
-        console.log('res1',res)
+        // console.log('res1',res)
         // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
           return e.id != id
         }))
-        console.log('SSS',allFabalData)
+        // console.log('SSS',allFabalData)
       }
     )
   }
