@@ -16,7 +16,7 @@ function WhyOpenFreeDematAccount() {
     margin:15,
     arrows: false,
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
@@ -45,16 +45,16 @@ function WhyOpenFreeDematAccount() {
        <section className="adv-sect" >
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <div className="sectext">
                                 <h2>Why Open A Free Demat Account Online With Us?</h2>
                             </div>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-8">
                             <div className="pl-4">
                                 <Slider {...settings} id="advslider" className="">
 
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal1">
+                                    <div className="item" data-toggle="modal" data-target="#myModal1">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image7} className="img-fluid" alt="Low Brokerage" />
@@ -66,7 +66,7 @@ function WhyOpenFreeDematAccount() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="item  p-md-2" data-toggle="modal" data-target="#myModal2">
+                                    <div className="item " data-toggle="modal" data-target="#myModal2">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image8} alt="Free call Trade Facility" className="img-fluid lazyload" />
@@ -79,7 +79,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                     </div>
 
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal5">
+                                    <div className="item" data-toggle="modal" data-target="#myModal5">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 <img src={Image9} alt="Paperless Account Opening" className="img-fluid lazyload" />
@@ -94,7 +94,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                     </div>
 
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal4">
+                                    <div className="item" data-toggle="modal" data-target="#myModal4">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 {/* <img src={Image10} alt="Advanced Platform" className="img-fluid lazyload" /> */}
@@ -108,7 +108,7 @@ function WhyOpenFreeDematAccount() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal3">
+                                    <div className="item" data-toggle="modal" data-target="#myModal3">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
                                                 {/* <img src={Image11} alt="Earn More From Referrals" className="img-fluid lazyload" /> */}
