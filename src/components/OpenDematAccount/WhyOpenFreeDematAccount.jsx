@@ -34,6 +34,7 @@ function WhyOpenFreeDematAccount() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots:false,
         },
       },
     ],
@@ -50,7 +51,7 @@ function WhyOpenFreeDematAccount() {
                             </div>
                         </div>
                         <div className="col-md-9">
-                            <div className="">
+                            <div className="pl-4">
                                 <Slider {...settings} id="advslider" className="">
 
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal1">

@@ -64,11 +64,17 @@
 		.resptext {
 			padding-left: 1rem;
 			width: 80%;
-			font-size: 1.75rem;
-			line-height: 2.8rem;
-			font-family: $font-family-poppins-regular;
-			font-weight: 600;
-
+		
+			p{
+				font-size: 1.75rem;
+				line-height: 2.8rem;
+				font-family: $font-family-poppins-regular;
+				font-weight: 600;
+				@media (min-width:768px) and (max-width:1024px) {
+					font-size: 1.5rem;
+					line-height: 1.8rem;	
+				}
+			}
 			.subtxt {
 				display: block;
 				font-weight: 500;
@@ -118,11 +124,17 @@
 
 	.slick-dots {
 		position: absolute;
-		top: 75%;
+		top: 78%;
 		width: 100%;
-		left: -27.25rem;
+		left: -32.25rem;
 		text-align: left;
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 
+	@media (max-width:$sm) {
+		display: block !important;
+		}
 		@media (min-width:$sm) and (max-width:768px) {
 			left: -15.75rem;
 			top: 63%;
@@ -162,7 +174,7 @@
 
 		@media (max-width:$sm) {
 			width: 90%;
-			margin: 0 auto;
+			margin: 4rem auto 0;
 
 		}
 
@@ -211,6 +223,12 @@
 				line-height: 2.063rem;
 				color: $primary;
 			}
+		}
+	}
+	.pl-4{
+		padding-left: 4rem;
+		@media (max-width:$sm) {
+			padding-left: 0;
 		}
 	}
 }
@@ -553,7 +571,7 @@
 			justify-content: end;
 			@media (max-width:$sm) {
 				width: 100%;
-
+				justify-content: start;
 			}
 		
 			.secttile {
