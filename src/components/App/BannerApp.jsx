@@ -1,4 +1,4 @@
-import  AppImage0  from '../../assets/images/app/banner-app.jpg';
+import  AppImage0  from '../../assets/images/app/banner-app.webp';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -9,8 +9,8 @@ function BannerCareer() {
     <div className='App-main'>
       
      
-    <section className="banner-app">
-         <img src={AppImage0} className="ban-img" alt='Loading'/>
+          <section className="banner-app">
+              <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" />
          <div className='app-banner-caption'>
             <div className='container'>
                 <div className='row'>

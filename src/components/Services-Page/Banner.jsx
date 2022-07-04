@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/banner.webp';
+import Bannerimage from '../../assets/images/services/services-banner.gif';
 function Banner() {
 
   return (
@@ -22,7 +22,7 @@ function Banner() {
                 <div className="col-md-7">
                     <div className="rightsec">
 
-                    <img src={Bannerimage} alt="Banner Images" className="img-fluid top-banner-img"></img>
+                              <img src={Bannerimage} alt="Banner Images" className="img-fluid top-banner-img" width={"957"} height={"623"}></img>
                     </div>
                 </div>
             </div>

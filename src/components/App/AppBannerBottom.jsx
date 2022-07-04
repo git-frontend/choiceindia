@@ -16,7 +16,7 @@ function AppBannerBottom() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 6,
+    slidesToShow: 4,
     autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
@@ -26,7 +26,7 @@ function AppBannerBottom() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 1,
           autoplay: false,
           adaptiveHeight: true,
@@ -35,7 +35,7 @@ function AppBannerBottom() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 6,
+          slidesToShow: 4,
           slidesToScroll: 1,
           autoplay: false,
         },
@@ -50,11 +50,11 @@ function AppBannerBottom() {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
-              <div className="app-trade-easy-div row">
+              <div className="app-trade-easy-div row align-items-center">
 
 
 
-                <div className='col-md-5'>
+                <div className='col-md-6'>
                   <div className='content-list'>
                     <Slider {...settings1}
                       afterChange={(ev) => {
@@ -86,10 +86,10 @@ function AppBannerBottom() {
 
 
                 </div>
-                <div className='col-md-7'>
+                <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" alt="Loading" />
+                  <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" width="344" height="697" alt="Loading" />
                     {/* <img src={imageData[isShown2].image}
 
                       className="single-trade-easy-images" alt="loading"></img> */}

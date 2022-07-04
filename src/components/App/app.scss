@@ -25,7 +25,7 @@
 
         .ban-img {
             width: 100%;
-
+            height: auto;
             @media (max-width: $sm-x) {
                 height: 350px;
                 object-fit: cover;
@@ -341,9 +341,9 @@
 
         .content-list {
             position: relative;
-            padding: 2.5rem 0;
-            margin-top: 1rem;
-
+            padding: 0;
+            margin-top: 0;
+            padding-right: 8rem;
             .content-list-itm {
                 padding-left: 3.5rem;
                 margin-bottom: 5rem;
@@ -395,15 +395,21 @@
                 opacity: 0.1;
                 border-radius: 9px;
             }
+            @media (max-width:$md) {
+                padding-right: 0;
+            }
         }
 
         .trade-easy-images-div {
             display: flex;
             justify-content: center;
-            padding: 0 2rem;
+            padding: 0 4rem;
 
             .single-trade-easy-images {
                 max-width: 100%;
+            }
+            @media (max-width:$md) {
+                padding: 0;
             }
         }
 

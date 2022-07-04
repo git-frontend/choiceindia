@@ -10,13 +10,15 @@ body{
     width: 100%;
 }
 
-.bannersection{
-    padding:0 0 8rem;
+.bannersection {
+    padding: 0 0 8rem;
     position: relative;
+
     @media (max-width:$sm) {
-        padding:0 0 4rem;
+        padding: 0 0 4rem;
     }
-    .title{
+
+    .title {
         color: $primary;
         font-weight: 700;
         font-size: 4.125rem;
@@ -25,23 +27,23 @@ body{
         padding-top: 1.25rem;
         font-family: $font-family-poppins-bold;
     }
-    .para{
+
+    .para {
         font-weight: 400;
         font-size: 1.75rem;
         line-height: 2.375rem;
         color: $secondary;
         font-family: $font-family-poppins-regular;
     }
-    
-    .rightsec{
+
+    .rightsec {
         padding-left: 2rem;
         @media (max-width:$sm) {
-           padding-left: 0;
-           padding-top: 2rem;
+            padding-left: 0;
+            padding-top: 2rem;
         }
-        img{
-            width: 100%;
-        }
+
+        
     }
 }
 
