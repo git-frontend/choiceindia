@@ -98,7 +98,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-
+		padding-right: 6rem;
 		h2 {
 			font-size: 3.125rem;
 			font-family: $font-family-poppins-semibold;
@@ -171,6 +171,7 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		margin: 0 10px;
 
 		@media (max-width:$sm) {
 			width: 90%;
@@ -209,7 +210,7 @@
 		.card-block {
 			.card-title {
 				font-size: 1.625rem;
-				font-family: $font-family-poppins-semibold;
+				font-family: $font-family-poppins-medium;
 				font-weight: 500;
 				line-height: 2.438rem;
 				color: $primary;
@@ -217,8 +218,8 @@
 			}
 
 			p {
-				font-size: 1.5rem;
-				font-family: $font-family-poppins-regular;
+				font-size: 1.313rem;
+				font-family: $font-family-poppins-medium;
 				font-weight: 500;
 				line-height: 2.063rem;
 				color: $primary;
@@ -226,7 +227,7 @@
 		}
 	}
 	.pl-4{
-		padding-left: 4rem;
+		
 		@media (max-width:$sm) {
 			padding-left: 0;
 		}
