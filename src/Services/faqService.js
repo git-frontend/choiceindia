@@ -12,7 +12,7 @@ const faqService = {
         let api = new API_URLS()
         let url = api.getFaqCategoryURL()
         return axios.get(url, this.headerConfig).then(({ data }) => {
-            return data.data
+            return data
         })
     },
 

@@ -56,7 +56,7 @@ export class API_URLS {
 
    /** Faq category section */
 
-   faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
+   faqCategoryURL='solutions/categories'
 
 
 
@@ -160,7 +160,7 @@ getContactFormURL(){
 }
 
 getFaqCategoryURL(){
-    return this.bannerURL + this.faqCategoryURL
+    return this.faqURL + this.faqCategoryURL
 }
 
 getFaqfolderURL(id){
