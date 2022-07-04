@@ -59,7 +59,7 @@ import { API_URLS } from "./API-URLS";
    marketInsiteNew: function (payload) {
      let api = new API_URLS()
      let url = api.getMarketinsiteNewURL()
-     return axios.post(url,payload,{
+     return axios.get(url,{
        headers : {
         'x-api-key': 'B62664943BAA286B21C66BA9A614D'
        }

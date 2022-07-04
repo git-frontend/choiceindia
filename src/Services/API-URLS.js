@@ -64,7 +64,7 @@ export class API_URLS {
 
    /**Market Insights New */
 
-  addMarketInsiteNewURL = 'market-insights';
+  addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
 
 

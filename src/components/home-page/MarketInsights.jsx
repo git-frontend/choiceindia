@@ -32,8 +32,8 @@ function MarketInsights() {
         homeServices.marketInsiteNew(payload).then(
             res => {
                 // setFabal(res.data.posts);
-                if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.research) {
-                    setFabal(res.data.response.research);
+                if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.data) {
+                    setFabal(res.data.response.data);
                 }
                 console.log(res, "Research Report");
             }
@@ -73,15 +73,15 @@ function MarketInsights() {
 
                                         return (
 
-                                            <div key={response.id} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                            <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
                                                 <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt="Loading"/>
                                                     {/* <img src={response.feature_image} alt="" /> */}
-                                                    <span className="ttl-sm" >{response.scrip_name || '-'}</span>
+                                                    <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
-                                                    <p>{response.subcategory_name}</p>
-                                                    {/* <p>{response.scrip_sec_desc}</p> */}
+                                                    <p>{response.report_subtype_name}</p>
+                                                    <p>{response.plain_description}</p>
                                                 </div>
                                             </div>
                                             
