@@ -39,9 +39,9 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image19} alt="Step One" className="img-fluid lazyload image" />
-                                    <img src={Image20} alt="Step One" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21} alt="Step One" className="img-fluid lazyload respimag" />
+                                    <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" />
+                                    <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" />
+                                    <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info respspace">
                                     <h5>Register Online</h5>
@@ -53,9 +53,9 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap">
-                                    <img src={Image22} alt="Step Two" className="img-fluid lazyload image" />
-                                    <img src={Image20} alt="Step Two" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21} alt="Step Two" className="img-fluid lazyload respimag" />
+                                    <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" />
+                                    <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" />
+                                    <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info">
                                     <h5>In-Person Verification</h5>
@@ -67,9 +67,9 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image23} alt="Step Three" className="img-fluid lazyload image" />
-                                    <img src={Image20} alt="Step Three" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21} alt="Step Three" className="img-fluid lazyload respimag" />
+                                    <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" />
+                                    <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" />
+                                    <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info" >
                                     <h5>Registration Complete</h5>
@@ -82,7 +82,7 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image24} alt="Step Four" className="img-fluid lazyload" />
+                                    <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" />
                                 </div>
                                 <div className="info" >
                                     <h5>Courier POA</h5>

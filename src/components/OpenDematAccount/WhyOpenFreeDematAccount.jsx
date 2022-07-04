@@ -57,7 +57,7 @@ function WhyOpenFreeDematAccount() {
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal1">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} className="img-fluid" alt="Low Brokerage" />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage" />
                                             </div>
                                             <div className="card-block">
 
@@ -69,7 +69,7 @@ function WhyOpenFreeDematAccount() {
                                     <div className="item  p-md-2" data-toggle="modal" data-target="#myModal2">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} alt="Free call Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -82,7 +82,7 @@ function WhyOpenFreeDematAccount() {
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal5">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} alt="Paperless Account Opening" className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt="Paperless Account Opening" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -97,7 +97,7 @@ function WhyOpenFreeDematAccount() {
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal4">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                {/* <img src={Image10} alt="Advanced Platform" className="img-fluid lazyload" /> */}
+                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -111,7 +111,7 @@ function WhyOpenFreeDematAccount() {
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal3">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                {/* <img src={Image11} alt="Earn More From Referrals" className="img-fluid lazyload" /> */}
+                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
