@@ -52,7 +52,8 @@ function LowBrokerageDematAccount() {
                             </div>
                         </div>
                         <div className="col-md-12">
-                         
+                            <div className="row">
+                                <div className="col-md-12">
                                     <Slider {...settings} id="advslider" className="">
 
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
@@ -128,7 +129,8 @@ function LowBrokerageDematAccount() {
 
 
                                     </Slider>
-                              
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
