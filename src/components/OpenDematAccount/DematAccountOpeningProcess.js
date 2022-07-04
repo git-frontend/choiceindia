@@ -1,11 +1,11 @@
 import React from 'react';
 
-import Image19 from '../../assets/images/open-demat-account/one.png';
+import Image19 from '../../assets/images/open-demat-account/one.webp';
 import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
 import Image21 from '../../assets/images/open-demat-account/downarrow.png';
-import Image22 from '../../assets/images/open-demat-account/two.png';
-import Image23 from '../../assets/images/open-demat-account/three.png';
-import Image24 from '../../assets/images/open-demat-account/four.png';
+import Image22 from '../../assets/images/open-demat-account/two.webp';
+import Image23 from '../../assets/images/open-demat-account/three.webp';
+import Image24 from '../../assets/images/open-demat-account/four.webp';
 
 const DematAccountOpeningProcess = () => {
     return (
