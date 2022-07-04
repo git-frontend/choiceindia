@@ -59,7 +59,7 @@ function LowBrokerageDematAccount() {
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image7} className="img-fluid" alt="Low Brokerage" />
+                                                    <img src={Image7}  width={"28"} height={"26"} className="img-fluid" alt="Low Brokerage" />
                                                 </div>
 
                                                 <div className="card-block">
@@ -86,7 +86,7 @@ function LowBrokerageDematAccount() {
                                         <div className="col-md-4 item  p-md-2" data-toggle="modal" data-target="#myModal2">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image8} alt="Free call Trade Facility" className="img-fluid lazyload" />
+                                                    <img src={Image8}  width={"28"} height={"28"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                                 </div>
                                                 <div className="card-block">
 
@@ -108,7 +108,7 @@ function LowBrokerageDematAccount() {
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal5">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image9} alt="Paperless Account Opening" className="img-fluid lazyload" />
+                                                    <img src={Image9}  width={"28"} height={"28"} alt="Paperless Account Opening" className="img-fluid lazyload" />
                                                 </div>
                                                 <div className="card-block">
 

@@ -25,7 +25,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} alt="Zero Account Opening Fee" className="img-fluid " />
+                                                    <img src={Image2} width={"15"} height={"24"} alt="Zero Account Opening Fee" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -38,7 +38,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} alt="No Square Off Charges" className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -52,7 +52,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} alt="Call Success Ratio" className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt="Call Success Ratio" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -64,7 +64,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} alt="Free Call For Trade Facility" className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
