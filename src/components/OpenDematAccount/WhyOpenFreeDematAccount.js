@@ -6,8 +6,8 @@ import Slider from "react-slick";
 import Image7 from '../../assets/images/open-demat-account/low-brokerage.svg';
 import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
 import Image9 from '../../assets/images/open-demat-account/paperless-account.svg';
-import Image10 from '../../assets/images/open-demat-account/low-brokerage.svg';
-import Image11 from '../../assets/images/open-demat-account/low-brokerage.svg';
+// import Image10 from '../../assets/images/open-demat-account/low-brokerage.svg';
+// import Image11 from '../../assets/images/open-demat-account/low-brokerage.svg';
 function WhyOpenFreeDematAccount() {
 
   const settings = {
@@ -22,9 +22,9 @@ function WhyOpenFreeDematAccount() {
     slidesToScroll: 3,
     responsive: [
       {
-        breakpoint: 992,
+        breakpoint: 1200,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
           adaptiveHeight: true,
         },
@@ -50,7 +50,7 @@ function WhyOpenFreeDematAccount() {
                             </div>
                         </div>
                         <div className="col-md-9">
-                            <div className="row">
+                            <div className="">
                                 <Slider {...settings} id="advslider" className="">
 
                                     <div className="item p-md-2" data-toggle="modal" data-target="#myModal1">
