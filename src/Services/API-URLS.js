@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true
+const environment = false
 
 
 /**URL Config */
@@ -9,13 +9,17 @@ const config = {
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL : "https://cmsapi.choiceindia.com/",
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
-    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/"
-    
-  
+    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
+    UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/"
+    // https://researchreportapi.jiffy.in/api/report/market-insights
+    // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
 }
 
 
 export class API_URLS {
+
+  jiffyResearchURL = "";
 
   /**Server URL */
   serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
@@ -58,6 +62,10 @@ export class API_URLS {
 
    faqCategoryURL='solutions/categories'
 
+   /**Market Insights New */
+
+  addMarketInsiteNewURL = 'market-insights';
+
 
 
 
@@ -78,6 +86,12 @@ export class API_URLS {
     this.setBannerURL(config[configKey + 'BannerURL'])
 
     this.setfaqURL(config[configKey + 'faqURL'])
+
+    this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+}
+
+setJiffyResearchURL = (url) => {
+    this.jiffyResearchURL = url;
 }
 
 /**
@@ -173,6 +187,12 @@ getFaqArticleURL(id){
 
     return this.faqURL + `solutions/folders/${id}/articles`
 }
+
+/** Get Market Insite and fabal List URL */
+
+    getMarketinsiteNewURL() {
+        return this.jiffyResearchURL + this.addMarketInsiteNewURL;
+    }
 
 
 }

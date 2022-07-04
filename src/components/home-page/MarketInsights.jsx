@@ -13,9 +13,29 @@ function MarketInsights() {
 
     /** load market insights and fabal */
     function loadMarketinsite() {
-        homeServices.marketInsite().then(
+        let payload = {
+            // "end_date": "",
+            // "is_expert": 0,
+            // "research_type": "Medium To Long Term",
+            "limit": 4,
+            "offset": 0,
+            // "segment": "EQ",
+            // "start_date": "",
+            // "status": "target_achieved",
+            // "subcategory_id": "",
+            // "search": "",
+            // "id": "",
+            // "user_id": "",
+            // "timeline_enabled": 1,
+            // "category_id": 1
+        };
+        homeServices.marketInsiteNew(payload).then(
             res => {
-                setFabal(res.data.posts);
+                // setFabal(res.data.posts);
+                if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.research) {
+                    setFabal(res.data.response.research);
+                }
+                console.log(res, "Research Report");
             }
         )
     };
@@ -57,10 +77,11 @@ function MarketInsights() {
                                                 <div className="insights-item-cont">
                                                 <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt="Loading"/>
                                                     {/* <img src={response.feature_image} alt="" /> */}
-                                                    <span className="ttl-sm" >{response.meta_title || '-'}</span>
+                                                    <span className="ttl-sm" >{response.scrip_name || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
-                                                    <p>{response.excerpt}</p>
+                                                    <p>{response.subcategory_name}</p>
+                                                    {/* <p>{response.scrip_sec_desc}</p> */}
                                                 </div>
                                             </div>
                                             

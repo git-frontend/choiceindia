@@ -54,5 +54,18 @@ import { API_URLS } from "./API-URLS";
     })
 
   },
+
+   /** get market Insights and fabal */
+   marketInsiteNew: function (payload) {
+     let api = new API_URLS()
+     let url = api.getMarketinsiteNewURL()
+     return axios.post(url,payload,{
+       headers : {
+        'x-api-key': 'B62664943BAA286B21C66BA9A614D'
+       }
+     }).then((data) => {
+       return data;
+     })
+   },
 };
 export default homeServices
