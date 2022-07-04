@@ -68,16 +68,16 @@ function LowBrokerageDematAccount() {
                                                     <hr></hr>
                                                     <ul className="charge-lists">
                                                         <li>
-                                                            Delivery <strong>0.20%</strong>
+                                                            Delivery <span>0.20%</span>
                                                         </li>
                                                         <li>
-                                                            Intraday <strong>0.02%</strong>
+                                                            Intraday <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Futures <strong>0.02%</strong>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <strong>₹ 25 per Lot</strong>
+                                                            Options <span>₹ 25 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -95,10 +95,10 @@ function LowBrokerageDematAccount() {
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                            Futures <strong>0.02%</strong>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <strong>₹ 25 per Lot</strong>
+                                                            Options <span>₹ 25 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -117,10 +117,10 @@ function LowBrokerageDematAccount() {
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                            Futures <strong>0.02%</strong>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <strong>₹ 25 per Lot</strong>
+                                                            Options <span>₹ 25 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
