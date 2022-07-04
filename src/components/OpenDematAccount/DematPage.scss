@@ -539,7 +539,7 @@
 		margin: 0 auto;
 		display: flex;
 		padding: 0;
-
+		flex-wrap: wrap;
 		@media (max-width:$sm) {
 			flex-direction: column;
 		}
@@ -548,7 +548,9 @@
 			position: relative;
 			width: 30%;
 			background-color: $bgcolor-lightgray;
-
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: end;
 			@media (max-width:$sm) {
 				width: 100%;
 
@@ -574,7 +576,7 @@
 
 			.img {
 				position: relative;
-				right: -8.65rem;
+				right: -47px;
 
 				@media (max-width:$sm) {
 					display: none;
