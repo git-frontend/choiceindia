@@ -34,6 +34,7 @@ const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
+const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
 
 function Routing() {
     return (
@@ -93,7 +94,7 @@ function Routing() {
                         } />
 
                         <Route exact path='/fablesdetail/:id' element={
-                            <React.Suspense>    
+                            <React.Suspense>
                                 < LazyFableDetail />
                             </React.Suspense>
                         } />
@@ -134,6 +135,12 @@ function Routing() {
                         <Route exact path='/refer-and-earn' element={
                             <React.Suspense>
                                 < Lazyrefer />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/research' element={
+                            <React.Suspense>
+                                < Lazyresearch />
                             </React.Suspense>
                         } />
 
