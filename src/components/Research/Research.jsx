@@ -1,7 +1,7 @@
 import "./research.scss"
 import Banner from './Banner';
 import LongTermResearch from './LongTermResearch';
-import OpenFreeAccount from './OpenFreeAccount';
+import ShortTermResearch from './ShortTermResearch';
 
 
 
@@ -15,7 +15,7 @@ function Research() {
 
         <Banner />
         <LongTermResearch />
-        <OpenFreeAccount />
+        <ShortTermResearch />
 
 
         

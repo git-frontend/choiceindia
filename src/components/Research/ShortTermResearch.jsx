@@ -1,20 +1,15 @@
 
 import React from "react";
 import { useState } from "react";
-import  ImageSub2  from '../../assets/images/icons/stock.svg';
-import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
-import  ImageSub4  from '../../assets/images/icons/insurance.svg';
-import  ImageSub5  from '../../assets/images/icons/equity.svg';
+
 
 import PricingStocks from './PricingStocks';
-import PricingEquity from './PricingEquity';
-import PricingCurrency from './PricingCurrency';
-import PricingCommodity from './PricingCommodity';
 
 
 
 
-function LongTermResearch() {
+
+function ShortTermResearch() {
 
   const [toggleState, setToggleState] = useState(1);
 
@@ -31,7 +26,7 @@ function LongTermResearch() {
         <div className="row">
 						<div className="col-md-12">
 							<div className="heading-sec heading-sec-top">
-								<h3 className="title-first" >Long Term Research </h3>
+								<h3 className="title-first" >Short Term Research </h3>
 							</div>
 						</div>
 					</div>
@@ -40,29 +35,14 @@ function LongTermResearch() {
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(1)}
               >
-                Economic Analysis
+                Sumeet Bagadia’s Desk
                 
               </button>
               <button
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}
               >
-                Company Fundamentals
-                
-              </button>
-              <button
-                className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(3)}
-              >
-
-Industry Analysis
-                
-              </button>
-              <button
-                className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(4)}
-              >
-                  IPO/NFO Analysis
+                C-Quant
                 
               </button>
             </div>
@@ -105,4 +85,4 @@ Industry Analysis
   );
 }
 
-export default  LongTermResearch;
+export default  ShortTermResearch;

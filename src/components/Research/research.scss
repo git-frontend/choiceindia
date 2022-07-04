@@ -3,7 +3,7 @@
 
 
 .research-banner{
-    padding-bottom: 7rem;
+    padding:3rem 0 15rem 0;
     overflow: inherit;
     .title{
         color: $primary;
@@ -52,54 +52,163 @@
     
 }
 
-
-.research-tab-cont{
-    .research-tab-list{
+.research-banner-tabs{
+    .research-bloc-tabs{
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
-        .res-tab-itm{
-            width: 48%;
+        flex-wrap: wrap;
+        margin: 1.5rem 0 5rem 0;
+        .tabs{
+            color: #221F20BF;
+            display: block;
+            position: relative;
+            text-decoration: none;
+            font-family: $font-family-poppins-medium;
+            border: 0;
+            font-size: 1.575rem;
+            padding: 0;
+            margin: 0;
+            border: 0;
+            outline: none;
+            background: transparent;
+        }
+    }
+    .research-tab-cont{
+        .research-tab-list{
             display: flex;
-            align-items: center;
             flex-wrap: wrap;
-            margin-bottom: 5rem;
-            .tab-itm-img{
-                width: 38%;
-                .thumb-img{
-                    border-radius: 20px;
-                }
-            }
-            .tab-itm-des{
-                width: 62%;
-                padding-left: 1rem;
-                .ttl-des{
-                    font-size: 1.5rem;
-                    line-height: 2.2rem;
-                    color: $primary;
-                    font-family:$font-family-poppins-semibold;
-                    margin-bottom: 1rem;
-                }
-                .itm-des-sub{
-                    display: flex;
-                    justify-content: space-between;
-                    margin-top: 3rem;
-                    .date-post{
-                        font-size: 1.25rem;
-                        color: $primary;
-                        opacity: 0.5;
-                        font-family:$font-family-poppins-regular;
+            justify-content: space-between;
+            .res-tab-itm{
+                width: 48%;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-bottom: 5rem;
+                .tab-itm-img{
+                    width: 38%;
+                    .thumb-img{
+                        border-radius: 20px;
                     }
-                    .post-read{
+                }
+                .tab-itm-des{
+                    width: 62%;
+                    padding-left: 1rem;
+                    .ttl-des{
+                        font-size: 1.5rem;
+                        line-height: 2.2rem;
                         color: $primary;
-                        text-decoration: none;
-                        position: relative;
-                        font-size: 1.25rem;
-                        display: block;
-                        font-family: $font-family-poppins-medium;
+                        font-family:$font-family-poppins-semibold;
+                        margin-bottom: 1rem;
+                    }
+                    .itm-des-sub{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 3rem;
+                        .date-post{
+                            font-size: 1.25rem;
+                            color: $primary;
+                            opacity: 0.5;
+                            font-family:$font-family-poppins-regular;
+                        }
+                        .post-read{
+                            color: $primary;
+                            text-decoration: none;
+                            position: relative;
+                            font-size: 1.25rem;
+                            display: block;
+                            font-family: $font-family-poppins-medium;
+                        }
                     }
                 }
             }
         }
     }
 }
+
+
+
+.pricing-value {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 11px;
+      color: #000000;
+      font-weight: 500;
+      display: inline-block;
+      width: 30%;
+    }
+  }
+
+  .pricing-bar {
+    padding: 20px 14%;
+    width: 100%;
+    .bar-wrap {
+      width: 100%;
+      background: #e1e1e1;
+      height: 3px;
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 2px solid #e1e1e1;
+        background: #ffffff;
+        position: absolute;
+        left: -8px;
+        top: -4px;
+        border-radius: 100%;
+      }
+
+      &:after {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: 2px solid #e1e1e1;
+        background: #ffffff;
+        position: absolute;
+        right: -8px;
+        top: -4px;
+        border-radius: 100%;
+      }
+
+      .bar-filled {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+
+        &:before {
+          content: "";
+          width: 2px;
+          height: 16px;
+          position: absolute;
+          right: -2px;
+          top: -7px;
+        }
+
+        &:after {
+          content: "CMP";
+          position: absolute;
+          bottom: -18px;
+          right: 0;
+          transform: translateX(50%);
+          font-size: 9px;
+        }
+        &.red {
+          background: #ff1a1a;
+          &:before {
+            background: #ff1a1a;
+          }
+        }
+        &.green {
+          background: #009933;
+          &:before {
+            background: #009933;
+          }
+        }
+      }
+    }
+  }
