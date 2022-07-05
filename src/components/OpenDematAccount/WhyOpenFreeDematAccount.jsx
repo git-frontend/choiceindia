@@ -5,13 +5,13 @@ import React from "react";
 import Slider from "react-slick";
 import Image7 from '../../assets/images/open-demat-account/low-brokerage.svg';
 import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
-import Image9 from '../../assets/images/open-demat-account/paperless-account.svg';
-// import Image10 from '../../assets/images/open-demat-account/low-brokerage.svg';
-// import Image11 from '../../assets/images/open-demat-account/low-brokerage.svg';
+import Image9 from '../../assets/images/open-demat-account/paperlessacntopening.png';
+import Image10 from '../../assets/images/open-demat-account/advancedplatform.png';
+import Image11 from '../../assets/images/open-demat-account/referal.svg';
 function WhyOpenFreeDematAccount() {
 
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 1500,
     margin:15,
     arrows: false,
@@ -88,7 +88,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -100,7 +100,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 

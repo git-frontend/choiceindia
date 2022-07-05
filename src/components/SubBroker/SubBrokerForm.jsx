@@ -17,16 +17,16 @@ function DematAccountForm() {
                     <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                         
                         <div className="sub-formgrp">
-                            <Form.Control type="text" name="firstName" placeholder="Name" className="formcontrol" />
+                            <Form.Control type="text" name="firstName" placeholder="Name" className="formcontrol formpadding" />
                         </div>
                         <div className="sub-formgrp">
-                            <Form.Control type="number" name="mobile" placeholder="Mobile Number" className="formcontrol" />
+                            <Form.Control type="number" name="mobile" placeholder="Mobile Number" className="formcontrol formpadding" />
                         </div>
                         <div className="sub-formgrp">
-                            <Form.Control type="text" name="email" placeholder="Email Id" className="formcontrol" />
+                            <Form.Control type="text" name="email" placeholder="Email Id" className="formcontrol formpadding" />
                         </div>
                         <div className="sub-formgrp">
-                            <Form.Control type="text" name="branch" placeholder="Search Nearest City Branch" className="formcontrol" />
+                            <Form.Control type="text" name="branch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" />
                         </div>
 
 

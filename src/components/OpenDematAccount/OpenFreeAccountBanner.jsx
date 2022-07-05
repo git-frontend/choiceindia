@@ -1,10 +1,10 @@
 import React from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
-import Image2 from '../../assets/images/open-demat-account/Lowest-DP.webp';
-import Image3 from '../../assets/images/open-demat-account/nosqroff.webp';
-import Image4 from '../../assets/images/open-demat-account/sucessratio.webp';
-import Image5 from '../../assets/images/open-demat-account/AMC.webp';
+import Image2 from '../../assets/images/open-demat-account/lowestdp.svg';
+import Image3 from '../../assets/images/open-demat-account/nosqroff.svg';
+import Image4 from '../../assets/images/open-demat-account/sucessratio.svg';
+import Image5 from '../../assets/images/open-demat-account/amc.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
 const OpenFreeAccountBanner = () => {
