@@ -168,6 +168,10 @@
 
         .title-fourth {
             font-size: 2.5rem;
+            @media screen and (max-width: $sm) {
+                margin-bottom: 4rem;
+                line-height: 3.5rem;
+            }
         }
 
         h3 {
