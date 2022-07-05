@@ -40,6 +40,14 @@
         @media (max-width: $sm-x) {
             text-align: center;
         }
+        h3{
+            font-size: 4.125rem;
+            font-weight: 700;
+            font-family: $font-family-poppins-bold;
+            @media (max-width: $sm) {
+             font-size: 2.5rem;
+            }
+        }
     }
     .pricing-bloc-tabs{
         display: flex;
@@ -48,6 +56,21 @@
         padding-bottom: 9rem;
         position: relative;
         z-index: 9;
+        &::after {
+            content: '';
+            width: 48rem;
+            height: 47rem;
+            display: block;
+            position: absolute;
+            right: -13rem;
+            top: -20rem;
+            background: url(../../assets/images/pricing/slider-bg.png) no-repeat top right;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
         .tabs{
             width: 23%;
             margin-left: 2%;
@@ -75,6 +98,9 @@
                     
                     font-family: $font-family-poppins-semibold;
                     margin: 1.5rem 0 1rem 0;
+                    @media (max-width:767px) {
+                        font-size: 1.6rem;
+                    }
                 }
 
                 p {
@@ -266,6 +292,12 @@
                                 font-size: 1.5rem;
                                 color: $secondary;
                                 margin-bottom: 1rem;
+                                @media (max-width: $sm) {
+                                    font-size: 1.4rem;
+                                }
+                                @media (min-width:768px) and (max-width: 990px) {
+                                    font-size: 1.3rem;
+                                }
                             }
                             @media (max-width: $sm) {
                                 width: 27.33%;
