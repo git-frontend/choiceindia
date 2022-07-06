@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true
+const environment = false
 
 
 /**URL Config */
@@ -9,13 +9,17 @@ const config = {
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL : "https://cmsapi.choiceindia.com/",
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
-    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/"
-    
+    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
+    UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
+    liveSSOBaseURL: 'https://sso-api.choiceindia.com/'
   
 }
 
 
 export class API_URLS {
+
+  /** SSO Base URL */
+  SSOServerURL = '';
 
   /**Server URL */
   serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
@@ -58,6 +62,12 @@ export class API_URLS {
 
    faqCategoryURL='solutions/categories'
 
+    /** Open Account APIs */
+
+    sendOTPURL = 'sign-up';
+    resendOTPURL = 'resend-otp';
+    OTPOnCallURL = 'otp-on-call';
+    verifyOTPURL = 'verify-otp';
 
 
 
@@ -73,11 +83,21 @@ export class API_URLS {
      * @param {*} configKey 
      */
   setConfig(configKey) {
+    this.setSSOServerURL(config[configKey + 'SSOBaseURL'])
+
     this.setServerURL(config[configKey + 'ServerURL'])
     
     this.setBannerURL(config[configKey + 'BannerURL'])
 
     this.setfaqURL(config[configKey + 'faqURL'])
+}
+
+/**
+ * Set Server URL 
+ * @param {*} url 
+ */
+ setSSOServerURL = (url) => {
+    this.SSOServerURL = url;
 }
 
 /**
@@ -172,6 +192,22 @@ getFaqfolderURL(id){
 getFaqArticleURL(id){
 
     return this.faqURL + `solutions/folders/${id}/articles`
+}
+
+getSendOTPURL() {
+    return this.SSOServerURL + this.sendOTPURL;
+}
+
+getResendOTPURL() {
+    return this.SSOServerURL + this.resendOTPURL;
+}
+
+getOTPOnCallURL() {
+    return this.SSOServerURL + this.OTPOnCallURL;
+}
+
+getVerifyOTPURL() {
+    return this.SSOServerURL + this.verifyOTPURL;
 }
 
 
