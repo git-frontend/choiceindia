@@ -122,10 +122,10 @@ function FableBlogList() {
                                     <div className="blog-item-des">
                                         <h4>{res.title}</h4>
                                         <p>{res.meta_description}</p>
-                                        <div className="d-flex justify-content-between">
+                                       {/** <div className="d-flex justify-content-between">
                                             <span className="sm-text">21 Aug 2021</span>
                                             <span className="sm-text">@SachinChadda</span>
-                                        </div>
+                                    </div> */}
                                     </div>
                                 </a>
 
