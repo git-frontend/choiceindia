@@ -53,6 +53,15 @@
 }
 
 .research-banner-tabs{
+  padding-bottom: 10rem;
+  .content-tabs{
+    .content{
+      display: none;
+      &.active-content{
+        display: block;
+      }
+    }
+  }
     .research-bloc-tabs{
         display: flex;
         justify-content: space-between;
@@ -71,6 +80,47 @@
             border: 0;
             outline: none;
             background: transparent;
+            &.active-tabs{
+              font-family: $font-family-poppins-semibold;
+              color: $primary;
+              &::before{
+                content: '';
+                background: #221f20;
+                border-radius: 2px;
+                bottom: -0.5rem;
+                display: block;
+                height: 0.5rem;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                width: 0.5rem;
+              }
+            }
+            &:hover{
+              &::before{
+                content: '';
+                background: #221f20;
+                border-radius: 2px;
+                bottom: -0.5rem;
+                display: block;
+                height: 0.5rem;
+                left: 0;
+                margin: 0 auto;
+                position: absolute;
+                right: 0;
+                width: 0.5rem;
+              }
+            }
+        }
+        &.SB-bloc-tabs{
+          justify-content: flex-start;
+          .tabs{
+            margin-left: 3rem;
+            &:first-child{
+              margin-left: 0;
+            }
+          }
         }
     }
     .research-tab-cont{
@@ -83,7 +133,7 @@
                 display: flex;
                 align-items: center;
                 flex-wrap: wrap;
-                margin-bottom: 5rem;
+                margin-bottom: 6rem;
                 .tab-itm-img{
                     width: 38%;
                     .thumb-img{
@@ -104,11 +154,42 @@
                         display: flex;
                         justify-content: space-between;
                         margin-top: 3rem;
+                        align-items: flex-end;
                         .date-post{
                             font-size: 1.25rem;
                             color: $primary;
                             opacity: 0.5;
                             font-family:$font-family-poppins-regular;
+                        }
+                        .btn-sm{
+                          color: $whiteColor;
+                          background: $secondary;
+                          text-decoration: none;
+                          padding: 0.5rem 2rem;
+                          display: block;
+                          border-radius: 8px;
+                          font-size: 1.3rem;
+                          transition: 0.5s;
+                        -webkit-transition: 0.5s;
+                        -moz-transition: 0.5s;
+                        -ms-transition: 0.5s;
+                        -o-transition: 0.5s;
+                          &.grn-btn{
+                            background: #00B26B;
+                            padding: 0.5rem 1.5rem;
+                            min-width: 130px;
+                            text-align: center;
+                          }
+                          &.red-btn{
+                            background: #EF404A;
+                            padding: 0.5rem 1.5rem;
+                            min-width: 130px;
+                            text-align: center;
+                          }
+                          &:hover{
+                            background: $primary;
+                            color: $whiteColor;
+                          }
                         }
                         .post-read{
                             color: $primary;
@@ -117,8 +198,35 @@
                             font-size: 1.25rem;
                             display: block;
                             font-family: $font-family-poppins-medium;
+                            padding-right: 2.8rem;
+                            &::before{
+                              content: '';
+                              background: url(../../assets/images/research/arrow-left.svg) no-repeat;
+                              display: block;
+                              width: 22px;
+                              height: 22px;
+                              position: absolute;
+                              background-size: contain;
+                              right: 0;
+                              top: 0;
+                            }
                         }
+                        
                     }
+                }
+                &.fundamentals-itm{
+                  .tab-itm-des{
+                    h4{
+                      color: #908E8F;
+                      font-family: $font-family-poppins-semibold;
+                      .grn-txt{
+                        color: #00B26B;
+                      }
+                    }
+                    .itm-des-sub{
+                      margin-top: 1rem;
+                    }
+                  }
                 }
             }
         }
@@ -212,3 +320,272 @@
       }
     }
   }
+
+.SB-content-tab{
+  .heading-sec-top{
+    margin-bottom: 5rem;
+    .title-secnd{
+      font-size: 2.4rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+  }
+  .sbdesk-tab-cont{
+    .sbdesk-tab-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: -3rem;
+      .sbdesk-tab-itm{
+        width: 46%;
+        margin-bottom: 5rem;
+        .tab-itm-top{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          .itm-top-ttl{
+            .ttl-mn{
+              font-size: 1.5rem;
+              font-family: $font-family-poppins-semibold;
+              color: $primary;
+            }
+            .ttl-sm{
+              color: #221f2080;
+              font-family: $font-family-poppins-semibold;
+              font-size: 1.25rem;
+              .red-txt{
+                color: #EF404A;
+              }
+              .grn-txt{
+                color: #00B26B;
+              }
+            }
+          }
+          .itm-date-btn{
+            display: flex;
+            align-items: center;
+            .date-post{
+              color: $primary;
+              opacity: 0.5;
+              font-family: $font-family-poppins-regular;
+              margin: 0;
+            }
+            .btn-sm{
+              background: #00B26B;
+              color: $whiteColor;
+              text-decoration: none;
+              padding:0.5rem 2.5rem;
+              display: block;
+              border-radius: 8px;
+              font-size: 1.3rem;
+              margin-left: 1rem;
+            }
+          }
+        }
+        .tab-itm-bottom{
+          margin-top: 1rem;
+          .tab-itm-baar{
+            position: relative;
+            padding-top: 3rem;
+            padding-bottom: 6rem;
+            .itm-baar-line{
+              background: #D7DEEF;
+              display: block;
+              width: 100%;
+              height: 5px;
+              border-radius: 8px;
+              position: relative;
+              &::before{
+                content: '';
+                width: 14px;
+                height: 5px;
+                display: block;
+                border-radius: 4px;
+                background: #EF404A;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              &::after{
+                content: '';
+                width: 14px;
+                height: 5px;
+                display: block;
+                border-radius: 4px;
+                background: #00B26B;
+                position: absolute;
+                right: 0;
+                top: 0;
+              }
+            }
+            .itm-cont-des{
+              h5{
+                font-size: 1rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+              }
+              h4{
+                color: $primary;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.375rem;
+              }
+            }
+            .stp-loss{
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+            .targt-prize{
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              text-align: right;
+            }
+            .entry-prize{
+              position: absolute;
+              right: inherit;
+              bottom: 0;
+              text-align: center;
+              &::before{
+                content: '';
+                width: 2px;
+                height: 14px;
+                border-radius: 5px;
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -2.8rem;
+                background: $blueColortext;
+                margin: 0 auto;
+              }
+            }
+            .curnt-mrk-price{
+              position: absolute;
+              bottom: inherit;
+              top: 0;
+              h4{
+                font-size: 1.375rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+              }
+              &.grn-txt{
+                .sm-txt{
+                  color: #00B26B;
+                }
+              }
+              &::before{
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 9px solid transparent;
+                border-right: 9px solid transparent;
+                border-top: 12px solid;
+                border-top-color: #00B26B;
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.SB-content-tab{
+  .content{
+    background: $whiteColor;
+    box-shadow: 0px 0px 15px 1px #c2c2c2;
+    border-radius: 20px;
+    padding:3rem 2rem 4rem 3rem;
+  }
+}
+
+.cquant-tab-cont{
+  .cquant-tab-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: -2rem;
+    .cquant-tab-itm{
+      width: 47%;
+      margin-bottom: 4rem;
+      .tab-itm-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        .itm-top-ttl{
+          .ttl-mn{
+             font-size: 1.5rem;
+              font-family: $font-family-poppins-semibold;
+              color: $primary;
+              small{
+                color: #221f2080;
+                font-family: $font-family-poppins-regular;
+                font-size: 0.9rem;
+              }
+          }
+          .ttl-sm{
+            color: #221f2080;
+            margin-left: 2.5rem;
+            font-size: 1.375rem;
+          }
+          .date-publish{
+              margin-top: 0.8rem;
+              color: #221f2080;
+              font-family: $font-family-poppins-regular;
+          }
+          .post-read{
+            color: $primary;
+            text-decoration: none;
+            position: relative;
+            font-size: 1rem;
+            display: inline-block;
+            font-family: $font-family-poppins-medium;
+            padding-right: 2rem;
+            &::before{
+              content: '';
+              background: url(../../assets/images/research/arrow-left.svg) no-repeat;
+              display: block;
+              width: 17px;
+              height: 18px;
+              position: absolute;
+              background-size: contain;
+              right: 0;
+              top: 0;
+              transform: rotate(90deg);
+            }
+        }
+        }
+        .itm-date-btn{
+          .ltp-percent{
+            font-family: $font-family-poppins-regular;
+            font-weight: 300;
+            margin-top: 1.5rem;
+            &.grn-txt{
+              color: #00B26B;
+            }
+            &.red-txt{
+              color: #EF404A;
+            }
+          }
+          .btn-sm{
+            background: #00B26B;
+            color: $whiteColor;
+            text-decoration: none;
+            padding:0.5rem 2.5rem;
+            display: inline-block;
+            border-radius: 8px;
+            font-size: 1.3rem;
+           
+          }
+        }
+      }
+    }
+  }
+}

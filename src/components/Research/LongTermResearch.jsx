@@ -6,10 +6,10 @@ import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
 import  ImageSub4  from '../../assets/images/icons/insurance.svg';
 import  ImageSub5  from '../../assets/images/icons/equity.svg';
 
-import PricingStocks from './PricingStocks';
-import PricingEquity from './PricingEquity';
-import PricingCurrency from './PricingCurrency';
-import PricingCommodity from './PricingCommodity';
+import EconomicAnalysis from './EconomicAnalysis';
+import CompanyFundamentals from './CompanyFundamentals';
+import IndustryAnalysis from './IndustryAnalysis';
+import IpoNfoAnalysis from './IpoNfoAnalysis';
 
 
 
@@ -71,25 +71,25 @@ Industry Analysis
               <div
                 className={toggleState === 1 ? "content  active-content" : "content"}
               >
-                  <PricingStocks />
+                  <EconomicAnalysis />
               </div>
 
               <div
                 className={toggleState === 2 ? "content  active-content" : "content"}
               >
-                {/* <PricingEquity /> */}
+                <CompanyFundamentals />
               </div>
 
               <div
                 className={toggleState === 3 ? "content  active-content" : "content"}
               >
-                {/* <PricingCurrency /> */}
+                <IndustryAnalysis />
               </div>
 
               <div
                 className={toggleState === 4 ? "content  active-content" : "content"}
               >
-                {/* <PricingCommodity /> */}
+                <IpoNfoAnalysis />
               </div>
             </div>
 

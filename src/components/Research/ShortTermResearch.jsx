@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 
-import PricingStocks from './PricingStocks';
+import CQuant from './CQuant';
 
 
 
@@ -30,7 +30,7 @@ function ShortTermResearch() {
 							</div>
 						</div>
 					</div>
-        <div className="research-bloc-tabs">
+        <div className="research-bloc-tabs SB-bloc-tabs">
               <button
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(1)}
@@ -47,30 +47,20 @@ function ShortTermResearch() {
               </button>
             </div>
 
-            <div className="content-tabs">
+            <div className="content-tabs SB-content-tab">
               <div
                 className={toggleState === 1 ? "content  active-content" : "content"}
               >
-                  <PricingStocks />
+             
               </div>
 
               <div
                 className={toggleState === 2 ? "content  active-content" : "content"}
               >
-                {/* <PricingEquity /> */}
+                <CQuant />
               </div>
 
-              <div
-                className={toggleState === 3 ? "content  active-content" : "content"}
-              >
-                {/* <PricingCurrency /> */}
-              </div>
-
-              <div
-                className={toggleState === 4 ? "content  active-content" : "content"}
-              >
-                {/* <PricingCommodity /> */}
-              </div>
+              
             </div>
 
             

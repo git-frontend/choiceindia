@@ -1,9 +1,12 @@
 
 import React from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img1.png';
+import thumb5 from '../../assets/images/research/thumbnail-img5.png';
+import thumb6 from '../../assets/images/research/thumbnail-img6.png';
+import thumb7 from '../../assets/images/research/thumbnail-img7.png';
+import thumb8 from '../../assets/images/research/thumbnail-img8.png';
 
 
-function PricingStocks() {
+function IndustryAnalysis() {
 
 
 
@@ -12,81 +15,71 @@ function PricingStocks() {
 
       <div className="research-tab-cont">
         <div className="research-tab-list">
-            <div className="res-tab-itm">
+            <div className="res-tab-itm fundamentals-itm">
                 <div className="tab-itm-img">
-                   <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                   <img src={thumb5} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                 </div>
                 <div className="tab-itm-des">
                     <h5 className="ttl-des">Private demand grew by 7% in Q3FY22 says Central Bank.</h5>
                     <p>Private demand grew by 7% in Q3FY22 and picked up 14.5% sequentially.</p>
+                    <h4>Upside: <span className="grn-txt">5.90%</span></h4>
                     <div className="itm-des-sub">
                         <span className="date-post">03 Mar 2022</span>
-                        <a href="#" className="post-read">Read More</a>
+                        <a href="#" className="btn-sm">HOLD</a>
                     </div>
                 </div>
             </div>
-            <div className="res-tab-itm">
+            <div className="res-tab-itm fundamentals-itm">
                 <div className="tab-itm-img">
-                   <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                   <img src={thumb6} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                 </div>
                 <div className="tab-itm-des">
                     <h5 className="ttl-des">Private demand grew by 7% in Q3FY22 says Central Bank.</h5>
                     <p>Private demand grew by 7% in Q3FY22 and picked up 14.5% sequentially.</p>
+                    <h4>Upside: <span className="grn-txt">5.90%</span></h4>
                     <div className="itm-des-sub">
                         <span className="date-post">03 Mar 2022</span>
-                        <a href="#" className="post-read">Read More</a>
+                        <a href="#" className="btn-sm">HOLD</a>
                     </div>
                 </div>
             </div>
-            <div className="res-tab-itm">
+            <div className="res-tab-itm fundamentals-itm">
                 <div className="tab-itm-img">
-                   <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                   <img src={thumb7} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                 </div>
                 <div className="tab-itm-des">
                     <h5 className="ttl-des">Private demand grew by 7% in Q3FY22 says Central Bank.</h5>
                     <p>Private demand grew by 7% in Q3FY22 and picked up 14.5% sequentially.</p>
+                    <h4>Upside: <span className="grn-txt">5.90%</span></h4>
                     <div className="itm-des-sub">
                         <span className="date-post">03 Mar 2022</span>
-                        <a href="#" className="post-read">Read More</a>
+                        <a href="#" className="btn-sm">HOLD</a>
                     </div>
                 </div>
             </div>
-            <div className="res-tab-itm">
+            <div className="res-tab-itm fundamentals-itm">
                 <div className="tab-itm-img">
-                   <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                   <img src={thumb8} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                 </div>
                 <div className="tab-itm-des">
                     <h5 className="ttl-des">Private demand grew by 7% in Q3FY22 says Central Bank.</h5>
                     <p>Private demand grew by 7% in Q3FY22 and picked up 14.5% sequentially.</p>
+                    <h4>Upside: <span className="grn-txt">5.90%</span></h4>
                     <div className="itm-des-sub">
                         <span className="date-post">03 Mar 2022</span>
-                        <a href="#" className="post-read">Read More</a>
+                        <a href="#" className="btn-sm">HOLD</a>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="mt-5 d-flex justify-content-center"><a class="btn-bg" href="/">Explore All</a></div>
       </div>
 
 
-      <div className="pricing-bar">
-              <div className="bar-wrap">
-                <div className="bar-filled"></div>
-              </div>
-            </div>
-            <div className="pricing-value">
-              <span>
-                123
-              </span>
-              <span>
-                123
-              </span>
-              <span>
-                123
-              </span>
-            </div>
+     
 
     </div>
   );
 }
 
-export default PricingStocks;
+export default IndustryAnalysis;
