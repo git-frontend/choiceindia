@@ -342,7 +342,215 @@
     }
   }
 
-
+.SB-content-tab{
+  .heading-sec-top{
+    margin-bottom: 5rem;
+    .title-secnd{
+      font-size: 2.4rem;
+    }
+    p{
+      font-size: 1.5rem;
+    }
+  }
+  .sbdesk-tab-cont{
+    .sbdesk-tab-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: -3rem;
+      .sbdesk-tab-itm{
+        width: 46%;
+        margin-bottom: 5rem;
+        .tab-itm-top{
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          .itm-top-ttl{
+            .ttl-mn{
+              font-size: 1.65rem;
+              font-family: $font-family-poppins-semibold;
+              color: $primary;
+            }
+            .ttl-sm{
+              color: #221f2080;
+              font-family: $font-family-poppins-semibold;
+              font-size: 1.25rem;
+              .red-txt{
+                color: #EF404A;
+              }
+              .grn-txt{
+                color: #00B26B;
+              }
+              .sml-txt{
+                font-family: $font-family-poppins-medium;
+              }
+            }
+          }
+          .itm-date-btn{
+            display: flex;
+            align-items: center;
+            .date-post{
+              color: $primary;
+              opacity: 0.5;
+              font-family: $font-family-poppins-regular;
+              margin: 0;
+            }
+            .btn-sm{
+              background: $primary;
+              color: $whiteColor;
+              text-decoration: none;
+              padding:0.5rem 2.5rem;
+              display: inline-block;
+              border-radius: 8px;
+              font-size: 1.3rem;
+              transition: 0.5s;
+              margin-left: 1rem;
+              text-transform: uppercase;
+              -webkit-transition: 0.5s;
+              -moz-transition: 0.5s;
+              -ms-transition: 0.5s;
+              -o-transition: 0.5s;
+              &.grn-btn{
+                background: #00B26B;
+              }
+              &.red-btn{
+                background: #EF404A;
+              }
+             &:hover{
+              background: $primary;
+             }
+            }
+          }
+        }
+        .tab-itm-bottom{
+          margin-top: 1rem;
+          .tab-itm-baar{
+            position: relative;
+            padding-top: 3rem;
+            padding-bottom: 6rem;
+            .itm-baar-line{
+              background: #D7DEEF;
+              display: block;
+              width: 100%;
+              height: 5px;
+              border-radius: 8px;
+              position: relative;
+              &::before{
+                content: '';
+                width: 14px;
+                height: 5px;
+                display: block;
+                border-radius: 4px;
+                background: #EF404A;
+                position: absolute;
+                left: 0;
+                top: 0;
+              }
+              &::after{
+                content: '';
+                width: 14px;
+                height: 5px;
+                display: block;
+                border-radius: 4px;
+                background: #00B26B;
+                position: absolute;
+                right: 0;
+                top: 0;
+              }
+            }
+            .itm-cont-des{
+              h5{
+                font-size: 1rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+              }
+              h4{
+                color: $primary;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.375rem;
+              }
+            }
+            .stp-loss{
+              position: absolute;
+              left: 0;
+              bottom: 0;
+            }
+            .targt-prize{
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              text-align: right;
+            }
+            .entry-prize{
+              position: absolute;
+              right: inherit;
+              bottom: 0;
+              text-align: center;
+              &::before{
+                content: '';
+                width: 2px;
+                height: 14px;
+                border-radius: 5px;
+                display: block;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: -2.8rem;
+                background: $blueColortext;
+                margin: 0 auto;
+              }
+            }
+            .curnt-mrk-price{
+              position: absolute;
+              bottom: inherit;
+              top: 0;
+              h4{
+                font-size: 1.25rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+              }
+              &.grn-txt{
+                .sm-txt{
+                  color: #00B26B;
+                }
+              }
+              &.red-txt{
+                .sm-txt{
+                  color: #EF404A;
+                }
+              }
+              
+              &::before{
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 9px solid transparent;
+                border-right: 9px solid transparent;
+                border-top: 12px solid;
+                border-top-color: #00B26B;
+                position: absolute;
+                bottom: -8px;
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+              }
+              &.grn-txt{
+                &::before{
+                  border-top-color: #00B26B;
+                }
+              }
+              &.red-txt{
+                &::before{
+                  border-top-color: #EF404A;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
 .SB-content-tab{
   .content{
@@ -455,3 +663,134 @@
   }
 }
 
+.our-performance{
+  padding: 5rem 0;
+  background: #FFFBF6;
+}
+
+
+.card {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	margin: 0 20px;
+	border-radius: 5px;
+  background-color: transparent;
+  background: inherit;
+border: 0;
+	.percent {
+		position: relative;
+	}
+	.sb-bar {
+		position: relative;
+		width: 340px;
+		height: 340px;
+		transform: rotate(90deg);
+		circle {
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: #f0f0f0;
+			stroke-width: 10;
+			stroke-linecap: round;
+			&:last-of-type {
+				stroke-dasharray: 910px;
+				stroke-dashoffset: calc(910px - (910px * var(--percent)) / 100  );
+				stroke: #3498db;
+			}
+		}
+	}
+  .c-quant-bar {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    transform: rotate(90deg);
+    left: 35px;
+    top: 24px;
+		circle {
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: #f0f0f0;
+			stroke-width: 10;
+			stroke-linecap: round;
+			&:last-of-type {
+				stroke-dasharray: 750px;
+				stroke-dashoffset: calc(750px - (750px * var(--percent)) / 100  );
+				stroke: #3498db;
+			}
+		}
+	}
+  .jiffy-signal-bar {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    transform: rotate(90deg);
+    left: 10px;
+    top: 48px;
+		circle {
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: #f0f0f0;
+			stroke-width: 10;
+			stroke-linecap: round;
+			&:last-of-type {
+				stroke-dasharray: 750px;
+				stroke-dashoffset: calc(750px - (750px * var(--percent)) / 100  );
+				stroke: #3498db;
+			}
+		}
+	}
+	.number {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		h3 {
+			font-weight: 200;
+			font-size: 3.5rem;
+			span {
+				font-size: 2rem;
+			}
+		}
+	}
+	.title {
+		h2 {
+			margin: 25px 0 0;
+		}
+	}
+	&:nth-child(1) {
+		.sb-bar {
+			circle {
+				&:last-of-type {
+					stroke: #0066B3;
+				}
+			}
+		}
+    .c-quant-bar {
+			circle {
+				&:last-of-type {
+					stroke: #4EAC3F;
+				}
+			}
+		}
+    .jiffy-signal-bar {
+			circle {
+				&:last-of-type {
+					stroke: #FFCE02;
+				}
+			}
+		}
+	}
+	&:nth-child(2) {
+		svg {
+			circle {
+				&:last-of-type {
+					stroke: #2ecc71;
+				}
+			}
+		}
+	}
+}

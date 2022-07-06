@@ -3,7 +3,6 @@ import Banner from './Banner';
 import LongTermResearch from './LongTermResearch';
 import ShortTermResearch from './ShortTermResearch';
 import OurPerformance from './OurPerformance';
-
 import CollectionSlider from './CollectionSlider';
 import Expert from './Expert';
 
@@ -19,9 +18,10 @@ function Research() {
         <Banner />
         <LongTermResearch />
         <ShortTermResearch />
-        <OurPerformance />
+        
         <CollectionSlider />
         <Expert />
+        <OurPerformance />
         
     
     </div>

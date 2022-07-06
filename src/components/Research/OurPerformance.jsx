@@ -32,12 +32,9 @@ function OurPerformance() {
                       <circle cx="125" cy="125" r="120" style={{'--percent': '50'}}></circle>
                     </svg>
                     <svg className="jiffy-signal-bar">
-                      <circle cx="105" cy="105" r="100"></circle>
-                      <circle cx="105" cy="105" r="100" style={{'--percent': '50'}}></circle>
+                      <circle cx="100" cy="100" r="95"></circle>
+                      <circle cx="100" cy="100" r="95" style={{'--percent': '50'}}></circle>
                     </svg>
-                  </div>
-                  <div class="title">
-                    <h2>HTML</h2>
                   </div>
                 </div>
               </div>

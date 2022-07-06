@@ -70,7 +70,7 @@ function CollectionSlider() {
                         </div>
                         <div className="col-md-7">
                             <div className="imgwrap">
-                                <img src={item1} alt="Collection" className="img-fluid" width={"231"} height={"211"}></img>
+                                <img src={item1} alt="Collection" className="img-fluid" width={"782"} height={"715"}></img>
                             </div>
 
                         </div>
