@@ -5,7 +5,7 @@ import ShortTermResearch from './ShortTermResearch';
 import OurPerformance from './OurPerformance';
 import CollectionSlider from './CollectionSlider';
 import Expert from './Expert';
-import Performance from './Performance';
+
 
 
 function Research() {
@@ -22,8 +22,6 @@ function Research() {
         <CollectionSlider />
         <Expert />
         <OurPerformance />
-        
-        <Performance />
     
     </div>
   );
