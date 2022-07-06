@@ -20,8 +20,6 @@ function Research() {
         <LongTermResearch />
         <ShortTermResearch />
         <OurPerformance />
-
-
         <CollectionSlider />
         <Expert />
         
