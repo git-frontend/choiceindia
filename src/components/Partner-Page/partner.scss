@@ -1,6 +1,11 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+
+.partner-skeleton-parent{
+    animation: hideMe 4s forwards;
+}
+
 .bloc-tabs {
     display: flex;
   }

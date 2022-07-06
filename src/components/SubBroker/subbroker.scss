@@ -2,6 +2,9 @@
 @import '../../assets/css/customvariable.scss';
 
 
+.sub-broker-skeleton-parent{
+    animation: hideMe 4s forwards;
+}
 
 .franchise-banner {
     background-size: 100% 100%;
@@ -138,7 +141,7 @@
         display: flex;
         width: 100%;
         background: $bluetext;
-        align-items: end;
+        align-items: flex-end;
         border-radius: 15px;
         padding: 1.25rem;
         flex-wrap: wrap;
@@ -908,7 +911,7 @@
     .eligb-right-sec {
         display: flex;
         position: relative;
-        justify-content: end;
+        justify-content: flex-end;
 
         .slider-eligb {
             width: 240px;
@@ -957,6 +960,7 @@
                 justify-content: flex-start;
                 padding-left: 0;
 
+                
                 li {
                     width: auto;
                     height: auto;
