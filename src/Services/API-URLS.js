@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true
+const environment = false
 
 
 /**URL Config */
@@ -9,13 +9,17 @@ const config = {
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL : "https://cmsapi.choiceindia.com/",
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
-    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/"
-    
-  
+    UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
+    UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/"
+    // https://researchreportapi.jiffy.in/api/report/market-insights
+    // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
 }
 
 
 export class API_URLS {
+
+  jiffyResearchURL = "";
 
   /**Server URL */
   serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
@@ -33,7 +37,7 @@ export class API_URLS {
   addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
 
   /**fablestories blog  */
-  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
+  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
 
 /**fables trending blog  */
   fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
@@ -58,9 +62,9 @@ export class API_URLS {
 
    faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
 
-    /** Fables category section */
+   /**Market Insights New */
 
-    fableCategoryURL='items/fables?filter[fable_status][_eq]=publish'
+  addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
 
 
@@ -82,6 +86,12 @@ export class API_URLS {
     this.setBannerURL(config[configKey + 'BannerURL'])
 
     this.setfaqURL(config[configKey + 'faqURL'])
+
+    this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+}
+
+setJiffyResearchURL = (url) => {
+    this.jiffyResearchURL = url;
 }
 
 /**
@@ -184,6 +194,16 @@ getFableCategoryURL(){
 getFableFolderURL(id){
     return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
 }
+/** Get Market Insite and fabal List URL */
+
+    getMarketinsiteNewURL() {
+        return this.jiffyResearchURL + this.addMarketInsiteNewURL;
+    }
+
+
+
+
+
 
 
 }
