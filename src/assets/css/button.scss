@@ -39,6 +39,10 @@
     &.btn-light{
         background-color: $whiteColor !important;
         color: $primary !important;
+        &:hover{
+            background: $bgcolor-yellow !important;
+            color: $bgcolordark !important;
+        }
     }
 }
 
