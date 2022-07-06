@@ -12,10 +12,10 @@ function Contactdetail() {
    const [skeleton, setSkeleton] = useState(() => true);
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
-   const myTimeout = setTimeout(myGreeting, 2000);
-   function myGreeting() {
+
+   setTimeout(() => {
       setSkeleton(() => false);
-   }
+    }, 1000)
 
    function selectCity(event) {
       setIsFirstMap(() => false);
