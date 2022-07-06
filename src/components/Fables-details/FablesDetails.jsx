@@ -16,6 +16,7 @@ function Fablesdetails() {
   const [allFabalData, setAllFabalData] = useState(() => {});
   const [htmlContent , sethtmlContent] = useState(() => '');
   const [IsDetail, setIsDetail] = useState(() => false);
+  const [trigger, setTrigger] = useState();
   const { id } = useParams();
   let data = [];
 
@@ -37,20 +38,26 @@ function Fablesdetails() {
   function loadFabalList() {
     homeServices.fabalStory().then(
       res => {
-        console.log('res1',res)
+        // console.log('res1',res)
         // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
           return e.id != id
         }))
-        console.log('SSS',allFabalData)
+        // console.log('SSS',allFabalData)
       }
     )
   }
 
   useEffect(() => {
-    getSingleFablesDetail();
-    loadFabalList();
-  }, [id])
+
+    setTrigger(true)
+		if (trigger === true) {
+			getSingleFablesDetail();
+      loadFabalList();
+		}
+
+    
+  }, [id,trigger])
 
   // useEffect(() => {
   //   data = allFabalData;

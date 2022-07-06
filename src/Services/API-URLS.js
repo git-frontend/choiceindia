@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false
+const environment = true
 
 
 /**URL Config */
@@ -60,7 +60,7 @@ export class API_URLS {
 
    /** Faq category section */
 
-   faqCategoryURL='solutions/categories'
+   faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
 
    /**Market Insights New */
 
@@ -150,7 +150,7 @@ getFableTrendingURL() {
 
 getFableblogURL(id){
 
-    return this.serverURL + `content/posts/${id}/?key=280c55197998a010569e5d612a`
+    return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a`
 }
 
 /** Get home Banner URL */
@@ -174,7 +174,7 @@ getContactFormURL(){
 }
 
 getFaqCategoryURL(){
-    return this.faqURL + this.faqCategoryURL
+    return this.bannerURL + this.faqCategoryURL
 }
 
 getFaqfolderURL(id){
@@ -188,11 +188,22 @@ getFaqArticleURL(id){
     return this.faqURL + `solutions/folders/${id}/articles`
 }
 
+getFableCategoryURL(){
+    return this.bannerURL + this.fableCategoryURL
+}
+getFableFolderURL(id){
+    return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
+}
 /** Get Market Insite and fabal List URL */
 
     getMarketinsiteNewURL() {
         return this.jiffyResearchURL + this.addMarketInsiteNewURL;
     }
+
+
+
+
+
 
 
 }

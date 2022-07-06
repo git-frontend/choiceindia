@@ -43,7 +43,6 @@ function FablesStories() {
 		setTrigger(true)
 		if (trigger === true) {
 			loadFabalList()
-
 		}
 
 	}, [trigger])
@@ -115,7 +114,7 @@ function FablesStories() {
 										{
 											fslider ?
 												<div className="stories-sec-right-des">
-													<Link to={`/fablesdetail/${fslider[sliderimag].id}`}>
+													<Link to={`/fablesdetail/${fslider[sliderimag].slug}`}>
 														<h4>{fslider[sliderimag].title}</h4>
 														<p>{fslider[sliderimag].excerpt}</p>
 													</Link>
@@ -144,14 +143,13 @@ function FablesStories() {
 												fslider?.map((response) => {
 													// console.log("index id",index)
 
-													Id = fslider[sliderimag].id;
+													Id = fslider[sliderimag].slug;
 
 													return (
 
 														<div className="itm-img" key={response.id} onClick={() => {
 															loadFableBlog(Id);
 
-															console.log("kkkk", Id);
 														}} >
 
 															<LazyLoader src={response.feature_image} alt="Loading" width={"312"} height={"200"} />

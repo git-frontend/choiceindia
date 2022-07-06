@@ -1,6 +1,10 @@
 @import '../../assets/css/customvariable.scss';
 
 
+.career-parent{
+    animation: hideMe 4s forwards;
+}
+
 .career-list-slider{
  
     .slick-slide{

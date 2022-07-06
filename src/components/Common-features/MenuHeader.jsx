@@ -39,17 +39,17 @@ export default function Header() {
                             <li className="nav-item">
                                 <NavLink to= '/research'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
-                            <li className="nav-item">
+                            {/* <li className="nav-item">
                                 <NavLink to= '/career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
-                            </li>
+                            </li> */}
                             <li className="nav-item">
                                 <NavLink to= '/contact' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <NavLink to= '/log in' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</NavLink>
+                                <a href='https://jiffy.choiceindia.com/auth/login' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
                             </li>
                             <li className="nav-item get-btn">
-                            <a className="nav-link"  href= "https://choiceindia.com/open-free-demat-account">Get Started</a>
+                            <a className="nav-link"  href= "https://choiceindia.com/open-free-demat-account">Open Free Account</a>
                             </li>
                         </ul>
                     </div>

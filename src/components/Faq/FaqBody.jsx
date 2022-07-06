@@ -3,25 +3,41 @@ import { Accordion } from 'react-bootstrap';
 import faqService from '../../Services/faqService';
 
 
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+// const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 export default function FaqBody() {
-  let value=[];
   const [list, setList] = useState([]);
-  const [list2, setList2] = useState("General");
+  const [list2, setList2] = useState("Stocks");
   const [trigger, setTrigger] = useState(false);
   const [folder, setFolder] = useState([]);
   const[article,setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [selected, setSelected] = useState(0);
+  
+  
  
 
-  const Ref = useRef(null);
+  // const Ref = useRef(null);
 
-  function handleFocus ()
-  {
-    scrollToRef(Ref);
-  };
+  // function handleFocus ()
+  // {
+  //   scrollToRef(Ref);
+  // };
+  // const testRef = useRef(null);
+  // function scrollToElement (){
+  //   testRef.current.scrollIntoView();
+  // } 
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
 
 
@@ -30,7 +46,7 @@ export default function FaqBody() {
     faqService.FaqCategory().then(
       res => {
         setList(res);
-        loadfaqFolder(res[0].id);
+        loadfaqFolder(res[0].category_linkage);
       }
     )
   };
@@ -81,21 +97,22 @@ export default function FaqBody() {
                   {
                     list.map((response, i) => {
 
-                      // let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : '')
+                      let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
 
                       
                       return (
-                        <div key={response.id} className="same-list-bx-item" onClick={() => {
+                        <div key={response.id} className={classNameNm2}  onClick={() => {
                           
-                          loadfaqFolder(response.id);
-                          setList2(response.name)
-                          // setSelected(i)
-                          handleFocus();
+                          loadfaqFolder(response.category_linkage);
+                          setList2(response.category_name);
+                          setSelectedId(0);
+                          setSelected(i);
+                          // scrollToElement();
                         }}>
-                          <div className="bx-item-cont"  >
-                            {/** <img src={Image1} className="" alt="" /> */}
-                            <h4>{response.name}</h4>
-                            <p>{response.description}</p>
+                          <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
+                             <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+                            <h4>{response.category_name}</h4>
+                            <p>{response.category_description}</p>
                           </div>
                         </div>
                       )
@@ -158,12 +175,12 @@ export default function FaqBody() {
           </div>
         </section>
 
-        <section className='faq-accordion' >
+        <section className='faq-accordion'  >
           <div className='container'>
-            <div className='faq-header'>
+            <div className='faq-header' id='faq-section'>
               <h1>{list2}</h1>
             </div>
-            <div className='faq-container' ref={Ref}>
+            <div className='faq-container'>
               <div className='content-list accordion-lists' >
                 {
                   folder.map((response, index) => {
@@ -176,6 +193,7 @@ export default function FaqBody() {
                       <div key={response.id} className={classNameNm} onClick={() => {
                         loadfaqarticle(response.id);
                         setSelectedId(index)
+                        
                       }}>
                         <p>{response.name}</p>
                       </div>
@@ -201,23 +219,23 @@ export default function FaqBody() {
                 <p>Modification</p>
                   </div>*/}
               </div>
-              <div className='content-list accordion-list '>
+              <div className='content-list accordion-list ' >
                 <Accordion defaultActiveKey="0" >
 
                 {
                   article.map((res,index)=>{
-                   
-                    
-          
-                    return(
 
-                      <Accordion.Item key={res.id} eventKey={index}>
-                    <Accordion.Header>{res.title}</Accordion.Header>
+                    return(
+                    <div>
+                    <Accordion.Item key={res.id} eventKey={index}>
+                    <Accordion.Header >{res.title}</Accordion.Header>
+                    {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                     <Accordion.Body>
                      {res.description_text}
                     </Accordion.Body>
-                  </Accordion.Item>
-
+                    {/**</div>*/}
+                    </Accordion.Item>
+                    </div>
 
                     )
                   })

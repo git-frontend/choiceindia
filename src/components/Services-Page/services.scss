@@ -3,6 +3,10 @@
 @import '../../assets/css/customvariable.scss';
 
 
+.services-parent{
+    animation: hideMe 4s forwards;
+}
+
 .service-banner{
     padding-bottom: 7rem;
     overflow: inherit;
