@@ -33,7 +33,7 @@ export class API_URLS {
   addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
 
   /**fablestories blog  */
-  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
+  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
 
 /**fables trending blog  */
   fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
@@ -56,7 +56,11 @@ export class API_URLS {
 
    /** Faq category section */
 
-   faqCategoryURL='solutions/categories'
+   faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
+
+    /** Fables category section */
+
+    fableCategoryURL='items/fables?filter[fable_status][_eq]=publish'
 
 
 
@@ -136,7 +140,7 @@ getFableTrendingURL() {
 
 getFableblogURL(id){
 
-    return this.serverURL + `content/posts/${id}/?key=280c55197998a010569e5d612a`
+    return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a`
 }
 
 /** Get home Banner URL */
@@ -160,7 +164,7 @@ getContactFormURL(){
 }
 
 getFaqCategoryURL(){
-    return this.faqURL + this.faqCategoryURL
+    return this.bannerURL + this.faqCategoryURL
 }
 
 getFaqfolderURL(id){
@@ -172,6 +176,13 @@ getFaqfolderURL(id){
 getFaqArticleURL(id){
 
     return this.faqURL + `solutions/folders/${id}/articles`
+}
+
+getFableCategoryURL(){
+    return this.bannerURL + this.fableCategoryURL
+}
+getFableFolderURL(id){
+    return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
 }
 
 
