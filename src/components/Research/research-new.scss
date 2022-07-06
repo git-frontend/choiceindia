@@ -1,6 +1,8 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+
+// slider section
 .collectons{
     background-color: $primary;
     padding: 7.3125rem 0;
@@ -52,6 +54,11 @@
        padding: 0 5rem;
     }
 }
+// End Slider Section
+
+
+
+// Expert team
 
 .expertteam {
     padding: 11.125rem 0 13rem;
@@ -277,5 +284,25 @@
                 }
             }
         }
+    }
+}
+
+// End Expert team
+
+
+
+// Our Performance
+
+.performance{
+    padding: 5rem 0;
+    background-color: #FFFBF6;
+    .heading{
+        padding-bottom: 4.5rem;
+        font-style: normal;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 5.25rem;
+    text-align: center;
+    font-family: "PoppinsSemiBold", sans-serif;
     }
 }
