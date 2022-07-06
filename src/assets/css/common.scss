@@ -43,7 +43,8 @@ body{
     // text-shadow:0 0 4px #00000040;
     font-family: $font-family-poppins-semibold;
     @media (max-width: 767px){
-        font-size: 2rem;
+        font-size: 2.5rem;
+        line-height: 4rem;
     }
 }
 
@@ -128,6 +129,12 @@ body{
 .App-Body{
     min-height: 100vh;
     margin-top: 9rem;
+    @media screen and (max-width: $sm) {
+       
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
     @media screen and (max-width: $md) {
         margin-top: 6.6rem;
     }
