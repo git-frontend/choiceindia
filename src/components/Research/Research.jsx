@@ -4,7 +4,7 @@ import LongTermResearch from './LongTermResearch';
 import ShortTermResearch from './ShortTermResearch';
 import CollectionSlider from './CollectionSlider';
 import Expert from './Expert';
-
+import Performance from './Performance';
 
 
 function Research() {
@@ -19,7 +19,7 @@ function Research() {
         <ShortTermResearch />
         <CollectionSlider />
         <Expert />
-        
+        <Performance />
     
     </div>
   );
