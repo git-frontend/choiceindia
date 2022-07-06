@@ -1,3 +1,269 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+.collectons{
+    background-color: $primary;
+    padding: 7.3125rem 0;
+   
+    .sliderwrap{
+        .slider-item{
+            &.active{
+                border-left: 0.8125rem solid $bgcolor-yellow;
+                padding-left: 1.3125rem;
+                .headtext{
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                }
+            }
+           margin-bottom: 4.875rem;
+            .headtext{
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                color: $whiteColor;
+                line-height: 5.25rem;
+                font-size: 3.5rem;
+             
+
+            }
+            .subtext{
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                color: $whiteColor;
+                line-height:2.8125rem;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    .imgwrap{
+       display: flex;
+       justify-content: center;
+       align-items: center;
+    }
+}
+
+.expertteam {
+    padding: 11.125rem 0 13rem;
+    position: relative;
+
+    @media (max-width:$sm) {
+        padding: 4rem 0;
+    }
+
+    &:before {
+        content: '';
+        width: 33rem;
+    height: 76rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -44rem;
+        background: url(../../assets/images/research/slider-bg.png) no-repeat bottom right;
+        background-size: contain;
+        z-index: -1;
+
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        height: 51.125rem;
+        width: 22.125rem;
+        bottom: -23%;
+        left: -0.6875rem;
+        background: url(../../assets/images/research/expertbottombg.png) no-repeat;
+        z-index: -1;
+        background-size: contain;
+        background-position: left;
+
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+
+    .heading {
+        padding-bottom: 4.5rem;
+        font-style: normal;
+    font-weight: 600;
+    font-size: 3.5rem;
+    line-height: 5.25rem;
+    text-align: center;
+    font-family: "PoppinsSemiBold", sans-serif;
+        @media (max-width:$sm) {
+            padding-bottom: 2.5rem;
+            font-size: 2.5rem;
+        }
+    }
+
+    .expert-list-slider {
+        position: relative;
+
+        .expert-item {
+            width: 90% !important;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            background: $primary;
+            padding: 1rem 3rem 0;
+            transition: 0.3s all ease-in;
+
+            @media (max-width:$sm) {
+                width: 95% !important;
+                display: block !important;
+                margin: 0 auto;
+            }
+
+            .namedesg {
+                position: absolute;
+                bottom: 0;
+                transform: translateY(8.5rem);
+                left: 0;
+                right: 0;
+                width: 100%;
+                color: $whiteColor;
+                text-align: center;
+                background: #221F2080;
+                border-radius: 0;
+                transition: 0.3s all ease-in;
+
+                h5 {
+                    margin: 0;
+                    padding: 0.75rem;
+                    font-size: 1.625rem;
+                    line-height: 2.4375rem;
+                    text-align: center;
+                    font-family: $font-family-poppins-medium;
+
+                    @media (min-width:769px) and (max-width:1024px) {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                .designation {
+                    font-family: $font-family-poppins-regular;
+                    color: $whiteColor;
+                    font-size: 1.125rem;
+                    line-height: 1.5rem;
+                    text-align: center;
+                    opacity: 1;
+                    display: block;
+                }
+            }
+
+
+            &:hover {
+                background: #FFBA69;
+
+                .namedesg {
+                    transform: translateY(0);
+                }
+            }
+
+            .img-itm {
+                display: block;
+                margin: 0 auto;
+
+                img {
+                    margin: 0 auto;
+                }
+            }
+        }
+
+        .slick-arrow {
+            z-index: 1;
+
+            @media (max-width:$sm) {
+                top: 65%;
+            }
+        }
+
+        .slick-next:before {
+            content: url('../../assets/images/about-us/next.png');
+            position: absolute;
+            height: 5.5rem;
+            width: 5.5rem;
+            background-color: $primary;
+            border-radius: 50%;
+            top: -70%;
+            right: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+
+            @media (max-width:$sm) {
+                height: 3.8rem;
+                width: 3.8rem;
+                top: -3.125rem;
+                right: 2rem;
+                content: url('../../assets/images/about-us/next-resp.png');
+            }
+        }
+
+        .slick-prev:before {
+            content: url('../../assets/images/about-us/prev.png');
+            position: absolute;
+            height: 5.5rem;
+            width: 5.5rem;
+            background-color: $primary;
+            border-radius: 50%;
+            top: -70%;
+            left: -7px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+
+            @media (max-width:$sm) {
+                height: 3.8rem;
+                width: 3.8rem;
+                top: -3.125rem;
+                left: 2rem;
+                content: url('../../assets/images/about-us/prev-resp.png');
+            }
+
+            &.disabled {
+                cursor: not-allowed;
+                background-color: #B6AAA7 !important;
+            }
+        }
+
+        .slick-disabled {
+            &:before {
+                cursor: not-allowed;
+                opacity: 0% !important;
+            }
+        }
+
+        .slick-dots {
+            bottom: -80px;
+
+            li {
+                width: 12px;
+                height: 12px;
+                margin: 0 0.5rem;
+
+                button {
+                    &:before {
+                        height: 10px;
+                        width: 10px;
+                        background: #E6E7E8;
+                        content: '';
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .slick-active {
+                button {
+                    &:before {
+                        background-color: #797A7D;
+                    }
+                }
+            }
+        }
+    }
+}
