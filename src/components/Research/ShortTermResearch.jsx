@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 
+import SBDesk from './SBDesk';
 import CQuant from './CQuant';
 
 
@@ -51,7 +52,7 @@ function ShortTermResearch() {
               <div
                 className={toggleState === 1 ? "content  active-content" : "content"}
               >
-             
+                  <SBDesk />
               </div>
 
               <div
