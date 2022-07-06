@@ -1,6 +1,6 @@
 
 import React from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img1.png';
+
 
 
 function SBDesk() {
@@ -28,7 +28,7 @@ function SBDesk() {
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
-                        <a href="/" className="btn-sm">BUY</a>
+                        <a href="/" className="btn-sm grn-btn">BUY</a>
                     </div>
                 </div>
                 <div className="tab-itm-bottom">
@@ -62,7 +62,7 @@ function SBDesk() {
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
-                        <a href="/" className="btn-sm">BUY</a>
+                        <a href="/" className="btn-sm red-btn">Sell</a>
                     </div>
                 </div>
                 <div className="tab-itm-bottom">
@@ -92,7 +92,7 @@ function SBDesk() {
                 <div className="tab-itm-top">
                     <div className="itm-top-ttl">
                        <h3 className="ttl-mn">NIFTY | CE | 17500 | 28 APR</h3> 
-                       <h4 className="ttl-sm">Closed | <span className="grn-txt">Target Achieved</span></h4>
+                       <h4 className="ttl-sm">Closed | <span className="sml-txt grn-txt">Target Achieved</span></h4>
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
@@ -126,7 +126,7 @@ function SBDesk() {
                 <div className="tab-itm-top">
                     <div className="itm-top-ttl">
                        <h3 className="ttl-mn">NIFTY | CE | 17500 | 28 APR</h3> 
-                       <h4 className="ttl-sm">Closed | <span className="red-txt">SL Hit</span></h4>
+                       <h4 className="ttl-sm">Closed | <span className="sml-txt red-txt">SL Hit</span></h4>
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
@@ -150,7 +150,7 @@ function SBDesk() {
                             <h5>Entry Price</h5>
                             <h4>121.00</h4>
                         </div>
-                        <div className="curnt-mrk-price grn-txt" style={{left:'70%',}}>
+                        <div className="curnt-mrk-price red-txt" style={{left:'10%',}}>
                             <h4>CMP <span className="sm-txt">121.00</span></h4>
                         </div>
                     </div>

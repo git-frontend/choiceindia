@@ -1,5 +1,6 @@
 
 import React from "react";
+import  ImageBanner  from '../../assets/images/research/banner-img.webp';
 
 function Banner() {
 
@@ -19,6 +20,7 @@ function Banner() {
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">
+                      <img src={ImageBanner} alt="Banner Images" className="img-fluid thumb-img" width={""} height={""}></img>
                     </div>
                 </div>
             </div>
