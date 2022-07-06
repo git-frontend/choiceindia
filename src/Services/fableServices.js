@@ -13,7 +13,24 @@ const FablesTrending ={
         return axios.get(url).then((data) => {
             return data
         })
-    }
+    },
+
+    fabalcategory:function(){
+        let api=new API_URLS()
+        let url =api.getFableCategoryURL();
+        return axios.get(url).then((data) =>{
+            return data
+        })
+
+    },
+    fabalFolder:function(pros){
+        let api=new API_URLS()
+        let url =api.getFableFolderURL(pros);
+        return axios.get(url).then((data) =>{
+            return data
+        })
+
+    },
 
 
 }
