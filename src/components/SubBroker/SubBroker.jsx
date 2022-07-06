@@ -13,10 +13,14 @@ import "./subbroker.scss";
 function SubBroker() {
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 2000);
-  function myGreeting() {
+  // const myTimeout = setTimeout(myGreeting, 900);
+  // function myGreeting() {
+  //   setSkeleton(() => false);
+  // }
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 1000)
 
   return (
     <div>

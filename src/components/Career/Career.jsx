@@ -11,11 +11,11 @@ import Template1 from '../Common-features/Template1';
 function Career() {
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 2000);
-  function myGreeting() {
-    setSkeleton(() => false);
-  }
 
+  setTimeout(() => {
+    setSkeleton(() => false);
+  }, 1000)
+  
   return (
     <div>
       {

@@ -9,10 +9,10 @@ import {useState} from 'react';
 function Partner() {
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 2000);
-  function myGreeting() {
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 1000)
 
   return (
     <div>

@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import  HomePageBanner from './HomePageBanner.jsx'
+// import  HomePageBanner from './HomePageBanner.jsx'
 import  EverydayFinance from './EverydayFinance.jsx'
 import  ChoiceFinx from './ChoiceFinx.jsx'
 import  MarketInsights from './MarketInsights.jsx'
@@ -17,10 +17,13 @@ function Home() {
 
 
 	const [skeleton, setSkeleton] = useState(() => true);
-	const myTimeout = setTimeout(myGreeting, 2000);
-	function myGreeting() {
-	  setSkeleton(() => false);
-	}
+	// const myTimeout = setTimeout(myGreeting, 1500);
+	// function myGreeting() {
+	//   setSkeleton(() => false);
+	// }
+	setTimeout(() => {
+		setSkeleton(() => false);
+	  }, 1000)
 
 
   return (

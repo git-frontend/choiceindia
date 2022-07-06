@@ -12,10 +12,10 @@ import Template3  from '../Common-features/Template3';
 function App() {
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 2000);
-  function myGreeting() {
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 1000)
 
 
   return (
