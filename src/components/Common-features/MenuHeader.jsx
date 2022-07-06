@@ -49,7 +49,7 @@ export default function Header() {
                                 <a href='https://jiffy.choiceindia.com/auth/login' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
                             </li>
                             <li className="nav-item get-btn">
-                            <a className="nav-link"  href= "https://choiceindia.com/open-free-demat-account">Open Free Accounts</a>
+                            <a className="nav-link"  href= "https://choiceindia.com/open-free-demat-account">Open Free Account</a>
                             </li>
                         </ul>
                     </div>
