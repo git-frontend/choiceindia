@@ -15,14 +15,14 @@ function App() {
 
   setTimeout(() => {
     setSkeleton(() => false);
-  }, 1000)
+  }, 200)
 
 
   return (
     <div>
     {
       skeleton? <Template3></Template3>:
-      <div>
+      <div className="app-skeleton-parent">
       <BannerApp />
       <AppBannerBottom />
       <AppBenefits />

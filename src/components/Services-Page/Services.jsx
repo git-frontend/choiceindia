@@ -18,10 +18,14 @@ import "./services.scss";
 function Services() {
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 2000);
-  function myGreeting() {
+  // const myTimeout = setTimeout(myGreeting, 2000);
+  // function myGreeting() {
+  //   setSkeleton(() => false);
+  // }
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 200)
 
   return (
     <div>

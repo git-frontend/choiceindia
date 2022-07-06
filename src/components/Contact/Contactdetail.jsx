@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import pin from '../../assets/images/contact/pin.svg';
 import clock from '../../assets/images/contact/clock.png';
 import { Form } from "react-bootstrap";
@@ -8,14 +8,19 @@ import city_list from "../../Data/ContactCity";
 
 function Contactdetail() {
 
-   let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
+   // let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
    const [skeleton, setSkeleton] = useState(() => true);
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
+   const [showMap, setShowMap] = useState(() => false);
 
    setTimeout(() => {
       setSkeleton(() => false);
-    }, 1000)
+    }, 200)
+
+    setTimeout(() => {
+      setShowMap(() => true);
+    }, 2000)
 
    function selectCity(event) {
       setIsFirstMap(() => false);
@@ -165,23 +170,23 @@ function Contactdetail() {
 
                </div>
                {
-                  firstMap ?
-                     <div className='container-fluid mt-10'>
-                        <div className='row'>
-                           <div className='map '>
-                              <div style={{ width: "100%" }}>
-                                 <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
-                           </div>
-                        </div>
-                     </div> :
-                     <div className='container-fluid mt-10'>
-                        <div className='row'>
-                           <div className='map '>
-                              <div style={{ width: "100%" }}>
-                                 <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={contactMap[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
-                           </div>
+                  showMap?firstMap ?
+                  <div className='container-fluid mt-10'>
+                     <div className='row'>
+                        <div className='map '>
+                           <div style={{ width: "100%" }}>
+                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
                      </div>
+                  </div> :
+                  <div className='container-fluid mt-10'>
+                     <div className='row'>
+                        <div className='map '>
+                           <div style={{ width: "100%" }}>
+                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={contactMap[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                        </div>
+                     </div>
+                  </div>: ''
                }
             </section>
          </div>

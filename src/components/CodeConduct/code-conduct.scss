@@ -1,7 +1,9 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-
+.code-conduct-parent{
+    animation: hideMe 4s forwards;
+}
 
 .code-mainwrapper {
     .head {

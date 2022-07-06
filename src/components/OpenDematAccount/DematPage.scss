@@ -2,6 +2,10 @@
 @import '../../assets/css/common.scss';
 
 
+.demat-page-parent{
+	animation: hideMe 4s forwards;
+}
+
 .banner-sect {
 	padding: 13rem 0;
 	background-color: $whiteColor;

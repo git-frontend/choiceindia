@@ -6,10 +6,13 @@ import Channels from '../../assets/images/sub-broker/channels.svg';
 import Training from '../../assets/images/sub-broker/training.svg';
 import Trading from '../../assets/images/sub-broker/edge-trading.svg';
 import Transport from '../../assets/images/sub-broker/transport-growth.svg';
-
+import {useState} from 'react';
 
 
 function SubBrokerBenifits() {
+
+    const [defaultOption, setdefaultOption] = useState(() => 'sl-slider-active');
+
     return (
         <div>
 
@@ -24,7 +27,7 @@ function SubBrokerBenifits() {
                     <div className="row relative">
                         <div className="col-md-12">
                             <div className="benifits-list slider-hide">
-                                <div className="sl-slider sl-slider-active">
+                                <div className={"sl-slider " + defaultOption }>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73"/>
@@ -32,7 +35,7 @@ function SubBrokerBenifits() {
                                         <h4>Local Relationship Manager Assistance</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73"/>
@@ -40,7 +43,7 @@ function SubBrokerBenifits() {
                                         <h4>Advanced Software to Manage Business</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73"/>
@@ -48,7 +51,7 @@ function SubBrokerBenifits() {
                                         <h4>Marketing &amp; Sales Support</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Channels} alt="Dedicated WhatsApp &amp; Telegram Channels" className="img-fluid" width="74" height="73" />
@@ -56,7 +59,7 @@ function SubBrokerBenifits() {
                                         <h4>Dedicated WhatsApp &amp; Telegram Channels</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" />
@@ -64,7 +67,7 @@ function SubBrokerBenifits() {
                                         <h4>Training through Webinars &amp; Conferences</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" />
@@ -72,7 +75,7 @@ function SubBrokerBenifits() {
                                         <h4>Cutting-edge Trading Platforms (App &amp; Web)</h4>
                                     </div>
                                 </div>
-                                <div className="sl-slider">
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
                                             <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" />

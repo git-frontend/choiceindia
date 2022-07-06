@@ -9,30 +9,37 @@ import {
   useParams,
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
+import Template1 from "../Common-features/Template1";
+
 function Fablesdetails() {
 
 
   const [single_detail, setSingle_Detail] = useState(() => null);
-  const [allFabalData, setAllFabalData] = useState(() => {});
-  const [htmlContent , sethtmlContent] = useState(() => '');
+  const [allFabalData, setAllFabalData] = useState(() => { });
+  const [htmlContent, sethtmlContent] = useState(() => '');
   const [IsDetail, setIsDetail] = useState(() => false);
   const [trigger, setTrigger] = useState();
   const { id } = useParams();
-  let data = [];
+  // let data = [];
 
+  const [skeleton, setSkeleton] = useState(() => true);
 
-    /** to call single fabal detail */
-    function getSingleFablesDetail() {
-      homeServices.fablesBlog(id).then(
-        res => {
-          if (res.data.posts) {
-            setSingle_Detail( res.data.posts);
-            setIsDetail( true);
-            sethtmlContent(res.data.posts[0].html);
-          }
+  setTimeout(() => {
+    setSkeleton(() => false);
+  }, 200)
+
+  /** to call single fabal detail */
+  function getSingleFablesDetail() {
+    homeServices.fablesBlog(id).then(
+      res => {
+        if (res.data.posts) {
+          setSingle_Detail(res.data.posts);
+          setIsDetail(true);
+          sethtmlContent(res.data.posts[0].html);
         }
-      )
-    }
+      }
+    )
+  }
 
   /** to call all fabal list */
   function loadFabalList() {
@@ -41,7 +48,7 @@ function Fablesdetails() {
         // console.log('res1',res)
         // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
-          return e.id != id
+          return e.id !== id
         }))
         // console.log('SSS',allFabalData)
       }
@@ -51,13 +58,13 @@ function Fablesdetails() {
   useEffect(() => {
 
     setTrigger(true)
-		if (trigger === true) {
-			getSingleFablesDetail();
+    if (trigger === true) {
+      getSingleFablesDetail();
       loadFabalList();
-		}
+    }
 
-    
-  }, [id,trigger])
+
+  }, [id, trigger])
 
   // useEffect(() => {
   //   data = allFabalData;
@@ -67,8 +74,13 @@ function Fablesdetails() {
   return (
     <div>
 
-      <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} />
-      <Recommendation name={allFabalData} Id={id} />
+      {
+        skeleton ? <Template1 /> :
+          <div className="fables-details-parent">
+            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} />
+            <Recommendation name={allFabalData} Id={id} />
+          </div>
+      }
 
     </div>
   );

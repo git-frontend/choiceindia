@@ -14,7 +14,7 @@ function Career() {
 
   setTimeout(() => {
     setSkeleton(() => false);
-  }, 1000)
+  }, 200)
   
   return (
     <div>
