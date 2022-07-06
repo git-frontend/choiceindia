@@ -5,28 +5,29 @@ import React from "react";
 import Slider from "react-slick";
 import Image7 from '../../assets/images/open-demat-account/low-brokerage.svg';
 import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
-import Image9 from '../../assets/images/open-demat-account/paperless-account.svg';
-// import Image10 from '../../assets/images/open-demat-account/low-brokerage.svg';
-// import Image11 from '../../assets/images/open-demat-account/low-brokerage.svg';
+import Image9 from '../../assets/images/open-demat-account/paperlessacntopening.png';
+import Image10 from '../../assets/images/open-demat-account/advancedplatform.png';
+import Image11 from '../../assets/images/open-demat-account/referal.svg';
 function WhyOpenFreeDematAccount() {
 
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 1500,
     margin:15,
     arrows: false,
     slidesToShow: 3,
-    autoplay: true,
+    autoplay: false,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
+    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 1200,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          adaptiveHeight: true,
+          adaptiveHeight: false,
         },
       },
       {
@@ -45,19 +46,17 @@ function WhyOpenFreeDematAccount() {
        <section className="adv-sect" >
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-3">
+                        <div className="col-md-4">
                             <div className="sectext">
                                 <h2>Why Open A Free Demat Account Online With Us?</h2>
                             </div>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-8">
                             <div className="pl-4">
-                                <Slider {...settings} id="advslider" className="">
-
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal1">
-                                        <div className="card adv-card">
+                                <Slider {...settings} id="advslider" className="adv-sect-slider">
+                                <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} className="img-fluid" alt="Low Brokerage" />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage" />
                                             </div>
                                             <div className="card-block">
 
@@ -65,11 +64,9 @@ function WhyOpenFreeDematAccount() {
                                                 <p>Low brokerage charges; as less as 2 Paisa*</p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="item  p-md-2" data-toggle="modal" data-target="#myModal2">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} alt="Free call Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -77,12 +74,9 @@ function WhyOpenFreeDematAccount() {
                                                 <p> Our customers can opt to execute trade over the phone free of cost.</p>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal5">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} alt="Paperless Account Opening" className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt="Paperless Account Opening" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -92,12 +86,9 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal4">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                {/* <img src={Image10} alt="Advanced Platform" className="img-fluid lazyload" /> */}
+                                                <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -107,11 +98,9 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="item p-md-2" data-toggle="modal" data-target="#myModal3">
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                {/* <img src={Image11} alt="Earn More From Referrals" className="img-fluid lazyload" /> */}
+                                                <img src={Image11} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -121,8 +110,6 @@ function WhyOpenFreeDematAccount() {
                                                 </p>
                                             </div>
                                         </div>
-                                    </div>
-
                                 </Slider>
                             </div>
                         </div>
