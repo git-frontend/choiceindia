@@ -50,7 +50,7 @@ function BannerSection() {
 
 										return(
                                        <div key={response.id}>
-									   <Link to={`/fablesdetail/${response.id}`} className="trending-itm">
+									   <Link to={`/fablesdetail/${response.slug}`} className="trending-itm">
 									   {/**<a href="/" className="trending-itm">*/}
 									   <div className="trending-itm-img">
 														<LazyLoader src={response.feature_image} className="img-blog" alt="Loading" width={"138"} height={"100"} />

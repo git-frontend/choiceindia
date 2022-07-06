@@ -16,6 +16,7 @@ function Fablesdetails() {
   const [allFabalData, setAllFabalData] = useState(() => {});
   const [htmlContent , sethtmlContent] = useState(() => '');
   const [IsDetail, setIsDetail] = useState(() => false);
+  const [trigger, setTrigger] = useState();
   const { id } = useParams();
   let data = [];
 
@@ -48,9 +49,15 @@ function Fablesdetails() {
   }
 
   useEffect(() => {
-    getSingleFablesDetail();
-    loadFabalList();
-  }, [id])
+
+    setTrigger(true)
+		if (trigger === true) {
+			getSingleFablesDetail();
+      loadFabalList();
+		}
+
+    
+  }, [id,trigger])
 
   // useEffect(() => {
   //   data = allFabalData;

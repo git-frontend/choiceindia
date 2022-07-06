@@ -26,10 +26,10 @@ function Recommendation(props) {
 	// 	setDisp(true);
 	// }
 
-	function Demo(id){
+	function Demo(slug){
 		// console.log('Demo called',id);
 		// setID(() => id);
-		navigate(`/fablesdetail/${id}`, { replace: true });
+		navigate(`/fablesdetail/${slug}`, { replace: true });
 		// <Link to={`/fablesdetail/${data.name?data.name[1].id : 'NA'}`} >
 			
 		// </Link>
@@ -53,7 +53,7 @@ function Recommendation(props) {
 						</div>
 						<div className="col-md-12">
 							<div className="blog-list">
-								<div className="blog-item" onClick={() => Demo(data.name?data.name[0].id : 'NA')}>
+								<div className="blog-item" style={{cursor: 'pointer'}} onClick={() => Demo(data.name?data.name[0].slug : 'NA')}>
 									<div className="blog-item-img">
 										<img src={data.name?data.name[0].feature_image : 'NA'} className="" alt="loading" />
 									</div>
@@ -82,7 +82,7 @@ function Recommendation(props) {
 									</div>
 									</div>
 								</Link> */}
-								<div className="blog-item" onClick={() => Demo(data.name?data.name[1].id : 'NA')}>
+								<div className="blog-item" style={{cursor: 'pointer'}} onClick={() => Demo(data.name?data.name[1].slug: 'NA')}>
 									<div className="blog-item-img">
 										<img src={data.name?data.name[1].feature_image : 'NA'} className="" alt="loading" />
 									</div>
@@ -96,7 +96,7 @@ function Recommendation(props) {
 									</div>
 								</div>
 								
-								<div  className="blog-item" onClick={() => Demo(data.name?data.name[2].id : 'NA')}>
+								<div  className="blog-item" style={{cursor: 'pointer'}} onClick={() => Demo(data.name?data.name[2].slug : 'NA')}>
 									<div className="blog-item-img">
 										<img src={data.name?data.name[2].feature_image : 'NA'} className="" alt="loading" />
 									</div>
@@ -110,7 +110,7 @@ function Recommendation(props) {
 									</div>
 								</div>
 
-                                <div className="blog-item" onClick={() => Demo(data.name?data.name[3].id : 'NA')}>
+                                <div className="blog-item" style={{cursor: 'pointer'}} onClick={() => Demo(data.name?data.name[3].slug : 'NA')}>
 									<div className="blog-item-img">
 										<img src={data.name?data.name[3].feature_image : 'NA'} className="" alt="loading" />
 									</div>
