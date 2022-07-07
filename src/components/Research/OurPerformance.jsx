@@ -35,7 +35,7 @@ function OurPerformance() {
                     </svg>
                     <svg className="c-quant-bar">
                       <circle cx="125" cy="125" r="120"></circle>
-                      <circle cx="125" cy="125" r="120" style={{ '--percent': '60' }}></circle>
+                      <circle cx="125" cy="125" r="120" style={{ '--percent': '55' }}></circle>
                     </svg>
                     <svg className="jiffy-signal-bar">
                       <circle cx="100" cy="100" r="95"></circle>
