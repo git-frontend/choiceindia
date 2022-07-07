@@ -45,12 +45,12 @@ function ChoiceFinx() {
 
                         return (
                           <div className="app-list-item" key={response.id}>
-                            <a href="/" data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
+                            <div className='link-choicefinx' data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
                                     <LazyLoader src={response.icon} className="img-fluid" alt="Loading" width={"40"} height={"40"} />
                               {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
                               <h4>{response.title}</h4>
                               <p>{response.description}</p>
-                            </a> 
+                            </div> 
                           </div>
 
 

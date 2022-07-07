@@ -1,6 +1,11 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+
+.investor-info-parent{
+    animation: hideMe 4s forwards;
+}
+
 body{
     background-color:  $whiteColor;
 }

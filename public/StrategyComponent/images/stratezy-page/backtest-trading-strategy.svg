@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="56.556" height="51" viewBox="0 0 56.556 51">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" y1="1" x2="0.5" y2="0.013" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00acea"/>
+      <stop offset="1" stop-color="#00efd1"/>
+    </linearGradient>
+  </defs>
+  <path id="chart-column-solid" d="M3.472,32a3.523,3.523,0,0,1,3.472,3.571v37.5a1.764,1.764,0,0,0,1.736,1.786h43.4a3.573,3.573,0,0,1,0,7.143H8.681A8.806,8.806,0,0,1,0,73.071v-37.5A3.523,3.523,0,0,1,3.472,32ZM17.361,53.429A3.519,3.519,0,0,1,20.833,57v7.143a3.474,3.474,0,1,1-6.944,0V57A3.519,3.519,0,0,1,17.361,53.429ZM31.25,64.143a3.474,3.474,0,1,1-6.944,0V46.286a3.474,3.474,0,1,1,6.944,0Zm6.944-14.286a3.519,3.519,0,0,1,3.472,3.571V64.143a3.474,3.474,0,1,1-6.944,0V53.429A3.519,3.519,0,0,1,38.194,49.857ZM52.083,64.143a3.474,3.474,0,1,1-6.944,0v-25a3.474,3.474,0,1,1,6.944,0Z" transform="translate(0.5 -31.5)" stroke="#fff" stroke-width="1" fill="url(#linear-gradient)"/>
+</svg>

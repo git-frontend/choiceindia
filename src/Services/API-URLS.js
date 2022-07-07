@@ -10,6 +10,10 @@ const config = {
     UATBannerURL : "https://cmsapi.choiceindia.com/",
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
+    UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/"
+    // https://researchreportapi.jiffy.in/api/report/market-insights
+    // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/'
   
@@ -18,10 +22,10 @@ const config = {
 
 export class API_URLS {
 
+  jiffyResearchURL = "";
   /** SSO Base URL */
   SSOServerURL = '';
-
-  /**Server URL */
+ /**Server URL */
   serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
 
   /** banner URL */
@@ -60,19 +64,23 @@ export class API_URLS {
 
    /** Faq category section */
 
-   faqCategoryURL='solutions/categories'
+   faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
 
-    /** Open Account APIs */
+   /**Market Insights New */
 
-    sendOTPURL = 'sign-up';
-    resendOTPURL = 'resend-otp';
-    OTPOnCallURL = 'otp-on-call';
-    verifyOTPURL = 'verify-otp';
+  addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
 
 
 
-  constructor() {
+
+   /** Open Account APIs */
+
+   sendOTPURL = 'sign-up';
+   resendOTPURL = 'resend-otp';
+   OTPOnCallURL = 'otp-on-call';
+   verifyOTPURL = 'verify-otp';
+   constructor() {
     this.setConfig(environment ? "live" : "UAT")
 }
 
@@ -90,6 +98,11 @@ export class API_URLS {
     this.setBannerURL(config[configKey + 'BannerURL'])
 
     this.setfaqURL(config[configKey + 'faqURL'])
+    this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+}
+
+setJiffyResearchURL = (url) => {
+    this.jiffyResearchURL = url;
 }
 
 /**
@@ -99,7 +112,6 @@ export class API_URLS {
  setSSOServerURL = (url) => {
     this.SSOServerURL = url;
 }
-
 /**
  * Set Server URL 
  * @param {*} url 
@@ -156,7 +168,7 @@ getFableTrendingURL() {
 
 getFableblogURL(id){
 
-    return this.serverURL + `content/posts/${id}/?key=280c55197998a010569e5d612a`
+    return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a`
 }
 
 /** Get home Banner URL */
@@ -180,7 +192,7 @@ getContactFormURL(){
 }
 
 getFaqCategoryURL(){
-    return this.faqURL + this.faqCategoryURL
+    return this.bannerURL + this.faqCategoryURL
 }
 
 getFaqfolderURL(id){
@@ -194,6 +206,18 @@ getFaqArticleURL(id){
     return this.faqURL + `solutions/folders/${id}/articles`
 }
 
+
+getFableCategoryURL(){
+    return this.bannerURL + this.fableCategoryURL
+}
+getFableFolderURL(id){
+    return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
+}
+/** Get Market Insite and fabal List URL */
+
+    getMarketinsiteNewURL() {
+        return this.jiffyResearchURL + this.addMarketInsiteNewURL;
+    }
 getSendOTPURL() {
     return this.SSOServerURL + this.sendOTPURL;
 }
@@ -209,6 +233,4 @@ getOTPOnCallURL() {
 getVerifyOTPURL() {
     return this.SSOServerURL + this.verifyOTPURL;
 }
-
-
 }

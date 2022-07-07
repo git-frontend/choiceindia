@@ -44,16 +44,16 @@ const FaqCommon = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <div className="accordion-container">
+            <div className="accordion-container" id="accordionExample">
               {
                 data.map((res, i) => {
                   return (
 
                     <div className="ac accordion-item" key={i} onClick={() => activeAccordion(false)}>
-                      <button className="ac-q acc" data-bs-toggle="collapse" data-bs-target={"#collapseone" + res.id} aria-expanded="true" >
+                      <button className="ac-q acc" data-bs-toggle="collapse" data-bs-target={"#collapseone" + res.id} aria-expanded="true" aria-controls={"collapseOne"+ res.id} >
                         {res.title}
                       </button>
-                      <div className={"ac-a accordion-collapse collapse" + ((activeAcc && i == 0) ? "show" : "")} id={"collapseone" + res.id}>
+                      <div className={"ac-a accordion-collapse collapse" + ((activeAcc && i == 0) ? "show" : "")} id={"collapseone" + res.id} data-bs-parent="#accordionExample">
                         <div><p>{res.description_text}</p></div>
                       </div>
                     </div>
@@ -196,14 +196,9 @@ function BasketSection() {
             <div className="row">
               <div className="col-md-12">
                 <a href="https://choiceindia.com/" className="camp-logo" id="camp-logo">
-                <img  src="images/basket/choicelogo.webp" className="img-fluid logoimg" alt="loading" loading="lazy" /> 
-                {/* <img  src="images/basket/choicelogo.webp" className="img-fluid" alt="loading" loading="lazy" /> */}
-                 {/* {return setTimeout(()=>{
-                  return  <img  src="images/basket/choicelogo.webp" className="img-fluid" alt="loading" />
-                 },1000)} */}
-                 {
-                  // customImageLoader( <img  src="images/basket/choicelogo.webp" className="img-fluid" alt="loading" />)
-                 }
+                <img  src="images/basket/choicelogo.webp" className="img-fluid " style={{  'width': "193px",
+    'height': '48px',
+    'aspect-ratio': 'auto 193 / 48'}} alt="loading" loading="lazy" /> 
                   </a>
               </div>
             </div>
@@ -256,7 +251,7 @@ function BasketSection() {
                   <div className="basket-investing-list">
                     <div className="investing-list-itm">
                       <div className="list-itm-box">
-                        <img  src="images/basket/income-source.svg" className="img-icon basketicon" alt="Loading" loading="lazy" />
+                        <img  src="images/basket/income-source.svg" className="img-icon" alt="Loading" loading="lazy" />
                         <h3>Passive Income Source</h3>
                         <div><p>To achieve your financial goals, invest in thematic baskets to create a passive income source.
                         </p></div>
@@ -264,7 +259,7 @@ function BasketSection() {
                     </div>
                     <div className="investing-list-itm">
                       <div className="list-itm-box">
-                        <img  src="images/basket/portfoio-optimisation.svg" className="img-icon basketicon" alt="Loading"  loading="lazy" />
+                        <img  src="images/basket/portfoio-optimisation.svg" className="img-icon" alt="Loading"  loading="lazy" />
                         <h3>Quantitative Portfolio Optimisation</h3>
                         <div><p>A quantitative optimised process that has been back-tested for the past 10 years and aims to
                           reduce portfolio volatility in contrast to the benchmark.</p></div>
@@ -272,7 +267,7 @@ function BasketSection() {
                     </div>
                     <div className="investing-list-itm">
                       <div className="list-itm-box">
-                        <img  src="images/basket/quarterly-rebalanceing.svg" className="img-icon basketicon" alt="Loading" loading="lazy"  />
+                        <img  src="images/basket/quarterly-rebalanceing.svg" className="img-icon" alt="Loading" loading="lazy"  />
                         <h3>Quarterly Rebalancing</h3>
                         <div><p>Our skilled research team evaluates the performance of the baskets on a quarterly basis in order
                           to rebalance your portfolio and achieve the highest CAGR possible.</p></div>
@@ -280,14 +275,14 @@ function BasketSection() {
                     </div>
                     <div className="investing-list-itm">
                       <div className="list-itm-box">
-                        <img  src="images/basket/minimum-investment.svg" className="img-icon basketicon" alt="Loading"  loading="lazy" />
+                        <img  src="images/basket/minimum-investment.svg" className="img-icon" alt="Loading"  loading="lazy" />
                         <h3>Minimum Investment</h3>
                         <div><p>With a minimum investment of Rs. 6000, you can begin investing in baskets.</p></div>
                       </div>
                     </div>
                     <div className="investing-list-itm">
                       <div className="list-itm-box">
-                        <img  src="images/basket/no-extra-cost.svg" className="img-icon basketicon" alt="Loading"  loading="lazy" />
+                        <img  src="images/basket/no-extra-cost.svg" className="img-icon" alt="Loading"  loading="lazy" />
                         <h3>No Extra Cost</h3>
                         <div><p>Investing in Baskets is absolutely free, with the exception of the brokerage fee charged when the
                           order is placed.</p></div>
@@ -525,7 +520,7 @@ function BasketLand() {
 
     <div className="baskets-features-list" id="basketInvest">
       <div className="feature-item">
-        <img  className="img-fluid basketicon" alt="Loading" src="images/basket/large-cap-stars.svg"  loading="lazy" />
+        <img  className="img-fluid" alt="Loading" src="images/basket/large-cap-stars.svg"  loading="lazy" />
         <h4>Large Cap Stars</h4>
         <div><p>The Large Cap Stars basket selects Large Cap stocks on a factor investing framework from the
           Nifty100 Index. The stocks are carefully selected on a factor-based approach encompassing smart
@@ -534,7 +529,7 @@ function BasketLand() {
 
       </div>
       <div className="feature-item">
-        <img  className="img-fluid basketicon" alt="Loading" src="images/basket/alpha-auto.svg"  loading="lazy" />
+        <img  className="img-fluid" alt="Loading" src="images/basket/alpha-auto.svg"  loading="lazy" />
         <h4>Alpha Auto Ancillaries</h4>
         <div><p>The Auto Ancillaries Alpha (“AAA”) sectoral basket selects automobile parts manufacturing stocks
           on a factor investing framework. The stocks are carefully selected on a factor-based approach
@@ -543,7 +538,7 @@ function BasketLand() {
 
       </div>
       <div className="feature-item">
-        <img  className="img-fluid basketicon" alt="Loading" src="images/basket/supermarket.svg"  loading="lazy" />
+        <img  className="img-fluid" alt="Loading" src="images/basket/supermarket.svg"  loading="lazy" />
         <h4>Supermarket</h4>
         <div><p>The FMCG (“Supermarket”) sectoral basket selects FMCG stocks on a factor investing framework. The
           stocks are carefully selected on a factor-based approach encompassing smart beta factors and
@@ -554,7 +549,7 @@ function BasketLand() {
 
       </div>
       <div className="feature-item">
-        <img  className="img-fluid basketicon" alt="Loading" src="images/basket/mighty-it.svg"  loading="lazy" />
+        <img  className="img-fluid" alt="Loading" src="images/basket/mighty-it.svg"  loading="lazy" />
         <h4>Mighty IT</h4>
         <div><p>The (“Mighty IT”) sectoral basket selects IT stocks on a factor investing framework. The stocks
           are carefully selected on a factor-based approach encompassing smart beta factors and liquidity
