@@ -18,7 +18,6 @@ function Research() {
         <Banner />
         <LongTermResearch />
         <ShortTermResearch />
-        
         <CollectionSlider />
         <Expert />
         <OurPerformance />

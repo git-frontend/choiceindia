@@ -24,18 +24,18 @@ function OurPerformance() {
             </div>
           </div>
           <div className="row gx-5 mt-5 pt-5 ">
-            <div className="col-md-5">
+            <div className="col-xl-5 col-md-6">
 
               <div className="progress-bar-performance">
                 <div class="card">
                   <div class="percent">
                     <svg className="sb-bar">
                       <circle cx="150" cy="150" r="145"></circle>
-                      <circle cx="150" cy="150" r="145" style={{ '--percent': '80' }}></circle>
+                      <circle cx="150" cy="150" r="145" style={{ '--percent': '45' }}></circle>
                     </svg>
                     <svg className="c-quant-bar">
                       <circle cx="125" cy="125" r="120"></circle>
-                      <circle cx="125" cy="125" r="120" style={{ '--percent': '50' }}></circle>
+                      <circle cx="125" cy="125" r="120" style={{ '--percent': '60' }}></circle>
                     </svg>
                     <svg className="jiffy-signal-bar">
                       <circle cx="100" cy="100" r="95"></circle>
@@ -45,7 +45,7 @@ function OurPerformance() {
                 </div>
               </div>
             </div>
-            <div className="col-md-7">
+            <div className="col-xl-7 col-md-6">
               <div className="performance-tabs SB-bloc-tabs">
                 <button
                   className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
@@ -74,17 +74,23 @@ function OurPerformance() {
                   <div className="wrapper">
                     <div className="wrap">
                       <div className="colorwrap blue"> </div>
-                      <p className="percentage">45%</p>
+                      <div className="wrap-des">
+                        <p className="percentage">45%</p>
+                      </div>
                     </div>
                     <div className="wrap">
                       <div className="colorwrap green"> </div>
-                      <p className="subtext">C-Quant</p>
-                      <p className="percentage">60%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">C-Quant</p>
+                        <p className="percentage">60%</p>
+                      </div>
                     </div>
                     <div className="wrap">
                       <div className="colorwrap yellow"> </div>
-                      <p  className="subtext">Jiffy Signal</p>
-                      <p className="percentage">65%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">Jiffy Signal</p>
+                        <p className="percentage">65%</p>
+                      </div>
                     </div>
                   </div>
 
@@ -92,44 +98,61 @@ function OurPerformance() {
 
                 <div className={toggleState === 2 ? "content  active-content" : "content"}>
                   <div className="wrapper">
-                    
+
                     <div className="wrap">
                       <div className="colorwrap yellow"> </div>
-                      <p  className="subtext">Jiffy Signal</p>
-                      <p className="percentage">65%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">Jiffy Signal</p>
+                        <p className="percentage">65%</p>
+                      </div>
+
                     </div>
                     <div className="wrap">
                       <div className="colorwrap blue"> </div>
-                      <p className="percentage">45%</p>
+                      <div className="wrap-des">
+                        <p className="percentage">45%</p>
+                      </div>
+
                     </div>
                     <div className="wrap">
                       <div className="colorwrap green"> </div>
-                      <p className="subtext">C-Quant</p>
-                      <p className="percentage">60%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">C-Quant</p>
+                        <p className="percentage">60%</p>
+                      </div>
+
                     </div>
-                  
+
                   </div>
                 </div>
                 <div
                   className={toggleState === 3 ? "content  active-content" : "content"}>
-                   <div className="wrapper">
-                    
+                  <div className="wrapper">
+
                     <div className="wrap">
                       <div className="colorwrap yellow"> </div>
-                      <p  className="subtext">Jiffy Signal</p>
-                      <p className="percentage">65%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">Jiffy Signal</p>
+                        <p className="percentage">65%</p>
+                      </div>
+
                     </div>
-                   
+
                     <div className="wrap">
                       <div className="colorwrap green"> </div>
-                      <p className="subtext">C-Quant</p>
-                      <p className="percentage">60%</p>
+                      <div className="wrap-des">
+                        <p className="subtext">C-Quant</p>
+                        <p className="percentage">60%</p>
+                      </div>
                     </div>
                     <div className="wrap">
                       <div className="colorwrap blue"> </div>
-                      <p className="percentage">45%</p>
+                      <div className="wrap-des">
+                        <p className="percentage">45%</p>
+                      </div>
+
                     </div>
-                  
+
                   </div>
                 </div>
 

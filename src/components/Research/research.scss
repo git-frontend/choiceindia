@@ -26,7 +26,7 @@
         @media (max-width: $md) {
             padding-right: 0;
             .title{
-                font-size: 3.125rem;
+                font-size: 3rem;
                 line-height: 4rem;
             }
         }
@@ -448,6 +448,10 @@
               background: $primary;
              }
             }
+            @media (max-width: $md) {
+              justify-content: space-between;
+              margin-top: 1.5rem;
+            }
           }
           @media (max-width: $md) {
             display: block;
@@ -595,6 +599,9 @@
     padding:3rem 2rem 4rem 3rem;
     position: relative;
     z-index: 9;
+    @media (max-width: $xs) {
+      padding: 3rem 2rem;
+    }
   }
 }
 
@@ -701,6 +708,7 @@
             display: flex;
             margin-top: 1rem;
             align-items: center;
+            justify-content: space-between;
           }
         }
         @media (max-width: $md) {
