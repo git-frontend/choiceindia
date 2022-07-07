@@ -46,7 +46,7 @@ function CollectionSlider() {
 
             <section className="collectons">
                 <div className="container">
-                    <div className="row">
+                    <div className="row align-items-center">
                         <div className="col-md-5">
                             <div className='sliderwrap'>
                                 <slider {...settings1} className="collection-slider">

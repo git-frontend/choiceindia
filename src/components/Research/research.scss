@@ -27,6 +27,7 @@
             padding-right: 0;
             .title{
                 font-size: 3.125rem;
+                line-height: 4rem;
             }
         }
     }
@@ -47,6 +48,7 @@
     }
     @media (max-width: $sm) {
         padding-bottom: 0;
+        padding-top: 1rem;
         text-align: center;
     }
     
@@ -141,6 +143,17 @@
             }
           }
         }
+        @media (max-width: $md) {
+          flex-wrap: nowrap;
+          overflow: auto;
+          .tabs{
+            white-space: nowrap;
+            margin-left: 2rem;
+            &:first-child{
+              margin-left: 0;
+            }
+          }
+        }
     }
     .research-tab-cont{
         .research-tab-list{
@@ -159,6 +172,10 @@
                         border-radius: 20px;
                         width: 100%;
                         object-fit: cover;
+                    }
+                    @media (max-width: $xs) {
+                      width: 100%;
+                      margin-bottom: 2.5rem;
                     }
                 }
                 .tab-itm-des{
@@ -234,6 +251,10 @@
                         }
                         
                     }
+                    @media (max-width: $xs) {
+                      width: 100%;
+                      padding-left: 0;
+                    }
                 }
                 &.fundamentals-itm{
                   .tab-itm-des{
@@ -248,6 +269,9 @@
                       margin-top: 1rem;
                     }
                   }
+                }
+                @media (max-width: $md) {
+                  width: 100%;
                 }
             }
         }
@@ -347,6 +371,9 @@
     margin-bottom: 5rem;
     .title-secnd{
       font-size: 2.4rem;
+      @media (max-width: 767px){
+        font-size: 2rem;
+      }
     }
     p{
       font-size: 1.5rem;
@@ -361,6 +388,7 @@
       .sbdesk-tab-itm{
         width: 46%;
         margin-bottom: 5rem;
+        overflow: hidden;
         .tab-itm-top{
           display: flex;
           justify-content: space-between;
@@ -420,6 +448,9 @@
               background: $primary;
              }
             }
+          }
+          @media (max-width: $md) {
+            display: block;
           }
         }
         .tab-itm-bottom{
@@ -486,6 +517,7 @@
               right: inherit;
               bottom: 0;
               text-align: center;
+              background: $whiteColor;
               &::before{
                 content: '';
                 width: 2px;
@@ -546,6 +578,9 @@
               }
             }
           }
+        }
+        @media (max-width: $xs) {
+          width: 100%;
         }
       }
     }
@@ -633,6 +668,10 @@
             &.red-txt{
               color: #EF404A;
             }
+            @media (max-width: $md) {
+              margin: 0;
+              margin-left: 1rem;
+            }
           }
           .btn-sm{
             background: $primary;
@@ -657,7 +696,19 @@
             background: $primary;
            }
           }
+          @media (max-width: $md) {
+            text-align: left;
+            display: flex;
+            margin-top: 1rem;
+            align-items: center;
+          }
         }
+        @media (max-width: $md) {
+          display: block;
+        }
+      }
+      @media (max-width: $xs) {
+        width: 100%;
       }
     }
   }

@@ -13,7 +13,7 @@ function Research() {
 
 
   return (
-    <div>
+    <div className="wrapper-rsrch">
 
         <Banner />
         <LongTermResearch />
