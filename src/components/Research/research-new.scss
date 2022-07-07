@@ -339,6 +339,9 @@
             @media  (max-width:$md) {
                 margin: 0 2rem 0 0 ;
             }
+            @media  (min-width:768px) and (max-width:1024px) {
+                margin: 0 2rem 0 0 ;
+             }
             &.active-tabs{
                 font-family: $font-family-poppins-semibold;
                 color: $primary;
@@ -514,11 +517,17 @@
             @media  (max-width:$sm) {
                 justify-content: center;
             }
+            @media  (min-width:768px) and (max-width:1024px) {
+               padding-left: 20px;
+            }
             .wrap{
                 margin: 0 10rem 0 0 ;
                 @media  (max-width:$md) {
                     margin: 0 4rem 0 0 ;
                 }
+                @media  (min-width:768px) and (max-width:1024px) {
+                    margin: 0 2rem 0 0 ;
+                 }
                 .colorwrap{
                     width: 4.375rem;
                     height: 4.375rem;
