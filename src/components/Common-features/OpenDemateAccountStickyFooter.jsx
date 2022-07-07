@@ -139,7 +139,7 @@ function OpenDemateAccountStickyFooter() {
                                     <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
                                 </label>
                                 <div className="termcon termcon1 ">
-                                    <div> I agree that I have read &amp; accept the<a className="tc"> Terms &amp; Conditions</a>
+                                    <div> I agree that I have read &amp; accept the<a className="tc" onClick={handleTermsConditionShow}> Terms &amp; Conditions</a>
                                     </div>
                                 </div>
                             </div>
@@ -161,6 +161,16 @@ function OpenDemateAccountStickyFooter() {
                 <Modal.Body>
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
+            </Modal>
+            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Header>
+                    <Modal.Title>Attention</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Footer>
+                    <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
+                </Modal.Footer>
             </Modal>
         </>
     )
