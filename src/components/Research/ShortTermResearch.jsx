@@ -21,7 +21,7 @@ function ShortTermResearch() {
   return (
     <div>
 
-        <section className="research-banner-tabs">
+        <section className="research-banner-tabs short-term-research">
         <div className="container">
             
         <div className="row">
