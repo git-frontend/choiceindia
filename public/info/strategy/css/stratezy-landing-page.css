@@ -769,7 +769,8 @@ body {
 }
 
 .why-stratezy {
-  padding: 12rem 0 10rem;
+  min-height: 582px;
+  padding: 12rem 0 7rem;
 }
 
 @media (max-width: 768px) {
@@ -788,10 +789,11 @@ body {
 
 .why-stratezy .screen {
   width: 100%;
-  height: 42rem;
   margin: auto;
-  border: 2px solid #C5C5C5;
-  border-radius: 1.25rem;
+  border: 3px solid #C5C5C5;
+  border-radius: 16px;
+  -webkit-box-shadow: 0px 6px 24px #00000029;
+          box-shadow: 0px 6px 24px #00000029;
   cursor: pointer;
 }
 
@@ -810,19 +812,6 @@ body {
 
 .why-stratezy .screen img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
-  height: 100%;
-  -webkit-transition: 8s all ease;
-  transition: 8s all ease;
-  border-radius: 1.25rem;
-}
-
-.why-stratezy .screen img:hover {
-  -o-object-position: bottom;
-     object-position: bottom;
 }
 
 .why-stratezy .rightwrap {
@@ -914,7 +903,7 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 @media (max-width: 767px) {
@@ -1734,8 +1723,8 @@ body {
 }
 
 .slider-item.active {
-  -webkit-animation: fadeIn 2s ease-in-out;
-          animation: fadeIn 2s ease-in-out;
+  -webkit-animation: fadeIn 1s ease-in-out;
+          animation: fadeIn 1s ease-in-out;
 }
 
 @-webkit-keyframes fadeIn {

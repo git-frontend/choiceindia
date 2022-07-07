@@ -102,33 +102,38 @@ function WhyStrategy() {
 
   const [dataObj, setdataObj] = React.useState(() => [
     {
-      image: "./images/stratezy-page/own-stratezy.svg",
+      image:"./images/stratezy-page/Create your own Strategy.webp",
+      icon: "./images/stratezy-page/own-stratezy.svg",
       heading: "Create your own Strategy",
       description: "Create unlimited strategies with a wide variety of Technical Indicators"
     },
 
     {
-      image: "./images/stratezy-page/backtest-trading-strategy.svg",
+      image:"./images/stratezy-page/backtest.webp",
+      icon: "./images/stratezy-page/backtest-trading-strategy.svg",
       heading: "Backtest in Jiffy",
       description: "Backtest Your created strategy with Profit & Stoploss percentage"
 
     },
 
     {
-      image: "./images/stratezy-page/optimise-trading-strategy.svg",
-      heading: "Optimize your Risk-reward for better Return",
-      description: "Optimize your strategy with Target & Stoploss parameters for better returns"
+      image:"./images/stratezy-page/Optimise.webp",
+      icon: "./images/stratezy-page/optimise-trading-strategy.svg",
+      heading: "Optimize your Risk-reward ",
+      description: "Optimize your strategy with Target & SL parameters for better returns"
 
     },
 
     {
-      image: "./images/stratezy-page/virtual-trade.svg",
+      image:"./images/stratezy-page/virtual trade.webp",
+      icon: "./images/stratezy-page/virtual-trade.svg",
       heading: "Virtual Trade",
       description: "Virtual Trade your Strategies without utilizing real funds"
 
     },
     {
-      image: "./images/stratezy-page/live-trade.svg",
+      image:"./images/stratezy-page/live trade.webp",
+      icon: "./images/stratezy-page/live-trade.svg",
       heading: "Live Trade",
       description: "Automate your trades by going live with your backtested strategies"
 
@@ -211,10 +216,11 @@ setTimeout(() => {
 
     <section className="why-stratezy">
       <div className="container">
+      {counterRight2?
         <div className="row">
           <div className="col-md-7 order2" >
             <div className="screen">
-              <img src="./images/stratezy-page/why-stratezy-screen.webp"  className="img-fluid" alt="Why Stratezy" />
+              <img src={dataObj[0].image}  className="img-fluid" alt="Why Stratezy" />
             </div>
           </div>
           <div className="col-md-5">
@@ -224,11 +230,11 @@ setTimeout(() => {
               </div>
 
               <div className="sliderwrap">
-                {counterRight2? <div className="slider-item active">
-                  <img src={dataObj[0].image} className="slider-icon" alt="Create Your Own Trading Strategy" />
+                 <div className="slider-item active">
+                  <img src={dataObj[0].icon} className="slider-icon" alt="Create Your Own Trading Strategy" />
                   <p className="heading">{dataObj[0].heading}</p>
                   <p className="subtext">{dataObj[0].description}</p>
-                </div>:''}
+                </div>
               </div>
               <div className="sliderbtn">
 
@@ -245,7 +251,7 @@ setTimeout(() => {
             </div>
           </div>
         </div>
-
+        :''}
       </div>
     </section>
 
