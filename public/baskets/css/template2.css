@@ -1,0 +1,294 @@
+/** keyframes added */
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@-webkit-keyframes hideMe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hideMe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.template2-child-1 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto auto;
+      grid-template-columns: auto auto auto auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 5rem 0rem 0rem 0rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template2-child-1 {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template2-child-1 {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template2-child-1 {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+
+.template2-child-1 div {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+  width: 25rem;
+  height: 25rem;
+  margin: 2rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template2-child-1 div {
+    width: auto;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template2-child-1 div {
+    width: auto;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .template2-child-1 div {
+    width: 15rem;
+  }
+}
+
+.template2-child-2 {
+  margin: 10rem 0rem 0rem 0rem;
+  width: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.template2-child-2 h1 {
+  width: 40%;
+  height: 5rem;
+  margin-left: 5rem;
+}
+
+.template2-child-2 p {
+  width: 70%;
+  height: 10rem;
+  margin-left: 5rem;
+}
+
+.template2-child-2 h1,
+.template2-child-2 p {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+
+.template3-child-3 {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 10rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 {
+    display: block;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 {
+    display: block;
+  }
+}
+
+.template3-child-3 h2 {
+  margin: 2rem;
+  width: 40rem;
+  height: 3rem;
+}
+
+.template3-child-3 p {
+  margin: 2rem;
+  width: 25rem;
+  height: 4rem;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 p {
+    width: 50%;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 p {
+    width: 50%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template3-child-3 p {
+    width: 50%;
+  }
+}
+
+.template3-child-3 h3 {
+  margin: 2rem;
+  width: 40rem;
+  height: 3rem;
+}
+
+.template3-child-3 h2, .template3-child-3 p, .template3-child-3 h3 {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+  color: transparent;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 h2, .template3-child-3 h3 {
+    width: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 h2, .template3-child-3 h3 {
+    width: auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template3-child-3 h2, .template3-child-3 h3 {
+    width: auto;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .template3-child-3 h2, .template3-child-3 h3 {
+    width: auto;
+  }
+}
+
+.template3-child-3 .template3-child3-content {
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 .template3-child3-content {
+    width: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 .template3-child3-content {
+    width: auto;
+  }
+}
+
+.template3-child-3 .template3-child3-img {
+  width: 50%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 .template3-child3-img {
+    width: auto;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 .template3-child3-img {
+    width: auto;
+  }
+}
+
+.template3-child-3 .template3-child3-img div {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+  width: 50%;
+  height: 40rem;
+  margin: auto;
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .template3-child-3 .template3-child3-img div {
+    width: auto;
+    height: 30rem;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .template3-child-3 .template3-child3-img div {
+    width: auto;
+    height: 30rem;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template3-child-3 .template3-child3-img div {
+    width: auto;
+    height: 30rem;
+    margin: 2rem;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .template3-child-3 .template3-child3-img div {
+    width: auto;
+    height: 30rem;
+    margin: 2rem;
+  }
+}
+/*# sourceMappingURL=template2.css.map */
