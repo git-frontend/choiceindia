@@ -9,9 +9,11 @@ import {
   useParams,
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
+import OpenDemateAccountPopup from '../Common-features/OpenDemateAccountPopup.jsx';
+
 function Fablesdetails() {
 
-
+  const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => {});
   const [htmlContent , sethtmlContent] = useState(() => '');
@@ -19,6 +21,13 @@ function Fablesdetails() {
   const { id } = useParams();
   let data = [];
 
+  function showOpenAccountAdPopup() {
+    setShowOpenAccountPopup(true);
+  }
+
+  function hideOpenAccountAdPopup() {
+    setShowOpenAccountPopup(false);
+  }
 
     /** to call single fabal detail */
     function getSingleFablesDetail() {
@@ -52,6 +61,12 @@ function Fablesdetails() {
     loadFabalList();
   }, [id])
 
+  useEffect(() => {
+    setTimeout(() => {
+      showOpenAccountAdPopup();
+    }, 60000);
+  }, [])
+
   // useEffect(() => {
   //   data = allFabalData;
   // },[allFabalData])
@@ -62,6 +77,9 @@ function Fablesdetails() {
 
       <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} />
       <Recommendation name={allFabalData} Id={id} />
+      {
+        showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
+      }
 
     </div>
   );

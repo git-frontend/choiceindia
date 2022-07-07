@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -12,21 +12,21 @@ function DematAccountForm() {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
-    const [mobileNumber, setMobileNumber] = React.useState('');
-    const [errors, setErrors] = React.useState({});
-    const [showTermsCondition, setShowTermsCondition] = React.useState(false);
-    const [showOTP, setShowOTP] = React.useState(false);
-    const [loaders, setLoaders] = React.useState({});
-    const [APIError, setAPIError] = React.useState();
-    const [showErrorToaster, setShowErrorToaster] = React.useState(false);
-    const [count, setCount] = React.useState(0);
-    const [otp, setOtp] = React.useState('');
-    const [OTPErrors, setOTPErrors] = React.useState('');
-    var UTMCampaign = React.useRef('');
-    var UTMMedium = React.useRef('');
-    var UTMSource = React.useRef('');
-    var refercode = React.useRef('');
-    var otpSessionID = React.useRef('');
+    const [mobileNumber, setMobileNumber] = useState('');
+    const [errors, setErrors] = useState({});
+    const [showTermsCondition, setShowTermsCondition] = useState(false);
+    const [showOTP, setShowOTP] = useState(false);
+    const [loaders, setLoaders] = useState({});
+    const [APIError, setAPIError] = useState();
+    const [showErrorToaster, setShowErrorToaster] = useState(false);
+    const [count, setCount] = useState(0);
+    const [otp, setOtp] = useState('');
+    const [OTPErrors, setOTPErrors] = useState('');
+    var UTMCampaign = useRef('');
+    var UTMMedium = useRef('');
+    var UTMSource = useRef('');
+    var refercode = useRef('');
+    var otpSessionID = useRef('');
   
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -114,11 +114,11 @@ function DematAccountForm() {
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
-            "utm_campaign": UTMCampaign.current || '',
+            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
             "utm_content": null,
             "utm_custom": null,
-            "utm_medium": UTMMedium.current || '',
-            "utm_source": UTMSource.current || '',
+            "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
+            "utm_source": UTMSource.current || 'blog_leads',
             "utm_term": null
         };
         openAccountService.sendOTP(request).then((res) => {
