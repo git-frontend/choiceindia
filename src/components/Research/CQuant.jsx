@@ -11,7 +11,7 @@ function CQuant() {
     <div>
     
     <div className="row">
-        <div className="col-md-12">
+        <div className="col-xl-8 col-md-12">
             <div className="heading-sec heading-sec-top">
                 <h3 className="title-secnd" >C-Quant</h3>
                 <p>Explore the world of trading with our robust algorithms that empower both novices as well as professionals by providing effective positional calls.</p>

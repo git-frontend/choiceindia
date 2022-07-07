@@ -106,7 +106,7 @@
               color: $primary;
               &::before{
                 content: '';
-                background: #221f20;
+                background: $bgcolordark;
                 border-radius: 2px;
                 bottom: -0.5rem;
                 display: block;
@@ -121,7 +121,7 @@
             &:hover{
               &::before{
                 content: '';
-                background: #221f20;
+                background: $bgcolordark;
                 border-radius: 2px;
                 bottom: -0.5rem;
                 display: block;
@@ -1043,7 +1043,7 @@
 
 
 .our-performance{
-  padding: 3rem 0 10rem 0;
+  padding: 4rem 0 10rem 0;
   background: #FFFBF6;
   .heading{
       padding-bottom: 2rem;
@@ -1090,7 +1090,7 @@
               color: $primary;
               &::before{
                 content: '';
-                background: #221f20;
+                background: $bgcolordark;
                 border-radius: 2px;
                 bottom: -0.5rem;
                 display: block;
@@ -1108,7 +1108,7 @@
             &:hover{
               &::before{
                 content: '';
-                background: #221f20;
+                background: $bgcolordark;
                 border-radius: 2px;
                 bottom: -0.5rem;
                 display: block;
