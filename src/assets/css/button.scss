@@ -36,6 +36,14 @@
             @extend.box-shadow;
         }
     }
+    &.btn-light{
+        background-color: $whiteColor !important;
+        color: $primary !important;
+        &:hover{
+            background: $bgcolor-yellow !important;
+            color: $bgcolordark !important;
+        }
+    }
 }
 
 .link-nrl {
