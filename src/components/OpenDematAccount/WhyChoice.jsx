@@ -22,7 +22,7 @@ const WhyChoice = () => {
                     <div className="rightsect">
                         <div className="row d-sm-flex m-0 line ">
                             <div className="col-md-5 col-md-offset-1 col-sm-5">
-                                <p className="headtxt">RESEARCH &amp; ADVISORY SERVICES</p>
+                                <p className="headtxt">Research &amp; Advisory Services</p>
                             </div>
                             <div className="col-md-6 col-sm-7">
                                 <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research at no extra cost.</p>
@@ -32,7 +32,7 @@ const WhyChoice = () => {
 
                         <div className="row mt-2 d-sm-flex m-0 line">
                             <div className="col-md-5 col-md-offset-1 col-sm-5 ">
-                                <p className="headtxt">CUSTOMER SUPPORT</p>
+                                <p className="headtxt">Customer Support</p>
                             </div>
                             <div className="col-md-6 col-sm-7">
                                 <p className="subtxt">An excellent support team that guides you at every step available via phone and emails and branch offices.</p>
@@ -42,7 +42,7 @@ const WhyChoice = () => {
 
                         <div className="row mt-2 d-sm-flex m-0 line">
                             <div className="col-md-5 col-md-offset-1 col-sm-5 ">
-                                <p className="headtxt">LOCAL OFFICES</p>
+                                <p className="headtxt">Local Offices</p>
                             </div>
                             <div className="col-md-6 col-sm-7">
                                 <p className="subtxt">We have 48 local offices available across the country at your service.</p>
@@ -51,7 +51,7 @@ const WhyChoice = () => {
                         <hr></hr>
                         <div className="row mt-2 d-sm-flex m-0 line line-last">
                             <div className="col-md-5 col-md-offset-1 col-sm-5">
-                                <p className="headtxt">25+ YEARS OF EXPERIENCE</p>
+                                <p className="headtxt">25+ Years of Experience</p>
                             </div>
                             <div className="col-md-6 col-sm-7">
                                 <p className="subtxt">A trusted name in the broking industry backed by 25+ years of experience in the finance domain.</p>

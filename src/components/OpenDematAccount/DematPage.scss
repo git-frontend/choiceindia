@@ -18,8 +18,8 @@
 		color: $primary;
 		font-size: 3rem;
 		line-height: 4.5rem;
-		font-family: $font-family-poppins-bold;
-		font-weight: 700;
+		font-family: $font-family-poppins-medium;
+		font-weight: 600;
 
 		.yellow {
 			color: $bgcolor-yellow;
@@ -84,6 +84,7 @@
 			.subtxt {
 				display: block;
 				font-weight: 500;
+				font-size: 1.4rem;
 			}
 		}
 
@@ -367,15 +368,19 @@
 	}
 
 	h3 {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		padding: 1rem 0 1.5rem 0;
+		margin-top: 2rem;
+	}
+	.p1{
+		padding: 1rem 0;
 	}
 }
 
 
 .open-acnt {
 	background-color: $bgcolor-green;
-	padding: 9rem 0;
+	padding: 1rem 0 9rem ;
 	position: relative;
 	margin-top: 6rem;
 
@@ -456,7 +461,7 @@
 
 	.get-started-sect {
 		position: relative;
-		top: -14.25rem;
+		top: -6.25rem;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -688,6 +693,7 @@
 				font-weight: 600;
 				line-height: 3rem;
 				margin: 0;
+				padding-right: 7rem;
 				@media (max-width:$sm) {
 					font-size: 1.65rem;
 

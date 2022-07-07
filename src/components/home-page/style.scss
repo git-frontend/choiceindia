@@ -61,7 +61,7 @@
         z-index: 9;
 
         .services-list-slider {
-            padding-bottom: 9rem;
+            padding-bottom: 3rem;
 
             .service-item {
                 padding-right: 7rem;
@@ -675,8 +675,12 @@
                 width: 100%;
                 display: block;
                 border-radius: 30px;
-                min-height: 450px;
+                min-height: 500px;
                 object-fit: cover;
+                @media (max-width: $sm) {
+                    min-height: auto;
+                    height: 300px;
+                }
             }
 
             @media (max-width: $sm) {
