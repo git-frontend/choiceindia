@@ -19,10 +19,11 @@
                 color: $whiteColor;
                 line-height: 5.25rem;
                 font-size: 3.5rem;
-                @media (max-width:$sm) {
-                    font-size: 2.5rem;
+                @media (max-width:$md) {
+                  font-size: 2.5rem;
+                  line-height: 3.5rem;
                 }
-
+                
             }
             .subtext{
                 font-family: $font-family-poppins-regular;
@@ -31,9 +32,9 @@
                 line-height:2.8125rem;
                 font-size: 1.8rem;
                 display: none;
-                @media (max-width:$sm) {
+                @media (max-width:$md) {
                     font-size: 1.5rem;
-                    line-height:2rem;
+                    line-height:2.5rem;
                 }
             }
             &.active{
@@ -49,6 +50,12 @@
                 .subtext{
                     display: block;
                 }
+                @media (max-width:$md) {
+                  border-left: 0.5rem solid #FFCE02;
+                }
+            }
+            @media (max-width:$md) {
+              margin-bottom: 2.5rem;
             }
         }
     }
@@ -57,6 +64,9 @@
        justify-content: center;
        align-items: center;
        padding: 0 5rem;
+       @media (max-width:$md) {
+        padding: 0 1.5rem;
+       }
        @media (max-width:$sm) {
             padding: 0 3rem;
             margin-top: 4rem;
@@ -340,6 +350,7 @@
             border: none;
             position: relative;
             margin: 0 10rem 0 0;
+            text-align: left;
             font-size: 1.75rem;
             @media  (max-width:$md) {
                 margin: 0;
@@ -347,10 +358,9 @@
             }
             @media  (max-width:$sm) {
               font-size: 1.4rem;
+              padding: 0;
             }
-            @media  (min-width:768px) and (max-width:1024px) {
-                margin: 0 2rem 0 0 ;
-             }
+            
             &.active-tabs{
                 font-family: $font-family-poppins-semibold;
                 color: $primary;
@@ -366,6 +376,9 @@
                   position: absolute;
                   right: 0;
                   width: 4rem;
+                  @media  (max-width:$md) {
+                    right: inherit;
+                  }
                 }
               }
               &:hover{
@@ -551,7 +564,7 @@
                padding-left: 20px;
             }
             .wrap{
-                width: 28%;
+                width: 33.33%;
                
                 .colorwrap{
                     width: 4.375rem;

@@ -96,7 +96,7 @@ function SBDesk() {
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
-                        <a href="/" className="btn-sm">BUY</a>
+                        <a href="/" className="btn-sm grn-btn">BUY</a>
                     </div>
                 </div>
                 <div className="tab-itm-bottom">
@@ -130,7 +130,7 @@ function SBDesk() {
                     </div>
                     <div className="itm-date-btn">
                         <h5 className="date-post">Today 11:33 AM</h5>
-                        <a href="/" className="btn-sm">BUY</a>
+                        <a href="/" className="btn-sm grn-btn">BUY</a>
                     </div>
                 </div>
                 <div className="tab-itm-bottom">

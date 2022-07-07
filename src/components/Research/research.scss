@@ -145,7 +145,8 @@
         }
         @media (max-width: $md) {
           flex-wrap: nowrap;
-          overflow: auto;
+          overflow-x: auto;
+          overflow-y: hidden;
           .tabs{
             white-space: nowrap;
             margin-left: 2rem;

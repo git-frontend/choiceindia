@@ -24,7 +24,7 @@ function OurPerformance() {
             </div>
           </div>
           <div className="row gx-5 mt-5 pt-5 ">
-            <div className="col-xl-5 col-md-6">
+            <div className="col-xl-4 col-md-6">
 
               <div className="progress-bar-performance">
                 <div class="card">

@@ -47,7 +47,7 @@ function CollectionSlider() {
             <section className="collectons">
                 <div className="container">
                     <div className="row align-items-center">
-                        <div className="col-md-5">
+                        <div className="col-xl-5 col-md-6">
                             <div className='sliderwrap'>
                                 <slider {...settings1} className="collection-slider">
                                     <div className="slider-item active">
@@ -68,7 +68,7 @@ function CollectionSlider() {
                                 <a class="btn-bg btn-light" href="/">Explore All</a>
                             </div>
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-xl-7 col-md-6">
                             <div className="imgwrap">
                                 <img src={item1} alt="Collection" className="img-fluid" width={"782"} height={"715"}></img>
                             </div>
