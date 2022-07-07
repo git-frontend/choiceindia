@@ -11,7 +11,7 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/"
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
     // https://researchreportapi.jiffy.in/api/report/market-insights
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
