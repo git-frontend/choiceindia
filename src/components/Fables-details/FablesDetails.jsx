@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
 import OpenDemateAccountPopup from '../Common-features/OpenDemateAccountPopup.jsx';
+import OpenDemateAccountStickyFooter from '../Common-features/OpenDemateAccountStickyFooter.jsx';
 
 function Fablesdetails() {
 
@@ -80,7 +81,7 @@ function Fablesdetails() {
       {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       }
-
+      <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
     </div>
   );
 }

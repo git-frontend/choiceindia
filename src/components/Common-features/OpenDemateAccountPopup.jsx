@@ -81,6 +81,7 @@ function OpenDemateAccountPopup({hideComponent}) {
                 'invalidMobile': true
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
+            fetchQueryParams();
             sendOTP();
         }
     }
@@ -106,7 +107,6 @@ function OpenDemateAccountPopup({hideComponent}) {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 otpSessionID.current = res.data.Body.otp_session_id;
-                fetchQueryParams();
                 setShowOpenAccountPopup(false);
                 handleOTPShow();
             } else {
@@ -194,7 +194,6 @@ function OpenDemateAccountPopup({hideComponent}) {
                     <Modal.Title>Enter OTP</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
             </Modal>
