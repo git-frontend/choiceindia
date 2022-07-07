@@ -18,7 +18,7 @@ function Faq() {
           {
             skeleton? <Template1/>:
             <div className='faq-skeleton-parent'>
-            <FaqBanner />
+            {/**<FaqBanner />*/}
             <FaqBody />
             </div>
           }

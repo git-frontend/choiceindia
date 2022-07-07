@@ -8,7 +8,7 @@ const faqService = {
     },
 
     FaqCategory: function () {
-
+        
         let api = new API_URLS()
         let url = api.getFaqCategoryURL()
         return axios.get(url, this.headerConfig).then(({ data }) => {
@@ -33,6 +33,17 @@ const faqService = {
             return data
         })
 
+    },
+    FaqSearch: function (pros) {
+
+        let api = new API_URLS()
+        let url = api.getFaqSearchURL(pros)
+        return axios.get(url,this.headerConfig).then(({ data }) => {
+            return data
+        })
+
     }
+
+
 }
 export default faqService;
