@@ -407,6 +407,7 @@
 
             .single-trade-easy-images {
                 max-width: 100%;
+                height: auto;
             }
             @media (max-width:$md) {
                 padding: 0;
@@ -535,6 +536,9 @@
                     justify-content: flex-end;
                 }
             }
+            @media (max-width:$md) {
+                margin-left: 2rem;
+            }
         }
 
         .title-secnd {
@@ -549,6 +553,7 @@
         .trade-easy-images-div {
             .single-trade-easy-images {
                 width: 100%;
+                height: auto;
             }
 
             @media (max-width: $sm) {

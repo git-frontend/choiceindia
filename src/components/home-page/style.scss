@@ -686,18 +686,19 @@
 
         .stories-sec-right {
             width: 60%;
-            padding-left: 8rem;
+            padding-left: 7rem;
             padding-top: 5rem;
 
             h4 {
-                font-size: 2.25rem;
+                font-size: 2rem;
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
                 margin-bottom: 2rem;
             }
 
             p {
-                font-size: 1.75rem;
+                font-size: 1.65rem;
+                line-height: 2.6rem;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 white-space: initial;
