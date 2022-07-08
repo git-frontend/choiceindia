@@ -1,6 +1,11 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import faqService from '../../Services/faqService';
+import { Button, Form } from "react-bootstrap";
+import image1 from "../../assets/images/Faq/faq-banner.webp";
+import * as yup from 'yup';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useForm } from 'react-hook-form';
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -13,9 +18,15 @@ export default function FaqBody() {
   const[article,setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [selected, setSelected] = useState(0);
+  const [isactive, setIsactive] = useState(false);
+  const [isarticle, setIsarticle] = useState(false);
+  let data = '';
   
   
- 
+  
+  const schema = yup.object().shape({
+    firstName: yup.string().required("FirstName is required")
+  })
 
   // const Ref = useRef(null);
 
@@ -26,7 +37,22 @@ export default function FaqBody() {
   // const testRef = useRef(null);
   // function scrollToElement (){
   //   testRef.current.scrollIntoView();
-  // } 
+  // }
+
+   /** Get Faq qus  */
+   const faqChange = (e2) => {
+    // setdata(e2.target.value)
+    data = e2.target.value;
+
+    console.log("check",data);
+};
+
+
+  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+    mode: 'onChange',
+    resolver: yupResolver(schema)
+  });
+  
 
   function chapterScroll(id) {
     var element = document.getElementById(id);
@@ -69,6 +95,19 @@ export default function FaqBody() {
     )
   };
 
+
+  function loadfaqsearch(data) {
+    setIsactive(false)
+    console.log("check12",data)
+    faqService.FaqSearch(data).then(
+      res => {
+        setIsactive(true)
+        setList(res);
+        // loadfaqFolder(res[0].category_linkage);
+      }
+    )
+  };
+
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
@@ -80,6 +119,34 @@ export default function FaqBody() {
 
   return (
     <>
+    <div className="faq-main">
+
+    <section className="banner-app">
+                <img src={image1} className="ban-img" alt='Loading' width={"1519"} height={"669"}/>
+     <div className='app-banner-caption'>
+        <div className='container'>
+            <div className='row'>
+                <div className='col-md-6'>
+                    <div className='caption-cont'>
+                        <h1 className='big-ttl faq-title'>How can I help you ?</h1>
+                        <div className="faq-search">
+                      
+                        <Form.Control type="text" placeholder="Search for your issue" className="formcontrol" {...register('faq',{onChange:(e2) => {faqChange(e2)}})}  />
+                        <Button type="submit" variant="warning" onClick={()=> {loadfaqsearch(data)}}>Search</Button>
+                       
+                        </div>
+                        <div>
+                        
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+</section>
+    
+    {  isactive == false ?
       <div className='faq-body'>
 
         <section className="security-privacy same-list-bx">
@@ -119,55 +186,7 @@ export default function FaqBody() {
                     }
                     )
                   }
-                  {/**<div className="same-list-bx-item">
-                    <div className="bx-item-cont" onClick={handleFocus}>
-                      <img src={Image2} className="" alt="" />
-                      <h4>Security</h4>
-                      <p>We follow Industry leading security protocols.</p>
-                    </div>
-                  </div>
-                  <div className="same-list-bx-item">
-                    <div className="bx-item-cont" onClick={handleFocus}>
-                      <img src={Image3} className="" alt="" />
-                      <h4>Privacy</h4>
-                      <p>We will never share your data without your consent.</p>
-                    </div>
-                  </div>
-                  <div className="same-list-bx-item">
-                    <div className="bx-item-cont" onClick={handleFocus}>
-                      <img src={Image3} className="" alt="" />
-                      <h4>Privacy</h4>
-                      <p>We will never share your data without your consent.</p>
-                    </div>
-                  </div>
-                  <div className="same-list-bx-item">
-                          <div className="bx-item-cont" onClick={handleFocus}>
-                            <img src={Image3} className="" alt="" />
-                            <h4>Privacy</h4>
-                            <p>We will never share your data without your consent.</p>
-                          </div>
-                        </div>
-                        <div className="same-list-bx-item">
-                          <div className="bx-item-cont" onClick={handleFocus}>
-                            <img src={Image3} className="" alt="" />
-                            <h4>Privacy</h4>
-                            <p>We will never share your data without your consent.</p>
-                          </div>
-                        </div>
-                        <div className="same-list-bx-item">
-                          <div className="bx-item-cont" onClick={handleFocus}>
-                            <img src={Image3} className="" alt="" />
-                            <h4>Privacy</h4>
-                            <p>We will never share your data without your consent.</p>
-                          </div>
-                        </div>
-                        <div className="same-list-bx-item">
-                          <div className="bx-item-cont" onClick={handleFocus}>
-                            <img src={Image3} className="" alt="" />
-                            <h4>Privacy</h4>
-                            <p>We will never share your data without your consent.</p>
-                          </div>
-            </div>*/}
+                
 
                 </div>
               </div>
@@ -203,21 +222,7 @@ export default function FaqBody() {
                   )
                 }
 
-                {/**<div className='content-list-itm'>
-                <p>Account related Charges</p>
-              </div>
-              <div className='content-list-itm'>
-                <p>Login Credentials</p>
-              </div>
-              <div className='content-list-itm'>
-                <p>DP ID &amp; Bank Details</p>
-              </div>
-              <div className='content-list-itm'>
-                <p> profile</p>
-              </div>
-              <div className='content-list-itm'>
-                <p>Modification</p>
-                  </div>*/}
+             
               </div>
               <div className='content-list accordion-list ' >
                 <Accordion defaultActiveKey="0" >
@@ -242,60 +247,100 @@ export default function FaqBody() {
 
                 }
                   
-                  {/**<Accordion.Item eventKey="1">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="2">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="3">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="4">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="5">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="6">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="7">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="8">
-                    <Accordion.Header>what is the power of Attorney(PoA) and why is it needed?</Accordion.Header>
-                    <Accordion.Body>
-                      You can open AlphaBee account online using the Android or iOS app or via the website.The account openiing process is very simple.With some basic information and uploading of certain documents like PAN,Address Proof,Bank Details,photo and Contact Details the signup process takes less than 5 minutes
-                    </Accordion.Body>
-                </Accordion.Item>*/}
+                  
                 </Accordion>
 
               </div>
             </div>
           </div>
         </section>
+      </div>:
+      <div className='faq-body'>
+        <section className="security-privacy same-list-bx">
+        <div className="container">
+          <div className="row d-flex justify-content-center">
+            <div className="col-md-12">
+              <div className="heading-sec">
+                <h3 className="title-first ">Looking for an Answer?</h3>
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="same-list-bx-list">
+                {
+                  list.map((response, i) => {
+
+                    let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
+
+                    
+                    return (
+                      <div key={response.id} className={classNameNm2}  onClick={() => {
+                        
+                        loadfaqFolder(response.category_linkage);
+                        setList2(response.category_name);
+                        setSelectedId(0);
+                        setSelected(i);
+                        // scrollToElement();
+                      }}>
+                        <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
+                           <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+                          <h4>{response.category_name}</h4>
+                          <p>{response.category_description}</p>
+                        </div>
+                      </div>
+                    )
+                  }
+                  )
+                }
+              
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+            <section className='faq-accordion'  >
+            <div className='container'>
+             
+              <div className='faq-container'>
+                <div className='content-list accordion-lists' >
+                </div>
+                <div className='content-list accordion-list ' >
+                  <Accordion defaultActiveKey="0" >
+  
+                  {
+                    article.map((res,index)=>{
+  
+                      return(
+                      <div>
+                      <Accordion.Item key={res.id} eventKey={index}>
+                      <Accordion.Header >{res.title}</Accordion.Header>
+                      {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                      <Accordion.Body>
+                       {res.description_text}
+                      </Accordion.Body>
+                      {/**</div>*/}
+                      </Accordion.Item>
+                      </div>
+  
+                      )
+                    })
+  
+                  }
+                    
+                    
+                  </Accordion>
+  
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+              }
+      
       </div>
     </>
   )
