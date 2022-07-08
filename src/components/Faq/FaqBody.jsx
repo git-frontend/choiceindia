@@ -12,6 +12,7 @@ import { useForm } from 'react-hook-form';
 
 export default function FaqBody() {
   const [list, setList] = useState([]);
+  const [searchlist ,setSearchlist]=useState([]);
   const [list2, setList2] = useState("Stocks");
   const [trigger, setTrigger] = useState(false);
   const [folder, setFolder] = useState([]);
@@ -97,12 +98,14 @@ export default function FaqBody() {
 
 
   function loadfaqsearch(data) {
+    reset();
     setIsactive(false)
     console.log("check12",data)
     faqService.FaqSearch(data).then(
       res => {
         setIsactive(true)
-        setList(res);
+        setSearchlist(res);
+        
         // loadfaqFolder(res[0].category_linkage);
       }
     )
