@@ -4,6 +4,7 @@ import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
 import DematAccountOpeningProcess from "./DematAccountOpeningProcess";
 import LowBrokerageDematAccount from "./LowBrokerageDematAccount";
 import WhyChoice from "./WhyChoice";
+import DematFaq from "./DematFaq";
 function DematPage() {
 
 
@@ -153,7 +154,8 @@ function DematPage() {
           </div>
         </div>
 
-      </section>
+      </section>  
+      <DematFaq />
  
     </div>
   );
