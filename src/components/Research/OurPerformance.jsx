@@ -1,7 +1,5 @@
 
 import React from "react";
-
-import "./research-new.scss"
 import { useState } from "react";
 
 function OurPerformance() {

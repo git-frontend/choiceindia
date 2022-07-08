@@ -1,6 +1,5 @@
 
 import React from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img1.png';
 
 
 function CQuant() {
