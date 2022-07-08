@@ -8,20 +8,23 @@ import subBrokerService from '../../Services/subBrokerService';
 
 function DematAccountForm() {
 
+    // words: /^([A-z-\s\'\.]*)*$/g,
+    // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const emailRegex = /^[A-Za-z0-9._%+-]{1,}@[a-zA-Z-]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/;
-    // words: /^([A-z-\s\'\.]*)*$/g,
-    // email: /^[A-Za-z0-9._%+-@.]*$/g,
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
     const [brokerCityBranch, setBrokerCityBranch] = useState('');
-    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {} });
+    const [brokerState, setBrokerState] = useState('');
+    const [showState, setShowState] = useState(false);
+    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
     const [showTermsCondition, setShowTermsCondition] = useState(false);
     const [loaders, setLoaders] = useState({});
-    const [citiesDropdown, setCitiesDropdown] = useState([]);;
+    const [citiesDropdown, setCitiesDropdown] = useState([]);
+    const [statesDropdown, setStatesDropdown] = useState([]);
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -57,11 +60,28 @@ function DematAccountForm() {
             ...prevError,
             'brokerCityBranch': {}
         }));
+        if (value === 'OTHERS') {
+            setShowState(true);
+        } else {
+            setShowState(false);
+        }
+    }
+
+    function handleBrokerState(e) {
+        let value = e.target.value;
+        setBrokerState(value);
+        setErrors((prevError) => ({
+            ...prevError,
+            'brokerState': {}
+        }));
     }
 
     function handleSendOTP(e) {
         e.preventDefault();
-        let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerEmailValid, isBrokerCityBranchValid = false;
+        if (errors.brokerMobileNumber.unique || errors.brokerEmail.unique) {
+            return;
+        }
+        let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerEmailValid, isBrokerCityBranchValid, isBrokerStateValid = false;
         //brokerName Validation
         isBrokerNameValid = validateBrokerName(brokerName, false);
         //brokerMobileNumber Validation
@@ -77,7 +97,21 @@ function DematAccountForm() {
         } else if (brokerCityBranch.length) {
             isBrokerCityBranchValid = true;
         }
-        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid) {
+        //brokerState Validation
+        if (showState) {
+            if (!brokerState.length) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerState': { 'required': true }
+                }));
+            } else if (brokerState.length) {
+                isBrokerStateValid = true;
+            }
+        } else {
+            isBrokerStateValid = true;
+        }
+        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid && isBrokerStateValid) {
+            console.log("All Good");
             sendOTP();
         }
     }
@@ -156,7 +190,11 @@ function DematAccountForm() {
     }
 
     function sendOTP() {
-
+        subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
+            console.log(res,"sendOTP");
+        }).catch((error) => {
+            console.log(error,"sendOTP error");
+        });
     }
 
     function handleTermsConditionShow() {
@@ -195,9 +233,29 @@ function DematAccountForm() {
         });
     }
 
+    function fetchState() {
+        subBrokerService.getStates().then((res) => {
+            console.log(res, "res states");
+            if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.StateMasterList) {
+                setStatesDropdown(res.data.Body.StateMasterList);
+            } else {
+                setStatesDropdown([]);
+            }
+        }).catch((error) => {
+            console.log(error, "error states");
+            setStatesDropdown([]);
+        });
+    }
+
     useEffect(() => {
         fetchCities();
     }, []);
+
+    useEffect(() => {
+        if (showState) {
+            fetchState();
+        }
+    }, [showState]);
 
     useEffect(() => {
         const delayDebounceFn = setTimeout(() => {
@@ -242,13 +300,31 @@ function DematAccountForm() {
     }, [brokerEmail]);
 
     function checkExistence() {
+        let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+        let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
         let request = {
-            "email": brokerEmail,
-            "name": brokerName,
-            "mobile": brokerMobileNumber
+            "serviceCode": "CBAEF",
+            "firstName": brokerName,
+            "mobileNum": brokerMobileNumber,
+            "emailID": brokerEmail
         };
+        if (!isBrokerMobileNumberValid)
+            delete request.mobileNum;
+        if (!isBrokerEmailValid)
+            delete request.emailID;
         subBrokerService.checkExistence(request).then((res) => {
             console.log(res, "checkExistence");
+            if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
+                }));
+            } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
+                }));
+            }
         }).catch((error) => {
             console.log(error, "checkExistence error");
         });
@@ -273,22 +349,28 @@ function DematAccountForm() {
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="number" name="brokerMobileNumber" placeholder="Mobile Number" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" pattern="\d*" name="brokerMobileNumber" id="brokerMobileNumber" placeholder="Mobile Number" className="formcontrol formpadding" autoComplete="off" maxLength="10" isInvalid={errors.brokerMobileNumber.invalid || errors.brokerMobileNumber.required} value={brokerMobileNumber} onChange={handleMobileNumber} />
+                            <Form.Control type="text" pattern="\d*" name="brokerMobileNumber" id="brokerMobileNumber" placeholder="Mobile Number" className="formcontrol formpadding" autoComplete="off" maxLength="10" isInvalid={errors.brokerMobileNumber.invalid || errors.brokerMobileNumber.required || errors.brokerMobileNumber.unique} value={brokerMobileNumber} onChange={handleMobileNumber} />
                             {
                                 errors.brokerMobileNumber.invalid ? <Form.Control.Feedback type="invalid">Invalid Mobile Number</Form.Control.Feedback> : ''
                             }
                             {
                                 errors.brokerMobileNumber.required ? <Form.Control.Feedback type="invalid">Mobile Number is Required</Form.Control.Feedback> : ''
                             }
+                            {
+                                errors.brokerMobileNumber.unique ? <Form.Control.Feedback type="invalid">{errors.brokerMobileNumber.uniqueError}</Form.Control.Feedback> : ''
+                            }
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerEmail" placeholder="Email Id" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" name="brokerEmail" id="brokerEmail" placeholder="Email" className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerEmail.invalid || errors.brokerEmail.required} value={brokerEmail} onChange={handleEmail} />
+                            <Form.Control type="text" name="brokerEmail" id="brokerEmail" placeholder="Email" className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerEmail.invalid || errors.brokerEmail.required || errors.brokerEmail.unique} value={brokerEmail} onChange={handleEmail} />
                             {
                                 errors.brokerEmail.invalid ? <Form.Control.Feedback type="invalid">Invalid Email</Form.Control.Feedback> : ''
                             }
                             {
                                 errors.brokerEmail.required ? <Form.Control.Feedback type="invalid">Email is Required</Form.Control.Feedback> : ''
+                            }
+                            {
+                                errors.brokerEmail.unique ? <Form.Control.Feedback type="invalid">{errors.brokerEmail.uniqueError}</Form.Control.Feedback> : ''
                             }
                         </div>
                         <div className="sub-formgrp">
@@ -306,6 +388,22 @@ function DematAccountForm() {
                             }
 
                         </div>
+                        {
+                            showState ?
+                                <div className="sub-formgrp">
+                                    <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
+                                        <option value="">Select State</option>
+                                        {
+                                            statesDropdown.map((item) => {
+                                                return <option key={item.id} value={item.stateName}>{item.stateName}</option>;
+                                            })
+                                        }
+                                    </Form.Select>
+                                    {
+                                        errors.brokerState.required ? <Form.Control.Feedback type="invalid">State is required</Form.Control.Feedback> : ''
+                                    }
+                                </div> : ''
+                        }
                         <div className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
