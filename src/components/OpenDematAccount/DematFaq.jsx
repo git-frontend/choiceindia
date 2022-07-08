@@ -148,31 +148,37 @@ function DematFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="15" className='faq-item'>
-                                            <Accordion.Header><h4 className='faq-header'>What are the Brokerage Charges for Choice Broking?</h4></Accordion.Header>
+                                            <Accordion.Header><h4 className='faq-header'>How much Demat Account Opening Fee charged by Choice?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                The brokerage charges are upon a fixed scale and amongst the lowest in the market. Brokerage charges for all segments are explained in detail in the below link: https://choicebroking.in/brokerage-charges
+                                            It's free. There is no Demat A/c opening fee charged by Choice.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="16" className='faq-item'>
-                                            <Accordion.Header><h4 className='faq-header'>Is Choice Broking good for Trading?</h4> </Accordion.Header>
+                                            <Accordion.Header><h4 className='faq-header'>What are the eligibility criteria for opening an online Demat &amp; Trading Account?</h4> </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                Choice Broking is a full-service broker. It is a part of the renowned Choice Group (a member of NSE, BSE, MCX-SX, MCX, NCDEX and a depository participant with CDSL in 2010). For trading we have a dedicated stock trading app – Jiffy, which is the fastest trading app out there with all important information available instantly.
+                                            As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat &amp; Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.<br />
+                                            <strong>Below are the common requirements,</strong>
+                                            <ul>
+                                                <li>
+                                                Must be Indian Citizen residing in India
+                                                </li>
+                                                <li>Must be 18 years of age</li>
+                                                <li>Have valid Pan Card</li>
+                                                <li>Valid Address Proof (Aadhar, Voter ID, Passport, Driving License, utility bills (not more than 3 months old))</li>
+                                            </ul>
+                                            You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="17" className='faq-item'>
-                                            <Accordion.Header> <h4 className='faq-header'>How Can I Open a Free Demat Account Online with Choice Broking?</h4></Accordion.Header>
+                                            <Accordion.Header> <h4 className='faq-header'>How long will it take for the Demat account to be activated?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                To open an account online, you can sign up from the website or download our Jiffy App ( Android & iOS).
-                                                It is advisable to download the app since the signing up will require a latest photograph of yourself,
-                                                which can be easily taken from your phone camera.If your documents are ready, it will take you about 5 minutes to sign up.
+                                            If the documents are in order, the Demat account will be activated in 24 – 48 working hours.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="18" className='faq-item'>
-                                            <Accordion.Header> <h4 className='faq-header'>How can I become a Choice Broking Sub-Broker?</h4></Accordion.Header>
+                                            <Accordion.Header> <h4 className='faq-header'>What is Paperless Demat account opening?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                                Click here and fill the Sub-broker form with initial details as requested.
-                                                Once the details are received, our team will immediately give you a call and guide
-                                                you on how to proceed further. You can also get in touch with the customer care team to know more about it.
+                                            In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 10 minutes to complete!
                                             </Accordion.Body>
                                         </Accordion.Item>
 
