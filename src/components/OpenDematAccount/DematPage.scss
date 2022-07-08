@@ -707,6 +707,19 @@
 				padding: 0;
 				background: #060606;
 			}
+			&::before{
+				content: "";
+				width: 130%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: -130%;
+				top: 0;
+				background: #E0D6F4;
+				@media (max-width:$sm) {
+					display: none;
+				}
+			}
 		}
 
 		.rightsect {
