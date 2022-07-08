@@ -60,7 +60,7 @@ function FableBlogList() {
                                         setCount(res.id)
                                         console.log("index",count)
                                         }}>
-                                            <div className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
+                                            <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
                                         </li>
                                         
 
