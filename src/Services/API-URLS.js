@@ -92,7 +92,7 @@ export class API_URLS {
     getCityURL = 'city/list?is_refresh=Y';
     getStateURL = 'state/list?is_refresh=Y';
     checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
-    sendOTPURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
+    sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -276,8 +276,8 @@ export class API_URLS {
         return this.OnbBaseURL + this.checkExistenceURL;
     }
 
-    getSendOTPURL(mobileNum) {
-        return this.OnbBaseURL + this.sendOTPURL.replace('$mobileNum', mobileNum);
+    getSendOTPNURL(mobileNum) {
+        return this.OnbBaseURL + this.sendOTPNURL.replace('$mobileNum', mobileNum);
     }
 
 }

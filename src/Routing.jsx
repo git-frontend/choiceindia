@@ -44,6 +44,8 @@ const Lazycorporatedemateaccount = React.lazy(() => import('./components/Corpora
 const Lazyminordemateaccount = React.lazy(() => import('./components/MinorDemateAccount/MinorDemateAccount'));
 const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTradingAccountHindi/OpenTradingAccountHindi'));
 const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
+const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
+const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
 
 function Routing() {
     return (
@@ -190,6 +192,18 @@ function Routing() {
                         <Route exact path='/research' element={
                             <React.Suspense>
                                 < Lazyresearch />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/authorised-person' element={
+                            <React.Suspense>
+                                < Lazyauthorizeperson />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/remisier' element={
+                            <React.Suspense>
+                                < Lazyremisier />
                             </React.Suspense>
                         } />
 

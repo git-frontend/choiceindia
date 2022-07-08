@@ -38,7 +38,7 @@ const subBrokerService = {
   },
 
   sendOTP: function (mobileNum) {
-    let url = apiURL.getSendOTPURL(mobileNum);
+    let url = apiURL.getSendOTPNURL(mobileNum);
     return axios.get(url, { headers: OnbHeaders2 });
   },
 
