@@ -167,7 +167,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                     }
                     <div className="modal-footer otp-modal-footer">
-                        <button className="btn btn-primary verify-btn" onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                        <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
                     </div>
                     <div className="modal-otp-links">
                         {

@@ -13,5 +13,10 @@ const subBrokerService = {
     return axios.get(url, headers);
   },
 
+  checkExistence: function (request) {
+    let url = apiURL.getCheckExistenceURL();
+    return axios.post(url, request, headers);
+  }
+
 };
 export default subBrokerService;

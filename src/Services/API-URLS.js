@@ -87,6 +87,7 @@ export class API_URLS {
     /** Sub Broker APIs */
 
     getCityURL = 'index.php/Common_controller/getCityDetails';
+    checkExistenceURL = 'CommonCampaignController/checkUniqueME';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -250,5 +251,9 @@ export class API_URLS {
 
     getCitiesURL() {
         return this.ChoiceBaseURL + this.getCityURL;
+    }
+
+    getCheckExistenceURL() {
+        return this.ChoiceBaseURL + this.checkExistenceURL;
     }
 }

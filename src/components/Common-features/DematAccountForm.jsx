@@ -322,7 +322,7 @@ function DematAccountForm() {
                         <div className="sub-formgrp mt-5 mb-0">
                             {
                                 <Button variant="primary"
-                                type="submit" className="btn-bg btn-bg-dark sendbtn" onClick={handleSendOTP}>
+                                type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</Button>
                             }
                         </div>
@@ -358,7 +358,7 @@ function DematAccountForm() {
                                 OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                             }
                             <div className="modal-footer otp-modal-footer">
-                                <button className="btn btn-primary verify-btn" onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                                <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
                             </div>
                             <div className="modal-otp-links">
                                 {

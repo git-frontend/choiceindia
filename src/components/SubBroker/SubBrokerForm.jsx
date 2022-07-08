@@ -20,6 +20,8 @@ function DematAccountForm() {
     const [brokerCityBranch, setBrokerCityBranch] = useState('');
     const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {} });
     const [showTermsCondition, setShowTermsCondition] = useState(false);
+    const [loaders, setLoaders] = useState({});
+    const [citiesDropdown, setCitiesDropdown] = useState([]);;
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -61,52 +63,11 @@ function DematAccountForm() {
         e.preventDefault();
         let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerEmailValid, isBrokerCityBranchValid = false;
         //brokerName Validation
-        if (!brokerName.length) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerName': { 'required': true }
-            }));
-        } else if (brokerName.length && !nameRegex.test(brokerName)) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerName': { 'invalid': true }
-            }));
-        } else if (brokerName.length && nameRegex.test(brokerName)) {
-            isBrokerNameValid = true;
-        }
+        isBrokerNameValid = validateBrokerName(brokerName, false);
         //brokerMobileNumber Validation
-        if (!brokerMobileNumber.length) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerMobileNumber': { 'required': true }
-            }));
-        } else if (brokerMobileNumber.length < 10) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerMobileNumber': { 'invalid': true }
-            }));
-        } else if (brokerMobileNumber.length === 10 && !mobileRegex.test(brokerMobileNumber)) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerMobileNumber': { 'invalid': true }
-            }));
-        } else if (brokerMobileNumber.length === 10 && mobileRegex.test(brokerMobileNumber)) {
-            isBrokerMobileNumberValid = true;
-        }
+        isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, false);
         //brokerEmail Validation
-        if (!brokerEmail.length) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerEmail': { 'required': true }
-            }));
-        } else if (brokerEmail.length && !emailRegex.test(brokerEmail)) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerEmail': { 'invalid': true }
-            }));
-        } else if (brokerEmail.length && emailRegex.test(brokerEmail)) {
-            isBrokerEmailValid = true;
-        }
+        isBrokerEmailValid = validateBrokerEmail(brokerEmail, false);
         //brokerCityBranch Validation
         if (!brokerCityBranch.length) {
             setErrors((prevError) => ({
@@ -121,6 +82,79 @@ function DematAccountForm() {
         }
     }
 
+    function validateBrokerName(brokerName, fromUseEffect) {
+        let isBrokerNameValid = false;
+        if (!brokerName.length) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerName': { 'required': true }
+                }));
+            }
+        } else if (brokerName.length && !nameRegex.test(brokerName)) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerName': { 'invalid': true }
+                }));
+            }
+        } else if (brokerName.length && nameRegex.test(brokerName)) {
+            isBrokerNameValid = true;
+        }
+        return isBrokerNameValid;
+    }
+
+    function validateBrokerMobileNumber(brokerMobileNumber, fromUseEffect) {
+        let isBrokerMobileNumberValid = false;
+        if (!brokerMobileNumber.length) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerMobileNumber': { 'required': true }
+                }));
+            }
+        } else if (brokerMobileNumber.length < 10) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerMobileNumber': { 'invalid': true }
+                }));
+            }
+        } else if (brokerMobileNumber.length === 10 && !mobileRegex.test(brokerMobileNumber)) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerMobileNumber': { 'invalid': true }
+                }));
+            }
+        } else if (brokerMobileNumber.length === 10 && mobileRegex.test(brokerMobileNumber)) {
+            isBrokerMobileNumberValid = true;
+        }
+        return isBrokerMobileNumberValid;
+    }
+
+    function validateBrokerEmail(brokerEmail, fromUseEffect) {
+        let isBrokerEmailValid = false;
+        if (!brokerEmail.length) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerEmail': { 'required': true }
+                }));
+            }
+        } else if (brokerEmail.length && !emailRegex.test(brokerEmail)) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'brokerEmail': { 'invalid': true }
+                }));
+            }
+        } else if (brokerEmail.length && emailRegex.test(brokerEmail)) {
+            isBrokerEmailValid = true;
+        }
+        return isBrokerEmailValid;
+    }
+
     function sendOTP() {
 
     }
@@ -133,18 +167,92 @@ function DematAccountForm() {
         setShowTermsCondition(false);
     }
 
+    function showLoader(type) {
+        setLoaders((prevLoaders) => ({
+            ...prevLoaders,
+            [type]: true
+        }));
+    }
+
+    function hideLoader(type) {
+        setLoaders((prevLoaders) => ({
+            ...prevLoaders,
+            [type]: false
+        }));
+    }
+
     function fetchCities() {
         subBrokerService.getCities().then((res) => {
-            console.log(res,"res cities");
+            console.log(res, "res cities");
+            if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
+                setCitiesDropdown(res.data.Body.CityMasterList);
+            } else {
+                setCitiesDropdown([]);
+            }
         }).catch((error) => {
-            console.log(error,"error cities");
+            console.log(error, "error cities");
+            setCitiesDropdown([]);
         });
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchCities();
-    },[]);
+    }, []);
 
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            let isBrokerNameValid = validateBrokerName(brokerName, true);
+            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+                console.log(brokerName, "brokerName");
+                checkExistence();
+                // Send Axios request here
+            }
+        }, 700)
+        return () => clearTimeout(delayDebounceFn)
+    }, [brokerName]);
+
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            let isBrokerNameValid = validateBrokerName(brokerName, true);
+            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+                console.log(brokerMobileNumber, "brokerMobileNumber");
+                checkExistence();
+                // Send Axios request here
+            }
+        }, 700)
+        return () => clearTimeout(delayDebounceFn)
+    }, [brokerMobileNumber]);
+
+    useEffect(() => {
+        const delayDebounceFn = setTimeout(() => {
+            let isBrokerNameValid = validateBrokerName(brokerName, true);
+            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+                console.log(brokerEmail, "brokerEmail");
+                checkExistence();
+                // Send Axios request here
+            }
+        }, 700);
+        return () => clearTimeout(delayDebounceFn)
+    }, [brokerEmail]);
+
+    function checkExistence() {
+        let request = {
+            "email": brokerEmail,
+            "name": brokerName,
+            "mobile": brokerMobileNumber
+        };
+        subBrokerService.checkExistence(request).then((res) => {
+            console.log(res, "checkExistence");
+        }).catch((error) => {
+            console.log(error, "checkExistence error");
+        });
+    }
     return (
         <>
             <div className="demat-account-form">
@@ -187,9 +295,11 @@ function DematAccountForm() {
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
                             <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                {
+                                    citiesDropdown.map((item) => {
+                                        return <option key={item.id} value={item.leadCity}>{item.leadCity}</option>;
+                                    })
+                                }
                             </Form.Select>
                             {
                                 errors.brokerCityBranch.required ? <Form.Control.Feedback type="invalid">Nearest City Branch is required</Form.Control.Feedback> : ''

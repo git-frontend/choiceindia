@@ -166,7 +166,7 @@ function OpenDemateAccountPopup({hideComponent}) {
                                             &amp; accept the <a className="termsPopup" onClick={handleTermsConditionShow}>Terms
                                                 &amp; Conditions</a></label>
                                     </div>
-                                    <button type="button" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                    <button type="button" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div style={{ textAlign: 'center' }}>
                                         <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{APIError || ''}</small>
                                     </div>
