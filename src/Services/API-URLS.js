@@ -93,6 +93,8 @@ export class API_URLS {
     getStateURL = 'state/list?is_refresh=Y';
     checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
     sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
+    verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
+    addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -278,6 +280,14 @@ export class API_URLS {
 
     getSendOTPNURL(mobileNum) {
         return this.OnbBaseURL + this.sendOTPNURL.replace('$mobileNum', mobileNum);
+    }
+
+    getVerifyOTPNURL(otp, id) {
+        return this.OnbBaseURL + this.verifyOTPNURL.replace('$otp', otp).replace('$id', id);
+    }
+
+    getAddNewLeadURL() {
+        return this.OnbBaseURL + this.addNewLeadURL;
     }
 
 }

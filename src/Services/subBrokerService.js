@@ -42,5 +42,15 @@ const subBrokerService = {
     return axios.get(url, { headers: OnbHeaders2 });
   },
 
+  verifyOTPN: function (otp, id) {
+    let url = apiURL.getVerifyOTPNURL(otp, id);
+    return axios.get(url, { headers: OnbHeaders2 });
+  },
+
+  addNewLead: function (request) {
+    let url = apiURL.getAddNewLeadURL();
+    return axios.post(url, request, { headers: OnbHeaders });
+  },
+
 };
 export default subBrokerService;

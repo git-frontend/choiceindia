@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
+import { useSearchParams } from "react-router-dom";
 
 
 function DematAccountForm() {
@@ -23,8 +24,21 @@ function DematAccountForm() {
     const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
     const [showTermsCondition, setShowTermsCondition] = useState(false);
     const [loaders, setLoaders] = useState({});
+    const [showOTPPopup, setShowOTPPopup] = useState(false);
+    const [APIError, setAPIError] = useState('');
+    const [showErrorToaster, setShowErrorToaster] = useState(false);
     const [citiesDropdown, setCitiesDropdown] = useState([]);
     const [statesDropdown, setStatesDropdown] = useState([]);
+    const [otp, setOtp] = useState('');
+    const [OTPErrors, setOTPErrors] = useState('');
+    const [count, setCount] = useState(0);
+    const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
+    const [searchParams, setSearchParams] = useSearchParams();
+    var otpSessionID = useRef('');
+    var UTMCampaign = useRef('');
+    var UTMMedium = useRef('');
+    var UTMSource = useRef('');
+    var refercode = useRef('');
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -61,8 +75,10 @@ function DematAccountForm() {
             'brokerCityBranch': {}
         }));
         if (value === 'OTHERS') {
+            setBrokerState('');
             setShowState(true);
         } else {
+            setBrokerState('');
             setShowState(false);
         }
     }
@@ -112,7 +128,7 @@ function DematAccountForm() {
         }
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid && isBrokerStateValid) {
             console.log("All Good");
-            sendOTP();
+            sendOTP(false);
         }
     }
 
@@ -189,12 +205,17 @@ function DematAccountForm() {
         return isBrokerEmailValid;
     }
 
-    function sendOTP() {
-        subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
-            console.log(res,"sendOTP");
-        }).catch((error) => {
-            console.log(error,"sendOTP error");
-        });
+    function resetOTPPopup() {
+        setOtp('');
+        setOTPErrors('');
+        setCount(60);
+    }
+
+    function fetchQueryParams() {
+        UTMCampaign.current = searchParams.get('utm_campaign') || '';
+        UTMMedium.current = searchParams.get('utm_medium') || '';
+        UTMSource.current = searchParams.get('utm_source') || '';
+        refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
     function handleTermsConditionShow() {
@@ -203,6 +224,30 @@ function DematAccountForm() {
 
     function handleTermsConditionClose() {
         setShowTermsCondition(false);
+    }
+
+    function handleOTPPopupShow() {
+        setShowOTPPopup(true);
+    }
+
+    function handleOTPPopupClose() {
+        setShowOTPPopup(false);
+    }
+
+    function handleBrokerCreatedSuccessShow() {
+        setBrokerCreatedSuccess(true);
+    }
+
+    function handleBrokerCreatedSuccessClose() {
+        setBrokerCreatedSuccess(false);
+    }
+
+    function showAPIErrorToaster() {
+        setShowErrorToaster(true);
+    }
+
+    function hideAPIErrorToaster() {
+        setShowErrorToaster(false);
     }
 
     function showLoader(type) {
@@ -246,6 +291,10 @@ function DematAccountForm() {
             setStatesDropdown([]);
         });
     }
+
+    useEffect(() => {
+        fetchQueryParams();
+    }, []);
 
     useEffect(() => {
         fetchCities();
@@ -329,6 +378,145 @@ function DematAccountForm() {
             console.log(error, "checkExistence error");
         });
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (!count) {
+                return () => clearInterval(interval);
+            }
+            setCount(seconds => seconds - 1);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [count]);
+
+    function handleOTP(e) {
+        let value = e.target.value.replace(/\D/g, "");
+        setOtp(value);
+        if (!value.length) {
+            setOTPErrors('OTP is required');
+        } else {
+            setOTPErrors('');
+        }
+    }
+
+    function sendOTP(isResend) {
+        showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
+            console.log(res, "sendOTP");
+            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+            if (res && res.data && !res.data.errorCode) {
+                otpSessionID.current = res.data.id;
+                if (!isResend)
+                    resetOTPPopup();
+                if (!isResend)
+                    handleOTPPopupShow()
+            } else {
+                if (isResend) {
+                    setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                } else {
+                    setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                    showAPIErrorToaster();
+                }
+            }
+        }).catch((error) => {
+            console.log(error, "sendOTP error");
+            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+            if (isResend) {
+                if (error && error.response && error.response.data && error.response.data.message) {
+                    setOTPErrors(error.response.data.message);
+                } else {
+                    setOTPErrors("Something went wrong, please try again later!");
+                }
+            } else {
+                if (error && error.response && error.response.data && error.response.data.message) {
+                    setAPIError(error.response.data.message);
+                } else {
+                    setAPIError("Something went wrong, please try again later!");
+                }
+                showAPIErrorToaster();
+            }
+        });
+    }
+
+    function verifyOTP() {
+        if (!otp.length) {
+            setOTPErrors('OTP is required');
+        } else {
+            showLoader('verifyLoader');
+            subBrokerService.verifyOTPN(otp, otpSessionID.current).then((res) => {
+                hideLoader('verifyLoader');
+                console.log(res, "verifyOTPN");
+                if (res && res.data && !res.data.errorCode) {
+                    fetchQueryParams();
+                    addNewLead();
+                } else {
+                    setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                }
+            }).catch((error) => {
+                hideLoader('verifyLoader');
+                console.log(error, "verifyOTPN error");
+                setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
+            });
+        }
+    }
+
+    function addNewLead() {
+        let request = {
+            "firstName": brokerName,
+            "mobileNo1": brokerMobileNumber,
+            "emailId1": brokerEmail,
+            "leadCityName": brokerCityBranch,
+            "leadSource": "CHOICEINDIA",
+            "leadState": brokerState,
+            "referredId": refercode.current || null,
+            "serviceCode": "CBAEF",
+            "utm_source": UTMSource.current || null,
+            "utm_medium": UTMMedium.current || null,
+            "utm_campaign": UTMCampaign.current || null,
+            "utm_term": null,
+            "utm_custom": null,
+            "utm_content": null
+        };
+        showLoader('addLeadLoader');
+        subBrokerService.addNewLead(request).then((res) => {
+            hideLoader('addLeadLoader');
+            console.log(res, "addNewLead");
+            if (res && res.data && !res.data.errorCode) {
+                handleOTPPopupClose();
+                handleBrokerCreatedSuccessShow();
+                resetBrokerForm();
+            } else {
+                // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                // showAPIErrorToaster();
+                setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+            }
+
+        }).catch((error) => {
+            hideLoader('addLeadLoader');
+            console.log(error, "addNewLead error");
+            // if (error && error.response && error.response.data && error.response.data.message) {
+            //     setAPIError(error.response.data.message);
+            // } else {
+            //     setAPIError("Something went wrong, please try again later!");
+            // }
+            // showAPIErrorToaster();
+            setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
+        });
+    }
+
+    function resetBrokerForm() {
+        setBrokerName('');
+        setBrokerMobileNumber('');
+        setBrokerEmail('');
+        setBrokerCityBranch('');
+        setBrokerState('');
+        setShowState(false);
+        setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
+        setLoaders({});
+        setOtp('');
+        setOTPErrors('');
+    }
+
     return (
         <>
             <div className="demat-account-form">
@@ -420,8 +608,8 @@ function DematAccountForm() {
 
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
-                                type="button" className="btn-bg btn-bg-dark sendbtn" onClick={handleSendOTP}>
-                                Send OTP
+                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
+                                {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}
                             </Button>
                         </div>
                     </Form.Group>
@@ -440,6 +628,66 @@ function DematAccountForm() {
                     </Button>
                 </Modal.Footer>
             </Modal>
+            <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Header>
+                    <Modal.Title>Error</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>{APIError}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={hideAPIErrorToaster}>
+                        Okay
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
+            <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Enter OTP</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <div id="opt-box-id">
+                        <div className="modal-body opt-body">
+                            A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}
+                            <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                            {
+                                OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                            }
+                            <div className="modal-footer otp-modal-footer">
+                                <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                            </div>
+                            <div className="modal-otp-links">
+                                {
+                                    count ?
+                                        <p className="didnt-text">Didn't receive the OTP?<small className="timer-text">Resend in {count} seconds</small></p> :
+                                        <div className="btm-div">
+                                            <p className="resend-text" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</p>
+                                        </div>
+                                }
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                </Modal.Body>
+            </Modal>
+
+            <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Header>
+                    <Modal.Title>Success</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Created Successfully</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={handleBrokerCreatedSuccessClose}>
+                        Okay
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
         </>
     );
 }
