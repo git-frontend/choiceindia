@@ -1,9 +1,9 @@
 
 import React from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img9.png';
-import thumb2 from '../../assets/images/research/thumbnail-img10.png';
-import thumb3 from '../../assets/images/research/thumbnail-img11.png';
-import thumb4 from '../../assets/images/research/thumbnail-img12.png';
+import thumb1 from '../../assets/images/research/thumbnail-img9.webp';
+import thumb2 from '../../assets/images/research/thumbnail-img10.webp';
+import thumb3 from '../../assets/images/research/thumbnail-img11.webp';
+import thumb4 from '../../assets/images/research/thumbnail-img12.webp';
 
 
 function EconomicAnalysis() {

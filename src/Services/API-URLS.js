@@ -43,6 +43,10 @@ export class API_URLS {
 
     addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
 
+    /** fables url  */
+
+    fableCategoryURL = 'items/fables?filter[fable_status][_eq]=publish'
+
     /**fablestories blog  */
     fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
 
