@@ -13,6 +13,9 @@
 	@media (max-width:$sm) {
 		padding: 6rem 0;
 	}
+	@media (max-width:$xs) {
+		padding: 2rem 0;
+	}
 
 	.banner-title {
 		color: $primary;
@@ -74,11 +77,13 @@
 				line-height: 2.8rem;
 				font-family: $font-family-poppins-regular;
 				font-weight: 600;
+				margin: 0;
 
-				@media (min-width:768px) and (max-width:1024px) {
+				@media (max-width:$sm) {
 					font-size: 1.5rem;
 					line-height: 1.8rem;
 				}
+
 			}
 
 			.subtxt {
@@ -91,6 +96,9 @@
 		.respgrid {
 			width: 20%;
 			text-align: center;
+		}
+		@media (max-width:$sm) {
+			min-height: inherit;
 		}
 	}
 
@@ -120,6 +128,7 @@
 				font-size: 2rem;
 				line-height: 3rem;
 				padding-bottom: 3rem;
+				text-align: center;
 			}
 
 			@media (min-width:$sm) and (max-width:768px) {
@@ -132,6 +141,9 @@
 				line-height: 2.6rem;
 
 			}
+		}
+		@media (max-width:$sm) {
+			padding-right: 0;
 		}
 	}
 
@@ -267,6 +279,9 @@
 		@media (max-width:$sm) {
 			padding-left: 0;
 		}
+	}
+	@media (max-width:$sm) {
+		padding: 4rem 0;
 	}
 }
 
@@ -411,7 +426,7 @@
 
 	.imgwrap {
 		@media (max-width:$sm) {
-			width: 30%;
+			width: 20%;
 		}
 	}
 
@@ -439,6 +454,7 @@
 		@media (max-width:$sm) {
 			margin-top: 1rem;
 			width: 70%;
+			padding-left: 1rem;
 		}
 
 		h5 {
@@ -472,6 +488,7 @@
 
 		@media (max-width:$sm) {
 			flex-direction: column;
+			padding: 3rem 1.5rem;
 		}
 
 		.headtext {
@@ -483,8 +500,8 @@
 				line-height: 4.5rem;
 
 				@media (max-width:$sm) {
-					font-size: 2rem;
-					line-height: 3.5rem;
+					font-size: 1.8rem;
+					line-height: 3rem;
 					text-align: center;
 				}
 				@media (min-width:768px) and (max-width:990px) {
@@ -506,7 +523,7 @@
 }
 
 .Lowbrokerage {
-	padding: 0 0 9rem 0;
+	padding: 7rem 0 9rem 0;
 
 	@media (max-width:$sm) {
 		padding: 5rem 0;
@@ -611,7 +628,21 @@
 }
 
 .why-choice-section {
-
+	position: relative;
+	background: #060606;
+	&::before{
+		content: "";
+		width: 32%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: -0;
+		top: 0;
+		background: #E0D6F4;
+		@media (max-width:$sm) {
+			display: none;
+		}
+	}
 	.wrap {
 		margin: 0 auto;
 		display: flex;
@@ -628,8 +659,9 @@
 			background-color: $bgcolor-lightgray;
 			display: flex;
 			flex-wrap: wrap;
+			align-items: flex-end;
 			justify-content: end;
-
+			padding: 9rem 0 100px 0;
 			@media (max-width:$sm) {
 				width: 100%;
 				justify-content: start;
@@ -640,20 +672,22 @@
 				font-size: 3.25rem;
 				line-height: 4.875rem;
 				font-weight: 700;
-				padding-bottom: 2.375rem;
 				font-family: $font-family-poppins-bold;
 				text-align: center;
-				padding: 9rem 6rem;
+				margin-bottom:6rem;
+				width: 100%;
+				text-align: left;
 
 				@media (max-width:$sm) {
-					padding: 2rem;
-					font-size: 2rem;
+					padding: 4rem 2rem 2rem 2rem;
+					font-size: 2.5rem;
 					line-height: 3rem;
+					margin-bottom: 0;
+					color: $whiteColor;
+					text-align: center;
 				}
 
-				@media (min-width:$sm) and (max-width:1024px) {
-					padding: 5rem;
-				}
+			
 			}
 
 			.img {
@@ -665,16 +699,37 @@
 				}
 
 				@media (min-width:$sm) and (max-width:1024px) {
-					right: -2.45rem;
+					right: -38px;
 				}
 
+			}
+			@media (max-width:$md) {
+				width: 40%;
+			}
+			@media (max-width:$sm) {
+				width: 100%;
+				padding: 0;
+				background: #060606;
+			}
+			&::before{
+				content: "";
+				width: 130%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: -130%;
+				top: 0;
+				background: #E0D6F4;
+				@media (max-width:$sm) {
+					display: none;
+				}
 			}
 		}
 
 		.rightsect {
-			background-color: $primary;
+			background-color: #060606;
 			width: 70%;
-			padding: 9rem;
+			padding: 9rem 0 0 11rem;
 
 			@media (max-width:$sm) {
 				width: 100%;
@@ -683,17 +738,20 @@
 
 			@media (min-width:$sm) and (max-width:1024px) {
 				padding: 5rem;
+				padding-bottom: 15rem;
+				padding-right: 0;
 			}
 
 			.headtxt {
 				color: $whiteColor;
 				position: relative;
+
 				font-size: 2rem;
 				font-family: $font-family-poppins-regular;
 				font-weight: 600;
 				line-height: 3rem;
 				margin: 0;
-				padding-right: 7rem;
+				padding: 0;
 				@media (max-width:$sm) {
 					font-size: 1.65rem;
 
@@ -711,13 +769,11 @@
 					width: 1.2rem;
 					background: $bgcolor-yellow;
 					border-radius: 50%;
-					left: -2.25rem;
-					top: 7px;
+					left: -3rem;
+					top: 48%;
+					transform: translate(0, -50%);
 
-					@media (min-width:$sm) and (max-width:1024px) {
-						left: -1.8125rem;
-						top: 0.8125rem;
-					}
+				
 				}
 			}
 
@@ -728,6 +784,7 @@
 				font-family: $font-family-poppins-regular;
 				font-weight: 400;
 				line-height: 3rem;
+				padding-left: 3rem;
 				margin: 0;
 					@media (max-width:$sm) {
 					font-size: 1.5rem;
@@ -743,102 +800,172 @@
 				opacity: 0.2;
 				margin: 2rem 0;
 			}
-
+			.rightsect-sub{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				.headtxt{
+					width: 35%;
+					@media (max-width:$md) {
+						width: 100%;
+						br{
+							display: none;
+						}
+					}
+				}
+				.subtxt{
+					width: 60%;
+					@media (max-width:$md) {
+						width: 100%;
+						padding-left: 0;
+					}
+				}
+			}
+			@media (max-width:$md) {
+				width: 60%;
+			}
+			@media (max-width:$sm) {
+				width: 100%;
+			}
 		}
 
 	}
 
-	.availablewrap {
-		display: flex;
-		flex-direction: row;
-		background-color: $bgolor-lightwhite;
-		padding: 4rem;
-		border-radius: 1.875rem;
-		position: relative;
-		top: -66%;
-		align-items: center;
+	
+}
+
+
+.availablewrap {
+	display: flex;
+	flex-direction: row;
+	background-color: $bgolor-lightwhite;
+	padding: 4rem;
+	border-radius: 1.875rem;
+	position: relative;
+	margin-top: -100px;
+	align-items: center;
+
+	@media (max-width:$sm) {
+		padding: 2rem 1rem;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 3rem;
+		
+	}
+
+	
+
+	@media (min-width:$sm) and (max-width:1024px) {
+		padding: 2rem 4rem;
+	}
+
+	.wraptitle {
+		color: $primary;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 3.75rem;
+		font-family: $font-family-poppins-bold;
+		padding: 0 3rem;
 
 		@media (max-width:$sm) {
-			padding: 2rem 1rem;
-			flex-direction: column;
-			align-items: flex-start;
-			top: -12%;
-		}
-
-		@media (min-width:$sm) and (max-width:768px) {
-			top: -31%;
+			padding: 0 3rem 2rem;
+			font-size: 2rem;
+			line-height: 3rem;
+			text-align: center;
 		}
 
 		@media (min-width:$sm) and (max-width:1024px) {
-			padding: 2rem;
-			top: -29%;
+			padding: 0;
+			font-size: 2rem;
+			line-height: 3rem;
 		}
+	}
 
-		.wraptitle {
-			color: $primary;
-			font-size: 2.5rem;
-			font-weight: 700;
-			line-height: 3.75rem;
-			font-family: $font-family-poppins-bold;
-			padding: 0 3rem;
+	.iconwrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			padding: 0 8rem;
+			border-right: 2px solid $bgcolor-lightgray;
+			text-decoration: none;
 
 			@media (max-width:$sm) {
-				padding: 0 3rem 2rem;
-				font-size: 2rem;
-				line-height: 3rem;
+				padding: 0 2rem;
 			}
 
 			@media (min-width:$sm) and (max-width:1024px) {
-				padding: 0;
-				font-size: 2rem;
-				line-height: 3rem;
+				padding: 0 2rem;
 			}
-		}
 
-		.iconwrap {
-			display: flex;
-			justify-content: center;
-			align-items: center;
 
-			a {
-				padding: 0 6rem;
-				border-right: 2px solid $bgcolor-lightgray;
-				text-decoration: none;
+			&:last-child {
+				border: none;
+			}
 
-				@media (max-width:$sm) {
-					padding: 0 2rem;
+			.icon {
+				text-align: center;
+
+				img {
+					min-height: 3.125rem;
 				}
 
-				@media (min-width:$sm) and (max-width:1024px) {
-					padding: 0 2rem;
-				}
+				p {
+					padding-top: 2rem;
+					color: $primary;
+					font-size: 1.75rem;
+					line-height: 2.625rem;
+					font-family: $font-family-poppins-semibold;
+					font-weight: 600;
 
-
-				&:last-child {
-					border: none;
-				}
-
-				.icon {
-					text-align: center;
-
-					img {
-						min-height: 3.125rem;
-					}
-
-					p {
-						padding-top: 2rem;
-						color: $primary;
-						font-size: 1.75rem;
-						line-height: 2.625rem;
-						font-family: $font-family-poppins-semibold;
-						font-weight: 600;
-
-						@media (min-width:$sm) and (max-width:1024px) {
-							font-size: 1.5rem;
-						}
+					@media (min-width:$sm) and (max-width:1024px) {
+						font-size: 1.5rem;
 					}
 				}
 			}
 		}
+	}
+}
+
+// faq
+
+.Dematfaq{
+	padding: 9rem 0;
+	.title-first{
+		margin-bottom: 2rem;
+	
+	}	
+	.faq-item{
+		border: 1px solid #C2C2C2 !important;
+		border-radius: 20px;
+		background: #FFFFFF;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+		.faq-header{
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+	.accordion-button{
+
+			&:not(.collapsed){
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+			}
+			&:focus{
+				border: none !important;
+				box-shadow: none !important;
+			}
+			&:after{
+				display: none !important;
+			}
+	
+	
 	}
 }

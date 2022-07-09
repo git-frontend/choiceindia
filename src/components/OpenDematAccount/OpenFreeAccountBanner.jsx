@@ -21,7 +21,7 @@ const OpenFreeAccountBanner = () => {
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
@@ -34,7 +34,7 @@ const OpenFreeAccountBanner = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
@@ -48,7 +48,7 @@ const OpenFreeAccountBanner = () => {
                                     </div>
                                 </div>
                                 <div className="row mt-5 mbrespflex">
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
@@ -60,7 +60,7 @@ const OpenFreeAccountBanner = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-5  col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
