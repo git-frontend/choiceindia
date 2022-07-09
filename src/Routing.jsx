@@ -25,7 +25,7 @@ const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
 const LazyContact = React.lazy(() => import('./components/Contact/Contact'));
 // import Contact from './components/Contact/Contact';
 const LazyServices = React.lazy(() => import('./components/Services-Page/Services'));
-const LazyFaq = React.lazy(() => import('./components/FAQ/Faq'));
+const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
 const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
@@ -36,6 +36,14 @@ const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeCo
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
 const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
+
+const Lazyopentradingaccount = React.lazy(() => import('./components/OpenTradingAccount/OpenTradingAccount'));
+const Lazyopenbrokerageaccount = React.lazy(() => import('./components/OpenBrokerageAccount/OpenBrokerageAccount'));
+const Lazynridemateaccount = React.lazy(() => import('./components/NRIDemateAccount/NRIDemateAccount'));
+const Lazycorporatedemateaccount = React.lazy(() => import('./components/CorporateDemateAccount/CorporateDemateAccount'));
+const Lazyminordemateaccount = React.lazy(() => import('./components/MinorDemateAccount/MinorDemateAccount'));
+const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTradingAccountHindi/OpenTradingAccountHindi'));
+const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
 
 function Routing() {
     return (
@@ -141,6 +149,41 @@ function Routing() {
                         <Route exact path='/Open-Demat-Account' element={
                             <React.Suspense>
                                 < Lazyopendemat />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-trading-account' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-brokerage-account' element={
+                            <React.Suspense>
+                                < Lazyopenbrokerageaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/nri-demat-account' element={
+                            <React.Suspense>
+                                < Lazynridemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/corporate-demat-account' element={
+                            <React.Suspense>
+                                < Lazycorporatedemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/minor-demat-account' element={
+                            <React.Suspense>
+                                < Lazyminordemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-trading-account-hindi' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccounthindi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-trading-account-marathi' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccountmarathi />
                             </React.Suspense>
                         } />
 

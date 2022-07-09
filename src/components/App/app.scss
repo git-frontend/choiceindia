@@ -1,6 +1,11 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
+
+.app-skeleton-parent{
+    animation: hideMe 4s forwards;
+}
+
 .App-main {
     .banner-app {
         position: relative;

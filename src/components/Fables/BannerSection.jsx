@@ -1,6 +1,7 @@
 import React,{useState,useEffect} from "react";
 import fableServices from '../../Services/fableServices';
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function BannerSection() {
 
@@ -49,7 +50,8 @@ function BannerSection() {
 
 										return(
                                        <div key={response.id}>
-									   <a href="/" className="trending-itm">
+									   <Link to={`/fablesdetail/${response.slug}`} className="trending-itm">
+									   {/**<a href="/" className="trending-itm">*/}
 									   <div className="trending-itm-img">
 														<LazyLoader src={response.feature_image} className="img-blog" alt="Loading" width={"138"} height={"100"} />
 										   {/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
@@ -57,7 +59,8 @@ function BannerSection() {
 									   <div className="trending-itm-des">
 										   <p>{response.meta_description}</p>
 									   </div>
-								   </a>
+									   </Link>
+								   {/**</a>*/}
 
 
 									   </div>

@@ -65,7 +65,7 @@ function Footer() {
                             <a href="https://choiceindia.com/investors" target="_blank">Investors</a>
                           </li>
                           <li>
-                            <a href="/">Pricing</a>
+                            <Link to="/pricing">Pricing</Link>
                           </li>
                           <li>
                             <Link to="/career">Careers</Link>
@@ -88,7 +88,7 @@ function Footer() {
                             <a href="https://choiceindia.com/research-listing-new" target="_blank">Technical</a>
                           </li>
                           <li>
-                             <Link to="/fables">Fables</Link>
+                             <Link to="/fables">Blogs</Link>
                           </li>
                         </ul>
                       </div>

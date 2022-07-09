@@ -1,0 +1,174 @@
+.stickybottom {
+    padding: 1rem;
+    background-color: #221F20;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 99999;
+
+    @media (max-width:767px) {
+        display: none !important;
+    }
+
+    .text {
+        font-size: 23px;
+        line-height: 40px;
+        // font-family:'PoppinsBold', sans-serif;
+        color: #FFFFFF;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            font-size: 18px;
+            line-height: 27px;
+        }
+
+        span {
+            color: #FFCA05;
+        }
+    }
+
+    .mobile {
+        background-color: transparent;
+        color: #ffffff0d;
+        border: 1px solid #FFFFFF;
+    }
+
+    form .form-group {
+        position: relative;
+    }
+
+    form .form-group .hello {
+        position: absolute;
+        left: 15px;
+        top: 17%;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        opacity: 50%;
+        transition: all 0.5s ease;
+        pointer-events: none;
+
+    }
+
+
+    form .form-group .write {
+        color: #FFFFFF;
+        width: 100%;
+        padding: 5px 13px 5px 17px;
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
+        outline: none;
+        padding-bottom: 5px;
+        min-height: 42px;
+        box-shadow: none;
+        font-size: 14px;
+        font-weight: 500;
+        background: transparent;
+    }
+
+
+
+    form .form-group .signal-same-btn {
+        width: 100%;
+    }
+
+    form .form-check {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+        margin: 4px 0 0;
+    }
+
+    form .form-check label {
+        font-size: 16px;
+        font-weight: 400;
+        color: #231F20;
+        line-height: 19px;
+        padding-left: 20px;
+    }
+
+    form .form-check {
+        padding: 0;
+    }
+
+
+
+
+    .termcon1 {
+        width: calc(100% - 20px);
+        font-size: 16px;
+        text-align: left;
+        color: #fff;
+    }
+
+    .tnc {
+        width: 35%;
+
+        .checkbox {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .tc {
+            color: #fff;
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    .sendotp {
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        padding: 5px 27px;
+
+        span {
+            color: #221F20;
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 500;
+            // font-family:'PoppinsMedium', sans-serif;
+
+            @media (min-width:768px) and (max-width:1024px) {
+                font-size: 1rem;
+
+            }
+        }
+    }
+    .sendotp:disabled {
+        /* opacity: 0.9; */
+        cursor: not-allowed;
+    }
+}
+
+.loaderB {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid #221F20;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
