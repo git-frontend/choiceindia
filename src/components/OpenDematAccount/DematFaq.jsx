@@ -183,14 +183,14 @@ function DematFaq() {
                                         </Accordion.Item>
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-5" onClick={() => setview(false)} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
 
                                     </Accordion>
 
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-5" onClick={() => setview(!show)}>View more</button>
+                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
                                     </div>
                             }
                         </div>
