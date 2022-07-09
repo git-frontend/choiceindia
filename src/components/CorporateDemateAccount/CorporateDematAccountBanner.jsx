@@ -7,7 +7,7 @@ import Image4 from '../../assets/images/open-demat-account/sucessratio.svg';
 import Image5 from '../../assets/images/open-demat-account/amc.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
-const NriDematAccountBanner = () => {
+const CorporateDematAccountBanner = () => {
     return (
         <div>
              <section className="banner-sect" >
@@ -15,7 +15,7 @@ const NriDematAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop">Open a NRI Account <br /> <span className="yellow">Online For Free</span></div>
+                                <div className="desktop">Corporate Demat Account</div>
                                 
                             </h1>
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
@@ -92,4 +92,4 @@ const NriDematAccountBanner = () => {
     )
 }
 
-export default NriDematAccountBanner;
+export default CorporateDematAccountBanner;

@@ -2,17 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\src",
-<<<<<<< HEAD
     "\\src\\assets",
-    "\\src\\assets\\css",
     "\\src\\components",
-    "\\src\\components\\CodeConduct"
+    "\\src\\components\\NRIDemateAccount"
   ],
-  "SelectedNode": "\\src\\Routing.jsx",
-=======
-    "\\src\\components"
-  ],
-  "SelectedNode": "\\src\\components\\SubBroker",
->>>>>>> sub-broker
+  "SelectedNode": "\\src\\components\\NRIDemateAccount\\LowBrokerageNRIDematAccount.jsx",
   "PreviewInSolutionExplorer": false
 }
