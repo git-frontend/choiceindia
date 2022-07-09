@@ -3,6 +3,7 @@ import Blog1 from '../../assets/images/fable/blog-img1.jpg';
 import Blog2 from '../../assets/images/fable/blog-img2.jpg';
 import Blog3 from '../../assets/images/fable/blog-img3.jpg';
 import FablesTrending from "../../Services/fableServices";
+import { Link } from "react-router-dom";
 
 function FableBlogList() {
 
@@ -60,7 +61,7 @@ function FableBlogList() {
                                         setCount(res.id)
                                         console.log("index",count)
                                         }}>
-                                            <div className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
+                                            <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
                                         </li>
                                         
 
@@ -115,7 +116,8 @@ function FableBlogList() {
                             {
                                 post.map((res)=>{
                                     return(
-                                        <a href="/" className="tab-blog-item">
+                                          
+                                        <Link to={`/fablesdetail/${res.slug}`} className="tab-blog-item">
                                     <div className="blog-item-img">
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"} />
                                     </div>
@@ -127,7 +129,8 @@ function FableBlogList() {
                                             <span className="sm-text">@SachinChadda</span>
                                     </div> */}
                                     </div>
-                                </a>
+                                
+                                </Link>
 
                                     )
                                 })
