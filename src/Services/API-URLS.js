@@ -16,15 +16,18 @@ const config = {
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
-    UATChoiceBaseURL: 'https://choicebroking.choicetechlab.com/',
-    liveChoiceBaseURL: 'https://choiceindia.com/'
+    UATOnbBaseURL: 'https://uat-pwa.choicetechlab.com/',
+    liveOnbBaseURL: 'https://accounts.choiceindia.com/',
+    UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
+    liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/'
 
 }
 
 
 export class API_URLS {
 
-    ChoiceBaseURL = '';
+    LMSBaseURL = '';
+    OnbBaseURL = '';
     jiffyResearchURL = "";
     /** SSO Base URL */
     SSOServerURL = '';
@@ -90,8 +93,12 @@ export class API_URLS {
 
     /** Sub Broker APIs */
 
-    getCityURL = 'index.php/Common_controller/getCityDetails';
-    checkExistenceURL = 'CommonCampaignController/checkUniqueME';
+    getCityURL = 'city/list?is_refresh=Y';
+    getStateURL = 'state/list?is_refresh=Y';
+    checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
+    sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
+    verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
+    addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -104,7 +111,9 @@ export class API_URLS {
         * @param {*} configKey 
         */
     setConfig(configKey) {
-        this.setChoiceServerURL(config[configKey + 'ChoiceBaseURL']);
+        this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
+
+        this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
 
         this.setSSOServerURL(config[configKey + 'SSOBaseURL']);
 
@@ -116,8 +125,12 @@ export class API_URLS {
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
     }
 
-    setChoiceServerURL = (url) => {
-        this.ChoiceBaseURL = url;
+    setLMSServerURL = (url) => {
+        this.LMSBaseURL = url;
+    }
+
+    setOnbServerURL = (url) => {
+        this.OnbBaseURL = url;
     }
 
     setJiffyResearchURL = (url) => {
@@ -258,10 +271,27 @@ export class API_URLS {
     }
 
     getCitiesURL() {
-        return this.ChoiceBaseURL + this.getCityURL;
+        return this.LMSBaseURL + this.getCityURL;
+    }
+
+    getStatesURL() {
+        return this.LMSBaseURL + this.getStateURL;
     }
 
     getCheckExistenceURL() {
-        return this.ChoiceBaseURL + this.checkExistenceURL;
+        return this.OnbBaseURL + this.checkExistenceURL;
     }
+
+    getSendOTPNURL(mobileNum) {
+        return this.OnbBaseURL + this.sendOTPNURL.replace('$mobileNum', mobileNum);
+    }
+
+    getVerifyOTPNURL(otp, id) {
+        return this.OnbBaseURL + this.verifyOTPNURL.replace('$otp', otp).replace('$id', id);
+    }
+
+    getAddNewLeadURL() {
+        return this.OnbBaseURL + this.addNewLeadURL;
+    }
+
 }
