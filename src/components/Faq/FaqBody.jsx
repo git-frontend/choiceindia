@@ -18,6 +18,8 @@ export default function FaqBody() {
   const [folder, setFolder] = useState([]);
   const[article,setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
+  const [select, setSelect] = useState(-1);
+
   const [selected, setSelected] = useState(0);
   const [isactive, setIsactive] = useState(false);
   const [isarticle, setIsarticle] = useState(false);
@@ -49,10 +51,25 @@ export default function FaqBody() {
 };
 
 
-  const { register, handleSubmit, formState: { errors }, reset } = useForm({
+  const { register,formState: reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
+  
+  function loadfaqsearch(data) {
+    
+    setIsactive(false)
+    console.log("check12",data)
+    
+    faqService.FaqSearch(data).then(
+      res => {
+        setIsactive(true)
+        setSearchlist(res);
+        
+        // loadfaqFolder(res[0].category_linkage);
+      }
+    )
+  };
   
 
   function chapterScroll(id) {
@@ -97,19 +114,6 @@ export default function FaqBody() {
   };
 
 
-  function loadfaqsearch(data) {
-    reset();
-    setIsactive(false)
-    console.log("check12",data)
-    faqService.FaqSearch(data).then(
-      res => {
-        setIsactive(true)
-        setSearchlist(res);
-        
-        // loadfaqFolder(res[0].category_linkage);
-      }
-    )
-  };
 
   useEffect(() => {
     setTrigger(true)
@@ -135,7 +139,7 @@ export default function FaqBody() {
                         <div className="faq-search">
                       
                         <Form.Control type="text" placeholder="Search for your issue" className="formcontrol" {...register('faq',{onChange:(e2) => {faqChange(e2)}})}  />
-                        <Button type="submit" variant="warning" onClick={()=> {loadfaqsearch(data)}}>Search</Button>
+                        <Button type="submit" variant="warning" onClick={()=> data.length > 0 ? loadfaqsearch(data):''}>Search</Button>
                        
                         </div>
                         <div>
@@ -164,6 +168,7 @@ export default function FaqBody() {
             <div className="row">
               <div className="col-md-12">
                 <div className="same-list-bx-list">
+                
                   {
                     list.map((response, i) => {
 
@@ -270,11 +275,14 @@ export default function FaqBody() {
           </div>
           <div className="row">
             <div className="col-md-12">
+          
+
+            
               <div className="same-list-bx-list">
                 {
                   list.map((response, i) => {
 
-                    let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
+                    let classNameNm2 = "same-list-bx-item" + ((i === select) ? ' bx-item-cont-active' : "")
 
                     
                     return (
@@ -283,7 +291,8 @@ export default function FaqBody() {
                         loadfaqFolder(response.category_linkage);
                         setList2(response.category_name);
                         setSelectedId(0);
-                        setSelected(i);
+                        setIsarticle(true);
+                        setSelect(i);
                         // scrollToElement();
                       }}>
                         <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
@@ -299,48 +308,120 @@ export default function FaqBody() {
               
 
               </div>
+
+              
+
+            
             </div>
           </div>
         </div>
       </section>
+
+      {
+       isarticle==true ?
+
+         <section className='faq-accordion'  >
+         <div className='container'>
+           <div className='faq-header' id='faq-section'>
+             <h1>{list2}</h1>
+           </div>
+           <div className='faq-container'>
+             <div className='content-list accordion-lists' >
+               {
+                 folder.map((response, index) => {
+                   
+                   let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
+                   
+               
+                   
+                   return (
+                     <div key={response.id} className={classNameNm} onClick={() => {
+                       loadfaqarticle(response.id);
+                       setSelectedId(index)
+                       
+                     }}>
+                       <p>{response.name}</p>
+                     </div>
+
+                   )
+                 }
+                 )
+               }
+
+            
+             </div>
+             <div className='content-list accordion-list ' >
+               <Accordion defaultActiveKey="0" >
+
+               {
+                 article.map((res,index)=>{
+
+                   return(
+                   <div>
+                   <Accordion.Item key={res.id} eventKey={index}>
+                   <Accordion.Header >{res.title}</Accordion.Header>
+                   {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                   <Accordion.Body>
+                    {res.description_text}
+                   </Accordion.Body>
+                   {/**</div>*/}
+                   </Accordion.Item>
+                   </div>
+
+                   )
+                 })
+
+               }
+                 
+                 
+               </Accordion>
+
+             </div>
+           </div>
+         </div>
+       </section>:
+
+       <section className='faq-accordion'  >
+       <div className='container'>
+        
+         <div className='faq-container'>
+           <div className='content-list accordion-lists' >
+           </div>
+           <div className='content-list accordion-list ' >
+             <Accordion defaultActiveKey="0" >
+
+             {
+               searchlist.map((res,index)=>{
+
+                 return(
+                 <div>
+                 <Accordion.Item key={res.id} eventKey={index}>
+                 <Accordion.Header >{res.title}</Accordion.Header>
+                 {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                 <Accordion.Body>
+                  {res.description_text}
+                 </Accordion.Body>
+                 {/**</div>*/}
+                 </Accordion.Item>
+                 </div>
+
+                 )
+               })
+
+             }
+               
+               
+             </Accordion>
+
+           </div>
+         </div>
+       </div>
+     </section>
+
+      }
       
 
-            <section className='faq-accordion'  >
-            <div className='container'>
-             
-              <div className='faq-container'>
-                <div className='content-list accordion-lists' >
-                </div>
-                <div className='content-list accordion-list ' >
-                  <Accordion defaultActiveKey="0" >
-  
-                  {
-                    article.map((res,index)=>{
-  
-                      return(
-                      <div>
-                      <Accordion.Item key={res.id} eventKey={index}>
-                      <Accordion.Header >{res.title}</Accordion.Header>
-                      {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                      <Accordion.Body>
-                       {res.description_text}
-                      </Accordion.Body>
-                      {/**</div>*/}
-                      </Accordion.Item>
-                      </div>
-  
-                      )
-                    })
-  
-                  }
-                    
-                    
-                  </Accordion>
-  
-                </div>
-              </div>
-            </div>
-          </section>
+      
     </div>
               }
       
