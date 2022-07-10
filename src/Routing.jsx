@@ -46,6 +46,8 @@ const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTr
 const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
+const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
+
 
 function Routing() {
     return (
@@ -204,6 +206,12 @@ function Routing() {
                         <Route exact path='/remisier' element={
                             <React.Suspense>
                                 < Lazyremisier />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/info/stratezy' element={
+                            <React.Suspense>
+                                < Lazystratezy />
                             </React.Suspense>
                         } />
 

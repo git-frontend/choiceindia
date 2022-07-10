@@ -1,11 +1,43 @@
+import React from "react";
+import "./css/stratezy-landing-page.scss";
+import "./css/template1.scss";
+import "./css/template2.scss";
+import { Accordion } from 'react-bootstrap';
+import bannerimage from './images/stratezy-page/free-trading-strategy-builder.webp';
+import bannericon1 from './images/stratezy-page/create-statezy.svg';
+import bannericon2 from './images/stratezy-page/virtual-trade.svg';
+import image1 from './images/stratezy-page/readymade-trading-strategies.svg';
+import image2 from './images/stratezy-page/unlimited-backtests.svg';
+import image3 from './images/stratezy-page/alerts-on-virtual-live-trades.svg';
+import image4 from './images/stratezy-page/in-built-charting-tool.svg';
+import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
+import youtubeimg from './images/stratezy-page/youtube-video-icon.webp';
+import icon1 from './images/stratezy-page/own-stratezy.svg';
+import slider1 from './images/stratezy-page/Optimise.webp';
+import slider2 from './images/stratezy-page/backtest.webp';
+import slider3 from './images/stratezy-page/Create your own Strategy.webp';
 
-const e = React.createElement;
+import slider4 from './images/stratezy-page/live trade.webp';
+
+import slider5 from './images/stratezy-page/virtual trade.webp';
+
+import icon3 from './images/stratezy-page/live-trade.svg';
+import icon5 from './images/stratezy-page/virtual-trade.svg';
+import icon4 from './images/stratezy-page/backtest-trading-strategy.svg';
+import icon2 from './images/stratezy-page/optimise-trading-strategy.svg';
+
+
+// import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
+// import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
+
+
+
 
 /**
  * FAQ section
  * @returns FAQ Component
  */
-const FaqAccordion = () => {
+ const FaqAccordion = () => {
   const [data, setData] = React.useState([]); 
   React.useEffect(() => {
     getData();
@@ -55,34 +87,38 @@ const FaqAccordion = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-          <div class="accordion" id="accordionExample">
+          <Accordion defaultActiveKey="0" class="accordion" id="accordionExample">
             <div className="accordion-container">
               {
                 data.map((res, i) => {
-                  let classNameNm = 'ac-a accordion-collapse collapse '+ ((i === 0) ? 'show' : '')
+                  
                   
                   return (
 
-                    <div className="ac accordion-item" key={i}>
+                    <Accordion.Item key={res.id} eventKey={i} className="ac accordion-item" >
                     
-                      <button className="ac-q acc collapsed " data-bs-toggle="collapse" data-bs-target={"#collapseone" + res.id} aria-controls={"collapseOne"+ res.id} aria-expanded="true" >
+                      <Accordion.Header className="ac-q">
+                      <button className="acc">
+                      
                         {res.title}
-                      </button>
+                        
+                        </button>
+                      </Accordion.Header>
                     
-                      <div className={classNameNm} id={"collapseone" + res.id} data-bs-parent="#accordionExample">
+                      <div className='ac-a'>
                         <div >
-                        <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                        <Accordion.Body dangerouslySetInnerHTML={{__html: res.description}}></Accordion.Body>
                         </div>
                        
                       </div>
-                    </div>
+                    </Accordion.Item>
 
 
                   )
                 })
               }
             </div>
-            </div>
+            </Accordion>
           </div>
           <div className="col-md-12 text-center">
             <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178039' target='_blank' >
@@ -98,42 +134,42 @@ const FaqAccordion = () => {
 function WhyStrategy() {
 
   const [valRight, setValRight] = React.useState(() => 0);
-
+  const environment = 'Live';
 
   const [dataObj, setdataObj] = React.useState(() => [
     {
-      image:"./images/stratezy-page/Create your own Strategy.webp",
-      icon: "./images/stratezy-page/own-stratezy.svg",
+      image:`${slider3}`,
+      icon: `${icon1}`,
       heading: "Create your own Strategy",
       description: "Create unlimited strategies with a wide variety of Technical Indicators"
     },
 
     {
-      image:"./images/stratezy-page/backtest.webp",
-      icon: "./images/stratezy-page/backtest-trading-strategy.svg",
+      image:`${slider2}`,
+      icon: `${icon4}`,
       heading: "Backtest in Jiffy",
       description: "Backtest Your created strategy with Profit & Stoploss percentage"
 
     },
 
     {
-      image:"./images/stratezy-page/Optimise.webp",
-      icon: "./images/stratezy-page/optimise-trading-strategy.svg",
+      image:`${slider1}`,
+      icon: `${icon2}`,
       heading: "Optimize your Risk-reward ",
       description: "Optimize your strategy with Target & SL parameters for better returns"
 
     },
 
     {
-      image:"./images/stratezy-page/virtual trade.webp",
-      icon: "./images/stratezy-page/virtual-trade.svg",
+      image:`${slider5}`,
+      icon: `${icon5}`,
       heading: "Virtual Trade",
       description: "Virtual Trade your Strategies without utilizing real funds"
 
     },
     {
-      image:"./images/stratezy-page/live trade.webp",
-      icon: "./images/stratezy-page/live-trade.svg",
+      image:`${slider4}`,
+      icon: `${icon3}`,
       heading: "Live Trade",
       description: "Automate your trades by going live with your backtested strategies"
 
@@ -209,6 +245,12 @@ setTimeout(() => {
     }
   }
 
+  const config = {
+    UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
+    LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
+};
+const checkURL = config[environment + 'URL'];
+
 
 
 
@@ -217,7 +259,7 @@ setTimeout(() => {
     <section className="why-stratezy">
       <div className="container">
       {counterRight2?
-        <div className="row">
+        <div className="row" id="explore" >
           <div className="col-md-7 order2" >
             <div className="screen">
               <img src={dataObj[0].image}  className="img-fluid" alt="Why Stratezy" />
@@ -247,8 +289,11 @@ setTimeout(() => {
                 <path className="white" id="Path_1981" data-name="Path 1981" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" fill="#221F20"/>	
               </svg></button>
             </div>
-             
             </div>
+          
+          </div>
+          <div className="col-md-12 mt-5 d-flex justify-content-center">
+                <a href={`${checkURL}`} className="btn-bg btn-banner">Let's get Started</a>
           </div>
         </div>
         :''}
@@ -257,41 +302,50 @@ setTimeout(() => {
 
   )
 }
-function StrategySection() {
-  const environment = 'UAT';
-  const [videoVisibility, setVideoVisibility] = React.useState(false);
-  const [skeleton, setSkeleton] = React.useState(() => true);
+
+  function Strategy() {
+
+    const environment = 'Live';
+    const [videoVisibility, setVideoVisibility] = React.useState(false);
+    const [skeleton, setSkeleton] = React.useState(() => true);
+    
+    const config = {
+      UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
+      LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
+  };
+  const checkURL = config[environment + 'URL'];
   
-
-  const config = {
-    UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
-    LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
-};
-const checkURL = config[environment + 'URL'];
+    
   
-
-  const myTimeout = setTimeout(myGreeting, 700);
-  function myGreeting() {
-    setSkeleton(() => false);
-  }
-
-
-    function loadstrategy(){
-      
-    setTimeout(() => {
-      let iframe = document.getElementById("strategy-youtube");
-      iframe.src = 'https://www.youtube.com/embed/fFEx3wQGzAI?autoplay=1';
-  
-    }, 60);
-
-
-  }
-  
-
+    const myTimeout = setTimeout(myGreeting, 700);
+    function myGreeting() {
+      setSkeleton(() => false);
+    }
   
   
-
-
+      function loadstrategy(){
+        
+      setTimeout(() => {
+        let iframe = document.getElementById("strategy-youtube");
+        iframe.src = 'https://www.youtube.com/embed/fFEx3wQGzAI?autoplay=1';
+    
+      }, 60);
+  
+  
+    }
+  
+  
+    function chapterScroll(id) {
+      var element = document.getElementById(id);
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    
   return (
 
     skeleton ?
@@ -369,7 +423,7 @@ const checkURL = config[environment + 'URL'];
                   <h1>Simplifying Algorithmic<br />Trading</h1>
                   <p>We provide a simple way to build, test, and go live with your algorithmic trading strategy</p>
 
-                  <a href={`${checkURL}`} className="btn-bg btn-banner">Explore Stratezy</a>
+                  <div style={{'cursor': 'pointer'}} onClick={() => { chapterScroll('explore') }}  className="btn-bg btn-banner">Explore Stratezy</div>
                   
 
                   <p className="">Don’t have an account? <span><a href="https://choiceindia.com/open-free-demat-account">Open Now</a></span> </p>
@@ -378,17 +432,17 @@ const checkURL = config[environment + 'URL'];
               <div className="col-md-6">
                 <div className="rightsection">
     
-                  <img src="images/stratezy-page/free-trading-strategy-builder.webp" alt="Free Trading Strategy Builder"  className="img-fluid img"></img>
+                  <img src={bannerimage} alt="Free Trading Strategy Builder"  className="img-fluid img"></img>
                   <div className="wrap">
-                    <img src="images/stratezy-page/create-statezy.svg" className="banner-icon" alt="create stratezy" />
+                    <img src={bannericon1} className="banner-icon" alt="create stratezy" />
                     <p>create stratezy</p>
                   </div>
                   <div className="wrapone">
-                    <img src="images/stratezy-page/backtest-trading-strategy.svg" className="banner-icon" alt="Run Backtest" />
+                    <img src={bannericon3} className="banner-icon" alt="Run Backtest" />
                     <p>Run Backtest</p>
                   </div>
                   <div className="wraptwo">
-                    <img src="images/stratezy-page/virtual-trade.svg" className="banner-icon" alt="Virtual/Live Trade" />
+                    <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" />
                     <p>Virtual/Live Trade</p>
                   </div>
                 </div>
@@ -404,7 +458,7 @@ const checkURL = config[environment + 'URL'];
               <div className="col-md-8">
                 <div className="headingsec">
                   <h2 className="title">Features</h2>
-                  <p className="para">Our research team has created thematic baskets to make investing easier that could be aligned with your financial goals.</p>
+  {/**<p className="para">Our research team has created thematic baskets to make investing easier that could be aligned with your financial goals.</p>*/}
                 </div>
               </div>
             </div>
@@ -416,7 +470,7 @@ const checkURL = config[environment + 'URL'];
                     Our experts have created ready to use strategies for you to get started with your custom strategies.
                   </div>
                   <div className="imgwrap">
-                    <img src="./images/stratezy-page/readymade-trading-strategies.svg" className="img-fluid feature-img" alt="Readymade Trading Strategies"></img>
+                    <img src={image1} className="img-fluid feature-img" alt="Readymade Trading Strategies"></img>
 
                   </div>
                 </div>
@@ -428,7 +482,7 @@ const checkURL = config[environment + 'URL'];
                     Backtest and optimize your strategies without any capping on number of backtests
                   </div>
                   <div className="imgwrap">
-                    <img src="./images/stratezy-page/unlimited-backtests.svg" className="img-fluid feature-img" alt="Unlimited Backtests"></img>
+                    <img src={image2} className="img-fluid feature-img" alt="Unlimited Backtests"></img>
 
                   </div>
                 </div>
@@ -442,7 +496,7 @@ const checkURL = config[environment + 'URL'];
                     Get timely alerts as and when your trades are triggered.
                   </div>
                   <div className="imgwrap">
-                    <img src="./images/stratezy-page/alerts-on-virtual-live-trades.svg" className="img-fluid feature-img" alt="Alerts on Virtual &amp; Live Trades"></img>
+                    <img src={image3} className="img-fluid feature-img" alt="Alerts on Virtual &amp; Live Trades"></img>
 
                   </div>
                 </div>
@@ -454,7 +508,7 @@ const checkURL = config[environment + 'URL'];
                     In Charting tool to visualize your strategy &amp; trades
                   </div>
                   <div className="imgwrap">
-                    <img src="./images/stratezy-page/in-built-charting-tool.svg" className="img-fluid feature-img" alt="In Built Charting Tool"></img>
+                    <img src={image4} className="img-fluid feature-img" alt="In Built Charting Tool"></img>
 
                   </div>
                 </div>
@@ -481,7 +535,7 @@ const checkURL = config[environment + 'URL'];
                   <div className='algo' id="strategy-video">
 
                   {!videoVisibility && <div className="youtube-container">
-                  <img  className="youtube-container-img" src="images\stratezy-page\youtube-video-icon.webp" alt="Loading" onClick={() => {
+                  <img  className="youtube-container-img" src={youtubeimg} alt="Loading" onClick={() => {
 
                     setVideoVisibility(true)
                     loadstrategy()
@@ -544,16 +598,6 @@ const checkURL = config[environment + 'URL'];
       </main>
     </div>
   )
-
-}
-
-let data = document.querySelectorAll('.strategy_container')
-
-
-const root = ReactDOM.createRoot(data[0]);
-root.render(
-  e(StrategySection)
-);
-
-
-
+  
+  }
+export default Strategy;
