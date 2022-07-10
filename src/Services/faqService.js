@@ -8,7 +8,7 @@ const faqService = {
     },
 
     FaqCategory: function () {
-        
+
         let api = new API_URLS()
         let url = api.getFaqCategoryURL()
         return axios.get(url, this.headerConfig).then(({ data }) => {
@@ -29,7 +29,7 @@ const faqService = {
 
         let api = new API_URLS()
         let url = api.getFaqArticleURL(id)
-        return axios.get(url,this.headerConfig).then(({ data }) => {
+        return axios.get(url, this.headerConfig).then(({ data }) => {
             return data
         })
 
@@ -38,7 +38,7 @@ const faqService = {
 
         let api = new API_URLS()
         let url = api.getFaqSearchURL(pros)
-        return axios.get(url,this.headerConfig).then(({ data }) => {
+        return axios.get(url, this.headerConfig).then(({ data }) => {
             return data
         })
 

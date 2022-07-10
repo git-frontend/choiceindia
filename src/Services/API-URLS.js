@@ -19,10 +19,11 @@ const config = {
     UATOnbBaseURL: 'https://uat-pwa.choicetechlab.com/',
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
-    liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/'
+    liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
+    livereferURL: "https://stage-partner-api.theflyy.com/",
+    UATreferURL: "https://stage-partner-api.theflyy.com/",
 
 }
-
 
 export class API_URLS {
 
@@ -39,6 +40,10 @@ export class API_URLS {
 
     /** faq URL */
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
+
+    /** refer and earn URL */
+    referURL = "https://stage-partner-api.theflyy.com/"
+
 
 
 
@@ -80,8 +85,8 @@ export class API_URLS {
 
     addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
-
-
+    /** refer and earn */
+    earnURL = 'v1/40a9f5ac41a0f6223825/stage-user';
 
 
     /** Open Account APIs */
@@ -117,12 +122,13 @@ export class API_URLS {
 
         this.setSSOServerURL(config[configKey + 'SSOBaseURL']);
 
-        this.setServerURL(config[configKey + 'ServerURL'])
+        this.setServerURL(config[configKey + 'ServerURL']);
 
-        this.setBannerURL(config[configKey + 'BannerURL'])
+        this.setBannerURL(config[configKey + 'BannerURL']);
 
-        this.setfaqURL(config[configKey + 'faqURL'])
+        this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+        this.setreferURL(config[configKey + 'referURL']);
     }
 
     setLMSServerURL = (url) => {
@@ -169,6 +175,15 @@ export class API_URLS {
     setfaqURL = (url) => {
 
         this.faqURL = url;
+    }
+
+    /**
+     * Set faq URL 
+     * @param {*} url 
+     */
+     setreferURL = (url) => {
+
+        this.referURL = url;
     }
 
 
@@ -292,6 +307,14 @@ export class API_URLS {
 
     getAddNewLeadURL() {
         return this.OnbBaseURL + this.addNewLeadURL;
+    }
+
+    getreferearnURL(){
+        return this.referURL + this.earnURL;
+    }
+
+    getreferallink(id){
+        return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
     }
 
 }
