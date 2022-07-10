@@ -1,10 +1,10 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
 
- const homeServices = {
+const homeServices = {
 
 
-    /** get market Insights and fabal */
+  /** get market Insights and fabal */
   marketInsite: function () {
     let api = new API_URLS()
     let url = api.getMarketinsiteURL()
@@ -14,31 +14,30 @@ import { API_URLS } from "./API-URLS";
   },
 
 
-  fablesBlog: function (id){
-    // console.log("data",id)
+  fablesBlog: function (id) {
 
     let api = new API_URLS()
     let url = api.getFableblogURL(id)
-    return axios.get(url).then((data)=> {
+    return axios.get(url).then((data) => {
 
       return data
 
     })
   },
 
-     /** fabal story lists */
-     fabalStory: function () {
-      let api = new API_URLS()
-      let url = api.getFableStoryURL()
-      return axios.get(url).then((data) => {
-        return data
-      })
-    },
+  /** fabal story lists */
+  fabalStory: function () {
+    let api = new API_URLS()
+    let url = api.getFableStoryURL()
+    return axios.get(url).then((data) => {
+      return data
+    })
+  },
 
 
 
 
-  homePrimaryBanner: function(){
+  homePrimaryBanner: function () {
     let api = new API_URLS()
     let url = api.getHomePrimaryBannerURL()
     return axios.get(url).then((data) => {
@@ -46,7 +45,7 @@ import { API_URLS } from "./API-URLS";
     })
 
   },
-  homeSecondaryBanner: function(){
+  homeSecondaryBanner: function () {
     let api = new API_URLS()
     let url = api.getHomeSecondaryBannerURL()
     return axios.get(url).then((data) => {
@@ -55,17 +54,17 @@ import { API_URLS } from "./API-URLS";
 
   },
 
-   /** get market Insights and fabal */
-   marketInsiteNew: function (payload) {
-     let api = new API_URLS()
-     let url = api.getMarketinsiteNewURL()
-     return axios.get(url,{
-       headers : {
+  /** get market Insights and fabal */
+  marketInsiteNew: function (payload) {
+    let api = new API_URLS()
+    let url = api.getMarketinsiteNewURL()
+    return axios.get(url, {
+      headers: {
         'x-api-key': 'B62664943BAA286B21C66BA9A614D'
-       }
-     }).then((data) => {
-       return data;
-     })
-   },
+      }
+    }).then((data) => {
+      return data;
+    })
+  },
 };
 export default homeServices
