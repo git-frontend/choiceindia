@@ -1,6 +1,6 @@
 // import "./opentradingaccount.scss";
 // import DematAccountForm from '../Common-features/DematAccountForm';
-// import "../OpenDematAccount/DematPage"
+import "../OpenDematAccount/DematPage"
 import OpentradingAccountBanner from "./OpentradingAccountBanner";
 import WhyOpenTradingAccount from "./WhyOpenTradingAccount";
 import TradingAccountOpeningProcess from "./TradingAccountOpeningProcess";
