@@ -200,7 +200,7 @@ export class API_URLS {
 
     getFableblogURL(id) {
 
-        return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a`
+        return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a&include=tags`
     }
 
     /** Get home Banner URL */

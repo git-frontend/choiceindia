@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import { useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
@@ -22,6 +23,7 @@ function DematAccountForm() {
     const [count, setCount] = useState(0);
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
@@ -185,6 +187,7 @@ function DematAccountForm() {
                 signal: ac.signal
             }).then(otp => {
                 setOtp(otp.code);
+                verifyOTP();
             }).catch(err => {
                 console.log(err);
             });
@@ -241,6 +244,7 @@ function DematAccountForm() {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpSessionID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('otp');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -272,6 +276,7 @@ function DematAccountForm() {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpSessionID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('call');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -285,6 +290,13 @@ function DematAccountForm() {
                 }
             });
         }
+    }
+
+    function handleOTPResendSuccessToaster(type){
+        setOTPSendSuccessToaster({[type]: true});
+        setTimeout(()=>{
+            setOTPSendSuccessToaster({[type]: false});
+        },2000)
     }
 
     return (
@@ -373,6 +385,14 @@ function DematAccountForm() {
                                 
                                 
                             </div>
+                            {
+                                (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
+                                    <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
+                                        {
+                                            (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
+                                        }
+                                    </Alert> : ''
+                            }
                         </div>
                     </div>
 

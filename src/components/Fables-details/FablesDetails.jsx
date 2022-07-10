@@ -1,5 +1,5 @@
 import "./fabledetails.scss"
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 
 
 import Fabdetailsbanner from './FabDetailsBanner.jsx';
@@ -24,6 +24,8 @@ function Fablesdetails() {
   const { id } = useParams();
   // let data = [];
 const [skeleton, setSkeleton] = useState(() => true);
+const [showForm, setShowForm] = useState(false);
+var formName = useRef('');
 
   setTimeout(() => {
     setSkeleton(() => false);
@@ -34,6 +36,14 @@ const [skeleton, setSkeleton] = useState(() => true);
 
   function hideOpenAccountAdPopup() {
     setShowOpenAccountPopup(false);
+    callOpenAccountAdPopupAgain();
+  }
+
+  function callOpenAccountAdPopupAgain() {
+    //after 15min
+    setTimeout(()=>{
+      showOpenAccountAdPopup();
+    },900000)
   }
 
     /** to call single fabal detail */
@@ -41,6 +51,7 @@ const [skeleton, setSkeleton] = useState(() => true);
       homeServices.fablesBlog(id).then(
         res => {
           if (res.data.posts) {
+            checkWhetherToShowForm(res.data.posts || {});
             setSingle_Detail( res.data.posts);
             setIsDetail( true);
             sethtmlContent(res.data.posts[0].html);
@@ -81,6 +92,17 @@ setTrigger(true)
   //   data = allFabalData;
   // },[allFabalData])
 
+  function checkWhetherToShowForm(details) {
+    if (details[0].tags) {
+      details[0].tags.forEach((item, i) => {
+        if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker') {
+          setShowForm(true);
+          formName.current = item.slug;
+        }
+      })
+    }
+  }
+
 
   return (
     <div>
@@ -88,7 +110,7 @@ setTrigger(true)
       {
         skeleton ? <Template1 /> :
           <div className="fables-details-parent">
-            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} />
+            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
             <Recommendation name={allFabalData} Id={id} />
           </div>
       }
