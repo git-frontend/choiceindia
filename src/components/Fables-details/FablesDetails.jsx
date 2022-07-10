@@ -118,7 +118,7 @@ setTrigger(true)
      {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       }
-      <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
+      <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
     </div>
   );
 }

@@ -104,7 +104,8 @@ function Fabdetailsbanner(props) {
                                 {
                                     props.showForm ?
                                         props.formName === 'form-demat' ? <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
-                                            <div className="formwrap d-flex justify-content-end " style={{    position: '-webkit-sticky',position: 'sticky',top: 0}}>
+                                             {/* style={{    position: '-webkit-sticky',position: 'fixed', padding: '3rem 0', top: 0}} */}
+                                            <div className="formwrap d-flex justify-content-end ">
                                                 <DematAccountForm />
                                             </div>
                                         </div> : <div className="col-md-5 col-lg-4 col-sm-6" id="sub-broker-wrap">
