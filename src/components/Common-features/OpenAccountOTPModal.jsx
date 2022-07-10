@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import "./OpenAccountOTPModal.scss";
 
@@ -9,6 +10,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
     const [count, setCount] = useState(0);
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
 
     function showLoader(type) {
@@ -46,6 +48,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
     }, [count]);
 
     useEffect(() => {
+        setCount(30);
+    }, []);
+
+    useEffect(() => {
         if ('OTPCredential' in window) {
             const input = document.getElementById('openAccountOTP');
             if (!input) return;
@@ -55,6 +61,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 signal: ac.signal
             }).then(otp => {
                 setOtp(otp.code);
+                verifyOTP();
             }).catch(err => {
                 console.log(err);
             });
@@ -111,6 +118,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('otp');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -142,6 +150,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('call');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -155,6 +164,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 }
             });
         }
+    }
+
+
+    function handleOTPResendSuccessToaster(type){
+        setOTPSendSuccessToaster({[type]: true});
+        setTimeout(()=>{
+            setOTPSendSuccessToaster({[type]: false});
+        },2000)
     }
 
     return (
@@ -180,6 +197,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                                 </div>
                         }
                     </div>
+                    {
+                        (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
+                            <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
+                                {
+                                    (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
+                                }
+                            </Alert> : ''
+                    }
                 </div>
             </div>
 

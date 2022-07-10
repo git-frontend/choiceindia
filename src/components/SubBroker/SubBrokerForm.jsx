@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Alert from 'react-bootstrap/Alert';
 import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
@@ -32,6 +33,7 @@ function DematAccountForm() {
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
     const [count, setCount] = useState(0);
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState(false);
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
     var otpSessionID = useRef('');
@@ -348,6 +350,23 @@ function DematAccountForm() {
         return () => clearTimeout(delayDebounceFn)
     }, [brokerEmail]);
 
+    useEffect(() => {
+        if ('OTPCredential' in window) {
+            const input = document.getElementById('subBrokerOTP');
+            if (!input) return;
+            const ac = new AbortController();
+            navigator.credentials.get({
+                otp: { transport: ['sms'] },
+                signal: ac.signal
+            }).then(otp => {
+                setOtp(otp.code);
+                verifyOTP();
+            }).catch(err => {
+                console.log(err);
+            });
+        }
+    }, []);
+
     function checkExistence() {
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
@@ -406,10 +425,12 @@ function DematAccountForm() {
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && !res.data.errorCode) {
                 otpSessionID.current = res.data.id;
-                if (!isResend)
+                // if (!isResend)
                     resetOTPPopup();
                 if (!isResend)
-                    handleOTPPopupShow()
+                    handleOTPPopupShow();
+                if(isResend)
+                    handleOTPResendSuccessToaster();
             } else {
                 if (isResend) {
                     setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
@@ -502,6 +523,13 @@ function DematAccountForm() {
             // showAPIErrorToaster();
             setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
         });
+    }
+
+    function handleOTPResendSuccessToaster(){
+        setOTPSendSuccessToaster(true);
+        setTimeout(()=>{
+            setOTPSendSuccessToaster(false);
+        },2000)
     }
 
     function resetBrokerForm() {
@@ -668,6 +696,13 @@ function DematAccountForm() {
 
 
                             </div>
+                            {
+                                OTPSendSuccessToaster ? 
+                                <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
+                                OTP has been resent on given Mobile Number
+                            </Alert> : ''
+                            }
+                            
                         </div>
                     </div>
 
