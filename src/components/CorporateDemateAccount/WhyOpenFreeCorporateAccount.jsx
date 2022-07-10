@@ -8,7 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
 import Image9 from '../../assets/images/open-demat-account/referal.svg';
 import Image10 from '../../assets/images/open-demat-account/advancedplatform.png';
 import Image11 from '../../assets/images/open-demat-account/paperlessacntopening.png';
-function WhyOpenFreeNriAccount() {
+function WhyOpenFreeCorporateAccount() {
 
   const settings = {
     infinite: false,
@@ -48,7 +48,7 @@ function WhyOpenFreeNriAccount() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                              <h2>Why Open A NRI Demat Account Online With Us?</h2>
+                              <h2>Why Open A Free Corporate Demat Account Online With Us?</h2>
                             </div>
                         </div>
                         <div className="col-md-8">
@@ -123,4 +123,4 @@ function WhyOpenFreeNriAccount() {
   );
 }
 
-export default WhyOpenFreeNriAccount;
+export default WhyOpenFreeCorporateAccount;

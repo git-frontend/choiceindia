@@ -7,7 +7,7 @@ import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
 
-const DematAccountNriOpeningProcess = () => {
+const CorporateDematAccountOpeningProcess = () => {
     return (
         <div>
 
@@ -20,7 +20,7 @@ const DematAccountNriOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless</span> NRI Demat Account</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless</span> Corporate Demat <br/>Account For Free</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">
@@ -31,7 +31,7 @@ const DematAccountNriOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">NRI Demat Account Opening Process</h2>
+                    <h2 className="sect-title">Corporate Demat Account Opening Process</h2>
 
 
 
@@ -73,7 +73,7 @@ const DematAccountNriOpeningProcess = () => {
                                 </div>
                                 <div className="info" >
                                     <h5>Registration Complete</h5>
-                                    <p>Your Trading Account opening is successful with Choice Broking.
+                                    <p>Your Corporate Demat Account opening is successful with Choice Broking.
 
                                     </p>
                                 </div>
@@ -99,5 +99,5 @@ const DematAccountNriOpeningProcess = () => {
     )
 }
 
-export default DematAccountNriOpeningProcess;
+export default CorporateDematAccountOpeningProcess;
 
