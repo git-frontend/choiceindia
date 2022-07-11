@@ -10,6 +10,7 @@ import { useForm } from 'react-hook-form';
 import referService from "../../Services/referService";
 import { FaWhatsapp } from "react-icons/fa";
 import {FaFacebookF}  from 'react-icons/fa';
+import { Link } from "react-router-dom";
 
 function Banner() {
     let referid='';
@@ -119,7 +120,7 @@ const { register,formState: reset } = useForm({
                                       
                                     </div>
                                 </div>
-                                <h4>Don’t have an Account? <a href="https://choiceindia.com/open-free-demat-account">Open Now</a></h4>
+                                <h4>Don’t have an Account? <Link to="/open-demat-account">Open Now</Link></h4>
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">

@@ -1,4 +1,4 @@
-import React from "react";
+import Reac,{useEffect} from "react";
 
 import Blog2 from '../../assets/images/fable/blog-big.png';
 import BlogThumbnail1 from '../../assets/images/fable/thumnail1.jpg';
@@ -8,6 +8,8 @@ import BlogThumbnail4 from '../../assets/images/fable/thumnail4.jpg';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function FableBlog() {
+    
+   
 
     return (
         <div>

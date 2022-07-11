@@ -7,20 +7,30 @@ import Banner from './Banner';
 import { AiFillCaretUp } from "react-icons/ai";
 import "./investorsinfo.scss";
 import "./navbar.scss";
-import { useState, useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import Template1 from "../Common-features/Template1";
 
 function InvestorInfo() {
 
-  useEffect(() => {
-    console.log('RRRRR')
-  },[]);
-
   const [skeleton, setSkeleton] = useState(() => true);
+  const[trigger,setTrigger]=useState(false);
 
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
+
+ 
+    
+
+
+  useEffect(() => {
+    setTrigger(true)
+    if (trigger === true) {
+      console.log("kkk");
+
+    }
+
+  }, [trigger])
 
   return (
     <div>
