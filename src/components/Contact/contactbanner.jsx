@@ -9,6 +9,8 @@ import { useForm } from 'react-hook-form';
 
 import { IoMdInformationCircleOutline } from 'react-icons/io';
 import contactService from '../../Services/contactService'
+import LazyLoader from '../Common-features/LazyLoader';
+
 function Contactbanner() {
 
   const [datas, setdatas] = useState()
@@ -97,7 +99,8 @@ function Contactbanner() {
           main ? <img src={""} className="ban-img1" alt="Loading" /> :
             <img src={Bannerimage} className="ban-img" alt="Loading" />
         } */}
-                          <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"}  />
+              <LazyLoader src={Bannerimage} className='img-fluid ban-img' width={'1519'} height={'915'} alt={'Loading'} />
+              {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
               <div className='banner-caption'>
                 <div className='container'>
                   <div className='row'>

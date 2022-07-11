@@ -32,7 +32,7 @@ function CodeConductMenu() {
                                 </ul>
                             </div>
                             <div className="pt-5">
-                                <h3 className="head">Definitions & Interpretation</h3>
+                                <h3 className="head">Definitions &amp; Interpretation</h3>
                                 <p>In this Code, unless repugnant to the meaning or context thereof, the following expressions, wherever used in this Code, shall have the meaning assigned to them below</p>
                                 <ul className="subtext">
                                     <li>"Board" shall mean the board of Directors of the Company.

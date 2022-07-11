@@ -1,11 +1,11 @@
 
 import React from "react";
 import Bannerimage from '../../assets/images/fabledetails/detailbanner.png';
-import twitterone from '../../assets/images/fabledetails/twitterone.png';
-import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
+// import twitterone from '../../assets/images/fabledetails/twitterone.png';
+// import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
-
+import LazyLoader from "../Common-features/LazyLoader";
 
 function Fabdetailsbanner(props) {
 
@@ -41,7 +41,8 @@ function Fabdetailsbanner(props) {
                                     </ul>
                                     <div className="imgblock">
                                         {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
-                                        <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt="Loading" />
+                                        <LazyLoader src={props.single_data[0].feature_image || Bannerimage} className={'img-fluid'} alt={'Loading'} />
+                                        {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     </div>
                                 </div>
 

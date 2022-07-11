@@ -3,6 +3,8 @@ import Image13 from '../../assets/images/open-demat-account/web.svg';
 import Image14 from '../../assets/images/open-demat-account/android.svg';
 import Image15 from '../../assets/images/open-demat-account/ios.svg';
 import Image16 from '../../assets/images/open-demat-account/why-choice.webp';
+import LazyLoader from '../Common-features/LazyLoader';
+
 const WhyChoice = () => {
     return (
         <div>
@@ -15,7 +17,8 @@ const WhyChoice = () => {
                     <div className="leftsect">
                        <h2 className="secttile">Why Choice?</h2>
                        <div className="img">
-                       <img src={Image16} alt="Why Choice" width={"365"} height={"788"}   className="img-fluid" />
+                       <LazyLoader src={Image16} className={'img-fluid'} width={"365"} height={"788"} alt="Why Choice" />
+                       {/* <img src={Image16} alt="Why Choice" width={"365"} height={"788"}   className="img-fluid" /> */}
                        </div>
                       
                     </div>
@@ -71,19 +74,22 @@ const WhyChoice = () => {
                                 <div className="iconwrap">
                                     <a href="<?php echo JIFFY_URL;  ?>" target="_blank">
                                         <div className="icon">
-                                            <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
+                                        <LazyLoader src={Image13} className={'img-fluid'} width={"45"} height={"46"} alt="Web" />
+                                            {/* <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " /> */}
                                             <p>Web</p>
                                         </div>
                                     </a>
                                       <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank">
                                         <div className="icon">
-                                            <img src={Image14} alt="Android" width={"35"} height={"36"}  className="img-fluid " />
+                                        <LazyLoader src={Image14} className={'img-fluid'} width={"35"} height={"36"} alt="Android" />
+                                            {/* <img src={Image14} alt="Android" width={"35"} height={"36"}  className="img-fluid " /> */}
                                             <p>Android</p>
                                         </div>
                                     </a>
                                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261" target="_blank">
                                         <div className="icon">
-                                            <img src={Image15} width={"45"} height={"46"} alt="IOS" className="img-fluid " />
+                                        <LazyLoader src={Image15} className={'img-fluid'} width={"45"} height={"46"} alt="IOS" />
+                                            {/* <img src={Image15} width={"45"} height={"46"} alt="IOS" className="img-fluid " /> */}
                                             <p>iOS</p>
                                         </div>
                                     </a>

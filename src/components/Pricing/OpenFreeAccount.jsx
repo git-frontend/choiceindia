@@ -3,7 +3,7 @@ import React from "react";
 
 import pricingimage1 from '../../assets/images/pricing/demat-arrow.svg';
 import DematAccountForm from '../Common-features/DematAccountForm'
-
+import LazyLoader from "../Common-features/LazyLoader";
 
 function OpenFreeAccount() {
 
@@ -36,7 +36,8 @@ function OpenFreeAccount() {
                                         <p>Trading Platform ( Web &amp; App )</p>
                                     </div>
                                 </div>
-                                <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-fluid img-demat-arrow" width="449" height="164"/>
+                                <LazyLoader src={pricingimage1} alt={"Become a Stock Market Agent"} className={"img-fluid img-demat-arrow"} width={"449"} height={"164"}/>
+                                {/* <img src={pricingimage1} alt="Become a Stock Market Agent" className="img-fluid img-demat-arrow" width="449" height="164"/> */}
                             </div>
                             
                         </div>

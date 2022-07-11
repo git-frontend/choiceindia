@@ -3,12 +3,12 @@ import Commodity from '../../assets/images/sub-broker/equity-commodity-currency-
 import MF from '../../assets/images/sub-broker/mutual-funds-distribution.svg';
 import Insurance from '../../assets/images/sub-broker/insurance.svg';
 import Retail from '../../assets/images/sub-broker/retail-loans.svg';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 
 const SubBrokerSellMore = () => {
     return (
-        <div>            
+        <div>
             <section className="sell-more">
                 <div className="container">
                     <div className="row align-items-center">
@@ -27,30 +27,34 @@ const SubBrokerSellMore = () => {
                             <div className="sell-more-list">
                                 <div className="more-list-item">
                                     <span>
-                                        <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
+                                        <LazyLoader src={Commodity} alt={"Equity, Commodity &amp; Currency Broking"} className={'img-fluid'} width={"45"} height={"45"} />
+                                        {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
                                     <h3 className="itm-ttl">Equity, Commodity &amp; Currency Broking</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
-                                <span>
+                                    <span>
+                                        <LazyLoader src={MF} alt={"Equity, Commodity &amp; Currency Broking"} className={'img-fluid'} width={"45"} height={"45"} />
                                         <img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
-                                </span>
-                                <h3 className="itm-ttl">Mutual Funds Distribution</h3>
+                                    </span>
+                                    <h3 className="itm-ttl">Mutual Funds Distribution</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/>
+                                        <LazyLoader src={Insurance} alt={"Equity, Commodity &amp; Currency Broking"} className={'img-fluid'} width={"45"} height={"45"} />
+                                        {/* <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/> */}
                                     </span>
                                     <h3 className="itm-ttl">Insurance</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
-                                <span>
-                                        <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
-                                </span>
-                                <h3 className="itm-ttl">Retail Loans</h3>
+                                    <span>
+                                        <LazyLoader src={Retail} alt={"Equity, Commodity &amp; Currency Broking"} className={'img-fluid'} width={"45"} height={"45"} />
+                                        {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
+                                    </span>
+                                    <h3 className="itm-ttl">Retail Loans</h3>
+                                </div>
                             </div>
-                            </div>
-                            
+
                         </div>
                     </div>
                 </div>

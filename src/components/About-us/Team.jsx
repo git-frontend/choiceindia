@@ -9,121 +9,129 @@ import React from "react";
 //import image6 from '../../assets/images/about-us/sundar-sanmukhani.webp';
 import image7 from '../../assets/images/about-us/person-img.webp';
 import Slider from "react-slick";
+import LazyLoader from '../Common-features/LazyLoader';
+
 function Team() {
-    const settings = {
-        infinite: true,
-        speed: 2000,
-        arrows: false,
-        slidesToShow: 4,
-        autoplay: false,
-        margin:15,
-        dots:true,
-        autoplaySpeed: 800,
-        slidesToScroll: 4,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-             
-            },
-          },
-        ],
-    };
+  const settings = {
+    infinite: true,
+    speed: 2000,
+    arrows: false,
+    slidesToShow: 4,
+    autoplay: false,
+    margin: 15,
+    dots: true,
+    autoplaySpeed: 800,
+    slidesToScroll: 4,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+        },
+      },
+    ],
+  };
   return (
     <div>
-      
-        <section className="managementteam">
-            <div className="container">
-                <div className="row">
-                    <div className="col-md-12">
-                    <h2 className="heading">Management Team</h2>
+
+      <section className="managementteam">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <h2 className="heading">Management Team</h2>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="team-list">
+                <Slider {...settings} className="team-list-slider">
+                  <div className="team-item">
+                    <span className="img-itm">
+                      <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5>Kamal Poddar</h5>
+                      <p className="designation">Managing Director</p>
                     </div>
-                </div>
-                <div className="row">
-                <div className="col-md-12">
-                  <div className="team-list">
-                  <Slider {...settings} className="team-list-slider">
-                      <div className="team-item">
-                        <span className="img-itm">
-                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Kamal Poddar</h5>
-                            <p className="designation">Managing Director</p>
-                        </div>
-                       
-                        
-                      </div>
-                      <div className="team-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Ajay Kejriwal</h5>
-                            <p className="designation">Designation</p>
-                        </div>
-                       
-                        
-                      </div>
-                      <div className="team-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading"/>
-                        </span>
-                        <div className="namedesg">
-                            <h5>Sunil Bagaria</h5>
-                            <p className="designation">Designation</p>
-                        </div>
-                       
-                        
-                      </div>
-                     <div className="team-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading"/>
-                        </span>
-                        <div className="namedesg">
-                            <h5 className="name">CA Ram Ratan Chirania</h5>
-                            <p className="designation">Director</p>
-                        </div>
-                        
-                      </div>
-                      <div className="team-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Sumeet Bagadia</h5>
-                            <p className="designation">Director</p>
-                        </div>
-                        
-                      </div>
-                      <div className="team-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Sundar Sanmukhani</h5>
-                            <p className="designation">Designation</p>
-                        </div>
-                        
-                      </div>
-                    </Slider>
+
+
                   </div>
-                </div>
+                  <div className="team-item">
+                    <span className="img-itm">
+                      <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5>Ajay Kejriwal</h5>
+                      <p className="designation">Designation</p>
+                    </div>
+
+
+                  </div>
+                  <div className="team-item">
+                    <span className="img-itm">
+                    <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5>Sunil Bagaria</h5>
+                      <p className="designation">Designation</p>
+                    </div>
+
+
+                  </div>
+                  <div className="team-item">
+                    <span className="img-itm">
+                    <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5 className="name">CA Ram Ratan Chirania</h5>
+                      <p className="designation">Director</p>
+                    </div>
+
+                  </div>
+                  <div className="team-item">
+                    <span className="img-itm">
+                    <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5>Sumeet Bagadia</h5>
+                      <p className="designation">Director</p>
+                    </div>
+
+                  </div>
+                  <div className="team-item">
+                    <span className="img-itm">
+                    <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"Loading"} />
+                      {/* <img src={image7} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                    </span>
+                    <div className="namedesg">
+                      <h5>Sundar Sanmukhani</h5>
+                      <p className="designation">Designation</p>
+                    </div>
+
+                  </div>
+                </Slider>
               </div>
             </div>
-        </section>
-      
-    
+          </div>
+        </div>
+      </section>
+
+
     </div>
   );
 }

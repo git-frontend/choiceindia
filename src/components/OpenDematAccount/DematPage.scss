@@ -623,7 +623,7 @@
 			background-color: $bgcolor-lightgray;
 			display: flex;
 			flex-wrap: wrap;
-			justify-content: end;
+			justify-content: flex-end;
 
 			@media (max-width:$sm) {
 				width: 100%;

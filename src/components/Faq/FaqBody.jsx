@@ -1,7 +1,7 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Accordion } from 'react-bootstrap';
 import faqService from '../../Services/faqService';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
@@ -110,7 +110,8 @@ export default function FaqBody() {
                           // scrollToElement();
                         }}>
                           <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
-                             <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className={""} alt={''} />
+                             {/* <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" /> */}
                             <h4>{response.category_name}</h4>
                             <p>{response.category_description}</p>
                           </div>

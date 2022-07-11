@@ -10,137 +10,137 @@ import Honesty from '../../assets/images/about-us/Honesty.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from "react-slick";
 function CoreValues() {
-    const settings = {
-        infinite: true,
-        speed: 1500,
-        arrows: false,
-        slidesToShow: 3,
-        autoplay: false,
-        margin:15,
-        dots:true,
-        autoplaySpeed: 1000,
-        slidesToScroll: 3,
-        responsive: [
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2,
-              adaptiveHeight: true,
-            },
-          },
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-    };
+  const settings = {
+    infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 3,
+    autoplay: false,
+    margin: 15,
+    dots: true,
+    autoplaySpeed: 1000,
+    slidesToScroll: 3,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
   return (
     <div>
-      
-        <section className="corevalues">
-            <div className="container-fluid">
-                <div className="row">
-               
 
-                  <div className="wrap">
-                    <div className="col-md-5 col-12">
-                        <div className="card">
-                          <h2 className="cardtile">Our Core Values</h2>
-                          <p  className="cardsubtext">Who we are is reflected in what we practice. Our values are the guiding light for everything we do at choice.</p>
-                        </div>
+      <section className="corevalues">
+        <div className="container-fluid">
+          <div className="row">
+
+
+            <div className="wrap">
+              <div className="col-md-5 col-12">
+                <div className="card">
+                  <h2 className="cardtile">Our Core Values</h2>
+                  <p className="cardsubtext">Who we are is reflected in what we practice. Our values are the guiding light for everything we do at choice.</p>
+                </div>
+              </div>
+              <div className="col-md-7 col-12">
+                <div className="team-list">
+                  <Slider {...settings} className="team-list-slider">
+
+
+
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Commitment} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Commitment} className="img-fluid" alt="Loading"  /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Commitment</h4>
+                        <p className="text">We are dedicated to serve you the best</p>
+                      </div>
+
+
                     </div>
-                    <div className="col-md-7 col-12">
-                      <div className="team-list">
-                        <Slider {...settings} className="team-list-slider">
-                         
-                         
-                        
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                            <LazyLoader src={Commitment} width="70" height="70" className="img-fluid" alt="Loading" />
-                            {/* <img src={Commitment} className="img-fluid" alt="Loading"  /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Commitment</h4>
-                                <p className="text">We are dedicated to serve you the best</p>
-                            </div>
-                          
-                            
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                                              <LazyLoader src={Honesty} width="70" height="70" className="img-fluid" alt="Loading" />
-                            {/* <img src={Honesty} className="img-fluid" alt="Loading"  /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Honesty</h4>
-                                <p className="text">Our conduct is guided by integrity &amp; transparency</p>
-                            </div>
-                          
-                            
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                                              <LazyLoader src={Optimism} width="70" height="70" className="img-fluid" alt="Loading" />
-                              {/* <img src={Optimism} className="img-fluid" alt="Loading" /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Optimism</h4>
-                                <p className="text">Positivity is a virtue that comes by practice</p>
-                            </div> 
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                                              <LazyLoader src={Innovation} width="70" height="70" className="img-fluid" alt="Loading" />
-                              {/* <img src={Innovation} className="img-fluid" alt="Loading" /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Innovation</h4>
-                                <p className="text">The only way to win is by being creative</p>
-                            </div>
-                          
-                            
-                          </div>
-                          <div className="team-item pr-5">
-                            <span className="img-itm">
-                                              <LazyLoader src={Consistency} width="70" height="70" className="img-fluid" alt="Loading" />
-                            {/* <img src={Consistency} className="img-fluid" alt="Loading" /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Consistency</h4>
-                                <p className="text">Only factor which is more important than perfection</p>
-                            </div>
-                          
-                            
-                          </div>
-                            <div className="team-item pr-5">
-                            <span className="img-itm">
-                                              <LazyLoader src={Empowerment} width="70" height="70" className="img-fluid" alt="Loading" />
-                            {/* <img src={Empowerment} className="img-fluid" alt="Loading"  /> */}
-                            </span>
-                            <div className="namedesg">
-                                <h4 className="title">Empowerment</h4>
-                                <p className="text">Hustle today to empower your tomorrow</p>
-                            </div>
-                          
-                            
-                          </div>
-                        </Slider>
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Honesty} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Honesty} className="img-fluid" alt="Loading"  /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Honesty</h4>
+                        <p className="text">Our conduct is guided by integrity &amp; transparency</p>
+                      </div>
+
+
+                    </div>
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Optimism} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Optimism} className="img-fluid" alt="Loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Optimism</h4>
+                        <p className="text">Positivity is a virtue that comes by practice</p>
                       </div>
                     </div>
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Innovation} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Innovation} className="img-fluid" alt="Loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Innovation</h4>
+                        <p className="text">The only way to win is by being creative</p>
+                      </div>
 
-                  </div>
-                  
+
+                    </div>
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Consistency} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Consistency} className="img-fluid" alt="Loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Consistency</h4>
+                        <p className="text">Only factor which is more important than perfection</p>
+                      </div>
+
+
+                    </div>
+                    <div className="team-item pr-5">
+                      <span className="img-itm">
+                        <LazyLoader src={Empowerment} className={"img-fluid"} width={"70"} height={"70"} alt={"Loading"} />
+                        {/* <img src={Empowerment} className="img-fluid" alt="Loading"  /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h4 className="title">Empowerment</h4>
+                        <p className="text">Hustle today to empower your tomorrow</p>
+                      </div>
+
+
+                    </div>
+                  </Slider>
                 </div>
+              </div>
+
             </div>
-           
-        </section>
-      
-    
+
+          </div>
+        </div>
+
+      </section>
+
+
     </div>
   );
 }

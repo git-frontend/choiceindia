@@ -7,7 +7,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Marquee from 'react-fast-marquee';
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerCareer() {
 
@@ -17,12 +17,30 @@ function BannerCareer() {
      
     <section className="bannersection">
         <Marquee direction="left" speed={100}   delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
-                  <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"}  alt='Loading' /></div>
-                  <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
-                  <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
-                  <div className='marq-itm'> <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
-                  <div className='marq-itm'> <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
-                  <div className='marq-itm'> <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /></div>
+                  <div className='marq-itm'>
+                  <LazyLoader src={CareerImage0} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} />
+                     {/* <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"}  alt='Loading' /> */}
+                     </div>
+                  <div className='marq-itm'>
+                  <LazyLoader src={CareerImage1} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} /> 
+                  {/* <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
+                  <div className='marq-itm'>
+                  <LazyLoader src={CareerImage2} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} /> 
+                  {/* <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
+                  <div className='marq-itm'>
+                  <LazyLoader src={CareerImage0} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} /> 
+                  {/* <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
+                  <div className='marq-itm'> 
+                  <LazyLoader src={CareerImage1} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} />
+                  {/* <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
+                  <div className='marq-itm'> 
+                  <LazyLoader src={CareerImage2} className={'img-fluid'} width={"482"} height={"400"} alt="Loading" />
+                  {/* <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
           </Marquee>     
     </section>
 
@@ -53,6 +71,7 @@ function BannerCareer() {
                 </div>
                 <div className="col-xl-6 col-md-6">
                   <div className='culture-values-img'>
+                  <LazyLoader src={CareerImage3} className={'img-fluid shdow'} width={"642"} height={"567"} alt="Loading" />
                               <img src={CareerImage3} className='img-fluid shdow' alt="Loading" width={"642"} height={"567"} />
                   </div>
                 </div>

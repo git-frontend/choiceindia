@@ -6,7 +6,7 @@ import ImageSub16 from '../../assets/images/sub-broker/become-a-sub-broker.webp'
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-
+import LazyLoader from '../Common-features/LazyLoader';
 
 function WhoEligibleToSubBroker() {
 
@@ -54,20 +54,24 @@ function WhoEligibleToSubBroker() {
                             <div className="eligb-right-sec">
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
-                                        <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" />
+                                        <LazyLoader src={ImageSub13} alt={"Individual must be 18+ years of age"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
                                         <h4>Individual must be 18+ years of age</h4>
                                     </div>
                                     <div className="">
-                                        <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" />
+                                        <LazyLoader src={ImageSub14} alt={"A knack to sell products effortlessly"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
                                         <h4>A knack to sell products effortlessly</h4>
                                     </div>
                                     <div className="">
-                                        <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" />
+                                        <LazyLoader src={ImageSub15} alt={"A desire to be your own boss"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        {/* <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" /> */}
                                         <h4>A desire to be your own boss</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
-                                    <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" />
+                                    <LazyLoader src={ImageSub16} alt={"Become a Sub Broker &amp; Currency Broking"} className={"img-fluid"} width={"384"} height={"384"} />
+                                    {/* <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" /> */}
                                 </div>
                             </div>
                         </div>

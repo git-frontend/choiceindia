@@ -1,6 +1,7 @@
 
 import Image1 from '../../assets/images/sumeet-bagadia/sumeet-bagadia-choice-broking.webp';
 import DematAccountForm from '../Common-features/DematAccountForm'
+import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerTop() {
 
@@ -18,7 +19,8 @@ function BannerTop() {
                   <p>Executive Director and Head of <br />Technical Research at Choice Broking.</p>
                 </div>
                 <div className="page2-banner-img">
-                  <img src={Image1} alt="Sumeet Bagadia" width="512" height="508" className="img-fluid" />
+                <LazyLoader src={Image1} alt={"Sumeet Bagadia"} width={"512"} height={"508"} className={"img-fluid"} />
+                  {/* <img src={Image1} alt="Sumeet Bagadia" width="512" height="508" className="img-fluid" /> */}
                 </div>
               </div>
             </div>
