@@ -14,9 +14,9 @@ function OurPerformance() {
 
       <section className="our-performance">
         <div className="container">
-          <div class="row">
-            <div class="col-md-12">
-              <h3 class="heading text-center">
+          <div className="row">
+            <div className="col-md-12">
+              <h3 className="heading text-center">
                 Our Performance
               </h3>
             </div>
@@ -25,8 +25,8 @@ function OurPerformance() {
             <div className="col-xl-4 col-md-6">
 
               <div className="progress-bar-performance">
-                <div class="card">
-                  <div class="percent">
+                <div className="card">
+                  <div className="percent">
                     <svg className="sb-bar">
                       <circle cx="150" cy="150" r="145"></circle>
                       <circle cx="150" cy="150" r="145" style={{ '--percent': '45' }}></circle>

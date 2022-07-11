@@ -68,7 +68,7 @@ function IpoNfoAnalysis() {
                 </div>
             </div>
         </div>
-        <div class="mt-5 d-flex justify-content-center"><a class="btn-bg" href="/">Explore All</a></div>
+        <div className="mt-5 d-flex justify-content-center"><a className="btn-bg" href="/">Explore All</a></div>
       </div>
 
 

@@ -60,7 +60,7 @@ function FaqCommon() {
                                 }
                             </div> */}
 
-                            <Accordion defaultActiveKey="0" class="accordion" id="accordionExample">
+                            <Accordion defaultActiveKey="0" className="accordion" id="accordionExample">
                                 <div className="accordion-container">
                                     {
                                         data.map((res, i) => {
@@ -86,7 +86,7 @@ function FaqCommon() {
 
                     </div>
                     <div className="col-md-12 text-center">
-                        <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178107' target='_blank' >
+                        <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178107' target='_blank' rel="noreferrer" >
                             Explore FAQ's
                         </a>
                     </div>

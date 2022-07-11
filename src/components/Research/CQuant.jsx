@@ -27,7 +27,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -44,7 +44,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -61,7 +61,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm red-btn">SELL</a>
@@ -77,7 +77,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm red-btn">SELL</a>
@@ -93,7 +93,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -109,7 +109,7 @@ function CQuant() {
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -118,7 +118,7 @@ function CQuant() {
                 </div>
             </div>
         </div>
-        <div class="mt-5 d-flex justify-content-center"><a class="btn-bg" href="/">Explore All</a></div>
+        <div className="mt-5 d-flex justify-content-center"><a className="btn-bg" href="/">Explore All</a></div>
       </div>
 
 
