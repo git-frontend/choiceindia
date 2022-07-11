@@ -1,0 +1,70 @@
+import React from "react";
+import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
+import bannerimage from './images/stratezy-page/free-trading-strategy-builder.webp';
+import bannericon1 from './images/stratezy-page/create-statezy.svg';
+import bannericon2 from './images/stratezy-page/virtual-trade.svg';
+import LazyLoader from "../Common-features/LazyLoader";
+
+
+
+function StrategyBanner() {
+
+    function chapterScroll(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
+
+    return (
+        <div>
+            <section className="statezy-banner">
+                <div className="container">
+                    <div className="row align-items-center justify-content-between">
+                        <div className="col-xl-5 col-md-6">
+                            <div className="banner-caption">
+                                <h1>Simplifying Algorithmic<br />Trading</h1>
+                                <p>We provide a simple way to build, test, and go live with your algorithmic trading strategy</p>
+
+                                <div style={{ 'cursor': 'pointer' }} onClick={() => { chapterScroll('explore') }} className="btn-bg btn-banner">Explore Stratezy</div>
+
+
+                                <p className="">Don’t have an account? <span><a href="https://choiceindia.com/open-free-demat-account">Open Now</a></span> </p>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="rightsection">
+
+                                <LazyLoader src={bannerimage} alt={"Free Trading Strategy Builder"} width={'555'} height={'326'} className={"img-fluid img"} />
+                                {/* <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img" /> */}
+                                <div className="wrap">
+                                    {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
+                                    <img src={bannericon1} className="banner-icon" alt="create stratezy" />
+                                    <p>create stratezy</p>
+                                </div>
+                                <div className="wrapone">
+                                    {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
+                                    <img src={bannericon3} className="banner-icon" alt="Run Backtest" />
+                                    <p>Run Backtest</p>
+                                </div>
+                                <div className="wraptwo">
+                                    {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
+                                    <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" />
+                                    <p>Virtual/Live Trade</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    )
+}
+export default StrategyBanner; 
