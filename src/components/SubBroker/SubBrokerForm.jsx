@@ -653,7 +653,7 @@ function DematAccountForm() {
                         <div className="popup-sub-right">
 
                             <div>
-                                <img src={OTPimage} />
+                                <img src={OTPimage} alt='OTP Image' />
 
                                 <p className="heading">OTP Verification</p>
                                 <p className="subheading">A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}</p>

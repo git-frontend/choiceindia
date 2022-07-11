@@ -1,5 +1,5 @@
 
-import React ,{useState,useEffect} from "react";
+import React ,{useState} from "react";
 import Bannerimage from '../../assets/images/refer-earn/banner.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import Form from 'react-bootstrap/Form';
@@ -42,7 +42,7 @@ function loadrefer() {
       res => {
         
         setList(res);
-        if(res.success == false)
+        if(res.success === false)
         {
             referService.referallink(referid).then(
                 res =>{
@@ -84,7 +84,7 @@ const { register,formState: reset } = useForm({
                                 <div className="banner-box">
                                     <p>Invite your friends and get up to Rs.1000 incentive per referral and your friend will get up to Rs. 500.</p>
 
-                                    <div class="get-link-form generate-refer-link">
+                                    <div className="get-link-form generate-refer-link">
                                     
                                    
                                         <div className="refer-form"> 

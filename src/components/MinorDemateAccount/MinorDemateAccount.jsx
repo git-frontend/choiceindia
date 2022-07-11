@@ -26,10 +26,10 @@ function MinorDemateAccount() {
                         </div>
                         <div className="col-md-11 col-md-offset-1">
                             <div className="para">
-                                <input type="checkbox" class="read-more-state" id="post-1" />
-                                <span class="read-more-wrap "> The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
+                                <input type="checkbox" className="read-more-state" id="post-1" />
+                                <span className="read-more-wrap "> The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
 
-                                    <span class="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br /><br />
+                                    <span className="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br /><br />
 
                                         <h2 className="font-bold">What is a Demat Account?</h2>
                                         If we put it into simple terms we can say that the Demat account is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.<br /><br />
@@ -149,7 +149,7 @@ function MinorDemateAccount() {
                                             <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
                                             <li><a href="<?php echo base_url(); ?>campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li>
                                         </ul>
-                                    </span></span> <label for="post-1" class="read-more-trigger moreless-button"></label>
+                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

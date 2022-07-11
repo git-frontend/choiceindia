@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import "./basket.scss"
 import Image1 from '../../assets/images/basket/choicelogo.webp';
 import Image2 from '../../assets/images/basket/banner-image.webp';
@@ -179,11 +179,11 @@ function Basket() {
                                                 <div onClick={() => Detect()}>
                                                     {
                                                         checkdevice === true ?
-                                                            <a className="exp-btn" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target='_blank' >
+                                                            <a className="exp-btn" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target='_blank' rel="noreferrer" >
                                                                 <span  >Explore more BASKETS!</span>
                                                             </a>
                                                             :
-                                                            <a className="exp-btn" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target='_blank' >
+                                                            <a className="exp-btn" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target='_blank' rel="noreferrer" >
                                                                 <span >Explore more BASKETS!</span>
                                                             </a>
                                                     }
@@ -256,11 +256,11 @@ function Basket() {
                                         <div onClick={() => Detect()}>
                                             {
                                                 checkdevice === true ?
-                                                    <a className="btn-bg btn-bg-light" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target="_blank"  >
+                                                    <a className="btn-bg btn-bg-light" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target="_blank" rel="noreferrer" >
                                                         <span  >Invest Now</span>
                                                     </a>
                                                     :
-                                                    <a className="btn-bg btn-bg-light" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target="_blank"  >
+                                                    <a className="btn-bg btn-bg-light" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target="_blank" rel="noreferrer" >
                                                         <span >Invest Now</span>
                                                     </a>
                                             }

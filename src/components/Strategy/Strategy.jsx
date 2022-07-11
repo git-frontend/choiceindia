@@ -26,6 +26,9 @@ import icon5 from './images/stratezy-page/virtual-trade.svg';
 import icon4 from './images/stratezy-page/backtest-trading-strategy.svg';
 import icon2 from './images/stratezy-page/optimise-trading-strategy.svg';
 
+import LazyLoader from "../Common-features/LazyLoader";
+import Template2 from "../Common-features/Template2";
+
 
 // import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
 // import bannericon3 from './images/stratezy-page/backtest-trading-strategy.svg';
@@ -86,7 +89,7 @@ const FaqAccordion = () => {
         </div>
         <div className="row">
           <div className="col-md-12">
-            <Accordion defaultActiveKey="0" class="accordion" id="accordionExample">
+            <Accordion defaultActiveKey="0" className="accordion" id="accordionExample">
               <div className="accordion-container">
                 {
                   data.map((res, i) => {
@@ -120,7 +123,7 @@ const FaqAccordion = () => {
             </Accordion>
           </div>
           <div className="col-md-12 text-center">
-            <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178039' target='_blank' >
+            <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178039' target='_blank' rel="noreferrer" >
               Explore FAQ's
             </a>
           </div>
@@ -261,7 +264,8 @@ function WhyStrategy() {
           <div className="row" id="explore" >
             <div className="col-md-7 order2" >
               <div className="screen">
-                <img src={dataObj[0].image} className="img-fluid" alt="Why Stratezy" />
+              <LazyLoader src={dataObj[0].image} className={"img-fluid"} width={'644'} height={'321'} alt={"Why Stratezy"} />
+                {/* <img src={dataObj[0].image} className="img-fluid" alt="Why Stratezy" /> */}
               </div>
             </div>
             <div className="col-md-5">
@@ -272,7 +276,7 @@ function WhyStrategy() {
 
                 <div className="sliderwrap">
                   <div className="slider-item active">
-                    <img src={dataObj[0].icon} className="slider-icon" alt="Create Your Own Trading Strategy" />
+                    <img src={dataObj[0].icon} className="slider-icon" width={'43'} height={'51'} alt="Create Your Own Trading Strategy" />
                     <p className="heading">{dataObj[0].heading}</p>
                     <p className="subtext">{dataObj[0].description}</p>
                   </div>
@@ -349,53 +353,7 @@ function Strategy() {
 
     skeleton ?
 
-      <div className='template-parent'>
-        <section className='template-child-3'>
-          <div className='template-child3-content'>
-            <p></p>
-            <p></p>
-            <p></p>
-          </div>
-          <div className='template-child3-img'>
-          </div>
-        </section>
-        <section className='template2-child-1'>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-          <div></div>
-        </section>
-        <section className='template2-child-2'>
-          <h1></h1>
-          <p></p>
-        </section>
-        <section className='template3-child-3'>
-          <div className='template3-child3-content'>
-            <h2></h2>
-            <p></p>
-            <p></p>
-            <h3></h3>
-          </div>
-          <div className='template3-child3-img'>
-            <div></div>
-          </div>
-        </section>
-        <section className='template3-child-3'>
-          <div className='template3-child3-img'>
-            <div></div>
-          </div>
-          <div className='template3-child3-content'>
-            <h2></h2>
-            <p></p>
-            <p></p>
-            <h3></h3>
-          </div>
-        </section>
-      </div>
+      <Template2/>
 
       :
 
@@ -407,7 +365,8 @@ function Strategy() {
               <div className="col-md-12">
                 <a href="https://choiceindia.com/" className="camp-logo">
                   {/* <img src="images/stratezy-page/logo.webp" className="img-fluid" alt="Choice-India" /> */}
-                  <img src="images/stratezy-page/logo.webp" alt="Banner Images" width="125" height="48" className="img-fluid"></img>
+                  <LazyLoader src={"images/stratezy-page/logo.webp"} alt={"Banner Images"} width={"125"} height={"48"} className={"img-fluid"} />
+                  {/* <img src={"images/stratezy-page/logo.webp"} alt={"Banner Images"} width={"125"} height={"48"} className={"img-fluid"} /> */}
                 </a>
               </div>
             </div>
@@ -431,16 +390,20 @@ function Strategy() {
                 <div className="col-md-6">
                   <div className="rightsection">
 
-                    <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img"></img>
+                  <LazyLoader src={bannerimage} alt={"Free Trading Strategy Builder"} width={'555'} height={'326'} className={"img-fluid img"} />
+                    {/* <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img" /> */}
                     <div className="wrap">
+                    {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
                       <img src={bannericon1} className="banner-icon" alt="create stratezy" />
                       <p>create stratezy</p>
                     </div>
                     <div className="wrapone">
+                    {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
                       <img src={bannericon3} className="banner-icon" alt="Run Backtest" />
                       <p>Run Backtest</p>
                     </div>
                     <div className="wraptwo">
+                    {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
                       <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" />
                       <p>Virtual/Live Trade</p>
                     </div>
@@ -469,7 +432,8 @@ function Strategy() {
                       Our experts have created ready to use strategies for you to get started with your custom strategies.
                     </div>
                     <div className="imgwrap">
-                      <img src={image1} className="img-fluid feature-img" alt="Readymade Trading Strategies"></img>
+                    <LazyLoader src={image1} className={"img-fluid feature-img"} width={'137'} height={'173'} alt={"Readymade Trading Strategies"} />
+                      {/* <img src={image1} className="img-fluid feature-img" alt="Readymade Trading Strategies" /> */}
 
                     </div>
                   </div>
@@ -481,7 +445,8 @@ function Strategy() {
                       Backtest and optimize your strategies without any capping on number of backtests
                     </div>
                     <div className="imgwrap">
-                      <img src={image2} className="img-fluid feature-img" alt="Unlimited Backtests"></img>
+                    <LazyLoader src={image2} className={"img-fluid feature-img"} width={'114'} height={'152'} alt={"Unlimited Backtests"} />
+                      {/* <img src={image2} className="img-fluid feature-img" alt="Unlimited Backtests" /> */}
 
                     </div>
                   </div>
@@ -495,8 +460,8 @@ function Strategy() {
                       Get timely alerts as and when your trades are triggered.
                     </div>
                     <div className="imgwrap">
-                      <img src={image3} className="img-fluid feature-img" alt="Alerts on Virtual &amp; Live Trades"></img>
-
+                    <LazyLoader src={image3} className={"img-fluid feature-img"} width={'122'} height={'141'} alt={"Alerts on Virtual &amp; Live Trades"} />
+                      {/* <img src={image3} className="img-fluid feature-img" alt="Alerts on Virtual &amp; Live Trades" /> */}
                     </div>
                   </div>
                 </div>
@@ -507,7 +472,8 @@ function Strategy() {
                       In Charting tool to visualize your strategy &amp; trades
                     </div>
                     <div className="imgwrap">
-                      <img src={image4} className="img-fluid feature-img" alt="In Built Charting Tool"></img>
+                    <LazyLoader src={image4} className={"img-fluid feature-img"} width={'168'} height={'158'} alt={"In Built Charting Tool"} />
+                      {/* <img src={image4} className="img-fluid feature-img" alt="In Built Charting Tool" /> */}
 
                     </div>
                   </div>
