@@ -7,7 +7,7 @@ import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
 
-const HindiTradingAccountOpeningProcess = () => {
+const DematAccountOpeningProcess = () => {
     return (
         <div>
 
@@ -20,18 +20,18 @@ const HindiTradingAccountOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">मुफ्त में  <span>पेपरलेस</span> डीमैट अकाउंट खोलें</h3>
+                                    <h3 className="mb-0"><span>पेपरलेस </span> आणि मोफत डिमॅट अकाऊंट ओपन करा!</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >Get Started </a>
+                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >आताच सुरुवात करा! </a>
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                    <h2 className="sect-title">डीमैट अकाउंट खोलने की प्रक्रिया</h2>
+                    <h2 className="sect-title">डिमॅट अकाऊंट ओपन करण्याची प्रक्रिया</h2>
 
 
 
@@ -44,8 +44,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info respspace">
-                                    <h5>ऑनलाइन पंजीकरण करें</h5>
-                                    <p>आवश्यक विवरण भरें और पासपोर्ट आकार के फोटो के साथ संबंधित दस्तावेज अपलोड करें।
+                                    <h5>ऑनलाईन नोंदणी</h5>
+                                    <p>आवश्यक सर्व माहिती भरून, योग्य कागदपत्रे आणि पासपोर्ड आकारचे फोटो सोबत अपलोड करा.
                                     </p>
                                 </div>
                             </div>
@@ -58,8 +58,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info">
-                                    <h5>व्यक्तिगत सत्यापन</h5>
-                                    <p>इन-पर्सन वेरिफिकेशन (आईपीवी) को पूरा करें।
+                                    <h5> वैयक्तीक पडताळणी</h5>
+                                    <p>वैयक्तीक पडताळणी (IPV)
                                     </p>
                                 </div>
                             </div>
@@ -72,8 +72,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" />
                                 </div>
                                 <div className="info" >
-                                    <h5>पंजीकरण पूर्ण</h5>
-                                    <p>चॉइस के साथ आपका ट्रेडिंग अकाउंट सफलापुरवक खुल गया है |
+                                    <h5> नोंदणी पूर्णझाल्यनंतर</h5>
+                                    <p>चॉईस ब्रोकिंगसोबत तुमचे डिमॅट अकाऊंट यशस्वीपणे उघडले गेले.
 
                                     </p>
                                 </div>
@@ -85,8 +85,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" />
                                 </div>
                                 <div className="info" >
-                                    <h5>कूरियर पीओए</h5>
-                                    <p>आपके पंजीकृत ईमेल आईडी पर भेजे गए पावर ऑफ अटॉर्नी (पीओए) की हस्ताक्षर कर के हमें कुरियर करें।
+                                    <h5>कुरिअर पीओए</h5>
+                                    <p>आमच्या दिलेल्या ई-मेल आयडीवर तुमची पॉवर ऑफ अँटर्नी (पीओए) वर स्वाक्षरी करुन पाठवा.
                                     </p>
                                 </div>
                             </div>
@@ -99,5 +99,5 @@ const HindiTradingAccountOpeningProcess = () => {
     )
 }
 
-export default HindiTradingAccountOpeningProcess;
+export default DematAccountOpeningProcess;
 

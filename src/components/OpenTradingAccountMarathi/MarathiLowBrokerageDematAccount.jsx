@@ -8,7 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/currency.svg';
 import Image9 from '../../assets/images/open-demat-account/commodity.svg';
 
 
-function HindiLowBrokerageTradingAccount() {
+function LowBrokerageDematAccount() {
 
     const settings = {
         infinite: true,
@@ -47,8 +47,8 @@ function HindiLowBrokerageTradingAccount() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="secttitle">कम ब्रोकरेज डीमैट अकाउंट खोलें</h2>
-                                <p>ब्रोकरेज इंट्राडे, डिलीवरी और फ्यूचर्स के लिए प्रतिशत के आधार पर चार्ज किया जाता है जबकि ऑप्शंस के लिए ब्रोकरेज की गणना एक फ्लैट शुल्क के आधार पर की जाती है।</p>
+                                <h2 className="secttitle">कमी ब्रोक्रेरजने डिमॅट अकाऊंट ओपन करा!</h2>
+                                <p>आमच्याकडे इंट्राडे, वितरण (डिलिव्हरी) आणि तुमच्या भविष्याचा विचार करुनच ठराविक प्रमाणात ब्रोकरेज आकारले जाते. तसेच पर्यायांसाठी ब्रोकरेजची गणना ही फ्लॅट फीच्या आधारे केली जाते.</p>
                             </div>
                         </div>
                         <div className="col-md-12">
@@ -68,16 +68,16 @@ function HindiLowBrokerageTradingAccount() {
                                                     <hr></hr>
                                                     <ul className="charge-lists">
                                                         <li>
-                                                        इंट्राडे <span>0.20%</span>
+                                                        डिलिव्हरी <span>0.२०%</span>
                                                         </li>
                                                         <li>
-                                                        डिलीवरी <span>0.02%</span>
+                                                        इंट्राडे <span>0.०२%</span>
                                                         </li>
                                                         <li>
-                                                        फ्यूचर्स <span>0.02%</span>
+                                                        फ्यूचर <span>0.०२%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शंस <span>₹ 25 प्रति लॉट</span>
+                                                        ऑप्शन <span>रु. २५ प्रति लॉट</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -90,15 +90,15 @@ function HindiLowBrokerageTradingAccount() {
                                                 </div>
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">करन्सी</h5>
+                                                    <h5 className="card-title">चलन</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                        फ्यूचर्स <span>0.02%</span>
+                                                        फ्यूचर <span>0.०२%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शंस <span>₹ 20 प्रति लॉट</span>
+                                                        ऑप्शन <span>रु. २० प्रति लॉट</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -117,10 +117,10 @@ function HindiLowBrokerageTradingAccount() {
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                        फ्यूचर्स <span>0.02%</span>
+                                                        फ्यूचर्स <span>0.०२%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शंस <span>₹ 50 प्रति लॉट</span>
+                                                        ऑप्शंस <span>रु. ५० प्रति लॉट</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -142,4 +142,4 @@ function HindiLowBrokerageTradingAccount() {
     );
 }
 
-export default HindiLowBrokerageTradingAccount;
+export default LowBrokerageDematAccount;

@@ -8,7 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
 import Image9 from '../../assets/images/open-demat-account/paperlessacntopening.png';
 import Image10 from '../../assets/images/open-demat-account/advancedplatform.png';
 import Image11 from '../../assets/images/open-demat-account/referal.svg';
-function HindiWhyOpenTradingAccount() {
+function WhyOpenFreeDematAccount() {
 
   const settings = {
     infinite: false,
@@ -48,7 +48,7 @@ function HindiWhyOpenTradingAccount() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                                <h2>चॉइस के साथ मुफ़्त डीमैट खाता खोलें</h2>
+                                <h2>आमच्याकडेच डिमॅट खाते का ओपन करावे?</h2>
                             </div>
                         </div>
                         <div className="col-md-8">
@@ -60,8 +60,8 @@ function HindiWhyOpenTradingAccount() {
                                             </div>
                                             <div className="card-block">
 
-                                                <h5 className="card-title">कम ब्रोकरेज  </h5>
-                                                <p>ब्रोकरेज शुल्क 2 पैसे से भी कम हैं।</p>
+                                                <h5 className="card-title">कमी ब्रोक्रेज</h5>
+                                                <p> कमी ब्रोक्रेज चार्जेस: किमान २ पैसे</p>
                                             </div>
                                         </div>
                                         <div className="card adv-card">
@@ -70,19 +70,19 @@ function HindiWhyOpenTradingAccount() {
                                             </div>
                                             <div className="card-block">
 
-                                                <h5 className="card-title">ट्रेड  सुविधा के लिए मुफ्त कॉल</h5>
-                                                <p>  हमारे ग्राहक फोन पर मुफ्त में ट्रेड करने का विकल्प चुन सकते हैं।    </p>
+                                                <h5 className="card-title">ट्रेडिंगसाठी मोफत कॉलची सुविधा</h5>
+                                                <p> आमचे ग्राहक ट्रेडिंगसाठी मोफत कॉलच्या पर्यायाची निवड करु शकतात </p>
                                             </div>
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt="Refer and Earn Demat Account" className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt="Free Paperless Demat Account Opening" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
-                                                <h5 className="card-title">पेपरलेस खाता खोले</h5>
+                                                <h5 className="card-title">पेपरलेस खाते ओपन करण्याची सुविधा</h5>
                                                 <p>
-                                                5 मिनट के भीतर ऑनलाइन पेपरलेस डीमैट खाता खोलें। 
+                                                ऑनलाईन सुविधेमुळे कागदपत्रांशिवाय पाच मिनिटात खाते ओपन करु शकता.
                                                 </p>
                                             </div>
                                         </div>
@@ -92,26 +92,24 @@ function HindiWhyOpenTradingAccount() {
                                             </div>
                                             <div className="card-block">
 
-                                                <h5 className="card-title">तकनीकी रूप से उन्नत प्लैटफ़ॉर्म</h5>
+                                                <h5 className="card-title">अत्याधुनिक तंत्रज्ञानाने समृद्ध व्यासपीठ (Platform)</h5>
                                                 <p>
-                                                अत्याधुनिक सुविधाओं के साथ वेबसाइट या एंड्रॉइड और आईओएस ऐप के माध्यम से ट्रेड करें।
+                                                संकेतस्थळ किंवा अँड्रॉईड आणि आयओएस अँपमुळे ट्रेडिंग होते अतिशय सोपे
                                                 </p>
                                             </div>
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} width={"40"} height={"41"} alt="Free Paperless Demat Account Opening" className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt="Refer and Earn Demat Account" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
-                                                <h5 className="card-title">रेफ़रल से अधिक कमाएँ</h5>
+                                                <h5 className="card-title">संदर्भातून referrals जास्तीत जास्त कमावण्याची संधी</h5>
                                                 <p>
-                                                एक पुरस्कृत रेफरल कार्यक्रम जो कमाई के जीवन भर के स्रोत में योगदान कर सकता है।
+                                                एक पुरस्कत रेफरल प्रोग्राम तुम्हाला आयुष्यभर कमाईच्या स्रोतामध्ये योगदान देऊ शकतो.
                                                 </p>
                                             </div>
                                         </div>
-                                       
-                              
                                 </Slider>
                             </div>
                         </div>
@@ -125,4 +123,4 @@ function HindiWhyOpenTradingAccount() {
   );
 }
 
-export default HindiWhyOpenTradingAccount;
+export default WhyOpenFreeDematAccount;
