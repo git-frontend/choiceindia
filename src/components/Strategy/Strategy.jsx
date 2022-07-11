@@ -393,18 +393,18 @@ function Strategy() {
                   <LazyLoader src={bannerimage} alt={"Free Trading Strategy Builder"} width={'555'} height={'326'} className={"img-fluid img"} />
                     {/* <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img" /> */}
                     <div className="wrap">
-                    {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
-                      <img src={bannericon1} className="banner-icon" alt="create stratezy" />
+                    <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} />
+                      {/* <img src={bannericon1} className="banner-icon" alt="create stratezy" /> */}
                       <p>create stratezy</p>
                     </div>
                     <div className="wrapone">
-                    {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
-                      <img src={bannericon3} className="banner-icon" alt="Run Backtest" />
+                    <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} />
+                      {/* <img src={bannericon3} className="banner-icon" alt="Run Backtest" /> */}
                       <p>Run Backtest</p>
                     </div>
                     <div className="wraptwo">
-                    {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
-                      <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" />
+                    <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} />
+                      {/* <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" /> */}
                       <p>Virtual/Live Trade</p>
                     </div>
                   </div>
