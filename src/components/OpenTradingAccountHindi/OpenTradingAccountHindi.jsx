@@ -1,22 +1,23 @@
 // import "./opentradingaccounthindi.scss";
 // import DematAccountForm from '../Common-features/DematAccountForm';
 import "../OpenDematAccount/DematPage"
-import OpenFreeAccountBanner from "../OpenDematAccount/OpenFreeAccountBanner";
-import WhyOpenFreeDematAccount from "../OpenDematAccount/WhyOpenFreeDematAccount";
-import DematAccountOpeningProcess from "../OpenDematAccount/DematAccountOpeningProcess";
-import LowBrokerageDematAccount from "../OpenDematAccount/LowBrokerageDematAccount";
-import WhyChoice from "../OpenDematAccount/WhyChoice";
-
+import HindiOpenFreeAccountBanner from "./HindiOpentradingAccountBanner";
+import HindiWhyOpenFreeDematAccount from "./HindiWhyOpenTradingAccount";
+import HindiDematAccountOpeningProcess from "./HindiTradingAccountOpeningProcess";
+import HindiLowBrokerageDematAccount from "./HindiLowBrokerageTradingAccount";
+import HindiWhyChoice from "./HindiTradingWhyChoice";
+import HindiTradingFaq from "./HindiTradingFaq";
 function OpenTradingAccountHindi() {
     return (
         <>
             {/* <p>Open Trading Account Hindi</p>
             <DematAccountForm></DematAccountForm> */}
-            <OpenFreeAccountBanner />
-            <WhyOpenFreeDematAccount />
-            <WhyChoice />
-            <LowBrokerageDematAccount />
-            <DematAccountOpeningProcess />
+            <HindiOpenFreeAccountBanner />
+            <HindiWhyOpenFreeDematAccount />
+            <HindiWhyChoice />
+            <HindiLowBrokerageDematAccount />
+            <HindiDematAccountOpeningProcess />
+            <HindiTradingFaq />
             <section className="readmoresection">
 
                 <div className="container">
