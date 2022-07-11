@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 
-function OpenDemateAccountStickyFooter() {
+function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -120,6 +120,9 @@ function OpenDemateAccountStickyFooter() {
 
     return (
         <>
+            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+            </div>
             <section className="stickybottom">
                 <div className="container mx-auto">
                     <div className="d-flex justify-content-around">

@@ -6,7 +6,7 @@ import Alert from 'react-bootstrap/Alert';
 import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
-
+import OTPimage from '../../assets/images/otp.svg';
 
 function DematAccountForm() {
 
@@ -644,6 +644,59 @@ function DematAccountForm() {
                 </Form>
 
             </div>
+            {
+                showOTPPopup ? 
+                <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
+                <div className="exit-intent-sleekbox-popup">
+                    <div className="popup-sub-row">
+
+                        <div className="popup-sub-right">
+
+                            <div>
+                                <img src={OTPimage} />
+
+                                <p className="heading">OTP Verification</p>
+                                <p className="subheading">A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}</p>
+                                {
+                                    count ?
+                                        <p className="time">Time remaining:<span> {count} seconds</span></p> : ''
+                                }
+
+                            </div>
+                            <div>
+
+
+                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                {
+                                    OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                                }
+                            </div>
+
+                            <div className="btnwrap">
+                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'verify'}</button>
+                            </div>
+                            <div className="">
+
+                                {
+                                    !count ?
+                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button> : ''
+                                }
+
+
+                            </div>
+                            <div className="mt-2">
+                                {
+                                    OTPSendSuccessToaster ?
+                                        <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
+                                            OTP has been resent on given Mobile Number
+                                        </Alert> : ''
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> : ''
+            }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
@@ -669,7 +722,7 @@ function DematAccountForm() {
                 </Modal.Footer>
             </Modal>
 
-            <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"
+            {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter OTP</Modal.Title>
@@ -705,10 +758,8 @@ function DematAccountForm() {
                             
                         </div>
                     </div>
-
-
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
 
             <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
                 keyboard={false} centered>
