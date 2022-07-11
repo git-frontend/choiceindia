@@ -16,11 +16,13 @@
             background: $whiteColor;
             outline: none;
             box-shadow: inherit;
-            border: 1px solid #0068B3;
+            border: 1px solid $bgcolor-blue;
             padding: 1.6rem 1.5rem;
             border-radius: 12px;
             font-family: $font-family-poppins-regular;
             font-size: 1.2rem;
+			background: #ffffff;
+			background-image: inherit !important;
             &.formpadding{
                 padding: 1.2rem 1.5rem;
             }
@@ -42,7 +44,7 @@
                 color: $secondary;
                 font-family: $font-family-poppins-regular;
                 .link-tc{
-                    color: #0068B3;
+                    color: $bgcolor-blue;
                     font-family:$font-family-poppins-semibold;
                     text-decoration: none;
                     display: block;
@@ -278,7 +280,7 @@ p {
 					}
 
 					span {
-						color: #0068B3;
+						color: $bgcolor-blue;
 
 						@media only screen and (max-width: 767px) {
 							font-size: 14px;
