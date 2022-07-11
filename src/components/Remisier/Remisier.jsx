@@ -7,6 +7,7 @@ import WhyBecomeRemisier from './WhyBecomeRemisier';
 import WhoEligibleToRemisier from './WhoEligibleToRemisier';
 import RemisierOffers from './RemisierOffers';
 import RemisierMoreContent from './RemisierMoreContent';
+import RemisierFaq from './RemisierFaq';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
@@ -37,6 +38,7 @@ function Remisier() {
             <RemisierSellMore />
             <WhyBecomeRemisier />
             <WhoEligibleToRemisier />
+            <RemisierFaq />
             <RemisierMoreContent />
             {/* <RemisierOffers /> */}
           </div>
