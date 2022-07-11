@@ -180,22 +180,22 @@ function HomeTestimonial() {
 						</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} width={"60"} height={"59"} alt="Loading"/>
+									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"60"} height={"59"} alt={"Loading"}/>
 									{/* <img src={dataObj[1].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub21'>
-									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} width={"100"} height={"99"} alt="Loading"/>
+									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"100"} height={"99"} alt={"Loading"}/>
 									{/* <img src={dataObj[2].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub23'>
-									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} width={"80"} height={"79"} alt="Loading"/>
+									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"80"} height={"79"} alt={"Loading"}/>
 									{/* <img src={dataObj[3].img} alt="Loading" /> */}
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className="main-img-slide" width={"397"} height={"393"} alt="Loading"/>
+										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={"Loading"}/>
 										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
 									</div>
 									<div className="slider-item-des">

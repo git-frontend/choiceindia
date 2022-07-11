@@ -1,6 +1,7 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
 import SubBrokerForm from './SubBrokerForm'
+import LazyLoader from "../Common-features/LazyLoader";
 
 function BannerSBroker() {
 
@@ -19,7 +20,8 @@ function BannerSBroker() {
                                     <h2 className="tlt2">without Deposit*</h2>
                                 </div>
                                 <div className="right-sec">
-                                   <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid"  />
+                                <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise"} className={"img-fluid"} />
+                                    {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
@@ -28,7 +30,7 @@ function BannerSBroker() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                    <span>Upto ₹ 1000 Per</span> Account Incentive*
+                                        <span>Upto ₹ 1000 Per</span> Account Incentive*
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source

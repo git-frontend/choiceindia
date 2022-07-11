@@ -6,6 +6,7 @@ import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import { useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
+import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 
 
 
@@ -362,7 +363,7 @@ function DematAccountForm() {
                     <Modal.Title>Enter OTP</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <div id="opt-box-id">
+                    {/* <div id="opt-box-id">
                         <div className="modal-body opt-body">
                             A OTP has been sent to {'******' + mobileNumber.slice(6, 10)}
                             <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}/>
@@ -394,9 +395,9 @@ function DematAccountForm() {
                                     </Alert> : ''
                             }
                         </div>
-                    </div>
+                    </div> */}
 
-
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
             </Modal>
 

@@ -2,7 +2,8 @@
 import React from "react";
 import { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
-import  Image1  from '../../assets/images/investor-info/Financial-Results.png';
+import Image1 from '../../assets/images/investor-info/Financial-Results.png';
+import LazyLoader from "../Common-features/LazyLoader";
 
 function Yeardetail() {
     const [toggleState, setToggleState] = useState(1);
@@ -94,10 +95,16 @@ function Yeardetail() {
                                                     <Accordion.Body>
                                                         <ul className="listing">
                                                             <li className="list">
-                                                               <div className="d-flex justify-content-between"> <span>Q2 FY2022 Financial Results</span><a href="#"> <img src={Image1} className="" alt="" /></a></div>
+                                                                <div className="d-flex justify-content-between"> <span>Q2 FY2022 Financial Results</span><a href="#">
+                                                                    <LazyLoader src={Image1} className={''} alt={''} />
+                                                                    <img src={Image1} className="" alt="" />
+                                                                </a></div>
                                                             </li>
                                                             <li className="list">
-                                                            <div className="d-flex justify-content-between"> <span>Q1 FY2022 Financial Results</span><a href="#"> <img src={Image1} className="" alt="" /></a></div>
+                                                                <div className="d-flex justify-content-between"> <span>Q1 FY2022 Financial Results</span><a href="#">
+                                                                    <LazyLoader src={Image1} className={''} alt={''} />
+                                                                    {/* <img src={Image1} className="" alt="" /> */}
+                                                                </a></div>
                                                             </li>
                                                         </ul>
                                                     </Accordion.Body>

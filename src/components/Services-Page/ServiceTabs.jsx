@@ -18,6 +18,7 @@ import ManagementConsultancy1 from './ManagementConsultancy';
 import GovernmentAdvisory1 from './GovernmentAdvisory';
 import TaxAdvisory1 from './TaxAdvisory';
 import React,{useRef} from 'react';
+import LazyLoader from "../Common-features/LazyLoader";
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
@@ -105,49 +106,57 @@ const settings = {
 							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleFocus}>
-										<img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} />
+									<LazyLoader src={EquityBroking} className={""} alt={"Equity Broking"} width={"65"} height={"65"} />
+										{/* <img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Equity Broking</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div  className="bx-item-cont" onClick={handleWealth}>
-										<img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} />
+									<LazyLoader src={WealthManagement} className={""} alt={"Wealth Management"} width={"65"} height={"65"} />
+										{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Wealth Management</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleInsurance}>
-										<img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} />
+									<LazyLoader src={Insurance} className={""} alt={"Insurance"} width={"65"} height={"65"} />
+										{/* <img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Insurance</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleLoan}>
-										<img src={Loans} className="" alt="Loans" width={"65"} height={"65"} />
+									<LazyLoader src={Loans} className={""} alt={"Loans"} width={"65"} height={"65"} />
+										{/* <img src={Loans} className="" alt="Loans" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Loans</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleCapital}>
-										<img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} />
+									<LazyLoader src={CapitalAdvisory} className={""} alt={"Capital Advisory"} width={"65"} height={"65"} />
+										{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Capital Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleManagement}>
-										<img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} />
+									<LazyLoader src={ManagementConsultancy} className={""} alt={"Management Consultancy"} width={"65"} height={"65"} />
+										{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Management Consultancy</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleGovt}>
-										<img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} />
+									<LazyLoader src={GovernmentAdvisory} className={""} alt={"Government Advisory"} width={"65"} height={"65"} />
+										{/* <img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Government Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={handleTax}>
-										<img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} />
+									<LazyLoader src={TaxAdvisory} className={""} alt={"Tax Advisory"} width={"65"} height={"65"} />
+										{/* <img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} /> */}
 										<h4 className='title-fourth'>Tax Advisory</h4>
 									</div>
 								</div>

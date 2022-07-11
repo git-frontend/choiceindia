@@ -35,6 +35,7 @@ const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/In
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
+const Lazybasket = React.lazy(() => import('./components/Basket/Basket'));
 const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
 
 const Lazyopentradingaccount = React.lazy(() => import('./components/OpenTradingAccount/OpenTradingAccount'));
@@ -212,6 +213,11 @@ function Routing() {
                         <Route exact path='/info/stratezy' element={
                             <React.Suspense>
                                 < Lazystratezy />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/basket' element={
+                            <React.Suspense>
+                                < Lazybasket />
                             </React.Suspense>
                         } />
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Accordion } from 'react-bootstrap';
 import faqService from '../../Services/faqService';
+import LazyLoader from '../Common-features/LazyLoader';
 import { Button, Form } from "react-bootstrap";
 import image1 from "../../assets/images/Faq/faq-banner.webp";
 import * as yup from 'yup';

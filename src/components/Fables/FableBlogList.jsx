@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Blog1 from '../../assets/images/fable/blog-img1.jpg';
-import Blog2 from '../../assets/images/fable/blog-img2.jpg';
-import Blog3 from '../../assets/images/fable/blog-img3.jpg';
+// import Blog1 from '../../assets/images/fable/blog-img1.jpg';
+// import Blog2 from '../../assets/images/fable/blog-img2.jpg';
+// import Blog3 from '../../assets/images/fable/blog-img3.jpg';
 import FablesTrending from "../../Services/fableServices";
+import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
 
 function FableBlogList() {
@@ -119,7 +120,8 @@ function FableBlogList() {
                                           
                                         <Link to={`/fablesdetail/${res.slug}`} className="tab-blog-item">
                                     <div className="blog-item-img">
-                                        <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"} />
+                                        <LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />
+                                        {/* <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"} /> */}
                                     </div>
                                     <div className="blog-item-des">
                                         <h4>{res.title}</h4>

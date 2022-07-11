@@ -3,6 +3,7 @@ import  CareerImage13 from '../../assets/images/career/team-bg.webp';
 import React from 'react';
 import {Dropdown} from 'react-bootstrap';
 import { MDBDropdown, MDBDropdownMenu, MDBDropdownToggle, MDBDropdownItem, MDBDropdownLink } from 'mdb-react-ui-kit';
+import LazyLoader from '../Common-features/LazyLoader';
 
 function CareerTeam() {
 
@@ -30,7 +31,8 @@ function CareerTeam() {
       </div>
 
       <div className="explore-opportunities">
-            <img src={CareerImage13} className='bg-img' alt='Loading'/>
+      <LazyLoader src={CareerImage13} alt={"Loading"} className={'img-fluid bg-img'} />
+            {/* <img src={CareerImage13} className='bg-img' alt='Loading'/> */}
             <div className='opportunities-cont'>
                 <div className='container'>
                     <div className='row'>

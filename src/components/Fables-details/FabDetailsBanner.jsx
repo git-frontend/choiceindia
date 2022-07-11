@@ -1,10 +1,11 @@
 
 import React from "react";
 import Bannerimage from '../../assets/images/fabledetails/detailbanner.png';
-import twitterone from '../../assets/images/fabledetails/twitterone.png';
-import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
+// import twitterone from '../../assets/images/fabledetails/twitterone.png';
+// import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons';
+import LazyLoader from "../Common-features/LazyLoader";
 import DematAccountForm from '../Common-features/DematAccountForm.jsx';
 import SubBrokerForm from '../SubBroker/SubBrokerForm';
 
