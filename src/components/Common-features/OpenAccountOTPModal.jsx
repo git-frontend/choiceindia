@@ -2,11 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
-// import "./OpenAccountOTPModal.scss";
 import OTPimage from '../../assets/images/otp.svg';
 import "../Common-features/demat-form.scss"
 
-function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
+function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
     const [count, setCount] = useState(0);

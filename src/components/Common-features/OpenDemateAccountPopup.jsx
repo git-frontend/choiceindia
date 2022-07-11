@@ -177,6 +177,9 @@ function OpenDemateAccountPopup({hideComponent}) {
                 </div>
             </div>   : ''
         }
+        {
+            showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+        }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
@@ -188,7 +191,7 @@ function OpenDemateAccountPopup({hideComponent}) {
                 </Modal.Footer>
             </Modal>
 
-            <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
+            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter OTP</Modal.Title>
@@ -196,7 +199,7 @@ function OpenDemateAccountPopup({hideComponent}) {
                 <Modal.Body>
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
         </>
     );
 }

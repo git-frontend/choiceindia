@@ -238,6 +238,9 @@ function DematAccountForm() {
 
     function handleBrokerCreatedSuccessShow() {
         setBrokerCreatedSuccess(true);
+        setTimeout(()=>{
+            setBrokerCreatedSuccess(false);
+        },2000)
     }
 
     function handleBrokerCreatedSuccessClose() {
@@ -525,11 +528,11 @@ function DematAccountForm() {
         });
     }
 
-    function handleOTPResendSuccessToaster(){
+    function handleOTPResendSuccessToaster() {
         setOTPSendSuccessToaster(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setOTPSendSuccessToaster(false);
-        },2000)
+        }, 2000)
     }
 
     function resetBrokerForm() {
@@ -548,7 +551,12 @@ function DematAccountForm() {
     return (
         <>
             <div className="demat-account-form">
+            
 
+                {
+                    (brokerCreatedSuccess) ?
+                        <Alert key='success' variant='success' onClose={handleBrokerCreatedSuccessClose} dismissible>Successfully!</Alert> : ''
+                }
                 <h3 className="form-ttl">Become a Sub Broker</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -761,7 +769,7 @@ function DematAccountForm() {
                 </Modal.Body>
             </Modal> */}
 
-            <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
+            {/* <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
                     <Modal.Title>Success</Modal.Title>
@@ -772,7 +780,7 @@ function DematAccountForm() {
                         Okay
                     </Button>
                 </Modal.Footer>
-            </Modal>
+            </Modal> */}
 
         </>
     );
