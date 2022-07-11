@@ -1,11 +1,12 @@
 
 import React from "react";
-import BannerSBroker from '../SubBroker/BannerSBroker';
-import SubBrokerBenifits from '../SubBroker/SubBrokerBenifits';
-import SubBrokerSellMore from '../SubBroker/SubBrokerSellMore';
-import WhyBecomeSubBroker from '../SubBroker/WhyBecomeSubBroker';
-import WhoEligibleToSubBroker from '../SubBroker/WhoEligibleToSubBroker';
-import SubBrokerOffers from '../SubBroker/SubBrokerOffers';
+import RemisierBroker from './RemisierBroker';
+import RemisierBenifits from './RemisierBenifits';
+import RemisierSellMore from './RemisierSellMore';
+import WhyBecomeRemisier from './WhyBecomeRemisier';
+import WhoEligibleToRemisier from './WhoEligibleToRemisier';
+import RemisierOffers from './RemisierOffers';
+import RemisierMoreContent from './RemisierMoreContent';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
@@ -31,12 +32,13 @@ function Remisier() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <BannerSBroker />
-            <SubBrokerBenifits />
-            <SubBrokerSellMore />
-            <WhyBecomeSubBroker />
-            <WhoEligibleToSubBroker />
-            <SubBrokerOffers />
+            <RemisierBroker />
+            <RemisierBenifits />
+            <RemisierSellMore />
+            <WhyBecomeRemisier />
+            <WhoEligibleToRemisier />
+            <RemisierMoreContent />
+            {/* <RemisierOffers /> */}
           </div>
       }
 
