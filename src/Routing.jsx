@@ -36,6 +36,19 @@ const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeCo
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
 const Lazybasket = React.lazy(() => import('./components/Basket/Basket'));
+const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
+
+const Lazyopentradingaccount = React.lazy(() => import('./components/OpenTradingAccount/OpenTradingAccount'));
+const Lazyopenbrokerageaccount = React.lazy(() => import('./components/OpenBrokerageAccount/OpenBrokerageAccount'));
+const Lazynridemateaccount = React.lazy(() => import('./components/NRIDemateAccount/NRIDemateAccount'));
+const Lazycorporatedemateaccount = React.lazy(() => import('./components/CorporateDemateAccount/CorporateDemateAccount'));
+const Lazyminordemateaccount = React.lazy(() => import('./components/MinorDemateAccount/MinorDemateAccount'));
+const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTradingAccountHindi/OpenTradingAccountHindi'));
+const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
+const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
+const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
+const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
+
 
 function Routing() {
     return (
@@ -95,7 +108,7 @@ function Routing() {
                         } />
 
                         <Route exact path='/fablesdetail/:id' element={
-                            <React.Suspense>    
+                            <React.Suspense>
                                 < LazyFableDetail />
                             </React.Suspense>
                         } />
@@ -143,7 +156,65 @@ function Routing() {
                                 < Lazyopendemat />
                             </React.Suspense>
                         } />
+                        <Route exact path='/open-trading-account' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-brokerage-account' element={
+                            <React.Suspense>
+                                < Lazyopenbrokerageaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/nri-demat-account' element={
+                            <React.Suspense>
+                                < Lazynridemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/corporate-demat-account' element={
+                            <React.Suspense>
+                                < Lazycorporatedemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/minor-demat-account' element={
+                            <React.Suspense>
+                                < Lazyminordemateaccount />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-trading-account-hindi' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccounthindi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/open-trading-account-marathi' element={
+                            <React.Suspense>
+                                < Lazyopentradingaccountmarathi />
+                            </React.Suspense>
+                        } />
 
+                        <Route exact path='/research' element={
+                            <React.Suspense>
+                                < Lazyresearch />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/authorised-person' element={
+                            <React.Suspense>
+                                < Lazyauthorizeperson />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/remisier' element={
+                            <React.Suspense>
+                                < Lazyremisier />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/info/stratezy' element={
+                            <React.Suspense>
+                                < Lazystratezy />
+                            </React.Suspense>
+                        } />
                         <Route exact path='/basket' element={
                             <React.Suspense>
                                 < Lazybasket />

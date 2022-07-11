@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 // import Blog3 from '../../assets/images/fable/blog-img3.jpg';
 import FablesTrending from "../../Services/fableServices";
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
 
 function FableBlogList() {
 
@@ -61,7 +62,7 @@ function FableBlogList() {
                                         setCount(res.id)
                                         console.log("index",count)
                                         }}>
-                                            <div className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
+                                            <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
                                         </li>
                                         
 
@@ -116,7 +117,8 @@ function FableBlogList() {
                             {
                                 post.map((res)=>{
                                     return(
-                                        <a href="/" className="tab-blog-item">
+                                          
+                                        <Link to={`/fablesdetail/${res.slug}`} className="tab-blog-item">
                                     <div className="blog-item-img">
                                         <LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />
                                         {/* <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"} /> */}
@@ -129,7 +131,8 @@ function FableBlogList() {
                                             <span className="sm-text">@SachinChadda</span>
                                     </div> */}
                                     </div>
-                                </a>
+                                
+                                </Link>
 
                                     )
                                 })

@@ -29,10 +29,21 @@ const faqService = {
 
         let api = new API_URLS()
         let url = api.getFaqArticleURL(id)
-        return axios.get(url,this.headerConfig).then(({ data }) => {
+        return axios.get(url, this.headerConfig).then(({ data }) => {
+            return data
+        })
+
+    },
+    FaqSearch: function (pros) {
+
+        let api = new API_URLS()
+        let url = api.getFaqSearchURL(pros)
+        return axios.get(url, this.headerConfig).then(({ data }) => {
             return data
         })
 
     }
+
+
 }
 export default faqService;
