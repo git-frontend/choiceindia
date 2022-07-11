@@ -68,13 +68,15 @@
           .tabs{
               background: transparent;
               border: 0;
+              padding: 2rem 1rem;
               &.active-tabs{
                   border: 0;
                   &:before {
                     content: "";
                     display: block;
                     position: absolute;
-                    bottom: 0;
+                    bottom: inherit;
+                    top: 0;
                     left: 50%;
                     transform: translateX(-50%);
                     width: calc(100% + 2px);
