@@ -117,3 +117,49 @@
 		padding: 1rem 0;
 	}
 }
+
+
+.Dematfaq {
+	padding: 9rem 0;
+
+	background-color: #F3FAFF ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid #C2C2C2 !important;
+		border-radius: 20px;
+		background: #FFFFFF;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}

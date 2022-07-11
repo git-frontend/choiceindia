@@ -1,8 +1,8 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
-import SubBrokerForm from './SubBrokerForm'
+import SubBrokerForm from './../SubBroker/SubBrokerForm'
 
-function RemisierBroker() {
+function AuthorizeBanner() {
 
     return (
         <div>
@@ -15,7 +15,7 @@ function RemisierBroker() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h2 className="tlt2">Become a Choice</h2>
-                                    <h1 className="tlt1">Remisier</h1>
+                                    <h1 className="tlt1">Authorised Person</h1>
                                 </div>
                                 <div className="right-sec">
                                    <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid"  />
@@ -51,4 +51,4 @@ function RemisierBroker() {
     );
 }
 
-export default RemisierBroker;
+export default AuthorizeBanner;

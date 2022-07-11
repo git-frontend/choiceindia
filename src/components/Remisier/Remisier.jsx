@@ -1,6 +1,6 @@
 
 import React from "react";
-import RemisierBroker from './RemisierBroker';
+import RemisierBanner from './RemisierBanner';
 import RemisierBenifits from './RemisierBenifits';
 import RemisierSellMore from './RemisierSellMore';
 import WhyBecomeRemisier from './WhyBecomeRemisier';
@@ -33,7 +33,7 @@ function Remisier() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <RemisierBroker />
+            <RemisierBanner />
             <RemisierBenifits />
             <RemisierSellMore />
             <WhyBecomeRemisier />
