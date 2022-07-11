@@ -94,7 +94,7 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <Link to="/" className="btn-bg">
+                            <Link to="/research" className="btn-bg">
                                 Read More
                             </Link>
                         </div>

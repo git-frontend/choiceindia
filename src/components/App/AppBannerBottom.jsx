@@ -69,7 +69,7 @@ function AppBannerBottom() {
 
                           return (
 
-                            <div key={response.id} className={classNm} onClick={() => setIsShown2(index)} onChange={() => setIsShown2(index)} >
+                            <div key={response.id} className={classNm} onChange={() => setIsShown2(index)} >
                               <h4 className="single-ttl">{response.title}</h4>
                               <p className="para">
                                 {response.description}
