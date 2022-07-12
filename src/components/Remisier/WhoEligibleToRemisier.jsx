@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import ImageSub13 from '../../assets/images/sub-broker/18+years-of-age.svg';
 import ImageSub14 from '../../assets/images/sub-broker/sell-products-effortlessly.svg';
 import ImageSub15 from '../../assets/images/sub-broker/own-boss.svg';
@@ -80,8 +81,8 @@ function WhoEligibleToRemisier() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is for certain when you partner with us.</h4>
-                                <a href="#join-now" className="btn-bg"><span>Join Now</span> </a>
+                                <h4>Growth is  certain when you partner with us.</h4>
+                                <Link to="#join-now" className="btn-bg"><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

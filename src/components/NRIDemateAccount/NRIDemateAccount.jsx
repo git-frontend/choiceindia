@@ -1,5 +1,6 @@
 // import "./nridemateaccount.scss";
 // import DematAccountForm from '../Common-features/DematAccountForm';
+import { Link } from "react-router-dom";
 import "../OpenDematAccount/DematPage"
 import NriDematAccountBanner from "../NRIDemateAccount/NriDematAccountBanner";
 import WhyOpenFreeNriAccount from "../NRIDemateAccount/WhyOpenFreeNriAccount";
@@ -33,7 +34,7 @@ function NRIDemateAccount() {
                                             <li>An Indian citizen or a person of Indian Origin who lives in a foreign country for employment, business, or other reasons.</li>
                                             <li>An Indian Citizen who has lived in India for less than 182 days during the preceding financial year is also referred to as an NRI.</li>
                                         </ul>
-                                        The procedure of <a href="https://choiceindia.com/open-free-demat-account"><strong>opening a Demat Account</strong></a> for NRIs is quite similar to that of opening the regular Demat Accounts. The only difference is that an NRI needs to declare his/her NRI residence status and then choose the appropriate subtype of the NRI Demat Account.
+                                        The procedure of <Link to="https://choiceindia.com/open-free-demat-account"><strong>opening a Demat Account</strong></Link> for NRIs is quite similar to that of opening the regular Demat Accounts. The only difference is that an NRI needs to declare his/her NRI residence status and then choose the appropriate subtype of the NRI Demat Account.
                                         <br /><br />
                                         <h2 className="font-bold">How To Open A NRI Demat Account Online?</h2>
                                         Many of the NRI investors are confused about how to open an NRI Demat account online. With Choice India, NRIs can now open an account online with KYC documents. There are additional documents that are necessary for the fulfillment of the account opening process:
@@ -73,7 +74,7 @@ function NRIDemateAccount() {
                                             <h3 className="font-bold"> 4. Diversity of Disciplines</h3>
                                             We use our expertise in diverse areas and coordinate all the factors together to protect our NRI clients' investments and try for high returns.
                                             <h3 className="font-bold"> 5. Specialization</h3>
-                                            <a href="https://choiceindia.com/"><strong>Choice India</strong></a> has mastery in portfolio management of NRI accounts. Over the years, we have garnered a loyal customer base because of our client-centric approach.
+                                            <Link to="https://choiceindia.com/"><strong>Choice India</strong></Link> has mastery in portfolio management of NRI accounts. Over the years, we have garnered a loyal customer base because of our client-centric approach.
                                         </div><br/>
 
                                         <h3 className="font-bold">Documents Required to Open A NRI Demat Account</h3>
