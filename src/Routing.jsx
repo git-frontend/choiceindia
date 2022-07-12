@@ -119,7 +119,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/Investor-info' element={
+                        <Route exact path='/investor-info' element={
                             <React.Suspense>
                                 < LazyInvestorInfo />
                             </React.Suspense>
@@ -135,12 +135,12 @@ function Routing() {
                                 < Lazypricing />
                             </React.Suspense>
                         } />
-                        <Route exact path='/Sumeet-Bagadia' element={
+                        <Route exact path='/sumeet-bagadia' element={
                             <React.Suspense>
                                 < Lazymarketing />
                             </React.Suspense>
                         } />
-                        <Route exact path='/Sub-Broker' element={
+                        <Route exact path='/sub-broker' element={
                             <React.Suspense>
                                 < Lazysubbroker />
                             </React.Suspense>
@@ -151,7 +151,7 @@ function Routing() {
                                 < Lazyrefer />
                                 </React.Suspense>
                         } />
-                        <Route exact path='/Open-Demat-Account' element={
+                        <Route exact path='/open-demat-account' element={
                             <React.Suspense>
                                 < Lazyopendemat />
                             </React.Suspense>
@@ -215,7 +215,7 @@ function Routing() {
                                 < Lazystratezy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/basket' element={
+                        <Route exact path='/baskets' element={
                             <React.Suspense>
                                 < Lazybasket />
                             </React.Suspense>

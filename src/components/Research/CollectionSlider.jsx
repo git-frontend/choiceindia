@@ -63,8 +63,8 @@ function CollectionSlider() {
                                     </div>
                                 </slider>
                             </div>
-                            <div class="mt-5">
-                                <a class="btn-bg btn-light" href="/">Explore All</a>
+                            <div className="mt-5">
+                                <a className="btn-bg btn-light" href="/">Explore All</a>
                             </div>
                         </div>
                         <div className="col-xl-7 col-md-6">

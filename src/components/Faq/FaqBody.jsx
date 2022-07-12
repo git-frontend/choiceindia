@@ -386,9 +386,8 @@ export default function FaqBody() {
                 <section className='faq-accordion'  >
                   <div className='container'>
 
-                    <div className='faq-container'>
-                      <div className='content-list accordion-lists' >
-                      </div>
+                    <div className='faq-container justify-content-center'>
+                      
                       <div className='content-list accordion-list ' >
                         <Accordion defaultActiveKey="0" >
 
