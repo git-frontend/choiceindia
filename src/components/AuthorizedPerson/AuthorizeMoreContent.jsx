@@ -10,10 +10,10 @@ const RemisierMoreContent = () => {
 
 <div className="container">
   <div className="row">
-    <div className="col-md-11 col-md-offset-1">
+    <div className="col-md-12">
       <h2 className="secttitle">Authorised Person</h2>
     </div>
-    <div className="col-md-11 col-md-offset-1">
+    <div className="col-md-12">
       <div className="para">
         <input type="checkbox" className="read-more-state" id="post-1" />
         <span className="read-more-wrap "> The stock market investors can opt to invest via an Authorised person, who is a professional who can guide investors through the process.

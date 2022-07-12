@@ -10,10 +10,10 @@ const RemisierMoreContent = () => {
 
 <div className="container">
   <div className="row">
-    <div className="col-md-11 col-md-offset-1">
+    <div className="col-md-12">
       <h2 className="secttitle">Remisier</h2>
     </div>
-    <div className="col-md-11 col-md-offset-1">
+    <div className="col-md-12">
       <div className="para">
         <input type="checkbox" className="read-more-state" id="post-1" />
         <span className="read-more-wrap "> Remisier is a professional in the stock market, who uses their client base to find new customers or clients for the broking business. He/She works as an indirect collaborator of a stockbroker, earning commissions for each successful client onboarding
