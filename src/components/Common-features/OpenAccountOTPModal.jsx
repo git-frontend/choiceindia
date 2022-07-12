@@ -53,6 +53,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
     }, []);
 
     useEffect(() => {
+        checkWebOTP();
+    }, [loaders.resendOTPLoader]);
+
+    function checkWebOTP() {
         if ('OTPCredential' in window) {
             const input = document.getElementById('openAccountOTP');
             if (!input) return;
@@ -62,12 +66,11 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
                 signal: ac.signal
             }).then(otp => {
                 setOtp(otp.code);
-                verifyOTP();
             }).catch(err => {
-                console.log(err);
+                console.log(err, "Error web otp");
             });
         }
-    }, []);
+    }
 
     // to verify the OTP 
     function verifyOTP() {
