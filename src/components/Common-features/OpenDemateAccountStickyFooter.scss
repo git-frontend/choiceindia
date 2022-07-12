@@ -1,3 +1,5 @@
+
+@import '../../assets/css/customvariable.scss';
 .stickybottom {
     padding: 1rem;
     background-color: #221F20;
@@ -5,15 +7,16 @@
     bottom: 0px;
     width: 100%;
     z-index: 99999;
+    left: 0;
 
     @media (max-width:767px) {
         display: none !important;
     }
 
     .text {
-        font-size: 23px;
+        font-size: 22px;
         line-height: 40px;
-        // font-family:'PoppinsBold', sans-serif;
+        font-family: $font-family-poppins-bold;
         color: #FFFFFF;
 
         @media (min-width:768px) and (max-width:1024px) {
@@ -121,7 +124,8 @@
     .sendotp {
         background-color: #FFFFFF;
         border-radius: 8px;
-        padding: 5px 27px;
+        padding: 10px 27px;
+        color: #221F20;
 
         span {
             color: #221F20;
@@ -137,12 +141,40 @@
             }
         }
     }
+
     .sendotp:disabled {
         /* opacity: 0.9; */
         cursor: not-allowed;
     }
 }
 
+    .btn-fixed {
+        position: fixed;
+        bottom: 0;
+        z-index: 99999999;
+        width: 100%;
+        left: 0;
+        display: none !important;
+        @media (max-width:767px) {
+            display: block !important;
+        }
+        .openbtn{
+            border-radius: 0 !important;
+            width: 100%;
+            background-color: #231F20;
+            font-size: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #FFCB05;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 11px 13px;
+            font-family: "PoppinsRegular", sans-serif;
+        }
+ 
+}
 .loaderB {
     border: 5px solid #f3f3f3;
     border-radius: 50%;

@@ -294,11 +294,11 @@ p {
 					font-family: "PoppinsSemiBold", sans-serif;
 					color: #ffffff !important;
 					background: #221F20 !important;
-					padding: 0.8rem 3rem !important;
+					padding: 1rem 3rem !important;
 					display: inline-block;
 					border-radius: 8px !important;
-					min-width: 13.0625rem;
-					font-size: 1.5rem !important;
+					min-width: 15.0625rem;
+					font-size: 1.75rem !important;
 					margin-top: 3rem;
 					text-align: center;
 					text-decoration: none;
@@ -370,6 +370,7 @@ p {
 
 	&.sleekbox-popup-active {
 		display: block;
+		z-index: 9999;
 	}
 }
 
@@ -403,3 +404,4 @@ p {
 		font-size: 24px;
 	}
 }
+

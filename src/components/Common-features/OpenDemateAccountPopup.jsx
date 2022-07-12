@@ -4,7 +4,7 @@ import { useSearchParams } from "react-router-dom";
 import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
-
+import { Link } from "react-router-dom";
 function OpenDemateAccountPopup({hideComponent}) {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -132,6 +132,9 @@ function OpenDemateAccountPopup({hideComponent}) {
             showOpenAccountPopup ?
             <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
+                <div className="close">
+                            <Link to="" class="closebtn" >&times;</Link>
+                            </div>
                     <div className="popup-sub-row">
                         <div className="leftwrap">
                             <div className="popup-sub">
@@ -148,12 +151,14 @@ function OpenDemateAccountPopup({hideComponent}) {
                         </div>
                         <div className="popup-sub-right">
                             <div className="signal-form" id="form-banner">
+                         
+                           
                                 <form id="sso_form-pop" name="sso_form" className="mt-4 enq-form dmt_form" method="post">
                                     <input type="hidden" name="scode" id="scode" value="JFP" />
                                     <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
                                     <h4 className="desktophide">+ 1st Year Free AMC </h4>
                                     <div className="form-group">
-                                        <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label>
+                                        {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
                                         <input type="text" autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
                                         <div>
                                             <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
