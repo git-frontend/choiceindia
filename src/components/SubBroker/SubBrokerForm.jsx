@@ -7,6 +7,7 @@ import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
+import Select from 'react-dropdown-select';
 
 function DematAccountForm() {
 
@@ -70,7 +71,7 @@ function DematAccountForm() {
     }
 
     function handleBrokerCityBranch(e) {
-        let value = e.target.value;
+        let value = e[0].leadCity;
         setBrokerCityBranch(value);
         setErrors((prevError) => ({
             ...prevError,
@@ -86,7 +87,7 @@ function DematAccountForm() {
     }
 
     function handleBrokerState(e) {
-        let value = e.target.value;
+        let value = e[0].stateName;
         setBrokerState(value);
         setErrors((prevError) => ({
             ...prevError,
@@ -270,8 +271,10 @@ function DematAccountForm() {
     }
 
     function fetchCities() {
+        showLoader('citiesLoader');
         subBrokerService.getCities().then((res) => {
             console.log(res, "res cities");
+            hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
             } else {
@@ -279,13 +282,16 @@ function DematAccountForm() {
             }
         }).catch((error) => {
             console.log(error, "error cities");
+            hideLoader('citiesLoader');
             setCitiesDropdown([]);
         });
     }
 
     function fetchState() {
+        showLoader('stateLoader');
         subBrokerService.getStates().then((res) => {
             console.log(res, "res states");
+            hideLoader('stateLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.StateMasterList) {
                 setStatesDropdown(res.data.Body.StateMasterList);
             } else {
@@ -293,6 +299,7 @@ function DematAccountForm() {
             }
         }).catch((error) => {
             console.log(error, "error states");
+            hideLoader('stateLoader');
             setStatesDropdown([]);
         });
     }
@@ -602,32 +609,34 @@ function DematAccountForm() {
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
-                            <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
+                            {/* <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
                                 {
                                     citiesDropdown.map((item) => {
                                         return <option key={item.id} value={item.leadCity}>{item.leadCity}</option>;
                                     })
                                 }
-                            </Form.Select>
+                            </Form.Select> */}
+                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} />
                             {
-                                errors.brokerCityBranch.required ? <Form.Control.Feedback type="invalid">Nearest City Branch is required</Form.Control.Feedback> : ''
+                                errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
                             }
 
                         </div>
                         {
                             showState ?
                                 <div className="sub-formgrp">
-                                    <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
+                                    {/* <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
                                         <option value="">Select State</option>
                                         {
                                             statesDropdown.map((item) => {
                                                 return <option key={item.id} value={item.stateName}>{item.stateName}</option>;
                                             })
                                         }
-                                    </Form.Select>
+                                    </Form.Select> */}
+                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} />
                                     {
-                                        errors.brokerState.required ? <Form.Control.Feedback type="invalid">State is required</Form.Control.Feedback> : ''
+                                        errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
                                 </div> : ''
                         }
