@@ -134,7 +134,7 @@ const { register,formState: reset } = useForm({
                                       
                                     </div>
                                 </div>
-                                <h4>Don’t have an Account? <Link to="/open-demat-account">Open Now</Link></h4>
+                                <h4>Don’t have an Account? <Link to="/open-free-demat-account">Open Now</Link></h4>
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
