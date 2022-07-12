@@ -73,6 +73,7 @@
                             min-width: inherit;
                             &.formcontrol{
                                 background: $whiteColor !important;
+                                color: $primary !important;
                             }
                             @media (max-width: $sm) {
                                 padding: 1rem 1rem !important;
