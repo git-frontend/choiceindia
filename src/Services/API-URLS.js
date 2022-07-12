@@ -70,7 +70,16 @@ export class API_URLS {
 
   addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
-
+    /**Socket Logon Request */
+    socketLogonRequest = "63=FIX3.0|64=101|65=66|66=$currentDate|67=$userId|68=|400=11";
+    /**Socket Header Request for Multitouchline */
+    socketHeaderRequest = "63=FIX3.0|64=206|65=66|66=$currentDate|$requests230=$subUnSub|4=$sessionId";
+    /**Pause Resume Request */
+    pauseResumeRequest = '63=FT3.0|64=106|65=80|66=$currentDate|230=$subUnSub|4=$sessionId';
+    /**Multitouchline Request */
+    socketMultiTouchlineRequest = "1=$segmentId$7=$token"
+    /**Keep Alive Request */
+    keepAliveRequest = "63=FT3.0|64=1000|65=34|66=$currentDate|4=$sessionId"
 
 
 
@@ -237,4 +246,31 @@ getOTPOnCallURL() {
 getVerifyOTPURL() {
     return this.SSOServerURL + this.verifyOTPURL;
 }
+
+
+
+    
+    /**Logon Request */
+    getLogonRequestURL(){
+        return this.socketLogonRequest
+    }
+
+    /**Header Request */
+    getHeaderRequestURL(){
+       return this.socketHeaderRequest 
+    }
+
+    /**Socket Pause Resume Request */
+    getPauseResumeRequestURL(){
+        return this.pauseResumeRequest
+    }
+
+    getMultitouchlineRequestURL(){
+        return this.socketMultiTouchlineRequest
+    }
+
+    /**Keep Alive Request */
+    getKeepAliveRequestURL(){
+        return this.keepAliveRequest
+    }
 }
