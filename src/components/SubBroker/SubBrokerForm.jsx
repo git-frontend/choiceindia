@@ -354,6 +354,10 @@ function DematAccountForm() {
     }, [brokerEmail]);
 
     useEffect(() => {
+        checkWebOTP();
+    }, [loaders.resendOTPLoader || loaders.sendOTPLoader]);
+
+    function checkWebOTP() {
         if ('OTPCredential' in window) {
             const input = document.getElementById('subBrokerOTP');
             if (!input) return;
@@ -363,12 +367,11 @@ function DematAccountForm() {
                 signal: ac.signal
             }).then(otp => {
                 setOtp(otp.code);
-                verifyOTP();
             }).catch(err => {
                 console.log(err);
             });
         }
-    }, []);
+    }
 
     function checkExistence() {
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
