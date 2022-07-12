@@ -11,14 +11,14 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function WhoEligibleToRemisier() {
 
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 1500,
         arrows: false,
         slidesToShow: 1,
-        autoplay: false,
+        autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         responsive: [
             {

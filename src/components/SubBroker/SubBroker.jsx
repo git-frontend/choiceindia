@@ -5,6 +5,7 @@ import SubBrokerBenifits from './SubBrokerBenifits';
 import SubBrokerSellMore from './SubBrokerSellMore';
 import WhyBecomeSubBroker from './WhyBecomeSubBroker';
 import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
+import MoreContent from './MoreContent';
 import SubBrokerOffers from './SubBrokerOffers';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
@@ -36,6 +37,7 @@ function SubBroker() {
             <WhyBecomeSubBroker />
             <WhoEligibleToSubBroker />
             <SubBrokerOffers />
+            <MoreContent />
           </div>
       }
 
