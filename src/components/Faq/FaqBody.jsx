@@ -153,7 +153,6 @@ export default function FaqBody() {
                     <h1 className='big-ttl faq-title'>How can I help you ?</h1>
                     <Form>
                     <div className="faq-search" >
-
                       <Form.Control type="text" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
                       <Button type="submit" className='ser' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>
                     </div>
