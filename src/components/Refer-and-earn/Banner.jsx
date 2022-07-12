@@ -42,9 +42,17 @@ function loadrefer() {
       res => {
         
         setList(res);
-        setreferal(res.Response.referral_link);
+        if(res.Response.success === false){
+            setreferal("Invalid Client Id")
+            setIsShow(true)
+
+        } else{
+            setreferal(res.Response.referral_link);
         setShow('Copy Link');
         setIsShow(true)
+
+        }
+        
          
 
 

@@ -111,18 +111,18 @@
     @media (max-width: 1024px) {
     }
 
-    &:before {
-        content: '';
-        position: absolute;
-        display: block;
-        height: 57rem;
-        width: 21rem;
-        right: 0;
-        top: -10%;
-        background: url('../../assets/images/contact/contactbefore.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     display: block;
+    //     height: 57rem;
+    //     width: 21rem;
+    //     right: 0;
+    //     top: -10%;
+    //     background: url('../../assets/images/contact/contactbefore.png');
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    // }
 
     .mt-10 {
         margin-top: 10rem;
@@ -470,6 +470,7 @@
             position: relative;
             margin-bottom: 0rem;
             justify-content: flex-end;
+            cursor: pointer;
         }
 
         .attachement {
@@ -509,6 +510,7 @@
         .sendbtn {
             min-width: 11rem;
             border-radius: 10px;
+            
         }
     }
     @media (max-width: $md) {
@@ -525,4 +527,9 @@
     font-family: $font-family-poppins-regular;
     margin-top: 0.5rem;
     display: block;
+}
+
+.warning {
+   color:red ;
+   margin-top:-40px;
 }
