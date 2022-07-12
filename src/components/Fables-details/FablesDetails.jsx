@@ -10,12 +10,9 @@ import {
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
-import OpenDemateAccountPopup from '../Common-features/OpenDemateAccountPopup.jsx';
-import OpenDemateAccountStickyFooter from '../Common-features/OpenDemateAccountStickyFooter.jsx';
 
 function Fablesdetails() {
 
-  const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => { });
   const [htmlContent, sethtmlContent] = useState(() => '');
@@ -30,21 +27,6 @@ var formName = useRef('');
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
- function showOpenAccountAdPopup() {
-    setShowOpenAccountPopup(true);
-  }
-
-  function hideOpenAccountAdPopup() {
-    setShowOpenAccountPopup(false);
-    callOpenAccountAdPopupAgain();
-  }
-
-  function callOpenAccountAdPopupAgain() {
-    //after 15min
-    setTimeout(()=>{
-      showOpenAccountAdPopup();
-    },900000)
-  }
 
     /** to call single fabal detail */
     function getSingleFablesDetail() {
@@ -75,10 +57,6 @@ var formName = useRef('');
   }
 
  useEffect(() => {
-
-     setTimeout(() => {
-      showOpenAccountAdPopup();
-    }, 60000);
 setTrigger(true)
     if (trigger === true) {
       getSingleFablesDetail();
@@ -103,7 +81,6 @@ setTrigger(true)
     }
   }
 
-
   return (
     <div>
 
@@ -115,10 +92,12 @@ setTrigger(true)
           </div>
       }
 
-     {
+     {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
-      }
-      <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
+      } */}
+      {/* {
+        fablesDetailTitleId ? '' : <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
+      } */}
     </div>
   );
 }

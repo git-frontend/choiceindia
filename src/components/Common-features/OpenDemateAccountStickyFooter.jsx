@@ -156,7 +156,11 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
                 </div>
 
             </section>
-            <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
+            {
+                showOTP ?
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+            }
+            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter OTP</Modal.Title>
@@ -164,7 +168,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
                 <Modal.Body>
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
