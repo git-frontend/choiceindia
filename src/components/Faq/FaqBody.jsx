@@ -6,7 +6,7 @@ import { Button, Form } from "react-bootstrap";
 import image1 from "../../assets/images/Faq/faq-banner.webp";
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useForm } from 'react-hook-form';
+import { useForm, useFormState } from 'react-hook-form';
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -42,14 +42,17 @@ export default function FaqBody() {
   };
 
 
-  const { register } = useForm({
+
+
+  const { register, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
 
   function loadfaqsearch() {
+    chapterScroll('faq-section')
     setIsactive(false)
-    clearvalue()
+   
     faqService.FaqSearch(data).then(
       res => {
         setIsactive(true)
@@ -76,6 +79,7 @@ export default function FaqBody() {
   }
 
   function clearvalue() {
+    console.log("check");
     let btnClear = document.querySelector('.ser');
     let inputs = document.querySelectorAll('.formcontrol');
     btnClear.addEventListener('click', () => {
@@ -112,13 +116,24 @@ export default function FaqBody() {
     )
   };
 
+  function categoryClick(){
+    console.log("check");
+    let btnClear = document.querySelector('.ser');
+    let inputs = document.querySelectorAll('.formcontrol');
+    btnClear.addEventListener('click', () => {
+      inputs.forEach(data => data.value = "")
+    });
+    // chapterScroll('faq-section')
+
+  }
+
 
 
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
       loadfaqcategory();
-      clearvalue()
+      // clearvalue()
 
     }
 
@@ -136,12 +151,14 @@ export default function FaqBody() {
                 <div className='col-md-6'>
                   <div className='caption-cont'>
                     <h1 className='big-ttl faq-title'>How can I help you ?</h1>
-
+                    <Form>
                     <div className="faq-search" >
 
                       <Form.Control type="text" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
                       <Button type="submit" className='ser' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>
                     </div>
+
+                    </Form>
 
 
                     <div>
@@ -295,9 +312,10 @@ export default function FaqBody() {
                               setSelectedId(0);
                               setIsarticle(true);
                               setSelect(i);
+
                               // scrollToElement();
                             }}>
-                              <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
+                              <div className="bx-item-cont" onClick={() => {chapterScroll('faq-section');reset()}}  >
                                 <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>

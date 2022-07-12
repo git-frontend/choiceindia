@@ -20,8 +20,8 @@ const config = {
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
-    livereferURL: "https://stage-partner-api.theflyy.com/",
-    UATreferURL: "https://stage-partner-api.theflyy.com/",
+    livereferURL: "https://uatapi.choicebroking.in/api/middleware",
+    UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
 
 }
 
@@ -42,7 +42,7 @@ export class API_URLS {
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
     /** refer and earn URL */
-    referURL = "https://stage-partner-api.theflyy.com/"
+    referURL = "https://uatapi.choicebroking.in/api/middleware"
 
 
 
@@ -309,8 +309,8 @@ export class API_URLS {
         return this.OnbBaseURL + this.addNewLeadURL;
     }
 
-    getreferearnURL(){
-        return this.referURL + this.earnURL;
+    getreferearnURL(id){
+        return this.referURL + `/GetUserReferralData?ClientID=${id}`;
     }
 
     getreferallink(id){

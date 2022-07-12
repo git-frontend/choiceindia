@@ -33,28 +33,34 @@ function Banner() {
 };
 
 function loadrefer() {
-    let request = {
-        ext_user_id :referid,
-        is_new:true 
-    }
+    // let request = {
+    //     ext_user_id :referid,
+    //     is_new:true 
+    // }
     
-    referService.referearn(request).then(
+    referService.referearn(referid).then(
       res => {
         
         setList(res);
-        if(res.success === false)
-        {
-            referService.referallink(referid).then(
-                res =>{
+        setreferal(res.Response.referral_link);
+        setShow('Copy Link');
+        setIsShow(true)
+         
 
-                    setLink(res)
-                    setShow('Copy Link')
-                    setIsShow(true)
-                    setreferal(res.message);
 
-                }
-            )
-        }
+        // if(res.success === false)
+        // {
+        //     referService.referallink(referid).then(
+        //         res =>{
+
+        //             setLink(res)
+        //             
+        //             setIsShow(true)
+        //             setreferal(res.message);
+
+        //         }
+        //     )
+        // }
     
       }
     )
