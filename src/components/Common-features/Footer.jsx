@@ -71,7 +71,7 @@ function Footer() {
                             <Link to="/career">Careers</Link>
                           </li>
                           <li>
-                            <Link to="/contact">Contact Us</Link>
+                            <Link to="/contact-us">Contact Us</Link>
                           </li>
                           <li>
                             <Link to="/faq">FAQ’s</Link>
@@ -88,7 +88,7 @@ function Footer() {
                             <a href="https://choiceindia.com/research-listing-new" target="_blank">Technical</a>
                           </li>
                           <li>
-                             <Link to="/fables">Blogs</Link>
+                             <Link to="/blog">Blogs</Link>
                           </li>
                         </ul>
                       </div>

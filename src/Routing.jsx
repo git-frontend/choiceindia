@@ -76,19 +76,19 @@ function Routing() {
                                 < LazyCareer />
                             </React.Suspense>} />
 
-                        <Route exact path='/app' element={
+                        <Route exact path='/online-trading-app' element={
                             <React.Suspense>
                                 < LazyApp />
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/fables' element={
+                        <Route exact path='/blog' element={
                             <React.Suspense>
                                 < LazyFables />
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/contact' element={
+                        <Route exact path='/contact-us' element={
                             <React.Suspense>
                                 < LazyContact />
                             </React.Suspense>
@@ -140,7 +140,7 @@ function Routing() {
                                 < Lazymarketing />
                             </React.Suspense>
                         } />
-                        <Route exact path='/sub-broker' element={
+                        <Route exact path='/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbroker />
                             </React.Suspense>
@@ -151,7 +151,7 @@ function Routing() {
                                 < Lazyrefer />
                                 </React.Suspense>
                         } />
-                        <Route exact path='/open-demat-account' element={
+                        <Route exact path='/open-free-demat-account' element={
                             <React.Suspense>
                                 < Lazyopendemat />
                             </React.Suspense>
@@ -192,7 +192,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/research' element={
+                        <Route exact path='/research-listing-new' element={
                             <React.Suspense>
                                 < Lazyresearch />
                             </React.Suspense>
