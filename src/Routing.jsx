@@ -35,6 +35,7 @@ const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/In
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
+const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
 
 function Routing() {
     return (
@@ -94,7 +95,7 @@ function Routing() {
                         } />
 
                         <Route exact path='/fablesdetail/:id' element={
-                            <React.Suspense>    
+                            <React.Suspense>
                                 < LazyFableDetail />
                             </React.Suspense>
                         } />
@@ -140,6 +141,12 @@ function Routing() {
                         <Route exact path='/Open-Demat-Account' element={
                             <React.Suspense>
                                 < Lazyopendemat />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/research' element={
+                            <React.Suspense>
+                                < Lazyresearch />
                             </React.Suspense>
                         } />
 

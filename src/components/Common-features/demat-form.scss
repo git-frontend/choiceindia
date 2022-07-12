@@ -21,8 +21,11 @@
             border-radius: 12px;
             font-family: $font-family-poppins-regular;
             font-size: 1.2rem;
-            
+            &.formpadding{
+                padding: 1.2rem 1.5rem;
+            }
         }
+      
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { 
             -webkit-appearance: none; 

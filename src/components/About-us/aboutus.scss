@@ -11,7 +11,7 @@ body{
 }
 
 .bannersection {
-    padding: 0 0 8rem;
+    padding: 5rem 0;
     position: relative;
 
     @media (max-width:$sm) {
@@ -864,7 +864,9 @@ body{
             .img-itm {
                 height: 50px;
                 width: 50px;
-
+                @media (max-width:$sm) {
+                    margin: 0 auto;
+                }
                 img {
                     @media (max-width:$sm) {
                         margin: 0 auto;

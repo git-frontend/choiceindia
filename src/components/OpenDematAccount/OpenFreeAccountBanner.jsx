@@ -1,10 +1,10 @@
 import React from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
-import Image2 from '../../assets/images/open-demat-account/Lowest-DP.webp';
-import Image3 from '../../assets/images/open-demat-account/nosqroff.webp';
-import Image4 from '../../assets/images/open-demat-account/sucessratio.webp';
-import Image5 from '../../assets/images/open-demat-account/AMC.webp';
+import Image2 from '../../assets/images/open-demat-account/lowestdp.svg';
+import Image3 from '../../assets/images/open-demat-account/nosqroff.svg';
+import Image4 from '../../assets/images/open-demat-account/sucessratio.svg';
+import Image5 from '../../assets/images/open-demat-account/amc.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
 const OpenFreeAccountBanner = () => {
@@ -21,11 +21,11 @@ const OpenFreeAccountBanner = () => {
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} alt="Zero Account Opening Fee" className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt="Lowest DP Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -34,11 +34,11 @@ const OpenFreeAccountBanner = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} alt="No Square Off Charges" className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt="Low Brokerage Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -48,11 +48,11 @@ const OpenFreeAccountBanner = () => {
                                     </div>
                                 </div>
                                 <div className="row mt-5 mbrespflex">
-                                    <div className="col-md-5 col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} alt="Call Success Ratio" className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt="Free Research Advisory" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -60,11 +60,11 @@ const OpenFreeAccountBanner = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="col-md-5  col-sm-6">
+                                    <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} alt="Free Call For Trade Facility" className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt="Demat Account without Annual Charges" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
