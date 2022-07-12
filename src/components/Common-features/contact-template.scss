@@ -1,0 +1,94 @@
+/** skeleton css*/
+// .contactdetail-skeleton {
+//     position: relative;
+//     background-color: #F4F6F7;
+// }
+
+/** keyframes added */
+
+@mixin skeleton {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@mixin skeletonhide {
+    animation: hideMe 4s forwards;
+}
+
+/** keyframes added */
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.contact-template-parent {
+    padding-top: 2rem;
+    background-color: #F4F6F7;
+}
+
+.contact-template-banner-section {
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    // border:2px solid black;
+
+    div {
+        width: 50%;
+        // border:2px solid red;
+        justify-content: center;
+
+        p {
+            width: 40rem;
+            height: 5rem;
+            margin: 5rem auto;
+            @include skeleton;
+        }
+    }
+}
+
+.contact-template-image {
+
+    .contact-template-img {
+        // border: 2px solid red;
+        width: 50rem;
+        height: 40rem;
+        margin: auto;
+        @include skeleton;
+    }
+
+
+}
+
+.skeleton-child-img {
+    width: 100px;
+    height: 100px;
+    color: transparent;
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+.skeleton-child {
+    color: transparent !important;
+    @include skeleton;
+}
+
+.skeleton-child-map {
+    width: 100%;
+    height: 300px;
+    @include skeleton;
+}

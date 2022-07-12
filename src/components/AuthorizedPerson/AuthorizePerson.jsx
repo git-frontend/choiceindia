@@ -1,14 +1,17 @@
 
 import React from "react";
-import BannerSBroker from '../SubBroker/BannerSBroker';
-import SubBrokerBenifits from '../SubBroker/SubBrokerBenifits';
-import SubBrokerSellMore from '../SubBroker/SubBrokerSellMore';
-import WhyBecomeSubBroker from '../SubBroker/WhyBecomeSubBroker';
-import WhoEligibleToSubBroker from '../SubBroker/WhoEligibleToSubBroker';
-import SubBrokerOffers from '../SubBroker/SubBrokerOffers';
+import AuthorizeBanner from './AuthorizeBanner';
+import AuthorizeBenifits from './AuthorizeBenifits';
+import AuthorizeSellMore from './AuthorizeSellMore';
+import WhyBecomeAuthorize from './WhyBecomeAuthorize';
+import WhoEligibleToAuthorize from './WhoEligibleToAuthorize';
+import AuthorizeMoreContent from './AuthorizeMoreContent';
+import AuthorizeFaq from './AuthorizeFaq';
+
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
+import "../Remisier/Remisier.scss"
 import "./AuthorizePerson.scss";
 
 function AuthorizePerson() {
@@ -31,12 +34,14 @@ function AuthorizePerson() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <BannerSBroker />
-            <SubBrokerBenifits />
-            <SubBrokerSellMore />
-            <WhyBecomeSubBroker />
-            <WhoEligibleToSubBroker />
-            <SubBrokerOffers />
+            <AuthorizeBanner />
+            <AuthorizeBenifits />
+            <AuthorizeSellMore />
+            <WhyBecomeAuthorize />
+            <WhoEligibleToAuthorize />
+            <AuthorizeFaq />
+            <AuthorizeMoreContent />
+            {/* <AuthorizeOffers /> */}
           </div>
       }
 

@@ -51,19 +51,19 @@ function Contactbanner() {
 
   }
 
-  const [main, setMain] = useState(true);
+  // const [main, setMain] = useState(true);
   // const [first, setFirst] = useState(true);
   // const [second, setSecond] = useState(true);
   // const [fimg, setImg] = useState(true);
 
-  const myTimeout = setTimeout(myGreeting, 2000);
+  // const myTimeout = setTimeout(myGreeting, 2000);
 
-  function myGreeting() {
-    setMain(() => false);
-    // setFirst(() => false);
-    // setSecond(() => false);
-    // setImg(() => false);
-  }
+  // function myGreeting() {
+  // setMain(() => false);
+  // setFirst(() => false);
+  // setSecond(() => false);
+  // setImg(() => false);
+  // }
 
   // useEffect(() => {
   //   myTimeout();
@@ -72,133 +72,104 @@ function Contactbanner() {
 
   return (
     <div>
-      {
-        main ?
-          <div className="banner-parent-temp">
-            <section className="banner-contact1">
-              <div className="banner-content-temp">
-                <h2></h2>
-                <p></p>
-              </div>
-              <div className="banner-img-temp">
-                <div className="img-temp">
-
-                </div>
-              </div>
-            </section>
-            {/* 
-            <section className="banner-contact-form">
-              <div>
-
-              </div>
-            </section> */}
-          </div> :
-          <div className="banner-parent">
-            <section className="banner-contact">
-              {/* {
+      <div className="banner-parent">
+        <section className="banner-contact">
+          {/* {
           main ? <img src={""} className="ban-img1" alt="Loading" /> :
             <img src={Bannerimage} className="ban-img" alt="Loading" />
         } */}
-              <LazyLoader src={Bannerimage} className='img-fluid ban-img' width={'1519'} height={'915'} alt={'Loading'} />
-              {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
-              <div className='banner-caption'>
-                <div className='container'>
-                  <div className='row'>
-                    <div className='col-md-12'>
-                      <div className='caption-cont'>
+          <LazyLoader src={Bannerimage} className='img-fluid ban-img' width={'1519'} height={'915'} alt={'Loading'} />
+          {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
+          <div className='banner-caption'>
+            <div className='container'>
+              <div className='row'>
+                <div className='col-md-12'>
+                  <div className='caption-cont'>
 
-                        {/* {
+                    {/* {
                     main ? <h1 className='big-ttl' > <br /> </h1> :
                       <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
                   } */}
-                        <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
-                      </div>
-                    </div>
+                    <h1 className='big-ttl'>We’re here <br /> Let’s have a talk</h1>
                   </div>
                 </div>
               </div>
-            </section>
-          </div>
-      }
-
-
-      {
-        main ? <div></div> :
-          <section className="cnt-banner-bottm">
-            <div className="container">
-              <div className="writebtn">
-                <span className="writeus">
-                  Write to Us
-                </span>
-              </div>
-              <div className="form">
-
-                <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
-                  <div className="row d-flex justify-content-between">
-                    <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                      <Form.Label className="formlabel">First Name <IoMdInformationCircleOutline /> </Form.Label>
-                      <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
-                      <span className="text-danger"> {errors?.firstName?.message} </span>
-                    </Form.Group>
-
-
-                    <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                      <Form.Label className="formlabel"> Last Name <IoMdInformationCircleOutline /> </Form.Label>
-                      <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
-                      <span className="text-danger"> {errors?.lastName?.message} </span>
-                    </Form.Group>
-                  </div>
-
-                  <div className="row mt-3 d-flex justify-content-between">
-                    <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                      <Form.Label className="formlabel">Email <IoMdInformationCircleOutline /></Form.Label>
-                      <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
-                      <span className="text-danger"> {errors?.email?.message} </span>
-                    </Form.Group>
-
-                    <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                      <Form.Label className="formlabel"> Phone <IoMdInformationCircleOutline /> </Form.Label>
-                      <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
-                      <span className="text-danger"> {errors?.mobile?.message} </span>
-                    </Form.Group>
-                  </div>
-
-
-                  <Form.Group className="mb-3">
-                    <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
-                    <div className='cust-dropdown'>
-                      <div className="downar"></div>
-                      <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
-                        <option className="option">Feedback</option>
-                        <option className="option">View</option>
-                        <option className="option">Review</option>
-
-                      </Form.Select>
-                    </div>
-                  </Form.Group>
-
-
-
-                  <label className="formlabel mt-5"> Your Question <IoMdInformationCircleOutline /></label>
-                  <div className=" messagefield">
-                    <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
-                    <span className="text-danger"> {errors?.question?.message} </span>
-                  </div>
-
-                  <div className="uploadbtn mt-3 d-flex ">
-                    <Button variant="primary"
-                      type="submit" className="btn-bg btn-bg-dark sendbtn">
-                      Send
-                    </Button>
-                  </div>
-                </Form>
-              </div>
             </div>
-          </section>
-      }
+          </div>
+        </section>
+      </div>
+
+      <section className="cnt-banner-bottm">
+        <div className="container">
+          <div className="writebtn">
+            <span className="writeus">
+              Write to Us
+            </span>
+          </div>
+          <div className="form">
+
+            <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
+              <div className="row d-flex justify-content-between">
+                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                  <Form.Label className="formlabel">First Name <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
+                  <span className="text-danger"> {errors?.firstName?.message} </span>
+                </Form.Group>
+
+
+                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                  <Form.Label className="formlabel"> Last Name <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
+                  <span className="text-danger"> {errors?.lastName?.message} </span>
+                </Form.Group>
+              </div>
+
+              <div className="row mt-3 d-flex justify-content-between">
+                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                  <Form.Label className="formlabel">Email <IoMdInformationCircleOutline /></Form.Label>
+                  <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
+                  <span className="text-danger"> {errors?.email?.message} </span>
+                </Form.Group>
+
+                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                  <Form.Label className="formlabel"> Phone <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
+                  <span className="text-danger"> {errors?.mobile?.message} </span>
+                </Form.Group>
+              </div>
+
+
+              <Form.Group className="mb-3">
+                <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
+                <div className='cust-dropdown'>
+                  <div className="downar"></div>
+                  <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
+                    <option className="option">Feedback</option>
+                    <option className="option">View</option>
+                    <option className="option">Review</option>
+
+                  </Form.Select>
+                </div>
+              </Form.Group>
 
 
 
+              <label className="formlabel mt-5"> Your Question <IoMdInformationCircleOutline /></label>
+              <div className=" messagefield">
+                <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
+                <span className="text-danger"> {errors?.question?.message} </span>
+              </div>
+
+              <div className="uploadbtn mt-3 d-flex ">
+                <Button variant="primary"
+                  type="submit" className="btn-bg btn-bg-dark sendbtn">
+                  Send
+                </Button>
+              </div>
+            </Form>
+          </div>
+        </div>
+      </section>
 
     </div>
 

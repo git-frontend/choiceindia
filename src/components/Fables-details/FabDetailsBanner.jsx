@@ -36,7 +36,7 @@ function Fabdetailsbanner(props) {
                                     <div className="row ">
                                         <div className="col-md-12">
                                             <p className="text-center date">Published August 21, 2021</p>
-                                            <h2 className="heading title-secnd text-center">{props.single_data[0].title || 'Texxt'}</h2>
+                                            <h2 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h2>
                                             {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
                                             <ul className="tabs">
                                                 <li>
@@ -105,9 +105,8 @@ function Fabdetailsbanner(props) {
                                 {
                                     props.showForm ?
                                         props.formName === 'form-demat' ? <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
-                                             {/* style={{    position: '-webkit-sticky',position: 'fixed', padding: '3rem 0', top: 0}} */}
                                             <div className="formwrap d-flex justify-content-end ">
-                                                <DematAccountForm />
+                                                <DematAccountForm isFooterVisible={true} isFromFableDetails={true}/>
                                             </div>
                                         </div> : <div className="col-md-5 col-lg-4 col-sm-6" id="sub-broker-wrap">
                                             <div className="franchise-form justify-content-end d-flex">

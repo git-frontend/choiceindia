@@ -1,0 +1,165 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+
+.readmoresection {
+	padding: 9rem 0;
+
+	.secttitle {
+		color: $primary;
+		font-size: 3.25rem;
+		line-height: 4.875rem;
+		padding-bottom:2.5rem;
+		font-family: $font-family-poppins-bold;
+
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+
+	.read-more-wrap {
+		font-size: 1.6875rem;
+		font-family: $font-family-poppins-regular;
+		font-weight: 400;
+		color: $primary;
+		line-height: 2.75rem;
+
+		@media (max-width:$sm) {
+			font-size: 1.6rem;
+		}
+        p{
+            font-size: 1.6875rem;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+            color: $primary;
+            line-height: 2.75rem;
+
+            @media (max-width:$sm) {
+                font-size: 1.6rem;
+            }
+        }
+        .ttl-para{
+            font-family: $font-family-poppins-semibold;
+        }
+        ul{
+            padding-left: 3rem;
+            >li{
+                margin:1rem 0;
+            }
+            ol{
+                li{
+                    margin:0.6rem 0;
+                }
+            }
+        }
+
+	}
+
+	.moreless-button {
+		font-size: 2rem !important;
+		font-family: $font-family-poppins-bold;
+		font-weight: 700;
+		color: $bgcolor-blue;
+		line-height: 2.75rem !important;
+
+	}
+
+	.read-more-state {
+		display: none;
+	}
+
+	.read-more-target {
+		display: none;
+		max-height: 0;
+		font-size: 0;
+		transition: .25s ease;
+		padding-top: 10px;
+	}
+
+	.read-more-state:checked~.read-more-wrap .read-more-target {
+		opacity: 1;
+		font-size: inherit;
+		max-height: 999em;
+		display: block;
+	}
+
+	.read-more-state~.read-more-trigger:before {
+		content: 'Read more';
+	}
+
+	.read-more-state:checked~.read-more-trigger:before {
+		content: 'Read less';
+	}
+
+	.read-more-trigger {
+		cursor: pointer;
+		display: inline-block;
+		padding: 0 .5em;
+
+		font-size: .9em;
+		line-height: 2;
+		border-radius: .25em;
+	}
+
+	.font-bold {
+
+		padding: 1rem 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2rem;
+		padding: 1rem 0 1.5rem 0;
+		margin-top: 2rem;
+	}
+	.p1{
+		padding: 1rem 0;
+	}
+}
+
+
+.Dematfaq {
+	padding: 9rem 0;
+
+	background-color: #F3FAFF ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid #C2C2C2 !important;
+		border-radius: 20px;
+		background: #FFFFFF;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}
