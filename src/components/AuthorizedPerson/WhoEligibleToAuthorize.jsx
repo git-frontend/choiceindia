@@ -80,7 +80,7 @@ function WhoEligibleToRemisier() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is for certain when you partner with us.</h4>
+                                <h4>Growth is certain when you partner with us.</h4>
                                 <a href="#join-now" className="btn-bg"><span>Join Now</span> </a>
                             </div>
                         </div>
