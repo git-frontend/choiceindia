@@ -7,8 +7,8 @@ function WhyBecomeRemisier () {
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">
-                            <h2 className="ttl-wht">Benefits Of Being A Remisier With Us</h2>
-                            <p className="sml-para-dv">As a SEBI Remisier, you can be a part of the well-known and respected Choice group. Register with any Stock Exchange (NSE/BSE) and be a Remiser in the Stock Market with a reputed brand.</p>
+                            <h2 className="ttl-wht">Benefits Of Being A Authorised Person With Us</h2>
+                            <p className="sml-para-dv">As a SEBI Authorised Person, you can be a part of the well-known and respected Choice group. Register with any Stock Exchange (NSE/BSE) and be a Authorised Person in the Stock Market with a reputed brand.</p>
                         </div>
                     </div>
                     <div className="row justify-content-center">
