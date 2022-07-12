@@ -57,17 +57,15 @@ export default function FaqBody() {
       res => {
         setIsactive(true)
         setSearchlist(res);
-
-
-
-
-        // loadfaqFolder(res[0].category_linkage);
-      }
+     
+  }
     )
+    
   };
 
 
   function chapterScroll(id) {
+   
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -78,14 +76,7 @@ export default function FaqBody() {
     });
   }
 
-  function clearvalue() {
-    console.log("check");
-    let btnClear = document.querySelector('.ser');
-    let inputs = document.querySelectorAll('.formcontrol');
-    btnClear.addEventListener('click', () => {
-      inputs.forEach(data => data.value = "")
-    });
-  }
+  
 
 
 
@@ -151,13 +142,14 @@ export default function FaqBody() {
                 <div className='col-md-6'>
                   <div className='caption-cont'>
                     <h1 className='big-ttl faq-title'>How can I help you ?</h1>
-                    <Form>
+                    
                     <div className="faq-search" >
+                                   
                       <Form.Control type="text" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
-                      <Button type="submit" className='ser' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>
-                    </div>
-
-                    </Form>
+                      <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>
+                   
+                      </div>
+                  
 
 
                     <div>
@@ -314,7 +306,7 @@ export default function FaqBody() {
 
                               // scrollToElement();
                             }}>
-                              <div className="bx-item-cont" onClick={() => {chapterScroll('faq-section');reset()}}  >
+                              <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section')}}  >
                                 <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
