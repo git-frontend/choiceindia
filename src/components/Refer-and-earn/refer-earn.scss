@@ -76,6 +76,7 @@
                             &.formcontrol{
                                 background: $whiteColor !important;
                                 color: $primary !important;
+                                text-transform:uppercase
                             }
                             @media (max-width: $sm) {
                                 padding: 1rem 1rem !important;

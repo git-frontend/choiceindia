@@ -7,6 +7,8 @@ import image1 from "../../assets/images/Faq/faq-banner.webp";
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, useFormState } from 'react-hook-form';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -20,7 +22,7 @@ export default function FaqBody() {
   const [article, setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [select, setSelect] = useState(-1);
-
+  const [isloader,setIsloader]=useState(false)
   const [selected, setSelected] = useState(0);
   const [isactive, setIsactive] = useState(false);
   const [isarticle, setIsarticle] = useState(false);
@@ -50,6 +52,7 @@ export default function FaqBody() {
   });
 
   function loadfaqsearch() {
+   
     chapterScroll('faq-section')
     setIsactive(false)
    
@@ -63,9 +66,11 @@ export default function FaqBody() {
     
   };
 
+  
+
+
 
   function chapterScroll(id) {
-   
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -81,10 +86,13 @@ export default function FaqBody() {
 
 
   function loadfaqcategory() {
+    
+    setIsloader(true)
     faqService.FaqCategory().then(
       res => {
         setList(res);
         loadfaqFolder(res[0].category_linkage);
+        setIsloader(false)
       }
     )
   };
@@ -108,13 +116,8 @@ export default function FaqBody() {
   };
 
   function categoryClick(){
-    console.log("check");
-    let btnClear = document.querySelector('.ser');
-    let inputs = document.querySelectorAll('.formcontrol');
-    btnClear.addEventListener('click', () => {
-      inputs.forEach(data => data.value = "")
-    });
-    // chapterScroll('faq-section')
+    let h =document.getElementById('value3')
+    h.value=""
 
   }
 
@@ -124,7 +127,9 @@ export default function FaqBody() {
     setTrigger(true)
     if (trigger === true) {
       loadfaqcategory();
-      // clearvalue()
+      categoryClick();
+      
+      
 
     }
 
@@ -145,8 +150,12 @@ export default function FaqBody() {
                     
                     <div className="faq-search" >
                                    
-                      <Form.Control type="text" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
-                      <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>
+                      <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
+                      {
+                        isloader === false ?
+                        <Button type='submit'   variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>:
+                        <Spinner animation="border" />
+                      }
                    
                       </div>
                   
@@ -306,7 +315,7 @@ export default function FaqBody() {
 
                               // scrollToElement();
                             }}>
-                              <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section')}}  >
+                              <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section'); categoryClick()}}  >
                                 <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
@@ -392,7 +401,7 @@ export default function FaqBody() {
                   </div>
                 </section> :
 
-                <section className='faq-accordion'  >
+                <section className='faq-accordion'   id='faq-section'>
                   <div className='container'>
 
                     <div className='faq-container justify-content-center'>

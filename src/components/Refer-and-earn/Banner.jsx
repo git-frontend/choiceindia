@@ -11,13 +11,17 @@ import referService from "../../Services/referService";
 import { FaWhatsapp } from "react-icons/fa";
 import {FaFacebookF}  from 'react-icons/fa';
 import { Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
 
 function Banner() {
     let referid='';
     const[referal,setreferal]=useState();
+    const[referal1,setreferal1]=useState();
     const[show,setShow]=useState('Get Link');
     const[list,setList]=useState([]);
-    const[link,setLink]=useState([]);
+    const[linkage,setLinkage]=useState(['facebook','whatsapp']);
+    const [isloader,setIsloader]=useState(false);
+    const[iserror,setIserror]=useState(false);
     const[isshow,setIsShow]=useState(false);
     
 
@@ -33,46 +37,44 @@ function Banner() {
 };
 
 function loadrefer() {
-    // let request = {
-    //     ext_user_id :referid,
-    //     is_new:true 
-    // }
-    
+    setIsloader(true)
     referService.referearn(referid).then(
       res => {
-        
+        setIsloader(false)
         setList(res);
         if(res.Response.success === false){
-            setreferal("Invalid Client Id")
-            setIsShow(true)
+            setreferal1(res.Response.error.description)
+            setIserror(true)
+            console.log("show1",show)
+            
 
         } else{
             setreferal(res.Response.referral_link);
         setShow('Copy Link');
-        setIsShow(true)
+        setIsShow(true);
+        setIserror(false)
+        console.log("show",show)
 
         }
-        
-         
-
-
-        // if(res.success === false)
-        // {
-        //     referService.referallink(referid).then(
-        //         res =>{
-
-        //             setLink(res)
-        //             
-        //             setIsShow(true)
-        //             setreferal(res.message);
-
-        //         }
-        //     )
-        // }
+    
     
       }
     )
   };
+
+  function shareLink(key) {
+    console.log("0f",key)
+    let mapper = {
+      facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${referal}`, isTextEncode: false, isURLEncode: false },
+      whatsapp: { url: `https://api.whatsapp.com/send?text=${referal}`, isTextEncode: false, isURLEncode: false },
+      linkedin: { url: 'https://www.linkedin.com/shareArticle?mini=fals&url=$url&summary=$text', isTextEncode: true, isURLEncode: true },
+      twitter: { url: 'https://twitter.com/intent/tweet?url=$url&text=$text', isTextEncode: false, isURLEncode: true }
+    }
+    let linkObject = mapper[key];
+    window.open(linkObject.url)
+    console.log("linkObject",linkObject)
+  
+  }
 
 const { register,formState: reset } = useForm({
     mode: 'onChange',
@@ -102,32 +104,47 @@ const { register,formState: reset } = useForm({
                                     
                                    
                                         <div className="refer-form"> 
-                                            <Form.Group className="formgrp sub-formgrp" controlId="formBasicEmail">
-                                            {
-                                                isshow === false ?
-                                                <Form.Control type="text"  placeholder="Enter Client ID" className="btn-bg formcontrol" {...register('ext_user_id',{onChange:(e2) => {clientChange(e2)}})} />
+                                            <Form.Group className="formgrp sub-formgrp" >
+                                                {
+                                                    isshow ===false ?
+                                                    <Form.Control type="text"  placeholder="Enter Client ID" className="btn-bg formcontrol" {...register('ext_user_id',{onChange:(e2) => {clientChange(e2)}})} />
                                                 :
-                                                <div className="btn-bg formcontrol">{referal}</div>
-                                            }
-                                               
+                                                <div  className="btn-bg formcontrol">{referal}</div>
+                                                }                
+                                                
+                                        
                                             { show === 'Copy Link' ?
                                                 <Button variant="primary"
                                                     type="submit" onClick={copy}  className="btn-bg sendbtn">
+                                                        
                                                     {show}
                                                 </Button>
                                                 :
                                                 <Button variant="primary"
                                                     type="submit" onClick={()=> referid.length > 0 && show === 'Get Link' ? loadrefer():''} className="btn-bg sendbtn">
-                                                    {show}
+                                                    { isloader===false ?
+                                                    'Get Link':<Spinner animation="border" />
+                                                }
                                                 </Button>
 
                                         }
+
                                                 {
                                                     isshow === true ?
+                                                    <div>
+                                                   
                                                 <div className="refer-social">
-                                                <a className="refer-icon"><FaFacebookF /></a>
-                                                <a className="refer-icon"><FaWhatsapp /></a>
-                                                </div>:""
+
+                                                <div style={{cursor :"pointer"}} onClick={()=>{shareLink(linkage[0])}}  id="facebook" className="refer-icon"><FaFacebookF /></div>
+                                                <div style={{cursor :"pointer"}} onClick={()=>{shareLink(linkage[1])}} id="whatapp"className="refer-icon"><FaWhatsapp /></div>
+                                                </div> </div>:""
+                                                }
+
+                                                {
+                                                    iserror===true?
+                                                    <div style={{color:"red"}}>{referal1}</div>
+                                                    :
+                                                    ""
                                                 }
                                             </Form.Group>
                                         </div>
