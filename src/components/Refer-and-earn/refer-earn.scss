@@ -35,7 +35,7 @@
             padding:3rem 2.5rem 2.5rem 2.5rem;
             border-radius: 16px;
             margin: 5.5rem 0 3rem 0;
-            width: 90%;
+            width: 100%;
             p {
                 font-size: 1.75rem;
                 line-height: 2.5rem;
@@ -58,9 +58,9 @@
                     width: 100%;
                     .sub-formgrp{
                         display: flex;
-                        align-items: flex-start;
+                        align-items: center;
                         flex-wrap: wrap;
-                        justify-content: space-between;
+                        justify-content:flex-start;
                         .formcontrol{
                             outline: none;
                             border: 0;
@@ -71,8 +71,10 @@
                             }
                         }
                         .btn-bg{
-                            width: 47%;
+                            width: 42%;
                             min-width: inherit;
+                            padding: 1.3rem 1rem !important;
+                            overflow: hidden;
                             &.formcontrol{
                                 background: $whiteColor !important;
                                 color: $primary !important;
@@ -83,6 +85,40 @@
                                 font-size: 1.275rem !important;
                                 border-radius: 10px !important;
                             }
+                            &.sendbtn{
+                                width: 32%;
+                                margin: 0 1rem;
+                                @media (max-width: $sm) {
+                                    width: 45%;
+                                }
+                            }
+                            @media (max-width: $sm) {
+                                width: 47%;
+                            }
+                        }
+                        .refer-social{
+                            display: flex;
+                            align-items: center;
+                            margin: 1rem 0;
+                            .refer-icon{
+                                width: 40px;
+                                background: #fff;
+                                border-radius: 50%;
+                                height: 40px;
+                                line-height: 38px;
+                                text-align: center;
+                                margin: 0 0.5rem;
+                                font-size: 1.6rem;
+                            }
+                            #facebook{
+                                color: #337ab7;
+                            }
+                            #whatapp{
+                                color: #00b16b;
+                            }
+                        }
+                        @media (max-width: $sm) {
+                            justify-content: center;
                         }
                     }
                 }                

@@ -109,7 +109,9 @@ const { register,formState: reset } = useForm({
                                                     isshow ===false ?
                                                     <Form.Control type="text"  placeholder="Enter Client ID" className="btn-bg formcontrol" {...register('ext_user_id',{onChange:(e2) => {clientChange(e2)}})} />
                                                 :
-                                                <div  className="btn-bg formcontrol">{referal}</div>
+                                                <Form.Control type="email" placeholder={referal} className="btn-bg formcontrol"/>
+                                                // <div  className="btn-bg formcontrol">{referal}</div>
+                                                
                                                 }                
                                                 
                                         
