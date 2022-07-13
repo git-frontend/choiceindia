@@ -381,228 +381,24 @@ body {
   overflow: hidden;
 }
 
-.main-footer .footer-top-sec {
-  background: #221F20;
-  padding: 4rem 0;
-  position: relative;
-  z-index: 99999;
+/*Bootstrap Override*/
+/*Font family*/
+/*bg varibales*/
+/*textvaribales*/
+/*Responsive screen width*/
+.code-conduct-parent {
+  -webkit-animation: hideMe 4s forwards;
+          animation: hideMe 4s forwards;
 }
-.main-footer .footer-top-sec .top-sec-sub {
-  margin-bottom: 5rem;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset {
-  width: 33.33%;
-  padding: 0;
-  margin: 0;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset > li {
-  margin-bottom: 1rem;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset > li h4 {
-  color: #F5F5F5;
-  font-size: 1.4rem;
-  font-family: "PoppinsBold", sans-serif;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset > li a {
-  color: #F5F5F5;
-  font-size: 1.2rem;
-  text-decoration: none;
-  font-family: "PoppinsRegular", sans-serif, sans-serif;
-}
-.main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset > li a:hover {
-  color: #FFCE02;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .top-sec-quick-links .quick-links-list .reset {
-    padding: 1rem;
-  }
-}
-.main-footer .footer-top-sec .footer-cont-details {
-  text-align: right;
-}
-.main-footer .footer-top-sec .footer-cont-details p {
-  color: #F5F5F5;
-  font-size: 1.2rem;
-  position: relative;
-  padding-right: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-.main-footer .footer-top-sec .footer-cont-details p .fa {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  right: 0;
-  font-size: 1.5rem;
-  color: #F5F5F5;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .footer-cont-details p .fa {
-    right: inherit;
-    left: 0;
-  }
-}
-.main-footer .footer-top-sec .footer-cont-details p svg {
-  position: absolute;
-  top: 50%;
-  transform: translate(0, -50%);
-  right: 0;
-  font-size: 1.5rem;
-  color: #F5F5F5;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .footer-cont-details p svg {
-    right: inherit;
-    left: 0;
-  }
-}
-.main-footer .footer-top-sec .footer-cont-details p a {
-  color: #F5F5F5;
-  text-decoration: none;
-}
-.main-footer .footer-top-sec .footer-cont-details p a:hover {
-  color: #FFCE02;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .footer-cont-details p {
-    padding-left: 2.5rem;
-  }
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .footer-cont-details {
-    text-align: left;
-    margin-top: 2rem;
-  }
-}
-.main-footer .footer-top-sec .top-social-extra-links {
-  margin-top: 2.5rem;
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .top-social-extra-links .links-wrap-social {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .wrap-app-links {
-  display: flex;
-  margin-top: 2rem;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .wrap-app-links {
-    width: 100%;
-  }
-}
-@media (min-width: 769px) and (max-width: 1200px) {
-  .main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .wrap-app-links {
-    flex-direction: column;
-  }
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .footer-social-links {
-  display: flex;
-  margin-top: 2rem;
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .footer-social-links a {
-  width: 2.875rem;
-  height: 2.875rem;
-  display: block;
-  font-size: 1.375rem;
-  text-decoration: none;
-  background: #F5F5F5;
-  border-radius: 50%;
+
+.code-mainwrapper .head {
   color: #221F20;
-  position: relative;
-  margin-left: 1rem;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgb(0, 0, 0);
-  transition-duration: 0.3s;
-  transition-property: transform;
-  transition-timing-function: ease-out;
-  position: relative;
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .footer-social-links a .fa {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .footer-social-links a svg {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-.main-footer .footer-top-sec .top-social-extra-links .links-wrap-social .footer-social-links a:hover {
-  transform: translateY(-8px);
-  background-color: #FFCE02;
-}
-.main-footer .footer-top-sec .top-social-extra-links .extra-links-right {
+  font-weight: 600;
+  margin-bottom: 1.8rem;
   margin-top: 1rem;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
+  font-size: 1.7rem;
 }
-.main-footer .footer-top-sec .top-social-extra-links .extra-links-right > li {
-  margin-left: 2rem;
-  color: #9A9A9A;
-  font-family: "PoppinsMedium", sans-serif;
-  font-size: 1.2rem;
-}
-.main-footer .footer-top-sec .top-social-extra-links .extra-links-right > li a {
-  color: #9A9A9A;
-  font-family: "PoppinsMedium", sans-serif;
-  text-decoration: none;
-}
-.main-footer .footer-top-sec .top-social-extra-links .extra-links-right > li a:hover {
-  color: #FFCE02;
-}
-.main-footer .footer-top-sec .top-social-extra-links .extra-links-right > li .fa-heart {
-  color: #EF5350;
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .top-social-extra-links .extra-links-right > li {
-    margin: 0.5rem;
-    font-size: 1.1rem;
-  }
-}
-@media (max-width: 768px) {
-  .main-footer .footer-top-sec .top-social-extra-links .extra-links-right {
-    margin-top: 2rem;
-    justify-content: flex-start;
-  }
-}
-
-.footer-bottom {
-  padding: 4rem 0;
-  background: #292728;
-  z-index: 99999;
-  position: relative;
-}
-.footer-bottom p {
-  color: #ffffff;
-  font-family: "PoppinsMedium", sans-serif;
-  font-size: 1.1rem;
-  line-height: 2.8;
-}
-.footer-bottom .moreless-button {
-  color: #ffffff;
-  font-family: "PoppinsMedium", sans-serif;
-  font-size: 1.2rem;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.moretext {
-  display: none;
-}/*# sourceMappingURL=footer.css.map */
+.code-mainwrapper ul li {
+  margin-bottom: 2rem;
+  color: #707070;
+}/*# sourceMappingURL=code-conduct.css.map */
