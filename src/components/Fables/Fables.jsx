@@ -11,9 +11,7 @@ function Fables() {
 
   const [skeleton, setSkeleton] = useState(() => true);
 
-  useEffect(() => {
-    console.log("FFFFFFFFFF")
-  },[])
+  
 
   setTimeout(() => {
     setSkeleton(() => false);

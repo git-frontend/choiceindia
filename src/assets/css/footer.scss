@@ -5,6 +5,7 @@
         background: $bgcolordark;
         padding: 4rem 0;
         position: relative;
+        z-index: 99999;
         .top-sec-sub{
             margin-bottom: 5rem;
         }
@@ -200,6 +201,8 @@
 .footer-bottom{
     padding: 4rem 0;
     background: $bgcolor-graydark;
+    z-index: 99999;
+    position: relative;
     p{
         color: $whiteColor;
         font-family: $font-family-poppins-medium;

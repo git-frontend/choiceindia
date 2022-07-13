@@ -7,15 +7,17 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 
-import { IoMdInformationCircleOutline } from 'react-icons/io';
+import { CgAsterisk } from 'react-icons/cg';
 import contactService from '../../Services/contactService'
 import LazyLoader from '../Common-features/LazyLoader';
+import Spinner from 'react-bootstrap/Spinner';
 
 function Contactbanner() {
 
   const [datas, setdatas] = useState()
   let inputRef = "";
   const [data, setData] = useState("");
+  const [isloader,setIsloader]=useState(false);
 
 
   const phoneRegExp = /^((\+[1-9]{1,4}[ -]?)|(\([0-9]{2,3}\)[ -]?)|([0-9]{2,4})[ -]?)*?[0-9]{3,4}[ -]?[0-9]{3,4}$/
@@ -33,6 +35,10 @@ function Contactbanner() {
 
 
 
+
+
+
+
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
@@ -41,15 +47,19 @@ function Contactbanner() {
     setdatas(FormData)
     console.log("data", FormData);
     reset();
+    setIsloader(true)
+    
     contactService.contactForm(FormData).then(res => {
-
-      console.log("submitdata", res)
-
+      setIsloader(false)
+    
+      setData("Mail sent Successfully")
+      console.log("check",data)
 
     })
 
 
   }
+  
 
   // const [main, setMain] = useState(true);
   // const [first, setFirst] = useState(true);
@@ -111,14 +121,14 @@ function Contactbanner() {
             <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
               <div className="row d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">First Name <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
                   <span className="text-danger"> {errors?.firstName?.message} </span>
                 </Form.Group>
 
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Last Name <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
                   <span className="text-danger"> {errors?.lastName?.message} </span>
                 </Form.Group>
@@ -126,13 +136,13 @@ function Contactbanner() {
 
               <div className="row mt-3 d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">Email <IoMdInformationCircleOutline /></Form.Label>
+                  <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
                   <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
                   <span className="text-danger"> {errors?.email?.message} </span>
                 </Form.Group>
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Phone <IoMdInformationCircleOutline /> </Form.Label>
+                  <Form.Label className="formlabel"> Phone  <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
                   <span className="text-danger"> {errors?.mobile?.message} </span>
                 </Form.Group>
@@ -154,16 +164,19 @@ function Contactbanner() {
 
 
 
-              <label className="formlabel mt-5"> Your Question <IoMdInformationCircleOutline /></label>
+              <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
               <div className=" messagefield">
                 <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
                 <span className="text-danger"> {errors?.question?.message} </span>
               </div>
-
-              <div className="uploadbtn mt-3 d-flex ">
+              
+              <div className="uploadbtn mt-3 d-flex align-items-center">
+              <div style={{color:"green"}} className="feel-msg">{data}</div>
                 <Button variant="primary"
                   type="submit" className="btn-bg btn-bg-dark sendbtn">
-                  Send
+                  { isloader===false ? 
+                  "Send" : <Spinner animation="border" />
+                  }
                 </Button>
               </div>
             </Form>

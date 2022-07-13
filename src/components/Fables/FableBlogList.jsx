@@ -11,7 +11,9 @@ function FableBlogList() {
     const [data, setData] = useState([]);
     const [post, setPost] = useState([]);
     const [trigger, setTrigger] = useState(false);
+    const [check, setCheck] = useState(false);
     const [count,setCount] = useState(1)
+
 
     function loadfablecategory() {
         FablesTrending.fabalcategory().then(
@@ -27,6 +29,7 @@ function FableBlogList() {
         FablesTrending.fabalFolder(pros).then(
             res => {
                 setPost(res.data.posts);
+                // setPostAll(res.data.posts)
                 console.log("check222", res.data.posts)
                 // loadfaqFolder(res[0].category_linkage);
             }
@@ -61,7 +64,7 @@ function FableBlogList() {
                                         <li onClick={()=>{getfableFolder(res.fable_linkage)
                                         setCount(res.id)
                                         console.log("index",count)
-                                        }}>
+                                        }} key={res.id}>
                                             <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
                                         </li>
                                         
@@ -113,15 +116,18 @@ function FableBlogList() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
+
+                        {
+
                             <div className="tab-blog-list">
                             {
-                                post.map((res)=>{
+                                post.slice(0, check?post.length:3).map((res,index)=>{
                                     return(
                                           
-                                        <Link to={`/fablesdetail/${res.slug}`} className="tab-blog-item">
+                                        <Link  to={`/blog/${res.slug}`} className="tab-blog-item" key={res.id}>
                                     <div className="blog-item-img">
-                                        <LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />
-                                        {/* <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"} /> */}
+                                        {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
+                                        <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
                                     <div className="blog-item-des">
                                         <h4>{res.title}</h4>
@@ -137,49 +143,21 @@ function FableBlogList() {
                                     )
                                 })
                             }
-                               {/** <a href="/" className="tab-blog-item">
-                                    <div className="blog-item-img">
-                                        <img src={Blog1} className="" alt="loading" width={"402"} height={"300"} />
-                                    </div>
-                                    <div className="blog-item-des">
-                                        <h4>Shein setting a trend again for fashionistas – It’s a comeback</h4>
-                                        <p>It’s happening!! We have a great news for all the fashionistas and shopaholics out there</p>
-                                        <div className="d-flex justify-content-between">
-                                            <span className="sm-text">21 Aug 2021</span>
-                                            <span className="sm-text">@SachinChadda</span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="/" className="tab-blog-item">
-                                    <div className="blog-item-img">
-                                        <img src={Blog2} className="" alt="loading" width={"402"} height={"300"} />
-                                    </div>
-                                    <div className="blog-item-des">
-                                        <h4>How Indian Telcos are gearing up for 5G?</h4>
-                                        <p>5G is the game-changer in the world of communication and technology that will transform this entire landscape</p>
-                                        <div className="d-flex justify-content-between">
-                                            <span className="sm-text">21 Aug 2021</span>
-                                            <span className="sm-text">@SachinChadda</span>
-                                        </div>
-                                    </div>
-                                </a>
-                                <a href="/" className="tab-blog-item">
-                                    <div className="blog-item-img">
-                                        <img src={Blog3} className="" alt="loading" width={"402"} height={"300"} />
-                                    </div>
-                                    <div className="blog-item-des">
-                                        <h4>The journey of Idea cellular from idea to VI</h4>
-                                        <p>Idea cellular has been in the telecom industry for decades as a major mobile phone service operator in India</p>
-                                        <div className="d-flex justify-content-between">
-                                            <span className="sm-text">21 Aug 2021</span>
-                                            <span className="sm-text">@SachinChadda</span>
-                                        </div>
-                                    </div>
-                        </a> */}
+                              
                             </div>
+
+
+
+                        }
+
+                            
                         </div>
                     </div>
-                    <div className="row"><div className="col-md-12 d-flex justify-content-center"><a href="#"><span className="btn-bg">Explore All</span></a></div></div>
+                    {
+                        post.length > 3 ? 
+                        <div className="row"><div className="col-md-12 d-flex justify-content-center"><div style={{cursor:"pointer"}}><span className="btn-bg" onClick={()=>{setCheck(true)}}>Explore All</span></div></div></div>
+                      :""
+                    }
                 </div>
 
             </section>

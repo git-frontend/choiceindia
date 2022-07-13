@@ -6,10 +6,12 @@ import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import { useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
+import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
+import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
+import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
 
 
-
-function DematAccountForm() {
+function DematAccountForm(props) {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -20,16 +22,40 @@ function DematAccountForm() {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const [count, setCount] = useState(0);
-    const [otp, setOtp] = useState('');
-    const [OTPErrors, setOTPErrors] = useState('');
+    // const [count, setCount] = useState(0);
+    // const [otp, setOtp] = useState('');
+    // const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
     var otpSessionID = useRef('');
+    const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
   
+    function showOpenAccountAdPopup() {
+        setShowOpenAccountPopup(true);
+    }
+
+    function hideOpenAccountAdPopup() {
+        setShowOpenAccountPopup(false);
+        callOpenAccountAdPopupAgain();
+    }
+
+    function callOpenAccountAdPopupAgain() {
+        //after 15min
+        setTimeout(() => {
+            showOpenAccountAdPopup();
+        }, 900000)
+    }
+
+    useEffect(() => {
+        setTimeout(() => {
+            showOpenAccountAdPopup();
+        }, 60000);
+    }, []);
+
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
         // if (value) {
@@ -100,11 +126,11 @@ function DematAccountForm() {
         setShowErrorToaster(false);
     }
 
-    function resetOTPPopup() {
-        setOtp('');
-        setOTPErrors('');
-        setCount(30);
-    }
+    // function resetOTPPopup() {
+    //     setOtp('');
+    //     setOTPErrors('');
+    //     setCount(30);
+    // }
 
     function sendOTP() {
         showLoader('sendOTPLoader');
@@ -128,7 +154,7 @@ function DematAccountForm() {
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 otpSessionID.current = res.data.Body.otp_session_id;
                 fetchQueryParams();
-                resetOTPPopup();
+                // resetOTPPopup();
                 handleOTPShow();
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -153,161 +179,190 @@ function DematAccountForm() {
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
-    function handleOTP(e) {
-        let value = e.target.value.replace(/\D/g, "");
-        setOtp(value);
-        if (!value.length) {
-            setOTPErrors('OTP is required');
-        } else {
-            setOTPErrors('');
-        }
-    }
+    // function handleOTP(e) {
+    //     let value = e.target.value.replace(/\D/g, "");
+    //     setOtp(value);
+    //     if (!value.length) {
+    //         setOTPErrors('OTP is required');
+    //     } else {
+    //         setOTPErrors('');
+    //     }
+    // }
 
     useEffect(() => {
         fetchQueryParams();
     }, []);
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            if (!count) {
-                return () => clearInterval(interval);
-            }
-            setCount(seconds => seconds - 1);
-        }, 1000);
-        return () => clearInterval(interval);
-    }, [count]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         if (!count) {
+    //             return () => clearInterval(interval);
+    //         }
+    //         setCount(seconds => seconds - 1);
+    //     }, 1000);
+    //     return () => clearInterval(interval);
+    // }, [count]);
 
-    useEffect(() => {
-        if ('OTPCredential' in window) {
-            const input = document.getElementById('openAccountOTP');
-            if (!input) return;
-            const ac = new AbortController();
-            navigator.credentials.get({
-                otp: { transport: ['sms'] },
-                signal: ac.signal
-            }).then(otp => {
-                setOtp(otp.code);
-                verifyOTP();
-            }).catch(err => {
-                console.log(err);
-            });
-        }
-    }, []);
+    // useEffect(() => {
+    //     if ('OTPCredential' in window) {
+    //         const input = document.getElementById('openAccountOTP');
+    //         if (!input) return;
+    //         const ac = new AbortController();
+    //         navigator.credentials.get({
+    //             otp: { transport: ['sms'] },
+    //             signal: ac.signal
+    //         }).then(otp => {
+    //             setOtp(otp.code);
+    //             verifyOTP();
+    //         }).catch(err => {
+    //             console.log(err);
+    //         });
+    //     }
+    // }, []);
 
   // to verify the OTP 
-  function verifyOTP() {
-    if (!otp.length) {
-        setOTPErrors('OTP is required');
-    } else {
-        showLoader('verifyLoader');
-      let request = {
-        otp: otp,
-        session_id: otpSessionID.current
-      };
+//   function verifyOTP() {
+//     if (!otp.length) {
+//         setOTPErrors('OTP is required');
+//     } else {
+//         showLoader('verifyLoader');
+//       let request = {
+//         otp: otp,
+//         session_id: otpSessionID.current
+//       };
 
-      openAccountService.verifyOTP(request).then((res) => {
-          hideLoader('verifyLoader');
-          if (res && res.status === 200 && res.data && res.data.Body) {
-              if (res.data.Body.url) {
-                  window.location.href = res.data.Body.url;
-              } else {
-                window.location.href = "https://jiffy.choiceindia.com/auth/login"
-              }
-          } else {
-              setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-          }
-      }).catch((error) => {
-        hideLoader('verifyLoader');
-        if (error && error.response && error.response.data && error.response.data.Message) {
-            setOTPErrors(error.response.data.Message);
-        } else {
-            setOTPErrors("Something went wrong, please try again later!");
+//       openAccountService.verifyOTP(request).then((res) => {
+//           hideLoader('verifyLoader');
+//           if (res && res.status === 200 && res.data && res.data.Body) {
+//               if (res.data.Body.url) {
+//                   window.location.href = res.data.Body.url;
+//               } else {
+//                 window.location.href = "https://jiffy.choiceindia.com/auth/login"
+//               }
+//           } else {
+//               setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
+//           }
+//       }).catch((error) => {
+//         hideLoader('verifyLoader');
+//         if (error && error.response && error.response.data && error.response.data.Message) {
+//             setOTPErrors(error.response.data.Message);
+//         } else {
+//             setOTPErrors("Something went wrong, please try again later!");
+//         }
+//       });
+//     }
+//   }
+
+//     //resend OTP ON SMS
+//     function resendOTP() {
+//         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
+//             showLoader('resendOTPLoader');
+//             setOtp('');
+//             setOTPErrors('');
+//             let request = {
+//                 "mobile_no": mobileNumber,
+//                 "old_session_id": otpSessionID.current,
+//                 "request_source": "CHOICEINDIA"
+//             }
+
+//             openAccountService.resendOTPAgain(request).then((res) => {
+//                 hideLoader('resendOTPLoader');
+//                 setCount(30);
+//                 if (res && res.status === 200 && res.data && res.data.Body) {
+//                     otpSessionID.current = res.data.Body.session_id;
+//                     handleOTPResendSuccessToaster('otp');
+//                 } else {
+//                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
+//                 }
+//             }).catch((error) => {
+//                 hideLoader('resendOTPLoader');
+//                 setCount(30);
+//                 if (error && error.response && error.response.data && error.response.data.Message) {
+//                     setOTPErrors(error.response.data.Message);
+//                 } else {
+//                     setOTPErrors("Something went wrong, please try again later!");
+//                 }
+//             });
+//         }
+//     }
+
+//     //to get OTP ON CALL
+//     function getOTPOnCall() {
+//         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
+//             showLoader('OTPOnCallLoader');
+//             setOtp('');
+//             setOTPErrors('');
+//             let request = {
+//                 "mobile_no": mobileNumber,
+//                 "request_source": "CHOICEINDIA",
+//                 "session_id": otpSessionID.current,
+//             }
+//             openAccountService.OTPOnCall(request).then((res) => {
+//                 hideLoader('OTPOnCallLoader');
+//                 setCount(30);
+//                 if (res && res.status === 200 && res.data && res.data.Body) {
+//                     otpSessionID.current = res.data.Body.session_id;
+//                     handleOTPResendSuccessToaster('call');
+//                 } else {
+//                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
+//                 }
+//             }).catch((error) => {
+//                 hideLoader('OTPOnCallLoader');
+//                 setCount(30);
+//                 if (error && error.response && error.response.data && error.response.data.Message) {
+//                     setOTPErrors(error.response.data.Message);
+//                 } else {
+//                     setOTPErrors("Something went wrong, please try again later!");
+//                 }
+//             });
+//         }
+//     }
+
+    // function handleOTPResendSuccessToaster(type){
+    //     setOTPSendSuccessToaster({[type]: true});
+    //     setTimeout(()=>{
+    //         setOTPSendSuccessToaster({[type]: false});
+    //     },2000)
+    // }
+
+    useEffect(() => {
+        if (props.isFromFableDetails) {
+            window.addEventListener("scroll", onScroll);
+
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
         }
-      });
-    }
-  }
-
-    //resend OTP ON SMS
-    function resendOTP() {
-        if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
-            showLoader('resendOTPLoader');
-            setOtp('');
-            setOTPErrors('');
-            let request = {
-                "mobile_no": mobileNumber,
-                "old_session_id": otpSessionID.current,
-                "request_source": "CHOICEINDIA"
-            }
-
-            openAccountService.resendOTPAgain(request).then((res) => {
-                hideLoader('resendOTPLoader');
-                setCount(30);
-                if (res && res.status === 200 && res.data && res.data.Body) {
-                    otpSessionID.current = res.data.Body.session_id;
-                    handleOTPResendSuccessToaster('otp');
-                } else {
-                    setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-                }
-            }).catch((error) => {
-                hideLoader('resendOTPLoader');
-                setCount(30);
-                if (error && error.response && error.response.data && error.response.data.Message) {
-                    setOTPErrors(error.response.data.Message);
-                } else {
-                    setOTPErrors("Something went wrong, please try again later!");
-                }
-            });
+    }, [props.isFromFableDetails]);
+    
+      function onScroll() {
+        let element = document.getElementById('fablesdetail-title');
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          setFablesDetailTitleId(
+            rect.top >= 0 &&
+            rect.left >= 0 &&
+            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+          );
         }
-    }
-
-    //to get OTP ON CALL
-    function getOTPOnCall() {
-        if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
-            showLoader('OTPOnCallLoader');
-            setOtp('');
-            setOTPErrors('');
-            let request = {
-                "mobile_no": mobileNumber,
-                "request_source": "CHOICEINDIA",
-                "session_id": otpSessionID.current,
-            }
-            openAccountService.OTPOnCall(request).then((res) => {
-                hideLoader('OTPOnCallLoader');
-                setCount(30);
-                if (res && res.status === 200 && res.data && res.data.Body) {
-                    otpSessionID.current = res.data.Body.session_id;
-                    handleOTPResendSuccessToaster('call');
-                } else {
-                    setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
-                }
-            }).catch((error) => {
-                hideLoader('OTPOnCallLoader');
-                setCount(30);
-                if (error && error.response && error.response.data && error.response.data.Message) {
-                    setOTPErrors(error.response.data.Message);
-                } else {
-                    setOTPErrors("Something went wrong, please try again later!");
-                }
-            });
-        }
-    }
-
-    function handleOTPResendSuccessToaster(type){
-        setOTPSendSuccessToaster({[type]: true});
-        setTimeout(()=>{
-            setOTPSendSuccessToaster({[type]: false});
-        },2000)
-    }
+      }
 
     return (
         <>
+            {
+                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
+            }
+            {
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter> : ''
+            }
             <div className="demat-account-form">
 
                 <h3 className="form-ttl">Open Free Account</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
-                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
+                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol digit-otp" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
                             {
                                 errors.invalidMobile ? <Form.Control.Feedback type="invalid">Invalid Mobile Number</Form.Control.Feedback> : ''
                             }
@@ -334,14 +389,19 @@ function DematAccountForm() {
                         <div className="sub-formgrp mt-5 mb-0">
                             {
                                 <Button variant="primary"
-                                type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</Button>
+                                    type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
+                                    {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</Button>
                             }
                         </div>
                     </Form.Group>
                 </Form>
 
             </div>
+
+            {
+                showOTP ?
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+            }
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
@@ -356,7 +416,7 @@ function DematAccountForm() {
                 </Modal.Footer>
             </Modal>
 
-            <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
+            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter OTP</Modal.Title>
@@ -396,9 +456,9 @@ function DematAccountForm() {
                         </div>
                     </div>
 
-
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
-            </Modal>
+            </Modal> */}
 
             <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
                 keyboard={false} centered>

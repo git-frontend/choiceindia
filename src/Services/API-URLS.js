@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -11,7 +11,8 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
+    // https://researchreportapi.jiffy.in/api/report/
+    liveJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
     // https://researchreportapi.jiffy.in/api/report/market-insights
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
@@ -20,13 +21,15 @@ const config = {
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
-    livereferURL: "https://stage-partner-api.theflyy.com/",
-    UATreferURL: "https://stage-partner-api.theflyy.com/",
-
+    livereferURL: "https://uatapi.choicebroking.in/api/middleware",
+    UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
+    liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
 
 export class API_URLS {
 
+    JiffyBaseURL = '';
     LMSBaseURL = '';
     OnbBaseURL = '';
     jiffyResearchURL = "";
@@ -42,7 +45,7 @@ export class API_URLS {
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
     /** refer and earn URL */
-    referURL = "https://stage-partner-api.theflyy.com/"
+    referURL = "https://uatapi.choicebroking.in/api/middleware"
 
 
 
@@ -97,13 +100,15 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
 
     /** Sub Broker APIs */
-
-    getCityURL = 'city/list?is_refresh=Y';
+    // ?is_refresh=Y
+    getCityURL = 'city/list';
     getStateURL = 'state/list?is_refresh=Y';
     checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
     sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
     verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
     addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
+
+    getExpertResearchURL = 'api/research-report-new';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -116,6 +121,7 @@ export class API_URLS {
         * @param {*} configKey 
         */
     setConfig(configKey) {
+        this.setJiffyServerURL(config[configKey + 'JiffyBaseURL']);
         this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
@@ -129,6 +135,10 @@ export class API_URLS {
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
         this.setreferURL(config[configKey + 'referURL']);
+    }
+
+    setJiffyServerURL = (url) => {
+        this.JiffyBaseURL = url;
     }
 
     setLMSServerURL = (url) => {
@@ -309,12 +319,16 @@ export class API_URLS {
         return this.OnbBaseURL + this.addNewLeadURL;
     }
 
-    getreferearnURL(){
-        return this.referURL + this.earnURL;
+    getreferearnURL(id){
+        return this.referURL + `/GetUserReferralData?ClientID=${id}`;
     }
 
     getreferallink(id){
         return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
+    }
+
+    getExpertResearchreportURL() {
+        return this.JiffyBaseURL + this.getExpertResearchURL;
     }
 
 }

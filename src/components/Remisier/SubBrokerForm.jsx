@@ -7,7 +7,6 @@ import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
-import Select from 'react-dropdown-select';
 import { Link } from "react-router-dom";
 function DematAccountForm() {
 
@@ -71,7 +70,7 @@ function DematAccountForm() {
     }
 
     function handleBrokerCityBranch(e) {
-        let value = e[0].leadCity;
+        let value = e.target.value;
         setBrokerCityBranch(value);
         setErrors((prevError) => ({
             ...prevError,
@@ -87,7 +86,7 @@ function DematAccountForm() {
     }
 
     function handleBrokerState(e) {
-        let value = e[0].stateName;
+        let value = e.target.value;
         setBrokerState(value);
         setErrors((prevError) => ({
             ...prevError,
@@ -239,9 +238,6 @@ function DematAccountForm() {
 
     function handleBrokerCreatedSuccessShow() {
         setBrokerCreatedSuccess(true);
-        setTimeout(()=>{
-            setBrokerCreatedSuccess(false);
-        },2000)
     }
 
     function handleBrokerCreatedSuccessClose() {
@@ -271,10 +267,8 @@ function DematAccountForm() {
     }
 
     function fetchCities() {
-        showLoader('citiesLoader');
         subBrokerService.getCities().then((res) => {
             console.log(res, "res cities");
-            hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
             } else {
@@ -282,16 +276,13 @@ function DematAccountForm() {
             }
         }).catch((error) => {
             console.log(error, "error cities");
-            hideLoader('citiesLoader');
             setCitiesDropdown([]);
         });
     }
 
     function fetchState() {
-        showLoader('stateLoader');
         subBrokerService.getStates().then((res) => {
             console.log(res, "res states");
-            hideLoader('stateLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.StateMasterList) {
                 setStatesDropdown(res.data.Body.StateMasterList);
             } else {
@@ -299,7 +290,6 @@ function DematAccountForm() {
             }
         }).catch((error) => {
             console.log(error, "error states");
-            hideLoader('stateLoader');
             setStatesDropdown([]);
         });
     }
@@ -361,10 +351,6 @@ function DematAccountForm() {
     }, [brokerEmail]);
 
     useEffect(() => {
-        checkWebOTP();
-    }, [loaders.resendOTPLoader || loaders.sendOTPLoader]);
-
-    function checkWebOTP() {
         if ('OTPCredential' in window) {
             const input = document.getElementById('subBrokerOTP');
             if (!input) return;
@@ -374,11 +360,12 @@ function DematAccountForm() {
                 signal: ac.signal
             }).then(otp => {
                 setOtp(otp.code);
+                verifyOTP();
             }).catch(err => {
                 console.log(err);
             });
         }
-    }
+    }, []);
 
     function checkExistence() {
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
@@ -538,11 +525,11 @@ function DematAccountForm() {
         });
     }
 
-    function handleOTPResendSuccessToaster() {
+    function handleOTPResendSuccessToaster(){
         setOTPSendSuccessToaster(true);
-        setTimeout(() => {
+        setTimeout(()=>{
             setOTPSendSuccessToaster(false);
-        }, 2000)
+        },2000)
     }
 
     function resetBrokerForm() {
@@ -560,13 +547,8 @@ function DematAccountForm() {
 
     return (
         <>
-            <div className="demat-account-form" id="sub-broker-form">
-            
+            <div className="demat-account-form">
 
-                {
-                    (brokerCreatedSuccess) ?
-                        <Alert key='success' variant='success' onClose={handleBrokerCreatedSuccessClose} dismissible>Successfully!</Alert> : ''
-                }
                 <h3 className="form-ttl">Become a Sub Broker</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -609,34 +591,32 @@ function DematAccountForm() {
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
-                            {/* <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
+                            <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
                                 {
                                     citiesDropdown.map((item) => {
                                         return <option key={item.id} value={item.leadCity}>{item.leadCity}</option>;
                                     })
                                 }
-                            </Form.Select> */}
-                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} />
+                            </Form.Select>
                             {
-                                errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
+                                errors.brokerCityBranch.required ? <Form.Control.Feedback type="invalid">Nearest City Branch is required</Form.Control.Feedback> : ''
                             }
 
                         </div>
                         {
                             showState ?
                                 <div className="sub-formgrp">
-                                    {/* <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
+                                    <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
                                         <option value="">Select State</option>
                                         {
                                             statesDropdown.map((item) => {
                                                 return <option key={item.id} value={item.stateName}>{item.stateName}</option>;
                                             })
                                         }
-                                    </Form.Select> */}
-                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} />
+                                    </Form.Select>
                                     {
-                                        errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
+                                        errors.brokerState.required ? <Form.Control.Feedback type="invalid">State is required</Form.Control.Feedback> : ''
                                     }
                                 </div> : ''
                         }
@@ -670,12 +650,12 @@ function DematAccountForm() {
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
                     <div className="close">
-                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} class="closebtn" >&times;</a>
+                            <Link to="" class="closebtn" >&times;</Link>
                             </div>
                         <div className="popup-sub-right">
 
                             <div>
-                                <img src={OTPimage} alt='OTP Image' />
+                                <img src={OTPimage} />
 
                                 <p className="heading">OTP Verification</p>
                                 <p className="subheading">A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}</p>
@@ -688,7 +668,7 @@ function DematAccountForm() {
                             <div>
 
 
-                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                 {
                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                 }
@@ -783,7 +763,7 @@ function DematAccountForm() {
                 </Modal.Body>
             </Modal> */}
 
-            {/* <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
+            <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
                     <Modal.Title>Success</Modal.Title>
@@ -794,7 +774,7 @@ function DematAccountForm() {
                         Okay
                     </Button>
                 </Modal.Footer>
-            </Modal> */}
+            </Modal>
 
         </>
     );

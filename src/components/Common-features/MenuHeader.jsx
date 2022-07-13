@@ -31,13 +31,13 @@ export default function Header() {
                                 <NavLink to= '/about-us' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>About</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/app' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
+                                <NavLink to= '/online-trading-app' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to= '/services'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/research'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                                <NavLink to= '/research-listing-new'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             {/* <li className="nav-item">
                                 <NavLink to= '/career'  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
@@ -46,13 +46,13 @@ export default function Header() {
                                 <NavLink to= '/partner'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/contact' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
+                                <NavLink to= '/contact-us' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
                                 <a href='https://jiffy.choiceindia.com/auth/login' className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
                             </li>
                             <li className="nav-item get-btn">
-                            <NavLink className="nav-link"  to='/Open-Demat-Account'>Open Free Account</NavLink>
+                            <NavLink className="nav-link"  to='/open-free-demat-account'>Open Free Account</NavLink>
                             </li>
                         </ul>
                     </div>
