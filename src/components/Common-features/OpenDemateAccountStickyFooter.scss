@@ -15,7 +15,7 @@
 
     .text {
         font-size: 2rem;
-        line-height: 4rem;
+        line-height: 2.5rem;
         font-family: $font-family-poppins-bold;
         color: $whiteColor;
 
@@ -34,7 +34,7 @@
         color: $whiteColor;
         border: 1px solid $whiteColor;
     }
-
+  
     form .form-group {
         position: relative;
     }
@@ -124,7 +124,7 @@
     .sendotp {
         background-color: $whiteColor;
         border-radius: 8px;
-        padding: 12px 27px;
+        padding: 12px 24px;
         color: $primary;
 
         span {

@@ -132,9 +132,9 @@ function OpenDemateAccountPopup({hideComponent}) {
             showOpenAccountPopup ?
             <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
-                <div className="close">
+                {/* <div className="close">
                             <Link to="" class="closebtn" >&times;</Link>
-                            </div>
+                            </div> */}
                     <div className="popup-sub-row">
                         <div className="leftwrap">
                             <div className="popup-sub">
@@ -185,7 +185,7 @@ function OpenDemateAccountPopup({hideComponent}) {
         {
             showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
         }
-            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static" className="termcondition"
                 keyboard={false} centered>
                 <Modal.Header>
                     <Modal.Title>Attention</Modal.Title>
