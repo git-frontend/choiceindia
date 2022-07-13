@@ -121,14 +121,14 @@ function Contactbanner() {
             <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
               <div className="row d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">First Name  <span className="warning"><CgAsterisk /></span> </Form.Label>
+                  <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
                   <span className="text-danger"> {errors?.firstName?.message} </span>
                 </Form.Group>
 
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Last Name <span className="warning"><CgAsterisk /></span> </Form.Label>
+                  <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
                   <span className="text-danger"> {errors?.lastName?.message} </span>
                 </Form.Group>
@@ -136,13 +136,13 @@ function Contactbanner() {
 
               <div className="row mt-3 d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">Email  <span className="warning"><CgAsterisk /></span></Form.Label>
+                  <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
                   <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
                   <span className="text-danger"> {errors?.email?.message} </span>
                 </Form.Group>
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Phone  <span className="warning"><CgAsterisk /></span> </Form.Label>
+                  <Form.Label className="formlabel"> Phone  <span className="warning">*</span> </Form.Label>
                   <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
                   <span className="text-danger"> {errors?.mobile?.message} </span>
                 </Form.Group>
@@ -164,7 +164,7 @@ function Contactbanner() {
 
 
 
-              <label className="formlabel mt-5"> Your Question <span className="warning"><CgAsterisk /></span></label>
+              <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
               <div className=" messagefield">
                 <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
                 <span className="text-danger"> {errors?.question?.message} </span>
