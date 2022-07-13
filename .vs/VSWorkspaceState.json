@@ -4,8 +4,8 @@
     "\\src",
     "\\src\\assets",
     "\\src\\components",
-    "\\src\\components\\NRIDemateAccount"
+    "\\src\\components\\AuthorizedPerson"
   ],
-  "SelectedNode": "\\src\\components\\NRIDemateAccount\\LowBrokerageNRIDematAccount.jsx",
+  "SelectedNode": "\\src\\components\\AuthorizedPerson\\AuthorizeMoreContent.jsx",
   "PreviewInSolutionExplorer": false
 }

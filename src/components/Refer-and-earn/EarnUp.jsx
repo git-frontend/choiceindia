@@ -1,6 +1,6 @@
 
 import React from "react";
-import Speaker from '../../assets/images/refer-earn/speaker.webp';
+import Speaker from '../../assets/images/refer-earn/earn-demat-account-referral-incentive.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function EarnUp() {
@@ -13,7 +13,7 @@ function EarnUp() {
                       <div className="col-md-12">
                           <div className="top-foot-sec">
                               <div className="foot-sec-left">
-                                  <LazyLoader src={Speaker} alt={"Banner Images"} className={"img-fluid"} width={"80"} height={"77"} />
+                                  <LazyLoader src={Speaker} alt={"Earn Demat Account Referral Incentive"} className={"img-fluid"} width={"80"} height={"77"} />
                                       <h3>Earn up to Rs.1000 incentive <span>per referral now!</span> </h3>
                             </div>
                                   <div className="foot-sec-right">
