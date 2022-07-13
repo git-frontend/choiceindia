@@ -7,7 +7,7 @@ import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
-
+import { Link } from "react-router-dom";
 function DematAccountForm() {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
@@ -657,7 +657,9 @@ function DematAccountForm() {
                 <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
-
+                    <div className="close">
+                            <Link to="" class="closebtn" >&times;</Link>
+                            </div>
                         <div className="popup-sub-right">
 
                             <div>

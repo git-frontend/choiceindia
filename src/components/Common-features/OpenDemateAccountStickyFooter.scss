@@ -2,37 +2,37 @@
 @import '../../assets/css/customvariable.scss';
 .stickybottom {
     padding: 1rem;
-    background-color: #221F20;
+    background-color: $primary;
     position: fixed;
     bottom: 0px;
     width: 100%;
     z-index: 99999;
     left: 0;
 
-    @media (max-width:767px) {
+    @media (max-width:$sm) {
         display: none !important;
     }
 
     .text {
-        font-size: 22px;
-        line-height: 40px;
+        font-size: 2rem;
+        line-height: 4rem;
         font-family: $font-family-poppins-bold;
-        color: #FFFFFF;
+        color: $whiteColor;
 
         @media (min-width:768px) and (max-width:1024px) {
-            font-size: 18px;
+            font-size: 1.5rem;
             line-height: 27px;
         }
 
         span {
-            color: #FFCA05;
+            color: $bgcolor-yellow;
         }
     }
 
     .mobile {
         background-color: transparent;
-        color: #ffffff0d;
-        border: 1px solid #FFFFFF;
+        color: $whiteColor;
+        border: 1px solid $whiteColor;
     }
 
     form .form-group {
@@ -43,9 +43,9 @@
         position: absolute;
         left: 15px;
         top: 17%;
-        font-size: 14px;
+        font-size: 1rem;
         font-weight: 400;
-        color: #fff;
+        color: $whiteColor;
         opacity: 50%;
         transition: all 0.5s ease;
         pointer-events: none;
@@ -54,10 +54,10 @@
 
 
     form .form-group .write {
-        color: #FFFFFF;
+        color: $whiteColor;
         width: 100%;
         padding: 5px 13px 5px 17px;
-        border: 1px solid #FFFFFF;
+        border: 1px solid $whiteColor;
         border-radius: 8px;
         outline: none;
         padding-bottom: 5px;
@@ -86,7 +86,7 @@
     form .form-check label {
         font-size: 16px;
         font-weight: 400;
-        color: #231F20;
+        color: $primary;
         line-height: 19px;
         padding-left: 20px;
     }
@@ -102,7 +102,7 @@
         width: calc(100% - 20px);
         font-size: 16px;
         text-align: left;
-        color: #fff;
+        color: $whiteColor;
     }
 
     .tnc {
@@ -114,7 +114,7 @@
         }
 
         .tc {
-            color: #fff;
+            color: $whiteColor;
             font-weight: 600;
             text-decoration: none;
             cursor: pointer;
@@ -122,13 +122,13 @@
     }
 
     .sendotp {
-        background-color: #FFFFFF;
+        background-color: $whiteColor;
         border-radius: 8px;
-        padding: 10px 27px;
-        color: #221F20;
+        padding: 12px 27px;
+        color: $primary;
 
         span {
-            color: #221F20;
+            color: $primary;
             font-size: 1.5rem;
             text-align: center;
             line-height: 36px;
@@ -155,30 +155,30 @@
         width: 100%;
         left: 0;
         display: none !important;
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             display: block !important;
         }
         .openbtn{
             border-radius: 0 !important;
             width: 100%;
-            background-color: #231F20;
-            font-size: 20px;
+            background-color: $primary;
+            font-size: 1.5rem;
             border-radius: 8px;
             font-weight: bold;
-            color: #FFCB05;
+            color: $bgcolor-yellow;
             text-align: center;
             vertical-align: middle;
             user-select: none;
             border: 1px solid transparent;
             padding: 11px 13px;
-            font-family: "PoppinsRegular", sans-serif;
+            font-family: $font-family-poppins-regular;
         }
  
 }
 .loaderB {
     border: 5px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 5px solid #221F20;
+    border-top: 5px solid $primary;
     width: 30px;
     height: 30px;
     -webkit-animation: spin 2s linear infinite;
