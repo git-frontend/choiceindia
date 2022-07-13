@@ -52,14 +52,17 @@ export default function FaqBody() {
   });
 
   function loadfaqsearch() {
-   
+    
     chapterScroll('faq-section')
-    setIsactive(false)
+    setIsactive(true)
+    console.log("check div",isarticle)
    
     faqService.FaqSearch(data).then(
       res => {
-        setIsactive(true)
+        setIsactive(true);
+        setIsarticle(false);
         setSearchlist(res);
+        console.log("check api",isarticle)
      
   }
     )
@@ -93,6 +96,7 @@ export default function FaqBody() {
         setList(res);
         loadfaqFolder(res[0].category_linkage);
         setIsloader(false)
+        console.log("check category",isactive)
       }
     )
   };
@@ -128,6 +132,7 @@ export default function FaqBody() {
     if (trigger === true) {
       loadfaqcategory();
       categoryClick();
+      console.log("check useEffect",isarticle)
       
       
 
