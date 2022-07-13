@@ -107,7 +107,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/fablesdetail/:id' element={
+                        <Route exact path='/blog/:id' element={
                             <React.Suspense>
                                 < LazyFableDetail />
                             </React.Suspense>
@@ -119,18 +119,18 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/investor-info' element={
+                        <Route exact path='/investors' element={
                             <React.Suspense>
                                 < LazyInvestorInfo />
                             </React.Suspense>
                         } />
-                        <Route exact path='/code-conduct' element={
+                        <Route exact path='/code-of-conduct' element={
                             <React.Suspense>
                                 < LazyCodeConduct />
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/pricing' element={
+                        <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
                                 < Lazypricing />
                             </React.Suspense>
@@ -181,12 +181,12 @@ function Routing() {
                                 < Lazyminordemateaccount />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-hindi' element={
+                        <Route exact path='/hindi/open-demat-trading-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccounthindi />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-marathi' element={
+                        <Route exact path='/marathi/open-demat-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccountmarathi />
                             </React.Suspense>

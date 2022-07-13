@@ -64,7 +64,7 @@ function FableBlogList() {
                                         <li onClick={()=>{getfableFolder(res.fable_linkage)
                                         setCount(res.id)
                                         console.log("index",count)
-                                        }}>
+                                        }} key={res.id}>
                                             <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
                                         </li>
                                         
@@ -124,7 +124,7 @@ function FableBlogList() {
                                 post.slice(0, check?post.length:3).map((res,index)=>{
                                     return(
                                           
-                                        <Link  to={`/fablesdetail/${res.slug}`} className="tab-blog-item">
+                                        <Link  to={`/blog/${res.slug}`} className="tab-blog-item" key={res.id}>
                                     <div className="blog-item-img">
                                         {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>

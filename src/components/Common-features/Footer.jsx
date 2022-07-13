@@ -62,10 +62,10 @@ function Footer() {
                             <a href="https://choiceindia.com/our-team" target="_blank">Our Team</a>
                           </li>
                           <li>
-                            <Link to="/investor-info">Investors</Link>
+                            <Link to="/investors">Investors</Link>
                           </li>
                           <li>
-                            <Link to="/pricing">Pricing</Link>
+                            <Link to="/brokerage-charges">Pricing</Link>
                           </li>
                           <li>
                             <Link to="/career">Careers</Link>
