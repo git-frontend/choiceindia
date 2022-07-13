@@ -7,7 +7,7 @@ import "../Common-features/demat-form.scss"
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
-// import Select from 'react-dropdown-select';
+import Select from 'react-dropdown-select';
 
 function DematAccountForm() {
 
@@ -609,16 +609,15 @@ function DematAccountForm() {
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
-                            { <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
+                            {/* <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
                                 {
                                     citiesDropdown.map((item) => {
                                         return <option key={item.id} value={item.leadCity}>{item.leadCity}</option>;
                                     })
                                 }
-                            </Form.Select> 
-                            
-                            /* <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} /> */}
+                            </Form.Select> */}
+                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
                             }
@@ -627,15 +626,15 @@ function DematAccountForm() {
                         {
                             showState ?
                                 <div className="sub-formgrp">
-                                    <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
+                                    {/* <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
                                         <option value="">Select State</option>
                                         {
                                             statesDropdown.map((item) => {
                                                 return <option key={item.id} value={item.stateName}>{item.stateName}</option>;
                                             })
                                         }
-                                    </Form.Select>
-                                    {/* <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} /> */}
+                                    </Form.Select> */}
+                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
