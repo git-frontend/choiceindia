@@ -8,7 +8,7 @@ import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
 import Select from 'react-dropdown-select';
-
+import { Link } from "react-router-dom";
 function DematAccountForm() {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
@@ -669,7 +669,9 @@ function DematAccountForm() {
                 <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
-
+                    <div className="close">
+                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} class="closebtn" >&times;</a>
+                            </div>
                         <div className="popup-sub-right">
 
                             <div>
@@ -686,7 +688,7 @@ function DematAccountForm() {
                             <div>
 
 
-                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                 {
                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                 }
