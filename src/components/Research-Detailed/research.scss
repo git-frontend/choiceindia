@@ -1,0 +1,319 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+
+.research-detailed{
+  padding-top: 5rem;
+  position: relative;
+  .right-pdf-sec{
+    position: relative;
+    .ico-pdf{
+      position: absolute;
+      top: -1rem;
+      right: 0;
+      z-index: 99;
+    }
+  }
+  &::after {
+    content: '';
+    width: 15rem;
+    height: 29rem;
+    display: block;
+    position: absolute;
+    left: -2rem;
+    bottom: 50%;
+    background: url(../../assets/images/investor-info/investorinfoafterimage.png) no-repeat top left;
+    background-size: contain;
+
+    @media (max-width: $sm) {
+        display: none;
+    }
+}
+  .bnr-left{
+    position: relative;
+    z-index: 9;
+    .title{
+      color: $primary;
+      font-family: $font-family-poppins-semibold;
+      margin-bottom: 6.5rem;
+      span{
+        color: $bgcolor-yellow;
+      }
+      @media (max-width: $md) {
+        margin-bottom: 2.5rem;
+      }
+    }
+    h4{
+      color: $secondary;
+      font-family: $font-family-poppins-semibold;
+      margin-top: 5rem;
+      margin-bottom: 2rem;
+    }
+    p{
+      color: $secondary;
+      font-family: $font-family-poppins-regular;
+      margin-top: 2rem;
+    }
+    ul{
+      li{
+        color: $secondary;
+        font-size: 1.375rem;
+        font-family: $font-family-poppins-regular;
+        font-weight: 400;
+        margin: 1rem 0;
+      }
+    }
+  }
+  .mid-box-value{
+    background: $whiteColor;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 18px;
+    padding: 3rem 4rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 6rem 0 10rem 0;
+    .mid-box-left{
+      width: 70%;
+      border-right: 2px solid #9F9F9FB2;
+      padding-right: 7rem;
+      .ttl-mn{
+        font-size: 2.5rem;
+        font-family: $font-family-poppins-semibold;
+        color: $bgcolor-yellow;
+        margin-bottom: 3rem;
+        span{
+          color: #221F2080;
+          font-size: 1.3rem;
+          font-family: $font-family-poppins-regular;
+          @media (max-width: $md) {
+            display: block;
+          }
+        }
+        @media (max-width: $md) {
+          font-size: 1.8rem;
+        }
+      }
+      .value-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .vl-list-itm{
+          text-align: center;
+          h4{
+            font-family: $font-family-poppins-semibold;
+            color: $primary;
+            margin-bottom: 1.5rem;
+          }
+          h5{
+            &.grn-txt{
+              color: #00B26B;
+            }
+          }
+          @media (max-width: $xs) {
+            width: 50%;
+            margin-bottom: 3rem;
+          }
+        }
+        @media (max-width: $xs) {
+          justify-content: center;
+        }
+      }
+      @media (max-width: $md) {
+        width: 65%;
+        padding-right: 2.5rem;
+      }
+      @media (max-width: $sm-x) {
+        width: 100%;
+        border: 0;
+        padding: 0;
+        text-align: center;
+        border-bottom: 2px solid #9F9F9FB2;
+        padding-bottom: 3rem;
+      }
+      @media (max-width: $xs) {
+        padding-bottom: 0;
+      }
+    }
+    .mid-box-right{
+      width: 30%;
+      text-align: center;
+      .ttl-rght{
+        font-family: $font-family-poppins-semibold;
+        font-size: 2.25rem;
+        @media (max-width: $md) {
+          font-size: 1.8rem;
+        }
+      }
+      .btn-buy{
+        color: #ffffff;
+        text-decoration: none;
+        padding: 0.5rem 2.5rem;
+        display: inline-block;
+        border-radius: 8px;
+        font-size: 1.3rem;
+        transition: 0.5s;
+        margin-left: 1rem;
+        text-transform: uppercase;
+        -webkit-transition: 0.5s;
+        -moz-transition: 0.5s;
+        -ms-transition: 0.5s;
+        -o-transition: 0.5s;
+        background: #00B26B;
+        margin-top: 2.5rem;
+      }
+      
+      @media (max-width: $md) {
+        width: 35%;
+      }
+      @media (max-width: $sm-x) {
+        width: 100%;
+        padding-top: 3rem;
+      }
+    }
+    @media (max-width: $md) {
+      padding: 3rem 2rem;
+    }
+  }
+  @media (max-width: $md) {
+    padding-top: 2rem;
+  }
+}
+
+.res-trending-reports{
+ padding: 0 0 10rem 0;
+ .heading-sec{
+  margin-bottom: 7rem;
+ }
+ .res-detailtab-cont{
+  .res-detailtab-list{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .res-tab-itm{
+          width: 48%;
+          display: flex;
+          align-items: center;
+          flex-wrap: wrap;
+          margin-bottom: 6rem;
+          .tab-itm-img{
+              width: 38%;
+              .thumb-img{
+                  border-radius: 20px;
+                  width: 100%;
+                  object-fit: cover;
+              }
+              @media (max-width: $xs) {
+                width: 100%;
+                margin-bottom: 2.5rem;
+              }
+          }
+          .tab-itm-des{
+              width: 62%;
+              padding-left: 2rem;
+              .ttl-des{
+                  font-size: 1.5rem;
+                  line-height: 2.2rem;
+                  color: $primary;
+                  font-family:$font-family-poppins-semibold;
+                  margin-bottom: 1rem;
+                  .info-txt{
+                    display: block;
+                    text-transform: uppercase;
+                    color: #25B8AF;
+                    margin-top: 2rem;
+                  }
+              }
+              .tag-pref{
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
+              }
+              .itm-des-sub{
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 3rem;
+                  align-items: flex-end;
+                  .date-post{
+                      font-size: 1.25rem;
+                      color: $primary;
+                      opacity: 0.5;
+                      font-family:$font-family-poppins-regular;
+                  }
+                  .btn-sm{
+                    color: $whiteColor;
+                    background: $secondary;
+                    text-decoration: none;
+                    padding: 0.5rem 2rem;
+                    display: block;
+                    border-radius: 8px;
+                    font-size: 1.3rem;
+                    transition: 0.5s;
+                  -webkit-transition: 0.5s;
+                  -moz-transition: 0.5s;
+                  -ms-transition: 0.5s;
+                  -o-transition: 0.5s;
+                    &.grn-btn{
+                      background: #00B26B;
+                      padding: 0.5rem 1.5rem;
+                      min-width: 130px;
+                      text-align: center;
+                    }
+                    &.red-btn{
+                      background: #EF404A;
+                      padding: 0.5rem 1.5rem;
+                      min-width: 130px;
+                      text-align: center;
+                    }
+                    &:hover{
+                      background: $primary;
+                      color: $whiteColor;
+                    }
+                  }
+                  .post-read{
+                      color: $primary;
+                      text-decoration: none;
+                      position: relative;
+                      font-size: 1.25rem;
+                      display: block;
+                      font-family: $font-family-poppins-medium;
+                      padding-right: 2.8rem;
+                      &::before{
+                        content: '';
+                        background: url(../../assets/images/research/arrow-left.svg) no-repeat;
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        position: absolute;
+                        background-size: contain;
+                        right: 0;
+                        top: 0;
+                      }
+                  }
+                  
+              }
+              @media (max-width: $xs) {
+                width: 100%;
+                padding-left: 0;
+              }
+          }
+          &.fundamentals-itm{
+            .tab-itm-des{
+              h4{
+                color: #908E8F;
+                font-family: $font-family-poppins-semibold;
+                .grn-txt{
+                  color: #00B26B;
+                }
+              }
+              .itm-des-sub{
+                margin-top: 1rem;
+              }
+            }
+          }
+          @media (max-width: $md) {
+            width: 100%;
+          }
+      }
+  }
+}
+}
