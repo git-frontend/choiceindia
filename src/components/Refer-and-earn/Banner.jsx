@@ -34,7 +34,23 @@ function Banner() {
        /** Get  cliend id  */
    const clientChange = (e2) => {
     referid = e2.target.value;
+      if(referid.length === 0){
+        setShow('Get Link');
+        setIsShow(false);
+        setIserror(false);
+      }
 };
+
+function referlink(){
+    let valueearn=document.getElementById('referalid');
+    valueearn.value =referal
+
+    console.log("value",valueearn);
+    console.log("value2",referal);
+
+    
+
+}
 
 function loadrefer() {
     setIsloader(true)
@@ -49,11 +65,16 @@ function loadrefer() {
             
 
         } else{
-            setreferal(res.Response.referral_link);
+            
+        setreferal(res.Response.referral_link);
         setShow('Copy Link');
+        let valueearn=document.getElementById('referalid');
+        valueearn.value =res.Response.referral_link;
+        
         setIsShow(true);
         setIserror(false)
-        console.log("show",show)
+        setreferal1(res.Status)
+        console.log("show",res.Status)
 
         }
     
@@ -82,8 +103,9 @@ const { register,formState: reset } = useForm({
   });
 
   const copy = async () => {
+    setShow('Copied')
     await navigator.clipboard.writeText(referal);
-    setShow('Copied');
+    
   }
 
 
@@ -92,7 +114,7 @@ const { register,formState: reset } = useForm({
 
 
             <section className="ref-sec-banner">
-                <div className="container">
+                <div className="container" id="refer&earn">
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-md-7">
                             <div className="sec-banner-left">
@@ -105,19 +127,17 @@ const { register,formState: reset } = useForm({
                                    
                                         <div className="refer-form"> 
                                             <Form.Group className="formgrp sub-formgrp" >
-                                                {
-                                                    isshow ===false ?
-                                                    <Form.Control type="text"  placeholder="Enter Client ID" className="btn-bg formcontrol" {...register('ext_user_id',{onChange:(e2) => {clientChange(e2)}})} />
-                                                :
-                                                <Form.Control type="email" placeholder={referal} className="btn-bg formcontrol"/>
-                                                // <div  className="btn-bg formcontrol">{referal}</div>
+
+                                            
+                                                    <Form.Control type="text" id="referalid" autoComplete="off"  placeholder="Enter Client ID" className={"btn-bg formcontrol "+(isshow? 'smallcase':'')} {...register('referid',{onChange:(e2) => {clientChange(e2)}})} />
+                                               
                                                 
-                                                }                
+                                                               
                                                 
                                         
-                                            { show === 'Copy Link' ?
+                                            { show === 'Copy Link' || show === 'Copied' ?
                                                 <Button variant="primary"
-                                                    type="submit" onClick={copy}  className="btn-bg sendbtn">
+                                                    type="submit" onClick={copy} className="btn-bg sendbtn">
                                                         
                                                     {show}
                                                 </Button>
@@ -148,6 +168,15 @@ const { register,formState: reset } = useForm({
                                                     :
                                                     ""
                                                 }
+                                                
+                                                {
+                                                    isshow===true?
+                                                    <div style={{color:"green"}}>{referal1}</div>
+                                                    :
+                                                    ""
+                                                }
+
+
                                             </Form.Group>
                                         </div>
                                       
