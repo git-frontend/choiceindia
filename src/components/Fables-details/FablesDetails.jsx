@@ -37,6 +37,9 @@ var formName = useRef('');
             setSingle_Detail( res.data.posts);
             setIsDetail( true);
             sethtmlContent(res.data.posts[0].html);
+ document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
+          document.getElementById('meta-tags').content = res.data.posts[0].meta_title? res.data.posts[0].meta_title : '' ;
+
           }
         }
       )

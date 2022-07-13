@@ -156,7 +156,8 @@ function WhyStrategy() {
 
                                 <div className="sliderwrap">
                                     <div className="slider-item active">
-                                        <img src={dataObj[0].icon} className="slider-icon" width={'43'} height={'51'} alt="Create Your Own Trading Strategy" />
+                                        <LazyLoader src={dataObj[0].icon} className={"img-fluid slider-icon"} width={'43'} height={'51'} alt={"Create Your Own Trading Strategy"} />
+                                        {/* <img src={dataObj[0].icon} className="slider-icon" width={'43'} height={'51'} alt="Create Your Own Trading Strategy" /> */}
                                         <p className="heading">{dataObj[0].heading}</p>
                                         <p className="subtext">{dataObj[0].description}</p>
                                     </div>
