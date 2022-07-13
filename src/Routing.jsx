@@ -181,12 +181,12 @@ function Routing() {
                                 < Lazyminordemateaccount />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-hindi' element={
+                        <Route exact path='/hindi/open-demat-trading-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccounthindi />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-marathi' element={
+                        <Route exact path='/marathi/open-demat-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccountmarathi />
                             </React.Suspense>
