@@ -8,15 +8,17 @@ import Form from 'react-bootstrap/Form';
 function PricingEquity() {
 
 
+  
+
 
   return (
     <div>
 
-      <div className="banner-tab-cont">
+      <div className="banner-tab-cont" id='scroll-brokerage' >
         <div className="heading-sec">
           <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
-        <div className="pricing-table-tab">
+        <div className="pricing-table-tab" >
           <div className="table-responsive">
             <table className="pricing-data">
               <thead>

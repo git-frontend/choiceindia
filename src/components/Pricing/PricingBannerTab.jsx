@@ -22,6 +22,19 @@ function PricingBannerTab() {
     setToggleState(index);
   };
 
+
+  function chapterScroll(id) {
+    // console.log("check1",id)
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div>
 
@@ -37,8 +50,9 @@ function PricingBannerTab() {
 					</div>
         <div className="pricing-bloc-tabs">
               <button
+              
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(1)}
+                onClick={() =>{ toggleTab(1);chapterScroll('scroll-brokerage')}}
               >
                 <div className="bloc-tabs-sub">
                 <LazyLoader src={ImageSub2} alt={"Mutual Funds"} className={"tab-ico img-fluid"} width={"50"} height={"50"} />
@@ -50,7 +64,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(2)}
+                onClick={() => {toggleTab(2);chapterScroll('scroll-brokerage')}}
               >
                 <div className="bloc-tabs-sub">
                 <LazyLoader src={ImageSub5} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"} />
@@ -62,7 +76,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(3)}
+                onClick={() => {toggleTab(3);chapterScroll('scroll-brokerage')}}
               >
 
                   <div className="bloc-tabs-sub">
@@ -75,7 +89,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(4)}
+                onClick={() => {toggleTab(4);chapterScroll('scroll-brokerage')}}
               >
                   <div className="bloc-tabs-sub">
                   <LazyLoader src={ImageSub4} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"}/>
