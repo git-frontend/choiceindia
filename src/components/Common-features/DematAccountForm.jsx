@@ -362,7 +362,7 @@ function DematAccountForm(props) {
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
-                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
+                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol digit-otp" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
                             {
                                 errors.invalidMobile ? <Form.Control.Feedback type="invalid">Invalid Mobile Number</Form.Control.Feedback> : ''
                             }

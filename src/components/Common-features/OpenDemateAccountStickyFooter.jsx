@@ -125,7 +125,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
             </div>
             <section className="stickybottom">
                 <div className="container mx-auto">
-                    <div className="d-flex justify-content-around">
+                    <div className="d-flex justify-content-around align-items-center">
                         <div>
                             <h2 className="text"><span>Open Free</span> Demat Account</h2>
                         </div>
@@ -148,7 +148,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
                             </div>
                             <div className="form-group">
                                 <button type="button" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                <small id="API_error" className="errormsg text-danger">{APIError || ''}</small>
+                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
                             </div>
                         </form>
 

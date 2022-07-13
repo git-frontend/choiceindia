@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
@@ -11,21 +11,23 @@ import PricingEquity from './PricingEquity';
 import PricingCurrency from './PricingCurrency';
 import PricingCommodity from './PricingCommodity';
 import LazyLoader from "../Common-features/LazyLoader";
+import { useEffect } from "react";
 
 
 
 function PricingBannerTab() {
 
   const [toggleState, setToggleState] = useState(1);
+  // const myRef = useRef(null); 
 
   const toggleTab = (index) => {
+    changeSection();
     setToggleState(index);
   };
 
-
-  function chapterScroll(id) {
-    // console.log("check1",id)
-    var element = document.getElementById(id);
+  function changeSection(){
+    console.log('CCCCCCCC called');
+    var element = document.getElementById('scrollbrokerage');
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -33,7 +35,13 @@ function PricingBannerTab() {
       top: offsetPosition,
       behavior: "smooth"
     });
+    // myRef.current.scrollIntoView();
   }
+
+  // useEffect(() => {
+  //   changeSection();
+  // },[toggleState])
+  
 
   return (
     <div>
@@ -50,9 +58,8 @@ function PricingBannerTab() {
 					</div>
         <div className="pricing-bloc-tabs">
               <button
-              
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() =>{ toggleTab(1);chapterScroll('scroll-brokerage')}}
+                onClick={() => toggleTab(1)}
               >
                 <div className="bloc-tabs-sub">
                 <LazyLoader src={ImageSub2} alt={"Mutual Funds"} className={"tab-ico img-fluid"} width={"50"} height={"50"} />
@@ -64,7 +71,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(2);chapterScroll('scroll-brokerage')}}
+                onClick={() => toggleTab(2)}
               >
                 <div className="bloc-tabs-sub">
                 <LazyLoader src={ImageSub5} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"} />
@@ -76,7 +83,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(3);chapterScroll('scroll-brokerage')}}
+                onClick={() => toggleTab(3)}
               >
 
                   <div className="bloc-tabs-sub">
@@ -89,7 +96,7 @@ function PricingBannerTab() {
               </button>
               <button
                 className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(4);chapterScroll('scroll-brokerage')}}
+                onClick={() => toggleTab(4)}
               >
                   <div className="bloc-tabs-sub">
                   <LazyLoader src={ImageSub4} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"}/>

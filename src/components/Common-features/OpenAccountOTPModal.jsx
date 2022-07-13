@@ -4,7 +4,7 @@ import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import OTPimage from '../../assets/images/otp.svg';
 import "../Common-features/demat-form.scss"
-
+import { Link } from "react-router-dom";
 function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -216,7 +216,9 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
             <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
-
+                    <div className="close">
+                            <a href="javascript:void(0)" onClick={onClose} class="closebtn" >&times;</a>
+                            </div>
                         <div className="popup-sub-right">
 
                             <div>
@@ -233,7 +235,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
                             <div>
 
 
-                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                 {
                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                 }
