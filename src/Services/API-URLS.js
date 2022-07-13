@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -23,11 +23,13 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-
+    liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
 
 export class API_URLS {
 
+    JiffyBaseURL = '';
     LMSBaseURL = '';
     OnbBaseURL = '';
     jiffyResearchURL = "";
@@ -98,13 +100,15 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
 
     /** Sub Broker APIs */
-
-    getCityURL = 'city/list?is_refresh=Y';
+    // ?is_refresh=Y
+    getCityURL = 'city/list';
     getStateURL = 'state/list?is_refresh=Y';
     checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
     sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
     verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
     addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
+
+    getExpertResearchURL = 'api/research-report-new';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -117,6 +121,7 @@ export class API_URLS {
         * @param {*} configKey 
         */
     setConfig(configKey) {
+        this.setJiffyServerURL(config[configKey + 'JiffyBaseURL']);
         this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
@@ -130,6 +135,10 @@ export class API_URLS {
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
         this.setreferURL(config[configKey + 'referURL']);
+    }
+
+    setJiffyServerURL = (url) => {
+        this.JiffyBaseURL = url;
     }
 
     setLMSServerURL = (url) => {
@@ -316,6 +325,10 @@ export class API_URLS {
 
     getreferallink(id){
         return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
+    }
+
+    getExpertResearchreportURL() {
+        return this.JiffyBaseURL + this.getExpertResearchURL;
     }
 
 }

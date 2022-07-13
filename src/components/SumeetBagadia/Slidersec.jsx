@@ -1,8 +1,10 @@
 
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
+import axios from "axios";
+import { API_URLS } from "../../Services/API-URLS";
 
 function Slidersec() {
 
@@ -50,6 +52,41 @@ function Slidersec() {
 
         ]
     };
+
+    function getExpertResearch(request) {
+        let url = new API_URLS().getExpertResearchreportURL();
+        return axios.post(url, request, {});
+    }
+
+    function fetchExpertResearchReport() {
+        // let startDate = 
+        let request = {
+            "end_date": new Date().toJSON().split('T')[0],
+            "is_expert": 1,
+            "research_type": "",
+            "limit": 10,
+            "offset": 0,
+            "segment": "EQ",
+            "start_date": "2022-07-06",
+            "status": "target_achieved",
+            "subcategory_id": "",
+            "search": "",
+            "id": "",
+            "user_id": "",
+            "timeline_enabled": 1,
+            "category_id": 2
+        };
+        getExpertResearch(request).then((res) => {
+            console.log(res,"RES");
+        }).catch((error) => {
+            console.log(error,"error");
+        });
+    }
+
+    useEffect(()=>{
+        fetchExpertResearchReport();
+    },[]);
+
     return (
         <div>
             <section className="sumit-bg-class">
