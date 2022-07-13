@@ -92,7 +92,7 @@ const { register,formState: reset } = useForm({
 
 
             <section className="ref-sec-banner">
-                <div className="container">
+                <div className="container" id="refer&earn">
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-md-7">
                             <div className="sec-banner-left">
