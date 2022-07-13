@@ -105,7 +105,7 @@ function Fabdetailsbanner(props) {
                                 {
                                     props.showForm ?
                                         props.formName === 'form-demat' ? <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
-                                            <div className="formwrap d-flex justify-content-end ">
+                                            <div className="stickyform formwrap d-flex justify-content-end ">
                                                 <DematAccountForm isFooterVisible={true} isFromFableDetails={true}/>
                                             </div>
                                         </div> : <div className="col-md-5 col-lg-4 col-sm-6" id="sub-broker-wrap">
