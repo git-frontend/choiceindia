@@ -1,7 +1,7 @@
 
 import React from "react";
 import Form from 'react-bootstrap/Form';
-
+import { useRef } from "react";
 
 
 
@@ -16,7 +16,7 @@ function PricingEquity() {
         <div className="heading-sec">
           <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
-        <div className="pricing-table-tab">
+        <div className="pricing-table-tab" id="scrollbrokerage">
           <div className="table-responsive">
             <table className="pricing-data">
               <thead>

@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
@@ -11,16 +11,37 @@ import PricingEquity from './PricingEquity';
 import PricingCurrency from './PricingCurrency';
 import PricingCommodity from './PricingCommodity';
 import LazyLoader from "../Common-features/LazyLoader";
+import { useEffect } from "react";
 
 
 
 function PricingBannerTab() {
 
   const [toggleState, setToggleState] = useState(1);
+  // const myRef = useRef(null); 
 
   const toggleTab = (index) => {
+    changeSection();
     setToggleState(index);
   };
+
+  function changeSection(){
+    console.log('CCCCCCCC called');
+    var element = document.getElementById('scrollbrokerage');
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+    // myRef.current.scrollIntoView();
+  }
+
+  // useEffect(() => {
+  //   changeSection();
+  // },[toggleState])
+  
 
   return (
     <div>

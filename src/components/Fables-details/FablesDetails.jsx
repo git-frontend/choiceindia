@@ -23,14 +23,14 @@ function Fablesdetails() {
   const [trigger, setTrigger] = useState();
   const { id } = useParams();
   // let data = [];
-const [skeleton, setSkeleton] = useState(() => true);
-const [showForm, setShowForm] = useState(false);
-var formName = useRef('');
+  const [skeleton, setSkeleton] = useState(() => true);
+  const [showForm, setShowForm] = useState(false);
+  var formName = useRef('');
 
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
- function showOpenAccountAdPopup() {
+  function showOpenAccountAdPopup() {
     setShowOpenAccountPopup(true);
   }
 
@@ -41,24 +41,26 @@ var formName = useRef('');
 
   function callOpenAccountAdPopupAgain() {
     //after 15min
-    setTimeout(()=>{
+    setTimeout(() => {
       showOpenAccountAdPopup();
-    },900000)
+    }, 900000)
   }
 
-    /** to call single fabal detail */
-    function getSingleFablesDetail() {
-      homeServices.fablesBlog(id).then(
-        res => {
-          if (res.data.posts) {
-            checkWhetherToShowForm(res.data.posts || {});
-            setSingle_Detail( res.data.posts);
-            setIsDetail( true);
-            sethtmlContent(res.data.posts[0].html);
-          }
+  /** to call single fabal detail */
+  function getSingleFablesDetail() {
+    homeServices.fablesBlog(id).then(
+      res => {
+        if (res.data.posts) {
+          checkWhetherToShowForm(res.data.posts || {});
+          setSingle_Detail(res.data.posts);
+          setIsDetail(true);
+          sethtmlContent(res.data.posts[0].html);
+          document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
+          document.getElementById('meta-tags').content = res.data.posts[0].meta_title? res.data.posts[0].meta_title : '' ;
         }
-      )
-    }
+      }
+    )
+  }
 
   /** to call all fabal list */
   function loadFabalList() {
@@ -74,12 +76,12 @@ var formName = useRef('');
     )
   }
 
- useEffect(() => {
+  useEffect(() => {
 
-     setTimeout(() => {
+    setTimeout(() => {
       showOpenAccountAdPopup();
     }, 60000);
-setTrigger(true)
+    setTrigger(true)
     if (trigger === true) {
       getSingleFablesDetail();
       loadFabalList();
@@ -110,12 +112,12 @@ setTrigger(true)
       {
         skeleton ? <Template1 /> :
           <div className="fables-details-parent">
-            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
+            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current} />
             <Recommendation name={allFabalData} Id={id} />
           </div>
       }
 
-     {
+      {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       }
       <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>

@@ -51,6 +51,7 @@ const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 
 
 function Routing() {
+
     return (
         <>
             <Router>
@@ -149,7 +150,7 @@ function Routing() {
                         <Route exact path='/refer-and-earn' element={
                             <React.Suspense>
                                 < Lazyrefer />
-                                </React.Suspense>
+                            </React.Suspense>
                         } />
                         <Route exact path='/open-demat-account' element={
                             <React.Suspense>
