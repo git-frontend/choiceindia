@@ -1,10 +1,10 @@
 import React from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
-import Image2 from '../../assets/images/open-demat-account/lowestdp.svg';
-import Image3 from '../../assets/images/open-demat-account/nosqroff.svg';
-import Image4 from '../../assets/images/open-demat-account/sucessratio.svg';
-import Image5 from '../../assets/images/open-demat-account/amc.svg';
+import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
+import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
+import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
+import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
 const NriDematAccountBanner = () => {
