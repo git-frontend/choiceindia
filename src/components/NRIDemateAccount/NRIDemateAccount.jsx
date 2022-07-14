@@ -1,6 +1,4 @@
-// import "./nridemateaccount.scss";
-// import DematAccountForm from '../Common-features/DematAccountForm';
-import { Link } from "react-router-dom";
+
 import "../OpenDematAccount/DematPage"
 import NriDematAccountBanner from "../NRIDemateAccount/NriDematAccountBanner";
 import WhyOpenFreeNriAccount from "../NRIDemateAccount/WhyOpenFreeNriAccount";

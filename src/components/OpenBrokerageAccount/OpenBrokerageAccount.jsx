@@ -1,5 +1,4 @@
-// import "./openbrokerageaccount.scss";
-// import DematAccountForm from '../Common-features/DematAccountForm';
+import { useState, useEffect } from 'react';
 import "../OpenDematAccount/DematPage"
 import OpenbrokerageAccountBanner from "./OpenbrokerageAccountBanner";
 import WhyOpenBrokrageAccount from "./WhyOpenBrokrageAccount";
@@ -7,6 +6,10 @@ import BrokerageAccountOpeningProcess from "./BrokerageAccountOpeningProcess";
 import LowBrokerageAccount from "./LowBrokerageAccount";
 import BrokerageWhyChoice from "./BrokerageWhyChoice";
 import BrokerageFaq from "./BrokerageFaq";
+import {
+    useLocation,
+  } from 'react-router-dom';
+  import meta_tags from "../../Data/MetaTags";
 function OpenBrokerageAccount() {
 
 
