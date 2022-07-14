@@ -1,5 +1,3 @@
-// import "./openbrokerageaccount.scss";
-// import DematAccountForm from '../Common-features/DematAccountForm';
 import "../OpenDematAccount/DematPage"
 import OpenbrokerageAccountBanner from "./OpenbrokerageAccountBanner";
 import WhyOpenBrokrageAccount from "./WhyOpenBrokrageAccount";

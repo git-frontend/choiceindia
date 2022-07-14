@@ -2,7 +2,7 @@ import React from 'react';
 import Image13 from '../../assets/images/open-demat-account/web.svg';
 import Image14 from '../../assets/images/open-demat-account/android.svg';
 import Image15 from '../../assets/images/open-demat-account/ios.svg';
-import Image16 from '../../assets/images/open-demat-account/why-choice.webp';
+import Image16 from '../../assets/images/open-demat-account/choice-free-demat-account-opening.webp';
 const HindiTradingWhyChoice = () => {
     return (
         <div>

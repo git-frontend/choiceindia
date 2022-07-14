@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -23,8 +23,8 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-    liveresearchURL: "hhttp://researchreportapi.jiffy.in/",
-    UATresearchURL: "http://researchreportapi.jiffy.in/",
+    liveresearchURL: "http://researchreportapi.jiffy.in/",
+    UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
     liveperformanceURL:"https://jiffy.choiceindia.com//api/",
     UATperformanceURL:"https://jiffy.choiceindia.com//api/",
     liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
@@ -68,6 +68,9 @@ export class API_URLS {
     /**fables trending blog  */
     fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
 
+    /**fables trending blog  */
+    fableTopFiveURL = 'content/posts/?key=280c55197998a010569e5d612a&limit=5';
+
     /** fables blogs  */
 
     fableBlogURL = 'content/posts/{id}/?key=280c55197998a010569e5d612a'
@@ -97,7 +100,11 @@ export class API_URLS {
 
     /** Performance */
 
-    performancefontURL='techanalysis/getcounters'
+    performancefontURL='techanalysis/getcounters';
+
+    /** performance Success ratio */
+
+    successURL ='api/success-ratio';
 
 
    
@@ -252,6 +259,13 @@ export class API_URLS {
         return this.serverURL + this.fabletrendingURL
     }
 
+    /** Get fable Top 5 URL */
+
+    getFableTopFiveURL() {
+
+        return this.serverURL + this.fableTopFiveURL;
+    }
+
     /** get fables blog data */
 
     getFableblogURL(id) {
@@ -372,7 +386,12 @@ export class API_URLS {
 
     getperformanceURL() {
 
-        return this.performanceURL +this.performancefontURL
+        return this.performanceURL +this.performancefontURL;
+    }
+
+    getsuccessURL(){
+
+        return this.JiffyBaseURL + this.successURL;
     }
 
 }

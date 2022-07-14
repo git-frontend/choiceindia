@@ -7,7 +7,7 @@ import Image4 from '../../assets/images/open-demat-account/free-research-advisor
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
-const HindiOpenFreeAccountBanner = () => {
+const MinorDematAccountBanner = () => {
     return (
         <div>
              <section className="banner-sect" >
@@ -15,7 +15,7 @@ const HindiOpenFreeAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop">मुफ़्त डीमैट खाता खोलें</div>
+                                <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 
                             </h1>
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
@@ -25,12 +25,11 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt="Lowest DP Charges" className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt={"Lowest DP Charges"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >कम </span>डीपी शुल्क<span className="subtxt">(केवल 10 रुपये)
-</span>
+                                                <p><span className="fontbold" >Low</span> DP Charges<span className="subtxt"> (Rs. 10 Only)</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -39,11 +38,11 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt="Low Brokerage Charges" className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt={"Low Brokerage Charges"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >कम</span>  ब्रोकरेज शुल्क </p>
+                                                <p><span className="fontbold" >Low </span> Brokerage Charges</p>
                                             </div>
                                         </div>
                                     </div>
@@ -53,11 +52,11 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt="Free Research Advisory" className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >नि:शुल्क </span> शोध परामर्श </p>
+                                                <p><span className="fontbold" >Free </span>  Research Advisory</p>
                                             </div>
                                         </div>
                                     </div>
@@ -69,7 +68,7 @@ const HindiOpenFreeAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p>प्रथम वर्ष के लिए निःशुल्क</p>
+                                                <p><span className="fontbold" >Free </span> AMC for First Year</p>
                                             </div>
                                         </div>
                                     </div>
@@ -80,7 +79,7 @@ const HindiOpenFreeAccountBanner = () => {
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
                                 <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
-                                <DematAccountForm language='hindi'/>
+                                <DematAccountForm />
                             </div>
 
                         </div>
@@ -93,4 +92,4 @@ const HindiOpenFreeAccountBanner = () => {
     )
 }
 
-export default HindiOpenFreeAccountBanner;
+export default MinorDematAccountBanner;

@@ -10,6 +10,7 @@ import thumb1 from '../../assets/images/research/thumbnail-img1.webp';
 import thumb2 from '../../assets/images/research/thumbnail-img2.webp';
 import thumb3 from '../../assets/images/research/thumbnail-img3.webp';
 import thumb4 from '../../assets/images/research/thumbnail-img4.webp';
+
 import { useNavigate, Link } from "react-router-dom";
 
 
@@ -20,6 +21,8 @@ function LongTermResearch() {
   const [list,setList] = useState([]);
   const [data,setData] = useState('');
   const [trigger,setTrigger]= useState(false);
+  const[count,setcount] = useState(1)
+
   let navigate = useNavigate(); 
 
   const toggleTab = (index) => {
@@ -76,30 +79,30 @@ function LongTermResearch() {
 					</div>
         <div className="research-bloc-tabs">
               <button
-                className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(1);loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')}}
+                className={count === 1 ? "tabs active-tabs" : "tabs"}
+                onClick={() => {setcount(1);loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')}}
               >
                 Economic Analysis
                 
               </button>
               <button
-                className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(2);loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
+                className={count === 2  ? "tabs active-tabs" : "tabs"}
+                onClick={() => {setcount(2);loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
               >
                 Company Fundamentals
                 
               </button>
               <button
-                className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {toggleTab(3);loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
+                className={count === 3  ? "tabs active-tabs" : "tabs"}
+                onClick={() => {setcount(3);loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
               >
 
                  Industry Analysis
 
               </button>
               <button
-                className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
-                onClick={() =>{ toggleTab(4);lpoSearch()}}
+                className={count === 4  ? "tabs active-tabs" : "tabs"}
+                onClick={() =>{ setcount(4);lpoSearch()}}
               >
                   IPO/NFO Analysis
                 
@@ -115,35 +118,9 @@ function LongTermResearch() {
                {
                 list.slice(0,4).map((res,i)=>{
 
-                  return(
-
-                    <div className="res-tab-itm">
-                      <div className="tab-itm-img">
-                         <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                      </div>
-                      <div className="tab-itm-des">
-                          <h5 className="ttl-des">{res.title}</h5>
-                          <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                          <div className="itm-des-sub">
-                              <span className="date-post">03 Mar 2022</span>
-                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
-                              {/* <a onClick={() =>{goToResearchDetail(res.uuid)
-                              console.log('RRRRRRREEEE',res)} } className="post-read">Read More</a> */}
-                          </div>
-                      </div>
-                  </div>
-
-
-                  )
-                })
-               }
-                  
-              </div>
-              </div>
-              </div>
 
               <div
-                className={toggleState === 2 ? "content  active-content" : "content"}
+                className="content active-content"
               >
               <div className="research-tab-cont">
               <div className="research-tab-list">
@@ -154,83 +131,15 @@ function LongTermResearch() {
 
                     <div className="res-tab-itm">
                       <div className="tab-itm-img">
-                         <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                         <img src={res.feature_image} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                       </div>
                       <div className="tab-itm-des">
                           <h5 className="ttl-des">{res.title}</h5>
-                          <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                  {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                          <p>{res.status === 'pending'? 'Accept' :res.status}</p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
-                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
-                          </div>
-                      </div>
-                  </div>
-
-
-                  )
-                })
-               }
-                  
-              </div>
-              </div>
-              </div>
-
-              <div
-                className={toggleState === 3 ? "content  active-content" : "content"}
-              >
-              <div className="research-tab-cont">
-              <div className="research-tab-list">
-               {
-                list.slice(0,4).map((res,i)=>{
-
-                  return(
-
-                    <div className="res-tab-itm">
-                      <div className="tab-itm-img">
-                         <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                      </div>
-                      <div className="tab-itm-des">
-                          <h5 className="ttl-des">{res.title}</h5>
-                          <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                          <div className="itm-des-sub">
-                              <span className="date-post">03 Mar 2022</span>
-                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
-                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
-                          </div>
-                      </div>
-                  </div>
-
-
-                  )
-                })
-               }
-                  
-              </div>
-              </div>
-              </div>
-
-              <div
-                className={toggleState === 4 ? "content  active-content" : "content"}
-              >
-              <div className="research-tab-cont">
-              <div className="research-tab-list">
-               {
-                list.slice(0,4).map((res,i)=>{
-
-                  return(
-
-                    <div className="res-tab-itm">
-                      <div className="tab-itm-img">
-                         <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                      </div>
-                      <div className="tab-itm-des">
-                          <h5 className="ttl-des">{res.title}</h5>
-                          <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                          <div className="itm-des-sub">
-                              <span className="date-post">03 Mar 2022</span>
-                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
-                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
+                              <a href="#" className="post-read">Read More</a>
                           </div>
                       </div>
                   </div>
