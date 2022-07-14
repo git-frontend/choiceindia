@@ -12,6 +12,9 @@
       top: -1rem;
       right: 0;
       z-index: 99;
+      @media (max-width: $md) {
+        width: 35px;
+      }
     }
   }
   &::after {

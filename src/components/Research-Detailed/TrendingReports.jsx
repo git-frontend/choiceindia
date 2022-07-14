@@ -25,7 +25,7 @@ function TrendingReports() {
                 <div className="res-detailtab-list">
                   <div className="res-tab-itm">
                     <div className="tab-itm-img">
-                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                     </div>
                     <div className="tab-itm-des">
                       <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3>
@@ -38,7 +38,7 @@ function TrendingReports() {
                   </div>
                   <div className="res-tab-itm">
                     <div className="tab-itm-img">
-                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                     </div>
                     <div className="tab-itm-des">
                       <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3>
@@ -51,7 +51,7 @@ function TrendingReports() {
                   </div>
                   <div className="res-tab-itm">
                     <div className="tab-itm-img">
-                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                     </div>
                     <div className="tab-itm-des">
                       <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3>
@@ -64,7 +64,7 @@ function TrendingReports() {
                   </div>
                   <div className="res-tab-itm">
                     <div className="tab-itm-img">
-                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                      <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                     </div>
                     <div className="tab-itm-des">
                       <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3>

@@ -1,4 +1,4 @@
-import "./research.scss"
+import "./research-detailed.scss"
 import Banner from './Banner';
 import TrendingReports from './TrendingReports';
 

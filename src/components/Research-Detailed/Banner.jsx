@@ -1,6 +1,6 @@
 
 import React from "react";
-import thumb2 from '../../assets/images/research/pdf-ico.svg';
+import thumb2 from '../../assets/images/research/pdf-ico.webp';
 
 function Banner() {
 
@@ -13,7 +13,7 @@ function Banner() {
           <div className="row gx-5 align-items-center">
             <div className="col-md-12">
             <div className="right-pdf-sec">
-                <a href="/" className="ico-pdf"><img src={thumb2} className='img-fluid'></img></a>
+                <a href="/" className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
               </div>
               <div className="bnr-left">
                 <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1>
