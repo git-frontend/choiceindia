@@ -59,7 +59,22 @@ function Slidersec() {
     }
 
     function fetchExpertResearchReport() {
-        // let startDate = 
+        let startDate;
+        let dateDiff = new Date().getDate() - 7;
+        if (new Date().getMonth() === 0 && dateDiff < 0) {
+            let lastMonthDate = new Date(new Date().getFullYear() - 1, 12, 0);
+            startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff-1));
+        } else if (new Date().getMonth() === 0 && dateDiff === 0) {
+            startDate = new Date(new Date().getFullYear() - 1, 12, 0);
+        } else if (dateDiff < 0) {
+            let lastMonthDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+            startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff-1));
+        } else if (dateDiff === 0) {
+            startDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+        } else {
+            startDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-6);
+        }
+
         let request = {
             "end_date": new Date().toJSON().split('T')[0],
             "is_expert": 1,
@@ -67,7 +82,7 @@ function Slidersec() {
             "limit": 10,
             "offset": 0,
             "segment": "EQ",
-            "start_date": "2022-07-06",
+            "start_date": startDate.toJSON().split('T')[0],
             "status": "target_achieved",
             "subcategory_id": "",
             "search": "",
