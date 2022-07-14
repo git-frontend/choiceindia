@@ -164,7 +164,7 @@ function HomeTestimonial() {
 					<div className="row d-flex justify-content-center">
 						<div className="col-md-8">
 							<div className="heading-sec mb-5">
-								<h3 className="title-first ">We are Only as Good as our Clients say WE ARE </h3>
+								<h2 className="title-first ">We are Only as Good as our Clients say WE ARE </h2>
 							</div>
 						</div>
 					</div>

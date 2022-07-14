@@ -42,7 +42,7 @@ function EverydayFinance() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h3 className="title-first">Everyday Finance in one Place</h3>
+              <h2 className="title-first">Everyday Finance in one Place</h2>
             </div>
           </div>
           <div className="row">
@@ -59,7 +59,7 @@ function EverydayFinance() {
                             <LazyLoader src={response.image} className={"img-fluid"} alt={"Loading"} width={"70"} height={"70"} />
                             {/* <img src={response.image} className="img-fluid" alt='Loading' /> */}
                           </span>
-                          <h5>{response.title || '-'}</h5>
+                          <h3 className="ss-ttl">{response.title || '-'}</h3>
                           <p>{response.description || '-'}</p>
                           {/* <a href="/">Learn More <span className="arrow-img"><img src={ImageSub5} alt='Loading' /></span></a> */}
                         </div>
