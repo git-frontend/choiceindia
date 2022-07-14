@@ -11,23 +11,18 @@ function CollectionSlider() {
         infinite: true,
         speed: 2500,
         vertical: true,
-        focusOnSelect: true,
-        touchMove: true,
         arrows: false,
         slidesToShow: 3,
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
-        slidesToScroll: 1,
-        swipeToSlide: true,
         responsive: [
           {
             breakpoint: 992,
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
-              autoplay: false,
-              adaptiveHeight: true,
+              autoplay: true,
             },
           },
           {
@@ -35,7 +30,7 @@ function CollectionSlider() {
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
-              autoplay: false,
+              autoplay: true,
             },
           },
         ],
@@ -89,7 +84,7 @@ function CollectionSlider() {
                         </div>
                         <div className="col-xl-7 col-md-6">
                             <div className="imgwrap">
-                                <img src={Research[isShown2].image} alt="Collection" className="img-fluid" width={"782"} height={"715"}></img>
+                                <img src={Research[isShown2].image} alt="Collection" className="img-fluid" width={"708"} height={"645"}></img>
                             </div>
 
                         </div>
