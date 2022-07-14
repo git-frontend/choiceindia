@@ -36,7 +36,7 @@ function ChoiceFinx() {
               <div className="finx-section">
                 <div className="finx-left-cont">
                   <div className="heading-sec">
-                    <h3 className="title-secnd">Choice FinX</h3>
+                    <h2 className="title-secnd">Choice FinX</h2>
                     <p>SuperApp - Designed to deliver customized wealth solutions to cater <br />all financial needs</p>
                   </div>
                   <div className="finx-app-list workList">
@@ -48,7 +48,7 @@ function ChoiceFinx() {
                             <div className='link-choicefinx' data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
                                     <LazyLoader src={response.icon} className={"img-fluid"} alt={"Loading"} width={"40"} height={"40"} />
                               {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
-                              <h4>{response.title}</h4>
+                              <h3 className="choice-ttl">{response.title}</h3>
                               <p>{response.description}</p>
                             </div> 
                           </div>

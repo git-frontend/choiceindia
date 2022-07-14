@@ -5,18 +5,18 @@ import { useRef } from "react";
 
 
 
-function PricingEquity() {
+function PricingCommodity() {
 
 
 
   return (
     <div>
 
-      <div className="banner-tab-cont">
+      <div className="banner-tab-cont" id="scrollcommodity">
         <div className="heading-sec">
           <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
-        <div className="pricing-table-tab" id="scrollbrokerage">
+        <div className="pricing-table-tab">
           <div className="table-responsive">
             <table className="pricing-data">
               <thead>
@@ -91,4 +91,4 @@ function PricingEquity() {
   );
 }
 
-export default PricingEquity;
+export default PricingCommodity;

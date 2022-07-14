@@ -1,7 +1,8 @@
 import React from 'react';
-import ImageSub13 from '../../assets/images/sub-broker/18+years-of-age.svg';
-import ImageSub14 from '../../assets/images/sub-broker/sell-products-effortlessly.svg';
-import ImageSub15 from '../../assets/images/sub-broker/own-boss.svg';
+import { Link } from "react-router-dom";
+import ImageSub13 from '../../assets/images/sub-broker/sub-broker-eligibility.svg';
+import ImageSub14 from '../../assets/images/sub-broker/sell-financial-services.svg';
+import ImageSub15 from '../../assets/images/sub-broker/sub-broker-franchise-business.svg';
 import ImageSub16 from '../../assets/images/sub-broker/become-a-sub-broker.webp';
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -11,14 +12,14 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function WhoEligibleToRemisier() {
 
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 1500,
         arrows: false,
         slidesToShow: 1,
-        autoplay: false,
+        autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         responsive: [
             {
@@ -54,11 +55,11 @@ function WhoEligibleToRemisier() {
                             <div className="eligb-right-sec">
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
-                                        <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" />
+                                        <img src={ImageSub13} alt="Sub Broker Eligibility" className="img-fluid" width="74" height="74" />
                                         <h4>Individual must be 18+ years of age</h4>
                                     </div>
                                     <div className="">
-                                        <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" />
+                                        <img src={ImageSub14} alt="Sell Financial Services" className="img-fluid" width="74" height="74" />
                                         <h4>A knack to sell products effortlessly</h4>
                                     </div>
                                     <div className="">
@@ -80,8 +81,8 @@ function WhoEligibleToRemisier() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is for certain when you partner with us.</h4>
-                                <a href="#join-now" className="btn-bg"><span>Join Now</span> </a>
+                                <h4>Growth is  certain when you partner with us.</h4>
+                                <Link to="#join-now" className="btn-bg"><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

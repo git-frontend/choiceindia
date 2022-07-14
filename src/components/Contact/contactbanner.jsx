@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import Bannerimage from '../../assets/images/contact/contactbanner.webp';
+import Bannerimage from '../../assets/images/contact/contact-us.webp';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
@@ -88,7 +88,7 @@ function Contactbanner() {
           main ? <img src={""} className="ban-img1" alt="Loading" /> :
             <img src={Bannerimage} className="ban-img" alt="Loading" />
         } */}
-          <LazyLoader src={Bannerimage} className='img-fluid ban-img' width={'1519'} height={'915'} alt={'Loading'} />
+          <LazyLoader src={Bannerimage} className='img-fluid ban-img' width={'1519'} height={'915'} alt={'contact us'} />
           {/* <img src={Bannerimage} className="ban-img" alt="Loading" width={"1519"} height={"915"} /> */}
           <div className='banner-caption'>
             <div className='container'>

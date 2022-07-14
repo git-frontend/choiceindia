@@ -13,7 +13,7 @@ function SecurityPrivacy() {
 					<div className="row d-flex justify-content-center">
 						<div className="col-md-8">
 							<div className="heading-sec">
-								<h3 className="title-first ">Security &amp; Privacy </h3>								
+								<h2 className="title-first ">Security &amp; Privacy </h2>								
 							</div>
 						</div>
 					</div>

@@ -9,6 +9,10 @@ import "./investorsinfo.scss";
 import "./navbar.scss";
 import { useState,useEffect } from 'react';
 import Template1 from "../Common-features/Template1";
+// import {
+//   useLocation,
+// } from 'react-router-dom';
+// import meta_tags from "../../Data/MetaTags";
 
 function InvestorInfo() {
 
@@ -26,10 +30,9 @@ function InvestorInfo() {
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-      console.log("kkk");
-
+      // console.log("kkk");
+ 
     }
-
   }, [trigger])
 
   return (
@@ -69,10 +72,15 @@ function InvestorInfo() {
                 </div>
               </section>
 
-              <iframe src="https://app.churchgatepartners.com/AssignTemplate/BindTempleteview?ClientID=46" title='investor-iframe' style={{ width: '100%', height: '1200px', marginTop: '50px' }}>
-                Your browser doesn't support iframes
-              </iframe>
+              <section>
+                <div className="container">
+                <iframe src="https://app.churchgatepartners.com/AssignTemplate/BindTempleteview?ClientID=46" title='investor-iframe' style={{ width: '100%', height: '1350px'}} className='invest-iframe'>
+                  Your browser doesn't support iframes
+                </iframe>
+                  </div>
+              </section>
 
+              
               {/* <InvestorInfoMenu />
   <Yeardetail /> */}
 

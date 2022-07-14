@@ -1,4 +1,6 @@
 import Image1 from '../assets/images/research/slider-item-one.webp' ;
+import Image2 from '../assets/images/research/slider-item2.webp' ;
+import Image3 from '../assets/images/research/slider-item3.webp' ;
 
 const Research = 
 [
@@ -12,7 +14,7 @@ const Research =
     },
     {
         id:2,
-        image:`${Image1}`,
+        image:`${Image2}`,
         title:"Baskets",
         description:"Curated stock Baskets from different categories to provide diversification benefits",
 
@@ -20,7 +22,7 @@ const Research =
     },
     {
         id:3,
-        image:`${Image1}`,
+        image:`${Image3}`,
         title:"Our Top Picks",
         description:"Check out the most interesting and unique categories of Stock collections",
 

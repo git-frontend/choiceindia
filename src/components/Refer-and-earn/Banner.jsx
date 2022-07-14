@@ -1,6 +1,6 @@
 
 import React ,{useState} from "react";
-import Bannerimage from '../../assets/images/refer-earn/banner.webp';
+import Bannerimage from '../../assets/images/refer-earn/best-demat-account-refer-and-earn-program.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -186,7 +186,7 @@ const { register,formState: reset } = useForm({
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
-                            <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid refer-banner"} width={"400"} height={"432"} />
+                            <LazyLoader src={Bannerimage} alt={"Best Demat Account Refer and Earn Program"} className={"img-fluid refer-banner"} width={"400"} height={"432"} />
                         </div>
                     </div>
                 </div>

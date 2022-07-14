@@ -5,18 +5,18 @@ import Form from 'react-bootstrap/Form';
 
 
 
-function PricingEquity() {
+function PricingCurrency() {
 
 
 
   return (
     <div>
 
-      <div className="banner-tab-cont">
+      <div className="banner-tab-cont" id="scrollcurrency">
         <div className="heading-sec">
           <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
-        <div className="pricing-table-tab">
+        <div className="pricing-table-tab" id="scrollcurrency">
           <div className="table-responsive">
             <table className="pricing-data">
               <thead>
@@ -91,4 +91,4 @@ function PricingEquity() {
   );
 }
 
-export default PricingEquity;
+export default PricingCurrency;

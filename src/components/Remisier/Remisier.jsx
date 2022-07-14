@@ -8,10 +8,14 @@ import WhoEligibleToRemisier from './WhoEligibleToRemisier';
 import RemisierOffers from './RemisierOffers';
 import RemisierMoreContent from './RemisierMoreContent';
 import RemisierFaq from './RemisierFaq';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Template5 from '../Common-features/Template5';
 import "../SubBroker/subbroker.scss";
 import "./Remisier.scss";
+import {
+  useLocation,
+} from 'react-router-dom';
+import meta_tags from "../../Data/MetaTags";
 
 function Remisier() {
 
@@ -20,10 +24,26 @@ function Remisier() {
   // function myGreeting() {
   //   setSkeleton(() => false);
   // }
+  const [rendercount, setRenderCount] = useState(() => false);
+
+  const location = useLocation();
 
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
+
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      // let parser = new DOMParser();
+      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+    }
+  }, [rendercount])
 
   return (
     <div>

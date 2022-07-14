@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./basket.scss"
 import Image1 from '../../assets/images/basket/choicelogo.webp';
 import Image2 from '../../assets/images/basket/banner-image.webp';
@@ -12,12 +12,20 @@ import FaqCommon from './FaqCommon';
 import BasketLand from './BasketLand';
 import Template2 from '../Common-features/Template2';
 import LazyLoader from '../Common-features/LazyLoader';
+import {
+    useLocation,
+  } from 'react-router-dom';
+  import meta_tags from "../../Data/MetaTags";
 
 function Basket() {
 
     const [skeleton, setSkeleton] = useState(() => true);
     const [checkdevice, setcheckdevice] = useState(false);
     const [videoVisibility, setVideoVisibility] = useState(false);
+
+    const [rendercount, setRenderCount] = useState(() => false);
+
+    const location = useLocation();
 
     setTimeout(() => {
         setSkeleton(() => false);
@@ -43,6 +51,19 @@ function Basket() {
             behavior: "smooth"
         });
     }
+
+    useEffect(() => {
+        setRenderCount(true)
+        if (rendercount === true) {
+          // let parser = new DOMParser();
+          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+          document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+          // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+          document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+          document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+        }
+      }, [rendercount])
 
     return (
         <>

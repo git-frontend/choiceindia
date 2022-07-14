@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
+import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-without-deposit.webp';
 import SubBrokerForm from './SubBrokerForm'
 import LazyLoader from "../Common-features/LazyLoader";
 
@@ -7,8 +7,6 @@ function BannerSBroker() {
 
     return (
         <div>
-
-
             <section className="franchise-banner" >
                 <div className="container">
                     <div className="row align-items-end">
@@ -20,7 +18,7 @@ function BannerSBroker() {
                                     <h2 className="tlt2">without Deposit*</h2>
                                 </div>
                                 <div className="right-sec">
-                                <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise"} className={"img-fluid"} />
+                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} />
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
