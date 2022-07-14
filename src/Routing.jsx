@@ -48,6 +48,7 @@ const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/Open
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
+const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
 
 function Routing() {
@@ -219,6 +220,12 @@ function Routing() {
                         <Route exact path='/baskets' element={
                             <React.Suspense>
                                 < Lazybasket />
+                            </React.Suspense>
+                        } />
+
+                    <Route exact path='/research-detailed' element={
+                            <React.Suspense>
+                                < Lazyresearchdetailed />
                             </React.Suspense>
                         } />
 
