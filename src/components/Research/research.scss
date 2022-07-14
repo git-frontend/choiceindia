@@ -730,7 +730,13 @@
 .collectons{
   background-color: $primary;
   padding:8rem 0 6.5rem 0;
- 
+ .collection-slider{
+  .slick-slider{
+    .slick-track{
+      height: auto !important;
+    }
+  }
+ }
   .sliderwrap{
       .slider-item{
          margin-bottom: 4.875rem;

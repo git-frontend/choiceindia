@@ -1,0 +1,805 @@
+/*Bootstrap Override*/
+/*Font family*/
+/*bg varibales*/
+/*textvaribales*/
+/*Responsive screen width*/
+/*Bootstrap Override*/
+/*Font family*/
+/*bg varibales*/
+/*textvaribales*/
+/*Responsive screen width*/
+@font-face {
+  font-family: "PoppinsMedium";
+  src: url("../fonts/PoppinsMedium.eot");
+  src: url("../fonts/PoppinsMedium.eot") format("embedded-opentype"), url("../fonts/PoppinsMedium.woff2") format("woff2"), url("../fonts/PoppinsMedium.woff") format("woff"), url("../fonts/PoppinsMedium.ttf") format("truetype"), url("../fonts/PoppinsMedium.svg#PoppinsMedium") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PoppinsRegular";
+  src: url("../fonts/PoppinsRegular.eot");
+  src: url("../fonts/PoppinsRegular.eot") format("embedded-opentype"), url("../fonts/PoppinsRegular.woff2") format("woff2"), url("../fonts/PoppinsRegular.woff") format("woff"), url("../fonts/PoppinsRegular.ttf") format("truetype"), url("../fonts/PoppinsRegular.svg#PoppinsRegular") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PoppinsSemiBold";
+  src: url("../fonts/PoppinsSemiBold.eot");
+  src: url("../fonts/PoppinsSemiBold.eot") format("embedded-opentype"), url("../fonts/PoppinsSemiBold.woff2") format("woff2"), url("../fonts/PoppinsSemiBold.woff") format("woff"), url("../fonts/PoppinsSemiBold.ttf") format("truetype"), url("../fonts/PoppinsSemiBold.svg#PoppinsSemiBold") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("../fonts/PoppinsBold.eot");
+  src: url("../fonts/PoppinsBold.eot") format("embedded-opentype"), url("../fonts/PoppinsBold.woff2") format("woff2"), url("../fonts/PoppinsBold.woff") format("woff"), url("../fonts/PoppinsBold.ttf") format("truetype"), url("../fonts/PoppinsBold.svg#PoppinsBold") format("svg");
+  font-display: swap;
+}
+@font-face {
+  font-family: "RedHatDisplayBold";
+  src: url("../fonts/RedHatDisplayBold.eot");
+  src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
+  font-display: swap;
+}
+/*Bootstrap Override*/
+/*Font family*/
+/*bg varibales*/
+/*textvaribales*/
+/*Responsive screen width*/
+.btn-bg {
+  font-family: "PoppinsSemiBold", sans-serif;
+  color: #ffffff !important;
+  background: #221F20 !important;
+  padding: 1.3rem 3rem !important;
+  display: inline-block;
+  border-radius: 16px !important;
+  min-width: 16rem;
+  font-size: 1.5rem !important;
+  text-align: center;
+  text-decoration: none;
+  border: 0 !important;
+  outline: none !important;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.btn-bg:hover {
+  background: #FFCE02 !important;
+  color: #221F20 !important;
+}
+.btn-bg:focus, .btn-bg:active, .btn-bg:not(:disabled):not(.disabled):active, .btn-bg:not(:disabled):not(.disabled).active {
+  outline: none;
+}
+.btn-bg.btn-bg-dark {
+  background: #FFCE02 !important;
+  color: #221F20 !important;
+}
+.btn-bg.btn-bg-dark:hover {
+  background: #ffffff !important;
+}
+.btn-bg.btn-light {
+  background-color: #ffffff !important;
+  color: #221F20 !important;
+}
+.btn-bg.btn-light:hover {
+  background: #FFCE02 !important;
+  color: #221F20 !important;
+}
+
+.link-nrl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0066B3;
+  width: auto;
+  border-radius: 100px;
+  padding: 0.8rem 2rem;
+  margin-right: 2.5rem;
+  text-decoration: none;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  position: relative;
+  font-family: "PoppinsRegular", sans-serif;
+}
+.link-nrl.white {
+  background-color: #F5F5F5;
+}
+.link-nrl .img-ico {
+  width: 17rem;
+  display: block;
+}
+@media (max-width: 768px) {
+  .link-nrl .img-ico {
+    width: 8rem;
+  }
+}
+.link-nrl .whitecolor {
+  color: #ffffff;
+  font-size: 1.7rem;
+}
+@media (max-width: 768px) {
+  .link-nrl .whitecolor {
+    font-size: 16px;
+  }
+}
+.link-nrl .blackcolor {
+  color: #13151A;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .link-nrl .blackcolor {
+    font-size: 16px;
+  }
+}
+.link-nrl:hover {
+  transform: translateY(-8px);
+}
+@media (max-width: 768px) {
+  .link-nrl {
+    margin-right: 1rem;
+    width: 42%;
+    margin-bottom: 1rem;
+    padding: 8px;
+  }
+}
+.link-nrl.link-nrl-sm {
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  margin-right: 1.5rem;
+  white-space: nowrap;
+}
+.link-nrl.link-nrl-sm .whitecolor {
+  color: #ffffff;
+  font-size: 15px;
+  color: #ffffff;
+  font-size: 16px;
+}
+.link-nrl.link-nrl-sm .blackcolor {
+  color: #13151A;
+  font-size: 16px;
+}
+.link-nrl.link-nrl-sm.white {
+  background-color: #F5F5F5;
+}
+.link-nrl.link-nrl-sm:hover {
+  transform: translateY(-8px);
+}
+@media (min-width: 767px) and (max-width: 768px) {
+  .link-nrl.link-nrl-sm {
+    width: 42%;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .link-nrl.link-nrl-sm {
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .link-nrl.link-nrl-sm {
+    width: 55%;
+    margin-bottom: 1rem;
+  }
+}
+.link-nrl.link-nrl-sm img {
+  display: block;
+}
+.link-nrl.link-nrl-sm span {
+  padding-left: 10px;
+}
+@media (max-width: 768px) {
+  .link-nrl.link-nrl-sm {
+    margin-right: 0.5rem;
+  }
+}
+.link-nrl .ico-sm {
+  margin-right: 0.8rem;
+}
+
+.scroll-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  border: 0;
+  font-size: 1.9rem;
+  z-index: 999;
+  color: #ffffff;
+  background: #FFCE02;
+  box-shadow: 0px 0px 8px #d6d6d6;
+}
+@media (max-width: 767px) {
+  .scroll-top {
+    bottom: 58px;
+  }
+}
+.scroll-top .fa-angle-up {
+  -webkit-animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+          animation: bounce 1600ms infinite cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+@-webkit-keyframes bounce {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bounce {
+  50% {
+    transform: translateY(-8px);
+  }
+}
+p {
+  font-family: "PoppinsRegular", sans-serif, sans-serif;
+  font-size: 1.375rem;
+  line-height: 2.15rem;
+}
+
+@media only screen and (min-width: 1200px) {
+  html {
+    font-size: 11px;
+  }
+}
+@media only screen and (min-width: 1400px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media (max-width: 992px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (max-width: 320px) {
+  html {
+    font-size: 11px;
+  }
+}
+
+body {
+  font-family: "PoppinsRegular", sans-serif, sans-serif;
+  font-size: 1.4rem;
+  color: #221F20;
+}
+
+.title-first {
+  font-size: 3.5rem;
+  color: #221F20;
+  font-family: "PoppinsSemiBold", sans-serif;
+}
+@media (max-width: 767px) {
+  .title-first {
+    font-size: 2.5rem;
+    line-height: 4rem;
+    font-size: 2.3rem;
+  }
+}
+
+.title-secnd {
+  font-size: 3rem;
+  color: #221F20;
+  font-family: "PoppinsSemiBold", sans-serif;
+}
+@media (max-width: 767px) {
+  .title-secnd {
+    font-size: 2rem;
+  }
+}
+
+.title-third {
+  font-size: 3.25rem;
+  color: #221F20;
+  font-family: "PoppinsSemiBold", sans-serif;
+}
+@media (max-width: 767px) {
+  .title-third {
+    font-size: 1.8rem;
+  }
+}
+
+.title-fourth {
+  font-size: 1.6rem;
+  margin: 1.5rem 0;
+  font-family: "PoppinsSemiBold", sans-serif;
+  color: #221F20;
+}
+
+.heading-sec p {
+  color: #707070;
+  font-size: 1.75rem;
+  line-height: 2.625rem;
+  font-family: "PoppinsRegular", sans-serif, sans-serif;
+}
+@media (max-width: 768px) {
+  .heading-sec p br {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .heading-sec p {
+    font-size: 1.4rem;
+  }
+}
+.heading-sec p.nm-text {
+  font-size: 1.4rem;
+  line-height: 2.15rem;
+  color: #221F20;
+}
+.heading-sec .title-secnd {
+  margin-bottom: 2rem;
+}
+.heading-sec .title-first {
+  text-shadow: inherit;
+  margin-bottom: 2rem;
+}
+
+.big-ttl {
+  font-size: 4.125rem;
+  font-family: "PoppinsBold", sans-serif;
+  color: #221F20;
+  line-height: 1.4;
+}
+@media screen and (max-width: 992px) {
+  .big-ttl {
+    font-size: 3rem;
+  }
+}
+
+/*box shadow*/
+.box-shadow, .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub, .pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab, .btn-bg.btn-bg-dark:hover {
+  box-shadow: 0px 0px 8px #F0F0F0;
+}
+
+.light-box-shadow {
+  box-shadow: 0px 0px 8px #F0F0F0;
+}
+
+.App-Body {
+  min-height: 100vh;
+  margin-top: 9.5rem;
+}
+@media screen and (max-width: 767px) {
+  .App-Body {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+}
+@media screen and (max-width: 992px) {
+  .App-Body {
+    margin-top: 8.6rem;
+  }
+}
+
+.App {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.pricing-banner-tabs {
+  padding: 5rem 0 10rem 0;
+  position: relative;
+}
+.pricing-banner-tabs::after {
+  content: "";
+  width: 21rem;
+  height: 20rem;
+  display: block;
+  position: absolute;
+  left: 2rem;
+  bottom: 0;
+  background: url(../../assets/images/pricing/bg2.png) no-repeat top left;
+  background-size: contain;
+}
+@media (max-width: 992px) {
+  .pricing-banner-tabs::after {
+    display: none;
+  }
+}
+.pricing-banner-tabs::before {
+  content: "";
+  width: 28rem;
+  height: 44rem;
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 7rem;
+  background: url(../../assets/images/pricing/banner-bg-right.png) no-repeat top right;
+  background-size: contain;
+}
+@media (max-width: 992px) {
+  .pricing-banner-tabs::before {
+    display: none;
+  }
+}
+.pricing-banner-tabs .heading-sec-top {
+  margin-bottom: 6rem;
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs .heading-sec-top {
+    text-align: center;
+  }
+}
+.pricing-banner-tabs .heading-sec-top h3 {
+  font-size: 4.125rem;
+  font-weight: 700;
+  font-family: "PoppinsBold", sans-serif;
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .heading-sec-top h3 {
+    font-size: 2.5rem;
+  }
+}
+.pricing-banner-tabs .pricing-bloc-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -3%;
+  padding-bottom: 9rem;
+  position: relative;
+  z-index: 9;
+}
+.pricing-banner-tabs .pricing-bloc-tabs::after {
+  content: "";
+  width: 48rem;
+  height: 47rem;
+  display: block;
+  position: absolute;
+  right: -13rem;
+  top: -20rem;
+  background: url(../../assets/images/pricing/slider-bg.png) no-repeat top right;
+  background-size: contain;
+  z-index: -1;
+}
+@media (max-width: 992px) {
+  .pricing-banner-tabs .pricing-bloc-tabs::after {
+    display: none;
+  }
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs {
+  width: 23%;
+  margin-left: 2%;
+  margin-bottom: 3rem;
+  position: relative;
+  border: 0;
+  outline: none;
+  box-sizing: inherit;
+  background: inherit;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub {
+  background: #ffffff;
+  padding: 3rem 1.2rem;
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 8px #F0F0F0;
+  border-radius: 20px;
+  position: relative;
+  z-index: 9;
+  width: 97%;
+  display: block;
+  margin: 0 auto;
+  height: 100%;
+  text-align: left;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub h4 {
+  font-family: "PoppinsSemiBold", sans-serif;
+  margin: 1.5rem 0 1rem 0;
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub h4 {
+    font-size: 1.6rem;
+  }
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub p {
+  margin: 0;
+  font-size: 1.375rem;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub .tab-ico {
+  width: 50px;
+  height: 50px;
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs .pricing-bloc-tabs .tabs .bloc-tabs-sub {
+    text-align: center;
+  }
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs::before {
+  content: "";
+  background: #FFCE02;
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 20px;
+  transition: 0.7s;
+  -webkit-transition: 0.7s;
+  -moz-transition: 0.7s;
+  -ms-transition: 0.7s;
+  -o-transition: 0.7s;
+  opacity: 0;
+  visibility: hidden;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs:hover .bloc-tabs-sub {
+  border: 3px solid #FFCE02;
+  box-shadow: none;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs:hover::before {
+  transform: rotate(4deg);
+  opacity: 1;
+  visibility: visible;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs.active-tabs .bloc-tabs-sub {
+  border: 3px solid #FFCE02;
+  box-shadow: none;
+}
+.pricing-banner-tabs .pricing-bloc-tabs .tabs.active-tabs::before {
+  transform: rotate(4deg);
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 992px) {
+  .pricing-banner-tabs .pricing-bloc-tabs .tabs {
+    width: 48%;
+  }
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .pricing-bloc-tabs .tabs {
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .pricing-bloc-tabs {
+    margin-left: 0;
+    padding-bottom: 4rem;
+  }
+}
+.pricing-banner-tabs .content-tabs .content {
+  background: #ffffff;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+.pricing-banner-tabs .content-tabs .content.active-content {
+  display: block;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .heading-sec {
+  margin-bottom: 4rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab {
+  border-radius: 18px;
+  padding: 2rem 1rem;
+  margin-bottom: 9rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data tbody td {
+  padding: 1.5rem 1.5rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data tbody td h5 {
+  font-family: "PoppinsMedium", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.7;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data tbody td h6 {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  font-family: "PoppinsRegular", sans-serif;
+  font-weight: 400;
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data tbody td h6 {
+    white-space: nowrap;
+  }
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data thead th {
+  padding: 1.5rem 1.5rem;
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .pricing-data thead th {
+    white-space: nowrap;
+  }
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab .term-para {
+  padding: 2rem;
+  margin-top: 1rem;
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .pricing-table-tab {
+    margin-bottom: 5rem;
+  }
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -3%;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub {
+  width: 47%;
+  margin-left: 3%;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 9;
+  background: #ffffff;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .box-sub-head {
+  background: #221F20;
+  display: block;
+  text-align: center;
+  color: #ffffff;
+  padding: 2rem 3rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  margin-bottom: 2rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list {
+  padding: 2rem 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10%;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm {
+  width: 23.33%;
+  margin-left: 10%;
+  text-align: center;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formcontrol {
+  width: 100%;
+  border: 2px solid #221F20;
+  display: block;
+  outline: none;
+  box-shadow: inherit;
+  color: #221F20;
+  padding: 1rem;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  text-align: center;
+  -webkit-appearance: none;
+  margin: 0;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formcontrol::-moz-placeholder {
+  color: #221F20;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formcontrol:-ms-input-placeholder {
+  color: #221F20;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formcontrol::placeholder {
+  color: #221F20;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm h5 {
+  font-size: 1.5rem;
+  color: #707070;
+  margin-bottom: 1rem;
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm h5 {
+    font-size: 1.4rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 990px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm h5 {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm {
+    width: 27.33%;
+    margin-left: 6%;
+  }
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formgrp input[type=number]::-webkit-inner-spin-button,
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list .input-itm .formgrp input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-input-list {
+    margin-left: -6%;
+  }
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des {
+  padding: 2rem 3rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des > ul {
+  padding: 0;
+  margin: 0;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des > ul > li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid #d2cfcf;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des > ul > li span {
+  color: #707070;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des > ul > li span.ttl-amt {
+  font-family: "PoppinsSemiBold", sans-serif;
+  font-size: 1.6rem;
+}
+.pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub .calc-data-des > ul > li:last-child {
+  border: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+@media (max-width: 767px) {
+  .pricing-banner-tabs .content-tabs .banner-tab-cont .brokerage-calculator .calc-box .box-sub {
+    width: 97%;
+  }
+}
+@media (max-width: 768px) {
+  .pricing-banner-tabs {
+    padding: 5rem 0;
+  }
+}
+
+.pricing-demat-account {
+  background: #25B8AF;
+  padding: 10rem 0;
+}
+.pricing-demat-account .demat-account-features .title-secnd {
+  color: #ffffff;
+  margin-bottom: 3.5rem;
+}
+@media (max-width: 767px) {
+  .pricing-demat-account .demat-account-features .title-secnd {
+    text-align: center;
+  }
+}
+.pricing-demat-account .demat-account-features .img-demat-arrow {
+  max-width: 70%;
+  position: relative;
+  left: -50%;
+  margin-left: 100%;
+  display: block;
+}
+@media (max-width: 992px) {
+  .pricing-demat-account .demat-account-features .img-demat-arrow {
+    display: none;
+  }
+}
+.pricing-demat-account .demat-account-features .account-features-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -4%;
+}
+.pricing-demat-account .demat-account-features .account-features-list .feat-list-itm {
+  width: 46%;
+  margin-left: 4%;
+  margin-bottom: 3rem;
+  padding: 2rem 2rem 1rem 2rem;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+}
+.pricing-demat-account .demat-account-features .account-features-list .feat-list-itm h4 {
+  font-size: 1.8rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+.pricing-demat-account .demat-account-features .account-features-list .feat-list-itm p {
+  color: #ffffff;
+  font-size: 1.2rem;
+  padding: 0;
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .pricing-demat-account {
+    padding: 5rem 0;
+  }
+}/*# sourceMappingURL=pricing.css.map */
