@@ -10,12 +10,7 @@ import thumb1 from '../../assets/images/research/thumbnail-img1.webp';
 import thumb2 from '../../assets/images/research/thumbnail-img2.webp';
 import thumb3 from '../../assets/images/research/thumbnail-img3.webp';
 import thumb4 from '../../assets/images/research/thumbnail-img4.webp';
-
-
-
-
 function LongTermResearch() {
-
   const [toggleState, setToggleState] = useState(1);
   const [list,setList] = useState([]);
   const [data,setData] = useState('');
@@ -26,7 +21,6 @@ function LongTermResearch() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
@@ -145,10 +139,7 @@ function LongTermResearch() {
           </div>
         </section>
 
-        
 
-        
-    
     </div>
   );
 }

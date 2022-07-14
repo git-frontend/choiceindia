@@ -32,11 +32,20 @@ function DematAccountForm(props) {
     var UTMSource = useRef('');
     var refercode = useRef('');
     var otpSessionID = useRef('');
+    var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
   
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
     function showOpenAccountAdPopup() {
-        setShowOpenAccountPopup(true);
+        if (!showOTP) {
+            setShowOpenAccountPopup(true);
+        } else {
+            callOpenAccountAdPopupAgain();
+        }
     }
 
     function hideOpenAccountAdPopup() {
@@ -52,9 +61,11 @@ function DematAccountForm(props) {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            showOpenAccountAdPopup();
-        }, 60000);
+        if (!isMobile.current) {
+            setTimeout(() => {
+                showOpenAccountAdPopup();
+            }, 60000);
+        }
     }, []);
 
     function handleMobile(e) {
