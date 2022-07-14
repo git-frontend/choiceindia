@@ -11,6 +11,7 @@ import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
+  import { Link } from "react-router-dom";
 
 function NRIDemateAccount() {
 
