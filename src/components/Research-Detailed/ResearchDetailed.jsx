@@ -13,27 +13,34 @@ function ResearchDetailed() {
 
   const [list, setList] = useState(null);
   const { id } = useParams();
+  const { catid } = useParams();
   console.log('EEEEEEE',id);
+  console.log('WWWWWWW',catid);
 
+  function getSingleResearchDetail(id){
 
-  function loadResearch(id) {
-    ResearchService.researchcategory(id).then(
+    ResearchService.getSingleResearchDetail(id).then(
       res => {
-        setList(res.response.data);
-        console.log('Detailed',res.response.data)
+        if(res){
+          if(res.response.data){
+            setList(res.response.data);
+          }
+        }
+        // setList(res.response.data);
+        console.log('Detail',res);
       }
     )
-  };
+  }
 
   useEffect(() => {
-    loadResearch(id);
+    getSingleResearchDetail(id);
   },[])
 
   return (
     <div className="wrapper-rsrch">
 
-        <Banner />
-        <TrendingReports />
+        <Banner data={list}/>
+        <TrendingReports data={catid} />
 
     </div>
   );

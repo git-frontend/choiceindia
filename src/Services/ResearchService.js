@@ -42,6 +42,14 @@ const Research = {
             return data
         })
         
+    },
+
+    getSingleResearchDetail: function(id){
+        let api = new API_URLS()
+        let url = api.getresearchDetailURL(id)
+        return axios.get(url,this.headerConfig).then(({ data }) => {
+            return data
+        })
     }
 }
 export default Research;

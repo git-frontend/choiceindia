@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -392,6 +392,11 @@ export class API_URLS {
     getsuccessURL(){
 
         return this.JiffyBaseURL + this.successURL;
+    }
+
+    getresearchDetailURL(uuid){
+
+        return this.researchURL + `api/fundamental/${uuid}`;
     }
 
 }

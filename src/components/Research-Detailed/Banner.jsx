@@ -2,7 +2,9 @@
 import React from "react";
 import thumb2 from '../../assets/images/research/pdf-ico.webp';
 
-function Banner() {
+function Banner(props) {
+
+  console.log('Banner',props.data);
 
   return (
     <div>
@@ -13,12 +15,12 @@ function Banner() {
           <div className="row gx-5 align-items-center">
             <div className="col-md-12">
             <div className="right-pdf-sec">
-                <a href="/" className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
+                <a href={props?.data?.file_url? props?.data?.file_url : '' } className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
               </div>
               <div className="bnr-left">
                 <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1>
-                <div className="api-cont-des">
-                  <p>With a revenue market share of 1.5%, Windlas Biotech Ltd. (WBL) is among the top-five contract development &amp; manufacturing organization (CDMO) in the domestic pharma sector. It serves seven out of top-10 pharma formulation companies in India. The company focuses on therapeutic areas like cardiovascular, anti-diabetics, neurology, gastrointestinal, vitamins, minerals, nutrients etc. WBL operated in three verticals, namely, the CDMO services & products, the Domestic trade generics & OTC brands and the Exports segment. In FY22, these verticals generated 82.3%, 13.2% and 4.5%, respectively, to the total business from the sales of products.
+                <div className="api-cont-des" dangerouslySetInnerHTML={{__html: props?.data?.description? props?.data?.description : ''}}>
+                  {/* <p>With a revenue market share of 1.5%, Windlas Biotech Ltd. (WBL) is among the top-five contract development &amp; manufacturing organization (CDMO) in the domestic pharma sector. It serves seven out of top-10 pharma formulation companies in India. The company focuses on therapeutic areas like cardiovascular, anti-diabetics, neurology, gastrointestinal, vitamins, minerals, nutrients etc. WBL operated in three verticals, namely, the CDMO services & products, the Domestic trade generics & OTC brands and the Exports segment. In FY22, these verticals generated 82.3%, 13.2% and 4.5%, respectively, to the total business from the sales of products.
                   </p>
                   <h4>Investment rationale:</h4>
                   <ul>
@@ -39,7 +41,7 @@ function Banner() {
                   </ul>
                   <h4>Valuation:</h4>
                   <p>WBL came out with an IPO (in Aug. 2021) and demanded a P/E valuation of 26.6x (to its restated FY21 EPS of Rs. 17.3). The issue was fully priced and since its listing, the share price is in a downward trend.</p>
-                  <p>At CMP of Rs. 222.4, WBL’s share is trading at a TTM P/E multiple of 12x (to its TTM EPS of Rs. 17.5), which seems to be attractive considering the growth outlook and return profile. Thus, we assign a “BUY” rating on the stock with a target price of Rs. 289.4 per share.</p>
+                  <p>At CMP of Rs. 222.4, WBL’s share is trading at a TTM P/E multiple of 12x (to its TTM EPS of Rs. 17.5), which seems to be attractive considering the growth outlook and return profile. Thus, we assign a “BUY” rating on the stock with a target price of Rs. 289.4 per share.</p> */}
                 </div>
               </div>
             </div>

@@ -9,6 +9,9 @@ import thumb1 from '../../assets/images/research/thumbnail-img1.webp';
 import thumb2 from '../../assets/images/research/thumbnail-img2.webp';
 import thumb3 from '../../assets/images/research/thumbnail-img3.webp';
 import thumb4 from '../../assets/images/research/thumbnail-img4.webp';
+import {Link} from 'react-router-dom';
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
 function LongTermResearch() {
   const [toggleState, setToggleState] = useState(1);
   const [list,setList] = useState([]);
@@ -18,6 +21,10 @@ function LongTermResearch() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+  const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+
+  const navigate = useNavigate();
+
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
@@ -32,6 +39,12 @@ function LongTermResearch() {
       }
     )
   };
+
+  function getSingleDetail(id){
+    console.log('IIIII',id);
+    navigate(`/research-detailed/${id}/${tempid}`);
+  }
+
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
@@ -52,19 +65,19 @@ function LongTermResearch() {
         <div className="research-bloc-tabs">
               <button
                 className={count === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(1);loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')}}
+                onClick={() => {setcount(1);setTempId('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');}}
               >
                 Economic Analysis
               </button>
               <button
                 className={count === 2  ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(2);loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
+                onClick={() => {setcount(2);setTempId('f890363a-512e-4797-91fd-4d40732844a3');loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
               >
                 Company Fundamentals
               </button>
               <button
                 className={count === 3  ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(3);loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
+                onClick={() => {setcount(3);setTempId('1aa86611-7b88-4069-af82-1e04e80659a4');loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
               >
                  Industry Analysis
               </button>
@@ -94,7 +107,8 @@ function LongTermResearch() {
                           <p>{res.status === 'pending'? 'Accept' :res.status}</p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <a href="#" className="post-read">Read More</a>
+                              {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                              <a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>
                           </div>
                       </div>
                   </div>
