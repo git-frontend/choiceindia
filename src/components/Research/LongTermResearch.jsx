@@ -10,7 +10,7 @@ import thumb1 from '../../assets/images/research/thumbnail-img1.webp';
 import thumb2 from '../../assets/images/research/thumbnail-img2.webp';
 import thumb3 from '../../assets/images/research/thumbnail-img3.webp';
 import thumb4 from '../../assets/images/research/thumbnail-img4.webp';
-
+import { useNavigate, Link } from "react-router-dom";
 
 
 
@@ -20,7 +20,7 @@ function LongTermResearch() {
   const [list,setList] = useState([]);
   const [data,setData] = useState('');
   const [trigger,setTrigger]= useState(false);
-
+  let navigate = useNavigate(); 
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -41,6 +41,17 @@ function LongTermResearch() {
       }
     )
   };
+
+  function goToResearchDetail(single_detail){
+    console.log('DDDDDDDD',single_detail);
+    // if(single_detail){
+    //   // let path = `/research-detailed/${single_detail}`;
+    //   // let path =`/research-detailed` 
+    //   // navigate(path);
+    //   <Link to={`/research-detailed/${single_detail}`} />
+    // }
+    <Link to={`/research-detailed/${single_detail}`} />
+  }
 
   useEffect(() => {
     setTrigger(true)
@@ -115,7 +126,9 @@ function LongTermResearch() {
                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <a href="#" className="post-read">Read More</a>
+                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
+                              {/* <a onClick={() =>{goToResearchDetail(res.uuid)
+                              console.log('RRRRRRREEEE',res)} } className="post-read">Read More</a> */}
                           </div>
                       </div>
                   </div>
@@ -148,7 +161,8 @@ function LongTermResearch() {
                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <a href="#" className="post-read">Read More</a>
+                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
+                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
                           </div>
                       </div>
                   </div>
@@ -181,7 +195,8 @@ function LongTermResearch() {
                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <a href="#" className="post-read">Read More</a>
+                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
+                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
                           </div>
                       </div>
                   </div>
@@ -214,7 +229,8 @@ function LongTermResearch() {
                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                           <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
-                              <a href="#" className="post-read">Read More</a>
+                              <Link to={`/research-detailed/${res.uuid}`} className="post-read">Read More</Link>
+                              {/* <a onClick={() => goToResearchDetail(res.uuid)} className="post-read">Read More</a> */}
                           </div>
                       </div>
                   </div>
