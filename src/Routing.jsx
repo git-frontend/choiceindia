@@ -5,6 +5,8 @@ import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
 import Footer from './components/Common-features/Footer';
 import OpentoTop from './components/Common-features/OpentoTop';
+
+
 import '../src/assets/css/common.scss';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
@@ -35,7 +37,6 @@ const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/In
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
-const Lazybasket = React.lazy(() => import('./components/Basket/Basket'));
 const Lazyresearch = React.lazy(() => import('./components/Research/Research'));
 
 const Lazyopentradingaccount = React.lazy(() => import('./components/OpenTradingAccount/OpenTradingAccount'));
@@ -45,9 +46,12 @@ const Lazycorporatedemateaccount = React.lazy(() => import('./components/Corpora
 const Lazyminordemateaccount = React.lazy(() => import('./components/MinorDemateAccount/MinorDemateAccount'));
 const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTradingAccountHindi/OpenTradingAccountHindi'));
 const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
+const Lazyfreeamc = React.lazy(() => import('./components/FreeAmcAccount/FreeAmcAccount'));
+const Lazyhinditrade = React.lazy(() => import('./components/TradingAccountHindi/TradingAccountHindi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
+const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
 
 function Routing() {
@@ -119,7 +123,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/investor-info' element={
+                        <Route exact path='/Investor-info' element={
                             <React.Suspense>
                                 < LazyInvestorInfo />
                             </React.Suspense>
@@ -135,12 +139,12 @@ function Routing() {
                                 < Lazypricing />
                             </React.Suspense>
                         } />
-                        <Route exact path='/sumeet-bagadia' element={
+                        <Route exact path='/Sumeet-Bagadia' element={
                             <React.Suspense>
                                 < Lazymarketing />
                             </React.Suspense>
                         } />
-                        <Route exact path='/sub-broker' element={
+                        <Route exact path='/Sub-Broker' element={
                             <React.Suspense>
                                 < Lazysubbroker />
                             </React.Suspense>
@@ -151,9 +155,19 @@ function Routing() {
                                 < Lazyrefer />
                                 </React.Suspense>
                         } />
-                        <Route exact path='/open-demat-account' element={
+                        <Route exact path='/open-free-demat-account' element={
                             <React.Suspense>
                                 < Lazyopendemat />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/hindi/trading-account' element={
+                            <React.Suspense>
+                                < Lazyhinditrade />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/free-amc-demat-account' element={
+                            <React.Suspense>
+                                < Lazyfreeamc />
                             </React.Suspense>
                         } />
                         <Route exact path='/open-trading-account' element={
@@ -181,12 +195,12 @@ function Routing() {
                                 < Lazyminordemateaccount />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-hindi' element={
+                        <Route exact path='/hindi/open-demat-trading-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccounthindi />
                             </React.Suspense>
                         } />
-                        <Route exact path='/open-trading-account-marathi' element={
+                        <Route exact path='/marathi/open-demat-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccountmarathi />
                             </React.Suspense>
@@ -218,6 +232,12 @@ function Routing() {
                         <Route exact path='/baskets' element={
                             <React.Suspense>
                                 < Lazybasket />
+                            </React.Suspense>
+                        } />
+
+                    <Route exact path='/research-detailed' element={
+                            <React.Suspense>
+                                < Lazyresearchdetailed />
                             </React.Suspense>
                         } />
 

@@ -8,7 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/currency-brokerage-ch
 import Image9 from '../../assets/images/open-demat-account/commodity-brokerage-charges.svg';
 
 
-function LowBrokerageDematAccount() {
+function LowBrokerageAMCAccount() {
 
     const settings = {
         infinite: true,
@@ -47,8 +47,8 @@ function LowBrokerageDematAccount() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="secttitle">कमी ब्रोक्रेरजने डिमॅट अकाऊंट ओपन करा!</h2>
-                                <p>आमच्याकडे इंट्राडे, वितरण (डिलिव्हरी) आणि तुमच्या भविष्याचा विचार करुनच ठराविक प्रमाणात ब्रोकरेज आकारले जाते. तसेच पर्यायांसाठी ब्रोकरेजची गणना ही फ्लॅट फीच्या आधारे केली जाते.</p>
+                                <h2 className="secttitle">Open a Zero AMC Demat Account</h2>
+                                <p>Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.</p>
                             </div>
                         </div>
                         <div className="col-md-12">
@@ -64,20 +64,20 @@ function LowBrokerageDematAccount() {
 
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">इक्विटी</h5>
+                                                    <h5 className="card-title">Equity</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
                                                         <li>
-                                                        डिलिव्हरी <span>0.२०%</span>
+                                                            Delivery <span>0.20%</span>
                                                         </li>
                                                         <li>
-                                                        इंट्राडे <span>0.०२%</span>
+                                                            Intraday <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                        फ्यूचर <span>0.०२%</span>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शन <span>रु. २५ प्रति लॉट</span>
+                                                            Options <span>₹ 25 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -90,15 +90,15 @@ function LowBrokerageDematAccount() {
                                                 </div>
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">चलन</h5>
+                                                    <h5 className="card-title">Currency</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                        फ्यूचर <span>0.०२%</span>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शन <span>रु. २० प्रति लॉट</span>
+                                                            Options <span>₹ 20 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -112,15 +112,15 @@ function LowBrokerageDematAccount() {
                                                 </div>
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">कमोडिटी</h5>
+                                                    <h5 className="card-title">Commodity</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                        फ्यूचर्स <span>0.०२%</span>
+                                                            Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                        ऑप्शंस <span>रु. ५० प्रति लॉट</span>
+                                                            Options <span>₹ 50 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -142,4 +142,4 @@ function LowBrokerageDematAccount() {
     );
 }
 
-export default LowBrokerageDematAccount;
+export default LowBrokerageAMCAccount;

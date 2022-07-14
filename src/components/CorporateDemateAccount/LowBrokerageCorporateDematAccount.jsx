@@ -3,9 +3,9 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
-import Image7 from '../../assets/images/open-demat-account/equity.svg';
-import Image8 from '../../assets/images/open-demat-account/currency.svg';
-import Image9 from '../../assets/images/open-demat-account/commodity.svg';
+import Image7 from '../../assets/images/open-demat-account/equity-brokerage-charges.svg';
+import Image8 from '../../assets/images/open-demat-account/currency-brokerage-charges.svg';
+import Image9 from '../../assets/images/open-demat-account/commodity-brokerage-charges.svg';
 
 
 function LowBrokerageCorporateDematAccount() {
@@ -61,7 +61,7 @@ function LowBrokerageCorporateDematAccount() {
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image7}  width={"28"} height={"26"} className="img-fluid" alt="Equity Brokerage Charges" />
+                                                    <img src={Image7}  width={"28"} height={"26"} className="img-fluid" alt={"Equity Brokerage Charges"}/>
                                                 </div>
 
                                                 <div className="card-block">
@@ -88,7 +88,7 @@ function LowBrokerageCorporateDematAccount() {
                                         <div className="col-md-4 item  p-md-2" data-toggle="modal" data-target="#myModal2">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image8}  width={"28"} height={"28"} alt="Currency Brokerage Charges" className="img-fluid lazyload" />
+                                                    <img src={Image8}  width={"28"} height={"28"} alt={"Currency Brokerage Charges"} className="img-fluid lazyload" />
                                                 </div>
                                                 <div className="card-block">
 
@@ -110,7 +110,7 @@ function LowBrokerageCorporateDematAccount() {
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal5">
                                             <div className="card adv-card">
                                                 <div className="icon-wrap">
-                                                    <img src={Image9}  width={"28"} height={"28"} alt="Commodity Brokerage Charges" className="img-fluid lazyload" />
+                                                    <img src={Image9}  width={"28"} height={"28"} alt={"Commodity Brokerage Charges"} className="img-fluid lazyload" />
                                                 </div>
                                                 <div className="card-block">
 

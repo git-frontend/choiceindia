@@ -1,5 +1,5 @@
 import { useState } from 'react';
-// import  HomePageBanner from './HomePageBanner.jsx'
+import  HomePageBanner from './HomePageBanner.jsx'
 import EverydayFinance from './EverydayFinance.jsx'
 import ChoiceFinx from './ChoiceFinx.jsx'
 import MarketInsights from './MarketInsights.jsx'
@@ -33,7 +33,7 @@ function Home() {
 				skeleton ? <Template1 /> :
 					<main className='home-main'>
 
-						<div className='home-banner-ved'>
+						{/* <div className='home-banner-ved'>
 							<div className="overlay"></div>
 							<video src={videoBg} autoPlay loop muted className='banner-ved' />
 							<div className='banner-ved-des'>
@@ -45,9 +45,9 @@ function Home() {
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> */}
 
-						{/* <HomePageBanner /> */}
+						<HomePageBanner />
 
 
 						<EverydayFinance />

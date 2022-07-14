@@ -40,8 +40,7 @@ function HomePageBanner() {
                                         <div className="col-md-6">
                                             <div className="banner-caption" >
 
-                                                <h1>{response.title}</h1>
-                                                <h1>{response.description}</h1>
+                                                <h1>{response.title} <br/>{response.description}</h1>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
