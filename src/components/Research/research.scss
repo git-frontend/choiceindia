@@ -507,6 +507,14 @@
                 top: 0;
               }
             }
+
+            .target-line-crossed{
+              &::after{
+           
+                right: 10%;
+               
+              }
+            }
             .itm-cont-des{
               h5{
                 font-size: 1rem;
@@ -593,6 +601,14 @@
                 &::before{
                   border-top-color: #EF404A;
                 }
+              }
+            }
+
+
+
+            .cmp-crossed{
+              &::before{
+                margin-right: 0px;
               }
             }
           }
@@ -1371,6 +1387,10 @@
   cursor: pointer;
 }
 
+
+.target-crossed{
+  right: 10% !important;
+}
 .loaderB {
   border: 5px solid #f3f3f3;
   border-radius: 50%;

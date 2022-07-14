@@ -201,6 +201,11 @@ function SBDesk() {
                         ele.priceData = {}
                         ele.datapoints.forEach(sub => {
                             sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
+
+                            // if(sub.key=='target'){
+                            //     console.log(sub,"subsubsub")
+                            //     sub.value='62'
+                            // }
                             ele.priceData[sub.key] = sub
                         })
 
@@ -271,14 +276,14 @@ function SBDesk() {
                                 </div>
                                 <div className="tab-itm-bottom">
                                     <div className="tab-itm-baar">
-                                        <div className="itm-baar-line" >
+                                        <div className={"itm-baar-line " + (report?.priceData?.ltp_price_percentage>100?"target-line-crossed":'')} >
 
                                         </div>
                                         <div className="itm-cont-des stp-loss">
                                             <h5>Stop Loss</h5>
                                             <h4>{(Number(report?.priceData?.stop_loss?.value || 0)).toFixed(2)}</h4>
                                         </div>
-                                        <div className="itm-cont-des targt-prize">
+                                        <div className={"itm-cont-des targt-prize "+(report?.priceData?.ltp_price_percentage>100?'target-crossed':'')} >
                                             <h5>Target Price </h5>
                                             <h4>{((Number(report?.priceData?.target?.value || 0))).toFixed(2)}</h4>
                                         </div>
@@ -286,7 +291,7 @@ function SBDesk() {
                                             <h5>Entry Price</h5>
                                             <h4>{(Number(report?.priceData?.entry_price?.value || 0)).toFixed(2)}</h4>
                                         </div>
-                                        <div className={"curnt-mrk-price " + ((report?.LTP < report?.priceData?.entry_price?.value) ? 'red-txt' : 'grn-txt')} style={{ left: (report?.priceData?.ltp_price_percentage > 85 ? 85 : report?.priceData?.ltp_price_percentage) + '%' }}>
+                                        <div className={" curnt-mrk-price " + ((report?.LTP < report?.priceData?.entry_price?.value) ? 'red-txt ' : 'grn-txt ') + (report?.priceData?.ltp_price_percentage>100?" cmp-crossed":'')} style={{ left: (report?.priceData?.ltp_price_percentage > 85 ? 85 : report?.priceData?.ltp_price_percentage) + '%' }}>
                                             <h4>CMP <span className="sm-txt">{(report?.LTP||0).toFixed(2)}</span></h4>
                                         </div>
                                     </div>
