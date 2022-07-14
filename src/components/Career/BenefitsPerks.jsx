@@ -1,11 +1,11 @@
-import CareerImage5 from '../../assets/images/career/money.svg';
-import CareerImage6 from '../../assets/images/career/pie-chart-2.svg';
-import CareerImage7 from '../../assets/images/career/bus.svg';
-import CareerImage8 from '../../assets/images/career/shield.svg';
-import CareerImage9 from '../../assets/images/career/license.svg';
-import CareerImage10 from '../../assets/images/career/wifi.svg';
-import CareerImage11 from '../../assets/images/career/headset.svg';
-import CareerImage12 from '../../assets/images/career/yoga-mat.svg';
+import CareerImage5 from '../../assets/images/career/advanced-stipend.svg';
+import CareerImage6 from '../../assets/images/career/profit-sharing.svg';
+import CareerImage7 from '../../assets/images/career/team-outing.svg';
+import CareerImage8 from '../../assets/images/career/health-insurance.svg';
+import CareerImage9 from '../../assets/images/career/skill-upgradation.svg';
+import CareerImage10 from '../../assets/images/career/free-internet.svg';
+import CareerImage11 from '../../assets/images/career/youtube-premium.svg';
+import CareerImage12 from '../../assets/images/career/free-therapy-sessions.svg';
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -32,42 +32,42 @@ function BenefitsPerks() {
                             <div className='col-xl-7 col-md-10'>
                                 <div className='perks-list'>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage5} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage5} alt={"advanced stipend"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage5} alt='Loading'/> */}
                                         <h4>Advance Stipend </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage6} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage6} alt={"profit sharing"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage6} alt='Loading'/>   */}
                                         <h4>Profit Sharing </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage7} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage7} alt={"team outing"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage7} alt='Loading' /> */}
                                         <h4>Team Outings  </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage8} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage8} alt={"health insurance"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage8} alt='Loading' /> */}
                                         <h4>Health Insurance </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage9} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage9} alt={"skill upgradation"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage9} alt='Loading' /> */}
                                         <h4>Skill Upgradation </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage10} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage10} alt={"free internet"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage10} alt='Loading' /> */}
                                         <h4>Free Internet  </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage11} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage11} alt={"Youtube Premium"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage11} alt='Loading' /> */}
-                                        <h4>1:1 sessions with Ankur</h4>
+                                        <h4>Youtube Premium </h4>
                                     </div>
                                     <div className='perks-list-itm'>
-                                        <LazyLoader src={CareerImage12} alt={"Loading"} className={'img-fluid'} width={"42"} height={"42"} />
+                                        <LazyLoader src={CareerImage12} alt={"Free Therapy Sessions"} className={'img-fluid'} width={"42"} height={"42"} />
                                         {/* <img src={CareerImage12} alt='Loading' /> */}
                                         <h4>Free Therapy sessions </h4>
                                     </div>

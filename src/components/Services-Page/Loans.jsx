@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/services/loans-banner.webp';
+import Bannerimage from '../../assets/images/services/loan-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function Loans() {
@@ -22,7 +22,7 @@ function Loans() {
                     <div className="row gx-5 mb-5 align-items-center">
                         <div className="col-md-4">
                             <div className="rightsec">
-                            <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"410"} height={"431"} />
+                                <LazyLoader src={Bannerimage} alt={"loan services"} className={"img-fluid"} width={"410"} height={"431"} />
                                 {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid " width={"410"} height={"431"}></img> */}
                             </div>
                         </div>
