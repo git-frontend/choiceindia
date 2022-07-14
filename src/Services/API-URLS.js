@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false
+const environment = true
 
 
 /**URL Config */
@@ -8,10 +8,20 @@ const config = {
     UATServerURL:"https://choiceindia.com/blog/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL : "https://cmsapi.choiceindia.com/",
+
+
+    UATJiffyServerURL: "https://uat.jiffy.in/",
+    liveJiffyServerURL: "https://jiffy.choiceindia.com/",
+
+    UATJiffyURL: "http://devjiffy.choicebroking.in/",
+    liveJiffyURL: "https://jiffy.choiceindia.com/",
+
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
     liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
+    UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
+    liveNewResearchReportURL: "https://jiffy.choiceindia.com/api/researchreport/v2/api",
     // https://researchreportapi.jiffy.in/api/report/market-insights
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
@@ -21,21 +31,32 @@ const config = {
 
 
 export class API_URLS {
-
+    newResearchReportURL = 'https://jiffy.choiceindia.com/api/researchreport/v2/api';
   jiffyResearchURL = "";
   /** SSO Base URL */
   SSOServerURL = '';
  /**Server URL */
-  serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
-
-  /** banner URL */
+ serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
+ /**Server URL */
+ jiffyURL = "devjiffy.choicebroking.in";
+ jiffyExpertPageURL="research-report/research/experts/EQ/all/"
+ jiffySignalPageURL="research-report/research/signals/EQ/all/"
+ /** banner URL */
    bannerURL ="https://cmsapi.choiceindia.com/"
 
+
+     /** Base URL for JIFFY APIs */
+   jiffyServerURL = "https://api.jiffy.in/";
    /** faq URL */
    faqURL="https://choicebroking.freshdesk.com/api/v2/"
 
 
+  /**Research New Fetch Success Ratio */
+   fetchResearchReport = "/research-report-new"
 
+
+     /** PV breakout API data URL */
+pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
   /**Market Insights , fabal URL */
 
   addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
@@ -61,7 +82,10 @@ export class API_URLS {
    /** contact form */
 
    contactURL='contact-us/'
+    researchReport = '/research-report'
 
+      /** API URL For guest Token Generation*/
+   genKeyURL = "api/settings/GenKey";
    /** Faq category section */
 
    faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
@@ -95,6 +119,8 @@ export class API_URLS {
 
 
 
+
+
  /**
      * Set Config
      * @param {*} configKey 
@@ -104,16 +130,28 @@ export class API_URLS {
 
     this.setServerURL(config[configKey + 'ServerURL'])
     
+    this.setJiffyURL(config[configKey + 'JiffyURL'])
+    
     this.setBannerURL(config[configKey + 'BannerURL'])
 
+    this.setJiffyServerURL(config[configKey + 'JiffyServerURL']);
     this.setfaqURL(config[configKey + 'faqURL'])
     this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+    this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
 }
 
 setJiffyResearchURL = (url) => {
     this.jiffyResearchURL = url;
 }
 
+
+  /**
+ * Set Base URL of CMS APIs
+ * @param url url to Be set
+ */
+    setNewResearchReportURL(url) {
+    this.newResearchReportURL = url;
+  }
 /**
  * Set Server URL 
  * @param {*} url 
@@ -129,6 +167,22 @@ setServerURL = (url) => {
     this.serverURL = url;
 }
 
+/**
+ * Set Server URL 
+ * @param {*} url 
+ */
+ setJiffyServerURL = (url) => {
+    this.jiffyServerURL = url;
+}
+
+/**
+ * Set Server URL 
+ * @param {*} url 
+ */
+ setJiffyURL = (url) => {
+    this.jiffyURL = url;
+}
+
 
 /**
  * Set Banner URL 
@@ -137,6 +191,16 @@ setServerURL = (url) => {
  setBannerURL = (url) => {
 
     this.bannerURL = url;
+}
+
+
+getExpertDetailURL=(id)=>{
+return this.jiffyURL+this.jiffyExpertPageURL+id
+}
+
+
+getSignalDetailURL=(id)=>{
+    return this.jiffyURL+this.jiffySignalPageURL+id
 }
 
 /**
@@ -149,7 +213,13 @@ setServerURL = (url) => {
 }
 
 
+ fetchResearchReportURL() {
+    return this.newResearchReportURL + this.fetchResearchReport;
+  }
 
+  fetchSignalReportURL() {
+    return this.jiffyServerURL + this.pvBreakoutURL;
+  }
 
 
 /** Get Market Insite and fabal List URL */
@@ -198,6 +268,14 @@ getHomeSecondaryBannerURL(){
 
 getContactFormURL(){
     return this.bannerURL + this.contactURL
+}
+
+getSessionUrl(){
+    return this.jiffyServerURL+this.genKeyURL
+}
+
+getExpertReportURL(){
+    return this.jiffyResearchURL + this.researchReport
 }
 
 getFaqCategoryURL(){

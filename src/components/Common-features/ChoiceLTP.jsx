@@ -2,6 +2,7 @@ import "../Investors-info/investorsinfo.scss";
 import { AiFillCaretUp,AiFillCaretDown } from "react-icons/ai";
 import { subscribeOnStream , unsubscribeFromStream} from './../../Services/socketData.js';
 import React, { useEffect,useState } from "react";
+import { API_URLS } from "../../Services/API-URLS";
  function ChoiceLTP() {
 
     const [ b5Data, setB5Data] = useState({});
@@ -31,7 +32,8 @@ import React, { useEffect,useState } from "react";
    * Generate Session Id
    */
   function generateSessionId() {
-    fetch('https://api.jiffy.in/api/settings/GenKey')
+    let api=new API_URLS()
+    fetch(api.getSessionUrl())
       .then(response => {
         return response.json();
       })

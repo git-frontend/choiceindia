@@ -132,24 +132,28 @@ let getKeepAliveRequest = () => {
  * @returns 
  */
 let getMultitouchLineRequest = (symbolInfo, unsub) => {
-	let data = [{ SegmentId: segmentId, Token: token }]
+	let data = symbolInfo&&symbolInfo.length?symbolInfo:[{ SegmentId: segmentId, Token: token }]
 	let subUnSub = unsub
 	let requests = "";
 	let userId = getUserId() || "guest";
 	if (userId == 'guest') {
 		data = data.filter((scrip) => {
-			return scrip.SegmentId !== 5 && scrip.SegmentId !== 6 && scrip.SegmentId !== 7;
+			return scrip.SegmentId != 5 && scrip.SegmentId != 6 && scrip.SegmentId != 7;
 		});
 	}
 	let socketMultiTouchlineRequest = api.getMultitouchlineRequestURL()
+	data=JSON.parse(JSON.stringify(data))
 	data.forEach(element => {
-		if (element.SegmentId && element.Token && requests.indexOf('1=' + element.SegmentId + '$7=' + element.Token + '|') == -1) {
+		if (element.SegmentId && element.Token && (requests.indexOf('1=' + element.SegmentId + '$7=' + element.Token + '|') == -1)) {
 			requests += (socketMultiTouchlineRequest
 				.replace('$segmentId', element.SegmentId)
 				.replace('$token', element.Token));
 			requests += '|';
 		}
+	
 	});
+
+
 	let socketHeaderRequest = api.getHeaderRequestURL()
 	let socketRequest = socketHeaderRequest.replace('$currentDate', getCurrentDate()).replace('$sessionId', getSessionId() || '').replace('$requests', requests).replace('$subUnSub', subUnSub);
 	if (requests.lastIndexOf('|') !== requests.length - 1) alert('pipe not included at last');
@@ -178,7 +182,7 @@ let pipeToObject = (data) => {
  * @returns User Id
  */
 let getUserId = () => {
-	return userId
+	return userId ||'guest'
 }
 
 /**
@@ -357,7 +361,6 @@ let sendMsg = (message) => {
  */
 let reconnect = () => {
 
-	console.log("reconnect reconnect")
 	if (navigator.onLine && !reconnectObservable && getSessionId()) {
 		reconnectObservable = interval(reconnectInterval).pipe(takeWhile((value, index) => {
 			return index < reconnectAttempts && !isConnected;
@@ -416,6 +419,112 @@ export function subscribeOnStream(
 		socket.binaryType = "arraybuffer"
 
 		socket.onopen = (() => {
+
+			isConnected = true;
+			setTimeout(() => {
+				if (getSessionId()) {
+
+					sendQueueMessages()
+				}
+				reconnectObservable = null;
+				if (!keepAliveInterval) {
+					keepAliveInterval = interval(30000).pipe(takeWhile((value, index) => { return isConnected; }))
+					keepAliveInterval.subscribe(() => {
+						keeplive();
+					}, null, () => {
+						keepAliveInterval = null;
+					});
+				}
+			}, 1000);
+		});
+
+		socket.onclose = ((reason) => {
+			isConnected = false;
+			socket = new W3CWebSocket(socketUrl)
+			socket.binaryType = "arraybuffer"
+		});
+
+		socket.onerror = ((error) => {
+			setTimeout(() => reconnect(), reconnectInterval);
+		});
+
+		socket.onmessage = (msg => {
+			let currentByteArray = new Uint8Array(msg.data);
+			let tempArray = new Uint8Array(bufferArray.byteLength + currentByteArray.byteLength);
+			tempArray.set(bufferArray, 0);
+			tempArray.set(currentByteArray, bufferArray.byteLength);
+			let byteArrayLength = tempArray.byteLength;
+			let startIndex = 0; let endIndex = 0;
+			bufferArray = new Uint8Array(0);
+			let isCompressed = true;
+			do {
+				isCompressed = tempArray.slice(startIndex, startIndex + 1)[0] == 5;
+				let header = tempArray.slice(startIndex + 1, startIndex + 6);
+				let headerLength = Number(new TextDecoder("utf-8").decode(header));
+				endIndex = endIndex + headerLength + 6;
+				if (endIndex > tempArray.byteLength) {
+					bufferArray = new Uint8Array(tempArray.slice(startIndex));
+					break;
+				}
+				let message = isCompressed ? pako.inflate(tempArray.slice(startIndex + 6, endIndex)) :
+
+					tempArray.slice(startIndex + 6, endIndex);
+				let responseString = new TextDecoder("utf-8").decode(message);
+				startIndex = endIndex;
+				setTimeout((responseString) => {
+
+					if (responseString.indexOf('64=209') > -1) {
+						responseString = responseString.replace(/\$/g, "|");
+						onRealtimeCallbackData({responseString:responseString})
+//						socketDataPatch(pipeToObject(responseString), onRealtimeCallbackData, isIndex,responseString)
+					} else if (responseString.indexOf('64=128') > -1) {
+						onRealtimeCallbackData({responseString:responseString})
+//						socketDataPatch(pipeToObject(responseString), onRealtimeCallbackData, isIndex,responseString)
+					} else if (responseString.indexOf('64=155') > -1) {
+					}
+				}, 10, responseString);
+
+			} while (endIndex < byteArrayLength);
+
+		});
+
+		setTimeout(() => {
+			let message = getSocketLogonRequest()
+		
+			sendMsg(message)
+			let mulReq=getMultitouchLineRequest([], 1)
+		
+			sendMsg(mulReq)
+		}, 500);
+	}
+
+}
+
+
+
+
+export function unSubscribeMultitouchline(data) {
+    if (data && data.length > 0) {
+			sendMsg(getMultitouchLineRequest(data, "2"))
+     // this.socket.send();
+     
+    }
+  }
+
+export function subscribeMultitouchline(tokenList,onRealtimeCallback,sessionIdData){
+	//subscribeOnStream(1,8866,onRealtimeCallback,'guest',session,false)
+
+	let socketUrl='wss://' + 'brd.jiffy.in' + ':' + (( '4520'))
+	/* let split_symbol = symbolInfo.name.split(/[:/]/); */
+	//let symbol = split_symbol[0]
+	setSessionId(sessionIdData)
+	onRealtimeCallbackData = onRealtimeCallback;
+
+	if (!socket || socket.url !== socketUrl) {
+		socket = new W3CWebSocket(socketUrl)
+		socket.binaryType = "arraybuffer"
+
+		socket.onopen = (() => {
 			isConnected = true;
 			setTimeout(() => {
 				if (getSessionId()) {
@@ -444,7 +553,6 @@ export function subscribeOnStream(
 		});
 
 		socket.onmessage = (msg => {
-			console.log("msg")
 			let currentByteArray = new Uint8Array(msg.data);
 			let tempArray = new Uint8Array(bufferArray.byteLength + currentByteArray.byteLength);
 			tempArray.set(bufferArray, 0);
@@ -487,12 +595,13 @@ export function subscribeOnStream(
 		setTimeout(() => {
 			let message = getSocketLogonRequest()
 			sendMsg(message)
-			sendMsg(getMultitouchLineRequest({}, 1))
+
+			let mulReq=getMultitouchLineRequest(tokenList, 1)
+			sendMsg(mulReq)
 		}, 500);
 	}
 
 }
-
   /**
    * Generate Session Id
    */
@@ -536,8 +645,8 @@ export function subscribeOnStream(
  * @param {*} subscriberUID subscriberUID
  */
 export function unsubscribeFromStream(subscriberUID) {
-	console.log("unsubscribeFromStream")
-	sendMsg(getMultitouchLineRequest(subscriberUID, 2))
+	let unSubMul=getMultitouchLineRequest(subscriberUID, 2)
+	sendMsg(unSubMul)
 }
 
 /**
