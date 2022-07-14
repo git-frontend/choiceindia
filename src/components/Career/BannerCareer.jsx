@@ -49,7 +49,7 @@ function BannerCareer() {
             <div className="row justify-content-center">
                 <div className="col-xl-7 col-md-10">
                 <div className="heading-sec">
-                    <h3 className="title-first">Our Values</h3>
+                    <h1 className="title-first">Our Values</h1>
                     <p>We’ve built our workplace upon efficient functional teams that foster leadership, support, and peer learning. At Choice, we treasure our employees who contribute in creating value for the company with diligence, integrity, and innovation.</p>
                 </div>
                 </div>
