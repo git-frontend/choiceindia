@@ -20,7 +20,7 @@ function LongTermResearch() {
   const [list,setList] = useState([]);
   const [data,setData] = useState('');
   const [trigger,setTrigger]= useState(false);
-  const[count,setcount] = useState(1)
+  const[count,setcount] = useState(1);
 
 
   const toggleTab = (index) => {
@@ -30,7 +30,10 @@ function LongTermResearch() {
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
+      
         setList(res.response.data);
+        
+       
       }
     )
   };
@@ -38,7 +41,8 @@ function LongTermResearch() {
   function lpoSearch() {
     ResearchService.researchipo().then(
       res => {
-        setList(res);
+        setList(res.response.data);
+        
       }
     )
   };
@@ -103,22 +107,24 @@ function LongTermResearch() {
                 className="content active-content"
               >
               <div className="research-tab-cont">
-              <div className="research-tab-list">
+              
+
+                <div className="research-tab-list">
                {
-                list.slice(0,4).map((res,i)=>{
+                  list.slice(0,4).map((res,i)=>{
 
                   return(
 
                     <div className="res-tab-itm">
                       <div className="tab-itm-img">
-                         <img src={res.feature_image} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                         <img src={res.feature_image ? res.feature_image:thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                       </div>
                       <div className="tab-itm-des">
-                          <h5 className="ttl-des">{res.title}</h5>
+                          <h5 className="ttl-des">{res.title ? res.title : " "}</h5>
                   {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                          <p>{res.status === 'pending'? 'Accept' :res.status}</p>
+                          <p>{res.status === 'pending'? 'Accept' :res.status ? res.status:" "}</p>
                           <div className="itm-des-sub">
-                              <span className="date-post">03 Mar 2022</span>
+                              <span className="date-post">{res.publish_date ? res.publish_date:"" }</span>
                               <a href="#" className="post-read">Read More</a>
                           </div>
                       </div>
@@ -130,6 +136,7 @@ function LongTermResearch() {
                }
                   
               </div>
+
               </div>
               </div>
             </div>
