@@ -3,11 +3,11 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
-import Image7 from '../../assets/images/open-demat-account/low-brokerage.svg';
-import Image8 from '../../assets/images/open-demat-account/trade-facility.svg';
-import Image9 from '../../assets/images/open-demat-account/paperlessacntopening.png';
-import Image10 from '../../assets/images/open-demat-account/advancedplatform.png';
-import Image11 from '../../assets/images/open-demat-account/referal.svg';
+import Image7 from '../../assets/images/open-demat-account/low-brokerage-demat-account.svg';
+import Image8 from '../../assets/images/open-demat-account/free-call-for-trade-facility.svg';
+import Image9 from '../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg';
+import Image10 from '../../assets/images/open-demat-account/advanced-trading-app-platform.svg';
+import Image11 from '../../assets/images/open-demat-account/refer-and-earn-demat-account.svg';
 function WhyOpenFreeDematAccount() {
 
   const settings = {
@@ -56,7 +56,7 @@ function WhyOpenFreeDematAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage Demat Account" />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"Low Brokerage Demat Account"} />
                                             </div>
                                             <div className="card-block">
 
@@ -66,7 +66,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt="Free Call for Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt={"Free Call for Trade Facility"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -76,7 +76,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} width={"40"} height={"41"} alt="Free Paperless Demat Account Opening" className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt={"Free Paperless Demat Account Opening"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -88,7 +88,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"40"} height={"41"} alt="Advanced Trading App &amp; Platform" className="img-fluid lazyload" />
+                                                <img src={Image10} width={"40"} height={"41"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -100,7 +100,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt="Refer and Earn Demat Account" className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt={"Refer and Earn Demat Account"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
