@@ -5,7 +5,6 @@ import WhyOpenFreeNriAccount from "../NRIDemateAccount/WhyOpenFreeNriAccount";
 import DematAccountNriOpeningProcess from "../NRIDemateAccount/DematAccountNriOpeningProcess";
 import LowBrokerageNRIDematAccount from "../NRIDemateAccount/LowBrokerageNRIDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
-import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import {
     useLocation,
