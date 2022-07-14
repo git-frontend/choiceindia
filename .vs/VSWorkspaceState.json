@@ -4,8 +4,8 @@
     "\\src",
     "\\src\\assets",
     "\\src\\components",
-    "\\src\\components\\AuthorizedPerson"
+    "\\src\\components\\Refer-and-earn"
   ],
-  "SelectedNode": "\\src\\components\\AuthorizedPerson\\AuthorizeMoreContent.jsx",
+  "SelectedNode": "\\src\\components\\Refer-and-earn\\EarnUp.jsx",
   "PreviewInSolutionExplorer": false
 }

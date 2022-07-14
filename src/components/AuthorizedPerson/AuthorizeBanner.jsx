@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/sub-broker/banner-subbroker.webp';
+import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-without-deposit.webp';
 import SubBrokerForm from './../SubBroker/SubBrokerForm'
 
 function AuthorizeBanner() {
@@ -18,7 +18,7 @@ function AuthorizeBanner() {
                                     <h1 className="tlt1">Authorised Person</h1>
                                 </div>
                                 <div className="right-sec">
-                                   <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid"  />
+                                    <img src={SubBannerimage} alt="Sub Broker Franchise Without Deposit" className="img-fluid"  />
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
