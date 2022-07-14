@@ -1,9 +1,9 @@
 
 import React from "react";
-import Client from '../../assets/images/refer-earn/client.webp';
-import Incentive from '../../assets/images/refer-earn/incentive.webp';
-import Generate from '../../assets/images/refer-earn/generate.webp';
-import Register from '../../assets/images/refer-earn/register.webp';
+import Client from '../../assets/images/refer-earn/open-demat-account-for-refer-and-earn.webp';
+import Incentive from '../../assets/images/refer-earn/receive-referral-incentive.webp';
+import Generate from '../../assets/images/refer-earn/generate-demat-account-refer-and-earn-link.webp';
+import Register from '../../assets/images/refer-earn/share-demat-account-referral-link.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function HowChoice() {
@@ -25,7 +25,7 @@ function HowChoice() {
                                         1
                                     </span>
                                     <div className="step-cont">
-                                        <LazyLoader src={Client} alt={"Banner Images"} className={"img-fluid"} width={"201"} height={"174"} />
+                                        <LazyLoader src={Client} alt={"Open Demat Account for Refer and Earn"} className={"img-fluid"} width={"201"} height={"174"} />
                                         <h4>Become a Choice <br /> Client</h4>
                                     </div>
                                 </li>
@@ -34,7 +34,7 @@ function HowChoice() {
                                         2
                                     </span>
                                     <div className="step-cont">
-                                        <LazyLoader src={Generate} alt={"Banner Images"} className={"img-fluid"} width={"201"} height={"174"} />
+                                        <LazyLoader src={Generate} alt={"Generate Demat Account Refer and Earn Link"} className={"img-fluid"} width={"201"} height={"174"} />
                                         <h4>Generate Your <br /> Referral Link &amp; Share</h4>
                                     </div>
                                 </li>
@@ -43,7 +43,7 @@ function HowChoice() {
                                         3
                                     </span>
                                     <div className="step-cont">
-                                        <LazyLoader src={Register} alt={"Banner Images"} className={"img-fluid"} width={"201"} height={"174"} />
+                                        <LazyLoader src={Register} alt={"Share Demat Account Referral Link"} className={"img-fluid"} width={"201"} height={"174"} />
                                         <h4>Ask to Register with <br />Your Referral Link</h4>
                                     </div>
                                 </li>
@@ -52,7 +52,7 @@ function HowChoice() {
                                         4
                                     </span>
                                     <div className="step-cont">
-                                        <LazyLoader src={Incentive} alt={"Banner Images"} className={"img-fluid"} width={"201"} height={"174"} />
+                                        <LazyLoader src={Incentive} alt={"Receive Referral Incentive"} className={"img-fluid"} width={"201"} height={"174"} />
                                         <h4>Receive an Incentive <br />Per Referral</h4>
                                     </div>
                                 </li>

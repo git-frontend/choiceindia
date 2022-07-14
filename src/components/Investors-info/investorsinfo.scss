@@ -4,6 +4,49 @@
 
 .investor-info-parent{
     animation: hideMe 4s forwards;
+    .bannersection {
+        .wrap {
+            display: flex;
+            // max-height: 647px;
+            .text {
+                background-color: $bgcolordark;
+                width: 25%;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+    
+                @media screen and (max-width:767px) {
+                    width: 100%;
+                }
+    
+                h1 {
+                    color: $lightColor;
+                    font-size: 4.125rem;
+                    line-height: 6.1875rem;
+                    font-family: $font-family-poppins-bold;
+    
+                    @media screen and (max-width:767px) {
+                        top: 0;
+                        font-size: 3rem;
+                        line-height: 4rem;
+                        padding: 2rem;
+                    }
+                }
+            }
+    
+            .img {
+                width: 75%;
+                img{
+                    width: 100%;    
+                }
+    
+                @media screen and (max-width:767px) {
+                    display: none;
+                }
+            }
+        }
+    }
 }
 
 body{
@@ -14,49 +57,19 @@ body{
     padding: 0 !important;
 }
 
-.bannersection {
-    .wrap {
-        display: flex;
-        // max-height: 647px;
-        .text {
-            background-color: $bgcolordark;
-            width: 25%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+.invest-iframe{
+    margin-bottom: 5rem;
+   .content{
+    display: none;
+   }
+}
 
-            @media screen and (max-width:767px) {
-                width: 100%;
-            }
-
-            h1 {
-                color: $lightColor;
-                font-size: 4.125rem;
-                line-height: 6.1875rem;
-                font-family: $font-family-poppins-bold;
-
-                @media screen and (max-width:767px) {
-                    top: 0;
-                    font-size: 3rem;
-                    line-height: 4rem;
-                    padding: 2rem;
-                }
-            }
-        }
-
-        .img {
-            width: 75%;
-
-            @media screen and (max-width:767px) {
-                display: none;
-            }
-        }
-    }
+.wrapper{
+    display: none;
 }
 
 .countsect {
-    padding: 9.125rem 0;
+    padding: 9.125rem 0 5rem 0;
 
     @media screen and (max-width:767px) {
         padding: 5.125rem 0;

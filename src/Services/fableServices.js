@@ -32,6 +32,12 @@ const FablesTrending ={
 
     },
 
+    fableListingTopFive: function () {
+        let api = new API_URLS()
+        let url = api.getFableTopFiveURL();
+        return axios.get(url);
+    },
+
 
 }
 export default FablesTrending;

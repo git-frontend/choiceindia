@@ -3,9 +3,11 @@ import Form from 'react-bootstrap/Form';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
 import OTPimage from '../../assets/images/otp.svg';
-import "../Common-features/demat-form.scss"
+import "../Common-features/demat-form.scss";
 import { Link } from "react-router-dom";
-function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
+import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
+
+function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
     const [count, setCount] = useState(0);
@@ -224,11 +226,11 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
                             <div>
                                 <img src={OTPimage} />
 
-                                <p className="heading">OTP Verification</p>
-                                <p className="subheading">A OTP has been sent to {'******' + mobileNumber.slice(6, 10)}</p>
+                                <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
+                                <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + mobileNumber.slice(6, 10)}</p>
                                 {
                                     count ?
-                                        <p className="time">Time remaining:<span> {count} seconds</span></p> : ''
+                                        <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span> {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
                                 }
 
                             </div>
@@ -242,15 +244,15 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
                             </div>
 
                             <div className="btnwrap">
-                                <button className="btn-bg" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                                <button className="btn-bg" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
                             </div>
                             <div>
                                 {
                                     !count ?
                                         <div>
-                                            <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP SMS'}</button>
-                                            <span>OR</span>
-                                            <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP on Call'}</button></div> : ''
+                                            <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
+                                            <span>{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
+                                            <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <div className="dotLoaderB colorB marginLoader"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
                                 }
                             </div>
                             <div className="mt-2">

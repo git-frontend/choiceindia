@@ -11,30 +11,76 @@ import PricingEquity from './PricingEquity';
 import PricingCurrency from './PricingCurrency';
 import PricingCommodity from './PricingCommodity';
 import LazyLoader from "../Common-features/LazyLoader";
-import { useEffect } from "react";
+import { ref } from "yup";
+// import { useEffect, useRef } from "react";
 
 
 
 function PricingBannerTab() {
 
-  const [toggleState, setToggleState] = useState(1);
-  // const myRef = useRef(null); 
+  const [toggleState, setToggleState] = useState(() => 1);
+  const myRef = useRef(null); 
 
   const toggleTab = (index) => {
-    changeSection();
+    // changeSection();
     setToggleState(index);
+    changeSection();
   };
 
   function changeSection(){
     console.log('CCCCCCCC called');
-    var element = document.getElementById('scrollbrokerage');
-    var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
+    // myRef.current.scrollIntoView()
+    if(toggleState == 1){
+      var element = document.getElementById('scrollstocks');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+
+    if(toggleState == 2){
+      var element = document.getElementById('scrollequity');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+
+    if(toggleState == 3){
+      var element = document.getElementById('scrollcurrency');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+
+    if(toggleState == 4){
+      var element = document.getElementById('scrollcommodity');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+    // var element = document.getElementById('scrollcommodity');
+    // var headerOffset = 140;
+    // var elementPosition = element.getBoundingClientRect().top;
+    // var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    // window.scrollTo({
+    //   top: offsetPosition,
+    //   behavior: "smooth"
+    // });
     // myRef.current.scrollIntoView();
   }
 

@@ -1,10 +1,10 @@
 import React from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
-import Image2 from '../../assets/images/open-demat-account/lowestdp.svg';
-import Image3 from '../../assets/images/open-demat-account/nosqroff.svg';
-import Image4 from '../../assets/images/open-demat-account/sucessratio.svg';
-import Image5 from '../../assets/images/open-demat-account/amc.svg';
+import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
+import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
+import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
+import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -27,7 +27,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Zero Account Opening Fee" />
+                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
                                                     {/* <img src={Image2} width={"30"} height={"30"} alt="Zero Account Opening Fee" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -41,7 +41,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt="No Square Off Charges" />
+                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Low Brokerage Charges"} />
                                                     {/* <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -56,7 +56,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt="Call Success Ratio" className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -68,7 +68,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt="Free Call For Trade Facility" />
+                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Demat Account without Annual Charges"} />
                                                     {/* <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid" /> */}
                                                 </div>
                                             </div>

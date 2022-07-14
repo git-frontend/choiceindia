@@ -45,9 +45,12 @@ const Lazycorporatedemateaccount = React.lazy(() => import('./components/Corpora
 const Lazyminordemateaccount = React.lazy(() => import('./components/MinorDemateAccount/MinorDemateAccount'));
 const Lazyopentradingaccounthindi = React.lazy(() => import('./components/OpenTradingAccountHindi/OpenTradingAccountHindi'));
 const Lazyopentradingaccountmarathi = React.lazy(() => import('./components/OpenTradingAccountMarathi/OpenTradingAccountMarathi'));
+const Lazyfreeamc = React.lazy(() => import('./components/FreeAmcAccount/FreeAmcAccount'));
+const Lazyhinditrade = React.lazy(() => import('./components/TradingAccountHindi/TradingAccountHindi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
+const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
 
 function Routing() {
@@ -157,6 +160,16 @@ function Routing() {
                                 < Lazyopendemat />
                             </React.Suspense>
                         } />
+                         <Route exact path='/hindi/trading-account' element={
+                            <React.Suspense>
+                                < Lazyhinditrade />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/free-amc-demat-account' element={
+                            <React.Suspense>
+                                < Lazyfreeamc />
+                            </React.Suspense>
+                        } />
                         <Route exact path='/open-trading-account' element={
                             <React.Suspense>
                                 < Lazyopentradingaccount />
@@ -219,6 +232,12 @@ function Routing() {
                         <Route exact path='/baskets' element={
                             <React.Suspense>
                                 < Lazybasket />
+                            </React.Suspense>
+                        } />
+
+                    <Route exact path='/research-detailed' element={
+                            <React.Suspense>
+                                < Lazyresearchdetailed />
                             </React.Suspense>
                         } />
 

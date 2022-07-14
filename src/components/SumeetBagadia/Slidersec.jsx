@@ -1,12 +1,14 @@
 
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import { API_URLS } from "../../Services/API-URLS";
 
 function Slidersec() {
+
+    const [research, setResearch] = useState([]);
 
     const settings = {
         slidesToShow: 1,
@@ -59,7 +61,22 @@ function Slidersec() {
     }
 
     function fetchExpertResearchReport() {
-        // let startDate = 
+        let startDate;
+        let dateDiff = new Date().getDate() - 7;
+        if (new Date().getMonth() === 0 && dateDiff < 0) {
+            let lastMonthDate = new Date(new Date().getFullYear() - 1, 12, 0);
+            startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
+        } else if (new Date().getMonth() === 0 && dateDiff === 0) {
+            startDate = new Date(new Date().getFullYear() - 1, 12, 0);
+        } else if (dateDiff < 0) {
+            let lastMonthDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+            startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
+        } else if (dateDiff === 0) {
+            startDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+        } else {
+            startDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 6);
+        }
+
         let request = {
             "end_date": new Date().toJSON().split('T')[0],
             "is_expert": 1,
@@ -67,7 +84,7 @@ function Slidersec() {
             "limit": 10,
             "offset": 0,
             "segment": "EQ",
-            "start_date": "2022-07-06",
+            "start_date": startDate.toJSON().split('T')[0],
             "status": "target_achieved",
             "subcategory_id": "",
             "search": "",
@@ -77,15 +94,31 @@ function Slidersec() {
             "category_id": 2
         };
         getExpertResearch(request).then((res) => {
-            console.log(res,"RES");
+            console.log(res, "RES");
+            if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
+                let list = res.data.response.research.map((item, i) => {
+                    if (item.datapoints && item.datapoints.length) {
+                        item.priceData = {}
+                        item.datapoints.forEach(sub => {
+                            sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
+                            item.priceData[sub.key] = sub
+                        });
+                    }
+                    return item;
+                });
+                setResearch(list);
+            } else {
+                setResearch([]);
+            }
         }).catch((error) => {
-            console.log(error,"error");
+            console.log(error, "error");
+            setResearch([]);
         });
     }
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchExpertResearchReport();
-    },[]);
+    }, []);
 
     return (
         <div>
@@ -101,7 +134,45 @@ function Slidersec() {
                         <div className="col-xl-7">
                             <div className="bg-class-right">
                                 <Slider {...settings} className="sm-slider-bg services-list-slider">
-                                    <div className="service-item">
+
+                                    {
+                                        research.map((item, index) => {
+                                            return (
+                                                <div className="service-item" key={item.id}>
+                                                    <div className="item-slider">
+                                                        <h4>{item.scrip_name}</h4>
+                                                        <ul>
+                                                            <li>
+                                                                <h4>Entry Price</h4>
+                                                                <h3>{Number((item?.priceData?.entry_price?.value) || 0).toFixed(2)}</h3>
+                                                            </li>
+                                                            <li>
+                                                                <h4>Target Price</h4>
+                                                                <h3>{Number((item?.priceData?.target?.value) || 0).toFixed(2)}</h3>
+                                                            </li>
+                                                        </ul>
+                                                        <h4 className="md-profit">
+                                                            <span>
+                                                                {
+                                                                    item?.matched_price && item?.priceData?.entry_price?.value ? 
+                                                                        ((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? ((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'Profit: ' : 'Loss: ') : ((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'Profit: ' : 'Loss: ')
+
+                                                                     : ''
+                                                                }{
+                                                                    item?.matched_price && item?.priceData?.entry_price?.value ? <span className={((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? ((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'text-success' : 'text-danger') : ((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'text-success' : 'text-danger')} style={{display:'inline'}}>
+                                                                        {((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? (Number((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) || 0).toFixed(2)) : (Number((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100 || 0)).toFixed(2))}%
+                                                                    </span> : ''
+                                                                }</span>
+                                                            {/* Profit: 21.36 % */}
+                                                        </h4>
+                                                        <h4 className="trg-achv">Target Achieved: 150 Days</h4>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })
+                                    }
+
+                                    {/* <div className="service-item">
                                         <div className="item-slider">
                                             <h4>SBIN</h4>
                                             <ul>
@@ -119,65 +190,8 @@ function Slidersec() {
                                             </h4>
                                             <h4 className="trg-achv">Target Achieved: 150 Days</h4>
                                         </div>
-                                    </div>
-                                    <div className="service-item">
-                                        <div className="item-slider">
-                                            <h4>BANKBARODA</h4>
-                                            <ul>
-                                                <li>
-                                                    <h4>Entry Price</h4>
-                                                    <h3>75</h3>
-                                                </li>
-                                                <li>
-                                                    <h4>Target Price</h4>
-                                                    <h3>98</h3>
-                                                </li>
-                                            </ul>
-                                            <h4 className="md-profit">
-                                                Profit: 30.67 %
-                                            </h4>
-                                            <h4 className="trg-achv">Target Achieved: 180 Days</h4>
-                                        </div>
-                                    </div>
-                                    <div className="service-item">
-                                        <div className="item-slider">
-                                            <h4>SBILIFE</h4>
-                                            <ul>
-                                                <li>
-                                                    <h4>Entry Price</h4>
-                                                    <h3>968</h3>
-                                                </li>
-                                                <li>
-                                                    <h4>Target Price</h4>
-                                                    <h3>1,130</h3>
-                                                </li>
-                                            </ul>
-                                            <h4 className="md-profit">
-                                                Profit: 17.02 %
-                                            </h4>
-                                            <h4 className="trg-achv">Target Achieved: 210 Days</h4>
-                                        </div>
-                                    </div>
-                                    <div className="service-item">
-                                        <div className="item-slider">
-                                            <h4>DEVYANI</h4>
-                                            <ul>
-                                                <li>
-                                                    <h4>Entry Price</h4>
-                                                    <h3>153</h3>
-                                                </li>
-                                                <li>
-                                                    <h4>Target Price</h4>
-                                                    <h3>195</h3>
-                                                </li>
-                                            </ul>
-                                            <h4 className="md-profit">
-                                                Profit: 27.55 %
-                                            </h4>
-                                            <h4 className="trg-achv">Target Achieved: 20 Days</h4>
-                                        </div>
-                                    </div>
-                                    
+                                    </div> */}
+
 
                                 </Slider>
 

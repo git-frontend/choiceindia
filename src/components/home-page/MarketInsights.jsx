@@ -59,7 +59,7 @@ function MarketInsights() {
                     <div className="row justify-content-center">
                         <div className="col-xl-5 col-md-8">
                             <div className="heading-sec">
-                                <h3 className="title-first">Market Insights</h3>
+                                <h2 className="title-first">Market Insights</h2>
                                 <p>Get insightful market updates &amp; company analysis directly from our experts.</p>
                             </div>
                         </div>
