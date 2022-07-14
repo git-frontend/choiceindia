@@ -23,10 +23,10 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-    liveresearchURL: "hhttp://researchreportapi.jiffy.in/api/",
-    UATresearchURL: "http://researchreportapi.jiffy.in/api/",
-
-
+    liveresearchURL: "hhttp://researchreportapi.jiffy.in/",
+    UATresearchURL: "http://researchreportapi.jiffy.in/",
+    liveperformanceURL:"https://jiffy.choiceindia.com//api/",
+    UATperformanceURL:"https://jiffy.choiceindia.com//api/",
     liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
@@ -94,6 +94,12 @@ export class API_URLS {
 
     /** refer and earn */
     earnURL = 'v1/40a9f5ac41a0f6223825/stage-user';
+
+    /** Performance */
+
+    performancefontURL='techanalysis/getcounters'
+
+
    
 
 
@@ -141,6 +147,7 @@ export class API_URLS {
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
         this.setreferURL(config[configKey + 'referURL']);
         this.setresearchURL(config[configKey + 'researchURL']);
+        this.setperformanceURL(config[configKey + 'performanceURL']);
     }
 
     setJiffyServerURL = (url) => {
@@ -209,6 +216,15 @@ export class API_URLS {
       setresearchURL = (url) => {
 
         this.researchURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setperformanceURL = (url) => {
+
+        this.performanceURL = url;
     }
 
 
@@ -347,7 +363,16 @@ export class API_URLS {
     }
 
     getresearchURL(id){
-        return this.researchURL + `fundamental?report_subtype_uuid=${id}`
+        return this.researchURL + `api/fundamental?report_subtype_uuid=${id}`
+    }
+    getresearchipoURL(){
+
+        return this.researchURL + 'report/ipo?limit=10&offset=0'
+    }
+
+    getperformanceURL() {
+
+        return this.performanceURL +this.performancefontURL
     }
 
 }
