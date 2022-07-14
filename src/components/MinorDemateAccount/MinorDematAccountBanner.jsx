@@ -7,7 +7,7 @@ import Image4 from '../../assets/images/open-demat-account/free-research-advisor
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 
-const FreeAmcAccountBanner = () => {
+const MinorDematAccountBanner = () => {
     return (
         <div>
              <section className="banner-sect" >
@@ -15,7 +15,7 @@ const FreeAmcAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop">Open a AMC Demat <br /> <span className="yellow">Online For Free</span></div>
+                                <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 
                             </h1>
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
@@ -64,7 +64,7 @@ const FreeAmcAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt={"Demat Account without Annual Charges"} className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt="Demat Account without Annual Charges" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -92,4 +92,4 @@ const FreeAmcAccountBanner = () => {
     )
 }
 
-export default FreeAmcAccountBanner;
+export default MinorDematAccountBanner;

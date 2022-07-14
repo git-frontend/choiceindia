@@ -7,7 +7,6 @@ import Image7 from '../../assets/images/open-demat-account/low-brokerage-demat-a
 import Image8 from '../../assets/images/open-demat-account/free-call-for-trade-facility.svg';
 import Image9 from '../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg';
 import Image10 from '../../assets/images/open-demat-account/advanced-trading-app-platform.svg';
-import Image11 from '../../assets/images/open-demat-account/refer-and-earn-demat-account.svg';
 function HindiWhyOpenTradingAccount() {
 
   const settings = {
