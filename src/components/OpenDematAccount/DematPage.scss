@@ -96,6 +96,11 @@
 		.respgrid {
 			width: 20%;
 			text-align: center;
+			.iconwrap{
+				img{
+					width: auto;
+				}
+			}
 		}
 		@media (max-width:$sm) {
 			min-height: inherit;
@@ -910,7 +915,9 @@
 
 				img {
 					min-height: 3.125rem;
+					
 				}
+				
 
 				p {
 					padding-top: 2rem;
