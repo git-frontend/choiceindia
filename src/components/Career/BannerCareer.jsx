@@ -72,7 +72,7 @@ function BannerCareer() {
                 <div className="col-xl-6 col-md-6">
                   <div className='culture-values-img'>
                   <LazyLoader src={CareerImage3} className={'img-fluid shdow'} width={"642"} height={"567"} alt="Loading" />
-                              <img src={CareerImage3} className='img-fluid shdow' alt="Loading" width={"642"} height={"567"} />
+                              {/* <img src={CareerImage3} className='img-fluid shdow' alt="Loading" width={"642"} height={"567"} /> */}
                   </div>
                 </div>
             </div>
