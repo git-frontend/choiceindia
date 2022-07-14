@@ -1,98 +1,92 @@
-import Reac,{useEffect} from "react";
-
-import Blog2 from '../../assets/images/fable/blog-big.png';
-import BlogThumbnail1 from '../../assets/images/fable/thumnail1.jpg';
-import BlogThumbnail2 from '../../assets/images/fable/thumnail2.jpg';
-import BlogThumbnail3 from '../../assets/images/fable/thumnail3.jpg';
-import BlogThumbnail4 from '../../assets/images/fable/thumnail4.jpg';
+import React, { useEffect, useState } from "react";
+import fableServices from '../../Services/fableServices';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
+import Spinner from 'react-bootstrap/Spinner';
 
 function FableBlog() {
-    
-   
+
+    const [data, setData] = useState([]);
+    const [loader, setLoader] = useState(true);
+
+    function loadFableList() {
+        setLoader(true);
+        fableServices.fableListingTopFive().then(res => {
+            setLoader(false);
+            console.log(res, "RESS");
+            if (res && res.status === 200 && res.data && res.data.posts) {
+                setData(res.data.posts);
+            } else {
+                setData([]);
+            }
+        }).catch((error) => {
+            setLoader(false);
+            setData([]);
+        });
+    }
+
+    useEffect(() => {
+        loadFableList()
+    }, []);
 
     return (
         <div>
 
             <section className="blog-middle-cont">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-md-5">
-                            <div className="blog-middle-left">
-                                <div className="heading-sec">
-                                    <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
-                                </div>
-                                <div className="single-blog-con">
-                                    <div className="single-blog-img">
-                                        <LazyLoader src={Blog2} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
-                                        {/* <img src={Blog2} alt="loading" width={"532"} height={"533"} /> */}
+                <div className={`container ${loader?'text-center':''}`}>
+                    {
+                        loader ?
+                            <Spinner animation="grow" /> :
+                            <div className="row">
+                                <div className="col-md-5">
+                                    <div className="blog-middle-left">
+                                        <div className="heading-sec">
+                                            <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
+                                        </div>
+                                        <div className="single-blog-con">
+                                            <div className="single-blog-img">
+                                                <LazyLoader src={data[0].feature_image} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
+                                            </div>
+                                            <div className="single-blog-des">
+                                                <h3>{data[0].title}</h3>
+                                                <p className="des-cont mt-3">{data[0].meta_description}<Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
+                                            </div>
+                                        </div>
+
                                     </div>
-                                    <div className="single-blog-des">
-                                        <h3>What are NFTs?</h3>
-                                        <p className="des-cont mt-3">Mike Winkelmann who makes digital arts by the name of “Beeple” sold a collage of his first 5000 artwork at $69 million...
-                                            <a href="/" className="fw-bold">Read More</a></p>
+                                </div>
+                                <div className="col-md-7">
+                                    <div className="blog-middle-right">
+
+                                        <div className="all-latest-blog-list">
+                                            {
+                                                data.map((item, index) => {
+                                                    if (index !== 0) {
+                                                        return (
+                                                            <div className="latest-blog-itm">
+                                                                <Link to={`/blog/${item.slug}`} className="blog-itm">
+                                                                    <div className="blog-itm-des">
+                                                                        <p className="itm-des-cont">{item.title}</p>
+                                                                        {/* <h6 className="tag-act">Published at: 14th July, 2022</h6> */}
+                                                                        <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</h6>
+                                                                    </div>
+                                                                    <div className="blog-itm-img">
+                                                                        <LazyLoader src={item.feature_image} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />
+                                                                    </div>
+                                                                </Link>
+                                                            </div>
+                                                        );
+                                                    } else {
+                                                        return;
+                                                    }
+                                                })
+                                            }
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-7">
-                            <div className="blog-middle-right">
 
-                                <div className="all-latest-blog-list">
-                                    <div className="latest-blog-itm">
-                                        <a href="/" className="blog-itm">
-                                            <div className="blog-itm-des">
-                                                <p className="itm-des-cont">Amazon-Reliance Territorial Fight In The Indian Retail Jungle</p>
-                                                <h6 className="tag-act">@SachinChadda</h6>
-                                            </div>
-                                            <div className="blog-itm-img">
-                                                <LazyLoader src={BlogThumbnail3} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />
-                                                {/* <img src={BlogThumbnail3} alt="loading" className="img-blog" width={"215"} height={"155"} /> */}
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div className="latest-blog-itm">
-                                        <a href="/" className="blog-itm">
-                                            <div className="blog-itm-des">
-                                                <p className="itm-des-cont">RBL Bank Management Upheaval &amp; The Chaos Around It</p>
-                                                <h6 className="tag-act">@SachinChadda</h6>
-                                            </div>
-                                            <div className="blog-itm-img">
-                                            <LazyLoader src={BlogThumbnail4} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />
-                                                {/* <img src={BlogThumbnail4} alt="loading" className="img-blog" width={"215"} height={"155"} /> */}
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div className="latest-blog-itm">
-                                        <a href="/" className="blog-itm">
-                                            <div className="blog-itm-des">
-                                                <p className="itm-des-cont">What will be the future of Cryptocurrencies in India?</p>
-                                                <h6 className="tag-act">@SachinChadda</h6>
-                                            </div>
-                                            <div className="blog-itm-img">
-                                            <LazyLoader src={BlogThumbnail2} className={'img-blog'} width={'215'} height={'155'} alt={'loading'} />
-                                                {/* <img src={BlogThumbnail2} alt="loading" className="img-blog" width={"215"} height={"155"}/> */}
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <div className="latest-blog-itm">
-                                        <a href="/" className="blog-itm">
-                                            <div className="blog-itm-des">
-                                                <p className="itm-des-cont">Russia &amp; Ukraine conflict sparking Inflation in India!!</p>
-                                                <h6 className="tag-act">@SachinChadda</h6>
-                                            </div>
-                                            <div className="blog-itm-img">
-                                            <LazyLoader src={BlogThumbnail1} className={'img-blog'} width={'215'} height={'155'} alt={'loading'} />
-                                                {/* <img src={BlogThumbnail1} alt="loading" className="img-blog" width={"215"} height={"155"}/> */}
-                                            </div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-
+                    }
                 </div>
             </section>
 

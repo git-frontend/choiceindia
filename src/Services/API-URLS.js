@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -67,6 +67,9 @@ export class API_URLS {
 
     /**fables trending blog  */
     fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
+
+    /**fables trending blog  */
+    fableTopFiveURL = 'content/posts/?key=280c55197998a010569e5d612a&limit=5';
 
     /** fables blogs  */
 
@@ -234,6 +237,13 @@ export class API_URLS {
     getFableTrendingURL() {
 
         return this.serverURL + this.fabletrendingURL
+    }
+
+    /** Get fable Top 5 URL */
+
+    getFableTopFiveURL() {
+
+        return this.serverURL + this.fableTopFiveURL;
     }
 
     /** get fables blog data */
