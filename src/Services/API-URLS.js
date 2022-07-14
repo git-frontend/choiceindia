@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -23,6 +23,10 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
+    liveresearchURL: "hhttp://researchreportapi.jiffy.in/",
+    UATresearchURL: "http://researchreportapi.jiffy.in/",
+    liveperformanceURL:"https://jiffy.choiceindia.com//api/",
+    UATperformanceURL:"https://jiffy.choiceindia.com//api/",
     liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
@@ -46,9 +50,9 @@ export class API_URLS {
 
     /** refer and earn URL */
     referURL = "https://uatapi.choicebroking.in/api/middleware"
-
-
-
+    
+    /** Research URL */
+    researchURL = "https://uatapi.choicebroking.in/api/middleware"
 
     /**Market Insights , fabal URL */
 
@@ -90,6 +94,13 @@ export class API_URLS {
 
     /** refer and earn */
     earnURL = 'v1/40a9f5ac41a0f6223825/stage-user';
+
+    /** Performance */
+
+    performancefontURL='techanalysis/getcounters'
+
+
+   
 
 
     /** Open Account APIs */
@@ -135,6 +146,8 @@ export class API_URLS {
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
         this.setreferURL(config[configKey + 'referURL']);
+        this.setresearchURL(config[configKey + 'researchURL']);
+        this.setperformanceURL(config[configKey + 'performanceURL']);
     }
 
     setJiffyServerURL = (url) => {
@@ -186,7 +199,7 @@ export class API_URLS {
 
         this.faqURL = url;
     }
-
+    
     /**
      * Set faq URL 
      * @param {*} url 
@@ -194,6 +207,24 @@ export class API_URLS {
      setreferURL = (url) => {
 
         this.referURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setresearchURL = (url) => {
+
+        this.researchURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setperformanceURL = (url) => {
+
+        this.performanceURL = url;
     }
 
 
@@ -325,10 +356,23 @@ export class API_URLS {
 
     getreferallink(id){
         return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
-    }
+  }
 
     getExpertResearchreportURL() {
         return this.JiffyBaseURL + this.getExpertResearchURL;
+    }
+
+    getresearchURL(id){
+        return this.researchURL + `api/fundamental?report_subtype_uuid=${id}`
+    }
+    getresearchipoURL(){
+
+        return this.researchURL + 'report/ipo?limit=10&offset=0'
+    }
+
+    getperformanceURL() {
+
+        return this.performanceURL +this.performancefontURL
     }
 
 }

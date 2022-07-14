@@ -12,7 +12,7 @@ function FableBlogList() {
     const [post, setPost] = useState([]);
     const [trigger, setTrigger] = useState(false);
     const [check, setCheck] = useState(false);
-    const [count,setCount] = useState(1)
+    const [count,setCount] = useState(6)
 
 
     function loadfablecategory() {
@@ -40,6 +40,7 @@ function FableBlogList() {
         setTrigger(true)
         if (trigger === true) {
             loadfablecategory();
+            getfableFolder('stock-market');
            
 
         }
@@ -55,7 +56,7 @@ function FableBlogList() {
                     <div className="fable-list-menu">
                         <ul >
                             {
-                                data.map((res,i=1) => {
+                                data.map((res,i=5) => {
 
                                     let classNameNm = "link-txt" + ((i === count-1) ? ' link-active' : "")
                                     console.log("precheck",count)

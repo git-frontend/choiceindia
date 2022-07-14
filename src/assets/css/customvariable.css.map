@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AAAA,sBAAsB;AAEtB,eAAe;AAQf,gBAAgB;AAahB,iBAAiB;AAcjB,oBAAoB;AAUpB,2BAA2B",
-    "sources": [
-        "customvariable.scss"
-    ],
-    "names": [],
-    "file": "customvariable.css"
-}
+{"version":3,"sources":["customvariable.scss"],"names":[],"mappings":"AAAA,qBAAA;AAEA,cAAA;AAQA,eAAA;AAeA,gBAAA;AAkBA,0BAAA","file":"customvariable.css"}
