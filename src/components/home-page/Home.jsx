@@ -58,9 +58,9 @@ function Home() {
 							<div className='banner-ved-des'>
 								<div className='container'>
 									<div className='banner-caption' >
-										<h1>Experience</h1>
-										<h1>The Joy of</h1>
-										<h1>Earning</h1>
+										<h1>Experience<br />
+										The Joy of<br />
+										Earning</h1>
 									</div>
 								</div>
 							</div>
@@ -106,7 +106,7 @@ function Home() {
 									</div>
 									<div className="col-lg-5">
 										<div className="heading-sec">
-											<h3 className="title-first">We value trust above everything</h3>
+											<h2 className="title-first">We value trust above everything</h2>
 											<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
 										</div>
 									</div>

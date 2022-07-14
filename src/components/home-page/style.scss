@@ -75,7 +75,7 @@
                     }
                 }
 
-                h5 {
+                .ss-ttl {
                     font-size: 2rem;
                     font-family: $font-family-poppins-semibold;
                     text-transform: capitalize;
@@ -218,7 +218,7 @@
                         display: block;
                         height: 100%;
 
-                        h4 {
+                        .choice-ttl {
                             font-size: 1.625rem;
                             font-family: $font-family-poppins-semibold;
                             color: $primary;
@@ -604,7 +604,7 @@
                     max-width: 100%;
                 }
 
-                h4 {
+                .feature-ttl {
                     font-size: 1.8rem;
                     font-family: $font-family-poppins-semibold;
                     color: $whiteColor;
@@ -1400,7 +1400,7 @@
         z-index: 99;
         h1 {
             font-size: 4rem;
-            line-height: 5rem;
+            line-height: 5.5rem;
             font-family: $font-family-poppins-bold;
             color: $whiteColor;
 

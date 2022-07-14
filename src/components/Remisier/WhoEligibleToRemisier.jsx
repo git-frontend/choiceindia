@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import ImageSub13 from '../../assets/images/sub-broker/18+years-of-age.svg';
 import ImageSub14 from '../../assets/images/sub-broker/sell-products-effortlessly.svg';
 import ImageSub15 from '../../assets/images/sub-broker/own-boss.svg';
@@ -11,14 +12,14 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function WhoEligibleToRemisier() {
 
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 1500,
         arrows: false,
         slidesToShow: 1,
-        autoplay: false,
+        autoplay: true,
         margin: 15,
         dots: true,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 3000,
         slidesToScroll: 1,
         responsive: [
             {
@@ -80,8 +81,8 @@ function WhoEligibleToRemisier() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is for certain when you partner with us.</h4>
-                                <a href="#join-now" className="btn-bg"><span>Join Now</span> </a>
+                                <h4>Growth is  certain when you partner with us.</h4>
+                                <Link to="#join-now" className="btn-bg"><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

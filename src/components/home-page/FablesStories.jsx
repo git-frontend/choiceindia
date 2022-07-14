@@ -83,7 +83,7 @@ function FablesStories() {
 					<div className="row">
 						<div className="col-md-12">
 							<div className="heading-sec">
-								<h3 className="title-first" >Fables - Stories that Matter </h3>
+								<h2 className="title-first" >Fables - Stories that Matter </h2>
 							</div>
 						</div>
 					</div>

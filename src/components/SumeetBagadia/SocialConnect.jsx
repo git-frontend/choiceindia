@@ -1,5 +1,6 @@
 
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function SocialConnect() {
 
@@ -17,60 +18,60 @@ function SocialConnect() {
                 <div className="social-list">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/ChoiceHQ/" target="_blank" rel='noreferrer'>
+                      <Link to="https://www.facebook.com/ChoiceHQ/" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faFacebookF} />
                         </span>
                         <h6>Facebook</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank" rel='noreferrer'>
+                      <Link to="https://www.youtube.com/c/ChoiceHQ" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faYoutube} />
                         </span>
                         <h6>Youtube</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://twitter.com/ChoiceHQ_Social" target="_blank" rel='noreferrer'>
+                      <Link to="https://twitter.com/ChoiceHQ_Social" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTwitter} />
                         </span>
                         <h6>Twitter</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/company/choice-broking" target="_blank" rel='noreferrer'>
+                      <Link to="https://www.linkedin.com/company/choice-broking" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </span>
                         <h6>Linkedin</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/choicehq_social/" target="_blank" rel='noreferrer'>
+                      <Link to="https://www.instagram.com/choicehq_social/" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faInstagram} />
                         </span>
                         <h6>Instagram</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://t.me/CEBPL" target="_blank" rel='noreferrer'>
+                      <Link to="https://t.me/CEBPL" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>
                         <h6>Equity</h6>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="https://t.me/CEBPLCOMMODITY" target="_blank" rel='noreferrer'>
+                      <Link to="https://t.me/CEBPLCOMMODITY" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>
                         <h6>Commodity</h6>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>

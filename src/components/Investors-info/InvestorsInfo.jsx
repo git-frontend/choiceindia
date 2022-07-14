@@ -72,10 +72,15 @@ function InvestorInfo() {
                 </div>
               </section>
 
-              <iframe src="https://app.churchgatepartners.com/AssignTemplate/BindTempleteview?ClientID=46" title='investor-iframe' style={{ width: '100%', height: '1200px', marginTop: '50px' }}>
-                Your browser doesn't support iframes
-              </iframe>
+              <section>
+                <div className="container">
+                <iframe src="https://app.churchgatepartners.com/AssignTemplate/BindTempleteview?ClientID=46" title='investor-iframe' style={{ width: '100%', height: '1350px'}} className='invest-iframe'>
+                  Your browser doesn't support iframes
+                </iframe>
+                  </div>
+              </section>
 
+              
               {/* <InvestorInfoMenu />
   <Yeardetail /> */}
 
