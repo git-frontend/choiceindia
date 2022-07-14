@@ -6,9 +6,8 @@ import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
 import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
-import LazyLoader from '../Common-features/LazyLoader';
 
-const OpenFreeAccountBanner = () => {
+const HindiOpenFreeAccountBanner = () => {
     return (
         <div>
              <section className="banner-sect" >
@@ -16,23 +15,22 @@ const OpenFreeAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
+                                <div className="desktop">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
                                 
                             </h1>
-                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" />
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
+                            <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
-                                                    {/* <img src={Image2} width={"30"} height={"30"} alt="Zero Account Opening Fee" className="img-fluid " /> */}
+                                                    <img src={Image2} width={"30"} height={"30"} alt="Lowest DP Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Low</span> DP Charges<span className="subtxt"> (Rs. 10 Only)</span>
+                                                <p><span className="fontbold" >कम </span>डीपी शुल्क<span className="subtxt">(केवल 10 रुपये)
+</span>
                                                 </p>
                                             </div>
                                         </div>
@@ -41,12 +39,11 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Low Brokerage Charges"} />
-                                                    {/* <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " /> */}
+                                                    <img src={Image3} width={"28"} height={"28"} alt="Low Brokerage Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Low </span> Brokerage Charges</p>
+                                                <p><span className="fontbold" >कम</span>  ब्रोकरेज शुल्क </p>
                                             </div>
                                         </div>
                                     </div>
@@ -56,11 +53,11 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt="Free Research Advisory" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span>  Research Advisory</p>
+                                                <p><span className="fontbold" >नि:शुल्क </span> शोध परामर्श </p>
                                             </div>
                                         </div>
                                     </div>
@@ -68,12 +65,11 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Demat Account without Annual Charges"} />
-                                                    {/* <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid" /> */}
+                                                    <img src={Image5} width={"32"} height={"20"} alt="Demat Account without Annual Charges" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span> AMC for First Year</p>
+                                                <p>प्रथम वर्ष के लिए निःशुल्क</p>
                                             </div>
                                         </div>
                                     </div>
@@ -83,7 +79,6 @@ const OpenFreeAccountBanner = () => {
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
-                                {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
                                 <DematAccountForm />
                             </div>
@@ -98,4 +93,4 @@ const OpenFreeAccountBanner = () => {
     )
 }
 
-export default OpenFreeAccountBanner;
+export default HindiOpenFreeAccountBanner;
