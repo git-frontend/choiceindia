@@ -23,8 +23,8 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-    liveresearchURL: "hhttp://researchreportapi.jiffy.in/",
-    UATresearchURL: "http://researchreportapi.jiffy.in/",
+    liveresearchURL: "http://researchreportapi.jiffy.in/",
+    UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
     liveperformanceURL:"https://jiffy.choiceindia.com//api/",
     UATperformanceURL:"https://jiffy.choiceindia.com//api/",
     liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
@@ -97,7 +97,11 @@ export class API_URLS {
 
     /** Performance */
 
-    performancefontURL='techanalysis/getcounters'
+    performancefontURL='techanalysis/getcounters';
+
+    /** performance Success ratio */
+
+    successURL ='api/success-ratio';
 
 
    
@@ -372,7 +376,12 @@ export class API_URLS {
 
     getperformanceURL() {
 
-        return this.performanceURL +this.performancefontURL
+        return this.performanceURL +this.performancefontURL;
+    }
+
+    getsuccessURL(){
+
+        return this.JiffyBaseURL + this.successURL;
     }
 
 }

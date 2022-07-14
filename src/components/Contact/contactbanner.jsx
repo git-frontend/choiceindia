@@ -46,12 +46,12 @@ function Contactbanner() {
   const submitFormData = (FormData) => {
     setdatas(FormData)
     console.log("data", FormData);
-    reset();
+    
     setIsloader(true)
     
     contactService.contactForm(FormData).then(res => {
       setIsloader(false)
-    
+      reset();
       setData("Mail sent Successfully")
       console.log("check",data)
 
