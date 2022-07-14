@@ -229,11 +229,11 @@ function Routing() {
                                 < Lazystratezy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/baskets' element={
+                        {/* <Route exact path='/baskets' element={
                             <React.Suspense>
                                 < Lazybasket />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                     <Route exact path='/research-detailed' element={
                             <React.Suspense>
