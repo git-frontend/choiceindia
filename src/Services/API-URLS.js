@@ -381,7 +381,7 @@ export class API_URLS {
     }
     getresearchipoURL(){
 
-        return this.researchURL + 'report/ipo?limit=10&offset=0'
+        return this.researchURL + 'api/ipo?limit=10&offset=0'
     }
 
     getperformanceURL() {
