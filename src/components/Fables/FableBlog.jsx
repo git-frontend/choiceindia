@@ -1,12 +1,15 @@
-import React from "react";
+import Reac,{useEffect} from "react";
 
 import Blog2 from '../../assets/images/fable/blog-big.png';
 import BlogThumbnail1 from '../../assets/images/fable/thumnail1.jpg';
 import BlogThumbnail2 from '../../assets/images/fable/thumnail2.jpg';
 import BlogThumbnail3 from '../../assets/images/fable/thumnail3.jpg';
 import BlogThumbnail4 from '../../assets/images/fable/thumnail4.jpg';
+import LazyLoader from "../Common-features/LazyLoader";
 
 function FableBlog() {
+    
+   
 
     return (
         <div>
@@ -17,11 +20,12 @@ function FableBlog() {
                         <div className="col-md-5">
                             <div className="blog-middle-left">
                                 <div className="heading-sec">
-                                    <h3 className="title-secnd">Maybe You’re Interested Check Our Blog </h3>
+                                    <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
                                 </div>
                                 <div className="single-blog-con">
                                     <div className="single-blog-img">
-                                        <img src={Blog2} alt="loading" width={"532"} height={"533"} />
+                                        <LazyLoader src={Blog2} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
+                                        {/* <img src={Blog2} alt="loading" width={"532"} height={"533"} /> */}
                                     </div>
                                     <div className="single-blog-des">
                                         <h3>What are NFTs?</h3>
@@ -42,7 +46,8 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail3} alt="loading" className="img-blog" width={"215"} height={"155"} />
+                                                <LazyLoader src={BlogThumbnail3} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />
+                                                {/* <img src={BlogThumbnail3} alt="loading" className="img-blog" width={"215"} height={"155"} /> */}
                                             </div>
                                         </a>
                                     </div>
@@ -53,7 +58,8 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail4} alt="loading" className="img-blog" width={"215"} height={"155"} />
+                                            <LazyLoader src={BlogThumbnail4} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />
+                                                {/* <img src={BlogThumbnail4} alt="loading" className="img-blog" width={"215"} height={"155"} /> */}
                                             </div>
                                         </a>
                                     </div>
@@ -64,7 +70,8 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail2} alt="loading" className="img-blog" width={"215"} height={"155"}/>
+                                            <LazyLoader src={BlogThumbnail2} className={'img-blog'} width={'215'} height={'155'} alt={'loading'} />
+                                                {/* <img src={BlogThumbnail2} alt="loading" className="img-blog" width={"215"} height={"155"}/> */}
                                             </div>
                                         </a>
                                     </div>
@@ -75,7 +82,8 @@ function FableBlog() {
                                                 <h6 className="tag-act">@SachinChadda</h6>
                                             </div>
                                             <div className="blog-itm-img">
-                                                <img src={BlogThumbnail1} alt="loading" className="img-blog" width={"215"} height={"155"}/>
+                                            <LazyLoader src={BlogThumbnail1} className={'img-blog'} width={'215'} height={'155'} alt={'loading'} />
+                                                {/* <img src={BlogThumbnail1} alt="loading" className="img-blog" width={"215"} height={"155"}/> */}
                                             </div>
                                         </a>
                                     </div>

@@ -1,14 +1,17 @@
 import React, { useEffect, useState, useRef } from "react";
 import Form from 'react-bootstrap/Form';
+import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
-import "./OpenAccountOTPModal.scss";
-
-function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
+import OTPimage from '../../assets/images/otp.svg';
+import "../Common-features/demat-form.scss"
+import { Link } from "react-router-dom";
+function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose}) {
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
     const [count, setCount] = useState(0);
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
 
     function showLoader(type) {
@@ -46,6 +49,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
     }, [count]);
 
     useEffect(() => {
+        setCount(30);
+    }, []);
+
+    useEffect(() => {
+        checkWebOTP();
+    }, [loaders.resendOTPLoader]);
+
+    function checkWebOTP() {
         if ('OTPCredential' in window) {
             const input = document.getElementById('openAccountOTP');
             if (!input) return;
@@ -56,10 +67,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
             }).then(otp => {
                 setOtp(otp.code);
             }).catch(err => {
-                console.log(err);
+                console.log(err, "Error web otp");
             });
         }
-    }, []);
+    }
 
     // to verify the OTP 
     function verifyOTP() {
@@ -111,6 +122,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('otp');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -142,6 +154,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
+                    handleOTPResendSuccessToaster('call');
                 } else {
                     setOTPErrors((res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
                 }
@@ -157,9 +170,17 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
         }
     }
 
+
+    function handleOTPResendSuccessToaster(type){
+        setOTPSendSuccessToaster({[type]: true});
+        setTimeout(()=>{
+            setOTPSendSuccessToaster({[type]: false});
+        },2000)
+    }
+
     return (
         <>
-            <div id="opt-box-id">
+            {/* <div id="opt-box-id">
                 <div className="modal-body opt-body">
                     A OTP has been sent to {'******' + mobileNumber.slice(6, 10)}
                     <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
@@ -167,7 +188,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                     }
                     <div className="modal-footer otp-modal-footer">
-                        <button className="btn btn-primary verify-btn" onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                        <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
                     </div>
                     <div className="modal-otp-links">
                         {
@@ -180,8 +201,73 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID}) {
                                 </div>
                         }
                     </div>
+                    {
+                        (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
+                            <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
+                                {
+                                    (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
+                                }
+                            </Alert> : ''
+                    }
+                </div>
+            </div> */}
+
+
+            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
+                <div className="exit-intent-sleekbox-popup">
+                    <div className="popup-sub-row">
+                    <div className="close">
+                            <a href="javascript:void(0)" onClick={onClose} class="closebtn" >&times;</a>
+                            </div>
+                        <div className="popup-sub-right">
+
+                            <div>
+                                <img src={OTPimage} />
+
+                                <p className="heading">OTP Verification</p>
+                                <p className="subheading">A OTP has been sent to {'******' + mobileNumber.slice(6, 10)}</p>
+                                {
+                                    count ?
+                                        <p className="time">Time remaining:<span> {count} seconds</span></p> : ''
+                                }
+
+                            </div>
+                            <div>
+
+
+                                <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                {
+                                    OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                                }
+                            </div>
+
+                            <div className="btnwrap">
+                                <button className="btn-bg" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : 'Verify'}</button>
+                            </div>
+                            <div>
+                                {
+                                    !count ?
+                                        <div>
+                                            <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP SMS'}</button>
+                                            <span>OR</span>
+                                            <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Get OTP on Call'}</button></div> : ''
+                                }
+                            </div>
+                            <div className="mt-2">
+                                {
+                                    (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
+                                        <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
+                                            {
+                                                (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
+                                            }
+                                        </Alert> : ''
+                                }
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
 
         </>
     );

@@ -69,7 +69,7 @@ function AppBannerBottom() {
 
                           return (
 
-                            <div key={response.id} className={classNm} onClick={() => setIsShown2(index)} onChange={() => setIsShown2(index)} >
+                            <div key={response.id} className={classNm} onChange={() => setIsShown2(index)} >
                               <h4 className="single-ttl">{response.title}</h4>
                               <p className="para">
                                 {response.description}
@@ -89,7 +89,7 @@ function AppBannerBottom() {
                 <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className="single-trade-easy-images" width="344" height="697" alt="Loading" />
+                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
                     {/* <img src={imageData[isShown2].image}
 
                       className="single-trade-easy-images" alt="loading"></img> */}

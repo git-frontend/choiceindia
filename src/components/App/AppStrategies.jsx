@@ -59,7 +59,7 @@ function AppStrategies() {
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className="single-trade-easy-images" alt="Loading" width="312" height="632"/>
+                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}
@@ -85,7 +85,7 @@ function AppStrategies() {
 
                                                     return (
 
-                                                        <div key={response.id} className={classNm} onClick={() => setIsShown3(index)} onChange={() => setIsShown3(index)} >
+                                                        <div key={response.id} className={classNm} onChange={() => setIsShown3(index)} >
                                                             <h4 className="single-ttl">{response.title}</h4>
                                                             <p className="para">
                                                                 {response.description}

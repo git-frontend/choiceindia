@@ -1,6 +1,5 @@
 
 import React, { useEffect, useState } from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img1.png';
 import { API_URLS } from "../../Services/API-URLS";
 import rest from '../../Services/rest'
 import { subscribeOnStream, subscribeMultitouchline } from "../../Services/socketData";
@@ -425,7 +424,7 @@ function CQuant() {
                                         <h4 className="ttl-sm">{report?.AType}</h4>
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>
-                                    <a onClick={() => { goToDetail(report) }}  class="post-read cursor-pointer">View More</a>
+                                    <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
                                 </div>
                                 <div className="itm-date-btn">
                                     <a onClick={() => { goToDetail(report) }} className={"btn-sm cursor-pointer " + (report?.call_type_buy == 'BUY' ? 'grn-btn' : (report?.call_type_buy == 'SELL' ? 'red-btn' : ''))}>{report?.call_type_buy}</a>
@@ -437,7 +436,7 @@ function CQuant() {
                     })}
 
                 </div>
-                <div class="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a class="btn-bg" >Explore All</a></div>
+                <div className="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a className="btn-bg" >Explore All</a></div>
             </div>}
 
 
@@ -531,7 +530,7 @@ export default CQuant;
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -548,7 +547,7 @@ export default CQuant;
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm red-btn">SELL</a>
@@ -564,7 +563,7 @@ export default CQuant;
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm red-btn">SELL</a>
@@ -580,7 +579,7 @@ export default CQuant;
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>
@@ -596,7 +595,7 @@ export default CQuant;
                             <h4 className="ttl-sm">Short Term</h4>
                        </div>
                        <h5 className="date-publish">Published at 4th Apr’22 09:45:32 AM</h5>
-                       <a href="#" class="post-read">View More</a>
+                       <a href="#" className="post-read">View More</a>
                     </div>
                     <div className="itm-date-btn">
                         <a href="/" className="btn-sm grn-btn">BUY</a>

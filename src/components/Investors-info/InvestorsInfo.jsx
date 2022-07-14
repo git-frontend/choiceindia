@@ -14,6 +14,7 @@ import ChoiceLTP from "../Common-features/ChoiceLTP";
 function InvestorInfo() {
 
   const [skeleton, setSkeleton] = useState(() => true);
+  const[trigger,setTrigger]=useState(false);
 
   
 
@@ -24,6 +25,19 @@ function InvestorInfo() {
       setSkeleton(() => false);
     }, 200)
   },[])
+
+ 
+    
+
+
+  useEffect(() => {
+    setTrigger(true)
+    if (trigger === true) {
+      console.log("kkk");
+
+    }
+
+  }, [trigger])
 
   return (
     <div>

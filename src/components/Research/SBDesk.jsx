@@ -294,7 +294,7 @@ function SBDesk() {
                             </div>
                         })}
                     </div>
-                    <div class="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a class="btn-bg" >Explore All</a></div>
+                    <div className="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a className="btn-bg" >Explore All</a></div>
                 </div>}
 
 

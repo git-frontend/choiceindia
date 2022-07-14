@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Slider from "react-slick";
-import  ImageSub21  from '../../assets/images/slide-img2.png';
-import  ImageSub22  from '../../assets/images/slide-img3.png';
-import  ImageSub23  from '../../assets/images/slide-img4.png';
-import  ImageSub24  from '../../assets/images/slide-img5.png';
+// import  ImageSub21  from '../../assets/images/slide-img2.png';
+// import  ImageSub22  from '../../assets/images/slide-img3.png';
+// import  ImageSub23  from '../../assets/images/slide-img4.png';
+// import  ImageSub24  from '../../assets/images/slide-img5.png';
 import LazyLoader from '../Common-features/LazyLoader';
 
 export default function SliderAs() {
@@ -62,19 +62,19 @@ export default function SliderAs() {
           focusOnSelect={true}
         className='stories-sec-slider'>
               <div className="itm-img">
-              <LazyLoader src={Image21} threshold={[0, 0.5, 1]} alt="Loading"/>
+              <LazyLoader src={Image21} threshold={[0, 0.5, 1]} alt={"Loading"}/>
                 {/* <img src={ImageSub21} alt="" /> */}
               </div>
               <div className="itm-img">
-              <LazyLoader src={Image22} threshold={[0, 0.5, 1]} alt="Loading"/>
+              <LazyLoader src={Image22} threshold={[0, 0.5, 1]} alt={"Loading"}/>
                 {/* <img src={ImageSub22} alt="" /> */}
               </div>
               <div className="itm-img">
-              <LazyLoader src={Image23} threshold={[0, 0.5, 1]} alt="Loading"/>
+              <LazyLoader src={Image23} threshold={[0, 0.5, 1]} alt={"Loading"}/>
                 {/* <img src={ImageSub23} alt="" /> */}
               </div>
               <div className="itm-img">
-              <LazyLoader src={Image24} threshold={[0, 0.5, 1]} alt="Loading"/>
+              <LazyLoader src={Image24} threshold={[0, 0.5, 1]} alt={"Loading"}/>
                 {/* <img src={ImageSub24} alt="" /> */}
               </div>
           

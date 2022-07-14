@@ -86,18 +86,10 @@ function PricingEquity() {
           </div>
           <p className="term-para"><strong>Condition Applied* </strong>:  Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
         </div>
-
-        <div className="brokerage-calculator">
-          <div className="heading-sec">
-            <h3 className="title-secnd">Brokerage Calculator</h3>
-          </div>
         
         
-          <div className="calc-box">
           <BrokerageCalculator name={'Equity Futures'} id={'equity-futures'}></BrokerageCalculator>
           <BrokerageCalculator name={'Equity Options'} id={'equity-options'}></BrokerageCalculator>
-          </div>
-        </div>
       </div>
 
     </div>

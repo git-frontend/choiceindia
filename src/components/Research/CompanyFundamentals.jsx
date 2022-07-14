@@ -1,9 +1,9 @@
 
 import React from "react";
-import thumb5 from '../../assets/images/research/thumbnail-img5.png';
-import thumb6 from '../../assets/images/research/thumbnail-img6.png';
-import thumb7 from '../../assets/images/research/thumbnail-img7.png';
-import thumb8 from '../../assets/images/research/thumbnail-img8.png';
+import thumb5 from '../../assets/images/research/thumbnail-img5.webp';
+import thumb6 from '../../assets/images/research/thumbnail-img6.webp';
+import thumb7 from '../../assets/images/research/thumbnail-img7.webp';
+import thumb8 from '../../assets/images/research/thumbnail-img8.webp';
 
 
 function IndustryAnalysis() {
@@ -72,7 +72,7 @@ function IndustryAnalysis() {
                 </div>
             </div>
         </div>
-        <div class="mt-5 d-flex justify-content-center"><a class="btn-bg" href="/">Explore All</a></div>
+        <div className="mt-5 d-flex justify-content-center"><a className="btn-bg" href="/">Explore All</a></div>
       </div>
 
 

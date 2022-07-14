@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 
-function OpenDemateAccountStickyFooter() {
+function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -120,9 +120,12 @@ function OpenDemateAccountStickyFooter() {
 
     return (
         <>
+            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+            </div>
             <section className="stickybottom">
                 <div className="container mx-auto">
-                    <div className="d-flex justify-content-around">
+                    <div className="d-flex justify-content-around align-items-center">
                         <div>
                             <h2 className="text"><span>Open Free</span> Demat Account</h2>
                         </div>
@@ -139,13 +142,13 @@ function OpenDemateAccountStickyFooter() {
                                     <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
                                 </label>
                                 <div className="termcon termcon1 ">
-                                    <div> I agree that I have read &amp; accept the<a className="tc"> Terms &amp; Conditions</a>
+                                    <div> I agree that I have read &amp; accept the<a className="tc" onClick={handleTermsConditionShow}> Terms &amp; Conditions</a>
                                     </div>
                                 </div>
                             </div>
                             <div className="form-group">
                                 <button type="button" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                <small id="API_error" className="errormsg text-danger">{APIError || ''}</small>
+                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
                             </div>
                         </form>
 
@@ -153,7 +156,11 @@ function OpenDemateAccountStickyFooter() {
                 </div>
 
             </section>
-            <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
+            {
+                showOTP ?
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+            }
+            {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Enter OTP</Modal.Title>
@@ -161,6 +168,16 @@ function OpenDemateAccountStickyFooter() {
                 <Modal.Body>
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
+            </Modal> */}
+            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Header>
+                    <Modal.Title>Attention</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Footer>
+                    <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
+                </Modal.Footer>
             </Modal>
         </>
     )

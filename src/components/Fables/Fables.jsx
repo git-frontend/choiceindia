@@ -4,12 +4,14 @@ import BannerSection from "./BannerSection";
 import FableBlog from "./FableBlog";
 import FableBlogList from "./FableBlogList";
 // import FablesHeader from './FablesHeader.jsx';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Template5 from "../Common-features/Template5";
 
 function Fables() {
 
   const [skeleton, setSkeleton] = useState(() => true);
+
+  
 
   setTimeout(() => {
     setSkeleton(() => false);

@@ -1,20 +1,20 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import fableServices from '../../Services/fableServices';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 
 function BannerSection() {
 
-	const[data,setData] = useState([]);
+	const [data, setData] = useState([]);
 	const [trigger, setTrigger] = useState();
 
-	function loadFableList(){
-		fableServices.fabalTrending().then (
-			res=>{
+	function loadFableList() {
+		fableServices.fabalTrending().then(
+			res => {
 				setData(res.data.posts);
 
 			}
-		)	
+		)
 	}
 	useEffect(() => {
 
@@ -26,17 +26,17 @@ function BannerSection() {
 	}, [trigger])
 
 
-    return (
-        <div>
+	return (
+		<div>
 
-            <section className="fables-banner">
+			<section className="fables-banner">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12 d-flex justify-content-between flex-wrap">
 							<div className="fables-caption-left">
 								<h2 className="big-ttl">
 									Fables
-									<span>Stories that Matter</span> 
+									<span>Stories that Matter</span>
 								</h2>
 							</div>
 							<div className="fables-caption-right">
@@ -45,32 +45,32 @@ function BannerSection() {
 								</div>
 								<div className="fable-trending-list">
 
-								{
-									data.slice(0,4).map((response, index) => {
+									{
+										data.slice(0, 4).map((response, index) => {
 
-										return(
-                                       <div key={response.id}>
-									   <Link to={`/fablesdetail/${response.slug}`} className="trending-itm">
-									   {/**<a href="/" className="trending-itm">*/}
-									   <div className="trending-itm-img">
-														<LazyLoader src={response.feature_image} className="img-blog" alt="Loading" width={"138"} height={"100"} />
-										   {/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
-									   </div>
-									   <div className="trending-itm-des">
-										   <p>{response.meta_description}</p>
-									   </div>
-									   </Link>
-								   {/**</a>*/}
+											return (
+												<div key={response.id}>
+													<Link to={`/blog/${response.slug}`} className="trending-itm">
+														{/**<a href="/" className="trending-itm">*/}
+														<div className="trending-itm-img">
+															<LazyLoader src={response.feature_image} className={"img-blog"} alt={"Loading"} width={"138"} height={"100"} />
+															{/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
+														</div>
+														<div className="trending-itm-des">
+															<p>{response.meta_description}</p>
+														</div>
+													</Link>
+													{/**</a>*/}
 
 
-									   </div>
-											
-										)
+												</div>
 
-									})
-								}
+											)
 
-						
+										})
+									}
+
+
 									{/**<a href="/" className="trending-itm">
 										<div className="trending-itm-img">
 											<img src={Blog1} alt="loading" className="img-blog"/>
@@ -97,15 +97,15 @@ function BannerSection() {
 							</a>*/}
 								</div>
 							</div>
-						</div>	
+						</div>
 					</div>
 				</div>
 			</section>
 
 
-        </div>
+		</div>
 
-    );
+	);
 }
 
 export default BannerSection;

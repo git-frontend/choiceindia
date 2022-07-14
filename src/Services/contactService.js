@@ -5,16 +5,15 @@ const contact = {
 
     headerConfig: {
         headers: { 'content-type': 'multipart/form-data' }
-},
+    },
 
-contactForm: function (postdata) {
+    contactForm: function (postdata) {
 
-    let api = new API_URLS()
-    let url = api.getContactFormURL()
-    return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-        console.log("datas",data)
-        return data
-    })
-}
+        let api = new API_URLS()
+        let url = api.getContactFormURL()
+        return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+            return data
+        })
+    }
 }
 export default contact;

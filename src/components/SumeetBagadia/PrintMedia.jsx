@@ -11,6 +11,7 @@ import Image10 from '../../assets/images/sumeet-bagadia/CNBC-TV-18.webp';
 import Image101 from '../../assets/images/sumeet-bagadia/Business_Standard.webp';
 import Image11 from '../../assets/images/sumeet-bagadia/Navbharat_Times.webp';
 import Image12 from '../../assets/images/sumeet-bagadia/FC.webp';
+import LazyLoader from "../Common-features/LazyLoader";
 
 function PrintMedia() {
 
@@ -35,40 +36,52 @@ function PrintMedia() {
             <div className="col-md-7">
               <ul className="reset">
                 <li>
-                  <img src={Image2} alt="Become a Stock Market Agent" width="162" height="57" className="img-fluid" />
+                <LazyLoader src={Image2} alt={"Become a Stock Market Agent"} width={"162"} height={"57"} className={"img-fluid"} />
+                  {/* <img src={Image2} alt="Become a Stock Market Agent" width="162" height="57" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image3} alt="Become a Stock Market Agent" width="73" height="77" className="img-fluid" />
+                <LazyLoader src={Image3} alt={"Become a Stock Market Agent"} width={"73"} height={"77"} className={"img-fluid"} />
+                  {/* <img src={Image3} alt="Become a Stock Market Agent" width="73" height="77" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image4} alt="Become a Stock Market Agent" width="95" height="77" className="img-fluid" />
+                <LazyLoader src={Image4} alt={"Become a Stock Market Agent"} width={"95"} height={"77"} className={"img-fluid"} />
+                  {/* <img src={Image4} alt="Become a Stock Market Agent" width="95" height="77" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image5} alt="Become a Stock Market Agent" width="78" height="77" className="img-fluid" />
+                <LazyLoader src={Image5} alt={"Become a Stock Market Agent"} width={"78"} height={"77"} className={"img-fluid"} />
+                  {/* <img src={Image5} alt="Become a Stock Market Agent" width="78" height="77" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image6} alt="Become a Stock Market Agent" width="162" height="35" className="img-fluid" />
+                <LazyLoader src={Image6} alt={"Become a Stock Market Agent"} width={"162"} height={"35"} className={"img-fluid"} />
+                  {/* <img src={Image6} alt="Become a Stock Market Agent" width="162" height="35" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image7} alt="Become a Stock Market Agent" width="162" height="28" className="img-fluid" />
+                <LazyLoader src={Image7} alt={"Become a Stock Market Agent"} width={"162"} height={"28"} className={"img-fluid"} />
+                  {/* <img src={Image7} alt="Become a Stock Market Agent" width="162" height="28" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image8} alt="Become a Stock Market Agent" width="150" height="53" className="img-fluid" />
+                <LazyLoader src={Image8} alt={"Become a Stock Market Agent"} width={"150"} height={"53"} className={"img-fluid"} />
+                  {/* <img src={Image8} alt="Become a Stock Market Agent" width="150" height="53" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image9} alt="Become a Stock Market Agent" width="176" height="57" className="img-fluid" />
+                <LazyLoader src={Image9} alt={"Become a Stock Market Agent"} width={"176"} height={"57"} className={"img-fluid"} />
+                  {/* <img src={Image9} alt="Become a Stock Market Agent" width="176" height="57" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image10} alt="Become a Stock Market Agent" width="87" height="77" className="img-fluid" />
+                <LazyLoader src={Image10} alt={"Become a Stock Market Agent"} width={"87"} height={"77"} className={"img-fluid"} />
+                  {/* <img src={Image10} alt="Become a Stock Market Agent" width="87" height="77" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image101} alt="Become a Stock Market Agent" width="174" height="61" className="img-fluid" />
+                <LazyLoader src={Image101} alt={"Become a Stock Market Agent"} width={"174"} height={"61"} className={"img-fluid"} />
+                  {/* <img src={Image101} alt="Become a Stock Market Agent" width="174" height="61" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image11} alt="Become a Stock Market Agent" width="166" height="62" className="img-fluid" />
+                <LazyLoader src={Image11} alt={"Become a Stock Market Agent"} width={"166"} height={"62"} className={"img-fluid"} />
+                  {/* <img src={Image11} alt="Become a Stock Market Agent" width="166" height="62" className="img-fluid" /> */}
                 </li>
                 <li>
-                  <img src={Image12} alt="Become a Stock Market Agent" width="162" height="59" className="img-fluid" />
+                <LazyLoader src={Image12} alt={"Become a Stock Market Agent"} width={"162"} height={"59"} className={"img-fluid"} />
+                  {/* <img src={Image12} alt="Become a Stock Market Agent" width="162" height="59" className="img-fluid" /> */}
                 </li>
 
 

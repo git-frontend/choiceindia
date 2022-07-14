@@ -1,9 +1,9 @@
 
 import React from "react";
-import thumb1 from '../../assets/images/research/thumbnail-img13.png';
-import thumb2 from '../../assets/images/research/thumbnail-img14.png';
-import thumb3 from '../../assets/images/research/thumbnail-img15.png';
-import thumb4 from '../../assets/images/research/thumbnail-img16.png';
+import thumb1 from '../../assets/images/research/thumbnail-img13.webp';
+import thumb2 from '../../assets/images/research/thumbnail-img14.webp';
+import thumb3 from '../../assets/images/research/thumbnail-img15.webp';
+import thumb4 from '../../assets/images/research/thumbnail-img16.webp';
 
 
 function IpoNfoAnalysis() {
@@ -68,7 +68,7 @@ function IpoNfoAnalysis() {
                 </div>
             </div>
         </div>
-        <div class="mt-5 d-flex justify-content-center"><a class="btn-bg" href="/">Explore All</a></div>
+        <div className="mt-5 d-flex justify-content-center"><a className="btn-bg" href="/">Explore All</a></div>
       </div>
 
 

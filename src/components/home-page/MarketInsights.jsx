@@ -75,7 +75,7 @@ function MarketInsights() {
 
                                             <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                 <div className="insights-item-cont">
-                                                <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt="Loading"/>
+                                                <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"}/>
                                                     {/* <img src={response.feature_image} alt="" /> */}
                                                     <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                 </div>
@@ -94,7 +94,7 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <Link to="/" className="btn-bg">
+                            <Link to="/research-listing-new" className="btn-bg">
                                 Read More
                             </Link>
                         </div>

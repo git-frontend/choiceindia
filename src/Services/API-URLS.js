@@ -5,9 +5,9 @@ const environment = true
 /**URL Config */
 const config = {
     liveServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
-    UATServerURL:"https://choiceindia.com/blog/ghost/api/v3/",
+    UATServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
-    UATBannerURL : "https://cmsapi.choiceindia.com/",
+    UATBannerURL: "https://cmsapi.choiceindia.com/",
 
 
     UATJiffyServerURL: "https://uat.jiffy.in/",
@@ -19,83 +19,107 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
+    // https://researchreportapi.jiffy.in/api/report/
     UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
+    liveJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
     liveNewResearchReportURL: "https://jiffy.choiceindia.com/api/researchreport/v2/api",
     // https://researchreportapi.jiffy.in/api/report/market-insights
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
-    liveSSOBaseURL: 'https://sso-api.choiceindia.com/'
-  
-}
+    liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
+    UATOnbBaseURL: 'https://uat-pwa.choicetechlab.com/',
+    liveOnbBaseURL: 'https://accounts.choiceindia.com/',
+    UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
+    liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
+    livereferURL: "https://uatapi.choicebroking.in/api/middleware",
+    UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
+    liveresearchURL: "hhttp://researchreportapi.jiffy.in/api/",
+    UATresearchURL: "http://researchreportapi.jiffy.in/api/",
 
+
+    liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
+}
 
 export class API_URLS {
     newResearchReportURL = 'https://jiffy.choiceindia.com/api/researchreport/v2/api';
-  jiffyResearchURL = "";
-  /** SSO Base URL */
-  SSOServerURL = '';
- /**Server URL */
+    JiffyBaseURL = '';
+    LMSBaseURL = '';
+    OnbBaseURL = '';
+    jiffyResearchURL = "";
+    /** SSO Base URL */
+    SSOServerURL = '';
+    /**Server URL */
  serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
  /**Server URL */
  jiffyURL = "devjiffy.choicebroking.in";
  jiffyExpertPageURL="research-report/research/experts/EQ/all/"
  jiffySignalPageURL="research-report/research/signals/EQ/all/"
  /** banner URL */
-   bannerURL ="https://cmsapi.choiceindia.com/"
+    bannerURL = "https://cmsapi.choiceindia.com/"
 
 
      /** Base URL for JIFFY APIs */
    jiffyServerURL = "https://api.jiffy.in/";
-   /** faq URL */
-   faqURL="https://choicebroking.freshdesk.com/api/v2/"
+    /** faq URL */
+    faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
-
+    /** refer and earn URL */
+    referURL = "https://uatapi.choicebroking.in/api/middleware"
+    
   /**Research New Fetch Success Ratio */
    fetchResearchReport = "/research-report-new"
+    /** Research URL */
+    researchURL = "https://uatapi.choicebroking.in/api/middleware"
 
 
      /** PV breakout API data URL */
 pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
-  /**Market Insights , fabal URL */
+    /**Market Insights , fabal URL */
 
-  addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
+    addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
 
-  /**fablestories blog  */
-  fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
+    /** fables url  */
 
-/**fables trending blog  */
-  fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
+    fableCategoryURL = 'items/fables?filter[fable_status][_eq]=publish'
 
-  /** fables blogs  */
+    /**fablestories blog  */
+    fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
 
-  fableBlogURL = 'content/posts/{id}/?key=280c55197998a010569e5d612a'
+    /**fables trending blog  */
+    fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
 
-  /** Primary banner */
+    /** fables blogs  */
 
-    primaryURL='/items/banners?filter[banner_type][_eq]=primary'
+    fableBlogURL = 'content/posts/{id}/?key=280c55197998a010569e5d612a'
 
-  /** Secondary banner */
+    /** Primary banner */
 
-   secondaryURL='/items/second_banner'
+    primaryURL = '/items/banners?filter[banner_type][_eq]=primary'
 
-   /** contact form */
+    /** Secondary banner */
 
-   contactURL='contact-us/'
+    secondaryURL = '/items/second_banner'
+
+    /** contact form */
+
+    contactURL = 'contact-us/'
     researchReport = '/research-report'
 
       /** API URL For guest Token Generation*/
    genKeyURL = "api/settings/GenKey";
-   /** Faq category section */
+    /** Faq category section */
 
-   faqCategoryURL='/items/faq_category?filter[faq_status][_eq]=publish'
+    faqCategoryURL = '/items/faq_category?filter[faq_status][_eq]=publish'
 
-   /**Market Insights New */
+    /**Market Insights New */
 
-  addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
+    addMarketInsiteNewURL = 'market-insights?limit=4&offset=0';
 
     /**Socket Logon Request */
     socketLogonRequest = "63=FIX3.0|64=101|65=66|66=$currentDate|67=$userId|68=|400=11";
+    /** refer and earn */
+    earnURL = 'v1/40a9f5ac41a0f6223825/stage-user';
     /**Socket Header Request for Multitouchline */
     socketHeaderRequest = "63=FIX3.0|64=206|65=66|66=$currentDate|$requests230=$subUnSub|4=$sessionId";
     /**Pause Resume Request */
@@ -104,45 +128,76 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     socketMultiTouchlineRequest = "1=$segmentId$7=$token"
     /**Keep Alive Request */
     keepAliveRequest = "63=FT3.0|64=1000|65=34|66=$currentDate|4=$sessionId"
+   
+
+
+    /** Open Account APIs */
+
+    sendOTPURL = 'sign-up';
+    resendOTPURL = 'resend-otp';
+    OTPOnCallURL = 'otp-on-call';
+    verifyOTPURL = 'verify-otp';
+
+    /** Sub Broker APIs */
+    // ?is_refresh=Y
+    getCityURL = 'city/list';
+    getStateURL = 'state/list?is_refresh=Y';
+    checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
+    sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
+    verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
+    addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
+
+    getExpertResearchURL = 'api/research-report-new';
+
+    constructor() {
+        this.setConfig(environment ? "live" : "UAT")
+    }
 
 
 
-   /** Open Account APIs */
-
-   sendOTPURL = 'sign-up';
-   resendOTPURL = 'resend-otp';
-   OTPOnCallURL = 'otp-on-call';
-   verifyOTPURL = 'verify-otp';
-   constructor() {
-    this.setConfig(environment ? "live" : "UAT")
-}
 
 
+    /**
+        * Set Config
+        * @param {*} configKey 
+        */
+    setConfig(configKey) {
+        this.setJiffyServerURL(config[configKey + 'JiffyBaseURL']);
+        this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
 
+        this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
 
-
- /**
-     * Set Config
-     * @param {*} configKey 
-     */
-  setConfig(configKey) {
-    this.setSSOServerURL(config[configKey + 'SSOBaseURL'])
-
-    this.setServerURL(config[configKey + 'ServerURL'])
-    
     this.setJiffyURL(config[configKey + 'JiffyURL'])
+        this.setSSOServerURL(config[configKey + 'SSOBaseURL']);
     
-    this.setBannerURL(config[configKey + 'BannerURL'])
 
     this.setJiffyServerURL(config[configKey + 'JiffyServerURL']);
-    this.setfaqURL(config[configKey + 'faqURL'])
-    this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
-    this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
-}
+        this.setServerURL(config[configKey + 'ServerURL']);
 
-setJiffyResearchURL = (url) => {
-    this.jiffyResearchURL = url;
-}
+        this.setBannerURL(config[configKey + 'BannerURL']);
+
+        this.setfaqURL(config[configKey + 'faqURL']);
+        this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
+    this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
+        this.setreferURL(config[configKey + 'referURL']);
+        this.setresearchURL(config[configKey + 'researchURL']);
+    }
+
+    setJiffyServerURL = (url) => {
+        this.JiffyBaseURL = url;
+    }
+
+    setLMSServerURL = (url) => {
+        this.LMSBaseURL = url;
+    }
+
+    setOnbServerURL = (url) => {
+        this.OnbBaseURL = url;
+    }
+
+    setJiffyResearchURL = (url) => {
+        this.jiffyResearchURL = url;
+    }
 
 
   /**
@@ -152,20 +207,20 @@ setJiffyResearchURL = (url) => {
     setNewResearchReportURL(url) {
     this.newResearchReportURL = url;
   }
-/**
- * Set Server URL 
- * @param {*} url 
- */
- setSSOServerURL = (url) => {
-    this.SSOServerURL = url;
-}
-/**
- * Set Server URL 
- * @param {*} url 
- */
-setServerURL = (url) => {
-    this.serverURL = url;
-}
+    /**
+     * Set Server URL 
+     * @param {*} url 
+     */
+    setSSOServerURL = (url) => {
+        this.SSOServerURL = url;
+    }
+    /**
+     * Set Server URL 
+     * @param {*} url 
+     */
+    setServerURL = (url) => {
+        this.serverURL = url;
+    }
 
 /**
  * Set Server URL 
@@ -184,14 +239,14 @@ setServerURL = (url) => {
 }
 
 
-/**
- * Set Banner URL 
- * @param {*} url 
- */
- setBannerURL = (url) => {
+    /**
+     * Set Banner URL 
+     * @param {*} url 
+     */
+    setBannerURL = (url) => {
 
-    this.bannerURL = url;
-}
+        this.bannerURL = url;
+    }
 
 
 getExpertDetailURL=(id)=>{
@@ -203,14 +258,32 @@ getSignalDetailURL=(id)=>{
     return this.jiffyURL+this.jiffySignalPageURL+id
 }
 
-/**
- * Set faq URL 
- * @param {*} url 
- */
- setfaqURL = (url) => {
+    /**
+     * Set faq URL 
+     * @param {*} url 
+     */
+    setfaqURL = (url) => {
 
-    this.faqURL = url;
-}
+        this.faqURL = url;
+    }
+    
+    /**
+     * Set faq URL 
+     * @param {*} url 
+     */
+     setreferURL = (url) => {
+
+        this.referURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setresearchURL = (url) => {
+
+        this.researchURL = url;
+    }
 
 
  fetchResearchReportURL() {
@@ -222,53 +295,53 @@ getSignalDetailURL=(id)=>{
   }
 
 
-/** Get Market Insite and fabal List URL */
+    /** Get Market Insite and fabal List URL */
 
-getMarketinsiteURL() {
+    getMarketinsiteURL() {
 
-    return this.serverURL + this.addMarketInsiteURL
-}
+        return this.serverURL + this.addMarketInsiteURL
+    }
 
-/** Get Fabal Stories List URL */
+    /** Get Fabal Stories List URL */
 
-getFableStoryURL() {
+    getFableStoryURL() {
 
-    return this.serverURL + this.fablesStoryURL
-}
+        return this.serverURL + this.fablesStoryURL
+    }
 
-/** Get fabal Trending List URL */
+    /** Get fabal Trending List URL */
 
-getFableTrendingURL() {
+    getFableTrendingURL() {
 
-    return this.serverURL + this.fabletrendingURL
-}
+        return this.serverURL + this.fabletrendingURL
+    }
 
-/** get fables blog data */
+    /** get fables blog data */
 
-getFableblogURL(id){
+    getFableblogURL(id) {
 
-    return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a`
-}
+        return this.serverURL + `content/posts/slug/${id}/?key=280c55197998a010569e5d612a&include=tags`
+    }
 
-/** Get home Banner URL */
+    /** Get home Banner URL */
 
-getHomePrimaryBannerURL(){
+    getHomePrimaryBannerURL() {
 
-    return this.bannerURL + this.primaryURL
-}
-
-
-/** Get Secondary Banner URL */
-
-getHomeSecondaryBannerURL(){
-
-    return this.bannerURL + this.secondaryURL
-}
+        return this.bannerURL + this.primaryURL
+    }
 
 
-getContactFormURL(){
-    return this.bannerURL + this.contactURL
-}
+    /** Get Secondary Banner URL */
+
+    getHomeSecondaryBannerURL() {
+
+        return this.bannerURL + this.secondaryURL
+    }
+
+
+    getContactFormURL() {
+        return this.bannerURL + this.contactURL
+    }
 
 getSessionUrl(){
     return this.jiffyServerURL+this.genKeyURL
@@ -278,52 +351,52 @@ getExpertReportURL(){
     return this.jiffyResearchURL + this.researchReport
 }
 
-getFaqCategoryURL(){
-    return this.bannerURL + this.faqCategoryURL
-}
+    getFaqCategoryURL() {
+        return this.bannerURL + this.faqCategoryURL
+    }
 
-getFaqfolderURL(id){
-   
-    
-    return this.faqURL + `solutions/categories/${id}/folders`
-}
-
-getFaqArticleURL(id){
-
-    return this.faqURL + `solutions/folders/${id}/articles`
-}
+    getFaqfolderURL(id) {
 
 
-getFableCategoryURL(){
-    return this.bannerURL + this.fableCategoryURL
-}
-getFableFolderURL(id){
-    return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
-}
-/** faq search API url */
-getFaqSearchURL(pros){
-    return this.faqURL + `search/solutions?term=${pros}`
-}
-/** Get Market Insite and fabal List URL */
+        return this.faqURL + `solutions/categories/${id}/folders`
+    }
+
+    getFaqArticleURL(id) {
+
+        return this.faqURL + `solutions/folders/${id}/articles`
+    }
+
+
+    getFableCategoryURL() {
+        return this.bannerURL + this.fableCategoryURL
+    }
+    getFableFolderURL(id) {
+        return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
+    }
+    /** faq search API url */
+    getFaqSearchURL(pros) {
+        return this.faqURL + `search/solutions?term=${pros}`
+    }
+    /** Get Market Insite and fabal List URL */
 
     getMarketinsiteNewURL() {
         return this.jiffyResearchURL + this.addMarketInsiteNewURL;
     }
-getSendOTPURL() {
-    return this.SSOServerURL + this.sendOTPURL;
-}
+    getSendOTPURL() {
+        return this.SSOServerURL + this.sendOTPURL;
+    }
 
-getResendOTPURL() {
-    return this.SSOServerURL + this.resendOTPURL;
-}
+    getResendOTPURL() {
+        return this.SSOServerURL + this.resendOTPURL;
+    }
 
-getOTPOnCallURL() {
-    return this.SSOServerURL + this.OTPOnCallURL;
-}
+    getOTPOnCallURL() {
+        return this.SSOServerURL + this.OTPOnCallURL;
+    }
 
-getVerifyOTPURL() {
-    return this.SSOServerURL + this.verifyOTPURL;
-}
+    getVerifyOTPURL() {
+        return this.SSOServerURL + this.verifyOTPURL;
+    }
 
 
 
@@ -331,6 +404,13 @@ getVerifyOTPURL() {
     /**Logon Request */
     getLogonRequestURL(){
         return this.socketLogonRequest
+        }
+    getCitiesURL() {
+        return this.LMSBaseURL + this.getCityURL;
+    }
+
+    getStatesURL() {
+        return this.LMSBaseURL + this.getStateURL;
     }
 
     /**Header Request */
@@ -351,4 +431,36 @@ getVerifyOTPURL() {
     getKeepAliveRequestURL(){
         return this.keepAliveRequest
     }
+    getCheckExistenceURL() {
+        return this.OnbBaseURL + this.checkExistenceURL;
+    }
+
+    getSendOTPNURL(mobileNum) {
+        return this.OnbBaseURL + this.sendOTPNURL.replace('$mobileNum', mobileNum);
+    }
+
+    getVerifyOTPNURL(otp, id) {
+        return this.OnbBaseURL + this.verifyOTPNURL.replace('$otp', otp).replace('$id', id);
+    }
+
+    getAddNewLeadURL() {
+        return this.OnbBaseURL + this.addNewLeadURL;
+    }
+
+    getreferearnURL(id){
+        return this.referURL + `/GetUserReferralData?ClientID=${id}`;
+    }
+
+    getreferallink(id){
+        return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
+  }
+
+    getExpertResearchreportURL() {
+        return this.JiffyBaseURL + this.getExpertResearchURL;
+    }
+
+    getresearchURL(id){
+        return this.researchURL + `fundamental?report_subtype_uuid=${id}`
+    }
+
 }

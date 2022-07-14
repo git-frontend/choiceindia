@@ -6,6 +6,7 @@ import WhyOpenFreeDematAccount from "../OpenDematAccount/WhyOpenFreeDematAccount
 import DematAccountOpeningProcess from "../OpenDematAccount/DematAccountOpeningProcess";
 import LowBrokerageDematAccount from "../OpenDematAccount/LowBrokerageDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
+import { Link } from "react-router-dom";
 
 function NRIDemateAccount() {
     return (
@@ -26,10 +27,10 @@ function NRIDemateAccount() {
                         </div>
                         <div className="col-md-11 col-md-offset-1">
                             <div className="para">
-                                <input type="checkbox" class="read-more-state" id="post-1" />
-                                <span class="read-more-wrap "> The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
+                                <input type="checkbox" className="read-more-state" id="post-1" />
+                                <span className="read-more-wrap "> The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
 
-                                    <span class="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br /><br />
+                                    <span className="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br /><br />
 
                                         <h2 className="font-bold">What is a Demat Account?</h2>
                                         If we put it into simple terms we can say that the Demat account is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.<br /><br />
@@ -41,13 +42,13 @@ function NRIDemateAccount() {
                                         Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.<br /><br /><br />
 
                                         <h2 className="font-bold">Difference Between Demat and Trading Account</h2>
-                                        Now that we’ve explored what is a Demat account and how it helps us, let's further dive in and understand, how does a <a href=" <?php echo base_url(); ?>open-trading-account">Trading Account</a> play a role here? <br /><br />
+                                        Now that we’ve explored what is a Demat account and how it helps us, let's further dive in and understand, how does a <Link to="/open-trading-account">Trading Account</Link> play a role here? <br /><br />
 
                                         In the Stock Market, it is evident that we’ll have a lot of transactions going around and to make these transactions we need to have a trading account, now many might argue shouldn’t the Demat account itself should do that job?<br /><br />
 
                                         Well to answer that question people need to understand that a Demat account is just a repository where your stocks are stored, for transactional purposes in the stock market you need a trading account.<br /><br />
 
-                                        Now that we've understood how does a <a href="<?php echo CHOICE_INDIA; ?>/blog/difference-between-demat-and-trading-account/">Demat account and a trading account differ</a> from each other, let's look into the details; <br /><br />
+                                        Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account">Demat account and a trading account differ</Link> from each other, let's look into the details; <br /><br />
                                         <div className="ml-3">
                                             <h3 className="font-bold"> 1. Delivery </h3>
                                             A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.<br /><br />
@@ -78,14 +79,14 @@ function NRIDemateAccount() {
                                                 Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
                                                 <li className="font-bold">Minor Demat Account </li>
                                                 For the most part, usually, minors or people aged below 18 are not allowed to be engaging in a financial agreement, but, we have certain provisions in place which would allow a minor to have a Demat account.<br />
-                                                However, this<a href=" <?php echo base_url(); ?>minor-demat-account"> minor Demat account</a> needs to be operated under the guidance of the minor’s parent or guardian, meaning the minor himself cannot buy or sell shares.<br />
+                                                However, this <Link to="/minor-demat-account"> minor Demat account</Link> needs to be operated under the guidance of the minor’s parent or guardian, meaning the minor himself cannot buy or sell shares.<br />
                                                 Once the account holder is aged above 18 and wishes to take control of their Demat account, they can do so legally.<br />
-                                                <li className="font-bold"><a href=" <?php echo base_url(); ?>nri-demat-account">NRI Demat Account</a></li>
+                                                <li className="font-bold"><Link to="/nri-demat-account">NRI Demat Account</Link></li>
                                                 We understand and we know that any legal Indian can possess equities to buy and sell according to their free will, but, what about NRIs?<br />
                                                 NRI’s or Non-Resident Indians, do they have the provisions to enjoy the tremendous growth shown by the Indian markets?<br />
                                                 Turns out, they do have the provisions to participate in the Indian markets. NRIs are allowed to have Demat accounts but while abiding by the rules of FEMA (Foreign Exchange Management Act)<br />
                                                 <li className="font-bold">Corporate Demat Account</li>
-                                                Demat accounts are not only limited to personal use, there are provisions for the corporate companies to invest as a single entity. <a href=" <?php echo base_url(); ?>corporate-demat-account">Corporate Demat accounts</a> are especially special because it reduces the paperwork significantly while you are buying, selling, trading and transferring securities.<br />
+                                                Demat accounts are not only limited to personal use, there are provisions for the corporate companies to invest as a single entity. <Link to="/corporate-demat-account">Corporate Demat accounts</Link> are especially special because it reduces the paperwork significantly while you are buying, selling, trading and transferring securities.<br />
                                             </ul>
                                         </div><br />
                                         Now that we’ve covered and also understand what is Demat and how Demat is necessary for us to invest in securities in India, now let’s look at how to do we set up or open a Demat account online.<br /><br /><br />
@@ -135,10 +136,10 @@ function NRIDemateAccount() {
                                             Safety charges or account custodian charge fees are usually levied on the DP by the depository, these are one-time charges on the DPs. The DPs who charge safety charges on their customers do it on a monthly basis.<br />
                                             <li className="font-bold">Annual Maintainance Charge (AMC)</li>
                                             Annual Maintainance charges are levied on the investor by the DP for the services they provide. <br />
-                                            The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <a href=" <?php echo CHOICE_INDIA; ?>/blog/what-are-dp-charges/">DPs charge</a> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.<br />
+                                            The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <Link to="/blog/what-are-dp-charges">DPs charge</Link> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.<br />
                                             <li className="font-bold">Transactional Charges</li>
                                             The main aim of having a Demat account is participating in the Indian markets and while doing that it is evident that every transaction you make on the Demat account is a move towards your future.<br />
-                                            DPs charge <a href="<?php echo CHOICE_INDIA; ?>/blog/dp-transaction-charges/">transactional charges</a> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.<br />
+                                            DPs charge <Link to="/blog/dp-transaction-charges">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.<br />
                                         </div><br /><br />
                                         <h3 className="font-bold">Why Should You Choose Choice to Open a Demat Account? </h3>
                                         You’ve been through all the information that is out there about Demat and you hone enough knowledge to understand that picking a DP is no easy job, you’ll have to consider a lot of factors like charges and the services they provide and if that aligns with your conscience, you opt for them.<br />
@@ -147,9 +148,9 @@ function NRIDemateAccount() {
                                             <li>Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li>
                                             <li>Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li>
                                             <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
-                                            <li><a href="<?php echo base_url(); ?>campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li>
+                                            <li><a href="https://choiceindia.com/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li>
                                         </ul>
-                                    </span></span> <label for="post-1" class="read-more-trigger moreless-button"></label>
+                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

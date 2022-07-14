@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import  ImageSub2  from '../../assets/images/icons/stock.svg';
 import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
@@ -10,17 +10,38 @@ import PricingStocks from './PricingStocks';
 import PricingEquity from './PricingEquity';
 import PricingCurrency from './PricingCurrency';
 import PricingCommodity from './PricingCommodity';
-
+import LazyLoader from "../Common-features/LazyLoader";
+import { useEffect } from "react";
 
 
 
 function PricingBannerTab() {
 
   const [toggleState, setToggleState] = useState(1);
+  // const myRef = useRef(null); 
 
   const toggleTab = (index) => {
+    changeSection();
     setToggleState(index);
   };
+
+  function changeSection(){
+    console.log('CCCCCCCC called');
+    var element = document.getElementById('scrollbrokerage');
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+    // myRef.current.scrollIntoView();
+  }
+
+  // useEffect(() => {
+  //   changeSection();
+  // },[toggleState])
+  
 
   return (
     <div>
@@ -41,7 +62,8 @@ function PricingBannerTab() {
                 onClick={() => toggleTab(1)}
               >
                 <div className="bloc-tabs-sub">
-                    <img src={ImageSub2} alt="Mutual Funds" className="tab-ico img-fluid" width="50" height="50" />
+                <LazyLoader src={ImageSub2} alt={"Mutual Funds"} className={"tab-ico img-fluid"} width={"50"} height={"50"} />
+                    {/* <img src={ImageSub2} alt="Mutual Funds" className="tab-ico img-fluid" width="50" height="50" /> */}
                     <h4>Stocks</h4>
                     <p>Explore intraday and delivery pricing for equity stocks and calculate net returns</p>
                 </div>
@@ -52,7 +74,8 @@ function PricingBannerTab() {
                 onClick={() => toggleTab(2)}
               >
                 <div className="bloc-tabs-sub">
-                    <img src={ImageSub5} alt="Mutual Funds" className="tab-ico" width="50" height="50" />
+                <LazyLoader src={ImageSub5} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"} />
+                    {/* <img src={ImageSub5} alt="Mutual Funds" className="tab-ico" width="50" height="50" /> */}
                     <h4>Equity F &amp; O</h4>
                     <p>Try brokerage and returns calculators for futures and options in equity segment</p>
                 </div>
@@ -64,7 +87,8 @@ function PricingBannerTab() {
               >
 
                   <div className="bloc-tabs-sub">
-                    <img src={ImageSub3} alt="Mutual Funds" className="tab-ico" width="50" height="50" />
+                  <LazyLoader src={ImageSub3} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"} />
+                    {/* <img src={ImageSub3} alt="Mutual Funds" className="tab-ico" width="50" height="50" /> */}
                     <h4>Currency</h4>
                     <p>Explore currency options and futures brokerage, pricing and returns with calculators</p>
                   </div>
@@ -75,7 +99,8 @@ function PricingBannerTab() {
                 onClick={() => toggleTab(4)}
               >
                   <div className="bloc-tabs-sub">
-                    <img src={ImageSub4} alt="Mutual Funds" className="tab-ico" width="50" height="50"/>
+                  <LazyLoader src={ImageSub4} alt={"Mutual Funds"} className={"tab-ico"} width={"50"} height={"50"}/>
+                    {/* <img src={ImageSub4} alt="Mutual Funds" className="tab-ico" width="50" height="50"/> */}
                     <h4>Commodity</h4>
                     <p>Calculate commodity market rates and returns with futures and options calculators</p>
                   </div>

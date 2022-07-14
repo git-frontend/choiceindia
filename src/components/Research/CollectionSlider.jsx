@@ -1,12 +1,12 @@
 
-import React from "react";
-import "./research-new.scss"
+import React,{useState} from "react";
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import item1 from '../../assets/images/research/slider-item-one.webp';
+import Research from "../../Data/Research";
 
 function CollectionSlider() {
+    const [isShown2, setIsShown2] = useState(0);
     const settings1 = {
         infinite: true,
         speed: 2500,
@@ -14,32 +14,32 @@ function CollectionSlider() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                    adaptiveHeight: true,
-                },
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: false,
+              adaptiveHeight: true,
             },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    autoplay: false,
-                },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 1,
+              autoplay: false,
             },
+          },
         ],
-    };
+      };
     return (
         <div>
 
@@ -49,8 +49,26 @@ function CollectionSlider() {
                     <div className="row align-items-center">
                         <div className="col-xl-5 col-md-6">
                             <div className='sliderwrap'>
-                                <slider {...settings1} className="collection-slider">
-                                    <div className="slider-item active">
+                                <div className="collection-slider">
+                                <Slider {...settings1}
+                                afterChange={(ev) => {
+                                    setIsShown2(ev)
+                                  }}
+                                >
+                                {
+                                    Research.map((res,i)=>{
+
+                                        let classNm = "slider-item " + ((i === isShown2) ? "active" : "")
+                                        return(
+                                            <div key={res.id} className={classNm} onChange={() => setIsShown2(i)}>
+                                        <h3 className="headtext">{res.title}</h3>
+                                        <p className="subtext">{res.description}</p>
+                                    </div>
+
+                                        )
+                                    })
+                                }
+                                    {/**<div className="slider-item active">
                                         <h3 className="headtext">Collections</h3>
                                         <p className="subtext">Check out the most interesting and unique categories of Stock collections</p>
                                     </div>
@@ -61,16 +79,17 @@ function CollectionSlider() {
                                     <div className="slider-item ">
                                         <h3 className="headtext">Our Top Picks</h3>
                                         <p className="subtext">Check out the most interesting and unique categories of Stock collections</p>
-                                    </div>
-                                </slider>
+                            </div>*/}
+                                </Slider>
+                                </div>
                             </div>
-                            <div class="mt-5">
-                                <a class="btn-bg btn-light" href="/">Explore All</a>
+                            <div className="mt-5">
+                                <a className="btn-bg btn-light" href="/">Explore All</a>
                             </div>
                         </div>
                         <div className="col-xl-7 col-md-6">
                             <div className="imgwrap">
-                                <img src={item1} alt="Collection" className="img-fluid" width={"782"} height={"715"}></img>
+                                <img src={Research[isShown2].image} alt="Collection" className="img-fluid" width={"782"} height={"715"}></img>
                             </div>
 
                         </div>

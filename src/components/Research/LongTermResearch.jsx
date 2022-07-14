@@ -5,6 +5,7 @@ import EconomicAnalysis from './EconomicAnalysis';
 import CompanyFundamentals from './CompanyFundamentals';
 import IndustryAnalysis from './IndustryAnalysis';
 import IpoNfoAnalysis from './IpoNfoAnalysis';
+import ResearchService from "../../Services/ResearchService";
 
 
 
@@ -12,9 +13,20 @@ import IpoNfoAnalysis from './IpoNfoAnalysis';
 function LongTermResearch() {
 
   const [toggleState, setToggleState] = useState(1);
+  const [list,setList] = useState([]);
+  const [data,setData] = useState('')
+  let Eco='41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad';
 
   const toggleTab = (index) => {
     setToggleState(index);
+  };
+
+  function loadResearch() {
+    ResearchService.commodityRes(Eco).then(
+      res => {
+        setList(res);
+      }
+    )
   };
 
   return (
@@ -33,7 +45,7 @@ function LongTermResearch() {
         <div className="research-bloc-tabs">
               <button
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(1)}
+                onClick={() => {toggleTab(1);setData('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'); loadResearch(data)}}
               >
                 Economic Analysis
                 

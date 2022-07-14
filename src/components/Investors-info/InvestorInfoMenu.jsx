@@ -18,7 +18,7 @@ function InvestorInfoMenu() {
               
             </div>
             <div className="row">
-                <div class="col-md-12">
+                <div className="col-md-12">
                     <div className="wrap">
                         <h3 className="head">Welcome to Choice International Investor Relations</h3>
                         <p className="subtext">Choice International Ltd. engages in providing financial services. The company provides broking & distribution, investment banking, financial services to business advisory, regulatory compliances to government authorities & other corporate entities, retail loan distribution, mutual fund distribution, technical services and other ancillary services. It operates through the following segments: NBFC & Other, Investment Banking, Broking & Distribution, Consulting & Outsourcing, and Technical Services. The company was founded on March 12, 1993 and is headquartered in Mumbai, India.</p>
