@@ -3,7 +3,7 @@ import Image13 from '../../assets/images/open-demat-account/web.svg';
 import Image14 from '../../assets/images/open-demat-account/android.svg';
 import Image15 from '../../assets/images/open-demat-account/ios.svg';
 import Image16 from '../../assets/images/open-demat-account/choice-free-demat-account-opening.webp';
-const WhyChoice = () => {
+const WhyChoiceamc = () => {
     return (
         <div>
 
@@ -14,7 +14,7 @@ const WhyChoice = () => {
                         <div className='col-md-12'>
                             <div className="wrap">
                                 <div className="leftsect">
-                                    <h2 className="secttile">Why Choice</h2>
+                                    <h2 className="secttile">Why Choice Broking?</h2>
                                     <div className="img">
                                         <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
@@ -96,5 +96,5 @@ const WhyChoice = () => {
     )
 }
 
-export default WhyChoice;
+export default WhyChoiceamc;
 

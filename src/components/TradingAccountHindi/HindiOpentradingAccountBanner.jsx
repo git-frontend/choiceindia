@@ -15,7 +15,7 @@ const HindiOpenFreeAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop">मुफ़्त डीमैट खाता खोलें</div>
+                                <div className="desktop">ऑनलाइन ट्रेडिंग अकाउंट खोलें</div>
                                 
                             </h1>
                             <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
@@ -80,7 +80,7 @@ const HindiOpenFreeAccountBanner = () => {
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
                                 <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
-                                <DematAccountForm language='hindi'/>
+                                <DematAccountForm />
                             </div>
 
                         </div>
