@@ -17,7 +17,7 @@ function SocialConnect() {
                 <div className="social-list">
                   <ul>
                     <li>
-                      <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
+                      <a href="https://www.facebook.com/ChoiceHQ/" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faFacebookF} />
                         </span>
@@ -25,7 +25,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank">
+                      <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faYoutube} />
                         </span>
@@ -33,7 +33,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://twitter.com/ChoiceHQ_Social" target="_blank">
+                      <a href="https://twitter.com/ChoiceHQ_Social" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faTwitter} />
                         </span>
@@ -41,7 +41,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.linkedin.com/company/choice-broking" target="_blank">
+                      <a href="https://www.linkedin.com/company/choice-broking" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </span>
@@ -49,7 +49,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://www.instagram.com/choicehq_social/" target="_blank">
+                      <a href="https://www.instagram.com/choicehq_social/" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faInstagram} />
                         </span>
@@ -57,7 +57,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://t.me/CEBPL" target="_blank">
+                      <a href="https://t.me/CEBPL" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>
@@ -65,7 +65,7 @@ function SocialConnect() {
                       </a>
                     </li>
                     <li>
-                      <a href="https://t.me/CEBPLCOMMODITY" target="_blank">
+                      <a href="https://t.me/CEBPLCOMMODITY" target="_blank" rel='noreferrer'>
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>

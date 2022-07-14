@@ -2,7 +2,7 @@ const meta_tags = {
 
     "services": { 'title': "Best Financial Services in India - Choice", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.' },
 
-    "home": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.` },
+    "https://dev.choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.` },
 
     "career": {
         'title': `Career At Choice | Work With India's Leading FinTech Company`, 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,
@@ -83,9 +83,9 @@ const meta_tags = {
     </script>
     ` },
 
-    "contact": { 'title': "Get In Touch with Choice’s Customer Support Team", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India." },
+    "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India." },
 
-    "fables": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice." },
+    "blog": { 'title': "Choice Blog - Stay Updated with Stock Market Information", 'content': "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice." },
 
     "faq": { 'title': "Frequently Asked Questions | Choice", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice." },
 
@@ -267,22 +267,20 @@ const meta_tags = {
     </script>
     ` },
 
-    "about-us": { 'title': "", "content": "", "faqscript": `` },
+    "about-us": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "fables": { 'title': "", "content": "", "faqscript": `` },
+    // "fables": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "contact": { 'title': "", "content": "", "faqscript": `` },
+    "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "services": { 'title': "", "content": "", "faqscript": `` },
+    "partner": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "partner": { 'title': "", "content": "", "faqscript": `` },
+    "investor-info": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "investor-info": { 'title': "", "content": "", "faqscript": `` },
-
-    "code-conduct": { 'title': "", "content": "", "faqscript": `` },
+    "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "brokerage-charges": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -327,7 +325,7 @@ const meta_tags = {
     ` },
 
     "open-trading-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -410,7 +408,7 @@ const meta_tags = {
     ` },
 
     "open-brokerage-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -508,10 +506,10 @@ const meta_tags = {
     </script>
     ` },
 
-    "nri-demat-account": { 'title': "", "content": "", "faqscript": `` },
+    "nri-demat-account": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "corporate-demat-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
      {
        "@type": "FAQPage",
@@ -572,7 +570,7 @@ const meta_tags = {
      ` },
 
     "minor-demat-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -698,7 +696,7 @@ const meta_tags = {
     ` },
 
     "hindi/open-demat-trading-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -826,7 +824,7 @@ const meta_tags = {
     ` },
 
     "open-trading-account-marathi": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -992,10 +990,10 @@ const meta_tags = {
     </script>
     `},
 
-    "research": { 'title': "", "content": "", "faqscript": `` },
+    "research": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "authorised-person": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1033,7 +1031,7 @@ const meta_tags = {
     ` },
 
     "remisier": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1069,12 +1067,12 @@ const meta_tags = {
     </script>
     ` },
 
-    "stratezy": { 'title': "", "content": "", "faqscript": `` },
+    "stratezy": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "baskets": { 'title': "", "content": "", "faqscript": `` },
+    "baskets": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "share-market-app": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqcript": `<script type="application/ld+json">
      {
        "@type": "FAQPage",
@@ -1138,7 +1136,7 @@ const meta_tags = {
      `},
 
     "sovereign-gold-bonds": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqcript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1218,7 +1216,7 @@ const meta_tags = {
     `},
 
     "hindi/trading-account": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1301,7 +1299,7 @@ const meta_tags = {
     `},
 
     "online-trading-app": {
-        'title': "", "content": "",
+        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",

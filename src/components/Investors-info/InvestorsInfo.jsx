@@ -9,6 +9,10 @@ import "./investorsinfo.scss";
 import "./navbar.scss";
 import { useState,useEffect } from 'react';
 import Template1 from "../Common-features/Template1";
+// import {
+//   useLocation,
+// } from 'react-router-dom';
+// import meta_tags from "../../Data/MetaTags";
 
 function InvestorInfo() {
 
@@ -26,10 +30,9 @@ function InvestorInfo() {
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-      console.log("kkk");
-
+      // console.log("kkk");
+ 
     }
-
   }, [trigger])
 
   return (

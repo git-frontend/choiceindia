@@ -26,7 +26,7 @@ function Services() {
   // function myGreeting() {
   //   setSkeleton(() => false);
   // }
-
+  const [rendercount, setRenderCount] = useState(() => false);
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)

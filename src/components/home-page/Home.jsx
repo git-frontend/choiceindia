@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 // import  HomePageBanner from './HomePageBanner.jsx'
 import EverydayFinance from './EverydayFinance.jsx'
 import ChoiceFinx from './ChoiceFinx.jsx'
@@ -11,12 +11,18 @@ import SecurityPrivacy from './SecurityPrivacy.jsx'
 import "./style.scss"
 import videoBg from '../../assets/vedio/videoBg.webm'
 import Template1 from '../Common-features/Template1';
-
+import {
+    useLocation,
+  } from 'react-router-dom';
+  import meta_tags from "../../Data/MetaTags";
 
 function Home() {
 
 
 	const [skeleton, setSkeleton] = useState(() => true);
+	const [rendercount, setRenderCount] = useState(() => false);
+
+    const location = useLocation();
 	// const myTimeout = setTimeout(myGreeting, 1500);
 	// function myGreeting() {
 	//   setSkeleton(() => false);
@@ -24,6 +30,19 @@ function Home() {
 	setTimeout(() => {
 		setSkeleton(() => false);
 	}, 200)
+
+	useEffect(() => {
+        setRenderCount(true)
+        if (rendercount === true) {
+          // let parser = new DOMParser();
+          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+          document.title = meta_tags["https://dev.choiceindia.com/"] ? meta_tags["https://dev.choiceindia.com/"].title : '';
+          // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+          document.getElementById('meta-tags').content = meta_tags["https://dev.choiceindia.com/"] ? meta_tags["https://dev.choiceindia.com/"].content : '';
+          document.getElementById('canonical-link').href = meta_tags["https://dev.choiceindia.com/"] ? meta_tags["https://dev.choiceindia.com/"].link : '';
+        }
+      }, [rendercount])
 
 
 	return (
