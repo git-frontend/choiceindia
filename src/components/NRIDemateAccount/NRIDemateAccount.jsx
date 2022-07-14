@@ -7,11 +7,9 @@ import LowBrokerageNRIDematAccount from "../NRIDemateAccount/LowBrokerageNRIDema
 import WhyChoice from "../OpenDematAccount/WhyChoice";
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import {
-    useLocation,
-  } from 'react-router-dom';
+import {useLocation, } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
-  import { Link } from "react-router-dom";
+
 
 function NRIDemateAccount() {
 
