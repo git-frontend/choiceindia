@@ -7,7 +7,7 @@ import ImageSub16 from '../../assets/images/sub-broker/become-a-sub-broker.webp'
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-
+import utils from "../../Services/utils";
 
 function WhoEligibleToRemisier() {
 
@@ -82,7 +82,7 @@ function WhoEligibleToRemisier() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>Growth is  certain when you partner with us.</h4>
-                                <Link to="#join-now" className="btn-bg"><span>Join Now</span> </Link>
+                                <a href="javascript:void(0)" className="btn-bg" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </a>
                             </div>
                         </div>
                     </div>

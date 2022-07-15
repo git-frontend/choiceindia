@@ -82,7 +82,7 @@ function Footer() {
                             <NavLink to="/brokerage-charges">Pricing</NavLink>
                           </li>
                           <li>
-                          <NavLink to="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</NavLink>
+                          <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                           </li>
                           <li>
                             <NavLink to="/career">Careers</NavLink>
@@ -118,8 +118,8 @@ function Footer() {
                         <p>Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
                         <p>Monday - Friday : 08:30 am - 7:00 pm <br />
                           Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                        <p><NavLink to="tel:02267079999" target="_blank">+91-022-6707 9999</NavLink>  <FontAwesomeIcon icon={faPhone} /> </p>
-                        <p><NavLink to="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</NavLink>   <FontAwesomeIcon icon={faEnvelope} /> </p>
+                        <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                        <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                       </div>
                     </div>
                   </div>
@@ -129,7 +129,7 @@ function Footer() {
                     <div className="col-md-7">
                       <div className="links-wrap-social">
                         <div className="wrap-app-links">
-                          <NavLink to="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl link-nrl-sm white'>
+                          <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl link-nrl-sm white'>
                             <svg width="25" height="25" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path d="M0.549316 4.31975C0.549316 3.28063 0.84049 2.49725 1.31842 1.99816L1.3579 1.96035L22.8228 23.0876V23.4841L1.3579 44.6114L1.31843 44.5736C0.840494 44.0745 0.549316 43.2911 0.549316 42.252V4.31975Z" fill="#13151A" stroke="#0066B3" strokeWidth="0.25" />
                               <path d="M38.4983 25.5919L38.4983 25.5919L30.1199 30.2505L30.1199 30.2505L30.0386 30.2957L23.0737 23.4752V23.0907L30.042 16.2717L38.4982 20.9723C38.4982 20.9723 38.4983 20.9723 38.4983 20.9723C39.6724 21.6258 40.2283 22.4683 40.2283 23.2827C40.2283 24.0971 39.6724 24.9392 38.4983 25.5919Z" fill="#13151A" stroke="#0066B3" strokeWidth="0.25" />
@@ -138,35 +138,35 @@ function Footer() {
                             </svg>
 
                             <span className='blackcolor' target="_blank">Google Play</span>
-                          </NavLink>
-                          <NavLink to="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
+                          </a>
+                          <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
                             <svg width="25" height="25" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg">
                               <path fillRule="evenodd" clipRule="evenodd" d="M25.6833 21.0736C25.7212 18.1304 27.2631 15.4118 29.7687 13.8702C28.1808 11.6007 25.6166 10.2135 22.8495 10.1268C19.9383 9.82102 17.1161 11.8701 15.6326 11.8701C14.1204 11.8701 11.8364 10.1572 9.3768 10.2078C6.14068 10.3124 3.19687 12.1091 1.62242 14.9404C-1.73041 20.7496 0.770502 29.2872 3.98224 33.9829C5.58914 36.2823 7.46714 38.8507 9.92447 38.7597C12.3291 38.6599 13.2272 37.2252 16.1298 37.2252C19.0055 37.2252 19.8481 38.7597 22.3553 38.7017C24.9356 38.6598 26.5613 36.3922 28.1118 34.071C29.2664 32.4327 30.1548 30.6219 30.7442 28.7058C27.6796 27.4087 25.6869 24.4036 25.6833 21.0736Z" fill="#13151A" />
                               <path fillRule="evenodd" clipRule="evenodd" d="M20.704 7.28729C22.0332 5.49957 22.6881 3.20176 22.5295 0.881836C20.4987 1.1208 18.6228 2.20817 17.2756 3.9273C15.9453 5.62345 15.2714 7.84247 15.4023 10.0956C17.4603 10.1193 19.4143 9.08428 20.704 7.28729Z" fill="#13151A" />
                             </svg>
 
                             <span className='blackcolor' target="_blank">App Store</span>
-                          </NavLink>
+                          </a>
                         </div>
                         <div className="footer-social-links">
-                          <NavLink to="https://www.facebook.com/choice.broking/" target="_blank">
+                          <a href="https://www.facebook.com/choice.broking/" target="_blank">
                             <FontAwesomeIcon icon={faFacebookF} />
-                          </NavLink>
-                          <NavLink to="https://twitter.com/ChoiceBroking" target="_blank">
+                          </a>
+                          <a href="https://twitter.com/ChoiceBroking" target="_blank">
                             <FontAwesomeIcon icon={faTwitter} />
-                          </NavLink>
-                          <NavLink to="https://www.linkedin.com/company/choice-broking/" target="_blank">
+                          </a>
+                          <a href="https://www.linkedin.com/company/choice-broking/" target="_blank">
                             <FontAwesomeIcon icon={faLinkedinIn} />
-                          </NavLink>
-                          <NavLink to ="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
+                          </a>
+                          <a href="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
                             <FontAwesomeIcon icon={faInstagram} />
-                          </NavLink>
-                          <NavLink to="https://www.youtube.com/user/ChoiceBroking" target="_blank">
+                          </a>
+                          <a href="https://www.youtube.com/user/ChoiceBroking" target="_blank">
                             <FontAwesomeIcon icon={faYoutube} />
-                          </NavLink>
-                          <NavLink to="https://t.me/CEBPL" target="_blank">
+                          </a>
+                          <a href="https://t.me/CEBPL" target="_blank">
                             <FontAwesomeIcon icon={faTelegramPlane} />
-                          </NavLink>
+                          </a>
                         </div>
                       </div>
                     </div>

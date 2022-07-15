@@ -35,7 +35,7 @@ function AuthorizeBanner() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-4 ">
+                        <div className="col-md-6 col-lg-4 " id="sub-broker-form">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
                                 <SubBrokerForm />
                             </div>

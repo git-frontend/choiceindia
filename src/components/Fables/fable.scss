@@ -2,7 +2,7 @@
 @import '../../assets/css/customvariable.scss';
 
 
-.fables-single-parent{
+.fables-single-parent {
     animation: hideMe 4s forwards;
 }
 
@@ -109,6 +109,7 @@
             background: $whiteColor;
 
             box-shadow: 5px 0px 8px 0 #f0f0f0;
+
             @media screen and (max-width: $sm) {
                 display: none;
             }
@@ -163,6 +164,7 @@
         position: relative;
         z-index: 99;
         margin-top: 10rem;
+
         @media (max-width: $md) {
             margin-top: 5rem;
         }
@@ -178,6 +180,7 @@
                 .blog-itm-des {
                     width: 70%;
                     padding-right: 10rem;
+
                     // padding: 0 2rem;
                     .itm-des-cont {
                         font-size: 1.765rem;
@@ -190,6 +193,7 @@
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
+
                         @media (max-width: $xs) {
                             font-size: 1.4rem;
                             line-height: 2.0rem;
@@ -200,6 +204,7 @@
                         color: $darkColorgray;
                         font-family: $font-family-poppins-regular;
                     }
+
                     @media (max-width: $md) {
                         padding-right: 2rem;
                     }
@@ -215,14 +220,15 @@
                         border-radius: 20px;
 
                         @media (max-width: $md) {
-                           
+
                             object-fit: cover;
                             border-radius: 10px;
                         }
+
                         @media (max-width: $xs) {
                             height: 100;
                         }
-                        
+
                     }
                 }
             }
@@ -232,15 +238,17 @@
     .single-blog-con {
         .single-blog-img {
             margin-bottom: 2rem;
-            
+
             img {
                 width: 100%;
                 height: 500px;
                 object-fit: cover;
                 border-radius: 20px;
+
                 @media (max-width: $md) {
                     height: 350px;
                 }
+
                 @media (max-width: $xs) {
                     height: 250px;
                 }
@@ -252,7 +260,10 @@
                 font-size: 2.25rem;
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
+                margin-bottom: 10px;
             }
+
+      
 
             .des-cont {
                 color: $secondary;
@@ -284,10 +295,20 @@
         @media screen and (max-width: $sm) {
             padding-right: 0;
         }
+        .single-blog-con{
+            .single-blog-des {
+                .tag-act {
+                    color: $darkColorgray;
+                    font-family: $font-family-poppins-regular;
+                }
+            }
+        }
+       
     }
 
     .blog-middle-right {
         padding-left: 3rem;
+
         @media (max-width: $md) {
             padding-left: 0;
         }
@@ -323,7 +344,7 @@
         margin-bottom: 3rem;
         position: relative;
 
-        > ul {
+        >ul {
             display: flex;
             align-items: center;
             list-style: none;
@@ -333,7 +354,7 @@
             top: -5rem;
             justify-content: space-between;
 
-            > li {
+            >li {
                 margin: 0 2rem;
 
                 .link-txt {
@@ -408,6 +429,7 @@
         flex-wrap: wrap;
         z-index: 9;
         padding-bottom: 8rem;
+
         @media (max-width: $md) {
             padding-bottom: 0;
             margin-top: 0;
@@ -490,6 +512,7 @@
     @media screen and (max-width: $md) {
         padding: 2rem 0 10rem 0;
     }
+
     @media screen and (max-width: $sm) {
         padding: 2rem 0 5rem 0;
     }

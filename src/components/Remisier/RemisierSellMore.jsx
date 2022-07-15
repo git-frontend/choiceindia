@@ -3,7 +3,7 @@ import Commodity from '../../assets/images/sub-broker/equity-commodity-currency-
 import MF from '../../assets/images/sub-broker/mutual-funds-distribution.svg';
 import Insurance from '../../assets/images/sub-broker/insurance.svg';
 import Retail from '../../assets/images/sub-broker/retail-loans.svg';
-
+import utils from "../../Services/utils";
 
 
 const RemisierSellMore = () => {
@@ -20,7 +20,7 @@ const RemisierSellMore = () => {
                                         <p className="sml-para-dv">
                                         Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Remisiers have the option to offer the entire range of financial products.
                                         </p>
-                                        <a href="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </a>
+                                        <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Start Now</span> </a>
                                     </div>
                                 </div>
                             </div>
