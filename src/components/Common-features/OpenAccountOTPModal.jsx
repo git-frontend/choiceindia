@@ -34,7 +34,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
         let value = e.target.value.replace(/\D/g, "");
         setOtp(value);
         if (!value.length) {
-            setOTPErrors('OTP is required');
+            setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otprequired'));
         } else {
             setOTPErrors('');
         }
@@ -77,7 +77,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
     // to verify the OTP 
     function verifyOTP() {
         if (!otp.length) {
-            setOTPErrors('OTP is required');
+            setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otprequired'));
         } else {
             showLoader('verifyLoader');
             let request = {
@@ -94,14 +94,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
                         window.location.href = "https://jiffy.choiceindia.com/auth/login"
                     }
                 } else {
-                    setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something went wrong, please try again later!');
+                    setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
                 if (error && error.response && error.response.data && error.response.data.Message) {
                     setOTPErrors(error.response.data.Message);
                 } else {
-                    setOTPErrors("Something went wrong, please try again later!");
+                    setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
                 }
             });
         }
