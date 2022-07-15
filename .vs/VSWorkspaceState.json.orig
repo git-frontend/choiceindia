@@ -1,0 +1,24 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+<<<<<<< HEAD
+    "\\src\\assets",
+    "\\src\\assets\\css",
+    "\\src\\components",
+<<<<<<< HEAD
+    "\\src\\components\\Research-Detailed"
+  ],
+  "SelectedNode": "\\src\\components\\Research",
+=======
+    "\\src\\components\\CodeConduct"
+  ],
+  "SelectedNode": "\\src\\Routing.jsx",
+=======
+    "\\src\\components"
+  ],
+  "SelectedNode": "\\src\\components\\SubBroker",
+>>>>>>> sub-broker
+>>>>>>> e3677d55c77f5a828b8b9a6a0715e2c975982530
+  "PreviewInSolutionExplorer": false
+}
