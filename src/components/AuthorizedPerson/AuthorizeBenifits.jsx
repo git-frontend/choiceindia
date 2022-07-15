@@ -85,8 +85,8 @@ function RemisierBenifits() {
                                 </div>
                             </div>
                             <div className="item-next1">
-                                <h3>Become a Choice Remisier</h3>
-                                <p>Start Remisier with a trustworthy partner that can help you to grow up.</p>
+                                <h3>Become a Choice Authorised Person</h3>
+                                <p>Start Authorised Person with a trustworthy partner that can help you to grow up.</p>
                                 <a href="#" className="btn-bg btn-bg-dark"><span>Join Now</span> </a>
                             </div>
                         </div>

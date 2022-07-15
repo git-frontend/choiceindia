@@ -10,6 +10,17 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function WhoEligibleToSubBroker() {
 
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
+
     const settings = {
         infinite: true,
         speed: 1500,
@@ -85,7 +96,7 @@ function WhoEligibleToSubBroker() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>Growth is for certain when you partner with us.</h4>
-                                <a href="#join-now" className="btn-bg"><span>Join Now</span> </a>
+                                <a href="javascript:void(0)" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </a>
                             </div>
                         </div>
                     </div>

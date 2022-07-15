@@ -30,10 +30,10 @@ function Footer() {
                             <h4>Services</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/equity-stock-trading" target="_blank">Equity Broking</a>
+                            <a href="https://choiceindia.com/equity-stock-trading" target="_blank">Broking & Distribution</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/wealth-management-services" target="_blank">Wealth Mangement</a>
+                            <a href="https://choiceindia.com/wealth-management-services" target="_blank">Wealth Planning</a>
                           </li>
                           <li>
                             <a href="https://choiceindia.com/insurance-policy" target="_blank">Insurance</a>
@@ -59,19 +59,25 @@ function Footer() {
                             <h4>Company</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/our-team" target="_blank">Our Team</a>
+                            <a href="/about-us" target="_blank">Our Team</a>
                           </li>
                           <li>
-                            <Link to="/Investor-info">Investors</Link>
+                            <Link to="/investors">Investors</Link>
                           </li>
                           <li>
-                            <Link to="/pricing">Pricing</Link>
+                            <Link to="/brokerage-charges">Pricing</Link>
+                          </li>
+                          <li>
+                          <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                           </li>
                           <li>
                             <Link to="/career">Careers</Link>
                           </li>
                           <li>
-                            <Link to="/contact">Contact Us</Link>
+                            <Link to="/contact-us">Contact Us</Link>
+                          </li>
+                          <li>
+                            <Link to="/refer-and-earn">Refer & Earn</Link>
                           </li>
                           <li>
                             <Link to="/faq">FAQ’s</Link>
@@ -82,13 +88,13 @@ function Footer() {
                             <h4>Research</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/research-listing-new" target="_blank">Fundamental</a>
+                            <a href="/research-listing-new" target="_blank">Fundamental</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/research-listing-new" target="_blank">Technical</a>
+                            <a href="/research-listing-new" target="_blank">Technical</a>
                           </li>
                           <li>
-                             <Link to="/fables">Blogs</Link>
+                             <Link to="/blog">Fables</Link>
                           </li>
                         </ul>
                       </div>

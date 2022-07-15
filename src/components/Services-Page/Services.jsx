@@ -14,6 +14,10 @@ import Template2 from '../Common-features/Template2';
 
 import "../home-page/style.scss"
 import "./services.scss";
+import {
+  useLocation,
+} from 'react-router-dom';
+import meta_tags from "../../Data/MetaTags";
 
 function Services() {
 
@@ -22,11 +26,19 @@ function Services() {
   // function myGreeting() {
   //   setSkeleton(() => false);
   // }
-
+  const [rendercount, setRenderCount] = useState(() => false);
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
 
+  const location = useLocation();
+  // document.getElementsByTagName("META")[2].name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+  // document.getElementsByTagName("META")[2].content=meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].content : '';
+
+  document.title = meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : '' ;
+  // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+  document.getElementById('meta-tags').content= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].content : ''  ;
+  document.getElementById('canonical-link').href= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].link : ''  ;
   return (
     <div>
 

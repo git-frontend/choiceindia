@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -11,7 +11,8 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
+    // https://researchreportapi.jiffy.in/api/report/
+    liveJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
     // https://researchreportapi.jiffy.in/api/report/market-insights
     // https://researchreportdevapi.choicetechlab.com/api/report/market-insights
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
@@ -22,11 +23,17 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://uatapi.choicebroking.in/api/middleware",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-
+    liveresearchURL: "hhttp://researchreportapi.jiffy.in/",
+    UATresearchURL: "http://researchreportapi.jiffy.in/",
+    liveperformanceURL:"https://jiffy.choiceindia.com//api/",
+    UATperformanceURL:"https://jiffy.choiceindia.com//api/",
+    liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
 
 export class API_URLS {
 
+    JiffyBaseURL = '';
     LMSBaseURL = '';
     OnbBaseURL = '';
     jiffyResearchURL = "";
@@ -43,9 +50,9 @@ export class API_URLS {
 
     /** refer and earn URL */
     referURL = "https://uatapi.choicebroking.in/api/middleware"
-
-
-
+    
+    /** Research URL */
+    researchURL = "https://uatapi.choicebroking.in/api/middleware"
 
     /**Market Insights , fabal URL */
 
@@ -60,6 +67,9 @@ export class API_URLS {
 
     /**fables trending blog  */
     fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
+
+    /**fables trending blog  */
+    fableTopFiveURL = 'content/posts/?key=280c55197998a010569e5d612a&limit=5';
 
     /** fables blogs  */
 
@@ -88,6 +98,13 @@ export class API_URLS {
     /** refer and earn */
     earnURL = 'v1/40a9f5ac41a0f6223825/stage-user';
 
+    /** Performance */
+
+    performancefontURL='techanalysis/getcounters'
+
+
+   
+
 
     /** Open Account APIs */
 
@@ -97,13 +114,15 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
 
     /** Sub Broker APIs */
-
-    getCityURL = 'city/list?is_refresh=Y';
+    // ?is_refresh=Y
+    getCityURL = 'city/list';
     getStateURL = 'state/list?is_refresh=Y';
     checkExistenceURL = 'leadManagement/leadMapping/checkUniqueRealT';
     sendOTPNURL = 'api/onboard/sendOTPNewOnboard?mobileNum=$mobileNum';
     verifyOTPNURL = 'api/onboard/verifyOTPNewOnboard?otp=$otp&id=$id';
     addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
+
+    getExpertResearchURL = 'api/research-report-new';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -116,6 +135,7 @@ export class API_URLS {
         * @param {*} configKey 
         */
     setConfig(configKey) {
+        this.setJiffyServerURL(config[configKey + 'JiffyBaseURL']);
         this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
@@ -129,6 +149,12 @@ export class API_URLS {
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
         this.setreferURL(config[configKey + 'referURL']);
+        this.setresearchURL(config[configKey + 'researchURL']);
+        this.setperformanceURL(config[configKey + 'performanceURL']);
+    }
+
+    setJiffyServerURL = (url) => {
+        this.JiffyBaseURL = url;
     }
 
     setLMSServerURL = (url) => {
@@ -176,7 +202,7 @@ export class API_URLS {
 
         this.faqURL = url;
     }
-
+    
     /**
      * Set faq URL 
      * @param {*} url 
@@ -184,6 +210,24 @@ export class API_URLS {
      setreferURL = (url) => {
 
         this.referURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setresearchURL = (url) => {
+
+        this.researchURL = url;
+    }
+
+     /**
+     * Set Research URL 
+     * @param {*} url 
+     */
+      setperformanceURL = (url) => {
+
+        this.performanceURL = url;
     }
 
 
@@ -209,6 +253,13 @@ export class API_URLS {
     getFableTrendingURL() {
 
         return this.serverURL + this.fabletrendingURL
+    }
+
+    /** Get fable Top 5 URL */
+
+    getFableTopFiveURL() {
+
+        return this.serverURL + this.fableTopFiveURL;
     }
 
     /** get fables blog data */
@@ -315,6 +366,23 @@ export class API_URLS {
 
     getreferallink(id){
         return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
+  }
+
+    getExpertResearchreportURL() {
+        return this.JiffyBaseURL + this.getExpertResearchURL;
+    }
+
+    getresearchURL(id){
+        return this.researchURL + `api/fundamental?report_subtype_uuid=${id}`
+    }
+    getresearchipoURL(){
+
+        return this.researchURL + 'report/ipo?limit=10&offset=0'
+    }
+
+    getperformanceURL() {
+
+        return this.performanceURL +this.performancefontURL
     }
 
 }

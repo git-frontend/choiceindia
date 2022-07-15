@@ -9,6 +9,7 @@ import "./demat-form.scss"
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
 import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
+import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
 
 
 function DematAccountForm(props) {
@@ -358,16 +359,16 @@ function DematAccountForm(props) {
             }
             <div className="demat-account-form">
 
-                <h3 className="form-ttl">Open Free Account</h3>
+                <h3 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
-                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
+                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol digit-otp" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
                             {
-                                errors.invalidMobile ? <Form.Control.Feedback type="invalid">Invalid Mobile Number</Form.Control.Feedback> : ''
+                                errors.invalidMobile ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'invalidmob')}</Form.Control.Feedback> : ''
                             }
                             {
-                                errors.required ? <Form.Control.Feedback type="invalid">Mobile Number is Required</Form.Control.Feedback> : ''
+                                errors.required ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'reqmob')}</Form.Control.Feedback> : ''
                             }
 
                         </div>
@@ -380,7 +381,9 @@ function DematAccountForm(props) {
                                 id="terms_and_conditions"
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
+                                {
+                                    props.language==='hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language==='marathi' ? <Form.Check.Label>आपल्या <a className="link-tc" onClick={handleTermsConditionShow}>नियम आणि अटी </a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
+                                }
 
                             </Form.Check>
                             {/* <label className="lbl">I agree that I have read &amp; accept the <a className="link-tc">Terms &amp; Conditions</a></label> */}
@@ -390,7 +393,7 @@ function DematAccountForm(props) {
                             {
                                 <Button variant="primary"
                                     type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                    {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</Button>
+                                    {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn')}</Button>
                             }
                         </div>
                     </Form.Group>
@@ -400,18 +403,18 @@ function DematAccountForm(props) {
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language}></OpenAccountOTPModal> : ''
             }
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
-                    <Modal.Title>Attention</Modal.Title>
+                    <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="primary" onClick={handleTermsConditionClose}>
-                        Okay
+                    {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
                     </Button>
                 </Modal.Footer>
             </Modal>

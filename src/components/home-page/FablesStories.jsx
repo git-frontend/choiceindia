@@ -114,7 +114,7 @@ function FablesStories() {
 										{
 											fslider ?
 												<div className="stories-sec-right-des">
-													<Link to={`/fablesdetail/${fslider[sliderimag].slug}`}>
+													<Link to={`/blog/${fslider[sliderimag].slug}`}>
 														<h4>{fslider[sliderimag].title}</h4>
 														<p>{fslider[sliderimag].excerpt}</p>
 													</Link>
@@ -168,7 +168,7 @@ function FablesStories() {
 					</div>
 					<div className="row">
 						<div className="col-md-12 mt-5 d-flex justify-content-center">
-							<Link to="/fables" className="btn-bg">
+							<Link to="/blog" className="btn-bg">
 								View All
 							</Link>
 						</div>

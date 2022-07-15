@@ -1,52 +1,5 @@
-// html{
-// 	font-size: 16px;
-// }
-
-// @font-face {
-//     font-family: 'PoppinsMedium';
-//     src: url('../fonts/PoppinsMedium.eot');
-//     src: url('../fonts/PoppinsMedium.eot') format('embedded-opentype'),
-//          url('../fonts/PoppinsMedium.woff2') format('woff2'),
-//          url('../fonts/PoppinsMedium.woff') format('woff'),
-//          url('../fonts/PoppinsMedium.ttf') format('truetype'),
-//          url('../fonts/PoppinsMedium.svg#PoppinsMedium') format('svg');
-//          font-display: swap;
-// }
-
-
-// @font-face {
-//     font-family: 'PoppinsRegular';
-//     src: url('../fonts/PoppinsRegular.eot');
-//     src: url('../fonts/PoppinsRegular.eot') format('embedded-opentype'),
-//          url('../fonts/PoppinsRegular.woff2') format('woff2'),
-//          url('../fonts/PoppinsRegular.woff') format('woff'),
-//          url('../fonts/PoppinsRegular.ttf') format('truetype'),
-//          url('../fonts/PoppinsRegular.svg#PoppinsRegular') format('svg');
-//          font-display: swap;
-// }
-
-// @font-face {
-//     font-family: 'PoppinsSemiBold';
-//     src: url('../fonts/PoppinsSemiBold.eot');
-//     src: url('../fonts/PoppinsSemiBold.eot') format('embedded-opentype'),
-//          url('../fonts/PoppinsSemiBold.woff2') format('woff2'),
-//          url('../fonts/PoppinsSemiBold.woff') format('woff'),
-//          url('../fonts/PoppinsSemiBold.ttf') format('truetype'),
-//          url('../fonts/PoppinsSemiBold.svg#PoppinsSemiBold') format('svg');
-//          font-display: swap;
-// }
-
-// @font-face {
-//     font-family: 'PoppinsBold';
-//     src: url('../fonts/PoppinsBold.eot');
-//     src: url('../fonts/PoppinsBold.eot') format('embedded-opentype'),
-//          url('../fonts/PoppinsBold.woff2') format('woff2'),
-//          url('../fonts/PoppinsBold.woff') format('woff'),
-//          url('../fonts/PoppinsBold.ttf') format('truetype'),
-//          url('../fonts/PoppinsBold.svg#PoppinsBold') format('svg');
-//          font-display: swap;
-// }
-
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
 
 .demat-modal-sleekbox-overlay {
     font-size: 16px;
@@ -56,37 +9,54 @@
     top: 0;
     width: 100%;
     height: 100%;
-    z-index: 999;
     background: #3e404f4d;
     overflow: auto;
+    z-index: 999999 !important;
 
     .exit-intent-sleekbox-popup {
         box-sizing: border-box;
-        background: #fff;
+        background: $whiteColor;
         max-width: 738px;
         margin: 0 auto;
         border-radius: 16px;
         margin: 0 auto;
         margin-top: 12rem;
         margin-bottom: 1rem;
-
-        @media (max-width:767px) {
+        position: relative;
+        padding: 0;
+        .closebtn {
+            color:$primary;
+            text-decoration: none;
+            float: right;
+            top: 0;
+            right: 15px;
+            position: absolute;
+            font-size: 3rem;
+            @media (max-width:$sm) {
+                color: $whiteColor;
+            }
+        }
+        @media (max-width:$sm) {
             width: 90%;
             margin-top: 2rem;
+            padding: 0;
         }
 
         .popup-sub-row {
             display: flex;
             flex-wrap: wrap;
-
+            padding: 0;
+           
+            
             .leftwrap {
-                background-color: #221F20;
+                background-color: $primary;
                 padding: 50px 8px 32px 32px;
                 border-radius: 16px;
                 width: 52%;
 
-                @media (max-width:767px) {
+                @media (max-width:$sm) {
                     width: 100%;
+                    padding:40px 20px
                 }
             }
 
@@ -94,8 +64,11 @@
                 padding: 50px 30px 50px;
                 width: 48%;
 
-                @media (max-width:767px) {
+               
+
+                @media (max-width:$sm) {
                     width: 100%;
+                    padding: 40px 20px;
                 }
             }
 
@@ -104,32 +77,32 @@
                 .dsmblock {
                     display: none;
 
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         display: block;
-                        font-size: 26px;
-                        line-height: 40px;
-                        color: #FFCA05;
+                        font-size: 22px;
+                        line-height: 34px;
+                        color: $bgcolor-yellow;
                         padding: 0;
                         margin: 0;
                         font-family: 'PoppinsBold';
-                        margin-bottom: 30px;
+                        margin-bottom: 22px;
                     }
 
                     span {
-                        color: #FFFFFF;
+                        color: $whiteColor;
                     }
                 }
 
                 h4 {
                     font-size: 26px;
                     line-height: 40px;
-                    color: #FFCA05;
+                    color: $bgcolor-yellow;
                     padding: 0;
                     margin: 0;
                     font-family: 'PoppinsBold';
                     margin-bottom: 30px;
 
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         display: none;
                     }
                 }
@@ -138,15 +111,16 @@
                     list-style: none;
                     padding: 0;
                     margin: 0;
+                    text-align: left;
 
                     li {
                         position: relative;
-                        font-family: 'PoppinsRegular';
+                        font-family: $font-family-poppins-regular;
                         font-size: 18px;
                         line-height: 25px;
                         margin-bottom: 25px;
                         padding-left: 35px;
-                        color: #FFFFFF;
+                        color: $whiteColor;
 
                         &::before {
                             content: '';
@@ -161,7 +135,7 @@
                         }
 
                         span {
-                            font-family: 'PoppinsBold';
+                            font-family: $font-family-poppins-bold;
                             font-weight: 700;
                         }
                     }
@@ -173,7 +147,7 @@
                         display: block;
                         font-size: 16px;
                         color: #97999B;
-                        font-family: 'PoppinsRegular';
+                        font-family: $font-family-poppins-regular;
                         margin-top: 44px;
                         cursor: pointer;
                     }
@@ -186,10 +160,10 @@
     .signal-form {
         .signal-same-btn {
             display: block;
-            background: #221F20;
-            border: 1px solid #221F20;
-            color: #fff;
-            font-family: 'PoppinsSemiBold';
+            background: $primary;
+            border: 1px solid $primary;
+            color: $whiteColor;
+            font-family: $font-family-poppins-semibold;
             padding: 10px 30px;
             display: block;
             margin-top: 25px;
@@ -211,7 +185,7 @@
                 flex-wrap: wrap;
 
                 .write {
-                    color: #231F20;
+                    color: $primary;
                     width: 100%;
                     padding: 5px 13px;
                     border: 1px solid #231F2024;
@@ -220,7 +194,7 @@
                     padding-bottom: 5px;
                     height: 53px;
                     font-size: 17px;
-                    font-family: 'PoppinsRegular';
+                    font-family: $font-family-poppins-regular;
                     box-shadow: none;
                 }
             }
@@ -228,24 +202,47 @@
             .form-check {
                 display: flex;
                 margin-bottom: 1rem;
+                padding-left: 0;
+                align-items: flex-start;
+
+                input {
+                    margin-top: 5px;
+                }
 
                 label {
+                    text-align: left;
                     font-size: 14px;
                     font-weight: 400;
-                    font-family: 'PoppinsRegular';
-                    color: #231F20;
+                    font-family: $font-family-poppins-regular;
+                    color: $primary;
                     line-height: 22px;
                     padding-left: 10px;
 
                     a {
-                        color: #005CB9;
+                        color: $bgcolor-blue;
                         font-size: 14px;
                         line-height: 21px;
-                        font-family: 'PoppinsBold';
+                        font-family: $font-family-poppins-bold;
                         cursor: pointer;
                     }
                 }
             }
+            .digit-otp{
+       
+                width: 90%;
+                height: 48px;
+                border-radius: 4px;
+                background-color: #EFECEB;
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                color: $primary;
+                margin: 0 2px;
+                letter-spacing: 10px;
+            
+        } 
         }
     }
 }
@@ -255,41 +252,56 @@
 }
 
 .popup-sub-right {
+    .dmt_form {
+        margin-top: 0 !important;
+    }
+
     h4 {
         font-size: 26px;
         line-height: 40px;
-        color: #221F20;
+        color: $primary;
         padding: 0;
         margin: 0;
-        font-family: 'PoppinsBold';
-        margin-bottom: 30px;
+        font-family: $font-family-poppins-bold;
+        margin-bottom: 40px;
         position: relative;
         left: -26px;
         top: 0;
 
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             display: none;
         }
     }
+
 }
 
 .loaderB {
     border: 5px solid #f3f3f3;
     border-radius: 50%;
-    border-top: 5px solid #221F20;
+    border-top: 5px solid $primary;
     width: 30px;
     height: 30px;
     -webkit-animation: spin 2s linear infinite;
     /* Safari */
     animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

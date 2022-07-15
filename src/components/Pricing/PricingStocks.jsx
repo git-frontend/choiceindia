@@ -1,22 +1,21 @@
 
 import React from "react";
 import Form from 'react-bootstrap/Form';
-
+import {useRef} from 'react';
 
 
 
 function PricingStocks() {
 
-
-
+  console.log('Stocks')
   return (
     <div>
 
-      <div className="banner-tab-cont">
+      <div className="banner-tab-cont"  id="scrollstocks">
         <div className="heading-sec">
           <h3 className="title-secnd">Brokerage Charges</h3>
         </div>
-        <div className="pricing-table-tab">
+        <div className="pricing-table-tab" >
           <div className="table-responsive">
             <table className="pricing-data">
               <thead>
@@ -86,7 +85,7 @@ function PricingStocks() {
           <p className="term-para"><strong>Condition Applied* </strong>:  Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
         </div>
 
-        <div className="brokerage-calculator">
+        {/* <div className="brokerage-calculator">
           <div className="heading-sec">
             <h3 className="title-secnd">Brokerage Calculator</h3>
           </div>
@@ -238,7 +237,7 @@ function PricingStocks() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
 
     </div>

@@ -1,0 +1,29 @@
+.middle-box {
+  z-index: 100;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: aliceblue;
+}
+.middle-box h1 {
+  line-height: 100%;
+  margin-top: 0;
+}
+
+.error-img {
+  height: 398px;
+  width: 700px;
+}
+
+.img-parent {
+  margin-top: -183px;
+}
+
+.error-desc {
+  line-height: 2rem;
+  font-size: 14px;
+  margin-top: 1rem;
+}/*# sourceMappingURL=ErrorPage.css.map */
