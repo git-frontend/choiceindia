@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
-import ImageT from '../../assets/images/home-banner.webp'
-import ImageT from '../../assets/images/home-banner.webp'
+import ImageT from '../../assets/images/home-banner.webp';
 
 function HomePageBanner() {
 
