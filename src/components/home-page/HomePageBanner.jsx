@@ -12,6 +12,7 @@ function HomePageBanner() {
         homeServices.homePrimaryBanner().then(
             res => {
                 setPrimary(res.data.data);
+                
             }
         )
     };
@@ -30,6 +31,7 @@ function HomePageBanner() {
         <div>
             {
                 primary.map((response) => {
+                    
 
                     return (
 
@@ -44,8 +46,8 @@ function HomePageBanner() {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className={"banner-img"} width={"654"} height={"904"} alt={"Loading"} />
-                                            {/* <img src={`https://cmsapi.choiceindia.com/assets/${response.images}`} className="banner-img" alt="Loading" /> */}
+                                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.image}`} className={"banner-img"} width={"654"} height={"904"} alt={"Loading"} />
+                                            {/**<img src={`https://cmsapi.choiceindia.com/assets/${response.image}`} className="banner-img" alt="Loading" />*/}
                                         </div>
                                     </div>
                                 </div>

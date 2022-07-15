@@ -125,6 +125,7 @@ function Routing() {
 
                         <Route exact path='/investors' element={
                             <React.Suspense>
+                              {  console.log("called LazyInvestorInfo" )}
                                 < LazyInvestorInfo />
                             </React.Suspense>
                         } />

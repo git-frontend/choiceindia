@@ -4,10 +4,16 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import React from "react";
-import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
-
+import { Link, useNavigate } from "react-router-dom";
 function Footer() {
+
+  let navigate = useNavigate();
+ let goToServices=()=>{
+  navigate('/services')
+
+  }
+
   return (
     <div className="Footer">
       <footer className="main-footer">
@@ -30,28 +36,28 @@ function Footer() {
                             <h4>Services</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/equity-stock-trading" target="_blank">Broking & Distribution</a>
+                            <a className="cursor-pointer"  onClick={()=>{goToServices()}} >Broking & Distribution</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/wealth-management-services" target="_blank">Wealth Planning</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Wealth Planning</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/insurance-policy" target="_blank">Insurance</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Insurance</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/loan-against-securities-shares" target="_blank">Loans</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Loans</a>
                           </li>
                           <li>
-                          <a href="/">Capital Advisory</a>
+                          <a className="cursor-pointer" onClick={()=>{goToServices()}} >Capital Advisory</a>
                           </li>
                           <li>
-                            <a href="/">Management Consultancy</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Management Consultancy</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Government Advisory</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Government Advisory</a>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Tax Advisory</a>
+                            <a className="cursor-pointer" onClick={()=>{goToServices()}} >Tax Advisory</a>
                           </li>
                         </ul>
                         <ul className="reset">

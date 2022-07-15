@@ -43,23 +43,23 @@ function ShortTermResearch() {
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}
               >
-                C-Quant
+               Signal
                 
               </button>
             </div>
 
             <div className="content-tabs SB-content-tab">
-              <div
-                className={toggleState === 1 ? "content  active-content" : "content"}
+            {toggleState === 1 ?  <div
+                className="content  active-content"
               >
                   <SBDesk />
-              </div>
-
-              <div
-                className={toggleState === 2 ? "content  active-content" : "content"}
+              </div>:<div
+                className="content  active-content"
               >
                 <CQuant />
-              </div>
+              </div>}
+
+              
 
               
             </div>
