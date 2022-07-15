@@ -106,7 +106,7 @@ function CorporateDemateAccount() {
                                                     <li>Reduced Time &amp; Cost</li>
 
                                             </ul></div>
-                                        <h2 class="font-bold">Procedure To Open A Corporate Demat Account</h2>
+                                        <h2 className="font-bold">Procedure To Open A Corporate Demat Account</h2>
                                         With Choice India’s advanced digital approach, the process of Corporate Demat Account opening becomes simple and easy.<br /><br />
                                         Follow the easy step-by-step detailed procedure to open a Demat Account for Private Companies -<br /><br />
                                         <ul><li>Duly Fill out Corporate Demat Account Forms</li><li>Complete KYC Forms of Each Account Holder</li><li>Upload Aadhar details of All Account Holders</li><li>Upload Photos of All Account Holders (Self-Attested)</li>

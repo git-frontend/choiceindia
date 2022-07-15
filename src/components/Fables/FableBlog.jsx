@@ -38,7 +38,7 @@ function FableBlog() {
                         loader ?
                             <Spinner animation="grow" /> :
                             <div className="row">
-                                <div className="col-md-5">
+                                <div className="col-xl-5">
                                     <div className="blog-middle-left">
                                         <div className="heading-sec">
                                             <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
@@ -49,13 +49,16 @@ function FableBlog() {
                                             </div>
                                             <div className="single-blog-des">
                                                 <h3>{data[0].title}</h3>
-                                                <p className="des-cont mt-3">{data[0].meta_description}<Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
+                                                <h6 className="tag-act">Published at: {(data[0].published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
+                                                {/* str.substring(0, str.length - 1);
+                                                {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
+                                                <p className="des-cont mt-3">{(data[0].meta_description) ? data[0].meta_description.substring(0, 105) : ''}<Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
                                             </div>
                                         </div>
 
                                     </div>
                                 </div>
-                                <div className="col-md-7">
+                                <div className="col-xl-7">
                                     <div className="blog-middle-right">
 
                                         <div className="all-latest-blog-list">
@@ -63,12 +66,12 @@ function FableBlog() {
                                                 data.map((item, index) => {
                                                     if (index !== 0) {
                                                         return (
-                                                            <div className="latest-blog-itm">
+                                                            <div className="latest-blog-itm" key={item.id}>
                                                                 <Link to={`/blog/${item.slug}`} className="blog-itm">
                                                                     <div className="blog-itm-des">
                                                                         <p className="itm-des-cont">{item.title}</p>
                                                                         {/* <h6 className="tag-act">Published at: 14th July, 2022</h6> */}
-                                                                        <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) : ''}</h6>
+                                                                        <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                                     </div>
                                                                     <div className="blog-itm-img">
                                                                         <LazyLoader src={item.feature_image} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />

@@ -219,7 +219,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
                     <div className="close">
-                            <a href="javascript:void(0)" onClick={onClose} class="closebtn" >&times;</a>
+                            <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                             </div>
                         <div className="popup-sub-right">
 

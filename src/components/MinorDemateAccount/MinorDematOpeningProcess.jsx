@@ -20,7 +20,7 @@ const MinorDematOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless</span>  Minor Demat Account For Free</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless </span>  Minor Demat Account For Free</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">

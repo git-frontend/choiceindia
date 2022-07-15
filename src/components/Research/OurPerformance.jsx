@@ -142,7 +142,7 @@ function OurPerformance() {
                   <div className="percent">
                     <svg className="sb-bar">
                       <circle cx="150" cy="150" r="145"></circle>
-                      <circle cx="150" cy="150" r="145" style={{ '--percent': `${list.success_ratio_percentage}` }}></circle>
+                      <circle cx="150" cy="150" r="145" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
                     </svg>
                     {/**<svg className="c-quant-bar">
                       <circle cx="125" cy="125" r="120"></circle>
@@ -150,7 +150,7 @@ function OurPerformance() {
   </svg>*/}
                     <svg className="jiffy-signal-bar">
                       <circle cx="100" cy="100" r="95"></circle>
-                      <circle cx="100" cy="100" r="95" style={{ '--percent': `${Number(data)}` }}></circle>
+                      <circle cx="100" cy="100" r="95" style={{ '--percent': `${Number(data) || 0}` }}></circle>
                     </svg>
                   </div>
                 </div>
@@ -187,7 +187,7 @@ function OurPerformance() {
                       <div className="colorwrap blue"></div>
                       <div className="wrap-des">
                       <p className="subtext">Expert</p>
-                        <p className="percentage">{list.success_ratio_percentage}</p>
+                        <p className="percentage">{list.success_ratio_percentage||0}</p>
                       </div>
                     </div>
                     {/**<div className="wrap">
@@ -201,7 +201,7 @@ function OurPerformance() {
                       <div className="colorwrap yellow"></div>
                       <div className="wrap-des">
                         <p className="subtext">Jiffy Signal</p>
-                        <p className="percentage">{Number(data)}</p>
+                        <p className="percentage">{Number(data)||0}</p>
                       </div>
                     </div>
                   </div>

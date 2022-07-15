@@ -26,7 +26,6 @@ function SBDesk() {
         setTrigger(true)
         if (trigger === true) {
             generateSessionId()
-            console.log("kkk");
         }
         return () => {
             let tokenList = []
@@ -125,7 +124,6 @@ function SBDesk() {
         // indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
         // setCompanyData(indicesData)
 
-        console.log("onRealtimeCallback processed", indicesData, researchReport)
 
         if ((researchReport && researchReport.length) || (resData && resData.length)) {
 
@@ -202,10 +200,6 @@ function SBDesk() {
                         ele.datapoints.forEach(sub => {
                             sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
 
-                            // if(sub.key=='target'){
-                            //     console.log(sub,"subsubsub")
-                            //     sub.value='62'
-                            // }
                             ele.priceData[sub.key] = sub
                         })
 

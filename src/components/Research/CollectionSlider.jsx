@@ -9,7 +9,7 @@ function CollectionSlider() {
     const [isShown2, setIsShown2] = useState(0);
     const settings1 = {
         infinite: true,
-        speed: 2500,
+        speed: 1000,
         vertical: true,
         arrows: false,
         slidesToShow: 3,
@@ -79,7 +79,7 @@ function CollectionSlider() {
                                 </div>
                             </div>
                             <div className="mt-5">
-                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/research-report/research/experts/EQ">Explore All</a>
+                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/baskets">Explore All</a>
                             </div>
                         </div>
                         <div className="col-xl-7 col-md-6">
