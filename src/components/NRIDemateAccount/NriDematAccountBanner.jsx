@@ -18,7 +18,7 @@ const NriDematAccountBanner = () => {
                                 <div className="desktop">Open a NRI Account <br /> <span className="yellow">Online For Free</span></div>
                                 
                             </h1>
-                            <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
+                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">

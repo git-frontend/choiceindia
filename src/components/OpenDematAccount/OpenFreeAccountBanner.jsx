@@ -19,7 +19,7 @@ const OpenFreeAccountBanner = () => {
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
                             </h1>
-                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" />
+                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
