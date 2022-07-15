@@ -1138,7 +1138,7 @@
                 right: 0;
                 width: 4rem;
                 @media  (max-width:$md) {
-                  right: inherit;
+                  right: inherit !important;
                 }
               }
             }
@@ -1316,17 +1316,13 @@
       .wrapper{
           display: flex;
           align-items: flex-start;
-          justify-content: space-between;
+          justify-content: flex-start;
           flex-wrap: wrap;
-          @media  (max-width:$sm) {
-              justify-content: center;
-          }
           @media  (min-width:768px) and (max-width:1024px) {
              padding-left: 20px;
           }
           .wrap{
-              width: 33.33%;
-             
+              padding-right: 3rem;
               .colorwrap{
                   width: 4.375rem;
                   height: 4.375rem;
