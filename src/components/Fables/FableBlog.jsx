@@ -38,7 +38,7 @@ function FableBlog() {
                         loader ?
                             <Spinner animation="grow" /> :
                             <div className="row">
-                                <div className="col-md-5">
+                                <div className="col-xl-5">
                                     <div className="blog-middle-left">
                                         <div className="heading-sec">
                                             <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
@@ -55,7 +55,7 @@ function FableBlog() {
 
                                     </div>
                                 </div>
-                                <div className="col-md-7">
+                                <div className="col-xl-7">
                                     <div className="blog-middle-right">
 
                                         <div className="all-latest-blog-list">
