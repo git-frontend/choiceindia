@@ -8,7 +8,7 @@ function Banner() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   setTimeout(() => {
-    setSkeleton(() => false );
+    setSkeleton(() => true );
   }, 3000)
 
   return (
