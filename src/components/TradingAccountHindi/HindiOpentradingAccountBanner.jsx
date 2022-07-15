@@ -25,7 +25,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt="Lowest DP Charges" className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt="न्यूनतम डीपी प्रभार" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
