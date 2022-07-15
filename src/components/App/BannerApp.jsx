@@ -3,7 +3,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-
+import appstore from '../../assets/images/icons/app-store.svg';
 function BannerCareer() {
 
   return (
@@ -31,10 +31,7 @@ function BannerCareer() {
                       <span className='blackcolor'>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                      <svg width="30" height="30" viewBox="0 0 31 39" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>
-                        <path fillRule="evenodd" clip-rule="evenodd" d="M25.6833 21.0736C25.7212 18.1304 27.2631 15.4118 29.7687 13.8702C28.1808 11.6007 25.6166 10.2135 22.8495 10.1268C19.9383 9.82102 17.1161 11.8701 15.6326 11.8701C14.1204 11.8701 11.8364 10.1572 9.3768 10.2078C6.14068 10.3124 3.19687 12.1091 1.62242 14.9404C-1.73041 20.7496 0.770502 29.2872 3.98224 33.9829C5.58914 36.2823 7.46714 38.8507 9.92447 38.7597C12.3291 38.6599 13.2272 37.2252 16.1298 37.2252C19.0055 37.2252 19.8481 38.7597 22.3553 38.7017C24.9356 38.6598 26.5613 36.3922 28.1118 34.071C29.2664 32.4327 30.1548 30.6219 30.7442 28.7058C27.6796 27.4087 25.6869 24.4036 25.6833 21.0736Z" fill="#13151A" />
-                        <path fillRule="evenodd" clip-rule="evenodd" d="M20.704 7.28729C22.0332 5.49957 22.6881 3.20176 22.5295 0.881836C20.4987 1.1208 18.6228 2.20817 17.2756 3.9273C15.9453 5.62345 15.2714 7.84247 15.4023 10.0956C17.4603 10.1193 19.4143 9.08428 20.704 7.28729Z" fill="#13151A" />
-                      </svg>
+                    <img src={appstore} className="" alt={"App Store"} width="" height="" />
 
                       <span className='blackcolor'>App Store</span>
                     </a>
