@@ -26,7 +26,7 @@ function ShortTermResearch() {
             
         <div className="row">
 						<div className="col-md-12">
-							<div className="heading-sec heading-sec-top">
+							<div className="heading-sec heading-sec-top" id="shortterm-scroll">
 								<h3 className="title-first" >Short Term Research </h3>
 							</div>
 						</div>
