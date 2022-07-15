@@ -47,7 +47,7 @@ function LongTermResearch() {
   };
 
   function getSingleDetail(id){
-    console.log('IIIII',id);
+    // console.log('IIIII',id);
     navigate(`/research-detailed/${id}/${tempid}`);
   }
 

@@ -14,9 +14,24 @@ function TrendingReports(props) {
 
   function getSingleDetail(id){
     console.log('IIIII',id);
-
-      navigate(`/research-detailed/${id}`);
+    
+      navigate(`/research-detailed/${id}/${props.data}`);
   }
+
+  // function getSingleResearchDetail(id){
+
+  //   ResearchService.getSingleResearchDetail(id).then(
+  //     res => {
+  //       if(res){
+  //         if(res.response.data){
+  //           setList(res.response.data);
+  //         }
+  //       }
+  //       // setList(res.response.data);
+  //       console.log('Detail',res);
+  //     }
+  //   )
+  // }
 
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
@@ -52,17 +67,18 @@ function TrendingReports(props) {
                   {
                     list?.slice(0,4)?.map((res,i)=> {
                       
+                      console.log('RESPONSE',res)
                       return(
                         
                         <div className="res-tab-itm">
                         <div className="tab-itm-img">
-                        <img src={list?.feature_image? list?.feature_image : ''  } alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
+                        <img src={res?.feature_image? res?.feature_image : ''  } alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                           {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
                         </div>
                         <div className="tab-itm-des">
-                        <h3 className="ttl-des">{list?.title? list?.title : ''} </h3>
+                        <h3 className="ttl-des">{res?.title? res?.title : ''} </h3>
                           {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
-                          <p className="tag-pref">{list?.report_name? list?.report_name : ''}</p>
+                          <p className="tag-pref">{res?.report_name? res?.report_name : ''}</p>
                           <div className="itm-des-sub">
                             <span className="date-post">03 Mar 2022</span>
                             <a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>

@@ -4,7 +4,7 @@ import thumb2 from '../../assets/images/research/pdf-ico.webp';
 
 function Banner(props) {
 
-  console.log('Banner',props.data);
+  // console.log('Banner',props.data);
 
   return (
     <div>
