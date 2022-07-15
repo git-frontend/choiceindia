@@ -87,8 +87,8 @@ function PricingCurrency() {
           <p className="term-para"><strong>Condition Applied* </strong>:  Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
         </div>
          
-          <BrokerageCalculator name={'Currency Futures'} id={'currency-futures'}></BrokerageCalculator>
-          <BrokerageCalculator name={'Currency Options'} id={'currency-options'}></BrokerageCalculator>
+         {/*  <BrokerageCalculator name={'Currency Futures'} id={'currency-futures'}></BrokerageCalculator>
+          <BrokerageCalculator name={'Currency Options'} id={'currency-options'}></BrokerageCalculator> */}
       </div>
 
     </div>

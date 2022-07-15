@@ -94,8 +94,8 @@ function PricingEquity() {
 
          
           <div className="calc-box">
-          <BrokerageCalculator name={'Currency Futures'} id={'currency-futures'}></BrokerageCalculator>
-          <BrokerageCalculator name={'Currency Options'} id={'currency-options'}></BrokerageCalculator>
+         {/*  <BrokerageCalculator name={'Currency Futures'} id={'currency-futures'}></BrokerageCalculator>
+          <BrokerageCalculator name={'Currency Options'} id={'currency-options'}></BrokerageCalculator> */}
           </div>
         </div>
       </div>

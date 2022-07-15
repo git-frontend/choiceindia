@@ -87,8 +87,8 @@ function PricingEquity() {
         </div>
         
         
-          <BrokerageCalculator name={'Equity Futures'} id={'equity-futures'}></BrokerageCalculator>
-          <BrokerageCalculator name={'Equity Options'} id={'equity-options'}></BrokerageCalculator>
+         {/*  <BrokerageCalculator name={'Equity Futures'} id={'equity-futures'}></BrokerageCalculator>
+          <BrokerageCalculator name={'Equity Options'} id={'equity-options'}></BrokerageCalculator> */}
       </div>
 
     </div>
