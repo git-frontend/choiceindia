@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
 import SingleTemplate from "../Common-features/SingleTemplate";
+import ImageT from '../../assets/images/home-banner.webp'
 
 function HomePageBanner() {
 
@@ -48,13 +49,14 @@ function HomePageBanner() {
                                         <div className="col-md-6">
                                             <div className="banner-caption" >
 
-                                                <h1>{response.title} <br/>{response.description}</h1>
+                                                {/* <h1>{response.title} <br/>{response.description}</h1> */}
+                                                <h1>Experience <br/>The Joy of Earning</h1>
                                             </div>
                                         </div>
                                         {
                                             skeleton?<SingleTemplate/>:
                                             <div className="col-md-6">
-                                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${response.image}`} className={"banner-img"} width={"654"} height={"904"} alt={"Loading"} />
+                                            <LazyLoader src={ImageT} className={"banner-img"} width={"654"} height={"904"} alt={"Loading"} />
                                             {/**<img src={`https://cmsapi.choiceindia.com/assets/${response.image}`} className="banner-img" alt="Loading" />*/}
                                             </div>   
                                         }
