@@ -220,7 +220,7 @@
                             border-radius: 10px;
                         }
                         @media (max-width: $xs) {
-                            height: 100;
+                            height: 100px;
                         }
                         
                     }
@@ -425,7 +425,10 @@
                 img {
                     width: 100%;
                     border-radius: 20px 20px 0 0;
-                    height: auto;
+                    object-fit: cover;
+                    @media screen and (max-width: $sm) {
+                        height: 200px;
+                    }
                 }
             }
 

@@ -649,6 +649,7 @@
             display: inline-block;
             font-family: $font-family-poppins-medium;
             padding-right: 2rem;
+            cursor: pointer;
             &::before{
               content: '';
               background: url(../../assets/images/research/arrow-left.svg) no-repeat;
