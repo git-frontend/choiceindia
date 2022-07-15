@@ -6,6 +6,7 @@ import Image21 from '../../assets/images/open-demat-account/downarrow.png';
 import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
+import utils from "../../Services/utils";
 
 const DematAccountOpeningProcess = () => {
     return (
@@ -24,7 +25,7 @@ const DematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >आताच सुरुवात करा! </a>
+                                    <a href="javascript:void(0)" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }} >आताच सुरुवात करा! </a>
                                 </div>
 
                             </div>

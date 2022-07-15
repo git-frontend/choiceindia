@@ -48,14 +48,14 @@ function NRIDemateAccount() {
                         </div>
                         <div className="col-md-12">
                             <div className="para">
-                                <input type="checkbox" class="read-more-state" id="post-1" />
-                                <span class="read-more-wrap "> Simply put, NRIs are the Indians who are currently residing abroad (outside of India). With Choice India, NRIs (Non Resident Indians) who want to invest in Indian Equity Markets can open a Demat Account for NRI. By following our simple account opening procedure the NRIs can venture into shares, bonds, debentures of various Indian companies.
-                                    <span class="read-more-target"> The most accurate definition of NRI is given by FEMA (Foreign Exchange Management Act): NRI is referred to as an individual who is -<br/>
+                                <input type="checkbox" className="read-more-state" id="post-1" />
+                                <span className="read-more-wrap "> Simply put, NRIs are the Indians who are currently residing abroad (outside of India). With Choice India, NRIs (Non Resident Indians) who want to invest in Indian Equity Markets can open a Demat Account for NRI. By following our simple account opening procedure the NRIs can venture into shares, bonds, debentures of various Indian companies.
+                                    <span className="read-more-target"> The most accurate definition of NRI is given by FEMA (Foreign Exchange Management Act): NRI is referred to as an individual who is -<br/>
                                         <ul>
                                             <li>An Indian citizen or a person of Indian Origin who lives in a foreign country for employment, business, or other reasons.</li>
                                             <li>An Indian Citizen who has lived in India for less than 182 days during the preceding financial year is also referred to as an NRI.</li>
                                         </ul>
-                                        The procedure of <Link to="https://choiceindia.com/open-free-demat-account"><strong>opening a Demat Account</strong></Link> for NRIs is quite similar to that of opening the regular Demat Accounts. The only difference is that an NRI needs to declare his/her NRI residence status and then choose the appropriate subtype of the NRI Demat Account.
+                                        The procedure of <Link to="/open-free-demat-account"><strong>opening a Demat Account</strong></Link> for NRIs is quite similar to that of opening the regular Demat Accounts. The only difference is that an NRI needs to declare his/her NRI residence status and then choose the appropriate subtype of the NRI Demat Account.
                                         <br /><br />
                                         <h2 className="font-bold">How To Open A NRI Demat Account Online?</h2>
                                         Many of the NRI investors are confused about how to open an NRI Demat account online. With Choice India, NRIs can now open an account online with KYC documents. There are additional documents that are necessary for the fulfillment of the account opening process:
@@ -95,7 +95,7 @@ function NRIDemateAccount() {
                                             <h3 className="font-bold"> 4. Diversity of Disciplines</h3>
                                             We use our expertise in diverse areas and coordinate all the factors together to protect our NRI clients' investments and try for high returns.
                                             <h3 className="font-bold"> 5. Specialization</h3>
-                                            <Link to="https://choiceindia.com/"><strong>Choice India</strong></Link> has mastery in portfolio management of NRI accounts. Over the years, we have garnered a loyal customer base because of our client-centric approach.
+                                            <Link to="/"><strong>Choice India</strong></Link> has mastery in portfolio management of NRI accounts. Over the years, we have garnered a loyal customer base because of our client-centric approach.
                                         </div><br/>
 
                                         <h3 className="font-bold">Documents Required to Open A NRI Demat Account</h3>
@@ -139,7 +139,7 @@ function NRIDemateAccount() {
 </li>
                                             </ul>
                                       
-                                    </span></span> <label for="post-1" class="read-more-trigger moreless-button"></label>
+                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

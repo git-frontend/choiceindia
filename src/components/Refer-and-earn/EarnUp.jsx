@@ -29,7 +29,7 @@ function EarnUp() {
                                       <h3>Earn up to Rs.1000 incentive <span>per referral now!</span> </h3>
                             </div>
                                   <div className="foot-sec-right">
-                                      <Link to='/refer-and-earn#refer' onClick={() => { chapterScroll('refer&earn') }} style={{cursor:"pointer"}} className="join-btn">Join Now</Link>
+                                      <Link to='/refer-and-earn' onClick={() => { chapterScroll('refer&earn') }} style={{cursor:"pointer"}} className="join-btn">Join Now</Link>
                                   </div>
                               </div>
                           </div>

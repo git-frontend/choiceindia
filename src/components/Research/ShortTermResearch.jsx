@@ -26,7 +26,7 @@ function ShortTermResearch() {
             
         <div className="row">
 						<div className="col-md-12">
-							<div className="heading-sec heading-sec-top">
+							<div className="heading-sec heading-sec-top" id="shortterm-scroll">
 								<h3 className="title-first" >Short Term Research </h3>
 							</div>
 						</div>
@@ -43,23 +43,23 @@ function ShortTermResearch() {
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                 onClick={() => toggleTab(2)}
               >
-                C-Quant
+               Signal
                 
               </button>
             </div>
 
             <div className="content-tabs SB-content-tab">
-              <div
-                className={toggleState === 1 ? "content  active-content" : "content"}
+            {toggleState === 1 ?  <div
+                className="content  active-content"
               >
                   <SBDesk />
-              </div>
-
-              <div
-                className={toggleState === 2 ? "content  active-content" : "content"}
+              </div>:<div
+                className="content  active-content"
               >
                 <CQuant />
-              </div>
+              </div>}
+
+              
 
               
             </div>

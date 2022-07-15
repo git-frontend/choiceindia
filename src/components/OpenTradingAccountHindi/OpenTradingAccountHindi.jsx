@@ -12,6 +12,7 @@ import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
+  import { Link } from "react-router-dom";
 function OpenTradingAccountHindi() {
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -68,7 +69,7 @@ function OpenTradingAccountHindi() {
 
                                         उस प्रश्न का उत्तर देने के लिए लोगों को यह समझने की जरूरत है कि डीमैट खाता सिर्फ एक भंडार है जहां आपके स्टॉक जमा होते हैं, शेयर बाजार में लेन-देन के उद्देश्यों के लिए आपको एक ट्रेडिंग खाते की आवश्यकता होती है।<br /><br />
 
-                                        अब जब हम समझ गए हैं कि डीमैट खाता और ट्रेडिंग खाता एक दूसरे से कैसे भिन्न हैं  <a href="https://choiceindia.com/blog/difference-between-demat-and-trading-account-in-hindi/">difference between demat and trading account in hindi</a> , तो आइए विवरण देखें |<br /><br />
+                                        अब जब हम समझ गए हैं कि डीमैट खाता और ट्रेडिंग खाता एक दूसरे से कैसे भिन्न हैं  <Link to="/blog/difference-between-demat-and-trading-account-in-hindi/">difference between demat and trading account in hindi</Link> , तो आइए विवरण देखें |<br /><br />
 
 
                                         <div >
@@ -80,7 +81,7 @@ function OpenTradingAccountHindi() {
                                         </div><br /><br />
 
                                         <h3 className="font-bold">डीमैट अकाउंट खोलने के लाभ  </h3>
-                                        उपर्युक्त अनुभागों में हमने आपको बताया है कि डीमैट खाता क्यों आवश्यक है लेकिन डीमैट खाता वास्तव में आपके लिए फायदेमंद क्यों है <a href="https://choiceindia.com/blog/demat-account-benefits-in-hindi/"> (demat account benefits in hindi)</a> इस बारे में बहुत कम बताया गया है,<br />
+                                        उपर्युक्त अनुभागों में हमने आपको बताया है कि डीमैट खाता क्यों आवश्यक है लेकिन डीमैट खाता वास्तव में आपके लिए फायदेमंद क्यों है <Link to="/blog/demat-account-benefits-in-hindi/"> (demat account benefits in hindi)</Link> इस बारे में बहुत कम बताया गया है,<br />
                                         <div >
                                             <h3 className="font-bold"> 1. कॉर्पोरेट लाभ </h3>
                                             स्टॉक ट्रेडिंग से जुड़े होते हैं, जब आप कोई स्टॉक खरीदते हैं तो आप स्टॉक स्प्लिट, बोनस, लाभांश भुगतान आदि जैसे कई कॉर्पोरेट लाभों के योग्य होते हैं।<br /><br />
@@ -128,7 +129,7 @@ function OpenTradingAccountHindi() {
 
                                         डीमैट अकाउंट खुलने के बाद के बाद सुनिश्चित करें कि आपका डीपी आपको लाभार्थी आईडी और पीओए नंबर या आपकी क्लाइंट आईडी के साथ पावर ऑफ अटॉर्नी नंबर प्रदान करे, यह जानकारी आपको आईपीओ के लिए आवेदन करने में मदद करेगी। <br /><br />
                                         <h2 className="font-bold">ऑनलाइन डीमैट खाता खोलना</h2>
-                                        ऑफलाइन खाता खोलने की तुलना में <a href="https://choiceindia.com/blog/demat-account-online-kaise-khole/"> ऑनलाइन डीमैट खाता खोलना </a> आसान है। यह आपको अपने घर बैठे खाता खोलने की सुविधा देता है। हालाँकि ऑनलाइन डीमैट खाता खोलने की आवश्यकताओं के लिए आपके पास वही दस्तावेज़ होने चाहिए जो आपको ऑफ़लाइन डीमैट खाता खोलते समय चाहिए होते हैं, कुछ अतिरिक्त आवश्यकताएं हैं जिनके साथ आपको तैयार रहने की आवश्यकता है;<br />
+                                        ऑफलाइन खाता खोलने की तुलना में <Link to="/blog/demat-account-online-kaise-khole/"> ऑनलाइन डीमैट खाता खोलना </Link> आसान है। यह आपको अपने घर बैठे खाता खोलने की सुविधा देता है। हालाँकि ऑनलाइन डीमैट खाता खोलने की आवश्यकताओं के लिए आपके पास वही दस्तावेज़ होने चाहिए जो आपको ऑफ़लाइन डीमैट खाता खोलते समय चाहिए होते हैं, कुछ अतिरिक्त आवश्यकताएं हैं जिनके साथ आपको तैयार रहने की आवश्यकता है;<br />
                                         <div >
                                             <ul>
                                                 <li>अपने पसंदीदा डीपी की वेबसाइट पर जाएं, लगभग हर दूसरे वित्तीय संस्थान या बैंक की आजकल ऑनलाइन उपस्थिति है, इसलिए आपको अपने पसंदीदा डीपी की वेबसाइट खोजने में कोई समस्या नहीं होगी।</li><br />

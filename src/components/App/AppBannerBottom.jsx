@@ -11,7 +11,7 @@ function AppBannerBottom() {
   const [isShown2, setIsShown2] = useState(0);
   const settings1 = {
     infinite: true,
-    speed: 2500,
+    speed: 1000,
     vertical: true,
     focusOnSelect: true,
     touchMove: true,
@@ -19,7 +19,7 @@ function AppBannerBottom() {
     slidesToShow: 4,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     slidesToScroll: 1,
     swipeToSlide: true,
    

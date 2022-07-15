@@ -55,7 +55,7 @@ function CorporateDemateAccount() {
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
                                 <span className="read-more-wrap ">
-                                    A Corporate Demat Account is a Demat account created in the name of a Private Company or a Corporate House for their investments in the stock markets. Public Limited Companies, Corporate Houses, and Private Firms can open <a href="https://choiceindia.com/open-free-demat-account"><strong>Demat account</strong></a> registered in their company’s name and invest in mutual funds, stocks, and other investment opportunities through this account.
+                                    A Corporate Demat Account is a Demat account created in the name of a Private Company or a Corporate House for their investments in the stock markets. Public Limited Companies, Corporate Houses, and Private Firms can open <Link to="/open-free-demat-account"><strong>Demat account</strong></Link> registered in their company’s name and invest in mutual funds, stocks, and other investment opportunities through this account.
                                     <span className="read-more-target">
                                         With Choice India, you can open a Demat account online for your company. You can carry on the investments in your company's name and invest in the equity markets. You can easily open a corporate account after the successful uploading of the necessary documents. You can follow our easy and hassle-free process for a smooth hassle-free <strong>corporate Demat Account opening.</strong><br /><br />
                                         <h2 className="font-bold">How To Open A Corporate Demat Account?</h2>
@@ -73,7 +73,7 @@ function CorporateDemateAccount() {
                                         <h2 className="font-bold">What The Opening Charges For Corporate Demat Account?</h2>
                                         <div>
                                             <h3 className="font-bold">Corporate Demat Account Opening Fee</h3>
-                                            Various brokers have different fee structures for opening a <strong>Demat account for Corporates</strong>. If you choose the right broker, you can open your account, absolutely for free. <a href="https://choiceindia.com/" target="_blank">Choice India</a> offers its corporate clients to open a free Corporate Account. We charge no opening fees for our Corporate clients.<br />
+                                            Various brokers have different fee structures for opening a <strong>Demat account for Corporates</strong>. If you choose the right broker, you can open your account, absolutely for free. <Link to="/" target="_blank">Choice India</Link> offers its corporate clients to open a free Corporate Account. We charge no opening fees for our Corporate clients.<br />
                                             <h3 className="font-bold">Annual Maintenance Fee</h3>
                                             At Choice India, we offer our customers to open <a href="https://choiceindia.com/campaign/free-amc-demat-account">demat account with zero amc</a>.
                                             <br/><br/>(The Annual Maintenance fee is charged for the general maintenance of the <strong>Demat Account for Corporates</strong> and keeping it functional.)
@@ -106,7 +106,7 @@ function CorporateDemateAccount() {
                                                     <li>Reduced Time &amp; Cost</li>
 
                                             </ul></div>
-                                        <h2 class="font-bold">Procedure To Open A Corporate Demat Account</h2>
+                                        <h2 className="font-bold">Procedure To Open A Corporate Demat Account</h2>
                                         With Choice India’s advanced digital approach, the process of Corporate Demat Account opening becomes simple and easy.<br /><br />
                                         Follow the easy step-by-step detailed procedure to open a Demat Account for Private Companies -<br /><br />
                                         <ul><li>Duly Fill out Corporate Demat Account Forms</li><li>Complete KYC Forms of Each Account Holder</li><li>Upload Aadhar details of All Account Holders</li><li>Upload Photos of All Account Holders (Self-Attested)</li>
@@ -120,7 +120,7 @@ function CorporateDemateAccount() {
                                             <li>Upload FATCA Declaration</li></ul>
                                     </span>
                                 </span>
-                                    <label for="post-1" className="read-more-trigger moreless-button"></label>
+                                    <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                                     
                             </div>
                         </div>

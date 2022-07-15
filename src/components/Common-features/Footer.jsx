@@ -5,10 +5,24 @@ import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawes
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
 import appstore from '../../assets/images/icons/app-store.svg';
 import React from "react";
-import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
-
+import { Link, useNavigate,NavLink } from "react-router-dom";
 function Footer() {
+
+ 
+
+  function chapterScroll(id) {
+    // console.log("check1",id)
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div className="Footer">
       <footer className="main-footer">
@@ -18,7 +32,7 @@ function Footer() {
               <div className="col-md-12">
                 <div className="top-sec-sub">
                   <div className="footer-logo">
-                                      <Link to="/"><LazyLoader src={ImageFooter0} className={"img-fluid"} width={"193"} height={"49"} alt="Loading" /></Link>
+                                      <NavLink to="/"><LazyLoader src={ImageFooter0} className={"img-fluid"} width={"193"} height={"49"} alt="Loading" /></NavLink>
                     {/* <img src={ImageFooter0} className=""  alt='Loading'/> */}
                   </div>
                 </div>
@@ -31,28 +45,28 @@ function Footer() {
                             <h4>Services</h4>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/equity-stock-trading" target="_blank">Broking & Distribution</a>
+                            <NavLink className="cursor-pointer"  to="/services" >Broking & Distribution</NavLink>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/wealth-management-services" target="_blank">Wealth Planning</a>
+                            <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/insurance-policy" target="_blank">Insurance</a>
+                            <NavLink className="cursor-pointer" to="/services" >Insurance</NavLink>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/loan-against-securities-shares" target="_blank">Loans</a>
+                            <NavLink className="cursor-pointer" to="/services" >Loans</NavLink>
                           </li>
                           <li>
-                          <a href="/">Capital Advisory</a>
+                          <NavLink className="cursor-pointer" to="/services" >Capital Advisory</NavLink>
                           </li>
                           <li>
-                            <a href="/">Management Consultancy</a>
+                            <NavLink className="cursor-pointer" to="/services" >Management Consultancy</NavLink>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Government Advisory</a>
+                            <NavLink className="cursor-pointer" to="/services" >Government Advisory</NavLink>
                           </li>
                           <li>
-                            <a href="https://choiceindia.com/institutional-services-page/capital-advisory" target="_blank">Tax Advisory</a>
+                            <NavLink className="cursor-pointer" to="/services" >Tax Advisory</NavLink>
                           </li>
                         </ul>
                         <ul className="reset">
@@ -60,42 +74,42 @@ function Footer() {
                             <h4>Company</h4>
                           </li>
                           <li>
-                            <a href="/about-us" target="_blank">Our Team</a>
+                            <NavLink to="/about-us" target="_blank">Our Team</NavLink>
                           </li>
                           <li>
-                            <Link to="/investors">Investors</Link>
+                            <NavLink to="/investors">Investors</NavLink>
                           </li>
                           <li>
-                            <Link to="/brokerage-charges">Pricing</Link>
+                            <NavLink to="/brokerage-charges">Pricing</NavLink>
                           </li>
                           <li>
                           <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                           </li>
                           <li>
-                            <Link to="/career">Careers</Link>
+                            <NavLink to="/career">Careers</NavLink>
                           </li>
                           <li>
-                            <Link to="/contact-us">Contact Us</Link>
+                            <NavLink to="/contact-us">Contact Us</NavLink>
                           </li>
                           <li>
-                            <Link to="/refer-and-earn">Refer &amp; Earn</Link>
+                            <NavLink to="/refer-and-earn">Refer &amp; Earn</NavLink>
                           </li>
                           <li>
-                            <Link to="/faq">FAQ’s</Link>
+                            <NavLink to="/faq">FAQ’s</NavLink>
                           </li>
                         </ul>
                         <ul className="reset">
                           <li>
-                            <h4>Research</h4>
+                            <h4>Research</h4>shortterm-scroll
                           </li>
                           <li>
-                            <a href="/research-listing-new" target="_blank">Fundamental</a>
+                            <NavLink to="/research-listing-new" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
                           </li>
                           <li>
-                            <a href="/research-listing-new" target="_blank">Technical</a>
+                            <NavLink to="/research-listing-new" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
                           </li>
                           <li>
-                             <Link to="/blog">Fables</Link>
+                             <NavLink to="/blog">Fables</NavLink>
                           </li>
                         </ul>
                       </div>
@@ -160,10 +174,10 @@ function Footer() {
                           Made with  <FontAwesomeIcon icon={faHeart} />  in India
                         </li>
                         <li>
-                          <a href="https://choiceindia.com/privacy-policy" target="_blank">Privacy Policy</a>
+                          <NavLink to="/" target="_blank">Privacy Policy</NavLink>
                         </li>
                         <li>
-                          <a href="/" target="_blank">Terms &amp; Conditions</a>
+                          <NavLink to="/" target="_blank">Terms &amp; Conditions</NavLink>
                         </li>
                       </ul>
                     </div>

@@ -14,6 +14,17 @@ function SumeetBagadia() {
     setSkeleton(() => false);
   }, 200)
 
+  function scrollToId(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div>
 
@@ -56,7 +67,7 @@ function SumeetBagadia() {
                       <h3 className="title-sm-new">
                         Sign up for exclusive trading tips from Sumeet Bagadia?
                       </h3>
-                      <a href="#home-bg" className="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</a>
+                      <a href="javascript:void(0)" className="btn-bg btn-bg-dark acnt-sub-btn" onClick={()=>scrollToId('home-bg')}>Open My Account</a>
                     </div>
                   </div>
                 </div>
@@ -77,7 +88,7 @@ function SumeetBagadia() {
                       <h3 className="title-sm-new">
                         Get Sumeet Bagadia's trading tips and recommendations?
                       </h3>
-                      <a href="#home-bg" className="btn-bg acnt-sub-btn">Sign up</a>
+                      <a href="javascript:void(0)" className="btn-bg acnt-sub-btn" onClick={()=>scrollToId('home-bg')}>Sign up</a>
                     </div>
                   </div>
                 </div>
