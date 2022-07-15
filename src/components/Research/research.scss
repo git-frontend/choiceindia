@@ -218,12 +218,14 @@
                             padding: 0.5rem 1.5rem;
                             min-width: 130px;
                             text-align: center;
+                            cursor: pointer;
                           }
                           &.red-btn{
                             background: #EF404A;
                             padding: 0.5rem 1.5rem;
                             min-width: 130px;
                             text-align: center;
+                            cursor: pointer;
                           }
                           &:hover{
                             background: $primary;
@@ -410,6 +412,15 @@
               .grn-txt{
                 color: #00B26B;
               }
+
+              .balance-txt{
+                color: #F6B900;
+              }
+
+              .pri-txt{
+                color: #2D77F4;
+              }
+
               .sml-txt{
                 font-family: $font-family-poppins-medium;
               }
@@ -441,9 +452,11 @@
               -o-transition: 0.5s;
               &.grn-btn{
                 background: #00B26B;
+                cursor: pointer;
               }
               &.red-btn{
                 background: #EF404A;
+                cursor: pointer;
               }
              &:hover{
               background: $primary;
@@ -492,6 +505,14 @@
                 position: absolute;
                 right: 0;
                 top: 0;
+              }
+            }
+
+            .target-line-crossed{
+              &::after{
+           
+                right: 10%;
+               
               }
             }
             .itm-cont-des{
@@ -580,6 +601,14 @@
                 &::before{
                   border-top-color: #EF404A;
                 }
+              }
+            }
+
+
+
+            .cmp-crossed{
+              &::before{
+                margin-right: 0px;
               }
             }
           }
@@ -697,9 +726,11 @@
             -o-transition: 0.5s;
             &.grn-btn{
               background: #00B26B;
+              cursor: pointer;
             }
             &.red-btn{
               background: #EF404A;
+              cursor: pointer;
             }
            &:hover{
             background: $primary;
@@ -1354,5 +1385,33 @@
   }
 }
 
+
+.cursor-pointer{
+  cursor: pointer;
+}
+
+
+.target-crossed{
+  right: 10% !important;
+}
+.loaderB {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #221F20;
+  width: 30px;
+  height: 30px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 

@@ -6,7 +6,7 @@ import Image21 from '../../assets/images/open-demat-account/downarrow.png';
 import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
-import { Link } from "react-router-dom";
+import utils from "../../Services/utils";
 const MinorDematOpeningProcess = () => {
     return (
         <div>
@@ -20,11 +20,11 @@ const MinorDematOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless</span>  Minor Demat Account For Free</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless </span>  Minor Demat Account For Free</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <Link to="#open-account-wrap" className="btn-bg btn-bg-dark " >Get Started </Link>
+                                    <a href="javascript:void(0)" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </a>
                                 </div>
 
                             </div>

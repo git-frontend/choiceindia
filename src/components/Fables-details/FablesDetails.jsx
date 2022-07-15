@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
-import meta_tags from "../../Data/MetaTags";
 
 function Fablesdetails() {
 
@@ -21,30 +20,31 @@ function Fablesdetails() {
   const [trigger, setTrigger] = useState();
   const { id } = useParams();
   // let data = [];
-  const [skeleton, setSkeleton] = useState(() => true);
-  const [showForm, setShowForm] = useState(false);
-  var formName = useRef('');
+const [skeleton, setSkeleton] = useState(() => true);
+const [showForm, setShowForm] = useState(false);
+var formName = useRef('');
 
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
 
-  /** to call single fabal detail */
-  function getSingleFablesDetail() {
-    homeServices.fablesBlog(id).then(
-      res => {
-        if (res.data.posts) {
-          checkWhetherToShowForm(res.data.posts || {});
-          setSingle_Detail(res.data.posts);
-          setIsDetail(true);
-          sethtmlContent(res.data.posts[0].html);
-          document.title = res.data.posts[0].meta_title ? res.data.posts[0].meta_title : '';
-          document.getElementById('meta-tags').content = res.data.posts[0].meta_title ? res.data.posts[0].meta_title : '';
+    /** to call single fabal detail */
+    function getSingleFablesDetail() {
+      homeServices.fablesBlog(id).then(
+        res => {
+          if (res.data.posts) {
+            checkWhetherToShowForm(res.data.posts || {});
+            setSingle_Detail( res.data.posts);
+            setIsDetail( true);
+            sethtmlContent(res.data.posts[0].html);
+ document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
+          document.getElementById('meta-tags').content = res.data.posts[0].meta_title? res.data.posts[0].meta_title : '' ;
+          document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url : '';
 
+          }
         }
-      }
-    )
-  }
+      )
+    }
 
   /** to call all fabal list */
   function loadFabalList() {
@@ -60,8 +60,8 @@ function Fablesdetails() {
     )
   }
 
-  useEffect(() => {
-    setTrigger(true)
+ useEffect(() => {
+setTrigger(true)
     if (trigger === true) {
       getSingleFablesDetail();
       loadFabalList();
@@ -91,12 +91,12 @@ function Fablesdetails() {
       {
         skeleton ? <Template1 /> :
           <div className="fables-details-parent">
-            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current} />
+            <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
             <Recommendation name={allFabalData} Id={id} />
           </div>
       }
 
-      {/* {
+     {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       } */}
       {/* {

@@ -70,7 +70,7 @@ function DematFaq() {
                                     <Accordion.Header> <h4 className='faq-header'> Which documents are required for opening a brokerage account online with Choice?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         You are required to provide the following documents to open a brokerage account online with Choice.<br /><br />
-                                        <ul class="documentlist">
+                                        <ul className="documentlist">
                                             <li><strong>A Valid Proof of Identity</strong>(Your proof of address can include any of the following):<br />
                                                 <p>1. Aadhar Card</p>
                                                 <p>2. Voter ID card</p>

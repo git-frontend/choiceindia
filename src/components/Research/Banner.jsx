@@ -1,8 +1,15 @@
 
 import React from "react";
 import  ImageBanner  from '../../assets/images/research/bannerResearch.gif';
+import SingleTemplate from "../Common-features/SingleTemplate";
+import {useState} from 'react';
 
 function Banner() {
+
+  const [skeleton, setSkeleton] = useState(() => true);
+  setTimeout(() => {
+    setSkeleton(() => false );
+  }, 3000)
 
   return (
     <div>
@@ -18,11 +25,21 @@ function Banner() {
                         <p className="para pt-4">So let’s begin a journey of ReSearching your Wealth.</p>
                     </div>
                 </div>
-                <div className="col-md-6">
+
+                {
+                  skeleton?
+                    <SingleTemplate/>:
+                    <div className="col-md-6">
                     <div className="rightsec">
                       <img src={ImageBanner} alt="Banner Images" className="img-fluid " width={"957"} height={"623"}></img>
                     </div>
                 </div>
+                }
+                {/* <div className="col-md-6">
+                    <div className="rightsec">
+                      <img src={ImageBanner} alt="Banner Images" className="img-fluid thumb-img" width={""} height={""}></img>
+                    </div>
+                </div> */}
             </div>
         </div>
     </section>

@@ -2,7 +2,15 @@
 import React from "react";
 import Bannerimage from '../../assets/images/services/financial-services.gif';
 import LazyLoader from "../Common-features/LazyLoader";
+import SingleTemplate from "../Common-features/SingleTemplate";
+import { useState } from "react";
+
 function Banner() {
+
+    const [skeleton, setSkeleton] = useState(() => true);
+    setTimeout(() => {
+      setSkeleton(() => false  );
+    }, 3000)
 
     return (
         <div>
@@ -21,10 +29,15 @@ function Banner() {
                             </div>
                         </div>
                         <div className="col-md-7">
-                            <div className="rightsec">
+
+                            {
+                                skeleton?
+                                <SingleTemplate/>:
+                                <div className="rightsec">
                                 <LazyLoader src={Bannerimage} alt={"Financial Services"} className={"img-fluid top-banner-img"} width={"957"} height={"623"}/>
                                 {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid top-banner-img" width={"957"} height={"623"}></img> */}
                             </div>
+                            }
                         </div>
                     </div>
                 </div>

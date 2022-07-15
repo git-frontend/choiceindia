@@ -32,11 +32,20 @@ function DematAccountForm(props) {
     var UTMSource = useRef('');
     var refercode = useRef('');
     var otpSessionID = useRef('');
+    var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
   
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
     function showOpenAccountAdPopup() {
-        setShowOpenAccountPopup(true);
+        if (!showOTP) {
+            setShowOpenAccountPopup(true);
+        } else {
+            callOpenAccountAdPopupAgain();
+        }
     }
 
     function hideOpenAccountAdPopup() {
@@ -52,9 +61,11 @@ function DematAccountForm(props) {
     }
 
     useEffect(() => {
-        setTimeout(() => {
-            showOpenAccountAdPopup();
-        }, 60000);
+        if (!isMobile.current && props.isPopupVisible) {
+            setTimeout(() => {
+                showOpenAccountAdPopup();
+            }, 60000);
+        }
     }, []);
 
     function handleMobile(e) {
@@ -363,7 +374,7 @@ function DematAccountForm(props) {
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
-                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="Mobile Number" className="formcontrol digit-otp" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
+                            <Form.Control isValid={!errors.invalidMobile || !errors.required} type="text" pattern="\d*" name="mobile_no" id="mobile_no" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'moblbl')} className="formcontrol digit-otp" autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
                             {
                                 errors.invalidMobile ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'invalidmob')}</Form.Control.Feedback> : ''
                             }

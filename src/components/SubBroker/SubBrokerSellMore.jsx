@@ -31,7 +31,7 @@ const SubBrokerSellMore = () => {
                                         <h2 className="title-secnd">Sell More. Earn More!</h2>
                                         <p className="sml-para-dv">Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Sub Broker have the option to offer the entire range of financial products.</p>
                                         <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </a>
-                                        <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link>
+                                        {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
                             </div>
