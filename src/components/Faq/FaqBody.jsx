@@ -22,7 +22,7 @@ export default function FaqBody() {
   const [article, setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
   const [select, setSelect] = useState(-1);
-  const [isloader,setIsloader]=useState(false)
+  const [isloader, setIsloader] = useState(false)
   const [selected, setSelected] = useState(0);
   const [isactive, setIsactive] = useState(false);
   const [isarticle, setIsarticle] = useState(false);
@@ -52,24 +52,24 @@ export default function FaqBody() {
   });
 
   function loadfaqsearch() {
-    
-    chapterScroll('faq-section')
+
+
     setIsactive(true)
-    console.log("check div",isarticle)
-   
+    setIsloader(true)
     faqService.FaqSearch(data).then(
       res => {
         setIsactive(true);
+        chapterScroll('faq-section')
+        setIsloader(false)
         setIsarticle(false);
         setSearchlist(res);
-        console.log("check api",isarticle)
-     
-  }
+
+      }
     )
-    
+
   };
 
-  
+
 
 
 
@@ -84,19 +84,19 @@ export default function FaqBody() {
     });
   }
 
-  
+
 
 
 
   function loadfaqcategory() {
-    
-    setIsloader(true)
+
+
     faqService.FaqCategory().then(
       res => {
         setList(res);
         loadfaqFolder(res[0].category_linkage);
-        setIsloader(false)
-        console.log("check category",isactive)
+
+        console.log("check category", isactive)
       }
     )
   };
@@ -119,9 +119,9 @@ export default function FaqBody() {
     )
   };
 
-  function categoryClick(){
-    let h =document.getElementById('value3')
-    h.value=""
+  function categoryClick() {
+    let h = document.getElementById('value3')
+    h.value = ""
 
   }
 
@@ -132,9 +132,9 @@ export default function FaqBody() {
     if (trigger === true) {
       loadfaqcategory();
       categoryClick();
-      console.log("check useEffect",isarticle)
-      
-      
+      console.log("check useEffect", isarticle)
+
+
 
     }
 
@@ -152,18 +152,14 @@ export default function FaqBody() {
                 <div className='col-md-6'>
                   <div className='caption-cont'>
                     <h1 className='big-ttl faq-title'>How can I help you ?</h1>
-                    
+
                     <div className="faq-search" >
-                                   
+
                       <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
-                      {
-                        isloader === false ?
-                        <Button type='submit'   variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>Search</Button>:
-                        <Spinner animation="border" />
-                      }
-                   
-                      </div>
-                  
+                                          
+                          <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search':<Spinner animation="border" />}</Button> 
+                    </div>
+
 
 
                     <div>
@@ -320,7 +316,7 @@ export default function FaqBody() {
 
                               // scrollToElement();
                             }}>
-                              <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section'); categoryClick()}}  >
+                              <div className="bx-item-cont ser" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
                                 <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
@@ -406,11 +402,11 @@ export default function FaqBody() {
                   </div>
                 </section> :
 
-                <section className='faq-accordion'   id='faq-section'>
+                <section className='faq-accordion' id='faq-section'>
                   <div className='container'>
 
                     <div className='faq-container justify-content-center'>
-                      
+
                       <div className='content-list accordion-list ' >
                         <Accordion defaultActiveKey="0" >
 
