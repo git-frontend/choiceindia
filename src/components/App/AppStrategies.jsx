@@ -20,23 +20,7 @@ function AppStrategies() {
         autoplaySpeed: 1000,
         slidesToScroll: 1,
         swipeToSlide: true,
-        responsive: [
-            {
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                    adaptiveHeight: true,
-                },
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 1,
-                },
-            },
-        ],
+       
     };
 
 
