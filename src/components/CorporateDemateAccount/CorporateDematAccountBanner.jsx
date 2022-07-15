@@ -19,7 +19,7 @@ const CorporateDematAccountBanner = () => {
                                 <div className="desktop">Corporate Demat Account</div>
                                 
                             </h1>
-                            <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
+                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
