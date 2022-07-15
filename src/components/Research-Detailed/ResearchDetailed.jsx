@@ -14,11 +14,13 @@ function ResearchDetailed() {
   const [list, setList] = useState(null);
   const { id } = useParams();
   const { catid } = useParams();
+
   console.log('EEEEEEE',id);
-  console.log('WWWWWWW',catid);
+  // console.log('WWWWWWW',catid);
 
   function getSingleResearchDetail(id){
-
+    
+    console.log('SingleResearch',id);
     ResearchService.getSingleResearchDetail(id).then(
       res => {
         if(res){
@@ -27,13 +29,17 @@ function ResearchDetailed() {
           }
         }
         // setList(res.response.data);
-        console.log('Detail',res);
+        // console.log('Detail',res);
       }
     )
   }
 
   useEffect(() => {
     getSingleResearchDetail(id);
+  },[id])
+
+  useEffect(() => {
+
   },[])
 
   return (

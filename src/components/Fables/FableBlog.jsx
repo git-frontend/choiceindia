@@ -41,7 +41,7 @@ function FableBlog() {
                                 <div className="col-md-5">
                                     <div className="blog-middle-left">
                                         <div className="heading-sec">
-                                            <h3 className="title-secnd">Maybe You’re Interested Check Our Blog </h3>
+                                            <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
                                         </div>
                                         <div className="single-blog-con">
                                             <div className="single-blog-img">
