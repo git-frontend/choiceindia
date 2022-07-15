@@ -216,10 +216,10 @@ function HomeTestimonial() {
 											</div>
 											
 											<div className='right-btn-extr'>
-												<button className='btn btn-outline-primary leftt-btn' disabled={disableLeft} onClick={toggleBackward} >
+												<button className='btn btn-outline-primary leftt-btn' aria-label="left arrow" disabled={disableLeft} onClick={toggleBackward} >
 													<FontAwesomeIcon icon={faArrowLeftLong} />	
 												</button>
-												<button className='btn btn-outline-primary rightt-btn btn-xl' disabled={disableRight} onClick={toggleForward} >
+												<button className='btn btn-outline-primary rightt-btn btn-xl' aria-label="right arrow" disabled={disableRight} onClick={toggleForward} >
 													<FontAwesomeIcon icon={faArrowRightLong} />
 												</button>
 											</div>
