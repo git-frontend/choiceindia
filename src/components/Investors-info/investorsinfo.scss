@@ -105,6 +105,10 @@ body{
                 color: #0BA04A;
             }
 
+            .red {
+                color: #ff1a1a;
+            }
+
             .result {
                 display: flex;
                 flex-direction: column;
@@ -122,6 +126,10 @@ body{
 
                     .green {
                         color: #0BA04A;
+                    }
+
+                    .red {
+                        color: #ff1a1a;
                     }
                 }
             }
