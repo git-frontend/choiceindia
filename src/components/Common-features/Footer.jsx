@@ -131,7 +131,7 @@ console.log("DATA",data)
                           </ul>
                           <ul className="reset">
                             <li>
-                              <h4>Research</h4>shortterm-scroll
+                              <h4>Research</h4>
                             </li>
                             <li>
                               <NavLink to="/research-listing-new" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
@@ -172,7 +172,7 @@ console.log("DATA",data)
                               <span className='blackcolor' target="_blank">Google Play</span>
                             </a>
                             <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
-                              <img src={appstore} className="" alt={"App Store"} width="" height="" />
+                            <img src={appstore} className="" alt={"App Store"} width="27" height="24" />
 
                               <span className='blackcolor' target="_blank">App Store</span>
                             </a>
