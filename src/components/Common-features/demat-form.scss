@@ -26,8 +26,20 @@
             &.formpadding{
                 padding: 1.2rem 1.5rem;
             }
+			
         }
-      
+		.react-dropdown-select{
+			.react-dropdown-select-input{
+				width: 100% !important;
+			}
+			.react-dropdown-select-item {
+				font-size: 1.2rem !important;
+			}
+			.react-dropdown-select-no-data{
+				color: $primary !important;
+			}
+
+		}
         input[type=number]::-webkit-inner-spin-button, 
         input[type=number]::-webkit-outer-spin-button { 
             -webkit-appearance: none; 
