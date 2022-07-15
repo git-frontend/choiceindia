@@ -31,7 +31,7 @@ const config = {
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
-    livereferURL: "https://uatapi.choicebroking.in/api/middleware",
+    livereferURL: "https://jiffy.choiceindia.com/api/middleware/",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
     liveresearchURL: "http://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
