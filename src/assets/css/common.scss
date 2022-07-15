@@ -139,6 +139,9 @@ body{
     @media screen and (max-width: $md) {
         margin-top: 8.6rem;
     }
+    @media screen and (max-width: $xs) {
+        margin-top: 6rem;
+    }
 }
 
 
