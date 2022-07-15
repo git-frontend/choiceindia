@@ -19,7 +19,7 @@ import {
 function Home() {
 
 
-	const [skeleton, setSkeleton] = useState(() => true);
+	const [skeleton, setSkeleton] = useState(() => false);
 	const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -27,9 +27,9 @@ function Home() {
 	// function myGreeting() {
 	//   setSkeleton(() => false);
 	// }
-	setTimeout(() => {
+/* 	setTimeout(() => {
 		setSkeleton(() => false);
-	}, 200)
+	}, 200) */
 
 	useEffect(() => {
         setRenderCount(true)
