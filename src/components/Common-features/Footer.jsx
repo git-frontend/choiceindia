@@ -100,7 +100,7 @@ function Footer() {
                         </ul>
                         <ul className="reset">
                           <li>
-                            <h4>Research</h4>shortterm-scroll
+                            <h4>Research</h4>
                           </li>
                           <li>
                             <NavLink to="/research-listing-new" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
