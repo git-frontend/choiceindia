@@ -140,7 +140,7 @@ function OpenTradingAccount() {
                                         </ul>
                                         For more details regarding the total applicable <Link to="/brokerage-charges">brokerage charges</Link>.
                                         <br />
-                                    </span></span> <label for="post-1" class="read-more-trigger moreless-button"></label>
+                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

@@ -61,7 +61,7 @@ function DematAccountForm(props) {
     }
 
     useEffect(() => {
-        if (!isMobile.current) {
+        if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
             }, 60000);
