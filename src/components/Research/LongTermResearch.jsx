@@ -64,7 +64,7 @@ function LongTermResearch() {
             
         <div className="row">
 						<div className="col-md-12">
-							<div className="heading-sec heading-sec-top">
+							<div className="heading-sec heading-sec-top" id="longterm-scroll">
 								<h3 className="title-first" >Long Term Research </h3>
 							</div>
 						</div>
