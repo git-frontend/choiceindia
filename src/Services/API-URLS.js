@@ -33,7 +33,7 @@ const config = {
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
     livereferURL: "https://jiffy.choiceindia.com/api/middleware/",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
-    liveresearchURL: "http://researchreportapi.jiffy.in/",
+    liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
     liveperformanceURL:"https://jiffy.choiceindia.com//api/",
     UATperformanceURL:"https://jiffy.choiceindia.com//api/",
@@ -175,7 +175,7 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
         * @param {*} configKey 
         */
     setConfig(configKey) {
-        this.setJiffyServerURL(config[configKey + 'JiffyBaseURL']);
+        this.setJiffyBaseURL(config[configKey + 'JiffyBaseURL']);
         this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
@@ -197,7 +197,7 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
         this.setperformanceURL(config[configKey + 'performanceURL']);
     }
 
-    setJiffyServerURL = (url) => {
+    setJiffyBaseURL = (url) => {
         this.JiffyBaseURL = url;
     }
 

@@ -9,7 +9,7 @@ function AppStrategies() {
 
     const settings1 = {
         infinite: true,
-        speed: 2500,
+        speed: 1000,
         vertical: true,
         focusOnSelect: true,
         touchMove: true,

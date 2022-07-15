@@ -18,7 +18,6 @@ function CQuant() {
         if (trigger === true) {
 
             generateSessionId()
-            console.log("kkk");
         }
 
     }, [trigger])
@@ -35,7 +34,6 @@ function CQuant() {
                 return response.json();
             })
             .then(res => {
-                console.log("res", res)
                 if (res.Status == 'Success') {
                     getSignalResearch(res.Response)
                 } else {
@@ -367,7 +365,6 @@ function CQuant() {
                 response = response.map(ele => {
 
                     ele = JSON.parse(JSON.stringify(getFormattedResearch(ele)))
-                    console.log(ele, "ele")
 
                     let dateData = ele.ATime;
                     if (dateData) {
@@ -384,7 +381,6 @@ function CQuant() {
                     // tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
                     return ele
                 })
-                console.log("response", response)
                 //FUTURE REFERENCE
                 // subscribeMultitouchline(tokenList,onRealtimeCallback,session);
                 setResearchReport(response)
