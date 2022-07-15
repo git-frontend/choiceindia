@@ -11,7 +11,7 @@ import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
 
 import ChoiceLTP from "../Common-features/ChoiceLTP";
-  useLocation,
+import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
