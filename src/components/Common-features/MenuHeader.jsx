@@ -34,25 +34,25 @@ export default function Header() {
                                 <NavLink to= '/online-trading-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/services'    onClick={ ()=>setShow(!show)}  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                                <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/research-listing-new'   onClick={ ()=>setShow(!show)}  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                                <NavLink to= '/research-listing-new'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             {/* <li className="nav-item">
-                                <NavLink to= '/career'    onClick={ ()=>setShow(!show)}  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
+                                <NavLink to= '/career'   className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
                             </li> */}
                             <li className="nav-item">
-                                <NavLink to= '/partner   onClick={ ()=>setShow(!show)} 'className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
+                                <NavLink to= '/partner'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Partners</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/contact-us'   onClick={ ()=>setShow(!show)}  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
+                                <NavLink to= '/contact-us'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
                             <li className="nav-item login-btn">
-                                <a href='https://jiffy.choiceindia.com/auth/login'   onClick={ ()=>setShow(!show)}  className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
+                                <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
                             </li>
                             <li className="nav-item get-btn">
-                            <NavLink className="nav-link"   onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
+                            <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
                             </li>
                         </ul>
                     </div>

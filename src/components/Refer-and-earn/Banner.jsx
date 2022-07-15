@@ -53,8 +53,12 @@ function referlink(){
 }
 
 function loadrefer() {
+    let id=referid;
+    if(id){
+      id=  id.toUpperCase()
+    }
     setIsloader(true)
-    referService.referearn(referid).then(
+    referService.referearn(id).then(
       res => {
         setIsloader(false)
         setList(res);

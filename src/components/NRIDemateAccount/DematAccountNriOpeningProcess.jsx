@@ -20,7 +20,7 @@ const DematAccountNriOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless</span> NRI Demat Account</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless </span> NRI Demat Account</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">

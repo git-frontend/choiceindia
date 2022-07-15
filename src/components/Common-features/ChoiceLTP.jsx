@@ -7,17 +7,22 @@ import { API_URLS } from "../../Services/API-URLS";
 
     const [ b5Data, setB5Data] = useState({});
     const [ companyData, setCompanyData] = useState({change:0, changePercent:0,color:'green',LTP_DATA:0});
+/**To Execute one timeonly */
+const [trigger, setTrigger] = useState(false)
+  let new6={}
 
-  useEffect(() => {
 
-    console.log("useEffect called")
-        generateSessionId();
-      return ()=>{
-        unsubscribeFromStream({})
-      }
-       // loadDeferredIframe();
-      }, [])
 
+      useEffect(() => {
+        setTrigger(true)
+        if (trigger === true) {
+          console.log("use effect called")
+            generateSessionId()
+        }
+        return () => {
+          unsubscribeFromStream({})
+        }
+    }, [trigger])
 
 
     /*   useEffect(()=>{
@@ -79,9 +84,9 @@ import { API_URLS } from "../../Services/API-URLS";
                     newB5['LTP'] = (keyInfo.LTP == 0) ? (newB5['PrevClose']) : keyInfo.LTP; // if LTP == 0 then show prevClose (10/05/2021)
                  let string = '|1=' + 1 + '|74=' + 0 + '|73=' + 0 + '|7=' + 8866 + '|8=' + keyInfo.LTP + '|9=' + keyInfo.LTQ + '|399=' + keyInfo.PriceDivisor + '|75=' + keyInfo.OpenPrice + '|76=' + keyInfo.ClosePrice + '|77=' + keyInfo.HighPrice + '|78=' + keyInfo.LowPrice + '|93=' + keyInfo.LifeTimeHigh + '|94=' + keyInfo.LifeTimeLow + '|88=' + keyInfo.OpenInterest + '|80=' + keyInfo.ATP + '|79=' + keyInfo.Volume + '|';
                  setB5Data(newB5)
-                 processB5String(string,newB5)
+                 new6=newB5
                  setTimeout(()=>{
-                   
+                  processB5String(string,newB5)
                     subscribeOnStream(1,8866,onRealtimeCallback,'guest',session,false,)
                 },1000)
                     
@@ -107,11 +112,13 @@ import { API_URLS } from "../../Services/API-URLS";
   let processB5String=(b5String,newB5)=>{
 	b5String = b5String.replace(/\$/g, "|");
 	let splitData = pipeToObject(b5String);
-
+if((splitData[0]["7"])=='8866'){
+  
   console.log(newB5," datata ",b5Data)
-  let bestData=newB5||b5Data
+  let bestData=newB5||new6
 	let indicesData={}
 		indicesData['PrevClose'] = bestData.PrevClose||0;
+    
     indicesData["LTP"] = (splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0; // if LTP == 0 then show prevClose (10/05/2021)
     indicesData["LTP_DATA"] = ((splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0).toFixed(2); // if LTP == 0 then show prevClose (10/05/2021)
 	indicesData["diff"] = indicesData["LTP"] - (indicesData['PrevClose'] / splitData[0]["399"]);
@@ -140,7 +147,7 @@ import { API_URLS } from "../../Services/API-URLS";
 	indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
     setCompanyData(indicesData)
 
-    console.log("onRealtimeCallback processed",indicesData)
+    console.log("onRealtimeCallback processed",indicesData)}
 }
 
   

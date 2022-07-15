@@ -670,7 +670,7 @@ function DematAccountForm() {
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
                     <div className="close">
-                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} class="closebtn" >&times;</a>
+                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
                             </div>
                         <div className="popup-sub-right">
 
