@@ -316,8 +316,13 @@ export default function FaqBody() {
 
                               // scrollToElement();
                             }}>
+<<<<<<< HEAD
                               <div className="bx-item-cont ser" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
+                                <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+=======
+                              <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section'); categoryClick()}}  >
                                       <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" width={"50"} height={"50"} />
+>>>>>>> origin/choice-india-home
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
                               </div>

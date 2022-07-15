@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
-import ImageT from '../../assets/images/home-banner.webp'
+<<<<<<< HEAD
+import SingleTemplate from "../Common-features/SingleTemplate";
+=======
+>>>>>>> origin/choice-india-home
 import ImageT from '../../assets/images/home-banner.webp'
 
 function HomePageBanner() {

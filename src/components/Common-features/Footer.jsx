@@ -141,7 +141,7 @@ function Footer() {
                             <span className='blackcolor' target="_blank">Google Play</span>
                           </a>
                           <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
-                          <img src={appstore} className="" alt={"App Store"} width="" height="" />
+                          <img src={appstore} className="" alt={"App Store"} width="27" height="24" />
 
                             <span className='blackcolor' target="_blank">App Store</span>
                           </a>
