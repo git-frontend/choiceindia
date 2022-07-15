@@ -40,7 +40,7 @@ const RemisierMoreContent = () => {
             <li>Assisting existing clients in reinvesting</li>
         </ul>
         <h3 className='ttl-para'>Who can become an Authorised Person</h3>
-        <p>Unlike <Link to="https://choiceindia.com/sub-broker-franchise">sub-brokers</Link>, who are registered entities, the authorised person enjoys the freedom to serve with an approval of SEBI. The <Link to="https://choiceindia.com/blog/difference-between-sub-broker-and-authorized-person/">difference between the sub-broker and authorised person</Link> needs to be specified.</p>
+        <p>Unlike <Link to="/sub-broker-franchise">sub-brokers</Link>, who are registered entities, the authorised person enjoys the freedom to serve with an approval of SEBI. The <Link to="/blog/difference-between-sub-broker-and-authorized-person/">difference between the sub-broker and authorised person</Link> needs to be specified.</p>
         <p>However, anyone who wants to earn money in a passive way can become an Authorised Person. With Choice, the benchmarks to become an Authorised person are as follows -</p>
         <ul>
             <li>There are no educational requirements.</li>
@@ -50,7 +50,7 @@ const RemisierMoreContent = () => {
         </ul>
         <p>Generally speaking, there are no strict criteria for being an Authorised Person in the Stock Market. Following entities can be designated as an Authorised person:</p>
         <ul>
-                                            <li>Any person – individual, partnership firm, LLP, or body corporate – who is appointed by <Link to="https://choiceindia.com/">stock broker</Link> / trading member and who provides access to the Exchange's trading platform as the stock broker's agent</li>
+                                            <li>Any person – individual, partnership firm, LLP, or body corporate – who is appointed by <Link to="/">stock broker</Link> / trading member and who provides access to the Exchange's trading platform as the stock broker's agent</li>
           <li>The eligibility and qualifying requirements are minimal; all we want is willingness and passion.</li>
           <li>Excellent Communication Skills and Sales Aptitudes are an added benefit.</li>
         </ul>
@@ -78,7 +78,7 @@ const RemisierMoreContent = () => {
             <li>
             Advanced Technical Assistance
                 <ol>
-                                                    <li>Cutting-edge Trading Platforms (<Link to="https://choiceindia.com/online-trading-app">Jiffy Trading App</Link> &amp; Advanced Website)</li>
+                    <li>Cutting-edge Trading Platforms (<Link to="/online-trading-app">Jiffy Trading App</Link> &amp; Advanced Website)</li>
                     <li>Hassle-Free Software for Tracking and Monthly Reports</li>
                     <li>Dedicated Whatsapp and Telegram Channels</li>
                     <li>Training through Webinars and Conferences</li>

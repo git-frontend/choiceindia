@@ -6,6 +6,7 @@ import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
 import Image4 from '../../assets/images/open-demat-account/free-research-advisory.svg';
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
+import LazyLoader from '../Common-features/LazyLoader';
 
 const CorporateDematAccountBanner = () => {
     return (
@@ -78,7 +79,8 @@ const CorporateDematAccountBanner = () => {
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
-                                <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
+                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                <LazyLoader src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
                                 <DematAccountForm />
                             </div>
 

@@ -33,6 +33,23 @@ const Research = {
             return data
         })
         
+    },
+
+    successratio: function (postdata) {
+        let api = new API_URLS()
+        let url = api.getsuccessURL()
+        return axios.post(url,postdata).then(({ data }) => {
+            return data
+        })
+        
+    },
+
+    getSingleResearchDetail: function(id){
+        let api = new API_URLS()
+        let url = api.getresearchDetailURL(id)
+        return axios.get(url,this.headerConfig).then(({ data }) => {
+            return data
+        })
     }
 }
 export default Research;

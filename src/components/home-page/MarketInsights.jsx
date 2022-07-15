@@ -80,7 +80,7 @@ function MarketInsights() {
                                                     <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                 </div>
                                                 <div className="item-cont-descr">
-                                                    <p>{response.report_subtype_name}</p>
+                                                    {/* <p>{response.report_subtype_name}</p> */}
                                                     <p>{response.plain_description}</p>
                                                 </div>
                                             </div>

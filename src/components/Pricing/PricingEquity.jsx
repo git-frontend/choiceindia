@@ -1,6 +1,7 @@
 
 import React from "react";
 import Form from 'react-bootstrap/Form';
+import BrokerageCalculator from "./BrokerageCalculator";
 
 
 
@@ -84,6 +85,10 @@ function PricingEquity() {
           </div>
           <p className="term-para"><strong>Condition Applied* </strong>:  Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
         </div>
+        
+        
+          <BrokerageCalculator name={'Equity Futures'} id={'equity-futures'}></BrokerageCalculator>
+          <BrokerageCalculator name={'Equity Options'} id={'equity-options'}></BrokerageCalculator>
       </div>
 
     </div>

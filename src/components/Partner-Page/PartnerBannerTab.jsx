@@ -10,7 +10,7 @@ import ImageSub3 from '../../assets/images/icons/money-bag.svg';
 import ImageSub4 from '../../assets/images/icons/insurance.svg';
 import ImageSub5 from '../../assets/images/icons/loan.svg';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import SingleTemplate from "../Common-features/SingleTemplate";
 
 
 function PartnerBannerTab() {
@@ -20,6 +20,11 @@ function PartnerBannerTab() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+
+  const [skeleton, setSkeleton] = useState(() => true);
+  setTimeout(() => {
+    setSkeleton(() => false  );
+  }, 3000)
 
   return (
     <div>
@@ -40,10 +45,15 @@ function PartnerBannerTab() {
                   </div>
                   <a href="https://choiceconnect.in/register" className="btn-bg">Register</a>
                 </div>
-                <div className="tab-cont-right">
-                  <LazyLoader src={StckImage} className={'img-fluid'} width={"521"} height={"453"} alt="Become a Stock Market Agent" />
-                  {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}
-                </div>
+
+                {
+                  skeleton ? <SingleTemplate /> :
+                    <div className="tab-cont-right">
+                      <LazyLoader src={StckImage} className={'img-fluid'} width={"521"} height={"453"} alt="Become a Stock Market Agent" />
+                      {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}
+                    </div>
+                }
+
               </div>
             </div>
 

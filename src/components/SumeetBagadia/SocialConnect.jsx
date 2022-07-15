@@ -18,60 +18,60 @@ function SocialConnect() {
                 <div className="social-list">
                   <ul>
                     <li>
-                      <Link to="https://www.facebook.com/ChoiceHQ/" target="_blank">
+                      <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faFacebookF} />
                         </span>
                         <h6>Facebook</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://www.youtube.com/c/ChoiceHQ" target="_blank">
+                      <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faYoutube} />
                         </span>
                         <h6>Youtube</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://twitter.com/ChoiceHQ_Social" target="_blank">
+                      <a href="https://twitter.com/ChoiceHQ_Social" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTwitter} />
                         </span>
                         <h6>Twitter</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://www.linkedin.com/company/choice-broking" target="_blank">
+                      <a href="https://www.linkedin.com/company/choice-broking" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faLinkedinIn} />
                         </span>
                         <h6>Linkedin</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://www.instagram.com/choicehq_social/" target="_blank">
+                      <a href="https://www.instagram.com/choicehq_social/" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faInstagram} />
                         </span>
                         <h6>Instagram</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://t.me/CEBPL" target="_blank">
+                      <a href="https://t.me/CEBPL" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>
                         <h6>Equity</h6>
-                      </Link>
+                      </a>
                     </li>
                     <li>
-                      <Link to="https://t.me/CEBPLCOMMODITY" target="_blank">
+                      <a href="https://t.me/CEBPLCOMMODITY" target="_blank">
                         <span>
                           <FontAwesomeIcon icon={faTelegramPlane} />
                         </span>
                         <h6>Commodity</h6>
-                      </Link>
+                      </a>
                     </li>
                   </ul>
                 </div>

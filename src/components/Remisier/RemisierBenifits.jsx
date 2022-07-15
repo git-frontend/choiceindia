@@ -7,7 +7,7 @@ import Training from '../../assets/images/sub-broker/sub-broker-training-through
 import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platforms-app-web.svg';
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
 import {useState} from 'react';
-
+import utils from "../../Services/utils";
 
 function RemisierBenifits() {
 
@@ -87,7 +87,7 @@ function RemisierBenifits() {
                             <div className="item-next1">
                                 <h3>Become a Choice Remisier</h3>
                                 <p>Start Remisier with a trustworthy partner that can help you to grow up.</p>
-                                <a href="#" className="btn-bg btn-bg-dark"><span>Join Now</span> </a>
+                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </a>
                             </div>
                         </div>
                     </div>
