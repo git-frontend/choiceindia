@@ -9,7 +9,7 @@ function CollectionSlider() {
     const [isShown2, setIsShown2] = useState(0);
     const settings1 = {
         infinite: true,
-        speed: 2500,
+        speed: 1000,
         vertical: true,
         arrows: false,
         slidesToShow: 3,
