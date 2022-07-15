@@ -14,10 +14,9 @@ function LowBrokerageDematAccount() {
     const settings = {
         infinite: true,
         speed: 1500,
-        margin: 15,
         arrows: false,
         slidesToShow: 3,
-        autoplay: true,
+        autoplay: false,
         dots: true,
         autoplaySpeed: 3000,
         slidesToScroll: 3,
@@ -27,7 +26,6 @@ function LowBrokerageDematAccount() {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    adaptiveHeight: true,
                 },
             },
             {

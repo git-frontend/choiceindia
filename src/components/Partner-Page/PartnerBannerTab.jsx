@@ -10,7 +10,7 @@ import ImageSub3 from '../../assets/images/icons/money-bag.svg';
 import ImageSub4 from '../../assets/images/icons/insurance.svg';
 import ImageSub5 from '../../assets/images/icons/loan.svg';
 import LazyLoader from "../Common-features/LazyLoader";
-import SingleTemplate from "../Common-features/SingleTemplate";
+import SingleTemplatePartner from "../Common-features/SingleTemplatePartner";
 
 
 function PartnerBannerTab() {
@@ -47,7 +47,8 @@ function PartnerBannerTab() {
                 </div>
 
                 {
-                  skeleton ? <SingleTemplate /> :
+                  skeleton ? 
+                     <SingleTemplatePartner/>:
                     <div className="tab-cont-right">
                       <LazyLoader src={StckImage} className={'img-fluid'} width={"521"} height={"453"} alt="Become a Stock Market Agent" />
                       {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}

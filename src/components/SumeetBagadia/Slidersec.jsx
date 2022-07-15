@@ -165,7 +165,7 @@ function Slidersec() {
                                                                 }</span>
                                                             {/* Profit: 21.36 % */}
                                                         </h4>
-                                                        <h4 className="trg-achv">Target Achieved: 150 Days</h4>
+                                                        <h4 className="trg-achv">Target Achieved</h4>
                                                     </div>
                                                 </div>
                                             )
