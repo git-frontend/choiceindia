@@ -32,8 +32,8 @@ function Contactdetail() {
             <div className="container">
                <div className="row gap-5">
                   <div className="col-md-5">
-                     <div className="">
-                        <LazyLoader src={pin} className={""} alt={"Office"} />
+                     <div>
+                               <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'}/>
                         {/* <img src={pin} alt="Loading" /> */}
                         <p className="mt-3 maintitle">The Office </p>
                         <p className="subtext">Choice Wealth Management Pvt. Ltd. <br />Choice House, Shree Shakambhari Corporate Park, <br />Plt No: -156-158, J.B. Nagar, Andheri (East), <br />Mumbai - 400 099</p>
@@ -41,7 +41,7 @@ function Contactdetail() {
                   </div>
                   <div className="col-md-4">
                      <div className="">
-                        <LazyLoader src={clock} className={""} alt={"Business Hours"} />
+                               <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-3 maintitle">Business Hours</p>
                         <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm <br />
