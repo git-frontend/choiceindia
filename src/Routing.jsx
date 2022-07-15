@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
@@ -6,6 +6,7 @@ import Header from './components/Contact/ContactHeader';
 import Footer from './components/Common-features/Footer';
 import OpentoTop from './components/Common-features/OpentoTop';
 import '../src/assets/css/common.scss';
+import Home from './components/home-page/Home';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -54,6 +55,8 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 
 
 function Routing() {
+    
+
 
     return (
         <>
@@ -64,9 +67,7 @@ function Routing() {
                 <div className='App-Body'>
                     <Routes>
                         <Route exact path='/' element={
-                            <React.Suspense>
-                                < LazyHome />
-                            </React.Suspense>} />
+                          <Home></Home>} />
                         {/* <Route exact path='/' element={< Home />} /> */}
 
                         <Route exact path='/about-us' element={
