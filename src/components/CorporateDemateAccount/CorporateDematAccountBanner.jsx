@@ -19,7 +19,8 @@ const CorporateDematAccountBanner = () => {
                                 <div className="desktop">Corporate Demat Account</div>
                                 
                             </h1>
-                            <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" />
+                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
+                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} />
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -80,7 +81,7 @@ const CorporateDematAccountBanner = () => {
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
+                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <DematAccountForm />
                             </div>
 

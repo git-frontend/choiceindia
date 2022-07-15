@@ -19,7 +19,7 @@ const OpenFreeAccountBanner = () => {
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
                             </h1>
-                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" />
+                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} />
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
@@ -84,7 +84,8 @@ const OpenFreeAccountBanner = () => {
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
-                                <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
+                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <DematAccountForm />
                             </div>
 
