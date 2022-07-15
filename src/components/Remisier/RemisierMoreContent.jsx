@@ -20,10 +20,10 @@ const RemisierMoreContent = () => {
 
           <span className="read-more-target">
         <p>A Share Market Remisier is a stock market intermediary who, in essence, bridges the gap between the customer and the broking firm by introducing them to a stockbroker who can provide an easy entry into the capital markets.</p>
-        <p>The Remisier allows the <Link to="">stock brokerage firm</Link> to produce higher trading volumes and revenues without having to grow a fixed cost base or directly build a customer base. A Remisier in the stock market is held liable for any losses incurred by a stock brokerage firm because of any security transaction conducted under them.</p>
+        <p>The Remisier allows the <Link to="/">stock brokerage firm</Link> to produce higher trading volumes and revenues without having to grow a fixed cost base or directly build a customer base. A Remisier in the stock market is held liable for any losses incurred by a stock brokerage firm because of any security transaction conducted under them.</p>
                                         <br />
                                         <h3 className='ttl-para'>Work Of A Remisier</h3>
-                                        <p>A Remisier, sometimes, confused with a <Link to="">sub-broker</Link> holds its own significant role, while its responsibilities too differ from that of a sub-broker. The procedure of <Link to="">how to become a sub broker in India </Link>may differ to that of a remisier and so does the role of remisier. The remisier carries out the following functions: - </p>
+                                        <p>A Remisier, sometimes, confused with a <Link to="/sub-broker-franchise">sub-broker</Link> holds its own significant role, while its responsibilities too differ from that of a sub-broker. The procedure of <Link to="/blog/how-to-become-a-sub-broker-in-india">how to become a sub broker in India </Link>may differ to that of a remisier and so does the role of remisier. The remisier carries out the following functions: - </p>
         <ul>
             <li>To seek out new business prospects and clientele regularly.</li>
             <li>To develop a strong client base by acquiring new clients.</li>
@@ -46,7 +46,7 @@ const RemisierMoreContent = () => {
                                         </ul>
                                         <br/>
         <h3 className='ttl-para'>Benefits Of Becoming A Remisier</h3>
-        <p>As a Remisier, you can join the well-known and renowned <Link to="">choice</Link> group. Join our recognized brand and take advantage of the following benefits -</p>
+        <p>As a Remisier, you can join the well-known and renowned <Link to="/">choice</Link> group. Join our recognized brand and take advantage of the following benefits -</p>
         <ul>
             <li>
                 High Incentives
@@ -68,7 +68,7 @@ const RemisierMoreContent = () => {
             <li>
             Advanced Technical Assistance
                 <ol>
-                    <li>Cutting-edge Trading Platforms(<Link to="">Jiffy Trading App</Link> &amp; Advanced Website)</li>
+                    <li>Cutting-edge Trading Platforms(<Link to="/online-trading-app">Jiffy Trading App</Link> &amp; Advanced Website)</li>
                     <li>Hassle-Free Software for Tracking and Monthly Reports</li>
                     <li>Dedicated Whatsapp and Telegram Channels</li>
                     <li>Training through Webinars and Conferences</li>

@@ -52,7 +52,7 @@ function FableBlog() {
                                                 <h6 className="tag-act">Published at: {(data[0].published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                 {/* str.substring(0, str.length - 1);
                                                 {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
-                                                <p className="des-cont mt-3">{(data[0].meta_description) ? data[0].meta_description.substring(0, 105) : ''}<Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
+                                                <p className="des-cont mt-3">{(data[0].meta_description) ? data[0].meta_description.substring(0, 105) : ''}...<Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
                                             </div>
                                         </div>
 
