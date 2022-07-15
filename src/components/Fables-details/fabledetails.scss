@@ -95,6 +95,9 @@
             margin-top: 5rem;
             border-radius: 30px;
             width: 100%;
+            img{
+                width: 100%;
+            }
         }
     
         .textwrap {
@@ -105,6 +108,7 @@
             text-align: justify;
             img{
                 max-width: 100%;
+                height: auto;
             }
         }
     

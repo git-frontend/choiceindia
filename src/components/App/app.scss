@@ -75,6 +75,11 @@
                     margin: 2rem 0;
                     flex-direction: column;
                 }
+                .link-nrl{
+                    @media (max-width: $xs) {
+                        width: 55%;
+                    }
+                }
             }
         }
     }
@@ -288,7 +293,7 @@
 
                 @media (max-width: $sm-x) {
                     margin-right: 1rem;
-                    width: 42%;
+                    width: 60%;
                     margin-bottom: 1rem;
                 }
 
@@ -417,6 +422,9 @@
             @media (max-width:$md) {
                 padding: 0;
             }
+            @media (max-width:$sm) {
+                padding-top: 4rem;
+            }
         }
 
         @media (max-width: $sm-x) {
@@ -543,6 +551,9 @@
             }
             @media (max-width:$md) {
                 margin-left: 2rem;
+            }
+            @media (max-width:$sm) {
+                margin-left: 0;
             }
         }
 
