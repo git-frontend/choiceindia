@@ -15,7 +15,7 @@ function CollectionSlider() {
         slidesToShow: 3,
         autoplay: true,
         dots: false,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 1000,
         responsive: [
           {
             breakpoint: 992,

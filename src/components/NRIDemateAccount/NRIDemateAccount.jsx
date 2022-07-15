@@ -6,11 +6,10 @@ import DematAccountNriOpeningProcess from "../NRIDemateAccount/DematAccountNriOp
 import LowBrokerageNRIDematAccount from "../NRIDemateAccount/LowBrokerageNRIDematAccount";
 import WhyChoice from "../OpenDematAccount/WhyChoice";
 import { useState, useEffect } from 'react';
-import {
-    useLocation,
-  } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import {useLocation, } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
-  import { Link } from "react-router-dom";
+
 
 function NRIDemateAccount() {
 

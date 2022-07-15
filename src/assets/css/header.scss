@@ -104,9 +104,15 @@
                         }
                     }
                     &.login-btn{
-                        // margin-left: 3rem;
+                        margin-left: 3rem;
                         a{
                             font-family: $font-family-poppins-semibold;
+                            color: $primary;
+                            &:hover{
+                                &::before{
+                                    display: none;
+                                }
+                            }
                         }
                         @media screen and (max-width: 1170px) {
                             margin-left: 1rem;
