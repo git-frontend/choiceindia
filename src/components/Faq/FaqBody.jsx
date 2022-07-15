@@ -209,7 +209,7 @@ export default function FaqBody() {
                               // scrollToElement();
                             }}>
                               <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
-                                <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+                                      <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" width={"50"} height={"50"} />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
                               </div>
@@ -321,7 +321,7 @@ export default function FaqBody() {
                               // scrollToElement();
                             }}>
                               <div className="bx-item-cont ser" onClick={() => {chapterScroll('faq-section'); categoryClick()}}  >
-                                <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" />
+                                      <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" width={"50"} height={"50"} />
                                 <h4>{response.category_name}</h4>
                                 <p>{response.category_description}</p>
                               </div>
