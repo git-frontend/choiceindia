@@ -12,6 +12,8 @@ import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
+  import { Link } from "react-router-dom";
+  
 function OpenTradingAccount() {
     const [rendercount, setRenderCount] = useState(() => false);
 
@@ -54,9 +56,9 @@ function OpenTradingAccount() {
                                     <span className="read-more-target">Choice Broking can either open both accounts (Trading+ Demat A/c) together, or you can open a trading account with Choice Broking and connect your existing DP with a referral code, while signing up.<br /><br />
                                         <strong>Note:</strong> If the referral code is not mentioned while registering; both accounts will be opened<br /><br />
                                         Below are the steps,
-                                        Click on the <a href="https://choiceindia.com/open-free-demat-account"> Demat account opening link</a><br />
+                                        Click on the <Link to="/open-free-demat-account"> Demat account opening link</Link><br />
                                         or<br />
-                                        Download <a href="https://choiceindia.com/online-trading-app">Jiffy App</a> from <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy">Playstore</a> or <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261">Appstore</a> and start registration<br /><br />
+                                        Download <Link to="/online-trading-app">Jiffy App</Link> from <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy">Playstore</a> or <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261">Appstore</a> and start registration<br /><br />
                                         <ul>
                                             <li>Fill the required details</li>
                                             <li>Upload the required documents along with PP photograph</li>
@@ -136,7 +138,7 @@ function OpenTradingAccount() {
                                         <li>Rs.1500/- + GST - Lifetime AMC Covered</li>
                                         <li>Rs.3000/- Full Refundable AMC (Full amount will be refunded when you close the account with Choice Broking)</li>
                                         </ul>
-                                        For more details regarding the total applicable <a href="https://choiceindia.com/brokerage-charges">brokerage charges</a>.
+                                        For more details regarding the total applicable <Link to="/brokerage-charges">brokerage charges</Link>.
                                         <br />
                                     </span></span> <label for="post-1" class="read-more-trigger moreless-button"></label>
                             </div>

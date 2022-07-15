@@ -7,6 +7,25 @@ import meta_tags from './Data/MetaTags';
 // } from 'react-router-dom';
 
 function App() {
+    /**To Execute one timeonly */
+//     const [trigger, setTrigger] = useState(false)
+//   useEffect(() => {
+//     setTrigger(true)
+//     if (trigger === true) {
+//       console.log("app called")
+//      setTimeout(()=>{
+//       window.scrollTo({ top: 0, behavior: 'smooth' })
+//      },500)
+//     }
+
+// }, [trigger])
+
+useEffect(()=>{
+setTimeout(()=>{
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+},1000)
+})
+
 
   // const location = useLocation();
   // const [location , setLocation] = useState(useLocation());
