@@ -16,7 +16,7 @@ const WhyChoice = () => {
                                 <div className="leftsect">
                                     <h2 className="secttile">चॉईसच का?</h2>
                                     <div className="img">
-                                        <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
+                                        <img src={Image16} alt={"चॉइस मोफत डिमॅट खाते उघडणे"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
                                 </div>
                                 <div className="rightsect">
