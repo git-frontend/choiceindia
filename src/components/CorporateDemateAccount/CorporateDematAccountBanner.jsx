@@ -79,8 +79,8 @@ const CorporateDematAccountBanner = () => {
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
                             <div className="formwrap d-flex justify-content-end ">
-                                <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
-                                {/* <LazyLoader src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                <LazyLoader src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" />
                                 <DematAccountForm />
                             </div>
 
