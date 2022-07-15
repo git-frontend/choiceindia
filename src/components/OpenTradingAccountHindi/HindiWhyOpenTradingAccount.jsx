@@ -56,7 +56,7 @@ function HindiWhyOpenTradingAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"Low Brokerage Demat Account"} />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"कम ब्रोकरेज डीमैट खाता"} />
                                             </div>
                                             <div className="card-block">
 
@@ -66,7 +66,7 @@ function HindiWhyOpenTradingAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt={"Free Call for Trade Facility"} className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt={"ट्रेड सुविधा के लिए मुफ्त कॉल"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -76,7 +76,7 @@ function HindiWhyOpenTradingAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt={"Refer and Earn Demat Account"} className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt={"डीमैट खाता रेफेर करो और कमाएं "} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -88,7 +88,7 @@ function HindiWhyOpenTradingAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"40"} height={"41"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
+                                                <img src={Image10} width={"40"} height={"41"} alt={"उन्नत ट्रेडिंग ऐप और प्लेटफॉर्म"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -100,7 +100,7 @@ function HindiWhyOpenTradingAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} width={"40"} height={"41"} alt={"Free Paperless Demat Account Opening"} className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt={"नि:शुल्क पेपरलेस डीमैट खाता खोलना"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
