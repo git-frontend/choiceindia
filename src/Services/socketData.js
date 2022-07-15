@@ -602,42 +602,6 @@ export function subscribeMultitouchline(tokenList,onRealtimeCallback,sessionIdDa
 	}
 
 }
-  /**
-   * Generate Session Id
-   */
-    let generateSessionId=() =>{
-    fetch('https://api.jiffy.in/api/settings/GenKey')
-      .then(response => {
-        return response.json();
-      })
-      .then(res => {
-        let unique = res.Response
-        var myHeaders = new Headers();
-        myHeaders.append("authorization", `${unique} ${unique}`);
-        var requestOptions = {
-          method: 'POST',
-          headers: myHeaders,
-          redirect: 'follow'
-        };
-        fetch('https://jiffy.choiceindia.com/api/jiffy/Basket/List', requestOptions)
-          .then(response => {
-            return response.json();
-          })
-          .then(res => {
-            values = res.Response.baskets;
-
-            let basketFormatted = {}
-
-            values.forEach(ele => {
-              basketFormatted[ele.name] = ele
-
-            })
-            setValue(basketFormatted);
-
-          });
-      })
-
-  }
 
 
 /**
