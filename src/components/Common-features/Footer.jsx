@@ -19,11 +19,9 @@ function Footer() {
     "content": "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.",
     "isShow": false,
     "toggleModal":toggleModal,
-    "closebtn": "Close Button"
+    "closebtn": "Close"
   });
   const [data1, setData1] = useState(false);
-
-
 
   function chapterScroll(id) {
     var element = document.getElementById(id);
