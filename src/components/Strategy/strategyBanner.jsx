@@ -44,17 +44,17 @@ function StrategyBanner() {
                                 {/* <img src={bannerimage} alt="Free Trading Strategy Builder" className="img-fluid img" /> */}
                                 <div className="wrap">
                                     {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
-                                    <img src={bannericon1} className="banner-icon" alt="create stratezy" />
+                                    <img src={bannericon1} className="banner-icon img-fluid" width="26" height="31" alt="create stratezy" />
                                     <p>create stratezy</p>
                                 </div>
                                 <div className="wrapone">
                                     {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
-                                    <img src={bannericon3} className="banner-icon" alt="Run Backtest" />
+                                    <img src={bannericon3} className="banner-icon img-fluid" width="26" height="24" alt="Run Backtest" />
                                     <p>Run Backtest</p>
                                 </div>
                                 <div className="wraptwo">
                                     {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
-                                    <img src={bannericon2} className="banner-icon" alt="Virtual/Live Trade" />
+                                    <img src={bannericon2} className="banner-icon img-fluid" width="26" height="41" alt="Virtual/Live Trade" />
                                     <p>Virtual/Live Trade</p>
                                 </div>
                             </div>
