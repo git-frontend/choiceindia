@@ -9,7 +9,7 @@ function CollectionSlider() {
     const [isShown3, setIsShown3] = useState(0);
     const settings1 = {
       infinite: true,
-      speed: 1000,
+      speed: 1500,
       vertical: true,
       focusOnSelect: true,
       touchMove: true,
@@ -17,7 +17,7 @@ function CollectionSlider() {
       slidesToShow: 3,
       autoplay: true,
       dots: false,
-      autoplaySpeed: 1000,
+      autoplaySpeed: 1500,
       slidesToScroll: 1,
       swipeToSlide: true,
      
