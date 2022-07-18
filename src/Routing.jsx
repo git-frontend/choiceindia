@@ -53,6 +53,8 @@ const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
+const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
+
 
 function Routing() {
     
@@ -240,6 +242,12 @@ function Routing() {
                     <Route exact path='/research-detailed/:id/:catid' element={
                             <React.Suspense>
                                 < Lazyresearchdetailed />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/choice-campaigns/open-account/' element={
+                            <React.Suspense>
+                                < LazyOpenDemat />
                             </React.Suspense>
                         } />
 

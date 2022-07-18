@@ -38,9 +38,6 @@ function CollectionSlider() {
                               <Slider {...settings1}
                               afterChange={(ev) => {
                                 setIsShown3(ev)
-                                
-                                console.log("check id" ,ev);
-                                // console.log("check id2" ,isShown2);
                               }}
         
                             >
