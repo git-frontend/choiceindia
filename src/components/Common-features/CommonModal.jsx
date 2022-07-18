@@ -6,13 +6,13 @@ import './common-modal.scss'
 function CommonModal(props) {
 console.log("PROPS",props)
     const [display, setDisplay] = useState(true);
-   // console.log('MODAL', props);
 
     useEffect(() => {
     }, [])
 
     function closeModal(){
         setDisplay(false);
+        props.toggleModal(false)
     }
 
     return (

@@ -11,17 +11,21 @@ import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
 function Footer() {
-
+  let toggleModal=(val)=>{
+    setData1(val)
+  }
   const [data, setData] = useState({
     "title": "Terms And Conditions",
     "content": "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.",
     "isShow": false,
+    "toggleModal":toggleModal,
     "closebtn": "Close Button"
   });
   const [data1, setData1] = useState(false);
 
+
+
   function chapterScroll(id) {
-    // console.log("check1",id)
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -33,25 +37,16 @@ function Footer() {
   }
 
 useEffect(()=>{
-console.log("DATA",data)
 },[data])
   
   function openModal() {
       setData1(true)
     let obj=data
     obj.isShow=true
-    //console.log('open modal called',data,obj);
     
     setData(obj);
 
-   // console.log('open modal called',data,obj);
-    // <CommonModal {...props}/>
   }
-
-  // function closeModal() {
-  //   console.log('Close modal');
-  //   setData(false);
-  // }
 
   return (
     <>
