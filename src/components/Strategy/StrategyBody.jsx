@@ -114,7 +114,7 @@ function StrategyBody() {
                                 <div className='algo' id="strategy-video">
 
                                     {!videoVisibility && <div className="youtube-container">
-                                        <img className="youtube-container-img" src={youtubeimg} alt="Loading" onClick={() => {
+                                        <img className="youtube-container-img" src={youtubeimg} width="1085" height="610" alt="Loading" onClick={() => {
 
                                             setVideoVisibility(true)
                                             loadstrategy()

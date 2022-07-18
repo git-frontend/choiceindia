@@ -13,6 +13,42 @@ body {
     font-family: $font-family-poppins-regular;
 }
 
+@mixin skeleton {
+    background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+    border-radius: 5px;
+    background-size: 200% 100%;
+    animation: 1.5s shine linear infinite;
+}
+
+@mixin skeletonhide {
+    animation: hideMe 4s forwards;
+}
+
+/** keyframes added */
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
+}
+
+@keyframes hideMe {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.stratezy-faq-temp{
+    width: 80%;
+    height: 400px;
+    margin: auto;
+
+    @include skeleton;
+}
+
 .statezy-banner {
     padding: 17rem 0;
     background: url('../images/stratezy-page/banner-bg.webp') no-repeat;

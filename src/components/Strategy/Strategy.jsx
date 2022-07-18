@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./css/stratezy-landing-page.scss";
 import FaqAccordion from "./StartegyFaq";
 import WhyStrategy from "./Whystrategy";
@@ -9,10 +9,16 @@ import StrategyBody from "./StrategyBody";
 
 function Strategy() {
   const [skeleton, setSkeleton] = React.useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 700);
-  function myGreeting() {
+
+  const [isFaq, setIsFaq] = useState(() => true);
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 700)
+
+  setTimeout(() => {
+    setIsFaq(() => false);
+  },5000)
 
   return (
 
@@ -41,8 +47,11 @@ function Strategy() {
           <StrategyBanner></StrategyBanner>
           <WhyStrategy></WhyStrategy>
           <StrategyBody></StrategyBody>
-          <FaqAccordion></FaqAccordion>
 
+          {
+            isFaq? <div className="stratezy-faq-temp"></div>: <FaqAccordion></FaqAccordion> 
+          }
+        
 
         </main>
       </div>
