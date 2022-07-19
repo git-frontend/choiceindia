@@ -20,7 +20,7 @@ const MinorDematAccountBanner = () => {
                                 
                             </h1>
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
-                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} />
+                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
