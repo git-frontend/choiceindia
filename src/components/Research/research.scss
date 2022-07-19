@@ -770,38 +770,11 @@
   }
  }
   .sliderwrap{
-      .slider-item{
-         margin-bottom: 4.875rem;
-         @media (max-width:$sm) {
-          margin-bottom: 2rem;
-           }
-          .headtext{
-              font-family: $font-family-poppins-regular;
-              font-weight: 400;
-              color: $whiteColor;
-              line-height: 5.25rem;
-              font-size: 3.5rem;
-              @media (max-width:$md) {
-                font-size: 2.5rem;
-                line-height: 3.5rem;
-              }
-              
-          }
-          .subtext{
-              font-family: $font-family-poppins-regular;
-              font-weight: 400;
-              color: $whiteColor;
-              line-height:2.8125rem;
-              font-size: 1.8rem;
-              display: none;
-              @media (max-width:$md) {
-                  font-size: 1.5rem;
-                  line-height:2.5rem;
-              }
-          }
-          &.active{
-              border-left: 0.8125rem solid $bgcolor-yellow;
-              padding-left: 0.7125rem;
+      
+        .slick-current{
+          .slider-item{
+          border-left: 0.8125rem solid $bgcolor-yellow;
+              padding-left: 1.125rem;
               @media (max-width:$sm) {
                   border-left: 0.5rem solid $bgcolor-yellow;
               }
@@ -820,6 +793,39 @@
           @media (max-width:$md) {
             margin-bottom: 2.5rem;
           }
+        }
+
+          .slider-item{
+
+            margin-bottom: 4.875rem;
+            @media (max-width:$sm) {
+             margin-bottom: 2rem;
+              }
+             .headtext{
+                 font-family: $font-family-poppins-regular;
+                 font-weight: 400;
+                 color: $whiteColor;
+                 line-height: 5.25rem;
+                 font-size: 3.5rem;
+                 @media (max-width:$md) {
+                   font-size: 2.5rem;
+                   line-height: 3.5rem;
+                 }
+                 
+             }
+             .subtext{
+                 font-family: $font-family-poppins-regular;
+                 font-weight: 400;
+                 color: $whiteColor;
+                 line-height:2.8125rem;
+                 font-size: 1.8rem;
+                 display: none;
+                 @media (max-width:$md) {
+                     font-size: 1.5rem;
+                     line-height:2.5rem;
+                 }
+             }
+              
       }
   }
   .imgwrap{

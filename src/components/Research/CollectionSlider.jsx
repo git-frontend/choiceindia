@@ -4,24 +4,56 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import Researchimg from "../../Data/Research";
+import { useEffect } from "react";
 
 function CollectionSlider() {
     const [isShown3, setIsShown3] = useState(0);
+    const [nav,setNav]=useState();
+    const [nav1,setNav1]=useState();
+    const [trigger, setTrigger] = useState(false);
+    const [slider1,setslider1]=useState();
+    const [slider2,setslider2]=useState();
+
     const settings1 = {
       infinite: true,
       speed: 1500,
       vertical: true,
-      focusOnSelect: true,
-      touchMove: true,
-      arrows: false,
       slidesToShow: 3,
+      arrows:false,
       autoplay: true,
       dots: false,
-      autoplaySpeed: 1500,
+      autoplaySpeed: 2000,
       slidesToScroll: 1,
       swipeToSlide: true,
      
     };
+
+
+    const settings = {
+        infinite: true,
+        speed: 1500,
+        slidesToShow: 1,
+        autoplay: true,
+        arrows:false,
+        dots: false,
+        fade:true,
+        autoplaySpeed: 2000,
+        slidesToScroll: 1,
+        swipeToSlide: true,
+       
+      };
+      useEffect(() => {
+        setTrigger(true)
+        if (trigger === true) {
+         
+          setNav(slider1)
+          setNav1(slider2)
+    
+    
+        }
+    
+      }, [trigger])
+
 
    
     return (
@@ -36,20 +68,20 @@ function CollectionSlider() {
                                 <div className="collection-slider">
 
                               <Slider {...settings1}
-                              afterChange={(ev) => {
-                                setIsShown3(ev)
-                              }}
-        
+                              asNavFor={nav1}
+                              ref={slider => setslider1(slider)}
+                            //   afterChange={(ev) => {
+                            //     setIsShown3(ev)
+                            //     console.log("check",ev);
+                            //   }}
                             >
                                 {
-
-
                                     Researchimg?.map((response, index) => {
 
                                         let classNm = "slider-item " + ((index === isShown3) ? "active" : "")
                                         return(
 
-                                            <div key={response.id} className={classNm} onChange={() => setIsShown3(index)} >
+                                            <div key={response.id} className={classNm} onChange={() => setIsShown3(response.id)} >
                                             <h3 className="headtext">{response.title}</h3>
                                             <p className="subtext">{response.description}</p>
                                             </div>
@@ -69,9 +101,23 @@ function CollectionSlider() {
 
                         </div>
                         <div className="col-xl-7 col-md-6">
+                        <Slider {...settings}
+                        asNavFor={nav}
+                        ref={slider => setslider2(slider)}
+                        >
+                        {
+                                    Researchimg?.map((response, index) => {
+                                        return(
                             <div className="imgwrap">
-                                <img src={Researchimg[isShown3].image} alt="Collection" className="img-fluid" width={"708"} height={"645"}></img>
+                                <img src={response.image} alt="Collection" className="img-fluid" width={"708"} height={"645"}></img>
                             </div>
+                                        )
+                                    }
+                        
+                        )
+                                }
+                
+                            </Slider>
 
                         </div>
                     </div>
