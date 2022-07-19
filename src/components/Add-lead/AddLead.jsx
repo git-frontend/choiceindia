@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
-function DematPage() {
+function AddLead() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -195,4 +195,4 @@ function DematPage() {
   );
 }
 
-export default DematPage;
+export default AddLead;

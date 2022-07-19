@@ -54,7 +54,7 @@ const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
 const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
-
+const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 
 function Routing() {
     
@@ -248,6 +248,12 @@ function Routing() {
                         <Route exact path='/choice-campaigns/open-account/' element={
                             <React.Suspense>
                                 < LazyOpenDemat />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/Add-lead' element={
+                            <React.Suspense>
+                                < LazyAddLead />
                             </React.Suspense>
                         } />
 
