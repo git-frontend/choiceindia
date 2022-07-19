@@ -773,14 +773,14 @@ body {
   display: block;
   margin: 0 auto;
   right: 10%;
-  transform: translate(20%);
+  /* transform: translate(20%); */
 }
 
 @media (max-width: 991px) {
   .bannersection .signal-form {
     position: relative;
     right: 0;
-    transform: none;
+    /* transform: none; */
   }
 }
 
@@ -820,12 +820,13 @@ body {
   }
 }
 
+
 .bannersection .signal-form form {
-  border-radius: 12px;
+  /* border-radius: 12px;
   background: #fff;
   width: 300px;
   float: right;
-  padding: 30px 25px 25px 25px;
+  padding: 30px 25px 25px 25px; */
   box-shadow: 0px 6px 24px #00000029;
 }
 
@@ -2287,5 +2288,16 @@ body {
   /* padding-left: 4rem;
   padding-right: 4rem; */
 }
+.popmd{
+  position: fixed;
+  z-index: 1;
+  top: 24%;
+  display: block;
+  margin: 0 auto;
+  right: 10%;
+
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

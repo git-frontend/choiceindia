@@ -1,42 +1,27 @@
-import React from "react";
+import React,{useState,useRef}from "react";
 import "./css/landingpage.css";
-import { sendOTP, resendOTPAgain, OTPOnCall, verifyOTP } from './RestAPIs.js';
 import img_data from './ImgData.js';
+import DematAccountForm from "../Common-features/DematAccountForm";
+import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
+import Template2 from "../Common-features/Template2";
 function Opendemat(){
-    const [mobileNumber, setMobileNumber] = React.useState('');
+    
+  
 
-  const [acceptTerms, setAcceptTerms] = React.useState(true);
-  const [errors, setErrors] = React.useState({ "invalidMobile": false, "isTermsNotChecked": false, "required": false });
-
-  const [mobileNumberFooter, setMobileNumberFooter] = React.useState('');
-  const [acceptTermsFooter, setAcceptTermsFooter] = React.useState(true);
-  const [errorsFooter, setErrorsFooter] = React.useState({ "invalidMobile": false, "isTermsNotChecked": false, "required": false });
-
-  const [mobileNumberPopup, setMobileNumberPopup] = React.useState('');
-  const [acceptTermsPopup, setAcceptTermsPopup] = React.useState(true);
-  const [errorsPopup, setErrorsPopup] = React.useState({ "invalidMobile": false, "isTermsNotChecked": false, "required": false });
-
-  const [showAdPopup, setShowAdPopup] = React.useState(false);
-
-  const [showModal, setShowModal] = React.useState(false);
-  const [display, setDisplay] = React.useState('');
-  const [loaders, setLoaders] = React.useState({ "banner": false, "footer": false, "popup": false });
-  const [ID, setID] = React.useState('');
-  const [APIError, setAPIError] = React.useState('');
-  const [popupAPIError, setPopupAPIError] = React.useState('');
-
-  var UTMCampaign = React.useRef('');
-  var UTMMedium = React.useRef('');
-  var UTMSource = React.useRef('');
-  var refercode = React.useRef('');
+  var UTMCampaign = useRef('');
+  var UTMMedium = useRef('');
+  var UTMSource = useRef('');
+  var refercode = useRef('');
 
   /**to set the skeleton */
-  const [skeleton, setSkeleton] = React.useState(() => true);
-  const myTimeout = setTimeout(myGreeting, 900);
+  const [skeleton, setSkeleton] =useState(() => true);
 
-  function myGreeting() {
+
+  setTimeout(() => {
     setSkeleton(() => false);
-  }
+  }, 200)
+
+  
 
   function DelayloadingImages() {
     var imgDiv;
@@ -52,200 +37,6 @@ function Opendemat(){
   }, [])
 
 
-  function handleMobile(e) {
-    const regEx = /^(6|9|8|7)([0-9]{9})$/i;
-    let value = e.target.value.replace(/\D/g, "");
-    setMobileNumber(value);
-    if (value.length === 10 && !regEx.test(value)) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (value.length === 10 && regEx.test(value)) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'invalidMobile': false
-      }));
-    }
-    if (value.length) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'required': false
-      }));
-    } else {
-      setErrors((prevError) => ({
-        "invalidMobile": false,
-        "isTermsNotChecked": false,
-        'required': true
-      }));
-    }
-  }
-
-  function handleTermsCondition(e) {
-    setAcceptTerms(e.target.checked);
-    if (!e.target.checked) {
-      setErrors({
-        ...errors,
-        'isTermsNotChecked': true
-      });
-    } else {
-      setErrors({
-        ...errors,
-        'isTermsNotChecked': false
-      });
-    }
-  }
-
-  function handleMobileFooter(e) {
-    const regEx = /^(6|9|8|7)([0-9]{9})$/i;
-    let value = e.target.value.replace(/\D/g, "");
-    setMobileNumberFooter(value);
-    if (value.length === 10 && !regEx.test(value)) {
-      setErrorsFooter({
-        ...errorsFooter,
-        'invalidMobile': true
-      });
-    } else if (value.length === 10 && regEx.test(value)) {
-      setErrorsFooter({
-        ...errorsFooter,
-        'invalidMobile': false
-      });
-    }
-  }
-
-  function handleTermsConditionFooter(e) {
-    setAcceptTermsFooter(e.target.checked);
-    if (!e.target.checked) {
-      setErrorsFooter({
-        ...errorsFooter,
-        'isTermsNotChecked': true
-      });
-    } else {
-      setErrorsFooter({
-        ...errorsFooter,
-        'isTermsNotChecked': false
-      });
-    }
-  }
-
-  function handleMobilePopup(e) {
-    const regEx = /^(6|9|8|7)([0-9]{9})$/i;
-    let value = e.target.value.replace(/\D/g, "");
-    setMobileNumberPopup(value);
-    if (value.length === 10 && !regEx.test(value)) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (value.length === 10 && regEx.test(value)) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'invalidMobile': false
-      }));
-    }
-    if (value.length) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'required': false
-      }));
-    } else {
-      setErrorsPopup((prevError) => ({
-        "invalidMobile": false,
-        "isTermsNotChecked": false,
-        'required': true
-      }));
-    }
-  }
-
-  function handleTermsConditionPopup(e) {
-    setAcceptTermsPopup(e.target.checked);
-    if (!e.target.checked) {
-      setErrorsPopup({
-        ...errorsPopup,
-        'isTermsNotChecked': true
-      });
-    } else {
-      setErrorsPopup({
-        ...errorsPopup,
-        'isTermsNotChecked': false
-      });
-    }
-  }
-
-  function sendOTPBtnClicked(type) {
-    const regEx = /^(6|9|8|7)([0-9]{9})$/i;
-
-    if (!mobileNumber.length) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'required': true
-      }));
-    } else if (mobileNumber.length < 10) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (mobileNumber.length === 10 && !regEx.test(mobileNumber)) {
-      setErrors((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (mobileNumber.length === 10 && regEx.test(mobileNumber)) {
-      fetchQueryParams();
-      // document.getElementById('ModalOpen').click();
-      setDisplay(type);
-      // setShowModal(true);
-      getSendOTP(type);
-    }
-  }
-
-  function sendOTPPopupBtnClicked(type) {
-    const regEx = /^(6|9|8|7)([0-9]{9})$/i;
-
-    if (!mobileNumberPopup.length) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'required': true
-      }));
-    } else if (mobileNumberPopup.length < 10) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (mobileNumberPopup.length === 10 && !regEx.test(mobileNumberPopup)) {
-      setErrorsPopup((prevError) => ({
-        ...prevError,
-        'invalidMobile': true
-      }));
-    } else if (mobileNumberPopup.length === 10 && regEx.test(mobileNumberPopup)) {
-      fetchQueryParams();
-      // document.getElementById('ModalOpen').click();
-      setDisplay(type);
-      // hideAdPopup();
-      // setShowModal(true);
-      getSendOTP(type);
-    }
-  }
-
-  function sendOTPBtnFooterClicked(type) {
-    fetchQueryParams();
-    // document.getElementById('ModalOpen').click();
-    setDisplay(type);
-    console.log("check");
-    // setShowModal(true);
-    getSendOTP(type);
-  }
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      openAdPopup();
-    }, 60000);
-  }, []);
-
-  React.useEffect(() => {
-    fetchQueryParams();
-  }, []);
-
   function fetchQueryParams() {
     const queryParam = window.location.search;
     const params = new URLSearchParams(queryParam);
@@ -255,149 +46,6 @@ function Opendemat(){
     refercode.current = (params.get('refercode') && atob(params.get('refercode'))) || '';
   }
 
-  function openAdPopup() {
-    setShowAdPopup(true);
-  }
-
-  function hideAdPopup() {
-    setShowAdPopup(false);
-  }
-
-  function setBtnLoader(type) {
-    let obj = { ...loaders };
-    obj[type] = true;
-    setLoaders(obj);
-  }
-
-  function hideBtnLoader(type) {
-    let obj = { ...loaders };
-    obj.type = true;
-    setLoaders(obj);
-  }
-
-  function showErrorPopup() {
-    document.getElementById('ErrorModalOpen').click();
-  }
-
-  function getSendOTP(type) {
-    setBtnLoader(type);
-    let post_data = {
-      "mobile_number": type === 'popup' ? mobileNumberPopup : type === 'footer' ? mobileNumberFooter : mobileNumber,
-      "product": "JIFFY",
-      "request_source": "CHOICEINDIA",
-      "source": "CHOICEINDIA",
-      "user_consent": "1",
-      "referred_id": refercode.current || null,
-      "sub_ref": null,
-      "utm_campaign": UTMCampaign.current || 'blog_leads',
-      "utm_content": null,
-      "utm_custom": null,
-      "utm_medium": UTMMedium.current || (type === 'popup' ? 'popup_seo_leads' : type === 'footer' ? 'footer_seo_leads' : 'sidebar_seo_leads'),
-      "utm_source": UTMSource.current || 'seo_demat_leads',
-      "utm_term": null
-    }
-
-    sendOTP(post_data).then(response => {
-      if (response.ok) {
-        return response.json();
-      }
-      return Promise.reject(response);
-    }).then((res) => {
-      hideBtnLoader();
-      if (res && res.Body) {
-        setID(res.Body.otp_session_id);
-        document.getElementById('ModalOpen').click();
-        if (res.Body["new_lead"] == true) {
-          window.dataLayer = window.dataLayer || [];
-          window.dataLayer.push({
-            'event': 'lead',
-          })
-        }
-        setShowModal(true);
-        if (type === 'popup') {
-          hideAdPopup();
-        }
-      } else {
-        if (type === 'popup') {
-          setPopupAPIError((res && res.Message) ? res.Message : 'Something went wrong!');
-        } else {
-          setAPIError((res && res.Message) ? res.Message : 'Something went wrong!');
-          showErrorPopup();
-        }
-      }
-    }).catch((error) => {
-      hideBtnLoader();
-      if (type === 'popup') {
-        setPopupAPIError((error && error.Message) ? error.Message : 'Something went wrong!');
-      } else {
-        setAPIError((error && error.Message) ? error.Message : 'Something went wrong!');
-        showErrorPopup();
-      }
-      // return APIError;
-    })
-   
-  }
-
-  function renderFreeDematAccountPopup() {
-    return (
-      <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
-        <div className="exit-intent-sleekbox-popup">
-          <div className="popup-sub-row">
-            <div className="leftwrap">
-              <div className="popup-sub">
-                <h4 >100% Free Demat Account  </h4>
-                <h4 className="dsmblock">100% Free <span> Demat Account + 1st Year</span> Free AMC</h4>
-                <ul>
-                  <li><span> No </span> Account <span>Opening Fee</span></li>
-                  <li><span> Lowest DP </span>  Charges (Rs.10 only)</li>
-                  <li> <span>Zero Auto Sqaure Off </span>Charges</li>
-                  <li><span>Free Call</span>  for Trade Facility</li>
-                </ul>
-                <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideAdPopup}>Remind Me Later</a></p>
-              </div>
-            </div>
-            <div className="popup-sub-right">
-              <div className="signal-form" id="form-banner">
-                <form id="sso_form-pop" name="sso_form" className="mt-4 enq-form dmt_form" method="post">
-                  <input type="hidden" name="scode" id="scode" value="JFP" />
-                  <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
-                  <h4 className="desktophide">+ 1st Year Free AMC </h4>
-                  <div className="form-group">
-                    <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label>
-                    {/* onInput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" */}
-                    <input type="text" autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumberPopup} onChange={handleMobilePopup} />
-                    <div>
-                      <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errorsPopup.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                      <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errorsPopup.required ? 'Mobile Number is Required' : ''}</small>
-                    </div>
-                  </div>
-                  <div className="form-check">
-                    {/*  defaultChecked={acceptTermsPopup} onChange={handleTermsConditionPopup} */}
-                    <input type="checkbox" className="tick_by_def" data="JFP" id="terms_and_conditions" name="terms_and_conditions" checked readOnly />
-                    <label className="tc" target="_blank" htmlFor="exampleCheck1">I agree that I have read
-                      &amp; accept the <a className="termsPopup" data-bs-toggle="modal" data-bs-target="#TermsCondition">Terms
-                        &amp; Conditions</a></label>
-                  </div>
-                  <button type="button" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" onClick={() => sendOTPPopupBtnClicked('popup')} disabled={loaders.popup}>{renderBtnOrLoader('popup', 'B')}</button>
-                  <div style={{ textAlign: 'center' }}>
-                    <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{popupAPIError || ''}</small>
-                  </div>
-                  {/* <input type="button" id="dem_btn_submit" value="Send OTP" className="btn btn-primary w-100 btn-f-sm signal-same-btn " onClick={() => sendOTPBtnClicked('popup')} disabled={errorsPopup.invalidMobile || errorsPopup.isTermsNotChecked || mobileNumberPopup.length !== 10} />
-                  <div><span id="formError" style={{ 'color': 'red' }}></span></div> */}
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  function scrollToView(id) {
-    const element = document.getElementById(id);
-    if (element)
-      element.scrollIntoView(true);
-  }
 
   function chapterScroll(id) {
     var element = document.getElementById(id);
@@ -410,63 +58,16 @@ function Opendemat(){
     });
   }
 
-  function renderBtnOrLoader(type, color) {
-    return (loaders[type] ? (type !== 'banner' ? (<div className={"loader" + color}></div>) : (<span className={"loader" + color}></span>)) : (<span >Send OTP</span>))
-  }
+ 
 
   return (
     <div className="Home" id="root">
       <div>
         {
           skeleton ?
-            <div className='template-parent'>
-
-              <section className='template-banner'>
-                <div>
-                  <p className='template-banner-div'>
-
-                  </p>
-                </div>
-              </section>
-
-              <section className='template-child-2'>
-                <h1></h1>
-                <p></p>
-              </section>
-
-              <section className='template-child-3'>
-                <div className='template-child3-content'>
-                  <p></p>
-                  <p></p>
-                  <p></p>
-                </div>
-                <div className='template-child3-img'>
-
-                </div>
-              </section>
-
-              <section className='template-child-4'>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-              </section>
-
-              <section className='template-child-5'>
-                <div>
-
-                </div>
-              </section>
-            </div> :
+        <Template2 />
+         :
             <main>
-              {showAdPopup ? renderFreeDematAccountPopup() : ''}
-              <button type="button" id="ModalOpen" data-bs-toggle="modal" data-bs-target="#exampleModal" hidden></button>
-              <button type="button" id="ErrorModalOpen" data-bs-toggle="modal" data-bs-target="#ErrorPopup" hidden></button>
-             
 
               <section className="bannersection">
                 <div className="container">
@@ -486,45 +87,10 @@ function Opendemat(){
                       </div>
                     </div>
                     <div className="col-md-5">
-                      <div className="rightsec">
-                        <div className="signal-form" id="form-banner">
-                          <form id="enq_form" className="mt-4 enq-form">
-                            <fieldset>
+                      <div className="rightsec popmd">
 
-                              <div className="title-form">
-                                <h3 className="formtitle">Open Free Account</h3>
-                              </div>
+                            <DematAccountForm></DematAccountForm>
 
-                              <div className="form-group">
-                                <label htmlFor="mobile-number" hidden>Mobile Number <span style={{ 'color': 'red' }}>*</span></label>
-                                {/* required aria-describedby="Mobile Number*" */}
-                                {/* value={mobileNumber} */}
-                                <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                <label className="hello">Mobile Number<span style={{ 'color': 'red' }}>*</span></label>
-                                <div>
-                                  <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                                  <small id="mobile_no_error" className="errormsg text-danger">{errors.required ? 'Mobile Number is Required' : ''}</small>
-                                </div>
-                              </div>
-
-                              <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                                {/* defaultChecked={acceptTerms} onChange={handleTermsCondition} */}
-                                <label><input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
-                                </label>
-                                <div className="termcon termcon1">
-                                  <div> I agree that I have read &amp; accept the<a data-bs-toggle="modal" data-bs-target="#TermsCondition" className="tc"> Terms
-                                    &amp; Conditions</a>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="form-group">
-                                <button type="button" className="form-btn" onClick={() => { sendOTPBtnClicked('banner') }} disabled={loaders.banner}>{renderBtnOrLoader('banner', 'B')}</button>
-                              </div>
-                            </fieldset>
-                            <div><span id="formError" className="errormsg"></span></div>
-                            <div><span id="error-msg" className="errormsg"></span></div>
-                          </form>
-                        </div>
                       </div>
                     </div>
                   </div>
@@ -1625,56 +1191,13 @@ function Opendemat(){
                     </div>
 
                   </div>
-                  <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                    <button className=" primary-orange-btn scroll-top-account openbtn" onClick={openAdPopup}>Open Free Account</button>
-                  </div>
-                  <button className="scroll-top" onClick={() => scrollToView('header')}>
-                    <svg aria-hidden="true" height="20" width="20" focusable="false" data-prefix="fas" data-icon="angle-up"
-                      className="svg-inline--fa fa-angle-up " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                      <path fill="currentColor"
-                        d="M352 352c-8.188 0-16.38-3.125-22.62-9.375L192 205.3l-137.4 137.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160c12.5 12.5 12.5 32.75 0 45.25C368.4 348.9 360.2 352 352 352z">
-                      </path>
-                    </svg>
-                  </button>
+                  
                 </div>
 
               </section>
 
               <section className="stickybottom">
-                <div className="container mx-auto">
-                  <div className="d-flex justify-content-around">
-                    <div>
-                      <h2 className="text"><span>Open Free</span> Demat Account</h2>
-                    </div>
-
-                    <form className="d-flex justify-content-around">
-                      <div className="form-group ">
-
-                        <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no"
-                          name="mobile_no" placeholder="Mobile Number*" required aria-describedby="Mobile Number*"
-                          autoComplete="off" maxLength="10" value={mobileNumberFooter} onChange={handleMobileFooter} />
-
-                        <div>
-                          <small id="mobile_no_error" className="errormsg text-danger">{errorsFooter.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                        </div>
-                      </div>
-                      <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                        <label>
-                          {/* defaultChecked={acceptTermsFooter} onChange={handleTermsConditionFooter} */}
-                          <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
-                        </label>
-                        <div className="termcon termcon1 ">
-                          <div> I agree that I have read &amp; accept the<a data-bs-toggle="modal" data-bs-target="#TermsCondition" className="tc"> Terms &amp; Conditions</a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="form-group">
-                        <button type="button" className="form-btn sendotp" onClick={() => sendOTPBtnFooterClicked('footer')} disabled={errorsFooter.invalidMobile || errorsFooter.isTermsNotChecked || mobileNumberFooter.length !== 10 || loaders.footer}>{renderBtnOrLoader('footer', 'B')}</button>
-                      </div>
-                    </form>
-
-                  </div>
-                </div>
+              <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
 
@@ -1685,300 +1208,11 @@ function Opendemat(){
       </div>
 
 
-      <div className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content modal-whole">
-            <div className="modal-header modal-head">
-              <h5 className="modal-title" id="exampleModalLabel">Enter OTP</h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={() => setShowModal(false)}></button>
-            </div>
-            <div id="opt-box-id">
-              <AppNew mobileNumber={display === 'popup' ? mobileNumberPopup : display === 'footer' ? mobileNumberFooter : mobileNumber} medium={UTMMedium.current || (display === 'popup' ? 'popup_seo_leads' : display === 'footer' ? 'footer_seo_leads' : 'sidebar_seo_leads')} campaign={UTMCampaign.current || 'blog_leads'} source={UTMSource.current || 'seo_demat_leads'} refercode={refercode.current} sessionID={ID} isModalOpen={showModal}></AppNew>
-            </div>
-            <div className="modal-otp-links">
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="modal fade" id="TermsCondition" tabIndex="-1" role="dialog" aria-labelledby="TermsConditionLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content modal-whole">
-            <div className="modal-header modal-head">
-              <h5 className="modal-title">Attention</h5>
-            </div>
-            <div className="modal-body">
-              We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-primary btn-primary-terms" data-bs-dismiss="modal" aria-label="Close">Okay</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="modal fade" id="ErrorPopup" tabIndex="-1" role="dialog" aria-labelledby="TermsConditionLabel" aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
-        <div className="modal-dialog modal-dialog-centered">
-          <div className="modal-content modal-whole">
-            <div className="modal-header modal-head">
-              <h5 className="modal-title">Error</h5>
-            </div>
-            <div className="modal-body">
-              {APIError || 'Something Went Wrong!'}
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-primary btn-primary-terms" data-bs-dismiss="modal" aria-label="Close">Okay</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   )
 }
 
 
-const AppNew = (props) => {
-    const [otp, setOtp] = React.useState('');
-    const [count, setCount] = React.useState(() => 30);
-    const [display, setDisplay] = React.useState(() => false);
-    const [ID, setID] = React.useState('');
-    const [errors, setErrors] = React.useState('');
-    const [loaders, setLoaders] = React.useState({ 'verify': false, 'getOTPSMS': false, 'getOTPOnCall': false });
-  
-    function setBtnLoader(type) {
-      let obj = { ...loaders };
-      obj[type] = true;
-      setLoaders(obj);
-    }
-  
-    function hideBtnLoader(type) {
-      let obj = { ...loaders };
-      obj.type = true;
-      setLoaders(obj);
-    }
-  
-    let temp_Num = "******" + props.mobileNumber.slice(6, 10);
-  
-    React.useEffect(() => {
-      const interval = setInterval(() => {
-        if (count == 1) {
-          setDisplay(true)
-          return () => clearInterval(interval);
-        }
-        setCount(seconds => seconds - 1);
-      }, 1000);
-      return () => clearInterval(interval);
-    }, [count]);
-  
-    // post data for verify number
-    // "referred_id": null,
-    // "sub_ref": null,
-    // "utm_campaign": null,
-    // "utm_content": null,
-    // "utm_custom": null,
-    // "utm_medium": null,
-    // "utm_source": null,
-    // "utm_term": null
-    // const UrlValues =window.location.search;
-    // const urlparams = new URLSearchParams(UrlValues);
-    // const param1 = urlparams.get('utm_campaign')
-    // const param2 = urlparams.get('utm_content')
-    // const param3 = urlparams.get('utm_source')
-    // const referId = urlparams.get('referred_id')
-  
-    let post_data = {
-      "mobile_number": props.mobileNumber,
-      "product": "JIFFY",
-      "request_source": "CHOICEINDIA",
-      "source": "CHOICEINDIA",
-      "user_consent": "1",
-      "referred_id": props.refercode || null,
-      "sub_ref": null,
-      "utm_campaign": props.campaign,
-      "utm_content": null,
-      "utm_custom": null,
-      "utm_medium": props.medium,
-      "utm_source": props.source,
-      "utm_term": null
-    }
-  
-    // to call get otp api.
-    React.useEffect(() => {
-      if (props.isModalOpen) {
-        // setOtp('');
-        // setErrors('');
-        // sendOTP(post_data).then(response => response.json()).then((res) => {
-        //   if (res && res.Body) {
-        //     setID(res.Body.otp_session_id);
-        //   }
-        // }).catch((error) => {
-        //   console.log(error, "Something went wrong");
-        // });
-        setID(props.sessionID);
-        setOtp('');
-        setErrors('');
-        setCount(() => 30);
-        setDisplay(() => false);
-      }
-    }, [props.isModalOpen])
-  
-    //resend OTP ON SMS
-    function resendOTP() {
-      if (!loaders.getOTPSMS && !loaders.getOTPOnCall) {
-        setBtnLoader('getOTPSMS');
-        setOtp('');
-        setErrors('');
-        let resend_data = {
-          "mobile_no": props.mobileNumber,
-          "old_session_id": ID,
-          "request_source": "CHOICEINDIA"
-        }
-    
-        resendOTPAgain(resend_data).then(response => response.json()).then((res) => {
-          hideBtnLoader('getOTPSMS');
-          setCount(() => 30);
-          setDisplay(() => false);
-          if (res && res.Body) {
-            setID(res.Body.session_id);
-          } else {
-            setErrors((res && res.Message) || 'Something Went Wrong!');
-          }
-        }).catch((error) => {
-          hideBtnLoader('getOTPSMS');
-          setCount(() => 30);
-          setErrors('Something Went Wrong!');
-        });
-        // fetch('https://sso-api.choiceindia.com/resend-otp', {
-        //   method: 'POST',
-        //   headers: {
-        //     Accept: 'application.json',
-        //     'Content-Type': 'application/json'
-        //   },
-        //   body: JSON.stringify(resend_data)
-        // }).then(res => res.json()).then(json => {
-        //   response1 = json;
-        //   setID(response1.Body.session_id);
-        // })
-      }
-    }
-  
-    //to get OTP ON CALL
-    function get_Call_OTP() {
-      if (!loaders.getOTPSMS && !loaders.getOTPOnCall) {
-            // setOtp('');
-      // setErrors('');
-      setBtnLoader('getOTPOnCall');
-      let call_otp_data = {
-        "mobile_no": props.mobileNumber,
-        "request_source": "CHOICEINDIA",
-        "session_id": ID,
-      }
-      OTPOnCall(call_otp_data).then(response => response.json()).then((res) => {
-        hideBtnLoader('getOTPOnCall');
-        setDisplay(() => false);
-        setCount(() => 30);
-        if (res && res.Body) {
-          setID(res.Body.session_id);
-        } else {
-          setErrors((res && res.Message) || 'Something Went Wrong!');
-        }
-      }).catch((error) => {
-        hideBtnLoader('getOTPOnCall');
-        setCount(() => 30);
-        setErrors((res && res.Message) || 'Something Went Wrong!');
-      });
-      // fetch('https://sso-api.choiceindia.com/otp-on-call', {
-      //   method: 'POST',
-      //   headers: {
-      //     Accept: 'application.json',
-      //     'Content-Type': 'application/json'
-      //   },
-      //   body: JSON.stringify(call_otp_data)
-      // }).then(res => res.json()).then(json => {
-      //   response1 = json;
-      //   setID(response1.Body.session_id);
-      // })
-      }
-    }
-  
-    // to verify the OTP 
-    function textChanged() {
-      if (!otp.length) {
-        setErrors('OTP is required');
-      } else {
-        setBtnLoader('verify');
-        let verify_post_data = {
-          otp: otp,
-          session_id: ID
-        };
-  
-        verifyOTP(verify_post_data).then(response => {
-          hideBtnLoader('verify');
-          // if (response.ok) {
-          return response.json();
-          // }
-          // return Promise.reject(res);
-        }).then((res) => {
-          if (res.StatusCode == 200 && res.Body) {
-            // location.href = "https://jiffy.choiceindia.com/auth/login"
-            window.dataLayer = window.dataLayer || [];
-            function gtag() {
-              dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
-            gtag('config', 'AW-792919273');
-            if (res.Body.url) {
-              location.href = res.Body.url;
-            } else {
-              location.href = "https://jiffy.choiceindia.com/auth/login"
-            }
-          } else if (res && res.StatusCode === 422 && res.Message) {
-            setErrors((res && res.Message) || 'Something Went Wrong!');
-          } else {
-            setErrors((res && res.Message) || 'Something Went Wrong!');
-          }
-        });
-      }
-    }
-  
-    function handleOTP(e) {
-      // const regEx = /^([0-9]{6})$/i;
-      let value = e.target.value.replace(/\D/g, "");
-      setOtp(value);
-      if (!value.length) {
-        setErrors('OTP is required');
-      } else {
-        setErrors('');
-      }
-    }
-  
-    return (
 
-         
-      React.createElement(
-        "div",
-        { className: "modal-body opt-body" },
-        `A OTP has been sent to ${temp_Num}`,
-        React.createElement('input', {
-          className: "otp-box", type: "text", placeholder: "Enter OTP", autoComplete: "one-time-code", maxLength: "6", value: otp, onChange: ((e) => handleOTP(e))
-        },
-        ),
-        React.createElement('div', false,
-          React.createElement('small', { className: 'text-danger' }, errors)),
-        React.createElement('div', { className: "modal-footer otp-modal-footer" },
-          React.createElement("button",
-            { className: "btn btn-primary verify-btn", onClick: (textChanged), disabled: loaders.verify },
-            loaders.verify ? React.createElement('div', { className: "dotLoaderB" }) : "Verify")),
-        React.createElement('div', { className: "modal-otp-links" }, null,
-          display ? React.createElement('div', { className: "btm-div" },
-            React.createElement('p', { className: "resend-text", onClick: (resendOTP) }, loaders.getOTPSMS ? React.createElement('div', { className: "dotLoaderB colorB marginLoader" }) : "Get OTP SMS" ),
-            React.createElement('p', { className: "or-text" }, 'OR'),
-            React.createElement('p', { className: "resend-text", onClick: (get_Call_OTP) }, loaders.getOTPOnCall ? React.createElement('div', { className: "dotLoaderB colorB marginLoader" }) : "Get OTP on Call" )) :
-            React.createElement('p', { className: "didnt-text" }, "Didn't receive the OTP?",
-              React.createElement('p', { className: "timer-text" }, `Resend in ${count} seconds`)))
-      )
-    )
-  }
 
  export default Opendemat;
