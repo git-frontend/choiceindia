@@ -4,7 +4,7 @@ function SingleTemplatePartner() {
 
     return (
         <>
-            <div className="sing-partner-temp">
+            <div className="tab-cont-right sing-partner-temp">
                 <p>
 
                 </p>

@@ -10,7 +10,7 @@ function MoreContent() {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12 text-center">
-                          <h2 className="title-secnd">Demat Account Refer and Earn <br/> Program Terms &amp; Conditions</h2>
+                          <h2 className="title-secnd">How To Become a Sub Broker</h2>
                      </div>
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">

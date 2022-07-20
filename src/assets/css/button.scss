@@ -72,6 +72,9 @@
     }
     &.white {
         background-color: $bgolor-lightwhite;
+        &:hover{
+            background-color: $yellowColor;
+        }
     }
 
     .img-ico {
@@ -131,6 +134,9 @@
 
         &.white {
             background-color: $bgolor-lightwhite;
+            &:hover{
+                background-color: $yellowColor;
+            }
         }
 
         &:hover {
