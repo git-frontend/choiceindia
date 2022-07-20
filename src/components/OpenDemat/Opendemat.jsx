@@ -87,10 +87,11 @@ function Opendemat(){
                       </div>
                     </div>
                     <div className="col-md-5">
-                      <div className="rightsec popmd">
+                      <div className="rightsec">
+                        <div className="popmd">
 
                             <DematAccountForm></DematAccountForm>
-
+                        </div>
                       </div>
                     </div>
                   </div>
