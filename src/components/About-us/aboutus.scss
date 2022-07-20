@@ -280,6 +280,7 @@ body{
                         background: #E6E7E8;
                         content: '';
                         border-radius: 50%;
+                        opacity: 1;
                     }
                 }
             }
@@ -497,6 +498,7 @@ body{
                         background: #E6E7E8;
                         content: '';
                         border-radius: 50%;
+                        opacity: 1;
                     }
                 }
             }
@@ -774,9 +776,10 @@ body{
                             &:before {
                                 height: 10px;
                                 width: 10px;
-                                background-color: $secondary;
+                                background-color: #D7DEEF;
                                 content: '';
                                 border-radius: 50%;
+                                opacity: 1;
                             }
                         }
                     }
@@ -858,7 +861,10 @@ body{
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
                     margin-bottom: 20px;
-
+                    width: 200px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     @media (max-width:$sm) {
                         font-size: 1.7rem;
                     }
@@ -912,6 +918,7 @@ body{
                         background: #E6E7E8;
                         content: '';
                         border-radius: 50%;
+                        opacity: 1;
                     }
                 }
             }

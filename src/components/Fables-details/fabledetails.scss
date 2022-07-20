@@ -1,11 +1,9 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 .fables-details-parent{
-    position: relative;
    
     .detailbanner {
         padding: 3rem 0;
-        position: relative;
       
         &::before {
             position: absolute;
@@ -23,13 +21,13 @@
             }
         }
         .demat-account-form{
-            position: fixed;
-            z-index: 1;
-            top: 24%;
-            display: block;
+            position: relative;
+            // z-index: 1;
+            // top: 5rem;
+            // display: block;
             margin: 0 auto;
-            right: 10%;
-            transform: translate(20%);
+            // right: 10%;
+            // transform: translate(20%);
             @media screen and (max-width: $sm) {
                 display: none;
                 width: 90%;
@@ -61,6 +59,7 @@
             justify-content: space-around;
             width: 45%;
             margin: 0 auto;
+            margin-bottom: 5rem !important;
     
             @media screen and (max-width: $sm) {
                 width: 100%;
@@ -92,30 +91,74 @@
         }
     
         .imgblock {
-            margin-top: 5rem;
+            // margin-top: 5rem;
             border-radius: 30px;
             width: 100%;
             img{
                 width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: 30px;
             }
         }
     
+     
+    
+        .imgwrap {
+            margin-top: 3rem;
+        }
         .textwrap {
-            margin-top: 4rem;
+            margin-top: 5.5rem;
             font-size: 1.25rem;
             line-height: 2rem;
             color: $primary;
             text-align: justify;
+            position: relative;
             img{
                 max-width: 100%;
                 height: auto;
+            }
+            p{
+                font-size: 1.6875rem;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                color: $primary;
+                line-height: 2.75rem;
+                a{
+                    color: $primary;
+                }
+            }
+            h3,h2{
+                padding: 1rem 0 0.5rem 0;
+                font-weight: 700;
+                margin-top: 1rem;
+                color: $primary;
+                font-size: 2rem;
+                font-family: $font-family-poppins-semibold;
+                text-decoration: none;
+                a{
+                    color: $primary;
+                }
+            }
+            ul{
+                font-size: 1.6875rem;
+                font-family: $font-family-poppins-regular;
+                font-weight: 400;
+                color: $primary;
+                line-height: 2.75rem;
+                padding-left: 4%;
             }
         }
     
         .right-social-links {
             position: sticky;
-            top: 0;
-            margin-top: 4rem;
+            // top: 2rem;
+            // margin-top: 6rem;
+            z-index: 1;
+            display: block;
+            margin: 6rem auto 0;
+            right: 10%;
+            transform: translate(20%);
     
             ul {
                 @media screen and (max-width: $sm) {
@@ -147,120 +190,125 @@
                 }
             }
         }
-    
-        .imgwrap {
-            margin-top: 3rem;
-        }
+       
     }
-    
-    
-    .recommendation {
-        padding: 4rem 0 20rem;
-        position: relative;
-        background-color: $whiteColor;
-        z-index: 999;
-    
-        &::after {
-            position: absolute;
-            display: block;
-            content: '';
-            height: 70rem;
-            width: 26rem;
-            top: 64px;
-            right: 5px;
-            background: url(../../assets/images/fabledetails/recomendbefore.png) no-repeat bottom right;
-            z-index: -1;
-        }
-    
-        h2 {
-            color: $primary;
-            font-weight: 600;
-            line-height: 3rem;
-            font-size: 2rem;
-            font-family: $font-family-poppins-semibold;
-        }
-    
-        .blog-list {
-            display: flex;
-            margin-top: 4rem;
-            margin-left: -3%;
+     .recommendation {
+            padding: 4rem 0 20rem;
             position: relative;
-            flex-wrap: wrap;
-            z-index: 9;
-    
-            .blog-item {
-                width: 22%;
-                margin-left: 3%;
-                @extend .box-shadow;
-                border-radius: 20px;
-                background: $whiteColor;
+            background-color: $whiteColor;
+            z-index: 999;
+        
+            &::after {
+                position: absolute;
+                display: block;
+                content: '';
+                height: 70rem;
+                width: 26rem;
+                top: 64px;
+                right: 5px;
+                background: url(../../assets/images/fabledetails/recomendbefore.png) no-repeat bottom right;
+                z-index: -1;
+            }
+        
+            h2{
+                padding: 1rem 0 ;
+                font-size: 2rem;
+                margin-top: 1rem;
+                color: $primary;
                 text-decoration: none;
-    
-                .blog-item-img {
-                    img {
-                        width: 100%;
-                        border-radius: 20px 20px 0 0;
-                        height: 200px;
-                        object-fit: cover;
+                font-family: $font-family-poppins-semibold;
+            }
+            h4{
+                padding: 1rem 0 0.5rem 0;
+                margin-top: 1rem;
+                font-size: 2rem;
+                color: $primary;
+                text-decoration: none;
+                font-family: $font-family-poppins-semibold;
+            }
+            
+            .blog-list {
+                display: flex;
+                margin-top: 4rem;
+                margin-left: -3%;
+                position: relative;
+                flex-wrap: wrap;
+                z-index: 9;
+        
+                .blog-item {
+                    width: 22%;
+                    margin-left: 3%;
+                    @extend .box-shadow;
+                    border-radius: 20px;
+                    background: $whiteColor;
+                    text-decoration: none;
+        
+                    .blog-item-img {
+                        img {
+                            width: 100%;
+                            border-radius: 20px 20px 0 0;
+                            height: 200px;
+                            object-fit: cover;
+                        }
                     }
-                }
-    
-                .item-des {
-                    padding: 2rem;
-                    
-                    border-radius: 0px 0px 20px 20px;
-    
-                    @media (min-width:769px) and (max-width: 1024px) {
-                        padding: 1rem;
-                    }
-    
-                    h4 {
-                        font-size: 1.5rem;
-                        line-height: 1.6;
-                        color: $primary;
-                        font-family: $font-family-poppins-medium;
-                        margin-bottom: 1.5rem;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: initial;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
-    
-                        @media (min-width:$sm-x) and (max-width: 1024px) {
+        
+                    .item-des {
+                        padding: 2rem;
+                        
+                        border-radius: 0px 0px 20px 20px;
+        
+                        @media (min-width:769px) and (max-width: 1024px) {
+                            padding: 1rem;
+                        }
+        
+                        h4 {
+                            font-size: 1.5rem;
+                            line-height: 1.6;
+                            color: $primary;
+                            font-family: $font-family-poppins-medium;
+                            margin-bottom: 1.5rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: initial;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+        
+                            @media (min-width:$sm-x) and (max-width: 1024px) {
+                                font-size: 1rem;
+                            }
+                        }
+        
+                        p {
+                            font-size: 1.3rem;
+                            color: $secondary;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            white-space: initial;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 2;
+                            -webkit-box-orient: vertical;
+                        }
+        
+                        .sm-text {
                             font-size: 1rem;
+                            color: $darkColorgray;
+                            line-height: 24px;
+        
+                            @media (min-width:$sm-x) and (max-width: 1024px) {
+                                font-size: 0.8rem;
+                            }
                         }
                     }
-    
-                    p {
-                        font-size: 1.3rem;
-                        color: $secondary;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                        white-space: initial;
-                        display: -webkit-box;
-                        -webkit-line-clamp: 2;
-                        -webkit-box-orient: vertical;
+        
+                    @media screen and (max-width: $sm) {
+                        width: 97%;
+                        margin-bottom: 3rem;
                     }
-    
-                    .sm-text {
-                        font-size: 1rem;
-                        color: $darkColorgray;
-                        line-height: 24px;
-    
-                        @media (min-width:$sm-x) and (max-width: 1024px) {
-                            font-size: 0.8rem;
-                        }
-                    }
-                }
-    
-                @media screen and (max-width: $sm) {
-                    width: 97%;
-                    margin-bottom: 3rem;
                 }
             }
         }
-    }
+   
 }
 
  
