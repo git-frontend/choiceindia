@@ -48,6 +48,7 @@ function DematPage() {
             <WhyChoice />
             <LowBrokerageDematAccount />
             <DematAccountOpeningProcess />
+            <DematFaq />
             <section className="readmoresection">
 
               <div className="container">
