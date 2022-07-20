@@ -2288,6 +2288,8 @@ body {
   /* padding-left: 4rem;
   padding-right: 4rem; */
 }
+
+
 .popmd{
   position: fixed;
   z-index: 1;
@@ -2298,6 +2300,12 @@ body {
 
 }
 
+@media (max-width: 1200px) {
+  .popmd {
+    position: relative !important;
+    right:1%
+  }
+}
 
 
 /*# sourceMappingURL=style.css.map */
