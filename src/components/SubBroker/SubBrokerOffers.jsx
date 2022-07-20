@@ -1,4 +1,5 @@
 import React from 'react';
+// import ContestModal from './ContestModal';
 
 function SubBrokerOffers(){
     return (
@@ -51,7 +52,10 @@ function SubBrokerOffers(){
                                             </tr>
                                         </tbody>
                                     </table>
-                                </div>
+                                </div>                                
+                            </div>
+                            <div className='d-flex justify-content-end'>
+                                {/* <ContestModal /> */}
                             </div>
                             
                         </div>
