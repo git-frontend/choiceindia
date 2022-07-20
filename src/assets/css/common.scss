@@ -150,3 +150,11 @@ body{
     margin: 0 auto;
     overflow: hidden;
 }
+
+.modal-backdrop{
+    z-index: 99999;
+}
+
+.modal{
+    z-index: 99999;
+}
