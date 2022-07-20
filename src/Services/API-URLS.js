@@ -491,8 +491,8 @@ getExpertReportURL(){
         return this.researchURL + `api/fundamental?report_subtype_uuid=${id}`
     }
     getresearchipoURL(){
-
-        return this.researchURL + 'api/ipo?limit=10&offset=0'
+        // this.researchURL
+        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?limit=10&offset=0'
     }
 
     getperformanceURL() {

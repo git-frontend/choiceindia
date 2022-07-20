@@ -245,7 +245,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/choice-campaigns/open-account/' element={
+                        <Route exact path='/campaigns/open-account/' element={
                             <React.Suspense>
                                 < LazyOpenDemat />
                             </React.Suspense>
