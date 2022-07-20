@@ -27,6 +27,11 @@ body{
         padding-bottom: 2.1875rem;
         padding-top: 1.25rem;
         font-family: $font-family-poppins-bold;
+        @media (max-width:$sm) {
+            line-height: 4rem;
+            font-size: 2.3rem;
+            padding-bottom: 2rem;
+        }
     }
 
     .para {
@@ -35,6 +40,10 @@ body{
         line-height: 2.375rem;
         color: $secondary;
         font-family: $font-family-poppins-regular;
+        @media (max-width:$sm) {
+            line-height: 2.65rem;
+            font-size: 1.4rem;
+        }
     }
 
     .rightsec {
@@ -58,8 +67,10 @@ body{
     font-family: $font-family-poppins-semibold;
     padding-bottom: 3.375rem;
     @media (max-width:$sm) {
-       font-size: 3rem;
-     }
+        line-height: 4rem;
+        font-size: 2.3rem;
+        padding-bottom: 2rem;
+    }
 }
 // Management team
 
@@ -378,8 +389,9 @@ body{
         padding-bottom: 5.25rem;
 
         @media (max-width:$sm) {
-            font-size: 1.8rem;
-            width: 95%;
+            line-height: 2.65rem;
+            font-size: 1.45rem;
+           width: 95%;
         }
     }
 
@@ -514,6 +526,7 @@ body{
         @media (max-width:$sm) {
             order: 2;
             padding: 8rem 0 13rem;
+            display: none;
         }
     }
 
@@ -658,7 +671,8 @@ body{
                 padding-bottom: 15px;
 
                 @media (max-width:$sm) {
-                    font-size: 2.5rem;
+                    line-height: 4rem;
+                    font-size: 2.3rem;
                 }
 
                 @media (min-width:769px) and (max-width:1024px) {
@@ -673,7 +687,10 @@ body{
                 font-family: $font-family-poppins-regular;
                 color: $secondary;
                 margin: 0;
-
+                @media (max-width:$sm) {
+                    line-height: 2.625rem;
+                    font-size: 1.4rem;
+                }
                 @media (min-width:769px) and (max-width:1024px) {
                     font-size: 1.3rem;
                     line-height: 2rem;
@@ -729,7 +746,7 @@ body{
                             line-height: 2.4rem;
                             font-weight: 400;
                             font-family: $font-family-poppins-regular;
-
+                           
                             @media (min-width:769px) and (max-width:1024px) {
                                 font-size: 1.3rem;
                             }
@@ -854,7 +871,10 @@ body{
                     font-family: $font-family-poppins-regular;
                     color: $secondary;
                     margin: 0;
-
+                    @media (max-width:$sm) {
+                        line-height: 2.625rem;
+                        font-size: 1.4rem;
+                    }
                     @media (max-width:$sm) {
                         font-size: 1.5rem;
                         margin-top: 1.5rem;
