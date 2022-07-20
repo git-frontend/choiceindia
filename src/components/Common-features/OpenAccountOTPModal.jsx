@@ -88,11 +88,20 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
             openAccountService.verifyOTP(request).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                    if (res.data.Body.url) {
-                        window.location.href = res.data.Body.url;
-                    } else {
-                        window.location.href = "https://jiffy.choiceindia.com/auth/login"
-                    }
+                    // if (res.data.Body.isOnboardFlag === 'Y') {
+                        //Your Onboarding has been completed
+                    // } else if (res.data.Body.isOnboardFlag === 'C') {
+                        // IsBackOffice should be Y, isCredentialGenerated = 1 , uccStatus='success',
+                        // then redirect to Jiffy Login .
+                        // else
+                        // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
+                    // } else {
+                        if (res.data.Body.url) {
+                            window.location.href = res.data.Body.url;
+                        } else {
+                            window.location.href = "https://jiffy.choiceindia.com/auth/login"
+                        }
+                    // }
                 } else {
                     setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
                 }
