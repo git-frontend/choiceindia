@@ -5,7 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 
-function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
+function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -82,6 +82,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
+            "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
@@ -158,7 +159,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup}) {
             </section>
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg)=>openInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>

@@ -5,7 +5,7 @@ import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import { Link } from "react-router-dom";
-function OpenDemateAccountPopup({hideComponent}) {
+function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -89,6 +89,7 @@ function OpenDemateAccountPopup({hideComponent}) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
+            "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
@@ -183,7 +184,7 @@ function OpenDemateAccountPopup({hideComponent}) {
             </div>   : ''
         }
         {
-            showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose}></OpenAccountOTPModal> : ''
+            showOTP ? <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg)=>openInfoPopup(msg)}></OpenAccountOTPModal> : ''
         }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static" className="termcondition"
                 keyboard={false} centered>
