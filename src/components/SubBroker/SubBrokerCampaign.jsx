@@ -1,12 +1,12 @@
 
 import React from "react";
-import BannerSBroker from './BannerSBroker';
+import BannerSBrokerCampaign from './BannerSBrokerCampaign';
 import SubBrokerBenifits from './SubBrokerBenifits';
 import SubBrokerSellMore from './SubBrokerSellMore';
-import WhyBecomeSubBroker from './WhyBecomeSubBroker';
+import WhyBecomeSubBrokerC from './WhyBecomeSubBrokerC';
 import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
-import MoreContent from './MoreContent';
-import SubBrokerOffers from './SubBrokerOffers';
+// import MoreContent from './MoreContent';
+import SubBrokerOffersC from './SubBrokerOffersC';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
@@ -69,13 +69,13 @@ function SubBrokerCampaign() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <BannerSBroker />
+            <BannerSBrokerCampaign />
             <SubBrokerBenifits />
             <SubBrokerSellMore />
-            <WhyBecomeSubBroker />
+            <WhyBecomeSubBrokerC />
             <WhoEligibleToSubBroker />
-            <SubBrokerOffers />
-            <MoreContent />
+            <SubBrokerOffersC />
+            {/* <MoreContent /> */}
             
           </div>
       }
