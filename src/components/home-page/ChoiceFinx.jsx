@@ -64,8 +64,6 @@ function ChoiceFinx() {
 
   return (
     <div>
-
-
       <section className="choice-finx">
         <div className="container">
           <div className="row">
