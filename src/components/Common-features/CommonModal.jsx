@@ -20,7 +20,7 @@ console.log("PROPS",props)
         <>
             <Modal className='common-modal-css'
                 show={display}
-                size="sm"
+                size="md"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >

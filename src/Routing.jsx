@@ -55,6 +55,7 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 
 const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
+const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 
 function Routing() {
     
@@ -254,6 +255,12 @@ function Routing() {
                         <Route exact path='/Add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/privacy-policy' element={
+                            <React.Suspense>
+                                < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
 
