@@ -17,11 +17,11 @@ function Team() {
     speed: 2000,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: true,
     autoplaySpeed: 800,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,

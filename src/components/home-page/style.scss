@@ -198,14 +198,13 @@
             padding-right: 6%;
 
             .finx-app-list {
-                display: flex;
-                flex-wrap: wrap;
+                
                 margin-top: 6.5rem;
-                margin-left: -4%;
+                margin-left: 0;
 
                 .app-list-item {
-                    width: 29.33%;
-                    margin-left: 4%;
+                    width: 90% !important;
+                    
 
                     img {
                         height: 40px;
@@ -593,6 +592,9 @@
     .features-list-cont {
         background: #231F20;
         padding: 7rem 0 1rem 0;
+        @media (max-width: $sm) {
+            padding: 5rem 0;
+        }
 
         .all-features-list {
             display: flex;
@@ -631,12 +633,20 @@
                 @media (max-width: $sm) {
                     width: 96%;
                     text-align: center;
+                    margin: 0;
+                    padding: 0 1rem;
+                    .img-fluid{
+                        margin: 0 auto;
+                    }
                 }
             }
 
             @media (max-width: $md) {
-                margin-left: -5%;
+                margin-left: 0;
             }
+        }
+        .slick-dots{
+            bottom: -35px;
         }
     }
 

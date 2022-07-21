@@ -17,11 +17,11 @@ function WhatWeOffer() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 20,
     dots: true,
     autoplaySpeed: 1000,
-    slidesToScroll: 4,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
@@ -77,7 +77,7 @@ function WhatWeOffer() {
                     </span>
                     <div className="namedesg">
                       <h4 className="title">Wealth Management</h4>
-                      <p className="text">We help individuals &amp; organizations achieving their monetary objectives.</p>
+                      <p className="text">We help individuals &amp; organizations in achieving their monetary objectives.</p>
                     </div>
                   </div>
 
@@ -89,7 +89,7 @@ function WhatWeOffer() {
                     </div>
                     <div className="namedesg">
                       <h4 className="title">Insurance</h4>
-                      <p className="text">We help you in finding the right insurance policies for unforeseen events.</p>
+                      <p className="text">Find the right insurance policies for unforeseen events with us.</p>
                     </div>
                   </div>
 
@@ -124,7 +124,7 @@ function WhatWeOffer() {
                       {/* <img src={ManagementConsult} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
-                      <h4 className="title">Management Consult...</h4>
+                      <h4 className="title">Management Consultancy</h4>
                       <p className="text">Our team closely work with business leaders focusing on solving thier problems.</p>
                     </div>
                   </div>

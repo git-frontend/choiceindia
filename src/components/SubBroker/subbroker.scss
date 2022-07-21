@@ -675,7 +675,7 @@
         text-align: center;
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: $whiteColor;
             margin: 0;
             font-family: $font-family-poppins-medium;
@@ -1093,6 +1093,7 @@
                     padding: 2rem 1.5rem;
                     border: 0;
                     vertical-align: top;
+                    text-align: left;
 
                     @media (max-width: $sm-x) {
                         white-space: nowrap;
@@ -1147,7 +1148,8 @@
         font-size: 1.375rem;
         text-decoration: underline;
         border: 0;
-        outline: none;
+        outline: none !important;
+        box-shadow: inherit !important;
         font-family: $font-family-poppins-medium;
         margin-top: 2rem;
     }
@@ -2111,6 +2113,7 @@
                 position: relative;
                 @media (max-width: $sm) {
                     font-size: 1.4rem;
+                    padding-right: 2rem;
                 }
         }
         .terms-list {
@@ -2207,6 +2210,9 @@
                     left: 0;
                     top: 0.7rem;
                 }
+            }
+            @media (max-width: $sm) {
+                padding-left: 1rem;
             }
         }
     }

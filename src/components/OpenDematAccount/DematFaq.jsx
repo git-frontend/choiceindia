@@ -68,7 +68,7 @@ function DematFaq() {
                             </Accordion>
                             {
                                 view ?
-                                    <Accordion defaultActiveKey="5" flush className='open-demat-faqs-accordion'>
+                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'> How do I open a Trading Account Online without opening a Demat Account?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
