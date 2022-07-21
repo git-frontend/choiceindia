@@ -192,7 +192,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
         setOTPSendSuccessToaster({[type]: true});
         setTimeout(()=>{
             setOTPSendSuccessToaster({[type]: false});
-        },2000)
+        },5000)
     }
 
     return (
