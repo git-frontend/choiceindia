@@ -64,7 +64,7 @@ function MarketInsights() {
                                 {
 									view && !view.matches ? 
                                    
-										<Slider {...settings}>
+										<Slider {...settings} className='all-features-list'>
                                     
                                     <div className="feature-item">
                                         <LazyLoader src={ImageSub14} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />

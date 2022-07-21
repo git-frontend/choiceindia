@@ -5,15 +5,15 @@ import React from "react";
 import Slider from "react-slick";
 function Journey() {
     const settings = {
-        infinite: false,
+        infinite: true,
         speed: 1500,
         arrows: false,
         slidesToShow: 4,
-        autoplay: false,
+        autoplay: true,
         margin:15,
         dots:true,
         autoplaySpeed: 1000,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 992,
