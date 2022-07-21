@@ -1,5 +1,5 @@
 import React from 'react';
-// import ContestModal from './ContestModal';
+import ContestModal from './ContestModal';
 
 function SubBrokerOffers(){
     return (
@@ -20,9 +20,9 @@ function SubBrokerOffers(){
                                         <thead>
                                             <tr>
                                                 <th width="25%"></th>
-                                                <th width="20%">Account with minimum Rs. 1,000 Investment & 2 transaction in EQ + 1 SIP in MF Minimum Rs. 500</th>
-                                                <th>Account with minimum Rs. 5,000 Investment & 2 transaction in EQ + 1 SIP in MF Minimum Rs. 500</th>
-                                                <th>Account with minimum Rs. 25,000 Investment & 2 transaction in EQ + 1 SIP in MF Minimum Rs. 500</th>
+                                                <th width="20%">Account with <span>minimum Rs. 1,000  </span> <span>Investment & 2 transaction in EQ +</span> 1 SIP in MF Minimum Rs. 500</th>
+                                                <th>Account with <span>minimum Rs. 5,000  </span><span>Investment & 2 transaction in EQ + </span>1 SIP in MF Minimum Rs. 500</th>
+                                                <th>Account with <span>minimum Rs. 25,000  </span><span>Investment & 2 transaction in EQ + </span>1 SIP in MF Minimum Rs. 500</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -50,7 +50,7 @@ function SubBrokerOffers(){
                                 </div>                                
                             </div>
                             <div className='d-flex justify-content-end'>
-                                {/* <ContestModal /> */}
+                                <ContestModal />
                             </div>
                             
                         </div>
