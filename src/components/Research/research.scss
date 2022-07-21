@@ -214,14 +214,14 @@
                         -ms-transition: 0.5s;
                         -o-transition: 0.5s;
                           &.grn-btn{
-                            background: #00B26B;
+                            background: $greentext;
                             padding: 0.5rem 1.5rem;
                             min-width: 130px;
                             text-align: center;
                             cursor: pointer;
                           }
                           &.red-btn{
-                            background: #EF404A;
+                            background: $redbg;
                             padding: 0.5rem 1.5rem;
                             min-width: 130px;
                             text-align: center;
@@ -265,7 +265,7 @@
                       color: #908E8F;
                       font-family: $font-family-poppins-semibold;
                       .grn-txt{
-                        color: #00B26B;
+                        color: $greentext;
                       }
                     }
                     .itm-des-sub{
@@ -354,9 +354,9 @@
           font-size: 9px;
         }
         &.red {
-          background: #ff1a1a;
+          background: $redtext;
           &:before {
-            background: #ff1a1a;
+            background: $redtext;
           }
         }
         &.green {
@@ -407,10 +407,10 @@
               font-family: $font-family-poppins-semibold;
               font-size: 1.25rem;
               .red-txt{
-                color: #EF404A;
+                color: $redbg;
               }
               .grn-txt{
-                color: #00B26B;
+                color: $greentext;
               }
 
               .balance-txt{
@@ -451,11 +451,11 @@
               -ms-transition: 0.5s;
               -o-transition: 0.5s;
               &.grn-btn{
-                background: #00B26B;
+                background: $greentext;
                 cursor: pointer;
               }
               &.red-btn{
-                background: #EF404A;
+                background: $redbg;
                 cursor: pointer;
               }
              &:hover{
@@ -490,7 +490,7 @@
                 height: 5px;
                 display: block;
                 border-radius: 4px;
-                background: #EF404A;
+                background: $redbg;
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -501,7 +501,7 @@
                 height: 5px;
                 display: block;
                 border-radius: 4px;
-                background: #00B26B;
+                background: $greentext;
                 position: absolute;
                 right: 0;
                 top: 0;
@@ -569,12 +569,12 @@
               }
               &.grn-txt{
                 .sm-txt{
-                  color: #00B26B;
+                  color: $greentext;
                 }
               }
               &.red-txt{
                 .sm-txt{
-                  color: #EF404A;
+                  color: $redbg;
                 }
               }
               
@@ -585,7 +585,7 @@
                 border-left: 9px solid transparent;
                 border-right: 9px solid transparent;
                 border-top: 12px solid;
-                border-top-color: #00B26B;
+                border-top-color: $greentext;
                 position: absolute;
                 bottom: -8px;
                 left: 0;
@@ -594,12 +594,12 @@
               }
               &.grn-txt{
                 &::before{
-                  border-top-color: #00B26B;
+                  border-top-color: $greentext;
                 }
               }
               &.red-txt{
                 &::before{
-                  border-top-color: #EF404A;
+                  border-top-color: $redbg;
                 }
               }
             }
@@ -701,10 +701,10 @@
             margin-top: 1.5rem;
             font-size: 1.1rem;
             &.grn-txt{
-              color: #00B26B;
+              color: $greentext;
             }
             &.red-txt{
-              color: #EF404A;
+              color: $redbg;
             }
             @media (max-width: $md) {
               margin: 0;
@@ -725,11 +725,11 @@
             -ms-transition: 0.5s;
             -o-transition: 0.5s;
             &.grn-btn{
-              background: #00B26B;
+              background: $greentext;
               cursor: pointer;
             }
             &.red-btn{
-              background: #EF404A;
+              background: $redbg;
               cursor: pointer;
             }
            &:hover{
@@ -786,7 +786,7 @@
                   display: block;
               }
               @media (max-width:$md) {
-                border-left: 0.5rem solid #FFCE02;
+                border-left: 0.5rem solid $yellowColor;
               }
               
           }
@@ -1301,7 +1301,7 @@
       .jiffy-signal-bar {
         circle {
           &:last-of-type {
-            stroke: #FFCE02;
+            stroke: $yellowColor;
           }
         }
       }
@@ -1341,7 +1341,7 @@
                       background-color: #4EAC3F;
                   }
                   &.yellow{
-                      background-color: #FFCE02;
+                      background-color: $yellowColor;
                   }
 
                   }

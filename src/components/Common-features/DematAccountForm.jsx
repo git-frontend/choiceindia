@@ -30,7 +30,12 @@ function DematAccountForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+
+    var UTMContent = useRef('');
+    var UTMCustom = useRef('');
+    var UTMTerm = useRef('');
     var refercode = useRef('');
+    var subrefercode = useRef('');
     var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
@@ -153,13 +158,13 @@ function DematAccountForm(props) {
             "source": "CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
-            "sub_ref": null,
+            "sub_ref": subrefercode.current || null,
             "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
-            "utm_content": null,
-            "utm_custom": null,
+            "utm_content": UTMContent.current || null,
+            "utm_custom": UTMCustom.current || null,
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term": null
+            "utm_term": UTMTerm.current || null
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -188,7 +193,13 @@ function DematAccountForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
-        refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+
+        UTMContent.current = searchParams.get('utm_content') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+
+        refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
+        subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
     }
 
     // function handleOTP(e) {

@@ -278,7 +278,8 @@
     }
 
     .blog-middle-left {
-
+        position: relative;
+        z-index: 9;
         .heading-sec {
             padding-bottom: 2rem;
 
