@@ -57,12 +57,9 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 
 const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
-<<<<<<< HEAD
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
-=======
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
->>>>>>> dba3880cf760ced60cab242c03d1c495ca6f5f13
 
 function Routing() {
     
