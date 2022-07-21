@@ -617,7 +617,7 @@ function DematAccountForm() {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} />
+                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'fontSize': 'large'}} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
                             }
@@ -634,7 +634,7 @@ function DematAccountForm() {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} />
+                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
