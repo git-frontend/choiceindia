@@ -55,6 +55,8 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 
 const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
+const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
+const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 
 function Routing() {
     
@@ -65,6 +67,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
+                {/* {window.location.pathname.indexOf("/campaign/") ===-1 ? <Header /> : null} */}
                 <Header />
                 <div className='App-Body'>
                     <Routes>
@@ -151,6 +154,16 @@ function Routing() {
                         <Route exact path='/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/hindi/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokerhindi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokercampaign />
                             </React.Suspense>
                         } />
 
