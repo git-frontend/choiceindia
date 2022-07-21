@@ -113,7 +113,7 @@ export default function FaqBody() {
     faqService.FaqArticle(id).then(
       res => {
         setArticle(res)
-        chapterScroll('faq-section');
+        
       }
     )
   };
@@ -271,6 +271,7 @@ export default function FaqBody() {
                             return (
                               <div key={response.id} className={classNameNm} onClick={() => {
                                 loadfaqarticle(response.id);
+                                chapterScroll('faq-section'); 
                                 setSelectedId(index)
                               }}>
                                 <p>{response.name}</p>
