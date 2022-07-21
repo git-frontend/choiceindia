@@ -97,11 +97,14 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
-            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
+            // 'seo_demat_leads'
+            "utm_campaign": UTMCampaign.current || null,
             "utm_content": null,
             "utm_custom": null,
-            "utm_medium": UTMMedium.current || 'popup_seo_leads',
-            "utm_source": UTMSource.current || 'blog_leads',
+            // 'popup_seo_leads'
+            "utm_medium": UTMMedium.current || null,
+            // blog_leads'
+            "utm_source": UTMSource.current || null,
             "utm_term": null
         };
         openAccountService.sendOTP(request).then((res) => {

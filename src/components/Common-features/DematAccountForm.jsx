@@ -162,11 +162,14 @@ function DematAccountForm(props) {
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
-            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
+            // 'seo_demat_leads'
+            "utm_campaign": UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
             "utm_custom": UTMCustom.current || null,
-            "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
-            "utm_source": UTMSource.current || 'blog_leads',
+            // 'sidebar_seo_leads'
+            "utm_medium": UTMMedium.current || null,
+            // 'blog_leads'
+            "utm_source": UTMSource.current || null,
             "utm_term": UTMTerm.current || null
         };
         openAccountService.sendOTP(request).then((res) => {
