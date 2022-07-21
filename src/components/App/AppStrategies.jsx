@@ -6,6 +6,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function AppStrategies() {
     const [isShown3, setIsShown3] = useState(0);
+    const [isShown, setIsShown2] = useState(0);
 
     const settings1 = {
         infinite: true,
@@ -69,7 +70,7 @@ function AppStrategies() {
 
                                                     return (
 
-                                                        <div key={response.id} className={classNm} onChange={() => setIsShown3(index)} >
+                                                        <div key={response.id} className={classNm} onMouseOver={() => setIsShown3(index)} >
                                                             <h4 className="single-ttl">{response.title}</h4>
                                                             <p className="para">
                                                                 {response.description}

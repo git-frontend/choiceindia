@@ -19,7 +19,7 @@
 }
 
 .bloc-tabs {
-    display: flex;
+    // display: flex;
   }
   .tabs {
   
@@ -107,6 +107,7 @@
                   margin-top: 1.5rem;
               }
               img{
+                margin: 0 auto;
                 @media (max-width:$sm-x) {
                     width: 50px;
                 }
