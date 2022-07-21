@@ -28,9 +28,7 @@ export default function FaqBody() {
   const [isarticle, setIsarticle] = useState(false);
   let data = '';
 
-
-
-
+  /** yup validation search text */
   const schema = yup.object().shape({
     faq: yup.string().required("plz write your queries")
   })
@@ -39,29 +37,31 @@ export default function FaqBody() {
 
   /** Get Faq qus  */
   const faqChange = (e2) => {
-    // setdata(e2.target.value)
     data = e2.target.value;
   };
 
 
 
+/** Faq search text */
 
   const { register, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
 
+
+  /** faq search function */
+
   function loadfaqsearch() {
 
-
-    setIsactive(true)
-    setIsloader(true)
     faqService.FaqSearch(data).then(
       res => {
+
         setIsactive(true);
         chapterScroll('faq-section')
         setIsloader(false)
-        setIsarticle(false);
+        setIsarticle(true);
+        setSelect(-1)
         setSearchlist(res);
 
       }
@@ -70,8 +70,7 @@ export default function FaqBody() {
   };
 
 
-
-
+/** scroll id view */
 
   function chapterScroll(id) {
     var element = document.getElementById(id);
@@ -84,40 +83,42 @@ export default function FaqBody() {
     });
   }
 
-
-
-
+  /** FAQ category section */
 
   function loadfaqcategory() {
-
 
     faqService.FaqCategory().then(
       res => {
         setList(res);
         loadfaqFolder(res[0].category_linkage);
-
-        console.log("check category", isactive)
       }
     )
   };
+
+  /** FAQ Folder section */
 
   function loadfaqFolder(id) {
     faqService.FaqFolder(id).then(
       res => {
         setFolder(res)
         loadfaqarticle(res[0].id);
+        
       }
     )
   };
 
+/** FAQ Article section */
 
   function loadfaqarticle(id) {
     faqService.FaqArticle(id).then(
       res => {
         setArticle(res)
+        chapterScroll('faq-section');
       }
     )
   };
+
+  /** FAQ search text clear */
 
   function categoryClick() {
     let h = document.getElementById('value3')
@@ -125,17 +126,10 @@ export default function FaqBody() {
 
   }
 
-
-
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
       loadfaqcategory();
-      categoryClick();
-      console.log("check useEffect", isarticle)
-
-
-
     }
 
   }, [trigger])
@@ -159,9 +153,6 @@ export default function FaqBody() {
                                           
                           <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search':<Spinner animation="border" />}</Button> 
                     </div>
-
-
-
                     <div>
 
                     </div>
@@ -173,7 +164,7 @@ export default function FaqBody() {
           </div>
         </section>
 
-        {isactive == false ?
+        
           <div className='faq-body'>
 
             <section className="security-privacy same-list-bx">
@@ -187,6 +178,10 @@ export default function FaqBody() {
                 </div>
                 <div className="row">
                   <div className="col-md-12">
+
+                    {
+                      isactive == false ?
+                    
                     <div className="same-list-bx-list">
 
                       {
@@ -216,88 +211,8 @@ export default function FaqBody() {
                       }
 
 
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            <section className='faq-accordion'  >
-              <div className='container'>
-                <div className='faq-header' id='faq-section'>
-                  <h1>{list2}</h1>
-                </div>
-                <div className='faq-container'>
-                  <div className='content-list accordion-lists' >
-                    {
-                      folder.map((response, index) => {
-
-                        let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
-
-
-
-                        return (
-                          <div key={response.id} className={classNameNm} onClick={() => {
-                            loadfaqarticle(response.id);
-                            setSelectedId(index)
-
-                          }}>
-                            <p>{response.name}</p>
-                          </div>
-
-                        )
-                      }
-                      )
-                    }
-
-
-                  </div>
-                  <div className='content-list accordion-list ' >
-                    <Accordion defaultActiveKey="0" >
-
-                      {
-                        article.map((res, index) => {
-
-                          return (
-                            <div>
-                              <Accordion.Item key={res.id} eventKey={index}>
-                                <Accordion.Header >{res.title}</Accordion.Header>
-                                {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                <Accordion.Body>
-                                  {res.description_text}
-                                </Accordion.Body>
-                                {/**</div>*/}
-                              </Accordion.Item>
-                            </div>
-
-                          )
-                        })
-
-                      }
-
-
-                    </Accordion>
-
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div> :
-          <div className='faq-body'>
-            <section className="security-privacy same-list-bx">
-              <div className="container">
-                <div className="row d-flex justify-content-center">
-                  <div className="col-md-12">
-                    <div className="heading-sec">
-                      <h3 className="title-first ">Looking for an Answer?</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-12">
-
-
-
+                    </div> 
+                    :
                     <div className="same-list-bx-list">
                       {
                         list.map((response, i) => {
@@ -311,7 +226,7 @@ export default function FaqBody() {
                               loadfaqFolder(response.category_linkage);
                               setList2(response.category_name);
                               setSelectedId(0);
-                              setIsarticle(true);
+                              setIsarticle(false);
                               setSelect(i);
 
                               // scrollToElement();
@@ -329,9 +244,7 @@ export default function FaqBody() {
 
 
                     </div>
-
-
-
+                    }
 
                   </div>
                 </div>
@@ -339,7 +252,7 @@ export default function FaqBody() {
             </section>
 
             {
-              isarticle == true ?
+              isarticle == false ?
 
                 <section className='faq-accordion'  >
                   <div className='container'>
@@ -359,7 +272,6 @@ export default function FaqBody() {
                               <div key={response.id} className={classNameNm} onClick={() => {
                                 loadfaqarticle(response.id);
                                 setSelectedId(index)
-
                               }}>
                                 <p>{response.name}</p>
                               </div>
@@ -439,11 +351,8 @@ export default function FaqBody() {
                 </section>
 
             }
-
-
-
-          </div>
-        }
+          </div> 
+        
 
       </div>
     </>

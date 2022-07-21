@@ -406,12 +406,12 @@
 
     .market-insights-list {
         display: flex;
-        flex-wrap: wrap;
+        
         margin-top: 5rem;
 
         .insights-list-item {
             width: 17%;
-            margin-left: 4%;
+            margin:0 2%;
             transition: width 1.5s;
 
             .insights-item-cont {
@@ -466,7 +466,7 @@
             }
 
             &.insights-list-active {
-                width: 35%;
+                width: 37%;
 
                 .ttl-sm {
                     transform: rotate(0);
@@ -482,7 +482,7 @@
             }
 
             &:hover {
-                width: 30%;
+                width: 37%;
 
                 .ttl-sm {
                     transform: rotate(0);
@@ -535,6 +535,7 @@
 
         @media (max-width: $sm) {
             margin-left: 0;
+            flex-wrap: wrap;
         }
     }
 
@@ -750,9 +751,9 @@
 
                     img {
                         width: 100%;
-                        border-radius: 15px;
+                        border-radius: 25px;
                         object-fit: cover;
-                        height: 200px;
+                        height: 240px;
                     }
                 }
 
