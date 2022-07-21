@@ -140,7 +140,7 @@
                     color: $primary;
                 }
             }
-            ul{
+            ul,ol{
                 font-size: 1.6875rem;
                 font-family: $font-family-poppins-regular;
                 font-weight: 400;
@@ -159,7 +159,9 @@
             margin: 6rem auto 0;
             right: 10%;
             transform: translate(20%);
-    
+            @media screen and (max-width: $sm) {
+                display: none;
+            }
             ul {
                 @media screen and (max-width: $sm) {
                     display: flex;
