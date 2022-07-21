@@ -1,5 +1,5 @@
 import React from 'react';
-// import ContestModal from './ContestModal';
+import ContestModal from './ContestModal';
 
 function SubBrokerOffers(){
     return (
@@ -55,7 +55,7 @@ function SubBrokerOffers(){
                                 </div>                                
                             </div>
                             <div className='d-flex justify-content-end'>
-                                {/* <ContestModal /> */}
+                                <ContestModal />
                             </div>
                             
                         </div>
