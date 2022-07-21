@@ -17,7 +17,7 @@ function Fabdetailsbanner(props) {
 
     function fetchContainerClassName() {
         if (props.showForm) {
-            return 'col-md-7 col-lg-8 col-sm-6';
+            return 'col-md-7';
         } else {
             return 'col-md-12';
         }
@@ -32,7 +32,7 @@ function Fabdetailsbanner(props) {
                     <section className="detailbanner">
                         <div className="container">
                             <div className="row">
-                                <div className={fetchContainerClassName()}>
+                                <div className="col-md-12">
                                     <div className="row ">
                                         <div className="col-md-12">
                                             <p className="text-center date">Published August 21, 2021</p>
@@ -52,12 +52,33 @@ function Fabdetailsbanner(props) {
                                                     Trending
                                                 </li>
                                             </ul>
-                                            <div className="imgblock">
+                                         
+                                        </div>
+                                        
+                                    </div>
+                                    <div className="row">
+                                        <div className= {fetchContainerClassName()}>
+                                        <div className="imgblock">
                                                 {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                                 <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt="Loading" />
                                             </div>
                                         </div>
+                                        {
+                                            ((props.showForm) ?
+                                                (props.formName === 'form-demat' ? <div className="col-md-5" id="open-account-wrap">
+                                                    <div className="stickyform formwrap d-flex justify-content-end ">
+                                                        <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
+                                                    </div>
+                                                </div> : <div className="col-md-5" id="sub-broker-wrap">
+                                                    <div className="franchise-form justify-content-end d-flex">
+                                                        <SubBrokerForm />
+                                                    </div>
+                                                </div>)
+                                                : '')
+                                        }
+                                        {/* <div className="col-md-5">
 
+                                        </div> */}
                                     </div>
                                     <div className="row">
                                         <div className="col-md-11">
@@ -102,7 +123,7 @@ function Fabdetailsbanner(props) {
 
                                     </div>
                                 </div>
-                                {
+                                {/* {
                                     props.showForm ?
                                         props.formName === 'form-demat' ? <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
                                             <div className="stickyform formwrap d-flex justify-content-end ">
@@ -114,7 +135,7 @@ function Fabdetailsbanner(props) {
                                             </div>
                                         </div>
                                         : ''
-                                }
+                                } */}
                                 {/* <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
                                     <div className="formwrap d-flex justify-content-end ">
                                         <DematAccountForm />

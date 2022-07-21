@@ -616,7 +616,7 @@
 		}
 
 		hr {
-			color: #C2C2C2;
+			color: $lightgray;
 		}
 
 		.charge-lists {
@@ -639,7 +639,7 @@
 
 .why-choice-section {
 	position: relative;
-	background: #060606;
+	background: $lighblack;
 	&::before{
 		content: "";
 		width: 32%;
@@ -648,7 +648,7 @@
 		position: absolute;
 		left: -0;
 		top: 0;
-		background: #E0D6F4;
+		background: $bgcolor-lightgray;
 		@media (max-width:$sm) {
 			display: none;
 		}
@@ -719,7 +719,7 @@
 			@media (max-width:$sm) {
 				width: 100%;
 				padding: 0;
-				background: #060606;
+				background: $lighblack;
 			}
 			&::before{
 				content: "";
@@ -729,7 +729,7 @@
 				position: absolute;
 				left: -130%;
 				top: 0;
-				background: #E0D6F4;
+				background: $bgcolor-lightgray;
 				@media (max-width:$sm) {
 					display: none;
 				}
@@ -737,7 +737,7 @@
 		}
 
 		.rightsect {
-			background-color: #060606;
+			background-color: $lighblack;
 			width: 70%;
 			padding: 9rem 0 0 11rem;
 
@@ -944,16 +944,15 @@
 
 .Dematfaq {
 	padding: 9rem 0;
-
-	background-color: #F3FAFF ;
+	background-color: $abt-bg ;
 	.title-first {
 		margin-bottom: 2rem;
 	}
 
 	.faq-item {
-		border: 1px solid #C2C2C2 !important;
+		border: 1px solid $lightgray !important;
 		border-radius: 20px;
-		background: #FFFFFF;
+		background: $whiteColor;
 		padding: 2.5rem 3rem;
 		margin-bottom: 2rem;
 

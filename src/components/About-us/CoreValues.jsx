@@ -15,11 +15,11 @@ function CoreValues() {
     speed: 1500,
     arrows: false,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: true,
     autoplaySpeed: 1000,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
