@@ -675,7 +675,7 @@
         text-align: center;
 
         h3 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             color: $whiteColor;
             margin: 0;
             font-family: $font-family-poppins-medium;
@@ -1093,6 +1093,7 @@
                     padding: 2rem 1.5rem;
                     border: 0;
                     vertical-align: top;
+                    text-align: left;
 
                     @media (max-width: $sm-x) {
                         white-space: nowrap;
