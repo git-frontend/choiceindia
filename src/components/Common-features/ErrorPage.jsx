@@ -27,7 +27,7 @@ function ErrorPage() {
         <img src={errorImage} className="error-img"></img>
       </div>
       <div className="error-desc">
-        Sorry, but the page you are looking for has note been found.
+        Sorry, but the page you are looking for has not been found.
         Try checking the URL for error, then hit the refresh button
         on your browser or try found something else in our app.<br></br>
         Let's go <Link to="/">Home</Link> and try from there.

@@ -102,6 +102,7 @@ export default function FaqBody() {
       res => {
         setFolder(res)
         loadfaqarticle(res[0].id);
+        
       }
     )
   };
@@ -112,6 +113,7 @@ export default function FaqBody() {
     faqService.FaqArticle(id).then(
       res => {
         setArticle(res)
+        chapterScroll('faq-section');
       }
     )
   };

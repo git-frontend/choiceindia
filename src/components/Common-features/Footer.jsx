@@ -198,7 +198,7 @@ useEffect(()=>{
                             Made with  <FontAwesomeIcon icon={faHeart} />  in India
                           </li>
                           <li>
-                            <NavLink to="/" target="_blank">Privacy Policy</NavLink>
+                            <a href="https://choiceindia.com/privacy-policy" target="_blank">Privacy Policy</a>
                           </li>
                           <li className="cursor-pointer">
                             <a onClick={()=>{openModal()}}>Terms &amp; Conditions</a>

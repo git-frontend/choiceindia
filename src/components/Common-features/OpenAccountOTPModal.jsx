@@ -6,8 +6,9 @@ import OTPimage from '../../assets/images/otp.svg';
 import "../Common-features/demat-form.scss";
 import { Link } from "react-router-dom";
 import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
+import Spinner from 'react-bootstrap/Spinner';
 
-function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
+function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, openInfoPopup}) {
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
     const [count, setCount] = useState(0);
@@ -96,11 +97,16 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
                         // else
                         // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
                     // } else {
-                        if (res.data.Body.url) {
-                            window.location.href = res.data.Body.url;
+                    if (res && res.data && res.data.Body && res.data.Body.url) {
+                        window.location.href = res.data.Body.url;
+                    } else {
+                        if (res && res.data && res.data.Message) {
+                            openInfoPopup(res.data.Message);
+                            onClose();
                         } else {
-                            window.location.href = "https://jiffy.choiceindia.com/auth/login"
+                            window.location.href = "https://jiffy.choiceindia.com/auth/login";
                         }
+                    }
                     // }
                 } else {
                     setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otperror'));
@@ -259,9 +265,13 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language}) {
                                 {
                                     !count ?
                                         <div>
-                                            <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
+                                            <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>
+                                            // <div className="dotLoaderB colorB marginLoader"></div>
+                                             : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
                                             <span>{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
-                                            <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <div className="dotLoaderB colorB marginLoader"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
+                                            <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>
+                                            // <div className="dotLoaderB colorB marginLoader"></div>
+                                             : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
                                 }
                             </div>
                             <div className="mt-2">
