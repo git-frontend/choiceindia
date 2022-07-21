@@ -77,7 +77,7 @@ function loadrefer() {
         
         setIsShow(true);
         setIserror(false)
-        setreferal1(res.Status)
+        
         console.log("show",res.Status)
 
         }
@@ -173,14 +173,6 @@ const { register,formState: reset } = useForm({
                                                     ""
                                                 }
                                                 
-                                                {
-                                                    isshow===true?
-                                                    <div style={{color:"green"}}>{referal1}</div>
-                                                    :
-                                                    ""
-                                                }
-
-
                                             </Form.Group>
                                         </div>
                                       
