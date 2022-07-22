@@ -1,5 +1,5 @@
 import React,{useState,useRef}from "react";
-import "./css/landingpage.css";
+import "./css/landingpage.scss";
 import img_data from './ImgData.js';
 import DematAccountForm from "../Common-features/DematAccountForm";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";

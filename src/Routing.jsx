@@ -7,6 +7,8 @@ import Footer from './components/Common-features/Footer';
 import OpentoTop from './components/Common-features/OpentoTop';
 import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
+import CampaignHeader from './components/Contact/CampaignHeader';
+import CampaignFooter from './components/Common-features/CampaignFooter';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -55,6 +57,9 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 
 const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
+const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
+const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
+const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 
 function Routing() {
     
@@ -65,7 +70,8 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                <Header />
+                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Header /> : <CampaignHeader />}
+                {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
                         <Route exact path='/' element={
@@ -153,7 +159,6 @@ function Routing() {
                                 < Lazysubbroker />
                             </React.Suspense>
                         } />
-
                         <Route exact path='/refer-and-earn' element={
                             <React.Suspense>
                                 < Lazyrefer />
@@ -256,11 +261,27 @@ function Routing() {
                                 < LazyAddLead />
                             </React.Suspense>
                         } />
+                        <Route exact path='/hindi/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokerhindi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokercampaign />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/privacy-policy' element={
+                            <React.Suspense>
+                                < LazyPrivacyPolicy />
+                            </React.Suspense>
+                        } />
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                <Footer />
+                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

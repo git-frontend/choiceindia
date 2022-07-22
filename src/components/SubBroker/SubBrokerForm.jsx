@@ -617,7 +617,7 @@ function DematAccountForm() {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'font-size': 'large'}} />
+                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'fontSize': 'large'}} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
                             }
@@ -634,7 +634,7 @@ function DematAccountForm() {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'font-size': 'large'}} />
+                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
@@ -659,6 +659,10 @@ function DematAccountForm() {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}
                             </Button>
+                            {/* <Button variant="primary"
+                                type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
+                                Clear
+                            </Button> */}
                         </div>
                     </Form.Group>
                 </Form>
@@ -688,7 +692,7 @@ function DematAccountForm() {
                             <div>
 
 
-                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                 {
                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                 }
@@ -721,15 +725,15 @@ function DematAccountForm() {
             }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <Button variant="primary" onClick={handleTermsConditionClose}>
                         Okay
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
             <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
                 keyboard={false} centered>

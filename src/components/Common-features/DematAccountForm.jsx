@@ -35,11 +35,18 @@ function DematAccountForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+
+    var UTMContent = useRef('');
+    var UTMCustom = useRef('');
+    var UTMTerm = useRef('');
     var refercode = useRef('');
+    var subrefercode = useRef('');
     var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
+    const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
+    const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
   
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -117,8 +124,7 @@ function DematAccountForm(props) {
                 'invalidMobile': true
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
-
-            if(props.page == 'add-lead'){
+                        if(props.page == 'add-lead'){
                 console.log('Addd lead page');
                 sendNewLeadOTP();
                 setShowLead(() => true);
@@ -197,19 +203,23 @@ function DematAccountForm(props) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
+            "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
             "source": "CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
-            "sub_ref": null,
-            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
-            "utm_content": null,
-            "utm_custom": null,
-            "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
-            "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term": null
+            "sub_ref": subrefercode.current || null,
+            // 'seo_demat_leads'
+            "utm_campaign": UTMCampaign.current || null,
+            "utm_content": UTMContent.current || null,
+            "utm_custom": UTMCustom.current || null,
+            // 'sidebar_seo_leads'
+            "utm_medium": UTMMedium.current || null,
+            // 'blog_leads'
+            "utm_source": UTMSource.current || null,
+            "utm_term": UTMTerm.current || null
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -238,7 +248,12 @@ function DematAccountForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
-        refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+
+        refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
+        subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
     }
 
     // function handleOTP(e) {
@@ -410,13 +425,26 @@ function DematAccountForm(props) {
         }
       }
 
+    function triggerOTPInfoPopup(msg) {
+        setOTPInfoPopupMsg(msg);
+        openOTPInfoPopup();
+    }
+
+    function openOTPInfoPopup() {
+        setOTPInfoPopup(true);
+    }
+
+    function hideOTPInfoPopup() {
+        setOTPInfoPopup(false);
+    }
+
     return (
         <>
             {
-                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
+                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg)=>triggerOTPInfoPopup(msg)}></OpenDemateAccountPopup> : ''
             }
             {
-                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter> : ''
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg)=>triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
             }
             <div className="demat-account-form">
 
@@ -464,20 +492,20 @@ function DematAccountForm(props) {
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg)=>triggerOTPInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
 
-            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
+            <Modal  show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+                keyboard={false}  centered>
+                <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleTermsConditionClose}>
+                {/* <Modal.Footer>
+                    <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
 
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
@@ -536,7 +564,13 @@ function DematAccountForm(props) {
                     </Button>
                 </Modal.Footer>
             </Modal>
-
+            <Modal show={OTPInfoPopup} onHide={hideOTPInfoPopup} backdrop="static"
+                keyboard={false} centered>
+                <Modal.Body>{OTPInfoPopupMsg}</Modal.Body>
+                <Modal.Footer>
+                    <Button variant="primary" onClick={hideOTPInfoPopup}>Okay</Button>
+                </Modal.Footer>
+            </Modal>
             <Modal show={showlead} centered>
                 <Modal.Header className="ad-ld-mdl-head">
                     <Modal.Title></Modal.Title>

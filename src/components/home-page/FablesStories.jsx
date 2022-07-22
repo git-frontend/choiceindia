@@ -55,7 +55,7 @@ function FablesStories() {
 		autoplay: true,
 		dots: true,
 		autoplaySpeed: 3000,
-		slidesToScroll: 2,
+		slidesToScroll: 1,
 		swipeToSlide: true,
 		responsive: [
 			{
@@ -132,9 +132,10 @@ function FablesStories() {
 											slidesToShow={3}
 											swipeToSlide={true}
 											focusOnSelect={true}
-											afterChange={(ev) => {
-												setSliderImag(ev)
-
+											beforeChange={(ev1,ev2) => {
+													setSliderImag(ev2)
+													console.log("changes")
+												
 											}}
 
 

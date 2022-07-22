@@ -25,6 +25,13 @@
 			background-image: inherit !important;
             &.formpadding{
                 padding: 1.2rem 1.5rem;
+				.react-dropdown-select-content{
+					flex-wrap: inherit;
+					
+					>span{
+						font-size: 1.2rem;
+					}
+				}
             }
 			
 			
@@ -32,6 +39,7 @@
 		.react-dropdown-select{
 			.react-dropdown-select-input{
 				width: 100% !important;
+				font-size: 1.2rem;
 			}
 			.react-dropdown-select-item {
 				font-size: 1.2rem !important;
@@ -51,6 +59,7 @@
             align-items: flex-start;
             .form-check{
                 margin-right: 0;
+				font-size: 1.2rem;
             }
             .lbl{
                 font-size: 1.2rem;
@@ -150,12 +159,10 @@
 .otp-modal-footer {
     border: none;
     text-align: center;
+	margin: 0.5em;
 }
 
-.otp-modal-footer,
-p {
-    margin: 0.5em;
-}
+
 
 .modal-otp-links {
     /* display: flex; */
@@ -230,8 +237,8 @@ p {
 
   .marginLoader {
     /* margin: 0 3.9rem 0 3.9rem; */
-    margin-left: 4.2rem;
-    margin-right: 4.2rem;
+    margin-left: 3rem;
+    margin-right: 3rem;
     // margin-top: -0.4rem;
     /* padding-left: 4rem;
     padding-right: 4rem; */

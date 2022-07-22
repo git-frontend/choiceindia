@@ -8,7 +8,7 @@ const imageData =
 [
     {
         "image":`${ImageSub0}`,
-        "title":"C Quant",
+        "title":"Signal",
         "id": 1,
         "description":" Effective Positional Calls based on our Algorithm for better trade results"
         

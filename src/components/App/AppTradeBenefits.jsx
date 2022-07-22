@@ -88,7 +88,7 @@ function AppTradeBenefits() {
                 </li>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                    <h3 className="title-secnd">5K + Users</h3>
+                    <h3 className="title-secnd">8K + Users</h3>
                     <p>Rated Till Now</p>
                   </div>
                 </li>

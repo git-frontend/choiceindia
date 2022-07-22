@@ -1,6 +1,11 @@
-import ImageSub23 from '../../assets/images/img-small3.png';
-import ImageSub22 from '../../assets/images/img-small2.png';
-import ImageSub21 from '../../assets/images/img-small1.png';
+// import ImageSub23 from '../../assets/images/homeimg-small3.png';
+import ImageTesti1 from '../../assets/images/uditgoyal.webp';
+import ImageTesti2 from '../../assets/images/MOChug.webp';
+import ImageTesti3 from '../../assets/images/Aiyer.webp';
+import ImageTesti4 from '../../assets/images/SatishPrajapati.webp';
+import ImageTesti5 from '../../assets/images/ShibiMitra.webp';
+import ImageTesti6 from '../../assets/images/VisheshST.webp';
+import ImageTesti7 from '../../assets/images/Kamlesh.webp';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -65,28 +70,37 @@ function HomeTestimonial() {
 
     const [dataObj, setdataObj] = useState(() => [
         {
-            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-                "They are the best brokers in town and provide the best services to their clients."
+            "img": ImageTesti1, "name": "Udit Goyal", "tag": "@uditgoyal09", "date": "20 Aug 2021", "likes": "27",
+            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
         },
 
 		{
-            "img": ImageSub21, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+            "img": ImageTesti2, "name": "Monish Chug", "tag": "@MOChug1992", "date": "1 Feb 2021", "likes": "56",
+            "des": "They are delivering the right experience for investing through their app. the process is quiet simplified and secured with two factor authentication. I highly recommend them."
         },
 
 
         {
-            "img": ImageSub22, "name": "Sachin Chadda", "tag": "@SachinChadda", "date": "21 Aug 2021", "likes": "27",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons." +
-                "They are the best brokers in town and provide the best services to their clients."
+            "img": ImageTesti3, "name": "Aparajitha Aiyer", "tag": "@Aiyer23", "date": "21 May 2022", "likes": "94",
+            "des": "Had the best experience with the customer support. Their representative patiently listened to all my problems and provided me with immediate help. Kudos to the customer support team."
         },
 
-        
-
         {
-            "img": ImageSub23, "name": "Amarpreet Kaur", "tag": "@Amarpreet Kaur", "date": "21 Aug 2021", "likes": "57",
-            "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+            "img": ImageTesti4, "name": "Satish Prajapati", "tag": "@SatishPrajapati161", "date": "13 Aug 2021", "likes": "48",
+            "des": "I’m really happy with the research calls here. The quality of research is really impressive. I’ve been able to book some handsome profits because of these reseach calls. Thanks!!! "
+        },
+
+		{
+            "img": ImageTesti5, "name": "Shibani Mitra", "tag": "@ShibiMitra88", "date": "09 Sept 2021", "likes": "61",
+            "des": "Everyone who invests in stock markets should experience their app. No lags or other problems whatsoever. Everything right from sign in to trade execution is seemless."
+        },
+		{
+            "img": ImageTesti6, "name": "Vishesh Singh Thakur", "tag": "@VisheshST9999", "date": "18 Oct 2021", "likes": "48",
+            "des": "I’m a beginner in stock market investing and I find this app very helpful. The research section is of great help and the trading window is also good and simple to use."
+        },
+		{
+            "img": ImageTesti7, "name": "Kamlesh Bhadoria", "tag": "@Kamlesh83", "date": "30 Sept 2021", "likes": "71",
+            "des": "I have tried their stock collections and baskets and I must say they are full of great stock ideas. The baskets are a great way of investing with diversification."
         }
     ])
 	const [counterRight, setcounterRight] = useState(() => 1);
@@ -100,7 +114,7 @@ function HomeTestimonial() {
 		if(counterRight === 0 ){
 			setdisableLeft(true);
 			setdisableRight(false);
-		}else if(counterRight === 3){
+		}else if(counterRight === 6){
 			setdisableLeft(false);
 			setdisableRight(true);
 		}else{
@@ -112,7 +126,7 @@ function HomeTestimonial() {
 		
         counter.current = counter.current + 1;
 
-        if (valRight === 3) {
+        if (valRight === 6) {
             setValRight(prevCount => prevCount * 0);
         } else {
             setValRight(prevCount => prevCount + 1);

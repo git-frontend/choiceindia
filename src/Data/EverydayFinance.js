@@ -21,7 +21,7 @@ const EveryFinance =
         id:2,
         image:`${ImageSub3}`,
         title:"Mutual Funds",
-        description:"Get insured as per your need for everything right here",
+        description:"Buy and sell all kinds of mutual funds at one place with comfort",
 
 
     },
@@ -29,7 +29,7 @@ const EveryFinance =
         id:3,
         image:`${ImageSub4}`,
         title:"Insurance",
-        description:"Hassle free Personal loans with minimum documentation",
+        description:"Get insured as per your need for everything right here",
 
 
     },
@@ -38,7 +38,7 @@ const EveryFinance =
         id:4,
         image:`${ImageSub5}`,
         title:"Loans",
-        description:"A National Scheme to facilitate a regular income post retirement",
+        description:"Hassle free Personal loans with minimum documentation",
 
 
     },
@@ -46,7 +46,7 @@ const EveryFinance =
         id:5,
         image:`${ImageSub6}`,
         title:"NPS",
-        description:"Enhance returns and lower down risk by investing in various debt instruments ",
+        description:"A National Scheme to facilitate a regular income post retirement",
 
 
     },
@@ -54,7 +54,7 @@ const EveryFinance =
         id:6,       
         image:`${ImageSub7}`,
         title:"Bonds",
-        description:"Popular Investment Avenue for Long Term Tax savers",
+        description:"Enhance returns and lower down risk by investing in various debt instruments",
 
 
     },
@@ -62,7 +62,7 @@ const EveryFinance =
         id:7,      
         image:`${ImageSub8}`,
         title:"PPF",
-        description:"A tax-free investment instrument for the salaried class",
+        description:"Popular Investment Avenue for Long Term Tax savers with stable returns",
 
 
     },
@@ -70,7 +70,7 @@ const EveryFinance =
         id:8,        
         image:`${ImageSub9}`,
         title:"EPF",
-        description:"Grow your funds with a fixed rate of Corporate FDs without market volatility",
+        description:"A tax-free investment instrument for the salaried class",
 
 
     },
