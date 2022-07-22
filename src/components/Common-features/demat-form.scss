@@ -25,6 +25,13 @@
 			background-image: inherit !important;
             &.formpadding{
                 padding: 1.2rem 1.5rem;
+				.react-dropdown-select-content{
+					flex-wrap: inherit;
+					
+					>span{
+						font-size: 1.2rem;
+					}
+				}
             }
 			
 			
@@ -32,6 +39,7 @@
 		.react-dropdown-select{
 			.react-dropdown-select-input{
 				width: 100% !important;
+				font-size: 1.2rem;
 			}
 			.react-dropdown-select-item {
 				font-size: 1.2rem !important;
