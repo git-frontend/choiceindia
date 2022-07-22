@@ -1,12 +1,12 @@
 
 import React from "react";
-import BannerSBroker from './BannerSBroker';
-import SubBrokerBenifits from './SubBrokerBenifits';
-import SubBrokerSellMore from './SubBrokerSellMore';
-import WhyBecomeSubBroker from './WhyBecomeSubBroker';
-import WhoEligibleToSubBroker from './WhoEligibleToSubBroker';
+import BannerSBrokerHindi from './BannerSBrokerHindi';
+import SubBrokerBenifitsHindi from './SubBrokerBenifitsHindi';
+import SubBrokerSellMoreHindi from './SubBrokerSellMoreHindi';
+import WhyBecomeSubBrokerHindi from './WhyBecomeSubBrokerHindi';
+import WhoEligibleToSubBrokerHindi from './WhoEligibleToSubBrokerHindi';
 import MoreContent from './MoreContent';
-import SubBrokerOffers from './SubBrokerOffers';
+import SubBrokerOffersHindi from './SubBrokerOffersHindi';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
@@ -57,13 +57,13 @@ function SubBrokerHindi() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <BannerSBroker />
-            <SubBrokerBenifits />
-            <SubBrokerSellMore />
-            <WhyBecomeSubBroker />
-            <WhoEligibleToSubBroker />
-            <SubBrokerOffers />
-            <MoreContent />
+            <BannerSBrokerHindi />
+            <SubBrokerBenifitsHindi />
+            <SubBrokerSellMoreHindi />
+            <WhyBecomeSubBrokerHindi />
+            <WhoEligibleToSubBrokerHindi />
+            <SubBrokerOffersHindi />
+            {/* <MoreContent /> */}
             
           </div>
       }
