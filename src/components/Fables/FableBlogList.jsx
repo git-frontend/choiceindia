@@ -12,7 +12,7 @@ function FableBlogList() {
     const [post, setPost] = useState([]);
     const [trigger, setTrigger] = useState(false);
     const [check, setCheck] = useState(false);
-    const [count,setCount] = useState(6)
+    const [count,setCount] = useState(0)
 
 
     function loadfablecategory() {
@@ -56,17 +56,16 @@ function FableBlogList() {
                     <div className="fable-list-menu">
                         <ul >
                             {
-                                data.map((res,i=5) => {
+                                data.map((res,i) => {
 
-                                    let classNameNm = "link-txt" + ((i === count-1) ? ' link-active' : "")
+                                    let classNameNm = "link-txt" + ((i === count) ? ' link-active' : "")
                                     console.log("precheck",count)
                                     return (
                                         
                                         <li onClick={()=>{getfableFolder(res.fable_linkage)
-                                        setCount(res.id)
-                                        console.log("index",count)
+                                        setCount(i)
                                         }} key={res.id}>
-                                            <div style={{'cursor':'pointer'}} className={"link-txt" + ((i === count-1) ? ' link-active' : "" )}>{res.fable_category}</div>
+                                            <div style={{'cursor':'pointer'}} className={classNameNm}>{res.fable_category}</div>
                                         </li>
                                         
 
