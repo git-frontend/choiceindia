@@ -417,7 +417,7 @@ function DematAccountForm(props) {
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
-                                name="terms_and_conditions"
+                                name="terms_and_conditionss"
                                 type="checkbox"
                                 id="terms_and_conditions"
                             >
@@ -447,17 +447,17 @@ function DematAccountForm(props) {
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg)=>triggerOTPInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
 
-            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
+            <Modal  show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+                keyboard={false}  centered>
+                <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleTermsConditionClose}>
+                {/* <Modal.Footer>
+                    <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
 
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
