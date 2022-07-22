@@ -53,6 +53,7 @@ export default function FaqBody() {
   /** faq search function */
 
   function loadfaqsearch() {
+    setIsloader(true)
 
     faqService.FaqSearch(data).then(
       res => {

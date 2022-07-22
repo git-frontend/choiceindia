@@ -23,8 +23,9 @@ console.log("PROPS",props)
                 size="md"
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
+                onHide={()=>{closeModal()}}
             >
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
                         {props.title}
                     </Modal.Title>
@@ -34,9 +35,9 @@ console.log("PROPS",props)
                         {props.content}
                     </p>
                 </Modal.Body>
-                <Modal.Footer>
-                    <Button onClick={()=>{closeModal()}}>{props.closebtn}</Button>
-                </Modal.Footer>
+                {/* <Modal.Footer>
+                    <Button variant="warning" onClick=>{props.closebtn}</Button>
+                </Modal.Footer> */}
             </Modal>
         </>
     )
