@@ -60,7 +60,7 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
-
+const LazyThankupopup = React.lazy(() => import('./components/Common-features/Thanku-popup'));
 function Routing() {
     
 
@@ -277,7 +277,11 @@ function Routing() {
                                 < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
-
+                        <Route exact path='/thank-you' element={
+                            <React.Suspense>
+                                < LazyThankupopup />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

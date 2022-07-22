@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function PrivacyPolicy() {
   return (
       <>
-      
+      <div>
           <div className='seo-privacy-policy-div'>
               <div className="container">
                   <div className="row">
@@ -52,6 +52,7 @@ function PrivacyPolicy() {
               </div>
               </div>
           </div>
+        </div>
       </>
   )
 }
