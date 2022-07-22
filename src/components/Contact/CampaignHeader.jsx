@@ -1,6 +1,4 @@
-import "../../assets/css/header.scss"
-import { Link, NavLink } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import "../../assets/css/header.scss";
 import  ImageSub0  from '../../assets/images/logo-old.svg';
 
 function CampaignHeader() {
@@ -10,9 +8,9 @@ function CampaignHeader() {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
 
-            <Link className="navbar-brand logo-main" to="/">
+            <a className="navbar-brand logo-main" href="/">
               <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice India" />
-            </Link>
+            </a>
             {/* <div className="collapse navbar-collapse">
               <ul className="navbar-nav ms-auto nav-header">
 

@@ -659,6 +659,10 @@ function DematAccountForm() {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}
                             </Button>
+                            {/* <Button variant="primary"
+                                type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
+                                Clear
+                            </Button> */}
                         </div>
                     </Form.Group>
                 </Form>
@@ -688,7 +692,7 @@ function DematAccountForm() {
                             <div>
 
 
-                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                 {
                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                 }
