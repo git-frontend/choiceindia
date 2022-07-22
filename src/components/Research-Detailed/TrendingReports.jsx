@@ -3,19 +3,25 @@ import React from "react";
 import {useState, useEffect } from "react";
 import thumb1 from '../../assets/images/research/thumbnail-1.webp';
 import ResearchService from "../../Services/ResearchService";
-import {Routes, Route, useNavigate} from 'react-router-dom';
+import {Routes, Route, useNavigate, useLocation} from 'react-router-dom';
 
 function TrendingReports(props) {
 
   const [list, setList] = useState(null);
   const navigate = useNavigate();
-
-  console.log('BBBBBBBBBBB',props.data);
+  const search = useLocation().search;
+  const name = new URLSearchParams(search).get('id');
+  // console.log('BBBBBBBBBBB',props);
+  let sliceCount = Math.floor((Math.random() * 5) + 1);
 
   function getSingleDetail(id){
     console.log('IIIII',id);
     
-      navigate(`/research-detailed/${id}/${props.data}`);
+      // navigate(`/research-new/${id}/${props.data}`);
+      navigate({
+        pathname: `/research-new/${id}/${props.data}`,
+        search: `?id=${name? name: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}`
+      })
   }
 
   // function getSingleResearchDetail(id){
@@ -36,13 +42,14 @@ function TrendingReports(props) {
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
       res => {
+        // console.log('YYYYY',res.response.totalCount);
         setList(res.response.data);
       }
     )
   };
 
   useEffect(() => {
-    loadResearch(props.data)
+    loadResearch(name? name: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
   },[])
 
   return (
@@ -65,7 +72,7 @@ function TrendingReports(props) {
                 <div className="res-detailtab-list">
 
                   {
-                    list?.slice(0,4)?.map((res,i)=> {
+                    list?.slice(sliceCount,9)?.map((res,i)=> {
                       
                       console.log('RESPONSE',res)
                       return(

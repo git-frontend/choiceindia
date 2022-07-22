@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -33,8 +33,8 @@ const config = {
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
-    liveperformanceURL:"https://jiffy.choiceindia.com//api/",
-    UATperformanceURL:"https://jiffy.choiceindia.com//api/",
+    liveperformanceURL: "https://jiffy.choiceindia.com//api/",
+    UATperformanceURL: "https://jiffy.choiceindia.com//api/",
     liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
@@ -48,31 +48,31 @@ export class API_URLS {
     /** SSO Base URL */
     SSOServerURL = '';
     /**Server URL */
- serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
- /**Server URL */
- jiffyURL = "devjiffy.choicebroking.in";
- jiffyExpertPageURL="research-report/research/experts/EQ/all/"
- jiffySignalPageURL="research-report/research/signals/EQ/all/"
- /** banner URL */
+    serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
+    /**Server URL */
+    jiffyURL = "devjiffy.choicebroking.in";
+    jiffyExpertPageURL = "research-report/research/experts/EQ/all/"
+    jiffySignalPageURL = "research-report/research/signals/EQ/all/"
+    /** banner URL */
     bannerURL = "https://cmsapi.choiceindia.com/"
 
 
-     /** Base URL for JIFFY APIs */
-   jiffyServerURL = "https://api.jiffy.in/";
+    /** Base URL for JIFFY APIs */
+    jiffyServerURL = "https://api.jiffy.in/";
     /** faq URL */
     faqURL = "https://choicebroking.freshdesk.com/api/v2/"
 
     /** refer and earn URL */
     referURL = "https://uatapi.choicebroking.in/api/middleware"
-    
-  /**Research New Fetch Success Ratio */
-   fetchResearchReport = "/research-report-new"
+
+    /**Research New Fetch Success Ratio */
+    fetchResearchReport = "/research-report-new"
     /** Research URL */
     researchURL = "https://uatapi.choicebroking.in/api/middleware"
 
 
-     /** PV breakout API data URL */
-pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
+    /** PV breakout API data URL */
+    pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     /**Market Insights , fabal URL */
 
     addMarketInsiteURL = 'content/posts/?key=280c55197998a010569e5d612a';
@@ -107,8 +107,8 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     contactURL = 'contact-us/'
     researchReport = '/research-report'
 
-      /** API URL For guest Token Generation*/
-   genKeyURL = "api/settings/GenKey";
+    /** API URL For guest Token Generation*/
+    genKeyURL = "api/settings/GenKey";
     /** Faq category section */
 
     faqCategoryURL = '/items/faq_category?filter[faq_status][_eq]=publish'
@@ -132,15 +132,15 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
 
     /** Performance */
 
-    performancefontURL='techanalysis/getcounters';
+    performancefontURL = 'techanalysis/getcounters';
 
     /** performance Success ratio */
 
-    successURL ='api/success-ratio';
+    successURL = 'api/success-ratio';
 
 
-   
-
+    /** add new lead APIs */
+    sendNewLeadURL = 'add-new-lead-v2';
 
     /** Open Account APIs */
 
@@ -178,18 +178,18 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
 
-    this.setJiffyURL(config[configKey + 'JiffyURL'])
+        this.setJiffyURL(config[configKey + 'JiffyURL'])
         this.setSSOServerURL(config[configKey + 'SSOBaseURL']);
-    
 
-    this.setJiffyServerURL(config[configKey + 'JiffyServerURL']);
+
+        this.setJiffyServerURL(config[configKey + 'JiffyServerURL']);
         this.setServerURL(config[configKey + 'ServerURL']);
 
         this.setBannerURL(config[configKey + 'BannerURL']);
 
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
-    this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
+        this.setNewResearchReportURL(config[configKey + 'NewResearchReportURL']);
         this.setreferURL(config[configKey + 'referURL']);
         this.setresearchURL(config[configKey + 'researchURL']);
         this.setperformanceURL(config[configKey + 'performanceURL']);
@@ -212,13 +212,13 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     }
 
 
-  /**
- * Set Base URL of CMS APIs
- * @param url url to Be set
- */
+    /**
+   * Set Base URL of CMS APIs
+   * @param url url to Be set
+   */
     setNewResearchReportURL(url) {
-    this.newResearchReportURL = url;
-  }
+        this.newResearchReportURL = url;
+    }
     /**
      * Set Server URL 
      * @param {*} url 
@@ -234,21 +234,21 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
         this.serverURL = url;
     }
 
-/**
- * Set Server URL 
- * @param {*} url 
- */
- setJiffyServerURL = (url) => {
-    this.jiffyServerURL = url;
-}
+    /**
+     * Set Server URL 
+     * @param {*} url 
+     */
+    setJiffyServerURL = (url) => {
+        this.jiffyServerURL = url;
+    }
 
-/**
- * Set Server URL 
- * @param {*} url 
- */
- setJiffyURL = (url) => {
-    this.jiffyURL = url;
-}
+    /**
+     * Set Server URL 
+     * @param {*} url 
+     */
+    setJiffyURL = (url) => {
+        this.jiffyURL = url;
+    }
 
 
     /**
@@ -261,14 +261,14 @@ pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     }
 
 
-getExpertDetailURL=(id)=>{
-return this.jiffyURL+this.jiffyExpertPageURL+id
-}
+    getExpertDetailURL = (id) => {
+        return this.jiffyURL + this.jiffyExpertPageURL + id
+    }
 
 
-getSignalDetailURL=(id)=>{
-    return this.jiffyURL+this.jiffySignalPageURL+id
-}
+    getSignalDetailURL = (id) => {
+        return this.jiffyURL + this.jiffySignalPageURL + id
+    }
 
     /**
      * Set faq URL 
@@ -278,42 +278,42 @@ getSignalDetailURL=(id)=>{
 
         this.faqURL = url;
     }
-    
+
     /**
      * Set faq URL 
      * @param {*} url 
      */
-     setreferURL = (url) => {
+    setreferURL = (url) => {
 
         this.referURL = url;
     }
 
-     /**
-     * Set Research URL 
-     * @param {*} url 
-     */
-      setresearchURL = (url) => {
+    /**
+    * Set Research URL 
+    * @param {*} url 
+    */
+    setresearchURL = (url) => {
 
         this.researchURL = url;
     }
 
-     /**
-     * Set Research URL 
-     * @param {*} url 
-     */
-      setperformanceURL = (url) => {
+    /**
+    * Set Research URL 
+    * @param {*} url 
+    */
+    setperformanceURL = (url) => {
 
         this.performanceURL = url;
     }
 
 
- fetchResearchReportURL() {
-    return this.newResearchReportURL + this.fetchResearchReport;
-  }
+    fetchResearchReportURL() {
+        return this.newResearchReportURL + this.fetchResearchReport;
+    }
 
-  fetchSignalReportURL() {
-    return this.jiffyServerURL + this.pvBreakoutURL;
-  }
+    fetchSignalReportURL() {
+        return this.jiffyServerURL + this.pvBreakoutURL;
+    }
 
 
     /** Get Market Insite and fabal List URL */
@@ -371,13 +371,13 @@ getSignalDetailURL=(id)=>{
         return this.bannerURL + this.contactURL
     }
 
-getSessionUrl(){
-    return this.jiffyServerURL+this.genKeyURL
-}
+    getSessionUrl() {
+        return this.jiffyServerURL + this.genKeyURL
+    }
 
-getExpertReportURL(){
-    return this.jiffyResearchURL + this.researchReport
-}
+    getExpertReportURL() {
+        return this.jiffyResearchURL + this.researchReport
+    }
 
     getFaqCategoryURL() {
         return this.bannerURL + this.faqCategoryURL
@@ -428,11 +428,11 @@ getExpertReportURL(){
 
 
 
-    
+
     /**Logon Request */
-    getLogonRequestURL(){
+    getLogonRequestURL() {
         return this.socketLogonRequest
-        }
+    }
     getCitiesURL() {
         return this.LMSBaseURL + this.getCityURL;
     }
@@ -442,21 +442,21 @@ getExpertReportURL(){
     }
 
     /**Header Request */
-    getHeaderRequestURL(){
-       return this.socketHeaderRequest 
+    getHeaderRequestURL() {
+        return this.socketHeaderRequest
     }
 
     /**Socket Pause Resume Request */
-    getPauseResumeRequestURL(){
+    getPauseResumeRequestURL() {
         return this.pauseResumeRequest
     }
 
-    getMultitouchlineRequestURL(){
+    getMultitouchlineRequestURL() {
         return this.socketMultiTouchlineRequest
     }
 
     /**Keep Alive Request */
-    getKeepAliveRequestURL(){
+    getKeepAliveRequestURL() {
         return this.keepAliveRequest
     }
     getCheckExistenceURL() {
@@ -475,39 +475,44 @@ getExpertReportURL(){
         return this.OnbBaseURL + this.addNewLeadURL;
     }
 
-    getreferearnURL(id){
+    getreferearnURL(id) {
         return this.referURL + `/GetUserReferralData?ClientID=${id}`;
     }
 
-    getreferallink(id){
+    getreferallink(id) {
         return this.referURL + `/v1/40a9f5ac41a0f6223825/user/${id}/referral_link`
-  }
+    }
 
     getExpertResearchreportURL() {
         return this.JiffyBaseURL + this.getExpertResearchURL;
     }
 
-    getresearchURL(id){
+    getresearchURL(id) {
         return this.researchURL + `api/fundamental?report_subtype_uuid=${id}`
     }
-    getresearchipoURL(){
+    getresearchipoURL() {
         // this.researchURL
         return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?limit=10&offset=0'
     }
 
     getperformanceURL() {
 
-        return this.performanceURL +this.performancefontURL;
+        return this.performanceURL + this.performancefontURL;
     }
 
-    getsuccessURL(){
+    getsuccessURL() {
 
         return this.JiffyBaseURL + this.successURL;
     }
 
-    getresearchDetailURL(uuid){
+    getresearchDetailURL(uuid) {
 
         return this.researchURL + `api/fundamental/${uuid}`;
+    }
+
+    getchoiceIndiaNewLeadURL() {
+
+        return this.SSOServerURL + this.sendNewLeadURL;
     }
 
 }
