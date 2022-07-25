@@ -13,7 +13,7 @@ import Spinner from 'react-bootstrap/Spinner';
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
-export default function FaqBody() {
+export default function FaqBody() { 
   const [list, setList] = useState([]);
   const [searchlist, setSearchlist] = useState([]);
   const [list2, setList2] = useState("Stocks");
@@ -21,10 +21,8 @@ export default function FaqBody() {
   const [folder, setFolder] = useState([]);
   const [article, setArticle] = useState([]);
   const [selectedId, setSelectedId] = useState(0);
-  const [select, setSelect] = useState(-1);
   const [isloader, setIsloader] = useState(false)
   const [selected, setSelected] = useState(0);
-  const [isactive, setIsactive] = useState(false);
   const [isarticle, setIsarticle] = useState(false);
   let data = '';
 
@@ -42,7 +40,7 @@ export default function FaqBody() {
 
 
 
-/** Faq search text */
+  /** Faq search text */
 
   const { register, reset } = useForm({
     mode: 'onChange',
@@ -58,20 +56,21 @@ export default function FaqBody() {
     faqService.FaqSearch(data).then(
       res => {
 
-        setIsactive(true);
         chapterScroll('faq-section')
         setIsloader(false)
         setIsarticle(true);
-        setSelect(-1)
+        setSelected(-1)
         setSearchlist(res);
 
       }
-    )
+    ).catch((error) => {
+      setSearchlist([]);
+    });
 
   };
 
 
-/** scroll id view */
+  /** scroll id view */
 
   function chapterScroll(id) {
     var element = document.getElementById(id);
@@ -93,7 +92,9 @@ export default function FaqBody() {
         setList(res);
         loadfaqFolder(res[0].category_linkage);
       }
-    )
+    ).catch((error)=>{
+      setList([]);
+    });
   };
 
   /** FAQ Folder section */
@@ -103,20 +104,24 @@ export default function FaqBody() {
       res => {
         setFolder(res)
         loadfaqarticle(res[0].id);
-        
+
       }
-    )
+    ).catch((error)=>{
+      setFolder([]);
+    });
   };
 
-/** FAQ Article section */
+  /** FAQ Article section */
 
   function loadfaqarticle(id) {
     faqService.FaqArticle(id).then(
       res => {
         setArticle(res)
-        
+
       }
-    )
+    ).catch((error)=>{
+      setArticle([]);
+    });
   };
 
   /** FAQ search text clear */
@@ -151,8 +156,8 @@ export default function FaqBody() {
                     <div className="faq-search" >
 
                       <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
-                                          
-                          <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search':<Spinner animation="border" />}</Button> 
+
+                      <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
                     </div>
                     <div>
 
@@ -165,196 +170,161 @@ export default function FaqBody() {
           </div>
         </section>
 
-        
-          <div className='faq-body'>
 
-            <section className="security-privacy same-list-bx">
-              <div className="container">
-                <div className="row d-flex justify-content-center">
-                  <div className="col-md-12">
-                    <div className="heading-sec">
-                      <h3 className="title-first ">Looking for an Answer?</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-12">
+        <div className='faq-body'>
 
-                    {
-                      isactive == false ?
-                    
-                    <div className="same-list-bx-list">
-
-                      {
-                        list.map((response, i) => {
-
-                          let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
-
-
-                          return (
-                            <div key={response.id} className={classNameNm2} onClick={() => {
-
-                              loadfaqFolder(response.category_linkage);
-                              setList2(response.category_name);
-                              setSelectedId(0);
-                              setSelected(i);
-                              // scrollToElement();
-                            }}>
-                              <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section') }}  >
-                                      <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" width={"50"} height={"50"} />
-                                <h4>{response.category_name}</h4>
-                                <p>{response.category_description}</p>
-                              </div>
-                            </div>
-                          )
-                        }
-                        )
-                      }
-
-
-                    </div> 
-                    :
-                    <div className="same-list-bx-list">
-                      {
-                        list.map((response, i) => {
-
-                          let classNameNm2 = "same-list-bx-item" + ((i === select) ? ' bx-item-cont-active' : "")
-
-
-                          return (
-                            <div key={response.id} className={classNameNm2} onClick={() => {
-
-                              loadfaqFolder(response.category_linkage);
-                              setList2(response.category_name);
-                              setSelectedId(0);
-                              setIsarticle(false);
-                              setSelect(i);
-
-                              // scrollToElement();
-                            }}>
-                              <div className="bx-item-cont ser" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
-                                      <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon}`} className="" alt="" width={"50"} height={"50"} />
-                                <h4>{response.category_name}</h4>
-                                <p>{response.category_description}</p>
-                              </div>
-                            </div>
-                          )
-                        }
-                        )
-                      }
-
-
-                    </div>
-                    }
-
+          <section className="security-privacy same-list-bx">
+            <div className="container">
+              <div className="row d-flex justify-content-center">
+                <div className="col-md-12">
+                  <div className="heading-sec">
+                    <h3 className="title-first ">Looking for an Answer?</h3>
                   </div>
                 </div>
               </div>
-            </section>
+              <div className="row">
+                <div className="col-md-12">
+                  <div className="same-list-bx-list">
 
-            {
-              isarticle == false ?
+                    {
+                      list.map((response, i) => {
 
-                <section className='faq-accordion'  >
-                  <div className='container'>
-                    <div className='faq-header' id='faq-section'>
-                      <h1>{list2}</h1>
+                        let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
+
+
+                        return (
+                          <div key={response.id} className={classNameNm2} onClick={() => {
+
+                            loadfaqFolder(response.category_linkage);
+                            setList2(response.category_name);
+                            setSelectedId(0);
+                            setSelected(i);
+                            setIsarticle(false);
+                            // scrollToElement();
+                          }}>
+                            <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
+                              <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="" alt="" width={"50"} height={"50"} />
+                              <h4>{response.category_name || 'No data'}</h4>
+                              <p>{response.category_description || 'No data'}</p>
+                            </div>
+                          </div>
+                        )
+                      }
+                      )
+                    }
+
+
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {
+            isarticle == false ?
+
+              <section className='faq-accordion'  >
+                <div className='container'>
+                  <div className='faq-header' id='faq-section'>
+                    <h1>{list2}</h1>
+                  </div>
+                  <div className='faq-container'>
+                    <div className='content-list accordion-lists' >
+                      {
+                        folder.map((response, index) => {
+
+                          let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
+
+
+
+                          return (
+                            <div key={response.id} className={classNameNm} onClick={() => {
+                              loadfaqarticle(response.id);
+                              chapterScroll('faq-section');
+                              setSelectedId(index)
+                            }}>
+                              <p>{response.name || 'No data'}</p>
+                            </div>
+
+                          )
+                        }
+                        )
+                      }
+
+
                     </div>
-                    <div className='faq-container'>
-                      <div className='content-list accordion-lists' >
+                    <div className='content-list accordion-list ' >
+                      <Accordion defaultActiveKey="0" >
+
                         {
-                          folder.map((response, index) => {
-
-                            let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
-
-
+                          article.map((res, index) => {
 
                             return (
-                              <div key={response.id} className={classNameNm} onClick={() => {
-                                loadfaqarticle(response.id);
-                                chapterScroll('faq-section'); 
-                                setSelectedId(index)
-                              }}>
-                                <p>{response.name}</p>
+                              <div>
+                                <Accordion.Item key={res.id} eventKey={index}>
+                                  <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
+                                  {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                                  <Accordion.Body>
+                                    {res.description_text || 'Loading'}
+                                  </Accordion.Body>
+                                  {/**</div>*/}
+                                </Accordion.Item>
                               </div>
 
                             )
-                          }
-                          )
+                          })
+
                         }
 
 
-                      </div>
-                      <div className='content-list accordion-list ' >
-                        <Accordion defaultActiveKey="0" >
+                      </Accordion>
 
-                          {
-                            article.map((res, index) => {
-
-                              return (
-                                <div>
-                                  <Accordion.Item key={res.id} eventKey={index}>
-                                    <Accordion.Header >{res.title}</Accordion.Header>
-                                    {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                    <Accordion.Body>
-                                      {res.description_text}
-                                    </Accordion.Body>
-                                    {/**</div>*/}
-                                  </Accordion.Item>
-                                </div>
-
-                              )
-                            })
-
-                          }
-
-
-                        </Accordion>
-
-                      </div>
                     </div>
                   </div>
-                </section> :
+                </div>
+              </section> :
 
-                <section className='faq-accordion' id='faq-section'>
-                  <div className='container'>
+              <section className='faq-accordion' id='faq-section'>
+                <div className='container'>
 
-                    <div className='faq-container justify-content-center'>
+                  <div className='faq-container justify-content-center'>
 
-                      <div className='content-list accordion-list ' >
-                        <Accordion defaultActiveKey="0" >
+                    <div className='content-list accordion-list ' >
+                      <Accordion defaultActiveKey="0" >
 
-                          {
-                            searchlist.map((res, index) => {
+                        {
+                          searchlist.map((res, index) => {
 
-                              return (
-                                <div>
-                                  <Accordion.Item key={res.id} eventKey={index}>
-                                    <Accordion.Header >{res.title}</Accordion.Header>
-                                    {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                    <Accordion.Body>
-                                      {res.description_text}
-                                    </Accordion.Body>
-                                    {/**</div>*/}
-                                  </Accordion.Item>
-                                </div>
+                            return (
+                              <div>
+                                <Accordion.Item key={res.id} eventKey={index}>
+                                  <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
+                                  {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                                  <Accordion.Body>
+                                    {res.description_text || 'Loading'}
+                                  </Accordion.Body>
+                                  {/**</div>*/}
+                                </Accordion.Item>
+                              </div>
 
-                              )
-                            })
+                            )
+                          })
 
-                          }
+                        }
 
 
-                        </Accordion>
+                      </Accordion>
 
-                      </div>
                     </div>
                   </div>
-                </section>
+                </div>
+              </section>
 
-            }
-          </div> 
-        
+          }
+        </div>
+
 
       </div>
     </>
