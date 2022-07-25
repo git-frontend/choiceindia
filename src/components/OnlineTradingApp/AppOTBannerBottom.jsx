@@ -30,12 +30,32 @@ function AppOTBannerBottom() {
 
       <div className='app-banner-bottom'>
         <div className='container'>
+        <div className='row'>
+                        <div className='col-md-12'>
+                            <div className="heading-sec">
+                                <h2 className="title-secnd text-center">App for Real-time Trading Strategies</h2>
+                            </div>
+                        </div>
+                    </div>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
               <div className="app-trade-easy-div row align-items-center">
 
 
 
+               
+                <div className='col-xl-5 col-md-6'>
+
+                  <div className="trade-easy-images-div" >
+                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
+                    {/* <img src={imageData[isShown2].image}
+
+                      className="single-trade-easy-images" alt="loading"></img> */}
+                  </div>
+
+
+
+                </div>
                 <div className='col-md-6'>
                   <div className='content-list'>
                     <Slider {...settings1}
@@ -65,18 +85,6 @@ function AppOTBannerBottom() {
                     </Slider>
 
                   </div>
-
-
-                </div>
-                <div className='col-xl-5 col-md-6'>
-
-                  <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
-                    {/* <img src={imageData[isShown2].image}
-
-                      className="single-trade-easy-images" alt="loading"></img> */}
-                  </div>
-
 
 
                 </div>

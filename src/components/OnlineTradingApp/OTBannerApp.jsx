@@ -8,17 +8,15 @@ function BannerCareer() {
 
   return (
     <div className='App-main'>
-
-
       <section className="banner-app">
-      <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Loading"} width={"1728"} height={"1119"}/>
+      <LazyLoader src={AppImage0} className={"img-fluid "} alt={"Loading"} width={"1728"} height={"1119"}/>
         {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
         <div className='app-banner-caption'>
           <div className='container'>
             <div className='row'>
               <div className='col-md-12'>
                 <div className='caption-cont'>
-                  <h1 className='big-ttl'>Super App for <br /> Everyday Finance</h1>
+                  <h1 className='big-ttl'>Jiffy Trading App For <br /> IPO investment</h1>
                   <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                       <svg width="30" height="30" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>

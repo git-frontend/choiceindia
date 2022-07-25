@@ -235,7 +235,8 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-<Route exact path='/onlinetradingapp' element={
+
+                        <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
                                 < Lazyonlinetradingapp />
                             </React.Suspense>

@@ -5,7 +5,7 @@ import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
 import AppOTBenefits from './AppOTBenefits';
 import AppOTradeBenefits from './AppOTradeBenefits';
-import "./app.scss";
+import "./online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
 // import AppHeader from './AppHeader.jsx';
 import {
