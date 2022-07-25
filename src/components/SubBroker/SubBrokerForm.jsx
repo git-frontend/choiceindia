@@ -745,7 +745,7 @@ function SubBrokerForm(props) {
                 </Modal.Header>
                 <Modal.Body>{APIError}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={hideAPIErrorToaster}>
+                    <Button variant="warning" onClick={hideAPIErrorToaster}>
                         Okay
                     </Button>
                 </Modal.Footer>

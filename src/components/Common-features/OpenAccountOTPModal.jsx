@@ -245,7 +245,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                 <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + mobileNumber.slice(6, 10)}</p>
                                 {
                                     count ?
-                                        <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span> {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
+                                        <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
                                 }
 
                             </div>
@@ -268,7 +268,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                             <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>
                                             // <div className="dotLoaderB colorB marginLoader"></div>
                                              : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
-                                            <span>{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
+                                            <span className="ortext">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
                                             <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading...</span></Spinner>
                                             // <div className="dotLoaderB colorB marginLoader"></div>
                                              : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
@@ -279,7 +279,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                     (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
                                         <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
                                             {
-                                                (OTPSendSuccessToaster.call) ? 'You will soon receive an automated call on given Mobile Number' : 'OTP has been resent on given Mobile Number'
+                                                (OTPSendSuccessToaster.call) ? OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresendsuccess1') : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresendsuccess2')
                                             }
                                         </Alert> : ''
                                 }
