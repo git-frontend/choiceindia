@@ -9,7 +9,9 @@ import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
 import Select from 'react-dropdown-select';
 import { Link } from "react-router-dom";
-function DematAccountForm() {
+import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
+
+function SubBrokerForm(props) {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
@@ -425,7 +427,7 @@ function DematAccountForm() {
         let value = e.target.value.replace(/\D/g, "");
         setOtp(value);
         if (!value.length) {
-            setOTPErrors('OTP is required');
+            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
         } else {
             setOTPErrors('');
         }
@@ -446,7 +448,7 @@ function DematAccountForm() {
                     handleOTPResendSuccessToaster();
             } else {
                 if (isResend) {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 } else {
                     setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
                     showAPIErrorToaster();
@@ -459,7 +461,7 @@ function DematAccountForm() {
                 if (error && error.response && error.response.data && error.response.data.message) {
                     setOTPErrors(error.response.data.message);
                 } else {
-                    setOTPErrors("Something went wrong, please try again later!");
+                    setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             } else {
                 if (error && error.response && error.response.data && error.response.data.message) {
@@ -474,7 +476,7 @@ function DematAccountForm() {
 
     function verifyOTP() {
         if (!otp.length) {
-            setOTPErrors('OTP is required');
+            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
         } else {
             showLoader('verifyLoader');
             subBrokerService.verifyOTPN(otp, otpSessionID.current).then((res) => {
@@ -484,12 +486,12 @@ function DematAccountForm() {
                     fetchQueryParams();
                     addNewLead();
                 } else {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
                 console.log(error, "verifyOTPN error");
-                setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
+                setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
     }
@@ -522,7 +524,7 @@ function DematAccountForm() {
             } else {
                 // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
                 // showAPIErrorToaster();
-                setOTPErrors((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             }
 
         }).catch((error) => {
@@ -534,7 +536,7 @@ function DematAccountForm() {
             //     setAPIError("Something went wrong, please try again later!");
             // }
             // showAPIErrorToaster();
-            setOTPErrors((error.data && error.data.message) ? error.data.message : "Something went wrong, please try again later!");
+            setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
         });
     }
 
@@ -565,30 +567,30 @@ function DematAccountForm() {
 
                 {
                     (brokerCreatedSuccess) ?
-                        <Alert key='success' variant='success' onClose={handleBrokerCreatedSuccessClose} dismissible>Successfully!</Alert> : ''
+                        <Alert key='success' variant='success' onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                <h3 className="form-ttl">Become a Sub Broker</h3>
+                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
 
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerName" placeholder="Name" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" name="brokerName" id="brokerName" placeholder="Name" className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerName.invalid || errors.brokerName.required} value={brokerName} onChange={handleName} />
+                            <Form.Control type="text" name="brokerName" id="brokerName" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelbl', 'Name')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerName.invalid || errors.brokerName.required} value={brokerName} onChange={handleName} />
                             {
-                                errors.brokerName.invalid ? <Form.Control.Feedback type="invalid">Invalid Name</Form.Control.Feedback> : ''
+                                errors.brokerName.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror1', 'Invalid Name')}</Form.Control.Feedback> : ''
                             }
                             {
-                                errors.brokerName.required ? <Form.Control.Feedback type="invalid">Name is Required</Form.Control.Feedback> : ''
+                                errors.brokerName.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror2', 'Name is Required')}</Form.Control.Feedback> : ''
                             }
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="number" name="brokerMobileNumber" placeholder="Mobile Number" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" pattern="\d*" name="brokerMobileNumber" id="brokerMobileNumber" placeholder="Mobile Number" className="formcontrol formpadding" autoComplete="off" maxLength="10" isInvalid={errors.brokerMobileNumber.invalid || errors.brokerMobileNumber.required || errors.brokerMobileNumber.unique} value={brokerMobileNumber} onChange={handleMobileNumber} />
+                            <Form.Control type="text" pattern="\d*" name="brokerMobileNumber" id="brokerMobileNumber" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'moblbl', 'Mobile Number')} className="formcontrol formpadding" autoComplete="off" maxLength="10" isInvalid={errors.brokerMobileNumber.invalid || errors.brokerMobileNumber.required || errors.brokerMobileNumber.unique} value={brokerMobileNumber} onChange={handleMobileNumber} />
                             {
-                                errors.brokerMobileNumber.invalid ? <Form.Control.Feedback type="invalid">Invalid Mobile Number</Form.Control.Feedback> : ''
+                                errors.brokerMobileNumber.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'moblblerror1', 'Invalid Mobile Number')}</Form.Control.Feedback> : ''
                             }
                             {
-                                errors.brokerMobileNumber.required ? <Form.Control.Feedback type="invalid">Mobile Number is Required</Form.Control.Feedback> : ''
+                                errors.brokerMobileNumber.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'moblblerror2', 'Mobile Number is Required')}</Form.Control.Feedback> : ''
                             }
                             {
                                 errors.brokerMobileNumber.unique ? <Form.Control.Feedback type="invalid">{errors.brokerMobileNumber.uniqueError}</Form.Control.Feedback> : ''
@@ -596,12 +598,12 @@ function DematAccountForm() {
                         </div>
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerEmail" placeholder="Email Id" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" name="brokerEmail" id="brokerEmail" placeholder="Email" className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerEmail.invalid || errors.brokerEmail.required || errors.brokerEmail.unique} value={brokerEmail} onChange={handleEmail} />
+                            <Form.Control type="text" name="brokerEmail" id="brokerEmail" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'emaillbl', 'Email')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerEmail.invalid || errors.brokerEmail.required || errors.brokerEmail.unique} value={brokerEmail} onChange={handleEmail} />
                             {
-                                errors.brokerEmail.invalid ? <Form.Control.Feedback type="invalid">Invalid Email</Form.Control.Feedback> : ''
+                                errors.brokerEmail.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'emaillblerror1', 'Invalid Email')}</Form.Control.Feedback> : ''
                             }
                             {
-                                errors.brokerEmail.required ? <Form.Control.Feedback type="invalid">Email is Required</Form.Control.Feedback> : ''
+                                errors.brokerEmail.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'emaillblerror2', 'Email is Required')}</Form.Control.Feedback> : ''
                             }
                             {
                                 errors.brokerEmail.unique ? <Form.Control.Feedback type="invalid">{errors.brokerEmail.uniqueError}</Form.Control.Feedback> : ''
@@ -617,9 +619,9 @@ function DematAccountForm() {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'fontSize': 'large'}} />
+                            <Select placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'fontSize': 'large'}} />
                             {
-                                errors.brokerCityBranch.required ? <small className="text-danger">Nearest City Branch is required</small> : ''
+                                errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
 
                         </div>
@@ -634,9 +636,9 @@ function DematAccountForm() {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder="Search State" className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
+                                    <Select placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelbl', 'Search State')} className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
                                     {
-                                        errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
+                                        errors.brokerState.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelblerror1', 'State is required')}</small> : ''
                                     }
                                 </div> : ''
                         }
@@ -648,8 +650,9 @@ function DematAccountForm() {
                                 id="terms_and_conditions"
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
-
+                                {
+                                    props.language==='hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
+                                }
                             </Form.Check>
                         </div>
 
@@ -657,7 +660,7 @@ function DematAccountForm() {
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
                                 type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
-                                {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}
+                                {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}
                             </Button>
                             {/* <Button variant="primary"
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
@@ -681,11 +684,11 @@ function DematAccountForm() {
                             <div>
                                 <img src={OTPimage} alt='OTP Image' />
 
-                                <p className="heading">OTP Verification</p>
-                                <p className="subheading">A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}</p>
+                                <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
+                                <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                 {
                                     count ?
-                                        <p className="time">Time remaining:<span> {count} seconds</span></p> : ''
+                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
                                 }
 
                             </div>
@@ -699,13 +702,13 @@ function DematAccountForm() {
                             </div>
 
                             <div className="btnwrap">
-                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'verify'}</button>
+                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
                             </div>
                             <div className="">
 
                                 {
                                     !count ?
-                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button> : ''
+                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
                                 }
 
 
@@ -714,7 +717,7 @@ function DematAccountForm() {
                                 {
                                     OTPSendSuccessToaster ?
                                         <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                                            OTP has been resent on given Mobile Number
+                                            {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
                                         </Alert> : ''
                                 }
                             </div>
@@ -726,12 +729,12 @@ function DematAccountForm() {
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
-                    <Modal.Title>Attention</Modal.Title>
+                    <Modal.Title>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termstitle', 'Attention')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Body>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termscontent', "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.")}</Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="primary" onClick={handleTermsConditionClose}>
-                        Okay
+                    {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn', 'Okay')}
                     </Button>
                 </Modal.Footer> */}
             </Modal>
@@ -804,4 +807,4 @@ function DematAccountForm() {
     );
 }
 
-export default DematAccountForm;
+export default SubBrokerForm;
