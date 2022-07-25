@@ -134,7 +134,7 @@ function FablesStories() {
 											focusOnSelect={true}
 											beforeChange={(ev1,ev2) => {
 													setSliderImag(ev2)
-													console.log("changes")
+													
 												
 											}}
 
@@ -142,7 +142,7 @@ function FablesStories() {
 											className='stories-sec-slider'>
 											{
 												fslider?.map((response) => {
-													// console.log("index id",index)
+													
 
 													Id = fslider[sliderimag].slug;
 
