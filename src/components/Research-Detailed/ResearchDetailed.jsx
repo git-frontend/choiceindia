@@ -3,19 +3,31 @@ import Banner from './Banner';
 import TrendingReports from './TrendingReports';
 import {
   BrowserRouter as Router,
+  Link,
   useParams,
+  useLocation
 } from "react-router-dom";
 import ResearchService from "../../Services/ResearchService";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
+
 
 function ResearchDetailed() {
 
   const [list, setList] = useState(null);
+  
+  /**report id */
   const { id } = useParams();
-  const { catid } = useParams();
 
-  console.log('EEEEEEE',id);
+  /**report category name */
+  const { catid } = useParams();
+  const search = useLocation().search;
+
+  /**report category id */
+  const name = new URLSearchParams(search).get('id');
+    // console.log('NNNNN',new URLSearchParams(search).get('id'));
+  // let query = useQuery();
+
+  // console.log('EEEEEEE',id);
   // console.log('WWWWWWW',catid);
 
   function getSingleResearchDetail(id){
@@ -35,7 +47,7 @@ function ResearchDetailed() {
   }
 
   useEffect(() => {
-    getSingleResearchDetail(id);
+    getSingleResearchDetail(id? id: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
   },[id])
 
   useEffect(() => {
@@ -46,7 +58,7 @@ function ResearchDetailed() {
     <div className="wrapper-rsrch">
 
         <Banner data={list}/>
-        <TrendingReports data={catid} />
+        <TrendingReports data={catid? catid: 'fundamental'} />
 
     </div>
   );
