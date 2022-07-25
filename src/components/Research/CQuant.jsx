@@ -319,7 +319,7 @@ function CQuant() {
         }
         data.matched_price = getSignalMatchedPice(data)
         data.bookedProfitPriceInPaise = (element.MT || 0)
-        data.profitPercentage = (data.call_type ? getProfitPercentage(data.call_type == 'buy', data.iStatusType, ((element.TACode == 5 || element.TACode == 35) ? (element.TP3 || element.TP2 || element.TP1) : ([3, 13, 23, 33].indexOf(element.TACode) > -1) ? (element.TP2 || element.TP1) : element.TP1), element.SL, element.ExitP, data.bookedProfitPriceInPaise, element.EP, data.calculatedQty, element.Sym, element.TP0) : 0).toFixed(2)
+        data.profitPercentage = ((data.call_type ? getProfitPercentage(data.call_type == 'buy', data.iStatusType, ((element.TACode == 5 || element.TACode == 35) ? (element.TP3 || element.TP2 || element.TP1) : ([3, 13, 23, 33].indexOf(element.TACode) > -1) ? (element.TP2 || element.TP1) : element.TP1), element.SL, element.ExitP, data.bookedProfitPriceInPaise, element.EP, data.calculatedQty, element.Sym, element.TP0) : 0)||0).toFixed(2)
         if (element.Sym == 'LTI') {
         }
         return data
@@ -423,7 +423,7 @@ function CQuant() {
                                     <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
                                 </div>
                                 <div className="itm-date-btn">
-                                    <a onClick={() => { goToDetail(report) }} className={"btn-sm cursor-pointer " + (report?.call_type_buy == 'BUY' ? 'grn-btn' : (report?.call_type_buy == 'SELL' ? 'red-btn' : ''))}>{report?.call_type_buy}</a>
+                                    <a onClick={() => { goToDetail(report) }} className={"btn-sm cursor-pointer " +(report?.call_type_buy == 'BUY' ? 'grn-btn' : (report?.call_type_buy == 'SELL' ? 'red-btn' : ''))}>{report?.call_type_buy}</a>
                                     {report?.status == "Active" ? <h5 className={"ltp-percent grn-txt"}>Active</h5> : <h5 className={"ltp-percent " + report?.statusClass}>{report?.profitPercentage < 0 ? "Loss" : "Profit"} ({report?.profitPercentage} %)</h5>}
                                 </div>
                             </div>
