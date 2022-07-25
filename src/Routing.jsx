@@ -52,6 +52,7 @@ const Lazyfreeamc = React.lazy(() => import('./components/FreeAmcAccount/FreeAmc
 const Lazyhinditrade = React.lazy(() => import('./components/TradingAccountHindi/TradingAccountHindi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
+const Lazyonlinetradingapp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
@@ -60,6 +61,7 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
+
 
 function Routing() {
     
@@ -230,6 +232,12 @@ function Routing() {
                         <Route exact path='/remisier' element={
                             <React.Suspense>
                                 < Lazyremisier />
+                            </React.Suspense>
+                        } />
+
+<Route exact path='/onlinetradingapp' element={
+                            <React.Suspense>
+                                < Lazyonlinetradingapp />
                             </React.Suspense>
                         } />
 
