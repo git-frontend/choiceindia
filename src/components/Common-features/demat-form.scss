@@ -97,6 +97,37 @@
     }
 }
 
+/** success or error modal (add-lead) */
+.ad-ld-mdl-head{
+	border:none;
+}
+
+.ad-ld-mdl-bdy{
+	border:none;
+	margin: 0 auto;
+	text-align: center;
+	
+	img, p{
+		padding:1rem;
+	}
+}
+
+.ad-ld-mdl-ftr{
+	border:none;
+	margin: 0 auto;
+
+	button{
+		padding: 10px 32px 10px 32px;
+	}
+}
+
+.ad-ld-mdl-btn{
+	background-color: rgb(140, 212, 245);
+	border:none;
+}
+
+
+
 // OTP MODAL
 
 .opt-body {

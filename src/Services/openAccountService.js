@@ -26,6 +26,11 @@ const openAccountService = {
   verifyOTP: function (request) {
     let url = apiURL.getVerifyOTPURL();
     return axios.post(url, request, headers);
+  },
+
+  addNewLead: function (request) {
+    let url = apiURL.getchoiceIndiaNewLeadURL();
+    return axios.post(url,request,headers);
   }
 
 };

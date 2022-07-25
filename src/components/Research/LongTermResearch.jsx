@@ -23,7 +23,8 @@ function LongTermResearch() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-  const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+  // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+  const [tempid, setTempId] = useState({'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'});
 
   const navigate = useNavigate();
 
@@ -48,7 +49,11 @@ function LongTermResearch() {
 
   function getSingleDetail(id){
     // console.log('IIIII',id);
-    navigate(`/research-detailed/${id}/${tempid}`);
+    // navigate(`/research-new/${id}/${tempid}`);
+    navigate({
+      pathname: `/research-new/${id}/${tempid.name}`,
+      search: `?id=${tempid.id}`
+    })
   }
 
   useEffect(() => {
@@ -72,27 +77,31 @@ function LongTermResearch() {
         <div className="research-bloc-tabs">
               <button
                 className={count === 1 ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(1);setTempId('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');}}
+                onClick={() => {setcount(1);setTempId(preValue => {return {...preValue, 'name':'economic-analysis', 
+                'id':'41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}}) ;loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');}}
               >
                 Economic Analysis
                 
               </button>
               <button
                 className={count === 2  ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(2);setTempId('f890363a-512e-4797-91fd-4d40732844a3');loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
+                onClick={() => {setcount(2);setTempId(preValue => {return {...preValue, 'name':'company-fundamentals', 
+                'id':'41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}});loadResearch('f890363a-512e-4797-91fd-4d40732844a3')}}
               >
                 Company Fundamentals
                 
               </button>
               <button
                 className={count === 3  ? "tabs active-tabs" : "tabs"}
-                onClick={() => {setcount(3);setTempId('1aa86611-7b88-4069-af82-1e04e80659a4');loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
+                onClick={() => {setcount(3);setTempId(preValue => {return {...preValue, 'name':'industry-analysis', 
+                'id':'41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'}});loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')}}
               >
                  Industry Analysis
               </button>
               <button
                 className={count === 4  ? "tabs active-tabs" : "tabs"}
-                onClick={() =>{ setcount(4);lpoSearch()}}
+                onClick={() =>{ setcount(4);setTempId(preValue => {return {...preValue, 'name':'ipo-nfo-analysis', 
+                'id':'0'}});lpoSearch()}}
               >
                   IPO/NFO Analysis
                 

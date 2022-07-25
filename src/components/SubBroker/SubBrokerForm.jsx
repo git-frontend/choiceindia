@@ -728,15 +728,15 @@ function SubBrokerForm(props) {
             }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termstitle', 'Attention')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termscontent', "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.")}</Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <Button variant="primary" onClick={handleTermsConditionClose}>
                     {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn', 'Okay')}
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
             <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
                 keyboard={false} centered>

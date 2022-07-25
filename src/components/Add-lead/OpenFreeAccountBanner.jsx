@@ -86,7 +86,7 @@ const OpenFreeAccountBanner = () => {
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
-                                <DematAccountForm />
+                                <DematAccountForm page="add-lead" />
                             </div>
 
                         </div>
