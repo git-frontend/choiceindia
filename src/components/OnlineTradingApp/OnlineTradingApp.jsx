@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
-function App() {
+function TradingApp() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -53,4 +53,4 @@ function App() {
   );
 }
 
-export default App;
+export default TradingApp;

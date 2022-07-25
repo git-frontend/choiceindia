@@ -10,6 +10,7 @@ import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
 
+
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
@@ -20,6 +21,9 @@ const LazyCareer = React.lazy(() => import('./components/Career/Career'));
 // import Career from './components/Career/Career';
 
 const LazyApp = React.lazy(() => import('./components/App/App'));
+// import App from './components/App/App';
+
+const LazyTradingApp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 // import App from './components/App/App';
 
 const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
@@ -91,9 +95,15 @@ function Routing() {
                                 < LazyCareer />
                             </React.Suspense>} />
 
-                        <Route exact path='/online-trading-app' element={
+                        <Route exact path='/investment-app' element={
                             <React.Suspense>
                                 < LazyApp />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/online-trading-app' element={
+                            <React.Suspense>
+                                < LazyTradingApp />
                             </React.Suspense>
                         } />
 
