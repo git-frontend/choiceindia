@@ -7,7 +7,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
-function AppBannerBottom() {
+function AppOTBannerBottom() {
   const [isShown2, setIsShown2] = useState(0);
   const settings1 = {
     infinite: true,
@@ -97,4 +97,4 @@ function AppBannerBottom() {
   );
 }
 
-export default AppBannerBottom;
+export default AppOTBannerBottom;

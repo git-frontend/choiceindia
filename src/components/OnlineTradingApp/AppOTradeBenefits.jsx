@@ -9,7 +9,7 @@ import Vector2 from '../../assets/images/app/sector.svg';
 import appstorelight from '../../assets/images/icons/app-store-light.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function AppTradeBenefits() {
+function AppOTradeBenefits() {
 
   return (
     <div className='App-main'>
@@ -126,4 +126,4 @@ function AppTradeBenefits() {
   );
 }
 
-export default AppTradeBenefits;
+export default AppOTradeBenefits;

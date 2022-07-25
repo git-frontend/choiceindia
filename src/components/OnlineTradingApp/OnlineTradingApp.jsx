@@ -1,10 +1,10 @@
 
 import React,{useState, useEffect} from "react";
-import BannerApp from './BannerApp';
-import AppBannerBottom from './AppBannerBottom';
-import AppStrategies from './AppStrategies';
-import AppBenefits from './AppBenefits';
-import AppTradeBenefits from './AppTradeBenefits';
+import OTBannerApp from './OTBannerApp';
+import AppOTBannerBottom from './AppOTBannerBottom';
+import AppOTStrategies from './AppOTStrategies';
+import AppOTBenefits from './AppOTBenefits';
+import AppOTradeBenefits from './AppOTradeBenefits';
 import "./app.scss";
 import Template3  from '../Common-features/Template3';
 // import AppHeader from './AppHeader.jsx';
@@ -42,11 +42,11 @@ function App() {
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <BannerApp />
-      <AppBannerBottom />
-      <AppBenefits />
-      <AppStrategies />
-      <AppTradeBenefits />
+      <OTBannerApp />
+      <AppOTBannerBottom />
+      <AppOTBenefits />
+      <AppOTStrategies />
+      <AppOTradeBenefits />
       </div>
     }
     </div>
