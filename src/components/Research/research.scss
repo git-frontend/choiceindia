@@ -1062,6 +1062,7 @@
                       background: #E6E7E8;
                       content: '';
                       border-radius: 50%;
+                      opacity: 1;
                   }
               }
           }
@@ -1257,8 +1258,8 @@
         stroke-width: 10;
         stroke-linecap: round;
         &:last-of-type {
-          stroke-dasharray: 750px;
-          stroke-dashoffset: calc(750px - (750px * var(--percent)) / 100  );
+          stroke-dasharray: 688px;
+          stroke-dashoffset: calc(700px - (610px * var(--percent)) / 100  );
           stroke: #3498db;
         }
       }
