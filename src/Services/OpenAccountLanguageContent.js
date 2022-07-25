@@ -19,7 +19,9 @@ const language = {
         otpsec: 'seconds',
         termsheader: 'Attention',
         terms: "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.",
-        termsbtn: 'Okay'
+        termsbtn: 'Okay',
+        otpresendsuccess1: 'You will soon receive an automated call on given Mobile Number',
+        otpresendsuccess2: 'OTP has been resent on given Mobile Number'
     },
     hindi: {
         title: 'मुफ़्त ट्रेडिंग खाता खोलें',
@@ -40,7 +42,9 @@ const language = {
         otpsec: 'सेकंड',
         termsheader: 'ध्यान दें',
         terms: 'हम यह डेटा केवल संचार के उद्देश्य से ले रहे हैं और इसे सुरक्षित रूप से संग्रहीत किया जाएगा। हम आपकी गोपनीयता की रक्षा के लिए प्रतिबद्ध हैं, इससे सहमत होकर आप हमें एसएमएस/व्हाट्सएप/ईमेल/कॉल के माध्यम से अपडेट भेजने की अनुमति दे रहे हैं और इसे डीएनडी का उल्लंघन नहीं कहा जाएगा।.',
-        termsbtn: 'ठीक है'
+        termsbtn: 'ठीक है',
+        otpresendsuccess1: 'आपको दिए गए मोबाइल नंबर पर जल्द ही एक स्वचालित कॉल प्राप्त होगी',
+        otpresendsuccess2: 'दिए गए मोबाइल नंबर पर OTP भेजा गया है'
     },
     marathi: {
         title: 'मोफत डिमॅट अकाऊंट',
@@ -61,7 +65,9 @@ const language = {
         otpsec: 'सेकंद',
         termsheader: 'लक्ष द्या',
         terms: 'आम्ही आपला सर्व डेटा केवळ माहितीसाठी संकलित करित असून, तुमची माहिती आमच्याकडे पूर्णपणे सुरक्षित आहे. तसेच आम्ही तुमच्या माहितीच्या गोपनीयतेचे संरक्षण करतो. तुमच्या संमतीने आम्ही तुम्हाला SMS/ Whatsapp/ Email/ Call द्वारे अपडेट पाठवत आहोत. ज्यामुळे अधिलिखित (override) किंवा DND चे कुठेही उल्लंघन होणार नाही.',
-        termsbtn: 'ठीक आहे'
+        termsbtn: 'ठीक आहे',
+        otpresendsuccess1: 'तुम्हाला दिलेल्या मोबाईल नंबरवर लवकरच एक स्वयंचलित कॉल प्राप्त होईल',
+        otpresendsuccess2: 'दिलेल्या मोबाईल नंबरवर OTP पुन्हा पाठवला गेला आहे'
     }
 };
 

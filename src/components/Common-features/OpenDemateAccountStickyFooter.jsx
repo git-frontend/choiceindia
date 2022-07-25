@@ -175,13 +175,13 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
             </Modal> */}
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
-                <Modal.Header>
+                <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
-                <Modal.Footer>
+                {/* <Modal.Footer>
                     <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
         </>
     )
