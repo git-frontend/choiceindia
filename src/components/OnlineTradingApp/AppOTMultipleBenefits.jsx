@@ -4,12 +4,14 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import { FaRupeeSign } from 'react-icons/fa';
 import { IoMdSearch } from 'react-icons/io';
-import Vector1 from '../../assets/images/app/signal-arrow.svg';
-import Vector2 from '../../assets/images/app/sector.svg';
+import Vector1 from '../../assets/images/online-trading-app/free-demat.svg';
+import Vector2 from '../../assets/images/online-trading-app/zero-amc.svg';
+import Vector3 from '../../assets/images/online-trading-app/expert-research-advisory.svg';
+import Vector4 from '../../assets/images/online-trading-app/dedicated-relationship.svg';
 import appstorelight from '../../assets/images/icons/app-store-light.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function AppOTradeBenefits() {
+function AppOTMultipleBenefits() {
 
   return (
     <div className='App-main'>
@@ -20,29 +22,21 @@ function AppOTradeBenefits() {
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
-              <div className="heading-sec">
-                <h3 className="title-secnd">Top Rated Trading App</h3>
-              </div>
-              <ul className='cont-sec-list'>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">4+ Lakhs</h3>
-                    <p>App Downloads</p>
-                  </div>
-                </li>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">Fast &amp; Secured</h3>
-                    <p>App</p>
-                  </div>
-                </li>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">5K + Users</h3>
-                    <p>Rated by</p>
-                  </div>
-                </li>
-              </ul>
+            <div className="row g-4 py-5 row-cols-1 row-cols-lg-3">
+            <div className="feature col">
+        <div className="feature-icon bg-primary bg-gradient">
+         <img src=""/>
+        </div>
+        <h2>Featured title</h2>
+        <p>Paragraph of text beneath the heading to explain the heading. We'll add onto it with another sentence and probably just keep going until we run out of words.</p>
+        <a href="#" className="icon-link">
+          Call to action
+          <img src=""/>
+        </a>
+      </div>
+
+            </div>
+            
             </div>
             <div className="wrap-app-links d-flex justify-content-center">
               <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" rel="noreferrer" className='link-nrl black'>
@@ -76,4 +70,4 @@ function AppOTradeBenefits() {
   );
 }
 
-export default AppOTradeBenefits;
+export default AppOTMultipleBenefits;

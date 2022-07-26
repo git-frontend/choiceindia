@@ -3,7 +3,7 @@ import React,{useState, useEffect} from "react";
 import OTBannerApp from './OTBannerApp';
 import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
-import AppOTBenefits from './AppOTBenefits';
+import AppOTMultipleBenefits from './AppOTMultipleBenefits';
 import AppOTradeBenefits from './AppOTradeBenefits';
 import "./online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
@@ -43,10 +43,10 @@ function TradingApp() {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
       <OTBannerApp />
-      <AppOTBannerBottom />
-      <AppOTBenefits />
       <AppOTStrategies />
+      <AppOTBannerBottom />
       <AppOTradeBenefits />
+      <AppOTMultipleBenefits/>
       </div>
     }
     </div>
