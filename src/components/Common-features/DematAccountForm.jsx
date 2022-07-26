@@ -559,7 +559,7 @@ function DematAccountForm(props) {
                 </Modal.Header>
                 <Modal.Body>{APIError}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={hideAPIErrorToaster}>
+                    <Button variant="warning" onClick={hideAPIErrorToaster}>
                         Okay
                     </Button>
                 </Modal.Footer>
@@ -568,7 +568,7 @@ function DematAccountForm(props) {
                 keyboard={false} centered>
                 <Modal.Body>{OTPInfoPopupMsg}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={hideOTPInfoPopup}>Okay</Button>
+                    <Button variant="warning" onClick={hideOTPInfoPopup}>Okay</Button>
                 </Modal.Footer>
             </Modal>
             <Modal show={showlead} centered>

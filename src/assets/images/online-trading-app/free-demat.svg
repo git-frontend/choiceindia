@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="98.998" height="96" viewBox="0 0 98.998 96">
+  <defs>
+    <linearGradient id="linear-gradient" x1="2.056" y1="-0.059" x2="1.995" y2="1.392" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00efd1"/>
+      <stop offset="1" stop-color="#00acea"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_20173" data-name="Group 20173" transform="translate(-120.5 -3630)">
+    <rect id="Rectangle_2439" data-name="Rectangle 2439" width="96" height="96" transform="translate(218 3726) rotate(180)" opacity="0"/>
+    <g id="Group_6424" data-name="Group 6424" transform="translate(122 3639)">
+      <path id="Union_3" data-name="Union 3" d="M12.733,77.985A12.734,12.734,0,0,1,0,65.251V26.068A12.733,12.733,0,0,1,12.733,13.333H33.794V3.728A4.038,4.038,0,0,1,37.832-.31h19.94a4.038,4.038,0,0,1,4.038,4.038v9.606H83.263A12.733,12.733,0,0,1,96,26.068V65.251A12.734,12.734,0,0,1,83.263,77.985Zm-4.9-51.917V65.251a4.9,4.9,0,0,0,4.9,4.9H83.263a4.9,4.9,0,0,0,4.9-4.9V26.068a4.9,4.9,0,0,0-4.9-4.9H12.733A4.9,4.9,0,0,0,7.835,26.068ZM53.975,13.333V7.527H41.631v5.807Z" transform="translate(0.001 0)" stroke="#fff" stroke-width="3" fill="url(#linear-gradient)"/>
+      <g id="Rectangle_1049" data-name="Rectangle 1049" transform="translate(0 13.333)">
+        <g id="Group_20070" data-name="Group 20070" transform="translate(0 0)">
+          <rect id="Rectangle_2450" data-name="Rectangle 2450" width="95.998" height="64.652" rx="13" fill="none" stroke="#fff" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -96,12 +96,12 @@ function SBDesk() {
         let indicesData = {}
         indicesData['PrevClose'] = bestData.PrevClose || 0;
         indicesData["LTP"] = (splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0; // if LTP == 0 then show prevClose (10/05/2021)
-        indicesData["LTP_DATA"] = ((splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0).toFixed(2); // if LTP == 0 then show prevClose (10/05/2021)
+        indicesData["LTP_DATA"] = (((splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) )|| 0).toFixed(2); // if LTP == 0 then show prevClose (10/05/2021)
         indicesData["Token"] = (splitData[0]["7"])
         indicesData["diff"] = indicesData["LTP"] - (indicesData['PrevClose'] / splitData[0]["399"]);
         indicesData["percentage"] = (((indicesData["diff"]) / ((indicesData["LTP"]) - indicesData["diff"])) * 100) || 0;
-        indicesData["change"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs(indicesData["diff"]).toFixed(2);
-        indicesData["changePercent"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs(indicesData["percentage"]).toFixed(2);
+        indicesData["change"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs((indicesData["diff"]||0)).toFixed(2);
+        indicesData["changePercent"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs((indicesData["percentage"])||0).toFixed(2);
         if (indicesData["diff"] < 0) {
             indicesData["color"] = "red";
             indicesData["arrow"] = "icon-long-arrow-down"
@@ -265,7 +265,7 @@ function SBDesk() {
                                     </div>
                                     <div className="itm-date-btn">
                                         <h5 className="date-post">{report.published_date}</h5>
-                                        <a  onClick={() => { goToDetail(report) }} className={(report.call_type || "").toUpperCase() == 'BUY' ? "grn-btn btn-sm cursor-pointer" : ((report.call_type || "").toUpperCase() == 'SELL' ? "red-btn btn-sm cursor-pointer" : " btn-sm cursor-pointer")} >{report.call_type}</a>
+                                        <button  disabled={!(report.status == 'Pending')} onClick={() => { goToDetail(report) }} className={((report?.status == "Pending"?' ':'disabled-btn '))+((report.call_type || "").toUpperCase() == 'BUY' ? "grn-btn btn-sm cursor-pointer border-0px" : ((report.call_type || "").toUpperCase() == 'SELL' ? "red-btn btn-sm cursor-pointer" : " btn-sm cursor-pointer"))} >{report.call_type}</button>
                                     </div>
                                 </div>
                                 <div className="tab-itm-bottom">
@@ -275,15 +275,15 @@ function SBDesk() {
                                         </div>
                                         <div className="itm-cont-des stp-loss">
                                             <h5>Stop Loss</h5>
-                                            <h4>{(Number(report?.priceData?.stop_loss?.value || 0)).toFixed(2)}</h4>
+                                            <h4>{(Number(report?.priceData?.stop_loss?.value || 0)||0).toFixed(2)}</h4>
                                         </div>
                                         <div className={"itm-cont-des targt-prize "+(report?.priceData?.ltp_price_percentage>100?'target-crossed':'')} >
                                             <h5>Target Price </h5>
-                                            <h4>{((Number(report?.priceData?.target?.value || 0))).toFixed(2)}</h4>
+                                            <h4>{((Number(report?.priceData?.target?.value || 0)||0)).toFixed(2)}</h4>
                                         </div>
                                         <div className="itm-cont-des entry-prize" style={{ left: report?.priceData?.entry_price_percentage + '%', }}>
                                             <h5>Entry Price</h5>
-                                            <h4>{(Number(report?.priceData?.entry_price?.value || 0)).toFixed(2)}</h4>
+                                            <h4>{(Number(report?.priceData?.entry_price?.value || 0)||0).toFixed(2)}</h4>
                                         </div>
                                         <div className={" curnt-mrk-price " + ((report?.LTP < report?.priceData?.entry_price?.value) ? 'red-txt ' : 'grn-txt ') + (report?.priceData?.ltp_price_percentage>100?" cmp-crossed":'')} style={{ left: (report?.priceData?.ltp_price_percentage > 85 ? 85 : report?.priceData?.ltp_price_percentage) + '%' }}>
                                             <h4>CMP <span className="sm-txt">{(report?.LTP||0).toFixed(2)}</span></h4>
