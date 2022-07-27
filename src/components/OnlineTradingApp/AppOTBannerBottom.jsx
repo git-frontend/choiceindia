@@ -33,7 +33,7 @@ function AppOTBannerBottom() {
         <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd text-center">App for Real-time Trading Strategies</h2>
+                                <h2 className="title-secnd text-center pb-5">Trade & Invest more quicker and simpler</h2>
                             </div>
                         </div>
                     </div>
@@ -41,22 +41,7 @@ function AppOTBannerBottom() {
             <div className='col-md-10'>
               <div className="app-trade-easy-div row align-items-center">
 
-
-
-               
-                <div className='col-xl-5 col-md-6'>
-
-                  <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
-                    {/* <img src={imageData[isShown2].image}
-
-                      className="single-trade-easy-images" alt="loading"></img> */}
-                  </div>
-
-
-
-                </div>
-                <div className='col-md-6'>
+              <div className='col-md-6'>
                   <div className='content-list'>
                     <Slider {...settings1}
                       afterChange={(ev) => {
@@ -88,6 +73,21 @@ function AppOTBannerBottom() {
 
 
                 </div>
+
+               
+                <div className='col-xl-5 col-md-6'>
+
+                  <div className="trade-easy-images-div" >
+                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
+                    {/* <img src={imageData[isShown2].image}
+
+                      className="single-trade-easy-images" alt="loading"></img> */}
+                  </div>
+
+
+
+                </div>
+                
               </div>
             </div>
           </div>

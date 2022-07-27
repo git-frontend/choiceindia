@@ -213,11 +213,20 @@
 
     .app-cont-sec {
         background: $whiteColor;
-        padding: 13rem 0;
-        position: relative;
+        padding: 8rem 0;
+       
+        &.app-cont-sec-sub{
+            position: relative;
+            background: url(../../assets/images/online-trading-app/app-bg2.png) no-repeat top left $primary;
+            background-size: cover;
+    
+        }
 
         .heading-sec {
             text-align: center;
+            .title-secnd{
+                color: $whiteColor;
+            }
         }
 
         .cont-sec-list {
@@ -227,6 +236,8 @@
             margin: 5rem 0;
             padding: 0;
 
+           
+
             .cont-sec-item {
                 width: 33.33%;
                 padding: 2rem;
@@ -234,7 +245,7 @@
                 .title-secnd {
                     font-size: 3rem;
                     margin-bottom: 0.5rem;
-
+                    color: $whiteColor;
 
                     @media (max-width: $sm-x) {
                         font-size: 2rem;
@@ -242,7 +253,7 @@
                 }
 
                 p {
-                    color: $primary;
+                    color: $whiteColor;
                 }
 
                 @media (max-width: $sm-x) {
@@ -299,9 +310,7 @@
                     margin-bottom: 1rem;
                 }
 
-                @media (min-width:$sm-x) and (max-width: $md) {
-                    width: 23%;
-                }
+                
             }
 
             @media (max-width: $sm-x) {
@@ -313,26 +322,12 @@
             padding: 5rem 0;
         }
 
-        &:after {
-            content: '';
-            width: 25em;
-            height: 32rem;
-            display: block;
-            position: absolute;
-            left: 0;
-            bottom: -9rem;
-            background: url(../../assets/images/app/app-bgrealtimeafter-left.png) no-repeat bottom left;
-            background-size: contain;
-
-            @media (max-width:$sm) {
-                display: none;
-            }
-        }
+        
     }
 
     .app-banner-bottom {
         background: $abt-bg;
-        padding: 6rem 0 10rem 0;
+        padding: 10rem 0 10rem 0;
         position: relative;
 
         &:after {
@@ -350,7 +345,7 @@
                 display: none;
             }
         }
-
+        .pb-5{padding-bottom:5rem;}
         .content-list {
             position: relative;
             padding: 0;
@@ -808,5 +803,517 @@
                 }
             }
         }
+    }
+}
+
+.trading-app-sec1{
+    padding-top: 4rem;
+    .sec1-left{
+        padding-top: 10rem;
+        position: relative;
+        &::before{
+            content: '';
+            background: url(../../assets/images/online-trading-app/arrow-check.svg) no-repeat;
+            width: 153px;
+            height: 94px;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 170px;
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        .top-title{
+            h1{
+                font-size: 4rem;
+                line-height: 4rem;
+                color: $primary;
+                margin-bottom: 1rem;
+                font-family: $font-family-poppins-bold;
+                .mb-br{
+                    @media (max-width: 385px) {
+                        display: block;
+                    }
+                }
+                @media (max-width: $md) {
+                    font-size: 2.7rem;
+                    line-height: 3.5rem;
+                }
+                @media (max-width: $xs) {
+                    font-size: 2.5rem;
+                 
+                }
+            }
+        }
+        .slider-ver{
+            .slick-slide{
+                h4{
+                    color: $bgcolor-blue;
+                    font-size: 4rem;
+                    line-height: 5rem;
+                    font-family: $font-family-poppins-bold;
+                    @media (max-width: $md) {
+                        font-size: 2.7rem;
+                        line-height: 3rem;
+                    }
+                    @media (max-width: $xs) {
+                        font-size: 2.5rem;
+                     
+                    }
+                }
+            }
+            @media (max-width: $xs) {
+                position: absolute;
+                left: 55px;
+                top: 43px;
+            }
+        }
+        .wrap-app-links{
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+            @media (max-width: $xs) {
+                flex-wrap: wrap;
+            }
+            .link-nrl{
+                background: $primary !important;
+                color: $whiteColor !important;
+                @media (max-width: $xs) {
+                    width: 100%;
+                }
+            }
+        }
+        .star-line {
+            display: flex;
+            margin-top: 2.5rem;
+            align-items: center;
+            h5{
+                font-family: $font-family-poppins-regular;
+                color: $primary;
+                margin: 0;
+                margin-left: 1rem;
+                span{
+                    font-family: $font-family-poppins-bold;
+                }
+            }
+            @media (max-width: $sm) {
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
+        }
+        @media (max-width: $md) {
+            padding-top: 5rem;
+        }
+        @media (max-width: $xs) {
+            padding-top: 0;
+        }
+    }
+    .sec1-right{
+        position: relative;
+        padding: 0 7rem;
+        &::before{
+            content: '';
+            background: $abt-bg;
+            display: block;
+            width: 94%;
+            margin: 0 auto;
+            height: 75%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            right: 0;
+            opacity:1;
+            border-radius: 24px;
+            z-index: 0;
+            
+        }
+        .mn-img{
+            position: relative;
+            z-index: 9;
+        }
+        .mn-img1{
+            position: absolute;
+            top: 44%;
+            left: 14%;
+            max-width: 52%;
+            z-index: 9;
+            animation-duration: 2s;
+            animation-fill-mode: both;
+            animation-delay: 0.3s;
+            animation-name: fadeInUp;
+        }
+        .mn-img2{
+            position: absolute;
+            top: 30%;
+            right: 14%;
+            max-width: 52%;
+            z-index: 9;
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-delay: 0.1s;
+            animation-name: fadeInUp;
+        }
+        @media (max-width: $md) {
+            padding: 0 4rem;
+        }
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+
+.top-app-testimonial{
+    padding:8rem 0;
+    background: $abt-bg;
+    .app-sec8-main{
+        .title-4{
+            text-align: center;
+            font-family: $font-family-poppins-bold;
+            color: $primary;
+            font-size: 2.2rem;
+            margin-bottom: 4rem;
+        }
+        .slideshow{
+            .slick-slide{
+                .content{
+                    text-align: center;
+                    max-width: 500px;
+                    margin: 0 auto;
+                    display: block !important;
+                    .thumbnail{
+                        .SdClientName{
+                            font-family: $font-family-poppins-bold;
+                            color: $primary;
+                            font-size: 1.8rem;
+                            margin-bottom: 1.5rem;
+                        }
+                        img{
+                            display: inline-block;
+                            margin-bottom:3rem;
+                        }
+                    }
+                    .sdAllContent{
+                        .sdCustomSliderHeadig{
+                            position: relative;
+                            &::before{
+                                content: '';
+                                background: url('../../assets/images/online-trading-app/quote1.svg') no-repeat;
+                                display: block;
+                                background-size: contain;
+                                position: absolute;
+                                height: 50px;
+                                width: 66px;
+                                left: -50px;
+                                top: -27px;
+                                @media (max-width:$md) {
+                                    width: 50px;
+                                    height: 30px;
+                                    left: -20px;
+                                }
+                                @media (max-width: $sm-x) {
+                                    left: 0;
+                                }
+                            }
+                            &::after{
+                                content: '';
+                                background: url('../../assets/images/online-trading-app/quote2.svg') no-repeat;
+                                display: block;
+                                background-size: contain;
+                                position: absolute;
+                                height: 50px;
+                                width: 66px;
+                                right: -50px;
+                                bottom: -27px;
+                                @media (max-width:$md) {
+                                    width: 50px;
+                                    height: 30px;
+                                    right: -20px;
+                                }
+                                @media (max-width: $sm-x) {
+                                    right: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .slick-prev{
+                background: url(../../assets/images/online-trading-app/left-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                z-index: 9;
+                left: 13%;
+                top: 33%;
+                &::before{
+                    display: none;
+                }
+                @media (max-width:$md) {
+                    left: 0;
+                }
+            }
+            .slick-next{
+                background: url(../../assets/images/online-trading-app/right-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                right: 13%;
+                top: 33%;
+                &::before{
+                    display: none;
+                }
+                @media (max-width:$md) {
+                    right: 0;
+                }
+            }
+        }
+        
+    }
+}
+.readmoresection {
+	padding: 5rem 0;
+
+	.secttitle {
+		color: $primary;
+		font-size: 3.25rem;
+		line-height: 4.875rem;
+		font-weight: 700;
+		padding-bottom: 3rem;
+		font-family: $font-family-poppins-bold;
+
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+
+	.read-more-wrap {
+		font-size: 1.6875rem;
+		font-family: $font-family-poppins-regular;
+		font-weight: 400;
+		color: $primary;
+		line-height: 2.75rem;
+
+		@media (max-width:$sm) {
+			font-size: 1.6rem;
+		}
+
+		@media (min-width:$sm) and (max-width:768px) {
+			font-size: 1.6rem;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			font-size: 1.6rem;
+		}
+	}
+
+	.moreless-button {
+		font-size: 2rem !important;
+		font-family: $font-family-poppins-bold;
+		font-weight: 700;
+		color: $bgcolor-blue;
+		line-height: 2.75rem !important;
+
+	}
+
+	.read-more-state {
+		display: none;
+	}
+
+	.read-more-target {
+		display: none;
+		max-height: 0;
+		font-size: 0;
+		transition: .25s ease;
+		padding-top: 10px;
+	}
+
+	.read-more-state:checked~.read-more-wrap .read-more-target {
+		opacity: 1;
+		font-size: inherit;
+		max-height: 999em;
+		display: block;
+	}
+
+	.read-more-state~.read-more-trigger:before {
+		content: 'Read more';
+	}
+
+	.read-more-state:checked~.read-more-trigger:before {
+		content: 'Read less';
+	}
+
+	.read-more-trigger {
+		cursor: pointer;
+		display: inline-block;
+		/*padding: 0 .5em;*/
+
+		font-size: .9em;
+		line-height: 2;
+		border-radius: .25em;
+	}
+
+	.font-bold {
+
+		padding: 1rem 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2rem;
+		padding: 1rem 0 1.5rem 0;
+		margin-top: 2rem;
+	}
+	.p1{
+		padding: 1rem 0;
+	}
+}
+// faq
+
+.Dematfaq {
+	padding: 9rem 0;
+	background-color: $abt-bg ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+    &.faq-white{
+        background: $whiteColor;
+    }
+}
+
+.mt-6{
+	margin-top: 6rem !important;
+}
+
+.down-jiffy{
+    padding: 10rem 0;
+    .down-jiffy-sub{
+        background: $bgcolor-green;
+        padding: 0 8rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        border-radius: 16px;
+        .jiffy-sub-img{
+            width: 40%;
+            img{
+                position: relative;
+                margin-top: -8rem;
+                @media (max-width:$sm) {
+                    margin-top: inherit;
+                }
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+        }
+        .jiffy-sub-cont{
+            width: 60%;
+            text-align: center;
+            h3{
+                margin-bottom: 4rem;
+                font-family: $font-family-poppins-bold;
+                color: $whiteColor;
+                font-size: 2.5rem;
+                @media (max-width:$md) {
+                    margin-bottom: 2rem;
+                }
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+                padding: 4rem 0 2rem 0;
+            }
+            .wrap-app-links{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                .link-nrl{
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media (max-width:$md) {
+            padding: 0 2rem;
+        }
+        @media (max-width:$sm) {
+            flex-direction: column;
+        }
+    }
+    @media (max-width: $sm-x) {
+        padding: 0;
     }
 }

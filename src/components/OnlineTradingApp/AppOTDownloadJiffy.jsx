@@ -1,45 +1,25 @@
-
-import React from "react";
+import React from 'react';
+import AppJiffy from '../../assets/images/online-trading-app/jiffy-app.webp';
 import appstore from '../../assets/images/icons/app-store.svg';
+import LazyLoader from '../Common-features/LazyLoader';
+function AppOTDownloadJiffy() {
 
-function AppOTradeBenefits() {
+
+
 
   return (
     <div className='App-main'>
 
-      
 
-      <section className='app-cont-sec app-cont-sec-sub'>
+      <section className='down-jiffy'>
         <div className='container'>
-          <div className='row'>
-            <div className='col-md-12'>
-              <div className="heading-sec">
-                <h3 className="title-secnd">Top Rated Trading App</h3>
-              </div>
-              <ul className='cont-sec-list'>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">4+ Lakhs</h3>
-                    <p>App Downloads</p>
-                  </div>
-                </li>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                  <p>Rated by</p>
-                    <h3 className="title-secnd">5K+ Users</h3>
-                    
-                  </div>
-                </li>
-                <li className='cont-sec-item'>
-                  <div className="heading-sec">
-                    <h3 className="title-secnd">Fast &amp; Secured</h3>
-                    <p>App</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div className="wrap-app-links d-flex justify-content-center">
-                <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
+          <div className='col-md-12'>
+            <div className='down-jiffy-sub'>
+                
+                <div className='jiffy-sub-cont'>
+                      <h3>Download Jiffy</h3>
+                      <div className="wrap-app-links">
+                    <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                       <svg width="30" height="30" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>
                         <path d="M0.549316 4.31975C0.549316 3.28063 0.84049 2.49725 1.31842 1.99816L1.3579 1.96035L22.8228 23.0876V23.4841L1.3579 44.6114L1.31843 44.5736C0.840494 44.0745 0.549316 43.2911 0.549316 42.252V4.31975Z" fill="black" stroke="#ffffff" stroke-width="0.25" />
                         <path d="M38.4983 25.5919L38.4983 25.5919L30.1199 30.2505L30.1199 30.2505L30.0386 30.2957L23.0737 23.4752V23.0907L30.042 16.2717L38.4982 20.9723C38.4982 20.9723 38.4983 20.9723 38.4983 20.9723C39.6724 21.6258 40.2283 22.4683 40.2283 23.2827C40.2283 24.0971 39.6724 24.9392 38.4983 25.5919Z" fill="black" stroke="#ffffff" stroke-width="0.25" />
@@ -50,10 +30,16 @@ function AppOTradeBenefits() {
                       <span className='blackcolor'>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={appstore} className="" alt={"App Store"} width="" height="" />
+                      <img src={appstore} className="" alt={"App Store"} width="" height="" />
 
                       <span className='blackcolor'>App Store</span>
                     </a>
+                  </div>
+                  </div>
+                  <div className='jiffy-sub-img'>
+                  <LazyLoader src={AppJiffy} className={"img-fluid"} alt={"Loading"} width={"390"} height={"439"} />
+                </div>
+                  
             </div>
           </div>
         </div>
@@ -69,4 +55,4 @@ function AppOTradeBenefits() {
   );
 }
 
-export default AppOTradeBenefits;
+export default AppOTDownloadJiffy;
