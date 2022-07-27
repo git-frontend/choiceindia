@@ -19,7 +19,7 @@ function Banner() {
                 <div className="col-md-6">
                     <h1 className="title">Brokerage Charges</h1>
                     <p className="para">Trade with low* brokerage charges and avail a host of facilities with one of the best broking companies in India.</p>
-                    <a href="/" className="btn-bg mt-4">Open A Free Demat Account</a>
+                    <a href="/open-free-demat-account" className="btn-bg mt-4">Open A Free Demat Account</a>
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">

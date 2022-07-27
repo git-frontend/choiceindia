@@ -26,13 +26,13 @@ function OTAppMoreContent() {
                                         The traditional format of trading has a lot of ‘ifs’ and buts’ associated with it. The modern day trading i.e.through the online trading app hold its existence with each and every trader for its known benefits:<br /><br />
                                         <ul>
                                         <li className="font-bold">It's simple:</li>
-                                        All you need to do is login to the mobile application and start investing. You can place your ‘buy and sell orders with a single click.
+                                        All you need to do is login to the mobile application and start investing. You can place your ‘buy and sell orders with a single click. <br/><br/>
                                         <li className="font-bold">Economical and safe:</li>
-                                        Compared to the age-old technique, it's much more economical and safe as it reduces the maintenance cost and a lot of unnecessary hassles such as physical documentation etc.
+                                        Compared to the age-old technique, it's much more economical and safe as it reduces the maintenance cost and a lot of unnecessary hassles such as physical documentation etc.<br /><br />
                                         <li className="font-bold">Access and monitoring:</li>
-                                        To give you access to your portfolio anytime and anywhere which makes it easy to monitor and eventually, leads to stable decision making.
+                                        To give you access to your portfolio anytime and anywhere which makes it easy to monitor and eventually, leads to stable decision making.<br /><br />
                                         <li className="font-bold">Transparency and clarity of communication:</li>
-                                        The trading apps today are developed in a manner that provides transparency at all times. The miscommunication or communication gap has been bridged to a large extent.
+                                        The trading apps today are developed in a manner that provides transparency at all times. The miscommunication or communication gap has been bridged to a large extent.<br /><br />
                                         </ul>
                                         <h3 className="font-bold">How to Choose the Best Trading App in India?</h3>
                                         The online trading industry is responsible for disruptive technological standards and liberation methods used today to trade. The best trading apps in India come with larger than life features and state-of-the-art innovations in place. India as a country has been catering to the stock market for years and with the liberated move of technology, there are numerous trading apps to choose from. The question lies on how and what to select. The leading trading app should be able to provide: <br /><br />
