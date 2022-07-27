@@ -10,10 +10,26 @@ function AppOTradeTestimonial() {
     slidesToScroll: 1,
     dots: false,
     arrows: true,
-    autoplay: false,
+    autoplay: true,
     infinite:true,
     fade: true,
-    autoplaySpeed: 2000
+    autoplaySpeed: 2000,
+    responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          dots: true,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          dots: true,
+          arrows: false,
+        },
+      },
+    ],
   };
   return (
     <div className='App-main'>

@@ -1,7 +1,7 @@
 
-import AppImage1 from '../../assets/images/online-trading-app/banner-img-main.png';
-import AppImage2 from '../../assets/images/online-trading-app/banner_image-popup-1.png';
-import AppImage3 from '../../assets/images/online-trading-app/banner_image-popup-2.png';
+import AppImage1 from '../../assets/images/online-trading-app/banner-img-main.webp';
+import AppImage2 from '../../assets/images/online-trading-app/banner_image-popup-1.webp';
+import AppImage3 from '../../assets/images/online-trading-app/banner_image-popup-2.webp';
 import AppImage4 from '../../assets/images/online-trading-app/app-store-white.svg';
 import AppImage5 from '../../assets/images/online-trading-app/g-play-white.svg';
 import AppImage6 from '../../assets/images/online-trading-app/star-icon.svg';

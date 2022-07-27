@@ -5,7 +5,7 @@ const [view, setview] = useState(false);
 const [show, setshow] = useState(false);
 return (
 <div>
-   <section className="Dematfaq">
+   <section className="Dematfaq faq-white">
       <div className="container">
          <div className="row">
             <div className="col-md-12">
