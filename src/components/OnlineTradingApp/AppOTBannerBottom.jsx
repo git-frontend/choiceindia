@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/images';
+import imageData from '../../Data/Onlinetrading/TradingInvest';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -16,7 +16,7 @@ function AppOTBannerBottom() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 4,
+    slidesToShow: 7,
     autoplay: true,
     dots: false,
     autoplaySpeed: 1000,
