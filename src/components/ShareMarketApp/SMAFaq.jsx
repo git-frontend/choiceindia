@@ -9,7 +9,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-first text-center pb-4">Jiffy Trading App Related FAQs</h2>
+               <h2 className="title-first text-center pb-4">Jiffy Share Market App Related FAQs</h2>
             </div>
          </div>
          <div className="row">
@@ -17,92 +17,66 @@ return (
                <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="0" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>  Can I do trading in all segments with the Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>  How much time is required to open an account with Jiffy - Share Market App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency
+                     To open an account online with Jiffy it takes 5-7 minutes if you have all the documents handy.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is the Jiffy Trading app safe for trading?</h4>
+                        <h4 className='faq-header'>What are the charges for opening an account in Jiffy?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        We use comprehensive and proven world-class safety measures to ensure optimum security.
+                     There are no charges for opening an account in the stock market app - Jiffy.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I open a Demat Account from Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>What are the documents required to open an account in Jiffy?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Sure, the entire process takes just 10 minutes and is completely paperless!
+                     You will require the following documents to open an account in the Jiffy share market app:<br/><br/>
+                     PAN Card<br/>
+                     <strong>– As per the SEBI Regulations, a PAN Card is mandatory for any investment in capital markets.</strong><br/><br/>
+                     Aadhaar Card<br/>
+                     <strong>– This is required for a fast and paperless account opening.</strong><br/><br/>
+                     Cancelled Cheque<br/>
+                     <strong>– With clearly printed name of the Account Holder, Account Number, IFSC Code, and MICR Code.</strong><br/><br/>
+                     A Photograph<br/>
+                    <strong> – KYC requirement as per the SEBI Regulations.</strong><br/><br/>
+                     Signature on White Paper<br/>
+                     <strong>– It is a regulatory and operational requirement to cross-reference the signature in case of physically opening an account.</strong><br/><br/>
+                     Income Proof<br/>
+                    <strong> – If you wish to trade in futures and options of all Equity, Commodity, and Currency; then Income Proof is a mandatory requirement.</strong>
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="3" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I Trade in Future &amp; Options Through a Trading App?</h4>
+                        <h4 className='faq-header'>Can anyone open a free trading account with Jiffy?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Sure, you can trade in F&amp;0 and we also provide intraday research/calls for Futures &amp; Options.
+                     Any individual of 18 years and above can open a free trading account with Jiffy. However, the individual must hold the required documents to open an account.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
                      <Accordion.Header >
-                        <h4 className='faq-header'>How to apply for an IPO in Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>What are the brokerage charges in Jiffy - Share Market App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Below are the steps to apply for IPOs via Jiffy,<br/>
-                        Go to the IPO Section => IPO Listing => Open IPO<br/>
-                        Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details<br/>
-                        On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify<br/>
-                        Once you select ‘Subscribe’. Your bid will be executed<br/>
-                        You can check the status of your IPO bid in the IPO Transactions section
+                     Choice offers the lowest brokerage charges in the industry. Check the brokerage charges on our website.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available in Other Regional Languages?</h4>
+                        <h4 className='faq-header'>Can I trade in all segments using the Jiffy App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy has options for Hindi, Gujarati, Marathi and Malayalam as of now.
+                     Yes, you can trade in Equity, Currency, Commodity, and F&O using the Jiffy app.
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
-               {
-               view ?
-               <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
-                  <Accordion.Item eventKey="6" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>Can I get research reports in the Jiffy Trading App?</h4>
-                     </Accordion.Header>
-                     <Accordion.Body className='open-demat-faq-body'>
-                        Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls.
-                     </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="6" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?</h4>
-                     </Accordion.Header>
-                     <Accordion.Body className='open-demat-faq-body'>
-                        All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself.
-                     </Accordion.Body>
-                  </Accordion.Item>
-                  <Accordion.Item eventKey="6" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available on Android & iOS platform?</h4>
-                     </Accordion.Header>
-                     <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy is available on both Android & iOS.
-                     </Accordion.Body>
-                  </Accordion.Item>
-                  <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
-               </Accordion>
-               :
-               <div className="accordion-view-more">
-                  <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
-               </div>
-               }
+             
             </div>
          </div>
       </div>

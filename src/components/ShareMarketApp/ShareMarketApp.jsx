@@ -9,7 +9,7 @@ import SMAFaq from './SMAFaq';
 import SMAMoreContent from './SMAMoreContent';
 import SMATestimonial from './SMATestimonial';
 import SMADownloadJiffy from './SMADownloadJiffy';
-import "./online-trading-app.scss";
+import "./../OnlineTradingApp/online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
 // import AppHeader from './AppHeader.jsx';
 import {
