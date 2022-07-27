@@ -4,7 +4,7 @@ import imageData from '../../Data/Strategies';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function AppOTStrategies() {
+function SMAStrategies() {
     const [isShown3, setIsShown3] = useState(0);
     const [isShown, setIsShown2] = useState(0);
 
@@ -97,4 +97,4 @@ function AppOTStrategies() {
     );
 }
 
-export default AppOTStrategies;
+export default SMAStrategies;

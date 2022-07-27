@@ -10,7 +10,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-function BannerCareer() {
+function SMABannerApp() {
 
   const settings1 = {
     vertical: true,
@@ -31,7 +31,7 @@ function BannerCareer() {
                 <div class="col-md-7">
                     <div class="sec1-left">
                         <div class="top-title pl8">
-                           <h1>Jiffy Trading App <span class="mb-br">For</span> </h1> 
+                           <h1>Jiffy Share Market App <span class="mb-br">For</span> </h1> 
 
                            <Slider {...settings1} className='slider-ver'>
                                 <div class="">
@@ -55,7 +55,7 @@ function BannerCareer() {
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                     <img src={AppImage5} className="" alt={"App Store"} width="" height="" />
 
-                      <span className=''>Google Play</span>
+                      <span className=''>Google Play1</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
                     <img src={AppImage4} className="" alt={"App Store"} width="" height="" />
@@ -86,4 +86,4 @@ function BannerCareer() {
   );
 }
 
-export default BannerCareer;
+export default SMABannerApp;
