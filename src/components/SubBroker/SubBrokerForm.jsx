@@ -10,6 +10,7 @@ import OTPimage from '../../assets/images/otp.svg';
 import Select from 'react-dropdown-select';
 import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
+import { Ref } from "react";
 
 function SubBrokerForm(props) {
 
@@ -45,6 +46,7 @@ function SubBrokerForm(props) {
     var UTMSource = useRef('');
     var refercode = useRef('');
 
+
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
         setBrokerName(value);
@@ -73,28 +75,33 @@ function SubBrokerForm(props) {
     }
 
     function handleBrokerCityBranch(e) {
-        let value = e[0].leadCity;
-        setBrokerCityBranch(value);
-        setErrors((prevError) => ({
-            ...prevError,
-            'brokerCityBranch': {}
-        }));
-        if (value === 'OTHERS') {
-            setBrokerState('');
-            setShowState(true);
-        } else {
-            setBrokerState('');
-            setShowState(false);
+        if (e[0]) {
+            let value = e[0].leadCity;
+            setBrokerCityBranch(value);
+            console.log("cc",brokerCityBranch)
+            setErrors((prevError) => ({
+                ...prevError,
+                'brokerCityBranch': {}
+            }));
+            if (value === 'OTHERS') {
+                setBrokerState('');
+                setShowState(true);
+            } else {
+                setBrokerState('');
+                setShowState(false);
+            }
         }
     }
 
     function handleBrokerState(e) {
-        let value = e[0].stateName;
-        setBrokerState(value);
-        setErrors((prevError) => ({
-            ...prevError,
-            'brokerState': {}
-        }));
+        if (e[0]) {
+            let value = e[0].stateName;
+            setBrokerState(value);
+            setErrors((prevError) => ({
+                ...prevError,
+                'brokerState': {}
+            }));
+        }
     }
 
     function handleSendOTP(e) {
@@ -132,7 +139,6 @@ function SubBrokerForm(props) {
             isBrokerStateValid = true;
         }
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid && isBrokerStateValid) {
-            console.log("All Good");
             sendOTP(false);
         }
     }
@@ -546,12 +552,13 @@ function SubBrokerForm(props) {
             setOTPSendSuccessToaster(false);
         }, 2000)
     }
-
+    const selectInputRef = useRef();
     function resetBrokerForm() {
         setBrokerName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
-        setBrokerCityBranch('');
+        selectInputRef.current.clearAll();
+        setBrokerCityBranch("");
         setBrokerState('');
         setShowState(false);
         setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
@@ -619,7 +626,8 @@ function SubBrokerForm(props) {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{'fontSize': 'large'}} />
+                            <Select ref={selectInputRef}
+            placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader}  value={brokerCityBranch} style={{'fontSize': 'large'}} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
@@ -636,7 +644,7 @@ function SubBrokerForm(props) {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelbl', 'Search State')} className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
+                                    <Select  placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelbl', 'Search State')} className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelblerror1', 'State is required')}</small> : ''
                                     }
