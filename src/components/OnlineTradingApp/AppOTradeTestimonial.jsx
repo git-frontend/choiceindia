@@ -41,7 +41,10 @@ function AppOTradeTestimonial() {
           <div class="app-sec8-main">
             <div class="row">
               <div class="col-md-12">
-                <h2 class="title-4">What Traders Are Saying About Our Trading App?</h2>
+              <div className="heading-sec">
+                <h2 className="title-secnd text-center">What Traders Are Saying About Our Trading App?</h2>
+              </div>
+                
               </div>
             </div>
             <div class="row">

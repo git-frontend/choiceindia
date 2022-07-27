@@ -9,7 +9,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-first text-center pb-4">Jiffy Trading App Related FAQs</h2>
+               <h2 className="title-secnd text-center pb-4">Jiffy Trading App Related FAQs</h2>
             </div>
          </div>
          <div className="row">
@@ -80,7 +80,7 @@ return (
                         Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls.
                      </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="6" className='faq-item'>
+                  <Accordion.Item eventKey="7" className='faq-item'>
                      <Accordion.Header>
                         <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?</h4>
                      </Accordion.Header>
@@ -88,7 +88,7 @@ return (
                         All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself.
                      </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="6" className='faq-item'>
+                  <Accordion.Item eventKey="8" className='faq-item'>
                      <Accordion.Header>
                         <h4 className='faq-header'>Is Jiffy Trading App Available on Android & iOS platform?</h4>
                      </Accordion.Header>

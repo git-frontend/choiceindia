@@ -11,7 +11,7 @@ function OTAppMoreContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="secttitle">What is a Trading App?</h2>
+                            <h2 className="secttitle">Jiffy Trading App</h2>
                         </div>
                         <div className="col-md-12">
                             <div className="para">
