@@ -65,6 +65,7 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
+const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
 
 
 function Routing() {
@@ -294,6 +295,12 @@ function Routing() {
                         <Route exact path='/privacy-policy' element={
                             <React.Suspense>
                                 < LazyPrivacyPolicy />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/brokerage' element={
+                            <React.Suspense>
+                                < LazyBrokerageCharges />
                             </React.Suspense>
                         } />
 
