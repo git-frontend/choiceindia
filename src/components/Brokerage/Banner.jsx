@@ -30,25 +30,7 @@ function Banner() {
         </div>
     </section>
 
-    <section className="glossary-charges">
-            <div className="container">
-                <div className="glossary-sub-cont">
-                    <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
-                        <Accordion.Item eventKey="0" className='faq-item'>
-                            <Accordion.Header> <h4 className='faq-header'>
-                            <LazyLoader src={glossary} alt={"Banner Images"} className={"img-fluid"} width={""} height={""} />
-                                    Glossary of Charges</h4>
-                                
-                                </Accordion.Header>
-                            <Accordion.Body className='open-demat-faq-body'>
-                            Brokerage is a small fee that is paid to the brokers when an investor initiates a trade. For Delivery, Intraday and Futures, Choice Broking calculates brokerage based on percentage; whereas for Options, it is calculated on the basis of a flat fee. Choice Broking levies one of the lowest brokerage charges for share trading in India.
-                            </Accordion.Body>
-                        </Accordion.Item>
-                    </Accordion>
-                </div>
-            </div>
-    </section>
-      
+   
     
     </div>
   );

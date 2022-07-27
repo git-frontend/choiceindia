@@ -164,3 +164,80 @@ body{
         
     }
 }
+
+.glossary-charges{
+    background: $bgcolor-green;
+    padding: 5rem 0 10rem 0;
+    .open-demat-faqs-accordion{
+        background: $bgcolor-green;
+        .accordion-item{
+            background: $bgcolor-green;
+            .accordion-button{
+                background: #231f2029;
+                padding: 2rem 3rem;
+                border-radius: 16px;
+                outline: none;
+                border: 0;
+                box-shadow: inherit;
+                .faq-header{
+                    font-size: 2rem;
+                    font-family: $font-family-poppins-semibold;
+                    color: $whiteColor;
+                    margin: 0;
+                    display: flex;
+                    .img-fluid{
+                        margin-right: 3rem;
+                    }
+                    @media (max-width:$sm-x) {
+                        font-size: 1.8rem;
+                    }
+                }
+                &::after{
+                    display: none;
+                }
+                &::before{
+                    content: '';
+                    background: url(../../assets/images/brokerage-charges/arrow-dwn.svg) no-repeat;
+                    background-size: contain;
+                    width: 30px;
+                    height: 30px;
+                    display: block;
+                    position: absolute;
+                    right: 3rem;
+                    top: 33%;
+                    transform: rotate(180deg);
+                }
+                &.collapsed{
+                    
+                    &::before{
+                        transform: rotate(0);
+                    }
+                }
+            }
+            
+        }
+    }
+    .faq-item{
+        .open-demat-faq-body{
+            background: $whiteColor;
+            padding: 3rem;
+        }
+    }
+    
+}
+
+.brokerage-charges-temp{
+    .pricing-demat-account{
+        padding-bottom: 0;
+    }
+    .bannersection{
+        @media (max-width:$sm-x) {
+            text-align: center;
+        }
+        .rightsec{
+            @media (max-width:$sm-x) {
+                margin-top: 3rem;
+            }
+        }
+    }
+}

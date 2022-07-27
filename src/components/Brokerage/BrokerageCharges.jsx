@@ -3,6 +3,7 @@ import React from "react";
 import Banner from './Banner';
 import SectionTabs from './SectionTabs';
 import Faqs from './Faqs';
+import GlossaryCharges from './GlossaryCharges';
 import OpenFreeAccount from './../Pricing/OpenFreeAccount';
 
 
@@ -18,11 +19,12 @@ function BrokerageCharges() {
   return (
     <div>
       
-      <div className="mainwrapper">
+      <div className="mainwrapper brokerage-charges-temp">
          
          <Banner />
          <SectionTabs />
          <OpenFreeAccount />
+         <GlossaryCharges />
          <Faqs />
          
        </div> 
