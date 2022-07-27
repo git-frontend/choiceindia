@@ -241,6 +241,7 @@
             .cont-sec-item {
                 width: 33.33%;
                 padding: 2rem;
+                text-align: center;
 
                 .title-secnd {
                     font-size: 3rem;
@@ -264,6 +265,7 @@
 
             @media (max-width: $sm-x) {
                 margin: 1rem 0;
+                text-align: center;
             }
         }
 
@@ -997,6 +999,9 @@
 .top-app-testimonial{
     padding:8rem 0;
     background: $abt-bg;
+    .heading-sec{
+        margin-bottom: 4rem;
+    }
     .app-sec8-main{
         .title-4{
             text-align: center;
@@ -1205,7 +1210,7 @@
 .Dematfaq {
 	padding: 9rem 0;
 	background-color: $abt-bg ;
-	.title-first {
+	.title-secnd {
 		margin-bottom: 2rem;
 	}
 
@@ -1315,5 +1320,17 @@
     }
     @media (max-width: $sm-x) {
         padding: 0;
+    }
+}
+
+.benefits-app{
+    .benefits-app-des{
+        h4{
+            font-size: 1.8rem;
+            line-height: 2.6rem;
+        }
+        @media (max-width: $sm-x) {
+            text-align: center;
+        }
     }
 }

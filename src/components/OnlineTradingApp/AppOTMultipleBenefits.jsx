@@ -18,44 +18,44 @@ function AppOTMultipleBenefits() {
 
 
 
-      <section className='app-cont-sec'>
+      <section className='app-cont-sec benefits-app'>
         <div className='container'>
           <div className="row">
             <div className="col-md-12">
               <div className="heading-sec">
-                <h2 className="title-secnd text-center">Trading App with Multiple Benefits</h2>
+                <h2 className="title-secnd">Trading App with Multiple Benefits</h2>
               </div>
             </div>
           </div>
           <div className='row'>
             <div className='col-md-12'>
               <div className="row g-4 py-5">
-                <div className="col-md-3">
+                <div className="col-md-3 benefits-app-des">
                   <div className="d-block">
                     <img src={Vector1} width={"96"} height={"96"} alt="Free Demat Account" className="img-fluid " />
                   </div>
-                  <h4 className="pt-4"><strong>Free Demat Account</strong></h4>
+                  <h4 className="pt-4"><strong>Free Demat <br/> Account</strong></h4>
 
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 benefits-app-des">
                   <div className="d-block">
                     <img src={Vector2} width={"96"} height={"96"} alt="Zero AMC for First Year" className="img-fluid " />
                   </div>
-                  <h4 className="pt-4"><strong>Zero AMC for First Year</strong></h4>
+                  <h4 className="pt-4"><strong>Zero AMC for <br/> First Year</strong></h4>
 
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 benefits-app-des">
                   <div className="d-block">
                     <img src={Vector3} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>
-                  <h4 className="pt-4"><strong>Free Expert Research from TV Panelist</strong></h4>
+                  <h4 className="pt-4"><strong>Free Expert <br/>Research from TV <br/>Panelist</strong></h4>
 
                 </div>
-                <div className="col-md-3">
+                <div className="col-md-3 benefits-app-des">
                   <div className="d-block">
                     <img src={Vector4} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>
-                  <h4 className="pt-4"><strong>Free Expert Research from TV Panelist</strong></h4>
+                  <h4 className="pt-4"><strong>Dedicated <br/>Relationship <br/>Manager</strong></h4>
 
                 </div>
 
@@ -63,7 +63,7 @@ function AppOTMultipleBenefits() {
 
             </div>
             <div className="wrap-app-links d-flex justify-content-center">
-              <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" rel="noreferrer" className='get-btn'>
+              <a href="/open-free-demat-account" className='get-btn'>
 
 
                 <span className='btn-bg'>Open Free Account</span>

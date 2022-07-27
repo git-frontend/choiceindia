@@ -49,6 +49,9 @@ function BannerCareer() {
                                 <div class="">
                                     <h4>IPO investment</h4>
                                 </div>
+                                <div class="">
+                                    <h4>ETF</h4>
+                                </div>
                               </Slider>
                         </div>
                         <div className="wrap-app-links">
@@ -64,7 +67,7 @@ function BannerCareer() {
                     </a>
                   </div>
                         <div class="star-line">
-                            <img src={AppImage6} alt="" class="img-responsive" /> <h5> Trusted by <span>4+ Lakh Users</span> </h5>
+                            <img src={AppImage6} alt="" class="img-responsive" /> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
                         </div>
                     </div>
                 </div>
