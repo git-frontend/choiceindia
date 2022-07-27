@@ -3,7 +3,7 @@ import React,{useState, useEffect} from "react";
 import OTBannerApp from './OTBannerApp';
 import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
-// import AppOTMultipleBenefits from './AppOTMultipleBenefits';
+import AppOTMultipleBenefits from './AppOTMultipleBenefits';
 import AppOTradeBenefits from './AppOTradeBenefits';
 import OTAppFaq from './OTAppFaq';
 import OTAppMoreContent from './OTAppMoreContent';
@@ -50,7 +50,7 @@ function TradingApp() {
       <AppOTStrategies />
       <AppOTBannerBottom />
       <AppOTradeBenefits />
-      {/* <AppOTMultipleBenefits/> */}
+       <AppOTMultipleBenefits/> 
       <AppOTradeTestimonial/>
       <OTAppFaq/>
       <AppOTDownloadJiffy/>
