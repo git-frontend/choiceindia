@@ -56,8 +56,8 @@ const Lazyfreeamc = React.lazy(() => import('./components/FreeAmcAccount/FreeAmc
 const Lazyhinditrade = React.lazy(() => import('./components/TradingAccountHindi/TradingAccountHindi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
-const Lazyonlinetradingapp = React.lazy(() => import('./components/ShareMarketApp/ShareMarketApp'));
-const Lazysharemarketapp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
+const Lazysharemarketapp = React.lazy(() => import('./components/ShareMarketApp/ShareMarketApp'));
+const Lazyonlinetradingapp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 

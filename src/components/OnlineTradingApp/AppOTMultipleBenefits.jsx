@@ -23,7 +23,7 @@ function AppOTMultipleBenefits() {
           <div className="row">
             <div className="col-md-12">
               <div className="heading-sec">
-                <h2 className="title-secnd">Trading App with Multiple Benefits</h2>
+                <h2 className="title-secnd text-center">Trading App with Multiple Benefits</h2>
               </div>
             </div>
           </div>
