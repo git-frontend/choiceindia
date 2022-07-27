@@ -5,6 +5,8 @@ import AppOTBannerBottom from './AppOTBannerBottom';
 import AppOTStrategies from './AppOTStrategies';
 import AppOTMultipleBenefits from './AppOTMultipleBenefits';
 import AppOTradeBenefits from './AppOTradeBenefits';
+import OTAppFaq from './OTAppFaq';
+import OTAppMoreContent from './OTAppMoreContent';
 import AppOTradeTestimonial from './AppOTradeTestimonial';
 import "./online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
@@ -49,6 +51,9 @@ function TradingApp() {
       <AppOTradeBenefits />
       <AppOTMultipleBenefits/>
       <AppOTradeTestimonial/>
+      <OTAppFaq/>
+      <OTAppMoreContent/>
+      
       </div>
     }
     </div>

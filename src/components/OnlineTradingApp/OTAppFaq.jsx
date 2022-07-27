@@ -41,10 +41,10 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="3" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I Trade in Future & Options Through a Trading App?</h4>
+                        <h4 className='faq-header'>Can I Trade in Future &amp; Options Through a Trading App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Sure, you can trade in F&0 and we also provide intraday research/calls for Futures & Options.
+                        Sure, you can trade in F&amp;0 and we also provide intraday research/calls for Futures &amp; Options.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
