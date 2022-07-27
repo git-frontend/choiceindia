@@ -17,7 +17,7 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
-function TradingApp() {
+function ShareMarketApp() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -62,4 +62,4 @@ function TradingApp() {
   );
 }
 
-export default TradingApp;
+export default ShareMarketApp;
