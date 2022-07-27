@@ -94,6 +94,10 @@ body{
                 border-radius: 18px;
                 padding: 2rem 1rem;
                 margin-bottom: 9rem;
+                .condition{
+                    color: $secondary;
+                    padding:1rem 2rem;
+                }
                 .table{
                     border-collapse: collapse;
                     td{
@@ -101,7 +105,7 @@ body{
                     }
                     th{
                         text-transform: uppercase;
-                        padding: 1.8rem 2rem;
+                        padding: 1rem 2rem 2.5rem 2rem;
                         font-family: $font-family-poppins-semibold;
                     }
                 }
