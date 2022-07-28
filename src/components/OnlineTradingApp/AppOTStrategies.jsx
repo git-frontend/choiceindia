@@ -41,7 +41,7 @@ function AppOTStrategies() {
                         <div className='col-md-10'>
                             <div className="row app-trade-easy-div d-flex align-items-center">
 
-                                <div className='col-md-4'>
+                                <div className='col-md-5'>
 
                                     <div className="trade-easy-images-div">
                                         <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"399"} height={"660"}/>
@@ -54,7 +54,7 @@ function AppOTStrategies() {
 
                                 </div>
 
-                                <div className='col-md-8'>
+                                <div className='col-md-7'>
                                     <div className='content-list'>
                                         <Slider {...settings1}
                                             afterChange={(ev) => {
