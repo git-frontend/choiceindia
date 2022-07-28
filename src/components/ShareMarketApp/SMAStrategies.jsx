@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Strategies';
+import imageData from '../../Data/ShareMarket/BestStock';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -15,7 +15,7 @@ function SMAStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 5,
         autoplay: true,
         dots: false,
         autoplaySpeed: 1000,
