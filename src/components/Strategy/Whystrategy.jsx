@@ -66,7 +66,7 @@ function WhyStrategy() {
   
   function toggleForward() {
     setcounterRight(() => counterRight + 1);
-    console.log('FFF',counterRight);
+    
     if(counterRight == 3) {
       setdisableRight(true);
       setdisableLeft(false);
@@ -80,7 +80,7 @@ function WhyStrategy() {
   
   function toggleBackward() {
     setcounterRight(() => counterRight - 1);
-    console.log('BBB',counterRight);
+    
     if (counterRight == 1) {
       setdisableLeft(true)
       setdisableRight(false);
