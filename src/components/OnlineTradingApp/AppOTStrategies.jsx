@@ -38,13 +38,13 @@ function AppOTStrategies() {
                         </div>
                     </div>
                     <div className='row d-flex justify-content-center'>
-                        <div className='col-md-9'>
+                        <div className='col-md-10'>
                             <div className="row app-trade-easy-div d-flex align-items-center">
 
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
+                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"399"} height={"660"}/>
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}

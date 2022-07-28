@@ -219,110 +219,112 @@
             position: relative;
             background: url(../../assets/images/online-trading-app/app-bg2.png) no-repeat top left $primary;
             background-size: cover;
+
+            .heading-sec-black {
+                text-align: center;
+                .title-secnd{
+                    color: $whiteColor;
+                }
+            }
+    
+            .cont-sec-list {
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                margin: 5rem 0;
+                padding: 0;
+    
+               
+    
+                .cont-sec-item {
+                    width: 33.33%;
+                    padding: 2rem;
+                    text-align: center;
+    
+                    .title-secnd {
+                        font-size: 3rem;
+                        margin-bottom: 0.5rem;
+                        color: $whiteColor;
+    
+                        @media (max-width: $sm-x) {
+                            font-size: 2rem;
+                        }
+                    }
+    
+                    p {
+                        color: $whiteColor;
+                    }
+    
+                    @media (max-width: $sm-x) {
+                        width: 100%;
+                        padding: 1rem;
+                    }
+                }
+    
+                @media (max-width: $sm-x) {
+                    margin: 1rem 0;
+                    text-align: center;
+                }
+            }
+    
+            .wrap-app-links {
+                margin: 2rem 0;
+                display: flex;
+                flex-wrap: wrap;
+    
+                .link-nrl {
+    
+                    @media (max-width: $sm-x) {
+                        padding: 8px;
+                    }
+    
+                    &.black {
+                        background-color: $bgcolordark;
+                    }
+    
+                    .img-ico {
+                        width: 17rem;
+                        display: block;
+    
+                        @media (max-width: $sm-x) {
+                            width: 8rem;
+                        }
+                    }
+    
+                    .blackcolor {
+                        color: $blackColorlight;
+                        font-size: 20px;
+    
+                        @media (max-width: $sm-x) {
+                            font-size: 16px;
+                        }
+                    }
+    
+                    &:hover {
+                        transform: translateY(-8px);
+                    }
+    
+                    @media (max-width: $sm-x) {
+                        margin-right: 1rem;
+                        width: 60%;
+                        margin-bottom: 1rem;
+                    }
+    
+                    
+                }
+    
+                @media (max-width: $sm-x) {
+                    margin: 2rem 0;
+                }
+            }
+    
+            @media (max-width: $sm-x) {
+                padding: 5rem 0;
+            }
     
         }
 
-        .heading-sec-black {
-            text-align: center;
-            .title-secnd{
-                color: $whiteColor;
-            }
-        }
-
-        .cont-sec-list {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            margin: 5rem 0;
-            padding: 0;
-
-           
-
-            .cont-sec-item {
-                width: 33.33%;
-                padding: 2rem;
-                text-align: center;
-
-                .title-secnd {
-                    font-size: 3rem;
-                    margin-bottom: 0.5rem;
-                    color: $whiteColor;
-
-                    @media (max-width: $sm-x) {
-                        font-size: 2rem;
-                    }
-                }
-
-                p {
-                    color: $whiteColor;
-                }
-
-                @media (max-width: $sm-x) {
-                    width: 100%;
-                    padding: 1rem;
-                }
-            }
-
-            @media (max-width: $sm-x) {
-                margin: 1rem 0;
-                text-align: center;
-            }
-        }
-
-        .wrap-app-links {
-            margin: 2rem 0;
-            display: flex;
-            flex-wrap: wrap;
-
-            .link-nrl {
-
-                @media (max-width: $sm-x) {
-                    padding: 8px;
-                }
-
-                &.black {
-                    background-color: $bgcolordark;
-                }
-
-                .img-ico {
-                    width: 17rem;
-                    display: block;
-
-                    @media (max-width: $sm-x) {
-                        width: 8rem;
-                    }
-                }
-
-                .blackcolor {
-                    color: $blackColorlight;
-                    font-size: 20px;
-
-                    @media (max-width: $sm-x) {
-                        font-size: 16px;
-                    }
-                }
-
-                &:hover {
-                    transform: translateY(-8px);
-                }
-
-                @media (max-width: $sm-x) {
-                    margin-right: 1rem;
-                    width: 60%;
-                    margin-bottom: 1rem;
-                }
-
-                
-            }
-
-            @media (max-width: $sm-x) {
-                margin: 2rem 0;
-            }
-        }
-
-        @media (max-width: $sm-x) {
-            padding: 5rem 0;
-        }
+        
 
         
     }
@@ -952,10 +954,13 @@
             right: 14%;
             max-width: 52%;
             z-index: 9;
-            animation-duration: 1s;
-            animation-fill-mode: both;
-            animation-delay: 0.1s;
-            animation-name: fadeInUp;
+            animation: moveToRight 1s ease-in;
+            animation-delay: 1s;
+            // transition-timing-function: ease-in;
+            // animation-duration: 1s;
+            // animation-fill-mode: both;
+            // animation-delay: 0.1s;
+            // animation-name: fadeInUp;
         }
         @media (max-width: $md) {
             padding: 0 4rem;
@@ -1332,5 +1337,13 @@
         @media (max-width: $sm-x) {
             text-align: center;
         }
+    }
+}
+
+
+@keyframes moveToRight {
+    
+    100% {
+        transform: translateX(-110px);
     }
 }

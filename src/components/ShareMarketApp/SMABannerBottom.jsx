@@ -75,7 +75,7 @@ function AppOTBannerBottom() {
                 </div>
 
                
-                <div className='col-xl-5 col-md-6'>
+                <div className='col-md-6'>
 
                   <div className="trade-easy-images-div" >
                   <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
