@@ -10,7 +10,7 @@ const imageData =
         "image":`${ImageSub0}`,
         "title":"Jiffy Signal",
         "id": 1,
-        "description":"AI Based Research Engine which provides Real Time Trading Signal"
+        "description":"AI Based Research Engine that provides Real Time Trading Signals."
         
         
     },
@@ -18,7 +18,7 @@ const imageData =
         "image":`${ImageSub1}`,
         "title":"C-Quant",
         "id": 2,
-        "description":"AI Based Research Engine which provides Real Time Trading Signal"
+        "description":"A curated list of the top 200 stocks, thoroughly back-tested and statistically validated by the research division."
         
         
     },
@@ -26,7 +26,7 @@ const imageData =
         "image":`${ImageSub2}`,
         "title":"Sumeet Bagadia Desk’s",
         "id": 3,
-        "description":"AI Based Research Engine which provides Real Time Trading Signal"
+        "description":"Get expert stock recommendations for all types of trades, along with sector specific investments."
     
         
     },
@@ -34,7 +34,7 @@ const imageData =
         "image":`${ImageSub3}`,
         "title":"Long Term Research Calls",
         "id": 4,
-        "description":"AI Based Research Engine which provides Real Time Trading Signal"
+        "description":"Invest in long-term research calls that are well researched and picked by our team of experts."
     
         
     }

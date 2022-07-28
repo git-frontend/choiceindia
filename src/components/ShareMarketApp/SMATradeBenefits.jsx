@@ -9,24 +9,24 @@ function AppOTradeBenefits() {
 
       
 
-      <section className='app-cont-sec app-cont-sec-sub'>
+<section className='app-cont-sec app-cont-sec-sub'>
         <div className='container'>
           <div className='row'>
             <div className='col-md-12'>
               <div className="heading-sec-black">
-                <h3 className="title-secnd">Top Rated Trading App</h3>
+                <h3 className="title-secnd">Top Rated Share Market App In India</h3>
               </div>
               <ul className='cont-sec-list'>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                    <h3 className="title-secnd">4+ Lakhs</h3>
+                    <h3 className="title-secnd">5+ Lakhs</h3>
                     <p>App Downloads</p>
                   </div>
                 </li>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
                   <p>Rated by</p>
-                    <h3 className="title-secnd">5K+ Users</h3>
+                    <h3 className="title-secnd">8K+ Users</h3>
                     
                   </div>
                 </li>

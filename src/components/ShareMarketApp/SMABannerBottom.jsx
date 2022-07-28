@@ -33,7 +33,7 @@ function AppOTBannerBottom() {
         <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd text-center pb-5">Trade & Invest more quicker and simpler</h2>
+                                <h2 className="title-secnd text-center pb-5">Unique Features Of Best Stock Market App</h2>
                             </div>
                         </div>
                     </div>

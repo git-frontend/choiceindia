@@ -31,7 +31,8 @@ function SectionTabs() {
                            className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
                            onClick={() => toggleTab(1)}
                         >
-                           <img src={Equity} className="ico-sm" />
+                           
+                           <LazyLoader src={Equity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
                            <h4>Equity</h4>
 
                         </button>
@@ -39,7 +40,8 @@ function SectionTabs() {
                            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                            onClick={() => toggleTab(2)}
                         >
-                           <img src={Currency} className="ico-sm" />
+                           
+                           <LazyLoader src={Currency} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
                            <h4>Currency</h4>
 
                         </button>
@@ -47,7 +49,7 @@ function SectionTabs() {
                            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
                            onClick={() => toggleTab(3)}
                         >
-                           <img src={Commodity} className="ico-sm" />
+                           <LazyLoader src={Commodity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
                            <h4>Commodity</h4>
 
                         </button>
@@ -64,7 +66,7 @@ function SectionTabs() {
                                     <thead>
                                        <tr>
                                           <th width="15%">Charges</th>
-                                          <th>Equity Intraday</th>
+                                          <th width="20%">Equity Intraday</th>
                                           <th>Equity Delivery</th>
                                           <th>Equity Futures</th>
                                           <th>Equity Options</th>
