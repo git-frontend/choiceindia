@@ -14,7 +14,7 @@ function AppOTradeBenefits() {
           <div className='row'>
             <div className='col-md-12'>
               <div className="heading-sec-black">
-                <h3 className="title-secnd">Top Rated Trading App</h3>
+                <h2 className="title-secnd">Top Rated Trading App</h2>
               </div>
               <ul className='cont-sec-list'>
                 <li className='cont-sec-item'>

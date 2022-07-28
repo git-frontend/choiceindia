@@ -34,7 +34,7 @@ function OTAppMoreContent() {
                                         <li className="font-bold">Scrip Overview and News Corner: </li>
                                         iffy is the best trading app because not only does it provide all the essential details about a scrip, but also it helps to stay updated about the latest development of the market with the latest news on the company.
                                         </ul>
-                                        <h3 className="font-bold">A typical Scrip overview in Jiffy consists of:</h3>
+                                        <h3 className="font-bold">A typical Scrip overview in Jiffy consists of:</h3><br/>
                                       
                                         <ul>
                                             <li>Volume</li>
