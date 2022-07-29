@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function OTAppFaq() {
 const [view, setview] = useState(false);
 const [show, setshow] = useState(false);
@@ -64,7 +65,7 @@ return (
                         <h4 className='faq-header'>What are the brokerage charges in Jiffy - Share Market App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     Choice offers the lowest brokerage charges in the industry. Check the <a href="#">brokerage charges</a> on our website.
+                     Choice offers the lowest brokerage charges in the industry. Check the <Link to="/brokerage-charges">brokerage charges</Link> on our website.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item'>
