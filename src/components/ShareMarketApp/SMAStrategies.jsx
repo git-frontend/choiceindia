@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Strategies';
+import imageData from '../../Data/ShareMarket/BestStock';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -15,7 +15,7 @@ function SMAStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 5,
         autoplay: true,
         dots: false,
         autoplaySpeed: 1000,
@@ -38,13 +38,13 @@ function SMAStrategies() {
                         </div>
                     </div>
                     <div className='row d-flex justify-content-center'>
-                        <div className='col-md-9'>
+                        <div className='col-md-11'>
                             <div className="row app-trade-easy-div d-flex align-items-center">
 
-                                <div className='col-md-4'>
+                                <div className='col-md-5'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
+                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"557"} height={"662"}/>
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}
@@ -54,7 +54,7 @@ function SMAStrategies() {
 
                                 </div>
 
-                                <div className='col-md-8'>
+                                <div className='col-md-7'>
                                     <div className='content-list'>
                                         <Slider {...settings1}
                                             afterChange={(ev) => {

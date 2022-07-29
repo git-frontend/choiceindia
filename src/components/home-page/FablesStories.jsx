@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 
 function FablesStories() {
 	let Id;
-	const [fslider, setfslider] = useState();
+	const [fslider, setfslider] = useState([]);
 	const [blog, setblog] = useState();
 	const [trigger, setTrigger] = useState();
 	const [sliderimag, setSliderImag] = useState(0);
@@ -20,22 +20,37 @@ function FablesStories() {
 
 		homeServices.fabalStory().then(
 			res => {
-				setfslider(res.data.posts);
-			}
-		)
+				if (res && res.status === 200 && res.data && res.data.posts) {
+					setfslider(res.data.posts);
 
-	}
+				} else {
+					setfslider([]);
+				}
+				
+			}
+		).catch((error) => {
+            setfslider([]);
+        });
+				
+			}
+		
 
 	/** get fables Blog */
 
 	function loadFableBlog(Id) {
 		homeServices.fablesBlog(Id).then(
-
 			res => {
-				setblog(res.data.posts)
+				if (res && res.status === 200 && res.data && res.data.posts) {
+					setblog(res.data.posts)
 
+				} else {
+					setblog([]);
+				}
+				
 			}
-		)
+		).catch((error) => {
+            setblog([]);
+        });
 	}
 
 	useEffect(() => {
@@ -93,7 +108,7 @@ function FablesStories() {
 								<div className="stories-sec-left">
 									<div>
 										{
-											fslider ?
+											fslider && fslider.length && fslider[sliderimag] ?
 
 												<div>
 													<LazyLoader src={fslider[sliderimag].feature_image} width={"521"} height={"450"} alt={"Loading"} />
@@ -112,7 +127,7 @@ function FablesStories() {
 								<div className="stories-sec-right">
 									<div className="">
 										{
-											fslider ?
+											fslider && fslider.length && fslider[sliderimag] ?
 												<div className="stories-sec-right-des">
 													<Link to={`/blog/${fslider[sliderimag].slug}`}>
 														<h4>{fslider[sliderimag].title}</h4>
@@ -141,7 +156,7 @@ function FablesStories() {
 
 											className='stories-sec-slider'>
 											{
-												fslider?.map((response) => {
+												(fslider && fslider.length && fslider[sliderimag] ? fslider:[]).map((response,i) => {
 													
 
 													Id = fslider[sliderimag].slug;
@@ -150,6 +165,7 @@ function FablesStories() {
 
 														<div className="itm-img" key={response.id} onClick={() => {
 															loadFableBlog(Id);
+															setSliderImag(i)
 
 														}} >
 

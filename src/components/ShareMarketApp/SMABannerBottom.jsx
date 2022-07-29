@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/images';
+import imageData from '../../Data/ShareMarket/BestShare';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -16,7 +16,7 @@ function AppOTBannerBottom() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     autoplay: true,
     dots: false,
     autoplaySpeed: 1000,
@@ -38,7 +38,7 @@ function AppOTBannerBottom() {
                         </div>
                     </div>
           <div className='row justify-content-center'>
-            <div className='col-md-10'>
+            <div className='col-md-12'>
               <div className="app-trade-easy-div row align-items-center">
 
               <div className='col-md-6'>
@@ -75,10 +75,10 @@ function AppOTBannerBottom() {
                 </div>
 
                
-                <div className='col-xl-5 col-md-6'>
+                <div className='col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"344"} height={"697"} alt={"Loading"} />
+                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"557"} height={"662"} alt={"Loading"} />
                     {/* <img src={imageData[isShown2].image}
 
                       className="single-trade-easy-images" alt="loading"></img> */}
