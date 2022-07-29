@@ -24,6 +24,8 @@ const LazyApp = React.lazy(() => import('./components/App/App'));
 // import App from './components/App/App';
 
 const LazyTradingApp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
+
+const LazyTradingAppHindi = React.lazy(() => import('./components/OnlineTradingAppHindi/OnlineTradingApp'));
 // import App from './components/App/App';
 
 const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
@@ -61,7 +63,7 @@ const Lazyonlinetradingapp = React.lazy(() => import('./components/OnlineTrading
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
-const LazyOpenDemat = React.lazy(()=> import('./components/OpenDemat/Opendemat'));
+const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
@@ -70,8 +72,9 @@ const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/Bro
 const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
 
 
+
 function Routing() {
-    
+
 
 
     return (
@@ -84,7 +87,7 @@ function Routing() {
                 <div className='App-Body'>
                     <Routes>
                         <Route exact path='/' element={
-                          <Home></Home>} />
+                            <Home></Home>} />
                         {/* <Route exact path='/' element={< Home />} /> */}
 
                         <Route exact path='/about-us' element={
@@ -107,6 +110,12 @@ function Routing() {
                         <Route exact path='/online-trading-app' element={
                             <React.Suspense>
                                 < LazyTradingApp />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/hindi/online-trading-app' element={
+                            <React.Suspense>
+                                < LazyTradingAppHindi />
                             </React.Suspense>
                         } />
 
@@ -149,7 +158,7 @@ function Routing() {
 
                         <Route exact path='/investors' element={
                             <React.Suspense>
-                              {  console.log("called LazyInvestorInfo" )}
+                                {console.log("called LazyInvestorInfo")}
                                 < LazyInvestorInfo />
                             </React.Suspense>
                         } />
@@ -184,7 +193,7 @@ function Routing() {
                                 < Lazyopendemat />
                             </React.Suspense>
                         } />
-                         <Route exact path='/hindi/trading-account' element={
+                        <Route exact path='/hindi/trading-account' element={
                             <React.Suspense>
                                 < Lazyhinditrade />
                             </React.Suspense>
@@ -271,7 +280,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                    <Route exact path='/research-new/:id/:catid' element={
+                        <Route exact path='/research-new/:id/:catid' element={
                             <React.Suspense>
                                 < Lazyresearchdetailed />
                             </React.Suspense>
