@@ -17,7 +17,7 @@ function AppOTDownloadJiffy() {
             <div className='down-jiffy-sub'>
                 
                 <div className='jiffy-sub-cont'>
-                      <h3>Download Jiffy</h3>
+                      <h3>डाउनलोड जिफ्फी ऐप</h3>
                       <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                       <svg width="30" height="30" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>
@@ -27,12 +27,12 @@ function AppOTDownloadJiffy() {
                         <path d="M1.62287 1.45625C2.36922 0.738031 3.56727 0.653568 4.95617 1.4575L29.9121 15.9147L22.8585 23.1058L1.62287 1.45625Z" fill="black" stroke="#ffffff" stroke-width="0.25" />
                       </svg>
 
-                      <span className='blackcolor'>Google Play</span>
+                      <span className='blackcolor'>गूगल प्ले</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
                       <img src={appstore} className="" alt={"App Store"} width="" height="" />
 
-                      <span className='blackcolor'>App Store</span>
+                      <span className='blackcolor'>ऐप स्टोर</span>
                     </a>
                   </div>
                   </div>

@@ -14,26 +14,26 @@ function AppOTradeBenefits() {
           <div className='row'>
             <div className='col-md-12'>
               <div className="heading-sec-black">
-                <h2 className="title-secnd">Top Rated Trading App</h2>
+                <h2 className="title-secnd">टॉप रेटेड ट्रेडिंग ऐप</h2>
               </div>
               <ul className='cont-sec-list'>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                    <h3 className="title-secnd">5+ Lakhs</h3>
-                    <p>App Downloads</p>
+                    <h3 className="title-secnd">5 लाख से अधिक </h3>
+                    <p>ऐप डाउनलोड</p>
                   </div>
                 </li>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                  <p>Rated by</p>
-                    <h3 className="title-secnd">8K+ Users</h3>
+                  <p>उपयोगकर्ता द्वारा रेटेड</p>
+                    <h3 className="title-secnd">8 हजार से अधिक </h3>
                     
                   </div>
                 </li>
                 <li className='cont-sec-item'>
                   <div className="heading-sec">
-                    <h3 className="title-secnd">Fast &amp; Secured</h3>
-                    <p>App</p>
+                    <h3 className="title-secnd">तेज़ और सुरक्षित </h3>
+                    <p>ऐप</p>
                   </div>
                 </li>
               </ul>
@@ -47,12 +47,12 @@ function AppOTradeBenefits() {
                         <path d="M1.62287 1.45625C2.36922 0.738031 3.56727 0.653568 4.95617 1.4575L29.9121 15.9147L22.8585 23.1058L1.62287 1.45625Z" fill="black" stroke="#ffffff" stroke-width="0.25" />
                       </svg>
 
-                      <span className='blackcolor'>Google Play</span>
+                      <span className='blackcolor'>गूगल प्ले</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={appstore} className="" alt={"App Store"} width="" height="" />
+                    <img src={appstore}  alt={"App Store"} width="" height="" />
 
-                      <span className='blackcolor'>App Store</span>
+                      <span className='blackcolor'>ऐप स्टोर</span>
                     </a>
             </div>
           </div>

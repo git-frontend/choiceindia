@@ -10,7 +10,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-function BannerCareer() {
+function OTBannerApp() {
 
   const settings1 = {
     vertical: true,
@@ -31,43 +31,43 @@ function BannerCareer() {
                 <div class="col-md-7">
                     <div class="sec1-left">
                         <div class="top-title pl8">
-                           <h1>Jiffy Trading App <span class="mb-br">For</span> </h1> 
+                           <h1>जिफ्फी ट्रेडिंग ऐप <span class="mb-br">फॉर</span> </h1> 
 
                            <Slider {...settings1} className='slider-ver'>
-                                <div class="">
-                                    <h4>Stocks</h4>
+                                <div>
+                                    <h4>स्टाक</h4>
                                 </div>
-                                <div class="">
-                                    <h4>Commodities</h4>
+                                <div>
+                                    <h4>कमोडिटी</h4>
                                 </div>
-                                <div class="">
-                                    <h4>Derivatives</h4>
+                                <div>
+                                    <h4>डेरिवेटिव</h4>
                                 </div>
-                                <div class="">
-                                    <h4>Currencies</h4>
+                                <div >
+                                    <h4>करन्सी</h4>
                                 </div>
-                                <div class="">
-                                    <h4>IPO investment</h4>
+                                <div>
+                                    <h4>आईपीओ</h4>
                                 </div>
-                                <div class="">
-                                    <h4>ETF</h4>
+                                <div>
+                                    <h4>ईटीएफ</h4>
                                 </div>
                               </Slider>
                         </div>
                         <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
-                    <img src={AppImage5} className="" alt={"App Store"} width="" height="" />
+                    <img src={AppImage5}  alt={"App Store"} width="" height="" />
 
-                      <span className=''>Google Play</span>
+                      <span>गूगल प्ले</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={AppImage4} className="" alt={"App Store"} width="" height="" />
+                    <img src={AppImage4}  alt={"App Store"} width="" height="" />
 
-                      <span className=''>App Store</span>
+                      <span>ऐप स्टोर</span>
                     </a>
                   </div>
                         <div class="star-line">
-                            <img src={AppImage6} alt="" class="img-responsive" /> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
+                            <img src={AppImage6} alt="" class="img-responsive" /> <h5><span>5+ लाख उपभोगकर्तायो का भरोसेमंद</span> </h5>
                         </div>
                     </div>
                 </div>
@@ -89,4 +89,4 @@ function BannerCareer() {
   );
 }
 
-export default BannerCareer;
+export default OTBannerApp;

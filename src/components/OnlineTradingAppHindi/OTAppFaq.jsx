@@ -9,7 +9,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-secnd text-center pb-4">Jiffy Trading App Related FAQs</h2>
+               <h2 className="title-secnd text-center pb-4">जिफ्फी ट्रेडिंग ऐप संबंधित अक्सर पूछे जाने वाले प्रश्न</h2>
             </div>
          </div>
          <div className="row">
@@ -17,55 +17,58 @@ return (
                <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="0" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>  Can I do trading in all segments with the Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>  क्या मैं जिफ्फी ट्रेडिंग ऐप के साथ सभी सेगमेंट में ट्रेडिंग कर सकता हूं?
+</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency
+                     हां, जिफ्फी सभी सेगमेंट में ट्रेडिंग का समर्थन करता है जो कि इक्विटी, डेरिवेटिव्स, कमोडिटी और करेंसी है|
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is the Jiffy Trading app safe for trading?</h4>
+                        <h4 className='faq-header'>क्या जिफ्फी ट्रेडिंग ऐप ट्रेडिंग के लिए सुरक्षित है?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        We use comprehensive and proven world-class safety measures to ensure optimum security.
+                     हम सुरक्षा सुनिश्चित करने के लिए व्यापक और विश्व स्तरीय टेक्नालजी का उपयोग करते हैं|
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I open a Demat Account from Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>क्या मैं जिफ्फी ट्रेडिंग ऐप से डीमैट खाता खोल सकता हूं?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Sure, the entire process takes just 10 minutes and is completely paperless!
+                     हां, पूरी प्रक्रिया में सिर्फ 10 मिनट लगते हैं और यह पूरी तरह से पेपरलेस है!
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="3" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I Trade in Future &amp; Options Through a Trading App?</h4>
+                        <h4 className='faq-header'>क्या मैं ट्रेडिंग ऐप के माध्यम से फ्यूचर और ऑप्शंस में ट्रेड कर सकता हूं?
+</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Sure, you can trade in F&amp;0 and we also provide intraday research/calls for Futures &amp; Options.
+                     हाँ, आप F&0 में ट्रेड कर सकते हैं और हम फ्यूचर्स और ऑप्शंस के लिए इंट्राडे रिसर्च/कॉल भी प्रदान करते हैं।
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
                      <Accordion.Header >
-                        <h4 className='faq-header'>How to apply for an IPO in Jiffy Trading App?</h4>
+                        <h4 className='faq-header'> जिफ्फी ट्रेडिंग ऐप में आईपीओ के लिए आवेदन कैसे करें?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Below are the steps to apply for IPOs via Jiffy,<br/>
-                        Go to the IPO Section => IPO Listing => Open IPO<br/>
-                        Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details<br/>
-                        On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify<br/>
-                        Once you select ‘Subscribe’. Your bid will be executed<br/>
-                        You can check the status of your IPO bid in the IPO Transactions section
+                     जिफ्फी के माध्यम से आईपीओ के लिए आवेदन करने के चरण नीचे दिए गए हैं-<br/>
+                     आईपीओ अनुभाग पर जाएं => आईपीओ लिस्टिंग => ओपन आईपीओ<br/>
+                     IPO पर टैप करें, और IPO विवरण लागू करने या देखने के लिए सीधे 'सदस्यता लें' पर क्लिक करें|<br/>
+                     सब्स्क्राइब स्क्रीन/पेज पर, आपको लॉट की संख्या, कट-ऑफ मूल्य, यूपीआई आईडी दर्ज करनी होगी और सत्यापित करें पर टैप करना होगा।
+<br/>
+                        एक बार जब आप 'सदस्यता लें' का चयन करें। आपकी बोली क्रियान्वित की जाएगी<br/>
+                        आप आईपीओ लेनदेन अनुभाग में अपनी आईपीओ बोली की स्थिति की जांच कर सकते हैं|
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available in Other Regional Languages?</h4>
+                        <h4 className='faq-header'>क्या जिफ्फी ट्रेडिंग ऐप अन्य भाषाओं में उपलब्ध है?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy has options for Hindi, Gujarati, Marathi and Malayalam as of now.
+                     हां, जिफ्फी के पास फिलहाल हिंदी, गुजराती, मराठी और मलयालम के विकल्प हैं।
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
@@ -74,26 +77,21 @@ return (
                <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="6" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I get research reports in the Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>क्या मुझे जिफ़ी ट्रेडिंग ऐप में शोध रिपोर्ट मिल सकती है?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls.
+                     हमारी शोध टीम को 78% लगातार सफलता अनुपात प्राप्त है, और ऐप निवेश / व्यापार के लिए विस्तृत मौलिक और तकनीकी अनुसंधान प्रदान करता है। हम इंट्रा-डे ट्रेड कॉल भी प्रदान करते हैं।
+
                      </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="7" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?</h4>
-                     </Accordion.Header>
-                     <Accordion.Body className='open-demat-faq-body'>
-                        All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself.
-                     </Accordion.Body>
-                  </Accordion.Item>
+               
                   <Accordion.Item eventKey="8" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available on Android & iOS platform?</h4>
+                        <h4 className='faq-header'>क्या जिफ्फी ट्रेडिंग ऐप एंड्रॉइड और आईओएस प्लेटफॉर्म पर उपलब्ध है?
+</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy is available on both Android & iOS.
+                     हां, जिफ्फी एंड्रॉयड और आईओएस दोनों पर उपलब्ध है।
                      </Accordion.Body>
                   </Accordion.Item>
                   <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>

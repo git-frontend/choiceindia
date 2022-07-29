@@ -42,7 +42,7 @@ function AppOTradeTestimonial() {
             <div class="row">
               <div class="col-md-12">
               <div className="heading-sec">
-                <h2 className="title-secnd text-center">What Traders Are Saying About Our Trading App?</h2>
+                <h3 className="title-secnd text-center"> ट्रेडर्स हमारे ट्रेडिंग ऐप के बारे में क्या कहते है?</h3>
               </div>
                 
               </div>
@@ -54,14 +54,14 @@ function AppOTradeTestimonial() {
 
                   <div class="content">
                     <div class="thumbnail">
-                      <p class="SdClientName">Darshan Bhardwaj</p>
+                      <p class="SdClientName">मोहित सरावगी</p>
                       <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
                     </div>
                     <div class="btnNtxt">
                       <div class="sdAllContent">
 
                         <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">The customer support system is fantastic. Appreciate their attitude to welcome feedback. They are ready to work for customer satisfaction. Jiffy is the Trading App that witnesses your journey of perception to reality!! Exciting to have new features…</p>
+                          <p class="sdCustomSliderHeadig">किसी भी अन्य फाइनेंसियल मैनेजमेंट ऐप की तुलना में अधिक सुविधाएँ , यह मेरे सभी निवेश को वर्तमान मूल्य के साथ एक क्लिक में दिखाता है। इसके अलावा, मैं एक क्लिक से स्क्रिप्ट खरीद और बेच सकता हूं। मैं निश्चित रूप से इस ऐप को सभी को रेकमेन्ड करूँगा|</p>
                         </div>
 
                       </div>
@@ -70,14 +70,14 @@ function AppOTradeTestimonial() {
 
                   <div class="content">
                     <div class="thumbnail">
-                      <p class="SdClientName">Naman Mahajan</p>
+                      <p class="SdClientName">रंगास्वामी टी</p>
                       <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
                     </div>
                     <div class="btnNtxt">
                       <div class="sdAllContent">
 
                         <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">A trader app that offers so much: 1. A simple UI 2. Easy Pay-In/Pay-Out options such as net banking and UPI 3. Instant Paperless Account Opening Procedure 4. Real-Time Interactive Charts 5. Free Price Alerts 6. Lifetime Free Demat Account 7. Low AMC 8. Reasonable Brokerage.</p>
+                          <p class="sdCustomSliderHeadig">मेरी समस्याओं को हल करने के लिए चॉइस का धन्यवाद  ... जो आमतौर पर अन्य ऐप्स जल्दी हल नहीं करते|</p>
                         </div>
 
                       </div>
@@ -86,14 +86,14 @@ function AppOTradeTestimonial() {
 
                   <div class="content">
                     <div class="thumbnail">
-                      <p class="SdClientName"> Rupesh Ghadge</p>
+                      <p class="SdClientName"> रुपेश घाडगे </p>
                       <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
                     </div>
                     <div class="btnNtxt">
                       <div class="sdAllContent">
 
                         <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Simply Smooth User-Friendly App Great UI Understanding Concept This app is really good & best for trading. The concept was awesome. User friendly with good UI. I love this app. Thank u</p>
+                          <p class="sdCustomSliderHeadig">शानदार यूजर इंटरफेस के साथ स्मूद यूजर फ्रेंडली ऐप। ऐप वास्तव में अच्छा और तेज़ है। कॉन्सेप्ट कमाल का है। उपयोगकर्ता के अनुकूल अच्छे UI के साथ। मुझे यह ऐप पसंद है आया। धन्यवाद</p>
                         </div>
 
                       </div>
@@ -102,47 +102,20 @@ function AppOTradeTestimonial() {
 
                   <div class="content">
                     <div class="thumbnail">
-                      <p class="SdClientName">Mohit Sarawagi</p>
+                      <p class="SdClientName">हर्षित पोददार</p>
                       <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
                     </div>
                     <div class="btnNtxt">
                       <div class="sdAllContent">
                         <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Mind-blowing app!! The features are just outstanding unlike any other FM app, it shows all my investment with the current value and invested with one click. Other than this, I can buy and sell scripts with one click. Withdraw back money to my bank account all other unbelievable functions related to broking. Strongly recommended for super ease in trade.</p>
+                          <p class="sdCustomSliderHeadig">उत्कृष्ट!! ऐप न्यूनतम ब्रोकरेज शुल्क के साथ ऑनलाइन ट्रेडिंग को आसान बनाता है। किसी भी तरह की समस्या होने पर टीम तुरंत हल देती है।</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Rangaswamy T</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
-                    </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
-
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">“Thank you choice… for noticing my feedback … which usually won’t happen with other apps… and helping me.”</p>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Harshit Poddar</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
-                    </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Excellent!! Easy to do online trading of shares with minimal brokerage charges and very fast response from team in case of any issue.</p>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
+                  
+                 
                   </Slider>
               </div>
 
