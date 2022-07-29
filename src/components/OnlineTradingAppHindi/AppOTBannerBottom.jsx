@@ -19,7 +19,7 @@ function AppOTBannerBottom() {
     slidesToShow: 7,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     slidesToScroll: 1,
     swipeToSlide: true,
    

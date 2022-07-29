@@ -19,7 +19,7 @@ function AppOTBannerBottom() {
     slidesToShow: 5,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     swipeToSlide: true,
    
@@ -33,14 +33,25 @@ function AppOTBannerBottom() {
         <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd text-center pb-5">Unique Features Of Best Stock Market App</h2>
+                                <h2 className="title-secnd text-center pb-5">Features of Best Share Market App</h2>
                             </div>
                         </div>
                     </div>
           <div className='row justify-content-center'>
             <div className='col-md-12'>
-              <div className="app-trade-easy-div row align-items-center">
+              <div className="app-trade-easy-div row align-items-flex-start">
+              <div className='col-md-6'>
 
+<div className="trade-easy-images-div" >
+<LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"557"} height={"662"} alt={"Loading"} />
+  {/* <img src={imageData[isShown2].image}
+
+    className="single-trade-easy-images" alt="loading"></img> */}
+</div>
+
+
+
+</div>
               <div className='col-md-6'>
                   <div className='content-list'>
                     <Slider {...settings1}
@@ -75,18 +86,7 @@ function AppOTBannerBottom() {
                 </div>
 
                
-                <div className='col-md-6'>
-
-                  <div className="trade-easy-images-div" >
-                  <LazyLoader src={imageData[isShown2].image} className={"single-trade-easy-images"} width={"557"} height={"662"} alt={"Loading"} />
-                    {/* <img src={imageData[isShown2].image}
-
-                      className="single-trade-easy-images" alt="loading"></img> */}
-                  </div>
-
-
-
-                </div>
+               
                 
               </div>
             </div>

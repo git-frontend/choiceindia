@@ -3,6 +3,7 @@ import React from "react";
 import Banner from './Banner';
 import SectionTabs from './SectionTabs';
 import Faqs from './Faqs';
+import BChargesMoreContent from './BChargesMoreContent';
 import GlossaryCharges from './GlossaryCharges';
 import OpenFreeAccount from './../Pricing/OpenFreeAccount';
 
@@ -26,6 +27,7 @@ function BrokerageCharges() {
          <OpenFreeAccount />
          <GlossaryCharges />
          <Faqs />
+         <BChargesMoreContent/>
          
        </div> 
       

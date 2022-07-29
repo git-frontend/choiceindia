@@ -1,24 +1,23 @@
 
 import React,{useState, useEffect} from "react";
-import SMABannerApp from './SMABannerApp';
-import SMABannerBottom from './SMABannerBottom';
-import SMAStrategies from './SMAStrategies';
-import SMAMultipleBenefits from './SMAMultipleBenefits';
-import SMATradeBenefits from './SMATradeBenefits';
-import SMAFaq from './SMAFaq';
-import SMAMoreContent from './SMAMoreContent';
-import SMATestimonial from './SMATestimonial';
-import SMADownloadJiffy from './SMADownloadJiffy';
-import "./../OnlineTradingApp/online-trading-app.scss";
+import OTBannerApp from './OTBannerApp';
+import AppOTBannerBottom from './AppOTBannerBottom';
+import AppOTStrategies from './AppOTStrategies';
+import AppOTMultipleBenefits from './AppOTMultipleBenefits';
+import AppOTradeBenefits from './AppOTradeBenefits';
+import OTAppFaq from './OTAppFaq';
+import OTAppMoreContent from './OTAppMoreContent';
+import AppOTradeTestimonial from './AppOTradeTestimonial';
+import AppOTDownloadJiffy from './AppOTDownloadJiffy';
+import "./online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
-
 // import AppHeader from './AppHeader.jsx';
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
-function ShareMarketApp() {
+function TradingApp() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -47,16 +46,15 @@ function ShareMarketApp() {
     {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
-      <SMABannerApp />
-      
-      <SMABannerBottom />
-      <SMAStrategies />
-      <SMATradeBenefits />
-       <SMAMultipleBenefits/> 
-      <SMATestimonial/>
-      <SMAFaq/>
-      <SMADownloadJiffy/>
-      <SMAMoreContent/>
+      <OTBannerApp />
+      <AppOTStrategies />
+      <AppOTBannerBottom />
+      <AppOTradeBenefits />
+       <AppOTMultipleBenefits/> 
+      <AppOTradeTestimonial/>
+      <OTAppFaq/>
+      <AppOTDownloadJiffy/>
+      <OTAppMoreContent/>
       
       </div>
     }
@@ -64,4 +62,4 @@ function ShareMarketApp() {
   );
 }
 
-export default ShareMarketApp;
+export default TradingApp;

@@ -98,7 +98,7 @@ useEffect(()=>{
                               <h4>Company</h4>
                             </li>
                             <li>
-                              <NavLink to="/about-us" target="_blank">Our Team</NavLink>
+                              <NavLink to="/about-us">Our Team</NavLink>
                             </li>
                             <li>
                               <NavLink to="/investors">Investors</NavLink>

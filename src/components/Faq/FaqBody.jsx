@@ -55,12 +55,19 @@ export default function FaqBody() {
 
     faqService.FaqSearch(data).then(
       res => {
-
-        chapterScroll('faq-section')
+        if(res){
+          chapterScroll('faq-section')
         setIsloader(false)
         setIsarticle(true);
         setSelected(-1)
         setSearchlist(res);
+
+        }else{
+          setSearchlist([]);
+
+        }
+
+        
 
       }
     ).catch((error) => {
@@ -89,8 +96,15 @@ export default function FaqBody() {
 
     faqService.FaqCategory().then(
       res => {
-        setList(res);
-        loadfaqFolder(res[0].category_linkage);
+        if(res){
+          setList(res);
+          loadfaqFolder(res[0].category_linkage);
+
+        }else{
+          setList([]);
+
+        }
+       
       }
     ).catch((error)=>{
       setList([]);
@@ -102,8 +116,14 @@ export default function FaqBody() {
   function loadfaqFolder(id) {
     faqService.FaqFolder(id).then(
       res => {
-        setFolder(res)
+        if(res){
+          setFolder(res)
         loadfaqarticle(res[0].id);
+
+        }else{
+          setFolder([])
+        }
+        
 
       }
     ).catch((error)=>{
@@ -116,7 +136,12 @@ export default function FaqBody() {
   function loadfaqarticle(id) {
     faqService.FaqArticle(id).then(
       res => {
-        setArticle(res)
+        if(res){
+          setArticle(res)
+        }else{
+          setArticle([])
+        }
+       
 
       }
     ).catch((error)=>{
