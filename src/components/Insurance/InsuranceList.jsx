@@ -26,28 +26,36 @@ function InsuranceList() {
                     <ul className="reset">
                         <li className="ins-list-item">
                             <a href="/" className="list-item-link">
-                                <LazyLoader src={car} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                            <span className="img-txt">
+                                    <LazyLoader src={car} alt={"Banner Images"} className={"img-fluid sm-img"} width={"165"} height={"102"} /> 
+                                 </span>
                                 <h3 className="ins-ttl">Car Insurance</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </a>
                         </li>
                         <li className="ins-list-item">
                             <a href="/" className="list-item-link">
-                                <LazyLoader src={health} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                             <span className="img-txt">
+                                    <LazyLoader src={health} alt={"Banner Images"} className={"img-fluid sm-img"} width={"108"} height={"152"} />
+                                </span>
                                 <h3 className="ins-ttl">Health Insurance</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </a>
                         </li>
                         <li className="ins-list-item">
                             <a href="/" className="list-item-link">
-                                <LazyLoader src={bike} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                <span className="img-txt">
+                                    <LazyLoader src={bike} alt={"Banner Images"} className={"img-fluid sm-img"} width={"203"} height={"116"} />
+                                </span>
                                 <h3 className="ins-ttl">Bike Insurance</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </a>
                         </li>
                         <li className="ins-list-item">
                             <a href="/" className="list-item-link">
-                                <LazyLoader src={term} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                            <span className="img-txt">
+                                    <LazyLoader src={term} alt={"Banner Images"} className={"img-fluid sm-img"} width={"100"} height={"130"} />
+                                </span>
                                 <h3 className="ins-ttl">Term Insurance</h3>
                                 <p>Lorem ipsum dolor sit amet, consectetur</p>
                             </a>
@@ -64,7 +72,7 @@ function InsuranceList() {
                 <div className="col-md-12">
                     <div className="get-start-sub">
                         <h3>Get Insured with Minimal Documentation</h3>
-                        <a href="#" className="btn-bg">Get Started</a>
+                        <a href="/" className="btn-bg btn-bg-dark">Get Started</a>
                     </div>
                 </div>
             </div>
