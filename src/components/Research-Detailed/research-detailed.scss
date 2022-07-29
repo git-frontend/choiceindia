@@ -164,6 +164,10 @@
         -o-transition: 0.5s;
         background: #00B26B;
         margin-top: 2.5rem;
+
+        &:hover{
+          cursor: pointer;
+        }
       }
       
       @media (max-width: $md) {

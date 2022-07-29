@@ -97,6 +97,37 @@
     }
 }
 
+/** success or error modal (add-lead) */
+.ad-ld-mdl-head{
+	border:none;
+}
+
+.ad-ld-mdl-bdy{
+	border:none;
+	margin: 0 auto;
+	text-align: center;
+	
+	img, p{
+		padding:1rem;
+	}
+}
+
+.ad-ld-mdl-ftr{
+	border:none;
+	margin: 0 auto;
+
+	button{
+		padding: 10px 32px 10px 32px;
+	}
+}
+
+.ad-ld-mdl-btn{
+	background-color: rgb(140, 212, 245);
+	border:none;
+}
+
+
+
 // OTP MODAL
 
 .opt-body {
@@ -264,7 +295,7 @@
 		} 
 		// padding:40px 60px;
 		.popup-sub-row {
-			padding: 56px 70px;
+			padding: 56px 8px;
 			display: flex;
 			justify-content: center;
 			text-align: center;
@@ -356,7 +387,7 @@
 					outline: none !important;
 					transition: 0.5s;
 					-webkit-transition: 0.5s;
-
+					margin-bottom: 2rem;
 					&:hover {
 						background: $yellowColor !important;
 						color: $primary !important;
@@ -365,8 +396,9 @@
 					@media only screen and (max-width: 992px) {
 						font-size: 14px;
 					}
-
-
+					@media only screen and (max-width: $sm) {
+						margin-bottom: 2rem;
+					}
 				}
 
 				
@@ -382,10 +414,16 @@
 						margin-bottom: 0;
 						background-color: transparent;
 						border: none;
-						margin: 2rem  1rem;
+						margin: 1rem;
 						@media only screen and (max-width: $sm) {
 							font-size: 14px;
 							line-height: 22px;
+							margin: 0.5rem;
+						}
+					}
+					.ortext{
+						@media only screen and (max-width: $sm) {
+						display: block;
 						}
 					}
 				

@@ -10,6 +10,7 @@ import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
 
+
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
@@ -20,6 +21,9 @@ const LazyCareer = React.lazy(() => import('./components/Career/Career'));
 // import Career from './components/Career/Career';
 
 const LazyApp = React.lazy(() => import('./components/App/App'));
+// import App from './components/App/App';
+
+const LazyTradingApp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 // import App from './components/App/App';
 
 const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
@@ -52,6 +56,8 @@ const Lazyfreeamc = React.lazy(() => import('./components/FreeAmcAccount/FreeAmc
 const Lazyhinditrade = React.lazy(() => import('./components/TradingAccountHindi/TradingAccountHindi'));
 const Lazyauthorizeperson = React.lazy(() => import('./components/AuthorizedPerson/AuthorizePerson'));
 const Lazyremisier = React.lazy(() => import('./components/Remisier/Remisier'));
+const Lazysharemarketapp = React.lazy(() => import('./components/ShareMarketApp/ShareMarketApp'));
+const Lazyonlinetradingapp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
@@ -60,7 +66,10 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
-const LazyThankupopup = React.lazy(() => import('./components/Common-features/Thanku-popup'));
+const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
+const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
+
+
 function Routing() {
     
 
@@ -89,9 +98,15 @@ function Routing() {
                                 < LazyCareer />
                             </React.Suspense>} />
 
-                        <Route exact path='/online-trading-app' element={
+                        <Route exact path='/investment-app' element={
                             <React.Suspense>
                                 < LazyApp />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/online-trading-app' element={
+                            <React.Suspense>
+                                < LazyTradingApp />
                             </React.Suspense>
                         } />
 
@@ -144,7 +159,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/brokerage-charges' element={
+                        <Route exact path='/brokerage-calculator' element={
                             <React.Suspense>
                                 < Lazypricing />
                             </React.Suspense>
@@ -233,6 +248,18 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+
+                        <Route exact path='/onlinetradingapp' element={
+                            <React.Suspense>
+                                < Lazyonlinetradingapp />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/share-market-app' element={
+                            <React.Suspense>
+                                < Lazysharemarketapp />
+                            </React.Suspense>
+                        } />
+
                         <Route exact path='/info/stratezy' element={
                             <React.Suspense>
                                 < Lazystratezy />
@@ -244,7 +271,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                    <Route exact path='/research-detailed/:id/:catid' element={
+                    <Route exact path='/research-new/:id/:catid' element={
                             <React.Suspense>
                                 < Lazyresearchdetailed />
                             </React.Suspense>
@@ -277,11 +304,19 @@ function Routing() {
                                 < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/thank-you' element={
+
+                        <Route exact path='/brokerage-charges' element={
                             <React.Suspense>
-                                < LazyThankupopup />
+                                < LazyBrokerageCharges />
                             </React.Suspense>
                         } />
+
+                        <Route exact path='/insurance' element={
+                            <React.Suspense>
+                                < LazyInsurance />
+                            </React.Suspense>
+                        } />
+
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

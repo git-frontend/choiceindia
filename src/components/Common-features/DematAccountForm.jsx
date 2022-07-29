@@ -10,10 +10,12 @@ import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
 import OpenDemateAccountStickyFooter from './OpenDemateAccountStickyFooter.jsx';
 import OpenAccountLanguageContent from '../../Services/OpenAccountLanguageContent';
+import check from '../Add-lead/check-small.jpg';
+import cross from '../Add-lead/red cross.jpg';
 
 
 function DematAccountForm(props) {
-
+    console.log('DDDDDDDD',props.page);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -23,6 +25,9 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
+
+    const [showlead, setShowLead] = useState(false);
+    const [ischeck, setIsCheck] =  useState(false);
     // const [count, setCount] = useState(0);
     // const [otp, setOtp] = useState('');
     // const [OTPErrors, setOTPErrors] = useState('');
@@ -119,7 +124,14 @@ function DematAccountForm(props) {
                 'invalidMobile': true
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
-            sendOTP();
+                        if(props.page == 'add-lead'){
+                console.log('Addd lead page');
+                sendNewLeadOTP();
+                setShowLead(() => true);
+            }else{
+                sendOTP();
+            }
+            // sendOTP();
         }
     }
 
@@ -150,6 +162,43 @@ function DematAccountForm(props) {
     //     setOTPErrors('');
     //     setCount(30);
     // }
+
+    function closeLeadModal(){
+        setMobileNumber(() => '')
+        setShowLead(() => false);
+    }
+
+    function sendNewLeadOTP() {
+        showLoader('sendOTPLoader');
+        let request = {
+            "mobile_number": mobileNumber,
+            "product": "JIFFY",
+            "request_source": "CHOICEINDIA",
+            "source": "CHOICEINDIA",
+            "user_consent": "1",
+            "referred_id": refercode.current || null,
+            "sub_ref": null,
+            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
+            "utm_content": null,
+            "utm_custom": null,
+            "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
+            "utm_source": UTMSource.current || 'blog_leads',
+            "utm_term": null
+        };
+
+        // setTimeout(() => {
+        //     hideLoader('sendOTPLoader');
+        // }, 4000);
+        // openAccountService.addNewLead(request).then((res) => {
+
+        //     if(res && res.status === 200){
+        //         setShowLead(true);
+        //     }
+        //     console.log('RRR',res);
+        // })
+        setShowLead(true);
+        hideLoader('sendOTPLoader');
+    }
 
     function sendOTP() {
         showLoader('sendOTPLoader');
@@ -199,7 +248,6 @@ function DematAccountForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
-
         UTMContent.current = searchParams.get('utm_content') || '';
         UTMCustom.current = searchParams.get('utm_custom') || '';
         UTMTerm.current = searchParams.get('utm_term') || '';
@@ -447,17 +495,17 @@ function DematAccountForm(props) {
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg)=>triggerOTPInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
 
-            <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
+            <Modal  show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+                keyboard={false}  centered>
+                <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleTermsConditionClose}>
+                {/* <Modal.Footer>
+                    <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
                     </Button>
-                </Modal.Footer>
+                </Modal.Footer> */}
             </Modal>
 
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
@@ -511,17 +559,33 @@ function DematAccountForm(props) {
                 </Modal.Header>
                 <Modal.Body>{APIError}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={hideAPIErrorToaster}>
+                    <Button variant="warning" onClick={hideAPIErrorToaster}>
                         Okay
                     </Button>
                 </Modal.Footer>
             </Modal>
-
             <Modal show={OTPInfoPopup} onHide={hideOTPInfoPopup} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Body>{OTPInfoPopupMsg}</Modal.Body>
                 <Modal.Footer>
-                    <Button variant="primary" onClick={hideOTPInfoPopup}>Okay</Button>
+                    <Button variant="warning" onClick={hideOTPInfoPopup}>Okay</Button>
+                </Modal.Footer>
+            </Modal>
+            <Modal show={showlead} centered>
+                <Modal.Header className="ad-ld-mdl-head">
+                    <Modal.Title></Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="ad-ld-mdl-bdy">
+                    <div>
+                        <img src={ischeck? check: cross} alt='alt-icon'/>
+                        <p>{ischeck? 'Success': 'Oops'}</p>
+                        <p>{ischeck? 'Lead Added Successfully': 'Something Went Wrong!'}</p>
+                    </div>
+                </Modal.Body>
+                <Modal.Footer className="ad-ld-mdl-ftr">
+                    <Button className="ad-ld-mdl-btn" onClick={closeLeadModal} >
+                        OK
+                    </Button>
                 </Modal.Footer>
             </Modal>
         </>

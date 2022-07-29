@@ -6,82 +6,7 @@ const meta_tags = {
 
     "career": {
         'title': `Career At Choice | Work With India's Leading FinTech Company`, 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,
-        "faqscript": `<script type="application/ld+json">
-    {
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "Can I do trading in all segments with the Jiffy Trading App?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Jiffy supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency"
-        }
-      },{
-        "@type": "Question",
-        "name": "Is the Jiffy Trading app safe for trading?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We use comprehensive and proven world-class safety measures to ensure optimum security."
-        }
-      },{
-        "@type": "Question",
-        "name": "Can I open a Demat Account from Jiffy Trading App?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sure, the entire process takes just 10 minutes and is completely paperless!"
-        }
-      },{
-        "@type": "Question",
-        "name": "Can I Trade in Future & Options Through a Trading App?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sure, you can trade in F&0 and we also provide intraday research/calls for Futures & Options."
-        }
-      },{
-        "@type": "Question",
-        "name": "How to apply for an IPO in Jiffy Trading App?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Below are the steps to apply for IPOs via Jiffy,
-    
-    Go to the IPO Section => IPO Listing => Open IPO
-    Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details
-    On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify
-    Once you select ‘Subscribe’. Your bid will be executed
-    You can check the status of your IPO bid in the IPO Transactions section"
-        }
-      },{
-        "@type": "Question",
-        "name": "Is Jiffy Trading App Available in Other Regional Languages?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Jiffy has options for Hindi, Gujarati, Marathi and Malayalam as of now."
-        }
-      },{
-        "@type": "Question",
-        "name": "Can I get research reports in the Jiffy Trading App?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls."
-        }
-      },{
-        "@type": "Question",
-        "name": "How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself."
-        }
-      },{
-        "@type": "Question",
-        "name": "Is Jiffy Trading App Available on Android & iOS platform?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, Jiffy is available on both Android & iOS."
-        }
-      }]
-    }
-    </script>
-    ` },
+       },
 
     "contact-us": { 'title': "Get In Touch with Choice’s Customer Support Team", 'content': "Get in touch with our Choice customer care team @ +91 88 2424 2424 or drop us a mail at care@choiceindia.com. Contact us or visit any of our branch offices across India." },
 
@@ -271,7 +196,7 @@ const meta_tags = {
 
     // "fables": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+    // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "partner": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
@@ -325,7 +250,8 @@ const meta_tags = {
     ` },
 
     "open-trading-account": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Open Trading Account Online for Free without AMC Charges - Choice", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
+        "link": "https://choiceindia.com/open-trading-account",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -408,7 +334,8 @@ const meta_tags = {
     ` },
 
     "open-brokerage-account": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Open Brokerage Account Online for Free with Choice", "content": "Open a free brokerage account online with Choice. Get a brokerage account with free AMC for the first year, low DP charges, free research advisory, and more.",
+        "link": `https://choiceindia.com/open-brokerage-account`,
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -509,7 +436,8 @@ const meta_tags = {
     "nri-demat-account": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "corporate-demat-account": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Open a Corporate Demat Account Online with Choice", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
+        "link": `https://choiceindia.com/corporate-demat-account`,
         "faqscript": `<script type="application/ld+json">
      {
        "@type": "FAQPage",
@@ -570,7 +498,8 @@ const meta_tags = {
      ` },
 
     "minor-demat-account": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Minor Demat Account Opening Online for Free with Choice", "content": "Open a free minor Demat account online with Choice within a few minutes and start investing in the stock market for your children’s future.",
+        "link": `https://choiceindia.com/minor-demat-account`,
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -993,7 +922,8 @@ const meta_tags = {
     "research": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "authorised-person": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Become an Authorised Person in the Stock Market with Choice", "content": "Become an authorised person in the stock market with Choice and get the highest revenue sharing, with no registration fees and no deposit required.",
+        'link': `https://choiceindia.com/authorised-person`,
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1031,7 +961,8 @@ const meta_tags = {
     ` },
 
     "remisier": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "Become a Remisier with Choice & Earn a High Commission", "content": "Become a Remisier without a deposit or security amount with Choice. Open a free remisier account with us and enjoy the highest revenue sharing, incentives, and more.",
+        "link": `https://choiceindia.com/remisier`,
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1216,7 +1147,8 @@ const meta_tags = {
     `},
 
     "hindi/trading-account": {
-        'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
+        'title': "मुफ़्त ट्रेडिंग अकाउंट खोलें + प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन ट्रेडिंग अकाउंट खोलें और प्रथम वर्ष के लिए फ्री एएमसी प्राप्त करें। चॉइस के साथ अपने ट्रेडिंग खाते पर कम ब्रोकरेज और डीपी शुल्क प्राप्त करें।",
+        "link": `https://choiceindia.com/hindi/trading-account`,
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1375,7 +1307,12 @@ const meta_tags = {
       }]
     }
     </script>
-    `}
+    `},
+
+    "free-amc-demat-account": {
+      'title': "Open Free AMC Demat Account + Zero Account Opening Fee - Choice", "content": "Open a Free AMC Demat Account Online at Choice with zero account opening fee, low brokerage charges, first year AMC free, free research and advisory & more.",
+      "link": `"https://choiceindia.com/campaign/free-amc-demat-account`
+    }
 
     // "app": {'title': "", "content": "", "faqscript": ``},
 }
