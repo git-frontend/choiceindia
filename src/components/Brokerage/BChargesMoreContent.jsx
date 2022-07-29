@@ -16,14 +16,14 @@ function BChargesMoreContent() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand <a href="">what are brokerage charges</a> in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
+                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand <Link to="/brokerage-charges">what are brokerage charges</Link> in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
 
                                     <span className="read-more-target">
                                     <br/>
                                     The brokerage charges are not uniform and vary from one broker to another. It depends on the kind of services provided by the brokerage firm. Many brokers provide the lowest brokerage charges in India . They offer dynamic services and give benefits like offering the lowest brokerage charges to regular clients.<br /><br />
                                         <h2 className="font-bold"> Use of Brokerage Calculator </h2>
-                                        With the advent of digital technology, today investors can <a href="">open a Demat account online</a> at the convenience of their homes. They can also calculate their brokerage using a brokerage calculator in the trading platforms. Most brokers facilitate traders with the brokerage calculator where traders can calculate the <strong>brokerage charges</strong> advance. Some brokerage firms also allow traders to calculate GST. STT, transaction fee, and stamp duty charges.<br /><br />
-                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <a href="">Brokerage calculator</a> . You will have to input the following details in the tool for calculating:
+                                        With the advent of digital technology, today investors can <Link to="/open-free-demat-account">open a Demat account online</Link> at the convenience of their homes. They can also calculate their brokerage using a brokerage calculator in the trading platforms. Most brokers facilitate traders with the brokerage calculator where traders can calculate the <strong>brokerage charges</strong> advance. Some brokerage firms also allow traders to calculate GST. STT, transaction fee, and stamp duty charges.<br /><br />
+                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <Link to="/brokerage-calculator">Brokerage calculator</Link> . You will have to input the following details in the tool for calculating:
                                         <br/><br/>
                                         <ul>
                                         <li>Buy/Sell price of a stock</li>
@@ -53,7 +53,7 @@ function BChargesMoreContent() {
                                         
                                         <li className="mb-4"><strong>Volume:</strong> Another factor on which the brokerage charges depend is the volume of transactions. Bigger the volume of transactions, bigger is the amount of brokerage. However, many stockbrokers reduce the commission of percentage on higher volume of trading.</li>
                                         
-                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="">trading platform</a> to the investors. So the brokerage charges vary.</li>
+                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="https://jiffy.choiceindia.com/">trading platform</a> to the investors. So the brokerage charges vary.</li>
                                        
                                         </ul>
                                         <br/>
@@ -61,11 +61,11 @@ function BChargesMoreContent() {
                                         In India, there are two types of brokers - full service brokers and discount brokers. Choice, being a full service broker provides the lowest brokerage charges for trading.
                                         <br/><br/>
                                         Choice is a Full-Service Broker committed to providing pre-eminent service in the Broking Industry. Therefore, Choice charges one of the lowest brokerage fees as compared to some of its counterparts.<br/><br/>
-                                        Brokerage is charged by all brokers who facilitate investors to execute trade transactions. Normally, you will find that Full-Service brokerage charges may be slightly on the higher side as compared to Discount Brokers, but this is owing to the fact that <a href="#">Full-Service Broker</a> provide well-integrated additional services that are advantageous to every trader/investor.<br /><br />
+                                        Brokerage is charged by all brokers who facilitate investors to execute trade transactions. Normally, you will find that Full-Service brokerage charges may be slightly on the higher side as compared to Discount Brokers, but this is owing to the fact that <Link to="/">Full-Service Broker</Link> provide well-integrated additional services that are advantageous to every trader/investor.<br /><br />
                                         These include many specialized services like consultations, research, advisory and support among others. Share Brokerage Charges also known as a Brokerage Fee, is typically a percent (%) of the transaction amount.<br/><br/>
                                         They vary from Broker to Broker, with Choice offering low brokerage charges in India in comparison to industry standards. (A detailed breakdown of all the other applicable charges like
                                         Securities Transaction Tax, Stamp Charges, GST, SEBI Charges, Depository Charges and many more are given in the table above).<br/><br/>
-                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<a href="#">Commodity</a> and <a href="#">Currencies.</a>
+                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<Link to="#">Commodity</Link> and <Link to="#">Currencies.</Link>
                                         
                                        
                                        
