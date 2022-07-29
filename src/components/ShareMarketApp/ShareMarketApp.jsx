@@ -11,6 +11,7 @@ import SMATestimonial from './SMATestimonial';
 import SMADownloadJiffy from './SMADownloadJiffy';
 import "./../OnlineTradingApp/online-trading-app.scss";
 import Template3  from '../Common-features/Template3';
+
 // import AppHeader from './AppHeader.jsx';
 import {
   useLocation,
@@ -47,8 +48,9 @@ function ShareMarketApp() {
       skeleton? <Template3></Template3>:
       <div className="app-skeleton-parent">
       <SMABannerApp />
-      <SMAStrategies />
+      
       <SMABannerBottom />
+      <SMAStrategies />
       <SMATradeBenefits />
        <SMAMultipleBenefits/> 
       <SMATestimonial/>
