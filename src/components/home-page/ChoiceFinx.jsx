@@ -9,7 +9,8 @@ import Slider from 'react-slick';
 function ChoiceFinx() {
 
   const [store, setstore] = useState(0);
-  const [checkdevice, setcheckdevice] = useState(false);
+  const [checkdevice, setcheckdevice] = useState();
+  const [trigger,setTrigger] = useState();
  
   
   const settings1 = {
@@ -45,22 +46,32 @@ function ChoiceFinx() {
     ]
 
   };
+  useEffect(() => {
+    // console.log("check",window.navigator)
+    
+
+		setTrigger(true)
+		if (trigger === true) {
+			if (/Android|webOS|windows|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
+
+        setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+  
+      } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
+    
+        setcheckdevice('https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1')
+        
+      }else{
+        setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+
+      }
+		}
+
+	}, [trigger])
 
 
 
 
-  function Detect() {
-
-
-    if (/Android|webOS|windows phone|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-
-      setcheckdevice(false)
-
-    } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
-
-      setcheckdevice(true)
-    }
-  }
+ 
 
   return (
     <div>
@@ -131,18 +142,13 @@ function ChoiceFinx() {
                           <LazyLoader src={FinxImage[store].image} className={""} alt={"Loading"} width={"260"} height={"527"} />
  
                 </div>
-                <div className="expl-app" onClick={() => Detect()}>
-                  {
-                    checkdevice === true ?
+                <div className="expl-app">
+                
 
-                      <a href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1'  >
+                      <a href={checkdevice?checkdevice:[]}>
                         <span className="btn-bg">Explore App</span>
                       </a>
-                      :
-                      <a href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy'  >
-                        <span className="btn-bg">Explore App</span>
-                      </a>
-                  }
+                    
 
                   {/* <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank"> */}
                   {/* <img src={ImageSub10} className="ico-img" /> */}
