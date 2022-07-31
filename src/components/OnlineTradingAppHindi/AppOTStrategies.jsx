@@ -33,7 +33,7 @@ function AppOTStrategies() {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd">Trading App for Real-time trading strategies</h2>
+                                <h2 className="title-secnd">रीयल टाइम ट्रेडिंग रणनीतियों के लिए ट्रेडिंग ऐप</h2>
                             </div>
                         </div>
                     </div>

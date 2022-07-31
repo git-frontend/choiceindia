@@ -11,65 +11,69 @@ function OTAppMoreContent() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="secttitle">Jiffy Trading App</h2>
+                            <h2 className="secttitle">ट्रेडिंग ऐप</h2>
                         </div>
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> A trading app is a platform created as a web application for the convenience to provide seamless trading activities. The stock market trading app is devices in a manner to explicitly function on a real time basis.
+                                <span className="read-more-wrap "> ट्रेडिंग ऐप एक ऐसा प्लेटफॉर्म है जो ट्रेडिंग गतिविधियों को सहज बनाने के लिए एक वेब एप्लिकेशन के रूप में बनाया गया है। स्टॉक मार्केट ट्रेडिंग ऐप वास्तविक समय के आधार पर स्पष्ट रूप से कार्य करने वाला एक डिवाइस  है।
 
                                     <span className="read-more-target">
                                     <br/>
-                                    In the rapidly growing digital world, we have been spoilt for choices with various platforms that offer a wide array of spectrum with ease and convenience at our fingertips. The fintech industry has been prerogative to the nuances of investment and securities. Mobile applications have been synonyms now to the age old techniques where processes were hindrances, replaced by faster and smoother way to trade. The dependency to human actions has been eliminated drastically.<br /><br />
-                                    What has changed the mindset of the user where trading apps are concerned is, it's handy and, moreover, it keeps you on alert mode at all times. There was a time when one received calls and messages from a broker manually. Now, it is very supportive of notification directly from the app which helps in progressive decision making.<br /><br />
-                                        <h2 className="font-bold"> Benefits of Online Trading App </h2>
-                                        The traditional format of trading has a lot of ‘ifs’ and buts’ associated with it. The modern day trading i.e.through the online trading app hold its existence with each and every trader for its known benefits:<br /><br />
+                                    इस तेजी से बढ़ती डिजिटल दुनिया में, जहां हमारे पास विभिन्न प्लेटफॉर्म्स हैं जो कई सेवाएं प्रदान करते हैं। फिनटेक उद्योग निवेश और सिक्युरटीज़ की बारीकियों के लिए प्रमुख रहा है। मोबाइल एप्लिकेशन अब पुरानी तकनीकों का पर्याय बन गए हैं जहां प्रक्रियाएं धिमी थीं, जिन्हें ट्रेडिंग के लिए तेज और आसान तरीके में बदल दिया गया था। मानवीय क्रियाओं पर निर्भरता काफ़ी हद तक समाप्त हो गई है।<br /><br />
+                                    ट्रेडिंग ऐप्स आसान हैं और इसके अलावा, यह आपको हर समय अलर्ट मोड पर रखता है। एक समय था जब किसी ब्रोकर से मैन्युअल रूप से कॉल और संदेश प्राप्त होते थे। अब, इसे सीधे ऐप से प्राप्त किया जा सकता है जो सही निर्णय लेने में मदद करता है।<br/><br/>   
+                                        
+                                        <h2 className="font-bold"> ऑनलाइन ट्रेडिंग ऐप के लाभ </h2>
+                                        ट्रेडिंग के पारंपरिक प्रारूप में बहुत सारे बहुत समस्याएं जुड़े हुए थी। आजकल ऑनलाइन ट्रेडिंग ऐप आने के बाद ट्रेडर्स की बहुत सी समस्याएं खतम हो गई है -<br /><br />
                                         <ul>
-                                        <li className="font-bold">It's simple:</li>
-                                        All you need to do is login to the mobile application and start investing. You can place your ‘buy and sell orders with a single click. <br/><br/>
-                                        <li className="font-bold">Economical and safe:</li>
-                                        Compared to the age-old technique, it's much more economical and safe as it reduces the maintenance cost and a lot of unnecessary hassles such as physical documentation etc.<br /><br />
-                                        <li className="font-bold">Access and monitoring:</li>
-                                        To give you access to your portfolio anytime and anywhere which makes it easy to monitor and eventually, leads to stable decision making.<br /><br />
-                                        <li className="font-bold">Transparency and clarity of communication:</li>
-                                        The trading apps today are developed in a manner that provides transparency at all times. The miscommunication or communication gap has been bridged to a large extent.<br /><br />
+                                        <li className="font-bold">यह आसान है:</li>
+                                        आपको बस मोबाइल एप्लिकेशन में लॉग इन करना है और निवेश करना शुरू करना है। आप एक क्लिक के साथ अपने 'खरीद और बिक्री के आदेश' दे सकते हैं।<br/><br/>
+                                        <li className="font-bold">किफायती और सुरक्षित:</li>
+                                        पुरानी तकनीक की तुलना में, यह बहुत अधिक किफायती और सुरक्षित है क्योंकि यह रखरखाव की लागत को कम करती है और बहुत सारी अनावश्यक समस्यांओ को खतम करता है| 
+<br /><br />
+                                        <li className="font-bold">पहुंच और निगरानी:</li>
+                                        आपको कभी भी और कहीं भी अपने पोर्टफोलियो तक पहुचाने और उसकी निगरानी करना आसान बनाता है और अंततः स्थिर और सही निर्णय लेने में मदद करता है।<br /><br />
+                                        <li className="font-bold">संचार की पारदर्शिता और स्पष्टता:</li>
+                                        आज के ट्रेडिंग ऐप इस तरह से विकसित किए गए हैं जो हर समय पारदर्शिता प्रदान करते हैं। ट्रेडिंग ऍप ने गलत संचार के समस्यांओ को ख़तम कर दिया है।<br /><br />
                                         </ul>
-                                        <h3 className="font-bold">How to Choose the Best Trading App in India?</h3>
-                                        The online trading industry is responsible for disruptive technological standards and liberation methods used today to trade. The best trading apps in India come with larger than life features and state-of-the-art innovations in place. India as a country has been catering to the stock market for years and with the liberated move of technology, there are numerous trading apps to choose from. The question lies on how and what to select. The leading trading app should be able to provide: <br /><br />
+                                        <h2 className="font-bold">भारत में सर्वश्रेष्ठ ट्रेडिंग ऐप कैसे चुनें?</h2>
+                                        भारत में सबसे अच्छे ट्रेडिंग ऐप एडवांस फीचर्स और अत्याधुनिक इनोवेशन के साथ आते हैं। एक देश के रूप में भारत वर्षों से शेयर बाजार की पूर्ति कर रहा है, और यहाँ बहुत सारे ट्रेडिंग ऍप उपलब्ध है। सवाल यह है कि कैसे और क्या चुनना है। अग्रणी ट्रेडिंग ऐप इन सभी सेवाओं को प्रदान करने में सक्षम होना चाहिए:<br /><br />
                                         <ul>
-                                            <li>A user friendly interface</li>
-                                        <li>Efficiency and effectiveness</li>
-                                        <li>Innovations and accuracy of data</li>
-                                        <li>Robust Security in terms of payments and transactions</li>
-                                        <li>Minimal Downtime execution</li>
+                                            <li>एक उपयोगकर्ता के अनुकूल इंटरफेस</li>
+                                        <li>कुशलता और प्रभावशीलता</li>
+                                        <li>डेटा की इनोवेशन और सटीकता</li>
+                                        <li>भुगतान और लेनदेन के मामले में मजबूत सुरक्षा</li>
+                                        <li>न्यूनतम डाउनटाइम एक्सक्यूशन</li>
                                         </ul>
                                         
-                                        <h3 className="font-bold">Which Online Trading App in India is safe for Trading?</h3>
-                                        Investing in stock markets is an art and with Jiffy by Choice Broking you can invest and analyse the share market and simultaneously attain ample stock market trading opportunities with access to stocks, currency, commodities and derivative trading at your fingertips in one single mobile trading app.<br /><br />
-                                        The Indian trading app - Jiffy provides for instant updates and occurrences; timely intervention of multi time break out stocks and much more. This online trading platform is created keeping in mind innovative trading tools with accelerated performance which is a requisite for stock trading.
-                                        
-                                        <h3 className="font-bold">Why Should You Trade with Jiffy?</h3>
-                                        Jiffy, India's online trading app, is a one stop solution with innovative and latest technology that calls for easy and fast transactions for the trader. The app is developed from the traders perspective making it user friendly without compromise on safety and security. The innovations such as ‘Set Price Alert’, ‘WatchList’, ‘Dark Mode Screen’ are integrated to enhance user experience.<br /><br />
-                                        <h3 className="font-bold">Jiffy Trading App Features</h3><br/>
+                                        <br/><h2 className="font-bold">भारत में कौन सा ऑनलाइन ट्रेडिंग ऐप ट्रेडिंग के लिए सुरक्षित है?</h2>
+                                        शेयर बाजारों में निवेश करना एक कला है और जिफ्फी के साथ आप शेयर बाजार में निवेश और विश्लेषण कर सकते हैं और साथ ही एक ही मोबाइल  ट्रेडिंग ऐप में स्टॉक, मुद्रा, कमोडिटी और डेरिवेटिव ट्रेडिंग के साथ पर्याप्त स्टॉक मार्केट ट्रेडिंग का अवसर प्राप्त कर सकते हैं।<br/><br/>
+                                        <strong>भारतीय ट्रेडिंग ऐप</strong> - जिफ्फी तत्काल अपडेट और घटनाएं प्रदान करता है; मल्टी टाइम ब्रेक आउट स्टॉक का समय पर हस्तक्षेप और भी बहुत कुछ। यह ऑनलाइन ट्रेडिंग प्लेटफॉर्म त्वरित प्रदर्शन के साथ इनोवेशन ट्रेडिंग टूल्स को ध्यान में रखते हुए बनाया गया है जो स्टॉक ट्रेडिंग के लिए आवश्यक है।
+                                        <br/> <br/><h2 className="font-bold">आपको जिफ्फी के साथ व्यापार क्यों करना चाहिए?</h2>
+                                        जिफ्फी , भारत का ऑनलाइन ट्रेडिंग ऐप, जो नए तकनीक और  इनोवेशन के साथ जो लेनदेन को आसान और तेज़ बनाता है। ऐप को ट्रेडर्स  के दृष्टिकोण से विकसित किया गया है, जो सुरक्षा से समझौता किए बिना इसे उपयोगकर्ता के अनुकूल बनाता है। उपयोगकर्ता के अनुभव को बढ़ाने के लिए 'सेट प्राइस अलर्ट', 'वॉचलिस्ट', 'डार्क मोड स्क्रीन' जैसे फीचर दिए गए हैं।<br /><br />
+                                        <br/><h2 className="font-bold">जिफ्फी ट्रेडिंग ऐप की विशेषताएं</h2><br/>
                                         <ul>
-                                            <li className="mb-3"><strong>Real-time stock recommendation:</strong> Get calls from the expert Research Cell for stocks, commodities, currencies and derivatives.</li>
-                                            <li className="mb-3"><strong>Jiffy Signal:</strong> Trade with Automated research based engine with multi frame breakout strategies
+                                            <li className="mb-3"><strong>रीयल-टाइम स्टॉक रेकमेन्डेशन:</strong> स्टॉक, कमोडिटीज, करेंसी और डेरिवेटिव के लिए विशेषज्ञ रिसर्च सेल से कॉल प्राप्त करें।</li>
+                                            <li className="mb-3"><strong>जिफ्फी सिग्नल:</strong> मल्टी फ्रेम ब्रेकआउट रणनीतियों के साथ स्वचालित रिसर्च आधारित इंजन के साथ ट्रेडिंग
 </li>
                                           
-                                            <li className="mb-3"><strong>C-Quant:</strong> Based on quantitative and mathematical statistics, the feature generates calls for Weekly positional trades.</li>
-                                            <li className="mb-3"><strong>Company Overview:</strong> An entire stock history, data and performance is available under this umbrellaConsolidated data of Company Overview.</li>
-                                            <li className="mb-3"><strong>Advanced Charts:</strong> More than 100+ charts for Technical Analysis on stock market can be viewed.</li>
-                                            <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li>
-                                            <li className="mb-3"><strong>IPO Investments:</strong> IPO details and updates with a brief backgrounder supported by blogs, research videos etc.</li>
+                                            <li className="mb-3"><strong>सी-क्वांट:</strong> क्वान्टिटेटिव और गणितीय आंकड़ों के आधार पर, यह सुविधा साप्ताहिक स्थितीय ट्रेडों के लिए कॉल प्रदान करती है।</li>
+                                            <li className="mb-3"><strong>कंपनी अवलोकन:</strong> संपूर्ण स्टॉक का इतिहास, डेटा और प्रदर्शन उपलब्ध करता है|
+</li>
+                                            <li className="mb-3"><strong>एडवांस  चार्ट:</strong> शेयर बाजार पर तकनीकी विश्लेषण के लिए 100 से अधिक चार्ट देखे जा सकते हैं।
+</li>
+                                            <li className="mb-3"><strong>मोजो विश्लेषण:</strong> गहन मौलिक ज्ञान के लिए शुरू किया गया एक खंड।</li>
+                                            <li className="mb-3"><strong>आईपीओ निवेश:</strong> ब्लॉग, शोध वीडियो आदि द्वारा समर्थित एक संक्षिप्त पृष्ठभूमि के साथ आईपीओ विवरण और अपडेट।</li>
                                            
-                                        </ul>
-                                        <h3 className="font-bold">How to Register with Jiffy Trading App?</h3><br/>
-                                        <ul><li className="mb-3">Install the Jiffy App.
+                                        </ul><br/>
+                                        <h3 className="font-bold">जिफ्फी ट्रेडिंग ऐप के साथ पंजीकरण कैसे करें?</h3><br/>
+                                        <ul><li className="mb-3">जिफ्फी ऐप इंस्टॉल करें।
                                             </li>
-                                            <li className="mb-3">Create an Account</li>
-                                            <li className="mb-3">Enter your Personal And Financial details</li>
-                                            <li className="mb-3">Complete Your KYC</li>
-                                            <li className="mb-3">Get Your Client ID to start trading</li>
+                                            <li className="mb-3">खाता बनाएं</li>
+                                            <li className="mb-3">अपना व्यक्तिगत और वित्तीय विवरण दर्ज करें</li>
+                                            <li className="mb-3">अपना केवाईसी पूरा करें</li>
+                                            <li className="mb-3">ट्रेडिंग शुरू करने के लिए अपना क्लाइंट आईडी प्राप्त करें
+</li>
                                             
                                             </ul>
 
