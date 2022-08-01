@@ -50,7 +50,7 @@ function AppOTradeBenefits() {
                       <span className='blackcolor'>गूगल प्ले</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={appstore}  alt={"App Store"} width="" height="" />
+                    <img src={appstore}  alt={"App Store"} width={"27"} height={"24"}/>
 
                       <span className='blackcolor'>ऐप स्टोर</span>
                     </a>
