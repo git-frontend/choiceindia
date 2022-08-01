@@ -21,7 +21,7 @@ function GlossaryCharges() {
                     <Accordion flush className='open-demat-faqs-accordion'>
                         <Accordion.Item eventKey="0" className='faq-item'>
                             <Accordion.Header> <h4 className='faq-header'>
-                            <LazyLoader src={glossary} alt={"Banner Images"} className={"img-fluid"} width={""} height={""} />
+                            <LazyLoader src={glossary} alt={"Banner Images"} className={"img-fluid"} width={"49"} height={"56"} />
                                     Glossary of Charges</h4>
                                 
                                 </Accordion.Header>

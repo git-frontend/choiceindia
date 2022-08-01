@@ -349,7 +349,7 @@
                 display: none;
             }
         }
-        .pb-5{padding-bottom:5rem;}
+        .pb-5{padding-bottom:5rem !important;}
         .content-list {
             position: relative;
             padding: 0;
@@ -812,6 +812,8 @@
 
 .trading-app-sec1{
     padding-top: 4rem;
+    &.pb-10{padding-bottom:10rem !important;}
+
     .sec1-left{
         padding-top: 10rem;
         position: relative;
@@ -851,6 +853,7 @@
                 }
             }
         }
+
         .slider-ver{
             .slick-slide{
                 h4{

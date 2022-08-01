@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/brokerage-charges/banner-img.webp';
+import videoBg from '../../assets/images/insurance/insuringShield.mp4'
 import Quote from '../../assets/images/insurance/quote.svg';
 import Claim from '../../assets/images/insurance/claim.svg';
 import Renewal from '../../assets/images/insurance/renewal.svg';
@@ -24,7 +24,11 @@ function Banner() {
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">
-                        <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} />
+                        {/* <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} /> */}
+                        <div className='home-banner-ved'>
+							<div className="overlay"></div>
+							<video src={videoBg} autoPlay loop muted className='banner-ved' />
+						</div>
                     </div>
                 </div>
             </div>
@@ -34,12 +38,12 @@ function Banner() {
     <section className="direct-links">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-6">
+                    <div className="col-xl-8">
                         <ul className="reset">
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"50"} />
                                     </span>
                                     <h4>Get Quote</h4>
                                 </a>
@@ -47,7 +51,7 @@ function Banner() {
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Claim} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Claim} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"69"} />
                                     </span>
                                     <h4>Claim</h4>
                                 </a>
@@ -55,7 +59,7 @@ function Banner() {
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Renewal} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Renewal} alt={"Banner Images"} className={"img-fluid sm-img"} width={"49"} height={"50"} />
                                     </span>
                                     <h4>Renewal</h4>
                                 </a>

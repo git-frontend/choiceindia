@@ -18,7 +18,7 @@ function SMAStrategies() {
         slidesToShow: 5,
         autoplay: true,
         dots: false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 2000,
         slidesToScroll: 1,
         swipeToSlide: true,
        
@@ -33,26 +33,15 @@ function SMAStrategies() {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className="heading-sec">
-                                <h2 className="title-secnd">Features of Best Share Market App</h2>
+                                <h2 className="title-secnd">Unique Features Of Best Stock Market App</h2>
                             </div>
                         </div>
                     </div>
                     <div className='row d-flex justify-content-center'>
                         <div className='col-md-11'>
-                            <div className="row app-trade-easy-div d-flex align-items-center">
+                            <div className="row app-trade-easy-div d-flex align-items-flex-start">
 
-                                <div className='col-md-5'>
-
-                                    <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"557"} height={"662"}/>
-                                        {/* <img src={imageData[isShown3].image}
-
-                                            className="single-trade-easy-images" alt='Loading'></img> */}
-                                    </div>
-
-
-
-                                </div>
+                               
 
                                 <div className='col-md-7'>
                                     <div className='content-list'>
@@ -87,6 +76,18 @@ function SMAStrategies() {
 
 
                                 </div>
+                                <div className='col-md-5'>
+
+<div className="trade-easy-images-div">
+    <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"557"} height={"662"}/>
+    {/* <img src={imageData[isShown3].image}
+
+        className="single-trade-easy-images" alt='Loading'></img> */}
+</div>
+
+
+
+</div>
 
                             </div>
                         </div>

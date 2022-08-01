@@ -10,6 +10,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
+import Marquee from 'react-fast-marquee';
 function Footer() {
   let toggleModal=(val)=>{
     setData1(val)
@@ -98,7 +99,7 @@ useEffect(()=>{
                               <h4>Company</h4>
                             </li>
                             <li>
-                              <NavLink to="/about-us" target="_blank">Our Team</NavLink>
+                              <NavLink to="/about-us">Our Team</NavLink>
                             </li>
                             <li>
                               <NavLink to="/investors">Investors</NavLink>
@@ -243,6 +244,8 @@ useEffect(()=>{
               </div>
             </div>
           </div>
+
+          
         </footer>
       </div>
 

@@ -2,6 +2,8 @@
 import React from "react";
 import Banner from './Banner';
 import InsuranceList from './InsuranceList';
+import HowItWorks from './HowItWorks';
+import Benefits from './Benefits';
 
 
 
@@ -19,6 +21,8 @@ function Insurance() {
          
          <Banner />
          <InsuranceList />
+         <HowItWorks />
+         <Benefits />
         
          
        </div> 

@@ -11,7 +11,7 @@ import Vector4 from '../../assets/images/online-trading-app/dedicated-relationsh
 import appstorelight from '../../assets/images/icons/app-store-light.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function AppOTMultipleBenefits() {
+function SMAMultipleBenefits() {
 
   return (
     <div className='App-main'>
@@ -23,7 +23,7 @@ function AppOTMultipleBenefits() {
           <div className="row">
             <div className="col-md-12">
               <div className="heading-sec">
-                <h2 className="title-secnd text-center">Trading App with Multiple Benefits</h2>
+                <h2 className="title-secnd text-center">Best Share Market App with Multiple Benefits</h2>
               </div>
             </div>
           </div>
@@ -84,4 +84,4 @@ function AppOTMultipleBenefits() {
   );
 }
 
-export default AppOTMultipleBenefits;
+export default SMAMultipleBenefits;

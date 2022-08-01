@@ -36,105 +36,107 @@ function AppOTradeTestimonial() {
 
 
 
-      <section class="top-app-testimonial">
-        <div class="container">
-          <div class="app-sec8-main">
-            <div class="row">
-              <div class="col-md-12">
-                <h2 class="title-4">What Traders Are Saying About Our Trading App?</h2>
+      <section className="top-app-testimonial">
+        <div className="container">
+          <div className="app-sec8-main">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="heading-sec">
+                <h2 className="title-secnd text-center">What Traders Are Saying About Our Trading App?</h2>
+                </div>
               </div>
             </div>
-            <div class="row">
+            <div className="row">
               <div className="col-md-12">
                 
                 <Slider {...settings1} className='slideshow'>
 
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Darshan Bhardwaj</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName">Kumar Raghvendra</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
 
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">The customer support system is fantastic. Appreciate their attitude to welcome feedback. They are ready to work for customer satisfaction. Jiffy is the Trading App that witnesses your journey of perception to reality!! Exciting to have new features…</p>
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">A good app in terms of brokerage and is easy to understand for beginners.It's my personal view that it is one of the best apps.</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
 
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Naman Mahajan</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName">John Ninan</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
 
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">A trader app that offers so much: 1. A simple UI 2. Easy Pay-In/Pay-Out options such as net banking and UPI 3. Instant Paperless Account Opening Procedure 4. Real-Time Interactive Charts 5. Free Price Alerts 6. Lifetime Free Demat Account 7. Low AMC 8. Reasonable Brokerage.</p>
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">Very good App. Very easy to use. Simpler than a certain bank's App. Trading experience with Jiffy is excellent.</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
 
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName"> Rupesh Ghadge</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName"> Gunjan Pareek</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
 
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Simply Smooth User-Friendly App Great UI Understanding Concept This app is really good & best for trading. The concept was awesome. User friendly with good UI. I love this app. Thank u</p>
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">For Beginners, this is an awesome trading app for equity trading. Reasons for this are as follows 1) Their customer support service is awesome. When you call their support service they respond quickly 2) Low Brokerage on Intraday and delivery 3) 0 % Brokerage, If their suggested scripts touch SL.</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
 
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Mohit Sarawagi</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName">Mckrishna Kumar</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Mind-blowing app!! The features are just outstanding unlike any other FM app, it shows all my investment with the current value and invested with one click. Other than this, I can buy and sell scripts with one click. Withdraw back money to my bank account all other unbelievable functions related to broking. Strongly recommended for super ease in trade.</p>
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">User-friendly app and good customer service and relationships manager support..and updated features in Jiffy app.</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Rangaswamy T</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName">Ramkhumar Ramkhumar</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
 
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">“Thank you choice… for noticing my feedback … which usually won’t happen with other apps… and helping me.”</p>
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">Great platform to trade and invest. Very fast. Rarely fails. Backed by insightful tips and rich info. Very user-friendly.</p>
                         </div>
 
                       </div>
                     </div>
                   </div>
-                  <div class="content">
-                    <div class="thumbnail">
-                      <p class="SdClientName">Harshit Poddar</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" class="img-fluid" />
+                  <div className="content">
+                    <div className="thumbnail">
+                      <p className="SdClientName">JOEL MARTIN</p>
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
                     </div>
-                    <div class="btnNtxt">
-                      <div class="sdAllContent">
-                        <div class="sd_scroll">
-                          <p class="sdCustomSliderHeadig">Excellent!! Easy to do online trading of shares with minimal brokerage charges and very fast response from team in case of any issue.</p>
+                    <div className="btnNtxt">
+                      <div className="sdAllContent">
+                        <div className="sd_scroll">
+                          <p className="sdCustomSliderHeadig">Best app for trading, the important point is that we can see the live market indices on top of the screen while executing buy order and the same during selling too. Above all customer service from relationship manager is excellent in upholding our portfolio in a profitable scenario. Suggesting all to try.</p>
                         </div>
 
                       </div>

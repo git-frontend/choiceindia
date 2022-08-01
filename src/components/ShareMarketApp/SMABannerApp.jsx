@@ -1,7 +1,6 @@
 
 import AppImage1 from '../../assets/images/Share Market App/Banner.webp';
-import AppImage2 from '../../assets/images/online-trading-app/banner_image-popup-1.webp';
-import AppImage3 from '../../assets/images/online-trading-app/banner_image-popup-2.webp';
+
 import AppImage4 from '../../assets/images/online-trading-app/app-store-white.svg';
 import AppImage5 from '../../assets/images/online-trading-app/g-play-white.svg';
 import AppImage6 from '../../assets/images/online-trading-app/star-icon.svg';
@@ -25,8 +24,8 @@ function SMABannerApp() {
     <div className='App-main'>
 
 
-<section class="trading-app-sec1">
-        <div class="container">
+<section class="trading-app-sec1 pb-10">
+        <div class="container ">
             <div class="row">
                 <div class="col-md-7">
                     <div class="sec1-left">
