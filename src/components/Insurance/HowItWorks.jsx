@@ -25,7 +25,7 @@ function HowItWorks() {
             <div className="row justify-content-center">
                 <div className="col-md-9">
                     <div className="how-works-steps">
-                        <div className="works-steps-itm steps-itm">
+                        <div className="works-steps-itm steps-itm-active">
                             <div className="steps-itm-left itm-left-img">
                                 <LazyLoader src={FirstStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
                             </div>
@@ -37,7 +37,7 @@ function HowItWorks() {
                         </div>
                         <div className="works-steps-itm steps-itm-reverse">
                             <div className="steps-itm-left itm-left-img">
-                                <LazyLoader src={SecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
+                                <LazyLoader src={SecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"229"} />
                             </div>
                             <div className="steps-itm-right">
                                 <h2>02</h2>
@@ -47,7 +47,7 @@ function HowItWorks() {
                         </div>
                         <div className="works-steps-itm">
                             <div className="steps-itm-left itm-left-img">
-                                <LazyLoader src={ThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
+                                <LazyLoader src={ThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
                             </div>
                             <div className="steps-itm-right">
                                 <h2>03</h2>

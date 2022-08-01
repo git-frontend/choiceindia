@@ -43,7 +43,7 @@ function Banner() {
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"50"} />
                                     </span>
                                     <h4>Get Quote</h4>
                                 </a>
@@ -51,7 +51,7 @@ function Banner() {
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Claim} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Claim} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"69"} />
                                     </span>
                                     <h4>Claim</h4>
                                 </a>
@@ -59,7 +59,7 @@ function Banner() {
                             <li>
                                 <a href="#" className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Renewal} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"40"} />
+                                        <LazyLoader src={Renewal} alt={"Banner Images"} className={"img-fluid sm-img"} width={"49"} height={"50"} />
                                     </span>
                                     <h4>Renewal</h4>
                                 </a>
