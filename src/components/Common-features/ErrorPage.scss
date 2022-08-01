@@ -1,28 +1,17 @@
-.middle-box {
-    // max-width: 400px;
-    z-index: 100;
-    margin: 0 auto;
-    height: 100vh;
-    padding: 40px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: aliceblue;
-    // background-image: url('https://choiceindia.com/assets/images/error_bg.png');
-    h1{
-        line-height: 100%;
-        margin-top: 0;
+
+@import '../../assets/css/customvariable.scss';
+
+.errorbannersectoion {
+
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0;
+
+ .errormessage {
+  font-family: $font-family-poppins-regular, sans-serif;
+  font-size: 1.4rem;
+  color: $primary;
+  text-align: center;
+
     }
-  }
-  .error-img {
-    height: 398px;
-    width: 700px;
-  }
-  .img-parent {
-    margin-top: -183px;
-  }
-  .error-desc {
-    line-height: 2rem;
-    font-size: 14px;
-    margin-top: 1rem;
-  }
+}
