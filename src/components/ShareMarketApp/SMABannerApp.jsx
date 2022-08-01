@@ -47,18 +47,18 @@ function SMABannerApp() {
                         </div>
                         <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
-                    <img src={AppImage5} className="" alt={"App Store"} width="" height="" />
+                    <img src={AppImage5} className="" alt={"Google Play"} width={"24"} height={"27"} />
 
                       <span className=''>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={AppImage4} className="" alt={"App Store"} width="" height="" />
+                    <img src={AppImage4} className="" alt={"App Store"} width="27" height="24" />
 
                       <span className=''>App Store</span>
                     </a>
                   </div>
                         <div class="star-line">
-                            <img src={AppImage6} alt="" class="img-responsive" /> <h5> Trusted by <span>4+ Lakh Users</span> </h5>
+                            <img src={AppImage6} alt="" class="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>4+ Lakh Users</span> </h5>
                         </div>
                     </div>
                 </div>

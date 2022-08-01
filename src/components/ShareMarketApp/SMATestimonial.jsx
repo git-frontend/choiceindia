@@ -54,7 +54,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName">Kumar Raghvendra</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid" />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
@@ -70,7 +70,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName">John Ninan</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid" />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
@@ -86,7 +86,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName"> Gunjan Pareek</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid"  />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
@@ -102,7 +102,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName">Mckrishna Kumar</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid" />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
@@ -116,7 +116,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName">Ramkhumar Ramkhumar</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid" />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
@@ -131,7 +131,7 @@ function AppOTradeTestimonial() {
                   <div className="content">
                     <div className="thumbnail">
                       <p className="SdClientName">JOEL MARTIN</p>
-                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" className="img-fluid" />
+                      <img src="https://choiceindia.com/assets/images/trading-app-new/starrating.svg" alt="" width={"152"} height={"23"} className="img-fluid" />
                     </div>
                     <div className="btnNtxt">
                       <div className="sdAllContent">
