@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Onlinetrading/RealTrade';
+import imageData from '../../Data/Onlinetrading/HindiRealTrade';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -18,7 +18,7 @@ function AppOTStrategies() {
         slidesToShow: 4,
         autoplay: true,
         dots: false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 2000,
         slidesToScroll: 1,
         swipeToSlide: true,
        
