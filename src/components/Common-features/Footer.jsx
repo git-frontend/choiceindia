@@ -10,6 +10,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
+import Marquee from 'react-fast-marquee';
 function Footer() {
   let toggleModal=(val)=>{
     setData1(val)
@@ -243,6 +244,8 @@ useEffect(()=>{
               </div>
             </div>
           </div>
+
+          
         </footer>
       </div>
 

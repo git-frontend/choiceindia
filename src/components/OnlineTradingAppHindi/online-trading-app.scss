@@ -916,6 +916,22 @@
         @media (max-width: $xs) {
             padding-top: 0;
         }
+        .hindi-ver{
+            .slider-ver{
+                .slick-slide{
+                    h4{
+                        line-height: 5.5rem;
+                        @media (max-width: $md) {
+                            line-height: 5rem;
+                        }
+                    }
+                }
+                @media (max-width: $xs) {
+                    left: 59px;
+                    top: 31px;
+                }
+            }
+        }
     }
     .sec1-right{
         position: relative;
@@ -1030,6 +1046,7 @@
                             font-family: $font-family-poppins-bold;
                             color: $primary;
                             font-size: 1.8rem;
+                            line-height: 3rem;
                             margin-bottom: 1.5rem;
                         }
                         img{
