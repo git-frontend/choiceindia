@@ -25,7 +25,7 @@ const LazyApp = React.lazy(() => import('./components/App/App'));
 
 const LazyTradingApp = React.lazy(() => import('./components/OnlineTradingApp/OnlineTradingApp'));
 
-const LazyTradingAppHindi = React.lazy(() => import('./components/OnlineTradingAppHindi/OnlineTradingApp'));
+const LazyTradingAppHindi = React.lazy(() => import('./components/OnlineTradingAppHindi/OnlineTradingAppHindi'));
 // import App from './components/App/App';
 
 const LazyFables = React.lazy(() => import('./components/Fables/Fables'));
