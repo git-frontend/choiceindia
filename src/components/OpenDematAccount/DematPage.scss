@@ -244,9 +244,9 @@
 		}
 
 		.icon-wrap {
-			background: $bgcolor-blue;
+			background: transparent;
 			text-align: center;
-			padding: 1.4rem;
+			padding: 0;
 			max-width: 5rem;
 			height: 4.375rem;
 			display: flex;
@@ -591,15 +591,15 @@
 		}
 
 		.icon-wrap {
-			background: $bgcolor-blue;
+			background: transparent;
 			margin: 1rem auto;
 			text-align: center;
 			margin-bottom: 1.875rem;
-			padding: 0.9375rem;
+			padding: 0;
+			min-height: 60px;
 			max-width: 4.6875rem;
 			img{
 				display: block;
-				height: 26px;
 			}
 		}
 

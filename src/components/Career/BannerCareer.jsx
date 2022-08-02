@@ -2,6 +2,9 @@ import CareerImage0 from '../../assets/images/career/Work-with-Choice.webp';
 import CareerImage1 from '../../assets/images/career/careers-at-choice.webp';
 import CareerImage2 from '../../assets/images/career/job-opportunity.webp';
 import CareerImage3 from '../../assets/images/career/work-culture.webp';
+import CareerImage4 from '../../assets/images/career/presentation.webp';
+import CareerImage5 from '../../assets/images/career/appreciation.webp';
+import CareerImage6 from '../../assets/images/career/team-work.webp';
 
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
@@ -29,16 +32,16 @@ function BannerCareer() {
                       <LazyLoader src={CareerImage2} className={'img-fluid'} width={"482"} height={"400"} alt={"job opportunity"} />
                   {/* <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
                   </div>
-                  <div className='marq-itm'>
-                  <LazyLoader src={CareerImage0} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} /> 
-                  {/* <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
-                  </div>
                   <div className='marq-itm'> 
-                  <LazyLoader src={CareerImage1} className={'img-fluid'} width={"482"} height={"400"} alt={"Loading"} />
+                  <LazyLoader src={CareerImage4} className={'img-fluid'} width={"482"} height={"400"} alt={"Presentation"} />
                   {/* <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
                   </div>
                   <div className='marq-itm'> 
-                  <LazyLoader src={CareerImage2} className={'img-fluid'} width={"482"} height={"400"} alt="Loading" />
+                  <LazyLoader src={CareerImage5} className={'img-fluid'} width={"482"} height={"400"} alt="Appreciation" />
+                  {/* <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
+                  </div>
+                  <div className='marq-itm'> 
+                  <LazyLoader src={CareerImage6} className={'img-fluid'} width={"482"} height={"400"} alt="Team work" />
                   {/* <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' /> */}
                   </div>
           </Marquee>     
