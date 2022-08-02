@@ -87,7 +87,7 @@ function Home() {
 									<div className="col-lg-7">
 										<div className="count-value-list">
 											<div className="count-value-item">
-												<h4>2 Lakh+</h4>
+												<h4>5 Lakh+</h4>
 												<h5>Clients</h5>
 											</div>
 											<div className="count-value-item">
