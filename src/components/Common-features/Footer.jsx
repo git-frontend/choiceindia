@@ -246,6 +246,34 @@ useEffect(()=>{
             </div>
           </div>
 
+          <div className="footer-marquee">
+            <Marquee direction="left" speed={100}   delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
+              <p>Attention Investors: ( 1 ) Prevent Unauthorized Transactions in your account --&#62; Update your Mobile Number and /or email id with us. ( 2 ) Receive alerts on your Registered Mobile for all debit and other imp</p>
+            </Marquee>
+          </div>
+          <div className="quick-links-footer">
+                <span className="btn-links">
+                    Quick Links
+                </span>
+                {/* <ul className="links-footer-quick">
+                  <li>
+                    <a href="/">Link 1</a>
+                  </li>
+                  <li>
+                    <a href="/">Link 2</a>
+                  </li>
+                  <li>
+                    <a href="/">Link 3</a>
+                  </li>
+                  <li>
+                    <a href="/">Link 4</a>
+                  </li>
+                  <li>
+                    <a href="/">Links 4</a>
+                  </li>
+                </ul> */}
+            </div> 
+
           
         </footer>
       </div>
