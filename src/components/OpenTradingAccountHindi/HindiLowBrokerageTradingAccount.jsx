@@ -54,81 +54,81 @@ function HindiLowBrokerageTradingAccount() {
                         <div className="col-md-12">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <Slider {...settings} id="advslider" className="">
+                                <Slider {...settings} id="advslider" className="">
 
-                                        <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
-                                            <div className="card adv-card">
-                                                <div className="icon-wrap">
-                                                    <img src={Image7}  width={"28"} height={"26"} className="img-fluid" alt={"इक्विटी ब्रोकरेज शुल्क"} />
-                                                </div>
+<div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
+    <div className="card adv-card">
+        <div className="icon-wrap">
+            <img src={Image7}  width={"83"} height={"83"} className="img-fluid" alt={"इक्विटी ब्रोकरेज शुल्क"} />
+        </div>
 
-                                                <div className="card-block">
+        <div className="card-block">
 
-                                                    <h5 className="card-title">इक्विटी</h5>
-                                                    <hr></hr>
-                                                    <ul className="charge-lists">
-                                                        <li>
-                                                        इंट्राडे <span>0.20%</span>
-                                                        </li>
-                                                        <li>
-                                                        डिलीवरी <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        फ्यूचर्स <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        ऑप्शंस <span>₹ 25 प्रति लॉट</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="col-md-4 item  p-md-2" data-toggle="modal" data-target="#myModal2">
-                                            <div className="card adv-card">
-                                                <div className="icon-wrap">
-                                                    <img src={Image8}  width={"28"} height={"28"} alt={"मुद्रा ब्रोकरेज शुल्क"} className="img-fluid lazyload" />
-                                                </div>
-                                                <div className="card-block">
+            <h5 className="card-title">इक्विटी</h5>
+            <hr></hr>
+            <ul className="charge-lists">
+                <li>
+                इंट्राडे <span>0.20%</span>
+                </li>
+                <li>
+                डिलीवरी <span>0.02%</span>
+                </li>
+                <li>
+                फ्यूचर्स <span>0.02%</span>
+                </li>
+                <li>
+                ऑप्शंस <span>₹ 25 प्रति लॉट</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div className="col-md-4 item  p-md-2" data-toggle="modal" data-target="#myModal2">
+    <div className="card adv-card">
+        <div className="icon-wrap">
+            <img src={Image8}  width={"84"} height={"83"} alt={"मुद्रा ब्रोकरेज शुल्क"} className="img-fluid lazyload" />
+        </div>
+        <div className="card-block">
 
-                                                    <h5 className="card-title">करन्सी</h5>
-                                                    <hr></hr>
-                                                    <ul className="charge-lists">
+            <h5 className="card-title">करन्सी</h5>
+            <hr></hr>
+            <ul className="charge-lists">
 
-                                                        <li>
-                                                        फ्यूचर्स <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        ऑप्शंस <span>₹ 20 प्रति लॉट</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                <li>
+                फ्यूचर्स <span>0.02%</span>
+                </li>
+                <li>
+                ऑप्शंस <span>₹ 20 प्रति लॉट</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-                                        <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal5">
-                                            <div className="card adv-card">
-                                                <div className="icon-wrap">
-                                                    <img src={Image9}  width={"28"} height={"28"} alt={"कमोडिटी ब्रोकरेज शुल्क"} className="img-fluid lazyload" />
-                                                </div>
-                                                <div className="card-block">
+<div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal5">
+    <div className="card adv-card">
+        <div className="icon-wrap">
+            <img src={Image9}  width={"83"} height={"64"} alt={"कमोडिटी ब्रोकरेज शुल्क"} className="img-fluid lazyload" />
+        </div>
+        <div className="card-block">
 
-                                                    <h5 className="card-title">कमोडिटी</h5>
-                                                    <hr></hr>
-                                                    <ul className="charge-lists">
+            <h5 className="card-title">कमोडिटी</h5>
+            <hr></hr>
+            <ul className="charge-lists">
 
-                                                        <li>
-                                                        फ्यूचर्स <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        ऑप्शंस <span>₹ 50 प्रति लॉट</span>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
+                <li>
+                फ्यूचर्स <span>0.02%</span>
+                </li>
+                <li>
+                ऑप्शंस <span>₹ 50 प्रति लॉट</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
-                                    </Slider>
+</Slider>
                                 </div>
                             </div>
                         </div>
