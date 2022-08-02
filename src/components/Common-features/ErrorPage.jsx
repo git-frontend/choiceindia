@@ -28,9 +28,9 @@ function ErrorPage() {
           <div className="row">
             <div className="col-md-12">
       <div className='text-center'>
-        <img src={errorImage} className="img-fluid" width={"957"} height={"638"}></img>
+        <img src={errorImage} className="img-fluid" width={"600"} height={"382"}></img>
       </div>
-      <div className='errormessage tex-center'>
+      <div className='errormessage tex-center pt-5'>
         <h2 className='pb-3'><strong>Ughhhh.....</strong></h2>
         Sorry, but the page you are looking for has not been found.<br></br>
         Try checking the URL for error, then hit the refresh button
