@@ -202,7 +202,8 @@ useEffect(()=>{
                             <NavLink to="/privacy-policy">Privacy Policy</NavLink>
                           </li>
                           <li className="cursor-pointer">
-                            <a onClick={()=>{openModal()}}>Terms &amp; Conditions</a>
+                            {/* <a onClick={()=>{openModal()}}>Terms &amp; Conditions</a> */}
+                            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
                           </li>
                         </ul>
                       </div>
