@@ -12,42 +12,46 @@ function HowItWorks() {
     const myRef2 = useRef(null);
     const myRef3 = useRef(null);
 
-    // // X
-    // const [x, setX] = useState();
-
-    // // Y
-    // const [y, setY] = useState();
-    const [state, setState] = useState(0);
     const [name, setName ] = useState('');
     const [name2, setName2 ] = useState('');
     const [name3, setName3 ] = useState('');
-    // This function calculate X and Y
+  
+
     const getPosition = () => {
+
+
+
         const element = document.getElementById("how1");
         const element2 = document.getElementById("how2");
         const element3 = document.getElementById("how3");
-        const rect = element.getBoundingClientRect();
-        const rect2 = element.getBoundingClientRect();
-        const rect3 = element.getBoundingClientRect();
+        
+        if(element && element2 && element3){
+            const rect = element.getBoundingClientRect();
+            const rect2 = element.getBoundingClientRect();
+            const rect3 = element.getBoundingClientRect();
+
+            if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
+                setName('steps-itm-active');
+                // console.log('inside name', name);
+            }else{
+                setName('');
+            }
+            if(rect2.top.toFixed() < 150 && rect2.top.toFixed() > -200 ){
+                setName2('steps-itm-active');
+            }else{
+                setName2('');
+            }
+            if(rect3.top.toFixed() < -200 && rect3.top.toFixed() > -600 ){
+                setName3('steps-itm-active');
+            }else{
+                setName3('');
+            }
+        }
+        
         // setState( rect.top.toFixed());
 
-        console.log('top',rect2.top.toFixed());
-        if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
-            setName('steps-itm-active');
-            // console.log('inside name', name);
-        }else{
-            setName('');
-        }
-        if(rect2.top.toFixed() < 150 && rect2.top.toFixed() > -200 ){
-            setName2('steps-itm-active');
-        }else{
-            setName2('');
-        }
-        if(rect3.top.toFixed() < -200 && rect3.top.toFixed() > -600 ){
-            setName3('steps-itm-active');
-        }else{
-            setName3('');
-        }
+        // console.log('top',rect2.top.toFixed());
+
         // console.log('RRR',myRef1.current?.offsetLeft,'RRR2',myRef1.current?.offsetTop);
         // const x = myRef1.current?.offsetLeft;
         // setX(x);
@@ -58,9 +62,9 @@ function HowItWorks() {
     };
 
     // Get the position of the red box in the beginning
-    useEffect(() => {
-        getPosition();
-    }, []);
+    // useEffect(() => {
+    //     getPosition();
+    // }, []);
 
     // Re-calculate X and Y of the red box when the window is resized by the user
     useEffect(() => {
@@ -68,10 +72,10 @@ function HowItWorks() {
     }, []);
 
     return (
-        <div id='how-it-works' onScroll={getPosition}>
+        <div id='how-it-works'>
 
 
-            <section className="ins-how-works">
+            <section className="ins-how-works" onScroll={getPosition}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
