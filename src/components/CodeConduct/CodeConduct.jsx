@@ -15,6 +15,7 @@ import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
+
 function CodeConduct() {
 
   const [skeleton, setSkeleton] = useState(() => true);
@@ -44,7 +45,7 @@ function CodeConduct() {
 
       {
         skeleton ? <Template1 /> :
-          <div className="code-conduct-parent">
+          <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
 
               <Banner />

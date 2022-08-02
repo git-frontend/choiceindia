@@ -32,10 +32,8 @@ function ErrorPage() {
       </div>
       <div className='errormessage tex-center pt-5'>
         <h2 className='pb-3'><strong>Ughhhh.....</strong></h2>
-        Sorry, but the page you are looking for has not been found.<br></br>
-        Try checking the URL for error, then hit the refresh button
-        on your browser or try found something else in our app.<br></br>
-        Let's go <Link to="/">Home</Link> and try from there.
+        Our Chief Innovation Officer is busy innovating this webpage to bring you something new. <br/>Meanwhile you can check out our blog section <Link to="/blog">here</Link> to have a good read.
+        
         </div>
         </div>
       </div>
