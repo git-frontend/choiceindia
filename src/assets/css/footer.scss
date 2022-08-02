@@ -1,6 +1,7 @@
 @import 'common.scss';
 
 .main-footer{
+    position: relative;
     .footer-top-sec{
         background: $bgcolordark;
         padding: 4rem 0;
@@ -226,5 +227,3 @@
     display: none;
   }
 
-
- 
