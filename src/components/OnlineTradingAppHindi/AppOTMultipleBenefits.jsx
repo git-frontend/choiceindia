@@ -29,29 +29,29 @@ function AppOTMultipleBenefits() {
           </div>
           <div className='row'>
             <div className='col-md-12'>
-              <div className="row g-4 py-5">
-                <div className="col-md-3 benefits-app-des">
+              <div className="g-4 py-5 benefits-app-des-list">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector1} width={"96"} height={"96"} alt="Free Demat Account" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>मुफ़्त डीमैट <br/> खाता</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector2} width={"96"} height={"96"} alt="Zero AMC for First Year" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>प्रथम वर्ष के लिए <br/> शून्य AMC</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector3} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>टीवी पैनलिस्ट <br/>एक्स्पर्ट के द्वारा <br/>मुफ्त रिसर्च</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector4} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>

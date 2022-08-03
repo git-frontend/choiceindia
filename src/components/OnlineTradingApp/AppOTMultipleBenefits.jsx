@@ -29,29 +29,29 @@ function AppOTMultipleBenefits() {
           </div>
           <div className='row'>
             <div className='col-md-12'>
-              <div className="row g-4 py-5">
-                <div className="col-md-3 benefits-app-des">
+              <div className="g-4 py-5 benefits-app-des-list">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector1} width={"96"} height={"96"} alt="Free Demat Account" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>Free Demat <br/> Account</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector2} width={"96"} height={"96"} alt="Zero AMC for First Year" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>Zero AMC for <br/> First Year</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector3} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>
                   <h4 className="pt-4"><strong>Free Expert <br/>Research from TV <br/>Panelist</strong></h4>
 
                 </div>
-                <div className="col-md-3 benefits-app-des">
+                <div className="benefits-app-des">
                   <div className="d-block">
                     <img src={Vector4} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>

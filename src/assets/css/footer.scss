@@ -270,23 +270,28 @@
         right: 0;
         bottom: 0;
         transition: .5s ease;
-        width: 160px;
+        min-width: 175px;
         padding:0;
         
         display: block;
-        background: $yellowColor;
+        background: $primary;
         transform: translateY(500px);
         >li{
             list-style: none;
             a{
                 cursor: pointer;
-                font-size: 1.1rem;
-                color: $primary;
+                font-size: 1rem;
+                color: $whiteColor;
                 text-decoration: none;
-                font-family: $font-family-poppins-semibold;
+                font-family: $font-family-poppins-medium;
                 display: block;
+                transition: .5s ease;
                 padding: 0.6rem 1rem;
-                border-bottom: 1px solid $secondary;
+                border-bottom: 1px dashed $secondary;
+                &:hover{
+                    background: $yellowColor;
+                    color: $primary;
+                }
             }
         }
     }

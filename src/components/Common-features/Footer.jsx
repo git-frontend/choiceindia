@@ -255,23 +255,41 @@ useEffect(()=>{
                 <span className="btn-links">
                     Quick Links
                 </span>
-                {/* <ul className="links-footer-quick">
+                <ul className="links-footer-quick">
                   <li>
-                    <a href="/">Link 1</a>
+                    <a href="/">Investor Awareness</a>
                   </li>
                   <li>
-                    <a href="/">Link 2</a>
+                    <a href="/">Watchout Investors</a>
                   </li>
                   <li>
-                    <a href="/">Link 3</a>
+                    <a href="/">Scores</a>
                   </li>
                   <li>
-                    <a href="/">Link 4</a>
+                    <a href="/">Investor Charter</a>
                   </li>
                   <li>
-                    <a href="/">Links 4</a>
+                    <a href="/">Investor Complaints</a>
                   </li>
-                </ul> */}
+                  <li>
+                    <a href="/">Terms of Use</a>
+                  </li>
+                  <li>
+                    <a href="/">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="/">Disclaimer</a>
+                  </li>
+                  <li>
+                    <a href="/">Sitemap</a>
+                  </li>
+                  <li>
+                    <a href="/">CEBPL Policies</a>
+                  </li>
+                  <li>
+                    <a href="/">Client Details Update</a>
+                  </li>
+                </ul>
             </div> 
 
           
