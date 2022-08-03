@@ -1,0 +1,29 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.code-conduct-parent{
+    animation: hideMe 4s forwards;
+}
+
+.code-mainwrapper {
+    .head {
+        color: $primary;
+        font-weight: 600;
+        margin-bottom: 1.8rem;
+        margin-top: 1rem;
+        font-size: 1.7rem;
+    }
+
+    ul li {
+        margin-bottom: 2rem;
+        color: $secondary;
+    }
+}
+
+
+
+
+
+
+
