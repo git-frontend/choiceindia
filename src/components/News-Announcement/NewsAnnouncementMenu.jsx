@@ -15,6 +15,7 @@ function NewsAnnouncement() {
                             <h2 className="title">News &amp; Announcements</h2>
                             <Navbar />
                         </div>
+                        
                     </div>
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
