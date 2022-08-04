@@ -17,10 +17,10 @@ export default function Header() {
             <nav className="navbar navbar-expand-lg">
                 <div className="container">
                 
-                <NavLink className="navbar-brand logo-main" to="/">
+                <a className="navbar-brand logo-main" href="/">
                         <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice India" />
                         {/*<img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
-  */}                      </NavLink>
+  */}                      </a>
                     <button className="navbar-toggler border" 
                     onClick={ ()=>setShow(!show)} >
                         { show ? <FontAwesomeIcon icon={faBars} />  : <FontAwesomeIcon icon={faXmark} /> }
