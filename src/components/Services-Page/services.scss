@@ -107,6 +107,10 @@
                     width: 65px;
                     margin: 0 auto;
                 }
+                .cont-img{
+                    display: block;
+                    overflow: hidden;
+                }
             }
 
             @media (max-width: 800px) {
@@ -166,6 +170,7 @@
 }
 
 .service-tab-cont {
+    
     &.bg-rightsection {
         position: relative;
 
@@ -186,6 +191,8 @@
         }
     }
 
+    padding: 0;
+    margin: 5rem 0;
     padding-bottom: 12rem;
     position: relative;
 

@@ -18,7 +18,7 @@ function ChoiceFinx() {
     speed: 1500,
     slidesToShow: 3,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     autoplaySpeed: 1500,
     slidesToScroll: 1,
@@ -101,8 +101,10 @@ function ChoiceFinx() {
                           
                             <div className="app-list-item" key={response.id}>
                               <div className='link-choicefinx' data-img={ImageSub9} onMouseOver={() => { setstore(index) }}>
-                                <LazyLoader src={response.icon} className={"img-fluid"} alt={"Loading"} width={"40"} height={"40"} />
-                                {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
+                                <span className='cfx-img'>
+                                  <LazyLoader src={response.icon} className={"img-fluid"} alt={"Loading"} width={"40"} height={"40"} />
+                                  {/* <img src={response.icon} alt="Loading" className="img-fluid" /> */}
+                                </span>
                                 <h3 className="choice-ttl">{response.title}</h3>
                                 <p>{response.description}</p>
                               </div>

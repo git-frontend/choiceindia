@@ -228,9 +228,11 @@ export default function FaqBody() {
                             // scrollToElement();
                           }}>
                             <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
-                              <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="" alt="" width={"50"} height={"50"} />
+                              <span className='cont-img'>
+                                <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
+                              </span>
                               <h4>{response.category_name || 'No data'}</h4>
-                              <p>{response.category_description || 'No data'}</p>
+                              {/* <p>{response.category_description || 'No data'}</p> */}
                             </div>
                           </div>
                         )
