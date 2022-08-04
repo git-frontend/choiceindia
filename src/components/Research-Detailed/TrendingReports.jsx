@@ -72,7 +72,7 @@ function TrendingReports(props) {
                 <div className="res-detailtab-list">
 
                   {
-                    list?.slice(sliceCount,9)?.map((res,i)=> {
+                    list?.slice(0,4)?.map((res,i)=> {
                       
                       console.log('RESPONSE',res)
                       return(
