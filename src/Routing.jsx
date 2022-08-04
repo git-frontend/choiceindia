@@ -46,6 +46,7 @@ const LazyShareHoldingPattern = React.lazy(() => import('./components/Share-Hold
 const LazyFinancialInfo = React.lazy(() => import('./components/Financial-Info/FinancialInfo'));
 const LazyVotingResults = React.lazy(() => import('./components/Voting-Results/VotingResults'));
 const LazyNotices = React.lazy(() => import('./components/Notices/Notices'));
+const LazyNewsAnnouncement = React.lazy(() => import('./components/News-Announcement/NewsAnnouncement'));
 const LazyFactSheet = React.lazy(() => import('./components/Fact-Sheet/FactSheet'));
 const LazyAnnualReport = React.lazy(() => import('./components/Annual-Report/AnnualReport'));
 const LazyCorporateGovernance = React.lazy(() => import('./components/Corporate-Governance/corporate-governance'));
@@ -197,6 +198,11 @@ function Routing() {
                          <Route exact path='/notices' element={
                             <React.Suspense>
                                 < LazyNotices />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/news-announcement' element={
+                            <React.Suspense>
+                                < LazyNewsAnnouncement />
                             </React.Suspense>
                         } />
                         <Route exact path='/annual-report' element={
