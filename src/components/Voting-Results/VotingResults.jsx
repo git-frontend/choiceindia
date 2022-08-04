@@ -1,9 +1,9 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-import CodeConductMenu from './CodeConductMenu';
-
+import VotingResultsMenu from './VotingResultsMenu';
 import "../Investors-info/investorsinfo.scss";
+import "../Corporate-Governance/corporate-governance.scss";
 import "../Investors-info/navbar.scss";
 import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
@@ -14,7 +14,7 @@ import{ useLocation
 import meta_tags from "../../Data/MetaTags";
 
 
-function CodeConduct() {
+function FinancialInfo() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -47,10 +47,9 @@ function CodeConduct() {
             <div className="mainwrapper">
 
               <Banner />
-
               <ChoiceLTP></ChoiceLTP>
 
-              <CodeConductMenu />
+              <VotingResultsMenu />
 
 
             </div>
@@ -61,4 +60,4 @@ function CodeConduct() {
   );
 }
 
-export default CodeConduct;
+export default FinancialInfo;

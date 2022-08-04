@@ -42,6 +42,12 @@ const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/Sumeet
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
+const LazyShareHoldingPattern = React.lazy(() => import('./components/Share-Holding/ShareHolding'));
+const LazyFinancialInfo = React.lazy(() => import('./components/Financial-Info/FinancialInfo'));
+const LazyVotingResults = React.lazy(() => import('./components/Voting-Results/VotingResults'));
+const LazyNotices = React.lazy(() => import('./components/Notices/Notices'));
+const LazyFactSheet = React.lazy(() => import('./components/Fact-Sheet/FactSheet'));
+const LazyAnnualReport = React.lazy(() => import('./components/Annual-Report/AnnualReport'));
 const LazyCorporateGovernance = React.lazy(() => import('./components/Corporate-Governance/corporate-governance'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
@@ -166,6 +172,36 @@ function Routing() {
                         <Route exact path='/code-of-conduct' element={
                             <React.Suspense>
                                 < LazyCodeConduct />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/share-holding-pattern' element={
+                            <React.Suspense>
+                                < LazyShareHoldingPattern />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/financial-info' element={
+                            <React.Suspense>
+                                < LazyFinancialInfo />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/voting-results' element={
+                            <React.Suspense>
+                                < LazyVotingResults />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/fact-sheet' element={
+                            <React.Suspense>
+                                < LazyFactSheet />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/notices' element={
+                            <React.Suspense>
+                                < LazyNotices />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/annual-report' element={
+                            <React.Suspense>
+                                < LazyAnnualReport />
                             </React.Suspense>
                         } />
                         <Route exact path='/corporate-governance' element={
