@@ -192,12 +192,11 @@ function TrendingReports(props) {
                       </div>
                     </div>
                   </div> */}
-                  {
-                    check ?
-                    "":<div className="mt-5 d-flex justify-content-center">
+                 
+                    <div className="mt-5 d-flex justify-content-center">
                     <button className="btn-bg"onClick={() => {setCheck(true)}}>Explore All</button>
                   </div>
-                  }
+                  
 
                 {/* <div className="mt-5 d-flex justify-content-center">
                   <button className="btn-bg"onClick={() => {setCheck(true)}}>Explore All</button>
