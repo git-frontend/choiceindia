@@ -276,7 +276,8 @@
         background: $primary;
         visibility: hidden;
         opacity: 0;
-        
+        display: none;
+
         >li{
             padding: 0.6rem 1rem;
             list-style: none;
@@ -307,7 +308,9 @@
         
     }
     &:hover{
+        
         .links-footer-quick{
+           display: block;
            opacity: 1;
            visibility: visible;
         }

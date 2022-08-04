@@ -1350,6 +1350,10 @@
                     margin: 0;
                     font-size: 1.6rem;
                 }
+                .cont-img{
+                    display: block;
+                    overflow: hidden;
+                }
             }
 
             &::before {
@@ -1375,6 +1379,16 @@
                 .bx-item-cont {
                     border: 3px solid $yellowColor;
                     box-shadow: none;
+                    .sl-img{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                    }
+                    .mn-img{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                    }
                 }
 
                 &::before {
@@ -1382,6 +1396,7 @@
                     opacity: 1;
                     visibility: visible;
                 }
+                
             }
 
             @media (max-width: $sm) {

@@ -107,6 +107,10 @@
                     width: 65px;
                     margin: 0 auto;
                 }
+                .cont-img{
+                    display: block;
+                    overflow: hidden;
+                }
             }
 
             @media (max-width: 800px) {
