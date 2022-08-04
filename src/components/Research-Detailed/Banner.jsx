@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import thumb2 from '../../assets/images/research/pdf-ico.webp';
+import thumb2 from '../../assets/images/research/pdf-ico.svg';
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 

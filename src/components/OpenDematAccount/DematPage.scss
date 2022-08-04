@@ -241,6 +241,13 @@
 		&:hover {
 			background-color: $whiteColor;
 			border: 1px solid transparent;
+			.icon-wrap {
+				img{
+					-webkit-animation: toTopFromBottom 0.5s forwards;
+					-moz-animation: toTopFromBottom 0.5s forwards;
+					animation: toTopFromBottom 0.5s forwards;
+				}
+			}
 		}
 
 		.icon-wrap {

@@ -31,8 +31,9 @@ function SectionTabs() {
                            className={toggleState === 1 ? "tabs  active-tabs" : "tabs"}
                            onClick={() => toggleTab(1)}
                         >
-                           
-                           <LazyLoader src={Equity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           <span className="tb-ico">
+                              <LazyLoader src={Equity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           </span>
                            <h4>Equity</h4>
 
                         </button>
@@ -40,8 +41,9 @@ function SectionTabs() {
                            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
                            onClick={() => toggleTab(2)}
                         >
-                           
-                           <LazyLoader src={Currency} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           <span className="tb-ico">
+                              <LazyLoader src={Currency} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           </span>
                            <h4>Currency</h4>
 
                         </button>
@@ -49,7 +51,9 @@ function SectionTabs() {
                            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
                            onClick={() => toggleTab(3)}
                         >
-                           <LazyLoader src={Commodity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           <span className="tb-ico">
+                              <LazyLoader src={Commodity} alt={"Banner Images"} className={"img-fluid ico-sm"} width={"55"} height={"56"} />
+                           </span>
                            <h4>Commodity</h4>
 
                         </button>
