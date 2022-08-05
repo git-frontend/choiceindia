@@ -1,9 +1,10 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-import CodeConductMenu from './CodeConductMenu';
+import AnnualReportMenu from './AnnualReportMenu';
 
 import "../Investors-info/investorsinfo.scss";
+import "../Corporate-Governance/corporate-governance.scss";
 import "../Investors-info/navbar.scss";
 import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
@@ -14,7 +15,7 @@ import{ useLocation
 import meta_tags from "../../Data/MetaTags";
 
 
-function CodeConduct() {
+function FinancialInfo() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -50,7 +51,7 @@ function CodeConduct() {
 
               <ChoiceLTP></ChoiceLTP>
 
-              <CodeConductMenu />
+              <AnnualReportMenu />
 
 
             </div>
@@ -61,4 +62,4 @@ function CodeConduct() {
   );
 }
 
-export default CodeConduct;
+export default FinancialInfo;
