@@ -1103,7 +1103,7 @@
   text-align: center;
   font-family: "PoppinsSemiBold", sans-serif;
   @media  (max-width:$sm) {
-      padding-bottom: 0;
+      padding-bottom: 3rem;
       font-size: 2.4rem;
       line-height: 3.5rem;
   }
@@ -1197,9 +1197,9 @@
     }
     .sb-bar {
       position: relative;
-      width: 340px;
-      height: 340px;
-      transform: rotate(94deg);
+      width: 320px;
+      height: 320px;
+      transform: rotate(92deg);
       circle {
         width: 100%;
         height: 100%;
@@ -1208,15 +1208,15 @@
         stroke-width: 10;
         stroke-linecap: round;
         &:last-of-type {
-          stroke-dasharray: 994px;
-          stroke-dashoffset: calc(1015px - (994px * var(--percent)) / 100  );
+          stroke-dasharray: 980px;
+          stroke-dashoffset: calc(975px - (900px * var(--percent)) / 100  );
           stroke: #3498db;
         }
       }
-      @media (max-width: 767px){
-        width: 300px;
-        height: 300px;
-      }
+      // @media (max-width: 767px){
+      //   width: 300px;
+      //   height: 300px;
+      // }
     }
     // .c-quant-bar {
     //   position: absolute;
@@ -1246,9 +1246,9 @@
     // }
     .jiffy-signal-bar {
       position: relative;
-      width: 340px;
-      height: 340px;
-      transform: rotate(90deg);
+      width: 320px;
+      height: 320px;
+      transform: rotate(92deg);
       circle {
         width: 100%;
         height: 100%;
@@ -1257,15 +1257,15 @@
         stroke-width: 10;
         stroke-linecap: round;
         &:last-of-type {
-          stroke-dasharray: 910px;
-          stroke-dashoffset: calc(910px - (910px * var(--percent)) / 100  );
+          stroke-dasharray: 980px;
+          stroke-dashoffset: calc(975px - (900px * var(--percent)) / 100  );
           stroke: #3498db;
         }
       }
-      @media (max-width: 767px){
-        width: 300px;
-        height: 300px;
-      }
+      // @media (max-width: 767px){
+      //   width: 300px;
+      //   height: 300px;
+      // }
     }
     .number {
       position: absolute;
@@ -1450,14 +1450,33 @@
           background: $whiteColor;
           border: 1px solid $darkblack;
           border-radius: 16px;
-          margin-bottom: 3rem;
+          margin: 1.5rem 0;
           text-transform: capitalize;
           min-width: 160px;
+          @media  (max-width:$sm-x) {
+            margin: 0.5rem;
+            min-width: inherit;
+            white-space: nowrap;
+          }
         }
+        @media  (max-width:$sm-x) {
+          display: flex;
+          overflow: auto;
+          padding: 0;
+        }
+      }
+      @media  (max-width:$md) {
+        width: 35%;
+      }
+      @media  (max-width:$sm-x) {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 3rem;
       }
     }
     .right-tb{
       width: 75%;
+      padding: 2rem 0;
       padding-left: 3rem;
       border-left: 2px solid $darkblack;
       .progress-bar-performance{
@@ -1467,7 +1486,7 @@
           flex-direction: inherit;
           justify-content: space-around;
           .percent{
-            left: 0;
+            left: 3px;
             .jiffy-signal-bar{
               position: relative;
               left: inherit;
@@ -1483,6 +1502,9 @@
                 font-family: $font-family-poppins-semibold;
                 color: $blueColortext;
                 margin-bottom: 0;
+                &.sgnl-txt{
+                  color: $yellowColor;
+                }
               }
               h4{
                 color: #121212;
@@ -1491,19 +1513,19 @@
                 font-size: 1.6rem;
               }
             }
-            &::before{
-              content: '';
-              width: 1px;
-              height: 100%;
-              display: block;
-              position:absolute;
-              left: 50%;
-              top: 0;
-              transform: translate(-50%, 0);
-              background: red;
+            @media  (max-width:$sm-x) {
+              margin-bottom: 2rem;
             }
           }
         }
+      }
+      @media  (max-width:$md) {
+        width: 65%;
+      }
+      @media  (max-width:$sm-x) {
+        width: 100%;
+        padding-left: 0;
+        border: 0;
       }
     }
   }

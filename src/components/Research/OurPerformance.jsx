@@ -277,7 +277,7 @@ console.log("date",weekly)
           </div>
           <div className="performance-new-sec">
               <div className="row justify-content-center">
-                <div className="col-md-11">
+                <div className="col-xl-11 col-md-12">
                     <div className="new-sec-sub">
                         <div className="left-tb">
                             <ul className="reset">
@@ -291,8 +291,8 @@ console.log("date",weekly)
                               <div className="card">
                                   <div className="percent">
                                     <svg className="sb-bar">
-                                      <circle cx="170" cy="170" r="155"></circle>
-                                      <circle cx="170" cy="170" r="155" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
+                                      <circle cx="165" cy="165" r="145"></circle>
+                                      <circle cx="165" cy="165" r="145" style={{ '--percent': '45' }}></circle>
                                     </svg>
                                     <div className="cont-perc">
                                         <h3>45%</h3>
@@ -301,12 +301,12 @@ console.log("date",weekly)
                                   </div>
                                   <div className="percent">
                                     <svg className="jiffy-signal-bar">
-                                      <circle cx="170" cy="170" r="155"></circle>
-                                      <circle cx="170" cy="170" r="155" style={{ '--percent': `${Number(data) || 0}` }}></circle>
+                                      <circle cx="165" cy="165" r="145"></circle>
+                                      <circle cx="165" cy="165" r="145" style={{ '--percent': '65' }}></circle>
                                     </svg>
                                     <div className="cont-perc">
-                                        <h3>45%</h3>
-                                        <h4>SB desk</h4>
+                                        <h3 className="sgnl-txt">65%</h3>
+                                        <h4>jiffy signal</h4>
                                     </div>
                                   </div>
                               </div>
