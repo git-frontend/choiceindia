@@ -19,7 +19,7 @@ const partnerBanner =[
 
     },
     {
-        "title":"Become a Mutual Fund Advisort",
+        "title":"Become a Mutual Fund Agent",
         "description":"Help people to achieve financial freedom by selling mutual funds through us.",
         "image":`${MutualFundsImage}`,
         "button":"Mutual Funds",

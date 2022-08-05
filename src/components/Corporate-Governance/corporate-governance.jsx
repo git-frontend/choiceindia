@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-import CodeConductMenu from './CodeConductMenu';
+import CorporateGovernanceMenu from './CorporateGovernanceMenu';
 import Yeardetail from '../Investors-info/Yeardetail';
 
 import { AiFillCaretUp } from "react-icons/ai";
@@ -52,7 +52,7 @@ function CorporateGovernance() {
 
               <ChoiceLTP></ChoiceLTP>
 
-              <CodeConductMenu />
+              <CorporateGovernanceMenu />
 
 
             </div>

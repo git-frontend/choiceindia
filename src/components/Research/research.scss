@@ -917,7 +917,7 @@
           overflow: hidden;
           border-radius: 20px;
           background: $primary;
-          padding: 1rem 3rem 0;
+          padding: 0;
           transition: 0.3s all ease-in;
 
           @media (max-width:$sm) {
@@ -936,7 +936,7 @@
               color: $whiteColor;
               text-align: center;
               background: #221F2080;
-              border-radius: 0;
+              border-radius: 0 0 20px 20px;
               transition: 0.3s all ease-in;
 
               h5 {
@@ -978,6 +978,7 @@
 
               img {
                   margin: 0 auto;
+                  width: 100%;
               }
           }
       }
