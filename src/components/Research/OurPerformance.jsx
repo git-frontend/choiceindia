@@ -136,7 +136,7 @@ console.log("date",weekly)
               </h3>
             </div>
           </div>
-          <div className="row gx-5 mt-5 pt-5 ">
+          <div className="row gx-5 mt-5 pt-5 d-none">
             <div className="col-xl-4 col-md-6">
 
               <div className="progress-bar-performance">
@@ -274,6 +274,47 @@ console.log("date",weekly)
 
               </div>
             </div>
+          </div>
+          <div className="performance-new-sec">
+              <div className="row justify-content-center">
+                <div className="col-md-11">
+                    <div className="new-sec-sub">
+                        <div className="left-tb">
+                            <ul className="reset">
+                              <li className="pr-tab">last 5 days </li>
+                              <li className="pr-tab">last week </li>
+                              <li className="pr-tab">last month   </li>
+                            </ul>
+                        </div>
+                        <div className="right-tb">
+                          <div className="progress-bar-performance">
+                              <div className="card">
+                                  <div className="percent">
+                                    <svg className="sb-bar">
+                                      <circle cx="170" cy="170" r="155"></circle>
+                                      <circle cx="170" cy="170" r="155" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
+                                    </svg>
+                                    <div className="cont-perc">
+                                        <h3>45%</h3>
+                                        <h4>SB desk</h4>
+                                    </div>
+                                  </div>
+                                  <div className="percent">
+                                    <svg className="jiffy-signal-bar">
+                                      <circle cx="170" cy="170" r="155"></circle>
+                                      <circle cx="170" cy="170" r="155" style={{ '--percent': `${Number(data) || 0}` }}></circle>
+                                    </svg>
+                                    <div className="cont-perc">
+                                        <h3>45%</h3>
+                                        <h4>SB desk</h4>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
