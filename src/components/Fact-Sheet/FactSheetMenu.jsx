@@ -30,6 +30,58 @@ function FactSheetMenu() {
                             <div className=" col-md-5 col pb-3 pt-3">CIN </div>
                             <div className="col-md-7 col pb-3 pt-3">L67190MH1993PLC071117</div>
                         </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Business Description</div>
+                            <div className="col-md-7 col pb-3 pt-3">Financial Services</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Established</div>
+                            <div className="col-md-7 col pb-3 pt-3">March 12, 1993</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Registered Office</div>
+                            <div className="col-md-7 col pb-3 pt-3">Choice International Limited, Sunil Patodia Tower,J B Nagar, Andheri (East),<br/>
+Mumbai 400099, Maharashtra<br/>
+Tel.No. +91-022-67079999<br/>
+Fax:+91-022-67079959<br/>
+Email Id: <a href="mailto:info@choiceindia.com">info@choiceindia.com</a></div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Managing Director</div>
+                            <div className="col-md-7 col pb-3 pt-3">Mr. Kamal Poddar</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Compliance Officer</div>
+                            <div className="col-md-7 col pb-3 pt-3">Ms Karishma Shah</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Listings</div>
+                            <div className="col-md-7 col pb-3 pt-3">BSE &amp; NSE</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">BSE Code</div>
+                            <div className="col-md-7 col pb-3 pt-3">531358</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Script ID</div>
+                            <div className="col-md-7 col pb-3 pt-3">CHOICEIN</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Demat</div>
+                            <div className="col-md-7 col pb-3 pt-3">NSDL, CSDL</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">ISIN</div>
+                            <div className="col-md-7 col pb-3 pt-3">INE102B01014</div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-5 col pb-3 pt-3">Registrar &amp; Share Transfer Agent ( RTA )</div>
+                            <div className="col-md-7 col pb-3 pt-3">Name : Link Intime India Pvt Ltd<br/>
+Add : C-101, 247 Park, L.B.S. Marg, Vikhroli (West), Mumbai -400 083<br/>
+TEL NO : 022 49186270<br/>
+EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br/>
+WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
+                        </div>
                     </div>
 
                     {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
