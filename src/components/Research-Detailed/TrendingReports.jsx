@@ -93,7 +93,7 @@ function TrendingReports(props) {
                                 <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
                                 <div className="itm-des-sub">
                                   <span className="date-post">03 Mar 2022</span>
-                                  <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>
+                                  {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
                                   {/* <a href="#" className="post-read">Read More</a> */}
                                 </div>
                               </div>
@@ -121,7 +121,7 @@ function TrendingReports(props) {
                                 <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
                                 <div className="itm-des-sub">
                                   <span className="date-post">03 Mar 2022</span>
-                                  <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>
+                                  {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
                                   {/* <a href="#" className="post-read">Read More</a> */}
                                 </div>
                               </div>
@@ -194,7 +194,7 @@ function TrendingReports(props) {
                   </div> */}
                  
                     <div className="mt-5 d-flex justify-content-center">
-                    <button className="btn-bg"onClick={() => {setCheck(true)}}>Explore All</button>
+                    <button className="btn-bg"onClick={() => {setCheck(true)}}>Load More</button>
                   </div>
                   
 

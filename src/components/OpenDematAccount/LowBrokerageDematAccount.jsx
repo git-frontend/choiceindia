@@ -53,7 +53,7 @@ function LowBrokerageDematAccount() {
                         <div className="col-md-12">
                             <div className="row">
                                 <div className="col-md-12">
-                                    <Slider {...settings} id="advslider" className="">
+                                    <Slider {...settings} id="advslider">
 
                                         <div className="col-md-4 item p-md-2" data-toggle="modal" data-target="#myModal1">
                                             <div className="card adv-card">
@@ -99,7 +99,7 @@ function LowBrokerageDematAccount() {
                                                             Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <span>₹ 25 per Lot</span>
+                                                            Options <span>₹ 20 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -122,7 +122,7 @@ function LowBrokerageDematAccount() {
                                                             Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <span>₹ 25 per Lot</span>
+                                                            Options <span>₹ 50 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>

@@ -472,6 +472,7 @@
           @media (max-width: $md) {
             display: block;
           }
+       
         }
         .tab-itm-bottom{
           margin-top: 1rem;
@@ -618,6 +619,9 @@
         @media (max-width: $xs) {
           width: 100%;
         }
+        &.tab-itm-inactive{
+          opacity: 0.5;
+        }
       }
     }
   }
@@ -650,11 +654,14 @@
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
+        flex-wrap: wrap;
         .itm-top-ttl{
           .ttl-mn{
              font-size: 1.75rem;
               font-family: $font-family-poppins-semibold;
               color: $primary;
+              margin: 0;
+              margin-right: 2rem;
               small{
                 color: #221f2080;
                 font-family: $font-family-poppins-regular;
@@ -665,6 +672,12 @@
             color: #221f2080;
             margin-left: 2.5rem;
             font-size: 1.375rem;
+          }
+          .ttl-sm-nw{
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            font-size: 1.5rem;
+            margin: 0;
           }
           .date-publish{
               margin-top: 0.8rem;
@@ -697,10 +710,14 @@
         }
         .itm-date-btn{
           text-align: right;
+          display: flex;
+          flex-direction: row-reverse;
+          align-items: center;
           .ltp-percent{
             font-family: $font-family-poppins-regular;
             font-weight: 300;
-            margin-top: 1.5rem;
+            margin: 0;
+            margin-right: 2rem;
             font-size: 1.1rem;
             &.grn-txt{
               color: $greentext;
@@ -749,6 +766,44 @@
         @media (max-width: $md) {
           display: block;
         }
+        .view-post{
+          width: 100%;
+          margin-top: 0.5rem;
+          .post-read{
+            color: $primary;
+              text-decoration: none;
+              position: relative;
+              font-size: 1.1rem;
+              display: inline-block;
+              font-family: $font-family-poppins-semibold;
+              padding-right: 2rem;
+              cursor: pointer;
+              &::before{
+                content: '';
+                background: url(../../assets/images/research/arrow-left.svg) no-repeat;
+                display: block;
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                background-size: contain;
+                right: -5px;
+                top: 1px;
+                transform: rotate(90deg);
+              }
+          }
+        }
+        &.inactive-call{
+          .itm-top-ttl{
+            opacity: 0.5;
+          }
+          .itm-date-btn{
+            opacity: 0.5;
+            .btn-sm{
+              cursor: not-allowed;
+            }
+          }
+        }
+       
       }
       @media (max-width: $xs) {
         width: 100%;
@@ -1435,6 +1490,7 @@
 
 
 
+
 .performance-new-sec{
   .new-sec-sub{
     display: flex;
@@ -1529,4 +1585,15 @@
       }
     }
   }
+}
+
+.btn-ptr{
+  cursor: pointer;
+}
+
+.grn-txt{
+  color: $greentext !important;
+}
+.red-txt{
+  color: $redtext !important;
 }

@@ -413,19 +413,23 @@ function CQuant() {
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
-                            <div className="tab-itm-top">
+                            <div className="tab-itm-top inactive-call">
                                 <div className="itm-top-ttl">
                                     <div className="d-flex align-self-end">
                                         <h3 className="ttl-mn">{report?.scrip_name} <small>{report?.segmentName}</small></h3>
-                                        <h4 className="ttl-sm">{report?.AType}</h4>
+                                        {/* <h4 className="ttl-sm">{report?.AType}</h4> */}
+                                        <h4 className="ttl-sm-nw grn-txt">Active</h4>
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>
-                                    <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
                                 </div>
                                 <div className="itm-date-btn">
                                     <a onClick={() => { goToDetail(report) }} className={"btn-sm cursor-pointer " +(report?.call_type_buy == 'BUY' ? 'grn-btn' : (report?.call_type_buy == 'SELL' ? 'red-btn' : ''))}>{report?.call_type_buy}</a>
                                     {report?.status == "Active" ? <h5 className={"ltp-percent grn-txt"}>Active</h5> : <h5 className={"ltp-percent " + report?.statusClass}>{report?.profitPercentage < 0 ? "Loss" : "Profit"} ({report?.profitPercentage} %)</h5>}
                                 </div>
+                                <div className="view-post">
+                                    <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
+                                </div> 
+                                
                             </div>
 
                         </div>)

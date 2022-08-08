@@ -257,7 +257,7 @@ function SBDesk() {
                 <div className="sbdesk-tab-cont">
                     <div className="sbdesk-tab-list">
                         {researchReport.map((report, i) => {
-                            return <div key={i} className="sbdesk-tab-itm">
+                            return <div key={i} className="sbdesk-tab-itm tab-itm-inactive">
                                 <div className="tab-itm-top">
                                     <div className="itm-top-ttl">
                                         <h3 className="ttl-mn">{report.sec_name || report.scrip_sec_desc}</h3>
