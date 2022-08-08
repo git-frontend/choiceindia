@@ -74,6 +74,7 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
+const LazyDisclaimer = React.lazy(() => import('./components/Disclaimer/Disclaimer'));
 const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditions/TermsConditions'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
@@ -359,6 +360,11 @@ function Routing() {
                         <Route exact path='/privacy-policy' element={
                             <React.Suspense>
                                 < LazyPrivacyPolicy />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/disclaimer' element={
+                            <React.Suspense>
+                                < LazyDisclaimer />
                             </React.Suspense>
                         } />
 
