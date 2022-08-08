@@ -79,10 +79,9 @@ function TrendingReports(props) {
                       {
                         list?.map((res, i) => {
 
-                          console.log('RESPONSE', res)
                           return (
 
-                            <div className="res-tab-itm">
+                            <div className="res-tab-itm" key={res.id}>
                               <div className="tab-itm-img">
                                 <img src={res?.feature_image ? res?.feature_image : ''} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
@@ -107,10 +106,10 @@ function TrendingReports(props) {
                       {
                         list?.slice(0, 4)?.map((res, i) => {
 
-                          console.log('RESPONSE', res)
+                          
                           return (
 
-                            <div className="res-tab-itm">
+                            <div className="res-tab-itm" key={res.id}>
                               <div className="tab-itm-img">
                                 <img src={res?.feature_image ? res?.feature_image : ''} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}

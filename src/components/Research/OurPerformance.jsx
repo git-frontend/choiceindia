@@ -20,11 +20,13 @@ function OurPerformance() {
   let month = today.getMonth() + 1;
   let day = today.getDate();
  
-  let finalmonth = (today.getMonth() - 2)
-  let weekly = (today.getDate() < 10 ?(today.getDate() - 7) + 30:today.getDate() - 7)
-  let monthly= (today.getDate() - 7) < 0 ? (today.getMonth()):today.getMonth()+1
+  // let finalmonth = (today.getMonth() - 2)
+  let fiveday = ((today.getDate() - 5) < 0 ?(today.getDate() - 5) + 30:today.getDate() - 5);
+  let weekly = ((today.getDate() - 7) < 0 ?(today.getDate() - 7) + 30:today.getDate() - 7)
+  let monthly= today.getMonth();
+  let finalmonth=(today.getDate() - 7 || today.getDate() - 5) < 0 ? today.getMonth():today.getMonth() + 1
 
-console.log("date",weekly)
+console.log("date",month)
   if (month < 10) {
     month = "0" + month;
   }
@@ -39,6 +41,9 @@ console.log("date",weekly)
   if (weekly < 10) {
     weekly = "0" + weekly;
   }
+  if (fiveday < 10) {
+    fiveday = "0" + fiveday;
+  }
 
   if (monthly < 10) {
     monthly = "0" + monthly;
@@ -48,21 +53,16 @@ console.log("date",weekly)
   var successFdate = today.getFullYear() + '-' + month + '-' + day;
 
 
-  var finaldate = day + '-' + finalmonth + '-' + today.getFullYear();
-  var counterwdate = weekly + '-' + monthly + '-' + today.getFullYear();
+  // var finaldate = day + '-' + finalmonth + '-' + today.getFullYear();
+  var fivedate = fiveday + '-' + finalmonth + '-' + today.getFullYear();
+  var counterwdate = weekly + '-' + finalmonth + '-' + today.getFullYear();
   var countermdate = day + '-' + monthly + '-' + today.getFullYear();
 
 
 
-  var successSdate = today.getFullYear() + '-' + finalmonth + '-' + day;
-  var successWeek = today.getFullYear() + '-' + monthly + '-' + weekly;
+  var successSdate = today.getFullYear() + '-' + finalmonth + '-' + fiveday;
+  var successWeek = today.getFullYear() + '-' + finalmonth + '-' + weekly;
   var successMonth = today.getFullYear() + '-' + monthly + '-' + day;
-
-  console.log("counterwdate",monthly);
-  console.log("counterweek",weekly);
-
-
-
 
   function loadperformance(date) {
 
@@ -112,9 +112,8 @@ console.log("date",weekly)
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
-
-      loadperformance(counterwdate);
-      loadsuccess(successWeek);
+      loadsuccess(successSdate);
+      loadperformance(fivedate);
       
 
 
@@ -136,30 +135,30 @@ console.log("date",weekly)
               </h3>
             </div>
           </div>
-          <div className="row gx-5 mt-5 pt-5 ">
+          <div className="row gx-5 mt-5 pt-5 d-none">
             <div className="col-xl-4 col-md-6">
 
-              <div className="progress-bar-performance">
+              {/* <div className="progress-bar-performance">
                 <div className="card">
                   <div className="percent">
                     <svg className="sb-bar">
                       <circle cx="150" cy="150" r="145"></circle>
                       <circle cx="150" cy="150" r="145" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
-                    </svg>
+                    </svg> */}
                     {/**<svg className="c-quant-bar">
                       <circle cx="125" cy="125" r="120"></circle>
                       <circle cx="125" cy="125" r="120" style={{ '--percent': '55' }}></circle>
   </svg>*/}
-                    <svg className="jiffy-signal-bar">
+                    {/* <svg className="jiffy-signal-bar">
                       <circle cx="100" cy="100" r="95"></circle>
                       <circle cx="100" cy="100" r="95" style={{ '--percent': `${Number(data) || 0}` }}></circle>
                     </svg>
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="col-xl-7 col-md-6">
-              <div className="performance-tabs SB-bloc-tabs">
+              {/* <div className="performance-tabs SB-bloc-tabs">
                 <button
                   className={count == 1 ? "tabs active-tabs" : " tabs" }
                   onClick={() => {setcount(1);loadsuccess(successWeek);loadperformance(counterwdate)}}
@@ -181,8 +180,8 @@ console.log("date",weekly)
                   Quarterly
 
                 </button>
-              </div>
-              <div className="heading-content-tabs ">
+              </div> */}
+              {/* <div className="heading-content-tabs ">
                 <div className="content active-content">
                   <div className="wrapper">
                     <div className="wrap">
@@ -191,7 +190,7 @@ console.log("date",weekly)
                       <p className="subtext">Expert</p>
                         <p className="percentage">{list.success_ratio_percentage||0}</p>
                       </div>
-                    </div>
+                    </div> */}
                     {/**<div className="wrap">
                       <div className="colorwrap green"></div>
                       <div className="wrap-des">
@@ -199,7 +198,7 @@ console.log("date",weekly)
                         <p className="percentage">60%</p>
                       </div>
 </div>*/}
-                    <div className="wrap">
+                    {/* <div className="wrap">
                       <div className="colorwrap yellow"></div>
                       <div className="wrap-des">
                         <p className="subtext">Jiffy Signal</p>
@@ -208,7 +207,7 @@ console.log("date",weekly)
                     </div>
                   </div>
 
-                </div>
+                </div> */}
 
                 {/**<div className={toggleState === 2 ? "content  active-content" : "content"}>
                   <div className="wrapper">
@@ -274,6 +273,47 @@ console.log("date",weekly)
 
               </div>
             </div>
+          </div>
+          <div className="performance-new-sec">
+              <div className="row justify-content-center">
+                <div className="col-xl-11 col-md-12">
+                    <div className="new-sec-sub">
+                        <div className="left-tb">
+                            <ul className="reset">
+                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(3);loadsuccess(successSdate);loadperformance(fivedate)}}>last 5 days </li>
+                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(1);loadsuccess(successWeek);loadperformance(counterwdate)}}>last week </li>
+                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(2);loadsuccess(successMonth);loadperformance(countermdate)}}>last month   </li>
+                            </ul>
+                        </div>
+                        <div className="right-tb">
+                          <div className="progress-bar-performance">
+                              <div className="card">
+                                  <div className="percent">
+                                    <svg className="sb-bar">
+                                      <circle cx="165" cy="165" r="145"></circle>
+                                      <circle cx="165" cy="165" r="145" style={{ '--percent': `${list.success_ratio_percentage || 0}` }}></circle>
+                                    </svg>
+                                    <div className="cont-perc">
+                                        <h3>{Math.round(list.success_ratio_percentage)||0}%</h3>
+                                        <h4>SB desk</h4>
+                                    </div>
+                                  </div>
+                                  <div className="percent">
+                                    <svg className="jiffy-signal-bar">
+                                      <circle cx="165" cy="165" r="145"></circle>
+                                      <circle cx="165" cy="165" r="145" style={{ '--percent': `${Number(data)|| 0}`}}></circle>
+                                    </svg>
+                                    <div className="cont-perc">
+                                        <h3 className="sgnl-txt">{Math.round(data)|| 0}%</h3>
+                                        <h4>jiffy signal</h4>
+                                    </div>
+                                  </div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
