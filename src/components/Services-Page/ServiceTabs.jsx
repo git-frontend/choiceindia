@@ -129,7 +129,7 @@ const settings = {
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('management') }}>
-										<span c-lassName="cont-img">
+										<span className="cont-img">
 										<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
 										{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
 										</span>

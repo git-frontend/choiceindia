@@ -24,7 +24,7 @@ function OurPerformance() {
   let weekly = (today.getDate() < 10 ?(today.getDate() - 7) + 30:today.getDate() - 7)
   let monthly= (today.getDate() - 7) < 0 ? (today.getMonth()):today.getMonth()+1
 
-console.log("date",weekly)
+
   if (month < 10) {
     month = "0" + month;
   }
@@ -58,8 +58,7 @@ console.log("date",weekly)
   var successWeek = today.getFullYear() + '-' + monthly + '-' + weekly;
   var successMonth = today.getFullYear() + '-' + monthly + '-' + day;
 
-  console.log("counterwdate",monthly);
-  console.log("counterweek",weekly);
+  
 
 
 
@@ -77,9 +76,7 @@ console.log("date",weekly)
     }
     ResearchService.performanceratio(request).then(
       res => {
-        console.log("signal",res.Response.EQ.SR);
         setdata(res.Response.EQ.SR);
-        console.log("signal");
       }
     )
   };
@@ -101,7 +98,7 @@ console.log("date",weekly)
     ResearchService.successratio(request).then(
       res => {
         setlist(res.response);
-        console.log("signal2");
+        
       }
     )
   };
