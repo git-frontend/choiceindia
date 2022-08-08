@@ -197,6 +197,9 @@
             border-radius: 18px;
             padding: 2rem 1rem;
             margin-bottom: 9rem;
+            background: $whiteColor;
+            position: relative;
+            z-index: 9;
                 .pricing-data{
                     tbody{
                         td{

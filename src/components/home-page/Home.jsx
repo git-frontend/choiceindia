@@ -19,7 +19,7 @@ import {
 function Home() {
 
 
-	const [skeleton, setSkeleton] = useState(() => true);
+	// const [skeleton, setSkeleton] = useState(() => true);
 	const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -27,9 +27,9 @@ function Home() {
 	// function myGreeting() {
 	//   setSkeleton(() => false);
 	// }
-	setTimeout(() => {
-		setSkeleton(() => false);
-	}, 200)
+	// setTimeout(() => {
+	// 	setSkeleton(() => false);
+	// }, 200)
 
 	useEffect(() => {
         setRenderCount(true)
@@ -48,8 +48,8 @@ function Home() {
 	return (
 		<div className="Home">
 
-			{
-				skeleton ? <Template1 /> :
+			{/* {
+				skeleton ? <Template1 /> : */}
 					<main className='home-main'>
 
 						{/* <div className='home-banner-ved'>
@@ -87,7 +87,7 @@ function Home() {
 									<div className="col-lg-7">
 										<div className="count-value-list">
 											<div className="count-value-item">
-												<h4>2 Lakh+</h4>
+												<h4>5 Lakh+</h4>
 												<h5>Clients</h5>
 											</div>
 											<div className="count-value-item">
@@ -122,7 +122,7 @@ function Home() {
 
 
 					</main>
-			}
+			{/* } */}
 
 
 

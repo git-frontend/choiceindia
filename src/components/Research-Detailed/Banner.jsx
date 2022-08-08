@@ -1,10 +1,29 @@
 
-import React from "react";
-import thumb2 from '../../assets/images/research/pdf-ico.webp';
+import React, { useEffect, useState } from "react";
+import thumb2 from '../../assets/images/research/pdf-ico.svg';
+import utils from "../../Services/utils";
+import { API_URLS } from "../../Services/API-URLS";
 
 function Banner(props) {
 
   // console.log('Banner',props.data);
+
+  let api = new API_URLS();
+
+  const [image, setImage] = useState(false);
+
+  useEffect(() => {
+    if(props?.data?.report_subtype_slug == 'equity-research-report'){
+      setImage(() => true);
+    } 
+  },[props])
+
+  function redirectTo(id){
+    // console.log('TTT',id);
+    let url = api.getExpertDetailURL(id);
+    window.open(url);
+    // console.log('TTTURL',url);
+  }
 
   return (
     <div>
@@ -18,7 +37,13 @@ function Banner(props) {
                 <a href={props?.data?.file_url? props?.data?.file_url : '' } className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
               </div>
               <div className="bnr-left">
-                <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1>
+                {/* <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1> */}
+                {
+                  image? 
+                  <h1 className="title"> <span>{props?.data?.title? props?.data?.title : '' }</span></h1>:
+                  <h1 className="title">{props?.data?.report_name? props?.data?.report_name : ''} Report : <span>{props?.data?.title? props?.data?.title : '' }</span></h1>
+                }
+                
                 <div className="api-cont-des" dangerouslySetInnerHTML={{__html: props?.data?.description? props?.data?.description : ''}}>
                   {/* <p>With a revenue market share of 1.5%, Windlas Biotech Ltd. (WBL) is among the top-five contract development &amp; manufacturing organization (CDMO) in the domestic pharma sector. It serves seven out of top-10 pharma formulation companies in India. The company focuses on therapeutic areas like cardiovascular, anti-diabetics, neurology, gastrointestinal, vitamins, minerals, nutrients etc. WBL operated in three verticals, namely, the CDMO services & products, the Domestic trade generics & OTC brands and the Exports segment. In FY22, these verticals generated 82.3%, 13.2% and 4.5%, respectively, to the total business from the sales of products.
                   </p>
@@ -47,33 +72,40 @@ function Banner(props) {
             </div>
           </div>
 
-          <div className="row">
+          {
+            image? 
+            <div className="row">
               <div className="col-md-12">
                   <div className="mid-box-value">
                         <div className="mid-box-left">
-                            <h2 className="ttl-mn">WINDLAS BIOTECH LTD. <span>Published at 4th Apr’22 09:45:32 AM</span></h2>
+                            {/* <h2 className="ttl-mn">{props?.data?.title? props?.data?.title : ''} <span>Published at 4th Apr’22 09:45:32 AM</span></h2> */}
+                            <h2 className="ttl-mn">{props?.data?.title? props?.data?.title : ''} <span>Published at {utils.formatDate(new Date(props?.data?.publish_date? props?.data?.publish_date: ''), "dd MMMM'yy hh:mm:ss TT")}</span></h2>
                             <div className="value-list">
                                 <div className="vl-list-itm">
                                     <h4>CMP</h4>
-                                    <h5>222.4</h5>
+                                    <h5>{props?.data?.cmp? props?.data?.cmp : ''}</h5>
                                 </div>
                                 <div className="vl-list-itm">
                                     <h4>UPSIDE POTENTIAL</h4>
-                                    <h5 className="grn-txt">30.1 %</h5>
+                                    <h5 className="grn-txt">{props?.data?.upside_potential_percentage? props?.data?.upside_potential_percentage : ''} %</h5>
                                 </div>
                                 <div className="vl-list-itm">
                                     <h4>HOLDING PERIOD</h4>
-                                    <h5>24 WEEKS</h5>
+                                    <h5>{props?.data?.holding_period? props?.data?.holding_period : ''}</h5>
                                 </div>
                             </div>
                         </div>
                         <div className="mid-box-right">
                             <h3 className="ttl-rght">Recommendation</h3>
-                            <a href="/" className="btn-buy">BUY</a>
+                            <a className="btn-buy" onClick={() => redirectTo(props?.data?.uuid? props?.data?.uuid : '')}>{props?.data?.recommendation? props?.data?.recommendation : ''}</a>
                         </div>
                   </div>
               </div>
-          </div>
+          </div> : '' 
+          }
+
+
+
         </div>
       </section>
 

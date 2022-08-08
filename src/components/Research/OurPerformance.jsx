@@ -19,10 +19,12 @@ function OurPerformance() {
   var today = new Date();
   let month = today.getMonth() + 1;
   let day = today.getDate();
+ 
   let finalmonth = (today.getMonth() - 2)
-  let weekly = (today.getDate() -7)
-  let monthly= (today.getMonth())
+  let weekly = (today.getDate() < 10 ?(today.getDate() - 7) + 30:today.getDate() - 7)
+  let monthly= (today.getDate() - 7) < 0 ? (today.getMonth()):today.getMonth()+1
 
+console.log("date",weekly)
   if (month < 10) {
     month = "0" + month;
   }
@@ -47,17 +49,17 @@ function OurPerformance() {
 
 
   var finaldate = day + '-' + finalmonth + '-' + today.getFullYear();
-  var counterwdate = weekly + '-' + month + '-' + today.getFullYear();
+  var counterwdate = weekly + '-' + monthly + '-' + today.getFullYear();
   var countermdate = day + '-' + monthly + '-' + today.getFullYear();
 
 
 
   var successSdate = today.getFullYear() + '-' + finalmonth + '-' + day;
-  var successWeek = today.getFullYear() + '-' + month + '-' + weekly;
+  var successWeek = today.getFullYear() + '-' + monthly + '-' + weekly;
   var successMonth = today.getFullYear() + '-' + monthly + '-' + day;
 
-  console.log("counterwdate",counterwdate);
-  console.log("counterwdate",countermdate);
+  console.log("counterwdate",monthly);
+  console.log("counterweek",weekly);
 
 
 

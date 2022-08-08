@@ -19,7 +19,7 @@ function AppBannerBottom() {
     slidesToShow: 4,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     swipeToSlide: true,
    

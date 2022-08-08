@@ -173,6 +173,7 @@
                         border-radius: 20px;
                         width: 100%;
                         object-fit: cover;
+                        height: 251px;
                     }
                     @media (max-width: $xs) {
                       width: 100%;
@@ -916,7 +917,7 @@
           overflow: hidden;
           border-radius: 20px;
           background: $primary;
-          padding: 1rem 3rem 0;
+          padding: 0;
           transition: 0.3s all ease-in;
 
           @media (max-width:$sm) {
@@ -935,7 +936,7 @@
               color: $whiteColor;
               text-align: center;
               background: #221F2080;
-              border-radius: 0;
+              border-radius: 0 0 20px 20px;
               transition: 0.3s all ease-in;
 
               h5 {
@@ -977,6 +978,7 @@
 
               img {
                   margin: 0 auto;
+                  width: 100%;
               }
           }
       }
@@ -1062,6 +1064,7 @@
                       background: #E6E7E8;
                       content: '';
                       border-radius: 50%;
+                      opacity: 1;
                   }
               }
           }
@@ -1257,8 +1260,8 @@
         stroke-width: 10;
         stroke-linecap: round;
         &:last-of-type {
-          stroke-dasharray: 750px;
-          stroke-dashoffset: calc(750px - (750px * var(--percent)) / 100  );
+          stroke-dasharray: 688px;
+          stroke-dashoffset: calc(700px - (610px * var(--percent)) / 100  );
           stroke: #3498db;
         }
       }
@@ -1423,4 +1426,15 @@
   100% { transform: rotate(360deg); }
 }
 
+.disabled-btn{
+  opacity: 0.5;
+}
 
+.border-0px{
+  border: 0px;
+}
+
+.btn-ptr{
+  cursor: pointer;
+
+}

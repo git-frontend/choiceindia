@@ -18,7 +18,7 @@ function BannerSBrokerHindi() {
                                     <h2 className="tlt2">बिना डिपोजिट</h2>
                                 </div>
                                 <div className="right-sec">
-                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} />
+                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"} />
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
@@ -38,7 +38,7 @@ function BannerSBrokerHindi() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm />
+                                <SubBrokerForm language='hindi' />
                             </div>
                         </div>
                     </div>

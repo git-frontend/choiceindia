@@ -2,9 +2,7 @@
 import React from "react";
 import Banner from '../Investors-info/Banner';
 import CodeConductMenu from './CodeConductMenu';
-import Yeardetail from '../Investors-info/Yeardetail';
 
-import { AiFillCaretUp } from "react-icons/ai";
 import "../Investors-info/investorsinfo.scss";
 import "../Investors-info/navbar.scss";
 import Template1 from "../Common-features/Template1";
@@ -14,6 +12,7 @@ import ChoiceLTP from "../Common-features/ChoiceLTP";
 import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+
 
 function CodeConduct() {
 
@@ -44,7 +43,7 @@ function CodeConduct() {
 
       {
         skeleton ? <Template1 /> :
-          <div className="code-conduct-parent">
+          <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
 
               <Banner />

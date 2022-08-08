@@ -36,7 +36,7 @@ function BannerCareer() {
                       <span className='blackcolor'>App Store</span>
                     </a>
                   </div>
-                  <p>Trusted by <span className='strng'>4+ Lakh Users</span> </p>
+                  <p>Trusted by <span className='strng'>5+ Lakh Users</span> </p>
                 </div>
               </div>
             </div>

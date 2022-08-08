@@ -3,7 +3,7 @@
 
 
 .research-detailed{
-  padding-top: 5rem;
+  padding: 5rem 0;  
   position: relative;
   .right-pdf-sec{
     position: relative;
@@ -164,6 +164,10 @@
         -o-transition: 0.5s;
         background: #00B26B;
         margin-top: 2.5rem;
+
+        &:hover{
+          cursor: pointer;
+        }
       }
       
       @media (max-width: $md) {

@@ -43,10 +43,13 @@ body{
     // text-shadow:0 0 4px #00000040;
     font-weight: 600;
     font-family: $font-family-poppins-semibold;
-    @media (max-width: 767px){
+    @media (max-width: $sm){
         font-size: 2.5rem;
         line-height: 4rem;
         font-size: 2.3rem;
+        br{
+            display: none;
+        }
     }
 }
 
@@ -54,8 +57,9 @@ body{
     font-size: 3rem;
     color: $primary;
     font-family: $font-family-poppins-semibold;
-    @media (max-width: 767px){
+    @media (max-width: $sm){
         font-size: 2rem;
+        line-height: 3rem;
     }
 }
 
@@ -63,7 +67,7 @@ body{
     font-size: 3.25rem;
     color: $primary;
     font-family: $font-family-poppins-semibold;
-    @media (max-width: 767px){
+    @media (max-width: $sm){
         font-size: 1.8rem;
     }
 }
@@ -90,7 +94,7 @@ body{
                display: none;
            }
         }
-        @media (max-width: 767px){
+        @media (max-width: $sm){
             font-size: 1.4rem;
         }
         &.nm-text{
@@ -158,4 +162,50 @@ body{
 
 .modal{
     z-index: 99999;
+}
+
+
+@-webkit-keyframes toTopFromBottom {
+    49% {
+        -webkit-transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes toTopFromBottom {
+    49% {
+        -moz-transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        -moz-transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+@keyframes toTopFromBottom {
+    49% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
 }

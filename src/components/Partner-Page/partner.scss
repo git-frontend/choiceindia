@@ -112,6 +112,19 @@
                     width: 50px;
                 }
               }
+              .tb-ico{
+                display: block;
+                overflow: hidden;
+              }
+              &:hover{
+                .tb-ico{
+                    .img-fluid{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                    }
+                }
+              }
           }
       }
   }
@@ -366,6 +379,13 @@
                 display: block;
                 margin: 0 auto;
                 height: 100%;
+                .cont-img{
+                    display: block;
+                    overflow: hidden;
+                    .img-fluid{
+                        height: 71px;
+                    }
+                }
             }
 
             h4 {
@@ -419,6 +439,13 @@
                     transform: rotate(4deg);
                     opacity: 1;
                     visibility: visible;
+                }
+                .cont-img{
+                    .img-fluid{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                    }
                 }
             }
 

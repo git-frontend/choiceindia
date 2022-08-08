@@ -1,0 +1,27 @@
+@import '../../assets/css/customvariable.scss';
+
+
+.seo-privacy-policy-div{
+    // background: $abt-bg;
+    padding: 4rem 0;
+    text-align: center;
+  
+    // .title{
+    //     color: $primary;
+    // font-weight: 600;
+    // font-size: 4.125rem;
+    // line-height: 6.1875rem;
+    // font-family: $font-family-poppins-semibold;
+    // }
+}
+
+.privacy-policy-content-div{
+    padding:5rem 0 5rem 0;
+    .privacy-policy-content{
+        p{
+            font-size: 1.5rem;
+            line-height: 2.4rem;
+            margin-bottom: 2rem;
+        }
+    }
+}

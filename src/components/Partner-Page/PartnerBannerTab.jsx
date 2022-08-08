@@ -173,8 +173,11 @@ function PartnerBannerTab() {
                   return (
                     <button   className={classNameNm}
                       onClick={() => { setstore(index) ;setCount(index)}}>
-                      <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />
-                      {/* <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} /> */}
+                        <span className="tb-ico">
+                          <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />
+                          {/* <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} /> */}
+                        </span>
+                      
                       <h4>{res.button}</h4>
 
                     </button>

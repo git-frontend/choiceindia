@@ -10,6 +10,7 @@ import { Link, useNavigate, NavLink } from "react-router-dom";
 import CommonModal from "./CommonModal";
 import { useState } from "react";
 import { useEffect } from "react";
+import Marquee from 'react-fast-marquee';
 function Footer() {
   let toggleModal=(val)=>{
     setData1(val)
@@ -98,7 +99,7 @@ useEffect(()=>{
                               <h4>Company</h4>
                             </li>
                             <li>
-                              <NavLink to="/about-us" target="_blank">Our Team</NavLink>
+                              <NavLink to="/about-us">Our Team</NavLink>
                             </li>
                             <li>
                               <NavLink to="/investors">Investors</NavLink>
@@ -201,7 +202,8 @@ useEffect(()=>{
                             <NavLink to="/privacy-policy">Privacy Policy</NavLink>
                           </li>
                           <li className="cursor-pointer">
-                            <a onClick={()=>{openModal()}}>Terms &amp; Conditions</a>
+                            {/* <a onClick={()=>{openModal()}}>Terms &amp; Conditions</a> */}
+                            <Link to="/terms-conditions">Terms &amp; Conditions</Link>
                           </li>
                         </ul>
                       </div>
@@ -243,6 +245,54 @@ useEffect(()=>{
               </div>
             </div>
           </div>
+
+          <div className="footer-marquee">
+            <Marquee direction="left" speed={100}   delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
+              <p>Attention Investors: ( 1 ) Prevent Unauthorized Transactions in your account --&#62; Update your Mobile Number and /or email id with us. ( 2 ) Receive alerts on your Registered Mobile for all debit and other imp</p>
+            </Marquee>
+          </div>
+          <div className="quick-links-footer">
+                <span className="btn-links">
+                    Quick Links
+                </span>
+                <ul className="links-footer-quick">
+                  <li>
+                    <a href="/">Investor Awareness</a>
+                  </li>
+                  <li>
+                    <a href="/">Watchout Investors</a>
+                  </li>
+                  <li>
+                    <a href="/">Scores</a>
+                  </li>
+                  <li>
+                    <a href="/">Investor Charter</a>
+                  </li>
+                  <li>
+                    <a href="/">Investor Complaints</a>
+                  </li>
+                  <li>
+                    <a href="/">Terms of Use</a>
+                  </li>
+                  <li>
+                    <a href="/">Privacy Policy</a>
+                  </li>
+                  <li>
+                    <a href="/">Disclaimer</a>
+                  </li>
+                  <li>
+                    <a href="/">Sitemap</a>
+                  </li>
+                  <li>
+                    <a href="/">CEBPL Policies</a>
+                  </li>
+                  <li>
+                    <a href="/">Client Details Update</a>
+                  </li>
+                </ul>
+            </div> 
+
+          
         </footer>
       </div>
 
