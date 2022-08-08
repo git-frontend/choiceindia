@@ -1,0 +1,64 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+
+
+.bannersec{
+	padding: 5rem  0 0;
+	background-image: url('../../assets/images/file-download/banner-bg.png');
+	background-repeat: no-repeat;
+    background-size: contain;
+	background-position: 50% 50%;
+    height: 520px;
+    width: 100%;
+    position: relative;
+	.imgwrap{
+		position: absolute;
+    left: 0;
+    width: 100%;
+    top: 50%;
+    transform: translate(0, -39%);
+    z-index: 9;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	}
+
+}
+
+.bluecolor{
+	background-color: #0066B3;
+	padding: 4rem 0;
+	top: -33px;
+    position: relative;
+	h1{
+		color: #fff;
+		font-size: 3.8125rem;
+		line-height: 9.5px;
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.advisors{
+	padding: 5rem 0;
+	h2{
+		padding-bottom: 3rem;
+	}
+	.subtext{
+		font-size: 1.9375rem;
+		line-height: 2.875rem;
+		color: #707070;
+		font-weight: 400;
+	}
+}
+
+.filedownloadfaq{
+	padding: 3rem 0;
+	.accordion-button::after{
+		background-image: url(../../assets/images/file-download/plus.png);
+	}
+	.accordion-button:not(.collapsed)::after{
+		background-image: url(../../assets/images/file-download/minus.png);
+	}
+}
