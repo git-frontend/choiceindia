@@ -128,13 +128,13 @@ console.log("date",month)
     <div>
       <section className="our-performance">
         <div className="container">
-          {/* <div className="row">
+          <div className="row">
             <div className="col-md-12">
               <h3 className="heading text-center">
                 Our Performance
               </h3>
             </div>
-          </div> */}
+          </div>
           <div className="row gx-5 mt-5 pt-5 d-none">
             <div className="col-xl-4 col-md-6">
 
