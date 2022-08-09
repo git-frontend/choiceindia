@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 import { Accordion } from "react-bootstrap";
 
-import download from '../../assets/images/file-download/export.png';
+import download from '../../assets/images/file-download/export.webp';
 
 function FileDownloadFaq() {
     return (

@@ -5,14 +5,14 @@
 
 .bannersec{
 	padding: 5rem  0 0;
-	background-image: url('../../assets/images/file-download/banner-bg.png');
+	background-image: url('../../assets/images/file-download/banner-bg.webp');
 	background-repeat: no-repeat;
     background-size: contain;
 	background-position: 50% 50%;
     height:600px;
     width: 100%;
     position: relative;
-	@media (max-width:767px) {
+	@media (max-width:$sm) {
 	display: none;
 	}
 	.imgwrap{
@@ -30,16 +30,16 @@
 }
 
 .bluecolor{
-	background-color: #0066B3;
+	background-color: $bgcolor-blue;
 	padding: 4rem 0;
 	bottom: 73px;
     position: relative;
-	@media (max-width:767px) {
+	@media (max-width:$sm) {
 		bottom: 0;
 		margin-top: 2rem;
 	}
 	h1{
-		color: #fff;
+		color: $whiteColor;
 		font-size: 3.8125rem;
 		line-height: 9.5px;
 		display: flex;
@@ -55,9 +55,9 @@
 	.subtext{
 		font-size: 1.9375rem;
 		line-height: 2.875rem;
-		color: #707070;
+		color: $secondary;
 		font-weight: 400;
-		@media (max-width:767px) {
+		@media (max-width:$sm) {
 			font-size: 1.75rem;
 		}
 	}
@@ -68,8 +68,11 @@
 	h4{
 		font-size: 1.75rem;
 		line-height: 2.625rem;
-		color: #000000;
+		color: $darkblack;
 		font-weight: 600;
+		@media (max-width:768px) {
+			font-size: 1.5rem;
+		}
 	}
 	.accordion-item{
 		border: none;
@@ -81,7 +84,7 @@
 	}
 	.accordion-flush .accordion-item .accordion-button{
 		background: #dcdcdc33;
-		color: #000000;
+		color: $darkblack;
 		font-size: 1.75rem;
 		line-height: 2.625rem;
 		font-weight: 600;
@@ -93,7 +96,7 @@
 		background-size: contain;
 	}
 	.accordion-button:not(.collapsed)::after{
-		background-image: url(../../assets/images/file-download/minus.png);
+		background-image: url(../../assets/images/file-download/minus.webp);
 		height: 18px;
 		width: 18px;
 		background-size: contain;
@@ -105,15 +108,18 @@
 			li{
 				display: flex;
 				justify-content: space-between;
-				color: #707070;
+				color: $secondary;
 				font-size: 1.5rem;
 				line-height: 2.25rem;
 				padding-bottom: 15px;
-				@media (max-width:767px) {
+				@media (max-width:$sm) {
 					font-size: 1.4rem;
 				}
+				@media (min-width:767px) and (max-width:768px) {
+					font-size: 1.2rem;
+				}
 				.text{
-					@media (max-width:767px) {
+					@media (max-width:$sm) {
 						width: 55%;
 						
 					}
@@ -121,24 +127,28 @@
 				.download{
 					display: flex;
 					text-align: right;
-					@media (max-width:767px) {
+					// width: 20%;
+					@media (max-width:$sm) {
 						display: block;
 						width: 45%;
 					}
 					.downloadtext{
-						color: #000000;
+						color: $darkblack;
 						font-size: 1.5rem;
 						line-height: 2.25rem;
 						font-weight: 500;
 						padding-left: 10px;
 						width: 80%;
-						@media (max-width:767px) {
+						@media (max-width:$sm) {
 							font-size: 1.4rem;
+						}
+						@media (min-width:767px) and (max-width:768px) {
+							font-size: 1.2rem;
 						}
 					}
 					img{
 						width: 20%;
-						@media (max-width:767px) {
+						@media (max-width:$sm) {
 							width: auto;
 						}
 					}
