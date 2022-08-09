@@ -85,19 +85,45 @@ body{
             padding: 2.5rem;
             border-radius: 20px;
             border: 2px solid #E0EFE4;
+            position: relative;
+            min-height: 400px;
             .mode-itm-mn{
                 display: none;
                 h3{
                     font-family: $font-family-poppins-semibold;
                     color: $primary;
-                    margin-bottom: 2rem;
+                    margin-bottom: 3rem;
+                    font-size: 2rem;
                 }
+                p{
+                    color: $secondary;
+                    font-size: 1.675rem;
+                    line-height: 2.6rem;
+                }
+                .btn-bg{
+                    margin-top: 2rem;
+                }
+            }
+            .mode-itm-top{
+                h3{
+                    position: absolute;
+                    left: 0rem;
+                    transform: rotate(-90deg);
+                    bottom: 5rem;
+                    font-family: "PoppinsRegular", sans-serif;
+                    width: 100%;
+                    white-space: nowrap;
+                }
+               
             }
             &.list-itm-active{
                 width: 68%;
                 background: #E0EFE4;
                 .mode-itm-mn{
                     display: block;
+                }
+                .mode-itm-top{
+                    display: none;
                 }
             }
             

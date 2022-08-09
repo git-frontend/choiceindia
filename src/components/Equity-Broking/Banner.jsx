@@ -51,6 +51,9 @@ function Banner() {
                                             platforms to make long term investments. With the value added technology tools &amp; one of the most sought after research team
                                             in the media, we make your equity trading
                                             predictable and your money grow!</p>
+                                        <div className="justify-content-end d-flex">
+                                            <a href="/" className="btn-bg">Explore</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="mode-list-itm">
