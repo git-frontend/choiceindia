@@ -1,10 +1,12 @@
 
-import React from "react";
+import React,{useState} from "react";
 // import videoBg from '../../assets/images/insurance/insuringShield.mp4'
 import Bannerimage from '../../assets/images/equity-broking/Coingif.gif'
 import LazyLoader from '../Common-features/LazyLoader';
+import Equity from "../../Data/Equity";
 
 function Banner() {
+    const [selected, setSelected] = useState(0);
 
     return (
         <div>
@@ -41,7 +43,26 @@ function Banner() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="trading-mode-list">
-                                <div className="mode-list-itm list-itm-active">
+
+                                {
+                                    Equity.map((res,index)=>{
+                                        let classNameNm = "mode-list-itm" + ((index === selected) ? 'list-itm-active' : '')
+
+                                        return(
+                                            <div key={res.id}  className={classNameNm} onMouseOver={() => setSelected(index)} onMouseLeave={() => setSelected(0)} >
+                                            <div className="mode-itm-top">
+                                                <h3>{res.title}</h3>
+                                            </div>
+                                            <div className="mode-itm-mn">
+                                                <h3>{res.title2}</h3>
+                                                <p>{res.description}</p>
+                                            </div>
+                                        </div>
+
+                                        )
+                                    })
+                                }
+                                {/* <div className="mode-list-itm list-itm-active">
                                     <div className="mode-itm-top">
                                         <h3>Equity Intraday</h3>
                                     </div>
@@ -90,7 +111,7 @@ the investor to diversify more.</p>
                                         <h3>Future &amp; Options</h3>
                                         <p>Trade in the futures and options segment with choice on our cutting edge trading platform to find all the right tools in your dogo at competitive brokerage plans. Enjoy higher leverage, volatility and better payouts in F&amp;O segment.</p>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
