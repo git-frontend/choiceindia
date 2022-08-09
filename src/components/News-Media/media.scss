@@ -6,12 +6,13 @@
 
 .bannersec{
 	padding: 5rem  0 0;
-	background-image: url('../../assets/images/news-media/banner-bg.png');
+	background-image: url('../../assets/images/news-media/banner-bg.webp');
 	background-repeat: no-repeat;
     background-size: contain;
 	background-position: 50% 50%;
     height:600px;
     width: 100%;
+    background-color: #F2F7FD;
     position: relative;
 	@media (max-width:$sm) {
 	display: none;
@@ -23,7 +24,7 @@
     top: 30%;
     transform: translate(0, -39%);
     z-index: 9;
-	height: 500px;
+	height: 300px;
 	display: flex;
 	justify-content: center;
 	}
@@ -32,11 +33,14 @@
 .bluecolor{
 	background-color: $bgcolor-blue;
 	padding: 4rem 0;
-	bottom: 204px;
+	bottom: 184px;
     position: relative;
 	@media (max-width:$sm) {
 		bottom: 0;
 		margin-top: 2rem;
+	}
+    @media (min-width:767px) and (max-width:1024px) {
+		bottom: 219px;
 	}
 	h1{
 		color: $whiteColor;
@@ -91,6 +95,13 @@
             font-family: $font-family-poppins-regular;
             text-align: center;
             height: 100%;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (min-width:767px) and (max-width:1024px) {
+                font-size: 1.4rem;
+            }
         }
     }
    
