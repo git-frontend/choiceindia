@@ -1,0 +1,42 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.mainwrapquick{
+    padding: 4.75rem 0;
+   
+    .title {
+        color: $primary;
+        font-size: 3.5rem;
+        line-height: 5.25rem;
+        font-family: $font-family-poppins-regular;
+        font-weight: 600;
+        text-align: center;
+        padding-bottom: 4.75rem;
+        @media screen and (max-width:767px) {
+            font-size: 3rem;
+            line-height: 3.25rem;
+        }
+    }
+    .quicklinkswrap {
+        border-radius: 20px;
+        border: #C2C2C2 solid 1px;
+        padding: 1.5rem;
+        margin-bottom: 3rem;
+        
+    
+        .border-bottom {
+            &:last-child {
+                border-bottom: none !important;
+            }
+        }
+        .head {
+            color: $primary;
+            font-weight: 600;
+            margin-bottom: 1.8rem;
+            margin-top: 1rem;
+            font-size: 1.7rem;
+        }
+        
+    }
+}

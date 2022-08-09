@@ -75,6 +75,8 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
+const Lazycebplpolicies = React.lazy(() => import('./components/CEBPLPolicies/CEBPL-Policies'));
+const LazyInvestorcharter = React.lazy(() => import('./components/InvestorCharter/Investor-Charter'));
 const LazyDisclaimer = React.lazy(() => import('./components/Disclaimer/Disclaimer'));
 const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditions/TermsConditions'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
@@ -305,9 +307,20 @@ function Routing() {
                                 < Lazyremisier />
                             </React.Suspense>
                         } />
- <Route exact path='/newsmedia' element={
+                        <Route exact path='/newsmedia' element={
                             <React.Suspense>
                                 < Lazynewsmedia />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/cebpl-policies' element={
+                            <React.Suspense>
+                                < Lazycebplpolicies />
+                            </React.Suspense>
+                        } />
+
+<Route exact path='/Investor-charter' element={
+                            <React.Suspense>
+                                < LazyInvestorcharter />
                             </React.Suspense>
                         } />
 
