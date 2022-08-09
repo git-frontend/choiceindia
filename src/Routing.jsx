@@ -77,6 +77,7 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazycebplpolicies = React.lazy(() => import('./components/CEBPLPolicies/CEBPL-Policies'));
 const LazyInvestorcharter = React.lazy(() => import('./components/InvestorCharter/Investor-Charter'));
+const Lazyinvestorawareness = React.lazy(() => import('./components/InvestorAwareness/Investor-Awareness'));
 const LazyDisclaimer = React.lazy(() => import('./components/Disclaimer/Disclaimer'));
 const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditions/TermsConditions'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
@@ -323,7 +324,11 @@ function Routing() {
                                 < LazyInvestorcharter />
                             </React.Suspense>
                         } />
-
+<Route exact path='/investor-awareness' element={
+                            <React.Suspense>
+                                < Lazyinvestorawareness />
+                            </React.Suspense>
+                        } />
                         <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
                                 < Lazyonlinetradingapp />
