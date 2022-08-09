@@ -5,7 +5,7 @@ import image1 from '../../assets/images/about-us/vinita-patodia.webp';
 import image2 from '../../assets/images/about-us/kamal-sir.webp';
 import image3 from '../../assets/images/about-us/suyash-patodia.webp';
 import image4 from '../../assets/images/about-us/arun-sir.webp';
-import image5 from '../../assets/images/about-us/person-img2.webp';
+import image5 from '../../assets/images/about-us/ajay-sir.webp';
 import image6 from '../../assets/images/about-us/subodh-kumar-agarwal.webp';
 import image7 from '../../assets/images/about-us/person-img2.webp';
 import image8 from '../../assets/images/about-us/sudha-bhushan.webp';

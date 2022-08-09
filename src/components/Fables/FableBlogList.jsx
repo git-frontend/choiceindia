@@ -29,6 +29,7 @@ function FableBlogList() {
         FablesTrending.fabalFolder(pros).then(
             res => {
                 setPost(res.data.posts);
+                setCheck(false)
                 // setPostAll(res.data.posts)
                 console.log("check222", res.data.posts)
                 // loadfaqFolder(res[0].category_linkage);

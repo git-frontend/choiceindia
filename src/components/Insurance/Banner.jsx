@@ -38,31 +38,31 @@ function Banner() {
     <section className="direct-links">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-xl-8">
+                    <div className="col-xl-7 col-md-12">
                         <ul className="reset">
                             <li>
-                                <a href="#" className="link-itm">
+                                <div className="link-itm">
                                     <span className="link-itm-img">
-                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"50"} />
+                                        <LazyLoader src={Quote} alt={"Banner Images"} className={"img-fluid sm-img"} width={"60"} height={"60"} />
                                     </span>
-                                    <h4>Get Quote</h4>
-                                </a>
+                                    <h4>Get Instant <br/>Quotations</h4>
+                                </div>
                             </li>
                             <li>
-                                <a href="#" className="link-itm">
+                                <div className="link-itm">
                                     <span className="link-itm-img">
                                         <LazyLoader src={Claim} alt={"Banner Images"} className={"img-fluid sm-img"} width={"50"} height={"69"} />
                                     </span>
-                                    <h4>Claim</h4>
-                                </a>
+                                    <h4>Hassle free <br/>Claim</h4>
+                                </div>
                             </li>
                             <li>
-                                <a href="#" className="link-itm">
+                                <div className="link-itm">
                                     <span className="link-itm-img">
                                         <LazyLoader src={Renewal} alt={"Banner Images"} className={"img-fluid sm-img"} width={"49"} height={"50"} />
                                     </span>
-                                    <h4>Renewal</h4>
-                                </a>
+                                    <h4>One Click <br/>Renewal</h4>
+                                </div>
                             </li>
                         </ul>
                     </div>

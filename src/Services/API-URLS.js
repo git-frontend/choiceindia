@@ -399,7 +399,7 @@ export class API_URLS {
         return this.bannerURL + this.fableCategoryURL
     }
     getFableFolderURL(id) {
-        return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
+        return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
     }
     /** faq search API url */
     getFaqSearchURL(pros) {

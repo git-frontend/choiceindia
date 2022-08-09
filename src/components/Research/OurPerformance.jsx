@@ -26,7 +26,7 @@ function OurPerformance() {
   let monthly= today.getMonth();
   let finalmonth=(today.getDate() - 7 || today.getDate() - 5) < 0 ? today.getMonth():today.getMonth() + 1
 
-console.log("date",month)
+
   if (month < 10) {
     month = "0" + month;
   }
@@ -77,9 +77,9 @@ console.log("date",month)
     }
     ResearchService.performanceratio(request).then(
       res => {
-        console.log("signal",res.Response.EQ.SR);
+        
         setdata(res.Response.EQ.SR);
-        console.log("signal");
+        
       }
     )
   };
@@ -101,7 +101,7 @@ console.log("date",month)
     ResearchService.successratio(request).then(
       res => {
         setlist(res.response);
-        console.log("signal2");
+   
       }
     )
   };
