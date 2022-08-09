@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 
 import { Accordion } from "react-bootstrap";
 
+import download from '../../assets/images/file-download/export.png';
+
 function FileDownloadFaq() {
     return (
         <div>
@@ -12,52 +14,248 @@ function FileDownloadFaq() {
                    
                     <div className="row">
                         <div className="col-md-12">
-                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
+                            <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>policies</h4></Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice Broking support team will reach out to you. Once your account is activated you will receive an email from Choice Broking informing you about the same.
+                                    <Accordion.Header> <h4 className='faq-header'>Policies</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text"> Internal Control Policy</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Internal Control Policy over Authorised Person</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Investor Grievance Policy</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Client Registration Account Opening &amp; Closure</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Branches Open &amp; Close Allotment Surrender of Trading Terminal</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Surveillance Policy</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Liquidation &amp; close out of position</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">   Order Receipt &amp; Execution Error code</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Outsourcing, Pre-funded Instruments Policy</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Sending Contract Notes, Margin Statement, Statement of Accounts to Clients</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                        </ul>
+                                       </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>What are the documents required to open a Demat Account?</h4></Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        The following documents will be required to open an account for a resident individual with Choice Broking:
+                                    <Accordion.Header> <h4 className='faq-header'>choice Peers</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
                                         <ul>
-                                            <li>PAN Card</li>
-                                            <li>Cancelled Cheque (that captures the MICR Code)</li>
-                                            <li>Passport Size Photograph</li>
-                                            <li>Aadhaar Card</li>
-                                            <li>Aadhaar Card</li>
-
+                                            <li>
+                                                <div className="text"> Choice Peers International-Brochure</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                           
                                         </ul>
+                                       </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>What is the Power of Attorney (PoA) and why is it needed?</h4></Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
-                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <a href="https://choiceindia.com">https://choiceindia.com</a>
+                                    <Accordion.Header> <h4 className='faq-header'>Choice Group</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text">  Choice Group - Brochure</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            
+                                        </ul>
+                                       </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>Where should I courier the Power of Attorney?</h4> </Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                        You can courier the signed copy of the POA to our Head Office address mentioned below.<br />
-                                        Choice International Limited,<br />
-                                        Sunil Patodia Tower,<br />
-                                        J B Nagar, Andheri (East), Mumbai 400099.
+                                    <Accordion.Header> <h4 className='faq-header'>Choice Broking</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text">Choice Broking - Brochure</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                           
+                                        </ul>
+                                       </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                    <Accordion.Header > <h4 className='faq-header'>Are there any charges for Demat Account opening with Choice Broking? </h4></Accordion.Header>
-                                    <Accordion.Body className='open-demat-faq-body'>
-                                    You can open a low brokerage Demat Account with Choice Broking at zero account opening charges
+                                    <Accordion.Header> <h4 className='faq-header'>Margin Day Opening</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text">Mandatory Delivery margins for Delivery Settlement in FNO stocks</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">Approved Intra day Scrips List in Cash Market</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">FNO</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">Approved 2x Delivery Scrips</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">MCX</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> NCDEX</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  CDS</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Span File</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                     
+                                        </ul>
+                                       </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="5" className='faq-item'>
+                                    <Accordion.Header> <h4 className='faq-header'>Account Opening Form</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text"> Modification Form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Account Closure</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Pledge Request Form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  CRF Form in Vernacular Languages Commodity</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Common Segment Activation</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Dematerialisation Request Form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> CRF Form in Vernacular Languages Equity</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Account opening form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Closure form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Exchange Circular_20210701-30</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">   Nomination Form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">Nominee Addition Form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> POA</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  Segment Activation form</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                        </ul>
+                                       </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
 
-
-
+                                <Accordion.Item eventKey="6" className='faq-item'>
+                                    <Accordion.Header> <h4 className='faq-header'>Software</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                       <div className="listing">
+                                        <ul>
+                                            <li>
+                                                <div className="text"> Odin Utility</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> AtuoPatchupdate</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> JIFFY User Terminal</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> JIFFY Dealer Patch</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> Jiffy Diet Patch</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">JIFFY Dealer Terminal</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text"> MGR-1 REG</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span className="downloadtext">Download</span></div>
+                                            </li>
+                                            <li>
+                                                <div className="text">  MGR-2 REG</div>
+                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span className="downloadtext">Download</span></div>
+                                            </li>
+                                      
+                                        </ul>
+                                       </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
                             </Accordion>
                           
                         </div>

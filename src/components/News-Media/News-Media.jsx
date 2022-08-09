@@ -38,6 +38,30 @@ function NewsMedia() {
                   </div>
                 </div>
               </div>
+              <div className="col-md-4">
+                <div className="card">
+                  <div className="youtube-play">
+                    <LazyLoader src={NewsImage0} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                    do you know what choice represents ?
+
+                  </div>
+                </div>
+              </div>
+              <div className="col-md-4">
+                <div className="card">
+                  <div className="youtube-play">
+                    <LazyLoader src={NewsImage0} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                    do you know what choice represents ?
+
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
