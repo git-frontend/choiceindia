@@ -1,40 +1,107 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+
+
+
+.bannersec{
+	padding: 5rem  0 0;
+	background-image: url('../../assets/images/news-media/banner-bg.png');
+	background-repeat: no-repeat;
+    background-size: contain;
+	background-position: 50% 50%;
+    height:600px;
+    width: 100%;
+    position: relative;
+	@media (max-width:$sm) {
+	display: none;
+	}
+	.imgwrap{
+		position: absolute;
+    left: 0;
+    width: 100%;
+    top: 30%;
+    transform: translate(0, -39%);
+    z-index: 9;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	}
+
+}
+.bluecolor{
+	background-color: $bgcolor-blue;
+	padding: 4rem 0;
+	bottom: 204px;
+    position: relative;
+	@media (max-width:$sm) {
+		bottom: 0;
+		margin-top: 2rem;
+	}
+	h1{
+		color: $whiteColor;
+		font-size: 3.8125rem;
+		line-height: 9.5px;
+		display: flex;
+		justify-content: center;
+	}
+}
 .media-banner {
     padding: 5rem 0 7rem;
     overflow: inherit;
-  
-    .youtube-play {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin:0 !important; padding: 0 !important;
-    &:before {
-        position: absolute;
-           content: "";
-           background: url('../../assets/images/news-media/video-play.webp') no-repeat center ;
-           background-size: contain;
-            width: 100px;
-            height: 100px;
-           left: 0;
-           right: 0;
-           margin:0 auto;
-        z-index: 999;
-        
+    .card{
+
+        width: 80%;
+        margin: 0 auto;
+        height: 100% !important;
+        .youtube-play {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin:0 !important; padding: 0 !important;
+            cursor: pointer;
+        &:before {
+            position: absolute;
+               content: "";
+               background: url('../../assets/images/news-media/video-play.webp') no-repeat center ;
+               background-size: contain;
+                width: 100px;
+                height: 100px;
+               left: 0;
+               right: 0;
+               margin:0 auto;
+            z-index: 999;
             
+                
+            }
+            img{width:100%;}
         }
-        img{width:100%;}
+    
+        .card-footer {
+            background-color: $bgcolor-blue;
+            font-size: 1.8rem;
+            color: $whiteColor;
+            font-family: $font-family-poppins-regular;
+            text-align: center;
+            height: 100%;
+        }
     }
+   
 
-    .card-footer {
-        background-color: $bgcolor-blue;
-        font-size: 1.8rem;
-        color: $whiteColor;
-        font-family: $font-family-poppins-regular;
-        text-align: center;
+
+}
+
+.mt-7{
+    margin-top: 7rem;
+    @media (max-width:767px) {
+        margin-bottom: 3rem;
+        margin-top: 0;
     }
+}
 
-
+.mb3{
+    @media (max-width:767px) {
+    margin-bottom: 3rem;
+    }
 }
