@@ -72,7 +72,7 @@ body{
         font-size: 3.5rem;
         font-family: $font-family-poppins-semibold;
         color: #FF4D00;
-        margin-bottom: 4rem;
+        margin-bottom: 8rem;
         span{
             color: $primary;
         }
@@ -88,7 +88,15 @@ body{
             position: relative;
             min-height: 400px;
             .mode-itm-mn{
-                display: none;
+            display: none;
+            opacity: 0;
+            width: fit-content;
+            -webkit-transform: translate(0%, 100%);
+            transform: translate(0%, 100%);
+            -webkit-transition: opacity .2s ease, -webkit-transform .3s ease;
+            transition: opacity .2s ease, -webkit-transform .3s ease;
+            transition: opacity .2s ease, transform .3s ease;
+            transition: opacity .2s ease, transform .3s ease, -webkit-transform .3s ease;
                 h3{
                     font-family: $font-family-poppins-semibold;
                     color: $primary;
@@ -121,14 +129,49 @@ body{
                 background: #E0EFE4;
                 .mode-itm-mn{
                     display: block;
+                    opacity: 1;
+                    -webkit-transform: translateX(0%);
+                   transform: translateX(0%);
+                    -webkit-transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+                    transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
+                    transition: opacity .3s ease, transform .3s ease, color .3s ease;
+                    transition: opacity .3s ease, transform .3s ease, color .3s ease, -webkit-transform .3s ease;
+                    -webkit-transition-delay: 0.4s;
+                     transition-delay: 0.4s;
                 }
                 .mode-itm-top{
                     display: none;
+                   
                 }
             }
             
         }
     }
+}
+
+
+.investment-mode{
+    padding: 8rem 0;
+    .mode-cont-left{
+        .ttl-mn{
+            font-family: $font-family-poppins-semibold;
+            color: $yellowColor;
+            font-size: 3.5rem;
+            margin-bottom: 5rem;
+            span{
+                color: $primary;
+            }
+        }
+        h3{
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.5rem;
+        }
+    }
+    
 }
 
 .direct-links{
