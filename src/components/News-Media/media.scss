@@ -4,11 +4,13 @@
 .media-banner {
     padding: 5rem 0 7rem;
     overflow: inherit;
+  
     .youtube-play {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
+        margin:0 !important; padding: 0 !important;
     &:before {
         position: absolute;
            content: "";
@@ -23,6 +25,7 @@
         
             
         }
+        img{width:100%;}
     }
 
     .card-footer {
