@@ -1,0 +1,40 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.media-banner {
+    padding: 5rem 0 7rem;
+    overflow: inherit;
+  
+    .youtube-play {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin:0 !important; padding: 0 !important;
+    &:before {
+        position: absolute;
+           content: "";
+           background: url('../../assets/images/news-media/video-play.webp') no-repeat center ;
+           background-size: contain;
+            width: 100px;
+            height: 100px;
+           left: 0;
+           right: 0;
+           margin:0 auto;
+        z-index: 999;
+        
+            
+        }
+        img{width:100%;}
+    }
+
+    .card-footer {
+        background-color: $bgcolor-blue;
+        font-size: 1.8rem;
+        color: $whiteColor;
+        font-family: $font-family-poppins-regular;
+        text-align: center;
+    }
+
+
+}

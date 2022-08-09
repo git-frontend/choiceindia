@@ -30,7 +30,7 @@ function Insurance() {
                             <div className="benifit-list">
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Health Insurance</h5>
-                                    <p>Oompare and find policies which will help you cover the rising medical expenses during medical emergencies.</p>
+                                    <p>Compare and find policies which will help you cover the rising medical expenses during medical emergencies.</p>
                                 </div>
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Life Insurance</h5>

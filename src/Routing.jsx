@@ -46,6 +46,7 @@ const LazyShareHoldingPattern = React.lazy(() => import('./components/Share-Hold
 const LazyFinancialInfo = React.lazy(() => import('./components/Financial-Info/FinancialInfo'));
 const LazyVotingResults = React.lazy(() => import('./components/Voting-Results/VotingResults'));
 const LazyNotices = React.lazy(() => import('./components/Notices/Notices'));
+const Lazynewsmedia = React.lazy(() => import('./components/News-Media/News-Media'));
 const LazyNewsAnnouncement = React.lazy(() => import('./components/News-Announcement/NewsAnnouncement'));
 const LazyFactSheet = React.lazy(() => import('./components/Fact-Sheet/FactSheet'));
 const LazyAnnualReport = React.lazy(() => import('./components/Annual-Report/AnnualReport'));
@@ -80,8 +81,7 @@ const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBr
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
 const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
-
-
+const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
 
 function Routing() {
 
@@ -305,7 +305,11 @@ function Routing() {
                                 < Lazyremisier />
                             </React.Suspense>
                         } />
-
+ <Route exact path='/newsmedia' element={
+                            <React.Suspense>
+                                < Lazynewsmedia />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
@@ -383,6 +387,11 @@ function Routing() {
                         <Route exact path='/insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/file-download' element={
+                            <React.Suspense>
+                                < LazyFileDownload />
                             </React.Suspense>
                         } />
 

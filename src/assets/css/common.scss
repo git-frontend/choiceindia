@@ -209,3 +209,45 @@ body{
         opacity: 1;
     }
 }
+
+.common-modal-thankyou{
+    .modal-content{
+        .modal-header{
+            border: 0;
+        }
+        .modal-body{
+            padding-bottom: 1.5em;
+            text-align: center;
+            h4{
+                margin-top: 1rem;
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
+                font-size: 1.65rem;
+            }
+            h3{
+                font-family: $font-family-poppins-semibold;
+                color: $primary;
+                margin-top: 2rem;
+            }
+        }
+        .modal-footer{
+            text-align: center;
+            justify-content: center;
+            border: 0;
+            padding-bottom: 1.5em;
+            .btn-yellow {
+                background-color: $yellowColor;
+                border-radius: 27px;
+                color: $primary;
+                font-size: 1.5rem;
+                line-height: 1.375rem;
+                font-family: $font-family-poppins-semibold;
+                display: inline-block;
+                border: none;
+                padding: 0.8rem 2rem;
+                margin-top: 1rem 0;
+              }
+        }
+       
+    }
+}
