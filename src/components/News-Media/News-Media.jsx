@@ -1,11 +1,11 @@
 import NewsImage0 from '../../assets/images/news-media/what-choice-represents.webp';
 import NewsImage1 from '../../assets/images/news-media/video-play.webp';
-import CareerImage2 from '../../assets/images/news-media/assets.png';
+import CareerImage2 from '../../assets/images/news-media/assets.webp';
 import CareerImage3 from '../../assets/images/news-media/save-water.png';
-import CareerImage4 from '../../assets/images/news-media/bit-coin.png';
-import CareerImage5 from '../../assets/images/news-media/newspaper.png';
-import CareerImage6 from '../../assets/images/news-media/laptop.png';
-import bannerimg from '../../assets/images/news-media/banner-img.png';
+import CareerImage4 from '../../assets/images/news-media/bit-coin.webp';
+import CareerImage5 from '../../assets/images/news-media/newspaper.webp';
+import CareerImage6 from '../../assets/images/news-media/laptop.webp';
+import bannerimg from '../../assets/images/news-media/banner-img.webp';
 
 import '././media.scss';
 import LazyLoader from '../Common-features/LazyLoader';
@@ -19,7 +19,7 @@ function NewsMedia() {
 					<div className="row">
 						<div className="col-md-12">
 							<div className="imgwrap">
-							<img src={bannerimg} className={"img-fluid"} alt={"Loading"} width={""} height={""}/>
+							<img src={bannerimg} className={"img-fluid"} alt={"Loading"} width={"500"} height={"370"}/>
 							</div>
 							
 						</div>
@@ -31,7 +31,7 @@ function NewsMedia() {
 			<div className="container">
 			<div className="row ">
 						<div className="col-md-12">
-							<h1>choice broking media</h1>
+							<h1>Choice Broking Media</h1>
 						</div>
 					</div>
 			</div>

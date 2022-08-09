@@ -11,6 +11,7 @@
 	background-position: 50% 50%;
     height:600px;
     width: 100%;
+	background-color: #E5E5E5;
     position: relative;
 	@media (max-width:$sm) {
 	display: none;
@@ -90,9 +91,9 @@
 		font-weight: 600;
 	}
 	.accordion-button::after{
-		background-image: url(../../assets/images/file-download/plus.png);
-		height: 40px;
-		width: 40px;
+		background-image: url(../../assets/images/file-download/plus.webp);
+		height: 18px;
+		width: 18px;
 		background-size: contain;
 	}
 	.accordion-button:not(.collapsed)::after{
