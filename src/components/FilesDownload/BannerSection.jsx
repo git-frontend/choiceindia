@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import bannerimg from '../../assets/images/file-download/banner-img.png';
+import bannerimg from '../../assets/images/file-download/banner-img.webp';
 
 function FileDownloadBanner() {
 

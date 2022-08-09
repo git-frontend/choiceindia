@@ -5,7 +5,7 @@
 
 .bannersec{
 	padding: 5rem  0 0;
-	background-image: url('../../assets/images/file-download/banner-bg.png');
+	background-image: url('../../assets/images/file-download/banner-bg.webp');
 	background-repeat: no-repeat;
     background-size: contain;
 	background-position: 50% 50%;
@@ -96,7 +96,7 @@
 		background-size: contain;
 	}
 	.accordion-button:not(.collapsed)::after{
-		background-image: url(../../assets/images/file-download/minus.png);
+		background-image: url(../../assets/images/file-download/minus.webp);
 		height: 18px;
 		width: 18px;
 		background-size: contain;
