@@ -44,11 +44,17 @@
 		line-height: 9.5px;
 		display: flex;
 		justify-content: center;
+        @media (max-width:$sm) {
+            font-size: 2.65rem;
+        }
 	}
 }
 .media-banner {
-    padding: 5rem 0 7rem;
+    padding: 0 0 7rem;
     overflow: inherit;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
     .card{
 
         width: 80%;
