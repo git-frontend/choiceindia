@@ -65,7 +65,7 @@ function BChargesMoreContent() {
                                         These include many specialized services like consultations, research, advisory and support among others. Share Brokerage Charges also known as a Brokerage Fee, is typically a percent (%) of the transaction amount.<br/><br/>
                                         They vary from Broker to Broker, with Choice offering low brokerage charges in India in comparison to industry standards. (A detailed breakdown of all the other applicable charges like
                                         Securities Transaction Tax, Stamp Charges, GST, SEBI Charges, Depository Charges and many more are given in the table above).<br/><br/>
-                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<Link to="#">Commodity</Link> and <Link to="#">Currencies.</Link>
+                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<Link to="/open-free-demat-account">Commodity</Link> and <Link to="/open-free-demat-account">Currencies.</Link>
                                         
                                        
                                        
