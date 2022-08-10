@@ -514,7 +514,8 @@
             .target-line-crossed{
               &::after{
            
-                right: 10%;
+                // right: 10%;
+                position: fixed;
                
               }
             }
@@ -605,14 +606,30 @@
                   border-top-color: $redbg;
                 }
               }
+              &.valueset{
+                right: 0;
+                left: inherit !important;
+                &::before{
+                  right: 0;
+                  left: inherit;
+                }
+              }
+              &.leftvalueset{
+                right: inherit !important;
+                left: 0 !important;
+                &::before{
+                  left: 0;
+                  right: inherit;
+                }
+              }
             }
 
 
 
             .cmp-crossed{
-              &::before{
-                margin-right: 0px;
-              }
+              // &::before{
+              //   margin-right: 0px;
+              // }
             }
           }
         }
@@ -1458,7 +1475,8 @@
 
 
 .target-crossed{
-  right: 10% !important;
+  // right: 10% !important;
+  position: fixed;
 }
 .loaderB {
   border: 5px solid #f3f3f3;
@@ -1597,4 +1615,6 @@
 .red-txt{
   color: $redtext !important;
 }
+
+
 
