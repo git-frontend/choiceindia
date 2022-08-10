@@ -50,17 +50,19 @@ function Banner() {
 
                                         return(
                                             <div key={res.id}  className={classNameNm} onMouseOver={() => setSelected(index)} onMouseLeave={() => setSelected(0)} >
-                                            <div className="mode-itm-top">
-                                                <h3>{res.title}</h3>
-                                            </div>
-                                            <div className="mode-itm-mn">
-                                                <h3>{res.title2}</h3>
-                                                <p>{res.description}</p>
-                                                <div className="justify-content-end d-flex">
-                                                    <a href="/" className="btn-bg">Explore</a>
+                                                <div className="mode-itm-sub">
+                                                    <div className="mode-itm-top">
+                                                        <h3>{res.title}</h3>
+                                                    </div>
+                                                    <div className="mode-itm-mn">
+                                                        <h3>{res.title2}</h3>
+                                                        <p>{res.description}</p>
+                                                        <div className="justify-content-end d-flex">
+                                                            <a href="/" className="btn-bg">Explore</a>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
                                         )
                                     })

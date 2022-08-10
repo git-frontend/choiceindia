@@ -79,16 +79,18 @@ body{
     }
     .trading-mode-list{
         display: flex;
-        .mode-list-itm{
-            width: 8%;
-            margin: 0 1%;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 2px solid #E0EFE4;
+        .mode-list-itm{ 
+            width: 11%;
+            margin: 0;
+            padding: 0 1.5%;
             position: relative;
-            min-height: 400px;
+            height: 400px;
+            overflow: hidden;
+            // transition: width 1.5s;
             .mode-itm-mn{
-            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
             opacity: 0;
             width: fit-content;
             -webkit-transform: translate(0%, 100%);
@@ -126,7 +128,7 @@ body{
             }
             &.list-itm-active{
                 width: 68%;
-                background: #E0EFE4;
+                
                 .mode-itm-mn{
                     display: block;
                     opacity: 1;
@@ -143,6 +145,18 @@ body{
                     display: none;
                    
                 }
+                .mode-itm-sub{
+                    background: #E0EFE4;
+                }
+            }
+            .mode-itm-sub{
+                border: 2px solid #E0EFE4;
+                padding: 2.5rem;
+                width: 100%;
+                height: 100%;
+                position: relative;
+                border-radius: 20px;
+                background: $whiteColor;
             }
             
         }
