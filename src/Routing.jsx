@@ -85,6 +85,7 @@ const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/Bro
 const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
 const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
 const LazyEquityBroking = React.lazy(() => import('./components/Equity-Broking/EquityBrokingMain'));
+const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirector/BoardOfInvestor'));
 function Routing() {
 
 
@@ -410,6 +411,11 @@ function Routing() {
                         <Route exact path='/equity-broking' element={
                             <React.Suspense>
                                 < LazyEquityBroking />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/board-of-directors' element={
+                            <React.Suspense>
+                                < LazyBoardOfDirectors />
                             </React.Suspense>
                         } />
 
