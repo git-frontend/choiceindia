@@ -77,6 +77,7 @@ const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazycebplpolicies = React.lazy(() => import('./components/CEBPLPolicies/CEBPL-Policies'));
 const LazyInvestorcharter = React.lazy(() => import('./components/InvestorCharter/Investor-Charter'));
+const LazyInvestorcomplaints = React.lazy(() => import('./components/Investorcomplaints/Investor-Complaints'));
 const Lazyinvestorawareness = React.lazy(() => import('./components/InvestorAwareness/Investor-Awareness'));
 const LazyDisclaimer = React.lazy(() => import('./components/Disclaimer/Disclaimer'));
 const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditions/TermsConditions'));
@@ -385,6 +386,11 @@ function Routing() {
                         <Route exact path='/privacy-policy' element={
                             <React.Suspense>
                                 < LazyPrivacyPolicy />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/Investor-complaints' element={
+                            <React.Suspense>
+                                < LazyInvestorcomplaints />
                             </React.Suspense>
                         } />
                         <Route exact path='/disclaimer' element={

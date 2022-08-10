@@ -231,34 +231,34 @@ function CQuant() {
         let call_type_buy = element.HLType ? (element.HLType == 'High' ? 'BUY' : element.HLType == 'sell' ? 'SELL' : '') : (element.Side ? ((['B', 'BUY', 'Buy'].indexOf(element.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(element.Side) > -1 ? 'SELL' : '') : '')
         let signalConfigPre = {
             1: { slug: 'active', label: 'Active', class: 'balance', iStatusType: 1 },
-            2: { slug: 'target1', label: 'Target 1 Achieved', class: 'grn-txt', iStatusType: 2 },
-            3: { slug: 'target2', label: 'Target 2 Achieved', class: 'grn-txt', iStatusType: 2 },
-            4: { slug: 'sl', label: 'Stop Loss Triggered', class: 'red-txt', iStatusType: 3 },
-            5: { slug: 'target3', label: 'Target 3 Achieved', class: 'grn-txt', iStatusType: 2 },
+            2: { slug: 'target1', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            3: { slug: 'target2', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            4: { slug: 'sl', label: 'SL Hit', class: 'red-txt', iStatusType: 3 },
+            5: { slug: 'target3', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
             6: { slug: 'exit', label: 'Exit', ignoreIncrement: true, class: call_type_buy ? (element.EP < element.ExitP ? 'grn-txt' : 'red-txt') : (element.EP > element.ExitP ? 'grn-txt' : 'red-txt'), iStatusType: 4 },
             7: { slug: 'bookProfit', label: 'Book Profit', class: 'grn-txt', iStatusType: 5 }, //
             8: { slug: 'bookProfit', label: 'Book Part Profit', class: 'grn-txt', iStatusType: 6 },
             10: { slug: 'indexGenerated', label: 'Index Generated', ignoreIncrement: true, class: 'grn-txt', iStatusType: 0 },
             11: { slug: 'active', label: 'Active', class: 'balance', iStatusType: 1 },
-            12: { slug: 'target1', label: 'Target 1 Achieved', class: 'grn-txt', iStatusType: 2 },
-            13: { slug: 'target2', label: 'Target 2 Achieved', class: 'grn-txt', iStatusType: 2 },
-            14: { slug: 'sl', label: 'Stop Loss Triggered', class: 'red-txt', iStatusType: 3 },
+            12: { slug: 'target1', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            13: { slug: 'target2', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            14: { slug: 'sl', label: 'SL Hit', class: 'red-txt', iStatusType: 3 },
             15: { slug: 'exit', label: 'Exit', ignoreIncrement: true, class: call_type_buy ? (element.EP < element.ExitP ? 'grn-txt' : 'red-txt') : (element.EP > element.ExitP ? 'grn-txt' : 'red-txt'), iStatusType: 4 },
             21: { slug: 'active', label: 'Active', class: 'balance', iStatusType: 1 },
-            22: { slug: 'target1', label: 'Target 1 Achieved', class: 'grn-txt', iStatusType: 2 },
-            23: { slug: 'target2', label: 'Target 2 Achieved', class: 'grn-txt', iStatusType: 2 },
-            24: { slug: 'sl', label: 'Stop Loss Triggered', class: 'red-txt', iStatusType: 3 },
+            22: { slug: 'target1', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            23: { slug: 'target2', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            24: { slug: 'sl', label: 'SL Hit', class: 'red-txt', iStatusType: 3 },
             26: { slug: 'exit', label: 'Exit', ignoreIncrement: true, class: call_type_buy ? (element.EP < element.ExitP ? 'grn-txt' : 'red-txt') : (element.EP > element.ExitP ? 'grn-txt' : 'red-txt'), iStatusType: 4 },
             27: { slug: 'bookProfit', label: 'Book Profit', class: 'grn-txt', iStatusType: 5 },
             28: { slug: 'bookProfit', label: 'Book Part Profit', class: 'grn-txt', iStatusType: 6 },
             31: { slug: 'active', label: 'Active', class: 'balance', iStatusType: 1 },
-            32: { slug: 'target1', label: 'Target 1 Achieved', class: 'grn-txt', iStatusType: 2 },
-            33: { slug: 'target2', label: 'Target 2 Achieved', class: 'grn-txt', iStatusType: 2 },
-            34: { slug: 'sl', label: 'Stop Loss Triggered', class: 'red-txt', iStatusType: 3 },
-            35: { slug: 'target3', label: 'Target 3 Achieved', class: 'grn-txt', iStatusType: 2 },
+            32: { slug: 'target1', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            33: { slug: 'target2', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            34: { slug: 'sl', label: 'SL Hit', class: 'red-txt', iStatusType: 3 },
+            35: { slug: 'target3', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
             51: { slug: 'active', label: 'Active', class: 'balance', iStatusType: 1 },
-            52: { slug: 'target1', label: 'Target 1 Achieved', class: 'grn-txt', iStatusType: 2 },
-            54: { slug: 'sl', label: 'Stop Loss Triggered', class: 'red-txt', iStatusType: 3 },
+            52: { slug: 'target1', label: 'Achieved', class: 'grn-txt', iStatusType: 2 },
+            54: { slug: 'sl', label: 'SL Hit', class: 'red-txt', iStatusType: 3 },
             56: { slug: 'exit', label: 'Exit', ignoreIncrement: true, class: call_type_buy ? (element.EP < element.ExitP ? 'grn-txt' : 'red-txt') : (element.EP > element.ExitP ? 'grn-txt' : 'red-txt'), iStatusType: 4 },
             57: { slug: 'bookProfit', label: 'Book Profit', class: 'grn-txt', iStatusType: 5 },
         }
@@ -413,19 +413,23 @@ function CQuant() {
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
-                            <div className="tab-itm-top">
+                            <div className="tab-itm-top inactive-call">
                                 <div className="itm-top-ttl">
                                     <div className="d-flex align-self-end">
                                         <h3 className="ttl-mn">{report?.scrip_name} <small>{report?.segmentName}</small></h3>
-                                        <h4 className="ttl-sm">{report?.AType}</h4>
+                                        <h4 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h4>
+                                        {/* <h4 className="ttl-sm-nw grn-txt">Active</h4> */}
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>
-                                    <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
                                 </div>
                                 <div className="itm-date-btn">
                                     <a onClick={() => { goToDetail(report) }} className={"btn-sm cursor-pointer " +(report?.call_type_buy == 'BUY' ? 'grn-btn' : (report?.call_type_buy == 'SELL' ? 'red-btn' : ''))}>{report?.call_type_buy}</a>
                                     {report?.status == "Active" ? <h5 className={"ltp-percent grn-txt"}>Active</h5> : <h5 className={"ltp-percent " + report?.statusClass}>{report?.profitPercentage < 0 ? "Loss" : "Profit"} ({report?.profitPercentage} %)</h5>}
                                 </div>
+                                <div className="view-post">
+                                    <a onClick={() => { goToDetail(report) }}  className="post-read cursor-pointer">View More</a>
+                                </div> 
+                                
                             </div>
 
                         </div>)
