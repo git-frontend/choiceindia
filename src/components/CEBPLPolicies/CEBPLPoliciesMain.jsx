@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from  '@fortawesome/free-solid-svg-icons';
 
-import "../CEBPLPolicies/CEBPL-Policies.scss";
+import "./CEBPL-Policies.scss";
 
 function CEBPLPoliciesMain() {
     return (

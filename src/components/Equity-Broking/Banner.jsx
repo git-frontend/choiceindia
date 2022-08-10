@@ -46,7 +46,7 @@ function Banner() {
 
                                 {
                                     Equity.map((res,index)=>{
-                                        let classNameNm = "mode-list-itm" + ((index === selected) ? 'list-itm-active' : '')
+                                        let classNameNm = "mode-list-itm " + ((index === selected) ? 'list-itm-active' : '')
 
                                         return(
                                             <div key={res.id}  className={classNameNm} onMouseOver={() => setSelected(index)} onMouseLeave={() => setSelected(0)} >
@@ -56,6 +56,9 @@ function Banner() {
                                             <div className="mode-itm-mn">
                                                 <h3>{res.title2}</h3>
                                                 <p>{res.description}</p>
+                                                <div className="justify-content-end d-flex">
+                                                    <a href="/" className="btn-bg">Explore</a>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -72,6 +75,9 @@ function Banner() {
                                             platforms to make long term investments. With the value added technology tools &amp; one of the most sought after research team
                                             in the media, we make your equity trading
                                             predictable and your money grow!</p>
+                                        <div className="justify-content-end d-flex">
+                                            <a href="/" className="btn-bg">Explore</a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="mode-list-itm">
