@@ -159,7 +159,7 @@ if((splitData[0]["7"])=='8866'){
               <h2 className="counttext">Choice International Limited</h2>
             </div>
             <div className="col-md-6">
-              <div className="count">
+              <div className="count float-right">
 
                 <div className="number"><span className={companyData?.color}>{companyData?.LTP_DATA}</span> <div className="result">  {companyData?.color=='red'?<AiFillCaretDown className={companyData?.color} />:<AiFillCaretUp className={companyData?.color} />} <div className="percentage"><span className={companyData?.color}>{companyData?.change}</span> ({companyData?.changePercent}%)</div></div></div>
 
