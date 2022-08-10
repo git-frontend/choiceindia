@@ -68,7 +68,7 @@ function InvestorAwarenessMain() {
                         <div className="subtext">
                         <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div ><strong> KYC Updation </strong></div>
-                                   <div><FontAwesomeIcon icon={faDownload} className="cursor-pointer"/> <a href="#" className="text-decoration-none">Download</a></div>
+                                   <div className="download"><FontAwesomeIcon icon={faDownload} className="cursor-pointer downloadimg"/> <a href="#" className="text-decoration-none">Download</a></div>
                                    </div>
                                    </div>
                         </div>

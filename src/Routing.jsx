@@ -87,6 +87,8 @@ const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'
 const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
 const LazyEquityBroking = React.lazy(() => import('./components/Equity-Broking/EquityBrokingMain'));
 const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirector/BoardOfInvestor'));
+
+const LazyClientdetail = React.lazy(() => import('./components/ClientDetails/ClientDetail'));
 function Routing() {
 
 
@@ -423,7 +425,11 @@ function Routing() {
                                 < LazyBoardOfDirectors />
                             </React.Suspense>
                         } />
-
+                        <Route exact path='/client-details-update' element={
+                            <React.Suspense>
+                                < LazyClientdetail />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
