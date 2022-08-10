@@ -1,6 +1,7 @@
 
 import React from "react";
 import Banner from './Banner';
+import InvestmentMode from './InvestmentMode';
 
 
 
@@ -17,6 +18,7 @@ function EquityBrokingMain() {
       <div className="mainwrapper brokerage-charges-temp">
          
          <Banner />
+         <InvestmentMode />
         
          
        </div> 
