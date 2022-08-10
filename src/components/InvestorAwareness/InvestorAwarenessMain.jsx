@@ -18,27 +18,27 @@ function InvestorAwarenessMain() {
                     </div>
                     <div className=" quicklinkswrap">
                         <div className="row border-bottom">
-                            <div className=" col-md-4 col-4 "><h3 className="head">Exchange </h3></div>
+                            <div className=" col-md-4 col-3 "><h3 className="head">Exchange </h3></div>
                             <div className="col-md-4 col-4 word-wrap"> <h3 className="head">Web Address</h3></div>
                             <div className="col-md-4 col-4 word-wrap"> <h3 className="head">Contact No.</h3></div>
                         </div>
                         <div className="row border-bottom ">
-                            <div className=" col-md-4 col-4 pb-3 pt-3">BSE </div>
+                            <div className=" col-md-4 col-3 pb-3 pt-3">BSE </div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.bseindia.com/" target={"_blank"} className="text-decoration-none">www.bseindia.com</a></div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 2272 8517 / 8097" className="text-decoration-none">(91 22) 2272 8517 / 8097</a></div>
                         </div>
                         <div className="row border-bottom ">
-                            <div className=" col-md-4 col-4 pb-3 pt-3">NSE</div>
+                            <div className=" col-md-4 col-3 pb-3 pt-3">NSE</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.nseindia.com/" target={"_blank"} className="text-decoration-none">www.nseindia.com</a></div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 2659 8190 / 91" className="text-decoration-none">(91 22) 2659 8190 / 91</a></div>
                         </div>
                         <div className="row border-bottom ">
-                            <div className=" col-md-4 col-4 pb-3 pt-3">MSEI</div>
+                            <div className=" col-md-4 col-3 pb-3 pt-3">MSEI</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.mcxindia.com/" target={"_blank"} className="text-decoration-none">www.mcxindia.com</a></div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 6649 4070" className="text-decoration-none">(91 22) 6649 4070</a></div>
                         </div>
                         <div className="row border-bottom ">
-                            <div className=" col-md-4 col-4 pb-3 pt-3">SEBI</div>
+                            <div className=" col-md-4 col-3 pb-3 pt-3">SEBI</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.sebi.gov.in/" target={"_blank"} className="text-decoration-none">www.sebi.gov.in</a>
                             </div>
                             <div className=" col-md-4 col-4 pb-3 pt-3"><a href="tel:(91 22) 6731 9000" className="text-decoration-none">(91 22) 6731 9000</a></div>

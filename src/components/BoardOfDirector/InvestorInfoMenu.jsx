@@ -48,7 +48,7 @@ function InvestorInfoMenu() {
     <div>
       
      
-    <section className="Investormenu mt5">
+    <section className="Investormenu mt7">
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
@@ -183,7 +183,7 @@ function InvestorInfoMenu() {
                     </Slider>
                 
                 </div>
-                <div class="mt5 d-flex justify-content-center cursor-pointer"><a class="btn-bg">Explore All</a></div>
+                <div class="mt7 d-flex justify-content-center cursor-pointer"><a class="btn-bg">Explore All</a></div>
                 </div>
           </div>
            

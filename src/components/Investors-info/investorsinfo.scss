@@ -215,10 +215,12 @@ body{
         font-family: $font-family-poppins-regular;
         font-weight: 600;
         text-align: center;
-        padding-bottom: 4.75rem;
+        padding-bottom: 6rem;
         @media screen and (max-width:767px) {
-            font-size: 3rem;
+            font-size: 2.3rem;
             line-height: 3.25rem;
+            text-align: left;
+           
         }
     }
 
