@@ -13,6 +13,11 @@
     padding: 1em;
     box-shadow: none;
     position: absolute;
+    @media screen and (max-width:767px) {
+        top: 12px;
+        right: 5%;
+        height: 4em;
+    }
 }
 
 .burger-menu {
@@ -33,6 +38,9 @@
     &:nth-child(3n){
         width:60%;
     }
+    @media screen and (max-width:767px) {
+        width: 3.5rem;
+    }
 }
 
 .menu {
@@ -46,10 +54,22 @@
     right: 0;
     z-index: 1;
     border-top: 7px solid #FFCE02;
+    @media screen and (max-width:767px) {
+        width: 90%;
+    }
+    @media screen and (max-width:768px) {
+        width: 100%;
+    }
 }
 .investor-menu-wrap{
 
     padding:4rem 5rem 2rem 5rem;
+    @media screen and (max-width:767px) {
+        padding:4rem 0rem 2rem 0rem;
+    }
+    @media (min-width:767px) and (max-width:768px) {
+        padding:4rem 2rem 2rem 2rem;
+    }
 }
 
 .investor-info-menu-list{
@@ -81,6 +101,10 @@
     transform: rotate(135deg) translate(-0.5em, 0.8em);
     transition: ease-out 0.5s;
     width: 4rem;
+    @media screen and (max-width:767px) {
+        width: 3.5rem;
+        transform: rotate(135deg) translate( -0.10em, 0.6em);
+    }
 }
 
 /* unclicked */
@@ -99,9 +123,19 @@
            outline: none;
            text-decoration: none;
            font-size: 2.3rem;
+           @media screen and (max-width:767px) {
+            font-size: 1.5rem;
+            }
+            @media (min-width: 768px) and (max-width: 920px) {
+                font-size: 2rem;
+            }
            &:hover{
             color: $yellowColor;
            }
         }
     }
+}
+
+.word-wrap{
+    word-break: break-word;
 }
