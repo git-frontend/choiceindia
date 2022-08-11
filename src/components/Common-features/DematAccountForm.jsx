@@ -220,6 +220,7 @@ function DematAccountForm(props) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
+            "whatsapp_consent":true,
             "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "JIFFY",
