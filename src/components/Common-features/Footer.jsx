@@ -219,24 +219,26 @@ useEffect(()=>{
               <div className="row">
                 <div className="col-md-12">
                   <div className="article">
-                    <p>&copy; Choiceinternational. CIN - U65999MH2010PTC198714. All Rights Reserved. <br />
-                      Registered with the Securities and Exchange Board of India (SEBI) as a Non-Individual Investment Mutual Fund Distributor (ARN-78908) and with Pension Fund Regulatory and Development Authority (PFRDA) as NPS POP (POPSE52022022).<br />
+                    <p>&copy; Choiceinternational. CIN - L67190MH1993PLC071117.<br />
+                    SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ) | ( ICEX - 1274 ). <br />
                     </p>
                     <p>
-                      SEBI Reg No. Broking - INZ000160131; Depository Participant - IN - DP - 416 - 2019 , Depository Participant Number: CDSL - 12088800, Trading and clearing member of NSE, NSEFO & NSECDS (13773), MCX (40585), NCDEX (1006) and BSE(3299).<br />
-                      Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
+                    Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895.<br />
 
-                      SEBI Regional Office: Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra<br />
-                      *0.20% brokerage on delivery trades<br />
-                      &amp; 0.02% on Equity Intraday trades<br />
-                      **Equity Futures: 0.02% per executed order &amp; Equity Options: Flat ₹25 per lot.<br />
-                      ***Currency Futures: 0.02% per executed order &amp; Currency Options ₹20 per lot <br />
-                      ****Commodity Futures: 0.02% per executed order &amp; Commodity Options ₹50 per lot<br />
-                      Brokerage will not exceed the SEBI prescribed limit.<br />
-                      Investments in securities markets are subject to market risks, read all the related documents carefully before investing.<br /><br />
-                      Disclaimer: We are doing pro trading (Confirm with RMS/management, whether we avail pro trading or not) Refer SEBI Chapter/Master Circular_Section 9_Protrading.<br />
-                      *Investment in securities market is subject to market risks, read all the related documents carefully before investing.<br />
-                      &copy; Choice International Limited. All Rights Reserved.<br />
+                    Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Choice Wealth Private Limited - Affiliated with POP HDFC Pension Management Company.
+Association of Mutual Funds in India Registeration Number - ARN - 78908 | Choice Wealth Private Limited 
+<br />
+NBFC Registration Number : N - 13.02216 | Choice Finserv Private Limited<br />
+IRDAI License No: 167, License Valid Till: 29-05-2024 | Category : Direct ( Life &amp; General )<br />
+Research Analyst - INH000000222<br />
+Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
+SEBI Regional Office: Plot No.C4-A, 'G' Block Bandra-Kurla Complex, Bandra (East), Mumbai - 400051, Maharashtra.<br />
+Brokerage will not exceed the SEBI prescribed limit.
+<br /><br/>
+Disclaimer:<br/>
+*Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br/>
+&copy; Choice International Limited. All Rights Reserved.
+ 
                     </p>
                   </div>
                   {/* <a className="moreless-button">Read more</a> */}

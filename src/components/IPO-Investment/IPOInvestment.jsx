@@ -2,8 +2,11 @@
 import React from "react";
 import Banner from './Banner';
 import IPOStocks from './IPOStocks';
+import IPOBenifits from './IPOBenifits';
+import IPOProcess from './IPOProcess';
+import WhyChoiceIPO from './WhyChoiceIPO';
 
-import "./equity-broking.scss";
+import "./ipo-Investment.scss";
 
 
 function EquityBrokingMain() {
@@ -19,6 +22,9 @@ function EquityBrokingMain() {
          
          <Banner />
          <IPOStocks />
+         <IPOBenifits />
+         <IPOProcess />
+         <WhyChoiceIPO />
         
          
        </div> 

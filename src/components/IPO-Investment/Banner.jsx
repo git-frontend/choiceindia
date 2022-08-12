@@ -23,19 +23,19 @@ function Banner() {
                                     <span className="">
                                         <LazyLoader src={icon1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"126"} />
                                     </span>
-                                    <h4>IPO Analysis by Experts</h4>
+                                    <h4>IPO Analysis <br/>by Experts</h4>
                                 </li>
                                 <li className="">
                                     <span className="">
                                         <LazyLoader src={icon2} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"126"} />
                                     </span>
-                                    <h4>IPO Report To Take Decision</h4>
+                                    <h4>IPO Report To <br/>Take Decision</h4>
                                 </li>
                                 <li className="">
                                     <span className="">
                                     <LazyLoader src={icon3} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"126"} />
                                     </span>
-                                    <h4>Free IPO Investmnets Account</h4>
+                                    <h4>Free IPO <br/>Investmnets Account</h4>
                                 </li>
                             </ul>
                         </div>

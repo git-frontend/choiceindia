@@ -71,7 +71,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>Indigo Paints Limited</h4>
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand2} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
