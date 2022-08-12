@@ -39,7 +39,10 @@ body{
             margin: 0;
             justify-content: space-between;
             >li{
-
+                width: 33%;
+                h4{
+                    line-height: 2.4rem;
+                }
             }
         }
         .big-ttl{
@@ -227,3 +230,171 @@ body{
     }
 }
 
+.ipo-more-benifits{
+    position: relative;
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 25rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: -4rem;
+        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        background-size: contain;
+        z-index: -9;
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .title-first{
+        span{
+            color: $yellowColor;
+        }
+    }
+    .ipo-benifits-list{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding:8rem 0 10rem 0;
+        .benifits-itm{
+            display: flex;
+            align-items: center;
+            h3{
+                line-height: 2.4rem;
+                margin-left: 3rem;
+            }
+        }
+    }
+}
+
+.get-start{
+    padding-bottom: 10rem;
+    .get-start-sub{
+        display: flex;
+        align-items: center;
+        background: $bgcolor-blue-light;
+        border-radius: 16px;
+        padding: 2rem 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        h3{
+            font-family: $font-family-poppins-semibold;
+            margin: 1rem;
+            margin-right: 3rem;
+            font-size: 2.2rem;
+            @media (max-width: $sm) {
+                margin:1rem 0;
+                font-size: 1.8rem;
+            }
+        }
+        .btn-bg{
+            margin: 1rem;
+        }
+    }
+    &.get-start-scnd{
+        position: relative;
+        margin-top: -5rem;
+    }
+}
+
+
+
+.why-choice-ipo{
+    background: $primary;
+    padding: 8rem 0 15rem 0;
+    .title-first{
+        margin-bottom: 5rem;
+        color: $whiteColor;
+    }
+    .why-ipo-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .why-itm{
+            text-align: center;
+            .sm-img-itm{
+                display:flex;
+                min-height: 85px;
+                align-items: flex-end;
+                justify-content: center;
+                margin-bottom: 2rem;
+            }
+            h4{
+                color: $whiteColor;
+                line-height: 2.4rem;
+            }
+        }
+    }
+}
+
+.process-ipo{
+    padding: 0 0 15rem 0;
+    position: relative;
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 22rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 5%;
+        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        background-size: contain;
+        z-index: -9;
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .title-first{
+        padding-bottom: 14rem;
+    }
+    .ipo-list-img{
+        position: relative;
+        padding: 0;
+        .process-ipo-list{
+            .ipo-list-itm{
+                position: absolute;
+                width: 200px;
+                &:nth-child(1n){
+                    left: 0;
+                    top: -7.5rem;
+                    h3{
+                        color: #1ED0CB;
+                    }
+                }
+                &:nth-child(2n){
+                    top: inherit;
+                    bottom: -6rem;
+                    left: 26%;
+                    h3{
+                        color: #089E9A;
+                    }
+                }
+                &:nth-child(3n){
+                    left: 50%;
+                    h3{
+                        color: $yellowColor;
+                    }
+                }
+                &:nth-child(4n){
+                    top: inherit;
+                    bottom: -7.5rem;
+                    left: 74%;
+                    h3{
+                        color: #E88832;
+                    }
+                }
+                h3{
+                    font-size: 2.5rem;
+                    font-family: $font-family-poppins-semibold;
+                }
+                h4{
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 2.1rem;
+                }
+            }
+        }
+    }
+}

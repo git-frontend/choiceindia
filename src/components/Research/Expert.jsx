@@ -46,7 +46,7 @@ function Expert() {
                     </div>
                 </div>
                 <div className="row justify-content-center">
-                <div className="col-md-10">
+                <div className="col-md-9">
                   <div className="team-list">
                   <Slider {...settings} className="expert-list-slider">
                       <div className="expert-item">
