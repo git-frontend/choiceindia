@@ -7,7 +7,7 @@ import image3 from '../../assets/images/about-us/suyash-patodia.webp';
 import image4 from '../../assets/images/about-us/arun-sir.webp';
 import image5 from '../../assets/images/about-us/ajay-sir.webp';
 import image6 from '../../assets/images/about-us/subodh-kumar-agarwal.webp';
-import image7 from '../../assets/images/about-us/person-img2.webp';
+import image7 from '../../assets/images/about-us/akthakur.webp';
 import image8 from '../../assets/images/about-us/sudha-bhushan.webp';
 import image9 from '../../assets/images/about-us/sandeep-singh.webp';
 import image10 from '../../assets/images/about-us/kanhaiyalal-beriwal.webp';
@@ -30,7 +30,7 @@ function InvestorInfoMenu() {
                     </div>
                     <div className="row mt5">
                 
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -46,7 +46,7 @@ function InvestorInfoMenu() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -64,7 +64,7 @@ function InvestorInfoMenu() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -82,7 +82,7 @@ function InvestorInfoMenu() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -100,9 +100,9 @@ function InvestorInfoMenu() {
                                 </div>
                             </div>
                     </div>
-                    <div className="row mt5">
+                    <div className="row">
                        
-                        <div className="col-md-3">
+                        <div className="col-xl-3 col-md-6">
                             <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -119,7 +119,7 @@ function InvestorInfoMenu() {
                                     </div>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-xl-3 col-md-6">
                             <div className="team-list">
                                 <div className="team-list-slider">
                                     <div className="team-item">
@@ -137,7 +137,7 @@ function InvestorInfoMenu() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3">
+                        <div className="col-xl-3 col-md-6">
                             <div className="team-list">
                                 <div className="team-list-slider">
                                     <div className="team-item">
@@ -155,7 +155,7 @@ function InvestorInfoMenu() {
 
                          </div>
                         
-                        <div className="col-md-3">
+                        <div className="col-xl-3 col-md-6">
                             <div className="team-list">
                                 <div className="team-list-slider">
                                     <div className="team-item">
@@ -174,8 +174,8 @@ function InvestorInfoMenu() {
                         
                         </div>
                     </div>
-                    <div className="row mt5 d-flex justify-content-center">
-                            <div className="col-md-3">
+                    <div className="row d-flex justify-content-center">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -192,7 +192,7 @@ function InvestorInfoMenu() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-3">
+                            <div className="col-xl-3 col-md-6">
                                 <div className="team-list">
                                     <div className="team-list-slider">
                                         <div className="team-item">
@@ -220,7 +220,7 @@ function InvestorInfoMenu() {
                     
                     
                   
-                <div class="mt7 d-flex justify-content-center cursor-pointer"><a class="btn-bg">Explore All</a></div>
+                <div class="mt5 d-flex justify-content-center cursor-pointer"><a class="btn-bg">Explore All</a></div>
         </div>
          
           

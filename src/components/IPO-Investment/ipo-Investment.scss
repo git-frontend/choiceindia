@@ -43,12 +43,30 @@ body{
                 h4{
                     line-height: 2.4rem;
                 }
+                @media (max-width: $md) {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    text-align: left;
+                }
+                @media (max-width: $sm) {
+                    width: 85%;
+                    span{
+                        .img-fluid{
+                            width: 90px;
+                        }
+                    }
+                }
+            }
+            @media (max-width: $md) {
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
         .big-ttl{
             color: $primary;
             margin-bottom: 5rem;
-            @media (max-width: $sm-x) {
+            @media (max-width: $md) {
                 margin-bottom: 2.5rem;
             }
         }
@@ -99,6 +117,12 @@ body{
 
 .ipo-stocks{
     padding: 8rem 0;
+    @media (max-width: $sm) {
+        padding: 2rem 0 5rem 0;
+        .title-first{
+            text-align: center;
+        }
+    }
     .ipo-stock-slider{
         .services-list-slider{
             margin-top: 6rem;
@@ -107,6 +131,10 @@ body{
                 margin-right: -15%;
                 padding: 1rem !important;
                 padding-bottom: 4rem !important;
+                @media (max-width: $md) {
+                    margin-right: inherit !important;
+                    padding-bottom: 2rem !important;
+                }
             }
             .slick-slide{
                 .service-item{
@@ -136,6 +164,9 @@ body{
                         align-items: center;
                         justify-content: space-between;
                         display: flex;
+                        .img-fluid{
+                            height: 56px;
+                        }
                     }
                     .stock-itm-btm{
                         display: flex;
@@ -226,6 +257,9 @@ body{
                     width: 69%;
                   }
             }
+            @media (max-width: $sm) {
+                margin-top: 2rem;
+            }
         }
     }
 }
@@ -251,6 +285,9 @@ body{
         span{
             color: $yellowColor;
         }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
     }
     .ipo-benifits-list{
         display: flex;
@@ -263,13 +300,31 @@ body{
             h3{
                 line-height: 2.4rem;
                 margin-left: 3rem;
+                @media (max-width: $md) {
+                    margin-left: 1.5rem;
+                }
+                @media (max-width: $sm) {
+                    br{
+                        display: none;
+                    }
+                }
             }
+            @media (max-width: $sm) {
+                width: 85%;
+                margin-bottom: 2rem;
+            }
+        }
+        @media (max-width: $sm) {
+            padding: 3rem 0 6rem 0;
         }
     }
 }
 
 .get-start{
     padding-bottom: 10rem;
+    @media (max-width: $sm) {
+        padding-bottom: 5rem;
+    }
     .get-start-sub{
         display: flex;
         align-items: center;
@@ -296,6 +351,7 @@ body{
     &.get-start-scnd{
         position: relative;
         margin-top: -5rem;
+        padding-bottom: 5rem;
     }
 }
 
@@ -304,9 +360,15 @@ body{
 .why-choice-ipo{
     background: $primary;
     padding: 8rem 0 15rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0 10rem 0;
+    }
     .title-first{
         margin-bottom: 5rem;
         color: $whiteColor;
+        @media (max-width: $sm) {
+            text-align: center;
+        }
     }
     .why-ipo-list{
         display: flex;
@@ -325,12 +387,19 @@ body{
                 color: $whiteColor;
                 line-height: 2.4rem;
             }
+            @media (max-width: $sm) {
+                width: 48%;
+                margin-bottom: 1.5rem;
+            }
         }
     }
 }
 
 .process-ipo{
     padding: 0 0 15rem 0;
+    @media (max-width: $sm) {
+       padding: 0 0 5rem 0;
+    }
     position: relative;
     &::after {
         content: '';
@@ -349,6 +418,10 @@ body{
     }
     .title-first{
         padding-bottom: 14rem;
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+            text-align: center;
+        }
     }
     .ipo-list-img{
         position: relative;
@@ -394,6 +467,24 @@ body{
                     font-family: $font-family-poppins-semibold;
                     line-height: 2.1rem;
                 }
+                @media (max-width: $sm) {
+                    position: relative;
+                    left: inherit !important;
+                    right: inherit !important;
+                    top: inherit !important;
+                    bottom: inherit !important;
+                    width: 50%;
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (max-width: $sm) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .mn-img-big{
+            @media (max-width: $sm) {
+                display: none;
             }
         }
     }
@@ -407,6 +498,10 @@ body{
 	background-color: $whiteColor ;
 	.title-first {
 		margin-bottom: 4rem;
+        @media (max-width: $sm) {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
 	}
 
 	.faq-item {
