@@ -161,6 +161,14 @@ export default function FaqBody() {
     setTrigger(true)
     if (trigger === true) {
       loadfaqcategory();
+
+      var input = document.getElementById("value3");
+      input.addEventListener("keypress",function(eve){
+        if(eve.key ==="Enter"){
+
+          document.getElementById("btnsearch").click();
+        }
+      })
     }
 
   }, [trigger])
@@ -182,7 +190,7 @@ export default function FaqBody() {
 
                       <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
 
-                      <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
+                      <Button type='submit' id="btnsearch" variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
                     </div>
                     <div>
 

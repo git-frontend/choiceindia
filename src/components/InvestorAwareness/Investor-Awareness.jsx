@@ -13,14 +13,11 @@ import meta_tags from "../../Data/MetaTags";
 
 function InvestorAwareness() {
 
-  const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 
   const location = useLocation();
 
-  setTimeout(() => {
-    setSkeleton(() => false);
-  }, 200)
+ 
 
   useEffect(() => {
     setRenderCount(true)
@@ -37,16 +34,11 @@ function InvestorAwareness() {
 
   return (
     <div>
-
-      {
-        skeleton ? <Template1 /> :
           <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
               <InvestorAwarenessMain />
             </div>
           </div>
-      }
-
     </div>
   );
 }

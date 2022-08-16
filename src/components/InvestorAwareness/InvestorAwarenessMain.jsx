@@ -1,11 +1,13 @@
 import React from "react";
-
+import pdf1 from "../../assets/pdf/Investor-awareness/Annexure_I_KYC_updation.pdf";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 
 function InvestorAwarenessMain() {
+
+    
     return (
         <div>
             <section className="mainwrapquick">
@@ -68,7 +70,7 @@ function InvestorAwarenessMain() {
                         <div className="subtext">
                         <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div ><strong> KYC Updation </strong></div>
-                                   <div className="download"><FontAwesomeIcon icon={faDownload} className="cursor-pointer downloadimg"/> <a href="#" className="text-decoration-none">Download</a></div>
+                                   <div className="download cursor-pointer"> <a onClick={()=>{window.open(pdf1);download()}} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg"/> Download</a></div>
                                    </div>
                                    </div>
                         </div>
