@@ -361,11 +361,9 @@
 
 
 
-.fables-parent {
-    .slick-current {
-        display: none !important;
-    }
-}
+
+    
+
 
 
 
@@ -829,6 +827,7 @@
                         padding-left: 0;
                     }
                 }
+                   
             }
 
             @media (max-width: $md) {
@@ -1484,6 +1483,7 @@
         // background: #00000033;
     }
 }
+
 
 // restrict 3 dot
 

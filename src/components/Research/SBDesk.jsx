@@ -22,10 +22,14 @@ function SBDesk() {
     /**Show loader */
     const [showLoader, setShowLoader] = useState(false)
 
+
+
+
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
             generateSessionId()
+            
         }
         return () => {
             let tokenList = []
@@ -123,20 +127,43 @@ function SBDesk() {
         // indicesData["high"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["77"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in high (24/05/2021)
         // indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
         // setCompanyData(indicesData)
-
+         
 
         if ((researchReport && researchReport.length) || (resData && resData.length)) {
 
             let data = researchReport?.length ? researchReport : resData
+           
             data.forEach(ele => {
+                
                 if (ele.token == indicesData.Token) {
                     ele.LTP = indicesData.LTP
+
                     if (indicesData.LTP && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                        ele.priceData['ltp_price_percentage'] = ((Number(indicesData.LTP) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
+                        if(ele.status == "Booked Part Profit"){
+                            
+                            ele.priceData['ltp_price_percentage'] = ((Number(ele.matched_price) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
+                           
+
+                        }else{
+                            ele.priceData['ltp_price_percentage'] = ((Number(indicesData.LTP) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
+                           
+
+                        }
+                        
+                   
+                        // ele.priceData['part_profit_percentage'] =  ((Number(res.matched_price) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
+                        // console.log("llll",res.matched_price)
+
+                    
+                       
+
+                        
                     }
 
                 }
             })
+      
+
             let fin = JSON.parse(JSON.stringify(data))
             resData = fin;
             setResearchReport(fin)
@@ -257,8 +284,6 @@ function SBDesk() {
                 <div className="sbdesk-tab-cont">
                     <div className="sbdesk-tab-list">
                         {researchReport.map((report, i) => {
-                            
-                            
 
                             return <div key={i} className={"sbdesk-tab-itm" + ((report.status == 'Pending') ? "":" tab-itm-inactive")} >
                                 <div className="tab-itm-top">
@@ -288,8 +313,8 @@ function SBDesk() {
                                             <h5>Entry Price</h5>
                                             <h4>{(Number(report?.priceData?.entry_price?.value || 0)||0).toFixed(2)}</h4>
                                         </div>
-                                        <div className={" curnt-mrk-price " + ((report?.status == 'Stopped out')?' leftvalueset ':"")+((report?.status == 'Achieved')?' valueset ':"") + ((report?.LTP < report?.priceData?.entry_price?.value) ? 'red-txt ' : ' grn-txt ') + (report?.priceData?.ltp_price_percentage==100?" cmp-crossed":'')}  style={{ left:(report?.priceData?.ltp_price_percentage > 85 ? 85 : report?.priceData?.ltp_price_percentage) + '%' }}>
-                                            <h4>CMP <span className="sm-txt">{(report?.LTP||0).toFixed(2)}</span></h4>
+                                        <div className={" curnt-mrk-price " + ((report?.status == 'Stopped out')?' leftvalueset ':"") + ((report?.status == 'Achieved')?' valueset ':"") + ((report?.LTP < report?.priceData?.entry_price?.value) ? 'red-txt ' : ' grn-txt ') + (report?.priceData?.ltp_price_percentage==100?" cmp-crossed":'')}  style={{ left:(report?.priceData?.ltp_price_percentage > 85 ? 85 : report?.priceData?.ltp_price_percentage)  + '%' }}>
+                                            <h4>{report?.status == 'Achieved'||report?.status == 'Stopped out'|| report?.status == 'Booked Part Profit' ? "":'CMP'}  <span className="sm-txt">{ ((report?.status == 'Achieved')? ((Number(report?.priceData?.target?.value || 0)||0)):(report?.status == 'Stopped out')?((Number(report?.priceData?.stop_loss?.value || 0)||0)):(report?.status == 'Booked Part Profit')?((Number(report.matched_price || 0)||0)):(report?.LTP||0)).toFixed(2)}</span></h4>
                                         </div>
                                     </div>
                                 </div>
