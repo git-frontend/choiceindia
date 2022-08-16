@@ -326,7 +326,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-<Route exact path='/Investor-charter' element={
+<Route exact path='/investor-charter' element={
                             <React.Suspense>
                                 < LazyInvestorcharter />
                             </React.Suspense>
@@ -370,7 +370,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/Add-lead' element={
+                        <Route exact path='/add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
                             </React.Suspense>

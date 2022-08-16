@@ -259,37 +259,37 @@ Disclaimer:<br/>
                 </span>
                 <ul className="links-footer-quick">
                   <li>
-                    <a href="/">Investor Awareness</a>
+                    <Link to="/investor-awareness" target="_blank">Investor Awareness</Link>
                   </li>
                   <li>
-                    <a href="/">Watchout Investors</a>
+                    <a href="http://www.watchoutinvestors.com/" target="_blank">Watchout Investors</a>
                   </li>
                   <li>
-                    <a href="/">Scores</a>
+                    <a href="https://scores.gov.in/scores/Welcome.html" target="_blank">Scores</a>
                   </li>
                   <li>
-                    <a href="/">Investor Charter</a>
+                    <Link to="/Investor-charter" target="_blank">Investor Charter</Link>
                   </li>
                   <li>
-                    <a href="/">Investor Complaints</a>
+                    <Link to="/Investor-complaints" target="_blank">Investor Complaints</Link>
                   </li>
                   <li>
-                    <a href="/">Terms of Use</a>
+                    <Link to="/terms-conditions" target="_blank">Terms of Use</Link>
                   </li>
                   <li>
-                    <a href="/">Privacy Policy</a>
+                    <Link to="/privacy-policy" target="_blank">Privacy Policy</Link>
                   </li>
                   <li>
-                    <a href="/">Disclaimer</a>
+                    <Link to="/disclaimer" target="_blank">Disclaimer</Link>
                   </li>
                   <li>
-                    <a href="/">Sitemap</a>
+                    <a href="/" target="_blank">Sitemap</a>
                   </li>
                   <li>
-                    <a href="/">CEBPL Policies</a>
+                    <a href="/cebpl-policies" target="_blank">CEBPL Policies</a>
                   </li>
                   <li>
-                    <a href="/">Client Details Update</a>
+                    <Link to="/client-details-update" target="_blank">Client Details Update</Link>
                   </li>
                 </ul>
             </div> 

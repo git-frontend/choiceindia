@@ -1,5 +1,11 @@
 import React from "react";
-
+import CodeConduct from "../../assets/pdf/CEBPL/Code_of_Conduct_conflict_of_interest.pdf";
+import DormantAccount from "../../assets/pdf/CEBPL/Dormant_account_Policy.pdf"
+import ErrorAccount from "../../assets/pdf/CEBPL/Error_Account_Policy.pdf"
+import PMLAPolicy from "../../assets/pdf/CEBPL/PMLA_POLICY_1.8.pdf"
+import PreFunded from "../../assets/pdf/CEBPL/Pre_Funded_Instrument_Policy.pdf"
+import surveillance from "../../assets/pdf/CEBPL/Surveillance_Policy.pdf"
+import Unauthentic from "../../assets/pdf/CEBPL/Unauthentic_News_Circulation.pdf"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from  '@fortawesome/free-solid-svg-icons';
 
@@ -24,33 +30,33 @@ function CEBPLPoliciesMain() {
                                 <div className="subtext">
                                     <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Surveillance Policy </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(surveillance)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
 
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Unauthentic News Circulation</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(Unauthentic)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
 
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Error Account Policy</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(ErrorAccount)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Dormant Account Policy</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(DormantAccount)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Code of Conduct Conflict of Interest</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(CodeConduct)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>PMLA Policy 1.8</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(PMLAPolicy)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Pre Funded Instrument Policy</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   <div><a onClick={()=>{window.open(PreFunded)}} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></a></div>
                                    </div>
                                  
                                   
