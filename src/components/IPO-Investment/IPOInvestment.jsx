@@ -5,6 +5,7 @@ import IPOStocks from './IPOStocks';
 import IPOBenifits from './IPOBenifits';
 import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
+import IPOFaq from './IPOFaq';
 
 import "./ipo-Investment.scss";
 
@@ -25,6 +26,7 @@ function EquityBrokingMain() {
          <IPOBenifits />
          <IPOProcess />
          <WhyChoiceIPO />
+         <IPOFaq />
         
          
        </div> 
