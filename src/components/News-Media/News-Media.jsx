@@ -14,7 +14,7 @@ function NewsMedia() {
   return (
     <>
       <div>
-      <section className="bannersec">
+      {/* <section className="bannersec">
 				<div className="container">
 					<div className="row">
 						<div className="col-md-12">
@@ -26,24 +26,22 @@ function NewsMedia() {
 					</div>
 					
 				</div>
-			</section>
-      <section className="bluecolor">
+			</section> */}
+
+
+      
 			<div className="container">
-			<div className="row ">
+			<div className="row">
 						<div className="col-md-12">
-							<h1>Choice Broking Media</h1>
+            <h1 className='text-center mt-5 mb-5 title-first'>Choice Broking Media</h1>
 						</div>
 					</div>
 			</div>
-		</section>
+		
 
         <div className='media-banner'>
-          
-
-
           <div className="container">
-
-            <div className="row">
+            <div className="row mt-5">
               <div className="col-md-4 mb3">
                 <div className="card">
                   <div className="youtube-play">
