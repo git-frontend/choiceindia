@@ -191,22 +191,22 @@ function Routing() {
                                 < LazyShareHoldingPattern />
                             </React.Suspense>
                         } />
-                         <Route exact path='/financial-info' element={
+                        <Route exact path='/financial-info' element={
                             <React.Suspense>
                                 < LazyFinancialInfo />
                             </React.Suspense>
                         } />
-                         <Route exact path='/voting-results' element={
+                        <Route exact path='/voting-results' element={
                             <React.Suspense>
                                 < LazyVotingResults />
                             </React.Suspense>
                         } />
-                         <Route exact path='/fact-sheet' element={
+                        <Route exact path='/fact-sheet' element={
                             <React.Suspense>
                                 < LazyFactSheet />
                             </React.Suspense>
                         } />
-                         <Route exact path='/notices' element={
+                        <Route exact path='/notices' element={
                             <React.Suspense>
                                 < LazyNotices />
                             </React.Suspense>
@@ -326,12 +326,12 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-<Route exact path='/investor-charter' element={
+                        <Route exact path='/investor-charter' element={
                             <React.Suspense>
                                 < LazyInvestorcharter />
                             </React.Suspense>
                         } />
-<Route exact path='/investor-awareness' element={
+                        <Route exact path='/investor-awareness' element={
                             <React.Suspense>
                                 < Lazyinvestorawareness />
                             </React.Suspense>
@@ -404,7 +404,7 @@ function Routing() {
 
                         <Route exact path='/terms-conditions' element={
                             <React.Suspense>
-                                < LazyTermsConditions/>
+                                < LazyTermsConditions />
                             </React.Suspense>
                         } />
 
@@ -429,7 +429,7 @@ function Routing() {
                                 < LazyEquityBroking />
                             </React.Suspense>
                         } />
-                         <Route exact path='/board-of-directors' element={
+                        <Route exact path='/board-of-directors' element={
                             <React.Suspense>
                                 < LazyBoardOfDirectors />
                             </React.Suspense>

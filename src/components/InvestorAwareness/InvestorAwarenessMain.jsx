@@ -7,12 +7,7 @@ import "../CEBPLPolicies/CEBPL-Policies.scss";
 
 function InvestorAwarenessMain() {
 
-    function download(){
-        var link = document.createElement('a');
-        console.log("check",link)
-        link.download = pdf1;
-        link.dispatchEvent(new MouseEvent('click'));
-    }
+    
     return (
         <div>
             <section className="mainwrapquick">
