@@ -506,18 +506,18 @@ body{
         height: auto;
     }
     .team-item {
-        width: 90% !important;
+        width: 100% !important;
         position: relative;
         overflow: hidden;
         border-radius: 20px;
         background: #ad8b73;
         padding: 0;
         transition: 0.3s all ease-in;
+        margin-bottom: 3rem;
 
         @media (max-width:$sm) {
-            width: 95% !important;
+            
             display: block !important;
-            margin: 0 auto;
             
         }
 

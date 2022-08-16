@@ -39,7 +39,7 @@ function IPOProcess() {
                             <h4>Shares Credited in Demat Account</h4>
                         </div>
                     </div>
-                     <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"900"} height={"248"} />
+                     <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid mn-img-big"} width={"900"} height={"248"} />
                   </div>
               </div>
           </div>
