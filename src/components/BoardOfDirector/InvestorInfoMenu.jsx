@@ -301,7 +301,7 @@ function InvestorInfoMenu() {
                     
                     
                   
-                <div class="mt7 d-flex justify-content-center cursor-pointer"><a class="btn-bg" onClick={()=>{setshow(true)}}>Explore All</a></div>
+                <div class="mt7 d-flex justify-content-center cursor-pointer"><a class="btn-bg" onClick={()=>{setshow(true)}}>View All</a></div>
         </div>
          
           
