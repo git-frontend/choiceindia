@@ -5,6 +5,7 @@ import PrintMedia from '../SumeetBagadia/PrintMedia';
 import SocialConnect from "../SumeetBagadia/SocialConnect";
 import { useState } from "react";
 import Template2 from '../Common-features/Template2';
+import { Link } from "react-router-dom";
 
 function SumeetBagadia() {
 
@@ -43,7 +44,7 @@ function SumeetBagadia() {
 
                         <p className="read-more-wrap">Mr <strong>Sumeet Bagadia</strong>  is an MBA in Finance with over 15+ years of experience in the Indian Capital Markets. He is sought by print and electronic media as well as wire services on a regular basis for his views on Equities, Commodities as well as the Currencies Market. His sheer determination and hard work, coupled with his innate talent to spot market opportunities; has made the Choice Broking - Technical Research Desk, one of the most sought after in the financial markets. <span className="read-more-target">Expertise that you can leverage. His core expertise lies in identifying support and resistance levels, short-term positional calls, mid-cap momentum and stock as well as sector-specific strategies. The well-rounded strategies shared by him focus on long-term as well as short-term goals and can be leveraged by both investors and traders. He possesses hands-on knowledge on Fibonacci Ratio, Relative Strength Index, Open Interest Analysis, Trend Termination, Continuation Pattern Identification, Hedging Strategies, Price and Candlestick Patterns, Momentum Indicators, Channel, Bands, FII Data Analysis, Moving Averages, Indicator Analysis, Rollover Analysis and Option Strategies; to name a few!</span></p>
 
-                        <label for="post-1" className="read-more-trigger moreless-button"></label>
+                        <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                       </div>
 
 
@@ -67,7 +68,7 @@ function SumeetBagadia() {
                       <h3 className="title-sm-new">
                         Sign up for exclusive trading tips from Sumeet Bagadia?
                       </h3>
-                      <a href="javascript:void(0)" className="btn-bg btn-bg-dark acnt-sub-btn" onClick={()=>scrollToId('home-bg')}>Open My Account</a>
+                      <Link to="/sumeet-bagadia"  onClick={()=>scrollToId('home-bg')}><div className="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</div></Link>
                     </div>
                   </div>
                 </div>
@@ -88,7 +89,7 @@ function SumeetBagadia() {
                       <h3 className="title-sm-new">
                         Get Sumeet Bagadia's trading tips and recommendations?
                       </h3>
-                      <a href="javascript:void(0)" className="btn-bg acnt-sub-btn" onClick={()=>scrollToId('home-bg')}>Sign up</a>
+                      <Link to="/sumeet-bagadia" onClick={()=>scrollToId('home-bg')}><div className="btn-bg acnt-sub-btn cursor-pointer">Sign up</div></Link>
                     </div>
                   </div>
                 </div>

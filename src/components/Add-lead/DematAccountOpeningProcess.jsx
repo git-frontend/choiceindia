@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Image19 from '../../assets/images/open-demat-account/one.webp';
 import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
 import Image21 from '../../assets/images/open-demat-account/downarrow.png';
@@ -9,6 +9,16 @@ import Image24 from '../../assets/images/open-demat-account/four.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 const DematAccountOpeningProcess = () => {
+    function chapterScroll(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     return (
         <div>
 
@@ -25,7 +35,7 @@ const DematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >Get Started </a>
+                                    <Link to="/add-lead" ><div className="btn-bg btn-bg-dark " onClick={() => { chapterScroll('addBanner') }}> Get Started </div></Link>
                                 </div>
 
                             </div>

@@ -103,12 +103,16 @@
                 .wrap-app-links{
                     display: flex;
                     margin-top: 2rem;
+                    
                     @media (max-width: $sm-x){
                         width: 100%;
                         flex-wrap: wrap;
                     }
                     @media (min-width:769px) and (max-width:1200px){
                         flex-direction: column;
+                    }
+                    a{
+                        text-decoration: none;
                     }
         
 

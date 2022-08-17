@@ -8,6 +8,7 @@ import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platfor
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
 import { useState } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from 'react-router-dom';
 // import Lazy from 'yup/lib/Lazy';
 
 function SubBrokerBenifitsHindi() {
@@ -106,7 +107,7 @@ function SubBrokerBenifitsHindi() {
                             <div className="item-next1">  
                                 <h3>चॉइस सब ब्रोकर बनें</h3>
                                 <p>एक भरोसेमंद साथी के साथ सब ब्रोकर फ्रैंचाइज़ी जो आपको बड़े होने में मदद कर सके।</p>
-                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </a>
+                                <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
                             </div>
                         </div>
                     </div>

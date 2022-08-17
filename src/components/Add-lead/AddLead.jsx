@@ -179,7 +179,7 @@ function AddLead() {
                             <li>Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li>
                             <li>Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li>
                             <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
-                            <li><a href="https://choiceindia.com/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li>
+                            <li><Link to="/campaign/free-amc-demat-account">Open a Demat account with no amc,</Link> Choice opens an account for you, free of cost.</li>
                           </ul>
                         </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                     </div>

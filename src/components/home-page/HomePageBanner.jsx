@@ -5,8 +5,8 @@ import ImageT from '../../assets/images/home-banner.webp';
 
 function HomePageBanner() {
 
-    const [primary, setPrimary] = useState([]);
-    const [trigger, setTrigger] = useState(false);
+    // const [primary, setPrimary] = useState([]);
+    // const [trigger, setTrigger] = useState(false);
     // const [skeleton, setSkeleton] = useState(() => true);
 
     // setTimeout(() => {
@@ -14,34 +14,34 @@ function HomePageBanner() {
     // }, 3000)
 
     /** load Home Primary Banner  */
-    function loadPrimarybanner() {
-        homeServices.homePrimaryBanner().then(
-            res => {
-                setPrimary(res.data.data);
+    // function loadPrimarybanner() {
+    //     homeServices.homePrimaryBanner().then(
+    //         res => {
+    //             setPrimary(res.data.data);
 
-            }
-        )
-    };
+    //         }
+    //     )
+    // };
 
     /**onInIt Home Primary Banner */
-    useEffect(() => {
-        setTrigger(true)
-        if (trigger === true) {
-            loadPrimarybanner();
-        }
+    // useEffect(() => {
+    //     setTrigger(true)
+    //     if (trigger === true) {
+    //         loadPrimarybanner();
+    //     }
 
-    }, [trigger])
+    // }, [trigger])
 
 
     return (
         <div>
-            {
+            {/* {
                 primary.map((response) => {
 
 
-                    return (
+                    return ( */}
 
-                        <section className="home-banner" key={response.id}>
+                        <section className="home-banner" >
                             <div className="banner-desc">
                                 <div className="container">
                                     <div className="row">
@@ -61,11 +61,11 @@ function HomePageBanner() {
                             </div>
                         </section>
 
-                    )
+                    {/* )
 
                 })
 
-            }
+            } */}
 
         </div>
 

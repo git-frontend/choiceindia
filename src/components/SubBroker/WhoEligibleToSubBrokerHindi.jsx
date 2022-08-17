@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from 'react-router-dom';
 
 function WhoEligibleToSubBrokerHindi() {
 
@@ -96,7 +97,7 @@ function WhoEligibleToSubBrokerHindi() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>विकास तो निश्चित है जब आप हमारे साथ साझेदारी करेंगे|</h4>
-                                <a href="javascript:void(0)" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </a>
+                                <Link to="/sub-broker-franchise" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
                             </div>
                         </div>
                     </div>

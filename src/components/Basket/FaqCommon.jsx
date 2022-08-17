@@ -86,8 +86,8 @@ function FaqCommon() {
 
                     </div>
                     <div className="col-md-12 text-center">
-                        <a className="btn-bg btn-banner" href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178107' target='_blank' rel="noreferrer" >
-                            Explore FAQ's
+                        <a  href='https://choicebroking.freshdesk.com/support/solutions/folders/22000178107' target='_blank' rel="noreferrer" >
+                        <span className=" btn-bg btn-banner">Explore FAQ's</span>
                         </a>
                     </div>
                 </div>

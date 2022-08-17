@@ -685,7 +685,7 @@ function SubBrokerForm(props) {
                 <div className="exit-intent-sleekbox-popup">
                     <div className="popup-sub-row">
                     <div className="close">
-                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
+                            <a onClick={handleOTPPopupClose}  ><span className="closebtn cursor-pointer">&times;</span></a>
                             </div>
                         <div className="popup-sub-right">
 

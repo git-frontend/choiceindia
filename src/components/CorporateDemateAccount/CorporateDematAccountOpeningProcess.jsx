@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 import Image19 from '../../assets/images/open-demat-account/one.webp';
 import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
 import Image21 from '../../assets/images/open-demat-account/downarrow.png';
@@ -25,7 +25,7 @@ const CorporateDematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="javascript:void(0)" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </a>
+                                    <Link to="/corporate-demat-account" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </Link>
                                 </div>
 
                             </div>

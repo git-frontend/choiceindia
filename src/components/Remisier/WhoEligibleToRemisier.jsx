@@ -82,7 +82,7 @@ function WhoEligibleToRemisier() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>Growth is  certain when you partner with us.</h4>
-                                <a href="javascript:void(0)" className="btn-bg" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </a>
+                                <Link to="/remisier" className="btn-bg" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

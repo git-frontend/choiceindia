@@ -16,7 +16,7 @@ function SubBrokerOffersHindi(){
                         <div className="col-md-12">
                             <div className="offers-table-sec">
                                 <div className="table-responsive wow fadeInUp">
-                                <table class="table table-hover table-striped ">
+                                <table className="table table-hover table-striped ">
                                <thead>
                                   <tr>
                                      <th width="25%"> <span></span> </th>
@@ -27,19 +27,19 @@ function SubBrokerOffersHindi(){
                                </thead>
                                <tbody>
                                   <tr>
-                                     <td class="charges-heads">केवल इक्विटी</td>
+                                     <td className="charges-heads">केवल इक्विटी</td>
                                      <td>200</td>
                                      <td>400</td>
                                      <td>700</td>
                                   </tr>
-                                  <tr class="grey-back">
-                                     <td class="charges-heads">केवल म्यूचुअल फंड</td>
+                                  <tr className="grey-back">
+                                     <td className="charges-heads">केवल म्यूचुअल फंड</td>
                                      <td>100</td>
                                      <td>100</td>
                                      <td>100</td>
                                   </tr>
                                   <tr>
-                                     <td class="charges-heads">इक्विटी + म्यूचुअल फंड</td>
+                                     <td className="charges-heads">इक्विटी + म्यूचुअल फंड</td>
                                      <td>400</td>
                                      <td>700</td>
                                      <td>1100</td>

@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import utils from "../../Services/utils";
+import { Link } from 'react-router-dom';
 
 function WhoEligibleToRemisier() {
 
@@ -81,7 +82,7 @@ function WhoEligibleToRemisier() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>Growth is certain when you partner with us.</h4>
-                                <a href="javascript:void(0)" className="btn-bg" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </a>
+                                <Link to="/authorised-person" className="btn-bg" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

@@ -122,17 +122,17 @@ function Slidersec() {
 
     return (
         <div>
-            <section className="sumit-bg-class">
+            <section className="sumit-bg-className">
                 <div className="container">
                     <div className="row flex-sec-r align-items-center">
                         <div className="col-xl-5">
-                            <div className="bg-class-left">
+                            <div className="bg-className-left">
                                 <h3 className="title-sm-new">Sumeet Bagadia Calls</h3>
                                 <p className="sml-para">Adept at analysing various standalone events to predict the market outcome; <br /> Mr Sumeet Bagadia's Research Calls have an excellent success ratio. Have a look at the results of the past research calls by him.</p>
                             </div>
                         </div>
                         <div className="col-xl-7">
-                            <div className="bg-class-right">
+                            <div className="bg-className-right">
                                 <Slider {...settings} className="sm-slider-bg services-list-slider">
 
                                     {

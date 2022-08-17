@@ -8,6 +8,7 @@ import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platfor
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
 import { useState } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from 'react-router-dom';
 // import Lazy from 'yup/lib/Lazy';
 
 function SubBrokerBenifits() {
@@ -106,7 +107,7 @@ function SubBrokerBenifits() {
                             <div className="item-next1">  
                                 <h3>Become a Choice Sub Broker</h3>
                                 <p>Start Sub Broker franchise with a trustworthy partner that can help you to grow up.</p>
-                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </a>
+                                <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

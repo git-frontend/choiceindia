@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import Manager from '../../assets/images/sub-broker/local-relationship-manager-assistance.svg';
 import Software from '../../assets/images/sub-broker/advanced-software-to-manage-business.svg';
 import Sales from '../../assets/images/sub-broker/marketing-and-sales-support.svg';
@@ -6,7 +6,7 @@ import Channels from '../../assets/images/sub-broker/dedicated-whatsapp-and-tele
 import Training from '../../assets/images/sub-broker/sub-broker-training-through-webinars-and-conferences.svg';
 import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platforms-app-web.svg';
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
-import {useState} from 'react';
+import { Link } from 'react-router-dom';
 import utils from "../../Services/utils";
 
 
@@ -88,7 +88,7 @@ function RemisierBenifits() {
                             <div className="item-next1">
                                 <h3>Become a Choice Authorised Person</h3>
                                 <p>Start Authorised Person with a trustworthy partner that can help you to grow up.</p>
-                                <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </a>
+                                <Link to="/authorised-person" className="btn-bg btn-bg-dark" onClick={() => { utils.scrollToId('sub-broker-form') }}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

@@ -76,7 +76,7 @@ useEffect(()=>{
                               <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Insurance</NavLink>
+                              <NavLink className="cursor-pointer" to="/insurance" >Insurance</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/services" >Loans</NavLink>
@@ -155,7 +155,9 @@ useEffect(()=>{
                       <div className="col-md-7">
                         <div className="links-wrap-social">
                           <div className="wrap-app-links">
-                            <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl link-nrl-sm white'>
+                            
+                            <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" >
+                            <div className='link-nrl link-nrl-sm white'>
                               <svg width="25" height="25" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0.549316 4.31975C0.549316 3.28063 0.84049 2.49725 1.31842 1.99816L1.3579 1.96035L22.8228 23.0876V23.4841L1.3579 44.6114L1.31843 44.5736C0.840494 44.0745 0.549316 43.2911 0.549316 42.252V4.31975Z" fill="#13151A" stroke="#0066B3" strokeWidth="0.25" />
                                 <path d="M38.4983 25.5919L38.4983 25.5919L30.1199 30.2505L30.1199 30.2505L30.0386 30.2957L23.0737 23.4752V23.0907L30.042 16.2717L38.4982 20.9723C38.4982 20.9723 38.4983 20.9723 38.4983 20.9723C39.6724 21.6258 40.2283 22.4683 40.2283 23.2827C40.2283 24.0971 39.6724 24.9392 38.4983 25.5919Z" fill="#13151A" stroke="#0066B3" strokeWidth="0.25" />
@@ -164,12 +166,17 @@ useEffect(()=>{
                               </svg>
 
                               <span className='blackcolor' target="_blank">Google Play</span>
+                              </div>
                             </a>
-                            <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl link-nrl-sm white'>
+                            
+                            <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" >
+                            <div className='link-nrl link-nrl-sm white'>
                             <img src={appstore} className="" alt={"App Store"} width="27" height="24" />
 
                               <span className='blackcolor' target="_blank">App Store</span>
+                              </div>
                             </a>
+                            
                           </div>
                           <div className="footer-social-links">
                             <a href="https://www.facebook.com/choice.broking/" target="_blank">

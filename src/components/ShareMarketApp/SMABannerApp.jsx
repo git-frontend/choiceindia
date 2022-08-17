@@ -24,22 +24,22 @@ function SMABannerApp() {
     <div className='App-main'>
 
 
-<section class="trading-app-sec1 pb-10">
-        <div class="container ">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="sec1-left">
-                        <div class="top-title pl8">
-                           <h1>Jiffy Share Market App <span class="mb-br">For</span> </h1> 
+<section className="trading-app-sec1 pb-10">
+        <div className="container ">
+            <div className="row">
+                <div className="col-md-7">
+                    <div className="sec1-left">
+                        <div className="top-title pl8">
+                           <h1>Jiffy Share Market App <span className="mb-br">For</span> </h1> 
 
                            <Slider {...settings1} className='slider-ver'>
-                                <div class="">
+                                <div className="">
                                     <h4>Stocks</h4>
                                 </div>
-                                <div class="">
+                                <div className="">
                                     <h4>Commodities</h4>
                                 </div>
-                                <div class="">
+                                <div className="">
                                     <h4>Derivatives</h4>
                                 </div>
                                
@@ -57,13 +57,13 @@ function SMABannerApp() {
                       <span className=''>App Store</span>
                     </a>
                   </div>
-                        <div class="star-line">
-                            <img src={AppImage6} alt="" class="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
+                        <div className="star-line">
+                            <img src={AppImage6} alt="" className="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="sec1-right">
+                <div className="col-md-5">
+                    <div className="sec1-right">
                         <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"387"} height={"727"}/>
                         
                     </div>
