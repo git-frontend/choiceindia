@@ -76,213 +76,104 @@ body{
     }
 }
 
-.ipo-stocks{
-    padding: 8rem 0;
-    @media (max-width: $sm) {
-        padding: 2rem 0 5rem 0;
-        .title-first{
-            text-align: center;
-        }
+.why-invst-mf{
+    padding: 10rem 0 7rem 0;
+    .title-first{
+        text-transform: capitalize;
+        padding-top: 1rem;
     }
-    .ipo-stock-slider{
-        .services-list-slider{
-            margin-top: 6rem;
-            overflow: hidden;
-            .slick-list{
-                margin-right: -15%;
-                padding: 1rem !important;
-                padding-bottom: 4rem !important;
-                @media (max-width: $md) {
-                    margin-right: inherit !important;
-                    padding-bottom: 2rem !important;
-                }
-            }
-            .slick-slide{
-                .service-item{
-                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
-                    background: $whiteColor;
-                    border-radius: 20px;
-                    padding: 3rem 3rem;
-                    padding-bottom: 5rem;
-                    position: relative;
-                    width: 90% !important;
-                    margin: 0 auto;
-                    display: block;
-                    .stck-gn{
-                        position: absolute;
-                        text-align: center;
-                        width: 100%;
-                        background: #c0f2cf4d;
-                        padding: 1rem;
-                        left: 0;
-                        bottom: 0;
-                        margin: 0;  
-                        color: #4ECB71;
-                    }
-                    .stock-itm-top{
-                        padding-bottom: 2.5rem;
-                        border-bottom: 1px solid $primary;
-                        align-items: center;
-                        justify-content: space-between;
-                        display: flex;
-                        .img-fluid{
-                            height: 56px;
-                        }
-                    }
-                    .stock-itm-btm{
-                        display: flex;
-                        padding-top: 2.5rem;
-                        align-items: center;
-                        justify-content: space-between;
-                    }
-                    h4{  
-                        font-family: $font-family-poppins-semibold;
-                        span{
-                            display: block;
-                            opacity: 0.75;
-                            margin-top: 1rem;
-                            font-family: $font-family-poppins-regular;
-                        }
-                    }
-                }
-            }
-            .slick-arrow {
-                top: inherit !important;
-                bottom: -3rem;
-                z-index: 99;
-                width: 3.5rem;
-                height: 3.5rem;
-                right: 1.5625rem;
-                border: 1px solid #ffffff38;
-                border-radius: 50%;
+    .mf-list-slider{
+        .slick-slide{
+            padding:1rem 1.5rem;
+            .mf-list-itm{
+                text-align: center;
+                padding: 3rem 2rem;
                 background: $whiteColor;
-                &::before {
-                    content: '';
-                    background: url(../../assets/images/icons/arrow-thin.svg) no-repeat;
-                    background-size: contain;
-                    width: 1.5rem;
-                    height: 1rem;
-                    display: block;
-                    position: absolute;
-                    left: 50%;
-                    top: 50%;
-                    transform: translate(-50%, -50%);
+                @extend .box-shadow;
+                border-radius: 1rem;
+                .mf-sm-img{
+                    display: inline-block;
+                    margin-bottom: 3rem;
                 }
-                &.slick-disabled{
-                    background: inherit;
-                    cursor: not-allowed;
-                    opacity: 0.5;
+                h3{
+                    line-height: 2.3rem;
                 }
-            }
-            .slick-arrow.slick-prev {
-                left: inherit;
-                right: 6rem;
-                &::before {
-                    content: '';
-                    background: url(../../assets/images/icons/arrow-thin-left.svg) no-repeat;
-                    background-size: contain;
-                    width: 1.5rem;
-                    height: 1rem;
-                    
-                }
-            }
-            .slick-dots{
-                position: relative;
-                top: 1rem;
-                bottom: inherit;
-                display: flex !important;
-                width: 88%;
-                left:5px;
-                >li{
-                    width: 25%;
-                    margin: 0;
-                    button{
-                        width: 100%;
-                        background: #F4F4F4;
-                        height: 4px;
-                        padding: 0;
-                        &::before{
-                            display: none;
-                        }
-                    }
-                    &.slick-active{
-                        button{
-                            background: $yellowColor;
-                            border-radius: 3px;
-                        }
-                    }
-                }
-
-                  @media only screen and (max-width: $md) {
-                    left: 2rem;
-                    width: 69%;
-                  }
-            }
-            @media (max-width: $sm) {
-                margin-top: 2rem;
             }
         }
     }
 }
 
-.ipo-more-benifits{
+.explore-best-mf{
+    padding: 7rem 0;
+    background: $abt-bg;
     position: relative;
-    &::after {
+    &::before {
         content: '';
-        width: 17rem;
-        height: 20rem;
+        width: 24rem;
+        height: 38rem;
         display: block;
         position: absolute;
-        right: 2px;
-        top: -4rem;
-        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/mutual-funds-investment/bg-exp.webp) no-repeat top left;
         background-size: contain;
-        z-index: -9;
+        z-index: 1;
+
         @media (max-width: $md) {
             display: none;
         }
     }
-    .title-first{
-        span{
-            color: $yellowColor;
-        }
-        @media (max-width: $sm) {
-            text-align: center;
+    .best-mf-cont{
+        padding-top: 4rem;
+        .title-first{
+            text-transform: capitalize;
+            margin-bottom: 2rem;
         }
     }
-    .ipo-benifits-list{
+    .best-mf-list{
         display: flex;
-        justify-content: space-around;
+        padding-left: 3rem;
+        align-items: center;
         flex-wrap: wrap;
-        padding:8rem 0 10rem 0;
-        .benifits-itm{
-            display: flex;
-            align-items: center;
-            h3{
-                line-height: 2.4rem;
-                margin-left: 3rem;
-                @media (max-width: $md) {
-                    margin-left: 1.5rem;
-                }
-                @media (max-width: $sm) {
-                    br{
-                        display: none;
+        justify-content: space-between;
+        .mf-lis-itm{
+            width: 28%;
+            padding: 3rem 2rem;
+            border-radius: 16px; 
+            background: transparent;
+            border: 1px solid transparent;
+            text-align: center;
+            transition: 0.2s ease;
+            .sm-img-itm{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                overflow: hidden;
+                min-height: 85px;
+            }
+            h4{
+               font-family:  $font-family-poppins-medium;
+               line-height: 2.3rem;
+            }
+            &:hover{
+                background: $whiteColor;
+                border: 1px solid #25B8AF;
+                .sm-img-itm{
+                    .img-fluid{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
                     }
                 }
             }
-            @media (max-width: $sm) {
-                width: 85%;
-                margin-bottom: 2rem;
-            }
-        }
-        @media (max-width: $sm) {
-            padding: 3rem 0 6rem 0;
         }
     }
 }
 
 .get-start{
-    padding-bottom: 10rem;
+    position: relative;
+    margin-bottom: -5rem;
     @media (max-width: $sm) {
         padding-bottom: 5rem;
     }
@@ -316,11 +207,9 @@ body{
     }
 }
 
-
-
-.why-choice-ipo{
+.why-choice-invest{
     background: $primary;
-    padding: 8rem 0 15rem 0;
+    padding: 13rem 0 15rem 0;
     @media (max-width: $sm) {
         padding: 6rem 0 10rem 0;
     }
@@ -335,22 +224,38 @@ body{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
+        align-items: flex-start;
         .why-itm{
             text-align: center;
+            border-bottom: 2px solid;
+            padding: 1rem 1rem;
+            border-color: #1ED0CB;
             .sm-img-itm{
                 display:flex;
                 min-height: 85px;
                 align-items: flex-end;
                 justify-content: center;
                 margin-bottom: 2rem;
+                
             }
             h4{
                 color: $whiteColor;
-                line-height: 2.4rem;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+                font-family: $font-family-poppins-semibold;
             }
             @media (max-width: $sm) {
                 width: 48%;
                 margin-bottom: 1.5rem;
+            }
+            &:nth-child(2n){
+                margin-top: 8rem;
+            }
+            &:nth-child(3n){
+                border-color: $yellowColor;
+            }
+            &:nth-child(4n){
+                border-color: $yellowColor;
             }
         }
     }

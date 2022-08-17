@@ -3,8 +3,8 @@ import React from "react";
 import Banner from './Banner';
 import WhyInvestMF from './WhyInvestMF';
 import IPOBenifits from './IPOBenifits';
-import IPOProcess from './IPOProcess';
-import WhyChoiceIPO from './WhyChoiceIPO';
+import WhyChoiceInvestment from './WhyChoiceInvestment';
+import ExploreBestMF from './ExploreBestMF';
 import IPOFaq from './IPOFaq';
 
 import "./mf-investment.scss";
@@ -24,9 +24,9 @@ function MutualFundsSEO() {
          <Banner />
          <WhyInvestMF />
          <IPOBenifits />
-         <IPOProcess />
-         <WhyChoiceIPO />
-         <IPOFaq />
+         <WhyChoiceInvestment />
+         <ExploreBestMF />
+         {/* <IPOFaq /> */}
         
          
        </div> 
