@@ -24,9 +24,8 @@ function IPOStocks() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 2,
           slidesToScroll: 1,
-          adaptiveHeight: true,
         },
       },
       {
@@ -34,6 +33,7 @@ function IPOStocks() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          centerMode: false,
         },
       },
     ],
