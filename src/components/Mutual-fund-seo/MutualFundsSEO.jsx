@@ -1,16 +1,16 @@
 
 import React from "react";
 import Banner from './Banner';
-import IPOStocks from './IPOStocks';
+import WhyInvestMF from './WhyInvestMF';
 import IPOBenifits from './IPOBenifits';
 import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 
-import "./ipo-investment.scss";
+import "./mf-investment.scss";
 
 
-function EquityBrokingMain() {
+function MutualFundsSEO() {
 
   
 
@@ -19,10 +19,10 @@ function EquityBrokingMain() {
   return (
     <div>
       
-      <div className="mainwrapper brokerage-charges-temp">
+      <div className="mainwrapper mfi-main">
          
          <Banner />
-         <IPOStocks />
+         <WhyInvestMF />
          <IPOBenifits />
          <IPOProcess />
          <WhyChoiceIPO />
@@ -36,4 +36,4 @@ function EquityBrokingMain() {
   );
 }
 
-export default EquityBrokingMain;
+export default MutualFundsSEO;
