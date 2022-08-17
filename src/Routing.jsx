@@ -92,6 +92,7 @@ const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirect
 const LazyIPOInvestment = React.lazy(() => import('./components/IPO-Investment/IPOInvestment'));
 
 const LazyClientdetail = React.lazy(() => import('./components/ClientDetails/ClientDetail'));
+const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
 
 function Routing() {
 
@@ -445,6 +446,12 @@ function Routing() {
                         <Route exact path='/client-details-update' element={
                             <React.Suspense>
                                 < LazyClientdetail />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/mutual-funds-investment' element={
+                            <React.Suspense>
+                                < LazyMutualFundsInvestment />
                             </React.Suspense>
                         } />
 
