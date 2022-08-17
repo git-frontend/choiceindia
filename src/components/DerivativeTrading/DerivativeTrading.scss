@@ -1,0 +1,998 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+
+.demat-page-parent{
+	animation: hideMe 4s forwards;
+}
+
+.banner-sect {
+	padding:  5rem 0;
+	background-color: $whiteColor;
+
+	@media (max-width:$sm) {
+		padding: 6rem 0;
+	}
+	@media (max-width:$xs) {
+		padding: 2rem 0;
+	}
+
+	.banner-title {
+		color: $primary;
+		font-size: 3rem;
+		line-height: 4.5rem;
+		font-family: $font-family-poppins-medium;
+		font-weight: 600;
+		padding-bottom: 5rem;
+		.yellow {
+			color: $bgcolor-yellow;
+		}
+	}
+
+	.zigzagline {
+		padding: 2rem 0 5rem;
+	}
+
+	.formwrap {
+		position: relative;
+
+		.formbgtop {
+			position: absolute;
+			left: -8rem;
+			bottom: -1.375rem;
+
+			@media (max-width:$sm) {
+				display: none;
+			}
+		}
+	}
+
+	.mt-sm2 {
+		@media (max-width:$sm) {
+			margin-top: 1.5rem;
+		}
+	}
+
+	.demat-account-form {
+		@media (max-width:$sm) {
+			margin-top: 5rem;
+		}
+	}
+
+	.bannerbox {
+		padding: 1.563rem;
+		border: 1px solid $bgcolor-blue;
+		border-radius: 1.125rem;
+		height: 100%;
+		display: flex;
+		align-items: center;
+		min-height: 9.625rem;
+
+		.resptext {
+			padding-left: 1rem;
+			width: 80%;
+
+			p {
+				font-size: 1.75rem;
+				line-height: 2.8rem;
+				font-family: $font-family-poppins-regular;
+				font-weight: 600;
+				margin: 0;
+
+				@media (max-width:$sm) {
+					font-size: 1.5rem;
+					line-height: 1.8rem;
+				}
+
+			}
+
+			.subtxt {
+				display: block;
+				font-weight: 500;
+				font-size: 1.4rem;
+			}
+		}
+
+		.respgrid {
+			width: 20%;
+			text-align: center;
+			.iconwrap{
+				img{
+					width: auto;
+				}
+			}
+		}
+		@media (max-width:$sm) {
+			min-height: inherit;
+		}
+	}
+
+}
+
+
+.adv-sect {
+	background-color: $abt-bg;
+	padding: 9.375rem 0;
+
+	.sectext {
+		display: flex;
+		align-items: center;
+		position: relative;
+		padding-right: 6rem;
+
+		h2 {
+			font-size: 3.125rem;
+			font-family: $font-family-poppins-semibold;
+			font-weight: 600;
+			line-height: 4.688rem;
+			color: $primary;
+			padding-top: 6rem;
+
+			@media (max-width:$sm) {
+				padding-top: 0;
+				font-size: 2rem;
+				line-height: 3rem;
+				padding-bottom: 3rem;
+				text-align: center;
+			}
+
+			@media (min-width:$sm) and (max-width:768px) {
+				font-size: 2rem;
+				line-height: 2.6rem;
+			}
+
+			@media (min-width:769px) and (max-width:1024px) {
+				font-size: 2rem;
+				line-height: 2.6rem;
+
+			}
+		}
+		@media (max-width:$sm) {
+			padding-right: 0;
+		}
+	}
+
+	.slick-dots {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		left: -33.25rem;
+		text-align: left;
+		display: flex !important;
+		flex-wrap: wrap;
+		justify-content: flex-start;
+
+		@media (max-width:$sm) {
+			display: block !important;
+		}
+
+		@media (min-width:$sm) and (max-width:768px) {
+			left: -15.75rem;
+			top: 63%;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			left: -14.375rem;
+			top: 67%;
+		}
+
+		li {
+			width: 10px;
+			margin: 0 0.5rem;
+			button {
+				&:before {
+					width: 10px;
+					height: 10px;
+					content: '';
+					background: $primary;
+					border-radius: 50%;
+				}
+
+			}
+		}
+	}
+
+	.adv-sect-slider {
+		.slick-track {
+			display: flex;
+
+			.slick-slide {
+				float: none;
+				min-height: inherit;
+				margin: 0 10px;
+				height: auto;
+
+				>div {
+					height: 100%;
+				}
+			}
+		}
+	}
+
+	.card {
+		background-color: $whiteColor;
+		padding: 2.625rem;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid $bgcolor-blue;
+		border-radius: 18px;
+		height: 100%;
+		transition: 0.6s;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+
+		@media (max-width:$sm) {
+			width: 90%;
+			margin: 0 auto;
+
+		}
+
+		// @media (min-width:$sm) and (max-width:768px) {
+		// 	min-height: 21.25rem;
+		// }
+
+		// @media (min-width:769px) and (max-width:1024px) {
+		// 	min-height: 32rem;
+
+		// }
+
+		&:hover {
+			background-color: $whiteColor;
+			border: 1px solid transparent;
+			.icon-wrap {
+				img{
+					-webkit-animation: toTopFromBottom 0.5s forwards;
+					-moz-animation: toTopFromBottom 0.5s forwards;
+					animation: toTopFromBottom 0.5s forwards;
+				}
+			}
+		}
+
+		.icon-wrap {
+			background: transparent;
+			text-align: center;
+			padding: 0;
+			max-width: 5rem;
+			height: 4.375rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			margin: 0 auto;
+			margin-bottom: 2rem;
+		}
+
+		.card-block {
+			.card-title {
+				font-size: 1.625rem;
+				font-family: $font-family-poppins-medium;
+				font-weight: 500;
+				line-height: 2.438rem;
+				color: $primary;
+				padding-bottom: 1rem;
+			}
+
+			p {
+				font-size: 1.313rem;
+				font-family: $font-family-poppins-medium;
+				font-weight: 500;
+				line-height: 2.063rem;
+				color: $primary;
+				padding: 0;
+				margin: 0;
+			}
+		}
+	}
+
+	.pl-4 {
+
+		@media (max-width:$sm) {
+			padding-left: 0;
+		}
+	}
+	@media (max-width:$sm) {
+		padding: 4rem 0;
+	}
+}
+
+.ml-3 {
+	margin-left: 3%;
+}
+
+#more1 {
+	display: none;
+}
+
+.readmoresection {
+	padding: 5rem 0;
+
+	.secttitle {
+		color: $primary;
+		font-size: 3.25rem;
+		line-height: 4.875rem;
+		font-weight: 700;
+		padding-bottom: 3rem;
+		font-family: $font-family-poppins-bold;
+
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+
+	.read-more-wrap {
+		font-size: 1.6875rem;
+		font-family: $font-family-poppins-regular;
+		font-weight: 400;
+		color: $primary;
+		line-height: 2.75rem;
+
+		@media (max-width:$sm) {
+			font-size: 1.6rem;
+		}
+
+		@media (min-width:$sm) and (max-width:768px) {
+			font-size: 1.6rem;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			font-size: 1.6rem;
+		}
+	}
+
+	.moreless-button {
+		font-size: 1.6875rem !important;
+		font-family: $font-family-poppins-bold;
+		font-weight: 700;
+		color: $bgcolor-blue;
+		line-height: 2.75rem !important;
+
+	}
+
+	.read-more-state {
+		display: none;
+	}
+
+	.read-more-target {
+		display: none;
+		max-height: 0;
+		font-size: 0;
+		transition: .25s ease;
+		padding-top: 10px;
+	}
+
+	.read-more-state:checked~.read-more-wrap .read-more-target {
+		opacity: 1;
+		font-size: inherit;
+		max-height: 999em;
+		display: block;
+	}
+
+	.read-more-state~.read-more-trigger:before {
+		content: 'Read more';
+	}
+
+	.read-more-state:checked~.read-more-trigger:before {
+		content: 'Read less';
+	}
+
+	.read-more-trigger {
+		cursor: pointer;
+		display: inline-block;
+		/*padding: 0 .5em;*/
+
+		font-size: .9em;
+		line-height: 2;
+		border-radius: .25em;
+	}
+
+	.font-bold {
+
+		padding: 1rem 0 0.5rem 0;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 2rem;
+		padding: 1rem 0 1.5rem 0;
+		margin-top: 2rem;
+	}
+	.p1{
+		padding: 1rem 0;
+	}
+}
+
+
+.open-acnt {
+	background-color: $bgcolor-green;
+	padding: 1rem 0 9rem ;
+	position: relative;
+	margin-top: 6rem;
+
+	.demat-steps {
+		@media (max-width:$sm) {
+			display: flex;
+		}
+	}
+
+	@media (max-width:$sm) {
+		margin-top: 11rem;
+	}
+
+	.sect-title {
+		font-size: 2.5rem;
+		font-family: $font-family-poppins-regular;
+		font-weight: 600;
+		line-height: 3.75rem;
+		color: $whiteColor;
+		padding-bottom: 4rem;
+
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+			padding-bottom: 0;
+		}
+	}
+
+	.imgwrap {
+		@media (max-width:$sm) {
+			width: 20%;
+		}
+	}
+
+	.respimag {
+		display: none;
+
+		@media (max-width:$sm) {
+			display: block;
+			// margin-top: 1rem;
+			margin: 1rem auto 0;
+		}
+	}
+
+	.deskimg {
+		margin-left: 3rem;
+
+		@media (max-width:1024px) {
+			display: none;
+		}
+	}
+
+	.info {
+		// margin-top: 4rem;
+		width: 75%;
+		@media (max-width:$sm) {
+			margin-top: 1rem;
+			width: 70%;
+			padding-left: 1rem;
+		}
+
+		h5 {
+			font-size: 1.5rem;
+			font-family: $font-family-poppins-semibold;
+			font-weight: 600;
+			line-height: 2.4rem;
+			color: $whiteColor;
+			padding-bottom: 1rem;
+		}
+
+		p {
+			font-size: 1.25rem;
+			font-family: $font-family-poppins-regular;
+			font-weight: 400;
+			line-height: 1.75rem;
+			color: $whiteColor;
+			margin: 0;
+		}
+	}
+
+	.get-started-sect {
+		position: relative;
+		top: -6.25rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background: $primary;
+		padding: 3.438rem;
+		border: 1px solid $bgcolor-blue;
+		border-radius: 1.875rem;
+
+		@media (max-width:$sm) {
+			flex-direction: column;
+			padding: 3rem 1.5rem;
+		}
+
+		.headtext {
+			h3 {
+				color: $whiteColor;
+				font-family: $font-family-poppins-regular;
+				font-size: 3rem;
+				font-weight: 600;
+				line-height: 4.5rem;
+
+				@media (max-width:$sm) {
+					font-size: 1.8rem;
+					line-height: 3rem;
+					text-align: center;
+				}
+				@media (min-width:768px) and (max-width:990px) {
+					font-size: 2.5rem;
+				}
+			}
+		}
+
+		span {
+			color: $bgcolor-yellow;
+		}
+
+		.btn-bg {
+			@media (max-width:$sm) {
+				margin-top: 2rem;
+			}
+		}
+	}
+}
+
+.Lowbrokerage {
+	padding: 7rem 0 9rem 0;
+
+	@media (max-width:$sm) {
+		padding: 5rem 0;
+	}
+
+	.secttitle {
+		color: $primary;
+		font-size: 3.25rem;
+		line-height: 4.875rem;
+		font-weight: 700;
+		padding-bottom: 2.375rem;
+		font-family: $font-family-poppins-bold;
+
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+
+	p {
+		color: $primary;
+		font-size: 1.5rem;
+		line-height: 2.375rem;
+		font-weight: 500;
+		padding-bottom: 4.375rem;
+		font-family: $font-family-poppins-medium;
+		margin: 0 auto;
+		text-align: center;
+		width: 64%;
+
+		@media (max-width:$sm) {
+			width: 100%;
+		}
+	}
+
+	.card {
+		border: 1px solid $bgcolor-blue;
+		background-color: $whiteColor;
+		border-radius: 1.875rem;
+		padding: 2.5rem;
+		min-height: 38rem;
+		width: 90%;
+		margin: 0 auto;
+
+		@media (max-width:$sm) {
+			min-height: 33rem;
+			padding: 1rem 2.5rem;
+		}
+
+		@media (min-width:768px) and (max-width:769px) {
+			width: 100%;
+			min-height: 33rem;
+			padding: 1rem;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			padding: 1rem;
+			min-height: 30.625rem;
+		}
+
+		.icon-wrap {
+			background: transparent;
+			margin: 1rem auto;
+			text-align: center;
+			margin-bottom: 1.875rem;
+			padding: 0;
+			min-height: 60px;
+			max-width: 83px;
+			img{
+				display: block;
+			}
+		}
+
+		.card-block {
+			text-align: center;
+
+			.card-title {
+				font-size: 1.625rem;
+				line-height: 2.438rem;
+				color: $primary;
+				font-weight: 600;
+				font-family: $font-family-poppins-regular;
+			}
+		}
+
+		hr {
+			color: $lightgray;
+		}
+
+		.charge-lists {
+			list-style: none;
+			margin-top: 2rem;
+			padding: 0;
+
+			li {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.5rem 0;
+				font-family: $font-family-poppins-medium;
+				margin-top: 1rem;
+				font-weight: 500;
+			}
+
+		}
+	}
+}
+
+.why-choice-section {
+	position: relative;
+	background: $lighblack;
+	&::before{
+		content: "";
+		width: 32%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: -0;
+		top: 0;
+		background: $bgcolor-lightgray;
+		@media (max-width:$sm) {
+			display: none;
+		}
+	}
+	.wrap {
+		margin: 0 auto;
+		display: flex;
+		padding: 0;
+		flex-wrap: wrap;
+
+		@media (max-width:$sm) {
+			flex-direction: column;
+		}
+
+		.leftsect {
+			position: relative;
+			width: 30%;
+			background-color: $bgcolor-lightgray;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: flex-end;
+			justify-content: flex-end;
+			padding: 9rem 0 100px 0;
+			@media (max-width:$sm) {
+				width: 100%;
+				justify-content: start;
+			}
+
+			.secttile {
+				color: $primary;
+				font-size: 3.25rem;
+				line-height: 4.875rem;
+				font-weight: 700;
+				font-family: $font-family-poppins-bold;
+				text-align: center;
+				margin-bottom:6rem;
+				width: 100%;
+				text-align: left;
+
+				@media (max-width:$sm) {
+					padding: 4rem 2rem 2rem 2rem;
+					font-size: 2.5rem;
+					line-height: 3rem;
+					margin-bottom: 0;
+					color: $whiteColor;
+					text-align: center;
+				}
+
+			
+			}
+
+			.img {
+				position: relative;
+				right: -47px;
+
+				@media (max-width:$sm) {
+					display: none;
+				}
+
+				@media (min-width:$sm) and (max-width:1024px) {
+					right: -38px;
+				}
+
+			}
+			@media (max-width:$md) {
+				width: 40%;
+			}
+			@media (max-width:$sm) {
+				width: 100%;
+				padding: 0;
+				background: $lighblack;
+			}
+			&::before{
+				content: "";
+				width: 130%;
+				height: 100%;
+				display: block;
+				position: absolute;
+				left: -130%;
+				top: 0;
+				background: $bgcolor-lightgray;
+				@media (max-width:$sm) {
+					display: none;
+				}
+			}
+		}
+
+		.rightsect {
+			background-color: $lighblack;
+			width: 70%;
+			padding: 9rem 0 0 11rem;
+
+			@media (max-width:$sm) {
+				width: 100%;
+				padding: 3rem 3rem 5rem;
+			}
+
+			@media (min-width:$sm) and (max-width:1024px) {
+				padding: 5rem;
+				padding-bottom: 15rem;
+				padding-right: 0;
+			}
+
+			.headtxt {
+				color: $whiteColor;
+				position: relative;
+
+				font-size: 2rem;
+				font-family: $font-family-poppins-regular;
+				font-weight: 600;
+				line-height: 3rem;
+				margin: 0;
+				padding: 0;
+				@media (max-width:$sm) {
+					font-size: 1.65rem;
+
+				}
+				
+				@media (min-width:769px) and (max-width:1024px) {
+					font-size: 1.5rem;
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					height: 1.2rem;
+					width: 1.2rem;
+					background: $bgcolor-yellow;
+					border-radius: 50%;
+					left: -3rem;
+					top: 48%;
+					transform: translate(0, -50%);
+
+				
+				}
+			}
+
+			.subtxt {
+				color: $whiteColor;
+				position: relative;
+				font-size: 1.5rem;
+				font-family: $font-family-poppins-regular;
+				font-weight: 400;
+				line-height: 3rem;
+				padding-left: 3rem;
+				margin: 0;
+					@media (max-width:$sm) {
+					font-size: 1.5rem;
+					
+				}
+				@media (min-width:769px) and (max-width:1024px) {
+					font-size: 1.5rem;
+				}
+			}
+
+			hr {
+				color: $whiteColor;
+				opacity: 0.2;
+				margin: 2rem 0;
+			}
+			.rightsect-sub{
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+				.headtxt{
+					width: 35%;
+					@media (max-width:$md) {
+						width: 100%;
+						br{
+							display: none;
+						}
+					}
+				}
+				.subtxt{
+					width: 60%;
+					@media (max-width:$md) {
+						width: 100%;
+						padding-left: 0;
+					}
+				}
+			}
+			@media (max-width:$md) {
+				width: 60%;
+			}
+			@media (max-width:$sm) {
+				width: 100%;
+			}
+		}
+
+	}
+
+	
+}
+
+
+.availablewrap {
+	display: flex;
+	flex-direction: row;
+	background-color: $bgolor-lightwhite;
+	padding: 4rem;
+	border-radius: 1.875rem;
+	position: relative;
+	margin-top: -100px;
+	align-items: center;
+
+	@media (max-width:$sm) {
+		padding: 2rem 1rem;
+		flex-direction: column;
+		align-items: flex-start;
+		margin-top: 3rem;
+		
+	}
+
+	
+
+	@media (min-width:$sm) and (max-width:1024px) {
+		padding: 2rem 4rem;
+	}
+
+	.wraptitle {
+		color: $primary;
+		font-size: 2.5rem;
+		font-weight: 700;
+		line-height: 3.75rem;
+		font-family: $font-family-poppins-bold;
+		padding: 0 3rem;
+
+		@media (max-width:$sm) {
+			padding: 0 3rem 2rem;
+			font-size: 2rem;
+			line-height: 3rem;
+			text-align: center;
+		}
+
+		@media (min-width:$sm) and (max-width:1024px) {
+			padding: 0;
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+
+	.iconwrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		a {
+			padding: 0 8rem;
+			border-right: 2px solid $bgcolor-lightgray;
+			text-decoration: none;
+
+			@media (max-width:$sm) {
+				padding: 0 1.5rem;
+			}
+
+			@media (min-width:$sm) and (max-width:1024px) {
+				padding: 0 2rem;
+			}
+
+
+			&:last-child {
+				border: none;
+			}
+
+			.icon {
+				text-align: center;
+
+				img {
+					min-height: 3.125rem;
+					
+				}
+				
+
+				p {
+					padding-top: 2rem;
+					color: $primary;
+					font-size: 1.75rem;
+					line-height: 2.625rem;
+					font-family: $font-family-poppins-semibold;
+					font-weight: 600;
+
+					@media (min-width:$sm) and (max-width:1024px) {
+						font-size: 1.5rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+// faq
+
+.Dematfaq {
+	padding: 9rem 0;
+	background-color: $abt-bg ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}
+
+.mt-6{
+	margin-top: 6rem !important;
+}
