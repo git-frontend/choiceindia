@@ -92,15 +92,14 @@ const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirect
 const LazyIPOInvestment = React.lazy(() => import('./components/IPO-Investment/IPOInvestment'));
 
 const LazyClientdetail = React.lazy(() => import('./components/ClientDetails/ClientDetail'));
-<<<<<<< HEAD
+
 const LazyCommodityTrading = React.lazy(() => import('./components/CommoditytTrading/Commodity'));
 const LazyEquityStockTrading = React.lazy(() => import('./components/EquityStockTrading/EquityStockTrading'));
 const LazyDerivativeTrading = React.lazy(() => import('./components/DerivativeTrading/DerivativeTrading'));
 const LazyCurrencyTrading = React.lazy(() => import('./components/CurrencyTrading/CurrencyTrading'));
 const LazyNoDataFound = React.lazy(() => import('./components/NoDataFound/NoDataFound'));
-=======
 const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
->>>>>>> 919098fbadadf437a5db837ee91534570e9efd2e
+
 
 function Routing() {
 
