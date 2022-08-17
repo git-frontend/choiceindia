@@ -12,7 +12,8 @@ function FablesStories() {
 	const [fslider, setfslider] = useState([]);
 	const [blog, setblog] = useState();
 	const [trigger, setTrigger] = useState();
-	const [sliderimag, setSliderImag] = useState(0);
+	const [sliderimag, setSliderImag] = useState(5);
+	
 
 	/** get list of fabal */
 
@@ -110,8 +111,10 @@ function FablesStories() {
 										{
 											fslider && fslider.length && fslider[sliderimag] ?
 
+											
+
 												<div>
-													<LazyLoader src={fslider[sliderimag].feature_image} width={"521"} height={"450"} alt={"Loading"} />
+													<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={"Loading"} />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
@@ -142,13 +145,16 @@ function FablesStories() {
 
 										}
 									</div>
-									<div className="sec-slider-cont fables-parent">
+									<div className="sec-slider-cont">
 										<Slider {...settings1}
 											slidesToShow={3}
-											swipeToSlide={true}
-											focusOnSelect={true}
+											// swipeToSlide={true}
+											// focusOnSelect={true}
 											beforeChange={(ev1,ev2) => {
-													setSliderImag(ev2)
+													setSliderImag(ev1)
+													
+
+																								
 													
 												
 											}}
@@ -158,19 +164,20 @@ function FablesStories() {
 											{
 												(fslider && fslider.length && fslider[sliderimag] ? fslider:[]).map((response,i) => {
 													
-
 													Id = fslider[sliderimag].slug;
-
+                                              
 													return (
 
 														<div className="itm-img" key={response.id} onClick={() => {
 															loadFableBlog(Id);
-															setSliderImag(i)
+															setSliderImag(i);
+															
+
 
 														}} >
 
 															<LazyLoader src={response.feature_image} alt={"Loading"} width={"312"} height={"200"} />
-															{/* <img src={response.feature_image} alt="Loading" /> */}
+															
 														</div>
 
 													)

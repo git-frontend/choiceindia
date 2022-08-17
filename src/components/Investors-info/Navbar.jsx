@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -41,38 +42,38 @@ function Navbar() {
               <div className="d-flex investor-menu-wrap">
                 <ul className="investor-info-menu-list">
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Code of Conduct</a>
+                    <Link to="/code-of-conduct" className="menu-itm-link">Code of Conduct</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Corporate Goverannce</a>
+                    <Link to="/corporate-governance" className="menu-itm-link">Corporate Goverannce</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">News &amp; Announcements</a>
+                    <Link to="/news-announcement" className="menu-itm-link">News &amp; Announcements</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Shareholding Pattern</a>
+                    <Link to="/share-holding-pattern" className="menu-itm-link">Shareholding Pattern</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Financial Info</a>
+                    <Link to="/financial-info" className="menu-itm-link">Financial Info</Link>
                   </li>
                 
                 </ul>
                 <ul className="investor-info-menu-list">
                  
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Voting Results</a>
+                    <Link to="/voting-results" className="menu-itm-link">Voting Results</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Notices</a>
+                    <Link to="/notices" className="menu-itm-link">Notices</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Annual Report</a>
+                    <Link to="/annual-report" className="menu-itm-link">Annual Report</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Fact Sheet</a>
+                    <Link to="/fact-sheet" className="menu-itm-link">Fact Sheet</Link>
                   </li>
                   <li className="menu-itm">
-                    <a href="#" className="menu-itm-link">Board of Directors</a>
+                    <Link to="/board-of-directors" className="menu-itm-link">Board of Directors</Link>
                   </li>
                 </ul>
                 </div>

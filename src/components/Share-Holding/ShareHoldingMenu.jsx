@@ -52,14 +52,7 @@ function ShareHoldingMenu() {
                        
                       
                     </div>
-                   <div className="row">
-                    <div className="col-md-12 text-center">
-                    <a href="/">
-                        <span className="btn-bg">Read More</span>
-                      </a>
-                    </div>
-                    
-                   </div>
+                  
 
                 </div>
             </section>

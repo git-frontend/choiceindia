@@ -38,8 +38,13 @@ function FileDownload() {
     <div>
       {
         skeleton ? <Template2 /> :
-          <div className="">
-            <FileDownloadBanner />
+          <div>
+            {/* <FileDownloadBanner /> */}
+            <div className="row">
+						<div className="col-md-12">
+            <h1 className='text-center mt-5 mb-5 title-first'>Downloads</h1>
+						</div>
+					</div>
             <FileDownloadFaq />
             <section className="advisors">
               <div className="container">

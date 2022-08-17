@@ -1,11 +1,7 @@
 
 import React from "react";
 import  InvestorCharterMain from './InvestorCharterMain';
-
-
-import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
-
 import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
@@ -13,14 +9,12 @@ import meta_tags from "../../Data/MetaTags";
 
 function InvestorCharter() {
 
-  const [skeleton, setSkeleton] = useState(() => true);
+
   const [rendercount, setRenderCount] = useState(() => false);
 
   const location = useLocation();
 
-  setTimeout(() => {
-    setSkeleton(() => false);
-  }, 200)
+
 
   useEffect(() => {
     setRenderCount(true)
@@ -38,14 +32,13 @@ function InvestorCharter() {
   return (
     <div>
 
-      {
-        skeleton ? <Template1 /> :
+     
           <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
               <InvestorCharterMain />
             </div>
           </div>
-      }
+      
 
     </div>
   );
