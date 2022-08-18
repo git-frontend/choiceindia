@@ -21,7 +21,7 @@ function Commodity() {
             <LowBrokerageCommodity />
             <CommodityOpeningProcess />
             <CommodityFaq />
-            <section className="readmoresection">
+            {/* <section className="readmoresection">
 
               <div className="container">
                 <div className="row">
@@ -159,7 +159,7 @@ function Commodity() {
                 </div>
               </div>
 
-            </section>
+            </section> */}
           </div>
     
   );
