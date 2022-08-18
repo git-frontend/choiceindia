@@ -2,11 +2,11 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
-import img1 from '../../assets/images/mutual-funds-investment/hdfc.png'
-import img2 from '../../assets/images/mutual-funds-investment/icici.png'
-import img3 from '../../assets/images/mutual-funds-investment/sbi.png'
-import img4 from '../../assets/images/mutual-funds-investment/birla.png'
-import img5 from '../../assets/images/mutual-funds-investment/kotak.png'
+import img1 from '../../assets/images/mutual-funds-investment/hdfc.webp'
+import img2 from '../../assets/images/mutual-funds-investment/icici.webp'
+import img3 from '../../assets/images/mutual-funds-investment/sbi.webp'
+import img4 from '../../assets/images/mutual-funds-investment/birla.webp'
+import img5 from '../../assets/images/mutual-funds-investment/kotak.webp'
 
 import LazyLoader from '../Common-features/LazyLoader';
 
