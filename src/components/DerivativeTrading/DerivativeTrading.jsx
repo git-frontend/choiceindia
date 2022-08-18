@@ -20,8 +20,8 @@ function DerivativeTrading() {
             <WhyDerivativeTrading />
             <LowBrokerageDerivativeTrading />
             <DerivativeTradingOpeningProcess />
-            <DerivativeTradingFaq />
-            <section className="readmoresection">
+            {/* <DerivativeTradingFaq /> */}
+            {/* <section className="readmoresection">
 
               <div className="container">
                 <div className="row">
@@ -159,7 +159,7 @@ function DerivativeTrading() {
                 </div>
               </div>
 
-            </section>
+            </section> */}
           </div>
     
   );

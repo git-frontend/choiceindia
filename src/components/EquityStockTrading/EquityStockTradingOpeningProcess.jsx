@@ -21,7 +21,7 @@ const EquityStockTradingOpeningProcess = () => {
 
 
                                 <div className="headtext">
-                                    <h3 className="mb-0">Open a <span>Paperless </span>  Commodity Trading Account Online For Free</h3>
+                                    <h3 className="mb-0">Open a <span>Paperless </span>  Equity  Trading Account Online For Free</h3>
                                 </div>
 
                                 <div className="text-right text-sm-center">
@@ -32,7 +32,8 @@ const EquityStockTradingOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Commodity Account Opening Online Process</h2>
+                    <h2 className="sect-title">Equity Account Opening Online Process
+</h2>
 
 
 
@@ -83,7 +84,7 @@ const EquityStockTradingOpeningProcess = () => {
                                 </div>
                                 <div className="info" >
                                     <h5>Registration Complete</h5>
-                                    <p>Your commodity trading account opening is successful with Choice.
+                                    <p>Your Equity  trading account opening is successful with Choice.
 
 
                                     </p>
