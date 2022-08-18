@@ -20,11 +20,11 @@ const CurrencyTradingOpeningProcess = () => {
                             <div className="get-started-sect ">
 
 
-                                <div className="headtext">
+                                <div className="headtext col-md-9">
                                     <h3 className="mb-0">Open a <span>Paperless </span>  Forex Trading Account Online For Free</h3>
                                 </div>
 
-                                <div className="text-right text-sm-center">
+                                <div className="text-right text-sm-center col-md-3">
                                     <a href="#open-account-wrap" className="btn-bg btn-bg-dark ">Open Now </a>
                                 </div>
 
@@ -32,7 +32,7 @@ const CurrencyTradingOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Commodity Account Opening Online Process</h2>
+                    <h2 className="sect-title">Currency Account Opening Online Process</h2>
 
 
 
