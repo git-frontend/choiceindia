@@ -45,7 +45,7 @@ function GovernmentAdvisory() {
                                     <p>We use effective M&amp;E frameworks to analyse and improve outcomes and impact of policies and projects.</p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <a href="/" className="btn-bg">Explore</a> */}
                         </div>
                     </div>
 

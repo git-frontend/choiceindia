@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import Bannerimage from '../../assets/images/services/equity-broking-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 
@@ -46,7 +47,7 @@ function EquityBroking() {
                                     <p>We have advised numerous companies across industries and concluded dozens of transactions. </p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <Link to="/equity-broking" className="btn-bg">Explore</Link> */}
                         </div>
                     </div>
 

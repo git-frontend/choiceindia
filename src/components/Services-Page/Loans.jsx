@@ -46,7 +46,7 @@ function Loans() {
                                 </div>
 
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <a href="/" className="btn-bg">Explore</a> */}
                         </div>
                     </div>
 

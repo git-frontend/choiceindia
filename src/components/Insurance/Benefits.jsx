@@ -20,7 +20,7 @@ function Benefits() {
                 <div className="col-md-12">
                     <div className="get-start-sub">
                         <h3>Get Insured with Minimal Documentation</h3>
-                        <a href="/" className="btn-bg btn-bg-dark">Get Started</a>
+                        <a href="https://ismos.in/" target="_blank"><span className="btn-bg btn-bg-dark">Get Started</span></a>
                     </div>
                 </div>
             </div>

@@ -58,7 +58,7 @@ function Banner() {
                                                         <h3>{res.title2}</h3>
                                                         <p>{res.description}</p>
                                                         <div className="justify-content-end d-flex">
-                                                            <a href="/" className="btn-bg">Explore</a>
+                                                            <a href="https://jiffy.choiceindia.com/auth/login" ><span className="btn-bg">Explore</span></a>
                                                         </div>
                                                     </div>
                                                 </div>

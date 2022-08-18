@@ -17,7 +17,7 @@ function AppBenefits() {
 							<div className="heading-sec">
 								<h2 className="title-secnd text-white">App with <br />Multiple Benefits</h2>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
-								<a href="https://jiffy.choiceindia.com/auth/login" className="btn-bg btn-bg-dark">Sign Up</a>
+								<a href="https://jiffy.choiceindia.com/auth/login"><span  className="btn-bg btn-bg-dark">Sign Up</span></a>
 							</div>
 						</div>
 						<div className="col-lg-8 d-flex justify-content-end">
