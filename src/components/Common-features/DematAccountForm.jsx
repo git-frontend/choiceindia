@@ -221,7 +221,7 @@ function DematAccountForm(props) {
         showLoader('sendOTPLoader');
         let request = {
             "whatsapp_consent":true,
-            "service_code": "JF",
+            "service_code":window.location.pathname =="/mutual-funds-investment" ? "MF": "JF",
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
