@@ -46,7 +46,7 @@ function LowBrokerageEquityStockTrading() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="secttitle">Open a Low Brokerage Commodity Account</h2>
+                                <h2 className="secttitle">Open a Low Brokerage Equity Trading Account</h2>
                                 <p>Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.</p>
                             </div>
                         </div>
@@ -64,16 +64,21 @@ function LowBrokerageEquityStockTrading() {
 
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">Commodity</h5>
+                                                    <h5 className="card-title">Equity</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
                                                         <li>
-                                                        Futures <span>0.02%</span>
+                                                        Delivery  <span>0.20%</span>
                                                         </li>
                                                         <li>
-                                                        Options  <span>₹ 50 per Lot</span>
+                                                        Intraday  <span>0.02%</span>
                                                         </li>
-                                                      
+                                                        <li>
+                                                        Futures  <span>0.02%</span>
+                                                        </li>
+                                                        <li>
+                                                        Options   <span>₹25 per Lot</span>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -86,7 +91,7 @@ function LowBrokerageEquityStockTrading() {
                                                 </div>
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">Currency</h5>
+                                                    <h5 className="card-title">Commodity</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
 
@@ -94,7 +99,7 @@ function LowBrokerageEquityStockTrading() {
                                                             Futures <span>0.02%</span>
                                                         </li>
                                                         <li>
-                                                            Options <span>₹ 20 per Lot</span>
+                                                            Options <span>₹ 50 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
@@ -109,21 +114,16 @@ function LowBrokerageEquityStockTrading() {
                                                 </div>
                                                 <div className="card-block">
 
-                                                    <h5 className="card-title">Equity</h5>
+                                                    <h5 className="card-title">Currency</h5>
                                                     <hr></hr>
                                                     <ul className="charge-lists">
 
                                                         <li>
-                                                        Delivery <span>0.20%</span>
+                                                        Futures  <span>0.02%</span>
                                                         </li>
+                                                       
                                                         <li>
-                                                        Intraday <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        Futures <span>0.02%</span>
-                                                        </li>
-                                                        <li>
-                                                        Options <span>₹25 per Lot</span>
+                                                        Options <span>₹20 per Lot</span>
                                                         </li>
                                                     </ul>
                                                 </div>
