@@ -18,12 +18,6 @@ function PartnerBannerTab() {
   const [count, setCount] = useState(0);
   const [store, setstore] = useState(0);
 
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  // };
-  console.log(partnerBanner);
-
-
   const settings = {
     infinite: true,
     speed: 2500,
@@ -162,7 +156,7 @@ function PartnerBannerTab() {
                 setstore(ev)
                 setCount(ev)
                 setToggleState(ev)
-                console.log("check",ev);
+               
 
               }}
             >
@@ -171,7 +165,7 @@ function PartnerBannerTab() {
                   let classNameNm = ((index === count) ?  "tabs active-tabs" : "tabs")
 
                   return (
-                    <button   className={classNameNm}
+                    <button key={res.id}  className={classNameNm}
                       onClick={() => { setstore(index) ;setCount(index)}}>
                         <span className="tb-ico">
                           <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />

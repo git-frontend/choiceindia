@@ -16,7 +16,7 @@ const OpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
-                            <h1 className="banner-title" >
+                            <h1 className="banner-title" id="addBanner">
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
                             </h1>

@@ -26,10 +26,10 @@ function GlossaryCharges() {
                                 
                                 </Accordion.Header>
                             <Accordion.Body className='open-demat-faq-body'>
-                            <div class="card-block">
-                                   <div class="row">
-                                        <div class="col-md-6">
-                                             <h4 class="mt-0">Securities/Commodities Transaction Tax</h4>
+                            <div className="card-block">
+                                   <div className="row">
+                                        <div className="col-md-6">
+                                             <h4 className="mt-0">Securities/Commodities Transaction Tax</h4>
                                              <p>
                                                   Tax levied by the government while transacting on the exchanges. Charged as above on both buy and sell sides when trading equity delivery. Charged only on selling side when trading either
                                                   intraday or in F&amp;O.
@@ -60,8 +60,8 @@ function GlossaryCharges() {
                                              <h4>Minimum Contract Note Charges</h4>
                                              <p>Choice Equity Doesn’t Charge any Minimum Contract Note Charges</p>
                                         </div>
-                                        <div class="col-md-6">
-                                             <h4 class="mt-0">GST</h4>
+                                        <div className="col-md-6">
+                                             <h4 className="mt-0">GST</h4>
                                              <p>Tax levied by the government on the services rendered. 18% of ( brokerage + transaction charges)</p>
                                              <h4>SEBI Charges</h4>
                                              <p>SEBI fees Rs. 5 per cr for cash &amp; Non agri-commodities and Rs. 1/- per crore for Agri-Commodities</p>
@@ -90,7 +90,7 @@ function GlossaryCharges() {
                                              <h4>Request for Physical CMR, Contract Note, Ledger, etc.</h4>
                                              <p>No Charges for Physical CMR, Contract Note or Ledger Etc.</p>
                                         </div>
-                                        <div class="col-sm-12">
+                                        <div className="col-sm-12">
                                              <h4>Disclaimer</h4>
                                              <p>
                                                   Brokerage will not exceed the rates specified by SEBI and the exchanges. All statutory and regulatory charges will be levied at actuals. No Brokerage is charged on expired, exercised, and

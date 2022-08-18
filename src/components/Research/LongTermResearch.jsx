@@ -161,7 +161,7 @@ function LongTermResearch() {
                         list.map((res, i) => {
 
                           return (
-                            <div className="res-tab-itm" >
+                            <div className="res-tab-itm" key={res.uuid} >
                               <div className="tab-itm-img" >
                                 <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                               </div>
@@ -188,7 +188,7 @@ function LongTermResearch() {
                         list.slice(0, 4).map((res, i) => {
 
                           return (
-                            <div className="res-tab-itm">
+                            <div className="res-tab-itm" key={res.uuid}>
                               <div className="tab-itm-img">
                                 <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                               </div>

@@ -1,6 +1,13 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
-
+.table>:not(:first-child) {
+    border-top: none !important;
+   
+}
+.table>:not(caption)>*>* {
+   
+    box-shadow: none !important;
+}
 #complaints {
     font-family: $font-family-poppins-regular;
     border-collapse: collapse;
@@ -28,4 +35,5 @@
             background-color: #ffffff !important;
         }
     }
+ 
 }

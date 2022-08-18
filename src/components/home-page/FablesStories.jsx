@@ -53,11 +53,13 @@ function FablesStories() {
             setblog([]);
         });
 	}
+	
 
 	useEffect(() => {
 
 		setTrigger(true)
 		if (trigger === true) {
+			
 			loadFabalList()
 		}
 
@@ -70,7 +72,7 @@ function FablesStories() {
 		slidesToShow: 3,
 		autoplay: true,
 		dots: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 5000,
 		slidesToScroll: 1,
 		swipeToSlide: true,
 		responsive: [
@@ -112,8 +114,8 @@ function FablesStories() {
 											fslider && fslider.length && fslider[sliderimag] ?
 
 											
-
-												<div>
+                                              
+												<div id="stories-timeout">
 													<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={"Loading"} />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
@@ -150,14 +152,17 @@ function FablesStories() {
 											slidesToShow={3}
 											// swipeToSlide={true}
 											// focusOnSelect={true}
-											beforeChange={(ev1,ev2) => {
-													setSliderImag(ev1)
-													
+											
 
-																								
-													
+												beforeChange={(ev1,ev2) => {
+													setTimeout(() => {
+													setSliderImag(ev1)	
+												}, 2000)	
 												
 											}}
+												
+												    
+											
 
 
 											className='stories-sec-slider'>

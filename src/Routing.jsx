@@ -97,7 +97,7 @@ const LazyCommodityTrading = React.lazy(() => import('./components/CommoditytTra
 const LazyEquityStockTrading = React.lazy(() => import('./components/EquityStockTrading/EquityStockTrading'));
 const LazyDerivativeTrading = React.lazy(() => import('./components/DerivativeTrading/DerivativeTrading'));
 const LazyCurrencyTrading = React.lazy(() => import('./components/CurrencyTrading/CurrencyTrading'));
-const LazyNoDataFound = React.lazy(() => import('./components/NoDataFound/NoDataFound'));
+const LazyNoDataFound = React.lazy(() => import('./components/Common-features/NoDataFound'));
 const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
 
 

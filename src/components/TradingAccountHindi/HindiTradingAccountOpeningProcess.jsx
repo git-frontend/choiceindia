@@ -24,7 +24,7 @@ const HindiTradingAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >ट्रेडिंग अकाउंट खोलें</a>
+                                    <a href="#open-account-wrap"  > <div className="btn-bg btn-bg-dark ">ट्रेडिंग अकाउंट खोलें</div></a>
                                 </div>
 
                             </div>

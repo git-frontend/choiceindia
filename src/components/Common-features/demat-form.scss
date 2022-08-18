@@ -67,7 +67,7 @@
                 color: $secondary;
                 font-family: $font-family-poppins-regular;
                 .link-tc{
-                    color: $bgcolor-blue;
+                    color: $bgcolor-blue !important;
                     font-family:$font-family-poppins-semibold;
                     text-decoration: none;
                     display: block;
@@ -75,6 +75,11 @@
             }
             .link-tc{
                 cursor: pointer;
+				
+				color: $bgcolor-blue !important;
+				&:hover{
+					border-bottom: 1px solid;
+				}
             }
         }
         .sendbtn{

@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-
+import { Link } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
 
 function DematFaq() {
@@ -44,7 +44,7 @@ function DematFaq() {
                                     <Accordion.Header><h4 className='faq-header'>What is the Power of Attorney (PoA) and why is it needed?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
-                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <a href="https://choiceindia.com">https://choiceindia.com</a>
+                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <Link to="/">https://choiceindia.com</Link>
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
@@ -144,7 +144,7 @@ function DematFaq() {
                                         <Accordion.Item eventKey="14" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'>Can I use the same Demat or Trading account for Stock, Currency, Derivatives and Commodity Trading?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            Yes, you can use the same account for trading/investing in any asset class.
+                                            Yes, you can use the same account for trading/investing in any asset className.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="15" className='faq-item'>

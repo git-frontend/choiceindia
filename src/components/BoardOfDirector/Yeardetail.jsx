@@ -184,7 +184,7 @@ function Yeardetail() {
                                                 <h3 className="title-secnd">Become a Mutual Fund Advisort</h3>
                                                 <p>Help people to achieve financial freedom by selling mutual funds through us.</p>
                                             </div>
-                                            <a href="/" className="btn-bg">Register</a>
+                                            <a href="/" ><span className="btn-bg">Register</span></a>
                                         </div>
                                         <div className="tab-cont-right">
 
@@ -201,7 +201,7 @@ function Yeardetail() {
                                                 <h3 className="title-secnd">Become an Insurance Agent</h3>
                                                 <p>Assist customers to buy the best insurance which suits all their needs. </p>
                                             </div>
-                                            <a href="/" className="btn-bg">Register</a>
+                                            <a href="/" ><span className="btn-bg">Register</span></a>
                                         </div>
                                         <div className="tab-cont-right">
 
@@ -218,7 +218,7 @@ function Yeardetail() {
                                                 <h3 className="title-secnd">Become a Loan Agent</h3>
                                                 <p>Disburse the loan of different companies at the lowest interest rate & earn a good commission.</p>
                                             </div>
-                                            <a href="/" className="btn-bg">Register</a>
+                                            <a href="/" ><span className="btn-bg">Register</span></a>
                                         </div>
                                         <div className="tab-cont-right">
 
@@ -234,7 +234,7 @@ function Yeardetail() {
                                                 <h3 className="title-secnd">Become an Insurance Agent</h3>
                                                 <p>Assist customers to buy the best insurance which suits all their needs. </p>
                                             </div>
-                                            <a href="/" className="btn-bg">Register</a>
+                                            <a href="/" ><span className="btn-bg">Register</span></a>
                                         </div>
                                         <div className="tab-cont-right">
 
@@ -250,7 +250,7 @@ function Yeardetail() {
                                                 <h3 className="title-secnd">Become an Insurance Agent</h3>
                                                 <p>Assist customers to buy the best insurance which suits all their needs. </p>
                                             </div>
-                                            <a href="/" className="btn-bg">Register</a>
+                                            <a href="/" ><span className="btn-bg">Register</span></a>
                                         </div>
                                         <div className="tab-cont-right">
 

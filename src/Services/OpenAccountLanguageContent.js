@@ -1,7 +1,7 @@
 const language = {
     
     en: {
-        title: 'Open Free Account',
+        title: 'Open Account Now',
         moblbl: 'Mobile Number',
         invalidmob: 'Invalid Mobile Number',
         reqmob: 'Mobile Number is Required',

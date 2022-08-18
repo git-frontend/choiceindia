@@ -20,8 +20,8 @@ function CurrencyTrading() {
             <WhyCurrencyTrading />
             <LowBrokerageCurrencyTrading />
             <CurrencyTradingOpeningProcess />
-            <CurrencyTradingFaq />
-            <section className="readmoresection">
+            
+            {/* <section className="readmoresection">
 
               <div className="container">
                 <div className="row">
@@ -159,7 +159,7 @@ function CurrencyTrading() {
                 </div>
               </div>
 
-            </section>
+            </section> */}
           </div>
     
   );

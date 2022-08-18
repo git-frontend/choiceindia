@@ -64,9 +64,9 @@ function SectionTabs() {
                         <div
                            className={toggleState === 1 ? "content  active-content" : "content"}
                         >
-                           <div class="tab-data-sec">
-                              <div class="table-responsive">
-                                 <table class="table table-borderless table-striped table-hover">
+                           <div className="tab-data-sec">
+                              <div className="table-responsive">
+                                 <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
                                           <th width="15%">Charges</th>
@@ -78,35 +78,35 @@ function SectionTabs() {
                                     </thead>
                                     <tbody>
                                        <tr>
-                                          <td class="charges-heads">Brokerage</td>
+                                          <td className="charges-heads">Brokerage</td>
                                           <td>0.02%</td>
                                           <td>0.2%</td>
                                           <td>0.02%</td>
                                           <td>₹ 25 per Lot.</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">STT</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">STT</td>
                                           <td>0.025% on the sell side</td>
                                           <td>0.1% on buy &amp; sell</td>
                                           <td>0.01% on sell side</td>
                                           <td>0.053% on sell side (on premium). In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">Transaction charges</td>
+                                          <td className="charges-heads">Transaction charges</td>
                                           <td>NSE/BSE: 0.00345%</td>
                                           <td>NSE/BSE: 0.00345%</td>
                                           <td>NSE: Exchange transaction charge: 0.002% Clearing charge: 0.0005%</td>
                                           <td>NSE: Exchange transaction charge: 0.05% Clearing charge: 0.002%</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">GST</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">GST</td>
                                           <td>18% on (Brokerage + Transaction Charges)</td>
                                           <td>18% on (Brokerage + Transaction Charges)</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">SEBI charges</td>
+                                          <td className="charges-heads">SEBI charges</td>
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
@@ -115,7 +115,7 @@ function SectionTabs() {
                                     </tbody>
                                  </table>
                               </div>
-                              <p class="condition">Condition Applied* : Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
+                              <p className="condition">Condition Applied* : Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
                            </div>
 
                         </div>
@@ -123,9 +123,9 @@ function SectionTabs() {
                         <div
                            className={toggleState === 2 ? "content  active-content" : "content"}
                         >
-                           <div class="tab-data-sec">
-                              <div class="table-responsive">
-                                 <table class="table table-borderless table-striped table-hover">
+                           <div className="tab-data-sec">
+                              <div className="table-responsive">
+                                 <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
                                           <th width="15%">Charges</th>
@@ -135,43 +135,43 @@ function SectionTabs() {
                                     </thead>
                                     <tbody>
                                        <tr>
-                                          <td class="charges-heads">Brokerage</td>
+                                          <td className="charges-heads">Brokerage</td>
                                           <td>0.02%</td>
                                           <td>₹ 20 per Lot</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">STT</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">STT</td>
                                           <td>No STT</td>
                                           <td>No STT</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">Transaction charges</td>
+                                          <td className="charges-heads">Transaction charges</td>
                                           <td>NSE Trans. Chgs.: 0.0009% Clearing charge: 0.0005%</td>
                                           <td>NSE Trans. Chgs.: 0.035% Clearing charge: 0.002%</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">GST</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">GST</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">SEBI charges</td>
+                                          <td className="charges-heads">SEBI charges</td>
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
                                        </tr>
                                     </tbody>
                                  </table>
                               </div>
-                              <p class="condition"><strong>Condition Applied* :</strong> Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
+                              <p className="condition"><strong>Condition Applied* :</strong> Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
                            </div>
                         </div>
 
                         <div
                            className={toggleState === 3 ? "content  active-content" : "content"}
                         >
-                           <div class="tab-data-sec">
-                              <div class="table-responsive">
-                                 <table class="table table-borderless table-striped table-hover">
+                           <div className="tab-data-sec">
+                              <div className="table-responsive">
+                                 <table className="table table-borderless table-striped table-hover">
                                     <thead>
                                        <tr>
                                           <th width="15%"> Charges</th>
@@ -181,34 +181,34 @@ function SectionTabs() {
                                     </thead>
                                     <tbody>
                                        <tr>
-                                          <td class="charges-heads">Brokerage</td>
+                                          <td className="charges-heads">Brokerage</td>
                                           <td>0.02%</td>
                                           <td>₹ 50 per Lot.</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">CTT</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">CTT</td>
                                           <td>0.01% on sell side</td>
                                           <td>0.05% on sell side. In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">Transaction charges</td>
+                                          <td className="charges-heads">Transaction charges</td>
                                           <td>Exchange txn charge: 0.0026% <br /> Clearing charge: 0.0003% ,<br />RMS Charge 0.005% (Only NCDEX)</td>
                                           <td>Exchange txn charge: 0.05%  Clearing charge : 0.002%</td>
                                        </tr>
-                                       <tr class="grey-back">
-                                          <td class="charges-heads">GST</td>
+                                       <tr className="grey-back">
+                                          <td className="charges-heads">GST</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                           <td>18% on (Brokerage + Transaction Charges + Clearing Charges)</td>
                                        </tr>
                                        <tr>
-                                          <td class="charges-heads">SEBI charges</td>
+                                          <td className="charges-heads">SEBI charges</td>
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
                                        </tr>
                                     </tbody>
                                  </table>
                               </div>
-                              <p class="condition"><strong>Condition Applied* :</strong> Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
+                              <p className="condition"><strong>Condition Applied* :</strong> Above charges are applicable for clients who have registered online. These charges will vary for our offline clients (who can avail extended facilities such as a higher margin and a dedicated RM/Dealer).</p>
                            </div>
                         </div>
                      </div>

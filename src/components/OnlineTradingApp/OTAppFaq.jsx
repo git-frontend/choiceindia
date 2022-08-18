@@ -28,7 +28,7 @@ return (
                         <h4 className='faq-header'>Is the Jiffy Trading app safe for trading?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        We use comprehensive and proven world-class safety measures to ensure optimum security.
+                        We use comprehensive and proven world-className safety measures to ensure optimum security.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>

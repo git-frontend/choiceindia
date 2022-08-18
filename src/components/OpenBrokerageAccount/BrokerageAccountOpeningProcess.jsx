@@ -7,6 +7,7 @@ import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
 import utils from "../../Services/utils";
+import { Link } from 'react-router-dom';
 
 const DematAccountOpeningProcess = () => {
     return (
@@ -25,7 +26,7 @@ const DematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="javascript:void(0)" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }}>Get Started </a>
+                                    <Link to="/open-brokerage-account" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }}>Get Started </Link>
                                 </div>
 
                             </div>

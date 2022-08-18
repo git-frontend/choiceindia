@@ -24,7 +24,7 @@ const WhyDerivativeTrading = () => {
                                 <div className="rightsect">
                                     <div className="rightsect-sub">
                                         <p className="headtxt">RESEARCH &amp;<br /> ADVISORY SERVICES</p>
-                                        <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research on commodities at no extra cost.</p>
+                                        <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research on the derivatives market at no extra cost.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">

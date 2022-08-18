@@ -1,6 +1,7 @@
 const contactMap = [
 
     {
+        "id":1,
         "city": "AGRA UTTAR PRADESH",
         "mobNum": "73008 14719",
         "support": "support@choiceindia.com",
@@ -11,6 +12,7 @@ const contactMap = [
     },
 
     {
+        "id":2,
         "city": "AHMEDABAD GUJARAT",
         "mobNum": "+91-9909923499",
         "support": "support@choiceindia.com",
@@ -21,6 +23,7 @@ const contactMap = [
     },
 
     {
+        "id":3,
         "city": "ALUVA KERALA",
         "mobNum": "9387055007 / 9633278262",
         "support": "support@choiceindia.com",
@@ -31,6 +34,7 @@ const contactMap = [
     },
 
     {
+        "id":4,
         "city": "ANGAMALY KERALA",
         "mobNum": "9633278254 / 9633278262",
         "support": "support@choiceindia.com",
@@ -41,6 +45,7 @@ const contactMap = [
     },
 
     {
+        "id":5,
         "city": "AURANGABAD MAHARASHTRA",
         "mobNum": "9823067808",
         "support": "support@choiceindia.com",
@@ -51,6 +56,7 @@ const contactMap = [
     },
 
     {
+        "id":6,
         "city": "BANGALORE KARNATAKA",
         "mobNum": "9886062043",
         "support": "support@choiceindia.com",
@@ -61,6 +67,7 @@ const contactMap = [
     },
 
     {
+        "id":7,
         "city": "BARODA GUJARAT",
         "mobNum": "9321982424 / 9909980970",
         "support": "support@choiceindia.com",
@@ -71,6 +78,7 @@ const contactMap = [
     },
 
     {
+        "id":8,
         "city": "BHILAI CHHATTISGARH",
         "mobNum": "62611 25807",
         "support": "support@choiceindia.com",
@@ -81,6 +89,7 @@ const contactMap = [
     },
 
     {
+        "id":9,
         "city": "BHOPAL MADHYA PRADESH",
         "mobNum": "9322682424",
         "support": "support@choiceindia.com",
@@ -91,6 +100,7 @@ const contactMap = [
     },
 
     {
+        "id":10,
         "city": "BHUBANESWAR ODISHA",
         "mobNum": "+91 70089 60878",
         "support": "support@choiceindia.com",
@@ -101,6 +111,7 @@ const contactMap = [
     },
 
     {
+        "id":11,
         "city": "CHENNAI TAMILNADU",
         "mobNum": "9884580688 / 9080062144",
         "support": "support@choiceindia.com",
@@ -111,6 +122,7 @@ const contactMap = [
     },
 
     {
+        "id":12,
         "city": "COIMBATORE TAMILNADU",
         "mobNum": "8220067777",
         "support": "support@choiceindia.com",
@@ -121,6 +133,7 @@ const contactMap = [
     },
 
     {
+        "id":13,
         "city": "DELHI NEW DELHI",
         "mobNum": "9322512424",
         "support": "support@choiceindia.com",
@@ -131,6 +144,7 @@ const contactMap = [
     },
 
     {
+        "id":14,
         "city": "ERODE TAMILNADU",
         "mobNum": "9942758097",
         "support": "support@choiceindia.com",
@@ -141,6 +155,7 @@ const contactMap = [
     },
 
     {
+        "id":15,
         "city": "GWALIOR MADHYA PRADESH",
         "mobNum": "7000789560",
         "support": "support@choiceindia.com",
@@ -151,6 +166,7 @@ const contactMap = [
     },
 
     {
+        "id":16,
         "city": "HUBLI KARNATAKA",
         "mobNum": "7760983556",
         "support": "support@choiceindia.com",
@@ -161,6 +177,7 @@ const contactMap = [
     },
 
     {
+        "id":17,
         "city": "INDORE MADHYA PRADESH",
         "mobNum": "9322192424 / 9425082897",
         "support": "support@choiceindia.com",
@@ -171,6 +188,7 @@ const contactMap = [
     },
 
     {
+        "id":18,
         "city": "JAIPUR RAJASTHAN",
         "mobNum": "9321362424, 9320622424, 9829240580",
         "support": "support@choiceindia.com",
@@ -181,6 +199,7 @@ const contactMap = [
     },
 
     {
+        "id":19,
         "city": "JHUNJHUNU RAJASTHAN",
         "mobNum": "9322342424",
         "support": "support@choiceindia.com",
@@ -191,6 +210,7 @@ const contactMap = [
     },
 
     {
+        "id":20,
         "city": "KADAVANTHRA KERALA",
         "mobNum": "9633278250",
         "support": "support@choiceindia.com",
@@ -201,6 +221,7 @@ const contactMap = [
     },
 
     {
+        "id":21,
         "city": "KALOOR KERALA",
         "mobNum": "9539718920 / 9633278262",
         "support": "support@choiceindia.com",
@@ -212,6 +233,7 @@ const contactMap = [
     },
 
     {
+        "id":22,
         "city": "KANJIRAPPALLY KERALA",
         "mobNum": "9633278261 / 9633278262",
         "support": "support@choiceindia.com",
@@ -222,6 +244,7 @@ const contactMap = [
     },
 
     {
+        "id":23,
         "city": "KANNUR KERALA",
         "mobNum": "9946022321 / 9633278262",
         "support": "support@choiceindia.com",
@@ -232,6 +255,7 @@ const contactMap = [
     },
 
     {
+        "id":24,
         "city": "KOLHAPUR MAHARASHTRA",
         "mobNum": "9326862121",
         "support": "support@choiceindia.com",
@@ -242,6 +266,7 @@ const contactMap = [
     },
 
     {
+        "id":25,
         "city": "KOLKATA WEST BENGAL",
         "mobNum": "9323892424",
         "support": "support@choiceindia.com",
@@ -252,6 +277,7 @@ const contactMap = [
     },
 
     {
+        "id":26,
         "city": "KOTTARAMATTOM KERALA",
         "mobNum": "9744953338 / 9633278262",
         "support": "support@choiceindia.com",
@@ -262,6 +288,7 @@ const contactMap = [
     },
 
     {
+        "id":27,
         "city": "KOTTAYAM KERALA",
         "mobNum": "9446126310 / 9633278262",
         "support": "support@choiceindia.com",
@@ -272,6 +299,7 @@ const contactMap = [
     },
 
     {
+        "id":28,
         "city": "KOZHIKODE KERALA",
         "mobNum": "9946445053 / 9633278262",
         "support": "support@choiceindia.com",
@@ -282,6 +310,7 @@ const contactMap = [
     },
 
     {
+        "id":29,
         "city": "MADURAI TAMILNADU",
         "mobNum": "9360492307 / 9159077999",
         "support": "support@choiceindia.com",
@@ -292,6 +321,7 @@ const contactMap = [
     },
 
     {
+        "id":30,
         "city": "MANGALORE KARNATAKA",
         "mobNum": "7022129306 / 9886062043",
         "support": "support@choiceindia.com",
@@ -302,6 +332,7 @@ const contactMap = [
     },
 
     {
+        "id":31,
         "city": "Mumbai, Maharashtra",
         "mobNum": "(+91) - 8080-80-8875",
         "support": "support@choiceindia.com",
@@ -312,6 +343,7 @@ const contactMap = [
     },
 
     {
+        "id":32,
         "city": "MUMBAI-MAROL MAHARASHTRA",
         "mobNum": "9322722424",
         "support": "support@choiceindia.com",
@@ -322,6 +354,7 @@ const contactMap = [
     },
 
     {
+        "id":33,
         "city": "MYSORE KARNATAKA",
         "mobNum": "9886108495 / 9886062043",
         "support": "support@choiceindia.com",
@@ -332,6 +365,7 @@ const contactMap = [
     },
 
     {
+        "id":34,
         "city": "NAGPUR MAHARASHTRA",
         "mobNum": "9049219416",
         "support": "support@choiceindia.com",
@@ -342,6 +376,7 @@ const contactMap = [
     },
 
     {
+        "id":35,
         "city": "PALA KERALA",
         "mobNum": "9633278260 / 9633278262",
         "support": "support@choiceindia.com",
@@ -352,6 +387,7 @@ const contactMap = [
     },
 
     {
+        "id":36,
         "city": "PALAKKAD KERALA",
         "mobNum": "9633278216 / 9633278262",
         "support": "support@choiceindia.com",
@@ -362,6 +398,7 @@ const contactMap = [
     },
 
     {
+        "id":37,
         "city": "PATNA BIHAR",
         "mobNum": "9128222300",
         "support": "support@choiceindia.com",
@@ -372,6 +409,7 @@ const contactMap = [
     },
 
     {
+        "id":38,
         "city": "Pune, Maharashtra",
         "mobNum": "(+91) - 8080-80-8875",
         "support": "support@choiceindia.com",
@@ -383,6 +421,7 @@ const contactMap = [
 
 
     {
+        "id":39,
         "city": "RAIPUR CHHATTISGARH",
         "mobNum": "9993563296",
         "support": "support@choiceindia.com",
@@ -393,6 +432,7 @@ const contactMap = [
     },
 
     {
+        "id":40,
         "city": "RAJAHMUNDRY ANDHRA PRADESH",
         "mobNum": "9848593636 / 9676479991",
         "support": "support@choiceindia.com",
@@ -403,6 +443,7 @@ const contactMap = [
     },
 
     {
+        "id":41,
         "city": "RANCHI JHARKHAND",
         "mobNum": "9322562424",
         "support": "support@choiceindia.com",
@@ -413,6 +454,7 @@ const contactMap = [
     },
 
     {
+        "id":42,
         "city": "SALEM TAMILNADU",
         "mobNum": "9894607868 / 8220067777",
         "support": "support@choiceindia.com",
@@ -423,6 +465,7 @@ const contactMap = [
     },
 
     {
+        "id":43,
         "city": "SECUNDERABAD 1 TELANGANA",
         "mobNum": "8886338071 / 9010562288",
         "support": "support@choiceindia.com",
@@ -433,6 +476,7 @@ const contactMap = [
     },
 
     {
+        "id":44,
         "city": "SIKAR RAJASTHAN",
         "mobNum": "",
         "support": "support@choiceindia.com",
@@ -443,6 +487,7 @@ const contactMap = [
     },
 
     {
+        "id":45,
         "city": "SURAT GUJARAT",
         "mobNum": "9321582424",
         "support": "support@choiceindia.com",
@@ -453,6 +498,7 @@ const contactMap = [
     },
 
     {
+        "id":46,
         "city": "THRISSUR KERALA",
         "mobNum": "9895011333 / 9633278262",
         "support": "support@choiceindia.com",
@@ -463,6 +509,7 @@ const contactMap = [
     },
 
     {
+        "id":47,
         "city": "TIRUNELVELI TAMILNADU",
         "mobNum": "7397009189",
         "support": "support@choiceindia.com",
@@ -473,6 +520,7 @@ const contactMap = [
     },
 
     {
+        "id":48,
         "city": "TIRUVALLA KERALA",
         "mobNum": "9633278259 / 9633278262",
         "support": "support@choiceindia.com",
@@ -483,6 +531,7 @@ const contactMap = [
     },
 
     {
+        "id":49,
         "city": "TRICHY TAMILNADU",
         "mobNum": "9894934459",
         "support": "support@choiceindia.com",
@@ -493,6 +542,7 @@ const contactMap = [
     },
 
     {
+        "id":50,
         "city": "TRIVANDRUM KERALA",
         "mobNum": "9946861899 / 9633278262",
         "support": "support@choiceindia.com",
@@ -503,6 +553,7 @@ const contactMap = [
     },
 
     {
+        "id":51,
         "city": "VISAKHAPATNAM ANDHRA PRADESH",
         "mobNum": "8639109099 / 9676479991",
         "support": "support@choiceindia.com",

@@ -50,7 +50,7 @@ function WhyOpenEquityStockTrading() {
                     <div className="row">
                         <div className="col-md-4">
                             <div className="sectext">
-                                <h2>Why Open A Commodity Trading Account Online With Us?</h2>
+                                <h2>Why Open an Equity Trading Account Online With Us?</h2>
                             </div>
                         </div>
                         <div className="col-md-8">
@@ -75,7 +75,7 @@ function WhyOpenEquityStockTrading() {
                                             <div className="card-block">
 
                                                 <h5 className="card-title">Free Call for Trade Facility</h5>
-                                                <p>Our customers can opt to execute commodity trades over the phone free of cost.</p>
+                                                <p>Our customers can opt to execute equity trades over the phone free of cost.</p>
                                             </div>
                                         </div>
                                         <div className="card adv-card">
@@ -87,20 +87,20 @@ function WhyOpenEquityStockTrading() {
 
                                                 <h5 className="card-title">Paperless Account Opening</h5>
                                                 <p>
-                                                Instantly open a paperless commodity trading account online within 5 minutes.
+                                                Instantly open a paperless equity trading account online within 5 minutes.
                                                 </p>
                                             </div>
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                            <img src={Image10} width={"40"} height={"41"} alt={"Advanced Trading App &amp; Platform"} className={"img-fluid lazyload"} />
+                                            <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className={"img-fluid lazyload"} />
                                                 {/* <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                             </div>
                                             <div className="card-block">
 
                                                 <h5 className="card-title">Technologically Advanced Platform</h5>
                                                 <p>
-                                                Trade into the commodities via the website or Android and iOS App with state-of-the-art features.
+                                                Trade into the equity via the website or Android and iOS App with state-of-the-art features.
                                                 </p>
                                             </div>
                                         </div>

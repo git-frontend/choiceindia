@@ -7,6 +7,7 @@ import "../CEBPLPolicies/CEBPL-Policies.scss";
 
 function InvestorAwarenessMain() {
 
+
     
     return (
         <div>
@@ -70,7 +71,7 @@ function InvestorAwarenessMain() {
                         <div className="subtext">
                         <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div ><strong> KYC Updation </strong></div>
-                                   <div className="download cursor-pointer"> <a onClick={()=>{window.open(pdf1);download()}} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg"/> Download</a></div>
+                                   <div className="download cursor-pointer"> <a onClick={()=>{window.open(pdf1)}} target="_blank" download={pdf1} className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg"/> Download</a></div>
                                    </div>
                                    </div>
                         </div>

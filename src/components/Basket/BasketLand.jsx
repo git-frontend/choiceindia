@@ -57,10 +57,7 @@ function BasketLand() {
     //         iframe.src = 'https://www.youtube.com/embed/WrL6Ihbg8LU';
     //     }, 3000);
     // }
-    setTimeout(() => {
-        let iframe = document.getElementById("my-deferred-iframe");
-        iframe.src = 'https://www.youtube.com/embed/WrL6Ihbg8LU';
-    }, 3000);
+    
 
 
     return (

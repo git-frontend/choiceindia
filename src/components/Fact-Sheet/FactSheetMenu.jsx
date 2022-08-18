@@ -40,10 +40,10 @@ function FactSheetMenu() {
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-5 col-5 pb-3 pt-3">Registered Office</div>
-                            <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">Choice International Limited, Sunil Patodia Tower,J B Nagar, Andheri (East),<br/>
-                                Mumbai 400099, Maharashtra<br/>
-                                Tel.No. +91-022-67079999<br/>
-                                Fax:+91-022-67079959<br/>
+                            <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">Choice International Limited, Sunil Patodia Tower,J B Nagar, Andheri (East),<br />
+                                Mumbai 400099, Maharashtra<br />
+                                Tel.No. +91-022-67079999<br />
+                                Fax:+91-022-67079959<br />
                                 Email Id: <a href="mailto:info@choiceindia.com">info@choiceindia.com</a></div>
                         </div>
                         <div className="row border-bottom ">
@@ -76,11 +76,11 @@ function FactSheetMenu() {
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-5  col-5 pb-3 pt-3">Registrar &amp; Share Transfer Agent ( RTA )</div>
-                            <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">Name : Link Intime India Pvt Ltd<br/>
-Add : C-101, 247 Park, L.B.S. Marg, Vikhroli (West), Mumbai -400 083<br/>
-TEL NO : 022 49186270<br/>
-EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br/>
-WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
+                            <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">Name : Link Intime India Pvt Ltd<br />
+                                Add : C-101, 247 Park, L.B.S. Marg, Vikhroli (West), Mumbai -400 083<br />
+                                TEL NO : 022 49186270<br />
+                                EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br />
+                                WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
                         </div>
                     </div>
 

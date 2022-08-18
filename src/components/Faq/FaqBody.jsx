@@ -297,8 +297,8 @@ export default function FaqBody() {
                           article.map((res, index) => {
 
                             return (
-                              <div>
-                                <Accordion.Item key={res.id} eventKey={index}>
+                              <div key={res.id}>
+                                <Accordion.Item  eventKey={index}>
                                   <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                   {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                   <Accordion.Body>
@@ -333,8 +333,8 @@ export default function FaqBody() {
                           searchlist.map((res, index) => {
 
                             return (
-                              <div>
-                                <Accordion.Item key={res.id} eventKey={index}>
+                              <div key={res.id}>
+                                <Accordion.Item  eventKey={index}>
                                   <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                   {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                   <Accordion.Body>

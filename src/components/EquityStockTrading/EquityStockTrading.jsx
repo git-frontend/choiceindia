@@ -20,8 +20,8 @@ function EquityStockTrading() {
             <WhyEquityStockTrading />
             <LowBrokerageEquityStockTrading />
             <EquityStockTradingOpeningProcess />
-            <EquityStockTradingFaq />
-            <section className="readmoresection">
+            {/* <EquityStockTradingFaq /> */}
+            {/* <section className="readmoresection">
 
               <div className="container">
                 <div className="row">
@@ -159,7 +159,7 @@ function EquityStockTrading() {
                 </div>
               </div>
 
-            </section>
+            </section> */}
           </div>
     
   );
