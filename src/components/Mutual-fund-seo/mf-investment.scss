@@ -15,7 +15,7 @@ body{
 .mfi-bannersection{
     padding: 10rem 0 14rem 0;
     position: relative;
-    background: url(../../assets/images/mutual-funds-investment/banner-bg.png) no-repeat;
+    background: url(../../assets/images/mutual-funds-investment/banner-bg.webp) no-repeat bottom left;
     background-size: cover;
     .lft-sec{
         
@@ -104,7 +104,7 @@ body{
 }
 
 .explore-best-mf{
-    padding: 7rem 0;
+    padding: 7rem 0 9rem 0;
     background: $abt-bg;
     position: relative;
     &::before {
@@ -405,4 +405,100 @@ body{
 			display: none !important;
 		}
 	}
+}
+
+
+.explr-all{
+    .explr-sub{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+        background: #FFFBEA;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        margin-top: -7rem;
+        h3{
+            font-size: 2.2rem;
+            margin: 2rem 3rem;
+            text-transform: capitalize;
+            font-family: $font-family-poppins-semibold;
+        }
+    }
+   
+}
+
+.mf-testimonial{
+    padding: 8rem 0;
+    .title-first{
+        text-transform: capitalize;
+        position: relative;
+        display: inline-block;
+        &::before{
+            content: '';
+            width: 10rem;
+            height: 10rem;
+            background: url(../../assets/images/mutual-funds-investment/quote.svg) no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            left: -15rem;
+            top: -2rem;
+        }
+    }
+}
+
+.mf-testimonial{
+    .mf-testimonial-slider{
+        .testi-slider{
+            margin-top: 5rem;
+            padding-bottom: 8rem;
+            .sl-item{
+                text-align: center;
+                .img-testi{
+                    display: inline-block;
+                    margin-bottom: 1.5rem;
+                }
+                h3{
+                    margin-top: 3rem;
+                    font-family: $font-family-RedHat-Bold;
+                }
+            }
+            .slick-arrow{  
+                width: 6.5rem;
+                height: 3rem;
+                border-radius: 25px;
+                top: inherit;
+                bottom: 0;
+                left: 45%;
+                transform: inherit;
+                transform: translate(-50%, 0);
+                &::before{
+                    color: #9F9F9F;
+                    background: transparent;
+                    font-family: inherit;
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
+                }
+                &:hover{
+                    background: $primary;
+                    &::before{
+                        color: $whiteColor;
+                    }
+                }
+                &.slick-next{
+                    left: 55%;
+                }
+            }
+        }
+    }
+}
+
+.mf-partner{
+    padding: 5rem 0;
+    .title-first{
+        text-transform: capitalize;
+        margin-bottom: 5rem;
+    }
 }

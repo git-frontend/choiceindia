@@ -19,6 +19,7 @@ function Faq() {
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
+  
 
   useEffect(() => {
     setRenderCount(true)

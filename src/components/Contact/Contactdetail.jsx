@@ -72,9 +72,9 @@ function Contactdetail() {
                               city_list.map((item, i) => {
 
                                  return (
-                                    <div key={item.id}>
-                                          <option value={i}>{item ? item.city_name : 'NA'}</option>
-                                    </div>
+                                  
+                                          <option key={item.id} value={i}>{item ? item.city_name : 'NA'}</option>
+                                    
                                  )
                               })
                            }

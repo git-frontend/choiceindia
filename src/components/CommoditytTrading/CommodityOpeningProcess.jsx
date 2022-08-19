@@ -7,8 +7,21 @@ import Image22 from '../../assets/images/open-demat-account/two.webp';
 import Image23 from '../../assets/images/open-demat-account/three.webp';
 import Image24 from '../../assets/images/open-demat-account/four.webp';
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from 'react-router-dom';
 
 const CommodityOpeningProcess = () => {
+
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
     return (
         <div>
 
@@ -25,7 +38,7 @@ const CommodityOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark ">Open Now </a>
+                                    <Link to="/commodity-trading" ><span className="btn-bg btn-bg-dark "  onClick={() => { scrollToId('open-account-wrap') }}>Open Now</span> </Link>
                                 </div>
 
                             </div>
