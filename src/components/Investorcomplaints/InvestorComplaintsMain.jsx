@@ -23,13 +23,13 @@ function InvestorComplaintsMain() {
                             <table className="table table-striped" id="complaints">
                                 <thead>
                                     <tr>
-                                        <th className="text-uppercase ">sr. no</th>
-                                        <th className="text-uppercase ">Month</th>
-                                        <th className="text-uppercase text-center">Brought Forward<br/>
+                                        <th className="text-uppercase pb-5">sr. no</th>
+                                        <th className="text-uppercase pb-5">Month</th>
+                                        <th className="text-uppercase text-center pb-5">Brought Forward<br/>
                                             ( previous month )</th>
-                                        <th className="text-uppercase text-center">Received This<br/> month</th>
-                                        <th className="text-uppercase text-center">resolved this<br/> month</th>
-                                        <th className="text-uppercase text-center">pending</th>
+                                        <th className="text-uppercase text-center pb-5">Received This<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">resolved this<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">pending</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -143,13 +143,13 @@ function InvestorComplaintsMain() {
                             <table className="table table-striped" id="complaints">
                                 <thead>
                                     <tr>
-                                        <th className="text-uppercase ">sr. no</th>
-                                        <th className="text-uppercase ">Month</th>
-                                        <th className="text-uppercase text-center">Brought Forward<br/>
+                                        <th className="text-uppercase pb-5">sr. no</th>
+                                        <th className="text-uppercase pb-5">Month</th>
+                                        <th className="text-uppercase text-center pb-5">Brought Forward<br/>
                                             ( previous month )</th>
-                                        <th className="text-uppercase text-center">Received This<br/> month</th>
-                                        <th className="text-uppercase text-center">resolved this<br/> month</th>
-                                        <th className="text-uppercase text-center">pending</th>
+                                        <th className="text-uppercase text-center pb-5">Received This<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">resolved this<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">pending</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -263,13 +263,13 @@ function InvestorComplaintsMain() {
                             <table className="table table-striped" id="complaints">
                                 <thead>
                                     <tr>
-                                        <th className="text-uppercase ">sr. no</th>
-                                        <th className="text-uppercase ">YEAR</th>
-                                        <th className="text-uppercase text-center">Brought Forward<br/>
+                                        <th className="text-uppercase pb-5">sr. no</th>
+                                        <th className="text-uppercase pb-5">YEAR</th>
+                                        <th className="text-uppercase text-center pb-5">Brought Forward<br/>
                                             ( previous month )</th>
-                                        <th className="text-uppercase text-center">Received This<br/> month</th>
-                                        <th className="text-uppercase text-center">resolved this<br/> month</th>
-                                        <th className="text-uppercase text-center">pending</th>
+                                        <th className="text-uppercase text-center pb-5">Received This<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">resolved this<br/> month</th>
+                                        <th className="text-uppercase text-center pb-5">pending</th>
                                     </tr>
                                 </thead>
                                 <tbody>

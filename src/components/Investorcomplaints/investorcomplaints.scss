@@ -5,7 +5,7 @@
    
 }
 .table>:not(caption)>*>* {
-   
+    border-bottom-width: 0 !important;
     box-shadow: none !important;
 }
 #complaints {
