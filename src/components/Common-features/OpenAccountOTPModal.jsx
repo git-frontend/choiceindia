@@ -16,7 +16,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
-    const type2=window.location.pathname =="/mutual-funds-investment" ? 'MF':"";
+    const type2=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
 
     function showLoader(type) {
         setLoaders((prevLoaders) => ({
@@ -105,6 +105,9 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             openInfoPopup(res.data.Message);
                             onClose();
                         } else {
+                            (type2=='MF' )? 
+                            window.location.href ="https://investica.com/auth/sign-in" 
+                            :
                             window.location.href = "https://jiffy.choiceindia.com/auth/login";
                         }
                     }

@@ -27,7 +27,7 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1=window.location.pathname =="/mutual-funds-investment" ? 'MF':"";
+    const type1=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -128,7 +128,7 @@ function DematAccountForm(props) {
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
             if (props.page == 'add-lead') {
-                console.log('Addd lead page');
+                // console.log('Addd lead page');
                 sendNewLeadOTP();
             } else {
                 sendOTP();
