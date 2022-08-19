@@ -10,7 +10,7 @@ import DematAccountForm from '../Common-features/DematAccountForm'
 
 function Banner() {
     const [selected, setSelected] = useState(0);
-console.log("check",window.location.pathname)
+
     return (
         <div>
             <section className="mfi-bannersection">
