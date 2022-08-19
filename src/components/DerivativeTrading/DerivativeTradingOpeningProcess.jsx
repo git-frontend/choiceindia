@@ -99,7 +99,7 @@ const DerivativeTradingOpeningProcess = () => {
                                 </div>
                                 <div className="info" >
                                     <h5>Courier POA</h5>
-                                    <p>Your Derivatives trading account opening is successful with Choice.
+                                    <p>Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.
 
 
                                     </p>

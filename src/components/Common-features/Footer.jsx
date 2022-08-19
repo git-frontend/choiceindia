@@ -289,15 +289,15 @@ Disclaimer:<br/>
                   <li>
                     <Link to="/disclaimer" target="_blank">Disclaimer</Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="/" target="_blank">Sitemap</a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="/cebpl-policies" target="_blank">CEBPL Policies</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <Link to="/client-details-update" target="_blank">Client Details Update</Link>
-                  </li>
+                  </li> */}
                 </ul>
             </div> 
 

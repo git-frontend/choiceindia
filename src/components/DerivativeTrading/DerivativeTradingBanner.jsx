@@ -16,7 +16,7 @@ const DerivativeTradingBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                            <div className="desktop">Open a  Derivatives <br />  Trading Account <br /> <span className="yellow">Online For Free</span></div>
+                            <div className="desktop">Open a  Derivatives <br />  Trading Account <br /> </div>
                             </h1>
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}

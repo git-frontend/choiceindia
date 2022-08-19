@@ -11,9 +11,21 @@ import img9 from '../../assets/images/mutual-funds-investment/dividend-yield-fun
 import img10 from '../../assets/images/mutual-funds-investment/money-plant.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function ExploreBestMF() {
+/** scroll id view */
 
+function chapterScroll(id) {
+  var element = document.getElementById(id);
+  var headerOffset = 140;
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
+}
  
 
   return (
@@ -95,7 +107,7 @@ function ExploreBestMF() {
                       <div className="explr-sub">
                         <LazyLoader src={img10} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
                         <h3>Let’s Start SIP to enjoy the joy of earning</h3>
-                        <a href="#"><span className="btn-bg">Start Now</span></a>
+                        <Link to="/mutual-funds-investment"><span onClick={() => { chapterScroll('mutualid')}} className="btn-bg">Start Now</span></Link>
                       </div>
                   </div>
               </div>
