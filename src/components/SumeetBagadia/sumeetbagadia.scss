@@ -4,7 +4,7 @@
 
 
 // banner section
-
+a{text-decoration: none!important;}
 .sumeet-bagadia-parent{
 	animation: hideMe 4s forwards;
 }
@@ -530,7 +530,7 @@
 	overflow: hidden;
 	.bg-acnt-sub {
 		background: $primary;
-		padding: 6.1875rem 4.875rem;
+		padding: 4.875rem;
 		border-radius: 1rem;
 		display: flex;
 		align-items: center;
@@ -539,7 +539,7 @@
 		z-index: 9;
 		.title-sm-new {
 			margin: 0;
-			max-width: 52%;   
+			max-width: 77%;   
             color: $bgolor-lightwhite;
             font-size: 3rem;
             line-height: 4.5rem;
@@ -599,7 +599,7 @@
 	background-size: 100% 120%;
 	margin-bottom: 0;
 	position: relative;
-    .bg-class-left{
+    .bg-className-left{
         text-align: left;
         position: relative;
         left: 0;
