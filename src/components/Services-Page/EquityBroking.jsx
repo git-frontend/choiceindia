@@ -20,10 +20,10 @@ function EquityBroking() {
                             </div>
                         </div>
                     </div>
-                    <div className="row gx-5 align-items-center">
+                    <div className="row gx-5 align-items-top">
                         <div className="col-md-4">
                             <div className="rightsec">
-                                <LazyLoader src={Bannerimage} alt={"equity broking services"} className={"img-fluid"} width={"410"} height={"459"} />
+                                <LazyLoader src={Bannerimage} alt={"equity broking services"} className={"img-fluid"} width={"410"} height={"425"} />
                                 {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid " width={"410"} height={"459"}></img> */}
                             </div>
                         </div>
