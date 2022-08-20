@@ -8,7 +8,7 @@
     background-color: transparent;
     display: flex;
     justify-content: flex-end;
-    top: 0;
+    top: 7%;
     right: 7%;
     padding: 1em;
     box-shadow: none;
@@ -138,4 +138,8 @@
 
 .word-wrap{
     word-break: break-word;
+}
+
+.pb0{
+    padding-bottom: 0 !important;
 }

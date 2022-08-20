@@ -876,6 +876,7 @@ body{
                     text-overflow: ellipsis;
                     @media (max-width:$sm) {
                         font-size: 1.7rem;
+                        text-align: left;
                     }
                 }
 

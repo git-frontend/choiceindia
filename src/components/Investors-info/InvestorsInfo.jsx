@@ -3,6 +3,9 @@ import React, { useEffect } from "react";
 import Banner from './Banner';
 // import InvestorInfoMenu from './InvestorInfoMenu';
 // import Yeardetail from './Yeardetail';
+import Navbar from './Navbar';
+import "../Investors-info/navbar.scss";
+import "./navbar.scss";
 
 import { AiFillCaretUp } from "react-icons/ai";
 import "./investorsinfo.scss";
@@ -53,7 +56,18 @@ function InvestorInfo() {
               <Banner />
 
             <ChoiceLTP/>
-
+          <div className="Investormenu pb0">
+            <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <h2 className="title">Investors Relation</h2>
+                            <Navbar />
+                          
+                            
+                        </div>
+                    </div>
+            </div>
+          </div>
               <section>
                 <div className="container">
                 <iframe src="https://app.churchgatepartners.com/AssignTemplate/BindTempleteview?ClientID=46" title='investor-iframe' style={{ width: '100%', height: '1350px'}} className='invest-iframe'>
@@ -63,8 +77,8 @@ function InvestorInfo() {
               </section>
 
               
-              {/* <InvestorInfoMenu />
-  <Yeardetail /> */}
+            {/* <InvestorInfoMenu />  */}
+  {/* <Yeardetail /> */}
 
             </div>
           </div>

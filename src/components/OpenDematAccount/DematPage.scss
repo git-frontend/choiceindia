@@ -24,6 +24,11 @@
 		font-family: $font-family-poppins-medium;
 		font-weight: 600;
 		padding-bottom: 5rem;
+		@media (max-width:$sm) {
+			font-size: 2.3rem;
+			line-height: 3rem;
+			padding-bottom: 2.5rem;
+		}
 		.yellow {
 			color: $bgcolor-yellow;
 		}
@@ -99,6 +104,9 @@
 			.iconwrap{
 				img{
 					width: auto;
+					@media (max-width:$sm) {
+						height: 40px;
+					}
 				}
 			}
 		}
@@ -971,6 +979,9 @@
 			font-family: $font-family-poppins-semibold;
 			color: $primary;
 			font-size: 2rem;
+			@media (max-width:$sm) {
+				font-size: 1.75rem;
+			}
 		}
 	}
 

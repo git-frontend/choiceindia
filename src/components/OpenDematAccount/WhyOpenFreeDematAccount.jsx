@@ -38,6 +38,8 @@ function WhyOpenFreeDematAccount() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:false,
+          loop: true,
+          autoplaySpeed: 2500,
         },
       },
     ],
