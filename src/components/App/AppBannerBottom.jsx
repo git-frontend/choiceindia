@@ -32,7 +32,7 @@ function AppBannerBottom() {
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-md-10'>
-              <div className="app-trade-easy-div row align-items-center">
+              <div className="app-trade-easy-div row align-items-top">
 
 
 
