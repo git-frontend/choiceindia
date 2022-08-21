@@ -510,7 +510,7 @@ export class API_URLS {
     }
     getresearchipoURL() {
         // this.researchURL
-        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?limit=10&offset=0'
+        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?offset=0'
     }
 
     getperformanceURL() {
