@@ -35,6 +35,11 @@ function HindiWhyOpenTradingAccount() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:false,
+          loop: true,
+infinite:true,
+autoplaySpeed: 5000,
+autoplay: true,
+
         },
       },
     ],

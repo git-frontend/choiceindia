@@ -1,10 +1,11 @@
-import "./EquityStockTrading.scss"
+import "./EquityStockTrading.scss";
+import "../OpenDematAccount/DematPage";
 import EquityStockTradingBanner from "./EquityStockTradingBanner";
 import WhyOpenEquityStockTrading from "./WhyOpenEquityStockTrading";
 import EquityStockTradingOpeningProcess from "./EquityStockTradingOpeningProcess";
 import LowBrokerageEquityStockTrading from "./LowBrokerageEquityStockTrading";
 import WhyEquityStockTrading from "./WhyEquityStockTrading";
-import EquityStockTradingFaq from "./EquityStockTradingFaq";
+// import EquityStockTradingFaq from "./EquityStockTradingFaq";
 import { Link } from "react-router-dom";
 
 function EquityStockTrading() {
