@@ -7,7 +7,7 @@ import {useRef} from 'react';
 
 function PricingStocks() {
 
-  console.log('Stocks')
+ // console.log('Stocks')
   return (
     <div>
 

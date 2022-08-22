@@ -66,7 +66,7 @@ const WhyChoice = () => {
                                 </div>
                                 <div className="col-xl-8 col-md-6">
                                     <div className="iconwrap">
-                                        <a href="<?php echo JIFFY_URL;  ?>" target="_blank">
+                                        <a href="https://jiffy.choiceindia.com/" target="_blank">
                                             <div className="icon">
                                                 <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
                                                 <p>Web</p>

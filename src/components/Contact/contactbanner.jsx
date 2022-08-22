@@ -24,11 +24,11 @@ function Contactbanner() {
 
 
   const schema = yup.object().shape({
-    firstName: yup.string().required("FirstName is required"),
-    lastName: yup.string().required("LastName is required"),
-    mobile: yup.string().required("Phone no is required").matches(phoneRegExp, "Invalid number"),
+    firstName: yup.string().required("First Name is required"),
+    lastName: yup.string().required("Last Name is required"),
+    mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number"),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
-    purpose: yup.string().required("Need to choose purpose"),
+    // purpose: yup.string().required("Need to choose purpose"),
     question: yup.string().max(40).required("Need to fill your question")
 
   })
@@ -45,7 +45,7 @@ function Contactbanner() {
   });
   const submitFormData = (FormData) => {
     setdatas(FormData)
-    console.log("data", FormData);
+   // console.log("data", FormData);
     
     setIsloader(true)
     
@@ -53,7 +53,7 @@ function Contactbanner() {
       setIsloader(false)
       reset();
       setData("Mail sent Successfully")
-      console.log("check",data)
+     // console.log("check",data)
 
     })
 
@@ -122,14 +122,14 @@ function Contactbanner() {
               <div className="row d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                   <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text" name="firstName" placeholder="Enter First Name" className="formcontrol" {...register('firstName',)} />
+                  <Form.Control type="text" name="firstName"  className="formcontrol" {...register('firstName',)} />
                   <span className="text-danger"> {errors?.firstName?.message} </span>
                 </Form.Group>
 
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
                   <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text" placeholder="Enter Last Name" className="formcontrol" {...register('lastName')} />
+                  <Form.Control type="text"  className="formcontrol" {...register('lastName')} />
                   <span className="text-danger"> {errors?.lastName?.message} </span>
                 </Form.Group>
               </div>
@@ -137,19 +137,19 @@ function Contactbanner() {
               <div className="row mt-3 d-flex justify-content-between">
                 <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
                   <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
-                  <Form.Control type="text" placeholder="Enter Email Address" className="formcontrol" {...register('email')} />
+                  <Form.Control type="text"  className="formcontrol" {...register('email')} />
                   <span className="text-danger"> {errors?.email?.message} </span>
                 </Form.Group>
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Phone  <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text" placeholder="Enter Phone Number" maxLength={10} className="formcontrol"{...register('mobile')} />
+                  <Form.Label className="formlabel"> Mobile Number  <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="text"  maxLength={10} className="formcontrol"{...register('mobile')} />
                   <span className="text-danger"> {errors?.mobile?.message} </span>
                 </Form.Group>
               </div>
 
 
-              <Form.Group className="mb-3">
+              {/* <Form.Group className="mb-3">
                 <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
                 <div className='cust-dropdown'>
                   <div className="downar"></div>
@@ -160,7 +160,7 @@ function Contactbanner() {
 
                   </Form.Select>
                 </div>
-              </Form.Group>
+              </Form.Group> */}
 
 
 

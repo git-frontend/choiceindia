@@ -13,6 +13,7 @@ import "./navbar.scss";
 import { useState } from 'react';
 import Template1 from "../Common-features/Template1";
 import ChoiceLTP from "../Common-features/ChoiceLTP";
+import meta_tags from "../../Data/MetaTags";
 // import {
 //   useLocation,
 // } from 'react-router-dom';
@@ -23,18 +24,30 @@ function InvestorInfo() {
   const [skeleton, setSkeleton] = useState(() => true);
   const[trigger,setTrigger]=useState(false);
 
-  
+  const [rendercount, setRenderCount] = useState(() => false);
+
 
 
   useEffect(()=>{
-    console.log("InvestorInfo")
+    //console.log("InvestorInfo")
     setTimeout(() => {
       setSkeleton(() => false);
     }, 200)
   },[])
 
  
-    
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      // let parser = new DOMParser();
+      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+    }
+  }, [rendercount])
 
 
   useEffect(() => {

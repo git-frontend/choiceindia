@@ -96,7 +96,7 @@ function WhoEligibleToSubBroker() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>Growth is for certain when you partner with us.</h4>
+                                <h4>Growth is certain when you partner with us.</h4>
                                 <Link to="/sub-broker-franchise" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>

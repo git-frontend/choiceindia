@@ -41,7 +41,7 @@ const partnerBanner =[
 
     {
         "title":"Become a Loan Agent",
-        "description":"Disburse the loan of different companies at the lowest interest rate &amp; earn a good commission.",
+        "description":"Disburse the loan of different companies at the lowest interest rate & earn a good commission.",
         "image":`${LoansImage}`,
         "button":"Loans",
         "icon":`${ImageSub5}`,

@@ -8,7 +8,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 // import  blogfour  from '../../assets/images/fabledetails/blogfour.png';
 function Recommendation(props) {
 
-	console.log('RECC',props.single_data[0]);
+	//console.log('RECC',props.single_data[0]);
 	// console.log('RECC',props.Id);
 	let navigate = useNavigate();
 	const [disp, setDisp] = useState(() => false);
