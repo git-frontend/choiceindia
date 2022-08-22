@@ -63,7 +63,7 @@ function CorporateDemateAccount() {
                                         <strong>Below are the easy steps for Corporate Demat Account opening:</strong><br /><br />
                                         <ul>
                                             <li>To open a Corporate Account with us, you can register online on our website.</li>
-                                            <li>You can also download our Jiffy App (Android & iOS) and Sign Up via your smartphone.</li>
+                                            <li>You can also download our Jiffy App (Android &amp; iOS) and Sign Up via your smartphone.</li>
                                             <li>It is advisable to download the app since signing up will need the upload of photos, which can be easily clicked via the camera of your phone.</li>
                                             <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li>
                                             <li>Once you upload all the necessary documents they are up for verification.</li>

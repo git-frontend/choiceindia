@@ -118,6 +118,7 @@ function Slidersec() {
 
     useEffect(() => {
         fetchExpertResearchReport();
+        console.log('RRR',research.length);
     }, []);
 
     return (
@@ -132,7 +133,9 @@ function Slidersec() {
                             </div>
                         </div>
                         <div className="col-xl-7">
-                            <div className="bg-class-right">
+                            {
+                                research.length?
+                                <div className="bg-class-right">
                                 <Slider {...settings} className="sm-slider-bg services-list-slider">
 
                                     {
@@ -195,7 +198,9 @@ function Slidersec() {
 
                                 </Slider>
 
-                            </div>
+                            </div>: ''
+                            }
+               
                             <div className="sm-slider-thumb">
                                 {/* <ul className="reset">
                                     <li className="active" data-slide="1">

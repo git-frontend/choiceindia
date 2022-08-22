@@ -12,7 +12,7 @@ import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
 
 function Fablesdetails() {
-
+  console.log('FablesDetails');
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => { });
   const [htmlContent, sethtmlContent] = useState(() => '');
@@ -50,12 +50,13 @@ var formName = useRef('');
   function loadFabalList() {
     homeServices.fabalStory().then(
       res => {
-        // console.log('res1',res)
+        console.log('res1',res)
+        console.log('IDDD',single_detail);
         // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
-          return e.id !== id
+          return e.slug !== id
         }))
-        // console.log('SSS',allFabalData)
+        // console.log('SSS',single_detail)
       }
     )
   }
@@ -92,7 +93,7 @@ setTrigger(true)
         skeleton ? <Template1 /> :
           <div className="fables-details-parent">
             <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
-            <Recommendation name={allFabalData} Id={id} />
+            <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
       }
 

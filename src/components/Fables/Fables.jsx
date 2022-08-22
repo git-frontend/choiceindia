@@ -12,7 +12,7 @@ import {
 import meta_tags from "../../Data/MetaTags";
 
 function Fables() {
-
+  console.log('Fables.jsx')
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 

@@ -28,7 +28,14 @@ function DematAccountForm(props) {
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
+
+
+    /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
+
+    /** state to show thankyou popup default */
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead' });
+
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
     // const [otp, setOtp] = useState('');
@@ -108,8 +115,20 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose() {
+    function handleOTPClose(link) {
+        console.log('closeModal22',link)
         setShowOTP(false);
+
+        if(link._reactName){
+            setShowThanku(prevState => {
+                return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
+            });
+        }else{
+            setShowThanku(prevState => {
+                return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
+            });
+        }
+        // closeModal(link);
     }
 
     function handleSendOTP(e) {
@@ -170,10 +189,14 @@ function DematAccountForm(props) {
     //     setShowLead(() => false);
     // }
 
-    function closeModal() {
+    function closeModal(link) {
         setShowLead(prevState => {
             return { ...prevState, showModal: false}
         });
+
+        if(link){
+            window.location.href = link;
+        }
     }
 
     function sendNewLeadOTP() {
@@ -465,7 +488,7 @@ function DematAccountForm(props) {
     return (
         <>
             {
-                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountPopup> : ''
+                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
             }
             {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
@@ -516,7 +539,7 @@ function DematAccountForm(props) {
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP}></OpenAccountOTPModal> : ''
             }
 
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
@@ -618,6 +641,10 @@ function DematAccountForm(props) {
                 showlead.showModal ? <Thankyoupopup isShow={showlead}/>: '' 
             }   
             {/* <Thankyoupopup isShow={showlead} /> */}
+
+            {
+                showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
+            }
         </>
     );
 }
