@@ -33,6 +33,7 @@ function MFTestimonials() {
           slidesToShow: 1,
           slidesToScroll: 1,
           centerMode: false,
+          adaptiveHeight: true,
         },
       },
     ],
@@ -52,19 +53,19 @@ function MFTestimonials() {
                 <div className="col-md-7">
                     <div className="mf-testimonial-slider">
                         <Slider {...settings} className="testi-slider">
+                          <div className="sl-item">
+                                <span className="img-testi">
+                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
+                                </span>
+                                <p>Its an user friendly as well as interactive app that helps you to know about the recent market trends providing you with variants. Its suitable for beginners as well. It ease your tedious task of choosing the right investment for you. Also, the customer support is very dedicated. Thank you investica 😊👍</p>
+                                <h3>Sanchita roy</h3>
+                            </div>
                             <div className="sl-item">
                                 <span className="img-testi">
                                   <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
                                 </span>
                                 <p>Nice app if you want go with mutual fund. User friendly interface and no need to learn more for investment. Just choose your best and put in the hand of investica.</p>
                                 <h3>Abhishet Gupta</h3>
-                            </div>
-                            <div className="sl-item">
-                                <span className="img-testi">
-                                  <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"100"} height={"100"} />
-                                </span>
-                                <p>Its an user friendly as well as interactive app that helps you to know about the recent market trends providing you with variants. Its suitable for beginners as well. It ease your tedious task of choosing the right investment for you. Also, the customer support is very dedicated. Thank you investica 😊👍</p>
-                                <h3>Sanchita roy</h3>
                             </div>
                             <div className="sl-item">
                                 <span className="img-testi">
