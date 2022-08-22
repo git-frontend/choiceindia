@@ -99,6 +99,7 @@ const LazyDerivativeTrading = React.lazy(() => import('./components/DerivativeTr
 const LazyCurrencyTrading = React.lazy(() => import('./components/CurrencyTrading/CurrencyTrading'));
 const LazyNoDataFound = React.lazy(() => import('./components/Common-features/NoDataFound'));
 const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
+const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-demat-account-campaign/OpenDematAccount'));
 
 
 function Routing() {
@@ -485,6 +486,12 @@ function Routing() {
                         <Route exact path='/mutual-funds-investment' element={
                             <React.Suspense>
                                 < LazyMutualFundsInvestment />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/campaign/open-demat-account' element={
+                            <React.Suspense>
+                                < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
 
