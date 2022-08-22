@@ -58,7 +58,7 @@ function WhyChoiceIPO() {
             <div className="row">
                 <div className="col-md-12">
                     <div className="get-start-sub">
-                        <h3>Open 100% Free Demat Account with us</h3>
+                        <h3>Open a Free Account to Invest in IPO with Choice</h3>
                         <a href="/" className="btn-bg btn-bg-dark">Get Started</a>
                     </div>
                 </div>

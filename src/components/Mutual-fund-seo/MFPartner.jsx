@@ -17,22 +17,22 @@ function MFPartner() {
     speed: 1500,
     arrows: true,
     slidesToShow: 5,
-    autoplay: false,
-    dots: false,
+    autoplay: true,
+    dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 3,
           slidesToScroll: 1,
         },
       },
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
           centerMode: false,
         },
