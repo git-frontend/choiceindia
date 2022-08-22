@@ -135,6 +135,9 @@ body{
             text-transform: capitalize;
             margin-bottom: 2rem;
         }
+        @media (max-width: $sm-x) {
+            padding-top: 0;
+        }
     }
     .best-mf-list{
         display: flex;
@@ -186,7 +189,7 @@ body{
             align-items: inherit;
         }
     }
-    @media (max-width: $sm-x) {
+    @media (max-width: $sm) {
         text-align: center;
     }
 }
@@ -467,6 +470,9 @@ body{
 
 .mf-testimonial{
     padding: 8rem 0;
+    @media (max-width: $sm-x) {
+        padding-bottom: 0;
+    }
     .title-first{
         text-transform: capitalize;
         position: relative;
@@ -481,10 +487,22 @@ body{
             position: absolute;
             left: -15rem;
             top: -2rem;
+            @media (max-width: $sm-x) {
+                width: 6rem;
+                height: 5rem;
+                left: -7rem;
+                top: -2rem;
+            }
+            @media (max-width: $xs) {
+                left: -20px;
+            }
         }
         span{
             position: relative;
             z-index: 1;
+        }
+        br{
+            display: block;
         }
     }
 }
@@ -508,6 +526,7 @@ body{
             .slick-arrow{  
                 width: 6.5rem;
                 height: 3rem;
+                line-height: 3rem;
                 border-radius: 25px;
                 top: inherit;
                 bottom: 0;
@@ -519,7 +538,6 @@ body{
                     background: transparent;
                     font-family: inherit;
                     font-size: 2.5rem;
-                    line-height: 2.5rem;
                 }
                 &:hover{
                     background: $primary;
@@ -538,6 +556,9 @@ body{
 
 .mf-partner{
     padding: 5rem 0;
+    @media (max-width: $sm-x) {
+        text-align: center;
+    }
     .title-first{
         text-transform: capitalize;
         margin-bottom: 5rem;
