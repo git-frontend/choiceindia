@@ -246,9 +246,13 @@
 
   //sub broker popup
 
+//   .bt-strap-mdl{
+// 	border-radius: 16px;
+//   }
+
   .exit-intent-sleekbox-overlay {
-	display: none;
-	position: fixed;
+	// display: none;
+	// position: fixed;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -256,24 +260,24 @@
 	background: #3e404f4d;
 
 	.exit-intent-sleekbox-popup {
-		box-sizing: border-box;
+		// box-sizing: border-box;
 		background: $whiteColor;
-		max-width: 502px;
-		margin: 0 auto;
-		border-radius: 16px;
-		margin: 0 auto;
-		margin-top: 11rem;
-		position: relative;
-		.closebtn {
-            color:$primary;
-            text-decoration: none;
-            float: right;
-            top: 0;
-            right: 15px;
-            position: absolute;
-            font-size: 3rem;
+		// max-width: 502px;
+		// margin: 0 auto;
+		// border-radius: 16px;
+		// margin: 0 auto;
+		// margin-top: 11rem;
+		// position: relative;
+		// .closebtn {
+        //     color:$primary;
+        //     text-decoration: none;
+        //     float: right;
+        //     top: 0;
+        //     right: 15px;
+        //     position: absolute;
+        //     font-size: 3rem;
            
-        }
+        // }
 		.digit-otp{
    
 			width: 90% !important;
@@ -457,10 +461,10 @@
 		}
 	}
 
-	&.sleekbox-popup-active {
-		display: block;
-		z-index: 99999;
-	}
+	// &.sleekbox-popup-active {
+	// 	display: block;
+	// 	z-index: 99999;
+	// }
 }
 
 .digit-group {

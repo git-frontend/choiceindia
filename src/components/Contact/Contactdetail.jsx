@@ -71,7 +71,7 @@ function Contactdetail() {
                            {
                               city_list.map((item, i) => {
 
-                                 return <option value={i}>{item ? item.city_name : 'NA'}</option>
+                                 return <option key={i} value={i}>{item ? item.city_name : 'NA'}</option>
                               })
                            }
                         </Form.Select>

@@ -8,7 +8,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 // import  blogfour  from '../../assets/images/fabledetails/blogfour.png';
 function Recommendation(props) {
 
-	// console.log('RECC',props.name);
+	console.log('RECC',props.single_data[0]);
 	// console.log('RECC',props.Id);
 	let navigate = useNavigate();
 	const [disp, setDisp] = useState(() => false);
@@ -38,6 +38,9 @@ function Recommendation(props) {
 
 	useEffect(() => {
 		setDisp(true);
+		// setData(() => props.name.filter((e) => {
+		// 	return e.id 
+		// }));
 		setData(props);
 	}, [data, props])
 
@@ -56,7 +59,7 @@ function Recommendation(props) {
 										<div className="blog-list">
 											<div className="blog-item" style={{ cursor: 'pointer' }} onClick={() => Demo(data.name ? data.name[0].slug : 'NA')}>
 												<div className="blog-item-img">
-													<LazyLoader src={data.name ? data.name[0].feature_image : 'NA'} className={''} alt={'loading'} />
+													<LazyLoader src={data.name? data.name[0].feature_image : 'NA'} className={''} alt={'loading'} />
 													{/* <img src={data.name?data.name[0].feature_image : 'NA'} className="" alt="loading" /> */}
 												</div>
 												<div className="item-des">

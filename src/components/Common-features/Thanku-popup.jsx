@@ -7,6 +7,12 @@ import failureimg from '../../assets/images/failure.svg';
 function Thankyoupopup({isShow}) {
 
   console.log('TRTR',isShow);
+
+  // useEffect(() => {
+  //   if(isShow.closeOTP){
+  //     isShow.closeOTP;
+  //   }
+  // },[isShow])
   // const [show, setShow] = useState(isShow);
   // const show = useRef(null);
 
@@ -25,6 +31,7 @@ function Thankyoupopup({isShow}) {
   return (
     <>
       {
+        isShow.page == 'add-lead'?
         <div>
           <div className="thanku-overlay thanku-popup-active">
             <div className="thanku-popup">
@@ -61,7 +68,36 @@ function Thankyoupopup({isShow}) {
               </div>
             </div>
           </div>
-        </div> 
+        </div> : 
+        <div>
+        <div className="thanku-overlay thanku-popup-active">
+          <div className="thanku-popup">
+            <div className="sub-row">
+               <div className="close">
+                  {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}
+                </div> 
+              <div className="thanku">
+                <h1>Thank You !</h1>
+              </div>
+              <div className="body-content">
+                <p className="heading">Thank You For Your Registration!</p>
+                <p className="subheading">You are being redirected to onboarding page!</p>
+                <button className="btn-yellow" onClick={()=>isShow.closeMd(isShow.redirectionLink)}>OK</button>
+                <div>
+  
+                </div>
+  
+  
+  
+              </div>
+  
+  
+            </div>
+          </div>
+        </div>
+        </div>
+  
+  
       }
 
 

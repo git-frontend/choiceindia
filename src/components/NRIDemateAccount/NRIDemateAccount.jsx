@@ -64,7 +64,7 @@ function NRIDemateAccount() {
                                         <ul>
                                             <li>To open an NRI Account with us, you can register online on our website.</li>
                                             Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
-                                            <li>You can also download our Jiffy App ( Android & iOS) and Sign Up via your smartphone.</li>
+                                            <li>You can also download our Jiffy App ( Android &amp; iOS) and Sign Up via your smartphone.</li>
                                             <li>It is advisable to download the app since signing up will need the upload of your latest photo, which can be easily clicked from the camera of your phone.</li>
                                             <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li>
                                             <li>Once you upload all the necessary documents they are up for verification.</li>

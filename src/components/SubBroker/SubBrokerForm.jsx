@@ -40,6 +40,7 @@ function SubBrokerForm(props) {
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState(false);
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
+    const [show,setShow] = useState(true);
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -681,58 +682,117 @@ function SubBrokerForm(props) {
             </div>
             {
                 showOTPPopup ? 
-                <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
-                <div className="exit-intent-sleekbox-popup">
-                    <div className="popup-sub-row">
-                    <div className="close">
-                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
+            //     <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
+            //     <div className="exit-intent-sleekbox-popup">
+            //         <div className="popup-sub-row">
+            //         <div className="close">
+            //                 <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
+            //                 </div>
+            //             <div className="popup-sub-right">
+
+            //                 <div>
+            //                     <img src={OTPimage} alt='OTP Image' />
+
+            //                     <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
+            //                     <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
+            //                     {
+            //                         count ?
+            //                             <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+            //                     }
+
+            //                 </div>
+            //                 <div>
+
+
+            //                     <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+            //                     {
+            //                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+            //                     }
+            //                 </div>
+
+            //                 <div className="btnwrap">
+            //                     <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
+            //                 </div>
+            //                 <div className="">
+
+            //                     {
+            //                         !count ?
+            //                             <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
+            //                     }
+
+
+            //                 </div>
+            //                 <div className="mt-2">
+            //                     {
+            //                         OTPSendSuccessToaster ?
+            //                             <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
+            //                                 {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
+            //                             </Alert> : ''
+            //                     }
+            //                 </div>
+            //             </div>
+            //         </div>
+            //     </div>
+            // </div> 
+            
+                    <Modal show={show} className="bt-strap-mdl" onHide={handleOTPPopupClose}>
+                        <Modal.Header className="border-0" closeButton>
+                        </Modal.Header>
+                        <Modal.Body className="border-0">
+                            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
+                                <div className="exit-intent-sleekbox-popup">
+                                    <div className="popup-sub-row">
+                                        {/* <div className="close">
+                                            <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
+                                        </div> */}
+                                        <div className="popup-sub-right">
+
+                                            <div>
+                                                <img src={OTPimage} alt='OTP Image' />
+
+                                                <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
+                                                <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
+                                                {
+                                                    count ?
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                }
+
+                                            </div>
+                                            <div>
+
+
+                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                                {
+                                                    OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                                                }
+                                            </div>
+
+                                            <div className="btnwrap">
+                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
+                                            </div>
+                                            <div className="">
+
+                                                {
+                                                    !count ?
+                                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
+                                                }
+
+
+                                            </div>
+                                            <div className="mt-2">
+                                                {
+                                                    OTPSendSuccessToaster ?
+                                                        <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
+                                                            {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
+                                                        </Alert> : ''
+                                                }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        <div className="popup-sub-right">
-
-                            <div>
-                                <img src={OTPimage} alt='OTP Image' />
-
-                                <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
-                                <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
-                                {
-                                    count ?
-                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
-                                }
-
-                            </div>
-                            <div>
-
-
-                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
-                                {
-                                    OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                                }
-                            </div>
-
-                            <div className="btnwrap">
-                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
-                            </div>
-                            <div className="">
-
-                                {
-                                    !count ?
-                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
-                                }
-
-
-                            </div>
-                            <div className="mt-2">
-                                {
-                                    OTPSendSuccessToaster ?
-                                        <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                                            {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
-                                        </Alert> : ''
-                                }
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> : ''
+                        </Modal.Body>
+                    </Modal> : ''
             }
             <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
