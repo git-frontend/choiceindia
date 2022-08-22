@@ -7,7 +7,7 @@ import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 
-import "./ipo-Investment.scss";
+import "./ipo-investment.scss";
 
 
 function EquityBrokingMain() {
