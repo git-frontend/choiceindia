@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 function FableBlog() {
-
+    console.log('FableBlog.jsx');
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
 

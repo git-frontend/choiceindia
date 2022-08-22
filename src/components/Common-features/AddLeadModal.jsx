@@ -29,7 +29,7 @@ function AddLeadModal(props) {
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
 
-    const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
+    const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '', page: props.page });
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
     // const [otp, setOtp] = useState('');

@@ -40,7 +40,7 @@ function Banner() {
                             </ul>
                         </div>
                         <div className="col-md-6">
-                            <div className="rightsec d-flex justify-content-end">
+                            <div className="rightsec d-flex justify-content-end" id="ipoForm">
                                 <DematAccountForm />
                             </div>
                         </div>
