@@ -179,10 +179,10 @@ useEffect(()=>{
                             
                           </div>
                           <div className="footer-social-links">
-                            <a href="https://www.facebook.com/choice.broking/" target="_blank">
+                            <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
-                            <a href="https://twitter.com/ChoiceBroking" target="_blank">
+                            <a href="https://twitter.com/ChoiceHQ_Social" target="_blank">
                               <FontAwesomeIcon icon={faTwitter} />
                             </a>
                             <a href="https://www.linkedin.com/company/choice-broking/" target="_blank">
@@ -191,7 +191,7 @@ useEffect(()=>{
                             <a href="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
                               <FontAwesomeIcon icon={faInstagram} />
                             </a>
-                            <a href="https://www.youtube.com/user/ChoiceBroking" target="_blank">
+                            <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank">
                               <FontAwesomeIcon icon={faYoutube} />
                             </a>
                             <a href="https://t.me/CEBPL" target="_blank">

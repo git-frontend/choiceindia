@@ -1,16 +1,80 @@
-
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img1 from '../../assets/images/demat-images/mockup-iphone.webp'
 import img2 from '../../assets/images/demat-images/trusted-clients.svg'
 import img3 from '../../assets/images/demat-images/top-rated.svg'
 import img4 from '../../assets/images/demat-images/secured-trading.svg'
-
+import axios from "axios";
 import LazyLoader from '../Common-features/LazyLoader';
+import { API_URLS } from "../../Services/API-URLS";
 
 function TrackRecord() {
+  const [research, setResearch] = useState([]);
 
+  function getExpertResearch(request) {
+    let url = new API_URLS().getExpertResearchreportURL();
+    return axios.post(url, request, {});
+}
 
+function fetchExpertResearchReport() {
+    let startDate;
+    let dateDiff = new Date().getDate() - 7;
+    if (new Date().getMonth() === 0 && dateDiff < 0) {
+        let lastMonthDate = new Date(new Date().getFullYear() - 1, 12, 0);
+        startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
+    } else if (new Date().getMonth() === 0 && dateDiff === 0) {
+        startDate = new Date(new Date().getFullYear() - 1, 12, 0);
+    } else if (dateDiff < 0) {
+        let lastMonthDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+        startDate = new Date(lastMonthDate.getFullYear(), lastMonthDate.getMonth(), lastMonthDate.getDate() - (dateDiff - 1));
+    } else if (dateDiff === 0) {
+        startDate = new Date(new Date().getFullYear(), new Date().getMonth(), 0);
+    } else {
+        startDate = new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate() - 6);
+    }
 
+    let request = {
+        "end_date": new Date().toJSON().split('T')[0],
+        "is_expert": 1,
+        "research_type": "",
+        "limit": 2,
+        "offset": 0,
+        "segment": "EQ",
+        "start_date": startDate.toJSON().split('T')[0],
+        "status": "target_achieved",
+        "subcategory_id": "",
+        "search": "",
+        "id": "",
+        "user_id": "",
+        "timeline_enabled": 1,
+        "category_id": 2
+    };
+    getExpertResearch(request).then((res) => {
+       // console.log(res, "RES");
+        if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
+            let list = res.data.response.research.map((item, i) => {
+                if (item.datapoints && item.datapoints.length) {
+                    item.priceData = {}
+                    item.datapoints.forEach(sub => {
+                        sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
+                        item.priceData[sub.key] = sub
+                    });
+                }
+                return item;
+            });
+            setResearch(list);
+        } else {
+            setResearch([]);
+        }
+    }).catch((error) => {
+       // console.log(error, "error");
+        setResearch([]);
+    });
+}
+
+useEffect(() => {
+  fetchExpertResearchReport();
+ // console.log('RRR',research.length);
+}, []);
   return (
     <div>
 
@@ -20,36 +84,39 @@ function TrackRecord() {
             <div className="col-md-12">
               <h2 className="title-first">our track record says it all</h2>
               <div className="track-order-list">
-                <div className="track-itm">
-                  <h4>TATAELXSI</h4>
-                  <ul>
-                    <li>
-                      <h4>Entry Price</h4>
-                      <h3>441</h3>
-                    </li>
-                    <li>
-                      <h4>Target Price</h4>
-                      <h3>535</h3>
-                    </li>
-                  </ul>
-                  <h4 className="md-profit"><span>Profit: <span>4.86%</span></span></h4>
-                  <h4 className="trg-achv">Target Achieved: 150 Days</h4>
-                </div>
-                <div className="track-itm">
-                  <h4>SBIN</h4>
-                  <ul>
-                    <li>
-                      <h4>Entry Price</h4>
-                      <h3>441</h3>
-                    </li>
-                    <li>
-                      <h4>Target Price</h4>
-                      <h3>535</h3>
-                    </li>
-                  </ul>
-                  <h4 className="md-profit"><span>Profit: <span>4.86%</span></span></h4>
-                  <h4 className="trg-achv">Target Achieved: 150 Days</h4>
-                </div>
+
+
+
+                {
+                  research.map((item,index)=>{
+                    return (<div key={index} className="track-itm">
+                    <h4>{item.scrip_name}</h4>
+                    <ul>
+                      <li>
+                        <h4>Entry Price</h4>
+                        <h3>{Number((item?.priceData?.entry_price?.value) || 0).toFixed(2)}</h3>
+                      </li>
+                      <li>
+                        <h4>Target Price</h4>
+                        <h3>{Number((item?.priceData?.target?.value) || 0).toFixed(2)}</h3>
+                      </li>
+                    </ul>
+                    <h4 className="md-profit"><span>{
+                                                                    item?.matched_price && item?.priceData?.entry_price?.value ? 
+                                                                        ((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? ((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'Profit: ' : 'Loss: ') : ((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'Profit: ' : 'Loss: ')
+
+                                                                     : ''
+                                                                }{
+                                                                    item?.matched_price && item?.priceData?.entry_price?.value ? <span className={((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? ((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'text-success' : 'text-danger') : ((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100) > 0 ? 'text-success' : 'text-danger')} style={{display:'inline'}}>
+                                                                        {((item?.call_type.toLowerCase()) == 'buy' || (item?.call_type.toLowerCase()) == 'subscribe') ? (Number((((item?.matched_price - item?.priceData?.entry_price?.value) / item?.priceData?.entry_price?.value) * 100) || 0).toFixed(2)) : (Number((((item?.priceData?.entry_price?.value - item?.matched_price) / item?.priceData?.entry_price?.value) * 100 || 0)).toFixed(2))}%
+                                                                    </span> : ''
+                                                                }</span></h4>
+                    <h4 className="trg-achv">Target Achieved</h4>
+                  </div>)
+                  })
+                }
+                
+           
               </div>
             </div>
           </div>

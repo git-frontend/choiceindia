@@ -213,11 +213,13 @@ function HomeTestimonial() {
 										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
 									</div>
 									<div className="slider-item-des">
-										<div className="item-des-name-value">
-											<FontAwesomeIcon icon={faTwitter} />
-											<h4>{dataObj[0].name}</h4>
-											<h6>{dataObj[0].tag}</h6>
-											<h6>{dataObj[0].date}</h6>
+										<div className="item-des-name-value d-flex align-items-start justify-content-between">
+											<div className='d-flex flex-wrap w-75'>
+												<FontAwesomeIcon icon={faTwitter} />
+												<h4>{dataObj[0].name}</h4>
+												<h6 className='w-75'>{dataObj[0].tag}</h6>
+											</div>
+											<h6 className='rght-txt'>{dataObj[0].date}</h6>
 										</div>
 										<div className="item-des-cont">
 											<p>{dataObj[0].des}</p>

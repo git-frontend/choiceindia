@@ -8,6 +8,7 @@ import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegra
 import LazyLoader from "../Common-features/LazyLoader";
 import DematAccountForm from '../Common-features/DematAccountForm.jsx';
 import SubBrokerForm from '../SubBroker/SubBrokerForm';
+import utils from "../../Services/utils";
 
 function Fabdetailsbanner(props) {
 
@@ -35,7 +36,7 @@ function Fabdetailsbanner(props) {
                                 <div className="col-md-12">
                                     <div className="row ">
                                         <div className="col-md-12">
-                                            <p className="text-center date">Published August 21, 2021</p>
+                                            <p className="text-center date">Published  {utils.formatDate(new Date(props.single_data[0].published_at),"MMMM dd, yyyy")}</p>
                                             <h2 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h2>
                                             {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
                                             <ul className="tabs">

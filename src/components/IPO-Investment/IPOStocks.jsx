@@ -3,7 +3,10 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
 import brand1 from '../../assets/images/ipo/brand1.webp'
-import brand2 from '../../assets/images/ipo/brand2.webp'
+import brand2 from '../../assets/images/ipo/indigo-paints.webp'
+import brand3 from '../../assets/images/ipo/happiest-mind.webp'
+import brand4 from '../../assets/images/ipo/burger-king.webp'
+import brand5 from '../../assets/images/ipo/mtar.webp'
 
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -53,40 +56,56 @@ function IPOStocks() {
               <div className="col-md-12">
                   <div className="ipo-stock-slider">
                   <Slider {...settings} className="services-list-slider">
+                      
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
-                              <h4>Mrs Bector’s Foods</h4>
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <h4>MTAR Technologies</h4>
+                              <LazyLoader src={brand5} alt={"MTAR Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
-                                <span>23 December,  2020</span>
+                                <span>15 March 2021</span>
                               </h4>
                               <h4>Issued Price
-                                <span>Rs. 288</span>
+                                <span>Rs. 1063.9</span>
                               </h4>
                           </div>
-                          <h5 className="stck-gn">Profit Gains: 74%</h5>
+                          <h5 className="stck-gn">Profit Gains: 85%</h5>
                       </div>
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
-                              <h4>Indigo Paints Limited</h4>
-                              <LazyLoader src={brand2} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <h4>Indigo Paints</h4>
+                              <LazyLoader src={brand2} alt={"MTAR Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
-                                <span>2 Februrary,  2021</span>
+                                <span>2 February 2021</span>
                               </h4>
                               <h4>Issued Price
-                                <span>Rs. 1490</span>
+                                <span>Rs. 1,490</span>
                               </h4>
                           </div>
                           <h5 className="stck-gn">Profit Gains: 75%</h5>
                       </div>
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
+                              <h4>Burger King</h4>
+                              <LazyLoader src={brand4} alt={"Burger King"} className={"img-fluid"} width={"126"} height={"56"} />
+                          </div>
+                          <div className="stock-itm-btm">
+                              <h4>Listing Date 
+                                <span>14 December 2020</span>
+                              </h4>
+                              <h4>Issued Price
+                                <span>Rs. 60</span>
+                              </h4>
+                          </div>
+                          <h5 className="stck-gn">Profit Gains: 92%</h5>
+                      </div>
+                      <div className="service-item" >
+                          <div className="stock-itm-top d-flex">
                               <h4>Mrs Bector’s Foods</h4>
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand1} alt={"Mrs Bector’s Foods"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
@@ -100,33 +119,18 @@ function IPOStocks() {
                       </div>
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
-                              <h4>Mrs Bector’s Foods</h4>
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <h4>Happiest Minds Technologies</h4>
+                              <LazyLoader src={brand3} alt={"Happiest Minds Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
-                                <span>23 December,  2020</span>
+                                <span>17 September 2020</span>
                               </h4>
                               <h4>Issued Price
-                                <span>Rs. 288</span>
+                                <span>Rs. 166</span>
                               </h4>
                           </div>
-                          <h5 className="stck-gn">Profit Gains: 74%</h5>
-                      </div>
-                      <div className="service-item" >
-                          <div className="stock-itm-top d-flex">
-                              <h4>Mrs Bector’s Foods</h4>
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
-                          </div>
-                          <div className="stock-itm-btm">
-                              <h4>Listing Date 
-                                <span>23 December,  2020</span>
-                              </h4>
-                              <h4>Issued Price
-                                <span>Rs. 288</span>
-                              </h4>
-                          </div>
-                          <h5 className="stck-gn">Profit Gains: 74%</h5>
+                          <h5 className="stck-gn">Profit Gains: 111%</h5>
                       </div>
                     </Slider>
                   </div>

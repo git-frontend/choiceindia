@@ -30,7 +30,7 @@ function PartnerBenifits() {
             </div>
           </div>
           <div className="row align-items-center">
-            <div className="col-md-6">
+            <div className="col-md-6 d-none d-sm-block">
             <LazyLoader src={BenefitsBanner} alt={"Benefits of Partnering with Us"} className={"img-fluid"} width={"642"} height={"671"} />
               {/* <img src={BenefitsBanner} alt="Benefits of Partnering with Us" className={"img-fluid"} width={"642"} height={"671"} /> */}
             </div>
