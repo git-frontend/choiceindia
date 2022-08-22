@@ -48,7 +48,7 @@ function ContactTemplate() {
                                 <div className='cust-dropdown'>
 
                                     <Form.Select variant="Info" id="dropdown-basic" className="skeleton-child" >
-                                        <option selected>Select Your City</option>
+                                        <option defaultValue={true}>Select Your City</option>
                                         <option >Delhi</option>
                                         <option >Bangalore</option>
                                         <option >Hyderabad</option>

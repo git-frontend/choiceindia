@@ -35,7 +35,7 @@ function BrokerageCalculator(props) {
       function calculatebrokerage(value){
 
         
-        console.log(value)
+      //  console.log(value)
       }
     
   return (

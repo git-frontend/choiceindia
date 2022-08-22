@@ -79,7 +79,7 @@ function SubBrokerForm(props) {
         if (e[0]) {
             let value = e[0].leadCity;
             setBrokerCityBranch(value);
-            console.log("cc",brokerCityBranch)
+           // console.log("cc",brokerCityBranch)
             setErrors((prevError) => ({
                 ...prevError,
                 'brokerCityBranch': {}
@@ -282,7 +282,7 @@ function SubBrokerForm(props) {
     function fetchCities() {
         showLoader('citiesLoader');
         subBrokerService.getCities().then((res) => {
-            console.log(res, "res cities");
+           // console.log(res, "res cities");
             hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
@@ -290,7 +290,7 @@ function SubBrokerForm(props) {
                 setCitiesDropdown([]);
             }
         }).catch((error) => {
-            console.log(error, "error cities");
+           // console.log(error, "error cities");
             hideLoader('citiesLoader');
             setCitiesDropdown([]);
         });
@@ -299,7 +299,7 @@ function SubBrokerForm(props) {
     function fetchState() {
         showLoader('stateLoader');
         subBrokerService.getStates().then((res) => {
-            console.log(res, "res states");
+           // console.log(res, "res states");
             hideLoader('stateLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.StateMasterList) {
                 setStatesDropdown(res.data.Body.StateMasterList);
@@ -307,7 +307,7 @@ function SubBrokerForm(props) {
                 setStatesDropdown([]);
             }
         }).catch((error) => {
-            console.log(error, "error states");
+           // console.log(error, "error states");
             hideLoader('stateLoader');
             setStatesDropdown([]);
         });
@@ -333,7 +333,7 @@ function SubBrokerForm(props) {
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
             if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-                console.log(brokerName, "brokerName");
+               // console.log(brokerName, "brokerName");
                 checkExistence();
                 // Send Axios request here
             }
@@ -347,7 +347,7 @@ function SubBrokerForm(props) {
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
             if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-                console.log(brokerMobileNumber, "brokerMobileNumber");
+               // console.log(brokerMobileNumber, "brokerMobileNumber");
                 checkExistence();
                 // Send Axios request here
             }
@@ -361,7 +361,7 @@ function SubBrokerForm(props) {
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
             if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-                console.log(brokerEmail, "brokerEmail");
+               // console.log(brokerEmail, "brokerEmail");
                 checkExistence();
                 // Send Axios request here
             }
@@ -384,7 +384,7 @@ function SubBrokerForm(props) {
             }).then(otp => {
                 setOtp(otp.code);
             }).catch(err => {
-                console.log(err);
+               // console.log(err);
             });
         }
     }
@@ -403,7 +403,7 @@ function SubBrokerForm(props) {
         if (!isBrokerEmailValid)
             delete request.emailID;
         subBrokerService.checkExistence(request).then((res) => {
-            console.log(res, "checkExistence");
+           // console.log(res, "checkExistence");
             if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
                 setErrors((prevError) => ({
                     ...prevError,
@@ -416,7 +416,7 @@ function SubBrokerForm(props) {
                 }));
             }
         }).catch((error) => {
-            console.log(error, "checkExistence error");
+           // console.log(error, "checkExistence error");
         });
     }
 
@@ -443,7 +443,7 @@ function SubBrokerForm(props) {
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
         subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
-            console.log(res, "sendOTP");
+           // console.log(res, "sendOTP");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && !res.data.errorCode) {
                 otpSessionID.current = res.data.id;
@@ -462,7 +462,7 @@ function SubBrokerForm(props) {
                 }
             }
         }).catch((error) => {
-            console.log(error, "sendOTP error");
+           // console.log(error, "sendOTP error");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (isResend) {
                 if (error && error.response && error.response.data && error.response.data.message) {
@@ -488,7 +488,7 @@ function SubBrokerForm(props) {
             showLoader('verifyLoader');
             subBrokerService.verifyOTPN(otp, otpSessionID.current).then((res) => {
                 hideLoader('verifyLoader');
-                console.log(res, "verifyOTPN");
+               // console.log(res, "verifyOTPN");
                 if (res && res.data && !res.data.errorCode) {
                     fetchQueryParams();
                     addNewLead();
@@ -497,7 +497,7 @@ function SubBrokerForm(props) {
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
-                console.log(error, "verifyOTPN error");
+               // console.log(error, "verifyOTPN error");
                 setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
@@ -523,7 +523,7 @@ function SubBrokerForm(props) {
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
             hideLoader('addLeadLoader');
-            console.log(res, "addNewLead");
+           // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
                 handleOTPPopupClose();
                 handleBrokerCreatedSuccessShow();
@@ -536,7 +536,7 @@ function SubBrokerForm(props) {
 
         }).catch((error) => {
             hideLoader('addLeadLoader');
-            console.log(error, "addNewLead error");
+           // console.log(error, "addNewLead error");
             // if (error && error.response && error.response.data && error.response.data.message) {
             //     setAPIError(error.response.data.message);
             // } else {

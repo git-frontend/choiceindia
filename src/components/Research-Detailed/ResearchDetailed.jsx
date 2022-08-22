@@ -32,7 +32,7 @@ function ResearchDetailed() {
 
   function getSingleResearchDetail(id){
     
-    console.log('SingleResearch',id);
+    //console.log('SingleResearch',id);
     ResearchService.getSingleResearchDetail(id).then(
       res => {
         if(res){

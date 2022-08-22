@@ -412,6 +412,9 @@ body{
     .ipo-list-img{
         position: relative;
         padding: 0;
+        @media (max-width: $sm) {
+            text-align: center;
+        }
         .process-ipo-list{
             .ipo-list-itm{
                 position: absolute;

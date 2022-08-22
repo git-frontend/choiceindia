@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import './common-modal.scss'
 function CommonModal(props) {
-console.log("PROPS",props)
+//console.log("PROPS",props)
     const [display, setDisplay] = useState(true);
 
     useEffect(() => {
