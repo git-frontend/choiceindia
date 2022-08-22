@@ -80,7 +80,7 @@ function PartnerBannerTab() {
                 {
                   skeleton ?
                     <SingleTemplatePartner /> :
-                    <div className="tab-cont-right ">
+                    <div className="tab-cont-right d-none d-sm-block">
                       <LazyLoader src={partnerBanner[store].image} className={'img-fluid'} width={"521"} height={"453"} alt="Loading" />
                       {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}
                     </div>
@@ -151,7 +151,7 @@ function PartnerBannerTab() {
 
           {/* <div className="bloc-tabs"> */}
             <Slider {...settings}
-              className="bloc-tabs"
+              className="bloc-tabs d-none d-sm-block"
               afterChange={(ev) => {
                 setstore(ev)
                 setCount(ev)

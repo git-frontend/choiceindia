@@ -28,12 +28,12 @@ function Banner() {
                                 <p className="para pt-4">Our focus is to provide services to clients aspiring to be financially disciplined.</p>
                             </div>
                         </div>
-                        <div className="col-md-7">
+                        <div className="col-md-7 d-none d-sm-block">
 
                             {
                                 skeleton?
                                 <SingleTemplate/>:
-                                <div className="rightsec d-none d-sm-block">
+                                <div className="rightsec ">
                                 <LazyLoader src={Bannerimage} alt={"Financial Services"} className={"img-fluid top-banner-img"} width={"957"} height={"623"}/>
                                 {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid top-banner-img" width={"957"} height={"623"}></img> */}
                             </div>
