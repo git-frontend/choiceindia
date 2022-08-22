@@ -9,6 +9,7 @@ import CoreValues from './CoreValues';
 import WhatWeOffer from './WhatWeOffer';
 // import AboutHeader from './AboutHeader';
 import Template2  from '../Common-features/Template2';
+import Template6 from "../Common-features/Template6";
 
 import "./aboutus.scss";
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -46,7 +47,7 @@ function AboutUs() {
     <div>
       
    {
-    skeleton? <Template2/>:
+    skeleton? <Template6/>:
     <div className="mainwrapper">
          
     <Banner />
