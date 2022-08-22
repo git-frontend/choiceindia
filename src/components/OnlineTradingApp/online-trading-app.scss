@@ -580,7 +580,7 @@
         }
 
         @media (max-width: $sm) {
-            padding-bottom: 3rem;
+            padding:3rem 0;
         }
     }
 }
@@ -889,6 +889,10 @@
                 color: $whiteColor !important;
                 @media (max-width: $xs) {
                     width: 100%;
+                }
+                &:hover{
+                    background: $yellowColor !important;
+                    color: $primary !important;
                 }
             }
         }
