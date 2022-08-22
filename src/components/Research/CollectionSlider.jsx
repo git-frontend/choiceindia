@@ -96,7 +96,7 @@ function CollectionSlider() {
                             </div>
 
                             <div className="mt-5">
-                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/baskets">Explore All</a>
+                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/baskets" target="_blank">Explore All</a>
                             </div>
 
                         </div>

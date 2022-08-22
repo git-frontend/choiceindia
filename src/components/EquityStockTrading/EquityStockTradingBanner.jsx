@@ -16,7 +16,7 @@ const EquityStockTradingBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                            <div className="desktop">Open a  Equity  <br />  Trading Account <br /> <span className="yellow">Online For Free</span></div>
+                            <div className="desktop">Open a  Equity Trading <br />Account <span className="yellow">Online For Free</span></div>
                             </h1>
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
@@ -50,7 +50,7 @@ const EquityStockTradingBanner = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-5 mbrespflex">
+                                <div className="row mt-4 mt-sm-5  mbrespflex">
                                     <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">

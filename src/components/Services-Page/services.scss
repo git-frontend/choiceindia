@@ -193,7 +193,7 @@
 
     padding: 0;
     margin: 5rem 0;
-    padding-bottom: 12rem;
+    padding-bottom: 2rem;
     position: relative;
 
     .heading-sec {
@@ -248,11 +248,11 @@
     }
 
     @media (max-width: $sm) {
-        padding-bottom: 7rem;
+        padding-bottom: 0rem;
     }
 
     &.service-tab-lst-itm {
-        padding-bottom: 20rem;
+        padding-bottom: 5rem;
         position: relative;
 
         &::before {

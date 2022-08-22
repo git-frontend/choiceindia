@@ -870,12 +870,13 @@ body{
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
                     margin-bottom: 20px;
-                    width: 200px;
+                    // width: 200px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     @media (max-width:$sm) {
                         font-size: 1.7rem;
+                        text-align: left;
                     }
                 }
 

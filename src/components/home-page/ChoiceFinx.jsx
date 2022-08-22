@@ -147,7 +147,7 @@ function ChoiceFinx() {
                 <div className="expl-app">
                 
 
-                      <a href={checkdevice?checkdevice:[]}>
+                      <a href={checkdevice?checkdevice:[]} target="_blank">
                         <span className="btn-bg">Explore App</span>
                       </a>
                     

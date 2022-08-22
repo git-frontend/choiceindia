@@ -48,23 +48,23 @@ function InvestorAwarenessMain() {
                         </div>
 
                     </div>
-                    <p>SEBI now vide its letter dated July 03, 2019 has directed all intermediaries to display the following information on their website to make the complaint redressal mechanism through SCORES more efficient.
+                    <p className="pt-5">SEBI now vide its letter dated July 03, 2019 has directed all intermediaries to display the following information on their website to make the complaint redressal mechanism through SCORES more efficient.
                     </p>
-                    <p>Filing compliant on SCORES – Easy &amp; quick
+                    <p className="pt-5">Filing compliant on SCORES – Easy &amp; quick
                     </p>
-                    <p>a. Register on SCORES portal<br />
+                    <p className="pt-5">a. Register on SCORES portal<br />
                         b. Mandatory details for filing complaints on SCORES<br />
                         I. Name, PAN, Address, Mobile Number, E-mail ID
 
 
                     </p>
-                    <p>c. Benefits:<br />
+                    <p className="pt-5">c. Benefits:<br />
                         i. Effective Communication
                         <br />
                         ii. Speedy redressal of the grievances
 
                     </p>
-                    <p>*Updation of mandatory KYC fields by March 31, 2022 for more details visit Annexure I KYC Updation</p>
+                    <p className="pt-5">*Updation of mandatory KYC fields by March 31, 2022 for more details visit Annexure I KYC Updation</p>
 
                     <div className="row quicklinkswrap mt-5">
                         <div className="col-md-12">

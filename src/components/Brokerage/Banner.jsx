@@ -23,7 +23,7 @@ function Banner() {
                     <Link to="/open-free-demat-account"><span  className="btn-bg mt-4">Open A Free Demat Account</span></Link>
                 </div>
                 <div className="col-md-6">
-                    <div className="rightsec">
+                    <div className="rightsec d-none d-sm-block">
                         <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} />
                     </div>
                 </div>

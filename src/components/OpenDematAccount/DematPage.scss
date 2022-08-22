@@ -24,6 +24,11 @@
 		font-family: $font-family-poppins-medium;
 		font-weight: 600;
 		padding-bottom: 5rem;
+		@media (max-width:$sm) {
+			font-size: 2.3rem;
+			line-height: 3rem;
+			padding-bottom: 2.5rem;
+		}
 		.yellow {
 			color: $bgcolor-yellow;
 		}
@@ -67,7 +72,10 @@
 		display: flex;
 		align-items: center;
 		min-height: 9.625rem;
-
+		@media (max-width:$sm) {
+			height: auto;
+			padding: 1rem 1.563rem;
+		}
 		.resptext {
 			padding-left: 1rem;
 			width: 80%;
@@ -99,6 +107,9 @@
 			.iconwrap{
 				img{
 					width: auto;
+					@media (max-width:$sm) {
+						height: 40px;
+					}
 				}
 			}
 		}
@@ -328,7 +339,11 @@
 		font-weight: 400;
 		color: $primary;
 		line-height: 2.75rem;
-
+		li{
+			&::marker{
+				margin: 0;
+			}
+		}
 		@media (max-width:$sm) {
 			font-size: 1.6rem;
 		}
@@ -577,7 +592,7 @@
 		background-color: $whiteColor;
 		border-radius: 1.875rem;
 		padding: 2.5rem;
-		min-height: 34.875rem;
+		min-height: 37.5rem;
 		width: 90%;
 		margin: 0 auto;
 
@@ -971,6 +986,9 @@
 			font-family: $font-family-poppins-semibold;
 			color: $primary;
 			font-size: 2rem;
+			@media (max-width:$sm) {
+				font-size: 1.75rem;
+			}
 		}
 	}
 

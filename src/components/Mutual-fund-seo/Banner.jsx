@@ -20,7 +20,7 @@ function Banner() {
                             <h1 className="big-ttl">invest in <span>mutual funds</span> online with choice</h1>
                         </div>
                         <div className="col-md-6">
-                            <div className="rightsec d-flex justify-content-end">
+                            <div className="rightsec d-flex justify-content-end" id="mutualid">
                                 <DematAccountForm />
                             </div>
                         </div>

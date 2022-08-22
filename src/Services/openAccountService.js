@@ -8,23 +8,23 @@ const headers = {
 
 const openAccountService = {
 
-  sendOTP: function (request) {
-    let url = apiURL.getSendOTPURL();
+  sendOTP: function (request,type) {
+    let url =((type=='MF')? apiURL.getSendInvesOTPURL() : apiURL.getSendOTPURL());
     return axios.post(url, request, headers);
   },
 
-  resendOTPAgain: function (request) {
-    let url = apiURL.getResendOTPURL();
+  resendOTPAgain: function (request,type) {
+    let url = ((type=='MF')? apiURL.getResendInvestOTPURL() : apiURL.getResendOTPURL()); 
     return axios.post(url, request, headers);
   },
 
-  OTPOnCall: function (request) {
-    let url = apiURL.getOTPOnCallURL();
+  OTPOnCall: function (request,type) {
+    let url = ((type=='MF')? apiURL.getOTPInvesOnCallURL() : apiURL.getOTPOnCallURL()); 
     return axios.post(url, request, headers);
   },
 
-  verifyOTP: function (request) {
-    let url = apiURL.getVerifyOTPURL();
+  verifyOTP: function (request,type) {
+    let url = ((type=='MF')? apiURL.getVerifyInvestOTPURL() : apiURL.getVerifyOTPURL()); 
     return axios.post(url, request, headers);
   },
 

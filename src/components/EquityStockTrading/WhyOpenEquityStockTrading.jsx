@@ -38,6 +38,10 @@ function WhyOpenEquityStockTrading() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:false,
+          loop: true,
+infinite:true,
+autoplaySpeed: 5000,
+autoplay: true,
         },
       },
     ],
@@ -100,7 +104,7 @@ function WhyOpenEquityStockTrading() {
 
                                                 <h5 className="card-title">Technologically Advanced Platform</h5>
                                                 <p>
-                                                Trade into the equity via the website or Android and iOS App with state-of-the-art features.
+                                                Trade into the equities via the website or Android and iOS App with state-of-the-art features.
                                                 </p>
                                             </div>
                                         </div>
