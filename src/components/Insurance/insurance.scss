@@ -14,7 +14,7 @@ body{
 
 .insurance-bannersection{
     background: $primary;
-    padding: 10rem 0 12rem 0;
+    padding: 10rem 0 6rem 0;
     .lft-sec{
         .big-ttl{
             color: $whiteColor;
@@ -47,7 +47,7 @@ body{
     }
     @media (max-width: $sm-x) {
         text-align: center;
-        padding: 5rem 0 10rem 0;
+        padding: 5rem 0 5rem 0;
     }
     .home-banner-ved{
         position: relative;
@@ -69,58 +69,153 @@ body{
 
 .direct-links{
     position: relative;
-    margin-top: -5rem;
+    margin-top: 8rem;
     .reset{
         display: flex;
         flex-wrap: wrap;
-        align-items: center;
-        justify-content: space-between;
         list-style: none;
         padding: 0;
         margin: 0;
-        >li{    
+        >li{ 
+            padding: 2.2rem;
+            width: 33.33%;  
+            border-radius: 0; 
+            border: 0;
+            position: relative;
             .link-itm{
                 display: flex;
-                cursor: pointer;
                 flex-wrap: wrap;
                 text-align: center;
                 justify-content: center;
                 text-decoration: none;
+                background:#00acea0d;
+                padding: 4rem 2rem 3rem 2rem;
+                border-radius: 20px;
+                position: relative;
                 .link-itm-img{
-                    width: 120px;
-                    height: 120px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border-radius: 50%;
-                    text-decoration: none;
-                    background: $abt-bg;
-                    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
-                    margin-bottom: 2rem;
+                    
+                    margin-bottom: 3rem;
                     @media (max-width: $sm-x) {
-                        width: 80px;
-                        height: 80px;
-                        .sm-img{
-                            width: 35px;
-                        }
+                        
                     }
+                    
                 }
                 h4{
                     color: $primary;
                     font-family: $font-family-poppins-semibold;
                     text-decoration: none;
                     width: 100%;
+                    font-size: 1.7rem;
+                    line-height: 2.6rem;
                 }   
             }
             @media (max-width: $sm-x) {
                 width: 33.33%;
+            }
+            &:first-child{
+                border:0;
+                // background: url(../../assets/images/insurance/bg1.svg) no-repeat top left;
+                // background-size: 100%;
+                &::before{
+                    content: '';
+                    background: url(../../assets/images/insurance/bg1.svg) no-repeat top left;
+                    background-size: 100%;
+                    display: block;
+                    height: 50%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
+                }
+                &::after{
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    display: block;
+                    background: #ffffff;
+                    border: 6px solid #C2C2C2;
+                    position: absolute;
+                    left: -11px;
+                    border-radius: 50%;
+                    transform: translate(0, 0-50%);
+                    top: 50%;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
+                }
+            }
+            &:nth-child(2n){
+                top: -40px;
+                border: 0;
+               
+                .link-itm{
+                    position: relative;
+                    background: transparent;
+                    top: 45px;
+                }
+                &::before{
+                    content: '';
+                    background: url(../../assets/images/insurance/bg2.svg) no-repeat left bottom;
+                    background-size: 100%;
+                    display: block;
+                    height: calc(50% - 40px);
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left:0;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
+                }
+            }
+            &:last-child{
+                border: 0;
+                &::before{
+                    content: '';
+                    background: url(../../assets/images/insurance/bg1.svg) no-repeat top left;
+                    background-size: 100%;
+                    display: block;
+                    height: 50%;
+                    width: 100%;
+                    position: absolute;
+                    top: 0;
+                    left:0;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
+                }
+                &::after{
+                    content: "";
+                    width: 25px;
+                    height: 25px;
+                    display: block;
+                    background: #ffffff;
+                    border: 6px solid #C2C2C2;
+                    position: absolute;
+                    right: -15px;
+                    border-radius: 50%;
+                    transform: translate(0, 0-50%);
+                    top: 50%;
+                    @media (max-width: $sm) {
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width: $sm) {
+                padding: 0;
+            }
+            @media (max-width: $xs) {
+                width: 100%;
             }
         }
     }
 }
 
 .insurance-list{
-    padding: 10rem 0;
+    padding: 10rem 0 5rem 0;
     .title-secnd{
         margin-bottom: 5rem;
     }
@@ -182,10 +277,11 @@ body{
 }
 
 .get-start{
+    padding-bottom: 10rem;
     .get-start-sub{
         display: flex;
         align-items: center;
-        background: $bgcolor-blue-light;
+        background: $bgcolordark;
         border-radius: 16px;
         padding: 2rem 2rem;
         justify-content: center;
@@ -196,6 +292,7 @@ body{
             margin: 1rem;
             margin-right: 3rem;
             font-size: 2.2rem;
+            color: $whiteColor;
             @media (max-width: $sm) {
                 margin:1rem 0;
                 font-size: 1.8rem;

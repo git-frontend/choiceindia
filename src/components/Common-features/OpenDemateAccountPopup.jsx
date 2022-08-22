@@ -137,7 +137,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
                 {/* <div className="close">
-                            <Link to="" class="closebtn" >&times;</Link>
+                            <Link to="" className="closebtn" >&times;</Link>
                             </div> */}
                     <div className="popup-sub-row">
                         <div className="leftwrap">

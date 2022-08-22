@@ -36,6 +36,10 @@ function WhyOpenFreeNriAccount() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:false,
+          loop: true,
+          infinite:true,
+          autoplaySpeed: 5000,
+          autoplay: true,
         },
       },
     ],
@@ -88,7 +92,7 @@ function WhyOpenFreeNriAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"40"} height={"41"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
+                                                <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 

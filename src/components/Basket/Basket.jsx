@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import "./basket.scss"
 import Image1 from '../../assets/images/basket/choicelogo.webp';
 import Image2 from '../../assets/images/basket/banner-image.webp';
@@ -20,9 +21,8 @@ import {
 function Basket() {
 
     const [skeleton, setSkeleton] = useState(() => true);
-    const [checkdevice, setcheckdevice] = useState(false);
     const [videoVisibility, setVideoVisibility] = useState(false);
-
+    const [checkdevice, setcheckdevice] = useState();
     const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -31,15 +31,6 @@ function Basket() {
         setSkeleton(() => false);
     }, 200)
 
-
-    /** Detect Device */
-    function Detect() {
-        if (/Android|webOS|windows phone|BlackBerry|IEMobile|Opera Mini|Mobile|mobile|CriOS/i.test(navigator.userAgent)) {
-            setcheckdevice(false)
-        } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
-            setcheckdevice(true)
-        }
-    }
 
     function chapterScroll(id) {
         var element = document.getElementById(id);
@@ -52,9 +43,26 @@ function Basket() {
         });
     }
 
+    setTimeout(() => {
+        let iframe = document.getElementById("my-deferred-iframe");
+        iframe.src = 'https://www.youtube.com/embed/WrL6Ihbg8LU';
+    }, 3000);
+
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
+            if (/Android|webOS|windows|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
+
+                setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+          
+              } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
+            
+                setcheckdevice('https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1')
+                
+              }else{
+                setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+        
+              }
           // let parser = new DOMParser();
           // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
           // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
@@ -74,14 +82,14 @@ function Basket() {
                             <div className="container">
                                 <div className="row">
                                     <div className="col-md-12">
-                                        <a href="https://choiceindia.com/" className="camp-logo" id="camp-logo">
+                                        <Link to="/" className="camp-logo" id="camp-logo">
                                             <LazyLoader src={Image1} className={'img-fluid basket-banner-img'} width={'193'} height={'48'} alt={'loading'} />
                                             {/* <img src={Image1} className="img-fluid " style={{
                                                 'width': "193px",
                                                 'height': '48px',
                                                 'aspect-ratio': 'auto 193 / 48'
                                             }} alt="loading" loading="lazy" /> */}
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -96,15 +104,13 @@ function Basket() {
                                                 <div><p>Diversify your portfolio by investing in stocks through
                                                     <span> Thematic Baskets</span>
                                                 </p></div>
-                                                <div style={{ 'cursor': 'pointer' }} onClick={() => { chapterScroll('explore') }}>
+                                                <div className="btn-bg btn-banner cursor-pointer" onClick={() => { chapterScroll('explore') }}>
 
-                                                    <a className="btn-bg btn-banner"  >
                                                         <span  >Explore Baskets</span>
-                                                    </a>
-
+                                
                                                 </div>
 
-                                                <div><p>Don’t have an account? <span><a href="https://choiceindia.com/open-free-demat-account">Open Now</a></span> </p></div>
+                                                <div><p>Don’t have an account? <span><Link to="/open-free-demat-account">Open Now</Link></span> </p></div>
                                             </div>
                                         </div>
                                         <div className="col-md-6">
@@ -197,18 +203,7 @@ function Basket() {
                                         </div>
                                         <div className="row">
                                             <div className="col-md-12 text-center">
-                                                <div onClick={() => Detect()}>
-                                                    {
-                                                        checkdevice === true ?
-                                                            <a className="exp-btn" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target='_blank' rel="noreferrer" >
-                                                                <span  >Explore more BASKETS!</span>
-                                                            </a>
-                                                            :
-                                                            <a className="exp-btn" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target='_blank' rel="noreferrer" >
-                                                                <span >Explore more BASKETS!</span>
-                                                            </a>
-                                                    }
-                                                </div>
+                                            <div className="exp-btn"> <a  href={checkdevice?checkdevice:[]}><span>Explore more BASKETS!</span></a></div>  
                                             </div>
                                         </div>
                                     </div>
@@ -273,19 +268,8 @@ function Basket() {
                                 <div className="container">
                                     <div className="quick-bar-middle">
                                         <h3>Start investing in Baskets with Choice</h3>
-
-                                        <div onClick={() => Detect()}>
-                                            {
-                                                checkdevice === true ?
-                                                    <a className="btn-bg btn-bg-light" href='https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1' target="_blank" rel="noreferrer" >
-                                                        <span  >Invest Now</span>
-                                                    </a>
-                                                    :
-                                                    <a className="btn-bg btn-bg-light" href='https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy' target="_blank" rel="noreferrer" >
-                                                        <span >Invest Now</span>
-                                                    </a>
-                                            }
-                                        </div>
+                                        <a  href={checkdevice?checkdevice:[]}><span className="btn-bg btn-bg-light" >Invest Now</span></a>
+                                        
                                     </div>
                                 </div>
                             </section>

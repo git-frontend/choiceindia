@@ -81,57 +81,76 @@ const settings = {
 							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('equitybroking') }}>
-										<LazyLoader src={EquityBroking} className={""} alt={"Equity Broking"} width={"65"} height={"65"} />
+										<span className="cont-img">
+										<LazyLoader src={EquityBroking} className={"mn-img"} alt={"Equity Broking"} width={"65"} height={"65"} />
 										{/* <img src={EquityBroking} className="" alt="Equity Broking" width={"65"} height={"65"} /> */}
+										</span>
+										
 										<h4 className='title-fourth'>Equity Broking</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div  className="bx-item-cont" onClick={() => { chapterScroll('wealth') }}>
-										<LazyLoader src={WealthManagement} className={""} alt={"Wealth Management"} width={"65"} height={"65"} />
-										{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
+										<span className="cont-img">
+											<LazyLoader src={WealthManagement} className={"mn-img"} alt={"Wealth Management"} width={"65"} height={"65"} />
+											{/* <img src={WealthManagement} className="" alt="Wealth Management" width={"65"} height={"65"} /> */}
+										</span>
 										<h4 className='title-fourth'>Wealth Management</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('insurance') }}>
-									<LazyLoader src={Insurance} className={""} alt={"Insurance"} width={"65"} height={"65"} />
-										{/* <img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} /> */}
+										<span className="cont-img">
+											<LazyLoader src={Insurance} className={"mn-img"} alt={"Insurance"} width={"65"} height={"65"} />
+											{/* <img src={Insurance} className="" alt="Insurance" width={"65"} height={"65"} /> */}
+										</span>
 										<h4 className='title-fourth'>Insurance</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('loan') }}>
-									<LazyLoader src={Loans} className={""} alt={"Loans"} width={"65"} height={"65"} />
+									<span className="cont-img">
+									<LazyLoader src={Loans} className={"mn-img"} alt={"Loans"} width={"65"} height={"65"} />
 										{/* <img src={Loans} className="" alt="Loans" width={"65"} height={"65"} /> */}
+									</span>
+										
 										<h4 className='title-fourth'>Loans</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('capital') }}>
-										<LazyLoader src={CapitalAdvisory} className={""} alt={"capital advisory"} width={"65"} height={"65"} />
+									<span className="cont-img">
+									<LazyLoader src={CapitalAdvisory} className={"mn-img"} alt={"capital advisory"} width={"65"} height={"65"} />
 										{/* <img src={CapitalAdvisory} className="" alt="Capital Advisory" width={"65"} height={"65"} /> */}
+									</span>
+										
 										<h4 className='title-fourth'>Capital Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('management') }}>
-										<LazyLoader src={ManagementConsultancy} className={""} alt={"management-consultancy"} width={"65"} height={"65"} />
+										<span className="cont-img">
+										<LazyLoader src={ManagementConsultancy} className={"mn-img"} alt={"management-consultancy"} width={"65"} height={"65"} />
 										{/* <img src={ManagementConsultancy} className="" alt="Management Consultancy" width={"65"} height={"65"} /> */}
+										</span>
 										<h4 className='title-fourth'>Management Consultancy</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('goverment') }}>
-										<LazyLoader src={GovernmentAdvisory} className={""} alt={"government advisory"} width={"65"} height={"65"} />
-										{/* <img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} /> */}
+										<span className="cont-img">
+											<LazyLoader src={GovernmentAdvisory} className={"mn-img"} alt={"government advisory"} width={"65"} height={"65"} />
+											{/* <img src={GovernmentAdvisory} className="" alt="Government Advisory" width={"65"} height={"65"} /> */}
+										</span>
 										<h4 className='title-fourth'>Government Advisory</h4>
 									</div>
 								</div>
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont" onClick={() => { chapterScroll('tax') }}>
-									<LazyLoader src={TaxAdvisory} className={""} alt={"Tax Advisory"} width={"65"} height={"65"} />
-										{/* <img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} /> */}
+										<span className="cont-img">
+											<LazyLoader src={TaxAdvisory} className={"mn-img"} alt={"Tax Advisory"} width={"65"} height={"65"} />
+											{/* <img src={TaxAdvisory} className="" alt="Tax Advisory" width={"65"} height={"65"} /> */}
+										</span>
 										<h4 className='title-fourth'>Tax Advisory</h4>
 									</div>
 								</div>

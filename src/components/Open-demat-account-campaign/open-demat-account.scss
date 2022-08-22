@@ -1,0 +1,844 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+body{
+    background-color:  $whiteColor;
+}
+
+.mainwrapper{
+    overflow: hidden;
+    animation: hideMe 4s forwards;
+    width: 100%;
+}
+
+
+.demat-camp-bannersection{
+    padding: 10rem 0 10rem 0;
+    .lft-sec{
+        
+        .big-ttl{
+            color: $primary;
+            margin-bottom: 5rem;
+            font-family: $font-family-poppins-semibold;
+            text-transform: capitalize;
+            span{
+                font-family: $font-family-poppins-bold;
+                color: $yellowColor;
+            }
+            @media (max-width: $md) {
+                margin-bottom: 2.5rem;
+            }
+        }
+        .para{
+            color: $secondary;
+            font-size: 1.75rem;
+            line-height: 2.45rem;
+            &.p-yl{
+                font-family: $font-family-poppins-semibold;
+                color: $yellowColor;
+                margin-top: 5rem;
+                @media (max-width: $sm-x) {
+                    margin-top: 2.5rem;
+                }
+            }
+            @media (max-width: $sm-x) {
+                br{
+                    display: none;
+                }
+            }
+        }
+        @media (max-width: $sm-x) {
+            padding-bottom: 3rem;
+        }
+        
+    }
+    .rightsec{
+        position: relative;
+        &:before {
+            content: '';
+            width: 20em;
+            height: 30rem;
+            display: block;
+            position: absolute;
+            left: 9rem;
+            bottom: -7rem;
+            background: url(../../assets/images/demat-images/bg-banner.webp) no-repeat bottom left;
+            background-size: contain;
+
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: $sm-x) {
+        text-align: center;
+        padding: 5rem 0 5rem 0;
+    }
+    .home-banner-ved{
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background: transparent;
+        }
+        .banner-ved{
+            position: relative;
+            right: -1px;
+        }
+    }
+    .zero-ban-caption{
+        .textwrap {
+            display: flex;
+            flex-direction: row;
+            margin-top: 4rem;
+            .rotate{
+                color: $yellowColor;
+                font-family: $font-family-RedHat-Bold;
+                padding-right: 2rem;
+                font-size: 3.8rem;
+                line-height:1.5rem;
+                top: 1rem;
+                position: relative;
+                span{
+                    transform: rotate(-90deg);
+                    display: block;
+                }
+            }
+            ul{
+                padding: 0;
+                margin: 0;
+                li{
+                    font-size: 1.85rem;
+                    list-style: none;
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    margin-bottom: 0.5rem;
+                }
+            }
+        }
+    }
+}
+
+.cam-open-demat-main{
+    .investment-strategies-bottom {
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+        background: $abt-bg;
+
+        &:before {
+            content: '';
+            width: 13em;
+            height: 28rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            bottom: 3rem;
+            background: url(../../assets/images/demat-images/bg2.webp) no-repeat bottom right;
+            background-size: contain;
+
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+
+        &:after {
+            content: '';
+            width: 9em;
+            height: 32rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url(../../assets/images/demat-images/bg1.webp) no-repeat bottom left;
+            background-size: contain;
+
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+
+        .content-list {
+            padding-left: 6rem;
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+
+            .content-list-itm {
+                border: 2px solid $bgolor-lightwhite;
+                border-radius: 20px;
+                padding: 2rem 1.5rem;
+                margin-bottom: 2.5rem;
+                position: relative;
+                width: 90% !important;
+                background: $whiteColor;
+
+                h4 {
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.5rem;
+                    color: $primary;
+                    position: relative;
+                    z-index: 99;
+                }
+
+                .para {
+                    color: $secondary;
+                    position: relative;
+                    z-index: 99;
+                    margin-bottom: 0;
+                    font-size: 1.3rem;
+                }
+
+                &.list-itm-active {
+                    background: $bgolor-lightwhite;
+                    left: -10%;
+                    width: 85% !important;
+
+                    &::before {
+                        content: '';
+                        width: 5rem;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: -10px;
+                        background: $bgcolor-yellow;
+                        border-radius: 20px 0 0 20px;
+                    }
+
+                    &::after {
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        border-radius: 20px;
+                        background: $bgolor-lightwhite;
+                    }
+
+                    @media (max-width: $sm) {
+                        left: 0;
+                    }
+                }
+
+                @media (max-width: $sm) {
+                    width: 100%;
+                }
+            }
+
+            @media (max-width: $sm) {
+                padding-left: 0;
+            }
+
+            .slick-slide {
+                > div {
+                    display: flex;
+                    justify-content: flex-end;
+                }
+            }
+            @media (max-width:$md) {
+                margin-left: 2rem;
+            }
+            @media (max-width:$sm) {
+                margin-left: 0;
+            }
+            .slick-slider{
+                .slick-track{
+                    height: auto !important;
+                }
+            }
+        }
+
+        .title-secnd {
+            text-align: center;
+            margin-bottom: 8rem;
+
+            @media (max-width: $sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        .trade-easy-images-div {
+            .single-trade-easy-images {
+                width: 100%;
+                height: auto;
+            }
+
+            @media (max-width: $sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+        }
+        .heading-sec{
+            .title-secnd{
+                text-transform: capitalize;
+            }
+        }
+    }
+}
+
+
+.demat-track-order{
+    padding: 10rem 0;
+    .title-first{
+        text-transform: capitalize;
+        text-align: center;
+        margin-bottom: 5rem;
+    }
+    .track-order-list{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4rem;
+    }
+    .track-itm {
+        background: $whiteColor;
+        border-radius: 1.25rem;
+        text-align: center;
+        height: auto;
+        margin: 0 3.4375rem 0 0;
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+        width: 48%;
+        h4 {
+            font-size: 1.75rem;
+            color: $primary;
+            line-height: 1.75rem;
+            font-weight: 400;
+            padding: 1rem 0 1rem 0;
+            margin: 10px 0;
+            font-family: $font-family-poppins-medium;
+        }
+        h4.md-profit {
+            background: #F4F4F4;
+            margin: 0;
+            padding: 15px 10px;
+            width: 100%;
+            color: $primary;
+            display: block;
+            font-family: $font-family-poppins-medium;				}
+        ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            list-style: none;
+            position: relative;
+            padding: 15px 0;
+            li {
+                width: 50%;
+                border-left: 1px dashed #C2C2C2;
+                padding: 10px;
+                &:first-child {
+                    border-left: 0;
+                }
+                h4 {
+                    margin: 0;
+                }
+                h3 {
+                    padding: 0;
+                    margin: 0;
+                    font-family: $font-family-poppins-semibold;
+                    color: $primary;
+                }
+            }
+            &::before{
+                content: '';
+                width: 85%;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: #EEEBEA;
+                position: absolute;
+                top: 0;
+                margin: 0 auto;
+
+            }
+        }
+        .item-slider{
+            padding-bottom: 1rem;
+        }
+    }
+}
+
+.record-track-scnd{
+    position: relative;
+    padding: 5rem 0 7rem 0;
+    &::before{
+        content: '';
+        width: 5rem;
+        height: 55%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 58%;
+        background: $yellowColor;
+        border-radius:0 18px 18px 0;
+        transform: translate(0, -50%);
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+    &::after{
+        content: '';
+        width: 5rem;
+        height: 55%;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 58%;
+        background: $yellowColor;
+        transform: translate(0, -50%);
+        border-radius: 18px 0 0 18px;
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+    .title-first{
+        text-transform: capitalize;
+    }
+    .track-scnd-list{
+        margin-top: 7rem;
+        .scnd-list-itm{
+            margin-bottom: 3.5rem;
+            padding-left: 2rem;
+            display: flex;
+            align-items: center;
+            h3{
+                text-transform: capitalize;
+                margin-left: 2.5rem;
+                font-family: $font-family-poppins-medium;
+            }
+        }
+    }
+}
+
+.explore-best-mf{
+    padding: 7rem 0 9rem 0;
+    background: $abt-bg;
+    position: relative;
+    &::before {
+        content: '';
+        width: 24rem;
+        height: 38rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/mutual-funds-investment/bg-exp.webp) no-repeat top left;
+        background-size: contain;
+        z-index: 1;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .best-mf-cont{
+        padding-top: 4rem;
+        .title-first{
+            text-transform: capitalize;
+            margin-bottom: 2rem;
+        }
+    }
+    .best-mf-list{
+        display: flex;
+        padding-left: 3rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .mf-lis-itm{
+            width: 28%;
+            padding: 3rem 2rem;
+            border-radius: 16px; 
+            background: transparent;
+            border: 1px solid transparent;
+            text-align: center;
+            transition: 0.2s ease;
+            .sm-img-itm{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                overflow: hidden;
+                min-height: 85px;
+            }
+            h4{
+               font-family:  $font-family-poppins-medium;
+               line-height: 2.3rem;
+            }
+            &:hover{
+                background: $whiteColor;
+                border: 1px solid #25B8AF;
+                .sm-img-itm{
+                    .img-fluid{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.record-count{
+    padding: 5rem 0 10rem 0;
+    background: $bgcolor-green;
+    .record-count-list{
+        display: flex;
+        justify-content: space-between;
+        .record-count-itm{
+            text-align: center; 
+            h3{
+                color: $yellowColor;
+                font-family: $font-family-poppins-bold;
+                font-size: 3rem;
+                margin-bottom: 1.5rem;
+            }
+            h4{
+                color: $whiteColor;
+                font-family: $font-family-poppins-semibold;
+            }
+        }
+    }
+}
+
+.get-start{
+    position: relative;
+    margin-top: -5rem;
+    padding-bottom: 10rem;
+    @media (max-width: $sm) {
+        padding-bottom: 5rem;
+    }
+    .get-start-sub{
+        display: flex;
+        align-items: center;
+        background: $bgcolor-blue-light;
+        border-radius: 16px;
+        padding: 2rem 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        h3{
+            font-family: $font-family-poppins-semibold;
+            margin: 1rem;
+            margin-right: 3rem;
+            font-size: 2.2rem;
+            @media (max-width: $sm) {
+                margin:1rem 0;
+                font-size: 1.8rem;
+            }
+        }
+        .btn-bg{
+            margin: 1rem;
+        }
+    }
+    &.get-start-scnd{
+        position: relative;
+        margin-top: -5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.why-choice-invest{
+    background: $primary;
+    padding: 13rem 0 15rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0 10rem 0;
+    }
+    .title-first{
+        margin-bottom: 5rem;
+        color: $whiteColor;
+        @media (max-width: $sm) {
+            text-align: center;
+        }
+    }
+    .why-ipo-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        .why-itm{
+            text-align: center;
+            border-bottom: 2px solid;
+            padding: 1rem 1rem;
+            border-color: #1ED0CB;
+            .sm-img-itm{
+                display:flex;
+                min-height: 85px;
+                align-items: flex-end;
+                justify-content: center;
+                margin-bottom: 2rem;
+                
+            }
+            h4{
+                color: $whiteColor;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+                font-family: $font-family-poppins-semibold;
+            }
+            @media (max-width: $sm) {
+                width: 48%;
+                margin-bottom: 1.5rem;
+            }
+            &:nth-child(2n){
+                margin-top: 8rem;
+            }
+            &:nth-child(3n){
+                border-color: $yellowColor;
+            }
+            &:nth-child(4n){
+                border-color: $yellowColor;
+            }
+        }
+    }
+}
+
+.process-ipo{
+    padding: 0 0 15rem 0;
+    @media (max-width: $sm) {
+       padding: 0 0 5rem 0;
+    }
+    position: relative;
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 22rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 5%;
+        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        background-size: contain;
+        z-index: -9;
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .title-first{
+        padding-bottom: 14rem;
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+            text-align: center;
+        }
+    }
+    .ipo-list-img{
+        position: relative;
+        padding: 0;
+        .process-ipo-list{
+            .ipo-list-itm{
+                position: absolute;
+                width: 200px;
+                &:nth-child(1n){
+                    left: 0;
+                    top: -7.5rem;
+                    h3{
+                        color: #1ED0CB;
+                    }
+                }
+                &:nth-child(2n){
+                    top: inherit;
+                    bottom: -6rem;
+                    left: 26%;
+                    h3{
+                        color: #089E9A;
+                    }
+                }
+                &:nth-child(3n){
+                    left: 50%;
+                    h3{
+                        color: $yellowColor;
+                    }
+                }
+                &:nth-child(4n){
+                    top: inherit;
+                    bottom: -7.5rem;
+                    left: 74%;
+                    h3{
+                        color: #E88832;
+                    }
+                }
+                h3{
+                    font-size: 2.5rem;
+                    font-family: $font-family-poppins-semibold;
+                }
+                h4{
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 2.1rem;
+                }
+                @media (max-width: $sm) {
+                    position: relative;
+                    left: inherit !important;
+                    right: inherit !important;
+                    top: inherit !important;
+                    bottom: inherit !important;
+                    width: 50%;
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (max-width: $sm) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .mn-img-big{
+            @media (max-width: $sm) {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// faq
+
+.Dematfaq {
+	padding:0 0 9rem 0;
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 4rem;
+        @media (max-width: $sm) {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}
+
+
+.explr-all{
+    .explr-sub{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+        background: #FFFBEA;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        margin-top: -7rem;
+        h3{
+            font-size: 2.2rem;
+            margin: 2rem 3rem;
+            text-transform: capitalize;
+            font-family: $font-family-poppins-semibold;
+        }
+    }
+   
+}
+
+.mf-testimonial{
+    padding: 8rem 0;
+    .title-first{
+        text-transform: capitalize;
+        position: relative;
+        display: inline-block;
+        &::before{
+            content: '';
+            width: 10rem;
+            height: 10rem;
+            background: url(../../assets/images/mutual-funds-investment/quote.svg) no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            left: -15rem;
+            top: -2rem;
+        }
+    }
+}
+
+.mf-testimonial{
+    .mf-testimonial-slider{
+        .testi-slider{
+            margin-top: 5rem;
+            padding-bottom: 8rem;
+            .sl-item{
+                text-align: center;
+                .img-testi{
+                    display: inline-block;
+                    margin-bottom: 1.5rem;
+                }
+                h3{
+                    margin-top: 3rem;
+                    font-family: $font-family-RedHat-Bold;
+                }
+            }
+            .slick-arrow{  
+                width: 6.5rem;
+                height: 3rem;
+                border-radius: 25px;
+                top: inherit;
+                bottom: 0;
+                left: 45%;
+                transform: inherit;
+                transform: translate(-50%, 0);
+                &::before{
+                    color: #9F9F9F;
+                    background: transparent;
+                    font-family: inherit;
+                    font-size: 2.5rem;
+                    line-height: 2.5rem;
+                }
+                &:hover{
+                    background: $primary;
+                    &::before{
+                        color: $whiteColor;
+                    }
+                }
+                &.slick-next{
+                    left: 55%;
+                }
+            }
+        }
+    }
+}
+
+.mf-partner{
+    padding: 5rem 0;
+    .title-first{
+        text-transform: capitalize;
+        margin-bottom: 5rem;
+    }
+}

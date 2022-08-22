@@ -33,7 +33,7 @@ function Banner() {
                             {
                                 skeleton?
                                 <SingleTemplate/>:
-                                <div className="rightsec">
+                                <div className="rightsec d-none d-sm-block">
                                 <LazyLoader src={Bannerimage} alt={"Financial Services"} className={"img-fluid top-banner-img"} width={"957"} height={"623"}/>
                                 {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid top-banner-img" width={"957"} height={"623"}></img> */}
                             </div>

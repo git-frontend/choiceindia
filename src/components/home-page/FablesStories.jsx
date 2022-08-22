@@ -12,7 +12,8 @@ function FablesStories() {
 	const [fslider, setfslider] = useState([]);
 	const [blog, setblog] = useState();
 	const [trigger, setTrigger] = useState();
-	const [sliderimag, setSliderImag] = useState(0);
+	const [sliderimag, setSliderImag] = useState(5);
+	
 
 	/** get list of fabal */
 
@@ -52,11 +53,13 @@ function FablesStories() {
             setblog([]);
         });
 	}
+	
 
 	useEffect(() => {
 
 		setTrigger(true)
 		if (trigger === true) {
+			
 			loadFabalList()
 		}
 
@@ -69,7 +72,7 @@ function FablesStories() {
 		slidesToShow: 3,
 		autoplay: true,
 		dots: true,
-		autoplaySpeed: 3000,
+		autoplaySpeed: 5000,
 		slidesToScroll: 1,
 		swipeToSlide: true,
 		responsive: [
@@ -110,8 +113,10 @@ function FablesStories() {
 										{
 											fslider && fslider.length && fslider[sliderimag] ?
 
-												<div>
-													<LazyLoader src={fslider[sliderimag].feature_image} width={"521"} height={"450"} alt={"Loading"} />
+											
+                                              
+												<div id="stories-timeout">
+													<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={"Loading"} />
 													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
 												</div>
 												:
@@ -130,7 +135,7 @@ function FablesStories() {
 											fslider && fslider.length && fslider[sliderimag] ?
 												<div className="stories-sec-right-des">
 													<Link to={`/blog/${fslider[sliderimag].slug}`}>
-														<h4>{fslider[sliderimag].title}</h4>
+														<h4>{fslider[sliderimag].meta_title}</h4>
 														<p>{fslider[sliderimag].excerpt}</p>
 													</Link>
 												</div>
@@ -142,35 +147,42 @@ function FablesStories() {
 
 										}
 									</div>
-									<div className="sec-slider-cont fables-parent">
+									<div className="sec-slider-cont">
 										<Slider {...settings1}
 											slidesToShow={3}
-											swipeToSlide={true}
-											focusOnSelect={true}
-											beforeChange={(ev1,ev2) => {
-													setSliderImag(ev2)
-													
+											// swipeToSlide={true}
+											// focusOnSelect={true}
+											
+
+												beforeChange={(ev1,ev2) => {
+													setTimeout(() => {
+													setSliderImag(ev1)	
+												}, 2000)	
 												
 											}}
+												
+												    
+											
 
 
 											className='stories-sec-slider'>
 											{
 												(fslider && fslider.length && fslider[sliderimag] ? fslider:[]).map((response,i) => {
 													
-
 													Id = fslider[sliderimag].slug;
-
+                                              
 													return (
 
 														<div className="itm-img" key={response.id} onClick={() => {
 															loadFableBlog(Id);
-															setSliderImag(i)
+															setSliderImag(i);
+															
+
 
 														}} >
 
 															<LazyLoader src={response.feature_image} alt={"Loading"} width={"312"} height={"200"} />
-															{/* <img src={response.feature_image} alt="Loading" /> */}
+															
 														</div>
 
 													)

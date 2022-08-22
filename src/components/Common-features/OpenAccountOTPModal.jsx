@@ -10,6 +10,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
 
+
 function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
@@ -19,6 +20,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
+    const type2=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
     const [show,setShow] = useState(true);
     // console.log('SSS',show);
     function handleClose(){
@@ -112,7 +114,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 session_id: otpID.current
             };
 
-            openAccountService.verifyOTP(request).then((res) => {
+            openAccountService.verifyOTP(request,type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     console.log('HANDLER',res);
@@ -140,9 +142,14 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             // setShowLead(prevState => {
                             //     return { ...prevState, showModal: true, redirectLink: 'https://jiffy.choiceindia.com/auth/login'}
                             // });
+if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("https://jiffy.choiceindia.com/auth/login");}
 
-                            onClose("https://jiffy.choiceindia.com/auth/login");
-                            // window.location.href = "https://jiffy.choiceindia.com/auth/login";
+
+
+                           // (type2=='MF' )? 
+                           // window.location.href ="https://investica.com/auth/sign-in" 
+                            //:
+                            //window.location.href = "https://jiffy.choiceindia.com/auth/login";
                         }
                     }
                     // }
@@ -162,17 +169,25 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
 
     //resend OTP ON SMS
     function resendOTP() {
+        console.log("check",otpID)
         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
             showLoader('resendOTPLoader');
             setOtp('');
             setOTPErrors('');
+            
+           
             let request = {
+
                 "mobile_no": mobileNumber,
                 "old_session_id": otpID.current,
                 "request_source": "CHOICEINDIA"
             }
+            let requestMF = {
+                
+                "old_session_id": otpID.current
+            }
 
-            openAccountService.resendOTPAgain(request).then((res) => {
+            openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
                 hideLoader('resendOTPLoader');
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
@@ -201,10 +216,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             setOTPErrors('');
             let request = {
                 "mobile_no": mobileNumber,
-                "request_source": "CHOICEINDIA",
+                "request_source": ((type2=='MF' )? "MF" : "CHOICEINDIA"),
                 "session_id": otpID.current,
             }
-            openAccountService.OTPOnCall(request).then((res) => {
+            openAccountService.OTPOnCall(request,type2).then((res) => {
                 hideLoader('OTPOnCallLoader');
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
@@ -327,6 +342,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 </div>
             </div> */}
 
+
 <Modal show={show} className="bt-strap-mdl" onHide={onClose}>
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
@@ -396,6 +412,8 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
            {/* {
             showlead.showModal? <Thankyoupopup isShow={showlead}/>:''
            } */}
+
+
         </>
     );
 }

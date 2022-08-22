@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 import Bannerimage from '../../assets/images/services/insurance-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 
@@ -30,7 +31,7 @@ function Insurance() {
                             <div className="benifit-list">
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Health Insurance</h5>
-                                    <p>Oompare and find policies which will help you cover the rising medical expenses during medical emergencies.</p>
+                                    <p>Compare and find policies which will help you cover the rising medical expenses during medical emergencies.</p>
                                 </div>
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Life Insurance</h5>
@@ -45,7 +46,7 @@ function Insurance() {
                                     <p>Get accidental damage cover, third party car insurance, comprehensive car insurance, as per your needs.</p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <Link to="/insurance" className="btn-bg">Explore</Link> */}
                         </div>
                     </div>
 

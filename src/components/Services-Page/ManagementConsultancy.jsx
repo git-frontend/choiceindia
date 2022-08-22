@@ -45,7 +45,7 @@ function ManagementConsultancy() {
                                     <p>Our team provides organisation-wide services to corporates regarding administration, compliance and corporate filings.</p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <a href="/" className="btn-bg">Explore</a> */}
                         </div>
                     </div>
                 </div>

@@ -161,6 +161,14 @@ export default function FaqBody() {
     setTrigger(true)
     if (trigger === true) {
       loadfaqcategory();
+
+      var input = document.getElementById("value3");
+      input.addEventListener("keypress",function(eve){
+        if(eve.key ==="Enter"){
+
+          document.getElementById("btnsearch").click();
+        }
+      })
     }
 
   }, [trigger])
@@ -182,7 +190,7 @@ export default function FaqBody() {
 
                       <Form.Control type="text" id="value3" autoComplete="off" placeholder="Search for your issue" className="formcontrol" {...register('faq', { onChange: (e2) => { faqChange(e2) } })} />
 
-                      <Button type='submit' variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
+                      <Button type='submit' id="btnsearch" variant="warning" onClick={() => data.length > 0 ? loadfaqsearch() : ''}>{isloader == false ? 'Search' : <Spinner animation="border" />}</Button>
                     </div>
                     <div>
 
@@ -228,9 +236,11 @@ export default function FaqBody() {
                             // scrollToElement();
                           }}>
                             <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
-                              <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="" alt="" width={"50"} height={"50"} />
+                              <span className='cont-img'>
+                                <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
+                              </span>
                               <h4>{response.category_name || 'No data'}</h4>
-                              <p>{response.category_description || 'No data'}</p>
+                              {/* <p>{response.category_description || 'No data'}</p> */}
                             </div>
                           </div>
                         )
@@ -287,8 +297,8 @@ export default function FaqBody() {
                           article.map((res, index) => {
 
                             return (
-                              <div>
-                                <Accordion.Item key={res.id} eventKey={index}>
+                              <div key={res.id}>
+                                <Accordion.Item  eventKey={index}>
                                   <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                   {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                   <Accordion.Body>
@@ -323,8 +333,8 @@ export default function FaqBody() {
                           searchlist.map((res, index) => {
 
                             return (
-                              <div>
-                                <Accordion.Item key={res.id} eventKey={index}>
+                              <div key={res.id}>
+                                <Accordion.Item  eventKey={index}>
                                   <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                   {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
                                   <Accordion.Body>

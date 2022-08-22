@@ -15,7 +15,7 @@ function SMAStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 5,
+        slidesToShow: 3,
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,

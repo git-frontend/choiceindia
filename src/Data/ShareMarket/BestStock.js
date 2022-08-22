@@ -24,21 +24,6 @@ const imageData =
         "description":'Automated Research Engine that provides research advisory with customised strategies.'
         
         
-    },
-    {
-        "image":`${ImageSub2}`,
-        "id": 3,
-        "title":'Jiffy Chat',
-        "description":'Get personalised solutions to your queries using the Jiffy Chat facility at Sumeet Bagadia’s Desk.'
-    
-        
-    }
-    ,{
-        "image":`${ImageSub3}`,
-        "id": 0,
-        "title":'Jiffy C-Quant',
-        "description":'A curated list of top 200 stocks thoroughly back-tested and statistically validated by the Research division.'
-
     }
     ,{
 

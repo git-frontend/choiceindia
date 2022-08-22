@@ -15,7 +15,7 @@ function AppOTStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: true,
         dots: false,
         autoplaySpeed: 2000,

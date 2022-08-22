@@ -25,13 +25,13 @@ function BannerCareer() {
     <div className='App-main'>
 
 
-<section class="trading-app-sec1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="sec1-left">
-                        <div class="top-title pl8">
-                           <h1>Jiffy Trading App <span class="mb-br">For</span> </h1> 
+<section className="trading-app-sec1">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-7">
+                    <div className="sec1-left">
+                        <div className="top-title pl8">
+                           <h1>Jiffy Trading App <span className="mb-br">For</span> </h1> 
 
                            <Slider {...settings1} className='slider-ver'>
                                 <div>
@@ -66,13 +66,13 @@ function BannerCareer() {
                       <span className=''>App Store</span>
                     </a>
                   </div>
-                        <div class="star-line">
-                            <img src={AppImage6} alt="" class="img-responsive" width="27" height="27"/> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
+                        <div className="star-line">
+                            <img src={AppImage6} alt="" className="img-responsive" width="27" height="27"/> <h5> Trusted by <span>5+ Lakh Users</span> </h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-5">
-                    <div class="sec1-right">
+                <div className="col-md-5">
+                    <div className="sec1-right">
                         <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"334"} height={"661"}/>
                         <LazyLoader src={AppImage2} className={"img-fluid mn-img1"} alt={"Loading"} width={"260"} height={"197"}/>
                         <LazyLoader src={AppImage3} className={"img-fluid mn-img2"} alt={"Loading"} width={"260"} height={"87"}/>

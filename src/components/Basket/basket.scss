@@ -208,12 +208,14 @@ body{
 .baskets-features-cont {
     padding: 0 0 0 0;
     .exp-btn{
+        a{
         color: $whiteColor;
         font-family: $font-family-poppins-semibold;
         font-size: 2rem;
         &:hover{
             color: $yellowColor;
         }
+    }
     }
     .heading-sec{
         text-align: center;

@@ -41,7 +41,7 @@ function TaxAdvisory() {
                                     <p>We have international tax experts in our team who can provide international tax advisory, transfer pricing advisory, etc.</p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <a href="/" className="btn-bg">Explore</a> */}
                         </div>
                     </div>
 

@@ -3,24 +3,26 @@ import React from "react";
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
-import image7 from '../../assets/images/about-us/person-img.webp';
+import image1 from '../../assets/images/about-us/sumeet-bagadia.webp';
+import image2 from '../../assets/images/about-us/sunder-sanmukhani.webp';
+import image3 from '../../assets/images/about-us/rochan-patnayak.webp';
 function Expert() {
     const settings = {
         infinite: true,
         speed: 2000,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: false,
         margin:15,
         dots:true,
         autoplaySpeed: 800,
-        slidesToScroll: 4,
+        slidesToScroll: 1,
         responsive: [
           {
             breakpoint: 992,
             settings: {
               slidesToShow: 2,
-              slidesToScroll: 2,
+              slidesToScroll: 1,
               adaptiveHeight: true,
             },
           },
@@ -43,73 +45,42 @@ function Expert() {
                     <h2 className="heading">Meet Our Experts</h2>
                     </div>
                 </div>
-                <div className="row">
-                <div className="col-md-12">
+                <div className="row justify-content-center">
+                <div className="col-md-9">
                   <div className="team-list">
                   <Slider {...settings} className="expert-list-slider">
                       <div className="expert-item">
                         <span className="img-itm">
-                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
+                          <img src={image1} width="224" height="349" className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
-                            <h5>Kamal Poddar</h5>
-                            <p className="designation">Managing Director</p>
+                            <h5>Mr. Sumeet Bagadia</h5>
+                            <p className="designation">Head-Technical Research</p>
                         </div>
                        
                         
                       </div>
                       <div className="expert-item">
                         <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
+                                          <img src={image2} width="224" height="349" className="img-fluid" alt="loading" />
                         </span>
                         <div className="namedesg">
-                            <h5>Ajay Kejriwal</h5>
-                            <p className="designation">Designation</p>
+                            <h5>Mr. Sundar Sanmukhani</h5>
+                            <p className="designation">Head Fundamental Reserach</p>
                         </div>
                        
                         
                       </div>
                       <div className="expert-item">
                         <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading"/>
+                                          <img src={image3} width="224" height="349" className="img-fluid" alt="loading"/>
                         </span>
                         <div className="namedesg">
-                            <h5>Sunil Bagaria</h5>
-                            <p className="designation">Designation</p>
+                            <h5>Mr. Rochan Pattnayak</h5>
+                            <p className="designation">Head-Institutional Equities &amp; Markets</p>
                         </div>
-                       
-                        
                       </div>
-                     <div className="expert-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading"/>
-                        </span>
-                        <div className="namedesg">
-                            <h5 className="name">CA Ram Ratan Chirania</h5>
-                            <p className="designation">Director</p>
-                        </div>
-                        
-                      </div>
-                      <div className="expert-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Sumeet Bagadia</h5>
-                            <p className="designation">Director</p>
-                        </div>
-                        
-                      </div>
-                      <div className="expert-item">
-                        <span className="img-itm">
-                                          <img src={image7} width="224" height="349" className="img-fluid" alt="loading" />
-                        </span>
-                        <div className="namedesg">
-                            <h5>Sundar Sanmukhani</h5>
-                            <p className="designation">Designation</p>
-                        </div>
-                        
-                      </div>
+                     
                     </Slider>
                   </div>
                 </div>

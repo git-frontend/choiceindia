@@ -20,7 +20,7 @@ const HindiOpenFreeAccountBanner = () => {
                                 
                             </h1>
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
-                            <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} />
+                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} width={'146'} height={'20'} alt={'zigzagline'} /> */}
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -50,7 +50,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-5 mbrespflex">
+                                <div className="row mt-4 mt-sm-5  mbrespflex">
                                     <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox">
                                             <div className="respgrid">

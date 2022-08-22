@@ -71,7 +71,11 @@ function Contactdetail() {
                            {
                               city_list.map((item, i) => {
 
-                                 return <option key={i} value={i}>{item ? item.city_name : 'NA'}</option>
+                                 return (
+                                  
+                                          <option key={item.id} value={i}>{item ? item.city_name : 'NA'}</option>
+                                    
+                                 )
                               })
                            }
                         </Form.Select>
@@ -87,7 +91,7 @@ function Contactdetail() {
                               Opp Harsh Express,Near Bank, Zone-I,Maharana  <br />J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
                         </div> :
-                        <div className="text-right address">
+                        <div className="text-right address" key={contactMap[MapNumber].id}>
                            <p className="maintitle">{contactMap[MapNumber].city}</p>
                            <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p>
                            <p className="subtext">{contactMap[MapNumber].support}</p>

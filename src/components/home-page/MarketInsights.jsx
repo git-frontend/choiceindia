@@ -35,7 +35,7 @@ function MarketInsights() {
                 if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.data) {
                     setFabal(res.data.response.data);
                 }
-                console.log(res, "Research Report");
+                // console.log(res, "Research Report");
             }
         )
     };

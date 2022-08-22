@@ -61,16 +61,16 @@ function DematPage() {
                       <input type="checkbox" className="read-more-state" id="post-1" />
                       <span className="read-more-wrap "> The stock market is an old establishment that has existed since 1875 when BSE 	was the first the first-ever stock market to be established in Asia, it is evident that in these 147 years of history a lot has changed and one among those changes was the transition of physical paper certificates shares to shares being traded on an online platform
 
-                        <span className="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br /><br />
+                        <span className="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br />
 
                           <h2 className="font-bold">What is a Demat Account?</h2>
                           If we put it into simple terms we can say that the Demat account is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.<br /><br />
 
-                          Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions.<br /><br /><br />
+                          Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions.<br /><br />
                           <h2 className="font-bold">Why Demat Account is Necessary for Investing?</h2>
                           As mentioned previously, before electronic trading was introduced into the stock market in 1996 people stored their shares as certificates which were in form of physical paper and due to human errors, it is not assured that those physically held shares are in safe hands,<br /><br />
 
-                          Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.<br /><br /><br />
+                          Therefore keeping convenience in mind, the whole process of trading took an electronic route and since then this trend has followed and it was made mandatory for any investor to open a Demat account to participate in the stock market.<br /><br />
 
                           <h2 className="font-bold">Difference Between Demat and Trading Account</h2>
                           Now that we’ve explored what is a Demat account and how it helps us, let's further dive in and understand, how does a <Link to="/open-trading-account">Trading Account</Link> play a role here? <br /><br />
@@ -79,15 +79,15 @@ function DematPage() {
 
                           Well to answer that question people need to understand that a Demat account is just a repository where your stocks are stored, for transactional purposes in the stock market you need a trading account.<br /><br />
 
-                          Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account">Demat account and a trading account differ</Link> from each other, let's look into the details; <br /><br />
+                          Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account">Demat account and a trading account differ</Link> from each other, let's look into the details; <br />
                           <div className="ml-3">
                             <h3 className="font-bold"> 1. Delivery </h3>
-                            A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.<br /><br />
+                            A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.<br />
                             <h3 className="font-bold"> 2. Bank Link</h3>
                             As mentioned before a trading account helps you with transactions, so it makes sense that your trading account and your bank account are both linked to each other so that you can make transactions seamlessly.<br />
 
                             When you add money into your trading account you can go ahead and buy stocks that will be stored in your Demat account and if you sell your stocks, your Demat account will get rid of those stocks and the money will be deposited into your trading account and from there it will be transferred to your bank account as per your convenience.
-                          </div><br /><br />
+                          </div>
 
                           <h3 className="font-bold">Benefits of Opening Demat Account </h3>
                           In the above-mentioned sections we have told you why is a Demat account necessary but told very less on why exactly is a Demat account beneficial for you,<br />
@@ -104,7 +104,7 @@ function DematPage() {
                             With a Demat account, all these problems are tackled altogether, a Demat account provides all the securities that would be required with password authentication.<br />
                             <h3 className="font-bold"> 4. Versatile Options</h3>
                             Talking in terms of finance we usually see most of the instruments involved in it are limited to a few folks who check out the rigid structure of authentication and security, but that problem is tackled by Demat accounts without compromising security or authentication. <br /><br />
-                            While opening a Demat account you are provided with plenty options from which you can open your Demat account;
+                            While opening a Demat account you are provided with plenty options from which you can open your Demat account;<br /><br />
                             <ul>
                               <li className="font-bold">Individual Demat Account </li>
                               Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
@@ -123,26 +123,26 @@ function DematPage() {
                           Now that we’ve covered and also understand what is Demat and how Demat is necessary for us to invest in securities in India, now let’s look at how to do we set up or open a Demat account online.<br /><br /><br />
 
                           <h3 className="font-bold">Requirements For Opening a Demat Account</h3>
-                          If you’re looking to have a personal touch while opening your Demat account you probably will opt for an offline means and opening a Demat account offline would require you to be prepared with documents and we’ll help you with it;<br />
+                          If you’re looking to have a personal touch while opening your Demat account you probably will opt for an offline means and opening a Demat account offline would require you to be prepared with documents and we’ll help you with it;<br /><br />
                           <ul>
-                            <li>First of all, you’d have to decide on your DP or Depository Participant, DP is an intermediate between you and your investments and DPs are usually banks, financial institutions and brokers.</li>
-                            <li>For choosing the appropriate DP you have to decide upon the brokerage charges and annual maintenance charges.</li>
-                            <li>You need to have a bank account and complete your KYC</li>
-                            <li>While completing your KYC you’ll have to attach copies of your;</li>
+                            <li>First of all, you’d have to decide on your DP or Depository Participant, DP is an intermediate between you and your investments and DPs are usually banks, financial institutions and brokers.</li><br />
+                            <li>For choosing the appropriate DP you have to decide upon the brokerage charges and annual maintenance charges.</li><br />
+                            <li>You need to have a bank account and complete your KYC</li><br />
+                            <li>While completing your KYC you’ll have to attach copies of your;</li><br />
                             <div className="ml-3">
                               1. PAN Card<br />
                               2. ID Proof (eg; Aadhar)<br />
                               3. Proof of Permanent Residence<br />
                               4. Passport-size photographs
-                            </div>
-                            <li>While you submit your KYC along with all the copies of your necessary documents, you need to make sure you have the original documents with you as well for verification purposes. </li>
-                            <li>After the verification process, you are required to sign an agreement that lists out all the terms and conditions.</li>
-                            <li>Once your account is opened, your DP will be providing you with a unique client ID, this client ID will allow you to access your Demat account online.</li>
-                          </ul><br />
+                            </div><br />
+                            <li>While you submit your KYC along with all the copies of your necessary documents, you need to make sure you have the original documents with you as well for verification purposes. </li><br />
+                            <li>After the verification process, you are required to sign an agreement that lists out all the terms and conditions.</li><br />
+                            <li>Once your account is opened, your DP will be providing you with a unique client ID, this client ID will allow you to access your Demat account online.</li><br />
+                          </ul>
                           After you’ve gained access to your Demat account make sure your DP provides you with Beneficiary ID and POA number or Power of Attorney number along with your client ID, this information will help you apply for IPOs. <br /><br />
                           <h2 className="font-bold">Opening a Demat Account Online</h2>
                           Opening a Demat account online is relatively easier than opening an account while actually having to be at the physical location of your preferred DP. You opening a Demat account online will obviously allow you to open an account at the convenience of your house. <br />
-                          Although the requirements of opening a Demat account online will require you to have pretty much the same documents you’d usually want while opening a Demat account physically, there are some extra requirements that you need to know to be prepared;<br />
+                          Although the requirements of opening a Demat account online will require you to have pretty much the same documents you’d usually want while opening a Demat account physically, there are some extra requirements that you need to know to be prepared;<br /><br />
                           <div className="ml-3">
                             <ul>
                               <li>Visit your preferred DP’s website, almost every other financial institution or bank has an online presence in this day and age, so you’ll not be facing any problems finding your preferred DP’s website.</li><br />
@@ -150,9 +150,9 @@ function DematPage() {
                               <li>Once you’ve filled out the necessary details, you’ll receive an OTP for verification and when you punch in the OTP your initiation process starts.</li><br />
                               <li>Your DP will get in contact with you for completing all the mentioned formalities and then open a Demat account.</li>
                             </ul>
-                          </div><br /><br />
+                          </div>
                           <h3 className="font-bold">Demat Account Opening Fee and Charges</h3>
-                          This is the most common type and is available for majority of the Indian citizens residing in India.<br /><br />
+                          This is the most common type and is available for majority of the Indian citizens residing in India.<br />
 
                           <h3 className="font-bold">Repatriable Demat Account</h3>
                           While opening a Demat account you probably will be associated with various fees and charges, these are namely opening charge, safety charge, annual maintenance charge, transaction charges and Demat charges.<br />
@@ -174,12 +174,12 @@ function DematPage() {
                           </div><br /><br />
                           <h3 className="font-bold">Why Should You Choose Choice to Open a Demat Account? </h3>
                           You’ve been through all the information that is out there about Demat and you hone enough knowledge to understand that picking a DP is no easy job, you’ll have to consider a lot of factors like charges and the services they provide and if that aligns with your conscience, you opt for them.<br />
-                          But let us present ourselves and tell you why exactly you need to open a Demat account with Choice;<br />
+                          But let us present ourselves and tell you why exactly you need to open a Demat account with Choice;<br /><br />
                           <ul>
-                            <li>Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li>
-                            <li>Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li>
-                            <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li>
-                            <li><a href="https://choiceindia.com/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li>
+                            <li>Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li><br />
+                            <li>Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li><br />
+                            <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li><br />
+                            <li><a href="https://choiceindia.com/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li><br />
                           </ul>
                         </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                     </div>

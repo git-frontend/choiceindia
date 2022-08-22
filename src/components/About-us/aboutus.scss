@@ -127,20 +127,23 @@ body{
 
     .team-list-slider {
         position: relative;
-
+        .slick-slide{
+            height: auto;
+        }
         .team-item {
             width: 90% !important;
             position: relative;
             overflow: hidden;
             border-radius: 20px;
             background: #ad8b73;
-            padding: 1rem 1rem 0 1rem;
+            padding: 0;
             transition: 0.3s all ease-in;
 
             @media (max-width:$sm) {
                 width: 95% !important;
                 display: block !important;
                 margin: 0 auto;
+                
             }
 
             .namedesg {
@@ -195,6 +198,12 @@ body{
 
                 img {
                     margin: 0 auto;
+                    width: 100%;
+                    height: 349px;
+                    object-fit: cover;
+                    @media (max-width:$sm) {
+                        height: 400px;
+                    }
                 }
             }
         }
@@ -267,7 +276,7 @@ body{
 
         .slick-dots {
             bottom: -80px;
-
+            z-index: 99;
             li {
                 width: 12px;
                 height: 12px;
@@ -861,12 +870,13 @@ body{
                     font-weight: 600;
                     font-family: $font-family-poppins-semibold;
                     margin-bottom: 20px;
-                    width: 200px;
+                    // width: 200px;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
                     @media (max-width:$sm) {
                         font-size: 1.7rem;
+                        text-align: left;
                     }
                 }
 

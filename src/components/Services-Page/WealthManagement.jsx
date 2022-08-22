@@ -45,7 +45,7 @@ function WealthManagement() {
                                     <p>Our team understands the dynamics of various industries for assisting our clients looking for going public.</p>
                                 </div>
                             </div>
-                            <a href="/" className="btn-bg">Explore</a>
+                            {/* <a href="/" className="btn-bg">Explore</a> */}
                         </div>
                     </div>
 

@@ -15,7 +15,7 @@ function WhyBecomeSubBrokerHindi () {
                         <div className="col-xl-10 col-md-12">
                             <div className="counter-list">
                                 <div className="count-item">
-                                    <h3><span className="counter">4</span>L+</h3>
+                                    <h3><span className="counter">5</span>L+</h3>
 
                                     <h6>ग्राहक</h6>
                                 </div>

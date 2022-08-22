@@ -139,7 +139,7 @@ function NRIDemateAccount() {
 </li>
                                             </ul>
                                       
-                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
+                                    </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

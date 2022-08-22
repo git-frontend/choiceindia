@@ -18,12 +18,6 @@ function PartnerBannerTab() {
   const [count, setCount] = useState(0);
   const [store, setstore] = useState(0);
 
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  // };
-  console.log(partnerBanner);
-
-
   const settings = {
     infinite: true,
     speed: 2500,
@@ -86,7 +80,7 @@ function PartnerBannerTab() {
                 {
                   skeleton ?
                     <SingleTemplatePartner /> :
-                    <div className="tab-cont-right">
+                    <div className="tab-cont-right ">
                       <LazyLoader src={partnerBanner[store].image} className={'img-fluid'} width={"521"} height={"453"} alt="Loading" />
                       {/* <img src={StckImage} alt="Become a Stock Market Agent" width={"521"} height={"453"} /> */}
                     </div>
@@ -162,7 +156,7 @@ function PartnerBannerTab() {
                 setstore(ev)
                 setCount(ev)
                 setToggleState(ev)
-                console.log("check",ev);
+               
 
               }}
             >
@@ -171,10 +165,13 @@ function PartnerBannerTab() {
                   let classNameNm = ((index === count) ?  "tabs active-tabs" : "tabs")
 
                   return (
-                    <button   className={classNameNm}
+                    <button key={res.id}  className={classNameNm}
                       onClick={() => { setstore(index) ;setCount(index)}}>
-                      <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />
-                      {/* <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} /> */}
+                        <span className="tb-ico">
+                          <LazyLoader src={res.icon} className={'img-fluid'} width={"70"} height={"71"} alt="Stocks" />
+                          {/* <img src={ImageSub2} alt="Stocks" width={"70"} height={"71"} /> */}
+                        </span>
+                      
                       <h4>{res.button}</h4>
 
                     </button>

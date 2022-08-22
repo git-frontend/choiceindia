@@ -42,6 +42,15 @@ const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/Sumeet
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
 const LazyCodeConduct = React.lazy(() => import('./components/CodeConduct/CodeConduct'));
+const LazyShareHoldingPattern = React.lazy(() => import('./components/Share-Holding/ShareHolding'));
+const LazyFinancialInfo = React.lazy(() => import('./components/Financial-Info/FinancialInfo'));
+const LazyVotingResults = React.lazy(() => import('./components/Voting-Results/VotingResults'));
+const LazyNotices = React.lazy(() => import('./components/Notices/Notices'));
+const Lazynewsmedia = React.lazy(() => import('./components/News-Media/News-Media'));
+const LazyNewsAnnouncement = React.lazy(() => import('./components/News-Announcement/NewsAnnouncement'));
+const LazyFactSheet = React.lazy(() => import('./components/Fact-Sheet/FactSheet'));
+const LazyAnnualReport = React.lazy(() => import('./components/Annual-Report/AnnualReport'));
+const LazyCorporateGovernance = React.lazy(() => import('./components/Corporate-Governance/corporate-governance'));
 const Lazysubbroker = React.lazy(() => import('./components/SubBroker/SubBroker'));
 const Lazyopendemat = React.lazy(() => import('./components/OpenDematAccount/DematPage'));
 const Lazybasket = React.lazy(() => import('./components/Basket/Basket'));
@@ -66,12 +75,31 @@ const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Deta
 const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
+const Lazycebplpolicies = React.lazy(() => import('./components/CEBPLPolicies/CEBPL-Policies'));
+const LazyInvestorcharter = React.lazy(() => import('./components/InvestorCharter/Investor-Charter'));
+const LazyInvestorcomplaints = React.lazy(() => import('./components/Investorcomplaints/Investor-Complaints'));
+const Lazyinvestorawareness = React.lazy(() => import('./components/InvestorAwareness/Investor-Awareness'));
+const LazyDisclaimer = React.lazy(() => import('./components/Disclaimer/Disclaimer'));
 const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditions/TermsConditions'));
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
 const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
+const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
+const LazyEquityBroking = React.lazy(() => import('./components/Equity-Broking/EquityBrokingMain'));
+const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirector/BoardOfInvestor'));
 
+const LazyIPOInvestment = React.lazy(() => import('./components/IPO-Investment/IPOInvestment'));
+
+const LazyClientdetail = React.lazy(() => import('./components/ClientDetails/ClientDetail'));
+
+const LazyCommodityTrading = React.lazy(() => import('./components/CommoditytTrading/Commodity'));
+const LazyEquityStockTrading = React.lazy(() => import('./components/EquityStockTrading/EquityStockTrading'));
+const LazyDerivativeTrading = React.lazy(() => import('./components/DerivativeTrading/DerivativeTrading'));
+const LazyCurrencyTrading = React.lazy(() => import('./components/CurrencyTrading/CurrencyTrading'));
+const LazyNoDataFound = React.lazy(() => import('./components/Common-features/NoDataFound'));
+const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
+const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-demat-account-campaign/OpenDematAccount'));
 
 
 function Routing() {
@@ -167,6 +195,46 @@ function Routing() {
                                 < LazyCodeConduct />
                             </React.Suspense>
                         } />
+                        <Route exact path='/share-holding-pattern' element={
+                            <React.Suspense>
+                                < LazyShareHoldingPattern />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/financial-info' element={
+                            <React.Suspense>
+                                < LazyFinancialInfo />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/voting-results' element={
+                            <React.Suspense>
+                                < LazyVotingResults />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/fact-sheet' element={
+                            <React.Suspense>
+                                < LazyFactSheet />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/notices' element={
+                            <React.Suspense>
+                                < LazyNotices />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/news-announcement' element={
+                            <React.Suspense>
+                                < LazyNewsAnnouncement />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/annual-report' element={
+                            <React.Suspense>
+                                < LazyAnnualReport />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/corporate-governance' element={
+                            <React.Suspense>
+                                < LazyCorporateGovernance />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/brokerage-calculator' element={
                             <React.Suspense>
@@ -256,8 +324,27 @@ function Routing() {
                                 < Lazyremisier />
                             </React.Suspense>
                         } />
+                        <Route exact path='/newsmedia' element={
+                            <React.Suspense>
+                                < Lazynewsmedia />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/cebpl-policies' element={
+                            <React.Suspense>
+                                < Lazycebplpolicies />
+                            </React.Suspense>
+                        } />
 
-
+                        <Route exact path='/investor-charter' element={
+                            <React.Suspense>
+                                < LazyInvestorcharter />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/investor-awareness' element={
+                            <React.Suspense>
+                                < Lazyinvestorawareness />
+                            </React.Suspense>
+                        } />
                         <Route exact path='/onlinetradingapp' element={
                             <React.Suspense>
                                 < Lazyonlinetradingapp />
@@ -292,7 +379,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/Add-lead' element={
+                        <Route exact path='/add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
                             </React.Suspense>
@@ -313,10 +400,20 @@ function Routing() {
                                 < LazyPrivacyPolicy />
                             </React.Suspense>
                         } />
+                        <Route exact path='/Investor-complaints' element={
+                            <React.Suspense>
+                                < LazyInvestorcomplaints />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/disclaimer' element={
+                            <React.Suspense>
+                                < LazyDisclaimer />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/terms-conditions' element={
                             <React.Suspense>
-                                < LazyTermsConditions/>
+                                < LazyTermsConditions />
                             </React.Suspense>
                         } />
 
@@ -329,6 +426,72 @@ function Routing() {
                         <Route exact path='/insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/file-download' element={
+                            <React.Suspense>
+                                < LazyFileDownload />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/equity-broking' element={
+                            <React.Suspense>
+                                < LazyEquityBroking />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/board-of-directors' element={
+                            <React.Suspense>
+                                < LazyBoardOfDirectors />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/ipo-investment-account' element={
+                            <React.Suspense>
+                                < LazyIPOInvestment />
+                            </React.Suspense>
+                        } />
+
+
+                        <Route exact path='/client-details-update' element={
+                            <React.Suspense>
+                                < LazyClientdetail />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/commodity-trading' element={
+                            <React.Suspense>
+                                < LazyCommodityTrading />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/equity-stock-trading' element={
+                            <React.Suspense>
+                                < LazyEquityStockTrading />
+                            </React.Suspense>
+                        } />
+                          <Route exact path='/derivatives-trading' element={
+                            <React.Suspense>
+                                < LazyDerivativeTrading />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/currency-forex-trading' element={
+                            <React.Suspense>
+                                < LazyCurrencyTrading/>
+                            </React.Suspense>
+                        } />
+                          <Route exact path='/no-data-found' element={
+                            <React.Suspense>
+                                < LazyNoDataFound/>
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/mutual-funds-investment' element={
+                            <React.Suspense>
+                                < LazyMutualFundsInvestment />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/campaign/open-demat-account' element={
+                            <React.Suspense>
+                                < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
 

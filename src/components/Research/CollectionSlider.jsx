@@ -96,7 +96,7 @@ function CollectionSlider() {
                             </div>
 
                             <div className="mt-5">
-                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/baskets">Explore All</a>
+                                <a className="btn-bg btn-light" href="https://jiffy.choiceindia.com/baskets" target="_blank">Explore All</a>
                             </div>
 
                         </div>
@@ -108,7 +108,7 @@ function CollectionSlider() {
                         {
                                     Researchimg?.map((response, index) => {
                                         return(
-                            <div className="imgwrap">
+                            <div className="imgwrap" key={response.id}>
                                 <img src={response.image} alt="Collection" className="img-fluid" width={"708"} height={"645"}></img>
                             </div>
                                         )

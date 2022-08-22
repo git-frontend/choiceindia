@@ -29,6 +29,7 @@ function FableBlogList() {
         FablesTrending.fabalFolder(pros).then(
             res => {
                 setPost(res.data.posts);
+                setCheck(false)
                 // setPostAll(res.data.posts)
                 console.log("check222", res.data.posts)
                 // loadfaqFolder(res[0].category_linkage);
@@ -124,7 +125,7 @@ function FableBlogList() {
                                 post.slice(0, check?post.length:3).map((res,index)=>{
                                     return(
                                           
-                                        <Link  to={`/blog/${res.slug}`} className="tab-blog-item" key={res.id}>
+                                        <Link  to={`/blog/${res.slug}`} className="tab-blog-item mb-5" key={res.id}>
                                     <div className="blog-item-img">
                                         {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>

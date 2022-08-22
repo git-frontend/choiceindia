@@ -110,7 +110,7 @@ function HomeTestimonial() {
     const counter = useRef(0);
     function toggleForward() {
 
-		console.log('DDDD',counterRight);
+		// console.log('DDDD',counterRight);
 		if(counterRight === 0 ){
 			setdisableLeft(true);
 			setdisableRight(false);
@@ -155,7 +155,7 @@ function HomeTestimonial() {
 		}
 
 		setcounterRight(counterRight - 1);
-		console.log('FFFFF',counterRight);
+		
 
         if (valRight === 0) {
             setValRight(prevCount => 3)

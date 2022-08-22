@@ -163,7 +163,7 @@ function OpenTradingAccountHindi() {
                                         आपने डीमैट के बारे में सभी जानकारी को पढ़ लिया है और आपने यह समझने के लिए पर्याप्त ज्ञान हासिल कर लिया है कि डीपी चुनना कोई आसान काम नहीं है,<br />
                                         आपको शुल्क और उनके द्वारा प्रदान की जाने वाली सेवाओं जैसे कई कारकों पर विचार करना होगा और यदि यह आपकी अंतरात्मा से मेल खाता है, तो आप उन्हें चुनते हैं।<br />
                                         लेकिन आइए हम खुद को पेश करें और आपको बताएं कि आपको चॉइस के साथ डीमैट खाता खोलने की आवश्यकता क्यों है;<br />
-                                    </span></span> <label for="post-1" className="read-more-trigger moreless-button"></label>
+                                    </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>
                     </div>

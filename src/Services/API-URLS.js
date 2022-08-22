@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -143,7 +143,10 @@ export class API_URLS {
     sendNewLeadURL = 'add-new-lead-v2';
 
     /** Open Account APIs */
-
+    sendInvesOTPURL='investica-signup';
+    verifyInvesOTPURL='investica-verifyotp';
+    OTPInvesOnCallURL='call-for-otp';
+    resendInvesOTPURL='investica-resendotp'
     sendOTPURL = 'sign-up';
     resendOTPURL = 'resend-otp';
     OTPOnCallURL = 'otp-on-call';
@@ -399,7 +402,7 @@ export class API_URLS {
         return this.bannerURL + this.fableCategoryURL
     }
     getFableFolderURL(id) {
-        return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}&limit=3`
+        return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
     }
     /** faq search API url */
     getFaqSearchURL(pros) {
@@ -414,20 +417,35 @@ export class API_URLS {
         return this.SSOServerURL + this.sendOTPURL;
     }
 
-    getResendOTPURL() {
-        return this.SSOServerURL + this.resendOTPURL;
-    }
-
     getOTPOnCallURL() {
         return this.SSOServerURL + this.OTPOnCallURL;
+    }
+
+    getResendOTPURL() {
+        return this.SSOServerURL + this.resendOTPURL;
     }
 
     getVerifyOTPURL() {
         return this.SSOServerURL + this.verifyOTPURL;
     }
 
+    getSendInvesOTPURL() {
+        return this.SSOServerURL + this.sendInvesOTPURL;
+    }
+    getOTPInvesOnCallURL() {
+        return this.SSOServerURL + this.OTPInvesOnCallURL;
+    }
+
+    getVerifyInvestOTPURL() {
+        return this.SSOServerURL + this.verifyInvesOTPURL;
+    }
+    getResendInvestOTPURL() {
+        return this.SSOServerURL + this.resendInvesOTPURL;
+    }
+    
 
 
+    
 
     /**Logon Request */
     getLogonRequestURL() {
@@ -492,7 +510,7 @@ export class API_URLS {
     }
     getresearchipoURL() {
         // this.researchURL
-        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?limit=10&offset=0'
+        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?offset=0'
     }
 
     getperformanceURL() {

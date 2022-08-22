@@ -15,14 +15,6 @@ const imageData =
         
     },
     {
-        "image":`${ImageSub1}`,
-        "title":"C-Quant",
-        "id": 2,
-        "description":"A curated list of the top 200 stocks, thoroughly back-tested and statistically validated by the research division."
-        
-        
-    },
-    {
         "image":`${ImageSub2}`,
         "title":"Sumeet Bagadia Desk’s",
         "id": 3,

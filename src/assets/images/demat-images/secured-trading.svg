@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 78" width="65" height="78">
+	<title>secured-trading-svg</title>
+	<defs>
+		<linearGradient id="g1" x1="32.5" y1="-1.7" x2="32.5" y2="77.5" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#00efd1"/>
+			<stop offset="1" stop-color="#00acea"/>
+		</linearGradient>
+	</defs>
+	<style>
+		.s0 { fill: url(#g1) } 
+	</style>
+	<path id="Layer" fill-rule="evenodd" class="s0" d="m65 15.3v14.9c0 20.5-12.4 39-31.4 46.8-0.7 0.3-1.5 0.3-2.2 0-19-7.8-31.4-26.3-31.4-46.8v-14.9c0-1.2 0.7-2.3 1.9-2.8l29.4-12.3c0.8-0.3 1.6-0.3 2.4 0l29.4 12.3c1.2 0.5 1.9 1.6 1.9 2.8zm-6 2l-26.5-11-26.5 11v12.9c0 17.9 10.7 33.7 26.5 40.7 16.3-7.2 26.5-23.2 26.5-40.7zm-29.8 23.1l12.9-13c1.2-1.2 3.1-1.2 4.3 0 1.1 1.2 1.1 3.1 0 4.3l-15.1 15.1c-1.2 1.1-3.1 1.1-4.3 0l-8.4-8.5c-1.1-1.1-1.1-3 0-4.2 1.2-1.2 3.1-1.2 4.3 0z"/>
+</svg>

@@ -1,0 +1,39 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+.table>:not(:first-child) {
+    border-top: none !important;
+   
+}
+.table>:not(caption)>*>* {
+    border-bottom-width: 0 !important;
+    box-shadow: none !important;
+}
+#complaints {
+    font-family: $font-family-poppins-regular;
+    border-collapse: collapse;
+    width: 100%;
+
+    td {
+        color: #0066B3;
+        padding: 15px 8px;
+    }
+
+    th {
+        padding: 15px 8px;
+    }
+
+    thead th {
+        background-color: white;
+    }
+
+    tr {
+        &:nth-child(odd) {
+            background-color: #F7FAFD !important;
+        }
+
+        &:nth-child(even) {
+            background-color: #ffffff !important;
+        }
+    }
+ 
+}

@@ -27,6 +27,8 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
+    const type1=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
+
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
@@ -54,6 +56,7 @@ function DematAccountForm(props) {
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
+    
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -144,7 +147,7 @@ function DematAccountForm(props) {
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
             if (props.page == 'add-lead') {
-                console.log('Addd lead page');
+                // console.log('Addd lead page');
                 sendNewLeadOTP();
             } else {
                 sendOTP();
@@ -241,14 +244,16 @@ function DematAccountForm(props) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
-            "service_code": "JF",
+            "whatsapp_consent":true,
+            "service_code":type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": type1=='MF' ? "INVESTICA":"JIFFY",
             "request_source": "CHOICEINDIA",
-            "source": "CHOICEINDIA",
-            "user_consent": "1",
+            "source": type1=='MF' ?"INVESTICA":"CHOICEINDIA",
+            "user_consent": type1=='MF' ?"true":"1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
+            "lead_source":type1=='MF' ?"CHOICEINDIA":"",
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
@@ -259,15 +264,19 @@ function DematAccountForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_term": UTMTerm.current || null
         };
-        openAccountService.sendOTP(request).then((res) => {
+        openAccountService.sendOTP(request,type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                otpSessionID.current = res.data.Body.otp_session_id;
+                otpSessionID.current =(type1=='MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
+                
+                
                 fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();
+                
             } else {
                 setAPIError("Something went wrong, please try again later!");
+                console.log("check session",res.Body.session_id);
                 showAPIErrorToaster();
             }
         }).catch((error) => {
@@ -509,7 +518,7 @@ function DematAccountForm(props) {
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
                                 {
-                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a className="link-tc" onClick={handleTermsConditionShow}>नियम आणि अटी </a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
+                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम और शर्तों</span></a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम आणि अटी </span></a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a  onClick={handleTermsConditionShow}><span className="link-tc">Terms &amp; Conditions</span></a></Form.Check.Label>
                                 }
 
                             </Form.Check>

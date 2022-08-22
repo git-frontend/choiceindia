@@ -30,7 +30,7 @@ const SubBrokerSellMoreHindi = () => {
                                     <div className="sell-left-sec">
                                         <h2 className="title-secnd">ज्यादा बेचो! ज्यादा कमाइए!</h2>
                                         <p className="sml-para-dv">चॉइस के पास 25 से अधिक वर्षों के अनुभव के साथ कई वित्तीय उत्पाद मिलाकर एक व्यापक पोर्टफोलियो है। सब ब्रोकर के पास वित्तीय उत्पादों की पूरी श्रृंखला बेचने का विकल्प होता है।</p>
-                                        <a href="javascript:void(0)" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </a>
+                                        <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>

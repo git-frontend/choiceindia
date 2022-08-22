@@ -36,7 +36,11 @@ function HindiWhyOpenTradingAccount() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:false,
-        },
+          loop: true,
+        infinite:true,
+        autoplaySpeed: 5000,
+        autoplay: true,
+                },
       },
     ],
   };
@@ -76,7 +80,7 @@ function HindiWhyOpenTradingAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt={"डीमैट खाता रेफेर करो और कमाएं "} className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt={"डीमैट खाता रेफेर करो और कमाएं "} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
