@@ -29,7 +29,7 @@ function Banner() {
                 {
                   skeleton?
                     <SingleTemplate/>:
-                    <div className="col-md-6">
+                    <div className="col-md-6 d-none d-sm-block">
                     <div className="rightsec">
                       <img src={ImageBanner} alt="Banner Images" className="img-fluid " width={"957"} height={"623"}></img>
                     </div>
