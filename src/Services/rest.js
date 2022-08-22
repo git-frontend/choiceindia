@@ -12,9 +12,9 @@ expertReportData: function (postdata) {
 
     let api = new API_URLS()
     let url = api.fetchResearchReportURL()
-    console.log("url",url)
+   // console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-        console.log("datas",data)
+       // console.log("datas",data)
         return data
     })
 },
@@ -24,9 +24,9 @@ signalReportData: function (postdata) {
 
     let api = new API_URLS()
     let url = api.fetchSignalReportURL()
-    console.log("url",url)
+  //  console.log("url",url)
     return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-        console.log("datas",data)
+     //   console.log("datas",data)
         return data
     })
 }

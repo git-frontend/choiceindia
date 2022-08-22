@@ -12,7 +12,7 @@ import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
 
 function Fablesdetails() {
-  console.log('FablesDetails');
+ // console.log('FablesDetails');
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => { });
   const [htmlContent, sethtmlContent] = useState(() => '');
@@ -50,8 +50,8 @@ var formName = useRef('');
   function loadFabalList() {
     homeServices.fabalStory().then(
       res => {
-        console.log('res1',res)
-        console.log('IDDD',single_detail);
+      //  console.log('res1',res)
+      //  console.log('IDDD',single_detail);
         // setAllFabalData(res.data.posts);
         setAllFabalData(() => res.data.posts.filter((e) => {
           return e.slug !== id

@@ -16,7 +16,7 @@ const [trigger, setTrigger] = useState(false)
       useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
-          console.log("use effect called")
+          //console.log("use effect called")
             generateSessionId()
         }
         return () => {
@@ -29,7 +29,7 @@ const [trigger, setTrigger] = useState(false)
 
       },[companyData]) */
       let onRealtimeCallback=(data)=>{
-        console.log("onRealtimeCallback: ",data)
+       // console.log("onRealtimeCallback: ",data)
         processB5String(data.responseString,null)
       }
 
@@ -43,7 +43,7 @@ const [trigger, setTrigger] = useState(false)
         return response.json();
       })
       .then(res => {
-        console.log("res",res)
+      //  console.log("res",res)
         if(res.Status=='Success'){
             getKeyInfo(res.Response)
         }
@@ -114,7 +114,7 @@ const [trigger, setTrigger] = useState(false)
 	let splitData = pipeToObject(b5String);
 if((splitData[0]["7"])=='8866'){
   
-  console.log(newB5," datata ",b5Data)
+ // console.log(newB5," datata ",b5Data)
   let bestData=newB5||new6
 	let indicesData={}
 		indicesData['PrevClose'] = bestData.PrevClose||0;
@@ -147,7 +147,9 @@ if((splitData[0]["7"])=='8866'){
 	indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
     setCompanyData(indicesData)
 
-    console.log("onRealtimeCallback processed",indicesData)}
+    //console.log("onRealtimeCallback processed",indicesData)
+  
+  }
 }
 
   
