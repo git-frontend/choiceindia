@@ -173,11 +173,9 @@ function LongTermResearch() {
               <div className="research-tab-cont">
                 {
                   check ?
-                  
-
                    <div className="research-tab-list">
                     
-                  <div>
+                  
                   {
                     list.map((res, i) => {
 
@@ -202,9 +200,7 @@ function LongTermResearch() {
                     })
                   }
                  </div>
-                
-
-                </div>
+              
                
                     :
                     <div className="research-tab-list">
