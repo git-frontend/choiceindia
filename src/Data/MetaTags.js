@@ -20,6 +20,9 @@ const meta_tags = {
 
     "sumeet-bagadia": { 'title': "Sumeet Bagadia - Get Trading Tips, Daily Investment Calls & More", 'content': "Sumeet Bagadia is an Executive Director and Head of Technical Research at Choice Broking. Be connected for trading tips, daily intraday and investment calls, weekly market updates and more.", 'link': 'https://choiceindia.com/sumeet-bagadia' },
 
+    "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice", "content":"IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account' },
+
+    
     "open-free-demat-account": {
         'title': "Open Demat Account Online for Free with No Annual Charges at Choice", 'content': "Open Demat account online for free with no annual charges for the first year at Choice. Easy paperless online Demat account opening, free expert research, low DP, and brokerage charges", 'link': 'https://choiceindia.com/open-free-demat-account',
         "faqscript": `<script type="application/ld+json">
@@ -192,7 +195,7 @@ const meta_tags = {
     </script>
     ` },
 
-    "about-us": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+    "about-us": { 'title': "Best Stock Broking Company in India - Choice Broking", "content": "Choice Broking is one of the best stock broking companies in India. Start trading in stocks, derivatives, currency, commodity & investing in mutual funds with India's leading share broking company. Open a free trading account with us.", "faqscript": `` },
 
     // "fables": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
