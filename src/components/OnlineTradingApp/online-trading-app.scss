@@ -839,7 +839,7 @@
                 margin-bottom: 1rem;
                 font-family: $font-family-poppins-bold;
                 .mb-br{
-                    @media (max-width: 385px) {
+                    @media (max-width: 485px) {
                         display: block;
                     }
                 }
@@ -1336,14 +1336,21 @@
         h4{
             font-size: 1.8rem;
             line-height: 2.6rem;
+            @media (max-width: $xs) {
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
         }
         @media (max-width: $sm-x) {
             text-align: center;
+            width: 48%;
+            margin-bottom: 2rem;
         }
     }
     .benefits-app-des-list{
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
     .get-btn{
         margin-top: 3rem;

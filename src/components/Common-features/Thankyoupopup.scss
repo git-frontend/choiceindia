@@ -15,7 +15,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    top: 35%;
+    top: 50%;
+    transform: translate(0, -50%);
 
     .sub-row {
       position: relative;
@@ -170,3 +171,25 @@
     display: block;
   }
 }
+
+.thanku-mdl-parent{
+
+  .modal-content{
+      background: transparent;
+        border: none;
+        color: transparent;
+  }
+}
+
+// .modal-content{
+//   background: transparent;
+//   border: none;
+//   color: transparent;
+// }
+
+// display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     position: relative;
+//     top: 50%;
+//     transform: translate(0, -50%);
