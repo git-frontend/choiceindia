@@ -72,14 +72,14 @@ function Thankyoupopup({ isShow }) {
             </Modal>
           </div> :
 
-          <Modal className='common-modal-css common-modal-thankyou'
+          <Modal className='common-modal-css common-modal-thankyou  thanku-mdl-parent'
             show={isShow.showModal}
             size="md"
             aria-labelledby="contained-modal-title-vcenter"
             centered
           >
 
-            <Modal.Body>
+            <Modal.Body className='thanku-mdl-parent'>
               <div>
                 <div className="thanku-overlay thanku-popup-active">
                   <div className="thanku-popup">
