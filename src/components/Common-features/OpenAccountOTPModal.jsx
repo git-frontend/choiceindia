@@ -24,13 +24,13 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [show,setShow] = useState(true);
     // console.log('SSS',show);
     function handleClose(){
-        console.log('Handleclose');
+      //  console.log('Handleclose');
         setShow(() => false);
     }
-    console.log('OOOO',showPopup);
+  //  console.log('OOOO',showPopup);
     /**props object for Thankyou popup */
     const [showlead, setShowLead] = useState({ showModal: false, page: 'no-addlead' });
-    console.log('OOOO',showlead.showModal)
+   // console.log('OOOO',showlead.showModal)
 
     /**to close the thankyou popup */
     function closeModal() {
@@ -98,7 +98,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }).then(otp => {
                 setOtp(otp.code);
             }).catch(err => {
-                console.log(err, "Error web otp");
+               // console.log(err, "Error web otp");
             });
         }
     }
@@ -117,7 +117,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             openAccountService.verifyOTP(request,type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                    console.log('HANDLER',res);
+                  //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                         //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
@@ -169,7 +169,7 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
 
     //resend OTP ON SMS
     function resendOTP() {
-        console.log("check",otpID)
+       // console.log("check",otpID)
         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
             showLoader('resendOTPLoader');
             setOtp('');

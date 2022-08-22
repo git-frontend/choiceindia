@@ -16,7 +16,7 @@ const meta_tags = {
 
     "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker", 'content': "Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for the whole trading life-span of the client.", 'link': "https://choiceindia.com/sub-broker-franchise" },
 
-    "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 1000 Per Referral", 'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.1000 incentive per referral. Your friend will get upto Rs 500 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn" },
+    "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 500 Per Referral", 'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.500 incentive per referral. Your friend will get upto Rs 250 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn" },
 
     "sumeet-bagadia": { 'title': "Sumeet Bagadia - Get Trading Tips, Daily Investment Calls & More", 'content': "Sumeet Bagadia is an Executive Director and Head of Technical Research at Choice Broking. Be connected for trading tips, daily intraday and investment calls, weekly market updates and more.", 'link': 'https://choiceindia.com/sumeet-bagadia' },
 
@@ -203,7 +203,7 @@ const meta_tags = {
 
     "partner": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "investor-info": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+    "investors": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 

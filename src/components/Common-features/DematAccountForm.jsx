@@ -231,7 +231,7 @@ function DematAccountForm(props) {
                     return {...prevState, showModal: true, isFailure: true, titleText: 'Oops' ,msgText: res.data.Message, closeMd: closeModal}
                 });
             }
-            console.log('RRR',res);
+           // console.log('RRR',res);
         })
         setShowLead(true);
         hideLoader('sendOTPLoader');
@@ -276,7 +276,7 @@ function DematAccountForm(props) {
                 
             } else {
                 setAPIError("Something went wrong, please try again later!");
-                console.log("check session",res.Body.session_id);
+               // console.log("check session",res.Body.session_id);
                 showAPIErrorToaster();
             }
         }).catch((error) => {
