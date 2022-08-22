@@ -881,14 +881,15 @@
             display: flex;
             align-items: center;
             margin-top: 3rem;
-            @media (max-width: $xs) {
-                flex-wrap: wrap;
+            @media (max-width: $sm) {
+                flex-wrap: nowrap;
             }
             .link-nrl{
                 background: $primary !important;
                 color: $whiteColor !important;
-                @media (max-width: $xs) {
-                    width: 100%;
+                @media (max-width: $sm) {
+                    width: 50%;
+                  
                 }
                 &:hover{
                     background: $yellowColor !important;
@@ -910,7 +911,7 @@
                 }
             }
             @media (max-width: $sm) {
-                justify-content: center;
+                justify-content: left;
                 margin-bottom: 3rem;
             }
         }
@@ -1241,6 +1242,9 @@
 			font-family: $font-family-poppins-semibold;
 			color: $primary;
 			font-size: 2rem;
+            @media (max-width:$sm) {
+                font-size: 1.6rem;
+            }
 		}
 	}
 
@@ -1288,7 +1292,8 @@
                 position: relative;
                 margin-top: -8rem;
                 @media (max-width:$sm) {
-                    margin-top: inherit;
+                    display:none;
+            
                 }
             }
             @media (max-width:$sm) {
@@ -1318,7 +1323,8 @@
                 flex-wrap: wrap;
                 .link-nrl{
                     @media (max-width:$sm) {
-                        width: 100%;
+                        width: 50%;
+                        flex-wrap: nowrap;
                     }
                 }
             }
@@ -1337,6 +1343,11 @@
 
 .benefits-app{
     .benefits-app-des{
+        .imgwrap{
+            @media (max-width: $sm) {
+                padding: 0 4.5rem;
+            }  
+        }
         h4{
             font-size: 1.8rem;
             line-height: 2.6rem;
