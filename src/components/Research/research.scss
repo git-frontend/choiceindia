@@ -3,7 +3,7 @@
 
 
 .research-banner{
-    padding:10rem 0 15rem 0;
+    padding:5rem 0 15rem 0;
     overflow: inherit;
     .title{
         color: $primary;
@@ -23,6 +23,9 @@
     }
     .bnr-left{
         padding-right: 4rem;
+        @media (max-width:$sm) {
+          padding-bottom: 4rem;
+      }
         @media (max-width: $md) {
             padding-right: 0;
             .title{

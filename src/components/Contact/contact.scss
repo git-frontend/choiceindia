@@ -318,6 +318,9 @@
        
         .formgrp {
             width: 49%;
+            @media (max-width:$sm) {
+                width:100%;
+            }
 
             .formcontrol {
                 background: transparent;
