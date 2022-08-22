@@ -45,7 +45,7 @@ function Contactbanner() {
   });
   const submitFormData = (FormData) => {
     setdatas(FormData)
-    console.log("data", FormData);
+   // console.log("data", FormData);
     
     setIsloader(true)
     
@@ -53,7 +53,7 @@ function Contactbanner() {
       setIsloader(false)
       reset();
       setData("Mail sent Successfully")
-      console.log("check",data)
+     // console.log("check",data)
 
     })
 

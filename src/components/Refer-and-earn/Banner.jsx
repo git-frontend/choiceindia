@@ -45,8 +45,8 @@ function referlink(){
     let valueearn=document.getElementById('referalid');
     valueearn.value =referal
 
-    console.log("value",valueearn);
-    console.log("value2",referal);
+    //console.log("value",valueearn);
+    //console.log("value2",referal);
 
     
 
@@ -65,7 +65,7 @@ function loadrefer() {
         if(res.Response.success === false){
             setreferal1(res.Response.error.description)
             setIserror(true)
-            console.log("show1",show)
+            //console.log("show1",show)
             
 
         } else{
@@ -78,7 +78,7 @@ function loadrefer() {
         setIsShow(true);
         setIserror(false)
         
-        console.log("show",res.Status)
+        //console.log("show",res.Status)
 
         }
     
@@ -88,7 +88,7 @@ function loadrefer() {
   };
 
   function shareLink(key) {
-    console.log("0f",key)
+    //console.log("0f",key)
     let mapper = {
       facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${referal}`, isTextEncode: false, isURLEncode: false },
       whatsapp: { url: `https://api.whatsapp.com/send?text=${referal}`, isTextEncode: false, isURLEncode: false },
@@ -97,7 +97,7 @@ function loadrefer() {
     }
     let linkObject = mapper[key];
     window.open(linkObject.url)
-    console.log("linkObject",linkObject)
+    //console.log("linkObject",linkObject)
   
   }
 

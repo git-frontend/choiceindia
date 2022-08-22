@@ -14,7 +14,7 @@ function Fabdetailsbanner(props) {
     function createMarkup(){
         return {__html: props.html_content};
     }
-    console.log('FablesBanner',props);
+   // console.log('FablesBanner',props);
     function fetchContainerClassName() {
         if (props.showForm) {
             return 'col-md-7';

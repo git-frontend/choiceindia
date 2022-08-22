@@ -17,7 +17,7 @@ import infoimg from '../../assets/images/Info.svg';
 
 
 function AddLeadModal(props) {
-    console.log('TTT addmodal');
+  //  console.log('TTT addmodal');
     // console.log('DDDDDDDD', props.page);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
@@ -128,7 +128,7 @@ function AddLeadModal(props) {
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
             if (props.page == 'add-lead') {
-                console.log('Addd lead page');
+              //  console.log('Addd lead page');
                 sendNewLeadOTP();
             }
             // sendOTP();

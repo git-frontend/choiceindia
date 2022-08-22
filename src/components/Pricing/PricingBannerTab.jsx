@@ -28,7 +28,7 @@ function PricingBannerTab() {
   };
 
   function changeSection(){
-    console.log('CCCCCCCC called');
+    //console.log('CCCCCCCC called');
     // myRef.current.scrollIntoView()
     if(toggleState == 1){
       var element = document.getElementById('scrollstocks');
