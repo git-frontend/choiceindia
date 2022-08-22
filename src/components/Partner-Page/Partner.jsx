@@ -35,7 +35,7 @@ function Partner() {
   }, [rendercount])
 
   return (
-    <div>
+    <div className="partner-main-pg">
       {
         skeleton ? <Template1 /> :
           <div className="partner-skeleton-parent">

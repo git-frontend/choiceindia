@@ -36,7 +36,7 @@ function IPOProcess() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first">Hassle Free IPO Investment <br/> Process</h2>
+              <h2 className="title-first">Hassle Free IPO Investment Process</h2>
             </div>
           </div>
           <div className="row justify-content-center">
