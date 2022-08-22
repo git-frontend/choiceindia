@@ -78,7 +78,10 @@
                             &.formcontrol{
                                 background: $whiteColor !important;
                                 color: $primary !important;
-                                text-transform:uppercase
+                                text-transform:uppercase;
+                                &::placeholder{
+                                    color: $lightgray !important;
+                                }
                             }
                             @media (max-width: $sm) {
                                 padding: 1rem 1rem !important;
@@ -186,7 +189,7 @@
         line-height: 4.5rem;
         font-family: $font-family-poppins-bold;
         @media (max-width: $sm) {
-            font-size: 2.3rem;
+            font-size: 2rem;
             line-height: 3.3rem;
             br{
                 display: none;
