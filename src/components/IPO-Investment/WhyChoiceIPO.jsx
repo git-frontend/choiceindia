@@ -5,8 +5,23 @@ import img3 from '../../assets/images/ipo/ipo-clients.svg'
 import img4 from '../../assets/images/ipo/experience.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from "react-router-dom";
 
 function WhyChoiceIPO() {
+
+
+  /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
  
 
@@ -59,7 +74,7 @@ function WhyChoiceIPO() {
                 <div className="col-md-12">
                     <div className="get-start-sub">
                         <h3>Open 100% Free Demat Account with us</h3>
-                        <a href="/" className="btn-bg btn-bg-dark">Get Started</a>
+                        <Link to="/ipo-investment-account"  onClick={() => { chapterScroll('ipoForm')}} className="btn-bg btn-bg-dark">Get Started</Link>
                     </div>
                 </div>
             </div>
