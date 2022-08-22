@@ -18,116 +18,122 @@
     animation: hideMe 4s forwards;
 }
 
-.bloc-tabs {
-    // display: flex;
-  }
-  .tabs {
-  
-    padding: 15px;
-    text-align: center;
-    width: 50%;
-    cursor: pointer;
-    box-sizing: content-box;
-    position: relative;
-    outline: none;
-  }
-
-  
- 
-  .content-tabs {
-    flex-grow : 1;
-  }
-  .content {
-    background: $whiteColor;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    display: none;
-  }
-
-  .active-content {
-    display: block;
-  }
-  
-
-  .banner-tabs{
-      margin-bottom:6rem;
-      .content-tabs{
-          .banner-tab-cont{
-              display: flex;
-              align-items: flex-start;
-              flex-wrap: wrap;
-              .tab-cont-left{
-                  width: 60%;
-                  padding-top: 5rem;
-                  padding-right: 3rem;
-                  .btn-bg{
-                      margin-top: 4rem;
-                  }
-                  @media (max-width:$sm-x) {
-                    width: 100%;
-                    padding:3rem 0;
-                    text-align: center;
-                  }
-              }
-              .tab-cont-right{
-                  width: 40%;
-                  img{
-                      width: 100%;
-                  }
-                  @media (max-width:$sm-x) {
-                    width: 100%;
-                  }
-              }
-          }
+.partner-main-pg{
+    .bloc-tabs {
+        // display: flex;
       }
-      .bloc-tabs{
-          .tabs{
-              background: transparent;
-              border: 0;
-              padding: 2rem 1rem;
-              &.active-tabs{
-                  border: 0;
-                  &:before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    bottom: inherit;
-                    top: 0;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    width: calc(100% + 2px);
-                    height: 5px;
-                    background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
-                    border-radius: 4px;
-                  }
-              }
-              h4{
-                  font-family: $font-family-poppins-semibold;
-                  margin-top: 1.5rem;
-              }
-              img{
-                margin: 0 auto;
-                @media (max-width:$sm-x) {
-                    width: 50px;
-                }
-              }
-              .tb-ico{
-                display: block;
-                overflow: hidden;
-              }
-              &:hover{
-                .tb-ico{
-                    .img-fluid{
-                        -webkit-animation: toTopFromBottom 0.5s forwards;
-                            -moz-animation: toTopFromBottom 0.5s forwards;
-                            animation: toTopFromBottom 0.5s forwards;
+      .tabs {
+      
+        padding: 15px;
+        text-align: center;
+        width: 50%;
+        cursor: pointer;
+        box-sizing: content-box;
+        position: relative;
+        outline: none;
+      }
+    
+      
+     
+      .content-tabs {
+        flex-grow : 1;
+      }
+      .content {
+        background: $whiteColor;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+    
+      .active-content {
+        display: block;
+      }
+
+      .banner-tabs{
+        margin-bottom:6rem;
+        .content-tabs{
+            .banner-tab-cont{
+                display: flex;
+                align-items: flex-start;
+                flex-wrap: wrap;
+                .tab-cont-left{
+                    width: 60%;
+                    padding-top: 5rem;
+                    padding-right: 3rem;
+                    .btn-bg{
+                        margin-top: 4rem;
+                    }
+                    @media (max-width:$sm-x) {
+                      width: 100%;
+                      padding:3rem 0;
+                      text-align: center;
                     }
                 }
-              }
-          }
-      }
-  }
+                .tab-cont-right{
+                    width: 40%;
+                    img{
+                        width: 100%;
+                    }
+                    @media (max-width:$sm-x) {
+                      width: 100%;
+                    }
+                }
+            }
+        }
+        .bloc-tabs{
+            .tabs{
+                background: transparent;
+                border: 0;
+                padding: 2rem 1rem;
+                &.active-tabs{
+                    border: 0;
+                    &:before {
+                      content: "";
+                      display: block;
+                      position: absolute;
+                      bottom: inherit;
+                      top: 0;
+                      left: 50%;
+                      transform: translateX(-50%);
+                      width: calc(100% + 2px);
+                      height: 5px;
+                      background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+                      border-radius: 4px;
+                    }
+                }
+                h4{
+                    font-family: $font-family-poppins-semibold;
+                    margin-top: 1.5rem;
+                }
+                img{
+                  margin: 0 auto;
+                  @media (max-width:$sm-x) {
+                      width: 50px;
+                  }
+                }
+                .tb-ico{
+                  display: block;
+                  overflow: hidden;
+                }
+                &:hover{
+                  .tb-ico{
+                      .img-fluid{
+                          -webkit-animation: toTopFromBottom 0.5s forwards;
+                              -moz-animation: toTopFromBottom 0.5s forwards;
+                              animation: toTopFromBottom 0.5s forwards;
+                      }
+                  }
+                }
+            }
+        }
+    }
+}
+
+
+  
+
+ 
 
 
 .benefits-partnering {

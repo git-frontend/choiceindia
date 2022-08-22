@@ -19,7 +19,7 @@ function FableBlogList() {
         FablesTrending.fabalcategory().then(
             res => {
                 setData(res.data.data);
-                console.log("check", res.data.data)
+               // console.log("check", res.data.data)
                 // loadfaqFolder(res[0].category_linkage);
             }
         )
@@ -31,7 +31,7 @@ function FableBlogList() {
                 setPost(res.data.posts);
                 setCheck(false)
                 // setPostAll(res.data.posts)
-                console.log("check222", res.data.posts)
+            //    console.log("check222", res.data.posts)
                 // loadfaqFolder(res[0].category_linkage);
             }
         )
@@ -60,7 +60,7 @@ function FableBlogList() {
                                 data.map((res,i) => {
 
                                     let classNameNm = "link-txt" + ((i === count) ? ' link-active' : "")
-                                    console.log("precheck",count)
+                                    //("precheck",count)
                                     return (
                                         
                                         <li onClick={()=>{getfableFolder(res.fable_linkage)

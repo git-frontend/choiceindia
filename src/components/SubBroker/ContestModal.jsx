@@ -26,12 +26,14 @@ function ContestModal() {
         </Modal.Header>
         <Modal.Body>
         <ul className='reset' id="style-scrll">
-                <li>All Trading accounts opened between 1st June, 2022 to 30th June,2022 will only be considered in above scheme</li>
-                        <li>Grace period is provided till 6th July, 2022 to add investment amount &amp; initiate Trade / SIP</li>
+                <li>All trading accounts opened in the current month shall be considered for the offer until the last working day of the same month.</li>
+                        <li>Grace period is provided till 06th of the next month to add investment amount & initiate Trade / SIP.</li>
                         <li>Cash Margin collected during scheme period will be considered for incentive calculation.</li>
-                        <li> Total Margin / SIP added in account till 6th July, 2022 will be considered for final payout calculation</li>
+                        <li>Total Margin / SIP added in account till the date of 06th of next month only  will be considered for final payout calculation.
+</li>
                         <li>Client added with Margin should be active for minimum 3 months i.e Minimum 2 trades every month &amp; SIP should continue for minimum 3 month</li>
-                        <li>Monthly Payout for the contest will be released by 25th July, 2022.</li>
+                        <li>Monthly Payout for the contest will be released on the date of 25th of the next month.
+</li>
                         <li>Trade done in NSE will only be considered for EQ. Trades on any other exchange will not be considered in this contest.</li>
                         <li>SIP done in Equity oriented schemes will only be considered. SIP in Debt Fund / Liquid Fund will not be considered</li>
                         <li>Scheme is applicable for Online Accounts only</li>

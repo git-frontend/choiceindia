@@ -1,19 +1,21 @@
 @import '../../assets/css/customvariable.scss';
 
 
-.home-main{
+.home-main {
     animation: hideMe 4s forwards;
 }
 
 .home-banner {
     padding: 4rem 0 0;
     background-color: $bglight-grey;
-
+    @media (max-width: $sm) {
+        padding: 7rem 0 3rem;
+    }
     .banner-img {
         width: 100%;
         height: auto;
 
-        @media (max-width:576px ) {
+        @media (max-width:576px) {
             display: none;
         }
     }
@@ -31,7 +33,7 @@
 
             h1 {
                 font-size: 4.7rem;
-                line-height: 65px;
+                line-height: 72px;
                 font-family: $font-family-poppins-bold;
                 color: $primary;
 
@@ -41,8 +43,21 @@
                 }
 
                 @media (max-width: $sm) {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                     line-height: 40px;
+                    text-align: center;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 1.75rem;
+                line-height: 2.375rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular;
+                @media (max-width: $sm) {
+                    font-size: 1.5rem;
+                    text-align: center;
                 }
             }
         }
@@ -70,7 +85,7 @@
             padding-bottom: 3rem;
 
             .service-item {
-                padding:0 3.5rem;
+                padding: 0 3.5rem;
                 text-align: center;
 
                 .img-itm {
@@ -203,13 +218,13 @@
             padding-right: 6%;
 
             .finx-app-list {
-                
+
                 margin-top: 6.5rem;
                 margin-left: 0;
 
                 .app-list-item {
                     width: 90% !important;
-                    
+
 
                     img {
                         height: 40px;
@@ -224,6 +239,7 @@
                         display: block;
                         height: 100%;
                         min-height: 16rem;
+
                         .choice-ttl {
                             font-size: 1.625rem;
                             font-family: $font-family-poppins-semibold;
@@ -231,7 +247,7 @@
                             margin: 1rem 0;
                         }
 
-                        .cfx-img{
+                        .cfx-img {
                             display: inline-block;
                             overflow: hidden;
                         }
@@ -243,20 +259,23 @@
                             color: $primary;
                             font-family: $font-family-poppins-regular, sans-serif;
                         }
-                        &:hover{
-                            .cfx-img{
-                                .img-fluid{
+
+                        &:hover {
+                            .cfx-img {
+                                .img-fluid {
                                     -webkit-animation: toTopFromBottom 0.5s forwards;
                                     -moz-animation: toTopFromBottom 0.5s forwards;
                                     animation: toTopFromBottom 0.5s forwards;
                                 }
                             }
                         }
+
                         @media (max-width: $md) {
                             min-height: 24rem;
                         }
+
                         @media (max-width: $xs) {
-                           min-height: inherit;
+                            min-height: inherit;
                         }
                     }
 
@@ -264,10 +283,11 @@
                         width: 97%;
                         margin-bottom: 2rem;
                     }
-                    
+
                 }
-                .slick-slider{
-                    .slick-track{
+
+                .slick-slider {
+                    .slick-track {
                         padding-bottom: 1rem;
                     }
                 }
@@ -362,7 +382,7 @@
 
 
 
-    
+
 
 
 
@@ -434,12 +454,12 @@
 
     .market-insights-list {
         display: flex;
-        
+
         margin-top: 5rem;
 
         .insights-list-item {
             width: 17%;
-            margin:0 2%;
+            margin: 0 2%;
             transition: width 1.5s;
 
             .insights-item-cont {
@@ -621,6 +641,7 @@
     .features-list-cont {
         background: #231F20;
         padding: 7rem 0 1rem 0;
+
         @media (max-width: $sm) {
             padding: 5rem 0;
         }
@@ -664,7 +685,8 @@
                     text-align: center;
                     margin: 0;
                     padding: 0 1rem;
-                    .img-fluid{
+
+                    .img-fluid {
                         margin: 0 auto;
                     }
                 }
@@ -674,7 +696,8 @@
                 margin-left: 0;
             }
         }
-        .slick-dots{
+
+        .slick-dots {
             bottom: -35px;
         }
     }
@@ -720,6 +743,7 @@
                 border-radius: 30px;
                 min-height: 550px;
                 object-fit: cover;
+
                 @media (max-width: $sm) {
                     min-height: auto;
                     height: 300px;
@@ -795,6 +819,7 @@
                         height: 240px;
                     }
                 }
+
                 // .slick-current{
                 //     display: none;
                 // }
@@ -830,7 +855,7 @@
                         padding-left: 0;
                     }
                 }
-                   
+
             }
 
             @media (max-width: $md) {
@@ -1055,6 +1080,7 @@
     }
 
     .testimonial-slider {
+
         // border: 2px solid red;
         .slider-item {
             display: flex !important;
@@ -1093,7 +1119,6 @@
                     display: flex;
                     align-items: center;
                     margin-bottom: 2rem;
-                    flex-wrap: wrap;
 
                     .fa-twitter {
                         color: #0C71B9;
@@ -1111,11 +1136,13 @@
                         font-size: 1.2rem;
                         padding-left: 2.5rem;
                         font-family: $font-family-poppins-regular, sans-serif;
-
+                        padding-left: 3rem;
                         @media (max-width: $sm) {
-                            padding-left: 0.5rem;
+                            
                             padding-top: 0.5rem;
-                            width: 50%;
+                        }
+                        &.rght-txt{
+                            padding-left: 1rem;
                         }
                     }
                 }
@@ -1382,7 +1409,8 @@
                     margin: 0;
                     font-size: 1.6rem;
                 }
-                .cont-img{
+
+                .cont-img {
                     display: block;
                     overflow: hidden;
                 }
@@ -1411,15 +1439,17 @@
                 .bx-item-cont {
                     border: 3px solid $yellowColor;
                     box-shadow: none;
-                    .sl-img{
+
+                    .sl-img {
                         -webkit-animation: toTopFromBottom 0.5s forwards;
-                            -moz-animation: toTopFromBottom 0.5s forwards;
-                            animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
                     }
-                    .mn-img{
+
+                    .mn-img {
                         -webkit-animation: toTopFromBottom 0.5s forwards;
-                            -moz-animation: toTopFromBottom 0.5s forwards;
-                            animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
                     }
                 }
 
@@ -1428,7 +1458,7 @@
                     opacity: 1;
                     visibility: visible;
                 }
-                
+
             }
 
             @media (max-width: $sm) {
@@ -1447,19 +1477,22 @@
 }
 
 
-.home-banner-ved{
+.home-banner-ved {
     position: relative;
-    .banner-ved{
+
+    .banner-ved {
         width: 100%;
         display: block;
     }
-    .banner-ved-des{
+
+    .banner-ved-des {
         position: absolute;
         top: 50%;
         transform: translate(0, -50%);
         width: 100%;
         left: 0;
         z-index: 99;
+
         h1 {
             font-size: 4rem;
             line-height: 5.5rem;
@@ -1477,7 +1510,8 @@
             }
         }
     }
-    &::before{
+
+    &::before {
         content: '';
         width: 100%;
         height: 100%;
@@ -1502,13 +1536,13 @@
 //   .slick-dots li.slick-active + li + li {
 //       display: inline-block;
 //   }
-  
+
 //   .slick-dots li:nth-last-child(1),
 //   .slick-dots li:nth-last-child(2),
 //   .slick-dots li:nth-last-child(3) {
 //       display: inline-block;
 //   }
-  
+
 //   .slick-dots li.slick-active ~ li:nth-last-child(1),
 //   .slick-dots li.slick-active ~ li:nth-last-child(2),
 //   .slick-dots li.slick-active ~ li:nth-last-child(3) {

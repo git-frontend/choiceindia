@@ -94,7 +94,7 @@ function Slidersec() {
             "category_id": 2
         };
         getExpertResearch(request).then((res) => {
-            console.log(res, "RES");
+           // console.log(res, "RES");
             if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
                 let list = res.data.response.research.map((item, i) => {
                     if (item.datapoints && item.datapoints.length) {
@@ -111,14 +111,14 @@ function Slidersec() {
                 setResearch([]);
             }
         }).catch((error) => {
-            console.log(error, "error");
+           // console.log(error, "error");
             setResearch([]);
         });
     }
 
     useEffect(() => {
         fetchExpertResearchReport();
-        console.log('RRR',research.length);
+       // console.log('RRR',research.length);
     }, []);
 
     return (
