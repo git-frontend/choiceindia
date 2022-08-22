@@ -72,11 +72,11 @@ const settings = {
         <div>
 
 
-			<section className="security-privacy same-list-bx services-same-list-bx"> 
+			<section className="security-privacy same-list-bx services-same-list-bx d-none d-sm-block"> 
 				<div className="container">	
 					
 					<div className="row">
-						<div className="col-md-12">
+						<div className="col-md-12 ">
 							{/* <div className="same-list-bx-list"> */}
 							<Slider {...settings} className="same-list-bx-list">
 								<div className="same-list-bx-item">

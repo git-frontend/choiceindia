@@ -30,7 +30,7 @@ function IPOBenifits() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first">IPO Investment + <span>More <br/>Benefits</span>  </h2>
+              <h2 className="title-first">IPO Investment + <span>More Benefits</span>  </h2>
             </div>
           </div>
           <div className="row">
