@@ -17,7 +17,7 @@ function IPOProcess() {
 			slidesToShow: 2,
 			autoplay: true,
 			dots: true,
-			autoplaySpeed: 2000,
+			autoplaySpeed: 3000,
 			slidesToScroll: 2,
 
 		};

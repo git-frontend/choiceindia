@@ -534,6 +534,7 @@
         position: relative;
         margin-left: -2%;
         z-index: 9;
+        
         .sl-slider {
             margin-left: 2%;
             width: 23%;
@@ -549,6 +550,12 @@
                 span {
                     display: block;
                     margin-bottom: 3rem;
+                }
+                .franchise-img{
+                    @media (max-width: $sm) {
+                        text-align:center;
+                    }
+
                 }
 
                 &:hover {
