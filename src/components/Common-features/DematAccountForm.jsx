@@ -120,15 +120,22 @@ function DematAccountForm(props) {
         console.log('closeModal22',link)
         setShowOTP(false);
 
-        if(link._reactName){
-            setShowThanku(prevState => {
-                return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
-            });
+        if(link){
+            if(link._reactName){
+                setShowThanku(prevState => {
+                    return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
+                });
+            }else{
+                setShowThanku(prevState => {
+                    return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
+                });
+            }
         }else{
             setShowThanku(prevState => {
-                return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
+                return {...prevState, showModal: false, redirectionLink: '', closeMd: closeModal}
             });
         }
+
         // closeModal(link);
     }
 
