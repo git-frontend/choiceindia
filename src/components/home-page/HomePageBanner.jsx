@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
-import ImageT from '../../assets/images/home-banner.webp';
+import ImageT from '../../assets/images/the-joy-of-earning.webp';
 
 function HomePageBanner() {
 
@@ -71,7 +71,7 @@ function HomePageBanner() {
                                             </div>
                                         </div>
                                         <div className="col-md-6">
-                                            <LazyLoader src={ImageT} className={"banner-img"} width={"654"} height={"904"} alt={"Loading"} />
+                                            <LazyLoader src={ImageT} className={"banner-img"} width={"654"} height={"904"} alt={"The Joy of Earning"} />
                                             {/**<img src={`https://cmsapi.choiceindia.com/assets/${response.image}`} className="banner-img" alt="Loading" />*/}
                                         </div>
                                     </div>

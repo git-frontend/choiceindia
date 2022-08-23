@@ -1,11 +1,11 @@
 // import ImageSub23 from '../../assets/images/homeimg-small3.png';
-import ImageTesti1 from '../../assets/images/uditgoyal.webp';
-import ImageTesti2 from '../../assets/images/MOChug.webp';
-import ImageTesti3 from '../../assets/images/Aiyer.webp';
-import ImageTesti4 from '../../assets/images/SatishPrajapati.webp';
-import ImageTesti5 from '../../assets/images/ShibiMitra.webp';
-import ImageTesti6 from '../../assets/images/VisheshST.webp';
-import ImageTesti7 from '../../assets/images/Kamlesh.webp';
+import ImageTesti1 from '../../assets/images/udit-goyal.webp';
+import ImageTesti2 from '../../assets/images/monish-chug.webp';
+import ImageTesti3 from '../../assets/images/aparajitha-aiyer.webp';
+import ImageTesti4 from '../../assets/images/satish-prajapati.webp';
+import ImageTesti5 from '../../assets/images/shibani-mitra.webp';
+import ImageTesti6 from '../../assets/images/vishesh-singh-thakur.webp';
+import ImageTesti7 from '../../assets/images/kamlesh-bhadoria.webp';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -194,22 +194,22 @@ function HomeTestimonial() {
 						</div>
 							<div className="testimonial-slider">
 								<div className='imgsub22'>
-									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"60"} height={"59"} alt={"Loading"}/>
+									<LazyLoader src={dataObj[1].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"60"} height={"59"} alt={""}/>
 									{/* <img src={dataObj[1].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub21'>
-									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"100"} height={"99"} alt={"Loading"}/>
+									<LazyLoader src={dataObj[2].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"100"} height={"99"} alt={""}/>
 									{/* <img src={dataObj[2].img} alt="Loading" /> */}
 								</div>
 
 								<div className='imgsub23'>
-									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"80"} height={"79"} alt={"Loading"}/>
+									<LazyLoader src={dataObj[3].img} threshold={[0, 0.5, 1]} className={'img-fluid'} width={"80"} height={"79"} alt={""}/>
 									{/* <img src={dataObj[3].img} alt="Loading" /> */}
 								</div>
 								<div className="slider-item">
 									<div className="slider-item-img">
-										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={"Loading"}/>
+										<LazyLoader src={dataObj[0].img} threshold={[0, 0.5, 1]} className={"img-fluid main-img-slide"} width={"397"} height={"393"} alt={""}/>
 										{/* <img src={dataObj[0].img} alt="Loading" className="main-img-slide" /> */}
 									</div>
 									<div className="slider-item-des">

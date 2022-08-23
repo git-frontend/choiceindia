@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import  ImageSub0  from '../../assets/images/logo-old.svg';
+import  ImageSub0  from '../../assets/images/choice-logo.svg';
 //import  ImageSub1  from '../../assets/images/logo-white.svg';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -19,7 +19,7 @@ export default function Header() {
                 
                 <a href="/">
                     <div  className="navbar-brand logo-main">
-                        <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice India" />
+                        <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice - Best Stock Broker in India" />
                         </div>
                         {/*<img src={ImageSub1} className="img-fluid logo-light" alt="Choice India" />
   */}                      </a>
