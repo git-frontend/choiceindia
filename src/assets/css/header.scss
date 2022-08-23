@@ -152,6 +152,42 @@
                         padding: 0.4rem 1em;
                     }
                 }
+                .dropdown{
+                    .dropdown-menu{
+                        top: 130%;
+                        border: 0;
+                        border-radius: 0;
+                        box-shadow: 0 0 10px #eee;
+                        &::before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 20px solid $whiteColor;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            top: -20px;
+                        }
+                    .dropdown-item{
+                        font-size: 1.3rem;
+                        font-family: $font-family-poppins-regular;
+                        text-transform: capitalize;
+                    }
+                    }
+                    @media screen and (max-width: $md) {
+                        .dropdown-menu{
+                            position: static !important;
+                            top: inherit !important;
+                            transform: inherit !important;
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    } 
+                }
            
         }
         @media (max-width: $md){
@@ -166,6 +202,140 @@
 
         .logo-light{
             display: none;
+        }
+        .top-nav-div{
+            .brand-logo{
+                padding: 0;
+                margin: 0;
+                .navbar-brand{
+                    margin-right: 3rem;
+                    width: 150px;
+                    display: block;
+                }
+            }
+            .navbar-nav{
+
+                align-items: center;
+                
+                .nav-link{
+                    font-size: 1.5rem;
+                    color: #221f20bf;
+                    font-family: $font-family-poppins-medium;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    position: relative;
+                    margin: 0 1rem;
+                    @media screen and (max-width: 1170px) {
+                        font-size: 1.4rem;
+                    }
+                    &:hover{
+                        color: $primary;
+                        &::before{
+                            content: "";
+                            width: 0.7rem;
+                            height: 0.7rem;
+                            display: block;
+                            background: $bgcolordark;
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            border-radius: 2px;
+                            @media screen and (max-width: $md) {
+                                display: none;
+                            }
+                        }
+                    }
+                    
+                    @media (max-width: $md){
+    
+                    }
+                    &.active-header{
+                        color: $primary;
+                        &::before{
+                            content: "";
+                            width: 0.7rem;
+                            height: 0.7rem;
+                            display: block;
+                            background: $bgcolordark;
+                            position: absolute;
+                            bottom: 0px;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            border-radius: 2px;
+                            @media (max-width: $md){
+                                display: none;
+                            }
+                        }
+                    }
+                    &.get-btn{
+                        background: $primary;
+                                color: $whiteColorlight;
+                                display: block;
+                                padding: 1rem 2rem;
+                                border-radius: 12px;
+                                text-align: center;
+                                &:hover{
+                                    background: $bgcolor-yellow;
+                                    color: $primary;
+                                    &::before{
+                                        display: none;
+                                    }
+                                }
+                                @media screen and (max-width: 1170px) {
+                                    padding: 0.5rem 1.5rem;
+                                }   
+                    }
+                    
+                    
+                }
+                .nav-item{
+                    .dropdown-menu{
+                        top: 130%;
+                        border: 0;
+                        border-radius: 0;
+                        box-shadow: 0 0 10px #eee;
+                        &::before{
+                            content: '';
+                            width: 0;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 20px solid $whiteColor;
+                            position: absolute;
+                            left: 0;
+                            right: 0;
+                            margin: 0 auto;
+                            top: -20px;
+                        }
+                    }
+                    .dropdown-item{
+                        font-size: 1.4rem;
+                        font-family: $font-family-poppins-regular;
+                        text-transform: capitalize;
+                    }
+                }
+                .login-btn{
+                    margin-left: 3rem;
+                    a{
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        margin: 0;
+                        &:hover{
+                            &::before{
+                                display: none;
+                            }
+                        }
+                    }
+                    @media screen and (max-width: 1170px) {
+                        margin-left: 1rem;
+                    }
+                }
+               
+            }
+            
         }
     }
     &.header-light{

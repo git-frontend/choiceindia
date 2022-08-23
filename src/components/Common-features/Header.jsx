@@ -6,6 +6,7 @@ function Header() {
       <div className="Header">
         <header className="main-header">
           <MenuHeader />
+          <MenuHeaderNew />
         </header>
       </div>
     );

@@ -1,5 +1,5 @@
 import "../../assets/css/header.scss";
-import  ImageSub0  from '../../assets/images/logo-old.svg';
+import  ImageSub0  from '../../assets/images/choice-logo.svg';
 
 function CampaignHeader() {
   return (

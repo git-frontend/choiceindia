@@ -1,6 +1,6 @@
-import Image1 from '../../assets/images/icons/auction.svg';
-import Image2 from '../../assets/images/icons/shield2.svg';
-import Image3 from '../../assets/images/icons/padlock.svg';
+import Image1 from '../../assets/images/icons/regulated-by-sebi.svg';
+import Image2 from '../../assets/images/icons/security.svg';
+import Image3 from '../../assets/images/icons/privacy.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -26,7 +26,7 @@ function SecurityPrivacy() {
 
 									<div className="bx-item-cont">
 										<span className='cont-img'>
-											<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className={"sl-img"} alt={"Loading"} width={"71"} height={"71"} />
+											<LazyLoader src={Image1} threshold={[0, 0.5, 1]} className={"sl-img"} alt={"Regulated by SEBI"} width={"71"} height={"71"} />
 											{/* <img src={Image1} className="" alt="" /> */}
 										</span>
 										
@@ -37,7 +37,7 @@ function SecurityPrivacy() {
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
 									<span className='cont-img'>
-										<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Loading"} />
+										<LazyLoader src={Image2} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Security"} />
 										{/* <img src={Image2} className="" alt="" />*/}
 									</span>
 										
@@ -48,7 +48,7 @@ function SecurityPrivacy() {
 								<div className="same-list-bx-item">
 									<div className="bx-item-cont">
 									<span className='cont-img'>
-										<LazyLoader src={Image3} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Loading"} />
+										<LazyLoader src={Image3} threshold={[0, 0.5, 1]} className={"sl-img"} width={"71"} height={"71"} alt={"Privacy"} />
 										{/* <img src={Image3} className="" alt="" /> */}
 									</span>
 										

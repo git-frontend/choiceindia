@@ -1,5 +1,5 @@
 import "../../assets/css/footer.scss"
-import ImageFooter0 from '../../assets/images/footer-logo.svg';
+import ImageFooter0 from '../../assets/images/choice-logo-white.svg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons'
 import { faTwitter, faFacebookF, faLinkedinIn, faInstagram, faYoutube, faTelegramPlane } from '@fortawesome/free-brands-svg-icons'
@@ -57,7 +57,7 @@ useEffect(()=>{
                 <div className="col-md-12">
                   <div className="top-sec-sub">
                     <div className="footer-logo">
-                      <NavLink to="/"><LazyLoader src={ImageFooter0} className={"img-fluid"} width={"193"} height={"49"} alt="Loading" /></NavLink>
+                      <NavLink to="/"><LazyLoader src={ImageFooter0} className={"img-fluid"} width={"193"} height={"49"} alt="Choice Financial Services" /></NavLink>
                       {/* <img src={ImageFooter0} className=""  alt='Loading'/> */}
                     </div>
                   </div>
