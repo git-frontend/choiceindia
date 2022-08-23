@@ -203,12 +203,12 @@ function LongTermResearch() {
                           <div className="tab-itm-des">
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                            <p>{res.status === 'pending' ? 'Accept' : res.status ? res.status : " "}</p>
+                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
-                              <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                              {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                              {count === 4 ? <a href="https://jiffy.choiceindia.com/market/latest-ipo-list" className="btn-sm grn-btn"> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm">{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
+                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                             </div>
                           </div>
