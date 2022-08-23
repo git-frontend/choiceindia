@@ -38,14 +38,14 @@ function EverydayFinance() {
 
   return (
     <div>
-      <section className="main-services">
+      <section className="main-services" >
         <div className="container">
           <div className="row">
-            <div className="col-md-12">
+            <div className="col-md-12" id='everydayfin'>
               <h2 className="title-first">Everyday Finance in one Place</h2>
             </div>
           </div>
-          <div className="row">
+          <div className="row" >
             <div className="col-md-12">
               <div className="main-services-list">
                 <Slider {...settings} className="services-list-slider">
