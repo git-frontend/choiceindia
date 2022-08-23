@@ -5,6 +5,20 @@ import ImageT from '../../assets/images/home-banner.webp';
 
 function HomePageBanner() {
 
+
+    /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
     // const [primary, setPrimary] = useState([]);
     // const [trigger, setTrigger] = useState(false);
     // const [skeleton, setSkeleton] = useState(() => true);
@@ -51,7 +65,7 @@ function HomePageBanner() {
                                                 {/* <h1>{response.title} <br/>{response.description}</h1> */}
                                                 <h1>Experience <br />The Joy of Earning</h1>
                                                 <p className="pt-5 pb-5">Choice makes it easier for you to handle your own finances. Let's take pleasure in each and every moment of your financial journey with us.</p>
-                                                <div className="text-md-start text-center"><a href="#" target="_blank" >
+                                                <div className="text-md-start text-center cursor-pointer"><a onClick={()=>{chapterScroll('everydayfin')}} target="_blank" >
                         <span className="btn-bg">Explore Now</span>
                       </a></div>
                                             </div>

@@ -343,7 +343,8 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
             </div> */}
 
 
-<Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose}>
+<Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose} backdrop='static' keyboard={false}>
+
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
                 <Modal.Body className="border-0">
@@ -369,7 +370,7 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
                                     <div>
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="text" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="number" id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }

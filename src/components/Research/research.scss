@@ -161,6 +161,7 @@
     }
     .research-tab-cont{
         .research-tab-list{
+          min-height: 400px;
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;

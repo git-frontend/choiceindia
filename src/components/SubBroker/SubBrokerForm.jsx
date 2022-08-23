@@ -735,7 +735,7 @@ function SubBrokerForm(props) {
             //     </div>
             // </div> 
             
-                    <Modal show={show} className="bt-strap-mdl" onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -761,7 +761,7 @@ function SubBrokerForm(props) {
                                             <div>
 
 
-                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="number" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                                 {
                                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                                 }

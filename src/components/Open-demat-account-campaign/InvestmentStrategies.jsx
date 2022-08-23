@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Strategies';
+import imageData from '../../Data/Onlinetrading/RealTrade';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
+import { Link } from 'react-router-dom';
 
 function AppStrategies() {
     const [isShown3, setIsShown3] = useState(0);
@@ -15,13 +16,26 @@ function AppStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: false,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,
        
     };
+
+    /** scroll id view */
+
+function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
 
     return (
@@ -91,7 +105,7 @@ function AppStrategies() {
                         </div>
                     </div>
                     <div className="row mt-5">
-                        <div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/"><span className="btn-bg btn-bg-dark">Get it Now</span></a></div>
+                        <div className="col-md-12 mt-5 d-flex justify-content-center"><Link to="/campaign/open-demat-account"  onClick={() => { chapterScroll('campaignForm')}}><span className="btn-bg btn-bg-dark">Get it Now</span></Link></div>
                      </div>
                 </div>
             </div>

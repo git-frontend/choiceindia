@@ -17,7 +17,7 @@ function Thankyoupopup({ isShow }) {
   // },[isShow])
   // const [show, setShow] = useState(isShow);
   // const show = useRef(null);
-
+     const [check, setCheck] = useState(true);
   // useEffect(() => {
   //   // setShow(() => isShow)
   //   show.current = isShow.showModal;
@@ -49,6 +49,8 @@ function Thankyoupopup({ isShow }) {
               show={isShow.showModal}
               size="md"
               aria-labelledby="contained-modal-title-vcenter"
+              backdrop='static'
+              keyboard={false}
               centered
               onHide={() => isShow.closeMd()}
             >
@@ -61,10 +63,17 @@ function Thankyoupopup({ isShow }) {
                 {
                   isShow.isFailure ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
                 }
+                {/* {
+                  check ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
+                } */}
                 <h4>{isShow.titleText}</h4>
+                {/* <h4>Oops</h4> */}
                 <h3>
                   {isShow.msgText}
                 </h3>
+                {/* <h3>
+                  Something went wrong!
+                </h3> */}
               </Modal.Body>
               <Modal.Footer>
                 <Button variant="warning" className='btn-yellow' onClick={() => isShow.closeMd()}>Ok</Button>
@@ -76,6 +85,8 @@ function Thankyoupopup({ isShow }) {
             show={isShow.showModal}
             size="md"
             aria-labelledby="contained-modal-title-vcenter"
+            backdrop='static'
+            keyboard={false}
             centered
           >
 

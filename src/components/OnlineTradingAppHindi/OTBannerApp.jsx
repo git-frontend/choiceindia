@@ -71,7 +71,7 @@ function OTBannerApp() {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5 d-none d-sm-block">
                     <div className="sec1-right">
                         <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"334"} height={"661"}/>
                         <LazyLoader src={AppImage2} className={"img-fluid mn-img1"} alt={"Loading"} width={"260"} height={"197"}/>

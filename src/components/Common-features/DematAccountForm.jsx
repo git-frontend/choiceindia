@@ -14,7 +14,8 @@ import check from '../Add-lead/check-small.jpg';
 import cross from '../Add-lead/red cross.jpg';
 import Thankyoupopup from './Thanku-popup.jsx';
 import infoimg from '../../assets/images/Info.svg';
-
+import failureimg from '../../assets/images/failure.svg';
+import './Thankyoupopup.scss';
 
 function DematAccountForm(props) {
     // console.log('DDDDDDDD', props.page);
@@ -119,15 +120,22 @@ function DematAccountForm(props) {
         console.log('closeModal22',link)
         setShowOTP(false);
 
-        if(link._reactName){
-            setShowThanku(prevState => {
-                return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
-            });
+        if(link){
+            if(link._reactName){
+                setShowThanku(prevState => {
+                    return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
+                });
+            }else{
+                setShowThanku(prevState => {
+                    return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
+                });
+            }
         }else{
             setShowThanku(prevState => {
-                return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
+                return {...prevState, showModal: false, redirectionLink: '', closeMd: closeModal}
             });
         }
+
         // closeModal(link);
     }
 
@@ -599,7 +607,7 @@ function DematAccountForm(props) {
                 </Modal.Body>
             </Modal> */}
 
-            <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
+            {/* <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header>
                     <Modal.Title>Error</Modal.Title>
@@ -610,7 +618,36 @@ function DematAccountForm(props) {
                         Okay
                     </Button>
                 </Modal.Footer>
+            </Modal> */}
+            
+            <Modal className='common-modal-css common-modal-thankyou'
+              show={showErrorToaster}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              backdrop='static'
+              keyboard={false}
+              centered
+              onHide={hideAPIErrorToaster}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {
+                  <img src={failureimg} height="80" width="80" alt='Failure' />
+                }
+                <h4>Oops</h4>
+                <h3>
+                  {APIError}
+                </h3>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
+              </Modal.Footer>
             </Modal>
+
             <Modal show={OTPInfoPopup} onHide={hideOTPInfoPopup} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Body className="info-mdl-pup"><img src={infoimg} width='52' height='52' alt="Info"/></Modal.Body>

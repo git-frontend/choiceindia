@@ -137,7 +137,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
                 {/* <div className="close">
-                            <Link to="" className="closebtn" >&times;</Link>
+                            <Link to="" class="closebtn" >&times;</Link>
                             </div> */}
                     <div className="popup-sub-row">
                         <div className="leftwrap">
@@ -163,7 +163,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     <h4 className="desktophide">+ 1st Year Free AMC </h4>
                                     <div className="form-group">
                                         {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
-                                        <input type="text" autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
+                                        <input type="number" autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
                                         <div>
                                             <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                             <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.required ? 'Mobile Number is Required' : ''}</small>
