@@ -882,7 +882,8 @@
             align-items: center;
             margin-top: 3rem;
             @media (max-width: $xs) {
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
+               
             }
             .link-nrl{
                 background: $primary !important;
