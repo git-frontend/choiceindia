@@ -10,7 +10,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-first text-center pb-4">Jiffy Share Market App Related FAQs</h2>
+               <h2 className="title-secnd text-center pb-4">Jiffy Share Market App Related FAQs</h2>
             </div>
          </div>
          <div className="row">

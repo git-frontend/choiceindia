@@ -13,6 +13,7 @@ function AppOTDownloadJiffy() {
 
       <section className='down-jiffy'>
         <div className='container'>
+          <div className='row'>
           <div className='col-md-12'>
             <div className='down-jiffy-sub'>
                 
@@ -41,6 +42,7 @@ function AppOTDownloadJiffy() {
                 </div>
                   
             </div>
+          </div>
           </div>
         </div>
       </section>
