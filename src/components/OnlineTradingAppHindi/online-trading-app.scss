@@ -839,7 +839,7 @@
                 margin-bottom: 1rem;
                 font-family: $font-family-poppins-bold;
                 .mb-br{
-                    @media (max-width: 385px) {
+                    @media (max-width: 485px) {
                         display: block;
                     }
                 }
@@ -1255,6 +1255,9 @@
 			font-family: $font-family-poppins-semibold;
 			color: $primary;
 			font-size: 2rem;
+            @media (max-width:$sm) {
+                font-size: 1.65rem;
+            }
 		}
 	}
 
@@ -1303,6 +1306,7 @@
                 margin-top: -8rem;
                 @media (max-width:$sm) {
                     margin-top: inherit;
+                    display: none;
                 }
             }
             @media (max-width:$sm) {
@@ -1351,17 +1355,31 @@
 
 .benefits-app{
     .benefits-app-des{
+        .imgwrap{
+            padding: 0 4.5rem;
+        }
         h4{
             font-size: 1.8rem;
             line-height: 2.6rem;
+            @media (max-width: $sm) {
+                font-size: 1.5rem;
+                line-height: 2.2rem;
+            }
         }
-        @media (max-width: $sm-x) {
+        @media (max-width: $sm) {
             text-align: center;
+            width: 48%;
+    margin-bottom: 2rem;
         }
     }
     .benefits-app-des-list{
         display: flex;
         justify-content: space-between;
+        @media (max-width:$sm) {
+            display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+        }
     }
     .get-btn{
         margin-top: 3rem;
