@@ -1,6 +1,7 @@
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
+import { Link } from "react-router-dom";
 
 function AppBenefits() {
 
@@ -17,7 +18,7 @@ function AppBenefits() {
 							<div className="heading-sec">
 								<h2 className="title-secnd text-white">App with <br />Multiple Benefits</h2>
 								<p>Discover why Lakhs of customers choose to invest with CHOICE</p>
-								<a href="https://jiffy.choiceindia.com/auth/login"><span  className="btn-bg btn-bg-dark">Sign Up</span></a>
+								<Link to='/open-free-demat-account'><span  className="btn-bg btn-bg-dark">Sign Up</span></Link>
 							</div>
 						</div>
 						<div className="col-lg-8 d-flex justify-content-end">
