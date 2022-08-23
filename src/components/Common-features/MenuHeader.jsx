@@ -4,6 +4,8 @@ import  ImageSub0  from '../../assets/images/logo-old.svg';
 import {NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
+import Nav from 'react-bootstrap/Nav';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export default function Header() {
 
@@ -50,11 +52,19 @@ export default function Header() {
                             <li className="nav-item">
                                 <NavLink to= '/contact-us'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Contact</NavLink>
                             </li>
-                            <li className="nav-item login-btn">
+                            {/* <li className="nav-item login-btn">
                                 <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} >Log In</a>
+                            </li> */}
+                            <li className="nav-item login-btn">
+                                <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
+                                    <NavDropdown.Item className="nav-dropdown-links">client </NavDropdown.Item>
+                                    <NavDropdown.Item className="nav-dropdown-links">partner</NavDropdown.Item>
+                                    <NavDropdown.Item className="nav-dropdown-links">employee</NavDropdown.Item>
+                                </NavDropdown>
                             </li>
+                           
                             <li className="nav-item get-btn">
-                            <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
+                                <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
                             </li>
                         </ul>
                     </div>

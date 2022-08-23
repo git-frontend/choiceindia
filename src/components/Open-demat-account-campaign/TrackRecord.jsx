@@ -1,6 +1,6 @@
 
 import React from "react";
-import img1 from '../../assets/images/demat-images/mockup-iphone.webp'
+import img1 from '../../assets/images/open-demat-account/jiffy-trading-app.webp'
 import img2 from '../../assets/images/demat-images/trusted-clients.svg'
 import img3 from '../../assets/images/demat-images/top-rated.svg'
 import img4 from '../../assets/images/demat-images/secured-trading.svg'
@@ -63,7 +63,7 @@ function TrackRecord() {
           <div className="container">
               <div className="row flex-md-row-reverse align-items-center justify-content-between">
                   <div className="col-md-7">
-                      <h2 className="title-first">our track record says it all</h2>
+                      <h2 className="title-first">One App for All Segments</h2>
                       <div className="track-scnd-list">
                           <div className="scnd-list-itm">
                             <LazyLoader src={img2} alt={"trusted clients"} className={"img-fluid"} width={"71"} height={"71"} />
@@ -92,7 +92,7 @@ function TrackRecord() {
               <div className="col-md-12">
                   <div className="record-count-list">
                     <div className="record-count-itm">
-                        <h3>4L+</h3>
+                        <h3>5L+</h3>
                         <h4>App Downloads</h4>
                     </div>
                     <div className="record-count-itm">

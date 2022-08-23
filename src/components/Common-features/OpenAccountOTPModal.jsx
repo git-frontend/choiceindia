@@ -343,7 +343,7 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
             </div> */}
 
 
-<Modal show={show} className="bt-strap-mdl" onHide={onClose}>
+<Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose}>
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
                 <Modal.Body className="border-0">

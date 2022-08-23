@@ -305,7 +305,7 @@
 		} 
 		// padding:40px 60px;
 		.popup-sub-row {
-			padding: 56px 8px;
+			padding: 1rem 0;
 			display: flex;
 			justify-content: center;
 			text-align: center;
@@ -518,4 +518,28 @@
 
 .info-mdl-pup{
 	margin:auto;
+}
+
+
+.otp-main-modal{
+	.modal-dialog{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%) !important; 
+		margin: 0;
+		width: 500px;
+		.modal-content{
+			.exit-intent-sleekbox-popup{
+				padding: 0;
+				margin: 0;
+			}
+			.exit-intent-sleekbox-overlay{
+				background: $whiteColor;
+			}
+		}
+		@media (max-width: $sm){
+			width: 98%;
+		}
+	}
 }
