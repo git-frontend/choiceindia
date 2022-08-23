@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Strategies';
+import imageData from '../../Data/Onlinetrading/RealTrade';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
@@ -16,7 +16,7 @@ function AppStrategies() {
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
-        slidesToShow: 4,
+        slidesToShow: 3,
         autoplay: false,
         dots: false,
         autoplaySpeed: 2000,
