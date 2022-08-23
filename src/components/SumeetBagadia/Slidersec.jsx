@@ -143,7 +143,7 @@ function Slidersec() {
                                             return (
                                                 <div className="service-item" key={item.id}>
                                                     <div className="item-slider">
-                                                        <h4>{item.scrip_name}</h4>
+                                                        <h4 style={{"font-weight": "bold"}}>{item.scrip_name}</h4>
                                                         <ul>
                                                             <li>
                                                                 <h4>Entry Price</h4>
