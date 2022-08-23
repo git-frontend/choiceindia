@@ -191,7 +191,7 @@ function LongTermResearch() {
                             <div className="itm-des-sub">
                               <span className="date-post">03 Mar 2022</span>
                               {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                              {count === 4 ? <a href="https://jiffy.choiceindia.com/market/latest-ipo-list" className="btn-sm grn-btn"> SUBSCRIBE</a> : count === 2 ? <a  className="btn-sm">HOLD</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                              {count === 4 ? <a href="https://jiffy.choiceindia.com/market/latest-ipo-list" className="btn-sm grn-btn"> SUBSCRIBE</a> : count === 2 ? <a  className="btn-sm">{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                             </div>
                           </div>
@@ -220,7 +220,7 @@ function LongTermResearch() {
                                 <div className="itm-des-sub">
                                   <span className="date-post">03 Mar 2022</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                  {count === 4 ? <a href="https://jiffy.choiceindia.com/market/latest-ipo-list" className="btn-sm grn-btn"> SUBSCRIBE</a> : count === 2 ? <a  className="btn-sm btn-ptr">HOLD</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                  {count === 4 ? <a href="https://jiffy.choiceindia.com/market/latest-ipo-list" className="btn-sm grn-btn"> SUBSCRIBE</a> : count === 2 ? <a  className="btn-sm btn-ptr">{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                                 </div>
                               </div>
