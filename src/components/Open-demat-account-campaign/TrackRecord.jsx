@@ -6,6 +6,7 @@ import img4 from '../../assets/images/demat-images/secured-trading.svg'
 import axios from "axios";
 import LazyLoader from '../Common-features/LazyLoader';
 import { API_URLS } from "../../Services/API-URLS";
+import { Link } from "react-router-dom";
 
 function TrackRecord() {
   const [research, setResearch] = useState([]);
@@ -13,6 +14,19 @@ function TrackRecord() {
   function getExpertResearch(request) {
     let url = new API_URLS().getExpertResearchreportURL();
     return axios.post(url, request, {});
+}
+
+/** scroll id view */
+
+function chapterScroll(id) {
+  var element = document.getElementById(id);
+  var headerOffset = 140;
+  var elementPosition = element.getBoundingClientRect().top;
+  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  window.scrollTo({
+    top: offsetPosition,
+    behavior: "smooth"
+  });
 }
 
 function fetchExpertResearchReport() {
@@ -121,7 +135,7 @@ useEffect(() => {
             </div>
           </div>
           <div className="row">
-            <div className="col-md-12 mt-5 d-flex justify-content-center"><a href="/"><span className="btn-bg">Yes , I am in </span></a></div>
+            <div className="col-md-12 mt-5 d-flex justify-content-center"><Link to="/campaign/open-demat-account" onClick={() => { chapterScroll('campaignForm')}}><span className="btn-bg">Yes , I am in </span></Link></div>
           </div>
         </div>
       </section>

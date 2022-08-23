@@ -62,7 +62,7 @@ function SMABannerApp() {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5 d-none d-sm-block">
                     <div className="sec1-right">
                         <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"387"} height={"727"}/>
                         
