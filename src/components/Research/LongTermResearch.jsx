@@ -25,7 +25,7 @@ function LongTermResearch() {
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
-    matches: window.innerWidth < 770 ? false : true,
+    matches: window.innerWidth < 767 ? false : true,
 });
 
 const settings = {
@@ -33,7 +33,7 @@ const settings = {
   speed: 1500,
   arrows: false,
   slidesToShow: 1,
-  autoplay: true,
+  autoplay: false,
   dots: true,
   autoplaySpeed: 3000,
   slidesToScroll: 1,

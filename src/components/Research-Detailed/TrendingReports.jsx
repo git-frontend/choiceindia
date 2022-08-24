@@ -89,7 +89,10 @@ function TrendingReports(props) {
                               <div className="tab-itm-des">
                                 <h3 className="ttl-des">{res?.title ? res?.title : ''} </h3>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
-                                <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
+                                <div className="itm-des-text">
+                                   <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
+                                </div>
+                                
                                 <div className="itm-des-sub">
                                   <span className="date-post">03 Mar 2022</span>
                                   {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
@@ -117,7 +120,10 @@ function TrendingReports(props) {
                               <div className="tab-itm-des">
                                 <h3 className="ttl-des">{res?.title ? res?.title : ''} </h3>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
+                                <div className="itm-des-text">
                                 <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
+                                </div>
+                                
                                 <div className="itm-des-sub">
                                   <span className="date-post">03 Mar 2022</span>
                                   {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
