@@ -17,7 +17,7 @@ function Thankyoupopup({ isShow }) {
   // },[isShow])
   // const [show, setShow] = useState(isShow);
   // const show = useRef(null);
-     const [check, setCheck] = useState(true);
+    //  const [check, setCheck] = useState(true);
   // useEffect(() => {
   //   // setShow(() => isShow)
   //   show.current = isShow.showModal;
@@ -43,7 +43,6 @@ function Thankyoupopup({ isShow }) {
   return (
     <>
       {
-
         isShow.page == 'add-lead' ?
           <div>
             <Modal className='common-modal-css common-modal-thankyou'
@@ -56,17 +55,17 @@ function Thankyoupopup({ isShow }) {
               onHide={() => isShow.closeMd()}
             >
               <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter" >
+                <Modal.Title id="contained-modal-title-vcenter">
 
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                {/* {
-                  isShow.isFailure ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
-                } */}
                 {
-                  check ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
+                  isShow.isFailure ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
                 }
+                {/* {
+                  check ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
+                } */}
                 <h4>{isShow.titleText}</h4>
                 {/* <h4>Oops</h4> */}
                 <h3>
@@ -102,7 +101,7 @@ function Thankyoupopup({ isShow }) {
                       <div className="thanku">
                         <h1>Thank You !</h1>
                       </div>
-                      <div className={"body-content" +( window.location.pathname =="/sub-broker-franchise" ? " sub-broker-success":" campaign-success")}>
+                      <div className="body-content">
                         <p className="heading">Thank You For Your Registration!</p>
                         <p className="subheading">You are being redirected to onboarding page!</p>
                         <button className="btn-yellow" onClick={() => isShow.closeMd(isShow.redirectionLink)}>OK</button>
