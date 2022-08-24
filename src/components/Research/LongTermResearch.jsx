@@ -229,7 +229,10 @@ const settings = {
                           <div className="tab-itm-des">
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                            <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            </div>
+                            
                             
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
@@ -262,7 +265,10 @@ const settings = {
                          <div className="tab-itm-des">
                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                           <div className="itm-des-text">
+                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                          </div>
+                           
                            
                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">
@@ -303,7 +309,10 @@ const settings = {
                           <div className="tab-itm-des">
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                            <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            </div>
+                            
                             
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
@@ -336,7 +345,10 @@ const settings = {
                          <div className="tab-itm-des">
                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                           <div className="itm-des-text">
                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                           </div>
+                           
                          
                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">
