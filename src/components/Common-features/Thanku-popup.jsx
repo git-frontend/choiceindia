@@ -43,6 +43,7 @@ function Thankyoupopup({ isShow }) {
   return (
     <>
       {
+
         isShow.page == 'add-lead' ?
           <div>
             <Modal className='common-modal-css common-modal-thankyou'
@@ -55,7 +56,7 @@ function Thankyoupopup({ isShow }) {
               onHide={() => isShow.closeMd()}
             >
               <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
+                <Modal.Title id="contained-modal-title-vcenter" >
 
                 </Modal.Title>
               </Modal.Header>
@@ -101,7 +102,7 @@ function Thankyoupopup({ isShow }) {
                       <div className="thanku">
                         <h1>Thank You !</h1>
                       </div>
-                      <div className="body-content">
+                      <div className={"body-content" +( window.location.pathname =="/sub-broker-franchise" ? " sub-broker-success":" campaign-success")}>
                         <p className="heading">Thank You For Your Registration!</p>
                         <p className="subheading">You are being redirected to onboarding page!</p>
                         <button className="btn-yellow" onClick={() => isShow.closeMd(isShow.redirectionLink)}>OK</button>
