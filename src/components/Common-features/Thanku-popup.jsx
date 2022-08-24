@@ -60,12 +60,12 @@ function Thankyoupopup({ isShow }) {
                 </Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                {
-                  isShow.isFailure ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
-                }
                 {/* {
-                  check ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
+                  isShow.isFailure ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
                 } */}
+                {
+                  check ? <img src={failureimg} height="80" width="80" alt='Failure' /> : <img src={successimg} height="100" width="100" alt='Success' />
+                }
                 <h4>{isShow.titleText}</h4>
                 {/* <h4>Oops</h4> */}
                 <h3>

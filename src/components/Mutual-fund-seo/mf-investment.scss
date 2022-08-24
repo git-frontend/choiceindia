@@ -519,6 +519,22 @@ body{
                     display: inline-block;
                     margin-bottom: 1.5rem;
                 }
+                .name-font{
+                    display: inline-block;
+                    width: 5rem;
+                    height: 5rem;
+                    text-align: center;
+                    line-height: 4.6rem;
+                    // border-radius: 50%;
+                    background: $yellowColor;
+                    font-size: 2.6rem;
+                    font-family: $font-family-RedHat-Bold;
+                    margin-bottom: 2rem;
+                    // background: #ffffff;
+                    // border: 0.3rem solid #25B8AF;
+                    background: url(../../assets/images/mutual-funds-investment/quote-icon.svg) no-repeat $whiteColor; 
+                    background-size: 100% 100%;
+                }
                 h3{
                     margin-top: 3rem;
                     font-family: $font-family-RedHat-Bold;
