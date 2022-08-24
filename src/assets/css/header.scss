@@ -159,7 +159,7 @@
                         border-radius: 0;
                         box-shadow: 0 0 10px #eee;
                         &::before{
-                            content: '';
+                            // content: '';
                             width: 0;
                             height: 0;
                             border-left: 15px solid transparent;
@@ -175,6 +175,10 @@
                         font-size: 1.3rem;
                         font-family: $font-family-poppins-regular;
                         text-transform: capitalize;
+                        background: $whiteColor !important;
+                        &:hover{
+                            background: #e9ecef !important; 
+                        }
                     }
                     }
                     @media screen and (max-width: $md) {
