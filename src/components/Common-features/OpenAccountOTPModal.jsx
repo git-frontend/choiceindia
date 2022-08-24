@@ -367,10 +367,10 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
                                         }
 
                                     </div>
-                                    <div>
+                                    <div className="otp-mdl-input-chk">
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="text" pattern='\d*' id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="number" pattern='\d*' id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }
