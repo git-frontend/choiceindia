@@ -394,7 +394,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                     <div>
                                         {
                                             !count ?
-                                                <div>
+                                                <div className="d-flex align-items-center justify-content-center">
                                                     <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
                                                         // <div className="dotLoaderB colorB marginLoader"></div>
                                                         : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>

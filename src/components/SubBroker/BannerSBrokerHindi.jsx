@@ -13,9 +13,9 @@ function BannerSBrokerHindi() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner caption-hindi">
                                 <div className="left-sec">
-                                    <h2 className="tlt2">शूरू करे सब ब्रोकर</h2>
-                                    <h1 className="tlt1">फ्रेंचाइजी</h1>
-                                    <h2 className="tlt2">बिना डिपोजिट</h2>
+                                 <h1 className="tlt1"><span className="tlt2">शूरू करे सब ब्रोकर</span>
+                                    फ्रेंचाइजी
+                                    <span className="tlt2">बिना डिपोजिट</span></h1>
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"} />

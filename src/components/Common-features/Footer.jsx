@@ -70,7 +70,7 @@ useEffect(()=>{
                               <h4>Services</h4>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Broking & Distribution</NavLink>
+                              <NavLink className="cursor-pointer" to="/equity-broking" >Broking & Distribution</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>

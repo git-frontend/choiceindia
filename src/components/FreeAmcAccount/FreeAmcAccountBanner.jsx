@@ -16,7 +16,7 @@ const FreeAmcAccountBanner = () => {
                     <div className="row">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
-                                <div className="desktop">Open a AMC Demat <br /> <span className="yellow">Online For Free</span></div>
+                                <div className="desktop">Open a Zero AMC Demat <br /> <span className="yellow">Account Online For Free</span></div>
                                 
                             </h1>
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}

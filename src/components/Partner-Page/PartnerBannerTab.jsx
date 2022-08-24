@@ -74,7 +74,7 @@ function PartnerBannerTab() {
                     <h3 className="title-secnd">{partnerBanner[store].title}</h3>
                     <p>{partnerBanner[store].description}</p>
                   </div>
-                  <a href="https://choiceconnect.in/register" className="btn-bg">Register</a>
+                  <a href="https://choiceconnect.in/register" target="_blank" className="btn-bg">Register</a>
                 </div>
 
                 {

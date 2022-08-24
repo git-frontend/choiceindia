@@ -57,11 +57,15 @@ export default function Header() {
                             </li> */}
                             <li className="nav-item login-btn">
                                 <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
-                                    <NavDropdown.Item className="nav-dropdown-links">client </NavDropdown.Item>
-                                    <NavDropdown.Item className="nav-dropdown-links">partner</NavDropdown.Item>
-                                    <NavDropdown.Item className="nav-dropdown-links">employee</NavDropdown.Item>
+                               <NavDropdown.Item className="nav-dropdown-links" href='https://jiffy.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://login.choiceindia.com/Account/Login'>partner</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
                                 </NavDropdown>
                             </li>
+                            {/* <li className="nav-item login-btn">
+                                <a href='https://jiffy.choiceindia.com/auth/login'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Log In</a>
+                            </li> */}
+
                            
                             <li className="nav-item get-btn">
                                 <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>

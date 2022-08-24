@@ -17,7 +17,7 @@ function Thankyoupopup({ isShow }) {
   // },[isShow])
   // const [show, setShow] = useState(isShow);
   // const show = useRef(null);
-     const [check, setCheck] = useState(true);
+    //  const [check, setCheck] = useState(true);
   // useEffect(() => {
   //   // setShow(() => isShow)
   //   show.current = isShow.showModal;
