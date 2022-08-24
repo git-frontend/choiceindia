@@ -13,9 +13,9 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h2 className="tlt2">Start Sub Broker</h2>
-                                    <h1 className="tlt1">Franchise</h1>
-                                    <h2 className="tlt2">without Deposit*</h2>
+                                <h1 className="tlt1"><span className="tlt2">Start Sub Broker</span>
+                                    Franchise
+                                    <span className="tlt2">without Deposit*</span></h1>
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"} />
