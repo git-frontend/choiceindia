@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import thumb1 from '../../assets/images/research/thumbnail-1.webp';
 import ResearchService from "../../Services/ResearchService";
 import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import utils from "../../Services/utils";
+import { API_URLS } from "../../Services/API-URLS";
 
 function TrendingReports(props) {
 
@@ -83,18 +85,18 @@ function TrendingReports(props) {
 
                             <div className="res-tab-itm" key={res.id}>
                               <div className="tab-itm-img">
-                                <img src={res?.feature_image ? res?.feature_image : ''} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
+                              <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
                               </div>
                               <div className="tab-itm-des">
-                                <h3 className="ttl-des">{res?.title ? res?.title : ''} </h3>
+                                <h3 className="ttl-des">{res.report_subtype_name == "IPO REPORT" ? res.scrip_name||"" : res.title||""} </h3>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
                                 <div className="itm-des-text">
-                                   <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
+                                <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                                 </div>
-                                
+                                {res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                                 <div className="itm-des-sub">
-                                  <span className="date-post">03 Mar 2022</span>
+                                  <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
                                   {/* <a href="#" className="post-read">Read More</a> */}
                                 </div>
@@ -114,19 +116,19 @@ function TrendingReports(props) {
 
                             <div className="res-tab-itm" key={res.id}>
                               <div className="tab-itm-img">
-                                <img src={res?.feature_image ? res?.feature_image : ''} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img>
+                              <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
                               </div>
                               <div className="tab-itm-des">
-                                <h3 className="ttl-des">{res?.title ? res?.title : ''} </h3>
+                                <h3 className="ttl-des">{res.report_subtype_name == "IPO REPORT" ? res.scrip_name||"" : res.title||""} </h3>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
                                 <div className="itm-des-text">
-                                <p className="tag-pref">{res?.report_name ? res?.report_name : ''}</p>
+                                <p dangerouslySetInnerHTML={{__html: res.description}}></p>
                                 </div>
                                 
                                 <div className="itm-des-sub">
-                                  <span className="date-post">03 Mar 2022</span>
-                                  {res.report_subtype_name == "IPO REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm grn-btn"> SUBSCRIBE</a>:res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a onClick={() => {getSingleDetail(res.uuid)}} className="btn-sm">HOLD</a>:<a onClick={() => {getSingleDetail(res.uuid)}} className="post-read">Read More</a>}
+                                  <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
+                                  {res.report_subtype_name == "IPO REPORT"? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
                                   {/* <a href="#" className="post-read">Read More</a> */}
                                 </div>
                               </div>
