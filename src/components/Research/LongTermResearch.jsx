@@ -15,6 +15,7 @@ import { Spinner } from "react-bootstrap";
 import Template6 from "../Common-features/Template6";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
+import Slider from 'react-slick';
 
 function LongTermResearch() {
   const [check, setCheck] = useState();
@@ -23,6 +24,21 @@ function LongTermResearch() {
   const [data, setData] = useState(false);
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
+  const [view, setView] = useState({
+    matches: window.innerWidth < 770 ? false : true,
+});
+
+const settings = {
+  infinite: true,
+  speed: 1500,
+  arrows: false,
+  slidesToShow: 1,
+  autoplay: true,
+  dots: true,
+  autoplaySpeed: 3000,
+  slidesToScroll: 1,
+
+};
 
 
 
@@ -104,6 +120,10 @@ function LongTermResearch() {
     setTrigger(true)
     if (trigger === true) {
       loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+       let mediaQuery = window.matchMedia("(min-width: 770px)");
+            mediaQuery.addListener(setView);
+            // this is the cleanup function to remove the listener
+            return () => mediaQuery.removeListener(setView);
     }
   }, [trigger])
   return (
@@ -189,14 +209,20 @@ function LongTermResearch() {
               <div className="research-tab-cont">
                 {
                   check ?
-                   <div className="research-tab-list">
+                   <div >
+
+{
+                                view && !view.matches ?
+                                    <Slider {...settings} className="research-tab-list">
                     
                   
                   {
                     list.map((res, i) => {
 
                       return (
+                        
                         <div className="res-tab-itm" key={res.uuid} >
+                          
                           <div className="tab-itm-img" >
                             <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                           </div>
@@ -204,6 +230,7 @@ function LongTermResearch() {
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
                             <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
@@ -216,40 +243,117 @@ function LongTermResearch() {
                       )
                     })
                   }
+                  </Slider>
+                 
+                 :
+                 <div className="research-tab-list">
+                    
+                  
+                 {
+                   list.map((res, i) => {
+
+                     return (
+                       
+                       <div className="res-tab-itm" key={res.uuid} >
+                         
+                         <div className="tab-itm-img" >
+                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                         </div>
+                         <div className="tab-itm-des">
+                           <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                           
+                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                           <div className="itm-des-sub">
+                           <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
+                                 {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                           </div>
+                         </div>
+                       </div>
+                     )
+                   })
+                 }
+                 </div>
+
+                }
                  </div>
               
                
                     :
-                    <div className="research-tab-list">
+                    <div >
 
-                      {
-                        list.slice(0, 4).map((res, i) => {
+{
+                                view && !view.matches ?
+                                    <Slider {...settings} className="research-tab-list">
+                    
+                  
+                  {
+                    list.slice(0, 4).map((res, i) => {
 
-                          return (
-                            <div className="res-tab-itm" key={res.uuid}>
-                              <div className="tab-itm-img">
-                                <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                              </div>
-                              <div className="tab-itm-des">
-                                <h5 className="ttl-des" >{count === 2 ? res.scrip_sec_name||"" :count === 4 ? res.scrip_name||"": res.title||""}</h5>
-                                {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                                <div className="itm-des-text">
-                                  <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                                </div>
-                                {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
-                                <div className="itm-des-sub">
-                                  <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
+                      return (
+                        
+                        <div className="res-tab-itm" key={res.uuid} >
+                          
+                          <div className="tab-itm-img" >
+                            <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                          </div>
+                          <div className="tab-itm-des">
+                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            
+                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                            <div className="itm-des-sub">
+                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
                                   {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
-                                </div>
-                              </div>
                             </div>
-                          )
-                        })
-                      }
+                          </div>
+                        </div>
+                      )
+                    })
+                  }
+                  </Slider>
+                 
+                 :
+                 <div className="research-tab-list">
+                    
+                  
+                 {
+                   list.slice(0, 4).map((res, i) => {
 
-                    </div>
+                     return (
+                       
+                       <div className="res-tab-itm" key={res.uuid} >
+                         
+                         <div className="tab-itm-img" >
+                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                         </div>
+                         <div className="tab-itm-des">
+                           <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                         
+                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                           <div className="itm-des-sub">
+                           <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
+                                 {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                           </div>
+                         </div>
+                       </div>
+                     )
+                   })
+                 }
+                 </div>
+
+                }
+                 </div>
                 }
 
                 

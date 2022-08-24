@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Onlinetrading/RealTrade';
+import imageData from '../../Data/campaign/Real-demat';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';

@@ -1,5 +1,5 @@
 import "../../assets/css/footer.scss"
-import ImageFooter0 from '../../assets/images/footer-logo.svg';
+import ImageFooter0 from '../../assets/images/choice-logo-white.svg';
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 import { NavLink } from "react-router-dom";
