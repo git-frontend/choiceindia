@@ -159,7 +159,7 @@
                         border-radius: 0;
                         box-shadow: 0 0 10px #eee;
                         &::before{
-                            content: '';
+                            // content: '';
                             width: 0;
                             height: 0;
                             border-left: 15px solid transparent;
