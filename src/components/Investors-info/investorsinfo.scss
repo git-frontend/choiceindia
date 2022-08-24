@@ -111,7 +111,7 @@ body{
             display: flex;
             align-items: center;
 
-            @media screen and (max-width:767px) {
+            @media screen and (max-width:$sm) {
                 font-size: 3.125rem;
             }
 
@@ -193,6 +193,9 @@ body{
         z-index: -1;
         background: url('../../assets/images/investor-info/investorinfoafterimage.png') top left no-repeat;
         background-size: contain;
+        @media screen and (max-width:$sm) {
+            display: none;
+        }
     }
 
     &:before {
@@ -206,6 +209,9 @@ body{
         z-index: -1;
         background: url('../../assets/images/investor-info/info-bottom.png') bottom right no-repeat;
         background-size: contain;
+        @media screen and (max-width:$sm) {
+            display: none;
+        }
     }
 
     .title {
