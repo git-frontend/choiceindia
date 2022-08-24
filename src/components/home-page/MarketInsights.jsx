@@ -10,9 +10,9 @@ function MarketInsights() {
     // const [change, setChange] = useState([1, 2, 3, 4]);
     const [trigger, setTrigger] = useState(false)
     const [fabal, setFabal] = useState([]);
-    // const [view, setView] = useState({
-    //     // matches: window.innerWidth < 770 ? false : true,
-    // });
+    const [view, setView] = useState({
+        matches: window.innerWidth < 770 ? false : true,
+    });
 
     const settings = {
         infinite: true,
@@ -64,10 +64,10 @@ function MarketInsights() {
 
         if (trigger === true) {
             loadMarketinsite();
-            // let mediaQuery = window.matchMedia("(min-width: 770px)");
-            // mediaQuery.addListener(setView);
-            // // this is the cleanup function to remove the listener
-            // return () => mediaQuery.removeListener(setView);
+            let mediaQuery = window.matchMedia("(min-width: 770px)");
+            mediaQuery.addListener(setView);
+            // this is the cleanup function to remove the listener
+            return () => mediaQuery.removeListener(setView);
         }
 
     }, [trigger])
@@ -86,7 +86,35 @@ function MarketInsights() {
                     </div>
                     <div className="row">
                         <div className="col-md-12">
-                    
+                            {
+                                view && !view.matches ?
+                                    <Slider {...settings} className="market-insights-list">
+
+
+                                        {
+                                            fabal.slice(0, 4).map((response, index) => {
+                                                let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
+
+                                                return (
+
+                                                    <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                                        <div className="insights-item-cont">
+                                                            <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
+                                                            {/* <img src={response.feature_image} alt="" /> */}
+                                                            <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
+                                                        </div>
+                                                        <div className="item-cont-descr">
+                                                            {/* <p>{response.report_subtype_name}</p> */}
+                                                            <p>{response.plain_description}</p>
+                                                        </div>
+                                                    </div>
+
+                                                )
+
+                                            })
+                                        }
+                                    </Slider>
+                                    :
                                     <div className="market-insights-list">
 
 
@@ -113,7 +141,7 @@ function MarketInsights() {
                                             })
                                         }
                                     </div>
-                            
+                            }
 
                         </div>
                     </div>
