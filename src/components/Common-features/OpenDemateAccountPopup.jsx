@@ -64,9 +64,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
-        refercode.current = searchParams.get('refercode')||'';//(searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+        refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
   
-        source.current = searchParams.get('source')||'';
+        source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
     }
 
     function handleSendOTP(e) {
