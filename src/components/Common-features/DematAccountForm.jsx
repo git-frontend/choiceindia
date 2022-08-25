@@ -35,7 +35,7 @@ function DematAccountForm(props) {
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead' });
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -117,8 +117,8 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link) {
-        console.log('closeModal22',link)
+    function handleOTPClose(link,msg) {
+        // console.log('closeModal22',link,msg);
         setShowOTP(false);
 
         if (link) {
@@ -127,22 +127,22 @@ function DematAccountForm(props) {
             if (result&&result.length&&result[0] === 'respond-issue') {
                 setIsIssue(() => link);
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, redirectionLink: '', closeMd: closeModal }
+                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
                 });
             } else {
                 if (link._reactName) {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link, closeMd: closeModal }
+                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
                     });
                 } else {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link, closeMd: closeModal }
+                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
                     });
                 }
             }
         } else {
             setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '', closeMd: closeModal }
+                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
             });
         }
 
