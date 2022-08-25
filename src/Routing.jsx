@@ -324,7 +324,7 @@ function Routing() {
                                 < Lazyremisier />
                             </React.Suspense>
                         } />
-                        <Route exact path='/newsmedia' element={
+                        <Route exact path='/news-media' element={
                             <React.Suspense>
                                 < Lazynewsmedia />
                             </React.Suspense>
