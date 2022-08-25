@@ -53,45 +53,45 @@ function OpenTradingAccount() {
                                 <input type="checkbox" className="read-more-state" id="post-1" />
                                 <span className="read-more-wrap ">If you want to increase your income, you can’t live from paycheck to paycheck. You have to invest your money to build wealth over time. So, you can start by investing in the stock market. 
 
-                                    <span className="read-more-target">The first thing you’ll need is a trading account. It is an essential financial instrument that makes the process of investing and earning convenient. Moreover, it makes the transactions secure. <br /><br />
+                                    <span className="read-more-target ">The first thing you’ll need is a trading account. It is an essential financial instrument that makes the process of investing and earning convenient. Moreover, it makes the transactions secure. <br /><br />
                                     Curious to know more about these accounts?<br />
                                     Well, then you’re in luck! In this post, we will cover everything about trading accounts, their fees, benefits, and other details. So, without further ado, let’s begin!
                                         <br />
                                         <br />
 
-                                        <h2 className="font-bold">What is a Trading Account?</h2> <br />
+                                        <h2 className="font-bold">What is a Trading Account?</h2>
                                         If you’re wondering or Googling “trading account is which type of account”?  then you’re at the right place. But before we answer the same, it is important that you understand the <a href="https://choiceindia.com/blog/trading-account-meaning/">trading account meaning.</a>  <br /><br />
                                         You can consider it an investment account containing cash, securities, and other holdings that helps you purchase or sell your assets, like equity shares in the stock market.<br /><br />
                                         In short, a trading account is hence like a bank account that speeds up the process of buying and selling shares. Moreover, you don't have to be physically present at a stock exchange for these financial transactions. <br /> <br />
                                         You just need to open a trading account with a reliable and registered stock broker to get started. The stock broker will guide you in trading shares and handling all the processes. In addition, you will receive a unique ID for conducting the stock market purchases.  <br /> <br />
     
-                                        <h2 className="font-bold">Trading Account Fees &amp; Charges</h2> <br />
+                                        <h2 className="font-bold">Trading Account Fees &amp; Charges</h2> 
                                         Before understanding trading account opening and its basics, you need to understand the associated fees. When you choose Choice for your account, you can open it for free! 
                                         <br /><br />
                                         To elaborate, you can open a free trading account where the annual maintenance charges (AMC) are free for the first year to get you started. Subsequently, from the second year, Choice charges a minimal fee to keep your account functional. 
-                                        <br /><br />
+                                        <br />
                                         Additionally, you can choose from three AMC plans provided by the company - 
                                         <br /><br />
                                         <ul>
                                             <li>
                                             200 INR/- + GST (Yearly Plan) 
-                                            </li><br />
-                                            <li>1500 INR/- + GST (Lifetime AMC Coverage Plan) </li><br />
+                                            </li>
+                                            <li>1500 INR/- + GST (Lifetime AMC Coverage Plan) </li>
                                             <li>3000 INR/-Full Refundable AMC Plan (Choice will recount the total AMC amount when you close the account)</li>
                                         </ul>
                                         <br />
                                         However, the <a href="https://choiceindia.com/blog/trading-account-charges-fees/">trading account charges</a>  vary in trading equity, currency, and commodities<br /><br />
-                                        <h2 className="font-bold">Trading Account Benefits with Choice</h2> <br />
+                                        <h2 className="font-bold">Trading Account Benefits with Choice</h2>
                                         When you <a href="https://choiceindia.com/open-trading-account"> open trading account with Choice</a>, you receive multiple benefits besides free <a href="https://choiceindia.com/blog/demat-account-amc-charges/">AMC charges</a> for the first year.<br /><br />
                                         <ul>
                                             <li>
                                             Low DP charges (10 INR)
                                             </li>
-                                            <br />
+                                           
                                             <li>
                                             <a href="https://choiceindia.com/brokerage-charges">Low brokerage charges</a> 
                                             </li>
-                                            <br />
+                                          
                                             <li>
                                             Low intraday charges (0.02% for equity)
                                             </li>
@@ -99,21 +99,21 @@ function OpenTradingAccount() {
                                         <br />
                                         The company also has more than 25 years of experience in the broking industry. So, you'll receive high-quality services along with their expertise.<br /><br />
                                         If you’re still not convinced, here's a few more reasons why you must choose Choice for your trading account. 
-                                        <br /><br />
+                                        <br />
 
-                                        <h3 className="font-bold">1. User-friendly Platform </h3> <br />
+                                        <h3 className="font-bold">1. User-friendly Platform </h3>
                                         Choice offers you an easy-to-use and technically advanced trading platform. You can open a paperless account within 5 minutes and get started with your trading journey. 
                                         <br /><br />
                                         Furthermore, you can buy or sell shares using the web platform or mobile apps available on Android and iOS. This way, you can trade faster! 
-                                        <br /><br />
+                                        <br />
 
-                                        <h3 className="font-bold">2. Convenient Trading  </h3> <br />
+                                        <h3 className="font-bold">2. Convenient Trading  </h3> 
                                         Along with convenient features on the portal, you also get a free trade call facility. So, you can conduct your trades over calls absolutely free. 
                                         <br /><br />
                                         Moreover, you will receive more returns through their referral program. Here, you can send referrals to other interested traders. So, you will earn whenever someone registers and it will act as a long-term income source for you. 
-                                        <br /><br />
+                                        <br />
 
-                                        <h3 className="font-bold">3. Excellent Customer Support </h3> <br />
+                                        <h3 className="font-bold">3. Excellent Customer Support </h3>
                                         Choice offers excellent customer support through their dedicated team, who are always at your service. You can reach them 24/7 via their official email address or phone number.
                                         <br /><br />
                                         Additionally, they have over 48 branches across the country, so you'll receive prompt assistance whenever you need it. 
@@ -123,7 +123,7 @@ function OpenTradingAccount() {
                                         Choice has an expert research team that provides you with technical assistance and advisory services. So, you can move ahead with your trading transactions without any hassle.
                                         <br /><br />
 
-                                        <h2 className="font-bold">Trading Account Features</h2> <br />
+                                        <h2 className="font-bold">Trading Account Features</h2>
 
                                         It's important to understand the features of a trading account to operate it well. Instead of visiting the stock exchange, online trading accounts allow you to conduct trades from any location conveniently. 
                                         <br /><br />
@@ -136,16 +136,16 @@ function OpenTradingAccount() {
                                             <li>
                                             Easy account opening and trading processes 
                                             </li>
-                                            <br />
+                                            
                                             <li>
                                             A convenient <a href="https://jiffy.choiceindia.com/">trading platform</a> accessible on all devices
                                             </li>
-                                            <br />
+                                          
                                             <li>
                                             the use of the same account for trading in multiple segments like commodities, currencies, stocks, and F&amp;O. 
 
                                             </li>
-                                            <br />
+                                           
                                             <li>Completely safe and reliable trading platform</li>
                                         </ul>
                                         <br />
@@ -153,7 +153,7 @@ function OpenTradingAccount() {
                                         <br /><br />
                                         You can also track your progress by comparing yearly investment returns. In addition, you can check the status of multiple stocks at the starting and ending of any trading day.
                                         <br /><br />
-                                        <h2 className="font-bold">Documents Required for Trading Account Opening</h2> <br />
+                                        <h2 className="font-bold">Documents Required for Trading Account Opening</h2> 
                                         Opening a trading account with Choice is extremely convenient and quick. But, you need to have the necessary documents and complete the KYC process. Then, your account will be set up within 15 to 20 minutes. 
                                         <br /><br />
                                         However, if you haven't completed the KYC, it might take a couple of business days to open your trading account.
@@ -161,12 +161,12 @@ function OpenTradingAccount() {
                                         Here are the documents required for trading account opening with Choice:
                                         <br /><br />
                                         <ul>
-                                            <li>Aadhar card </li><br />
-                                            <li>PAN card</li><br />
-                                            <li>Income proof </li><br />
-                                            <li>Proof of address </li><br />
-                                            <li>Your photograph  </li><br />
-                                            <li>A cancelled cheque</li><br />
+                                            <li>Aadhar card </li>
+                                            <li>PAN card</li>
+                                            <li>Income proof </li>
+                                            <li>Proof of address </li>
+                                            <li>Your photograph  </li>
+                                            <li>A cancelled cheque</li>
                                             <li>Your official signature on a piece of white paper  </li>
                                         </ul>
                                         <br/>
@@ -187,34 +187,34 @@ function OpenTradingAccount() {
 
                                         <h3 className="font-bold">Holding Securities </h3> <br />
                                         
-                                        <h4 className="font-bold">Demat Account - </h4>
-                                        It can hold equity shares, government securities, ETF and mutual funds.
-                                        <h4 className="font-bold">Trading Account - </h4>
-                                        It doesn't hold any financial instruments, but assists in purchasing and selling them<br />
+                                        <h4><span  className="font-bold">Demat Account</span> s- It can hold equity shares, government securities, ETF and mutual funds.</h4>
+                                        <br />
+                                        <h4><span  className="font-bold">Demat Account</span> -    It doesn't hold any financial instruments, but assists in purchasing and selling them</h4>
+                                     <br />
 
-                                        <h3 className="font-bold">Suitability</h3>
-                                        <h4 className="font-bold">Demat Account - </h4>
-                                        It's suitable for traders who prefer stock deliveries and hold them for long periods
-                                        <h4 className="font-bold">Trading Account - </h4>
-                                        It's suitable for users interested in intraday trading and quick transactions that won't take long hours.<br />
+                                        <h3 className="font-bold">Suitability</h3><br />
+                                        <h4><span  className="font-bold">Demat Account</span> -   It's suitable for traders who prefer stock deliveries and hold them for long periods</h4>
+                                        <br />
+                                        <h4><span  className="font-bold">Demat Account</span> - It's suitable for users interested in intraday trading and quick transactions that won't take long hours.</h4>
+                                        <br />
 
-                                        <h3 className="font-bold">Regulatory</h3>
-                                        <h4 className="font-bold">Demat Account - </h4>
-                                        SEBI and NSDL approval is mandatory here.
-                                        <h4 className="font-bold">Trading Account - </h4>
-                                        These approvals are not mandatory here.<br />
+                                        <h3 className="font-bold">Regulatory</h3><br />
+                                        <h4><span  className="font-bold">Demat Account</span> -  SEBI and NSDL approval is mandatory here.</h4>
+                                        <br />
+                                        <h4><span  className="font-bold">Demat Account</span> - These approvals are not mandatory here.</h4>
+                                        <br />
 
-                                        <h3 className="font-bold">Function </h3>
-                                        <h4 className="font-bold">Demat Account - </h4>
-                                        It functions like a savings account. 
-                                        <h4 className="font-bold">Trading Account - </h4>
-                                        It works like a current bank account.<br />
+                                        <h3 className="font-bold">Function </h3><br />
+                                        <h4><span  className="font-bold">Demat Account</span> - It functions like a savings account.</h4>
+                                        <br />
+                                        <h4><span  className="font-bold">Trading Account </span>- It works like a current bank account.</h4>
+                                        <br />
 
                                       <br/>
                                       But irrespective of which you want to open, opening both on the Choice online platform is very simple. All you need to do is follow the steps mentioned on the website to get started. However, keep your account IDs safe no matter which accounts you prefer to use.  
                                     <br/><br/>
 
-                                        <h3 className="font-bold">How to open a trading account with Choice?</h3><br/>
+                                        <h3 className="font-bold">How to open a trading account with Choice?</h3>
                                         Choice is considered one of the <a href="https://choiceindia.com/blog/best-trading-account-in-india/">best trading accounts in India</a> due to its top-class features. Also, the simple account opening process makes it the <a href="https://choiceindia.com/blog/best-trading-account-for-beginners/">best trading account for beginners</a>. 
                                         <br/><br/>
                                         The platform offers two options to open a trading account online. 
@@ -224,17 +224,17 @@ function OpenTradingAccount() {
                                         However, if you don't mention the referral code, Choice will open both accounts on your behalf. To elaborate, here are the detailed steps for setting up your account with Choice:
                                         <br/><br/>
                                         <ul className="paraspacing listdecimal">
-                                            <li>Visit the trading account opening page and fill in the required details for the account</li><br/>
-                                            <li>Upload the official documents mentioned above along with your passport size photograph</li><br/>
-                                            <li>You need to complete the in-person verification process </li><br/>
-                                            <li>If all these steps are successful, Choice will set up your trading account.</li><br/>
-                                            <li>After your registration, you need to send the self-attested POA to the official email address of Choice HQ.</li><br/>
+                                            <li>Visit the trading account opening page and fill in the required details for the account</li>
+                                            <li>Upload the official documents mentioned above along with your passport size photograph</li>
+                                            <li>You need to complete the in-person verification process </li>
+                                            <li>If all these steps are successful, Choice will set up your trading account.</li>
+                                            <li>After your registration, you need to send the self-attested POA to the official email address of Choice HQ.</li>
                                             
                                         </ul>
                                         <br/>
 
                                         <h2 className="font-bold">Parting Thoughts</h2>
-                                        <br/>
+                                       
                                         Opening a trading account with Choice will be an excellent financial decision for your future. You can take up small trades and learn the basics using the user-friendly platform. Moreover, you will understand how to invest wisely and receive better returns with time. 
 
                                         <br/><br/>
