@@ -56,7 +56,7 @@ function EverydayFinance() {
                       return (
                         <div key={response.id} className="service-item">
                           <span className="img-itm">
-                            <LazyLoader src={response.image} className={"img-fluid"} alt={"Loading"} width={"70"} height={"70"} />
+                            <LazyLoader src={response.image} className={"img-fluid"} alt={response.alt} width={"70"} height={"70"} />
                             {/* <img src={response.image} className="img-fluid" alt='Loading' /> */}
                           </span>
                           <h3 className="ss-ttl">{response.title || '-'}</h3>

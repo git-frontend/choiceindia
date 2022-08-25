@@ -1,7 +1,7 @@
 
 import React from "react";
 import BrandLogos from '../../assets/images/equity-broking/brand-logo.webp'
-import icon1 from '../../assets/images/equity-broking/stock.svg'
+import icon1 from '../../assets/images/equity-broking/stock-market-investing.svg'
 import icon2 from '../../assets/images/equity-broking/collection.svg'
 import icon3 from '../../assets/images/equity-broking/basket.svg'
 import icon4 from '../../assets/images/equity-broking/top-picks.svg'

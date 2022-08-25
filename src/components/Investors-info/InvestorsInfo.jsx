@@ -74,7 +74,7 @@ function InvestorInfo() {
                     <div className="row">
                         <div className="col-md-12">
                             <h2 className="title">Investors Relation</h2>
-                            <Navbar />
+                            {/* <Navbar /> */}
                           
                             
                         </div>
