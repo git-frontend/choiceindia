@@ -33,6 +33,12 @@ function Thankyoupopup({ isShow }) {
   // const [display, setDisplay] = useState(true);
 
   useEffect(() => {
+
+    if(isShow.page != 'add-lead'){
+      setTimeout(() => {
+        window.location.href(isShow.closeMd(isShow.redirectionLink));
+      },2000)
+    }
   }, [])
 
   // function closeModal() {
@@ -102,9 +108,9 @@ function Thankyoupopup({ isShow }) {
                         <h1>Thank You !</h1>
                       </div>
                       <div className="body-content">
-                        <p className="heading">Thank You For Your Registration!</p>
-                        <p className="subheading">You are being redirected to onboarding page!</p>
-                        <button className="btn-yellow" onClick={() => isShow.closeMd(isShow.redirectionLink)}>OK</button>
+                        {/* <p className="heading">Thank You For Your Registration!</p> */}
+                        <p className="subheading">{isShow.resText? isShow.resText: "You are being redirected to onboarding page!"}</p>
+                        {/* <button className="btn-yellow" onClick={() => isShow.closeMd(isShow.redirectionLink)}>OK</button> */}
                         <div>
                         </div>
                       </div>

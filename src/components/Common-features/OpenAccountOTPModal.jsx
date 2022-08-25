@@ -127,7 +127,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                     // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
                     // } else {
                     if (res && res.data && res.data.Body && res.data.Body.url) {
-                        // console.log('inside call');
+                        // console.log('inside call',res.data.Message);
                         // setShowLead(prevState => {
                         //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
                         // });
@@ -137,7 +137,8 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
-                            onClose(res.data.Body.url);
+                            console.log('Else onboard');
+                            onClose(res.data.Body.url,res.data.Message? res.data.Message:'');
                         }
                         
                         // console.log('inside call',showlead.showModal);
@@ -182,7 +183,6 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     //resend OTP ON SMS
     function resendOTP() {
        // console.log("check",otpID)
-       
         if (!loaders.resendOTPLoader && !loaders.OTPOnCallLoader) {
             showLoader('resendOTPLoader');
             setOtp('');
@@ -201,7 +201,6 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }
 
             openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
-            
                 hideLoader('resendOTPLoader');
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
