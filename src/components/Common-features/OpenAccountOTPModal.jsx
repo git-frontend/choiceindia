@@ -133,10 +133,11 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                         // });
 
                         let result = res.data.Body.url.match("respond-issue");
-                        if(result[0] === 'respond-issue'){
+                        if(result&&result.length&&result[0] === 'respond-issue'){
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
+                            console.log('Else onboard');
                             onClose(res.data.Body.url);
                         }
                         
