@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./css/stratezy-landing-page.scss";
 import FaqAccordion from "./StartegyFaq";
 import WhyStrategy from "./Whystrategy";
