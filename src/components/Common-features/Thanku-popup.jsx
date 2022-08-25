@@ -36,11 +36,11 @@ function Thankyoupopup({ isShow }) {
   // const [display, setDisplay] = useState(true);
 
   useEffect(() => {
-
+    console.log('Inside thanku',isShow)
     if(isShow.page != 'add-lead'){
       setTimeout(() => {
         window.location.href(isShow.closeMd(isShow.redirectionLink));
-      },22000)
+      },2000)
     }
   }, [])
 

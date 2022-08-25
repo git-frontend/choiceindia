@@ -1370,7 +1370,7 @@ const meta_tags = {
     </script>
     `},
 
-    "free-amc-demat-account": {
+    "campaign/free-amc-demat-account": {
       'title': "Open a Free AMC Demat Account + Zero Account Opening Fee", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin Available, Free Research with 78% Success Ratio & more.",
       "link": "https://choiceindia.com/campaign/free-amc-demat-account"
     },
