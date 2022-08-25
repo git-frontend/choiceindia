@@ -1,9 +1,9 @@
-import ImageSub14 from '../../assets/images/icons/collection.svg';
-import ImageSub15 from '../../assets/images/icons/basket1.svg';
-import ImageSub16 from '../../assets/images/icons/robot.svg';
-import ImageSub17 from '../../assets/images/icons/shield.svg';
-import ImageSub18 from '../../assets/images/icons/money.svg';
-import ImageSub19 from '../../assets/images/icons/recommendation.svg';
+import ImageSub14 from '../../assets/images/icons/stock-collection.svg';
+import ImageSub15 from '../../assets/images/icons/basket-investing.svg';
+import ImageSub16 from '../../assets/images/icons/financial-planner.svg';
+import ImageSub17 from '../../assets/images/icons/insurance-intellimart.svg';
+import ImageSub18 from '../../assets/images/icons/swift-loans.svg';
+import ImageSub19 from '../../assets/images/icons/financial-advice.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import { useState,useEffect } from 'react';
 import Slider from 'react-slick';
@@ -67,37 +67,37 @@ function MarketInsights() {
 										<Slider {...settings} className='all-features-list'>
                                     
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub14} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub14} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Stock Collection"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub14} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Unique Collections</h3>
                                         <p>Discover the most interesting and unique categories of Stocks.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub15} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub15} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Basket Investing "} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub15} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Curated Baskets</h3>
                                         <p>Get hand-picked baskets which are rebalanced &amp; designed by our experts.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub16} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub16} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Financial Planner"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub16} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Robo Planner</h3>
                                         <p>An automated financial planner to handle your financial needs.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub17} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub17} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Insurance IntelliMart"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub17} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Insurance IntelliMart</h3>
                                         <p>Helping you navigate the future with precise Insurance </p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub18} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub18} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Swift Loans"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub18} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Swift Loans</h3>
                                         <p>Get hassle-free instant loans with minimum documentations</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub19} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub19} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Financial Advice"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub19} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Recommendations</h3>
                                         <p>Providing insights across all market segments to enable better decisions.</p>
@@ -108,37 +108,37 @@ function MarketInsights() {
 										 :
                                          <div className="all-features-list">
                                          <div className="feature-item">
-                                        <LazyLoader src={ImageSub14} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub14} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Stock Collection"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub14} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Unique Collections</h3>
                                         <p>Discover the most interesting and unique categories of Stocks.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub15} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub15} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Basket Investing "} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub15} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Curated Baskets</h3>
                                         <p>Get hand-picked baskets which are rebalanced &amp; designed by our experts.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub16} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub16} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Financial Planner"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub16} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Robo Planner</h3>
                                         <p>An automated financial planner to handle your financial needs.</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub17} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub17} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Insurance IntelliMart"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub17} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Insurance IntelliMart</h3>
                                         <p>Helping you navigate the future with precise Insurance </p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub18} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub18} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Swift Loans"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub18} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Swift Loans</h3>
                                         <p>Get hassle-free instant loans with minimum documentations</p>
                                     </div>
                                     <div className="feature-item">
-                                        <LazyLoader src={ImageSub19} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Loading"} width={"70"} height={"71"} />
+                                        <LazyLoader src={ImageSub19} threshold={[0, 0.5, 1]} className={"img-fluid"} alt={"Financial Advice"} width={"70"} height={"71"} />
                                         {/* <img src={ImageSub19} className="img-fluid" alt='Loading' /> */}
                                         <h3 className="feature-ttl">Recommendations</h3>
                                         <p>Providing insights across all market segments to enable better decisions.</p>
