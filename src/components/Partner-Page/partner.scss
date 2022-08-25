@@ -72,8 +72,15 @@
                         .title-secnd{
                             font-size: 3rem;
                             line-height: 4rem;
+                            
                         }
                       }
+                    }
+                    .heading-sec{
+                        .title-secnd{
+                            color: $primary;
+                            font-family: $font-family-poppins-bold;
+                        }
                     }
                 }
                 .tab-cont-right{
