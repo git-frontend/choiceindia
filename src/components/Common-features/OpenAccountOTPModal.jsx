@@ -127,18 +127,18 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                     // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
                     // } else {
                     if (res && res.data && res.data.Body && res.data.Body.url) {
-                        // console.log('inside call');
+                        // console.log('inside call',res.data.Message);
                         // setShowLead(prevState => {
                         //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
                         // });
 
                         let result = res.data.Body.url.match("respond-issue");
-                        if(result&&result.length&&result[0] === 'respond-issue'){
+                        if(result && result.length && result[0] === 'respond-issue'){
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
                             console.log('Else onboard');
-                            onClose(res.data.Body.url);
+                            onClose(res.data.Body.url,res.data.Message? res.data.Message:'');
                         }
                         
                         // console.log('inside call',showlead.showModal);

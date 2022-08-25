@@ -4,6 +4,7 @@ import React,{useState} from "react";
 import Bannerimage from '../../assets/images/equity-broking/Coingif.gif'
 import LazyLoader from '../Common-features/LazyLoader';
 import Equity from "../../Data/Equity";
+import { Link } from "react-router-dom";
 
 function Banner() {
     const [selected, setSelected] = useState(0);
@@ -58,7 +59,7 @@ function Banner() {
                                                         <h3>{res.title2}</h3>
                                                         <p>{res.description}</p>
                                                         <div className="justify-content-end d-flex">
-                                                            <a href="https://jiffy.choiceindia.com/auth/login" target="_blank"><span className="btn-bg">Explore</span></a>
+                                                            <Link to={res.path} target="_blank"><span className="btn-bg">Explore</span></Link>
                                                         </div>
                                                     </div>
                                                 </div>
