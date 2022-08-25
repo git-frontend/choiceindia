@@ -5,7 +5,7 @@ import InvestmentStrategies from './InvestmentStrategies';
 import TrackRecord from './TrackRecord';
 import DematBenifits from './DematBenifits';
 import "./open-demat-account.scss";
-import { useEffect } from 'react';
+import { useState,useEffect } from 'react';
 import meta_tags from "../../Data/MetaTags";
 
 
