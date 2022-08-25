@@ -200,6 +200,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }
 
             openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
+            
                 hideLoader('resendOTPLoader');
                 setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
