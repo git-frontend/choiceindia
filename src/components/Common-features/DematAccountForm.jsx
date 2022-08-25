@@ -50,7 +50,10 @@ function DematAccountForm(props) {
     var UTMCustom = useRef('');
     var UTMTerm = useRef('');
     var refercode = useRef('');
+    var refercodeInv = useRef('');
+    var source = useRef('');
     var subrefercode = useRef('');
+    var subrefercodeInv = useRef('');
     var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
@@ -267,10 +270,10 @@ function DematAccountForm(props) {
             "mobile_number": mobileNumber,
             "product": type1=='MF' ? "INVESTICA":"JIFFY",
             "request_source": "CHOICEINDIA",
-            "source": type1=='MF' ?"INVESTICA":"CHOICEINDIA",
+            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
-            "referred_id": refercode.current || null,
-            "sub_ref": subrefercode.current || null,
+            "referred_id": refercodeInv.current || null,
+            "sub_ref": subrefercodeInv.current || null,
             "lead_source":type1=='MF' ?"CHOICEINDIA":"",
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
@@ -318,7 +321,11 @@ function DematAccountForm(props) {
         UTMTerm.current = searchParams.get('utm_term') || '';
 
         refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
+      
+        refercodeInv.current=(searchParams.get('refercode')?(searchParams.get('refercode')):(searchParams.get('ref')||''))// 
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
+        source.current = (searchParams.get('source'))||'';
+        subrefercodeInv.current = (searchParams.get('subref'))||'';
     }
 
     // function handleOTP(e) {
