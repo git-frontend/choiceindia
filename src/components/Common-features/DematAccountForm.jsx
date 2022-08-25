@@ -274,7 +274,7 @@ function DematAccountForm(props) {
             "user_consent": type1=='MF' ?"true":"1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
-            "lead_source":type1=='MF' ?"CHOICEINDIA":"",
+           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
