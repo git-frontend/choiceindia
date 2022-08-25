@@ -20,6 +20,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
+    var source = useRef('');
     var otpSessionID = useRef('');
 
     function handleMobile(e) {
@@ -63,7 +64,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
-        refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+        refercode.current = searchParams.get('refercode')||'';//(searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+  
+        source.current = searchParams.get('source')||'';
     }
 
     function handleSendOTP(e) {
@@ -93,7 +96,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
-            "source": "CHOICEINDIA",
+            "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
