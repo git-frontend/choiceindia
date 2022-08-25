@@ -124,7 +124,7 @@ function DematAccountForm(props) {
         if (link) {
 
             let result = link.match("respond-issue");
-            if (result[0] === 'respond-issue') {
+            if (result&&result.length&&result[0] === 'respond-issue') {
                 setIsIssue(() => link);
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, redirectionLink: '', closeMd: closeModal }
