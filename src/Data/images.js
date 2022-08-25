@@ -1,15 +1,15 @@
 
-import  ImageSub0  from '../assets/images/app/insuring-future.webp';
+import  ImageSub0  from '../assets/images/app/get-insurance-policy.webp';
 import  ImageSub1  from '../assets/images/app/readymade-baskets.webp';
-import  ImageSub2  from '../assets/images/app/trading-simplified.webp';
-import  ImageSub3  from '../assets/images/app/wealth-pool.webp';
+import  ImageSub2  from '../assets/images/app/easy-investment-app.webp';
+import  ImageSub3  from '../assets/images/app/wealth-management-app.webp';
 
 const imageData =
 [
     {
         "image":`${ImageSub2}`,
         "id": 5,
-        "title":'Trading Simplified',
+        "title":'Easy Investment App',
         "description":'Smoothly grow your investment portfolio with mutual funds'
         
         
@@ -17,7 +17,7 @@ const imageData =
     {
         "image":`${ImageSub3}`,
         "id": 4,
-        "title":'Wealth Pool',
+        "title":'Wealth Managment App',
         "description":'Grow your Investments smoothly in Mutual  Funds'
         
         
@@ -25,7 +25,7 @@ const imageData =
     {
         "image":`${ImageSub0}`,
         "id": 3,
-        "title":'Insuring Future',
+        "title":'Get Insurance Policy',
         "description":'Get insured as per your need for everything right here'
     
         
@@ -41,7 +41,7 @@ const imageData =
 
         "image":`${ImageSub1}`,
         "id": 1,
-        "title":'Readymade Baskets',
+        "title":'Invest in Readymade Stock Baskets',
         "description":'Try our curated baskets to invest on autopilot'
     }
     // ,{

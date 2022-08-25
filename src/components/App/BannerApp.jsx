@@ -1,4 +1,4 @@
-import AppImage0 from '../../assets/images/app/banner-app.webp';
+import AppImage0 from '../../assets/images/app/investment-app.webp';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -11,7 +11,7 @@ function BannerCareer() {
 
 
       <section className="banner-app">
-      <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Loading"} width={"1728"} height={"1119"}/>
+      <LazyLoader src={AppImage0} className={"img-fluid ban-img"} alt={"Investment App"} width={"1728"} height={"1119"}/>
         {/* <img src={AppImage0} className="ban-img" alt='Loading' width="1728" height="1119" /> */}
         <div className='app-banner-caption'>
           <div className='container'>
