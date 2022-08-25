@@ -456,6 +456,10 @@
         display: flex;
 
         margin-top: 5rem;
+        @media (max-width: $sm) {
+            
+            display: none;
+        }
 
         .insights-list-item {
             width: 17%;
@@ -474,6 +478,7 @@
 
                     @media (max-width: $sm) {
                         height: 250px;
+                        
                     }
                 }
 
@@ -1124,7 +1129,9 @@
                         color: #0C71B9;
                         font-size: 2.4rem;
                     }
-
+                    .tag-letter{
+                        display: block;
+                    }
                     h4 {
                         font-family: $font-family-RedHat-Bold;
                         padding-left: 1rem;
@@ -1556,3 +1563,8 @@
 //   .slick-dots li.slick-active + li:nth-last-child(1){
 //       display: inline-block;
 //   }
+.market-insights{
+    .slick-current{
+        width: 100% !important;
+    }
+}

@@ -96,6 +96,7 @@ body{
         }
         @media (max-width: $sm){
             font-size: 1.4rem;
+            line-height: 2.15rem;
         }
         &.nm-text{
             font-size: 1.4rem;
@@ -216,16 +217,17 @@ body{
             border: 0;
         }
         .modal-body{
+            padding: 2rem;
             padding-bottom: 1.5em;
             text-align: center;
             h4{
                 margin-top: 1rem;
-                font-family: $font-family-poppins-semibold;
+                font-family: $font-family-poppins-medium;
                 color: $primary;
                 font-size: 1.65rem;
             }
             h3{
-                font-family: $font-family-poppins-semibold;
+                font-family: $font-family-poppins-medium;
                 color: $primary;
                 margin-top: 2rem;
             }

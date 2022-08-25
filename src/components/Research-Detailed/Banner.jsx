@@ -28,13 +28,12 @@ function Banner(props) {
   return (
     <div>
 
-
       <section className="bannersection research-detailed">
         <div className="container">
           <div className="row gx-5 align-items-center">
             <div className="col-md-12">
             <div className="right-pdf-sec">
-                <a href={props?.data?.file_url? props?.data?.file_url : '' } className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
+                <a href={props?.data?.file_url? props?.data?.file_url : '' } target="_blank" className="ico-pdf"><img src={thumb2} className='img-fluid' width="50" height="50"></img></a>
               </div>
               <div className="bnr-left">
                 {/* <h1 className="title">Equity Research Report : <span>WINDLAS ( BSE )</span></h1> */}

@@ -1,13 +1,13 @@
 
 import React from "react";
-import TaxAdvisory from '../../assets/images/about-us/tax-advisory.png';
-import EquityBroking from '../../assets/images/about-us/equity-broking.png';
-import WealthManagement from '../../assets/images/about-us/wealth-management.png';
-import Insurance from '../../assets/images/about-us/insurance.png';
-import Loans from '../../assets/images/about-us/loans.png';
-import CapitalAdvisory from '../../assets/images/about-us/capital-advisory.png';
-import ManagementConsult from '../../assets/images/about-us/management-consult.png';
-import GovernmentAdvisory from '../../assets/images/about-us/government-advisory.png';
+import TaxAdvisory from '../../assets/images/about-us/tax-advisory.webp';
+import EquityBroking from '../../assets/images/about-us/equity-broking.webp';
+import WealthManagement from '../../assets/images/about-us/wealth-management.webp';
+import Insurance from '../../assets/images/about-us/insurance-service.webp';
+import Loans from '../../assets/images/about-us/loans.webp';
+import CapitalAdvisory from '../../assets/images/about-us/capital-advisory.webp';
+import ManagementConsult from '../../assets/images/about-us/management-consultancy.webp';
+import GovernmentAdvisory from '../../assets/images/about-us/government-advisory.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 import Slider from "react-slick";
@@ -60,7 +60,7 @@ function WhatWeOffer() {
 
                   <div className="card ">
                     <div className="img-itm">
-                      <LazyLoader src={EquityBroking} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={EquityBroking} className={"img-fluid"} alt={"Equity Broking"} width={"50"} height={"50"} />
                       {/* <img src={EquityBroking} className="img-fluid"  alt="Loading" /> */}
                     </div>
                     <div className="namedesg">
@@ -72,7 +72,7 @@ function WhatWeOffer() {
 
                   <div className="card ">
                     <span className="img-itm">
-                      <LazyLoader src={WealthManagement} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={WealthManagement} className={"img-fluid"} alt={"Wealth Management"} width={"50"} height={"50"} />
                       {/* <img src={WealthManagement} className="img-fluid" alt='Loading' /> */}
                     </span>
                     <div className="namedesg">
@@ -84,7 +84,7 @@ function WhatWeOffer() {
 
                   <div className="card ">
                     <div className="img-itm">
-                      <LazyLoader src={Insurance} className={"img-fluid"} alt={"Loading"} width={"46"} height={"46"} />
+                      <LazyLoader src={Insurance} className={"img-fluid"} alt={"Insurance Service"} width={"46"} height={"46"} />
                       {/* <img src={Insurance} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
@@ -96,7 +96,7 @@ function WhatWeOffer() {
 
                   <div className="card ">
                     <div className="img-itm">
-                      <LazyLoader src={Loans} className={"img-fluid"} alt={"Loading"} width={"50"} height={"51"} />
+                      <LazyLoader src={Loans} className={"img-fluid"} alt={"Loans"} width={"50"} height={"51"} />
                       {/* <img src={Loans} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">
@@ -108,7 +108,7 @@ function WhatWeOffer() {
 
                   <div className="card">
                     <div className="img-itm">
-                      <LazyLoader src={CapitalAdvisory} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={CapitalAdvisory} className={"img-fluid"} alt={"Capital Advisory"} width={"50"} height={"50"} />
                       {/* <img src={CapitalAdvisory} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
@@ -120,7 +120,7 @@ function WhatWeOffer() {
 
                   <div className="card">
                     <div className="img-itm">
-                      <LazyLoader src={ManagementConsult} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={ManagementConsult} className={"img-fluid"} alt={"Management Consultancy"} width={"50"} height={"50"} />
                       {/* <img src={ManagementConsult} className="img-fluid" alt='Loading' /> */}
                     </div>
                     <div className="namedesg">
@@ -132,7 +132,7 @@ function WhatWeOffer() {
 
                   <div className="card">
                     <div className="img-itm">
-                      <LazyLoader src={GovernmentAdvisory} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={GovernmentAdvisory} className={"img-fluid"} alt={"Government Advisory"} width={"50"} height={"50"} />
                       {/* <img src={GovernmentAdvisory} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">
@@ -144,7 +144,7 @@ function WhatWeOffer() {
 
                   <div className="card">
                     <div className="img-itm">
-                      <LazyLoader src={TaxAdvisory} className={"img-fluid"} alt={"Loading"} width={"50"} height={"50"} />
+                      <LazyLoader src={TaxAdvisory} className={"img-fluid"} alt={"Tax Advisory"} width={"50"} height={"50"} />
                       {/* <img src={TaxAdvisory} className="img-fluid" alt='Loading'/> */}
                     </div>
                     <div className="namedesg">

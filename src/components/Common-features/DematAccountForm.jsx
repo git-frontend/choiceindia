@@ -60,6 +60,7 @@ function DematAccountForm(props) {
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
+    const [IsIssue, setIsIssue] = useState('');
     
 
     function isMobileDevice() {
@@ -123,19 +124,28 @@ function DematAccountForm(props) {
         console.log('closeModal22',link)
         setShowOTP(false);
 
-        if(link){
-            if(link._reactName){
+        if (link) {
+
+            let result = link.match("respond-issue");
+            if (result&&result.length&&result[0] === 'respond-issue') {
+                setIsIssue(() => link);
                 setShowThanku(prevState => {
-                    return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
+                    return { ...prevState, showModal: false, redirectionLink: '', closeMd: closeModal }
                 });
-            }else{
-                setShowThanku(prevState => {
-                    return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
-                });
+            } else {
+                if (link._reactName) {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: link, closeMd: closeModal }
+                    });
+                } else {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: true, redirectionLink: link, closeMd: closeModal }
+                    });
+                }
             }
-        }else{
+        } else {
             setShowThanku(prevState => {
-                return {...prevState, showModal: false, redirectionLink: '', closeMd: closeModal}
+                return { ...prevState, showModal: false, redirectionLink: '', closeMd: closeModal }
             });
         }
 
@@ -497,6 +507,9 @@ function DematAccountForm(props) {
     }
 
     function hideOTPInfoPopup() {
+        if(IsIssue){
+            window.location.href = IsIssue;
+        }
         setOTPInfoPopup(false);
     }
 

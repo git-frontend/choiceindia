@@ -25,7 +25,7 @@ function LongTermResearch() {
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
-    matches: window.innerWidth < 770 ? false : true,
+    matches: window.innerWidth < 767 ? false : true,
 });
 
 const settings = {
@@ -33,7 +33,7 @@ const settings = {
   speed: 1500,
   arrows: false,
   slidesToShow: 1,
-  autoplay: true,
+  autoplay: false,
   dots: true,
   autoplaySpeed: 3000,
   slidesToScroll: 1,
@@ -229,7 +229,10 @@ const settings = {
                           <div className="tab-itm-des">
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                            <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            </div>
+                            
                             
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
@@ -262,7 +265,10 @@ const settings = {
                          <div className="tab-itm-des">
                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                           <div className="itm-des-text">
+                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                          </div>
+                           
                            
                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">
@@ -303,7 +309,10 @@ const settings = {
                           <div className="tab-itm-des">
                             <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                            <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                            </div>
+                            
                             
                             {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
@@ -336,7 +345,10 @@ const settings = {
                          <div className="tab-itm-des">
                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                           <div className="itm-des-text">
                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
+                           </div>
+                           
                          
                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">

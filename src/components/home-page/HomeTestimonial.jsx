@@ -70,36 +70,37 @@ function HomeTestimonial() {
 
     const [dataObj, setdataObj] = useState(() => [
         {
-            "img": ImageTesti1, "name": "Udit Goyal", "tag": "@uditgoyal09", "date": "20 Aug 2021", "likes": "27",
+            "img": ImageTesti1, "name": "Udit Goyal", "tag": "@uditgoyal09", "date": "20 Aug 2021", "likes": "27","alt":"Udit Goyal","letter":"U",
             "des": "They will never share your private data without your consent. They are market leader for right reasons. They are the best brokers in town and provide the best services to their clients."
+			
         },
 
 		{
-            "img": ImageTesti2, "name": "Monish Chug", "tag": "@MOChug1992", "date": "1 Feb 2021", "likes": "56",
+            "img": ImageTesti2, "name": "Monish Chug", "tag": "@MOChug1992", "date": "1 Feb 2021", "likes": "56","alt":"Monish Chug","letter":"M",
             "des": "They are delivering the right experience for investing through their app. the process is quiet simplified and secured with two factor authentication. I highly recommend them."
         },
 
 
         {
-            "img": ImageTesti3, "name": "Aparajitha Aiyer", "tag": "@Aiyer23", "date": "21 May 2022", "likes": "94",
+            "img": ImageTesti3, "name": "Aparajitha Aiyer", "tag": "@Aiyer23", "date": "21 May 2022", "likes": "94","alt":"Aparajitha Aiyer","letter":"A",
             "des": "Had the best experience with the customer support. Their representative patiently listened to all my problems and provided me with immediate help. Kudos to the customer support team."
         },
 
         {
-            "img": ImageTesti4, "name": "Satish Prajapati", "tag": "@SatishPrajapati161", "date": "13 Aug 2021", "likes": "48",
+            "img": ImageTesti4, "name": "Satish Prajapati", "tag": "@SatishPrajapati161", "date": "13 Aug 2021", "likes": "48","alt":"Satish Prajapati","letter":"S",
             "des": "I’m really happy with the research calls here. The quality of research is really impressive. I’ve been able to book some handsome profits because of these reseach calls. Thanks!!! "
         },
 
 		{
-            "img": ImageTesti5, "name": "Shibani Mitra", "tag": "@ShibiMitra88", "date": "09 Sept 2021", "likes": "61",
+            "img": ImageTesti5, "name": "Shibani Mitra", "tag": "@ShibiMitra88", "date": "09 Sept 2021", "likes": "61","alt":"Shibani Mitra","letter":"S",
             "des": "Everyone who invests in stock markets should experience their app. No lags or other problems whatsoever. Everything right from sign in to trade execution is seemless."
         },
 		{
-            "img": ImageTesti6, "name": "Vishesh Singh Thakur", "tag": "@VisheshST9999", "date": "18 Oct 2021", "likes": "48",
+            "img": ImageTesti6, "name": "Vishesh Singh Thakur", "tag": "@VisheshST9999", "date": "18 Oct 2021", "likes": "48","alt":"Vishesh Singh Thakur","letter":"V",
             "des": "I’m a beginner in stock market investing and I find this app very helpful. The research section is of great help and the trading window is also good and simple to use."
         },
 		{
-            "img": ImageTesti7, "name": "Kamlesh Bhadoria", "tag": "@Kamlesh83", "date": "30 Sept 2021", "likes": "71",
+            "img": ImageTesti7, "name": "Kamlesh Bhadoria", "tag": "@Kamlesh83", "date": "30 Sept 2021", "likes": "71","alt":"Kamlesh Bhadoria","letter":"K",
             "des": "I have tried their stock collections and baskets and I must say they are full of great stock ideas. The baskets are a great way of investing with diversification."
         }
     ])
@@ -215,11 +216,12 @@ function HomeTestimonial() {
 									<div className="slider-item-des">
 										<div className="item-des-name-value d-flex align-items-start justify-content-between">
 											<div className='d-flex flex-wrap w-75'>
-												<FontAwesomeIcon icon={faTwitter} />
+												{/* <FontAwesomeIcon icon={faTwitter} /> */}
+												<span className='tag-letter'>{dataObj[0].letter}</span>
 												<h4>{dataObj[0].name}</h4>
-												<h6 className='w-75'>{dataObj[0].tag}</h6>
+												{/* <h6 className='w-75'>{dataObj[0].tag}</h6> */}
 											</div>
-											<h6 className='rght-txt'>{dataObj[0].date}</h6>
+											{/* <h6 className='rght-txt'>{dataObj[0].date}</h6> */}
 										</div>
 										<div className="item-des-cont">
 											<p>{dataObj[0].des}</p>
@@ -227,8 +229,8 @@ function HomeTestimonial() {
 										
 										<div className="likes-view">
 											<div className='likes-view-left'>
-												<FontAwesomeIcon icon={faHeart} />
-												<h5>{dataObj[0].likes}</h5>
+												{/* <FontAwesomeIcon icon={faHeart} />
+												<h5>{dataObj[0].likes}</h5> */}
 											</div>
 											
 											<div className='right-btn-extr'>
