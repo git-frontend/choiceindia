@@ -236,6 +236,16 @@ const meta_tags = {
 
     "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.","link":"https://choiceindia.com/investors", "faqscript": `` },
 
+    "client-details-update":{'title':"Update Client Details - Change Your Email and Phone Number",'content':"",'link':"https://choiceindia.com/client-details-update"},
+
+    "annual-report":{'title':"Financial Info - Choice International Limited",'content':"",'link':"https://choiceindia.com/annual-report"},
+
+    "financial-info":{'title':"Annual Report - Choice International Limited",'content':"",'link':"https://choiceindia.com/financial-info"},
+
+    "news-media":{'title':"News and Media - Choice",'content':"",'link':"https://choiceindia.com/news-media"},
+
+
+
     "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
     "commodity-trading":{'title':"Open Commodity Trading Account Online for Free at Choice",'content':"Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.",'link':"https://choiceindia.com/commodity-trading"},
@@ -1049,7 +1059,7 @@ const meta_tags = {
 
     "stratezy": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "baskets": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+    "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", "content": "Jiffy Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": `` },
 
     "share-market-app": {
         'title': "Best Share Market App in India - Download Jiffy Trading App", "content": "Jiffy is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Jiffy Stock Market App now.","link":"https://choiceindia.com/share-market-app",
