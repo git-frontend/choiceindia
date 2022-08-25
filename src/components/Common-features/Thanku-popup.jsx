@@ -8,6 +8,9 @@ import Modal from 'react-bootstrap/Modal';
 
 function Thankyoupopup({ isShow }) {
 
+
+
+ 
 //  console.log('TRTR', isShow);
 
   // useEffect(() => {
@@ -37,7 +40,7 @@ function Thankyoupopup({ isShow }) {
     if(isShow.page != 'add-lead'){
       setTimeout(() => {
         window.location.href(isShow.closeMd(isShow.redirectionLink));
-      },2000)
+      },22000)
     }
   }, [])
 
@@ -99,7 +102,7 @@ function Thankyoupopup({ isShow }) {
             <Modal.Body className='thanku-mdl-parent'>
               <div>
                 <div className="thanku-overlay thanku-popup-active" >
-                  <div className={"thanku-popup "+((window.location.pathname =="/sub-broker-franchise" || window.location.pathname =="/authorised-person" || window.location.pathname =="/remisier") ?'sub-broker-success':'campaign-success')}>
+                  <div className={"thanku-popup "+((!isShow.isOnboarding)?(((window.location.pathname.indexOf('sub-broker-franchise')>-1)  || (window.location.pathname.indexOf('authorised-person')>-1) || window.location.pathname.indexOf('remisier')>-1) ?'sub-broker-success':'campaign-success'):"")}>
                     <div className="sub-row">
                       <div className="close">
                         {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}

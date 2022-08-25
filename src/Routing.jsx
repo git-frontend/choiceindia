@@ -324,7 +324,7 @@ function Routing() {
                                 < Lazyremisier />
                             </React.Suspense>
                         } />
-                        <Route exact path='/newsmedia' element={
+                        <Route exact path='/news-media' element={
                             <React.Suspense>
                                 < Lazynewsmedia />
                             </React.Suspense>
@@ -373,7 +373,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/campaigns/open-account/' element={
+                        <Route exact path='/demat-account' element={
                             <React.Suspense>
                                 < LazyOpenDemat />
                             </React.Suspense>

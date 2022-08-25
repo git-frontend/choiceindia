@@ -35,7 +35,7 @@ function DematAccountForm(props) {
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
 
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -120,7 +120,7 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link,msg) {
+    function handleOTPClose(link,msg,info) {
         // console.log('closeModal22',link,msg);
         setShowOTP(false);
 
@@ -130,22 +130,22 @@ function DematAccountForm(props) {
             if (result&&result.length&&result[0] === 'respond-issue') {
                 setIsIssue(() => link);
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
+                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
                 });
             } else {
                 if (link._reactName) {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
+                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
                     });
                 } else {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
+                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
                     });
                 }
             }
         } else {
             setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
+                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
             });
         }
 
@@ -272,8 +272,8 @@ function DematAccountForm(props) {
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
-            "referred_id": refercodeInv.current || null,
-            "sub_ref": subrefercodeInv.current || null,
+            "referred_id": refercode.current || null,
+            "sub_ref": subrefercode.current || null,
             "lead_source":type1=='MF' ?"CHOICEINDIA":"",
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
@@ -324,7 +324,7 @@ function DematAccountForm(props) {
       
         refercodeInv.current=(searchParams.get('refercode')?(searchParams.get('refercode')):(searchParams.get('ref')||''))// 
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
-        source.current = (searchParams.get('source'))||'';
+        source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
         subrefercodeInv.current = (searchParams.get('subref'))||'';
     }
 

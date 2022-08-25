@@ -280,9 +280,9 @@ function OurPerformance() {
                     <div className="new-sec-sub">
                         <div className="left-tb">
                             <ul className="reset">
-                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(3);loadsuccess(successSdate);loadperformance(fivedate)}}>last 5 days </li>
-                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(1);loadsuccess(successWeek);loadperformance(counterwdate)}}>last week </li>
-                              <li className="pr-tab cursor-pointer" onClick={() => {setcount(2);loadsuccess(successMonth);loadperformance(countermdate)}}>last month   </li>
+                              <li className={"pr-tab cursor-pointer "+((count==1)?"active":"")} onClick={() => {setcount(1);loadsuccess(successSdate);loadperformance(fivedate)}}>last 5 days </li>
+                              <li className={"pr-tab cursor-pointer"+((count==2)?"active":"")} onClick={() => {setcount(2);loadsuccess(successWeek);loadperformance(counterwdate)}}>last week </li>
+                              <li className={"pr-tab cursor-pointer"+((count==3)?"active":"")} onClick={() => {setcount(3);loadsuccess(successMonth);loadperformance(countermdate)}}>last month   </li>
                             </ul>
                         </div>
                         <div className="right-tb">
