@@ -94,10 +94,7 @@ body{
                display: none;
            }
         }
-        @media (max-width: $sm){
-            font-size: 1.4rem;
-            line-height: 2.15rem;
-        }
+        
         &.nm-text{
             font-size: 1.4rem;
             line-height: 2.15rem;

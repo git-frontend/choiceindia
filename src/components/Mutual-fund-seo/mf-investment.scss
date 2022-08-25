@@ -515,6 +515,9 @@ body{
             padding-bottom: 8rem;
             .sl-item{
                 text-align: center;
+                display: block !important;
+                max-width: 500px;
+                margin: 0 auto;
                 .img-testi{
                     display: inline-block;
                     margin-bottom: 1.5rem;
@@ -536,35 +539,84 @@ body{
                     background-size: 100% 100%;
                 }
                 h3{
-                    margin-top: 3rem;
-                    font-family: $font-family-RedHat-Bold;
+                    margin-bottom: 1.5rem;
+                    font-size: 1.8rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                }
+                .img-star{
+                    display: inline-block;
+                    margin-bottom: 3rem;
+                }
+                p{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        background: url('../../assets/images/online-trading-app/quote1.svg') no-repeat;
+                        display: block;
+                        background-size: contain;
+                        position: absolute;
+                        height: 50px;
+                        width: 66px;
+                        left: -50px;
+                        top: -27px;
+                        @media (max-width:$md) {
+                            width: 50px;
+                            height: 30px;
+                            left: -20px;
+                        }
+                        @media (max-width: $sm-x) {
+                            left: 0;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url('../../assets/images/online-trading-app/quote2.svg') no-repeat;
+                        display: block;
+                        background-size: contain;
+                        position: absolute;
+                        height: 50px;
+                        width: 66px;
+                        right: -50px;
+                        bottom: -27px;
+                        @media (max-width:$md) {
+                            width: 50px;
+                            height: 30px;
+                            right: -20px;
+                        }
+                        @media (max-width: $sm-x) {
+                            right: 0;
+                        }
+                    }
+            }
+            }
+            .slick-prev{
+                background: url(../../assets/images/online-trading-app/left-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                z-index: 9;
+                left: -13%;
+                top: 33%;
+                &::before{
+                    display: none;
+                }
+                @media (max-width:$md) {
+                    left: 0;
                 }
             }
-            .slick-arrow{  
-                width: 6.5rem;
-                height: 3rem;
-                line-height: 3rem;
-                border-radius: 25px;
-                top: inherit;
-                bottom: 0;
-                left: 45%;
-                transform: inherit;
-                transform: translate(-50%, 0);
+            .slick-next{
+                background: url(../../assets/images/online-trading-app/right-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                right: -13%;
+                top: 33%;
                 &::before{
-                    color: #9F9F9F;
-                    background: transparent;
-                    font-family: inherit;
-                    font-size: 2.5rem;
+                    display: none;
                 }
-                &:hover{
-                    background: $primary;
-                    &::before{
-                        color: $whiteColor;
-                    }
-                }
-                &.slick-next{
-                    left: 55%;
-                    margin-left: 2rem;
+                @media (max-width:$md) {
+                    right: 0;
                 }
             }
         }
