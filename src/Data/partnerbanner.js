@@ -2,8 +2,8 @@ import StckImage from '../assets/images/partner/partners-stock-banner.gif';
 import MutualFundsImage from '../assets/images/partner/partners-mutual-funds-banner.gif';
 import InsuranceImage from '../assets/images/partner/partners-insurance-banner.gif';
 import LoansImage from '../assets/images/partner/partners-loans-banner.gif';
-import ImageSub2 from '../assets/images/icons/stock.svg';
-import ImageSub3 from '../assets/images/icons/money-bag.svg';
+import ImageSub2 from '../assets/images/icons/stock-market-investing.svg';
+import ImageSub3 from '../assets/images/icons/mutual-funds-investment.svg';
 import ImageSub4 from '../assets/images/icons/insurance.svg';
 import ImageSub5 from '../assets/images/icons/loan.svg';
 
@@ -25,6 +25,7 @@ const partnerBanner =[
         "button":"Mutual Funds",
         "icon":`${ImageSub3}`,
         "id":2
+
 
     },
 

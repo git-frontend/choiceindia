@@ -1,6 +1,6 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/about-us/banner.webp';
+import Bannerimage from '../../assets/images/about-us/about-choice.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Banner() {
@@ -22,7 +22,7 @@ function Banner() {
                 <div className="col-md-6 d-none d-sm-block">
                     <div className="rightsec">
 
-                              <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} />
+                              <LazyLoader src={Bannerimage} alt={"About Choice"} className={"img-fluid"} width={"609"} height={"476"} />
                     {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid "></img> */}
                     </div>
                 </div>

@@ -1,8 +1,8 @@
 
 import React, { useRef } from "react";
 import { useState } from "react";
-import  ImageSub2  from '../../assets/images/icons/stock.svg';
-import  ImageSub3  from '../../assets/images/icons/money-bag.svg';
+import  ImageSub2  from '../../assets/images/icons/stock-market-investing.svg';
+import  ImageSub3  from '../../assets/images/icons/mutual-funds-investment.svg';
 import  ImageSub4  from '../../assets/images/icons/insurance.svg';
 import  ImageSub5  from '../../assets/images/icons/equity.svg';
 

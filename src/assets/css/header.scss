@@ -175,6 +175,10 @@
                         font-size: 1.3rem;
                         font-family: $font-family-poppins-regular;
                         text-transform: capitalize;
+                        background: $whiteColor !important;
+                        &:hover{
+                            background: #e9ecef !important; 
+                        }
                     }
                     }
                     @media screen and (max-width: $md) {

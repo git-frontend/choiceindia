@@ -282,7 +282,12 @@
                               top: 0;
                             }
                         }
-                        
+                        @media (max-width: $sm) {
+                          position: relative;
+                          left: inherit;
+                          top: inherit;
+                          bottom: inherit;
+                        }
                     }
                     @media (max-width: $xs) {
                       width: 100%;
@@ -305,6 +310,12 @@
                 }
                 @media (max-width: $md) {
                   width: 100%;
+                }
+                @media (max-width: $sm) {
+                  width: 90% !important;
+                  margin: 0 auto;
+                  display: block !important;
+                  margin-bottom: 2rem;
                 }
             }
         }

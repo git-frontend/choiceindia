@@ -1,6 +1,6 @@
 
 import React from "react";
-import vissionmission from '../../assets/images/about-us/new_Coin-box-dart.webp';
+import vissionmission from '../../assets/images/about-us/choice-vision-mission.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Vissionmission() {

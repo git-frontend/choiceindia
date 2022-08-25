@@ -114,24 +114,33 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 session_id: otpID.current
             };
 
-            openAccountService.verifyOTP(request,type2).then((res) => {
+            openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                  //  console.log('HANDLER',res);
+                    //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
-                        //Your Onboarding has been completed
+                    //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
-                        // IsBackOffice should be Y, isCredentialGenerated = 1 , uccStatus='success',
-                        // then redirect to Jiffy Login .
-                        // else
-                        // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
+                    // IsBackOffice should be Y, isCredentialGenerated = 1 , uccStatus='success',
+                    // then redirect to Jiffy Login .
+                    // else
+                    // should display the popup with message provided in response  "Account Opening Application in Review. Please Contact Customer Support"
                     // } else {
                     if (res && res.data && res.data.Body && res.data.Body.url) {
-                        // console.log('inside call');
+                        // console.log('inside call',res.data.Message);
                         // setShowLead(prevState => {
                         //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
                         // });
-                        onClose(res.data.Body.url);
+
+                        let result = res.data.Body.url.match("respond-issue");
+                        if(result && result.length && result[0] === 'respond-issue'){
+                            openInfoPopup(res.data.Message);
+                            onClose(res.data.Body.url);
+                        }else{
+                            console.log('Else onboard');
+                            onClose(res.data.Body.url,res.data.Message? res.data.Message:'');
+                        }
+                        
                         // console.log('inside call',showlead.showModal);
                         // window.location.href = res.data.Body.url;
                     } else {
@@ -142,12 +151,16 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             // setShowLead(prevState => {
                             //     return { ...prevState, showModal: true, redirectLink: 'https://jiffy.choiceindia.com/auth/login'}
                             // });
-if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("https://jiffy.choiceindia.com/auth/login");}
+                            if (type2 == 'MF') {
+                                onClose("https://investica.com/auth/sign-in")
+                            } else {
+                                onClose("https://jiffy.choiceindia.com/auth/login");
+                            }
 
 
 
-                           // (type2=='MF' )? 
-                           // window.location.href ="https://investica.com/auth/sign-in" 
+                            // (type2=='MF' )? 
+                            // window.location.href ="https://investica.com/auth/sign-in" 
                             //:
                             //window.location.href = "https://jiffy.choiceindia.com/auth/login";
                         }
@@ -343,7 +356,7 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
             </div> */}
 
 
-<Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose} backdrop='static' keyboard={false}>
+            <Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose} backdrop='static' keyboard={false}>
 
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
@@ -367,10 +380,10 @@ if(type2 == 'MF'){onClose("https://investica.com/auth/sign-in")}else{ onClose("h
                                         }
 
                                     </div>
-                                    <div>
+                                    <div className="otp-mdl-input-chk">
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="text" pattern='\d*' id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="number" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }

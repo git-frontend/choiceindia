@@ -17,7 +17,7 @@ function SubBrokerBenifits() {
     const [defaultOption, setdefaultOption] = useState(() => 'sl-slider-active');
 
     const [view, setView] = useState({
-        matches: window.innerWidth < 770 ? false : true,
+        matches: window.innerWidth < 768 ? false : true,
     });
 
     const settings = {
@@ -46,7 +46,7 @@ function SubBrokerBenifits() {
     useEffect(() => {
        
            
-            let mediaQuery = window.matchMedia("(min-width: 770px)");
+            let mediaQuery = window.matchMedia("(min-width: 768px)");
             mediaQuery.addListener(setView);
             // this is the cleanup function to remove the listener
             return () => mediaQuery.removeListener(setView);

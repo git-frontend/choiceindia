@@ -27,12 +27,13 @@ body{
         padding-bottom: 2.1875rem;
         padding-top: 1.25rem;
         font-family: $font-family-poppins-bold;
-        @media (max-width:$sm) {
+        @media (max-width:$md) {
             line-height: 4rem;
-            font-size: 2.3rem;
+            font-size: 3.125rem;
             padding-bottom: 2rem;
             padding-top: 4rem;
         }
+       
     }
 
     .para {
@@ -43,7 +44,7 @@ body{
         font-family: $font-family-poppins-regular;
         @media (max-width:$sm) {
             line-height: 2.65rem;
-            font-size: 1.4rem;
+            font-size: 1.75rem;
         }
     }
 
@@ -69,7 +70,7 @@ body{
     padding-bottom: 3.375rem;
     @media (max-width:$sm) {
         line-height: 4rem;
-        font-size: 2.3rem;
+        font-size: 2.5rem;
         padding-bottom: 2rem;
     }
 }
@@ -386,6 +387,9 @@ body{
 
     .heading {
         padding-bottom: 1.25rem;
+        @media (max-width:$sm) {
+            padding-bottom:2rem;
+        }
     }
 
     .journeyinfo {
@@ -400,7 +404,7 @@ body{
         padding-bottom: 5.25rem;
 
         @media (max-width:$sm) {
-            line-height: 2.65rem;
+            line-height: 2.15rem;
             font-size: 1.45rem;
            width: 95%;
         }
@@ -607,6 +611,9 @@ body{
         .heading {
             text-align: left;
             padding-bottom: 1rem;
+            @media (max-width:$sm) {
+                padding-bottom: 2rem;
+            }
         }
 
         .yellow {
@@ -624,6 +631,10 @@ body{
             font-weight: 400;
             font-family: $font-family-poppins-regular;
             margin-bottom: 2rem;
+            @media (max-width:$sm) {
+                font-size: 1.4rem;
+            line-height: 2.15rem;
+            }
         }
     }
 }
@@ -683,8 +694,8 @@ body{
                 padding-bottom: 15px;
 
                 @media (max-width:$sm) {
-                    line-height: 4rem;
-                    font-size: 2.3rem;
+                    font-size: 2.5rem;
+                    line-height: 3rem;
                 }
 
                 @media (min-width:769px) and (max-width:1024px) {
@@ -700,7 +711,7 @@ body{
                 color: $secondary;
                 margin: 0;
                 @media (max-width:$sm) {
-                    line-height: 2.625rem;
+                    line-height: 2.15rem;
                     font-size: 1.4rem;
                 }
                 @media (min-width:769px) and (max-width:1024px) {
@@ -747,7 +758,9 @@ body{
                             line-height: 2.5rem;
                             font-family: $font-family-poppins-semibold;
                             margin-bottom: 18px;
-
+                            @media (max-width:$sm) {
+                               font-size: 1.6rem;
+                            }
                             @media (min-width:769px) and (max-width:1024px) {
                                 font-size: 1.5rem;
                             }
@@ -758,7 +771,9 @@ body{
                             line-height: 2.4rem;
                             font-weight: 400;
                             font-family: $font-family-poppins-regular;
-                           
+                            @media (max-width:$sm) {
+                                font-size: 1.4rem;
+                             }
                             @media (min-width:769px) and (max-width:1024px) {
                                 font-size: 1.3rem;
                             }
@@ -819,7 +834,7 @@ body{
     position: relative;
 
     @media (max-width:$sm) {
-        padding: 0 0 8rem;
+        padding: 0 0;
     }
 
     &:after {
@@ -876,8 +891,8 @@ body{
                     overflow: hidden;
                     text-overflow: ellipsis;
                     @media (max-width:$sm) {
-                        font-size: 1.7rem;
-                        text-align: left;
+                        font-size: 1.6rem;
+                        text-align: center;
                     }
                 }
 
@@ -893,8 +908,9 @@ body{
                         font-size: 1.4rem;
                     }
                     @media (max-width:$sm) {
-                        font-size: 1.5rem;
+                        font-size: 1.4rem;
                         margin-top: 1.5rem;
+                        line-height: 2.15rem;
                     }
                 }
             }
@@ -916,7 +932,9 @@ body{
         .slick-dots {
             text-align: center;
             bottom: -5.4375rem;
-
+            @media (max-width:$sm) {
+               bottom: 0;
+            }
             li {
                 width: 12px;
                 height: 12px;
@@ -976,7 +994,18 @@ body{
 }
 
 .Clients{
-    
+    .client-list{
+        .image_wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+            @media (max-width:$sm) {
+                padding: 0 40px;
+                display: flex !important;
+            }
+        }
+    }
 .Marquee {
     width: 100%;
     box-sizing: border-box;
@@ -1047,4 +1076,8 @@ body{
   }
   
 
+}
+
+.mb3{
+    margin-bottom: 2rem;
 }

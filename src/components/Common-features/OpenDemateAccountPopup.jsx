@@ -20,6 +20,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
+    var source = useRef('');
     var otpSessionID = useRef('');
 
     function handleMobile(e) {
@@ -64,6 +65,8 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
+  
+        source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
     }
 
     function handleSendOTP(e) {
@@ -93,7 +96,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "mobile_number": mobileNumber,
             "product": "JIFFY",
             "request_source": "CHOICEINDIA",
-            "source": "CHOICEINDIA",
+            "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
@@ -163,7 +166,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     <h4 className="desktophide">+ 1st Year Free AMC </h4>
                                     <div className="form-group">
                                         {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
-                                        <input type="number" autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
+                                        <input type="text" pattern='\d*' autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
                                         <div>
                                             <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                             <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{errors.required ? 'Mobile Number is Required' : ''}</small>

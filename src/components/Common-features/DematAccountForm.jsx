@@ -35,7 +35,7 @@ function DematAccountForm(props) {
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead' });
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -50,13 +50,17 @@ function DematAccountForm(props) {
     var UTMCustom = useRef('');
     var UTMTerm = useRef('');
     var refercode = useRef('');
+    var refercodeInv = useRef('');
+    var source = useRef('');
     var subrefercode = useRef('');
+    var subrefercodeInv = useRef('');
     var otpSessionID = useRef('');
     var isMobile = useRef(isMobileDevice());
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
+    const [IsIssue, setIsIssue] = useState('');
     
 
     function isMobileDevice() {
@@ -116,23 +120,32 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link) {
-        console.log('closeModal22',link)
+    function handleOTPClose(link,msg) {
+        // console.log('closeModal22',link,msg);
         setShowOTP(false);
 
-        if(link){
-            if(link._reactName){
+        if (link) {
+
+            let result = link.match("respond-issue");
+            if (result&&result.length&&result[0] === 'respond-issue') {
+                setIsIssue(() => link);
                 setShowThanku(prevState => {
-                    return {...prevState, showModal: false, redirectionLink: link, closeMd: closeModal}
+                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
                 });
-            }else{
-                setShowThanku(prevState => {
-                    return {...prevState, showModal: true, redirectionLink: link, closeMd: closeModal}
-                });
+            } else {
+                if (link._reactName) {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
+                    });
+                } else {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'', closeMd: closeModal }
+                    });
+                }
             }
-        }else{
+        } else {
             setShowThanku(prevState => {
-                return {...prevState, showModal: false, redirectionLink: '', closeMd: closeModal}
+                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'', closeMd: closeModal }
             });
         }
 
@@ -257,7 +270,7 @@ function DematAccountForm(props) {
             "mobile_number": mobileNumber,
             "product": type1=='MF' ? "INVESTICA":"JIFFY",
             "request_source": "CHOICEINDIA",
-            "source": type1=='MF' ?"INVESTICA":"CHOICEINDIA",
+            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
             "referred_id": refercode.current || null,
             "sub_ref": subrefercode.current || null,
@@ -308,7 +321,11 @@ function DematAccountForm(props) {
         UTMTerm.current = searchParams.get('utm_term') || '';
 
         refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
+      
+        refercodeInv.current=(searchParams.get('refercode')?(searchParams.get('refercode')):(searchParams.get('ref')||''))// 
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
+        source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
+        subrefercodeInv.current = (searchParams.get('subref'))||'';
     }
 
     // function handleOTP(e) {
@@ -490,6 +507,9 @@ function DematAccountForm(props) {
     }
 
     function hideOTPInfoPopup() {
+        if(IsIssue){
+            window.location.href = IsIssue;
+        }
         setOTPInfoPopup(false);
     }
 
