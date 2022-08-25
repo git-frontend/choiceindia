@@ -6,6 +6,7 @@ import ImageTesti4 from '../../assets/images/satish-prajapati.webp';
 import ImageTesti5 from '../../assets/images/shibani-mitra.webp';
 import ImageTesti6 from '../../assets/images/vishesh-singh-thakur.webp';
 import ImageTesti7 from '../../assets/images/kamlesh-bhadoria.webp';
+import ImagePlay from '../../assets/images/playstore.svg';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
@@ -215,13 +216,14 @@ function HomeTestimonial() {
 									</div>
 									<div className="slider-item-des">
 										<div className="item-des-name-value d-flex align-items-start justify-content-between">
-											<div className='d-flex flex-wrap w-75'>
+											<div className='d-flex flex-wrap w-75 align-items-center'>
 												{/* <FontAwesomeIcon icon={faTwitter} /> */}
-												<span className='tag-letter'>{dataObj[0].letter}</span>
+												
+												<span className='tag-letter'><LazyLoader src={ImagePlay} className={'img-fluid'} width={"36"} height={"41"} alt={""}/></span>
 												<h4>{dataObj[0].name}</h4>
 												{/* <h6 className='w-75'>{dataObj[0].tag}</h6> */}
 											</div>
-											{/* <h6 className='rght-txt'>{dataObj[0].date}</h6> */}
+											<h6 className='rght-txt'>{dataObj[0].date}</h6>
 										</div>
 										<div className="item-des-cont">
 											<p>{dataObj[0].des}</p>
@@ -229,8 +231,8 @@ function HomeTestimonial() {
 										
 										<div className="likes-view">
 											<div className='likes-view-left'>
-												{/* <FontAwesomeIcon icon={faHeart} />
-												<h5>{dataObj[0].likes}</h5> */}
+												<FontAwesomeIcon icon={faHeart} />
+												<h5>{dataObj[0].likes}</h5>
 											</div>
 											
 											<div className='right-btn-extr'>

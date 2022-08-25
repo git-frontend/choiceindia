@@ -1560,7 +1560,7 @@
           display: inline-block;
           padding:1rem  2rem;
           background: $whiteColor;
-          border: 1px solid $darkblack;
+          border: 2px solid $primary;
           border-radius: 16px;
           margin: 1.5rem 0;
           text-transform: capitalize;
@@ -1569,6 +1569,9 @@
             margin: 0.5rem;
             min-width: inherit;
             white-space: nowrap;
+          }
+          &.active{
+            border: 2px solid #00EFD1;
           }
         }
         @media  (max-width:$sm-x) {
