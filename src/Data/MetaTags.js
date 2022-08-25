@@ -44,7 +44,7 @@ const meta_tags = {
 
     "ipo-investment-account": { 'title': "IPO Investment: Invest In IPO Online With Choice", "content":"IPO Investment - Now investing in IPO is smooth and simple with Choice. Open a Demat account and avail benefits such as listing gains, & short-term profit.", 'link': 'https://choiceindia.com/ipo-investment-account' },
 
-    "mutual-funds-investment":{'title':"",'content':"",'link':"https://choiceindia.com/mutual-funds-investment"},
+    "mutual-funds-investment":{'title':"Invest in Mutual Funds Online in India with Choice",'content':"With Choice, you may begin investing in mutual funds online in India. The choice mutual funds investment platform simplifies investing in mutual funds for everyone.",'link':"https://choiceindia.com/mutual-funds-investment"},
     
     
     "investment-app":{'title':"Best Investment App for Stocks, Mutual Funds, ETF and IPO",'content':"Start your investment journey with the top investment app in India. The Choice app allows you to invest in several types of securities, including bonds, ETFs, mutual funds, and derivatives.",'link':"https://choiceindia.com/investment-app"},
@@ -232,7 +232,7 @@ const meta_tags = {
 
     // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "partner": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
+    "partner": { 'title': "Become a Stock Market Agent with Choice", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://dev.choiceindia.com/partner", "faqscript": `` },
 
     "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.","link":"https://choiceindia.com/investors", "faqscript": `` },
 
@@ -246,7 +246,7 @@ const meta_tags = {
 
     "currency-forex-trading":{'title':"Open Currency / Forex Trading Account Online for Free at Choice",'content':"Open a free currency or forex trading account online to take advantage of minimal brokerage fees, free research, and advisory services, as well as the first year being free of annual fees.",'link':"https://choiceindia.com/currency-forex-trading"},
 
-    "campaign/open-demat-account":{'title':"",'content':"",'link':"https://choiceindia.com/campaign/open-demat-account"},
+    "campaign/open-demat-account":{'title':"Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year",'content':"Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.",'link':"https://choiceindia.com/campaign/open-demat-account"},
 
     "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise"},
 
