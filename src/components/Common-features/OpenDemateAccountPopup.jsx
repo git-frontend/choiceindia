@@ -5,6 +5,8 @@ import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import { Link } from "react-router-dom";
+import Thankyoupopup from './Thanku-popup.jsx';
+
 function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
 
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -22,6 +24,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
+
+    /** state to show thankyou popup default */
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -55,9 +60,34 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         setShowOTP(true);
     }
 
-    function handleOTPClose() {
+    function handleOTPClose(link,msg,info) {
+        console.log('TTYTYTYTY',link,msg,info);
         setShowOTP(false);
         hideComponent();
+        if (link) {
+
+            let result = link.match("respond-issue");
+            if (result&&result.length&&result[0] === 'respond-issue') {
+                setIsIssue(() => link);
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                });
+            } else {
+                if (link._reactName) {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                    });
+                } else {
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                    });
+                }
+            }
+        } else {
+            setShowThanku(prevState => {
+                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+            });
+        }
     }
 
     function fetchQueryParams() {
@@ -212,6 +242,10 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                     <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current}></OpenAccountOTPModal>
                 </Modal.Body>
             </Modal> */}
+
+            {
+                showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
+            }
         </>
     );
 }
