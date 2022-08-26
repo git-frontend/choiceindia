@@ -1124,6 +1124,7 @@
                     display: flex;
                     align-items: center;
                     margin-bottom: 2rem;
+                    flex-wrap: wrap;
 
                     .fa-twitter {
                         color: #0C71B9;
@@ -1158,6 +1159,11 @@
                         }
                         &.rght-txt{
                             padding-left: 1rem;
+                            @media (max-width: $xs) {
+                                width: 100%;
+                                padding: 0;
+                                padding-left: 3.5rem;
+                            }
                         }
                     }
                 }
