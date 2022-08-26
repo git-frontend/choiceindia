@@ -45,14 +45,14 @@ function FableBlog() {
                                         </div>
                                         <div className="single-blog-con">
                                             <div className="single-blog-img">
-                                                <LazyLoader src={data[0].feature_image} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
+                                                <LazyLoader src={data[0]?.feature_image} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
                                             </div>
                                             <div className="single-blog-des">
-                                                <h3>{data[0].title}</h3>
-                                                <h6 className="tag-act">Published at: {(data[0].published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
+                                                <h3>{data[0]?.title}</h3>
+                                                <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                 {/* str.substring(0, str.length - 1);
                                                 {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
-                                                <p className="des-cont mt-3">{(data[0].meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0].slug}`} className="fw-bold">Read More</Link></p>
+                                                <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
                                             </div>
                                         </div>
 
