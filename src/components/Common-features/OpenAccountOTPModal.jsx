@@ -373,7 +373,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                         <img src={OTPimage} />
 
                                         <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + mobileNumber.slice(6, 10)}</p>
+                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + (mobileNumber).slice(6, 10)}</p>
                                         {
                                             count ?
                                                 <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''

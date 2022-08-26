@@ -298,7 +298,7 @@ const settings = {
                     
                   
                   {
-                    list.slice(0, 4).map((res, i) => {
+                    (list||[]).slice(0, 4).map((res, i) => {
 
                       return (
                         
@@ -334,7 +334,7 @@ const settings = {
                     
                   
                  {
-                   list.slice(0, 4).map((res, i) => {
+                   (list||[]).slice(0, 4).map((res, i) => {
 
                      return (
                        

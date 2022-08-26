@@ -95,7 +95,7 @@ function ChoiceFinx() {
                     }}
                   >
                     {
-                      FinxImage.slice(0, 3).map((response, index) => {
+                      (FinxImage||[]).slice(0, 3).map((response, index) => {
 
                         return (
                           

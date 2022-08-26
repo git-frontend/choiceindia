@@ -109,7 +109,7 @@ function TrendingReports(props) {
                     <div className="res-detailtab-list">
 
                       {
-                        list?.slice(0, 4)?.map((res, i) => {
+                        (list||[])?.slice(0, 4)?.map((res, i) => {
 
                           
                           return (

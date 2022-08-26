@@ -118,7 +118,7 @@ function MarketInsights() {
 
 
                                         {
-                                            fabal.slice(0, 4).map((response, index) => {
+                                            (fabal||[]).slice(0, 4).map((response, index) => {
                                                 let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
 
                                                 return (
