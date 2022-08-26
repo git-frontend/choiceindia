@@ -56,7 +56,7 @@ function AboutUs() {
     <Vissionmission />
     <CoreValues />
     <WhatWeOffer />
-    <Clients />
+    {/* <Clients /> */}
     
   </div>
    }  
