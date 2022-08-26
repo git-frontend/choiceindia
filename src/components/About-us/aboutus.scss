@@ -14,9 +14,11 @@ body{
 .bannersection {
     padding: 5rem 0;
     position: relative;
-
+    
     @media (max-width:$sm) {
         padding: 0 0 4rem;
+        text-align: center;
+
     }
 
     .title {
