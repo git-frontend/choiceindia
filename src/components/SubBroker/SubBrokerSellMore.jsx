@@ -30,7 +30,7 @@ const SubBrokerSellMore = () => {
                                     <div className="sell-left-sec">
                                         <h2 className="title-secnd">Sell More. Earn More!</h2>
                                         <p className="sml-para-dv">Choice has an extensive portfolio of product offerings backed by more than 25 years of experience. Sub Broker have the option to offer the entire range of financial products.</p>
-                                        <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                                        <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>

@@ -208,7 +208,7 @@ function SubBrokerBenifits() {
                             <div className="item-next1">  
                                 <h3>Become a Choice Sub Broker</h3>
                                 <p>Start Sub Broker franchise with a trustworthy partner that can help you to grow up.</p>
-                                <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
+                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Join Now</span> </Link>
                             </div>
                         </div>
                     </div>

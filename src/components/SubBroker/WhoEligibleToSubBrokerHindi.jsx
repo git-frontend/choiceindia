@@ -97,7 +97,7 @@ function WhoEligibleToSubBrokerHindi() {
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
                                 <h4>विकास तो निश्चित है जब आप हमारे साथ साझेदारी करेंगे|</h4>
-                                <Link to="/sub-broker-franchise" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
+                                <Link to="/hindi/sub-broker-franchise" className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
                             </div>
                         </div>
                     </div>
