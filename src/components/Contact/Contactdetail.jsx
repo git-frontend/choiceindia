@@ -88,7 +88,7 @@ function Contactdetail() {
                            <p className="subtext mb-0">(+91) - 8080-80-8875</p>
                            <p className="subtext">support@choiceindia.com</p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
-                              Opp Harsh Express,Near Bank, Zone-I,Maharana  <br />J B Nagar, Andheri East, Mumbai, Maharashtra 400099
+                             J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
                         </div> :
                         <div className="text-right address" key={contactMap[MapNumber].id}>
