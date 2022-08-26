@@ -39,11 +39,13 @@ function FableBlogList() {
     };
 
     function goToScroll(value){
-        // console.log('GGG');
+        console.log('GGG');
         if(value === true){
-            demo_ref2.current.scrollIntoView({behavior: 'smooth'})
+            console.log(demo_ref2)
+            demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})
         }else{
-            demo_ref.current.scrollIntoView({behavior: 'smooth'})
+            console.log(demo_ref)
+            demo_ref?.current?.scrollIntoView({behavior: 'smooth'})
         }
         
         
@@ -63,9 +65,9 @@ function FableBlogList() {
 
 
     return (
-        <div>
+        <div ref={demo_ref}>
 
-            <section className="fable-blog-List" ref={demo_ref}>
+            <section className="fable-blog-List">
                 <div className="container">
                     <div className="fable-list-menu">
                         <ul >
@@ -133,7 +135,7 @@ function FableBlogList() {
 
                         {
 
-                            <div className="tab-blog-list" >
+                            <div className="tab-blog-list" ref={demo_ref2}>
                             {
                                 (post||[]).slice(0, check?post.length:3).map((res,index)=>{
                                     return(
@@ -143,7 +145,7 @@ function FableBlogList() {
                                         {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
-                                    <div className="blog-item-des" ref={demo_ref2}>
+                                    <div className="blog-item-des">
                                         <h4>{res.title}</h4>
                                         <p>{res.meta_description}</p>
                                        {/** <div className="d-flex justify-content-between">

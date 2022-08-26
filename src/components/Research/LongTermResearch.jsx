@@ -136,7 +136,7 @@ const settings = {
     }
   }, [trigger])
   return (
-    <div >
+    <div ref={demo_ref}>
       <section className="research-banner-tabs" >
         <div className="container">
 
