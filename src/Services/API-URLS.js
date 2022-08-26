@@ -19,9 +19,8 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    // https://researchreportapi.jiffy.in/api/report/
     UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
-    liveJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
     liveNewResearchReportURL: "https://jiffy.choiceindia.com/api/researchreport/v2/api",
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
@@ -510,7 +509,7 @@ export class API_URLS {
     }
     getresearchipoURL() {
         // this.researchURL
-        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?offset=0'
+        return this.researchURL + 'api/ipo?offset=0'
     }
 
     getperformanceURL() {
