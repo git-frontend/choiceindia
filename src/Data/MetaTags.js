@@ -2,7 +2,7 @@ const meta_tags = {
 
     "services": { 'title': "Best Financial Services in India - Choice", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.',"link":"https://choiceindia.com/services" },
 
-    "": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/" },
+    "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India', 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/" },
 
     "career": {
         'title': `Career At Choice | Work With India's Leading FinTech Company`, 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,"link":"https://choiceindia.com/career",

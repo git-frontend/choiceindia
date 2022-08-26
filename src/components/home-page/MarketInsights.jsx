@@ -3,6 +3,7 @@ import homeServices from '../../Services/homeServices';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 function MarketInsights() {
 
@@ -13,6 +14,7 @@ function MarketInsights() {
     // const [view, setView] = useState({
     //     matches: window.innerWidth < 770 ? false : true,
     // });
+    const [tempid, setTempId] = useState({ 'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
 
     const settings = {
         infinite: true,
@@ -54,7 +56,16 @@ function MarketInsights() {
                 // console.log(res, "Research Report");
             }
         )
-    };
+    };const navigate = useNavigate();
+
+    function marketinsightDetail(id) {
+        // console.log('IIIII',id);
+        // navigate(`/research-new/${id}/${tempid}`);
+        navigate({
+          pathname: `/research-new/${id}/${tempid.name}`,
+          search: `?id=${tempid.id}`
+        })
+      }
 
 
     /**onInIt Market insite and fabal */
@@ -124,8 +135,8 @@ function MarketInsights() {
                                                 return (
 
                                                     <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
-                                                        <div className="insights-item-cont">
-                                                            <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
+                                                        <div className="insights-item-cont" onClick={() => { marketinsightDetail(response.uuid);console.log("check",response.uuid) }}>
+                                                     <LazyLoader  src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                             {/* <img src={response.feature_image} alt="" /> */}
                                                             <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                         </div>
