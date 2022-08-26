@@ -60,6 +60,9 @@
                     text-align: center;
                 }
             }
+            @media (max-width: $sm) {
+                text-align: center;
+            }
         }
     }
 }
