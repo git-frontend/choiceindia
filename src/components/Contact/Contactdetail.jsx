@@ -36,7 +36,7 @@ function Contactdetail() {
                                <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'}/>
                         {/* <img src={pin} alt="Loading" /> */}
                         <p className="mt-3 maintitle">The Office </p>
-                        <p className="subtext">Choice Wealth Management Pvt. Ltd. <br />Choice House, Shree Shakambhari Corporate Park, <br />Plt No: -156-158, J.B. Nagar, Andheri (East), <br />Mumbai - 400 099</p>
+                        <p className="subtext">Choice International Limited,<br/> Sunil Patodia Tower, J.B. Nagar, Andheri (East),<br/> Mumbai 400099</p>
                      </div>
                   </div>
                   <div className="col-md-4">
