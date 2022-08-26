@@ -4,8 +4,8 @@ const environment = true ;
 
 /**URL Config */
 const config = {
-    liveServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
-    UATServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
+    liveServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
+    UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL: "https://cmsapi.choiceindia.com/",
 
@@ -47,7 +47,7 @@ export class API_URLS {
     /** SSO Base URL */
     SSOServerURL = '';
     /**Server URL */
-    serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
+    serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
     /**Server URL */
     jiffyURL = "devjiffy.choicebroking.in";
     jiffyExpertPageURL = "research-report/research/experts/EQ/all/"
