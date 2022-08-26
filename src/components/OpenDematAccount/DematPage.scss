@@ -1010,6 +1010,9 @@
 			display: none !important;
 		}
 	}
+	@media (max-width:$xs) {
+		padding: 5rem 0;
+	}
 }
 
 .mt-6{

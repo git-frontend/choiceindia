@@ -1571,7 +1571,7 @@
             white-space: nowrap;
           }
           &.active{
-            border: 2px solid #00EFD1;
+            border: 2px solid $yellowColor;
           }
         }
         @media  (max-width:$sm-x) {
