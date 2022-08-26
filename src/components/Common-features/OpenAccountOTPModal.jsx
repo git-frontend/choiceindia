@@ -117,7 +117,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                     console.log('HANDLER',res);
+                   //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
@@ -137,7 +137,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
-                            console.log('Else onboard');
+                           // console.log('Else onboard');
                             onClose(res.data.Body.url,res.data.Message? res.data.Message:'',res.data.Body.isOnboardFlag? res.data.Body.isOnboardFlag:"");
                         }
                         

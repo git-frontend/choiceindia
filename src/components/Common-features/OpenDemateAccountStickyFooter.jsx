@@ -71,7 +71,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
     }
 
     function handleOTPClose(link, msg) {
-        console.log('CCMMM', link, msg);
+     //   console.log('CCMMM', link, msg);
         setShowOTP(false);
 
         if (link) {

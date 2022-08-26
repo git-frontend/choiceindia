@@ -575,7 +575,7 @@ function SubBrokerForm(props) {
 
                 {
                     (brokerCreatedSuccess) ?
-                        <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise')>-1)  || (window.location.pathname.indexOf('authorised-person')>-1) || (window.location.pathname.indexOf('remisier')>-1)? 'sub-broker-success':''}  onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
+                        <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise')>-1)?"sub-broker-success":""}  onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
@@ -768,7 +768,7 @@ function SubBrokerForm(props) {
                                             </div>
 
                                             <div className="btnwrap">
-                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
+                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
                                             </div>
                                             <div className="">
 
