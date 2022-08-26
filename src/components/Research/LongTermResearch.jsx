@@ -227,7 +227,7 @@ const settings = {
                             <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                           </div>
                           <div className="tab-itm-des">
-                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                            <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                             <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
@@ -263,7 +263,7 @@ const settings = {
                            <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                          </div>
                          <div className="tab-itm-des">
-                           <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                            <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
@@ -307,7 +307,7 @@ const settings = {
                             <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                           </div>
                           <div className="tab-itm-des">
-                            <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                            <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                             {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                             <div className="itm-des-text">
                             <p dangerouslySetInnerHTML={{__html: res.description}}></p>
@@ -343,7 +343,7 @@ const settings = {
                            <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
                          </div>
                          <div className="tab-itm-des">
-                           <h5 className="ttl-des">{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
+                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
                            <div className="itm-des-text">
                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
