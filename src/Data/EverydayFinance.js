@@ -5,7 +5,7 @@ import  ImageSub5  from '../assets/images/icons/loan.svg';
 import  ImageSub6  from '../assets/images/icons/nps.svg';
 import  ImageSub7  from '../assets/images/icons/bonds.svg';
 import  ImageSub8  from '../assets/images/icons/ppf.svg';
-import  ImageSub9  from '../assets/images/icons/epf.svg';
+// import  ImageSub9  from '../assets/images/icons/epf.svg';
 import  ImageSub10  from '../assets/images/icons/corporate-fd.svg';
 const EveryFinance = 
 [
@@ -71,17 +71,17 @@ const EveryFinance =
 
 
     },
+    // {
+    //     id:8,        
+    //     image:`${ImageSub9}`,
+    //     title:"EPF",
+    //     description:"A tax-free investment instrument for the salaried class",
+    //     "alt":"EPF",
+
+
+    // },
     {
         id:8,        
-        image:`${ImageSub9}`,
-        title:"EPF",
-        description:"A tax-free investment instrument for the salaried class",
-        "alt":"EPF",
-
-
-    },
-    {
-        id:9,        
         image:`${ImageSub10}`,
         title:"Corporate FD’s",
         description:"Grow your funds with a fixed rate of Corporate FDs without market volatility",
