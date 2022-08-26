@@ -1,8 +1,8 @@
 
-import  ImageSub0  from '../assets/images/app/c-qaunt.webp';
-import  ImageSub1  from '../assets/images/app/expert.webp';
-import  ImageSub2  from '../assets/images/app/short-term-postional.webp';
-import  ImageSub3  from '../assets/images/app/long-term.webp';
+import  ImageSub0  from '../assets/images/app/signal.webp';
+import  ImageSub1  from '../assets/images/app/expert-research.webp';
+import  ImageSub2  from '../assets/images/app/short-term-stocks-investment.webp';
+import  ImageSub3  from '../assets/images/app/long-term-stocks-investment.webp';
 
 const imageData =
 [
@@ -16,7 +16,7 @@ const imageData =
     },
     {
         "image":`${ImageSub1}`,
-        "title":"Expert Recommendations",
+        "title":"Expert Research",
         "id": 2,
         "description":"Get accurate Research Calls by our team who have proven their worth over time"
         
@@ -24,7 +24,7 @@ const imageData =
     },
     {
         "image":`${ImageSub2}`,
-        "title":"Short Term & Positional Calls",
+        "title":"Short Term Stocks for investment",
         "id": 3,
         "description":"Set and achieve your smaller target for a rapid succession in the long run"
     
@@ -32,7 +32,7 @@ const imageData =
     },
     {
         "image":`${ImageSub3}`,
-        "title":"Long Term Research Calls",
+        "title":"Short Term Stocks for investment",
         "id": 4,
         "description":"Bear the fruits of investment in long term with quality stocks recommendations"
     
