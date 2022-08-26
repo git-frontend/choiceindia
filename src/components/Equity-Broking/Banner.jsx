@@ -24,7 +24,7 @@ function Banner() {
                                 in the media, we make your equity trading
                                 predictable and your money grow!</p>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 d-none d-sm-block">
                             <div className="rightsec">
                                 <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} />
 
