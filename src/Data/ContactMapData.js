@@ -118,7 +118,7 @@ const contactMap = [
         "address1": "No. 153, 3rd Floor, CSC Building, South",
         "address2": "West Boag Road, T. Nagar,",
         "address3": "Chennai, Tamil Nadu - 600017",
-        "mapSrc": "9884580688 / 9080062144"
+        "mapSrc": ""
     },
 
     {

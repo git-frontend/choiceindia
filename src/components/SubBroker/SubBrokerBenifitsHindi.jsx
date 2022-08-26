@@ -107,7 +107,7 @@ function SubBrokerBenifitsHindi() {
                             <div className="item-next1">  
                                 <h3>चॉइस सब ब्रोकर बनें</h3>
                                 <p>एक भरोसेमंद साथी के साथ सब ब्रोकर फ्रैंचाइज़ी जो आपको बड़े होने में मदद कर सके।</p>
-                                <Link to="/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
+                                <Link to="/hindi/sub-broker-franchise" className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करो</span> </Link>
                             </div>
                         </div>
                     </div>
