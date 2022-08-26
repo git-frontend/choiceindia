@@ -117,7 +117,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                     console.log('HANDLER',res);
+                   //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
@@ -137,7 +137,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
-                            console.log('Else onboard');
+                           // console.log('Else onboard');
                             onClose(res.data.Body.url,res.data.Message? res.data.Message:'',res.data.Body.isOnboardFlag? res.data.Body.isOnboardFlag:"");
                         }
                         
@@ -373,7 +373,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                         <img src={OTPimage} />
 
                                         <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + mobileNumber.slice(6, 10)}</p>
+                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + (mobileNumber).slice(6, 10)}</p>
                                         {
                                             count ?
                                                 <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''

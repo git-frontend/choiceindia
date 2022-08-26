@@ -122,7 +122,7 @@ function FableBlogList() {
 
                             <div className="tab-blog-list">
                             {
-                                post.slice(0, check?post.length:3).map((res,index)=>{
+                                (post||[]).slice(0, check?post.length:3).map((res,index)=>{
                                     return(
                                           
                                         <Link  to={`/blog/${res.slug}`} className="tab-blog-item mb-5" key={res.id}>
@@ -155,7 +155,7 @@ function FableBlogList() {
                         </div>
                     </div>
                     {
-                        post.length > 3 ? 
+                        post&&(post.length > 3) ? 
                         <div className="row"><div className="col-md-12 d-flex justify-content-center"><div style={{cursor:"pointer"}}><span className="btn-bg" onClick={()=>{setCheck(true)}}>Explore All</span></div></div></div>
                       :""
                     }

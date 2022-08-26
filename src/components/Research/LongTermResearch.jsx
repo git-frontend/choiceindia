@@ -94,6 +94,7 @@ const settings = {
   };
 
   function getSingleDetail(id) {
+    console.log("goto signal",id)
     // console.log('IIIII',id);
     // navigate(`/research-new/${id}/${tempid}`);
     navigate({
@@ -108,7 +109,7 @@ const settings = {
      */
     let goToDetail = (report) => {
       let api = new API_URLS()
-      let url = api.getExpertDetailURL(report.id)
+      let url = api.getFundamentalDetailURL(report.id||report.uuid)
       window.open(url)
   }
 
@@ -238,7 +239,7 @@ const settings = {
                             <div className="itm-des-sub">
                             <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                             </div>
                           </div>
@@ -274,7 +275,7 @@ const settings = {
                            <div className="itm-des-sub">
                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                            </div>
                          </div>
@@ -297,7 +298,7 @@ const settings = {
                     
                   
                   {
-                    list.slice(0, 4).map((res, i) => {
+                    (list||[]).slice(0, 4).map((res, i) => {
 
                       return (
                         
@@ -318,7 +319,7 @@ const settings = {
                             <div className="itm-des-sub">
                             <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                             </div>
                           </div>
@@ -333,7 +334,7 @@ const settings = {
                     
                   
                  {
-                   list.slice(0, 4).map((res, i) => {
+                   (list||[]).slice(0, 4).map((res, i) => {
 
                      return (
                        
@@ -354,7 +355,7 @@ const settings = {
                            <div className="itm-des-sub">
                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
                            </div>
                          </div>

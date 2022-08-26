@@ -4,8 +4,8 @@ const environment = true ;
 
 /**URL Config */
 const config = {
-    liveServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
-    UATServerURL: "https://choiceindia.com/blog/ghost/api/v3/",
+    liveServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
+    UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL: "https://cmsapi.choiceindia.com/",
 
@@ -19,9 +19,8 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    // https://researchreportapi.jiffy.in/api/report/
     UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
-    liveJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
+    liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
     liveNewResearchReportURL: "https://jiffy.choiceindia.com/api/researchreport/v2/api",
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
@@ -48,10 +47,11 @@ export class API_URLS {
     /** SSO Base URL */
     SSOServerURL = '';
     /**Server URL */
-    serverURL = "https://choiceindia.com/blog/ghost/api/v3/";
+    serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
     /**Server URL */
     jiffyURL = "devjiffy.choicebroking.in";
     jiffyExpertPageURL = "research-report/research/experts/EQ/all/"
+    jiffyFundamentalPageURL = "research-report/research/fundamental/EQ/all/"
     jiffySignalPageURL = "research-report/research/signals/EQ/all/"
     /** banner URL */
     bannerURL = "https://cmsapi.choiceindia.com/"
@@ -268,6 +268,10 @@ export class API_URLS {
         return this.jiffyURL + this.jiffyExpertPageURL + id
     }
 
+
+    getFundamentalDetailURL = (id) => {
+        return this.jiffyURL + this.jiffyFundamentalPageURL + id
+    }
 
     getSignalDetailURL = (id) => {
         return this.jiffyURL + this.jiffySignalPageURL + id
@@ -510,7 +514,7 @@ export class API_URLS {
     }
     getresearchipoURL() {
         // this.researchURL
-        return 'https://researchreportdevapi.choicetechlab.com/' + 'api/ipo?offset=0'
+        return this.researchURL + 'api/ipo?offset=0'
     }
 
     getperformanceURL() {

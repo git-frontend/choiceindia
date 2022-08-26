@@ -19,7 +19,7 @@ function TrendingReports(props) {
   let sliceCount = Math.floor((Math.random() * 5) + 1);
 
   function getSingleDetail(id) {
-    console.log('IIIII', id);
+    //console.log('IIIII', id);
 
     // navigate(`/research-new/${id}/${props.data}`);
     navigate({
@@ -109,7 +109,7 @@ function TrendingReports(props) {
                     <div className="res-detailtab-list">
 
                       {
-                        list?.slice(0, 4)?.map((res, i) => {
+                        (list||[])?.slice(0, 4)?.map((res, i) => {
 
                           
                           return (
@@ -128,7 +128,7 @@ function TrendingReports(props) {
                                 
                                 <div className="itm-des-sub">
                                   <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                                  {res.report_subtype_name == "IPO REPORT"? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("check") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                  {res.report_subtype_name == "IPO REPORT"? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : res.report_subtype_name == "EQUITY RESEARCH REPORT" ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
                                   {/* <a href="#" className="post-read">Read More</a> */}
                                 </div>
                               </div>
