@@ -79,10 +79,12 @@ function DematAccountForm(props) {
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
         
-        // console.log('SSS@@@',showThanku)
-        setShowThanku(prevState => {
-            return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
-        });
+        console.log('SSS@@@',showThanku)
+        if(showAdValues.link){
+            setShowThanku(prevState => {
+                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
+            });
+        }
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
     }
