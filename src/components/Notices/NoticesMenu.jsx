@@ -4,6 +4,7 @@ import { faEye } from  '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Investors-info/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import pdf2 from "../../assets/pdf/notices/Choice AGM Notice.pdf";
 function NoticesMenu() {
     return (
         <div>
@@ -79,6 +80,12 @@ function NoticesMenu() {
                                    <div>Postal Ballot Final</div>
                                 
                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
+                                   </div>
+
+                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                   <div>AGM Notice 2021 - 22</div>
+                                 
+                                   <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf2)}} className="cursor-pointer"/></div>
                                    </div>
 
                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
