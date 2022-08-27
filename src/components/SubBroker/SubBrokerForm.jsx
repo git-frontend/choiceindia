@@ -54,9 +54,6 @@ function SubBrokerForm(props) {
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
 
-    /** state to show thankyou popup (add-lead) */
-    const [showlead, setShowLead] = useState({ showModal: false});
-
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
         setBrokerName(value);
@@ -573,7 +570,7 @@ function SubBrokerForm(props) {
 
     /**to hide thank you popup */
     function closeModal() {
-        setShowLead(prevState => {
+        setShowThanku(prevState => {
             return { ...prevState, showModal: false}
         });
     }

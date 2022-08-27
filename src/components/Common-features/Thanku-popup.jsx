@@ -11,7 +11,7 @@ function Thankyoupopup({ isShow }) {
 
 
  
- console.log('TRTR', isShow);
+//  console.log('TRTR', isShow);
 
   // useEffect(() => {
   //   if(isShow.closeOTP){
@@ -39,7 +39,11 @@ function Thankyoupopup({ isShow }) {
   //  console.log('Inside thanku',isShow)
     if(isShow.page != 'add-lead'){
       setTimeout(() => {
-        window.location.href(isShow.closeMd(isShow.redirectionLink));
+        if(isShow.redirectionLink === null){
+          isShow.closeMd();
+        }else{
+          isShow.closeMd(isShow.redirectionLink);
+        }
       },2000)
     }
   }, [])
