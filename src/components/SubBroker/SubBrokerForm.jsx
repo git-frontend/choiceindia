@@ -20,7 +20,7 @@ function SubBrokerForm(props) {
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
-    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
@@ -423,6 +423,9 @@ function SubBrokerForm(props) {
                     ...prevError,
                     'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
                 }));
+            } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
+                // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+                    // showAPIErrorToaster();
             }
             setisCheck(false);
             hideLoader('sendOTPLoader');
@@ -455,10 +458,26 @@ function SubBrokerForm(props) {
 
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        subBrokerService.sendOTP({mobile_number: brokerMobileNumber}).then((res) => {
+        let request = {
+            "name": brokerName,
+            "mobile_number": brokerMobileNumber,
+            "email": brokerEmail,
+            "city": brokerCityBranch,
+            "source": "CHOICEINDIA",
+            "messgae": '',
+            "referredId": refercode.current || null,
+            "service_code": "CBAEF",
+            "utm_source": UTMSource.current || null,
+            "utm_medium": UTMMedium.current || null,
+            "utm_campaign": UTMCampaign.current || null,
+            "utm_term": null,
+            "utm_custom": null,
+            "utm_content": null
+        };
+        subBrokerService.sendOTP(request).then((res) => {
             // console.log(res, "sendOTP");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (res && res.data && !res.data.errorCode) {
+            if (res && res.data && res.data.status != 'error') {
                 otpSessionID.current = res.data.session_id;
                 // if (!isResend)
                 resetOTPPopup();
@@ -506,7 +525,7 @@ function SubBrokerForm(props) {
             subBrokerService.verifyOTPN(request).then((res) => {
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
-                if (res && res.data && !res.data.errorCode) {
+                if (res && res.data && res.data.status != 'error') {
                     fetchQueryParams();
                     addNewLead();
                 } else {
