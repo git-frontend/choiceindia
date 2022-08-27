@@ -20,7 +20,7 @@ function SubBrokerForm(props) {
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
-    const emailRegex = /^[A-Za-z0-9._%+-]{1,}@[a-zA-Z-]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
@@ -341,7 +341,7 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+            if (isBrokerNameValid) {
                 // console.log(brokerName, "brokerName");
                 checkExistence('Name');
                 // Send Axios request here
@@ -355,7 +355,7 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+            if (isBrokerMobileNumberValid) {
                 // console.log(brokerMobileNumber, "brokerMobileNumber");
                 checkExistence('Mobile Number');
                 // Send Axios request here
@@ -369,7 +369,7 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
+            if (isBrokerEmailValid) {
                 // console.log(brokerEmail, "brokerEmail");
                 checkExistence('Email');
                 // Send Axios request here
@@ -546,7 +546,7 @@ function SubBrokerForm(props) {
                 handleBrokerCreatedSuccessShow();
                 resetBrokerForm();
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Something Went Wrong.', closeMd: closeModal }
+                    return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
                 });
             } else {
                 // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
