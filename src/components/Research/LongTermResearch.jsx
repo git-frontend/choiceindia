@@ -28,7 +28,7 @@ function LongTermResearch() {
     matches: window.innerWidth < 767 ? false : true,
 });
 
-  const demo_ref = useRef(null)
+  // const demo_ref = useRef(null)
 
 const settings = {
   infinite: true,
@@ -121,7 +121,15 @@ const settings = {
 
   function goToScroll(){
     // console.log('GGG');
-    demo_ref.current.scrollIntoView({behavior: 'smooth'})
+    // demo_ref.current.scrollIntoView({behavior: 'smooth'})
+    var element = document.getElementById('lt-search');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     setCheck(()=> false);
   }
 
@@ -136,7 +144,7 @@ const settings = {
     }
   }, [trigger])
   return (
-    <div ref={demo_ref}>
+    <div>
       <section className="research-banner-tabs" >
         <div className="container">
 

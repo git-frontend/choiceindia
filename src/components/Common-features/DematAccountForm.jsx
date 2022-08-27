@@ -68,6 +68,7 @@ function DematAccountForm(props) {
     }
 
     function showOpenAccountAdPopup() {
+        // console.log('SHOWW!!!!')
         if (!showOTP) {
             setShowOpenAccountPopup(true);
         } else {
@@ -75,7 +76,13 @@ function DematAccountForm(props) {
         }
     }
 
-    function hideOpenAccountAdPopup() {
+    /**function executes to close the ad popup */
+    function hideOpenAccountAdPopup(showAdValues) {
+        
+        // console.log('SSS@@@',showThanku)
+        setShowThanku(prevState => {
+            return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
+        });
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
     }

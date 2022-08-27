@@ -26,7 +26,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var otpSessionID = useRef('');
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
+    // const [showAdPopUp, setshowAdPopUp] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -61,33 +61,35 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     }
 
     function handleOTPClose(link,msg,info) {
-        console.log('TTYTYTYTY',link,msg,info);
+        // console.log('TTYTYTYTY',link,msg,info);
         setShowOTP(false);
-        hideComponent();
-        if (link) {
+        let obj = {"link": link, "msg":msg, "info":info};
+        // if (link) {
 
-            let result = link.match("respond-issue");
-            if (result&&result.length&&result[0] === 'respond-issue') {
-                setIsIssue(() => link);
-                setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
-                });
-            } else {
-                if (link._reactName) {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
-                    });
-                } else {
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
-                    });
-                }
-            }
-        } else {
-            setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
-            });
-        }
+        //     let result = link.match("respond-issue");
+        //     if (result&&result.length&&result[0] === 'respond-issue') {
+        //         setIsIssue(() => link);
+        //         setShowThanku(prevState => {
+        //             return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+        //         });
+        //     } else {
+        //         if (link._reactName) {
+        //             setShowThanku(prevState => {
+        //                 return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+        //             });
+        //         } else {
+        //             setShowThanku(prevState => {
+        //                 return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+        //             });
+        //             console.log('SETTT',showThanku.showModal);
+        //         }
+        //     }
+        // } else {
+        //     setShowThanku(prevState => {
+        //         return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+        //     });
+        // }
+        hideComponent(obj);
     }
 
     function fetchQueryParams() {
@@ -243,9 +245,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                 </Modal.Body>
             </Modal> */}
 
-            {
-                showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
-            }
+            {/* {
+                showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : console.log('LJKDJLKJDLFD')
+            } */}
         </>
     );
 }

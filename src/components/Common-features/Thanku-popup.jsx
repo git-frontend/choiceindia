@@ -11,7 +11,7 @@ function Thankyoupopup({ isShow }) {
 
 
  
-//  console.log('TRTR', isShow);
+ console.log('TRTR', isShow);
 
   // useEffect(() => {
   //   if(isShow.closeOTP){

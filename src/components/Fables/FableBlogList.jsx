@@ -14,7 +14,7 @@ function FableBlogList() {
     const [check, setCheck] = useState(false);
     const [count,setCount] = useState(0)
     const demo_ref = useRef(null)
-    const demo_ref2 = useRef(null);
+    // const demo_ref2 = useRef(null);
 
     function loadfablecategory() {
         FablesTrending.fabalcategory().then(
@@ -41,10 +41,18 @@ function FableBlogList() {
     function goToScroll(value){
         console.log('GGG');
         if(value === true){
-            console.log(demo_ref2)
-            demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})
+            // console.log(demo_ref2)
+            // demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})
+            var element = document.getElementById('res-des-scrlls');
+            var headerOffset = -20;
+            var elementPosition = element.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
         }else{
-            console.log(demo_ref)
+            // console.log(demo_ref)
             demo_ref?.current?.scrollIntoView({behavior: 'smooth'})
         }
         
@@ -135,7 +143,7 @@ function FableBlogList() {
 
                         {
 
-                            <div className="tab-blog-list" ref={demo_ref2}>
+                            <div className="tab-blog-list">
                             {
                                 (post||[]).slice(0, check?post.length:3).map((res,index)=>{
                                     return(
@@ -145,7 +153,7 @@ function FableBlogList() {
                                         {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
-                                    <div className="blog-item-des">
+                                    <div className="blog-item-des" id="res-des-scrlls">
                                         <h4>{res.title}</h4>
                                         <p>{res.meta_description}</p>
                                        {/** <div className="d-flex justify-content-between">
