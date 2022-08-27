@@ -458,11 +458,11 @@ function SubBrokerForm(props) {
 
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
+        subBrokerService.sendOTP({mobile_number: brokerMobileNumber}).then((res) => {
             // console.log(res, "sendOTP");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && !res.data.errorCode) {
-                otpSessionID.current = res.data.id;
+                otpSessionID.current = res.data.session_id;
                 // if (!isResend)
                 resetOTPPopup();
                 if (!isResend)
@@ -502,7 +502,11 @@ function SubBrokerForm(props) {
             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
         } else {
             showLoader('verifyLoader');
-            subBrokerService.verifyOTPN(otp, otpSessionID.current).then((res) => {
+            let request = {
+                session_id: otpSessionID.current,
+                otp: otp
+            }
+            subBrokerService.verifyOTPN(request).then((res) => {
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
                 if (res && res.data && !res.data.errorCode) {
@@ -794,7 +798,7 @@ function SubBrokerForm(props) {
                                             <div>
 
 
-                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="tel" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="tel" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                                 {
                                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                                 }
