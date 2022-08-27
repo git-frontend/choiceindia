@@ -1,7 +1,8 @@
 import React from "react";
+import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from  '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Investors-info/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
@@ -19,80 +20,85 @@ function AnnualReportMenu() {
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
-                        <div className="d-flex justify-content-between">
-                               
+                            <div className="d-flex justify-content-between">
+
                                 <h3 className="head">Description</h3>
-                               
-                                </div>
-                                <div className="subtext">
-                                   
+
+                            </div>
+                            <div className="subtext">
+
 
                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Annual Return 2020 - 2021 </div>
-                                  
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
+                                    <div>Annual Return 2021 - 2022 </div>
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>The Notice 28th AGM </div>
-                                
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Annual Report 2020 - 2021</div>
-                                  
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                 
-                                  
+                                    <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf1)}} className="cursor-pointer" /></div>
                                 </div>
-                           
-                           
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Annual Return 2020 - 2021 </div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>The Notice 28th AGM </div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Annual Report 2020 - 2021</div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+
+
+                            </div>
+
+
 
                         </div>
-                       
-                       
-                       
-                      
+
+
+
+
                     </div>
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
-                        <div className="d-flex justify-content-between">
-                               
+                            <div className="d-flex justify-content-between">
+
                                 <h3 className="head">Description</h3>
-                               
-                                </div>
-                                <div className="subtext">
-                                   
+
+                            </div>
+                            <div className="subtext">
+
 
                                 <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Financial Statements of Subsidiaries 2020-21</div>
-                                  
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
+                                    <div>Financial Statements of Subsidiaries 2020-21</div>
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Financial Statements of Subsidiaries 2019-20 </div>
-                                
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Financial Statements of Subsidiaries 2018-19</div>
-                                  
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                 
-                                  
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
                                 </div>
-                           
-                           
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Financial Statements of Subsidiaries 2019-20 </div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Financial Statements of Subsidiaries 2018-19</div>
+
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+
+
+                            </div>
+
+
 
                         </div>
-                       
-                       
-                       
-                      
+
+
+
+
                     </div>
 
                 </div>
