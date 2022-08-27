@@ -61,7 +61,7 @@ function Fabdetailsbanner(props) {
                                         <div className= {fetchContainerClassName()}>
                                         <div className="imgblock">
                                                 {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
-                                                <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt="Loading" />
+                                                <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} />
                                             </div>
                                         </div>
                                         {
