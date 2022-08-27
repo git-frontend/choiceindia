@@ -117,7 +117,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             openAccountService.verifyOTP(request, type2).then((res) => {
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
-                     console.log('HANDLER',res);
+                   //  console.log('HANDLER',res);
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed
                     // } else if (res.data.Body.isOnboardFlag === 'C') {
@@ -137,7 +137,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             openInfoPopup(res.data.Message);
                             onClose(res.data.Body.url);
                         }else{
-                            console.log('Else onboard');
+                           // console.log('Else onboard');
                             onClose(res.data.Body.url,res.data.Message? res.data.Message:'',res.data.Body.isOnboardFlag? res.data.Body.isOnboardFlag:"");
                         }
                         
@@ -373,7 +373,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                         <img src={OTPimage} />
 
                                         <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + mobileNumber.slice(6, 10)}</p>
+                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplbl')} {'******' + (mobileNumber).slice(6, 10)}</p>
                                         {
                                             count ?
                                                 <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
@@ -383,7 +383,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                     <div className="otp-mdl-input-chk">
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }

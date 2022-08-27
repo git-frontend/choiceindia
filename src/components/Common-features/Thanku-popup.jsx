@@ -11,7 +11,7 @@ function Thankyoupopup({ isShow }) {
 
 
  
-//  console.log('TRTR', isShow);
+ console.log('TRTR', isShow);
 
   // useEffect(() => {
   //   if(isShow.closeOTP){
@@ -36,7 +36,7 @@ function Thankyoupopup({ isShow }) {
   // const [display, setDisplay] = useState(true);
 
   useEffect(() => {
-    console.log('Inside thanku',isShow)
+  //  console.log('Inside thanku',isShow)
     if(isShow.page != 'add-lead'){
       setTimeout(() => {
         window.location.href(isShow.closeMd(isShow.redirectionLink));

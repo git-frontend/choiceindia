@@ -46,7 +46,7 @@ function BannerSection() {
 								<div className="fable-trending-list">
 
 									{
-										data.slice(0, 4).map((response, index) => {
+										(data||[]).slice(0, 4).map((response, index) => {
 
 											return (
 												<div key={response.id}>

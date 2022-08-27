@@ -11,6 +11,7 @@ import Select from 'react-dropdown-select';
 import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
+import Thankyoupopup from "../Common-features/Thanku-popup";
 
 function SubBrokerForm(props) {
 
@@ -19,7 +20,7 @@ function SubBrokerForm(props) {
     /**Regex for Name*/
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
-    const emailRegex = /^[A-Za-z0-9._%+-]{1,}@[a-zA-Z-]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})$/;
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
@@ -40,13 +41,21 @@ function SubBrokerForm(props) {
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState(false);
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [show,setShow] = useState(true);
+    const [show, setShow] = useState(true);
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
 
+    const [isCheck, setisCheck] = useState(false);
+    const [value, setValue] = useState('Details');
+
+    /** state to show thankyou popup default */
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
+
+    /** state to show thankyou popup (add-lead) */
+    const [showlead, setShowLead] = useState({ showModal: false});
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -79,7 +88,7 @@ function SubBrokerForm(props) {
         if (e[0]) {
             let value = e[0].leadCity;
             setBrokerCityBranch(value);
-           // console.log("cc",brokerCityBranch)
+            // console.log("cc",brokerCityBranch)
             setErrors((prevError) => ({
                 ...prevError,
                 'brokerCityBranch': {}
@@ -248,9 +257,9 @@ function SubBrokerForm(props) {
 
     function handleBrokerCreatedSuccessShow() {
         setBrokerCreatedSuccess(true);
-        setTimeout(()=>{
+        setTimeout(() => {
             setBrokerCreatedSuccess(false);
-        },2000)
+        }, 2000)
     }
 
     function handleBrokerCreatedSuccessClose() {
@@ -282,7 +291,7 @@ function SubBrokerForm(props) {
     function fetchCities() {
         showLoader('citiesLoader');
         subBrokerService.getCities().then((res) => {
-           // console.log(res, "res cities");
+            // console.log(res, "res cities");
             hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
@@ -290,7 +299,7 @@ function SubBrokerForm(props) {
                 setCitiesDropdown([]);
             }
         }).catch((error) => {
-           // console.log(error, "error cities");
+            // console.log(error, "error cities");
             hideLoader('citiesLoader');
             setCitiesDropdown([]);
         });
@@ -299,7 +308,7 @@ function SubBrokerForm(props) {
     function fetchState() {
         showLoader('stateLoader');
         subBrokerService.getStates().then((res) => {
-           // console.log(res, "res states");
+            // console.log(res, "res states");
             hideLoader('stateLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.StateMasterList) {
                 setStatesDropdown(res.data.Body.StateMasterList);
@@ -307,7 +316,7 @@ function SubBrokerForm(props) {
                 setStatesDropdown([]);
             }
         }).catch((error) => {
-           // console.log(error, "error states");
+            // console.log(error, "error states");
             hideLoader('stateLoader');
             setStatesDropdown([]);
         });
@@ -332,12 +341,12 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-               // console.log(brokerName, "brokerName");
-                checkExistence();
+            if (isBrokerNameValid) {
+                // console.log(brokerName, "brokerName");
+                checkExistence('Name');
                 // Send Axios request here
             }
-        }, 700)
+        }, 300)
         return () => clearTimeout(delayDebounceFn)
     }, [brokerName]);
 
@@ -346,12 +355,12 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-               // console.log(brokerMobileNumber, "brokerMobileNumber");
-                checkExistence();
+            if (isBrokerMobileNumberValid) {
+                // console.log(brokerMobileNumber, "brokerMobileNumber");
+                checkExistence('Mobile Number');
                 // Send Axios request here
             }
-        }, 700)
+        }, 300)
         return () => clearTimeout(delayDebounceFn)
     }, [brokerMobileNumber]);
 
@@ -360,12 +369,12 @@ function SubBrokerForm(props) {
             let isBrokerNameValid = validateBrokerName(brokerName, true);
             let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
             let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid && (isBrokerMobileNumberValid || isBrokerEmailValid)) {
-               // console.log(brokerEmail, "brokerEmail");
-                checkExistence();
+            if (isBrokerEmailValid) {
+                // console.log(brokerEmail, "brokerEmail");
+                checkExistence('Email');
                 // Send Axios request here
             }
-        }, 700);
+        }, 300);
         return () => clearTimeout(delayDebounceFn)
     }, [brokerEmail]);
 
@@ -384,12 +393,15 @@ function SubBrokerForm(props) {
             }).then(otp => {
                 setOtp(otp.code);
             }).catch(err => {
-               // console.log(err);
+                // console.log(err);
             });
         }
     }
 
-    function checkExistence() {
+    function checkExistence(value) {
+        showLoader('sendOTPLoader');
+        setValue(value);
+        setisCheck(true);
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
         let request = {
@@ -403,7 +415,7 @@ function SubBrokerForm(props) {
         if (!isBrokerEmailValid)
             delete request.emailID;
         subBrokerService.checkExistence(request).then((res) => {
-           // console.log(res, "checkExistence");
+            // console.log(res, "checkExistence");
             if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
                 setErrors((prevError) => ({
                     ...prevError,
@@ -415,8 +427,12 @@ function SubBrokerForm(props) {
                     'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
                 }));
             }
+            setisCheck(false);
+            hideLoader('sendOTPLoader');
         }).catch((error) => {
-           // console.log(error, "checkExistence error");
+            hideLoader('sendOTPLoader');
+            setisCheck(false);
+            // console.log(error, "checkExistence error");
         });
     }
 
@@ -442,16 +458,16 @@ function SubBrokerForm(props) {
 
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-        subBrokerService.sendOTP(brokerMobileNumber).then((res) => {
-           // console.log(res, "sendOTP");
+        subBrokerService.sendOTP({mobile_number: brokerMobileNumber}).then((res) => {
+            // console.log(res, "sendOTP");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && !res.data.errorCode) {
-                otpSessionID.current = res.data.id;
+                otpSessionID.current = res.data.session_id;
                 // if (!isResend)
-                    resetOTPPopup();
+                resetOTPPopup();
                 if (!isResend)
                     handleOTPPopupShow();
-                if(isResend)
+                if (isResend)
                     handleOTPResendSuccessToaster();
             } else {
                 if (isResend) {
@@ -462,7 +478,7 @@ function SubBrokerForm(props) {
                 }
             }
         }).catch((error) => {
-           // console.log(error, "sendOTP error");
+            // console.log(error, "sendOTP error");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (isResend) {
                 if (error && error.response && error.response.data && error.response.data.message) {
@@ -486,9 +502,13 @@ function SubBrokerForm(props) {
             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
         } else {
             showLoader('verifyLoader');
-            subBrokerService.verifyOTPN(otp, otpSessionID.current).then((res) => {
+            let request = {
+                session_id: otpSessionID.current,
+                otp: otp
+            }
+            subBrokerService.verifyOTPN(request).then((res) => {
                 hideLoader('verifyLoader');
-               // console.log(res, "verifyOTPN");
+                // console.log(res, "verifyOTPN");
                 if (res && res.data && !res.data.errorCode) {
                     fetchQueryParams();
                     addNewLead();
@@ -497,7 +517,7 @@ function SubBrokerForm(props) {
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
-               // console.log(error, "verifyOTPN error");
+                // console.log(error, "verifyOTPN error");
                 setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
@@ -523,11 +543,15 @@ function SubBrokerForm(props) {
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
             hideLoader('addLeadLoader');
-           // console.log(res, "addNewLead");
+            // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
+                console.log('TTT',res);
                 handleOTPPopupClose();
                 handleBrokerCreatedSuccessShow();
                 resetBrokerForm();
+                setShowThanku(prevState => {
+                    return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
+                });
             } else {
                 // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
                 // showAPIErrorToaster();
@@ -536,7 +560,7 @@ function SubBrokerForm(props) {
 
         }).catch((error) => {
             hideLoader('addLeadLoader');
-           // console.log(error, "addNewLead error");
+            // console.log(error, "addNewLead error");
             // if (error && error.response && error.response.data && error.response.data.message) {
             //     setAPIError(error.response.data.message);
             // } else {
@@ -544,6 +568,13 @@ function SubBrokerForm(props) {
             // }
             // showAPIErrorToaster();
             setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+        });
+    }
+
+    /**to hide thank you popup */
+    function closeModal() {
+        setShowLead(prevState => {
+            return { ...prevState, showModal: false}
         });
     }
 
@@ -571,11 +602,11 @@ function SubBrokerForm(props) {
     return (
         <>
             <div className="demat-account-form" id="sub-broker-form">
-            
+
 
                 {
                     (brokerCreatedSuccess) ?
-                        <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise')>-1)  || (window.location.pathname.indexOf('authorised-person')>-1) || (window.location.pathname.indexOf('remisier')>-1)? 'sub-broker-success':''}  onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
+                        <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
@@ -628,7 +659,7 @@ function SubBrokerForm(props) {
                                 }
                             </Form.Select> */}
                             <Select ref={selectInputRef}
-            placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader}  value={brokerCityBranch} style={{'fontSize': 'large'}} />
+                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
@@ -645,7 +676,7 @@ function SubBrokerForm(props) {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select  placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelbl', 'Search State')} className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{'fontSize': 'large'}} />
+                                    <Select placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelbl', 'Search State')} className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'statelblerror1', 'State is required')}</small> : ''
                                     }
@@ -660,7 +691,7 @@ function SubBrokerForm(props) {
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
                                 {
-                                    props.language==='hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
+                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
                                 }
                             </Form.Check>
                         </div>
@@ -676,65 +707,71 @@ function SubBrokerForm(props) {
                                 Clear
                             </Button> */}
                         </div>
+
+                        <div className="">
+                            {
+                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
+                            }
+                        </div>
                     </Form.Group>
                 </Form>
 
             </div>
             {
-                showOTPPopup ? 
-            //     <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
-            //     <div className="exit-intent-sleekbox-popup">
-            //         <div className="popup-sub-row">
-            //         <div className="close">
-            //                 <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
-            //                 </div>
-            //             <div className="popup-sub-right">
+                showOTPPopup ?
+                    //     <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
+                    //     <div className="exit-intent-sleekbox-popup">
+                    //         <div className="popup-sub-row">
+                    //         <div className="close">
+                    //                 <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
+                    //                 </div>
+                    //             <div className="popup-sub-right">
 
-            //                 <div>
-            //                     <img src={OTPimage} alt='OTP Image' />
+                    //                 <div>
+                    //                     <img src={OTPimage} alt='OTP Image' />
 
-            //                     <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
-            //                     <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
-            //                     {
-            //                         count ?
-            //                             <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
-            //                     }
+                    //                     <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
+                    //                     <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
+                    //                     {
+                    //                         count ?
+                    //                             <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                    //                     }
 
-            //                 </div>
-            //                 <div>
-
-
-            //                     <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
-            //                     {
-            //                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-            //                     }
-            //                 </div>
-
-            //                 <div className="btnwrap">
-            //                     <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
-            //                 </div>
-            //                 <div className="">
-
-            //                     {
-            //                         !count ?
-            //                             <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
-            //                     }
+                    //                 </div>
+                    //                 <div>
 
 
-            //                 </div>
-            //                 <div className="mt-2">
-            //                     {
-            //                         OTPSendSuccessToaster ?
-            //                             <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-            //                                 {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
-            //                             </Alert> : ''
-            //                     }
-            //                 </div>
-            //             </div>
-            //         </div>
-            //     </div>
-            // </div> 
-            
+                    //                     <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                    //                     {
+                    //                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                    //                     }
+                    //                 </div>
+
+                    //                 <div className="btnwrap">
+                    //                     <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
+                    //                 </div>
+                    //                 <div className="">
+
+                    //                     {
+                    //                         !count ?
+                    //                             <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
+                    //                     }
+
+
+                    //                 </div>
+                    //                 <div className="mt-2">
+                    //                     {
+                    //                         OTPSendSuccessToaster ?
+                    //                             <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
+                    //                                 {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
+                    //                             </Alert> : ''
+                    //                     }
+                    //                 </div>
+                    //             </div>
+                    //         </div>
+                    //     </div>
+                    // </div> 
+
                     <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
@@ -761,14 +798,14 @@ function SubBrokerForm(props) {
                                             <div>
 
 
-                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="tel" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                                <Form.Control className=" form-control form-control-lg digit-otp text-center" type="tel" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
                                                 {
                                                     OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                                 }
                                             </div>
 
                                             <div className="btnwrap">
-                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
+                                                <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'Verify')}</button>
                                             </div>
                                             <div className="">
 
@@ -818,6 +855,10 @@ function SubBrokerForm(props) {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
+            {
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
+            }
 
             {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"
                 keyboard={false} centered>
