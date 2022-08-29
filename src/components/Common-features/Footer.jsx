@@ -289,6 +289,9 @@ Disclaimer:<br/>
                   <li>
                     <Link to="/disclaimer" target="_blank">Disclaimer</Link>
                   </li>
+                  <li>
+                    <Link to="/file-download" target="_blank">File Download</Link>
+                  </li>
                   {/* <li>
                     <a href="/" target="_blank">Sitemap</a>
                   </li> */}

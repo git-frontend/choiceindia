@@ -241,13 +241,17 @@ const meta_tags = {
 
     "client-details-update":{'title':"Update Client Details - Change Your Email and Phone Number",'content':"",'link':"https://choiceindia.com/client-details-update"},
 
-    "annual-report":{'title':"Financial Info - Choice International Limited",'content':"",'link':"https://choiceindia.com/annual-report"},
+    "annual-report":{'title':"Annual Report - Choice International Limited",'content':"",'link':"https://choiceindia.com/annual-report"},
 
-    "financial-info":{'title':"Annual Report - Choice International Limited",'content':"",'link':"https://choiceindia.com/financial-info"},
+    "financial-info":{'title':"Financial Information - Choice International Limited",'content':"",'link':"https://choiceindia.com/financial-info"},
 
     "news-media":{'title':"News and Media - Choice",'content':"",'link':"https://choiceindia.com/news-media"},
 
+    "board-of-directors":{'title':"Board Of Directors",'content':"",'link':"https://choiceindia.com/board-of-directors"},
 
+    "voting-results":{'title':"Voting Results - Choice International Limited",'content':"",'link':"https://choiceindia.com/voting-results"},
+    
+    "notices":{'title':"Notices - Choice International Limited",'content':"",'link':"https://choiceindia.com/notices"},
 
     "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
@@ -263,8 +267,13 @@ const meta_tags = {
 
     "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise"},
 
-    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/campaign/sub-broker-franchise"},
+    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise"},
 
+    "corporate-governance":{'title':"Corporate Goveranc - Choice International Limited",'content':"",'link':"https://choiceindia.com/corporate-governance"},
+
+    "share-holding-pattern":{'title':"Share Holding Pattern - Choice International Limited",'content':"",'link':"https://choiceindia.com/share-holding-pattern"},
+
+    
 
     "brokerage-charges": {
         'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.","link":"https://choiceindia.com/brokerage-charges",
