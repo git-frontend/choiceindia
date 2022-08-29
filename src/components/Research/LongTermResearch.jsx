@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import EconomicAnalysis from './EconomicAnalysis';
 import CompanyFundamentals from './CompanyFundamentals';
 import IndustryAnalysis from './IndustryAnalysis';
@@ -27,6 +27,8 @@ function LongTermResearch() {
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
 });
+
+  // const demo_ref = useRef(null)
 
 const settings = {
   infinite: true,
@@ -117,6 +119,20 @@ const settings = {
     window.open('https://jiffy.choiceindia.com/market/latest-ipo-list');
   }
 
+  function goToScroll(){
+    // console.log('GGG');
+    // demo_ref.current.scrollIntoView({behavior: 'smooth'})
+    var element = document.getElementById('lt-search');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    setCheck(()=> false);
+  }
+
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
@@ -129,10 +145,10 @@ const settings = {
   }, [trigger])
   return (
     <div>
-      <section className="research-banner-tabs">
+      <section className="research-banner-tabs" >
         <div className="container">
 
-          <div className="row">
+          <div className="row" id='lt-search'>
             <div className="col-md-12">
               <div className="heading-sec heading-sec-top" id="longterm-scroll">
                 <h3 className="title-first" >Long Term Research </h3>
@@ -198,7 +214,7 @@ const settings = {
 
             </button>
           </div>
-          <div className="content-tabs">
+          <div className="content-tabs" >
             <div
               className="content active-content"
             >
@@ -207,7 +223,7 @@ const settings = {
                   <Template6 />
                   :
 
-              <div className="research-tab-cont">
+              <div className="research-tab-cont" >
                 {
                   check ?
                    <div >
@@ -370,7 +386,7 @@ const settings = {
                 }
 
                 
-                <div className="mt-5 d-flex justify-content-center">{check?<a className="btn-bg btn-ptr" onClick={()=>{setCheck(false)}}>Load Less</a>:<a className="btn-bg btn-ptr" onClick={()=>{setCheck(true)}}>Load More</a>}</div>
+                <div className="mt-5 d-flex justify-content-center">{check?<a className="btn-bg btn-ptr" onClick={goToScroll}>Load Less</a>:<a className="btn-bg btn-ptr" onClick={()=>{setCheck(true)}}>Load More</a>}</div>
               </div>
 }
             </div>

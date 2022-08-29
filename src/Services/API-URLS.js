@@ -162,6 +162,8 @@ export class API_URLS {
     addNewLeadURL = 'leadManagement/leadMapping/addNewLead';
 
     getExpertResearchURL = 'api/research-report-new';
+    subBrokerSendOtpURL = 'https://neuron.choicebroking.in/api/jiffy/generate-otp';
+    subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -535,6 +537,14 @@ export class API_URLS {
     getchoiceIndiaNewLeadURL() {
 
         return this.SSOServerURL + this.sendNewLeadURL;
+    }
+
+    getSubBrokerSendOtpUrl() {
+        return this.subBrokerSendOtpURL;
+    }
+
+    getSubBrokerVerifyOtpUrl() {
+        return this.subBrokerVerifyOtpURL;
     }
 
 }

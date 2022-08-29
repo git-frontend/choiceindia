@@ -52,10 +52,10 @@ var formName = useRef('');
             checkWhetherToShowForm(res.data.posts || {});
             setSingle_Detail( res.data.posts);
             setIsDetail( true);
-            sethtmlContent(res.data.posts[0].html);
+            sethtmlContent(res.data.posts[0].html.replaceAll("/fables","/blog"));
  document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
-          document.getElementById('meta-tags').content = res.data.posts[0].meta_title? res.data.posts[0].meta_title : '' ;
-          document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url : '';
+          document.getElementById('meta-tags').content = res.data.posts[0].meta_description? res.data.posts[0].meta_description : '' ;
+          document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url.replace('/fables','/blog') : '';
 
           }
         }

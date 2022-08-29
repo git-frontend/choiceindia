@@ -268,11 +268,10 @@ const contactMap = [
     {
         "id":25,
         "city": "KOLKATA WEST BENGAL",
-        "mobNum": "9323892424",
+        "mobNum": "8240105727",
         "support": "support@choiceindia.com",
-        "address1": "602, 6th Floor, Mahavir Apartment, 2,",
-        "address2": "Ashutosh Mukherjee Road, Near Elgin road crossing,",
-        "address3": "Kolkata - 700020",
+        "address1": "Bappa Sen STEPHEN HOUSE 4 BBD BAG EAST 6TH FLOOR ROOM NO 116, ",
+        "address2": " KOLKATA 700001",
         "mapSrc": ""
     },
 
@@ -399,11 +398,11 @@ const contactMap = [
     {
         "id":37,
         "city": "PATNA BIHAR",
-        "mobNum": "9128222300",
+        "mobNum": "7488373178 / 6202825103",
         "support": "support@choiceindia.com",
-        "address1": "Ground Floor, M-22, ",
-        "address2": "Road No. 25, S. K. Nagar, Kidwaipuri,",
-        "address3": "Patna, Bihar - 800001",
+        "address1": " Block - A,B & C , Kedar Bhawan thired floor, ",
+        "address2": "S.P Verma road",
+        "address3": " Patna-800001",
         "mapSrc": ""
     },
 

@@ -135,7 +135,7 @@ function MarketInsights() {
                                                 return (
 
                                                     <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
-                                                        <div className="insights-item-cont" onClick={() => { marketinsightDetail(response.uuid);console.log("check",response.uuid) }}>
+                                                        <div className="insights-item-cont" >
                                                      <LazyLoader  src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                             {/* <img src={response.feature_image} alt="" /> */}
                                                             <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>

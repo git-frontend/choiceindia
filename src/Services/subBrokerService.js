@@ -37,14 +37,14 @@ const subBrokerService = {
     return axios.post(url, request, { headers: OnbHeaders });
   },
 
-  sendOTP: function (mobileNum) {
-    let url = apiURL.getSendOTPNURL(mobileNum);
-    return axios.get(url, { headers: OnbHeaders2 });
+  sendOTP: function (request) {
+    let url = apiURL.getSubBrokerSendOtpUrl();
+    return axios.post(url, request, { headers: OnbHeaders2 });
   },
 
-  verifyOTPN: function (otp, id) {
-    let url = apiURL.getVerifyOTPNURL(otp, id);
-    return axios.get(url, { headers: OnbHeaders2 });
+  verifyOTPN: function (request) {
+    let url = apiURL.getSubBrokerVerifyOtpUrl();
+    return axios.post(url, request, { headers: OnbHeaders2 });
   },
 
   addNewLead: function (request) {

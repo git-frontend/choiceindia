@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import Blog1 from '../../assets/images/fable/blog-img1.jpg';
 // import Blog2 from '../../assets/images/fable/blog-img2.jpg';
 // import Blog3 from '../../assets/images/fable/blog-img3.jpg';
@@ -13,7 +13,8 @@ function FableBlogList() {
     const [trigger, setTrigger] = useState(false);
     const [check, setCheck] = useState(false);
     const [count,setCount] = useState(0)
-
+    const demo_ref = useRef(null)
+    // const demo_ref2 = useRef(null);
 
     function loadfablecategory() {
         FablesTrending.fabalcategory().then(
@@ -37,6 +38,28 @@ function FableBlogList() {
         )
     };
 
+    function goToScroll(value){
+        console.log('GGG');
+        if(value === true){
+            // console.log(demo_ref2)
+            // demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})
+            var element = document.getElementById('res-des-scrlls');
+            var headerOffset = -20;
+            var elementPosition = element.getBoundingClientRect().top;
+            var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
+            });
+        }else{
+            // console.log(demo_ref)
+            demo_ref?.current?.scrollIntoView({behavior: 'smooth'})
+        }
+        
+        
+        setCheck(value);
+      }
+
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {
@@ -50,7 +73,7 @@ function FableBlogList() {
 
 
     return (
-        <div>
+        <div ref={demo_ref}>
 
             <section className="fable-blog-List">
                 <div className="container">
@@ -130,7 +153,7 @@ function FableBlogList() {
                                         {/**<LazyLoader src={res.feature_image} className={''} width={'402'} height={'300'} alt={'loading'} />*/}
                                         <img src={res.feature_image} className="" alt="loading" width={"402"} height={"300"}/>
                                     </div>
-                                    <div className="blog-item-des">
+                                    <div className="blog-item-des" id="res-des-scrlls">
                                         <h4>{res.title}</h4>
                                         <p>{res.meta_description}</p>
                                        {/** <div className="d-flex justify-content-between">
@@ -156,7 +179,7 @@ function FableBlogList() {
                     </div>
                     {
                         post&&(post.length > 3) ? 
-                        <div className="row"><div className="col-md-12 d-flex justify-content-center"><div style={{cursor:"pointer"}}><span className="btn-bg" onClick={()=>{setCheck(true)}}>Explore All</span></div></div></div>
+                        <div className="mt-5 d-flex justify-content-center" >{check?<a className="btn-bg btn-ptr" style={{cursor:"pointer"}} onClick={()=> {goToScroll(false)}}>Load Less</a>:<a className="btn-bg btn-ptr"  style={{cursor:"pointer"}} onClick={()=> {goToScroll(true)}}>Load More</a>}</div>
                       :""
                     }
                 </div>

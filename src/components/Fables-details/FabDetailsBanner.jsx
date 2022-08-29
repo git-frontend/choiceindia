@@ -37,7 +37,7 @@ function Fabdetailsbanner(props) {
                                     <div className="row ">
                                         <div className="col-md-12">
                                             <p className="text-center date">Published  {utils.formatDate(new Date(props.single_data[0].published_at),"MMMM dd, yyyy")}</p>
-                                            <h2 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h2>
+                                            <h1 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h1>
                                             {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
                                             <ul className="tabs">
                                                 <li>
@@ -61,7 +61,7 @@ function Fabdetailsbanner(props) {
                                         <div className= {fetchContainerClassName()}>
                                         <div className="imgblock">
                                                 {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
-                                                <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt="Loading" />
+                                                <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} />
                                             </div>
                                         </div>
                                         {
