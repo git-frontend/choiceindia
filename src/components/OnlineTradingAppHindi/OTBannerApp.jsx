@@ -31,7 +31,7 @@ function OTBannerApp() {
                 <div className="col-md-7">
                     <div className="sec1-left">
                         <div className="top-title pl8 hindi-ver">
-                           <h1>जिफ्फी ट्रेडिंग ऐप <span className="mb-br">फॉर</span> </h1> 
+                           <h1>जिफी ट्रेडिंग ऐप <span className="mb-br">फॉर</span> </h1> 
 
                            <Slider {...settings1} className='slider-ver'>
                                 <div>
