@@ -6,6 +6,7 @@ import Banner from './Banner';
 
 import { AiFillCaretUp } from "react-icons/ai";
 import "./boardofdirector.scss";
+import Navbar from "../Common-features/Navbar";
 
 import { useState,useEffect } from 'react';
 import InvestorInfoMenu from './InvestorInfoMenu';

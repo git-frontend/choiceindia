@@ -1,6 +1,7 @@
 import React from "react";
 import "../Common-features/navbar.scss";
 import "../CodeConduct/code-conduct.scss";
+import Navbar from "../Common-features/Navbar";
 function CodeConductMenu() {
     return (
         <div>

@@ -4,6 +4,7 @@ import Banner from './Banner';
 // import InvestorInfoMenu from './InvestorInfoMenu';
 // import Yeardetail from './Yeardetail';
 import "../Common-features/navbar.scss";
+import Navbar from "../Common-features/Navbar";
 
 import { useState } from 'react';
 import Template1 from "../Common-features/Template1";

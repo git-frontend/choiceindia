@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import Navbar from './Navbar';
+import Navbar from "../Common-features/Navbar";
 import image1 from '../../assets/images/about-us/vinita-patodia.webp';
 import image2 from '../../assets/images/about-us/kamal-poddar.webp';
 import image3 from '../../assets/images/about-us/suyash-patodia.webp';
@@ -11,6 +11,7 @@ import image7 from '../../assets/images/about-us/akthakur.webp';
 import image8 from '../../assets/images/about-us/sudha-bhushan.webp';
 import image9 from '../../assets/images/about-us/sandeep-singh.webp';
 import image10 from '../../assets/images/about-us/kanhaiyalal-beriwal.webp';
+
 
 import LazyLoader from '../Common-features/LazyLoader';
 function InvestorInfoMenu() {
