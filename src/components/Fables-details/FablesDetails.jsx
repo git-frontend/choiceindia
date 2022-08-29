@@ -10,9 +10,10 @@ import {
 } from "react-router-dom";
 import homeServices from '../../Services/homeServices';
 import Template1 from "../Common-features/Template1";
-
+import { Link, useNavigate } from "react-router-dom";
 function Fablesdetails() {
  // console.log('FablesDetails');
+ let navigate = useNavigate();
   const [single_detail, setSingle_Detail] = useState(() => null);
   const [allFabalData, setAllFabalData] = useState(() => { });
   const [htmlContent, sethtmlContent] = useState(() => '');
@@ -52,12 +53,19 @@ var formName = useRef('');
             checkWhetherToShowForm(res.data.posts || {});
             setSingle_Detail( res.data.posts);
             setIsDetail( true);
-            sethtmlContent(res.data.posts[0].html.replaceAll("/fables","/blog"));
+            sethtmlContent(res.data.posts[0].html.replaceAll("/fables","/blog").replaceAll("/blog/content/images/","/fables/content/images/"));
           document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
           document.getElementById('meta-tags').content = res.data.posts[0].meta_description? res.data.posts[0].meta_description : '' ;
           document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url.replaceAll('/fables','/blog') : '';
 
+          }else{
+          
           }
+        },err=>{
+          if(err&&err.message&&(err.message.indexOf('404')>-1)){
+            navigate(`/404`, { replace: true });
+          }
+          console.log("ERROR",err)
         }
       )
     }
