@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-// import AnnualReportMenu from './AnnualReportMenu';
+import AnnualReportMenu from './AnnualReportMenu';
 
 import "../Investors-info/investorsinfo.scss";
 import "../Corporate-Governance/corporate-governance.scss";

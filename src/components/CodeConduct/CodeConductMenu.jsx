@@ -1,5 +1,5 @@
 import React from "react";
-import "../Common-features/navbar.scss";
+import Navbar from "../Common-features/Navbar";
 import "../CodeConduct/code-conduct.scss";
 function CodeConductMenu() {
     return (

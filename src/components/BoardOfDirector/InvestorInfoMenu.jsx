@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
-import Navbar from './Navbar';
+import Navbar from "../Common-features/Navbar";
+
 import image1 from '../../assets/images/about-us/vinita-patodia.webp';
 import image2 from '../../assets/images/about-us/kamal-poddar.webp';
 import image3 from '../../assets/images/about-us/suyash-patodia.webp';
