@@ -3,13 +3,8 @@ import React, { useEffect } from "react";
 import Banner from './Banner';
 // import InvestorInfoMenu from './InvestorInfoMenu';
 // import Yeardetail from './Yeardetail';
-import Navbar from './Navbar';
-import "../Investors-info/navbar.scss";
-import "./navbar.scss";
+import "../Common-features/navbar.scss";
 
-import { AiFillCaretUp } from "react-icons/ai";
-import "./investorsinfo.scss";
-import "./navbar.scss";
 import { useState } from 'react';
 import Template1 from "../Common-features/Template1";
 import ChoiceLTP from "../Common-features/ChoiceLTP";
@@ -74,7 +69,7 @@ function InvestorInfo() {
                     <div className="row">
                         <div className="col-md-12">
                             <h2 className="title">Investors Relation</h2>
-                            {/* <Navbar /> */}
+                           <Navbar />
                           
                             
                         </div>
