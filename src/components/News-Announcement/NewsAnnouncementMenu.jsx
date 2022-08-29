@@ -2,7 +2,7 @@ import React from "react";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from  '@fortawesome/free-solid-svg-icons';
-import Navbar from '../Investors-info/Navbar';
+import Navbar from '../Common-features/Navbar';
 import pdf1 from '../../assets/pdf/News-annoucement/3a8620b9-3cd6-446e-8c46-89a83ac2f955.pdf';
 import pdf2 from '../../assets/pdf/News-annoucement/44681b05-b3f4-4137-aa9a-5480400feeaf.pdf';
 import pdf3 from '../../assets/pdf/News-annoucement/cabdfbcd-1ea0-4001-96be-adb8a58a9f33.pdf';

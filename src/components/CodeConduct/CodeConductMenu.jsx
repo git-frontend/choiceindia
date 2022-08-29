@@ -1,5 +1,5 @@
 import React from "react";
-import Navbar from '../Investors-info/Navbar';
+import "../Common-features/navbar.scss";
 import "../CodeConduct/code-conduct.scss";
 function CodeConductMenu() {
     return (
