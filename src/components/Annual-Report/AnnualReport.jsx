@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-// import AnnualReportMenu from './AnnualReportMenu';
+import AnnualReportMenu from './AnnualReportMenu';
 
 import "../Investors-info/investorsinfo.scss";
 import "../Corporate-Governance/corporate-governance.scss";
@@ -10,7 +10,6 @@ import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
 
 import ChoiceLTP from "../Common-features/ChoiceLTP";
-import AnnualReportMenu from "./AnnualReportMenu";
 import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
