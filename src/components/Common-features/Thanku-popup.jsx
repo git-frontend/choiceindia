@@ -106,12 +106,12 @@ function Thankyoupopup({ isShow }) {
             <Modal.Body className='thanku-mdl-parent'>
               <div>
                 <div className="thanku-overlay thanku-popup-active" >
-                  <div className={"thanku-popup "+((!isShow.isOnboarding)? 'campaign-success':'')}>
+                  <div className="thanku-popup">
                     <div className="sub-row">
                       <div className="close">
                         {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}
                       </div>
-                      <div className="thanku">
+                      <div  className={(!isShow.isOnboarding) &&(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "thanku sub-broker-success" : "thanku campaign-success"}>
                         <h1>Thank You !</h1>
                       </div>
                       <div className="body-content">

@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true ;
+const environment = false ;
 
 
 /**URL Config */
@@ -151,6 +151,17 @@ export class API_URLS {
     resendOTPURL = 'resend-otp';
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
+  /** pdf API */
+   
+  newsURL='items/news?filter[status][_eq]=published';
+  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description';
+  noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues';
+  corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies';
+  corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee';
+  shareholdingURL='items/share_holding_pattern?filter[status][_eq]=published'
+
+
+
 
     /** Sub Broker APIs */
     // ?is_refresh=Y
@@ -545,6 +556,28 @@ export class API_URLS {
 
     getSubBrokerVerifyOtpUrl() {
         return this.subBrokerVerifyOtpURL;
+    }
+
+    getNewsUrl(){
+        return this.bannerURL + this.newsURL
+    }
+
+    getNoticesUrl(){
+        return this.bannerURL + this.noticeURL
+    }
+
+    getNoticesUrlR(){
+        return this.bannerURL + this.noticeRightURL
+    }
+    getcorporateURL(){
+        return this.bannerURL + this.corporateURL
+    }
+    getcorporatecommiteeURL(){
+        return this.bannerURL + this.corporatecommiteeURL
+
+    }
+    getShareholdingURL(){
+        return this.bannerURL + this.shareholdingURL
     }
 
 }
