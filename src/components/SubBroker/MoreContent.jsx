@@ -14,7 +14,7 @@ function MoreContent() {
                      </div>
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">
-                                    <p className="sml-para-dv">A Sub Broker is an individual who works on behalf of a stock broking firm. The primary <Link to="/">role of a Sub broker</Link> is to serve as a link between a Broker and client. As a Sub broker works closely with a Stockbroker, one of their key responsibilities is to acquire new clients for the  brokerage firm.</p>
+                                    <p className="sml-para-dv">A Sub Broker is an individual who works on behalf of a stock broking firm. The primary <a href="https://choiceindia.com/blog/role-of-broker-and-sub-broker-in-capital-market/">role of a Sub broker</a> is to serve as a link between a Broker and client. As a Sub broker works closely with a Stockbroker, one of their key responsibilities is to acquire new clients for the  brokerage firm.</p>
                                     <p className="sml-para-dv">He/she should assist the clients to invest in shares and manage the client’s portfolio. He/she should manage the queries of the client. A Sub broker earns commission from the transactions done by the clients.</p>
                                     <p className="sml-para-dv">The Securities and Exchange Board of India (SEBI) has made it mandatory for all Sub brokers to receive a Certificate of Registration. Without the certificate, the individual won’t be able to deal in shares and securities with any clients. So a client must ensure that the individual is registered with SEBI as an authorized Sub broker.</p>
                                     
@@ -27,7 +27,7 @@ function MoreContent() {
                                     </ul>
 
                                     <h3>How Does A Sub Broker Franchise Work?</h3>
-                                    <p className="sml-para-dv">A Sub broker franchise works under a reputed broking house. The first step involves registering the franchise under SEBI. Once it is legalized, the franchise is responsible for gaining as many clients as possible to earn revenue from the <Link to="/">brokerage firm</Link>. An excellent client base is a key to higher income for the stockbroker.</p>
+                                    <p className="sml-para-dv">A Sub broker franchise works under a reputed broking house. The first step involves registering the franchise under SEBI. Once it is legalized, the franchise is responsible for gaining as many clients as possible to earn revenue from the <a href="https://choiceindia.com/">brokerage firm</a>. An excellent client base is a key to higher income for the stockbroker.</p>
                                     <p className="sml-para-dv">The stockbroker is responsible to make sure that the clients acquired by a sub-broker are satisfied with the service and have a profit-bearing portfolio. The share broking franchise must follow all the norms in the agreement and adhere to the revenue sharing policy with the brokerage firm.</p>
                                     <p className="sml-para-dv">It is also important to see that the trades placed by the clients are done at the right prices in the market.</p>
                                     <p className="sml-para-dv">A sub- broking franchise has to give away a percentage share of the income to the brokerage firm. It is like rent that has to be paid to the broker for using their patent name. The amount charged is usually minimum and all the other income can be retained by the Franchise.</p>
@@ -36,7 +36,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">To become a sub-broker, an individual is required to:
                                         
                                     </p><ol className="ollisting sml-para-dv">
-                                        <li>Choose the best <Link to="/">sub-broker franchise model</Link> you want to be associated with.</li>
+                                        <li>Choose the best <a href="https://choiceindia.com/blog/sub-broker-business-model/">sub-broker franchise model</a> you want to be associated with.</li>
                                         <li>Check the eligibility criteria of the sub broking franchise before applying.</li>
                                         <li>Submit all the documents that are required to become an authorized sub-broker.</li>
                                         <p className="sml-para-dv"> The list of documents is quite basic and includes:</p>
@@ -62,7 +62,7 @@ function MoreContent() {
 
                                     <h3>Who Can Become a Sub Broker?</h3>
                                     <p className="sml-para-dv">To become a Sub broker, an individual has to meet the following criteria listed by the Indian stock exchange. Eligibility Criteria To Become A Sub broker</p>
-                                    <h4><Link to="/">Eligibility Criteria To Become A Sub broker </Link></h4>
+                                    <h4><a href="https://choiceindia.com/blog/sub-broker-eligibility/">Eligibility Criteria To Become A Sub broker </a></h4>
                                     <ul className="terms-list sml-para-dv">
                                         <li>The age of an individual must be 18 years or above.</li>
                                         <li>The individual must possess a Higher Secondary (12th pass) certificate.</li>

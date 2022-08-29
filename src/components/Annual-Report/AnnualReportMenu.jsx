@@ -1,10 +1,10 @@
 import React from "react";
 import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import Navbar from '../Investors-info/Navbar';
+import Navbar from "../Common-features/Navbar";
 import "../CodeConduct/code-conduct.scss";
+import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 function AnnualReportMenu() {
     return (

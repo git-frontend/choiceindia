@@ -56,6 +56,9 @@ function Navbar() {
                   <li className="menu-itm">
                     <Link to="/financial-info" className="menu-itm-link">Financial Info</Link>
                   </li>
+                  <li className="menu-itm">
+                    <Link to="/financial-info" className="menu-itm-link">Financial Info</Link>
+                  </li>
                 
                 </ul>
                 <ul className="investor-info-menu-list">
