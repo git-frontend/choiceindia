@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from '../Investors-info/Banner';
-import VotingResultsMenu from './VotingResultsMenu';
+import InvestorPresentationMenu from './InvestorPresentationMenu';
 import "../Investors-info/investorsinfo.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import "../Common-features/navbar.scss";
@@ -14,7 +14,7 @@ import{ useLocation
 import meta_tags from "../../Data/MetaTags";
 
 
-function FinancialInfo() {
+function InvestorPresentation() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
@@ -49,7 +49,7 @@ function FinancialInfo() {
               <Banner />
               <ChoiceLTP></ChoiceLTP>
 
-              <VotingResultsMenu />
+              <InvestorPresentationMenu />
 
 
             </div>
@@ -60,4 +60,4 @@ function FinancialInfo() {
   );
 }
 
-export default FinancialInfo;
+export default InvestorPresentation;

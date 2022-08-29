@@ -100,6 +100,10 @@ const LazyCurrencyTrading = React.lazy(() => import('./components/CurrencyTradin
 const LazyNoDataFound = React.lazy(() => import('./components/Common-features/NoDataFound'));
 const LazyMutualFundsInvestment = React.lazy(() => import('./components/Mutual-fund-seo/MutualFundsSEO'));
 const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-demat-account-campaign/OpenDematAccount'));
+const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
+const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
+const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+
 
 
 function Routing() {
@@ -467,25 +471,42 @@ function Routing() {
                                 < LazyEquityStockTrading />
                             </React.Suspense>
                         } />
-                          <Route exact path='/derivatives-trading' element={
+                        <Route exact path='/derivatives-trading' element={
                             <React.Suspense>
                                 < LazyDerivativeTrading />
                             </React.Suspense>
                         } />
                         <Route exact path='/currency-forex-trading' element={
                             <React.Suspense>
-                                < LazyCurrencyTrading/>
+                                < LazyCurrencyTrading />
                             </React.Suspense>
                         } />
-                          <Route exact path='/no-data-found' element={
+                        <Route exact path='/no-data-found' element={
                             <React.Suspense>
-                                < LazyNoDataFound/>
+                                < LazyNoDataFound />
                             </React.Suspense>
                         } />
 
                         <Route exact path='/mutual-funds-investment' element={
                             <React.Suspense>
                                 < LazyMutualFundsInvestment />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/related-party-transaction' element={
+                            <React.Suspense>
+                                < LazyTranscation />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/closure-of-trading-window' element={
+                            <React.Suspense>
+                                < LazyClosureTrading />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/investor-presentation' element={
+                            <React.Suspense>
+                                < LazyInvestorPresentation />
                             </React.Suspense>
                         } />
 
