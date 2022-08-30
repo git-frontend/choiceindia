@@ -8,13 +8,12 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 function MarketInsights() {
 
     const [selectedId, setSelectedId] = useState(0);
-    // const [change, setChange] = useState([1, 2, 3, 4]);
     const [trigger, setTrigger] = useState(false)
     const [fabal, setFabal] = useState([]);
     // const [view, setView] = useState({
     //     matches: window.innerWidth < 770 ? false : true,
     // });
-    const [tempid, setTempId] = useState({ 'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
+    const [tempid, setTempId] = useState({ 'name': 'economic-analysis' });
 
     const settings = {
         infinite: true,
@@ -52,18 +51,18 @@ function MarketInsights() {
                 // setFabal(res.data.posts);
                 if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.data) {
                     setFabal(res.data.response.data);
+                    
                 }
                 // console.log(res, "Research Report");
             }
         )
-    };const navigate = useNavigate();
+    };
+    const navigate = useNavigate();
 
-    function marketinsightDetail(id) {
-        // console.log('IIIII',id);
-        // navigate(`/research-new/${id}/${tempid}`);
+    function marketinsightDetail(id,id2) {
         navigate({
           pathname: `/research-new/${id}/${tempid.name}`,
-          search: `?id=${tempid.id}`
+          search: `?id=${id2}`
         })
       }
 
@@ -131,10 +130,11 @@ function MarketInsights() {
                                         {
                                             (fabal||[]).slice(0, 4).map((response, index) => {
                                                 let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
+                                                
 
                                                 return (
 
-                                                    <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                                    <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.uuid ,response.report_subtype_uuid)}} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                         <div className="insights-item-cont" >
                                                      <LazyLoader  src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                             {/* <img src={response.feature_image} alt="" /> */}

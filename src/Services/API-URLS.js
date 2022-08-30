@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true ;
+const environment = false ;
 
 
 /**URL Config */
@@ -151,6 +151,25 @@ export class API_URLS {
     resendOTPURL = 'resend-otp';
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
+  /** pdf API */
+   
+  newsURL='items/news?filter[status][_eq]=published';
+  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description';
+  noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues';
+  corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies';
+  corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee';
+  shareholdingURL='items/share_holding_pattern?filter[status][_eq]=published';
+  transactionURL='items/related_party_transaction?filter[status][_eq]=Published';
+  closureURL='items/closure_trading_window?filter[status][_eq]=Published';
+  investorURL='items/investor_presentation?filter[status][_eq]=Published';
+  votingresultURL='items/voting_Results?filter[status][_eq]=published';
+  financeURL='items/financial_info?filter[status][_eq]=published';
+  annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1';
+  annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2';
+  factsheetURL='items/fact_sheet?filter[status][_eq]=published';
+
+
+
 
     /** Sub Broker APIs */
     // ?is_refresh=Y
@@ -545,6 +564,58 @@ export class API_URLS {
 
     getSubBrokerVerifyOtpUrl() {
         return this.subBrokerVerifyOtpURL;
+    }
+
+    getNewsUrl(){
+        return this.bannerURL + this.newsURL
+    }
+
+    getNoticesUrl(){
+        return this.bannerURL + this.noticeURL
+    }
+
+    getNoticesUrlR(){
+        return this.bannerURL + this.noticeRightURL
+    }
+    getcorporateURL(){
+        return this.bannerURL + this.corporateURL
+    }
+    getcorporatecommiteeURL(){
+        return this.bannerURL + this.corporatecommiteeURL
+
+    }
+    getShareholdingURL(){
+        return this.bannerURL + this.shareholdingURL
+    }
+
+    getTransactionURL(){
+        return this.bannerURL + this.transactionURL
+    }
+    getClosureTradingURL(){
+        return this.bannerURL + this.closureURL
+    }
+    getInvestorURL(){
+        return this.bannerURL + this.investorURL
+    }
+
+    getVotingResultURL(){
+        return this.bannerURL + this.votingresultURL
+    }
+
+    getFinancialURL(){
+        return this.bannerURL + this.financeURL
+    }
+    getAnnualReportURL(){
+        return this.bannerURL + this.annualURL
+    }
+
+    getAnnualReport2URL(){
+        return this.bannerURL + this.annual2URL
+
+    }
+
+    getFactSheetURL(){
+        return this.bannerURL + this.factsheetURL
     }
 
 }

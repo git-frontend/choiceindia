@@ -17,7 +17,7 @@ function AppOTDownloadJiffy() {
             <div className='down-jiffy-sub'>
                 
                 <div className='jiffy-sub-cont'>
-                      <h3>डाउनलोड जिफ्फी ऐप</h3>
+                      <h3>डाउनलोड जिफी ऐप</h3>
                       <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                       <svg width="30" height="30" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>

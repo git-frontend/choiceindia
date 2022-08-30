@@ -6,7 +6,12 @@ import Banner from './Banner';
 
 import { AiFillCaretUp } from "react-icons/ai";
 import "./boardofdirector.scss";
-import "./navbar.scss";
+
+import Navbar from "../Common-features/Navbar";
+
+import "../Common-features/navbar.scss";
+
+
 import { useState,useEffect } from 'react';
 import InvestorInfoMenu from './InvestorInfoMenu';
 import ChoiceLTP from "../Common-features/ChoiceLTP";

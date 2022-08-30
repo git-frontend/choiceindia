@@ -184,7 +184,7 @@ useEffect(() => {
                         <h4>Years of Experience</h4>
                     </div>
                     <div className="record-count-itm">
-                        <h3>48</h3>
+                        <h3>54</h3>
                         <h4>Local Branches</h4>
                     </div>
                     <div className="record-count-itm">

@@ -1,11 +1,64 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import corporateService from "../../Services/CorporateService";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from  '@fortawesome/free-solid-svg-icons';
-import Navbar from '../Investors-info/Navbar';
+import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 function CodeConductMenu() {
+    const [data, setData] = useState();
+    const [list, setList] = useState();
+    const [trigger, setTrigger] = useState(false);
+
+    function loadCorporatepdf() {
+        corporateService.Corporate().then(
+            res => {
+                if (res) {
+                    setData(res.data.data);
+                    console.log("check", res.data.data)
+
+                } else {
+                    setData([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setData([]);
+        });
+    }
+
+
+    function loadCorporatecommitteepdf() {
+        corporateService.CorporateCommitee().then(
+            res => {
+                if (res) {
+                    setList(res.data.data);
+                    console.log("check", res.data.data)
+
+                } else {
+                    setList([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setList([]);
+        });
+    }
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadCorporatepdf();
+            loadCorporatecommitteepdf();
+
+        }
+
+    }, [trigger])
+
+
     return (
         <div>
             <section className="Investormenu">
@@ -19,71 +72,95 @@ function CodeConductMenu() {
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
-                           
-                                <h3 className="head">Policies</h3>
-                                <div className="subtext">
-                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Policy For Familiarisation Programme For Independent Directors </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Code of Practices and Procedures for fair Disclosure of unpublished Price Sensitive Information </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
+                            <h3 className="head">Policies</h3>
+                            <div className="subtext">
+                                {
+                                    (data || []).map((res) => {
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Policy for Preservation of Documents and Archival of Documents </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Nomination And Remuneration Policy </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                 
-                                  
+                                        return (
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                <div>{res.headline} </div>
+                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
+                                            </div>
+                                        )
+
+                                    })
+                                }
+                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Policy For Familiarisation Programme For Independent Directors </div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
                                 </div>
-                           
-                           
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Code of Practices and Procedures for fair Disclosure of unpublished Price Sensitive Information </div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Policy for Preservation of Documents and Archival of Documents </div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Nomination And Remuneration Policy </div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div> */}
+
+
+                            </div>
+
+
 
                         </div>
-                       
-                       
-                      
-                      
+
+
+
+
                     </div>
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
-                           
-                                <h3 className="head">Committee</h3>
-                                <div className="subtext">
-                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Audit Committee </div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Nomination and Remuneration Committee</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
+                            <h3 className="head">Committee</h3>
+                            <div className="subtext">
+                                {
+                                    (list || []).map((res) => {
+                                        return (
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                <div>{res.headline} </div>
+                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
+                                            </div>
 
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>Stakeholder Relationship Committee</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                  
-                                 
-                                  
+
+                                        )
+                                    })
+                                }
+                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Audit Committee </div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
                                 </div>
-                           
-                           
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Nomination and Remuneration Committee</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div>
+
+                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>Stakeholder Relationship Committee</div>
+                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                </div> */}
+
+
+
+                            </div>
+
+
 
                         </div>
-                       
-                       
-                      
-                      
+
+
+
+
                     </div>
 
                 </div>

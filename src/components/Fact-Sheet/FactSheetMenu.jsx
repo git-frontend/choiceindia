@@ -1,8 +1,42 @@
-import React from "react";
-import Navbar from '../Investors-info/Navbar';
+import React,{useState,useEffect} from "react";
+import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import FactSheetService from "../../Services/FactSheetService";
 function FactSheetMenu() {
+    const [data, setData] = useState();
+    const [trigger, setTrigger] = useState(false);
+
+    function loadFactSheetpdf() {
+        FactSheetService.Factsheet().then(
+            res => {
+                if (res) {
+                    setData(res.data.data);
+
+
+                } else {
+                    setData([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setData([]);
+        });
+    }
+
+
+
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadFactSheetpdf()
+
+        }
+
+    }, [trigger])
     return (
         <div>
             <section className="Investormenu">
@@ -26,7 +60,18 @@ function FactSheetMenu() {
                             <div className=" col-md-5 col-5 "><h3 className="head">Name </h3></div>
                             <div className="col-md-7 col-7 word-wrap"> <h3 className="head">Choice International Limitied</h3></div>
                         </div>
-                        <div className="row border-bottom ">
+                        {
+                            (data||[]).map((res)=>{
+                                return(
+                                    <div className="row border-bottom ">
+                            <div className=" col-md-5 col-5 pb-3 pt-3">{res.name}</div>
+                            <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">{res.choice_international_limited}</div>
+                        </div>
+
+                                )
+                            })
+                        }
+                        {/* <div className="row border-bottom ">
                             <div className=" col-md-5 col-5 pb-3 pt-3">CIN </div>
                             <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">L67190MH1993PLC071117</div>
                         </div>
@@ -81,7 +126,7 @@ function FactSheetMenu() {
                                 TEL NO : 022 49186270<br />
                                 EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br />
                                 WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">

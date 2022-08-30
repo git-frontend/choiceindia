@@ -4,7 +4,7 @@ import Banner from '../Investors-info/Banner';
 import FactSheetMenu from './FactSheetMenu';
 import "../Investors-info/investorsinfo.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import "../Investors-info/navbar.scss";
+import "../Common-features/navbar.scss";
 import Template1 from "../Common-features/Template1";
 import { useState, useEffect } from 'react';
 import ChoiceLTP from "../Common-features/ChoiceLTP";

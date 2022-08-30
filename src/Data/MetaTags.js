@@ -241,13 +241,17 @@ const meta_tags = {
 
     "client-details-update":{'title':"Update Client Details - Change Your Email and Phone Number",'content':"",'link':"https://choiceindia.com/client-details-update"},
 
-    "annual-report":{'title':"Financial Info - Choice International Limited",'content':"",'link':"https://choiceindia.com/annual-report"},
+    "annual-report":{'title':"Annual Report - Choice International Limited",'content':"",'link':"https://choiceindia.com/annual-report"},
 
-    "financial-info":{'title':"Annual Report - Choice International Limited",'content':"",'link':"https://choiceindia.com/financial-info"},
+    "financial-info":{'title':"Financial Information - Choice International Limited",'content':"",'link':"https://choiceindia.com/financial-info"},
 
     "news-media":{'title':"News and Media - Choice",'content':"",'link':"https://choiceindia.com/news-media"},
 
+    "board-of-directors":{'title':"Board Of Directors",'content':"",'link':"https://choiceindia.com/board-of-directors"},
 
+    "voting-results":{'title':"Voting Results - Choice International Limited",'content':"",'link':"https://choiceindia.com/voting-results"},
+    
+    "notices":{'title':"Notices - Choice International Limited",'content':"",'link':"https://choiceindia.com/notices"},
 
     "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
@@ -263,8 +267,13 @@ const meta_tags = {
 
     "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise"},
 
-    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/campaign/sub-broker-franchise"},
+    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise"},
 
+    "corporate-governance":{'title':"Corporate Goveranc - Choice International Limited",'content':"",'link':"https://choiceindia.com/corporate-governance"},
+
+    "share-holding-pattern":{'title':"Share Holding Pattern - Choice International Limited",'content':"",'link':"https://choiceindia.com/share-holding-pattern"},
+
+    
 
     "brokerage-charges": {
         'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.","link":"https://choiceindia.com/brokerage-charges",
@@ -763,7 +772,7 @@ const meta_tags = {
           "text": "2 विकल्प हैं, या तो आप चॉइस के साथ एक नया डीमैट अकाउंट खोलें और पुराने डीमैट से सभी शेयरों को स्थानांतरित करें, या पुराने डीमैट को नए में मर्ज करें।
     आप शेयरों के मैन्युअल या ऑनलाइन हस्तांतरण का विकल्प चुन सकते हैं।
     मैनुअल ट्रांसफर
-    1. पता लगाएं कि कौन सा डीपी (डिपॉजिटरी पार्टिसिपेंट) शेयर धारण कर रहा है, भारत में 2 डिपॉजिटरी हैं, नेशनल सिक्योरिटीज डिपॉजिटरी लिमिटेड (एनएसडीएल) और सेंट्रल डिपॉजिटरी सर्विसेज लिमिटेड (सीडीएसएल) |
+    1. पता लगाएं कि कौनसा डीपी (डिपॉजिटरी पार्टिसिपेंट) शेयर धारण कर रहा है, भारत में 2 डिपॉजिटरी हैं, नेशनल सिक्योरिटीज डिपॉजिटरी लिमिटेड (एनएसडीएल) और सेंट्रल डिपॉजिटरी सर्विसेज लिमिटेड (सीडीएसएल) |
     2.यदि आपका नया डीमैट उसी डीपी के पास है तो यह इंटर-डिपॉजिटरी ट्रांसफर होगा, और यदि यह अलग है; यह एक इंट्रा-डिपॉजिटरी ट्रांसफर होगा |
     3.इसके बाद, अपने पुराने डीमैट अकाउंट की डीपी द्वारा प्रदान की गई डिलीवरी इंस्ट्रक्शन स्लिप (डीआईएस) भरें। 'मोड ऑफ ट्रांसफर' फील्ड में, कृपया चुनें कि ट्रांसफर इंटर-डिपॉजिटरी है या इंट्रा-डिपॉजिटरी। यह महत्वपूर्ण है |
     4. सभी आवश्यक विवरण भरें जैसे शेयरों के नाम, मात्रा और उनके आईएसआईएन नंबर
@@ -1060,9 +1069,9 @@ const meta_tags = {
     </script>
     ` },
 
-    "/demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account"},
+    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account"},
 
-    "/info/stratezy/": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
+    "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
 
     "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", "content": "Jiffy Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": `` },
 
@@ -1390,21 +1399,21 @@ const meta_tags = {
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
-          "name": "क्या मैं जिफ्फी ट्रेडिंग ऐप के साथ सभी सेगमेंट में ट्रेडिंग कर सकता हूं?",
+          "name": "क्या मैं जिफी ट्रेडिंग ऐप के साथ सभी सेगमेंट में ट्रेडिंग कर सकता हूं?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हां, जिफ्फी सभी सेगमेंट में ट्रेडिंग का समर्थन करता है जो कि इक्विटी, डेरिवेटिव्स, कमोडिटी और करेंसी है|"
+            "text": "हां, जिफी सभी सेगमेंट में ट्रेडिंग का समर्थन करता है जो कि इक्विटी, डेरिवेटिव्स, कमोडिटी और करेंसी है|"
           }
         },{
           "@type": "Question",
-          "name": "क्या जिफ्फी ट्रेडिंग ऐप ट्रेडिंग के लिए सुरक्षित है?",
+          "name": "क्या जिफी ट्रेडिंग ऐप ट्रेडिंग के लिए सुरक्षित है?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "हम सुरक्षा सुनिश्चित करने के लिए व्यापक और विश्व स्तरीय टेक्नालजी का उपयोग करते हैं|"
           }
         },{
           "@type": "Question",
-          "name": "क्या मैं जिफ्फी ट्रेडिंग ऐप से डीमैट खाता खोल सकता हूं?",
+          "name": "क्या मैं जिफी ट्रेडिंग ऐप से डीमैट खाता खोल सकता हूं?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "हां, पूरी प्रक्रिया में सिर्फ 10 मिनट लगते हैं और यह पूरी तरह से पेपरलेस है!"
@@ -1418,10 +1427,10 @@ const meta_tags = {
           }
         },{
           "@type": "Question",
-          "name": "जिफ्फी ट्रेडिंग ऐप में आईपीओ के लिए आवेदन कैसे करें?",
+          "name": "जिफी ट्रेडिंग ऐप में आईपीओ के लिए आवेदन कैसे करें?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "जिफ्फी के माध्यम से आईपीओ के लिए आवेदन करने के चरण नीचे दिए गए हैं - 
+            "text": "जिफी के माध्यम से आईपीओ के लिए आवेदन करने के चरण नीचे दिए गए हैं - 
       आईपीओ अनुभाग पर जाएं => आईपीओ लिस्टिंग => ओपन आईपीओ
        IPO पर टैप करें, और IPO विवरण लागू करने या देखने के लिए सीधे 'सदस्यता लें' पर क्लिक करें|
       सब्स्क्राइब स्क्रीन/पेज पर, आपको लॉट की संख्या, कट-ऑफ मूल्य, यूपीआई आईडी दर्ज करनी होगी और सत्यापित करें पर टैप करना होगा।
@@ -1430,10 +1439,10 @@ const meta_tags = {
           }
         },{
           "@type": "Question",
-          "name": "क्या जिफ्फी ट्रेडिंग ऐप अन्य भाषाओं में उपलब्ध है?",
+          "name": "क्या जिफी ट्रेडिंग ऐप अन्य भाषाओं में उपलब्ध है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हां, जिफ्फी के पास फिलहाल हिंदी, गुजराती, मराठी और मलयालम के विकल्प हैं।"
+            "text": "हां, जिफी के पास फिलहाल हिंदी, गुजराती, मराठी और मलयालम के विकल्प हैं।"
           }
         },{
           "@type": "Question",
@@ -1444,10 +1453,10 @@ const meta_tags = {
           }
         },{
           "@type": "Question",
-          "name": "क्या जिफ्फी ट्रेडिंग ऐप एंड्रॉइड और आईओएस प्लेटफॉर्म पर उपलब्ध है?",
+          "name": "क्या जिफी ट्रेडिंग ऐप एंड्रॉइड और आईओएस प्लेटफॉर्म पर उपलब्ध है?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "हां, जिफ्फी एंड्रॉयड और आईओएस दोनों पर उपलब्ध है।"
+            "text": "हां, जिफी एंड्रॉयड और आईओएस दोनों पर उपलब्ध है।"
           }
         }]
       }

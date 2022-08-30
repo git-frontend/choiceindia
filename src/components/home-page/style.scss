@@ -765,7 +765,8 @@
 
         .stories-sec-right {
             width: 60%;
-            padding-left: 7rem;
+            padding-left: 5rem;
+            padding-right: 2rem;
             padding-top: 5rem;
 
             h4 {
@@ -784,9 +785,27 @@
                 display: -webkit-box;
                 -webkit-line-clamp: 3;
                 -webkit-box-orient: vertical;
+                position: relative;
 
                 @media screen and (max-width: $md) {
                     font-size: 1.3rem;
+                }
+                .read-btn{
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    background: $whiteColor;
+                    font-family: $font-family-poppins-bold;
+                    em{
+                        font-family: $font-family-poppins-regular;
+                        margin:0 0.2rem;
+                        margin-right: 1rem;
+                        display: inline-block;
+                        font-style: normal;
+                    }
+                    &:hover{
+                        color: $yellowColor;
+                    }
                 }
             }
 
@@ -812,7 +831,7 @@
         .sec-slider-cont {
             bottom: 20rem;
             position: absolute;
-            left: 46%;
+            left: 44%;
             width: 90rem;
 
             .stories-sec-slider {

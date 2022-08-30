@@ -1,12 +1,67 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
+import AnnualReportService from "../../Services/AnnualReportService";
+import Navbar from "../Common-features/Navbar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import Navbar from '../Investors-info/Navbar';
+
 import "../CodeConduct/code-conduct.scss";
+import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 function AnnualReportMenu() {
+    const [data, setData] = useState();
+    const [list, setList] = useState();
+    const [trigger, setTrigger] = useState(false);
+
+    function loadAnnualReportpdf() {
+        AnnualReportService.AnnualReport().then(
+            res => {
+                if (res) {
+                    setData(res.data.data);
+
+                } else {
+                    setData([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setData([]);
+        });
+    }
+
+    function loadAnnual2Reportpdf() {
+        AnnualReportService.Annual2Report().then(
+            res => {
+                if (res) {
+                    setList(res.data.data);
+
+                } else {
+                    setList([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setList([]);
+        });
+    }
+
+
+
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadAnnualReportpdf();
+            loadAnnual2Reportpdf();
+
+        }
+
+    }, [trigger])
+
     return (
         <div>
             <section className="Investormenu">
@@ -26,9 +81,21 @@ function AnnualReportMenu() {
 
                             </div>
                             <div className="subtext">
+                                {
+                                    (data || []).map((res) => {
+                                        return (
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                <div>{res.report_description} </div>
+
+                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
+                                            </div>
+
+                                        )
+                                    })
+                                }
 
 
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                     <div>Annual Return 2021 - 2022 </div>
 
                                     <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf1)}} className="cursor-pointer" /></div>
@@ -48,7 +115,7 @@ function AnnualReportMenu() {
                                     <div>Annual Report 2020 - 2021</div>
 
                                     <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
+                                </div> */}
 
 
                             </div>
@@ -70,15 +137,23 @@ function AnnualReportMenu() {
 
                             </div>
                             <div className="subtext">
+                           {
+                            (list||[]).map((res)=>{
+                                return(
+                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                    <div>{res.report_description}</div>
 
-
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Financial Statements of Subsidiaries 2020-21</div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
                                 </div>
 
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+
+                                )
+                            })
+                           }
+
+                                
+
+                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                     <div>Financial Statements of Subsidiaries 2019-20 </div>
 
                                     <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
@@ -87,7 +162,7 @@ function AnnualReportMenu() {
                                     <div>Financial Statements of Subsidiaries 2018-19</div>
 
                                     <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
+                                </div> */}
 
 
                             </div>

@@ -502,6 +502,7 @@ body{
 
 .team-list-slider {
     position: relative;
+    padding-bottom: 4rem;
     .slick-slide{
         height: auto;
     }
@@ -518,6 +519,8 @@ body{
         @media (max-width:$sm) {
             
             display: block !important;
+            width: 95% !important;
+            margin: 0 auto;
             
         }
 
@@ -685,4 +688,12 @@ body{
 
 .mt7{
     margin-top: 7rem;
+}
+.btnshow{
+
+    @media (max-width:$sm) {
+
+        display: none !important;
+    }
+
 }

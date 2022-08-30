@@ -56,6 +56,15 @@ function Navbar() {
                   <li className="menu-itm">
                     <Link to="/financial-info" className="menu-itm-link">Financial Info</Link>
                   </li>
+                  <li className="menu-itm">
+                    <Link to="/related-party-transaction" className="menu-itm-link">Related Party Transaction</Link>
+                  </li>
+
+                  <li className="menu-itm">
+                    <Link to="/closure-of-trading-window" className="menu-itm-link">Closure of Trading Window</Link>
+                  </li>
+
+                  
                 
                 </ul>
                 <ul className="investor-info-menu-list">
@@ -74,6 +83,9 @@ function Navbar() {
                   </li>
                   <li className="menu-itm">
                     <Link to="/board-of-directors" className="menu-itm-link">Board of Directors</Link>
+                  </li>
+                  <li className="menu-itm">
+                    <Link to="/investor-presentation" className="menu-itm-link">Investor Presentation</Link>
                   </li>
                 </ul>
                 </div>

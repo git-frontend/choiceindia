@@ -16,7 +16,7 @@ function BannerTop() {
               <div className="wrap-banner">
                 <div className="page2-banner-caption">
                   <h3>Sumeet <span> Bagadia</span> </h3>
-                  <p>Executive Director and Head of <br />Technical Research at Choice Broking.</p>
+                  <p>Executive Director and Head of <br />Technical Research at Choice.</p>
                 </div>
                 <div className="page2-banner-img">
                                   <LazyLoader src={Image1} alt={"Sumeet Bagadia"} width={"512"} height={"508"} className={"img-fluid"} />

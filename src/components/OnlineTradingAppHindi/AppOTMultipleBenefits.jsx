@@ -55,7 +55,7 @@ function AppOTMultipleBenefits() {
                   <div className="d-block imgwrap">
                     <img src={Vector4} width={"96"} height={"96"} alt="Free Expert Research from TV Panelist" className="img-fluid " />
                   </div>
-                  <h4 className="pt-4"><strong>डेडिकेटेड <br/>रिलेशनशिप <br/>मैनेजर</strong></h4>
+                  <h4 className="pt-4"><strong>डेडिकेटेड <br/>रिलेशनशिप <br/>मेनेजर</strong></h4>
 
                 </div>
 

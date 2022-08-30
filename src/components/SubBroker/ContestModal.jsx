@@ -43,7 +43,7 @@ function ContestModal() {
                         <li>Management reserves right for any alteration or cancellation of scheme, With or without prior intimation.</li>
                         <li>No other scheme / contest / offer can be clubbed with this</li>
                         <li>No backend mapping of CBA / AP code will be allowed</li>
-                        <li>For Additional Rewards, Active account refers to Minimum Rs. 1000 investment &amp; 2 trades for EQ, Minimum Rs.500 SIP for MF</li>
+                        <li>For Additional Rewards, Active account refers to Minimum Rs. 500 investment &amp; 2 trades for EQ, Minimum Rs.250 SIP for MF</li>
                     </ul>
         </Modal.Body>
       </Modal>

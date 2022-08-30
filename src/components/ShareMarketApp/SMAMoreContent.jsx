@@ -32,7 +32,7 @@ function OTAppMoreContent() {
                                         For Traders, there is a clear and classified Order column for keeping account of the everyday trade. There are dedicated sections for all kinds of Orders. Pending for orders that are waiting to be placed, Executed section for orders that are successfully placed, Trades section for overall orders in a day, and Others section for orders that are rejected).
 
                                         <li className="font-bold">Scrip Overview and News Corner: </li>
-                                        iffy is the <Link to="/online-trading-app">best trading app</Link> because not only does it provide all the essential details about a scrip, but also it helps to stay updated about the latest development of the market with the latest news on the company.
+                                        Jiffy is the <Link to="/online-trading-app">best trading app</Link> because not only does it provide all the essential details about a scrip, but also it helps to stay updated about the latest development of the market with the latest news on the company.
                                         </ul>
                                         <h3 className="font-bold">A typical Scrip overview in Jiffy consists of:</h3><br/>
                                       
