@@ -188,7 +188,7 @@ useEffect(()=>{
                             <a href="https://www.linkedin.com/company/choice-broking/" target="_blank">
                               <FontAwesomeIcon icon={faLinkedinIn} />
                             </a>
-                            <a href="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
+                            <a href="https://instagram.com/choicehq_social" target="_blank">
                               <FontAwesomeIcon icon={faInstagram} />
                             </a>
                             <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank">
