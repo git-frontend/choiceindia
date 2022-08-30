@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false ;
+const environment = true ;
 
 
 /**URL Config */
@@ -79,7 +79,7 @@ export class API_URLS {
 
     /** fables url  */
 
-    fableCategoryURL = 'items/blog?filter[fable_status][_eq]=publish'
+    fableCategoryURL = 'items/fables?filter[fable_status][_eq]=publish'
 
     /**fablestories blog  */
     fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
