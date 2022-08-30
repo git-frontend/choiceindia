@@ -15,16 +15,16 @@ function WhyBecomeRemisier () {
                         <div className="col-xl-10 col-md-12">
                             <div className="counter-list">
                                 <div className="count-item">
-                                    <h3><span className="counter">4</span>L+</h3>
+                                    <h3><span className="counter">5</span>L+</h3>
 
                                     <h6>Clients</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">50</span></h3>
+                                    <h3><span className="counter">54</span></h3>
                                     <h6>Local Offices</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">3000</span>+</h3>
+                                    <h3><span className="counter">24k</span>+</h3>
                                     <h6>Franchises</h6>
                                 </div>
                                 <div className="count-item">
