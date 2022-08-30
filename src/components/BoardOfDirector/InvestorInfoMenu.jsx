@@ -14,6 +14,7 @@ import image9 from '../../assets/images/about-us/sandeep-singh.webp';
 import image10 from '../../assets/images/about-us/kanhaiyalal-beriwal.webp';
 import Slider from "react-slick";
 
+
 import LazyLoader from '../Common-features/LazyLoader';
 function InvestorInfoMenu() {
     const [show, setshow] = useState()
