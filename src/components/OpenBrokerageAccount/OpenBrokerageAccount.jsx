@@ -55,7 +55,7 @@ function OpenBrokerageAccount() {
 
                                     <span className="read-more-target"> 
                                     Similar to a bank account, you can transfer money in and out of your online brokerage account, but unlike banks, these accounts provide you access to the stock market and other investments.<br /><br />
-          Because investment income in this account is taxed as capital gains, these accounts are often referred to as taxable accounts. When compared to other types of accounts, brokerage accounts serve as a beneficial option. You can open your account with a service provider who is known to be the provider of the <Link to="/blog/best-brokerage-account-in-india">best brokerage account in India</Link>.<br /><br />
+          Because investment income in this account is taxed as capital gains, these accounts are often referred to as taxable accounts. When compared to other types of accounts, brokerage accounts serve as a beneficial option. You can open your account with a service provider who is known to be the provider of the <Link to="/blog/best-brokerage-account-in-india/">best brokerage account in India</Link>.<br /><br />
 
           <h2 className="font-bold"> Who Can Open A Brokerage Account </h2>
           The purpose of opening a Brokerage Account is for trading in stocks, investing in mutual funds, bonds, and other commodities in a variety of ways. They are as follows:<br /><br />
@@ -76,7 +76,7 @@ function OpenBrokerageAccount() {
           All of your assets are kept in electronic form (Digital Format), making them fully hassle-free and time-saving. All of the hazards connected with dealing with paper, such as counterfeiting, loss of physical shares, and so on, are eliminated.<br /><br />
           <h4 className="font-bold"> Transfers of Stock </h4>
           Physical transfer of shares used to take a long time; currently, it is simple to transfer shares and there is no stamp duty to pay.<br /><br />
-            <h3 className="font-bold"><Link to="/blog/how-to-open-a-brokerage-account-in-india">How To Open A Brokerage Account In India?</Link></h3><br />
+            <h3 className="font-bold"><Link to="/blog/how-to-open-a-brokerage-account-in-india/">How To Open A Brokerage Account In India?</Link></h3><br />
             To open a <strong>Brokerage account in India</strong>, you have to determine the kind of brokerage account you would require. For Investors, it is very important to open a Demat Account and a Trading Account.<br /><br />
             Even, If you are not trading in Futures and Options, you should still have a Demat Account to hold your shares and securities. In order to sell your stocks and securities, you need to <Link to="/open-trading-account">open a Trading Account</Link>.
             Here is a step by step guide to open a Brokerage Account online:<br /><br />
