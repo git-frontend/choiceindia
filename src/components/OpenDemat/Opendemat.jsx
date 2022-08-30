@@ -1,9 +1,11 @@
-import React,{useState,useRef}from "react";
+import React,{useState,useRef,useEffect}from "react";
 import "./css/landingpage.scss";
 import img_data from './ImgData.js';
 import DematAccountForm from "../Common-features/DematAccountForm";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import Template2 from "../Common-features/Template2";
+import{ useLocation} from 'react-router-dom';
+import meta_tags from "../../Data/MetaTags";
 function Opendemat(){
     
   
@@ -15,6 +17,25 @@ function Opendemat(){
 
   /**to set the skeleton */
   const [skeleton, setSkeleton] =useState(() => true);
+  const [rendercount, setRenderCount] = useState(() => false);
+
+  const location = useLocation();
+
+  
+
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      // let parser = new DOMParser();
+      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+    }
+  }, [rendercount])
+
 
 
   setTimeout(() => {
@@ -32,8 +53,9 @@ function Opendemat(){
     })
   }
 
-  React.useEffect(() => {
+  useEffect(() => {
     setTimeout(DelayloadingImages, 900);
+
   }, [])
 
 

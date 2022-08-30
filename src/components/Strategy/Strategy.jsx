@@ -8,6 +8,7 @@ import StrategyBanner from "./strategyBanner";
 import StrategyBody from "./StrategyBody";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect } from "react";
+import{ useLocation} from 'react-router-dom';
 
 function Strategy() {
   const [skeleton, setSkeleton] = React.useState(() => true);
@@ -15,7 +16,7 @@ function Strategy() {
   const [isFaq, setIsFaq] = useState(() => true);
 
   const [rendercount, setRenderCount] = useState(() => false);
-
+  const location = useLocation();
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {

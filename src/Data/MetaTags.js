@@ -1069,9 +1069,9 @@ const meta_tags = {
     </script>
     ` },
 
-    "/demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account"},
+    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account"},
 
-    "/info/stratezy/": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
+    "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
 
     "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", "content": "Jiffy Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": `` },
 
