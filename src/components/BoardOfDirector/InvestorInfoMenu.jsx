@@ -57,11 +57,13 @@ function InvestorInfoMenu() {
                         </div>
                     
                     </div>
+                    <div className="row">
+                    <div className="col-md-12">
                   
                     {
 									view && !view.matches ? 
                                    
-										<Slider {...settings} className="row mt5" >
+										<Slider {...settings} className="mt5" >
 
                                     <div className="col-md-3">
                                         <div className="team-list">
@@ -434,6 +436,9 @@ function InvestorInfoMenu() {
                             </div> :
                             ""
                     }
+
+                    </div>
+                    </div>
 
                     <div className="mt7 d-flex justify-content-center cursor-pointer btnshow">{show ? <a onClick={() => { setshow(false) }}><span className="btn-bg">View Less</span></a> : <a onClick={() => { setshow(true) }}><span className="btn-bg">View More</span></a>}</div>
                 </div>
