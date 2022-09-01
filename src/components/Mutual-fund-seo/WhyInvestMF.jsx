@@ -52,19 +52,19 @@ function WhyInvestMF() {
                     <Slider {...settings} className="mf-list-slider">
                         <div className="mf-list-itm">
                             <span className="mf-sm-img">
-                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand1} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"127"} />
                             </span>
                             <h3>Start SIP With Rs.500</h3>
                         </div>
                         <div className="mf-list-itm">
                             <span className="mf-sm-img">
-                              <LazyLoader src={brand2} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand2} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"127"} />
                             </span>
                             <h3>Save Tax upto Rs.46,500/-</h3>
                         </div>
                         <div className="mf-list-itm">
                             <span className="mf-sm-img">
-                              <LazyLoader src={brand3} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand3} alt={" insurance  services"} className={"img-fluid"} width={"126"} height={"127"} />
                             </span>
                             <h3>Better Returns Than FD</h3>
                         </div>
