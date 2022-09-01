@@ -16,7 +16,7 @@ function BChargesMoreContent() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand <Link to="/brokerage-charges">what are brokerage charges</Link> in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
+                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand what are brokerage charges in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
 
                                     <span className="read-more-target">
                                     <br/>

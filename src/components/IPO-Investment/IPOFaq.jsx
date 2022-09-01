@@ -51,7 +51,7 @@ function IPOFaq() {
                                 <Accordion.Item eventKey="4" className='faq-item'>
                                     <Accordion.Header > <h4 className='faq-header'>Why should a company go for an initial public offering?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    You can open a low brokerage Demat Account with Choice Broking at zero account opening charges
+                                    You can open a low brokerage Demat Account with Choice at zero account opening charges
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>
