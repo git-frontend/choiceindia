@@ -46,7 +46,7 @@ function Navbar() {
                     <Link to="/code-of-conduct" className="menu-itm-link">Code of Conduct</Link>
                   </li>
                   <li className="menu-itm">
-                    <Link to="/corporate-governance" className="menu-itm-link">Corporate Goverannce</Link>
+                    <Link to="/corporate-governance" className="menu-itm-link">Corporate Governance</Link>
                   </li>
                   <li className="menu-itm">
                     <Link to="/news-announcement" className="menu-itm-link">News &amp; Announcements</Link>

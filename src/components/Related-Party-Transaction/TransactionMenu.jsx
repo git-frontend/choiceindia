@@ -49,7 +49,7 @@ function TransactionMenu() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">Voting Results</h2>
+                            <h2 className="title">Related Party Transaction</h2>
                             <Navbar />
                         </div>
                     </div>
