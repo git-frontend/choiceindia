@@ -4,8 +4,44 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 import appstore from '../../assets/images/icons/app-store.svg';
+import { useState,useEffect } from 'react';
 function BannerCareer() {
+  const  queryParam = window.location.search;
+ const utmvalue= new URLSearchParams(queryParam);
+ const param1 = utmvalue.get('utm_source');
+  // console.log("setshow",param1);
+  // var self = window.location.toString();
+  //       var querystring = self.split("?");
+  //       if (querystring.length > 1) {
+  //         var utmdata = querystring[1].split("&");
+  //       }
 
+  
+    
+
+    // useEffect(() => {
+    //   setRenderCount(true)
+    //   if (rendercount === true) {
+    //     if(querystring.length > 1){
+    //     for(let i=0 ;i<=utmdata.length||1;i++)
+    //     {
+          
+    //       if(utmdata[i]||0=='utm_source=alphabee'){
+            
+    //         // console.log("setshow",show);
+    //         setshow(true)
+            
+    //       }
+             
+         
+    
+          
+    //     }
+    //   }
+       
+    //   }
+    // }, [rendercount])
+    
   return (
     <div className='App-main'>
 
@@ -18,6 +54,14 @@ function BannerCareer() {
             <div className='row'>
               <div className='col-md-12'>
                 <div className='caption-cont'>
+                  {
+                    (param1=='alphabee')?
+                    <p>Alphabee is now merged with Jiffy</p>
+                    :
+                    ""
+
+                  }
+                
                   <h1 className='big-ttl'>Super App for <br /> Everyday Finance</h1>
                   <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>

@@ -14,18 +14,18 @@ function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
-    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice."
+    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice"
 
     function shareiconLink(key) {
 
         let mapper = {
-            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl} `, isTextEncode: false, isURLEncode: false },
+            facebook: { url: `https://www.facebook.com/sharer/sharer.php?text=${props.single_data[0].title || 'Texxt'},${descr}, ${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            whatsapp: { url: `https://api.whatsapp.com/send?text=${pageUrl} `, isTextEncode: false, isURLEncode: false },
+            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            linkedin: { url: `https://www.linkedin.com/shareArticle?url=${pageUrl} `, isTextEncode: true, isURLEncode: true },
+            linkedin: { url: `https://www.linkedin.com/shareArticle?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: true, isURLEncode: true },
 
-            twitter: { url: `https://twitter.com/intent/tweet?url=${pageUrl} `, isTextEncode: false, isURLEncode: true }
+            twitter: { url: `https://twitter.com/intent/tweet?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: true }
         }
         let linkObject = mapper[key];
         window.open(linkObject.url)
@@ -35,11 +35,11 @@ function Fabdetailsbanner(props) {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-            document.getElementById('meta-type').content = "Blogs" ;
-            document.getElementById('meta-url').content = "https://choiceindia.com/" ;
+            document.getElementById('meta-type').content = "article" ;
+            document.getElementById('meta-url').content = {pageUrl} ;
           document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
           document.getElementById('meta-descr').content = descr ;
-          document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
+          document.getElementById('meta-image').content = Bannerimage ;
          
         }
       }, [rendercount])
