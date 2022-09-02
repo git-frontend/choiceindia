@@ -10,7 +10,7 @@ const imageData =
         "image":`${ImageSub2}`,
         "id": 5,
         "title":'Easy Investment App',
-        "description":'Smoothly grow your investment portfolio with mutual funds'
+        "description":'Smoothly grow your investment portfolio with stocks'
         
         
     },

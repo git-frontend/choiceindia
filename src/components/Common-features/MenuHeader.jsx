@@ -41,7 +41,7 @@ export default function Header() {
                                 <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to= '/research-listing-new'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
+                                <NavLink to= '/research-listing'  onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Research</NavLink>
                             </li>
                             {/* <li className="nav-item">
                                 <NavLink to= '/career'   className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Careers</NavLink>
@@ -58,7 +58,7 @@ export default function Header() {
                             <li className="nav-item login-btn">
                                 <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
                                <NavDropdown.Item className="nav-dropdown-links" href='https://jiffy.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
-                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://choiceconnect.in/'>partner</NavDropdown.Item>
+                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
                                 </NavDropdown>
                             </li>
