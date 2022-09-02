@@ -267,11 +267,11 @@ const contactMap = [
 
     {
         "id":25,
-        "city": "KOLKATA WEST BENGAL",
-        "mobNum": "8240105727",
-        "support": "support@choiceindia.com",
-        "address1": "Bappa Sen STEPHEN HOUSE 4 BBD BAG EAST 6TH FLOOR ROOM NO 116, ",
-        "address2": " KOLKATA 700001",
+        "city": "Kolkata (KL)",
+        "mobNum": "9804800069",
+        "support": "bappa.sen@choiceindia.com",
+        "address1": "6th Floor, Room No. 116, Stephen House, 4 BBD Bag East, ",
+        "address2": "  Kolkata, West Bengal - 700001",
         "mapSrc": ""
     },
 
