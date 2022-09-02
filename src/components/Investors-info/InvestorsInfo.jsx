@@ -71,8 +71,13 @@ function InvestorInfo() {
                     <div className="row">
                         <div className="col-md-12">
                             <h2 className="title">Investors Relation</h2>
-                          {/*  <Navbar /> */}
-                          <div className="menu visible menu-cust">
+                            <div className="check-menu-main">
+
+                            <Navbar />
+                            
+                            </div>
+                           
+                          {/* <div className="menu visible menu-cust">
                           <h3 className="text-center"> <Link to="/investors" className="menu-itm-link-header ">Dissclosures under regulation 46 of the LODR</Link></h3>
               <div >
               <div className="d-flex investor-menu-wrap">
@@ -126,7 +131,7 @@ function InvestorInfo() {
                 </ul>
                 </div>
             </div>
-              </div>
+              </div> */}
                             
                         </div>
                     </div>
