@@ -19,30 +19,30 @@ function Fabdetailsbanner(props) {
     function shareiconLink(key) {
 
         let mapper = {
-            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl} `, isTextEncode: false, isURLEncode: false },
+            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${props.single_data[0].title || 'Texxt'},${descr} ${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            whatsapp: { url: `https://api.whatsapp.com/send?text=${pageUrl} `, isTextEncode: false, isURLEncode: false },
+            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            linkedin: { url: `https://www.linkedin.com/shareArticle?url=${pageUrl} `, isTextEncode: true, isURLEncode: true },
+            linkedin: { url: `https://www.linkedin.com/shareArticle?url=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: true, isURLEncode: true },
 
-            twitter: { url: `https://twitter.com/intent/tweet?url=${pageUrl} `, isTextEncode: false, isURLEncode: true }
+            twitter: { url: `https://twitter.com/intent/tweet?url=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: true }
         }
         let linkObject = mapper[key];
         window.open(linkObject.url)
         
     }
 
-    useEffect(() => {
-        setRenderCount(true)
-        if (rendercount === true) {
-            document.getElementById('meta-type').content = "Blogs" ;
-            document.getElementById('meta-url').content = "https://choiceindia.com/" ;
-          document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
-          document.getElementById('meta-descr').content = descr ;
-          document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
+    // useEffect(() => {
+    //     setRenderCount(true)
+    //     if (rendercount === true) {
+    //         document.getElementById('meta-type').content = "article" ;
+    //         document.getElementById('meta-url').content = "https://choiceindia.com/" ;
+    //       document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
+    //       document.getElementById('meta-descr').content = descr ;
+    //       document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
          
-        }
-      }, [rendercount])
+    //     }
+    //   }, [rendercount])
 
 
 

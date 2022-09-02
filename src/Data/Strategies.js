@@ -32,7 +32,7 @@ const imageData =
     },
     {
         "image":`${ImageSub3}`,
-        "title":"Short Term Stocks for investment",
+        "title":"Long Term Stocks for investment",
         "id": 4,
         "description":"Bear the fruits of investment in long term with quality stocks recommendations"
     
