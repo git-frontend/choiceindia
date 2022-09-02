@@ -95,7 +95,7 @@ function Opendemat(){
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-7">
-                      <h1 className="title text-center">Demat Account</h1>
+                      <h1 className="title text-center">Demat Account test</h1>
 
                       <p className="para">A Perfect Guide for Beginners</p>
                       <hr />
