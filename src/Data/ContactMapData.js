@@ -269,10 +269,10 @@ const contactMap = [
         "id":25,
         "city": "KOLKATA WEST BENGAL",
         "mobNum": "9323892424",
-        "support": "support@choiceindia.com",
-        "address1": "602, 6th Floor, Mahavir Apartment, 2,",
-        "address2": "Ashutosh Mukherjee Road, Near Elgin road crossing,",
-        "address3": "Kolkata - 700020",
+        "support": "anoop.tibrewal@choiceindia.com",
+        "address1": "90, Phears Lane, 3rd Floor,",
+        "address2": "Suite No. 301 & 307,",
+        "address3": "Kolkata, West Bengal - 700012",
         "mapSrc": ""
     },
 
@@ -561,6 +561,17 @@ const contactMap = [
         "address3": "Visakhapatnam - 530016 Andhra Pradesh",
         "mapSrc": ""
     },
+
+    {
+        "id":52,
+        "city": "KOLKATA WEST BENGAL",
+        "mobNum": "9804800069",
+        "support": "bappa.sen@choiceindia.com",
+        "address1": "6th Floor, Room No. 116,",
+        "address2": "Stephen House, 4 BBD Bag East,",
+        "address3": "Kolkata, West Bengal - 700001",
+        "mapSrc": ""
+    }
 ]
 
 export default contactMap;
