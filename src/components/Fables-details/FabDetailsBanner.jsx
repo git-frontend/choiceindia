@@ -14,7 +14,7 @@ function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
-    const descr = "Stay updated with up-to-date thoughts."
+    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice."
 
     function shareiconLink(key) {
 
@@ -32,17 +32,17 @@ function Fabdetailsbanner(props) {
         
     }
 
-    useEffect(() => {
-        setRenderCount(true)
-        if (rendercount === true) {
-            document.getElementById('meta-type').content = "article" ;
-            document.getElementById('meta-url').content = "https://dev.choiceindia.com/" ;
-          document.getElementById('meta-title').content = props.single_data[0].title || 'Text' ;
-          document.getElementById('meta-descr').content = descr ;
-          document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
+    // useEffect(() => {
+    //     setRenderCount(true)
+    //     if (rendercount === true) {
+    //         document.getElementById('meta-type').content = "article" ;
+    //         document.getElementById('meta-url').content = {pageUrl} ;
+    //       document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
+    //       document.getElementById('meta-descr').content = descr ;
+    //       document.getElementById('meta-image').content = Bannerimage ;
          
-        }
-      }, [rendercount])
+    //     }
+    //   }, [rendercount])
 
 
 
