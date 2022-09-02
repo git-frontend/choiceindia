@@ -48,6 +48,18 @@
   border-top: 7px solid #FFCE02;
 }
 
+.menu-cust {
+  width: 75%;
+  height: auto;
+  margin: 0 auto;
+  background-color: #221F20;
+  position: relative !important;
+  top: 7%;
+  z-index: 1;
+  border-top: 7px solid #FFCE02;
+  padding-bottom: 20px;
+}
+
 .investor-menu-wrap {
   padding: 90px 150px;
 }

@@ -106,8 +106,8 @@ function AppTradeBenefits() {
                 <span className='whitecolor'>Google Play</span>
               </a>
               <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl black'>
-              <img src={appstorelight} className="" alt={"App Store"} width="" height="" />
-
+              {/* <img src={appstorelight} className="" alt={"App Store"} width="" height="" /> */}
+              <LazyLoader src={appstorelight} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
 
                 <span className='whitecolor'>App Store</span>
               </a>
