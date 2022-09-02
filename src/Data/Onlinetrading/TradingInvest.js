@@ -29,7 +29,7 @@ const imageData =
     {
         "image":`${ImageSub2}`,
         "id": 3,
-        "title":'100+ Advanced Charts & StudiesInsuring Future',
+        "title":'100+ Advanced Charts & Studies Insuring Future',
         "description":'Advanced Charts with Drawing Tools and Studies.'
     
         
