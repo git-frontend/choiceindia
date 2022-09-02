@@ -14,12 +14,12 @@ function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
-    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice."
+    const descr = "Stay updated with up-to-date thoughts."
 
     function shareiconLink(key) {
 
         let mapper = {
-            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${props.single_data[0].title || 'Texxt'},${descr} ${pageUrl}. `, isTextEncode: false, isURLEncode: false },
+            facebook: { url: `https://www.facebook.com/sharer/sharer.php?text=${props.single_data[0].title || 'Texxt'},${descr} ${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
             whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
@@ -32,17 +32,17 @@ function Fabdetailsbanner(props) {
         
     }
 
-    // useEffect(() => {
-    //     setRenderCount(true)
-    //     if (rendercount === true) {
-    //         document.getElementById('meta-type').content = "article" ;
-    //         document.getElementById('meta-url').content = "https://choiceindia.com/" ;
-    //       document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
-    //       document.getElementById('meta-descr').content = descr ;
-    //       document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
+    useEffect(() => {
+        setRenderCount(true)
+        if (rendercount === true) {
+            document.getElementById('meta-type').content = "article" ;
+            document.getElementById('meta-url').content = "https://dev.choiceindia.com/" ;
+          document.getElementById('meta-title').content = props.single_data[0].title || 'Text' ;
+          document.getElementById('meta-descr').content = descr ;
+          document.getElementById('meta-image').content = props.single_data[0].feature_image || Bannerimage ;
          
-    //     }
-    //   }, [rendercount])
+        }
+      }, [rendercount])
 
 
 
