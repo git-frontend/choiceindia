@@ -226,7 +226,7 @@ body{
             font-size: 2.3rem;
             line-height: 3.25rem;
             text-align: left;
-           
+            padding-bottom: 4rem;
         }
     }
 
@@ -494,3 +494,26 @@ body{
 //     justify-content: space-between;
 //     align-items: center;
 // }
+
+.voting-result{
+    .result-ttl{
+        flex-wrap: wrap;
+        .head{
+            width: 44%;
+            &:last-child{
+                width: 12%;
+                text-align: right;
+            }
+        }
+    }
+    .result-item{
+        flex-wrap: wrap;
+        .itm-nm{
+            width: 44%;
+            &:last-child{
+                width: 12%;
+                text-align: right;
+            }
+        }
+    }
+}

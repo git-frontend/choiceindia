@@ -311,7 +311,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/research-listing-new' element={
+                        <Route exact path='/research-listing' element={
                             <React.Suspense>
                                 < Lazyresearch />
                             </React.Suspense>

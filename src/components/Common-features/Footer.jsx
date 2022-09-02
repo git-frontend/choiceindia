@@ -104,9 +104,9 @@ useEffect(()=>{
                             <li>
                               <NavLink to="/investors">Investors</NavLink>
                             </li>
-                            <li>
+                            {/* <li>
                               <NavLink to="/brokerage-charges">Pricing</NavLink>
-                            </li>
+                            </li> */}
                             <li>
                               <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                             </li>
@@ -125,16 +125,25 @@ useEffect(()=>{
                           </ul>
                           <ul className="reset">
                             <li>
-                              <h4>Research</h4>
+                              <h4>Resources</h4>
                             </li>
                             <li>
-                              <NavLink to="/research-listing-new" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
+                              <NavLink to="/research-listing" onClick={() => { chapterScroll('longterm-scroll') }} >Fundamental</NavLink>
                             </li>
                             <li>
-                              <NavLink to="/research-listing-new" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
+                              <NavLink to="/research-listing" onClick={() => { chapterScroll('shortterm-scroll') }}>Technical</NavLink>
                             </li>
                             <li>
                               <NavLink to="/blog">Fables</NavLink>
+                            </li>
+                            <li>
+                              <NavLink to="/brokerage-charges">Pricing</NavLink>
+                            </li>
+                            <li>
+                              <NavLink to="/file-download">Downloads</NavLink>
+                            </li>
+                            <li>
+                              <NavLink to="/news-media">News &amp; Media</NavLink>
                             </li>
                           </ul>
                         </div>
@@ -188,7 +197,7 @@ useEffect(()=>{
                             <a href="https://www.linkedin.com/company/choice-broking/" target="_blank">
                               <FontAwesomeIcon icon={faLinkedinIn} />
                             </a>
-                            <a href="https://www.instagram.com/accounts/login/?next=/choicehq_social/" target="_blank">
+                            <a href="https://instagram.com/choicehq_social" target="_blank">
                               <FontAwesomeIcon icon={faInstagram} />
                             </a>
                             <a href="https://www.youtube.com/c/ChoiceHQ" target="_blank">

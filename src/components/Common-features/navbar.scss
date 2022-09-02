@@ -42,6 +42,19 @@
         width: 3.5rem;
     }
 }
+.menu-cust {
+    width: 75%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #221F20;
+    position: relative !important;
+    top: 1px !important;
+    z-index: 1;
+    border-top: 7px solid #FFCE02;
+    margin-bottom: 50px !important;
+
+  }
+
 
 .menu {
     width: 75%;
@@ -59,6 +72,11 @@
     }
     @media screen and (max-width:768px) {
         width: 100%;
+    }
+
+    
+    h3{
+        padding-top: 35px; 
     }
 }
 .investor-menu-wrap{
@@ -133,6 +151,8 @@
             color: $yellowColor;
            }
         }
+
+
     }
 }
 
@@ -143,3 +163,16 @@
 .pb0{
     padding-bottom: 0 !important;
 }
+
+.menu-itm-link-header{
+          width: 100%;
+    text-transform: uppercase;
+    text-decoration: underline;
+    font-family: $font-family-poppins-semibold;
+    color: $whiteColor;
+    &:hover{
+     color: $yellowColor;
+    }
+
+    text-align: center;
+ }
