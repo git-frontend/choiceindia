@@ -25,7 +25,7 @@ function Fabdetailsbanner(props) {
     function shareiconLink(key) {
 
         let mapper = {
-            facebook: { url: `https://www.facebook.com/dialog/share?app_id=140586622674265&display=popup&href=${pageUrl}`, isTextEncode: false, isURLEncode: false },
+            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, isTextEncode: false, isURLEncode: false },
 
             whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
