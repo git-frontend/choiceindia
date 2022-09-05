@@ -275,6 +275,16 @@ const contactMap = [
         "address3": "Kolkata, West Bengal - 700012",
         "mapSrc": ""
     },
+    {
+        "id":52,
+        "city": "KOLKATA WEST BENGAL",
+        "mobNum": "9804800069",
+        "support": "bappa.sen@choiceindia.com",
+        "address1": "6th Floor, Room No. 116,",
+        "address2": "Stephen House, 4 BBD Bag East,",
+        "address3": "Kolkata, West Bengal - 700001",
+        "mapSrc": ""
+    },
 
     {
         "id":26,
@@ -562,16 +572,7 @@ const contactMap = [
         "mapSrc": ""
     },
 
-    {
-        "id":52,
-        "city": "KOLKATA WEST BENGAL",
-        "mobNum": "9804800069",
-        "support": "bappa.sen@choiceindia.com",
-        "address1": "6th Floor, Room No. 116,",
-        "address2": "Stephen House, 4 BBD Bag East,",
-        "address3": "Kolkata, West Bengal - 700001",
-        "mapSrc": ""
-    }
+    
 ]
 
 export default contactMap;
