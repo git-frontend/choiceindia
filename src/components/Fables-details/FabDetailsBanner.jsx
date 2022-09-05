@@ -15,17 +15,23 @@ function Fabdetailsbanner(props) {
     const pageUrl = location.href
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice"
+    console.log("check url",pageUrl);
+    // https://www.facebook.com/dialog/share?
+// app_id=140586622674265
+// &display=popup
+// &href=https%3A%2F%2Fdev-ghost.choiceindia.com%2Fhow-to-invest-in-baskets%2F%23.YxScijm2YVU.facebook
+// &redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fthankyou.htmla.0
 
     function shareiconLink(key) {
 
         let mapper = {
-            facebook: { url: `https://www.facebook.com/sharer/sharer.php?text=${props.single_data[0].title || 'Texxt'},${descr}, ${pageUrl}. `, isTextEncode: false, isURLEncode: false },
+            facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, isTextEncode: false, isURLEncode: false },
 
-            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
+            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || props.single_data.title},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            linkedin: { url: `https://www.linkedin.com/shareArticle?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: true, isURLEncode: true },
+            linkedin: { url: `https://www.linkedin.com/shareArticle?mini=fals&url=${pageUrl}&summary=${props.single_data[0].title || props.single_data.title} `, isTextEncode: true, isURLEncode: true },
 
-            twitter: { url: `https://twitter.com/intent/tweet?text=${props.single_data[0].title || 'Texxt'},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: true }
+            twitter: { url: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${props.single_data[0].title || props.single_data.title} `, isTextEncode: false, isURLEncode: true }
         }
         let linkObject = mapper[key];
         window.open(linkObject.url)
@@ -36,15 +42,13 @@ function Fabdetailsbanner(props) {
         setRenderCount(true)
         if (rendercount === true) {
             document.getElementById('meta-type').content = "article" ;
-            document.getElementById('meta-url').content = {pageUrl} ;
-          document.getElementById('meta-title').content = props.single_data[0].title || 'Texxt' ;
+            document.getElementById('meta-url').content = location.href ;
+          document.getElementById('meta-title').content = props.single_data[0].title ;
           document.getElementById('meta-descr').content = descr ;
-          document.getElementById('meta-image').content = Bannerimage ;
+          document.getElementById('meta-image').content = props.single_data[0].feature_image;
          
         }
       }, [rendercount])
-
-
 
 
     function createMarkup() {
@@ -59,12 +63,7 @@ function Fabdetailsbanner(props) {
         }
 
     }
-
-
     return (
-
-
-
 
         <div className='banner-main'>
            
@@ -204,3 +203,16 @@ function Fabdetailsbanner(props) {
 }
 
 export default Fabdetailsbanner;
+
+
+// https://www.facebook.com/dialog/share?
+// app_id=140586622674265
+// &display=popup
+// &href=https%3A%2F%2Fdev-ghost.choiceindia.com%2Fhow-to-invest-in-baskets%2F%23.YxScijm2YVU.facebook
+// &redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fthankyou.html
+
+// https://www.facebook.com/dialog/share?
+// app_id=140586622674265
+// &display=popup
+// &href=https3A2F2Fdev-ghost.choiceindia.comFeverything-you-need-to-know-about-choice-research%2F%23.YxSea4vsIe0.facebook
+// &redirect_uri=http3A2F2Fs7.addthis.com2FstaticFthankyou.html
