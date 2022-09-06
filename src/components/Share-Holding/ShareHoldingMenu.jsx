@@ -58,10 +58,10 @@ function ShareHoldingMenu() {
                             <h3 className="head">Financial Year 2021 - 22</h3>
                             <div className="subtext">
                                 {
-                                    (data || []).map((res) => {
+                                    (data || []).map((res,i) => {
                                         return (
 
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                                 <div>{res.titel}</div>
                                                 <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }}  className="cursor-pointer" /></div>
                                             </div>

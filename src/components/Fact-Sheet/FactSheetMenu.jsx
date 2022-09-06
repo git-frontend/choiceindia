@@ -61,9 +61,9 @@ function FactSheetMenu() {
                             <div className="col-md-7 col-7 word-wrap"> <h3 className="head">Choice International Limitied</h3></div>
                         </div>
                         {
-                            (data||[]).map((res)=>{
+                            (data||[]).map((res,i)=>{
                                 return(
-                                    <div className="row border-bottom ">
+                                    <div className="row border-bottom " key={i}>
                             <div className=" col-md-5 col-5 pb-3 pt-3">{res.name}</div>
                             <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">{res.choice_international_limited}</div>
                         </div>
