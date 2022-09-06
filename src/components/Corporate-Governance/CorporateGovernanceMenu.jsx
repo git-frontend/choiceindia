@@ -15,7 +15,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setData(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setData([]);
@@ -34,7 +34,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setList(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setList([]);
@@ -76,10 +76,10 @@ function CodeConductMenu() {
                             <h3 className="head">Policies</h3>
                             <div className="subtext">
                                 {
-                                    (data || []).map((res) => {
+                                    (data || [])?.map((res,i) => {
 
                                         return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                                 <div>{res.headline} </div>
                                                 <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
                                             </div>
@@ -124,9 +124,9 @@ function CodeConductMenu() {
                             <h3 className="head">Committee</h3>
                             <div className="subtext">
                                 {
-                                    (list || []).map((res) => {
+                                    (list || []).map((res,i) => {
                                         return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                                 <div>{res.headline} </div>
                                                 <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
                                             </div>

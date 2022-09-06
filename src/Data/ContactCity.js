@@ -96,11 +96,11 @@ const city_list = [{
 },
 {
     id: 25,
-    city_name: 'Kolkata 1'
+    city_name: 'Kolkata(branch 1)'
 },
 {
     id: 51,
-    city_name: 'kolkata 2'
+    city_name: 'kolkata(branch 2)'
 },
 {
     id: 26,
