@@ -2,6 +2,8 @@
 @import '../../assets/css/common.scss';
 
 /* ---------------- Navbar and burger menu ------------------ */
+
+
 .investor-info-menu {
     width: 100%;
     height: 4.6em;
@@ -175,4 +177,7 @@
     }
 
     text-align: center;
+ }
+ .check-menu{
+    display: none;
  }

@@ -45,6 +45,8 @@ import pdf40 from "../../assets/pdf/File-download/diet32-sp24plus.zip";
 import pdf41 from "../../assets/pdf/File-download/dealerterminal.zip";
 import pdf42 from "../../assets/pdf/File-download/mgr-1.rar";
 import pdf43 from "../../assets/pdf/File-download/mgr-2.rar";
+import fileDownloadService from "../../Services/FileDownloadService";
+import corporateService from "../../Services/CorporateService";
 
 
 
@@ -52,65 +54,238 @@ import pdf43 from "../../assets/pdf/File-download/mgr-2.rar";
 import download from '../../assets/images/file-download/export.webp';
 
 function FileDownloadFaq() {
+
+    const [data, setData] = useState('Account Opening Form');
+    const [datalist, setDatalist] = useState();
+    const [datalist1, setDatalist1] = useState();
+    const [datalist2, setDatalist2] = useState();
+    const [datalist3, setDatalist3] = useState();
+    const [datalist4, setDatalist4] = useState();
+    const [datalist5, setDatalist5] = useState();
+   
+
+    const [trigger, setTrigger] = useState(false);
+
+    let values;
+    let AllFilesValue = {};
+
+    function loadFileDownload() {
+        fileDownloadService.MarginDay().
+            then(
+                res => {
+                    if (res && res.data && res.data.response) {
+                        values = res.data.response;
+                        console.log("setvalue", AllFilesValue)
+
+
+
+
+                        // let AllFilesValue={}
+
+                        values.forEach(ele => {
+                            // console.log('SSS',ele);
+                            // AllFilesValue[ele.download_title] = ele
+
+                            if (!AllFilesValue[ele.download_title]) {
+                                AllFilesValue[ele.download_title] = [];
+
+                                AllFilesValue[ele.download_title].push(ele)
+
+
+                            } else {
+                                AllFilesValue[ele.download_title].push(ele)
+
+                            }
+
+
+
+
+                        })
+                        setDatalist(AllFilesValue['Account Opening Form']);
+                        // console.log("setvalue",data)
+                        setDatalist1(AllFilesValue['Choice Broking']);
+                        setDatalist2(AllFilesValue['Choice Group']);
+                        setDatalist3(AllFilesValue['Choice Peers']);
+                        setDatalist4(AllFilesValue['Margin Day Opening']);
+                        setDatalist5(AllFilesValue['Software']);
+
+                        // for(let download_title in AllFilesValue)
+                        // setDatalist(()=>{AllFilesValue[download_title]})
+                        // AllFilesValue[download_title]
+                        // setDatalist(AllFilesValue);
+                        // setDatalist(() => AllFilesValue)
+
+                        console.log("AllFilesValue", AllFilesValue);
+                        // console.log("AllFilesValue2", data);
+
+
+                    } else {
+                        setDatalist([]);
+
+                    }
+
+                }
+            ).catch((error) => {
+                setDatalist([]);
+            });
+    }
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadFileDownload()
+
+        }
+
+    }, [trigger])
+
+
+
+
+
     return (
         <div>
 
             <section className="filedownloadfaq">
                 <div className="container">
-                   
+
                     <div className="row">
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
-                                <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>Policies</h4></Accordion.Header>
+                                <Accordion.Item eventKey="0" className='faq-item' >
+                                    <Accordion.Header> <h4 className='faq-header'>Account Opening Form</h4></Accordion.Header>
                                     <Accordion.Body className='faq-body'>
-                                       <div className="listing">
-                                        <ul>
-                                            <li>
-                                                <div className="text"> Internal Control Policy</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span onClick={()=>{window.open(pdf1)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Internal Control Policy over Authorised Person</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf2)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Investor Grievance Policy</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf3)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Client Registration Account Opening &amp; Closure</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf4)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Branches Open &amp; Close Allotment Surrender of Trading Terminal</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf5)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text"> Surveillance Policy</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf6)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Liquidation &amp; close out of position</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span onClick={()=>{window.open(pdf7)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">   Order Receipt &amp; Execution Error code</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf8)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Outsourcing, Pre-funded Instruments Policy</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf9)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                            <li>
-                                                <div className="text">  Sending Contract Notes, Margin Statement, Statement of Accounts to Clients</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf10)}} className="downloadtext">Download</span></div>
-                                            </li>
-                                        </ul>
-                                       </div>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
                                     </Accordion.Body>
                                 </Accordion.Item>
+
                                 <Accordion.Item eventKey="1" className='faq-item'>
+                                    <Accordion.Header onClick={()=>{loadFileDownload();setData('Choice Broking')}}> <h4 className='faq-header'>Choice Broking</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist1?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+                                <Accordion.Item eventKey="2" className='faq-item' >
+                                    <Accordion.Header> <h4 className='faq-header'>Choice Group</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist2?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+
+                                <Accordion.Item eventKey="3" className='faq-item'>
+                                    <Accordion.Header> <h4 className='faq-header' >Choice Peers</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist3?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+
+                                <Accordion.Item eventKey="4" className='faq-item'>
+                                    <Accordion.Header> <h4 className='faq-header'>Margin Day Opening</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist4?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+
+                                <Accordion.Item eventKey="5" className='faq-item' >
+                                    <Accordion.Header> <h4 className='faq-header' >Software</h4></Accordion.Header>
+                                    <Accordion.Body className='faq-body'>
+                                        <div className="listing">
+                                            <ul>
+                                                {
+                                                    datalist5?.map((res, i) => {
+                                                        return (
+                                                            <li>
+                                                                <div className="text">{res.download_subtitle}</div>
+                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>
+                                                            </li>
+                                                        )
+
+                                                    })
+                                                }
+                                            </ul>
+                                        </div>
+                                    </Accordion.Body>
+                                </Accordion.Item>
+
+
+
+
+                                {/* <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header> <h4 className='faq-header'>choice Peers</h4></Accordion.Header>
                                     <Accordion.Body className='faq-body'>
                                        <div className="listing">
@@ -157,10 +332,13 @@ function FileDownloadFaq() {
                                     <Accordion.Body className='faq-body'>
                                        <div className="listing">
                                         <ul>
-                                            <li>
-                                                <div className="text">Mandatory Delivery margins for Delivery Settlement in FNO stocks</div>
-                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span onClick={()=>{window.open(pdf14)}} className="downloadtext">Download</span></div>
-                                            </li>
+                                           
+                                                    <li>
+                                                    <div className="text"></div>
+                                                    <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/> <span onClick={()=>{window.open(pdf14)}} className="downloadtext">Download</span></div>
+                                                </li>
+
+                                           
                                             <li>
                                                 <div className="text">Approved Intra day Scrips List in Cash Market</div>
                                                 <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""}/><span onClick={()=>{window.open(pdf15)}} className="downloadtext">Download</span></div>
@@ -301,9 +479,9 @@ function FileDownloadFaq() {
                                         </ul>
                                        </div>
                                     </Accordion.Body>
-                                </Accordion.Item>
+                                </Accordion.Item> */}
                             </Accordion>
-                          
+
                         </div>
                     </div>
                 </div>
@@ -314,4 +492,6 @@ function FileDownloadFaq() {
 }
 
 export default FileDownloadFaq;
+
+
 

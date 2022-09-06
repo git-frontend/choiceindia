@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false ;
+const environment = true ;
 
 
 /**URL Config */
@@ -8,7 +8,8 @@ const config = {
     UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL: "https://cmsapi.choiceindia.com/",
-
+    liveFileURL: "https://cms.jiffy.in/",
+    UATFileURL:"https://cms.jiffy.in/",
 
     UATJiffyServerURL: "https://uat.jiffy.in/",
     liveJiffyServerURL: "https://jiffy.choiceindia.com/",
@@ -46,6 +47,9 @@ export class API_URLS {
     jiffyResearchURL = "";
     /** SSO Base URL */
     SSOServerURL = '';
+    /**File Download Base URL*/
+    FileURL='';
+
     /**Server URL */
     serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
     /**Server URL */
@@ -167,6 +171,8 @@ export class API_URLS {
   annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1';
   annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2';
   factsheetURL='items/fact_sheet?filter[status][_eq]=published';
+  filedownloadURL ='api/get-download-listing';
+
 
 
 
@@ -199,6 +205,7 @@ export class API_URLS {
     setConfig(configKey) {
         this.setJiffyBaseURL(config[configKey + 'JiffyBaseURL']);
         this.setLMSServerURL(config[configKey + 'LMSBaseURL']);
+        this.setFileURL(config[configKey + 'FileURL']);
 
         this.setOnbServerURL(config[configKey + 'OnbBaseURL']);
 
@@ -227,6 +234,8 @@ export class API_URLS {
         this.LMSBaseURL = url;
     }
 
+   
+
     setOnbServerURL = (url) => {
         this.OnbBaseURL = url;
     }
@@ -243,6 +252,11 @@ export class API_URLS {
     setNewResearchReportURL(url) {
         this.newResearchReportURL = url;
     }
+
+    setFileURL =(url)=> {
+        this.FileURL = url;
+    }
+    
     /**
      * Set Server URL 
      * @param {*} url 
@@ -616,6 +630,10 @@ export class API_URLS {
 
     getFactSheetURL(){
         return this.bannerURL + this.factsheetURL
+    }
+
+    getMarginURL(){
+        return this.FileURL + this.filedownloadURL
     }
 
 }

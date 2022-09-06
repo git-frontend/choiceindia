@@ -25,7 +25,7 @@ const RemisierMoreContent = () => {
         
         <ul>
             <li>Stock Market Investment</li>
-            <li>Mutual Funds</li>
+            <li><a href="/mutual-funds-investment">Mutual Funds</a></li>
             <li>Insurance</li>
             <li>Retail Loans</li>
             <li>Portfolio Management Services</li>
