@@ -171,6 +171,7 @@ export class API_URLS {
   annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1';
   annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2';
   factsheetURL='items/fact_sheet?filter[status][_eq]=published';
+  investorawareURL ='items/investor_awareness';
   filedownloadURL ='api/get-download-listing';
 
 
@@ -634,6 +635,9 @@ export class API_URLS {
 
     getMarginURL(){
         return this.FileURL + this.filedownloadURL
+    }
+    getInvestorAwareURL(){
+        return this.bannerURL + this.investorawareURL
     }
 
 }
