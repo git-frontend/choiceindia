@@ -23,7 +23,7 @@ function NewsAnnouncement() {
             res => {
                 if(res){
                     setData(res.data.data);
-                    console.log("check",res.data.data)
+                    // console.log("check",res.data.data)
         
                 }else{
                     setData([]);
@@ -75,7 +75,7 @@ function NewsAnnouncement() {
                                             (data||[]).map((res, i) => {
 
                                                 return(
-                                                    <tr>
+                                                    <tr key={i}>
                                                     <td>{utils.formatDate(new Date(res.news_dates),"dd-MM-yyyy")}</td>
         
                                                     <td className="w-50">{res.headlines}</td>

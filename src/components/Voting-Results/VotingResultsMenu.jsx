@@ -62,9 +62,9 @@ function VotingResultsMenu() {
                                 </div>
                                 <div className="subtext">
                                    {
-                                    (data||[]).map((res)=>{
+                                    (data||[]).map((res,i)=>{
                                         return(
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                    <div>{utils.formatDate(new Date(res.Data_of_General_meet),"dd-MM-yyyy")}</div>
                                    <div>{res.Voting_Results_of_general_meet}</div>
                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.Views)}} className="cursor-pointer"/></div>
