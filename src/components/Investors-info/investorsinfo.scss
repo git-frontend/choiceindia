@@ -4,6 +4,9 @@
 
 .investor-info-parent{
     animation: hideMe 4s forwards;
+    @media screen and (max-width:$sm) {
+        min-height:1213px;
+    }
     .bannersection {
         .wrap {
             display: flex;
@@ -226,7 +229,7 @@ body{
             font-size: 2.3rem;
             line-height: 3.25rem;
             text-align: left;
-           
+            padding-bottom: 4rem;
         }
     }
 
@@ -516,4 +519,7 @@ body{
             }
         }
     }
+}
+.check-menu-main{
+    min-height: 700px;
 }
