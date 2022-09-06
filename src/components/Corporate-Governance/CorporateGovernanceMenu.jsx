@@ -15,7 +15,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setData(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setData([]);
@@ -34,7 +34,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setList(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setList([]);

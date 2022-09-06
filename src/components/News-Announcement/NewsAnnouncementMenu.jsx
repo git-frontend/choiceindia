@@ -23,7 +23,7 @@ function NewsAnnouncement() {
             res => {
                 if(res){
                     setData(res.data.data);
-                    console.log("check",res.data.data)
+                    // console.log("check",res.data.data)
         
                 }else{
                     setData([]);
