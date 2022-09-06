@@ -16,14 +16,14 @@ function BChargesMoreContent() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand <Link to="/brokerage-charges">what are brokerage charges</Link> in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
+                                <span className="read-more-wrap "> Before starting an investment with any stockbroker let's understand <Link to="/blog/what-are-brokerage-charges/">what are brokerage charges</Link> in detail. Every stock broker charges a certain amount of fees for facilitating trade. The charges are usually levied over the original value of the trade and deducted from the portfolio of traders. These charges are commonly known as <strong>brokerage charges.</strong>
 
                                     <span className="read-more-target">
                                     <br/>
                                     The brokerage charges are not uniform and vary from one broker to another. It depends on the kind of services provided by the brokerage firm. Many brokers provide the lowest brokerage charges in India . They offer dynamic services and give benefits like offering the lowest brokerage charges to regular clients.<br /><br />
                                         <h2 className="font-bold"> Use of Brokerage Calculator </h2>
                                         With the advent of digital technology, today investors can <Link to="/open-free-demat-account">open a Demat account online</Link> at the convenience of their homes. They can also calculate their brokerage using a brokerage calculator in the trading platforms. Most brokers facilitate traders with the brokerage calculator where traders can calculate the <strong>brokerage charges</strong> advance. Some brokerage firms also allow traders to calculate GST. STT, transaction fee, and stamp duty charges.<br /><br />
-                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <Link to="/brokerage-calculator">Brokerage calculator</Link> . You will have to input the following details in the tool for calculating:
+                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <Link to="/tools/brokerage-calculator">Brokerage calculator</Link> . You will have to input the following details in the tool for calculating:
                                         <br/><br/>
                                         <ul>
                                         <li>Buy/Sell price of a stock</li>
@@ -65,7 +65,7 @@ function BChargesMoreContent() {
                                         These include many specialized services like consultations, research, advisory and support among others. Share Brokerage Charges also known as a Brokerage Fee, is typically a percent (%) of the transaction amount.<br/><br/>
                                         They vary from Broker to Broker, with Choice offering low brokerage charges in India in comparison to industry standards. (A detailed breakdown of all the other applicable charges like
                                         Securities Transaction Tax, Stamp Charges, GST, SEBI Charges, Depository Charges and many more are given in the table above).<br/><br/>
-                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<Link to="/">Commodity</Link> and <Link to="/">Currencies.</Link>
+                                        Start Trading with the Best Broker to create wealth today!Choice’s charges are different for Equity,<Link to="/commodity-trading">Commodity</Link> and <Link to="/currency-forex-trading">Currencies.</Link>
                                         
                                        
                                        
