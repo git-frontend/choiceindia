@@ -371,6 +371,9 @@
                         position: absolute;
                         left: 0;
                         display: block;
+                        @media (max-width:$sm) {
+                            display: none;
+                        }
                     }
 
                     .single-ttl {
@@ -390,9 +393,20 @@
 
                 .para {
                     display: none;
+                    @media (max-width:$sm) {
+                        display: block;
+                    }
                 }
 
                 &:last-child {
+                }
+                @media (max-width:$sm) {
+                    padding-bottom: 0;
+                    margin: 0;
+                }
+                @media (max-width:$sm) {
+                    padding: 0 1rem;
+                    text-align: center;
                 }
             }
 
@@ -406,6 +420,9 @@
                 top: 0;
                 opacity: 0.1;
                 border-radius: 9px;
+                @media (max-width:$sm) {
+                    display: none;
+                }
             }
             @media (max-width:$md) {
                 padding-right: 0;
@@ -425,7 +442,7 @@
                 padding: 0;
             }
             @media (max-width:$sm) {
-                padding-top: 4rem;
+                padding-top: 2rem;
             }
         }
 
@@ -517,6 +534,9 @@
                         left: -10px;
                         background: $bgcolor-yellow;
                         border-radius: 20px 0 0 20px;
+                        @media (max-width: $sm) {
+                            display: none;
+                        }
                     }
 
                     &::after {
@@ -533,11 +553,15 @@
 
                     @media (max-width: $sm) {
                         left: 0;
+                        width: 95% !important;
                     }
                 }
 
                 @media (max-width: $sm) {
-                    width: 100%;
+                    width: 95% !important;
+                }
+                @media (max-width: $sm) {
+                    margin: 0 auto;
                 }
             }
 
@@ -556,6 +580,7 @@
             }
             @media (max-width:$sm) {
                 margin-left: 0;
+                display: block;
             }
         }
 
@@ -580,7 +605,7 @@
         }
 
         @media (max-width: $sm) {
-            padding-bottom: 3rem;
+            padding: 5rem 0;
         }
     }
 }
