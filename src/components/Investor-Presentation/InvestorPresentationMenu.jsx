@@ -46,7 +46,7 @@ function InvestorPresentationMenu() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
-                            <h2 className="title">Voting Results</h2>
+                            <h2 className="title">Investor Presentation</h2>
                             <Navbar />
                         </div>
                     </div>
@@ -60,9 +60,9 @@ function InvestorPresentationMenu() {
                                 </div>
                                 <div className="subtext">
                                    {
-                                    (data||[]).map((res)=>{
+                                    (data||[]).map((res,i)=>{
                                         return(
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3 result-item">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3 result-item" key={i}>
                                             <div className="itm-nm">{res.month}</div>
                                             <div className="itm-nm">{res.title}</div>
                                             <div className="itm-nm"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view)}} className="cursor-pointer"/></div>

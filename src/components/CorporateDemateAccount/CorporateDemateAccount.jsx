@@ -73,7 +73,7 @@ function CorporateDemateAccount() {
                                         <h2 className="font-bold">What The Opening Charges For Corporate Demat Account?</h2>
                                         <div>
                                             <h3 className="font-bold">Corporate Demat Account Opening Fee</h3>
-                                            Various brokers have different fee structures for opening a <strong>Demat account for Corporates</strong>. If you choose the right broker, you can open your account, absolutely for free. <Link to="/" target="_blank">Choice India</Link> offers its corporate clients to open a free Corporate Account. We charge no opening fees for our Corporate clients.<br />
+                                            Various brokers have different fee structures for opening a <strong>Demat account for Corporates</strong>. If you choose the right broker, you can open your account, absolutely for free. <Link to="/" >Choice India</Link> offers its corporate clients to open a free Corporate Account. We charge no opening fees for our Corporate clients.<br />
                                             <h3 className="font-bold">Annual Maintenance Fee</h3>
                                             At Choice India, we offer our customers to open <a href="https://choiceindia.com/campaign/free-amc-demat-account">demat account with zero amc</a>.
                                             <br/><br/>(The Annual Maintenance fee is charged for the general maintenance of the <strong>Demat Account for Corporates</strong> and keeping it functional.)

@@ -17,7 +17,7 @@ function NoticesMenu() {
             res => {
                 if (res) {
                     setData(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setData([]);
@@ -82,7 +82,7 @@ function NoticesMenu() {
                                 {
                                     (list||[]).map((res,i) => {
                                         return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                                 <div>{res.Title} </div>
 
                                                 <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.file)}} /></div>
@@ -143,9 +143,9 @@ function NoticesMenu() {
 
                             <div className="subtext">
                              {
-                                (data||[]).map((res)=>{
+                                (data||[]).map((res,i)=>{
                                     return(
-                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
                                         <div>{res.Title} </div>
 
                                         <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.file)}} /></div>

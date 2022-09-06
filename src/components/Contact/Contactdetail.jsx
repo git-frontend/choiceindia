@@ -73,7 +73,7 @@ function Contactdetail() {
 
                                  return (
                                   
-                                          <option key={item.id} value={i}>{item ? item.city_name : 'NA'}</option>
+                                          <option key={item.id} value={i}>{item && item.city_name ? item.city_name.toUpperCase() : 'NA'}</option>
                                     
                                  )
                               })

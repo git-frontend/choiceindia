@@ -99,7 +99,7 @@ function PartnerBenifits() {
             <div className="bar-cont-des">
               <h3 className="title-fourth">Begin your Enterpreneurial Journey with Choice</h3>
               
-              <a href="https://choiceconnect.in/register" className="btn-bg btn-bg-dark">Get Started</a>
+              <a href="https://choiceconnect.in/register" target="_blank" className="btn-bg btn-bg-dark">Get Started</a>
             </div>
           </div>
         </div>
