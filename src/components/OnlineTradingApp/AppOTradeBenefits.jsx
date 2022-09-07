@@ -1,7 +1,7 @@
 
 import React from "react";
 import appstore from '../../assets/images/icons/app-store.svg';
-
+import LazyLoader from '../Common-features/LazyLoader';
 function AppOTradeBenefits() {
 
   return (
@@ -50,7 +50,8 @@ function AppOTradeBenefits() {
                       <span className='blackcolor'>Google Play</span>
                     </a>
                     <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1" target="_blank" className='link-nrl white'>
-                    <img src={appstore} className="" alt={"App Store"} width={"27"} height={"24"} />
+                    {/* <img src={appstore} className="" alt={"App Store"} width={"27"} height={"24"} /> */}
+                    <LazyLoader src={appstore} className={"img-fluid"} alt={"App Store"} width={"27"} height={"24"}/>
 
                       <span className='blackcolor'>App Store</span>
                     </a>
