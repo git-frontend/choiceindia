@@ -27,11 +27,11 @@ function Fabdetailsbanner(props) {
         let mapper = {
             facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${pageUrl}`, isTextEncode: false, isURLEncode: false },
 
-            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title || props.single_data.title},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
+            whatsapp: { url: `https://api.whatsapp.com/send?text=${props.single_data[0].title? props.single_data[0].title :''},${descr},${pageUrl}. `, isTextEncode: false, isURLEncode: false },
 
-            linkedin: { url: `https://www.linkedin.com/shareArticle?mini=fals&url=${pageUrl}&summary=${props.single_data[0].title || props.single_data.title} `, isTextEncode: true, isURLEncode: true },
+            linkedin: { url: `https://www.linkedin.com/shareArticle?mini=fals&url=${pageUrl}&summary=${props.single_data[0].title? props.single_data[0].title :''}`, isTextEncode: true, isURLEncode: true },
 
-            twitter: { url: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${props.single_data[0].title || props.single_data.title} `, isTextEncode: false, isURLEncode: true }
+            twitter: { url: `https://twitter.com/intent/tweet?url=${pageUrl}&text=${props.single_data[0].title? props.single_data[0].title :''}} `, isTextEncode: false, isURLEncode: true }
         }
         let linkObject = mapper[key];
         window.open(linkObject.url)
