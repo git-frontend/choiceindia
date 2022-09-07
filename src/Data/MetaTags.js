@@ -450,7 +450,7 @@ const meta_tags = {
         "name": "What are Intraday Brokerage Charges and how are they calculated?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Intraday Brokerage Charge is the small percentage of fee traders pay to brokers on their Intraday Trade (when traders buy/sell on the same day). Intraday charges are calculated at 0.2% on Choice Broking."
+          "text": "Intraday Brokerage Charge is the small percentage of fee traders pay to brokers on their Intraday Trade (when traders buy/sell on the same day). Intraday charges are calculated at 0.02% on Choice Broking."
         }
       },{
         "@type": "Question",
@@ -464,7 +464,7 @@ const meta_tags = {
         "name": "What are the Brokerage Charges for Equities Trading?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "The brokerage charges for Equities Trading is 0.2.% for Delivery and Intraday, 0.02% for Futures and Rs. 25 per lot. for Options."
+          "text": "The brokerage charges for Equities Trading is 0.02% for Delivery and Intraday, 0.02% for Futures and Rs. 25 per lot. for Options."
         }
       },{
         "@type": "Question",

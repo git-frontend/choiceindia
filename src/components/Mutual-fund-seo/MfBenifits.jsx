@@ -22,7 +22,7 @@ function chapterScroll(id) {
             <div className="row">
                 <div className="col-md-12">
                     <div className="get-start-sub">
-                        <h3>Open 100% Free Demat Account with us</h3>
+                        <h3>Open 100% Free Account with us</h3>
                         <Link to="/mutual-funds-investment"><span onClick={() => { chapterScroll('mutualid')}} className="btn-bg btn-bg-dark">Open Now</span></Link>
                     </div>
                 </div>

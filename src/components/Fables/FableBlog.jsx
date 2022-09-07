@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 function FableBlog() {
-  //  console.log('FableBlog.jsx');
+    const [rendercount, setRenderCount] = useState(() => false);
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
 
@@ -13,7 +13,7 @@ function FableBlog() {
         setLoader(true);
         fableServices.fableListingTopFive().then(res => {
             setLoader(false);
-          //  console.log(res, "RESS");
+            //  console.log(res, "RESS");
             if (res && res.status === 200 && res.data && res.data.posts) {
                 setData(res.data.posts);
             } else {
@@ -26,14 +26,18 @@ function FableBlog() {
     }
 
     useEffect(() => {
-        loadFableList()
-    }, []);
+        setRenderCount(true)
+        if (rendercount === true) {
+            loadFableList()
+         
+        }
+      }, [rendercount])
 
     return (
         <div>
 
             <section className="blog-middle-cont">
-                <div className={`container ${loader?'text-center':''}`}>
+                <div className={`container ${loader ? 'text-center' : ''}`}>
                     {
                         loader ?
                             <Spinner animation="grow" /> :
@@ -49,7 +53,7 @@ function FableBlog() {
                                             </div>
                                             <div className="single-blog-des">
                                                 <h3>{data[0]?.title}</h3>
-                                                <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
+                                                <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                 {/* str.substring(0, str.length - 1);
                                                 {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
                                                 <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
@@ -71,7 +75,7 @@ function FableBlog() {
                                                                     <div className="blog-itm-des">
                                                                         <p className="itm-des-cont">{item.title}</p>
                                                                         {/* <h6 className="tag-act">Published at: 14th July, 2022</h6> */}
-                                                                        <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric',hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
+                                                                        <h6 className="tag-act">Published at: {(item.published_at) ? new Date(item.published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                                     </div>
                                                                     <div className="blog-itm-img">
                                                                         <LazyLoader src={item.feature_image} className={'img-fluid img-blog'} width={'215'} height={'155'} alt={'loading'} />

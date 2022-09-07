@@ -29,11 +29,6 @@ var formName = useRef('');
     setSkeleton(() => false);
   }, 200)
 
-  const [rendercount, setRenderCount] = useState(() => false);
-
- 
-
-
     /** to call single fabal detail */
     function getSingleFablesDetail() {
       homeServices.fablesBlog(id).then(

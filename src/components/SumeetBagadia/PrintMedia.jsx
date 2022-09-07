@@ -25,7 +25,7 @@ function PrintMedia() {
           <div className="row align-items-center">
             <div className="col-md-5 pt6">
               <div className="bg-className-left">
-                <h3 className="title-sm-new mb-4">Featured On Print And Electronic Media</h3>
+                <h2 className="title-sm-new mb-4">Featured On Print And Electronic Media</h2>
                 <p className="sml-para">
                   Mr Sumeet Bagadia has been giving his views on Equity, Currency and Commodity on prime business channels, leading print and wire business outlets for the past 10+ years.
                 </p>
