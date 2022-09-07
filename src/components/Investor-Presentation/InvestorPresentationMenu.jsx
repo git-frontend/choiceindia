@@ -50,7 +50,7 @@ function InvestorPresentationMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap voting-result">
+                    <div className="code-mainwrapper cgmainwrap voting-result">
                         <div className="col-md-12">
 
                         <div className="d-flex justify-content-between result-ttl">

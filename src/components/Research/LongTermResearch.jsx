@@ -251,7 +251,7 @@ const settings = {
                             </div>
                             
                             
-                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                            {count === 2 ? <h4 className="ups-potn">Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
                             <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
@@ -287,7 +287,7 @@ const settings = {
                           </div>
                            
                            
-                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                           {count === 2 ? <h4 className="ups-potn">Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">
                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
@@ -331,7 +331,7 @@ const settings = {
                             </div>
                             
                             
-                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                            {count === 2 ? <h4 className="ups-potn">Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                             <div className="itm-des-sub">
                             <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                   {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
@@ -367,7 +367,7 @@ const settings = {
                            </div>
                            
                          
-                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
+                           {count === 2 ? <h4 className="ups-potn">Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
                            <div className="itm-des-sub">
                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}

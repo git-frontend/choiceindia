@@ -48,7 +48,7 @@ function InvestorInfoMenu() {
         <div>
 
 
-            <section className="Investormenu mt7">
+            <section className="Investormenu">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -63,7 +63,7 @@ function InvestorInfoMenu() {
                     {
 									view && !view.matches ? 
                                    
-										<Slider {...settings} className="mt5" >
+										<Slider {...settings} className="" >
 
                                     <div className="col-md-3">
                                         <div className="team-list">
