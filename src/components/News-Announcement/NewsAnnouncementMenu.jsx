@@ -57,7 +57,7 @@ function NewsAnnouncement() {
                         </div>
                     </div>
 
-                    <div className="row quicklinkswrap mb-5 cgmainwrap code-mainwrapper">
+                    <div className=" quicklinkswrap mb-5 cgmainwrap code-mainwrapper">
                         <div className="col-md-12">
 
 
