@@ -172,7 +172,9 @@ export class API_URLS {
   annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2';
   factsheetURL='items/fact_sheet?filter[status][_eq]=published';
   investorawareURL ='items/investor_awareness';
+  cebplURL='items/cebpl_policies'
   filedownloadURL ='api/get-download-listing';
+  investorStockURL ='items/investor_charter?filter[type][_eq]'
 
 
 
@@ -639,5 +641,14 @@ export class API_URLS {
     getInvestorAwareURL(){
         return this.bannerURL + this.investorawareURL
     }
+    getCebplPolicyURL(){
+        return this.bannerURL + this.cebplURL
+    }
+
+    getInvestorStockURL(id){
+        return this.bannerURL + this.investorStockURL + `=${id}`
+    }
+    
+    
 
 }

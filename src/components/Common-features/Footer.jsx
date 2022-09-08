@@ -275,7 +275,7 @@ Disclaimer:<br/>
                 </span>
                 <ul className="links-footer-quick">
                   <li>
-                    <Link to="/investor-awareness" target="_blank">Investor Awareness</Link>
+                    <Link to="/investor-awareness">Investor Awareness</Link>
                   </li>
                   <li>
                     <a href="http://www.watchoutinvestors.com/" target="_blank">Watchout Investors</a>
@@ -284,28 +284,28 @@ Disclaimer:<br/>
                     <a href="https://scores.gov.in/scores/Welcome.html" target="_blank">Scores</a>
                   </li>
                   <li>
-                    <Link to="/Investor-charter" target="_blank">Investor Charter</Link>
+                    <Link to="/Investor-charter">Investor Charter</Link>
                   </li>
                   <li>
-                    <Link to="/Investor-complaints" target="_blank">Investor Complaints</Link>
+                    <Link to="/Investor-complaints">Investor Complaints</Link>
                   </li>
                   <li>
-                    <Link to="/terms-conditions" target="_blank">Terms of Use</Link>
+                    <Link to="/terms-conditions">Terms of Use</Link>
                   </li>
                   <li>
-                    <Link to="/privacy-policy" target="_blank">Privacy Policy</Link>
+                    <Link to="/privacy-policy">Privacy Policy</Link>
                   </li>
                   <li>
-                    <Link to="/disclaimer" target="_blank">Disclaimer</Link>
+                    <Link to="/disclaimer">Disclaimer</Link>
                   </li>
                   <li>
-                    <Link to="/file-download" target="_blank">File Download</Link>
+                    <Link to="/file-download">File Download</Link>
                   </li>
                   {/* <li>
                     <a href="/" target="_blank">Sitemap</a>
                   </li> */}
                   <li>
-                    <a href="/cebpl-policies" target="_blank">CEBPL Policies</a>
+                    <a href="/cebpl-policies">CEBPL Policies</a>
                   </li>
                   {/* <li>
                     <Link to="/client-details-update" target="_blank">Client Details Update</Link>
