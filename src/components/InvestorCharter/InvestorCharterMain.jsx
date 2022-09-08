@@ -55,27 +55,26 @@ function InvestorCharterMain() {
                 res => {
                     if (res && res.data && res.data.data) {
 
-                        listsfile = data2
-                        setData2(listsfile)
-                        listsfile[lists[i]] = (res.data.data);
+                        // listsfile = data2
+                        setData2((data2)=>({...data2,[lists[i]]:res.data.data}))
+                        // listsfile[lists[i]] = (res.data.data);
                         // setData2(listsfile)
+                        
 
                     } else {
-                        listsfile = data2
-                        setData2(listsfile);
+                        // listsfile = data2
+                        // setData2(listsfile);
                     }
-                    // console.log("array2", listsfile)
+                    console.log("array2", data2)
                 }
             ).catch((error) => {
-                listsfile = data2
-                setData2(listsfile);
+                // listsfile = data2
+                // setData2(listsfile);
             });
         }
         console.log("array2", data2)
 
     }
-
-
     useEffect(() => {
         setTrigger(true)
         if (trigger === true) {        
