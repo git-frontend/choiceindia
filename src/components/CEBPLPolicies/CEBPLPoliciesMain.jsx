@@ -1,11 +1,4 @@
 import React, { useState, useEffect } from "react";
-import CodeConduct from "../../assets/pdf/CEBPL/Code_of_Conduct_conflict_of_interest.pdf";
-import DormantAccount from "../../assets/pdf/CEBPL/Dormant_account_Policy.pdf"
-import ErrorAccount from "../../assets/pdf/CEBPL/Error_Account_Policy.pdf"
-import PMLAPolicy from "../../assets/pdf/CEBPL/PMLA_POLICY_1.8.pdf"
-import PreFunded from "../../assets/pdf/CEBPL/Pre_Funded_Instrument_Policy.pdf"
-import surveillance from "../../assets/pdf/CEBPL/Surveillance_Policy.pdf"
-import Unauthentic from "../../assets/pdf/CEBPL/Unauthentic_News_Circulation.pdf"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import cebplService from "../../Services/CebplService";

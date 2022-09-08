@@ -1,14 +1,4 @@
 import React, { useState, useEffect } from "react";
-import stock_broker from "../../assets/pdf/Investor-charter/IC-Annex-A_Stock_Broker.pdf";
-import stock_broker_b from "../../assets/pdf/Investor-charter/IC-Annex-B_Stock_Broker.pdf";
-import Research_A from "../../assets/pdf/Investor-charter/IC-Annex-A_Research_Analyst.pdf";
-import Research_B from "../../assets/pdf/Investor-charter/IC-Annex-B_Research_Analyst.pdf";
-import Portfolio_A from "../../assets/pdf/Investor-charter/IC-Annex-A_Portfolio_Manager.pdf";
-import Portfolio_B from "../../assets/pdf/Investor-charter/Annex-B_Portfolio_Manager.pdf";
-import Investment_A from "../../assets/pdf/Investor-charter/Annex-A_Investment_Advisor.pdf";
-import Investment_B from "../../assets/pdf/Investor-charter/Annex-B_Investment_Advisor.pdf";
-import Depository_A from "../../assets/pdf/Investor-charter/IC-Annex-A_Depository_Participant.pdf";
-import Depository_B from "../../assets/pdf/Investor-charter/IC-Annex-B_Depository_Participant.pdf";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import InvestorCharterService from "../../Services/InvestorCharterService";
