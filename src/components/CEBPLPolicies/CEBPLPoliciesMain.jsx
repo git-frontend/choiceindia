@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import cebplService from "../../Services/CebplService";
+import cebplService from '../../Services/CebplService'
 
 import "./CEBPL-Policies.scss";
 
