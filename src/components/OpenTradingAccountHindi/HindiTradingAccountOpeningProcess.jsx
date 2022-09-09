@@ -49,8 +49,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
-                                    <h5>A trusted name </h5>
-                                    <p>Fill in the required details and upload the relevant documents along with a passport size photograph.
+                                    <h5>ऑनलाइन पंजीकरण करें </h5>
+                                    <p>आवश्यक विवरण भरें और पासपोर्ट आकार के फोटो के साथ संबंधित दस्तावेज अपलोड करें।
                                     </p>
                                 </div>
                             </div>
@@ -66,8 +66,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     {/* <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info">
-                                    <h5>In-Person Verification</h5>
-                                    <p>Complete the In-person verification (IPV).
+                                    <h5>व्यक्तिगत सत्यापन</h5>
+                                    <p>इन-पर्सन वेरिफिकेशन (आईपीवी) को पूरा करें।
                                     </p>
                                 </div>
                             </div>
@@ -83,8 +83,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Three"} />
                                 </div>
                                 <div className="info" >
-                                    <h5>Registration Complete</h5>
-                                    <p>Your Demat Account opening is successful with Choice Broking.
+                                    <h5>पंजीकरण पूर्ण</h5>
+                                    <p>चॉइस के साथ आपका ट्रेडिंग अकाउंट सफलापुरवक खुल गया है |
 
                                     </p>
                                 </div>
@@ -97,8 +97,8 @@ const HindiTradingAccountOpeningProcess = () => {
                                     {/* <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" /> */}
                                 </div>
                                 <div className="info" >
-                                    <h5>Courier POA</h5>
-                                    <p>Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.
+                                    <h5>कूरियर पीओए</h5>
+                                    <p>आपके पंजीकृत ईमेल आईडी पर भेजे गए पावर ऑफ अटॉर्नी (पीओए) की हस्ताक्षर कर के हमें कुरियर करें।
                                     </p>
                                 </div>
                             </div>
