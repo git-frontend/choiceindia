@@ -4,8 +4,8 @@ const environment = false ;
 
 /**URL Config */
 const config = {
-    liveServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
-    UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
+    liveServerURL: "https://ghost.choiceindia.com/ghost/api/v3/",
+    UATServerURL: "https://ghost.choiceindia.com/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL: "https://cmsapi.choiceindia.com/",
     liveFileURL: "https://cms.jiffy.in/",
@@ -86,10 +86,10 @@ export class API_URLS {
     fableCategoryURL = 'items/fables?filter[fable_status][_eq]=publish'
 
     /**fablestories blog  */
-    fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog&limit=6';
+    fablesStoryURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:featured-blog';
 
     /**fables trending blog  */
-    fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog&limit=6';
+    fabletrendingURL = 'content/posts/?key=280c55197998a010569e5d612a&filter=tag:trending-blog';
 
     /**fables trending blog  */
     fableTopFiveURL = 'content/posts/?key=280c55197998a010569e5d612a&limit=5';
