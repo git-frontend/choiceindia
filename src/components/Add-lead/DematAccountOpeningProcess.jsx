@@ -35,7 +35,7 @@ const DematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <Link to="/add-lead" ><div className="btn-bg btn-bg-dark " onClick={() => { chapterScroll('addBanner') }}> Get Started </div></Link>
+                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { chapterScroll('addBanner') }}> Get Started </div>
                                 </div>
 
                             </div>

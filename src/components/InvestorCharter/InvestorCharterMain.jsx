@@ -6,36 +6,9 @@ import InvestorCharterService from "../../Services/InvestorCharterService";
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 
 function InvestorCharterMain() {
-    let listsfile = {};
     const [data2, setData2] = useState({});
-    const [data, setData] = useState();
-    const [research, setResearch] = useState();
-    const [portfolio, setPortfolio] = useState();
-    const [investment, setInvestment] = useState();
-    const [depository, setdepository] = useState();
-    const [lists, setlists] = useState(['stock_broker', 'research_analyst', 'portfolio_managers', 'investment_advisors', 'depository_participant'])
+    const [lists, setlists] = useState(['stock_broker', 'research_analyst', 'portfolio_managers', 'investment_advisors', 'depository_participant','capital_advisor'])
     const [trigger, setTrigger] = useState(false);
-
-
-    // function loadcebplStock() {
-    //     for (let i = 0; i < lists.length; i++) {
-
-    //         InvestorCharterService.InvestorCharter(lists[i]).then(
-    //             res => {
-    //                 if (res) {
-    //                     (lists[i] == 'stock_broker') ? setData(res.data.data) : (lists[i] == 'research_analyst') ? setResearch(res.data.data) :
-    //                         (lists[i] == 'portfolio_managers') ? setPortfolio(res.data.data) : (lists[i] == 'investment_advisors') ? setInvestment(res.data.data) : (lists[i] == 'depository_participant') ? setdepository(res.data.data) : ''
-
-    //                 } else {
-    //                     setData([]);
-    //                 }
-    //             }
-    //         ).catch((error) => {
-    //             setData([]);
-    //         });
-    //     }
-
-    // }
 
 
     function loadcebplStock2() {
@@ -49,20 +22,15 @@ function InvestorCharterMain() {
                         setData2((data2)=>({...data2,[lists[i]]:res.data.data}))
                         // listsfile[lists[i]] = (res.data.data);
                         // setData2(listsfile)
-                        
-
-                    } else {
-                        // listsfile = data2
-                        // setData2(listsfile);
+                    } else {  
+                        setData2([]);
                     }
-                    console.log("array2", data2)
+                   
                 }
             ).catch((error) => {
-                // listsfile = data2
-                // setData2(listsfile);
+                setData2([]);
             });
         }
-        console.log("array2", data2)
 
     }
     useEffect(() => {
