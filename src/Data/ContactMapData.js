@@ -105,8 +105,8 @@ const contactMap = [
         "mobNum": "+91 70089 60878",
         "support": "support@choiceindia.com",
         "address1": "409, 4th Floor, ",
-        "address2": "Janpath Towers,Ashok",
-        "address3": "Nagar, 751009",
+        "address2": "Janpath Towers,",
+        "address3": "Ashok Nagar, 751009",
         "mapSrc": ""
     },
 

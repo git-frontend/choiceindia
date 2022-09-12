@@ -85,7 +85,7 @@ function Contactdetail() {
                      firstMap ?
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
-                           <p className="subtext mb-0">(+91) - 8080-80-8875</p>
+                           {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
                            <p className="subtext">support@choiceindia.com</p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
@@ -93,7 +93,7 @@ function Contactdetail() {
                         </div> :
                         <div className="text-right address" key={contactMap[MapNumber].id}>
                            <p className="maintitle">{contactMap[MapNumber].city}</p>
-                           <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p>
+                           {/* <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p> */}
                            <p className="subtext">{contactMap[MapNumber].support}</p>
                            <p className="subtext">{contactMap[MapNumber].address1}<br />
                               {contactMap[MapNumber].address2} <br />{contactMap[MapNumber].address3}
