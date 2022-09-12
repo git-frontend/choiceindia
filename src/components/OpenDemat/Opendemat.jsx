@@ -252,7 +252,7 @@ function Opendemat(){
                 <div className='container'>
                   <div className='row' id="ChapterOne">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
-                      <p className='chapter'>chapter 1</p>
+                      <p className='chapter'>Chapter 1</p>
                       <h2 className="title">Meaning of Demat Account</h2>
                       <div className='row  pb52'>
                         <div className='col-md-6' id="best-demat-img">
@@ -760,7 +760,7 @@ function Opendemat(){
                       <p className='chapter'>Chapter 7</p>
                       <h2 className="title">How Can You Choose the Best Demat Account in India?</h2>
                       <div className='row pb52'>
-                        <div className='col-md-6' id="best-demat-img" >
+                        <div className='col-md-6' id="best-demat-img-seven" >
                           {/* <img src='./images/best-demat-account.webp' className="img-fluid" alt="Best Demat Account" /> */}
                         </div>
                         <div className='col-md-6'>
