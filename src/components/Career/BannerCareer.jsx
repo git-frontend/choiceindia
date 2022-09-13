@@ -44,30 +44,6 @@ function BannerCareer() {
                       {/* <LazyLoader src={CareerImage6} className={'img-fluid'} width={"482"} height={"400"} alt="Team work" /> */}
                       <img src={CareerImage6} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
                   </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage0} className={'img-fluid'} width={"482"} height={"400"} alt={"Work With Choice"} /> */}
-                      <img src={CareerImage0} className="img-fluid" width={"482"} height={"400"}  alt='Loading' />
-                  </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage1} className={'img-fluid'} width={"482"} height={"400"} alt={"Careers At Choice"} /> */}
-                      <img src={CareerImage1} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
-                  </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage2} className={'img-fluid'} width={"482"} height={"400"} alt={"job opportunity"} /> */}
-                      <img src={CareerImage2} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
-                  </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage4} className={'img-fluid'} width={"482"} height={"400"} alt={"Presentation"} /> */}
-                      <img src={CareerImage4} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
-                  </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage5} className={'img-fluid'} width={"482"} height={"400"} alt="Appreciation" /> */}
-                      <img src={CareerImage5} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
-                  </div>
-                  <div className='marq-itm'>
-                      {/* <LazyLoader src={CareerImage6} className={'img-fluid'} width={"482"} height={"400"} alt="Team work" /> */}
-                      <img src={CareerImage6} className="img-fluid" width={"482"} height={"400"} alt='Loading' />
-                  </div>
                   
           </Marquee>        
     </section>
