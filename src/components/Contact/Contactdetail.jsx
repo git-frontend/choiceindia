@@ -93,7 +93,7 @@ function Contactdetail() {
                         </div> :
                         <div className="text-right address" key={contactMap[MapNumber].id}>
                            <p className="maintitle">{contactMap[MapNumber].city}</p>
-                           <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p>
+                           {/* <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p> */}
                            <p className="subtext">{contactMap[MapNumber].support}</p>
                            <p className="subtext">{contactMap[MapNumber].address1}<br />
                               {contactMap[MapNumber].address2} <br />{contactMap[MapNumber].address3}
