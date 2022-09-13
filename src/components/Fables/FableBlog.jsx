@@ -6,7 +6,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
 
 function FableBlog() {
-  //  console.log('FableBlog.jsx');
+    const [rendercount, setRenderCount] = useState(() => false);
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
 
@@ -14,7 +14,7 @@ function FableBlog() {
         setLoader(true);
         fableServices.fableListingTopFive().then(res => {
             setLoader(false);
-          //  console.log(res, "RESS");
+            //  console.log(res, "RESS");
             if (res && res.status === 200 && res.data && res.data.posts) {
                 setData(res.data.posts);
             } else {
@@ -27,14 +27,18 @@ function FableBlog() {
     }
 
     useEffect(() => {
-        loadFableList()
-    }, []);
+        setRenderCount(true)
+        if (rendercount === true) {
+            loadFableList()
+         
+        }
+      }, [rendercount])
 
     return (
         <div>
 
             <section className="blog-middle-cont">
-                <div className={`container ${loader?'text-center':''}`}>
+                <div className={`container ${loader ? 'text-center' : ''}`}>
                     {
                         loader ?
                             <Spinner animation="grow" /> :

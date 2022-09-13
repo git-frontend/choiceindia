@@ -129,7 +129,7 @@ function Slidersec() {
                     <div className="row flex-sec-r align-items-center">
                         <div className={(research.length===0)? "col-xl-12 ":"col-xl-5 "}>
                             <div className="bg-class-left">
-                                <h3 className="title-sm-new">Sumeet Bagadia Calls</h3>
+                                <h2 className="title-sm-new">Sumeet Bagadia Calls</h2>
                                 <p className="sml-para">Adept at analysing various standalone events to predict the market outcome; <br /> Mr Sumeet Bagadia's Research Calls have an excellent success ratio. Have a look at the results of the past research calls by him.</p>
                             </div>
                         </div>

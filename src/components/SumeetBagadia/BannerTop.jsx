@@ -15,7 +15,7 @@ function BannerTop() {
             <div className="col-xl-8 col-md-6">
               <div className="wrap-banner">
                 <div className="page2-banner-caption">
-                  <h3>Sumeet <span> Bagadia</span> </h3>
+                  <h1>Sumeet <span> Bagadia</span> </h1>
                   <p>Executive Director and Head of <br />Technical Research at Choice.</p>
                 </div>
                 <div className="page2-banner-img">

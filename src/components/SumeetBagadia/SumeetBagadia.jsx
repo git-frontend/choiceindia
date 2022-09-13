@@ -82,9 +82,9 @@ function SumeetBagadia() {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="bg-acnt-sub">
-                      <h3 className="title-sm-new">
+                      <h2 className="title-sm-new">
                         Sign up for exclusive trading tips from Sumeet Bagadia?
-                      </h3>
+                      </h2>
                       <Link to="/sumeet-bagadia"  onClick={()=>scrollToId('home-bg')}><div className="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</div></Link>
                     </div>
                   </div>
@@ -103,9 +103,9 @@ function SumeetBagadia() {
                 <div className="row">
                   <div className="col-md-12">
                     <div className="bg-acnt-sub">
-                      <h3 className="title-sm-new">
+                      <h2 className="title-sm-new">
                         Get Sumeet Bagadia's trading tips and recommendations?
-                      </h3>
+                      </h2>
                       <Link to="/sumeet-bagadia" onClick={()=>scrollToId('home-bg')}><div className="btn-bg acnt-sub-btn cursor-pointer">Sign up</div></Link>
                     </div>
                   </div>

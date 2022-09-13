@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Image19 from '../../assets/images/open-demat-account/one.webp';
+import Image19 from '../../assets/images/open-demat-account/register-online.webp';
 import Image20 from '../../assets/images/open-demat-account/steparrow.svg';
 import Image21 from '../../assets/images/open-demat-account/downarrow.png';
-import Image22 from '../../assets/images/open-demat-account/two.webp';
-import Image23 from '../../assets/images/open-demat-account/three.webp';
-import Image24 from '../../assets/images/open-demat-account/four.webp';
+import Image22 from '../../assets/images/open-demat-account/in-person-verification.webp';
+import Image23 from '../../assets/images/open-demat-account/registration-complete.webp';
+import Image24 from '../../assets/images/open-demat-account/courier-poa.webp';
 import utils from "../../Services/utils";
 import { Link } from 'react-router-dom';
-
+import LazyLoader from '../Common-features/LazyLoader';
 const DematAccountOpeningProcess = () => {
     return (
         <div>
@@ -41,13 +41,16 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" />
-                                    <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" />
+                                <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Register Online"} />
+                                    {/* <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" /> */}
+                                    <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
+                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" /> */}
+                                    <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step One"} />
+                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
-                                    <h5>ऑनलाईन नोंदणी</h5>
-                                    <p>आवश्यक सर्व माहिती भरून, योग्य कागदपत्रे आणि पासपोर्ड आकारचे फोटो सोबत अपलोड करा.
+                                    <h5>A trusted name </h5>
+                                    <p>Fill in the required details and upload the relevant documents along with a passport size photograph.
                                     </p>
                                 </div>
                             </div>
@@ -55,13 +58,16 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap">
-                                    <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" />
-                                    <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" />
+                                <LazyLoader src={Image22} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"In Person Verification"} />
+                                    {/* <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" /> */}
+                                    <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Two"} />
+                                    {/* <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" /> */}
+                                    <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Two"} />
+                                    {/* <img src={Image21}  width={"17"} height={"93"} alt="Step Two" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info">
-                                    <h5> वैयक्तीक पडताळणी</h5>
-                                    <p>वैयक्तीक पडताळणी (IPV)
+                                    <h5>In-Person Verification</h5>
+                                    <p>Complete the In-person verification (IPV).
                                     </p>
                                 </div>
                             </div>
@@ -69,13 +75,16 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" />
-                                    <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" />
-                                    <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" />
+                                <LazyLoader src={Image23} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Registration Complete"} />
+                                    {/* <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" /> */}
+                                    <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Three"} />
+                                    {/* <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" /> */}
+                                    {/* <img src={Image21} width={"17"} height={"93"}  alt="Step Three" className="img-fluid lazyload respimag" /> */}
+                                    <LazyLoader src={Image21} className={'img-fluid lazyload respimag'} width={"17"} height={"93"} alt={"Step Three"} />
                                 </div>
                                 <div className="info" >
-                                    <h5> नोंदणी पूर्णझाल्यनंतर</h5>
-                                    <p>चॉईस ब्रोकिंगसोबत तुमचे डिमॅट अकाऊंट यशस्वीपणे उघडले गेले.
+                                    <h5>Registration Complete</h5>
+                                    <p>Your Demat Account opening is successful with Choice Broking.
 
                                     </p>
                                 </div>
@@ -84,11 +93,12 @@ const DematAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                    <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" />
+                                <LazyLoader src={Image24} className={'img-fluid lazyload'} width={"93"} height={"93"} alt={"Courier POA"} />
+                                    {/* <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" /> */}
                                 </div>
                                 <div className="info" >
-                                    <h5>कुरिअर पीओए</h5>
-                                    <p>आमच्या दिलेल्या ई-मेल आयडीवर तुमची पॉवर ऑफ अँटर्नी (पीओए) वर स्वाक्षरी करुन पाठवा.
+                                    <h5>Courier POA</h5>
+                                    <p>Courier us the signed copy of the Power of Attorney (POA) sent on your registered Email ID.
                                     </p>
                                 </div>
                             </div>

@@ -17,7 +17,7 @@ function OpenFreeAccount() {
                     <div className="row align-items-start">
                         <div className="col-xl-6 col-md-7">
                             <div className="demat-account-features">
-                                <h3 className="title-secnd">100% Free Demat Account</h3>    
+                                <h2 className="title-secnd">100% Free Demat Account</h2>    
                                 <div className="account-features-list">
                                     <div className="feat-list-itm">
                                         <h4>Free</h4>

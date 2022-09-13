@@ -178,7 +178,11 @@ const img_data = [
     {
         "id": "extra-links-img-1",
         "img": ` Made with  <img src=${image28} class="img-fluid" />  in India`
-    }
+    },
+    {
+        "id": "best-demat-img-seven",
+        "img": `<img src=${image18} class="img-fluid chapter-content-img" alt="Best Demat Account" />`
+    },
 
 ];
 
