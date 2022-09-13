@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from "react";
-import pdf1 from "../../assets/pdf/Investor-awareness/Annexure_I_KYC_updation.pdf";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import InvestorAwareService from "../../Services/InvestorAwareService";
