@@ -85,7 +85,7 @@ function Contactdetail() {
                      firstMap ?
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
-                           <p className="subtext mb-0">(+91) - 8080-80-8875</p>
+                           {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
                            <p className="subtext">support@choiceindia.com</p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099

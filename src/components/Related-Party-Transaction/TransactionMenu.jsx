@@ -6,6 +6,7 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import transactionService from "../../Services/TransactionService";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function TransactionMenu() {
 
@@ -53,7 +54,9 @@ function TransactionMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap voting-result">
+                    {
+                        (data && data.length)?
+<div className="row code-mainwrapper cgmainwrap voting-result">
                         <div className="col-md-12">
 
                             <div className="d-flex justify-content-between result-ttl">
@@ -102,7 +105,12 @@ function TransactionMenu() {
 
 
 
-                    </div>
+                    </div>:
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+                    }
+                    
 
 
                 </div>

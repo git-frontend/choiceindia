@@ -53,7 +53,7 @@ function FileDownload() {
                     <h2 className="title-secnd text-center">Attention Advisors</h2>
                   </div>
                   <div className="col-md-12">
-                  <p className="subtext">KYC is one time exercise while dealing in securities markets – once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary. Choice Equity Broking Private Limited trade in OWN/PRO account as per SEBI/MRD/SE/CIR.- 42/2003 dated November 19, 2003 as mandated by the SEBI and on the Exchange( s). Existing customers can send their Grievances to : <a href="ig@choiceindia.com">ig@choiceindia.com</a></p>
+                  <p className="subtext">KYC is one time exercise while dealing in securities markets – once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund etc.), you need not undergo the same process again when you approach another intermediary. Choice Equity Broking Private Limited trade in OWN/PRO account as per SEBI/MRD/SE/CIR.- 42/2003 dated November 19, 2003 as mandated by the SEBI and on the Exchange( s). Existing customers can send their Grievances to : <b>ig@choiceindia.com</b></p>
                   </div>
                 </div>
               </div>

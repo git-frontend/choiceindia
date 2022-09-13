@@ -16,6 +16,7 @@ import Template6 from "../Common-features/Template6";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import Slider from 'react-slick';
+import noDataimg from '../../assets/images/no-data.webp';
 
 function LongTermResearch() {
   const [check, setCheck] = useState();
@@ -26,21 +27,21 @@ function LongTermResearch() {
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
-});
+  });
 
   // const demo_ref = useRef(null)
 
-const settings = {
-  infinite: true,
-  speed: 1500,
-  arrows: false,
-  slidesToShow: 1,
-  autoplay: false,
-  dots: true,
-  autoplaySpeed: 3000,
-  slidesToScroll: 1,
+  const settings = {
+    infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 1,
+    autoplay: false,
+    dots: true,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
 
-};
+  };
 
 
 
@@ -52,12 +53,12 @@ const settings = {
   function loadResearch(id) {
     setList([]);
     setData(true);
-    
+
     ResearchService.researchcategory(id).then(
       res => {
         setData(false)
         if (res) {
-        
+
           setCheck(false)
           setList(res.response.data);
 
@@ -96,7 +97,7 @@ const settings = {
   };
 
   function getSingleDetail(id) {
-    console.log("goto signal",id)
+    console.log("goto signal", id)
     // console.log('IIIII',id);
     // navigate(`/research-new/${id}/${tempid}`);
     navigate({
@@ -105,42 +106,42 @@ const settings = {
     })
   }
 
-   /**
-     * Go to Report Detail
-     * @param {Report} report 
-     */
-    let goToDetail = (report) => {
-      let api = new API_URLS()
-      let url = api.getFundamentalDetailURL(report.id||report.uuid)
-      window.open(url)
+  /**
+    * Go to Report Detail
+    * @param {Report} report 
+    */
+  let goToDetail = (report) => {
+    let api = new API_URLS()
+    let url = api.getFundamentalDetailURL(report.id || report.uuid)
+    window.open(url)
   }
 
-  function iporedirect(){
+  function iporedirect() {
     window.open('https://jiffy.choiceindia.com/market/latest-ipo-list');
   }
 
-  function goToScroll(){
+  function goToScroll() {
     // console.log('GGG');
     // demo_ref.current.scrollIntoView({behavior: 'smooth'})
     var element = document.getElementById('lt-search');
-      var headerOffset = 140;
-      var elementPosition = element.getBoundingClientRect().top;
-      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    setCheck(()=> false);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+    setCheck(() => false);
   }
 
   useEffect(() => {
     setTrigger(true)
     if (trigger === true) {
       loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
-       let mediaQuery = window.matchMedia("(min-width: 770px)");
-            mediaQuery.addListener(setView);
-            // this is the cleanup function to remove the listener
-            return () => mediaQuery.removeListener(setView);
+      let mediaQuery = window.matchMedia("(min-width: 770px)");
+      mediaQuery.addListener(setView);
+      // this is the cleanup function to remove the listener
+      return () => mediaQuery.removeListener(setView);
     }
   }, [trigger])
   return (
@@ -200,7 +201,7 @@ const settings = {
             <button
               className={count === 4 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(4); 
+                setcount(4);
                 // setTempId(preValue => {
                 //   return {
                 //     ...preValue, 'name': 'ipo-nfo-analysis',
@@ -214,183 +215,190 @@ const settings = {
 
             </button>
           </div>
-          <div className="content-tabs" >
+          {
+            list.length?
+            <div className="content-tabs" >
             <div
               className="content active-content"
             >
               {
-                  data? 
+                data ?
                   <Template6 />
                   :
-
-              <div className="research-tab-cont" >
-                {
-                  check ?
-                   <div >
-
-{
-                                view && !view.matches ?
-                                    <Slider {...settings} className="research-tab-list">
-                    
                   
-                  {
-                    list.map((res, i) => {
+                  <div className="research-tab-cont" >
+                    {
+                      check ?
+                        <div >
 
-                      return (
-                        
-                        <div className="res-tab-itm" key={res.uuid} >
-                          
-                          <div className="tab-itm-img" >
-                            <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                          </div>
-                          <div className="tab-itm-des">
-                            <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
-                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                            <div className="itm-des-text">
-                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                            </div>
-                            
-                            
-                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
-                            <div className="itm-des-sub">
-                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                          {
+                            view && !view.matches ?
+                              <Slider {...settings} className="research-tab-list">
 
-                            </div>
-                          </div>
+
+                                {
+                                  list.map((res, i) => {
+
+                                    return (
+
+                                      <div className="res-tab-itm" key={res.uuid} >
+
+                                        <div className="tab-itm-img" >
+                                          <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                                        </div>
+                                        <div className="tab-itm-des">
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name || "" : res.title || ""}</h5>
+                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                                          <div className="itm-des-text">
+                                            <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
+                                          </div>
+
+
+                                          {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
+                                          <div className="itm-des-sub">
+                                            <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
+                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                            {count === 4 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 2 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </Slider>
+
+                              :
+                              <div className="research-tab-list">
+
+
+                                {
+                                  list.map((res, i) => {
+
+                                    return (
+
+                                      <div className="res-tab-itm" key={res.uuid} >
+
+                                        <div className="tab-itm-img" >
+                                          <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                                        </div>
+                                        <div className="tab-itm-des">
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name || "" : res.title || ""}</h5>
+                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                                          <div className="itm-des-text">
+                                            <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
+                                          </div>
+
+
+                                          {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
+                                          <div className="itm-des-sub">
+                                            <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
+                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                            {count === 4 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 2 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </div>
+
+                          }
                         </div>
-                      )
-                    })
-                  }
-                  </Slider>
-                 
-                 :
-                 <div className="research-tab-list">
-                    
-                  
-                 {
-                   list.map((res, i) => {
 
-                     return (
-                       
-                       <div className="res-tab-itm" key={res.uuid} >
-                         
-                         <div className="tab-itm-img" >
-                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                         </div>
-                         <div className="tab-itm-des">
-                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
-                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                           <div className="itm-des-text">
-                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                          </div>
-                           
-                           
-                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
-                           <div className="itm-des-sub">
-                           <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                                 {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
-                           </div>
-                         </div>
-                       </div>
-                     )
-                   })
-                 }
-                 </div>
+                        :
+                        <div >
 
-                }
-                 </div>
-              
-               
-                    :
-                    <div >
+                          {
+                            view && !view.matches ?
+                              <Slider {...settings} className="research-tab-list">
 
-{
-                                view && !view.matches ?
-                                    <Slider {...settings} className="research-tab-list">
-                    
-                  
-                  {
-                    (list||[]).slice(0, 4).map((res, i) => {
 
-                      return (
-                        
-                        <div className="res-tab-itm" key={res.uuid} >
-                          
-                          <div className="tab-itm-img" >
-                            <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                          </div>
-                          <div className="tab-itm-des">
-                            <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
-                            {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                            <div className="itm-des-text">
-                            <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                            </div>
-                            
-                            
-                            {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
-                            <div className="itm-des-sub">
-                            <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                                  {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                  {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+                                {
+                                  (list || []).slice(0, 4).map((res, i) => {
 
-                            </div>
-                          </div>
+                                    return (
+
+                                      <div className="res-tab-itm" key={res.uuid} >
+
+                                        <div className="tab-itm-img" >
+                                          <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                                        </div>
+                                        <div className="tab-itm-des">
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name || "" : res.title || ""}</h5>
+                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                                          <div className="itm-des-text">
+                                            <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
+                                          </div>
+
+
+                                          {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
+                                          <div className="itm-des-sub">
+                                            <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
+                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                            {count === 4 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 2 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </Slider>
+
+                              :
+                              <div className="research-tab-list">
+
+
+                                {
+                                  (list || []).slice(0, 4).map((res, i) => {
+
+                                    return (
+
+                                      <div className="res-tab-itm" key={res.uuid} >
+
+                                        <div className="tab-itm-img" >
+                                          <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
+                                        </div>
+                                        <div className="tab-itm-des">
+                                          <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name || "" : res.title || ""}</h5>
+                                          {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
+                                          <div className="itm-des-text">
+                                            <p dangerouslySetInnerHTML={{ __html: res.description }}></p>
+                                          </div>
+
+
+                                          {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage || 0}%</span></h4> : ""}
+                                          <div className="itm-des-sub">
+                                            <span className="date-post">{utils.formatDate(new Date(res.publish_date), "dd MMMM , yyyy")}</span>
+                                            {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
+                                            {count === 4 ? <a onClick={() => { (res.call_type_name == "Avoid") ? "" : iporedirect() }} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red' : '' }}> {res.call_type_name}</a> : count === 2 ? <a className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B' : (res.call_type_name == "Sell") ? 'red' : '' }} onClick={() => (res.call_type_name === 'Buy') || (res.call_type_name === 'Sell') ? goToDetail(res) : console.log("")} >{res.call_type_name ? res.call_type_name : " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
+
+                                          </div>
+                                        </div>
+                                      </div>
+                                    )
+                                  })
+                                }
+                              </div>
+
+                          }
                         </div>
-                      )
-                    })
-                  }
-                  </Slider>
-                 
-                 :
-                 <div className="research-tab-list">
-                    
-                  
-                 {
-                   (list||[]).slice(0, 4).map((res, i) => {
+                    }
 
-                     return (
-                       
-                       <div className="res-tab-itm" key={res.uuid} >
-                         
-                         <div className="tab-itm-img" >
-                           <img src={res.feature_image ? res.feature_image : thumb1} alt="Banner Images" className="img-fluid thumb-img" width={"231"} height={"251"}></img>
-                         </div>
-                         <div className="tab-itm-des">
-                           <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{count === 4 ? res.scrip_name||"" : res.title||""}</h5>
-                           {/**  dangerouslySetInnerHTML={{__html: res.description}}*/}
-                           <div className="itm-des-text">
-                           <p dangerouslySetInnerHTML={{__html: res.description}}></p>
-                           </div>
-                           
-                         
-                           {count === 2 ? <h4>Upside: <span className="grn-txt">{res.upside_potential_percentage||0}%</span></h4> :""}
-                           <div className="itm-des-sub">
-                           <span className="date-post">{utils.formatDate(new Date(res.publish_date),"dd MMMM , yyyy")}</span>
-                                 {/* <Link to={`/research-detailed/${res[i].uuid}`} className="post-read">Read More</Link> */}
-                                 {count === 4 ? <a  onClick={()=>{(res.call_type_name == "Avoid") ? "":iporedirect()}} className="btn-sm grn-btn" style={{ background: (res.call_type_name == "Avoid") ? 'red': '' }}> {res.call_type_name}</a> : count === 2 ? <a  className="btn-sm btn-ptr" style={{ background: (res.call_type_name == "Buy") ? '#00B26B': (res.call_type_name == "Sell") ? 'red':'' }}  onClick={() => (res.call_type_name === 'Buy')||(res.call_type_name === 'Sell') ?  goToDetail(res) :console.log("") } >{res.call_type_name ? res.call_type_name: " "}</a> : <a onClick={() => { getSingleDetail(res.uuid) }} className="post-read">Read More</a>}
 
-                           </div>
-                         </div>
-                       </div>
-                     )
-                   })
-                 }
-                 </div>
-
-                }
-                 </div>
-                }
-
-                
-                <div className="mt-5 d-flex justify-content-center">{check?<a className="btn-bg btn-ptr" onClick={goToScroll}>Load Less</a>:<a className="btn-bg btn-ptr" onClick={()=>{setCheck(true)}}>Load More</a>}</div>
-              </div>
-}
+                    <div className="mt-5 d-flex justify-content-center">{check ? <a className="btn-bg btn-ptr" onClick={goToScroll}>Load Less</a> : <a className="btn-bg btn-ptr" onClick={() => { setCheck(true) }}>Load More</a>}</div>
+                  </div>
+              }
             </div>
-          </div>
+          </div>: 
+              <div className="text-center">
+                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+              </div>
+          }
+          
         </div>
       </section>
     </div>

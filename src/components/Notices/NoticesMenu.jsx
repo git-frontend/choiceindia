@@ -5,6 +5,8 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import noticesService from "../../Services/NoticesService";
+import noDataimg from '../../assets/images/no-data.webp';
+
 function NoticesMenu() {
 
     const [data, setData] = useState();
@@ -70,7 +72,9 @@ function NoticesMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    {
+                        list?
+                        <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
 
@@ -132,8 +136,15 @@ function NoticesMenu() {
 
 
 
-                    </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    </div>:
+                    <div className="text-center">
+                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                </div> 
+                    }
+                    
+                    {
+                        data?
+                        <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
 
@@ -199,7 +210,12 @@ function NoticesMenu() {
 
 
 
-                    </div>
+                    </div>:
+                    <div className="text-center">
+                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                </div> 
+                    }
+                   
 
                 </div>
             </section>

@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import { API_URLS } from "../../Services/API-URLS";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function Slidersec() {
 
@@ -198,7 +199,10 @@ function Slidersec() {
 
                                 </Slider>
 
-                            </div>: ''
+                            </div>: 
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
                             }
                
                             <div className="sm-slider-thumb">

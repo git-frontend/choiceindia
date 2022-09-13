@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import Accordion from 'react-bootstrap/Accordion'
+import noDataimg from '../../assets/images/no-data.webp';
 
 function FaqCommon() {
 
@@ -60,7 +61,9 @@ function FaqCommon() {
                                 }
                             </div> */}
 
-                            <Accordion defaultActiveKey="0" className="accordion" id="accordionExample">
+                            {
+                                data.length?
+                                <Accordion defaultActiveKey="0" className="accordion" id="accordionExample">
                                 <div className="accordion-container">
                                     {
                                         data.map((res, i) => {
@@ -81,7 +84,14 @@ function FaqCommon() {
                                         })
                                     }
                                 </div>
-                            </Accordion>
+                            </Accordion>:
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+
+
+                            }
+                            
 
 
                     </div>

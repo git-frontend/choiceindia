@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false ;
+const environment = false;
 
 
 /**URL Config */

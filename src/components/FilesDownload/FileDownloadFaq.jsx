@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 import fileDownloadService from "../../Services/FileDownloadService";
 import download from '../../assets/images/file-download/export.webp';
+import noDataimg from '../../assets/images/no-data.webp';
+import noDataimg2 from '../../assets/images/no-data-white.webp'
 
 function FileDownloadFaq() {
     const [datalist, setDatalist] = useState({});
@@ -55,7 +57,9 @@ function FileDownloadFaq() {
 
                     <div className="row">
                         <div className="col-md-12">
-                            <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                            {
+                                datalist?
+                                <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                 {
 
                                     Object.keys(datalist)?.map((key, i) => {
@@ -431,7 +435,11 @@ function FileDownloadFaq() {
                                        </div>
                                     </Accordion.Body>
                                 </Accordion.Item> */}
-                            </Accordion>
+                            </Accordion>: 
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                            </div>
+                            }
 
                         </div>
                     </div>

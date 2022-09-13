@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import fableServices from '../../Services/fableServices';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function BannerSection() {
 
@@ -43,8 +44,11 @@ function BannerSection() {
 								<div className="heading-sec">
 									<h3 className="title-secnd">Trending </h3>
 								</div>
-								<div className="fable-trending-list">
+								{
+									data.length?
+									<div className="fable-trending-list">
 
+									
 									{
 										(data||[]).slice(0, 4).map((response, index) => {
 
@@ -95,7 +99,12 @@ function BannerSection() {
 											<p>What will be the future of Cryptocurrencies in India?</p>
 										</div>
 							</a>*/}
-								</div>
+								</div>:
+								 <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                            </div>
+								}
+								
 							</div>
 						</div>
 					</div>
