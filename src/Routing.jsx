@@ -103,6 +103,7 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 
 
 
@@ -513,6 +514,12 @@ function Routing() {
                         <Route exact path='/campaign/open-demat-account' element={
                             <React.Suspense>
                                 < LazyCampaignDematAccount />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyMutualFundDistributor />
                             </React.Suspense>
                         } />
 
