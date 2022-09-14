@@ -49,7 +49,7 @@ Note: Investica is a part of Choice Wealth Pvt ltd and registered under the ARN 
                                 <Accordion.Item eventKey="4" className='faq-item'>
                                     <Accordion.Header > <h4 className='faq-header'>What is the process for mutual fund agent registration?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    Once, you have completed your AMFI Certification. You can then login to www.choiceindia.com and start a fruitful journey by following the steps mentioned there.
+                                    Once, you have completed your AMFI Certification. You can then login to <a href="https://choiceindia.com/">www.choiceindia.com</a> and start a fruitful journey by following the steps mentioned there.
                                     </Accordion.Body>
                                 </Accordion.Item>
 
