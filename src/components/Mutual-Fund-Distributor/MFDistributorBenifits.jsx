@@ -122,7 +122,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Trading} alt={"Multiple Fianancial Products"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>Multiple Products on Offer</h4>
+                                        <h4>Multiple <br/>Products on Offer</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -131,7 +131,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Transport} alt={"Complete Online Process"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>Complete Online Procedure</h4>
+                                        <h4>Complete <br/>Online Procedure</h4>
                                     </div>
                                 </div>
                             </Slider>
@@ -189,7 +189,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Trading} alt={"Multiple Fianancial Products"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>Multiple Products on Offer</h4>
+                                        <h4>Multiple <br/>Products on Offer</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -198,7 +198,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Transport} alt={"Complete Online Process"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>Complete Online Procedure</h4>
+                                        <h4>Complete <br/>Online Procedure</h4>
                                     </div>
                                 </div>
                             </div>
