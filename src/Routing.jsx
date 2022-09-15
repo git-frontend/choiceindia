@@ -104,6 +104,7 @@ const LazyTranscation = React.lazy(() => import('./components/Related-Party-Tran
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
 const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
+const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
 
 
 
@@ -520,6 +521,12 @@ function Routing() {
                         <Route exact path='/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyMutualFundDistributor />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/broking-media' element={
+                            <React.Suspense>
+                                < LazyBrokingMedia  />
                             </React.Suspense>
                         } />
 
