@@ -6,6 +6,10 @@ import CareerImage5 from '../../assets/images/choice-emitra/power-of-Investing-e
 import CareerImage6 from '../../assets/images/choice-emitra/Shares-jo-guna-ho-Sakte-hai-StockChoice.webp';
 import CareerImage7 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 
+import CareerImage8 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
+
+import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
+import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
 
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';
 import instagram from '../../assets/images/choice-emitra/instagram.svg';
@@ -19,7 +23,52 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function PartnerAssests() {
   const [rendercount, setRenderCount] = useState(() => false);
+  let downloadFile=(fn,file,name)=>{
+  
+    //let id=document.getElementById(file)
+    if(fn){
+      var a = document.createElement('a');
+a.href = fn;
+ a.download = name+((file!='CareerImage7' && file!='CareerImage8')?".png":".pdf");
+document.body.appendChild(a);
+a.click();
+document.body.removeChild(a);
+      // window.open(id.src,'_blank')
+      // console.log(id.src,"FILEE")
+    }else{
+      window.open(fn,'_blank')
+    }
+  }
 
+  
+  let shareLink=(fn,key,file,url)=> {
+    // if(file=='CareerImage7' ){
+    //   window.open(mutual)
+    // }else if(file=='CareerImage' ){
+    //   window.open(demat)
+    // }else{
+
+
+  //console.log("0f",key)
+  let id=document.getElementById(file)
+
+  if(fn){
+    let mapper = {
+      facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${location.origin +fn}`, isTextEncode: false, isURLEncode: false },
+      whatsapp: { url: `https://api.whatsapp.com/send?text=${location.origin +fn}`, isTextEncode: false, isURLEncode: false },
+      linkedin: { url: 'https://www.linkedin.com/shareArticle?mini=fals&url='+location.origin +fn, isTextEncode: true, isURLEncode: true },//+'&summary=$text'
+      twitter: { url: 'https://twitter.com/intent/tweet?url='+fn+'&text=$text', isTextEncode: false, isURLEncode: true }
+    }
+    let linkObject = mapper[key];
+    window.open(linkObject.url)
+
+  }
+    //}
+  
+
+    //console.log("linkObject",linkObject)
+  
+  }
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -67,7 +116,7 @@ function PartnerAssests() {
             <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={CareerImage6} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage6} id={'CareerImage6'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -76,10 +125,10 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
+                  <div><img src={download} className="" alt={"Download"} onClick={()=>{downloadFile(CareerImage6,'CareerImage6','शेयर जो 10 गुना हो सकते है!')}} width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}  onClick={()=>{shareLink(CareerImage6,'whatsapp','CareerImage6','शेयर जो 10 गुना हो सकते है!')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"} onClick={()=>{shareLink(CareerImage6,'facebook','CareerImage6','शेयर जो 10 गुना हो सकते है!')}} width="22" height="22" /></div>
+                 {/*  <div><img src={instagram} className="" alt={"Instagram"} onClick={()=>{shareLink(CareerImage6,'insta','CareerImage6','शेयर जो 10 गुना हो सकते है!')}} width="22" height="22" /></div> */}
                   </div>
                   </div>
                 </div>
@@ -87,7 +136,7 @@ function PartnerAssests() {
               <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={CareerImage5} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage5}  id={'CareerImage5'}  className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -96,10 +145,10 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
+                  <div><img src={download} className="" alt={"Download"} onClick={()=>{downloadFile(CareerImage5,'CareerImage5',' जल्दी निवेश करने के फायदे')}}  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}  onClick={()=>{shareLink(CareerImage5,'whatsapp','CareerImage5',' जल्दी निवेश करने के फायदे')}}  width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}  onClick={()=>{shareLink(CareerImage5,'facebook','CareerImage5',' जल्दी निवेश करने के फायदे')}} width="22" height="22" /></div>
+                {/*   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(CareerImage5,'insta','CareerImage5',' जल्दी निवेश करने के फायदे')}}  width="22" height="22" /></div> */}
                   </div>
                   </div>
                 </div>
@@ -107,7 +156,7 @@ function PartnerAssests() {
               <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={CareerImage4} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage4}  id={'CareerImage4'}  className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -116,10 +165,10 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
+                  <div><img src={download} className="" alt={"Download"}  onClick={()=>{downloadFile(CareerImage4,'CareerImage4','मेहंगाई से कैसे बचे?')}}  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}   onClick={()=>{shareLink(CareerImage4,'whatsapp','CareerImage4','मेहंगाई से कैसे बचे?')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}   onClick={()=>{shareLink(CareerImage4,'facebook','CareerImage4','मेहंगाई से कैसे बचे?')}} width="22" height="22" /></div>
+           {/*        <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage4,'insta','CareerImage4','मेहंगाई से कैसे बचे?')}} width="22" height="22" /></div> */}
                   </div>
                   </div>
                 </div>
@@ -130,7 +179,7 @@ function PartnerAssests() {
             <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={CareerImage3} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage3}   id={'CareerImage3'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -139,10 +188,10 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
+                  <div><img src={download} className="" alt={"Download"}   onClick={()=>{downloadFile(CareerImage3,'CareerImage3','फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट')} }  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={()=>{shareLink(CareerImage3,'whatsapp','CareerImage3','फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट')} }   width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"} onClick={()=>{shareLink(CareerImage3,'facebook','CareerImage3','फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट')} }  width="22" height="22" /></div>
+              {/*     <div><img src={instagram} className="" alt={"Instagram"} onClick={()=>{shareLink(CareerImage3,'insta','CareerImage3','फिक्स्ड डिपॉजिट Vs स्टॉक इन्व्हेस्टमेंट')} }  width="22" height="22" /></div> */}
                   </div>
                   </div>
                 </div>
@@ -150,7 +199,7 @@ function PartnerAssests() {
             <div className="col-md-4 mb3">
                 <div className="card">
                   <div>
-                    <LazyLoader src={CareerImage7} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage7} id={'CareerImage7'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -159,10 +208,10 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
+                  <div><img src={download} className="" alt={"Download"} onClick={()=>{downloadFile(mutual,'CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}}  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}  onClick={()=>{shareLink(mutual,'whatsapp','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}  onClick={()=>{shareLink(mutual,'facebook','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div>
+             {/*      <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(mutual,'insta','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div> */}
                   </div>
                   </div>
                 </div>
@@ -170,7 +219,7 @@ function PartnerAssests() {
               <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                  <LazyLoader src={CareerImage7} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                  <LazyLoader src={CareerImage8}  id={'CareerImage8'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -179,11 +228,11 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
-                  </div>
+                  <div><img src={download} className="" alt={"Download"}  onClick={()=>{downloadFile(demat,'CareerImage8','चॉइस के साथ डीमैट खाता कैसे खोले?')}} width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}  onClick={()=>{shareLink(demat,'whatsapp','CareerImage8','चॉइस के साथ डीमैट खाता कैसे खोले?')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}  onClick={()=>{shareLink(demat,'facebook','CareerImage8','चॉइस के साथ डीमैट खाता कैसे खोले?')}} width="22" height="22" /></div>
+{/*                   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(demat,'insta','CareerImage8','चॉइस के साथ डीमैट खाता कैसे खोले?')}} width="22" height="22" /></div>
+ */}                  </div>
                   </div>
                 </div>
               </div>
@@ -196,7 +245,7 @@ function PartnerAssests() {
             <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={NewsImage0} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={NewsImage0}  id={'NewsImage0'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -205,18 +254,18 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
-                  </div>
+                  <div><img src={download} className="" alt={"Download"}  onClick={()=>{downloadFile(NewsImage0,'NewsImage0','बाइक ख़रीदने का एसआईपी प्लान')}}  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}  onClick={()=>{shareLink(NewsImage0,'whatsapp','NewsImage0','बाइक ख़रीदने का एसआईपी प्लान')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}  onClick={()=>{shareLink(NewsImage0,'facebook','NewsImage0','बाइक ख़रीदने का एसआईपी प्लान')}} width="22" height="22" /></div>
+{/*                   <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(NewsImage0,'insta','NewsImage0','बाइक ख़रीदने का एसआईपी प्लान')}} width="22" height="22" /></div>
+ */}                  </div>
                   </div>
                 </div>
               </div>
               <div className="col-md-4 mb3">
                 <div className="card">
                   <div >
-                    <LazyLoader src={CareerImage2} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+                    <LazyLoader src={CareerImage2}  id={'CareerImage2'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
                   <div className="card-footer">
@@ -225,11 +274,11 @@ function PartnerAssests() {
                   </div>
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
-                  <div><img src={download} className="" alt={"Download"} width="22" height="22" /></div>
-                  <div><img src={whatsapp} className="" alt={"Whatsapp"} width="22" height="22" /></div>
-                  <div><img src={fb} className="" alt={"Facebook"} width="22" height="22" /></div>
-                  <div><img src={instagram} className="" alt={"Instagram"} width="22" height="22" /></div>
-                  </div>
+                  <div><img src={download} className="" alt={"Download"}  onClick={()=>{downloadFile(CareerImage2,'CareerImage2','1 करोड़ कैसे कमाए?')}}  width="22" height="22" /></div>
+                  <div><img src={whatsapp} className="" alt={"Whatsapp"}   onClick={()=>{shareLink(CareerImage2,'whatsapp','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+                  <div><img src={fb} className="" alt={"Facebook"}  onClick={()=>{shareLink(CareerImage2,'facebook','CareerImage2','1 करोड़ कैसे कमाए?')}}  width="22" height="22" /></div>
+{/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
                   </div>
                 </div>
               </div>
