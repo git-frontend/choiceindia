@@ -1,10 +1,10 @@
-import NewsImage0 from '../../assets/images/choice-emitra/Bike-Kharidne-ka-SIPplan-MFChoice.jpg';
-import CareerImage2 from '../../assets/images/choice-emitra/crore-kaise-kamayein-MFChoice.jpg';
-import CareerImage3 from '../../assets/images/choice-emitra/FD-vs-Stock-ChoiceStock.jpg';
-import CareerImage4 from '../../assets/images/choice-emitra/Mehengai-se-kaise-bachein-StockChoice.jpg';
-import CareerImage5 from '../../assets/images/choice-emitra/power-of-Investing-early-MFChoice.jpg';
-import CareerImage6 from '../../assets/images/choice-emitra/Shares-jo-guna-ho-Sakte-hai-StockChoice.jpg';
-import CareerImage7 from '../../assets/images/choice-emitra/Pdf-Icon-01.png';
+import NewsImage0 from '../../assets/images/choice-emitra/Bike-Kharidne-ka-SIPplan-MFChoice.webp';
+import CareerImage2 from '../../assets/images/choice-emitra/crore-kaise-kamayein-MFChoice.webp';
+import CareerImage3 from '../../assets/images/choice-emitra/FD-vs-Stock-ChoiceStock.webp';
+import CareerImage4 from '../../assets/images/choice-emitra/Mehengai-se-kaise-bachein-StockChoice.webp';
+import CareerImage5 from '../../assets/images/choice-emitra/power-of-Investing-early-MFChoice.webp';
+import CareerImage6 from '../../assets/images/choice-emitra/Shares-jo-guna-ho-Sakte-hai-StockChoice.webp';
+import CareerImage7 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 
 
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';
