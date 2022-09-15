@@ -47,7 +47,7 @@ function LongTermResearch() {
 
   // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
   const [tempid, setTempId] = useState({ 'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
-
+  // const [ResearchTitle, setResearchTitle] = useState('');
   const navigate = useNavigate();
 
   function loadResearch(id) {
@@ -160,7 +160,9 @@ function LongTermResearch() {
             <button
               className={count === 1 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(1); setTempId(preValue => {
+                setcount(1); 
+                // setResearchTitle('fundamental');
+                setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'economic-analysis',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
@@ -174,7 +176,9 @@ function LongTermResearch() {
             <button
               className={count === 2 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(2); setTempId(preValue => {
+                setcount(2);
+                // setResearchTitle('fundamental');
+                setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'company-fundamentals',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
@@ -188,7 +192,9 @@ function LongTermResearch() {
             <button
               className={count === 3 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(3); setTempId(preValue => {
+                setcount(3);
+                // setResearchTitle('fundamental');
+                setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'industry-analysis',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
@@ -202,12 +208,13 @@ function LongTermResearch() {
               className={count === 4 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
                 setcount(4);
-                // setTempId(preValue => {
-                //   return {
-                //     ...preValue, 'name': 'ipo-nfo-analysis',
-                //     'id': '0'
-                //   }
-                // }); 
+                setTempId(preValue => {
+                  return {
+                    ...preValue, 'name': 'ipo-nfo-analysis',
+                    "id": '0'
+                  }
+                }); 
+                // setResearchTitle('ipo');
                 lpoSearch()
               }}
             >

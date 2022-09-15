@@ -22,6 +22,8 @@ function ResearchDetailed() {
   const { catid } = useParams();
   const search = useLocation().search;
 
+  console.log('www',window.location.href.search('ipo-nfo-analysis'));
+  const [checkIPO, setCheckIPO] = useState('');
   /**report category id */
   const name = new URLSearchParams(search).get('id');
     // console.log('NNNNN',new URLSearchParams(search).get('id'));
@@ -33,7 +35,8 @@ function ResearchDetailed() {
   function getSingleResearchDetail(id){
     
     //console.log('SingleResearch',id);
-    ResearchService.getSingleResearchDetail(id).then(
+    console.log('III',checkIPO)
+    ResearchService.getSingleResearchDetail(id,checkIPO).then(
       res => {
         if(res){
           if(res.response.data){
@@ -47,8 +50,17 @@ function ResearchDetailed() {
   }
 
   useEffect(() => {
-    getSingleResearchDetail(id? id: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
-  },[id])
+    if(window.location.href.search('ipo-nfo-analysis') != -1){
+      setCheckIPO('ipo');
+    }else{
+      setCheckIPO('fundamental');
+    }
+    console.log('Called',checkIPO)
+    if(id && checkIPO){
+      getSingleResearchDetail(id? id: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+    }
+    
+  },[checkIPO,id])
 
   useEffect(() => {
 

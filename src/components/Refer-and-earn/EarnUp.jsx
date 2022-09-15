@@ -26,7 +26,7 @@ function EarnUp() {
                           <div className="top-foot-sec">
                               <div className="foot-sec-left">
                                   <LazyLoader src={Speaker} alt={"Earn Demat Account Referral Incentive"} className={"img-fluid"} width={"80"} height={"77"} />
-                                      <h3>Earn up to Rs.500 incentive <span>per referral now!</span> </h3>
+                                      <h3>Earn up to Rs.100 incentive <span>per referral now!</span> </h3>
                             </div>
                                   <div className="foot-sec-right">
                                       <Link to='/refer-and-earn' onClick={() => { chapterScroll('refer&earn') }}  className="join-btn cursor-pointer">Join Now</Link>

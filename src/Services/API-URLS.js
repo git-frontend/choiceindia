@@ -565,9 +565,9 @@ export class API_URLS {
         return this.JiffyBaseURL + this.successURL;
     }
 
-    getresearchDetailURL(uuid) {
+    getresearchDetailURL(uuid,report_category) {
 
-        return this.researchURL + `api/fundamental/${uuid}`;
+        return this.researchURL + `api/${report_category}/${uuid}`;
     }
 
     getchoiceIndiaNewLeadURL() {
