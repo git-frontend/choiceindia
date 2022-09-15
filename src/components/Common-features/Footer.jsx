@@ -236,7 +236,7 @@ useEffect(()=>{
                 <div className="col-md-12">
                   <div className="article">
                     <p>&copy; Choiceinternational. CIN - L67190MH1993PLC071117.<br />
-                    SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ) | ( ICEX - 1274 ). <br />
+                    SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ). <br />
                     </p>
                     <p>
                     Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895.<br />
