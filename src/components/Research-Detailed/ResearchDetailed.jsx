@@ -22,7 +22,7 @@ function ResearchDetailed() {
   const { catid } = useParams();
   const search = useLocation().search;
 
-  console.log('www',window.location.href.search('ipo-nfo-analysis'));
+  // console.log('www',window.location.href.search('ipo-nfo-analysis'));
   const [checkIPO, setCheckIPO] = useState('');
   /**report category id */
   const name = new URLSearchParams(search).get('id');
@@ -35,7 +35,7 @@ function ResearchDetailed() {
   function getSingleResearchDetail(id){
     
     //console.log('SingleResearch',id);
-    console.log('III',checkIPO)
+    // console.log('III',checkIPO)
     ResearchService.getSingleResearchDetail(id,checkIPO).then(
       res => {
         if(res){
@@ -55,7 +55,7 @@ function ResearchDetailed() {
     }else{
       setCheckIPO('fundamental');
     }
-    console.log('Called',checkIPO)
+    // console.log('Called',checkIPO)
     if(id && checkIPO){
       getSingleResearchDetail(id? id: '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
     }

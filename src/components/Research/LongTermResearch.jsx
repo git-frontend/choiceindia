@@ -97,7 +97,7 @@ function LongTermResearch() {
   };
 
   function getSingleDetail(id) {
-    console.log("goto signal", id)
+    // console.log("goto signal", id)
     // console.log('IIIII',id);
     // navigate(`/research-new/${id}/${tempid}`);
     navigate({
