@@ -103,19 +103,20 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 
 
 
 function Routing() {
 
-
+    
 
     return (
         <>
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Header /> : <CampaignHeader />}
+                { (window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1)  ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -516,10 +517,16 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+                        <Route exact path='/partner-assests/emitra' element={
+                            <React.Suspense>
+                                < LazyPartnerAssests />
+                            </React.Suspense>
+                        } />
+
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") && window.location.pathname.indexOf("/partner-assests/emitra") ) === -1 ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )
