@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
+// import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
 import AnnualReportService from "../../Services/AnnualReportService";
 import Navbar from "../Common-features/Navbar";
 
