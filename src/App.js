@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import '../src/assets/css/common.scss'
 import Body from './components/Body/Body';
 import meta_tags from './Data/MetaTags';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+
 // import {
 //   useLocation,
 // } from 'react-router-dom';
@@ -57,11 +59,13 @@ setTimeout(()=>{
   // document.getElementsByTagName("META")[2].content='Sample Description';
   return (
     <div className="App">
+      <GoogleReCaptchaProvider
+        reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+        <Body>
 
-      <Body>
-        
-      </Body>
-      
+        </Body>
+      </GoogleReCaptchaProvider>
+
     </div>
   );
 }

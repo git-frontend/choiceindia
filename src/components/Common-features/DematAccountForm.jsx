@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -16,6 +16,7 @@ import Thankyoupopup from './Thanku-popup.jsx';
 import infoimg from '../../assets/images/Info.svg';
 import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function DematAccountForm(props) {
     // console.log('DDDDDDDD', props.page);
@@ -61,6 +62,8 @@ function DematAccountForm(props) {
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
     const [IsIssue, setIsIssue] = useState('');
+
+    const { executeRecaptcha } = useGoogleReCaptcha();
     
 
     function isMobileDevice() {
@@ -180,7 +183,8 @@ function DematAccountForm(props) {
                 // console.log('Addd lead page');
                 sendNewLeadOTP();
             } else {
-                sendOTP();
+                // sendOTP();
+                handleReCaptchaVerify();
             }
             // sendOTP();
         }
@@ -522,6 +526,24 @@ function DematAccountForm(props) {
         setOTPInfoPopup(false);
     }
 
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            console.log('Execute recaptcha not yet available');
+            return;
+        }
+
+        const token = await executeRecaptcha('yourAction');
+        // Do whatever you want with the token
+        console.log(token,"TOKEN CAPTCHA");
+        sendOTP();
+    }, [executeRecaptcha]);
+
+    // You can use useEffect to trigger the verification as soon as the component being loaded
+    useEffect(() => {
+        handleReCaptchaVerify();
+    }, [handleReCaptchaVerify]);
+
     return (
         <>
             {
@@ -564,6 +586,7 @@ function DematAccountForm(props) {
 
                         <div className="sub-formgrp mt-5 mb-0">
                             {
+                                // onClick={handleReCaptchaVerify}
                                 <Button variant="primary"
                                     type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                     {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn')}</Button>
