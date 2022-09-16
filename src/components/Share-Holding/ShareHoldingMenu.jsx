@@ -6,6 +6,8 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import { OverlayTrigger } from "react-bootstrap";
+import noDataimg from '../../assets/images/no-data.webp';
+
 function ShareHoldingMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
@@ -53,10 +55,10 @@ function ShareHoldingMenu() {
                     </div>
                     <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
-
-
                             <h3 className="head">Financial Year 2021 - 22</h3>
-                            <div className="subtext">
+                            {
+                                data?
+                                <div className="subtext">
                                 {
                                     (data || []).map((res,i) => {
                                         return (
@@ -86,7 +88,12 @@ function ShareHoldingMenu() {
                                    </div> */}
 
 
+                            </div>: 
+                              <div className="text-center">
+                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
+                            }
+                           
 
 
 

@@ -10,6 +10,7 @@ import axios from "axios";
 import LazyLoader from '../Common-features/LazyLoader';
 import { API_URLS } from "../../Services/API-URLS";
 import { Link } from "react-router-dom";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function TrackRecord() {
   const [research, setResearch] = useState([]);
@@ -100,7 +101,9 @@ useEffect(() => {
           <div className="row">
             <div className="col-md-12">
               <h2 className="title-first">our track record says it all</h2>
-              <div className="track-order-list">
+              {
+                (research && research.length)?
+                <div className="track-order-list">
 
 
 
@@ -134,7 +137,12 @@ useEffect(() => {
                 }
                 
            
-              </div>
+              </div>:
+                  <div className="text-center">
+                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                  </div>
+              }
+             
             </div>
           </div>
           <div className="row">

@@ -12,7 +12,7 @@ import ChoiceLTP from "../Common-features/ChoiceLTP";
 import{ useLocation
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-
+import noDataimg from '../../assets/images/no-data.webp';
 
 function FinancialInfo() {
 
