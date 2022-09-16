@@ -4,6 +4,7 @@ import Client from '../../assets/images/refer-earn/open-demat-account-for-refer-
 import Incentive from '../../assets/images/refer-earn/receive-referral-incentive.webp';
 import Generate from '../../assets/images/refer-earn/generate-demat-account-refer-and-earn-link.webp';
 import Register from '../../assets/images/refer-earn/share-demat-account-referral-link.webp';
+import NewImg from '../../assets/images/receive-referral-incentive.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function HowChoice() {
@@ -52,7 +53,7 @@ function HowChoice() {
                                         4
                                     </span>
                                     <div className="step-cont">
-                                        <LazyLoader src={Incentive} alt={"Receive Referral Incentive"} className={"img-fluid"} width={"201"} height={"174"} />
+                                        <LazyLoader src={NewImg} alt={"Receive Referral Incentive"} className={"img-fluid"} width={"201"} height={"174"} />
                                         <h4>Receive an Incentive <br />Per Referral</h4>
                                     </div>
                                 </li>

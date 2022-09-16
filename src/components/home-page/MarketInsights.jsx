@@ -169,7 +169,7 @@ function MarketInsights() {
                         fabal.length ?
                             <div className="row">
                                 <div className="col-md-12 mt-5 d-flex justify-content-center">
-                                    <Link to="/research-listing-new" className="btn-bg">
+                                    <Link to="/research-listing" className="btn-bg">
                                         Read More
                                     </Link>
                                 </div>
