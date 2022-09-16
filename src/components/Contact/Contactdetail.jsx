@@ -108,7 +108,8 @@ function Contactdetail() {
                         <div className="text-right address" key={data[MapNumber].id}>
                            <p className="maintitle">{data[MapNumber].city}</p>
                            {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
-                           <p className="subtext">{data[MapNumber].support}</p>
+                           {/* <p className="subtext">{data[MapNumber].support}</p> */}
+                           <p className="subtext">support@choiceindia.com</p>
                            <p className="subtext">{data[MapNumber].address1}<br />
                               {data[MapNumber].address2} <br />{data[MapNumber].address3}
                            </p>
