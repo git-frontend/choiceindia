@@ -77,11 +77,11 @@ function ChoiceLTP() {
         })
         .then(res => {
 
-          let keyInfo = res.Response;
+          let keyInfo = res.Response||{};
           let newB5 = {};
-          newB5['MarketLot'] = keyInfo.MarketLot;
-          newB5['PrevClose'] = keyInfo.PrevClose;
-          newB5["MktCap"] = keyInfo.MktCap;
+          newB5['MarketLot'] = keyInfo.MarketLot||0;
+          newB5['PrevClose'] = keyInfo.PrevClose||0;
+          newB5["MktCap"] = keyInfo.MktCap||0;
           newB5['LTP'] = (keyInfo.LTP == 0) ? (newB5['PrevClose']) : keyInfo.LTP; // if LTP == 0 then show prevClose (10/05/2021)
           let string = '|1=' + ele.segment + '|74=' + 0 + '|73=' + 0 + '|7=' + ele.token + '|8=' + keyInfo.LTP + '|9=' + keyInfo.LTQ + '|399=' + keyInfo.PriceDivisor + '|75=' + keyInfo.OpenPrice + '|76=' + keyInfo.ClosePrice + '|77=' + keyInfo.HighPrice + '|78=' + keyInfo.LowPrice + '|93=' + keyInfo.LifeTimeHigh + '|94=' + keyInfo.LifeTimeLow + '|88=' + keyInfo.OpenInterest + '|80=' + keyInfo.ATP + '|79=' + keyInfo.Volume + '|';
           //  setB5Data(newB5)
