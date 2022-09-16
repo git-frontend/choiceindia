@@ -2,6 +2,7 @@
 import Image1 from '../../assets/images/sumeet-bagadia/sumeet-bagadia.webp';
 import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from '../Common-features/LazyLoader';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function BannerTop() {
 
@@ -25,7 +26,9 @@ function BannerTop() {
               </div>
             </div>
             <div className="col-xl-4 col-md-6 d-flex justify-content-end">
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
               <DematAccountForm />
+            </GoogleReCaptchaProvider>
             </div>
           </div>
 

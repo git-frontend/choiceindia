@@ -62,6 +62,7 @@ function DematAccountForm(props) {
     const [OTPInfoPopup, setOTPInfoPopup] = useState(false);
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
     const [IsIssue, setIsIssue] = useState('');
+    const [captchaToken, setCaptchaToken] = useState('');
 
     const { executeRecaptcha } = useGoogleReCaptcha();
     
@@ -185,6 +186,7 @@ function DematAccountForm(props) {
             } else {
                 // sendOTP();
                 handleReCaptchaVerify();
+                console.log(mobileNumber,"mobileNumber handleSendOTP");
             }
             // sendOTP();
         }
@@ -276,6 +278,7 @@ function DematAccountForm(props) {
     }
 
     function sendOTP() {
+        console.log(mobileNumber,"sendOTP");
         showLoader('sendOTPLoader');
         let request = {
             "whatsapp_consent":true,
@@ -532,17 +535,23 @@ function DematAccountForm(props) {
             console.log('Execute recaptcha not yet available');
             return;
         }
-
-        const token = await executeRecaptcha('yourAction');
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('sendOTP');
         // Do whatever you want with the token
-        console.log(token,"TOKEN CAPTCHA");
-        sendOTP();
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            alert("Token : "+token);
+        }
+        hideLoader('sendOTPLoader');
     }, [executeRecaptcha]);
 
-    // You can use useEffect to trigger the verification as soon as the component being loaded
     useEffect(() => {
-        handleReCaptchaVerify();
-    }, [handleReCaptchaVerify]);
+        console.log(captchaToken, "captchaToken");
+        if (captchaToken) {
+            sendOTP();
+        }
+    }, [captchaToken]);
 
     return (
         <>

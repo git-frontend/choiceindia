@@ -7,6 +7,7 @@ import Image4 from '../../assets/images/open-demat-account/free-research-advisor
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const OpenFreeAccountBanner = () => {
     return (
@@ -82,7 +83,9 @@ const OpenFreeAccountBanner = () => {
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
-                                <DematAccountForm language="marathi"/>
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <DematAccountForm language="marathi"/>
+                                </GoogleReCaptchaProvider>
                             </div>
 
                         </div>

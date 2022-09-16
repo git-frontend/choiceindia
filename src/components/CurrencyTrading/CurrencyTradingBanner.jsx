@@ -7,6 +7,7 @@ import Image4 from '../../assets/images/open-demat-account/free-research-advisor
 import Image5 from '../../assets/images/open-demat-account/demat-account-without-annual-charges.svg';
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const CurrencyTradingBanner = () => {
     return (
@@ -85,7 +86,9 @@ const CurrencyTradingBanner = () => {
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
-                                <DematAccountForm />
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <DematAccountForm />
+                                </GoogleReCaptchaProvider>
                             </div>
 
                         </div>

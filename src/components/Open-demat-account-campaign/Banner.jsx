@@ -7,6 +7,7 @@ import icon3 from '../../assets/images/ipo/icon3.svg'
 import LazyLoader from '../Common-features/LazyLoader';
 import Equity from "../../Data/Equity";
 import DematAccountForm from '../Common-features/DematAccountForm'
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function OpenDematAccount() {
     const [selected, setSelected] = useState(0);
@@ -32,7 +33,9 @@ function OpenDematAccount() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="campaignForm">
-                                <DematAccountForm />
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <DematAccountForm />
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>
