@@ -1,11 +1,11 @@
 import "../Investors-info/investorsinfo.scss";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
-import { subscribeOnStream, unsubscribeFromStream } from './../../Services/socketData.js';
+import { subscribeOnStream, unsubscribeFromStream,subscribeMultitouchline,unSubscribeMultitouchline } from './../../Services/socketData.js';
 import React, { useEffect, useState } from "react";
 import { API_URLS } from "../../Services/API-URLS";
 function ChoiceLTP() {
 
-  //const [ b5Data, setB5Data] = useState({});
+ // const [ b5Data, setB5Data] = useState({});
   const [companyData, setCompanyData] = useState({ 8866: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 }, 531358: { change: 0, changePercent: 0, color: 'green', LTP_DATA: 0 } });
   /**To Execute one timeonly */
   const [trigger, setTrigger] = useState(false)
@@ -45,7 +45,7 @@ function ChoiceLTP() {
       .then(res => {
         //  console.log("res",res)
         if (res.Status == 'Success') {
-          getKeyInfo(res.Response, [{ segment: 1, token: 8866, key: 'nse' }, { segment: 3, token: 531358, key: 'bse' }])
+          getKeyInfo(res.Response, [{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }])//{ SegmentId: 1, Token: 8866, key: 'nse' }, { SegmentId: 3, Token: 531358, key: 'bse' }
         }
 
       })
@@ -58,7 +58,7 @@ function ChoiceLTP() {
  */
   function getKeyInfo(session, scrips) {
     scrips.forEach(ele => {
-      let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.token, "SegmentId": ele.segment };
+      let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.Token, "SegmentId": ele.SegmentId };
       fetch('https://api.jiffy.in/api/cm/ProfileMkt/KeyInfo/', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
@@ -83,19 +83,19 @@ function ChoiceLTP() {
           newB5['PrevClose'] = keyInfo.PrevClose||0;
           newB5["MktCap"] = keyInfo.MktCap||0;
           newB5['LTP'] = (keyInfo.LTP == 0) ? (newB5['PrevClose']) : keyInfo.LTP; // if LTP == 0 then show prevClose (10/05/2021)
-          let string = '|1=' + ele.segment + '|74=' + 0 + '|73=' + 0 + '|7=' + ele.token + '|8=' + keyInfo.LTP + '|9=' + keyInfo.LTQ + '|399=' + keyInfo.PriceDivisor + '|75=' + keyInfo.OpenPrice + '|76=' + keyInfo.ClosePrice + '|77=' + keyInfo.HighPrice + '|78=' + keyInfo.LowPrice + '|93=' + keyInfo.LifeTimeHigh + '|94=' + keyInfo.LifeTimeLow + '|88=' + keyInfo.OpenInterest + '|80=' + keyInfo.ATP + '|79=' + keyInfo.Volume + '|';
-          //  setB5Data(newB5)
-          new6[ele.token]=newB5
+          let string = '|1=' + ele.SegmentId + '|74=' + 0 + '|73=' + 0 + '|7=' + ele.Token + '|8=' + keyInfo.LTP + '|9=' + keyInfo.LTQ + '|399=' + keyInfo.PriceDivisor + '|75=' + keyInfo.OpenPrice + '|76=' + keyInfo.ClosePrice + '|77=' + keyInfo.HighPrice + '|78=' + keyInfo.LowPrice + '|93=' + keyInfo.LifeTimeHigh + '|94=' + keyInfo.LifeTimeLow + '|88=' + keyInfo.OpenInterest + '|80=' + keyInfo.ATP + '|79=' + keyInfo.Volume + '|';
+         //  setB5Data(newB5)
+          new6[ele.Token]=newB5
           setTimeout(() => {
-            processB5String(string, newB5, ele.token)
-            subscribeOnStream(ele.segment, ele.token, onRealtimeCallback, 'guest', session, false,)
+            processB5String(string, newB5, ele.Token)
+          
           }, 1000)
 
 
 
         })
     })
-
+    subscribeMultitouchline(scrips, onRealtimeCallback,session)
 
   }
   /**
@@ -117,8 +117,9 @@ function ChoiceLTP() {
     let splitData = pipeToObject(b5String);
     if ((splitData[0]["7"]) == '8866' || (splitData[0]["7"]) == '531358') {
 
-      // console.log(newB5," datata ",b5Data)
-      let bestData = newB5 || new6[key]
+   
+      let bestData = newB5 || new6[key||splitData[0]["7"]]  || {}
+     // console.log(" datata ",bestData)
       let indicesData = {}
       indicesData['PrevClose'] = bestData.PrevClose || 0;
 
