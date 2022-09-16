@@ -157,24 +157,24 @@ export class API_URLS {
     verifyOTPURL = 'verify-otp';
   /** pdf API */
    
-  newsURL='items/news?filter[status][_eq]=published';
-  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description';
-  noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues';
-  corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies';
-  corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee';
-  shareholdingURL='items/share_holding_pattern?filter[status][_eq]=published';
-  transactionURL='items/related_party_transaction?filter[status][_eq]=Published';
-  closureURL='items/closure_trading_window?filter[status][_eq]=Published';
-  investorURL='items/investor_presentation?filter[status][_eq]=Published';
-  votingresultURL='items/voting_Results?filter[status][_eq]=published';
-  financeURL='items/financial_info?filter[status][_eq]=published';
-  annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1';
-  annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2';
-  factsheetURL='items/fact_sheet?filter[status][_eq]=published';
-  investorawareURL ='items/investor_awareness';
-  cebplURL='items/cebpl_policies'
-  filedownloadURL ='api/get-download-listing';
-  investorStockURL ='items/investor_charter?filter[type][_eq]'
+  newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
+  noticeURL ='items/notices?filter[status][_eq]=published&filter[type][_eq]=description&limit=1000&sort[]=-id';
+  noticeRightURL = 'items/notices?filter[status][_eq]=published&filter[type][_eq]=right_issues&limit=1000&sort[]=-id';
+  corporateURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=policies&limit=1000&sort[]=-id';
+  corporatecommiteeURL='items/corporate_governance?filter[status][_eq]=published&filter[title][_eq]=committee&limit=1000&sort[]=-id';
+  shareholdingURL='items/share_holding_pattern?filter[status][_eq]=published&limit=1000&sort[]=-id';
+  transactionURL='items/related_party_transaction?filter[status][_eq]=Published&limit=1000&sort[]=-id';
+  closureURL='items/closure_trading_window?filter[status][_eq]=Published&limit=1000&sort[]=-id';
+  investorURL='items/investor_presentation?filter[status][_eq]=Published&limit=1000&sort[]=-id';
+  votingresultURL='items/voting_Results?filter[status][_eq]=published&limit=1000&sort[]=-id';
+  financeURL='items/financial_info?filter[status][_eq]=published&limit=1000&sort[]=-id';
+  annualURL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_1&limit=1000&sort[]=-id';
+  annual2URL='items/annual_report?filter[status][_eq]=published&filter[tital][_eq]=description_2&limit=1000&sort[]=-id';
+  factsheetURL='items/fact_sheet?filter[status][_eq]=published&limit=1000&sort[]=-id';
+  investorawareURL ='items/investor_awareness?limit=1000&sort[]=-id';
+  cebplURL='items/cebpl_policies?limit=1000&sort[]=-id'
+  filedownloadURL ='api/get-download-listing?limit=1000&sort[]=-id';
+  investorStockURL ='items/investor_charter?filter[type][_eq]&limit=1000&sort[]=-id'
 
 
 

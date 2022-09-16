@@ -229,7 +229,7 @@ function CQuant() {
      * @returns 
      */
     let getFormattedResearch = (element) => {
-        let call_type_buy = element.HLType ? (element.HLType == 'High' ? 'BUY' : element.HLType == 'sell' ? 'SELL' : '') : (element.Side ? ((['B', 'BUY', 'Buy'].indexOf(element.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(element.Side) > -1 ? 'SELL' : '') : '')
+        let call_type_buy = element.HLType ? (element.HLType == 'High' ? 'BUY' : (element.HLType == 'sell'||element.HLType == 'Low') ? 'SELL' : '') : (element.Side ? ((['B', 'BUY', 'Buy'].indexOf(element.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(element.Side) > -1 ? 'SELL' : '') : '')
         let signalConfigPre = {
             1: { slug: 'active', label: 'Active', className: 'balance', iStatusType: 1 },
             2: { slug: 'target1', label: 'Achieved', className: 'grn-txt', iStatusType: 2 },
@@ -351,7 +351,7 @@ function CQuant() {
             Start: 0,
             startDate: utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
             status: '',
-            type: 'CQuant',
+            type: 'EQ',
             UserId: 'guest',
             search: ''
         }
