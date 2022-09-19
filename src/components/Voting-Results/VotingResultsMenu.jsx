@@ -7,6 +7,8 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import VotingResultService from "../../Services/VotingResultService";
 import utils from "../../Services/utils";
+import noDataimg from '../../assets/images/no-data.webp';
+
 function VotingResultsMenu() {
 
     const [data, setData] = useState();
@@ -60,21 +62,24 @@ function VotingResultsMenu() {
                                 <h3 className="head">Voting Result of the General Meeting</h3>
                                 <h3 className="head"></h3>
                                 </div>
-                                <div className="subtext">
-                                   {
-                                    (data||[]).map((res,i)=>{
-                                        return(
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                   <div>{utils.formatDate(new Date(res.Data_of_General_meet),"dd-MM-yyyy")}</div>
-                                   <div>{res.Voting_Results_of_general_meet}</div>
-                                   <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.Views)}} className="cursor-pointer"/></div>
-                                   </div>
+                            
+                            {
+                                (data && data.length)? 
+                                    <div className="subtext">
+                                        {
+                                            (data || []).map((res, i) => {
+                                                return (
+                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                        <div>{utils.formatDate(new Date(res.Data_of_General_meet), "dd-MM-yyyy")}</div>
+                                                        <div>{res.Voting_Results_of_general_meet}</div>
+                                                        <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.Views) }} className="cursor-pointer" /></div>
+                                                    </div>
 
-                                        )
-                                    })
-                                   }
+                                                )
+                                            })
+                                        }
 
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>September 30, 2020 </div>
                                    <div>Voting Result</div>
                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
@@ -90,9 +95,16 @@ function VotingResultsMenu() {
                                    <div>Voting Result</div>
                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
                                    </div> */}
-                                 
-                                  
-                                </div>
+
+
+                                    </div> :
+                                <div className="text-center">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div> 
+                            }
+                                    
+                                
+                                
                            
                            
 

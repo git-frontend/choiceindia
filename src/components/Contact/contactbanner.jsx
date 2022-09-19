@@ -59,6 +59,8 @@ function Contactbanner() {
 
 
   }
+
+ 
   
 
   // const [main, setMain] = useState(true);
@@ -142,8 +144,8 @@ function Contactbanner() {
                 </Form.Group>
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Mobile Number  <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="tel" pattern="\d*"   maxLength={10} className="formcontrol"{...register('mobile')} />
+                  <Form.Label className="formlabel"> Mobile Number <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="tel" pattern="\d*"   maxLength={10} className="formcontrol" {...register('mobile')} />
                   <span className="text-danger"> {errors?.mobile?.message} </span>
                 </Form.Group>
               </div>

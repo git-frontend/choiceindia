@@ -4,6 +4,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import { Routes, Route, useNavigate } from 'react-router-dom';
+import noDataimg from '../../assets/images/no-data.webp';
 
 function MarketInsights() {
 
@@ -95,48 +96,51 @@ function MarketInsights() {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-12">
-                            {/* {
-                                view && !view.matches ?
-                                    <Slider {...settings} className="market-insights-list market-insights">
 
-                                        {
-                                            fabal.slice(0, 4).map((response, index) => {
-                                                let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
+                    {
+                        fabal.length?
+                                <div className="col-md-12">
+                                    {/* {
+                            view && !view.matches ?
+                                <Slider {...settings} className="market-insights-list market-insights">
 
-                                                return (
+                                    {
+                                        fabal.slice(0, 4).map((response, index) => {
+                                            let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
 
-                                                    <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
-                                                        <div className="insights-item-cont">
-                                                            <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} /> */}
-                                                            {/* <img src={response.feature_image} alt="" /> */}
-                                                            {/* <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
-                                                        </div>
-                                                        <div className="item-cont-descr"> */}
-                                                            {/* <p>{response.report_subtype_name}</p> */}
-                                                            {/* <p>{response.plain_description}</p>
-                                                        </div>
+                                            return (
+
+                                                <div key={response.uuid} className={classNameNm} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                                    <div className="insights-item-cont">
+                                                        <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} /> */}
+                                    {/* <img src={response.feature_image} alt="" /> */}
+                                    {/* <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                     </div>
+                                                    <div className="item-cont-descr"> */}
+                                    {/* <p>{response.report_subtype_name}</p> */}
+                                    {/* <p>{response.plain_description}</p>
+                                                    </div>
+                                                </div>
 
-                                                )
+                                            )
 
-                                            })
-                                        }
-                                    </Slider>
-                                    : */}
+                                        })
+                                    }
+                                </Slider>
+                                : */}
                                     <div className="market-insights-list">
 
 
                                         {
-                                            (fabal||[]).slice(0, 4).map((response, index) => {
+                                            (fabal || []).slice(0, 4).map((response, index) => {
                                                 let classNameNm = "insights-list-item insights-list " + ((index === selectedId) ? 'insights-list-active' : '')
-                                                
+
 
                                                 return (
 
-                                                    <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.uuid ,response.report_subtype_uuid)}} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
+                                                    <div key={response.uuid} className={classNameNm} onClick={() => { marketinsightDetail(response.uuid, response.report_subtype_uuid) }} onMouseOver={() => setSelectedId(index)} onMouseLeave={() => setSelectedId(0)}  >
                                                         <div className="insights-item-cont cursor-pointer" >
-                                                     <LazyLoader  src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
+                                                            <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                             {/* <img src={response.feature_image} alt="" /> */}
                                                             <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
                                                         </div>
@@ -151,17 +155,26 @@ function MarketInsights() {
                                             })
                                         }
                                     </div>
-                            {/* } */}
+                                    {/* } */}
 
-                        </div>
+                                </div> :
+                                <div className="text-center">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>
+                    }
+
                     </div>
-                    <div className="row">
-                        <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <Link to="/research-listing" className="btn-bg">
-                                Read More
-                            </Link>
-                        </div>
-                    </div>
+
+                    {
+                        fabal.length ?
+                            <div className="row">
+                                <div className="col-md-12 mt-5 d-flex justify-content-center">
+                                    <Link to="/research-listing" className="btn-bg">
+                                        Read More
+                                    </Link>
+                                </div>
+                            </div> : ''
+                    }
                 </div>
             </section>
 

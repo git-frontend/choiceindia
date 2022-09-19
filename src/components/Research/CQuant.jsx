@@ -4,6 +4,7 @@ import { API_URLS } from "../../Services/API-URLS";
 import rest from '../../Services/rest'
 import { subscribeOnStream, subscribeMultitouchline } from "../../Services/socketData";
 import utils from "../../Services/utils";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function CQuant() {
     /**Set Research Report Data */
@@ -228,7 +229,7 @@ function CQuant() {
      * @returns 
      */
     let getFormattedResearch = (element) => {
-        let call_type_buy = element.HLType ? (element.HLType == 'High' ? 'BUY' : element.HLType == 'sell' ? 'SELL' : '') : (element.Side ? ((['B', 'BUY', 'Buy'].indexOf(element.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(element.Side) > -1 ? 'SELL' : '') : '')
+        let call_type_buy = element.HLType ? (element.HLType == 'High' ? 'BUY' : (element.HLType == 'sell'||element.HLType == 'Low') ? 'SELL' : '') : (element.Side ? ((['B', 'BUY', 'Buy'].indexOf(element.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(element.Side) > -1 ? 'SELL' : '') : '')
         let signalConfigPre = {
             1: { slug: 'active', label: 'Active', className: 'balance', iStatusType: 1 },
             2: { slug: 'target1', label: 'Achieved', className: 'grn-txt', iStatusType: 2 },
@@ -349,8 +350,8 @@ function CQuant() {
             SessionId: session,
             Start: 0,
             startDate: utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-            status: '',
-            type: 'CQuant',
+            status: 'T1',
+            type: 'EQ',
             UserId: 'guest',
             search: ''
         }
@@ -408,7 +409,11 @@ function CQuant() {
             </div>
 
 
-            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div><h1 className="text-center">No Data Found</h1></div> : ''}
+            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
+                <div className="text-center">
+                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                </div>
+            </div> : ''}
             {showLoader ? <div className="loaderB mx-auto"></div> : <div className="cquant-tab-cont">
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
@@ -417,7 +422,7 @@ function CQuant() {
                                 <div className="itm-top-ttl">
                                     <div className="d-flex align-self-end">
                                         <h3 className="ttl-mn">{report?.scrip_name} <small>{report?.segmentName}</small></h3>
-                                        <h4 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h4>
+                                        <h3 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h3>
                                         {/* <h4 className="ttl-sm-nw grn-txt">Active</h4> */}
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>

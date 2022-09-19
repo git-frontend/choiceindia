@@ -4,7 +4,7 @@ import Navbar from "../Common-features/Navbar";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-
+import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
@@ -71,7 +71,8 @@ function AnnualReportMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    {
+                        (data && data.length)? <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
                             <div className="d-flex justify-content-between">
@@ -126,8 +127,15 @@ function AnnualReportMenu() {
 
 
 
-                    </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    </div>: 
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+                    }
+                    
+                    {
+                        (list && list.length)? 
+                        <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
                             <div className="d-flex justify-content-between">
@@ -173,7 +181,12 @@ function AnnualReportMenu() {
 
 
 
-                    </div>
+                    </div>:
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+                    }
+                    
 
                 </div>
             </section>
