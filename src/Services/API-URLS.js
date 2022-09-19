@@ -1,11 +1,11 @@
 /**Environment Variable */
-const environment = true ;
+const environment = false ;
 
 
 /**URL Config */
 const config = {
-    liveServerURL: "https://ghost.choiceindia.com/ghost/api/v3/",
-    UATServerURL: "https://ghost.choiceindia.com/ghost/api/v3/",
+    liveServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
+    UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
     liveBannerURL: "https://cmsapi.choiceindia.com/",
     UATBannerURL: "https://cmsapi.choiceindia.com/",
     liveFileURL: "https://cms.jiffy.in/",

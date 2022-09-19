@@ -4,13 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "../Common-features/Navbar";
 import utils from "../../Services/utils";
-import pdf1 from '../../assets/pdf/News-annoucement/3a8620b9-3cd6-446e-8c46-89a83ac2f955.pdf';
-import pdf2 from '../../assets/pdf/News-annoucement/44681b05-b3f4-4137-aa9a-5480400feeaf.pdf';
-import pdf3 from '../../assets/pdf/News-annoucement/cabdfbcd-1ea0-4001-96be-adb8a58a9f33.pdf';
-import pdf4 from '../../assets/pdf/News-annoucement/ff7e6354-13fe-4db6-9b30-e58cc6998fc7.pdf';
 
-import pdf6 from '../../assets/pdf/News-annoucement/9e9780e1-3ca5-4069-9821-aefa413e27fb.pdf';
-import pdf7 from '../../assets/pdf/News-annoucement/a123c8cd-de36-471b-baeb-cb339fce0c48.pdf';
 // import "../CodeConduct/code-conduct.scss";
 import "./news-announcement.scss";
 function NewsAnnouncement() {

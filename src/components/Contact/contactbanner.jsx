@@ -24,9 +24,9 @@ function Contactbanner() {
 
 
   const schema = yup.object().shape({
-    firstName: yup.string().required("First Name is required"),
-    lastName: yup.string().required("Last Name is required"),
-    mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number"),
+    firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
+    lastName: yup.string().required("Last Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
+    mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number").matches(/^\d+$/, 'The field should have digits only'),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
     // purpose: yup.string().required("Need to choose purpose"),
     question: yup.string().max(40).required("Need to fill your question")
@@ -59,6 +59,8 @@ function Contactbanner() {
 
 
   }
+
+ 
   
 
   // const [main, setMain] = useState(true);
@@ -142,8 +144,8 @@ function Contactbanner() {
                 </Form.Group>
 
                 <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Mobile Number  <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text"  maxLength={10} className="formcontrol"{...register('mobile')} />
+                  <Form.Label className="formlabel"> Mobile Number <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="tel" pattern="\d*"   maxLength={10} className="formcontrol" {...register('mobile')} />
                   <span className="text-danger"> {errors?.mobile?.message} </span>
                 </Form.Group>
               </div>
