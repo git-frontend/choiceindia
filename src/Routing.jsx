@@ -517,7 +517,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/partner-assests/emitra' element={
+                        <Route exact path='/partner-assets/emitra' element={
                             <React.Suspense>
                                 < LazyPartnerAssests />
                             </React.Suspense>
