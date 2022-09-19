@@ -37,9 +37,12 @@
                 font-family: $font-family-poppins-bold;
                 color: $primary;
 
+
                 @media (max-width: $md) {
                     font-size: 3rem;
                     line-height: 4rem;
+                    
+                    
                 }
 
                 @media (max-width: $sm) {
@@ -55,13 +58,16 @@
                 line-height: 2.375rem;
                 color: $secondary;
                 font-family: $font-family-poppins-regular;
+                display: none;
                 @media (max-width: $sm) {
                     font-size: 1.5rem;
                     text-align: center;
+                    display: block;
                 }
             }
             @media (max-width: $sm) {
                 text-align: center;
+                display: block;
             }
         }
     }
