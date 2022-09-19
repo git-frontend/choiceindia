@@ -106,6 +106,45 @@ body{
 
     .count {
 
+
+        .time{
+            svg{
+                padding-left: 3px;
+                font-size: 30px;
+            }
+            .green {
+                color: #0BA04A;
+            }
+
+            .red {
+                color: #ff1a1a;
+            }
+            .result {
+                display: flex;
+                flex-direction: column;
+               
+
+                svg {
+                    height: 1.875rem;
+                    width: 1.875rem;
+                }
+
+                .percentage {
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    color: $primary;
+                    width: max-content;
+                    font-weight: 600;
+                    .green {
+                        color: #0BA04A;
+                    }
+
+                    .red {
+                        color: #ff1a1a;
+                    }
+                }
+            }
+        }
         .number {
             font-size: 4.125rem;
             line-height: 6.1875rem;
@@ -113,17 +152,19 @@ body{
             font-family: $font-family-poppins-bold;
             display: flex;
             align-items: center;
-
+            text-align: center;
             @media screen and (max-width:$sm) {
                 font-size: 3.125rem;
             }
 
             .green {
                 color: #0BA04A;
+                width: 100%;
             }
 
             .red {
                 color: #ff1a1a;
+                width: 100%;
             }
 
             .result {
@@ -140,7 +181,8 @@ body{
                     font-size: 1.5rem;
                     line-height: 2.25rem;
                     color: $primary;
-
+                    font-weight: 600;
+                    width: max-content;
                     .green {
                         color: #0BA04A;
                     }
@@ -162,13 +204,17 @@ body{
                 color:$secondary;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
+              //  padding-right: 10px;
                 font-weight: 400;
                 font-family: $font-family-poppins-regular;
             }
         }
 
         .time {
-            width: 70%;
+            width: 100%;
+         //   width: 70%;
+         padding-left: .8vw;
+            display: flex;
 
             .subtext {
                 color:$secondary;
@@ -529,4 +575,21 @@ body{
 }
 .check-menu-main{
     min-height: 700px;
+}
+
+.m-auto{
+    margin: auto;
+    //width: 100%;
+    transform: scale(.9);
+}
+.m-auto-break{
+    width: 1px;
+    padding: 0px;
+    margin: 0px !important;
+    border: 1px solid;
+    //width: 100%;
+}
+.dflex{
+    display: flex;
+    padding: 0px;
 }
