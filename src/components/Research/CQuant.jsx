@@ -350,7 +350,7 @@ function CQuant() {
             SessionId: session,
             Start: 0,
             startDate: utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-            status: '',
+            status: 'T1',
             type: 'EQ',
             UserId: 'guest',
             search: ''
@@ -422,7 +422,7 @@ function CQuant() {
                                 <div className="itm-top-ttl">
                                     <div className="d-flex align-self-end">
                                         <h3 className="ttl-mn">{report?.scrip_name} <small>{report?.segmentName}</small></h3>
-                                        <h4 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h4>
+                                        <h3 className={"ttl-sm " + (report?.statusClass)}>{report?.status}</h3>
                                         {/* <h4 className="ttl-sm-nw grn-txt">Active</h4> */}
                                     </div>
                                     <h5 className="date-publish">Published at {report?.published_date}</h5>

@@ -93,7 +93,7 @@ function BannerCareer() {
                       <h3 className="title-first">The Culture</h3>
                       <p>
                       We are a fast paced organization with robust groups of zealous individuals. We believe in providing free hand and extensive creative liberty to our team. 
-                      <br/><br/>We take the responsibility of providing, nurturing, competitive and safe working environment to our teams is our top priority.
+                      <br/><br/>We take the responsibility of providing, nurturing, competitive and safe working environment to our teams as our top priority.
                       </p>
                   </div>
                 </div>
