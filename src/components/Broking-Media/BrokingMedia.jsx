@@ -7,8 +7,9 @@ import latest_vidoes_img_1 from '../../assets/images/broker-media/latest_vidoes_
 import latest_vidoes_img_2 from '../../assets/images/broker-media/latest_vidoes_img_2.png';
 import latest_vidoes_img_3 from '../../assets/images/broker-media/latest_vidoes_img_3.png';
 import recommended_videos_img_1 from '../../assets/images/broker-media/recommended_videos_img_1.png';
-import recommended_videos_img_2 from '../../assets/images/broker-media/recommended_videos_img_2.png';
+// import recommended_videos_img_2 from '../../assets/images/broker-media/recommended_videos_img_2.png';
 import recommended_videos_img_3 from '../../assets/images/broker-media/recommended_videos_img_3.png';
+import videoBg from '../../assets/images/insurance/insuringShield.mp4';
 import {
   useLocation,
 } from 'react-router-dom';
@@ -56,34 +57,26 @@ function BrokingMedia() {
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
-            <section className="head">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-12">
-                    <h1 className="heading">Choice Broking Media</h1>
-                  </div></div>
-              </div>
-            </section>
             {/*freatured_videos  */}
             <section className="freatured_videos">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12 responsive_flex">
-                    <h2 className="title" >Featured Videos</h2>
+                  <div className="col-md-12">
+                    <h1 className="title-first">Choice Broking Media</h1>
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-md-7 responsive_flex">
+                <div className="row align-items-center">
+                  <div className="col-md-7">
                     <div className="leftsec">
-                      <img src={videoimg} alt="Banner Images" className="img-fluid "></img>
+                    <video src={videoBg} autoPlay loop muted className='banner-ved img-fluid ' width="100%" height="100%" />
                     </div>
                   </div>
-                  <div className="col-md-5 responsive_flex">
+                  <div className="col-md-5">
                     <div className="rightsec">
-                      <h4 className="righttitle">Everyday finance in one place</h4>
+                      <h2 className="title-secnd">Everyday finance in one place</h2>
                       <p className="datetitle">August 24, 2022</p>
                       <p className="subhead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, </p>
-                      <button type="button" className="readmorebutton">Read More</button>
+                      <a href="/"><span class="btn-bg">Read More</span></a>
                     </div>
                   </div>
                 </div>
@@ -93,65 +86,78 @@ function BrokingMedia() {
             <section className="latest_vidoes">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12 responsive_flex">
-                    <h2 className="title_latest_videos" >latest videos</h2>
+                  <div className="col-md-12">
+                    <h2 className="title-first" >latest videos</h2>
                   </div>
                 </div>
                 <div className="row gx-5">
-                  <div className="col-md-4 responsive_flex">
-                    <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">Everyday finance in one place</p>
+                  <div className="col-md-4 ">
+                    <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des">
+                      <p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
-                  <div className="col-md-4 responsive_flex">
-                    <img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
                   </div>
-                  <div className="col-md-4 responsive_flex">
-                    <img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">Everyday finance in one place</p>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
                 </div>
               </div>
             </section>
             {/*  recommended videos*/}
-            <section className="latest_vidoes">
+            <section className=" recommended_videos latest_vidoes ">
               <div className="container">
                 <div className="row">
-                  <div className="col-md-12 responsive_flex">
-                    <h2 className="title_latest_videos" >recommended videos</h2>
+                  <div className="col-md-12 ">
+                    <h2 className="title-first" >recommended videos</h2>
+                  </div>
+                </div>
+                <div className="row gx-5 ">
+                  <div className="col-md-4 ">
+                    <div className="video_img"> <img src={recommended_videos_img_1} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des">
+                      <p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">save water save life</p></div>
+                  </div>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                  </div>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={recommended_videos_img_3} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">finance in one place</p></div>
                   </div>
                 </div>
                 <div className="row gx-5">
-                  <div className="col-md-4 responsive_flex">
-                    <img src={recommended_videos_img_1} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">save water save life</p>
+                  <div className="col-md-4 ">
+                    <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des">
+                      <p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
-                  <div className="col-md-4 responsive_flex">
-                    <img src={recommended_videos_img_2} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">Everyday finance in one place</p>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
                   </div>
-                  <div className="col-md-4 responsive_flex">
-                    <img src={recommended_videos_img_3} alt="Banner Images" className="img-fluid "></img>
-                    <p className="body_date">August 24, 2022</p>
-                    <p className="latest_vidoes_head">finance in one place</p>
-                  </div>
-                </div>
-              </div>
-            </section>
-            <section className="sectionexplore">
-              <div className="container">
-                <div className="row">
-                  <div className="col-md-12 text-center responsive_flex ">
-                    <a href="#" >Explore All</a>
+                  <div className="col-md-4 ">
+                    <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
                 </div>
+                <div className="text-center explore_btn "><a href="/" ><span className="btn-bg ">Explore All</span></a></div>
               </div>
             </section>
+
           </div>
       }
     </div>
