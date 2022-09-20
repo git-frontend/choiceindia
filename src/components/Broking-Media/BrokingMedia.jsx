@@ -27,14 +27,14 @@ function BrokingMedia() {
 
   const settings = {
     infinite: true,
-    speed: 2000,
+    speed: 1000,
     arrows: true,
     slidesToShow: 3,
     autoplay: false,
     margin: 15,
     dots: true,
     autoplaySpeed: 800,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
@@ -42,6 +42,15 @@ function BrokingMedia() {
           slidesToShow: 2,
           slidesToScroll: 2,
           adaptiveHeight: true,
+          dots:false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots:false,
         },
       },
       {
@@ -49,7 +58,7 @@ function BrokingMedia() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-
+          dots:false,
         },
       },
     ],
@@ -96,7 +105,7 @@ function BrokingMedia() {
               <div className="container">
                 <div className="row">
                   <div className="col-md-12">
-                    <h1 className="title-first">Choice Broking Media</h1>
+                    <h1 className="title-first_new">Choice Broking Media</h1>
                   </div>
                 </div>
                 <div className="row align-items-center">
@@ -129,33 +138,29 @@ function BrokingMedia() {
                     <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">
                       <p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3>
+                      </div>
                   </div>
                   <div className="videos-list-itm">
                     <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
+                      <h3 className="latest_vidoes_head">wealth creation ideas to increase your assets</h3></div>
                   </div>
                   <div className="videos-list-itm">
                     <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3></div>
                   </div>
                   <div className="videos-list-itm">
                     <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">
                       <p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3></div>
                   </div>
                   <div className="videos-list-itm">
                     <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
-                  </div>
-                  <div className="videos-list-itm">
-                    <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
-                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">wealth creation ideas to increase your assets</h3></div>
                   </div>
                 </Slider>
               </div>
@@ -168,43 +173,43 @@ function BrokingMedia() {
                     <h2 className="title-first" >recommended videos</h2>
                   </div>
                 </div>
-                <div className="row gx-5 pb-5">
-                  <div className="col-md-4 ">
+                <div className="row gx-5">
+                  <div className="col-md-4">
                     <div className="video_img"> <img src={recommended_videos_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">
                       <p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">save water save life</p></div>
+                      <h3 className="latest_vidoes_head">save water save life</h3></div>
                   </div>
                   <div className="col-md-4 ">
                     <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3></div>
                   </div>
                   <div className="col-md-4 ">
                     <div className="video_img"><img src={recommended_videos_img_3} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">finance in one place</h3></div>
                   </div>
                 </div>
-                <div className="row gx-5">
-                  <div className="col-md-4 ">
+                <div className="row pt-5 gx-5">
+                  <div className="col-md-4  ">
                     <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">
                       <p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3></div>
                   </div>
                   <div className="col-md-4 ">
                     <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
+                      <h3 className="latest_vidoes_head">wealth creation ideas to increase your assets</h3></div>
                   </div>
-                  <div className="col-md-4 ">
+                  <div className="col-md-4  ">
                     <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
-                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                      <h3 className="latest_vidoes_head">Everyday finance in one place</h3></div>
                   </div>
                 </div>
-                <div className="text-center explore_btn "><a href="/" ><span className="btn-bg ">Explore All</span></a></div>
+                <div className="text-center explore_btn "><a href="/" ><span className="explo_btn" >Explore All</span></a></div>
               </div>
             </section>
 
