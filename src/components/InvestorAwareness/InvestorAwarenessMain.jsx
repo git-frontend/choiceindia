@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import InvestorAwareService from "../../Services/InvestorAwareService";
@@ -6,47 +6,47 @@ import InvestorAwareService from "../../Services/InvestorAwareService";
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 
 function InvestorAwarenessMain() {
-    
 
-   
-        const [data, setData] = useState();
-        const [trigger, setTrigger] = useState(false);
-    
-        function loadinvestorAware(){
-            InvestorAwareService.InvestorAware().then(
-                res => {
-                    if (res) {
-                        setData(res.data.data);
-    
-    
-                    } else {
-                        setData([]);
-    
-                    }
-    
+
+
+    const [data, setData] = useState();
+    const [trigger, setTrigger] = useState(false);
+
+    function loadinvestorAware() {
+        InvestorAwareService.InvestorAware().then(
+            res => {
+                if (res) {
+                    setData(res.data.data);
+
+
+                } else {
+                    setData([]);
+
                 }
-            ).catch((error) => {
-                setData([]);
-            });
-        }
-    
-    
-    
-    
-        useEffect(() => {
-            setTrigger(true)
-    
-            if (trigger === true) {
-                loadinvestorAware()
-    
+
             }
-    
-        }, [trigger])
+        ).catch((error) => {
+            setData([]);
+        });
+    }
 
-    
 
 
-    
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadinvestorAware()
+
+        }
+
+    }, [trigger])
+
+
+
+
+
     return (
         <div>
             <section className="mainwrapquick">
@@ -106,27 +106,33 @@ function InvestorAwarenessMain() {
 
                     <div className="row quicklinkswrap mt-5">
                         <div className="col-md-12">
-                        <div className="subtext">
-                            {
-                                data?.map((res,i)=>{
-                                    return(
+                            <div className="subtext">
+                                {
+                                    data?.map((res, i) => {
+                                        return (
 
-                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                        <div ><strong>{res.KYC_Updation}</strong></div>
-                                        <div className="download cursor-pointer"> 
-                                        <a onClick={()=>{window.open("https://cmsapi.choiceindia.com/assets/" + res.files)}} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg"/> Download</a>
-                                        </div>
-                                        </div>
-                                    )
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                <div ><strong>{res.KYC_Updation}</strong></div>
+                                                <div className="download cursor-pointer">
+                                                    {
+                                                        res.files ?
+                                                            <a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg" /> Download</a> :
+                                                            ''
 
-                                  
-                                })
+                                                    }
 
-                            }
-                        
-                                   </div>
+                                                </div>
+                                            </div>
+                                        )
+
+
+                                    })
+
+                                }
+
+                            </div>
                         </div>
-                        </div>
+                    </div>
 
 
                 </div>

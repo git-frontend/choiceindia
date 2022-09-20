@@ -86,9 +86,13 @@ function AnnualReportMenu() {
                                     (data || []).map((res,i) => {
                                         return (
                                             <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.report_description} </div>
-
-                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
+                                                <div>{res.report_description ? res.report_description:''} </div>
+                                            {
+                                                res.view?
+                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>:
+                                                ''
+                                            }
+                                                
                                             </div>
 
                                         )
@@ -149,9 +153,14 @@ function AnnualReportMenu() {
                             (list||[]).map((res,i)=>{
                                 return(
                                     <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                    <div>{res.report_description}</div>
+                                    <div>{res.report_description ? res.report_description:''}</div>
+                                    {
+                                        res.view ?
+                                        <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>:
+                                        ''
 
-                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
+                                    }
+                                   
                                 </div>
 
 

@@ -70,7 +70,13 @@ function InvestorPresentationMenu() {
                                                     <div className="border-bottom d-flex justify-content-between pb-3 pt-3 result-item" key={i}>
                                                         <div className="itm-nm">{res.month}</div>
                                                         <div className="itm-nm">{res.title}</div>
-                                                        <div className="itm-nm"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
+                                                        {
+                                                            res.view?
+                                                            <div className="itm-nm"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>:
+                                                            ''
+                                                        }
+                                                        
+                                                        
                                                     </div>
 
                                                 )

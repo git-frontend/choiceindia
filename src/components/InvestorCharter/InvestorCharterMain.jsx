@@ -69,7 +69,12 @@ function InvestorCharterMain() {
                                                         return (
                                                             <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                                                 <div>{res.title}</div>
-                                                                <div><a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
+                                                                {
+                                                                    res.files?
+                                                                    <div><a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>:
+                                                                    ''
+                                                                }
+                                                                
                                                             </div>
 
                                                         )

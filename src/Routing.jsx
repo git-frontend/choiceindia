@@ -104,20 +104,21 @@ const LazyTranscation = React.lazy(() => import('./components/Related-Party-Tran
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
+const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
 
 
 
 function Routing() {
 
-    
+
 
     return (
         <>
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                { (window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1)  ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -524,16 +525,24 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/broking-media' element={
+                        <Route exact path='/advisory-for-investors' element={
                             <React.Suspense>
-                                < LazyBrokingMedia  />
+                                < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
+
+                        <Route exact path='/broking-media' element={
+                            <React.Suspense>
+                                < LazyBrokingMedia />
+                            </React.Suspense>
+                        } />
+
+
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

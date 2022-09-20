@@ -54,6 +54,7 @@ const meta_tags = {
     
     
     "research-listing":{'title':"Best Stocks to Invest in India Right Now",'content':"From the Choice's fundamental and technical analysis reports, select the best stocks to invest in in India right now. Visit our site to find out about the top stocks to buy today now.",'link':"https://choiceindia.com/research-listing"},
+    "advisory-for-investors":{'title':"Advisory for Investors - Choice",'content':"Visit Choice International Limited's official website to know the advisory for the investors.",'link':"https://choiceindia.com/advisory-for-investors"},
     
     "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account",
     "faqscript": `<script type="application/ld+json">
