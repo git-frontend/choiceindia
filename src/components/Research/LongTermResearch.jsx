@@ -154,7 +154,7 @@ function LongTermResearch() {
     setTrigger(true)
     if (trigger === true) {
       console.log("test", urlid);
-      (activeurl == "company-fundamentals") ? (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(2)) : (activeurl == "?industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "?IPO-NFO-analysis") ? (lpoSearch(), setcount(4)) : (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(1));
+      (activeurl == "company-fundamentals") ? (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(2)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "IPO-NFO-analysis") ? (lpoSearch(), setcount(4)) : (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(1));
 
       let mediaQuery = window.matchMedia("(min-width: 770px)");
       mediaQuery.addListener(setView);
