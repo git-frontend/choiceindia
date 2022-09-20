@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye } from  '@fortawesome/free-solid-svg-icons';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
@@ -38,7 +38,7 @@ function NoticesMenu() {
             res => {
                 if (res) {
                     setList(res.data.data);
-                 
+
 
                 } else {
                     setList([]);
@@ -73,33 +73,37 @@ function NoticesMenu() {
                         </div>
                     </div>
                     {
-                        list?
-                        <div className="row code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
+                        list ?
+                            <div className="row code-mainwrapper cgmainwrap">
+                                <div className="col-md-12">
 
 
-                            <h3 className="head">RIGHT ISSUE</h3>
-                            <h4 className="head">Description</h4>
+                                    <h3 className="head">RIGHT ISSUE</h3>
+                                    <h4 className="head">Description</h4>
 
 
-                            <div className="subtext">
-                                {
-                                    (list||[]).map((res,i) => {
-                                        return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.Title} </div>
+                                    <div className="subtext">
+                                        {
+                                            (list || []).map((res, i) => {
+                                                return (
+                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                        <div>{res.Title} </div>
+                                                        {
+                                                            res.file ?
+                                                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div> :
+                                                                ''
+                                                        }
 
-                                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.file)}} /></div>
-                                            </div>
-
-
-                                        )
-                                    })
-                                }
-
+                                                    </div>
 
 
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                )
+                                            })
+                                        }
+
+
+
+                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Right Issue - Letter of Offer </div>
                                 
                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
@@ -127,47 +131,47 @@ function NoticesMenu() {
                                    </div> */}
 
 
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-                    </div>:
-                    <div className="text-center">
-                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
-                </div> 
-                    }
-                    
-                    {
-                        data?
-                        <div className="row code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
-
-
-
-                            <h3 className="head">Description</h3>
-
-
-                            <div className="subtext">
-                             {
-                                (data||[]).map((res,i)=>{
-                                    return(
-                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                        <div>{res.Title} </div>
-
-                                        <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.file)}} /></div>
                                     </div>
 
-                                    )
 
-                                })
-                             }
 
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                </div>
+
+
+
+
+                            </div> :
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+                    }
+
+                    {
+                        data ?
+                            <div className="row code-mainwrapper cgmainwrap">
+                                <div className="col-md-12">
+
+
+
+                                    <h3 className="head">Description</h3>
+
+
+                                    <div className="subtext">
+                                        {
+                                            (data || []).map((res, i) => {
+                                                return (
+                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                        <div>{res.Title} </div>
+
+                                                        <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div>
+                                                    </div>
+
+                                                )
+
+                                            })
+                                        }
+
+                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                     <div>Postal Ballot Final</div>
 
                                     <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
@@ -201,21 +205,21 @@ function NoticesMenu() {
                                 </div> */}
 
 
+                                    </div>
+
+
+
+                                </div>
+
+
+
+
+                            </div> :
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
-
-
-
-                        </div>
-
-
-
-
-                    </div>:
-                    <div className="text-center">
-                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
-                </div> 
                     }
-                   
+
 
                 </div>
             </section>

@@ -62,7 +62,7 @@ function CEBPLPoliciesMain() {
                                     data?.map((res, i) => {
                                         return (
                                             <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.title}</div>
+                                                <div>{res.title? res.title:''}</div>
                                                 <div><a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} target="_blank"><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></a></div>
                                             </div>
 

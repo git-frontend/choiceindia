@@ -70,10 +70,15 @@ function NewsAnnouncement() {
 
                                                 return(
                                                     <tr key={i}>
-                                                    <td>{utils.formatDate(new Date(res.news_dates),"dd-MM-yyyy")}</td>
+                                                    <td>{utils.formatDate(new Date(res.news_dates?res.news_dates:''),"dd-MM-yyyy")}</td>
         
-                                                    <td className="w-50">{res.headlines}</td>
-                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.news_file)}} className="cursor-pointer" /></td>
+                                                    <td className="w-50">{res.headlines?res.headlines:""}</td>
+                                                    {
+                                                    res.news_file?
+                                                    <td className=" text-end"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.news_file)}} className="cursor-pointer" /></td>:
+                                                    <td className=" text-end"></td>
+                                                }
+                                                    
                                                 </tr>
 
                                                 )
