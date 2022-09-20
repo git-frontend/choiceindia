@@ -118,7 +118,7 @@ function BrokingMedia() {
                     <h2 className="title-first" >recommended videos</h2>
                   </div>
                 </div>
-                <div className="row gx-5 ">
+                <div className="row gx-5 pb-5">
                   <div className="col-md-4 ">
                     <div className="video_img"> <img src={recommended_videos_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">

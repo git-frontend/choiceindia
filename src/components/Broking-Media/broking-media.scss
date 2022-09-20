@@ -23,6 +23,7 @@
 
             h2 {
                 color: $whiteColor;
+                text-transform: capitalize;
             }
 
 
@@ -73,8 +74,9 @@
 
     .latest_vidoes {
         h2 {
-            padding-top: 3.125rem;
-            padding-bottom: 0.938rem;
+            padding-top: 5.125rem;
+            padding-bottom: 2.938rem;
+            text-transform: capitalize;
         }
 
 
