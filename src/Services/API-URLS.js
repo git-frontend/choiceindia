@@ -175,7 +175,7 @@ export class API_URLS {
   investorawareURL ='items/investor_awareness?limit=1000&sort[]=-id';
   cebplURL='items/cebpl_policies?limit=1000&sort[]=-id'
   filedownloadURL ='api/get-download-listing?limit=1000&sort[]=-id';
-  investorStockURL ='items/investor_charter?filter[type][_eq]&limit=1000&sort[]=-id'
+  investorStockURL ='items/investor_charter?limit=1000&sort[]=-id&filter[type][_eq]'
 
 
 
