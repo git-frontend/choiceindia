@@ -66,7 +66,7 @@ function InvestorInfo() {
               <Banner />
 
             <ChoiceLTP/>
-          <div className="Investormenu pb0">
+          <div className="Investormenu pb0 page-height">
             <div className="container">
                     <div className="row">
                         <div className="col-md-12">

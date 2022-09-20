@@ -9,6 +9,16 @@ import Image24 from '../../assets/images/open-demat-account/courier-poa.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 const DerivativeTradingOpeningProcess = () => {
+    function chapterScroll(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+    }
     return (
         <div>
 
@@ -25,7 +35,7 @@ const DerivativeTradingOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark ">Open Now </a>
+                                    <a onClick={()=>{chapterScroll('dematform')}} className="btn-bg btn-bg-dark cursor-pointer ">Open Now </a>
                                 </div>
 
                             </div>

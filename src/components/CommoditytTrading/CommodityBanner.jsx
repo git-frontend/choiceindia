@@ -23,7 +23,7 @@ const CommodityBanner = () => {
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="bannerbox">
+                                        <div className="bannerbox ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                 <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
@@ -52,7 +52,7 @@ const CommodityBanner = () => {
                                 </div>
                                 <div className="row mt-4 mt-sm-5  mbrespflex">
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="bannerbox">
+                                        <div className="bannerbox mt-sm-5">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                     <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />

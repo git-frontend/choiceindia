@@ -15,7 +15,7 @@ function HindiWhyOpenTradingAccount() {
     margin:15,
     arrows: false,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
