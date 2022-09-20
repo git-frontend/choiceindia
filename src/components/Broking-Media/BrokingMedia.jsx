@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import "./broking-media.scss";
 import Template5 from '../Common-features/Template5';
-import videoimg from '../../assets/images/broker-media/videoimg.png';
 import latest_vidoes_img_1 from '../../assets/images/broker-media/latest_vidoes_img_1.png';
 import latest_vidoes_img_2 from '../../assets/images/broker-media/latest_vidoes_img_2.png';
 import latest_vidoes_img_3 from '../../assets/images/broker-media/latest_vidoes_img_3.png';
@@ -10,6 +9,10 @@ import recommended_videos_img_1 from '../../assets/images/broker-media/recommend
 // import recommended_videos_img_2 from '../../assets/images/broker-media/recommended_videos_img_2.png';
 import recommended_videos_img_3 from '../../assets/images/broker-media/recommended_videos_img_3.png';
 import videoBg from '../../assets/images/insurance/insuringShield.mp4';
+
+import Slider from "react-slick";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import {
   useLocation,
 } from 'react-router-dom';
@@ -21,6 +24,37 @@ function BrokingMedia() {
   // function myGreeting() {
   //   setSkeleton(() => false);
   // }
+
+  const settings = {
+    infinite: true,
+    speed: 2000,
+    arrows: true,
+    slidesToShow: 3,
+    autoplay: false,
+    margin: 15,
+    dots: true,
+    autoplaySpeed: 800,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+
+        },
+      },
+    ],
+  };
+
   const [rendercount, setRenderCount] = useState(() => false);
   setTimeout(() => {
     setSkeleton(() => false);
@@ -73,10 +107,10 @@ function BrokingMedia() {
                   </div>
                   <div className="col-md-5">
                     <div className="rightsec">
-                      <h2 className="title-secnd">Everyday finance in one place</h2>
+                      <h2 className="title-secnd">Everyday finance in <br/> one place</h2>
                       <p className="datetitle">August 24, 2022</p>
                       <p className="subhead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, </p>
-                      <a href="/"><span class="btn-bg">Read More</span></a>
+                      <a href="/"><span class="btn-bg-new">Read More</span></a>
                     </div>
                   </div>
                 </div>
@@ -90,24 +124,40 @@ function BrokingMedia() {
                     <h2 className="title-first" >latest videos</h2>
                   </div>
                 </div>
-                <div className="row gx-5">
-                  <div className="col-md-4 ">
+                <Slider {...settings} className="videos-list-slider">
+                  <div className="videos-list-itm">
                     <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des">
                       <p className="body_date">August 24, 2022</p>
                       <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
-                  <div className="col-md-4 ">
+                  <div className="videos-list-itm">
                     <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
                       <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
                   </div>
-                  <div className="col-md-4 ">
+                  <div className="videos-list-itm">
                     <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
                     <div className="video_img_des"><p className="body_date">August 24, 2022</p>
                       <p className="latest_vidoes_head">Everyday finance in one place</p></div>
                   </div>
-                </div>
+                  <div className="videos-list-itm">
+                    <div className="video_img"> <img src={latest_vidoes_img_1} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des">
+                      <p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                  </div>
+                  <div className="videos-list-itm">
+                    <div className="video_img"><img src={latest_vidoes_img_2} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">wealth creation ideas to increase your assets</p></div>
+                  </div>
+                  <div className="videos-list-itm">
+                    <div className="video_img"><img src={latest_vidoes_img_3} alt="Banner Images" className="img-fluid "></img></div>
+                    <div className="video_img_des"><p className="body_date">August 24, 2022</p>
+                      <p className="latest_vidoes_head">Everyday finance in one place</p></div>
+                  </div>
+                </Slider>
               </div>
             </section>
             {/*  recommended videos*/}

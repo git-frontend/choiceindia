@@ -21,9 +21,10 @@
                 text-align: center;
             }
 
-            h2 {
+           .title-secnd{
                 color: $whiteColor;
                 text-transform: capitalize;
+                line-height: 1.5;
             }
 
 
@@ -52,22 +53,23 @@
                 }
             }
 
-            .btn-bg {
-                font-family: "PoppinsSemiBold", sans-serif;
-                color: #221F20 !important;
-                background: $whiteColor  !important;
-                padding: 1.3rem 3rem !important;
+            .btn-bg-new {
+                font-family: $font-family-poppins-semibold;
+                color: $primary ;
+                background: #D9D9D9;
+                padding: 0.9rem 0;
                 display: inline-block;
-                border-radius: 16px !important;
-                min-width: 16rem;
-                font-size: 1.5rem !important;
+                border-radius: 10px;
+                font-size: 1.5rem;
                 text-align: center;
                 text-decoration: none;
-                border: 0 !important;
-                outline: none !important;
-                transition: 0.5s;
-                -webkit-transition: 0.5s;
-
+                border: 0;
+                outline: none;
+                width: 11.875rem;
+                margin-top: 1rem;
+                &:hover{
+                    background: $yellowColor;
+                }
             }
         }
     }
@@ -77,6 +79,9 @@
             padding-top: 5.125rem;
             padding-bottom: 2.938rem;
             text-transform: capitalize;
+        }
+        .videos-list-itm{
+            padding: 0 1rem;
         }
 
 
