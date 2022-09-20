@@ -293,9 +293,9 @@ function Footer() {
               <li>
                 <Link to="/advisory-for-investors">Investor's Advisory</Link>
               </li>
-              {/* <li>
+              <li>
                 <Link to="/disclaimer">Disclaimer</Link>
-              </li> */}
+              </li>
               {/* <li>
                 <Link to="/file-download">File Download</Link>
               </li> */}
