@@ -236,16 +236,16 @@ function Footer() {
               <div className="row">
                 <div className="col-md-12">
                   <div className="article">
-                    <p>Choiceinternational. CIN - L67190MH1993PLC071117<br />
-                      Choice Equity Broking Private Limited: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ).  Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
-                      Choice Wealth Private Limited: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
-                      Choice Finserv Private Limited: NBFC Registration Number : N - 13.02216 <br />
+                    <p><strong>Choiceinternational. CIN - L67190MH1993PLC071117</strong><br />
+                      <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ).  Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
+                      <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
+                      <strong>Choice Finserv Private Limited</strong>: NBFC Registration Number : N - 13.02216 <br />
                     </p>
                     <p>
-                      Choice Insurance Broking Private Limited: IRDAI License No: 167, License Valid Till: 29-05-2024
+                     <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
-                      For any grievances email at ig@choiceindia.com &amp; customercare@choiceindia.com <br /><br />
+                      For any grievances email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
                       Disclaimer: <br />
                       1. *Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br />
                       2. In addition to client based business, we are also doing proprietary trading. <br />
@@ -293,9 +293,9 @@ function Footer() {
               <li>
                 <Link to="/advisory-for-investors">Investor's Advisory</Link>
               </li>
-              {/* <li>
+              <li>
                 <Link to="/disclaimer">Disclaimer</Link>
-              </li> */}
+              </li>
               {/* <li>
                 <Link to="/file-download">File Download</Link>
               </li> */}

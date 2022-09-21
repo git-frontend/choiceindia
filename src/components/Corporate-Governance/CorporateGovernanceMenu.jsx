@@ -63,7 +63,7 @@ function CodeConductMenu() {
 
     return (
         <div>
-            <section className="Investormenu">
+            <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
