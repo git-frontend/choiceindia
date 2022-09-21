@@ -123,6 +123,7 @@
                         }
                     }
                     &.get-btn{
+                       
                         a{
                             background: $primary;
                             color: $whiteColorlight;
@@ -383,6 +384,8 @@
                                 color: $primary
                             }
                         }
+                       
+                        
                     }
                 }
             }
@@ -449,5 +452,14 @@ nav .navbar-collapse{
             color: $whiteColor;
         }
     }
+}
+
+
+.get-btn2{
+
+    @media (max-width: $md){
+        padding: 1rem 1rem !important;
+    }
+
 }
 
