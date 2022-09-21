@@ -8,8 +8,11 @@ import CareerImage7 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 import CareerImage9 from '../../assets/images/choice-emitra/youtube.webp';
 import CareerImage8 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 
-import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
-import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
+// import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
+// import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
+
+import mutual from '../../assets/images/choice-emitra/Choice-Mutual-FundAccountOpeningFlow.pdf';
+import demat from '../../assets/images/choice-emitra/Choice-Demat-AccountOpeningFlow.pdf';
 
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';
 import instagram from '../../assets/images/choice-emitra/instagram.svg';
@@ -68,6 +71,23 @@ function PartnerAssests() {
 
     //console.log("linkObject",linkObject)
 
+  }
+
+  function shareLinkV2(share_link,type) {
+
+    if(type === 'whatsapp'){
+      let url = `https://api.whatsapp.com/send?text=${share_link}`
+      window.open(url)
+    }else{
+      let url = `https://www.facebook.com/sharer/sharer.php?u=${share_link}`
+      window.open(url)
+    }
+
+  }
+
+  function redirectTo(redirection_link) {
+    console.log(redirection_link);
+    window.open(redirection_link);
   }
   useEffect(() => {
     setRenderCount(true)
@@ -282,9 +302,9 @@ function PartnerAssests() {
                   </div>
                 </div>
               </div>
-              <div className="col-md-4 mb3">
+              <div className="col-md-4 mb3" >
                 <div className="card">
-                  <div >
+                  <div className='youtube-card-emitra' onClick={() => redirectTo('https://www.youtube.com/watch?v=BAOW84XZCHQ')}>
                     <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
@@ -295,8 +315,8 @@ function PartnerAssests() {
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
                      
-                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage2, 'whatsapp', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
-                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage2, 'facebook', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=BAOW84XZCHQ','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=BAOW84XZCHQ','facebook') }} width="22" height="22" /></div>
                       {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
  */}                  </div>
                   </div>
@@ -310,7 +330,7 @@ function PartnerAssests() {
             <div className="row mt-7">
             <div className="col-md-4 mb3">
                 <div className="card">
-                  <div >
+                  <div className='youtube-card-emitra' onClick={() => redirectTo('https://www.youtube.com/watch?v=a3eqTZyayOk')}>
                     <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
@@ -321,8 +341,8 @@ function PartnerAssests() {
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
                       
-                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage2, 'whatsapp', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
-                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage2, 'facebook', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=a3eqTZyayOk','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=a3eqTZyayOk','facebook') }} width="22" height="22" /></div>
                       {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
  */}                  </div>
                   </div>
@@ -332,7 +352,7 @@ function PartnerAssests() {
              
               <div className="col-md-4 mb3">
                 <div className="card">
-                  <div >
+                  <div className='youtube-card-emitra'  onClick={() => redirectTo('https://www.youtube.com/watch?v=EgT-G-RtqR8&list=PLYR1jiScjAL5Zih3GAwpribEBuQvgII2c')}>
                     <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
 
                   </div>
@@ -343,8 +363,8 @@ function PartnerAssests() {
                   <div className='socail-media'>
                     <div className='d-flex justify-content-between'>
                       
-                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLink(CareerImage2, 'whatsapp', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
-                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(CareerImage2, 'facebook', 'CareerImage2', '1 करोड़ कैसे कमाए?') }} width="22" height="22" /></div>
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=EgT-G-RtqR8&list=PLYR1jiScjAL5Zih3GAwpribEBuQvgII2c','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://www.youtube.com/watch?v=EgT-G-RtqR8&list=PLYR1jiScjAL5Zih3GAwpribEBuQvgII2c','facebook') }} width="22" height="22" /></div>
                       {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
  */}                  </div>
                   </div>
