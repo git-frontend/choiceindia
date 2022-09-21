@@ -57,7 +57,7 @@ function BChargesMoreContent() {
                                         
                                         <li className="mb-4"><strong>Volume:</strong> Another factor on which the brokerage charges depend is the volume of transactions. Bigger the volume of transactions, bigger is the amount of brokerage. However, many stockbrokers reduce the commission of percentage on higher volume of trading.</li>
                                         
-                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="https://jiffy.choiceindia.com/">trading platform</a> to the investors. So the brokerage charges vary.</li>
+                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="https://finx.choiceindia.com/">trading platform</a> to the investors. So the brokerage charges vary.</li>
                                        
                                         </ul>
                                         <br/>

@@ -188,7 +188,7 @@ function SBDesk() {
         //     window.open("https://jiffy.choiceindia.com/research-report/research/experts/EQ")
         // }
         //Deeplonking
-        window.open("https://jiffy.choiceindia.com/research-report/research/experts/EQ")
+        window.open("https://finx.choiceindia.com/research-report/research/experts/EQ")
     }
 
     /**

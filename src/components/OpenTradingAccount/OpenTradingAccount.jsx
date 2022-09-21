@@ -138,7 +138,7 @@ function OpenTradingAccount() {
                                             </li>
                                             
                                             <li>
-                                            A convenient <a href="https://jiffy.choiceindia.com/">trading platform</a> accessible on all devices
+                                            A convenient <a href="https://finx.choiceindia.com/">trading platform</a> accessible on all devices
                                             </li>
                                           
                                             <li>

@@ -108,7 +108,7 @@ useEffect(()=>{
                               <NavLink to="/brokerage-charges">Pricing</NavLink>
                             </li> */}
                             <li>
-                              <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
+                              <a href="https://finx.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                             </li>
                             <li>
                               <NavLink to="/career">Careers</NavLink>

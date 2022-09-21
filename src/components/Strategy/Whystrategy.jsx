@@ -94,7 +94,7 @@ function WhyStrategy() {
   
     const config = {
       UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
-      LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
+      LiveURL: 'https://finx.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
   };
   const checkURL = config[environment + 'URL'];
   

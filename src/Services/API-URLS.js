@@ -12,35 +12,35 @@ const config = {
     UATFileURL:"https://cms.jiffy.in/",
 
     UATJiffyServerURL: "https://uat.jiffy.in/",
-    liveJiffyServerURL: "https://jiffy.choiceindia.com/",
+    liveJiffyServerURL: "https://finx.choiceindia.com/",
 
     UATJiffyURL: "http://devjiffy.choicebroking.in/",
-    liveJiffyURL: "https://jiffy.choiceindia.com/",
+    liveJiffyURL: "https://finx.choiceindia.com/",
 
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
     UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
     liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
-    liveNewResearchReportURL: "https://jiffy.choiceindia.com/api/researchreport/v2/api",
+    liveNewResearchReportURL: "https://finx.choiceindia.com/api/researchreport/v2/api",
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
     liveSSOBaseURL: 'https://sso-api.choiceindia.com/',
     UATOnbBaseURL: 'https://uat-pwa.choicetechlab.com/',
     liveOnbBaseURL: 'https://accounts.choiceindia.com/',
     UATLMSBaseURL: 'https://lms-api.choicetechlab.com/',
     liveLMSBaseURL: ' https://accounts.choiceindia.com/lmsapi/',
-    livereferURL: "https://jiffy.choiceindia.com/api/middleware/",
+    livereferURL: "https://finx.choiceindia.com/api/middleware/",
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
-    liveperformanceURL: "https://jiffy.choiceindia.com//api/",
-    UATperformanceURL: "https://jiffy.choiceindia.com//api/",
-    liveJiffyBaseURL: "https://jiffy.choiceindia.com/api/researchreport/v2/",
+    liveperformanceURL: "https://finx.choiceindia.com//api/",
+    UATperformanceURL: "https://finx.choiceindia.com//api/",
+    liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
 
 export class API_URLS {
-    newResearchReportURL = 'https://jiffy.choiceindia.com/api/researchreport/v2/api';
+    newResearchReportURL = 'https://finx.choiceindia.com/api/researchreport/v2/api';
     JiffyBaseURL = '';
     LMSBaseURL = '';
     OnbBaseURL = '';

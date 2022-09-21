@@ -57,7 +57,7 @@ export default function Header() {
                             </li> */}
                             <li className="nav-item login-btn">
                                 <NavDropdown title="Log In" id="navbarScrollingDropdown" className="top-nav-links login-btn">
-                               <NavDropdown.Item className="nav-dropdown-links" href='https://jiffy.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
+                               <NavDropdown.Item className="nav-dropdown-links" href='https://finx.choiceindia.com/auth/login' target="_blank">client</NavDropdown.Item>
                                   <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://backoffice.choiceindia.com/WebLogin/index.cfm?Logintype=Branch'>partner</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='https://hrconnect.qandle.com'>employee</NavDropdown.Item>
                                 </NavDropdown>

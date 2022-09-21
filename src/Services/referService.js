@@ -5,7 +5,7 @@ const referService = {
 
     
 
-    referearn: function (postdata) {
+    referarn: function (postdata) {
 
         let api = new API_URLS()
         let url = api.getreferearnURL(postdata)
