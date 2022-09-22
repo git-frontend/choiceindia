@@ -47,10 +47,13 @@ function LongTermResearch() {
 
   };
 
-
+  const queryParam = window.location.search;
+  const utmvalue = new URLSearchParams(queryParam);
+  const activeurl = utmvalue.get('active');
+  // console.log('activeurl',activeurl);
 
   // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
-  const [tempid, setTempId] = useState({ 'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
+  const [tempid, setTempId] = useState({ 'name': activeurl? activeurl: 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
 
   const navigate = useNavigate();
 
@@ -143,9 +146,7 @@ function LongTermResearch() {
     window.history.replaceState(null, null, `/research-listing?active=${id}`);
   }
 
-  const queryParam = window.location.search;
-  const utmvalue = new URLSearchParams(queryParam);
-  const activeurl = utmvalue.get('active');
+
 
 
   useEffect(() => {
@@ -154,7 +155,7 @@ function LongTermResearch() {
     setTrigger(true)
     if (trigger === true) {
       console.log("test", urlid);
-      (activeurl == "company-fundamentals") ? (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(2)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "IPO-NFO-analysis") ? (lpoSearch(), setcount(4)) : (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(1));
+      (activeurl == "company-fundamentals") ? (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(2)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "ipo-nfo-analysis") ? (lpoSearch(), setcount(4)) : (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(1));
 
       let mediaQuery = window.matchMedia("(min-width: 770px)");
       mediaQuery.addListener(setView);
@@ -227,14 +228,14 @@ function LongTermResearch() {
               className={count === 4 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
                 setcount(4);
-                // setTempId(preValue => {
-                //   return {
-                //     ...preValue, 'name': 'ipo-nfo-analysis',
-                //     'id': '0'
-                //   }
-                // }); 
+                setTempId(preValue => {
+                  return {
+                    ...preValue, 'name': 'ipo-nfo-analysis',
+                    'id': '0'
+                  }
+                }); 
                 lpoSearch();
-                changeurl('IPO-NFO-analysis')
+                changeurl('ipo-nfo-analysis')
               }}
             >
               IPO/NFO Analysis
