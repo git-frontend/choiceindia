@@ -67,7 +67,7 @@ export default function Header() {
                             </li> */}
 
                            
-                            <li className="nav-item get-btn pt-4 pb-4">
+                            <li className="nav-item get-btn get-btn2">
                                 <NavLink className="nav-link"  onClick={ ()=>setShow(!show)} to='/open-free-demat-account'>Open Free Account</NavLink>
                             </li>
                         </ul>
