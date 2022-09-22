@@ -16,13 +16,13 @@ import Template6 from "../Common-features/Template6";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import Slider from 'react-slick';
-
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 function LongTermResearch() {
   let urlid = ""
   const [check, setCheck] = useState();
   const [list, setList] = useState([]);
   const [list2, setList2] = useState('');
-  const [data, setData] = useState(false);
+  const [data, setData] = useState(true);
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
@@ -248,7 +248,7 @@ function LongTermResearch() {
             >
               {
                 data ?
-                  <Template6 />
+                <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='Loading' height={250} width={250} />
                   :
 
                   <div className="research-tab-cont" >
