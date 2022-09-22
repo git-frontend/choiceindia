@@ -106,6 +106,8 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
+const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
+
 
 
 
@@ -534,6 +536,12 @@ function Routing() {
                         <Route exact path='/broking-media' element={
                             <React.Suspense>
                                 < LazyBrokingMedia />
+                            </React.Suspense>
+                        } />
+                        
+                        <Route exact path='/best-stocks' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
                             </React.Suspense>
                         } />
 
