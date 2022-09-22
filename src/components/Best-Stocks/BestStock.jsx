@@ -21,7 +21,7 @@ function BestStock() {
   //   setSkeleton(() => false);
   // }
 
-  
+
   const [rendercount, setRenderCount] = useState(() => false);
   setTimeout(() => {
     setSkeleton(() => false);
@@ -58,7 +58,14 @@ function BestStock() {
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
-          <h1>hello </h1>
+            <section className="mainhead">
+              <div className="container">
+                <div className="row ">
+<h1>hello</h1>
+                </div>
+
+              </div>
+            </section>
 
           </div>
       }
