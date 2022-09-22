@@ -213,6 +213,17 @@
     background: $bgcolor-graydark;
     z-index: 999;
     position: relative;
+    a {
+        &:link {
+            color: $whiteColor;
+            text-decoration: none;
+        }
+        &:hover {
+            color: $yellowColor;
+            text-decoration: none;
+        }
+    }
+    
     p{
         color: $whiteColor;
         font-family: $font-family-poppins-medium;

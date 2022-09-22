@@ -548,6 +548,7 @@
                 transition-duration: 0.6s;
                 text-align: center;
                 border: 1px solid transparent;
+                
                 span {
                     display: inline-block;
                     margin-bottom: 3rem;
@@ -588,6 +589,7 @@
                     width: 95%;
                     margin: 0 auto;
                     min-height: 255px;
+                    margin-bottom: 3rem !important;
                 }
             }
 
