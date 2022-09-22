@@ -1,0 +1,133 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+.sub-broker-skeleton-parent{
+.mainhead{
+    background-color:$abt-bg;
+    .title-secnd1{
+        font-size: 2.5rem;
+        color: #231F20;
+        font-family: $font-family-poppins-bold;
+        line-height: 3.75rem;
+        text-align: center;
+        padding-top: 3rem;
+        @media (max-width: $sm){
+        font-size: 2rem;
+        line-height: 3rem;
+       
+    }
+    }
+    .title_para{
+        font-size: 1rem;
+        color: #797979;
+        text-align: center;
+        line-height: 1.625rem;
+        font-family: $font-family-poppins-regular;
+        font-weight: 400;
+    }
+   
+    .list_group1{
+           
+            box-shadow: 0px 3px 6px #00000029;
+            border-radius: 16px;
+            background-color: $whiteColor;
+        .list{
+            color:#231F20;
+            font-size: 1.125rem;
+            line-height: 1.688rem;
+            width: 100%;
+            text-align: center;
+            font-family: $font-family-poppins-medium;
+            border-radius: 22px;
+            border: none;
+            padding: 9px 12px;
+        }
+        .listsec{
+            color:#0066B2;
+
+            
+        }
+    }
+    .main-left{
+        background-color: $whiteColor;
+        border-radius: 8px;
+        margin-left: 1%;
+        padding: 15px 25px;
+        margin-bottom: 15px;
+    .top-section{
+        display: flex;
+        padding-bottom: 5px;
+        justify-content: space-between;
+      
+        .top-left{
+            .top-text{
+                font-size: 0.75rem;
+                line-height: 1.188rem;
+                font-family: $font-family-poppins-regular;
+                color: $secondary;
+            }
+            .top-date{
+                font-size: 0.75rem;
+                line-height:1.125rem;
+                font-family: $font-family-poppins-medium;
+                color: $primary;
+            }
+        }
+       .top-right{
+            .btn-buy{
+                padding: 10px 10px;
+                border-radius: 0.5rem;
+                border-style: none;
+                margin: 0;
+                color: #fff;
+                background: #0066B2;
+                height: 2.938rem;
+                line-height: 1.313rem;
+                text-align: center;
+                font-size: 1rem;
+                font-family: $font-family-poppins-medium;
+                text-transform: capitalize;
+                min-width: 6.188rem;;
+        }
+    }
+    }
+    .middle-section{
+        display: flex;
+        padding: 13px 0px;
+        justify-content: space-between;
+        .middle-left{
+            .big-text{
+                font-size: 1.125rem;
+                line-height: 1.688rem;
+                color: $primary;
+                font-family: $font-family-poppins-medium;
+            }
+            .small-text{
+                font-size: 0.875rem;
+                line-height: 1.438rem;
+                color: $secondary;
+                font-family: $font-family-poppins-regular
+            }
+        }
+        .middle-right{
+            .right-big-text{
+                color: $primary;
+                font-size: 1.125rem;
+                font-family: $font-family-poppins-medium;
+                line-height: 1.688rem;
+            }
+            .right-small-text{
+                color: #00B16B;
+                font-size: 0.875rem;
+                line-height: 1.438rem;
+                font-family: $font-family-poppins-regular;
+            }
+        }
+       
+        
+    }
+    }
+
+}
+}
+
+    
