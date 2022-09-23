@@ -142,7 +142,7 @@ function MarketInsights() {
                                                         <div className="insights-item-cont cursor-pointer" >
                                                             <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                             {/* <img src={response.feature_image} alt="" /> */}
-                                                            <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
+                                                            <span className="ttl-sm" >{response.tag || '-'}</span>
                                                         </div>
                                                         <div className="item-cont-descr">
                                                             {/* <p>{response.report_subtype_name}</p> */}
