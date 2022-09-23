@@ -211,6 +211,9 @@
                       -webkit-box-orient: vertical;
                       margin: 0;
                     }
+                    .ups-potn{
+                      margin-top: 2rem;
+                    }
                     p{
                       margin: 0;
                     }
@@ -604,7 +607,7 @@
             .curnt-mrk-price{
               position: absolute;
               bottom: inherit;
-              top: 0;
+              top: 0.6rem;
               h4{
                 font-size: 1.25rem;
                 color: $secondary;

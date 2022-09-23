@@ -371,6 +371,9 @@
                         position: absolute;
                         left: 0;
                         display: block;
+                        @media (max-width:$sm) {
+                            display: none;
+                        }
                     }
 
                     .single-ttl {
@@ -385,14 +388,23 @@
                 .single-ttl {
                     font-family: $font-family-poppins-semibold;
                     font-size: 1.75rem;
+                    line-height: 1.6;
                     color: $darkColorgray;
                 }
 
                 .para {
                     display: none;
+                    @media (max-width:$sm) {
+                        display: block;
+                    }
                 }
 
                 &:last-child {
+                }
+                @media (max-width:$sm) {
+                    margin-bottom: 0;
+                    padding: 0 1.5rem;
+                    text-align: center;
                 }
             }
 
@@ -406,6 +418,9 @@
                 top: 0;
                 opacity: 0.1;
                 border-radius: 9px;
+                @media (max-width:$sm) {
+                    display: none;
+                }
             }
             @media (max-width:$md) {
                 padding-right: 0;
@@ -517,6 +532,9 @@
                         left: -10px;
                         background: $bgcolor-yellow;
                         border-radius: 20px 0 0 20px;
+                        @media (max-width:$sm) {
+                            display: none;
+                        }
                     }
 
                     &::after {
@@ -533,16 +551,20 @@
 
                     @media (max-width: $sm) {
                         left: 0;
+                        width: 95% !important;
+                        margin:0 auto;
                     }
                 }
 
                 @media (max-width: $sm) {
-                    width: 100%;
+                    width: 95% !important;
+                    margin-bottom: 0;
                 }
             }
 
             @media (max-width: $sm) {
                 padding-left: 0;
+                display: block;
             }
 
             .slick-slide {

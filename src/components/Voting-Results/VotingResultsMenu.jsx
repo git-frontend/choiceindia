@@ -54,7 +54,7 @@ function VotingResultsMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    <div className=" code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
                         <div className="d-flex justify-content-between">
