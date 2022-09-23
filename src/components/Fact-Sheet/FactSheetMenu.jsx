@@ -3,6 +3,7 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import FactSheetService from "../../Services/FactSheetService";
+import noDataimg from '../../assets/images/no-data.webp';
 function FactSheetMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
@@ -39,7 +40,7 @@ function FactSheetMenu() {
     }, [trigger])
     return (
         <div>
-            <section className="Investormenu">
+            <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
@@ -55,15 +56,18 @@ function FactSheetMenu() {
                                 <h3 className="head">Choice International Limitied</h3>
                                 
                                 </div> */}
-                    <div className=" pl-3 pr-3 cgmainwrap code-mainwrapper subtext">
+                                {
+                                    data?
+                                    <div className=" pl-3 pr-3 cgmainwrap code-mainwrapper subtext">
                         <div className="row border-bottom">
                             <div className=" col-md-5 col-5 "><h3 className="head">Name </h3></div>
                             <div className="col-md-7 col-7 word-wrap"> <h3 className="head">Choice International Limitied</h3></div>
                         </div>
+
                         {
-                            (data||[]).map((res)=>{
+                            (data||[]).map((res,i)=>{
                                 return(
-                                    <div className="row border-bottom ">
+                                    <div className="row border-bottom " key={i}>
                             <div className=" col-md-5 col-5 pb-3 pt-3">{res.name}</div>
                             <div className="col-md-7 col-7 pb-3 pt-3 word-wrap">{res.choice_international_limited}</div>
                         </div>
@@ -127,7 +131,13 @@ function FactSheetMenu() {
                                 EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br />
                                 WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
                         </div> */}
-                    </div>
+                    </div>: 
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div> 
+
+                                }
+                    
 
                     {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Business Description </div>

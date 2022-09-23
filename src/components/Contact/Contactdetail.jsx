@@ -13,13 +13,27 @@ function Contactdetail() {
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
+   let data={};
 
+   let data2={}
+   contactMap.forEach(ele=>{
 
+     
+      data[ele.id]=ele
+   })
+
+   city_list.forEach(ele=>{
+
+      console.log(ele.id,ele.city_name," == ",data[ele.id]?data[ele.id].id:'no id',data[ele.id]?data[ele.id].city:"")
+      data2[ele.id]=ele
+   })
+  
    setTimeout(() => {
       setShowMap(() => true);
    }, 2000)
 
    function selectCity(event) {
+      // console.log("event",event.target.value)
       setIsFirstMap(() => false);
       setMapNumber(() => event.target.value);
    }
@@ -73,7 +87,7 @@ function Contactdetail() {
 
                                  return (
                                   
-                                          <option key={item.id} value={i}>{item ? item.city_name : 'NA'}</option>
+                                          <option key={item.id} value={item.id}>{item && item.city_name ? item.city_name.toUpperCase() : 'NA'}</option>
                                     
                                  )
                               })
@@ -85,18 +99,19 @@ function Contactdetail() {
                      firstMap ?
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
-                           <p className="subtext mb-0">(+91) - 8080-80-8875</p>
+                           {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
                            <p className="subtext">support@choiceindia.com</p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
                         </div> :
-                        <div className="text-right address" key={contactMap[MapNumber].id}>
-                           <p className="maintitle">{contactMap[MapNumber].city}</p>
-                           <p className="subtext mb-0">{contactMap[MapNumber].mobNum}</p>
-                           <p className="subtext">{contactMap[MapNumber].support}</p>
-                           <p className="subtext">{contactMap[MapNumber].address1}<br />
-                              {contactMap[MapNumber].address2} <br />{contactMap[MapNumber].address3}
+                        <div className="text-right address" key={data[MapNumber].id}>
+                           <p className="maintitle">{data[MapNumber].city}</p>
+                           {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
+                           {/* <p className="subtext">{data[MapNumber].support}</p> */}
+                           <p className="subtext">support@choiceindia.com</p>
+                           <p className="subtext">{data[MapNumber].address1}<br />
+                              {data[MapNumber].address2} <br />{data[MapNumber].address3}
                            </p>
                         </div>
                   }
@@ -117,7 +132,7 @@ function Contactdetail() {
                      <div className='row'>
                         <div className='map '>
                            <div style={{ width: "100%" }}>
-                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={contactMap[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
                      </div>
                   </div> : ''

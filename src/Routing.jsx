@@ -103,6 +103,8 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
+const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 
 
 
@@ -115,7 +117,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -311,7 +313,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/research-listing-new' element={
+                        <Route exact path='/research-listing' element={
                             <React.Suspense>
                                 < Lazyresearch />
                             </React.Suspense>
@@ -516,10 +518,22 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+                        <Route exact path='/partner-assets/emitra' element={
+                            <React.Suspense>
+                                < LazyPartnerAssests />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/advisory-for-investors' element={
+                            <React.Suspense>
+                                < LazyInvestorAdvidory />
+                            </React.Suspense>
+                        } />
+
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {window.location.pathname.indexOf("/campaign/sub-broker") === -1 ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

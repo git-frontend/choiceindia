@@ -16,7 +16,7 @@ const imageData =
     },
     {
         "image":`${ImageSub2}`,
-        "title":"Sumeet Bagadia Desk’s",
+        "title":"Sumeet Bagadia Desk",
         "id": 3,
         "description":"Get expert stock recommendations for all types of trades, along with sector specific investments."
     

@@ -79,7 +79,7 @@ function DematPage() {
 
                           Well to answer that question people need to understand that a Demat account is just a repository where your stocks are stored, for transactional purposes in the stock market you need a trading account.<br /><br />
 
-                          Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account">Demat account and a trading account differ</Link> from each other, let's look into the details; <br />
+                          Now that we've understood how does a <Link to="/blog/difference-between-demat-and-trading-account/">Demat account and a trading account differ</Link> from each other, let's look into the details; <br />
                           <div className="ml-3">
                             <h3 className="font-bold"> 1. Delivery </h3>
                             A Demat account stores your stocks only when you take the delivery for it, you can further buy or sell in the future whereas your trading account facilitates you for your intraday activities, in intraday trading, you are required to sell off your positions by the end of the day, hence the intraday trades you’ve taken are not delivered to your Demat account.<br />
@@ -89,7 +89,7 @@ function DematPage() {
                             When you add money into your trading account you can go ahead and buy stocks that will be stored in your Demat account and if you sell your stocks, your Demat account will get rid of those stocks and the money will be deposited into your trading account and from there it will be transferred to your bank account as per your convenience.
                           </div>
 
-                          <h3 className="font-bold">Benefits of Opening Demat Account </h3>
+                          <h3 className="font-bold"><Link to="/blog/benefits-of-a-demat-account/">Benefits of Opening Demat Account </Link></h3>
                           In the above-mentioned sections we have told you why is a Demat account necessary but told very less on why exactly is a Demat account beneficial for you,<br />
                           <div className="ml-3">
                             <h3 className="font-bold"> 1. Corporate Benefits </h3>
@@ -167,10 +167,10 @@ function DematPage() {
                             Safety charges or account custodian charge fees are usually levied on the DP by the depository, these are one-time charges on the DPs. The DPs who charge safety charges on their customers do it on a monthly basis.<br />
                             <li className="font-bold">Annual Maintainance Charge (AMC)</li>
                             Annual Maintainance charges are levied on the investor by the DP for the services they provide. <br />
-                            The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <Link to="/blog/what-are-dp-charges">DPs charge</Link> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.<br />
+                            The annual Maintainance charge is also called the folio maintenance charge, these charges range between 200 - 1000 rupees per annum. The style at which <Link to="/blog/what-are-dp-charges/">DPs charge</Link> AMC differs accordingly, some DPs charge their investors quarterly and some even take a lifetime fee, but charging investors annually is the most common way of collecting AMC.<br />
                             <li className="font-bold">Transactional Charges</li>
                             The main aim of having a Demat account is participating in the Indian markets and while doing that it is evident that every transaction you make on the Demat account is a move towards your future.<br />
-                            DPs charge <Link to="/blog/dp-transaction-charges">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.<br />
+                            DPs charge <Link to="/blog/dp-transaction-charges/">transactional charges</Link> on both credit and debits, where every time you engaged in a trade a nominal amount is charged on your behalf for facilitating a smooth transaction between your Demat account and the market.<br />
                           </div><br /><br />
                           <h3 className="font-bold">Why Should You Choose Choice to Open a Demat Account? </h3>
                           You’ve been through all the information that is out there about Demat and you hone enough knowledge to understand that picking a DP is no easy job, you’ll have to consider a lot of factors like charges and the services they provide and if that aligns with your conscience, you opt for them.<br />
@@ -179,7 +179,7 @@ function DematPage() {
                             <li>Free AMC for a year and after a year the maintenance charge is at just 200 Rupees + GST, which is significantly lesser than the market standard.</li><br />
                             <li>Free access to expert research and advisory, these reports provided have proven to have an impeccable accuracy record.</li><br />
                             <li>Insanely low brokerage charges, Choice broking platform happens to be very trader friendly where call and trade orders have charges on them and squaring off your positions is also absolutely free. The Brokerage charges are as low as 2 paise.</li><br />
-                            <li><a href="https://choiceindia.com/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li><br />
+                            <li><a href="/campaign/free-amc-demat-account">Open a Demat account with no amc,</a> Choice opens an account for you, free of cost.</li><br />
                           </ul>
                         </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                     </div>

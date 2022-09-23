@@ -9,7 +9,7 @@ import Template2 from "../Common-features/Template2";
 import Template3 from "../Common-features/Template3";
 import Template5 from "../Common-features/Template5";
 import Template6 from "../Common-features/Template6";
-
+import noDataimg from '../../assets/images/no-data.webp';
 
 function SBDesk() {
 
@@ -279,7 +279,11 @@ function SBDesk() {
             </div>
     
           {/*   <Template6></Template6> */}
-            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div><h1 className="text-center">No Data Found</h1></div> : ''}
+            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
+                <div className="text-center">
+                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                </div>
+            </div> : ''}
             {showLoader ? <div className="loaderB mx-auto"></div> :
                 <div className="sbdesk-tab-cont">
                     <div className="sbdesk-tab-list">

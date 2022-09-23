@@ -28,20 +28,17 @@ function TrendingReports(props) {
     })
   }
 
-  // function getSingleResearchDetail(id){
-
-  //   ResearchService.getSingleResearchDetail(id).then(
-  //     res => {
-  //       if(res){
-  //         if(res.response.data){
-  //           setList(res.response.data);
-  //         }
-  //       }
-  //       // setList(res.response.data);
-  //       console.log('Detail',res);
-  //     }
-  //   )
-  // }
+  function goToScroll(){
+    var element = document.getElementById('research-blog');
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    setCheck(()=> false);
+  }
 
   function loadResearch(id) {
     ResearchService.researchcategory(id).then(
@@ -66,14 +63,14 @@ function TrendingReports(props) {
           <div className="row">
             <div className="col-md-12">
 
-              <div className="heading-sec">
+              <div className="heading-sec" id="research-blog">
                 <h3 className="title-first">Trending Reports</h3>
               </div>
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
-              <div className="res-detailtab-cont">
+              <div className="res-detailtab-cont" >
 
                 {
                   check ?
@@ -200,9 +197,8 @@ function TrendingReports(props) {
                     </div>
                   </div> */}
                  
-                    <div className="mt-5 d-flex justify-content-center">
-                    <button className="btn-bg"onClick={() => {setCheck(true)}}>Load More</button>
-                  </div>
+                 <div className="mt-5 d-flex justify-content-center cursor-pointer">{check?<a className="btn-bg btn-ptr" onClick={()=>{goToScroll()}}>Load Less</a>:<a className="btn-bg btn-ptr" onClick={()=>{setCheck(true)}}>Load More</a>}</div>
+              
                   
 
                 {/* <div className="mt-5 d-flex justify-content-center">

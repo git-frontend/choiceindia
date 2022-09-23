@@ -13,12 +13,12 @@ const contactMap = [
 
     {
         "id":2,
-        "city": "AHMEDABAD GUJARAT",
+        "city": "AHMEDABAD GUJARAT", 
         "mobNum": "+91-9909923499",
         "support": "support@choiceindia.com",
-        "address1": "601 Santorini Square Behind Abhishree",
-        "address2": "Complex, Opp Star Bazar, Star Bazar to Prernatirth Derasar Road, Nr.Jodhpur Cross",
-        "address3": "Road, Satellite Ahmedabad 380015 Gujarat",
+        "address1": "601, Santorini Square, B/H,",
+        "address2": "Abhishree Complex, Opp. Star Bazar, Near Jodhpur Cross Road, Satellite,",
+        "address3": "Ahmedabad, Gujarat - 380015",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9639801520307!2d72.52116661444222!3d23.025094722012994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9bf07c56a12f%3A0x28f9238f66bc0c14!2sSANTORINI%20SQUARE!5e0!3m2!1sen!2sin!4v1656787336420!5m2!1sen!2sin" 
     },
 
@@ -38,8 +38,8 @@ const contactMap = [
         "city": "ANGAMALY KERALA",
         "mobNum": "9633278254 / 9633278262",
         "support": "support@choiceindia.com",
-        "address1": "Romi Kurian",
-        "address2": "First Floor, Golden Plaza, TB Junction,",
+        "address1": "First Floor,",
+        "address2": "Golden Plaza, TB Junction, ",
         "address3": "Angamaly - 683572 Kerala",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.8166871481153!2d76.38659131428324!3d10.1955372724355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b08065f910d4a2b%3A0xa613e087722cb14d!2sTC%20Kurian%20Chartered%20Accountants!5e0!3m2!1sen!2sin!4v1656787618885!5m2!1sen!2sin" 
     },
@@ -82,9 +82,9 @@ const contactMap = [
         "city": "BHILAI CHHATTISGARH",
         "mobNum": "62611 25807",
         "support": "support@choiceindia.com",
-        "address1": "2nd Floor, Area 52, 44 A/1, Street # 13,",
-        "address2": "Nehrunagar West, Vidyavihar Colony,",
-        "address3": "Bhilai (CG) 490020",
+        "address1": "44, A/1, Street Number 13, Nehru Nagar West,",
+        "address2": "Vidya Vihar Colony, Nehru Nagar,",
+        "address3": "Bhilai, Chhattisgarh - 490020",
         "mapSrc": ""
     },
 
@@ -148,9 +148,9 @@ const contactMap = [
         "city": "ERODE TAMILNADU",
         "mobNum": "9942758097",
         "support": "support@choiceindia.com",
-        "address1": "2nd floor, 215 B, ",
-        "address2": "R.K.K.S. tower Brough road,",
-        "address3": "Erode – 638001",
+        "address1": "Door No. 106, First Floor,",
+        "address2": "1st Shop, SBT Complex, VCTV Main Road,",
+        "address3": " Erode, Tamil Nadu – 638001",
         "mapSrc": ""
     },
 
@@ -238,8 +238,8 @@ const contactMap = [
         "mobNum": "9633278261 / 9633278262",
         "support": "support@choiceindia.com",
         "address1": "1314, 1st Floor, Nirmala Trust Building,",
-        "address2": "Kurisumkal Junction, Kanjirappally,",
-        "address3": "Dist. Kottayam - 686507 Kerala",
+        "address2": "Kurisumkal Junction, Dist. Kottayam, ",
+        "address3": "Kanjirappally, Kerala - 686507",
         "mapSrc": ""
     },
 
@@ -267,11 +267,22 @@ const contactMap = [
 
     {
         "id":25,
-        "city": "Kolkata (KL)",
+        "city": "KOLKATA WEST BENGAL",
+        "mobNum": "9323892424",
+        "support": "anoop.tibrewal@choiceindia.com",
+        "address1": "90, Phears Lane, 3rd Floor,",
+        "address2": "Suite No. 301 & 307,",
+        "address3": "Kolkata, West Bengal - 700012",
+        "mapSrc": ""
+    },
+    {
+        "id":51,
+        "city": "KOLKATA WEST BENGAL",
         "mobNum": "9804800069",
         "support": "bappa.sen@choiceindia.com",
-        "address1": "6th Floor, Room No. 116, Stephen House, 4 BBD Bag East, ",
-        "address2": "  Kolkata, West Bengal - 700001",
+        "address1": "6th Floor, Room No. 116,",
+        "address2": "Stephen House, 4 BBD Bag East,",
+        "address3": "Kolkata, West Bengal - 700001",
         "mapSrc": ""
     },
 
@@ -280,19 +291,19 @@ const contactMap = [
         "city": "KOTTARAMATTOM KERALA",
         "mobNum": "9744953338 / 9633278262",
         "support": "support@choiceindia.com",
-        "address1": "Santhom Complex,",
-        "address2": "Opp. Private Bus Stand, Pala,",
-        "address3": "Kottaramattom - 686575 Kerala",
+        "address1": "1st Floor, Santhom Complex,",
+        "address2": "Opp. Private Bus Stand, Pala, Kottaramattom,",
+        "address3": "Kerala - 686575",
         "mapSrc": ""
     },
 
     {
         "id":27,
         "city": "KOTTAYAM KERALA",
-        "mobNum": "9446126310 / 9633278262",
+        "mobNum": "9446126310 / 9633278262",  
         "support": "support@choiceindia.com",
-        "address1": "1st Floor, Thannickal Towers, Near Best",
-        "address2": "Hotel, YMCA Road, Central Junction,",
+        "address1": "1st Floor, Thannickal Towers,",
+        "address2": "Central Junction,",
         "address3": "Kottayam - 686001 Kerala",
         "mapSrc": ""
     },
@@ -309,7 +320,7 @@ const contactMap = [
     },
 
     {
-        "id":29,
+        "id":30,
         "city": "MADURAI TAMILNADU",
         "mobNum": "9360492307 / 9159077999",
         "support": "support@choiceindia.com",
@@ -320,7 +331,7 @@ const contactMap = [
     },
 
     {
-        "id":30,
+        "id":31,
         "city": "MANGALORE KARNATAKA",
         "mobNum": "7022129306 / 9886062043",
         "support": "support@choiceindia.com",
@@ -331,7 +342,7 @@ const contactMap = [
     },
 
     {
-        "id":31,
+        "id":32,
         "city": "Mumbai, Maharashtra",
         "mobNum": "(+91) - 8080-80-8875",
         "support": "support@choiceindia.com",
@@ -341,7 +352,7 @@ const contactMap = [
     },
 
     {
-        "id":32,
+        "id":33,
         "city": "MUMBAI-MAROL MAHARASHTRA",
         "mobNum": "9322722424",
         "support": "support@choiceindia.com",
@@ -352,7 +363,7 @@ const contactMap = [
     },
 
     {
-        "id":33,
+        "id":62,
         "city": "MYSORE KARNATAKA",
         "mobNum": "9886108495 / 9886062043",
         "support": "support@choiceindia.com",
@@ -363,7 +374,7 @@ const contactMap = [
     },
 
     {
-        "id":34,
+        "id":63,
         "city": "NAGPUR MAHARASHTRA",
         "mobNum": "9049219416",
         "support": "support@choiceindia.com",
@@ -374,7 +385,7 @@ const contactMap = [
     },
 
     {
-        "id":35,
+        "id":34,
         "city": "PALA KERALA",
         "mobNum": "9633278260 / 9633278262",
         "support": "support@choiceindia.com",
@@ -385,18 +396,18 @@ const contactMap = [
     },
 
     {
-        "id":36,
+        "id":35,
         "city": "PALAKKAD KERALA",
         "mobNum": "9633278216 / 9633278262",
         "support": "support@choiceindia.com",
-        "address1": "2nd floor,Malabar fort,",
-        "address2": "G B ROAD ,",
-        "address3": "Palakkad - 678001 Kerala",
+        "address1": "2nd Floor, Malabar Fort,",
+        "address2": "G B Road, Sulthanpet,",
+        "address3": "Palakkad, Kerala - 678001",
         "mapSrc": ""
     },
 
     {
-        "id":37,
+        "id":36,
         "city": "PATNA BIHAR",
         "mobNum": "7488373178 / 6202825103",
         "support": "support@choiceindia.com",
@@ -407,30 +418,41 @@ const contactMap = [
     },
 
     {
-        "id":38,
+        "id":52,
+        "city": "PATNA BIHAR",
+        "mobNum": "7488373178 / 6202825103",
+        "support": "support@choiceindia.com",
+        "address1": "Ground Floor, M-22,",
+        "address2": "Road No. 25, S. K. Nagar, Kidwaipuri,",
+        "address3": "Patna, Bihar - 800001",
+        "mapSrc": ""
+    },
+
+    {
+        "id":37,
         "city": "Pune, Maharashtra",
         "mobNum": "(+91) - 8080-80-8875",
         "support": "support@choiceindia.com",
-        "address1": "First Floor,",
-        "address2": "102, Siddh Icon Baner Road,",
-        "address3": "Pune, Maharashtra 411045",
+        "address1": "Office No. 12, 1st Floor, Kumar Prestige Point, 283,",
+        "address2": "Bajirao Road, Near BSNL Phone Exchange, Shukravar Peth,",
+        "address3": "Pune, Maharashtra - 411002",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15129.18684151214!2d73.77485297056494!3d18.560657289881803!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfb47afe3eeb%3A0x5cd404c14d362e3b!2sSiddh%20icon!5e0!3m2!1sen!2sin!4v1655288430049!5m2!1sen!2sin" 
     },
 
 
     {
-        "id":39,
+        "id":38,
         "city": "RAIPUR CHHATTISGARH",
         "mobNum": "9993563296",
         "support": "support@choiceindia.com",
-        "address1": "B-39/7, 2nd Floor, ",
+        "address1": "B-39/7, 2nd Floor,",
         "address2": "New Rajendra Nagar,",
-        "address3": "Raipur C.G. PIN 492001 Chhattisgarh",
+        "address3": "Raipur, Chhattisgarh - 492001",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3719.3133116431!2d81.65747631441052!3d21.219420986619138!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a28dce2c1fd6eb5%3A0x27d7185eac8131df!2sChoice%20Equity%20Broking%20Pvt.%20LTD!5e0!3m2!1sen!2sin!4v1656792223284!5m2!1sen!2sin" 
     },
 
     {
-        "id":40,
+        "id":39,
         "city": "RAJAHMUNDRY ANDHRA PRADESH",
         "mobNum": "9848593636 / 9676479991",
         "support": "support@choiceindia.com",
@@ -441,7 +463,7 @@ const contactMap = [
     },
 
     {
-        "id":41,
+        "id":40,
         "city": "RANCHI JHARKHAND",
         "mobNum": "9322562424",
         "support": "support@choiceindia.com",
@@ -452,7 +474,7 @@ const contactMap = [
     },
 
     {
-        "id":42,
+        "id":41,
         "city": "SALEM TAMILNADU",
         "mobNum": "9894607868 / 8220067777",
         "support": "support@choiceindia.com",
@@ -463,7 +485,7 @@ const contactMap = [
     },
 
     {
-        "id":43,
+        "id":42,
         "city": "SECUNDERABAD 1 TELANGANA",
         "mobNum": "8886338071 / 9010562288",
         "support": "support@choiceindia.com",
@@ -474,7 +496,7 @@ const contactMap = [
     },
 
     {
-        "id":44,
+        "id":43,
         "city": "SIKAR RAJASTHAN",
         "mobNum": "",
         "support": "support@choiceindia.com",
@@ -485,7 +507,7 @@ const contactMap = [
     },
 
     {
-        "id":45,
+        "id":44,
         "city": "SURAT GUJARAT",
         "mobNum": "9321582424",
         "support": "support@choiceindia.com",
@@ -496,18 +518,18 @@ const contactMap = [
     },
 
     {
-        "id":46,
+        "id":45,
         "city": "THRISSUR KERALA",
         "mobNum": "9895011333 / 9633278262",
         "support": "support@choiceindia.com",
-        "address1": "Third Floor, Room No. 25/469/22,",
+        "address1": "Third Floor, Room No. 36/2995, ",
         "address2": " Pooma Complex, M.G. Road, ",
-        "address3": "Thrissur -680501 Kerala",
+        "address3": "Thrissur, Kerala - 680001",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3922.706320514156!2d76.20726781603446!3d10.523781246210461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7ee45dcfd9ecb%3A0xf4319337b8c44ce8!2sPooma%20Complex%2C%20MG%20Road%2C%20Marar%20Road%20Area%2C%20Thekkinkadu%20Maidan%2C%20Thrissur%2C%20Kerala%20680001!5e0!3m2!1sen!2sin!4v1656793039846!5m2!1sen!2sin" 
     },
 
     {
-        "id":47,
+        "id":46,
         "city": "TIRUNELVELI TAMILNADU",
         "mobNum": "7397009189",
         "support": "support@choiceindia.com",
@@ -518,7 +540,7 @@ const contactMap = [
     },
 
     {
-        "id":48,
+        "id":47,
         "city": "TIRUVALLA KERALA",
         "mobNum": "9633278259 / 9633278262",
         "support": "support@choiceindia.com",
@@ -529,36 +551,58 @@ const contactMap = [
     },
 
     {
-        "id":49,
+        "id":48,
         "city": "TRICHY TAMILNADU",
         "mobNum": "9894934459",
         "support": "support@choiceindia.com",
-        "address1": "SBS Complex, 3rd Floor, D 28, 7th Cross",
-        "address2": "(East), Thillai Nagar,",
-        "address3": "Trichy - 620018, Tamil Nadu",
+        "address1": "D-28, SBS Complex, ",
+        "address2": "3rd Floor, 7th Cross East, Thillai Nagar,",
+        "address3": "Trichy, Tamil Nadu - 620018",
         "mapSrc": ""
     },
 
     {
-        "id":50,
+        "id":49,
         "city": "TRIVANDRUM KERALA",
         "mobNum": "9946861899 / 9633278262",
         "support": "support@choiceindia.com",
-        "address1": "TC No. 9/1020-5, Blossom Apartments,",
-        "address2": "Opp. NSS Karayogam, ",
+        "address1": "1st Floor, TC No. 9/1020-5 (New TC No. 22/903), ",
+        "address2": "Blossom Apartment, Opp. NSS Karayogam,",
         "address3": "Sasthamangalam, Trivandrum - 695010 Kerala",
         "mapSrc": ""
     },
 
     {
-        "id":51,
+        "id":50,
         "city": "VISAKHAPATNAM ANDHRA PRADESH",
         "mobNum": "8639109099 / 9676479991",
         "support": "support@choiceindia.com",
-        "address1": "47-10-17/8, B1,Second Floor, Varanasi",
-        "address2": "Majestic Complex, Dwarakanagar,",
-        "address3": "Visakhapatnam - 530016 Andhra Pradesh",
+        "address1": "47-10-17/8, B1, Second Floor, Eastern Wing,",
+        "address2": "Varanasi Majestic Complex, Dwarakanagar,",
+        "address3": "Visakhapatnam, Andhra Pradesh - 530016",
         "mapSrc": ""
+    },
+
+    {
+        "id":53,
+        "city": "Thane",
+        "mobNum": "8639109099 / 9676479991",
+        "support": "support@choiceindia.com",
+        "address1": "Office No. 904, 9th Floor, Lodha Supremus II,",
+        "address2": "Road No. 22, Wagle Estate, Thane West, ",
+        "address3": "Thane, Maharashtra - 400604",
+        "mapSrc": ""
+    },
+
+    {
+        "id":54,
+        "city": "JAIPUR RAJASTHAN",
+        "mobNum": "9321362424, 9320622424, 9829240580",
+        "support": "support@choiceindia.com",
+        "address1": "232, 2nd Floor, Ganpati Plaza",
+        "address2": ", M. I. Road,",
+        "address3": "Jaipur - 302001, Rajasthan",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7115.026810730471!2d75.79093115390624!3d26.918933900000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5f0aecae189%3A0x194250a129817bbd!2sGanpati%20plaza%20M.I.Road!5e0!3m2!1sen!2sin!4v1656790272052!5m2!1sen!2sin"
     },
 ]
 

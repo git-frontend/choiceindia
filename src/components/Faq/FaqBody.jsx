@@ -8,7 +8,7 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, useFormState } from 'react-hook-form';
 import Spinner from 'react-bootstrap/Spinner';
-
+import noDataimg from '../../assets/images/no-data.webp';
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -291,30 +291,37 @@ export default function FaqBody() {
 
                     </div>
                     <div className='content-list accordion-list ' >
-                      <Accordion defaultActiveKey="0" >
+                      {
+                        article.length ?
+                          <Accordion defaultActiveKey="0" >
 
-                        {
-                          article.map((res, index) => {
+                            {
+                              article.map((res, index) => {
 
-                            return (
-                              <div key={res.id}>
-                                <Accordion.Item  eventKey={index}>
-                                  <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
-                                  {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                  <Accordion.Body>
-                                    {res.description_text || 'Loading'}
-                                  </Accordion.Body>
-                                  {/**</div>*/}
-                                </Accordion.Item>
-                              </div>
+                                return (
+                                  <div key={res.id}>
+                                    <Accordion.Item eventKey={index}>
+                                      <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
+                                      {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                                      <Accordion.Body>
+                                        {res.description_text || 'Loading'}
+                                      </Accordion.Body>
+                                      {/**</div>*/}
+                                    </Accordion.Item>
+                                  </div>
 
-                            )
-                          })
+                                )
+                              })
 
-                        }
+                            }
 
 
-                      </Accordion>
+                          </Accordion> :
+                          <div className="text-center">
+                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                          </div>
+                      }
+                
 
                     </div>
                   </div>
@@ -327,30 +334,37 @@ export default function FaqBody() {
                   <div className='faq-container justify-content-center'>
 
                     <div className='content-list accordion-list ' >
-                      <Accordion defaultActiveKey="0" >
+                      {
+                        searchlist.length ?
+                          <Accordion defaultActiveKey="0" >
 
-                        {
-                          searchlist.map((res, index) => {
+                            {
+                              searchlist.map((res, index) => {
 
-                            return (
-                              <div key={res.id}>
-                                <Accordion.Item  eventKey={index}>
-                                  <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
-                                  {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                  <Accordion.Body>
-                                    {res.description_text || 'Loading'}
-                                  </Accordion.Body>
-                                  {/**</div>*/}
-                                </Accordion.Item>
-                              </div>
+                                return (
+                                  <div key={res.id}>
+                                    <Accordion.Item eventKey={index}>
+                                      <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
+                                      {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                                      <Accordion.Body>
+                                        {res.description_text || 'Loading'}
+                                      </Accordion.Body>
+                                      {/**</div>*/}
+                                    </Accordion.Item>
+                                  </div>
 
-                            )
-                          })
+                                )
+                              })
 
-                        }
+                            }
 
 
-                      </Accordion>
+                          </Accordion> :
+                          <div className="text-center">
+                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                          </div>
+                      }
+                      
 
                     </div>
                   </div>

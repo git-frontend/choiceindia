@@ -22,7 +22,7 @@ function OTAppMoreContent() {
                                     <br/>
                                     In the rapidly growing digital world, we have been spoilt for choices with various platforms that offer a wide array of spectrum with ease and convenience at our fingertips. The fintech industry has been prerogative to the nuances of investment and securities. Mobile applications have been synonyms now to the age old techniques where processes were hindrances, replaced by faster and smoother way to trade. The dependency to human actions has been eliminated drastically.<br /><br />
                                     What has changed the mindset of the user where trading apps are concerned is, it's handy and, moreover, it keeps you on alert mode at all times. There was a time when one received calls and messages from a broker manually. Now, it is very supportive of notification directly from the app which helps in progressive decision making.<br /><br />
-                                        <h2 className="font-bold"> Benefits of Online Trading App </h2>
+                                        <h3 className="font-bold"> Benefits of Online Trading App </h3>
                                         The traditional format of trading has a lot of ‘ifs’ and buts’ associated with it. The modern day trading i.e.through the online trading app hold its existence with each and every trader for its known benefits:<br /><br />
                                         <ul>
                                         <li className="font-bold">It's simple:</li>
@@ -57,9 +57,9 @@ function OTAppMoreContent() {
 </li>
                                           
                                             <li className="mb-3"><strong>C-Quant:</strong> Based on quantitative and mathematical statistics, the feature generates calls for Weekly positional trades.</li>
-                                            <li className="mb-3"><strong>Company Overview:</strong> An entire stock history, data and performance is available under this umbrellaConsolidated data of Company Overview.</li>
+                                            <li className="mb-3"><strong>Company Overview:</strong> An entire stock history, data and performance is available under Company Overview section.</li>
                                             <li className="mb-3"><strong>Advanced Charts:</strong> More than 100+ charts for Technical Analysis on stock market can be viewed.</li>
-                                            <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li>
+                                            {/* <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li> */}
                                             <li className="mb-3"><strong>IPO Investments:</strong> IPO details and updates with a brief backgrounder supported by blogs, research videos etc.</li>
                                            
                                         </ul>

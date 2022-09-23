@@ -6,6 +6,7 @@ import homeServices from '../../Services/homeServices';
 import fableData from '../../Data/homeFable'
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function FablesStories() {
 	let Id;
@@ -106,102 +107,113 @@ function FablesStories() {
 						</div>
 					</div>
 					<div className="row">
-						<div className="col-md-12">
-							<div className="stories-sec-main">
-								<div className="stories-sec-left d-none d-sm-block">
-									<div>
-										{
-											fslider && fslider.length && fslider[sliderimag] ?
-
-											
-                                              
-												<div id="stories-timeout">
-													<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={fslider[sliderimag]?.meta_title} />
-													{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
-												</div>
-												:
-												<div>
-													<LazyLoader src={fableData[0].feature_image} alt={fslider[sliderimag]?.meta_title} />
-													{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
-												</div>
-										}
-
-									</div>
-								</div>
-
-								<div className="stories-sec-right">
-									<div className="">
-										{
-											fslider && fslider.length && fslider[sliderimag] ?
-												<div className="stories-sec-right-des">
-													<Link to={`/blog/${fslider[sliderimag].slug}`}>
-														<h4>{fslider[sliderimag].meta_title}</h4>
-														<p>{fslider[sliderimag].excerpt} <span className="read-btn"><em>...</em>Read More</span></p>
-													</Link>
-												</div>
-												:
-												<div className="stories-sec-right-des">
-													<h4>{fableData[0].title}</h4>
-													<p>{fableData[0].excerpt}</p>
-												</div>
-
-										}
-									</div>
-									<div className="sec-slider-cont">
-										<Slider {...settings1}
-											slidesToShow={3}
-											// swipeToSlide={true}
-											// focusOnSelect={true}
-											
-
-												beforeChange={(ev1,ev2) => {
-													setTimeout(() => {
-													setSliderImag(ev1)	
-												}, 2000)	
-												
-											}}
-												
-												    
-											
+						{
+							fslider.length?
+								<div className="col-md-12">
+									<div className="stories-sec-main">
+										<div className="stories-sec-left d-none d-sm-block">
+											<div>
+												{
+													fslider && fslider.length && fslider[sliderimag] ?
 
 
-											className='stories-sec-slider'>
-											{
-												(fslider && fslider.length && fslider[sliderimag] ? fslider:[]).map((response,i) => {
-													
-													Id = fslider[sliderimag].slug;
-                                              
-													return (
 
-														<div className="itm-img" key={response.id} onClick={() => {
-															loadFableBlog(Id);
-															setSliderImag(i);
-															
+														<div id="stories-timeout">
+															<LazyLoader src={fslider[sliderimag]?.feature_image} width={"521"} height={"450"} alt={fslider[sliderimag]?.meta_title} />
+															{/* <img src={fslider[sliderimag].feature_image} alt="Loading" /> */}
+														</div>
+														:
+														<div>
+															<LazyLoader src={fableData[0].feature_image} alt={fslider[sliderimag]?.meta_title} />
+															{/* <img src={fableData[0].feature_image} alt="Loading" /> */}
+														</div>
+												}
 
+											</div>
+										</div>
 
-														}} >
-
-															<LazyLoader src={response.feature_image} alt={fslider[sliderimag]?.meta_title} width={"312"} height={"200"} />
-															
+										<div className="stories-sec-right">
+											<div className="">
+												{
+													fslider && fslider.length && fslider[sliderimag] ?
+														<div className="stories-sec-right-des">
+															<Link to={`/blog/${fslider[sliderimag].slug}`}>
+																<h4>{fslider[sliderimag].meta_title}</h4>
+																<p>{fslider[sliderimag].excerpt} <span className="read-btn"><em>...</em>Read More</span></p>
+															</Link>
+														</div>
+														:
+														<div className="stories-sec-right-des">
+															<h4>{fableData[0].title}</h4>
+															<p>{fableData[0].excerpt}</p>
 														</div>
 
-													)
-												})
-											}
-										</Slider>
-									</div>
-								</div>
+												}
+											</div>
+											<div className="sec-slider-cont">
+												<Slider {...settings1}
+													slidesToShow={3}
+													// swipeToSlide={true}
+													// focusOnSelect={true}
 
-							</div>
-						</div>
+
+													beforeChange={(ev1, ev2) => {
+														setTimeout(() => {
+															setSliderImag(ev1)
+														}, 2000)
+
+													}}
+
+
+
+
+
+													className='stories-sec-slider'>
+													{
+														(fslider && fslider.length && fslider[sliderimag] ? fslider : []).map((response, i) => {
+
+															Id = fslider[sliderimag].slug;
+
+															return (
+
+																<div className="itm-img" key={response.id} onClick={() => {
+																	loadFableBlog(Id);
+																	setSliderImag(i);
+
+
+
+																}} >
+
+																	<LazyLoader src={response.feature_image} alt={fslider[sliderimag]?.meta_title} width={"312"} height={"200"} />
+
+																</div>
+
+															)
+														})
+													}
+												</Slider>
+											</div>
+										</div>
+
+									</div>
+								</div>:
+								<div className="text-center">
+									<img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+								</div>
+						}
+						
 					</div>
-					<div className="row">
-						<div className="col-md-12 mt-5 d-flex justify-content-center">
-							<Link to="/blog" className="btn-bg">
-								View All
-							</Link>
-						</div>
-					</div>
+					{
+						fslider.length?
+							<div className="row">
+								<div className="col-md-12 mt-5 d-flex justify-content-center">
+									<Link to="/blog" className="btn-bg">
+										View All
+									</Link>
+								</div>
+							</div> : '' 	
+					}
+					
 				</div>
 			</section>
 

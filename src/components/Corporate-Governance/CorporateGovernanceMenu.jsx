@@ -5,6 +5,8 @@ import { faEye } from  '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import noDataimg from '../../assets/images/no-data.webp';
+
 function CodeConductMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
@@ -15,7 +17,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setData(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setData([]);
@@ -34,7 +36,7 @@ function CodeConductMenu() {
             res => {
                 if (res) {
                     setList(res.data.data);
-                    console.log("check", res.data.data)
+                    // console.log("check", res.data.data)
 
                 } else {
                     setList([]);
@@ -61,7 +63,7 @@ function CodeConductMenu() {
 
     return (
         <div>
-            <section className="Investormenu">
+            <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
@@ -74,14 +76,21 @@ function CodeConductMenu() {
 
 
                             <h3 className="head">Policies</h3>
-                            <div className="subtext">
+                            {
+                                (data && data.length)? 
+                                <div className="subtext">
                                 {
-                                    (data || []).map((res) => {
+                                    (data || [])?.map((res,i) => {
 
                                         return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                                <div>{res.headline} </div>
-                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                <div>{res.headline?res.headline:""} </div>
+                                                {
+                                                    res.view?
+                                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>:
+                                                    <td className=" text-end"></td> 
+                                                }
+                                                
                                             </div>
                                         )
 
@@ -107,7 +116,13 @@ function CodeConductMenu() {
                                 </div> */}
 
 
-                            </div>
+                            </div>:
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+
+                            }
+                           
 
 
 
@@ -122,13 +137,20 @@ function CodeConductMenu() {
 
 
                             <h3 className="head">Committee</h3>
-                            <div className="subtext">
+                            {
+                                (list && list.length)?
+                                <div className="subtext">
                                 {
-                                    (list || []).map((res) => {
+                                    (list || []).map((res,i) => {
                                         return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                                <div>{res.headline} </div>
-                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
+                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                <div>{res.headline?res.headline:''} </div>
+                                                {
+                                                    res.view?
+                                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>:
+                                                    <td className=" text-end"></td>
+                                                }
+                                                
                                             </div>
 
 
@@ -152,7 +174,12 @@ function CodeConductMenu() {
 
 
 
-                            </div>
+                            </div>:
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+                            }
+                            
 
 
 

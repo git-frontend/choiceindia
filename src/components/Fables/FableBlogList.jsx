@@ -5,6 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 import FablesTrending from "../../Services/fableServices";
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function FableBlogList() {
 
@@ -64,7 +65,7 @@ function FableBlogList() {
         setTrigger(true)
         if (trigger === true) {
             loadfablecategory();
-            getfableFolder('stock-market');
+            getfableFolder('national');
            
 
         }
@@ -78,6 +79,7 @@ function FableBlogList() {
             <section className="fable-blog-List">
                 <div className="container">
                     <div className="fable-list-menu">
+                        
                         <ul >
                             {
                                 data.map((res,i) => {
@@ -142,7 +144,8 @@ function FableBlogList() {
                         <div className="col-md-12">
 
                         {
-
+                           
+                            post.length?
                             <div className="tab-blog-list">
                             {
                                 (post||[]).slice(0, check?post.length:3).map((res,index)=>{
@@ -168,8 +171,10 @@ function FableBlogList() {
                                 })
                             }
                               
-                            </div>
-
+                            </div>:
+                            <div className="text-center">
+                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                        </div>
 
 
                         }
