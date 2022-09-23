@@ -94,7 +94,7 @@ useEffect(()=>{
                               <NavLink className="cursor-pointer" to="/services" >Tax Advisory</NavLink>
                             </li>
                           </ul>
-                          <ul className="reset">
+                          <ul className="reset quicklink2">
                             <li>
                               <h4>Company</h4>
                             </li>
@@ -123,7 +123,7 @@ useEffect(()=>{
                               <NavLink to="/faq">FAQ’s</NavLink>
                             </li>
                           </ul>
-                          <ul className="reset">
+                          <ul className="reset quicklink2">
                             <li>
                               <h4>Research</h4>
                             </li>
