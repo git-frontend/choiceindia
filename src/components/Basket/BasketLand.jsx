@@ -30,7 +30,7 @@ function BasketLand() {
                     headers: myHeaders,
                     redirect: 'follow'
                 };
-                fetch('https://finx.choiceindia.com/api/jiffy/Basket/List', requestOptions)
+                fetch('https://jiffy.choiceindia.com/api/jiffy/Basket/List', requestOptions)
                     .then(response => {
                         return response.json();
                     })
