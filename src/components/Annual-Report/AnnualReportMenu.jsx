@@ -8,24 +8,29 @@ import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 function AnnualReportMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
+    const [isloading,setisloading ] = useState(true);
     const [trigger, setTrigger] = useState(false);
 
     function loadAnnualReportpdf() {
         AnnualReportService.AnnualReport().then(
             res => {
                 if (res) {
+                    setisloading(false)
                     setData(res.data.data);
 
                 } else {
+                    setisloading(false)
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setData([]);
         });
     }
@@ -34,15 +39,18 @@ function AnnualReportMenu() {
         AnnualReportService.Annual2Report().then(
             res => {
                 if (res) {
+                    setisloading(false)
                     setList(res.data.data);
 
                 } else {
+                    setisloading(false)
                     setList([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setList([]);
         });
     }
@@ -71,73 +79,86 @@ function AnnualReportMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    {
-                        (data && data.length)? <div className="row code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
-
-                            <div className="d-flex justify-content-between">
-
-                                <h3 className="head">Description</h3>
-
-                            </div>
-                            <div className="subtext">
-                                {
-                                    (data || []).map((res,i) => {
-                                        return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.report_description ? res.report_description:''} </div>
-                                            {
-                                                res.view?
-                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>:
-                                                ''
-                                            }
-                                                
-                                            </div>
-
-                                        )
-                                    })
-                                }
-
-
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Return 2021 - 2022 </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf1)}} className="cursor-pointer" /></div>
+                    <div>
+                        {
+                            isloading?
+                            <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />:
+                            <div>
+                            {
+                                (data && data.length)? <div className="row code-mainwrapper cgmainwrap">
+                                <div className="col-md-12">
+        
+                                    <div className="d-flex justify-content-between">
+        
+                                        <h3 className="head">Description</h3>
+        
+                                    </div>
+                                    <div className="subtext">
+                                        {
+                                            (data || []).map((res,i) => {
+                                                return (
+                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                        <div>{res.report_description ? res.report_description:''} </div>
+                                                    {
+                                                        res.view?
+                                                        <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>:
+                                                        ''
+                                                    }
+                                                        
+                                                    </div>
+        
+                                                )
+                                            })
+                                        }
+        
+        
+                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div>Annual Return 2021 - 2022 </div>
+        
+                                            <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf1)}} className="cursor-pointer" /></div>
+                                        </div>
+                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div>Annual Return 2020 - 2021 </div>
+        
+                                            <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                        </div>
+        
+                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div>The Notice 28th AGM </div>
+        
+                                            <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                        </div>
+                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            <div>Annual Report 2020 - 2021</div>
+        
+                                            <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                        </div> */}
+        
+        
+                                    </div>
+        
+        
+        
                                 </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Return 2020 - 2021 </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>The Notice 28th AGM </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Report 2020 - 2021</div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div> */}
-
-
+        
+        
+        
+        
+                            </div>: 
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+                            }
                             </div>
 
+                        }
+                    </div>
 
-
-                        </div>
-
-
-
-
-                    </div>: 
-                            <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                            </div>
-                    }
-                    
-                    {
+{
+    isloading?
+    <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />:
+    <div>
+                            {
                         (list && list.length)? 
                         <div className="row code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
@@ -147,7 +168,8 @@ function AnnualReportMenu() {
                                 <h3 className="head">Description</h3>
 
                             </div>
-                            <div className="subtext">
+                            
+                                <div className="subtext">
                            {
                             (list||[]).map((res,i)=>{
                                 return(
@@ -167,24 +189,10 @@ function AnnualReportMenu() {
                             })
                            }
 
-                                
-
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Financial Statements of Subsidiaries 2019-20 </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Financial Statements of Subsidiaries 2018-19</div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div> */}
-
-
                             </div>
 
-
-
+                            
+                            
                         </div>
 
 
@@ -195,6 +203,15 @@ function AnnualReportMenu() {
                                 <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
                     }
+
+    </div>
+}
+
+
+                    
+
+                        
+                           
                     
 
                 </div>

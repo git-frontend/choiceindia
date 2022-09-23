@@ -154,7 +154,7 @@ function HindiTradingFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" htmlFor="Faqid" onClick={() => {setview(false)}} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
 
                                     </Accordion>
 
