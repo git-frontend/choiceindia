@@ -95,7 +95,7 @@ function Footer() {
                               <NavLink className="cursor-pointer" to="/services" >Tax Advisory</NavLink>
                             </li>
                           </ul>
-                          <ul className="reset">
+                          <ul className="reset quicklink2">
                             <li>
                               <h4>Company</h4>
                             </li>
@@ -124,7 +124,7 @@ function Footer() {
                               <NavLink to="/faq">FAQ’s</NavLink>
                             </li>
                           </ul>
-                          <ul className="reset">
+                          <ul className="reset quicklink2">
                             <li>
                               <h4>Resources</h4>
                             </li>
