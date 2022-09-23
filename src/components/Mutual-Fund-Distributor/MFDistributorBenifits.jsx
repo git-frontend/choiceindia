@@ -62,7 +62,7 @@ function MFDistributorBenifits() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="titl3">Benefits of Becoming a Mutual Fund Distributor</h2>
+                            <h2 className="titl3">Benefits of <span>Becoming a Mutual Fund Distributor</span></h2>
                         </div>
                     </div>
                     <div className="row relative">
@@ -77,7 +77,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Manager} alt={"Sales and Marketing Assistance"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Sales and Marketing Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>Sales &amp; Marketing Assistance</h4>
+                                        <h4>Sales &amp; Marketing <br/> Assistance</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>

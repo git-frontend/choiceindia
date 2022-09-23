@@ -30,7 +30,7 @@ const MFDistributorSellMore = () => {
                                     <div className="sell-left-sec">
                                         <h2 className="title-secnd">Sell More. Earn More!</h2>
                                         <p className="sml-para-dv">With Choice, one can increase his prospects by offering clients a variety of financial instruments in addition to mutual funds, increasing revenue.</p>
-                                        <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                                        <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark hide-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
@@ -68,7 +68,10 @@ const MFDistributorSellMore = () => {
                                     <h3 className="itm-ttl">Bonds, FD &amp; NPS</h3>
                                 </div>
                             </div>
-
+                            <div className='d-flex justify-content-center'>
+                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
