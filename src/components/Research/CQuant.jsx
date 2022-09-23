@@ -5,6 +5,7 @@ import rest from '../../Services/rest'
 import { subscribeOnStream, subscribeMultitouchline } from "../../Services/socketData";
 import utils from "../../Services/utils";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function CQuant() {
     /**Set Research Report Data */
@@ -352,7 +353,7 @@ function CQuant() {
                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                 </div>
             </div> : ''}
-            {showLoader ? <div className="loaderB mx-auto"></div> : <div className="cquant-tab-cont">
+            {showLoader ? <div className="img-fluid d-block mx-auto" ><img src={loaderimg2} className="img-fluid" alt='loading' height={250} width={250} /></div> : <div className="cquant-tab-cont">
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
