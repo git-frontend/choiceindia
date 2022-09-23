@@ -50,7 +50,7 @@ function FinancialInfoMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap">
+                    <div className=" code-mainwrapper cgmainwrap">
                         <div className="col-md-12">
 
 

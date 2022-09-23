@@ -52,14 +52,14 @@ function PartnerAssests() {
     //   window.open(demat)
     // }else{
 
-
+      // http://localhost:3000/static/media/power-of-Investing-early-MFChoice.b912a1fe5451b80b7c8f.webp
     //console.log("0f",key)
     let id = document.getElementById(file)
 
     if (fn) {
       let mapper = {
         facebook: { url: `https://www.facebook.com/sharer/sharer.php?u=${location.origin + fn}`, isTextEncode: false, isURLEncode: false },
-        whatsapp: { url: `https://api.whatsapp.com/send?text=${location.origin + fn}`, isTextEncode: false, isURLEncode: false },
+        whatsapp: { url: `whatsapp://send?image=${location.origin + fn}`, isTextEncode: false, isURLEncode: false },
         linkedin: { url: 'https://www.linkedin.com/shareArticle?mini=fals&url=' + location.origin + fn, isTextEncode: true, isURLEncode: true },//+'&summary=$text'
         twitter: { url: 'https://twitter.com/intent/tweet?url=' + fn + '&text=$text', isTextEncode: false, isURLEncode: true }
       }

@@ -165,16 +165,15 @@ body{
                     opacity: 1;
                     -webkit-transform: translateX(0%);
                    transform: translateX(0%);
-                    -webkit-transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
-                    transition: opacity .3s ease, color .3s ease, -webkit-transform .3s ease;
-                    transition: opacity .3s ease, transform .3s ease, color .3s ease;
-                    transition: opacity .3s ease, transform .3s ease, color .3s ease, -webkit-transform .3s ease;
+                    -webkit-transition: opacity .6s ease, color .6s ease, -webkit-transform .6s ease;
+                    transition: opacity .6s ease, color .3s ease, -webkit-transform .6s ease;
+                    transition: opacity .6s ease, transform .6s ease, color .6s ease;
+                    transition: opacity .6s ease, transform .6s ease, color .6s ease, -webkit-transform .6s ease;
                     -webkit-transition-delay: 0.4s;
                      transition-delay: 0.8;
                 }
                 .mode-itm-top{
                     display: none;
-                   
                 }
                 .mode-itm-sub{
                     background: #E0EFE4;
