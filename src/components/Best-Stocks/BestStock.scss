@@ -175,6 +175,48 @@
 }
 .sendopt{
     background-color: $bgcolor-blue-light;
+    .form_main{
+        display: flex;
+        padding: 58px 0px;
+        flex-direction: row;
+        .sub_group{
+            margin-right: 1.5rem;
+            .form-ttl{
+            font-size: 1.5rem;
+            color: #15171A;
+            font-family: $font-family-poppins-bold;
+            line-height: 2rem;
+            padding: 10px 0px;
+             }
+            .text_label{
+                font-size: 0.875rem;
+                line-height: 1.438rem;
+                color: $secondary;
+             }
+             .mobile_no{
+                color: $primary;
+                font-size: 1.125rem;
+                line-height: 1.813rem;
+             }
+             } 
+            .send_OPT_btn{
+                font-family: $font-family-poppins-medium;
+                color: $whiteColor;
+                background: $primary;
+                padding: 1.4rem 0;
+                display: inline-block;
+                border-radius: 0.75rem;
+                font-size: 1.25rem;
+                text-align: center;
+                text-decoration: none;
+                border: 0;
+                outline: none;
+                width: 12.875rem;
+                &:hover {
+                    background: $yellowColor;
+                }
+            }   
+        }
 }
 }
 
