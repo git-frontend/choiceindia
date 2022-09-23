@@ -16,18 +16,22 @@ import Template6 from "../Common-features/Template6";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import Slider from 'react-slick';
-import noDataimg from '../../assets/images/no-data.webp';
 
 function LongTermResearch() {
+  let urlid = ""
   const [check, setCheck] = useState();
   const [list, setList] = useState([]);
-  const [list2, setList2] = useState([]);
+  const [list2, setList2] = useState('');
   const [data, setData] = useState(false);
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
   });
+
+  // console.log("check",window.location);
+
+
 
   // const demo_ref = useRef(null)
 
@@ -43,11 +47,14 @@ function LongTermResearch() {
 
   };
 
-
+  const queryParam = window.location.search;
+  const utmvalue = new URLSearchParams(queryParam);
+  const activeurl = utmvalue.get('active');
+  // console.log('activeurl',activeurl);
 
   // const [tempid, setTempId] = useState('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
-  const [tempid, setTempId] = useState({ 'name': 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
-  // const [ResearchTitle, setResearchTitle] = useState('');
+  const [tempid, setTempId] = useState({ 'name': activeurl? activeurl: 'economic-analysis', 'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad' });
+
   const navigate = useNavigate();
 
   function loadResearch(id) {
@@ -97,7 +104,7 @@ function LongTermResearch() {
   };
 
   function getSingleDetail(id) {
-    // console.log("goto signal", id)
+    console.log("goto signal", id)
     // console.log('IIIII',id);
     // navigate(`/research-new/${id}/${tempid}`);
     navigate({
@@ -134,10 +141,22 @@ function LongTermResearch() {
     setCheck(() => false);
   }
 
+
+  function changeurl(id) {
+    window.history.replaceState(null, null, `/research-listing?active=${id}`);
+  }
+
+
+
+
   useEffect(() => {
+
+
     setTrigger(true)
     if (trigger === true) {
-      loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+      console.log("test", urlid);
+      (activeurl == "company-fundamentals") ? (loadResearch('f890363a-512e-4797-91fd-4d40732844a3'), setcount(2)) : (activeurl == "industry-analysis") ? (loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4'), setcount(3)) : (activeurl == "ipo-nfo-analysis") ? (lpoSearch(), setcount(4)) : (loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'), setcount(1));
+
       let mediaQuery = window.matchMedia("(min-width: 770px)");
       mediaQuery.addListener(setView);
       // this is the cleanup function to remove the listener
@@ -158,32 +177,33 @@ function LongTermResearch() {
           </div>
           <div className="research-bloc-tabs">
             <button
+
               className={count === 1 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(1); 
-                // setResearchTitle('fundamental');
-                setTempId(preValue => {
+                setcount(1); setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'economic-analysis',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
                   }
                 }); loadResearch('41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad');
+                changeurl('economic-analysis')
               }}
             >
               Economic Analysis
 
             </button>
             <button
+
               className={count === 2 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(2);
-                // setResearchTitle('fundamental');
-                setTempId(preValue => {
+                setcount(2); setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'company-fundamentals',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
                   }
-                }); loadResearch('f890363a-512e-4797-91fd-4d40732844a3')
+                }); loadResearch('f890363a-512e-4797-91fd-4d40732844a3');
+                changeurl('company-fundamentals')
+
               }}
             >
               Company Fundamentals
@@ -192,14 +212,14 @@ function LongTermResearch() {
             <button
               className={count === 3 ? "tabs active-tabs" : "tabs"}
               onClick={() => {
-                setcount(3);
-                // setResearchTitle('fundamental');
-                setTempId(preValue => {
+                setcount(3); setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'industry-analysis',
                     'id': '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad'
                   }
-                }); loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4')
+                }); loadResearch('1aa86611-7b88-4069-af82-1e04e80659a4');
+                changeurl('industry-analysis')
+
               }}
             >
               Industry Analysis
@@ -211,20 +231,18 @@ function LongTermResearch() {
                 setTempId(preValue => {
                   return {
                     ...preValue, 'name': 'ipo-nfo-analysis',
-                    "id": '0'
+                    'id': '0'
                   }
                 }); 
-                // setResearchTitle('ipo');
-                lpoSearch()
+                lpoSearch();
+                changeurl('ipo-nfo-analysis')
               }}
             >
               IPO/NFO Analysis
 
             </button>
           </div>
-          {
-            list.length?
-            <div className="content-tabs" >
+          <div className="content-tabs" >
             <div
               className="content active-content"
             >
@@ -232,7 +250,7 @@ function LongTermResearch() {
                 data ?
                   <Template6 />
                   :
-                  
+
                   <div className="research-tab-cont" >
                     {
                       check ?
@@ -400,12 +418,7 @@ function LongTermResearch() {
                   </div>
               }
             </div>
-          </div>: 
-              <div className="text-center">
-                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-              </div>
-          }
-          
+          </div>
         </div>
       </section>
     </div>

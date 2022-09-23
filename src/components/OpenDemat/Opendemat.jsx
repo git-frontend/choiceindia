@@ -1170,7 +1170,7 @@ function Opendemat(){
                           account, but it depends on the RTA.</p>
 
                         <h4 className="subhead">How to log in to a Demat account?</h4>
-                        <p className='subheadtxt paraspace'>Login depends on your <a href='https://finx.choiceindia.com/'
+                        <p className='subheadtxt paraspace'>Login depends on your <a href='https://finxpen.choiceindia.com/'
                           className='linking'>trading platform</a>; every stockbroker has a different app with a different user
                           interface. So, it depends on which app or stockbroker you are using.</p>
 

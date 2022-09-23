@@ -66,7 +66,7 @@ function StrategyBody() {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex mt-5 respflex">
+                    <div className="d-flex mt-5 respflex mt-5-0-mb">
                         <div className="featurethree">
                             <p className="heading">Timely alerts on your Virtual &amp; Live trades</p>
                             <div className="d-flex imgtextwrap">
