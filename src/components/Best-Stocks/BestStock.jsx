@@ -61,7 +61,7 @@ function BestStock() {
             <section className="mainhead">
               <div className="container">
                 <div className="row d-flex justify-content-center ">
-                  <div className="col-md-10 ">
+                  <div className="col-md-12 ">
                     <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                   </div>
@@ -75,8 +75,12 @@ function BestStock() {
                     <p className="title_para pt-4">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
                 </div>
+              </div>
+            </section>
+            <section className="main">
+              <div className="container">
                 <div className="row d-flex justify-content-center">
-                  <div className="col-md-10">
+                  <div className="col-md-12">
                     <div className="row">
                       <div className="col-md-6">
                         <div className="main-left">
@@ -99,26 +103,238 @@ function BestStock() {
                           </div>
                           <hr></hr>
                           <div className="bottom-section">
-                            <div className="row d-flex justify-content-between">
-                              <div className="col-4">
-                              <h6>Entry Price</h6>
-                              <h4 >327.30</h4>
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">327.30</h4>
                               </div>
-                              <div className="col-4 text-center">
-                              <h6>Potential Price</h6>
-                              <h4 >350.00</h4>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >350.00</h4>
                               </div>
-                              <div className="col-4 text-end">
-                              <h6>Entry Price</h6>
-                              <h4 >4.96%</h4>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">4.96%</h4>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div className="col-md-6">hello</div>
+                      <div className="col-md-6">
+                        <div className="main-left">
+                          <div className="top-section">
+                            <div className="top-left">
+                              <h6 className="top-text">Reco Date</h6>
+                              <h6 className="top-date">12th Apr '22</h6>
+                            </div>
+                            <div className="top-right"><button className="btn-buy">buy</button></div>
+                          </div>
+                          <div className="middle-section">
+                            <div className="middle-left">
+                              <h4 className="big-text">JSW Steel Ltd.</h4>
+                              <span className="small-text">BANDHANBANK</span>
+                            </div>
+                            <div className="middle-right">
+                              <span className="right-big-text">755.90</span>
+                              <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                            </div>
+                          </div>
+                          <hr></hr>
+                          <div className="bottom-section">
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">757.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >810.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">7.16%</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
+                </div>
+                <div className="row d-flex justify-content-center">
+                  <div className="col-md-12">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="main-left">
+                          <div className="top-section">
+                            <div className="top-left">
+                              <h6 className="top-text">Reco Date</h6>
+                              <h6 className="top-date">12th Apr '22</h6>
+                            </div>
+                            <div className="top-right"><button className="btn-buy">buy</button></div>
+                          </div>
+                          <div className="middle-section">
+                            <div className="middle-left">
+                              <h4 className="big-text">JSW Steel Ltd.</h4>
+                              <span className="small-text">BANDHANBANK</span>
+                            </div>
+                            <div className="middle-right">
+                              <span className="right-big-text">755.90</span>
+                              <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                            </div>
+                          </div>
+                          <hr></hr>
+                          <div className="bottom-section">
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">757.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >810.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">7.16%</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="main-left">
+                          <div className="top-section">
+                            <div className="top-left">
+                              <h6 className="top-text">Reco Date</h6>
+                              <h6 className="top-date">12th Apr '22</h6>
+                            </div>
+                            <div className="top-right"><button className="btn-buy">buy</button></div>
+                          </div>
+                          <div className="middle-section">
+                            <div className="middle-left">
+                              <h4 className="big-text">Bandhan Bank Ltd</h4>
+                              <span className="small-text">BANDHANBANK</span>
+                            </div>
+                            <div className="middle-right">
+                              <span className="right-big-text">333.45</span>
+                              <h6 className="right-small-text">+10.6 (3.28%)</h6>
+                            </div>
+                          </div>
+                          <hr></hr>
+                          <div className="bottom-section">
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">327.30</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >350.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">4.96%</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="row d-flex justify-content-center">
+                  <div className="col-md-12">
+                    <div className="row">
+                      <div className="col-md-6">
+                        <div className="main-left">
+                          <div className="top-section">
+                            <div className="top-left">
+                              <h6 className="top-text">Reco Date</h6>
+                              <h6 className="top-date">12th Apr '22</h6>
+                            </div>
+                            <div className="top-right"><button className="btn-buy">buy</button></div>
+                          </div>
+                          <div className="middle-section">
+                            <div className="middle-left">
+                              <h4 className="big-text">Bandhan Bank Ltd</h4>
+                              <span className="small-text">BANDHANBANK</span>
+                            </div>
+                            <div className="middle-right">
+                              <span className="right-big-text">333.45</span>
+                              <h6 className="right-small-text">+10.6 (3.28%)</h6>
+                            </div>
+                          </div>
+                          <hr></hr>
+                          <div className="bottom-section">
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">327.30</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >350.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">4.96%</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-md-6">
+                        <div className="main-left">
+                          <div className="top-section">
+                            <div className="top-left">
+                              <h6 className="top-text">Reco Date</h6>
+                              <h6 className="top-date">12th Apr '22</h6>
+                            </div>
+                            <div className="top-right"><button className="btn-buy">buy</button></div>
+                          </div>
+                          <div className="middle-section">
+                            <div className="middle-left">
+                              <h4 className="big-text">JSW Steel Ltd.</h4>
+                              <span className="small-text">BANDHANBANK</span>
+                            </div>
+                            <div className="middle-right">
+                              <span className="right-big-text">755.90</span>
+                              <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                            </div>
+                          </div>
+                          <hr></hr>
+                          <div className="bottom-section">
+                            <div className="d-flex justify-content-between">
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">757.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Potential Price</h6>
+                                <h4 className="bottom_big_text" >810.00</h4>
+                              </div>
+                              <div className="bottom">
+                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h4 className="bottom_big_text">7.16%</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="text-center load_btn "><a href="/" ><span className="load_more_btn" >Load More</span></a></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section className="sendopt">
+              <div className="container">
+                <div className=" d-flex ">
+                  <div className="demat-account"><h3>Open a Free Demat Account <br/>+ Free 1st Year AMC</h3></div>
+                  <div className="mobile_no"><label for="inputEmail4" class="form-label">Mobile Number</label><input type="text" class="form-control" placeholder="+91 7405741316" aria-label="First name"/></div>
+                  <div>I agree that I have read and  accept the Terms and Conditions</div>
+                  <div className="text-center send_btn "><a href="/" ><span className="send_OPT_btn btn-bg" >Load More</span></a></div>
                 </div>
               </div>
             </section>
