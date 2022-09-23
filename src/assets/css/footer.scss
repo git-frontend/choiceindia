@@ -21,6 +21,9 @@
                    list-style: none;
                    >li{
                        margin-bottom: 1rem;
+                       @media (max-width: $sm-x){
+                        margin-bottom: 0.8rem;
+                       }
                        h4{
                         color: $lightColor;
                         font-size: 1.4rem;
@@ -35,6 +38,9 @@
                            &:hover{
                                color: $bgcolor-yellow;
                            }
+                           @media (max-width: $sm-x){
+                            font-size: 1.1rem;
+                           }
                        }
                    }
                    @media (max-width: $sm-x){
@@ -43,11 +49,11 @@
                 &.quicklink2{
                     width: 28%;
                     @media (max-width: $sm-x){
-                        width: 50%;
+                        width: 33.33%;
                     }
                 }
                 @media (max-width: $sm-x){
-                    width: 50%;
+                    width: 33.33%;
                 }
                }
            }
