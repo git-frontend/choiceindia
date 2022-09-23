@@ -332,14 +332,30 @@ function BestStock() {
               <div className="container">
                 <div className="form_main">
                   <div className="sub_group"><h3 className="form-ttl">Open a Free Demat Account + Free 1st Year AMC</h3></div>
-                  <div className="sub_group"><label for="inputEmail4" className="text_label">Mobile Number</label><input type="text" className="mobile_no" placeholder="+91 7405741316"/></div>
+                  <div className="sub_group"><label for="inputEmail4" className="text_label">Mobile Number</label><input type="text" className="mobile_no" placeholder="+91 7405741316" /></div>
                   <div className="sub_group cust_check">I agree that I have read and  accept the Terms and Conditions</div>
                   <div className="sub_group "><a href="/" ><span className="send_OPT_btn" >SEND OTP</span></a></div>
                 </div>
               </div>
             </section>
-            <section>
-              
+            <section className="Stockes">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-12">
+                    <h1 className="stock_head">Best Stocks to Buy Today in India</h1>
+                  </div>
+                  <div className="col-md-12">
+                    <div className="content">
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et 
+                    dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet 
+                    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, 
+                    consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+                     sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
+                      no se....<label htmlFor="post-1" className="read-more-trigger moreless-button">Read More</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </section>
           </div>
       }
