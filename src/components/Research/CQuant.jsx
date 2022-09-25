@@ -348,12 +348,24 @@ function CQuant() {
             </div>
 
 
-            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
+            {/* {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
                 <div className="text-center">
                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                 </div>
-            </div> : ''}
-            {showLoader ? <div className="img-fluid d-block mx-auto" ><img src={loaderimg2} className="img-fluid" alt='loading' height={250} width={250} /></div> : <div className="cquant-tab-cont">
+            </div> : ''} */}
+
+
+           
+            {
+            showLoader ? 
+            <div className="text-center">
+            <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+        </div>
+        :
+                <div>
+                    {
+                        (researchReport && researchReport?.length) ?
+                        <div className="cquant-tab-cont">
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
@@ -381,7 +393,16 @@ function CQuant() {
 
                 </div>
                 <div className="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a className="btn-bg" >Explore All</a></div>
-            </div>}
+            </div>:
+            <div className="text-center">
+            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+        </div>
+
+                    }
+                
+            </div>
+            }
+            
 
 
 

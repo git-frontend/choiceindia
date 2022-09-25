@@ -35,7 +35,7 @@ function MarketInsights() {
 
     /** load market insights and fabal */
     function loadMarketinsite() {
-        setisloading(true)
+
         let payload = {
             // "end_date": "",
             // "is_expert": 0,
@@ -54,15 +54,23 @@ function MarketInsights() {
         };
         homeServices.marketInsiteNew(payload).then(
             res => {
-                setisloading(false)
+               
                 // setFabal(res.data.posts);
                 if (res && res.status === 200 && res.data && res.data.response && res.data.status_code === 200 && res.data.response.data) {
+                    setisloading(false)
                     setFabal(res.data.response.data);
                     
+                }else{
+                    setisloading(false)
+                    setFabal([])
+
                 }
                 // console.log(res, "Research Report");
             }
-        )
+        ).catch((error) => {
+            setisloading(false);
+            setFabal([])
+          });
     };
     const navigate = useNavigate();
 
@@ -157,7 +165,7 @@ function MarketInsights() {
                                                                     <div className="insights-item-cont cursor-pointer" >
                                                                         <LazyLoader src={response.feature_image} threshold={[0, 0.5, 1]} alt={"Loading"} />
                                                                         {/* <img src={response.feature_image} alt="" /> */}
-                                                                        <span className="ttl-sm" >{response.scrip_sec_name || '-'}</span>
+                                                                        <span className="ttl-sm" >{response.tag || '-'}</span>
                                                                     </div>
                                                                     <div className="item-cont-descr">
                                                                         {/* <p>{response.report_subtype_name}</p> */}

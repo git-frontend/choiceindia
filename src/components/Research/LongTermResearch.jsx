@@ -16,13 +16,14 @@ import Template6 from "../Common-features/Template6";
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import Slider from 'react-slick';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import noDataimg from '../../assets/images/no-data.webp';
+
 function LongTermResearch() {
   let urlid = ""
   const [check, setCheck] = useState();
   const [list, setList] = useState([]);
   const [list2, setList2] = useState('');
-  const [data, setData] = useState(true);
+  const [data, setData] = useState(false);
   const [trigger, setTrigger] = useState(false);
   const [count, setcount] = useState(1);
   const [view, setView] = useState({
@@ -91,11 +92,13 @@ function LongTermResearch() {
           setList(res.response.data);
 
         } else {
+          
           setList([]);
         }
 
       }
     ).catch((error) => {
+    
       setList([]);
     });
 
@@ -242,14 +245,20 @@ function LongTermResearch() {
 
             </button>
           </div>
-          <div className="content-tabs" >
+
+          {
+                data ?
+                  <Template6 />
+                  :
+
+         
+            <div className="content-tabs" >
             <div
               className="content active-content"
             >
-              {
-                data ?
-                <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='Loading' height={250} width={250} />
-                  :
+               {
+            list && list.length > 0 ?
+              
 
                   <div className="research-tab-cont" >
                     {
@@ -415,10 +424,19 @@ function LongTermResearch() {
 
 
                     <div className="mt-5 d-flex justify-content-center">{check ? <a className="btn-bg btn-ptr" onClick={goToScroll}>Load Less</a> : <a className="btn-bg btn-ptr" onClick={() => { setCheck(true) }}>Load More</a>}</div>
-                  </div>
+                  </div>:
+                  <div className="text-center">
+                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+              </div>
+
               }
             </div>
           </div>
+          
+
+
+          }
+          
         </div>
       </section>
     </div>

@@ -6,28 +6,33 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import noticesService from "../../Services/NoticesService";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function NoticesMenu() {
 
     const [data, setData] = useState();
     const [list, setList] = useState();
     const [trigger, setTrigger] = useState(false);
+    const [isloading, setisloading] = useState(true);
 
 
     function loadnewspdf() {
         noticesService.Notices().then(
             res => {
                 if (res) {
+                    setisloading(false);
                     setData(res.data.data);
                     // console.log("check", res.data.data)
 
                 } else {
+                    setisloading(false);
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false);
             setData([]);
         });
     }
@@ -72,38 +77,46 @@ function NoticesMenu() {
                             <Navbar />
                         </div>
                     </div>
+
                     {
-                        list ?
-                            <div className="row code-mainwrapper cgmainwrap">
-                                <div className="col-md-12">
+                        isloading ?
+                        <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
+                                <div>
+                        {
+                            list && list.length > 0 ?
+                                <div className="row code-mainwrapper cgmainwrap">
+                                    <div className="col-md-12">
 
 
-                                    <h3 className="head">RIGHT ISSUE</h3>
-                                    <h4 className="head">Description</h4>
+                                        <h3 className="head">RIGHT ISSUE</h3>
+                                        <h4 className="head">Description</h4>
 
 
-                                    <div className="subtext">
-                                        {
-                                            (list || []).map((res, i) => {
-                                                return (
-                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                        <div>{res.Title} </div>
-                                                        {
-                                                            res.file ?
-                                                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div> :
-                                                                ''
-                                                        }
+                                        <div className="subtext">
+                                            {
+                                                (list || []).map((res, i) => {
+                                                    return (
+                                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                            <div>{res.Title} </div>
+                                                            {
+                                                                res.file ?
+                                                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div> :
+                                                                    ''
+                                                            }
 
-                                                    </div>
-
-
-                                                )
-                                            })
-                                        }
+                                                        </div>
 
 
+                                                    )
+                                                })
+                                            }
 
-                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+
+
+                                            {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Right Issue - Letter of Offer </div>
                                 
                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
@@ -131,47 +144,56 @@ function NoticesMenu() {
                                    </div> */}
 
 
+                                        </div>
+
+
+
                                     </div>
 
 
 
+
+                                </div> :
+                                <div className="text-center">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                 </div>
-
-
-
-
-                            </div> :
-                            <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                            </div>
+                        }
+                    </div>
                     }
 
                     {
-                        data ?
-                            <div className="row code-mainwrapper cgmainwrap">
-                                <div className="col-md-12">
+                        isloading?
+                        <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
+                                <div>
+                        {
+                            data && data.length > 0 ?
+                                <div className="row code-mainwrapper cgmainwrap">
+                                    <div className="col-md-12">
 
 
 
-                                    <h3 className="head">Description</h3>
+                                        <h3 className="head">Description</h3>
 
 
-                                    <div className="subtext">
-                                        {
-                                            (data || []).map((res, i) => {
-                                                return (
-                                                    <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                        <div>{res.Title} </div>
+                                        <div className="subtext">
+                                            {
+                                                (data || []).map((res, i) => {
+                                                    return (
+                                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                            <div>{res.Title} </div>
 
-                                                        <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div>
-                                                    </div>
+                                                            <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.file) }} /></div>
+                                                        </div>
 
-                                                )
+                                                    )
 
-                                            })
-                                        }
+                                                })
+                                            }
 
-                                        {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                            {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                     <div>Postal Ballot Final</div>
 
                                     <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
@@ -205,20 +227,23 @@ function NoticesMenu() {
                                 </div> */}
 
 
+                                        </div>
+
+
+
                                     </div>
 
 
 
+
+                                </div> :
+                                <div className="text-center">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                 </div>
-
-
-
-
-                            </div> :
-                            <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                            </div>
+                        }
+                    </div>
                     }
+                    
 
 
                 </div>

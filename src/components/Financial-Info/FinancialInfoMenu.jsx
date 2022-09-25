@@ -7,23 +7,28 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import FinanceInfoService from "../../Services/FinancialInfoService";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 function FinancialInfoMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
+    const [isloading, setisloading] = useState(true);
 
     function loadFinancialInfopdf() {
         FinanceInfoService.FinanceInfo().then(
             res => {
                 if (res) {
+                    setisloading(false);
                     setData(res.data.data);
 
                 } else {
+                    setisloading(false);
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false);
             setData([]);
         });
     }
@@ -50,63 +55,78 @@ function FinancialInfoMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className="row code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
-
-
-                            <h3 className="head">Financial Year 2021 - 22</h3>
-                            {
-                                data?
-                                <div className="subtext">
-
+                    {
+                        isloading ?
+                            <div className="text-center">
+                                <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                            </div>
+                            :
+                            <div>
                                 {
-                                    (data || []).map((res,i) => {
-                                        return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.month}</div>
-                                                {
-                                                  res.view?
-                                                  <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view)}} className="cursor-pointer" /></div>:
-                                                  ""
-                                                }
-                                                
-                                                
+                                    data && data.lenght > 0 ?
+
+
+                                        <div className="row code-mainwrapper cgmainwrap">
+                                            <div className="col-md-12">
+
+
+                                                <h3 className="head">Financial Year 2021 - 22</h3>
+
+                                                <div className="subtext">
+
+                                                    {
+                                                        (data || []).map((res, i) => {
+                                                            return (
+                                                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                                    <div>{res.month}</div>
+                                                                    {
+                                                                        res.view ?
+                                                                            <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div> :
+                                                                            ""
+                                                                    }
+
+
+                                                                </div>
+
+                                                            )
+                                                        })
+                                                    }
+
+
+                                                    {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                <div>December 2021</div>
+                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                            </div>
+
+                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                <div>September 2021 </div>
+                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                            </div>
+                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                <div>June 2021</div>
+                                <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                            </div> */}
+
+
+                                                </div>
+
+
+
+
                                             </div>
 
-                                        )
-                                    })
+
+
+
+                                        </div> :
+                                        <div className="text-center">
+                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                        </div>
                                 }
 
+                            </div>
+                    }
 
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>December 2021</div>
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>September 2021 </div>
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>June 2021</div>
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div> */}
-
-
-                            </div>: 
-                                    <div className="text-center">
-                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                    </div> 
-                            }
-
-
-
-                        </div>
-
-
-
-
-                    </div>
 
 
                 </div>
