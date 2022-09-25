@@ -30,6 +30,7 @@ function FinancialInfoMenu() {
         ).catch((error) => {
             setisloading(false);
             setData([]);
+            
         });
     }
 
@@ -40,7 +41,7 @@ function FinancialInfoMenu() {
         setTrigger(true)
 
         if (trigger === true) {
-            loadFinancialInfopdf()
+            loadFinancialInfopdf();
 
         }
 
@@ -63,7 +64,7 @@ function FinancialInfoMenu() {
                             :
                             <div>
                                 {
-                                    data && data.lenght > 0 ?
+                                    data ?
 
 
                                         <div className="row code-mainwrapper cgmainwrap">

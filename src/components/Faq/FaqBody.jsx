@@ -28,6 +28,7 @@ export default function FaqBody() {
   const [selected, setSelected] = useState(0);
   const [isarticle, setIsarticle] = useState(false);
   const [isloading,setisloading ] = useState(true);
+  const [iscategory,setiscategory ] = useState(true);
   let data = '';
 
   /** yup validation search text */
@@ -101,23 +102,23 @@ export default function FaqBody() {
   /** FAQ category section */
 
   function loadfaqcategory() {
-
+    // setisloading(true);
     faqService.FaqCategory().then(
       res => {
         if(res){
-          setisloading(false)
+          setiscategory(false)
           setList(res);
           loadfaqFolder(res[0].category_linkage);
 
         }else{
-          setisloading(false)
+          setiscategory(false)
           setList([]);
 
         }
        
       }
     ).catch((error)=>{
-      setisloading(false)
+      setiscategory(false)
       setList([]);
     });
   };
@@ -125,6 +126,7 @@ export default function FaqBody() {
   /** FAQ Folder section */
 
   function loadfaqFolder(id) {
+    setisloading(true);
     faqService.FaqFolder(id).then(
       res => {
         if(res){
@@ -148,6 +150,7 @@ export default function FaqBody() {
   /** FAQ Article section */
 
   function loadfaqarticle(id) {
+    setisloading(true);
     faqService.FaqArticle(id).then(
       res => {
         if(res){
@@ -235,7 +238,7 @@ export default function FaqBody() {
               <div className="row">
                 <div className="col-md-12">
                   {
-                    isloading?
+                    iscategory?
                     <div className="text-center">
                     <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
                 </div>
@@ -307,11 +310,8 @@ export default function FaqBody() {
                 :
                 <div>
                   {
-                    (folder && (folder.length === 0)) ? 
-                    <div className="text-center">
-                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                          </div>:
-                          <div className='faq-container'>
+                    (article && article.length) ? 
+                    <div className='faq-container'>
                           <div className='content-list accordion-lists' >
                             {
                               folder.map((response, index) => {
@@ -365,7 +365,10 @@ export default function FaqBody() {
                       
       
                           </div>
-                        </div>
+                        </div>:
+                      <div className="text-center">
+                      <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                    </div>     
 
                     
                   }
