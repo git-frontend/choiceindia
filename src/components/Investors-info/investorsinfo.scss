@@ -277,6 +277,13 @@ body{
             text-align: left;
             padding-bottom: 4rem;
         }
+        @media screen and (max-width:$xs) {
+            font-size: 2rem;
+            line-height: 3rem;
+            text-align: left;
+            padding-bottom: 3rem;
+            max-width: 200px;
+        }
     }
 
     .wrap {

@@ -21,6 +21,19 @@ function AppOTStrategies() {
         autoplaySpeed: 2000,
         slidesToScroll: 1,
         swipeToSlide: true,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                vertical: false,
+                autoplaySpeed: 3000,
+              }
+            }
+            
+          ]
        
     };
 

@@ -10,17 +10,30 @@ function AppStrategies() {
     const [isShown, setIsShown2] = useState(0);
 
     const settings1 = {
-        infinite: false,
+        infinite: true,
         speed: 1000,
         vertical: true,
         focusOnSelect: true,
         touchMove: true,
         arrows: false,
         slidesToShow: 3,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 2000,
         slidesToScroll: 1,
+        responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                dots: false,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                vertical: false,
+                autoplaySpeed: 3000,
+              }
+            }
+            
+          ]
        
     };
 
