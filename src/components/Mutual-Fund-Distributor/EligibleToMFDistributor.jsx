@@ -4,6 +4,7 @@ import ImageSub14 from '../../assets/images/mutual-fund-distributor/sell-multipl
 import ImageSub15 from '../../assets/images/mutual-fund-distributor/become-a-mutual-fund-agent.svg';
 import ImageSub16 from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor-eligibility.webp';
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from '../Common-features/LazyLoader';
@@ -60,6 +61,7 @@ function EligibleToMFDistributor() {
                             <div className="eligb-left-sec">
                                 <h2 className="titl3">Who is eligible to become a Mutual Fund Agent?</h2>
                                 <p className="sml-para-dv">Anyone who wants to explore a career in the mutual fund industry can enrol as a mutual fund distributor.</p>
+                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark hide-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -85,6 +87,9 @@ function EligibleToMFDistributor() {
                                     <LazyLoader src={ImageSub16} alt={"Mutual Fund Distributor Eligibility "} className={"img-fluid"} width={"384"} height={"384"} />
                                     {/* <img src={ImageSub16} alt="Mutual Fund Distributor Eligibility " className="img-fluid" width="384" height="384" /> */}
                                 </div>
+                                <div className='d-flex justify-content-center'>
+                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                            </div>
                             </div>
                         </div>
                     </div>

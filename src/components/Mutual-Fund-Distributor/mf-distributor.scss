@@ -37,6 +37,10 @@
             img {
                 margin-right: 20px;
             }
+            @media (max-width: $sm) {
+                display: block !important;
+                text-align: left !important;
+            }
         }
 
         .tlt1 {
@@ -59,6 +63,11 @@
                 line-height: 4.5rem;
                 margin-bottom: 1rem;
             }
+        }
+        @media (max-width: $sm) {
+            text-align: left !important;
+            width: 95%;
+
         }
     }
     .right-sec{
@@ -99,6 +108,10 @@
                     right: 0;
                     margin: 0 auto;
                     top: 0;
+                    @media (max-width: $sm) {
+                        left: 0;
+                        right: inherit;
+                    }
                 }
 
                 &:nth-child(2n) {
@@ -110,7 +123,22 @@
                     font-family: $font-family-poppins-semibold;
                     display: block;
                 }
+                @media (max-width: $sm) {
+                    text-align: left;
+                    color: $primary;
+                    padding: 0;
+                    padding-left: 2.8rem;
+                    font-size: 1.5rem;
+                    span{
+                        display: inline;
+                    }
+                }
             }
+        }
+        @media (max-width: $sm) {
+            background: transparent;
+            width: 95% !important;
+            padding: 0 !important;
         }
     }
     
@@ -525,7 +553,10 @@
         margin-bottom: 5rem;
         @media (max-width: $sm) {
             font-size: 2.5rem;
-            text-align: center;
+            text-align: left;
+            span{
+                display: block;
+            }
         }
     }
 
@@ -581,6 +612,10 @@
                     line-height: 2.2rem;
                     color: $primary;
                     font-family: $font-family-poppins-medium;
+                    @media (max-width: $sm) {
+                        font-size: 1.833rem;
+                        line-height: 1.5;
+                    }
                 }
                 @media (max-width: $sm) {
                     background: $whiteColor;
@@ -648,19 +683,14 @@
             li {
                 width: auto;
                 height: auto;
-                margin-right: 2px;
+                margin: 4px;
 
                 button {
-                    height: 5px;
-                    width: 16px;
+                    height: 10px;
+                    width: 10px;
                     text-indent: -9999px;
                     padding: 0;
-                    -webkit-border-radius: 2px;
-                    -khtml-border-radius: 2px;
-                    -moz-border-radius: 2px;
-                    -ms-border-radius: 2px;
-                    -o-border-radius: 2px;
-                    border-radius: 2px;
+                    border-radius: 50%;
                     background-color: #0068B34d;
                     border: none;
                     position: relative;
@@ -676,9 +706,8 @@
             li.slick-active {
 
                 button {
-                    border-color: $blueColortext;
-                    background-color: $blueColortext;
-                    width: 26px;
+                    border-color: $bgcolor-green;
+                    background-color: $bgcolor-green;
                 }
             }
         }
@@ -710,6 +739,34 @@
 
         @media (max-width: $md) {
             width: 31%;
+        }
+        @media (max-width: $sm) {
+            width: 100%;
+            position: relative;
+            top: inherit;
+            bottom: inherit;
+            border-radius: 0;
+            margin-top: 40px;
+            &::before{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                left: -5%;
+                position: absolute;
+                top: 0;
+            }
+            &::after{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                right: -5%;
+                position: absolute;
+                top: 0;
+            }
         }
     }
 
@@ -790,7 +847,14 @@
             margin-bottom: 4rem;
         }
         @media (max-width: $sm) {
-            text-align: center;
+            text-align: left;
+            .title-secnd{
+                margin-bottom: 2rem;
+            }
+            p{
+                font-size: 1.475rem;
+                line-height: 1.5;
+            }
         }
     }
 
@@ -845,6 +909,10 @@
                 color: $primary;
                 font-family: $font-family-poppins-medium;
                 margin: 0;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    padding-left: 0;
+                }
             }
         }
 
@@ -928,6 +996,9 @@
             font-size: 2.8rem;
             line-height: 4rem;
             margin-bottom: 3rem;
+        }
+        .btn-bg{
+            margin-top: 2rem;
         }
     }
 
@@ -1021,6 +1092,10 @@
                     }
                 }
             }
+            @media (max-width: $sm) {
+                margin: 0 auto;
+                margin-bottom: 3rem;
+            }
         }
 
         .eligb-img-sec {
@@ -1045,6 +1120,9 @@
             right: -5%;
             bottom: -15%;
             z-index: 0;
+        }
+        @media (max-width: $sm) {
+            display: block !important;
         }
     }
 }
@@ -1579,26 +1657,7 @@
             margin-top: 1.5rem;
         }
 
-        .item-next1 {
-            h3 {
-                display: none;
-            }
-
-            p {
-                display: none;
-            }
-
-            background: transparent;
-            left: inherit;
-            top: inherit;
-            bottom: inherit;
-            padding: 0;
-            width: auto;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin-top: 2.5rem;
-        }
+        
     }
 
     .sell-more {
@@ -1682,14 +1741,14 @@
     .franchise-banner {
         .caption-banner {
             .tlt1 {
-                font-size: 3.25rem;
+                font-size: 3rem;
                 line-height: 3.5rem;
                 margin: 0.6rem 0;
             }
         }
     }
     .broker-benifits{
-        padding: 6rem 0;
+        padding: 6rem 0 0 0;
     }
     .segments-wrapper {
         .segments {
@@ -1714,12 +1773,17 @@
     .sell-more {
         .sell-more-list {
             .more-list-item {
-                width: 100%;
+                width: 50%;
                 margin: 0;
                 margin-bottom: 2rem;
+                padding: 0;
+                display: block;
+                text-align: center;
+                border: 0;
             }
 
             margin-left: 0;
+            margin-top: 0;
         }
     }
 }
@@ -2021,7 +2085,7 @@
             }
         }
 
-        padding: 5rem 0 2rem 0;
+        padding: 5rem 0 5rem 0;
     }
 
     .sell-more {
@@ -2392,4 +2456,17 @@
 			display: none !important;
 		}
 	}
+}
+
+.show-mob{
+    display: none;
+    @media (max-width: $sm) {
+        display: block;
+    }
+}
+
+.hide-mob{
+    @media (max-width: $sm) {
+        display: none;
+    }
 }
