@@ -65,7 +65,7 @@ function BestStock() {
                     <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                   </div>
-                  <div className="col-md-6">
+                  <div className="col-md-8">
                     <ul className="list-group list-group-horizontal-sm justify-content-center list_group1">
                       <li className="list-group-item list">All Stocks</li>
                       <li className="list-group-item list listsec">Intraday Stocks</li>
@@ -113,7 +113,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >350.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">4.96%</h4>
                               </div>
                             </div>
@@ -151,7 +151,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >810.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">7.16%</h4>
                               </div>
                             </div>
@@ -195,7 +195,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >810.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">7.16%</h4>
                               </div>
                             </div>
@@ -233,7 +233,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >350.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">4.96%</h4>
                               </div>
                             </div>
@@ -277,7 +277,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >350.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">4.96%</h4>
                               </div>
                             </div>
@@ -315,7 +315,7 @@ function BestStock() {
                                 <h4 className="bottom_big_text" >810.00</h4>
                               </div>
                               <div className="bottom">
-                                <h6 className="bottom_small_text">Entry Price</h6>
+                                <h6 className="bottom_small_text">Exp. Returns</h6>
                                 <h4 className="bottom_big_text">7.16%</h4>
                               </div>
                             </div>

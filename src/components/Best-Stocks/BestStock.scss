@@ -4,10 +4,10 @@
 .mainhead{
     background-color:$abt-bg;
     .title-secnd1{
-        font-size: 2.5rem;
+        font-size: 3.077rem;
         color: #231F20;
         font-family: $font-family-poppins-bold;
-        line-height: 3.75rem;
+        line-height: 4.615rem;
         text-align: center;
         padding-top: 3rem;
         @media (max-width: $sm){
@@ -17,23 +17,24 @@
     }
     }
     .title_para{
-        font-size: 1rem;
+        font-size: 1.231rem;
         color: #797979;
         text-align: center;
-        line-height: 1.625rem;
-        font-family: $font-family-poppins-regular;
-        font-weight: 400;
+        line-height: 2rem;
+        font-family: "PoppinsRegular", sans-serif;
+        // font-weight: 400;
     }
    
     .list_group1{
            
             box-shadow: 0px 3px 6px #00000029;
-            border-radius: 1rem;
+            border-radius: 1.231rem;
             background-color: $whiteColor;
+            margin-top: 1rem;
         .list{
             color:#231F20;
-            font-size: 1.125rem;
-            line-height: 1.688rem;
+            font-size: 1.385rem;
+            line-height: 2.077rem;
             width: 100%;
             text-align: center;
             font-family: $font-family-poppins-medium;
@@ -42,7 +43,8 @@
             padding: 0.563rem 0.75rem;
         }
         .listsec{
-            color:#0066B2;
+            color: #0066B2;
+            background-color: rgb(0 102 178 / 10%);
 
             
         }
@@ -63,14 +65,14 @@
       
         .top-left{
             .top-text{
-                font-size: 0.75rem;
-                line-height: 1.188rem;
+                font-size: 0.923rem;
+                line-height: 1.462rem;
                 font-family: $font-family-poppins-regular;
                 color: $secondary;
             }
             .top-date{
-                font-size: 0.75rem;
-                line-height:1.125rem;
+                font-size: 0.923rem;
+                line-height: 1.385rem;
                 font-family: $font-family-poppins-medium;
                 color: $primary;
             }
@@ -78,18 +80,18 @@
        .top-right{
             .btn-buy{
                 padding: 10px 10px;
-                border-radius: 0.5rem;
+                border-radius: 0.615rem;
                 border-style: none;
                 margin: 0;
-                color: $whiteColor;
+                color: #ffffff;
                 background: #0066B2;
                 height: 2.938rem;
-                line-height: 1.313rem;
-                text-align: center;
-                font-size: 1rem;
-                font-family: $font-family-poppins-medium;
-                text-transform: capitalize;
-                min-width: 6.188rem;;
+    line-height: 1.615rem;
+    text-align: center;
+    font-size: 1.231rem;
+    font-family: "PoppinsMedium", sans-serif;
+    text-transform: capitalize;
+    min-width: 7.188rem;
         }
     }
     }
@@ -99,14 +101,14 @@
         justify-content: space-between;
         .middle-left{
             .big-text{
-                font-size: 1.125rem;
-                line-height: 1.688rem;
+                font-size: 1.385rem;
+                line-height: 2.077rem;
                 color: $primary;
                 font-family: $font-family-poppins-medium;
             }
             .small-text{
-                font-size: 0.875rem;
-                line-height: 1.438rem;
+                font-size: 1.077rem;
+                line-height: 1.769rem;
                 color: $secondary;
                 font-family: $font-family-poppins-regular
             }
@@ -114,14 +116,14 @@
         .middle-right{
             .right-big-text{
                 color: $primary;
-                font-size: 1.125rem;
+                font-size: 1.385rem;
                 font-family: $font-family-poppins-medium;
-                line-height: 1.688rem;
+                line-height: 2.077rem;
             }
             .right-small-text{
                 color: #00B16B;
-                font-size: 0.875rem;
-                line-height: 1.438rem;
+                font-size: 1.077rem;
+                line-height: 1.769rem;
                 font-family: $font-family-poppins-regular;
             }
             .text_color{
@@ -134,14 +136,14 @@
     .bottom-section{
         .bottom{
             .bottom_small_text{
-                font-size: 0.875rem;
+                font-size: 1.077rem;
                 color: $secondary;
-                line-height: 1.438rem;
+                line-height: 1.769rem;
                 font-family: $font-family-poppins-regular;
                  }
         
             .bottom_big_text{
-                font-size: 1.125rem;
+                font-size: 1.385rem;
                 color: $primary;
                 line-height: 1.688rem;
                 font-family: $font-family-poppins-medium;
