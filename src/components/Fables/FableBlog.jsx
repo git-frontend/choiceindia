@@ -4,23 +4,29 @@ import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function FableBlog() {
     const [rendercount, setRenderCount] = useState(() => false);
     const [data, setData] = useState([]);
     const [loader, setLoader] = useState(true);
+    const [isloading,setisloading ] = useState(true);
 
     function loadFableList() {
         setLoader(true);
         fableServices.fableListingTopFive().then(res => {
             setLoader(false);
+            setisloading(false);
             //  console.log(res, "RESS");
             if (res && res.status === 200 && res.data && res.data.posts) {
                 setData(res.data.posts);
             } else {
+                setisloading(false)
+                
                 setData([]);
             }
         }).catch((error) => {
+            setisloading(false)
             setLoader(false);
             setData([]);
         });
@@ -39,39 +45,62 @@ function FableBlog() {
 
             <section className="blog-middle-cont">
                 <div className={`container ${loader ? 'text-center' : ''}`}>
-                    {
-                        loader ?
-                            <Spinner animation="grow" /> :
+                    
                             <div className="row">
-                                <div className="col-xl-5">
-                                    <div className="blog-middle-left">
-                                        <div className="heading-sec">
+                            
+                                          
+                                
+                                        
+                                        {
+                                            isloading?
+                                            <div>
+                                                <div className="heading-sec">
                                             <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
                                         </div>
-                                        {
-                                            data.length?
-                                                <div className="single-blog-con">
-                                                    <div className="single-blog-img">
-                                                        <LazyLoader src={data[0]?.feature_image} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
-                                                    </div>
-                                                    <div className="single-blog-des">
-                                                        <h3>{data[0]?.title}</h3>
-                                                        <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
-                                                        {/* str.substring(0, str.length - 1);
-                                                {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
-                                                        <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
-                                                    </div>
-                                                </div>:
-                                                <div className="text-center">
-                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />
                                                 </div>
+                                                :
+                                            
+                                                <div className="col-xl-5">
+                                                <div className="blog-middle-left">
+                                                <div className="heading-sec">
+                                            <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
+                                        </div>
+                                            {
+                                                data.length?
+                                                    <div className="single-blog-con">
+                                                        <div className="single-blog-img">
+                                                            <LazyLoader src={data[0]?.feature_image} className={'img-fluid'} width={'532'} height={'533'} alt={'loading'} />
+                                                        </div>
+                                                        <div className="single-blog-des">
+                                                            <h3>{data[0]?.title}</h3>
+                                                            <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
+                                                            {/* str.substring(0, str.length - 1);
+                                                    {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
+                                                            <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
+                                                        </div>
+                                                    </div>:
+                                                    <div className="text-center">
+                                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                                    </div>
+                                            }
+                                            
+                                            </div>
+                                            </div>
+
                                         }
+                                       
+                                       
+                                            
 
-
-                                    </div>
-                                </div>
+                                   
                                 <div className="col-xl-7">
                                     <div className="blog-middle-right">
+                                    {
+                                            isloading?
+                                            <div></div>:
+                                        
+                                          <div>  
                                         {
                                             data.length?
                                             <div className="all-latest-blog-list">
@@ -100,12 +129,17 @@ function FableBlog() {
                                                 </div> :
                                                 ''
                                         }
+                                        </div>
+}
+                                    
+                                        
+                                        
                                         
                                     </div>
                                 </div>
                             </div>
 
-                    }
+                    
                 </div>
             </section>
 
