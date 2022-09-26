@@ -6,6 +6,21 @@ import { Accordion } from "react-bootstrap";
 function HindiTradingFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+
+     /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+
     return (
         <div>
 
@@ -13,13 +28,13 @@ function HindiTradingFaq() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4">डीमैट अकाउंट पर अक्सर पूछे जाने वाले प्रश्न</h2>
+                            <h2 className="title-first text-center pb-4" id="Faqid">डीमैट अकाउंट पर अक्सर पूछे जाने वाले प्रश्न</h2>
                         </div>
 
                     </div>
                     <div className="row">
                         <div className="col-md-12">
-                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
+                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion' >
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header> <h4 className='faq-header'> डीमैट खाते को सक्रिय होने में कितना समय लगेगा?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
@@ -139,7 +154,7 @@ function HindiTradingFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
 
                                     </Accordion>
 
