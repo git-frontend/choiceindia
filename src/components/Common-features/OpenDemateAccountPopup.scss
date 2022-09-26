@@ -12,7 +12,7 @@
     height: 100%;
     background: #3e404f4d;
     overflow: auto;
-    z-index: 999999 !important;
+    z-index: 999999999 !important;
 
     .exit-intent-sleekbox-popup {
         box-sizing: border-box;
@@ -57,7 +57,7 @@
 
                 @media (max-width:$sm) {
                     width: 100%;
-                    padding:40px 20px
+                    padding:20px 20px
                 }
             }
 
@@ -69,7 +69,7 @@
 
                 @media (max-width:$sm) {
                     width: 100%;
-                    padding: 40px 20px;
+                    padding: 25px 20px;
                 }
             }
 
@@ -139,6 +139,11 @@
                             font-family: $font-family-poppins-bold;
                             font-weight: 700;
                         }
+                        @media (max-width:$sm) {
+                            &:first-child{
+                                display: none;
+                            }
+                        }
                     }
                 }
 
@@ -151,6 +156,9 @@
                         font-family: $font-family-poppins-regular;
                         margin-top: 44px;
                         cursor: pointer;
+                        @media (max-width:$sm) {
+                            margin-top: 20px;
+                        }
                     }
 
                 }
@@ -197,6 +205,9 @@
                     font-size: 17px;
                     font-family: $font-family-poppins-regular;
                     box-shadow: none;
+                }
+                @media (max-width:$sm) {
+                    margin-bottom: 20px;
                 }
             }
 
