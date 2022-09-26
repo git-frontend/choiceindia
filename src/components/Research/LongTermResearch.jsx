@@ -64,18 +64,20 @@ function LongTermResearch() {
 
     ResearchService.researchcategory(id).then(
       res => {
-        setData(false)
+        
         if (res) {
-
+          setData(false)
           setCheck(false)
           setList(res.response.data);
 
         } else {
+          setData(false)
           setList([]);
         }
 
       }
     ).catch((error) => {
+      setData(false)
       setList([]);
     });
 
@@ -92,13 +94,13 @@ function LongTermResearch() {
           setList(res.response.data);
 
         } else {
-          
+          setData(false)
           setList([]);
         }
 
       }
     ).catch((error) => {
-    
+      setData(false)
       setList([]);
     });
 
@@ -257,7 +259,7 @@ function LongTermResearch() {
               className="content active-content"
             >
                {
-            list && list.length > 0 ?
+            list && list.length?
               
 
                   <div className="research-tab-cont" >
