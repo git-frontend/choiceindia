@@ -145,7 +145,7 @@ function SubBrokerForm(props) {
         } else {
             isBrokerStateValid = true;
         }
-        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid && isBrokerStateValid) {
+        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid) {
             sendOTP(false);
         }
     }
@@ -402,7 +402,7 @@ function SubBrokerForm(props) {
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
         let request = {
-            "serviceCode": "CBAEF",
+            "serviceCode": "CBAMF",
             "firstName": brokerName,
             "mobileNum": brokerMobileNumber,
             "emailID": brokerEmail
@@ -462,11 +462,11 @@ function SubBrokerForm(props) {
             "name": brokerName,
             "mobile_number": brokerMobileNumber,
             "email": brokerEmail,
-            "city": brokerCityBranch,
+            "city": '',
             "source": "CHOICEINDIA",
             "messgae": '',
             "referredId": refercode.current || null,
-            "service_code": "CBAEF",
+            "service_code": "CBAMF",
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
@@ -544,11 +544,11 @@ function SubBrokerForm(props) {
             "firstName": brokerName,
             "mobileNo1": brokerMobileNumber,
             "emailId1": brokerEmail,
-            "leadCityName": brokerCityBranch,
+            "leadCityName": '',
             "leadSource": "CHOICEINDIA",
-            "leadState": brokerState,
+            "leadState": '',
             "referredId": refercode.current || null,
-            "serviceCode": "CBAEF",
+            "serviceCode": "CBAMF",
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
@@ -600,15 +600,15 @@ function SubBrokerForm(props) {
             setOTPSendSuccessToaster(false);
         }, 2000)
     }
-    const selectInputRef = useRef();
+    // const selectInputRef = useRef();
     function resetBrokerForm() {
         setBrokerName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
-        selectInputRef.current.clearAll();
-        setBrokerCityBranch("");
-        setBrokerState('');
-        setShowState(false);
+        // selectInputRef.current.clearAll();
+        // setBrokerCityBranch("");
+        // setBrokerState('');
+        // setShowState(false);
         setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
         setLoaders({});
         setOtp('');
@@ -664,7 +664,7 @@ function SubBrokerForm(props) {
                                 errors.brokerEmail.unique ? <Form.Control.Feedback type="invalid">{errors.brokerEmail.uniqueError}</Form.Control.Feedback> : ''
                             }
                         </div>
-                        <div className="sub-formgrp">
+                        {/* <div className="sub-formgrp"> */}
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
                             {/* <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
@@ -674,13 +674,13 @@ function SubBrokerForm(props) {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select ref={selectInputRef}
+                            {/* <Select ref={selectInputRef}
                                 placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
 
-                        </div>
+                        </div> */}
                         {
                             showState ?
                                 <div className="sub-formgrp">
