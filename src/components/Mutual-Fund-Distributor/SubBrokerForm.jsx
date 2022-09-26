@@ -624,7 +624,8 @@ function SubBrokerForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
+                {/* <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3> */}
+                <h3 className="form-ttl">Become a Mutual Fund Distributor</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
 
