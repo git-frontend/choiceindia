@@ -8,26 +8,31 @@ import "../Corporate-Governance/corporate-governance.scss";
 import VotingResultService from "../../Services/VotingResultService";
 import utils from "../../Services/utils";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function VotingResultsMenu() {
 
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
+    const [isloading,setisloading ] = useState(true);
 
     function loadVotingResultpdf() {
         VotingResultService.VotingResult().then(
             res => {
                 if (res) {
+                    setisloading(false);
                     setData(res.data.data);
             
 
                 } else {
+                    setisloading(false);
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false);
             setData([]);
         });
     }
@@ -54,17 +59,24 @@ function VotingResultsMenu() {
                             <Navbar />
                         </div>
                     </div>
-                    <div className=" code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
+                   {
+                    isloading ?
 
-                        <div className="d-flex justify-content-between">
-                                <h3 className="head">Date of the General Meeting</h3>
-                                <h3 className="head">Voting Result of the General Meeting</h3>
-                                <h3 className="head"></h3>
+                    <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
                                 </div>
-                            
+                                :
+                                <div>
                             {
                                 (data && data.length)? 
+                                <div className="row code-mainwrapper cgmainwrap">
+                                <div className="col-md-12">
+        
+                                <div className="d-flex justify-content-between">
+                                        <h3 className="head">Date of the General Meeting</h3>
+                                        <h3 className="head">Voting Result of the General Meeting</h3>
+                                        <h3 className="head"></h3>
+                                        </div>
                                     <div className="subtext">
                                         {
                                             (data || []).map((res, i) => {
@@ -102,23 +114,25 @@ function VotingResultsMenu() {
                                    </div> */}
 
 
-                                    </div> :
+                                    </div>
+                                     </div>
+                                     </div> :
                                 <div className="text-center">
                                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                </div> 
+                                </div>
+                                 
                             }
+                            </div>
+
+                   }
+                            
                                     
                                 
                                 
                            
                            
 
-                        </div>
                        
-                       
-                       
-                      
-                    </div>
                   
 
                 </div>

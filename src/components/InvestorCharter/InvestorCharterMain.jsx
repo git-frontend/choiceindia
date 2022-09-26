@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import InvestorCharterService from "../../Services/InvestorCharterService";
-
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function InvestorCharterMain() {
     const [data2, setData2] = useState({});
     const [lists, setlists] = useState(['stock_broker', 'research_analyst', 'portfolio_managers', 'investment_advisors', 'depository_participant','capital_advisor'])
     const [trigger, setTrigger] = useState(false);
+    const [isloading,setisloading ] = useState(true);
 
 
     function loadcebplStock2() {
@@ -17,18 +19,21 @@ function InvestorCharterMain() {
             InvestorCharterService.InvestorCharter(lists[i]).then(
                 res => {
                     if (res && res.data && res.data.data) {
-
+                        setisloading(false)
                         // listsfile = data2
                         setData2((data2)=>({...data2,[lists[i]]:res.data.data}))
                         // listsfile[lists[i]] = (res.data.data);
                         // setData2(listsfile)
                     } else {  
                         setData2([]);
+                        setisloading(false)
+
                     }
                    
                 }
             ).catch((error) => {
                 setData2([]);
+                setisloading(false)
             });
         }
 
@@ -52,7 +57,21 @@ function InvestorCharterMain() {
 
                         </div>
                     </div>
-                    <div>
+                    {
+                        isloading ?
+                        <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
+
+                                <div>
+                    {
+                        data2 && data2.length ===0 ?
+                        <div className="text-center">
+                                    <div><img src={noDataimg} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
+                                <div>
                         {
                         // data2 && Object.keys(data2)?.map
                              (data2 ? Object.keys(data2) : '').map((title) => {
@@ -91,6 +110,14 @@ function InvestorCharterMain() {
                             })
                         }
                     </div>
+                        
+                    }
+                    </div>
+
+                    }
+
+                    
+                    
 
 
 
