@@ -7,7 +7,7 @@ function BannerIntraCharges() {
 
     return (
         <div>
-            <section className="franchise-banner" >
+            <section className="intrc-banner" >
                 <div className="container">
                     <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">

@@ -10,7 +10,7 @@ import MFDistributorOffers from './MFDistributorOffers';
 import MFDistributorFaqs from './MFDistributorFaqs';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
-import "./mf-distributor.scss";
+import "./intraday-charges.scss";
 import {
   useLocation,
 } from 'react-router-dom';
