@@ -85,7 +85,7 @@ function SumeetBagadia() {
                       <h2 className="title-sm-new">
                         Sign up for exclusive trading tips from Sumeet Bagadia?
                       </h2>
-                      <Link to="/sumeet-bagadia"  onClick={()=>scrollToId('home-bg')}><div className="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</div></Link>
+                      <Link to="/sumeet-bagadia"  onClick={()=>scrollToId('dematform')}><div className="btn-bg btn-bg-dark acnt-sub-btn">Open My Account</div></Link>
                     </div>
                   </div>
                 </div>
