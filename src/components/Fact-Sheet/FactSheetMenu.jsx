@@ -4,24 +4,30 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import FactSheetService from "../../Services/FactSheetService";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
+
 function FactSheetMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
+    const [isloading,setisloading ] = useState(true);
 
     function loadFactSheetpdf() {
         FactSheetService.Factsheet().then(
             res => {
                 if (res) {
+                    setisloading(false)
                     setData(res.data.data);
 
 
                 } else {
+                    setisloading(false)
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setData([]);
         });
     }
@@ -57,7 +63,13 @@ function FactSheetMenu() {
                                 
                                 </div> */}
                                 {
-                                    data?
+                                    isloading?
+                                    <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>:
+                                <div>
+                                {
+                                    data && data.length >0?
                                     <div className=" pl-3 pr-3 cgmainwrap code-mainwrapper subtext">
                         <div className="row border-bottom">
                             <div className=" col-md-5 col-5 "><h3 className="head">Name </h3></div>
@@ -137,6 +149,9 @@ function FactSheetMenu() {
                             </div> 
 
                                 }
+                                </div>
+                                }
+                                
                     
 
                     {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
