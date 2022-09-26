@@ -206,7 +206,7 @@ function CodeConductMenu() {
 
 
                                 </div> :
-                                <div className="text-center">
+                                <div className="text-center no-data-space">
                                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                 </div>
                         }
