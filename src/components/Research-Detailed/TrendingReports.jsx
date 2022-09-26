@@ -66,8 +66,38 @@ function TrendingReports(props) {
     });
   };
 
+  function lpoSearch() {
+   
+    setList([]);
+    ResearchService.researchipo().then(
+      res => {
+        setisloading(false);
+        if (res) {
+          setCheck(false);
+          setList(res.response.data);
+          setShowData(res.response.data);
+
+        } else {
+          setisloading(false);
+          setList([]);
+          setShowData([]);
+        }
+
+      }
+    ).catch((error) => {
+      setisloading(false);
+      setList([]);
+      setShowData([]);
+    });
+
+
+
+  };
+ 
+
+
   useEffect(() => {
-    loadResearch(name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
+    (props.data == "ipo-nfo-analysis") ? lpoSearch() : loadResearch(name ? name : '41041eaf-c9f1-41b3-a2fc-b6c20d29c4ad')
   }, [])
 
   return (
