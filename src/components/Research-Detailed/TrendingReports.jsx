@@ -86,7 +86,7 @@ function TrendingReports(props) {
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
                               </div>
                               <div className="tab-itm-des">
-                                <h3 className="ttl-des">{res.report_subtype_name == "IPO REPORT" ? res.scrip_name||"" : res.title||""} </h3>
+                              <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
                                 <div className="itm-des-text">
                                 <p dangerouslySetInnerHTML={{__html: res.description}}></p>
@@ -117,7 +117,7 @@ function TrendingReports(props) {
                                 {/* <img src={thumb1} alt="Banner Images" className="img-fluid thumb-img" width="237" height="257"></img> */}
                               </div>
                               <div className="tab-itm-des">
-                                <h3 className="ttl-des">{res.report_subtype_name == "IPO REPORT" ? res.scrip_name||"" : res.title||""} </h3>
+                              <h5 className="ttl-des cursor-pointer" onClick={() => { getSingleDetail(res.uuid) }}>{res.report_subtype_name == "IPO REPORT" ? res.scrip_name || "" : res.title || ""}</h5>
                                 {/* <h3 className="ttl-des">Equity Research Report <span className="info-txt">WINDLAS ( BSE )</span> </h3> */}
                                 <div className="itm-des-text">
                                 <p dangerouslySetInnerHTML={{__html: res.description}}></p>
