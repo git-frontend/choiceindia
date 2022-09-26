@@ -1,6 +1,7 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
-import SubBrokerForm from './SubBrokerForm';
+import SubBannerimage from '../../assets/images/intraday-charges/banner-person.webp';
+import img1 from '../../assets/images/intraday-charges/ratio-icon.svg';
+
 import LazyLoader from "../Common-features/LazyLoader";
 
 function BannerIntraCharges() {
@@ -14,26 +15,24 @@ function BannerIntraCharges() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                    Don’t Pay Extra Brokerage
+                                         Don’t Pay Extra Brokerage
                                     </h1>
+                                    <p className="des-nm">Save upto <strong>33% brokerage</strong> on intraday trades with Choice</p>
+                                    <a href="/"><span className="btn-bg">Know How?</span></a>
                                 </div>
                                 <div className="right-sec">
-                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"562"} height={"562"}/>
+                                    <span className="itm-first">
+                                        <LazyLoader src={img1} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"24"} height={"24"}/>
+                                    </span>
+                                    <span className="itm-scnd">
+                                        33<em>%</em>
+                                    </span>
+                                    <span className="itm-third">
+                                        <LazyLoader src={img1} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"24"} height={"24"}/>
+                                    </span>
+                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"432"} height={"500"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
-                            </div>
-                            <div className="caption-blue-bar">
-                                <ul>
-                                    <li>
-                                        <span>High</span> Commision
-                                    </li>
-                                    <li>
-                                        <span>Multiple</span> Sources of Earnings
-                                    </li>
-                                    <li>
-                                        <span>Lifetime</span> Income Source
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                         {/* <div className="col-md-6 col-lg-4 ">

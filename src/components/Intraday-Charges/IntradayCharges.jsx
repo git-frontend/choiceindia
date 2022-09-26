@@ -1,13 +1,7 @@
 
 import React from "react";
 import BannerIntraCharges from './BannerIntraCharges';
-import MFDistributorBenifits from './MFDistributorBenifits';
-import MFDistributorSellMore from './MFDistributorSellMore';
-import WhyMFDistributor from './WhyMFDistributor';
-import EligibleToMFDistributor from './EligibleToMFDistributor';
-import MoreContent from './MoreContent';
-import MFDistributorOffers from './MFDistributorOffers';
-import MFDistributorFaqs from './MFDistributorFaqs';
+import ChargesComparison from './ChargesComparison';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./intraday-charges.scss";
@@ -49,6 +43,10 @@ function IntradayCharges() {
           <div className="sub-broker-skeleton-parent">
 
             <BannerIntraCharges />
+            <ChargesComparison />
+            <section className="smart-trader">
+
+            </section>
             {/* <MFDistributorBenifits />
             <MFDistributorSellMore />
             <WhyMFDistributor />
