@@ -106,6 +106,7 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
+const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
 
 
 
@@ -533,6 +534,12 @@ function Routing() {
                         <Route exact path='/advisory-for-investors' element={
                             <React.Suspense>
                                 < LazyInvestorAdvidory />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/intraday-charges' element={
+                            <React.Suspense>
+                                < LazyIntradayCharges />
                             </React.Suspense>
                         } />
 
