@@ -133,9 +133,13 @@
                 font-family: $font-family-poppins-regular;
                 font-weight: 400;
                 color: $primary;
-                line-height: 2.75rem;
+                line-height: 4.75rem;
                 position: relative;
-                padding-left: 2.5rem;
+                padding-left: 2rem;
+                @media screen and (max-width: $sm) {
+                    line-height: 2.5rem;
+                    text-align: left;
+                }
                 &::before{
                     content: '';
                     width: 4px;
