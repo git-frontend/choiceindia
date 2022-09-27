@@ -40,6 +40,16 @@
                     font-family: $font-family-poppins-bold;
                 }
             }
+            .btn-bg{
+                svg{
+                    #Path_1981{
+                        fill: $whiteColor;
+                    }
+                }
+                &:hover{
+                    background: $primary !important;
+                }
+            }
         }
         .right-sec{
             width: 50%;
@@ -98,15 +108,17 @@
     }
 }
 
+.ttl2-sm{
+    font-size: 3.077rem;
+    font-family: $font-family-poppins-bold;
+    color: $primary;
+}
+
 .charges-comparison{
     padding: 5rem 0;
     .hading-text{
         text-align: center;
-        .ttl2{
-            font-size: 2.5rem;
-            font-family: $font-family-poppins-semibold;
-            color: $primary;
-        }
+        
         p{
             span{
                 font-family: $font-family-poppins-semibold;
@@ -282,6 +294,94 @@
         }
         @media (max-width: $sm) {
             overflow-x:scroll;
+        }
+    }
+}
+
+.smart-trader{
+    background: $abt-bg;
+    padding: 2rem 0 0 0;
+    .sm-trader-des{
+        p{
+            position: relative;
+            padding-left: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            &::before{
+                content: '';
+                width: 4px;
+                border-radius: 2px;
+                height: 100%;
+                background: $yellowColor;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+}
+
+.intra-charges-benifits{
+    padding: 8rem 0;
+    .charges-benifits-list{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        .slick-slide{
+            .benifits-list-itm{
+                border: 2px solid $bgcolor-green;
+                border-radius: 30px;
+                padding: 4rem 2rem;
+                text-align: center;
+                width: 90% !important;
+                display: block !important;
+                position: relative;
+                overflow: hidden;
+                margin: 0 auto;
+                .itm-ttl{
+                    margin-top: 2rem;
+                    font-family: $font-family-poppins-semibold;
+                    color: $primary;
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 100%;
+                    background: $bgcolor-green;
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    
+                }
+            }
+            &:hover{
+                .benifits-list-itm{
+                    // background: $bgcolor-green;
+                    border: 2px solid transparent;
+                    .sm-img{
+                        svg{
+                            path{
+                                fill: $whiteColor;
+                            }
+                        }
+                    }
+                    .itm-ttl{
+                        color: $whiteColor;
+                    }
+                    &::before{
+                        -webkit-transform: scale(2);
+                        transform: scale(2);
+                        -webkit-transition: 300ms ease-out;
+                        transition: 300ms ease-out;
+                    }
+                }
+            }
         }
     }
 }

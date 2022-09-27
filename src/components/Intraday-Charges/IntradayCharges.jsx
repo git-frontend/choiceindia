@@ -2,6 +2,8 @@
 import React from "react";
 import BannerIntraCharges from './BannerIntraCharges';
 import ChargesComparison from './ChargesComparison';
+import SmartTrader from './SmartTrader';
+import IntraChargesBenifits from './IntraChargesBenifits';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./intraday-charges.scss";
@@ -44,9 +46,8 @@ function IntradayCharges() {
 
             <BannerIntraCharges />
             <ChargesComparison />
-            <section className="smart-trader">
-
-            </section>
+            <SmartTrader />
+            <IntraChargesBenifits />
             {/* <MFDistributorBenifits />
             <MFDistributorSellMore />
             <WhyMFDistributor />

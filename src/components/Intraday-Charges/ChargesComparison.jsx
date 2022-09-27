@@ -13,7 +13,7 @@ function ChargesComparison() {
                     <div className="row justify-content-center">
                         <div className="col-xl-6 col-md-8">
                             <div className="hading-text">
-                                <h2 className="ttl2">Intraday Charges Comparison</h2>
+                                <h2 className="ttl2-sm">Intraday Charges Comparison</h2>
                                 <p>Mr. Amit bought 100 shares <span>@ Rs. 196</span> and sold them <span>@ Rs. 200</span>, the total turnover is Rs. 39,600.</p>
                             </div>
                             
