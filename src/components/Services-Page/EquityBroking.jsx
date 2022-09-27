@@ -2,6 +2,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Bannerimage from '../../assets/images/services/equity-broking-services.webp';
+import Researchbanner from "../../assets/images/equity-broking/rollingCoin.mp4"
 import LazyLoader from "../Common-features/LazyLoader";
 
 function EquityBroking() {
@@ -23,8 +24,10 @@ function EquityBroking() {
                     <div className="row gx-5 align-items-top">
                         <div className="col-md-4">
                             <div className="rightsec">
-                                <LazyLoader src={Bannerimage} alt={"equity broking services"} className={"img-fluid"} width={"410"} height={"425"} />
-                                {/* <img src={Bannerimage} alt="Banner Images" className="img-fluid " width={"410"} height={"459"}></img> */}
+                                <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
+                                    <source src={Researchbanner} type='video/mp4' />
+                                </video>
+                                
                             </div>
                         </div>
                         <div className="col-md-8">
