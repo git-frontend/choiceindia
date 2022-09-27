@@ -1144,14 +1144,16 @@ function BestStock() {
             <section className="sendopt">
               <div className="container">
                 <div className="form_main">
-                  <div className="demat_text"><span className="form-ttl">Open a Free Demat Account <br />+ Free 1st Year AMC</span></div>
-                  <div className="Mobile_text"><label className="text_label">Mobile Number</label>
-                    <input type="text" className="mobile_no" placeholder="+91 7405741316" /></div>
+                  <div className="demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                  <div className="Mobile_text">
+                  <input type="text" id="form-email" className="form-textbox" required/>
+                  <label for="form-email" className="form-label">Mobile Number</label>
+                  </div>
                   <div className="cust_check">
                     <input type="checkbox" className="form_check" />
                     <label className="form_check_text">I agree that I have read and  accept<br /> the <a href="/"><span className="link_tc">Terms and Conditions</span></a></label>
                   </div>
-                  <div className="sub_group"><a href="/" ><span className="send_OPT_btn" >SEND OTP</span></a></div>
+                  <div className="sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div>
                 </div>
               </div>
             </section>
