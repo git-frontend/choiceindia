@@ -9,7 +9,7 @@ function BannerTop() {
 
   return (
     <div>
-      <section className="bannersec" id="home-bg">
+      <section className="bannersec">
         <div className="container">
           <div className="row align-items-start">
             <div className="col-xl-8 col-md-6">

@@ -28,13 +28,13 @@ function HindiTradingFaq() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-first text-center pb-4" id="Faqid">डीमैट अकाउंट पर अक्सर पूछे जाने वाले प्रश्न</h2>
+                            <h2 className="title-first text-center pb-4" >डीमैट अकाउंट पर अक्सर पूछे जाने वाले प्रश्न</h2>
                         </div>
 
                     </div>
                     <div className="row">
                         <div className="col-md-12">
-                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion' >
+                            <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'  >
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header> <h4 className='faq-header'> डीमैट खाते को सक्रिय होने में कितना समय लगेगा?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
@@ -69,7 +69,7 @@ function HindiTradingFaq() {
                                         जे बी नगर, अंधेरी (पूर्व), मुंबई 400099।
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="4" className='faq-item'>
+                                <Accordion.Item eventKey="4" className='faq-item'  id="Faqid">
                                     <Accordion.Header > <h4 className='faq-header'>मैं अपने डीमैट को दूसरे ब्रोकर से चॉइस में कैसे बदलूं?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         आपको हमें अपने पहले के डीपी की सीएमएल (क्लाइंट मास्टर लिस्ट) कि कॉपी प्रदान करनी होगी और हमारे साथ एक नया डीमैट खाता खोलना होगा।
@@ -161,7 +161,7 @@ function HindiTradingFaq() {
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
+                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6"  onClick={() => setview(!show)}>View more</button>
                                     </div>
                             }
                         </div>

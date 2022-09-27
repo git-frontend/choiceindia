@@ -6,6 +6,20 @@ import { Accordion } from "react-bootstrap";
 function MFDistributorFaqs() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+
+   /** scroll id view */
+
+   function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
     return (
         <div>
 
@@ -46,7 +60,7 @@ Note: Investica is a part of Choice Wealth Pvt ltd and registered under the ARN 
 
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="4" className='faq-item'>
+                                <Accordion.Item eventKey="4" className='faq-item' id="Faqid">
                                     <Accordion.Header > <h4 className='faq-header'>What is the process for mutual fund agent registration?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Once, you have completed your AMFI Certification. You can then login to <a href="https://choiceindia.com/">www.choiceindia.com</a> and start a fruitful journey by following the steps mentioned there.
@@ -83,7 +97,7 @@ Note: Investica is a part of Choice Wealth Pvt ltd and registered under the ARN 
                                             As we follow rules prescribed by the regulators, the ARN Code is a mandate to every mutual fund distributor.
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
 
                                     </Accordion>
 
