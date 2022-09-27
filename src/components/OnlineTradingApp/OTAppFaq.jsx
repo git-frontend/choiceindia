@@ -3,6 +3,20 @@ import { Accordion } from "react-bootstrap";
 function OTAppFaq() {
 const [view, setview] = useState(false);
 const [show, setshow] = useState(false);
+   /** scroll id view */
+
+   function chapterScroll(id) {
+      var element = document.getElementById(id);
+      var headerOffset = 140;
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  
+
 return (
 <div>
    <section className="Dematfaq faq-white">
@@ -53,14 +67,14 @@ return (
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                         Below are the steps to apply for IPOs via Jiffy,<br/>
-                        Go to the IPO Section => IPO Listing => Open IPO<br/>
+                        Go to the IPO Section &#8658; IPO Listing &#8658; Open IPO<br/>
                         Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details<br/>
                         On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify<br/>
                         Once you select ‘Subscribe’. Your bid will be executed<br/>
                         You can check the status of your IPO bid in the IPO Transactions section
                      </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="5" className='faq-item'>
+                  <Accordion.Item eventKey="5" className='faq-item' id="Faqid">
                      <Accordion.Header>
                         <h4 className='faq-header'>Is Jiffy Trading App Available in Other Regional Languages?</h4>
                      </Accordion.Header>
@@ -82,7 +96,7 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="7" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?</h4>
+                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit &amp; Loss statements in Jiffy?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                         All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself.
@@ -90,13 +104,13 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="8" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available on Android & iOS platform?</h4>
+                        <h4 className='faq-header'>Is Jiffy Trading App Available on Android &amp; iOS platform?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy is available on both Android & iOS.
+                        Yes, Jiffy is available on both Android &amp; iOS.
                      </Accordion.Body>
                   </Accordion.Item>
-                  <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                  <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
                </Accordion>
                :
                <div className="accordion-view-more">
