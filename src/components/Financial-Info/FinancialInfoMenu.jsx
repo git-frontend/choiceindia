@@ -5,11 +5,13 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import "../Annual-Report/annual-report.scss";
 import FinanceInfoService from "../../Services/FinancialInfoService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.gif';
 import { Accordion } from "react-bootstrap";
-import download1 from '../../assets/images/file-download/export.webp';
+// import download1 from '../../assets/images/file-download/export.webp';
+import viewicon from '../../assets/images/bi_eye-fill.svg';
 function FinancialInfoMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
@@ -84,8 +86,8 @@ function FinancialInfoMenu() {
                                     data ?
 
 
-                                        <div className="row code-mainwrapper cgmainwrap">
-                                             <div className="col-md-12">
+                                        <div className="annual-reports code-mainwrapper cgmainwrap">
+                                             <div className="">
                                        
                                                 <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                                     {
@@ -105,7 +107,7 @@ function FinancialInfoMenu() {
                                                                                                 <div className="text">{res.title}</div>
                                                                                                 {
                                                                                                     res.view ?
-                                                                                                        <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext cursor-pointer"> <img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> Download</span></div> :
+                                                                                                        <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
                                                                                                         <div className="download"></div>
                                                                                                 }
 

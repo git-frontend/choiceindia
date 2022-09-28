@@ -1,0 +1,55 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.annual-reports{
+    background: $whiteColor;
+    padding: 0;
+    .faqs-accordion{
+        .faq-item{
+            border-radius: 20px;
+            overflow: hidden;
+            .accordion-button{
+               padding: 1.5rem 2rem;
+            }
+            .faq-header{
+                color: $secondary;
+                margin: 0;
+                color: #3A3A3A;
+            }
+            .accordion-collapse{
+                &.show{
+                    background: #F5F5F5;
+                    
+                }
+                .listing{
+                    >ul{
+                        padding-left: 5rem;
+                        >li{
+                            margin: 0 !important;
+                            border: 0 !important;
+                            .download{
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+            .accordion-button{
+                background: #F5F5F5;
+                border: 0;
+                outline: none;
+                box-shadow: inherit;
+                &.collapsed{
+                    background: $whiteColor;
+                    .faq-header{
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+        .accordion-item{
+            border-color: #c2c2c24d;
+        }
+    }
+}
