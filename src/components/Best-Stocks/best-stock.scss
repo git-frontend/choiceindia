@@ -242,6 +242,9 @@
         background-color:$abt-bg;
         padding-bottom: 4rem;
         }
+        @media (max-width:$sm){
+            padding-bottom: 0rem;
+            }
     .form_main{
         flex-direction: row;
         justify-content: space-between;
@@ -387,6 +390,11 @@
         }
 }
 .readmoresection{
+    @media (max-width:$sm){
+                background-color:$abt-bg;
+                margin: 0rem;
+                
+            }
     .para{
         .content{
             font-size: 1.231rem;
