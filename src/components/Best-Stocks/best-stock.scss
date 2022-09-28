@@ -55,7 +55,11 @@
         .listsec{
             color: $bgcolor-blue;
             background-color: rgb(0 102 178 / 10%);
-
+            @media (max-width: $sm){
+                background-color: #ffffff;
+                border-bottom: 2px solid #0066B2;
+                border-radius: 22px 22px 0px 0px;
+            }
             
         }
         @media (max-width: $sm){
@@ -65,6 +69,7 @@
             width: 100%;
             box-shadow: none;
             margin-bottom: 0rem;
+            padding: 0rem;
         }
     }
     .res_para{

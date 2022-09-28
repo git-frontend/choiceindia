@@ -4,10 +4,7 @@ import "./best-stock.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
-import BestStockcategory from './BestStockcategory';
 
-import BestStockOpenDematAccount from './BestStockOpenDematAccount';
-import BestStockreadMore from './BestStockreadMore';
 
 
 
@@ -19,17 +16,14 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
-function BestStock() {
+function BestStockOpenDematAccount() {
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
   const [skeleton, setSkeleton] = useState(() => true);
-  // const myTimeout = setTimeout(myGreeting, 900);
-  // function myGreeting() {
-  //   setSkeleton(() => false);
-  // }
+  
 
 
 
@@ -71,15 +65,28 @@ function BestStock() {
   return (
     <div>
       {
-        skeleton ? <Template5 /> :
-          <div className="sub-broker-skeleton-parent">
-            <BestStockcategory />
-            <BestStockOpenDematAccount />
-            <BestStockreadMore />
-          </div>
+       
+
+       <section className="sendopt">
+       <div className="container">
+         <div className="form_main">
+           <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+           <div className="  Mobile_text">
+             <input type="text" id="form-email" className="form-textbox" required />
+             <label for="form-email" className="form-label">Mobile Number</label>
+           </div>
+           <div className="  cust_check">
+             <input type="checkbox" className="form_check" />
+             <label className="form_check_text">I agree that I have read and  accept<br /> the <a href="/"><span className="link_tc">Terms and Conditions</span></a></label>
+           </div>
+           <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div>
+         </div>
+       </div>
+     </section>
+       
       }
     </div>
   );
 }
 
-export default BestStock;
+export default BestStockOpenDematAccount;
