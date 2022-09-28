@@ -24,6 +24,7 @@
         line-height: 2rem;
         font-family: "PoppinsRegular", sans-serif;
         // font-weight: 400;
+        margin-bottom: 2rem;
     }
    
     .list_group1{
@@ -149,6 +150,7 @@
             }
         }
         .middle-right{
+            text-align: right;
             .right-big-text{
                 color: $primary;
                 font-size: 1.385rem;
@@ -333,6 +335,7 @@
                 font-family: $font-family-poppins-bold;
                 font-size: 1.077rem;
                 line-height: 1.615rem;
+                text-decoration: none;
             }
             @media (max-width:$md){
                  br{

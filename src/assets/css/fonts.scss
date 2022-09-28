@@ -58,5 +58,15 @@
          font-display: swap;
 }
 
-
+@font-face {
+    font-family: 'Poppins-Regular';
+    src: url('../fonts/Poppins-Regular.eot');
+    src: url('../fonts/Poppins-Regular.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Poppins-Regular.svg#Poppins-Regular') format('svg'),
+         url('../fonts/Poppins-Regular.ttf') format('truetype'),
+         url('../fonts/Poppins-Regular.woff') format('woff'),
+         url('../fonts/Poppins-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
 
