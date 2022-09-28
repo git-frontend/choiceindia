@@ -29,7 +29,7 @@ function BannerMFDistributorHindi() {
                                         <span>ज्यादा </span> कमीशन
                                     </li>
                                     <li>
-                                        कमाई के<span>कई स्रोत</span> 
+                                        कमाई के <span> कई स्रोत</span> 
                                     </li>
                                     <li>
                                         <span>आजीवन </span> आय स्रोत

@@ -65,7 +65,7 @@ const MFDistributorSellMore = () => {
                                         <LazyLoader src={MF} alt={"म्यूचुअल फंड वितरक बनें और बॉन्ड, FD और NPS बेचें"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
-                                    <h3 className="itm-ttl">बांड, एफडी और एनपीएस </h3>
+                                    <h3 className="itm-ttl">बॉन्ड, एफडी और एनपीएस </h3>
                                 </div>
                             </div>
                             <div className='d-flex justify-content-center'>

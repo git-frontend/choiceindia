@@ -106,14 +106,14 @@ function MFDistributorFaqs() {
 
                                             </Accordion.Body>
                                         </Accordion.Item>
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;कम पढ़ें</button>
 
                                     </Accordion>
 
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
+                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>अधिक पढ़ें</button>
                                     </div>
                             }
                         </div>
