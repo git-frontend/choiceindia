@@ -5,11 +5,12 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import "../Annual-Report/annual-report.scss";
 import transactionService from "../../Services/TransactionService";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.gif';
 import { Accordion } from "react-bootstrap";
-import download1 from '../../assets/images/file-download/export.webp';
+// import download1 from '../../assets/images/file-download/export.webp';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
 
 function TransactionMenu() {
