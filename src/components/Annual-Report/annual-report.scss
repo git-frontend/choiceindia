@@ -32,6 +32,12 @@
                             .download{
                                 cursor: pointer;
                             }
+                            .text{
+                                width: calc(100% - 3rem);
+                            }
+                        }
+                        @media (max-width: $sm) {
+                            padding-left: 1rem;
                         }
                     }
                 }
