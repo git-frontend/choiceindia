@@ -9,6 +9,7 @@
 .intrc-banner{
     background: url(../../assets/images/intraday-charges/banner-bg.svg) no-repeat;
     background-size: cover;
+    padding: 8rem 0 0 0;
     .caption-banner{
         display: flex;
         flex-wrap: wrap;
@@ -48,6 +49,7 @@
                 }
                 &:hover{
                     background: $primary !important;
+                    color: $whiteColor !important;
                 }
             }
         }
@@ -383,5 +385,72 @@
                 }
             }
         }
+    }
+}
+
+.intra-why-choice{
+    padding: 8rem 0;
+    background: $whiteColor;
+    position: relative;
+    .intra-why-list{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+        .why-list-itm{
+            text-align: center;
+            h3{
+                font-size: 4.231rem;
+                font-family: $font-family-poppins-bold;
+                color: $primary;
+                text-align: center;
+                .hvr-txt{
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    span{
+                        animation: toBottomFromTop 0.5s forwards;
+                    }
+                }
+                &:hover{
+                    .hvr-txt{
+                        span{
+                            animation: toTopFromBottom 0.5s forwards;
+                            display: block;
+                        }
+                        
+                    }
+                    
+                }
+            }
+        }
+    }
+    &::before{
+        content: '';
+        width: 60%;
+        border-top: 1px solid #231F20;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+        opacity: 0.22;
+    }
+}
+
+.intra-footer-sec{
+    padding: 8rem 0;
+    background: url(../../assets/images/intraday-charges/bg-footer.webp) no-repeat bottom right $bgcolor-green;   
+    background-size: contain;
+
+    .ttl-nm{
+        font-size: 3.077rem;
+        font-family: $font-family-poppins-medium;
+        color: $whiteColor;       
+        span{
+            font-family: $font-family-poppins-bold;
+        }
+    }
+    .btn-bg{
+        margin-top: 2.5rem;
     }
 }

@@ -1,16 +1,17 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/intraday-charges/banner-person.webp';
 import img1 from '../../assets/images/intraday-charges/ratio-icon.svg';
+import img2 from '../../assets/images/intraday-charges/quandle.svg';
 
 import LazyLoader from "../Common-features/LazyLoader";
-
+import DematAccountForm from '../Common-features/DematAccountForm'
 function BannerIntraCharges() {
 
     return (
         <div>
             <section className="intrc-banner" >
                 <div className="container">
-                    <div className="row align-items-end">
+                    <div className="row align-items-start">
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
@@ -36,18 +37,18 @@ function BannerIntraCharges() {
                                         33<em>%</em>
                                     </span>
                                     <span className="itm-third">
-                                        <LazyLoader src={img1} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"24"} height={"24"}/>
+                                        <LazyLoader src={img2} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"39"} height={"28"}/>
                                     </span>
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"432"} height={"500"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                         </div>
-                        {/* <div className="col-md-6 col-lg-4 ">
+                        <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm />
+                                <DematAccountForm />
                             </div>
-                        </div> */}
+                        </div>
                     </div>
                 </div>
             </section>

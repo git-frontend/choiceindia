@@ -4,6 +4,7 @@ import BannerIntraCharges from './BannerIntraCharges';
 import ChargesComparison from './ChargesComparison';
 import SmartTrader from './SmartTrader';
 import IntraChargesBenifits from './IntraChargesBenifits';
+import IntraWhyChoice from './IntraWhyChoice';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./intraday-charges.scss";
@@ -48,6 +49,7 @@ function IntradayCharges() {
             <ChargesComparison />
             <SmartTrader />
             <IntraChargesBenifits />
+            <IntraWhyChoice />
             {/* <MFDistributorBenifits />
             <MFDistributorSellMore />
             <WhyMFDistributor />
