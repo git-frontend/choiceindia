@@ -75,7 +75,7 @@ function FileDownloadFaq() {
 
                                                     Object.keys(datalist)?.map((key, i) => {
                                                         return (
-                                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
                                                                 <Accordion.Header> <h4 className='faq-header'>{key}</h4></Accordion.Header>
                                                                 <Accordion.Body className='faq-body'>
                                                                     <div className="listing">
