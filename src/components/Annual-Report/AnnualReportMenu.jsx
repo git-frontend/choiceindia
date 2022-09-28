@@ -10,7 +10,7 @@ import "../CodeConduct/code-conduct.scss";
 import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import loaderimg2 from '../../assets/vedio/loader2.gif';
-import download1 from '../../assets/images/file-download/export.webp';
+// import download1 from '../../assets/images/file-download/export.webp';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
 function AnnualReportMenu() {
     const [data, setData] = useState();
