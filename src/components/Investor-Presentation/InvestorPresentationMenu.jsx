@@ -25,7 +25,7 @@ function InvestorPresentationMenu() {
                     // setData(res.data.data);
 
                     let yearFormat = {}
-                    console.log ("yearly",res.data.data)
+              
                                         res.data.data.forEach(ele => {
                     
                                             if (!yearFormat[ele.financial_year]) {
@@ -38,7 +38,7 @@ function InvestorPresentationMenu() {
                                             }
                                         })
                                         setData(yearFormat);
-                                        console.log("yearformat2", yearFormat)
+                                       
 
 
                 } else {
@@ -92,9 +92,9 @@ function InvestorPresentationMenu() {
                                                                 {
 
                                                                     Object.keys(data)?.map((key, i) => {
-                                                                        console.log("check", i);
+                                                                   
                                                                         return (
-                                                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
                                                                                 <Accordion.Header> <h4 className='faq-header'> Financial year {key}</h4></Accordion.Header>
                                                                                 <Accordion.Body className='faq-body'>
                                                                                     <div className="listing">

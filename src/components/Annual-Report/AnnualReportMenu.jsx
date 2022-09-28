@@ -38,7 +38,7 @@ function AnnualReportMenu() {
                         }
                     })
                     setData(yearFormat);
-                    console.log("yearformat4", yearFormat)
+                   
 
                 } else {
                     setisloading(false)
@@ -60,7 +60,7 @@ function AnnualReportMenu() {
                     setisloading(false)
                     // setList(res.data.data);
                     let yearFormat = {}
-                    console.log("yearly", res.data.data)
+                    
                     res.data.data.forEach(ele => {
 
                         if (!yearFormat[ele.financial_year]) {
@@ -73,7 +73,7 @@ function AnnualReportMenu() {
                         }
                     })
                     setList(yearFormat);
-                    console.log("yearformat2", yearFormat)
+                    
 
                 } else {
                     setisloading(false)
@@ -128,15 +128,16 @@ function AnnualReportMenu() {
 
                                                     </div>
 
-                                                    {
-                                                        data ?
+                                                   
                                                             <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                                                 {
 
-                                                                    Object.keys(data)?.map((key, i) => {
-                                                                        console.log("check", i);
+                                                                    Object.keys(data)?.map((key,i) => {
+                                                                        
+                                                                       
                                                                         return (
-                                                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
+                                                                                
                                                                                 <Accordion.Header> <h4 className='faq-header'> Annual Report {key}</h4></Accordion.Header>
                                                                                 <Accordion.Body className='faq-body'>
                                                                                     <div className="listing">
@@ -169,11 +170,7 @@ function AnnualReportMenu() {
                                                                 }
 
 
-                                                            </Accordion> :
-                                                            <div className="text-center">
-                                                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                                            </div>
-                                                    }
+                                                            </Accordion>
 
                                                 </div>
 
@@ -195,6 +192,9 @@ function AnnualReportMenu() {
                         isloading ?
                             <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> :
                             <div>
+                                {
+                                    
+                                            list ?
 
                                 <div className="annual-reports code-mainwrapper cgmainwrap">
 
@@ -277,14 +277,13 @@ function AnnualReportMenu() {
                                             <h3 className="head">Description</h3>
 
                                         </div>
-                                        {
-                                            list ?
+                                        
                                                 <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                                     {
 
                                                         Object.keys(list)?.map((key, i) => {
                                                             return (
-                                                                <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
                                                                     <Accordion.Header> <h4 className='faq-header'> Financial Statements Of Subsidiaries {key}</h4></Accordion.Header>
                                                                     <Accordion.Body className='faq-body'>
                                                                         <div className="listing">
@@ -317,11 +316,7 @@ function AnnualReportMenu() {
                                                     }
 
 
-                                                </Accordion> :
-                                                <div className="text-center">
-                                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                                </div>
-                                        }
+                                                </Accordion> 
 
                                     </div>
 
@@ -333,6 +328,11 @@ function AnnualReportMenu() {
 
 
                                 </div>
+                                :
+                                <div className="text-center no-data-space">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>
+                        }
 
 
                             </div>

@@ -36,7 +36,7 @@ function ShareHoldingMenu() {
                         }
                     })
                     setData(yearFormat);
-                    console.log("yearformat2", yearFormat)
+                  
 
                 } else {
                     setisloading(false);
@@ -81,6 +81,8 @@ function ShareHoldingMenu() {
                     </div>
                     :
                     <div>
+                        {
+                            data ?
                         
                                 <div className="annual-reports code-mainwrapper cgmainwrap">
                                     <div className="">
@@ -88,9 +90,9 @@ function ShareHoldingMenu() {
                                                                 {
 
                                                                     Object.keys(data)?.map((key, i) => {
-                                                                        console.log("check", i);
+                                                                    
                                                                         return (
-                                                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
                                                                                 <Accordion.Header> <h4 className='faq-header'> Financial year {key}</h4></Accordion.Header>
                                                                                 <Accordion.Body className='faq-body'>
                                                                                     <div className="listing">
@@ -126,11 +128,11 @@ function ShareHoldingMenu() {
                                                             </Accordion> 
                                     </div>
                                 </div>
-                                {/* :
+                                 :
                                 <div className="text-center">
                                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                                 </div>
-                        } */}
+                        } 
                     </div>
                     }
 
