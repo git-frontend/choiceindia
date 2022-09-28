@@ -6,7 +6,7 @@
    
     .title-secnd1{
         font-size: 3.077rem;
-        color: #231F20;
+        color: $bgcolorblackdark;
         font-family: $font-family-poppins-bold;
         line-height: 4.615rem;
         text-align: center;
@@ -19,17 +19,16 @@
     }
     .title_para{
         font-size: 1.231rem;
-        color: #797979;
+        color: $graylight;
         text-align: center;
         line-height: 2rem;
-        font-family: "PoppinsRegular", sans-serif;
-        // font-weight: 400;
+        font-family: $font-family-poppins-regular;
         margin-bottom: 2rem;
     }
    
     .list_group1{
            
-            box-shadow: 0px 3px 6px #00000029;
+            box-shadow: 0px 3px 6px #c8c8d6;
             border-radius: 1.231rem;
             background-color: $whiteColor;
             margin-top: 1rem;
@@ -39,7 +38,7 @@
          
 
         .list{
-            color:#231F20;
+            color:$bgcolorblackdark;
             font-size: 1.385rem;
             line-height: 2.077rem;
             width: 100%;
@@ -54,13 +53,12 @@
             }
         }
         .listsec{
-            color: #0066B2;
+            color: $bgcolor-blue;
             background-color: rgb(0 102 178 / 10%);
 
             
         }
         @media (max-width: $sm){
-        //    overflow: auto;
            overflow: scroll;
             display: flex;
             flex-wrap: nowrap;
@@ -120,12 +118,12 @@
                 border-style: none;
                 margin: 0;
                 color: $whiteColor;
-                background: #0066B2;
+                background: $bgcolor-blue;
                 height: 2.938rem;
                 line-height: 1.615rem;
                 text-align: center;
                 font-size: 1.231rem;
-                font-family: "PoppinsMedium", sans-serif;
+                font-family: $font-family-poppins-medium;
                 text-transform: capitalize;
                 min-width: 7.188rem;
         }
@@ -146,7 +144,7 @@
                 font-size: 1.077rem;
                 line-height: 1.769rem;
                 color: $secondary;
-                font-family: $font-family-poppins-regular
+                font-family: $font-family-poppins-regular;
             }
         }
         .middle-right{
@@ -164,7 +162,7 @@
                 font-family: $font-family-poppins-regular;
             }
             .text_color{
-                color: #EE404A;
+                color: $redbg;
             }
         }
        
@@ -192,7 +190,7 @@
 
 .load_btn{
     .load_more_btn{
-        font-family: "PoppinsMedium", sans-serif;
+        font-family:$font-family-poppins-medium;
         color: $whiteColor;
         background: $primary;
         padding: 13px 0;
@@ -229,20 +227,14 @@
         justify-content: space-between;
         display: flex;
         padding: 5rem 0rem;
-        // @media (max-width:$md){
-        //      justify-content: space-between;
-        //     display: flex;
-        //     flex-wrap: wrap;
-        // }
         @media (max-width:$md){
             background-color: $whiteColor;
             border: 1px solid $secondary;
             border-radius: 0.615rem;
             margin: 0rem auto;
-            padding: 35px 23px;
+            padding: 2.692rem 1.769rem;
             display: block;
             max-width: 350px;
-            // margin-bottom: 5rem;
         }
     
         .demat_text{   
@@ -252,7 +244,7 @@
             }        
             .form-ttl{
                 font-size: 1.846rem;
-                color: #15171A;
+                color: $blackcolordark;
                 font-family: $font-family-poppins-bold;
                 line-height:2.462rem;
                 display: block;
@@ -261,7 +253,6 @@
                 }
                 .reshide{
                     @media (max-width:$md){
-                        // visibility: hidden;
                         display: none;
                     }
                 }
@@ -269,9 +260,7 @@
         }
         .Mobile_text{
             position: relative;
-	        // margin-top: 17px;
             .form-textbox {	
-                // box-shadow: inset 0 0 10px rgba(0,0,0,.1);
                 background-color:$bgcolor-blue-light; 
                 border-radius: 0.615rem;
                 border: 1px solid #231F2024;
@@ -299,13 +288,11 @@
                 cursor: text;
                 transition: all .15s ease-in-out 0s;
                 transform: translateY(50%);
-                // -webkit-transition: all 0.2s ease-in-out;
                 font-size: 1.077rem;
                 line-height: 1.769rem;
                 color: $secondary;
                 font-family: $font-family-poppins-regular;
                 background-color: $bgcolor-blue-light;
-                // background-color:#E0EFE4; 
                 @media (max-width:$md){
                 top: 1px;
                 left: 17px;
@@ -328,9 +315,9 @@
                 line-height: 1.615rem;
                 color: #231F20;
                 font-family: $font-family-poppins-regular;
-                padding-left: 7px;
+                padding-left: 0.538rem;
             .link_tc{
-                color: #005CB9;
+                color: $bluedark;
                 cursor: pointer;
                 font-family: $font-family-poppins-bold;
                 font-size: 1.077rem;
@@ -367,7 +354,7 @@
                
                 @media (max-width:$md){
                 text-transform: none;
-                background-color: #FFCA05;
+                background-color: $yellowColor;
                 color: #231F20;
                 width: 100%;
                 font-family: $font-family-poppins-bold;
@@ -379,48 +366,65 @@
         }     
         }
 }
-.Stockes{
-    margin: 9rem 0rem;
-    @media (max-width:$sm){
-        background-color:$abt-bg;
-        margin: 0rem;
-        padding: 5rem 0rem;
+.readmoresection{
+    .para{
+        .content{
+            font-size: 1.231rem;
+            font-family: $font-family-poppins-regular;
+            line-height: 1.846rem;
+            color: $secondary;
         }
-    .stock_head{
-        font-size: 3.077rem;
-        font-family: $font-family-poppins-bold;
-        line-height: 4.615rem;
-        text-align: center;
-        @media (max-width:$sm){
-            font-size: 2rem;
-            line-height: 3rem;
-            text-align: center;
-            padding-bottom: 3rem;
-        }
-    }
-    .content{
-        font-size: 1.231rem;
-        font-family: $font-family-poppins-regular;
-        line-height: 1.846rem;
-        color: $secondary;
-        text-align: left;
-        padding-top: 1.525rem;
-        
-
-     .moreless-button{
-        font-size: 1.231rem;
-		font-family:$font-family-poppins-medium;
-		color: #0066B2;
-        line-height: 1.846rem;
-        cursor: pointer;
-		
-    }
-    @media (max-width:$sm){
-        text-align: left;
-        padding: 0rem 1rem;
-    }
+        .read-more-trigger::before{
+                    font-size: 1.231rem;
+            		font-family:$font-family-poppins-medium;
+            		color: $bgcolor-blue;
+                    line-height: 1.846rem;
+                    cursor: pointer;  
+                }
     }
 }
+// .Stockes{
+//     margin: 9rem 0rem;
+//     @media (max-width:$sm){
+//         background-color:$abt-bg;
+//         margin: 0rem;
+//         padding: 5rem 0rem;
+//         }
+//     .stock_head{
+//         font-size: 3.077rem;
+//         font-family: $font-family-poppins-bold;
+//         line-height: 4.615rem;
+//         text-align: center;
+//         @media (max-width:$sm){
+//             font-size: 2rem;
+//             line-height: 3rem;
+//             text-align: center;
+//             padding-bottom: 3rem;
+//         }
+//     }
+//     .content{
+//         font-size: 1.231rem;
+//         font-family: $font-family-poppins-regular;
+//         line-height: 1.846rem;
+//         color: $secondary;
+//         text-align: left;
+//         padding-top: 1.525rem;
+        
+
+//      .moreless-button{
+//         font-size: 1.231rem;
+// 		font-family:$font-family-poppins-medium;
+// 		color: $bgcolor-blue;
+//         line-height: 1.846rem;
+//         cursor: pointer;
+		
+//     }
+//     @media (max-width:$sm){
+//         text-align: left;
+//         padding: 0rem 1rem;
+//     }
+//     }
+// }
 
 
     
