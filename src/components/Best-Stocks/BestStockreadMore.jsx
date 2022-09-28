@@ -18,7 +18,7 @@ function BestStockreadMore() {
                 <h2 className="secttitle text-center">Best Stocks to Buy Today in India</h2>
               </div>
               <div className="col-md-12">
-                <div className="para">
+                <div className="para px-3">
                   <input type="checkbox" className="read-more-state" id="post-1" />
                   <span className="read-more-wrap "> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
                     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
