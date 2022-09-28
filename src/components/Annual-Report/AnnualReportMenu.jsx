@@ -11,6 +11,7 @@ import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import loaderimg2 from '../../assets/vedio/loader2.gif';
 import download1 from '../../assets/images/file-download/export.webp';
+import viewicon from '../../assets/images/bi_eye-fill.svg';
 function AnnualReportMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
@@ -119,8 +120,8 @@ console.log ("yearly",res.data.data)
                                     {
                                         data ? 
                                         
-                                        <div className="row code-mainwrapper cgmainwrap">
-                                            <div className="col-md-12">
+                                        <div className="annual-reports code-mainwrapper cgmainwrap">
+                                            <div className="">
                                             {
                                                 data ?
                                                     <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
@@ -142,7 +143,7 @@ console.log ("yearly",res.data.data)
                                                                                                     <div className="text">{res.report_description}</div>
                                                                                                     {
                                                                                                         res.view ?
-                                                                                                            <div className="download"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext">Download</span></div> :
+                                                                                                            <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
                                                                                                             <div className="download"></div>
                                                                                                     }
 
@@ -189,7 +190,7 @@ console.log ("yearly",res.data.data)
                             <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> :
                             <div>
 
-                                <div className="row code-mainwrapper cgmainwrap">
+                                <div className="annual-reports code-mainwrapper cgmainwrap">
                                     
 
                                         {/* 
@@ -264,7 +265,7 @@ console.log ("yearly",res.data.data)
                                                 </Accordion> */}
 
 
-                                        <div className="col-md-12">
+                                        <div className="">
                                             {
                                                 list ?
                                                     <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
@@ -285,7 +286,7 @@ console.log ("yearly",res.data.data)
                                                                                                     <div className="text">{res.report_description}</div>
                                                                                                     {
                                                                                                         res.view ?
-                                                                                                            <div className="download"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext">Download</span></div> :
+                                                                                                            <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
                                                                                                             <div className="download"></div>
                                                                                                     }
 
