@@ -69,7 +69,7 @@ function FileDownloadFaq() {
 
                                 <div className="col-md-12">
                                     {
-                                        datalist?
+                                        datalist ?
                                             <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
                                                 {
 
