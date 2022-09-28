@@ -7,6 +7,8 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.gif';
+import { Accordion } from "react-bootstrap";
+import download1 from '../../assets/images/file-download/export.webp';
 
 function InvestorPresentationMenu() {
     const [data, setData] = useState();
@@ -18,7 +20,23 @@ function InvestorPresentationMenu() {
             res => {
                 if (res) {
                     setisloading(false);
-                    setData(res.data.data);
+                    // setData(res.data.data);
+
+                    let yearFormat = {}
+                    console.log ("yearly",res.data.data)
+                                        res.data.data.forEach(ele => {
+                    
+                                            if (!yearFormat[ele.financial_year]) {
+                                                yearFormat[ele.financial_year] = [];
+                                                yearFormat[ele.financial_year].push(ele)
+                                               
+                                            } else {
+                                                yearFormat[ele.financial_year].push(ele)
+                    
+                                            }
+                                        })
+                                        setData(yearFormat);
+                                        console.log("yearformat2", yearFormat)
 
 
                 } else {
@@ -65,39 +83,50 @@ function InvestorPresentationMenu() {
                         <div>
 
                                 {
-                                    (data && data.length) ?
+                                    data ?
                                         <div className="row code-mainwrapper cgmainwrap voting-result">
                                             <div className="col-md-12">
-            
-                                                <div className="d-flex justify-content-between result-ttl">
-                                                    <h3 className="head">Date of the General Meeting</h3>
-                                                    <h3 className="head">Voting Result of the General Meeting</h3>
-                                                    <h3 className="head"></h3>
-                                                </div>
-                                                <div className="subtext">
-                                                    {
-                                                        (data || []).map((res, i) => {
-                                                            return (
-                                                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3 result-item" key={i}>
-                                                                    <div className="itm-nm">{res.month}</div>
-                                                                    <div className="itm-nm">{res.title}</div>
-                                                                    {
-                                                                        res.view?
-                                                                        <div className="itm-nm"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>:
-                                                                        ''
-                                                                    }
-                                                                    
-                                                                    
-                                                                </div>
-            
-                                                            )
-                                                        })
-                                                    }
-                                                </div>
-            
-            
-            
-                                            </div>
+                                    <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                                {
+
+                                                                    Object.keys(data)?.map((key, i) => {
+                                                                        console.log("check", i);
+                                                                        return (
+                                                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                                <Accordion.Header> <h4 className='faq-header'> Financial year {key}</h4></Accordion.Header>
+                                                                                <Accordion.Body className='faq-body'>
+                                                                                    <div className="listing">
+                                                                                        <ul>
+                                                                                            {
+                                                                                                data[key]?.map((res, index) => {
+                                                                                                    return (
+
+                                                                                                        <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                                                                            <div className="text">{res.title}</div>
+                                                                                                            {
+                                                                                                                res.view ?
+                                                                                                                    <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext cursor-pointer"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> Download</span></div> :
+                                                                                                                    <div className="download"></div>
+                                                                                                            }
+
+                                                                                                        </li>
+                                                                                                    )
+                                                                                                })
+                                                                                            }
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </Accordion.Body>
+                                                                            </Accordion.Item>
+
+                                                                        )
+                                                                    })
+
+
+                                                                }
+
+
+                                                            </Accordion> 
+                                    </div>
             
             
             

@@ -142,7 +142,7 @@ console.log ("yearly",res.data.data)
                                                                                                     <div className="text">{res.report_description}</div>
                                                                                                     {
                                                                                                         res.view ?
-                                                                                                            <div className="download"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext">Download</span></div> :
+                                                                                                            <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext cursor-pointer"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> Download</span></div> :
                                                                                                             <div className="download"></div>
                                                                                                     }
 
@@ -285,7 +285,7 @@ console.log ("yearly",res.data.data)
                                                                                                     <div className="text">{res.report_description}</div>
                                                                                                     {
                                                                                                         res.view ?
-                                                                                                            <div className="download"><img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext">Download</span></div> :
+                                                                                                            <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" +res.view) }} className="downloadtext cursor-pointer"> <img src={download1} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> Download</span></div> :
                                                                                                             <div className="download"></div>
                                                                                                     }
 
