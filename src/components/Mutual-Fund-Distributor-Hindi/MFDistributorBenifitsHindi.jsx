@@ -122,7 +122,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Trading} alt={"म्यूचुअल फंड वितरक बनने के साथ कई वित्तीय प्रोडक्ट्स की पेशकश करें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>कई प्रोडक्ट्स  <br/>  पर ऑफर</h4>
+                                        <h4>कई  <br/>प्रोडक्ट्स पर ऑफर</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
@@ -131,7 +131,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>पूरी  <br/>ऑनलाइन प्रक्रिया</h4>
+                                        <h4>पूरी <br/>ऑनलाइन प्रक्रिया</h4>
                                     </div>
                                 </div>
                             </Slider>
@@ -198,7 +198,7 @@ function MFDistributorBenifits() {
                                             <LazyLoader src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4>पूरी <br/>ऑनलाइन प्रक्रिया</h4>
+                                        <h4>पूरी  <br/>ऑनलाइन प्रक्रिया</h4>
                                     </div>
                                 </div>
                             </div>
@@ -206,12 +206,9 @@ function MFDistributorBenifits() {
                             }
                              </div>
                             <div className="item-next1">  
-                                <h3>म्यूचुअल फंड वितरक बनें
-</h3>
-                                <p>चॉइस म्यूचुअल फंड डिस्ट्रीब्यूटर बनें और आय का एक आजीवन स्रोत बनाएं। 
-</p>
-                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करें
-</span> </Link>
+                                <h3>म्यूचुअल फंड वितरक बनें</h3>
+                                <p>चॉइस म्यूचुअल फंड डिस्ट्रीब्यूटर बनें और आय का एक आजीवन स्रोत बनाएं। </p>
+                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करें</span> </Link>
                             </div>
                         </div>
                     </div>
