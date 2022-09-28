@@ -94,12 +94,8 @@ function IntraChargesBenifits() {
                                 </div>
                                 <div className="benifits-list-itm">
                                     <span className="sm-img">
-                                    <svg xmlns="http://www.w3.org/2000/svg" id="Group_26663" data-name="Group 26663" width="59.998" height="60.001" viewBox="0 0 59.998 60.001">
-  <defs>
-    <clipPath id="clip-path">
-      <rect id="Rectangle_3683" data-name="Rectangle 3683" width="59.998" height="60.001" fill="#231f20"/>
-    </clipPath>
-  </defs>
+                                    <svg xmlns="http://www.w3.org/2000/svg" mlnsXlink="http://www.w3.org/1999/xlink" id="Group_26663" data-name="Group 26663" width="59.998" height="60.001" viewBox="0 0 59.998 60.001">
+  
   <g id="Group_26663-2" data-name="Group 26663" clip-path="url(#clip-path)">
     <path id="Path_19849" data-name="Path 19849" d="M0,239.991c.141-.543.25-1.1.428-1.627a8.407,8.407,0,0,1,4.692-5.1,7.672,7.672,0,0,1-.845-6.612,7.494,7.494,0,0,1,2.995-3.932,7.665,7.665,0,0,1,10.69,10.551,8.574,8.574,0,0,1,3.753,3.158,8.241,8.241,0,0,1,1.356,4.532c.012,1.406-.025,2.812.015,4.217a1.615,1.615,0,0,1-.824,1.6H0v-6.794m20.707,4.422c0-1.356.084-2.668-.018-3.964a5.852,5.852,0,0,0-4.129-5.161.946.946,0,0,0-.691.082,7.6,7.6,0,0,1-8.65.017.925.925,0,0,0-.685-.107,5.525,5.525,0,0,0-4.028,4.51,30.223,30.223,0,0,0-.044,4.624ZM11.5,234.368a5.3,5.3,0,1,0-5.278-5.306,5.333,5.333,0,0,0,5.278,5.306" transform="translate(0 -186.784)" fill="#231f20"/>
     <path id="Path_19850" data-name="Path 19850" d="M236.648,246.792a1.6,1.6,0,0,1-.825-1.6c.061-1.753-.067-3.523.121-5.26a7.979,7.979,0,0,1,4.68-6.488c.069-.035.141-.067.209-.1a.723.723,0,0,0,.092-.071,7.67,7.67,0,1,1,12.876-.013c.161.089.321.179.482.267a8.231,8.231,0,0,1,4.618,7.461c.036,1.4-.024,2.811.019,4.215a1.572,1.572,0,0,1-.832,1.593Zm19.9-2.363c0-1.366.069-2.675-.015-3.974a5.872,5.872,0,0,0-4.071-5.14,1.079,1.079,0,0,0-.793.092,7.617,7.617,0,0,1-8.6,0,1.06,1.06,0,0,0-.793-.089,5.744,5.744,0,0,0-3.839,3.94c-.514,1.688-.184,3.432-.265,5.173ZM247.3,223.774a5.3,5.3,0,1,0,5.381,5.2,5.322,5.322,0,0,0-5.381-5.2" transform="translate(-198.924 -186.791)" fill="#231f20"/>
@@ -110,13 +106,18 @@ function IntraChargesBenifits() {
     <path id="Path_19855" data-name="Path 19855" d="M251.691,118.971a1.167,1.167,0,0,1-2.334.021,1.167,1.167,0,1,1,2.334-.021" transform="translate(-210.341 -99.376)" fill="#231f20"/>
   </g>
 </svg>
+
+
                                     </span>
                                     <h3 className="itm-ttl">Free Research<br /> Advisory</h3>
                                 </div>
                             </Slider>
                         </div>
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <a href="/"><span className="btn-bg">Open Now</span></a>
+                            <a href="/"><span className="btn-bg">Open Now <svg xmlns="http://www.w3.org/2000/svg" id="baseline-arrow_forward-24px" width="24" height="24" viewBox="0 0 24 24">
+  <path id="Path_1980" data-name="Path 1980" d="M0,0H24V24H0Z" fill="none"/>
+  <path id="Path_1981" data-name="Path 1981" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" fill="#ffffff"/>
+</svg> </span> </a>
                         </div>
                     </div>
                 </div>

@@ -9,7 +9,7 @@
 .intrc-banner{
     background: url(../../assets/images/intraday-charges/banner-bg.svg) no-repeat;
     background-size: cover;
-    padding: 8rem 0 0 0;
+    padding: 8rem 0 1.5rem 0;
     .caption-banner{
         display: flex;
         flex-wrap: wrap;
@@ -20,6 +20,10 @@
                 line-height: 1.5;
                 font-family:$font-family-poppins-bold;
                 color: $primary;
+                @media (max-width: $md) {
+                    font-size: 2.692rem;
+                    line-height: 1.4;
+                }
             }
             .des-nm{
                 position: relative;
@@ -40,9 +44,18 @@
                 strong{
                     font-family: $font-family-poppins-bold;
                 }
+                @media (max-width: $sm) {
+                    width: 80%;
+                    margin:0 auto;
+                    margin-top: 1rem;
+                    margin-bottom: 2.5rem;
+                }
             }
             .btn-bg{
+                
                 svg{
+                    transition-duration: 0.5s;
+                    margin-left: 3px;
                     #Path_1981{
                         fill: $whiteColor;
                     }
@@ -50,7 +63,17 @@
                 &:hover{
                     background: $primary !important;
                     color: $whiteColor !important;
+                    svg{
+                        transform: translateX(10px);
+                    }
                 }
+            }
+            @media (max-width: $md) {
+                width: 100%;
+            }
+            @media (max-width: $sm) {
+                text-align: center;
+                margin-bottom: 6rem;
             }
         }
         .right-sec{
@@ -69,6 +92,10 @@
                 top: 24%;
                 background-color: #25b8af33;
                 backdrop-filter: blur(10px);
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.6s;
+                animation-name: fadeInUp;
             }
             .itm-third{
                 display: flex;
@@ -83,6 +110,10 @@
                 bottom: 26%;
                 background-color: #25b8af33;
                 backdrop-filter: blur(10px);
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.8s;
+                animation-name: fadeInUp;
             }
             .itm-scnd{
                 font-size: 38px;
@@ -100,13 +131,23 @@
                 position: absolute;
                 right: 60px;
                 top: 15%;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.1s;
+                animation-name: fadeInUp;
                 em{
                     font-style: normal;
                     display: contents;
                     font-size: 22px;
                 }
             }
+            @media (max-width: $md) {
+                display: none;
+            }
         }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
     }
 }
 
@@ -114,10 +155,13 @@
     font-size: 3.077rem;
     font-family: $font-family-poppins-bold;
     color: $primary;
+    @media (max-width: $md) {
+        font-size: 2.5rem;
+    }
 }
 
 .charges-comparison{
-    padding: 5rem 0;
+    padding: 8rem 0;
     .hading-text{
         text-align: center;
         
@@ -171,9 +215,9 @@
                             border: 2px solid #25B8AF;
                             border-bottom: 0;
                             border-radius: 20px 20px 0 0;
-                            @media (max-width: $sm) {
-                                display: none;
-                            }
+                            // @media (max-width: $sm) {
+                            //     display: none;
+                            // }
                         }
                         &::after{
                             content: '';
@@ -214,7 +258,7 @@
                             display: table-cell;
                         }
                     }
-                    @media (max-width: $sm) {
+                    @media (max-width: $md) {
                         padding: 1rem 2rem;
                     }
                 }
@@ -285,10 +329,18 @@
                                 left: 0;
                                 background: $whiteColor;
                                 z-index: 9;
+                                white-space: nowrap;
+                                span{
+                                    display: block;
+                                }
                             }
                         }
-                        @media (max-width: $sm) {
+                        
+                        @media (max-width: $md) {
                             padding: 1rem 2rem;
+                        }
+                        @media (max-width: $sm) {
+                            white-space: nowrap;
                         }
                     }
                 }
@@ -296,7 +348,20 @@
         }
         @media (max-width: $sm) {
             overflow-x:scroll;
+            padding: 4rem 0;
+            margin: 0;
+            overflow-y: hidden;
         }
+    }
+    .des-para{
+        color: $secondary;
+        margin-top: 6rem;
+        @media (max-width: $sm) {
+            margin-top: 4rem;
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
     }
 }
 
@@ -320,12 +385,57 @@
                 left: 0;
                 top: 0;
             }
+            @media (max-width: $sm) {
+                width: 85%;
+                margin: 0 auto;
+                text-align: left;
+                margin-top: 0.5rem;
+                margin-bottom: 3rem;
+            }
         }
+        .btn-bg-dark{
+            background: $yellowColor !important;
+            color: $primary !important;
+            svg{
+                transition-duration: 0.5s;
+            }
+            &:hover{
+                svg{
+                    transform: translateX(10px);
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
+    }
+    .hide-mob{
+        @media (max-width: $sm) {
+            display: none !important;
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
     }
 }
 
 .intra-charges-benifits{
     padding: 8rem 0;
+    position: relative;
+    &::after{
+        content: '';
+        width: 107px;
+        height: 200px;
+        background: url(../../assets/images/intraday-charges/rect-bg2.svg) no-repeat top right;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        bottom: 3rem;
+        @media (max-width: $sm) {
+            width: 55px;
+            height: 110px;
+        }
+    }
     .charges-benifits-list{
         margin-top: 4rem;
         margin-bottom: 2rem;
@@ -341,9 +451,14 @@
                 overflow: hidden;
                 margin: 0 auto;
                 .itm-ttl{
-                    margin-top: 2rem;
+                    margin-top: 3rem;
                     font-family: $font-family-poppins-semibold;
                     color: $primary;
+                    @media (max-width: $sm) {
+                        font-size: 2rem;
+                        line-height: 1.5;
+                        margin-top: 2.5rem;
+                    }
                 }
                 &::before{
                     content: "";
@@ -385,6 +500,29 @@
                 }
             }
         }
+        .slick-dots{
+            position: relative;
+        }
+    }
+    .btn-bg{
+                
+        svg{
+            transition-duration: 0.5s;
+            margin-left: 3px;
+            #Path_1981{
+                fill: $whiteColor;
+            }
+        }
+        &:hover{
+            background: $primary !important;
+            color: $whiteColor !important;
+            svg{
+                transform: translateX(10px);
+            }
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0;
     }
 }
 
@@ -392,10 +530,28 @@
     padding: 8rem 0;
     background: $whiteColor;
     position: relative;
+    &::after{
+        content: '';
+        width: 91px;
+        height: 192px;
+        background: url(../../assets/images/intraday-charges/rect-bg1.svg) no-repeat top left;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: 4rem;
+        @media (max-width: $sm) {
+            width: 55px;
+            height: 110px;
+        }
+    }
     .intra-why-list{
         display: flex;
         justify-content: space-between;
         margin-top: 5rem;
+        @media (max-width: $sm) {
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
         .why-list-itm{
             text-align: center;
             h3{
@@ -421,6 +577,13 @@
                     }
                     
                 }
+                small{
+                    font-size: 3rem;
+                }
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                padding: 2rem 0;
             }
         }
     }
@@ -434,6 +597,9 @@
         top: 0;
         transform: translate(-50%, 0);
         opacity: 0.22;
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0;
     }
 }
 
@@ -449,8 +615,48 @@
         span{
             font-family: $font-family-poppins-bold;
         }
+        @media (max-width: $sm) {
+            font-size: 2.5rem;
+        }
     }
     .btn-bg{
         margin-top: 2.5rem;
     }
+    @media (max-width: $sm) {
+        text-align: center;
+        background: $bgcolor-green;
+    }
 }
+
+/*==== FADE IN UP ===*/
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
