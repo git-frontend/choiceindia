@@ -175,7 +175,22 @@
     }
     .bottom-section{
         border-top: 1px solid rgb(0 0 0 / 10%);
+       
         .bottom{
+            @media (max-width:$sm){
+                border-right: 1px solid  rgb(0 0 0 / 10%);
+                padding-right: 1rem;
+                height: 50px;
+
+            }
+            &:last-child{
+                @media (max-width:$sm){
+                    border-right:none;
+                    padding-right: 0;
+    
+                }
+            }
+             
             .bottom_small_text{
                 font-size: 1.077rem;
                 color: $secondary;
