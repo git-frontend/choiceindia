@@ -50,7 +50,7 @@ const CommodityBanner = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-4 mt-sm-5  mbrespflex">
+                                <div className="row mbrespflex mt2">
                                     <div className="col-xl-5 col-md-6">
                                         <div className="bannerbox ">
                                             <div className="respgrid">
