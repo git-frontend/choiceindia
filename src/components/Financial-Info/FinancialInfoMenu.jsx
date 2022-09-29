@@ -104,7 +104,7 @@ function FinancialInfoMenu() {
                                                                                         return (
 
                                                                                             <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                                                                                <div className="text">{res.title}</div>
+                                                                                                <div className="text">{res.month}</div>
                                                                                                 {
                                                                                                     res.view ?
                                                                                                         <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
