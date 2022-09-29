@@ -103,12 +103,19 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+<<<<<<< HEAD
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
 
 const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
+=======
+// const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
+const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
+const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
+// const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
+>>>>>>> 72dcb0c8ade33a090a8f65ef5f900b37100c0ece
 
 
 
@@ -522,6 +529,14 @@ function Routing() {
                                 < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
+<<<<<<< HEAD
+=======
+                        {/* <Route exact path='/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyMutualFundDistributor />
+                            </React.Suspense>
+                        } /> */}
+>>>>>>> 72dcb0c8ade33a090a8f65ef5f900b37100c0ece
 
                         <Route exact path='/partner-assets/emitra' element={
                             <React.Suspense>
@@ -535,6 +550,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+<<<<<<< HEAD
                         <Route exact path='/broking-media' element={
                             <React.Suspense>
                                 < LazyBrokingMedia />
@@ -550,10 +566,13 @@ function Routing() {
 
 
                         <Route exact path='/intraday-charges' element={
+=======
+                        {/* <Route exact path='/intraday-charges' element={
+>>>>>>> 72dcb0c8ade33a090a8f65ef5f900b37100c0ece
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
