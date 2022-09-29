@@ -998,4 +998,7 @@
 }
 .mt2{
 	margin-top: 2.5rem;
+	@media (max-width:767px) {
+		margin-top: 3rem;
+	}
 }
