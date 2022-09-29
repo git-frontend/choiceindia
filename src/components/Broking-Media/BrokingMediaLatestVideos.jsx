@@ -90,7 +90,6 @@ function BrokingMediaLatestVideos() {
                 </Slider>
               </div>
             </section>
-            
             </div>
  
   );

@@ -11,7 +11,7 @@ function BrokingMediaBanner() {
                     <h1 className="title-first_new">Choice Broking Media</h1>
                   </div>
                 </div>
-                <div className="row align-items-center">
+                <div className="row">
                   <div className="col-md-7">
                     <div className="leftsec">
                     <video src={videoBg} autoPlay loop muted className='banner-ved img-fluid ' width="100%" height="100%" />
