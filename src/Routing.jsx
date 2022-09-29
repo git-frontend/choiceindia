@@ -105,13 +105,10 @@ const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-<<<<<<< HEAD
 const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
 
-=======
 const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
->>>>>>> 5593ad0aff034e9e4df300b5b4c0c277e056fe2a
 
 
 
@@ -538,7 +535,6 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-<<<<<<< HEAD
                         <Route exact path='/broking-media' element={
                             <React.Suspense>
                                 < LazyBrokingMedia />
@@ -553,14 +549,12 @@ function Routing() {
 
 
 
-=======
                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
                         } />
 
->>>>>>> 5593ad0aff034e9e4df300b5b4c0c277e056fe2a
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
