@@ -75,7 +75,7 @@ function MFDistributorBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"सेल्स और मार्केटिंग सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"सेल्स और मार्केटिंग सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Sales and Marketing Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>सेल्स और मार्केटिंग में <br/> सहायता</h4>
@@ -84,7 +84,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Software} alt={"रिसर्च और रिकमेन्डेशन सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Software} alt={"रिसर्च और रिकमेन्डेशन सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Software} alt="Research and Reccommendations Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>रिसर्च और रिकमेन्डेशन सपोर्ट</h4>
@@ -93,7 +93,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt="अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें" className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt="अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें" className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Trading App" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक प्लेटफॉर्म (ऐप और वेब)</h4>
@@ -102,7 +102,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Channels} alt={"एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Channels} alt={"एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Channels} alt="Custom Portfolio Analysis for HNI Clients" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण</h4>
@@ -111,7 +111,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"डेडिकेटेड रिलेशनशिप मैनेजर के साथ म्युचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"डेडिकेटेड रिलेशनशिप मैनेजर के साथ म्युचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Dedicated Relationship Manager" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>समर्पित संबंध प्रबंधक</h4>
@@ -120,7 +120,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"म्यूचुअल फंड वितरक बनने के साथ कई वित्तीय प्रोडक्ट्स की पेशकश करें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"म्यूचुअल फंड वितरक बनने के साथ कई वित्तीय प्रोडक्ट्स की पेशकश करें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>कई  <br/>प्रोडक्ट्स पर ऑफर</h4>
@@ -129,7 +129,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पूरी <br/>ऑनलाइन प्रक्रिया</h4>
@@ -142,7 +142,7 @@ function MFDistributorBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"सेल्स और मार्केटिंग सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"सेल्स और मार्केटिंग सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Sales and Marketing Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>सेल्स और मार्केटिंग में सहायता</h4>
@@ -151,7 +151,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Software} alt={"रिसर्च और रिकमेन्डेशन सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Software} alt={"रिसर्च और रिकमेन्डेशन सपोर्ट के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Software} alt="Research and Reccommendations Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>रिसर्च और रिकमेन्डेशन सपोर्ट</h4>
@@ -160,7 +160,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt={"अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Trading App" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक प्लेटफॉर्म (ऐप और वेब)</h4>
@@ -169,7 +169,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                 <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Channels} alt={"एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Channels} alt={"एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Channels} alt="Custom Portfolio Analysis for HNI Clients" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>एचएनआई ग्राहकों के लिए कस्टम पोर्टफोलियो विश्लेषण</h4>
@@ -178,7 +178,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"डेडिकेटेड रिलेशनशिप मैनेजर के साथ म्युचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"डेडिकेटेड रिलेशनशिप मैनेजर के साथ म्युचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Dedicated Relationship Manager" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>समर्पित संबंध प्रबंधक</h4>
@@ -187,7 +187,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"म्यूचुअल फंड वितरक बनने के साथ कई वित्तीय प्रोडक्ट्स की पेशकश करें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"म्यूचुअल फंड वितरक बनने के साथ कई वित्तीय प्रोडक्ट्स की पेशकश करें"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Multiple Fianancial Products" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>कई  <br/>प्रोडक्ट्स पर ऑफर</h4>
@@ -196,7 +196,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"म्यूचुअल फंड वितरक बनने के लिए पूरी ऑनलाइन प्रक्रिया"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Complete Online Process" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पूरी  <br/>ऑनलाइन प्रक्रिया</h4>
