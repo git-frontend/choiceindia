@@ -169,7 +169,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         <>
         {
             showOpenAccountPopup ?
-            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
+            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
                 {/* <div className="close">
                             <Link to="" class="closebtn" >&times;</Link>
