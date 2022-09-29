@@ -28,9 +28,9 @@ const MFDistributorSellMore = () => {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="sell-left-sec">
-                                        <h2 className="title-secnd">Sell More. Earn More!</h2>
-                                        <p className="sml-para-dv">With Choice, one can increase his prospects by offering clients a variety of financial instruments in addition to mutual funds, increasing revenue.</p>
-                                        <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                        <h2 className="title-secnd">ज्यादा बेचे और अधिक कमाए!</h2>
+                                        <p className="sml-para-dv">चॉइस म्यूचुअल फंड वितरक बनने के साथ न केवल अपने पोर्टफोलियो का विस्तार करें बल्कि अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें और अपनी कमाई को अधिकतम करें। </p>
+                                        <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark hide-mob" onClick={()=>scrollToId('sub-broker-form')}><span>अभी शुरू करें</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
@@ -41,35 +41,35 @@ const MFDistributorSellMore = () => {
                                 
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Insurance} alt={"Sell Insurance"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Insurance} alt={"म्यूचुअल फंड वितरक बनें और बीमा बेचें"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/> */}
                                     </span>
-                                    <h3 className="itm-ttl">Insurance</h3>
+                                    <h3 className="itm-ttl">बीमा</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Retail} alt={"Sell Retail Loans"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Retail} alt={"म्यूचुअल फंड वितरक बनें और खुदरा ऋण बेचें"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
-                                    <h3 className="itm-ttl">Retail Loans</h3>
+                                    <h3 className="itm-ttl">खुदरा ऋण</h3>
                                 </div>
                                 <div className="more-list-item">
                                     <span>
-                                        <LazyLoader src={Commodity} alt={"Open Stock Market Account"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Commodity} alt={"शेयर बाजार खाता खोलें"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
-                                    <h3 className="itm-ttl">Stock Market</h3>
+                                    <h3 className="itm-ttl">शेयर बाजार</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={MF} alt={"Sell Bonds, FDS & NPS"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={MF} alt={"म्यूचुअल फंड वितरक बनें और बॉन्ड, FD और NPS बेचें"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
-                                    <h3 className="itm-ttl">Bonds, FD &amp; NPS</h3>
+                                    <h3 className="itm-ttl">बॉन्ड, एफडी और एनपीएस </h3>
                                 </div>
                             </div>
                             <div className='d-flex justify-content-center'>
-                                <div className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>अभी शुरू करें</span> </Link>
                             </div>
                             
                         </div>

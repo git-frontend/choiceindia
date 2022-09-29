@@ -106,7 +106,7 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-
+const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
 
 
 function Routing() {
@@ -535,7 +535,12 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
-
+                        
+                        <Route exact path='/hindi/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyHindiMutualFundDistributor />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

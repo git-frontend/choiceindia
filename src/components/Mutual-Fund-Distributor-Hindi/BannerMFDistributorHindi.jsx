@@ -3,7 +3,7 @@ import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-f
 import SubBrokerForm from '../SubBroker/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 
-function BannerMFDistributor() {
+function BannerMFDistributorHindi() {
 
     return (
         <div>
@@ -14,33 +14,35 @@ function BannerMFDistributor() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        <span className="tlt2">Become a</span>
-                                        Mutual Fund Distributor
+                                        {/* <span className="tlt2">म्यूचुअल फंड वितरक बनें </span> */}
+                                        म्यूचुअल फंड वितरक बनें 
                                     </h1>
                                 </div>
                                 <div className="right-sec">
-                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"562"} height={"562"}/>
+                                    <LazyLoader src={SubBannerimage} alt={"म्यूचुअल फंड वितरक"} className={"img-fluid"} width={"562"} height={"562"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
                                 <ul>
                                     <li>
-                                        <span>High</span> Commision
+                                        <span>ज्यादा </span> कमीशन
                                     </li>
                                     <li>
-                                        <span>Multiple</span> Sources of Earnings
+                                        कमाई के <span> कई स्रोत</span> 
                                     </li>
                                     <li>
-                                        <span>Lifetime</span> Income Source
+                                        <span>आजीवन </span> आय स्रोत
+
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm page='mutual-fund-distributor'/>
+                                <SubBrokerForm language="mutualDistributorhindi"/>
                             </div>
+                           
                         </div>
                     </div>
                 </div>
@@ -53,4 +55,4 @@ function BannerMFDistributor() {
     );
 }
 
-export default BannerMFDistributor;
+export default BannerMFDistributorHindi;

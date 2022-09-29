@@ -1,0 +1,2472 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.sub-broker-skeleton-parent{
+    animation: hideMe 4s forwards;
+}
+
+.franchise-banner {
+    background-size: 100% 100%;
+    position: relative;
+    padding: 1rem 0 0 0;
+    background: rgb(221,221,221);
+    background: linear-gradient(90deg, rgba(221,221,221,1) 0%, rgba(238,238,238,1) 35%, rgba(221,221,221,1) 100%);
+
+    .caption-banner {
+        padding: 1rem 0 0 0;
+        padding-right: 0;
+        display: inline-flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .tlt2 {
+            font-size: 3.5rem;
+            line-height: 3.5rem;
+            color: $primary;
+            margin-top: 0;
+            font-family: $font-family-poppins-semibold;            
+            margin-bottom: 0;
+            display: flex;
+            align-items: center;
+
+            .jiffy-franchise-logo2 {
+                margin-right: 0.4rem;
+            }
+
+            img {
+                margin-right: 20px;
+            }
+            @media (max-width: $sm) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+
+        .tlt1 {
+            font-size: 5rem;
+            font-family: $font-family-poppins-bold;
+            color: $primary;
+            margin: 1rem 0;
+        }
+
+      
+
+        .left-sec {
+            padding-top: 5rem;
+            @media (max-width: $md) {
+                padding-top: 0;
+            }
+        }
+        &.caption-hindi{
+            .tlt2{
+                line-height: 4.5rem;
+                margin-bottom: 1rem;
+            }
+        }
+        @media (max-width: $sm) {
+            text-align: left !important;
+            width: 95%;
+
+        }
+    }
+    .right-sec{
+        position: relative;
+        left: -2rem;
+    }
+
+    .caption-blue-bar {
+        background: $primary;
+        border-radius: 12px 12px 0 0;
+        padding: 2rem 2rem;
+
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            list-style: none;
+            flex-wrap: wrap;
+
+            li {
+                width: 30%;
+                font-size: 1.675rem;
+                color: $whiteColor;
+                font-family: $font-family-poppins-regular;
+                position: relative;
+                padding-top: 3.5rem;
+                text-align: center;
+
+                &::before {
+                    content: '';
+                    background: url(../../assets/images/sub-broker/check-circle.svg) no-repeat;
+                    width: 2.8rem;
+                    height: 2.8rem;
+                    background-size: contain;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    top: 0;
+                    @media (max-width: $sm) {
+                        left: 0;
+                        right: inherit;
+                    }
+                }
+
+                &:nth-child(2n) {
+                    width: 35%;
+                    margin: 0 2% 0 3%;
+                }
+
+                span {
+                    font-family: $font-family-poppins-semibold;
+                    display: block;
+                }
+                @media (max-width: $sm) {
+                    text-align: left;
+                    color: $primary;
+                    padding: 0;
+                    padding-left: 2.8rem;
+                    font-size: 1.5rem;
+                    span{
+                        display: inline;
+                    }
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            background: transparent;
+            width: 95% !important;
+            padding: 0 !important;
+        }
+    }
+    
+    @media (max-width: $md) {
+        padding-bottom: 5rem;
+    }
+}
+
+
+
+.franchise-features {
+    padding: 6rem 0 6rem 0;
+   
+    overflow: hidden;
+
+    .row {
+        margin: 0;
+
+      
+    }
+}
+
+.franchise-sec-title {
+    margin-bottom: 3.5rem;
+    text-align: center;
+    position: relative;
+
+}
+
+.franchise-benifits {
+    background: #F6F9FF;
+    padding: 7rem 0;
+
+    .franchise-benifits-cont {
+        display: flex;
+        width: 100%;
+        background: $bluetext;
+        align-items: flex-end;
+        border-radius: 15px;
+        padding: 1.25rem;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+
+        .franchise-benifits-item {
+            transition: 0.5s all ease;
+            border-radius: 0;
+            width: 25%;
+            padding: 1.35rem 1.5rem;
+            padding: 2.35rem;
+            padding-right: 3rem;
+            background: $bluetext;
+            border-radius: 0;
+            border-left: 1px solid #4389ff;
+
+            .icon-benifits {
+                width: 6.6rem;
+                padding: 1.3rem;
+                background: #06084229;
+                height: 6.6rem;
+                display: flex;
+                border-radius: 10px;
+
+                img {
+                    max-width: 100%;
+                }
+            }
+
+            
+
+            &:hover {
+                background: $whiteColor;
+                border-radius: 15px;
+                box-shadow: 0px 6px 18px #00000029;
+
+                .icon-benifits {
+                    background: #060842;
+                }
+
+                h4 {
+                    color: #3E404F;
+                    opacity: 0.7;
+                }
+            }
+
+            &:first-child {
+                border: 0;
+            }
+        }
+    }
+}
+
+.franchise-faqs {
+    background: #F6F9FF;
+    padding: 7rem 0;
+
+    .franchise-same-btn {
+        margin-top: 3.5rem;
+    }
+}
+
+.jiffy-franchise-wrapper {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.accordion-container-franchise {
+    .content-entry-franchise {
+        border-bottom: 1px solid #3E404F;
+        padding: 2rem 0;
+
+        .article-title-franchise {
+            cursor: pointer;
+            position: relative;
+            padding-right: 3rem;
+
+
+           
+        }
+
+        .accordion-content-franchise {
+            display: none;
+
+            .cont_midle_acr {
+                padding-left: 4.7rem;
+
+                p {
+                    font-size: 1.333rem;
+                    line-height: 2rem;
+                    padding-top: 0.5rem;
+                    font-family: 'GreycliffCF-Regular';
+                }
+            }
+        }
+    }
+
+    
+}
+
+
+
+.demat-banner {
+    .card-body {
+        padding: 30px;
+
+        button {
+            margin-top: 40px;
+        }
+    }
+}
+
+.faqSection {
+    padding: 100px 0;
+    background: #fafbfd;
+    background: $whiteColor;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ul-p {
+    font-size: 1.333rem;
+    line-height: 2rem;
+    padding-top: 0.5rem;
+    padding-left: 18px;
+}
+
+
+
+.franchise-how-works {
+    padding: 7rem 0 !important;
+    background: $whiteColor;
+
+    .franchise-works-cont {
+        margin-left: 4rem;
+        width: 350px;
+        position: relative;
+
+        .franchise-works-slider {
+            .slick-list {
+                overflow: hidden;
+
+                h1 {
+                    font-size: 12rem;
+                    color: #005CB9;
+                    font-family: 'GreycliffCF-Heavy';
+                }
+
+                p {
+                    font-size: 1.8rem;
+                    color: #3E404F;
+                    font-family: 'GreycliffCFBold';
+                    font-weight: 600;
+                    margin-bottom: 1rem;
+                    text-align: left;
+                }
+
+                .slick-active {
+                    opacity: 1 !important;
+                    text-align: center;
+                }
+            }
+        }
+
+        h4 {
+            font-size: 5.667rem;
+            color: #0608421a;
+            font-family: 'GreycliffCF-Heavy';
+            opacity: 1;
+            position: absolute;
+            left: 15.5rem;
+            background: transparent;
+            top: 5rem;
+        }
+
+        .franchise-same-btn {
+            margin-top: 1rem;
+        }
+
+        .slider-nav-franchise {
+            overflow: hidden;
+
+            p {
+                font-size: 12rem;
+                color: $bluetext;
+                font-family: 'GreycliffCF-Heavy';
+                font-weight: 800;
+                margin: 0;
+                padding: 0;
+                opacity: 1;
+            }
+
+            .slick-list {
+                overflow: hidden;
+            }
+        }
+    }
+}
+
+.app-jiffy-franchise {
+    .maincontainer {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: inherit;
+    }
+}
+
+.franchise-features-slider {
+    .slick-arrow {
+        position: absolute;
+        top: 50%;
+        width: 4.5rem;
+        height: 4.5rem;
+        outline: none;
+        background: transparent;
+        border-radius: 50%;
+        transform: translate(0, -50%);
+        left: 0;
+        font-size: 0;
+        border: 1px solid #3E404F;
+
+        &::before {
+            content: '\f104';
+            font-family: icomoon !important;
+            font-style: normal;
+            font-weight: 400;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            display: block;
+            left: 50%;
+            top: 50%;
+            font-size: 2rem;
+            transform: translate(-50%, -50%);
+            position: absolute;
+        }
+
+        &:hover {
+            border: 1px solid $bluetext;
+            color: $bluetext;
+        }
+    }
+
+    .slick-arrow.slick-next {
+        left: inherit;
+        right: 0;
+
+        &::before {
+            content: '\f105';
+        }
+    }
+
+    .slick-dots {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        padding: 10px;
+        position: relative;
+        top: -10px;
+
+        li {
+
+            button {
+                width: 6px;
+                height: 6px;
+                margin: 0 5px;
+                opacity: 0.2;
+                background: $bluetext;
+                border-radius: 50%;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
+
+        li.slick-active {
+            width: 10px;
+            height: 10px;
+            opacity: 1;
+
+            button {
+                border-color: $blueColortext;
+                background-color: $blueColortext;
+                width: 26px;
+            }
+        }
+    }
+}
+
+.vedio-sec {
+    padding: 100px 0 80px 0;
+    background: $whiteColor;
+
+    .vedio-item {
+        display: block;
+        position: relative;
+        border-radius: 8px;
+        overflow: hidden;
+        margin-bottom: 20px;
+
+        img {
+            width: 100%;
+        }
+
+        .vedio-desc {
+            position: absolute;
+            left: 20px;
+            bottom: 20px;
+
+            h4 {
+                font-size: 2rem;
+                color: $whiteColor;
+                font-family: 'GreycliffCF-Heavy';
+            }
+
+            h5 {
+                font-size: 1.5rem;
+                color: $whiteColor;
+                font-family: 'GreycliffCFBold';
+            }
+        }
+
+        &::before {
+            content: '';
+            background: transparent linear-gradient(180deg, #231F2000 0%, #231F2096 38%, #231F20 100%) 0% 0% no-repeat padding-box;
+            width: 100%;
+            height: 200px;
+            display: block;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+        }
+
+        &::after {
+            content: '';
+            /* background: url(../images/sub-broker2/y-tube.png) no-repeat; */
+            width: 50px;
+            height: 50px;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
+
+.broker-benifits {
+    background: #25b8af1a;
+    padding: 15rem 0 0 0;
+    position: relative;
+    
+    .titl3{
+        font-size: 3.25rem;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        margin-bottom: 5rem;
+        @media (max-width: $sm) {
+            font-size: 2.5rem;
+            text-align: left;
+            span{
+                display: block;
+            }
+        }
+    }
+
+    .benifits-list {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+        margin-left: -2%;
+        z-index: 9;
+        
+        .sl-slider {
+            margin-left: 2%;
+            width: 23%;
+
+            .benifits-item {
+                width: 100%;
+                padding: 3rem 1rem;
+                border-radius: 24px;
+                margin-bottom: 4rem;
+                transition-duration: 0.6s;
+                text-align: center;
+                border: 1px solid transparent;
+                span {
+                    display: inline-block;
+                    margin-bottom: 3rem;
+                    height: 74px;
+                    overflow: hidden;
+                }
+                .franchise-img{
+                    @media (max-width: $sm) {
+                        text-align:center;
+                    }
+
+                }
+
+                &:hover {
+                    background: $whiteColor;
+                    border: 1px solid rgba(37, 184, 175, 0.5);
+
+                    span {
+                        overflow: hidden;
+
+                        img {
+                            -webkit-animation: toTopFromBottom 0.5s forwards;
+                            -moz-animation: toTopFromBottom 0.5s forwards;
+                            animation: toTopFromBottom 0.5s forwards;
+                        }
+                    }
+                }
+
+                h4 {
+                    font-size: 1.475rem;
+                    line-height: 2.2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    @media (max-width: $sm) {
+                        font-size: 1.833rem;
+                        line-height: 1.5;
+                    }
+                }
+                @media (max-width: $sm) {
+                    background: $whiteColor;
+                    border: 1px solid rgba(37, 184, 175, 0.5);
+                    width: 95%;
+                    margin: 0 auto;
+                    min-height: 255px;
+                }
+            }
+
+            @media (max-width: $md) {
+                width: 31%;
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                margin: 0;
+            }
+        }
+
+        .sl-slider.slick-center {
+            .benifits-item {
+                background: $whiteColor;
+                box-shadow: 10px 6px 26px #00000012;
+
+                span {
+                    overflow: hidden;
+
+                    img {
+                        -webkit-animation: toTopFromBottom 0.3s forwards;
+                        -moz-animation: toTopFromBottom 0.3s forwards;
+                        animation: toTopFromBottom 0.3s forwards;
+                    }
+                }
+            }
+        }
+
+        .sl-slider.sl-slider-active {
+            .benifits-item {
+                background: $whiteColor;
+                border: 1px solid rgba(37, 184, 175, 0.5);
+            }
+        }
+
+        &::before {
+            content: '';
+            /*background: url(../images/sub-broker2/dots-img.svg) no-repeat;*/
+            background-size: contain;
+            width: 8rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            right: -35px;
+            bottom: 179px;
+        }
+
+        .slick-dots {
+            position: relative;
+            top: inherit;
+            bottom: inherit;
+            margin-top: 2rem;
+            display: flex !important;
+            justify-content: center;
+            padding-left: 0;
+
+            li {
+                width: auto;
+                height: auto;
+                margin: 4px;
+
+                button {
+                    height: 10px;
+                    width: 10px;
+                    text-indent: -9999px;
+                    padding: 0;
+                    border-radius: 50%;
+                    background-color: #0068B34d;
+                    border: none;
+                    position: relative;
+                    z-index: 1;
+                    transition: all 300ms linear 0ms;
+
+                    &::before {
+                        display: none;
+                    }
+                }
+            }
+
+            li.slick-active {
+
+                button {
+                    border-color: $bgcolor-green;
+                    background-color: $bgcolor-green;
+                }
+            }
+        }
+    }
+
+    .item-next1 {
+        position: absolute;
+        width: 21%;
+        right: 0;
+        bottom: -5.5rem;
+        padding: 4rem 2rem;
+        background: #25B8AF;
+        background-size: 100% 100%;
+        border-radius: 24px;
+        z-index: 99;
+        text-align: center;
+
+        h3 {
+            font-size: 1.7rem;
+            color: $whiteColor;
+            margin: 0;
+            font-family: $font-family-poppins-medium;
+        }
+
+        p {
+            color: $whiteColor;            
+            margin: 2rem 0 3rem 0;
+        }
+
+        @media (max-width: $md) {
+            width: 31%;
+        }
+        @media (max-width: $sm) {
+            width: 100%;
+            position: relative;
+            top: inherit;
+            bottom: inherit;
+            border-radius: 0;
+            margin-top: 40px;
+            &::before{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                left: -5%;
+                position: absolute;
+                top: 0;
+            }
+            &::after{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                right: -5%;
+                position: absolute;
+                top: 0;
+            }
+        }
+    }
+
+    .relative {
+        position: relative;
+    }
+}
+
+.broker-franchise-wrapper {
+    background: $whiteColor;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+
+    .titl3 {
+        font-size: 2.25rem;
+        color: #231F20;
+        font-family: 'GreycliffCF-Heavy';
+        margin: 0;
+        margin-bottom: 2rem;
+    }
+
+    .sml-para-dv {
+        font-size: 1.125rem;
+        line-height: 1.5rem;
+        font-family: 'robotoregular';
+        font-weight: 400;
+    }
+}
+
+.sell-more {
+    padding: 16rem 0 10rem 0;
+    position: relative;
+
+
+    &::before {
+        content: '';
+        width: 18rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: -10rem;
+        background: url(../../assets/images/sub-broker/bg-top-left.png) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 18rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 7%;
+        background: url(../../assets/images/sub-broker/bg-top-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+
+    
+
+    .sell-left-sec{
+        p {
+            font-size: 1.675rem;
+            line-height: 2.5rem;
+            font-family: $font-family-poppins-regular;
+            color: $primary;
+            margin: 1.5rem 0 3rem 0;
+        }
+        .title-secnd{
+            margin-bottom: 4rem;
+        }
+        @media (max-width: $sm) {
+            text-align: left;
+            .title-secnd{
+                margin-bottom: 2rem;
+            }
+            p{
+                font-size: 1.475rem;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .sell-more-list {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: -3%;
+        padding-left: 5rem;
+        position: relative;
+        z-index: 9;
+        .more-list-item {
+            width: 47%;
+            margin-left: 3%;
+            border: 1px solid $blueColortext;
+            border-radius: 18px;
+            background: $whiteColor;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            transition-duration: 0.6s;
+            min-height: 110px;
+            &:hover {
+                box-shadow: 10px 6px 26px #00000012;
+                border: 1px solid transparent;
+
+                span {
+                    img {
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
+                    }
+                }
+            }
+
+            span {
+                overflow: hidden;
+                position: relative;
+                display: inline-block;
+                img {
+                    position: relative;
+                    max-width: 45px;
+                }
+            }
+
+            .itm-ttl {
+                width: calc(100% - 80px);
+                padding-left: 2rem;
+                line-height: 1.6;
+                font-size: 1.575rem;
+                color: $primary;
+                font-family: $font-family-poppins-medium;
+                margin: 0;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+        }
+
+        @media (max-width: $md) {
+            margin-top: 5rem;
+            padding-left: 0;
+        }
+    }
+}
+
+.franchise-abt {
+    
+    background:$primary;
+    padding: 8rem 0;
+    position: relative;
+
+    .ttl-wht {
+        font-size: 3.25rem;
+        font-family:$font-family-poppins-semibold;
+        color: $whiteColor;
+        text-align: center;
+        margin-bottom: 3rem;
+        @media (max-width: $sm) {
+            font-size: 2.5rem;
+        }
+    }
+
+    p {
+        
+        font-family: $font-family-poppins-regular;
+        color: $whiteColor;
+        margin: 1.5rem 0 5rem 0;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.8;
+    }
+
+    .counter-list {
+        display: flex;
+        flex-wrap: wrap;
+
+        .count-item {
+            width: 25%;
+            text-align: center;
+
+            h3 {
+                font-size: 3rem;
+                font-family: $font-family-poppins-bold;
+                color: $yellowColor;
+                margin: 0;
+                margin-bottom: 1.25rem;
+            }
+
+            h6 {
+                font-size: 1.325rem;
+                color: $whiteColor;
+                font-family: $font-family-poppins-medium;
+            }
+            @media (max-width: $sm) {
+                width: 50%;
+                text-align: center;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+  
+}
+
+.franchise-eligb {
+    padding: 10rem 0 7rem 0;
+
+    .eligb-left-sec {
+       
+        padding-right: 6.25rem;
+
+        
+        .titl3{
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            font-size: 2.8rem;
+            line-height: 4rem;
+            margin-bottom: 3rem;
+        }
+        .btn-bg{
+            margin-top: 2rem;
+        }
+    }
+
+    .eligb-right-sec {
+        display: flex;
+        position: relative;
+        justify-content: flex-end;
+
+        .slider-eligb {
+            width: 240px;
+            background: $whiteColor;
+            border-radius: 8px;
+            position: absolute;
+            left: 70px;
+            top: 50%;
+            transform: translate(0, -50%);
+            padding: 3rem 3rem;
+            z-index: 99;
+            box-shadow: 0px 0px 8px #F0F0F0;
+
+            .slick-slide {
+                img {
+                    max-width: 100%;
+                    height: 74px;
+                }
+
+                h4 {
+                    font-size: 1.575rem;
+                    line-height: 2.2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                    margin: 0;
+                    margin-top: 1rem;
+                }
+            }
+
+            &::before {
+                content: '';
+                background: $bgcolor-blue;
+                width: 0.2rem;
+                height: 78%;
+                top: 12%;
+                position: absolute;
+                left: 0;
+                display: block;
+            }
+
+            .slick-dots {
+                position: relative;
+                top: inherit;
+                bottom: inherit;
+                margin-top: 2.3rem;
+                display: flex !important;
+                justify-content: flex-start;
+                padding-left: 0;
+
+                
+                li {
+                    width: auto;
+                    height: auto;
+                    margin-right: 2px;
+
+                    button {
+                        height: 5px;
+                        width: 16px;
+                        text-indent: -9999px;
+                        padding: 0;
+                        -webkit-border-radius: 2px;
+                        -khtml-border-radius: 2px;
+                        -moz-border-radius: 2px;
+                        -ms-border-radius: 2px;
+                        -o-border-radius: 2px;
+                        border-radius: 2px;
+                        background-color: #0068B34d;
+                        border: none;
+                        position: relative;
+                        z-index: 1;
+                        transition: all 300ms linear 0ms;
+
+                        &::before {
+                            display: none;
+                        }
+                    }
+                }
+
+                li.slick-active {
+                    button {
+                        border-color: $blueColortext;
+                        background-color: $blueColortext;
+                        width: 26px;
+                    }
+                }
+            }
+            @media (max-width: $sm) {
+                margin: 0 auto;
+                margin-bottom: 3rem;
+            }
+        }
+
+        .eligb-img-sec {
+            position: relative;
+
+            img {
+                max-width: 100%;
+                position: relative;
+                z-index: 9;
+                border-radius: 8px;
+            }
+        }
+
+        &::before {
+            content: '';
+           /* background: url(../images/sub-broker2/dots-img.svg) no-repeat;*/
+            background-size: contain;
+            width: 8rem;
+            height: 8rem;
+            display: block;
+            position: absolute;
+            right: -5%;
+            bottom: -15%;
+            z-index: 0;
+        }
+        @media (max-width: $sm) {
+            display: block !important;
+        }
+    }
+}
+
+.franchise-offers {
+    padding: 10rem 0 15rem 0;
+    background:$whiteColor;
+    position: relative;
+    &::before {
+        content: '';
+        width: 28rem;
+        height: 31rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/sub-broker/bg-bottom.png) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 18rem;
+        height: 40rem;
+        display: block;
+        position: absolute;
+        right: 0;
+        top: -10rem;
+        background: url(../../assets/images/sub-broker/bg-top-right.png) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .titl3 {
+        text-align: center;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        font-size: 2.8rem;
+        margin-bottom: 1rem;
+    }
+
+    .sml-para-dv {
+        text-align: center;
+    }
+
+    .offers-table-sec {
+        border: 1px solid rgba(194, 194, 194, 0.3);
+        border-radius: 8px;
+        background: $whiteColor;
+        padding: 0;
+        margin-top: 3.5rem;
+        position: relative;
+        z-index: 9;
+        .table-striped {
+            margin: 0;
+
+            thead {
+                th {
+                    font-size: 1.375rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-medium;
+                    text-align: center;
+                    font-weight: 500;
+                    padding: 2rem 1.5rem;
+                    border: 0;
+                    vertical-align: top;
+                    text-align: center;
+
+                    @media (max-width: $sm-x) {
+                        white-space: nowrap;
+                    }
+                }
+            }
+
+            tbody {
+                border: 0;
+
+                td {
+                    border: 0;
+                    color: $primary;
+                    font-family: $font-family-poppins-regular;
+                    font-size: 1.375rem;
+                    text-align: center;
+                    padding: 1.375rem;
+                    box-shadow: inherit;
+                }
+
+            }
+
+            > tbody {
+                > tr {
+                    &:nth-of-type(odd) {
+                        background-color:$bgolor-lightwhite;
+                    }
+                }
+            }
+        }
+    }
+
+    .trm-link-bx {
+        display: flex;
+        justify-content: flex-end;
+        margin-top: 1.5rem;
+
+        .trm-link {
+            color: $blueColortext;
+            font-size: 1rem;
+            text-decoration: underline;
+            font-weight: 400;
+            font-family: 'robotoregular';
+            cursor: pointer;
+        }
+    }
+    .trm-link{
+        background: transparent;
+        color: $bgcolor-blue;
+        padding: 0;
+        margin: 0;
+        font-size: 1.375rem;
+        text-decoration: underline;
+        border: 0;
+        outline: none !important;
+        box-shadow: inherit !important;
+        font-family: $font-family-poppins-medium;
+        margin-top: 2rem;
+    }
+    &.distributor-Offers{
+        background: $abt-bg;
+        .titl3{
+            margin-bottom:4rem;
+        }
+        .slider-Offers{
+            position: relative;
+            z-index: 9;
+            .slick-slide{
+                .list-itm{
+                    width: 96% !important;
+                    margin: 0 auto;
+                    text-align: center;
+                    border-radius: 12px;
+                    padding: 3rem 1rem;
+                    min-height: 280px;
+                    transition-duration: 0.3s;
+                    h3{
+                        font-size: 1.375rem;
+                        line-height: 1.4;
+                        font-family: $font-family-poppins-medium;
+                        color: $primary;
+                        margin-top: 2.5rem;
+                    }
+                    .itm-img{
+                        width: 8.75rem;
+                        height: 8.75rem;
+                        overflow: hidden;
+                        background: $whiteColor;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        margin: 0 auto;
+                        box-shadow: 0px 2px 20px 1px rgba(57, 228, 218, 0.32);
+                        justify-content: center;
+                        .img-fluid{
+                            max-width: 100%;
+                        }
+                       
+                    }
+                    &:hover{
+                        background: $bgcolor-green;
+                        h3{
+                            color: $whiteColor;
+                        }
+                        .itm-img{
+                            .img-fluid{
+                                -webkit-animation: toTopFromBottom 0.5s forwards;
+                                    -moz-animation: toTopFromBottom 0.5s forwards;
+                                    animation: toTopFromBottom 0.5s forwards;
+                            }
+                        }
+                    }
+                    @media (max-width: $xs) {
+                        background: $bgcolor-green;
+                        min-height: 200px;
+                        margin-bottom: 2rem;
+                        h3{
+                            color: $whiteColor;
+                            br{
+                                display: none;
+                            }
+                        }
+                        .itm-img{
+                            .img-fluid{
+                                width: 50px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+
+.box-mid-blue {
+    padding: 2rem 0 0 0;
+    position: relative;
+    background: transparent;
+
+    .mid-blue-cont {
+        background: #FFFBEA;
+        padding: 4rem 5rem;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 9;
+        h4 {
+            font-size: 2.3rem;
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            margin: 0;
+        }
+    }
+}
+
+.hide-desk {
+    display: none;
+}
+
+#more2 {
+    display: none;
+}
+
+.Contest {
+    top: 0 !important;
+
+    .modal-content {
+        margin-top: 20px;
+    }
+
+    .modal-dialog {
+        max-width: 738px;
+        width: auto;
+
+        .modal-header {
+            padding: 2rem 3rem;
+            padding-right: 1.5rem;
+            margin: 0;
+
+            .modal-title {
+                font-family: 'GreycliffCFBold';
+                font-size: 1.5rem;
+                color: #231F20;
+            }
+
+            .close {
+                opacity: 1;
+                font-size: 2rem;
+            }
+        }
+
+        .modal-body {
+            padding: 2rem 0;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 400px;
+            overflow-y: scroll;
+            padding-left: 3rem;
+            padding-right: 2rem;
+            margin-right: 1.5rem;
+            position: relative;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 2rem;
+                display: block;
+                position: sticky;
+                bottom: 0;
+                left: 0;
+                background: $whiteColor;
+                filter: blur(25px);
+                z-index: 9;
+            }
+
+            li {
+                position: relative;
+                font-size: 1rem;
+                line-height: 1.375rem;
+                color: #545454;
+                padding-left: 20px;
+                font-family: 'robotoregular';
+                margin-bottom: 1.25rem;
+
+                &::before {
+                    content: '';
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-radius: 50%;
+                    background: $blueColortext;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 6px;
+                }
+            }
+        }
+    }
+}
+
+#style-scrll {
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+        // background-color: #f5f5f5;
+    }
+
+    &::-webkit-scrollbar {
+        width: 4px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 0;
+        -webkit-box-shadow: inset 0 0 6px $blueColortext;
+        background-color: $blueColortext;
+        border-radius: 10px;
+    }
+}
+
+.offers-table-sec {
+    .table-hover {
+        > tbody {
+            > tr {
+                &:hover {
+                    background: inherit;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .subv2-main {
+        font-size: 14px;
+    }
+
+    .franchise-banner {
+        .caption-banner {
+            .tlt2 {
+                font-size: 2.4rem;
+                text-align: center;
+                justify-content: center;
+
+                .jiffy-franchise-logo2 {
+                    width: 2.5rem;
+                }
+            }
+
+            .tlt1 {
+                font-size: 4.25rem;
+                line-height: 4.25rem;
+                margin: 0.6rem 0;
+            }
+
+            padding-right: 0;
+            display: block;
+            text-align: center;
+
+            .right-sec {
+                display: none;
+            }
+        }
+
+        .caption-blue-bar {
+            ul {
+                li {
+                    &::before {
+                        width: 1.87rem;
+                        height: 1.87rem;
+                        top: 0;
+                    }
+
+                    &:nth-child(2n) {
+                        margin: 0;
+                        width: 100%;
+                    }
+
+                    
+                    width: 100%;
+                    margin-bottom: 1.5rem !important;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                display: block;
+            }
+
+           width: 80%;
+           margin: 0 auto;
+            padding: 3.5rem 0;
+            margin-top: 2.5rem;
+            border-radius: 12px;
+            
+        }
+
+        
+    }
+
+    .franchise-same-btn {
+        width: 200px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .franchise-features {
+        padding: 4rem 0;
+    }
+
+    .franchise-sec-title {
+        h1 {
+            font-size: 5rem;
+        }
+
+        h3 {
+            font-size: 2rem;
+
+            br {
+                display: none;
+            }
+        }
+    }
+
+    .franchise-benifits {
+        .franchise-benifits-cont {
+            .franchise-benifits-item {
+                .icon-benifits {
+                    margin: 0 auto;
+                }
+
+                width: 100%;
+                border: 0;
+                border-top: 1px solid #4389ff;
+                text-align: center;
+            }
+        }
+    }
+
+    .franchise-form {
+        margin-left: 0;
+       
+       
+    }
+
+    .franchise-how-works {
+        .franchise-works-cont {
+            .franchise-works-slider {
+                .slick-list {
+                    p {
+                        padding-left: 10px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            margin-left: 0;
+            width: 100%;
+        }
+
+        padding: 4rem 0 !important;
+        padding-bottom: 7rem !important;
+
+        .per_img {
+            width: 100%;
+        }
+
+        .cust_width {
+            width: 100%;
+        }
+    }
+
+    .franchise-features-slider {
+        .slick-arrow {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    .vedio-sec {
+        .vedio-item {
+            .vedio-desc {
+                h4 {
+                    font-size: 1.5rem;
+                }
+
+                h5 {
+                    font-size: 1.2rem;
+                }
+
+                bottom: 10px;
+            }
+
+            &::after {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+
+    .broker-benifits {
+        padding:10rem 0 6rem 0;
+        .benifits-list {
+           
+
+            &::before {
+                display: none;
+            }
+
+            margin-left: 0;
+            margin-top: 1.5rem;
+        }
+
+        
+    }
+
+    .sell-more {
+        padding: 5rem 0 5rem 0;
+    }
+
+   
+
+    .franchise-eligb {
+        
+
+        .eligb-right-sec {
+            .slider-eligb {
+                width: 80%;
+                position: relative;
+                left: inherit;
+                top: inherit;
+                transform: inherit;
+                margin-top: 0;
+            }
+
+            justify-content: center;
+
+            .eligb-img-sec {
+                display: none;
+            }
+        }
+    }
+
+    .franchise-offers {
+        .offers-table-sec {
+            .table-striped {
+                thead {
+                    th {
+                        span {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .table-responsive {
+                border: 0;
+            }
+        }
+    }
+
+    .box-mid-blue {
+        .mid-blue-cont {
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 3rem 2rem;
+            h4 {
+                text-align: center;
+                margin-bottom: 2rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .hide-mb {
+        display: none;
+    }
+
+    .hide-desk {
+        display: block;
+    }
+}
+
+@media (max-width: $sm) {
+    .signal-form {
+        .signal-same-btn {
+            margin-bottom: 36px;
+        }
+
+        form {
+            padding: 25px 30px;
+            width: 100%;
+        }
+    }
+    .franchise-banner {
+        .caption-banner {
+            .tlt1 {
+                font-size: 3rem;
+                line-height: 3.5rem;
+                margin: 0.6rem 0;
+            }
+        }
+    }
+    .broker-benifits{
+        padding: 6rem 0 0 0;
+    }
+    .segments-wrapper {
+        .segments {
+            div {
+                width: 25%;
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .contact-wrapper {
+        padding: 30px;
+    }
+
+    .disclaimer {
+        .details {
+            width: 100%;
+            padding-left: 0px;
+        }
+    }
+
+    .sell-more {
+        .sell-more-list {
+            .more-list-item {
+                width: 50%;
+                margin: 0;
+                margin-bottom: 2rem;
+                padding: 0;
+                display: block;
+                text-align: center;
+                border: 0;
+            }
+
+            margin-left: 0;
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .franchise-banner {
+        .caption-banner {
+            .tlt2 {
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@media (max-width: 560px) {
+    .franchise-banner {
+        .caption-banner {
+            h4 {
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+
+    .franchise-sec-title {
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+    }
+
+    .franchise-benifits {
+        .franchise-benifits-cont {
+            .franchise-benifits-item {
+                h4 {
+                    margin-top: 2.5rem;
+
+                    br {
+                        display: none;
+                    }
+                }
+
+                padding: 1.3rem 1.3rem;
+            }
+        }
+
+        padding: 4rem 0;
+    }
+
+    .franchise-faqs {
+        padding: 4rem 0;
+    }
+
+    .franchise-form {
+        form {
+            .title-form {
+                h3 {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .form-check {
+                label {
+                    font-size: 1.1rem;
+                }
+            }
+        }
+    }
+
+    .demat-banner {
+        .card-body {
+            padding: 15px;
+        }
+    }
+
+    .demat-offer {
+        .offers {
+            width: 100%;
+            min-height: auto;
+        }
+    }
+
+    .contact-wrapper {
+        .btn-wrap {
+            .btn-white {
+                display: block;
+                margin: 0 auto;
+
+                + {
+                    .btn-white {
+                        margin-left: 0;
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .franchise-how-works {
+        .franchise-works-cont {
+            h4 {
+                font-size: 4.667rem;
+                left: 50%;
+                top: 3rem;
+                margin-left: 0rem;
+            }
+
+            .franchise-same-btn {
+                left: 0;
+                right: 0;
+                margin: 0 auto;
+                width: 150px;
+            }
+
+            .slider-nav-franchise {
+                p {
+                    font-size: 7rem;
+                    padding-right: 10rem;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 321px) {
+    .franchise-sec-title {
+        h1 {
+            font-size: 3rem;
+        }
+    }
+}
+
+@media (min-width: 1550px) {
+    .btn-gradient {
+        height: 60px;
+    }
+
+    .disclaimer {
+        .details {
+            width: 82%;
+            padding-left: 211px;
+        }
+    }
+}
+
+@media (max-width: 990px) {
+    .demat-banner {
+        .card-body {
+            padding: 25px;
+        }
+    }
+
+    .faqSection {
+        padding: 50px 0;
+    }
+
+    .demat-offer {
+        flex-wrap: wrap;
+        margin-bottom: 0;
+
+        .offers {
+            margin-bottom: 30px;
+        }
+    }
+
+    .contact-wrapper {
+        h2 {
+            font-size: 25px;
+        }
+    }
+
+    .disclaimer {
+        .details {
+            width: 82%;
+            padding-left: 211px;
+        }
+    }
+}
+
+@media (max-width: 1550px) {
+    .input-group {
+        .form-control {
+            height: 40px;
+            font-size: 14px;
+        }
+    }
+
+    .contact-wrapper {
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 580px) {
+    .segments-wrapper {
+        .segments {
+            flex-wrap: wrap;
+            padding: 30px 0 90px 0px;
+
+            div {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .demat-offer {
+        margin: 20px 0 40px 0;
+
+        .offers {
+            padding: 20px;
+
+            i {
+                font-size: 40px;
+            }
+
+            .offer-title {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .disclaimer {
+        .details {
+            width: 82%;
+            padding-left: 211px;
+        }
+    }
+}
+
+@media (max-width: 568px) {
+    .franchise-how-works {
+        .franchise-works-cont {
+            .franchise-works-slider {
+                .slick-list {
+                    p {
+                        padding-left: 0;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 701px) {
+    .franchise-how-works {
+        .franchise-works-cont {
+            .franchise-works-slider {
+                .slick-list {
+                    overflow: inherit;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .franchise-how-works {
+        .franchise-works-cont {
+            .franchise-same-btn {
+                position: absolute;
+                bottom: -10.5rem;
+                left: 0;
+            }
+        }
+    }
+}
+
+@media (max-width: 1170px) {
+    .franchise-eligb {
+        .eligb-left-sec {
+            padding-right: 0;
+            @media (max-width:$sm) {
+                text-align: center;
+                margin-bottom: 2.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width:$sm-x) {
+    .footer-new {
+        p {
+            text-align: left;
+        }
+    }
+
+    .franchise-eligb {
+        .eligb-right-sec {
+            &::before {
+                right: 0%;
+                bottom: -7%;
+            }
+        }
+
+        padding: 5rem 0 5rem 0;
+    }
+
+    .sell-more {
+        &::before {
+            left: 0;
+            bottom: -8%;
+        }
+    }
+
+    .franchise-abt {
+        padding: 6rem 0 4rem 0;
+    }
+
+    .broker-benifits {
+        .benifits-list {
+            .sl-slider.sl-slider-active {
+                .benifits-item {
+                    background: inherit;
+                    box-shadow: inherit;
+                }
+            }
+
+            .slick-center {
+                .benifits-item {
+                    background: $whiteColor;
+                    box-shadow: 10px 6px 26px #00000012;
+                }
+            }
+        }
+    }
+
+    .franchise-offers {
+        .trm-link-bx {
+            justify-content: center;
+            margin-top: 2.1rem;
+        }
+
+        padding: 6rem 0 4.5rem 0;
+    }
+
+    #Contest {
+        .modal-dialog {
+            ul {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+
+            .modal-header {
+                padding: 1rem 1.5rem;
+            }
+        }
+    }
+}
+
+@media (max-width: $md) {
+    .signal-form {
+        form {
+            width: 100%;
+            float: none;
+            margin-top: 50px;
+            margin-top: 0;
+        }
+    }
+}
+
+
+@-webkit-keyframes toTopFromBottom {
+    49% {
+        -webkit-transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        -webkit-transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes toTopFromBottom {
+    49% {
+        -moz-transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        -moz-transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+@keyframes toTopFromBottom {
+    49% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    51% {
+        opacity: 1;
+    }
+}
+
+.franchise-form{
+    position: relative;
+    top: 6rem;
+    .demat-account-form{
+        max-width: inherit;
+        width: 90%;
+        @media (max-width: $sm) {
+            width: 100%;
+            margin-top: 3rem;
+        }
+    }
+    .exit-intent-sleekbox-overlay{
+        .exit-intent-sleekbox-popup{
+            @media (max-width:$sm) {
+                margin-top: 18rem;
+            }
+            .digit-otp{
+   
+                width: 90%;
+                height: 48px;
+                border-radius: 4px;
+                background-color: #EFECEB;
+                border: none;
+                line-height: 50px;
+                text-align: center;
+                font-size: 24px;
+                font-weight: 600;
+                color: #221F20;
+                margin: 0 2px;
+                letter-spacing: 10px;
+                &::placeholder{
+                  color: transparent;
+                }
+            
+            } 
+        }
+    } 
+    @media (max-width: $md) {
+       top: inherit;
+    }
+}
+
+.ref-sec-terms {
+    padding: 7rem 0 10rem 0;
+    background: $abt-bg;
+    .title-secnd{
+        font-size: 2.688rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            font-size: 2rem;
+            br{
+                display: none;
+            }
+        }
+    }
+    .terms-cont {
+        margin-top: 5.5rem;
+        height: 380px;
+        overflow-y: scroll;
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+        h3{
+            font-size: 2rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 2.5rem;
+            margin-top: 2rem;
+        }
+        h4{
+            font-size: 1.6rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 2.5rem;
+            margin-top: 2rem;
+            &.child-ttl{
+                margin-bottom: 0.5rem;
+            }
+        }
+        .sml-para-dv{
+                font-size: 1.5rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                padding-right:8rem;
+                margin: 0;
+                margin-bottom: 1.5rem;
+                position: relative;
+                @media (max-width: $sm) {
+                    font-size: 1.4rem;
+                    padding-right: 2rem;
+                }
+        }
+        .terms-list {
+            padding-left: 0;
+            li {
+                font-size: 1.4rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 1rem;
+                list-style: none;
+                padding-left: 3rem;
+                padding-right:8rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    background: $secondary;
+                    display: block;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: 0.9rem;
+                    @media (max-width: $sm) {
+                        top: 0.7rem;
+                    }
+                }
+                @media (max-width: $sm) {
+                    padding-left: 2rem;
+                    padding-right: 3rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            height: 430px;
+        }
+    }
+}
+
+
+#style-1 {
+    &::-webkit-scrollbar-track {
+        
+        border-radius: 10px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:$yellowColor ;
+    }
+}
+
+.contest-modal-sub{
+    .modal-header{
+        padding:2rem 3rem;
+        .modal-title{
+            font-family: $font-family-poppins-semibold;
+            font-size: 1.75rem;
+        }
+    }
+    .modal-body{
+        padding: 3rem 1rem;
+        .reset{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            max-height: 400px;
+            overflow-y: scroll;
+            padding-left: 3rem;
+            padding-right: 2rem;
+            margin-right: 1.5rem;
+            position: relative;
+            >li{
+                font-size: 1.375rem;
+                margin-bottom: 1.25rem;
+                padding-left: 2rem;
+                position: relative;
+                &::before{
+                    content: '';
+                    width: 0.625rem;
+                    height: 0.625rem;
+                    border-radius: 50%;
+                    background: $primary;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 0.7rem;
+                }
+            }
+            @media (max-width: $sm) {
+                padding-left: 1rem;
+            }
+        }
+    }
+   
+}
+
+#style-scrll::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	border-radius: 10px;
+	background-color: #f5f5f5;
+}
+
+#style-scrll::-webkit-scrollbar {
+	width: 4px;
+	background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+#style-scrll::-webkit-scrollbar-thumb {
+	border-radius: 0;
+	-webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+	background-color: #0068b3;
+  border-radius: 10px;
+}
+
+.Dematfaq {
+	padding: 9rem 0;
+
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 2rem;
+	}
+
+	.faq-item {
+		border: 1px solid #C2C2C2 !important;
+		border-radius: 20px;
+		background: #FFFFFF;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			font-family: $font-family-poppins-semibold;
+			color: $primary;
+			font-size: 2rem;
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}
+
+.show-mob{
+    display: none;
+    @media (max-width: $sm) {
+        display: block;
+    }
+}
+
+.hide-mob{
+    @media (max-width: $sm) {
+        display: none;
+    }
+}
