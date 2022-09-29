@@ -103,10 +103,10 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
-const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
+// const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
+// const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
 
 
 
@@ -520,11 +520,11 @@ function Routing() {
                                 < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
-                        <Route exact path='/mutual-fund-distributor' element={
+                        {/* <Route exact path='/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyMutualFundDistributor />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                         <Route exact path='/partner-assets/emitra' element={
                             <React.Suspense>
@@ -538,11 +538,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/intraday-charges' element={
+                        {/* <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
