@@ -33,8 +33,8 @@ const config = {
     UATreferURL: "https://uatapi.choicebroking.in/api/middleware",
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
-    liveperformanceURL: "https://finx.choiceindia.com//api/",
-    UATperformanceURL: "https://finx.choiceindia.com//api/",
+    liveperformanceURL: "https://finx.choiceindia.com/api/",
+    UATperformanceURL: "https://finx.choiceindia.com/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
