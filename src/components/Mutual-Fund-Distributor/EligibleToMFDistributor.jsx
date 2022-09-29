@@ -12,16 +12,16 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function EligibleToMFDistributor() {
 
-    // function scrollToId(id) {
-    //     var element = document.getElementById(id);
-    //     var headerOffset = 140;
-    //     var elementPosition = element.getBoundingClientRect().top;
-    //     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    //     window.scrollTo({
-    //         top: offsetPosition,
-    //         behavior: "smooth"
-    //     });
-    // }
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
 
     const settings = {
         infinite: true,
@@ -61,7 +61,7 @@ function EligibleToMFDistributor() {
                             <div className="eligb-left-sec">
                                 <h2 className="titl3">Who is eligible to become a Mutual Fund Agent?</h2>
                                 <p className="sml-para-dv">Anyone who wants to explore a career in the mutual fund industry can enrol as a mutual fund distributor.</p>
-                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark hide-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                                <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -88,7 +88,7 @@ function EligibleToMFDistributor() {
                                     {/* <img src={ImageSub16} alt="Mutual Fund Distributor Eligibility " className="img-fluid" width="384" height="384" /> */}
                                 </div>
                                 <div className='d-flex justify-content-center'>
-                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark show-mob" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </Link>
+                                <div  className="btn-bg btn-bg-dark show-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
                             </div>
                             </div>
                         </div>

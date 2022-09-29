@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
-import SubBrokerForm from './SubBrokerForm';
+import SubBrokerForm from '../SubBroker/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function BannerMFDistributorHindi() {
@@ -40,7 +40,7 @@ function BannerMFDistributorHindi() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm language="hindi"/>
+                                <SubBrokerForm language="mutualDistributorhindi"/>
                             </div>
                            
                         </div>

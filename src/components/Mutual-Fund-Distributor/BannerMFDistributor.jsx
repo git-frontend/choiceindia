@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
-import SubBrokerForm from './SubBrokerForm';
+import SubBrokerForm from '../SubBroker/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function BannerMFDistributor() {

@@ -15,6 +15,7 @@ import Slider from 'react-slick';
 function MFDistributorBenifits() {
 
     const [defaultOption, setdefaultOption] = useState(() => 'sl-slider-active');
+    const[show,setshow]=useState('सेल्स और मार्केटिंग सपोर्ट के साथ म्यूचुअल फंड वितरक बनें')
 
     const [view, setView] = useState({
         matches: window.innerWidth < 768 ? false : true,
@@ -92,7 +93,7 @@ function MFDistributorBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <LazyLoader src={Sales} alt="अत्याधुनिक प्लेटफॉर्म के साथ म्यूचुअल फंड वितरक बनें" className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Trading App" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक प्लेटफॉर्म (ऐप और वेब)</h4>
@@ -208,7 +209,7 @@ function MFDistributorBenifits() {
                             <div className="item-next1">  
                                 <h3>म्यूचुअल फंड वितरक बनें</h3>
                                 <p>चॉइस म्यूचुअल फंड डिस्ट्रीब्यूटर बनें और आय का एक आजीवन स्रोत बनाएं। </p>
-                                <Link to={(window.location.pathname =="/campaign/mutual-fund-distributor")? "/campaign/mutual-fund-distributor":(window.location.pathname =="/mutual-fund-distributor")? "/mutual-fund-distributor":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करें</span> </Link>
+                                <div  className="btn-bg btn-bg-dark cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>अभी जॉईन करें</span> </div>
                             </div>
                         </div>
                     </div>
