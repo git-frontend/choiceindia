@@ -2,6 +2,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ResearchService from "../../Services/ResearchService";
+import loaderimg2 from '../../assets/vedio/loader2.gif';
+import noDataimg from '../../assets/images/no-data.webp';
 
 function OurPerformance() {
   const [toggleState, setToggleState] = useState(1);
@@ -9,7 +11,7 @@ function OurPerformance() {
   const [list, setlist] = useState([]);
   const[count,setcount] = useState(1);
   const [trigger, setTrigger] = useState(false);
-
+  const [isloading,setisloading ] = useState(true);
   const toggleTab = (index) => {
     setToggleState(index);
   };
@@ -77,11 +79,20 @@ function OurPerformance() {
     }
     ResearchService.performanceratio(request).then(
       res => {
+        if(res){
+          setisloading(false);
+          setdata(res.Response.EQ.SR);
+        }else{
+          setisloading(false);
+          setdata([]);
+        }
         
-        setdata(res.Response.EQ.SR);
         
       }
-    )
+    ).catch((error) => {
+      setisloading(false);
+      setdata([]);
+    });
   };
 
  
@@ -100,10 +111,21 @@ function OurPerformance() {
     }
     ResearchService.successratio(request).then(
       res => {
-        setlist(res.response);
+        if(res){
+          setisloading(false);
+          setlist(res.response);
+
+        }else{
+          setisloading(false);
+          setlist([]);
+        }
+        
    
       }
-    )
+    ).catch((error) => {
+      setisloading(false);
+      setlist([]);
+    });
   };
 
 
@@ -285,9 +307,19 @@ function OurPerformance() {
                               <li className={((count==3)?"pr-tab cursor-pointer active":"pr-tab cursor-pointer ")} onClick={() => {setcount(3);loadsuccess(successMonth);loadperformance(countermdate)}}>last month   </li>
                             </ul>
                         </div>
+                        
                         <div className="right-tb">
-                          <div className="progress-bar-performance">
+                          {
+                            isloading?
+                            <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
+                                <div className="progress-bar-performance">
+                          {
+                            (list && list.length)||(data && data.length)  ?
                               <div className="card">
+                           
                                   <div className="percent">
                                     <svg className="sb-bar">
                                       <circle cx="165" cy="165" r="145"></circle>
@@ -298,6 +330,9 @@ function OurPerformance() {
                                         <h4>SB desk</h4>
                                     </div>
                                   </div>
+                        
+
+                               
                                   <div className="percent">
                                     <svg className="jiffy-signal-bar">
                                       <circle cx="165" cy="165" r="145"></circle>
@@ -308,8 +343,19 @@ function OurPerformance() {
                                         <h4>jiffy signal</h4>
                                     </div>
                                   </div>
+                                  
+                                  
                               </div>
+                              :
+                              <div className="text-center">
+                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
+
+                            }
+                            </div>
+
+                          }
+                          
                         </div>
                     </div>
                 </div>

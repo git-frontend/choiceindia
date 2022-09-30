@@ -5,29 +5,52 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import "../Annual-Report/annual-report.scss";
 import transactionService from "../../Services/TransactionService";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
+import { Accordion } from "react-bootstrap";
+// import download1 from '../../assets/images/file-download/export.webp';
+import viewicon from '../../assets/images/bi_eye-fill.svg';
 
 function TransactionMenu() {
 
     const [data, setData] = useState();
-
+    const [isloading, setisloading] = useState(true);
     const [trigger, setTrigger] = useState(false);
 
     function loadTransactionpdf() {
         transactionService.Transaction().then(
             res => {
                 if (res) {
-                    setData(res.data.data);
-                    // console.log("check", res.data.data)
+                    setisloading(false);
+                    // setData(res.data.data);
+                   
+                    let yearFormat = {}
+                   
+                    res.data.data.forEach(ele => {
+
+                        if (!yearFormat[ele.financial_year]) {
+                            yearFormat[ele.financial_year] = [];
+                            yearFormat[ele.financial_year].push(ele)
+
+                        } else {
+                            yearFormat[ele.financial_year].push(ele)
+
+                        }
+                    })
+                    setData(yearFormat);
+                    
 
                 } else {
+                    setisloading(false);
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false);
             setData([]);
         });
     }
@@ -55,62 +78,72 @@ function TransactionMenu() {
                         </div>
                     </div>
                     {
-                        (data && data.length)?
-<div className="row code-mainwrapper cgmainwrap voting-result">
-                        <div className="col-md-12">
-
-                            <div className="d-flex justify-content-between result-ttl">
-                                <h3 className="head">Date of the General Meeting</h3>
-                                <h3 className="head">Voting Result of the General Meeting</h3>
-                                <h3 className="head"></h3>
-                            </div>
-                            <div className="subtext">
-                                {
-                                    (data || []).map((res,i) => {
-                                        return (
-
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3 result-item" key={i}>
-                                                <div className="itm-nm">{res.month} </div>
-                                                <div className="itm-nm">{res.titel}</div>
-                                                <div className="itm-nm"><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div>
-                                            </div>
-                                        )
-                                    })
-                                }
-
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 30, 2020 </div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 27, 2019 </div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div>
-                                   <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                   <div>September 27, 2018</div>
-                                   <div>Voting Result</div>
-                                   <div><FontAwesomeIcon icon={faEye} className="cursor-pointer"/></div>
-                                   </div> */}
-
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-
-                    </div>:
+                        isloading ?
                             <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                            </div>
+                            :
+
+                            <div>
+                                {
+                                    data ?
+
+                                        <div className="annual-reports code-mainwrapper cgmainwrap">
+                                            <div className="col-md-12">
+                                                <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                    {
+
+                                                        Object.keys(data)?.map((key, i) => {
+                                                           
+                                                            return (
+                                                                <Accordion.Item eventKey={i + ""} key={i} className='faq-item' >
+                                                                    <Accordion.Header> <h4 className='faq-header'> Financial year {key}</h4></Accordion.Header>
+                                                                    <Accordion.Body className='faq-body'>
+                                                                        <div className="listing">
+                                                                            <ul>
+                                                                                {
+                                                                                    data[key]?.map((res, index) => {
+                                                                                        return (
+
+                                                                                            <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                                                                <div className="text">{res.titel}</div>
+                                                                                                {
+                                                                                                    res.view ?
+                                                                                                        <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                        <div className="download"></div>
+                                                                                                }
+
+                                                                                            </li>
+                                                                                        )
+                                                                                    })
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+
+                                                            )
+                                                        })
+
+
+                                                    }
+
+
+                                                </Accordion>
+                                            </div>
+
+
+
+
+                                        </div> :
+                                        <div className="text-center">
+                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                        </div>
+                                }
                             </div>
                     }
-                    
+
+
 
 
                 </div>

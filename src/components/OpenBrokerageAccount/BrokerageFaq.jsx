@@ -6,6 +6,20 @@ import { Accordion } from "react-bootstrap";
 function DematFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+
+      /** scroll id view */
+
+   function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
     return (
         <div>
 
@@ -66,7 +80,7 @@ function DematFaq() {
                                         Yes, you can use the same brokerage account for trading in all segments.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="5" className='faq-item'>
+                                <Accordion.Item eventKey="5" className='faq-item' id="faqid">
                                     <Accordion.Header> <h4 className='faq-header'> Which documents are required for opening a brokerage account online with Choice?</h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         You are required to provide the following documents to open a brokerage account online with Choice.<br /><br />
@@ -118,7 +132,7 @@ function DematFaq() {
                                                                     </Accordion.Item>
                                                                     
 
-                                                                    <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                                                    <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button>
 
                                                                 </Accordion>
 

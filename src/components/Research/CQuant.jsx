@@ -5,6 +5,7 @@ import rest from '../../Services/rest'
 import { subscribeOnStream, subscribeMultitouchline } from "../../Services/socketData";
 import utils from "../../Services/utils";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function CQuant() {
     /**Set Research Report Data */
@@ -101,105 +102,42 @@ function CQuant() {
      */
     let getProfitPercentage = (
         isBuy,
-        iStatusType,
-        targetPrice1InPaise,
-        stopLossInPaise,
-        exitPriceInPaise,
-        bookedProfitPriceInPaise,
         entryPriceInPaise,
-        calculatedQty,
-        SYM,
-        targetPrice0InPaise
+        matchedPriceInPaise
     ) => {
         let profitPercentage = 0
         try {
-            if (isBuy) {
-                switch (iStatusType) {
-                    case 2: {
-                        profitPercentage =
-                            (((targetPrice1InPaise - entryPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 3: {
-                        profitPercentage =
-                            (((stopLossInPaise - entryPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 4: {
-                        if (exitPriceInPaise) {
-                            profitPercentage =
-                                (((exitPriceInPaise - entryPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                            profitPercentage = (profitPercentage * 100)
-                        } else {
-                            profitPercentage = 0;
-                        }
-                        break;
-                    }
-                    case 5: {
-                        profitPercentage =
-                            (((bookedProfitPriceInPaise - entryPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 6: {
-                        profitPercentage =
-                            (((targetPrice0InPaise - entryPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    default: {
-                        profitPercentage = 0
-                        break;
-                    }
-                }
-            } else {
-                switch (iStatusType) {
-                    case 2: {
-                        profitPercentage =
-                            (((entryPriceInPaise - targetPrice1InPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 3: {
-                        profitPercentage =
-                            (((entryPriceInPaise - stopLossInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 4: {
-                        if (exitPriceInPaise) {
-                            profitPercentage =
-                                (((entryPriceInPaise - exitPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                            profitPercentage = (profitPercentage * 100)
-                        } else {
-                            profitPercentage = 0;
-                        }
-                        break;
-                    }
-                    case 5: {
-                        profitPercentage =
-                            (((entryPriceInPaise - bookedProfitPriceInPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    case 6: {
-                        profitPercentage =
-                            (((entryPriceInPaise - targetPrice0InPaise) * calculatedQty) / entryPriceInPaise)
-                        profitPercentage = (profitPercentage * 100)
-                        break;
-                    }
-                    default: {
-                        profitPercentage = 0
-                        break;
-                    }
-                }
-            }
-        } catch (e) {
+            
+         
+              if (isBuy) {
+        
+                if (matchedPriceInPaise > 1) {
+                  profitPercentage =
+                      (((matchedPriceInPaise - entryPriceInPaise)) / entryPriceInPaise)
+                  profitPercentage = (profitPercentage * 100)
+              } else {
+                  profitPercentage = 0
+              }
+             
+              } else {
+        
+        
+                if (matchedPriceInPaise > 1) {
+                  profitPercentage =
+                      (((entryPriceInPaise - matchedPriceInPaise)) / entryPriceInPaise)
+                  profitPercentage = (profitPercentage * 100)
+              } else {
+                  profitPercentage = 0
+              }
+                
+            
+        }
+        
+        }
+        catch (e) {
             //  e.printStackTrace()
         }
-        return profitPercentage
+        return (profitPercentage||0).toFixed(2)
     }
 
     /**
@@ -318,10 +256,11 @@ function CQuant() {
             miniTarget: element.MT,
             targetPrice0: element.TP0,
         }
-        data.matched_price = getSignalMatchedPice(data)
+        data.matched_price = element.MP||0
         data.bookedProfitPriceInPaise = (element.MT || 0)
-        data.profitPercentage = ((data.call_type ? getProfitPercentage(data.call_type == 'buy', data.iStatusType, ((element.TACode == 5 || element.TACode == 35) ? (element.TP3 || element.TP2 || element.TP1) : ([3, 13, 23, 33].indexOf(element.TACode) > -1) ? (element.TP2 || element.TP1) : element.TP1), element.SL, element.ExitP, data.bookedProfitPriceInPaise, element.EP, data.calculatedQty, element.Sym, element.TP0) : 0)||0).toFixed(2)
-        if (element.Sym == 'LTI') {
+       // data.profitPercentage = ((data.call_type ? getProfitPercentage(data.call_type == 'buy', data.iStatusType, ((element.TACode == 5 || element.TACode == 35) ? (element.TP3 || element.TP2 || element.TP1) : ([3, 13, 23, 33].indexOf(element.TACode) > -1) ? (element.TP2 || element.TP1) : element.TP1), element.SL, element.ExitP, data.bookedProfitPriceInPaise, element.EP, data.calculatedQty, element.Sym, element.TP0) : 0)||0).toFixed(2)
+       data.profitPercentage =  getProfitPercentage(data.call_type == 'buy',  element.EP, element.MP)  
+       if (element.Sym == 'LTI') {
         }
         return data
     }
@@ -409,12 +348,24 @@ function CQuant() {
             </div>
 
 
-            {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
+            {/* {!showLoader && (!researchReport || researchReport?.length == 0) ? <div>
                 <div className="text-center">
                     <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                 </div>
-            </div> : ''}
-            {showLoader ? <div className="loaderB mx-auto"></div> : <div className="cquant-tab-cont">
+            </div> : ''} */}
+
+
+           
+            {
+            showLoader ? 
+            <div className="text-center">
+            <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+        </div>
+        :
+                <div>
+                    {
+                        (researchReport && researchReport?.length) ?
+                        <div className="cquant-tab-cont">
                 <div className="cquant-tab-list">
                     {researchReport.map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
@@ -442,7 +393,16 @@ function CQuant() {
 
                 </div>
                 <div className="mt-5 d-flex justify-content-center cursor-pointer" onClick={() => { exploreSec() }}><a className="btn-bg" >Explore All</a></div>
-            </div>}
+            </div>:
+            <div className="text-center">
+            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+        </div>
+
+                    }
+                
+            </div>
+            }
+            
 
 
 

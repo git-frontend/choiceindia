@@ -15,12 +15,15 @@
                display: flex;
                flex-wrap: wrap;
                .reset{
-                   width: 33.33%;
+                   width: 42%;
                    padding: 0;
                    margin: 0;
                    list-style: none;
                    >li{
                        margin-bottom: 1rem;
+                       @media (max-width: $sm-x){
+                        margin-bottom: 0.8rem;
+                       }
                        h4{
                         color: $lightColor;
                         font-size: 1.4rem;
@@ -35,11 +38,23 @@
                            &:hover{
                                color: $bgcolor-yellow;
                            }
+                           @media (max-width: $sm-x){
+                            font-size: 1.1rem;
+                           }
                        }
                    }
                    @media (max-width: $sm-x){
                     padding: 1rem;
                     }
+                &.quicklink2{
+                    width: 28%;
+                    @media (max-width: $sm-x){
+                        width: 33.33%;
+                    }
+                }
+                @media (max-width: $sm-x){
+                    width: 33.33%;
+                }
                }
            }
         }
@@ -213,6 +228,17 @@
     background: $bgcolor-graydark;
     z-index: 999;
     position: relative;
+    a {
+        &:link {
+            color: $whiteColor;
+            text-decoration: none;
+        }
+        &:hover {
+            color: $yellowColor;
+            text-decoration: none;
+        }
+    }
+    
     p{
         color: $whiteColor;
         font-family: $font-family-poppins-medium;

@@ -1631,7 +1631,7 @@ const meta_tags = {
       
   ` },
 
-  "partner-assests/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": `` },
+  "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": `` },
 }
 
 export default meta_tags;

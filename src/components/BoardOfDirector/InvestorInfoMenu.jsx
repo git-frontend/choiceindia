@@ -63,7 +63,7 @@ function InvestorInfoMenu() {
                     {
 									view && !view.matches ? 
                                    
-										<Slider {...settings} className="" >
+										<Slider {...settings} className="mt5" >
 
                                     <div className="col-md-3">
                                         <div className="team-list">

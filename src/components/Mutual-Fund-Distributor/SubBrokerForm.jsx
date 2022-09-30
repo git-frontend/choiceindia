@@ -788,7 +788,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl otp-main-modal" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">

@@ -6,6 +6,19 @@ import { Accordion } from "react-bootstrap";
 function DerivativeTradingFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+
+        /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
     return (
         <div>
 
@@ -52,7 +65,7 @@ function DerivativeTradingFaq() {
                                     No. There are no account opening charges with Choice. However, one should take into account the brokerage charges associated. 
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="4" className='faq-item'>
+                                <Accordion.Item eventKey="4" className='faq-item' id="Faqid">
                                     <Accordion.Header > <h4 className='faq-header'>Can I use the same commodity trading account for all segments? </h4></Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Yes. Once you open an account with Choice, you have the authority to trade with equity, commodity, currency and derivatives. The procedure for all of them is constant.
@@ -86,7 +99,7 @@ function DerivativeTradingFaq() {
                                         
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
 
                                     </Accordion>
 

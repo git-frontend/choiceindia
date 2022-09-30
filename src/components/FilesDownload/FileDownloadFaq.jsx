@@ -4,11 +4,12 @@ import { Accordion } from "react-bootstrap";
 import fileDownloadService from "../../Services/FileDownloadService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
-import noDataimg2 from '../../assets/images/no-data-white.webp'
+import loaderimg2 from '../../assets/vedio/loader2.gif';
 
 function FileDownloadFaq() {
     const [datalist, setDatalist] = useState({});
     const [trigger, setTrigger] = useState(false);
+    const [isloading, setisloading] = useState(true);
     let values;
     let AllFilesValue = {};
 
@@ -17,6 +18,7 @@ function FileDownloadFaq() {
             then(
                 res => {
                     if (res && res.data && res.data.response) {
+                        setisloading(false)
                         values = res.data.response;
                         values.forEach(ele => {
 
@@ -30,12 +32,14 @@ function FileDownloadFaq() {
                         })
                         setDatalist(AllFilesValue);
                     } else {
+                        setisloading(false)
                         setDatalist([]);
 
                     }
 
                 }
             ).catch((error) => {
+                setisloading(false)
                 setDatalist([]);
             });
     }
@@ -56,47 +60,54 @@ function FileDownloadFaq() {
                 <div className="container">
 
                     <div className="row">
-                        <div className="col-md-12">
-                            {
-                                datalist?
-                                <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
-                                {
+                        {
+                            isloading ?
+                                <div className="text-center">
+                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                </div>
+                                :
 
-                                    Object.keys(datalist)?.map((key, i) => {
-                                        return (
-                                            <Accordion.Item eventKey={i} key={i} className='faq-item' >
-                                                <Accordion.Header> <h4 className='faq-header'>{key}</h4></Accordion.Header>
-                                                <Accordion.Body className='faq-body'>
-                                                    <div className="listing">
-                                                        <ul>
-                                                            {
-                                                                datalist[key]?.map((res, index) => {
-                                                                    return (
+                                <div className="col-md-12">
+                                    {
+                                        datalist ?
+                                            <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                {
 
-                                                                        <li key={index}>
-                                                                            <div className="text">{res.download_subtitle}</div>
+                                                    Object.keys(datalist)?.map((key, i) => {
+                                                        return (
+                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
+                                                                <Accordion.Header> <h4 className='faq-header'>{key}</h4></Accordion.Header>
+                                                                <Accordion.Body className='faq-body'>
+                                                                    <div className="listing">
+                                                                        <ul>
                                                                             {
-                                                                                res.download_pdf?
-                                                                                <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div>:
-                                                                                <div className="download"></div>
+                                                                                datalist[key]?.map((res, index) => {
+                                                                                    return (
+
+                                                                                        <li key={index}>
+                                                                                            <div className="text">{res.download_subtitle}</div>
+                                                                                            {
+                                                                                                res.download_pdf ?
+                                                                                                    <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div> :
+                                                                                                    <div className="download"></div>
+                                                                                            }
+
+                                                                                        </li>
+                                                                                    )
+                                                                                })
                                                                             }
-                                                                            
-                                                                        </li>
-                                                                    )
-                                                                })
-                                                            }
-                                                        </ul>
-                                                    </div>
-                                                </Accordion.Body>
-                                            </Accordion.Item>
+                                                                        </ul>
+                                                                    </div>
+                                                                </Accordion.Body>
+                                                            </Accordion.Item>
 
-                                        )
-                                    })
+                                                        )
+                                                    })
 
 
-                                }
+                                                }
 
-                                {/* {
+                                                {/* {
 
                                     Object.entries(AllFilesValue)?.map((key, value) => {
 
@@ -133,7 +144,7 @@ function FileDownloadFaq() {
 
 
 
-                                {/* 
+                                                {/* 
                                 <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header onClick={()=>{loadFileDownload();setData('Choice Broking')}}> <h4 className='faq-header'>Choice Broking</h4></Accordion.Header>
                                     <Accordion.Body className='faq-body'>
@@ -245,7 +256,7 @@ function FileDownloadFaq() {
 
 
 
-                                {/* <Accordion.Item eventKey="1" className='faq-item'>
+                                                {/* <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header> <h4 className='faq-header'>choice Peers</h4></Accordion.Header>
                                     <Accordion.Body className='faq-body'>
                                        <div className="listing">
@@ -440,13 +451,15 @@ function FileDownloadFaq() {
                                        </div>
                                     </Accordion.Body>
                                 </Accordion.Item> */}
-                            </Accordion>: 
-                            <div className="text-center">
-                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
-                            </div>
-                            }
+                                            </Accordion> :
+                                            <div className="text-center">
+                                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                            </div>
+                                    }
 
-                        </div>
+                                </div>
+                        }
+
                     </div>
                 </div>
             </section>

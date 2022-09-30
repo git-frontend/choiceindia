@@ -195,6 +195,9 @@ body{
                 outline: none;
                 border: 0;
                 box-shadow: inherit;
+                @media (max-width: $sm) {
+                    padding: 2rem; 
+                }
                 .faq-header{
                     font-size: 2rem;
                     font-family: $font-family-poppins-semibold;
@@ -204,9 +207,13 @@ body{
                     display: flex;
                     .img-fluid{
                         margin-right: 3rem;
+                        @media (max-width: $sm) {
+                            margin-right: 1rem; 
+                        }
                     }
                     @media (max-width:$sm-x) {
-                        font-size: 1.8rem;
+                        font-size: 1.5rem;
+                        text-align: center;
                     }
                 }
                 &::after{
@@ -221,6 +228,9 @@ body{
                     display: block;
                     position: absolute;
                     right: 3rem;
+                    @media (max-width: $sm) {
+                        right:1.5rem;
+                    }
                     top: 33%;
                     transform: rotate(180deg);
                 }
