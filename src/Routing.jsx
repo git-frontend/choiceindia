@@ -109,6 +109,8 @@ const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advi
 const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
 const Lazysubbrokermarathi = React.lazy(() => import('./components/SubBroker/SubBrokerMarathi'));
 const Lazysubbrokergujarati = React.lazy(() => import('./components/SubBroker/SubBrokerGujarati'));
+const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
+
 
 function Routing() {
 
@@ -537,6 +539,7 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
+<<<<<<< HEAD
 
                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
@@ -551,6 +554,12 @@ function Routing() {
                         <Route exact path='gujarati/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokergujarati />
+=======
+                        
+                        <Route exact path='/hindi/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyHindiMutualFundDistributor />
+>>>>>>> ba621951fc214cc5adf3300c769175fa8153da7c
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
