@@ -1,5 +1,5 @@
 import React from 'react';
-import ContestModal from './ContestModalGujarati';
+import ContestModal from './ContestModalTelagu';
 
 function SubBrokerOffers() {
     return (
@@ -8,8 +8,8 @@ function SubBrokerOffers() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="titl3">સબ બ્રોકર ફ્રેન્ચાઇઝ ઓફર</h2>
-                            <p className="sml-para-dv">નીચેના કોષ્ટકમાં એકાઉન્ટ દીઠ પ્રોત્સાહન ઓફર જુઓ</p>
+                            <h2 className="titl3">సబ్‌ బ్రోకర్‌ ఫ్రాంఛైజ్‌ ఆఫర్</h2>
+                            <p className="sml-para-dv">ఈ కింది టేబుల్‌లో అకౌంట్‌ చొప్పున అందుకునే ప్రోత్సాహక ఆఫర్‌ను మీరు చూడండి</p>
                         </div>
                     </div>
                     <div className="row">
@@ -56,26 +56,26 @@ function SubBrokerOffers() {
                                         <thead>
                                             <tr>
                                                 <th width="25%"> <span></span> </th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 1,000 રોકાણ અને 2 ટ્રાન્ઝેક્શન ન્યૂનતમ રૂ. 500</th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 5,000 રોકાણ અને 2 ટ્રાન્ઝેક્શન ન્યૂનતમ રૂ. 500</th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 25,000 રોકાણ અને 2 વ્યવહાર ન્યૂનતમ રૂ. 500</th>
+                                                <th>రూ.1000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు + మ్యూచువల్‌ ఫండ్స్‌లో కనీసం రూ.500తో 1 ఎస్‌ఐపి ఉన్న ఖాతా</th>
+                                                <th>రూ.5000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు + మ్యూచువల్‌ ఫండ్స్‌లో కనీసం రూ.500తో 1 ఎస్‌ఐపి ఉన్న ఖాతా</th>
+                                                <th>రూ.25000 కనీస పెట్టుబడి &amp; ఈక్విటీలో 2 లావాదేవీలు + మ్యూచువల్‌ ఫండ్స్‌లో కనీసం రూ.500తో 1 ఎస్‌ఐపి ఉన్న ఖాతా</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="charges-heads">માત્ર ઇક્વિટી</td>
+                                                <td class="charges-heads">ఈక్విటీ మాత్రమే</td>
                                                 <td>200</td>
                                                 <td>400</td>
                                                 <td>700</td>
                                             </tr>
                                             <tr class="grey-back">
-                                                <td class="charges-heads">માત્ર મ્યુચ્યુઅલ ફંડ</td>
+                                                <td class="charges-heads">మ్యూచువల్ ఫండ్ మాత్రమే</td>
                                                 <td>100</td>
                                                 <td>100</td>
                                                 <td>100</td>
                                             </tr>
                                             <tr>
-                                                <td class="charges-heads">ઇક્વિટી + મ્યુટલ ફંડ</td>
+                                                <td class="charges-heads">ఈక్విటీ + మ్యూచ్‌వల్‌ ఫండ్‌</td>
                                                 <td>400</td>
                                                 <td>700</td>
                                                 <td>1100</td>

@@ -14,33 +14,33 @@ function BannerSBroker() {
                             <div className="caption-banner">
                                 <div className="left-sec">
                                     <h1 className="tlt1">
-                                        <span className="tlt2">શરૂ કરો સબ બ્રોકર</span>
-                                        ફ્રેન્ચાઇઝ
-                                        <span className="tlt2">તે પણ વગર ડિપોઝિટ*</span>
+                                        <span className="tlt2">సబ్ బ్రోకర్‌ని ప్రారంభించండి</span>
+                                        ఫ్రాంచైజీలు
+                                        <span className="tlt2">డిపాజిట్ లేకుండా*</span>
                                     </h1>
                                 </div>
                                 <div className="right-sec">
-                                    <LazyLoader src={SubBannerimage} alt={"સબ-બ્રોકર ફ્રેન્ચાઇઝ ડિપોઝિટ વિના"} className={"img-fluid"} width={"400"} height={"391"}/>
+                                    <LazyLoader src={SubBannerimage} alt={"సబ్-బ్రోకర్ ఫ్రాంచైజ్ డిపాజిట్ లేకుండా"} className={"img-fluid"} width={"400"} height={"391"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
                                 <ul>
                                     <li>
-                                        <span>સૌથી વધુ </span> રેવન્યુ શેરિંગ
+                                       "అత్యధిక రాబడి వాటా"
                                     </li>
                                     <li>
-                                        <span>₹ 1100 સુધી પ્રતિ</span> એકાઉન્ટ ઇન્સેન્ટિવ*
+                                    ఒక్కో అకౌంట్‌కి రూ.1100 వరకూ ప్రోత్సాహకం*
                                     </li>
                                     <li>
-                                        <span>જીવનભર </span> કમાઓ
+                                    "జీవితకాలఆదాయ వనరు"
                                     </li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm language='gujarati'/>
+                                <SubBrokerForm language='telagu'/>
                             </div>
                         </div>
                     </div>

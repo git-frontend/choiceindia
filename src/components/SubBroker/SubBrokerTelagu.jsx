@@ -1,12 +1,12 @@
 
 import React from "react";
-import BannerSBrokerGujarati from './BannerSBrokerGujarati';
-import SubBrokerBenifitsGujarati from './SubBrokerBenifitsGujarati';
-import SubBrokerSellMoreGujarati from './SubBrokerSellMoreGujarati';
-import WhyBecomeSubBrokerGujarati from './WhyBecomeSubBrokerGujarati';
-import WhoEligibleToSubBrokerGujarati from './WhoEligibleToSubBrokerGujarati';
-import MoreContentGujarati from './MoreContent';
-import SubBrokerOffersGujarati from './SubBrokerOffersGujarati';
+import BannerSBrokerTelagu from './BannerSBrokerTelagu';
+import SubBrokerBenifitsTelagu from './SubBrokerBenifitsTelagu';
+import SubBrokerSellMoreTelagu from './SubBrokerSellMoreTelagu';
+import WhyBecomeSubBrokerTelagu from './WhyBecomeSubBrokerTelagu';
+import WhoEligibleToSubBrokerTelagu from './WhoEligibleToSubBrokerTelagu';
+import MoreContentTelagu from './MoreContentTelagu';
+import SubBrokerOffersTelagu from './SubBrokerOffersTelagu';
 import { useState } from "react";
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
@@ -69,13 +69,13 @@ function SubBroker() {
 
           <div className="sub-broker-skeleton-parent">
 
-            <BannerSBrokerGujarati />
-            <SubBrokerBenifitsGujarati />
-            <SubBrokerSellMoreGujarati />
-            <WhyBecomeSubBrokerGujarati />
-            <WhoEligibleToSubBrokerGujarati />
-            <SubBrokerOffersGujarati />
-            {/* <MoreContentGujarati /> */}
+            <BannerSBrokerTelagu />
+            <SubBrokerBenifitsTelagu />
+            <SubBrokerSellMoreTelagu />
+            <WhyBecomeSubBrokerTelagu />
+            <WhoEligibleToSubBrokerTelagu />
+            <SubBrokerOffersTelagu />
+            <MoreContentTelagu />
             
           </div>
       }

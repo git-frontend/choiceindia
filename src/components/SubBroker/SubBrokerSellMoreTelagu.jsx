@@ -28,9 +28,9 @@ const SubBrokerSellMore = () => {
                             <div className="row">
                                 <div className="col-md-12">
                                     <div className="sell-left-sec">
-                                        <h2 className="title-secnd">વધુ વેચો. વધુ કમાઓ!</h2>
-                                        <p className="sml-para-dv">ચોઇસ પાસે 25 વર્ષથી વધુના અનુભવ દ્વારા સમર્થિત પ્રોડક્ટ ઓફરિંગનો વ્યાપક પોર્ટફોલિયો છે. સબ બ્રોકર્સ પાસે નાણાકીય ઉત્પાદનોની સંપૂર્ણ શ્રેણી ઓફર કરવાનો વિકલ્પ હોય છે.</p>
-                                        <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>અત્યારે શરુ કરો</span> </Link>
+                                        <h2 className="title-secnd">ఎక్కువ అమ్మండి. ఎక్కువ సంపాదించండి!</h2>
+                                        <p className="sml-para-dv">ఛాయిస్ విస్తృతమైన ఉత్పత్తుల పోర్టిఫోలియోను కలిగి ఉంది . దీనికి 25 సంవత్సరాలకుపైగా ఉన్న అనుభవం తోడుగా ఉంది. సబ్‌ బ్రోకర్ అన్ని శ్రేణుల్లోనూ ఆర్థిక ఉత్పత్తులను అందించగలిగే ఆప్షన్‌ను కలిగి ఉంది.</p>
+                                        <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg btn-bg-dark" onClick={()=>scrollToId('sub-broker-form')}><span>ఇప్పుడే ఆరంభించు</span> </Link>
                                         {/* <Link to="/" className="btn-bg btn-bg-dark"><span>Start Now</span> </Link> */}
                                     </div>
                                 </div>
@@ -40,31 +40,31 @@ const SubBrokerSellMore = () => {
                             <div className="sell-more-list">
                                 <div className="more-list-item">
                                     <span>
-                                        <LazyLoader src={Commodity} alt={"સબ બ્રોકર બનો અને ઇક્વિટી અને કોમોડિટી બ્રોકિંગ દ્વારા કમાણી કરો"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Commodity} alt={"సబ్ బ్రోకర్ అవ్వండి మరియు ఈక్విటీ మరియు కమోడిటీ బ్రోకింగ్ ద్వారా సంపాదించండి"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
-                                    <h3 className="itm-ttl">ઇક્વિટી, કોમોડિટી અને કરન્સી બ્રોકિંગ</h3>
+                                    <h3 className="itm-ttl">ఈక్విటీ, ద్రవ్య &amp; నగదు మధ్యవర్తిత్వం</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={MF} alt={"સબ બ્રોકર બનો અને મ્યુચ્યુઅલ ફંડ દ્વારા કમાણી કરો"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={MF} alt={"సబ్ బ్రోకర్ అవ్వండి మరియు మ్యూచువల్ ఫండ్స్ ద్వారా సంపాదించండి"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/*<img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />*/}
                                     </span>
-                                    <h3 className="itm-ttl">મ્યુચ્યુઅલ ફંડ વિતરણ</h3>
+                                    <h3 className="itm-ttl">మ్యూచువల్ ఫండ్స్ పంపిణీ</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Insurance} alt={"સબ બ્રોકર બનો અને વીમા દ્વારા કમાણી કરો"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Insurance} alt={"సబ్ బ్రోకర్ అవ్వండి మరియు బీమా ద్వారా సంపాదించండి"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/> */}
                                     </span>
-                                    <h3 className="itm-ttl">વીમા</h3>
+                                    <h3 className="itm-ttl">బీమా</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <LazyLoader src={Retail} alt={"સબ બ્રોકર બનો અને રિટેલ લોન દ્વારા કમાણી કરો"} className={'img-fluid'} width={"60"} height={"60"} />
+                                        <LazyLoader src={Retail} alt={"సబ్ బ్రోకర్ అవ్వండి మరియు రిటైల్ లోన్ల ద్వారా సంపాదించండి"} className={'img-fluid'} width={"60"} height={"60"} />
                                         {/* <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" /> */}
                                     </span>
-                                    <h3 className="itm-ttl">છૂટક લોન</h3>
+                                    <h3 className="itm-ttl">రిటైల్ రుణాలు</h3>
                                 </div>
                             </div>
 

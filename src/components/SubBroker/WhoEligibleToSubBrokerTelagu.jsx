@@ -58,31 +58,31 @@ function WhoEligibleToSubBroker() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="eligb-left-sec">
-                                <h2 className="titl3">ચોઇસ સબ બ્રોકર બનવા માટે કોણ પાત્ર છે?</h2>
-                                <p className="sml-para-dv">કોઈપણ જે આવકનો નિષ્ક્રિય સ્ત્રોત બનાવવા માંગે છે.</p>
+                                <h2 className="titl3">ఛాయిస్‌ సబ్‌ బ్రోకర్‌గా మారేందుకు ఎవరు అర్హులు?</h2>
+                                <p className="sml-para-dv">Aనిలకడగా ఉండే ఆదాయ వనరును సృష్టించేందుకు ఆసక్తి ఉన్నవాళ్లు కావొచ్చు</p>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="eligb-right-sec">
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
-                                        <LazyLoader src={ImageSub13} alt={"સબ-બ્રોકર બનવાની પાત્રતા"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub13} alt={"సబ్ బ్రోకర్ కావడానికి అర్హత"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>વ્યક્તિની ઉંમર 18+ વર્ષ હોવી જોઈએ</h4>
+                                        <h4>భాగస్వాముల వయస్సు 18 సంవత్సరాలు దాటి ఉండాలి</h4>
                                     </div>
                                     <div className="">
-                                        <LazyLoader src={ImageSub14} alt={"નાણાકીય સેવાઓ વેચો"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub14} alt={"ఆర్థిక సేవలను అమ్మండి"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>તમારા પોતાના બોસ બનવાની ઇચ્છા</h4>
+                                        <h4>ఉత్పత్తులను సమర్థవంతంగా విక్రయించే అవకాశం తలుపుతడుతున్నవాళ్లు</h4>
                                     </div>
                                     <div className="">
-                                        <LazyLoader src={ImageSub15} alt={"સબ-બ્રોકર ફ્રેન્ચાઇઝ બિઝનેસ"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub15} alt={"సబ్-బ్రోకర్ ఫ్రాంచైజ్ వ్యాపారం"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>વિના પ્રયાસે ઉત્પાદનો વેચવાની એક હથોટી</h4>
+                                        <h4>మీకు మీరే యజమానిగా ఉండాలనే కోరిక ఉన్నవాళ్లు</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
-                                    <LazyLoader src={ImageSub16} alt={"સબ બ્રોકર બનો"} className={"img-fluid"} width={"384"} height={"384"} />
+                                    <LazyLoader src={ImageSub16} alt={"సబ్ బ్రోకర్ అవ్వండి"} className={"img-fluid"} width={"384"} height={"384"} />
                                     {/* <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" /> */}
                                 </div>
                             </div>
@@ -96,9 +96,8 @@ function WhoEligibleToSubBroker() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="mid-blue-cont">
-                                <h4>જ્યારે તમે અમારી સાથે ભાગીદાર થશો ત્યારે વૃદ્ધિ નિશ્ચિત છે.
-</h4>
-                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>હવે જોડાઓ</span> </Link>
+                                <h4>మీరు మా భాగస్వామి అయితే వృద్ధి ఖచ్చితంగా ఉంటుంది</h4>
+                                <Link to={(window.location.pathname =="/campaign/sub-broker-franchise")? "/campaign/sub-broker-franchise":(window.location.pathname =="/sub-broker-franchise")? "/sub-broker-franchise":""} className="btn-bg" onClick={()=>scrollToId('sub-broker-form')}><span>ఇప్పుడే చేరండి</span> </Link>
                             </div>
                         </div>
                     </div>

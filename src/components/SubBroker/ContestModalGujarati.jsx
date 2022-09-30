@@ -17,31 +17,33 @@ function ContestModal() {
 
 
       <Button variant="primary" onClick={handleShow} className="trm-link">
-        For Contest Terms &amp; Conditions Click Here
+      હરીફાઈના નિયમો અને શરતો માટે અહીં ક્લિક કરોsss
+
       </Button>
 
       <Modal show={show} onHide={handleClose} size="lg" className='contest-modal-sub' aria-labelledby="contained-modal-title-vcenter" centered>
         <Modal.Header closeButton>
-          <Modal.Title>Terms &amp; Conditions</Modal.Title>
+          <Modal.Title>શરતો અને નિયમો</Modal.Title>
         </Modal.Header>
         <Modal.Body>
         <ul className='reset' id="style-scrll">
-                <li><b>All trading accounts opened in the current month shall be considered for the offer until the last working day of the same month.</b></li>
-                        <li><b>Grace period is provided till 06th of the next month to add investment amount &amp; initiate Trade / SIP.</b></li>
-                        <li>Cash Margin collected during scheme period will be considered for incentive calculation.</li>
-                        <li><b>Total Margin / SIP added in account till the date of 06th of next month only  will be considered for final payout calculation.</b></li>
-                        <li>Clients added with Margin should be active for minimum 3 months i.e Minimum 2 trades every month &amp; SIP should continue for minimum 3 month.</li>
-                        <li><b>Monthly Payout for the contest will be released on the date of 25th of the next month.</b></li>
-                        <li>Trade done in NSE will only be considered for EQ. Trades on any other exchange will not be considered in this contest.</li>
-                        <li>SIP done in Equity oriented schemes will only be considered. SIP in Debt Fund / Liquid Fund will not be considered.</li>
-                        <li>Scheme is applicable for Online Accounts only.</li>
-                        <li>Applicable for CBA's, Choice Franchisee &amp; all Choice Group Employees (Except Choice Broking Employees)</li>
-                        <li>Franchise/CBA will get rewards based on accounts open through their respective codes.</li>
-                        <li>If the client becomes inactive before completion of 3 months, the payout will be recovered.</li>
-                        <li>Management reserves right for any alteration or cancellation of scheme, With or without prior intimation.</li>
-                        <li>No other scheme / contest / offer can be clubbed with this</li>
-                        <li>No backend mapping of CBA / AP code will be allowed</li>
-                        <li>For Additional Rewards, Active account refers to Minimum Rs. 1000 investment &amp; 2 trades for EQ, Minimum Rs.500 SIP for MF.</li>
+                <li><b>1 જૂન 2022 થી 30 જૂન 2022 ની વચ્ચે ખોલવામાં આવેલા તમામ ટ્રેડિંગ એકાઉન્ટ્સ ઉપરની યોજનામાં જ ધ્યાનમાં લેવામાં આવશે.</b></li>
+                        <li><b>રોકાણની રકમ ઉમેરવા અને વેપાર/એસઆઈપી શરૂ કરવા માટે 6મી જુલાઈ 2022 સુધી ગ્રેસ પીરિયડ આપવામાં આવશે</b></li>
+                        <li>યોજનાના સમયગાળા દરમિયાન એકત્રિત કરાયેલ રોકડ માર્જિન પ્રોત્સાહન ગણતરી માટે ધ્યાનમાં લેવામાં આવશે</li>
+                        <li><b>6ઠ્ઠી જુલાઈ 2022 સુધી ખાતામાં ઉમેરાયેલ કુલ માર્જિન/એસઆઈપી અંતિમ ચૂકવણીની ગણતરી માટે ધ્યાનમાં લેવામાં આવશે</b></li>
+                        <li>માર્જિન સાથે ઉમેરાયેલ ક્લાયંટ ઓછામાં ઓછા 3 મહિના માટે સક્રિય હોવું જોઈએ એટલે કે દર મહિને ઓછામાં ઓછા 2 સોદા અને SIP ઓછામાં ઓછા 3 મહિના માટે ચાલુ રહેવી જોઈએ.</li>
+                        <li><b>હરીફાઈ માટેનું માસિક પેઆઉટ 25મી જુલાઈ 2022 સુધીમાં રિલીઝ કરવામાં આવશે.</b></li>
+                        <li>NSE માં કરવામાં આવેલ વેપાર માત્ર EQ માટે જ ગણવામાં આવશે. આ હરીફાઈમાં અન્ય કોઈપણ એક્સચેન્જ પરના વેપારને ધ્યાનમાં લેવામાં આવશે નહીં.</li>
+                        <li>ઇક્વિટી ઓરિએન્ટેડ સ્કીમ્સમાં કરવામાં આવેલી SIP માત્ર ધ્યાનમાં લેવામાં આવશે. ડેટ ફંડ / લિક્વિડ ફંડમાં SIP ધ્યાનમાં લેવામાં આવશે નહીં</li>
+                        <li>આ સ્કીમ માત્ર ઓનલાઈન એકાઉન્ટ્સ માટે જ લાગુ છે</li>
+                        <li>CBA, ચોઈસ ફ્રેન્ચાઈઝી અને તમામ ચોઈસ ગ્રુપ એમ્પ્લોઈઝ (ચોઈસ બ્રોકિંગ એમ્પ્લોઈઝ સિવાય) માટે લાગુ</li>
+                        <li>આ સબ બ્રોકર ફ્રેન્ચાઈઝી ઓફર CBA, ચોઈસ ફ્રેન્ચાઈઝી અને તમામ ચોઈસ ગ્રુપ એમ્પ્લોઈઝ (ચોઈસ બ્રોકિંગ એમ્પ્લોઈઝ સિવાય) માટે લાગુ છે.</li>
+                        <li>ફ્રેન્ચાઇઝ/સીબીએ તેમના સંબંધિત કોડ દ્વારા ખોલવામાં આવેલા ખાતાના આધારે પુરસ્કારો મેળવશે</li>
+                        <li>જો ક્લાયન્ટ 3 મહિના પૂરા થતાં પહેલાં નિષ્ક્રિય થઈ જાય, તો ચૂકવણી વસૂલ કરવામાં આવશે</li>
+                        <li>વ્યવસ્થાપન યોજનામાં કોઈપણ ફેરફાર અથવા રદ કરવાનો અધિકાર અનામત રાખે છે, પૂર્વ સૂચના સાથે અથવા વગર.</li>
+                        <li>આની સાથે અન્ય કોઈ સ્કીમ/સ્પર્ધા/ઓફરને જોડી શકાશે નહીં</li>
+                        <li>વધારાના પુરસ્કારો માટે, એક સક્રિય ખાતું લઘુત્તમ રૂ. EQ માટે 1000 રોકાણ અને 2 ટ્રેડ, MF માટે ન્યૂનતમ રૂ. 500 SIP
+</li>
                     </ul>
         </Modal.Body>
       </Modal>
