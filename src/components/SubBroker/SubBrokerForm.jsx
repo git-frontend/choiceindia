@@ -722,13 +722,18 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                                {/* {
+                                    <p className="text-danger valid-ss">Validating {value}...</p>
+                                } */}
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
