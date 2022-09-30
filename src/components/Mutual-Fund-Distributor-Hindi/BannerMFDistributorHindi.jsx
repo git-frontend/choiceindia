@@ -1,6 +1,6 @@
 ﻿import React from "react";
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
-import SubBrokerForm from '../SubBroker/SubBrokerForm';
+import SubBrokerForm from '../Mutual-Fund-Distributor/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function BannerMFDistributorHindi() {
