@@ -705,10 +705,11 @@ function SubBrokerForm(props) {
                                 type="checkbox"
                                 id="terms_and_conditions"
                             >
+                            
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                {
-                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
-                                }
+                                
+                            <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', '')} </Form.Check.Label>
+                                
                             </Form.Check>
                         </div>
 
@@ -722,13 +723,18 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                                {/* {
+                                    <p className="text-danger valid-ss">Validating {value}...</p>
+                                } */}
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
@@ -788,7 +794,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl otp-main-modal" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -807,7 +813,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>
