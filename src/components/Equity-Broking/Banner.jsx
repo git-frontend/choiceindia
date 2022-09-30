@@ -3,7 +3,7 @@ import React,{useState} from "react";
 // import videoBg from '../../assets/images/insurance/insuringShield.mp4'
 import Bannerimage from '../../assets/images/equity-broking/Coingif.gif'
 import LazyLoader from '../Common-features/LazyLoader';
-import Videobanner from '../../assets/images/equity-broking/rollingCoin.mp4';
+import Researchbanner from "../../assets/images/equity-broking/rollingCoin.mp4"
 import Equity from "../../Data/Equity";
 import { Link } from "react-router-dom";
 
@@ -27,8 +27,9 @@ function Banner() {
                         </div>
                         <div className="col-md-6 d-none d-sm-block">
                             <div className="rightsec">
+                           
                                <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} /> 
-                                {/* <video src={Videobanner} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} type={"video/mp4"} controls autoPlay></video> */}
+                               {/* <video src={Researchbanner} autoPlay loop muted className={"img-fluid top-banner-img"} width={"700"} height={"650"}/> */}
                                 
                             </div>
                         </div>

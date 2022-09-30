@@ -59,36 +59,36 @@ function EligibleToMFDistributor() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="eligb-left-sec">
-                                <h2 className="titl3">Who is eligible to become a Mutual Fund Agent?</h2>
-                                <p className="sml-para-dv">Anyone who wants to explore a career in the mutual fund industry can enrol as a mutual fund distributor.</p>
-                                <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                <h2 className="titl3">म्यूचुअल फंड एजेंट कौन बन सकता है?</h2>
+                                <p className="sml-para-dv">जो कोई भी म्यूचुअल फंड उद्योग में अपना करियर बनाना चाहता है, वह म्यूचुअल फंड वितरक के रूप में नामांकन कर सकता है।</p>
+                                <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span> अभी शुरू करें</span> </div>
                             </div>
                         </div>
                         <div className="col-md-6">
                             <div className="eligb-right-sec">
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
-                                        <LazyLoader src={ImageSub13} alt={"Eligible to Become a Mutual Fund Distributor"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub13} alt={"म्यूचुअल फंड डिस्ट्रीब्यूटर बनने की पात्रता"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub13} alt="Individual must be 18+ years of age" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>Individual must be 18+ years of age</h4>
+                                        <h4>व्यक्ति की आयु 18+ वर्ष होनी चाहिए</h4>
                                     </div>
                                     <div className="">
-                                        <LazyLoader src={ImageSub14} alt={"Sell Multiple Financial Products"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub14} alt={"म्यूचुअल फंड वितरक बनें और कई वित्तीय उत्पाद बेचें"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub14} alt="A knack to sell products effortlessly" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>A Knack to sell products effortlessly</h4>
+                                        <h4>उत्पादों को सहजता से बेचने की आदत</h4>
                                     </div>
                                     <div className="">
-                                        <LazyLoader src={ImageSub15} alt={"Become a Mutual Fund Agent"} className={"img-fluid"} width={"74"} height={"74"} />
+                                        <LazyLoader src={ImageSub15} alt={"म्यूचुअल फंड वितरक बनें"} className={"img-fluid"} width={"74"} height={"74"} />
                                         {/* <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" /> */}
-                                        <h4>A desire to be your own boss</h4>
+                                        <h4>अपना खुद का मालिक बनने की इच्छा</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
-                                    <LazyLoader src={ImageSub16} alt={"Mutual Fund Distributor Eligibility "} className={"img-fluid"} width={"384"} height={"384"} />
+                                    <LazyLoader src={ImageSub16} alt={"म्यूचुअल फंड वितरक पात्रता"} className={"img-fluid"} width={"384"} height={"384"} />
                                     {/* <img src={ImageSub16} alt="Mutual Fund Distributor Eligibility " className="img-fluid" width="384" height="384" /> */}
                                 </div>
                                 <div className='d-flex justify-content-center'>
-                                <div  className="btn-bg btn-bg-dark show-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                                <div  className="btn-bg btn-bg-dark show-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span> अभी शुरू करें</span> </div>
                             </div>
                             </div>
                         </div>
