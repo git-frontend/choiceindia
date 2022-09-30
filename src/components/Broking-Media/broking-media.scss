@@ -1,25 +1,29 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
-.sub-broker-skeleton-parent {
+
 
     .freatured_videos {
-       
+        // padding: 2.5rem 0rem;
         // border: 2px solid red;
         background-color: $primary;
         .title-first_new {
-            font-size: 3.5rem;
+            font-size: 4.308rem;
             color: $whiteColor;
             font-family: $font-family-poppins-semibold;
-            padding: 6.1rem 0px;
-            
+            padding: 4.538rem 0rem;
+            line-height: 6.462rem;
+            @media (max-width: $sm){
+                font-size: 2.8rem;
+                line-height: 3.8rem;
+                text-align: center;
+                margin-bottom: 0rem;
+            }
         }
-
-
         .rightsec {
             color: $whiteColor;
             // padding-left: 1.063rem;
-            padding-bottom: 2rem;
+            padding-bottom: 8rem;
 
             @media (max-width: $sm-x) {
                 text-align: center;
@@ -28,14 +32,21 @@
             .title-secnd {
                 color: $whiteColor;
                 text-transform: capitalize;
-                line-height: 1.5;
+                line-height: 5.538rem;
+                font-size: 3.692rem;
+                @media (max-width: $sm){
+                    font-size: 2.8rem;
+                    line-height: 3.8rem;
+                    text-align: center;
+                    margin-bottom: 0rem;
+                }
             }
 
 
             .datetitle {
                 color: #9A9A9B;
-                font-size: 1.75rem;
-                line-height: 2.625rem;
+                font-size: 2.154rem;
+                line-height: 3.231rem;
                 font-family: $font-family-poppins-regular;
 
                 @media (max-width: 768px) {
@@ -45,11 +56,10 @@
             }
 
             .subhead {
-                font-size: 1.75rem;
-                line-height: 2.625rem;
-                padding-top: 0.75rem;
+                font-size: 2.154rem;
+                line-height: 3.231rem;
                 font-family: $font-family-poppins-regular;
-
+                padding-top: 1rem;
 
                 @media (max-width: $sm-x) {
                     line-height: 2.15rem;
@@ -62,15 +72,15 @@
                 font-family: $font-family-poppins-semibold;
                 color: $primary ;
                 background: #D9D9D9;
-                padding: 0.9rem 0;
+                padding: 1rem 0;
                 display: inline-block;
-                border-radius: 10px;
-                font-size: 1.5rem;
+                border-radius: 0.769rem;
+                font-size: 1.846rem;
                 text-align: center;
                 text-decoration: none;
                 border: 0;
                 outline: none;
-                width: 11.875rem;
+                width: 14.875rem;
                 margin-top: 1rem;
 
                 &:hover {
@@ -84,14 +94,17 @@
         // padding: 4rem 0;
         margin-top: 6rem;
         position: relative;
-
-        @media (max-width: $sm-x) {
-            padding: 3rem 0;
-        }
-
         .title-first {
             text-transform: capitalize;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
+            font-size: 4.308rem;
+            line-height: 6.462rem;
+            @media (max-width: $sm){
+                font-size: 2.8rem;
+                line-height: 3.8rem;
+                text-align: center;
+                margin-bottom: 0rem;
+            }
         }
 
         .videos-list-itm {
@@ -101,16 +114,16 @@
 
         .video_img_des {
             .body_date {
-                font-size: 1.5rem;
-                line-height: 2.25rem;
+                font-size: 1.846rem;
+                line-height: 2.769rem;
                 color: #A6A6A6;
                 font-family: $font-family-poppins-regular;
                 padding-top: 0.625rem;
             }
 
             .latest_vidoes_head {
-                font-size: 2rem;
-                line-height: 3rem;
+                font-size: 2.462rem;
+                line-height: 3.692rem;
                 color: $primary;
                 font-family: $font-family-poppins-semibold;
                 text-transform: capitalize;
@@ -123,21 +136,22 @@
         }
 
         .explore_btn {
-            padding: 6.125rem 0rem;
+            padding: 7.125rem 0rem;
 
             .explo_btn {
                 font-family: $font-family-poppins-regular;
                 color: $whiteColorlight;
                 background: $darkblack;
-                padding: 0.9rem 0;
+                padding: 1.3rem 3rem;
                 display: inline-block;
-                border-radius: 1.125rem;
-                font-size: 1.938rem;
+                border-radius: 1.385rem;
+                font-size: 2.385rem;
+                line-height: 3.615rem;
                 text-align: center;
                 text-decoration: none;
                 border: 0;
                 outline: none;
-                width: 14.875rem;
+                // width: 14.875rem;
                 margin-top: 1rem;
 
                 &:hover {
@@ -241,4 +255,3 @@
         }
     }
 
-}
