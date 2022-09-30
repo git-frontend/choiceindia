@@ -62,7 +62,7 @@
 
 
 .menu {
-    width: 75%;
+    width: 80%;
     height: auto;
     margin: 0 auto;
     background-color: #221F20;
@@ -71,8 +71,9 @@
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 1rem;
-    border-top: 7px solid #FFCE02;
+    // padding: 1rem;
+    border-bottom: 8px solid #FFCE02;
+    border-radius: 1.923rem;
     @media screen and (max-width:767px) {
         width: 90%;
     }
@@ -87,18 +88,25 @@
 }
 .investor-menu-wrap{
 
-    padding:4rem 5rem 2rem 5rem;
+    padding: 5rem 3rem 0rem 3rem;
+    justify-content: space-between;
+
     @media screen and (max-width:767px) {
         padding:4rem 0rem 2rem 0rem;
+        flex-wrap: wrap;
     }
     @media (min-width:767px) and (max-width:768px) {
         padding:4rem 2rem 2rem 2rem;
+        flex-wrap: wrap;
     }
 }
 
 .investor-info-menu-list{
-    width: 50%;
-    padding-left: 1rem;
+    // width: 50%;
+    // padding-left: 1rem;
+    @media screen and (max-width:767px) {
+        width: 100%;
+    }
 }
 
 /* ------------- sliding menu ------------------ */
@@ -140,7 +148,7 @@
 
 .investor-info-menu-list{
     .menu-itm{
-        margin-bottom: 2rem;
+        margin-bottom: 4.5rem;
         .menu-itm-link{
            font-family: $font-family-poppins-semibold;
            color: $whiteColor;
@@ -148,6 +156,13 @@
            outline: none;
            text-decoration: none;
            font-size: 2rem;
+            line-height: 3.231rem;
+            .imgfill{
+               
+                path{
+                    fill: #CACACA;
+                }
+           }
            @media screen and (max-width:767px) {
             font-size: 1.5rem;
             }
@@ -156,9 +171,18 @@
             }
            &:hover{
             color: $yellowColor;
+            .imgfill{
+               
+                path{
+                    fill: $yellowColor;
+                }
            }
+           }
+           .menu_item_text{
+            padding-left: 1.5rem;
+           }
+           
         }
-
 
     }
 }
@@ -173,10 +197,11 @@
 
 .menu-itm-link-header{
           width: 100%;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-family: $font-family-poppins-semibold;
-    color: $whiteColor;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        font-size: 3.077rem;
     &:hover{
      color: $yellowColor;
     }

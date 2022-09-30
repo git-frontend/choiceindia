@@ -37,7 +37,7 @@ const LazyServices = React.lazy(() => import('./components/Services-Page/Service
 const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
-const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
+const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'))
 const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/SumeetBagadia'));
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
