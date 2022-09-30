@@ -12,6 +12,7 @@
     z-index: 999;
     .sub-formgrp{
         margin-bottom: 1.5rem;
+		position: relative;
         .formcontrol{
             background: $whiteColor;
             outline: none;
@@ -101,6 +102,13 @@
         width: 100%;
         max-width: inherit;
     }
+	.valid-ss{
+		position: absolute;
+		width: 100%;
+		text-align: center;
+		left: 0;
+		font-size: 1.3rem;
+	}
 }
 
 .otp-mdl-input-chk{
