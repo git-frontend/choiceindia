@@ -107,11 +107,8 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 // const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
-<<<<<<< HEAD
-=======
 const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
->>>>>>> 97caf892801f79ae8bdc0bb1ea95e290054699a5
 
 
 
@@ -548,8 +545,6 @@ function Routing() {
                                 < LazyIntradayCharges />
                             </React.Suspense>
                         } /> */}
-<<<<<<< HEAD
-=======
                         <Route exact path='/broking-media' element={
                             <React.Suspense>
                                 < LazyBrokingMedia />
@@ -561,7 +556,6 @@ function Routing() {
                                 < LazyBestStocks />
                             </React.Suspense>
                         } />
->>>>>>> 97caf892801f79ae8bdc0bb1ea95e290054699a5
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
