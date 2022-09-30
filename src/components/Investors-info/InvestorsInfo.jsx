@@ -70,7 +70,7 @@ function InvestorInfo() {
             <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title">Investors Relation</h2>
+                            <h2 className="title">Disclosures under regulation 46 of the LODR</h2>
                             <div className="check-menu-main">
 
                             <Navbar />

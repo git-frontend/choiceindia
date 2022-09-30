@@ -37,7 +37,7 @@ const LazyServices = React.lazy(() => import('./components/Services-Page/Service
 const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
-const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
+const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'))
 const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/SumeetBagadia'));
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
@@ -107,6 +107,8 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
 // const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
+const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
+const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
 
 
 
@@ -543,6 +545,17 @@ function Routing() {
                                 < LazyIntradayCharges />
                             </React.Suspense>
                         } /> */}
+                        <Route exact path='/broking-media' element={
+                            <React.Suspense>
+                                < LazyBrokingMedia />
+                            </React.Suspense>
+                        } />
+                        
+                        <Route exact path='/best-stocks' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
