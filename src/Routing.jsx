@@ -539,7 +539,6 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
-<<<<<<< HEAD
 
                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
@@ -554,12 +553,11 @@ function Routing() {
                         <Route exact path='gujarati/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokergujarati />
-=======
-                        
+                            </React.Suspense>
+                        } />
                         <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
->>>>>>> ba621951fc214cc5adf3300c769175fa8153da7c
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
