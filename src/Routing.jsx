@@ -37,7 +37,7 @@ const LazyServices = React.lazy(() => import('./components/Services-Page/Service
 const LazyFaq = React.lazy(() => import('./components/Faq/Faq'));
 const LazyFableDetail = React.lazy(() => import('./components/Fables-details/FablesDetails'));
 const Lazypartner = React.lazy(() => import('./components/Partner-Page/Partner'));
-const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'))
+const Lazypricing = React.lazy(() => import('./components/Pricing/Pricing'));
 const Lazymarketing = React.lazy(() => import('./components/SumeetBagadia/SumeetBagadia'));
 const Lazyrefer = React.lazy(() => import('./components/Refer-and-earn/ReferEarn'));
 const LazyInvestorInfo = React.lazy(() => import('./components/Investors-info/InvestorsInfo'));
@@ -103,13 +103,10 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
-// const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
+const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-// const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
-const LazyBrokingMedia = React.lazy(() => import('./components/Broking-Media/BrokingMedia'));
-const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
-
+const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
 
 
 function Routing() {
@@ -121,8 +118,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
-               
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -522,11 +518,11 @@ function Routing() {
                                 < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
-                        {/* <Route exact path='/mutual-fund-distributor' element={
+                        <Route exact path='/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyMutualFundDistributor />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
                         <Route exact path='/partner-assets/emitra' element={
                             <React.Suspense>
@@ -539,24 +535,12 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
-
-                        {/* <Route exact path='/intraday-charges' element={
-                            <React.Suspense>
-                                < LazyIntradayCharges />
-                            </React.Suspense>
-                        } /> */}
-                        <Route exact path='/broking-media' element={
-                            <React.Suspense>
-                                < LazyBrokingMedia />
-                            </React.Suspense>
-                        } />
                         
-                        <Route exact path='/best-stocks' element={
+                        <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
-                                < LazyBestStocks />
+                                < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
-
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

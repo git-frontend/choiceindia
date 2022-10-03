@@ -1632,6 +1632,13 @@ const meta_tags = {
   ` },
 
   "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": `` },
+  "mutual-fund-distributor": { 'title': "Become a Mutual Fund Distributor with Choice", 
+  "content": " Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+
+  "hindi/mutual-fund-distributor": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
+  "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
 }
 
 export default meta_tags;
