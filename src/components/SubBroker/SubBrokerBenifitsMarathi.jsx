@@ -74,7 +74,7 @@ function SubBrokerBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"स्थानिक संबंध प्रबंधकच्या सहाय्याने सब ब्रोकर फ्रँचायझी"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"स्थानिक संबंध प्रबंधकच्या सहाय्याने सब ब्रोकर फ्रँचायझी"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4> स्थानिक पातळीवरील संपर्क व्यवस्थापन सहायक</h4>
@@ -92,7 +92,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"मार्केटिंग आणि सेल्स सपोर्टसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt={"मार्केटिंग आणि सेल्स सपोर्टसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>मार्केटिंग आणि विक्रीसाठी सहकार्य</h4>
@@ -110,7 +110,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"वेबिनार आणि कॉन्फरन्सद्वारे प्रशिक्षणासह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"वेबिनार आणि कॉन्फरन्सद्वारे प्रशिक्षणासह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार आणि सेमिनारच्या माध्यमातून प्रशिक्षण</h4>
@@ -119,7 +119,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"अत्याधुनिक ट्रेडिंग प्लॅटफॉर्मसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"अत्याधुनिक ट्रेडिंग प्लॅटफॉर्मसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लँटफॉर्म (अँप आणि वेब)</h4>
@@ -141,7 +141,7 @@ function SubBrokerBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"स्थानिक संबंध प्रबंधकच्या सहाय्याने सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"स्थानिक संबंध प्रबंधकच्या सहाय्याने सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4> स्थानिक पातळीवरील संपर्क व्यवस्थापन सहायक</h4>
@@ -150,7 +150,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Software} alt={"व्यवसाय व्यवस्थापित करण्यासाठी प्रगत सॉफ्टवेअरसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Software} alt={"व्यवसाय व्यवस्थापित करण्यासाठी प्रगत सॉफ्टवेअरसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>व्यवसाय व्यवस्थापित करण्यासाठी अत्याधुनिक सॉफ्टवेअरचा वापर</h4>
@@ -159,7 +159,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"मार्केटिंग आणि सेल्स सपोर्टसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt={"मार्केटिंग आणि सेल्स सपोर्टसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>मार्केटिंग आणि विक्रीसाठी सहकार्य</h4>
@@ -168,7 +168,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Channels} alt={"समर्पित व्हॉट्सअँप आणि टेलिग्राम चॅनेलसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Channels} alt={"समर्पित व्हॉट्सअँप आणि टेलिग्राम चॅनेलसह सब ब्रोकर बना"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Channels} alt="Dedicated WhatsApp &amp; Telegram Channels" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>व्हॉट्सअँप आणि टेलिग्रामचे समर्पित चॅनेल</h4>
@@ -177,7 +177,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"वेबिनार आणि कॉन्फरन्सद्वारे प्रशिक्षणासह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"वेबिनार आणि कॉन्फरन्सद्वारे प्रशिक्षणासह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार आणि सेमिनारच्या माध्यमातून प्रशिक्षण</h4>
@@ -186,7 +186,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"अत्याधुनिक ट्रेडिंग प्लॅटफॉर्मसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"अत्याधुनिक ट्रेडिंग प्लॅटफॉर्मसह सब ब्रोकर फ्रँचायझी"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लँटफॉर्म (अँप आणि वेब)</h4>
@@ -195,7 +195,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"पारदर्शक आणि वाढ-उन्मुख व्यवसाय मॉडेलसह सब ब्रोकरशिप"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"पारदर्शक आणि वाढ-उन्मुख व्यवसाय मॉडेलसह सब ब्रोकरशिप"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पारदर्शी आणि विकासाभिमुख बिझनेस मॉडेल</h4>

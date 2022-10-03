@@ -74,7 +74,7 @@ function SubBrokerBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"સ્થાનિક રિલેશનશિપ મેનેજર સાથે સબ-બ્રોકર ફ્રેન્ચાઇઝ"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"સ્થાનિક રિલેશનશિપ મેનેજર સાથે સબ-બ્રોકર ફ્રેન્ચાઇઝ"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>ડેડીકેટેડ લોકલ રિલેશનશિપ મેનેજર </h4>
@@ -92,7 +92,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"માર્કેટિંગ અને વેચાણ સપોર્ટ સાથે સબબ્રોકર બનો"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt={"માર્કેટિંગ અને વેચાણ સપોર્ટ સાથે સબબ્રોકર બનો"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>માર્કેટિંગ અને સેલ્સ સપોર્ટ</h4>
@@ -128,7 +128,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"પારદર્શક અને વૃદ્ધિ લક્ષી બિઝનેસ મોડલ સાથે સબબ્રોકરેજ"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"પારદર્શક અને વૃદ્ધિ લક્ષી બિઝનેસ મોડલ સાથે સબબ્રોકરેજ"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>પારદર્શક અને વિકાસલક્ષી બિઝનેસ મોડલ</h4>
@@ -141,7 +141,7 @@ function SubBrokerBenifits() {
                                 <div className={"sl-slider " + defaultOption}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Manager} alt={"સ્થાનિક રિલેશનશિપ મેનેજર સાથે સબ-બ્રોકર ફ્રેન્ચાઇઝ"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Manager} alt={"સ્થાનિક રિલેશનશિપ મેનેજર સાથે સબ-બ્રોકર ફ્રેન્ચાઇઝ"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>ડેડીકેટેડ લોકલ રિલેશનશિપ મેનેજર</h4>
@@ -159,7 +159,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                        <LazyLoader src={Sales} alt={"માર્કેટિંગ અને વેચાણ સપોર્ટ સાથે સબબ્રોકર બનો"} className={"img-fluid"} width={"74"} height={"73"} />
+                                        <img src={Sales} alt={"માર્કેટિંગ અને વેચાણ સપોર્ટ સાથે સબબ્રોકર બનો"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>માર્કેટિંગ અને સેલ્સ સપોર્ટ</h4>
@@ -195,7 +195,7 @@ function SubBrokerBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"પારદર્શક અને વૃદ્ધિ લક્ષી બિઝનેસ મોડલ સાથે સબબ્રોકરેજ"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"પારદર્શક અને વૃદ્ધિ લક્ષી બિઝનેસ મોડલ સાથે સબબ્રોકરેજ"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>પારદર્શક અને વિકાસલક્ષી બિઝનેસ મોડલ</h4>
