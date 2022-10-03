@@ -557,7 +557,7 @@ function Routing() {
                             </React.Suspense>
                         } />
                         
-                        <Route exact path='/telagu/sub-broker-franchise' element={
+                        <Route exact path='/telugu/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokertelagu />
                             </React.Suspense>

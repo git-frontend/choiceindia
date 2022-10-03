@@ -1639,6 +1639,20 @@ const meta_tags = {
   "hindi/mutual-fund-distributor": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
   "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
   "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+
+  "gujarati/sub-broker-franchise": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
+  "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+
+  "marathi/sub-broker-franchise": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
+  "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+
+  "telugu/sub-broker-franchise": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
+  "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+
+
 }
 
 export default meta_tags;
