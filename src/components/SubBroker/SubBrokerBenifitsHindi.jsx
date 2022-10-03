@@ -6,7 +6,7 @@ import Channels from '../../assets/images/sub-broker/dedicated-whatsapp-and-tele
 import Training from '../../assets/images/sub-broker/sub-broker-training-through-webinars-and-conferences.svg';
 import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platforms-app-web.svg';
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from 'react-router-dom';
 import Slider from 'react-slick';
@@ -41,6 +41,17 @@ function SubBrokerBenifitsHindi() {
             behavior: "smooth"
         });
     }
+
+    useEffect(() => {
+       
+           
+        let mediaQuery = window.matchMedia("(min-width: 768px)");
+        mediaQuery.addListener(setView);
+        // this is the cleanup function to remove the listener
+        return () => mediaQuery.removeListener(setView);
+    
+
+}, [])
 
     return (
         <div>

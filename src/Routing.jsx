@@ -567,6 +567,7 @@ function Routing() {
                                 < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
+
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
