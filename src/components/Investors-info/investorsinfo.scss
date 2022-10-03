@@ -264,14 +264,13 @@ body{
     }
 
     .title {
-        color: $primary;
-        font-size: 2.5rem;
-        line-height: 4.615rem;
-        font-family: $font-family-poppins-semibold;
+        color: #221f20;
+        font-family: $font-family-poppins-regular;
+        font-size: 3.5rem;
         font-weight: 600;
-        text-align: left;
+        line-height: 5.25rem;
         padding-bottom: 6rem;
-        text-transform: capitalize;
+     text-align: center;
         @media screen and (max-width:767px) {
             font-size: 2.3rem;
             line-height: 3.25rem;
