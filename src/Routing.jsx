@@ -118,7 +118,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assets/emitra") === -1) ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -544,7 +544,7 @@ function Routing() {
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assets/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )
