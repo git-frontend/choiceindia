@@ -4,15 +4,12 @@ import { useState, useEffect } from "react";
 import ResearchService from "../../Services/ResearchService";
 import loaderimg2 from '../../assets/vedio/loader2.gif';
 import noDataimg from '../../assets/images/no-data.webp';
-import { Accordion } from "react-bootstrap";
-import download from '../../assets/images/file-download/export.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import "../Annual-Report/annual-report.scss";
 import associates from "../../assets/images/research/pdf/Details of Associates.pdf";
 import Disciplinary from "../../assets/images/research/pdf/Details of Disciplinary Action.pdf";
-import viewicon from '../../assets/images/bi_eye-fill.svg';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye } from '@fortawesome/free-solid-svg-icons';
 function OurPerformance() {
   const [toggleState, setToggleState] = useState(1);
   const [data, setdata] = useState([]);
@@ -374,28 +371,29 @@ function OurPerformance() {
 
       <section className="filedownloadfaq">
         <div className="container">
-          <div className="annual-reports code-mainwrapper cgmainwrap">
+          <div className="row code-mainwrapper cgmainwrap">
             <div className="col-md-12">
-              <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
-                <Accordion.Item eventKey={"0"} className='faq-item' >
-                  <Accordion.Header> <h4 className='faq-header'> Document</h4></Accordion.Header>
-                  <Accordion.Body className='faq-body'>
-                    <div className="listing">
-                      <ul>
-                        <li className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                          <div className="text">Details of Associates</div>
-                          <div className="download"> <span className="downloadtext"  onClick={()=>{window.open(associates)}}><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div>
-                        </li>
-                        <li className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                          <div className="text">Details of Disciplinary Action</div>
-                          <div className="download"> <span className="downloadtext"  onClick={()=>{window.open(Disciplinary)}}><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div>
-                        </li>
-                      </ul>
-                    </div>
-                  </Accordion.Body>
-                </Accordion.Item>
-              </Accordion>
+
+
+              <h3 className="head">Document</h3>
+
+              <div className="subtext">
+
+                <div className="border-bottom d-flex justify-content-between pb-3 pt-3" >
+                  <div>Details of Associates</div>
+                  <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(associates) }} className="cursor-pointer" /></div>
+                </div>
+                <div className="border-bottom d-flex justify-content-between pb-3 pt-3" >
+                  <div>Details of Disciplinary Action</div>
+                  <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open(Disciplinary) }} className="cursor-pointer" /></div>
+
+                </div>
+              </div>
             </div>
+
+
+
+
           </div>
         </div>
 
