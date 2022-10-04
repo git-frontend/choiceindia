@@ -721,13 +721,14 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
@@ -787,7 +788,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl otp-main-modal" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -806,7 +807,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>

@@ -106,10 +106,7 @@ const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingW
 const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
 const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
-
-
 
 
 function Routing() {
@@ -121,8 +118,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
-               
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assets/emitra") === -1) ? <Header /> : <CampaignHeader />}
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -539,22 +535,16 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
-
-                        <Route exact path='/intraday-charges' element={
-                            <React.Suspense>
-                                < LazyIntradayCharges />
-                            </React.Suspense>
-                        } />
-                      <Route exact path='/hindi/mutual-fund-distributor' element={
+                        
+                        <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
-
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assets/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

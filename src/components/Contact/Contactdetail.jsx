@@ -100,7 +100,7 @@ function Contactdetail() {
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
                            {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
-                           <p className="subtext">support@choiceindia.com</p>
+                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
@@ -109,7 +109,7 @@ function Contactdetail() {
                            <p className="maintitle">{data[MapNumber].city}</p>
                            {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
                            {/* <p className="subtext">{data[MapNumber].support}</p> */}
-                           <p className="subtext">support@choiceindia.com</p>
+                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
                            <p className="subtext">{data[MapNumber].address1}<br />
                               {data[MapNumber].address2} <br />{data[MapNumber].address3}
                            </p>
@@ -130,10 +130,15 @@ function Contactdetail() {
                   </div> :
                   <div className='container-fluid mt-10'>
                      <div className='row'>
-                        <div className='map '>
+                        {
+                           data[MapNumber].mapSrc === "" ?
+                           <div></div>:
+                           <div className='map '>
                            <div style={{ width: "100%" }}>
                               <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
+                        }
+                        
                      </div>
                   </div> : ''
             }
