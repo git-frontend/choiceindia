@@ -9,14 +9,14 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm, useFormState } from 'react-hook-form';
 import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
-export default function FaqBody() { 
+export default function FaqBody() {
   const [list, setList] = useState([]);
   const [searchlist, setSearchlist] = useState([]);
   const [list2, setList2] = useState("Stocks");
@@ -27,8 +27,8 @@ export default function FaqBody() {
   const [isloader, setIsloader] = useState(false)
   const [selected, setSelected] = useState(0);
   const [isarticle, setIsarticle] = useState(false);
-  const [isloading,setisloading ] = useState(true);
-  const [iscategory,setiscategory ] = useState(true);
+  const [isloading, setisloading] = useState(true);
+  const [iscategory, setiscategory] = useState(true);
   let data = '';
 
   /** yup validation search text */
@@ -61,21 +61,21 @@ export default function FaqBody() {
 
     faqService.FaqSearch(data).then(
       res => {
-        if(res){
+        if (res) {
           setisloading(false);
           chapterScroll('faq-section')
-        setIsloader(false)
-        setIsarticle(true);
-        setSelected(-1)
-        setSearchlist(res);
+          setIsloader(false)
+          setIsarticle(true);
+          setSelected(-1)
+          setSearchlist(res);
 
-        }else{
+        } else {
           setisloading(false);
           setSearchlist([]);
 
         }
 
-        
+
 
       }
     ).catch((error) => {
@@ -105,19 +105,19 @@ export default function FaqBody() {
     // setisloading(true);
     faqService.FaqCategory().then(
       res => {
-        if(res){
+        if (res) {
           setiscategory(false)
           setList(res);
           loadfaqFolder(res[0].category_linkage);
 
-        }else{
+        } else {
           setiscategory(false)
           setList([]);
 
         }
-       
+
       }
-    ).catch((error)=>{
+    ).catch((error) => {
       setiscategory(false)
       setList([]);
     });
@@ -129,19 +129,19 @@ export default function FaqBody() {
     setisloading(true);
     faqService.FaqFolder(id).then(
       res => {
-        if(res){
+        if (res) {
           setisloading(false)
           setFolder(res)
-        loadfaqarticle(res[0].id);
+          loadfaqarticle(res[0].id);
 
-        }else{
+        } else {
           setisloading(false)
           setFolder([])
         }
-        
+
 
       }
-    ).catch((error)=>{
+    ).catch((error) => {
       setisloading(false)
       setFolder([]);
     });
@@ -153,17 +153,17 @@ export default function FaqBody() {
     setisloading(true);
     faqService.FaqArticle(id).then(
       res => {
-        if(res){
+        if (res) {
           setisloading(false)
           setArticle(res)
-        }else{
+        } else {
           setisloading(false)
           setArticle([])
         }
-       
+
 
       }
-    ).catch((error)=>{
+    ).catch((error) => {
       setisloading(false)
       setArticle([]);
     });
@@ -183,8 +183,8 @@ export default function FaqBody() {
       loadfaqcategory();
 
       var input = document.getElementById("value3");
-      input.addEventListener("keypress",function(eve){
-        if(eve.key ==="Enter"){
+      input.addEventListener("keypress", function (eve) {
+        if (eve.key === "Enter") {
 
           document.getElementById("btnsearch").click();
         }
@@ -238,55 +238,58 @@ export default function FaqBody() {
               <div className="row">
                 <div className="col-md-12">
                   {
-                    iscategory?
-                    <div className="text-center">
-                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
-                </div>
-                :
-                <div>
-                  {
-                    list && list.length ===0 ?
-                    <div className="text-center">
-                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                          </div>:
-                          <div className="same-list-bx-list">
+                    iscategory ?
+                      <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          </div>
+                      </div>
+                      :
+                      <div>
+                        {
+                          list && list.length === 0 ?
+                            <div className="text-center">
+                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div> :
+                            <div className="same-list-bx-list">
 
-                          {
-                            list.map((response, i) => {
-          
-                              let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
-          
-          
-                              return (
-                                <div key={response.id} className={classNameNm2} onClick={() => {
-          
-                                  loadfaqFolder(response.category_linkage);
-                                  setList2(response.category_name);
-                                  setSelectedId(0);
-                                  setSelected(i);
-                                  setIsarticle(false);
-                                  // scrollToElement();
-                                }}>
-                                  <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
-                                    <span className='cont-img'>
-                                      <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
-                                    </span>
-                                    <h4>{response.category_name || 'No data'}</h4>
-                                    {/* <p>{response.category_description || 'No data'}</p> */}
-                                  </div>
-                                </div>
-                              )
-                            }
-                            )
-                          }
-          
-          
-                        </div>
+                              {
+                                list.map((response, i) => {
+
+                                  let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
+
+
+                                  return (
+                                    <div key={response.id} className={classNameNm2} onClick={() => {
+
+                                      loadfaqFolder(response.category_linkage);
+                                      setList2(response.category_name);
+                                      setSelectedId(0);
+                                      setSelected(i);
+                                      setIsarticle(false);
+                                      // scrollToElement();
+                                    }}>
+                                      <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
+                                        <span className='cont-img'>
+                                          <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
+                                        </span>
+                                        <h4>{response.category_name || 'No data'}</h4>
+                                        {/* <p>{response.category_description || 'No data'}</p> */}
+                                      </div>
+                                    </div>
+                                  )
+                                }
+                                )
+                              }
+
+
+                            </div>
+                        }
+
+                      </div>
                   }
-                
-              </div>
-                  }
-                 
+
 
 
                 </div>
@@ -303,46 +306,49 @@ export default function FaqBody() {
                     <h1>{list2}</h1>
                   </div>
                   {
-                    isloading?
-                    <div className="text-center">
-                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
-                </div>
-                :
-                <div>
-                  {
-                    (article && article.length) ? 
-                    <div className='faq-container'>
-                          <div className='content-list accordion-lists' >
-                            {
-                              folder.map((response, index) => {
-      
-                                let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
-      
-      
-      
-                                return (
-                                  <div key={response.id} className={classNameNm} onClick={() => {
-                                    loadfaqarticle(response.id);
-                                    chapterScroll('faq-section');
-                                    setSelectedId(index)
-                                  }}>
-                                    <p>{response.name || 'No data'}</p>
-                                  </div>
-      
-                                )
-                              }
-                              )
-                            }
-      
-      
-                          </div>
-                          <div className='content-list accordion-list ' >
-                            
+                    isloading ?
+                      <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                           </div>
+                      </div>
+                      :
+                      <div>
+                        {
+                          (article && article.length) ?
+                            <div className='faq-container'>
+                              <div className='content-list accordion-lists' >
+                                {
+                                  folder.map((response, index) => {
+
+                                    let classNameNm = "content-list-itm" + ((index === selectedId) ? ' list-itm-active' : '')
+
+
+
+                                    return (
+                                      <div key={response.id} className={classNameNm} onClick={() => {
+                                        loadfaqarticle(response.id);
+                                        chapterScroll('faq-section');
+                                        setSelectedId(index)
+                                      }}>
+                                        <p>{response.name || 'No data'}</p>
+                                      </div>
+
+                                    )
+                                  }
+                                  )
+                                }
+
+
+                              </div>
+                              <div className='content-list accordion-list ' >
+
                                 <Accordion defaultActiveKey="0" >
-      
+
                                   {
                                     article.map((res, index) => {
-      
+
                                       return (
                                         <div key={res.id}>
                                           <Accordion.Item eventKey={index}>
@@ -354,28 +360,28 @@ export default function FaqBody() {
                                             {/**</div>*/}
                                           </Accordion.Item>
                                         </div>
-      
+
                                       )
                                     })
-      
-                                  }
-      
-      
-                                </Accordion>
-                      
-      
-                          </div>
-                        </div>:
-                      <div className="text-center">
-                      <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                    </div>     
 
-                    
+                                  }
+
+
+                                </Accordion>
+
+
+                              </div>
+                            </div> :
+                            <div className="text-center">
+                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+
+
+                        }
+                      </div>
                   }
-                  </div>
-                  }
-                  
-                  
+
+
                 </div>
               </section> :
 
@@ -384,50 +390,56 @@ export default function FaqBody() {
 
                   <div className='faq-container justify-content-center'>
                     {
-                      isloading? 
-                      <div className="text-center">
-                      <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
-                  </div>
-                  :
-                  <div className='content-list accordion-list ' >
-                      {
-                        searchlist.length ?
-                          <Accordion defaultActiveKey="0" >
-
-                            {
-                              searchlist.map((res, index) => {
-
-                                return (
-                                  <div key={res.id}>
-                                    <Accordion.Item eventKey={index}>
-                                      <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
-                                      {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                      <Accordion.Body>
-                                        {res.description_text || 'Loading'}
-                                      </Accordion.Body>
-                                      {/**</div>*/}
-                                    </Accordion.Item>
-                                  </div>
-
-                                )
-                              })
-
-                            }
-
-
-                          </Accordion> :
-                          <div className="text-center">
-                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                      isloading ?
+                        <div className="text-center">
+                          <div>
+                            {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                            {/* <video className='img-fluid d-block mx-auto' autoPlay loop muted height={250} width={250}>
+                      <source src={loaderimg2}  type='video/mp4' />
+                    </video> */}
                           </div>
-                      }
-                      
+                        </div>
+                        :
+                        <div className='content-list accordion-list ' >
+                          {
+                            searchlist.length ?
+                              <Accordion defaultActiveKey="0" >
 
-                    </div>
+                                {
+                                  searchlist.map((res, index) => {
 
-                      
+                                    return (
+                                      <div key={res.id}>
+                                        <Accordion.Item eventKey={index}>
+                                          <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
+                                          {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
+                                          <Accordion.Body>
+                                            {res.description_text || 'Loading'}
+                                          </Accordion.Body>
+                                          {/**</div>*/}
+                                        </Accordion.Item>
+                                      </div>
+
+                                    )
+                                  })
+
+                                }
+
+
+                              </Accordion> :
+                              <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                              </div>
+                          }
+
+
+                        </div>
+
+
                     }
 
-                    
+
                   </div>
                 </div>
               </section>

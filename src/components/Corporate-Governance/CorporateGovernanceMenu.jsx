@@ -6,7 +6,7 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif'
+import loaderimg2 from '../../assets/vedio/loader2.mp4'
 
 function CodeConductMenu() {
     const [data, setData] = useState();
@@ -81,7 +81,10 @@ function CodeConductMenu() {
                     </div>
                     {
                         isloading ?
-                            <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div> :
+                            <div>
+                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                </div> :
 
                             <div>
 
@@ -153,7 +156,9 @@ function CodeConductMenu() {
 
 {
                         isloading ?
-                            <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div> :
+                            <div>
+                                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                </div> :
 
                     <div>
                         {
