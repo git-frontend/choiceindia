@@ -41,10 +41,7 @@ function Fabdetailsbanner(props) {
 
     useEffect(() => {
         setRenderCount(true)
-        if(props && props.single_data && props.single_data[0])
-        {
-            setdata(props?.single_data[0].title)
-        }
+       
         if (rendercount === true) {
             document.getElementById('meta-type').content = "article" ;
             document.getElementById('meta-url').content = location.href ;
