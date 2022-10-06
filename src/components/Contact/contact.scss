@@ -486,6 +486,7 @@
         .feel-msg{
             margin-right:2rem;
             font-family: $font-family-poppins-medium;
+            color: green;
         }
 
         .attachement {
@@ -547,4 +548,8 @@
 .warning {
    color:red ;
    margin-top:-40px;
+}
+.contact-map{
+    width: 100%;
+    min-height: 400px;
 }
