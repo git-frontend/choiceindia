@@ -30,7 +30,7 @@ function Contactdetail() {
   
    setTimeout(() => {
       setShowMap(() => true);
-   }, 2000)
+   }, 1000)
 
    function selectCity(event) {
       // console.log("event",event.target.value)

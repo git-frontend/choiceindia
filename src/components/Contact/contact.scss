@@ -79,9 +79,17 @@
     position: relative;
     padding-bottom: 4rem;
     animation: hideMe 4s forwards;
+    @media (max-width: $sm) {
+        min-height: 200px;
+    }
+    
+    
 
     .ban-img {
         width: 100%;
+        @media (max-width: $sm) {
+            display: none;
+        }
     }
 
     .banner-caption {
