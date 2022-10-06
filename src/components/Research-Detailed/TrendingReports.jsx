@@ -7,7 +7,7 @@ import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import utils from "../../Services/utils";
 import { API_URLS } from "../../Services/API-URLS";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function TrendingReports(props) {
   const [isloading, setisloading] = useState(true);
@@ -132,7 +132,10 @@ function TrendingReports(props) {
           {
             isloading ?
               <div className="text-center">
-                <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                <div>
+                  {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                  <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                  </div>
               </div>
               :
 

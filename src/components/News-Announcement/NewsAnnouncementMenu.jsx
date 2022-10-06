@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Navbar from "../Common-features/Navbar";
 import utils from "../../Services/utils";
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 // import "../CodeConduct/code-conduct.scss";
 import "./news-announcement.scss";
@@ -59,7 +59,10 @@ function NewsAnnouncement() {
                     {
                         isloading ?
                         <div className="text-center">
-                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                    <div>
+                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                         </div>
                                 </div>
                                 :
                                 <div>

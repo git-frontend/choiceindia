@@ -2,7 +2,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import ResearchService from "../../Services/ResearchService";
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
@@ -317,7 +317,10 @@ function OurPerformance() {
                     {
                       isloading ?
                         <div className="text-center">
-                          <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                          <div>
+                            {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                            </div>
                         </div>
                         :
                         <div className="progress-bar-performance">

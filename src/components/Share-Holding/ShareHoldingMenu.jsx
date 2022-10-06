@@ -8,7 +8,7 @@ import "../Corporate-Governance/corporate-governance.scss";
 import "../Annual-Report/annual-report.scss";
 import { OverlayTrigger } from "react-bootstrap";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
 import { Accordion } from "react-bootstrap";
 import download1 from '../../assets/images/file-download/export.webp';
@@ -77,7 +77,10 @@ function ShareHoldingMenu() {
                     {
                         isloading ?
                         <div className="text-center">
-                        <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                        <div>
+                            {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                            </div>
                     </div>
                     :
                     <div>

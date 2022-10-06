@@ -697,7 +697,34 @@
         border-radius: 24px;
         z-index: 99;
         text-align: center;
-
+        @media (max-width: $sm) {
+            width: 100%;
+            position: relative;
+            top: inherit;
+            bottom: inherit;
+            border-radius: 0;
+            margin-top: 40px;
+            &::before{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                left: -5%;
+                position: absolute;
+                top: 0;
+            }
+            &::after{
+                content: '';
+                height: 100%;
+                display: block;
+                background-color: $bgcolor-green;
+                width: 10%;
+                right: -5%;
+                position: absolute;
+                top: 0;
+            }
+        }
         h3 {
             font-size: 1.7rem;
             color: $whiteColor;
@@ -710,8 +737,8 @@
             margin: 2rem 0 3rem 0;
         }
 
-        @media (max-width: $md) {
-            width: 31%;
+        @media (min-width:767px) and (max-width: $md) {
+            width: 35%;
         }
     }
 
@@ -1507,24 +1534,25 @@
         }
 
         .item-next1 {
-            h3 {
-                display: none;
-            }
+           
+            // h3 {
+            //     display: none;
+            // }
 
-            p {
-                display: none;
-            }
+            // p {
+            //     display: none;
+            // }
 
-            background: transparent;
-            left: inherit;
-            top: inherit;
-            bottom: inherit;
-            padding: 0;
-            width: auto;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            margin-top: 2.5rem;
+            // background: transparent;
+            // left: inherit;
+            // top: inherit;
+            // bottom: inherit;
+            // padding: 0;
+            // width: auto;
+            // position: relative;
+            // display: flex;
+            // justify-content: center;
+            // margin-top: 2.5rem;
         }
     }
 

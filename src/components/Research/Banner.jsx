@@ -32,12 +32,12 @@ function Banner() {
                 <SingleTemplate /> :
                 <div className="col-md-6 d-none d-sm-block">
                   <div className="rightsec">
-                    {/* <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
+                    <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
                       <source src={Researchbanner}  type='video/mp4' />
-                    </video> */}
+                    </video>
                     {/* <video src={Researchbanner} width="600" height="300" controls="controls" autoplay="true" /> */}
                     {/* <video src={Researchbanner} alt={"Banner Images"} className={"img-fluid"} width={"957"} height={"623"} type={"video/mp4"}  autoPlay></video> */}
-                    <img src={ImageBanner} alt="Banner Images" className="img-fluid " width={"957"} height={"623"}></img>
+                    {/* <img src={ImageBanner} alt="Banner Images" className="img-fluid " width={"957"} height={"623"}></img> */}
                   </div>
                 </div>
             }

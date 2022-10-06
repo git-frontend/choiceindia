@@ -10,7 +10,7 @@ import Template3 from "../Common-features/Template3";
 import Template5 from "../Common-features/Template5";
 import Template6 from "../Common-features/Template6";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function SBDesk() {
 
@@ -289,7 +289,10 @@ function SBDesk() {
             </div> : ''} */}
             {showLoader ? 
               <div className="text-center">
-              <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+              <div>
+                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                 </div>
           </div>
           :
             <div>

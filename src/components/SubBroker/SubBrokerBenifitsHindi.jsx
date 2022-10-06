@@ -108,7 +108,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार और सम्मेनों के माध्यम से प्रशिक्षण</h4>
@@ -117,7 +117,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लेटफॉर्म (ऐप और वेब)</h4>
@@ -126,7 +126,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"Transparent &amp; Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"Transparent &amp; Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पारदर्शी और विकासोन्मुखी बिजनेस मॉडल</h4>
@@ -175,7 +175,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Training} alt={"Sub Broker Training through Webinars &amp; Conferences"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Training} alt="Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>वेबिनार और सम्मेनों के माध्यम से प्रशिक्षण</h4>
@@ -184,7 +184,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Trading} alt={"Cutting Edge Trading Platforms (App &amp Web)"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Trading} alt="Cutting-edge Trading Platforms (App &amp; Web)" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>अत्याधुनिक ट्रेडिंग प्लेटफॉर्म (ऐप और वेब)</h4>
@@ -193,7 +193,7 @@ function SubBrokerBenifitsHindi() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <LazyLoader src={Transport} alt={"Transparent Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
+                                            <img src={Transport} alt={"Transparent Growth Oriented Business Model"} className={"img-fluid"} width={"74"} height={"73"} />
                                             {/* <img src={Transport} alt="Transparent &amp; Growth-oriented Business Model" className="img-fluid" width="74" height="73" /> */}
                                         </span>
                                         <h4>पारदर्शी और विकासोन्मुखी बिजनेस मॉडल</h4>
