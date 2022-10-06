@@ -91,8 +91,8 @@ function FileDownloadFaq() {
                                                                                             <div className="text">{res.download_subtitle}</div>
                                                                                             {
                                                                                                 res.download_pdf ?
-                                                                                                    <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div> :
-                                                                                                    <div className="download"></div>
+                                                                                                    <div><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div> :
+                                                                                                    <div></div>
                                                                                             }
 
                                                                                         </li>

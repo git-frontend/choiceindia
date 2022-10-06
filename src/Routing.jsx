@@ -541,7 +541,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/intraday-charges' element={
+                        {/* <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
@@ -561,7 +561,7 @@ function Routing() {
                             <React.Suspense>
                                 < Lazysubbrokertelagu />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
