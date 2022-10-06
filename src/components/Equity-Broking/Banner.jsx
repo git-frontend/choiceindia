@@ -28,9 +28,11 @@ function Banner() {
                         <div className="col-md-6 d-none d-sm-block">
                             <div className="rightsec">
                            
-                               <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} /> 
+                               {/* <LazyLoader src={Bannerimage} alt={"Banner Images"} className={"img-fluid"} width={"609"} height={"476"} />  */}
                                {/* <video src={Researchbanner} autoPlay loop muted className={"img-fluid top-banner-img"} width={"700"} height={"650"}/> */}
-                                
+                               <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
+                      <source src={Researchbanner}  type='video/mp4' />
+                    </video>
                             </div>
                         </div>
                     </div>
