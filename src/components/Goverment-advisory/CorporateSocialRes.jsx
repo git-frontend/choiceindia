@@ -14,6 +14,7 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 
+
 function CorporateSocialRes() {
   const settings = {
     infinite: true,
@@ -70,22 +71,30 @@ function CorporateSocialRes() {
             </div>
             <Slider {...settings} className="slider-list-slider">
                   <div className="slider-list-itm">
-                    <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img>
+                    {/* <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img> */}
+                    <span></span>
+                    <LazyLoader src={lionsclubinternational} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
+                  </div>
+                  
+                  <div className="slider-list-itm">
+                     {/* <img src={kiit} alt="Banner Images" className="img-flguid "></im> */}
+                     <LazyLoader src={kiit} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
                   </div>
                   <div className="slider-list-itm">
-                     <img src={kiit} alt="Banner Images" className="img-fluid "></img>
+                     {/* <img src={chothmalpatodia} alt="Banner Images" className="img-fluid "></img> */}
+                     <LazyLoader src={chothmalpatodia} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
                   </div>
                   <div className="slider-list-itm">
-                     <img src={chothmalpatodia} alt="Banner Images" className="img-fluid "></img>
+                    {/* <img src={bissauwelfare} alt="Banner Images" className="img-fluid "></img> */}
+                    <LazyLoader src={bissauwelfare} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
                   </div>
                   <div className="slider-list-itm">
-                    <img src={bissauwelfare} alt="Banner Images" className="img-fluid "></img>
+                     {/* <img src={rajasthanvidyarthi} alt="Banner Images" className="img-fluid "></img> */}
+                     <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
                   </div>
                   <div className="slider-list-itm">
-                     <img src={rajasthanvidyarthi} alt="Banner Images" className="img-fluid "></img>
-                  </div>
-                  <div className="slider-list-itm">
-                    <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img>
+                    {/* <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img> */}
+                    <LazyLoader src={lionsclubinternational} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
                   </div>
                 </Slider>
           </div>
