@@ -2,6 +2,7 @@
 import React from "react";
 import Banner from './Banner';
 import Whatwethink from './Whatwethink';
+import CorporateSocialRes from './CorporateSocialRes';
 import { useState } from "react";
 
 import Template2 from '../Common-features/Template2';
@@ -38,6 +39,7 @@ function Services() {
           <div className="mainwrapper services-parent">
             <Banner />
            <Whatwethink/>
+           <CorporateSocialRes/>
           </div>
       }
 

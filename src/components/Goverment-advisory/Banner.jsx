@@ -17,7 +17,7 @@ function Banner() {
       <section className="goverment-advisorysection">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 left-sec">
+            <div className=" left-sec">
               <h1 className="big-ttl title">Government Advisory</h1>
               <p className="para">We collaborate for pioneering projects to consult for the development and progress of our nation. Our experienced research team is capable to deploy research, sampling & survey operations.
                 </p>
