@@ -22,7 +22,14 @@
 .what-we-thinksection{
     padding: 4.231rem 0rem;
     .sectitle{
-        padding-bottom: 4.769rem;
+        padding-bottom: 3.769rem;
             padding-top: 3rem;
     }
-}
+    .mainpara{
+        font-size: 1.846rem;
+        line-height: 2.769rem;
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
+        padding-top: 1.5rem;
+    }
+    }
