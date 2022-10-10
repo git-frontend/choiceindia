@@ -1,0 +1,28 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.goverment-advisorysection{
+    padding: 4.231rem 0rem;
+    background-color: $bgcolordark;
+    .left-sec{
+        .title{
+            color: $lightColor;
+            padding-bottom: 4.769rem;
+            padding-top: 3rem;
+        }
+        .para{
+            color: $lightColor;
+            font-size: 2rem;
+            line-height: 3rem;
+            font-family: $font-family-poppins-regular;
+        }
+    }
+}
+.what-we-thinksection{
+    padding: 4.231rem 0rem;
+    .sectitle{
+        padding-bottom: 4.769rem;
+            padding-top: 3rem;
+    }
+}
