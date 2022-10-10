@@ -112,7 +112,7 @@ const Lazysubbrokergujarati = React.lazy(() => import('./components/SubBroker/Su
 const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
 const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
 
-
+const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 function Routing() {
 
 
@@ -567,7 +567,11 @@ function Routing() {
                                 < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
-
+                        <Route exact path='/goverment-advisory' element={
+                            <React.Suspense>
+                                < Lazygovernementadvisory />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
