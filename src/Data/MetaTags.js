@@ -1240,33 +1240,33 @@ const meta_tags = {
 
     "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
 
-    "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", "content": "Jiffy Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": `` },
+    "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": `` },
 
     "share-market-app": {
-        'title': "Best Share Market App in India - Download Jiffy Trading App", "content": "Jiffy is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Jiffy Stock Market App now.","link":"https://choiceindia.com/share-market-app",
+        'title': "Best Share Market App in India - Download Choice FinX Trading App", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.","link":"https://choiceindia.com/share-market-app",
         "faqcript": `<script type="application/ld+json">
      {
        "@type": "FAQPage",
        "mainEntity": [{
          "@type": "Question",
-         "name": "How much time is required to open an account with Jiffy - Share Market App?",
+         "name": "How much time is required to open an account with Choice FinX - Share Market App?",
          "acceptedAnswer": {
            "@type": "Answer",
-           "text": "To open an account online with Jiffy it takes 5-7 minutes if you have all the documents handy."
+           "text": "To open an account online with Choice FinX it takes 5-7 minutes if you have all the documents handy."
          }
        },{
          "@type": "Question",
-         "name": "What are the charges for opening an account in Jiffy?",
+         "name": "What are the charges for opening an account in Choice FinX?",
          "acceptedAnswer": {
            "@type": "Answer",
-           "text": "There are no charges for opening an account in the stock market app - Jiffy."
+           "text": "There are no charges for opening an account in the stock market app - Choice FinX."
          }
        },{
          "@type": "Question",
-         "name": "What are the documents required to open an account in Jiffy?",
+         "name": "What are the documents required to open an account in Choice FinX?",
          "acceptedAnswer": {
            "@type": "Answer",
-           "text": "You will require the following documents to open an account in the Jiffy share market app:
+           "text": "You will require the following documents to open an account in the Choice FinX share market app:
      PAN Card
      - As per the SEBI Regulations, a PAN Card is mandatory for any investment in capital markets.
      Aadhaar Card
@@ -1282,24 +1282,24 @@ const meta_tags = {
          }
        },{
          "@type": "Question",
-         "name": "Can anyone open a free trading account with Jiffy?",
+         "name": "Can anyone open a free trading account with Choice FinX?",
          "acceptedAnswer": {
            "@type": "Answer",
-           "text": "Any individual of 18 years and above can open a free trading account with Jiffy. However, the individual must hold the required documents to open an account."
+           "text": "Any individual of 18 years and above can open a free trading account with Choice FinX. However, the individual must hold the required documents to open an account."
          }
        },{
          "@type": "Question",
-         "name": "What are the brokerage charges in Jiffy - Share Market App?",
+         "name": "What are the brokerage charges in Choice FinX - Share Market App?",
          "acceptedAnswer": {
            "@type": "Answer",
            "text": "Choice offers the lowest brokerage charges in the industry. Check the brokerage charges on our website."
          }
        },{
          "@type": "Question",
-         "name": "Can I trade in all segments using the Jiffy App?",
+         "name": "Can I trade in all segments using the Choice FinX App?",
          "acceptedAnswer": {
            "@type": "Answer",
-           "text": "Yes, you can trade in Equity, Currency, Commodity, and F&O using the Jiffy app."
+           "text": "Yes, you can trade in Equity, Currency, Commodity, and F&O using the Choice FinX app."
          }
        }]
      }
@@ -1471,27 +1471,27 @@ const meta_tags = {
     `},
 
     "online-trading-app": {
-        'title': "Jiffy Trading App - Best Indian Online Stock Trading App (Android & iOS)", "content": "Jiffy is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Jiffy online mobile trading app is available for Android & iPhone devices.",'link':"https://choiceindia.com/online-trading-app",
+        'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.",'link':"https://choiceindia.com/online-trading-app",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
-        "name": "Can I do trading in all segments with the Jiffy Trading App?",
+        "name": "Can I do trading in all segments with the Choice FinX Trading App?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Jiffy supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency"
+          "text": "Yes, Choice FinX supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency"
         }
       },{
         "@type": "Question",
-        "name": "Is the Jiffy Trading app safe for trading?",
+        "name": "Is the Choice FinX Trading app safe for trading?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "We use comprehensive and proven world-class safety measures to ensure optimum security."
         }
       },{
         "@type": "Question",
-        "name": "Can I open a Demat Account from Jiffy Trading App?",
+        "name": "Can I open a Demat Account from Choice FinX Trading App?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Sure, the entire process takes just 10 minutes and is completely paperless!"
@@ -1505,10 +1505,10 @@ const meta_tags = {
         }
       },{
         "@type": "Question",
-        "name": "How to apply for an IPO in Jiffy Trading App?",
+        "name": "How to apply for an IPO in Choice FinX Trading App?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Below are the steps to apply for IPOs via Jiffy,
+          "text": "Below are the steps to apply for IPOs via Choice FinX,
     
     Go to the IPO Section => IPO Listing => Open IPO
     Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details
@@ -1518,31 +1518,31 @@ const meta_tags = {
         }
       },{
         "@type": "Question",
-        "name": "Is Jiffy Trading App Available in Other Regional Languages?",
+        "name": "Is Choice FinX Trading App Available in Other Regional Languages?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Jiffy has options for Hindi, Gujarati, Marathi and Malayalam as of now."
+          "text": "Yes, Choice FinX has options for Hindi, Gujarati, Marathi and Malayalam as of now."
         }
       },{
         "@type": "Question",
-        "name": "Can I get research reports in the Jiffy Trading App?",
+        "name": "Can I get research reports in the Choice FinX Trading App?",
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls."
         }
       },{
         "@type": "Question",
-        "name": "How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Jiffy?",
+        "name": "How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit & Loss statements in Choice FinX?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself."
+          "text": "All of the above reports and more are available in the ‘Reports’ section of Choice FinX for the current year. For reports of previous years, you can login to the ‘Back office’ section from Choice FinX itself."
         }
       },{
         "@type": "Question",
-        "name": "Is Jiffy Trading App Available on Android & iOS platform?",
+        "name": "Is Choice FinX Trading App Available on Android & iOS platform?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Yes, Jiffy is available on both Android & iOS."
+          "text": "Yes, Choice FinX is available on both Android & iOS."
         }
       }]
     }

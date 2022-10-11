@@ -10,7 +10,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-secnd text-center pb-4">Jiffy Share Market App Related FAQs</h2>
+               <h2 className="title-secnd text-center pb-4">Choice FinX Share Market App Related FAQs</h2>
             </div>
          </div>
          <div className="row">
@@ -18,26 +18,26 @@ return (
                <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="0" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>  How much time is required to open an account with Jiffy - Share Market App?</h4>
+                        <h4 className='faq-header'>  How much time is required to open an account with Choice FinX - Share Market App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     To open an account online with Jiffy it takes 5-7 minutes if you have all the documents handy.
+                     To open an account online with Choice FinX it takes 5-7 minutes if you have all the documents handy.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>What are the charges for opening an account in Jiffy?</h4>
+                        <h4 className='faq-header'>What are the charges for opening an account in Choice FinX?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     There are no charges for opening an account in the stock market app - Jiffy.
+                     There are no charges for opening an account in the stock market app - Choice FinX.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>What are the documents required to open an account in Jiffy?</h4>
+                        <h4 className='faq-header'>What are the documents required to open an account in Choice FinX?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     You will require the following documents to open an account in the Jiffy share market app:<br/><br/>
+                     You will require the following documents to open an account in the Choice FinX share market app:<br/><br/>
                      PAN Card<br/>
                      <strong>– As per the SEBI Regulations, a PAN Card is mandatory for any investment in capital markets.</strong><br/><br/>
                      Aadhaar Card<br/>
@@ -54,15 +54,15 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="3" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can anyone open a free trading account with Jiffy?</h4>
+                        <h4 className='faq-header'>Can anyone open a free trading account with Choice FinX?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     Any individual of 18 years and above can open a free trading account with Jiffy. However, the individual must hold the required documents to open an account.
+                     Any individual of 18 years and above can open a free trading account with Choice FinX. However, the individual must hold the required documents to open an account.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
                      <Accordion.Header >
-                        <h4 className='faq-header'>What are the brokerage charges in Jiffy - Share Market App?</h4>
+                        <h4 className='faq-header'>What are the brokerage charges in Choice FinX - Share Market App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      Choice offers the lowest brokerage charges in the industry. Check the <Link to="/brokerage-charges">brokerage charges</Link> on our website.
@@ -70,10 +70,10 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I trade in all segments using the Jiffy App?</h4>
+                        <h4 className='faq-header'>Can I trade in all segments using the Choice FinX App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                     Yes, you can trade in Equity, Currency, Commodity, and F&O using the Jiffy app.
+                     Yes, you can trade in Equity, Currency, Commodity, and F&amp;O using the Choice FinX app.
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>

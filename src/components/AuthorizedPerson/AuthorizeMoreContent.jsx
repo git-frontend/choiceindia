@@ -78,7 +78,7 @@ const RemisierMoreContent = () => {
             <li>
             Advanced Technical Assistance
                 <ol>
-                    <li>Cutting-edge Trading Platforms (<Link to="/online-trading-app">Jiffy Trading App</Link> &amp; Advanced Website)</li>
+                    <li>Cutting-edge Trading Platforms (<Link to="/online-trading-app">Choice FinX Trading App</Link> &amp; Advanced Website)</li>
                     <li>Hassle-Free Software for Tracking and Monthly Reports</li>
                     <li>Dedicated Whatsapp and Telegram Channels</li>
                     <li>Training through Webinars and Conferences</li>

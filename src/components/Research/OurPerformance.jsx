@@ -348,7 +348,7 @@ function OurPerformance() {
                                   </svg>
                                   <div className="cont-perc">
                                     <h3 className="sgnl-txt">{Math.round(data) || 0}%</h3>
-                                    <h4>jiffy signal</h4>
+                                    <h4>Choice FinX signal</h4>
                                   </div>
                                 </div>
 
