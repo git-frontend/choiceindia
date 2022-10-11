@@ -18,30 +18,20 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 function CorporateSocialRes() {
   const settings = {
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     arrows: false,
     slidesToShow: 5,
-    autoplay: false,
-    margin: 15,
+    autoplay: true,
     dots: false,
-    autoplaySpeed: 800,
-    slidesToScroll: 1,
+    autoplaySpeed: 3000,
+    slidesToScroll: 3,
     responsive: [
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 5,
-          slidesToScroll: 2,
+          slidesToShow: 4,
+          slidesToScroll: 1,
           adaptiveHeight: true,
-          dots:false,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots:false,
         },
       },
       {
@@ -49,7 +39,6 @@ function CorporateSocialRes() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:false,
         },
       },
     ],
@@ -67,36 +56,44 @@ function CorporateSocialRes() {
         <div className="container">
           <div className="row">
             <div className="col-md-12 ">
-              <h1 className="title-first sectitle">Our Interest in Social Development Sector</h1>
+              <h1 className="title-first sectitle">Corporate Social Responsibilities Efforts</h1>
             </div>
-            <Slider {...settings} className="slider-list-slider">
-                  <div className="slider-list-itm">
-                    {/* <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img> */}
-                    <span></span>
-                    <LazyLoader src={lionsclubinternational} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
+                <div className="col-md-12">
+                  <div className="main-social-list">
+                    <Slider {...settings} className="social-list-slider">
+                      <div className="social-item">
+                        <span className="img-item">
+                          <LazyLoader src={lionsclubinternational} className={"img-fluid"}  alt={"loading"} />
+                        </span>
+                      </div>
+                      <div className="social-item">
+                        <span className="img-item">
+                          <LazyLoader src={kiit} className={"img-fluid"}   alt={"loading"} />
+                        </span>
+                      </div>
+                      <div className="social-item">
+                        <span className="img-item">
+                          <LazyLoader src={chothmalpatodia} className={"img-fluid"}  alt={"loading"} />
+                        </span>
+                      </div>
+                      <div className="social-item">
+                        <span className="img-item">
+                          <LazyLoader src={bissauwelfare} className={"img-fluid"}   alt={"loading"} />
+                        </span>
+                      </div>
+                      <div className="social-item">
+                        <span className="img-item">
+                        <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"}   alt={"loading"} />
+                        </span>
+                      </div>
+                      <div className="social-item">
+                        <span className="img-item">
+                        <LazyLoader src={lionsclubinternational} className={"img-fluid"}   alt={"loading"} />
+                        </span>
+                      </div>
+                    </Slider>
                   </div>
-                  
-                  <div className="slider-list-itm">
-                     {/* <img src={kiit} alt="Banner Images" className="img-flguid "></im> */}
-                     <LazyLoader src={kiit} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
-                  </div>
-                  <div className="slider-list-itm">
-                     {/* <img src={chothmalpatodia} alt="Banner Images" className="img-fluid "></img> */}
-                     <LazyLoader src={chothmalpatodia} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
-                  </div>
-                  <div className="slider-list-itm">
-                    {/* <img src={bissauwelfare} alt="Banner Images" className="img-fluid "></img> */}
-                    <LazyLoader src={bissauwelfare} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
-                  </div>
-                  <div className="slider-list-itm">
-                     {/* <img src={rajasthanvidyarthi} alt="Banner Images" className="img-fluid "></img> */}
-                     <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
-                  </div>
-                  <div className="slider-list-itm">
-                    {/* <img src={lionsclubinternational} alt="Banner Images" className="img-fluid "></img> */}
-                    <LazyLoader src={lionsclubinternational} className={"img-fluid"} width={"224"} height={"349"} alt={"loading"} />
-                  </div>
-                </Slider>
+              </div>
           </div>
     </div>
       </section >

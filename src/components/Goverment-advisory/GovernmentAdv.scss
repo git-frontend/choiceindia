@@ -63,10 +63,33 @@
     }
     }
     .CorporateSocial-section{
-        .slider-list-slider{
-            padding: 3rem 0rem ;
-            .slider-list-itm{
-                text-align: center;
+        .sectitle{
+            padding-bottom: 3.769rem;
+                padding-top: 3rem;
+                @media (max-width:$sm-x) {
+                    text-align: center;
+                    padding-bottom:0;
+                    padding-top: 0;
+                }
             }
-        }
+
+        .main-social-list {
+            padding-bottom: 6rem;
+            position: relative;
+            .social-list-slider {
+                padding: 7rem 0rem;
+    
+                .social-item {
+                    padding: 0 3.5rem;
+                    .img-item{
+                        // display: inline-block;
+                        // margin: auto;
+                        // text-align: center;
+                        display: flex;
+                         align-items: center;
+                         height: 190px;
+                    }
+                }
+    }
+}
     }
