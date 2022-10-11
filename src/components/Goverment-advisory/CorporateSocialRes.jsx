@@ -24,7 +24,7 @@ function CorporateSocialRes() {
     autoplay: true,
     dots: false,
     autoplaySpeed: 3000,
-    slidesToScroll: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 992,
@@ -37,7 +37,7 @@ function CorporateSocialRes() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
         },
       },

@@ -18,8 +18,7 @@
         }
         .title{
             color: $lightColor;
-            padding-bottom: 4.769rem;
-            padding-top: 3rem;
+            padding: 4.5rem 0rem;
             @media (max-width:$sm-x) {
                 text-align: center;
                 padding-top: 1.5rem;
@@ -39,15 +38,19 @@
     }
 }
 .what-we-thinksection{
-    padding: 4.231rem 0rem;
+    padding: 8.231rem 0rem;
+    @media (max-width:$sm-x) {
+        padding:  5.231rem 0rem;
+    }
+
     .sectitle{
-        padding-bottom: 3.769rem;
-            padding-top: 3rem;
+        padding-bottom: 1.769rem;
+            line-height: 5.25rem;
             @media (max-width:$sm-x) {
                 text-align: center;
                 // padding-top: 1.5rem;
                 padding-bottom: 1.5rem;
-                padding-top: 0;
+               
             }
     }
     .mainpara{
@@ -63,9 +66,10 @@
     }
     }
     .CorporateSocial-section{
+        padding-bottom: 7rem;
         .sectitle{
             padding-bottom: 3.769rem;
-                padding-top: 3rem;
+                line-height: 5.25rem;
                 @media (max-width:$sm-x) {
                     text-align: center;
                     padding-bottom:0;
@@ -74,17 +78,26 @@
             }
 
         .main-social-list {
-            padding-bottom: 6rem;
+    
             position: relative;
             .social-list-slider {
-                padding: 7rem 0rem;
-    
+                padding: 4rem 0rem;
+                @media (max-width:$sm-x) {
+                    padding: 2rem 0rem;
+                }
+                @media (max-width:$md) {
+                    padding: 2rem 0rem;
+                }
+                
                 .social-item {
-                    padding: 0 3.5rem;
+                    padding: 0 1rem;
+                    @media (max-width:$md) {
+                        padding: 0 0.5rem;
+                    }
+                    @media (max-width:$sm-x) {
+                        padding: 0 0.5rem;
+                    }
                     .img-item{
-                        // display: inline-block;
-                        // margin: auto;
-                        // text-align: center;
                         display: flex;
                          align-items: center;
                          height: 190px;
