@@ -43,10 +43,10 @@ function FinancialInfo() {
 
   return (
     <div>
-
-      {
-        skeleton ? <Template1 /> :
-          <div className="code-conduct-parent investor-info-parent">
+      
+       {
+        window.innerWidth < 770 ?
+        <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
 
               <Banner />
@@ -57,9 +57,31 @@ function FinancialInfo() {
 
 
             </div>
-          </div>
-      }
+          </div>:
+          <div>
 
+          {
+            skeleton ? <Template1 /> :
+              <div className="code-conduct-parent investor-info-parent">
+                <div className="mainwrapper">
+    
+                  <Banner />
+    
+                  <ChoiceLTP></ChoiceLTP>
+    
+                  <FinancialInfoMenu />
+    
+    
+                </div>
+              </div>
+          }
+    
+        </div>
+
+        
+       }
+      
+    
     </div>
   );
 }

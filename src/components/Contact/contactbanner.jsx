@@ -173,7 +173,7 @@ function Contactbanner() {
               </div>
               
               <div className="uploadbtn mt-3 d-flex align-items-center">
-              <div style={{color:"green"}} className="feel-msg">{data}</div>
+              <div className="feel-msg">{data}</div>
                 <Button variant="primary"
                   type="submit" className="btn-bg btn-bg-dark sendbtn">
                   { isloader===false ? 

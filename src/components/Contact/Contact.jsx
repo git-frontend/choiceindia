@@ -22,7 +22,7 @@ function Contact() {
     setSkeleton(() => false);
   }, 200)
 
-  
+
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -38,17 +38,28 @@ function Contact() {
 
   return (
     <div className="contactbody">
-
       {
-        skeleton ?
-        <div className="contact-temp-skeleton">
-          <ContactTemplate />
-        </div> :
+        window.innerWidth < 770 ?
           <div>
             <Contactbanner />
             <Contactdetail />
+          </div> :
+
+          <div>
+            {
+              skeleton ?
+                <div className="contact-temp-skeleton">
+                  <ContactTemplate />
+                </div> :
+                <div>
+                  <Contactbanner />
+                  <Contactdetail />
+                </div>
+            }
           </div>
       }
+
+
 
     </div>
   );

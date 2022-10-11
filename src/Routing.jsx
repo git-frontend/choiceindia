@@ -103,9 +103,14 @@ const LazyCampaignDematAccount = React.lazy(() => import('./components/Open-dema
 const LazyTranscation = React.lazy(() => import('./components/Related-Party-Transaction/Transaction'));
 const LazyInvestorPresentation = React.lazy(() => import('./components/Investor-Presentation/InvestorPresentation'));
 const LazyClosureTrading = React.lazy(() => import('./components/ClosureTradingWindow/ClosureTrading'));
+const LazyMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor/MutualFundDistributor'));
 const LazyPartnerAssests = React.lazy(() => import('./components/Partner-Assests/PartnerAssests'));
 const LazyInvestorAdvidory = React.lazy(() => import('./components/Investor-advisory/investor-advisory'));
-
+const LazyIntradayCharges = React.lazy(() => import('./components/Intraday-Charges/IntradayCharges'));
+const Lazysubbrokermarathi = React.lazy(() => import('./components/SubBroker/SubBrokerMarathi'));
+const Lazysubbrokergujarati = React.lazy(() => import('./components/SubBroker/SubBrokerGujarati'));
+const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
+const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
 
 
 function Routing() {
@@ -117,7 +122,8 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
+               
                 {/* <Header /> */}
                 <div className='App-Body'>
                     <Routes>
@@ -517,6 +523,11 @@ function Routing() {
                                 < LazyCampaignDematAccount />
                             </React.Suspense>
                         } />
+                        <Route exact path='/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyMutualFundDistributor />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/partner-assets/emitra' element={
                             <React.Suspense>
@@ -527,6 +538,33 @@ function Routing() {
                         <Route exact path='/advisory-for-investors' element={
                             <React.Suspense>
                                 < LazyInvestorAdvidory />
+                            </React.Suspense>
+                        } />
+
+                        {/* <Route exact path='/intraday-charges' element={
+                            <React.Suspense>
+                                < LazyIntradayCharges />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/marathi/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokermarathi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/gujarati/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokergujarati />
+                            </React.Suspense>
+                        } />
+                        
+                        <Route exact path='/telagu/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokertelagu />
+                            </React.Suspense>
+                        } /> */}
+                        <Route exact path='/hindi/mutual-fund-distributor' element={
+                            <React.Suspense>
+                                < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
 

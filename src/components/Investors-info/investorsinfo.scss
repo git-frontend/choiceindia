@@ -264,18 +264,25 @@ body{
     }
 
     .title {
-        color: $primary;
-        font-size: 3.5rem;
-        line-height: 5.25rem;
+        color: #221f20;
         font-family: $font-family-poppins-regular;
+        font-size: 3.5rem;
         font-weight: 600;
-        text-align: center;
+        line-height: 5.25rem;
         padding-bottom: 6rem;
+     text-align: center;
         @media screen and (max-width:767px) {
             font-size: 2.3rem;
             line-height: 3.25rem;
             text-align: left;
             padding-bottom: 4rem;
+        }
+        @media screen and (max-width:$xs) {
+            font-size: 2rem;
+            line-height: 3rem;
+            text-align: left;
+            padding-bottom: 3rem;
+            max-width: 200px;
         }
     }
 
@@ -567,7 +574,8 @@ body{
     }
 }
 .check-menu-main{
-    min-height: 700px;
+    min-height: 300px;
+    margin-bottom: 25rem;
 }
 
 .m-auto{

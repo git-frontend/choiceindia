@@ -6,6 +6,20 @@ import { Accordion } from "react-bootstrap";
 function DematFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+
+    /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
     return (
         <div>
 
@@ -63,7 +77,7 @@ function DematFaq() {
                                     तुम्ही चॉईस ब्रोकिंगसह किमान शून्य शुल्कातही डिमॅट खाते सुरु करु शकता.
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="5" className='faq-item'>
+                                <Accordion.Item eventKey="5" className='faq-item' id="Faqid">
                                             <Accordion.Header> <h4 className='faq-header'> डिमॅट खाते न उघडता मी ऑनलाईन ट्रेडिंग खाते कसे ओपन करु शकतो?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             एनएसई/ बीएसई सेक्यूरिटीजसाठी तुमच्या ट्रेडिंग खात्यासह डिमॅट खाते असणे आवश्यक असते. चलन (Currency) आणि कमोडिटीसाठी डिमॅट खात्याची आवश्यकता नसते. त्यामुळे जर तुमच्या ट्रेडिंगच्या गरजा मर्यादित असतील, तर तुम्हाला ट्रेडिंग खाते निवडणे सोईचे राहिल. तसेच ब्रोकरसोबतच्या कागदपत्रांमध्ये त्याचा स्पष्ट उल्लेख करणे अनिवार्य असते. यासंबंधी आधिक माहितीसाठी care@choiceindia.com ला एकदा आवश्य भेट द्या. किंवा आमच्या ग्राहक सेवा टीमशी संपर्क साधू शकता. आमचे प्रतिनिधी तुम्हाला योग्य ते मार्गदर्शन करुन तुमच्या सर्व शंकांचे निरसन करतील.
@@ -179,7 +193,7 @@ function DematFaq() {
                                         </Accordion.Item>
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;कमी पहा</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;कमी पहा</button>
 
                                     </Accordion>
 

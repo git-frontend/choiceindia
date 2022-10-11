@@ -3,7 +3,7 @@
 
 
 .research-banner{
-    padding:5rem 0 15rem 0;
+    padding:2rem 0 15rem 0;
     overflow: inherit;
     .title{
         color: $primary;
@@ -211,6 +211,9 @@
                       -webkit-box-orient: vertical;
                       margin: 0;
                     }
+                    .ups-potn{
+                      margin-top: 2rem;
+                    }
                     p{
                       margin: 0;
                     }
@@ -221,8 +224,9 @@
                         align-items: flex-end;
                         position: absolute;
                         bottom: 0.5rem;
-                        left: 2rem;
+                        left: 0;
                         width: 100%;
+                        padding-left: 2rem;
                         .date-post{
                             font-size: 1.25rem;
                             color: $primary;
@@ -287,6 +291,7 @@
                           left: inherit;
                           top: inherit;
                           bottom: inherit;
+                          padding-left: 0;
                         }
                     }
                     @media (max-width: $xs) {
@@ -604,7 +609,7 @@
             .curnt-mrk-price{
               position: absolute;
               bottom: inherit;
-              top: 0;
+              top: 0.6rem;
               h4{
                 font-size: 1.25rem;
                 color: $secondary;

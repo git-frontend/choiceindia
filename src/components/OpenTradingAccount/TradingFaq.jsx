@@ -6,6 +6,19 @@ import { Accordion } from "react-bootstrap";
 function DematFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
+    
+    /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
     return (
         <div>
 
@@ -75,7 +88,7 @@ function DematFaq() {
                                     Andheri (East), Mumbai 400099.,Maharastra
                                     </Accordion.Body>
                                 </Accordion.Item>
-                                <Accordion.Item eventKey="5" className='faq-item'>
+                                <Accordion.Item eventKey="5" className='faq-item' id="faqid">
                                             <Accordion.Header> <h4 className='faq-header'> Is it Safe to Open a Trading Account Online?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             It’s alright to be concerned about security when it comes to money, but the regulators that govern the market have very strict guidelines about maintaining and operating demat accounts. The technology employed is safe and done in a way that makes Trading/Demat Accounts virtually unhackable.<br />
@@ -103,7 +116,7 @@ function DematFaq() {
                                         </Accordion.Item>
                                         
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button>
 
                                     </Accordion>
 

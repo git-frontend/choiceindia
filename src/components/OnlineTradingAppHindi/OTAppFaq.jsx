@@ -3,6 +3,20 @@ import { Accordion } from "react-bootstrap";
 function OTAppFaq() {
 const [view, setview] = useState(false);
 const [show, setshow] = useState(false);
+
+  /** scroll id view */
+
+  function chapterScroll(id) {
+   var element = document.getElementById(id);
+   var headerOffset = 140;
+   var elementPosition = element.getBoundingClientRect().top;
+   var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+   window.scrollTo({
+     top: offsetPosition,
+     behavior: "smooth"
+   });
+ }
+
 return (
 <div>
    <section className="Dematfaq faq-white">
@@ -55,7 +69,7 @@ return (
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      जिफी के माध्यम से आईपीओ के लिए आवेदन करने के चरण नीचे दिए गए हैं-<br/>
-                     आईपीओ अनुभाग पर जाएं => आईपीओ लिस्टिंग => ओपन आईपीओ<br/>
+                     आईपीओ अनुभाग पर जाएं &#8658; आईपीओ लिस्टिंग &#8658; ओपन आईपीओ<br/>
                      IPO पर टैप करें, और IPO विवरण लागू करने या देखने के लिए सीधे 'सदस्यता लें' पर क्लिक करें|<br/>
                      सब्स्क्राइब स्क्रीन/पेज पर, आपको लॉट की संख्या, कट-ऑफ मूल्य, यूपीआई आईडी दर्ज करनी होगी और सत्यापित करें पर टैप करना होगा।
 <br/>
@@ -63,7 +77,7 @@ return (
                         आप आईपीओ लेनदेन अनुभाग में अपनी आईपीओ बोली की स्थिति की जांच कर सकते हैं|
                      </Accordion.Body>
                   </Accordion.Item>
-                  <Accordion.Item eventKey="5" className='faq-item'>
+                  <Accordion.Item eventKey="5" className='faq-item'id="faqid">
                      <Accordion.Header>
                         <h4 className='faq-header'>क्या जिफी ट्रेडिंग ऐप अन्य भाषाओं में उपलब्ध है?</h4>
                      </Accordion.Header>
@@ -94,7 +108,7 @@ return (
                      हां, जिफी एंड्रॉयड और आईओएस दोनों पर उपलब्ध है।
                      </Accordion.Body>
                   </Accordion.Item>
-                  <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                  <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
                </Accordion>
                :
                <div className="accordion-view-more">

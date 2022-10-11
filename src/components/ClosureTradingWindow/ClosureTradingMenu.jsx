@@ -6,25 +6,29 @@ import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import closureTradingService from "../../Services/ClosureTradingService";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function ClosureTradingMenu() {
 
     const [data, setData] = useState();
-
+    const [isloading,setisloading ] = useState(true);
     const [trigger, setTrigger] = useState(false);
 
     function loadClosureTradingpdf() {
         closureTradingService.ClosureTrading().then(
             res => {
                 if (res) {
+                    setisloading(false);
                     setData(res.data.data);
 
                 } else {
+                    setisloading(false);
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false);
             setData([]);
         });
     }
@@ -52,6 +56,11 @@ function ClosureTradingMenu() {
                             <Navbar />
                         </div>
                     </div>
+                    {
+                        isloading?
+                        // <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> 
+                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />:
+                        <div>
                     {
                         (data && data.length) ?
                             <div className="row code-mainwrapper cgmainwrap voting-result">
@@ -97,6 +106,10 @@ function ClosureTradingMenu() {
                                 <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div>
                     }
+                    </div>
+
+                    }
+                    
 
 
 

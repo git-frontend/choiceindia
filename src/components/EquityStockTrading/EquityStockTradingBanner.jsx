@@ -50,9 +50,9 @@ const EquityStockTradingBanner = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-4 mt-sm-5  mbrespflex">
+                                <div className="row mt2  mbrespflex">
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="bannerbox mt-sm-5">
+                                        <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                     <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />

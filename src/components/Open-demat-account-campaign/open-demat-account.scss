@@ -225,6 +225,9 @@ body{
                         left: -10px;
                         background: $bgcolor-yellow;
                         border-radius: 20px 0 0 20px;
+                        @media (max-width:$sm) {
+                            display: none;
+                        }
                     }
 
                     &::after {
@@ -241,11 +244,14 @@ body{
 
                     @media (max-width: $sm) {
                         left: 0;
+                        width: 95% !important;
+                        margin: 0 auto;
                     }
                 }
 
                 @media (max-width: $sm) {
-                    width: 100%;
+                    width: 95% !important;
+                    margin: 0 auto;
                 }
             }
 
@@ -264,6 +270,7 @@ body{
             }
             @media (max-width:$sm) {
                 margin-left: 0;
+                display: block;
             }
             .slick-slider{
                 .slick-track{

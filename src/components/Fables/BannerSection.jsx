@@ -3,15 +3,18 @@ import fableServices from '../../Services/fableServices';
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function BannerSection() {
 
 	const [data, setData] = useState([]);
 	const [trigger, setTrigger] = useState();
+	const [isloading,setisloading ] = useState(true);
 
 	function loadFableList() {
 		fableServices.fabalTrending().then(
 			res => {
+				setisloading(false);
 				setData(res.data.posts);
 
 			}
@@ -44,6 +47,13 @@ function BannerSection() {
 								<div className="heading-sec">
 									<h3 className="title-secnd">Trending </h3>
 								</div>
+								{
+									isloading?
+									<div>
+										{/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+										<video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+										</div>:
+									<div>
 								{
 									data.length?
 									<div className="fable-trending-list">
@@ -104,6 +114,10 @@ function BannerSection() {
                                 <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
                             </div>
 								}
+								</div>
+
+								}
+								
 								
 							</div>
 						</div>
