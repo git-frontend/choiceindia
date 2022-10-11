@@ -32,7 +32,7 @@
             
             @media (max-width:$xs) {
                padding: 0rem 1rem;
-           
+               font-size: 1.231rem;
             }
         }
     }
@@ -61,6 +61,7 @@
         padding-top: 1.5rem;
         @media (max-width:$xs) {
             padding: 0rem 1rem;
+            font-size: 1.231rem;
          }
     }
     }
@@ -73,6 +74,7 @@
                     text-align: center;
                     padding-bottom:0;
                     padding-top: 0;
+                    line-height: 4.25rem;
                 }
             }
 
