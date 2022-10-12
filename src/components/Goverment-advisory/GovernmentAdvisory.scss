@@ -121,8 +121,8 @@
                 width: 100%;
             }
                 .text{
-                font-size: 1.5rem;
-                line-height: 2.25rem;
+                font-size: 1.846rem;
+                line-height: 2.769rem;
                 display: flex;
                 align-items: center;
                 color: #221F20;
@@ -147,35 +147,54 @@
                             font-family: "PoppinsRegular";
                             font-style: normal;
                             font-weight: 600;
-                            font-size: 1.5rem;
-                            line-height: 2.25rem;
+                            font-size: 1.846rem;
+                            line-height: 2.769rem;
     
                             color: #221F20;
                         }
+                        
                         ul{
                             padding-left: 0;
                             li{
                                 list-style-type: none;
                                 border-bottom: 1px solid #C2C2C2;
                                 font-weight: 400;
-                                font-size: 1.5rem;
-                                line-height: 2.25rem;
                                 font-family: "PoppinsRegular";
                                 color: #707070;
-                                padding: 0.9375rem 0;
+                                // padding: 1.3rem 0;
                                 &:last-child{
                                     border-bottom: none;
                                 }
                             }
-                        }
+                        
+                      }
                     }
                     .clients{
                         @media (max-width: $sm) {
                           margin-top: 2rem;
                          }
+                         ul{
+                          li{
+                            font-size: 1.692rem;
+                            line-height: 2.338rem;
+                            padding: 0.5rem 0;
+                          }
+                  
+                        }
+
                     }
                 }
         }
+    }
+    .services{
+      ul{
+        li{
+          font-size: 1.846rem;
+          line-height: 2.769rem;
+          padding: 1.1rem 0rem;
+        }
+
+      }
     }
     .sliderwrapper{
         display: flex;
@@ -209,6 +228,13 @@
             @media (max-width: $sm) {
                 width: 100%;
             }
+            .img-item{
+                    display: flex;
+                    align-items: center;
+                    padding: 0 2rem; 
+                    height: 190px;  
+            }
+
         }
     }
     
