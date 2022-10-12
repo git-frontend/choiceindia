@@ -2,6 +2,8 @@
 import React from "react";
 import Banner from './Banner';
 import Service from './Service';
+import Whatwethink from './Whatwethink';
+import CorporateSocialRes from './CorporateSocialRes';
 import { useState } from "react";
 
 import Template2 from '../Common-features/Template2';
@@ -37,7 +39,10 @@ function GovernmentAdvisory() {
         skeleton ? <Template2 /> :
           <div className="mainwrapper services-parent">
             <Banner />
+            <Whatwethink/>
            <Service />
+          
+           <CorporateSocialRes/>
           </div>
       }
 

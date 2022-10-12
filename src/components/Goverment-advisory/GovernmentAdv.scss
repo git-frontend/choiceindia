@@ -1,0 +1,131 @@
+
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.goverment-advisorysection{
+    padding: 4.231rem 0rem;
+    background-color: $bgcolordark;
+    .left-sec{
+        width: 60%;
+        @media (max-width:$lg) {
+            width: 100%;
+        }
+        @media (max-width:$md) {
+            width: 100%;
+        }
+        @media (max-width:$sm) {
+            width: 100%;
+        }
+        @media (max-width:$sm-xs) {
+            width: 100%;
+        }
+
+        .title{
+            color: $lightColor;
+            padding: 4.5rem 0rem;
+            @media (max-width:$sm-x) {
+                text-align: center;
+                padding-top: 1.5rem;
+            }
+        }
+        .para{
+            color: $lightColor;
+            font-size: 2rem;
+            line-height: 3rem;
+            font-family: $font-family-poppins-regular;
+            
+            @media (max-width:$xs) {
+               padding: 0rem 1rem;
+               font-size: 1.231rem;
+            }
+        }
+    }
+    .right-sec{
+        width: 40%;
+    }
+}
+.what-we-thinksection{
+    padding: 8.231rem 0rem;
+    @media (max-width:$sm-x) {
+        padding:  5.231rem 0rem;
+    }
+
+    .sectitle{
+        padding-bottom: 1.769rem;
+            line-height: 5.25rem;
+            @media (max-width:$sm-x) {
+                text-align: center;
+                // padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+               
+            }
+    }
+    .mainpara{
+        font-size: 1.846rem;
+        line-height: 2.769rem;
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
+        padding-top: 1.5rem;
+        @media (max-width:$xs) {
+            padding: 0rem 1rem;
+            font-size: 1.231rem;
+         }
+    }
+    }
+    .CorporateSocial-section{
+        padding-bottom: 9rem;
+        @media (max-width: $xs) {
+            padding-bottom: 2rem;
+        }
+    
+        .sectitle{
+            padding-bottom: 3.769rem;
+                line-height: 5.25rem;
+                @media (max-width:$sm-x) {
+                    text-align: center;
+                    padding-bottom:0;
+                    padding-top: 0;
+                    line-height: 4.25rem;
+                }
+            }
+
+        .main-social-list {
+    
+            position: relative;
+            .social-list-slider {
+                padding: 4rem 0rem;
+                @media (max-width:$md) {
+                    padding: 2rem 0rem;
+                }
+                @media (max-width:$sm-x) {
+                    padding: 2rem 0rem;
+                }
+             
+
+                
+                .social-item {
+                    padding: 0 4rem;
+                    @media (max-width:$lg) {
+                        padding: 0 2.5rem;
+                    }
+                    @media (max-width:$md) {
+                        padding: 0 2.5rem;
+                    }
+                    @media (max-width:$sm-x) {
+                        padding: 0 1.5rem;
+                    }
+                    .img-item{
+                        display: flex;
+                         align-items: center;
+                         height: 190px;
+
+                         @media (max-width:$sm) {
+                            height: 100px;
+
+                        }
+                        
+                    }
+                }
+    }
+}
+    }
