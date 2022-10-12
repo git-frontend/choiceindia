@@ -194,7 +194,7 @@ function Service() {
             <div className="col-md-12">
               <div className="boxwrap">
                 <div className="left-img">
-                  <img src={serviceimage} className="" alt="" width={"383"} height={"868"} />
+                  <img src={serviceimage} className={"img-fluid"} alt="" width={"383"} height={"868"} />
                 </div>
                 <div className="right-sec">
                   <p className="text">Served 1000+ ULBs ( 25% of Total Market ) in financial reforms, revenue reforms, process automation, scheme PMU, capacity building, DPR &amp; transaction advisory services. </p>

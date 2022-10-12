@@ -21,9 +21,9 @@ function CorporateSocialRes() {
     speed: 1500,
     arrows: false,
     slidesToShow: 5,
-    autoplay: false,
+    autoplay: true,
     dots: false,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 1000,
     slidesToScroll: 1,
     responsive: [
       {
@@ -86,7 +86,11 @@ function CorporateSocialRes() {
                         <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={'197'} height={'197'}   alt={"loading"} />
                         </div>
                       </div>
-                     
+                      <div className="social-item">
+                        <div className="img-item">
+                          <LazyLoader src={lionsclubinternational} className={"img-fluid"}  width={'182'} height={'169'} alt={"loading"} />
+                        </div>
+                      </div>
                     </Slider>
                   </div>
               </div>
