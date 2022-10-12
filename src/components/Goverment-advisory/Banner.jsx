@@ -23,6 +23,8 @@ function Banner() {
                 </p>
                 <p className="para pt-4">We provide end to end bid process management sevices to governments from bid solicitation to project delivery.</p>
             </div>
+            <div className=" right-sec">
+            </div>
           </div>
         </div>
       </section>

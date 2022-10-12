@@ -6,16 +6,20 @@
     padding: 4.231rem 0rem;
     background-color: $bgcolordark;
     .left-sec{
-        width: 70%;
-        @media (max-width:$sm-xs) {
-            width: 100%;
-        }
-        @media (max-width:$sm) {
+        width: 60%;
+        @media (max-width:$lg) {
             width: 100%;
         }
         @media (max-width:$md) {
             width: 100%;
         }
+        @media (max-width:$sm) {
+            width: 100%;
+        }
+        @media (max-width:$sm-xs) {
+            width: 100%;
+        }
+
         .title{
             color: $lightColor;
             padding: 4.5rem 0rem;
@@ -35,6 +39,9 @@
                font-size: 1.231rem;
             }
         }
+    }
+    .right-sec{
+        width: 40%;
     }
 }
 .what-we-thinksection{
@@ -67,6 +74,10 @@
     }
     .CorporateSocial-section{
         padding-bottom: 9rem;
+        @media (max-width: $xs) {
+            padding-bottom: 2rem;
+        }
+    
         .sectitle{
             padding-bottom: 3.769rem;
                 line-height: 5.25rem;
@@ -83,15 +94,20 @@
             position: relative;
             .social-list-slider {
                 padding: 4rem 0rem;
-                @media (max-width:$sm-x) {
-                    padding: 2rem 0rem;
-                }
                 @media (max-width:$md) {
                     padding: 2rem 0rem;
                 }
+                @media (max-width:$sm-x) {
+                    padding: 2rem 0rem;
+                }
+             
+
                 
                 .social-item {
                     padding: 0 4rem;
+                    @media (max-width:$lg) {
+                        padding: 0 2.5rem;
+                    }
                     @media (max-width:$md) {
                         padding: 0 2.5rem;
                     }
@@ -102,6 +118,12 @@
                         display: flex;
                          align-items: center;
                          height: 190px;
+
+                         @media (max-width:$sm) {
+                            height: 100px;
+
+                        }
+                        
                     }
                 }
     }
