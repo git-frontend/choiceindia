@@ -4,7 +4,7 @@
 
 .services-same-list-bx {
     position: relative;
-    padding: 8rem 0;
+    padding:  0;
 
     .same-list-bx-list {
         margin-left: 0%;
@@ -244,19 +244,7 @@
               }
             
           }
-          .imgheading{
-            font-family: $font-family-poppins-regular;
-            color: #707070;
-            font-size: 1.5rem;
-            line-height: 2.25rem;
-            font-weight: 400;
-            text-align: center;
-            padding-top: 2.25rem;
-          max-height: 50px;
-          @media (max-width: $sm) {
-          display: none;
-        }
-          }
+        
        }
         
           
@@ -270,6 +258,7 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 
 /* XV SCSS Variables */
 $xv-secondary-light-gray: #c9c9c9;
@@ -286,71 +275,134 @@ $xv-secondary-dkyellow: rgba(181, 135, 32, 1);
 $xv-secondary-red: rgba(204, 55, 77, 1);
 $xv-secondary-ltred: #DB7382;
 $xv-secondary-dkred: rgba(163, 44, 61, 1);
-
 /* Outer Hexagon */
 .hexagon-grid-container {
 	display: flex;
 	flex-wrap: wrap;
-	width: 60%;
-	margin: 0 auto;
+	width: 100% ;
+	margin: 6rem auto;
 	padding: 0;
 	list-style: none;
+    justify-content: center;
+    @media (max-width:767px) {
+            width: 288px;
+            margin-top: 5rem;
+        
+    }
+    @media (min-width:640px) and (max-width:780px) {
+   
+		width: 650px;
+        margin: 0 auto;
+	
+        }
+
+    @media (min-width:781px) and (max-width:1024px) {
+            width: 780px;
+    }
+    
+    .wrapper{
+        cursor: pointer;
+        &:nth-child(3n+3) {
+            @media (max-width:767px){
+            margin-left: 3px;
+            }
+        }
+        &:nth-child(7n+5) {
+            @media (min-width:640px) and (max-width:780px) {
+            margin-left: 0;
+            }
+        }
+        &:nth-child(9n+6) {
+            @media (min-width:781px) and (max-width:1024px) {
+            margin-left: 74px;
+        }
+    }
+        .hexagon {
+            position: relative;
+            width: 195px; 
+            height: 80.83px;
+          //   background-color: $xv-secondary-dark-gray;
+            margin: 44px 11px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            @media (max-width:767px){
+                width: 140px;
+                margin: 44px 2px 0;
+            }
+            @media (min-width:640px) and (max-width:780px) {
+                width: 109px;
+            }
+            @media (min-width:820px) and (max-width:1180px) {
+                width: 109px;
+            }
+            &:before, &:after {
+                content: "";
+                position: absolute;
+                width: 0;
+              }
+            &:before {
+                bottom: 100%;
+                border-bottom: 40.41px solid $xv-secondary-dark-gray;
+              }
+            &:after {
+                top: 100%;
+                width: 0;
+                border-top: 40.41px solid $xv-secondary-dark-gray;
+              }
+              .hexagon-inner {
+                position: relative;
+                width: 224px;
+                height: 240px;
+                margin: 39.26px 0;
+                display: flex;
+                justify-content: center;
+                .hexagon-avatar-img {
+                    position: absolute;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                }
+                &:before, &:after {
+                    content: "";
+                    position: absolute;
+                    width: 0;
+                  
+                    z-index: 1;
+                 }
+                  &:before {
+                    bottom: 100%;
+                    border-bottom: 39.26px solid $xv-secondary-light-gray;
+                  }
+                  &:after {
+                    top: 100%;
+                    width: 0;
+                    border-top: 39.26px solid $xv-secondary-light-gray;
+                  }
+              }
+          }
+          .imgheading{
+            font-family: $font-family-poppins-regular;
+            color: #707070;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 400;
+            text-align: center;
+            margin-top: 8rem;
+          max-height: 50px;
+          @media (max-width: $md) {
+          display: none;
+        }
+        @media (min-width: 780px) and (max-width:1024px) {
+            margin-top: 5rem;
+          }
+          }
+    }
 }
 
-.hexagon {
-  position: relative;
-  width: 140px; 
-  height: 80.83px;
-  background-color: $xv-secondary-dark-gray;
-  margin: 44px 2px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  &:before, &:after {
-	  content: "";
-	  position: absolute;
-	  width: 0;
-	  border-left: 70px solid transparent;
-	  border-right: 70px solid transparent;
-	}
-  &:before {
-	  bottom: 100%;
-	  border-bottom: 40.41px solid $xv-secondary-dark-gray;
-	}
-  &:after {
-	  top: 100%;
-	  width: 0;
-	  border-top: 40.41px solid $xv-secondary-dark-gray;
-	}
-}
 
-/* Inner Hexagon */
-.hexagon-inner {
-  position: relative;
-  width: 136px; 
-  height: 78.52px;
-  background-color: $xv-secondary-light-gray;
-  margin: 39.26px 0;
-  display: flex;
-  justify-content: center;
-  &:before, &:after {
-	  content: "";
-	  position: absolute;
-	  width: 0;
-	  border-left: 68px solid transparent;
-	  border-right: 68px solid transparent;
-	  z-index: 1;
-   }
-	&:before {
-	  bottom: 100%;
-	  border-bottom: 39.26px solid $xv-secondary-light-gray;
-	}
-	&:after {
-	  top: 100%;
-	  width: 0;
-	  border-top: 39.26px solid $xv-secondary-light-gray;
-	}
-}
+
 
 /* Media queries */
 @media (min-width: 1920px) {
@@ -381,218 +433,14 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
 	.hexagon-grid-container {
 		width: 780px;
 	}
-	.hexagon:nth-child(9n+6) {
-		margin-left: 74px;
-	}
+	
 }
-@media (max-width: 780px) and (min-width: 640px) {
-	.hexagon-grid-container {
-		width: 640px;
-	}
-	.hexagon:nth-child(7n+5) {
-		margin-left: 74px;
-	}
-}
-@media (max-width: 639px) {
-	.hexagon-grid-container {
-		width: 320px;
-	}
-	.hexagon:nth-child(3n+3) {
-		margin-left: 74px;
-	}
-}
+
+
 
 /* Avatar */
-.hexagon-avatar-img {
-	position: absolute;
-	width: 42px;
-	border-radius: 42px;
-	border: 2px solid #fff;
-	top: -24px;
-	z-index: 1;
-}
 
-/* Name */
-.hexagon-name {
-	position: absolute;
-	width: 130px;
-	text-align: center;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
-	font-size: 14px;
-	top: 25px;
-	z-index: 1;
-}
 
-/* Metric */
-.hexagon-metric-label {
-	position: absolute;
-	width: 130px;
-	text-align: center;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 100;
-	font-size: 12px;
-	top: 48px;
-	z-index: 1;
-}
-
-/* Score */
-.hexagon-featured-score {
-	position: absolute;
-	z-index: 2;
-	bottom: -24px;
-	width: 32px;
-	height: 32px;
-	border-radius: 36px;
-	border: 1px solid;
-	text-align: center;
-	padding-top: 9px;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-weight: 700;
-	font-size: 12px;
-	color: #fff;
-	background: lighten($xv-secondary-dark-gray, 8%);
-	border-color: $xv-secondary-dark-gray;
-}
-
-/* Right / Left Icons */
-.hexagon-icon-left, .hexagon-icon-right {
-	position: absolute;
-	z-index: 2;
-	top: 58px;
-	width: 24px;
-	height: 24px;
-	border-radius: 24px;
-	border: 1px solid $xv-secondary-dark-gray;
-	background: lighten($xv-secondary-dark-gray, 8%);
-	color: $xv-secondary-dark-gray;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 10px;
-}
-.hexagon-icon-left {
-	left: 3px;
-}
-.hexagon-icon-right {
-	right: 3px;
-}
-
-/* Hexagon Color Coding */
-.hexagon.hexagon-green {
-	background-color: $xv-secondary-green;
-	&:before {
-	  border-bottom: 40.41px solid $xv-secondary-green;
-	}
-	&:after {
-	  border-top: 40.41px solid $xv-secondary-green;
-	}
-	.hexagon-inner {
-	  background-color: $xv-secondary-ltgreen;
-		&:before {
-		  border-bottom: 39.26px solid $xv-secondary-ltgreen;
-		}
-		&:after {
-		  border-top: 39.26px solid $xv-secondary-ltgreen;
-		}
-	}
-	.hexagon-featured-score {
-		background: lighten($xv-secondary-green, 5%);
-		border-color: $xv-secondary-green;
-	}
-}
-
-.hexagon.hexagon-blue {
-	background-color: $xv-secondary-blue;
-	&:before {
-	  border-bottom: 40.41px solid $xv-secondary-blue;
-	}
-	&:after {
-	  border-top: 40.41px solid $xv-secondary-blue;
-	}
-	.hexagon-inner {
-	  background-color: $xv-secondary-ltblue;
-		&:before {
-		  border-bottom: 39.26px solid $xv-secondary-ltblue;
-		}
-		&:after {
-		  border-top: 39.26px solid $xv-secondary-ltblue;
-		}
-	}
-	.hexagon-featured-score {
-		background: lighten($xv-secondary-blue, 5%);
-		border-color: $xv-secondary-blue;
-	}
-}
-
-.hexagon.hexagon-yellow {
-	background-color: $xv-secondary-yellow;
-	&:before {
-	  border-bottom: 40.41px solid $xv-secondary-yellow;
-	}
-	&:after {
-	  border-top: 40.41px solid $xv-secondary-yellow;
-	}
-	.hexagon-inner {
-	  background-color: $xv-secondary-ltyellow;
-		&:before {
-		  border-bottom: 39.26px solid $xv-secondary-ltyellow;
-		}
-		&:after {
-		  border-top: 39.26px solid $xv-secondary-ltyellow;
-		}
-	}
-	.hexagon-featured-score {
-		background: lighten($xv-secondary-yellow, 5%);
-		border-color: $xv-secondary-yellow;
-	}
-}
-
-.hexagon.hexagon-red {
-	background-color: $xv-secondary-red;
-	&:before {
-	  border-bottom: 40.41px solid $xv-secondary-red;
-	}
-	&:after {
-	  border-top: 40.41px solid $xv-secondary-red;
-	}
-	.hexagon-inner {
-	  background-color: $xv-secondary-ltred;
-		&:before {
-		  border-bottom: 39.26px solid $xv-secondary-ltred;
-		}
-		&:after {
-		  border-top: 39.26px solid $xv-secondary-ltred;
-		}
-	}
-	.hexagon-featured-score {
-		background: lighten($xv-secondary-red, 5%);
-		border-color: $xv-secondary-red;
-	}
-}
-
-/* Icon Color Coding */
-.hexagon-icon-green {
-	background: lighten($xv-secondary-green, 5%);
-   border-color: $xv-secondary-green;
-	color: $xv-secondary-dkgreen;
-}
-
-.hexagon-icon-blue {
-	background: lighten($xv-secondary-blue, 5%);
-   border-color: $xv-secondary-blue;
-	color: $xv-secondary-dkblue;
-}
-
-.hexagon-icon-yellow {
-	background: lighten($xv-secondary-yellow, 5%);
-   border-color: $xv-secondary-yellow;
-	color: $xv-secondary-dkyellow;
-}
-
-.hexagon-icon-red {
-	background: lighten($xv-secondary-red, 5%);
-   border-color: $xv-secondary-red;
-	color: $xv-secondary-dkred;
+.mt5{
+    margin-top: 5rem;
 }

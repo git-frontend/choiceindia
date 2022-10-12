@@ -313,55 +313,71 @@ const settings1 = {
             <h2 className="title-first">Our Interest in Social Development Sector</h2>
             </div>
           </div>
-          <div className="row">
+          <div className="row mt5">
             <div className="col-md-12">
-         
-            <div className="gridstructure">
-
-                <div className="hexwrapper">
-                  <div class="hex">
-                  <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+            <ul class="hexagon-grid-container">
+              <div className="wrapper" onClick={() => { chapterScroll('tribalwelfare') }}>
+                <li className="hexagon">
+                  <div class="hexagon-inner">
+                  <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+              
+                  </div>
+          
+                </li>
+                <div className="imgheading">Tribal Welfare</div>
+              </div>
+      
+              <div className="wrapper">
+                <li class="hexagon">
+                <div class="hexagon-inner">
+                  <LazyLoader src={socialsectortwo} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                 
                   </div>
-                <p className="imgheading"> Tribal Welfare</p>
-                </div>
-
-                <div className="hexwrapper">
-                  <div class="hex">
-                  <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Health"} />
-                  </div>
-                  <p className="imgheading"> Health</p>
-                </div>
-
-                <div className="hexwrapper">
-                  <div class="hex">
-                    <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Agriculture & Allied"} />
-                  </div>
-                  <p className="imgheading"> Agriculture &amp; Allied</p>
-                </div>
-             
-                <div className="hexwrapper">
-                  <div class="hex">
-                    <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={""} />
-                  </div>
-                  <p className="imgheading"> Education &amp; Skill Development</p>
-                </div>
-             
-                <div className="hexwrapper">
-                  <div class="hex">
-                    <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"IT & E-Governance"} />
-                  </div>
-                  <p className="imgheading"> IT &amp; E-Governance</p>
-                </div>
-             
-           
+                </li>
+                <div className="imgheading">Health</div>
               </div>
+
+              <div className="wrapper">
+              <li class="hexagon">
+                <div class="hexagon-inner">
+                  <LazyLoader src={socialsectorthree} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+              
+                </div>
+              </li>
+                <div className="imgheading">Agriculture &amp; Allied</div>
+              </div>
+       
+              <div className="wrapper">
+                <li class="hexagon">
+                  <div class="hexagon-inner">
+                    <LazyLoader src={socialsectorfour} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  
+                  </div>
+                </li>
+                <div className="imgheading">Education &amp; Skill<br /> Development</div>
+              </div>
+      
+              <div className="wrapper">
+                <li class="hexagon">
+                <div class="hexagon-inner">
+                  <LazyLoader src={socialsectorfive} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+              
+                  </div>
+                </li>
+                <div className="imgheading">IT &amp; E-Governance</div>
+              </div>
+    
+	
+      </ul>
+          
             </div>
           </div>
         </div>
       </section>
 
-    
+     <div className="" id="tribalwelfare">
+<h2>JFDF</h2>
+     </div>
 
 			{/* <div id="wealth">
 			<WealthManagement1 />
