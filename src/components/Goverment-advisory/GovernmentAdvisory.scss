@@ -2,3 +2,260 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+.services-same-list-bx {
+    position: relative;
+    padding: 8rem 0;
+
+    .same-list-bx-list {
+        margin-left: 0%;
+
+        .slick-list {
+            padding: 1.5rem 2rem;
+        }
+
+        .same-list-bx-item {
+            width: 90% !important;
+            text-align: center;
+            margin: 0 auto;
+            cursor: pointer;
+
+            .bx-item-cont {
+                text-decoration: none;
+                border: 3px solid transparent;
+                box-shadow: none;
+                padding: 4rem 4.5rem;
+                background: #FFFFFF;
+                box-shadow: 0px 0px 15px 1px #C2C2C2;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                h4 {
+                    font-size: 1.625rem;
+                    margin-top: 2rem;
+
+                    @media (max-width: $sm) {
+                        font-size: 1.65rem;
+                    }
+                }
+
+                img {
+                    width: 65px;
+                    margin: 0 auto;
+                }
+                .cont-img{
+                    display: block;
+                    overflow: hidden;
+                }
+            }
+
+            @media (max-width: 800px) {
+                width: 48.5%;
+            }
+
+            @media (max-width: $sm) {
+                width: 90%;
+            }
+        }
+
+        .slick-dots {
+            bottom: -4rem;
+
+            li {
+                margin: 0;
+
+                button {
+                    &::before {
+                        color: #447EC1;
+                        font-size: 1rem;
+                        line-height: 1rem;
+                    }
+                }
+
+                &.slick-active {
+                    button {
+                        &::before {
+                            opacity: 1;
+                            color: #447EC1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+  
+}
+
+.detailsection{
+    padding: 9rem 0;
+    @media (max-width: $sm) {
+       padding: 0;
+      }
+    .boxwrap{
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+        box-shadow: 0px 0px 15px 1px #C2C2C2;
+        border-radius: 20px;
+        display: flex;
+        @media (max-width: $sm) {
+          box-shadow: none;
+          background-color: transparent;
+        }
+        .left-img{
+            width: 30%;
+            @media (max-width: $sm) {
+                display: none;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+              
+            }
+        }
+        .right-sec{
+            width: 70%;
+            padding: 3rem ;
+            @media (max-width: $sm) {
+                width: 100%;
+            }
+                .text{
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                display: flex;
+                align-items: center;
+                color: #221F20;
+                padding-bottom: 2.1875rem;
+                }
+                .client-service{
+                    display: flex;
+                    justify-content: space-between;
+                    @media (max-width: $sm) {
+                       flex-direction: column;
+                    }
+                    .boxwrapper{
+                        background-color: #DFDFDF;
+                        padding: 2.1875rem 1.45rem 0;
+                        width: 48%;
+                        border-radius: 1.25rem;
+                        @media (max-width: $sm) {
+                          width: 100%;
+                          border-radius: 1.5625rem;
+                         }
+                        h4{
+                            font-family: "PoppinsRegular";
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 1.5rem;
+                            line-height: 2.25rem;
+    
+                            color: #221F20;
+                        }
+                        ul{
+                            padding-left: 0;
+                            li{
+                                list-style-type: none;
+                                border-bottom: 1px solid #C2C2C2;
+                                font-weight: 400;
+                                font-size: 1.5rem;
+                                line-height: 2.25rem;
+                                font-family: "PoppinsRegular";
+                                color: #707070;
+                                padding: 0.9375rem 0;
+                                &:last-child{
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                    }
+                    .clients{
+                        @media (max-width: $sm) {
+                          margin-top: 2rem;
+                         }
+                    }
+                }
+        }
+    }
+    .sliderwrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5rem 0;
+        @media (max-width: $sm) {
+           flex-direction: column;
+        }
+        .slick-slide{
+            width: 200px !important;
+        }
+        .left-text{
+            width: 20%;
+            @media (max-width: $sm) {
+                width: 100%;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+            .title{
+                font-family: "PoppinsRegular";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 1.875rem;
+                line-height: 2.8125rem;
+                color: #221F20;
+            }
+        }
+        .right-img{
+            width: 80%;
+            @media (max-width: $sm) {
+                width: 100%;
+            }
+        }
+    }
+    
+}
+
+.socialsector{
+    padding: 0 0 8rem 0;
+    .gridstructure {
+
+        margin: 0 auto;
+        display: flex;
+       justify-content: space-between;
+       margin-top: 5.625rem;
+       .hexwrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        .hex {
+            display: flex;
+            position: relative;
+            width: 212px !important;
+            height: 240px;
+            background-color: #424242;
+            -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+           
+              img {
+                width: 100%;
+                height: auto;
+                display: block;
+                object-fit: cover;
+              }
+            
+          }
+          .imgheading{
+            font-family: $font-family-poppins-regular;
+            color: #707070;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 400;
+            text-align: center;
+            padding-top: 2.25rem;
+          max-height: 50px;
+          }
+       }
+        
+          
+      }
+}

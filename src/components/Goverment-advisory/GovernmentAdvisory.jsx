@@ -1,6 +1,7 @@
 
 import React from "react";
 import Banner from './Banner';
+import Service from './Service';
 import { useState } from "react";
 
 import Template2 from '../Common-features/Template2';
@@ -9,7 +10,7 @@ import "./GovernmentAdvisory.scss";
 import {useLocation,} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 
-function Services() {
+function GovernmentAdvisory() {
 
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 2000);
@@ -36,7 +37,7 @@ function Services() {
         skeleton ? <Template2 /> :
           <div className="mainwrapper services-parent">
             <Banner />
-           
+           <Service />
           </div>
       }
 
@@ -45,4 +46,4 @@ function Services() {
   );
 }
 
-export default Services;
+export default GovernmentAdvisory;
