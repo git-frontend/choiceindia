@@ -242,7 +242,7 @@
             img{
                 width: 100%;
                 height: 100%;
-              
+                object-fit: cover;
             }
         }
         .right-sec{
@@ -513,25 +513,25 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                 margin: 39.26px 0;
                 display: flex;
                 justify-content: center;
-                &:after{
-                    content: '';
-                    position: absolute;
-                    border: 0.3px solid #000;
-                    height: 110px;
-                    transform: rotate(300deg);
-                    top: -28px;
-                    right: 41px;
-                }
-                &:before{
-                    content: '';
-                    position: absolute;
-                    border: 0.3px solid #000;
-                    height: 110px;
-                    transform: rotate(61deg);
-                    top: -28px;
-                    left: 41px;
+                // &:after{
+                //     content: '';
+                //     position: absolute;
+                //     border: 0.3px solid #000;
+                //     height: 110px;
+                //     transform: rotate(300deg);
+                //     top: -28px;
+                //     right: 41px;
+                // }
+                // &:before{
+                //     content: '';
+                //     position: absolute;
+                //     border: 0.3px solid #000;
+                //     height: 110px;
+                //     transform: rotate(61deg);
+                //     top: -28px;
+                //     left: 41px;
                    
-                }
+                // }
                 .hexagon-avatar-img {
                     position: absolute;
                     width: 100%;
@@ -565,13 +565,14 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
             font-weight: 400;
             text-align: center;
             margin-top: 8rem;
-          max-height: 50px;
-          @media (max-width: $md) {
-          display: none;
-        }
-        @media (min-width: 780px) and (max-width:1024px) {
-            margin-top: 5rem;
-          }
+            max-height: 50px;
+            @media (max-width: $md) {
+                display: none;
+            }
+            @media (min-width: 780px) and (max-width:1024px) {
+                margin-top: 5rem;
+                font-size: 1.5rem;
+            }
           }
     }
 }
@@ -643,7 +644,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
             img{
                 width: 100%;
                 height: 100%;
-              
+                object-fit: cover;
             }
         }
         .right-sec{
@@ -669,7 +670,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                     .boxwrapper{
                         // background-color: #DFDFDF;
                         padding: 2.1875rem 1.45rem 0;
-                        width: 48%;
+                        width: 49%;
                         border-radius: 1.25rem;
                         @media (max-width: $sm) {
                           width: 100%;
@@ -705,9 +706,18 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                     .services {
                         border-right: 1px solid #C2C2C2;
                         border-radius: 0;
-                        padding: 30px ;
+                        padding: 60px 35px ;
+                        ul{
+                            li{
+                              font-size: 1.846rem;
+                              line-height: 2.769rem;
+                              padding: 1.5rem 0rem;
+                            }
+                    
+                          }
                     }
                     .clients{
+                        padding: 60px 35px ;
                         @media (max-width: $sm) {
                           margin-top: 2rem;
                          }
@@ -715,7 +725,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                           li{
                             font-size: 1.692rem;
                             line-height: 2.338rem;
-                            padding: 0.5rem 0;
+                            padding: 1.5rem 0;
                           }
                   
                         }
@@ -724,16 +734,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                 }
         }
     }
-    .services{
-      ul{
-        li{
-          font-size: 1.846rem;
-          line-height: 2.769rem;
-          padding: 1.1rem 0rem;
-        }
-
-      }
-    }
+   
     .sliderwrapper{
         display: flex;
         flex-direction: row;
