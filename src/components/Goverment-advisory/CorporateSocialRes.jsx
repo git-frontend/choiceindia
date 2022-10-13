@@ -3,11 +3,11 @@ import React from "react";
 import LazyLoader from "../Common-features/LazyLoader";
 import { useState } from "react";
 import "./GovernmentAdv.scss";
-import lionsclubinternational from '../../assets/images/Government-Advisory/lionsclubinternational.png';
-import kiit from '../../assets/images/Government-Advisory/kiit.png';
-import chothmalpatodia from '../../assets/images/Government-Advisory/chothmalpatodia.png';
-import bissauwelfare from '../../assets/images/Government-Advisory/bissauwelfare.png';
-import rajasthanvidyarthi from '../../assets/images/Government-Advisory/rajasthanvidyarthi.png';
+import lionsclubinternational from '../../assets/images/goverment-advisory/lionsclubinternational.png';
+import kiit from '../../assets/images/goverment-advisory/kiit.png';
+import chothmalpatodia from '../../assets/images/goverment-advisory/chothmalpatodia.png';
+import bissauwelfare from '../../assets/images/goverment-advisory/bissauwelfare.png';
+import rajasthanvidyarthi from '../../assets/images/goverment-advisory/rajasthanvidyarthi.png';
 
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
