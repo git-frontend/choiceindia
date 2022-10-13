@@ -40,9 +40,9 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: true,
+    autoplay: false,
     margin: 15,
-    dots: false,
+    dots: true,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
     responsive: [
