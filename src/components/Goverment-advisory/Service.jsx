@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import serviceimage from '../../assets/images/goverment-advisory/serviceimage.png';
-
+import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.png';
 import partnerone from '../../assets/images/goverment-advisory/partnerone.png';
 import partnertwo from '../../assets/images/goverment-advisory/partnertwo.png';
 import partnerthree from '../../assets/images/goverment-advisory/partnerthree.png';
@@ -380,9 +380,129 @@ function Service() {
         </div>
       </section>
 
-     <div className="" id="tribalwelfare">
-<h2>JFDF</h2>
-     </div>
+      <div id="tribalwelfare" className="sectordetail">
+        <div className="container">
+
+          <div className="row">
+            <div className="col-md-12">
+              <div className="boxwrap">
+                <div className="left-img">
+                  <img src={socialsector} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                </div>
+                <div className="right-sec">
+                 
+                  <div className="client-service">
+                    <div className="services boxwrapper">
+                      <h4>Product</h4>
+                      <ul>
+                        <li>
+                          Finance &amp; Accounting Management
+                        </li>
+                        <li>
+                          Revenue Augmentation
+                        </li>
+                        <li>
+                          Training &amp; Capacity Building
+                        </li>
+                        <li>
+                          e-Governance
+                        </li>
+                        <li>
+                          DPR for Urban Infra
+                        </li>
+                        <li>
+                          PMC for Urban Infra
+                        </li>
+                        <li>
+                          GIS Based Property Tax Register, Survey, Assessment
+                        </li>
+
+
+
+
+                      </ul>
+                    </div>
+                    <div className="clients boxwrapper">
+                      <h4>Project</h4>
+                      <ul>
+                        <li>
+                          1000+ Urban Local Bodies across India
+                        </li>
+                        <li>
+                          State Urban Development Agency - Jharkhand &amp; Chattisgarh
+                        </li>
+                        <li>
+                          Urban Administration &amp; Development, Madhya Pradesh
+                        </li>
+                        <li>
+                          Directorate of Municipal Administration Madhya Pradesh &amp; Jharkhand
+                        </li>
+                        <li>
+                          Mukhyamantri Shahri Adhosanrachna Vikas Yojna - Madhya Pradesh
+                        </li>
+
+
+
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="row">
+            <div className="col-md-12">
+              <div className="sliderwrapper">
+                <div className="left-text">
+                  <h3 className="title">Our Partners</h3>
+                </div>
+                <div className="right-img">
+
+                  <Slider {...settings1} id="clientslider">
+
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerone} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerfour} className={'img-fluid'} width={'96'} height={'95'} alt={"Navkar Corporation"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerfive} className={'img-fluid'} width={'172'} height={'95'} alt={"ICICI"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={"Liberty Insurance"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerthree} className={'img-fluid'} width={'172'} height={'92'} alt={"Aadhaar"} />
+                      </div>
+                    </div>
+
+
+                  </Slider>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
 
       {/* <div id="wealth">

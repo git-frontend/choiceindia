@@ -2,6 +2,137 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+
+
+.goverment-advisorysection{
+    padding: 4.231rem 0rem;
+    background-color: $bgcolordark;
+    .left-sec{
+        width: 60%;
+        @media (max-width:$lg) {
+            width: 100%;
+        }
+        @media (max-width:$md) {
+            width: 100%;
+        }
+        @media (max-width:$sm) {
+            width: 100%;
+        }
+        @media (max-width:$sm-xs) {
+            width: 100%;
+        }
+
+        .title{
+            color: $lightColor;
+            padding: 4.5rem 0rem;
+            @media (max-width:$sm-x) {
+                text-align: center;
+                padding-top: 1.5rem;
+            }
+        }
+        .para{
+            color: $lightColor;
+            font-size: 2rem;
+            line-height: 3rem;
+            font-family: $font-family-poppins-regular;
+            
+            @media (max-width:$xs) {
+               padding: 0rem 1rem;
+               font-size: 1.231rem;
+            }
+        }
+    }
+    .right-sec{
+        width: 40%;
+    }
+}
+.what-we-thinksection{
+    padding: 8.231rem 0rem;
+    @media (max-width:$sm-x) {
+        padding:  5.231rem 0rem;
+    }
+
+    .sectitle{
+        padding-bottom: 1.769rem;
+            line-height: 5.25rem;
+            @media (max-width:$sm-x) {
+                text-align: center;
+                // padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+               
+            }
+    }
+    .mainpara{
+        font-size: 1.846rem;
+        line-height: 2.769rem;
+        color: $secondary;
+        font-family: $font-family-poppins-regular;
+        padding-top: 1.5rem;
+        @media (max-width:$xs) {
+            padding: 0rem 1rem;
+            font-size: 1.231rem;
+         }
+    }
+    }
+    .CorporateSocial-section{
+        padding-bottom: 9rem;
+        @media (max-width: $xs) {
+            padding-bottom: 2rem;
+        }
+    
+        .sectitle{
+            padding-bottom: 3.769rem;
+                line-height: 5.25rem;
+                @media (max-width:$sm-x) {
+                    text-align: center;
+                    padding-bottom:0;
+                    padding-top: 0;
+                    line-height: 4.25rem;
+                }
+            }
+
+        .main-social-list {
+    
+            position: relative;
+            .social-list-slider {
+                padding: 4rem 0rem;
+                @media (max-width:$md) {
+                    padding: 2rem 0rem;
+                }
+                @media (max-width:$sm-x) {
+                    padding: 2rem 0rem;
+                }
+
+                .social-item {
+                    padding: 0 4rem;
+                    @media (max-width:$lg) {
+                        padding: 0 2.5rem;
+                    }
+                    @media (max-width:$md) {
+                        padding: 0 2.5rem;
+                    }
+                    @media (max-width:$sm-x) {
+                        padding: 0 1.5rem;
+                    }
+                    .img-item{
+                        display: flex;
+                         align-items: center;
+                         height: 190px;
+
+                         @media (max-width:$sm) {
+                            height: 100px;
+
+                        }
+                        
+                    }
+                }
+    }
+}
+    }
+
+
+
+
 .services-same-list-bx {
     position: relative;
     padding:  0;
@@ -241,7 +372,6 @@
 }
 
 .socialsector{
-    padding: 0 0 8rem 0;
     .gridstructure {
 
         margin: 0 auto;
@@ -348,7 +478,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
             width: 195px; 
             height: 80.83px;
           //   background-color: $xv-secondary-dark-gray;
-            margin: 44px 11px 0;
+            margin: 44px 6px 0;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -383,6 +513,25 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                 margin: 39.26px 0;
                 display: flex;
                 justify-content: center;
+                &:after{
+                    content: '';
+                    position: absolute;
+                    border: 0.3px solid #000;
+                    height: 110px;
+                    transform: rotate(300deg);
+                    top: -28px;
+                    right: 41px;
+                }
+                &:before{
+                    content: '';
+                    position: absolute;
+                    border: 0.3px solid #000;
+                    height: 110px;
+                    transform: rotate(61deg);
+                    top: -28px;
+                    left: 41px;
+                   
+                }
                 .hexagon-avatar-img {
                     position: absolute;
                     width: 100%;
@@ -390,22 +539,22 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                     left: 0;
                     z-index: 1;
                 }
-                &:before, &:after {
-                    content: "";
-                    position: absolute;
-                    width: 0;
+                // &:before, &:after {
+                //     content: "";
+                //     position: absolute;
+                //     width: 0;
                   
-                    z-index: 1;
-                 }
-                  &:before {
-                    bottom: 100%;
-                    border-bottom: 39.26px solid $xv-secondary-light-gray;
-                  }
-                  &:after {
-                    top: 100%;
-                    width: 0;
-                    border-top: 39.26px solid $xv-secondary-light-gray;
-                  }
+                //     z-index: 1;
+                //  }
+                //   &:before {
+                //     bottom: 100%;
+                //     border-bottom: 39.26px solid $xv-secondary-light-gray;
+                //   }
+                //   &:after {
+                //     top: 100%;
+                //     width: 0;
+                //     border-top: 39.26px solid $xv-secondary-light-gray;
+                //   }
               }
           }
           .imgheading{
@@ -470,3 +619,162 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
 .mt5{
     margin-top: 5rem;
 }
+
+
+.sectordetail{
+    padding: 9rem 0;
+    @media (max-width: $sm) {
+       padding: 0;
+      }
+    .boxwrap{
+        background: linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+        box-shadow: 0px 0px 15px 1px #C2C2C2;
+        border-radius: 20px;
+        display: flex;
+        @media (max-width: $sm) {
+          box-shadow: none;
+          background-color: transparent;
+        }
+        .left-img{
+            width: 30%;
+            @media (max-width: $sm) {
+                display: none;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+              
+            }
+        }
+        .right-sec{
+            width: 70%;
+            // padding: 3rem ;
+            @media (max-width: $sm) {
+                width: 100%;
+            }
+                .text{
+                font-size: 1.846rem;
+                line-height: 2.769rem;
+                display: flex;
+                align-items: center;
+                color: #221F20;
+                padding-bottom: 2.1875rem;
+                }
+                .client-service{
+                    display: flex;
+                    justify-content: space-between;
+                    @media (max-width: $sm) {
+                       flex-direction: column;
+                    }
+                    .boxwrapper{
+                        // background-color: #DFDFDF;
+                        padding: 2.1875rem 1.45rem 0;
+                        width: 48%;
+                        border-radius: 1.25rem;
+                        @media (max-width: $sm) {
+                          width: 100%;
+                          border-radius: 1.5625rem;
+                         }
+                        h4{
+                            font-family: "PoppinsRegular";
+                            font-style: normal;
+                            font-weight: 600;
+                            font-size: 1.846rem;
+                            line-height: 2.769rem;
+    
+                            color: #221F20;
+                        }
+                        
+                        ul{
+                            padding-left: 0;
+                            li{
+                                list-style-type: none;
+                                border-bottom: 1px solid #C2C2C2;
+                                font-weight: 400;
+                                font-family: "PoppinsRegular";
+                                color: #707070;
+                                font-size:1.692rem;
+                                // padding: 1.3rem 0;
+                                &:last-child{
+                                    border-bottom: none;
+                                }
+                            }
+                        
+                      }
+                    }
+                    .services {
+                        border-right: 1px solid #C2C2C2;
+                        border-radius: 0;
+                        padding: 30px ;
+                    }
+                    .clients{
+                        @media (max-width: $sm) {
+                          margin-top: 2rem;
+                         }
+                         ul{
+                          li{
+                            font-size: 1.692rem;
+                            line-height: 2.338rem;
+                            padding: 0.5rem 0;
+                          }
+                  
+                        }
+
+                    }
+                }
+        }
+    }
+    .services{
+      ul{
+        li{
+          font-size: 1.846rem;
+          line-height: 2.769rem;
+          padding: 1.1rem 0rem;
+        }
+
+      }
+    }
+    .sliderwrapper{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5rem 0;
+        @media (max-width: $sm) {
+           flex-direction: column;
+        }
+        .slick-slide{
+            width: 200px !important;
+        }
+        .left-text{
+            width: 20%;
+            @media (max-width: $sm) {
+                width: 100%;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+            .title{
+                font-family: "PoppinsRegular";
+                font-style: normal;
+                font-weight: 600;
+                font-size: 1.875rem;
+                line-height: 2.8125rem;
+                color: #221F20;
+            }
+        }
+        .right-img{
+            width: 80%;
+            @media (max-width: $sm) {
+                width: 100%;
+            }
+            .img-item{
+                    display: flex;
+                    align-items: center;
+                    padding: 0 2rem; 
+                    height: 190px;  
+            }
+
+        }
+    }
+    
+}
+
