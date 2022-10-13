@@ -69,7 +69,7 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: true,
+    autoplay: false,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -320,7 +320,7 @@ function Service() {
           </div>
           <div className="row mt5">
             <div className="col-md-12">
-            <ul class="hexagon-grid-container">
+            {/* <ul class="hexagon-grid-container">
               <div className="wrapper" onClick={() => { chapterScroll('tribalwelfare') }}>
                 <li className="hexagon">
                   <div class="hexagon-inner">
@@ -373,8 +373,29 @@ function Service() {
               </div>
     
 	
-      </ul>
-          
+            </ul> */}
+              <div class="wrapper">
+                  <div class="hexagonwrap">
+                    <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                    <p class="text">Tribal Welfare</p>
+                  </div>
+                  <div class="hexagonwrap">
+                  <LazyLoader src={socialsectortwo} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p>Tribal Welfare</p>
+                  </div>
+                  <div class="hexagonwrap">
+                  <LazyLoader src={socialsectorthree} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p>Tribal Welfare</p>
+                  </div>
+                  <div class="hexagonwrap">
+                  <LazyLoader src={socialsectorfour} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p>Tribal Welfare</p>
+                  </div>
+                  <div class="hexagonwrap">
+                  <LazyLoader src={socialsectorfive} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p>Tribal Welfare</p>
+                  </div>
+              </div>
             </div>
           </div>
         </div>
