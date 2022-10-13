@@ -1,8 +1,6 @@
 
 import React from "react";
-import LazyLoader from "../Common-features/LazyLoader";
 import { useState } from "react";
-import "./GovernmentAdv.scss";
 
 function Whatwethink() {
 
