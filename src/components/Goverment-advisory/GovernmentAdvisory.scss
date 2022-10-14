@@ -299,8 +299,9 @@
                                 font-weight: 400;
                                 font-family: $font-family-poppins-regular;
                                 color: $secondary;
-                                font-size: 1.75rem;
-                                // padding: 1.3rem 0;
+                                font-size: 1.55rem;
+                                padding: 1rem 0;
+                                line-height: 2.25rem;
                                 &:last-child{
                                     border-bottom: none;
                                 }
@@ -316,25 +317,16 @@
                           li{
                             // font-size: 1.692rem;
                             line-height: 2.338rem;
-                            padding: 0.5rem 0;
                           }
                   
                         }
 
                     }
+               
                 }
         }
     }
-    .services{
-      ul{
-        li{
-        //   font-size: 1.846rem;
-          line-height: 2.769rem;
-          padding: 1.1rem 0rem;
-        }
-
-      }
-    }
+   
     .sliderwrapper{
         display: flex;
         flex-direction: row;
@@ -603,6 +595,7 @@
                     margin-top: -38px;
                 }
                 img{
+                 
                     @media (max-width:$sm) {
                         width: 50%;
                     }
@@ -627,6 +620,12 @@
     
             img{
                 width: 100%;
+                filter: gray; /* IE5+ */
+                -webkit-filter: grayscale(1); 
+                &.active{
+                    filter: none;
+                     -webkit-filter: grayscale(0);
+                } 
             }
             .text{
                 text-align: center;

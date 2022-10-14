@@ -41,7 +41,7 @@ function Service() {
     arrows: false,
     slidesToShow: 4,
     autoplay: false,
-    margin: 15,
+    margin: 10,
     dots: true,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
@@ -92,34 +92,7 @@ function Service() {
       },
     ],
   };
-  // const settings2 = {
-  //   infinite: true,
-  //   speed: 1500,
-  //   arrows: false,
-  //   slidesToShow: 5,
-  //   autoplay: true,
-  //   margin: 15,
-  //   dots: false,
-  //   autoplaySpeed: 1000,
-  //   slidesToScroll: 1,
-  // 	responsive: [
-  // 	  {
-  // 		breakpoint: 992,
-  // 		settings: {
-  // 		  slidesToShow: 3,
-  // 		  slidesToScroll: 3,
-  // 		  adaptiveHeight: true,
-  // 		},
-  // 	  },
-  // 	  {
-  // 		breakpoint: 600,
-  // 		settings: {
-  // 		  slidesToShow: 1,
-  // 		  slidesToScroll: 1,
-  // 		},
-  // 	  },
-  // 	],
-  // };
+  
   return (
     <div>
 
@@ -320,27 +293,27 @@ function Service() {
           </div>
           <div className="row mt5">
             <div className="col-md-12">
-           
+          
               <div class="wrapper">
                   <div class="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>
-                    <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                    <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                     <p class="text">Tribal Welfare</p>
                   </div>
                   <div class="hexagonwrap">
-                  <LazyLoader src={socialsectortwo} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Tribal Welfare</p>
+                  <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p class="text">Health</p>
                   </div>
                   <div class="hexagonwrap">
-                  <LazyLoader src={socialsectorthree} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Tribal Welfare</p>
+                  <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p class="text">Agriculture &amp; Allied</p>
                   </div>
                   <div class="hexagonwrap">
-                  <LazyLoader src={socialsectorfour} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Tribal Welfare</p>
+                  <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p class="text">Education &amp; Skill Development</p>
                   </div>
                   <div class="hexagonwrap">
-                  <LazyLoader src={socialsectorfive} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Tribal Welfare</p>
+                  <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  <p class="text">IT &amp; E-Governance</p>
                   </div>
               </div>
             </div>
