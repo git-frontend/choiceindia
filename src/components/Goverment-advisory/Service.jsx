@@ -320,60 +320,7 @@ function Service() {
           </div>
           <div className="row mt5">
             <div className="col-md-12">
-            {/* <ul class="hexagon-grid-container">
-              <div className="wrapper" onClick={() => { chapterScroll('tribalwelfare') }}>
-                <li className="hexagon">
-                  <div class="hexagon-inner">
-                  <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-              
-                  </div>
-          
-                </li>
-                <div className="imgheading">Tribal Welfare</div>
-              </div>
-      
-              <div className="wrapper">
-                <li class="hexagon">
-                <div class="hexagon-inner">
-                  <LazyLoader src={socialsectortwo} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                
-                  </div>
-                </li>
-                <div className="imgheading">Health</div>
-              </div>
-
-              <div className="wrapper">
-              <li class="hexagon">
-                <div class="hexagon-inner">
-                  <LazyLoader src={socialsectorthree} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-              
-                </div>
-              </li>
-                <div className="imgheading">Agriculture &amp; Allied</div>
-              </div>
-       
-              <div className="wrapper">
-                <li class="hexagon">
-                  <div class="hexagon-inner">
-                    <LazyLoader src={socialsectorfour} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  
-                  </div>
-                </li>
-                <div className="imgheading">Education &amp; Skill<br /> Development</div>
-              </div>
-      
-              <div className="wrapper">
-                <li class="hexagon">
-                <div class="hexagon-inner">
-                  <LazyLoader src={socialsectorfive} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-              
-                  </div>
-                </li>
-                <div className="imgheading">IT &amp; E-Governance</div>
-              </div>
-    
-	
-            </ul> */}
+           
               <div class="wrapper">
                   <div class="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>
                     <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
