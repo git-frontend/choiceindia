@@ -12,16 +12,17 @@ import socialsectorone from '../../assets/images/goverment-advisory/tribal-welfa
 import socialsectortwo from '../../assets/images/goverment-advisory/health.webp';
 import socialsectorthree from '../../assets/images/goverment-advisory/agriculture-allied.webp';
 import socialsectorfour from '../../assets/images/goverment-advisory/education-skilldevelopment.webp';
-import socialsectorfive from '../../assets/images/goverment-advisory/IT&e-governance.webp';
+import socialsectorfive from '../../assets/images/goverment-advisory/ITe-governance.webp';
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
+import { useState } from "react";
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-
-
 function Service() {
+
+ const [count, setcount]=useState(0);
 
 
   function chapterScroll(id) {
@@ -93,6 +94,8 @@ function Service() {
     ],
   };
   
+
+
   return (
     <div>
 
@@ -291,29 +294,31 @@ function Service() {
               <h2 className="title-first">Our Interest in Social Development Sector</h2>
             </div>
           </div>
-          <div className="row mt5">
+          <div className="row mt7">
             <div className="col-md-12">
           
-              <div class="wrapper">
-                  <div class="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>
+              <div className="wrapper">
+                  <div className={"hexagonwrap"+ count===0 ? "active":"" } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}>
+                {/* <div className="hexagonwrap">  */}
                     <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                    <p class="text">Tribal Welfare</p>
+                    <p className="text">Tribal Welfare</p>
                   </div>
-                  <div class="hexagonwrap">
+                  <div className={"hexagonwrap"+ count===1 ? "active":"" } onClick={() => { chapterScroll('health'); setcount(1)}}>
+                  {/* <div className="hexagonwrap">  */}
                   <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Health</p>
+                  <p className="text">Health</p>
                   </div>
-                  <div class="hexagonwrap">
+                  <div className="hexagonwrap">
                   <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Agriculture &amp; Allied</p>
+                  <p className="text">Agriculture &amp; Allied</p>
                   </div>
-                  <div class="hexagonwrap">
+                  <div className="hexagonwrap">
                   <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">Education &amp; Skill Development</p>
+                  <p className="text">Education &amp; Skill Development</p>
                   </div>
-                  <div class="hexagonwrap">
+                  <div className="hexagonwrap">
                   <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p class="text">IT &amp; E-Governance</p>
+                  <p className="text">IT &amp; E-Governance</p>
                   </div>
               </div>
             </div>
@@ -337,25 +342,25 @@ function Service() {
                       <h4>Product</h4>
                       <ul>
                         <li>
-                          Finance &amp; Accounting Management
+                        Tribal Scheme Monitoring ( 360 degree ) at district level.
                         </li>
                         <li>
-                          Revenue Augmentation
+                        Survey, Research and assessment in Tribal Areas
                         </li>
                         <li>
-                          Training &amp; Capacity Building
+                        Aspirational District Ranking
                         </li>
                         <li>
-                          e-Governance
+                        Value Chain Analysis
                         </li>
                         <li>
-                          DPR for Urban Infra
+                        NTFP ( Non Timber Forest Produce )
                         </li>
                         <li>
-                          PMC for Urban Infra
+                        PMU - DMF
                         </li>
                         <li>
-                          GIS Based Property Tax Register, Survey, Assessment
+                        Industry DPR and PMC
                         </li>
 
 
@@ -367,21 +372,23 @@ function Service() {
                       <h4>Project</h4>
                       <ul>
                         <li>
-                          1000+ Urban Local Bodies across India
+                        DMFT, Sundargarh
                         </li>
                         <li>
-                          State Urban Development Agency - Jharkhand &amp; Chattisgarh
+                        Collector office, Jagdalpur, Chhattisgarh
                         </li>
                         <li>
-                          Urban Administration &amp; Development, Madhya Pradesh
+                        Collector office, Dantewara, Chhattisgarh
                         </li>
                         <li>
-                          Directorate of Municipal Administration Madhya Pradesh &amp; Jharkhand
+                        Collector office, Bijapur, Chhattisgarh
                         </li>
                         <li>
-                          Mukhyamantri Shahri Adhosanrachna Vikas Yojna - Madhya Pradesh
+                        Collector office, Kondagaon, Chhattisgarh
                         </li>
-
+                        <li>
+                        DMFT Jharkhand
+                        </li>
 
 
 
@@ -444,7 +451,131 @@ function Service() {
         </div>
 
       </div>
+      <div id="health" className="sectordetail">
+        <div className="container">
 
+          <div className="row">
+            <div className="col-md-12">
+              <div className="boxwrap">
+                <div className="left-img">
+                  <img src={socialsector} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                </div>
+                <div className="right-sec">
+                 
+                  <div className="client-service">
+                    <div className="services boxwrapper">
+                      <h4>Product</h4>
+                      <ul>
+                        <li>
+                        Tribal Scheme Monitoring ( 360 degree ) at district level.
+                        </li>
+                        <li>
+                        Survey, Research and assessment in Tribal Areas
+                        </li>
+                        <li>
+                        Aspirational District Ranking
+                        </li>
+                        <li>
+                        Value Chain Analysis
+                        </li>
+                        <li>
+                        NTFP ( Non Timber Forest Produce )
+                        </li>
+                        <li>
+                        PMU - DMF
+                        </li>
+                        <li>
+                        Industry DPR and PMC
+                        </li>
+
+
+
+
+                      </ul>
+                    </div>
+                    <div className="clients boxwrapper">
+                      <h4>Project</h4>
+                      <ul>
+                        <li>
+                        DMFT, Sundargarh
+                        </li>
+                        <li>
+                        Collector office, Jagdalpur, Chhattisgarh
+                        </li>
+                        <li>
+                        Collector office, Dantewara, Chhattisgarh
+                        </li>
+                        <li>
+                        Collector office, Bijapur, Chhattisgarh
+                        </li>
+                        <li>
+                        Collector office, Kondagaon, Chhattisgarh
+                        </li>
+                        <li>
+                        DMFT Jharkhand
+                        </li>
+
+
+
+
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="row">
+            <div className="col-md-12">
+              <div className="sliderwrapper">
+                <div className="left-text">
+                  <h3 className="title">Our Partners</h3>
+                </div>
+                <div className="right-img">
+
+                  <Slider {...settings1} id="clientslider">
+
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerone} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerfour} className={'img-fluid'} width={'96'} height={'95'} alt={"Navkar Corporation"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerfive} className={'img-fluid'} width={'172'} height={'95'} alt={"ICICI"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={"Liberty Insurance"} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={partnerthree} className={'img-fluid'} width={'172'} height={'92'} alt={"Aadhaar"} />
+                      </div>
+                    </div>
+
+
+                  </Slider>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
 
       {/* <div id="wealth">
 			<WealthManagement1 />
