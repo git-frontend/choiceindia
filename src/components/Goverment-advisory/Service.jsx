@@ -375,25 +375,25 @@ function Service() {
 	
             </ul> */}
               <div class="wrapper">
-                  <div class="hexagonwrap">
+                  <div class="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>
                     <LazyLoader src={socialsectorone} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                     <p class="text">Tribal Welfare</p>
                   </div>
                   <div class="hexagonwrap">
                   <LazyLoader src={socialsectortwo} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p>Tribal Welfare</p>
+                  <p class="text">Tribal Welfare</p>
                   </div>
                   <div class="hexagonwrap">
                   <LazyLoader src={socialsectorthree} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p>Tribal Welfare</p>
+                  <p class="text">Tribal Welfare</p>
                   </div>
                   <div class="hexagonwrap">
                   <LazyLoader src={socialsectorfour} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p>Tribal Welfare</p>
+                  <p class="text">Tribal Welfare</p>
                   </div>
                   <div class="hexagonwrap">
                   <LazyLoader src={socialsectorfive} className={'img-fluid hexagon-avatar-img'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p>Tribal Welfare</p>
+                  <p class="text">Tribal Welfare</p>
                   </div>
               </div>
             </div>

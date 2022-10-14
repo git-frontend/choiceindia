@@ -819,14 +819,64 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media (max-width:$sm) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 368px;
+        margin: 0 auto 4rem;
+    }
     .hexagonwrap{
         width: 19%;
+        cursor: pointer;
+        @media (max-width:$sm) {
+            width: 47%;
+            margin-right: 7px;
+        }
+        &:nth-child(3){
+            @media (max-width:$sm) {
+                width: 100%;
+                text-align: center;
+                position: relative;
+                margin-top: -38px;
+            }
+            img{
+                @media (max-width:$sm) {
+                    width: 50%;
+                }
+            }
+        }
+       
+
+        &:nth-child(4){
+            @media (max-width:$sm) {
+                position: relative;
+                margin-top: -38px;
+            }
+
+        }
+        &:nth-child(5){
+            @media (max-width:$sm) {
+                position: relative;
+                margin-top: -38px;
+            }
+
+        }
+
         img{
             width: 100%;
         }
         .text{
             text-align: center;
-
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            color: #707070;
+            font-family: "PoppinsRegular";
+            font-style: normal;
+            padding-top: 2.25rem;
+            @media (max-width:$sm) {
+                display: none;
+            }
         }
     }
   }
