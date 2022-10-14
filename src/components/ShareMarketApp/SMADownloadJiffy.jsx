@@ -1,5 +1,6 @@
 import React from 'react';
 import AppJiffy from '../../assets/images/online-trading-app/jiffy-app.webp';
+import AppFinx from '../../assets/images/online-trading-app/finx-app.webp';
 import appstore from '../../assets/images/icons/app-store.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 function AppOTDownloadJiffy() {
@@ -37,7 +38,7 @@ function AppOTDownloadJiffy() {
                   </div>
                   </div>
                   <div className='jiffy-sub-img'>
-                  <LazyLoader src={AppJiffy} className={"img-fluid"} alt={"Loading"} width={"390"} height={"439"} />
+                  <LazyLoader src={AppFinx} className={"img-fluid"} alt={"Loading"} width={"390"} height={"439"} />
                 </div>
                   
             </div>

@@ -29,7 +29,7 @@ function WhyStrategy() {
         {
             image: `${slider2}`,
             icon: `${icon4}`,
-            heading: "Backtest in Jiffy",
+            heading: "Backtest in Choice FinX",
             description: "Backtest Your created strategy with Profit & Stoploss percentage"
 
         },
