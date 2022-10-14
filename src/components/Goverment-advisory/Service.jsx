@@ -1,18 +1,18 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import serviceimage from '../../assets/images/goverment-advisory/serviceimage.png';
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.png';
-import partnerone from '../../assets/images/goverment-advisory/partnerone.png';
-import partnertwo from '../../assets/images/goverment-advisory/partnertwo.png';
-import partnerthree from '../../assets/images/goverment-advisory/partnerthree.png';
-import partnerfour from '../../assets/images/goverment-advisory/partnerfour.png';
-import partnerfive from '../../assets/images/goverment-advisory/partnerfive.png';
-import socialsectorone from '../../assets/images/goverment-advisory/tribal-welfare.png';
-import socialsectortwo from '../../assets/images/goverment-advisory/health.png';
-import socialsectorthree from '../../assets/images/goverment-advisory/agriculture-allied.png';
-import socialsectorfour from '../../assets/images/goverment-advisory/education-skilldevelopment.png';
-import socialsectorfive from '../../assets/images/goverment-advisory/IT&e-governance.png';
+import serviceimage from '../../assets/images/goverment-advisory/serviceimage.webp';
+import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
+import partnerone from '../../assets/images/goverment-advisory/partnerone.svg';
+import partnertwo from '../../assets/images/goverment-advisory/partnertwo.svg';
+import partnerthree from '../../assets/images/goverment-advisory/partnerthree.svg';
+import partnerfour from '../../assets/images/goverment-advisory/partnerfour.svg';
+import partnerfive from '../../assets/images/goverment-advisory/partnerfive.svg';
+import socialsectorone from '../../assets/images/goverment-advisory/tribal-welfare.webp';
+import socialsectortwo from '../../assets/images/goverment-advisory/health.webp';
+import socialsectorthree from '../../assets/images/goverment-advisory/agriculture-allied.webp';
+import socialsectorfour from '../../assets/images/goverment-advisory/education-skilldevelopment.webp';
+import socialsectorfive from '../../assets/images/goverment-advisory/IT&e-governance.webp';
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -40,9 +40,9 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: true,
+    autoplay: false,
     margin: 15,
-    dots: false,
+    dots: true,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
     responsive: [

@@ -32,13 +32,13 @@
         }
         .para{
             color: $lightColor;
-            font-size: 2rem;
-            line-height: 3rem;
+            font-size: 1.75rem;
+            line-height: 2.625rem;
             font-family: $font-family-poppins-regular;
             
             @media (max-width:$xs) {
                padding: 0rem 1rem;
-               font-size: 1.231rem;
+            
             }
         }
     }
@@ -63,14 +63,15 @@
             }
     }
     .mainpara{
-        font-size: 1.846rem;
-        line-height: 2.769rem;
+        font-size: 1.75rem;
+        line-height: 2.625rem;
+        
         color: $secondary;
         font-family: $font-family-poppins-regular;
         padding-top: 1.5rem;
         @media (max-width:$xs) {
             padding: 0rem 1rem;
-            font-size: 1.231rem;
+            
          }
     }
     }
@@ -255,7 +256,7 @@
                 width: 100%;
             }
                 .text{
-                font-size: 1.846rem;
+                font-size: 1.75rem;
                 line-height: 2.769rem;
                 display: flex;
                 align-items: center;
@@ -281,7 +282,7 @@
                             font-family: "PoppinsRegular";
                             font-style: normal;
                             font-weight: 600;
-                            font-size: 1.846rem;
+                            font-size: 1.75rem;
                             line-height: 2.769rem;
     
                             color: #221F20;
@@ -295,6 +296,7 @@
                                 font-weight: 400;
                                 font-family: "PoppinsRegular";
                                 color: #707070;
+                                font-size: 1.75rem;
                                 // padding: 1.3rem 0;
                                 &:last-child{
                                     border-bottom: none;
@@ -309,7 +311,7 @@
                          }
                          ul{
                           li{
-                            font-size: 1.692rem;
+                            // font-size: 1.692rem;
                             line-height: 2.338rem;
                             padding: 0.5rem 0;
                           }
@@ -323,7 +325,7 @@
     .services{
       ul{
         li{
-          font-size: 1.846rem;
+        //   font-size: 1.846rem;
           line-height: 2.769rem;
           padding: 1.1rem 0rem;
         }
@@ -352,7 +354,7 @@
                 font-family: "PoppinsRegular";
                 font-style: normal;
                 font-weight: 600;
-                font-size: 1.875rem;
+                font-size: 1.75rem;
                 line-height: 2.8125rem;
                 color: #221F20;
             }
@@ -725,7 +727,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                         }
                         ul{
                             li{
-                              font-size: 1.846rem;
+                              font-size: 1.75rem;
                               line-height: 2.769rem;
                               padding: 1.5rem 0rem;
                             }
@@ -739,7 +741,7 @@ $xv-secondary-dkred: rgba(163, 44, 61, 1);
                          }
                          ul{
                           li{
-                            font-size: 1.692rem;
+                            font-size: 1.75rem;
                             line-height: 2.338rem;
                             padding: 1.5rem 0;
                           }
