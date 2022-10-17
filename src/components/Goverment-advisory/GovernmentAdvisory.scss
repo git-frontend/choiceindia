@@ -167,19 +167,23 @@
                 display: block;
                 align-items: center;
                 justify-content: center;
-                height: 15rem;
+                min-height: 17rem;
+                height: 100%;
+                padding: 2rem 1rem;
                   @media (min-width:767px) and (max-width:820px) {
-                    height: 15rem;
+                    min-height: 17rem;
                   }  
                   @media (max-width: $sm) {
-                    height: 15rem;
+                    min-height: 15rem;
+                    padding: 2rem 1rem 0; 
                 }
                 h4 {
                     font-size: 1.625rem;
-                    margin-top: 2rem;
-
+                    padding-top: 3rem;
+                    margin: 0;
                     @media (max-width: $sm) {
                         font-size: 1.4rem;
+                        padding-top: 2rem;
                     }
                 }
 
