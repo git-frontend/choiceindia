@@ -635,7 +635,7 @@
                     right: 46px;
                     top: -37px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -651,7 +651,7 @@
                     left: 46px;
                     top: -37px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -664,7 +664,7 @@
                     transform: rotate(60deg);
                     right: 44px;
                     bottom: 48px;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -680,7 +680,7 @@
                     left: 48px;
                     bottom: 45px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -694,7 +694,7 @@
                     right: 47px;
                     top: -38px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -710,7 +710,7 @@
                     left: 48px;
                     top: -38px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -724,7 +724,7 @@
                     right: 47px;
                     bottom: 45px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
@@ -741,7 +741,7 @@
                     left: 47px;
                     bottom: 45px;
                     z-index: 1;
-                    @media (min-width:1200) {
+                    @media (max-width:1024px) {
                         display: none;
                     }
                 }
