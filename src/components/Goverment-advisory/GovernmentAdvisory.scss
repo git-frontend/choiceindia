@@ -134,7 +134,7 @@
 
 
 
-.services-same-list-bx {
+.gov-adv-slider-tab {
     position: relative;
     padding:  0;
 
@@ -195,6 +195,7 @@
                     display: block;
                     overflow: hidden;
                 }
+              
             }
 
             @media (max-width: 800px) {
@@ -203,6 +204,17 @@
 
             @media (max-width: $sm) {
                 width: 90%;
+            }
+            &.active{
+                &::before{
+                    transform: rotate(4deg);
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .bx-item-cont{
+                    border: 3px solid $yellowColor;
+                    box-shadow: none;
+                }
             }
         }
 
@@ -243,6 +255,7 @@
 
 .detailsection{
     padding:16rem 0 1rem;
+    display: none;
     @media (max-width: $sm) {
        padding: 4rem 0;
       }
@@ -389,6 +402,9 @@
             }
 
         }
+    }
+    &.cont-itm-active{
+        display: block;
     }
     
 }
