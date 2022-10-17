@@ -254,7 +254,7 @@
           background-color: transparent;
         }
         .left-img{
-            width: 30%;
+            width: 25%;
             @media (max-width: $sm) {
                 display: none;
             }
@@ -265,8 +265,8 @@
             }
         }
         .right-sec{
-            width: 70%;
-            padding: 3rem ;
+            width: 75%;
+            padding: 3rem 2.5rem ;
             @media (max-width: $sm) {
                 width: 100%;
             }
@@ -413,7 +413,7 @@
           background-color: transparent;
         }
         .left-img{
-            width: 30%;
+            width: 25%;
             @media (max-width: $sm) {
                 display: none;
             }
@@ -424,7 +424,7 @@
             }
         }
         .right-sec{
-            width: 70%;
+            width: 75%;
             // padding: 3rem ;
             @media (max-width: $sm) {
                 width: 100%;
@@ -486,7 +486,7 @@
                     .services {
                         border-right: 1px solid $lightgray;
                         border-radius: 0;
-                        padding: 60px 45px ;
+                        padding: 60px 45px 20px;
                         @media (max-width:767px) {
                             border-right:none;
                             border-radius:1.5625rem;
@@ -513,7 +513,7 @@
                           }
                     }
                     .clients{
-                        padding: 60px 35px ;
+                        padding: 60px 35px 20px;
                         @media (max-width: $sm) {
                           margin-top: 2rem;
                          }
