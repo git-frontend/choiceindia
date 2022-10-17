@@ -17,6 +17,11 @@ import socialsectortwo from '../../assets/images/goverment-advisory/health.webp'
 import socialsectorthree from '../../assets/images/goverment-advisory/agriculture-allied.webp';
 import socialsectorfour from '../../assets/images/goverment-advisory/education-skilldevelopment.webp';
 import socialsectorfive from '../../assets/images/goverment-advisory/ITe-governance.webp';
+import urbandevtwo from '../../assets/images/goverment-advisory/urbandevtwo.svg';
+import urbandevone from '../../assets/images/goverment-advisory/urbandevone.svg';
+import urbandevthree from '../../assets/images/goverment-advisory/urbandevthree.svg';
+import urbandevfour from '../../assets/images/goverment-advisory/urbandevfour.svg';
+
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
 import { useState } from "react";
@@ -49,7 +54,7 @@ function Service() {
     margin: 10,
     dots: true,
     autoplaySpeed: 1000,
-    slidesToScroll: 1,
+    slidesToScroll: 4,
     responsive: [
       {
         breakpoint: 992,
@@ -141,51 +146,67 @@ function Service() {
               <Slider {...settings} className="same-list-bx-list">
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('urbandevelopment') }}>
-
-
+                 <span className="listimg">
+                  <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Urban Development</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('wealth') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Road &amp; Highway</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('insurance') }}>
+                  <span className="listimg">
+                  <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
 
                     <h4 className='title-fourth'>Water &amp; Sanitation</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('loan') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
 
                     <h4 className='title-fourth'>Affordable Housing</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('capital') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Capital Advisory</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('management') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Management Consultancy</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('goverment') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Government Advisory</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
                   <div className="bx-item-cont" onClick={() => { chapterScroll('tax') }}>
-
+                  <span className="listimg">
+                  <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
+                  </span>
                     <h4 className='title-fourth'>Tax Advisory</h4>
                   </div>
                 </div>
