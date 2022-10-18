@@ -826,11 +826,15 @@
                 width: 100%;
                 filter: gray; /* IE5+ */
                 -webkit-filter: grayscale(1); 
-                &.active{
-                    filter: none;
-                     -webkit-filter: grayscale(0);
-                } 
+                
             }
+            &.active{
+                img{
+                    filter: none;
+                    -webkit-filter: grayscale(0);
+                }
+             
+            } 
             .text{
                 text-align: center;
                 font-size: 1.5rem;
