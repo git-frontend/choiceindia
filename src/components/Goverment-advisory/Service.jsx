@@ -130,9 +130,10 @@ function Service() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow:4,
           slidesToScroll: 1,
           dots:true,
+          adaptiveHeight: true,
         },
       },
     ],
