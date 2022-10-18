@@ -52,10 +52,10 @@ function Service() {
 
   const settings = {
     infinite: true,
-    speed: 1500,
+    speed: 2500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 10,
     dots: true,
     autoplaySpeed: 1000,
@@ -84,11 +84,12 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
+    
     responsive: [
       {
         breakpoint: 992,
@@ -103,6 +104,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots:true,
         },
       },
     ],
@@ -113,7 +115,7 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -132,6 +134,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots:true,
         },
       },
     ],
@@ -249,26 +252,40 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                {/* <div className={"hexagonwrap"+ count===0 ? "active":"" } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
-                <div className="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>
-                  <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                  <p className="text">Tribal Welfare</p>
-                </div>
-                {/* <div className={"hexagonwrap"+ count===1 ? "active":"" } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
-                <div className="hexagonwrap">
+                  {/* <div className={"hexagonwrap"+ ((count===0) ? "sector-active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
+                <div className="hexagonwrap active" onClick={() => { chapterScroll('tribalwelfare') }}> 
+                  <div className="hexagonwrap-img">
+                    <LazyLoader src={socialsectorone} className={'img-fluid'}  width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+                    <p className="text">Tribal Welfare</p>
+                  </div>
+                  {/* <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
+                  <div className="hexagonwrap "> 
+                  <div className="hexagonwrap-img">
                   <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+                  
                   <p className="text">Health</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">Agriculture &amp; Allied</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">Education &amp; Skill Development</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">IT &amp; E-Governance</p>
                 </div>
               </div>
@@ -277,7 +294,7 @@ function Service() {
         </div>
       </section>
 
-      <div id="tribalwelfare" className="sectordetail">
+      <div id="tribalwelfare" className="sectordetail sector-active">
         <div className="container">
 
           <div className="row">
@@ -361,7 +378,7 @@ function Service() {
                 </div>
                 <div className="right-img">
 
-                  <Slider {...settings2} id="clientslider">
+                  <Slider {...settings2} id="socialclientslider">
 
                     <div className="image_wrapper">
                       <div className="img-item">
@@ -402,7 +419,7 @@ function Service() {
         </div>
 
       </div>
-      {/* <div id="health" className="sectordetail">
+      <div id="health" className="sectordetail">
         <div className="container">
 
           <div className="row">
@@ -526,7 +543,7 @@ function Service() {
 
         </div>
 
-      </div> */}
+      </div>
 
 
 
