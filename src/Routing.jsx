@@ -567,7 +567,7 @@ function Routing() {
                                 < LazyHindiMutualFundDistributor />
                             </React.Suspense>
                         } />
-                        <Route exact path='/goverment-advisory' element={
+                        <Route exact path='/government-advisory' element={
                             <React.Suspense>
                                 < Lazygovernementadvisory />
                             </React.Suspense>

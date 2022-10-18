@@ -351,13 +351,13 @@ function Service() {
             <div className="col-md-12">
           
               <div className="wrapper">
-                  {/* <div className={"hexagonwrap"+ count===0 ? "active":"" } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
-                <div className="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}> 
+                  <div className={"hexagonwrap"+ ((count===0) ? "active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}>
+                {/* <div className="hexagonwrap" onClick={() => { chapterScroll('tribalwelfare') }}>  */}
                     <LazyLoader src={socialsectorone} className={'img-fluid'}  width={'212'} height={'240'} alt={"Tribal Welfare"} />
                     <p className="text">Tribal Welfare</p>
                   </div>
-                  {/* <div className={"hexagonwrap"+ count===1 ? "active":"" } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
-                  <div className="hexagonwrap"> 
+                  <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health'); setcount(1)}}>
+                  {/* <div className="hexagonwrap">  */}
                   <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   <p className="text">Health</p>
                   </div>
@@ -504,7 +504,7 @@ function Service() {
         </div>
 
       </div>
-      {/* <div id="health" className="sectordetail">
+      <div id="health" className="sectordetail">
         <div className="container">
 
           <div className="row">
@@ -628,7 +628,7 @@ function Service() {
 
         </div>
 
-      </div> */}
+      </div>
 
      
 
