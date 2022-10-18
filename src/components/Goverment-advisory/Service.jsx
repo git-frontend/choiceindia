@@ -246,24 +246,38 @@ function Service() {
               <div className="wrapper">
                   {/* <div className={"hexagonwrap"+ ((count===0) ? "sector-active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
                 <div className="hexagonwrap active" onClick={() => { chapterScroll('tribalwelfare') }}> 
+                  <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorone} className={'img-fluid'}  width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
                     <p className="text">Tribal Welfare</p>
                   </div>
                   {/* <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
                   <div className="hexagonwrap "> 
+                  <div className="hexagonwrap-img">
                   <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+                  
                   <p className="text">Health</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">Agriculture &amp; Allied</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">Education &amp; Skill Development</p>
                 </div>
                 <div className="hexagonwrap">
-                  <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                <div className="hexagonwrap-img">
+                <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                </div>
+                  
                   <p className="text">IT &amp; E-Governance</p>
                 </div>
               </div>
