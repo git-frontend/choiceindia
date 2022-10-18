@@ -421,6 +421,10 @@
 
 .sectordetail{
     padding: 9rem 0 5rem;
+    display: none;
+    &.sector-active{
+        display: block;
+    }
     @media (max-width: $sm) {
        padding: 0;
       }
