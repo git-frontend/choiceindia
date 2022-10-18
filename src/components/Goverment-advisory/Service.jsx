@@ -241,7 +241,7 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                  {/* <div className={"hexagonwrap"+ ((count===0) ? "active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
+                  {/* <div className={"hexagonwrap"+ ((count===0) ? "sector-active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
                 <div className="hexagonwrap active" onClick={() => { chapterScroll('tribalwelfare') }}> 
                     <LazyLoader src={socialsectorone} className={'img-fluid'}  width={'212'} height={'240'} alt={"Tribal Welfare"} />
                     <p className="text">Tribal Welfare</p>
@@ -269,7 +269,7 @@ function Service() {
         </div>
       </section>
 
-      <div id="tribalwelfare" className="sectordetail">
+      <div id="tribalwelfare" className="sectordetail sector-active">
         <div className="container">
 
           <div className="row">
