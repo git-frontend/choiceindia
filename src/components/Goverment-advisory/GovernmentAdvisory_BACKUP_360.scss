@@ -287,7 +287,10 @@
             padding: 3rem 2.5rem ;
             @media (max-width: $sm) {
                 width: 100%;
+<<<<<<< HEAD
+=======
                 
+>>>>>>> 35ad487904e14e9ecf9de031680dfbad7c689d67
                 padding: 3rem 1rem;
             }
                 .text{
@@ -445,11 +448,14 @@
             img{
                 width: 100%;
                 height: 100%;
+<<<<<<< HEAD
                 // object-fit: cover;
 
+=======
                 object-fit: cover;
                 border-top-left-radius: 1.25rem;
                 border-bottom-left-radius: 1.25rem
+>>>>>>> 1ab014851b08cdd1001dd4670836d7ea4825437f
             }
         }
         .right-sec{

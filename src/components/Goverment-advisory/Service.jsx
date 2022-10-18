@@ -50,10 +50,10 @@ function Service() {
 
   const settings = {
     infinite: true,
-    speed: 1500,
+    speed: 2500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 10,
     dots: true,
     autoplaySpeed: 1000,
@@ -82,11 +82,12 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
+    
     responsive: [
       {
         breakpoint: 992,
@@ -101,6 +102,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots:true,
         },
       },
     ],
@@ -111,7 +113,7 @@ function Service() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -130,6 +132,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots:true,
         },
       },
     ],
@@ -353,7 +356,7 @@ function Service() {
                 </div>
                 <div className="right-img">
 
-                  <Slider {...settings2} id="clientslider">
+                  <Slider {...settings2} id="socialclientslider">
 
                     <div className="image_wrapper">
                       <div className="img-item">

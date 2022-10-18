@@ -334,7 +334,9 @@
                                 font-size: 1.55rem;
                                 padding: 1rem 0;
                                 line-height: 2.25rem;
-                                
+                                @media (max-width: $sm) {
+                                    border-bottom:none;
+                                   }
                                 &:last-child{
                                     border-bottom: none;
                                 }
@@ -445,11 +447,14 @@
             img{
                 width: 100%;
                 height: 100%;
+<<<<<<< HEAD
                 // object-fit: cover;
 
+=======
                 object-fit: cover;
                 border-top-left-radius: 1.25rem;
                 border-bottom-left-radius: 1.25rem
+>>>>>>> 1ab014851b08cdd1001dd4670836d7ea4825437f
             }
         }
         .right-sec{
@@ -519,7 +524,6 @@
                         @media (max-width:767px) {
                             border-right:none;
                             border-radius:1.5625rem;
-                            padding:2.1875rem 1.45rem 0
                         }
                         @media (min-width:767px) and (max-width:820px) {
                             padding: 30px ;
@@ -532,7 +536,6 @@
                               @media (max-width: $sm) {
                                 font-size: 1.5rem;
                                 padding: 1rem 0;
-                                border-bottom: 1px solid #C2C2C2;
                                }
                                @media (min-width:767px) and (max-width:820px) {
                                 font-size: 1.5rem;
