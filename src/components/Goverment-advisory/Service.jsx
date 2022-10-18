@@ -24,6 +24,8 @@ import urbandevfour from '../../assets/images/goverment-advisory/urbandevfour.sv
 
 import Roadandhighway from './Roadandhighway';
 import Urbandevelopment from './Urbandevelopment';
+import Watersanitation from './Watersanitation';
+import Affordablehousing from './Affordablehousing';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -219,11 +221,17 @@ function Service() {
         </div>
 
         <div className="main-cont-gov-adv">
-          <div className="detailsection cont-itm-active" >
+          <div className="detailsection " >
             <Urbandevelopment />
           </div>
-          <div className="detailsection">
+          <div className="detailsection  mb-5 ">
             <Roadandhighway />
+          </div>
+          <div className="detailsection   mb-5 ">
+            <Watersanitation />
+          </div>
+          <div className="detailsection cont-itm-active   mb-5 ">
+            <Affordablehousing />
           </div>
         </div>
       </section>

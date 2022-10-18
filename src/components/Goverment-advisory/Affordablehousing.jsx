@@ -1,19 +1,8 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import serviceimage from '../../assets/images/goverment-advisory/serviceimage.webp';
-import serviceimagetwo from '../../assets/images/goverment-advisory/serviceimagetwo.webp';
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
-import partnerone from '../../assets/images/goverment-advisory/partnerone.svg';
-import partnertwo from '../../assets/images/goverment-advisory/partnertwo.svg';
-import partnerthree from '../../assets/images/goverment-advisory/partnerthree.svg';
-import partnerfour from '../../assets/images/goverment-advisory/partnerfour.svg';
-import partnerfive from '../../assets/images/goverment-advisory/partnerfive.svg';
 
-import urbandevtwo from '../../assets/images/goverment-advisory/urbandevtwo.svg';
-import urbandevone from '../../assets/images/goverment-advisory/urbandevone.svg';
-import urbandevthree from '../../assets/images/goverment-advisory/urbandevthree.svg';
-import urbandevfour from '../../assets/images/goverment-advisory/urbandevfour.svg';
+import serviceimagefour from '../../assets/images/goverment-advisory/serviceimagefour.webp';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -22,7 +11,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-function Roadandhighway() {
+function Affordablehousing() {
 
  const [count, setcount]=useState(0);
 
@@ -137,52 +126,43 @@ function Roadandhighway() {
   <div className="col-md-12">
     <div className="boxwrap">
       <div className="left-img">
-        <img src={serviceimagetwo} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+        <img src={serviceimagefour} className={"img-fluid"} alt="" width={"383"} height={"868"} />
       </div>
       <div className="right-sec">
-        <p className="text">Prepared DPR, PMC and independent engineering services for 3000+ KM of highways across the country including hilly areas and international border of Myanmar</p>
+        <p className="text">Served 2L+ beneficiaries in 180+ cities under Pradhan Mantri Awas Yojna across the country</p>
         <div className="client-service">
           <div className="services boxwrapper">
             <h4>Major Services</h4>
             <ul>
               <li>
-              Independent Engineering 
-Services
+              Preparation of Housing For All Plan of Action
               </li>
               <li>
-              Feasibility Report
+              Detailed Project Report (DPR)
               </li>
               <li>
-              Detailed Project Report ( DPR )
+              Project Management Consultancy (PMC) 
               </li>
-              <li>
-              Bid Management Process
-              </li>
-              <li>
-              Road Safety Services
-              </li>
-              <li>
-              Operational & Maintenance Services
-              </li>
+
             </ul>
           </div>
           <div className="clients boxwrapper">
             <h4>Major Clients</h4>
             <ul>
               <li>
-              State Public Works Department
+              Consulting under PMAY Scheme for ULBs of:
               </li>
               <li>
-              National Highways &amp; Infrastructure Development Corporation Limited
+              drinkinf water & sanitation development, godda
               </li>
               <li>
-              Urban Road Infrastructure
+              Drinking Water & Sanitation Department, Ramgarh
               </li>
               <li>
-              Border Road Organization
+              Jharkhand Urban Infrastructure Development Co. Ltd
               </li>
               <li>
-              Uttar Pradesh State Highway Authority
+              Public Health Engineering Department - Madhya Pradesh
               </li>
             </ul>
           </div>
@@ -208,4 +188,4 @@ Services
   );
 }
 
-export default Roadandhighway;
+export default Affordablehousing;
