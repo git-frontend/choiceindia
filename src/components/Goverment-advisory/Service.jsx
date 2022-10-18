@@ -26,6 +26,7 @@ import Roadandhighway from './Roadandhighway';
 import Urbandevelopment from './Urbandevelopment';
 import Watersanitation from './Watersanitation';
 import Affordablehousing from './Affordablehousing';
+import Processautomation from './Processautomation';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -89,7 +90,7 @@ function Service() {
     dots: false,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
-    
+
     responsive: [
       {
         breakpoint: 992,
@@ -104,7 +105,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:true,
+          dots: true,
         },
       },
     ],
@@ -134,7 +135,7 @@ function Service() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:true,
+          dots: true,
         },
       },
     ],
@@ -191,7 +192,8 @@ function Service() {
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
                     </span>
-                    <h4 className='title-fourth'>Capital Advisory</h4>
+                    <h4 className='title-fourth'>Process
+                      Automation</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
@@ -199,7 +201,8 @@ function Service() {
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
                     </span>
-                    <h4 className='title-fourth'>Management Consultancy</h4>
+                    <h4 className='title-fourth'>Capacity
+                      Building</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
@@ -207,7 +210,8 @@ function Service() {
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
                     </span>
-                    <h4 className='title-fourth'>Government Advisory</h4>
+                    <h4 className='title-fourth'>Public Financial
+                      Management</h4>
                   </div>
                 </div>
                 <div className="same-list-bx-item">
@@ -215,7 +219,8 @@ function Service() {
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
                     </span>
-                    <h4 className='title-fourth'>Tax Advisory</h4>
+                    <h4 className='title-fourth'>Scheme
+                      PMUs</h4>
                   </div>
                 </div>
               </Slider>
@@ -224,7 +229,7 @@ function Service() {
         </div>
 
         <div className="main-cont-gov-adv">
-          <div className="detailsection " >
+          <div className="detailsection cont-itm-active " >
             <Urbandevelopment />
           </div>
           <div className="detailsection  mb-5 ">
@@ -233,8 +238,11 @@ function Service() {
           <div className="detailsection   mb-5 ">
             <Watersanitation />
           </div>
-          <div className="detailsection cont-itm-active   mb-5 ">
+          <div className="detailsection  mb-5 ">
             <Affordablehousing />
+          </div>
+          <div className="detailsection   mb-5 ">
+            <Processautomation />
           </div>
         </div>
       </section>
@@ -252,40 +260,40 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                  {/* <div className={"hexagonwrap"+ ((count===0) ? "sector-active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
-                <div className="hexagonwrap active" onClick={() => { chapterScroll('tribalwelfare') }}> 
+                {/* <div className={"hexagonwrap"+ ((count===0) ? "sector-active":"") } onClick={() => { chapterScroll('tribalwelfare'); setcount(0)}}> */}
+                <div className="hexagonwrap active" onClick={() => { chapterScroll('tribalwelfare') }}>
                   <div className="hexagonwrap-img">
-                    <LazyLoader src={socialsectorone} className={'img-fluid'}  width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                    <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
-                    <p className="text">Tribal Welfare</p>
-                  </div>
-                  {/* <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
-                  <div className="hexagonwrap "> 
+                  <p className="text">Tribal Welfare</p>
+                </div>
+                {/* <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health'); setcount(1)}}> */}
+                <div className="hexagonwrap ">
                   <div className="hexagonwrap-img">
-                  <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                    <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
-                  
+
                   <p className="text">Health</p>
                 </div>
                 <div className="hexagonwrap">
-                <div className="hexagonwrap-img">
-                <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                </div>
-                  
+                  <div className="hexagonwrap-img">
+                    <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+
                   <p className="text">Agriculture &amp; Allied</p>
                 </div>
                 <div className="hexagonwrap">
-                <div className="hexagonwrap-img">
-                <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                </div>
-                  
+                  <div className="hexagonwrap-img">
+                    <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+
                   <p className="text">Education &amp; Skill Development</p>
                 </div>
                 <div className="hexagonwrap">
-                <div className="hexagonwrap-img">
-                <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
-                </div>
-                  
+                  <div className="hexagonwrap-img">
+                    <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
+                  </div>
+
                   <p className="text">IT &amp; E-Governance</p>
                 </div>
               </div>
@@ -429,31 +437,31 @@ function Service() {
                   <img src={socialsector} className={"img-fluid"} alt="" width={"383"} height={"868"} />
                 </div>
                 <div className="right-sec">
-                 
+
                   <div className="client-service">
                     <div className="services boxwrapper">
                       <h4>Product</h4>
                       <ul>
                         <li>
-                        Tribal Scheme Monitoring ( 360 degree ) at district level.
+                          Tribal Scheme Monitoring ( 360 degree ) at district level.
                         </li>
                         <li>
-                        Survey, Research and assessment in Tribal Areas
+                          Survey, Research and assessment in Tribal Areas
                         </li>
                         <li>
-                        Aspirational District Ranking
+                          Aspirational District Ranking
                         </li>
                         <li>
-                        Value Chain Analysis
+                          Value Chain Analysis
                         </li>
                         <li>
-                        NTFP ( Non Timber Forest Produce )
+                          NTFP ( Non Timber Forest Produce )
                         </li>
                         <li>
-                        PMU - DMF
+                          PMU - DMF
                         </li>
                         <li>
-                        Industry DPR and PMC
+                          Industry DPR and PMC
                         </li>
 
 
@@ -465,22 +473,22 @@ function Service() {
                       <h4>Project</h4>
                       <ul>
                         <li>
-                        DMFT, Sundargarh
+                          DMFT, Sundargarh
                         </li>
                         <li>
-                        Collector office, Jagdalpur, Chhattisgarh
+                          Collector office, Jagdalpur, Chhattisgarh
                         </li>
                         <li>
-                        Collector office, Dantewara, Chhattisgarh
+                          Collector office, Dantewara, Chhattisgarh
                         </li>
                         <li>
-                        Collector office, Bijapur, Chhattisgarh
+                          Collector office, Bijapur, Chhattisgarh
                         </li>
                         <li>
-                        Collector office, Kondagaon, Chhattisgarh
+                          Collector office, Kondagaon, Chhattisgarh
                         </li>
                         <li>
-                        DMFT Jharkhand
+                          DMFT Jharkhand
                         </li>
 
 

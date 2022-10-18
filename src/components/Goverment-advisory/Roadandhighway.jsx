@@ -1,19 +1,9 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import serviceimage from '../../assets/images/goverment-advisory/serviceimage.webp';
-import serviceimagetwo from '../../assets/images/goverment-advisory/serviceimagetwo.webp';
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
-import partnerone from '../../assets/images/goverment-advisory/partnerone.svg';
-import partnertwo from '../../assets/images/goverment-advisory/partnertwo.svg';
-import partnerthree from '../../assets/images/goverment-advisory/partnerthree.svg';
-import partnerfour from '../../assets/images/goverment-advisory/partnerfour.svg';
-import partnerfive from '../../assets/images/goverment-advisory/partnerfive.svg';
 
-import urbandevtwo from '../../assets/images/goverment-advisory/urbandevtwo.svg';
-import urbandevone from '../../assets/images/goverment-advisory/urbandevone.svg';
-import urbandevthree from '../../assets/images/goverment-advisory/urbandevthree.svg';
-import urbandevfour from '../../assets/images/goverment-advisory/urbandevfour.svg';
+import serviceimagetwo from '../../assets/images/goverment-advisory/serviceimagetwo.webp';
+
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -38,92 +28,6 @@ function Roadandhighway() {
     });
   }
 
-  const settings = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 10,
-    dots: true,
-    autoplaySpeed: 1000,
-    slidesToScroll: 4,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const settings1 = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 15,
-    dots: false,
-    autoplaySpeed: 1000,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  
-  const settings2 = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 15,
-    dots: false,
-    autoplaySpeed: 1000,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
   
 
   return (

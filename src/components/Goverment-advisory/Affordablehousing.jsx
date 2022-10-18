@@ -27,92 +27,7 @@ function Affordablehousing() {
     });
   }
 
-  const settings = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 10,
-    dots: true,
-    autoplaySpeed: 1000,
-    slidesToScroll: 4,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-
-  const settings1 = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 15,
-    dots: false,
-    autoplaySpeed: 1000,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
-  
-  const settings2 = {
-    infinite: true,
-    speed: 1500,
-    arrows: false,
-    slidesToShow: 4,
-    autoplay: false,
-    margin: 15,
-    dots: false,
-    autoplaySpeed: 1000,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
-          adaptiveHeight: true,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+ 
   
 
   return (
@@ -151,18 +66,18 @@ function Affordablehousing() {
             <ul>
               <li>
               Consulting under PMAY Scheme for ULBs of:
+              <li>
+              Chhattisgarh
               </li>
               <li>
-              drinkinf water & sanitation development, godda
+              Odisha
               </li>
               <li>
-              Drinking Water & Sanitation Department, Ramgarh
+              Madhya Pradesh
               </li>
               <li>
-              Jharkhand Urban Infrastructure Development Co. Ltd
+              Jharkhand
               </li>
-              <li>
-              Public Health Engineering Department - Madhya Pradesh
               </li>
             </ul>
           </div>
