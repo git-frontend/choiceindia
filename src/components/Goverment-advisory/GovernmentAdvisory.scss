@@ -279,7 +279,7 @@
             img{
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                // object-fit: cover;
             }
         }
         .right-sec{
@@ -287,6 +287,8 @@
             padding: 3rem 2.5rem ;
             @media (max-width: $sm) {
                 width: 100%;
+                
+                padding: 3rem 1rem;
             }
                 .text{
                 font-size: 1.75rem;
@@ -415,7 +417,7 @@
 
 
 .mt7{
-    margin-top: 7rem;
+    margin-top: 9rem;
 }
 
 
@@ -445,7 +447,8 @@
             img{
                 width: 100%;
                 height: 100%;
-                object-fit: cover;
+                // object-fit: cover;
+
             }
         }
         .right-sec{
@@ -610,7 +613,9 @@
 
         }
     }
-    
+    .slick-dots{
+        bottom: 0;
+    }
 }
 
 .carousel {
