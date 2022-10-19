@@ -147,22 +147,22 @@ function Publicfinancialmanagement() {
 
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners5} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                      <LazyLoader src={ourpartners5} className={'img-fluid'} width={"96"} height={"95"} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners6} className={'img-fluid'} width={'231'} height={'95'} alt={"Navkar Corporation"} />
+                      <LazyLoader src={ourpartners6} className={'img-fluid'} width={'231'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners7} className={'img-fluid'} width={'278'} height={'95'} alt={"ICICI"} />
+                      <LazyLoader src={ourpartners7} className={'img-fluid'} width={'278'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners8} className={'img-fluid'} width={'172'} height={'95'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners8} className={'img-fluid'} width={'172'} height={'95'} alt={""} />
                     </div>
                   </div>
                   

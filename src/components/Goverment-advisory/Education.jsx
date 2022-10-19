@@ -146,22 +146,22 @@ function Education() {
 
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={educationpartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={"Niti Aayog"} />
+                        <LazyLoader src={educationpartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={" "} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={educationpartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={"Navkar Corporation"} />
+                        <LazyLoader src={educationpartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={" "} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={educationpartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
+                        <LazyLoader src={educationpartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={educationpartnerfour} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
+                        <LazyLoader src={educationpartnerfour} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
                       </div>
                     </div>
 

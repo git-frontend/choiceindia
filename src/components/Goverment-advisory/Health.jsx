@@ -147,17 +147,17 @@ function Health() {
 
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerone} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                        <LazyLoader src={healthpartnerone} className={'img-fluid'} width={"96"} height={"95"} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={"Navkar Corporation"} />
+                        <LazyLoader src={healthpartnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerthree} className={'img-fluid'} width={'172'} height={'95'} alt={"ICICI"} />
+                        <LazyLoader src={healthpartnerthree} className={'img-fluid'} width={'172'} height={'95'} alt={""} />
                       </div>
                     </div>
                    

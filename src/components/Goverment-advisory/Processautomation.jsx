@@ -157,22 +157,22 @@ function Processautomation() {
 
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners4} className={'img-fluid'} width={"177"} height={"96"} alt={"Niti Aayog"} />
+                      <LazyLoader src={ourpartners4} className={'img-fluid'} width={"177"} height={"96"} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners3} className={'img-fluid'} width={'95'} height={'95'} alt={"Navkar Corporation"} />
+                      <LazyLoader src={ourpartners3} className={'img-fluid'} width={'95'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners2} className={'img-fluid'} width={'238'} height={'96'} alt={"ICICI"} />
+                      <LazyLoader src={ourpartners2} className={'img-fluid'} width={'238'} height={'96'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners1} className={'img-fluid'} width={'206'} height={'96'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners1} className={'img-fluid'} width={'206'} height={'96'} alt={""} />
                     </div>
                   </div>
                   

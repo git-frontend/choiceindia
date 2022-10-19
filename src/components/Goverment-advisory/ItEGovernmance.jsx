@@ -169,7 +169,7 @@ function ItEGovernmance() {
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={ITpartnerfive} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
+                        <LazyLoader src={ITpartnerfive} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
                       </div>
                     </div>
                    

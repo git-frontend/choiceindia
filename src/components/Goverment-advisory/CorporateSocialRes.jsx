@@ -62,27 +62,27 @@ function CorporateSocialRes() {
                     <Slider {...settings} className="social-list-slider">
                       <div className="social-item">
                         <div className="img-item">
-                          <LazyLoader src={lionsclubinternational} className={"img-fluid"}  width={'182'} height={'169'} alt={"loading"} />
+                          <LazyLoader src={lionsclubinternational} className={"img-fluid"}  width={'182'} height={'169'} alt={""} />
                         </div>
                       </div>
                       <div className="social-item">
                         <div className="img-item">
-                          <LazyLoader src={kiit} className={"img-fluid"} width={'223'} height={'169'}   alt={"loading"} />
+                          <LazyLoader src={kiit} className={"img-fluid"} width={'223'} height={'169'}   alt={""} />
                         </div>
                       </div>
                       <div className="social-item">
                         <div className="img-item">
-                          <LazyLoader src={chothmalpatodia} className={"img-fluid"} width={'213'} height={'151'}  alt={"loading"} />
+                          <LazyLoader src={chothmalpatodia} className={"img-fluid"} width={'213'} height={'151'}  alt={""} />
                         </div>
                       </div>
                       <div className="social-item">
                         <div className="img-item">
-                          <LazyLoader src={bissauwelfare} className={"img-fluid"}  width={'197'} height={'197'}  alt={"loading"} />
+                          <LazyLoader src={bissauwelfare} className={"img-fluid"}  width={'197'} height={'197'}  alt={""} />
                         </div>
                       </div>
                       <div className="social-item">
                         <div className="img-item">
-                        <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={'197'} height={'197'}   alt={"loading"} />
+                        <LazyLoader src={rajasthanvidyarthi} className={"img-fluid"} width={'197'} height={'197'}   alt={""} />
                         </div>
                       </div>
                       {/* <div className="social-item">
