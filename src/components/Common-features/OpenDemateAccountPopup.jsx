@@ -126,7 +126,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         let request = {
             "service_code": "JF",
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FinXWeb",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",

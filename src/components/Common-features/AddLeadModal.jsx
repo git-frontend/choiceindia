@@ -178,7 +178,7 @@ function AddLeadModal(props) {
         showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FinXWeb",
             "request_source": "CHOICEINDIA",
             "source": "CHOICEINDIA",
             "user_consent": "1",

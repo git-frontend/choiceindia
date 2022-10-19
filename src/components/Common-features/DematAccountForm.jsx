@@ -233,7 +233,7 @@ function DematAccountForm(props) {
         // showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FinXWeb",
             "request_source": "CHOICEINDIA",
             "source": "CHOICEINDIA",
             "user_consent": "1",
@@ -277,7 +277,7 @@ function DematAccountForm(props) {
             "whatsapp_consent":true,
             "service_code":type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": type1=='MF' ? "INVESTICA":"JIFFY",
+            "product": type1=='MF' ? "INVESTICA":"FinXWeb",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
