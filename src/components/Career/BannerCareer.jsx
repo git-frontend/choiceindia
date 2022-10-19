@@ -1,13 +1,21 @@
-import CareerImage0 from '../../assets/images/career/Work-with-Choice.webp';
-import CareerImage1 from '../../assets/images/career/careers-at-choice.webp';
-import CareerImage2 from '../../assets/images/career/job-opportunity.webp';
-import CareerImage3 from '../../assets/images/career/work-culture.webp';
-import CareerImage4 from '../../assets/images/career/presentation.webp';
-import CareerImage5 from '../../assets/images/career/appreciation.webp';
-import CareerImage6 from '../../assets/images/career/team-work.webp';
+// import CareerImage0 from '../../assets/images/career/Work-with-Choice.webp';
+// import CareerImage1 from '../../assets/images/career/careers-at-choice.webp';
+// import CareerImage2 from '../../assets/images/career/job-opportunity.webp';
+// import CareerImage3 from '../../assets/images/career/work-culture.webp';
+// import CareerImage4 from '../../assets/images/career/presentation.webp';
+// import CareerImage5 from '../../assets/images/career/appreciation.webp';
+// import CareerImage6 from '../../assets/images/career/team-work.webp';
 
-import "../../../node_modules/slick-carousel/slick/slick.css"
-import "../../../node_modules/slick-carousel/slick/slick-theme.css"
+import CareerImage0 from '../../assets/images/career/maintenance.webp';
+import CareerImage1 from '../../assets/images/career/maintenance.webp';
+import CareerImage2 from '../../assets/images/career/maintenance.webp';
+import CareerImage3 from '../../assets/images/career/maintenance.webp';
+import CareerImage4 from '../../assets/images/career/maintenance.webp';
+import CareerImage5 from '../../assets/images/career/maintenance.webp';
+import CareerImage6 from '../../assets/images/career/maintenance.webp';
+
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Marquee from 'react-fast-marquee';
 import LazyLoader from '../Common-features/LazyLoader';

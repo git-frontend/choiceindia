@@ -1,5 +1,6 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
+@import '../../components/Corporate-Governance/corporate-governance.scss';
 
 
 .research-banner{
@@ -1662,6 +1663,17 @@
 .red-txt{
   color: $redtext !important;
 }
+.disclaimernew{
+  background-color:#DFF1FF ;
+  color: $blueColortext;
+  @extend .cgmainwrap;
+    border: none;
+   
+  }
+  .filedownloadfaq{
+    padding-bottom: 5rem;
+  }
+  
 
 
 
