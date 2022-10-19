@@ -66,6 +66,8 @@ function Affordablehousing() {
             <ul>
               <li>
               Consulting under PMAY Scheme for ULBs of:
+              <div className="houseschemelist">
+              <ul>
               <li>
               Chhattisgarh
               </li>
@@ -78,7 +80,10 @@ function Affordablehousing() {
               <li>
               Jharkhand
               </li>
+              </ul>
+              </div>
               </li>
+             
             </ul>
           </div>
         </div>
