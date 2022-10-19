@@ -592,9 +592,9 @@
                             font-size: 1.692rem;
 
                             // padding: 1.3rem 0;
-                            @media (max-width:$sm) {
-                                border-bottom: none;
-                            }
+                            // @media (max-width:$sm) {
+                            //     border-bottom: none;
+                            // }
 
                             &:last-child {
                                 border-bottom: none;
@@ -602,34 +602,34 @@
                     
                           }
                     }
-                    .clients{
-                        padding: 60px 35px 20px;
-                        @media (max-width: $sm) {
-                          margin-top: 2rem;
-                          padding:2.1875rem 1.45rem 0;
-                         }
-                         @media (min-width:767px) and (max-width:820px) {
-                            padding: 30px ;
-                          } 
-                         ul{
-                          li{
-                            font-size: 1.55rem;
-                            line-height: 2.6rem;
-                            padding: 1.5rem 0;
-                            @media (max-width: $sm) {
-                                font-size: 1.5rem;
-                                padding: 1rem 0;
-                               }
-                               @media (min-width:767px) and (max-width:820px) {
-                                font-size: 1.5rem;
-                              line-height: 2.5rem;
-                              padding: 1rem 0;
-                              } 
-                          }
+                    // .clients{
+                    //     padding: 60px 35px 20px;
+                    //     @media (max-width: $sm) {
+                    //       margin-top: 2rem;
+                    //       padding: 2.1875rem 1.45rem 0;
+                    //      }
+                    //      @media (min-width:767px) and (max-width:820px) {
+                    //         padding: 30px ;
+                    //       } 
+                    //      ul{
+                    //       li{
+                    //         font-size: 1.55rem;
+                    //         line-height: 2.6rem;
+                    //         padding: 1.5rem 0;
+                    //         @media (max-width: $sm) {
+                    //             font-size: 1.5rem;
+                    //             padding: 1rem 0;
+                    //            }
+                    //            @media (min-width:767px) and (max-width:820px) {
+                    //             font-size: 1.5rem;
+                    //           line-height: 2.5rem;
+                    //           padding: 1rem 0;
+                    //           } 
+                    //       }
                   
-                        }
+                    //     }
 
-                    }
+                    // }
                 }
 
                 .services {
@@ -674,6 +674,7 @@
 
                     @media (max-width: $sm) {
                         margin-top: 2rem;
+                        padding: 2.1875rem 1.45rem 0;
                     }
 
                     @media (min-width:767px) and (max-width:820px) {

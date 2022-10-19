@@ -249,10 +249,10 @@ function Service() {
           </div>
         </div>
         <div className="main-cont-gov-adv">
-          <div className="sectordetail  sector-active" >
+          <div className="sectordetail " >
             <Tribalwelfare />
           </div>
-          <div className="sectordetail  " >
+          <div className="sectordetail " >
             <Health />
           </div>
           <div className="sectordetail" >
@@ -261,7 +261,7 @@ function Service() {
           <div className="sectordetail " >
             <Education />
           </div>
-          <div className="sectordetail " >
+          <div className="sectordetail sector-active" >
             <ItEGovernmance />
           </div>
         </div>
