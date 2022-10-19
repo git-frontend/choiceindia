@@ -37,7 +37,7 @@ function Urbandevelopment() {
   
   const settings1 = {
     infinite: true,
-    speed: 1500,
+    speed: 2500,
     arrows: false,
     slidesToShow: 4,
     autoplay: true,

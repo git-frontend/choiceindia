@@ -3,10 +3,10 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
-import healthpartnerone from '../../assets/images/goverment-advisory/health-partnerone.svg';
-import healthpartnertwo from '../../assets/images/goverment-advisory/health-partnertwo.svg';
-import healthpartnerthree from '../../assets/images/goverment-advisory/health-partnerthree.svg';
 
+import agripartnerone from '../../assets/images/goverment-advisory/agripartnerone.svg';
+import agripartnertwo from '../../assets/images/goverment-advisory/agripartnertwo.svg';
+import agripartnerthree from '../../assets/images/goverment-advisory/agripartnerthree.svg';
 
 
 import React, { useRef } from 'react';
@@ -16,7 +16,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-function Health() {
+function AgricultureAllied() {
 
   const [count, setcount] = useState(0);
 
@@ -44,7 +44,6 @@ function Health() {
     dots: false,
     autoplaySpeed: 1000,
     slidesToScroll: 1,
-
     responsive: [
       {
         breakpoint: 992,
@@ -59,19 +58,18 @@ function Health() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          dots: true,
+            dots: true,
         },
       },
     ],
   };
+  
 
 
   return (
     <div>
 
-        
         <div className="container">
-
           <div className="row">
             <div className="col-md-12">
               <div className="boxwrap">
@@ -85,25 +83,25 @@ function Health() {
                       <h4>Product</h4>
                       <ul>
                         <li>
-                        Field level survey
+                        Integrated PMU for (360 Degree Complete monitoring and Process Management):
+                        <br/>
+                        - Animal Husbandry<br/>
+                        - Dairy<br/>
+                        - Fisheries<br/>
                         </li>
                         <li>
-                        Capacity building of health worker
+                        Survey &amp; Geo-Tagging
                         </li>
                         <li>
-                        Capacity building of health worker
+                        PMU services for agriculture production storage, organics &amp; animal husbandry
                         </li>
                         <li>
-                        Community development &amp; study over CD, NCD, HIV/AIDS
+                        Capacity building, best practices
                         </li>
                         <li>
-                        Performance Monitoring &amp; Evaluation
+                        Value Chain and Marketplace
                         </li>
-                        <li>
-                        Third party assessment
-                        </li>
-                        
-
+                       
 
 
 
@@ -113,15 +111,18 @@ function Health() {
                       <h4>Project</h4>
                       <ul>
                         <li>
-                        Mentoring Support for Assessing the performance of States in Health &amp; Nutrition - Delhi- NITI aayog
+                        PMC-KeVi mart e-commerce business provided by Gujarat Agro Industries Corporation
                         </li>
                         <li>
-                        Implementation of the Fourth Round of the Global Youth Tobacco Survey (GYTS-4) in 3 States - Goa, Maharashtra &amp; AP
+                        Survey and Geo-Tagging of Agriculture warehouses across in the state of HP, J&amp;K &amp; Uttarakhand for NABARD Consultancy Services
                         </li>
                         <li>
-                        Undertakiing Implementation Research in health sector under UNDP Programe in MP- RKSK scheme
+                        PMU at Bihar Livestock development agency with our Partner NABCONS
                         </li>
-                       
+                        <li>
+                        DPR PMC- Maize processing plant in Bastar, Chhattisgarh
+                        </li>
+                        
 
 
 
@@ -143,21 +144,21 @@ function Health() {
                 </div>
                 <div className="right-img">
 
-                  <Slider {...settings1} id="clientslider">
+                  <Slider {...settings1} id="socialclientslider">
 
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerone} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                        <LazyLoader src={agripartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={"Niti Aayog"} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={"Navkar Corporation"} />
+                        <LazyLoader src={agripartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={"Navkar Corporation"} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerthree} className={'img-fluid'} width={'172'} height={'95'} alt={"ICICI"} />
+                        <LazyLoader src={agripartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
                       </div>
                     </div>
                    
@@ -173,11 +174,9 @@ function Health() {
           </div>
 
         </div>
-
-      </div>
-
+</div>
 
   );
 }
 
-export default Health;
+export default AgricultureAllied;
