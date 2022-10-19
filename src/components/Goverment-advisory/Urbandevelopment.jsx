@@ -40,7 +40,7 @@ function Urbandevelopment() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -59,6 +59,7 @@ function Urbandevelopment() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+            dots: true,
         },
       },
     ],

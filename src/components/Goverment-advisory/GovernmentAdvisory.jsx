@@ -41,7 +41,6 @@ function GovernmentAdvisory() {
             <Banner />
             <Whatwethink/>
            <Service />
-          
            <CorporateSocialRes/>
           </div>
       }
