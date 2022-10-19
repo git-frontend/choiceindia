@@ -37,7 +37,7 @@ function Urbandevelopment() {
   
   const settings1 = {
     infinite: true,
-    speed: 1500,
+    speed: 2500,
     arrows: false,
     slidesToShow: 4,
     autoplay: true,
@@ -157,22 +157,22 @@ function Urbandevelopment() {
 
           <div className="image_wrapper">
             <div className="img-item">
-              <LazyLoader src={partnerone} className={'img-fluid'} width={"96"} height={"120"} alt={"Niti Aayog"} />
+              <LazyLoader src={partnerone} className={'img-fluid'} width={"96"} height={"120"} alt={""} />
             </div>
           </div>
           <div className="image_wrapper">
             <div className="img-item">
-              <LazyLoader src={partnerfour} className={'img-fluid'} width={'96'} height={'120'} alt={"Navkar Corporation"} />
+              <LazyLoader src={partnerfour} className={'img-fluid'} width={'96'} height={'120'} alt={""} />
             </div>
           </div>
           <div className="image_wrapper">
             <div className="img-item">
-              <LazyLoader src={partnerfive} className={'img-fluid'} width={'172'} height={'120'} alt={"ICICI"} />
+              <LazyLoader src={partnerfive} className={'img-fluid'} width={'172'} height={'120'} alt={""} />
             </div>
           </div>
           <div className="image_wrapper">
             <div className="img-item">
-              <LazyLoader src={partnertwo} className={'img-fluid'} width={'239'} height={'120'} alt={"Liberty Insurance"} />
+              <LazyLoader src={partnertwo} className={'img-fluid'} width={'239'} height={'120'} alt={""} />
             </div>
           </div>
           <div className="image_wrapper">

@@ -3,11 +3,12 @@ import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
-import healthpartnerone from '../../assets/images/goverment-advisory/health-partnerone.svg';
-import healthpartnertwo from '../../assets/images/goverment-advisory/health-partnertwo.svg';
-import healthpartnerthree from '../../assets/images/goverment-advisory/health-partnerthree.svg';
 
-
+import ITpartnerone from '../../assets/images/goverment-advisory/itpartnerone.svg';
+import ITpartnertwo from '../../assets/images/goverment-advisory/itpartnertwo.svg';
+import ITpartnerthree from '../../assets/images/goverment-advisory/itpartnerthree.svg';
+import ITpartnerfour from '../../assets/images/goverment-advisory/itpartnerfour.svg';
+import ITpartnerfive from '../../assets/images/goverment-advisory/itpartnerfive.svg';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -16,7 +17,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-function Health() {
+function ItEGovernmance() {
 
   const [count, setcount] = useState(0);
 
@@ -35,16 +36,15 @@ function Health() {
 
 
   const settings1 = {
-    infinite: false,
+    infinite: true,
     speed: 1500,
     arrows: false,
-    slidesToShow: 4,
+    slidesToShow: 5,
     autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
-    slidesToScroll: 1,
-
+    slidesToScroll: 5,
     responsive: [
       {
         breakpoint: 992,
@@ -59,19 +59,18 @@ function Health() {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          dots: true,
+            dots: true,
         },
       },
     ],
   };
+  
 
 
   return (
     <div>
 
-        
         <div className="container">
-
           <div className="row">
             <div className="col-md-12">
               <div className="boxwrap">
@@ -85,26 +84,26 @@ function Health() {
                       <h4>Product</h4>
                       <ul>
                         <li>
-                        Field level survey
+                        e-Bill
                         </li>
                         <li>
-                        Capacity building of health worker
+                        e-Audit
                         </li>
                         <li>
-                        Capacity building of health worker
+                        e- Gov
                         </li>
                         <li>
-                        Community development &amp; study over CD, NCD, HIV/AIDS
+                        HR Management
                         </li>
                         <li>
-                        Performance Monitoring &amp; Evaluation
+                        GIS Mapping
                         </li>
+                       <li>
+                       Helpdesk Management
+                       </li>
                         <li>
-                        Third party assessment
+                        Grievance Management
                         </li>
-                        
-
-
 
 
                       </ul>
@@ -113,15 +112,18 @@ function Health() {
                       <h4>Project</h4>
                       <ul>
                         <li>
-                        Mentoring Support for Assessing the performance of States in Health &amp; Nutrition - Delhi- NITI aayog
+                        Development and Operation of Web Portal for Women Entrepreneurship Platform (WEP)-4500 users at Niti Aayog
                         </li>
                         <li>
-                        Implementation of the Fourth Round of the Global Youth Tobacco Survey (GYTS-4) in 3 States - Goa, Maharashtra &amp; AP
+                        Development and maintenance of E-Bill software at Patna Municipal Corporation, Dantewada and Jagdalpur Municipal Councils
                         </li>
                         <li>
-                        Undertakiing Implementation Research in health sector under UNDP Programe in MP- RKSK scheme
+                        Development of Software for Procurement Management at IIIT, Naya Raipur - CG
                         </li>
-                       
+                        <li>
+                        Implementation and Maintenance of Accounting Software at UIDAI
+                        </li>
+                        
 
 
 
@@ -143,21 +145,31 @@ function Health() {
                 </div>
                 <div className="right-img">
 
-                  <Slider {...settings1} id="clientslider">
+                  <Slider {...settings1} id="socialclientslider">
 
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerone} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
+                        <LazyLoader src={ITpartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnertwo} className={'img-fluid'} width={'96'} height={'95'} alt={"Navkar Corporation"} />
+                        <LazyLoader src={ITpartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={healthpartnerthree} className={'img-fluid'} width={'172'} height={'95'} alt={"ICICI"} />
+                        <LazyLoader src={ITpartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={ITpartnerfour} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
+                      </div>
+                    </div>
+                    <div className="image_wrapper">
+                      <div className="img-item">
+                        <LazyLoader src={ITpartnerfive} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
                       </div>
                     </div>
                    
@@ -173,11 +185,9 @@ function Health() {
           </div>
 
         </div>
-
-      </div>
-
+</div>
 
   );
 }
 
-export default Health;
+export default ItEGovernmance;
