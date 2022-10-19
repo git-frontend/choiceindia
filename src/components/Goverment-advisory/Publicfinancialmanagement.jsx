@@ -1,13 +1,12 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
+import serviceimageseven from '../../assets/images/goverment-advisory/serviceimageseven.webp';
 
-import serviceimagefive from '../../assets/images/goverment-advisory/serviceimagefive.webp';
-import ourpartners1 from '../../assets/images/goverment-advisory/ourpartners1.svg';
-import ourpartners3 from '../../assets/images/goverment-advisory/ourpartners3.svg';
-
-import ourpartners4 from '../../assets/images/goverment-advisory/ourpartners4.svg';
-import ourpartners2 from '../../assets/images/goverment-advisory/ourpartners2.svg';
+import ourpartners5 from '../../assets/images/goverment-advisory/ourpartners5.svg';
+import ourpartners6 from '../../assets/images/goverment-advisory/ourpartners6.svg';
+import ourpartners7 from '../../assets/images/goverment-advisory/ourpartners7.svg';
+import ourpartners8 from '../../assets/images/goverment-advisory/ourpartners8.svg';
 
 
 
@@ -18,7 +17,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-function Processautomation() {
+function Publicfinancialmanagement() {
 
   const [count, setcount] = useState(0);
 
@@ -40,7 +39,7 @@ function Processautomation() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -59,6 +58,7 @@ function Processautomation() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
@@ -77,65 +77,55 @@ function Processautomation() {
           <div className="col-md-12">
             <div className="boxwrap">
               <div className="left-img">
-                <img src={serviceimagefive} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                <img src={serviceimageseven} className={"img-fluid"} alt="" width={"383"} height={"868"} />
               </div>
               <div className="right-sec">
-                <p className="text">Customized software service to many ULBs, Niti Aayog and prominent institutions </p>
+                <p className="text">Served 1000+ clientele in PFM Sector in 15 states in India including FMTSC, Revenue Augmentation, Internal Control etc. </p>
                 <div className="client-service">
                   <div className="services boxwrapper">
                     <h4>Major Services</h4>
                     <ul>
                       <li>
-                        Automation of Processes and Re-
-                        engineering
+                        Develop Self-Sustainability &amp; Revenue Augmentation for
+                        Local Bodies
                       </li>
                       <li>
-                      Management Information System
+                        GST Revenue Augmentation
                       </li>
                       <li>
-                      Software Development 
+                        Roll-out of Accrual Based Double Entry Accounting System for
+                        Local Bodies
                       </li>
                       <li>
-                      e-Audit
+                        Complete Financial and Procurement Management for
+                        Central and State level undertakings
                       </li>
                       <li>
-                      Data Digitization
+                      Taxation & Statutory Compliances
                       </li>
-                      <li>
-                      Reform Planning and IT Advisory
-                      </li>
-                      <li>
-                      Complete Procurement Management (e-Bill)
-                      </li>
-
                     </ul>
                   </div>
                   <div className="clients boxwrapper">
                     <h4>Major Clients</h4>
                     <ul>
                       <li>
-                      Patna Municipal Corporation
+                      Unique Identification Authority of India (UIDAI)
                       </li>
                       <li>
-                      Local Fund Audit - Chhattisgarh
+                      National Informatics Centre Services Incorporated (NISCSI)
                       </li>
                       <li>
-                      IIIT, Naya Raipur
+                      Dedicated Freight Corridor Corporation of India
                       </li>
                       <li>
-                      Niti Aayog
+                      SPUR Project Monitoring Unit (PMU), Bihar
                       </li>
                       <li>
-                      Various Urban Local Bodies
+                      Ministry of Urban Development (MoUD)
                       </li>
                       <li>
-                      Kotle Patil
+                      State Urban Development Dept. - MH, MP, CG,JH, BR
                       </li>
-
-
-
-
-
                     </ul>
                   </div>
                 </div>
@@ -157,22 +147,22 @@ function Processautomation() {
 
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners4} className={'img-fluid'} width={"177"} height={"96"} alt={"Niti Aayog"} />
+                      <LazyLoader src={ourpartners5} className={'img-fluid'} width={"96"} height={"95"} alt={"Niti Aayog"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners3} className={'img-fluid'} width={'95'} height={'95'} alt={"Navkar Corporation"} />
+                      <LazyLoader src={ourpartners6} className={'img-fluid'} width={'231'} height={'95'} alt={"Navkar Corporation"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners2} className={'img-fluid'} width={'238'} height={'96'} alt={"ICICI"} />
+                      <LazyLoader src={ourpartners7} className={'img-fluid'} width={'278'} height={'95'} alt={"ICICI"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners1} className={'img-fluid'} width={'206'} height={'96'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners8} className={'img-fluid'} width={'172'} height={'95'} alt={"Liberty Insurance"} />
                     </div>
                   </div>
                   
@@ -195,4 +185,4 @@ function Processautomation() {
   );
 }
 
-export default Processautomation;
+export default Publicfinancialmanagement;

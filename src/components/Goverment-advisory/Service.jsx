@@ -1,13 +1,9 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-import serviceimage from '../../assets/images/goverment-advisory/serviceimage.webp';
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
 
-import socialpartnerone from '../../assets/images/goverment-advisory/socialpartnerone.svg';
-import socialpartnertwo from '../../assets/images/goverment-advisory/socialpartnertwo.svg';
-import socialpartnerthree from '../../assets/images/goverment-advisory/socialpartnerthree.svg';
-import socialpartnerfour from '../../assets/images/goverment-advisory/socialpartnerfour.svg';
+
+
 import socialsectorone from '../../assets/images/goverment-advisory/tribal-welfare.webp';
 import socialsectortwo from '../../assets/images/goverment-advisory/health.webp';
 import socialsectorthree from '../../assets/images/goverment-advisory/agriculture-allied.webp';
@@ -25,6 +21,9 @@ import Affordablehousing from './Affordablehousing';
 import Processautomation from './Processautomation';
 import Tribalwelfare from './Tribalwelfare';
 import Health from './Health';
+import Capacitybuilding from './Capacitybuilding';
+import Publicfinancialmanagement from './Publicfinancialmanagement';
+import Schemepmus from './Schemepmus';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -166,24 +165,33 @@ function Service() {
         </div>
 
         <div className="main-cont-gov-adv">
-          <div className="detailsection  cont-itm-active mb-5   " >
+          <div className="detailsection  cont-itm-active  " >
             <Urbandevelopment />
           </div>
-          <div className="detailsection  mb-5 ">
+          <div className="detailsection   mt6 ">
             <Roadandhighway />
           </div>
-          <div className="detailsection   mb-5 ">
+          <div className="detailsection   mt6 ">
             <Watersanitation />
           </div>
-          <div className="detailsection  mb-5 ">
+          <div className="detailsection  mt6 ">
             <Affordablehousing />
           </div>
           <div className="detailsection ">
             <Processautomation />
           </div>
+          <div className="detailsection   mt6  ">
+            <Capacitybuilding />
+          </div>
+          <div className="detailsection   ">
+            <Publicfinancialmanagement />
+          </div>
+          <div className="detailsection ">
+            <Schemepmus />
+          </div>              
         </div>
       </section>
-
+ 
 
 
       <section className="socialsector">

@@ -1,15 +1,13 @@
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
-
-import serviceimagefive from '../../assets/images/goverment-advisory/serviceimagefive.webp';
-import ourpartners1 from '../../assets/images/goverment-advisory/ourpartners1.svg';
-import ourpartners3 from '../../assets/images/goverment-advisory/ourpartners3.svg';
-
-import ourpartners4 from '../../assets/images/goverment-advisory/ourpartners4.svg';
-import ourpartners2 from '../../assets/images/goverment-advisory/ourpartners2.svg';
-
-
+import serviceimageeight from '../../assets/images/goverment-advisory/serviceimageeight.webp';
+import ourpartners9 from '../../assets/images/goverment-advisory/ourpartners9.svg';
+import ourpartners10 from '../../assets/images/goverment-advisory/ourpartners10.svg';
+import ourpartners11 from '../../assets/images/goverment-advisory/ourpartners11.svg';
+import ourpartners12 from '../../assets/images/goverment-advisory/ourpartners12.svg';
+import ourpartners13 from '../../assets/images/goverment-advisory/ourpartners13.svg';
+import ourpartners14 from '../../assets/images/goverment-advisory/ourpartners14.svg';
 
 import React, { useRef } from 'react';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -18,7 +16,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 
-function Processautomation() {
+function Schemepmus() {
 
   const [count, setcount] = useState(0);
 
@@ -40,7 +38,7 @@ function Processautomation() {
     speed: 1500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: false,
     autoplaySpeed: 1000,
@@ -59,6 +57,7 @@ function Processautomation() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          dots: true,
         },
       },
     ],
@@ -77,65 +76,52 @@ function Processautomation() {
           <div className="col-md-12">
             <div className="boxwrap">
               <div className="left-img">
-                <img src={serviceimagefive} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                <img src={serviceimageeight} className={"img-fluid"} alt="" width={"383"} height={"868"} />
               </div>
               <div className="right-sec">
-                <p className="text">Customized software service to many ULBs, Niti Aayog and prominent institutions </p>
+                <p className="text">PMU services including engineering, financial and sectoral consulting under Flagship schemes of GoI as well as various state govt. schemes </p>
                 <div className="client-service">
                   <div className="services boxwrapper">
                     <h4>Major Services</h4>
                     <ul>
                       <li>
-                        Automation of Processes and Re-
-                        engineering
+                      Financial Management and accounting
                       </li>
                       <li>
-                      Management Information System
+                      Financial Management & Technical Support  (FMTSC)
                       </li>
                       <li>
-                      Software Development 
+                      Revenue Reform
                       </li>
                       <li>
-                      e-Audit
+                      Post Procurement Review
                       </li>
                       <li>
-                      Data Digitization
+                      PMU for implementation of various central and State Govt. public welfare Schemes
                       </li>
                       <li>
-                      Reform Planning and IT Advisory
+                      Transaction advisory
                       </li>
-                      <li>
-                      Complete Procurement Management (e-Bill)
-                      </li>
-
                     </ul>
                   </div>
                   <div className="clients boxwrapper">
                     <h4>Major Clients</h4>
                     <ul>
                       <li>
-                      Patna Municipal Corporation
+                      Jal Jeevan Mission (JJM)
                       </li>
                       <li>
-                      Local Fund Audit - Chhattisgarh
+                      Rashtriya Madhyamik Shiksha Abhiyan (RMSA)
                       </li>
                       <li>
-                      IIIT, Naya Raipur
+                      Sarva Shiksha Abhiyan (SSA)
                       </li>
                       <li>
-                      Niti Aayog
+                      National Urban Livelihoods Mission (NULM)
                       </li>
                       <li>
-                      Various Urban Local Bodies
+                      Pradhan Mantri Awas Yojana (PMAY)
                       </li>
-                      <li>
-                      Kotle Patil
-                      </li>
-
-
-
-
-
                     </ul>
                   </div>
                 </div>
@@ -157,22 +143,32 @@ function Processautomation() {
 
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners4} className={'img-fluid'} width={"177"} height={"96"} alt={"Niti Aayog"} />
+                      <LazyLoader src={ourpartners9} className={'img-fluid'} width={"89"} height={"95"} alt={"Niti Aayog"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners3} className={'img-fluid'} width={'95'} height={'95'} alt={"Navkar Corporation"} />
+                      <LazyLoader src={ourpartners10} className={'img-fluid'} width={'197'} height={'95'} alt={"Navkar Corporation"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners2} className={'img-fluid'} width={'238'} height={'96'} alt={"ICICI"} />
+                      <LazyLoader src={ourpartners11} className={'img-fluid'} width={'116'} height={'95'} alt={"ICICI"} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners1} className={'img-fluid'} width={'206'} height={'96'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners12} className={'img-fluid'} width={'329'} height={'95'} alt={"Liberty Insurance"} />
+                    </div>
+                  </div>
+                  <div className="image_wrapper">
+                    <div className="img-item">
+                      <LazyLoader src={ourpartners13} className={'img-fluid'} width={'127'} height={'95'} alt={"Liberty Insurance"} />
+                    </div>
+                  </div>
+                  <div className="image_wrapper">
+                    <div className="img-item">
+                      <LazyLoader src={ourpartners14} className={'img-fluid'} width={'107'} height={'95'} alt={"Liberty Insurance"} />
                     </div>
                   </div>
                   
@@ -195,4 +191,4 @@ function Processautomation() {
   );
 }
 
-export default Processautomation;
+export default Schemepmus;
