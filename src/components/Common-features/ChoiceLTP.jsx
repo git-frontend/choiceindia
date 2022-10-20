@@ -59,7 +59,7 @@ function ChoiceLTP() {
   function getKeyInfo(session, scrips) {
     scrips.forEach(ele => {
       let keyInfoPayload = { "UserId": 'guest', "SessionId": session || '', "Token": ele.Token, "SegmentId": ele.SegmentId };
-      fetch('https://api.jiffy.in/api/cm/ProfileMkt/KeyInfo/', {
+      fetch('https://finx.choiceindia.com/api/cm/ProfileMkt/KeyInfo/', {
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, *cors, same-origin
         cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
