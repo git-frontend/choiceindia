@@ -57,7 +57,7 @@ function Urbandevelopment() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 2,
           slidesToScroll: 1,
             dots: true,
         },
