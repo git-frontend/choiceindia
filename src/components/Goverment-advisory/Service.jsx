@@ -56,7 +56,7 @@ function Service() {
     speed: 2500,
     arrows: false,
     slidesToShow: 4,
-    autoplay: true,
+    autoplay: false,
     margin: 10,
     dots: true,
     autoplaySpeed: 1000,
@@ -249,19 +249,19 @@ function Service() {
           </div>
         </div>
         <div className="main-cont-gov-adv">
-          <div className="sectordetail " >
+          <div className="sectordetail sector-active" >
             <Tribalwelfare />
           </div>
           <div className="sectordetail " >
             <Health />
           </div>
-          <div className="sectordetail" >
+          <div className="sectordetail  " >
             <AgricultureAllied />
           </div>
           <div className="sectordetail " >
             <Education />
           </div>
-          <div className="sectordetail sector-active" >
+          <div className="sectordetail " >
             <ItEGovernmance />
           </div>
         </div>
