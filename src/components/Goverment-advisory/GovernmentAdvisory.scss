@@ -354,7 +354,7 @@
                     width: 48%;
                     border-radius: 1.25rem;
                     min-height: 42rem;
-                    height: 100%;
+                    height: auto;
 
                     @media (max-width: $sm) {
                         width: 100%;
@@ -773,7 +773,7 @@
     }
     .slick-dots{
         @media (max-width: $sm) {
-        bottom: -0px;
+        bottom:-36px;
         }
     }
 
