@@ -52,7 +52,7 @@ function Watersanitation() {
               Feasibility Report
               </li>
               <li>
-              DPR for Urban & Rural water Supply
+              DPR for Urban &amp; Rural water Supply
               </li>
               <li>
               Third Party Inspection
@@ -70,10 +70,10 @@ function Watersanitation() {
               jal jeevan mission (JJM ) - Rajasthan
               </li>
               <li>
-              drinkinf water & sanitation development, godda
+              drinkinf water &amp; sanitation development, godda
               </li>
               <li>
-              Drinking Water & Sanitation Department, Ramgarh
+              Drinking Water &amp; Sanitation Department, Ramgarh
               </li>
               <li>
               Jharkhand Urban Infrastructure Development Co. Ltd
