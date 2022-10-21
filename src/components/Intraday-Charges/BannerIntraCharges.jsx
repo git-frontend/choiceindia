@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/intraday-charges/banner-person.webp';
+import SubBannerimage from '../../assets/images/intraday-charges/intraday-charges.webp';
 import img1 from '../../assets/images/intraday-charges/ratio-icon.svg';
 import img2 from '../../assets/images/intraday-charges/quandle.svg';
 
@@ -39,7 +39,7 @@ function BannerIntraCharges() {
                                     <span className="itm-third">
                                         <LazyLoader src={img2} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"39"} height={"28"}/>
                                     </span>
-                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"432"} height={"500"}/>
+                                    <LazyLoader src={SubBannerimage} alt={"Intraday Charges"} className={"img-fluid"} width={"432"} height={"500"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>

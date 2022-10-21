@@ -1,5 +1,5 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/intraday-charges/smart-trader.webp';
+import SubBannerimage from '../../assets/images/intraday-charges/save-brokerage-intraday-trades.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function SmartTrader() {
@@ -10,7 +10,7 @@ function SmartTrader() {
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-md-6 d-flex justify-content-center">
-                            <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid hide-mob"} />
+                            <LazyLoader src={SubBannerimage} alt={"Save Brokerage on Intraday Charges"} className={"img-fluid hide-mob"} />
                         </div>
                         <div className="col-md-6">
                             <div className="sm-trader-des">

@@ -1,5 +1,4 @@
 ﻿import React from "react";
-import SubBannerimage from '../../assets/images/intraday-charges/banner-person.webp';
 import img1 from '../../assets/images/choice-logo.svg';
 
 import LazyLoader from "../Common-features/LazyLoader";
