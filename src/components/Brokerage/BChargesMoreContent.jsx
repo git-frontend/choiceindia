@@ -28,7 +28,7 @@ function BChargesMoreContent() {
                                     The brokerage charges are not uniform and vary from one broker to another. It depends on the kind of services provided by the brokerage firm. Many brokers provide the lowest brokerage charges in India . They offer dynamic services and give benefits like offering the lowest brokerage charges to regular clients.<br /><br />
                                         <h2 className="font-bold"> Use of Brokerage Calculator </h2>
                                         With the advent of digital technology, today investors can <Link to="/open-free-demat-account">open a Demat account online</Link> at the convenience of their homes. They can also calculate their brokerage using a brokerage calculator in the trading platforms. Most brokers facilitate traders with the brokerage calculator where traders can calculate the <strong>brokerage charges</strong> advance. Some brokerage firms also allow traders to calculate GST. STT, transaction fee, and stamp duty charges.<br /><br />
-                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <Link to="/tools/brokerage-calculator">Brokerage calculator</Link> . You will have to input the following details in the tool for calculating:
+                                        So if you want to check which broker has the lowest brokerage charges for trading in India, you can easily check it by using the <a href="https://finx.choiceindia.com/tools/brokerage-calculator">Brokerage calculator</a> . You will have to input the following details in the tool for calculating:
                                         <br/><br/>
                                         <ul>
                                         <li>Buy/Sell price of a stock</li>
@@ -58,7 +58,7 @@ function BChargesMoreContent() {
                                         
                                         <li className="mb-4"><strong>Volume:</strong> Another factor on which the brokerage charges depend is the volume of transactions. Bigger the volume of transactions, bigger is the amount of brokerage. However, many stockbrokers reduce the commission of percentage on higher volume of trading.</li>
                                         
-                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="https://jiffy.choiceindia.com/">trading platform</a> to the investors. So the brokerage charges vary.</li>
+                                        <li className="mb-4"><strong>Types of Brokers:</strong>  The brokerage charges depend on the type of stock brokers. Full service brokers charge more brokerage than discount brokers. The reason being full service brokers provide additional services (research advisory, market advisory, customer support, and real-time market update) other than a <a href="https://finx.choiceindia.com/">trading platform</a> to the investors. So the brokerage charges vary.</li>
                                        
                                         </ul>
                                         <br/>

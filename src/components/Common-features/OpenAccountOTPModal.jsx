@@ -154,7 +154,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             if (type2 == 'MF') {
                                 onClose("https://investica.com/auth/sign-in")
                             } else {
-                                onClose("https://jiffy.choiceindia.com/auth/login");
+                                onClose("https://finx.choiceindia.com/auth/login");
                             }
 
 

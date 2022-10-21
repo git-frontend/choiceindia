@@ -20,7 +20,7 @@ const imageData =
     {
         "image":`${ImageSub1}`,
         "id": 4,
-        "title":'Jiffy Signal',
+        "title":'Choice FinX Signal',
         "description":'Automated Research Engine that provides research advisory with customised strategies.'
         
         
