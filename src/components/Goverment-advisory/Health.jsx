@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
+import welfareleftimagetwo from '../../assets/images/goverment-advisory/welfareleftimagetwo.webp';
 import healthpartnerone from '../../assets/images/goverment-advisory/health-partnerone.svg';
 import healthpartnertwo from '../../assets/images/goverment-advisory/health-partnertwo.svg';
 import healthpartnerthree from '../../assets/images/goverment-advisory/health-partnerthree.svg';
@@ -76,7 +76,7 @@ function Health() {
             <div className="col-md-12">
               <div className="boxwrap">
                 <div className="left-img">
-                  <img src={socialsector} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                  <img src={welfareleftimagetwo} className={"img-fluid"} alt="" width={"383"} height={"868"} />
                 </div>
                 <div className="right-sec">
 

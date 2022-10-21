@@ -2,7 +2,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
-import socialsector from '../../assets/images/goverment-advisory/welfareleftimage.webp';
+import welfareleftimagethree from '../../assets/images/goverment-advisory/welfareleftimagethree.webp';
 
 import agripartnerone from '../../assets/images/goverment-advisory/agripartnerone.svg';
 import agripartnertwo from '../../assets/images/goverment-advisory/agripartnertwo.svg';
@@ -74,7 +74,7 @@ function AgricultureAllied() {
             <div className="col-md-12">
               <div className="boxwrap">
                 <div className="left-img">
-                  <img src={socialsector} className={"img-fluid"} alt="" width={"383"} height={"868"} />
+                  <img src={welfareleftimagethree} className={"img-fluid"} alt="" width={"383"} height={"868"} />
                 </div>
                 <div className="right-sec">
 

@@ -36,8 +36,12 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 
 function Service() {
+  const scollToRef = useRef();
+  const scollToReff = useRef();
+  
 
   const [count, setcount] = useState(0);
+
 
 
   function chapterScroll(id) {
@@ -53,7 +57,7 @@ function Service() {
   }
 
   const settings = {
-    infinite: true,
+    infinite: false,
     speed: 2500,
     arrows: false,
     slidesToShow: 4,
@@ -93,7 +97,8 @@ function Service() {
             <div className="col-md-12 ">
               {/* <div className="same-list-bx-list"> */}
               <Slider {...settings} className="same-list-bx-list">
-                <div className="same-list-bx-item active">
+              <div className={"same-list-bx-item "+ ((count===0) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Urbandevelopment-scroll'); setcount(0)}}>
+                {/* <div className="same-list-bx-item active"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -101,7 +106,8 @@ function Service() {
                     <h4 className='title-fourth'>Urban Development</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===1) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Roadandhighway-scroll'); setcount(1)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -109,7 +115,8 @@ function Service() {
                     <h4 className='title-fourth'>Road &amp; Highway</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===2) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Watersanitation-scroll'); setcount(2)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -118,7 +125,8 @@ function Service() {
                     <h4 className='title-fourth'>Water &amp; Sanitation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===3) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Affordablehousing-scroll'); setcount(3)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -127,7 +135,8 @@ function Service() {
                     <h4 className='title-fourth'>Affordable Housing</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===4) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Processautomation-scroll'); setcount(4)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -136,7 +145,8 @@ function Service() {
                       Automation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===5) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Capacitybuilding-scroll'); setcount(5)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -145,7 +155,8 @@ function Service() {
                       Building</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===6) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Publicfinancialmanagement-scroll'); setcount(6)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -154,7 +165,8 @@ function Service() {
                       Management</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className={"same-list-bx-item "+ ((count===7) ? "active":"") } onClick={() => { scollToRef.current.scrollIntoView('Schemepmus-scroll'); setcount(7)}}>
+                {/* <div className="same-list-bx-item"> */}
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -168,29 +180,38 @@ function Service() {
           </div>
         </div>
 
-        <div className="main-cont-gov-adv">
-          <div className="detailsection  cont-itm-active  " >
+        <div ref={scollToRef} className="main-cont-gov-adv" >
+          {/* <div className="detailsection  cont-itm-active  " > */}
+          <div className={"detailsection " +((count===0)? "cont-itm-active":"")} id="Urbandevelopment-scroll" >
             <Urbandevelopment />
           </div>
-          <div className="detailsection   mt6 ">
+          {/* <div className="detailsection   mt6 ">
+           */}
+            <div className={"detailsection  mt6 " +((count===1)? "cont-itm-active":"")} id="Roadandhighway-scroll" >
             <Roadandhighway />
           </div>
-          <div className="detailsection   mt6 ">
+          <div className={"detailsection  mt6 " +((count===2)? "cont-itm-active":"")} id="Watersanitation-scroll" >
+          {/* <div className="detailsection   mt6 "> */}
             <Watersanitation />
           </div>
-          <div className="detailsection  mt6 ">
+          <div className={"detailsection  mt6 " +((count===3)? "cont-itm-active":"")} id="Affordablehousing-scroll" >
+          {/* <div className="detailsection  mt6 "> */}
             <Affordablehousing />
           </div>
-          <div className="detailsection ">
+          <div className={"detailsection  " +((count===4)? "cont-itm-active":"")} id="Processautomation-scroll" >
+          {/* <div className="detailsection "> */}
             <Processautomation />
           </div>
-          <div className="detailsection   mt6  ">
+          <div className={"detailsection  mt6 " +((count===5)? "cont-itm-active":"")} id="Capacitybuilding-scroll" >
+          {/* <div className="detailsection   mt6  "> */}
             <Capacitybuilding />
           </div>
-          <div className="detailsection   ">
+          <div className={"detailsection " +((count===6)? "cont-itm-active":"")} id="Publicfinancialmanagement-scroll" >
+          {/* <div className="detailsection   "> */}
             <Publicfinancialmanagement />
           </div>
-          <div className="detailsection ">
+          <div className={"detailsection  " +((count===7)? "cont-itm-active":"")} id="Schemepmus-scroll" >
+          {/* <div className="detailsection "> */}
             <Schemepmus />
           </div>              
         </div>
@@ -209,14 +230,14 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                <div className={"hexagonwrap"+ ((count===0) ? "active":"") } onClick={() => { chapterScroll('Tribalwelfare-scroll'); setcount(0)}}>
+                <div className={"hexagonwrap "+ ((count===0) ? "active":"") } onClick={() => { scollToReff.current.scrollIntoView('Tribalwelfare-scroll'); setcount(0)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
                   <p className="text">Tribal Welfare</p>
                 </div>
-                <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health-scroll'); setcount(1)}}>
+                <div className={"hexagonwrap "+ ((count===1) ? "active":"") } onClick={() => { scollToReff.current.scrollIntoView('health-scroll'); setcount(1)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -224,7 +245,7 @@ function Service() {
 
                   <p className="text">Health</p>
                 </div>
-                <div className={"hexagonwrap"+ ((count===2) ? "active":"") } onClick={() => { chapterScroll('AgricultureAllied-scroll'); setcount(2)}}>
+                <div className={"hexagonwrap "+ ((count===2) ? "active":"") } onClick={() => { scollToReff.current.scrollIntoView('AgricultureAllied-scroll'); setcount(2)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -232,7 +253,7 @@ function Service() {
 
                   <p className="text">Agriculture &amp; Allied</p>
                 </div>
-                <div className={"hexagonwrap"+ ((count===3) ? "active":"") } onClick={() => { chapterScroll('Education-scroll'); setcount(3)}}>
+                <div className={"hexagonwrap "+ ((count===3) ? "active":"") } onClick={() => { scollToReff.current.scrollIntoView('Education-scroll'); setcount(3)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -241,7 +262,7 @@ function Service() {
                   <p className="text">Education &amp; Skill Development</p>
                 </div>
                 {/* <div className="hexagonwrap"> */}
-                <div className={"hexagonwrap"+ ((count===4) ? "active":"") } onClick={() => { chapterScroll('ItEGovernmance-scroll'); setcount(4)}}>
+                <div className={"hexagonwrap "+ ((count===4) ? "active":"") } onClick={() => { scollToReff.current.scrollIntoView('ItEGovernmance-scroll'); setcount(4)}}>
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
@@ -252,7 +273,7 @@ function Service() {
             </div>
           </div>
         </div>
-        <div className="main-cont-gov-adv">
+        <div  ref={scollToReff} className="main-cont-gov-adv">
           <div className={"sectordetail " +((count===0)? "sector-active":"")} id="Tribalwelfare-scroll" >
             <Tribalwelfare />
           </div>
