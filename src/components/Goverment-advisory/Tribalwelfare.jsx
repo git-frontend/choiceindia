@@ -70,7 +70,7 @@ function Tribalwelfare() {
   return (
     <div>
 
-        <div className="container">
+        <div className="container" id='Tribalwelfare-scroll'>
           <div className="row">
             <div className="col-md-12">
               <div className="boxwrap">

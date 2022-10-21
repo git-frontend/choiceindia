@@ -44,7 +44,7 @@ function Service() {
     console.log("called",id)
     var element = document.getElementById(id);
     var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
+    var elementPosition = element.getBoundingClientRect().bottom;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     window.scrollTo({
       top: offsetPosition,
@@ -209,14 +209,14 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                <div className={"hexagonwrap"+ ((count===0) ? "active":"") } onClick={() => { chapterScroll('Tribalwelfare-scroll'); setcount(0)}}>
+                <div className={"hexagonwrap"+ ((count===0) ? "active":"") } onClick={() => { setcount(0);chapterScroll('Tribalwelfare-scroll')}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
                   <p className="text">Tribal Welfare</p>
                 </div>
-                <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { chapterScroll('health-scroll'); setcount(1)}}>
+                <div className={"hexagonwrap"+ ((count===1) ? "active":"") } onClick={() => { setcount(1)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -253,11 +253,15 @@ function Service() {
           </div>
         </div>
         <div className="main-cont-gov-adv">
-          <div className={"sectordetail " +((count===0)? "sector-active":"")} id="Tribalwelfare-scroll" >
+          <div className={"sectordetail " +((count===0)? "sector-active":"")} >
+           
             <Tribalwelfare />
+            
           </div>
-          <div className={"sectordetail " +((count===1)? "sector-active":"")} id="health-scroll" >
+          <div className={"sectordetail " +((count===1)? "sector-active":"")} >
+            <div id="health-scroll" >
             <Health />
+            </div>
           </div>
           <div className={"sectordetail " +((count===2)? "sector-active":"")} id="AgricultureAllied-scroll" >
             <AgricultureAllied />
