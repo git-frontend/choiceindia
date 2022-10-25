@@ -184,12 +184,12 @@ function AddLeadModal(props) {
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
-            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
-            "utm_content": null,
-            "utm_custom": null,
+            "utm_campaign": UTMCampaign.current || 'seo_demat_leads',           
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
 
         // setTimeout(() => {
