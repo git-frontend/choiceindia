@@ -188,7 +188,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                 <ul>
                                     <li><span> No </span> Account <span>Opening Fee</span></li>
                                     <li><span> Lowest DP </span>  Charges (Rs.10 only)</li>
-                                    <li> <span>Zero Auto Sqaure Off </span>Charges</li>
+                                    <li> <span>Zero Auto Square Off </span>Charges</li>
                                     <li><span>Free Call</span>  for Trade Facility</li>
                                 </ul>
                                 <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
