@@ -129,7 +129,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
         let request = {
             "service_code": "JF",
             "mobile_number": mobileNumber,
-            "product": "FinXWeb",
+            "product": "FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",
