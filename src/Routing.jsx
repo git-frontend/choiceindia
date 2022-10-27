@@ -73,6 +73,7 @@ const Lazystratezy = React.lazy(() => import('./components/Strategy/Strategy'));
 const Lazyresearchdetailed = React.lazy(() => import('./components/Research-Detailed/ResearchDetailed'));
 
 const LazyOpenDemat = React.lazy(() => import('./components/OpenDemat/Opendemat'));
+const LazyETF = React.lazy(() => import('./components/ETF/ETF'));
 const LazyAddLead = React.lazy(() => import('./components/Add-lead/AddLead'));
 const LazyPrivacyPolicy = React.lazy(() => import('./components/Privacy-policy/PrivacyPolicy'));
 const Lazycebplpolicies = React.lazy(() => import('./components/CEBPLPolicies/CEBPL-Policies'));
@@ -391,6 +392,12 @@ function Routing() {
                             </React.Suspense>
                         } />
 
+                        {/* <Route exact path='/etf' element={
+                            <React.Suspense>
+                                < LazyETF />
+                            </React.Suspense>
+                        } /> */}
+
                         <Route exact path='/add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
@@ -541,12 +548,12 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/intraday-charges' element={
+                         {/* <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } />
-                         <Route exact path='/marathi/sub-broker-franchise' element={
+                        } /> */}
+                         {/*<Route exact path='/marathi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokermarathi />
                             </React.Suspense>

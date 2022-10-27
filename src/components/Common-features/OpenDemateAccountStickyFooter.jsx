@@ -18,6 +18,9 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+    var UTMTerm = useRef('');
+    var UTMCustom = useRef('');
+    var UTMContent = useRef('');
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
@@ -115,6 +118,9 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
         source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
     }
@@ -129,7 +135,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
         let request = {
             "service_code": "JF",
             "mobile_number": mobileNumber,
-            "product": "FinXWeb",
+            "product": "FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",
@@ -137,13 +143,13 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
             "sub_ref": null,
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
-            "utm_content": null,
-            "utm_custom": null,
+            "utm_term": UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null,
             // 'footer_seo_leads'
             "utm_medium": UTMMedium.current || null,
             // 'blog_leads'
             "utm_source": UTMSource.current || null,
-            "utm_term": null
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -196,7 +202,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
                                 </div>
                             </div>
                             <div className="form-group">
-                                <button type="button" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                <button type="submit" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                 <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
                             </div>
                         </form>
