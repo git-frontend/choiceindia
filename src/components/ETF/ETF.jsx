@@ -8,7 +8,7 @@ import{ useLocation} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import etfimage from "../../assets/images/etf-vs-mutual-funds.webp";
 import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
-import invesrtetf from "../../assets/images/how-to-invest-in-etf.webp";
+import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 function ETF(){
     
   
