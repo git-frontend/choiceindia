@@ -13,7 +13,7 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h1 className="tlt1">
+                                    <h1 className="tlt1 marathititle">
                                         <span className="tlt2">सुरु करा सब ब्रोकर</span>
                                         फ्रँचायझी
                                         <span className="tlt2">विना डिपॉझिट</span>

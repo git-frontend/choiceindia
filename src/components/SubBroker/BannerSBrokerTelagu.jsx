@@ -13,7 +13,7 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h1 className="tlt1">
+                                    <h1 className="tlt1 telagubanner">
                                         <span className="tlt2">సబ్ బ్రోకర్‌ని ప్రారంభించండి</span>
                                         ఫ్రాంచైజీలు
                                         <span className="tlt2">డిపాజిట్ లేకుండా*</span>
