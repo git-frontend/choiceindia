@@ -134,7 +134,7 @@ function InvestorAwarenessMain() {
                                                                     <div className="download cursor-pointer">
                                                                         {
                                                                             res.files ?
-                                                                                <a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg" /> Download</a> :
+                                                                                <a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank" className="text-decoration-none cursor-pointer"> <FontAwesomeIcon icon={faDownload} className="downloadimg" /> Download</a> :
                                                                                 ''
 
                                                                         }
