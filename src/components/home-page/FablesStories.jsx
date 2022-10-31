@@ -7,7 +7,7 @@ import fableData from '../../Data/homeFable'
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FablesStories() {
 	let Id;
@@ -119,7 +119,8 @@ function FablesStories() {
 						{
 							isloading ?
 								<div className="text-center">
-									<img src={loaderimg2} className="img-fluid" alt='No Data Found' height={250} width={250} />
+									{/* <img src={loaderimg2} className="img-fluid" alt='No Data Found' height={250} width={250} /> */}
+									<video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
 								</div>
 								:
 								<div>

@@ -21,6 +21,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+    var UTMContent = useRef('');
+    var UTMCustom = useRef('');
+    var UTMTerm = useRef('');
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
@@ -96,6 +99,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
   
         source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
@@ -126,7 +132,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         let request = {
             "service_code": "JF",
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",
             "user_consent": "1",
@@ -134,13 +140,13 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "sub_ref": null,
             // 'seo_demat_leads'
             "utm_campaign": UTMCampaign.current || null,
-            "utm_content": null,
-            "utm_custom": null,
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null,
             // 'popup_seo_leads'
             "utm_medium": UTMMedium.current || null,
             // blog_leads'
             "utm_source": UTMSource.current || null,
-            "utm_term": null
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -169,7 +175,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         <>
         {
             showOpenAccountPopup ?
-            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active demat-modal-sleekbox-overlay">
+            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay">
                 <div className="exit-intent-sleekbox-popup">
                 {/* <div className="close">
                             <Link to="" class="closebtn" >&times;</Link>
@@ -182,7 +188,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                 <ul>
                                     <li><span> No </span> Account <span>Opening Fee</span></li>
                                     <li><span> Lowest DP </span>  Charges (Rs.10 only)</li>
-                                    <li> <span>Zero Auto Sqaure Off </span>Charges</li>
+                                    <li> <span>Zero Auto Square Off </span>Charges</li>
                                     <li><span>Free Call</span>  for Trade Facility</li>
                                 </ul>
                                 <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
@@ -210,7 +216,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                             &amp; accept the <a className="termsPopup" onClick={handleTermsConditionShow}>Terms
                                                 &amp; Conditions</a></label>
                                     </div>
-                                    <button type="button" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                    <button type="submit" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div style={{ textAlign: 'center' }}>
                                         <small id="pop_mobile_no_error" className="errormsg pop_mobile_no_error text-danger">{APIError || ''}</small>
                                     </div>

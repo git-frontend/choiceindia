@@ -23,7 +23,7 @@ return (
       <div className="container">
          <div className="row">
             <div className="col-md-12">
-               <h2 className="title-secnd text-center pb-4">Jiffy Trading App Related FAQs</h2>
+               <h2 className="title-secnd text-center pb-4">Choice FinX Trading App Related FAQs</h2>
             </div>
          </div>
          <div className="row">
@@ -31,15 +31,15 @@ return (
                <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="0" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>  Can I do trading in all segments with the Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>  Can I do trading in all segments with the Choice FinX Trading App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency
+                        Yes, Choice FinX supports trading in all segments i.e. Equity, Derivatives, Commodity and Currency
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is the Jiffy Trading app safe for trading?</h4>
+                        <h4 className='faq-header'>Is the Choice FinX Trading app safe for trading?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                         We use comprehensive and proven world-class safety measures to ensure optimum security.
@@ -47,7 +47,7 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I open a Demat Account from Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>Can I open a Demat Account from Choice FinX Trading App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                         Sure, the entire process takes just 10 minutes and is completely paperless!
@@ -63,10 +63,10 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
                      <Accordion.Header >
-                        <h4 className='faq-header'>How to apply for an IPO in Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>How to apply for an IPO in Choice FinX Trading App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Below are the steps to apply for IPOs via Jiffy,<br/>
+                        Below are the steps to apply for IPOs via Choice FinX,<br/>
                         Go to the IPO Section &#8658; IPO Listing &#8658; Open IPO<br/>
                         Tap IPO you want, and directly click on ‘Subscribe’ to apply or view the IPO details<br/>
                         On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify<br/>
@@ -76,10 +76,10 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item' id="Faqid">
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available in Other Regional Languages?</h4>
+                        <h4 className='faq-header'>Is Choice FinX Trading App Available in Other Regional Languages?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy has options for Hindi, Gujarati, Marathi and Malayalam as of now.
+                        Yes, Choice FinX has options for Hindi, Gujarati, Marathi and Malayalam as of now.
                      </Accordion.Body>
                   </Accordion.Item>
                </Accordion>
@@ -88,7 +88,7 @@ return (
                <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="6" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Can I get research reports in the Jiffy Trading App?</h4>
+                        <h4 className='faq-header'>Can I get research reports in the Choice FinX Trading App?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                         Our research team enjoys a 78% consistent success ratio, and provides detailed Fundamental and Technical Research for investments/Trading. We also provide intra-day trade calls.
@@ -96,18 +96,18 @@ return (
                   </Accordion.Item>
                   <Accordion.Item eventKey="7" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit &amp; Loss statements in Jiffy?</h4>
+                        <h4 className='faq-header'>How can I get Ledger, Cash Deposit, Cash Withdrawal, Profit &amp; Loss statements in Choice FinX?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        All of the above reports and more are available in the ‘Reports’ section of Jiffy for the current year. For reports of previous years, you can login to the ‘Back office’ section from Jiffy itself.
+                        All of the above reports and more are available in the ‘Reports’ section of Choice FinX for the current year. For reports of previous years, you can login to the ‘Back office’ section from Choice FinX itself.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="8" className='faq-item'>
                      <Accordion.Header>
-                        <h4 className='faq-header'>Is Jiffy Trading App Available on Android &amp; iOS platform?</h4>
+                        <h4 className='faq-header'>Is Choice FinX Trading App Available on Android &amp; iOS platform?</h4>
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
-                        Yes, Jiffy is available on both Android &amp; iOS.
+                        Yes, Choice FinX is available on both Android &amp; iOS.
                      </Accordion.Body>
                   </Accordion.Item>
                   <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>

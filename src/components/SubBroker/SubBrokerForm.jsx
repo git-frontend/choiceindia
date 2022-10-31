@@ -47,6 +47,10 @@ function SubBrokerForm(props) {
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
+    var UTMTerm = useRef('');
+    var UTMCustom = useRef('');
+    var UTMContent = useRef('');
+
 
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
@@ -233,6 +237,10 @@ function SubBrokerForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
+
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
@@ -470,9 +478,9 @@ function SubBrokerForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term": UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         subBrokerService.sendOTP(request).then((res) => {
             // console.log(res, "sendOTP");
@@ -552,9 +560,9 @@ function SubBrokerForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term": UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
@@ -813,7 +821,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>

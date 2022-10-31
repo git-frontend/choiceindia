@@ -804,7 +804,7 @@ function Opendemat(){
                           <li>
                             <p className='subheadtxt paraspace'>This is one crucial point that you need to look for. All brokers
                               have their inbuilt software, which the investor can download. Not only this, the user needs to
-                              check out the web app as well. Jiffy by Choice India offers a simple and clean user interface,
+                              check out the web app as well. Choice FinX by Choice India offers a simple and clean user interface,
                               where traders can search and navigate their orders and a seamless trading experience with just a
                               few single clicks.</p>
 
@@ -1170,7 +1170,7 @@ function Opendemat(){
                           account, but it depends on the RTA.</p>
 
                         <h4 className="subhead">How to log in to a Demat account?</h4>
-                        <p className='subheadtxt paraspace'>Login depends on your <a href='https://jiffy.choiceindia.com/'
+                        <p className='subheadtxt paraspace'>Login depends on your <a href='https://finx.choiceindia.com/'
                           className='linking'>trading platform</a>; every stockbroker has a different app with a different user
                           interface. So, it depends on which app or stockbroker you are using.</p>
 

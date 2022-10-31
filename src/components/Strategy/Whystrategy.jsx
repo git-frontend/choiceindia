@@ -29,7 +29,7 @@ function WhyStrategy() {
         {
             image: `${slider2}`,
             icon: `${icon4}`,
-            heading: "Backtest in Jiffy",
+            heading: "Backtest in Choice FinX",
             description: "Backtest Your created strategy with Profit & Stoploss percentage"
 
         },
@@ -94,7 +94,7 @@ function WhyStrategy() {
   
     const config = {
       UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
-      LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
+      LiveURL: 'https://finx.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
   };
   const checkURL = config[environment + 'URL'];
   

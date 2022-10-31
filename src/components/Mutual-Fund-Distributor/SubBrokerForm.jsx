@@ -46,6 +46,9 @@ function SubBrokerForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+    var UTMTerm = useRef('');
+    var UTMCustom = useRef('');
+    var UTMContent = useRef('');
     var refercode = useRef('');
 
     const [isCheck, setisCheck] = useState(false);
@@ -233,6 +236,9 @@ function SubBrokerForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
@@ -470,9 +476,9 @@ function SubBrokerForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         subBrokerService.sendOTP(request).then((res) => {
             // console.log(res, "sendOTP");
@@ -552,9 +558,9 @@ function SubBrokerForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
@@ -721,13 +727,14 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
@@ -787,7 +794,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl otp-main-modal" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -806,7 +813,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>

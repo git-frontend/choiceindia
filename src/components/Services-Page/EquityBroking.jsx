@@ -24,9 +24,7 @@ function EquityBroking() {
                     <div className="row gx-5 align-items-top">
                         <div className="col-md-4">
                             <div className="rightsec">
-                                <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
-                                    <source src={Researchbanner} type='video/mp4' />
-                                </video>
+                            <LazyLoader src={Bannerimage} alt={"equity broking services"} className={"img-fluid"} width={"410"} height={"425"} />
                                 
                             </div>
                         </div>

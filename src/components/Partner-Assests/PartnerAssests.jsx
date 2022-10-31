@@ -11,8 +11,8 @@ import CareerImage8 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 // import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
 // import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
 
-import mutual from '../../assets/images/choice-emitra/Choice-Mutual-FundAccountOpeningFlow.pdf';
-import demat from '../../assets/images/choice-emitra/Choice-Demat-AccountOpeningFlow.pdf';
+import mutual from '../../assets/images/choice-emitra/mutual-fund-new.pdf';
+import demat from '../../assets/images/choice-emitra/demat-account-new.pdf';
 import accountOpening from '../../assets/images/choice-emitra/Account-Opening.pdf';
 
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';
@@ -389,6 +389,118 @@ function PartnerAssests() {
                       <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLink(accountOpening, 'facebook', 'CareerImage7', ' अकाउंट ओपनिंग डॉक्युमेंट्स कि चेकलिस्ट') }} width="22" height="22" /></div>
                       {/*      <div><img src={instagram} className="" alt={"Instagram"}  onClick={()=>{shareLink(mutual,'insta','CareerImage7',' चॉइस के साथ म्यूचुअल फंड खाता कैसे खोले?')}} width="22" height="22" /></div> */}
                     </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="row mt-7">
+            <div className="col-md-4 mb3">
+                <div className="card">
+                  <div className='youtube-card-emitra' onClick={() => redirectTo('https://youtu.be/p6qwmXP1aws')}>
+                    <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                  म्युच्युअल फंड में SIP इन्व्हेस्टमेंट
+
+                  </div>
+                  <div className='socail-media'>
+                    <div className='d-flex justify-content-between'>
+                      
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/p6qwmXP1aws','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/p6qwmXP1aws','facebook') }} width="22" height="22" /></div>
+                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
+                  </div>
+                </div>
+              </div>
+              
+             
+              <div className="col-md-4 mb3">
+                <div className="card">
+                  <div className='youtube-card-emitra'  onClick={() => redirectTo('https://youtu.be/bJU9UA1EoaE')}>
+                    <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                  म्युच्युअल फंड में Lumpsum इन्व्हेस्टमेंट
+
+                  </div>
+                  <div className='socail-media'>
+                    <div className='d-flex justify-content-between'>
+                      
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/bJU9UA1EoaE','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/bJU9UA1EoaE','facebook') }} width="22" height="22" /></div>
+                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-md-4 mb3">
+                <div className="card">
+                  <div className='youtube-card-emitra'  onClick={() => redirectTo('https://youtu.be/Qbv5FmT0TLc')}>
+                    <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                  म्युच्युअल फंड बास्केट्स में इन्व्हेस्ट कैसे करें
+                  </div>
+                  <div className='socail-media'>
+                    <div className='d-flex justify-content-between'>
+                      
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/Qbv5FmT0TLc','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/Qbv5FmT0TLc','facebook') }} width="22" height="22" /></div>
+                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="row mt-7">
+            <div className="col-md-4 mb3">
+                <div className="card">
+                  <div className='youtube-card-emitra' onClick={() => redirectTo('https://youtu.be/2KMRYPZPod0')}>
+                    <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                  म्युच्युअल फंड के साथ गोल प्लॅन कैसे करें
+
+                  </div>
+                  <div className='socail-media'>
+                    <div className='d-flex justify-content-between'>
+                      
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/2KMRYPZPod0','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/2KMRYPZPod0','facebook') }} width="22" height="22" /></div>
+                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
+                  </div>
+                </div>
+              </div>
+              
+             
+              <div className="col-md-4 mb3">
+                <div className="card">
+                  <div className='youtube-card-emitra'  onClick={() => redirectTo('https://youtu.be/nl5W7nH66d8')}>
+                    <LazyLoader src={CareerImage9} id={'CareerImage9'} className={'img-fluid '} width={"400"} height={"400"} alt={""} />
+
+                  </div>
+                  <div className="card-footer">
+                  म्युच्युअल फंड से पैसे कैसे निकाले?
+
+                  </div>
+                  <div className='socail-media'>
+                    <div className='d-flex justify-content-between'>
+                      
+                      <div><img src={whatsapp} className="" alt={"Whatsapp"} onClick={() => { shareLinkV2('https://youtu.be/nl5W7nH66d8','whatsapp') }} width="22" height="22" /></div>
+                      <div><img src={fb} className="" alt={"Facebook"} onClick={() => { shareLinkV2('https://youtu.be/nl5W7nH66d8','facebook') }} width="22" height="22" /></div>
+                      {/*                   <div><img src={instagram} className="" alt={"Instagram"}   onClick={()=>{shareLink(CareerImage2,'insta','CareerImage2','1 करोड़ कैसे कमाए?')}} width="22" height="22" /></div>
+ */}                  </div>
                   </div>
                 </div>
               </div>

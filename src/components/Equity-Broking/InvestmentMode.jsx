@@ -1,6 +1,6 @@
 
 import React from "react";
-import BrandLogos from '../../assets/images/equity-broking/brand-logo.webp'
+import BrandLogos from '../../assets/images/equity-broking/equityAnimation.mp4'
 import icon1 from '../../assets/images/equity-broking/stock.svg'
 import icon2 from '../../assets/images/equity-broking/collection.svg'
 import icon3 from '../../assets/images/equity-broking/basket.svg'
@@ -18,7 +18,10 @@ function InvestmentMode() {
         <div className="container">
             <div className="row flex-sm-row-reverse">
                 <div className="col-md-6 justify-content-end d-flex">
-                    <LazyLoader src={BrandLogos} alt={"Banner Images"} className={"img-fluid ban-img"} width={"501"} height={"400"} />
+                    {/* <LazyLoader src={BrandLogos} alt={"Banner Images"} className={"img-fluid ban-img"} width={"501"} height={"400"} /> */}
+                    <video className='img-fluid ban-img' autoPlay loop muted width={"501"} height={"400"}>
+                      <source src={BrandLogos}  type='video/mp4' />
+                    </video>
                 </div>
                 <div className="col-md-6">
                     <div className="mode-cont-left">
@@ -78,7 +81,7 @@ function InvestmentMode() {
                         
                     </ul>
                     <div className="justify-content-center d-flex">
-                        <a href="https://jiffy.choiceindia.com/auth/login" target="_blank"><span className="btn-bg">Explore All</span></a>
+                        <a href="https://finx.choiceindia.com/auth/login" target="_blank"><span className="btn-bg">Explore All</span></a>
                     </div>
                 </div>  
             </div>

@@ -4,7 +4,7 @@ import { Accordion } from "react-bootstrap";
 import fileDownloadService from "../../Services/FileDownloadService";
 import download from '../../assets/images/file-download/export.webp';
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FileDownloadFaq() {
     const [datalist, setDatalist] = useState({});
@@ -63,7 +63,10 @@ function FileDownloadFaq() {
                         {
                             isloading ?
                                 <div className="text-center">
-                                    <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                    <div>
+                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                         </div>
                                 </div>
                                 :
 
@@ -88,8 +91,8 @@ function FileDownloadFaq() {
                                                                                             <div className="text">{res.download_subtitle}</div>
                                                                                             {
                                                                                                 res.download_pdf ?
-                                                                                                    <div className="download"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div> :
-                                                                                                    <div className="download"></div>
+                                                                                                    <div><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.download_pdf) }} className="downloadtext">Download</span></div> :
+                                                                                                    <div></div>
                                                                                             }
 
                                                                                         </li>

@@ -9,7 +9,7 @@ import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 // import download1 from '../../assets/images/file-download/export.webp';
 import viewicon from '../../assets/images/bi_eye-fill.svg';
 function AnnualReportMenu() {
@@ -115,7 +115,7 @@ function AnnualReportMenu() {
                     <div>
                         {
                             isloading ?
-                                <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> :
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} /> :
                                 <div>
                                     {
                                         data ?
@@ -150,8 +150,8 @@ function AnnualReportMenu() {
                                                                                                             <div className="text">{res.report_description}</div>
                                                                                                             {
                                                                                                                 res.view ?
-                                                                                                                    <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
-                                                                                                                    <div className="download"></div>
+                                                                                                                    <div> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                                    <div></div>
                                                                                                             }
 
                                                                                                         </li>
@@ -190,7 +190,7 @@ function AnnualReportMenu() {
 
                     {
                         isloading ?
-                            <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> :
+                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} /> :
                             <div>
                                 {
                                     
@@ -296,8 +296,8 @@ function AnnualReportMenu() {
                                                                                                 <div className="text">{res.report_description}</div>
                                                                                                 {
                                                                                                     res.view ?
-                                                                                                        <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
-                                                                                                        <div className="download"></div>
+                                                                                                        <div> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                        <div></div>
                                                                                                 }
 
                                                                                             </li>

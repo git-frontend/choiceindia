@@ -82,7 +82,7 @@ function ChoiceFinx() {
               <div className="finx-section">
                 <div className="finx-left-cont">
                   <div className="heading-sec">
-                    <h2 className="title-secnd">Jiffy Trading App</h2>
+                    <h2 className="title-secnd">Choice FinX Trading App</h2>
                     <p>SuperApp - Designed to deliver customized wealth solutions to cater <br />all financial needs</p>
                   </div>
 

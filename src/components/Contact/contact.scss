@@ -79,9 +79,17 @@
     position: relative;
     padding-bottom: 4rem;
     animation: hideMe 4s forwards;
+    @media (max-width: $sm) {
+        min-height: 200px;
+    }
+    
+    
 
     .ban-img {
         width: 100%;
+        @media (max-width: $sm) {
+            display: none;
+        }
     }
 
     .banner-caption {
@@ -478,6 +486,7 @@
         .feel-msg{
             margin-right:2rem;
             font-family: $font-family-poppins-medium;
+            color: green;
         }
 
         .attachement {
@@ -539,4 +548,8 @@
 .warning {
    color:red ;
    margin-top:-40px;
+}
+.contact-map{
+    width: 100%;
+    min-height: 400px;
 }

@@ -90,6 +90,14 @@
                 color: $whiteColor !important;
             }
         }
+		.valid-ss{
+			width: 100%;
+			position: absolute;
+			left: 0;
+			bottom: -3.5rem;
+			font-size: 1.2rem;
+			text-align: center;
+		}
     }
     .form-ttl{
         text-align: center;
@@ -320,6 +328,7 @@
 			color: $primary;
 			margin: 0 2px;
 			letter-spacing: 10px;
+			margin: 0 auto;
 			&::placeholder{
 			  color: transparent;
 			}

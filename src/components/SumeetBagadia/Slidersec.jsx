@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import axios from "axios";
 import { API_URLS } from "../../Services/API-URLS";
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function Slidersec() {
 
@@ -142,7 +142,10 @@ function Slidersec() {
                         {
                             isloading ?
                             <div className="text-center">
-                            <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                            <div>
+                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                </div>
                         </div>
                         :
                         <div>
