@@ -11,8 +11,8 @@ import CareerImage8 from '../../assets/images/choice-emitra/Pdf-Icon-01.webp';
 // import mutual from '../../assets/images/choice-emitra/Choice-MutualFundAccountOpeningFlow.pdf';
 // import demat from '../../assets/images/choice-emitra/Choice-DematAccountOpeningFlow.pdf';
 
-import mutual from '../../assets/images/choice-emitra/Choice-Mutual-FundAccountOpeningFlow.pdf';
-import demat from '../../assets/images/choice-emitra/Choice-Demat-AccountOpeningFlow.pdf';
+import mutual from '../../assets/images/choice-emitra/mutual-fund-new.pdf';
+import demat from '../../assets/images/choice-emitra/demat-account-new.pdf';
 import accountOpening from '../../assets/images/choice-emitra/Account-Opening.pdf';
 
 import whatsapp from '../../assets/images/choice-emitra/whatsapp.svg';

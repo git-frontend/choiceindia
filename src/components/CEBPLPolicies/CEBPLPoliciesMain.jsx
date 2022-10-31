@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import cebplService from '../../Services/CebplService';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
 
 import "./CEBPL-Policies.scss";
@@ -60,7 +60,8 @@ function CEBPLPoliciesMain() {
                     </div>
                     {
                         isloading ?
-                            <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> :
+                            // <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> 
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />:
                         <div>
                             {
                          (data && data.length)? 

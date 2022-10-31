@@ -4,7 +4,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FableBlog() {
     const [rendercount, setRenderCount] = useState(() => false);
@@ -57,7 +57,8 @@ function FableBlog() {
                                                 <div className="heading-sec">
                                             <h3 className="title-secnd">Interested in a Good Read Check Our Latest Blog </h3>
                                         </div>
-                                                <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />
+                                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                                                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                                                 </div>
                                                 :
                                             

@@ -30,7 +30,7 @@ function Contactdetail() {
   
    setTimeout(() => {
       setShowMap(() => true);
-   }, 2000)
+   }, 200)
 
    function selectCity(event) {
       // console.log("event",event.target.value)
@@ -100,7 +100,7 @@ function Contactdetail() {
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
                            {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
-                           <p className="subtext">support@choiceindia.com</p>
+                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
@@ -109,7 +109,7 @@ function Contactdetail() {
                            <p className="maintitle">{data[MapNumber].city}</p>
                            {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
                            {/* <p className="subtext">{data[MapNumber].support}</p> */}
-                           <p className="subtext">support@choiceindia.com</p>
+                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
                            <p className="subtext">{data[MapNumber].address1}<br />
                               {data[MapNumber].address2} <br />{data[MapNumber].address3}
                            </p>
@@ -123,17 +123,22 @@ function Contactdetail() {
                   <div className='container-fluid mt-10'>
                      <div className='row'>
                         <div className='map '>
-                           <div style={{ width: "100%" }}>
-                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                           <div>
+                              <iframe  className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
                      </div>
                   </div> :
                   <div className='container-fluid mt-10'>
                      <div className='row'>
-                        <div className='map '>
-                           <div style={{ width: "100%" }}>
-                              <iframe width="100%" height="400" className="gm-control-active" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                        {
+                           data[MapNumber].mapSrc === "" ?
+                           <div></div>:
+                           <div className='map '>
+                           <div>
+                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
+                        }
+                        
                      </div>
                   </div> : ''
             }

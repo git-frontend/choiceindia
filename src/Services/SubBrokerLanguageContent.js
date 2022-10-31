@@ -160,8 +160,6 @@ const language = {
         term2: 'को पढ़ और स्वीकार कर लिया है',
         termconditionlink:'नियम और शर्तों'
     }
-
-
 };
 
 const SubBrokerLanguageContent = {

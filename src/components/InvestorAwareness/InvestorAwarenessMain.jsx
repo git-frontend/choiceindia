@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import InvestorAwareService from "../../Services/InvestorAwareService";
-import loaderimg2 from '../../assets/vedio/loader2.gif';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import noDataimg from '../../assets/images/no-data.webp';
 
@@ -109,7 +109,10 @@ function InvestorAwarenessMain() {
                     {
                         isloading ?
                             <div className="text-center">
-                                <div><img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> </div>
+                                <div>
+                                    {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                    <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                    </div>
                             </div>
                             :
                             <div>
