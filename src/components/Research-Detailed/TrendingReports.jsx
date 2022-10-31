@@ -43,7 +43,7 @@ function TrendingReports(props) {
   }
 
   function iporedirect() {
-    window.open('https://jiffy.choiceindia.com/market/latest-ipo-list');
+    window.open('https://finx.choiceindia.com/market/latest-ipo-list');
   }
 
   function loadResearch(id) {

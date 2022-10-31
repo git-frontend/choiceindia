@@ -233,18 +233,18 @@ function DematAccountForm(props) {
         // showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FINX",
             "request_source": "CHOICEINDIA",
             "source": "CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
             "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
-            "utm_content": null,
-            "utm_custom": null,
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
 
         // setTimeout(() => {
@@ -277,7 +277,7 @@ function DematAccountForm(props) {
             "whatsapp_consent":true,
             "service_code":type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": type1=='MF' ? "INVESTICA":"JIFFY",
+            "product": type1=='MF' ? "INVESTICA":"FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",

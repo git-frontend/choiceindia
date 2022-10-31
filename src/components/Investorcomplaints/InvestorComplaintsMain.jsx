@@ -255,7 +255,7 @@ function InvestorComplaintsMain() {
                         </div>
                     </div>
 
-                    <div className="row quicklinkswrap">
+                    <div className="row quicklinkswrap mb-5">
                         <div className="col-md-12">
                             <small>annual Disposal of Complaints</small>
                             <h4 className="text-center text-uppercase mt-5 mb-5"><strong>For the financial year 2021 - 2022</strong></h4>
@@ -294,7 +294,59 @@ function InvestorComplaintsMain() {
                             </div>
                         </div>
                     </div>
-                   
+                    <div className="row quicklinkswrap mb-5">
+                        <div className="col-md-12">
+                        <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
+                        <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
+                            <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
+                            <div className="table-responsive">
+                            <table className="table table-striped" id="complaints">
+                                <thead>
+                                    <tr>
+                                        <th className="text-uppercase pb-5">Details of</th>
+                                        <th width="200" className="text-uppercase pb-5">Contact Person</th>
+                                        <th className="text-uppercase text-left pb-5">Address</th>
+                                        <th width="150" className="text-uppercase text-left pb-5">Contact No.</th>
+                                        <th className="text-uppercase text-left pb-5">Email Id</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td >Customer care</td>
+                                        <td>Shwetha S. Gupta</td>
+                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                        <td className="text-left">022-69092489</td>
+                                        <td className="text-left">customercustomercare@choiceindia.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Head of Customer care</td>
+                                        <td>Swetha Devadiga</td>
+                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                        <td className="text-left">022-69092483</td>
+                                        <td className="text-left">swetha.devadiga@choiceindia.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Compliance Officer</td>
+                                        <td>Swati Matkar</td>
+                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                        <td className="text-left">022-6707 9999</td>
+                                        <td className="text-left">Compliance@choiceindia.com</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CEO/Director</td>
+                                        <td>Ajay Kejriwal</td>
+                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                        <td className="text-left">022-6707 9999</td>
+                                        <td className="text-left">Compliance@choiceindia.com</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                           
+                            </div>
+                           
+                        </div>
+                    </div>
+                    <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI at <a href="https://scores.gov.in/scores/Welcome.html" target="_blank">scores.gov.in/scores/Welcome.html</a> or Exchange at <a href="https://investorhelpline.nseindia.com/NICEPLUS/"  target="_blank">investorhelpline.nseindia.com/NICEPLUS/</a>. Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
                 </div>
             </section>
         </div>
