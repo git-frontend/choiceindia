@@ -52,6 +52,9 @@
       .telagubanner{
         line-height: 7rem;
       }
+      .tlt1{
+        line-height: 7rem;
+      }
 
         .left-sec {
             padding-top: 5rem;
@@ -983,6 +986,7 @@
             box-shadow: 0px 0px 8px #F0F0F0;
 
             .slick-slide {
+                padding: 0 1rem 0 0;
                 img {
                     max-width: 100%;
                 }
@@ -996,7 +1000,9 @@
                     margin-top: 1rem;
                 }
             }
-
+           
+               
+            
             &::before {
                 content: '';
                 background: $bgcolor-blue;
@@ -1988,7 +1994,7 @@
         .benifits-list {
             .sl-slider.sl-slider-active {
                 .benifits-item {
-                    background: inherit;
+                    background: #fff;
                     box-shadow: inherit;
                 }
             }
