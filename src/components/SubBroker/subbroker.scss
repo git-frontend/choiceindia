@@ -44,17 +44,15 @@
             font-family: $font-family-poppins-bold;
             color: $primary;
             margin: 1rem 0;
-            
+            line-height: 7rem;
         }
-      .marathititle{
-        line-height: 10.5rem;
-      }
-      .telagubanner{
-        line-height: 7rem;
-      }
-      .tlt1{
-        line-height: 7rem;
-      }
+        .marathititle{
+            line-height: 10.5rem;
+          }
+          .telagubanner{
+            line-height: 7rem;
+          }
+         
 
         .left-sec {
             padding-top: 5rem;
@@ -1159,6 +1157,11 @@
 
                     @media (max-width: $sm-x) {
                         white-space: nowrap;
+                    }
+                    .mbbreak{
+                        @media (max-width: $sm) {
+                            display: block;
+                        }  
                     }
                 }
             }
