@@ -4,6 +4,7 @@ import ImageBanner from '../../assets/images/research/bannerResearch.gif';
 import SingleTemplate from "../Common-features/SingleTemplate";
 import Researchbanner from '../../assets/images/research/researchBanner.mp4'
 import { useState } from 'react';
+import LazyLoader from "../Common-features/LazyLoader";
 
 function Banner() {
 
@@ -32,12 +33,13 @@ function Banner() {
                 <SingleTemplate /> :
                 <div className="col-md-6 d-none d-sm-block">
                   <div className="rightsec">
-                    <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
+                    {/* <video className='img-fluid' autoPlay loop muted width={"700"} height={"650"}>
                       <source src={Researchbanner}  type='video/mp4' />
-                    </video>
+                    </video> */}
                     {/* <video src={Researchbanner} width="600" height="300" controls="controls" autoplay="true" /> */}
                     {/* <video src={Researchbanner} alt={"Banner Images"} className={"img-fluid"} width={"957"} height={"623"} type={"video/mp4"}  autoPlay></video> */}
                     {/* <img src={ImageBanner} alt="Banner Images" className="img-fluid " width={"957"} height={"623"}></img> */}
+                    <LazyLoader src={ImageBanner} alt={"Banner Images"} className={"img-fluid"} width={"957"} height={"623"}/>
                   </div>
                 </div>
             }

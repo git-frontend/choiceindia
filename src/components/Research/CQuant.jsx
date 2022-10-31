@@ -157,7 +157,7 @@ function CQuant() {
 
         //Deeplinking
 
-        window.open("https://jiffy.choiceindia.com/research-report/research/signals/EQ")
+        window.open("https://finx.choiceindia.com/research-report/research/signals/EQ")
     }
 
 

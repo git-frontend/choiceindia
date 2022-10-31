@@ -110,8 +110,8 @@ function FinancialInfoMenu() {
                                                                                                 <div className="text">{res.month}</div>
                                                                                                 {
                                                                                                     res.view ?
-                                                                                                        <div className="download"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
-                                                                                                        <div className="download"></div>
+                                                                                                        <div> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                        <div></div>
                                                                                                 }
 
                                                                                             </li>

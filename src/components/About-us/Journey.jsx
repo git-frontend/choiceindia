@@ -93,7 +93,7 @@ function Journey() {
                                 2018
                               </div>
                           </div>
-                          <div className="subtext"><p>Launched Trading App - Jiffy</p></div>
+                          <div className="subtext"><p>Launched Trading App - Choice FinX</p></div>
                       </div>
                       <div className="Journey-item">
                           <div className="year">

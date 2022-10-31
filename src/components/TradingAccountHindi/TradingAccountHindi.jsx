@@ -61,7 +61,7 @@ function TradingAccountHindi() {
 
                                 या
                                 <br /><br />
-                                Playstore या Appstore से Jiffy ऐप डाउनलोड करें और रजिस्टर करें
+                                Playstore या Appstore से Choice FinX ऐप डाउनलोड करें और रजिस्टर करें
                                 <br /><br />
                                 <ul>
                                     <li>आवश्यक विवरण भरें</li>

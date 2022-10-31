@@ -81,7 +81,7 @@ function InvestmentMode() {
                         
                     </ul>
                     <div className="justify-content-center d-flex">
-                        <a href="https://jiffy.choiceindia.com/auth/login" target="_blank"><span className="btn-bg">Explore All</span></a>
+                        <a href="https://finx.choiceindia.com/auth/login" target="_blank"><span className="btn-bg">Explore All</span></a>
                     </div>
                 </div>  
             </div>

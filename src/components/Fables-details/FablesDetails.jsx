@@ -84,6 +84,7 @@ setTrigger(true)
   // },[allFabalData])
 
   function checkWhetherToShowForm(details) {
+    setShowForm(false);
     if (details[0].tags) {
       details[0].tags.forEach((item, i) => {
         if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker') {

@@ -7,8 +7,11 @@ import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import associates from "../../assets/images/research/pdf/Details of Associates.pdf";
+import disclaimer_1 from "../../assets/images/research/pdf/disclaimer_1.pdf";
+
 import Disciplinary from "../../assets/images/research/pdf/Details of Disciplinary Action.pdf";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { FaRegFilePdf } from 'react-icons/fa';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 function OurPerformance() {
   const [toggleState, setToggleState] = useState(1);
@@ -348,7 +351,7 @@ function OurPerformance() {
                                   </svg>
                                   <div className="cont-perc">
                                     <h3 className="sgnl-txt">{Math.round(data) || 0}%</h3>
-                                    <h4>jiffy signal</h4>
+                                    <h4>Choice FinX signal</h4>
                                   </div>
                                 </div>
 
@@ -374,10 +377,12 @@ function OurPerformance() {
 
       <section className="filedownloadfaq">
         <div className="container">
+        <div className="code-mainwrapper  d-flex justify-content-between pb-3 pt-3 disclaimernew">
+            <div>Disclaimer &amp; Disclosure</div>
+                  <div><FaRegFilePdf onClick={() => { window.open(disclaimer_1) }} className="cursor-pointer" /></div>
+            </div>
           <div className="row code-mainwrapper cgmainwrap">
             <div className="col-md-12">
-
-
               <h3 className="head">Document</h3>
 
               <div className="subtext">

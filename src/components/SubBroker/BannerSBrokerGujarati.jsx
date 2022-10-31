@@ -13,7 +13,7 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h1 className="tlt1">
+                                    <h1 className="tlt1 gujratitle">
                                         <span className="tlt2">શરૂ કરો સબ બ્રોકર</span>
                                         ફ્રેન્ચાઇઝ
                                         <span className="tlt2">તે પણ વગર ડિપોઝિટ*</span>
