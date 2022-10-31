@@ -83,38 +83,38 @@ const img_data = [
     {
         "id": "how-does-img",
         "img": `<img src=${image16} class="img-fluid chapter-content-img"
-        alt="How Does Demat Account Works" />`
+        alt="Types of ETFs in India" />`
     },
 
     {
         "id": "account-type-img",
-        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt="Demat Account Types" />`
+        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt="ETF vs Stock" />`
     },
 
     {
         "id": "account-benefits-img",
-        "img": `<img src=${image15} class="img-fluid chapter-content-img" alt="Demat Account Benefits" />`
+        "img": `<img src=${image15} class="img-fluid chapter-content-img" alt="ETF vs Mutual Fund" />`
     },
 
     {
         "id": "demat-features-img",
-        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt=" Featues of Demat Account" />`
+        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt="ETF vs Index Fund" />`
     },
 
     {
         "id": "how-to-open-demat-img",
         "img": `<img src=${image17} class="img-fluid chapter-content-img"
-        alt=" How to Open a Demat Account" />`
+        alt="How to Invest in an ETF in India" />`
     },
 
     {
         "id": "best-demat-img",
-        "img": `<img src=${image18} class="img-fluid chapter-content-img" alt="Best Demat Account" />`
+        "img": `<img src=${image18} class="img-fluid chapter-content-img" alt="What is an ETF" />`
     },
 
     {
         "id": "how-to-use-demat-img",
-        "img": `<img src=${image19} class="img-fluid chapter-content-img" alt="Uses of Demat Account" />`
+        "img": `<img src=${image19} class="img-fluid chapter-content-img" alt="Best ETF to Invest in India" />`
     },
 
     {
@@ -166,7 +166,7 @@ const img_data = [
     },
     {
         "id": "best-demat-img-seven",
-        "img": `<img src=${image18} class="img-fluid chapter-content-img" alt="Best Demat Account" />`
+        "img": `<img src=${image18} class="img-fluid chapter-content-img" alt="How to Select an ETF" />`
     },
 
 ];

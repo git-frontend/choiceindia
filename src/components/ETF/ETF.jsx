@@ -6,6 +6,9 @@ import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountS
 import Template2 from "../Common-features/Template2";
 import{ useLocation} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+import etfimage from "../../assets/images/etf-vs-mutual-funds.webp";
+import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
+import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 function ETF(){
     
   
@@ -361,6 +364,8 @@ function ETF(){
 
                       <div>
                       <p className='subheadtxt'>So, you must place an order with the fund house while buying or selling mutual funds. Its NAV determines the market price of the fund. However, the market price of an ETF can change all day, and you can analyse it in real time.</p>
+                      <img src={etfimage} className="img-fluid" alt="Mutual Fund vs ETF" />
+
                       <p className='subheadtxt'>Let's delve into a few more additional differences between ETFs and mutual funds to understand this better:</p>
                         <h3 className="subhead">Management Fees</h3>
                         <p className='subheadtxt'>You won't require active portfolio management for ETFs as the funds mimic the index's performance. So, the management fees are comparatively low. Your fund manager will take most of the important decisions here.</p>
@@ -401,7 +406,8 @@ function ETF(){
 
                       <div>
                         <p className='subheadtxt'>As index funds ensure your investment doesn't go below the benchmark, you might receive a better ROI. This will also let you properly analyse your risk appetite and make better investment decisions.</p>
-                        <p className='subheadtxt'>However, the most significant difference between an index fund and an ETF is the times when you can trade them. You can trade index funds at a specific price when the trading day ends. For ETFs, you can only read them during the day.</p>
+                        <img src={etfindeximage} className="img-fluid" alt="Mutual Fund vs ETF" />
+                        <p className='subheadtxt mt-5'>However, the most significant difference between an index fund and an ETF is the times when you can trade them. You can trade index funds at a specific price when the trading day ends. For ETFs, you can only read them during the day.</p>
                         <p className='subheadtxt'>To understand which one is perfectly suitable for you, check out the list of differences below:</p>
                         <h3 className="subhead">Minimum Investment</h3>
                         <p className='subheadtxt'>The minimum investment for purchasing an ETF is relatively low. In most cases, you will only need to spend the amount needed to purchase a share. For index funds, the minimum investment is a bit high and will vary according to the broker you select. That's why they have higher expense ratios than exchange traded funds.</p>
@@ -457,7 +463,9 @@ function ETF(){
                         </ul>
                         
                       </div>
+                      <img src={invesrtetf} className="img-fluid" alt="Mutual Fund vs ETF" />
                       <div>
+                    
                         <p className='subheadtxt'>For opening both accounts, you will require the following essential documents: </p>
                         <ul className='bullet'>
                           <li>
