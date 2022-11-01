@@ -392,11 +392,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/etf' element={
+                         <Route exact path='/etf' element={
                             <React.Suspense>
                                 < LazyETF />
                             </React.Suspense>
-                        } />  */}
+                        } />  
 
                         <Route exact path='/add-lead' element={
                             <React.Suspense>
