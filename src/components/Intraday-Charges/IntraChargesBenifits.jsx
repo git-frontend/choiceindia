@@ -90,7 +90,7 @@ function IntraChargesBenifits() {
                                             </g>
                                         </svg>
                                     </span>
-                                    <h3 className="itm-ttl">Low DP <br />Charges</h3>
+                                    <h3 className="itm-ttl">Low Brokerage <br />Charges</h3>
                                 </div>
                                 <div className="benifits-list-itm">
                                     <span className="sm-img">

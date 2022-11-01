@@ -50,9 +50,9 @@ function IntraWhyChoice() {
                             <div className="intra-why-list">
                                 <div className="why-list-itm">
                                     <h3>
-                                        <span className="hvr-txt"><span>5</span></span><small>+</small>
+                                        <span className="hvr-txt"><span>5L</span></span><small>+</small>
                                     </h3>
-                                    <h4>Trusted by 5+ Lakh Investors</h4>
+                                    <h4> Trusted Investors</h4>
                                 </div>
                                 <div className="why-list-itm">
                                     <h3>
@@ -62,7 +62,7 @@ function IntraWhyChoice() {
                                 </div>
                                 <div className="why-list-itm">
                                     <h3>
-                                    <span className="hvr-txt"><span>54</span></span>
+                                    <span className="hvr-txt"><span>75+</span></span>
                                     </h3>
                                     <h4>Branches Across India</h4>
                                 </div>

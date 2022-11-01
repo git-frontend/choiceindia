@@ -7,7 +7,7 @@ function ChargesComparison() {
 
     return (
         <div>
-            <section className="charges-comparison" >
+            <section className="charges-comparison" id="intradaycharges" >
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-6 col-md-8">
@@ -122,7 +122,7 @@ function ChargesComparison() {
                                     </tbody>
                                 </table>
                             </div>
-                            <p className="des-para">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            {/* <p className="des-para">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                         </div>
                     </div>
                 </div>
