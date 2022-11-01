@@ -1652,6 +1652,10 @@ const meta_tags = {
   "content": "ఎంపికతో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
   "link":' https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
 
+  "intraday-charges": { 'title': "What is ETF? Meaning and How to Invest in ETF?", 
+  "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
+  "link":' https://choiceindia.com/intraday-charges',"faqscript": `` },
+
 
 }
 
