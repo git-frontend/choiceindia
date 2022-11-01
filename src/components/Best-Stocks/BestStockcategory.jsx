@@ -3,7 +3,8 @@ import { useState } from "react";
 import "./best-stock.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
-import "../Remisier/Remisier.scss"
+import "../Remisier/Remisier.scss";
+import rest from "../../Services/rest";
 
 
 
@@ -17,13 +18,121 @@ import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 function BestStockcategory() {
   const [toggleState, setToggleState] = useState(1);
+  const [list,setlist]= useState();
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
   const [skeleton, setSkeleton] = useState(() => true);
 
+  function LongTermStocks(){
+   
+    let request ={
+      "end_date": "",
+      "is_expert": 0,
+      "research_type": "Medium To Long Term",
+      "limit": 10,
+      "offset": 0,
+      "segment": "EQ",
+      "start_date": "",
+      "status": "target_achieved",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 1
 
+    }
+    rest.expertReportData(request).then(      
+    res => {
+      if (res) {
+       
+        setlist(res.response);
+        console.log(res);
+
+      } else {
+       
+        setlist([]);
+      }
+
+
+    }
+  ).catch((error) => {
+  
+    setlist([]);
+  });
+};
+
+function ShortTermStocks(){
+
+  let request ={
+    "end_date": "2022-11-01",
+    "is_expert": 0,
+    "research_type": "",
+    "limit": 10,
+    "offset": 0,
+    "segment": "EQ",
+    "start_date": "2021-11-01",
+    "status": "target_achieved",
+    "subcategory_id": "",
+    "search": "",
+    "id": "",
+    "user_id": "",
+    "timeline_enabled": 1,
+    "category_id": 2
+  }
+  rest.expertReportData(request).then(      
+    res => {
+      if (res) {
+       
+        setlist(res.response);
+        console.log(res);
+
+      } else {
+       
+        setlist([]);
+      }
+
+
+    }
+  ).catch((error) => {
+  
+    setlist([]);
+  });
+}
+ function IntraStocks(){
+  let request ={
+    "Count": 10,
+    "endDate": "01-11-2022",
+    "SessionId": "9CC3912E93",
+    "Start": 0,
+    "startDate": "01-11-2021",
+    "status": "T1",
+    "type": "EQ",
+    "UserId": "guest",
+    "search": ""
+  }
+  rest.signalReportData(request).then(      
+    res => {
+      if (res) {
+       
+        setlist(res.response);
+        console.log(res);
+
+      } else {
+       
+        setlist([]);
+      }
+
+
+    }
+  ).catch((error) => {
+  
+    setlist([]);
+  });
+ }
+  
 
 
 
@@ -49,6 +158,9 @@ function BestStockcategory() {
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      LongTermStocks();
+      ShortTermStocks();
+      IntraStocks()
     }
   }, [rendercount])
   // console.log('HHHHHHH',meta_tags['sub-broker'].faqscript)
@@ -75,11 +187,11 @@ function BestStockcategory() {
                     <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
                   <div className="col-xl-8 col-md-12">
-                      <ul class="list-group list-group-horizontal list_group1">
-                        <li class="list-group-item list">All Stocks</li>
-                        <li class="list-group-item list listsec">Intraday Stocks</li>
-                        <li class="list-group-item list">Short Term Stocks</li>
-                        <li class="list-group-item list">Long Term Stocks</li>
+                      <ul className="list-group list-group-horizontal list_group1">
+                        <li className="list-group-item list">All Stocks</li>
+                        <li className="list-group-item list listsec" onClick={IntraStocks} >Intraday Stocks</li>
+                        <li className="list-group-item list" onClick={ShortTermStocks} >Short Term Stocks</li>
+                        <li className="list-group-item list" onClick={LongTermStocks}>Long Term Stocks</li>
                       </ul>
                   </div>
                 </div>
