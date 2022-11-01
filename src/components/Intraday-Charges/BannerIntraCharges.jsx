@@ -4,9 +4,19 @@ import img1 from '../../assets/images/intraday-charges/ratio-icon.svg';
 import img2 from '../../assets/images/intraday-charges/quandle.svg';
 
 import LazyLoader from "../Common-features/LazyLoader";
-import DematAccountForm from '../Common-features/DematAccountForm'
+import DematAccountForm from '../Common-features/DematAccountForm';
+import { Link } from 'react-router-dom';
 function BannerIntraCharges() {
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 100;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     return (
         <div>
             <section className="intrc-banner" >
@@ -19,7 +29,7 @@ function BannerIntraCharges() {
                                          Don’t Pay Extra Brokerage
                                     </h1>
                                     <p className="des-nm">Save upto <strong>33% brokerage</strong> on intraday trades with Choice</p>
-                                    <a href="#intradaycharges">
+                                    <Link onClick={()=>scrollToId('intradaycharges')}>
                                         <span className="btn-bg">Know How?
                                         <svg xmlns="http://www.w3.org/2000/svg" id="baseline-arrow_forward-24px" width="24" height="24" viewBox="0 0 24 24">
   <path id="Path_1980" data-name="Path 1980" d="M0,0H24V24H0Z" fill="none"/>
@@ -27,7 +37,7 @@ function BannerIntraCharges() {
 </svg> 
                                         </span>
                                         
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="right-sec">
                                     <span className="itm-first">

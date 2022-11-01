@@ -3,7 +3,7 @@
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import { Link } from 'react-router-dom';
 function IntraWhyChoice() {
 
     const settings = {
@@ -35,7 +35,16 @@ function IntraWhyChoice() {
             },
         ],
     };
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     return (
         <div>
             <section className="intra-why-choice">
@@ -77,7 +86,7 @@ function IntraWhyChoice() {
                     <div className="row">
                         <div className="col-md-12">
                             <h2 className="ttl-nm">Are you ready to save an <span>Extra 33% </span>in <span><br/>brokerage fees</span> on your <span>intraday trades?</span></h2>
-                            <a href="/"><span className="btn-bg">Yes, I’m interested!</span></a>
+                            <Link onClick={()=>scrollToId('dematform')}><span className="btn-bg">Yes, I’m interested!</span></Link>
                         </div>
                     </div>
                 </div>
