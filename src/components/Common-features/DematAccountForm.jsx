@@ -532,7 +532,7 @@ function DematAccountForm(props) {
             }
             <div className="demat-account-form" id="dematform">
 
-                <h3 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h3>
+                <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">

@@ -9,7 +9,7 @@ function MFInvestment() {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12 text-center">
-                          <h2 className="title-secnd">How to Invest in Mutual Funds</h2>
+                          <h2 className="title-first">How to Invest in Mutual Funds</h2>
                      </div>
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">
@@ -24,20 +24,20 @@ function MFInvestment() {
                                 <ul>
                                     <li>
                                         <h4>Risk diversification</h4>
-                                        <p className="para ">Risk diversification is one of the benefits of investing in mutual funds. When you invest in a mutual fund, you buy shares in a basket of stocks spread across different sectors and industries. Your investments do not remain tied to any one company or sector. If one company or sector does poorly, it won't drag the rest down with it</p>
+                                        <p className="lipara ">Risk diversification is one of the benefits of investing in mutual funds. When you invest in a mutual fund, you buy shares in a basket of stocks spread across different sectors and industries. Your investments do not remain tied to any one company or sector. If one company or sector does poorly, it won't drag the rest down with it</p>
                                     </li>
                                     <li>
                                         <h4>Professional management</h4>
-                                        <p className="para">Mutual funds are professionally managed investments. A team of experts is in charge of your money and is responsible for ensuring it gets invested wisely. They have access to all kinds of data you don't—like market trends and sector analysis—and they use this information to decide where your money goes.</p>
-                                        <p className="para">This is especially useful if you don't have time or expertise to manage your own portfolio. Alternatively, you may not have the knowledge or experience necessary to decide which stocks or bonds are best for your needs.</p>
+                                        <p className="lipara">Mutual funds are professionally managed investments. A team of experts is in charge of your money and is responsible for ensuring it gets invested wisely. They have access to all kinds of data you don't—like market trends and sector analysis—and they use this information to decide where your money goes.</p>
+                                        <p className="lipara">This is especially useful if you don't have time or expertise to manage your own portfolio. Alternatively, you may not have the knowledge or experience necessary to decide which stocks or bonds are best for your needs.</p>
                                     </li>
                                     <li>
                                         <h4>Convenience</h4>
-                                        <p className="para">If you have limited money to invest, it can be tough to find an investment that will give you the desired returns and allow you to build more wealth over time. While some investments require large upfront deposits, others require frequent contributions. It can be difficult for someone who wants to ensure they stay within their budget and save money for retirement or other financial goals.</p>
+                                        <p className="lipara">If you have limited money to invest, it can be tough to find an investment that will give you the desired returns and allow you to build more wealth over time. While some investments require large upfront deposits, others require frequent contributions. It can be difficult for someone who wants to ensure they stay within their budget and save money for retirement or other financial goals.</p>
                                     </li>
                                     <li>
                                         <h4>Regulated</h4>
-                                        <p className="para">Mutual funds get regulated by the Securities and Exchange Board of India (SEBI), which makes them safe to invest in. You are not just putting your money into a financial vehicle that can disappear overnight. It is subject to oversight by the government and its agencies. You do not have to worry about losing your investment or getting scammed. You will also get tax benefits if you invest in mutual funds through an SIP (Systematic Investment Plan).</p>
+                                        <p className="lipara">Mutual funds get regulated by the Securities and Exchange Board of India (SEBI), which makes them safe to invest in. You are not just putting your money into a financial vehicle that can disappear overnight. It is subject to oversight by the government and its agencies. You do not have to worry about losing your investment or getting scammed. You will also get tax benefits if you invest in mutual funds through an SIP (Systematic Investment Plan).</p>
                                     </li>
                                 </ul>
 
@@ -45,28 +45,28 @@ function MFInvestment() {
                                 <p className="para">Here are the various types of mutual funds.</p>
                                 <ul>
                                     <li>
-                                        <p className="para">Debt funds</p>
+                                        <p className="lipara">Debt funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Equity funds</p>
+                                        <p className="lipara">Equity funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Index funds</p>
+                                        <p className="lipara">Index funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Balanced funds</p>
+                                        <p className="lipara">Balanced funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Money market funds</p>
+                                        <p className="lipara">Money market funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Income funds</p>
+                                        <p className="lipara">Income funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Fund of funds</p>
+                                        <p className="lipara">Fund of funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Speciality funds</p>
+                                        <p className="lipara">Speciality funds</p>
                                     </li>
                                 </ul>
                                 <p className="para">There are several other types of mutual funds that we can classify based on investment objective, structure, asset class, risk, and speciality. Let’s look at them.</p>
@@ -74,67 +74,67 @@ function MFInvestment() {
                                 <h4>Mutual funds based on investment objectives:</h4>
                                 <ul>
                                     <li className="mb0">
-                                        <p className="para">Income Funds</p>
+                                        <p className="lipara">Income Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Liquid Funds</p>
+                                        <p className="lipara">Liquid Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Capital Protection Funds</p>
+                                        <p className="lipara">Capital Protection Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Fixed Maturity Funds</p>
+                                        <p className="lipara">Fixed Maturity Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Growth Funds</p>
+                                        <p className="lipara">Growth Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Tax-Saving Funds (ELSS)</p>
+                                        <p className="lipara">Tax-Saving Funds (ELSS)</p>
                                     </li>
                                     <li>
-                                        <p className="para">Pension Funds</p>
-                                    </li>
-                                </ul>
-
-                                <h4>Mutual funds based on structure:</h4>
-                                <ul>
-                                    <li>
-                                        <p className="para">Open-Ended Funds</p>
-                                    </li>
-                                    <li>
-                                        <p className="para">Close-Ended Funds</p>
-                                    </li>
-                                    <li>
-                                        <p className="para">Interval Funds</p>
+                                        <p className="lipara">Pension Funds</p>
                                     </li>
                                 </ul>
 
                                 <h4>Mutual funds based on structure:</h4>
                                 <ul>
                                     <li>
-                                        <p className="para">Equity Funds</p>
+                                        <p className="lipara">Open-Ended Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Debt Funds</p>
+                                        <p className="lipara">Close-Ended Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Money Market Funds</p>
+                                        <p className="lipara">Interval Funds</p>
+                                    </li>
+                                </ul>
+
+                                <h4>Mutual funds based on structure:</h4>
+                                <ul>
+                                    <li>
+                                        <p className="lipara">Equity Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Balanced or Hybrid Funds</p>
+                                        <p className="lipara">Debt Funds</p>
+                                    </li>
+                                    <li>
+                                        <p className="lipara">Money Market Funds</p>
+                                    </li>
+                                    <li>
+                                        <p className="lipara">Balanced or Hybrid Funds</p>
                                     </li>
                                 </ul>
 
                                 <h4>Mutual funds based on risk:</h4>
                                 <ul>
                                     <li>
-                                        <p className="para">Low Risk</p>
+                                        <p className="lipara">Low Risk</p>
                                     </li>
                                     <li>
-                                        <p className="para">Medium Risk</p>
+                                        <p className="lipara">Medium Risk</p>
                                     </li>
                                     <li>
-                                        <p className="para">High Risk</p>
+                                        <p className="lipara">High Risk</p>
                                     </li>
                                     
                                 </ul>
@@ -142,43 +142,43 @@ function MFInvestment() {
                                 <h4>Mutual funds based on speciality:</h4>
                                 <ul>
                                     <li>
-                                        <p className="para">Index Funds</p>
+                                        <p className="lipara">Index Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Fund Of Funds</p>
+                                        <p className="lipara">Fund Of Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Sector Funds</p>
+                                        <p className="lipara">Sector Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Emerging Market Funds</p>
+                                        <p className="lipara">Emerging Market Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Commodity-focused Stock Funds</p>
+                                        <p className="lipara">Commodity-focused Stock Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Market Neutral Funds</p>
+                                        <p className="lipara">Market Neutral Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">International Funds</p>
+                                        <p className="lipara">International Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Global Funds</p>
+                                        <p className="lipara">Global Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Asset Allocation Funds</p>
+                                        <p className="lipara">Asset Allocation Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Gilt Funds</p>
+                                        <p className="lipara">Gilt Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Real Estate Funds</p>
+                                        <p className="lipara">Real Estate Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Inverse/Leveraged Funds</p>
+                                        <p className="lipara">Inverse/Leveraged Funds</p>
                                     </li>
                                     <li>
-                                        <p className="para">Exchange-traded Funds</p>
+                                        <p className="lipara">Exchange-traded Funds</p>
                                     </li>
                                 </ul>
 
@@ -190,28 +190,28 @@ function MFInvestment() {
                             <p className="para">Here are some of the leading mutual funds you can consider.</p>
                             <ul>
                                 <li>
-                                    <p className="para"> UTI Flexi Cap Fund</p>
+                                    <p className="lipara"> UTI Flexi Cap Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para">   Axis Midcap Fund</p>
+                                    <p className="lipara">   Axis Midcap Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para"> Axis Small Cap Fund</p>
+                                    <p className="lipara"> Axis Small Cap Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para"> SBI Small Cap Fund</p>
+                                    <p className="lipara"> SBI Small Cap Fund</p>
                                 </li>
                                 <li>
                                     <p className="para"> Axis Bluechip Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para"> Mirae Asset Large Cap Fund</p>
+                                    <p className="lipara"> Mirae Asset Large Cap Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para">Parag Parikh Long Term Equity Fund</p>
+                                    <p className="lipara">Parag Parikh Long Term Equity Fund</p>
                                 </li>
                                 <li>
-                                    <p className="para">Kotak Emerging Equity Fund</p>
+                                    <p className="lipara">Kotak Emerging Equity Fund</p>
                                 </li>
                             </ul>
 
@@ -219,19 +219,19 @@ function MFInvestment() {
                             <p className="para">Here are some tips on how to invest in mutual funds online.</p>
                             <ul>
                                 <li>
-                                    <p className="para">Understand your risk and tolerance levels, which is about risk profiling for your hard-earned money.</p>
+                                    <p className="lipara">Understand your risk and tolerance levels, which is about risk profiling for your hard-earned money.</p>
                                 </li>
                                 <li>
-                                    <p className="para">Search and identify asset classes, which can be a mix of debt and equity products that balances the risk factor.</p>
+                                    <p className="lipara">Search and identify asset classes, which can be a mix of debt and equity products that balances the risk factor.</p>
                                 </li>
                                 <li>
-                                    <p className="para">Select funds for each asset class by analysing their performance and your investment goals.</p>
+                                    <p className="lipara">Select funds for each asset class by analysing their performance and your investment goals.</p>
                                 </li>
                                 <li>
-                                    <p className="para">Look for mutual fund schemes and apply for them online.</p>
+                                    <p className="lipara">Look for mutual fund schemes and apply for them online.</p>
                                 </li>
                                 <li>
-                                    <p className="para">Conduct regular follow-ups and diversify your portfolio to get the best returns.</p>
+                                    <p className="lipara">Conduct regular follow-ups and diversify your portfolio to get the best returns.</p>
                                 </li>
                             </ul>
 

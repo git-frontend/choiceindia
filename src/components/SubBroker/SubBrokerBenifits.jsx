@@ -1,5 +1,5 @@
 import React from 'react';
-import Manager from '../../assets/images/sub-broker/local-relationship-manager-assistance.svg';
+import Manager from '../../assets/images/sub-broker/sub-broker-franchise-local-rm-assistance.svg';
 import Software from '../../assets/images/sub-broker/advanced-software-to-manage-business.svg';
 import Sales from '../../assets/images/sub-broker/marketing-and-sales-support.svg';
 import Channels from '../../assets/images/sub-broker/dedicated-whatsapp-and-telegram-channels.svg';

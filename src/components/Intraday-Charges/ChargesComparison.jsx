@@ -101,7 +101,7 @@ function ChargesComparison() {
                                             SEBI charges
                                             </td>
                                             <td className="txt2">
-                                            ₹ 0.00
+                                            ₹ 0.04
                                             </td>
                                             <td className="txt2">
                                             ₹ 0.04
@@ -112,7 +112,7 @@ function ChargesComparison() {
                                             Total Tax and <span>Charges</span>
                                             </td>
                                             <td className="txt2 bld-txt highlt2">
-                                                <span className="valtxt">₹ 15.87</span>
+                                                <span className="valtxt">₹ 16.7</span>
                                             
                                             </td>
                                             <td className="txt2 bld-txt radius-right-bottom">
