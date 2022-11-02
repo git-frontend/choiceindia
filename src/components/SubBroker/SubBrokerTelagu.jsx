@@ -75,7 +75,7 @@ function SubBroker() {
             <WhyBecomeSubBrokerTelagu />
             <WhoEligibleToSubBrokerTelagu />
             <SubBrokerOffersTelagu />
-            <MoreContentTelagu />
+            {/* <MoreContentTelagu /> */}
             
           </div>
       }

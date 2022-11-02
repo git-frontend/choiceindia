@@ -1640,17 +1640,17 @@ const meta_tags = {
   "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
   "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
 
-  "gujarati/sub-broker-franchise": { 'title': " ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
-  "content": " ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
-  "link":'https://choiceindia.com/sub-broker-franchiser',"faqscript": `` },
+  "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
+  "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
+  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
 
-  "marathi/sub-broker-franchise": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
+  "marathi/sub-broker-franchise": { 'title': " चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा", 
   "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
-  "link":' https://choiceindia.com/sub-broker-franchiser',"faqscript": `` },
+  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
 
-  "telugu/sub-broker-franchise": { 'title': " డిపాజిట్ లేకుండానే సబ్ బ్రోకర్ ఫ్రాంఛైజ్‌ను ప్రారంభించండి* - ఛాయిస్", 
-  "content": "ఎంపికతో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
-  "link":' https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
+  "telugu/sub-broker-franchise": { 'title': " డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
+  "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
+  "link":'https://choiceindia.com/telugu/sub-broker-franchise',"faqscript": `` },
 
   "intraday-charges": { 'title': "What is ETF? Meaning and How to Invest in ETF?", 
   "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
