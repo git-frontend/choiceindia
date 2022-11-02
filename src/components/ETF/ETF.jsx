@@ -466,7 +466,7 @@ function ETF(){
                       <img src={invesrtetf} className="img-fluid" alt="Mutual Fund vs ETF" />
                       <div>
                     
-                        <p className='subheadtxt'>For opening both accounts, you will require the following essential documents: </p>
+                        <p className='subheadtxt mt-4'>For opening both accounts, you will require the following essential documents: </p>
                         <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>Your PAN card or Aadhar card is your identity proof.</p>
