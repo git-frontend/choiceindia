@@ -5,6 +5,8 @@ import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
 import rest from "../../Services/rest";
+import utils from "../../Services/utils";
+import { API_URLS } from "../../Services/API-URLS";
 
 
 
@@ -24,6 +26,43 @@ function BestStockcategory() {
   };
 
   const [skeleton, setSkeleton] = useState(() => true);
+  const [trigger, setTrigger] = useState(false)
+    /**Show loader */
+    const [showLoader, setShowLoader] = useState(false)
+
+  useEffect(() => {
+    setTrigger(true)
+    if (trigger === true) {
+
+        generateSessionId()
+    }
+
+}, [trigger])
+
+
+/**
+ * Generate Session Id
+ */
+function generateSessionId() {
+    setShowLoader(true)
+    let api = new API_URLS()
+    fetch(api.getSessionUrl())
+        .then(response => {
+            return response.json();
+        })
+        .then(res => {
+            if (res.Status == 'Success') {
+              IntraStocks(res.Response)
+            } else {
+              IntraStocks()
+            }
+
+        }, err => {
+          IntraStocks()
+        })
+
+}
+
 
   function LongTermStocks(){
    
@@ -101,13 +140,16 @@ function ShortTermStocks(){
     setlist([]);
   });
 }
- function IntraStocks(){
+
+
+let IntraStocks = (session) => {
+  setShowLoader(true)
   let request ={
     "Count": 10,
-    "endDate": "01-11-2022",
-    "SessionId": "9CC3912E93",
+    "endDate": utils.formatDate(new Date(), "dd-MM-yyyy"),
+    "SessionId": session,
     "Start": 0,
-    "startDate": "01-11-2021",
+    "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
     "status": "T1",
     "type": "EQ",
     "UserId": "guest",
@@ -115,6 +157,7 @@ function ShortTermStocks(){
   }
   rest.signalReportData(request).then(      
     res => {
+      setShowLoader(false)
       if (res) {
        
         setlist(res.response);
@@ -128,7 +171,7 @@ function ShortTermStocks(){
 
     }
   ).catch((error) => {
-  
+    setShowLoader(false)
     setlist([]);
   });
  }
@@ -160,7 +203,8 @@ function ShortTermStocks(){
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       LongTermStocks();
       ShortTermStocks();
-      IntraStocks()
+      IntraStocks();
+      generateSessionId();
     }
   }, [rendercount])
   // console.log('HHHHHHH',meta_tags['sub-broker'].faqscript)
@@ -189,9 +233,9 @@ function ShortTermStocks(){
                   <div className="col-xl-8 col-md-12">
                       <ul className="list-group list-group-horizontal list_group1">
                         <li className="list-group-item list">All Stocks</li>
-                        <li className="list-group-item list listsec" onClick={IntraStocks} >Intraday Stocks</li>
-                        <li className="list-group-item list" onClick={ShortTermStocks} >Short Term Stocks</li>
-                        <li className="list-group-item list" onClick={LongTermStocks}>Long Term Stocks</li>
+                        <li className={toggleState === 1 ?"list-group-item list listsec ":"list-group-item list"} onClick={() =>{IntraStocks();generateSessionId();toggleTab(1)}}>Intraday Stocks</li>
+                        <li className={toggleState === 2 ?"list-group-item list listsec ":"list-group-item list"} onClick={() =>{ShortTermStocks();toggleTab(2)}}>Short Term Stocks</li>
+                        <li className={toggleState === 3 ?"list-group-item list listsec ":"list-group-item list"} onClick={() =>{LongTermStocks();toggleTab(3)}}>Long Term Stocks</li>
                       </ul>
                   </div>
                 </div>
