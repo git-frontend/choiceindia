@@ -56,29 +56,41 @@ function SubBrokerOffers() {
                                         <thead>
                                             <tr>
                                                 <th width="25%"> <span></span> </th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 1,000 રોકાણ અને 2 ટ્રાન્ઝેક્શન ન્યૂનતમ રૂ. 500</th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 5,000 રોકાણ અને 2 ટ્રાન્ઝેક્શન ન્યૂનતમ રૂ. 500</th>
-                                                <th>લઘુત્તમ રૂ. સાથે ખાતું. MF માં EQ + 1 SIP માં 25,000 રોકાણ અને 2 વ્યવહાર ન્યૂનતમ રૂ. 500</th>
+                                                <th>લઘુત્તમ રૂ.1,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
+                                                <th>લઘુત્તમ રૂ.5,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
+                                                <th>લઘુત્તમ રૂ.25,000 ખાતું. રોકાણ અને 2 ટ્રાન્ઝેક્શન</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
-                                                <td class="charges-heads">માત્ર ઇક્વિટી</td>
+                                                <td class="charges-heads">4-49</td>
+                                                <td>100</td>
+                                                <td>200</td>
+                                                <td>500</td>
+                                            </tr>
+                                            <tr class="grey-back">
+                                                <td class="charges-heads">50-99</td>
+                                                <td>150</td>
+                                                <td>250</td>
+                                                <td>600</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="charges-heads">100-299</td>
                                                 <td>200</td>
                                                 <td>400</td>
                                                 <td>700</td>
                                             </tr>
-                                            <tr class="grey-back">
-                                                <td class="charges-heads">માત્ર મ્યુચ્યુઅલ ફંડ</td>
-                                                <td>100</td>
-                                                <td>100</td>
-                                                <td>100</td>
+                                            <tr>
+                                                <td class="charges-heads">300-1999</td>
+                                                <td>300</td>
+                                                <td>500</td>
+                                                <td>1000</td>
                                             </tr>
                                             <tr>
-                                                <td class="charges-heads">ઇક્વિટી + મ્યુટલ ફંડ</td>
+                                                <td class="charges-heads">2000+</td>
                                                 <td>400</td>
                                                 <td>700</td>
-                                                <td>1100</td>
+                                                <td>2100</td>
                                             </tr>
                                         </tbody>
                                     </table>

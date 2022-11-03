@@ -553,7 +553,22 @@ function Routing() {
                                 < LazyIntradayCharges />
                             </React.Suspense>
                         } />
+                         <Route exact path='/marathi/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokermarathi />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/gujarati/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokergujarati />
+                            </React.Suspense>
+                        } />
                         
+                        <Route exact path='/telugu/sub-broker-franchise' element={
+                            <React.Suspense>
+                                < Lazysubbrokertelagu />
+                            </React.Suspense>
+                        } />
                         <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
