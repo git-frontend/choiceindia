@@ -248,13 +248,13 @@ function Footer() {
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
                      
                       Cautionary Message :
-                      <ul>
-                      <li> Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
-                      <li> Trading in leveraged products like options without proper understanding, which could lead to losses</li>
-                      <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>
-                      <li>Dealing in unsolicited tips through Whatsapp, Telegram, YouTube, Facebook, SMS, calls, etc.</li>
-                      <li>Trading in “Options” based on recommendations from unauthorised / unregistered investment advisors and influencers</li>
-                      </ul>
+                    <ol  style={{marginleft:"-1rem"}}> 
+                    <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
+                    <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
+                    <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>
+                    <li>Dealing in unsolicited tips through Whatsapp, Telegram, YouTube, Facebook, SMS, calls, etc.</li>
+                    <li>Trading in “Options” based on recommendations from unauthorised / unregistered investment advisors and influencers</li>
+                     </ol>
                      
                       Disclaimer: <br />
                       1. *Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br />
