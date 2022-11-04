@@ -30,7 +30,7 @@ function BannerSBroker() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                        <span>Upto ₹ 1100 Per</span> Account Incentive*
+                                        <span>Upto ₹ 2100 Per</span> Account Incentive*
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source

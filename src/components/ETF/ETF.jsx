@@ -311,7 +311,7 @@ function ETF(){
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 3</p>
                       <h2 className="title">ETF vs Stock</h2>
-                      <div className='row pb52'>
+                      <div className='row pb25'>
                         <div className='col-md-6' id="account-type-img">
                           {/* <img src='./images/demat-account-types.webp' className="img-fluid" alt="Demat Account Types" /> */}
                         </div>
@@ -394,7 +394,7 @@ function ETF(){
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 5</p>
                       <h2 className="title">ETF vs Index Fund</h2>
-                      <div className='row pb52'>
+                      <div className='row pb25'>
                         <div className='col-md-6' id="demat-features-img">
                           {/* <img src="./images/features-of-dematr-account.webp" className="img-fluid" alt=" Featues of Demat Account" /> */}
                         </div>
@@ -466,7 +466,7 @@ function ETF(){
                       <img src={invesrtetf} className="img-fluid" alt="Mutual Fund vs ETF" />
                       <div>
                     
-                        <p className='subheadtxt mt-4'>For opening both accounts, you will require the following essential documents: </p>
+                        <p className='subheadtxt mt-4 mb0'>For opening both accounts, you will require the following essential documents: </p>
                         <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>Your PAN card or Aadhar card is your identity proof.</p>
@@ -511,7 +511,7 @@ function ETF(){
                         <h3 className="subhead">Age of the Funds</h3>
 
                             <p className='subheadtxt'>Fund houses introduce new ETFs every year to offer better investment options to users. As these ETF options keep piling up, collecting historical data about their financial performance becomes difficult.</p>
-                            <p className='subheadtxt paraspace'>That's why you need to select recently introduced funds and have historical data available. This way, you can analyse the funds by keeping in mind their past performances. This will help you improve your chances of obtaining better returns in the future.</p>
+                            <p className='subheadtxt'>That's why you need to select recently introduced funds and have historical data available. This way, you can analyse the funds by keeping in mind their past performances. This will help you improve your chances of obtaining better returns in the future.</p>
 
                           
                         

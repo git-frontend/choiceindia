@@ -39,7 +39,7 @@ const meta_tags = {
 
     "faq": { 'title': "Frequently Asked Questions | Choice", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link":"https://choiceindia.com/faq" },
 
-    "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker", 'content': "Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for the whole trading life-span of the client.", 'link': "https://choiceindia.com/sub-broker-franchise" },
+    "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker", 'content': "Start a sub broker franchise without deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise" },
 
     "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral", 'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn" },
 
@@ -1642,20 +1642,23 @@ const meta_tags = {
 
   "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
   "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
-  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
+  "link":'https://choiceindia.com/gujarati/sub-broker-franchise',"faqscript": `` },
 
   "marathi/sub-broker-franchise": { 'title': "चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा", 
   "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
-  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
+  "link":'https://choiceindia.com/marathi/sub-broker-franchise',"faqscript": `` },
 
   "telugu/sub-broker-franchise": { 'title': " డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
   "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
   "link":'https://choiceindia.com/telugu/sub-broker-franchise',"faqscript": `` },
 
-  "intraday-charges": { 'title': "What is ETF? Meaning and How to Invest in ETF?", 
-  "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
+  "intraday-charges": { 'title': "Save Intraday Charges on Trades with Choice", 
+  "content": "Pay no additional brokerage fees on intraday charges. Start intraday trading with Choice and save up to 33% on brokerage. Save money right now!",
   "link":' https://choiceindia.com/intraday-charges',"faqscript": `` },
-
+  
+  "etf-exchange-traded-funds": { 'title': "What is ETF? Meaning and How to Invest in ETF?", 
+  "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
+  "link":' https://choiceindia.com/etf-exchange-traded-funds',"faqscript": `` },
 
 }
 
