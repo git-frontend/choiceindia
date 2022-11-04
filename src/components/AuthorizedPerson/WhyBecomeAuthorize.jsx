@@ -24,7 +24,7 @@ function WhyBecomeRemisier () {
                                     <h6>Local Offices</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">29k</span>+</h3>
+                                    <h3><span className="counter">29K</span>+</h3>
                                     <h6>Franchises</h6>
                                 </div>
                                 <div className="count-item">

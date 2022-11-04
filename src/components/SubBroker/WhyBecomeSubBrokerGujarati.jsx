@@ -24,7 +24,7 @@ function WhyBecomeSubBroker () {
                                     <h6> સ્થાનિક કાર્યાલય</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">29k</span>+</h3>
+                                    <h3><span className="counter">29K</span>+</h3>
                                     <h6>ફ્રેન્ચાઇઝ</h6>
                                 </div>
                                 <div className="count-item">
