@@ -28,7 +28,7 @@ function BannerSBrokerHindi() {
                                         <span>उच्चतम</span> ब्रोकरेज शेयरिंग
                                     </li>
                                     <li>
-                                        <span>इंसेन्टीव्ह प्रति खाता</span> रु. 1100 तक*
+                                        <span>इंसेन्टीव्ह प्रति खाता</span> रु. 2100 तक*
                                     </li>
                                     <li>
                                         <span>लाईफटाइम</span> इनकम स्रोत

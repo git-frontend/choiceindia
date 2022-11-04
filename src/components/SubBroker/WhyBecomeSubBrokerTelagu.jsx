@@ -21,11 +21,11 @@ function WhyBecomeSubBroker () {
 </h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">54</span></h3>
+                                    <h3><span className="counter">75+</span></h3>
                                     <h6>ప్రాంతీయ కార్యాలయాలు</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">24వేల</span>+</h3>
+                                    <h3><span className="counter">29వేల</span>+</h3>
                                     <h6>ఫ్రాంఛైజీలు</h6>
                                 </div>
                                 <div className="count-item">
