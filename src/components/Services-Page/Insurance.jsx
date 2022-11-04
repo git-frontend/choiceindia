@@ -46,7 +46,7 @@ function Insurance() {
                                     <p>Get accidental damage cover, third party car insurance, comprehensive car insurance, as per your needs.</p>
                                 </div>
                             </div>
-                            {/* <Link to="/insurance" className="btn-bg">Explore</Link> */}
+                            <Link to="/insurance" className="btn-bg">Explore</Link>
                         </div>
                     </div>
 
