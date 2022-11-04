@@ -31,7 +31,7 @@ function RemisierBenifits() {
                                 <div className={"sl-slider " + defaultOption }>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73"/>
+                                            <img src={Manager} alt="Share market remisier with local RM assistance" className="img-fluid" width="74" height="73"/>
                                         </span>
                                         <h4>Local Relationship Manager Assistance</h4>
                                     </div>
@@ -39,7 +39,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Software} alt="Advanced Software to Manage Business" className="img-fluid" width="74" height="73"/>
+                                            <img src={Software} alt="Advanced software to manage remisier business" className="img-fluid" width="74" height="73"/>
                                         </span>
                                         <h4>Advanced Software to Manage Business</h4>
                                     </div>
@@ -47,7 +47,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Sales} alt="Marketing &amp; Sales Support" className="img-fluid" width="74" height="73"/>
+                                            <img src={Sales} alt="Dedicated marketing &amp; sales support for share market remisier" className="img-fluid" width="74" height="73"/>
                                         </span>
                                         <h4>Marketing &amp; Sales Support</h4>
                                     </div>
@@ -55,7 +55,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Channels} alt="Dedicated WhatsApp &amp; Telegram Channels" className="img-fluid" width="74" height="73" />
+                                            <img src={Channels} alt="Become a Remisier with dedicated whatsapp &amp; telegram channels" className="img-fluid" width="74" height="73" />
                                         </span>
                                         <h4>Dedicated WhatsApp &amp; Telegram Channels</h4>
                                     </div>
@@ -63,7 +63,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Training} alt="Sub Broker Training through Webinars &amp; Conferences" className="img-fluid" width="74" height="73" />
+                                            <img src={Training} alt="Training through webinars and conferences for remisier" className="img-fluid" width="74" height="73" />
                                         </span>
                                         <h4>Training through Webinars &amp; Conferences</h4>
                                     </div>
@@ -71,7 +71,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Trading} alt="Cutting Edge Trading Platforms (App &amp Web)" className="img-fluid" width="74" height="73" />
+                                            <img src={Trading} alt="Cutting-edge trading platforms for share market remisier" className="img-fluid" width="74" height="73" />
                                         </span>
                                         <h4>Cutting-edge Trading Platforms (App &amp; Web)</h4>
                                     </div>
@@ -79,7 +79,7 @@ function RemisierBenifits() {
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
                                     <div className="benifits-item">
                                         <span>
-                                            <img src={Transport} alt="Transparent &amp; Growth Oriented Business Model" className="img-fluid" width="74" height="73" />
+                                            <img src={Transport} alt="Become a remisier with transparent &amp; growth-oriented business model" className="img-fluid" width="74" height="73" />
                                         </span>
                                         <h4>Transparent &amp; Growth-oriented Business Model</h4>
                                     </div>
