@@ -18,7 +18,7 @@ function AuthorizeBanner() {
                                     Authorised Person</h1>
                                 </div>
                                 <div className="right-sec">
-                                    <img src={SubBannerimage} alt="Sub Broker Franchise Without Deposit" className="img-fluid"  />
+                                    <img src={SubBannerimage} alt="Become a Authorised Person" className="img-fluid"  />
                                 </div>
                             </div>
                             <div className="caption-blue-bar">

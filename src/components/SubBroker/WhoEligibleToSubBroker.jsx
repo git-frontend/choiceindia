@@ -2,7 +2,7 @@ import React from 'react';
 import ImageSub13 from '../../assets/images/sub-broker/sub-broker-eligibility.svg';
 import ImageSub14 from '../../assets/images/sub-broker/sell-financial-services.svg';
 import ImageSub15 from '../../assets/images/sub-broker/sub-broker-franchise-business.svg';
-import ImageSub16 from '../../assets/images/sub-broker/become-a-sub-broker.webp';
+import ImageSub16 from '../../assets/images/sub-broker/sub-broker-eligibility.webp';
 import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
@@ -82,7 +82,7 @@ function WhoEligibleToSubBroker() {
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
-                                    <LazyLoader src={ImageSub16} alt={"Become a sub broker & earn through retail loans"} className={"img-fluid"} width={"384"} height={"384"} />
+                                    <LazyLoader src={ImageSub16} alt={"Eligibility to Become a Sub Broker"} className={"img-fluid"} width={"384"} height={"384"} />
                                     {/* <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" /> */}
                                 </div>
                             </div>

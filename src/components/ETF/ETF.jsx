@@ -1,30 +1,46 @@
-import React,{useState,useRef,useEffect}from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./css/landingpage.scss";
 import img_data from './ImgData.js';
 import DematAccountForm from "../Common-features/DematAccountForm";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import Template2 from "../Common-features/Template2";
-import{ useLocation} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import etfimage from "../../assets/images/etf-vs-mutual-funds.webp";
 import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
 import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
-function ETF(){
-    
-  
-
+import Slider from 'react-slick';
+function ETF() {
   var UTMCampaign = useRef('');
   var UTMMedium = useRef('');
   var UTMSource = useRef('');
   var refercode = useRef('');
 
   /**to set the skeleton */
-  const [skeleton, setSkeleton] =useState(() => true);
+  const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 
   const location = useLocation();
 
-  
+  const [view, setView] = useState({
+    matches: window.innerWidth < 770 ? false : true,
+  });
+
+
+
+  const settings = {
+    infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 1,
+    autoplay: true,
+    dots: true,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
+
+  };
+
+
 
   useEffect(() => {
     setRenderCount(true)
@@ -45,7 +61,7 @@ function ETF(){
     setSkeleton(() => false);
   }, 200)
 
-  
+
 
   function DelayloadingImages() {
     var imgDiv;
@@ -58,6 +74,11 @@ function ETF(){
 
   useEffect(() => {
     setTimeout(DelayloadingImages, 900);
+    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    mediaQuery.addListener(setView);
+    // this is the cleanup function to remove the listener
+    return () => mediaQuery.removeListener(setView);
+
 
   }, [])
 
@@ -83,15 +104,15 @@ function ETF(){
     });
   }
 
- 
+
 
   return (
     <div className="Home" id="root">
       <div>
         {
           skeleton ?
-        <Template2 />
-         :
+            <Template2 />
+            :
             <main>
 
               <section className="bannersection">
@@ -114,7 +135,7 @@ function ETF(){
                       <div className="rightsec">
                         <div className="popmd">
 
-                            <DematAccountForm></DematAccountForm>
+                          <DematAccountForm></DematAccountForm>
                         </div>
                       </div>
                     </div>
@@ -128,92 +149,176 @@ function ETF(){
                     <div className="col-md-12">
                       <h2 className="title">Table of Content</h2>
                     </div>
+                    {
+                      view && !view.matches ?
 
-                    <div className="col-md-12">
-                      <div className="same-bx-list">
-                        {/* href="#ChapterOne" */}
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterOne') }} >
-                          <div className="item-cont">
-                            <span id="chapter-one-img">
+                        <Slider {...settings} className="same-bx-list">
 
-                            </span>
-                            {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
-                            <h4>Chapter 1</h4>
-                            <p>What is an ETF?</p>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterOne') }} >
+                            <div className="item-cont">
+                              <span id="chapter-one-img">
+
+                              </span>
+                              {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
+                              <h4>Chapter 1</h4>
+                              <p>What is an ETF?</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
+                            <div className="item-cont">
+                              <span id="chapter-two-img">
+
+                              </span>
+                              {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
+                              <h4>Chapter 2</h4>
+                              <p>Types of ETFs in India</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterThree') }}>
+                            <div className="item-cont">
+                              <span id="chapter-three-img">
+
+                              </span>
+                              {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
+                              <h4>Chapter 3</h4>
+                              <p>ETF vs Stock</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFour') }}>
+                            <div className="item-cont">
+                              <span id="chapter-four-img">
+
+                              </span>
+                              {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
+                              <h4>Chapter 4</h4>
+                              <p>ETF vs Mutual Fund</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFive') }}>
+                            <div className="item-cont">
+                              <span id="chapter-five-img">
+
+                              </span>
+                              {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
+                              <h4>Chapter 5</h4>
+                              <p>ETF vs Index Fund</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSix') }}>
+                            <div className="item-cont">
+                              <span id="chapter-six-img">
+
+                              </span>
+                              {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
+                              <h4>Chapter 6</h4>
+                              <p>How to Invest in an ETF in India?</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSeven') }}>
+                            <div className="item-cont">
+                              <span id="chapter-seven-img">
+
+                              </span>
+                              {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
+                              <h4>Chapter 7</h4>
+                              <p>How to Select an ETF</p>
+                            </div>
+                          </a>
+                          <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
+                            <div className="item-cont">
+                              <span id="chapter-eight-img">
+
+                              </span>
+                              {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
+                              <h4>Chapter 8</h4>
+                              <p>Best ETF to Invest in India</p>
+                            </div>
+                          </a>
+                        </Slider> :
+                          <div className="same-bx-list">
+                            {/* href="#ChapterOne" */}
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterOne') }} >
+                              <div className="item-cont">
+                                <span id="chapter-one-img">
+
+                                </span>
+                                {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
+                                <h4>Chapter 1</h4>
+                                <p>What is an ETF?</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
+                              <div className="item-cont">
+                                <span id="chapter-two-img">
+
+                                </span>
+                                {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
+                                <h4>Chapter 2</h4>
+                                <p>Types of ETFs in India</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterThree') }}>
+                              <div className="item-cont">
+                                <span id="chapter-three-img">
+
+                                </span>
+                                {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
+                                <h4>Chapter 3</h4>
+                                <p>ETF vs Stock</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFour') }}>
+                              <div className="item-cont">
+                                <span id="chapter-four-img">
+
+                                </span>
+                                {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
+                                <h4>Chapter 4</h4>
+                                <p>ETF vs Mutual Fund</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFive') }}>
+                              <div className="item-cont">
+                                <span id="chapter-five-img">
+
+                                </span>
+                                {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
+                                <h4>Chapter 5</h4>
+                                <p>ETF vs Index Fund</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSix') }}>
+                              <div className="item-cont">
+                                <span id="chapter-six-img">
+
+                                </span>
+                                {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
+                                <h4>Chapter 6</h4>
+                                <p>How to Invest in an ETF in India?</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSeven') }}>
+                              <div className="item-cont">
+                                <span id="chapter-seven-img">
+
+                                </span>
+                                {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
+                                <h4>Chapter 7</h4>
+                                <p>How to Select an ETF</p>
+                              </div>
+                            </a>
+                            <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
+                              <div className="item-cont">
+                                <span id="chapter-eight-img">
+
+                                </span>
+                                {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
+                                <h4>Chapter 8</h4>
+                                <p>Best ETF to Invest in India</p>
+                              </div>
+                            </a>
                           </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
-                          <div className="item-cont">
-                            <span id="chapter-two-img">
-
-                            </span>
-                            {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
-                            <h4>Chapter 2</h4>
-                            <p>Types of ETFs in India</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterThree') }}>
-                          <div className="item-cont">
-                            <span id="chapter-three-img">
-
-                            </span>
-                            {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
-                            <h4>Chapter 3</h4>
-                            <p>ETF vs Stock</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFour') }}>
-                          <div className="item-cont">
-                            <span id="chapter-four-img">
-
-                            </span>
-                            {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
-                            <h4>Chapter 4</h4>
-                            <p>ETF vs Mutual Fund</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFive') }}>
-                          <div className="item-cont">
-                            <span id="chapter-five-img">
-
-                            </span>
-                            {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
-                            <h4>Chapter 5</h4>
-                            <p>ETF vs Index Fund</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSix') }}>
-                          <div className="item-cont">
-                            <span id="chapter-six-img">
-
-                            </span>
-                            {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
-                            <h4>Chapter 6</h4>
-                            <p>How to Invest in an ETF in India?</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSeven') }}>
-                          <div className="item-cont">
-                            <span id="chapter-seven-img">
-
-                            </span>
-                            {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
-                            <h4>Chapter 7</h4>
-                            <p>How to Select an ETF</p>
-                          </div>
-                        </a>
-                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
-                          <div className="item-cont">
-                            <span id="chapter-eight-img">
-
-                            </span>
-                            {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
-                            <h4>Chapter 8</h4>
-                            <p>Best ETF to Invest in India</p>
-                          </div>
-                        </a>
-                      </div>
-                    </div>
+}
 
                   </div>
                 </div>
@@ -232,9 +337,9 @@ function ETF(){
                         <div className='col-md-6'>
                           <p className='subtext'>The first question that pops up in your mind is, "what is ETF in stock market?"</p>
                           <p className='subtext'>
-                          Well, ETF meaning, i.e., the ETF full form is exchange traded funds, which is a pool of securities. These ETF funds let you trade these securities on the stock market. Most of the funds are registered and accredited by the Securities and Exchange Board of India (SEBI).
+                            Well, ETF meaning, i.e., the ETF full form is exchange traded funds, which is a pool of securities. These ETF funds let you trade these securities on the stock market. Most of the funds are registered and accredited by the Securities and Exchange Board of India (SEBI).
                           </p>
-                         
+
                         </div>
                       </div>
                       <div className="">
@@ -243,13 +348,13 @@ function ETF(){
                         <ul class="bullet">
                           <li>
                             <p className="subheadtxt">These funds are listed on all major stock markets, and you can trade them according to your investment appetite.</p>
-                          </li> 
+                          </li>
                           <li>
                             <p className="subheadtxt">You will receive assistance from a fund manager who will trade these shares during the equity trading period.</p>
-                          </li> 
+                          </li>
                           <li>
                             <p className="subheadtxt">The professional can actively manage the ETF according to the market conditions and probable investment risks.</p>
-                          </li> 
+                          </li>
                         </ul>
                         <p className='subheadtxt'>Additionally, if you or your fund manager passively manage the ETF, it's best to follow the market trends of particular indices and invest only in the most profitable companies.</p>
                       </div>
@@ -269,7 +374,7 @@ function ETF(){
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>The types of ETF in India include equity, gold, and ETF Fund of Funds. Let's delve into each!</p>
-                          
+
                         </div>
                       </div>
 
@@ -278,7 +383,7 @@ function ETF(){
                         <p className='subheadtxt'>These are similar to company stocks which you can buy or sell according to the current market prices. They are popular as they help you track stock index performances and a collection of stocks from a specific sector.</p>
                         <p className='subheadtxt'>The ultimate goal of this fund is to match its benchmark index's performance. In addition, equity funds are famous for offering maximum transparency and cost-effectiveness during trades.</p>
                         <p className='subheadtxt'>Furthermore, equity funds are suitable for investors looking for diversification and liquidity. They are further divided into factor-based, market cap-based, and sector equity funds.</p>
-                        
+
                       </div>
                       <div>
                         <h3 className='subhead'>Commodity ETF</h3>
@@ -292,7 +397,7 @@ function ETF(){
                         <p className='subheadtxt'>These funds help users invest in other mutual funds.</p>
                         <p className='subheadtxt'>Instead of holding company bonds or shares, these equity funds comprise units of other mutual funds. So, by utilising these funds, you can invest in other ETFs provided by asset management companies.</p>
                         <p className='subheadtxt'>
-                        Additionally, for investing in this type of fund, you need to purchase units of the ETF FoFs, like other mutual fund schemes. But you won't need to open a Demat account for this.
+                          Additionally, for investing in this type of fund, you need to purchase units of the ETF FoFs, like other mutual fund schemes. But you won't need to open a Demat account for this.
                         </p>
                         <p className='subheadtxt'>So, all in all, the primary reason you might select this type of ETF is portfolio diversification by investing in multiple categories.</p>
 
@@ -318,28 +423,28 @@ function ETF(){
                         <div className='col-md-6'>
                           <p className='subtext'>When investing in ETFs, you might want to understand how it's better than market stocks.</p>
                           <p className='subtext'>
-                          To elaborate on the same, the primary difference is ETFs are a collection of investments, whereas stocks are a single financial instrument. Stocks are also called shares that companies issue to improve their funds. So, if you are purchasing a stock, you're investing in a particular company.
+                            To elaborate on the same, the primary difference is ETFs are a collection of investments, whereas stocks are a single financial instrument. Stocks are also called shares that companies issue to improve their funds. So, if you are purchasing a stock, you're investing in a particular company.
                           </p>
                         </div>
                       </div>
 
                       <div>
-                      <p className='subheadtxt'>You can also purchase multiple stocks of the company. When the stock prices and the company's business performance improves, you can sell the stocks to earn profits.</p>
-                      <p className='subheadtxt'>However, in an ETF, your fund manager can select stocks of a particular category of companies for your financial benefit. So, ETFs act as a complete investment market, where you don't have to choose stocks on your own.</p>
-                      <p className='subheadtxt'>Let's understand the differences between ETF vs Stock.</p>
+                        <p className='subheadtxt'>You can also purchase multiple stocks of the company. When the stock prices and the company's business performance improves, you can sell the stocks to earn profits.</p>
+                        <p className='subheadtxt'>However, in an ETF, your fund manager can select stocks of a particular category of companies for your financial benefit. So, ETFs act as a complete investment market, where you don't have to choose stocks on your own.</p>
+                        <p className='subheadtxt'>Let's understand the differences between ETF vs Stock.</p>
                         <h3 className='subhead'>Risk</h3>
                         <p className='subheadtxt'>ETFs are less risky as you invest your capital in several securities, which reduces the chances of a huge financial loss. The ratio of investment risk is high in stocks, as these shares belong to a particular company. So, the stock prices rise or fall according to the company's financial situation.</p>
-                        
+
                       </div>
                       <div>
                         <h3 className='subhead'>Fund Selection and Operation</h3>
                         <p className='subheadtxt'>Your dedicated fund manager will select ETFs as per their market prices. It makes the process hassle-free and saves you time. On the other hand, for stocks, you need to analyse the market trajectory and select them yourself. Furthermore, you'll decide when to buy or sell them.</p>
-                        
+
                       </div>
                       <div>
                         <h3 className='subhead'>Liquidity</h3>
                         <p className='subheadtxt'>It's convenient to liquidate ETFs as you can purchase or sell them at will, while you can liquidate stocks according to the company issuing the shares. However, the company must be financially stable for liquidation.</p>
-                        
+
                       </div>
 
                       <hr className='m52' />
@@ -357,33 +462,33 @@ function ETF(){
                         <div className='col-md-6'>
                           <p className='subtext'>The main difference between an ETF and mutual funds is how they are purchased and sold. You can easily buy or sell ETFs on the stock exchange. However, you can only buy a mutual fund unit from an asset management company or a fund house.</p>
                           <p className='subtext'>
-                          ETFs and mutual funds involve a fund manager and have a net asset value (NAV). But you can not trade mutual funds on the stock exchange like ETFs. In both cases, the fund manager might make investment decisions on your behalf. This will help you gain better returns if you've just started investing.
+                            ETFs and mutual funds involve a fund manager and have a net asset value (NAV). But you can not trade mutual funds on the stock exchange like ETFs. In both cases, the fund manager might make investment decisions on your behalf. This will help you gain better returns if you've just started investing.
                           </p>
                         </div>
                       </div>
 
                       <div>
-                      <p className='subheadtxt'>So, you must place an order with the fund house while buying or selling mutual funds. Its NAV determines the market price of the fund. However, the market price of an ETF can change all day, and you can analyse it in real time.</p>
-                      <img src={etfimage} className="img-fluid" alt="Mutual Fund vs ETF" />
+                        <p className='subheadtxt'>So, you must place an order with the fund house while buying or selling mutual funds. Its NAV determines the market price of the fund. However, the market price of an ETF can change all day, and you can analyse it in real time.</p>
+                        <img src={etfimage} className="img-fluid" alt="Mutual Fund vs ETF" />
 
-                      <p className='subheadtxt'>Let's delve into a few more additional differences between ETFs and mutual funds to understand this better:</p>
+                        <p className='subheadtxt'>Let's delve into a few more additional differences between ETFs and mutual funds to understand this better:</p>
                         <h3 className="subhead">Management Fees</h3>
                         <p className='subheadtxt'>You won't require active portfolio management for ETFs as the funds mimic the index's performance. So, the management fees are comparatively low. Your fund manager will take most of the important decisions here.</p>
                         <p className='subheadtxt'>As mutual funds are actively managed, they have operational and management fees higher than ETFs. It might not be cost-effective for many investors. Moreover, these funds have higher expense ratios than ETFs.</p>
-                       
+
                       </div>
                       <div>
                         <h3 className="subhead">Portfolio Transfer</h3>
                         <p className='subheadtxt'>ETFs are considered very portable investments as you can conveniently transfer your portfolio to a different investment firm.</p>
                         <p className='subheadtxt'>For mutual funds, however, transferring your investment portfolio can be a little difficult. Before transferring the portfolio to another investment firm, you need to close the fund positions.</p>
-                       
+
                       </div>
                       <div>
                         <h3 className="subhead">Lock-In Period</h3>
                         <p className='subheadtxt'>ETFs do not have any lock-in period, and you are free to sell the funds whenever you want. However, mutual funds usually have a fixed lock-in period, before which you cannot sell them. </p>
                         <p className='subheadtxt'>For instance, ELSS mutual funds have a lock-in period of 3 years, which is calculated from the date of investment. However, you can liquidate the funds during this period if needed. On the contrary, there are close-ended mutual funds where liquidation is impossible before the lock-in period ends.</p>
                         <p className='subheadtxt'>Most mutual funds charge an exit load fee of around 1% for liquidating funds before 1 year. So, these expenses make mutual funds more expensive than ETFs.</p>
-                       
+
                       </div>
 
                       <hr className='m52' />
@@ -400,7 +505,7 @@ function ETF(){
                         </div>
                         <div className='col-md-6'>
                           <p className='subtext'>ETFs and index funds are investment strategies where your fund manager can make investment decisions on your behalf. But, to understand <strong>ETFs vs index funds</strong>, you need to delve into the details of index funds.</p>
-                        <p className='subtext'>You can invest in securities, including bonds, commodities, and shares, with index funds. In addition, most of these funds trade according to indices like the SENSEX 100. You can invest in these funds easily and explore risky shares.</p>
+                          <p className='subtext'>You can invest in securities, including bonds, commodities, and shares, with index funds. In addition, most of these funds trade according to indices like the SENSEX 100. You can invest in these funds easily and explore risky shares.</p>
                         </div>
                       </div>
 
@@ -437,7 +542,7 @@ function ETF(){
                         <div className='col-md-6'>
                           <p className='subtext'>If you're searching online for "<strong>How to Invest In ETF in India?</strong>" The steps are similar to purchasing/selling shares on the stock market. You can either do it yourself online or hire an experienced stockbroker to make the decisions for you.</p>
                           <p className='subtext'>
-                          To begin the transactions, you will need a Demat or trading account. Here are the steps to opening a Demat account:
+                            To begin the transactions, you will need a Demat or trading account. Here are the steps to opening a Demat account:
                           </p>
                         </div>
                       </div>
@@ -461,11 +566,11 @@ function ETF(){
 
                           </li>
                         </ul>
-                        
+
                       </div>
                       <img src={invesrtetf} className="img-fluid" alt="Mutual Fund vs ETF" />
                       <div>
-                    
+
                         <p className='subheadtxt mt-4 mb0'>For opening both accounts, you will require the following essential documents: </p>
                         <ul className='bullet'>
                           <li>
@@ -481,10 +586,10 @@ function ETF(){
                         <p className='subheadtxt'>Remember that having a Demat and a trading account is compulsory to begin ETF investments. So, make sure you check the quality of the online trading platform before registering. Additionally, check for online reviews, testimonials, or suggestions from other traders.</p>
                         <p className='subheadtxt'>Furthermore, if you are a beginner in the world of investments, starting with a dedicated fund manager is recommended. You can search online for experienced professionals who will help you improve your wealth and limit financial losses.</p>
                         <p className='subheadtxt'>Begin by investing in ETF units through your online brokerage account or by telephonic mode. Moreover, you can contact your stock broker and place your order on your preferred fund. Or you can take the help of Choice's research team before investing in ETFs or any <a href='https://choiceindia.com/blog/how-to-start-stock-market-investment/'
-                            className='linking'>stock market investment</a>.</p>
+                          className='linking'>stock market investment</a>.</p>
                       </div>
 
-                      
+
                       <hr className='m52' />
                     </div>
 
@@ -507,32 +612,32 @@ function ETF(){
 
                       <div>
                         <p className='subheadtxt'> You need to understand the associated expense ratio, trading volume, fees, and tracking errors. To help you with the same, this section will explain the various factors in detail.</p>
-                        
+
                         <h3 className="subhead">Age of the Funds</h3>
 
-                            <p className='subheadtxt'>Fund houses introduce new ETFs every year to offer better investment options to users. As these ETF options keep piling up, collecting historical data about their financial performance becomes difficult.</p>
-                            <p className='subheadtxt'>That's why you need to select recently introduced funds and have historical data available. This way, you can analyse the funds by keeping in mind their past performances. This will help you improve your chances of obtaining better returns in the future.</p>
+                        <p className='subheadtxt'>Fund houses introduce new ETFs every year to offer better investment options to users. As these ETF options keep piling up, collecting historical data about their financial performance becomes difficult.</p>
+                        <p className='subheadtxt'>That's why you need to select recently introduced funds and have historical data available. This way, you can analyse the funds by keeping in mind their past performances. This will help you improve your chances of obtaining better returns in the future.</p>
 
-                          
-                        
+
+
                       </div>
                       <div>
                         <h3 className="subhead">Expenses</h3>
-                            <p className='subheadtxt'>You also have to understand the expenses associated with purchasing and selling the funds you prefer. So, talk to your manager about the expense ratio and <a href="https://choiceindia.com/brokerage-charges" className="linking">brokerage fees</a>.</p>
-                            <p className='subheadtxt'>It is also important to consider the expense ratios of two similar ETFs.</p>
-                            <p className='subheadtxt'>To do so, you need to check the expense ratios set by the fund house for these funds.</p>
+                        <p className='subheadtxt'>You also have to understand the expenses associated with purchasing and selling the funds you prefer. So, talk to your manager about the expense ratio and <a href="https://choiceindia.com/brokerage-charges" className="linking">brokerage fees</a>.</p>
+                        <p className='subheadtxt'>It is also important to consider the expense ratios of two similar ETFs.</p>
+                        <p className='subheadtxt'>To do so, you need to check the expense ratios set by the fund house for these funds.</p>
                       </div>
                       <div>
                         <h3 className="subhead">Trading Volumes</h3>
-                            <p className='subheadtxt'>To conveniently trade ETF units, you need to check whether they are currently in demand in the market. It will help you improve your returns and build wealth. To do so, you have to understand the trade volume of an ETF before investing in it.</p>
-                            <p className='subheadtxt'>ETFs with a good trading volume offer better liquidity and convenience. Moreover, purchasing and selling these funds is easier.</p>
+                        <p className='subheadtxt'>To conveniently trade ETF units, you need to check whether they are currently in demand in the market. It will help you improve your returns and build wealth. To do so, you have to understand the trade volume of an ETF before investing in it.</p>
+                        <p className='subheadtxt'>ETFs with a good trading volume offer better liquidity and convenience. Moreover, purchasing and selling these funds is easier.</p>
                       </div>
                       <div>
                         <h3 className="subhead">Tracking Error</h3>
-                            <p className='subheadtxt'>If the ETF you choose tracks a particular index, your fund manager will try purchasing securities to match the funds returned by the underlying index. During this process, there might be a difference between the returns from the index and the ETF. It is called a tracking error.</p>
-                            <p className='subheadtxt'>Hence, you must select funds having a low tracking error to boost your income.</p>
+                        <p className='subheadtxt'>If the ETF you choose tracks a particular index, your fund manager will try purchasing securities to match the funds returned by the underlying index. During this process, there might be a difference between the returns from the index and the ETF. It is called a tracking error.</p>
+                        <p className='subheadtxt'>Hence, you must select funds having a low tracking error to boost your income.</p>
                       </div>
-                      
+
 
                       <hr className='m52' />
                     </div>
@@ -553,7 +658,7 @@ function ETF(){
                       </div>
 
                       <div>
-                      <ul className='bullet'>
+                        <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>IDBI Gold ETF (G)</p>
                           </li>
@@ -586,28 +691,28 @@ function ETF(){
                       </div>
                       <div>
                         <h3 className="subhead">The Bottom Line</h3>
-                            <p className='subheadtxt'>ETFs allow you to gain exposure to investing in multiple investment avenues. You gain a better understanding of the market prices, risk factors, associated expenses, and tracking errors.</p>
-                            <p className='subheadtxt'>So, even if you feel the learning curve for ETF investment is high, it's beneficial for you in the long run. That is because you can diversify your portfolio and learn to analyse historical financial data.</p>
-                            <p className='subheadtxt'>However, like any other investment option, you need to understand your risk-taking appetite. Try not to invest a substantial amount without backup.</p>
-                            <p className='subheadtxt'>To sum it up, do your research properly and invest wisely.</p>
+                        <p className='subheadtxt'>ETFs allow you to gain exposure to investing in multiple investment avenues. You gain a better understanding of the market prices, risk factors, associated expenses, and tracking errors.</p>
+                        <p className='subheadtxt'>So, even if you feel the learning curve for ETF investment is high, it's beneficial for you in the long run. That is because you can diversify your portfolio and learn to analyse historical financial data.</p>
+                        <p className='subheadtxt'>However, like any other investment option, you need to understand your risk-taking appetite. Try not to invest a substantial amount without backup.</p>
+                        <p className='subheadtxt'>To sum it up, do your research properly and invest wisely.</p>
                       </div>
 
                       <hr className='m52' />
                     </div>
 
                   </div>
-                  
-                  
+
+
                 </div>
 
               </section>
 
               <section className="stickybottom">
-              <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
+                <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
 
-             
+
 
             </main>
         }
@@ -621,4 +726,4 @@ function ETF(){
 
 
 
- export default ETF;
+export default ETF;

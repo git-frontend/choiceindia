@@ -30,25 +30,25 @@ const RemisierSellMore = () => {
                             <div className="sell-more-list">
                                 <div className="more-list-item">
                                     <span>
-                                        <img src={Commodity} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
+                                        <img src={Commodity} alt="Become a remisier &amp; earn through Equity and Commodity Broking" className='img-fluid' width="45" height="45" />
                                     </span>
                                     <h3 className="itm-ttl">Equity, Commodity &amp; Currency Broking</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                 <span>
-                                        <img src={MF} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
+                                        <img src={MF} alt="Become a remisier &amp; earn through Mutual Funds" className='img-fluid' width="45" height="45" />
                                 </span>
                                 <h3 className="itm-ttl">Mutual Funds Distribution</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                     <span>
-                                        <img src={Insurance} alt="Equity, Commodity &amp; Currency Broking"  className='img-fluid' width="45" height="45"/>
+                                        <img src={Insurance} alt="Become a remisier &amp; earn through Insurance"  className='img-fluid' width="45" height="45"/>
                                     </span>
                                     <h3 className="itm-ttl">Insurance</h3>
                                 </div>
                                 <div className="more-list-item wow fadeInRight">
                                 <span>
-                                        <img src={Retail} alt="Equity, Commodity &amp; Currency Broking" className='img-fluid' width="45" height="45" />
+                                        <img src={Retail} alt="Become a remisier &amp; earn through retail loans" className='img-fluid' width="45" height="45" />
                                 </span>
                                 <h3 className="itm-ttl">Retail Loans</h3>
                             </div>
