@@ -58,7 +58,7 @@ const meta_tags = {
     
     "advisory-for-investors":{'title':"Advisory for Investors - Choice",'content':"Visit Choice International Limited's official website to know the advisory for the investors.",'link':"https://choiceindia.com/advisory-for-investors"},
     
-    "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account",
+    "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr',
     "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -433,7 +433,7 @@ const meta_tags = {
 
     "campaign/open-demat-account":{'title':"Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year",'content':"Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.",'link':"https://choiceindia.com/campaign/open-demat-account"},
 
-    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise"},
+    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi"},
 
     "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise"},
 
@@ -864,7 +864,7 @@ const meta_tags = {
     ` },
 
     "hindi/open-demat-trading-account": {
-        'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और लाइफटाइम फ्री एएमसी प्राप्त करें। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",
+        'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और लाइफटाइम फ्री एएमसी प्राप्त करें। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -993,7 +993,7 @@ const meta_tags = {
 
     "open-trading-account-marathi": {
         'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",
-        "faqscript": `<script type="application/ld+json">
+        "lang":'mr',"faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
       "mainEntity": [{
@@ -1236,7 +1236,122 @@ const meta_tags = {
     </script>
     ` },
 
-    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account"},
+    "demat-account":{'title':"What is Demat Account? Meaning, Opening Process, Types & Benefits",'content':"A Demat account is used to store securities in electronic format. Visit to know about Demat account meaning, its types, benefits, and online account opening process at Choice.",'link':"https://choiceindia.com/demat-account","faqscript": `
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Who Can Open A Demat Account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "SEBI has laid out certain guidelines as to who is eligible to open a Demat account in India. Anyone who falls under the following criteria can open a Demat account. Let us quickly have a look at the same.
+
+Anyone who is a resident of India.
+
+The member of any HUF family
+
+NRIs can also open an NRI Demat account in India.
+
+Even if you are a minor (below the age of 18), you can open a Demat account for minors. There is no age limit for Demat account.
+
+A company that is taxed under the taxation policy of India is also eligible to open a Demat account.
+
+Now that we have talked about the criteria of opening a Demat account, let us have a look at how you can complete the entire process."
+    }
+  },{
+    "@type": "Question",
+    "name": "How many Demat accounts can one have?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any individual investor can have 4 Demat accounts, but each has to be with a different Depository Participant. SEBI has set no limits, yet you should know that holding Demat accounts are not free."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to check my Demat account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "To check your Demat account, you will have to visit the CDSL website and log in. Then Enter your 10 digit PAN card number and 16 digits Demat account number. After that, enter your DOB, complete the captcha process, and generate OTP; once it's all done, you can check your Demat account through CDSL."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I transfer shares from one Demat account to another?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The investor will have to fill the DIS and submit it to the current broker; then, the broker will forward the DIS request to the depository. The. The depository will share the existing holdings with your preferred Demat account."
+    }
+  },{
+    "@type": "Question",
+    "name": "How can I find the Demat account number from PAN?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The simplest way to find your Demat account number from your PAN card is to search your mailbox. Search the PAN card number in your mailbox, and you will find mails from CDSL & NSDL; there, you will see the Demat account number."
+    }
+  },{
+    "@type": "Question",
+    "name": "When is the iex bonus share credited to the Demat account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "It generally takes 15 business days to reflect bonus shares in your account, but it depends on the RTA."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to log in to a Demat account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Login depends on your trading platform; every stockbroker has a different app with a different user interface. So, it depends on which app or stockbroker you are using."
+    }
+  },{
+    "@type": "Question",
+    "name": "How to change the nominee into a Demat account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Firstly, you need to download the nominee modification form from the DP's website, fill out the form, update the nominee's information, and get it signed. Later, send the nominee modification form and the hard copy of your Demat account information to your stockbrokers' headquarter."
+    }
+  },{
+    "@type": "Question",
+    "name": "Who can open a Demat Account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Any resident of India who has a PAN card is eligible to open a Demat account."
+    }
+  },{
+    "@type": "Question",
+    "name": "What is the Age limit for Demat Account?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is no age restriction for Demat account holders; even a minor can open a Demat account."
+    }
+  },{
+    "@type": "Question",
+    "name": "How much time is required for Demat account activation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Presently, opening a Demat account does not take more than 5 minutes. However, Demat account activation time may take up to 4 hours if you open a Demat account with Choice India."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I Open a Demat Account Without an Aadhar Card?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "A Demat account with an Aadhar card is possible!
+
+Currently, the Government is planning to revisit the e-KYC process and linking Aadhaar to Demat, trading, or bank accounts is not mandatory. Therefore, opening a Demat account without an Aadhar card is possible."
+    }
+  },{
+    "@type": "Question",
+    "name": "Can I Open a Demat Account Without a PAN Card?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Unfortunately, a Demat account without a PAN card is not possible. SEBI has mandated a PAN card for opening a Demat account. The investor/trader needs to show the original PAN Card while opening the Demat account."
+    }
+  }]
+}
+</script>
+
+    
+    `},
 
     "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": `` },
 
@@ -1388,7 +1503,7 @@ const meta_tags = {
 
     "hindi/trading-account": {
         'title': "मुफ़्त ट्रेडिंग अकाउंट खोलें + प्रथम वर्ष के लिए निःशुल्क AMC", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन ट्रेडिंग अकाउंट खोलें और प्रथम वर्ष के लिए फ्री एएमसी प्राप्त करें। चॉइस के साथ अपने ट्रेडिंग खाते पर कम ब्रोकरेज और डीपी शुल्क प्राप्त करें।",
-        "link": 'https://choiceindia.com/hindi/trading-account',
+        "link": 'https://choiceindia.com/hindi/trading-account','lang':"hi",
         "faqscript": `<script type="application/ld+json">
     {
       "@type": "FAQPage",
@@ -1560,7 +1675,7 @@ const meta_tags = {
 
     "hindi/online-trading-app": {
       'title': "फिनएक्स ट्रेडिंग ऐप - भारत का श्रेष्ठ ऑनलाइन मोबाइल ट्रेडिंग ऐप",
-      "content":"फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।","link":"https://choiceindia.com/hindi/online-trading-app",
+      "content":"फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।","link":"https://choiceindia.com/hindi/online-trading-app",'lang':"hi",
       "faqscript": `<script type="application/ld+json">
       {
         "@type": "FAQPage",
@@ -1638,19 +1753,19 @@ const meta_tags = {
 
   "hindi/mutual-fund-distributor": { 'title': " चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
   "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` },
+  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi"},
 
   "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
   "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",
-  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
+  "link":'https://choiceindia.com/sub-broker-franchise',"lang":'gu',"faqscript": `` },
 
   "marathi/sub-broker-franchise": { 'title': " चॉइस सब ब्रोकर बना आणि डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा", 
   "content": "चॉइस सब ब्रोकर बना. डिपॉझिटशिवाय सब ब्रोकर फ्रँचायझी सुरू करा, तसेच सर्वाधिक महसूल वाटप आणि आजीवन उत्पन्न स्रोत मिळावा.",
-  "link":'https://choiceindia.com/sub-broker-franchise',"faqscript": `` },
+  "link":'https://choiceindia.com/sub-broker-franchise',"lang":'mr',"faqscript": `` },
 
   "telugu/sub-broker-franchise": { 'title': " డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
   "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
-  "link":'https://choiceindia.com/telugu/sub-broker-franchise',"faqscript": `` },
+  "link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": `` },
 
 
 }
