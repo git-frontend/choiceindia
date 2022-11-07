@@ -47,6 +47,7 @@
             border: none;
             background: $whiteColor;
             padding: 0.5rem 1rem;
+            cursor: pointer;
             @media (max-width: $sm){
                 white-space: nowrap;
             }

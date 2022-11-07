@@ -21,24 +21,18 @@ import { useEffect } from "react";
 function BestStockcategory() {
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
+  const [list2, setlist2] = useState();
+  const [list3, setlist3] = useState();
+  const [rendercount, setRenderCount] = useState(() => false);
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
   const [skeleton, setSkeleton] = useState(() => true);
-  const [trigger, setTrigger] = useState(false)
+
   const [data, setData] = useState(false);
   /**Show loader */
   const [showLoader, setShowLoader] = useState(false)
-
-  useEffect(() => {
-    setTrigger(true)
-    if (trigger === true) {
-
-      generateSessionId()
-    }
-
-  }, [trigger])
 
 
   /**
@@ -53,13 +47,13 @@ function BestStockcategory() {
       })
       .then(res => {
         if (res.Status == 'Success') {
-          // IntraStocks(res.Response)
+          IntraStocks(res.Response)
         } else {
-          // IntraStocks([])
+          IntraStocks()
         }
 
       }, err => {
-        // IntraStocks([])
+        IntraStocks()
       })
 
   }
@@ -88,33 +82,33 @@ function BestStockcategory() {
       res => {
         if (res) {
 
-          setlist(res.response);
+          setlist2(res.response);
           console.log(res);
 
         } else {
 
-          setlist([]);
+          setlist2([]);
         }
 
 
       }
     ).catch((error) => {
 
-      setlist([]);
+      setlist2([]);
     });
   };
 
   function ShortTermStocks() {
-    setData(true)
+   
     setlist([]);
     let request = {
-      "end_date": "2022-11-01",
+      "end_date": utils.formatDate(new Date(), "dd-MM-yyyy"),
       "is_expert": 0,
       "research_type": "",
       "limit": 10,
       "offset": 0,
       "segment": "EQ",
-      "start_date": "2021-11-01",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
       "status": "target_achieved",
       "subcategory_id": "",
       "search": "",
@@ -124,24 +118,24 @@ function BestStockcategory() {
       "category_id": 2
     }
     rest.expertReportData(request).then(
-     
+
       res => {
         if (res) {
-          setData(false)
-          setlist(res.response.response);
-          console.log(res.response.response);
+          
+          setlist3(res.response);
+          console.log(res);
 
 
         } else {
-          setData(false)
-          setlist([]);
+         
+          setlist3([]);
         }
 
 
       }
     ).catch((error) => {
-      setData(false)
-      setlist([]);
+      
+      setlist3([]);
     });
   }
 
@@ -164,8 +158,8 @@ function BestStockcategory() {
         setShowLoader(false)
         if (res) {
 
-          setlist(res.response);
-          console.log(res);
+          setlist(res.Response.Data);
+          console.log("check api", res.Response.Data);
 
         } else {
 
@@ -183,40 +177,29 @@ function BestStockcategory() {
 
 
 
-  const [rendercount, setRenderCount] = useState(() => false);
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
   const location = useLocation();
-  // let parser = new DOMParser();
-  // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-  // useEffect(() => {
-  //   let parser = new DOMParser();
-  //   let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-  //   document.body.appendChild(doc.getElementsByTagName('script')[0]);
-  // }, [])
+
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
 
-      ShortTermStocks()
       generateSessionId();
+      // IntraStocks();
     }
   }, [rendercount])
-  // console.log('HHHHHHH',meta_tags['sub-broker'].faqscript)
-  // console.log('TTTT',doc.getElementsByTagName('script')[0]);
-  // document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-  // // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
-  // document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
-  // document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-  // // document.body.appendChild(doc.getElementsByTagName('script')[0]);
+
+  function redirectLink(){
+    window.open("https://finx.choiceindia.com/market/latest-ipo-list");
+  }
+
 
 
 
@@ -236,7 +219,7 @@ function BestStockcategory() {
                   <div className="col-xl-8 col-md-12">
                     <ul className="list-group list-group-horizontal list_group1">
                       <li className="list-group-item list">All Stocks</li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec curs " : "list-group-item list"} onClick={() => { IntraStocks(); toggleTab(1) }}>Intraday Stocks</li>
+                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2) }}>Short Term Stocks</li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3) }}>Long Term Stocks</li>
                     </ul>
@@ -248,97 +231,185 @@ function BestStockcategory() {
             <section className="main">
               <div className="container">
                 <div className="content-tabs best-stock-tabs-cont active-content">
+                  <div className="row d-flex justify-content-center">
+                    <div className="col-md-12">
+                      {
+                        toggleState ===1?
+                        <div className="row gx-5">
+                        {
+                          (list || []).slice(0, 4).map((response, index) => {
 
-                  {
-                    (list || []).slice(0, 4).map((res, i) => {
+                            return (
 
-                      return (
-                        // <div className="row d-flex justify-content-center">
-                        //   <div className="col-md-12">
-                          //   <div className="row gx-5">
-                          //     <div className="col-md-6">
-                          //       <div className="main-left">
-                          //         <div className="top-section">
-                          //           <div className="top-left">
-                          //             <h6 className="top-text">Reco Date</h6>
-                          //             <h6 className="top-date">12th Apr '22</h6>
-                          //           </div>
-                          //           <div className="top-right"><button className="btn-buy">buy</button></div>
-                          //         </div>
-                          //         <div className="middle-section">
-                          //           <div className="middle-left">
-                          //             <h4 className="big-text">Bandhan Bank Ltd</h4>
-                          //             <span className="small-text">BANDHANBANK</span>
-                          //           </div>
-                          //           <div className="middle-right">
-                          //             <span className="right-big-text">333.45</span>
-                          //             <h6 className="right-small-text">+10.6 (3.28%)</h6>
-                          //           </div>
-                          //         </div>
 
-                          //         <div className="bottom-section">
-                          //           <div className="d-flex justify-content-between pt-3">
-                          //             <div className="bottom">
-                          //               <h6 className="bottom_small_text">Entry Price</h6>
-                          //               <h4 className="bottom_big_text">327.30</h4>
-                          //             </div>
-                          //             <div className="bottom">
-                          //               <h6 className="bottom_small_text">Potential Price</h6>
-                          //               <h4 className="bottom_big_text" >350.00</h4>
-                          //             </div>
-                          //             <div className="bottom">
-                          //               <h6 className="bottom_small_text">Exp. Returns</h6>
-                          //               <h4 className="bottom_big_text">4.96%</h4>
-                          //             </div>
-                          //           </div>
-                          //         </div>
-                          //       </div>
-                          //     </div>
-                          //     {/* <div className="col-md-6">
-                          //   <div className="main-left">
-                          //     <div className="top-section">
-                          //       <div className="top-left">
-                          //         <h6 className="top-text">Reco Date</h6>
-                          //         <h6 className="top-date">12th Apr '22</h6>
-                          //       </div>
-                          //       <div className="top-right"><button className="btn-buy">buy</button></div>
-                          //     </div>
-                          //     <div className="middle-section">
-                          //       <div className="middle-left">
-                          //         <h4 className="big-text">JSW Steel Ltd.</h4>
-                          //         <span className="small-text">BANDHANBANK</span>
-                          //       </div>
-                          //       <div className="middle-right">
-                          //         <span className="right-big-text">755.90</span>
-                          //         <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
-                          //       </div>
-                          //     </div>
+                              <div className="col-md-6">
+                              <div className="main-left">
 
-                          //     <div className="bottom-section">
-                          //       <div className="d-flex justify-content-between pt-3">
-                          //         <div className="bottom">
-                          //           <h6 className="bottom_small_text">Entry Price</h6>
-                          //           <h4 className="bottom_big_text">757.00</h4>
-                          //         </div>
-                          //         <div className="bottom">
-                          //           <h6 className="bottom_small_text">Potential Price</h6>
-                          //           <h4 className="bottom_big_text" >810.00</h4>
-                          //         </div>
-                          //         <div className="bottom">
-                          //           <h6 className="bottom_small_text">Exp. Returns</h6>
-                          //           <h4 className="bottom_big_text">7.16%</h4>
-                          //         </div>
-                          //       </div>
-                          //     </div>
-                          //   </div>
-                          // </div> */}
-                          //   </div>
-                        //   </div>
-                        // </div>
-                        <div></div>
+                                <div className="top-section">
+                                  <div className="top-left">
+                                    <h6 className="top-text">Reco Date</h6>
+                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                  </div>
+                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
+                                </div>
+                                <div className="middle-section">
+                                  <div className="middle-left">
+                                    <h4 className="big-text">{response.Sym}</h4>
+                                    <span className="small-text">{response.Name}</span>
+                                  </div>
+                                  <div className="middle-right">
+                                    <span className="right-big-text">755.90</span>
+                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                  </div>
+                                </div>
+
+                                <div className="bottom-section">
+                                  <div className="d-flex justify-content-between pt-3">
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Entry Price</h6>
+                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Potential Price</h6>
+                                      <h4 className="bottom_big_text" >810.00</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Exp. Returns</h6>
+                                      <h4 className="bottom_big_text">7.16%</h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                             </div>
+
+
+
+
+                            )
+                          })
+                        }
+                      </div>:
+                      toggleState ===2?
+                      <div className="row gx-5">
+                        {
+                          (list || []).slice(0, 4).map((response, index) => {
+
+                            return (
+
+
+                              <div className="col-md-6">
+                              <div className="main-left">
+
+                                <div className="top-section">
+                                  <div className="top-left">
+                                    <h6 className="top-text">Reco Date</h6>
+                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                  </div>
+                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
+                                </div>
+                                <div className="middle-section">
+                                  <div className="middle-left">
+                                    <h4 className="big-text">{response.Sym}</h4>
+                                    <span className="small-text">{response.Name}</span>
+                                  </div>
+                                  <div className="middle-right">
+                                    <span className="right-big-text">755.90</span>
+                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                  </div>
+                                </div>
+
+                                <div className="bottom-section">
+                                  <div className="d-flex justify-content-between pt-3">
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Entry Price</h6>
+                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Potential Price</h6>
+                                      <h4 className="bottom_big_text" >810.00</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Exp. Returns</h6>
+                                      <h4 className="bottom_big_text">7.16%</h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                             </div>
+
+
+
+
+                            )
+                          })
+                        }
+                      </div>
+
+                      :
+
+                      toggleState ===3?
+                      <div className="row gx-5">
+                        {
+                          (list || []).slice(0, 4).map((response, index) => {
+
+                            return (
+
+
+                              <div className="col-md-6">
+                              <div className="main-left">
+
+                                <div className="top-section">
+                                  <div className="top-left">
+                                    <h6 className="top-text">Reco Date</h6>
+                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                  </div>
+                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
+                                </div>
+                                <div className="middle-section">
+                                  <div className="middle-left">
+                                    <h4 className="big-text">{response.Sym}</h4>
+                                    <span className="small-text">{response.Name}</span>
+                                  </div>
+                                  <div className="middle-right">
+                                    <span className="right-big-text">755.90</span>
+                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                  </div>
+                                </div>
+
+                                <div className="bottom-section">
+                                  <div className="d-flex justify-content-between pt-3">
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Entry Price</h6>
+                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Potential Price</h6>
+                                      <h4 className="bottom_big_text" >810.00</h4>
+                                    </div>
+                                    <div className="bottom">
+                                      <h6 className="bottom_small_text">Exp. Returns</h6>
+                                      <h4 className="bottom_big_text">7.16%</h4>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                             </div>
+
+
+
+
+                            )
+                          })
+                        }
+                      </div>:
+                      ""
+                      }
+                     
                       
-                    )}
-                    )}
+
+                    </div>
+                  </div>
+
                   {/* <div className="row d-flex justify-content-center">
                       <div className="col-md-12">
                         <div className="row gx-5">
