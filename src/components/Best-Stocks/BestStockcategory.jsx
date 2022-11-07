@@ -60,15 +60,16 @@ function BestStockcategory() {
 
 
   function LongTermStocks() {
-
+    setShowLoader(true)
     let request = {
-      "end_date": "",
+     
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
       "is_expert": 0,
       "research_type": "Medium To Long Term",
       "limit": 10,
       "offset": 0,
       "segment": "EQ",
-      "start_date": "",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
       "status": "target_achieved",
       "subcategory_id": "",
       "search": "",
@@ -76,14 +77,16 @@ function BestStockcategory() {
       "user_id": "",
       "timeline_enabled": 1,
       "category_id": 1
+      
+      
 
     }
     rest.expertReportData(request).then(
       res => {
         if (res) {
-
-          setlist2(res.response);
-          console.log(res);
+          setShowLoader(false)
+          setlist2(res.response.research);
+          console.log("long term api called",res.response.research);
 
         } else {
 
@@ -93,37 +96,38 @@ function BestStockcategory() {
 
       }
     ).catch((error) => {
-
+      setShowLoader(false)
       setlist2([]);
     });
   };
 
   function ShortTermStocks() {
-   
-    setlist([]);
+    setShowLoader(true)
     let request = {
-      "end_date": utils.formatDate(new Date(), "dd-MM-yyyy"),
-      "is_expert": 0,
-      "research_type": "",
-      "limit": 10,
-      "offset": 0,
-      "segment": "EQ",
-      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-      "status": "target_achieved",
-      "subcategory_id": "",
-      "search": "",
-      "id": "",
-      "user_id": "",
-      "timeline_enabled": 1,
-      "category_id": 2
+      
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+    "is_expert": 0,
+    "research_type": "",
+    "limit": 10,
+    "offset": 0,
+    "segment": "EQ",
+    "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+    "status": "target_achieved",
+    "subcategory_id": "",
+    "search": "",
+    "id": "",
+    "user_id": "",
+    "timeline_enabled": 1,
+    "category_id": 2
     }
     rest.expertReportData(request).then(
 
       res => {
+        setShowLoader(false)
         if (res) {
           
-          setlist3(res.response);
-          console.log(res);
+          setlist3(res.response.research);
+          console.log("check api",res.response.research);
 
 
         } else {
@@ -134,7 +138,7 @@ function BestStockcategory() {
 
       }
     ).catch((error) => {
-      
+      setShowLoader(false)
       setlist3([]);
     });
   }
@@ -159,7 +163,7 @@ function BestStockcategory() {
         if (res) {
 
           setlist(res.Response.Data);
-          console.log("check api", res.Response.Data);
+          // console.log("check api", res.Response.Data);
 
         } else {
 
@@ -242,10 +246,10 @@ function BestStockcategory() {
                             return (
 
 
-                              <div className="col-md-6">
+                              <div className="col-md-6" key={index}>
                               <div className="main-left">
 
-                                <div className="top-section">
+                                <div className="top-section" >
                                   <div className="top-left">
                                     <h6 className="top-text">Reco Date</h6>
                                     <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
@@ -267,7 +271,10 @@ function BestStockcategory() {
                                   <div className="d-flex justify-content-between pt-3">
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                      <h4 className="bottom_big_text">{((response.EP/100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                      {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
+                                     
+                                      
                                     </div>
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Potential Price</h6>
@@ -282,9 +289,6 @@ function BestStockcategory() {
                               </div>
                              </div>
 
-
-
-
                             )
                           })
                         }
@@ -292,25 +296,25 @@ function BestStockcategory() {
                       toggleState ===2?
                       <div className="row gx-5">
                         {
-                          (list || []).slice(0, 4).map((response, index) => {
+                          (list3 || []).slice(0, 4).map((response, index) => {
 
                             return (
 
 
-                              <div className="col-md-6">
+                              <div className="col-md-6" key={index}>
                               <div className="main-left">
 
-                                <div className="top-section">
+                                <div className="top-section" >
                                   <div className="top-left">
                                     <h6 className="top-text">Reco Date</h6>
-                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                    <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6>
                                   </div>
                                   <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
                                 </div>
                                 <div className="middle-section">
                                   <div className="middle-left">
-                                    <h4 className="big-text">{response.Sym}</h4>
-                                    <span className="small-text">{response.Name}</span>
+                                    <h4 className="big-text">{response.scrip_symbol}</h4>
+                                    <span className="small-text">{response.scrip_sec_desc}</span>
                                   </div>
                                   <div className="middle-right">
                                     <span className="right-big-text">755.90</span>
@@ -322,7 +326,7 @@ function BestStockcategory() {
                                   <div className="d-flex justify-content-between pt-3">
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                      <h4 className="bottom_big_text">{parseFloat(response.datapoints[0].value).toFixed(2)}</h4>
                                     </div>
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Potential Price</h6>
@@ -350,25 +354,26 @@ function BestStockcategory() {
                       toggleState ===3?
                       <div className="row gx-5">
                         {
-                          (list || []).slice(0, 4).map((response, index) => {
+                          (list2 || []).slice(0, 4).map((response, index) => {
+                            
 
                             return (
 
 
-                              <div className="col-md-6">
-                              <div className="main-left">
+                              <div className="col-md-6" key={index}>
+                              <div className="main-left" >
 
-                                <div className="top-section">
+                                <div className="top-section" >
                                   <div className="top-left">
                                     <h6 className="top-text">Reco Date</h6>
-                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                    <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
                                   </div>
                                   <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
                                 </div>
                                 <div className="middle-section">
                                   <div className="middle-left">
-                                    <h4 className="big-text">{response.Sym}</h4>
-                                    <span className="small-text">{response.Name}</span>
+                                    <h4 className="big-text">{response.scrip_symbol}</h4>
+                                    <span className="small-text">{response.scrip_sec_desc}</span>
                                   </div>
                                   <div className="middle-right">
                                     <span className="right-big-text">755.90</span>
@@ -380,11 +385,11 @@ function BestStockcategory() {
                                   <div className="d-flex justify-content-between pt-3">
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{response.EP}</h4>
+                                      <h4 className="bottom_big_text">{response.datapoints[0].value}</h4>
                                     </div>
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Potential Price</h6>
-                                      <h4 className="bottom_big_text" >810.00</h4>
+                                      <h4 className="bottom_big_text" >{response.datapoints[1].value}</h4>
                                     </div>
                                     <div className="bottom">
                                       <h6 className="bottom_small_text">Exp. Returns</h6>
@@ -394,8 +399,6 @@ function BestStockcategory() {
                                 </div>
                               </div>
                              </div>
-
-
 
 
                             )
