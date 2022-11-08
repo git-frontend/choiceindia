@@ -21,6 +21,7 @@ import { useEffect } from "react";
 function BestStockcategory() {
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
+  const [list1, setlist1] = useState();
   const [list2, setlist2] = useState();
   const [list3, setlist3] = useState();
   const [rendercount, setRenderCount] = useState(() => false);
@@ -47,7 +48,8 @@ function BestStockcategory() {
       })
       .then(res => {
         if (res.Status == 'Success') {
-          IntraStocks(res.Response)
+          IntraStocks(res.Response);
+          // multipletokens(res.Response);
         } else {
           IntraStocks()
         }
@@ -57,12 +59,79 @@ function BestStockcategory() {
       })
 
   }
+  // function multipletokens(session) {
+  //   const tokens = utils.generateTokens(list, 'segment_id', 'token');
+  //   let request = {
+  //     MultipleTokens: tokens,
+  //     SessionId: session,
+  //     UserId: ""
+  //   }
+  //   rest.multipleTokensURLData(request).then(
+  //     res => {
+  //       if (res) {
+  //         setShowLoader(false)
+  //         // setlist1(res);
+  //         console.log("called mutiple", res);
+
+  //       } else {
+
+  //         // setlist1([]);
+  //       }
 
 
+  //     }
+  //   ).catch((error) => {
+  //     setShowLoader(false)
+  //     setlist1([]);
+  //   });
+  // };
+
+
+  function AllStocks() {
+    setShowLoader(true)
+    let request = {
+
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+      "is_expert": 0,
+      "research_type": "Medium To Long Term",
+      "limit": 10,
+      "offset": 0,
+      "segment": "",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+      "status": "target_achieved",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 1
+
+
+
+    }
+    rest.expertReportData(request).then(
+      res => {
+        if (res) {
+          setShowLoader(false)
+          setlist1(res.response.research);
+          // console.log("called", res.response.research);
+
+        } else {
+
+          setlist1([]);
+        }
+
+
+      }
+    ).catch((error) => {
+      setShowLoader(false)
+      setlist1([]);
+    });
+  };
   function LongTermStocks() {
     setShowLoader(true)
     let request = {
-     
+
       "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
       "is_expert": 0,
       "research_type": "Medium To Long Term",
@@ -77,8 +146,8 @@ function BestStockcategory() {
       "user_id": "",
       "timeline_enabled": 1,
       "category_id": 1
-      
-      
+
+
 
     }
     rest.expertReportData(request).then(
@@ -86,7 +155,7 @@ function BestStockcategory() {
         if (res) {
           setShowLoader(false)
           setlist2(res.response.research);
-          console.log("long term api called",res.response.research);
+          // console.log("long term api called", res.response.research);
 
         } else {
 
@@ -104,34 +173,34 @@ function BestStockcategory() {
   function ShortTermStocks() {
     setShowLoader(true)
     let request = {
-      
+
       "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
-    "is_expert": 0,
-    "research_type": "",
-    "limit": 10,
-    "offset": 0,
-    "segment": "EQ",
-    "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
-    "status": "target_achieved",
-    "subcategory_id": "",
-    "search": "",
-    "id": "",
-    "user_id": "",
-    "timeline_enabled": 1,
-    "category_id": 2
+      "is_expert": 0,
+      "research_type": "",
+      "limit": 10,
+      "offset": 0,
+      "segment": "EQ",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+      "status": "target_achieved",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 2
     }
     rest.expertReportData(request).then(
 
       res => {
         setShowLoader(false)
         if (res) {
-          
+
           setlist3(res.response.research);
-          console.log("check api",res.response.research);
+          // console.log("check api", res.response.research);
 
 
         } else {
-         
+
           setlist3([]);
         }
 
@@ -142,6 +211,8 @@ function BestStockcategory() {
       setlist3([]);
     });
   }
+
+  
 
 
   let IntraStocks = (session) => {
@@ -170,7 +241,6 @@ function BestStockcategory() {
           setlist([]);
         }
 
-
       }
     ).catch((error) => {
       setShowLoader(false)
@@ -197,10 +267,11 @@ function BestStockcategory() {
 
       generateSessionId();
       // IntraStocks();
+      // multipletokens();
     }
   }, [rendercount])
 
-  function redirectLink(){
+  function redirectLink() {
     window.open("https://finx.choiceindia.com/market/latest-ipo-list");
   }
 
@@ -221,8 +292,8 @@ function BestStockcategory() {
                     <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
                   <div className="col-xl-8 col-md-12">
-                    <ul className="list-group list-group-horizontal list_group1">
-                      <li className="list-group-item list">All Stocks</li>
+                    <ul className="list-group list_group1">
+                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { AllStocks(); toggleTab(0) }}>All Stocks</li>
                       <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2) }}>Short Term Stocks</li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3) }}>Long Term Stocks</li>
@@ -238,177 +309,238 @@ function BestStockcategory() {
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
                       {
-                        toggleState ===1?
-                        <div className="row gx-5">
-                        {
-                          (list || []).slice(0, 4).map((response, index) => {
+                        toggleState === 0 ?
+                          <div className="row gx-5">
+                            {
+                              (list1 || []).slice(0, 4).map((response, index) => {
 
-                            return (
+                                return (
 
 
-                              <div className="col-md-6" key={index}>
-                              <div className="main-left">
+                                  <div className="col-md-6" key={index}>
+                                    <div className="main-left">
 
-                                <div className="top-section" >
-                                  <div className="top-left">
-                                    <h6 className="top-text">Reco Date</h6>
-                                    <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
-                                  </div>
-                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
-                                </div>
-                                <div className="middle-section">
-                                  <div className="middle-left">
-                                    <h4 className="big-text">{response.Sym}</h4>
-                                    <span className="small-text">{response.Name}</span>
-                                  </div>
-                                  <div className="middle-right">
-                                    <span className="right-big-text">755.90</span>
-                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
-                                  </div>
-                                </div>
+                                      <div className="top-section" >
+                                        <div className="top-left">
+                                          <h6 className="top-text">Reco Date</h6>
+                                          <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
+                                        </div>
+                                        <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                      </div>
+                                      <div className="middle-section">
+                                        <div className="middle-left">
+                                          <h4 className="big-text">{response.scrip_name}</h4>
+                                          <span className="small-text">{response.scrip_sec_desc}</span>
+                                        </div>
+                                        <div className="middle-right">
+                                          <span className="right-big-text">755.90</span>
+                                          <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                        </div>
+                                      </div>
 
-                                <div className="bottom-section">
-                                  <div className="d-flex justify-content-between pt-3">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{((response.EP/100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                      {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
-                                     
-                                      
+                                      <div className="bottom-section">
+                                        <div className="d-flex justify-content-between pt-3">
+                                          <div className="bottom">
+                                            <h6 className="bottom_small_text">Entry Price</h6>
+                                            <h4 className="bottom_big_text">{(parseFloat(response.datapoints[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+
+
+
+                                          </div>
+                                          <div className="bottom">
+                                            <h6 className="bottom_small_text">Potential Price</h6>
+                                            <h4 className="bottom_big_text" >{(parseFloat(response.datapoints[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                          </div>
+                                          <div className="bottom">
+                                            <h6 className="bottom_small_text">Exp. Returns</h6>
+                                            <h4 className="bottom_big_text">7.16%</h4>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Potential Price</h6>
-                                      <h4 className="bottom_big_text" >810.00</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Exp. Returns</h6>
-                                      <h4 className="bottom_big_text">7.16%</h4>
-                                    </div>
                                   </div>
-                                </div>
+
+                                )
+                              })
+                            }
+                          </div> :
+                          toggleState === 1 ?
+                            <div className="row gx-5">
+                              {
+                                (list || []).slice(0, 4).map((response, index) => {
+
+                                  return (
+
+
+                                    <div className="col-md-6" key={index}>
+                                      <div className="main-left">
+
+                                        <div className="top-section" >
+                                          <div className="top-left">
+                                            <h6 className="top-text">Reco Date</h6>
+                                            <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
+                                          </div>
+                                          <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                        </div>
+                                        <div className="middle-section">
+                                          <div className="middle-left">
+                                            <h4 className="big-text">{response.Sym}</h4>
+                                            <span className="small-text">{response.Name}</span>
+                                          </div>
+                                          <div className="middle-right">
+                                            <span className="right-big-text">755.90</span>
+                                            <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                          </div>
+                                        </div>
+
+                                        <div className="bottom-section">
+                                          <div className="d-flex justify-content-between pt-3">
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Entry Price</h6>
+                                              <h4 className="bottom_big_text">{((response.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Potential Price</h6>
+                                              <h4 className="bottom_big_text" >810.00</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Exp. Returns</h6>
+                                              <h4 className="bottom_big_text">7.16%</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Exp. Returns</h6>
+                                              <h4 className="bottom_big_text">7.16%</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Exp. Returns</h6>
+                                              <h4 className="bottom_big_text">7.16%</h4>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+
+                                  )
+                                })
+                              }
+                            </div> :
+                            toggleState === 2 ?
+                              <div className="row gx-5">
+                                {
+                                  (list3 || []).slice(0, 4).map((response, index) => {
+
+                                    return (
+
+
+                                      <div className="col-md-6" key={index}>
+                                        <div className="main-left">
+
+                                          <div className="top-section" >
+                                            <div className="top-left">
+                                              <h6 className="top-text">Reco Date</h6>
+                                              <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6>
+                                            </div>
+                                            <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                          </div>
+                                          <div className="middle-section">
+                                            <div className="middle-left">
+                                              <h4 className="big-text">{response.scrip_symbol}</h4>
+                                              <span className="small-text">{response.scrip_sec_desc}</span>
+                                            </div>
+                                            <div className="middle-right">
+                                              <span className="right-big-text">755.90</span>
+                                              <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                            </div>
+                                          </div>
+
+                                          <div className="bottom-section">
+                                            <div className="d-flex justify-content-between pt-3">
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">Entry Price</h6>
+                                                <h4 className="bottom_big_text">{parseFloat(response.datapoints[0].value).toFixed(2)}</h4>
+                                              </div>
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">Potential Price</h6>
+                                                <h4 className="bottom_big_text" >810.00</h4>
+                                              </div>
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">Exp. Returns</h6>
+                                                <h4 className="bottom_big_text">7.16%</h4>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+
+
+
+
+                                    )
+                                  })
+                                }
                               </div>
-                             </div>
 
-                            )
-                          })
-                        }
-                      </div>:
-                      toggleState ===2?
-                      <div className="row gx-5">
-                        {
-                          (list3 || []).slice(0, 4).map((response, index) => {
+                              :
 
-                            return (
+                              toggleState === 3 ?
+                                <div className="row gx-5">
+                                  {
+                                    (list2 || []).slice(0, 4).map((response, index) => {
 
 
-                              <div className="col-md-6" key={index}>
-                              <div className="main-left">
-
-                                <div className="top-section" >
-                                  <div className="top-left">
-                                    <h6 className="top-text">Reco Date</h6>
-                                    <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6>
-                                  </div>
-                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
-                                </div>
-                                <div className="middle-section">
-                                  <div className="middle-left">
-                                    <h4 className="big-text">{response.scrip_symbol}</h4>
-                                    <span className="small-text">{response.scrip_sec_desc}</span>
-                                  </div>
-                                  <div className="middle-right">
-                                    <span className="right-big-text">755.90</span>
-                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
-                                  </div>
-                                </div>
-
-                                <div className="bottom-section">
-                                  <div className="d-flex justify-content-between pt-3">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{parseFloat(response.datapoints[0].value).toFixed(2)}</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Potential Price</h6>
-                                      <h4 className="bottom_big_text" >810.00</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Exp. Returns</h6>
-                                      <h4 className="bottom_big_text">7.16%</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                             </div>
+                                      return (
 
 
+                                        <div className="col-md-6" key={index}>
+                                          <div className="main-left" >
+
+                                            <div className="top-section" >
+                                              <div className="top-left">
+                                                <h6 className="top-text">Reco Date</h6>
+                                                <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
+                                              </div>
+                                              <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                            </div>
+                                            <div className="middle-section">
+                                              <div className="middle-left">
+                                                <h4 className="big-text">{response.scrip_name}</h4>
+                                                <span className="small-text">{response.scrip_sec_desc}</span>
+                                              </div>
+                                              <div className="middle-right">
+                                                <span className="right-big-text">755.90</span>
+                                                <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
+                                              </div>
+                                            </div>
+
+                                            <div className="bottom-section">
+                                              <div className="d-flex justify-content-between pt-3">
+                                                <div className="bottom">
+                                                  <h6 className="bottom_small_text">Entry Price</h6>
+                                                  <h4 className="bottom_big_text">{(parseFloat(response.datapoints[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                </div>
+                                                <div className="bottom">
+                                                  <h6 className="bottom_small_text">Potential Price</h6>
+                                                  <h4 className="bottom_big_text" >{(parseFloat(response.datapoints[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                </div>
+                                                <div className="bottom">
+                                                  <h6 className="bottom_small_text">Exp. Returns</h6>
+                                                  <h4 className="bottom_big_text">7.16%</h4>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
 
 
-                            )
-                          })
-                        }
-                      </div>
-
-                      :
-
-                      toggleState ===3?
-                      <div className="row gx-5">
-                        {
-                          (list2 || []).slice(0, 4).map((response, index) => {
-                            
-
-                            return (
-
-
-                              <div className="col-md-6" key={index}>
-                              <div className="main-left" >
-
-                                <div className="top-section" >
-                                  <div className="top-left">
-                                    <h6 className="top-text">Reco Date</h6>
-                                    <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
-                                  </div>
-                                  <div className="top-right"><button className="btn-buy" onClick={()=>redirectLink()}>buy</button></div>
-                                </div>
-                                <div className="middle-section">
-                                  <div className="middle-left">
-                                    <h4 className="big-text">{response.scrip_symbol}</h4>
-                                    <span className="small-text">{response.scrip_sec_desc}</span>
-                                  </div>
-                                  <div className="middle-right">
-                                    <span className="right-big-text">755.90</span>
-                                    <h6 className="right-small-text text_color">-11.5 (1.50%)</h6>
-                                  </div>
-                                </div>
-
-                                <div className="bottom-section">
-                                  <div className="d-flex justify-content-between pt-3">
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Entry Price</h6>
-                                      <h4 className="bottom_big_text">{response.datapoints[0].value}</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Potential Price</h6>
-                                      <h4 className="bottom_big_text" >{response.datapoints[1].value}</h4>
-                                    </div>
-                                    <div className="bottom">
-                                      <h6 className="bottom_small_text">Exp. Returns</h6>
-                                      <h4 className="bottom_big_text">7.16%</h4>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                             </div>
-
-
-                            )
-                          })
-                        }
-                      </div>:
-                      ""
+                                      )
+                                    })
+                                  }
+                                </div> :
+                                ""
                       }
-                     
-                      
+
+
 
                     </div>
                   </div>

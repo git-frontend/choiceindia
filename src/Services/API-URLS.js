@@ -138,6 +138,9 @@ export class API_URLS {
 
     performancefontURL = 'techanalysis/getcounters';
 
+    // multiple tokens url
+
+    multipletokensURL='cm/ProfileMkt/MultipleTouchlineV2';
     /** performance Success ratio */
 
     successURL = 'api/success-ratio';
@@ -559,6 +562,9 @@ export class API_URLS {
     getperformanceURL() {
 
         return this.performanceURL + this.performancefontURL;
+    }
+    getMultipletokens(){
+        return this.performanceURL + this.multipletokensURL;
     }
 
     getsuccessURL() {

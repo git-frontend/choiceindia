@@ -18,7 +18,7 @@ function BestStockOpenDematAccount() {
               <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
               <div className="  Mobile_text">
                 <input type="text" id="form-email" className="form-textbox" required />
-                <label for="form-email" className="form-label">Mobile Number</label>
+                <label htmlFor="form-email" className="form-label">Mobile Number</label>
               </div>
               <div className="  cust_check">
                 <input type="checkbox" className="form_check" />
