@@ -85,14 +85,14 @@ function Contactdetail() {
                                         <td>Swati Matkar</td>
                                         <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
                                         <td className="text-left">022-6707 9999</td>
-                                        <td className="text-left">Compliance@choiceindia.com</td>
+                                        <td className="text-left">compliance@choiceindia.com</td>
                                     </tr>
                                     <tr>
                                         <td>CEO/Director</td>
                                         <td>Ajay Kejriwal</td>
                                         <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
                                         <td className="text-left">022-6707 9999</td>
-                                        <td className="text-left">Compliance@choiceindia.com</td>
+                                        <td className="text-left">compliance@choiceindia.com</td>
                                     </tr>
                                 </tbody>
                             </table>
