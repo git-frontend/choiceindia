@@ -39,7 +39,7 @@ const meta_tags = {
 
     "faq": { 'title': "Frequently Asked Questions | Choice",'lang':"en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link":"https://choiceindia.com/faq" },
 
-    "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for the whole trading life-span of the client.", 'link': "https://choiceindia.com/sub-broker-franchise" },
+    "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise without deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise" },
 
     "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral",'lang':"en",'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn" },
 
