@@ -71,7 +71,7 @@ function Contactdetail() {
                                         <td>Shwetha S. Gupta</td>
                                         <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
                                         <td className="text-left">022-69092489</td>
-                                        <td className="text-left">customercustomercare@choiceindia.com</td>
+                                        <td className="text-left">customercare@choiceindia.com</td>
                                     </tr>
                                     <tr>
                                         <td>Head of Customer care</td>
