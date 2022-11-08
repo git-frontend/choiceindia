@@ -596,7 +596,7 @@ nav {
 	color: $color_1;
 }
 .bannersection {
-	padding: 14rem 0 14rem;
+	padding: 4rem 0 14rem;
 	background-color: $background-color_6;
 	.para {
 		font-size: 20px;
@@ -2009,4 +2009,13 @@ nav {
 		position: relative !important;
 		right: 1%;
 	}
+}
+
+
+.pb25{
+	padding-bottom: 25px;
+}
+
+.mb0{
+	margin-bottom: 0;
 }

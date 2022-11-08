@@ -3,7 +3,7 @@
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-
+import { Link } from 'react-router-dom';
 function IntraChargesBenifits() {
 
     const settings = {
@@ -35,7 +35,16 @@ function IntraChargesBenifits() {
             },
         ],
     };
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
     return (
         <div>
             <section className="intra-charges-benifits">
@@ -90,7 +99,7 @@ function IntraChargesBenifits() {
                                             </g>
                                         </svg>
                                     </span>
-                                    <h3 className="itm-ttl">Low DP <br />Charges</h3>
+                                    <h3 className="itm-ttl">Low Brokerage <br />Charges</h3>
                                 </div>
                                 <div className="benifits-list-itm">
                                     <span className="sm-img">
@@ -103,10 +112,10 @@ function IntraChargesBenifits() {
                             </Slider>
                         </div>
                         <div className="col-md-12 mt-5 d-flex justify-content-center">
-                            <a href="/"><span className="btn-bg">Open Now <svg xmlns="http://www.w3.org/2000/svg" id="baseline-arrow_forward-24px" width="24" height="24" viewBox="0 0 24 24">
-  <path id="Path_1980" data-name="Path 1980" d="M0,0H24V24H0Z" fill="none"/>
-  <path id="Path_1981" data-name="Path 1981" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" fill="#ffffff"/>
-</svg> </span> </a>
+                        <Link onClick={()=>scrollToId('dematform')}><span className="btn-bg">Open Now <svg xmlns="http://www.w3.org/2000/svg" id="baseline-arrow_forward-24px" width="24" height="24" viewBox="0 0 24 24">
+                            <path id="Path_1980" data-name="Path 1980" d="M0,0H24V24H0Z" fill="none"/>
+                            <path id="Path_1981" data-name="Path 1981" d="M12,4,10.59,5.41,16.17,11H4v2H16.17l-5.58,5.59L12,20l8-8Z" fill="#ffffff"/>
+                            </svg> </span> </Link>
                         </div>
                     </div>
                 </div>

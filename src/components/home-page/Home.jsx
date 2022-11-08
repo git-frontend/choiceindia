@@ -41,7 +41,8 @@ function Home() {
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].content : '';
           document.getElementById('canonical-link').href = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].link : '';
-        }
+		  document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+		}
       }, [rendercount])
 
 

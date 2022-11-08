@@ -15,8 +15,8 @@ const partnerBanner =[
         "image":`${StckImage}`,
         "button":"Stocks",
         "icon":`${ImageSub2}`,
-        "id":1
-
+        "id":1,
+        "Link": "https://choiceindia.com/sub-broker-franchise",
     },
     {
         "title":"Become a Mutual Fund Agent",
@@ -24,8 +24,8 @@ const partnerBanner =[
         "image":`${MutualFundsImage}`,
         "button":"Mutual Funds",
         "icon":`${ImageSub3}`,
-        "id":2
-
+        "id":2,
+        "Link": "https://choiceindia.com/mutual-fund-distributor",
 
     },
 
@@ -35,7 +35,8 @@ const partnerBanner =[
         "image":`${InsuranceImage}`,
         "button":"Insurance",
         "icon":`${ImageSub4}`,
-        "id":3
+        "id":3,
+        "Link": "https://choiceconnect.in/become-insurance-agent",
 
     },
 
@@ -46,7 +47,8 @@ const partnerBanner =[
         "image":`${LoansImage}`,
         "button":"Loans",
         "icon":`${ImageSub5}`,
-        "id":4
+        "id":4,
+        "Link": "https://choiceconnect.in/become-loan-agent",
 
     },
 
