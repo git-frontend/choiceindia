@@ -48,7 +48,7 @@ function Contactdetail() {
       /**======= */
       <div>
          <section className="contactdetail">
-            <div className="container mainwrapquick">
+            <div className="container mainwrapquick m01">
             <div className="row quicklinkswrap mb-5">
                         <div className="col-md-12">
                         <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
