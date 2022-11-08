@@ -7,7 +7,7 @@ function ChargesComparison() {
 
     return (
         <div>
-            <section className="charges-comparison" >
+            <section className="charges-comparison" id="intradaycharges" >
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-6 col-md-8">
@@ -101,7 +101,7 @@ function ChargesComparison() {
                                             SEBI charges
                                             </td>
                                             <td className="txt2">
-                                            ₹ 0.00
+                                            ₹ 0.04
                                             </td>
                                             <td className="txt2">
                                             ₹ 0.04
@@ -112,7 +112,7 @@ function ChargesComparison() {
                                             Total Tax and <span>Charges</span>
                                             </td>
                                             <td className="txt2 bld-txt highlt2">
-                                                <span className="valtxt">₹ 15.87</span>
+                                                <span className="valtxt">₹ 16.7</span>
                                             
                                             </td>
                                             <td className="txt2 bld-txt radius-right-bottom">
@@ -122,7 +122,7 @@ function ChargesComparison() {
                                     </tbody>
                                 </table>
                             </div>
-                            <p className="des-para">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                            {/* <p className="des-para">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> */}
                         </div>
                     </div>
                 </div>

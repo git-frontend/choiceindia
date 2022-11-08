@@ -1018,3 +1018,85 @@
 .mt-6{
 	margin-top: 6rem !important;
 }
+
+
+.dematcontentseo {
+    padding: 7rem 0 18rem 0;
+    background: $whiteColor;
+  
+    .terms-cont {
+        margin-top: 5.5rem;
+        height: 340px;
+        overflow-y: scroll;
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+
+			.para{
+				font-size: 1.625rem;
+                line-height: 1.6;
+                color: $primary;
+                margin-bottom: 2rem;
+                list-style: none;
+                padding-left: 3rem;
+                padding-right:8rem;
+			}
+			.font-bold{
+				font-weight: 700;
+				padding: 1rem 0 0.5rem;
+				color: $primary;
+			}
+            // li {
+            //     font-size: 1.625rem;
+            //     line-height: 1.6;
+            //     color: $secondary;
+            //     margin-bottom: 2rem;
+            //     list-style: none;
+            //     padding-left: 3rem;
+            //     padding-right:8rem;
+            //     position: relative;
+
+            //     &::before {
+            //         content: "";
+            //         width: 0.8rem;
+            //         height: 0.8rem;
+            //         background: $secondary;
+            //         display: block;
+            //         border-radius: 50%;
+            //         position: absolute;
+            //         left: 0;
+            //         top: 0.9rem;
+            //         @media (max-width: $sm) {
+            //             top: 0.7rem;
+            //         }
+            //     }
+            //     @media (max-width: $sm) {
+            //         padding-left: 2rem;
+            //         padding-right: 3rem;
+            //         font-size: 1.4rem;
+            //     }
+            // }
+        
+        @media (max-width: $sm) {
+            height: 430px;
+        }
+    }
+}
+
+#style-1 {
+    &::-webkit-scrollbar-track {
+        
+        border-radius: 10px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:$yellowColor ;
+    }
+}

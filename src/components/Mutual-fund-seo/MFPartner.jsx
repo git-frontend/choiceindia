@@ -2,11 +2,11 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import React from "react";
 import Slider from "react-slick";
-import img1 from '../../assets/images/mutual-funds-investment/hdfc.webp'
-import img2 from '../../assets/images/mutual-funds-investment/icici.webp'
-import img3 from '../../assets/images/mutual-funds-investment/sbi.webp'
-import img4 from '../../assets/images/mutual-funds-investment/birla.webp'
-import img5 from '../../assets/images/mutual-funds-investment/kotak.webp'
+import img1 from '../../assets/images/mutual-funds-investment/hdfc-mutual-fund.webp'
+import img2 from '../../assets/images/mutual-funds-investment/icici-prudential-mutual-fund.webp'
+import img3 from '../../assets/images/mutual-funds-investment/sbi-mutual-fund.webp'
+import img4 from '../../assets/images/mutual-funds-investment/birla-sun-life-mutual-fund.webp'
+import img5 from '../../assets/images/mutual-funds-investment/kotak-mutual-fund.webp'
 
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -52,19 +52,19 @@ function MFPartner() {
               <div className="">
                 <Slider {...settings} className="partner-slider">
                     <div className="part-item">
-                      <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"250"} height={"56"} />
+                      <LazyLoader src={img1} alt={"HDFC Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
                     </div>
                     <div className="part-item">
-                      <LazyLoader src={img2} alt={" insurance  services"} className={"img-fluid"} width={"250"} height={"56"} />
+                      <LazyLoader src={img2} alt={"ICICI Prudential Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
                     </div>
                     <div className="part-item">
-                      <LazyLoader src={img3} alt={" insurance  services"} className={"img-fluid"} width={"250"} height={"56"} />
+                      <LazyLoader src={img3} alt={"SBI Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
                     </div>
                     <div className="part-item">
-                      <LazyLoader src={img4} alt={" insurance  services"} className={"img-fluid"} width={"250"} height={"56"} />
+                      <LazyLoader src={img4} alt={"Birla Sun Life Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
                     </div>
                     <div className="part-item">
-                      <LazyLoader src={img5} alt={" insurance  services"} className={"img-fluid"} width={"250"} height={"56"} />
+                      <LazyLoader src={img5} alt={"Kotak Mutual Fund"} className={"img-fluid"} width={"250"} height={"56"} />
                     </div>
                 </Slider>
               </div>

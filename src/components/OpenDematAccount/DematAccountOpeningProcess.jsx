@@ -45,7 +45,7 @@ const DematAccountOpeningProcess = () => {
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Demat Account Opening Process</h2>
+                    <h2 className="sect-title">Open a Free Demat Account in Easy Steps</h2>
 
 
 
@@ -61,7 +61,7 @@ const DematAccountOpeningProcess = () => {
                                     {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
-                                    <h5>A trusted name </h5>
+                                    <h5>Register </h5>
                                     <p>Fill in the required details and upload the relevant documents along with a passport size photograph.
                                     </p>
                                 </div>

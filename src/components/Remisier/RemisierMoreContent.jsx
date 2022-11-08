@@ -54,7 +54,7 @@ const RemisierMoreContent = () => {
                     <li>No Registration Charges</li>
                     <li>Highest Revenue Sharing</li>
                     <li>Earn For A Lifetime</li>
-                    <li>Up to ₹ 1000 Per A/C Opening Incentive</li>
+                    <li>Up to ₹ 2100 Per A/C Opening Incentive</li>
                 </ol>
             </li>
             <li>Transparent and Growth-Oriented Business Model</li>
