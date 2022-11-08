@@ -553,3 +553,9 @@
     width: 100%;
     min-height: 400px;
 }
+
+.m01{
+    @media (max-width: $sm) {
+        margin: 0 1.3rem;
+    } 
+}
