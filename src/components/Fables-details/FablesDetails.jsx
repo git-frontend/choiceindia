@@ -41,7 +41,7 @@ var formName = useRef('');
           document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
           document.getElementById('meta-tags').content = res.data.posts[0].meta_description? res.data.posts[0].meta_description : '' ;
           document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url.replaceAll('/fables','/blog') : '';
-
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
           }else{
           
           }
