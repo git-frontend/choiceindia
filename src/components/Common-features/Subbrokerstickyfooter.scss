@@ -1,0 +1,175 @@
+@import '../../assets/css/customvariable.scss';.stickybottom {
+    padding: 1rem;
+    background-color: $primary;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 99999;
+    left: 0;
+
+    @media (max-width:$sm) {
+        display: none !important;
+    }
+
+    .text {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-family: $font-family-poppins-bold;
+        color: $whiteColor;
+
+        @media (min-width:768px) and (max-width:1024px) {
+            font-size: 1.5rem;
+            line-height: 27px;
+        }
+
+        span {
+            color: $bgcolor-yellow;
+        }
+    }
+
+    .mobile {
+        background-color: transparent;
+        color: $whiteColor;
+        border: 1px solid $whiteColor;
+    }
+  
+    form .form-group {
+        position: relative;
+    }
+
+    form .form-group .hello {
+        position: absolute;
+        left: 15px;
+        top: 17%;
+        font-size: 1rem;
+        font-weight: 400;
+        color: $whiteColor;
+        opacity: 50%;
+        transition: all 0.5s ease;
+        pointer-events: none;
+
+    }
+
+
+    form .form-group .write {
+        color: $whiteColor;
+        width: 100%;
+        padding: 5px 13px 5px 17px;
+        border: 1px solid $whiteColor;
+        border-radius: 8px;
+        outline: none;
+        padding-bottom: 5px;
+        min-height: 42px;
+        box-shadow: none;
+        font-size: 14px;
+        font-weight: 500;
+        background: transparent;
+    }
+
+
+
+    form .form-group .signal-same-btn {
+        width: 100%;
+    }
+
+    form .form-check {
+        display: flex;
+        margin-bottom: 1rem;
+    }
+
+    .form-check-input {
+        margin: 4px 0 0;
+    }
+
+    form .form-check label {
+        font-size: 16px;
+        font-weight: 400;
+        color: $primary;
+        line-height: 19px;
+        padding-left: 20px;
+    }
+
+    form .form-check {
+        padding: 0;
+    }
+
+
+
+
+    .termcon1 {
+        width: calc(100% - 20px);
+        font-size: 16px;
+        text-align: left;
+        color: $whiteColor;
+    }
+
+    .tnc {
+        width: 35%;
+
+        .checkbox {
+            margin-top: 5px;
+            margin-right: 5px;
+        }
+
+        .tc {
+            color: $whiteColor;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+
+    .form-btn {
+        background-color: $whiteColor;
+        border-radius: 8px;
+        padding: 12px 24px;
+        color: $primary;
+
+        span {
+            color: $primary;
+            font-size: 1.5rem;
+            text-align: center;
+            line-height: 36px;
+            font-weight: 500;
+            // font-family:'PoppinsMedium', sans-serif;
+
+            @media (min-width:768px) and (max-width:1024px) {
+                font-size: 1rem;
+
+            }
+        }
+    }
+
+    .sendotp:disabled {
+        /* opacity: 0.9; */
+        cursor: not-allowed;
+    }
+}
+
+    .btn-fixed {
+        position: fixed;
+        bottom: 0;
+        z-index: 99999999;
+        width: 100%;
+        left: 0;
+        display: none !important;
+        @media (max-width:$sm) {
+            display: block !important;
+        }
+        .openbtn{
+            border-radius: 0 !important;
+            width: 100%;
+            background-color: $primary;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            font-weight: bold;
+            color: $bgcolor-yellow;
+            text-align: center;
+            vertical-align: middle;
+            user-select: none;
+            border: 1px solid transparent;
+            padding: 11px 13px;
+            font-family: $font-family-poppins-regular;
+        }
+ 
+}

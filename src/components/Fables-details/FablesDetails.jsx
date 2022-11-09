@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 import Fabdetailsbanner from './FabDetailsBanner.jsx';
 import Recommendation from './Recommendation.jsx';
+import SubbrokerStickyFooter from '../Common-features/SubbrokerStickyFooter.jsx';
 import {
   BrowserRouter as Router,
   useParams,
@@ -105,13 +106,15 @@ setTrigger(true)
             <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
       }
-
+      <SubbrokerStickyFooter/>
      {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       } */}
       {/* {
         fablesDetailTitleId ? '' : <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
       } */}
+
+
     </div>
   );
 }
