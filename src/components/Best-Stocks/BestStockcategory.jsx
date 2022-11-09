@@ -395,26 +395,26 @@ function BestStockcategory() {
 
                                         <div className="bottom-section">
                                           <div className="d-flex justify-content-between pt-3">
+                                          <div className="bottom">
+                                              <h6 className="bottom_small_text">Stop Loss</h6>
+                                              <h4 className="bottom_big_text">{((response.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                            </div>
                                             <div className="bottom">
                                               <h6 className="bottom_small_text">Entry Price</h6>
                                               <h4 className="bottom_big_text">{((response.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                               {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
                                             </div>
                                             <div className="bottom">
-                                              <h6 className="bottom_small_text">Potential Price</h6>
-                                              <h4 className="bottom_big_text" >810.00</h4>
+                                              <h6 className="bottom_small_text"> Target Price </h6>
+                                              <h4 className="bottom_big_text" >{((response.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                             </div>
                                             <div className="bottom">
-                                              <h6 className="bottom_small_text">Exp. Returns</h6>
-                                              <h4 className="bottom_big_text">7.16%</h4>
+                                              <h6 className="bottom_small_text">2nd Target</h6>
+                                              <h4 className="bottom_big_text">{((response.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                             </div>
                                             <div className="bottom">
-                                              <h6 className="bottom_small_text">Exp. Returns</h6>
-                                              <h4 className="bottom_big_text">7.16%</h4>
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">Exp. Returns</h6>
-                                              <h4 className="bottom_big_text">7.16%</h4>
+                                              <h6 className="bottom_small_text">3rd Target</h6>
+                                              <h4 className="bottom_big_text">-</h4>
                                             </div>
                                           </div>
                                         </div>
@@ -456,17 +456,17 @@ function BestStockcategory() {
 
                                           <div className="bottom-section">
                                             <div className="d-flex justify-content-between pt-3">
+                                            <div className="bottom">
+                                                <h6 className="bottom_small_text">Stop Loss</h6>
+                                                <h4 className="bottom_big_text" >{parseFloat(response.datapoints[2].value).toFixed(2)}</h4>
+                                              </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text">Entry Price</h6>
                                                 <h4 className="bottom_big_text">{parseFloat(response.datapoints[0].value).toFixed(2)}</h4>
                                               </div>
                                               <div className="bottom">
-                                                <h6 className="bottom_small_text">Potential Price</h6>
-                                                <h4 className="bottom_big_text" >810.00</h4>
-                                              </div>
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text">Exp. Returns</h6>
-                                                <h4 className="bottom_big_text">7.16%</h4>
+                                                <h6 className="bottom_small_text"> Target Price </h6>
+                                                <h4 className="bottom_big_text">{parseFloat(response.datapoints[1].value).toFixed(2)}</h4>
                                               </div>
                                             </div>
                                           </div>
