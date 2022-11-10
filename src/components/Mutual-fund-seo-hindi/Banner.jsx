@@ -21,7 +21,7 @@ function Banner() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="mutualid">
-                                <DematAccountForm language='hindi'/>
+                                <DematAccountForm language='hindimutualfund'/>
                             </div>
                         </div>
                     </div>
