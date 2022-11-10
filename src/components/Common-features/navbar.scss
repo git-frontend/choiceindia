@@ -156,14 +156,14 @@
             }
         .menu-itm-link{
            font-family: $font-family-poppins-semibold;
-           color: $whiteColor;
+           color: #CACACA;
            border: 0;
            outline: none;
            text-decoration: none;
-           font-size: 1.75rem;
+           font-size: 1.5rem;
             line-height: 3.231rem;
             .imgfill{
-                
+                width: 35px;
                 path{
                     fill: #CACACA;
                 }
@@ -292,5 +292,6 @@
         }
         
 
-    }}
+    }
+}
 
