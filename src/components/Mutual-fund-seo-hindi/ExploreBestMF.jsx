@@ -35,7 +35,7 @@ function chapterScroll(id) {
           <div className="row">
             <div className="col-md-4 best-mf-cont">
               <h2 className="title-first">चुने सर्वश्रेष्ठ म्यूचुअल फंड निवेश के लिए</h2>
-              <p>Experience the convenience and ease in investing with a platform that offers funds across all categories at one place </p>
+              <p>एक मंच के साथ निवेश करने में सुविधा और आसानी का अनुभव करें जो एक ही स्थान पर सभी श्रेणियों में धन प्रदान करता है।</p>
             </div>
             <div className="col-md-8">
                 <div className="best-mf-list">
@@ -107,7 +107,7 @@ function chapterScroll(id) {
                       <div className="explr-sub">
                         <LazyLoader src={img10} alt={"एसआईपी निवेश"} className={"img-fluid"} width={"60"} height={"60"} />
                         <h3>आइए कमाई का आनंद लेने के लिए एसआईपी शुरू करें</h3>
-                        <Link to="/mutual-funds-investment"><span onClick={() => { chapterScroll('mutualid')}} className="btn-bg">अभि शुरू करें</span></Link>
+                        <Link to="/hindi/mutual-funds-investment"><span onClick={() => { chapterScroll('mutualid')}} className="btn-bg">अभि शुरू करें</span></Link>
                       </div>
                   </div>
               </div>
