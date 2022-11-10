@@ -6,6 +6,18 @@ const headers = {
   'Content-Type': 'application/json'
 };
 
+let langtype = (window.location.pathname.indexOf('hindi') > -1) ? 'hi' :(window.location.pathname.indexOf('gujarati') > -1) ? 'gu' :(window.location.pathname.indexOf('marathi') > -1) ? 'mr' :(window.location.pathname.indexOf('telugu') > -1) ? 'te':'en';
+
+
+const newheaders = {
+  
+  'Accept': 'application.json',
+  'Content-Type': 'application/json',
+  'lang': langtype
+  
+
+};
+
 const openAccountService = {
 
   sendOTP: function (request,type) {
@@ -25,7 +37,7 @@ const openAccountService = {
 
   verifyOTP: function (request,type) {
     let url = ((type=='MF')? apiURL.getVerifyInvestOTPURL() : apiURL.getVerifyOTPURL()); 
-    return axios.post(url, request, headers);
+    return axios.post(url, request,{ headers: newheaders } );
   },
 
   addNewLead: function (request) {
