@@ -50,8 +50,8 @@ function BestStock() {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
             <BestStockcategory />
-            <BestStockOpenDematAccount />
-            <BestStockreadMore />
+            {/* <BestStockOpenDematAccount /> */}
+            {/* <BestStockreadMore /> */}
           </div>
       }
     </div>
