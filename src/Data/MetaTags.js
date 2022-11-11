@@ -1767,6 +1767,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
   "link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": `` },
 
+  "hindi/mutual-funds-investment": { 'title': "म्यूचुअल फंड में ऑनलाइन निवेश करें च्वाइस के साथ", 
+  "content": "चॉइस के साथ, आप भारत में ऑनलाइन म्यूचुअल फंड में निवेश करना शुरू कर सकते हैं। चॉइस म्यूचुअल फंड निवेश मंच सभी के लिए म्यूचुअल फंड में निवेश को आसान बनाता है।",
+  "link":'https://choiceindia.com/hindi/mutual-funds-investment',"lang":'hi',"faqscript": `` },
+
+
+
 
 }
 
