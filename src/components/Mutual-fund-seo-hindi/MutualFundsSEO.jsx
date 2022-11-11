@@ -1,27 +1,30 @@
 
 import React from "react";
 import Banner from './Banner';
-import SectionTabs from './SectionTabs';
-import Faqs from './Faqs';
-import BChargesMoreContent from './BChargesMoreContent';
-import GlossaryCharges from './GlossaryCharges';
-import OpenFreeAccount from './../Pricing/OpenFreeAccount';
-import { useState,useEffect } from "react";
+import WhyInvestMF from './WhyInvestMF';
+import MfBenifits from './MfBenifits';
+import WhyChoiceInvestment from './WhyChoiceInvestment';
+import ExploreBestMF from './ExploreBestMF';
+import MFTestimonials from './MFTestimonials';
+import MFPartner from './MFPartner';
+import MFFaq from './MFFaq';
+import MFInvestment from './MFInvestment';
 import meta_tags from "../../Data/MetaTags";
-import "./brokerage.scss";
-import "./../Pricing/pricing.scss";
-import "./../OpenDematAccount/DematPage.scss";
+import { useState,useEffect } from "react";
+import "./mf-investment.scss";
 
 
-function BrokerageCharges() {
+function MutualFundsSEO() {
+
+  
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
       // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
@@ -30,21 +33,23 @@ function BrokerageCharges() {
     }
   }, [rendercount])
 
-
   
 
   return (
     <div>
       
-      <div className="mainwrapper brokerage-charges-temp">
+      <div className="mainwrapper mfi-main">
          
          <Banner />
-         <SectionTabs />
-         <OpenFreeAccount />
-         <GlossaryCharges />
-         <Faqs />
-         <BChargesMoreContent/>
-         
+         <WhyInvestMF />
+         <MfBenifits />
+         <WhyChoiceInvestment />
+         <ExploreBestMF />
+         <MFTestimonials />
+         <MFPartner />
+         <MFFaq />
+        {/* <MFInvestment /> */}
+          
        </div> 
       
     
@@ -52,4 +57,4 @@ function BrokerageCharges() {
   );
 }
 
-export default BrokerageCharges;
+export default MutualFundsSEO;

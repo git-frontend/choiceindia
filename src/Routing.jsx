@@ -113,6 +113,7 @@ const Lazysubbrokergujarati = React.lazy(() => import('./components/SubBroker/Su
 const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
 const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
+const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 
 
 function Routing() {
@@ -578,6 +579,12 @@ function Routing() {
                         <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/hindi/mutual-funds-investment' element={
+                            <React.Suspense>
+                                < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
                         } />
 
