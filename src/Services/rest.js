@@ -39,7 +39,15 @@ multipleTokensURLData: function (postdata) {
     //    console.log("datas",data)
         return data
     })
-}
+},
+
+ getUserId() {
+    let userId = this.storage.retrieve('userId');
+    if (userId) {
+      userId = this.decryptText(userId)
+    }
+    return userId || '';
+  }
 
 }
 export default rest;
