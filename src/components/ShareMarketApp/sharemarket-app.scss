@@ -1,12 +1,23 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
 .trading-app-sec1{
     .sec1-left{
         .share-text h1{
             line-height: 5rem;
+            @media (max-width:$md) {
+                font-size: 2.5rem;
+                line-height: 4rem;
+            }
         }
     .share-slider{
         position: absolute;
-        left: 212px;
+        left: 218px;
         top: 194px;
+        @media (max-width:$md) {
+            left: 125px;
+        top: 113px;
+        }
     }
 
     
