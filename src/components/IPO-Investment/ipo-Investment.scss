@@ -168,6 +168,10 @@ body{
                             margin-top: 1rem;
                             font-family: $font-family-poppins-regular;
                         }
+                        @media (max-width: $md) {
+                            font-size: 1.2rem;
+                        }
+
                     }
                 }
             }
@@ -383,7 +387,7 @@ body{
 
 .process-ipo{
     padding: 0 0 15rem 0;
-    @media (max-width: $sm) {
+    @media (max-width: $sm-x) {
        padding: 0 0 5rem 0;
     }
     position: relative;
@@ -404,7 +408,7 @@ body{
     }
     .title-first{
         padding-bottom: 14rem;
-        @media (max-width: $sm) {
+        @media (max-width: $sm-x) {
             padding-bottom: 3rem;
             text-align: center;
         }
@@ -412,7 +416,7 @@ body{
     .ipo-list-img{
         position: relative;
         padding: 0;
-        @media (max-width: $sm) {
+        @media (max-width: $sm-x) {
             text-align: center;
         }
         .process-ipo-list{
@@ -456,7 +460,7 @@ body{
                     font-family: $font-family-poppins-semibold;
                     line-height: 2.1rem;
                 }
-                @media (max-width: $sm) {
+                @media (max-width: $sm-x) {
                     position: relative;
                     left: inherit !important;
                     right: inherit !important;
@@ -466,13 +470,13 @@ body{
                     margin-bottom: 1rem;
                 }
             }
-            @media (max-width: $sm) {
+            @media (max-width: $sm-x) {
                 display: flex;
                 flex-wrap: wrap;
             }
         }
         .mn-img-big{
-            @media (max-width: $sm) {
+            @media (max-width: $sm-x) {
                 display: none;
             }
         }

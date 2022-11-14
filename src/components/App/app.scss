@@ -31,7 +31,7 @@
         .ban-img {
             width: 100%;
             height: auto;
-            @media (max-width: $sm-x) {
+            @media (max-width: $sm) {
                 height: 350px;
                 object-fit: cover;
             }
@@ -494,6 +494,9 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
+            @media (max-width:$md) {
+                padding-left: 0rem;
+            }
 
             .content-list-itm {
                 border: 2px solid $bgolor-lightwhite;
