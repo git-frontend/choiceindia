@@ -414,7 +414,7 @@ function BestStockcategory() {
                         toggleState === 0 ?
                           <div className="row gx-5">
                             {
-                              (list1 || []).slice(0, 4).map((response, index) => {
+                              (list || []).slice(0, 4).map((response, index) => {
 
                                 return (
 
@@ -530,7 +530,7 @@ function BestStockcategory() {
                             toggleState === 2 ?
                               <div className="row gx-5">
                                 {
-                                  (list3 || []).slice(0, 4).map((response, index) => {
+                                  (list || []).slice(0, 4).map((response, index) => {
 
                                     return (
 
@@ -588,7 +588,7 @@ function BestStockcategory() {
                               toggleState === 3 ?
                                 <div className="row gx-5">
                                   {
-                                    (list2 || []).slice(0, 4).map((response, index) => {
+                                    (list || []).slice(0, 4).map((response, index) => {
 
 
                                       return (
