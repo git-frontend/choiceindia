@@ -107,7 +107,7 @@ function AnnualReportMenu() {
             <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 ">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Annual Report</h2>
                             <Navbar />
                         </div>

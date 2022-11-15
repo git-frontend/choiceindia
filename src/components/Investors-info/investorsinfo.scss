@@ -270,7 +270,7 @@ body{
         font-weight: 600;
         line-height: 5.25rem;
         padding-bottom: 6rem;
-     text-align: center;
+        text-align: center;
         @media screen and (max-width:767px) {
             font-size: 2.3rem;
             line-height: 3.25rem;
@@ -279,10 +279,10 @@ body{
         }
         @media screen and (max-width:$xs) {
             font-size: 2rem;
-            line-height: 3rem;
+            line-height: 2.6rem;
             text-align: left;
             padding-bottom: 3rem;
-            max-width: 200px;
+            max-width: 266px;
         }
     }
 
