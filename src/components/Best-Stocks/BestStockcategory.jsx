@@ -401,13 +401,19 @@ function BestStockcategory() {
         rest.multipleTokensURLData(payload).then(
           res => {
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-             setlist1(res.Response.lMT);
+            //  setlist1(res.Response.lMT);
              res.Response.lMT.forEach((ele,index) => {
-              ele['LTP'] = ele['LTP'] / ele['PriceDivisor'];
-              ele['Change'] = ele['Change'] / ele['PriceDivisor'];
-              ele['ChangePer'] = ele['Change'] / ele['PrvClose'] * 100;   
+              ele['LTP'] = ele['LTP'] /100;
+              ele.PrevClose = ele.PC/100;
+              ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+            ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+              setlist(Object.assign(ele)) ;
+              
+              // ele['Change'] = ele['Change'] / ele['PriceDivisor'];
+              // ele['ChangePer'] = ele['Change'] / ele['PrvClose'] * 100;   
               // list[index] = Object.assign(list[index], ...ele);
           })
+          console.log("check",list)
           
               
             
