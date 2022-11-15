@@ -578,7 +578,7 @@ function BestStockcategory() {
                                           <h6 className="top-text">Reco Date</h6>
                                           <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
                                         </div>
-                                        <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                        <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
                                       </div>
                                       <div className="middle-section">
                                         <div className="middle-left">
@@ -633,7 +633,7 @@ function BestStockcategory() {
                                             <h6 className="top-text">Reco Date</h6>
                                             <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
                                           </div>
-                                          <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>SELL</button></div>
+                                          <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>
                                         </div>
                                         <div className="middle-section">
                                           <div className="middle-left">
@@ -694,7 +694,7 @@ function BestStockcategory() {
                                               <h6 className="top-text">Reco Date</h6>
                                               <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6>
                                             </div>
-                                            <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                            <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
                                           </div>
                                           <div className="middle-section">
                                             <div className="middle-left">
@@ -753,7 +753,7 @@ function BestStockcategory() {
                                                 <h6 className="top-text">Reco Date</h6>
                                                 <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
                                               </div>
-                                              <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>buy</button></div>
+                                              <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
                                             </div>
                                             <div className="middle-section">
                                               <div className="middle-left">
@@ -883,7 +883,7 @@ function BestStockcategory() {
                 </div>
               </div>
             </section>
-            <BestStockOpenDematAccount/>
+            <OpenDemateAccountStickyFooter/>
             <section className="readmoresection">
               <div className="container">
                 {
