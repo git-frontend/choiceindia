@@ -6,7 +6,7 @@ import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import Thankyoupopup from './Thanku-popup.jsx';
 
-function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) {
+function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -24,25 +24,26 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
+    const webcheck = (window.location.pathname.indexOf('best-stocks') > -1) ? 'Best-Stock' : "Blog";
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
-    const [showlead, setShowLead] = useState({ showModal: false});
+    const [showlead, setShowLead] = useState({ showModal: false });
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
         setMobileNumber(value);
         if (value.length === 10 && !mobileRegex.test(value)) {
-          setErrors({
-            ...errors,
-            'invalidMobile': true
-          });
+            setErrors({
+                ...errors,
+                'invalidMobile': true
+            });
         } else if (value.length === 10 && mobileRegex.test(value)) {
-          setErrors({
-            ...errors,
-            'invalidMobile': false
-          });
+            setErrors({
+                ...errors,
+                'invalidMobile': false
+            });
         }
 
     }
@@ -74,7 +75,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
     }
 
     function handleOTPClose(link, msg) {
-     //   console.log('CCMMM', link, msg);
+        //   console.log('CCMMM', link, msg);
         setShowOTP(false);
 
         if (link) {
@@ -106,10 +107,10 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
 
     function closeModal(link) {
         setShowLead(prevState => {
-            return { ...prevState, showModal: false}
+            return { ...prevState, showModal: false }
         });
 
-        if(link){
+        if (link) {
             window.location.href = link;
         }
     }
@@ -137,7 +138,7 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
             "mobile_number": mobileNumber,
             "product": "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current?source.current:"CHOICEINDIA",
+            "source": source.current ? source.current : "CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
@@ -175,45 +176,75 @@ function OpenDemateAccountStickyFooter({openDemateAccountPopup, openInfoPopup}) 
 
     return (
         <>
-            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
-            </div>
-            <section className="stickybottom">
-                <div className="container mx-auto">
-                    <div className="d-flex justify-content-around align-items-center">
-                        <div>
-                            <h2 className="text"><span>Open Free</span> Demat Account</h2>
-                        </div>
-                        <form className="d-flex justify-content-around">
-                            <div className="form-group ">
-                                <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile}/>
-
-                                <div>
-                                    <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
-                                </div>
-                            </div>
-                            <div className="form-group tnc d-flex align-items-top align-items-top-check">
-                                <label>
-                                    <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
-                                </label>
-                                <div className="termcon termcon1 ">
-                                    <div> I agree that I have read &amp; accept the<a className="tc" onClick={handleTermsConditionShow}> Terms &amp; Conditions</a>
+            {
+                webcheck == "Best-Stock" ?
+                    <section className="sendopt">
+                        <div className="container">
+                            <div className="form_main">
+                                <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
+                                <div className="  Mobile_text">
+                                    <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                    <label htmlFor="form-email" className="form-label" >Mobile Number</label>
+                                    <div>
+                                        <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                     </div>
                                 </div>
+                                <div className="  cust_check">
+                                    <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
+                                    <label className="form_check_text">I agree that I have read and  accept<br /> the <a  onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
+                                </div>
+                                <button type="submit" className=" OPt_item sub_group" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="send_OPT_btn"></div> : 'Send OTP'}</button>
+                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                                {/* <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div> */}
                             </div>
-                            <div className="form-group">
-                                <button type="submit" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                        </div>
+                    </section>
+                    :
+                    webcheck == "Blog" ?
+                        <div>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
                             </div>
-                        </form>
+                            <section className="stickybottom">
+                                <div className="container mx-auto">
+                                    <div className="d-flex justify-content-around align-items-center">
+                                        <div>
+                                            <h2 className="text"><span>Open Free</span> Demat Account</h2>
+                                        </div>
+                                        <form className="d-flex justify-content-around">
+                                            <div className="form-group ">
+                                                <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
 
-                    </div>
-                </div>
+                                                <div>
+                                                    <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
+                                                </div>
+                                            </div>
+                                            <div className="form-group tnc d-flex align-items-top align-items-top-check">
+                                                <label>
+                                                    <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
+                                                </label>
+                                                <div className="termcon termcon1 ">
+                                                    <div> I agree that I have read &amp; accept the<a className="tc" onClick={handleTermsConditionShow}> Terms &amp; Conditions</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="form-group">
+                                                <button type="submit" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                                            </div>
+                                        </form>
 
-            </section>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </div> :
+                        ""
+            }
+
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg)=>openInfoPopup(msg)}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
