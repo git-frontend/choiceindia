@@ -8,6 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/free-call-for-trade-f
 import Image9 from '../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg';
 import Image10 from '../../assets/images/open-demat-account/advanced-trading-app-platform.svg';
 import Image11 from '../../assets/images/open-demat-account/refer-and-earn-demat-account.svg';
+import "./corporatedemateaccount.scss";
 function WhyOpenFreeCorporateAccount() {
 
   const settings = {
@@ -47,7 +48,7 @@ function WhyOpenFreeCorporateAccount() {
 
   return (
     <div>
-       <section className="adv-sect" >
+       <section className="adv-sect adv-sect-adddots " >
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">

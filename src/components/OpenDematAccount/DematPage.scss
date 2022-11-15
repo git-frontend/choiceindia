@@ -179,13 +179,15 @@
 		}
 
 		@media (min-width:$sm) and (max-width:768px) {
-			left: -15.75rem;
-			top: 63%;
+			// left: -15.75rem;
+			// top: 63%;
+			left: -20.25rem;
+            top: 71%;
 		}
 
 		@media (min-width:769px) and (max-width:1024px) {
-			left: -14.375rem;
-			top: 67%;
+			left: -20.375rem;
+			top: 73%;
 		}
 
 		li {
@@ -308,6 +310,21 @@
 		padding: 4rem 0;
 	}
 }
+.adv-sect-dots{
+	.slick-dots {
+		@media (min-width:$sm) and (max-width:768px) {
+			
+			left: -20.25rem;
+            top: 52%;
+		}
+
+		@media (min-width:769px) and (max-width:1024px) {
+			left: -20.375rem;
+			top: 52%;
+		}
+	}
+}
+
 
 .ml-3 {
 	margin-left: 3%;
@@ -602,13 +619,13 @@
 			padding: 1rem 2.5rem;
 		}
 
-		@media (min-width:768px) and (max-width:769px) {
+		@media  (max-width:992px) {
 			width: 100%;
 			min-height: 33rem;
 			padding: 1rem;
 		}
 
-		@media (min-width:769px) and (max-width:1024px) {
+		@media (min-width:992px) and (max-width:1024px) {
 			padding: 1rem;
 			min-height: 30.625rem;
 		}
@@ -645,6 +662,7 @@
 		.charge-lists {
 			list-style: none;
 			margin-top: 2rem;
+			
 			padding: 0;
 
 			li {
@@ -655,6 +673,10 @@
 				margin-top: 1rem;
 				font-weight: 500;
 			}
+			@media (max-width:$md) {
+				margin-top: 1rem;
+			}
+
 
 		}
 	}
