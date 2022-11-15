@@ -23,6 +23,7 @@ import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 function BestStockcategory() {
   let tokenList = [{}]
+  let multiValue = [{}]
   let tokens="";
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
@@ -401,7 +402,15 @@ function BestStockcategory() {
           res => {
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
              setlist1(res.Response.lMT);
-             processB5String(res.Response.lMT, null);
+             res.Response.lMT.forEach((ele,index) => {
+              ele['LTP'] = ele['LTP'] / ele['PriceDivisor'];
+              ele['Change'] = ele['Change'] / ele['PriceDivisor'];
+              ele['ChangePer'] = ele['Change'] / ele['PrvClose'] * 100;   
+              // list[index] = Object.assign(list[index], ...ele);
+          })
+          
+              
+            
     
             }else{
               setlist1([])
@@ -419,85 +428,7 @@ function BestStockcategory() {
     });
   }
 
-  let processB5String = (b5String, newB5) => {
-    b5String = b5String.replace(/\$/g, "|");
-    let splitData = pipeToObject(b5String);
-
-    let bestData = newB5 || {}   //||b5Data
-    let indicesData = {}
-    indicesData['PrevClose'] = bestData.PrevClose || 0;
-    indicesData["LTP"] = (splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) || 0; // if LTP == 0 then show prevClose (10/05/2021)
-    indicesData["LTP_DATA"] = (((splitData[0]["8"] == 0) ? (bestData.PrevClose) : (splitData[0]["8"] / splitData[0]["399"]) )|| 0).toFixed(2); // if LTP == 0 then show prevClose (10/05/2021)
-    indicesData["Token"] = (splitData[0]["7"])
-    indicesData["diff"] = indicesData["LTP"] - (indicesData['PrevClose'] / splitData[0]["399"]);
-    indicesData["percentage"] = (((indicesData["diff"]) / ((indicesData["LTP"]) - indicesData["diff"])) * 100) || 0;
-    indicesData["change"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs((indicesData["diff"]||0)).toFixed(2);
-    indicesData["changePercent"] = indicesData['PrevClose'] == 0 ? 0 : Math.abs((indicesData["percentage"])||0).toFixed(2);
-    if (indicesData["diff"] < 0) {
-        indicesData["color"] = "red";
-        indicesData["arrow"] = "icon-long-arrow-down"
-    }
-    else if (indicesData["diff"] === 0) {
-        indicesData["color"] = "";
-        indicesData["arrow"] = ""
-    }
-    else if (indicesData["diff"] > 0) {
-        indicesData["color"] = "green";
-        indicesData["arrow"] = "icon-long-arrow-up"
-    }
-    //Future Reference
-    // indicesData["open"] = splitData[0]["75"] / splitData[0]["399"];
-    // indicesData["close"] = (splitData[0]["76"] / splitData[0]["399"]);
-    // indicesData["wKHigh"] = (splitData[0]["93"] / splitData[0]["399"]);
-    // indicesData["WkLow"] = (splitData[0]["94"] / splitData[0]["399"]);
-    // indicesData["volume"] = parseInt(splitData[0]["79"]);
-    // indicesData["high"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["77"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in high (24/05/2021)
-    // indicesData["low"] = (splitData[0]["8"] == 0) ? indicesData["close"] : splitData[0]["78"] / splitData[0]["399"]; // if ltp == 0 then show prevClose in low (24/05/2021)
-    // setCompanyData(indicesData)
-     
-
-    if ((list && list.length) || (resData && resData.length)) {
-
-        let data = list?.length ? list : resData
-       
-        data.forEach(ele => {
-            
-            if (ele.token == indicesData.Token) {
-                ele.LTP = indicesData.LTP
-
-                if (indicesData.LTP && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                    if(ele.status == "Booked Part Profit"){
-                        
-                        ele.priceData['ltp_price_percentage'] = ((Number(ele.matched_price) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                       
-
-                    }else{
-                        ele.priceData['ltp_price_percentage'] = ((Number(indicesData.LTP) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                       
-
-                    }
-                    
-               
-                    // ele.priceData['part_profit_percentage'] =  ((Number(res.matched_price) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                    // console.log("llll",res.matched_price)
-
-                
-                   
-
-                    
-                }
-
-            }
-        })
-  
-
-        let fin = JSON.parse(JSON.stringify(data))
-        resData = fin;
-        setlist(fin)
-    }
-
-
-}
+ 
 
 
 
@@ -711,15 +642,15 @@ function BestStockcategory() {
                                             <div className="d-flex justify-content-between pt-3">
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text">Stop Loss</h6>
-                                                <h4 className="bottom_big_text" >{parseFloat(response.datapoints[2].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text" >{parseFloat((response.datapoints||[])[2].value).toFixed(2)}</h4>
                                               </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text">Entry Price</h6>
-                                                <h4 className="bottom_big_text">{parseFloat(response.datapoints[0].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
                                               </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text"> Target Price </h6>
-                                                <h4 className="bottom_big_text">{parseFloat(response.datapoints[1].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
                                               </div>
                                             </div>
                                           </div>
@@ -770,11 +701,11 @@ function BestStockcategory() {
                                               <div className="d-flex justify-content-between pt-3">
                                                 <div className="bottom">
                                                   <h6 className="bottom_small_text">Entry Price</h6>
-                                                  <h4 className="bottom_big_text">{(parseFloat(response.datapoints[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                  <h4 className="bottom_big_text">{(parseFloat((response.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                 </div>
                                                 <div className="bottom">
                                                   <h6 className="bottom_small_text">Potential Price</h6>
-                                                  <h4 className="bottom_big_text" >{(parseFloat(response.datapoints[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                  <h4 className="bottom_big_text" >{(parseFloat((response.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                 </div>
                                                 <div className="bottom">
                                                   <h6 className="bottom_small_text">Exp. Returns</h6>
