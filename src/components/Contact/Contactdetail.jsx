@@ -102,9 +102,9 @@ function Contactdetail() {
                   </div>
                </div>
                <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
-                   &nbsp;https://scores.gov.in/scores/Welcome.html or Exchange /DP at:<br/>
-                  BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE:https://investorhelpline.nseindia.com/NICEPLUS/ <br/>
-                  MCX: https://www.mcxindia.com/Investor-Services | NCDEX:https://ncdex.com/investor_complaint <br/>
+                  https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br/>
+                  BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br/>
+                  MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br/>
                   CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br/><br/>
                   (Working hours of each escalation level- Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)
                   <br/><br/>
