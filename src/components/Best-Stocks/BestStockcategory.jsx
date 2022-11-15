@@ -910,7 +910,7 @@ function BestStockcategory() {
                                 analysis
                                 <br />
                                 <br />
-                                The feature is an initiative as a solution to the question’ which is the <a href="/"> best stock to buy </a> in intraday’
+                                The feature is an initiative as a solution to the question’ which is the <Link to="/best-stocks-to-buy"> best stock to buy </Link> in intraday’
                                  as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a 
                                  multi-time frame along with volume criteria.
                                 <br />
@@ -921,7 +921,7 @@ function BestStockcategory() {
                                 The basket of stocks to buy today for intraday has been well researched by our expert Mr. Kkunal Parar who is also the developer of the feature. Therefore, the recommendations hold a high success ratio. Here, you can get a variety of stock recommendations that are subjective to intraday trades only. 
                                 <br/>
                                 <br/>
-                                For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <a href="/"> Open a free demat account  </a> with us to get the best intraday stocks to buy today in India.
+                                For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
 
                               </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                           </div>
@@ -960,10 +960,10 @@ function BestStockcategory() {
                               With C-Quant you can  get access to short term trading ideas having a quantitative edge and receive live
                               recommendations here for best stocks to buy for short-term trades that shall enhance  trading/investment
                               experience and thereby, fulfil the requirement as per your trading style. You can also view the bundle of  
-                              <a href="/">  best stocks to buy </a> today in the ‘All Stocks’ section.
+                              <Link to="/best-stocks-to-buy">  best stocks to buy </Link> today in the ‘All Stocks’ section.
                               <br />
                               <br />
-                              Open your <a href="/">free demat account</a> with Choice and get the best stocks to buy today in India for a short term time horizon.
+                              Open your <Link to="/open-free-demat-account">free demat account</Link> with Choice and get the best stocks to buy today in India for a short term time horizon.
 
 
                             </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
@@ -987,7 +987,7 @@ function BestStockcategory() {
                                     The end-to-end solutions as a service provider, the organisations Research section works day-in and day-out to put together the right research methodology to bridge the gap from being just a broking house to gauging maximum exposure on research recommendations.
                                     <br />
                                     <br />
-                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <a href="/"> best stocks to buy today </a> in India for long term investment.
+                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <Link to="/best-stocks-to-buy"> best stocks to buy today </Link> in India for long term investment.
 
                                   </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                               </div>
@@ -1020,22 +1020,22 @@ function BestStockcategory() {
                                    Intraday is a part of our Signal feature in the ‘Research’ Section. Signal,  an Automated Research Engine that provides
                                    research advisory with customised strategies for all types of Traders
                                    with a multi time frame breakout strategy based on the pattern breakout without any human intervention.
-                                   Subscribe and get the <a href="/"> best intraday stocks to buy today.</a>
+                                   Subscribe and get the <Link to="/best-intraday-stocks-to-buy"> best intraday stocks to buy today.</Link>
                                    <br />
                                    <br />
                                    <h2 className="font-bold">Explore Best Short Term Stocks to Buy Today with C_Quant</h2>
                                    The short-term trades are provided by our C-Quant feature with T+5  short term trading ideas based on
                                    quantitative analysis and statistically tested trading strategy. C_Quant employs quantitative and statistical
                                    techniques to generate trading calls from the top 100 stocks listed on the NSE ranked by market capitalization
-                                   and average daily traded volume. Follow our C_Quant strategies and get the <a href="/"> best stocks to buy today in India
-                                     for the short term.</a>
+                                   and average daily traded volume. Follow our C_Quant strategies and get the <Link to="/best-short-term-stocks-to-buy"> best stocks to buy today in India
+                                     for the short term.</Link>
                                    <br />
                                    <br />
                                    <h2 className="font-bold">Get Best Stocks to Buy Today in India for Long Term</h2>
                                    If you're looking for the best stocks to buy today in India for the long-term, you are at the right place.
                                    This segment provides you with long-term research calls recommended by our Executive Director -Sumeet Bagadia.
                                    With his expert advice, one can find solutions for long-term financial goals in investing with targets and stop loss in place.
-                                   Open a free demat account with Choice and get the <a href="/"> best stocks to buy today in India for long term investment.</a>
+                                   Open a free demat account with Choice and get the <Link to="/best-stocks-for-long-term-investment"> best stocks to buy today in India for long term investment.</Link>
      
                                  </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                              </div>
