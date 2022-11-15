@@ -1,4 +1,4 @@
-import "./Commodity.scss";
+// import "./Commodity.scss";
 import "../OpenDematAccount/DematPage";
 import CommodityBanner from "./CommodityBanner";
 import WhyOpenFreeCommodity from "./WhyOpenFreeCommodity";

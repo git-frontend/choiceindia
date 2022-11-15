@@ -1,4 +1,4 @@
-import "./EquityStockTrading.scss";
+// import "./EquityStockTrading.scss";
 import "../OpenDematAccount/DematPage";
 import EquityStockTradingBanner from "./EquityStockTradingBanner";
 import WhyOpenEquityStockTrading from "./WhyOpenEquityStockTrading";

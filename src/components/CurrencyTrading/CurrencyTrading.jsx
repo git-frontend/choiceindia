@@ -1,4 +1,4 @@
-import "./CurrencyTrading.scss";
+// import "./CurrencyTrading.scss";
 import "../OpenDematAccount/DematPage";
 import CurrencyTradingBanner from "./CurrencyTradingBanner";
 import WhyOpenCurrencyTrading from "./WhyOpenCurrencyTrading";
