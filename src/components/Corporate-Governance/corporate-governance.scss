@@ -7,7 +7,10 @@
     border: #C2C2C2 solid 1px;
     padding: 1.5rem;
     margin-bottom: 3rem;
-    
+    @media screen and (max-width:767px) {
+        margin: 0 1rem 3rem;
+        padding: 1.5rem 1rem;
+     }
     .border-bottom {
         &:last-child {
             border-bottom: none !important;
