@@ -10,6 +10,7 @@ import { API_URLS } from "../../Services/API-URLS";
 import "../Remisier/Remisier.scss";
 import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter"; 
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 
 
@@ -24,29 +25,31 @@ import { useEffect } from "react";
 function BestStockcategory() {
   let tokenList = [{}]
   let multiValue = [{}]
+  let AllFilesValue = {};
   let tokens="";
+  let storefile;
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
-  const [list1, setlist1] = useState();
-  const [list2, setlist2] = useState();
-  const [list3, setlist3] = useState();
   const [Data1, setData1] = useState();
   const [rendercount, setRenderCount] = useState(() => false);
+  const [skeleton, setSkeleton] = useState(() => true);
+  /**Show loader */
+  const [showLoader, setShowLoader] = useState(false)
+
   const toggleTab = (index) => {
     setToggleState(index);
   };
 
-  const [skeleton, setSkeleton] = useState(() => true);
+  const queryParam = window.location.search;
+  const utmvalue = new URLSearchParams(queryParam);
+  const activeurl = utmvalue.get('active');
 
-  const [data, setData] = useState(false);
-  /**Show loader */
-  const [showLoader, setShowLoader] = useState(false)
-
-
+  
   /**
    * Generate Session Id
    */
   function generateSessionId() {
+    console.log("check");
     
     let api = new API_URLS()
     fetch(api.getSessionUrl())
@@ -71,7 +74,7 @@ function BestStockcategory() {
   
   function AllStocks() {
     setlist([]);
-    setlist1([]);
+    storefile='';
     tokens='';
     tokenList=[];
     setShowLoader(true)
@@ -99,28 +102,11 @@ function BestStockcategory() {
       res => {
         if (res) {
           setShowLoader(false)
+          storefile=res.response.research;
           setlist(res.response.research);
 
           res.response.research.forEach(ele => {
-
-            ele.published_date = utils.formatDate(new Date(ele.published_date), "dd MMMM'yy hh:mm:ss TT")
-                    if (ele.datapoints && ele.datapoints.length) {
-                        ele.priceData = {}
-                        ele.datapoints.forEach(sub => {
-                            sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-
-                            ele.priceData[sub.key] = sub
-                        })
-
-                        if (ele.priceData['entry_price'] && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                            ele.priceData['entry_price_percentage'] = ((Number(ele.priceData['entry_price'].value) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                        }
-
-                    }
-            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-            console.log("check",tokenList);
-            
-           
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })  
         });
         for (let i = 1; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
@@ -138,20 +124,32 @@ function BestStockcategory() {
         rest.multipleTokensURLData(payload).then(
           res => {
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-              setlist1(res.Response.lMT);
-              processB5String(res.Response.lMT, null);
-              console.log("called mutiple", res);
+              res.Response.lMT.forEach((ele,index) => {
+              
+                ele['LTP'] = ele['LTP'] /100;
+                ele.PrevClose = ele.PC/100;
+                ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                for(let i=0;i<storefile.length;i++){
+                 
+                  if(storefile[i].token ==ele.Tok){
+                    AllFilesValue = Object.assign(storefile[i],ele);
+                    multiValue.push(AllFilesValue)
+                  }else{
+                    AllFilesValue = [];
+                   
+  
+                  }
+                }  
+                
+            })
+            setlist(multiValue) ;
     
             }
           })
-
-
-          
-          
-
       }
     })
-    // )
     .catch((error) => {
       setShowLoader(false)
       setlist([]);
@@ -161,8 +159,8 @@ function BestStockcategory() {
 
   function LongTermStocks() {
     setlist([]);
-    setlist1([]);
     tokens='';
+    storefile='';
     tokenList=[];
     setShowLoader(true)
     let request = {
@@ -189,28 +187,12 @@ function BestStockcategory() {
       res => {
         if (res) {
           setShowLoader(false)
+          storefile=res.response.research;
           setlist(res.response.research);
 
           res.response.research.forEach(ele => {
 
-            ele.published_date = utils.formatDate(new Date(ele.published_date), "dd MMMM'yy hh:mm:ss TT")
-            if (ele.datapoints && ele.datapoints.length) {
-                ele.priceData = {}
-                ele.datapoints.forEach(sub => {
-                    sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-
-                    ele.priceData[sub.key] = sub
-                })
-
-                if (ele.priceData['entry_price'] && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                    ele.priceData['entry_price_percentage'] = ((Number(ele.priceData['entry_price'].value) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                }
-
-            }
-            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-            console.log("check",tokenList);
-            
-           
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token }) 
         });
         for (let i = 1; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
@@ -228,20 +210,33 @@ function BestStockcategory() {
         rest.multipleTokensURLData(payload).then(
           res => {
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-             setlist1(res.Response.lMT);
-             processB5String(res.Response.lMT, null);
-              console.log("called mutiple", res);
+              res.Response.lMT.forEach((ele,index) => {
+              
+                ele['LTP'] = ele['LTP'] /100;
+                ele.PrevClose = ele.PC/100;
+                ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                for(let i=0;i<storefile.length;i++){
+                 
+                  if(storefile[i].token ==ele.Tok){
+                    AllFilesValue = Object.assign(storefile[i],ele);
+                    multiValue.push(AllFilesValue)
+                  }else{
+                    AllFilesValue = [];
+                   
+  
+                  }
+                }
+                
+            })
+            setlist(multiValue) ;
     
             }
           })
-
-
-          
-          
-
       }
     })
-    // )
+   
     .catch((error) => {
       setShowLoader(false)
       setlist([]);
@@ -250,9 +245,9 @@ function BestStockcategory() {
 
   function ShortTermStocks() {
     setlist([]);
-    setlist1([]);
     tokens='';
     tokenList=[];
+    storefile='';
     setShowLoader(true)
     let request = {
 
@@ -277,29 +272,13 @@ function BestStockcategory() {
         setShowLoader(false)
         if (res) {
           console.log("checkdd",res.response.research);
-
-          setlist(res.response.research);
+          storefile=res.response.research;
+          // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
 
-            ele.published_date = utils.formatDate(new Date(ele.published_date), "dd MMMM'yy hh:mm:ss TT")
-            if (ele.datapoints && ele.datapoints.length) {
-                ele.priceData = {}
-                ele.datapoints.forEach(sub => {
-                    sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-
-                    ele.priceData[sub.key] = sub
-                })
-
-                if (ele.priceData['entry_price'] && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                    ele.priceData['entry_price_percentage'] = ((Number(ele.priceData['entry_price'].value) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                }
-
-            }
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-            console.log("check",tokenList);
             
-           
         });
         for (let i = 1; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
@@ -317,35 +296,45 @@ function BestStockcategory() {
         rest.multipleTokensURLData(payload).then(
           res => {
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-              setlist1(res.Response.lMT);
-              processB5String(res.Response.lMT, null);
-              console.log("called mutiple", res);
+              
+              res.Response.lMT.forEach((ele,index) => {
+              
+                ele['LTP'] = ele['LTP'] /100;
+                ele.PrevClose = ele.PC/100;
+                ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                for(let i=0;i<storefile.length;i++){
+                 
+                  if(storefile[i].token ==ele.Tok){
+                    AllFilesValue = Object.assign(storefile[i],ele);
+                    multiValue.push(AllFilesValue)
+                  }else{
+                    AllFilesValue = [];
+                   
+  
+                  }
+                }
+            })
+         
+            setlist(multiValue) ;
     
             }
           })
-
-
-          
-          
-
       }
     })
-    // )
+   
     .catch((error) => {
       setShowLoader(false)
       setlist([]);
     });
   }
 
-
-
-
   function IntraStocks (session){
     setlist([]);
-    setlist1([]);
     tokens='';
     tokenList=[];
-    
+    storefile='';
     setShowLoader(true)
     let request = {
       "Count": 10,
@@ -362,28 +351,10 @@ function BestStockcategory() {
       res => {
         setShowLoader(false)
         if (res) {
-          setlist(res.Response.Data);
-          
+          storefile=res.Response.Data
           res.Response.Data.forEach(ele => {
 
-            ele.published_date = utils.formatDate(new Date(ele.published_date), "dd MMMM'yy hh:mm:ss TT")
-            if (ele.datapoints && ele.datapoints.length) {
-                ele.priceData = {}
-                ele.datapoints.forEach(sub => {
-                    sub.key = (sub.key == 'cmp') ? 'entry_price' : sub.key;
-
-                    ele.priceData[sub.key] = sub
-                })
-
-                if (ele.priceData['entry_price'] && ele.priceData['stop_loss'] && ele.priceData['target']) {
-                    ele.priceData['entry_price_percentage'] = ((Number(ele.priceData['entry_price'].value) - Number(ele.priceData['stop_loss'].value)) / (Number(ele.priceData['target'].value) - Number(ele.priceData['stop_loss'].value))) * 85
-                }
-
-            }
-            tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
-            console.log("check",tokenList);
-            
-           
+            tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok }) 
         });
         for (let i = 1; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
@@ -391,6 +362,7 @@ function BestStockcategory() {
           
         }
         console.log("SegmentId",tokens);
+       
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -400,31 +372,33 @@ function BestStockcategory() {
 
         rest.multipleTokensURLData(payload).then(
           res => {
+            
             if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
-            //  setlist1(res.Response.lMT);
              res.Response.lMT.forEach((ele,index) => {
+              
               ele['LTP'] = ele['LTP'] /100;
               ele.PrevClose = ele.PC/100;
               ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
-            ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
-              setlist(Object.assign(ele)) ;
-              
-              // ele['Change'] = ele['Change'] / ele['PriceDivisor'];
-              // ele['ChangePer'] = ele['Change'] / ele['PrvClose'] * 100;   
-              // list[index] = Object.assign(list[index], ...ele);
+              ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+              // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+              for(let i=0;i<storefile.length;i++){
+               
+                if(storefile[i].Tok ==ele.Tok){
+                  AllFilesValue = Object.assign(storefile[i],ele);
+                  multiValue.push(AllFilesValue)
+                }else{
+                  AllFilesValue = [];
+                 
+
+                }
+              }
           })
-          console.log("check",list)
           
-              
-            
-    
+          setlist(multiValue) ;
             }else{
-              setlist1([])
+              setlist([])
             }
           }) 
-          
-  
-
       }
     })
     // )
@@ -464,6 +438,10 @@ function BestStockcategory() {
     window.open("https://finx.choiceindia.com/market/latest-ipo-list");
   }
 
+  function changeurl(id) {
+    window.history.replaceState(null, null, `/best-stocks?active=${id}`);
+    ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
+  }
 
 
 
@@ -484,8 +462,8 @@ function BestStockcategory() {
                     <ul className="list-group list_group1">
                       <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { AllStocks(); toggleTab(0) }}>All Stocks</li>
                       <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
-                      <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2) }}>Short Term Stocks</li>
-                      <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3) }}>Long Term Stocks</li>
+                      <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2)}}>Short Term Stocks</li>
+                      <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3); }}>Long Term Stocks</li>
                     </ul>
                   </div>
                 </div>
@@ -500,9 +478,18 @@ function BestStockcategory() {
                     <div className="col-md-12">
                       {
                         toggleState === 0 ?
+                        <div>
+                          {showLoader?
+                          
+                          <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          </div>
+                      </div>:
                           <div className="row gx-5">
                             {
-                              (list || []).slice(0, 4).map((response, index) => {
+                              (list || []).slice(1, 5).map((response, index) => {
 
                                 return (
 
@@ -523,8 +510,8 @@ function BestStockcategory() {
                                           <span className="small-text">{response.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
-                                          <span className="right-big-text">{ ((response?.status == 'Achieved')? ((Number(response?.priceData?.target?.value || 0)||0)):(response?.status == 'Stopped out')?((Number(response?.priceData?.stop_loss?.value || 0)||0)):(response?.status == 'Booked Part Profit')?((Number(response.matched_price || 0)||0)):(response?.LTP||0)).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-                                          <h6 className="right-small-text text_color">{ (((((data?.LTP ) - data?.initial_cmp)/data?.initial_cmp)*100 | "1.2-2" ) + '%')}</h6>
+                                        <span className="right-big-text">{response.LTP}</span>
+                                          <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                         </div>
                                       </div>
 
@@ -553,11 +540,22 @@ function BestStockcategory() {
                                 )
                               })
                             }
+                          </div>
+                           }
                           </div> :
                           toggleState === 1 ?
+                          <div>
+                             {showLoader?
+                          
+                          <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          </div>
+                      </div>:
                             <div className="row gx-5">
                               {
-                                (list || []).slice(0, 4).map((response, index) => {
+                                (list || []).slice(1, 5).map((response, index) => {
 
                                   return (
 
@@ -578,8 +576,8 @@ function BestStockcategory() {
                                             <span className="small-text">{response.Name}</span>
                                           </div>
                                           <div className="middle-right">
-                                            <span className="right-big-text">{ (((response?.status == 'Achieved')? ((Number(response?.priceData?.target?.value || 0)||0)):(response?.status == 'Stopped out')?((Number(response?.priceData?.stop_loss?.value || 0)||0)):(response?.status == 'Booked Part Profit')?((Number(response.matched_price || 0)||0)):(response?.LTP||0))/100).toFixed(2)}</span>
-                                            <h6 className="right-small-text text_color">{ (((((data?.LTP ) - data?.initial_cmp)/data?.initial_cmp)*100 | "1.2-2" ) + '%')}</h6>
+                                          <span className="right-big-text">{response.LTP}</span>
+                                          <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                           </div>
                                         </div>
 
@@ -614,11 +612,22 @@ function BestStockcategory() {
                                   )
                                 })
                               }
-                            </div> :
+                            </div> 
+}
+                            </div>:
                             toggleState === 2 ?
+                            <div>
+                               {showLoader?
+                          
+                          <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          </div>
+                      </div>:
                               <div className="row gx-5">
                                 {
-                                  (list || []).slice(0, 4).map((response, index) => {
+                                  (list || []).slice(1, 5).map((response, index) => {
 
                                     return (
 
@@ -639,8 +648,8 @@ function BestStockcategory() {
                                               <span className="small-text">{response.scrip_sec_desc}</span>
                                             </div>
                                             <div className="middle-right">
-                                              <span className="right-big-text">{ ((response?.status == 'Achieved')? ((Number(response?.priceData?.target?.value || 0)||0)):(response?.status == 'Stopped out')?((Number(response?.priceData?.stop_loss?.value || 0)||0)):(response?.status == 'Booked Part Profit')?((Number(response.matched_price || 0)||0)):(response?.LTP||0)).toFixed(2)}</span>
-                                              <h6 className="right-small-text text_color">{ (((((data?.LTP ) - data?.initial_cmp)/data?.initial_cmp)*100 | "1.2-2" ) + '%')}</h6>
+                                            <span className="right-big-text">{response.LTP}</span>
+                                            <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                             </div>
                                           </div>
 
@@ -656,7 +665,7 @@ function BestStockcategory() {
                                               </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text"> Target Price </h6>
-                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[1].value).toFixed(2)}</h4>
                                               </div>
                                             </div>
                                           </div>
@@ -670,13 +679,24 @@ function BestStockcategory() {
                                   })
                                 }
                               </div>
+}
+                              </div>
 
                               :
 
                               toggleState === 3 ?
+                              <div>
+                                 {showLoader?
+                          
+                          <div className="text-center">
+                        <div>
+                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          </div>
+                      </div>:
                                 <div className="row gx-5">
                                   {
-                                    (list || []).slice(0, 4).map((response, index) => {
+                                    (list || []).slice(1, 5).map((response, index) => {
 
 
                                       return (
@@ -698,8 +718,8 @@ function BestStockcategory() {
                                                 <span className="small-text">{response.scrip_sec_desc}</span>
                                               </div>
                                               <div className="middle-right">
-                                                <span className="right-big-text">{ ((response?.status == 'Achieved')? ((Number(response?.priceData?.target?.value || 0)||0)):(response?.status == 'Stopped out')?((Number(response?.priceData?.stop_loss?.value || 0)||0)):(response?.status == 'Booked Part Profit')?((Number(response.matched_price || 0)||0)):(response?.LTP||0)).toFixed(2)}</span>
-                                                <h6 className="right-small-text text_color">{ (((((data?.LTP ) - data?.initial_cmp)/data?.initial_cmp)*100 | "1.2-2" ) + '%')}</h6>
+                                              <span className="right-big-text">{response.LTP}</span>
+                                              <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                               </div>
                                             </div>
 
@@ -715,7 +735,7 @@ function BestStockcategory() {
                                                 </div>
                                                 <div className="bottom">
                                                   <h6 className="bottom_small_text">Exp. Returns</h6>
-                                                  <h4 className="bottom_big_text">7.16%</h4>
+                                                  <h4 className="bottom_big_text">{utils.formatDate(new Date(response.report_expiry), "dd MMM , yyyy")}</h4>
                                                 </div>
                                               </div>
                                             </div>
@@ -726,7 +746,9 @@ function BestStockcategory() {
                                       )
                                     })
                                   }
-                                </div> :
+                                </div>
+} 
+                                </div>:
                                 ""
                       }
 
@@ -847,7 +869,7 @@ function BestStockcategory() {
                                 analysis
                                 <br />
                                 <br />
-                                The feature is an initiative as a solution to the question’ which is the <a href="/"> best stock to buy </a> in intraday’
+                                The feature is an initiative as a solution to the question’ which is the <div onClick={()=>{changeurl('-to-buy')}}> best stock to buy </div> in intraday’
                                  as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a 
                                  multi-time frame along with volume criteria.
                                 <br />
@@ -897,7 +919,7 @@ function BestStockcategory() {
                               With C-Quant you can  get access to short term trading ideas having a quantitative edge and receive live
                               recommendations here for best stocks to buy for short-term trades that shall enhance  trading/investment
                               experience and thereby, fulfil the requirement as per your trading style. You can also view the bundle of  
-                              <a href="/">  best stocks to buy </a> today in the ‘All Stocks’ section.
+                              <div onClick={()=>changeurl('-term-stocks-to-buy')}> best stocks to buy </div> today in the ‘All Stocks’ section.
                               <br />
                               <br />
                               Open your <a href="/">free demat account</a> with Choice and get the best stocks to buy today in India for a short term time horizon.
@@ -957,7 +979,7 @@ function BestStockcategory() {
                                    Intraday is a part of our Signal feature in the ‘Research’ Section. Signal,  an Automated Research Engine that provides
                                    research advisory with customised strategies for all types of Traders
                                    with a multi time frame breakout strategy based on the pattern breakout without any human intervention.
-                                   Subscribe and get the <a href="/"> best intraday stocks to buy today.</a>
+                                   Subscribe and get the <a onClick={()=>changeurl('-intraday-stocks-to-buy')}> best intraday stocks to buy today.</a>
                                    <br />
                                    <br />
                                    <h2 className="font-bold">Explore Best Short Term Stocks to Buy Today with C_Quant</h2>
@@ -972,7 +994,7 @@ function BestStockcategory() {
                                    If you're looking for the best stocks to buy today in India for the long-term, you are at the right place.
                                    This segment provides you with long-term research calls recommended by our Executive Director -Sumeet Bagadia.
                                    With his expert advice, one can find solutions for long-term financial goals in investing with targets and stop loss in place.
-                                   Open a free demat account with Choice and get the <a href="/"> best stocks to buy today in India for long term investment.</a>
+                                   Open a free demat account with Choice and get the <a onClick={()=>changeurl('-for-long-term-investment')}> best stocks to buy today in India for long term investment.</a>
      
                                  </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                              </div>
