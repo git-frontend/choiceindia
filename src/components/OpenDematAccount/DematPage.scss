@@ -16,7 +16,11 @@
 	@media (max-width:$xs) {
 		padding: 2rem 0;
 	}
-
+	.colreverse{
+		@media (max-width:$sm) {
+			flex-direction: column-reverse;
+		}
+	}
 	.banner-title {
 		color: $primary;
 		font-size: 3rem;
@@ -29,12 +33,31 @@
 			line-height: 3rem;
 			padding-bottom: 2.5rem;
 			text-align: center;
+			
+		}
+		.desktop{
+			@media (max-width:$sm) {
+				display: none;
+			}
+		}
+		
+		.mobile{
+			display: none;
+			padding: 0;
+			@media (max-width:$sm) {
+				display: block;
+			}
 		}
 		.yellow {
 			color: $bgcolor-yellow;
 		}
 	}
-
+	.mbtitle{
+		padding: 0;
+		@media (max-width:$sm) {
+			padding: 2.5rem;
+		}
+	}
 	.zigzagline {
 		padding: 2rem 0 5rem;
 	}
@@ -61,7 +84,7 @@
 
 	.demat-account-form {
 		@media (max-width:$sm) {
-			margin-top: 4rem;
+			margin-top: 0rem;
 		}
 	}
 

@@ -105,6 +105,9 @@
         font-family: $font-family-poppins-semibold;
         color: $primary;
         margin-bottom: 3rem;
+		@media (max-width: $sm-x) {
+			font-size: 1.5rem;
+		}
     }
     @media (max-width: $sm-x) {
         width: 100%;
