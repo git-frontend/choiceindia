@@ -9,6 +9,11 @@
                 font-size: 2.5rem;
                 line-height: 4rem;
             }
+            .mb-br{
+                @media  (max-width:$sm) {
+                    display:inline;
+                 }
+            }
         }
     .share-slider{
         position: absolute;
@@ -16,8 +21,21 @@
         top: 194px;
         @media (max-width:$md) {
             left: 125px;
-        top: 113px;
+            top: 113px;
         }
+        @media (max-width:$sm) {
+            left: inherit;
+            top: inherit;
+            position: relative;
+        }
+        .slick-slide{
+        h4{
+            @media  (max-width:$sm) {
+               padding-left: 0;
+            } 
+        }
+    }
+
     }
 
     
