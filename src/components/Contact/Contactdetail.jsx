@@ -102,7 +102,7 @@ function Contactdetail() {
                   </div>
                </div>
                <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
-                  https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br/>
+                  https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br/><br/>
                   BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br/>
                   MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br/>
                   CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br/><br/>
