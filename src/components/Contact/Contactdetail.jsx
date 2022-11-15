@@ -18,21 +18,21 @@ function Contactdetail() {
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
-   let data={};
+   let data = {};
 
-   let data2={}
-   contactMap.forEach(ele=>{
+   let data2 = {}
+   contactMap.forEach(ele => {
 
-     
-      data[ele.id]=ele
+
+      data[ele.id] = ele
    })
 
-   city_list.forEach(ele=>{
+   city_list.forEach(ele => {
 
-      console.log(ele.id,ele.city_name," == ",data[ele.id]?data[ele.id].id:'no id',data[ele.id]?data[ele.id].city:"")
-      data2[ele.id]=ele
+      console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
+      data2[ele.id] = ele
    })
-  
+
    setTimeout(() => {
       setShowMap(() => true);
    }, 200)
@@ -49,72 +49,79 @@ function Contactdetail() {
       <div>
          <section className="contactdetail">
             <div className="container mainwrapquick m01">
-            <div className="row quicklinkswrap mb-5">
-                        <div className="col-md-12">
-                        <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
-                        <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
-                            <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
-                            <div className="table-responsive">
-                            <table className="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th className="text-uppercase pb-5">Details of</th>
-                                        <th width="200" className="text-uppercase pb-5">Contact Person</th>
-                                        <th className="text-uppercase text-left pb-5">Address</th>
-                                        <th width="150" className="text-uppercase text-left pb-5">Contact No.</th>
-                                        <th className="text-uppercase text-left pb-5">Email Id</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td >Customer care</td>
-                                        <td>Shwetha S. Gupta</td>
-                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                        <td className="text-left">022-69092489</td>
-                                        <td className="text-left">customercare@choiceindia.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Head of Customer care</td>
-                                        <td>Swetha Devadiga</td>
-                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                        <td className="text-left">022-69092483</td>
-                                        <td className="text-left">swetha.devadiga@choiceindia.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Compliance Officer</td>
-                                        <td>Swati Matkar</td>
-                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                        <td className="text-left">022-6707 9999</td>
-                                        <td className="text-left">compliance@choiceindia.com</td>
-                                    </tr>
-                                    <tr>
-                                        <td>CEO/Director</td>
-                                        <td>Ajay Kejriwal</td>
-                                        <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                        <td className="text-left">022-6707 9999</td>
-                                        <td className="text-left">compliance@choiceindia.com</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                           
-                            </div>
-                           
-                        </div>
-                    </div>
-                    <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI at <a href="https://scores.gov.in/scores/Welcome.html" target="_blank">scores.gov.in/scores/Welcome.html</a> or Exchange at <a href="https://investorhelpline.nseindia.com/NICEPLUS/"  target="_blank">investorhelpline.nseindia.com/NICEPLUS/</a>. Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
-              <br></br>
+               <div className="row quicklinkswrap mb-5">
+                  <div className="col-md-12">
+                     <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
+                     <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
+                     <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
+                     <div className="table-responsive">
+                        <table className="table table-striped">
+                           <thead>
+                              <tr>
+                                 <th className="text-uppercase pb-5">Details of</th>
+                                 <th width="200" className="text-uppercase pb-5">Contact Person</th>
+                                 <th className="text-uppercase text-left pb-5">Address</th>
+                                 <th width="150" className="text-uppercase text-left pb-5">Contact No.</th>
+                                 <th className="text-uppercase text-left pb-5">Email Id</th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <td >Customer care</td>
+                                 <td>Shwetha S. Gupta</td>
+                                 <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                 <td className="text-left">022-69092489</td>
+                                 <td className="text-left">customercare@choiceindia.com</td>
+                              </tr>
+                              <tr>
+                                 <td>Head of Customer care</td>
+                                 <td>Swetha Devadiga</td>
+                                 <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                 <td className="text-left">022-69092483</td>
+                                 <td className="text-left">swetha.devadiga@choiceindia.com</td>
+                              </tr>
+                              <tr>
+                                 <td>Compliance Officer</td>
+                                 <td>Swati Matkar</td>
+                                 <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                 <td className="text-left">022-6707 9999</td>
+                                 <td className="text-left">compliance@choiceindia.com</td>
+                              </tr>
+                              <tr>
+                                 <td>CEO/Director</td>
+                                 <td>Ajay Kejriwal</td>
+                                 <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
+                                 <td className="text-left">022-6707 9999</td>
+                                 <td className="text-left">compliance@choiceindia.com</td>
+                              </tr>
+                           </tbody>
+                        </table>
+
+                     </div>
+
+                  </div>
+               </div>
+               <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
+                   &nbsp;https://scores.gov.in/scores/Welcome.html or Exchange /DP at:<br/>
+                  BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE:https://investorhelpline.nseindia.com/NICEPLUS/ <br/>
+                  MCX: https://www.mcxindia.com/Investor-Services | NCDEX:https://ncdex.com/investor_complaint <br/>
+                  CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br/><br/>
+                  (Working hours of each escalation level- Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)
+                  <br/><br/>
+                  Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
+               <br></br>
                <div className="row gap-5">
                   <div className="col-md-5">
                      <div>
-                               <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'}/>
+                        <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
                         {/* <img src={pin} alt="Loading" /> */}
                         <p className="mt-3 maintitle">The Office </p>
-                        <p className="subtext">Choice International Limited,<br/> Sunil Patodia Tower, J.B. Nagar, Andheri (East),<br/> Mumbai 400099</p>
+                        <p className="subtext">Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar, Andheri (East),<br /> Mumbai 400099</p>
                      </div>
                   </div>
                   <div className="col-md-4">
                      <div className="">
-                               <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
+                        <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-3 maintitle">Business Hours</p>
                         <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm <br />
@@ -145,9 +152,9 @@ function Contactdetail() {
                               city_list.map((item, i) => {
 
                                  return (
-                                  
-                                          <option key={item.id} value={item.id}>{item && item.city_name ? item.city_name.toUpperCase() : 'NA'}</option>
-                                    
+
+                                    <option key={item.id} value={item.id}>{item && item.city_name ? item.city_name.toUpperCase() : 'NA'}</option>
+
                                  )
                               })
                            }
@@ -161,7 +168,7 @@ function Contactdetail() {
                            {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
                            <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
-                             J B Nagar, Andheri East, Mumbai, Maharashtra 400099
+                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
                         </div> :
                         <div className="text-right address" key={data[MapNumber].id}>
@@ -183,7 +190,7 @@ function Contactdetail() {
                      <div className='row'>
                         <div className='map '>
                            <div>
-                              <iframe  className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                         </div>
                      </div>
                   </div> :
@@ -191,13 +198,13 @@ function Contactdetail() {
                      <div className='row'>
                         {
                            data[MapNumber].mapSrc === "" ?
-                           <div></div>:
-                           <div className='map '>
-                           <div>
-                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
-                        </div>
+                              <div></div> :
+                              <div className='map '>
+                                 <div>
+                                    <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                              </div>
                         }
-                        
+
                      </div>
                   </div> : ''
             }
