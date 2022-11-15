@@ -24,7 +24,7 @@ function BestStockOpenDematAccount() {
                 <input type="checkbox" className="form_check" />
                 <label className="form_check_text">I agree that I have read and  accept<br /> the <a href="/"><span className="link_tc">Terms and Conditions</span></a></label>
               </div>
-              <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div>
+              <button type="submit" className=" OPt_item sub_group btnsub"><span className="send_OPT_btn" >Send OTP</span></button>
             </div>
           </div>
         </section>

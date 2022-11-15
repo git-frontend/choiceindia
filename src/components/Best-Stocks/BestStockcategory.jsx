@@ -883,7 +883,7 @@ function BestStockcategory() {
                 </div>
               </div>
             </section>
-            <OpenDemateAccountStickyFooter/>
+            <BestStockOpenDematAccount/>
             <section className="readmoresection">
               <div className="container">
                 {
