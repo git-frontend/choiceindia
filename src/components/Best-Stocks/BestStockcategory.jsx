@@ -21,6 +21,8 @@ import {
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 function BestStockcategory() {
+  let tokenList = [{}]
+  let tokens="";
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
   const [list1, setlist1] = useState();
@@ -43,7 +45,7 @@ function BestStockcategory() {
    * Generate Session Id
    */
   function generateSessionId() {
-    setShowLoader(true)
+    
     let api = new API_URLS()
     fetch(api.getSessionUrl())
       .then(response => {
@@ -52,7 +54,6 @@ function BestStockcategory() {
       .then(res => {
         if (res.Status == 'Success') {
           IntraStocks(res.Response);
-          // console.log(res.Response)
           setData1(res.Response);
 
 
@@ -65,14 +66,11 @@ function BestStockcategory() {
       })
 
   }
-  function multipletokens(session) {
-    console.log("GGGG", list3)
-
-
-  };
-
-
+  
   function AllStocks() {
+    setlist([]);
+    tokens='';
+    tokenList=[];
     setShowLoader(true)
     let request = {
 
@@ -98,22 +96,54 @@ function BestStockcategory() {
       res => {
         if (res) {
           setShowLoader(false)
-          setlist1(res.response.research);
-          // console.log("called", res.response.research);
+          setlist(res.response.research);
 
-        } else {
-
-          setlist1([]);
+          res.response.research.forEach(ele => {
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            console.log("check",tokenList);
+            
+           
+        });
+        for (let i = 1; i < tokenList.length; i++) {
+           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
+            
+          
+        }
+        console.log("SegmentId",tokens);
+        // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+        const payload = {
+          'UserId': 'guest',
+          'SessionId': Data1,
+          'MultipleTokens': tokens
         }
 
+        rest.multipleTokensURLData(payload).then(
+          res => {
+            if (res) {
+             
+              console.log("called mutiple", res);
+    
+            }
+          })
+
+
+          
+          
 
       }
-    ).catch((error) => {
+    })
+    // )
+    .catch((error) => {
       setShowLoader(false)
-      setlist1([]);
+      setlist([]);
     });
-  };
+  }
+
+
   function LongTermStocks() {
+    setlist([]);
+    tokens='';
+    tokenList=[];
     setShowLoader(true)
     let request = {
 
@@ -139,24 +169,53 @@ function BestStockcategory() {
       res => {
         if (res) {
           setShowLoader(false)
-          setlist2(res.response.research);
-          // console.log("long term api called", res.response.research);
+          setlist(res.response.research);
 
-        } else {
-
-          setlist2([]);
+          res.response.research.forEach(ele => {
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            console.log("check",tokenList);
+            
+           
+        });
+        for (let i = 1; i < tokenList.length; i++) {
+           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
+            
+          
+        }
+        console.log("SegmentId",tokens);
+        // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+        const payload = {
+          'UserId': 'guest',
+          'SessionId': Data1,
+          'MultipleTokens': tokens
         }
 
+        rest.multipleTokensURLData(payload).then(
+          res => {
+            if (res) {
+             
+              console.log("called mutiple", res);
+    
+            }
+          })
+
+
+          
+          
 
       }
-    ).catch((error) => {
+    })
+    // )
+    .catch((error) => {
       setShowLoader(false)
-      setlist2([]);
+      setlist([]);
     });
-  };
+  }
 
   function ShortTermStocks() {
-    console.log("data23", Data1);
+    setlist([]);
+    tokens='';
+    tokenList=[];
     setShowLoader(true)
     let request = {
 
@@ -180,30 +239,56 @@ function BestStockcategory() {
       res => {
         setShowLoader(false)
         if (res) {
+          console.log("checkdd",res.response.research);
 
-          setlist3(res.response.research);
-          multipletokens(Data1);
-          // console.log("check api", res.response.research);
+          setlist(res.response.research);
 
-
-
-        } else {
-
-          setlist3([]);
+          res.response.research.forEach(ele => {
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+            console.log("check",tokenList);
+            
+           
+        });
+        for (let i = 1; i < tokenList.length; i++) {
+           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
+            
+          
+        }
+        console.log("SegmentId",tokens);
+        // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+        const payload = {
+          'UserId': 'guest',
+          'SessionId': Data1,
+          'MultipleTokens': tokens
         }
 
+        rest.multipleTokensURLData(payload).then(
+          res => {
+            if (res) {
+             
+              console.log("called mutiple", res);
+    
+            }
+          })
+
+
+          
+          
 
       }
-    ).catch((error) => {
+    })
+    // )
+    .catch((error) => {
       setShowLoader(false)
-      setlist3([]);
+      setlist([]);
     });
   }
 
 
 
 
-  let IntraStocks = (session) => {
+  function IntraStocks (session){
+    
     setShowLoader(true)
     let request = {
       "Count": 10,
@@ -220,18 +305,44 @@ function BestStockcategory() {
       res => {
         setShowLoader(false)
         if (res) {
-
           setlist(res.Response.Data);
-
-          // console.log("check api", res.Response.Data);
-
-        } else {
-
-          setlist([]);
+          
+          res.Response.Data.forEach(ele => {
+            tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok })
+            console.log("check",tokenList);
+            
+           
+        });
+        for (let i = 1; i < tokenList.length; i++) {
+           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
+            
+          
+        }
+        console.log("SegmentId",tokens);
+        // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+        const payload = {
+          'UserId': 'guest',
+          'SessionId': session,
+          'MultipleTokens': tokens
         }
 
+        rest.multipleTokensURLData(payload).then(
+          res => {
+            if (res) {
+             
+              console.log("called mutiple", res);
+    
+            }
+          })
+
+
+          
+          
+
       }
-    ).catch((error) => {
+    })
+    // )
+    .catch((error) => {
       setShowLoader(false)
       setlist([]);
     });
@@ -255,10 +366,11 @@ function BestStockcategory() {
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
 
       generateSessionId();
-      // IntraStocks();
+      
       // multipletokens();
     }
   }, [rendercount])
+
 
   function redirectLink() {
     window.open("https://finx.choiceindia.com/market/latest-ipo-list");
