@@ -102,7 +102,7 @@ body{
                 @media (max-width: $sm) {
                     min-height: 24rem;
                 }
-                @media (min-width: 768px) and (max-width:820px) {
+                @media (min-width: 768px) and (max-width:$md) {
                     min-height: 25rem;
                 }
                 .mf-sm-img{
