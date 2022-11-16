@@ -84,15 +84,18 @@ function Contactdetail() {
                                  <td>Compliance Officer</td>
                                  <td>Swati Matkar</td>
                                  <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                 <td className="text-left">022-6707 9999</td>
-                                 <td className="text-left">compliance@choiceindia.com</td>
+                                 <td className="text-left">022-6707 9999
+                                    -Ext. 896</td>
+                                 <td className="text-left">Compliance@choiceindia.com</td>
                               </tr>
                               <tr>
                                  <td>CEO/Director</td>
                                  <td>Ajay Kejriwal</td>
                                  <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                 <td className="text-left">022-6707 9999</td>
-                                 <td className="text-left">compliance@choiceindia.com</td>
+                                 <td className="text-left">022-6707 9999
+                                    -
+                                    Ext. 851</td>
+                                 <td className="text-left">ea.ajay@choiceindia.com</td>
                               </tr>
                            </tbody>
                         </table>
@@ -102,12 +105,12 @@ function Contactdetail() {
                   </div>
                </div>
                <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
-                  https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br/>
-                  BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br/>
-                  MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br/>
-                  CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br/><br/>
+                  https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br /><br />
+                  BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br />
+                  MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br />
+                  CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
                   (Working hours of each escalation level- Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)
-                  <br/><br/>
+                  <br /><br />
                   Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
                <br></br>
                <div className="row gap-5">
