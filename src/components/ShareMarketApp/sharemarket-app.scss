@@ -41,3 +41,14 @@
     
 }
 }
+.App-main {
+    .app-strategies-bottom 
+    {
+    .content-listres{
+        @media (max-width:$md) {
+			margin-left: 0;
+            padding-left: 0;
+		}
+        }
+    }
+}
