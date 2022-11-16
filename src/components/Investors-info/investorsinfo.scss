@@ -230,7 +230,7 @@ body{
 .Investormenu {
     padding: 2rem 0 9.125rem;
     position: relative;
-
+    
     &:after {
         content: '';
         position: absolute;
@@ -594,3 +594,12 @@ body{
     display: flex;
     padding: 0px;
 }
+
+.investorinfo{
+    .Investormenu{
+        .menu{
+           position: relative;
+        }
+    }
+}
+

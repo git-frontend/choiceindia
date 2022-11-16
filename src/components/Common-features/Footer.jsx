@@ -63,7 +63,7 @@ function Footer() {
                   </div>
                   <div className="top-sec-quick-links">
                     <div className="row">
-                      <div className="col-md-8">
+                      <div className="col-md-12 col-lg-8">
                         <div className="quick-links-list">
                           <ul className="reset">
                             <li>
@@ -149,7 +149,7 @@ function Footer() {
                           </ul>
                         </div>
                       </div>
-                      <div className="col-md-4">
+                      <div className="col-md-12 col-lg-4">
                         <div className="footer-cont-details">
                           <p>Choice International Limited , Sunil Patodia Tower, <br /> J B Nagar, Andheri(East), <br />Mumbai 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
                           <p>Monday - Friday : 08:30 am - 7:00 pm <br />
