@@ -870,6 +870,9 @@
                 color: $primary;
                 margin-bottom: 1rem;
                 font-family: $font-family-poppins-bold;
+                @media (max-width: $sm) {
+                    margin-bottom: 0;
+                }
                 .mb-br{
                     @media (max-width: 485px) {
                         display: block;
