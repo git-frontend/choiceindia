@@ -1,0 +1,54 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+.trading-app-sec1{
+    .sec1-left{
+        .share-text h1{
+            line-height: 5rem;
+            @media (max-width:$md) {
+                font-size: 2.5rem;
+                line-height: 4rem;
+            }
+            .mb-br{
+                @media  (max-width:$sm) {
+                    display:inline;
+                 }
+            }
+        }
+    .share-slider{
+        position: absolute;
+        left: 218px;
+        top: 194px;
+        @media (max-width:$md) {
+            left: 125px;
+            top: 113px;
+        }
+        @media (max-width:$sm) {
+            left: inherit;
+            top: inherit;
+            position: relative;
+        }
+        .slick-slide{
+        h4{
+            @media  (max-width:$sm) {
+               padding-left: 0;
+            } 
+        }
+    }
+
+    }
+
+    
+}
+}
+.App-main {
+    .app-strategies-bottom 
+    {
+    .content-listres{
+        @media (max-width:$md) {
+			margin-left: 0;
+            padding-left: 0;
+		}
+        }
+    }
+}
