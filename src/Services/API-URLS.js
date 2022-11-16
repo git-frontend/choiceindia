@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -34,7 +34,7 @@ const config = {
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
     liveperformanceURL: "https://finx.choiceindia.com/api/",
-    UATperformanceURL: "https://uat.jiffy.in/api",
+    UATperformanceURL: "https://uat.jiffy.in/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
 }
