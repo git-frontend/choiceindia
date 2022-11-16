@@ -11,6 +11,7 @@ import "../Remisier/Remisier.scss";
 import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter"; 
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
+import noDataimg from '../../assets/images/no-data.webp';
 
 
 
@@ -39,11 +40,12 @@ function BestStockcategory() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-
+function urlLink(){
   const queryParam = window.location.search;
   const utmvalue = new URLSearchParams(queryParam);
   const activeurl = utmvalue.get('active');
-
+  ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
+}
   
   /**
    * Generate Session Id
@@ -133,7 +135,7 @@ function BestStockcategory() {
                 // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
                 for(let i=0;i<storefile.length;i++){
                  
-                  if(storefile[i].token ==ele.Tok){
+                  if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
                   }else{
@@ -219,7 +221,7 @@ function BestStockcategory() {
                 // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
                 for(let i=0;i<storefile.length;i++){
                  
-                  if(storefile[i].token ==ele.Tok){
+                  if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
                   }else{
@@ -244,6 +246,8 @@ function BestStockcategory() {
   }
 
   function ShortTermStocks() {
+    setToggleState(2)
+    console.log("change",toggleState)
     setlist([]);
     tokens='';
     tokenList=[];
@@ -306,7 +310,7 @@ function BestStockcategory() {
                 // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
                 for(let i=0;i<storefile.length;i++){
                  
-                  if(storefile[i].token ==ele.Tok){
+                  if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
                   }else{
@@ -383,7 +387,7 @@ function BestStockcategory() {
               // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
               for(let i=0;i<storefile.length;i++){
                
-                if(storefile[i].Tok ==ele.Tok){
+                if(storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg){
                   AllFilesValue = Object.assign(storefile[i],ele);
                   multiValue.push(AllFilesValue)
                 }else{
@@ -440,7 +444,8 @@ function BestStockcategory() {
 
   function changeurl(id) {
     window.history.replaceState(null, null, `/best-stocks?active=${id}`);
-    ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
+    urlLink();
+  
   }
 
 
@@ -487,6 +492,10 @@ function BestStockcategory() {
                           <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                           </div>
                       </div>:
+                      <div>
+                        {
+                          list.length ?
+
                           <div className="row gx-5">
                             {
                               (list || []).slice(1, 5).map((response, index) => {
@@ -540,6 +549,12 @@ function BestStockcategory() {
                                 )
                               })
                             }
+                          </div>:
+                          <div className="text-center">
+                          <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                        </div>
+                        }
+                          
                           </div>
                            }
                           </div> :
@@ -553,6 +568,9 @@ function BestStockcategory() {
                           <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                           </div>
                       </div>:
+                      <div>
+                      {
+                        list.length ?
                             <div className="row gx-5">
                               {
                                 (list || []).slice(1, 5).map((response, index) => {
@@ -612,7 +630,14 @@ function BestStockcategory() {
                                   )
                                 })
                               }
-                            </div> 
+                            </div>
+                             :
+                             <div className="text-center">
+                             <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                           </div>
+                           }
+                             
+                             </div>
 }
                             </div>:
                             toggleState === 2 ?
@@ -625,6 +650,9 @@ function BestStockcategory() {
                           <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                           </div>
                       </div>:
+                      <div>
+                      {
+                        list.length ?
                               <div className="row gx-5">
                                 {
                                   (list || []).slice(1, 5).map((response, index) => {
@@ -679,6 +707,13 @@ function BestStockcategory() {
                                   })
                                 }
                               </div>
+                              :
+                              <div className="text-center">
+                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div>
+                            }
+                              
+                              </div>
 }
                               </div>
 
@@ -694,6 +729,9 @@ function BestStockcategory() {
                           <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
                           </div>
                       </div>:
+                      <div>
+                      {
+                        list.length ?
                                 <div className="row gx-5">
                                   {
                                     (list || []).slice(1, 5).map((response, index) => {
@@ -747,6 +785,13 @@ function BestStockcategory() {
                                     })
                                   }
                                 </div>
+                                  :
+                                  <div className="text-center">
+                                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>
+                                }
+                                  
+                                  </div>
 } 
                                 </div>:
                                 ""
@@ -869,7 +914,7 @@ function BestStockcategory() {
                                 analysis
                                 <br />
                                 <br />
-                                The feature is an initiative as a solution to the question’ which is the <div onClick={()=>{changeurl('-to-buy')}}> best stock to buy </div> in intraday’
+                                The feature is an initiative as a solution to the question’ which is the <div onClick={()=>{changeurl('-term-stocks-to-buy')}}> ggggggggbest stock to buy </div> in intraday’
                                  as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a 
                                  multi-time frame along with volume criteria.
                                 <br />
