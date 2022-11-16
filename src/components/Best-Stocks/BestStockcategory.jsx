@@ -75,6 +75,7 @@ function urlLink(){
   }
   
   function AllStocks() {
+    setToggleState(0)
     setlist([]);
     storefile='';
     tokens='';
@@ -160,6 +161,7 @@ function urlLink(){
 
 
   function LongTermStocks() {
+    setToggleState(3)
     setlist([]);
     tokens='';
     storefile='';
@@ -335,6 +337,7 @@ function urlLink(){
   }
 
   function IntraStocks (session){
+    setToggleState(1)
     setlist([]);
     tokens='';
     tokenList=[];
@@ -909,12 +912,10 @@ function urlLink(){
                                now to provide the best intraday stocks to buy and sell.
                                 <br />
                                 <br />
-                                Signal, as a feature, was designed  after continuous testing and analyzing for app users with no human 
-                                intervention. Hence, the research calls are completely unbiased and are a projection of complete 
-                                analysis
+                                Signal, as a feature, was designed  after continuous testing and analyzing for app users with no human intervention. Hence, the research calls are completely unbiased and are a projection of complete analysis
                                 <br />
                                 <br />
-                                The feature is an initiative as a solution to the question’ which is the <div onClick={()=>{changeurl('-term-stocks-to-buy')}}> ggggggggbest stock to buy </div> in intraday’
+                                The feature is an initiative as a solution to the question’ which is the <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stock to buy </span> in intraday’
                                  as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a 
                                  multi-time frame along with volume criteria.
                                 <br />
@@ -925,7 +926,7 @@ function urlLink(){
                                 The basket of stocks to buy today for intraday has been well researched by our expert Mr. Kkunal Parar who is also the developer of the feature. Therefore, the recommendations hold a high success ratio. Here, you can get a variety of stock recommendations that are subjective to intraday trades only. 
                                 <br/>
                                 <br/>
-                                For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <a href="/"> Open a free demat account  </a> with us to get the best intraday stocks to buy today in India.
+                                For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
 
                               </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                           </div>
@@ -964,10 +965,10 @@ function urlLink(){
                               With C-Quant you can  get access to short term trading ideas having a quantitative edge and receive live
                               recommendations here for best stocks to buy for short-term trades that shall enhance  trading/investment
                               experience and thereby, fulfil the requirement as per your trading style. You can also view the bundle of  
-                              <div onClick={()=>changeurl('-term-stocks-to-buy')}> best stocks to buy </div> today in the ‘All Stocks’ section.
+                              <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stocks to buy </span> today in the ‘All Stocks’ section.
                               <br />
                               <br />
-                              Open your <a href="/">free demat account</a> with Choice and get the best stocks to buy today in India for a short term time horizon.
+                              Open your <Link to='/open-free-demat-account'>free demat account</Link> with Choice and get the best stocks to buy today in India for a short term time horizon.
 
 
                             </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
@@ -991,7 +992,7 @@ function urlLink(){
                                     The end-to-end solutions as a service provider, the organisations Research section works day-in and day-out to put together the right research methodology to bridge the gap from being just a broking house to gauging maximum exposure on research recommendations.
                                     <br />
                                     <br />
-                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <a href="/"> best stocks to buy today </a> in India for long term investment.
+                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stocks to buy today </span> in India for long term investment.
 
                                   </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                               </div>
