@@ -19,6 +19,10 @@
         position: absolute;
         left: 218px;
         top: 194px;
+        @media (min-width:$md) and (max-width:1280px) {
+            left: 190px;
+            top: 167px;
+        }
         @media (max-width:$md) {
             left: 125px;
             top: 113px;
