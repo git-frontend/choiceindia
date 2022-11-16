@@ -234,8 +234,9 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }
             openAccountService.OTPOnCall(request,type2).then((res) => {
                 hideLoader('OTPOnCallLoader');
-                setCount(30);
+                // setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    setCount(30);
                     otpID.current = res.data.Body.session_id;
                     handleOTPResendSuccessToaster('call');
                 } else {
@@ -243,7 +244,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 }
             }).catch((error) => {
                 hideLoader('OTPOnCallLoader');
-                setCount(30);
+                // setCount(30);
                 if (error && error.response && error.response.data && error.response.data.Message) {
                     setOTPErrors(error.response.data.Message);
                 } else {
