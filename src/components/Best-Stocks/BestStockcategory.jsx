@@ -12,23 +12,21 @@ import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter"; 
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
-
-
-
-
-
-
+import  { useRef } from 'react';
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 function BestStockcategory() {
+  const scrollToRef = useRef();
   let tokenList = [{}]
   let multiValue = [{}]
   let AllFilesValue = {};
   let tokens="";
   let storefile;
+ 
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
   const [Data1, setData1] = useState();
@@ -40,6 +38,17 @@ function BestStockcategory() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+  function chapterScroll(id) {
+    console.log("called",id)
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 function urlLink(){
   const queryParam = window.location.search;
   const utmvalue = new URLSearchParams(queryParam);
@@ -466,9 +475,9 @@ function urlLink(){
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                     <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
-                  <div className="col-xl-8 col-md-12">
+                  <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
-                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { AllStocks(); toggleTab(0) }}>All Stocks</li>
+                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { scrollToRef.current.scrollIntoView(AllStocks()); toggleTab(0) }}>All Stocks</li>
                       <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2)}}>Short Term Stocks</li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3); }}>Long Term Stocks</li>
@@ -481,249 +490,10 @@ function urlLink(){
 
             <section className="main">
               <div className="container">
-                <div className="content-tabs best-stock-tabs-cont active-content">
+                <div ref={scrollToRef} className="content-tabs best-stock-tabs-cont active-content">
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
-                      {
-                        toggleState === 0 ?
-                        <div>
-                          {showLoader?
-                          
-                          <div className="text-center">
-                        <div>
-                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
-                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
-                          </div>
-                      </div>:
-                      <div>
-                        {
-                          list.length ?
-
-                          <div className="row gx-5">
-                            {
-                              (list || []).slice(1, 5).map((response, index) => {
-
-                                return (
-
-
-                                  <div className="col-md-6" key={index}>
-                                    <div className="main-left">
-
-                                      <div className="top-section" >
-                                        <div className="top-left">
-                                          <h6 className="top-text">Reco Date</h6>
-                                          <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
-                                        </div>
-                                        <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
-                                      </div>
-                                      <div className="middle-section">
-                                        <div className="middle-left">
-                                          <h4 className="big-text">{response.scrip_name}</h4>
-                                          <span className="small-text">{response.scrip_sec_desc}</span>
-                                        </div>
-                                        <div className="middle-right">
-                                        <span className="right-big-text">{response.LTP}</span>
-                                          <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
-                                        </div>
-                                      </div>
-
-                                      <div className="bottom-section">
-                                        <div className="d-flex justify-content-between pt-3">
-                                          <div className="bottom">
-                                            <h6 className="bottom_small_text">Entry Price</h6>
-                                            <h4 className="bottom_big_text">{(parseFloat((response.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-
-
-
-                                          </div>
-                                          <div className="bottom">
-                                            <h6 className="bottom_small_text">Potential Price</h6>
-                                            <h4 className="bottom_big_text" >{(parseFloat((response.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                          </div>
-                                          <div className="bottom">
-                                            <h6 className="bottom_small_text">Exp. Returns</h6>
-                                            <h4 className="bottom_big_text">7.16%</h4>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-
-                                )
-                              })
-                            }
-                          </div>:
-                          <div className="text-center">
-                          <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                        </div>
-                        }
-                          
-                          </div>
-                           }
-                          </div> :
-                          toggleState === 1 ?
-                          <div>
-                             {showLoader?
-                          
-                          <div className="text-center">
-                        <div>
-                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
-                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
-                          </div>
-                      </div>:
-                      <div>
-                      {
-                        list.length ?
-                            <div className="row gx-5">
-                              {
-                                (list || []).slice(1, 5).map((response, index) => {
-
-                                  return (
-
-
-                                    <div className="col-md-6" key={index}>
-                                      <div className="main-left">
-
-                                        <div className="top-section" >
-                                          <div className="top-left">
-                                            <h6 className="top-text">Reco Date</h6>
-                                            <h6 className="top-date">{utils.formatDate(new Date(response.ATime), "dd MMMM , yyyy")}</h6>
-                                          </div>
-                                          <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>
-                                        </div>
-                                        <div className="middle-section">
-                                          <div className="middle-left">
-                                            <h4 className="big-text">{response.Sym}</h4>
-                                            <span className="small-text">{response.Name}</span>
-                                          </div>
-                                          <div className="middle-right">
-                                          <span className="right-big-text">{response.LTP}</span>
-                                          <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
-                                          </div>
-                                        </div>
-
-                                        <div className="bottom-section">
-                                          <div className="d-flex justify-content-between pt-3">
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">Stop Loss</h6>
-                                              <h4 className="bottom_big_text">{((response.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">Entry Price</h6>
-                                              <h4 className="bottom_big_text">{((response.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                              {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text"> Target Price </h6>
-                                              <h4 className="bottom_big_text" >{((response.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">2nd Target</h6>
-                                              <h4 className="bottom_big_text">{((response.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                            </div>
-                                            <div className="bottom">
-                                              <h6 className="bottom_small_text">3rd Target</h6>
-                                              <h4 className="bottom_big_text">-</h4>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-
-                                  )
-                                })
-                              }
-                            </div>
-                             :
-                             <div className="text-center">
-                             <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                           </div>
-                           }
-                             
-                             </div>
-}
-                            </div>:
-                            toggleState === 2 ?
-                            <div>
-                               {showLoader?
-                          
-                          <div className="text-center">
-                        <div>
-                          {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
-                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
-                          </div>
-                      </div>:
-                      <div>
-                      {
-                        list.length ?
-                              <div className="row gx-5">
-                                {
-                                  (list || []).slice(1, 5).map((response, index) => {
-
-                                    return (
-
-
-                                      <div className="col-md-6" key={index}>
-                                        <div className="main-left">
-
-                                          <div className="top-section" >
-                                            <div className="top-left">
-                                              <h6 className="top-text">Reco Date</h6>
-                                              <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6>
-                                            </div>
-                                            <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
-                                          </div>
-                                          <div className="middle-section">
-                                            <div className="middle-left">
-                                              <h4 className="big-text">{response.scrip_symbol}</h4>
-                                              <span className="small-text">{response.scrip_sec_desc}</span>
-                                            </div>
-                                            <div className="middle-right">
-                                            <span className="right-big-text">{response.LTP}</span>
-                                            <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
-                                            </div>
-                                          </div>
-
-                                          <div className="bottom-section">
-                                            <div className="d-flex justify-content-between pt-3">
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text">Stop Loss</h6>
-                                                <h4 className="bottom_big_text" >{parseFloat((response.datapoints||[])[2].value).toFixed(2)}</h4>
-                                              </div>
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text">Entry Price</h6>
-                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
-                                              </div>
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text"> Target Price </h6>
-                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[1].value).toFixed(2)}</h4>
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-
-
-
-
-                                    )
-                                  })
-                                }
-                              </div>
-                              :
-                              <div className="text-center">
-                              <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                            </div>
-                            }
-                              
-                              </div>
-}
-                              </div>
-
-                              :
-
-                              toggleState === 3 ?
-                              <div>
+                    <div>
                                  {showLoader?
                           
                           <div className="text-center">
@@ -751,7 +521,12 @@ function urlLink(){
                                                 <h6 className="top-text">Reco Date</h6>
                                                 <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
                                               </div>
-                                              <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
+                                              {
+                                                toggleState == 1?
+                                                <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>:
+                                                <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
+                                              }
+                                              
                                             </div>
                                             <div className="middle-section">
                                               <div className="middle-left">
@@ -763,23 +538,73 @@ function urlLink(){
                                               <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                               </div>
                                             </div>
-
-                                            <div className="bottom-section">
-                                              <div className="d-flex justify-content-between pt-3">
-                                                <div className="bottom">
-                                                  <h6 className="bottom_small_text">Entry Price</h6>
-                                                  <h4 className="bottom_big_text">{(parseFloat((response.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                </div>
-                                                <div className="bottom">
-                                                  <h6 className="bottom_small_text">Potential Price</h6>
-                                                  <h4 className="bottom_big_text" >{(parseFloat((response.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                                </div>
-                                                <div className="bottom">
-                                                  <h6 className="bottom_small_text">Exp. Returns</h6>
-                                                  <h4 className="bottom_big_text">{utils.formatDate(new Date(response.report_expiry), "dd MMM , yyyy")}</h4>
-                                                </div>
+                                            {
+                                              toggleState == 1 ?
+                                              <div className="bottom-section">
+                                          <div className="d-flex justify-content-between pt-3">
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Stop Loss</h6>
+                                              <h4 className="bottom_big_text">{((response.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">Entry Price</h6>
+                                              <h4 className="bottom_big_text">{((response.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text"> Target Price </h6>
+                                              <h4 className="bottom_big_text" >{((response.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">2nd Target</h6>
+                                              <h4 className="bottom_big_text">{((response.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">3rd Target</h6>
+                                              <h4 className="bottom_big_text">-</h4>
+                                            </div>
+                                          </div>
+                                        </div>:
+                                        toggleState ==2 ?
+                                        <div className="bottom-section">
+                                            <div className="d-flex justify-content-between pt-3">
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">Stop Loss</h6>
+                                                <h4 className="bottom_big_text" >{parseFloat((response.datapoints||[])[2].value).toFixed(2)}</h4>
+                                              </div>
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">Entry Price</h6>
+                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
+                                              </div>
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text"> Target Price </h6>
+                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[1].value).toFixed(2)}</h4>
                                               </div>
                                             </div>
+                                          </div>:
+                                           <div className="bottom-section">
+                                           <div className="d-flex justify-content-between pt-3">
+                                             <div className="bottom">
+                                               <h6 className="bottom_small_text">Entry Price</h6>
+                                               <h4 className="bottom_big_text">{(parseFloat((response.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                             </div>
+                                             <div className="bottom">
+                                               <h6 className="bottom_small_text">Potential Price</h6>
+                                               <h4 className="bottom_big_text" >{(parseFloat((response.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                             </div>
+                                             <div className="bottom">
+                                               <h6 className="bottom_small_text">Exp. Returns</h6>
+                                               <h4 className="bottom_big_text">{utils.formatDate(new Date(response.report_expiry), "dd MMM , yyyy")}</h4>
+                                             </div>
+                                           </div>
+                                         </div>
+
+
+
+                                            }
+
+                                           
+
                                           </div>
                                         </div>
 
@@ -796,11 +621,7 @@ function urlLink(){
                                   
                                   </div>
 } 
-                                </div>:
-                                ""
-                      }
-
-
+                                </div>
 
                     </div>
                   </div>
@@ -915,7 +736,7 @@ function urlLink(){
                                 Signal, as a feature, was designed  after continuous testing and analyzing for app users with no human intervention. Hence, the research calls are completely unbiased and are a projection of complete analysis
                                 <br />
                                 <br />
-                                The feature is an initiative as a solution to the question’ which is the <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stock to buy </span> in intraday’
+                                The feature is an initiative as a solution to the question’ which is the <span className="urllinks" onClick={()=>{changeurl('-to-buy');chapterScroll('best-stock')}}> best stock to buy </span> in intraday’
                                  as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a 
                                  multi-time frame along with volume criteria.
                                 <br />
@@ -965,7 +786,7 @@ function urlLink(){
                               With C-Quant you can  get access to short term trading ideas having a quantitative edge and receive live
                               recommendations here for best stocks to buy for short-term trades that shall enhance  trading/investment
                               experience and thereby, fulfil the requirement as per your trading style. You can also view the bundle of  
-                              <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stocks to buy </span> today in the ‘All Stocks’ section.
+                              <span className="urllinks" onClick={()=>{changeurl('-to-buy');chapterScroll('best-stock')}}> best stocks to buy </span> today in the ‘All Stocks’ section.
                               <br />
                               <br />
                               Open your <Link to='/open-free-demat-account'>free demat account</Link> with Choice and get the best stocks to buy today in India for a short term time horizon.
@@ -992,7 +813,7 @@ function urlLink(){
                                     The end-to-end solutions as a service provider, the organisations Research section works day-in and day-out to put together the right research methodology to bridge the gap from being just a broking house to gauging maximum exposure on research recommendations.
                                     <br />
                                     <br />
-                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <span className="urllinks" onClick={()=>changeurl('-to-buy')}> best stocks to buy today </span> in India for long term investment.
+                                    In order to reap the benefits, be ready with your demat and trading account at Choice and start getting the <span className="urllinks" onClick={()=>{changeurl('-to-buy');chapterScroll('best-stock')}}> best stocks to buy today </span> in India for long term investment.
 
                                   </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                               </div>
@@ -1025,14 +846,14 @@ function urlLink(){
                                    Intraday is a part of our Signal feature in the ‘Research’ Section. Signal,  an Automated Research Engine that provides
                                    research advisory with customised strategies for all types of Traders
                                    with a multi time frame breakout strategy based on the pattern breakout without any human intervention.
-                                   Subscribe and get the  <span className="urllinks" onClick={()=>changeurl('-intraday-stocks-to-buy')}>best intraday stocks to buy today.</span>
+                                   Subscribe and get the  <span className="urllinks" onClick={()=>{changeurl('-intraday-stocks-to-buy');chapterScroll('best-stock')}}>best intraday stocks to buy today.</span>
                                    <br />
                                    <br />
                                    <h2 className="font-bold">Explore Best Short Term Stocks to Buy Today with C_Quant</h2>
                                    The short-term trades are provided by our C-Quant feature with T+5  short term trading ideas based on
                                    quantitative analysis and statistically tested trading strategy. C_Quant employs quantitative and statistical
                                    techniques to generate trading calls from the top 100 stocks listed on the NSE ranked by market capitalization
-                                   and average daily traded volume. Follow our C_Quant strategies and get the <span className="urllinks" onClick={()=>changeurl('-term-stocks-to-buy')}> best stocks to buy today in India
+                                   and average daily traded volume. Follow our C_Quant strategies and get the <span className="urllinks" onClick={()=>{changeurl('-term-stocks-to-buy');chapterScroll('best-stock')}}> best stocks to buy today in India
                                      for the short term.</span>
                                    <br />
                                    <br />
@@ -1040,7 +861,7 @@ function urlLink(){
                                    If you're looking for the best stocks to buy today in India for the long-term, you are at the right place.
                                    This segment provides you with long-term research calls recommended by our Executive Director -Sumeet Bagadia.
                                    With his expert advice, one can find solutions for long-term financial goals in investing with targets and stop loss in place.
-                                   Open a free demat account with Choice and get the <span className="urllinks" onClick={()=>changeurl('-for-long-term-investment')}> best stocks to buy today in India for long term investment.</span>
+                                   Open a free demat account with Choice and get the <span className="urllinks" onClick={()=>{changeurl('-for-long-term-investment');chapterScroll('best-stock')}}> best stocks to buy today in India for long term investment.</span>
      
                                  </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                              </div>
