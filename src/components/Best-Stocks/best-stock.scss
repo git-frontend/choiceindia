@@ -393,6 +393,7 @@
                 background-color: $yellowColor;
                 color: #231F20;
                 width: 100%;
+                min-width: 25rem;
                 font-family: $font-family-poppins-bold;
                 padding: 0.538rem 0rem;
             }
@@ -413,6 +414,20 @@
         display: none;
         &.active-content{
             display: block;
+        }
+    }
+}
+
+.readmoresection{
+    .para{
+        .read-more-wrap{
+            .read-more-target{
+                .urllinks{
+                    color:#0d6efd;
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
         }
     }
 }
