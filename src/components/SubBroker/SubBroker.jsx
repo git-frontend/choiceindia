@@ -79,7 +79,7 @@ function SubBroker() {
        sitemap3.hreflang = meta_tags[location.pathname.replace('/', "")].href4||'';
         document.head.appendChild(sitemap3);
         let sitemap4 = document.createElement('link');
-        sitemap4.rel = 'alternat';
+        sitemap4.rel = 'alternate';
         sitemap4.id = 'link5';
        sitemap4.href = meta_tags[location.pathname.replace('/', "")].link5||'';
        sitemap4.hreflang = meta_tags[location.pathname.replace('/', "")].href5||'';
