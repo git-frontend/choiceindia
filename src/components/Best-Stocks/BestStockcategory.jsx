@@ -18,9 +18,9 @@ import {
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
-const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
+
 function BestStockcategory() {
-  const scrollToRef = useRef();
+  
   let tokenList = [{}]
   let multiValue = [{}]
   let AllFilesValue = {};
@@ -477,7 +477,7 @@ function urlLink(){
                   </div>
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
-                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { scrollToRef.current.scrollIntoView(AllStocks()); toggleTab(0) }}>All Stocks</li>
+                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { AllStocks(); toggleTab(0) }}>All Stocks</li>
                       <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2)}}>Short Term Stocks</li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3); }}>Long Term Stocks</li>
@@ -490,7 +490,7 @@ function urlLink(){
 
             <section className="main">
               <div className="container">
-                <div ref={scrollToRef} className="content-tabs best-stock-tabs-cont active-content">
+                <div  className="content-tabs best-stock-tabs-cont active-content">
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
                     <div>
