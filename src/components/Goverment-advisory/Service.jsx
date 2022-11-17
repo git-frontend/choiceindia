@@ -42,7 +42,9 @@ function Service() {
 
   function chapterScroll(id) {
     console.log("called",id)
-    var element = document.getElementById(id);
+    setTimeout(() => {
+      console.log("called-after",id)
+      var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().bottom;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -50,6 +52,8 @@ function Service() {
       top: offsetPosition,
       behavior: "smooth"
     });
+    }, 200)
+    
   }
 
   const settings = {
