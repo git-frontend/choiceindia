@@ -513,13 +513,21 @@ function urlLink(){
                                       return (
 
 
-                                        <div className="col-md-6" key={index}>
+                                        <div className="col-xl-6" key={index}>
                                           <div className="main-left" >
 
                                             <div className="top-section" >
                                               <div className="top-left">
                                                 <h6 className="top-text">Reco Date</h6>
-                                                <h6 className="top-date">{utils.formatDate(new Date(response.reco_date), "dd MMMM , yyyy")}</h6>
+                                                {
+                                                  toggleState==1?
+                                                  <div>
+                                                  <h6 className="top-date">{utils.formatDate(new Date(response.TATime), "dd MMMM , yyyy")}</h6>
+                                                  </div>:
+                                                  <div>
+                                                  <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6></div>
+                                                }
+                                                
                                               </div>
                                               {
                                                 toggleState == 1?
@@ -528,10 +536,21 @@ function urlLink(){
                                               }
                                               
                                             </div>
+                                            
                                             <div className="middle-section">
                                               <div className="middle-left">
-                                                <h4 className="big-text">{response.scrip_name}</h4>
-                                                <span className="small-text">{response.scrip_sec_desc}</span>
+                                                {
+                                                  toggleState==1?
+                                                  <div>
+                                                  <h4 className="big-text">{response.Sym}</h4>
+                                                  <span className="small-text">{response.Name}</span>
+                                                  </div>:
+                                                  <div> <h4 className="big-text">{response.scrip_name}</h4>
+                                                  <span className="small-text">{response.scrip_sec_desc}</span></div>
+
+
+                                                }
+                                               
                                               </div>
                                               <div className="middle-right">
                                               <span className="right-big-text">{response.LTP}</span>
