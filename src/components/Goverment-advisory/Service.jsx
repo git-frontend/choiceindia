@@ -46,7 +46,7 @@ function Service() {
       console.log("called-after",id)
       var element = document.getElementById(id);
     var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().bottom;
+    var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
     window.scrollTo({
       top: offsetPosition,
@@ -97,7 +97,7 @@ function Service() {
             <div className="col-md-12 ">
               {/* <div className="same-list-bx-list"> */}
               <Slider {...settings} className="same-list-bx-list">
-                <div className="same-list-bx-item active">
+                <div className="same-list-bx-item active" onClick={() => { chapterScroll('thik-advisory')}} >
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -105,7 +105,7 @@ function Service() {
                     <h4 className='title-fourth'>Urban Development</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -113,7 +113,7 @@ function Service() {
                     <h4 className='title-fourth'>Road &amp; Highway</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -122,7 +122,7 @@ function Service() {
                     <h4 className='title-fourth'>Water &amp; Sanitation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -131,7 +131,7 @@ function Service() {
                     <h4 className='title-fourth'>Affordable Housing</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -140,7 +140,7 @@ function Service() {
                       Automation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -149,7 +149,7 @@ function Service() {
                       Building</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -158,7 +158,7 @@ function Service() {
                       Management</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item">
+                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -172,7 +172,7 @@ function Service() {
           </div>
         </div>
 
-        <div className="main-cont-gov-adv">
+        <div className="main-cont-gov-adv" id="thik-advisory">
           <div className="detailsection  cont-itm-active  " >
             <Urbandevelopment />
           </div>
@@ -213,14 +213,14 @@ function Service() {
             <div className="col-md-12">
 
               <div className="wrapper">
-                <div className={"hexagonwrap "+ ((count===0) ? "active":"") } onClick={() => { setcount(0);chapterScroll('Tribalwelfare-scroll')}}>
+                <div className={"hexagonwrap "+ ((count===0) ? "active":"") } onClick={() => { setcount(0);chapterScroll('main-tr')}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorone} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
                   <p className="text">Tribal Welfare</p>
                 </div>
-                <div className={"hexagonwrap "+ ((count===1) ? "active":"") } onClick={() => { setcount(1)}}>
+                <div className={"hexagonwrap "+ ((count===1) ? "active":"") } onClick={() => {chapterScroll('main-tr');setcount(1)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectortwo} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -228,7 +228,7 @@ function Service() {
 
                   <p className="text">Health</p>
                 </div>
-                <div className={"hexagonwrap "+ ((count===2) ? "active":"") } onClick={() => { chapterScroll('AgricultureAllied-scroll'); setcount(2)}}>
+                <div className={"hexagonwrap "+ ((count===2) ? "active":"") } onClick={() => { chapterScroll('main-tr'); setcount(2)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorthree} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -236,7 +236,7 @@ function Service() {
 
                   <p className="text">Agriculture &amp; Allied</p>
                 </div>
-                <div className={"hexagonwrap "+ ((count===3) ? "active":"") } onClick={() => { chapterScroll('Education-scroll'); setcount(3)}}>
+                <div className={"hexagonwrap "+ ((count===3) ? "active":"") } onClick={() => { chapterScroll('main-tr'); setcount(3)}}>
                 {/* <div className="hexagonwrap "> */}
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorfour} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
@@ -245,7 +245,7 @@ function Service() {
                   <p className="text">Education &amp; Skill Development</p>
                 </div>
                 {/* <div className="hexagonwrap"> */}
-                <div className={"hexagonwrap "+ ((count===4) ? "active":"") } onClick={() => { chapterScroll('ItEGovernmance-scroll'); setcount(4)}}>
+                <div className={"hexagonwrap "+ ((count===4) ? "active":"") } onClick={() => { chapterScroll('main-tr'); setcount(4)}}>
                   <div className="hexagonwrap-img">
                     <LazyLoader src={socialsectorfive} className={'img-fluid'} width={'212'} height={'240'} alt={"Tribal Welfare"} />
                   </div>
@@ -256,7 +256,7 @@ function Service() {
             </div>
           </div>
         </div>
-        <div className="main-cont-gov-adv">
+        <div className="main-cont-gov-adv" id="main-tr">
           <div className={"sectordetail " +((count===0)? "sector-active":"")} >
            
             <Tribalwelfare />

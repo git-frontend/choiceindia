@@ -19,20 +19,6 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 
 function Tribalwelfare() {
 
-  const [count, setcount] = useState(0);
-
-
-  function chapterScroll(id) {
-    var element = document.getElementById(id);
-    var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-
 
 
   const settings1 = {
