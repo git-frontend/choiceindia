@@ -2,13 +2,15 @@
 import React from "react";
 import Banner from './Banner';
 import OurProducts from './OurProducts';
+import ApplicationFeatures from './ApplicationFeatures';
+
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 
-import "./loans.scss";
+import "./nbfc-landing.scss";
 
 
-function Loans() {
+function NBFCLanding() {
 
   const [rendercount, setRenderCount] = useState(() => false);
 
@@ -36,6 +38,8 @@ function Loans() {
          
          <Banner />
          <OurProducts />
+         <ApplicationFeatures />
+         
         
          
        </div> 
@@ -45,4 +49,4 @@ function Loans() {
   );
 }
 
-export default Loans;
+export default NBFCLanding;

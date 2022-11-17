@@ -2,10 +2,8 @@
 import React from "react";
 import Business from '../../assets/images/nbfc-loans/business.webp';
 import Individual from '../../assets/images/nbfc-loans/individual.webp';
-import car from '../../assets/images/insurance/car.svg';
-import health from '../../assets/images/insurance/health.svg';
-import term from '../../assets/images/insurance/term.svg';
-
+import PaymentSolutions from '../../assets/images/nbfc-loans/payment-solutions.webp';
+import ProductMenu from './ProductMenu';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -19,7 +17,10 @@ function OurProducts() {
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
-                  <h2 className="title-secnd">Our Products</h2>
+                <div className="products-menu-flx">
+                    <h2 className="title-secnd">Our Products</h2>
+                    <ProductMenu />
+                </div>
                 </div>
             </div>
             <div className="row justify-content-center">
@@ -71,7 +72,25 @@ function OurProducts() {
                                 <a href="/"><span className="btn-bg">Learn more</span></a>
                             </div>
                         </div>
-                       
+                        <div className="products-list-item">
+                            <div className="list-item-left">
+                                <LazyLoader src={PaymentSolutions} alt={"Banner Images"} className={"img-fluid"} width={"586"} height={"366"} />
+                            </div>
+                            <div className="list-item-right">
+                                <h3>Payment Solutions</h3>
+                                <div className="cont-list">
+                                    <div className="cont-list-itm">
+                                        <h5>Prepaid Cards</h5>
+                                        <p>Pay securely and earn cash back when you use your card on ecommerce, retail stores and more.</p>
+                                    </div>
+                                    <div className="cont-list-itm">
+                                        <h5>QR Codes</h5>
+                                        <p>Scanning the QR code through your mobile is the easiest method of payment for users. </p>
+                                    </div>
+                                </div>
+                                <a href="/"><span className="btn-bg">Learn more</span></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
