@@ -62,7 +62,7 @@ function WhyOpenFreeDematAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <LazyLoader src={Image7} className={"img-fluid"} width={"40"} height={"41"} alt={"Low Brokerage Demat Account"}  />
+                                                <LazyLoader src={Image7} className={"img-fluid"} width={"40"} height={"41"} alt={"Free Demat Account with Low Brokerage Charges"}  />
                                                 {/* <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage" /> */}
                                             </div>
                                             <div className="card-block">
@@ -73,7 +73,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                            <LazyLoader src={Image8} className={"img-fluid lazyload"} width={"40"} height={"41"} alt={"Free Call for Trade Facility"}  />
+                                            <LazyLoader src={Image8} className={"img-fluid lazyload"} width={"40"} height={"41"} alt={"Free Call for trade facility"}  />
                                                 {/* <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                             </div>
                                             <div className="card-block">
@@ -84,7 +84,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                            <LazyLoader src={Image9} width={"40"} height={"41"} alt={"Free Paperless Demat Account Opening"} className={"img-fluid lazyload"} />
+                                            <LazyLoader src={Image9} width={"40"} height={"41"} alt={"Paperless Free Demat Account Opening"} className={"img-fluid lazyload"} />
                                                 {/* <img src={Image9} width={"40"} height={"41"} alt="Paperless Account Opening" className="img-fluid lazyload" /> */}
                                             </div>
                                             <div className="card-block">
@@ -97,7 +97,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                            <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className={"img-fluid lazyload"} />
+                                            <img src={Image10} width={"50"} height={"50"} alt={"Advance Trading Platform"} className={"img-fluid lazyload"} />
                                                 {/* <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                             </div>
                                             <div className="card-block">
@@ -110,7 +110,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                            <img src={Image11} width={"40"} height={"41"} alt={"Refer and Earn Demat Account"} className={"img-fluid lazyload"} />
+                                            <img src={Image11} width={"40"} height={"41"} alt={"Demat Account Refer and Earn Program"} className={"img-fluid lazyload"} />
                                                 {/* <img src={Image11} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                             </div>
                                             <div className="card-block">

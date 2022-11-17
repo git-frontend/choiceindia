@@ -18,7 +18,7 @@ const WhyChoice = () => {
                                 <div className="leftsect">
                                     <h2 className="secttile">Why Choice?</h2>
                                     <div className="img">
-                                        <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
+                                        <img src={Image16} alt={"Why Open a Demat Account with Choice"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
                                 </div>
                                 <div className="rightsect">
@@ -68,19 +68,19 @@ const WhyChoice = () => {
                                     <div className="iconwrap">
                                         <a href="https://finx.choiceindia.com/" target="_blank">
                                             <div className="icon">
-                                                <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
+                                                <img src={Image13} alt="Choice FinX Trading Platform" width={"45"} height={"46"} className="img-fluid " />
                                                 <p>Web</p>
                                             </div>
                                         </a>
                                         <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank">
                                             <div className="icon">
-                                                <img src={Image14} alt="Android" width={"35"} height={"36"} className="img-fluid " />
+                                                <img src={Image14} alt="Choice FinX Trading App for Android" width={"35"} height={"36"} className="img-fluid " />
                                                 <p>Android</p>
                                             </div>
                                         </a>
                                         <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261" target="_blank">
                                             <div className="icon">
-                                                <img src={Image15} width={"45"} height={"46"} alt="IOS" className="img-fluid " />
+                                                <img src={Image15} width={"45"} height={"46"} alt="Choice FinX Trading App for iOS" className="img-fluid " />
                                                 <p>iOS</p>
                                             </div>
                                         </a>
