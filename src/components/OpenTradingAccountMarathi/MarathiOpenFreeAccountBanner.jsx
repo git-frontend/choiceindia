@@ -38,7 +38,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt={"सर्वात कमी डीपी शुल्क"} className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt={"सर्वात कमी डीपी शुल्कासह डीमॅट खाते उघडा"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -51,7 +51,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt={"कमी ब्रोकरेज शुल्क"} className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt={"कमी ब्रोकरेज डिमॅट खाते उघडा"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -65,7 +65,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"मोफत संशोधन सल्ला"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"मोफत संशोधन आणि सल्लामसलत असलेले डीमॅट खाते उघडा"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -77,7 +77,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्काशिवाय डीमॅट खाते"} className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्काशिवाय मोफत डीमॅट खाते उघडा"} className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
