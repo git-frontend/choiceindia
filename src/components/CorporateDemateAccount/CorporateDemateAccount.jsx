@@ -56,9 +56,9 @@ function CorporateDemateAccount() {
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
                                 <span className="read-more-wrap ">
-                                    A Corporate Demat Account is a Demat account created in the name of a Private Company or a Corporate House for their investments in the stock markets. Public Limited Companies, Corporate Houses, and Private Firms can open <Link to="/open-free-demat-account"><strong>Demat account</strong></Link> registered in their company’s name and invest in mutual funds, stocks, and other investment opportunities through this account.
+                                    A Corporate Demat Account is a Demat account created in the name of a Private Company or a Corporate House for their investments in the stock markets. Public Limited Companies, Corporate Houses, and Private Firms can open <Link to="/demat-account"><strong>Demat account</strong></Link> registered in their company’s name and invest in mutual funds, stocks, and other investment opportunities through this account.
                                     <span className="read-more-target">
-                                        With Choice India, you can open a Demat account online for your company. You can carry on the investments in your company's name and invest in the equity markets. You can easily open a corporate account after the successful uploading of the necessary documents. You can follow our easy and hassle-free process for a smooth hassle-free <strong>corporate Demat Account opening.</strong><br /><br />
+                                        With Choice India, you can <Link to="/open-free-demat-account"><strong>open a Demat account online</strong></Link>  for your company. You can carry on the investments in your company's name and invest in the equity markets. You can easily open a corporate account after the successful uploading of the necessary documents. You can follow our easy and hassle-free process for a smooth hassle-free <strong>corporate Demat Account opening.</strong><br /><br />
                                         <h2 className="font-bold">How To Open A Corporate Demat Account?</h2>
                                         Our Corporate Clients can easily open a <strong>Corporate Demat Account</strong> with us following our simple online process and by easily completing their KYC. There might be a few additional documents required for the fulfillment of the account opening process:<br /><br />
                                         <strong>Below are the easy steps for Corporate Demat Account opening:</strong><br /><br />
@@ -80,7 +80,7 @@ function CorporateDemateAccount() {
                                             <br/><br/>(The Annual Maintenance fee is charged for the general maintenance of the <strong>Demat Account for Corporates</strong> and keeping it functional.)
                                         </div>
                                        
-                                        <h3 className="font-bold">Documents Required to Open A Corporate Demat Account</h3> <br />
+                                        <h2 className="font-bold">Documents Required to Open A Corporate Demat Account</h2> <br />
                                         There is a set of documents required to open demat account for corporates. The identity proofs and address proofs are compulsory for all account holders. Below are the necessary Corporate Demat Account documents:
                                         <br /><br /><ul><li>Aadhar Card of All Account Holders</li><li>Photographs of all account Holders (Self-Attested)</li><li>Pan Card copies of All Account Holder</li>
                                             <li>PAN of the Company</li>
@@ -93,7 +93,7 @@ function CorporateDemateAccount() {
                                             <li>FATCA Declaration</li></ul>
   
                                       
-                                        <h3 className="font-bold">Benefits of Opening A Corporate Demat Account</h3>
+                                        <h2 className="font-bold">Benefits of Opening A Corporate Demat Account</h2>
                                         Investing in Equity Markets can turn out to be the best wealth management move for the corporates. The corporates who want to grow their money and have a safe and secure store of value can open a Corporate Account and manage their funds well. Opening a Corporate Account with Choice India comes with the benefits like:<br />
                                         <div className="ml-3"><h3 className="font-bold"> 1. Financial Planning</h3>Our financial plans are designed to create and maintain healthy portfolios of our corporate clients. We have expertise in the financial planning of the funds of our corporate clients.<h3 className="font-bold"> 2. Diversity of Disciplines</h3>We use our expertise in diverse areas and coordinate all the factors together to protect our corporate clients' investments and try for good returns.<h3 className="font-bold"> 3. Specialization</h3>Choice India has mastery in portfolio management of Corporate Houses. Over the years, we have developed a healthy relationship with our clients because of our focus on the client-centric approach.<h3 className="font-bold"> 4. Holistic Approach</h3>Our holistic approach includes everything from financial product curation, financial trend forecasting, portfolio management, and tax planning for our corporate clients.<h3 className="font-bold"> 5. Other Benefits</h3>There are several other benefits of having a Corporate Trading Account for your company which include -
                                             <ul><li>Safe and Secure Paperless Digital Storage of Funds
