@@ -75,13 +75,7 @@ function HindiTradingFaq() {
                                         आपको हमें अपने पहले के डीपी की सीएमएल (क्लाइंट मास्टर लिस्ट) कि कॉपी प्रदान करनी होगी और हमारे साथ एक नया डीमैट खाता खोलना होगा।
                                     </Accordion.Body>
                                 </Accordion.Item>
-
-
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
-                                        <Accordion.Item eventKey="5" className='faq-item'>
+                                <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'>क्या मैं अपने ट्रेडिंग खाते में कई डीमैट खातों को मैप कर सकता हूं?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                                 हां, आप अलग-अलग डीपी के साथ भी कई डीमैट खातों को अपने ट्रेडिंग खाते से लिंक कर सकते हैं, लेकिन वे सभी आपके नाम पर होने चाहिए। हालांकि, ध्यान देने वाली एक महत्वपूर्ण बात यह है कि सभी लिंक किए गए डीमैट खातों से आप पे इन/प्लेज आदि के लिए शेयर दे सकते हैं; लेकिन ट्रेडिंग खाते से भुगतान केवल प्राथमिक डीमैट खाते में जमा किया जाएगा।
@@ -150,18 +144,25 @@ function HindiTradingFaq() {
                                         <Accordion.Item eventKey="13" className='faq-item'>
                                             <Accordion.Header><h4 className='faq-header'>पेपरलेस डीमैट अकाउंट क्या है?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            डीमैट अकाउंट खोलने के इस विकल्प में किसी भी दस्तावेज को भौतिक रूप से जमा करने की आवश्यकता नहीं है। सभी दस्तावेज़ ऑनलाइन जमा किए जाते हैं और इन्हें पूरा करने में केवल 10 मिनट लगते हैं!
+                                            डीमैट अकाउंट खोलने के इस विकल्प में किसी भी दस्तावेज को भौतिक रूप से जमा करने की आवश्यकता नहीं है। सभी दस्तावेज़ ऑनलाइन जमा किए जाते हैं और इन्हें पूरा करने में केवल 10 मिनट लगते हैं।
                                             </Accordion.Body>
                                         </Accordion.Item>
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
+
+                            </Accordion>
+                            {
+                                view ?
+                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                                        
+
+                                        {/* <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button> */}
 
                                     </Accordion>
 
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6"  onClick={() => setview(!show)}>View more</button>
+                                        {/* <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6"  onClick={() => setview(!show)}>View more</button> */}
                                     </div>
                             }
                         </div>
