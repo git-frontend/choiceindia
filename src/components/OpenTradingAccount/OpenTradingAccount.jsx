@@ -181,7 +181,7 @@ function OpenTradingAccount() {
                                         <br/><br/>
 
                                         <h2 className="font-bold">Difference between Trading Account and Demat Account</h2> <br />
-                                        You need to understand the <a href="https://choiceindia.com/blog/difference-between-demat-and-trading-account/">difference between a trading account and Demat account</a> to expand your wealth in the stock market.<br/><br/>
+                                        You need to understand the <a href="https://choiceindia.com/blog/difference-between-demat-and-trading-account/">difference between a trading account</a> and <a href="https://choiceindia.com/demat-account">Demat account</a> to expand your wealth in the stock market.<br/><br/>
                                         To answer the same, a Demat account is used for storing the shares you have bought in a digitized format. Acting as a repository, its prime objective is to hold the securities.<br/><br/>
                                         On the other hand, a trading account acts as a platform for selling and buying securities or shares. So, the major financial transactions are a part of this account. 
                                         <br/><br/>
@@ -220,7 +220,7 @@ function OpenTradingAccount() {
                                         <br/><br/>
                                         The platform offers two options to open a trading account online. 
                                         <br/><br/>
-                                        You can either open both a trading and Demat account together, or you can register for only a trading account and link it to your existing depository participant identity (DP) and a referral code. But you have to do this while signing up for the account. 
+                                        You can either <a href="https://choiceindia.com/open-free-demat-account">open a Demat Account</a> and trading Account together, or you can register for only a trading account and link it to your existing depository participant identity (DP) and a referral code. But you have to do this while signing up for the account. 
                                         <br/><br/>
                                         However, if you don't mention the referral code, Choice will open both accounts on your behalf. To elaborate, here are the detailed steps for setting up your account with Choice:
                                         <br/><br/>
