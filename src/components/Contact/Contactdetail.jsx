@@ -53,36 +53,41 @@ function Contactdetail() {
 
       /**======= */
       <div>
-         <section className="contactdetail">
-         <div className="container m01">
-               <div className="support-related txt-center">
-                  <FontAwesomeIcon icon={faHeadphones} /><br/>
-                  <p>Support Related Queries</p>
+         <section className="contactdetail contactdetail-new">
+         <div className="container">
+            <div className="row">
+               <div className="col-md-12" >
+               <div className="text-center">
+                  {/* <FontAwesomeIcon icon={faHeadphones} /><br/> */}
+                  <p className="maintitle">Support Related Queries</p>
                   </div>
                   <div className="support-md">
-                     <div className="txt-center">
-                     <FontAwesomeIcon icon={faPhone} /><br/>
-                     <p><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
+                     <div className="text-center support-itm">
+                        <FontAwesomeIcon icon={faPhone} />
+                        <p><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
                      </div>
-                     <div className="txt-center">
-                     <FontAwesomeIcon icon={faEnvelope} /><br/>
-                     <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                     <div className="text-center support-itm">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
                      </div>
                      </div>
-                     <br/>
-                     <h3 className="txt-center">For any grievances reach out to our <a  onClick={()=>{setcheck(true)}} className="cursor-pointer">Escalation Matrix</a></h3>
+                     
+                     <h3 className="text-center ">For any grievances reach out to our <a  onClick={()=>{setcheck(true)}} className="cursor-pointer">Escalation Matrix</a></h3>
+               </div>
+            </div>      
                   
-                  </div>
-            <div className="container mainwrapquick m01">
+         </div>
+            <div className="container mainwrapquick-table">
             
                   
                
                  {
                   check? 
-                  <div>
-                  <div className="row quicklinkswrap mb-5">
+                  <div className="row ">
                   <div className="col-md-12">
+                     <div className="quicklinkswrap mt-5 mb-5">
                      <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={()=>{setcheck(false)}}/>
+                     <div className="clearfix"></div>
                      <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
                      <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
                      <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
@@ -133,8 +138,8 @@ function Contactdetail() {
                         </table>
 
                      </div>
+                     </div>
 
-                  </div>
                   </div>
                   <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
                   https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br /><br />
@@ -150,7 +155,7 @@ function Contactdetail() {
                   
                
                
-               <div className="row gap-5">
+               <div className="row gap-5 mt-10">
                   <div className="col-md-5">
                      <div>
                         <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
