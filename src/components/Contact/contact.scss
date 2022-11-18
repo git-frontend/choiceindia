@@ -558,4 +558,20 @@
     @media (max-width: $sm) {
         margin: 0 1.3rem;
     } 
+    .icon-table{
+        float: right;
+    }
+    .support-md{
+        display: flex;
+        justify-content: space-around;
+
+    }
+    .support-related{
+        
+        margin-right: 10rem;
+    }
+    .txt-center{
+        text-align: center;
+    }
+
 }
