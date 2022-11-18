@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 
 import { Accordion } from "react-bootstrap";
-
+import { Link } from 'react-router-dom';
 function AmcFaq() {
     const [view, setview] = useState(false);
     const [show, setshow] = useState(false);
@@ -35,7 +35,6 @@ function AmcFaq() {
                                             <li>Cancelled Cheque (that captures the MICR Code)</li>
                                             <li>Passport Size Photograph</li>
                                             <li>Aadhaar Card</li>
-                                            <li>Aadhaar Card</li>
 
                                         </ul>
                                     </Accordion.Body>
@@ -64,11 +63,7 @@ function AmcFaq() {
                                 </Accordion.Item>
 
 
-
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="5" flush className='open-demat-faqs-accordion'>
+                                   
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'> How do I open a Trading Account Online without opening a Demat Account?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -130,9 +125,9 @@ function AmcFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="12" className='faq-item'>
-                                            <Accordion.Header><h4 className='faq-header'>Is Opening a Demat Account Online Safe?</h4> </Accordion.Header>
+                                            <Accordion.Header><h4 className='faq-header'>Is Opening a Demat AccountOnline Safe?</h4> </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            It's absolutely safe to open a Demat account online but choosing the right broker is essential for this.
+                                            It's absolutely safe to <Link to="https://choiceindia.com/open-free-demat-account">open a Demat account</Link> online but choosing the right broker is essential for this.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="13" className='faq-item'>
@@ -183,16 +178,10 @@ function AmcFaq() {
                                         </Accordion.Item>
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
-
+                                     
                                     </Accordion>
 
 
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
-                                    </div>
-                            }
                         </div>
                     </div>
                 </div>

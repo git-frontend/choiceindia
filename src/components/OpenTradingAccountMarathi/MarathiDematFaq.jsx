@@ -85,10 +85,9 @@ function DematFaq() {
                                         </Accordion.Item>
 
 
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                           
+                            
+                                 
                                       
                                         <Accordion.Item eventKey="6" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'>मी माझे जुने डिमॅट दुसऱ्या ब्रोकरकडून चॉईस ब्रोकिंगमध्ये कसे बदलू शकतो?</h4></Accordion.Header>
@@ -99,7 +98,7 @@ function DematFaq() {
                                         <Accordion.Item eventKey="7" className='faq-item'>
                                             <Accordion.Header><h4 className='faq-header'> मी माझ्या ट्रेडिंग खात्यावर एकपेक्षा जास्त डिमॅट खाती मॅप करु शकतो का?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            हो. तुम्ही तुमच्या ट्रेडिंग खात्याशी एकपेक्षा जास्त डिमॅट खाती लिंक करु शकता. तेही वेगवेगळ्या डीपीसह. पण ती सर्व खाती तुमच्या नावावर असणे आवश्यक आहे. पण महत्त्वाची गोष्ट म्हणजे, सर्व लिंक केलेल्या डिमॅट खात्यांमधून तुम्ही पे इन किंवा प्लेज आदींसाठी शेअर देऊ शकता. पण ट्रेडिंग खात्यातील पेआउट केवळ
+                                            हो. तुम्ही तुमच्या ट्रेडिंग खात्याशी एकपेक्षा जास्त डिमॅट खाती लिंक करु शकता. तेही वेगवेगळ्या डीपीसह. पण ती सर्व खाती तुमच्या नावावर असणे आवश्यक आहे. पण महत्त्वाची गोष्ट म्हणजे, सर्व लिंक केलेल्या डिमॅट खात्यांमधून तुम्ही पे इन किंवा प्लेज आदींसाठी शेअर देऊ शकता. पण ट्रेडिंग खात्यातील पेआउट केवळ प्राथमिक डीमॅट खात्यात जमा केले जाईल.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="8" className='faq-item'>
@@ -193,16 +192,13 @@ function DematFaq() {
                                         </Accordion.Item>
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;कमी पहा</button>
+                                        
 
                                     </Accordion>
 
 
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>आणखी पहा</button>
-                                    </div>
-                            }
+                                   
+                            
                         </div>
                     </div>
                 </div>

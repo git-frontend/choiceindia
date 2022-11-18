@@ -279,7 +279,7 @@
 		@media (max-width:$sm) {
 			width: 90%;
 			margin: 0 auto;
-
+			background-color: $whiteColor;
 		}
 
 		// @media (min-width:$sm) and (max-width:768px) {
@@ -1101,6 +1101,9 @@
                 list-style: none;
                 padding-left: 3rem;
                 padding-right:8rem;
+				@media (max-width: $sm) {
+					padding-right:0;
+				}
 			}
 			.font-bold{
 				font-weight: 700;

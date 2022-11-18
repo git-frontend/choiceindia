@@ -60,7 +60,7 @@ function WhyOpenFreeDematAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"कमी ब्रोकरेज डिमॅट खाते"} />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"कमी ब्रोकरेज शुल्कासह मोफत डीमॅट खाते उघडा"} />
                                             </div>
                                             <div className="card-block">
 
@@ -70,7 +70,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt={"ट्रेड सुविधेसाठी विनामूल्य कॉल"} className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt={"व्यापार सुविधेसाठी मोफत कॉलसह डीमॅट खाते उघडणे"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -80,7 +80,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} width={"40"} height={"41"} alt={"मोफत पेपरलेस डिमॅट खाते उघडणे"} className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt={"पेपरलेस फ्री डिमॅट खाते उघडणे"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -92,7 +92,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"40"} height={"41"} alt={"प्रगत ट्रेडिंग अँप आणि प्लॅटफॉर्म"} className="img-fluid lazyload" />
+                                                <img src={Image10} width={"40"} height={"41"} alt={"मोफत डीमॅट खाते उघडण्यासाठी एडवांस ट्रेडिंग प्लॅटफॉर्म"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -104,7 +104,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt={"डीमॅट खाते रेफेर करा आणि कमवा"} className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt={"ऑनलाइन मुफ़्त डीमॅट खाते रेफर करा आणि कमवा"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
