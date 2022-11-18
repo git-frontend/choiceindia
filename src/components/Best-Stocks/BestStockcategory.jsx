@@ -150,7 +150,7 @@ function urlLink(){
                     multiValue.push(AllFilesValue);
                     setShowLoader(false)
                   }else{
-                    multiValue = [];
+                    
                    
   
                   }
@@ -238,7 +238,7 @@ function urlLink(){
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
                   }else{
-                    multiValue = [];
+                    
                    
   
                   }
@@ -328,7 +328,7 @@ function urlLink(){
                     multiValue.push(AllFilesValue)
                     setShowLoader(false)
                   }else{
-                    multiValue = [];
+                    
                    
   
                   }
@@ -407,7 +407,7 @@ function urlLink(){
                   AllFilesValue = Object.assign(storefile[i],ele);
                   multiValue.push(AllFilesValue)
                 }else{
-                  multiValue = [];
+                  
                  
 
                 }
