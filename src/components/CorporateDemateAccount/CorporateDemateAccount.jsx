@@ -6,7 +6,7 @@ import WhyOpenFreeCorporateAccount from "../CorporateDemateAccount/WhyOpenFreeCo
 import CorporateDematAccountOpeningProcess from "../CorporateDemateAccount/CorporateDematAccountOpeningProcess";
 import LowBrokerageCorporateDematAccount from "../CorporateDemateAccount/LowBrokerageCorporateDematAccount";
 import CorporateFaq from "../CorporateDemateAccount/CorporateFaq";
-import WhyChoice from "../OpenDematAccount/WhyChoice";
+import WhyChoice from "../CorporateDemateAccount/WhyChoice";
 import { Link } from "react-router-dom";
 import {useState, useEffect} from 'react';
 import {
