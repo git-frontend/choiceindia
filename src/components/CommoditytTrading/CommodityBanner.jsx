@@ -9,6 +9,19 @@ import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 const CommodityBanner = () => {
+
+    function chapterScroll(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
     return (
         <div>
              <section className="banner-sect" >
@@ -90,6 +103,9 @@ const CommodityBanner = () => {
 
                         </div>
 
+                    </div>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
                     </div>
                 </div>
             </section>
