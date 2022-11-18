@@ -680,189 +680,192 @@ const meta_tags = {
         'title': "Open a Corporate Demat Account Online with Choice",'lang':"en", "content": "Open a Corporate Demat account online with Choice.  Get an advanced trading platform, the lowest dp charges and dedicated relationship manager, free call for trade facility and more.",
         "link": 'https://choiceindia.com/corporate-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
-     {
-       "@type": "FAQPage",
-       "mainEntity": [{
-         "@type": "Question",
-         "name": "What is a Company or Corporate Demat Account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Companies and corporations can also participate in the stock market with a Corporate Demat Account."
-         }
-       },{
-         "@type": "Question",
-         "name": "Can a Demat and Trading account be opened for a Company in India?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Yes, Indian companies can open Demat and Trading accounts too. These are called Corporate Demat/Trading accounts."
-         }
-       },{
-         "@type": "Question",
-         "name": "What is the procedure to open a demat account for Company?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Below is the procedure to open corporate demat accounts,
-     1. Fill Corporate Demat account forms
-     2. KYC forms of each account holder
-     3. Aadhar and Photos of account holders (signed)
-     4. Pan Card copies of each account holder and company
-     5. Address proofs of each account holder and company
-     6. Cancelled cheques of account holders or last 3 months bank statement
-     7. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
-     8. Duly filled annexures
-     9. FATCA Declaration"
-         }
-       },{
-         "@type": "Question",
-         "name": "Which documents are required for a Corporate Or Company demat account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "Below documents are required for a corporate demat account,
-     1. Aadhar and Photos of account holders (signed)
-     2. Pan Card copies of each account holder and company
-     3. Address proofs of each account holder and company
-     4. Cancelled cheques of account holders or last 3 months bank statement
-     5. Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
-     6. Duly filled annexures
-     7. FATCA Declaration"
-         }
-       },{
-         "@type": "Question",
-         "name": "How Much Time is Required to Open a Corporate Demat Account?",
-         "acceptedAnswer": {
-           "@type": "Answer",
-           "text": "If all the documents are in order, it takes 2-3 working days for the account to be active."
-         }
-       }]
-     }
-     </script>
-     ` },
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "What is a Company or Corporate Demat Account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Companies and corporations can also participate in the stock market with a Corporate Demat Account."
+            }
+          },{
+            "@type": "Question",
+            "name": "Can a Demat and Trading account be opened for a Company in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Indian companies can open Demat and Trading accounts too. These are called Corporate Demat/Trading accounts."
+            }
+          },{
+            "@type": "Question",
+            "name": "What is the procedure to open a demat account for Company?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Below is the procedure to open corporate demat accounts,
+        
+        Fill Corporate Demat account forms
+        KYC forms of each account holder
+        Aadhar and Photos of account holders (signed)
+        Pan Card copies of each account holder and company
+        Address proofs of each account holder and company
+        Cancelled cheques of account holders or last 3 months bank statement
+        Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
+        Duly filled annexures
+        FATCA Declaration"
+            }
+          },{
+            "@type": "Question",
+            "name": "Which documents are required for a Corporate Or Company demat account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Below documents are required for a corporate demat account,
+        
+        Aadhar and Photos of account holders (signed)
+        Pan Card copies of each account holder and company
+        Address proofs of each account holder and company
+        Cancelled cheques of account holders or last 3 months bank statement
+        Balance sheet of the partnership of last 2 FY (new companies will have to provide IT returns declaration
+        Duly filled annexures
+        FATCA Declaration"
+            }
+          },{
+            "@type": "Question",
+            "name": "How Much Time is Required to Open a Corporate Demat Account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If all the documents are in order, it takes 2-3 working days for the account to be active."
+            }
+          }]
+        }</script>
+        ` },
 
     "minor-demat-account": {
         'title': "Minor Demat Account Opening Online for Free with Choice",'lang':"en", "content": "Open a free minor Demat account online with Choice within a few minutes and start investing in the stock market for your children’s future.",
         "link": 'https://choiceindia.com/minor-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
-    {
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "What is a Minor Demat Account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When a Demat account is opened in the name of the Minor; it’s known as Minor Demat Account. The account will be operated by the natural guardian (parents) or court-appointed guardian."
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "What is a Minor Demat Account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a Demat account is opened in the name of the Minor; it’s known as Minor Demat Account. The account will be operated by the natural guardian (parents) or court-appointed guardian."
+            }
+          },{
+            "@type": "Question",
+            "name": "Can minors open demat accounts in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, minors can have a demat account opened, but it will be operated by a guardian until the minor becomes a major."
+            }
+          },{
+            "@type": "Question",
+            "name": "What is the procedure to open a demat account for Minor?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The procedure remains the same as opening a regular demat account.
+        
+        Fill the standard demat account form by Guardian
+        Two KYC forms need to be submitted, one of the Guardian which will collect the bank details, salary range etc. 2nd KYC collects the minor’s basic details to connect it with the guardian, 2nd KYC has to be signed by the Guardian.
+        Pan and Aadhar card of the minor has to be provided along with the guardian’s documents"
+            }
+          },{
+            "@type": "Question",
+            "name": "What are the documents required to open a Minor Demat account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The process of a Minor Demat Account required documents for Identification Proof, Proof of Address, A Photocopy for Age Verification, Applicants’ Photographs such as -
+        
+        PAN Card of the Guardian
+        PAN Card of the Minor
+        Proof of Birth of the Minor (Birth Certificate, School Leaving Certificate)
+        Proof of Identity of the Minor (Aadhar Card)
+        Proof of Address of the Minor (Electricity Bill, Ration Card)"
+            }
+          },{
+            "@type": "Question",
+            "name": "Can minors operate Demat and Trading accounts?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Minors cannot operate Demat or Trading accounts, these will be operated only by the guardian until the minor comes of age."
+            }
+          },{
+            "@type": "Question",
+            "name": "How to take ownership of Demat Account after minor turns major?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After the minor turns to major, he has to go through the same procedure that is required to open a new demat account to take over the ownership.
+        Note: Minor demat accounts become inoperative when he/she turns 18. The broker will intimate you regarding this."
+            }
+          },{
+            "@type": "Question",
+            "name": "How much time is required to open a demat account for minors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If the KYC is clear, it will take 2-3 working days for the account to be active."
+            }
+          },{
+            "@type": "Question",
+            "name": "Who is eligible for opening a Minor Demat account in India?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Any Indian citizen of India, regardless of age, can own a Minor Demat Account. In India, anyone can legally register a minor Demat account. The minor is unable to buy or sell shares. They will need the father/mother or guardian to function their account. For opening a Demat account a minor must have a valid PAN Card."
+            }
+          },{
+            "@type": "Question",
+            "name": "How to invest in the stock market when you’re less than 18 years old?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "For minors under the age of 18, natural guardians (parents) or court-appointed guardians can demat account for them.
+        Note: Minor Demat accounts can only be used by guardians."
+            }
+          },{
+            "@type": "Question",
+            "name": "Can we buy shares in the Minor Demat account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A trading account in the minor's name may be formed only for the purpose of selling stocks that the minor has acquired through IPO, inheritance, corporate action, or off-market transfers. However, until the minor becomes a major, the natural guardian will be in charge of the account.
+        
+        A minor is not permitted to enter into a buy or sale agreement with a stockbroker. A trading account in the name of a minor can be opened only for the purpose of investments and selling securities owned by the minor."
+            }
+          },{
+            "@type": "Question",
+            "name": "What are the restrictions on the Minor Demat account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Minor Demat account has some restrictions/limitations such as -
+        
+        Certain segments are prohibited:A Minor account holder is not permitted to trade in -
+        Intraday Trading
+        Currency Derivatives (F&O)
+        Equity Derivative (F&O)
+        
+        Trading Account Restriction: A minor's Demat account cannot be linked to their Trading account.
+        
+        No Joint Account: A minor is not permitted to participate in a Joint Demat account with his parents/guardians.
+        
+        Transaction Limits: You can only buy or sell delivery shares."
+            }
+          },{
+            "@type": "Question",
+            "name": "What to do when a minor becomes a major?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "When a minor reaches the age of 18, the Minor Demat Account expires. Then you must create a separate Demat account for the minor. It is possible to transfer old assets to this new account. The account can be used again, but the minor must sign a new contract with the depository participant (DP)."
+            }
+          },{
+            "@type": "Question",
+            "name": "Is any additional fee or charges applicable on the Minor Demat account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Some standard charges are applicable to a Minor Demat Account. There can be an additional Safety or Custodian Charge charged for a Minor Demat Account."
+            }
+          }]
         }
-      },{
-        "@type": "Question",
-        "name": "Can minors open demat accounts in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, minors can have a demat account opened, but it will be operated by a guardian until the minor becomes a major."
-        }
-      },{
-        "@type": "Question",
-        "name": "What is the procedure to open a demat account for Minor?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The procedure remains the same as opening a regular demat account.
-    1. Fill the standard demat account form by Guardian
-    2. Two KYC forms need to be submitted, one of the Guardian which will collect the bank details, salary range etc. 2nd KYC collects the minor’s basic details to connect it with the guardian, 2nd KYC has to be signed by the Guardian.
-    3. Pan and Aadhar card of the minor has to be provided along with the guardian’s documents"
-        }
-      },{
-        "@type": "Question",
-        "name": "What are the documents required to open a Minor Demat account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "The process of a Minor Demat Account required documents for Identification Proof, Proof of Address, A Photocopy for Age Verification, Applicants’ Photographs such as -
-    
-    PAN Card of the Guardian
-    PAN Card of the Minor
-    Proof of Birth of the Minor (Birth Certificate, School Leaving Certificate)
-    Proof of Identity of the Minor (Aadhar Card)
-    Proof of Address of the Minor (Electricity Bill, Ration Card)"
-        }
-      },{
-        "@type": "Question",
-        "name": "Can minors operate Demat and Trading accounts?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Minors cannot operate Demat or Trading accounts, these will be operated only by the guardian until the minor comes of age."
-        }
-      },{
-        "@type": "Question",
-        "name": "How to take ownership of Demat Account after minor turns major?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "After the minor turns to major, he has to go through the same procedure that is required to open a new demat account to take over the ownership.
-    
-    Note: Minor demat accounts become inoperative when he/she turns 18. The broker will intimate you regarding this."
-        }
-      },{
-        "@type": "Question",
-        "name": "How much time is required to open a demat account for minors?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "If the KYC is clear, it will take 2-3 working days for the account to be active."
-        }
-      },{
-        "@type": "Question",
-        "name": "Who is eligible for opening a Minor Demat account in India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Any Indian citizen of India, regardless of age, can own a Minor Demat Account. In India, anyone can legally register a minor Demat account. The minor is unable to buy or sell shares. They will need the father/mother or guardian to function their account. For opening a Demat account a minor must have a valid PAN Card."
-        }
-      },{
-        "@type": "Question",
-        "name": "How to invest in the stock market when you’re less than 18 years old?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "For minors under the age of 18, natural guardians (parents) or court-appointed guardians can demat account for them.
-    
-    Note: Minor Demat accounts can only be used by guardians."
-        }
-      },{
-        "@type": "Question",
-        "name": "Can we buy shares in the Minor Demat account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A trading account in the minor's name may be formed only for the purpose of selling stocks that the minor has acquired through IPO, inheritance, corporate action, or off-market transfers. However, until the minor becomes a major, the natural guardian will be in charge of the account.
-    A minor is not permitted to enter into a buy or sale agreement with a stockbroker. A trading account in the name of a minor can be opened only for the purpose of investments and selling securities owned by the minor."
-        }
-      },{
-        "@type": "Question",
-        "name": "What are the restrictions on the Minor Demat account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "A Minor Demat account has some restrictions/limitations such as -
-    
-    Certain segments are prohibited: A Minor account holder is not permitted to trade in -
-    1. Intraday Trading
-    2. Currency Derivatives (F&O)
-    3. Equity Derivative (F&O)
-    
-    Trading Account Restriction: A minor's Demat account cannot be linked to their Trading account.
-    
-    No Joint Account: A minor is not permitted to participate in a Joint Demat account with his parents/guardians.
-    
-    Transaction Limits: You can only buy or sell delivery shares."
-        }
-      },{
-        "@type": "Question",
-        "name": "What to do when a minor becomes a major?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "When a minor reaches the age of 18, the Minor Demat Account expires. Then you must create a separate Demat account for the minor. It is possible to transfer old assets to this new account. The account can be used again, but the minor must sign a new contract with the depository participant (DP)."
-        }
-      },{
-        "@type": "Question",
-        "name": "Is any additional fee or charges applicable on the Minor Demat account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Some standard charges are applicable to a Minor Demat Account. There can be an additional Safety or Custodian Charge charged for a Minor Demat Account."
-        }
-      }]
-    }
-    </script>
+        </script>  
     ` },
 
     "hindi/open-demat-trading-account": {
