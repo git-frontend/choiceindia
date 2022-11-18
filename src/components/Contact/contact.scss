@@ -564,11 +564,17 @@
     .support-md{
         display: flex;
         justify-content: space-around;
+        @media (max-width: $sm) {
+            flex-direction: column;
+        }
 
     }
     .support-related{
         
         margin-right: 10rem;
+        @media (max-width: $sm) {
+            margin-right: 1rem;
+        }
     }
     .txt-center{
         text-align: center;
