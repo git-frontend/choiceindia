@@ -735,7 +735,7 @@ function urlLink(){
               </div>
             </section>
             <OpenDemateAccountStickyFooter/>
-            <section className="readmoresection">
+            <section className="readmoresection readmorecontent">
               <div className="container">
                 {
                  
@@ -747,10 +747,10 @@ function urlLink(){
                         <div className="col-md-12">
                           <div className="para px-3">
                             <input type="checkbox" className="read-more-state" id="post-1" />
-                            <span className="read-more-wrap "> Choice India , a part of Choice Group has excelled in providing various strategies 
+                            <span className="read-more-wrap restext"> Choice India , a part of Choice Group has excelled in providing various strategies 
                             over a span of 25+ years serving the finance industry. In this section, we bring to you the best intraday stocks to buy 
                             today with expert research recommendations from one of our features - Signal.
-                              <span className="read-more-target t">
+                              <span className="read-more-target restext">
                               Signal, an Automated Research Engine that provides research advisory with customised strategies for all types of Traders
                                has been back tested by our in-house advisory with a proven track record that has been in existence for almost a decade 
                                now to provide the best intraday stocks to buy and sell.
@@ -785,10 +785,10 @@ function urlLink(){
                       <div className="col-md-12">
                         <div className="para px-3">
                           <input type="checkbox" className="read-more-state" id="post-1" />
-                          <span className="read-more-wrap "> Choice Group  introduced C-Quant to facilitate the reach of short-term research
+                          <span className="read-more-wrap restext "> Choice Group  introduced C-Quant to facilitate the reach of short-term research
                             calls for all those traders who wish to churn their holdings at a specific pace. Keeping in mind the perspective
                             of best stocks to buy in India for short-term trades, C-Quant was developed.
-                            <span className="read-more-target t">
+                            <span className="read-more-target restext">
                               C-Quant employs quantitative and statistical techniques to generate trading calls from the top 100 stocks listed on
                               the NSE ranked by market capitalization and average daily traded volume thus making it one of the desired features
                               for short term stocks to buy today aiming to provide short term trading strategy for traders looking at gains from 1%
@@ -827,9 +827,9 @@ function urlLink(){
                             <div className="col-md-12">
                               <div className="para px-3">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> Choice has been backed by a strong research cell since 25+years gaining investor confidence, hereby, providing fundamental and technical calls. It has been on the forefront to serve its investors in the best suitable way by giving enhanced trading experience through the app, hassle-free processes to register and expert research recommendations that would be beneficial to the trader.
+                                <span className="read-more-wrap restext "> Choice has been backed by a strong research cell since 25+years gaining investor confidence, hereby, providing fundamental and technical calls. It has been on the forefront to serve its investors in the best suitable way by giving enhanced trading experience through the app, hassle-free processes to register and expert research recommendations that would be beneficial to the trader.
                                 
-                                  <span className="read-more-target t">
+                                  <span className="read-more-target restext">
                                   In addition, it also sources research recommendations hereby bifurcating the universal data to put it in best use for every kind of positional traders that would support them to buy best stocks for intraday trades, best stocks to buy in short term trades and best stocks to buy in long-term trades. The ‘ All Stocks’ segment is the know-how of the stocks to buy in India today for sorts of  positional research recommendations under one roof.
                                     <br />
                                     <br />
@@ -849,11 +849,11 @@ function urlLink(){
                            <div className="col-md-12">
                              <div className="para px-3">
                                <input type="checkbox" className="read-more-state" id="post-1" />
-                               <span className="read-more-wrap "> Choice Group, in the year 2018, invented Jiffy, the trading app to facilitate
+                               <span className="read-more-wrap restext"> Choice Group, in the year 2018, invented Jiffy, the trading app to facilitate
                                  the new gen trading needs. The platform was established to simplify the needs of the traders with regards to
                                  which stocks to buy today in India, where to find the right research recommendations etc.
      
-                                 <span className="read-more-target t">
+                                 <span className="read-more-target restext">
                                    Research is the backbone of investing and a strong research requires experienced professionals,
                                    identifying the type of research, historical data analysis, performance tracking, addressing real-time
                                    situations, and most importantly, collation and apt analysis of data, thereby giving out research calls
