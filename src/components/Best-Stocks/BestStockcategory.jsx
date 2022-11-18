@@ -113,7 +113,7 @@ function urlLink(){
     rest.expertReportData(request).then(
       res => {
         if (res) {
-          setShowLoader(false)
+          
           storefile=res.response.research;
           setlist(res.response.research);
 
@@ -147,9 +147,10 @@ function urlLink(){
                  
                   if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
                     AllFilesValue = Object.assign(storefile[i],ele);
-                    multiValue.push(AllFilesValue)
+                    multiValue.push(AllFilesValue);
+                    setShowLoader(false)
                   }else{
-                    AllFilesValue = [];
+                    multiValue = [];
                    
   
                   }
@@ -199,7 +200,7 @@ function urlLink(){
     rest.expertReportData(request).then(
       res => {
         if (res) {
-          setShowLoader(false)
+          
           storefile=res.response.research;
           setlist(res.response.research);
 
@@ -233,10 +234,11 @@ function urlLink(){
                 for(let i=0;i<storefile.length;i++){
                  
                   if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
+                    setShowLoader(false)
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
                   }else{
-                    AllFilesValue = [];
+                    multiValue = [];
                    
   
                   }
@@ -284,7 +286,7 @@ function urlLink(){
     rest.expertReportData(request).then(
 
       res => {
-        setShowLoader(false)
+       
         if (res) {
           console.log("checkdd",res.response.research);
           storefile=res.response.research;
@@ -324,8 +326,9 @@ function urlLink(){
                   if(storefile[i].token ==ele.Tok && storefile[i].segment_id ==ele.Seg){
                     AllFilesValue = Object.assign(storefile[i],ele);
                     multiValue.push(AllFilesValue)
+                    setShowLoader(false)
                   }else{
-                    AllFilesValue = [];
+                    multiValue = [];
                    
   
                   }
@@ -365,7 +368,7 @@ function urlLink(){
     }
     rest.signalReportData(request).then(
       res => {
-        setShowLoader(false)
+      
         if (res) {
           storefile=res.Response.Data
           res.Response.Data.forEach(ele => {
@@ -400,10 +403,11 @@ function urlLink(){
               for(let i=0;i<storefile.length;i++){
                
                 if(storefile[i].Tok == ele.Tok && storefile[i].Seg == ele.Seg){
+                  setShowLoader(false)
                   AllFilesValue = Object.assign(storefile[i],ele);
                   multiValue.push(AllFilesValue)
                 }else{
-                  AllFilesValue = [];
+                  multiValue = [];
                  
 
                 }
