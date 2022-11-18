@@ -59,7 +59,7 @@
             @media (max-width: $sm){
                 background-color: #ffffff;
                 border-bottom: 2px solid #0066B2;
-                border-radius: 22px 22px 0px 0px;
+                border-radius: 0;
             }
             
         }
@@ -71,6 +71,7 @@
             box-shadow: none;
             margin-bottom: 0rem;
             padding: 0rem;
+            border-radius: 0;
         }
     }
     .res_para{
@@ -424,6 +425,7 @@
 .readmorecontent{
     @media (max-width:$sm){
 background-color: #F5F9FC;
+padding: 5rem 0 !important; 
         
     }
     .para{
@@ -435,4 +437,12 @@ background-color: #F5F9FC;
     }
        
     }
+    .read-more-trigger{
+        @media (max-width:$xs){
+            display:block !important;
+            padding: 0 !important;
+            font-size: 1.5rem !important;
+        }
+    }
 }
+
