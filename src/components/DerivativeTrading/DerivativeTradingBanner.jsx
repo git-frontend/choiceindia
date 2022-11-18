@@ -26,7 +26,7 @@ const DerivativeTradingBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
+                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Open Derivatives Trading Account with Low DP Charges"} />
                                                     {/* <img src={Image2} width={"30"} height={"30"} alt="Zero Account Opening Fee" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -40,7 +40,7 @@ const DerivativeTradingBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Low Brokerage Charges"} />
+                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Open Low Brokerage Derivatives Trading Account"} />
                                                     {/* <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -55,7 +55,7 @@ const DerivativeTradingBanner = () => {
                                         <div className="bannerbox mt-sm-5">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Derivatives Account with Expert Research Advisory"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -67,7 +67,7 @@ const DerivativeTradingBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Demat Account without Annual Charges"} />
+                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Open Derivatives Trading Account with No Annual Charges"} />
                                                     {/* <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid" /> */}
                                                 </div>
                                             </div>
