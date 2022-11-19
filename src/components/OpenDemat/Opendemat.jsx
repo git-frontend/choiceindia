@@ -102,8 +102,8 @@ function Opendemat(){
                       <hr />
 
                       <div className="bannertext">
-                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must
-                          <a href="https://choiceindia.com/open-free-demat-account" className="linking"> open a Demat account.</a>
+                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must&nbsp;
+                           <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account.</a>
                         </p>
                         <p> Demat account is necessary to start your investment journey into the stock market.</p>
                         <p>Let’s get started to understand everything about the Demat account through this guide.</p>
@@ -401,7 +401,7 @@ function Opendemat(){
                           <li className="subheadtxt">
                             <p className='subheadtxt'>
                               <h4 className="inline">2. Repatriable Demat Account: <a href='https://choiceindia.com/nri-demat-account'
-                                className='linking'>(NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
+                                className='linking'>NRI Demat Account</a>: </h4> A Demat account used by NRIs allows transferring
                               funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
 
                           </li>
@@ -677,7 +677,7 @@ function Opendemat(){
                         <h3 className="subhead">Documents Required for Demat Account Opening:</h3>
                         <p className='subheadtxt'>For opening a Demat account, you must have certain documents with you. Here's the
                           list of <a href='https://choiceindia.com/blog/documents-required-for-demat-account-opening/'
-                            className='linking'> documents required for Demat account opening:</a></p>
+                            className='linking'> documents required for Demat account opening</a></p>
                         <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>Identity Proof ( Aadhar card, PAN card, any other identity proof issued by the
@@ -759,7 +759,7 @@ function Opendemat(){
                   <div className='row' id="ChapterSeven">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 7</p>
-                      <h2 className="title">How Can You Choose the Best Demat Account in India?</h2>
+                      <h2 className="title">How to Choose Best Demat Account</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="best-demat-img-seven" >
                           {/* <img src='./images/best-demat-account.webp' className="img-fluid" alt="Best Demat Account" /> */}
@@ -908,7 +908,7 @@ function Opendemat(){
                   <div className='row' id="ChapterNine">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 9</p>
-                      <h2 className="title">Demat Account Vs Trading Account</h2>
+                      <h2 className="title">Different Between Demat Account and Trading Account</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="demat-vs-trading-img">
                           {/* <img src='./images/difference-between-demat-account-and-trading-account.webp' className="img-fluid"
