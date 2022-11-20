@@ -324,84 +324,85 @@ const meta_tags = {
         'title': "Open Trading Account Online for Free without AMC Charges - Choice",'lang':"en", "content": "Open a trading account online for free without AMC charges at Choice. Enjoy low DP charges, the lowest intraday charges, and a zero account opening fee.",
         "link": "https://choiceindia.com/open-trading-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
-    {
-      "@type": "FAQPage",
-      "mainEntity": [{
-        "@type": "Question",
-        "name": "How much time is required to open a trading account online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Online account opening has become fairly convenient not to mention quick. If you have all the required documents handy, and the KYC is done, then the account can be opened in 15 minutes. If the KYC is not done then it could take a couple of working days."
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [{
+            "@type": "Question",
+            "name": "How much time is required to open a trading account online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Online account opening has become fairly convenient not to mention quick. If you have all the required documents handy, and the KYC is done, then the account can be opened in 15 minutes. If the KYC is not done then it could take a couple of working days."
+            }
+          },{
+            "@type": "Question",
+            "name": "Are there any charges applied by stock brokers while opening a trading account online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It’s hard to say about other brokers, but Online Trading Account opening or Online Demat Account opening with Choice broking is absolutely free. There are no charges whatsoever."
+            }
+          },{
+            "@type": "Question",
+            "name": "What are the AMC charges for trading accounts with Choice?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "First year AMC is free, next year onwards Choice Broking takes minimal charges for maintaining and keeping your trading account ready to use whenever you’d like to.
+        
+        First Year AMC is Free and then *3 plans to choose from:
+        Rs.200/- + GST Yearly Plan
+        Rs.1500/- + GST - Lifetime AMC Covered
+        Rs.3000/- Full Refundable AMC (Full amount will be refunded when you close the account with Choice Broking)"
+            }
+          },{
+            "@type": "Question",
+            "name": "What documents are required to open a trading account online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Below are the documents required to open a trading account online, it is helpful to keep them handy when you try to open a trading account online.
+        
+        Address Proof
+        PAN Card
+        Cancelled Cheque
+        Photograph
+        Signature on a White Paper
+        Income Proof"
+            }
+          },{
+            "@type": "Question",
+            "name": "Is it necessary to provide power of Attorney (POA) while opening a trading account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, it is necessary to provide Power of Attorney to your broker. This is part of the account opening procedure and can be directly downloaded from the site. The POA is a critical document so it has to be filled and the attested hard copy has to be mailed to Choice Broking’s HQ. Below is the address,
+        
+        Courier Address: Courier Address: Choice International Limited,
+        Sunil Patodia Tower,J B Nagar,
+        Andheri (East), Mumbai 400099.,Maharastra"
+            }
+          },{
+            "@type": "Question",
+            "name": "Is it Safe to Open a Trading Account Online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It’s alright to be concerned about security when it comes to money, but the regulators that govern the market have very strict guidelines about maintaining and operating demat accounts. The technology employed is safe and done in a way that makes Trading/Demat Accounts virtually unhackable.
+        It’s completely safe to open a trading account online."
+            }
+          },{
+            "@type": "Question",
+            "name": "How much money can I add to my trading account?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "There are limits as such to the maximum amount that can be added to your account. You will need to check with your back regarding transfers to Demat/ Trading accounts."
+            }
+          },{
+            "@type": "Question",
+            "name": "Can I use the same trading account for all segments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Absolutely, Stocks, Currencies, commodities and F&O, you can use the same account for trading in all segments."
+            }
+          }]
         }
-      },{
-        "@type": "Question",
-        "name": "Are there any charges applied by stock brokers while opening a trading account online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It’s hard to say about other brokers, but Online Trading Account opening or Online Demat Account opening with Choice broking is absolutely free. There are no charges whatsoever."
-        }
-      },{
-        "@type": "Question",
-        "name": "What are the AMC charges for trading accounts with Choice?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "First year AMC is free, next year onwards Choice Broking takes minimal charges for maintaining and keeping your trading account ready to use whenever you’d like to.
-    First Year AMC is Free and then *3 plans to choose from:
-    
-    Rs.200/- + GST Yearly Plan
-    Rs.1500/- + GST - Lifetime AMC Covered
-    Rs.3000/- Full Refundable AMC (Full amount will be refunded when you close the account with Choice Broking)"
-        }
-      },{
-        "@type": "Question",
-        "name": "What documents are required to open a trading account online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Below are the documents required to open a trading account online, it is helpful to keep them handy when you try to open a trading account online.
-    Address Proof
-    PAN Card
-    Cancelled Cheque
-    Photograph
-    Signature on a White Paper
-    Income Proof
-    
-    Note: These must be individual documents and they need to be self-attested before they are uploaded."
-        }
-      },{
-        "@type": "Question",
-        "name": "Is it necessary to provide power of Attorney (POA) while opening a trading account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, it is necessary to provide Power of Attorney to your broker. This is part of the account opening procedure and can be directly downloaded from the site. The POA is a critical document so it has to be filled and the attested hard copy has to be mailed to Choice Broking’s HQ. Below is the address,
-    Courier Address: Courier Address: Choice International Limited,
-    Sunil Patodia Tower,J B Nagar,
-    Andheri (East), Mumbai 400099.,Maharastra"
-        }
-      },{
-        "@type": "Question",
-        "name": "Is it Safe to Open a Trading Account Online?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It’s alright to be concerned about security when it comes to money, but the regulators that govern the market have very strict guidelines about maintaining and operating demat accounts. The technology employed is safe and done in a way that makes Trading/Demat Accounts virtually unhackable.
-    It’s completely safe to open a trading account online."
-        }
-      },{
-        "@type": "Question",
-        "name": "How much money can I add to my trading account?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "There are limits as such to the maximum amount that can be added to your account. You will need to check with your back regarding transfers to Demat/ Trading accounts."
-        }
-      },{
-        "@type": "Question",
-        "name": "Can I use the same trading account for all segments?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely, Stocks, Currencies, commodities and F&O, you can use the same account for trading in all segments."
-        }
-      }]
-    }
-    </script>
+        </script>
     ` },
 
     "open-brokerage-account": {

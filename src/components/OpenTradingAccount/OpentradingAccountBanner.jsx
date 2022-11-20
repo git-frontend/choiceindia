@@ -9,6 +9,19 @@ import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 const OpenFreeAccountBanner = () => {
+    
+    function chapterScroll(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
     return (
         <div>
              <section className="banner-sect" >
@@ -27,7 +40,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt="Lowest DP Charges" className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt="Open Trading Account with Low DP Charges" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -40,7 +53,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt="Low Brokerage Charges" className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt="Low Brokerage Trading Account Opening" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -54,7 +67,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt="Free Research Advisory" className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt="Trading Account Opening with Expert Research Advisory" className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -66,7 +79,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt="Demat Account without Annual Charges" className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt="Trading Account Opening with No Annual Charges" className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -91,6 +104,9 @@ const OpenFreeAccountBanner = () => {
 
                         </div>
 
+                    </div> 
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
                     </div>
                 </div>
             </section>

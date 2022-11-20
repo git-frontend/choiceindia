@@ -95,13 +95,6 @@ function DematFaq() {
                                             It’s completely safe to open a trading account online.
                                             </Accordion.Body>
                                         </Accordion.Item>
-
-
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
-                                    
                                         <Accordion.Item eventKey="6" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'>How much money can I add to my trading account?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -114,16 +107,24 @@ function DematFaq() {
                                             Absolutely, Stocks, Currencies, commodities and F&amp;O, you can use the same account for trading in all segments.
                                             </Accordion.Body>
                                         </Accordion.Item>
+
+
+                            </Accordion>
+                            {
+                                view ?
+                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                                    
+                                        
                                         
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button>
+                                        {/* <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button> */}
 
                                     </Accordion>
 
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
+                                       {/* <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button> */}
                                     </div>
                             }
                         </div>

@@ -18,7 +18,7 @@ const WhyDerivativeTrading = () => {
                                 <div className="leftsect">
                                     <h2 className="secttile">Why Choice?</h2>
                                     <div className="img">
-                                        <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
+                                        <img src={Image16} alt={"Why to Open Derivatives Trading Account with Choice"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
                                 </div>
                                 <div className="rightsect">
