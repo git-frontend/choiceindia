@@ -27,7 +27,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt={"न्यूनतम डीपी प्रभार"} className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt={"सबसे कम डीपी शुल्क के साथ ट्रेडिंग अकाउंट खोलें"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -41,7 +41,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt={"कम ब्रोकरेज शुल्क"} className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt={"कम ब्रोकरेज ट्रेडिंग अकाउंट शुल्क "} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -55,7 +55,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"नि:शुल्क शोध परामर्श"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"नि:शुल्क शोध परामर्श के साथ ट्रेडिंग अकाउंट खोलें"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -67,7 +67,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्क के बिना डीमैट खाता"} className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्क के बिना ट्रेडिंग अकाउंट खोलें"} className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">

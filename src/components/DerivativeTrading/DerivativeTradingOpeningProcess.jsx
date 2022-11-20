@@ -93,7 +93,7 @@ const DerivativeTradingOpeningProcess = () => {
                                 </div>
                                 <div className="info" >
                                     <h5>Registration Complete</h5>
-                                    <p>Your Demat Account opening is successful with Choice Broking.
+                                    <p>Your Demat Account opening is successful with Choice.
 
                                     </p>
                                 </div>
