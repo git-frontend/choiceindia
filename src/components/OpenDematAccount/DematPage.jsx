@@ -120,7 +120,7 @@ function DematPage() {
                                     <span className="read-more-target"> This was possible only when in 1996 electronic trading was introduced to the market and since then a Demat account has been the mandatory part of anyone’s investing journey. So let’s now dig deeper into this and understand;<br /><br />
 
                                       <h2 className="font-bold">What is a Demat Account?</h2>
-                                      If we put it into simple terms we can say that the <Link to="/">Demat account</Link> is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.<br /><br />
+                                      If we put it into simple terms we can say that the <Link to="/demat-account">Demat account</Link> is a depository where you can safely store your investments in different forms. A Demat account can not only hold your stocks but can also hold your mutual funds, bonds and ETFs.<br /><br />
 
                                       Demat account is your safe locker as you don’t live in perpetual fear of losing any shares or investments, the whole process is electronic and you’re away from all kinds of triggers that could force you to make irrational decisions.<br /><br />
                                       <h2 className="font-bold">Why Demat Account is Necessary for Investing?</h2>
