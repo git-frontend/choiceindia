@@ -50,8 +50,12 @@
             padding: 0.5rem 1rem;
             cursor: pointer;
             text-decoration: none;
+            @media (max-width: $md){
+                font-size: 1.285rem;
+            }
             @media (max-width: $sm){
                 white-space: nowrap;
+                
             }
             
         }
