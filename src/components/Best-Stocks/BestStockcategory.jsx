@@ -447,7 +447,7 @@ function urlLink(){
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-      checkurl == 'intraday'? generateSessionId() : checkurl == 'short-term'? ShortTermStocks():"";
+      checkurl == 'intraday'? generateSessionId() : checkurl == 'short-term'? ShortTermStocks():checkurl=='all-stock'?AllStocks() :checkurl=='long-term'?LongTermStocks():"";
       
        
       
@@ -483,8 +483,8 @@ function urlLink(){
                   </div>
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
-                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { AllStocks(); toggleTab(0) }}>All Stocks</li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { generateSessionId(); toggleTab(1) }}>Intraday Stocks</li>
+                      <li className= "list-group-item list listsec"> <Link to="/best-stocks-to-buy" >All Stocks</Link></li>
+                      <li className= "list-group-item list listsec " ><Link to="/best-intraday-stocks-to-buy">Intraday Stocks</Link></li>
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { ShortTermStocks(); toggleTab(2)}}>Short Term Stocks</li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"} onClick={() => { LongTermStocks(); toggleTab(3); }}>Long Term Stocks</li>
                     </ul>
@@ -510,7 +510,7 @@ function urlLink(){
                       </div>:
                       <div>
                       {
-                        list.length ?
+                        list && list.length ?
                                 <div className="row gx-5">
                                   {
                                     (list || []).slice(1, 5).map((response, index) => {
