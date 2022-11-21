@@ -183,8 +183,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                             <div className="form_main">
                                 <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
                                 <div className="  Mobile_text">
-                                    <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no"  autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
-                                    <label htmlFor="form-email" className="form-label" >Mobile Number</label>
+                                    <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
+                                    {/* <label htmlFor="form-email" className="form-label" >Mobile Number</label> */}
                                     <div>
                                         <small id="mobile_no_error" className="errormsg text-danger">{errors.invalidMobile ? 'Invalid Mobile Number' : ''}</small>
                                     </div>
