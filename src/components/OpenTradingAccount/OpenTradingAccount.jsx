@@ -186,26 +186,26 @@ function OpenTradingAccount() {
                                         On the other hand, a trading account acts as a platform for selling and buying securities or shares. So, the major financial transactions are a part of this account. 
                                         <br/><br/>
 
-                                        <h3 className="font-bold">Holding Securities </h3> <br />
+                                        <h3 className="font-bold">Holding Securities </h3>
                                         
                                         <h4><span  className="font-bold">Demat Account</span> s- It can hold equity shares, government securities, ETF and mutual funds.</h4>
                                         <br />
                                         <h4><span  className="font-bold">Demat Account</span> -    It doesn't hold any financial instruments, but assists in purchasing and selling them</h4>
                                      <br />
 
-                                        <h3 className="font-bold">Suitability</h3><br />
+                                        <h3 className="font-bold">Suitability</h3>
                                         <h4><span  className="font-bold">Demat Account</span> -   It's suitable for traders who prefer stock deliveries and hold them for long periods</h4>
                                         <br />
                                         <h4><span  className="font-bold">Demat Account</span> - It's suitable for users interested in intraday trading and quick transactions that won't take long hours.</h4>
                                         <br />
 
-                                        <h3 className="font-bold">Regulatory</h3><br />
+                                        <h3 className="font-bold">Regulatory</h3>
                                         <h4><span  className="font-bold">Demat Account</span> -  SEBI and NSDL approval is mandatory here.</h4>
                                         <br />
                                         <h4><span  className="font-bold">Demat Account</span> - These approvals are not mandatory here.</h4>
                                         <br />
 
-                                        <h3 className="font-bold">Function </h3><br />
+                                        <h3 className="font-bold">Function </h3>
                                         <h4><span  className="font-bold">Demat Account</span> - It functions like a savings account.</h4>
                                         <br />
                                         <h4><span  className="font-bold">Trading Account </span>- It works like a current bank account.</h4>

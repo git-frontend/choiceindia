@@ -88,7 +88,7 @@ function CorporateDemateAccount() {
                                             At Choice India, we offer our customers to open <a href="https://choiceindia.com/campaign/free-amc-demat-account">demat account with zero amc</a>.
                                             <br/><br/>(The Annual Maintenance fee is charged for the general maintenance of the <strong>Demat Account for Corporates</strong> and keeping it functional.)
                                         </div>
-                                       
+                                       <br/>
                                         <h2 className="font-bold">Documents Required to Open A Corporate Demat Account</h2> <br />
                                         There is a set of documents required to open demat account for corporates. The identity proofs and address proofs are compulsory for all account holders. Below are the necessary Corporate Demat Account documents:
                                         <br /><br /><ul><li>Aadhar Card of All Account Holders</li><li>Photographs of all account Holders (Self-Attested)</li><li>Pan Card copies of All Account Holder</li>

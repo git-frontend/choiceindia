@@ -125,9 +125,9 @@ function AmcFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="12" className='faq-item'>
-                                            <Accordion.Header><h4 className='faq-header'>Is Opening a Demat AccountOnline Safe?</h4> </Accordion.Header>
+                                            <Accordion.Header><h4 className='faq-header'>Is Opening a Demat Account Online Safe?</h4> </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            It's absolutely safe to <Link to="https://choiceindia.com/open-free-demat-account">open a Demat account</Link> online but choosing the right broker is essential for this.
+                                            It's absolutely safe to <Link to="/open-free-demat-account">open a Demat account</Link> online but choosing the right broker is essential for this.
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="13" className='faq-item'>

@@ -61,10 +61,8 @@ function CommodityFaq() {
 
 
 
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                            
+                                
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header> <h4 className='faq-header'> How long will it take for the commodity trading account to be activated?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -86,16 +84,12 @@ function CommodityFaq() {
                                         
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
+                                      
 
                                     </Accordion>
 
 
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
-                                    </div>
-                            }
+                                    
                         </div>
                     </div>
                 </div>
