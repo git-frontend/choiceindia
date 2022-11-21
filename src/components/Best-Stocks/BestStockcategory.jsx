@@ -26,6 +26,7 @@ function BestStockcategory() {
   let AllFilesValue = {};
   let tokens="";
   let storefile;
+  let checkurl = (window.location.pathname == "/best-stocks-to-buy") ? "all-stock":(window.location.pathname == "/best-intraday-stocks-to-buy") ? "intraday" :(window.location.pathname == "/best-short-term-stocks-to-buy") ? "short-term" :(window.location.pathname == "/best-stocks-for-long-term-investment") ?"long-term":"";
  
   const [toggleState, setToggleState] = useState(1);
   const [list, setlist] = useState();
@@ -446,8 +447,9 @@ function urlLink(){
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-
-      generateSessionId();
+      checkurl == 'intraday'? generateSessionId() : checkurl == 'short-term'? ShortTermStocks():"";
+      
+       
       
       // multipletokens();
     }
