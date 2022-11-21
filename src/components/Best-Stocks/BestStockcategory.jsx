@@ -434,7 +434,7 @@ function BestStockcategory() {
 
 
   function redirectLink() {
-    window.open("https://finx.choiceindia.com/market/latest-ipo-list");
+    window.open("https://finx.choiceindia.com/auth/login");
   }
 
   
