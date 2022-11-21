@@ -34,7 +34,7 @@ function ETF() {
   const location = useLocation();
 
   const [view, setView] = useState({
-    matches: window.innerWidth < 770 ? false : true,
+    matches: window.innerWidth < 768 ? false : true,
   });
 
 
