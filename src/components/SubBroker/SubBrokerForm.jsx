@@ -55,8 +55,7 @@ function SubBrokerForm(props) {
     var UTMCustom = useRef('');
     var UTMContent = useRef('');
     var isMobile = useRef(isMobileDevice());
-
-
+    const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
 

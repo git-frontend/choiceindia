@@ -6,23 +6,13 @@ import utils from '../../Services/utils';
 
 function SubbrokerStickyFooter({Subbrokerpopupform,openInfoPopup}) {
   
-    function scrollToId(id) {
-        console.log("check123")
-        var element = document.getElementById(id);
-        var headerOffset = 160;
-        var elementPosition = element.getBoundingClientRect().top;
-        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
+
 
 
     return (
         <>
             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                <button className=" primary-orange-btn scroll-top-account openbtn"onClick={openDemateAccountPopup}  >Become a Sub Broker</button>
+                <button className=" primary-orange-btn scroll-top-account openbtn"onClick={Subbrokerpopupform}  >Become a Sub Broker</button>
             </div>
             <section className="stickybottom">
                 <div className="container mx-auto">
