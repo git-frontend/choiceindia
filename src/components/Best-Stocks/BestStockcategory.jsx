@@ -471,7 +471,26 @@ function urlLink(){
               <div className="container">
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
+                    {
+                      toggleState==1?
+                      <div>
+                    <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
+                    </div>:
+                    toggleState==2?
+                    <div>
+                    <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
+                    </div>:
+                    toggleState==3?
+                    <div>
+                    <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
+                    </div>:
+                    toggleState==0?
+                    <div>
                     <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
+                    </div>:
+                    ""
+                    }
+                    
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                     <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
