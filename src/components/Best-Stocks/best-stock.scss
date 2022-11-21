@@ -426,6 +426,9 @@
         .btnsub{
             border-style: none;
             background-color: $bgcolordark;
+            @media (max-width:$md){
+                background-color: #ffffff;
+            }
         }   
         }
 }
