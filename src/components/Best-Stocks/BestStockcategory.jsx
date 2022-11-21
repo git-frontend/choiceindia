@@ -75,11 +75,11 @@ function urlLink(){
 
 
         } else {
-          IntraStocks()
+          IntraStocks([])
         }
 
       }, err => {
-        IntraStocks()
+        IntraStocks([])
       })
 
   }
@@ -474,19 +474,19 @@ function urlLink(){
                     {
                       toggleState==1?
                       <div>
-                    <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
+                    <h2 className="title-secnd1">Best Intraday Stocks to Buy Today - Choice</h2>
                     </div>:
                     toggleState==2?
                     <div>
-                    <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
+                    <h2 className="title-secnd1">Best Short Term Stocks to Buy Today - Choice  </h2>
                     </div>:
                     toggleState==3?
                     <div>
-                    <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
+                    <h2 className="title-secnd1">Best Stocks to Buy for Long Term Investment - Choice</h2>
                     </div>:
                     toggleState==0?
                     <div>
-                    <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
+                    <h2 className="title-secnd1">Best Stocks to Buy Today in India - Choice</h2>
                     </div>:
                     ""
                     }
