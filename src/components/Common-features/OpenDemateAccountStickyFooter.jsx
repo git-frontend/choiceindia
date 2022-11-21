@@ -24,7 +24,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = (window.location.pathname.indexOf('best-stocks') > -1) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ) ? 'Best-Stock' : "Blog";
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });

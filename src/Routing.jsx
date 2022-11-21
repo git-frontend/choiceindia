@@ -549,7 +549,22 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
-                         <Route exact path='/best-stocks' element={
+                         <Route exact path='/best-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/best-intraday-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                          <Route exact path='/best-short-term-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/best-stocks-for-long-term-investment' element={
                             <React.Suspense>
                                 < LazyBestStocks />
                             </React.Suspense>
