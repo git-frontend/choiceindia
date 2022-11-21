@@ -8,7 +8,17 @@ import{ useLocation} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
 function Opendemat(){
     
-  
+  function chapterScroll(id) {
+    console.log("check",id);
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
   var UTMCampaign = useRef('');
   var UTMMedium = useRef('');
@@ -1225,7 +1235,9 @@ function Opendemat(){
 
               </section>
 
-             
+              <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                  <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+              </div>  
 
             </main>
         }
