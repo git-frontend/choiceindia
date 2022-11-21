@@ -2,12 +2,11 @@ import React from "react";
 import { useState } from "react";
 import "./best-stock.scss";
 import Template5 from '../Common-features/Template5';
-import { Link } from "react-router-dom";
+
 import "../Remisier/Remisier.scss";
 import BestStockcategory from './BestStockcategory';
 
-import BestStockOpenDematAccount from './BestStockOpenDematAccount';
-import BestStockreadMore from './BestStockreadMore';
+
 
 
 import {
