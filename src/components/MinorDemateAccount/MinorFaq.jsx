@@ -82,10 +82,8 @@ function MinorFaq() {
 
 
 
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                           
+                              
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header > <h4 className='faq-header'>How to take ownership of Demat Account after minor turns major?</h4></Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -153,16 +151,11 @@ function MinorFaq() {
                                         </Accordion.Item>
 
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
-
+                                       
                                     </Accordion>
 
 
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
-                                    </div>
-                            }
+                                   
                         </div>
                     </div>
                 </div>
