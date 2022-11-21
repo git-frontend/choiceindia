@@ -2,10 +2,12 @@ import React, { useEffect, useState, useRef } from 'react';
 import './Subbrokerstickyfooter.scss';
 import Modal from 'react-bootstrap/Modal';
 import './Subbrokerpopupform.jsx';
+import utils from '../../Services/utils';
 
 function SubbrokerStickyFooter({Subbrokerpopupform}) {
   
     function scrollToId(id) {
+        console.log("check123")
         var element = document.getElementById(id);
         var headerOffset = 160;
         var elementPosition = element.getBoundingClientRect().top;
@@ -31,7 +33,7 @@ function SubbrokerStickyFooter({Subbrokerpopupform}) {
                         <form className="d-flex justify-content-around">
                             
                             <div className="form-group">
-                                <button type="submit" className="form-btn" onClick={() => { utils.scrollToId('sub-broker-form') }}>Get Started</button>
+                                <button type="button" className="form-btn" onClick={() => { utils.scrollToId('sub-broker-form') }}>Get Started</button>
                                 {/* <div>
                                     <small id="API_error" className="errormsg text-danger">error msg</small>
                                     </div> */}

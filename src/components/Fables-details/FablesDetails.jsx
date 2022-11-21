@@ -106,7 +106,7 @@ setTrigger(true)
             <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
       }
-      <SubbrokerStickyFooter/>
+      
      {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       } */}
