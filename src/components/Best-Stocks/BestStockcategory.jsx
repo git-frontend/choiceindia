@@ -478,16 +478,35 @@ function urlLink(){
               <div className="container">
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
+                    {
+                      toggleState==1?
+                      <div>
+                    <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
+                    </div>:
+                    toggleState==2?
+                    <div>
+                    <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
+                    </div>:
+                    toggleState==3?
+                    <div>
+                    <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
+                    </div>:
+                    toggleState==0?
+                    <div>
                     <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
+                    </div>:
+                    ""
+                    }
+                    
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                     <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
                   </div>
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
                       <li className= {toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/best-stocks-to-buy" onClick={() => AllStocks() } > All Stocks</Link></li>
-                      <li className= {toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy " onClick={() => generateSessionId()}>Intraday Stocks</Link></li>
+                      <li className= {toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => generateSessionId()}>Intraday Stocks</Link></li>
                       <li className= {toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => ShortTermStocks()}>Short Term Stocks</Link></li>
-                      <li className={toggleState === 3? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => LongTermStocks()}>Long Term Stocks</Link></li>
+                      <li className={toggleState === 3? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-stocks-for-long-term-investment" onClick={() => LongTermStocks()}>Long Term Stocks</Link></li>
                     </ul>
                   </div>
                 </div>
