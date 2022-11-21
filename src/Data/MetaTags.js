@@ -2,7 +2,31 @@ const meta_tags = {
 
   "services": { 'title': "Get Financial Services in India - Choice",'lang':"en", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.',"link":"https://choiceindia.com/services",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
-  "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India','lang':"en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India','lang':"en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Choice India",
+    "alternateName": "Choice",
+    "url": "https://choiceindia.com/",
+    "logo": "https://choiceindia.com/static/media/choice-logo.1d914765c11f128e8039bf4e174af2ee.svg",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+91-022-6707 9999",
+      "contactType": "customer service",
+      "areaServed": "IN"
+    },
+    "sameAs": [
+      "https://www.facebook.com/ChoiceHQ/",
+      "https://twitter.com/ChoiceHQ_Social",
+      "https://www.instagram.com/choicehq_social/",
+      "https://www.youtube.com/c/ChoiceHQ",
+      "https://www.linkedin.com/company/choice-broking/",
+      "https://choiceindia.com/"
+    ]
+  }
+  </script>
+  `},
 
   "career": {
       'title': `Career At Choice | Work With India's Leading FinTech Company`,'lang':"en", 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,"link":"https://choiceindia.com/career",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""
