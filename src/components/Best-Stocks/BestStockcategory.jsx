@@ -39,23 +39,6 @@ function BestStockcategory() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-  function chapterScroll(id) {
-    console.log("called",id)
-    var element = document.getElementById(id);
-    var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
-function urlLink(){
-  const queryParam = window.location.search;
-  const utmvalue = new URLSearchParams(queryParam);
-  const activeurl = utmvalue.get('active');
-  ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
-}
   
   /**
    * Generate Session Id
@@ -126,7 +109,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -454,11 +437,7 @@ function urlLink(){
     window.open("https://finx.choiceindia.com/market/latest-ipo-list");
   }
 
-  function changeurl(id) {
-    window.history.replaceState(null, null, `/best-stocks?active=${id}`);
-    urlLink();
   
-  }
 
 
 
@@ -539,7 +518,7 @@ function urlLink(){
                                               <div className="top-left">
                                                 <h6 className="top-text">Reco Date</h6>
                                                 {
-                                                  toggleState==1?
+                                                  ((toggleState==1) && (checkurl == 'intraday'))?
                                                   <div>
                                                   <h6 className="top-date">{utils.formatDate(new Date(response.TATime), "dd MMMM , yyyy")}</h6>
                                                   </div>:
@@ -549,7 +528,7 @@ function urlLink(){
                                                 
                                               </div>
                                               {
-                                                toggleState == 1?
+                                                ((toggleState == 1) && (checkurl == 'intraday'))?
                                                 <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>:
                                                 <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
                                               }
@@ -559,7 +538,7 @@ function urlLink(){
                                             <div className="middle-section">
                                               <div className="middle-left">
                                                 {
-                                                  toggleState==1?
+                                                  ((toggleState==1) && (checkurl == 'intraday'))?
                                                   <div>
                                                   <h4 className="big-text">{response.Sym}</h4>
                                                   <span className="small-text">{response.Name}</span>
@@ -577,7 +556,7 @@ function urlLink(){
                                               </div>
                                             </div>
                                             {
-                                              toggleState == 1 ?
+                                              toggleState == 1 && checkurl == "intraday" ?
                                               <div className="bottom-section">
                                           <div className="d-flex justify-content-between pt-3">
                                             <div className="bottom">
@@ -603,7 +582,7 @@ function urlLink(){
                                             </div>
                                           </div>
                                         </div>:
-                                        toggleState ==2 ?
+                                        toggleState ==2 && checkurl == "short-term" ?
                                         <div className="bottom-section">
                                             <div className="d-flex justify-content-between pt-3">
                                               <div className="bottom">
