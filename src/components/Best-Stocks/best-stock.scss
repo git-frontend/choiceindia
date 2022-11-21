@@ -272,7 +272,7 @@
 }
 }
 .sendopt{
-    background-color: $bgcolor-blue-light;
+    background-color: $bgcolordark;
     @media (max-width:$md){
         background-color:$abt-bg;
         padding-bottom: 4rem;
@@ -302,7 +302,7 @@
             }        
             .form-ttl{
                 font-size: 1.846rem;
-                color: $blackcolordark;
+                color: $whiteColor;
                 font-family: $font-family-poppins-bold;
                 line-height:2.462rem;
                 display: block;
@@ -319,10 +319,9 @@
         .Mobile_text{
             position: relative;
             .form-textbox {	
-                background-color:$bgcolor-blue-light; 
+                background-color:$whiteColor;
                 border-radius: 0.615rem;
                 border: 1px solid #231F2024;
-                background-color: $bgcolor-blue-light;
                 padding: 11px;
                 width: 100%;
                 @media (max-width:$md){
@@ -338,6 +337,7 @@
                 font-size: .8em;
                 color: inherit;
                 cursor: pointer;
+                // background-color:$whiteColor ;
             }
             .form-label{
                 position: absolute;
@@ -371,11 +371,11 @@
             .form_check_text{
                 font-size: 1.077rem;
                 line-height: 1.615rem;
-                color: #231F20;
+                color: $whiteColor;
                 font-family: $font-family-poppins-regular;
                 padding-left: 0.538rem;
             .link_tc{
-                color: $bluedark;
+                color: $yellowColor;
                 cursor: pointer;
                 font-family: $font-family-poppins-bold;
                 font-size: 1.077rem;
@@ -393,8 +393,8 @@
            
             .send_OPT_btn{
                 font-family: $font-family-poppins-medium;
-                color: $whiteColor;
-                background: $primary;
+                color: $darkblack;
+                background: $yellowColor;
                 padding:13px 0;
                 display: inline-block;
                 border-radius: 0.923rem;
@@ -425,6 +425,7 @@
         }  
         .btnsub{
             border-style: none;
+            background-color: $bgcolordark;
         }   
         }
 }

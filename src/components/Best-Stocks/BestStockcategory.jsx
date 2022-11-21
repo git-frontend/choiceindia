@@ -39,6 +39,23 @@ function BestStockcategory() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
+  function chapterScroll(id) {
+    console.log("called",id)
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+function urlLink(){
+  const queryParam = window.location.search;
+  const utmvalue = new URLSearchParams(queryParam);
+  const activeurl = utmvalue.get('active');
+  ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
+}
   
   /**
    * Generate Session Id
@@ -109,7 +126,7 @@ function BestStockcategory() {
             
           
         }
-        
+        console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -437,7 +454,11 @@ function BestStockcategory() {
     window.open("https://finx.choiceindia.com/market/latest-ipo-list");
   }
 
+  function changeurl(id) {
+    window.history.replaceState(null, null, `/best-stocks?active=${id}`);
+    urlLink();
   
+  }
 
 
 
@@ -453,25 +474,29 @@ function BestStockcategory() {
                     {
                       toggleState==1?
                       <div>
-                    <h2 className="title-secnd1">Best Intraday Stocks to Buy Today - Choice</h2>
+                    <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
+                    <p className="title_para res_para ">Get the list of best stocks to buy today for intraday stocks trading!</p>
                     </div>:
                     toggleState==2?
                     <div>
-                    <h2 className="title-secnd1">Best Short Term Stocks to Buy Today - Choice  </h2>
+                    <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
+                    <p className="title_para res_para ">Get the list of best stocks to buy today for Short Term stocks trading!</p>
                     </div>:
                     toggleState==3?
                     <div>
-                    <h2 className="title-secnd1">Best Stocks to Buy for Long Term Investment - Choice</h2>
+                    <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
+                    <p className="title_para res_para ">Get the list of best stocks to buy today for Long Term stocks trading!</p>
                     </div>:
                     toggleState==0?
                     <div>
-                    <h2 className="title-secnd1">Best Stocks to Buy Today in India - Choice</h2>
+                    <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
+                    <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                     </div>:
                     ""
                     }
                     
-                    <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
-                    <p className="title_para res_para ">Get the list of best stocks to buy today for intraday trading!</p>
+                    
+                    
                   </div>
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
@@ -518,7 +543,7 @@ function BestStockcategory() {
                                               <div className="top-left">
                                                 <h6 className="top-text">Reco Date</h6>
                                                 {
-                                                  ((toggleState==1) && (checkurl == 'intraday'))?
+                                                  toggleState==1?
                                                   <div>
                                                   <h6 className="top-date">{utils.formatDate(new Date(response.TATime), "dd MMMM , yyyy")}</h6>
                                                   </div>:
@@ -528,7 +553,7 @@ function BestStockcategory() {
                                                 
                                               </div>
                                               {
-                                                ((toggleState == 1) && (checkurl == 'intraday'))?
+                                                toggleState == 1?
                                                 <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>:
                                                 <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
                                               }
@@ -538,7 +563,7 @@ function BestStockcategory() {
                                             <div className="middle-section">
                                               <div className="middle-left">
                                                 {
-                                                  ((toggleState==1) && (checkurl == 'intraday'))?
+                                                  toggleState==1?
                                                   <div>
                                                   <h4 className="big-text">{response.Sym}</h4>
                                                   <span className="small-text">{response.Name}</span>
@@ -556,7 +581,7 @@ function BestStockcategory() {
                                               </div>
                                             </div>
                                             {
-                                              toggleState == 1 && checkurl == "intraday" ?
+                                              toggleState == 1 ?
                                               <div className="bottom-section">
                                           <div className="d-flex justify-content-between pt-3">
                                             <div className="bottom">
@@ -582,7 +607,7 @@ function BestStockcategory() {
                                             </div>
                                           </div>
                                         </div>:
-                                        toggleState ==2 && checkurl == "short-term" ?
+                                        toggleState ==2 ?
                                         <div className="bottom-section">
                                             <div className="d-flex justify-content-between pt-3">
                                               <div className="bottom">
