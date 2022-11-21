@@ -19,6 +19,7 @@ import {
 import meta_tags from "../../Data/MetaTags";
 import { useEffect } from "react";
 
+
 function BestStockcategory() {
   
   let tokenList = [{}]
@@ -35,6 +36,7 @@ function BestStockcategory() {
   const [skeleton, setSkeleton] = useState(() => true);
   /**Show loader */
   const [showLoader, setShowLoader] = useState(false)
+  const [checkdevice, setcheckdevice] = useState();
 
   const toggleTab = (index) => {
     setToggleState(index);
@@ -56,6 +58,7 @@ function urlLink(){
   const activeurl = utmvalue.get('active');
   ((activeurl == "-to-buy")?AllStocks():(activeurl == "-intraday-stocks-to-buy")?generateSessionId():(activeurl == "-term-stocks-to-buy")?ShortTermStocks():(activeurl == "-for-long-term-investment")?LongTermStocks():"");
 }
+
   
   /**
    * Generate Session Id
@@ -447,12 +450,27 @@ function urlLink(){
       checkurl=='all-stock'?AllStocks() :
       checkurl=='long-term'?LongTermStocks():"";
     }
+    if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
+
+      setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+
+    } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
+  
+      setcheckdevice('https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1')
+      
+    } else if(/webOS|windows/i.test(navigator.userAgent)){
+      setcheckdevice('https://finx.choiceindia.com/auth/login')
+    }
+    else{
+      setcheckdevice('https://finx.choiceindia.com/auth/login')
+
+    }
   }, [rendercount])
 
 
-  function redirectLink() {
-    window.open("https://finx.choiceindia.com/auth/login");
-  }
+  // function redirectLink() {
+  //   window.open("https://finx.choiceindia.com/auth/login");
+  // }
 
   function changeurl(id) {
     window.history.replaceState(null, null, `/best-stocks?active=${id}`);
@@ -554,8 +572,8 @@ function urlLink(){
                                               </div>
                                               {
                                                 toggleState == 1?
-                                                <div className="top-right"><button className="btn-buy sellbtn" onClick={() => redirectLink()}>Sell</button></div>:
-                                                <div className="top-right"><button className="btn-buy" onClick={() => redirectLink()}>{response.call_type}</button></div>
+                                                <div className="top-right"><button className="btn-buy sellbtn" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">Sell</a></button></div>:
+                                                <div className="top-right"><button className="btn-buy" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response.call_type}</a></button></div>
                                               }
                                               
                                             </div>
