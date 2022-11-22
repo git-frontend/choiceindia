@@ -475,17 +475,17 @@ function urlLink(){
                       toggleState==1?
                       <div>
                     <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
-                    <p className="title_para res_para ">Get the list of best stocks to buy today for intraday stocks trading!</p>
+                    <p className="title_para res_para ">Get the list of the best stocks to buy today for intraday trading.</p>
                     </div>:
                     toggleState==2?
                     <div>
                     <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
-                    <p className="title_para res_para ">Get the list of best stocks to buy today for Short Term stocks trading!</p>
+                    <p className="title_para res_para ">Get the list of the best stocks to buy today for short-term investing.</p>
                     </div>:
                     toggleState==3?
                     <div>
                     <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
-                    <p className="title_para res_para ">Get the list of best stocks to buy today for Long Term stocks trading!</p>
+                    <p className="title_para res_para ">Get a list of the best stocks to buy today for long-term investment.</p>
                     </div>:
                     toggleState==0?
                     <div>
@@ -501,9 +501,9 @@ function urlLink(){
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
                       <li className= {toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/best-stocks-to-buy" onClick={() => AllStocks() } > All Stocks</Link></li>
-                      <li className= {toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => generateSessionId()}>Intraday Stocks</Link></li>
-                      <li className= {toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => ShortTermStocks()}>Short Term Stocks</Link></li>
-                      <li className={toggleState === 3? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-stocks-for-long-term-investment" onClick={() => LongTermStocks()}>Long Term Stocks</Link></li>
+                      <li className= {toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/best-intraday-stocks-to-buy" onClick={() => generateSessionId()}>Intraday </Link></li>
+                      <li className= {toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-short-term-stocks-to-buy" onClick={() => ShortTermStocks()}>Short Term </Link></li>
+                      <li className={toggleState === 3? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/best-stocks-for-long-term-investment" onClick={() => LongTermStocks()}>Long Term </Link></li>
                     </ul>
                   </div>
                 </div>
@@ -869,7 +869,7 @@ function urlLink(){
                            <div className="col-md-12">
                              <div className="para px-3">
                                <input type="checkbox" className="read-more-state" id="post-1" />
-                               <span className="read-more-wrap restext"> Choice Group, in the year 2018, invented Jiffy, the trading app to facilitate
+                               <span className="read-more-wrap restext"> Choice Group, in the year 2018, invented <Link to="/online-trading-app">Choice FinX </Link> (formerly Jiffy), the trading app to facilitate
                                  the new gen trading needs. The platform was established to simplify the needs of the traders with regards to
                                  which stocks to buy today in India, where to find the right research recommendations etc.
      
