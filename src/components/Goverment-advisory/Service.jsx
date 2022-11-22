@@ -38,6 +38,7 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
 function Service() {
 
   const [count, setcount] = useState(0);
+  const [count2, setcount2] = useState(0);
 
 
   function chapterScroll(id) {
@@ -97,7 +98,7 @@ function Service() {
             <div className="col-md-12 ">
               {/* <div className="same-list-bx-list"> */}
               <Slider {...settings} className="same-list-bx-list">
-                <div className="same-list-bx-item active" onClick={() => { chapterScroll('thik-advisory')}} >
+                <div className={"same-list-bx-item" + ((count2===0) ? " active":"")} onClick={() => { setcount2(0);chapterScroll('thik-advisory')}} >
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -105,7 +106,7 @@ function Service() {
                     <h4 className='title-fourth'>Urban Development</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===1) ? " active":"")} onClick={() => { setcount2(1);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -113,7 +114,7 @@ function Service() {
                     <h4 className='title-fourth'>Road &amp; Highway</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===2) ? " active":"")} onClick={() => { setcount2(2);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -122,7 +123,7 @@ function Service() {
                     <h4 className='title-fourth'>Water &amp; Sanitation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===3) ? " active":"")} onClick={() => {setcount2(3); chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -131,7 +132,7 @@ function Service() {
                     <h4 className='title-fourth'>Affordable Housing</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===4) ? " active":"")} onClick={() => { setcount2(4);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevone} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -140,7 +141,7 @@ function Service() {
                       Automation</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===5) ? " active":"")} onClick={() => { setcount2(5);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevtwo} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -149,7 +150,7 @@ function Service() {
                       Building</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===6) ? " active":"")} onClick={() => { setcount2(6);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevthree} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -158,7 +159,7 @@ function Service() {
                       Management</h4>
                   </div>
                 </div>
-                <div className="same-list-bx-item" onClick={() => { chapterScroll('thik-advisory')}}>
+                <div className={"same-list-bx-item" + ((count2===7) ? " active":"")} onClick={() => { setcount2(7);chapterScroll('thik-advisory')}}>
                   <div className="bx-item-cont">
                     <span className="listimg">
                       <LazyLoader src={urbandevfour} alt={""} className={'img-fluid'} width={"80"} height={"80"} />
@@ -173,28 +174,28 @@ function Service() {
         </div>
 
         <div className="main-cont-gov-adv" id="thik-advisory">
-          <div className="detailsection  cont-itm-active  " >
+          <div className={"detailsection " + ((count2===0) ? "cont-itm-active":"")} >
             <Urbandevelopment />
           </div>
-          <div className="detailsection   mt6 ">
+          <div className={"detailsection   mt6 " + ((count2===1) ? "cont-itm-active":"")}>
             <Roadandhighway />
           </div>
-          <div className="detailsection   mt6 ">
+          <div className={"detailsection   mt6 " + ((count2===2) ? "cont-itm-active":"")}>
             <Watersanitation />
           </div>
-          <div className="detailsection  mt6 ">
+          <div className={"detailsection   mt6 " + ((count2===3) ? "cont-itm-active":"")}>
             <Affordablehousing />
           </div>
-          <div className="detailsection ">
+          <div className={"detailsection " + ((count2===4) ? "cont-itm-active":"")}>
             <Processautomation />
           </div>
-          <div className="detailsection   mt6  ">
+          <div className={"detailsection   mt6 " + ((count2===5) ? "cont-itm-active":"")}>
             <Capacitybuilding />
           </div>
-          <div className="detailsection   ">
+          <div className={"detailsection " + ((count2===6) ? "cont-itm-active":"")}>
             <Publicfinancialmanagement />
           </div>
-          <div className="detailsection ">
+          <div className={"detailsection " + ((count2===7) ? "cont-itm-active":"")}>
             <Schemepmus />
           </div>              
         </div>
