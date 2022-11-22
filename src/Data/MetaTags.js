@@ -1771,7 +1771,11 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "link":'https://choiceindia.com/hindi/mutual-funds-investment',"lang":'hi',"faqscript": `` ,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
  "etf-exchange-traded-funds":{'title': "What is ETF? Meaning and How to Invest in ETF?", 
   "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
-  "link":'https://choiceindia.com/etf-exchange-traded-funds',"lang":'en',"faqscript": `` }
+  "link":'https://choiceindia.com/etf-exchange-traded-funds',"lang":'en',"faqscript": `` },
+
+  "intraday-charges":{'title': "Save Intraday Charges on Trades with Choice", 
+  "content": "Pay no additional brokerage fees on intraday charges. Start intraday trading with Choice and save up to 33% on brokerage. Save money right now!",
+  "link":'https://choiceindia.com/intraday-charges',"lang":'en',"faqscript": `` }
 
 
 
