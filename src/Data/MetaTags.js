@@ -1780,6 +1780,24 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
 
 
 
+  "best-stocks-to-buy": {
+    'title': "Best Stocks to Buy Today in India - Choice",'lang':"en", "content": "Looking for the best stocks to buy today in India? Visit us to learn about the best stocks to invest in the Indian stock market across a diverse range of sectors.",
+    "link": "https://dev.choiceindia.com/best-stocks-to-buy"
+  },
+  "best-intraday-stocks-to-buy": {
+    'title': "Best Intraday Stocks to Buy Today - Choice",'lang':"en", "content": "Visit Choice to find today's best intraday stocks. The best intraday stocks to buy today were suggested by our team of experienced analysts. To find out the top intraday stocks right now, visit our website.",
+    "link": "https://dev.choiceindia.com/best-intraday-stocks-to-buy"
+  },
+  "best-short-term-stocks-to-buy": {
+    'title': "Best Short Term Stocks to Buy Today - Choice",'lang':"en", "content": "Are you looking for the best share  to buy for short term period? The top short-term stocks to buy today  can be recommended at Choice, according to our analysts. To obtain it right away, go to our website.",
+    "link": "https://dev.choiceindia.com/best-short-term-stocks-to-buy"
+  },
+  "best-stocks-for-long-term-investment": {
+    'title': "Best Stocks to Buy for Long Term Investment - Choice",'lang':"en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
+    "link": "https://dev.choiceindia.com/best-stocks-for-long-term-investment"
+  }
+
+
 
 
 
