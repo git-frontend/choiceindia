@@ -540,7 +540,7 @@ function urlLink(){
                           <div className="text-center">
                         <div>
                           {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
-                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                          <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                           </div>
                       </div>:
                       <div>
