@@ -77,6 +77,7 @@ function SubBrokerForm(props) {
 
      /**function executes to close the ad popup */
      function hideOpenAccountAdPopup(showAdValues) {
+        console.log("rrrrrr",showAdValues)
         
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
@@ -86,14 +87,14 @@ function SubBrokerForm(props) {
         //after 15min
         setTimeout(() => {
             showOpenAccountAdPopup();
-        }, 900)
+        }, 9000)
     }
 
     useEffect(() => {
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
-            }, 60);
+            }, 6000);
         }
     }, []);
 
