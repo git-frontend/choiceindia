@@ -8,6 +8,14 @@
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
 }
 
+/** temporarychanges */
+// .banner-parent-temp {
+  
+//     position: relative;
+//     background-color: #F4F6F7;
+//     height: 800px;
+//     width: 100%;
+// }
 
 .banner-contact1 {
     // border:2px solid red;
@@ -65,63 +73,43 @@
 /** changes below */
 .banner-parent {
     width: 100%;
-    background-color: #EFE0E0;
-    padding-top: 2rem;
-    padding-bottom: 5rem;
 }
 
 .banner-contact {
     position: relative;
+    padding-bottom: 4rem;
     animation: hideMe 4s forwards;
     @media (max-width: $sm) {
         min-height: 200px;
     }
+    
+    
+
+    .ban-img {
+        width: 100%;
+        @media (max-width: $sm) {
+            display: none;
+        }
+    }
+
     .banner-caption {
-        // position: absolute;
+        position: absolute;
         left: 0;
         width: 100%;
         top: 50%;
-        // transform: translate(0, -50%);
+        transform: translate(0, -50%);
         z-index: 9;
         color: $primary;
 
         .big-ttl {
-            margin-top: 14rem;
             @media (max-width: $sm) {
                 font-size: 3rem;
                 line-height: 1.5;
             }
         }
-        .bannerbg{
-            position: relative;
-        }
-        .bannerbg::before{
-            content: url(../../assets/images/contact/dots.webp);
-            position: absolute;
-            top: 33%;
-            right: 58%;
-            z-index: -1;
-
-        }
-    
-    .dipar-dropdown {
-        padding-top: 9rem;
-        .depart-text{
-            color: $blacktext;
-            font-family: $font-family-poppins-medium;
-            font-size:1.688rem;
-            line-height:2.5rem ;
-            font-weight: 500;
-                padding-bottom: 1rem;
-        }
-        .department{
-            width: 70%;
-        padding: 0.775rem 2.25rem 0.775rem 0.75rem;
-            
-        }
     }
 }
-}
+
 
 .contactdetail {
     padding: 3rem 0 0 0;
@@ -131,7 +119,18 @@
     @media (max-width: 1024px) {
     }
 
-   
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     display: block;
+    //     height: 57rem;
+    //     width: 21rem;
+    //     right: 0;
+    //     top: -10%;
+    //     background: url('../../assets/images/contact/contactbefore.png');
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    // }
 
     .mt-10 {
         margin-top: 10rem;
@@ -203,11 +202,7 @@
             outline: none;
             border: 0;
             box-shadow: inherit;
-            
-            
         }
-        
-        
 
         .dropdown-toggle {
             width: 100%;
@@ -290,6 +285,7 @@
 
 .cnt-banner-bottm {
     position: relative;
+    margin-top: -208px;
     animation: hideMe 4s forwards;
 
     .writebtn {
@@ -312,7 +308,7 @@
 
     .form {
         position: relative;
-        background-color: $whiteColor;
+        background-color: $primary;
         left: 0;
         right: 0;
         width: 100%;
@@ -320,18 +316,11 @@
         margin: 0 auto;
         // transform: translate(0, -50%);
         z-index: 9;
-        padding: 3rem 4.8rem;
+        padding: 3rem 2.8rem;
 
         @media (max-width: $sm) {
             
             padding: 3rem 2rem;
-        }
-        .whiteus-text{
-            font-size: 1.688rem;
-            line-height: 2.5rem;
-            font-family: $font-family-poppins-bold;
-            color: $blacktext;
-            padding-bottom: 1rem;
         }
 
        
@@ -343,20 +332,17 @@
 
             .formcontrol {
                 background: transparent;
-                border-bottom: 0.5px solid #1111114d !important;
-                color: $blacktext;
+                border: 1px solid $lightColor;
+                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                border-radius: 3px;
+                padding: 14px 12px;
+                color: $whiteColor;
                 font-size: 1.5rem;
                 line-height: 0;
-                transition: none;
-                border: none;
-                border-radius: unset;
 
                 @media (max-width: $sm) {
                     padding: 12px 10px;
                 }
-            }
-            .formcontrol:focus{
-                box-shadow: none;
             }
 
             ::placeholder {
@@ -372,35 +358,27 @@
             }
 
             .formlabel {
-                color: $blacktext;
-                font-size: 1.25rem;
-                line-height: 1.875rem;
+                color: $lightColor;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
                 font-weight: 600;
-                font-family: $font-family-poppins-bold;
-                
+                font-family: $font-family-poppins-regular;
+                margin-bottom: 1.0625rem;
 
                 @media (max-width: $sm) {
                     font-size: 1.2rem;
                 }
             }
-            
         }
-        .formgrp1{
-            width: 100%;
-            @media (max-width:$sm) {
-                width:100%;
-            }
-
-        }
-       
 
         .formlabel {
-            color: $blacktext;
-                font-size: 1.25rem;
-                line-height: 1.875rem;
-                font-weight: 600;
-                font-family: $font-family-poppins-bold;
-                
+            color: $lightColor;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+            font-family: $font-family-poppins-regular;
+            margin-bottom: 1.0625rem;
+
             @media (max-width: $sm) {
                 font-size: 1.2rem;
             }
@@ -476,34 +454,27 @@
                 width: 100%;
                 font-family: $font-family-poppins-regular, sans-serif;
             }
-           
         }
-        
 
         .messagefield {
 
             .messagearea {
-                // min-height: 200px;
+                min-height: 200px;
                 width: 100%;
                 background: transparent;
-                border-bottom: 1px solid #111111 !important;
-                color: $blacktext;
+                border: 1px solid $lightColor;
+                color: $lightColor;
                 font-weight: 400;
                 font-family: $font-family-poppins-regular;
                 font-size: 1.5rem;
                 line-height: 2.25rem;
-                border: none;
-                // padding: 14px;
+                padding: 14px;
 
                 @media (max-width: $sm) {
                     font-size: 1.2rem;
                     padding: 12px 10px;
                 }
             }
-            .messagearea:focus{
-                box-shadow: unset !important;
-            }
-            
         }
 
         .uploadbtn {
