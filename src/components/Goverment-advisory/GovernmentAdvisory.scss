@@ -1070,3 +1070,44 @@
     }
 
 }
+
+.govrn-connect{
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+    @media screen and (max-width: $sm) {
+        padding-bottom: 2rem;
+    }
+    .govrn-bar-cont {
+        padding: 3rem;
+        background: $bgcolordark;
+        border-radius: 15px;
+        position: relative;
+        margin-top: -5.5rem;
+    
+        .govrn-cont-des {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+    
+            .title-fourth {
+                font-size: 2.5rem;
+                @media screen and (max-width: $sm) {
+                    margin-bottom: 4rem;
+                    line-height: 3.5rem;
+                }
+            }
+    
+            h3 {
+                color: $whiteColor;
+            }
+    
+           
+    
+            @media (max-width:$sm-x) {
+                flex-wrap: wrap;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
