@@ -6,6 +6,7 @@ import Button from 'react-bootstrap/Button';
 import Select from 'react-dropdown-select';
 import Modal from 'react-bootstrap/Modal';
 import { Link } from "react-router-dom";
+const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(true);
 
 
 function SubbrokerpopupForm(hideComponent) {
