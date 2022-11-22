@@ -86,14 +86,14 @@ function SubBrokerForm(props) {
         //after 15min
         setTimeout(() => {
             showOpenAccountAdPopup();
-        }, 900000)
+        }, 900)
     }
 
     useEffect(() => {
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
-            }, 60000);
+            }, 60);
         }
     }, []);
 
@@ -133,13 +133,13 @@ function SubBrokerForm(props) {
             };
         }
     }, [props.isFromFableDetails]);
-
+console.log("check",document.documentElement.clientWidth)
     function onScroll() {
         let element = document.getElementById('fablesdetail-title');
         if (element) {
             const rect = element.getBoundingClientRect();
             setFablesDetailTitleId(
-                rect.top >= 0 &&
+                rect.top >= 1200 &&
                 rect.left >= 0 &&
                 rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
                 rect.right <= (window.innerWidth || document.documentElement.clientWidth)
@@ -326,7 +326,7 @@ function SubBrokerForm(props) {
         setBrokerCreatedSuccess(true);
         setTimeout(() => {
             setBrokerCreatedSuccess(false);
-        }, 2000)
+        }, 200)
     }
 
     function handleBrokerCreatedSuccessClose() {
