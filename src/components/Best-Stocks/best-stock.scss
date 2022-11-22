@@ -308,6 +308,7 @@
                 display: block;
                 @media (max-width:$md){
                     padding-bottom: 3rem;
+                    color: $darkblack;
                 }
                 .reshide{
                     @media (max-width:$md){
@@ -374,6 +375,9 @@
                 color: $whiteColor;
                 font-family: $font-family-poppins-regular;
                 padding-left: 0.538rem;
+                @media (max-width:$md){
+                    color: $bgcolordark;
+                }
             .link_tc{
                 color: $yellowColor;
                 cursor: pointer;
@@ -381,6 +385,10 @@
                 font-size: 1.077rem;
                 line-height: 1.615rem;
                 text-decoration: none;
+       
+                @media (max-width:$md){
+                    color:#0066b3 ;
+                }
             }
             @media (max-width:$md){
                  br{
