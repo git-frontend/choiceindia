@@ -105,12 +105,14 @@
         box-shadow: 0px 3px 6px #0000001A;
     }
 }
-.main{
+.main-parent{
         padding: 1.438rem 0rem;
         background-color:$abt-bg;
-
+        min-height: 646px;
         @media (max-width:$sm){
-        padding-top: 19rem;}
+        padding-top: 19rem;
+        height: 100%;
+    }
     .main-left{
         background-color: $whiteColor;
         border-radius: 0.5rem;

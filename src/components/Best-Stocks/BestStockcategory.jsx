@@ -511,7 +511,7 @@ function urlLink(){
             </section>
             
 
-            <section className="main">
+            <section className="main-parent">
               <div className="container">
                 <div  className="content-tabs best-stock-tabs-cont active-content">
                   <div className="row d-flex justify-content-center">
