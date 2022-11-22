@@ -1766,6 +1766,9 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "telugu/sub-broker-franchise": { 'title': " డిపాజిట్ లేకుండా సబ్ బ్రోకర్ ఫ్రాంచైజ్ - ఛాయిస్ సబ్ బ్రోకర్ అవ్వండి", 
   "content": "ఛాయిస్తో సబ్ బ్రోకర్ అవ్వండి. డిపాజిట్ లేకుండా సబ్ బ్రోకర్‌షిప్ వ్యాపారం లేదా ఫ్రాంచైజీని తెరవండి* & క్లయింట్ యొక్క మొత్తం ట్రేడింగ్ జీవితకాలం కోసం మొత్తం బ్రోకరేజీలో 75% వరకు పొందండి.",
   "link":'https://choiceindia.com/telugu/sub-broker-franchise',"lang":'te',"faqscript": `` },
+  "etf-exchange-traded-funds":{'title': "What is ETF? Meaning and How to Invest in ETF?", 
+  "content": "Do you wish to learn more about exchange-traded funds? Visit to learn more about ETF meaning, investing in ETF, ETF vs. Mutual Funds, ETF vs. Stocks, etc.",
+  "link":'https://choiceindia.com/etf-exchange-traded-funds',"lang":'en',"faqscript": `` }
 
 
 }
