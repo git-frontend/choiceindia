@@ -54,7 +54,7 @@ const RemisierMoreContent = () => {
                     <li>No Registration Charges</li>
                     <li>Highest Revenue Sharing</li>
                     <li>Earn For A Lifetime</li>
-                    <li>Up to ₹ 1000 Per A/C Opening Incentive</li>
+                    <li>Up to ₹ 2100 Per A/C Opening Incentive</li>
                 </ol>
             </li>
             <li>Transparent and Growth-Oriented Business Model</li>
@@ -68,7 +68,7 @@ const RemisierMoreContent = () => {
             <li>
             Advanced Technical Assistance
                 <ol>
-                    <li>Cutting-edge Trading Platforms(<Link to="/online-trading-app">Jiffy Trading App</Link> &amp; Advanced Website)</li>
+                    <li>Cutting-edge Trading Platforms(<Link to="/online-trading-app">Choice FinX Trading App</Link> &amp; Advanced Website)</li>
                     <li>Hassle-Free Software for Tracking and Monthly Reports</li>
                     <li>Dedicated Whatsapp and Telegram Channels</li>
                     <li>Training through Webinars and Conferences</li>

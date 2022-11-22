@@ -77,7 +77,7 @@ function SubBrokerBenifits() {
                                             <img src={Manager} alt={"स्थानिक संबंध प्रबंधकच्या सहाय्याने सब ब्रोकर फ्रँचायझी"} className={"img-fluid franchise-img"} width={"74"} height={"73"} />
                                             {/* <img src={Manager} alt="Local Relationship Manager Assistance" className="img-fluid" width="74" height="73" /> */}
                                         </span>
-                                        <h4> स्थानिक पातळीवरील संपर्क व्यवस्थापन सहायक</h4>
+                                        <h4>स्थानिक पातळीवरील संपर्क व्यवस्थापन सहायक</h4>
                                     </div>
                                 </div>
                                 <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '') }}>

@@ -46,7 +46,7 @@ const imageData =
         "image":`${ImageSub4}`,
         "id": 1,
         "title":'IPO Investment Analysis',
-        "description":'Get a Choice view on upcoming IPOs in Jiffy trading app.'
+        "description":'Get a Choice view on upcoming IPOs in Choice FinX trading app.'
     }
     ,{
         "image":`${ImageSub5}`,

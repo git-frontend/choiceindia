@@ -70,8 +70,17 @@ function Basket() {
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-        }
-      }, [rendercount])
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';}
+          if(!(document.getElementById('link1')==null)){
+            document.getElementById('link1').remove();
+          document.getElementById('link2').remove();
+          document.getElementById('link3').remove();
+          document.getElementById('link4').remove();
+          document.getElementById('link5').remove();
+          document.getElementById('link6').remove();
+          
+          }
+        }, [rendercount])
 
     return (
         <>
@@ -291,7 +300,7 @@ function Basket() {
                                                                         <span className="bold"> Certification:</span> The views expressed in this advertisement accurately reflect the personal views of the analyst(s) about the subject securities or issuers and no part of the compensation of the research analyst(s) was. is, or will be directly or indirectly related to the specific recommendations or views expressed by the research analyst(s). The advertisements are bound by stringent internal regulations and also legal and statutory requirements of the Securities and Exchange Board of India (hereinafter "SEBI").
                                                                     </p>
                                                                     <p><span className="bold">Disclaimer:</span> Investment in the securities market is subject to market risks, read all the related documents carefully before investing.</p>
-                                                                    <p><span className="bold">Note:</span> Basket is not an approved product of exchange. Any grievances will not be dealt at the exchange. Jiffy app users can access the basket feature.</p>
+                                                                    <p><span className="bold">Note:</span> Basket is not an approved product of exchange. Any grievances will not be dealt at the exchange. Choice FinX app users can access the basket feature.</p>
                                                                     <p><span className="bold">Address:</span> Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.</p>
                                                                     <p>&copy; Choiceinternational. CIN - U65999MH2010PTC198714.        All Rights Reserved.</p>
                                                                 </div>

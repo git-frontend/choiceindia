@@ -879,8 +879,12 @@
                     font-size: 2.7rem;
                     line-height: 3.5rem;
                 }
-                @media (max-width: $xs) {
+                @media (min-width:321px) and (max-width: $xs) {
                     font-size: 2.5rem;
+                 
+                }
+                @media (max-width: 320px) {
+                    font-size: 2.3rem;
                  
                 }
             }
@@ -895,18 +899,29 @@
                     font-family: $font-family-poppins-bold;
                     @media (max-width: $md) {
                         font-size: 2.7rem;
-                        line-height: 3rem;
+                        line-height: 3.5rem;
+                        padding-left: 1rem ;
                     }
-                    @media (max-width: $xs) {
+                    @media (min-width:321px) and (max-width: $xs) {
                         font-size: 2.5rem;
+                     
+                    }
+                    @media (max-width: 320px) {
+                        font-size: 2.3rem;
                      
                     }
                 }
             }
-            @media (max-width: $xs) {
+            @media (min-width:321px) and (max-width: $xs) {
                 position: absolute;
-                left: 55px;
+                left: 110px;
                 top: 43px;
+            }
+            @media (max-width: 320px) {
+                position: absolute;
+                left:96px;
+                top: 39px;
+             
             }
         }
         .wrap-app-links{

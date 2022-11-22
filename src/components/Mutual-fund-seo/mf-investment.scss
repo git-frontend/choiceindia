@@ -15,7 +15,7 @@ body{
 .mfi-bannersection{
     padding: 10rem 0 14rem 0;
     position: relative;
-    background: url(../../assets/images/mutual-funds-investment/banner-bg.webp) no-repeat bottom left;
+    background: url(../../assets/images/mutual-funds-investment/invest-in-mutual-funds-online.webp) no-repeat bottom left;
     background-size: cover;
     .lft-sec{
         
@@ -631,5 +631,137 @@ body{
     .title-first{
         text-transform: capitalize;
         margin-bottom: 5rem;
+    }
+}
+
+.investmentcontent {
+    padding: 7rem 0 18rem 0;
+    background: $abt-bg;
+    .title-secnd{
+        font-size: 2.688rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            font-size: 2rem;
+            br{
+                display: none;
+            }
+        }
+    }
+    .terms-cont {
+        margin-top: 5.5rem;
+        height: 340px;
+        overflow-y: scroll;
+        padding-left: 3rem;
+        padding-right:8rem;
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        h3{
+            font-size: 2.688rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 1rem;
+            @media (max-width: $sm) {
+                font-size: 2rem;
+                padding-left: 2rem;
+            }
+        }
+        h4{
+            font-size: 2.2rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 1rem;
+            @media (max-width: $sm) {
+                font-size: 1.8rem;
+                padding-left: 2rem;
+            }
+        }
+        li{
+            font-size: 1.625rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            list-style: none;
+            padding-left: 3rem;
+            padding-right:8rem;
+            position: relative;
+            @media (max-width: $sm) {
+                padding-left: 2rem;
+                padding-right:0rem;
+                margin-bottom: 1rem;
+            }
+            .lipara{
+                margin-bottom: 0;
+                font-size: 1.625rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                position: relative;
+                @media (max-width: $sm) {
+                    padding-left: 0rem;
+                    padding-right: 1rem;
+                    font-size: 1.4rem;
+                    margin-bottom: 0;
+                }
+            }
+            &::before {
+                content: "";
+                width: 0.8rem;
+                height: 0.8rem;
+                background-color:  $primary;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 1.2rem;
+                @media (max-width: $sm) {
+                    top: 0.7rem;
+                }
+            }
+            &::marker {
+                display:none;
+              }
+        }
+       
+            .para {
+                font-size: 1.625rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                
+                position: relative;
+
+                
+                @media (max-width: $sm) {
+                    padding-left: 2rem;
+                    padding-right: 1rem;
+                    font-size: 1.4rem;
+                }
+            }
+        
+        @media (max-width: $sm) {
+            height: 430px;
+        }
+    }
+}
+
+#style-1 {
+    &::-webkit-scrollbar-track {
+        
+        border-radius: 10px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:$yellowColor ;
     }
 }

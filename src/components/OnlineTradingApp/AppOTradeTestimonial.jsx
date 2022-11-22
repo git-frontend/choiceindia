@@ -62,7 +62,7 @@ function AppOTradeTestimonial() {
                       <div className="sdAllContent">
 
                         <div className="sd_scroll">
-                          <p className="sdCustomSliderHeadig">The customer support system is fantastic. Appreciate their attitude to welcome feedback. They are ready to work for customer satisfaction. Jiffy is the Trading App that witnesses your journey of perception to reality!! Exciting to have new features…</p>
+                          <p className="sdCustomSliderHeadig">The customer support system is fantastic. Appreciate their attitude to welcome feedback. They are ready to work for customer satisfaction. Choice FinX is the Trading App that witnesses your journey of perception to reality!! Exciting to have new features…</p>
                         </div>
 
                       </div>

@@ -25,7 +25,7 @@ function InsuranceList() {
                 <div className="col-md-12">
                     <ul className="reset">
                         <li className="ins-list-item">
-                            <a href="https://ismos.in/four-wheeler-insurance/car-insurance-renew-buy-expired-policy" target="_blank" className="list-item-link">
+                            <a href="https://choiceconnect.in/motor-insurance/Car/Q0JBMTUwOTI1MA==?lead_source=choiceindia" target="_blank" className="list-item-link">
                             <span className="img-txt">
                                     <LazyLoader src={car} alt={"Banner Images"} className={"img-fluid sm-img"} width={"165"} height={"102"} /> 
                                  </span>
@@ -34,16 +34,7 @@ function InsuranceList() {
                             </a>
                         </li>
                         <li className="ins-list-item">
-                            <a href="https://ismos.in/health-insurance/online-health-insurance-policy-india" target="_blank" className="list-item-link">
-                             <span className="img-txt">
-                                    <LazyLoader src={health} alt={"Banner Images"} className={"img-fluid sm-img"} width={"108"} height={"152"} />
-                                </span>
-                                <h3 className="ins-ttl">Health Insurance</h3>
-                                <p>Your most important asset deserves the best</p>
-                            </a>
-                        </li>
-                        <li className="ins-list-item">
-                            <a href="https://ismos.in/two-wheeler-insurance/bike-insurance-renew-buy-expired-policy" target="_blank" className="list-item-link">
+                            <a href=" https://choiceconnect.in/motor-insurance/Bike/Q0JBMTUwOTI1MA==?lead_source=choiceindia" target="_blank" className="list-item-link">
                                 <span className="img-txt">
                                     <LazyLoader src={bike} alt={"Banner Images"} className={"img-fluid sm-img"} width={"203"} height={"116"} />
                                 </span>
@@ -52,7 +43,17 @@ function InsuranceList() {
                             </a>
                         </li>
                         <li className="ins-list-item">
-                            <a href="https://ismos.in/term-life-insurance/online-life-term-insurance-buy-policy-india" target="_blank" className="list-item-link">
+                            <a href="http://choiceconnect.in/health-insurance/Q0JBMTUwOTI1MA==?lead_source=choiceindia" target="_blank" className="list-item-link">
+                             <span className="img-txt">
+                                    <LazyLoader src={health} alt={"Banner Images"} className={"img-fluid sm-img"} width={"108"} height={"152"} />
+                                </span>
+                                <h3 className="ins-ttl">Health Insurance</h3>
+                                <p>Your most important asset deserves the best</p>
+                            </a>
+                        </li>
+                      
+                        <li className="ins-list-item">
+                            <a href="http://choiceconnect.in/life-insurance/Q0JBMTUwOTI1MA==?lead_source=jiffy" target="_blank" className="list-item-link">
                             <span className="img-txt">
                                     <LazyLoader src={term} alt={"Banner Images"} className={"img-fluid sm-img"} width={"100"} height={"130"} />
                                 </span>

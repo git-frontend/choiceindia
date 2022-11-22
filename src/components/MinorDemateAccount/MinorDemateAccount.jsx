@@ -23,13 +23,23 @@ function MinorDemateAccount() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+        //   let parser = new DOMParser();
+        //   let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+        //   document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+          if(!(document.getElementById('link1')==null)){
+            document.getElementById('link1').remove();
+          document.getElementById('link2').remove();
+          document.getElementById('link3').remove();
+          document.getElementById('link4').remove();
+          document.getElementById('link5').remove();
+          document.getElementById('link6').remove();
+          
+          }
         }
       }, [rendercount])
       
@@ -64,7 +74,7 @@ function MinorDemateAccount() {
 
 
             <li> To open a Minor Demat Account with us, you can sign up online from the website. </li><br />
-            <li> You can also download our Jiffy App ( Android &amp; iOS) and Sign Up on it.</li><br />
+            <li> You can also download our Choice FinX App ( Android &amp; iOS) and Sign Up on it.</li><br />
             <li> It is advisable to download the app since signing up will require the latest photograph of yourself, which can be easily taken from your phone camera.</li><br />
            <li>If your documents are ready, it will take you about 5 minutes to Sign Up.</li><br />
            <li>Once you upload all the necessary documents and they are verified, you are ready with your new Minor Demat Account.</li><br />

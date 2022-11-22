@@ -109,7 +109,7 @@ function Footer() {
                               <NavLink to="/brokerage-charges">Pricing</NavLink>
                             </li> */}
                             <li>
-                              <a href="https://jiffy.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
+                              <a href="https://finx.choiceindia.com/tools/brokerage-calculator" target="_blank">Calculator</a>
                             </li>
                             <li>
                               <NavLink to="/career">Careers</NavLink>
@@ -237,15 +237,25 @@ function Footer() {
                 <div className="col-md-12">
                   <div className="article">
                     <p><strong>Choiceinternational. CIN - L67190MH1993PLC071117</strong><br />
-                      <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ).  Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
-                      <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
+                      <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ). <br/> Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
+                      <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. <br/> Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
                       <strong>Choice Finserv Private Limited</strong>: NBFC Registration Number : N - 13.02216 <br />
                     </p>
                     <p>
                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
-                      For any grievances email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
+                      For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
+                     
+                      Cautionary Message :
+                    <ol  style={{marginleft:"-1rem"}}> 
+                    <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
+                    <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
+                    <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>
+                    <li>Dealing in unsolicited tips through Whatsapp, Telegram, YouTube, Facebook, SMS, calls, etc.</li>
+                    <li>Trading in “Options” based on recommendations from unauthorised / unregistered investment advisors and influencers</li>
+                     </ol>
+                     
                       Disclaimer: <br />
                       1. *Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br />
                       2. In addition to client based business, we are also doing proprietary trading. <br />
@@ -264,7 +274,8 @@ function Footer() {
 
           <div className="footer-marquee">
             <Marquee direction="left" speed={100} delay={1} pauseOnHover={true} pauseOnClick={true} className="client-list-slider career-list-slider">
-              <p>Attention Investors: ( 1 ) Prevent unauthorized transactions in your trading account - Update your mobile numbers/email IDs with your stock broker(s). ( 2 ) Receive information of your transactions directly from exchange on your mobile/email at the end of the day. ( 3 ) Prevent unauthorized transactions in your demat account - Update your mobile number with your Depository Participant, to receive alerts on your registered mobile number for all debit and other important transactions in your demat account directly from NSDL/CDSL on the same day. ( 4 ) No need to issue Cheque by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. ( 5 ) No worries for refund as the money remains in investor's account. ( 6 ) Registration details: Choice Equity Broking Private Limited –SEBI Reg. No. INZ000160131, BSE – TM Code – 3299, NSE – TM Code – 13773, MSEI - – TM Code – 73200, , MCX – TM Code – 40585, NCDEX – TM Code – 01006, ICEX TM Code -1274 ( 7 ) Depository Participant SEBI Reg. No. - IN-DP-84-2015, CDSL DP ID – 12066900. NSDL ID: IN301895 ( 8 ) AMFI Reg. No. ARN:126541 ( 9 ) Investors should be cautious on unsolicited emails and SMS advising to buy, sell or hold securities and trade only on the basis of informed decision. Investors are advised to invest after conducting appropriate analysis of respective companies and not to blindly follow unfounded rumours, tips etc. Further, you are also requested to share your knowledge or evidence of systemic wrongdoing, potential frauds or unethical behaviour through the anonymous portal facility provided on BSE & NSE website. Issued in the interest of the investors. ( 10 ) SEBI Notification for all investors including retail individual investors for all public issues opening on or after January 01, 2016 - No need to issue cheques by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. No worries for refund as the money remains in investor's account. ( 11 ) KYC is one time exercise while dealing in securities markets - Once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund, etc.), you need not undergo the same process again when you approach another intermediary.</p>
+              <p>Attention Investors: ( 1 ) Prevent unauthorized transactions in your trading account - Update your mobile numbers/email IDs with your stock broker(s). Receive information of your transactions directly from exchange on your mobile/email at the end of the day. ( 2 )  Prevent unauthorized transactions in your demat account - Update your mobile number with your Depository Participant, to receive alerts on your registered mobile number for all debit and other important transactions in your demat account directly from NSDL/CDSL on the same day. - Issued in the interest of the investors. ( 3 ) No need to issue Cheque by investors while subscribing to IPO. Just write the bank account number and sign in the application form to authorise your bank to make payment in case of allotment. ( 4 ) No worries for refund as the money remains in investor's account.( 5 ) AMFI Reg. No. ARN:126541 ( 6 ) Investors should be cautious on unsolicited emails and SMS advising to buy, sell or hold securities and trade only on the basis of informed decision. Investors are advised to invest after conducting appropriate analysis of respective companies and not to blindly follow unfounded rumours, tips etc. Further, you are also requested to share your knowledge or evidence of systemic wrongdoing, potential frauds or unethical behaviour through the anonymous portal facility provided on BSE & NSE website. Issued in the interest of the investors.  ( 7 ) KYC is one time exercise while dealing in securities markets - Once KYC is done through a SEBI registered intermediary (broker, DP, Mutual Fund, etc.), you need not undergo the same process again when you approach another intermediary. </p>
+              {/* Registration details: Choice Equity Broking Private Limited – BSE – TM Code – 3299, NSE – TM Code – 13773, MSEI - – TM Code – 73200, , MCX – TM Code – 40585, NCDEX – TM Code – 01006, ICEX TM Code -1274 ( 6 ) Depository Participant SEBI Reg. No. - IN-DP-84-2015, CDSL DP ID – 12066900. NSDL ID: IN301895  */}
             </Marquee>
           </div>
           <div className="quick-links-footer">

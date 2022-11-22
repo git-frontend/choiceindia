@@ -46,7 +46,7 @@ const imageData =
         "image":`${ImageSub4}`,
         "id": 1,
         "title":'IPO निवेश विश्लेषण ',
-        "description":'जिफी ट्रेडिंग ऐप में आगामी IPO पर चॉईस का समीक्षा प्राप्त करें।'
+        "description":'फिनएक्स ट्रेडिंग ऐप में आगामी IPO पर चॉईस का समीक्षा प्राप्त करें।'
     }
     ,{
         "image":`${ImageSub5}`,

@@ -13,7 +13,7 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h1 className="tlt1">
+                                    <h1 className="tlt1 gujratitle">
                                         <span className="tlt2">શરૂ કરો સબ બ્રોકર</span>
                                         ફ્રેન્ચાઇઝ
                                         <span className="tlt2">તે પણ વગર ડિપોઝિટ*</span>
@@ -30,7 +30,7 @@ function BannerSBroker() {
                                         <span>સૌથી વધુ </span> રેવન્યુ શેરિંગ
                                     </li>
                                     <li>
-                                        <span>₹ 1100 સુધી પ્રતિ</span> એકાઉન્ટ ઇન્સેન્ટિવ*
+                                        <span>₹ 2100 સુધી પ્રતિ</span> એકાઉન્ટ ઇન્સેન્ટિવ*
                                     </li>
                                     <li>
                                         <span>જીવનભર </span> કમાઓ

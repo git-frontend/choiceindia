@@ -28,7 +28,9 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
+    const type1=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+
+    
 
 
     /** state to show thankyou popup (add-lead) */
@@ -233,18 +235,18 @@ function DematAccountForm(props) {
         // showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
-            "product": "JIFFY",
+            "product": "FINX",
             "request_source": "CHOICEINDIA",
             "source": "CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
             "sub_ref": null,
             "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
-            "utm_content": null,
-            "utm_custom": null,
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
 
         // setTimeout(() => {
@@ -277,7 +279,7 @@ function DematAccountForm(props) {
             "whatsapp_consent":true,
             "service_code":type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": type1=='MF' ? "INVESTICA":"JIFFY",
+            "product": type1=='MF' ? "INVESTICA":"FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
@@ -532,7 +534,7 @@ function DematAccountForm(props) {
             }
             <div className="demat-account-form" id="dematform">
 
-                <h3 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h3>
+                <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
                         <div className="sub-formgrp">
@@ -555,7 +557,7 @@ function DematAccountForm(props) {
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
                                 {
-                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम और शर्तों</span></a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम आणि अटी </span></a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a  onClick={handleTermsConditionShow}><span className="link-tc">Terms &amp; Conditions</span></a></Form.Check.Label>
+                                    props.language === 'hindi' || props.language === 'hindimutualfund' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम और शर्तों</span></a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम आणि अटी </span></a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a  onClick={handleTermsConditionShow}><span className="link-tc">Terms &amp; Conditions</span></a></Form.Check.Label>
                                 }
 
                             </Form.Check>

@@ -77,7 +77,7 @@ function AppOTradeTestimonial() {
                       <div className="sdAllContent">
 
                         <div className="sd_scroll">
-                          <p className="sdCustomSliderHeadig">Very good App. Very easy to use. Simpler than a certain bank's App. Trading experience with Jiffy is excellent.</p>
+                          <p className="sdCustomSliderHeadig">Very good App. Very easy to use. Simpler than a certain bank's App. Trading experience with Choice FinX is excellent.</p>
                         </div>
 
                       </div>
@@ -108,7 +108,7 @@ function AppOTradeTestimonial() {
                     <div className="btnNtxt">
                       <div className="sdAllContent">
                         <div className="sd_scroll">
-                          <p className="sdCustomSliderHeadig">User-friendly app and good customer service and relationships manager support..and updated features in Jiffy app.</p>
+                          <p className="sdCustomSliderHeadig">User-friendly app and good customer service and relationships manager support..and updated features in Choice FinX app.</p>
                         </div>
 
                       </div>

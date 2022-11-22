@@ -20,11 +20,11 @@ function WhyBecomeSubBrokerHindi () {
                                     <h6>ग्राहक</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">54</span></h3>
+                                    <h3><span className="counter">75+</span></h3>
                                     <h6>स्थानीय कार्यालय</h6>
                                 </div>
                                 <div className="count-item">
-                                    <h3><span className="counter">24k</span>+</h3>
+                                    <h3><span className="counter">29K</span>+</h3>
                                     <h6>फ्रेंचाइजी</h6>
                                 </div>
                                 <div className="count-item">

@@ -20,7 +20,7 @@ function BestStockreadMore() {
               <div className="col-md-12">
                 <div className="para px-3">
                   <input type="checkbox" className="read-more-state" id="post-1" />
-                  <span className="read-more-wrap "> Choice Group, in the year 2018, invented Jiffy, the app to facilitate the new gen
+                  <span className="read-more-wrap "> Choice Group, in the year 2018, invented Choice FinX, the app to facilitate the new gen
                     trading needs. The platform was established to simplify the needs of the traders with regards to which stocks to
                     buy today in India, where to find the right research recommendations etc.
                     <span className="read-more-target t">

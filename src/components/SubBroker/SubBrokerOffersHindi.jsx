@@ -20,29 +20,41 @@ function SubBrokerOffersHindi(){
                                <thead>
                                   <tr>
                                      <th width="25%"> <span></span> </th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 1,000 और <span> 2 लेनदेन + म्यूचुअल फंड में 1 SIP न्यूनतम रु.500</span></th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 5,000 और  <span>2 लेनदेन + म्यूचुअल फंड में 1 SIP न्यूनतम रु.500</span></th>
-                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 25,000 और <span>2 लेनदेन + म्यूचुअल फंड में 1 SIP न्यूनतम रु.500</span></th>	
+                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 1,000 और <span> 2 लेनदेन </span></th>
+                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 5,000 और  <span>2 लेनदेन</span></th>
+                                     <th>खाते के साथ इक्विटी में न्यूनतम निवेश रु. 25,000 और <span>2 लेनदेन </span></th>	
                                   </tr>
                                </thead>
                                <tbody>
                                   <tr>
-                                     <td className="charges-heads">केवल इक्विटी</td>
+                                     <td className="charges-heads">4-49</td>
+                                     <td>100</td>
+                                     <td>200</td>
+                                     <td>500</td>
+                                  </tr>
+                                  <tr className="grey-back">
+                                     <td className="charges-heads">50-99</td>
+                                     <td>150</td>
+                                     <td>250</td>
+                                     <td>600</td>
+                                  </tr>
+                                  <tr>
+                                     <td className="charges-heads">100-299</td>
                                      <td>200</td>
                                      <td>400</td>
                                      <td>700</td>
                                   </tr>
-                                  <tr className="grey-back">
-                                     <td className="charges-heads">केवल म्यूचुअल फंड</td>
-                                     <td>100</td>
-                                     <td>100</td>
-                                     <td>100</td>
+                                  <tr>
+                                     <td className="charges-heads">300-1999</td>
+                                     <td>300</td>
+                                     <td>500</td>
+                                     <td>1000</td>
                                   </tr>
                                   <tr>
-                                     <td className="charges-heads">इक्विटी + म्यूचुअल फंड</td>
+                                     <td className="charges-heads">2000+</td>
                                      <td>400</td>
                                      <td>700</td>
-                                     <td>1100</td>
+                                     <td>2100</td>
                                   </tr>
                                 
                                </tbody>

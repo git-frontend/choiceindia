@@ -13,7 +13,7 @@ function BannerSBroker() {
                         <div className="col-md-6 col-lg-8 ">
                             <div className="caption-banner">
                                 <div className="left-sec">
-                                    <h1 className="tlt1">
+                                    <h1 className="tlt1 marathititle">
                                         <span className="tlt2">सुरु करा सब ब्रोकर</span>
                                         फ्रँचायझी
                                         <span className="tlt2">विना डिपॉझिट</span>
@@ -30,7 +30,7 @@ function BannerSBroker() {
                                         <span>सर्वोच्च </span> ब्रोकरेज शेअरिंग
                                     </li>
                                     <li>
-                                        <span>प्रति खाते</span>इन्सेंटिव्ह ११०० रुपयापर्यंत
+                                        <span>प्रति खाते</span>इन्सेंटिव्ह २१०० रुपयापर्यंत
                                     </li>
                                     <li>
                                         <span>लाईफटाईम</span>  इनकम स्रोत
