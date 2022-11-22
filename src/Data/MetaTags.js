@@ -1775,10 +1775,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
 
   "intraday-charges":{'title': "Save Intraday Charges on Trades with Choice", 
   "content": "Pay no additional brokerage fees on intraday charges. Start intraday trading with Choice and save up to 33% on brokerage. Save money right now!",
-  "link":'https://choiceindia.com/intraday-charges',"lang":'en',"faqscript": `` }
-
-
-
+  "link":'https://choiceindia.com/intraday-charges',"lang":'en',"faqscript": `` },
 
   "best-stocks-to-buy": {
     'title': "Best Stocks to Buy Today in India - Choice",'lang':"en", "content": "Looking for the best stocks to buy today in India? Visit us to learn about the best stocks to invest in the Indian stock market across a diverse range of sectors.",
