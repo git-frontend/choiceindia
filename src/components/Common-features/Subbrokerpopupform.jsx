@@ -59,8 +59,8 @@ function SubbrokerpopupForm(hideComponent) {
                                 id="terms_and_conditions"
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                <Form.Check.Label> I agree that I have read &amp; accept the 
-                                    <a className="link-tc"> Terms and Condition</a>
+                                <Form.Check.Label> I agree &amp; accept
+                                    <a className="link-tc"> T&amp;C</a>
                             </Form.Check.Label>
                             </Form.Check>
                         </div>
