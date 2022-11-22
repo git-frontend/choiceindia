@@ -71,7 +71,7 @@ function SubbrokerpopupForm(hideComponent) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn"> Send OTP
                                  {/* <div className="loaderB mx-auto"></div>  */}
                             </Button>
-
+                            <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
                         </div>
 
                         
