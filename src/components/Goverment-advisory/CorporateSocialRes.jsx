@@ -56,7 +56,7 @@ function CorporateSocialRes() {
           <div className="govrn-bar-cont">
             <div className="govrn-cont-des">
               <h3 className="title-fourth">Need help with something ? Connect with us</h3>
-              <a href="https://choiceconnect.in/register" target="_blank" className="btn-bg btn-bg-dark">Contact</a>
+              <a href="https://choiceindia.com/contact-us" target="_blank" className="btn-bg btn-bg-dark">Contact</a>
             </div>
           </div>
         </div>
