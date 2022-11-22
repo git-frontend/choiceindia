@@ -1,4 +1,4 @@
-import "./DerivativeTrading.scss";
+// import "./DerivativeTrading.scss";
 import "../OpenDematAccount/DematPage";
 import DerivativeTradingBanner from "./DerivativeTradingBanner";
 import WhyOpenDerivativeTrading from "./WhyOpenDerivativeTrading";
