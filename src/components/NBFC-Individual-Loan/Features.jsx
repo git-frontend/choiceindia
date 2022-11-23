@@ -1,8 +1,6 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-import LazyLoader from "../Common-features/LazyLoader";
-
 function Features() {
 
     return (

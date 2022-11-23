@@ -75,7 +75,7 @@ body{
             text-align: center;
             padding: 2.375rem;
             color: $darkblack;
-            font-size: 2.5rem;
+            font-size: 2rem;
             line-height: 3.75rem;
             font-weight: 400;
             font-family: $font-family-poppins-regular;
@@ -143,7 +143,23 @@ body{
 .features{
     background-color: $darkyellow;
     padding: 5.063rem 0;
- 
+    position: relative;
+    z-index: -1;
+    &::before {
+        content: '';
+        width: 17rem;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        left: 0;
+       z-index: -1;
+        background: url(../../assets/images/loan-bg.webp) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $sm) {
+            display: none;
+        }
+    }
     @media (max-width:$sm) {
         padding: 1.5rem;
     }
@@ -158,20 +174,12 @@ body{
         
     }
 
-    &::before {
-        content: '';
-        width: 17rem;
-        height: 42rem;
-        display: block;
-        position: absolute;
-        left: 0;
-       
-        background: url(../../assets/images/loan-bg.webp) no-repeat top left;
-        background-size: contain;
-
-        @media (max-width: $sm) {
-            display: none;
-        }
-    }
+   
     
+}
+
+
+.avail{
+    padding: 4rem 0;
+   
 }

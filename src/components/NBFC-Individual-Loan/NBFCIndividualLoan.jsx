@@ -3,7 +3,7 @@ import React from "react";
 import Banner from './Banner';
 import Loantabs from './Loantabs';
 import Features from './Features';
-
+import AvailPurpose from './AvailPurpose';
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 
@@ -38,9 +38,9 @@ function NBFCLanding() {
          
          <Banner />
           <Loantabs />
+          
+          <AvailPurpose/>
           <Features/>
-        
-         
        </div> 
       
     
