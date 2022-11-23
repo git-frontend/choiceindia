@@ -34,6 +34,7 @@
             display: flex;
             padding: 0.5rem;
             margin-bottom: 2.5rem;
+            flex-direction: row;
          
 
         .list{
@@ -47,9 +48,18 @@
             border: none;
             background: $whiteColor;
             padding: 0.5rem 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            
             @media (max-width: $sm){
                 white-space: nowrap;
+                
             }
+            
+        }
+        .urllinks1{
+            text-decoration: none;
+            color:$bgcolorblackdark;
         }
         .listsec{
             color: $bgcolor-blue;
@@ -57,10 +67,18 @@
             @media (max-width: $sm){
                 background-color: #ffffff;
                 border-bottom: 2px solid #0066B2;
-                border-radius: 22px 22px 0px 0px;
+                border-radius: 0;
+            }
+            .urllinks1{
+                color: $bgcolor-blue;
+                
             }
             
+            
         }
+    
+        
+        
         @media (max-width: $sm){
            overflow: scroll;
             display: flex;
@@ -69,6 +87,7 @@
             box-shadow: none;
             margin-bottom: 0rem;
             padding: 0rem;
+            border-radius: 0;
         }
     }
     .res_para{
@@ -86,12 +105,14 @@
         box-shadow: 0px 3px 6px #0000001A;
     }
 }
-.main{
+.main-parent{
         padding: 1.438rem 0rem;
         background-color:$abt-bg;
-
+        min-height: 646px;
         @media (max-width:$sm){
-        padding-top: 19rem;}
+        padding-top: 19rem;
+        height: 100%;
+    }
     .main-left{
         background-color: $whiteColor;
         border-radius: 0.5rem;
@@ -133,6 +154,19 @@
                 text-transform: capitalize;
                 min-width: 7.188rem;
         }
+        .sellbtn{
+            color: #fff;
+            background: #ee404a!important;
+            border-color: #ee404a!important;
+        }
+        a{
+            
+            text-decoration: none !important;
+            color: white !important;
+            
+
+        }
+        
     }
     }
     .middle-section{
@@ -168,8 +202,11 @@
                 font-family: $font-family-poppins-regular;
                 padding-top: 0.5rem;
             }
-            .text_color{
+            .text_red{
                 color: $redbg;
+            }
+            .text_green{
+                color: $greentext;
             }
         }
        
@@ -205,6 +242,9 @@
                 color: $primary;
                 line-height: 1.688rem;
                 font-family: $font-family-poppins-medium;
+                @media (max-width:$sm){
+                    font-size:1.077rem;
+                }
                  }
              }
         }
@@ -239,7 +279,7 @@
 }
 }
 .sendopt{
-    background-color: $bgcolor-blue-light;
+    background-color: $bgcolordark;
     @media (max-width:$md){
         background-color:$abt-bg;
         padding-bottom: 4rem;
@@ -269,12 +309,13 @@
             }        
             .form-ttl{
                 font-size: 1.846rem;
-                color: $blackcolordark;
+                color: $whiteColor;
                 font-family: $font-family-poppins-bold;
                 line-height:2.462rem;
                 display: block;
                 @media (max-width:$md){
                     padding-bottom: 3rem;
+                    color: $darkblack;
                 }
                 .reshide{
                     @media (max-width:$md){
@@ -286,10 +327,9 @@
         .Mobile_text{
             position: relative;
             .form-textbox {	
-                background-color:$bgcolor-blue-light; 
+                background-color:$whiteColor;
                 border-radius: 0.615rem;
                 border: 1px solid #231F2024;
-                background-color: $bgcolor-blue-light;
                 padding: 11px;
                 width: 100%;
                 @media (max-width:$md){
@@ -305,6 +345,7 @@
                 font-size: .8em;
                 color: inherit;
                 cursor: pointer;
+                // background-color:$whiteColor ;
             }
             .form-label{
                 position: absolute;
@@ -338,16 +379,23 @@
             .form_check_text{
                 font-size: 1.077rem;
                 line-height: 1.615rem;
-                color: #231F20;
+                color: $whiteColor;
                 font-family: $font-family-poppins-regular;
                 padding-left: 0.538rem;
+                @media (max-width:$md){
+                    color: $bgcolordark;
+                }
             .link_tc{
-                color: $bluedark;
+                color: $yellowColor;
                 cursor: pointer;
                 font-family: $font-family-poppins-bold;
                 font-size: 1.077rem;
                 line-height: 1.615rem;
                 text-decoration: none;
+       
+                @media (max-width:$md){
+                    color:#0066b3 ;
+                }
             }
             @media (max-width:$md){
                  br{
@@ -360,8 +408,8 @@
            
             .send_OPT_btn{
                 font-family: $font-family-poppins-medium;
-                color: $whiteColor;
-                background: $primary;
+                color: $darkblack;
+                background: $yellowColor;
                 padding:13px 0;
                 display: inline-block;
                 border-radius: 0.923rem;
@@ -382,13 +430,21 @@
                 background-color: $yellowColor;
                 color: #231F20;
                 width: 100%;
+                min-width: 25rem;
                 font-family: $font-family-poppins-bold;
                 padding: 0.538rem 0rem;
             }
            
             } 
            
-        }     
+        }  
+        .btnsub{
+            border-style: none;
+            background-color: $bgcolordark;
+            @media (max-width:$md){
+                background-color: #ffffff;
+            }
+        }   
         }
 }
 
@@ -402,3 +458,29 @@
         }
     }
 }
+
+.readmorecontent{
+    @media (max-width:$sm){
+background-color: #F5F9FC;
+padding: 5rem 0 !important; 
+        
+    }
+    .para{
+        .restext{
+            @media (max-width:$sm){
+                color: #797979;
+                font-size: 1.4rem;
+        }
+    }
+       
+    }
+    .read-more-trigger{
+        @media (max-width:$xs){
+            display:block !important;
+            padding: 0 !important;
+            font-size: 1.5rem !important;
+        }
+    }
+   
+}
+

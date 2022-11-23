@@ -5,6 +5,8 @@ import { Form } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
 import contactMap from "../../Data/ContactMapData";
 import city_list from "../../Data/ContactCity";
+import { faClock, faLocationDot, faPhone, faEnvelope, faHeart,faClose,faHeadphones } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContactTemplate from "../Common-features/ContactTemplate";
 import "../Investorcomplaints/investorcomplaints.scss";
 
@@ -18,6 +20,7 @@ function Contactdetail() {
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
+   const [check,setcheck] =useState(false);
    let data = {};
 
    let data2 = {}
@@ -33,6 +36,9 @@ function Contactdetail() {
       data2[ele.id] = ele
    })
 
+   function checktable(){
+      check=!check;
+   }
    setTimeout(() => {
       setShowMap(() => true);
    }, 200)
@@ -47,10 +53,41 @@ function Contactdetail() {
 
       /**======= */
       <div>
-         <section className="contactdetail">
-            <div className="container mainwrapquick m01">
-               <div className="row quicklinkswrap mb-5">
+         <section className="contactdetail contactdetail-new">
+         <div className="container">
+            <div className="row">
+               <div className="col-md-12" >
+               <div className="text-center">
+                  {/* <FontAwesomeIcon icon={faHeadphones} /><br/> */}
+                  <p className="maintitle">Support Related Queries</p>
+                  </div>
+                  <div className="support-md">
+                     <div className="text-center support-itm">
+                        <FontAwesomeIcon icon={faPhone} />
+                        <p><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
+                     </div>
+                     <div className="text-center support-itm">
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                     </div>
+                     </div>
+                     
+                     <h3 className="text-center ">For any grievances reach out to our <a  onClick={()=>{setcheck(true)}} className="cursor-pointer">Escalation Matrix</a></h3>
+               </div>
+            </div>      
+                  
+         </div>
+            <div className="container mainwrapquick-table">
+            
+                  
+               
+                 {
+                  check? 
+                  <div className="row ">
                   <div className="col-md-12">
+                     <div className="quicklinkswrap mt-5 mb-5">
+                     <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={()=>{setcheck(false)}}/>
+                     <div className="clearfix"></div>
                      <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
                      <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
                      <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
@@ -101,10 +138,10 @@ function Contactdetail() {
                         </table>
 
                      </div>
+                     </div>
 
                   </div>
-               </div>
-               <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
+                  <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
                   https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br /><br />
                   BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br />
                   MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br />
@@ -112,8 +149,13 @@ function Contactdetail() {
                   (Working hours of each escalation level- Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)
                   <br /><br />
                   Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
-               <br></br>
-               <div className="row gap-5">
+               <br></br></div>:
+                  ""
+                 }
+                  
+               
+               
+               <div className="row gap-5 mt-10">
                   <div className="col-md-5">
                      <div>
                         <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
