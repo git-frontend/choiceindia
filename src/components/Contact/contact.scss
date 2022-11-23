@@ -127,6 +127,7 @@
     padding: 3rem 0 0 0;
     position: relative;
     animation: hideMe 4s forwards;
+    
 
     @media (max-width: 1024px) {
     }
@@ -612,6 +613,7 @@
 }
 
 .contactdetail-new{
+    background-color: $whiteColor;
     .maintitle{
         margin-bottom: 2rem;
     }

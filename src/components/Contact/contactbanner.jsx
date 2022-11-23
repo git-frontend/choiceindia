@@ -105,7 +105,17 @@ function Contactbanner() {
           <div className="container">
             <div className="row">
               <div className="col-md-4">
-                <h1>hello</h1>
+                <div className="row d-flex justify-content-between">
+               
+                  <p className="whiteus-text">Contact information</p>
+                  <div className="icon-form">
+                    <p>Phone</p>
+                  </div>
+                  <div className="text-form">
+                    <p>+(91) 88-2424-2424</p>
+                  </div>
+                  
+                </div>
               </div>
               <div className="col-md-8">
                 <div className="form">

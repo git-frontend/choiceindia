@@ -57,6 +57,7 @@ function Contactdetail() {
          <div className="container">
             <div className="row">
                <div className="col-md-12" >
+                  <div>
                <div className="text-center">
                   {/* <FontAwesomeIcon icon={faHeadphones} /><br/> */}
                   <p className="maintitle">Support Related Queries</p>
@@ -69,6 +70,7 @@ function Contactdetail() {
                      <div className="text-center support-itm">
                         <FontAwesomeIcon icon={faEnvelope} />
                         <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                     </div>
                      </div>
                      </div>
                      
