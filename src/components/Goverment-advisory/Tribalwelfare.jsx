@@ -142,22 +142,22 @@ function Tribalwelfare() {
 
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={socialpartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={"Niti Aayog"} />
+                        <LazyLoader src={socialpartnerone} className={'img-fluid'} width={"254"} height={"120"} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={socialpartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={"Navkar Corporation"} />
+                        <LazyLoader src={socialpartnertwo} className={'img-fluid'} width={'188'} height={'120'} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={socialpartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={"ICICI"} />
+                        <LazyLoader src={socialpartnerthree} className={'img-fluid'} width={'263'} height={'120'} alt={""} />
                       </div>
                     </div>
                     <div className="image_wrapper">
                       <div className="img-item">
-                        <LazyLoader src={socialpartnerfour} className={'img-fluid'} width={'249'} height={'120'} alt={"Liberty Insurance"} />
+                        <LazyLoader src={socialpartnerfour} className={'img-fluid'} width={'249'} height={'120'} alt={""} />
                       </div>
                     </div>
                     {/* <div className="image_wrapper">

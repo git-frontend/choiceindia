@@ -128,32 +128,32 @@ function Schemepmus() {
 
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners9} className={'img-fluid'} width={"89"} height={"95"} alt={"Niti Aayog"} />
+                      <LazyLoader src={ourpartners9} className={'img-fluid'} width={"89"} height={"95"} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners10} className={'img-fluid'} width={'197'} height={'95'} alt={"Navkar Corporation"} />
+                      <LazyLoader src={ourpartners10} className={'img-fluid'} width={'197'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners11} className={'img-fluid'} width={'116'} height={'95'} alt={"ICICI"} />
+                      <LazyLoader src={ourpartners11} className={'img-fluid'} width={'116'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners12} className={'img-fluid'} width={'329'} height={'95'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners12} className={'img-fluid'} width={'329'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners13} className={'img-fluid'} width={'127'} height={'95'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners13} className={'img-fluid'} width={'127'} height={'95'} alt={""} />
                     </div>
                   </div>
                   <div className="image_wrapper">
                     <div className="img-item">
-                      <LazyLoader src={ourpartners14} className={'img-fluid'} width={'107'} height={'95'} alt={"Liberty Insurance"} />
+                      <LazyLoader src={ourpartners14} className={'img-fluid'} width={'107'} height={'95'} alt={""} />
                     </div>
                   </div>
                   

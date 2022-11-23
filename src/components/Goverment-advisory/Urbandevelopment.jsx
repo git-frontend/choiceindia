@@ -164,7 +164,7 @@ function Urbandevelopment() {
           </div>
           <div className="image_wrapper">
             <div className="img-item">
-              <LazyLoader src={partnerthree} className={'img-fluid'} width={'278'} height={'120'} alt={"Aadhaar"} />
+              <LazyLoader src={partnerthree} className={'img-fluid'} width={'278'} height={'120'} alt={""} />
             </div>
           </div>
 
