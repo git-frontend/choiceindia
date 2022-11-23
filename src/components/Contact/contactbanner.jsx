@@ -109,29 +109,26 @@ function Contactbanner() {
               <div className="col-md-12">
                 <div className="cnt-form-details">
                   <div className="left-from">
-                  <p className="whiteus-text colorchange">Contact information</p>
+                    <p className="whiteus-text colorchange">Contact information</p>
                     <div className="form-data">
                       <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
-                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                      <div className="form-data-right"><a href="tel:02267079999" target="_blank"><p className="form-right-text" >+91-022-6707 9999</p></a> </div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faLocationDot} /> Phone </div>
-                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                      <div className="form-data-left"><FontAwesomeIcon icon={faClock} />  Open</div>
+                      <div className="form-data-right"> <p className="form-right-text" >Between 9:30 AM to 6:30 PM<br />
+                        Monday to Saturday</p></div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
-                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Email </div>
+                      <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
-                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                      <div className="form-data-left"><FontAwesomeIcon icon={faLocationDot} /> Office</div>
+                      <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
+                        J.B. Nagar, Andheri (East),
+                        Mumbai 400099</p> </div>
                     </div>
-
-                    <p>Andheri East, Mumbai <br />Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
-                    <p>Monday - Friday : 08:30 am - 7:00 pm <br />
-                      Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                    <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                    <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                   </div>
                   <div className="right-form form">
                     <p className="whiteus-text">Write to Us</p>
@@ -191,7 +188,7 @@ function Contactbanner() {
                       <div className="uploadbtn mt-3 d-flex align-items-center">
                         <div className="feel-msg">{data}</div>
                         <Button variant="primary"
-                          type="submit" className="btn-bg btn-bg-dark sendbtn">
+                          type="submit" className="btn-bg btn-bg-dark ">
                           {isloader === false ?
                             "Submit" : <Spinner animation="border" />
                           }
@@ -200,7 +197,7 @@ function Contactbanner() {
                     </Form>
                   </div>
                 </div>
-                
+
               </div>
             </div>
           </div>
