@@ -13,7 +13,7 @@ const OpenFreeAccountBanner = () => {
         <div>
              <section className="banner-sect" >
                 <div className="container">
-                    <div className="row">
+                    <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
                                 <div className="desktop">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
@@ -79,6 +79,10 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <h1 className="banner-title mbtitle" >
+                        <div className="mobile">Open a Brokerage Account <br /> <span className="yellow">Online For Free</span></div>
+                                
+                            </h1>
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />

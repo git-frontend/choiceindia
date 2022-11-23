@@ -11,6 +11,17 @@ import etfindeximage from "../../assets/images/index-fund-vs-etf.webp";
 import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 import Slider from 'react-slick';
 function ETF() {
+  function chapterScroll(id) {
+    console.log("check",id);
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   var UTMCampaign = useRef('');
   var UTMMedium = useRef('');
   var UTMSource = useRef('');
@@ -23,7 +34,7 @@ function ETF() {
   const location = useLocation();
 
   const [view, setView] = useState({
-    matches: window.innerWidth < 770 ? false : true,
+    matches: window.innerWidth < 768 ? false : true,
   });
 
 
@@ -53,6 +64,15 @@ function ETF() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+      if(!(document.getElementById('link1')==null)){
+        document.getElementById('link1').remove();
+      document.getElementById('link2').remove();
+      document.getElementById('link3').remove();
+      document.getElementById('link4').remove();
+      document.getElementById('link5').remove();
+      document.getElementById('link6').remove();
+      
+      }
     }
   }, [rendercount])
 
@@ -147,7 +167,7 @@ function ETF() {
               <section className="tablecontent">
                 <div className="container">
                   <div className="row  align-items-center">
-                    <div className="col-md-12">
+                    <div className="col-md-12" id="fablesdetail-title">
                       <h2 className="title">Table of Content</h2>
                     </div>
                     {
@@ -713,7 +733,9 @@ function ETF() {
 
               </section>
 
-
+              <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                  <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+              </div>       
 
             </main>
         }

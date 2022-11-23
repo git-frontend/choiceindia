@@ -6,6 +6,7 @@ import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountS
 import Template2 from "../Common-features/Template2";
 import{ useLocation} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+import Slider from "react-slick";
 function Opendemat(){
     
   
@@ -20,6 +21,9 @@ function Opendemat(){
   const [rendercount, setRenderCount] = useState(() => false);
 
   const location = useLocation();
+  const [view, setView] = useState({
+    matches: window.innerWidth < 768 ? false : true,
+  });
 
   
 
@@ -58,6 +62,7 @@ function Opendemat(){
     setTimeout(DelayloadingImages, 900);
 
   }, [])
+  
 
 
   function fetchQueryParams() {
@@ -80,6 +85,27 @@ function Opendemat(){
       behavior: "smooth"
     });
   }
+
+  useEffect(() => {
+    setTimeout(DelayloadingImages, 900);
+    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    mediaQuery.addListener(setView);
+    // this is the cleanup function to remove the listener
+    return () => mediaQuery.removeListener(setView);
+
+
+  }, [])
+  const settings = {
+    infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 1,
+    autoplay: true,
+    dots: true,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
+
+  };
 
  
 
@@ -129,6 +155,121 @@ function Opendemat(){
                     </div>
 
                     <div className="col-md-12">
+                    {
+                      view && !view.matches ?
+                      <Slider className="same-bx-list" {...settings}>
+                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterOne') }} >
+                          <div className="item-cont">
+                            <span id="chapter-one-img">
+
+                            </span>
+                            {/* <img src='./images/demat-account-meaning.svg' className="" alt="Meaning of Demat Account" /> */}
+                            <h4>Chapter 1</h4>
+                            <p>Meaning of Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTwo') }}>
+                          <div className="item-cont">
+                            <span id="chapter-two-img">
+
+                            </span>
+                            {/* <img src='./images/how-does-demat-account-works.svg' className="" alt="How Demat Account Works" /> */}
+                            <h4>Chapter 2</h4>
+                            <p>How Demat Account Works</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterThree') }}>
+                          <div className="item-cont">
+                            <span id="chapter-three-img">
+
+                            </span>
+                            {/* <img src='./images/demat-account-types.svg' className="" alt="Types of Demat Account" /> */}
+                            <h4>Chapter 3</h4>
+                            <p>Types of Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFour') }}>
+                          <div className="item-cont">
+                            <span id="chapter-four-img">
+
+                            </span>
+                            {/* <img src='./images/demat-account-benefits.svg' className="" alt="Advantages of Demat Account" /> */}
+                            <h4>Chapter 4</h4>
+                            <p>Advantages of Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterFive') }}>
+                          <div className="item-cont">
+                            <span id="chapter-five-img">
+
+                            </span>
+                            {/* <img src='./images/features-of-demat-account.svg' className="" alt="Demat Account Featues" /> */}
+                            <h4>Chapter 5</h4>
+                            <p>Demat Account Features</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSix') }}>
+                          <div className="item-cont">
+                            <span id="chapter-six-img">
+
+                            </span>
+                            {/* <img src='./images/how-to-open-a-demat-account.svg' className="" alt="How to Open Demat Account" /> */}
+                            <h4>Chapter 6</h4>
+                            <p>How to Open Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterSeven') }}>
+                          <div className="item-cont">
+                            <span id="chapter-seven-img">
+
+                            </span>
+                            {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
+                            <h4>Chapter 7</h4>
+                            <p>How to Best Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
+                          <div className="item-cont">
+                            <span id="chapter-eight-img">
+
+                            </span>
+                            {/* <img src='./images/demat-account-uses.svg' className="" alt="Uses of Demat Account" /> */}
+                            <h4>Chapter 8</h4>
+                            <p>Uses of Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterNine') }}>
+                          <div className="item-cont">
+                            <span id="chapter-nine-img">
+
+                            </span>
+                            {/* <img src='./images/difference-between-demat-account-and-trading-account.svg' className=""
+                                    alt="Demat Account vs Trading Account" /> */}
+                            <h4>Chapter 9</h4>
+                            <p>Demat Vs Trading Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTen') }}>
+                          <div className="item-cont">
+                            <span id="chapter-ten-img">
+
+                            </span>
+                            {/* <img src='./images/how-to-deactivate-demat-account.svg' className="" alt="How to Close Demat Account" /> */}
+                            <h4>Chapter 10</h4>
+                            <p>How To Close Demat Account</p>
+                          </div>
+                        </a>
+                        <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEleven') }}>
+                          <div className="item-cont">
+                            <span id="chapter-eleven-img">
+
+                            </span>
+                            {/* <img src='./images/demat-account-faq.svg' className="" alt="Demat Account FAQs" /> */}
+                            <h4>Chapter 11</h4>
+                            <p>Demat Account FAQs</p>
+                          </div>
+                        </a>
+                      </Slider>:
                       <div className="same-bx-list">
                         {/* href="#ChapterOne" */}
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterOne') }} >
@@ -243,6 +384,7 @@ function Opendemat(){
                           </div>
                         </a>
                       </div>
+}
                     </div>
 
                   </div>

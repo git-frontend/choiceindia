@@ -119,7 +119,22 @@ const utils ={
                 behavior: "smooth"
             });
         }
-    }
+    },
+
+   generateTokens(data, segmentKey, tokenKey) {
+        let tokens = "";
+       
+        segmentKey = segmentKey || "SegmentId";
+        tokenKey = tokenKey || "Token";
+        for (let i = 0; i < data.length; i++) {
+          if (data[i][segmentKey] && data[i][tokenKey]) {
+            tokens += data[i][segmentKey] + "@" + data[i][tokenKey] + ",";
+            // console.log("segment key",segmentKey)
+          }
+        }
+        return tokens.substring(0, tokens.length - 1);
+      },
+      
 
 }
 
