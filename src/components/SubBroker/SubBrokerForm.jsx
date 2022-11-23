@@ -68,11 +68,9 @@ function SubBrokerForm(props) {
 
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
-        if (!showOTP) {
+        
             setShowOpenAccountPopup(true);
-        } else {
-            callOpenAccountAdPopupAgain();
-        }
+        
     }
 
      /**function executes to close the ad popup */
@@ -134,7 +132,7 @@ function SubBrokerForm(props) {
             };
         }
     }, [props.isFromFableDetails]);
-console.log("check",document.documentElement.clientWidth)
+// console.log("check",document.documentElement.clientWidth)
     function onScroll() {
         let element = document.getElementById('fablesdetail-title');
         if (element) {
@@ -684,10 +682,19 @@ console.log("check",document.documentElement.clientWidth)
         setLoaders({});
         setOtp('');
         setOTPErrors('');
-    }SubbrokerStickyFooter
+    }
+    function handleOTPShow() {
+        setShowOTP(true);
+    }
 
     return (
         <>
+         {
+                showOpenAccountPopup ? <SubbrokerpopupForm hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></SubbrokerpopupForm> : ''
+            }
+                 {
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
+            }
             <div className="demat-account-form" id="sub-broker-form">
 
 
@@ -695,12 +702,7 @@ console.log("check",document.documentElement.clientWidth)
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                 {
-                showOpenAccountPopup ? <SubbrokerpopupForm hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></SubbrokerpopupForm> : ''
-            }
-                 {
-                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
-            }
+                
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
