@@ -106,56 +106,68 @@ function Contactbanner() {
         <section className="cnt-banner-bottm">
           <div className="container">
             <div className="row">
-              <div className="col-md-4">
-                <div className="left-from">
-                  <div className="form-data">
-                    <div><FontAwesomeIcon icon={faPhone} /> Phone </div>
-                    <div><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+              <div className="col-md-12">
+                <div className="cnt-form-details">
+                  <div className="left-from">
+                  <p className="whiteus-text colorchange">Contact information</p>
+                    <div className="form-data">
+                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
+                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                    </div>
+                    <div className="form-data">
+                      <div className="form-data-left"><FontAwesomeIcon icon={faLocationDot} /> Phone </div>
+                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                    </div>
+                    <div className="form-data">
+                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
+                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                    </div>
+                    <div className="form-data">
+                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
+                      <div className="form-data-right"><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
+                    </div>
+
+                    <p>Andheri East, Mumbai <br />Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
+                    <p>Monday - Friday : 08:30 am - 7:00 pm <br />
+                      Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
+                    <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                    <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                   </div>
-                  
-                  <p>Andheri East, Mumbai <br />Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
-                  <p>Monday - Friday : 08:30 am - 7:00 pm <br />
-                    Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                  <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                  <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
-                </div>
-              </div>
-              <div className="col-md-8">
-                <div className="form">
-                  <p className="whiteus-text">Write to Us</p>
+                  <div className="right-form form">
+                    <p className="whiteus-text">Write to Us</p>
 
-                  <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
-                    <div>
-                      <Form.Group className="mb-3 formgrp formgrp1" controlId="formBasicEmail">
-                        <Form.Label className="formlabel" >Your name <span className="warning">*</span> </Form.Label>
-                        <Form.Control type="text" name="firstName" placeholder="Pushkar" className="formcontrol" {...register('firstName',)} />
-                        <span className="text-danger"> {errors?.firstName?.message} </span>
-                      </Form.Group>
-                    </div>
+                    <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
+                      <div>
+                        <Form.Group className="mb-3 formgrp formgrp1" controlId="formBasicEmail">
+                          <Form.Label className="formlabel" >Your name <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="text" name="firstName" placeholder="Pushkar" className="formcontrol" {...register('firstName',)} />
+                          <span className="text-danger"> {errors?.firstName?.message} </span>
+                        </Form.Group>
+                      </div>
 
-                    <div className="row mt-3 d-flex justify-content-between">
-                      <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                        <Form.Label className="formlabel mt-5">Email  <span className="warning">*</span></Form.Label>
-                        <Form.Control type="text" placeholder="design@choiceindia.com" className="formcontrol"  {...register('email')} />
-                        <span className="text-danger"> {errors?.email?.message} </span>
-                      </Form.Group>
+                      <div className="row mt-3 d-flex justify-content-between">
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                          <Form.Label className="formlabel mt-5">Email  <span className="warning">*</span></Form.Label>
+                          <Form.Control type="text" placeholder="design@choiceindia.com" className="formcontrol"  {...register('email')} />
+                          <span className="text-danger"> {errors?.email?.message} </span>
+                        </Form.Group>
 
-                      <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                        <Form.Label className="formlabel mt-5"> Mobile number <span className="warning">*</span> </Form.Label>
-                        <Form.Control type="tel" placeholder="1234 567 890" pattern="\d*" maxLength={10} className="formcontrol" {...register('mobile')} />
-                        <span className="text-danger"> {errors?.mobile?.message} </span>
-                      </Form.Group>
-                    </div>
-                    <div>
-                      <Form.Group className="mb-3  formgrp formgrp1" controlId="formBasicEmail">
-                        <Form.Label className="formlabel mt-5" >Add a description <span className="warning">*</span> </Form.Label>
-                        <Form.Control type="text" name="firstName" placeholder="Your message" className="formcontrol" {...register('firstName',)} />
-                        <span className="text-danger"> {errors?.firstName?.message} </span>
-                      </Form.Group>
-                    </div>
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                          <Form.Label className="formlabel mt-5"> Mobile number <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="tel" placeholder="1234 567 890" pattern="\d*" maxLength={10} className="formcontrol" {...register('mobile')} />
+                          <span className="text-danger"> {errors?.mobile?.message} </span>
+                        </Form.Group>
+                      </div>
+                      <div>
+                        <Form.Group className="mb-3  formgrp formgrp1" controlId="formBasicEmail">
+                          <Form.Label className="formlabel mt-5" >Add a description <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="text" name="firstName" placeholder="Your message" className="formcontrol" {...register('firstName',)} />
+                          <span className="text-danger"> {errors?.firstName?.message} </span>
+                        </Form.Group>
+                      </div>
 
 
-                    {/* <Form.Group className="mb-3">
+                      {/* <Form.Group className="mb-3">
     <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
     <div className='cust-dropdown'>
       <div className="downar"></div>
@@ -170,23 +182,25 @@ function Contactbanner() {
 
 
 
-                    {/* <label className="formlabel mt-5"> Add a description <span className="warning">*</span></label>
+                      {/* <label className="formlabel mt-5"> Add a description <span className="warning">*</span></label>
                     <div className=" messagefield">
                       <textarea className="messagearea" placeholder="Your message" {...register('question')} />
                       <span className="text-danger"> {errors?.question?.message} </span>
                     </div> */}
 
-                    <div className="uploadbtn mt-3 d-flex align-items-center">
-                      <div className="feel-msg">{data}</div>
-                      <Button variant="primary"
-                        type="submit" className="btn-bg btn-bg-dark sendbtn">
-                        {isloader === false ?
-                          "Submit" : <Spinner animation="border" />
-                        }
-                      </Button>
-                    </div>
-                  </Form>
+                      <div className="uploadbtn mt-3 d-flex align-items-center">
+                        <div className="feel-msg">{data}</div>
+                        <Button variant="primary"
+                          type="submit" className="btn-bg btn-bg-dark sendbtn">
+                          {isloader === false ?
+                            "Submit" : <Spinner animation="border" />
+                          }
+                        </Button>
+                      </div>
+                    </Form>
+                  </div>
                 </div>
+                
               </div>
             </div>
           </div>

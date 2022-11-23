@@ -384,255 +384,283 @@
             font-family: $font-family-poppins-semibold;
         }
     }
+    .cnt-form-details{
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.375rem;
 
-    .form {
-        position: relative;
-        background-color: $whiteColor;
-        left: 0;
-        right: 0;
-        width: 100%;
-        // top: 127%;
-        margin: 0 auto;
-        // transform: translate(0, -50%);
-        z-index: 9;
-        padding: 3rem 4.8rem;
-
-        @media (max-width: $sm) {
-            
-            padding: 3rem 2rem;
-        }
-        .whiteus-text{
-            font-size: 1.688rem;
-            line-height: 2.5rem;
-            font-family: $font-family-poppins-bold;
-            color: $blacktext;
-            padding-bottom: 1rem;
-        }
-
-       
-        .formgrp {
-            width: 49%;
-            @media (max-width:$sm) {
-                width:100%;
+        .left-from{
+            width: 40%;
+            background: linear-gradient(90deg, #232526 0%, #000000 100%);
+            border-radius: 0.375rem;
+            padding: 3rem 4.8rem;
+            .colorchange{
+                color: $whiteColor;
             }
-
-            .formcontrol {
-                background: transparent;
-                border-bottom: 0.5px solid #1111114d !important;
-                color: $blacktext;
-                font-size: 1.5rem;
-                line-height: 0;
-                transition: none;
-                border: none;
-                border-radius: unset;
-
-                @media (max-width: $sm) {
-                    padding: 12px 10px;
-                }
-            }
-            .formcontrol:focus{
-                box-shadow: none;
-            }
-
-            ::placeholder {
-                color: $lightColor;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                }
-            }
-
-            .formlabel {
-                color: $blacktext;
-                font-size: 1.25rem;
-                line-height: 1.875rem;
-                font-weight: 600;
-                font-family: $font-family-poppins-bold;
-                
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                }
-            }
-            
-        }
-        .formgrp1{
-            width: 100%;
-            @media (max-width:$sm) {
-                width:100%;
-            }
-
-        }
-       
-
-        .formlabel {
-            color: $blacktext;
-                font-size: 1.25rem;
-                line-height: 1.875rem;
-                font-weight: 600;
-                font-family: $font-family-poppins-bold;
-                
-            @media (max-width: $sm) {
-                font-size: 1.2rem;
-            }
-        }
-
-        .cust-dropdown {
-            background: $primary;
-            border: 1px solid $lightColor;
-            filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-            border-radius: 3px;
-            padding: 10px;
-            position: relative;
-
-            .downar {
-                position: absolute;
-                right: 10px;
-                top: 20px;
-                z-index: 99;
-
-
-                &::after {
-                    content: url('../../assets/images/contact/soliddownarrow.svg');
-                    position: absolute;
-                    display: block;
-                    height: 11px;
-                    width: 16px;
-                    color: $lightColor;
-                    right: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-
-            .dropdowntoggle {
-                background: $primary;
-                border: 0px solid $lightColor;
-                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-                border-radius: 0px;
-                width: 100%;
-                text-align: left;
+            .form-data{
                 display: flex;
-                align-items: center;
+                flex-wrap: wrap;
                 justify-content: space-between;
+                .form-data-left{
+                    color: $whiteColor;
+                    
+                }
+                .form-data-right{
+                    width: calc(100% - 100px); 
+                    a{
+                        color: $whiteColor;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .right-form{
+            width: 60%;
+            &.form {
                 position: relative;
-                color: $lightColor;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                    padding: 0 10px;
-                }
-
-                &::after {
-                    content: url('../../assets/images/contact/soliddownarrow.svg');
-                    position: absolute;
-                    display: block;
-                    height: 11px;
-                    width: 16px;
-                    color: transparent;
-                    right: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-            .dropdown-menu {
-                width: 100%;
-                font-family: $font-family-poppins-regular, sans-serif;
-            }
-           
-        }
+                background-color: $whiteColor;
+                padding: 3rem 4.8rem;
         
-
-        .messagefield {
-
-            .messagearea {
-                // min-height: 200px;
-                width: 100%;
-                background: transparent;
-                border-bottom: 1px solid #111111 !important;
-                color: $blacktext;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-                border: none;
-                // padding: 14px;
-
                 @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                    padding: 12px 10px;
+                    
+                    padding: 3rem 2rem;
+                }
+                .whiteus-text{
+                    font-size: 1.688rem;
+                    line-height: 2.5rem;
+                    font-family: $font-family-poppins-bold;
+                    color: $blacktext;
+                    padding-bottom: 1rem;
+                }
+        
+               
+                .formgrp {
+                    width: 49%;
+                    @media (max-width:$sm) {
+                        width:100%;
+                    }
+        
+                    .formcontrol {
+                        background: transparent;
+                        border-bottom: 0.5px solid #1111114d !important;
+                        color: $blacktext;
+                        font-size: 1.5rem;
+                        line-height: 0;
+                        transition: none;
+                        border: none;
+                        border-radius: unset;
+        
+                        @media (max-width: $sm) {
+                            padding: 12px 10px;
+                        }
+                    }
+                    .formcontrol:focus{
+                        box-shadow: none;
+                    }
+        
+                    ::placeholder {
+                        color: $lightColor;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+        
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                        }
+                    }
+        
+                    .formlabel {
+                        color: $blacktext;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                        font-weight: 600;
+                        font-family: $font-family-poppins-bold;
+                        
+        
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                        }
+                    }
+                    
+                }
+                .formgrp1{
+                    width: 100%;
+                    @media (max-width:$sm) {
+                        width:100%;
+                    }
+        
+                }
+               
+        
+                .formlabel {
+                    color: $blacktext;
+                        font-size: 1.25rem;
+                        line-height: 1.875rem;
+                        font-weight: 600;
+                        font-family: $font-family-poppins-bold;
+                        
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+        
+                .cust-dropdown {
+                    background: $primary;
+                    border: 1px solid $lightColor;
+                    filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                    border-radius: 3px;
+                    padding: 10px;
+                    position: relative;
+        
+                    .downar {
+                        position: absolute;
+                        right: 10px;
+                        top: 20px;
+                        z-index: 99;
+        
+        
+                        &::after {
+                            content: url('../../assets/images/contact/soliddownarrow.svg');
+                            position: absolute;
+                            display: block;
+                            height: 11px;
+                            width: 16px;
+                            color: $lightColor;
+                            right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+        
+        
+                    .dropdowntoggle {
+                        background: $primary;
+                        border: 0px solid $lightColor;
+                        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                        border-radius: 0px;
+                        width: 100%;
+                        text-align: left;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        position: relative;
+                        color: $lightColor;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+        
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                            padding: 0 10px;
+                        }
+        
+                        &::after {
+                            content: url('../../assets/images/contact/soliddownarrow.svg');
+                            position: absolute;
+                            display: block;
+                            height: 11px;
+                            width: 16px;
+                            color: transparent;
+                            right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+        
+                    .dropdown-menu {
+                        width: 100%;
+                        font-family: $font-family-poppins-regular, sans-serif;
+                    }
+                   
+                }
+                
+        
+                .messagefield {
+        
+                    .messagearea {
+                        // min-height: 200px;
+                        width: 100%;
+                        background: transparent;
+                        border-bottom: 1px solid #111111 !important;
+                        color: $blacktext;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+                        border: none;
+                        // padding: 14px;
+        
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                            padding: 12px 10px;
+                        }
+                    }
+                    .messagearea:focus{
+                        box-shadow: unset !important;
+                    }
+                    
+                }
+        
+                .uploadbtn {
+                    position: relative;
+                    margin-bottom: 0rem;
+                    justify-content: flex-end;
+                    cursor: pointer;
+                }
+                .feel-msg{
+                    margin-right:2rem;
+                    font-family: $font-family-poppins-medium;
+                    color: green;
+                }
+        
+                .attachement {
+                    color: $lightColor;
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    font-weight: 400;
+                    font-family: $font-family-poppins-regular;
+                    margin-bottom: 1.0625rem;
+                    display: flex;
+                    align-items: center;
+        
+                    .fa-link {
+                        margin-left: 1rem;
+                    }
+        
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+        
+                .filename {
+                    padding-left: 20px;
+                    margin: 0;
+                }
+        
+                input::-webkit-file-upload-button {
+                    background-color: transparent;
+                    color: $lightColor;
+                    font-size: 1rem;
+                    line-height: 24px;
+                    font-weight: 400;
+                    border: none;
+                    font-family: $font-family-poppins-regular;
+                }
+        
+                .sendbtn {
+                    min-width: 11rem;
+                    border-radius: 10px;
+                    
                 }
             }
-            .messagearea:focus{
-                box-shadow: unset !important;
-            }
-            
-        }
-
-        .uploadbtn {
-            position: relative;
-            margin-bottom: 0rem;
-            justify-content: flex-end;
-            cursor: pointer;
-        }
-        .feel-msg{
-            margin-right:2rem;
-            font-family: $font-family-poppins-medium;
-            color: green;
-        }
-
-        .attachement {
-            color: $lightColor;
-            font-size: 1.5rem;
-            line-height: 2.25rem;
-            font-weight: 400;
-            font-family: $font-family-poppins-regular;
-            margin-bottom: 1.0625rem;
-            display: flex;
-            align-items: center;
-
-            .fa-link {
-                margin-left: 1rem;
-            }
-
-            @media (max-width: $sm) {
-                font-size: 1.2rem;
-            }
-        }
-
-        .filename {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        input::-webkit-file-upload-button {
-            background-color: transparent;
-            color: $lightColor;
-            font-size: 1rem;
-            line-height: 24px;
-            font-weight: 400;
-            border: none;
-            font-family: $font-family-poppins-regular;
-        }
-
-        .sendbtn {
-            min-width: 11rem;
-            border-radius: 10px;
-            
         }
     }
+
+    
     @media (max-width: $md) {
         margin-top: -158px;
     }
@@ -704,7 +732,13 @@
         }
         @media (max-width: $sm) {
             justify-content: left;
+            padding: 3rem 4rem;
         } 
+        
+        @media (max-width: $xs) {
+            
+            padding: 3rem 0rem;
+        }
         .support-itm{
             display: flex;
             align-items: center;
@@ -712,7 +746,7 @@
             
         
             .subtitle{
-                font-size: 1.25rem;
+                font-size: 1.3rem;
                 line-height: 1.875rem;
                 font-family: $font-family-poppins-regular;
                 padding-left: 1.2rem;
