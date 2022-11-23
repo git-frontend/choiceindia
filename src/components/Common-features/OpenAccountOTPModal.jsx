@@ -356,7 +356,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             </div> */}
 
 
-            <Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose} backdrop='static' keyboard={false}>
+            <Modal show={show} className="bt-strap-mdl otp-main-modal sub-term" onHide={onClose} backdrop='static' keyboard={false}>
 
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>

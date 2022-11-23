@@ -32,9 +32,7 @@
             right: 15px;
             position: absolute;
             font-size: 3rem;
-            @media (max-width:$sm) {
-                color: $whiteColor;
-            }
+            
 		}
 		@media (max-width:$sm) {
             width: 90%;
@@ -69,7 +67,7 @@
 
                 @media (max-width:$sm) {
                     width: 100%;
-                    padding: 25px 20px;
+                    padding: 30px 20px 20px;
                 }
             }
 
@@ -192,28 +190,18 @@
 					display: flex;
 					flex-wrap: wrap;
 	
-					.write {
-						color: $primary;
-						width: 100%;
-						padding: 5px 13px;
-						border: 1px solid #231F2024;
-						border-radius: 8px;
-						outline: none;
-						padding-bottom: 5px;
-						height: 53px;
-						font-size: 17px;
-						font-family: $font-family-poppins-regular;
-						box-shadow: none;
-					}
-					@media (max-width:$sm) {
-						margin-bottom: 20px;
-					}
+					
 				}
 				.form-control{
 					border: 1px solid #0066B3;
 					padding: 1rem 1.5rem;
 					font-size: 1.2rem;
 					border-radius: 12px;
+                    margin-bottom: 20px;
+                    
+                    input{
+                        margin-left: 0;
+                    }
 				}
 				
 				.form-check {
@@ -265,6 +253,7 @@
 					margin-top: 0 !important;
 					margin-bottom: 0 !important;
 					padding: 1rem !important;
+                    width: 100%;
 				}
 				.remindMeLater{
 					font-size: 14px;
@@ -299,4 +288,8 @@ Select{
 	padding: 1rem 1.5rem;
 	font-size: 1.2rem;
 	border-radius: 12px;
+}
+
+.sub-term{
+    z-index: 999999999999;
 }

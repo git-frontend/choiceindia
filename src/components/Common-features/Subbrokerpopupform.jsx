@@ -649,9 +649,9 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
             <div class="exit-intent-sleekbox-popup">
             
                 <div class="popup-sub-row-box">
-                    <div className="close">
+                    {/* <div className="close">
                         <a  onClick={hideComponent} class="closebtn" >&times;</a>
-                        </div> 
+                        </div>  */}
                     <div class="popup-sub-right">
                        
                         <div class="signal-form" id="form-banner">
@@ -704,7 +704,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                 <div className="sub-formgrp">
                                     
                                 <Select ref={selectInputRef}
-                                placeholder="Search Nearest City Branch" className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
+                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger"> Nearest City Branch is required</small> : ''
                             }
@@ -774,7 +774,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
         </div>
         {
                 showOTPPopup ?
-                <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                <Modal show={show} className="bt-strap-mdl sub-term" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
                 <Modal.Body className="border-0">
@@ -834,7 +834,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
             </Modal> : ''
     }
 
-        <Modal show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
+        <Modal className="sub-term" show={showTermsCondition} onHide={handleTermsConditionClose} backdrop="static"
                 keyboard={false} centered>
                 <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
