@@ -13,7 +13,7 @@ body{
 
 
 .individual-loans-banner{
-    background: #FCF0D2;
+    background: $darkyellow;
     padding: 10rem 0 6rem 0;
     .lft-sec{
         .big-ttl{
@@ -81,6 +81,11 @@ body{
             font-family: $font-family-poppins-regular;
             border-right: 1px solid $lightgray;
             cursor: pointer;
+            @media (max-width:$sm) {
+                font-size: 1.45rem;
+                padding: 0.8rem 0.5rem;
+                    line-height: 2.5rem;
+            }
             &:last-child{
                 border-right: none;
             }
@@ -93,4 +98,10 @@ body{
 
 .flexitabcontent{
     padding: 14rem 0;
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .pb24{
+        padding-bottom: 24px;
+    }
 }
