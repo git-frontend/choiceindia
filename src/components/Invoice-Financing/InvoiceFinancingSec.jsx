@@ -4,6 +4,7 @@ import Kycimage from '../../assets/images/invoice-financing/kyc.webp';
 import IncomeProofimage from '../../assets/images/invoice-financing/income-proof.webp';
 import BusinessProofimage from '../../assets/images/invoice-financing/business-proof.webp';
 import "./inv-financing-sec.scss";
+import LazyLoader from '../Common-features/LazyLoader';
 
 function InvoiceFinancingSec() {
   return (
@@ -51,38 +52,44 @@ function InvoiceFinancingSec() {
                 </div>
               </div>
           </div>
-          <div className="row">
-            <div className="col-md-4">
+          <div className="row justify-content-between">
+            <div className="col-xl-3 col-md-4">
             <div className="Doc-rq-card">
-                  <div>
-                    <img src={Kycimage} alt="Kyc" className="img-fluid" width={''} height={''} />
+                  <div className="text-center">
+                    <div className="img-height">
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"212"} alt={"KYC"}/>
+                    </div>
+                    <h3 className="title-doc">KYC</h3>
                   </div>
-                  <h3 className="title-secnd mb-4">KYC</h3>
-                    <ul>
+                    <ul className="list-item">
                       <li>ID Proof</li>
                       <li>Aadhar Card</li>
                     </ul>
                 </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-xl-3 col-md-4">
             <div className="Doc-rq-card">
-                <div>
-                    <img src={IncomeProofimage} alt="Kyc" className="img-fluid" width={''} height={''} />
+                <div className="text-center">
+                  <div className="img-height">
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"311"} height={"209"} alt={"Income Proof"}/>
                   </div>
-                  <h3 className="title-secnd mb-4">Income Proof</h3>
-                  <ul>
+                    <h3 className="title-doc">Income Proof</h3>
+                </div>
+                  <ul className="list-item">
                     <li>ITR of minimum 2 years</li>
                     <li>Turnover of Business</li>
                   </ul>
                 </div>
             </div>
-            <div className="col-md-4">
+            <div className="col-xl-3 col-md-4">
             <div className="Doc-rq-card">
-                <div>
-                    <img src={BusinessProofimage} alt="Kyc" className="img-fluid" width={''} height={''} />
+                  <div className="text-center">
+                    <div className="img-height">
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Business Proof"}/>
+                    </div>
+                    <h3 className="title-doc">Business Proof</h3>
                   </div>
-                  <h3 className="title-secnd mb-4">sss</h3>
-                  <ul>
+                  <ul className="list-item">
                     <li>Residential/Business Address</li>
                     <li>Bank Statement</li>
                     <li>GST Certificate</li>

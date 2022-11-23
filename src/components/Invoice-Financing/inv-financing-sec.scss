@@ -2,9 +2,15 @@
 
 .anchor-spoke-sec{
     padding: 7rem 0;
+    @media screen and (max-width:$sm) {
+        padding: 4rem 0;
+     }
     .Anchor-heading {
         margin-bottom: 8rem;
         text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
     }
     .flex-card{
         display: flex;
@@ -17,13 +23,13 @@
                margin-bottom: 3rem;
             }
             .anchor-spoke-card {
-                background: #FDFFF2;
+                background: $bgligh-cream;
                 border-radius: 20px;
                 box-shadow: 0px 0px 8px #f0f0f0;
-                padding:4rem 5rem;
+                padding:4rem;
                 height: 100%;
-                @media screen and (max-width:$sm) {
-                    padding:3rem 3rem;
+                 @media screen and (max-width:$md) {
+                    padding:2rem;
                  }
                 p{
                     font-size: 1.75rem;
@@ -35,8 +41,46 @@
 }
 
 .Doc-rqrd-sec{
+    padding-bottom: 6rem;
+    @media screen and (max-width:$sm) {
+        padding-bottom: 4rem;
+     }
     .Doc-rqrd-heading{
         margin-bottom: 8rem;
         text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .Doc-rq-card{
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px #f0f0f0;
+            margin-bottom: 3rem;
+         }
+        .img-height{
+            min-height: 233px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+         }
+        .list-item{
+            li{
+                font-size: 2rem;
+                color: $graylight;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.8rem;
+                 }
+            }
+        }
     }
 }
