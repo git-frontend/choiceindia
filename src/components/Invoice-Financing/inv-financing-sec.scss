@@ -1,0 +1,42 @@
+@import '../../assets/css/customvariable.scss';
+
+.anchor-spoke-sec{
+    padding: 7rem 0;
+    .Anchor-heading {
+        margin-bottom: 8rem;
+        text-align: center;
+    }
+    .flex-card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .flex-card-item {
+            width: 47%;
+            @media screen and (max-width:$sm) {
+               width: 100%;
+               margin-bottom: 3rem;
+            }
+            .anchor-spoke-card {
+                background: #FDFFF2;
+                border-radius: 20px;
+                box-shadow: 0px 0px 8px #f0f0f0;
+                padding:4rem 5rem;
+                height: 100%;
+                @media screen and (max-width:$sm) {
+                    padding:3rem 3rem;
+                 }
+                p{
+                    font-size: 1.75rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+    }
+}
+
+.Doc-rqrd-sec{
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+    }
+}
