@@ -114,6 +114,7 @@ const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mut
 const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
 const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 const LazyNBFCLanding = React.lazy(() => import('./components/NBFC/NBFCLanding'));
+const LazyInvoiceFinancing = React.lazy(() => import('./components/Invoice-Financing/InvoiceFinancing'));
 
 
 function Routing() {
@@ -586,6 +587,11 @@ function Routing() {
                         <Route exact path='/nbfc' element={
                             <React.Suspense>
                                 < LazyNBFCLanding />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/invoice-financing' element={
+                            <React.Suspense>
+                                < LazyInvoiceFinancing />
                             </React.Suspense>
                         } />
 
