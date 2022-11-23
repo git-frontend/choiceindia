@@ -777,15 +777,27 @@
             border-radius: 20px;
             border: #C2C2C2 solid 1px;
             padding: 1.5rem;
+            .table {
+                td {
+                    
+                    font-size: 16px;
+                }
+                th {
+                    
+                    font-size: 16px;
+                }
+                
+                
+            }
         }
+      
         .subtxtcontent{
             background-color: $bglightpinkish;
             border-radius: 0.5rem;
             padding: 4rem 6rem;
             .subtxt{
-                .subtext-link{
-                    color: $bgcolor-blue;
-                }
+                font-weight: 400;
+               
             }
         }
     }
