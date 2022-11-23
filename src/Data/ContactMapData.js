@@ -189,7 +189,7 @@ const contactMap = [
 
     {
         "id":18,
-        "city": "JAIPUR RAJASTHAN",
+        "city": "JAIPUR (Branch 1) RAJASTHAN",
         "mobNum": "9321362424, 9320622424, 9829240580",
         "support": "support@choiceindia.com",
         "address1": "229, 2nd Floor, Ganpati Plaza",
@@ -596,12 +596,12 @@ const contactMap = [
 
     {
         "id":54,
-        "city": "JAIPUR RAJASTHAN",
+        "city": "JAIPUR (Branch 2) RAJASTHAN",
         "mobNum": "9321362424, 9320622424, 9829240580",
         "support": "support@choiceindia.com",
-        "address1": "232, 2nd Floor, Ganpati Plaza",
-        "address2": ", M. I. Road,",
-        "address3": "Jaipur - 302001, Rajasthan",
+        "address1": "First Floor, B2/18, Gandhi Path,",
+        "address2": " Chitrakoot Scheme, Vaishali Nagar,",
+        "address3": "Jaipur, Rajasthan - 302021",
         "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7115.026810730471!2d75.79093115390624!3d26.918933900000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5f0aecae189%3A0x194250a129817bbd!2sGanpati%20plaza%20M.I.Road!5e0!3m2!1sen!2sin!4v1656790272052!5m2!1sen!2sin"
     },
 ]
