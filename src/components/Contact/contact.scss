@@ -124,7 +124,7 @@
 }
 
 .contactdetail {
-    padding: 3rem 0 0 0;
+    // padding: 3rem 0 0 0;
     position: relative;
     animation: hideMe 4s forwards;
     
@@ -132,7 +132,13 @@
     @media (max-width: 1024px) {
     }
 
-   
+    .mt-7 {
+        margin-top: 7rem;
+
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+    }
 
     .mt-10 {
         margin-top: 10rem;
@@ -156,23 +162,34 @@
     }
 
     .maintitle {
-        color: $primary;
+        color: $blacktext;
         font-weight: 600;
         font-size: 1.875rem;
         line-height: 2.8125rem;
         font-family: $font-family-poppins-medium;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+    .resmaintitle{
+        @media (max-width: $sm-xs) {
+            font-size: 1.775rem;
+        }
     }
 
     .subtext {
         color: $secondary;
         font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 2.5rem;
+        font-size: 1.25rem;
+        line-height: 1.875rem;
         font-family: $font-family-poppins-regular;
+         a{
+                text-decoration: none;
+                color: $bgcolor-blue;
+            }
     }
 
     .subhead {
-        color: $primary;
+        color: $secondary;
         font-weight: 400;
         font-size: 1.25rem;
         line-height: 2.125rem;
@@ -272,7 +289,64 @@
     @media (max-width: $sm) {
         padding: 5rem 0 0 0;
     }
+    .esctext{
+        font-size: 1.688rem;
+        line-height: 2.5rem;
+        color: $blacktext;
+        font-family: $font-family-poppins-medium;
+        a{
+            text-decoration: none;
+            color: #0046AE;
+        }
+    }
+    .office-details{
+        display: flex;
+        justify-content: space-between;
+       
+        @media (max-width: $lg){
+            flex-direction: column;
+        }
+
+        .contactoffice{
+            width: 70%;
+            display: flex;
+            background-color: $whiteColorlight;
+            border-radius: 0.5rem;
+            @media (min-width: $sm-x) and (max-width: $lg){
+                width: 100%;    
+            }
+            @media (max-width: $sm){
+                flex-direction: column;
+                width: 100%;
+            }
+            .officedeatil{
+                width: 50%;
+                padding: 3rem;
+                @media (max-width: $sm){
+                    width: 100%;
+                    padding: 2rem;
+                }
+            }
+        }
+        .contactcyber{
+            width:30% ;
+            padding: 3rem;
+            background-color: $whiteColorlight;
+            border-radius: 0.5rem;
+            @media (min-width: $sm-x) and (max-width: $lg){
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+            }
+            @media (max-width: $sm){
+                width:100% ;
+                padding: 2rem;
+            }
+
+        }
+    }
 }
+
 
 .text-right {
     text-align: right !important;
@@ -594,6 +668,7 @@
     .support-md{
         display: flex;
         justify-content: space-around;
+        
         @media (max-width: $sm) {
             flex-direction: column;
         }
@@ -614,22 +689,33 @@
 
 .contactdetail-new{
     background-color: $whiteColor;
-    .maintitle{
-        margin-bottom: 2rem;
-    }
+    
     .support-md{
-        margin-bottom: 3.5rem;
+        margin: 5.5rem 0rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        background-color: $whiteColorlight;
+        padding: 3rem 4rem;
+        border-radius: 0.5rem;
+        align-items: center;
+        @media (max-width: $md) {
+           flex-direction: column;
+        }
+        @media (max-width: $sm) {
+            justify-content: left;
+        } 
         .support-itm{
             display: flex;
             align-items: center;
             margin: 0.5rem 0;
-            p{
-                font-size: 1.4rem;
+            
+        
+            .subtitle{
+                font-size: 1.25rem;
+                line-height: 1.875rem;
                 font-family: $font-family-poppins-regular;
-                padding-left: 0.6rem;
+                padding-left: 1.2rem;
                 margin: 0;
                 a{
                     text-decoration: none;
@@ -640,8 +726,16 @@
                 }
             }
         }
+        .support-main{
+            display: flex;
+            flex-direction: row;
+        
+        
+
+    }
     }
     .mainwrapquick-table{
+
         .icon-table{
             float: right;
         }
@@ -650,5 +744,16 @@
             border: #C2C2C2 solid 1px;
             padding: 1.5rem;
         }
+        .subtxtcontent{
+            background-color: $bglightpinkish;
+            border-radius: 0.5rem;
+            padding: 4rem 6rem;
+            .subtxt{
+                .subtext-link{
+                    color: $bgcolor-blue;
+                }
+            }
+        }
     }
+
 }

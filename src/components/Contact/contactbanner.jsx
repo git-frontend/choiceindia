@@ -13,6 +13,8 @@ import { CgAsterisk } from 'react-icons/cg';
 import contactService from '../../Services/contactService'
 import LazyLoader from '../Common-features/LazyLoader';
 import Spinner from 'react-bootstrap/Spinner';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons';
 
 function Contactbanner() {
 
@@ -105,16 +107,17 @@ function Contactbanner() {
           <div className="container">
             <div className="row">
               <div className="col-md-4">
-                <div className="row d-flex justify-content-between">
-               
-                  <p className="whiteus-text">Contact information</p>
-                  <div className="icon-form">
-                    <p>Phone</p>
-                  </div>
-                  <div className="text-form">
-                    <p>+(91) 88-2424-2424</p>
+                <div className="left-from">
+                  <div className="form-data">
+                    <div><FontAwesomeIcon icon={faPhone} /> Phone </div>
+                    <div><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a> </div>
                   </div>
                   
+                  <p>Andheri East, Mumbai <br />Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
+                  <p>Monday - Friday : 08:30 am - 7:00 pm <br />
+                    Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
+                  <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                  <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                 </div>
               </div>
               <div className="col-md-8">
