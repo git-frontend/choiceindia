@@ -570,11 +570,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                         {/* <Route exact path='/intraday-charges' element={
+                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } /> */}
+                        } />
                          <Route exact path='/marathi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokermarathi />
