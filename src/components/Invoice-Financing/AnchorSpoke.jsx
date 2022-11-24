@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import NBFCMenu from '../Common-features/NBFCMenu';
 
 
 function AnchorSpoke() {
@@ -11,6 +11,7 @@ function AnchorSpoke() {
       <div className="container">
         <div className="row">
             <div className="col-md-12">
+                <NBFCMenu />
                 <div className="Anchor-heading">
                   <h2 className="title-first">Anchor and Spoke</h2>
                 </div>

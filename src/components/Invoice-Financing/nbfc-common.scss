@@ -165,7 +165,7 @@
         display: block;
         position: absolute;
         left: 0;
-       z-index: -1;
+        z-index: 1;
         background: url(../../assets/images/loan-bg.webp) no-repeat top left;
         background-size: contain;
 
@@ -179,9 +179,13 @@
     ul{
         li{
             color: $darkblack;
-            font-size: 3rem 1.5rem;
+            font-size:1.9rem;
+            line-height: 1.5;
             margin-bottom: 1rem;
             font-family: $font-family-poppins-medium;
+            @media (max-width:$sm) {
+                font-size: 1.3rem;
+            }
         }
         margin-bottom: 5.063rem;
         
