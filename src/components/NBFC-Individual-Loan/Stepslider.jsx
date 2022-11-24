@@ -138,6 +138,12 @@ speeding up the process so that an approval can be given within 48 hours.</p>
                             </div>
                         </div>
                     </div>
+                    <div className="row mt-5">
+                        <div className="col-md-12 mt-5 text-center">
+                            <h5 className="elg-text">With our eligibility calculator</h5>
+                            <a href="#"><span className="btn-bg">Check your Eligibility</span></a>
+                        </div>
+                    </div>
                 </div>
             </section>
 
