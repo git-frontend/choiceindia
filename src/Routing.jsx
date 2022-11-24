@@ -120,6 +120,7 @@ const LazyIndivialLoan = React.lazy(() => import('./components/NBFC-Individual-L
 
 const LazyInvoiceFinancing = React.lazy(() => import('./components/Invoice-Financing/InvoiceFinancing'));
 const LazyChannelFinance = React.lazy(() => import('./components/Channel-Finance/ChannelFinance'));
+const LazyCommercialVehicleLoan = React.lazy(() => import('./components/Commercial-Vehicle-Loan/CommercialVehicleLoan'));
 
 
 function Routing() {
@@ -631,7 +632,11 @@ function Routing() {
                                 < LazyChannelFinance />
                             </React.Suspense>
                         } />
-
+                        <Route exact path='/commercial-vehicle-loan' element={
+                            <React.Suspense>
+                                < LazyCommercialVehicleLoan />
+                            </React.Suspense>
+                        } />
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
