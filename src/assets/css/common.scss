@@ -254,19 +254,16 @@ body{
 
 /* common card styling */
 
-.card-wrap{
-    padding-bottom: 3rem;
-    .slick-list{
-        padding: 2rem;
-    }
-    .carditem{
-        background: $whiteColor;
+
+            .carditem-nbfc{
+                        background: $whiteColor;
                         box-shadow: 0px 0px 8px $boxshadow;
                         border-radius: 20px;
                         padding: 2rem;
                         text-decoration: none;
                         display: block;
                         width: 90%;
+                        margin: 0 auto;
                         height: 100%;
                         min-height: 15rem;
                         text-align: center;
@@ -298,4 +295,4 @@ body{
             font-family:  $font-family-poppins-regular;
         }
     }
-  }
+  
