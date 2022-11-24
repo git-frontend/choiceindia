@@ -1,0 +1,355 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+body{
+    background-color:  $whiteColor;
+}
+
+.mainwrapper{
+    overflow: hidden;
+    animation: hideMe 4s forwards;
+    width: 100%;
+}
+
+
+.individual-loans-banner{
+    background: $darkyellow;
+    padding: 10rem 0 6rem 0;
+    .lft-sec{
+        .big-ttl{
+            color: $primary;
+            margin-bottom: 2.5rem;
+        }
+        .para{
+            color: $primary;
+            font-size: 1.75rem;
+            line-height: 1.5;
+            &.p-yl{
+                font-family: $font-family-poppins-semibold;
+                color: $yellowColor;
+                margin-top: 5rem;
+                @media (max-width: $sm) {
+                    margin-top: 2.5rem;
+                }
+            }
+            @media (max-width: $sm) {
+                br{
+                    display: none;
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+        }
+    }
+    @media (max-width: $sm) {
+        text-align: center;
+        padding: 5rem 0 5rem 0;
+    }
+    .home-banner-ved{
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background: transparent;
+        }
+        .banner-ved{
+            position: relative;
+            right: -1px;
+        }
+    }
+}
+
+.Loan-tabs{
+    width: 100%;
+    .loan-bloc-tabs{
+        display: flex;
+        justify-content: center;
+        width:100%;
+        .loanbtn{
+            width: 33.33%;
+            text-align: center;
+            padding: 2.375rem;
+            color: $darkblack;
+            font-size: 2rem;
+            line-height: 3.75rem;
+            font-weight: 400;
+            font-family: $font-family-poppins-regular;
+            border-right: 1px solid $lightgray;
+            cursor: pointer;
+            @media (max-width:$sm) {
+                font-size: 1.45rem;
+                padding: 0.8rem 0.5rem;
+                    line-height: 2.5rem;
+            }
+            &:last-child{
+                border-right: none;
+            }
+            &.active{
+                border-bottom: 9px solid $yellowColor ;
+            }
+        }
+    }
+}
+
+.flexitabcontent{
+    padding: 14rem 14rem 9rem 14rem;
+    .flexititle{
+        position: relative;
+        &:before{
+            display: block;
+            position: absolute;
+            content: '';
+            top: -2.5rem;
+            right: 10.3125rem;
+            width: 7.5rem;
+            height: 6.5625rem;
+            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+            background-size: contain;
+            @media (max-width:$sm) {
+              display: none;
+            }
+        }
+    }
+    .para{
+        position: relative;
+        &:before{
+            display: block;
+            position: absolute;
+            content: '';
+            bottom: -5rem;
+            left: -4.6875rem;
+            width: 22rem;
+            height: 16rem;
+            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+            background-size: contain;
+            @media (max-width:$sm) {
+                display: none;
+              }
+        }
+    }
+   
+    @media (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    .pb24{
+        padding-bottom: 24px;
+    }
+}
+
+
+
+.avail{
+    padding: 6rem 6rem 12rem 6rem;
+    @media (max-width: $sm) {
+       padding: 6rem 2rem 5rem 2rem;
+    }
+}
+
+
+
+.Doc-rqrd-sec{
+    padding: 6rem 6rem 12rem 6rem;
+    @media screen and (max-width:$sm) {
+        padding: 6rem 2rem 5rem 2rem;     }
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .Doc-rq-card{
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px #f0f0f0;
+            margin-bottom: 3rem;
+         }
+        .img-height{
+            min-height: 24rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 3rem;
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-semibold;
+            margin-top: 3rem;
+            margin-bottom: 3rem;
+         }
+        .list-item{
+            padding: 0 4.5rem;
+            @media (max-width: $sm) {
+                padding: 0rem 2rem 0rem 2rem;
+             }
+            li{
+                font-size: 2rem;
+                color: $graylight;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.8rem;
+                 }
+            }
+        }
+    }
+}
+
+
+.whyflexi{
+    padding: 9rem 0;
+}
+
+// steps slider
+.nbfc-steps-works{
+    padding: 8rem 0;
+    position: relative;
+    background: $abt-bg;
+    &::before {
+        content: '';
+        width: 17rem;
+        height: 38rem;
+        display: block;
+        position: absolute;
+        left: 2px;
+        top: 20%;
+        // background: url(../../assets/images/invoice-financing/steps-bg-left.webp) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 38rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        bottom: -15rem;
+        // background: url(../../assets/images/invoice-financing/right-bg-left.webp) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .heading-sec{
+        p{
+            color: $primary;
+        }
+    }
+    .how-works-steps{
+        margin-top: 10rem;
+        position: relative;
+        padding-bottom: 8rem;
+        &::before{
+            content: '';
+            width: 3px;
+            height: 100%;
+            display: block;
+            background: #DEE0E6;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+        &::after{
+            content: '';
+            width: 30px;
+            height: 30px;
+            display: block;
+            background: $whiteColor;
+            border: 6px solid #E2E4E9;
+            position: absolute;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0;
+        }
+        .works-steps-itm{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 0;
+            position: relative;
+            .steps-itm-left{
+                width: 45%;
+                &.itm-left-img{
+                    display: flex;
+                    opacity: 0.5;
+                    justify-content: flex-end;
+                    @media (max-width: $sm) {
+                        img{
+                            max-width: 70%;
+                        }
+                    }
+                }
+            }
+            .steps-itm-right{
+                width: 45%;
+                h2{
+                    font-family: $font-family-poppins-semibold;
+                    color: #C1CBD4;
+                    font-size: 2.5rem;
+                }
+                h3{
+                    color: $darkblack;
+                    font-family: $font-family-poppins-medium;
+                }
+                p{
+                    color: $darkblack;
+                }
+            }
+            &.steps-itm-reverse{
+                flex-direction: row-reverse;
+                .steps-itm-right{
+                    text-align: right;
+                }
+                .steps-itm-left{
+                    justify-content: flex-start;
+                    
+                }
+            }
+            // &.steps-itm-active{
+            //     &:before {
+            //         content: "";
+            //         display: block;
+            //         position: absolute;
+            //         bottom: inherit;
+            //         bottom: 0;
+            //         left: 50%;
+            //         transform: translateX(-50%);
+            //         height: calc(100% + 2px);
+            //         width: 4px;
+            //         background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+            //         border-radius: 4px;
+            //       }
+            //       .steps-itm-left{
+            //         opacity: 1;
+            //       }
+            // }
+        }
+        @media (max-width: $sm) {
+            margin-top: 5rem;
+        }
+    }
+}
+
+
+    .card-wrap-nbfc{
+        padding-bottom: 3rem;
+        @media (max-width: $sm) {
+            padding-bottom: 6rem;
+        }
+        .slick-list{
+            padding: 2rem 0;
+        }
+    }
