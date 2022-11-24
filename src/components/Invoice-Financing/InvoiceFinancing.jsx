@@ -6,6 +6,7 @@ import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import InvoiceFinancingDocument from './InvoiceFinancingDocument.jsx'
 import "./inv-financing.scss";
 import "./inv-financing-sec.scss";
+import "./nbfc-common.scss";
 
 function InvoiceFinancing() {
   return (
