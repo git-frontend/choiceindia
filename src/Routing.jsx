@@ -116,7 +116,7 @@ const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestSto
 const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 const LazyNBFCLanding = React.lazy(() => import('./components/NBFC/NBFCLanding'));
 const LazyInvoiceFinancing = React.lazy(() => import('./components/Invoice-Financing/InvoiceFinancing'));
-
+const LazyChannelFinance = React.lazy(() => import('./components/Channel-Finance/ChannelFinance'));
 
 function Routing() {
 
@@ -613,6 +613,11 @@ function Routing() {
                         <Route exact path='/invoice-financing' element={
                             <React.Suspense>
                                 < LazyInvoiceFinancing />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/channel-finance' element={
+                            <React.Suspense>
+                                < LazyChannelFinance />
                             </React.Suspense>
                         } />
 
