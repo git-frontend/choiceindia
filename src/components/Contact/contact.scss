@@ -89,17 +89,22 @@
 
         .big-ttl {
             margin-top: 14rem;
+            @media (max-width: $md) {
+                margin-top: 6rem;
+            }
 
             @media (max-width: $sm) {
                 font-size: 3rem;
                 line-height: 1.5;
+                margin-top: 2rem;
+                text-align: center;
             }
         }
 
         .bannerbg {
 
             position: relative;
-            @media (max-width: $md) {
+            @media (max-width: $sm) {
                 display: none;
             }
 
@@ -111,6 +116,9 @@
             top: 33%;
             right: 58%;
             z-index: -1;
+            @media (max-width: $md) {
+                display: none;
+            }
 
         }
 
@@ -129,7 +137,15 @@
             .department {
                 width: 70%;
                 padding: 0.775rem 2.25rem 0.775rem 0.75rem;
+                display: inline-block;
 
+            }
+            @media (max-width: $md) {
+                padding: 3rem 0;
+            }
+            @media (max-width: $sm) {
+                padding: 2rem 0 3rem 0;
+                text-align: center;
             }
         }
     }
@@ -300,9 +316,9 @@
         }
     }
 
-    @media (max-width: $sm) {
-        padding: 5rem 0 0 0;
-    }
+    // @media (max-width: $sm) {
+    //     padding: 5rem 0 0 0;
+    // }
 
     .esctext {
         font-size: 1.688rem;
@@ -426,14 +442,10 @@
                
             }
             @media  (max-width: $sm){
-                padding-left: 0.9rem;
-                padding-top: 4rem;
-                padding-right: 0;
+                padding: 3rem 1.5rem;
             }
             @media  (max-width: $sm-xs){
-                padding-left: 0.3rem;
-                padding-top: 4rem;
-                padding-right: 0;
+                padding: 3rem 1rem;
             }
 
             
@@ -448,6 +460,9 @@
             .colorchange {
                 color: $whiteColor;
                 padding-bottom: 4rem;
+                @media  (max-width: $sm){
+                    padding-bottom: 2rem;
+                }
             }
 
             .form-data {
@@ -469,6 +484,9 @@
                         fill: #00ACEA;
                        }
                     }
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
                 }
 
                 .form-data-right {
@@ -485,6 +503,16 @@
                         margin-bottom: 4rem;
                         padding-right: 2.5rem;
                         position: relative;
+                        @media  (max-width: $sm){
+                            margin-bottom: 2rem;
+                            font-size: 1.1rem;
+                        }
+                    }
+                    @media (max-width: $md) {
+                        width: calc(100% - 90px);
+                    }
+                    @media (max-width: $sm) {
+                        width: calc(100% - 80px);
                     }
                 }
             }

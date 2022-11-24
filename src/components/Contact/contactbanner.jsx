@@ -99,7 +99,7 @@ function Contactbanner() {
                   </div>
                 </div>
 
-                <div className="col-md-5">
+                <div className="col-md-4">
                   <div className="bannerbg">
                     <LazyLoader src={Bannerimage} className='img-fluid' width={'387'} height={'609'} alt={'contact us'} />
                   </div>
