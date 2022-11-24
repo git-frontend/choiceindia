@@ -206,7 +206,7 @@ body{
             margin-bottom: 3rem;
          }
         .img-height{
-            min-height: 233px;
+            min-height: 24rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -220,6 +220,7 @@ body{
             margin-bottom: 3rem;
          }
         .list-item{
+            padding: 0 4.5rem;
             li{
                 font-size: 2rem;
                 color: $graylight;
@@ -229,4 +230,9 @@ body{
             }
         }
     }
+}
+
+
+.whyflexi{
+    padding: 9rem 0;
 }

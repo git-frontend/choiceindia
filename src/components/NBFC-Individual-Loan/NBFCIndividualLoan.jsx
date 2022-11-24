@@ -4,6 +4,7 @@ import Banner from './Banner';
 import Loantabs from './Loantabs';
 import Documentrequired from './Documentrequired';
 import Features from './Features';
+import WhyFlexi from './WhyFlexi';
 import AvailPurpose from './AvailPurpose';
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
@@ -11,7 +12,7 @@ import meta_tags from "../../Data/MetaTags";
 import "./NBFCIndividualLoan.scss";
 
 
-function NBFCLanding() {
+function NBFCloan() {
 
   const [rendercount, setRenderCount] = useState(() => false);
 
@@ -43,6 +44,7 @@ function NBFCLanding() {
           <AvailPurpose/>
           <Documentrequired/>
           <Features/>
+          <WhyFlexi/>
        </div> 
       
     
@@ -50,4 +52,4 @@ function NBFCLanding() {
   );
 }
 
-export default NBFCLanding;
+export default NBFCloan;

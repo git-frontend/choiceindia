@@ -23,13 +23,14 @@ function Documentrequired() {
       <div className="Doc-rq-card">
             <div className="text-center">
               <div className="img-height">
-                <LazyLoader src={Kyc} className={'img-fluid'} width={"311"} height={"212"} alt={"KYC"}/>
+                <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC"}/>
               </div>
               <h3 className="title-doc">KYC</h3>
             </div>
               <ul className="list-item">
                 <li>ID Proof</li>
-                <li>Aadhar Card</li>
+                <li>Address Proof</li>
+                <li>Pan Card/Form 60</li>
               </ul>
           </div>
       </div>
@@ -37,13 +38,15 @@ function Documentrequired() {
       <div className="Doc-rq-card">
           <div className="text-center">
             <div className="img-height">
-              <LazyLoader src={incomeProof} className={'img-fluid'} width={"311"} height={"209"} alt={"Income Proof"}/>
+              <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof"}/>
             </div>
               <h3 className="title-doc">Income Proof</h3>
           </div>
             <ul className="list-item">
-              <li>ITR of minimum 2 years</li>
-              <li>Turnover of Business</li>
+          
+              <li>  Salary slips of last 3 months</li>
+              <li>Last Income tax return / Form 16</li>
+              <li>Proof of Service Vintage</li>
             </ul>
           </div>
       </div>
