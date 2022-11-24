@@ -2,80 +2,7 @@
 @import '../../assets/css/customvariable.scss';
 
 
-.inv-fin-banner{
-    background: $pinklight;
-    padding: 10rem 0;
-    @media (max-width: $md) {
-        padding: 5rem 0;
-    }
-    .fin-banner-caption{
-        max-width: 800px;
-        margin: 0 auto;
-        display: block;
-        position: relative;
-        padding-bottom: 8rem;
-        &::before {
-            content: '';
-            width: 17rem;
-            height: 12rem;
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 10rem;
-            background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top left;
-            background-size: contain;
-    
-            @media (max-width: $md) {
-                display: none;
-            }
-        }
-        &::after {
-            content: '';
-            width: 9rem;
-            height: 7rem;
-            display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-            background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top right;
-            background-size: contain;
-    
-            @media (max-width: $md) {
-                display: none;
-            }
-        }
-        .big-ttl{
-            font-family: $font-family-poppins-medium;
-            color: $darkblack;
-            margin-bottom: 2rem;
-        }
-        .aply-btn{
-            color: $darkblack;
-        }
-        p{
-            font-size: 1.75rem;
-            line-height: 1.5;
-            color: $txtgrey;
-            a{
-                text-decoration: none;
-            }
-            .aply-btn{
-                font-family: $font-family-poppins-semibold;
-                color: $darkblack;
-            }
-        }
-    }
-    .inv-banner-slider{
-        .carditem-nbfc{
-            padding: 3rem;
-            padding-bottom: 2rem;
-            min-height: 17rem;
-            @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
-            }
-        }
-    }
-}
+
 
 .anchor-spoke-sec{
     padding: 7rem 0;
@@ -196,26 +123,5 @@
     }
 }
 
-.inv-fin-why-ch{
-    padding: 7rem 0 6rem 0;
-    .title-first{
-        margin-bottom: 4rem;
-    }
-    .why-ch-slider{
-        .carditem-nbfc{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            min-height: 17rem;
-            .cardimg{
-                min-height: 6rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
-            }
-        }
-    }
-}
+
 
