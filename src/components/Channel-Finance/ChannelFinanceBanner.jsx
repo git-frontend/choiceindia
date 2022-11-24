@@ -8,11 +8,11 @@ import zerocollateral from '../../assets/images/invoice-financing/zero-collatera
 import documentation from '../../assets/images/invoice-financing/simplified-documentation.svg';
 import liquidity from '../../assets/images/invoice-financing/enhance-liquidity.svg';
 
-function InvoiceFinancingBanner() {
+function ChannelFinanceBanner() {
     const settings1 = {
         infinite: true,
         speed: 1500,
-        slidesToShow: 3,
+        slidesToShow:4,
         arrows: false,
         autoplay: false,
         dots: false,
@@ -43,22 +43,31 @@ function InvoiceFinancingBanner() {
       };
     return (
         <div>
-            <section className="inv-fin-banner">
+            <section className="inv-fin-banner channel-ban-bg">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-8 col-md-12">
                             <div className="fin-banner-caption text-center">
-                                <h1 className="big-ttl"> Invest in Invoice <br /> Financing Online</h1>
-                                <p>Choice is offering loans to the anchor’s ecosystem against selling or purchasing invoices. Borrower as Anchor “or” spoke may be decided as per the deal structure and mutual agreement.</p>
-                                <p>Apply for invoice financing<br />
-                                    In India up to 50 crores.<br />
+                                <h1 className="big-ttl"> Empower Your Business <br/>
+With Channel Finance</h1>
+                                <p>We provide Working capital finance like in form of channel finance limit generally to selected “Spoke” on the recommendation of anchor, for the purpose of selling or buying of products and services.</p>
+                                <p>Apply for channel finance<br />
+                                facility up to 50 crores.<br />
                                     <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-xl-8 col-md-12">
+                        <div className="col-md-12">
                             <Slider {...settings1} className="inv-banner-slider">
+                                <div className="col-md-3">
+                                    <div className="carditem-nbfc">
+                                        <span className='cardimg'>
+                                            <LazyLoader src={zerocollateral} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                        </span>
+                                        <h3 className="card-ttl">Zero <br/>Collateral</h3>
+                                    </div>
+                                </div>
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
@@ -93,4 +102,4 @@ function InvoiceFinancingBanner() {
     );
 }
 
-export default InvoiceFinancingBanner;
+export default ChannelFinanceBanner;
