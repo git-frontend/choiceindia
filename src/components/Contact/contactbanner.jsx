@@ -83,10 +83,18 @@ function Contactbanner() {
                   </div>
                   <div className='dipar-dropdown'>
                     <p className="depart-text">Department *</p>
-                    <Form.Select variant="Info" id="dropdown-basic" className=" department" {...register('purpose')}>
-                      <option>Select here</option>
-                      <option className="option">View</option>
-                      <option className="option">Review</option>
+                    <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
+                      <option value="Select here" selected>Select here</option>
+                      <option className="option">Feedback</option>
+                      <option className="option">Compliance & Complaint.</option>
+                      <option className="option">Partner related</option>
+                      <option className="option">Broking & Distribution</option>
+                      <option className="option">Wealth planning</option>
+                      <option className="option">Insurance related query</option>
+                      <option className="option">NBFC related query</option>
+                      <option className="option">Government Advisory</option>
+                      <option className="option">Enquiry</option>
+                      <option className="option">Others</option>
                     </Form.Select>
                   </div>
                 </div>
@@ -98,6 +106,7 @@ function Contactbanner() {
                 </div>
               </div>
             </div>
+
           </div>
 
         </section>
@@ -120,7 +129,7 @@ function Contactbanner() {
                         Monday to Saturday</p></div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Email </div>
+                      <div className="form-data-left"><FontAwesomeIcon icon={faEnvelope} /> Email </div>
                       <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
                     </div>
                     <div className="form-data">
@@ -185,7 +194,7 @@ function Contactbanner() {
                       <span className="text-danger"> {errors?.question?.message} </span>
                     </div> */}
 
-                      <div className="uploadbtn mt-3 d-flex align-items-center">
+                      <div className="uploadbtn mt-5 d-flex align-items-center">
                         <div className="feel-msg">{data}</div>
                         <Button variant="primary"
                           type="submit" className="btn-bg btn-bg-dark ">
