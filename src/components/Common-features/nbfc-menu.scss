@@ -1,0 +1,131 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+/* ---------------- Navbar and burger menu ------------------ */
+
+
+.nbfc-info-menu-main{
+    position: relative;
+    text-align: left;
+    .nbfc-info-menu{
+        padding: 0;
+        margin: 0;
+        box-shadow: inherit;
+        .burger-menu{
+            padding: 0.5rem 1rem;
+            margin: 0;
+            box-shadow: inherit;
+            background: $whiteColor;
+            box-shadow: 0px 2px 8px rgba(95, 95, 95, 0.25);
+            border-radius: 10px;
+            width: auto;
+            align-items: flex-end;
+            justify-content: space-between;
+            cursor: pointer;
+            .burger-bar{
+                width: 30px;
+                height: 3px;
+                background-color: $primary;
+                margin: 8px 0;
+                transition: 0.4s;
+                &.clicked{
+                    &:nth-child(1n){
+                        transform: translate(0, 11px) rotate(-45deg);
+                        @media (max-width: $sm) {
+                            transform: translate(0, 8px) rotate(-45deg);
+                        }
+                    }
+                    &:nth-child(2n){
+                        opacity: 0;
+                    }
+                    &:nth-child(3n){
+                        transform: translate(0, -11px) rotate(45deg);
+                        @media (max-width: $sm) {
+                            transform: translate(0, -8px) rotate(45deg);
+                        }
+                    }
+                }
+                @media (max-width: $sm) {
+                    width: 25px;
+                    margin: 5px 0;
+                }
+                
+            }
+        }
+    }
+    .menu{
+        display: none;
+        padding: 3rem;
+        background: $whiteColor;
+        position: absolute;
+        right: 0;
+        top: 48px;
+        width: 300px;
+        
+        border-radius: 20px;
+        box-shadow: 0px 13px 24px 0px rgb(0 0 0 / 8%);
+        .nbfc-info-menu-wrap{
+            .nbfc-info-menu-list{
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                position: relative;
+                z-index: 99;
+                > .menu-itm{
+                    margin-bottom: 2rem;
+                    .menu-itm-link{
+                        font-size: 1.25rem;
+                        color: $darkblack;
+                        text-decoration: none;
+                        display: block;
+                        font-family: $font-family-poppins-medium;
+                        .menu_item_text{
+                            color: $darkblack;
+                            margin-left: 1rem;
+                        }
+                        &:hover{
+                            svg{
+                                path{
+                                    fill: $yellowColor;
+                                }
+                            }
+                            .menu_item_text{
+                                color: $yellowColor;
+                            }
+                           
+                        }
+                    }
+                    &:last-child{
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+        &.visible{
+            display: block;
+        }
+        &::before{
+            content: '';
+            width: 100%;
+            height: 50px;
+            background: #FFCE02;
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            border-radius: 20px;
+            z-index: 0;
+        }
+        &::after{
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            background: $whiteColor;
+            z-index: 9;
+            border-radius: 20px;
+        }
+    }
+}
