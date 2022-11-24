@@ -1,6 +1,6 @@
 
 import React from "react";
-import bannerimg from '../../assets/images/nbfc-indivial-loan/flexi-credit-banner.webp'
+import bannerimg from '../../assets/images/nbfc-indivial-loan/flexi-credit-banner.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 

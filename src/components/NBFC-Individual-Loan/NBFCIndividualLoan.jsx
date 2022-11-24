@@ -2,6 +2,7 @@
 import React from "react";
 import Banner from './Banner';
 import Loantabs from './Loantabs';
+import Documentrequired from './Documentrequired';
 import Features from './Features';
 import AvailPurpose from './AvailPurpose';
 import { useState,useEffect } from "react";
@@ -40,6 +41,7 @@ function NBFCLanding() {
           <Loantabs />
           
           <AvailPurpose/>
+          <Documentrequired/>
           <Features/>
        </div> 
       
