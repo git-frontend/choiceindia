@@ -3,7 +3,7 @@ import React from "react";
 import Business from '../../assets/images/nbfc-loans/business.webp';
 import Individual from '../../assets/images/nbfc-loans/individual.webp';
 import PaymentSolutions from '../../assets/images/nbfc-loans/payment-solutions.webp';
-import ProductMenu from './ProductMenu';
+import NBFCMenu from '../Common-features/NBFCMenu';
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -19,7 +19,7 @@ function OurProducts() {
                 <div className="col-md-12">
                 <div className="products-menu-flx">
                     <h2 className="title-secnd">Our Products</h2>
-                    <ProductMenu />
+                    <NBFCMenu />
                 </div>
                 </div>
             </div>
