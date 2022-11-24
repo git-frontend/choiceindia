@@ -10,8 +10,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContactTemplate from "../Common-features/ContactTemplate";
 import "../Investorcomplaints/investorcomplaints.scss";
 import Image2 from '../../assets/images/icons/security.svg';
+import Button from 'react-bootstrap/Button';
 
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+
+import "../SubBroker/subbroker.scss";
 
 
 
@@ -22,6 +25,7 @@ function Contactdetail() {
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
    const [check, setcheck] = useState(false);
+   const handleShow = () => setShow(true);
    let data = {};
 
    let data2 = {}
@@ -59,8 +63,8 @@ function Contactdetail() {
                <div className="row">
                   <div className="col-md-12" >
                      <div className="support-md">
-                     <h3 className="maintitle resmaintitle">Support Related Queries</h3>
-                     <div className=" support-itm">
+                        <h3 className="maintitle resmaintitle">Support Related Queries</h3>
+                        <div className=" support-itm">
                            <FontAwesomeIcon icon={faPhone} />
                            <p className="subtitle"><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
                         </div>
@@ -71,6 +75,9 @@ function Contactdetail() {
                      </div>
 
                      <p className="text-center esctext ">For any grievances reach out to our <a onClick={() => { setcheck(true) }} className="cursor-pointer">Escalation Matrix</a></p>
+                     <p className="text-center esctext ">For any grievances reach out to our <Button variant="primary" onClick={handleShow} className="trm-link">
+                     Escalation Matrix
+                     </Button></p>
                   </div>
                </div>
 
@@ -140,14 +147,14 @@ function Contactdetail() {
 
                         </div>
                         <div className="subtxtcontent ">
-                        <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
-                           https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
-                           BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
-                           MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
-                           CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
-                           (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
-                           <br /><br />
-                           Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p></div>
+                           <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
+                              https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
+                              BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
+                              MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
+                              CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
+                              (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
+                              <br /><br />
+                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p></div>
                         <br></br></div> :
                      ""
                }
@@ -171,7 +178,7 @@ function Contactdetail() {
                      </div>
                   </div>
                   <div className="contactcyber">
-                  <div >
+                     <div >
                         <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Cyber Security</p>
@@ -181,6 +188,7 @@ function Contactdetail() {
                   </div>
                </div>
             </div>
+
             <div className="container mt-10 "  >
                <div className="d-flex justify-content-between detailwrap">
 
