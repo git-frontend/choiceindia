@@ -5,6 +5,9 @@
 .inv-fin-banner{
     background: $pinklight;
     padding: 10rem 0;
+    .channel-ban-bg{
+        background: $bg-sky;
+    }
     @media (max-width: $md) {
         padding: 5rem 0;
     }

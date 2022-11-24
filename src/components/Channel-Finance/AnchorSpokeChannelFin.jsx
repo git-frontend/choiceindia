@@ -3,7 +3,7 @@ import React from "react";
 import NBFCMenu from '../Common-features/NBFCMenu';
 
 
-function AnchorSpoke() {
+function AnchorSpokeChannelFin() {
   return (
     <div>
       
@@ -44,4 +44,4 @@ function AnchorSpoke() {
   );
 }
 
-export default AnchorSpoke;
+export default AnchorSpokeChannelFin;

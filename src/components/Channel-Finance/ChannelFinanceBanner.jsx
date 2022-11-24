@@ -8,7 +8,7 @@ import zerocollateral from '../../assets/images/invoice-financing/zero-collatera
 import documentation from '../../assets/images/invoice-financing/simplified-documentation.svg';
 import liquidity from '../../assets/images/invoice-financing/enhance-liquidity.svg';
 
-function InvoiceFinancingBanner() {
+function ChannelFinanceBanner() {
     const settings1 = {
         infinite: true,
         speed: 1500,
@@ -43,7 +43,7 @@ function InvoiceFinancingBanner() {
       };
     return (
         <div>
-            <section className="inv-fin-banner">
+            <section className="inv-fin-banner channel-ban-bg">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -102,4 +102,4 @@ With Channel Finance</h1>
     );
 }
 
-export default InvoiceFinancingBanner;
+export default ChannelFinanceBanner;
