@@ -1,22 +1,25 @@
 
 import React from "react";
-import ChannelFinanceBanner from './ChannelFinanceBanner.jsx'
-import AnchorSpokeChannelFin from './AnchorSpokeChannelFin.jsx'
+import InvoiceFinancingBanner from './InvoiceFinancingBanner.jsx'
+import AnchorSpoke from './AnchorSpoke.jsx'
 import TimelineStepsSlider from './TimelineStepsSlider.jsx'
-import ChannelFinanceDocument from './ChannelFinanceDocument.jsx'
-import "./channel-finance.scss";
-import "./channel-finance-sec.scss";
+import InvoiceFinancingDocument from './InvoiceFinancingDocument.jsx'
+import Features from './Features.jsx'
+import WhyChoose from './WhyChoose.jsx'
+import "./inv-financing.scss";
 import "./nbfc-common.scss";
 
-function ChannelFinance() {
+function InvoiceFinancing() {
   return (
     <div>
-        <ChannelFinanceBanner/>
-        <AnchorSpokeChannelFin/>
+        <InvoiceFinancingBanner/>
+        <AnchorSpoke/>
         <TimelineStepsSlider/>
-        <ChannelFinanceDocument/>
+        <InvoiceFinancingDocument/>
+        <Features/>
+        <WhyChoose/>
     </div>
   );
 }
 
-export default ChannelFinance;
+export default InvoiceFinancing;

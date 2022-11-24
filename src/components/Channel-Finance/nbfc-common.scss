@@ -152,3 +152,45 @@
     }
 }
 
+
+
+.features-nbfc{
+    background-color: $darkyellow;
+    padding: 5.063rem 0;
+    position: relative;
+    &::before {
+        content: '';
+        width: 17rem;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        background: url(../../assets/images/loan-bg.webp) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $sm) {
+            display: none;
+        }
+    }
+    @media (max-width:$sm) {
+        padding: 1.5rem;
+    }
+    ul{
+        li{
+            color: $darkblack;
+            font-size:1.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-family: $font-family-poppins-medium;
+            @media (max-width:$sm) {
+                font-size: 1.3rem;
+            }
+        }
+        margin-bottom: 5.063rem;
+        
+    }
+
+   
+    
+}
