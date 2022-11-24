@@ -12,17 +12,17 @@
             margin-bottom: 4rem;
          }
     }
-    .flex-card{
+    .ChnFin-card{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
-        .flex-card-item {
+        .ChnFin-card-item {
             width: 47%;
             @media screen and (max-width:$sm) {
                width: 100%;
                margin-bottom: 3rem;
             }
-            .anchor-spoke-card {
+            .AnchorSpoke-card {
                 background: $bgligh-cream;
                 border-radius: 20px;
                 box-shadow: 0px 0px 8px $boxshadow;

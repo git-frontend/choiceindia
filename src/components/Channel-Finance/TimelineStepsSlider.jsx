@@ -81,7 +81,7 @@ function TimelineStepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How To Avail in Invoice <br/> Financing</h2>
+                                <h2 className="title-first">How to Apply for Channel <br/> Finance Facility</h2>
                             </div>
                         </div>
                     </div>
@@ -94,9 +94,8 @@ function TimelineStepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
-                                        <h3>Apply For Online Invoice Financing</h3>
-                                        <p>Upload your KYC, Business Owner Documents and Business/Residential
-Documents and check your eligibility</p>
+                                        <h3>Process Your Documents</h3>
+                                        <p>Submit the required documents online i.e. KYC, Business and others to check your eligibility</p>
                                     </div>
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
@@ -105,9 +104,9 @@ Documents and check your eligibility</p>
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
-                                        <h3>Easy Approval Process</h3>
-                                        <p>The documents shall be verified from the experts and an approval will be received
-within 48 hours of submission</p>
+                                        <h3>Get It Approved</h3>
+                                        <p>TAll the documents are under review of the approval team, post which one can get an
+                                        approval within 48 hours, if all requirements are me</p>
                                     </div>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
@@ -116,8 +115,8 @@ within 48 hours of submission</p>
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
-                                        <h3>Final Step- Loan Disbursal</h3>
-                                        <p>The loan disbursal shall be transacted after a few hours of approval.</p>
+                                        <h3>Fast & Quick Loan Disbursal</h3>
+                                        <p>Within a span of few hours of approval, the loan is disbursed.</p>
                                     </div>
                                 </div>
                             </div>
