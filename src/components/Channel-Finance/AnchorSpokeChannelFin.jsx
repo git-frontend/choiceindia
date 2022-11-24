@@ -23,8 +23,7 @@ function AnchorSpokeChannelFin() {
               <div className="flex-card-item">
                 <div className="anchor-spoke-card">
                   <h3 className="title-secnd mb-4">Anchor</h3>
-                  <p>An “Anchor” is a manufacturer or supplier and has entered into an agreement with the
-                    lenders to leverage the opportunity of finance for itself and its channel partners in place of maintaining regular cash flows.
+                  <p>An “Anchor” is a manufacturer or supplier and has entered into an agreement with the lenders to leverage the opportunity of finance for itself and its channel partners in place of maintaining regular cash flows.
                   </p>
                 </div>
               </div>

@@ -1,9 +1,9 @@
 
 import React from "react";
-import customised from '../../assets/images/invoice-financing/customised.svg';
-import digital from '../../assets/images/invoice-financing/digital.svg';
-import anytime from '../../assets/images/invoice-financing/anytime.svg';
-import flexible from '../../assets/images/invoice-financing/flexible.svg';
+import NoInterest from '../../assets/images/channel-finance/no-interest.svg';
+import customised from '../../assets/images/channel-finance/customised.svg';
+import competitive from '../../assets/images/channel-finance/competitive.svg';
+import flexible from '../../assets/images/channel-finance/flexible.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
@@ -49,7 +49,7 @@ function WhyChoose() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center">Why Choose us for Invoice <br />Financing?  </h2>
+              <h2 className="title-first text-center">Why Choose us for Channel <br /> Finance?  </h2>
             </div>
           </div>
           <div className="row justify-content-center">
@@ -58,7 +58,16 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={customised} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={NoInterest} alt={"No Interest"} className={"img-fluid img"} width={"50"} height={"50"} />
+                    </span>
+                    <h3 className="card-ttl">No Interest</h3>
+                    <p className="subtext">charged on Unutilised amount</p>
+                  </div>
+                </div>
+                <div className="col-md-3">
+                  <div className="carditem-nbfc">
+                    <span className='cardimg'>
+                      <LazyLoader src={customised} alt={"Customised"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Customised</h3>
                     <p className="subtext">Solutions</p>
@@ -67,25 +76,16 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={digital} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"50"} />
+                      <LazyLoader src={competitive} alt={"Competitive"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
-                    <h3 className="card-ttl">Digital</h3>
-                    <p className="subtext">Assistance</p>
+                    <h3 className="card-ttl">Competitive</h3>
+                    <p className="subtext">Interest Rates</p>
                   </div>
                 </div>
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={anytime} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
-                    </span>
-                    <h3 className="card-ttl">Anytime</h3>
-                    <p className="subtext">anywhere facility</p>
-                  </div>
-                </div>
-                <div className="col-md-3">
-                  <div className="carditem-nbfc">
-                    <span className='cardimg'>
-                      <LazyLoader src={flexible} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={flexible} alt={"Flexible"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
