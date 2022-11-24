@@ -77,7 +77,7 @@ function Contactdetail() {
                         </div>
                      </div>
 
-                     <p className="text-center esctext ">For any grievances reach out to our <a onClick={() => { setShow(true) }} className="cursor-pointer">Escalation Matrix</a></p>
+                     
                      <p className="text-center esctext ">For any grievances reach out to our <a variant="primary" onClick={() => { setShow(true) }} className="cursor-pointer">
                      Escalation Matrix
                      </a></p>
