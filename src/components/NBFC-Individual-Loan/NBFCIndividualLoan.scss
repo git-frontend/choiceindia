@@ -97,7 +97,7 @@ body{
 }
 
 .flexitabcontent{
-    padding: 14rem 0;
+    padding: 14rem 14rem 9rem 14rem;
     .flexititle{
         position: relative;
         &:before{
@@ -144,17 +144,18 @@ body{
 
 
 .avail{
-    padding: 6rem 0;
-   
+    padding: 6rem 6rem 12rem 6rem;
+    @media (max-width: $sm) {
+       padding: 6rem 2rem 5rem 2rem;
+    }
 }
 
 
 
 .Doc-rqrd-sec{
-    padding: 6rem 0;
+    padding: 6rem 6rem 12rem 6rem;
     @media screen and (max-width:$sm) {
-        padding-bottom: 4rem;
-     }
+        padding: 6rem 2rem 5rem 2rem;     }
     .Doc-rqrd-heading{
         margin-bottom: 8rem;
         text-align: center;
@@ -185,8 +186,8 @@ body{
          }
         .list-item{
             padding: 0 4.5rem;
-            @media screen and (max-width:$sm) {
-               padding: 0 2rem;
+            @media (max-width: $sm) {
+                padding: 0rem 2rem 0rem 2rem;
              }
             li{
                 font-size: 2rem;
@@ -345,6 +346,9 @@ body{
 
     .card-wrap-nbfc{
         padding-bottom: 3rem;
+        @media (max-width: $sm) {
+            padding-bottom: 6rem;
+        }
         .slick-list{
             padding: 2rem 0;
         }

@@ -28,7 +28,7 @@ function Features() {
                 <div className="container">
                 <div className="row purpose d-flex align-items-center">
                        
-                       <div className="col-md-6">
+                       <div className="col-md-6 order-sm-first order-last">
                            <LazyLoader src={Multitasking} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
                        </div>
                        <div className="col-md-6 heading-sec ">
