@@ -899,6 +899,13 @@
         }
     }
 
+    
+
+}
+
+
+.contact-modal{
+
     .mainwrapquick-table {
 
         .icon-table {
@@ -909,6 +916,10 @@
             border-radius: 20px;
             border: #C2C2C2 solid 1px;
             padding: 1.5rem;
+            .modal-header{
+                display: block;
+                border-bottom: none;
+            }
 
             .table {
                 td {
@@ -925,16 +936,30 @@
             }
         }
 
-        .subtxtcontent {
-            background-color: $bglightpinkish;
-            border-radius: 0.5rem;
-            padding: 4rem 6rem;
+        // .subtxtcontent {
+        //     background-color: blue !important;
+        //     border-radius: 0.5rem;
+        //     padding: 4rem 6rem;
 
-            .subtxt {
-                font-weight: 400;
+        //     .subtxt {
+        //         font-weight: 400;
 
-            }
+        //     }
+        // }
+    }
+   
+
+    .subtxtcontent {
+        background-color: $bglightpinkish;
+        border-radius: 0.5rem;
+        padding: 4rem 6rem;
+        border-top: none;
+        @media (max-width: $xs) {
+
+            padding: 10rem 0rem;
         }
+
+        
     }
 
 }

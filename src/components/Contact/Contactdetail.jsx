@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import pin from '../../assets/images/contact/office.svg';
 import clock from '../../assets/images/contact/business-hours.webp';
-import { Form } from "react-bootstrap";
+import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
 import contactMap from "../../Data/ContactMapData";
 import city_list from "../../Data/ContactCity";
@@ -13,8 +13,9 @@ import Image2 from '../../assets/images/icons/security.svg';
 import Button from 'react-bootstrap/Button';
 
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+import Modal from 'react-bootstrap/Modal';
 
-import "../SubBroker/subbroker.scss";
+
 
 
 
@@ -26,6 +27,8 @@ function Contactdetail() {
    const [showMap, setShowMap] = useState(() => false);
    const [check, setcheck] = useState(false);
    const handleShow = () => setShow(true);
+   const handleClose = () => setShow(false);
+   const [show, setShow] = useState(false);
    let data = {};
 
    let data2 = {}
@@ -74,28 +77,33 @@ function Contactdetail() {
                         </div>
                      </div>
 
-                     <p className="text-center esctext ">For any grievances reach out to our <a onClick={() => { setcheck(true) }} className="cursor-pointer">Escalation Matrix</a></p>
-                     <p className="text-center esctext ">For any grievances reach out to our <Button variant="primary" onClick={handleShow} className="trm-link">
+                     <p className="text-center esctext ">For any grievances reach out to our <a onClick={() => { setShow(true) }} className="cursor-pointer">Escalation Matrix</a></p>
+                     <p className="text-center esctext ">For any grievances reach out to our <a variant="primary" onClick={() => { setShow(true) }} className="cursor-pointer">
                      Escalation Matrix
-                     </Button></p>
+                     </a></p>
                   </div>
                </div>
 
             </div>
-            <div className="container mainwrapquick-table">
-
-
-
-               {
-                  check ?
-                     <div className="row ">
+            <Modal show={show} onHide={handleClose} size="xl"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+            
+               <div className="container mainwrapquick-table">
+               <div className="row ">
                         <div className="col-md-12">
+                        
                            <div className="quicklinkswrap mt-5 mb-5">
-                              <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setcheck(false) }} />
+                           <ModalHeader>
+                          
+                              <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setShow(false) }} />
                               <div className="clearfix"></div>
                               <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
                               {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
                               <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
+                              
+                           </ModalHeader>
+                             
+                             
+                              <Modal.Body>
                               <div className="table-responsive">
                                  <table className="table table-striped">
                                     <thead>
@@ -143,24 +151,44 @@ function Contactdetail() {
                                  </table>
 
                               </div>
-                           </div>
-
-                        </div>
-                        <div className="subtxtcontent ">
-                           <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
+                              <div className="subtxtcontent " >
+                               <p>In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
                               https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
                               BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
                               MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
                               CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
                               (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
                               <br /><br />
-                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p></div>
-                        <br></br></div> :
-                     ""
-               }
+                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
+
+                        </div>
+                              </Modal.Body>
+                              {/* <Modal.Footer className="subtxtcontent " >
+                               <p>In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
+                              https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
+                              BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
+                              MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
+                              CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
+                              (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
+                              <br /><br />
+                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
+
+                        </Modal.Footer> */}
+                           </div>
+                         
+
+                        </div>
+                        </div>
+                     
+               
 
 
-               <div className=" office-details mt-7 gap-5">
+               
+            </div>
+            
+            </Modal>
+            <div  className="container mainwrapquick-table">
+            <div className=" office-details mt-7 gap-5">
                   <div className="contactoffice">
                      <div className="officedeatil">
                         <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
@@ -187,7 +215,7 @@ function Contactdetail() {
                      </div>
                   </div>
                </div>
-            </div>
+               </div>
 
             <div className="container mt-10 "  >
                <div className="d-flex justify-content-between detailwrap">
