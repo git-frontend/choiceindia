@@ -1,8 +1,8 @@
 
 import React from "react";
-import FirstStep from '../../assets/images/insurance/all-online.svg';
-import SecndStep from '../../assets/images/insurance/smart-compare.svg';
-import ThirdStep from '../../assets/images/insurance/all-done.svg';
+import FirstStep from '../../assets/images/invoice-financing/steps1.webp';
+import SecndStep from '../../assets/images/invoice-financing/steps2.webp';
+import ThirdStep from '../../assets/images/invoice-financing/steps3.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import { useRef, useState, useEffect } from 'react';
 

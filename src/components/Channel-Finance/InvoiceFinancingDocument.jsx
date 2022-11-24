@@ -5,7 +5,7 @@ import IncomeProofimage from '../../assets/images/invoice-financing/income-proof
 import BusinessProofimage from '../../assets/images/invoice-financing/business-proof.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function ChannelFinanceDocument() {
+function InvoiceFinancingDocument() {
   return (
     <div>
     
@@ -69,4 +69,4 @@ function ChannelFinanceDocument() {
   );
 }
 
-export default ChannelFinanceDocument;
+export default InvoiceFinancingDocument;
