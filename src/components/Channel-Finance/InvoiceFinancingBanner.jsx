@@ -45,8 +45,8 @@ function InvoiceFinancingBanner() {
         <div>
             <section className="inv-fin-banner">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-12">
+                    <div className="row justify-content-center">
+                        <div className="col-xl-8 col-md-12">
                             <div className="fin-banner-caption text-center">
                                 <h1 className="big-ttl"> Empower Your Business <br/>
 With Channel Finance</h1>

@@ -9,7 +9,6 @@
         padding: 5rem 0;
     }
     .fin-banner-caption{
-        max-width: 800px;
         margin: 0 auto;
         display: block;
         position: relative;
@@ -267,4 +266,27 @@
 
    
     
+}
+
+.inv-fin-why-ch{
+    padding: 7rem 0 6rem 0;
+    .title-first{
+        margin-bottom: 4rem;
+    }
+    .why-ch-slider{
+        .carditem-nbfc{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-height: 17rem;
+            .cardimg{
+                min-height: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width:$sm) {
+                margin-bottom: 3rem;
+            }
+        }
+    }
 }
