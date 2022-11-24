@@ -4,6 +4,7 @@ import Banner from './Banner';
 import Loantabs from './Loantabs';
 import Documentrequired from './Documentrequired';
 import Features from './Features';
+import Stepslider from './Stepslider';
 import WhyFlexi from './WhyFlexi';
 import AvailPurpose from './AvailPurpose';
 import { useState,useEffect } from "react";
@@ -42,6 +43,7 @@ function NBFCloan() {
           <Loantabs />
           
           <AvailPurpose/>
+          <Stepslider/>
           <Documentrequired/>
           <Features/>
           <WhyFlexi/>
