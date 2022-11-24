@@ -5,8 +5,9 @@ import SecndStep from '../../assets/images/insurance/smart-compare.svg';
 import ThirdStep from '../../assets/images/insurance/all-done.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import { useRef, useState, useEffect } from 'react';
+import "./timeline-steps.scss";
 
-function StepsSlider() {
+function TimelineStepsSlider() {
 
     const myRef1 = useRef(null);
     const myRef2 = useRef(null);
@@ -137,4 +138,4 @@ within 48 hours of submission</p>
     );
 }
 
-export default StepsSlider;
+export default TimelineStepsSlider;
