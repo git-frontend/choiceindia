@@ -10,6 +10,7 @@ import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 
 import "./NBFCIndividualLoan.scss";
+import "../Invoice-Financing/nbfc-common.scss";
 
 
 function NBFCloan() {

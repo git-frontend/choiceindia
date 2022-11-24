@@ -7,7 +7,7 @@ function Features() {
         <div>
 
 
-            <section className="features">
+            <section className="features features-nbfc">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12 ">
