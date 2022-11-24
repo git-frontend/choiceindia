@@ -44,8 +44,8 @@
             }
         }
         .big-ttl{
-            font-family: $font-family-poppins-medium;
-            color: $darkblack;
+           
+            color: $primary;
             margin-bottom: 2rem;
         }
         .aply-btn{
@@ -54,7 +54,7 @@
         p{
             font-size: 1.75rem;
             line-height: 1.5;
-            color: $txtgrey;
+            color: $primary;
             a{
                 text-decoration: none;
             }
@@ -68,7 +68,7 @@
         .carditem-nbfc{
             padding: 3rem;
             padding-bottom: 2rem;
-            min-height: 17rem;
+            min-height: 16.5rem;
             @media screen and (max-width:$sm) {
                 margin-bottom: 3rem;
             }
@@ -247,7 +247,7 @@
         }
     }
     @media (max-width:$sm) {
-        padding: 1.5rem;
+        padding: 3rem 1.5rem  ;
     }
     ul{
         li{
