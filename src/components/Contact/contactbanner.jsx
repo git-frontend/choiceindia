@@ -2,6 +2,10 @@
 import React, { useState } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
+import phoneicon from '../../assets/images/contact/phone-icon.svg';
+import openicon from '../../assets/images/contact/open-icon.svg';
+import emailicon from '../../assets/images/contact/email-icon.svg';
+import officeicon from '../../assets/images/contact/office-icon.svg';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -120,20 +124,20 @@ function Contactbanner() {
                   <div className="left-from">
                     <p className="whiteus-text colorchange">Contact information</p>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faPhone} /> Phone </div>
+                      <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
                       <div className="form-data-right"><a href="tel:02267079999" target="_blank"><p className="form-right-text" >+91-022-6707 9999</p></a> </div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faClock} />  Open</div>
+                      <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
                       <div className="form-data-right"> <p className="form-right-text" >Between 9:30 AM to 6:30 PM<br />
                         Monday to Saturday</p></div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faEnvelope} /> Email </div>
+                      <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "}  width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
                       <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
                     </div>
                     <div className="form-data">
-                      <div className="form-data-left"><FontAwesomeIcon icon={faLocationDot} /> Office</div>
+                      <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
                       <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
                         J.B. Nagar, Andheri (East),
                         Mumbai 400099</p> </div>

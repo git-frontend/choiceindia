@@ -477,13 +477,10 @@
                     font-family: $font-family-poppins-bold;
                     font-weight: 700;
                     
-                    .svg-inline--fa{
-                      
-                       padding-right: 0.5rem;
-                       path{
-                        fill: #00ACEA;
-                       }
+                    .svgpadding{
+                        padding-left: 0.5rem;
                     }
+                    
                     @media (max-width: $sm) {
                         font-size: 1.2rem;
                     }
