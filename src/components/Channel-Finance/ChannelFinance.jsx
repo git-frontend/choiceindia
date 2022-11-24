@@ -6,8 +6,8 @@ import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import ChannelFinanceDocument from './ChannelFinanceDocument.jsx'
 import Features from './Features.jsx'
 import WhyChoose from './WhyChoose.jsx'
+import "../Invoice-Financing/nbfc-common.scss";
 import "./channel-finance.scss";
-import "./nbfc-common.scss";
 
 function ChannelFinance() {
   return (

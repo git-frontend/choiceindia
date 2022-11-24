@@ -2,6 +2,11 @@
 @import '../../assets/css/customvariable.scss';
 
 
+.inv-fin-banner{
+    &.channel-ban-bg{
+        background: $bg-sky !important;
+    }
+}
 
 .anchor-spoke-sec{
     padding: 7rem 0;
