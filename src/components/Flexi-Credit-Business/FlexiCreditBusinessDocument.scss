@@ -125,7 +125,7 @@
 
 
 .avail{
-    padding:3rem 0 14rem;
+    padding:3rem 0 0;
     @media screen and (max-width: $sm) {
         padding:6rem 0 8rem;
          }
@@ -147,5 +147,48 @@
 .inv-fin-why-ch{
     .slick-list{
         padding: 2rem 0;
+    }
+}
+
+
+.avail{
+    .veh-bnr-list{
+        .bnr-list-itm{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 11rem;
+            align-items: center;
+            .bnr-list-left{
+                width: 44%;
+                p{
+                    font-size: 1.75rem;
+                    line-height: 1.5;
+                    color: $txtgrey;
+                }
+                .title-secnd{
+                    margin-bottom: 2rem;
+                }
+                @media (max-width: $sm) {
+                    width: 100%;
+                    margin-bottom: 3rem;
+                    text-align: center;
+                }
+            }
+            .bnr-list-right{
+                width: 44%;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    margin-bottom: 3rem;
+                    text-align: center;
+                }
+            }
+            &:first-child{
+                flex-direction: row-reverse;
+            }
+            @media (max-width: $sm) {
+                margin-bottom: 4rem;
+            }
+        }
     }
 }
