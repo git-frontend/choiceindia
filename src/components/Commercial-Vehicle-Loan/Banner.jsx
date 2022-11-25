@@ -5,8 +5,9 @@ import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import LazyLoader from "../Common-features/LazyLoader";
 import banner from '../../assets/images/com-vehicle-loan/banner.webp';
-import zerocollateral from '../../assets/images/invoice-financing/zero-collateral.svg';
-import documentation from '../../assets/images/invoice-financing/simplified-documentation.svg';
+import Noadditionalsecurity from '../../assets/images/com-vehicle-loan/no-additional.svg';
+import HassleFreeProcess from '../../assets/images/com-vehicle-loan/hassle-free-process.svg';
+import Customisedsolutions from '../../assets/images/com-vehicle-loan/customised-solutions.svg';
 
 
 function ChannelFinanceBanner() {
@@ -56,16 +57,16 @@ function ChannelFinanceBanner() {
                             </div>
                         </div>
                         <div className="col-md-5 d-flex justify-content-end">
-                            <LazyLoader src={banner} alt={"Drive Your Finances with Commercial Vehicle Loan"} className={"img-fluid img"} width={"450"} height={"406"} />
+                            <LazyLoader src={banner} alt={"Drive Your Finances with Commercial Vehicle Loan"} className={"img-fluid img-banner"} width={"450"} height={"406"} />
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-8">
+                        <div className="col-xl-8 col-md-12">
                             <Slider {...settings1} className="inv-banner-slider">
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={zerocollateral} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={Noadditionalsecurity} alt={"No additional security"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">No additional <br/>security</h3>
                                     </div>
@@ -73,7 +74,7 @@ function ChannelFinanceBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={zerocollateral} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={HassleFreeProcess} alt={"Hassle- Free Process"} className={"img-fluid img"} width={"60"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Hassle- Free <br/>
 Process</h3>
@@ -82,7 +83,7 @@ Process</h3>
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={documentation} alt={"Loans"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            <LazyLoader src={Customisedsolutions} alt={"Customised solutions"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Customised <br/> solutions</h3>
                                        
