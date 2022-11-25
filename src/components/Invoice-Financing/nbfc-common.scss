@@ -47,6 +47,11 @@
            
             color: $primary;
             margin-bottom: 2rem;
+            @media (max-width: $md) {
+                br{
+                    display: none;
+                }
+            }
         }
         .aply-btn{
             color: $darkblack;
