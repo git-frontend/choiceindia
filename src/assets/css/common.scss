@@ -302,6 +302,9 @@ body{
             margin-bottom: 0;
             color: $bgcolordark;
             font-family:  $font-family-poppins-regular;
+            @media (min-width:$sm-x) and (max-width: $md) {
+                font-size: 1.1rem;
+            }
         }
     }
   
