@@ -4,8 +4,8 @@ import LazyLoader from "../Common-features/LazyLoader";
 import avail from '../../assets/images/nbfc-indivial-loan/avail-man.webp';
 
 import vehiclepurpose from '../../assets/images/NBFCvehicleLoan/vehiclepurpose.svg';
-import Kyc from '../../assets/images/nbfc-indivial-loan/kyc.webp';
-import incomeProof from '../../assets/images/nbfc-indivial-loan/incomeproof.webp';
+import bringvehicle from '../../assets/images/NBFCvehicleLoan/bringvehicle.svg';
+import usedvehicle from '../../assets/images/NBFCvehicleLoan/usedvehicle.svg';
 
 function Features() {
 
@@ -56,7 +56,7 @@ function Features() {
                             <div className="Doc-rq-card">
                                 <div className="text-left">
                                     <div className="img-height">
-                                        <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC"} />
+                                        <LazyLoader src={bringvehicle} className={'img-fluid'} width={"441"} height={"294"} alt={"KYC"} />
                                     </div>
                                     <h3 className="title-doc">New Vehicle Loan</h3>
                                 </div>
@@ -71,7 +71,7 @@ function Features() {
                             <div className="Doc-rq-card">
                                 <div className="text-left">
                                     <div className="img-height">
-                                        <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof"} />
+                                        <LazyLoader src={usedvehicle} className={'img-fluid'} width={"307"} height={"307"} alt={"Income Proof"} />
                                     </div>
                                     <h3 className="title-doc">Used Vehicle Loan</h3>
                                 </div>

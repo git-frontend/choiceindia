@@ -12,14 +12,19 @@ function Features() {
                     <div className="row">
                         <div className="col-md-12 ">
                             <h2 className=" title-first text-center mb-5">Features</h2>
-                            <ul><li>We at Choice Finserv value the needs and requirements of our customers and hence offer business loans ranging between 50K - 25 Lakh.</li>
-                                <li>Wherever you are Choice Finserv is there to serve and support your dreams, we provide loans to all MSMEs even in the far-flung locations of “Incredible India”.</li>
-                                <li>Get your business financed just by sitting in your home/workplace/ garden from anywhere with our rapid and time-saving loan procedure.</li>
-                                <li>Choice Finserv not only offers you efficient and easy processing of your loan but also provides instant loan approvals.
-                                </li>
-                                <li>Apply for your business loan stress-free with our minimum or zero documentation requirements.</li>
+                            <ul><li>Our initiative is to help provide loans to all salaried Government/ Private Sector employees, self-employed non-professional (SENP) –businessmen, shopkeepers, etc. Self-employed Professional (SEP) -Doctors, Architect, Consultant, etc. Farmer- For transportation of Agri/Dairy Produce.</li>
+                                <li>Convenient for far-flung locations with easy branch reach.</li>
+                                <li>Our structured process helps you avail finances up to 80-95% of asset value.</li>
+                                <li>Choice Finserv loan tenure can range from 12 months to 60 months. </li>
+                                <li>We at Choice Finserv offer our customers rapid and fast-moving financing services.</li>
                                 <li>
-                                    We at Choice Finserv help promote digital loan processing for efficient functioning and to boost transparency for our customers.</li>
+                                Get an attractive and feasible rate of interest with Easy Monthly Equated installments (EMI).</li>
+                                <li>
+                                Our Minimum documentation standards lead to a quick and hassle-free process.</li>
+                                <li>
+                                We respect and understand the needs of your finances and thus believe in the immediate disbursal of your loan.</li>
+                                <li>
+                                We at Choice Finserve strictly believe in and practice environmental conservation by providing you with a paperless loan procedure.</li>
                             </ul>
                         </div>
                         <div className="col-md-12 text-center"> <Link to="/" className=" text-center cursor-pointer" >
