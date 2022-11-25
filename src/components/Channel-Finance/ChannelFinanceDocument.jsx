@@ -36,7 +36,7 @@ function ChannelFinanceDocument() {
               </div>
             </div>
         </div>
-        <div className="row">
+        <div className="row mrg-top">
         <div className="col-md-12">
             <div className="Doc-rq-card">
             <div className="card-item-chanFin">
@@ -50,7 +50,8 @@ function ChannelFinanceDocument() {
                     <h3 className="title-doc-sub">Business Proof</h3>
                     <ul className="list-item">
                       <li>Business Address</li>
-                      <li>Bank Statement GST Certificate</li>
+                      <li>Bank Statement</li>
+                      <li>GST Certificate</li>
                     </ul>
                   </div>
                   <div className="img-height">

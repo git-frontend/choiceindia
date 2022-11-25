@@ -83,10 +83,10 @@ function TimelineStepsSlider() {
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
                                 <h2 className="title-first">How to Apply for Business Term <br/> Loan with Choice</h2>
+                                <NBFCMenu />
                             </div>
                         </div>
                     </div>
-                    <NBFCMenu />
                     <div className="row justify-content-center" onScroll={getPosition}>
                         <div className="col-md-9">
                             <div className="how-works-steps">

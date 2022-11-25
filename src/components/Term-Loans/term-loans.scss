@@ -29,21 +29,13 @@
     @media screen and (max-width:$sm) {
         padding:7rem 0 4rem 0;
      }
-    .Anchor-heading {
-        margin-bottom: 8rem;
-        text-align: center;
-        position: relative;
-        @media screen and (max-width:$sm) {
-            margin-bottom: 4rem;
-         }
-         .nbfc-info-menu-main{
-            position: absolute;
-            right: 0;
-            top: -4.5rem;
-            z-index: 99;
-            
-         }
-    }
+     .nbfc-info-menu-main{
+        position: absolute;
+        right: 0;
+        top: -4.5rem;
+        z-index: 99;
+        
+     }
     .flex-card{
         display: flex;
         flex-wrap: wrap;
