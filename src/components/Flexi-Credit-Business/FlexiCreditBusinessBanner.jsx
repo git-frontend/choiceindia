@@ -58,9 +58,9 @@ function FlexiCreditBusinessBanner() {
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-center ">
                         <div className="col-xl-12 col-md-12">
-                        <Slider {...settings1}>
+                        <Slider {...settings1} className="inv-banner-slider">
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>

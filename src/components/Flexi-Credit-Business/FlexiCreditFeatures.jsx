@@ -7,7 +7,7 @@ function Features() {
         <div>
 
 
-            <section className="features features-nbfc">
+            <section className="features-flexi features-nbfc ">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-10 col-md-12">

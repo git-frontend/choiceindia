@@ -86,7 +86,7 @@ function StepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How to Apply for an MSME Loan<br/> with Choice Finserv
+                                <h2 className="title-first">How to Apply for Flexi Loan with <br/> Choice Finserv
 </h2>
                             </div>
                         </div>
