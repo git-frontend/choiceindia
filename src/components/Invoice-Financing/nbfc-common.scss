@@ -12,7 +12,7 @@
         margin: 0 auto;
         display: block;
         position: relative;
-        padding-bottom: 8rem;
+        
         &::before {
             content: '';
             width: 17rem;
@@ -63,14 +63,18 @@
                 color: $darkblack;
             }
         }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
     }
     .inv-banner-slider{
+        padding-top: 8rem;
         .carditem-nbfc{
             padding: 3rem;
             padding-bottom: 2rem;
             min-height: 16.5rem;
             @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
+                margin-bottom: 0;
             }
         }
     }
@@ -250,6 +254,8 @@
         padding: 3rem 1.5rem  ;
     }
     ul{
+        position: relative;
+        z-index: 9;
         li{
             color: $darkblack;
             font-size:1.9rem;
