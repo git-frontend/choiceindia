@@ -67,6 +67,14 @@ body{
             font-family: $font-family-poppins-regular;
             border-right: 1px solid $lightgray;
             cursor: pointer;
+            @media (min-width:768px)and (max-width:$md) {
+                font-size: 1.75rem;
+              }
+            @media (max-width:$sm) {
+                font-size: 1.45rem;
+                padding: 0.8rem 0.5rem;
+                    line-height: 2.5rem;
+            }
             @media (max-width:$sm) {
                 font-size: 1.45rem;
                 padding: 0.8rem 0.5rem;
@@ -91,6 +99,9 @@ body{
 
 .flexitabcontent{
     padding: 14rem 14rem 9rem 14rem;
+    @media (min-width:768px)and (max-width:$md) {
+        padding: 10rem 0 ;
+      }
     .flexititle{
         position: relative;
         &:before{
