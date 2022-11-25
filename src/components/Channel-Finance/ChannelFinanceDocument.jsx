@@ -54,7 +54,7 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="img-height">
-                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"450"} height={"350"} alt={"Business Proof"}/>
+                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"350"} height={"350"} alt={"Business Proof"}/>
                     </div>
               </div>
             </div>
