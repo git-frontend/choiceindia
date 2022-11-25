@@ -47,7 +47,7 @@ function Faqs() {
                                 <Accordion.Item eventKey="4" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>What are the Brokerage Charges for Futures and Options Trading?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    The Brokerage Charges for Futures is 0.02% (Equity, Currency, Commodity). For Options, it is Rs. 25 per lot (Equity), Rs. 20 per lot (Currency) and Rs. 50 per lot (Commodity).
+                                    The brokerage charges for Equities Trading is 0.2% for Delivery and Intraday, 0.02% for Futures and Rs. 25 per lot. for Options.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="5" className='faq-item'>
