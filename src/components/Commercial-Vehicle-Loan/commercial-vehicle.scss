@@ -7,6 +7,24 @@
         background: $pinkdark;
         .fin-banner-caption{
             padding-top: 4rem;
+            &::before, &::after{
+                display: none;
+            }
+            @media (max-width: $sm) {
+                padding-top: 0;
+            }
+        }
+        .inv-banner-slider{
+            .carditem-nbfc{
+                .cardimg{
+                    min-height: 4rem;
+                }
+            }
+        }
+        .img-banner{
+            @media (max-width: $sm) {
+                padding-top: 2rem;
+            }
         }
     }
 }
@@ -27,8 +45,8 @@
             flex-wrap: wrap;
             justify-content: space-between;
             margin-bottom: 11rem;
+            align-items: center;
             .bnr-list-left{
-                padding-top: 4.5rem;
                 width: 44%;
                 p{
                     font-size: 1.75rem;
@@ -38,12 +56,25 @@
                 .title-secnd{
                     margin-bottom: 2rem;
                 }
+                @media (max-width: $sm) {
+                    width: 100%;
+                    margin-bottom: 3rem;
+                    text-align: center;
+                }
             }
             .bnr-list-right{
                 width: 44%;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    margin-bottom: 3rem;
+                    text-align: center;
+                }
             }
             &:first-child{
                 flex-direction: row-reverse;
+            }
+            @media (max-width: $sm) {
+                margin-bottom: 4rem;
             }
         }
     }
@@ -115,7 +146,7 @@
     }
 }
 
-.Doc-rqrd-sec{
+.veh-doc-rqrd-sec{
     padding: 7rem 0 6rem 0;
     
     .Doc-rqrd-heading{
@@ -154,6 +185,8 @@
             }
          }
         .list-item{
+            width: 70%;
+            margin: 0 auto;
             li{
                 font-size: 1.9rem;
                 line-height: 1.5;
@@ -177,6 +210,9 @@
             align-items: center;
             margin-top:5px;
             margin-bottom:5px;
+            @media (max-width: $sm) {
+                margin-bottom: 3rem;
+            }
         }
     } 
 }
