@@ -81,7 +81,7 @@ function TimelineStepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How To Avail in Invoice <br/> Financing</h2>
+                                <h2 className="title-first">How to Apply Commercial <br/>Vehicle Loan Online</h2>
                             </div>
                         </div>
                     </div>
@@ -94,9 +94,9 @@ function TimelineStepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
-                                        <h3>Apply For Online Invoice Financing</h3>
-                                        <p>Upload your KYC, Business Owner Documents and Business/Residential
-Documents and check your eligibility</p>
+                                        <h3>Submit Documents</h3>
+                                        <p>Upload the documents for the type of vehicle loan you require by providing KYC, ID
+Proof, Income Proof and Vehicle documents</p>
                                     </div>
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
@@ -105,9 +105,9 @@ Documents and check your eligibility</p>
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
-                                        <h3>Easy Approval Process</h3>
-                                        <p>The documents shall be verified from the experts and an approval will be received
-within 48 hours of submission</p>
+                                        <h3>The Approval Process</h3>
+                                        <p>The documents shall be verified as per the requirement from our expert and after the
+review process has been completed, you shall receive an approval within 48 hours.</p>
                                     </div>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
@@ -116,8 +116,8 @@ within 48 hours of submission</p>
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
-                                        <h3>Final Step- Loan Disbursal</h3>
-                                        <p>The loan disbursal shall be transacted after a few hours of approval.</p>
+                                        <h3>Receive Loan</h3>
+                                        <p>The loan disbursal shall be made after a few hours of approval.</p>
                                     </div>
                                 </div>
                             </div>

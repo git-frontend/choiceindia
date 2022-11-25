@@ -250,6 +250,8 @@
         padding: 3rem 1.5rem  ;
     }
     ul{
+        position: relative;
+        z-index: 9;
         li{
             color: $darkblack;
             font-size:1.9rem;

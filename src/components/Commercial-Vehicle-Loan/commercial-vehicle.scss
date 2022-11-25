@@ -3,8 +3,11 @@
 
 
 .inv-fin-banner{
-    &.channel-ban-bg{
-        background: $bg-sky !important;
+    &.com-vehcl-loan{
+        background: $pinkdark;
+        .fin-banner-caption{
+            padding-top: 4rem;
+        }
     }
 }
 
