@@ -54,10 +54,10 @@ body{
     width: 100%;
     .loan-bloc-tabs{
         display: flex;
-        justify-content: center;
-        width:100%;
+        // justify-content: center;
+        width:90%;
         .loanbtn{
-            width: 33.33%;
+            width: 30%;
             text-align: center;
             padding: 2.375rem;
             color: $darkblack;
@@ -80,6 +80,13 @@ body{
             }
         }
     }
+    .menu{
+        @media (max-width: $sm) {
+           position: relative;
+           right: 1rem;
+        }
+    }
+    
 }
 
 .flexitabcontent{
@@ -100,14 +107,11 @@ body{
               display: none;
             }
         }
-    }
-    .para{
-        position: relative;
-        &:before{
+        &:after{
             display: block;
             position: absolute;
             content: '';
-            bottom: -5rem;
+            top: 10rem;
             left: -4.6875rem;
             width: 22rem;
             height: 16rem;
@@ -117,6 +121,25 @@ body{
                 display: none;
               }
         }
+    }
+    .para{
+        position: relative;
+        font-size: 1.75rem;
+        line-height: 1.5;
+        color: #221F20;
+        a{
+            @media (max-width:$sm) {
+                display: block;
+              }
+            text-decoration: none;
+            .aply-btn{
+                font-family: "PoppinsSemiBold", sans-serif;
+                color: #000000;
+            }
+        }
+       
+     
+       
     }
    
     @media (max-width:$sm) {
@@ -162,6 +185,9 @@ body{
             align-items: center;
             justify-content: center;
             margin-bottom: 3rem;
+            @media screen and (max-width:$sm) {
+                min-height: 15rem;  
+             }
         }
         .title-doc{
             font-size: 2.5rem;
