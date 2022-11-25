@@ -9,7 +9,7 @@ function Documents() {
   return (
     <div>
     
-    <section className="Doc-rqrd-sec">
+    <section className="veh-doc-rqrd-sec">
       <div className="container">
           <div className="row">
               <div className="col-md-12">
@@ -45,7 +45,7 @@ function Documents() {
                   <ul className="list-item">
                     <li>Year Of Registration</li>
                     <li>Transfer Papers (in case of used car)</li>
-                    <li>Model of the vehicle</li>
+                    <li>Vehicle Registration Certificate</li>
                   </ul>
                 </div>
             </div>
