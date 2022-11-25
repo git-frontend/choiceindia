@@ -10,7 +10,7 @@
             &::before, &::after{
                 display: none;
             }
-            @media (max-width: $sm) {
+            @media (max-width: $md) {
                 padding-top: 0;
             }
         }
