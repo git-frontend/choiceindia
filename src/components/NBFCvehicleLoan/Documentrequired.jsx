@@ -39,6 +39,7 @@ function Documentrequired() {
                   <li >ID Proof</li>
                   <li>Address Proof</li>
                   <li>Pan Card/Form 60</li>
+                  <li>Income Proof</li>
                 </ul>
               </div>
             </div>
