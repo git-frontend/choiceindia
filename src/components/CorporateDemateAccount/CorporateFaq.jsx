@@ -21,19 +21,19 @@ function CorporateFaq() {
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>What is a Company or Corporate Demat Account?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What is a Company or Corporate Demat Account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         Companies and corporations can also participate in the stock market with a Corporate Demat Account.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>Can a Demat and Trading account be opened for a Company in India?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Can a Demat and Trading account be opened for a Company in India?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         Yes, Indian companies can open Demat and Trading accounts too. These are called Corporate Demat/Trading accounts.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>What is the procedure to open a demat account for Company?</h4></Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>What is the procedure to open a demat account for Company?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         Below is the procedure to open corporate demat accounts,<br /><br />
                                         <ul>
@@ -50,7 +50,7 @@ function CorporateFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>Which documents are required for a Corporate Or Company demat account?</h4> </Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>Which documents are required for a Corporate Or Company demat account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         Below documents are required for a corporate demat account,<br /><br />
                                         <ul>
@@ -65,7 +65,7 @@ function CorporateFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                    <Accordion.Header > <h4 className='faq-header'>How Much Time is Required to Open a Corporate Demat Account?</h4></Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>How Much Time is Required to Open a Corporate Demat Account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         If all the documents are in order, it takes 2-3 working days for the account to be active.
                                     </Accordion.Body>

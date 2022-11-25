@@ -21,19 +21,19 @@ function DematFaq() {
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>Who can become a Choice Authorised Person?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Who can become a Choice Authorised Person?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Anyone from across India can be a Choice Authorised Person. Eligibility and qualification criteria are minimal, all we are looking for is willingness and passion.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>How much does a Authorised Person earn in India?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>How much does a Authorised Person earn in India?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Authorised Person can select from fixed revenue per client or Brokerage sharing options. Sky's the limit as far as earnings are concerned, since we have the entire suite of financial products and customization options.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>What Are the Documents required to Become Choice Authorised Person?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What Are the Documents required to Become Choice Authorised Person?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         <p>The following documents are required to complete Authorised Person registration with us.</p>
                                         <ul>
