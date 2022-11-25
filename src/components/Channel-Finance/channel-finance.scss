@@ -91,6 +91,15 @@
             box-shadow: 0px 0px 8px $boxshadow;
             margin-bottom: 3rem;
          }
+         .card-item-chanFin {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 4rem;
+            @media screen and (max-width:$sm) {
+                flex-direction: column-reverse;
+            }
+        }
         .img-height{
             min-height: 275px;
             display: flex;
@@ -107,6 +116,18 @@
             font-family: $font-family-poppins-medium;
             margin-top: 0.5rem;
             margin-bottom: 3rem;
+            @media screen and (max-width:$md) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+         }
+         .title-doc-sub{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-medium;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            opacity: 0.8;
             @media screen and (max-width:$md) {
                 font-size: 2rem;
                 margin-bottom: 2rem;

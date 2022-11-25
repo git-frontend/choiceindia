@@ -280,19 +280,36 @@
         margin-bottom: 4rem;
     }
     .why-ch-slider{
-        // .carditem-nbfc{
-        //     margin-top: 5px;
-        //     margin-bottom: 5px;
-        //     min-height: 17rem;
-        //     .cardimg{
-        //         min-height: 6rem;
-        //         display: flex;
-        //         align-items: center;
-        //         justify-content: center;
-        //     }
-        //     @media screen and (max-width:$sm) {
-        //         margin-bottom: 3rem;
-        //     }
-        // }
+
+        .carditem-nbfc{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-height: 17rem;
+            .cardimg{
+                min-height: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width:$sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        .carditem-nbfc{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-height: 18rem;
+            .cardimg{
+                min-height: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width:$sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
     }
 }
