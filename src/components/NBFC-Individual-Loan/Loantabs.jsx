@@ -2,6 +2,12 @@
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 import Flexitab from './flexitab';
+import Features from './Features';
+import Stepslider from './Stepslider';
+import WhyFlexi from './WhyFlexi';
+import AvailPurpose from './AvailPurpose';
+
+import Documentrequired from './Documentrequired';
 
 function Loantabs() {
 
@@ -20,8 +26,13 @@ function Loantabs() {
 
 
           <div id="flexitab">
-			<Flexitab />
-		</div>
+			      <Flexitab />
+            <AvailPurpose/>
+            <Stepslider/>
+            <Documentrequired/>
+            <Features/>
+            <WhyFlexi/>
+		      </div>
          
 
          
