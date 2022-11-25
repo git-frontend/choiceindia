@@ -75,26 +75,25 @@ function SubBrokerForm(props) {
 
      /**function executes to close the ad popup */
      function hideOpenAccountAdPopup(showAdValues) {
-        console.log("rrrrrr",showAdValues)
         
         setShowOpenAccountPopup(false);
-        callOpenAccountAdPopupAgain();
+        // callOpenAccountAdPopupAgain();
     }
 
-    function callOpenAccountAdPopupAgain() {
-        //after 15min
-        setTimeout(() => {
-            showOpenAccountAdPopup();
-        }, 9000)
-    }
+    // function callOpenAccountAdPopupAgain() {
+    //     //after 15min
+    //     setTimeout(() => {
+    //         showOpenAccountAdPopup();
+    //     }, 9000)
+    // }
 
-    useEffect(() => {
-        if (!isMobile.current && props.isPopupVisible) {
-            setTimeout(() => {
-                showOpenAccountAdPopup();
-            }, 6000);
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (!isMobile.current && props.isPopupVisible) {
+    //         setTimeout(() => {
+    //             showOpenAccountAdPopup();
+    //         }, 6000);
+    //     }
+    // }, []);
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -958,7 +957,7 @@ function SubBrokerForm(props) {
             </Modal>
 
             {
-                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} isBlog={'blog'} />: ''
             }
 
             {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"

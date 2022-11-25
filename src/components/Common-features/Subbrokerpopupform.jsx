@@ -10,6 +10,7 @@ import { Link } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import subBrokerService from '../../Services/subBrokerService';
+import Thankyoupopup from "../Common-features/Thanku-popup";
 
 
 
@@ -52,6 +53,8 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
+    /** state to show thankyou popup default */
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
 
     
     function handleName(e) {
@@ -721,7 +724,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder='Search State' className="formcontrol formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
+                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
@@ -842,6 +845,9 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                 <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override &amp; will not be termed as violation of DND.</Modal.Body>
                
             </Modal>
+            {
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} isBlog={'blog'} />: ''
+            }
 
     
         
