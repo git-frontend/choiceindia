@@ -148,11 +148,11 @@ function Slidersec() {
                                 </div>
                         </div>
                         :
-                        <div>
+                        <div className="col-xl-7">
                        
                             {
                                 research.length?
-                                <div className="col-xl-7">
+                                <div className="">
                                 <div className="bg-class-right">
                                 <Slider {...settings} className="sm-slider-bg services-list-slider">
 

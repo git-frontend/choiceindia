@@ -112,6 +112,8 @@ const Lazysubbrokermarathi = React.lazy(() => import('./components/SubBroker/Sub
 const Lazysubbrokergujarati = React.lazy(() => import('./components/SubBroker/SubBrokerGujarati'));
 const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mutual-Fund-Distributor-Hindi/MutualFundDistributorHindi'));
 const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
+const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
+const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 
 
 function Routing() {
@@ -392,11 +394,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/etf-exchange-traded-funds' element={
+                        <Route exact path='/etf-exchange-traded-funds' element={
                             <React.Suspense>
                                 < LazyETF />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
                         <Route exact path='/add-lead' element={
                             <React.Suspense>
@@ -547,12 +549,32 @@ function Routing() {
                                 < LazyInvestorAdvidory />
                             </React.Suspense>
                         } />
+                         <Route exact path='/best-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/best-intraday-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                          <Route exact path='/best-short-term-stocks-to-buy' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/best-stocks-for-long-term-investment' element={
+                            <React.Suspense>
+                                < LazyBestStocks />
+                            </React.Suspense>
+                        } />
 
-                         {/* <Route exact path='/intraday-charges' element={
+                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } /> */}
+                        } />
                          <Route exact path='/marathi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokermarathi />
@@ -572,6 +594,12 @@ function Routing() {
                         <Route exact path='/hindi/mutual-fund-distributor' element={
                             <React.Suspense>
                                 < LazyHindiMutualFundDistributor />
+                            </React.Suspense>
+                        } />
+
+                        <Route exact path='/hindi/mutual-funds-investment' element={
+                            <React.Suspense>
+                                < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
                         } />
 
