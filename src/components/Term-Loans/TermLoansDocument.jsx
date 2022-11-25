@@ -1,8 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/invoice-financing/kyc.svg';
-import IncomeProofimage from '../../assets/images/invoice-financing/income-proof.svg';
-import BusinessProofimage from '../../assets/images/invoice-financing/business-proof.svg';
+import Kycimage from '../../assets/images/term-loans/kyc.svg';
+import BusinessProofimage from '../../assets/images/term-loans/business-proof.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function TermLoansDocument() {
@@ -14,37 +13,38 @@ function TermLoansDocument() {
           <div className="row">
               <div className="col-md-12">
               <div className="Doc-rqrd-heading">
-                  <h2 className="title-first">Documents Required for Invoice <br/>Financing </h2>
+                  <h2 className="title-first">Documents Required <br/>for Flexi Loan </h2>
                 </div>
               </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-xl-6 col-md-6">
+            <div className="col-xl-4 col-md-6">
             <div className="Doc-rq-card">
-                  <div className="text-center">
+                  <div>
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents"}/>
                     </div>
-                    <h3 className="title-doc">KYC</h3>
+                    <h3 className="title-doc">Personal Documents</h3>
                   </div>
                     <ul className="list-item">
-                      <li>ID Proof</li>
                       <li>Aadhar Card</li>
+                      <li>Pan Card</li>
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-6 col-md-6">
+            <div className="col-xl-4 col-md-6">
             <div className="Doc-rq-card">
-                  <div className="text-center">
+                  <div>
                     <div className="img-height">
                       <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof"}/>
                     </div>
-                    <h3 className="title-doc">Business Proof</h3>
+                    <h3 className="title-doc">Business Documents</h3>
                   </div>
                   <ul className="list-item">
-                    <li>Residential/Business Address</li>
-                    <li>Bank Statement</li>
+                    <li>Current A/c Bank Statement</li>
                     <li>GST Certificate</li>
+                    <li>Registration Address</li>
+                    <li>Tenure of Business</li>
                   </ul>
                 </div>
             </div>

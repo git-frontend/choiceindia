@@ -7,13 +7,16 @@
         background: $bg-sky !important;
     }
 }
-.nbfc-info-menu-main{
-    position: absolute;
-    right: 0;
-    top: -4.5rem;
-    z-index: 99;
-    
- }
+.heading-sec {
+    position: relative;
+    .nbfc-info-menu-main{
+        position: absolute;
+        right: 0;
+        top: -4.5rem;
+        z-index: 99;
+        
+     }
+}
 .Doc-rqrd-sec{
     padding: 7rem 0 6rem 0;
     
@@ -58,6 +61,8 @@
                 line-height: 1.5;
                 color: $graylight;
                 font-family: $font-family-poppins-medium;
+                padding-left: 1rem;
+                margin-left: 1rem;
                  @media screen and (max-width:$md) {
                     font-size: 1.5rem;
                     line-height: 1.5;
