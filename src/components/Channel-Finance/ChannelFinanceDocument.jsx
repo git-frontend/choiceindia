@@ -30,7 +30,7 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"511"} height={"433"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"411"} height={"333"} alt={"KYC"}/>
                     </div>
               </div>
               </div>
@@ -54,7 +54,7 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="img-height">
-                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"550"} height={"450"} alt={"Business Proof"}/>
+                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"450"} height={"350"} alt={"Business Proof"}/>
                     </div>
               </div>
             </div>
