@@ -3,7 +3,7 @@ import React from "react";
 import LazyLoader from "../Common-features/LazyLoader";
 import avail from '../../assets/images/nbfc-indivial-loan/avail-man.webp';
 import Multitasking from '../../assets/images/nbfc-indivial-loan/multitasking.png';
-function Features() {
+function AvailPurpose() {
 
     return (
         <div>
@@ -44,4 +44,4 @@ assets, events expenses etc.</p>
     );
 }
 
-export default Features;
+export default AvailPurpose;
