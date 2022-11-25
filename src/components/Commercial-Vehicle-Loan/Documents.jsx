@@ -5,7 +5,7 @@ import IncomeProofimage from '../../assets/images/invoice-financing/income-proof
 import BusinessProofimage from '../../assets/images/invoice-financing/business-proof.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-function ChannelFinanceDocument() {
+function Documents() {
   return (
     <div>
     
@@ -14,54 +14,42 @@ function ChannelFinanceDocument() {
           <div className="row">
               <div className="col-md-12">
               <div className="Doc-rqrd-heading">
-                  <h2 className="title-first">Documents Required for Invoice <br/>Financing </h2>
+                  <h2 className="title-first">Documents Required for <br/>Commercial Vehicle Loan</h2>
                 </div>
               </div>
           </div>
-          <div className="row justify-content-between">
-            <div className="col-xl-3 col-md-4">
+          <div className="row justify-content-around">
+            <div className="col-xl-4 col-md-5">
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
                       <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC"}/>
                     </div>
-                    <h3 className="title-doc">KYC</h3>
+                    <h3 className="title-doc">KYC &amp; Income Proof</h3>
                   </div>
                     <ul className="list-item">
                       <li>ID Proof</li>
                       <li>Aadhar Card</li>
+                      <li>Bank Statement</li>
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-3 col-md-4">
+            <div className="col-xl-4 col-md-5">
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Income Proof"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Vehicle Documents"}/>
                   </div>
-                    <h3 className="title-doc">Income Proof</h3>
+                    <h3 className="title-doc">Vehicle Documents</h3>
                 </div>
                   <ul className="list-item">
-                    <li>ITR of minimum 2 years</li>
-                    <li>Turnover of Business</li>
+                    <li>Year Of Registration</li>
+                    <li>Transfer Papers (in case of used car)</li>
+                    <li>Model of the vehicle</li>
                   </ul>
                 </div>
             </div>
-            <div className="col-xl-3 col-md-4">
-            <div className="Doc-rq-card">
-                  <div className="text-center">
-                    <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof"}/>
-                    </div>
-                    <h3 className="title-doc">Business Proof</h3>
-                  </div>
-                  <ul className="list-item">
-                    <li>Residential/Business Address</li>
-                    <li>Bank Statement</li>
-                    <li>GST Certificate</li>
-                  </ul>
-                </div>
-            </div>
+           
           </div>
       </div>
     </section>
@@ -69,4 +57,4 @@ function ChannelFinanceDocument() {
   );
 }
 
-export default ChannelFinanceDocument;
+export default Documents;
