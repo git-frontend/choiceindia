@@ -69,8 +69,11 @@
             padding: 3rem;
             padding-bottom: 2rem;
             min-height: 16.5rem;
+            @media screen and (max-width:$md) {
+                padding: 2rem 1rem;
+            }
             @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -242,7 +245,7 @@
         background: url(../../assets/images/loan-bg.webp) no-repeat top left;
         background-size: contain;
 
-        @media (max-width: $sm) {
+        @media (max-width: $md) {
             display: none;
         }
     }
@@ -261,6 +264,8 @@
             }
         }
         margin-bottom: 5.063rem;
+        position: relative;
+        z-index: 9;
         
     }
 
