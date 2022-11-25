@@ -7,65 +7,13 @@
         background: $bg-sky !important;
     }
 }
-
-.anchor-spoke-sec{
-    padding: 7rem 0;
-    position: relative;
-    &::after {
-        content: '';
-        width: 18rem;
-        height: 34rem;
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 3rem;
-        background: url(../../assets/images/invoice-financing/bg-layer2.webp) no-repeat top right;
-        background-size: contain;
-
-        @media (max-width: $md) {
-            display: none;
-        }
-    }
-    @media screen and (max-width:$sm) {
-        padding:7rem 0 4rem 0;
-     }
-     .nbfc-info-menu-main{
-        position: absolute;
-        right: 0;
-        top: -4.5rem;
-        z-index: 99;
-        
-     }
-    .flex-card{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        .flex-card-item {
-            width: 47%;
-            @media screen and (max-width:$sm) {
-               width: 100%;
-               margin-bottom: 3rem;
-            }
-            .anchor-spoke-card {
-                background: $bgligh-cream;
-                border-radius: 20px;
-                box-shadow: 0px 0px 8px $boxshadow;
-                padding:4rem;
-                height: 100%;
-                position: relative;
-                z-index: 9;
-                 @media screen and (max-width:$md) {
-                    padding:2rem;
-                 }
-                p{
-                    font-size: 1.75rem;
-                    line-height: 1.5;
-                }
-            }
-        }
-    }
-}
-
+.nbfc-info-menu-main{
+    position: absolute;
+    right: 0;
+    top: -4.5rem;
+    z-index: 99;
+    
+ }
 .Doc-rqrd-sec{
     padding: 7rem 0 6rem 0;
     
