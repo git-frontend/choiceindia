@@ -26,7 +26,7 @@ function StepsSlider() {
         const element2 = document.getElementById("how2");
         const element3 = document.getElementById("how3");
         const element4 = document.getElementById("how4");
-        if(element && element2 && element3){
+        if(element && element2 && element3 && element4){
             const rect = element.getBoundingClientRect();
             const rect2 = element.getBoundingClientRect();
             const rect3 = element.getBoundingClientRect();
@@ -86,7 +86,7 @@ function StepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How to Apply for an MSME Loan<br/> with Choice Finserv
+                                <h2 className="title-first">How to Apply for Flexi Loan with <br/> Choice Finserv
 </h2>
                             </div>
                         </div>
@@ -100,8 +100,9 @@ function StepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
-                                        <h3>Submit the Documents</h3>
-                                        <p>With the help of our eligibility calculator find out your eligibility for the loan to start the process</p>
+                                        <h3>Check Your Eligibility</h3>
+                                        <p>With the help of our eligibility calculator find out your eligibility for the loan to start the
+process</p>
                                     </div>
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
@@ -110,7 +111,7 @@ function StepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
-                                        <h3>Check Your Eligibility</h3>
+                                        <h3>Submit the Dcuments</h3>
                                         <p>By submitting your paperwork digitally and include your KYC, business owner/business
 documents, and income proof</p>
                                     </div>

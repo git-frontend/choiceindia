@@ -1,18 +1,18 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
 import Slider from 'react-slick';
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import LazyLoader from "../Common-features/LazyLoader";
 import time from '../../assets/images/nbfc-indivial-loan/time.svg';
 import disburse from '../../assets/images/nbfc-indivial-loan/get-loan-to-disburse.svg';
 import paperwork from '../../assets/images/nbfc-indivial-loan/paperwork.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/processing-fee.svg';
-function flexitab() {
-
+function FlexiCreditBusinessBanner() {
     const settings1 = {
         infinite: true,
         speed: 1500,
-        slidesToShow: 4,
+        slidesToShow:4,
         arrows: false,
         autoplay: false,
         dots: false,
@@ -43,32 +43,24 @@ function flexitab() {
       };
     return (
         <div>
-
-
-            <section className="flexitabcontent">
+            <section className="inv-fin-banner flexi-credit-banner">
                 <div className="container">
-                    <div className="row">
-                        <div className="col-md-9 mx-auto">
-                            <div className="heading-sec text-center">
-                            <h2 className="title-first flexititle">Apply for Flexi Credit Loan in India</h2>
-                            <p className="para">Our Flexi-Credit has the freedom to withdraw or deposit money at the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.</p>
-                            <br/> <p> Get a Flexi business loan up to 
-                           <br/> Rs. 25 lakhs online. 
-                           <br/><b> Apply Now!</b></p>
+                    <div className="row justify-content-center">
+                        <div className="col-xl-7 col-md-12">
+                            <div className="fin-banner-caption text-center">
+                                <h1 className="big-ttl"> Apply for Business Flexi<br /> Credit in India </h1>
+                                <p>  Our Flexi-Credit gives you the freedom to withdraw or deposit money multiple times from your loan account and only pay interest on the utilized amount with our efficient business loan facility.</p>
+                                <p>Get a Flexi business loan up to<br />
+                                Rs. 25 lakhs online. <br />
+
+          
+                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
-                           
                         </div>
-                        
-                      
                     </div>
-
-                </div>
-            </section>
-
-            <section className="card-wrap-nbfc">
-                <div className="container">
-                    <div className="row">
-                    <Slider {...settings1}>
+                    <div className="row justify-content-center ">
+                        <div className="col-xl-12 col-md-12">
+                        <Slider {...settings1} className="inv-banner-slider">
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
@@ -92,8 +84,8 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Paperless</h3>
-                                <p className="subtext">Documentation</p>
+                                <h3 className="card-ttl">Minimum</h3>
+                                <p className="subtext">Paperwork</p>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -101,17 +93,19 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Minimum</h3>
-                                <p className="subtext">Paperwork</p>
+                                <h3 className="card-ttl">Low</h3>
+                                <p className="subtext">processing Fee</p>
                             </div>
                         </div>
                         </Slider> 
+                        </div>
                     </div>
                 </div>
             </section>
 
+          
         </div>
     );
 }
 
-export default flexitab;
+export default FlexiCreditBusinessBanner;
