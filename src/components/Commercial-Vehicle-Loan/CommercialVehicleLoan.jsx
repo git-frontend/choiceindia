@@ -1,7 +1,8 @@
 
 import React from "react";
 import Banner from './Banner.jsx'
-import AnchorSpoke from './AnchorSpokeChannelFin.jsx'
+import BannerBottomSec from './BannerBottomSec.jsx'
+import TypesOfCommercial from './TypesOfCommercial.jsx'
 import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import Documents from './Documents.jsx'
 import Features from './Features.jsx'
@@ -13,7 +14,8 @@ function CommercialVehicleLoan() {
   return (
     <div>
         <Banner/>
-        <AnchorSpoke/>
+        <BannerBottomSec/>
+        <TypesOfCommercial/>
         <TimelineStepsSlider/>
         <Documents/>
         <Features/>

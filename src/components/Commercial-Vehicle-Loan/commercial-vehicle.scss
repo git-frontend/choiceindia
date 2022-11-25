@@ -11,6 +11,44 @@
     }
 }
 
+.veh-bnr-btm{
+    padding: 10rem 0 0 0;
+    .Anchor-heading{
+        position: relative;
+    }
+    .nbfc-info-menu-main{
+        position: absolute;
+        right: 0;
+        top: -7.5rem;
+    }
+    .veh-bnr-list{
+        .bnr-list-itm{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 11rem;
+            .bnr-list-left{
+                padding-top: 4.5rem;
+                width: 44%;
+                p{
+                    font-size: 1.75rem;
+                    line-height: 1.5;
+                    color: $txtgrey;
+                }
+                .title-secnd{
+                    margin-bottom: 2rem;
+                }
+            }
+            .bnr-list-right{
+                width: 44%;
+            }
+            &:first-child{
+                flex-direction: row-reverse;
+            }
+        }
+    }
+}
+
 .anchor-spoke-sec{
     padding: 7rem 0;
     position: relative;
@@ -131,4 +169,14 @@
 }
 
 
-
+.type-comm{
+    padding: 0 0 8rem 0;
+    .type-comm-slider{
+        .carditem-nbfc{
+            display: flex;
+            align-items: center;
+            margin-top:5px;
+            margin-bottom:5px;
+        }
+    } 
+}

@@ -7,7 +7,7 @@ import LazyLoader from "../Common-features/LazyLoader";
 import banner from '../../assets/images/com-vehicle-loan/banner.webp';
 import zerocollateral from '../../assets/images/invoice-financing/zero-collateral.svg';
 import documentation from '../../assets/images/invoice-financing/simplified-documentation.svg';
-import liquidity from '../../assets/images/invoice-financing/enhance-liquidity.svg';
+
 
 function ChannelFinanceBanner() {
     const settings1 = {
