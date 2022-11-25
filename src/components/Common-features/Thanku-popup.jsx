@@ -9,7 +9,7 @@ import Modal from 'react-bootstrap/Modal';
 function Thankyoupopup({ isShow,isBlog }) {
 
 
-console.log("check",isBlog);
+
  
 //  console.log('TRTR', isShow);
 
