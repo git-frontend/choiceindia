@@ -45,7 +45,7 @@ function flexitab() {
         <div>
 
 
-            <section className="card-wrap-nbfc whyflexi">
+            <section className="inv-fin-why-ch">
                 <div className="container">
                     <div className="row">
                         <div className="heading-sec text-center">
@@ -53,11 +53,11 @@ function flexitab() {
                         </div>
                     </div>
                     <div className="row">
-                    <Slider {...settings1}>
+                    <Slider {...settings1} className="why-ch-slider">
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Low</h3>
                                 <p className="subtext">Processing speed</p>
@@ -66,7 +66,7 @@ function flexitab() {
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={nocharges} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                <LazyLoader src={nocharges} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">No</h3>
                                 <p className="subtext">Foreclosure charges</p>
@@ -75,7 +75,7 @@ function flexitab() {
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Attractive</h3>
                                 <p className="subtext">Interest rates </p>
@@ -84,7 +84,7 @@ function flexitab() {
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={flexibleoption} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                <LazyLoader src={flexibleoption} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Flexible</h3>
                                 <p className="subtext">Repayment Options</p>
