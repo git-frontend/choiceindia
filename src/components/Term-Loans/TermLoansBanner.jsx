@@ -71,7 +71,7 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Digital} alt={"Digital"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            <LazyLoader src={Digital} alt={"Digital"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Disbursement</p>

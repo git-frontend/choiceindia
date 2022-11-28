@@ -11,129 +11,60 @@ body{
     width: 100%;
 }
 
-.inv-fin-banner{
-    &.individual-loans-banner{
-        background: $darkyellow;
-       
-        .fin-banner-caption{
-            &::before, &::after{
-                display: none;
-            }
-        }
-       .rightsec{
-       
-        @media (max-width: $sm) {
-            margin-top: 3rem;
-        }
-       }
-        @media (max-width: $sm) {
-            text-align: center;
-            padding: 5rem 0 5rem 0;
-        }
-        .home-banner-ved{
-            position: relative;
-            overflow: hidden;
-            &::before{
-                content: "";
-                width: 100%;
-                height: 100%;
-                display: block;
-                position: absolute;
-                background: transparent;
-            }
-            .banner-ved{
-                position: relative;
-                right: -1px;
-            }
-        }
-    }
-}
 
 
 
-.Loan-tabs{
-    width: 100%;
-    .loan-bloc-tabs{
-        display: flex;
-        justify-content: center;
-        width:100%;
-        .loanbtn{
-            width: 33.33%;
-            text-align: center;
-            padding: 2.375rem;
-            color: $darkblack;
-            font-size: 2rem;
-            line-height: 3.75rem;
-            font-weight: 400;
-            font-family: $font-family-poppins-regular;
-            border-right: 1px solid $lightgray;
-            cursor: pointer;
-            @media (max-width:$sm) {
-                font-size: 1.45rem;
-                padding: 0.8rem 0.5rem;
-                    line-height: 2.5rem;
-            }
-            &:last-child{
-                border-right: none;
-            }
-            &.active{
-                border-bottom: 9px solid $yellowColor ;
-            }
-        }
-    }
-}
-
-.flexitabcontent{
-    padding: 14rem 14rem 9rem 14rem;
-    .flexititle{
-        position: relative;
-        &:before{
-            display: block;
-            position: absolute;
-            content: '';
-            top: -2.5rem;
-            right: 10.3125rem;
-            width: 7.5rem;
-            height: 6.5625rem;
-            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
-            background-size: contain;
-            @media (max-width:$sm) {
-              display: none;
-            }
-        }
-    }
-    .para{
-        position: relative;
-        &:before{
-            display: block;
-            position: absolute;
-            content: '';
-            bottom: -5rem;
-            left: -4.6875rem;
-            width: 22rem;
-            height: 16rem;
-            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
-            background-size: contain;
-            @media (max-width:$sm) {
-                display: none;
-              }
-        }
-    }
+// .flexitabcontent{
+//     padding: 14rem 14rem 9rem 14rem;
+//     .flexititle{
+//         position: relative;
+//         &:before{
+//             display: block;
+//             position: absolute;
+//             content: '';
+//             top: -2.5rem;
+//             right: 10.3125rem;
+//             width: 7.5rem;
+//             height: 6.5625rem;
+//             background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+//             background-size: contain;
+//             @media (max-width:$sm) {
+//               display: none;
+//             }
+//         }
+//     }
+//     .para{
+//         position: relative;
+//         &:before{
+//             display: block;
+//             position: absolute;
+//             content: '';
+//             bottom: -5rem;
+//             left: -4.6875rem;
+//             width: 22rem;
+//             height: 16rem;
+//             background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+//             background-size: contain;
+//             @media (max-width:$sm) {
+//                 display: none;
+//               }
+//         }
+//     }
    
-    @media (max-width:$sm) {
-        padding: 5rem 0;
-    }
-    .pb24{
-        padding-bottom: 24px;
-    }
-}
+//     @media (max-width:$sm) {
+//         padding: 5rem 0;
+//     }
+//     .pb24{
+//         padding-bottom: 24px;
+//     }
+// }
 
 
 
 .avail{
-    padding: 6rem 6rem 12rem 6rem;
+    padding: 6rem 6rem 0 6rem;
     @media (max-width: $sm) {
-       padding: 6rem 2rem 5rem 2rem;
+       padding: 6rem 2rem 0 2rem;
     }
 }
 
@@ -342,11 +273,3 @@ body{
     }
 
 
-.content-tabs{
-    .content{
-        display: none;
-        &.active-content{
-            display: block;
-        }
-    }
-}
