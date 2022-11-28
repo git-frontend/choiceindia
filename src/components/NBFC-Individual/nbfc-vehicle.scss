@@ -1,15 +1,8 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-body{
-    background-color:  $whiteColor;
-}
 
-.mainwrapper{
-    overflow: hidden;
-    animation: hideMe 4s forwards;
-    width: 100%;
-}
+
 .avail{
     padding: 6rem 6rem 0 6rem;
     @media (max-width: $sm) {
@@ -24,14 +17,14 @@ body{
 }
 
 
-    .card-wrap-nbfc{
-        padding-bottom: 3rem;
-        @media (max-width: $sm) {
-            padding-bottom: 6rem;
-        }
-        .slick-list{
-            padding: 2rem 0;
-        }
+.card-wrap-nbfc{
+    padding-bottom: 3rem;
+    @media (max-width: $sm) {
+        padding-bottom: 6rem;
     }
+    .slick-list{
+        padding: 2rem 0;
+    }
+}
 
 
