@@ -30,13 +30,13 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"511"} height={"433"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"411"} height={"333"} alt={"KYC"}/>
                     </div>
               </div>
               </div>
             </div>
         </div>
-        <div className="row">
+        <div className="row mrg-top">
         <div className="col-md-12">
             <div className="Doc-rq-card">
             <div className="card-item-chanFin">
@@ -50,11 +50,12 @@ function ChannelFinanceDocument() {
                     <h3 className="title-doc-sub">Business Proof</h3>
                     <ul className="list-item">
                       <li>Business Address</li>
-                      <li>Bank Statement GST Certificate</li>
+                      <li>Bank Statement</li>
+                      <li>GST Certificate</li>
                     </ul>
                   </div>
                   <div className="img-height">
-                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"550"} height={"450"} alt={"Business Proof"}/>
+                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"350"} height={"350"} alt={"Business Proof"}/>
                     </div>
               </div>
             </div>

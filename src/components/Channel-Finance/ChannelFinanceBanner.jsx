@@ -23,10 +23,11 @@ function ChannelFinanceBanner() {
         responsive: [
         
           {
-            breakpoint: 600,
+            breakpoint: 992,
             settings: {
-              slidesToShow: 1,
+              slidesToShow: 3,
               infinite: false,
+              dots: true,
               slidesToScroll: 1,
             }
           },
@@ -66,7 +67,8 @@ function ChannelFinanceBanner() {
                                         <span className='cardimg'>
                                             <LazyLoader src={zerocollateral} alt={"Zero Collateral"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
-                                        <h3 className="card-ttl">Zero <br/>Collateral</h3>
+                                        <h3 className="card-ttl">Zero</h3>
+                                        <p className="subtext">Collateral</p>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
@@ -74,7 +76,8 @@ function ChannelFinanceBanner() {
                                         <span className='cardimg'>
                                             <LazyLoader src={FullFledged} alt={"Full-Fledged Loan Assistance"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
-                                        <h3 className="card-ttl">Full-Fledged <br/>Loan Assistance</h3>
+                                        <h3 className="card-ttl">Full-Fledged</h3>
+                                        <p className="subtext">Loan Assistance</p>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
@@ -82,8 +85,8 @@ function ChannelFinanceBanner() {
                                         <span className='cardimg'>
                                             <LazyLoader src={HighValue} alt={"High Value Working Capital"} className={"img-fluid img"} width={"60"} height={"50"} />
                                         </span>
-                                        <h3 className="card-ttl">High Value <br/>Working Capital</h3>
-                                       
+                                        <h3 className="card-ttl">High Value</h3>
+                                        <p className="subtext">Working Capital</p>
                                     </div>
                                 </div>
                                 <div className="col-md-3">
@@ -91,7 +94,8 @@ function ChannelFinanceBanner() {
                                         <span className='cardimg'>
                                             <LazyLoader src={Documentation} alt={"Digital Documentation Process"} className={"img-fluid img"} width={"35"} height={"50"} />
                                         </span>
-                                        <h3 className="card-ttl">Digital <br/> DocumentationProcess</h3>
+                                        <h3 className="card-ttl">Digital</h3>
+                                        <p className="subtext">Documentation Process</p>
                                     </div>
                                 </div>
                             </Slider>
