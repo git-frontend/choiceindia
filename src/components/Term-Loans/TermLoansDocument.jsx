@@ -18,8 +18,8 @@ function TermLoansDocument() {
               </div>
           </div>
           <div className="row justify-content-between">
-            <div className="col-xl-4 col-md-6">
-            <div className="Doc-rq-card">
+            <div className="col-xl-5 col-md-6">
+            <div className="Doc-rq-card cap-right">
                   <div>
                     <div className="img-height">
                       <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents"}/>
@@ -32,8 +32,8 @@ function TermLoansDocument() {
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-4 col-md-6">
-            <div className="Doc-rq-card">
+            <div className="col-xl-5 col-md-6">
+            <div className="Doc-rq-card cap-left">
                   <div>
                     <div className="img-height">
                       <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof"}/>

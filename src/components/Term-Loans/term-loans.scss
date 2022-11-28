@@ -27,6 +27,12 @@
             margin-bottom: 4rem;
          }
     }
+    .cap-right{
+        float: right;
+    }
+    .cap-left{
+        float: left;
+    }
     .Doc-rq-card{
         @media screen and (max-width:$sm) {
             padding:2rem;
