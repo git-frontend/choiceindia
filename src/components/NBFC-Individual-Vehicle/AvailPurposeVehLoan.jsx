@@ -55,7 +55,7 @@ function AvailPurposeVehLoan() {
                         </div>
                     </div>
                     <div className="row justify-content-center">
-                        <div className="col-md-5">
+                        <div className="col-xl-5 col-md-6">
                             <div className="Doc-rq-card">
                                 <div className="text-left">
                                     <div className="img-height">
@@ -70,7 +70,7 @@ function AvailPurposeVehLoan() {
                                 </ul>
                             </div>
                         </div>
-                        <div className=" col-md-5">
+                        <div className="col-xl-5 col-md-6">
                             <div className="Doc-rq-card">
                                 <div className="text-left">
                                     <div className="img-height">
