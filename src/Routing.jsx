@@ -625,7 +625,7 @@ function Routing() {
                                 < LazyIndivialLoan />
                             </React.Suspense>
                         } />
-                        <Route exact path='/Individual-Vehicle-Loan' element={
+                        <Route exact path='/individual-vehicle-loan' element={
                             <React.Suspense>
                                 < LazyNBFCvehicleLoan />
                             </React.Suspense>

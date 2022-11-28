@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-function Features() {
+function FeaturesVehLoan() {
 
     return (
         <div>
@@ -41,4 +41,4 @@ function Features() {
     );
 }
 
-export default Features;
+export default FeaturesVehLoan;

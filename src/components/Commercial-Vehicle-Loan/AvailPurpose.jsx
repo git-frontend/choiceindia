@@ -1,39 +1,45 @@
 
 import React from "react";
+import NBFCMenu from '../Common-features/NBFCMenu';
+import Whocanavail from '../../assets/images/com-vehicle-loan/who-can-avail.webp';
+import forwhatpurposes from '../../assets/images/com-vehicle-loan/for-what-purposes.webp';
 import LazyLoader from "../Common-features/LazyLoader";
-import avail from '../../assets/images/nbfc-indivial-loan/avail-man.webp';
-import Multitasking from '../../assets/images/nbfc-indivial-loan/multitasking.png';
+
 function AvailPurpose() {
-
-    return (
-        <div>
-
-
-<section className="veh-bnr-btm">
+  return (
+    <div>
+      
+    <section className="veh-bnr-btm">
       <div className="container">
-       
+        <div className="row">
+            <div className="col-md-12">
+                <div className="Anchor-heading">
+                  <NBFCMenu />
+                </div>
+            </div>
+        </div>
         <div className="row">
             <div className="col-md-12">
                 <div className="veh-bnr-list">
                       <div className="bnr-list-itm">
                         <div className="bnr-list-right d-flex justify-content-end">
-                              <LazyLoader src={avail} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
+                              <LazyLoader src={Whocanavail} alt={"Who can avail?"} className={"img-fluid img"} width={"450"} height={"406"} />
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">Who can avail?</h2>
                               <p>Self-Employed non-professional (SENP) like businessmen, shop keepers etc. and Self-Employed
-                                professional (SEP) like Doctors,Architect, Consultant etc.</p>
+professional (SEP) like Doctors,Architect, Consultant etc. </p>
                           </div>
                           
                       </div>
                       <div className="bnr-list-itm">
                       <div className="bnr-list-right">
-                              <LazyLoader src={Multitasking} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
+                              <LazyLoader src={forwhatpurposes} alt={"For what purposes"} className={"img-fluid img"} width={"560"} height={"328"} />
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">For what purposes?</h2>
-                              <p>The loan amount can be used to fulfil any needs like purchase of goods & services, asset creation, housing (purchase/renovation), investments in financial
-assets, events expenses etc.</p>
+                              <p>The funds from commercial vehicle loan can be used to meet the Purchase requirements of used
+commercial vehicles, Refinance on existing commercial vehicles, for commercial purposes.</p>
                           </div>
                          
                       </div>
@@ -43,9 +49,8 @@ assets, events expenses etc.</p>
         
       </div>
     </section>
-
-        </div>
-    );
+    </div>
+  );
 }
 
 export default AvailPurpose;
