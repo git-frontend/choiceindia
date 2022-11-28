@@ -187,6 +187,9 @@ body{
     .pb24{
         padding-bottom: 24px;
     }
+    @media (max-width:$sm) {
+        padding: 0 0 4rem 0;
+    }
 }
 
 
