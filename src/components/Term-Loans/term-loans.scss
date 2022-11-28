@@ -27,6 +27,18 @@
             margin-bottom: 4rem;
          }
     }
+    .cap-right{
+        float: right;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
     .Doc-rq-card{
         @media screen and (max-width:$sm) {
             padding:2rem;
@@ -62,7 +74,6 @@
                 color: $graylight;
                 font-family: $font-family-poppins-medium;
                 padding-left: 0.5rem;
-                margin-left: 1rem;
                  @media screen and (max-width:$md) {
                     font-size: 1.5rem;
                     line-height: 1.5;

@@ -54,7 +54,7 @@ function AvailPurposeVehLoan() {
                             </div>
                         </div>
                     </div>
-                    <div className="row justify-content-center">
+                    <div className="row justify-content-between">
                         <div className="col-xl-5 col-md-6">
                             <div className="Doc-rq-card">
                                 <div className="text-left">
