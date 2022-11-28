@@ -76,26 +76,6 @@
     }
     .inv-banner-slider{
         padding-top: 8rem;
-        .carditem-nbfc{
-            padding: 3rem;
-            padding-bottom: 2rem;
-            min-height: 16.5rem;
-            @media screen and (max-width:$md){
-                padding: 2rem 1rem;
-            }
-            @media screen and (max-width:$sm) {
-                margin-bottom: 2rem;
-                margin-bottom: 0;
-            }
-        }
-        // .carditem-nbfc{
-        //     padding: 3rem;
-        //     padding-bottom: 2rem;
-        //     min-height: 16.5rem;
-        //     @media screen and (max-width:$sm) {
-        //         margin-bottom: 0;
-        //     }
-        // }
     }
 }
 
@@ -164,7 +144,7 @@
             height: 25px;
             display: block;
             background: $abt-bg;
-            border: 8px solid #E2E4E9;
+            border: 8px solid $lightgray2;
             position: absolute;
             left: 50%;
             border-radius: 50%;
@@ -195,7 +175,7 @@
                 width: 45%;
                 h2{
                     font-family: $font-family-poppins-semibold;
-                    color: #C1CBD4;
+                    color: $lightgray2;
                     font-size: 2.5rem;
                 }
                 h3{
@@ -227,7 +207,7 @@
                     transform: translateX(-50%);
                     height: calc(100% + 2px);
                     width: 4px;
-                    background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+                    background: linear-gradient(269.03deg, $gradientclr1 -5.14%, $gradientclr2 66.35%);
                     border-radius: 4px;
                   }
                   .steps-itm-left{
@@ -305,7 +285,7 @@
         .carditem-nbfc{
             margin-top: 5px;
             margin-bottom: 5px;
-            min-height: 17rem;
+            min-height: 17.5rem;
             .cardimg{
                 min-height: 6rem;
                 display: flex;
@@ -316,22 +296,6 @@
                 margin-bottom: 3rem;
             }
         }
-
-        .carditem-nbfc{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            min-height: 18rem;
-            .cardimg{
-                min-height: 6rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
-            }
-        }
-
     }
 }
 
