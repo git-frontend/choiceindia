@@ -84,7 +84,10 @@ body{
 }
 
 .flexitabcontent{
-    padding: 14rem 14rem 9rem 14rem;
+    padding: 14rem 0;
+    @media (min-width:768px)and (max-width:$md) {
+        padding: 10rem 0 ;
+      }
     .flexititle{
         position: relative;
         &:before{

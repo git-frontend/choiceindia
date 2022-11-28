@@ -147,6 +147,9 @@
 .inv-fin-why-ch{
     .slick-list{
         padding: 2rem 0;
+        @media screen and (max-width: $sm) {
+            padding: 2rem 0 0;
+             }
     }
 }
 

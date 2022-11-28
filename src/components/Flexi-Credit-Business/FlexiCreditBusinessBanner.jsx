@@ -73,7 +73,7 @@ function FlexiCreditBusinessBanner() {
                         <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"50"} />
                             </span>
                                 <h3 className="card-ttl">48 Hours</h3>
                                 <p className="subtext">to Get Loan Disbursed</p>

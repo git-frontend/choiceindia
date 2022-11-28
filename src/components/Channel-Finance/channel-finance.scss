@@ -87,6 +87,11 @@
         @media screen and (max-width:$sm) {
             margin-bottom: 4rem;
          }
+         .title-first{
+            @media (min-width:$sm-x) and (max-width:$md) {
+                font-size: 3.4rem;
+             }
+         }
     }
     .mrg-top{
         margin-top: 7rem;
