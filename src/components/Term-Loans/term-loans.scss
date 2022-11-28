@@ -29,9 +29,15 @@
     }
     .cap-right{
         float: right;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
     }
     .cap-left{
         float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
     }
     .Doc-rq-card{
         @media screen and (max-width:$sm) {
