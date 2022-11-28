@@ -7,7 +7,7 @@ import vehiclepurpose from '../../assets/images/NBFCvehicleLoan/vehiclepurpose.s
 import bringvehicle from '../../assets/images/NBFCvehicleLoan/bringvehicle.svg';
 import usedvehicle from '../../assets/images/NBFCvehicleLoan/usedvehicle.svg';
 
-function Features() {
+function AvailPurposeVehLoan() {
 
     return (
         <div>
@@ -92,4 +92,4 @@ function Features() {
     );
 }
 
-export default Features;
+export default AvailPurposeVehLoan;
