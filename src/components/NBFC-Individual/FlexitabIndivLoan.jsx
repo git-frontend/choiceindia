@@ -92,8 +92,8 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Paperless</h3>
-                                <p className="subtext">Documentation</p>
+                                <h3 className="card-ttl">Minimum</h3>
+                                <p className="subtext">Paperwork</p>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -101,8 +101,8 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Minimum</h3>
-                                <p className="subtext">Paperwork</p>
+                                <h3 className="card-ttl">Low</h3>
+                                <p className="subtext">processing Fee</p>
                             </div>
                         </div>
                         </Slider> 

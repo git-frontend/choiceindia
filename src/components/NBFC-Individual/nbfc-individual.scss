@@ -52,10 +52,18 @@ body{
 
 .Loan-tabs{
     width: 100%;
+    .tabwrapper{
+        @media (max-width: $sm) {
+          flex-direction: column-reverse;
+        }
+    }
     .loan-bloc-tabs{
         display: flex;
         flex-wrap: wrap;
         width:75%;
+        @media (max-width: $sm) {
+            width:100%;
+          }
         .loanbtn{
             width: 33.33%;
             text-align: center;
@@ -104,8 +112,18 @@ body{
     }
    .menu-sub-tabs{
     width: 25%;
+    @media (max-width: $sm) {
+        width:100%;
+        display: flex;
+        justify-content: end;
+        padding: 1rem;
+      }
     .nbfc-info-menu-main{
         margin: 0 auto;
+        @media (max-width: $sm) {
+         
+           margin: 0;
+          }
     }
    }
     

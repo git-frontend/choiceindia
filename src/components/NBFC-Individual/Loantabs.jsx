@@ -33,7 +33,7 @@ function Loantabs() {
 
        
 
-        <div className="d-flex align-items-center">
+        <div className="d-flex align-items-center tabwrapper">
           <div className="loan-bloc-tabs bloc-tabs">
           <button
             className={toggleState === 1 ? "loanbtn tabs active" : "loanbtn"}
