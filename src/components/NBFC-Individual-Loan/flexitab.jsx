@@ -52,9 +52,13 @@ function flexitab() {
                             <div className="heading-sec text-center">
                             <h2 className="title-first flexititle">Apply for Flexi Credit Loan in India</h2>
                             <p className="para">Our Flexi-Credit has the freedom to withdraw or deposit money at the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.</p>
-                            <br/> <p> Get a Flexi business loan up to 
-                           <br/> Rs. 25 lakhs online. 
-                           <br/><b> Apply Now!</b></p>
+                            <br/> <p className="para"> Get a Flexi business loan up to 
+                            <br/> Rs. 25 lakhs online. <br/> 
+                            <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+
+
+                                
+
                             </div>
                            
                         </div>
@@ -92,8 +96,8 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Paperless</h3>
-                                <p className="subtext">Documentation</p>
+                                <h3 className="card-ttl">Minimum</h3>
+                                <p className="subtext">Paperwork</p>
                             </div>
                         </div>
                         <div className="col-md-3">
@@ -101,8 +105,8 @@ function flexitab() {
                             <span className='cardimg'>
                                 <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
                             </span>
-                                <h3 className="card-ttl">Minimum</h3>
-                                <p className="subtext">Paperwork</p>
+                                <h3 className="card-ttl">Low</h3>
+                                <p className="subtext">processing Fee</p>
                             </div>
                         </div>
                         </Slider> 

@@ -2,11 +2,7 @@
 import React from "react";
 import Banner from './Banner';
 import Loantabs from './Loantabs';
-import Documentrequired from './Documentrequired';
-import Features from './Features';
-import Stepslider from './Stepslider';
-import WhyFlexi from './WhyFlexi';
-import AvailPurpose from './AvailPurpose';
+
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 
@@ -43,11 +39,7 @@ function NBFCloan() {
          <Banner />
           <Loantabs />
           
-          <AvailPurpose/>
-          <Stepslider/>
-          <Documentrequired/>
-          <Features/>
-          <WhyFlexi/>
+         
        </div> 
       
     

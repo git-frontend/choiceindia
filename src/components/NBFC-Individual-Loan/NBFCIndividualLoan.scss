@@ -54,10 +54,10 @@ body{
     width: 100%;
     .loan-bloc-tabs{
         display: flex;
-        justify-content: center;
-        width:100%;
+        // justify-content: center;
+        width:85%;
         .loanbtn{
-            width: 33.33%;
+            width: 30%;
             text-align: center;
             padding: 2.375rem;
             color: $darkblack;
@@ -67,6 +67,14 @@ body{
             font-family: $font-family-poppins-regular;
             border-right: 1px solid $lightgray;
             cursor: pointer;
+            @media (min-width:768px)and (max-width:$md) {
+                font-size: 1.75rem;
+              }
+            @media (max-width:$sm) {
+                font-size: 1.45rem;
+                padding: 0.8rem 0.5rem;
+                    line-height: 2.5rem;
+            }
             @media (max-width:$sm) {
                 font-size: 1.45rem;
                 padding: 0.8rem 0.5rem;
@@ -80,10 +88,20 @@ body{
             }
         }
     }
+    // .menu{
+    //     @media (max-width: $sm) {
+    //        position: relative;
+    //        right: 1rem;
+    //     }
+    // }
+    
 }
 
 .flexitabcontent{
     padding: 14rem 14rem 9rem 14rem;
+    @media (min-width:768px)and (max-width:$md) {
+        padding: 10rem 0 ;
+      }
     .flexititle{
         position: relative;
         &:before{
@@ -100,14 +118,11 @@ body{
               display: none;
             }
         }
-    }
-    .para{
-        position: relative;
-        &:before{
+        &:after{
             display: block;
             position: absolute;
             content: '';
-            bottom: -5rem;
+            top: 10rem;
             left: -4.6875rem;
             width: 22rem;
             height: 16rem;
@@ -117,6 +132,25 @@ body{
                 display: none;
               }
         }
+    }
+    .para{
+        position: relative;
+        font-size: 1.75rem;
+        line-height: 1.5;
+        color: #221F20;
+        a{
+            @media (max-width:$sm) {
+                display: block;
+              }
+            text-decoration: none;
+            .aply-btn{
+                font-family: "PoppinsSemiBold", sans-serif;
+                color: #000000;
+            }
+        }
+       
+     
+       
     }
    
     @media (max-width:$sm) {
@@ -162,6 +196,9 @@ body{
             align-items: center;
             justify-content: center;
             margin-bottom: 3rem;
+            @media screen and (max-width:$sm) {
+                min-height: 15rem;  
+             }
         }
         .title-doc{
             font-size: 2.5rem;
