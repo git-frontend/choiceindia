@@ -5,7 +5,7 @@ import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
 import time from '../../assets/images/nbfc-indivial-loan/time.svg';
 import disburse from '../../assets/images/nbfc-indivial-loan/get-loan-to-disburse.svg';
-import paperwork from '../../assets/images/nbfc-indivial-loan/paperwork.webp';
+import paperwork from '../../assets/images/nbfc-indivial-loan/paperwork.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/processing-fee.svg';
 function flexitab() {
 
