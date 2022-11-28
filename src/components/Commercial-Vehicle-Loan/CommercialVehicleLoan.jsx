@@ -1,7 +1,7 @@
 
 import React from "react";
 import Banner from './Banner.jsx'
-import BannerBottomSec from './BannerBottomSec.jsx'
+import AvailPurpose from './AvailPurpose.jsx'
 import TypesOfCommercial from './TypesOfCommercial.jsx'
 import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import Documents from './Documents.jsx'
@@ -14,7 +14,7 @@ function CommercialVehicleLoan() {
   return (
     <div>
         <Banner/>
-        <BannerBottomSec/>
+        <AvailPurpose/>
         <TypesOfCommercial/>
         <TimelineStepsSlider/>
         <Documents/>

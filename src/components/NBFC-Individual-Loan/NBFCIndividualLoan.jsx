@@ -5,9 +5,9 @@ import Loantabs from './Loantabs';
 
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
-
-import "./NBFCIndividualLoan.scss";
 import "../Invoice-Financing/nbfc-common.scss";
+import "./NBFCIndividualLoan.scss";
+
 
 
 function NBFCloan() {
