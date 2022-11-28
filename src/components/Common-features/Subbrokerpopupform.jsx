@@ -764,6 +764,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                     <p className="text-danger valid-ss">Validating {value}...</p>
                                 } */}
                             </div>
+                            <br/>
                             <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
                         </div>
 
