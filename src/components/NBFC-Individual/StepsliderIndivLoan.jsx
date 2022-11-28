@@ -1,9 +1,8 @@
 
 import React from "react";
-import FirstStep from '../../assets/images/insurance/all-online.svg';
-import SecndStep from '../../assets/images/insurance/smart-compare.svg';
-import ThirdStep from '../../assets/images/insurance/all-done.svg';
-import FourthStep from '../../assets/images/nbfc-flexi-credit-business/loan-disburse.svg';
+import vehicleFirstStep from '../../assets/images/NBFCvehicleLoan/vehicleFirstStep.svg';
+import vehicleSecndStep from '../../assets/images/NBFCvehicleLoan/vehicleSecndStep.svg';
+import vehicleThirdStep from '../../assets/images/NBFCvehicleLoan/vehicleThirdStep.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import { useRef, useState, useEffect } from 'react';
 
@@ -13,10 +12,10 @@ function StepsSlider() {
     const myRef2 = useRef(null);
     const myRef3 = useRef(null);
     const myRef4 = useRef(null);
-    const [name, setName ] = useState('');
-    const [name2, setName2 ] = useState('');
-    const [name3, setName3 ] = useState('');
-    const [name4, setName4 ] = useState('');
+    const [name, setName] = useState('');
+    const [name2, setName2] = useState('');
+    const [name3, setName3] = useState('');
+    const [name4, setName4] = useState('');
 
     const getPosition = () => {
 
@@ -26,34 +25,34 @@ function StepsSlider() {
         const element2 = document.getElementById("how2");
         const element3 = document.getElementById("how3");
         const element4 = document.getElementById("how4");
-        if(element && element2 && element3){
+        if (element && element2 && element3) {
             const rect = element.getBoundingClientRect();
             const rect2 = element.getBoundingClientRect();
             const rect3 = element.getBoundingClientRect();
             const rect4 = element.getBoundingClientRect();
-            if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
+            if (rect.top.toFixed() > 140 && rect.top.toFixed() < 350) {
                 setName('steps-itm-active');
                 // console.log('inside name', name);
-            }else{
+            } else {
                 setName('');
             }
-            if(rect2.top.toFixed() < 150 && rect2.top.toFixed() > -200 ){
+            if (rect2.top.toFixed() < 150 && rect2.top.toFixed() > -200) {
                 setName2('steps-itm-active');
-            }else{
+            } else {
                 setName2('');
             }
-            if(rect3.top.toFixed() < -200 && rect3.top.toFixed() > -600 ){
+            if (rect3.top.toFixed() < -200 && rect3.top.toFixed() > -600) {
                 setName3('steps-itm-active');
-            }else{
+            } else {
                 setName3('');
             }
-            if(rect4.top.toFixed() < -600 && rect4.top.toFixed() > -900 ){
+            if (rect4.top.toFixed() < -200 && rect4.top.toFixed() > -900) {
                 setName4('steps-itm-active');
-            }else{
+            } else {
                 setName4('');
             }
         }
-        
+
         // setState( rect.top.toFixed());
 
         // console.log('top',rect2.top.toFixed());
@@ -86,8 +85,8 @@ function StepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How to Apply for an MSME Loan<br/> with Choice Finserv
-</h2>
+                                <h2 className="title-first">How To Apply For Vehicle Loan <br /> with Choice Finserv
+                                </h2>
                             </div>
                         </div>
                     </div>
@@ -96,46 +95,36 @@ function StepsSlider() {
                             <div className="how-works-steps">
                                 <div ref={myRef1} className={"works-steps-itm " + name} id="how1">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={FirstStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
+                                        <LazyLoader src={vehicleFirstStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
                                         <h3>Submit the Documents</h3>
-                                        <p>With the help of our eligibility calculator find out your eligibility for the loan to start the process</p>
+                                        <p>Submit your KYC, Vehicle Documents and Income Proof to know your eligibility</p>
                                     </div>
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={SecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"229"} />
+                                        <LazyLoader src={vehicleSecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"229"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
-                                        <h3>Check Your Eligibility</h3>
-                                        <p>By submitting your paperwork digitally and include your KYC, business owner/business
-documents, and income proof</p>
+                                        <h3>Easy Loan Approval</h3>
+                                        <p>Once you submit the documents, you will receive an approval within 48 hours</p>
                                     </div>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={ThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
+                                        <LazyLoader src={vehicleThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
-                                        <h3>Quick Loan Approval</h3>
-                                        <p>A team of professionals will analyse the documents once they have been submitted,
-speeding up the process so that an approval can be given within 48 hours.</p>
+                                        <h3>Quick Loan Disbursal</h3>
+                                        <p>Within a few hours of loan approval, you can reap the benefit of your disbursed
+                                            finances.</p>
                                     </div>
                                 </div>
-                                <div ref={myRef4} className={"works-steps-itm steps-itm-reverse " + name4} id="how4">
-                                    <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={FourthStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
-                                    </div>
-                                    <div className="steps-itm-right">
-                                        <h2>04</h2>
-                                        <h3>Loan Disbursed</h3>
-                                        <p>After getting approval, the loan is disbursed within a short period of time.</p>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

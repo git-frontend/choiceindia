@@ -15,31 +15,34 @@ function AvailPurposeVehLoan() {
 
             <section className="avail">
                 <div className="container">
-                    <div className="row d-flex align-items-center">
-                        <div className="col-md-6 heading-sec ">
-                            <h4 className="title-third mb-5">Who can avail?</h4>
-                            <p className="">Salaried individuals from Government and Private Sector.</p>
-                        </div>
-                        <div className="col-md-6">
-                            <LazyLoader src={avail} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="veh-bnr-list">
+                                <div className="bnr-list-itm">
+                                    <div className="bnr-list-right d-flex justify-content-end">
+                                        <LazyLoader src={avail} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
+                                    </div>
+                                    <div className="bnr-list-left">
+                                        <h2 className="title-secnd">Who can avail?</h2>
+                                        <p>Salaried individuals from Government and Private Sector.</p>
+                                    </div>
+
+                                </div>
+                                <div className="bnr-list-itm">
+                                    <div className="bnr-list-right">
+                                        <LazyLoader src={vehiclepurpose} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
+                                    </div>
+                                    <div className="bnr-list-left">
+                                        <h2 className="title-secnd">For what purposes?</h2>
+                                        <p>The loan amount can be used to Purchase new and used Passenger vehicles, Refinance on existing
+                                            Passenger vehicles for personal purposes.</p>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                </div>
-            </section>
-            <section className="avail">
-                <div className="container">
-                    <div className="row purpose d-flex align-items-center">
-
-                        <div className="col-md-6 order-sm-first order-last">
-                            <LazyLoader src={vehiclepurpose} alt={"Avail"} className={"img-fluid img"} width={"627"} height={"538"} />
-                        </div>
-                        <div className="col-md-6 heading-sec ">
-                            <h4 className="title-third mb-5">For what purposes?</h4>
-                            <p className="">The loan amount can be used to Purchase new and used Passenger vehicles, Refinance on existing
-                                Passenger vehicles for personal purposes.</p>
-                        </div>
-                    </div>
                 </div>
             </section>
             <section className="Doc-rqrd-sec">
@@ -47,7 +50,7 @@ function AvailPurposeVehLoan() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="Doc-rqrd-heading">
-                                <h2 className="title-first">Bring Home Your Vehicle <br/> with a Vehicle Loan </h2>
+                                <h2 className="title-first">Bring Home Your Vehicle <br /> with a Vehicle Loan </h2>
                             </div>
                         </div>
                     </div>
