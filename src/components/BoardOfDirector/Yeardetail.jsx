@@ -69,7 +69,7 @@ function Yeardetail() {
 
                                 </button>
                             </div>
-
+                            
 
                             <div className="content-tabs">
                                 <div
@@ -79,7 +79,7 @@ function Yeardetail() {
                                         <div className="tab-cont-left">
                                             <Accordion defaultActiveKey="0">
                                                 <Accordion.Item eventKey="0" >
-                                                    <Accordion.Header>Annual Report and AGM</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Annual Report and AGM</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -91,7 +91,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="1">
-                                                    <Accordion.Header>Financial Results</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Financial Results</Accordion.Header>
                                                     <Accordion.Body>
                                                         <ul className="listing">
                                                             <li className="list">
@@ -110,7 +110,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="2" >
-                                                    <Accordion.Header>	Investor Presentation</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>	Investor Presentation</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -122,7 +122,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="3" >
-                                                    <Accordion.Header>Announcements</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Announcements</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -134,7 +134,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="4" >
-                                                    <Accordion.Header>Related Party Transaction</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Related Party Transaction</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -146,7 +146,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="5" >
-                                                    <Accordion.Header>Notice of Board Meeting</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Notice of Board Meeting</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
@@ -158,7 +158,7 @@ function Yeardetail() {
                                                     </Accordion.Body>
                                                 </Accordion.Item>
                                                 <Accordion.Item eventKey="6" >
-                                                    <Accordion.Header>Closure of Trading Window</Accordion.Header>
+                                                    <Accordion.Header as="h3" className='faq-header'>Closure of Trading Window</Accordion.Header>
                                                     <Accordion.Body>
                                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                                                         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
