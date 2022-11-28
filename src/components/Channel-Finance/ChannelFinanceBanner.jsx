@@ -74,7 +74,7 @@ function ChannelFinanceBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={FullFledged} alt={"Full-Fledged Loan Assistance"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={FullFledged} alt={"Full-Fledged Loan Assistance"} className={"img-fluid img"} width={"45"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Full-Fledged</h3>
                                         <p className="subtext">Loan Assistance</p>
@@ -83,7 +83,7 @@ function ChannelFinanceBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={HighValue} alt={"High Value Working Capital"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            <LazyLoader src={HighValue} alt={"High Value Working Capital"} className={"img-fluid img"} width={"45"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">High Value</h3>
                                         <p className="subtext">Working Capital</p>
@@ -92,7 +92,7 @@ function ChannelFinanceBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Documentation} alt={"Digital Documentation Process"} className={"img-fluid img"} width={"35"} height={"50"} />
+                                            <LazyLoader src={Documentation} alt={"Digital Documentation Process"} className={"img-fluid img"} width={"30"} height={"45"} />
                                         </span>
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Documentation Process</p>

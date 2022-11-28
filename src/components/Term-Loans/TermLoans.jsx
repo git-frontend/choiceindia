@@ -5,8 +5,8 @@ import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import TermLoansDocument from './TermLoansDocument.jsx'
 import Features from './Features.jsx'
 import WhyChoose from './WhyChoose.jsx'
-import "./term-loans.scss";
 import "../Invoice-Financing/nbfc-common.scss";
+import "./term-loans.scss";
 
 function TermLoans() {
   return (

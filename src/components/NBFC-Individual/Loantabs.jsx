@@ -2,18 +2,22 @@
 import React from "react";
 import { useState } from "react";
 // import LazyLoader from '../Common-features/LazyLoader';
-import FlexitabVehLoan from './FlexitabVehLoan';
-import DocumentrequiredVehLoan from './DocumentrequiredVehLoan';
-import FeaturesVehLoan from './FeaturesVehLoan';
-import Stepslider from './Stepslider';
-import WhyFlexiVehLoan from './WhyFlexiVehLoan';
-import AvailPurposeVehLoan from './AvailPurposeVehLoan';
+import FlexitabVehLoan from '../NBFC-Individual-Vehicle/FlexitabVehLoan';
+import DocumentrequiredVehLoan from '../NBFC-Individual-Vehicle/DocumentrequiredVehLoan';
+import FeaturesVehLoan from '../NBFC-Individual-Vehicle/FeaturesVehLoan';
+import WhyFlexiVehLoan from '../NBFC-Individual-Vehicle/WhyFlexiVehLoan';
+import AvailPurposeVehLoan from '../NBFC-Individual-Vehicle/AvailPurposeVehLoan';
+import StepsliderVehLoan from '../NBFC-Individual-Vehicle/StepsliderVehLoan';
 
 import FlexitabIndivLoan from './FlexitabIndivLoan';
 import DocumentrequiredIndivLoan from './DocumentrequiredIndivLoan';
 import FeaturesIndivLoan from './FeaturesIndivLoan';
 import AvailPurposeIndivLoan from './AvailPurposeIndivLoan';
 import WhyFlexiIndivLoan from './WhyFlexiIndivLoan';
+import StepsliderIndivLoan from './StepsliderIndivLoan';
+
+import NBFCMenu from '../Common-features/NBFCMenu';
+
 function Loantabs() {
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {
@@ -27,7 +31,10 @@ function Loantabs() {
       <section className="Loan-tabs" >
 
 
-        <div className="loan-bloc-tabs bloc-tabs">
+       
+
+        <div className="d-flex align-items-center">
+          <div className="loan-bloc-tabs bloc-tabs">
           <button
             className={toggleState === 1 ? "loanbtn tabs active" : "loanbtn"}
             onClick={() => toggleTab(1)}
@@ -46,10 +53,14 @@ function Loantabs() {
           >
             Study Loan
           </button>
+          </div>
+          <div className="menu-sub-tabs">
+              <NBFCMenu />
+          </div>
         </div>
 
 
-        <div className="">
+        <div className="indiv-tabs-cont">
           <div className="">
             <div className="content-tabs">
               <div
@@ -59,7 +70,7 @@ function Loantabs() {
                 <div id="flexitab">
                   <FlexitabIndivLoan />
                   <AvailPurposeIndivLoan/>
-                  <Stepslider/>
+                  <StepsliderIndivLoan/>
                   <DocumentrequiredIndivLoan/>
                   <FeaturesIndivLoan/>
                   <WhyFlexiIndivLoan/>
@@ -72,7 +83,7 @@ function Loantabs() {
               >
                   <FlexitabVehLoan />
                   <AvailPurposeVehLoan/>
-                  <Stepslider/>
+                  <StepsliderVehLoan/>
                   <DocumentrequiredVehLoan/>
                   <FeaturesVehLoan/>
                   <WhyFlexiVehLoan/>
@@ -81,16 +92,14 @@ function Loantabs() {
               <div
                 className={toggleState === 3 ? "content  active-content" : "content"}
               >
-                <h2>Content 3</h2>
-                <hr />
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-                  nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-                  Accusamus in quia odit aspernatur provident et ad vel distinctio
-                  recusandae totam quidem repudiandae omnis veritatis nostrum
-                  laboriosam architecto optio rem, dignissimos voluptatum beatae
-                  aperiam voluptatem atque. Beatae rerum dolores sunt.
-                </p>
+                <div className="container">
+                  <div className="row">
+                      <div className="col-md-12">
+                          <h2 className="title-first text-center"> Study Loan</h2>
+                      </div>
+                  </div>
+                </div>
+               
               </div>
             </div>
           </div>
