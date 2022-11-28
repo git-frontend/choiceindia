@@ -1,159 +1,127 @@
+@import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
 
-.inv-fin-banner{
-    background: $pinklight;
-    padding: 10rem 0;
-    .fin-banner-caption{
-        max-width: 700px;
-        margin: 0 auto;
-        display: block;
-        .big-ttl{
-            font-family: $font-family-poppins-medium;
-            color: $darkblack;
-            margin-bottom: 1rem;
-        }
-        .aply-btn{
-            color: $darkblack;
-        }
-    }
-}
 
-// steps slider
-.nbfc-steps-works{
-    padding: 8rem 0;
+
+.anchor-spoke-sec{
+    padding: 7rem 0;
     position: relative;
-    background: $abt-bg;
-    &::before {
-        content: '';
-        width: 17rem;
-        height: 38rem;
-        display: block;
-        position: absolute;
-        left: 2px;
-        top: 20%;
-        background: url(../../assets/images/invoice-financing/steps-bg-left.webp) no-repeat top left;
-        background-size: contain;
-
-        @media (max-width: $md) {
-            display: none;
-        }
-    }
     &::after {
         content: '';
-        width: 17rem;
-        height: 38rem;
+        width: 18rem;
+        height: 34rem;
         display: block;
         position: absolute;
-        right: 2px;
-        bottom: -15rem;
-        background: url(../../assets/images/invoice-financing/right-bg-left.webp) no-repeat top right;
+        right: 0;
+        top: 3rem;
+        background: url(../../assets/images/invoice-financing/bg-layer2.webp) no-repeat top right;
         background-size: contain;
 
         @media (max-width: $md) {
             display: none;
         }
     }
-    .heading-sec{
-        p{
-            color: $primary;
-        }
-    }
-    .how-works-steps{
-        margin-top: 10rem;
+    @media screen and (max-width:$sm) {
+        padding:7rem 0 4rem 0;
+     }
+    .Anchor-heading {
+        margin-bottom: 8rem;
+        text-align: center;
         position: relative;
-        padding-bottom: 8rem;
-        &::before{
-            content: '';
-            width: 3px;
-            height: 100%;
-            display: block;
-            background: #DEE0E6;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+         .nbfc-info-menu-main{
             position: absolute;
-            left: 50%;
-            top: 0;
-            transform: translate(-50%, 0);
-        }
-        &::after{
-            content: '';
-            width: 30px;
-            height: 30px;
-            display: block;
-            background: $whiteColor;
-            border: 6px solid #E2E4E9;
-            position: absolute;
-            left: 50%;
-            border-radius: 50%;
-            transform: translate(-50%, 0);
-            bottom: 0;
-        }
-        .works-steps-itm{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            padding: 3rem 0;
-            position: relative;
-            .steps-itm-left{
-                width: 45%;
-                &.itm-left-img{
-                    display: flex;
-                    opacity: 0.5;
-                    justify-content: flex-end;
-                    @media (max-width: $sm) {
-                        img{
-                            max-width: 70%;
-                        }
-                    }
-                }
+            right: 0;
+            top: -4.5rem;
+            z-index: 99;
+            
+         }
+    }
+    .flex-card{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .flex-card-item {
+            width: 47%;
+            @media screen and (max-width:$sm) {
+               width: 100%;
+               margin-bottom: 3rem;
             }
-            .steps-itm-right{
-                width: 45%;
-                h2{
-                    font-family: $font-family-poppins-semibold;
-                    color: #C1CBD4;
-                    font-size: 2.5rem;
-                }
-                h3{
-                    color: $darkblack;
-                    font-family: $font-family-poppins-medium;
-                }
+            .anchor-spoke-card {
+                background: $bgligh-cream;
+                border-radius: 20px;
+                box-shadow: 0px 0px 8px $boxshadow;
+                padding:4rem;
+                height: 100%;
+                position: relative;
+                z-index: 9;
+                 @media screen and (max-width:$md) {
+                    padding:2rem;
+                 }
                 p{
-                    color: $darkblack;
+                    font-size: 1.75rem;
+                    line-height: 1.5;
                 }
             }
-            &.steps-itm-reverse{
-                flex-direction: row-reverse;
-                .steps-itm-right{
-                    text-align: right;
-                }
-                .steps-itm-left{
-                    justify-content: flex-start;
-                    
-                }
-            }
-            // &.steps-itm-active{
-            //     &:before {
-            //         content: "";
-            //         display: block;
-            //         position: absolute;
-            //         bottom: inherit;
-            //         bottom: 0;
-            //         left: 50%;
-            //         transform: translateX(-50%);
-            //         height: calc(100% + 2px);
-            //         width: 4px;
-            //         background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
-            //         border-radius: 4px;
-            //       }
-            //       .steps-itm-left{
-            //         opacity: 1;
-            //       }
-            // }
-        }
-        @media (max-width: $sm) {
-            margin-top: 5rem;
         }
     }
 }
+
+.Doc-rqrd-sec{
+    padding: 7rem 0 6rem 0;
+    
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .Doc-rq-card{
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px $boxshadow;
+            margin-bottom: 3rem;
+         }
+        .img-height{
+            min-height: 275px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width:$sm) {
+                min-height: inherit;
+                margin-bottom: 2rem;
+            }
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-medium;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            @media screen and (max-width:$md) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+         }
+        .list-item{
+            li{
+                font-size: 1.9rem;
+                line-height: 1.5;
+                color: $graylight;
+                font-family: $font-family-poppins-medium;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                 }
+            }
+        }
+    }
+}
+
+
 

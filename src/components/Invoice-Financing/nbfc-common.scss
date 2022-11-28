@@ -1,0 +1,322 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.inv-fin-banner{
+    background: $pinklight;
+    padding: 10rem 0;
+    @media (max-width: $md) {
+        padding: 5rem 0;
+    }
+    .fin-banner-caption{
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        
+        &::before {
+            content: '';
+            width: 17rem;
+            height: 12rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 10rem;
+            background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top left;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        &::after {
+            content: '';
+            width: 9rem;
+            height: 7rem;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top right;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        .big-ttl{
+           
+            color: $primary;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            @media (max-width: $md) {
+                br{
+                    display: none;
+                }
+            }
+        }
+        .aply-btn{
+            color: $darkblack;
+        }
+        p{
+            font-size: 1.75rem;
+            line-height: 1.5;
+            color: $primary;
+            a{
+                text-decoration: none;
+            }
+            .aply-btn{
+                font-family: $font-family-poppins-semibold;
+                color: $darkblack;
+            }
+        }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
+    }
+    .inv-banner-slider{
+        padding-top: 8rem;
+        // .carditem-nbfc{
+        //     padding: 3rem;
+        //     padding-bottom: 2rem;
+        //     min-height: 16.5rem;
+        //     @media screen and (max-width:$sm) {
+        //         margin-bottom: 0;
+        //     }
+        // }
+    }
+}
+
+
+//timeline steps slider
+.nbfc-steps-works{
+    padding: 8rem 0;
+    position: relative;
+    background: $abt-bg;
+    @media screen and (max-width:$sm) {
+        padding: 5rem 0;
+    }
+    &::before {
+        content: '';
+        width: 17rem;
+        height: 23rem;
+        display: block;
+        position: absolute;
+        left: 2px;
+        top: 20%;
+        background: url(../../assets/images/invoice-financing/steps-bg-left.webp) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 23rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        bottom: 35%;
+        background: url(../../assets/images/invoice-financing/right-bg-left.webp) no-repeat top right;
+        background-size: contain;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .heading-sec{
+        p{
+            color: $primary;
+        }
+    }
+    .how-works-steps{
+        margin-top: 10rem;
+        position: relative;
+        padding-bottom: 8rem;
+        &::before{
+            content: '';
+            width: 4px;
+            height: 100%;
+            display: block;
+            background: $graydark;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translate(-50%, 0);
+        }
+        &::after{
+            content: '';
+            width: 25px;
+            height: 25px;
+            display: block;
+            background: $abt-bg;
+            border: 8px solid #E2E4E9;
+            position: absolute;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0;
+        }
+        .works-steps-itm{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3rem 0;
+            position: relative;
+            .steps-itm-left{
+                width: 45%;
+                &.itm-left-img{
+                    display: flex;
+                    opacity: 0.5;
+                    justify-content: flex-end;
+                    @media (max-width: $sm) {
+                        img{
+                            max-width: 70%;
+                        }
+                    }
+                }
+            }
+            .steps-itm-right{
+                width: 45%;
+                h2{
+                    font-family: $font-family-poppins-semibold;
+                    color: #C1CBD4;
+                    font-size: 2.5rem;
+                }
+                h3{
+                    color: $darkblack;
+                    font-family: $font-family-poppins-medium;
+                }
+                p{
+                    color: $darkblack;
+                }
+            }
+            &.steps-itm-reverse{
+                flex-direction: row-reverse;
+                .steps-itm-right{
+                    text-align: right;
+                }
+                .steps-itm-left{
+                    justify-content: flex-start;
+                    
+                }
+            }
+            &.steps-itm-active{
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    bottom: inherit;
+                    bottom: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: calc(100% + 2px);
+                    width: 4px;
+                    background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+                    border-radius: 4px;
+                  }
+                  .steps-itm-left{
+                    opacity: 1;
+                  }
+            }
+        }
+        @media (max-width: $sm) {
+            margin-top: 5rem;
+        }
+    }
+    .elg-text{
+        font-family: $font-family-poppins-medium;
+        color: $darkblack;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        opacity: 0.7;
+    }
+}
+
+
+
+.features-nbfc{
+    background-color: $darkyellow;
+    padding: 5.063rem 0;
+    position: relative;
+    &::before {
+        content: '';
+        width: 17rem;
+        height: 42rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        background: url(../../assets/images/loan-bg.webp) no-repeat top left;
+        background-size: contain;
+
+        @media (max-width: $sm) {
+            display: none;
+        }
+    }
+    @media (max-width:$sm) {
+        padding: 3rem 1.5rem  ;
+    }
+    ul{
+        position: relative;
+        z-index: 9;
+        li{
+            color: $darkblack;
+            font-size:1.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            font-family: $font-family-poppins-medium;
+            @media (max-width:$sm) {
+                font-size: 1.3rem;
+            }
+        }
+        margin-bottom: 5.063rem;
+        
+    }
+
+   
+    
+}
+
+.inv-fin-why-ch{
+    padding: 7rem 0 6rem 0;
+    .title-first{
+        margin-bottom: 4rem;
+    }
+    .why-ch-slider{
+
+        .carditem-nbfc{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-height: 17rem;
+            .cardimg{
+                min-height: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width:$sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
+        .carditem-nbfc{
+            margin-top: 5px;
+            margin-bottom: 5px;
+            min-height: 18rem;
+            .cardimg{
+                min-height: 6rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width:$sm) {
+                margin-bottom: 3rem;
+            }
+        }
+
+    }
+}
