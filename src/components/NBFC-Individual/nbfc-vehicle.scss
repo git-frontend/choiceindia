@@ -19,55 +19,6 @@ body{
 
 
 
-.Doc-rqrd-sec{
-    padding: 6rem 6rem 12rem 6rem;
-    @media screen and (max-width:$sm) {
-        padding: 6rem 2rem 5rem 2rem;     }
-    .Doc-rqrd-heading{
-        margin-bottom: 8rem;
-        text-align: center;
-        @media screen and (max-width:$sm) {
-            margin-bottom: 4rem;
-         }
-    }
-    .Doc-rq-card{
-        @media screen and (max-width:$sm) {
-            padding:2rem;
-            border-radius: 20px;
-            box-shadow: 0px 0px 8px $boxshadow;
-            margin-bottom: 3rem;
-         }
-        .img-height{
-            min-height: 24rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-        }
-        .title-doc{
-            font-size: 2.5rem;
-            color: $primary;
-            font-family: $font-family-poppins-semibold;
-            margin-top: 3rem;
-            margin-bottom: 3rem;
-         }
-        .list-item{
-            padding: 0 4.5rem;
-            @media (max-width: $sm) {
-                padding: 0rem 2rem 0rem 2rem;
-             }
-            li{
-                font-size: 2rem;
-                color: $graylight;
-                 @media screen and (max-width:$md) {
-                    font-size: 1.8rem;
-                 }
-            }
-        }
-    }
-}
-
-
 .whyflexi{
     padding: 9rem 0;
 }
