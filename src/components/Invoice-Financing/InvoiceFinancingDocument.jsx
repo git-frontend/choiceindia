@@ -9,7 +9,7 @@ function InvoiceFinancingDocument() {
   return (
     <div>
     
-    <section className="Doc-rqrd-sec">
+    <section className="inv-fin-doc-req">
       <div className="container">
           <div className="row">
               <div className="col-md-12">

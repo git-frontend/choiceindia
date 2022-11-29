@@ -56,14 +56,14 @@ function AvailPurposeVehLoan() {
                     </div>
                     <div className="row justify-content-between">
                         <div className="col-xl-5 col-md-6">
-                            <div className="Doc-rq-card">
+                            <div className="Doc-rq-card vehicle-right">
                                 <div className="text-left">
-                                    <div className="img-height">
+                                    <div className="img-height vehicle-imgheight">
                                         <LazyLoader src={bringvehicle} className={'img-fluid'} width={"441"} height={"294"} alt={"KYC"} />
                                     </div>
                                     <h3 className="title-doc">New Vehicle Loan</h3>
                                 </div>
-                                <ul className="list-item">
+                                <ul className="list-item vehicle-listitem">
                                     <li>Starts at 50k</li>
                                     <li>Attractive interest rates</li>
                                     <li>Flexible tenure</li>
@@ -71,14 +71,14 @@ function AvailPurposeVehLoan() {
                             </div>
                         </div>
                         <div className="col-xl-5 col-md-6">
-                            <div className="Doc-rq-card">
+                            <div className="Doc-rq-card vehicle-left">
                                 <div className="text-left">
-                                    <div className="img-height">
-                                        <LazyLoader src={usedvehicle} className={'img-fluid'} width={"307"} height={"307"} alt={"Income Proof"} />
+                                    <div className="img-height vehicle-imgheight">
+                                        <LazyLoader src={usedvehicle} className={'img-fluid'} width={"307"} height={"294"} alt={"Income Proof"} />
                                     </div>
                                     <h3 className="title-doc">Used Vehicle Loan</h3>
                                 </div>
-                                <ul className="list-item">
+                                <ul className="list-item vehicle-listitem">
 
                                     <li>  Up to 25 lacs</li>
                                     <li>Attractive interest rates</li>
