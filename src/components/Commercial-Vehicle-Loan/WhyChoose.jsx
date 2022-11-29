@@ -56,7 +56,8 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
+                
+                
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={Flexible} alt={"Flexible"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -64,8 +65,7 @@ function WhyChoose() {
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">tenure</p>
                   </div>
-                </div>
-                <div className="col-md-3">
+                  
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={Available} alt={"Available"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -73,8 +73,7 @@ function WhyChoose() {
                     <h3 className="card-ttl">Available</h3>
                     <p className="subtext">for a wide range of vehicles</p>
                   </div>
-                </div>
-                <div className="col-md-3">
+                  
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={Competitive} alt={"Competitive"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -82,8 +81,7 @@ function WhyChoose() {
                     <h3 className="card-ttl">Competitive</h3>
                     <p className="subtext">Interest Rates</p>
                   </div>
-                </div>
-                <div className="col-md-3">
+                  
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={Structured} alt={"Structured"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -91,7 +89,7 @@ function WhyChoose() {
                     <h3 className="card-ttl">Structured</h3>
                     <p className="subtext">Payment Methods</p>
                   </div>
-                </div>
+                  
               </Slider>
             </div>
           </div>
