@@ -55,7 +55,6 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={NoInterest} alt={"No Interest"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -63,8 +62,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">No Interest</h3>
                     <p className="subtext">charged on Unutilised amount</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={customised} alt={"Customised"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -72,8 +69,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Customised</h3>
                     <p className="subtext">Solutions</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={competitive} alt={"Competitive"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -81,8 +76,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Competitive</h3>
                     <p className="subtext">Interest Rates</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={flexible} alt={"Flexible"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -90,7 +83,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>
