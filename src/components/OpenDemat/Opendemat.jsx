@@ -564,7 +564,7 @@ function Opendemat(){
                   <div className='row' id="ChapterFour">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 4</p>
-                      <h2 className="title">Benefits of Demat Account</h2>
+                      <h2 className="title">Advantages of Demat Account</h2>
                       <div className='row'>
                         <div className='col-md-6' id="account-benefits-img">
                           {/* <img src='./images/demat-account-benefits.webp' className="img-fluid" alt="Demat Account Benefits" /> */}
@@ -739,7 +739,7 @@ function Opendemat(){
                       </div>
 
                       <div>
-                        <h3 className="subhead">Demat Account Opening: Offline</h3>
+                        <h3 className="subhead">Demat Account Opening Process offline</h3>
                         <ul className='bullet'>
                           <li>
 
@@ -770,7 +770,7 @@ function Opendemat(){
                         </ul>
                       </div>
                       <div>
-                        <h3 className="subhead">Demat Account Opening: Online</h3>
+                        <h3 className="subhead">Demat Account Opening Process online</h3>
                         <p className='subheadtxt'>Choice India lets you open a Demat account online; the process is easy and
                           seamless. If you want to open your Demat account online, follow these steps: </p>
                         <ul className='bullet'>
@@ -1300,7 +1300,7 @@ function Opendemat(){
 
                         <h4 className="subhead ">How can I transfer shares from one Demat account to another?</h4>
                         <p className='subheadtxt paraspace'>The investor will have to fill the DIS and submit it to the current
-                          broker; then, the broker will forward the DIS request to the depository. The. The depository will
+                          broker; then, the broker will forward the DIS request to the depository.The depository will
                           share the existing holdings with your preferred Demat account.</p>
 
                         <h4 className="subhead ">How can I find the Demat account number from PAN?</h4>
