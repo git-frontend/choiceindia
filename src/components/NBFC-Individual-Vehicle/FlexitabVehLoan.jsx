@@ -7,7 +7,7 @@ import time from '../../assets/images/nbfc-indivial-loan/time.svg';
 import disburse from '../../assets/images/nbfc-indivial-loan/get-loan-to-disburse.svg';
 import paperwork from '../../assets/images/nbfc-indivial-loan/paperwork.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/processing-fee.svg';
-function flexitab() {
+function FlexitabVehLoan() {
 
     const settings1 = {
         infinite: true,
@@ -48,13 +48,13 @@ function flexitab() {
             <section className="flexitabcontent">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-9 mx-auto">
+                    <div className="col-xl-10 col-md-12 mx-auto">
                             <div className="heading-sec text-center">
                                 <h2 className="title-first flexititle">Apply for Vehicle Loan Online</h2>
                                 <p className="para">Are you struggling for days and still unable to find a way to get your desired vehicle financed even after multiple attempts? Do not worry!
                                     Your search can stop right here with us. We are a customer-oriented organization where we treat our customers like family. We at Choice Finserv offer affordable and budget-friendly vehicle loans making sure that the wheels of your growth keep moving.</p>
-                                <br /> <p>Own Your Dream Car and drive away happy with an instant vehicle loan with 100% asset value.
-                                    <br /> <b> Apply Now!</b></p>
+                                <br /> <p className="para">Own Your Dream Car and drive away happy with an instant vehicle loan with 100% asset value.
+                                    <br />  <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
 
                         </div>
@@ -72,7 +72,7 @@ function flexitab() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={time} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                        <LazyLoader src={time} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">10 Mins</h3>
                                     <p className="subtext">Loan Sanctioned Time</p>
@@ -81,7 +81,7 @@ function flexitab() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                        <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">48 Hours</h3>
                                     <p className="subtext">to Get Loan Disbursed</p>
@@ -90,7 +90,7 @@ function flexitab() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                        <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">Minimum</h3>
                                     <p className="subtext">Paperwork</p>
@@ -99,7 +99,7 @@ function flexitab() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"34"} />
+                                        <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">Low</h3>
                                     <p className="subtext">processing Fee</p>
@@ -114,4 +114,4 @@ function flexitab() {
     );
 }
 
-export default flexitab;
+export default FlexitabVehLoan;

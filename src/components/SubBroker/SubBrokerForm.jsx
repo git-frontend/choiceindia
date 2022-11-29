@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
+import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
+import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 
 function SubBrokerForm(props) {
 
@@ -42,6 +44,8 @@ function SubBrokerForm(props) {
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
     const [show, setShow] = useState(true);
+    const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -50,13 +54,46 @@ function SubBrokerForm(props) {
     var UTMTerm = useRef('');
     var UTMCustom = useRef('');
     var UTMContent = useRef('');
-
-
+    var isMobile = useRef(isMobileDevice());
+    const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
+
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
+    function showOpenAccountAdPopup() {
+        // console.log('SHOWW!!!!')
+        
+            setShowOpenAccountPopup(true);
+        
+    }
+
+     /**function executes to close the ad popup */
+     function hideOpenAccountAdPopup(showAdValues) {
+        
+        setShowOpenAccountPopup(false);
+        // callOpenAccountAdPopupAgain();
+    }
+
+    // function callOpenAccountAdPopupAgain() {
+    //     //after 15min
+    //     setTimeout(() => {
+    //         showOpenAccountAdPopup();
+    //     }, 9000)
+    // }
+
+    // useEffect(() => {
+    //     if (!isMobile.current && props.isPopupVisible) {
+    //         setTimeout(() => {
+    //             showOpenAccountAdPopup();
+    //         }, 6000);
+    //     }
+    // }, []);
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -83,6 +120,29 @@ function SubBrokerForm(props) {
             ...prevError,
             'brokerEmail': {}
         }));
+    }
+
+    useEffect(() => {
+        if (props.isFromFableDetails) {
+            window.addEventListener("scroll", onScroll);
+
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
+        }
+    }, [props.isFromFableDetails]);
+// console.log("check",document.documentElement.clientWidth)
+    function onScroll() {
+        let element = document.getElementById('fablesdetail-title');
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            setFablesDetailTitleId(
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
     }
 
     function handleBrokerCityBranch(e) {
@@ -264,7 +324,7 @@ function SubBrokerForm(props) {
         setBrokerCreatedSuccess(true);
         setTimeout(() => {
             setBrokerCreatedSuccess(false);
-        }, 2000)
+        }, 200)
     }
 
     function handleBrokerCreatedSuccessClose() {
@@ -622,9 +682,18 @@ function SubBrokerForm(props) {
         setOtp('');
         setOTPErrors('');
     }
+    function handleOTPShow() {
+        setShowOTP(true);
+    }
 
     return (
         <>
+         {
+                showOpenAccountPopup ? <SubbrokerpopupForm hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></SubbrokerpopupForm> : ''
+            }
+                 {
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
+            }
             <div className="demat-account-form" id="sub-broker-form">
 
 
@@ -632,6 +701,7 @@ function SubBrokerForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
+                
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -802,7 +872,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl " backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -887,7 +957,7 @@ function SubBrokerForm(props) {
             </Modal>
 
             {
-                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} isBlog={'blog'} />: ''
             }
 
             {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"

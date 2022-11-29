@@ -76,14 +76,6 @@
     }
     .inv-banner-slider{
         padding-top: 8rem;
-        // .carditem-nbfc{
-        //     padding: 3rem;
-        //     padding-bottom: 2rem;
-        //     min-height: 16.5rem;
-        //     @media screen and (max-width:$sm) {
-        //         margin-bottom: 0;
-        //     }
-        // }
     }
 }
 
@@ -152,7 +144,7 @@
             height: 25px;
             display: block;
             background: $abt-bg;
-            border: 8px solid #E2E4E9;
+            border: 8px solid $lightgray2;
             position: absolute;
             left: 50%;
             border-radius: 50%;
@@ -183,7 +175,7 @@
                 width: 45%;
                 h2{
                     font-family: $font-family-poppins-semibold;
-                    color: #C1CBD4;
+                    color: $lightgray2;
                     font-size: 2.5rem;
                 }
                 h3{
@@ -215,7 +207,7 @@
                     transform: translateX(-50%);
                     height: calc(100% + 2px);
                     width: 4px;
-                    background: linear-gradient(269.03deg, #00EFD1 -5.14%, #00ACEA 66.35%);
+                    background: linear-gradient(269.03deg, $gradientclr1 -5.14%, $gradientclr2 66.35%);
                     border-radius: 4px;
                   }
                   .steps-itm-left{
@@ -253,7 +245,7 @@
         background: url(../../assets/images/loan-bg.webp) no-repeat top left;
         background-size: contain;
 
-        @media (max-width: $sm) {
+        @media (max-width: $md) {
             display: none;
         }
     }
@@ -274,6 +266,8 @@
             }
         }
         margin-bottom: 5.063rem;
+        position: relative;
+        z-index: 9;
         
     }
 
@@ -291,7 +285,7 @@
         .carditem-nbfc{
             margin-top: 5px;
             margin-bottom: 5px;
-            min-height: 17rem;
+            min-height: 17.5rem;
             .cardimg{
                 min-height: 6rem;
                 display: flex;
@@ -302,21 +296,46 @@
                 margin-bottom: 3rem;
             }
         }
+    }
+}
 
-        .carditem-nbfc{
-            margin-top: 5px;
-            margin-bottom: 5px;
-            min-height: 18rem;
-            .cardimg{
-                min-height: 6rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+
+.veh-bnr-list{
+    .bnr-list-itm{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-bottom: 11rem;
+        align-items: center;
+        .bnr-list-left{
+            width: 44%;
+            p{
+                font-size: 1.75rem;
+                line-height: 1.5;
+                color: $txtgrey;
             }
-            @media screen and (max-width:$sm) {
+            .title-secnd{
+                margin-bottom: 2rem;
+            }
+            @media (max-width: $sm) {
+                width: 100%;
                 margin-bottom: 3rem;
+                text-align: center;
             }
         }
-
+        .bnr-list-right{
+            width: 44%;
+            @media (max-width: $sm) {
+                width: 100%;
+                margin-bottom: 3rem;
+                text-align: center;
+            }
+        }
+        &:first-child{
+            flex-direction: row-reverse;
+        }
+        @media (max-width: $sm) {
+            margin-bottom: 4rem;
+        }
     }
 }

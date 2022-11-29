@@ -74,15 +74,22 @@
     }
 }
 
-.Doc-rqrd-sec{
+.channel-fin-doc-req{
     padding: 7rem 0 6rem 0;
-    
     .Doc-rqrd-heading{
         margin-bottom: 8rem;
         text-align: center;
         @media screen and (max-width:$sm) {
             margin-bottom: 4rem;
          }
+         .title-first{
+            @media (min-width:$sm-x) and (max-width:$md) {
+                font-size: 3.4rem;
+             }
+         }
+    }
+    .mrg-top{
+        margin-top: 7rem;
     }
     .Doc-rq-card{
         @media screen and (max-width:$sm) {
@@ -95,16 +102,34 @@
             display: flex;
             justify-content: space-between;
             flex-wrap: wrap;
-            margin-bottom: 4rem;
+            align-items: center;
             @media screen and (max-width:$sm) {
                 flex-direction: column-reverse;
+            }
+            .chanFin-cont{
+                width: 30%;
+                @media screen and (max-width:$md) {
+                    width: 45%;
+                }
+                @media screen and (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+            .chanFin-img{
+                width: 50%;
+                @media screen and (max-width:$md) {
+                    width: 50%;
+                }
+                @media screen and (max-width:$sm) {
+                    width: 100%;
+                }
             }
         }
         .img-height{
             min-height: 275px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-end;
             @media screen and (max-width:$sm) {
                 min-height: inherit;
                 margin-bottom: 2rem;
@@ -139,6 +164,8 @@
                 line-height: 1.5;
                 color: $graylight;
                 font-family: $font-family-poppins-medium;
+                padding-left: 0.5rem;
+                margin-left: 1rem;
                  @media screen and (max-width:$md) {
                     font-size: 1.5rem;
                     line-height: 1.5;

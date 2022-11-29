@@ -18,7 +18,7 @@ function FlexiCreditBusinessDocument() {
               </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-xl-5 col-md-5">
+            <div className="col-xl-5 col-md-6">
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
@@ -36,7 +36,7 @@ function FlexiCreditBusinessDocument() {
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-5 col-md-5">
+            <div className="col-xl-5 col-md-6">
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
