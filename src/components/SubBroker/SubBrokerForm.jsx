@@ -58,6 +58,7 @@ function SubBrokerForm(props) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
+    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -535,9 +536,9 @@ function SubBrokerForm(props) {
             "messgae": '',
             "referredId": refercode.current || null,
             "service_code": "CBAEF",
-            "utm_source": UTMSource.current || null,
-            "utm_medium": UTMMedium.current || null,
-            "utm_campaign": UTMCampaign.current || null,
+            "utm_source":isBlog =="yes" ? UTMSource.current || 'sb_lead_generation':UTMSource.current || null,
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
+            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMMedium.current || null,
             "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || null,
             "utm_content": UTMContent.current || null
