@@ -8,7 +8,7 @@ function TermLoansDocument() {
   return (
     <div>
     
-    <section className="Doc-rqrd-sec">
+    <section className="terms-loan-doc-req">
       <div className="container">
           <div className="row">
               <div className="col-md-12">
