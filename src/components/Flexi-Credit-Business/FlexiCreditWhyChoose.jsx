@@ -56,7 +56,6 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -64,8 +63,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Low</h3>
                     <p className="subtext">Processing speed</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={digital} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"50"} />
@@ -73,8 +70,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Digital</h3>
                     <p className="subtext">Assistance</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -82,8 +77,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Attractive</h3>
                     <p className="subtext">Interest rates </p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={flexible} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -91,7 +84,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>

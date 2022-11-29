@@ -59,7 +59,6 @@ function TermLoansBanner() {
                     <div className="row justify-content-center">
                         <div className="col-xl-8 col-md-12">
                             <Slider {...settings1} className="inv-banner-slider">
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={Quick} alt={"Quick"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -67,8 +66,6 @@ function TermLoansBanner() {
                                         <h3 className="card-ttl">Quick</h3>
                                         <p className="subtext">Sanction</p>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={Digital} alt={"Digital"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -76,8 +73,6 @@ function TermLoansBanner() {
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Disbursement</p>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={Minimum} alt={"Minimum"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -85,7 +80,6 @@ function TermLoansBanner() {
                                         <h3 className="card-ttl">Minimum</h3>
                                         <p className="subtext">Paperwork</p>
                                     </div>
-                                </div>
                             </Slider>
                         </div>
                     </div>
