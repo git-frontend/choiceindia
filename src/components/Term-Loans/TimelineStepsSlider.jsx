@@ -74,7 +74,7 @@ function TimelineStepsSlider() {
     }, []);
 
     return (
-        <div id='how-it-works'>
+        <div id='how-it-works' className="term-loan-steps">
 
 
             <section className="nbfc-steps-works" onScroll={getPosition}>

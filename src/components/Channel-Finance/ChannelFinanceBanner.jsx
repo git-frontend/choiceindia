@@ -8,6 +8,7 @@ import zerocollateral from '../../assets/images/channel-finance/zero-collateral.
 import FullFledged from '../../assets/images/channel-finance/full-fledged.svg';
 import HighValue from '../../assets/images/channel-finance/high-value.svg';
 import Documentation from '../../assets/images/channel-finance/digital-documentation.svg';
+import {Link} from 'react-router-dom';
 
 function ChannelFinanceBanner() {
     const settings1 = {
@@ -55,7 +56,7 @@ function ChannelFinanceBanner() {
                                 <p>We provide Working capital finance like in form of channel finance limit generally to selected “Spoke” on the recommendation of anchor, for the purpose of selling or buying of products and services.</p>
                                 <p>Apply for channel finance<br />
                                 facility up to 50 crores.<br />
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    <Link to="/invoice-financing"><span className="aply-btn">Apply Now!</span></Link></p>
                             </div>
                         </div>
                     </div>
