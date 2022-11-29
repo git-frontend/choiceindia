@@ -59,31 +59,24 @@ function InvoiceFinancingBanner() {
                     <div className="row justify-content-center">
                         <div className="col-xl-8 col-md-12">
                             <Slider {...settings1} className="inv-banner-slider">
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={zerocollateral} alt={"Zero Collateral for Invoice Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Zero <br/>Collateral</h3>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={documentation} alt={"Simple Invoice Financing Documentation"} className={"img-fluid img"} width={"60"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Simplified <br/>Documentation</h3>
-                                       
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             <LazyLoader src={liquidity} alt={"Enhance Invoice Financing Liquidity"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Enhance <br/> Liquidity</h3>
                                     </div>
-                                </div>
                             </Slider>
                         </div>
                     </div>

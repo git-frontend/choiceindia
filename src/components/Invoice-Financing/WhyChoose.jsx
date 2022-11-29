@@ -55,7 +55,6 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={customised} alt={"Low Invoice Financing Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -63,8 +62,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Customised</h3>
                     <p className="subtext">Solutions</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={digital} alt={"Digital Assistance for Invoice Financing"} className={"img-fluid img"} width={"35"} height={"50"} />
@@ -72,8 +69,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Digital</h3>
                     <p className="subtext">Assistance</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={anytime} alt={"Attractive Invoice Financing Interest Rates"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -81,8 +76,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Anytime</h3>
                     <p className="subtext">anywhere facility</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
                       <LazyLoader src={flexible} alt={"Flexible Invoice Financing Repayment Options"} className={"img-fluid img"} width={"50"} height={"50"} />
@@ -90,7 +83,6 @@ function WhyChoose() {
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>

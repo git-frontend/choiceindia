@@ -76,6 +76,29 @@
     }
     .inv-banner-slider{
         padding-top: 8rem;
+        @media (max-width: $sm) {
+            padding-top: 4rem;
+        }
+        .slick-track{
+            display: flex;
+            padding: 10px 0;
+            .slick-slide{
+                float: none;
+                height: inherit !important;
+                > div{
+                    height: 100%;
+                    .carditem-nbfc{
+                        min-height: inherit;
+                        height: 100%;
+                        padding: 2.5rem;
+                    }
+                }
+            }
+            @media (max-width:$md) {
+                margin-bottom: 2rem;
+            }
+        }
+        
     }
 }
 
@@ -281,6 +304,25 @@
         margin-bottom: 4rem;
     }
     .why-ch-slider{
+        .slick-track{
+            display: flex;
+            padding: 10px 0;
+            .slick-slide{
+                float: none;
+                height: inherit !important;
+                > div{
+                    height: 100%;
+                    .carditem-nbfc{
+                        min-height: inherit;
+                        height: 100%;
+                        padding: 2rem 3rem 1.3rem 3rem;
+                    }
+                }
+            }
+            @media (max-width:$md) {
+                margin-bottom: 2rem;
+            }
+        }
 
         .carditem-nbfc{
             margin-top: 5px;
@@ -292,9 +334,9 @@
                 align-items: center;
                 justify-content: center;
             }
-            @media screen and (max-width:$sm) {
-                margin-bottom: 3rem;
-            }
+            // @media screen and (max-width:$sm) {
+            //     margin-bottom: 3rem;
+            // }
         }
     }
 }

@@ -52,21 +52,15 @@ function TypesOfCommercial() {
           <div className="row justify-content-center">
             <div className="col-xl-9 col-md-12">
               <Slider {...settings1} className="type-comm-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <h3 className="card-ttl">New Commercial Vehicle Loan</h3>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <h3 className="card-ttl">Used Commercial Vehicle Loan</h3>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <h3 className="card-ttl">Commercial Vehicle Refinancing</h3>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>
