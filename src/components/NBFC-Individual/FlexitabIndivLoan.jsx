@@ -68,6 +68,7 @@ function flexitab() {
             <section className="card-wrap-nbfc">
                 <div className="container">
                     <div className="row">
+                        <div className="col-md-12">
                         <Slider {...settings1}>
                             <div className="carditem-nbfc">
                                 <span className='cardimg'>
@@ -98,6 +99,8 @@ function flexitab() {
                                 <p className="subtext">processing Fee</p>
                             </div>
                         </Slider>
+                        </div>
+                       
                     </div>
                 </div>
             </section>
