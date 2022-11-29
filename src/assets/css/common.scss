@@ -284,7 +284,8 @@ body{
         .cardimg{
             display: inline-block;
             overflow: hidden;
-            min-height: 54px;
+            height: 54px;
+            font-size: 0.8rem;
         }
         .card-ttl{
             font-size: 1.625rem;

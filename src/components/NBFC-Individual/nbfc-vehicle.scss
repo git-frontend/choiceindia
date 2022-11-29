@@ -22,8 +22,27 @@
     @media (max-width: $sm) {
         padding-bottom: 6rem;
     }
-    .slick-list{
-        padding: 2rem 0;
+    
+    .slick-slider{
+        .slick-track{
+            display: flex;
+            padding: 10px 0;
+            .slick-slide{
+                float: none;
+                height: inherit !important;
+                > div{
+                    height: 100%;
+                    .carditem-nbfc{
+                        min-height: inherit;
+                        height: 100%;
+                        padding: 2.5rem;
+                    }
+                }
+            }
+            @media (max-width:$md) {
+                margin-bottom: 2rem;
+            }
+        }
     }
 }
 .Doc-rqrd-sec{
