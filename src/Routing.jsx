@@ -611,7 +611,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/nbfc' element={
+                        <Route exact path='/loan' element={
                             <React.Suspense>
                                 < LazyNBFCLanding />
                             </React.Suspense>
@@ -629,7 +629,7 @@ function Routing() {
                                 < LazyInvoiceFinancing />
                             </React.Suspense>
                         } />
-                         <Route exact path='/channel-finance' element={
+                         <Route exact path='/channel-financing' element={
                             <React.Suspense>
                                 < LazyChannelFinance />
                             </React.Suspense>
@@ -639,13 +639,13 @@ function Routing() {
                                 < LazyCommercialVehicleLoan />
                             </React.Suspense>
                         } />
-                        <Route exact path='/term-loans' element={
+                        <Route exact path='/term-business-loan' element={
                             <React.Suspense>
                                 < LazyTermLoans />
                                 </React.Suspense>
                         } />
                                 
-                         <Route exact path='/flexi-credit-business' element={
+                         <Route exact path='/flexi-credit-loan' element={
                             <React.Suspense>
                                 < LazyFlexiCreditBusiness />
                             </React.Suspense>

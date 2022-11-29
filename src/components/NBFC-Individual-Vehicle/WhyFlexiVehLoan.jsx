@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
-import low from '../../assets/images/nbfc-indivial-loan/low.svg';
+import low from '../../assets/images/nbfc-indivial-loan/low-processing-speed.svg';
 import nocharges from '../../assets/images/nbfc-indivial-loan/no-charges.svg';
 import interestrate from '../../assets/images/nbfc-indivial-loan/interestrate.svg';
 import flexibleoption from '../../assets/images/nbfc-indivial-loan/flexibleoption.svg';

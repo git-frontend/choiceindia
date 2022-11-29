@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
-import time from '../../assets/images/nbfc-indivial-loan/time.svg';
-import disburse from '../../assets/images/nbfc-indivial-loan/get-loan-to-disburse.svg';
-import paperwork from '../../assets/images/nbfc-indivial-loan/paperwork.svg';
-import fee from '../../assets/images/nbfc-indivial-loan/processing-fee.svg';
+import time from '../../assets/images/nbfc-indivial-loan/quick-flexi-loan-approval.svg';
+import disburse from '../../assets/images/nbfc-indivial-loan/flexi-loan-disbursed-in-48-hours.svg';
+import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work-for-flexi-business-loan.svg';
+import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
 function FlexitabVehLoan() {
 
     const settings1 = {
@@ -72,7 +72,7 @@ function FlexitabVehLoan() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={time} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
+                                        <LazyLoader src={time} alt={"Quick Flexi Loan Approval"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">10 Mins</h3>
                                     <p className="subtext">Loan Sanctioned Time</p>
@@ -81,7 +81,7 @@ function FlexitabVehLoan() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
+                                        <LazyLoader src={disburse} alt={"Flexi Loan Disbursed in 48 Hours"} className={"img-fluid img"} width={"50"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">48 Hours</h3>
                                     <p className="subtext">to Get Loan Disbursed</p>
@@ -90,7 +90,7 @@ function FlexitabVehLoan() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
+                                        <LazyLoader src={paperwork} alt={"Minimum Paper Work for Flexi Business Loan"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">Minimum</h3>
                                     <p className="subtext">Paperwork</p>
@@ -99,7 +99,7 @@ function FlexitabVehLoan() {
                             <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
+                                        <LazyLoader src={fee} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"45"} height={"34"} />
                                     </span>
                                     <h3 className="card-ttl">Low</h3>
                                     <p className="subtext">processing Fee</p>

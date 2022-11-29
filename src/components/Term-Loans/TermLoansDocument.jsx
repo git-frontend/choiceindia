@@ -1,7 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/term-loans/kyc.svg';
-import BusinessProofimage from '../../assets/images/term-loans/business-proof.svg';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
+import BusinessProofimage from '../../assets/images/term-loans/business-documents-for-term-loan-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function TermLoansDocument() {
@@ -22,7 +22,7 @@ function TermLoansDocument() {
             <div className="Doc-rq-card cap-right">
                   <div>
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents for Term Loan Application"}/>
                     </div>
                     <h3 className="title-doc">Personal Documents</h3>
                   </div>
@@ -36,7 +36,7 @@ function TermLoansDocument() {
             <div className="Doc-rq-card cap-left">
                   <div>
                     <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof"}/>
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Documents for Term Loan Application"}/>
                     </div>
                     <h3 className="title-doc">Business Documents</h3>
                   </div>

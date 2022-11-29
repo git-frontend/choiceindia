@@ -1,8 +1,8 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/invoice-financing/kyc.svg';
-import IncomeProofimage from '../../assets/images/invoice-financing/income-proof.svg';
-import BusinessProofimage from '../../assets/images/invoice-financing/business-proof.svg';
+import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
+import IncomeProofimage from '../../assets/images/invoice-financing/income-proof-documents-for-invoice-financing-application.svg';
+import BusinessProofimage from '../../assets/images/invoice-financing/business-proof-documents-for-invoice-financing-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function InvoiceFinancingDocument() {
@@ -23,7 +23,7 @@ function InvoiceFinancingDocument() {
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC Documents for Invoice Financing"}/>
                     </div>
                     <h3 className="title-doc">KYC</h3>
                   </div>
@@ -37,7 +37,7 @@ function InvoiceFinancingDocument() {
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Income Proof"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Income Proof Documents for Invoice Financing Application"}/>
                   </div>
                     <h3 className="title-doc">Income Proof</h3>
                 </div>
@@ -51,7 +51,7 @@ function InvoiceFinancingDocument() {
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof"}/>
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof Documents for Invoice Financing"}/>
                     </div>
                     <h3 className="title-doc">Business Proof</h3>
                   </div>

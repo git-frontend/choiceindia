@@ -1,8 +1,8 @@
 
 import React from "react";
-import FirstStep from '../../assets/images/invoice-financing/steps1.webp';
-import SecndStep from '../../assets/images/invoice-financing/steps2.webp';
-import ThirdStep from '../../assets/images/invoice-financing/steps3.webp';
+import FirstStep from '../../assets/images/invoice-financing/documents-for-term-business-loan.webp';
+import SecndStep from '../../assets/images/invoice-financing/quick-approval-for-term-business-loan.webp';
+import ThirdStep from '../../assets/images/invoice-financing/term-business-loan-disbursed.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import { useRef, useState, useEffect } from 'react';
 
@@ -90,7 +90,7 @@ function TimelineStepsSlider() {
                             <div className="how-works-steps">
                                 <div ref={myRef1} className={"works-steps-itm " + name} id="how1">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={FirstStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
+                                        <LazyLoader src={FirstStep} alt={"Apply for Invoice Financing Online"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
@@ -100,7 +100,7 @@ function TimelineStepsSlider() {
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={SecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"229"} />
+                                        <LazyLoader src={SecndStep} alt={"Easy Invoice Financing Process"} className={"img-fluid"} width={"154"} height={"229"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
@@ -111,11 +111,11 @@ approval within 48 hours, if all requirements are me</p>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={ThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
+                                        <LazyLoader src={ThirdStep} alt={"Invoice Financing Loan Disbursal"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
-                                        <h3>Fast & Quick Loan Disbursal</h3>
+                                        <h3>Fast &amp; Quick Loan Disbursal</h3>
                                         <p>Within a span of few hours of approval, the loan is disbursed</p>
                                     </div>
                                 </div>

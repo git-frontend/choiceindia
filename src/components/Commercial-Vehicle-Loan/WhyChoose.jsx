@@ -1,9 +1,9 @@
 
 import React from "react";
-import Flexible from '../../assets/images/com-vehicle-loan/flexible.svg';
-import Available from '../../assets/images/com-vehicle-loan/available.svg';
-import Competitive from '../../assets/images/com-vehicle-loan/competitive.svg';
-import Structured from '../../assets/images/com-vehicle-loan/structured.svg';
+import Flexible from '../../assets/images/com-vehicle-loan/flexible-commercial-vehicle-loan-tenure.svg';
+import Available from '../../assets/images/com-vehicle-loan/loan-for-all-type-commercial-vehicles.svg';
+import Competitive from '../../assets/images/com-vehicle-loan/competitive-commercial-loan-interests.svg';
+import Structured from '../../assets/images/com-vehicle-loan/structured-commercial-vehicle-loan-payment-methods.svg';
 
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
@@ -59,7 +59,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={Flexible} alt={"Flexible"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={Flexible} alt={"Flexible Commercial Vehicle Loan Tenure"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">tenure</p>
@@ -68,7 +68,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={Available} alt={"Available"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={Available} alt={"Loan for All Type of Commercial Vehicles"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Available</h3>
                     <p className="subtext">for a wide range of vehicles</p>
@@ -77,7 +77,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={Competitive} alt={"Competitive"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={Competitive} alt={"Competitie Commercial Loan Interests"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Competitive</h3>
                     <p className="subtext">Interest Rates</p>
@@ -86,7 +86,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={Structured} alt={"Structured"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={Structured} alt={"Structured Commercial Vehicle Loan Payment Methods"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Structured</h3>
                     <p className="subtext">Payment Methods</p>

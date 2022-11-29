@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import LazyLoader from "../Common-features/LazyLoader";
-import Quick from '../../assets/images/term-loans/quick.svg';
-import Digital from '../../assets/images/term-loans/digital.svg';
-import Minimum from '../../assets/images/term-loans/minimum.svg';
+import Quick from '../../assets/images/term-loans/quick-term-business-loan-sanctioned.svg';
+import Digital from '../../assets/images/term-loans/digital-term-business-loan-disbursement.svg';
+import Minimum from '../../assets/images/term-loans/minimum-paper-work-for-term-business-loan.svg';
 
 function TermLoansBanner() {
     const settings1 = {
@@ -62,7 +62,7 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Quick} alt={"Quick"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={Quick} alt={"Quick Term Business Loan Sanctioned"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Quick</h3>
                                         <p className="subtext">Sanction</p>
@@ -71,7 +71,7 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Digital} alt={"Digital"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={Digital} alt={"Digital Term Business Loan Disbursement"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Disbursement</p>
@@ -80,7 +80,7 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Minimum} alt={"Minimum"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={Minimum} alt={"Minimum Paper Work for Term Business Loan"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Minimum</h3>
                                         <p className="subtext">Paperwork</p>

@@ -1,9 +1,9 @@
 
 import React from "react";
-import low from '../../assets/images/nbfc-indivial-loan/low.svg';
-import digital from '../../assets/images/invoice-financing/digital.svg';
+import low from '../../assets/images/nbfc-indivial-loan/low-processing-speed.svg';
+import digital from '../../assets/images/invoice-financing/digital-assistance-for-invoice-financing.svg';
 import interestrate from '../../assets/images/nbfc-indivial-loan/interestrate.svg';
-import flexible from '../../assets/images/invoice-financing/flexible.svg';
+import flexible from '../../assets/images/invoice-financing/flexible-invoice-financing-repayment-options.svg';
 
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
@@ -59,7 +59,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={low} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Low</h3>
                     <p className="subtext">Processing speed</p>
@@ -68,7 +68,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={digital} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"50"} />
+                      <LazyLoader src={digital} alt={"Digital Assistance for Flexi Loan"} className={"img-fluid img"} width={"35"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Digital</h3>
                     <p className="subtext">Assistance</p>
@@ -77,7 +77,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={interestrate} alt={"Attractive Flexi Loan Interest Rates"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Attractive</h3>
                     <p className="subtext">Interest rates </p>
@@ -86,7 +86,7 @@ function WhyChoose() {
                 <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={flexible} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={flexible} alt={"Flexible Repayment Options"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>

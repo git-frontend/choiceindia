@@ -4,9 +4,9 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import LazyLoader from "../Common-features/LazyLoader";
-import zerocollateral from '../../assets/images/invoice-financing/zero-collateral.svg';
-import documentation from '../../assets/images/invoice-financing/simplified-documentation.svg';
-import liquidity from '../../assets/images/invoice-financing/enhance-liquidity.svg';
+import zerocollateral from '../../assets/images/invoice-financing/zero-collateral-for-invoice-finnacing.svg';
+import documentation from '../../assets/images/invoice-financing/simple-invoice-financing-documention.svg';
+import liquidity from '../../assets/images/invoice-financing/enhance-invoice-financing-liquidity.svg';
 
 function InvoiceFinancingBanner() {
     const settings1 = {
@@ -62,7 +62,7 @@ function InvoiceFinancingBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={zerocollateral} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={zerocollateral} alt={"Zero Collateral for Invoice Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Zero <br/>Collateral</h3>
                                     </div>
@@ -70,7 +70,7 @@ function InvoiceFinancingBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={documentation} alt={"Loans"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            <LazyLoader src={documentation} alt={"Simple Invoice Financing Documentation"} className={"img-fluid img"} width={"60"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Simplified <br/>Documentation</h3>
                                        
@@ -79,7 +79,7 @@ function InvoiceFinancingBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={liquidity} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            <LazyLoader src={liquidity} alt={"Enhance Invoice Financing Liquidity"} className={"img-fluid img"} width={"50"} height={"50"} />
                                         </span>
                                         <h3 className="card-ttl">Enhance <br/> Liquidity</h3>
                                     </div>

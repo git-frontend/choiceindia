@@ -1,7 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/channel-finance/kyc.webp';
-import BusinessProofimage from '../../assets/images/channel-finance/business-proof.webp';
+import Kycimage from '../../assets/images/channel-finance/personal-dcouments-for-channel-financing.webp';
+import BusinessProofimage from '../../assets/images/channel-finance/business-dcouments-for-channel-financing.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function ChannelFinanceDocument() {
@@ -30,7 +30,7 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="chanFin-img img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"550"} height={"362"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"550"} height={"362"} alt={"Personal Documents for Channel Financing"}/>
                   </div>
               </div>
               </div>
@@ -55,7 +55,7 @@ function ChannelFinanceDocument() {
                     </ul>
                   </div>
                   <div className="chanFin-img img-height">
-                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"500"} height={"373"} alt={"Business Proof"}/>
+                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"500"} height={"373"} alt={"Business Documents for Channel Financing"}/>
                     </div>
               </div>
             </div>
