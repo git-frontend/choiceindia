@@ -19,21 +19,21 @@ function Documentrequired() {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-md-6">
+            <div className="col-md-6 col-xl-5">
               <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC"} />
+                    <LazyLoader src={Kyc} className={'img-fluid'} width={"500"} height={"240"} alt={"KYC"} />
                   </div>
                  
                 </div>
                 
               </div>
             </div>
-            <div className="col-md-6 ">
-              <div className="Doc-rq-card ">
+            <div className="col-md-6 col-xl-5">
+              <div className="Doc-rq-card vehicle-right ">
            
-                  <h3 className="title-doc ">KYC</h3>
+                  <h3 className="title-doc text-center ">KYC</h3>
                 
                 <ul className="list-item">
                   <li >ID Proof</li>

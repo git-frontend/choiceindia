@@ -26,5 +26,34 @@
         padding: 2rem 0;
     }
 }
+.Doc-rqrd-sec{
+    
+    .vehicle-right{
+        float: right;
+        .vehicle-imgheight{
+            min-height: 27rem;
+        }
+        .vehicle-listitem{
+            padding: 0 2.5rem;
+        }
+        @media (max-width: $md) {
+           float: none;
+        }
+
+    }
+    .vehicle-left{
+        float: left;
+        .vehicle-listitem{
+            padding: 0 2.5rem;
+        }
+        .vehicle-imgheight{
+            min-height: 27rem;
+        }
+        @media (max-width: $md) {
+            float: none;
+         }
+    }
+    
+}
 
 
