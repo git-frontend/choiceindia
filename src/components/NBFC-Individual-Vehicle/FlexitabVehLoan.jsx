@@ -69,7 +69,6 @@ function FlexitabVehLoan() {
                 <div className="container">
                     <div className="row">
                         <Slider {...settings1}>
-                            <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                         <LazyLoader src={time} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
@@ -77,8 +76,6 @@ function FlexitabVehLoan() {
                                     <h3 className="card-ttl">10 Mins</h3>
                                     <p className="subtext">Loan Sanctioned Time</p>
                                 </div>
-                            </div>
-                            <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                         <LazyLoader src={disburse} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
@@ -86,8 +83,6 @@ function FlexitabVehLoan() {
                                     <h3 className="card-ttl">48 Hours</h3>
                                     <p className="subtext">to Get Loan Disbursed</p>
                                 </div>
-                            </div>
-                            <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                         <LazyLoader src={paperwork} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
@@ -95,8 +90,6 @@ function FlexitabVehLoan() {
                                     <h3 className="card-ttl">Minimum</h3>
                                     <p className="subtext">Paperwork</p>
                                 </div>
-                            </div>
-                            <div className="col-md-3">
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                         <LazyLoader src={fee} alt={"Loans"} className={"img-fluid img"} width={"45"} height={"34"} />
@@ -104,7 +97,6 @@ function FlexitabVehLoan() {
                                     <h3 className="card-ttl">Low</h3>
                                     <p className="subtext">processing Fee</p>
                                 </div>
-                            </div>
                         </Slider>
                     </div>
                 </div>
