@@ -76,6 +76,9 @@
     }
     .inv-banner-slider{
         padding-top: 8rem;
+        @media (max-width: $sm) {
+            padding-top: 4rem;
+        }
         .slick-track{
             display: flex;
             padding: 10px 0;
