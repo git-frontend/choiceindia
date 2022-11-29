@@ -62,7 +62,8 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Quick} alt={"Quick Term Business Loan Sanctioned"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={Quick} alt={"Quick Term Business Loan Sanctioned"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={Quick} alt="Quick Term Business Loan Sanctioned" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Quick</h3>
                                         <p className="subtext">Sanction</p>
@@ -71,7 +72,8 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Digital} alt={"Digital Term Business Loan Disbursement"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={Digital} alt={"Digital Term Business Loan Disbursement"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={Digital} alt="Quick Term Business Loan Sanctioned" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Disbursement</p>
@@ -80,7 +82,8 @@ function TermLoansBanner() {
                                 <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Minimum} alt={"Minimum Paper Work for Term Business Loan"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={Minimum} alt={"Minimum Paper Work for Term Business Loan"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={Minimum} alt="Quick Term Business Loan Sanctioned" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Minimum</h3>
                                         <p className="subtext">Paperwork</p>

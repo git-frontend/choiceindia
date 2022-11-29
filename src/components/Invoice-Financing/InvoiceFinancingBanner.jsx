@@ -61,19 +61,22 @@ function InvoiceFinancingBanner() {
                             <Slider {...settings1} className="inv-banner-slider">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={zerocollateral} alt={"Zero Collateral for Invoice Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={zerocollateral} alt={"Zero Collateral for Invoice Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={zerocollateral} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Zero <br/>Collateral</h3>
                                     </div>
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={documentation} alt={"Simple Invoice Financing Documentation"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            {/* <LazyLoader src={documentation} alt={"Simple Invoice Financing Documentation"} className={"img-fluid img"} width={"60"} height={"50"} /> */}
+                                            <img src={documentation} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"60"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Simplified <br/>Documentation</h3>
                                     </div>
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={liquidity} alt={"Enhance Invoice Financing Liquidity"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={liquidity} alt={"Enhance Invoice Financing Liquidity"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={liquidity} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Enhance <br/> Liquidity</h3>
                                     </div>

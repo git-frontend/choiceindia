@@ -65,13 +65,15 @@ function ChannelFinanceBanner() {
                             <Slider {...settings1} className="inv-banner-slider">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Noadditionalsecurity} alt={"No Additional Security for Commercial Vehicle Loan"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={Noadditionalsecurity} alt={"No Additional Security for Commercial Vehicle Loan"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={Noadditionalsecurity} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">No additional <br/>security</h3>
                                     </div>
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={HassleFreeProcess} alt={"Hassle Free Commercial Vehicle Loan Process"} className={"img-fluid img"} width={"60"} height={"50"} />
+                                            {/* <LazyLoader src={HassleFreeProcess} alt={"Hassle Free Commercial Vehicle Loan Process"} className={"img-fluid img"} width={"60"} height={"50"} /> */}
+                                            <img src={HassleFreeProcess} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"60"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Hassle- Free <br/>
 Process</h3>
@@ -79,7 +81,8 @@ Process</h3>
                                 
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Customisedsolutions} alt={"Customised Commercial Vehicle Loan Solutions"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={Customisedsolutions} alt={"Customised Commercial Vehicle Loan Solutions"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={Customisedsolutions} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Customised <br/> solutions</h3>
                                     </div>
