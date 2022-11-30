@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import pin from '../../assets/images/contact/office.svg';
 import clock from '../../assets/images/contact/business-hours.webp';
 import { Form } from "react-bootstrap";
@@ -11,6 +11,7 @@ import ContactTemplate from "../Common-features/ContactTemplate";
 import "../Investorcomplaints/investorcomplaints.scss";
 
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+import contactService from "../../Services/contactService";
 
 
 
@@ -21,6 +22,7 @@ function Contactdetail() {
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
    const [check,setcheck] =useState(false);
+   const [trigger, setTrigger] = useState(false);
    let data = {};
 
    let data2 = {}
@@ -32,7 +34,7 @@ function Contactdetail() {
 
    city_list.forEach(ele => {
 
-      console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
+      // console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
       data2[ele.id] = ele
    })
 
@@ -48,6 +50,25 @@ function Contactdetail() {
       setIsFirstMap(() => false);
       setMapNumber(() => event.target.value);
    }
+
+   function citylist(){
+      contactService.contactCity().then(res=>{
+         if(res){
+            console.log(res.data.data)
+         }
+      })
+   }
+
+   useEffect(() => {
+      setTrigger(true)
+
+      if (trigger === true) {
+         citylist()
+      }
+
+  }, [trigger])
+
+
 
    return (
 
