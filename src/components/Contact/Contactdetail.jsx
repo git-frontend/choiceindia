@@ -16,7 +16,7 @@ import contactService from "../../Services/contactService";
 
 
 function Contactdetail() {
-
+   const [address,setaddress]=useState({});
    // let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
@@ -24,6 +24,7 @@ function Contactdetail() {
    const [check,setcheck] =useState(false);
    const [trigger, setTrigger] = useState(false);
    let data = {};
+   let citylists={};
 
    let data2 = {}
    contactMap.forEach(ele => {
@@ -51,19 +52,34 @@ function Contactdetail() {
       setMapNumber(() => event.target.value);
    }
 
-   function citylist(){
+   function cityList(){
       contactService.contactCity().then(res=>{
-         if(res){
-            console.log(res.data.data)
-         }
-      })
-   }
+         if(res && res.data && res.data.data){
+            console.log(res.data.data);
+            res.data.data.forEach(ele =>{
+
+               if(!citylists[ele.branch_name]){
+                  citylists[ele.branch_name]=[];
+                  citylists[ele.branch_name].push(ele);
+               }else{
+                  citylists[ele.branch_name].push(ele);
+
+               }
+               console.log("checkaddress",citylists)
+
+
+               })
+               setaddress(citylists);
+               console.log("checkaddress",address)
+            }
+         })
+      }
 
    useEffect(() => {
       setTrigger(true)
 
       if (trigger === true) {
-         citylist()
+         cityList()
       }
 
   }, [trigger])
@@ -196,6 +212,7 @@ function Contactdetail() {
                   </div>
                </div>
             </div>
+
             <div className="container mt-10 "  >
                <div className="d-flex justify-content-between detailwrap">
 
@@ -204,6 +221,7 @@ function Contactdetail() {
                         <p className="maintitle">120+ branches and partner offices</p>
                         <p className="subhead">Locate and office in your city</p>
                      </div>
+
                      <div className='cust-dropdown'>
 
                         <Form.Select variant="Info" id="dropdown-basic" onChange={selectCity}>
@@ -227,8 +245,7 @@ function Contactdetail() {
                         </Form.Select>
                      </div>
                   </div>
-                  {
-                     firstMap ?
+                  
                         <div className="text-right address">
                            <p className="maintitle">Mumbai, Maharashtra</p>
                            {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
@@ -236,44 +253,16 @@ function Contactdetail() {
                            <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
                               J B Nagar, Andheri East, Mumbai, Maharashtra 400099
                            </p>
-                        </div> :
-                        <div className="text-right address" key={data[MapNumber].id}>
-                           <p className="maintitle">{data[MapNumber].city}</p>
-                           {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
-                           {/* <p className="subtext">{data[MapNumber].support}</p> */}
-                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
-                           <p className="subtext">{data[MapNumber].address1}<br />
-                              {data[MapNumber].address2} <br />{data[MapNumber].address3}
-                           </p>
-                        </div>
-                  }
-               </div>
+                        </div> 
 
-            </div>
-            {
-               showMap ? firstMap ?
-                  <div className='container-fluid mt-10'>
-                     <div className='row'>
                         <div className='map '>
-                           <div>
-                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
-                        </div>
-                     </div>
-                  </div> :
-                  <div className='container-fluid mt-10'>
-                     <div className='row'>
-                        {
-                           data[MapNumber].mapSrc === "" ?
-                              <div></div> :
-                              <div className='map '>
                                  <div>
                                     <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
                               </div>
-                        }
+               </div>
 
-                     </div>
-                  </div> : ''
-            }
+            </div>
+
          </section>
       </div>
    );
