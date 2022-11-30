@@ -1792,12 +1792,33 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "best-stocks-for-long-term-investment": {
     'title': "Best Stocks to Buy for Long Term Investment - Choice",'lang':"en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
     "link": "https://choiceindia.com/best-stocks-for-long-term-investment"
-  }
+  },
 
+  "loan": {
+    'title': "Apply for Loan Online & Get Instant Loan within Few Hours",'lang':"en", "content": "Apply for loan online at Choice FinServ. Get a instant loan for your business, buying a commercial vehicle, flexi credit, invoice financing and channel financing at attractive interest rates.",
+    "link": "https://choiceindia.com/loan"
+  },
+  "term-business-loan": {
+    'title': "Apply for Term Business Loan Online at Choice FinServ",'lang':"en", "content": "Apply online at Choice FinServ for a term business loan. Get a fast business loan with low processing costs and attractive interest rates. Visit now to apply.",
+    "link": "https://choiceindia.com/term-business-loan"
+  },
+  "flexi-credit-loan": {
+    'title': "Apply Flexi Credit Loan for Business Online at Choice FinServ",'lang':"en", "content": "Visit Choice FinServ to apply for a Flexi Credit Loan online. Get a flexible credit loan quickly into your bank account with low processing costs and competitive interest rates. Visit to apply instantly.",
+    "link": "https://choiceindia.com/flexi-credit-loan"
+  },
 
-
-
-
+  "invoice-financing": {
+    'title': "Apply for Invoice Financing & Get Funds within 48 Hours",'lang':"en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
+    "link": "https://choiceindia.com/invoice-financing"
+  },
+  "channel-financing": {
+    'title': "Get Channel Financing for SME's Online within 48 Hours",'lang':"en", "content": "Apply for channel financing online at Choice FinServ. Get quick supply chain financing within just as 48 hours at competitive interest rates. Visit the website right now to apply.",
+    "link": "https://choiceindia.com/channel-financing"
+  },
+  "commercial-vehicle-loan": {
+    'title': "Get Commercial Vehicle Loan Online at Choice FinServ",'lang':"en", "content": "Apply a commercial vehicle loan online at Choice FinServ. Get a quick commercial car loan with minimal processing fees and attractive interest rates. Visit instantly to apply.",
+    "link": "https://choiceindia.com/commercial-vehicle-loan"
+  },
 }
 
 export default meta_tags;

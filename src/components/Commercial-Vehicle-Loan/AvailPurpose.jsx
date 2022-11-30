@@ -23,7 +23,7 @@ function AvailPurpose() {
                 <div className="veh-bnr-list">
                       <div className="bnr-list-itm">
                         <div className="bnr-list-right d-flex justify-content-end">
-                              <LazyLoader src={Whocanavail} alt={"Who can avail?"} className={"img-fluid img"} width={"450"} height={"406"} />
+                              <LazyLoader src={Whocanavail} alt={"Commercial Vehicle Loan Eligibility"} className={"img-fluid img"} width={"450"} height={"406"} />
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">Who can avail?</h2>
@@ -34,7 +34,7 @@ professional (SEP) like Doctors,Architect, Consultant etc. </p>
                       </div>
                       <div className="bnr-list-itm">
                       <div className="bnr-list-right">
-                              <LazyLoader src={forwhatpurposes} alt={"For what purposes"} className={"img-fluid img"} width={"560"} height={"328"} />
+                              <LazyLoader src={forwhatpurposes} alt={"Apply for Commercial Vehicle Loan"} className={"img-fluid img"} width={"560"} height={"328"} />
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">For what purposes?</h2>

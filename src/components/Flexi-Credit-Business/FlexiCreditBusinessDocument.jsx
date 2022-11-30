@@ -1,7 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/invoice-financing/kyc.svg';
-import IncomeProofimage from '../../assets/images/nbfc-flexi-credit-business/businessdocument.svg';
+import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
+import IncomeProofimage from '../../assets/images/nbfc-flexi-credit-business/business-documents-for-flexi-loan.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function FlexiCreditBusinessDocument() {
@@ -22,7 +22,7 @@ function FlexiCreditBusinessDocument() {
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"320"} height={"240"} alt={"kyc-documents-for-flexi-credit"}/>
                     </div>
                     <h3 className="title-doc">KYC</h3>
                   </div>
@@ -40,7 +40,7 @@ function FlexiCreditBusinessDocument() {
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"business-documents-for-flexi-credit"}/>
                   </div>
                     <h3 className="title-doc">Business Documents</h3>
                 </div>

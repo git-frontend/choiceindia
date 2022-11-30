@@ -1,9 +1,9 @@
 
 import React from "react";
-import customised from '../../assets/images/invoice-financing/customised.svg';
-import digital from '../../assets/images/invoice-financing/digital.svg';
-import anytime from '../../assets/images/invoice-financing/anytime.svg';
-import flexible from '../../assets/images/invoice-financing/flexible.svg';
+import customised from '../../assets/images/invoice-financing/low-invoice-financing-processing-fees.svg';
+import digital from '../../assets/images/invoice-financing/digital-assistance-for-invoice-financing.svg';
+import anytime from '../../assets/images/invoice-financing/attractive-invoice-financing-interest-rates.svg';
+import flexible from '../../assets/images/invoice-financing/flexible-invoice-financing-repayment-options.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
@@ -55,42 +55,34 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={customised} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={customised} alt={"Low Invoice Financing Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Customised</h3>
                     <p className="subtext">Solutions</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={digital} alt={"Loans"} className={"img-fluid img"} width={"35"} height={"50"} />
+                      <LazyLoader src={digital} alt={"Digital Assistance for Invoice Financing"} className={"img-fluid img"} width={"35"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Digital</h3>
                     <p className="subtext">Assistance</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={anytime} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={anytime} alt={"Attractive Invoice Financing Interest Rates"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Anytime</h3>
                     <p className="subtext">anywhere facility</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={flexible} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={flexible} alt={"Flexible Invoice Financing Repayment Options"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>

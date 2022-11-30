@@ -4,10 +4,10 @@ import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 import LazyLoader from "../Common-features/LazyLoader";
-import zerocollateral from '../../assets/images/channel-finance/zero-collateral.svg';
-import FullFledged from '../../assets/images/channel-finance/full-fledged.svg';
-import HighValue from '../../assets/images/channel-finance/high-value.svg';
-import Documentation from '../../assets/images/channel-finance/digital-documentation.svg';
+import zerocollateral from '../../assets/images/channel-finance/zero-collateral-for-channel-finnacing.svg';
+import FullFledged from '../../assets/images/channel-finance/full-fledge-channel-financing-assistance.svg';
+import HighValue from '../../assets/images/channel-finance/high-value-channel-financing.svg';
+import Documentation from '../../assets/images/channel-finance/digital-channel-financing-documentation.svg';
 import {Link} from 'react-router-dom';
 
 function ChannelFinanceBanner() {
@@ -63,42 +63,38 @@ function ChannelFinanceBanner() {
                     <div className="row justify-content-center">
                         <div className="col-md-12">
                             <Slider {...settings1} className="inv-banner-slider">
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={zerocollateral} alt={"Zero Collateral"} className={"img-fluid img"} width={"50"} height={"50"} />
+                                            {/* <LazyLoader src={zerocollateral} alt={"Zero Collateral for Channel Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
+                                            <img src={zerocollateral} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"50"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Zero</h3>
                                         <p className="subtext">Collateral</p>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={FullFledged} alt={"Full-Fledged Loan Assistance"} className={"img-fluid img"} width={"45"} height={"50"} />
+                                            {/* <LazyLoader src={FullFledged} alt={"Full Feldge Channel Financing Assistance"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
+                                            <img src={FullFledged} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Full-Fledged</h3>
                                         <p className="subtext">Loan Assistance</p>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={HighValue} alt={"High Value Working Capital"} className={"img-fluid img"} width={"45"} height={"50"} />
+                                            {/* <LazyLoader src={HighValue} alt={"High Value Channel Financing"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
+                                            <img src={HighValue} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">High Value</h3>
                                         <p className="subtext">Working Capital</p>
                                     </div>
-                                </div>
-                                <div className="col-md-3">
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
-                                            <LazyLoader src={Documentation} alt={"Digital Documentation Process"} className={"img-fluid img"} width={"30"} height={"45"} />
+                                            {/* <LazyLoader src={Documentation} alt={"Digital Channel Financing Documentation"} className={"img-fluid img"} width={"30"} height={"45"} /> */}
+                                            <img src={Documentation} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"30"} height={"45"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Digital</h3>
                                         <p className="subtext">Documentation Process</p>
                                     </div>
-                                </div>
                             </Slider>
                         </div>
                     </div>

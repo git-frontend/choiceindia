@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
-import low from '../../assets/images/nbfc-indivial-loan/low.svg';
+import low from '../../assets/images/nbfc-indivial-loan/low-processing-speed.svg';
 import nocharges from '../../assets/images/nbfc-indivial-loan/no-charges.svg';
 import interestrate from '../../assets/images/nbfc-indivial-loan/interestrate.svg';
 import flexibleoption from '../../assets/images/nbfc-indivial-loan/flexibleoption.svg';
@@ -54,7 +54,6 @@ function flexitab() {
                     </div>
                     <div className="row">
                     <Slider {...settings1} className="why-ch-slider">
-                        <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
@@ -62,8 +61,6 @@ function flexitab() {
                                 <h3 className="card-ttl">Low</h3>
                                 <p className="subtext">Processing speed</p>
                             </div>
-                        </div>
-                        <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 <LazyLoader src={nocharges} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
@@ -71,8 +68,6 @@ function flexitab() {
                                 <h3 className="card-ttl">No</h3>
                                 <p className="subtext">Foreclosure charges</p>
                             </div>
-                        </div>
-                        <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
@@ -80,8 +75,6 @@ function flexitab() {
                                 <h3 className="card-ttl">Attractive</h3>
                                 <p className="subtext">Interest rates </p>
                             </div>
-                        </div>
-                        <div className="col-md-3">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 <LazyLoader src={flexibleoption} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
@@ -89,7 +82,6 @@ function flexitab() {
                                 <h3 className="card-ttl">Flexible</h3>
                                 <p className="subtext">Repayment Options</p>
                             </div>
-                        </div>
                         </Slider> 
                     </div>
                 </div>

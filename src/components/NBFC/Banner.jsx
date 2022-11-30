@@ -1,6 +1,6 @@
 
 import React from "react";
-import bannerimg from '../../assets/images/nbfc-loans/banner-loan.webp'
+import bannerimg from '../../assets/images/nbfc-loans/apply-for-instant-loan-online.webp'
 import LazyLoader from '../Common-features/LazyLoader';
 
 
@@ -19,7 +19,7 @@ function Banner() {
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">
-                        <LazyLoader src={bannerimg} alt={"Loans"} className={"img-fluid"} width={"586"} height={"366"} />
+                        <LazyLoader src={bannerimg} alt={"Applyt for Instant Loan Online"} className={"img-fluid"} width={"586"} height={"366"} />
                         {/* <div className='home-banner-ved'>
 							<div className="overlay"></div>
 							<video src={videoBg} autoPlay loop muted className='banner-ved' />

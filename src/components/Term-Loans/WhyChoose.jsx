@@ -1,9 +1,9 @@
 
 import React from "react";
-import low from '../../assets/images/term-loans/low.svg';
-import digital from '../../assets/images/term-loans/digital.svg';
-import attractive from '../../assets/images/term-loans/attractive.svg';
-import flexible from '../../assets/images/term-loans/flexible.svg';
+import low from '../../assets/images/term-loans/low-term-loan-processing-fees.svg';
+import digital from '../../assets/images/term-loans/digital-term-business-loan-disbursement.svg';
+import attractive from '../../assets/images/term-loans/attractive-term-loan-interest-rates.svg';
+import flexible from '../../assets/images/term-loans/flexible-term-loan-repayment-options.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
@@ -55,42 +55,34 @@ function WhyChoose() {
           <div className="row justify-content-center">
             <div className="col-xl-12">
               <Slider {...settings1} className="why-ch-slider">
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={low} alt={"Low"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={low} alt={"Low Term Loan Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Low</h3>
                     <p className="subtext">Processing speed</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={digital} alt={"Digital"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={digital} alt={"Digital Assistance for Term Loan"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Digital</h3>
                     <p className="subtext">Assistance</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={attractive} alt={"Attractive"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={attractive} alt={"Attractive Term Loan Interest Rates"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Attractive</h3>
                     <p className="subtext">anywhere facility</p>
                   </div>
-                </div>
-                <div className="col-md-3">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={flexible} alt={"Flexible"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={flexible} alt={"Flexible Term Loan Repayment Options"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Flexible</h3>
                     <p className="subtext">Repayment Options</p>
                   </div>
-                </div>
               </Slider>
             </div>
           </div>
