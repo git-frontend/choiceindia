@@ -29,6 +29,7 @@ function DematAccountForm(props) {
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
 
     
 
@@ -287,13 +288,13 @@ function DematAccountForm(props) {
             "sub_ref": subrefercode.current || null,
            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": UTMCampaign.current || null,
+            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
             "utm_custom": UTMCustom.current || null,
             // 'sidebar_seo_leads'
-            "utm_medium": UTMMedium.current || null,
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": UTMSource.current || null,
+            "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMMedium.current || null,
             "utm_term": UTMTerm.current || null
         };
         openAccountService.sendOTP(request,type1).then((res) => {
