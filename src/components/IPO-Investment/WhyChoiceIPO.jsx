@@ -32,7 +32,7 @@ function WhyChoiceIPO() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first">Why Choice for IPO Investment?</h2>
+              <h2 className="title-first">Why Choice for <span>IPO Investment</span>?</h2>
             </div>
           </div>
           <div className="row justify-content-center">
@@ -46,15 +46,15 @@ function WhyChoiceIPO() {
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img2} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
-                          </span>
-                          <h4>IPO Recommendation <br/> Video on YouTube</h4>
-                      </div>
-                      <div className="why-itm">
-                          <span className="sm-img-itm">
                             <LazyLoader src={img3} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h4>1.5 + Lakhs<br/> Clients</h4>
+                      </div>
+                      <div className="why-itm">
+                          <span className="sm-img-itm">
+                            <LazyLoader src={img2} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                          </span>
+                          <h4>IPO Advisory <br/> Video on YouTube</h4>
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">
@@ -68,7 +68,7 @@ function WhyChoiceIPO() {
         </div>  
       </section>
 
-      <section className="get-start get-start-scnd">
+      {/* <section className="get-start get-start-scnd">
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
@@ -80,7 +80,7 @@ function WhyChoiceIPO() {
                 </div>
             </div>
         </div>
-    </section>
+    </section> */}
 
     </div>
   );
