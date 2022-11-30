@@ -251,6 +251,8 @@ body{
 }
 
 .ipo-more-benifits{
+    background: $abt-bg;
+    padding: 6rem 0;
     position: relative;
     &::after {
         content: '';
@@ -307,10 +309,8 @@ body{
 }
 
 .get-start{
-    padding-bottom: 10rem;
-    @media (max-width: $sm) {
-        padding-bottom: 5rem;
-    }
+    position: relative;
+    top: -7rem;
     .get-start-sub{
         display: flex;
         align-items: center;
@@ -403,7 +403,7 @@ body{
         }
     }
     .title-first{
-        padding-bottom: 14rem;
+        padding-bottom: 1rem;
         @media (max-width: $sm) {
             padding-bottom: 3rem;
             text-align: center;
@@ -421,7 +421,7 @@ body{
                 width: 200px;
                 &:nth-child(1n){
                     left: 0;
-                    top: -7.5rem;
+                    top: 4rem;
                     h3{
                         color: #1ED0CB;
                     }
@@ -472,6 +472,7 @@ body{
             }
         }
         .mn-img-big{
+            margin-top: 14rem;
             @media (max-width: $sm) {
                 display: none;
             }

@@ -34,13 +34,12 @@ function IPOProcess() {
       
       <section className="process-ipo">
         <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h2 className="title-first">Hassle Free IPO Investment Process</h2>
-            </div>
-          </div>
           <div className="row justify-content-center">
-              <div className="col-md-9">
+          <div className="col-md-4">
+              <h2 className="title-first">Hassle Free IPO Investment Process</h2>
+              <p>Subscribe upcoming IPOs with us <br/> through a minimal process. <br/> <strong>Invest money not time.</strong></p>
+            </div>
+              <div className="col-md-8">
                 
               {
 									view && !view.matches ? 
