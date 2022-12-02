@@ -23,7 +23,10 @@
         border: #C2C2C2 solid 1px;
         padding: 3rem;
         margin-bottom: 3rem;
-        
+        @media screen and (max-width:$sm) {
+            margin: 1rem 0.5rem;
+            padding: 2rem;
+        }
     .form-control{
         height: 40px;
         border-radius: 2.87393px;
