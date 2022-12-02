@@ -143,8 +143,6 @@
 	}
 
 }
-
-
 .adv-sect {
 	background-color: $abt-bg;
 	padding: 9.375rem 0;
@@ -153,7 +151,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		padding-right: 6rem;
+		padding-right: 2rem;
 
 		h2 {
 			font-size: 3.125rem;
@@ -186,7 +184,6 @@
 			padding-right: 0;
 		}
 	}
-
 	.slick-dots {
 		position: absolute;
 		bottom: 0;
@@ -202,13 +199,13 @@
 		}
 
 		@media (min-width:$sm) and (max-width:768px) {
-			left: -15.75rem;
-			top: 63%;
+			left: -20.125rem;
+			top: 80%;
 		}
 
 		@media (min-width:769px) and (max-width:1024px) {
-			left: -14.375rem;
-			top: 67%;
+			left: -20.125rem;
+			top: 80%;
 		}
 
 		li {
@@ -264,14 +261,13 @@
 
 		}
 
-		// @media (min-width:$sm) and (max-width:768px) {
-		// 	min-height: 21.25rem;
-		// }
+		 @media (min-width:$sm) and (max-width:768px) {
+			padding: 1.625rem;
+		 }
 
-		// @media (min-width:769px) and (max-width:1024px) {
-		// 	min-height: 32rem;
-
-		// }
+		@media (min-width:769px) and (max-width:1024px) {
+			padding: 1.625rem;
+		 }
 
 		&:hover {
 			background-color: $whiteColor;
@@ -627,13 +623,13 @@
 
 		@media (min-width:768px) and (max-width:769px) {
 			width: 100%;
-			min-height: 33rem;
+			min-height: 34rem;
 			padding: 1rem;
 		}
 
 		@media (min-width:769px) and (max-width:1024px) {
 			padding: 1rem;
-			min-height: 30.625rem;
+			min-height: 34rem;
 		}
 
 		.icon-wrap {
