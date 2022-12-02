@@ -133,6 +133,10 @@ body{
                     width: 90% !important;
                     margin: 0 auto;
                     display: block;
+                    @media (min-width:$sm) and (max-width: $md) {
+                       min-height: 26rem;
+                       height: 100%;
+                    }
                     .stck-gn{
                         position: absolute;
                         text-align: center;
