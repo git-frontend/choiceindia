@@ -23,9 +23,9 @@
         border: #C2C2C2 solid 1px;
         padding: 3rem;
         margin-bottom: 3rem;
-        @media screen and (max-width:$sm) {
-            margin: 1rem 0.5rem;
-            padding: 2rem;
+        @media screen and (max-width:767px) {
+            margin: 0 1rem 3rem;
+            padding: 3rem 1.5rem;
         }
     .form-control{
         height: 40px;
@@ -46,6 +46,10 @@
         line-height: 1.625rem;
         font-weight: 600;
         padding-bottom: 10px;
+        @media screen and (max-width:767px) {
+            font-size: 1.25rem;
+            padding-bottom: 2px;
+        }
     }
         .border-bottom {
             &:last-child {
@@ -75,6 +79,9 @@
 
 .width95{
     width: 95%;
+    @media screen and (max-width:767px) {
+        width:100%
+    }
 }
 
 .mt5{
@@ -83,4 +90,10 @@
 
 .float-right{
     float: right;
+}
+
+.smt-3{
+    @media screen and (max-width:767px) {
+        margin-top: 1rem!important;
+    }
 }
