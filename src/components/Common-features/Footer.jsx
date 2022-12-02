@@ -150,13 +150,14 @@ function Footer() {
                         </div>
                       </div>
                       <div className="col-md-4">
-                        <div className="footer-cont-details">
-                          <p>Andheri East, Mumbai <br />Maharashtra 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
-                          <p>Monday - Friday : 08:30 am - 7:00 pm <br />
-                            Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                          <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                          <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
-                        </div>
+                      <div className="footer-cont-details">
+                      <p>Choice International Limited , Sunil Patodia Tower, <br /> J B Nagar, Andheri(East), <br />Mumbai 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
+                      <p>Monday - Friday : 08:30 am - 7:00 pm <br />
+                        Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
+                      <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                      <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
+                      </div>
+
                       </div>
                     </div>
                   </div>
