@@ -13,7 +13,7 @@ import Slider from 'react-slick';
 function MarketInsights() {
 
     const [view,setView]=useState({
-		matches: window.innerWidth < 770 ? false : true ,
+		matches: window.innerWidth < 767 ? false : true ,
 	  });
 
 	
@@ -32,7 +32,7 @@ function MarketInsights() {
 
 
 		useEffect(() => {
-			let mediaQuery = window.matchMedia("(min-width: 770px)");
+			let mediaQuery = window.matchMedia("(min-width: 767px)");
 			mediaQuery.addListener(setView);
 			// this is the cleanup function to remove the listener
 			return () => mediaQuery.removeListener(setView);

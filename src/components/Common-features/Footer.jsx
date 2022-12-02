@@ -71,7 +71,7 @@ function Footer() {
                             </li>
 
                             <li>
-                              <NavLink className="cursor-pointer" to="/equity-broking" >Broking & Distribution</NavLink>
+                              <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>
