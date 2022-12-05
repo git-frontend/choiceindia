@@ -48,8 +48,6 @@ function DematFaq() {
                                             <li>Cancelled Cheque (that captures the MICR Code)</li>
                                             <li>Passport Size Photograph</li>
                                             <li>Aadhaar Card</li>
-                                            <li>Aadhaar Card</li>
-
                                         </ul>
                                     </Accordion.Body>
                                 </Accordion.Item>
