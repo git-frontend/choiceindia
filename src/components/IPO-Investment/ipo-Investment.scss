@@ -103,6 +103,21 @@ body{
 
 .ipo-stocks{
     padding: 8rem 0;
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 20rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 45rem;
+        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        background-size: contain;
+        z-index: -9;
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
     @media (max-width: $sm) {
         padding: 2rem 0 5rem 0;
         .title-first{
@@ -133,10 +148,6 @@ body{
                     width: 90% !important;
                     margin: 0 auto;
                     display: block;
-                    @media (min-width:$sm) and (max-width: $md) {
-                       min-height: 26rem;
-                       height: 100%;
-                    }
                     .stck-gn{
                         position: absolute;
                         text-align: center;
@@ -166,9 +177,6 @@ body{
                     }
                     h4{  
                         font-family: $font-family-poppins-semibold;
-                        @media (max-width: $md) {
-                            font-size: 1.2rem;
-                         }
                         span{
                             display: block;
                             opacity: 0.75;
@@ -258,22 +266,9 @@ body{
 }
 
 .ipo-more-benifits{
+    background: $abt-bg;
+    padding: 6rem 0;
     position: relative;
-    &::after {
-        content: '';
-        width: 17rem;
-        height: 20rem;
-        display: block;
-        position: absolute;
-        right: 2px;
-        top: -4rem;
-        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
-        background-size: contain;
-        z-index: -9;
-        @media (max-width: $md) {
-            display: none;
-        }
-    }
     .title-first{
         span{
             color: $yellowColor;
@@ -312,12 +307,11 @@ body{
         }
     }
 }
-
+.benefits-form{
+    position: relative;
+    top: -7rem;
+}
 .get-start{
-    padding-bottom: 10rem;
-    @media (max-width: $sm) {
-        padding-bottom: 5rem;
-    }
     .get-start-sub{
         display: flex;
         align-items: center;
@@ -352,13 +346,16 @@ body{
 
 .why-choice-ipo{
     background: $primary;
-    padding: 8rem 0 15rem 0;
+    padding: 8rem 0 10rem 0;
     @media (max-width: $sm) {
         padding: 6rem 0 10rem 0;
     }
     .title-first{
         margin-bottom: 5rem;
         color: $whiteColor;
+        span{
+            color: $yellowColor; 
+        }
         @media (max-width: $sm) {
             text-align: center;
         }
@@ -390,28 +387,36 @@ body{
 
 .process-ipo{
     padding: 0 0 15rem 0;
-    @media (max-width: $sm-x) {
+    @media (max-width: $sm) {
        padding: 0 0 5rem 0;
     }
     position: relative;
-    &::after {
+    &::before {
         content: '';
-        width: 17rem;
+        width: 14rem;
         height: 22rem;
         display: block;
         position: absolute;
-        right: 2px;
-        top: 5%;
-        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        left: 0;
+        top: 47%;
+        background: url(../../assets/images/insurance/bg2.webp) no-repeat top right;
         background-size: contain;
-        z-index: -9;
         @media (max-width: $md) {
             display: none;
         }
     }
     .title-first{
-        padding-bottom: 14rem;
-        @media (max-width: $sm-x) {
+        padding-bottom: 1rem;
+        @media (max-width: $md) {
+            font-size: 3rem;
+        }
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+            text-align: center;
+        }
+    }
+    .Process-para{
+        @media (max-width: $sm) {
             padding-bottom: 3rem;
             text-align: center;
         }
@@ -419,7 +424,7 @@ body{
     .ipo-list-img{
         position: relative;
         padding: 0;
-        @media (max-width: $sm-x) {
+        @media (max-width: $sm) {
             text-align: center;
         }
         .process-ipo-list{
@@ -428,7 +433,7 @@ body{
                 width: 200px;
                 &:nth-child(1n){
                     left: 0;
-                    top: -7.5rem;
+                    top: 4rem;
                     h3{
                         color: #1ED0CB;
                     }
@@ -451,19 +456,22 @@ body{
                     top: inherit;
                     bottom: -7.5rem;
                     left: 74%;
+                    @media (max-width: $md) {
+                        left: 71%;
+                    }
                     h3{
                         color: #E88832;
                     }
                 }
                 h3{
-                    font-size: 2.5rem;
+                    font-size: 3rem;
                     font-family: $font-family-poppins-semibold;
                 }
                 h4{
                     font-family: $font-family-poppins-semibold;
                     line-height: 2.1rem;
                 }
-                @media (max-width: $sm-x) {
+                @media (max-width: $sm) {
                     position: relative;
                     left: inherit !important;
                     right: inherit !important;
@@ -473,13 +481,14 @@ body{
                     margin-bottom: 1rem;
                 }
             }
-            @media (max-width: $sm-x) {
+            @media (max-width: $sm) {
                 display: flex;
                 flex-wrap: wrap;
             }
         }
         .mn-img-big{
-            @media (max-width: $sm-x) {
+            margin-top: 14rem;
+            @media (max-width: $sm) {
                 display: none;
             }
         }
@@ -490,7 +499,7 @@ body{
 // faq
 
 .Dematfaq {
-	padding:0 0 9rem 0;
+	padding:9rem 0 9rem 0;
 	background-color: $whiteColor ;
 	.title-first {
 		margin-bottom: 4rem;

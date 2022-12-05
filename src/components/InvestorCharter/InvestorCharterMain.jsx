@@ -8,7 +8,7 @@ import noDataimg from '../../assets/images/no-data.webp';
 
 function InvestorCharterMain() {
     const [data2, setData2] = useState({});
-    const [lists, setlists] = useState(['stock_broker', 'research_analyst', 'portfolio_managers', 'investment_advisors', 'depository_participant','capital_advisor'])
+    const [lists, setlists] = useState(['stock_broker', 'research_analyst', 'portfolio_managers', 'depository_participant',])
     const [trigger, setTrigger] = useState(false);
     const [isloading,setisloading ] = useState(true);
 
