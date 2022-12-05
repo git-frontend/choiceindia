@@ -23,7 +23,7 @@ function Documentrequired() {
       <div className="Doc-rq-card">
             <div className="text-center">
               <div className="img-height">
-                <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC"}/>
+                <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC Documents for Individual Loan"}/>
               </div>
               <h3 className="title-doc">KYC</h3>
             </div>
@@ -38,7 +38,7 @@ function Documentrequired() {
       <div className="Doc-rq-card">
           <div className="text-center">
             <div className="img-height">
-              <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof"}/>
+              <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof Documents for Individual Loan"}/>
             </div>
               <h3 className="title-doc">Income Proof</h3>
           </div>
