@@ -90,6 +90,9 @@
     }
     .mrg-top{
         margin-top: 7rem;
+        @media screen and (max-width:$sm) {
+            margin-top: 0rem;
+         }
     }
     .Doc-rq-card{
         @media screen and (max-width:$sm) {
