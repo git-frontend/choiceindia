@@ -14,6 +14,16 @@ const contact = {
         return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
             return data
         })
-    }
+    },
+
+   contactCity: function (){
+    let api = new API_URLS()
+    let url = api.getcontactCityURL()
+    return axios.get(url).then((data)=>{
+        return data;
+    })
+
+   }
+
 }
 export default contact;

@@ -178,7 +178,9 @@ export class API_URLS {
   investorawareURL ='items/investor_awareness?limit=1000&sort[]=-id';
   cebplURL='items/cebpl_policies?limit=1000&sort[]=-id'
   filedownloadURL ='api/get-download-listing?limit=1000&sort[]=-id';
-  investorStockURL ='items/investor_charter?limit=1000&sort[]=-id&filter[type][_eq]'
+  investorStockURL ='items/investor_charter?limit=1000&sort[]=-id&filter[type][_eq]';
+/** contact us city detail */
+    contactCityURL='items/branch_details?filter[status][_eq]=published&limit=1000'
 
 
 
@@ -654,6 +656,10 @@ export class API_URLS {
 
     getInvestorStockURL(id){
         return this.bannerURL + this.investorStockURL + `=${id}`
+    }
+
+    getcontactCityURL(){
+        return this.bannerURL + this.contactCityURL
     }
     
     
