@@ -57,7 +57,7 @@ function WhyChoose() {
               <Slider {...settings1} className="why-ch-slider">
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
-                      <LazyLoader src={customised} alt={"Low Invoice Financing Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
+                      <LazyLoader src={customised} alt={"Customised Solutions"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Customised</h3>
                     <p className="subtext">Solutions</p>

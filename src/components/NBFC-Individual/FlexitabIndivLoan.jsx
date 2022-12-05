@@ -97,7 +97,7 @@ function flexitab() {
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 {/* <LazyLoader src={fee} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                <img src={fee} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                <img src={fee} alt="Low Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Low</h3>
                                 <p className="subtext">processing Fee</p>
