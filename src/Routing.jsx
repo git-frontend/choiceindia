@@ -473,11 +473,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/ipo-investment-account' element={
+                        {/* <Route exact path='/ipo-investment-account' element={
                             <React.Suspense>
                                 < LazyIPOInvestment />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
 
                         <Route exact path='/client-details-update' element={

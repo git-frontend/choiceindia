@@ -61,13 +61,13 @@ function IPOBenifits() {
       </section>
 
 
-      <section className="get-start">
+      <section className="get-start benefits-form">
         <div className="container">
             <div className="row">
                 <div className="col-md-12">
                     <div className="get-start-sub">
                         <h3>Open 100% Free Demat Account with us</h3>
-                        <div onClick={() => { chapterScroll('ipoForm')}} className="btn-bg btn-bg-dark cursor-pointer">Get Started</div>
+                        <div onClick={() => { chapterScroll('ipoForm')}} className="btn-bg btn-bg-dark cursor-pointer">Open Now</div>
                     </div>
                 </div>
             </div>
