@@ -23,7 +23,7 @@ function Documentrequired() {
               <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={Kyc} className={'img-fluid'} width={"500"} height={"240"} alt={"KYC"} />
+                    <LazyLoader src={Kyc} className={'img-fluid'} width={"500"} height={"240"} alt={"KYC Documents for Individual Loan"} />
                   </div>
                  
                 </div>

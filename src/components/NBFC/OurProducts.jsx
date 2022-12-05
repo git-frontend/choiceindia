@@ -51,7 +51,7 @@ function OurProducts() {
                         </div>
                         <div className="products-list-item list-item-reverse">
                             <div className="list-item-left">
-                                <LazyLoader src={Individual} alt={"Individual"} className={"img-fluid"} width={"586"} height={"366"} />
+                                <LazyLoader src={Individual} alt={"Vehicle Loan"} className={"img-fluid"} width={"586"} height={"366"} />
                             </div>
                             <div className="list-item-right">
                                 <h3>Individual</h3>
@@ -74,7 +74,7 @@ function OurProducts() {
                         </div>
                         <div className="products-list-item">
                             <div className="list-item-left">
-                                <LazyLoader src={PaymentSolutions} alt={"Payment Solution"} className={"img-fluid"} width={"586"} height={"366"} />
+                                <LazyLoader src={PaymentSolutions} alt={"Payment Solutions"} className={"img-fluid"} width={"586"} height={"366"} />
                             </div>
                             <div className="list-item-right">
                                 <h3>Payment Solutions</h3>

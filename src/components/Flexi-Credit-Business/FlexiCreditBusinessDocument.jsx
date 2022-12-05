@@ -22,7 +22,7 @@ function FlexiCreditBusinessDocument() {
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"320"} height={"240"} alt={"kyc-documents-for-flexi-credit"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"320"} height={"240"} alt={"Kyc Documents For Flexi Credit"}/>
                     </div>
                     <h3 className="title-doc">KYC</h3>
                   </div>
@@ -40,7 +40,7 @@ function FlexiCreditBusinessDocument() {
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"business-documents-for-flexi-credit"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"Business Documents For Flexi Credit"}/>
                   </div>
                     <h3 className="title-doc">Business Documents</h3>
                 </div>

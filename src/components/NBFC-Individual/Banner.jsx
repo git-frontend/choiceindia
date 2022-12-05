@@ -21,7 +21,7 @@ function Banner() {
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">
-                        <LazyLoader src={bannerimg} alt={"Loans"} className={"img-fluid"} width={"586"} height={"366"} />
+                        <LazyLoader src={bannerimg} alt={"Apply for individual Loan"} className={"img-fluid"} width={"586"} height={"366"} />
                        
                     </div>
                 </div>

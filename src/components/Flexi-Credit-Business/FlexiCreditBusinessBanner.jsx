@@ -64,7 +64,7 @@ function FlexiCreditBusinessBanner() {
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 {/* <LazyLoader src={time} alt={"Quick Flexi Loan Approval"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                <img src={time} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                <img src={time} alt="Quick Flexi Loan Approval" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">10 Mins</h3>
                                 <p className="subtext">Loan Sanctioned Time</p>
@@ -72,7 +72,7 @@ function FlexiCreditBusinessBanner() {
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 {/* <LazyLoader src={disburse} alt={"Flexi Loan Disbursed in 48 Hours"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
-                                <img src={disburse} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"50"}></img> 
+                                <img src={disburse} alt="Flexi Loan Disbursed in 48 Hours" className="img-fluid img"  width={"45"} height={"50"}></img> 
                             </span>
                                 <h3 className="card-ttl">48 Hours</h3>
                                 <p className="subtext">to Get Loan Disbursed</p>
@@ -80,7 +80,7 @@ function FlexiCreditBusinessBanner() {
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
                                 {/* <LazyLoader src={paperwork} alt={"Minimum Paper Work for Flexi Business Loan"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                <img src={paperwork} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                <img src={paperwork} alt="Minimum Paper Work for Flexi Business Loan" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Minimum</h3>
                                 <p className="subtext">Paperwork</p>

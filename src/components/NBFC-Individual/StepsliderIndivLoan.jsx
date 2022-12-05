@@ -97,7 +97,7 @@ function StepsSlider() {
                             <div className="how-works-steps">
                                 <div ref={myRef1} className={"works-steps-itm " + name} id="how1">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={vehicleFirstStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"198"} />
+                                        <LazyLoader src={vehicleFirstStep} alt={"Submit the Documents"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
@@ -107,7 +107,7 @@ function StepsSlider() {
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={vehicleSecndStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"229"} />
+                                        <LazyLoader src={vehicleSecndStep} alt={"Check Your Eligibility"} className={"img-fluid"} width={"154"} height={"229"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
@@ -118,7 +118,7 @@ documents, and income proof</p>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={vehicleThirdStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
+                                        <LazyLoader src={vehicleThirdStep} alt={"Quick Loan Approval"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
@@ -129,7 +129,7 @@ speeding up the process so that an approval can be given within 48 hours.</p>
                                 </div>
                                 <div ref={myRef4} className={"works-steps-itm steps-itm-reverse " + name4} id="how4">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={vehicleFourthStep} alt={"Banner Images"} className={"img-fluid"} width={"154"} height={"185"} />
+                                        <LazyLoader src={vehicleFourthStep} alt={"Loan Disbursed"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>04</h2>

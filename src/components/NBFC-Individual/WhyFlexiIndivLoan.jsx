@@ -56,28 +56,28 @@ function flexitab() {
                     <Slider {...settings1} className="why-ch-slider">
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={low} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
+                                <LazyLoader src={low} alt={"Low Processing Fee"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Low</h3>
                                 <p className="subtext">Processing speed</p>
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={nocharges} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
+                                <LazyLoader src={nocharges} alt={"No Forclousure Charges"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">No</h3>
                                 <p className="subtext">Foreclosure charges</p>
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={interestrate} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
+                                <LazyLoader src={interestrate} alt={"Attractive interest Rates"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Attractive</h3>
                                 <p className="subtext">Interest rates </p>
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>
-                                <LazyLoader src={flexibleoption} alt={"Loans"} className={"img-fluid img"} width={"50"} height={"34"} />
+                                <LazyLoader src={flexibleoption} alt={"Flexible Repayment Options"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Flexible</h3>
                                 <p className="subtext">Repayment Options</p>
