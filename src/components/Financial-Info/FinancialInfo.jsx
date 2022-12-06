@@ -38,15 +38,25 @@ function FinancialInfo() {
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+      if(!(document.getElementById('link1')==null)){
+        document.getElementById('link1').remove();
+      document.getElementById('link2').remove();
+      document.getElementById('link3').remove();
+      document.getElementById('link4').remove();
+      document.getElementById('link5').remove();
+      document.getElementById('link6').remove();
+      
+      }
     }
   }, [rendercount])
 
   return (
     <div>
-
-      {
-        skeleton ? <Template1 /> :
-          <div className="code-conduct-parent investor-info-parent">
+      
+       {
+        window.innerWidth < 770 ?
+        <div className="code-conduct-parent investor-info-parent">
             <div className="mainwrapper">
 
               <Banner />
@@ -57,9 +67,31 @@ function FinancialInfo() {
 
 
             </div>
-          </div>
-      }
+          </div>:
+          <div>
 
+          {
+            skeleton ? <Template1 /> :
+              <div className="code-conduct-parent investor-info-parent">
+                <div className="mainwrapper">
+    
+                  <Banner />
+    
+                  <ChoiceLTP></ChoiceLTP>
+    
+                  <FinancialInfoMenu />
+    
+    
+                </div>
+              </div>
+          }
+    
+        </div>
+
+        
+       }
+      
+    
     </div>
   );
 }

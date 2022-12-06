@@ -14,7 +14,7 @@ const CommodityBanner = () => {
         <div>
              <section className="banner-sect" >
                 <div className="container">
-                    <div className="row">
+                    <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
                             <div className="desktop">Open a Commodity Trading <br /> Account <span className="yellow">Online For Free</span></div>
@@ -24,7 +24,7 @@ const CommodityBanner = () => {
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="bannerbox">
+                                        <div className="bannerbox ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                 <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
@@ -51,9 +51,9 @@ const CommodityBanner = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="row mt-4 mt-sm-5  mbrespflex">
+                                <div className="row mbrespflex mt2">
                                     <div className="col-xl-5 col-md-6">
-                                        <div className="bannerbox">
+                                        <div className="bannerbox ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
                                                     <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
@@ -82,6 +82,9 @@ const CommodityBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                            <h1 className="banner-title mbtitle" >
+                                <div className="mobile">Open a Commodity Trading  Account <span className="yellow">Online For Free</span></div>
+                            </h1>
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}

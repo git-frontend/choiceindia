@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
+import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
+import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 
 function SubBrokerForm(props) {
 
@@ -42,17 +44,57 @@ function SubBrokerForm(props) {
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
     const [show, setShow] = useState(true);
+    const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
     var refercode = useRef('');
-
+    var UTMTerm = useRef('');
+    var UTMCustom = useRef('');
+    var UTMContent = useRef('');
+    var isMobile = useRef(isMobileDevice());
+    const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
+    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
+
+    function isMobileDevice() {
+        return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
+    function showOpenAccountAdPopup() {
+        // console.log('SHOWW!!!!')
+        
+            setShowOpenAccountPopup(true);
+        
+    }
+
+     /**function executes to close the ad popup */
+     function hideOpenAccountAdPopup(showAdValues) {
+        
+        setShowOpenAccountPopup(false);
+        // callOpenAccountAdPopupAgain();
+    }
+
+    // function callOpenAccountAdPopupAgain() {
+    //     //after 15min
+    //     setTimeout(() => {
+    //         showOpenAccountAdPopup();
+    //     }, 9000)
+    // }
+
+    // useEffect(() => {
+    //     if (!isMobile.current && props.isPopupVisible) {
+    //         setTimeout(() => {
+    //             showOpenAccountAdPopup();
+    //         }, 6000);
+    //     }
+    // }, []);
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -79,6 +121,29 @@ function SubBrokerForm(props) {
             ...prevError,
             'brokerEmail': {}
         }));
+    }
+
+    useEffect(() => {
+        if (props.isFromFableDetails) {
+            window.addEventListener("scroll", onScroll);
+
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
+        }
+    }, [props.isFromFableDetails]);
+// console.log("check",document.documentElement.clientWidth)
+    function onScroll() {
+        let element = document.getElementById('fablesdetail-title');
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            setFablesDetailTitleId(
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
     }
 
     function handleBrokerCityBranch(e) {
@@ -233,6 +298,10 @@ function SubBrokerForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
+
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
@@ -256,7 +325,7 @@ function SubBrokerForm(props) {
         setBrokerCreatedSuccess(true);
         setTimeout(() => {
             setBrokerCreatedSuccess(false);
-        }, 2000)
+        }, 200)
     }
 
     function handleBrokerCreatedSuccessClose() {
@@ -467,12 +536,12 @@ function SubBrokerForm(props) {
             "messgae": '',
             "referredId": refercode.current || null,
             "service_code": "CBAEF",
-            "utm_source": UTMSource.current || null,
-            "utm_medium": UTMMedium.current || null,
-            "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_source":isBlog =="yes" ? UTMSource.current || 'sb_lead_generation':UTMSource.current || null,
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
+            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMMedium.current || null,
+            "utm_term": UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         subBrokerService.sendOTP(request).then((res) => {
             // console.log(res, "sendOTP");
@@ -552,9 +621,9 @@ function SubBrokerForm(props) {
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term": UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
@@ -614,9 +683,18 @@ function SubBrokerForm(props) {
         setOtp('');
         setOTPErrors('');
     }
+    function handleOTPShow() {
+        setShowOTP(true);
+    }
 
     return (
         <>
+         {
+                showOpenAccountPopup ? <SubbrokerpopupForm hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></SubbrokerpopupForm> : ''
+            }
+                 {
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
+            }
             <div className="demat-account-form" id="sub-broker-form">
 
 
@@ -624,6 +702,7 @@ function SubBrokerForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
+                
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -705,10 +784,11 @@ function SubBrokerForm(props) {
                                 type="checkbox"
                                 id="terms_and_conditions"
                             >
+                            
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                {
-                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
-                                }
+                                
+                            <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term2', '')} </Form.Check.Label>
+                                
                             </Form.Check>
                         </div>
 
@@ -722,13 +802,18 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                                {/* {
+                                    <p className="text-danger valid-ss">Validating {value}...</p>
+                                } */}
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
@@ -788,7 +873,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl " backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -807,7 +892,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>
@@ -873,7 +958,7 @@ function SubBrokerForm(props) {
             </Modal>
 
             {
-                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} isBlog={'blog'} />: ''
             }
 
             {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"

@@ -4,6 +4,7 @@ import React, { useEffect, useState, useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 import Fabdetailsbanner from './FabDetailsBanner.jsx';
 import Recommendation from './Recommendation.jsx';
+import SubbrokerStickyFooter from '../Common-features/SubbrokerStickyFooter.jsx';
 import {
   BrowserRouter as Router,
   useParams,
@@ -41,7 +42,7 @@ var formName = useRef('');
           document.title = res.data.posts[0].meta_title? res.data.posts[0].meta_title: '';
           document.getElementById('meta-tags').content = res.data.posts[0].meta_description? res.data.posts[0].meta_description : '' ;
           document.getElementById('canonical-link').href = res.data.posts[0].canonical_url ? res.data.posts[0].canonical_url.replaceAll('/fables','/blog') : '';
-
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
           }else{
           
           }
@@ -84,6 +85,7 @@ setTrigger(true)
   // },[allFabalData])
 
   function checkWhetherToShowForm(details) {
+    setShowForm(false);
     if (details[0].tags) {
       details[0].tags.forEach((item, i) => {
         if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker') {
@@ -104,13 +106,15 @@ setTrigger(true)
             <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
       }
-
+      
      {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''
       } */}
       {/* {
         fablesDetailTitleId ? '' : <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup}></OpenDemateAccountStickyFooter>
       } */}
+
+
     </div>
   );
 }

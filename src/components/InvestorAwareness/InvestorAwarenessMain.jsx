@@ -1,53 +1,54 @@
-import React,{useState,useEffect} from "react";
-import pdf1 from "../../assets/pdf/Investor-awareness/Annexure_I_KYC_updation.pdf";
+import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
 import InvestorAwareService from "../../Services/InvestorAwareService";
-
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+import noDataimg from '../../assets/images/no-data.webp';
 
 function InvestorAwarenessMain() {
-    
+    const [data, setData] = useState();
+    const [trigger, setTrigger] = useState(false);
+    const [isloading, setisloading] = useState(true);
 
-   
-        const [data, setData] = useState();
-        const [trigger, setTrigger] = useState(false);
-    
-        function loadinvestorAware(){
-            InvestorAwareService.InvestorAware().then(
-                res => {
-                    if (res) {
-                        setData(res.data.data);
-    
-    
-                    } else {
-                        setData([]);
-    
-                    }
-    
+    function loadinvestorAware() {
+        InvestorAwareService.InvestorAware().then(
+            res => {
+                if (res) {
+                    setisloading(false)
+                    setData(res.data.data);
+
+
+                } else {
+                    setisloading(false)
+                    setData([]);
+
                 }
-            ).catch((error) => {
-                setData([]);
-            });
-        }
-    
-    
-    
-    
-        useEffect(() => {
-            setTrigger(true)
-    
-            if (trigger === true) {
-                loadinvestorAware()
-    
+
             }
-    
-        }, [trigger])
+        ).catch((error) => {
+            setisloading(false)
+            setData([]);
+        });
+    }
 
-    
 
 
-    
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadinvestorAware()
+
+        }
+
+    }, [trigger])
+
+
+
+
+
     return (
         <div>
             <section className="mainwrapquick">
@@ -105,29 +106,57 @@ function InvestorAwarenessMain() {
                     </p>
                     <p className="pt-5">*Updation of mandatory KYC fields by March 31, 2022 for more details visit Annexure I KYC Updation</p>
 
-                    <div className="row quicklinkswrap mt-5">
-                        <div className="col-md-12">
-                        <div className="subtext">
-                            {
-                                data?.map((res,i)=>{
-                                    return(
+                    {
+                        isloading ?
+                            <div className="text-center">
+                                <div>
+                                    {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                    <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                    </div>
+                            </div>
+                            :
+                            <div>
+                                {
+                                    data && data.length === 0 ?
+                                        <div className="text-center">
+                                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                        </div> :
+                                        <div className="row quicklinkswrap mt-5">
+                                            <div className="col-md-12">
 
-                                        <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                        <div ><strong>{res.KYC_Updation}</strong></div>
-                                        <div className="download cursor-pointer"> 
-                                        <a onClick={()=>{window.open("https://cmsapi.choiceindia.com/assets/" + res.files)}} target="_blank" className="text-decoration-none"> <FontAwesomeIcon icon={faDownload} className="downloadimg"/> Download</a>
+                                                <div className="subtext">
+                                                    {
+                                                        data?.map((res, i) => {
+                                                            return (
+
+                                                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
+                                                                    <div ><strong>{res.KYC_Updation}</strong></div>
+                                                                    <div className="download cursor-pointer">
+                                                                        {
+                                                                            res.files ?
+                                                                                <a onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.files) }} target="_blank" className="text-decoration-none cursor-pointer"> <FontAwesomeIcon icon={faDownload} className="downloadimg" /> Download</a> :
+                                                                                ''
+
+                                                                        }
+
+                                                                    </div>
+                                                                </div>
+                                                            )
+
+
+                                                        })
+
+                                                    }
+
+                                                </div>
+
+
+
+                                            </div>
                                         </div>
-                                        </div>
-                                    )
-
-                                  
-                                })
-
-                            }
-                        
-                                   </div>
-                        </div>
-                        </div>
+                                }
+                            </div>
+                    }
 
 
                 </div>

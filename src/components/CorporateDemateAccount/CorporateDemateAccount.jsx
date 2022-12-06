@@ -23,13 +23,23 @@ function CorporateDemateAccount() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+        //   let parser = new DOMParser();
+        //   let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+        //   document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+          if(!(document.getElementById('link1')==null)){
+            document.getElementById('link1').remove();
+          document.getElementById('link2').remove();
+          document.getElementById('link3').remove();
+          document.getElementById('link4').remove();
+          document.getElementById('link5').remove();
+          document.getElementById('link6').remove();
+          
+          }
         }
       }, [rendercount])
       
@@ -63,7 +73,7 @@ function CorporateDemateAccount() {
                                         <strong>Below are the easy steps for Corporate Demat Account opening:</strong><br /><br />
                                         <ul>
                                             <li>To open a Corporate Account with us, you can register online on our website.</li>
-                                            <li>You can also download our Jiffy App (Android &amp; iOS) and Sign Up via your smartphone.</li>
+                                            <li>You can also download our Choice FinX App (Android &amp; iOS) and Sign Up via your smartphone.</li>
                                             <li>It is advisable to download the app since signing up will need the upload of photos, which can be easily clicked via the camera of your phone.</li>
                                             <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li>
                                             <li>Once you upload all the necessary documents they are up for verification.</li>

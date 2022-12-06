@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from "react";
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
 import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
@@ -8,20 +8,83 @@ import Image5 from '../../assets/images/open-demat-account/demat-account-without
 import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { useSearchParams } from "react-router-dom";
 
 const OpenFreeAccountBanner = () => {
+    const [searchParams, setSearchParams] = useSearchParams();
+    var refercodecheck = useRef('');
+    var scrollCheck = useRef('');
+
+    const[toggle,settoggle] = useState(false);
+    const[check,setcheck] = useState(false);
+    const [view,setView]=useState({
+		matches: window.innerWidth < 770 ? false : true ,
+	  });
+
+
+
+    function chapterScroll(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
+
+      
+    function fetchQueryParams() {
+        refercodecheck.current = searchParams.get('refercode') || '';
+        scrollCheck.current = searchParams.get('scroll') || '';
+        if (refercodecheck.current && (scrollCheck.current =='true') && view && !view.matches) {
+            
+            setTimeout(()=>{
+                chapterScroll("dematform");
+              },1000)
+            
+            
+        }
+
+            
+
+
+    }
+
+      useEffect(() => {
+        settoggle(true)
+        if(toggle==true)
+        {
+            fetchQueryParams();
+            let mediaQuery = window.matchMedia("(min-width: 770px)");
+			mediaQuery.addListener(setView);
+			// this is the cleanup function to remove the listener
+			return () => mediaQuery.removeListener(setView);
+            
+          
+            
+        }
+        
+        
+    }, [toggle]);
+
+    
     return (
         <div>
              <section className="banner-sect" >
                 <div className="container">
-                    <div className="row">
+                    <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
                             <h1 className="banner-title" >
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
                             </h1>
-                            {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
-                            {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
+
+                             
+                         
                             <div className="banner-txt">
                                 <div className="row mbrespflex">
                                     <div className="col-xl-5 col-md-6">
@@ -83,6 +146,10 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <h1 className="banner-title mbtitle" >
+                                <div className="mobile"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
+                                
+                            </h1>
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}

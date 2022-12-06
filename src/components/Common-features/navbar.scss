@@ -3,27 +3,33 @@
 
 /* ---------------- Navbar and burger menu ------------------ */
 
-
-.investor-info-menu {
-    width: 100%;
-    height: 4.6em;
-    background-color: transparent;
-    display: flex;
-    justify-content: flex-end;
-    top: 22px;
-    right: 7%;
-    padding: 1em;
-    box-shadow: none;
-    position: absolute;
-    @media screen and (max-width:767px) {
-        top: 12px;
-        right: 5%;
-        height: 4em;
-    }
-    @media screen and (max-width:$xs) {
-        right: 0;
+.menuwrap{
+    position: relative;
+    .investor-info-menu {
+        width: 100%;
+        height: 4.6em;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+        // right: 7%;
+        right:0;
+        padding: 1em;
+        box-shadow: none;
+        position: absolute;
+        @media screen and (max-width:767px) {
+            top: 12px;
+            right: 5%;
+            height: 4em;
+        }
+        @media screen and (max-width:$sm) {
+            right: 0;
+            padding: 0 1.5rem;
+            height: 2em;
+        }
     }
 }
+
 
 .burger-menu {
     height: 82%;
@@ -62,7 +68,8 @@
 
 
 .menu {
-    width: 75%;
+    width: 100%;
+    // width: 100%;
     height: auto;
     margin: 0 auto;
     background-color: #221F20;
@@ -71,12 +78,14 @@
     left: 0;
     right: 0;
     z-index: 1;
-    padding: 1rem;
-    border-top: 7px solid #FFCE02;
+    // padding: 1rem;
+    border-bottom: 8px solid #FFCE02;
+    border-radius: 1.923rem;
     @media screen and (max-width:767px) {
         width: 90%;
+        top: 6.2rem;
     }
-    @media screen and (max-width:768px) {
+    @media (min-width:767px) and (max-width:768px) {
         width: 100%;
     }
 
@@ -87,18 +96,25 @@
 }
 .investor-menu-wrap{
 
-    padding:4rem 5rem 2rem 5rem;
+    padding: 5rem 3rem 0rem 3rem;
+    justify-content: space-between;
+
     @media screen and (max-width:767px) {
-        padding:4rem 0rem 2rem 0rem;
+        padding:2rem 0rem 0rem 0rem;
+        flex-wrap: wrap;
     }
     @media (min-width:767px) and (max-width:768px) {
         padding:4rem 2rem 2rem 2rem;
+        flex-wrap: wrap;
     }
 }
 
 .investor-info-menu-list{
-    width: 50%;
-    padding-left: 1rem;
+    // width: 50%;
+    // padding-left: 1rem;
+    @media screen and (max-width:767px) {
+        width: 100%;
+    }
 }
 
 /* ------------- sliding menu ------------------ */
@@ -140,30 +156,81 @@
 
 .investor-info-menu-list{
     .menu-itm{
-        margin-bottom: 2rem;
+        margin-bottom: 4.5rem;
+        @media screen and (max-width:767px) {
+            font-size: 1.4rem !important;
+            }
         .menu-itm-link{
            font-family: $font-family-poppins-semibold;
-           color: $whiteColor;
+           color: #CACACA;
            border: 0;
            outline: none;
            text-decoration: none;
-           font-size: 2rem;
-           @media screen and (max-width:767px) {
+           font-size: 1.5rem;
+            line-height: 3.231rem;
+            .imgfill{
+                width: 35px;
+                path{
+                    fill: #CACACA;
+                }
+   
+                @media screen and (max-width:$xl) {
+                    width: 35px;
+                    }
+
+                @media screen and (max-width:$lg) {
+                    width: 35px;
+                    }
+                    
+                @media screen and (max-width:$md) {
+                    width: 38px;
+                    }
+                @media screen and (max-width:767px) {
+                    width: 30px;
+                    }
+                    
+           }
+           .nonfill{
+                path{
+                    fill: none;
+                }
+           }
+           @media screen and (max-width:$lg){
+            font-size: 1.7rem;
+        }
+           @media (min-width: 768px) and (max-width: 920px) {
             font-size: 1.5rem;
+        }
+           @media screen and (max-width:767px) {
+            font-size: 1.4rem;
             }
-            @media (min-width: 768px) and (max-width: 920px) {
-                font-size: 2rem;
-            }
+           
            &:hover{
             color: $yellowColor;
+            .imgfill{
+               
+                path{
+                    fill: $yellowColor;
+                }
            }
+           .nonfill{
+            path{
+                stroke: $yellowColor;
+                fill: none;
+            }
+       }
+           }
+           .menu_item_text{
+            padding-left: 1.5rem;
+            @media screen and (max-width:767px) {
+                padding-left: 1rem;
+                }
+           }
+           
         }
 
-
     }
-}
-
-.word-wrap{
+    
     word-break: break-word;
 }
 
@@ -173,10 +240,11 @@
 
 .menu-itm-link-header{
           width: 100%;
-    text-transform: uppercase;
-    text-decoration: underline;
-    font-family: $font-family-poppins-semibold;
-    color: $whiteColor;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-family: $font-family-poppins-semibold;
+        color: $primary;
+        font-size: 3.077rem;
     &:hover{
      color: $yellowColor;
     }
@@ -186,3 +254,51 @@
  .check-menu{
     display: none;
  }
+
+
+ .investor-menu-wrap{
+   ul{
+    padding-left: 0 !important;
+   }
+   
+    // @media (min-width:767px) and (max-width:768px) {
+    //     padding: 4rem 2rem 2rem 2rem;
+    //     overflow: scroll;
+    //     height: 500px;
+    // }
+    @media screen and (max-width:767px) {
+        
+        overflow: scroll;
+        // height: 380px;
+        height: 439px;
+        
+    }
+   
+}
+.investor-info-menu-list{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    
+    .menu-itm{
+        margin-bottom: 2.5rem;
+        width: 33%;
+        @media screen and (max-width:$lg) {
+            margin-bottom: 3.5rem;
+            width: 50%;
+        }
+        @media screen and (max-width:$md) {
+            margin-bottom: 1.6rem;
+            width: 50%;
+            
+        }
+        @media screen and (max-width:767px) {
+            margin-bottom: 1.3rem;
+            width: 100%;
+            margin-left: 1.5rem;
+        }
+        
+
+    }
+}
+

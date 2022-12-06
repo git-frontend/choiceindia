@@ -1,9 +1,10 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
+@import '../../components/Corporate-Governance/corporate-governance.scss';
 
 
 .research-banner{
-    padding:5rem 0 15rem 0;
+    padding:2rem 0 15rem 0;
     overflow: inherit;
     .title{
         color: $primary;
@@ -224,8 +225,9 @@
                         align-items: flex-end;
                         position: absolute;
                         bottom: 0.5rem;
-                        left: 2rem;
+                        left: 0;
                         width: 100%;
+                        padding-left: 2rem;
                         .date-post{
                             font-size: 1.25rem;
                             color: $primary;
@@ -290,6 +292,7 @@
                           left: inherit;
                           top: inherit;
                           bottom: inherit;
+                          padding-left: 0;
                         }
                     }
                     @media (max-width: $xs) {
@@ -1660,6 +1663,17 @@
 .red-txt{
   color: $redtext !important;
 }
+.disclaimernew{
+  background-color:#DFF1FF ;
+  color: $blueColortext;
+  @extend .cgmainwrap;
+    border: none;
+   
+  }
+  .filedownloadfaq{
+    padding-bottom: 5rem;
+  }
+  
 
 
 

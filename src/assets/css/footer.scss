@@ -1,3 +1,4 @@
+
 @import 'common.scss';
 
 .main-footer{
@@ -15,15 +16,19 @@
                display: flex;
                flex-wrap: wrap;
                .reset{
-                   width: 33.33%;
+                   width: 42%;
                    padding: 0;
                    margin: 0;
                    list-style: none;
                    >li{
                        margin-bottom: 1rem;
+                       @media (max-width: $sm-x){
+                        margin-bottom: 0.8rem;
+                       }
                        h4{
                         color: $lightColor;
                         font-size: 1.4rem;
+                        margin-bottom: 2rem;
                         font-family: $font-family-poppins-bold;
                        }
                        a{
@@ -34,16 +39,29 @@
                            &:hover{
                                color: $bgcolor-yellow;
                            }
+                           @media (max-width: $sm-x){
+                            font-size: 1.1rem;
+                           }
                        }
                    }
                    @media (max-width: $sm-x){
                     padding: 1rem;
                     }
+                &.quicklink2{
+                    width: 28%;
+                    @media (max-width: $sm-x){
+                        width: 33.33%;
+                    }
+                }
+                @media (max-width: $sm-x){
+                    width: 33.33%;
+                }
                }
            }
         }
         .footer-cont-details{
             text-align: right;
+            
             p{
                 color: $lightColor;
                 font-size: 1.2rem;
@@ -57,7 +75,7 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: $lightColor;
-                    @media (max-width: $sm-x){
+                    @media (max-width: $md){
                         right: inherit;
                         left: 0;
                     }
@@ -69,7 +87,7 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: $lightColor;
-                    @media (max-width: $sm-x){
+                    @media (max-width: $md){
                         right: inherit;
                         left: 0;
                     }
@@ -81,11 +99,11 @@
                         color: $bgcolor-yellow;
                     }
                 }
-                @media (max-width: $sm-x){
+                @media (max-width: $md){
                     padding-left: 2.5rem;
                 }
             }
-            @media (max-width: $sm-x){
+            @media (max-width: $md){
                 text-align: left;
                 margin-top: 2rem;
             }
@@ -108,7 +126,7 @@
                         width: 100%;
                         flex-wrap: wrap;
                     }
-                    @media (min-width:769px) and (max-width:1200px){
+                    @media (min-width:768px) and (max-width:1200px){
                         flex-direction: column;
                     }
                     a{
@@ -212,6 +230,17 @@
     background: $bgcolor-graydark;
     z-index: 999;
     position: relative;
+    a {
+        &:link {
+            color: $whiteColor;
+            text-decoration: none;
+        }
+        &:hover {
+            color: $yellowColor;
+            text-decoration: none;
+        }
+    }
+    
     p{
         color: $whiteColor;
         font-family: $font-family-poppins-medium;

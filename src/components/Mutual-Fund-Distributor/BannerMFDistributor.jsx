@@ -19,7 +19,7 @@ function BannerMFDistributor() {
                                     </h1>
                                 </div>
                                 <div className="right-sec">
-                                    <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"562"} height={"562"}/>
+                                    <LazyLoader src={SubBannerimage} alt={"Mutual Fund Distributor"} className={"img-fluid"} width={"562"} height={"562"}/>
                                     {/* <img src={SubBannerimage} alt="Sub Broker Franchise" className="img-fluid" /> */}
                                 </div>
                             </div>
@@ -39,7 +39,7 @@ function BannerMFDistributor() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm />
+                                <SubBrokerForm page='mutual-fund-distributor'/>
                             </div>
                         </div>
                     </div>

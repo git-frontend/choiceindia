@@ -5,6 +5,8 @@ import React, { useState, useEffect, useRef } from "react";
 import FablesTrending from "../../Services/fableServices";
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
+import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function FableBlogList() {
 
@@ -12,13 +14,15 @@ function FableBlogList() {
     const [post, setPost] = useState([]);
     const [trigger, setTrigger] = useState(false);
     const [check, setCheck] = useState(false);
-    const [count,setCount] = useState(0)
+    const [count,setCount] = useState(0);
+    const [isloading,setisloading ] = useState(true);
     const demo_ref = useRef(null)
     // const demo_ref2 = useRef(null);
 
     function loadfablecategory() {
         FablesTrending.fabalcategory().then(
             res => {
+                setisloading(false);
                 setData(res.data.data);
                // console.log("check", res.data.data)
                 // loadfaqFolder(res[0].category_linkage);
@@ -29,6 +33,7 @@ function FableBlogList() {
     function getfableFolder(pros) {
         FablesTrending.fabalFolder(pros).then(
             res => {
+                setisloading(false);
                 setPost(res.data.posts);
                 setCheck(false)
                 // setPostAll(res.data.posts)
@@ -64,7 +69,7 @@ function FableBlogList() {
         setTrigger(true)
         if (trigger === true) {
             loadfablecategory();
-            getfableFolder('stock-market');
+            getfableFolder('national');
            
 
         }
@@ -77,27 +82,38 @@ function FableBlogList() {
 
             <section className="fable-blog-List">
                 <div className="container">
-                    <div className="fable-list-menu">
-                        <ul >
-                            {
-                                data.map((res,i) => {
-
-                                    let classNameNm = "link-txt" + ((i === count) ? ' link-active' : "")
-                                    //("precheck",count)
-                                    return (
-                                        
-                                        <li onClick={()=>{getfableFolder(res.fable_linkage)
-                                        setCount(i)
-                                        }} key={res.id}>
-                                            <div style={{'cursor':'pointer'}} className={classNameNm}>{res.fable_category}</div>
-                                        </li>
-                                        
-
-                                    )
-                                })
-                            }
-                        </ul>
-                    </div>
+                    {
+                        isloading?
+                        <div className="text-center">
+                                    <div>
+                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                         </div>
+                                </div>:
+                                <div className="fable-list-menu">
+                        
+                                <ul >
+                                    {
+                                        data.map((res,i) => {
+        
+                                            let classNameNm = "link-txt" + ((i === count) ? ' link-active' : "")
+                                            //("precheck",count)
+                                            return (
+                                                
+                                                <li onClick={()=>{getfableFolder(res.fable_linkage)
+                                                setCount(i)
+                                                }} key={res.id}>
+                                                    <div style={{'cursor':'pointer'}} className={classNameNm}>{res.fable_category}</div>
+                                                </li>
+                                                
+        
+                                            )
+                                        })
+                                    }
+                                </ul>
+                            </div>
+                    }
+                    
                 </div>
 
                 {/** <li>
@@ -135,14 +151,16 @@ function FableBlogList() {
                     </li> */}
 
 
-
-
-                <div className="container">
+{
+    isloading?
+    <div></div>:
+    <div className="container">
                     <div className="row">
                         <div className="col-md-12">
 
                         {
-
+                           
+                            post.length?
                             <div className="tab-blog-list">
                             {
                                 (post||[]).slice(0, check?post.length:3).map((res,index)=>{
@@ -168,8 +186,10 @@ function FableBlogList() {
                                 })
                             }
                               
-                            </div>
-
+                            </div>:
+                            <div className="text-center">
+                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250}/>
+                        </div>
 
 
                         }
@@ -183,6 +203,10 @@ function FableBlogList() {
                       :""
                     }
                 </div>
+
+}
+
+                
 
             </section>
 

@@ -46,6 +46,9 @@ function SubBrokerForm(props) {
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
     var UTMSource = useRef('');
+    var UTMTerm = useRef('');
+    var UTMCustom = useRef('');
+    var UTMContent = useRef('');
     var refercode = useRef('');
 
     const [isCheck, setisCheck] = useState(false);
@@ -145,7 +148,7 @@ function SubBrokerForm(props) {
         } else {
             isBrokerStateValid = true;
         }
-        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid && isBrokerCityBranchValid && isBrokerStateValid) {
+        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid) {
             sendOTP(false);
         }
     }
@@ -233,6 +236,9 @@ function SubBrokerForm(props) {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
         UTMSource.current = searchParams.get('utm_source') || '';
+        UTMTerm.current = searchParams.get('utm_term') || '';
+        UTMCustom.current = searchParams.get('utm_custom') || '';
+        UTMContent.current = searchParams.get('utm_content') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
     }
 
@@ -402,7 +408,7 @@ function SubBrokerForm(props) {
         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
         let request = {
-            "serviceCode": "CBAEF",
+            "serviceCode": "CBAMF",
             "firstName": brokerName,
             "mobileNum": brokerMobileNumber,
             "emailID": brokerEmail
@@ -462,17 +468,17 @@ function SubBrokerForm(props) {
             "name": brokerName,
             "mobile_number": brokerMobileNumber,
             "email": brokerEmail,
-            "city": brokerCityBranch,
+            "city": '',
             "source": "CHOICEINDIA",
             "messgae": '',
             "referredId": refercode.current || null,
-            "service_code": "CBAEF",
+            "service_code": "CBAMF",
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         subBrokerService.sendOTP(request).then((res) => {
             // console.log(res, "sendOTP");
@@ -544,17 +550,17 @@ function SubBrokerForm(props) {
             "firstName": brokerName,
             "mobileNo1": brokerMobileNumber,
             "emailId1": brokerEmail,
-            "leadCityName": brokerCityBranch,
+            "leadCityName": '',
             "leadSource": "CHOICEINDIA",
-            "leadState": brokerState,
+            "leadState": '',
             "referredId": refercode.current || null,
-            "serviceCode": "CBAEF",
+            "serviceCode": "CBAMF",
             "utm_source": UTMSource.current || null,
             "utm_medium": UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term": null,
-            "utm_custom": null,
-            "utm_content": null
+            "utm_term":UTMTerm.current || null,
+            "utm_custom": UTMCustom.current || null,
+            "utm_content": UTMContent.current || null
         };
         showLoader('addLeadLoader');
         subBrokerService.addNewLead(request).then((res) => {
@@ -600,15 +606,15 @@ function SubBrokerForm(props) {
             setOTPSendSuccessToaster(false);
         }, 2000)
     }
-    const selectInputRef = useRef();
+    // const selectInputRef = useRef();
     function resetBrokerForm() {
         setBrokerName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
-        selectInputRef.current.clearAll();
-        setBrokerCityBranch("");
-        setBrokerState('');
-        setShowState(false);
+        // selectInputRef.current.clearAll();
+        // setBrokerCityBranch("");
+        // setBrokerState('');
+        // setShowState(false);
         setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
         setLoaders({});
         setOtp('');
@@ -624,7 +630,8 @@ function SubBrokerForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
+                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Mutual Fund Distributor')}</h3>
+                {/* <h3 className="form-ttl">Become a Mutual Fund Distributor</h3> */}
                 <Form>
                     <Form.Group className="mb-3 formgrp">
 
@@ -664,7 +671,7 @@ function SubBrokerForm(props) {
                                 errors.brokerEmail.unique ? <Form.Control.Feedback type="invalid">{errors.brokerEmail.uniqueError}</Form.Control.Feedback> : ''
                             }
                         </div>
-                        <div className="sub-formgrp">
+                        {/* <div className="sub-formgrp"> */}
                             {/* <Form.Control type="text" name="brokerCityBranch" placeholder="Search Nearest City Branch" className="formcontrol formpadding" /> */}
                             {/* <Form.Select placeholder="Search Nearest City Branch" className="formcontrol formpadding" isInvalid={errors.brokerCityBranch.required} value={brokerCityBranch} onChange={handleBrokerCityBranch}>
                                 <option value="">Select Nearest City Branch</option>
@@ -674,13 +681,13 @@ function SubBrokerForm(props) {
                                     })
                                 }
                             </Form.Select> */}
-                            <Select ref={selectInputRef}
+                            {/* <Select ref={selectInputRef}
                                 placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
 
-                        </div>
+                        </div> */}
                         {
                             showState ?
                                 <div className="sub-formgrp">
@@ -706,9 +713,7 @@ function SubBrokerForm(props) {
                                 id="terms_and_conditions"
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                {
-                                    props.language === 'hindi' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a className="link-tc" onClick={handleTermsConditionShow}>नियम और शर्तों</a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : <Form.Check.Label>I agree that I have read &amp; accept the <a className="link-tc" onClick={handleTermsConditionShow}>Terms &amp; Conditions</a></Form.Check.Label>
-                                }
+                                <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', '')} </Form.Check.Label>
                             </Form.Check>
                         </div>
 
@@ -722,13 +727,14 @@ function SubBrokerForm(props) {
                                 type="button" className="btn-bg btn-bg-dark sendbtn" onClick={resetBrokerForm}>
                                 Clear
                             </Button> */}
+                            <div className="">
+                                {
+                                    isCheck ? <p className="text-danger valid-ss">Validating {value}...</p> : ''
+                                }
+                            </div>
                         </div>
 
-                        <div className="">
-                            {
-                                isCheck ? <p className="text-danger">Validating {value}...</p> : ''
-                            }
-                        </div>
+                        
                     </Form.Group>
                 </Form>
 
@@ -788,7 +794,7 @@ function SubBrokerForm(props) {
                     //     </div>
                     // </div> 
 
-                    <Modal show={show} className="bt-strap-mdl" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
+                    <Modal show={show} className="bt-strap-mdl otp-main-modal" backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
                         </Modal.Header>
                         <Modal.Body className="border-0">
@@ -807,7 +813,7 @@ function SubBrokerForm(props) {
                                                 <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
                                                 {
                                                     count ?
-                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
+                                                        <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Resend OTP in:')}<span> {count} seconds</span></p> : ''
                                                 }
 
                                             </div>

@@ -18,7 +18,7 @@ function AuthorizeBanner() {
                                     Authorised Person</h1>
                                 </div>
                                 <div className="right-sec">
-                                    <img src={SubBannerimage} alt="Sub Broker Franchise Without Deposit" className="img-fluid"  />
+                                    <img src={SubBannerimage} alt="Become an Authorised Person" className="img-fluid"  />
                                 </div>
                             </div>
                             <div className="caption-blue-bar">
@@ -27,7 +27,7 @@ function AuthorizeBanner() {
                                         <span>Highest</span> Revenue Sharing
                                     </li>
                                     <li>
-                                    <span>Upto ₹ 1100 Per</span> Account Incentive*
+                                    <span>Upto ₹ 2100 Per</span> Account Incentive*
                                     </li>
                                     <li>
                                         <span>Lifetime</span> Income Source

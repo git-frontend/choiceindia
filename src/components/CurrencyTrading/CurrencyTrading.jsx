@@ -1,4 +1,4 @@
-import "./CurrencyTrading.scss";
+// import "./CurrencyTrading.scss";
 import "../OpenDematAccount/DematPage";
 import CurrencyTradingBanner from "./CurrencyTradingBanner";
 import WhyOpenCurrencyTrading from "./WhyOpenCurrencyTrading";
@@ -24,6 +24,16 @@ function CurrencyTrading() {
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+      if(!(document.getElementById('link1')==null)){
+        document.getElementById('link1').remove();
+      document.getElementById('link2').remove();
+      document.getElementById('link3').remove();
+      document.getElementById('link4').remove();
+      document.getElementById('link5').remove();
+      document.getElementById('link6').remove();
+      
+      }
     }
   }, [rendercount])
 

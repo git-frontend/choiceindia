@@ -44,9 +44,9 @@ const Research = {
         
     },
 
-    getSingleResearchDetail: function(id){
+    getSingleResearchDetail: function(id,report_category){
         let api = new API_URLS()
-        let url = api.getresearchDetailURL(id)
+        let url = api.getresearchDetailURL(id,report_category)
         return axios.get(url,this.headerConfig).then(({ data }) => {
             return data
         })

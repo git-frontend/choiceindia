@@ -14,7 +14,7 @@ const WhyChoice = () => {
                         <div className='col-md-12'>
                             <div className="wrap">
                                 <div className="leftsect">
-                                    <h2 className="secttile">Why Choice</h2>
+                                    <h2 className="secttile">Why Choice?</h2>
                                     <div className="img">
                                         <img src={Image16} alt={"Choice Free Demat Account Opening"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
@@ -64,7 +64,7 @@ const WhyChoice = () => {
                                 </div>
                                 <div className="col-xl-8 col-md-6">
                                     <div className="iconwrap">
-                                        <a href="https://jiffy.choiceindia.com/" target="_blank">
+                                        <a href="https://finx.choiceindia.com/" target="_blank">
                                             <div className="icon">
                                                 <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
                                                 <p>Web</p>

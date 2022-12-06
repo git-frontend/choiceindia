@@ -103,14 +103,6 @@ function Journey() {
                           </div>
                           <div className="subtext"><p>Listing on NSE</p></div>
                       </div>
-                      <div className="Journey-item">
-                          <div className="year">
-                              <div className="number">
-                                2023
-                              </div>
-                          </div>
-                          <div className="subtext"><p>Launched Personal Finance App - ChoiceFInX</p></div>
-                      </div>
                     </Slider>
                   </div>
                 </div>

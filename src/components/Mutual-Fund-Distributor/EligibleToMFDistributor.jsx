@@ -4,6 +4,7 @@ import ImageSub14 from '../../assets/images/mutual-fund-distributor/sell-multipl
 import ImageSub15 from '../../assets/images/mutual-fund-distributor/become-a-mutual-fund-agent.svg';
 import ImageSub16 from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor-eligibility.webp';
 import Slider from "react-slick";
+import { Link } from "react-router-dom";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from '../Common-features/LazyLoader';
@@ -11,16 +12,16 @@ import LazyLoader from '../Common-features/LazyLoader';
 
 function EligibleToMFDistributor() {
 
-    // function scrollToId(id) {
-    //     var element = document.getElementById(id);
-    //     var headerOffset = 140;
-    //     var elementPosition = element.getBoundingClientRect().top;
-    //     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    //     window.scrollTo({
-    //         top: offsetPosition,
-    //         behavior: "smooth"
-    //     });
-    // }
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
+    }
 
     const settings = {
         infinite: true,
@@ -60,6 +61,7 @@ function EligibleToMFDistributor() {
                             <div className="eligb-left-sec">
                                 <h2 className="titl3">Who is eligible to become a Mutual Fund Agent?</h2>
                                 <p className="sml-para-dv">Anyone who wants to explore a career in the mutual fund industry can enrol as a mutual fund distributor.</p>
+                                <div className="btn-bg btn-bg-dark hide-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
                             </div>
                         </div>
                         <div className="col-md-6">
@@ -85,6 +87,9 @@ function EligibleToMFDistributor() {
                                     <LazyLoader src={ImageSub16} alt={"Mutual Fund Distributor Eligibility "} className={"img-fluid"} width={"384"} height={"384"} />
                                     {/* <img src={ImageSub16} alt="Mutual Fund Distributor Eligibility " className="img-fluid" width="384" height="384" /> */}
                                 </div>
+                                <div className='d-flex justify-content-center'>
+                                <div  className="btn-bg btn-bg-dark show-mob cursor-pointer" onClick={()=>scrollToId('sub-broker-form')}><span>Start Now</span> </div>
+                            </div>
                             </div>
                         </div>
                     </div>

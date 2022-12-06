@@ -1,0 +1,781 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+body{
+    background-color:  $whiteColor;
+}
+
+.mainwrapper{
+    overflow: hidden;
+    animation: hideMe 4s forwards;
+    width: 100%;
+}
+
+
+.mfi-bannersection{
+    padding: 10rem 0 14rem 0;
+    position: relative;
+    background: url(../../assets/images/mutual-funds-investment/invest-in-mutual-funds-online.webp) no-repeat bottom left;
+    background-size: cover;
+    .lft-sec{
+        
+        .big-ttl{
+            color: $primary;
+            margin-bottom: 5rem;
+            font-family: $font-family-poppins-semibold;
+            text-transform: capitalize;
+            span{
+                font-family: $font-family-poppins-bold;
+            }
+            @media (max-width: $md) {
+                margin-bottom: 2.5rem;
+            }
+        }
+        .para{
+            color: $secondary;
+            font-size: 1.75rem;
+            line-height: 2.45rem;
+            &.p-yl{
+                font-family: $font-family-poppins-semibold;
+                color: $yellowColor;
+                margin-top: 5rem;
+                @media (max-width: $sm-x) {
+                    margin-top: 2.5rem;
+                }
+            }
+            @media (max-width: $sm-x) {
+                br{
+                    display: none;
+                }
+            }
+        }
+        @media (max-width: $sm-x) {
+            padding-bottom: 3rem;
+        }
+        
+    }
+    @media (max-width: $sm-x) {
+        text-align: center;
+        padding: 5rem 0 5rem 0;
+        background: #cedae4;
+    }
+    .home-banner-ved{
+        position: relative;
+        overflow: hidden;
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            background: transparent;
+        }
+        .banner-ved{
+            position: relative;
+            right: -1px;
+        }
+    }
+}
+
+.why-invst-mf{
+    padding: 10rem 0 7rem 0;
+    @media (max-width: $sm-x) {
+        padding: 5rem 0;
+    }
+    .title-first{
+        text-transform: capitalize;
+        padding-top: 1rem;
+        line-height: 1.5;
+        @media (max-width: $sm-x) {
+            text-align: center;
+        }
+    }
+    .mf-list-slider{
+        .slick-slide{
+            padding:1rem 1.5rem;
+            .mf-list-itm{
+                text-align: center;
+                padding: 3rem 2rem;
+                background: $whiteColor;
+                @extend .box-shadow;
+                border-radius: 1rem;
+                .mf-sm-img{
+                    display: inline-block;
+                    margin-bottom: 3rem;
+                }
+                h3{
+                    line-height: 2.3rem;
+                }
+            }
+        }
+    }
+}
+
+.explore-best-mf{
+    padding: 7rem 0 9rem 0;
+    background: $abt-bg;
+    position: relative;
+    &::before {
+        content: '';
+        width: 24rem;
+        height: 38rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: url(../../assets/images/mutual-funds-investment/bg-exp.webp) no-repeat top left;
+        background-size: contain;
+        z-index: 1;
+
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .best-mf-cont{
+        padding-top: 4rem;
+        .title-first{
+            text-transform: capitalize;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        @media (max-width: $sm-x) {
+            padding-top: 0;
+        }
+    }
+    .best-mf-list{
+        display: flex;
+        padding-left: 3rem;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .mf-lis-itm{
+            width: 28%;
+            padding: 3rem 2rem;
+            border-radius: 16px; 
+            background: transparent;
+            border: 1px solid transparent;
+            text-align: center;
+            transition: 0.2s ease;
+            .sm-img-itm{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 1.5rem;
+                overflow: hidden;
+                min-height: 85px;
+            }
+            h4{
+               font-family:  $font-family-poppins-medium;
+               line-height: 2.3rem;
+            }
+            &:hover{
+                background: $whiteColor;
+                border: 1px solid #25B8AF;
+                .sm-img-itm{
+                    .img-fluid{
+                        -webkit-animation: toTopFromBottom 0.5s forwards;
+                        -moz-animation: toTopFromBottom 0.5s forwards;
+                        animation: toTopFromBottom 0.5s forwards;
+                    }
+                }
+            }
+            @media (max-width: $sm-x) {
+                width: 49%;
+                padding: 1.5rem;
+            }
+        }
+        @media (max-width: $sm-x) {
+            padding-left: 0;
+        }
+        @media (max-width: $sm-x) {
+            justify-content: center;
+            align-items: inherit;
+        }
+    }
+    @media (max-width: $sm) {
+        text-align: center;
+    }
+}
+
+.get-start{
+    position: relative;
+    margin-bottom: -5rem;
+    @media (max-width: $sm-x) {
+        padding-bottom: 5rem;
+        margin: 0;
+    }
+    .get-start-sub{
+        display: flex;
+        align-items: center;
+        background: $bgcolor-blue-light;
+        border-radius: 16px;
+        padding: 2rem 2rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        text-align: center;
+        h3{
+            font-family: $font-family-poppins-semibold;
+            margin: 1rem;
+            margin-right: 3rem;
+            font-size: 2.2rem;
+            @media (max-width: $sm) {
+                margin:1rem 0;
+                font-size: 1.8rem;
+            }
+        }
+        .btn-bg{
+            margin: 1rem;
+        }
+    }
+    &.get-start-scnd{
+        position: relative;
+        margin-top: -5rem;
+        padding-bottom: 5rem;
+    }
+}
+
+.why-choice-invest{
+    background: $primary;
+    padding: 13rem 0 15rem 0;
+    @media (max-width: $sm-x) {
+        padding: 5rem 0;
+    }
+    .title-first{
+        margin-bottom: 5rem;
+        color: $whiteColor;
+        line-height: 1.5;
+        @media (max-width: $sm-x) {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+    }
+    .why-ipo-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        @media (max-width: $md) {
+            align-items: inherit;
+        }
+        .why-itm{
+            text-align: center;
+            border-bottom: 2px solid;
+            padding: 1rem 1rem;
+            border-color: #1ED0CB;
+            .sm-img-itm{
+                display:flex;
+                min-height: 85px;
+                align-items: flex-end;
+                justify-content: center;
+                margin-bottom: 2rem;
+                
+                
+            }
+            h4{
+                color: $whiteColor;
+                font-size: 1.8rem;
+                line-height: 2.8rem;
+                font-family: $font-family-poppins-semibold;
+                @media (max-width: $sm) {
+                    font-size: 1.4rem;
+                    line-height: 2.2rem;
+                }
+            }
+            @media (max-width: $md) {
+                width: 45%;
+                margin-top: inherit !important;
+                margin-bottom: 1.5rem;
+            }
+            @media (max-width: $xs) {
+                width: 48%;
+            }
+            &:nth-child(2n){
+                margin-top: 8rem;
+            }
+            &:nth-child(3n){
+                border-color: $yellowColor;
+            }
+            &:nth-child(4n){
+                border-color: $yellowColor;
+            }
+        }
+    }
+}
+
+.process-ipo{
+    padding: 0 0 15rem 0;
+    @media (max-width: $sm) {
+       padding: 0 0 5rem 0;
+    }
+    position: relative;
+    &::after {
+        content: '';
+        width: 17rem;
+        height: 22rem;
+        display: block;
+        position: absolute;
+        right: 2px;
+        top: 5%;
+        background: url(../../assets/images/insurance/bg1.webp) no-repeat top right;
+        background-size: contain;
+        z-index: -9;
+        @media (max-width: $md) {
+            display: none;
+        }
+    }
+    .title-first{
+        padding-bottom: 14rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            padding-bottom: 3rem;
+            text-align: center;
+        }
+    }
+    .ipo-list-img{
+        position: relative;
+        padding: 0;
+        .process-ipo-list{
+            .ipo-list-itm{
+                position: absolute;
+                width: 200px;
+                &:nth-child(1n){
+                    left: 0;
+                    top: -7.5rem;
+                    h3{
+                        color: #1ED0CB;
+                    }
+                }
+                &:nth-child(2n){
+                    top: inherit;
+                    bottom: -6rem;
+                    left: 26%;
+                    h3{
+                        color: #089E9A;
+                    }
+                }
+                &:nth-child(3n){
+                    left: 50%;
+                    h3{
+                        color: $yellowColor;
+                    }
+                }
+                &:nth-child(4n){
+                    top: inherit;
+                    bottom: -7.5rem;
+                    left: 74%;
+                    h3{
+                        color: #E88832;
+                    }
+                }
+                h3{
+                    font-size: 2.5rem;
+                    font-family: $font-family-poppins-semibold;
+                }
+                h4{
+                    font-family: $font-family-poppins-semibold;
+                    line-height: 2.1rem;
+                }
+                @media (max-width: $sm) {
+                    position: relative;
+                    left: inherit !important;
+                    right: inherit !important;
+                    top: inherit !important;
+                    bottom: inherit !important;
+                    width: 50%;
+                    margin-bottom: 1rem;
+                }
+            }
+            @media (max-width: $sm) {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .mn-img-big{
+            @media (max-width: $sm) {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// faq
+
+.Dematfaq {
+	padding:0 0 9rem 0;
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 4rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+}
+
+
+.explr-all{
+    .explr-sub{
+        display: flex;
+        align-items: center;
+        justify-content:center;
+        flex-wrap: wrap;
+        background: #FFFBEA;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        text-align: center;
+        margin-top: -7rem;
+        z-index: 1;
+        h3{
+            font-size: 2.2rem;
+            margin: 2rem 3rem;
+            text-transform: capitalize;
+            font-family: $font-family-poppins-semibold;
+        }
+    }
+   
+}
+
+.mf-testimonial{
+    padding: 8rem 0;
+    @media (max-width: $sm-x) {
+        padding-bottom: 0;
+    }
+    .title-first{
+        text-transform: capitalize;
+        position: relative;
+        display: inline-block;
+        line-height: 1.5;
+        &::before{
+            content: '';
+            width: 10rem;
+            height: 10rem;
+            background: url(../../assets/images/mutual-funds-investment/quote.svg) no-repeat;
+            background-size: contain;
+            display: block;
+            position: absolute;
+            left: -15rem;
+            top: -2rem;
+            @media (max-width: $sm-x) {
+                width: 6rem;
+                height: 5rem;
+                left: -7rem;
+                top: -2rem;
+            }
+            @media (max-width: $xs) {
+                left: -20px;
+            }
+        }
+        span{
+            position: relative;
+            z-index: 1;
+        }
+        br{
+            display: block;
+        }
+    }
+}
+
+.mf-testimonial{
+    .mf-testimonial-slider{
+        .testi-slider{
+            margin-top: 5rem;
+            padding-bottom: 8rem;
+            .sl-item{
+                text-align: center;
+                display: block !important;
+                max-width: 500px;
+                margin: 0 auto;
+                .img-testi{
+                    display: inline-block;
+                    margin-bottom: 1.5rem;
+                }
+                .name-font{
+                    display: inline-block;
+                    width: 5rem;
+                    height: 5rem;
+                    text-align: center;
+                    line-height: 4.6rem;
+                    // border-radius: 50%;
+                    background: $yellowColor;
+                    font-size: 2.6rem;
+                    font-family: $font-family-RedHat-Bold;
+                    margin-bottom: 2rem;
+                    // background: #ffffff;
+                    // border: 0.3rem solid #25B8AF;
+                    background: url(../../assets/images/mutual-funds-investment/quote-icon.svg) no-repeat $whiteColor; 
+                    background-size: 100% 100%;
+                }
+                h3{
+                    margin-bottom: 1.5rem;
+                    font-size: 1.8rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                }
+                .img-star{
+                    display: inline-block;
+                    margin-bottom: 3rem;
+                }
+                p{
+                    position: relative;
+                    &::before{
+                        content: '';
+                        background: url('../../assets/images/online-trading-app/quote1.svg') no-repeat;
+                        display: block;
+                        background-size: contain;
+                        position: absolute;
+                        height: 50px;
+                        width: 66px;
+                        left: -50px;
+                        top: -27px;
+                        @media (max-width:$md) {
+                            width: 50px;
+                            height: 30px;
+                            left: -20px;
+                        }
+                        @media (max-width: $sm-x) {
+                            left: 0;
+                        }
+                    }
+                    &::after{
+                        content: '';
+                        background: url('../../assets/images/online-trading-app/quote2.svg') no-repeat;
+                        display: block;
+                        background-size: contain;
+                        position: absolute;
+                        height: 50px;
+                        width: 66px;
+                        right: -50px;
+                        bottom: -27px;
+                        @media (max-width:$md) {
+                            width: 50px;
+                            height: 30px;
+                            right: -20px;
+                        }
+                        @media (max-width: $sm-x) {
+                            right: 0;
+                        }
+                    }
+            }
+            }
+            .slick-prev{
+                background: url(../../assets/images/online-trading-app/left-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                z-index: 9;
+                left: -13%;
+                top: 33%;
+                &::before{
+                    display: none;
+                }
+                @media (max-width:$md) {
+                    left: 0;
+                }
+            }
+            .slick-next{
+                background: url(../../assets/images/online-trading-app/right-arrow.svg) no-repeat;
+                background-size: contain;
+                width: 85px;
+                height: 50px;
+                right: -13%;
+                top: 33%;
+                &::before{
+                    display: none;
+                }
+                @media (max-width:$md) {
+                    right: 0;
+                }
+            }
+        }
+    }
+}
+
+.mf-partner{
+    padding: 5rem 0;
+    @media (max-width: $sm-x) {
+        text-align: center;
+    }
+    .title-first{
+        text-transform: capitalize;
+        margin-bottom: 5rem;
+        line-height: 1.5;
+    }
+}
+
+.investmentcontent {
+    padding: 7rem 0 18rem 0;
+    background: $abt-bg;
+    .title-secnd{
+        font-size: 2.688rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            font-size: 2rem;
+            br{
+                display: none;
+            }
+        }
+    }
+    .terms-cont {
+        margin-top: 5.5rem;
+        height: 340px;
+        overflow-y: scroll;
+        padding-left: 3rem;
+        padding-right:8rem;
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        h3{
+            font-size: 2.688rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 1rem;
+            @media (max-width: $sm) {
+                font-size: 2rem;
+                padding-left: 2rem;
+            }
+        }
+        h4{
+            font-size: 2.2rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 1rem;
+            @media (max-width: $sm) {
+                font-size: 1.8rem;
+                padding-left: 2rem;
+            }
+        }
+        li{
+            font-size: 1.625rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+            list-style: none;
+            padding-left: 3rem;
+            padding-right:8rem;
+            position: relative;
+            @media (max-width: $sm) {
+                padding-left: 2rem;
+                padding-right:0rem;
+                margin-bottom: 1rem;
+            }
+            .lipara{
+                margin-bottom: 0;
+                font-size: 1.625rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                position: relative;
+                @media (max-width: $sm) {
+                    padding-left: 0rem;
+                    padding-right: 1rem;
+                    font-size: 1.4rem;
+                    margin-bottom: 0;
+                }
+            }
+            &::before {
+                content: "";
+                width: 0.8rem;
+                height: 0.8rem;
+                background-color:  $primary;
+                display: block;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 1.2rem;
+                @media (max-width: $sm) {
+                    top: 0.7rem;
+                }
+            }
+            &::marker {
+                display:none;
+              }
+        }
+       
+            .para {
+                font-size: 1.625rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                
+                position: relative;
+
+                
+                @media (max-width: $sm) {
+                    padding-left: 2rem;
+                    padding-right: 1rem;
+                    font-size: 1.4rem;
+                }
+            }
+        
+        @media (max-width: $sm) {
+            height: 430px;
+        }
+    }
+}
+
+#style-1 {
+    &::-webkit-scrollbar-track {
+        
+        border-radius: 10px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:$yellowColor ;
+    }
+}

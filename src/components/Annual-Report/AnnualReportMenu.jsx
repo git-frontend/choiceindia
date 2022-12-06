@@ -1,32 +1,54 @@
 import React, { useState, useEffect } from "react";
-import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
+// import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
 import AnnualReportService from "../../Services/AnnualReportService";
 import Navbar from "../Common-features/Navbar";
-
+import { Accordion } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-
+import noDataimg from '../../assets/images/no-data.webp';
 import "../CodeConduct/code-conduct.scss";
 import "../Common-features/navbar.scss";
 import "../Corporate-Governance/corporate-governance.scss";
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
+// import download1 from '../../assets/images/file-download/export.webp';
+import viewicon from '../../assets/images/bi_eye-fill.svg';
 function AnnualReportMenu() {
     const [data, setData] = useState();
     const [list, setList] = useState();
+    const [isloading, setisloading] = useState(true);
     const [trigger, setTrigger] = useState(false);
+
+
 
     function loadAnnualReportpdf() {
         AnnualReportService.AnnualReport().then(
             res => {
                 if (res) {
-                    setData(res.data.data);
+                    setisloading(false)
+                    // setData(res.data.data);
+                    let yearFormat = {}
+                    res.data.data.forEach(ele => {
+
+                        if (!yearFormat[ele.financial_year]) {
+                            yearFormat[ele.financial_year] = [];
+                            yearFormat[ele.financial_year].push(ele)
+                        } else {
+                            yearFormat[ele.financial_year].push(ele)
+
+                        }
+                    })
+                    setData(yearFormat);
+                   
 
                 } else {
+                    setisloading(false)
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setData([]);
         });
     }
@@ -35,15 +57,33 @@ function AnnualReportMenu() {
         AnnualReportService.Annual2Report().then(
             res => {
                 if (res) {
-                    setList(res.data.data);
+                    setisloading(false)
+                    // setList(res.data.data);
+                    let yearFormat = {}
+                    
+                    res.data.data.forEach(ele => {
+
+                        if (!yearFormat[ele.financial_year]) {
+                            yearFormat[ele.financial_year] = [];
+                            yearFormat[ele.financial_year].push(ele)
+
+                        } else {
+                            yearFormat[ele.financial_year].push(ele)
+
+                        }
+                    })
+                    setList(yearFormat);
+                    
 
                 } else {
+                    setisloading(false)
                     setList([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setList([]);
         });
     }
@@ -64,86 +104,121 @@ function AnnualReportMenu() {
 
     return (
         <div>
-            <section className="Investormenu">
+            <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 ">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Annual Report</h2>
                             <Navbar />
                         </div>
                     </div>
-                    <div className=" code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
+                    <div>
+                        {
+                            isloading ?
+                            <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} /> :
+                                <div>
+                                    {
+                                        data ?
 
-                            <div className="d-flex justify-content-between">
+                                            <div className="annual-reports code-mainwrapper cgmainwrap">
+                                                <div className="">
+                                                    <div className="d-flex justify-content-between">
 
-                                <h3 className="head">Description</h3>
+                                                        <h3 className="head">Description</h3>
 
-                            </div>
-                            <div className="subtext">
-                                {
-                                    (data || []).map((res,i) => {
-                                        return (
-                                            <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                                <div>{res.report_description} </div>
+                                                    </div>
 
-                                                <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
+                                                   
+                                                            <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                                {
+
+                                                                    Object.keys(data)?.map((key,i) => {
+                                                                        
+                                                                       
+                                                                        return (
+                                                                            <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
+                                                                                
+                                                                                <Accordion.Header> <h4 className='faq-header'> Annual Report {key}</h4></Accordion.Header>
+                                                                                <Accordion.Body className='faq-body'>
+                                                                                    <div className="listing">
+                                                                                        <ul>
+                                                                                            {
+                                                                                                data[key]?.map((res, index) => {
+                                                                                                    return (
+
+                                                                                                        <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                                                                            <div className="text">{res.report_description}</div>
+                                                                                                            {
+                                                                                                                res.view ?
+                                                                                                                    <div className="cursor-pointer"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                                    <div></div>
+                                                                                                            }
+
+                                                                                                        </li>
+                                                                                                    )
+                                                                                                })
+                                                                                            }
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </Accordion.Body>
+                                                                            </Accordion.Item>
+
+                                                                        )
+                                                                    })
+
+
+                                                                }
+
+
+                                                            </Accordion>
+
+                                                </div>
+
+
+
+
                                             </div>
-
-                                        )
-                                    })
-                                }
-
-
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Return 2021 - 2022 </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} onClick={()=>{window.open(pdf1)}} className="cursor-pointer" /></div>
-                                </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Return 2020 - 2021 </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                            :
+                                            <div className="text-center">
+                                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                            </div>
+                                    }
                                 </div>
 
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>The Notice 28th AGM </div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Annual Report 2020 - 2021</div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div> */}
-
-
-                            </div>
-
-
-
-                        </div>
-
-
-
-
+                        }
                     </div>
-                    <div className=" code-mainwrapper cgmainwrap">
-                        <div className="col-md-12">
 
+                    {
+                        isloading ?
+                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} /> :
+                            <div>
+                                {
+                                    
+                                            list ?
+
+                                <div className="annual-reports code-mainwrapper cgmainwrap">
+
+
+                                    {/* 
                             <div className="d-flex justify-content-between">
 
                                 <h3 className="head">Description</h3>
 
                             </div>
-                            <div className="subtext">
+                            
+                                <div className="subtext">
                            {
                             (list||[]).map((res,i)=>{
                                 return(
                                     <div className="border-bottom d-flex justify-content-between pb-3 pt-3" key={i}>
-                                    <div>{res.report_description}</div>
+                                    <div>{res.report_description ? res.report_description:''}</div>
+                                    {
+                                        res.view ?
+                                        <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>:
+                                        ''
 
-                                    <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/"+res.view) }} className="cursor-pointer" /></div>
+                                    }
+                                   
                                 </div>
 
 
@@ -151,30 +226,124 @@ function AnnualReportMenu() {
                             })
                            }
 
-                                
+                            </div> */}
 
-                                {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Financial Statements of Subsidiaries 2019-20 </div>
+                                    {/* <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                    {
 
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
+                                                        Object.keys(list)?.map((key, i) => {
+                                                            return (
+                                                                <Accordion.Item eventKey={i} key={i} className='faq-item' >
+                                                                    <Accordion.Header> <h4 className='faq-header'>{key}</h4></Accordion.Header>
+                                                                    <Accordion.Body className='faq-body'>
+                                                                        <div className="subtext">
+                                                                            <ul>
+                                                                                {
+                                                                                    list[key]?.map((res, index) => {
+                                                                                        return (
+
+                                                                                            <li key={index}>
+                                                                                                <div>{res.report_description ? res.report_description : ''}</div>
+                                                                                                {
+                                                                                                    res.view ?
+                                                                                                        <div><FontAwesomeIcon icon={faEye} onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="cursor-pointer" /></div> :
+                                                                                                        ''
+
+                                                                                                }
+
+                                                                                                
+
+                                                                                            </li>
+                                                                                        )
+                                                                                    })
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+
+                                                            )
+
+                                                            
+                                                        })
+                                                    
+                                                    }
+                                                </Accordion> */}
+
+
+                                    <div className="">
+                                        <div className="d-flex justify-content-between">
+
+                                            <h3 className="head">Description</h3>
+
+                                        </div>
+                                        
+                                                <Accordion defaultActiveKey="0" flush className='faqs-accordion'>
+                                                    {
+
+                                                        Object.keys(list)?.map((key, i) => {
+                                                            return (
+                                                                <Accordion.Item eventKey={i+""} key={i} className='faq-item' >
+                                                                    <Accordion.Header> <h4 className='faq-header'> Financial Statements Of Subsidiaries {key}</h4></Accordion.Header>
+                                                                    <Accordion.Body className='faq-body'>
+                                                                        <div className="listing">
+                                                                            <ul>
+                                                                                {
+                                                                                    list[key]?.map((res, index) => {
+                                                                                        return (
+
+                                                                                            <li key={index} className="border-bottom d-flex justify-content-between pb-3 pt-3">
+                                                                                                <div className="text">{res.report_description}</div>
+                                                                                                {
+                                                                                                    res.view ?
+                                                                                                        <div className="cursor-pointer"> <span onClick={() => { window.open("https://cmsapi.choiceindia.com/assets/" + res.view) }} className="downloadtext"><img src={viewicon} className={"img-fluid"} alt={"Loading"} width={""} height={""} /></span></div> :
+                                                                                                        <div></div>
+                                                                                                }
+
+                                                                                            </li>
+                                                                                        )
+                                                                                    })
+                                                                                }
+                                                                            </ul>
+                                                                        </div>
+                                                                    </Accordion.Body>
+                                                                </Accordion.Item>
+
+                                                            )
+                                                        })
+
+
+                                                    }
+
+
+                                                </Accordion> 
+
+                                    </div>
+
+
+
+
+
+
+
+
                                 </div>
-                                <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
-                                    <div>Financial Statements of Subsidiaries 2018-19</div>
-
-                                    <div><FontAwesomeIcon icon={faEye} className="cursor-pointer" /></div>
-                                </div> */}
+                                :
+                                <div className="text-center no-data-space">
+                                    <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>
+                        }
 
 
                             </div>
+                    }
 
 
 
-                        </div>
 
 
 
 
-                    </div>
 
                 </div>
             </section>
@@ -182,3 +351,7 @@ function AnnualReportMenu() {
     );
 }
 export default AnnualReportMenu;
+
+
+
+

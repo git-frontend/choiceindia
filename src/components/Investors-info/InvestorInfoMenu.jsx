@@ -8,10 +8,10 @@ function InvestorInfoMenu() {
     <div>
       
      
-    <section className="Investormenu">
+    <section className="Investormenu page-height">
         <div className="container">
             <div className="row">
-                <div className="col-md-12">
+                <div className="col-md-12 menuwrap">
                     <h2 className="title">Investor Info</h2>
                     <Navbar />
                 </div>

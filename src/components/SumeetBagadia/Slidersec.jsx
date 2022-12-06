@@ -5,10 +5,13 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import axios from "axios";
 import { API_URLS } from "../../Services/API-URLS";
+import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 
 function Slidersec() {
 
     const [research, setResearch] = useState([]);
+    const [isloading,setisloading ] = useState(true);
 
     const settings = {
         slidesToShow: 1,
@@ -96,6 +99,7 @@ function Slidersec() {
         getExpertResearch(request).then((res) => {
            // console.log(res, "RES");
             if (res && res.status === 200 && res.data.status_code === 200 && res.data.response) {
+                setisloading(false);
                 let list = res.data.response.research.map((item, i) => {
                     if (item.datapoints && item.datapoints.length) {
                         item.priceData = {}
@@ -108,10 +112,12 @@ function Slidersec() {
                 });
                 setResearch(list);
             } else {
+                setisloading(false);
                 setResearch([]);
             }
         }).catch((error) => {
            // console.log(error, "error");
+           setisloading(false);
             setResearch([]);
         });
     }
@@ -132,9 +138,21 @@ function Slidersec() {
                                 <p className="sml-para">Adept at analysing various standalone events to predict the market outcome; <br /> Mr Sumeet Bagadia's Research Calls have an excellent success ratio. Have a look at the results of the past research calls by him.</p>
                             </div>
                         </div>
+
+                        {
+                            isloading ?
+                            <div className="text-center">
+                            <div>
+                                {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                </div>
+                        </div>
+                        :
                         <div className="col-xl-7">
+                       
                             {
                                 research.length?
+                                <div className="">
                                 <div className="bg-class-right">
                                 <Slider {...settings} className="sm-slider-bg services-list-slider">
 
@@ -198,22 +216,30 @@ function Slidersec() {
 
                                 </Slider>
 
-                            </div>: ''
-                            }
-               
-                            <div className="sm-slider-thumb">
-                                {/* <ul className="reset">
-                                    <li className="active" data-slide="1">
-                                    </li>
-                                    <li className="" data-slide="2">
-                                    </li>
-                                    <li className="" data-slide="3">
-                                    </li>
-                                    <li className="" data-slide="4">
-                                    </li>
-                                </ul> */}
                             </div>
+                            <div className="sm-slider-thumb">
+                            {/* <ul className="reset">
+                                <li className="active" data-slide="1">
+                                </li>
+                                <li className="" data-slide="2">
+                                </li>
+                                <li className="" data-slide="3">
+                                </li>
+                                <li className="" data-slide="4">
+                                </li>
+                            </ul> */}
                         </div>
+                    </div>
+                            : 
+                                    <div className="text-center">
+                                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+                            }
+                            </div>
+               
+                            
+                        }
+                        
                     </div>
                 </div>
             </section >

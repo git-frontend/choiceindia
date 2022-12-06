@@ -11,7 +11,7 @@ function StrategyBody() {
     const environment = 'Live';
     const config = {
         UATURL: 'https://betajiffy.choicebroking.in/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard',
-        LiveURL: 'https://jiffy.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
+        LiveURL: 'https://finx.choiceindia.com/auth/login?redirectUrl=https://stratezy.choiceindia.com/dashboard'
     };
     const checkURL = config[environment + 'URL'];
     const [videoVisibility, setVideoVisibility] = useState(false);
@@ -66,7 +66,7 @@ function StrategyBody() {
                             </div>
                         </div>
                     </div>
-                    <div className="d-flex mt-5 respflex">
+                    <div className="d-flex mt-5 respflex mt-5-0-mb">
                         <div className="featurethree">
                             <p className="heading">Timely alerts on your Virtual &amp; Live trades</p>
                             <div className="d-flex imgtextwrap">

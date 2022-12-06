@@ -7,7 +7,9 @@
     border: #C2C2C2 solid 1px;
     padding: 1.5rem;
     margin-bottom: 3rem;
-    min-height: 350px;
+    @media screen and (max-width:$sm) {
+        margin: 1rem 0.5rem;
+    }
     .border-bottom {
         &:last-child {
             border-bottom: none !important;
@@ -16,4 +18,12 @@
 }
 .Investormenu{
     min-height: 110vh;
+}
+
+.page-height{
+    min-height: 140vh;
+   
+}
+.no-data-space{
+    padding-top: 6rem;
 }

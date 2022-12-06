@@ -3,24 +3,31 @@ import Navbar from '../Common-features/Navbar';
 import "../CodeConduct/code-conduct.scss";
 import "../Corporate-Governance/corporate-governance.scss";
 import FactSheetService from "../../Services/FactSheetService";
+import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
+
 function FactSheetMenu() {
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
+    const [isloading,setisloading ] = useState(true);
 
     function loadFactSheetpdf() {
         FactSheetService.Factsheet().then(
             res => {
                 if (res) {
+                    setisloading(false)
                     setData(res.data.data);
 
 
                 } else {
+                    setisloading(false)
                     setData([]);
 
                 }
 
             }
         ).catch((error) => {
+            setisloading(false)
             setData([]);
         });
     }
@@ -39,10 +46,10 @@ function FactSheetMenu() {
     }, [trigger])
     return (
         <div>
-            <section className="Investormenu">
+            <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 ">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Fact Sheet</h2>
                             <Navbar />
                         </div>
@@ -55,11 +62,23 @@ function FactSheetMenu() {
                                 <h3 className="head">Choice International Limitied</h3>
                                 
                                 </div> */}
-                    <div className=" pl-3 pr-3 cgmainwrap code-mainwrapper subtext">
+                                {
+                                    isloading?
+                                    <div className="text-center">
+                                    <div>
+                                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} /> */}
+                                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={250} width={250} />
+                                         </div>
+                                </div>:
+                                <div>
+                                {
+                                    data && data.length >0?
+                                    <div className=" pl-3 pr-3 cgmainwrap code-mainwrapper subtext">
                         <div className="row border-bottom">
                             <div className=" col-md-5 col-5 "><h3 className="head">Name </h3></div>
                             <div className="col-md-7 col-7 word-wrap"> <h3 className="head">Choice International Limitied</h3></div>
                         </div>
+
                         {
                             (data||[]).map((res,i)=>{
                                 return(
@@ -127,7 +146,16 @@ function FactSheetMenu() {
                                 EMAIL ID : <a href="mailto:rnt.helpdesk@linkintime.co.in">rnt.helpdesk@linkintime.co.in</a><br />
                                 WEBSITE : <a href="https://www.linkintime.co.in/">www.linkintime.co.in</a></div>
                         </div> */}
-                    </div>
+                    </div>: 
+                            <div className="text-center">
+                                <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                            </div> 
+
+                                }
+                                </div>
+                                }
+                                
+                    
 
                     {/* <div className="border-bottom d-flex justify-content-between pb-3 pt-3">
                                    <div>Business Description </div>

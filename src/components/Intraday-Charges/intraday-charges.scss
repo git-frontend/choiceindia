@@ -1,0 +1,662 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.sub-broker-skeleton-parent{
+    animation: hideMe 4s forwards;
+}
+
+.intrc-banner{
+    background: url(../../assets/images/intraday-charges/banner-bg.svg) no-repeat;
+    background-size: cover;
+    padding: 8rem 0 1.5rem 0;
+    .caption-banner{
+        display: flex;
+        flex-wrap: wrap;
+        .left-sec{
+            width: 50%;
+            .tlt1{
+                font-size: 3.692rem;
+                line-height: 1.5;
+                font-family:$font-family-poppins-bold;
+                color: $primary;
+                @media (max-width: $md) {
+                    font-size: 2.692rem;
+                    line-height: 1.4;
+                }
+            }
+            .des-nm{
+                position: relative;
+                padding-left: 1rem;
+                margin: 2rem 0 5rem 0;
+                font-size: 1.538rem;
+                line-height: 1.5;
+                &::before{
+                    content: '';
+                    width: 4px;
+                    height: 70%;
+                    background: $yellowColor;
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    top: 8px;
+                }
+                strong{
+                    font-family: $font-family-poppins-bold;
+                }
+                @media (max-width: $sm) {
+                    width: 80%;
+                    margin:0 auto;
+                    margin-top: 1rem;
+                    margin-bottom: 2.5rem;
+                }
+            }
+            .btn-bg{
+                
+                svg{
+                    transition-duration: 0.5s;
+                    margin-left: 3px;
+                    #Path_1981{
+                        fill: $whiteColor;
+                    }
+                }
+                &:hover{
+                    background: $primary !important;
+                    color: $whiteColor !important;
+                    svg{
+                        transform: translateX(10px);
+                    }
+                }
+            }
+            @media (max-width: $md) {
+                width: 100%;
+            }
+            @media (max-width: $sm) {
+                text-align: center;
+                margin-bottom: 6rem;
+            }
+        }
+        .right-sec{
+            width: 50%;
+            position: relative;
+            .itm-first{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 42px;
+                height: 43px;
+                position: absolute;
+                left: 100px;
+                border: 1px solid #FFFFFFAD;
+                border-radius: 9px;
+                top: 24%;
+                background-color: #25b8af33;
+                backdrop-filter: blur(10px);
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.6s;
+                animation-name: fadeInUp;
+            }
+            .itm-third{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 62px;
+                height: 61px;
+                position: absolute;
+                right: 60px;
+                border: 1px solid #FFFFFFAD;
+                border-radius: 9px;
+                bottom: 26%;
+                background-color: #25b8af33;
+                backdrop-filter: blur(10px);
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.8s;
+                animation-name: fadeInUp;
+            }
+            .itm-scnd{
+                font-size: 38px;
+                font-family: $font-family-poppins-bold;
+                color:#00B16B;
+                background-color: #25b8af33;
+                backdrop-filter: blur(10px);
+                width: 85px;
+                border-radius: 9px;
+                height: 84px;
+                display: flex;
+                border: 1px solid #FFFFFFAD;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                right: 60px;
+                top: 15%;
+                animation-duration: 1s;
+                animation-fill-mode: both;
+                animation-delay: 0.1s;
+                animation-name: fadeInUp;
+                em{
+                    font-style: normal;
+                    display: contents;
+                    font-size: 22px;
+                }
+            }
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
+    }
+}
+
+.ttl2-sm{
+    font-size: 3.077rem;
+    font-family: $font-family-poppins-bold;
+    color: $primary;
+    @media (max-width: $md) {
+        font-size: 2.5rem;
+    }
+}
+
+.charges-comparison{
+    padding: 8rem 0;
+    .hading-text{
+        text-align: center;
+        
+        p{
+            span{
+                font-family: $font-family-poppins-semibold;
+            }
+        }
+    }
+    .comparison-table-data{
+        margin-top: 4rem;
+        table{
+            width: 100%;
+            thead{
+                th{
+                    border: 0.5px solid #231f2073;
+                    padding: 1.5rem 5rem;
+                    font-size: 1.75rem;
+                    font-family: $font-family-poppins-semibold;
+                    &:first-child{
+                        width: 40%;
+                        @media (max-width: $sm) {
+                            position: sticky;
+                            left: 0;
+                            background: $whiteColor;
+                            z-index: 9;
+                        }
+                    }
+                    &:nth-child(2n){
+                        width: 20%; 
+                        text-align: center;
+                        border-left: 2px solid #25B8AF;
+                        border-right: 2px solid #25B8AF;
+                    }
+                    &:nth-child(3n){
+                        width: 40%;
+                        text-align: center;
+                    }
+                    &.highlt1{
+                        background: #F5F5F5;
+                        position: relative;
+                        &::before{
+                            content: '';
+                            width: 101.5%;
+                            height: 100%;
+                            background: #F5F5F5;
+                            display: block;
+                            position: absolute;
+                            top: -20px;
+                            left: -2px;
+                            border: 2px solid #25B8AF;
+                            border-bottom: 0;
+                            border-radius: 20px 20px 0 0;
+                            // @media (max-width: $sm) {
+                            //     display: none;
+                            // }
+                        }
+                        &::after{
+                            content: '';
+                            width: 100%;
+                            height: 5px;
+                            display: block;
+                            position: absolute;
+                            bottom: -1px;
+                            background: #F5F5F5;
+                            box-shadow: 0px 5px 5px #00000026;
+                            left: 0;
+                            @media (max-width: $sm) {
+                                display: none;
+                            }
+                        }
+                        .img-fluid{
+                            position: relative;
+                            top: -8px;
+                        }
+                    }
+                    &.radius-left{
+                        display: block;
+                        width: 100%;
+                        border-radius: 10px 0 0 0;
+                        border-bottom: 0;
+                        border-right: 0;
+                        @media (max-width: $sm) {
+                            display: table-cell;
+                        }
+                    }
+                    &.radius-right{
+                        display: block;
+                        width: 100%;
+                        border-radius: 0 10px 0 0;
+                        border-bottom: 0;
+                        border-left: 0;
+                        @media (max-width: $sm) {
+                            display: table-cell;
+                        }
+                    }
+                    @media (max-width: $md) {
+                        padding: 1rem 2rem;
+                    }
+                }
+            }
+            tbody{
+                tr{
+                    td{
+                        padding: 1rem 5rem;
+                        border: 0.5px solid #231f2073;
+                        &:nth-child(2n){
+                            text-align: center;
+                            border-left: 2px solid #25B8AF;
+                            border-right: 2px solid #25B8AF;
+                        }
+                        &:nth-child(3n){
+                            text-align: center;
+                        }
+                        &.txt2{
+                            font-size: 1.625rem;
+                        }
+                        &.bld-txt{
+                            font-family: $font-family-poppins-bold;
+                        }
+                        &.highlt2{
+                            position: relative;
+                            background: #25B8AF;
+                            &::before{
+                                content: '';
+                                width: 100%;
+                                height: 100%;
+                                background: #25B8AF;
+                                position: absolute;
+                                bottom: -20px;
+                                left: 0;
+                                display: block;
+                                border-radius: 0 0 20px 20px;
+                            }
+                            .valtxt{
+                                color: $whiteColor;
+                                position: relative;
+                                display: block;
+                                top: 10px;
+                            }
+                        }
+                        &.radius-left-bottom{
+                            display: block;
+                            width: 100%;
+                            border-radius: 0 0 0 20px;
+                            border-top: 0;
+                            border-right: 0;
+                            @media (max-width: $sm) {
+                                display: table-cell;
+                            }
+                        }
+                        &.radius-right-bottom{
+                            display: block;
+                            width: 100%;
+                            border-radius: 0 0 20px 0;
+                            border-top: 0;
+                            border-left: 0;
+                            @media (max-width: $sm) {
+                                display: table-cell;
+                            }
+                        }
+                        &:first-child{
+                            @media (max-width: $sm) {
+                                position: sticky;
+                                left: 0;
+                                background: $whiteColor;
+                                z-index: 9;
+                                white-space: nowrap;
+                                span{
+                                    display: block;
+                                }
+                            }
+                        }
+                        
+                        @media (max-width: $md) {
+                            padding: 1rem 2rem;
+                        }
+                        @media (max-width: $sm) {
+                            white-space: nowrap;
+                        }
+                    }
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            overflow-x:scroll;
+            padding: 4rem 0;
+            margin: 0;
+            overflow-y: hidden;
+        }
+    }
+    .des-para{
+        color: $secondary;
+        margin-top: 6rem;
+        @media (max-width: $sm) {
+            margin-top: 4rem;
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
+    }
+}
+
+.smart-trader{
+    background: $abt-bg;
+    padding: 2rem 0 0 0;
+    .sm-trader-des{
+        p{
+            position: relative;
+            padding-left: 1rem;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+            &::before{
+                content: '';
+                width: 4px;
+                border-radius: 2px;
+                height: 100%;
+                background: $yellowColor;
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+            @media (max-width: $sm) {
+                width: 85%;
+                margin: 0 auto;
+                text-align: left;
+                margin-top: 0.5rem;
+                margin-bottom: 3rem;
+            }
+        }
+        .btn-bg-dark{
+            background: $yellowColor !important;
+            color: $primary !important;
+            svg{
+                transition-duration: 0.5s;
+            }
+            &:hover{
+                svg{
+                    transform: translateX(10px);
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
+    }
+    .hide-mob{
+        @media (max-width: $sm) {
+            display: none !important;
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 4rem 0;
+    }
+}
+
+.intra-charges-benifits{
+    padding: 8rem 0;
+    position: relative;
+    &::after{
+        content: '';
+        width: 107px;
+        height: 200px;
+        background: url(../../assets/images/intraday-charges/rect-bg2.svg) no-repeat top right;
+        background-size: contain;
+        position: absolute;
+        right: 0;
+        bottom: 3rem;
+        @media (max-width: $sm) {
+            width: 55px;
+            height: 110px;
+        }
+    }
+    .charges-benifits-list{
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        .slick-slide{
+            .benifits-list-itm{
+                border: 2px solid $bgcolor-green;
+                border-radius: 30px;
+                padding: 4rem 2rem;
+                text-align: center;
+                width: 90% !important;
+                display: block !important;
+                position: relative;
+                overflow: hidden;
+                margin: 0 auto;
+                .itm-ttl{
+                    margin-top: 3rem;
+                    font-family: $font-family-poppins-semibold;
+                    color: $primary;
+                    @media (max-width: $sm) {
+                        font-size: 2rem;
+                        line-height: 1.5;
+                        margin-top: 2.5rem;
+                    }
+                }
+                &::before{
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    border-radius: 100%;
+                    background: $bgcolor-green;
+                    -webkit-transform: scale(0);
+                    transform: scale(0);
+                    -webkit-transition-property: transform;
+                    transition-property: transform;
+                    
+                }
+            }
+            &:hover{
+                .benifits-list-itm{
+                    // background: $bgcolor-green;
+                    border: 2px solid transparent;
+                    .sm-img{
+                        svg{
+                            path{
+                                fill: $whiteColor;
+                            }
+                        }
+                    }
+                    .itm-ttl{
+                        color: $whiteColor;
+                    }
+                    &::before{
+                        -webkit-transform: scale(2);
+                        transform: scale(2);
+                        -webkit-transition: 300ms ease-out;
+                        transition: 300ms ease-out;
+                    }
+                }
+            }
+        }
+        .slick-dots{
+            position: relative;
+        }
+    }
+    .btn-bg{
+                
+        svg{
+            transition-duration: 0.5s;
+            margin-left: 3px;
+            #Path_1981{
+                fill: $whiteColor;
+            }
+        }
+        &:hover{
+            background: $primary !important;
+            color: $whiteColor !important;
+            svg{
+                transform: translateX(10px);
+            }
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0;
+    }
+}
+
+.intra-why-choice{
+    padding: 8rem 0;
+    background: $whiteColor;
+    position: relative;
+    &::after{
+        content: '';
+        width: 91px;
+        height: 192px;
+        background: url(../../assets/images/intraday-charges/rect-bg1.svg) no-repeat top left;
+        background-size: contain;
+        position: absolute;
+        left: 0;
+        top: 4rem;
+        @media (max-width: $sm) {
+            width: 55px;
+            height: 110px;
+        }
+    }
+    .intra-why-list{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+        @media (max-width: $sm) {
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .why-list-itm{
+            text-align: center;
+            h3{
+                font-size: 4.231rem;
+                font-family: $font-family-poppins-bold;
+                color: $primary;
+                text-align: center;
+                .hvr-txt{
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    span{
+                        animation: toBottomFromTop 0.5s forwards;
+                    }
+                }
+                &:hover{
+                    .hvr-txt{
+                        span{
+                            animation: toTopFromBottom 0.5s forwards;
+                            display: block;
+                        }
+                        
+                    }
+                    
+                }
+                small{
+                    font-size: 3rem;
+                }
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                padding: 2rem 0;
+            }
+        }
+    }
+    &::before{
+        content: '';
+        width: 60%;
+        border-top: 1px solid #231F20;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translate(-50%, 0);
+        opacity: 0.22;
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0;
+    }
+}
+
+.intra-footer-sec{
+    padding: 8rem 0;
+    background: url(../../assets/images/intraday-charges/save-intraday-charges.webp) no-repeat bottom right $bgcolor-green;   
+    background-size: contain;
+
+    .ttl-nm{
+        font-size: 3.077rem;
+        font-family: $font-family-poppins-medium;
+        color: $whiteColor;       
+        span{
+            font-family: $font-family-poppins-bold;
+        }
+        @media (max-width: $sm) {
+            font-size: 2.5rem;
+        }
+    }
+    .btn-bg{
+        margin-top: 2.5rem;
+    }
+    @media (max-width: $sm) {
+        text-align: center;
+        background: $bgcolor-green;
+    }
+}
+
+/*==== FADE IN UP ===*/
+@-webkit-keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      -webkit-transform: translate3d(0, 80%, 0);
+      transform: translate3d(0, 80%, 0);
+    }
+  
+    to {
+      opacity: 1;
+      -webkit-transform: none;
+      transform: none;
+    }
+  }
+  
+  .fadeInUp {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }

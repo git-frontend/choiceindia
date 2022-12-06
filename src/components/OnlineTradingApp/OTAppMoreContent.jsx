@@ -45,26 +45,26 @@ function OTAppMoreContent() {
                                         </ul>
                                         
                                         <h3 className="font-bold">Which Online Trading App in India is safe for Trading?</h3>
-                                        Investing in stock markets is an art and with Jiffy by Choice Broking you can invest and analyse the share market and simultaneously attain ample stock market trading opportunities with access to stocks, currency, commodities and derivative trading at your fingertips in one single mobile trading app.<br /><br />
-                                        The Indian trading app - Jiffy provides for instant updates and occurrences; timely intervention of multi time break out stocks and much more. This online trading platform is created keeping in mind innovative trading tools with accelerated performance which is a requisite for stock trading.
+                                        Investing in stock markets is an art and with Choice FinX by Choice Broking you can invest and analyse the share market and simultaneously attain ample stock market trading opportunities with access to stocks, currency, commodities and derivative trading at your fingertips in one single mobile trading app.<br /><br />
+                                        The Indian trading app - Choice FinX provides for instant updates and occurrences; timely intervention of multi time break out stocks and much more. This online trading platform is created keeping in mind innovative trading tools with accelerated performance which is a requisite for stock trading.
                                         
-                                        <h3 className="font-bold">Why Should You Trade with Jiffy?</h3>
-                                        Jiffy, India's online trading app, is a one stop solution with innovative and latest technology that calls for easy and fast transactions for the trader. The app is developed from the traders perspective making it user friendly without compromise on safety and security. The innovations such as ‘Set Price Alert’, ‘WatchList’, ‘Dark Mode Screen’ are integrated to enhance user experience.<br /><br />
-                                        <h3 className="font-bold">Jiffy Trading App Features</h3><br/>
+                                        <h3 className="font-bold">Why Should You Trade with Choice FinX?</h3>
+                                        Choice FinX, India's online trading app, is a one stop solution with innovative and latest technology that calls for easy and fast transactions for the trader. The app is developed from the traders perspective making it user friendly without compromise on safety and security. The innovations such as ‘Set Price Alert’, ‘WatchList’, ‘Dark Mode Screen’ are integrated to enhance user experience.<br /><br />
+                                        <h3 className="font-bold">Choice FinX Trading App Features</h3><br/>
                                         <ul>
                                             <li className="mb-3"><strong>Real-time stock recommendation:</strong> Get calls from the expert Research Cell for stocks, commodities, currencies and derivatives.</li>
-                                            <li className="mb-3"><strong>Jiffy Signal:</strong> Trade with Automated research based engine with multi frame breakout strategies
+                                            <li className="mb-3"><strong>Choice FinX Signal:</strong> Trade with Automated research based engine with multi frame breakout strategies
 </li>
                                           
                                             <li className="mb-3"><strong>C-Quant:</strong> Based on quantitative and mathematical statistics, the feature generates calls for Weekly positional trades.</li>
                                             <li className="mb-3"><strong>Company Overview:</strong> An entire stock history, data and performance is available under Company Overview section.</li>
                                             <li className="mb-3"><strong>Advanced Charts:</strong> More than 100+ charts for Technical Analysis on stock market can be viewed.</li>
-                                            <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li>
+                                            {/* <li className="mb-3"><strong>Mojo Analysis:</strong> A segment initiated for in-depth fundamental knowledge.</li> */}
                                             <li className="mb-3"><strong>IPO Investments:</strong> IPO details and updates with a brief backgrounder supported by blogs, research videos etc.</li>
                                            
                                         </ul>
-                                        <h3 className="font-bold">How to Register with Jiffy Trading App?</h3><br/>
-                                        <ul><li className="mb-3">Install the Jiffy App.
+                                        <h3 className="font-bold">How to Register with Choice FinX Trading App?</h3><br/>
+                                        <ul><li className="mb-3">Install the Choice FinX App.
                                             </li>
                                             <li className="mb-3">Create an Account</li>
                                             <li className="mb-3">Enter your Personal And Financial details</li>

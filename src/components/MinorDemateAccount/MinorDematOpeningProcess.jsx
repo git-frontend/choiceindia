@@ -25,7 +25,7 @@ const MinorDematOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <Link to="/minor-demat-account" className="btn-bg btn-bg-dark " onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </Link>
+                                    <div className="btn-bg btn-bg-dark cursor-pointer" onClick={() => { utils.scrollToId('open-account-wrap') }} >Get Started </div>
                                 </div>
 
                             </div>

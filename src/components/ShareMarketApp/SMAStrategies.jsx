@@ -57,7 +57,7 @@ function SMAStrategies() {
                                
 
                                 <div className='col-md-7'>
-                                    <div className='content-list'>
+                                    <div className='content-list content-listres'>
                                         <Slider {...settings1}
                                             afterChange={(ev) => {
                                                 setIsShown3(ev)

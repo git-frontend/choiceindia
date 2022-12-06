@@ -48,10 +48,10 @@ function InvestorInfoMenu() {
         <div>
 
 
-            <section className="Investormenu">
+            <section className="Investormenu mt7 page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Board Of Directors</h2>
                             <Navbar />
                         </div>
@@ -63,7 +63,7 @@ function InvestorInfoMenu() {
                     {
 									view && !view.matches ? 
                                    
-										<Slider {...settings} className="" >
+										<Slider {...settings} className="mt5" >
 
                                     <div className="col-md-3">
                                         <div className="team-list">

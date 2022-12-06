@@ -52,7 +52,7 @@ function Team() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="heading">Management Team</h2>
+              <h2 className="heading">Board of Directors</h2>
             </div>
           </div>
           <div className="row">

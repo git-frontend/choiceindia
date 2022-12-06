@@ -255,7 +255,7 @@ function InvestorComplaintsMain() {
                         </div>
                     </div>
 
-                    <div className="row quicklinkswrap">
+                    <div className="row quicklinkswrap mb-5">
                         <div className="col-md-12">
                             <small>annual Disposal of Complaints</small>
                             <h4 className="text-center text-uppercase mt-5 mb-5"><strong>For the financial year 2021 - 2022</strong></h4>
@@ -294,8 +294,7 @@ function InvestorComplaintsMain() {
                             </div>
                         </div>
                     </div>
-                   
-                </div>
+               </div>
             </section>
         </div>
     );

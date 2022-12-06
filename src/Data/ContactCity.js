@@ -68,7 +68,11 @@ const city_list = [{
 },
 {
     id: 18,
-    city_name: 'Jaipur'
+    city_name: 'Jaipur(branch 1)'
+},
+{
+    id: 54,
+    city_name: 'Jaipur(branch 2)'
 },
 {
     id: 19,
@@ -76,7 +80,7 @@ const city_list = [{
 },
 {
     id: 20,
-    city_name: 'kadavanthra'
+    city_name: 'Kochi (Kadavanthra)'
 },
 {
     id: 21,
@@ -148,7 +152,11 @@ const city_list = [{
 },
 {
     id: 36,
-    city_name: 'Patna'
+    city_name: 'Patna(branch 1)'
+},
+{
+    id: 52,
+    city_name: 'Patna(branch 2)'
 },
 {
     id: 37,
@@ -205,6 +213,10 @@ const city_list = [{
 {
     id: 50,
     city_name: 'Visakhapatnam'
+},
+{
+    id: 53,
+    city_name: 'Thane'    
 },
 ];
 

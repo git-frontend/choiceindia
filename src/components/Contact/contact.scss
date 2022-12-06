@@ -79,9 +79,17 @@
     position: relative;
     padding-bottom: 4rem;
     animation: hideMe 4s forwards;
+    @media (max-width: $sm) {
+        min-height: 200px;
+    }
+    
+    
 
     .ban-img {
         width: 100%;
+        @media (max-width: $sm) {
+            display: none;
+        }
     }
 
     .banner-caption {
@@ -104,7 +112,7 @@
 
 
 .contactdetail {
-    padding: 15rem 0 0 0;
+    padding: 3rem 0 0 0;
     position: relative;
     animation: hideMe 4s forwards;
 
@@ -139,6 +147,7 @@
     }
 
     .address {
+        width: 38%;
         @media (max-width: $sm) {
             text-align: left !important;
             margin-top: 3rem;
@@ -478,6 +487,7 @@
         .feel-msg{
             margin-right:2rem;
             font-family: $font-family-poppins-medium;
+            color: green;
         }
 
         .attachement {
@@ -539,4 +549,76 @@
 .warning {
    color:red ;
    margin-top:-40px;
+}
+.contact-map{
+    width: 100%;
+    min-height: 400px;
+}
+
+.m01{
+    @media (max-width: $sm) {
+        margin: 0 1.3rem;
+    } 
+    .icon-table{
+        float: right;
+    }
+    .support-md{
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: $sm) {
+            flex-direction: column;
+        }
+
+    }
+    .support-related{
+        
+        margin-right: 10rem;
+        @media (max-width: $sm) {
+            margin-right: 1rem;
+        }
+    }
+    .txt-center{
+        text-align: center;
+    }
+
+}
+
+.contactdetail-new{
+    .maintitle{
+        margin-bottom: 2rem;
+    }
+    .support-md{
+        margin-bottom: 3.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .support-itm{
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            p{
+                font-size: 1.4rem;
+                font-family: $font-family-poppins-regular;
+                padding-left: 0.6rem;
+                margin: 0;
+                a{
+                    text-decoration: none;
+                    color: $secondary;
+                    &:hover{
+                        color: $bluetext;
+                    }
+                }
+            }
+        }
+    }
+    .mainwrapquick-table{
+        .icon-table{
+            float: right;
+        }
+        .quicklinkswrap{
+            border-radius: 20px;
+            border: #C2C2C2 solid 1px;
+            padding: 1.5rem;
+        }
+    }
 }

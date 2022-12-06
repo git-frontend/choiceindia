@@ -15,8 +15,9 @@ function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
     const pageUrl = location.href
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
-    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice"
-    console.log("check url",pageUrl);
+    const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
+   
+    // console.log("check url",pageUrl);
     // https://www.facebook.com/dialog/share?
 // app_id=140586622674265
 // &display=popup
@@ -41,12 +42,15 @@ function Fabdetailsbanner(props) {
 
     useEffect(() => {
         setRenderCount(true)
+       
         if (rendercount === true) {
             document.getElementById('meta-type').content = "article" ;
             document.getElementById('meta-url').content = location.href ;
-          document.getElementById('meta-title').content = props.single_data[0].title ;
+          
           document.getElementById('meta-descr').content = descr ;
-          document.getElementById('meta-image').content = props.single_data[0].feature_image;
+          document.getElementById('meta-title').content = (props && props.single_data && props.single_data[0]) ? props?.single_data[0].title :"" ;
+          document.getElementById('meta-image').content = (props && props.single_data && props.single_data[0])? props?.single_data[0].feature_image:"";
+        
          
         }
       }, [rendercount])
@@ -115,7 +119,7 @@ function Fabdetailsbanner(props) {
                                         </div>
                                     </div> : <div className="col-md-5" id="sub-broker-wrap">
                                         <div className="franchise-form justify-content-end d-flex">
-                                            <SubBrokerForm />
+                                            <SubBrokerForm  isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true}/>
                                         </div>
                                     </div>)
                                     : '')

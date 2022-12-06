@@ -9,6 +9,19 @@ import Image24 from '../../assets/images/open-demat-account/courier-poa.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 const DematAccountOpeningProcess = () => {
+
+     /** scroll id view */
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
     return (
         <div>
 
@@ -25,14 +38,14 @@ const DematAccountOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <a href="#open-account-wrap" className="btn-bg btn-bg-dark " >Get Started </a>
+                                    <a  onClick={()=>{chapterScroll('dematform')}} className="btn-bg btn-bg-dark cursor-pointer " >Get Started </a>
                                 </div>
 
                             </div>
                         </div>
 
                     </div>
-                    <h2 className="sect-title">Demat Account Opening Process</h2>
+                    <h2 className="sect-title">Open a Free Demat Account in Easy Steps</h2>
 
 
 
@@ -48,7 +61,7 @@ const DematAccountOpeningProcess = () => {
                                     {/* <img src={Image21}  width={"17"} height={"93"} alt="Step One" className="img-fluid lazyload respimag" /> */}
                                 </div>
                                 <div className="info respspace">
-                                    <h5>A trusted name </h5>
+                                    <h5>Register </h5>
                                     <p>Fill in the required details and upload the relevant documents along with a passport size photograph.
                                     </p>
                                 </div>

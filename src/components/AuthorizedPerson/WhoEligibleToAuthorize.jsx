@@ -55,20 +55,20 @@ function WhoEligibleToRemisier() {
                             <div className="eligb-right-sec">
                                 <Slider {...settings} className="slider-eligb">
                                     <div className="">
-                                        <img src={ImageSub13} alt="Sub Broker Eligibility" className="img-fluid" width="74" height="74" />
+                                        <img src={ImageSub13} alt="Individual must be 18+ years old to become an Authorised Person" className="img-fluid" width="74" height="74" />
                                         <h4>Individual must be 18+ years of age</h4>
                                     </div>
                                     <div className="">
-                                        <img src={ImageSub14} alt="Sell Financial Services" className="img-fluid" width="74" height="74" />
+                                        <img src={ImageSub14} alt="Become an Authorised Person &amp; earn high commission " className="img-fluid" width="74" height="74" />
                                         <h4>A knack to sell products effortlessly</h4>
                                     </div>
                                     <div className="">
-                                        <img src={ImageSub15} alt="A desire to be your own boss" className="img-fluid" width="74" height="74" />
+                                        <img src={ImageSub15} alt="Become an Authorised Person &amp; start your own business" className="img-fluid" width="74" height="74" />
                                         <h4>A desire to be your own boss</h4>
                                     </div>
                                 </Slider>
                                 <div className="eligb-img-sec">
-                                    <img src={ImageSub16} alt="Become a Sub Broker &amp; Currency Broking" className="img-fluid" width="384" height="384" />
+                                    <img src={ImageSub16} alt="Eligibility to become an Authorised Person in stock market" className="img-fluid" width="384" height="384" />
                                 </div>
                             </div>
                         </div>

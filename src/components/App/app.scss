@@ -1,3 +1,9 @@
+
+
+
+
+
+
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
@@ -31,7 +37,7 @@
         .ban-img {
             width: 100%;
             height: auto;
-            @media (max-width: $sm-x) {
+            @media (max-width: $sm) {
                 height: 350px;
                 object-fit: cover;
             }
@@ -299,7 +305,7 @@
                 }
 
                 @media (min-width:$sm-x) and (max-width: $md) {
-                    width: 23%;
+                    width: 30%;
                 }
             }
 
@@ -447,7 +453,7 @@
         }
 
         @media (max-width: $sm-x) {
-            padding: 4rem 0 5rem 0;
+            padding: 5rem 0 5rem 0;
         }
     }
 
@@ -494,6 +500,9 @@
             display: flex;
             justify-content: flex-end;
             flex-wrap: wrap;
+            @media (max-width:$md) {
+                padding-left: 0rem;
+            }
 
             .content-list-itm {
                 border: 2px solid $bgolor-lightwhite;

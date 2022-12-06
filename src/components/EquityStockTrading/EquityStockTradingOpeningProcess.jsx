@@ -35,7 +35,7 @@ const EquityStockTradingOpeningProcess = () => {
                                 </div>
 
                                 <div className="text-right text-sm-center">
-                                    <Link to="/equity-stock-trading" ><span className="btn-bg btn-bg-dark ">Open Now</span></Link>
+                                    <a onClick={()=>{scrollToId('dematform')}} ><span className="btn-bg btn-bg-dark cursor-pointer">Open Now</span></a>
                                 </div>
 
                             </div>

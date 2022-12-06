@@ -56,7 +56,7 @@ function BannerCareer() {
                 <div className='caption-cont'>
                   {
                     (param1=='alphabee')?
-                    <p>Alphabee is now merged with Jiffy</p>
+                    <p>Alphabee is now merged with Choice FinX</p>
                     :
                     ""
 

@@ -29,10 +29,10 @@ function SMABannerApp() {
             <div className="row">
                 <div className="col-md-7">
                     <div className="sec1-left">
-                        <div className="top-title pl8">
-                           <h1>Jiffy Share Market App <span className="mb-br">For</span> </h1> 
+                        <div className="top-title pl8 share-text">
+                           <h1>Choice FinX Share Market App <span className="mb-br">For</span> </h1> 
 
-                           <Slider {...settings1} className='slider-ver'>
+                           <Slider {...settings1} className='slider-ver share-slider'>
                                 <div className="">
                                     <h4>Stocks</h4>
                                 </div>

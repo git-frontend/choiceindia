@@ -1,5 +1,6 @@
 import React from 'react';
 import AppJiffy from '../../assets/images/online-trading-app/jiffy-app.webp';
+import AppFinx from '../../assets/images/online-trading-app/finx-app.webp';
 import appstore from '../../assets/images/icons/app-store.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 function AppOTDownloadJiffy() {
@@ -17,7 +18,7 @@ function AppOTDownloadJiffy() {
             <div className='down-jiffy-sub'>
                 
                 <div className='jiffy-sub-cont'>
-                      <h3>डाउनलोड जिफी ऐप</h3>
+                      <h3>डाउनलोड फिनएक्स ऐप</h3>
                       <div className="wrap-app-links">
                     <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank" className='link-nrl white'>
                       <svg width="30" height="30" viewBox="0 0 41 46" fill="none" xmlns="http://www.w3.org/2000/svg" className='ico-sm'>
@@ -37,7 +38,7 @@ function AppOTDownloadJiffy() {
                   </div>
                   </div>
                   <div className='jiffy-sub-img'>
-                  <LazyLoader src={AppJiffy} className={"img-fluid"} alt={"Loading"} width={"390"} height={"439"} />
+                  <LazyLoader src={AppFinx} className={"img-fluid"} alt={"Loading"} width={"390"} height={"439"} />
                 </div>
                   
             </div>

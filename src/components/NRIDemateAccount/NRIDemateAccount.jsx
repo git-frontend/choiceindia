@@ -27,6 +27,16 @@ function NRIDemateAccount() {
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
           document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+          document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+          if(!(document.getElementById('link1')==null)){
+            document.getElementById('link1').remove();
+          document.getElementById('link2').remove();
+          document.getElementById('link3').remove();
+          document.getElementById('link4').remove();
+          document.getElementById('link5').remove();
+          document.getElementById('link6').remove();
+          
+          }
         }
       }, [rendercount])
 
@@ -64,7 +74,7 @@ function NRIDemateAccount() {
                                         <ul>
                                             <li>To open an NRI Account with us, you can register online on our website.</li>
                                             Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
-                                            <li>You can also download our Jiffy App ( Android &amp; iOS) and Sign Up via your smartphone.</li>
+                                            <li>You can also download our Choice FinX App ( Android &amp; iOS) and Sign Up via your smartphone.</li>
                                             <li>It is advisable to download the app since signing up will need the upload of your latest photo, which can be easily clicked from the camera of your phone.</li>
                                             <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li>
                                             <li>Once you upload all the necessary documents they are up for verification.</li>

@@ -20,7 +20,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
-    const type2=window.location.pathname =="/mutual-funds-investment" ? 'MF':"JF";
+    const type2=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const [show,setShow] = useState(true);
     // console.log('SSS',show);
     function handleClose(){
@@ -154,7 +154,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                             if (type2 == 'MF') {
                                 onClose("https://investica.com/auth/sign-in")
                             } else {
-                                onClose("https://jiffy.choiceindia.com/auth/login");
+                                onClose("https://finx.choiceindia.com/auth/login");
                             }
 
 
@@ -234,8 +234,9 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             }
             openAccountService.OTPOnCall(request,type2).then((res) => {
                 hideLoader('OTPOnCallLoader');
-                setCount(30);
+                // setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
+                    setCount(30);
                     otpID.current = res.data.Body.session_id;
                     handleOTPResendSuccessToaster('call');
                 } else {
@@ -243,7 +244,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 }
             }).catch((error) => {
                 hideLoader('OTPOnCallLoader');
-                setCount(30);
+                // setCount(30);
                 if (error && error.response && error.response.data && error.response.data.Message) {
                     setOTPErrors(error.response.data.Message);
                 } else {
@@ -356,7 +357,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
             </div> */}
 
 
-            <Modal show={show} className="bt-strap-mdl otp-main-modal" onHide={onClose} backdrop='static' keyboard={false}>
+            <Modal show={show} className="bt-strap-mdl otp-main-modal " onHide={onClose} backdrop='static' keyboard={false}>
 
                 <Modal.Header className="border-0" closeButton>
                 </Modal.Header>
