@@ -35,20 +35,20 @@ function DematFaq() {
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>  How much time is required to open a brokerage account online?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>  How much time is required to open a brokerage account online?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         If you have all your documents handy, it should take 4-5 minutes to open a brokerage account online.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>What are the charges at Choice for Opening a brokerage account?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What are the charges at Choice for Opening a brokerage account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         There are no charges for opening a Brokerage Account at Choice.
 
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>Are any AMC charges applied on the brokerage account opened with Choice?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Are any AMC charges applied on the brokerage account opened with Choice?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         When you open a brokerage account with Choice, you get free AMC charges for the first year. After, the first year you can select from the below 3 plans:<br /><br />
                                         <ul>
@@ -62,7 +62,7 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>Is it necessary to send a POA to activate a brokerage account with Choice?</h4> </Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Is it necessary to send a POA to activate a brokerage account with Choice? </Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         No, it is not necessary to send a POA to activate a brokerage account with Choice.<br /><br />
                                         However, You will need to send a signed copy of your Power of Attorney (POA) to the Choice Head Office after opening a brokerage account.<br /><br />
@@ -75,13 +75,13 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                    <Accordion.Header > <h4 className='faq-header'>Can I use the same brokerage account for all segments?</h4></Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>Can I use the same brokerage account for all segments?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         Yes, you can use the same brokerage account for trading in all segments.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="5" className='faq-item' id="faqid">
-                                    <Accordion.Header> <h4 className='faq-header'> Which documents are required for opening a brokerage account online with Choice?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'> Which documents are required for opening a brokerage account online with Choice?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                         You are required to provide the following documents to open a brokerage account online with Choice.<br /><br />
                                         <ul className="documentlist">
@@ -114,7 +114,7 @@ function DematFaq() {
                                                                 <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
 
                                                                     <Accordion.Item eventKey="6" className='faq-item'>
-                                                                        <Accordion.Header> <h4 className='faq-header'>Can I open a free brokerage account online with Choice?</h4></Accordion.Header>
+                                                                        <Accordion.Header as="h3" className='faq-header'>Can I open a free brokerage account online with Choice?</Accordion.Header>
                                                                         <Accordion.Body className='open-demat-faq-body'>
                                                                         Yes, you can open a free brokerage account online with Choice.<br /><br />
                                                                         <ul>

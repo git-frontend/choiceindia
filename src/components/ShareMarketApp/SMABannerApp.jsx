@@ -28,7 +28,7 @@ function SMABannerApp() {
         <div className="container ">
             <div className="row">
                 <div className="col-md-7">
-                    <div className="sec1-left  ">
+                    <div className="sec1-left">
                         <div className="top-title pl8 share-text">
                            <h1>Choice FinX Share Market App <span className="mb-br">For</span> </h1> 
 

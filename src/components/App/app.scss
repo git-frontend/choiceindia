@@ -1,3 +1,9 @@
+
+
+
+
+
+
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
@@ -299,7 +305,7 @@
                 }
 
                 @media (min-width:$sm-x) and (max-width: $md) {
-                    width: 23%;
+                    width: 30%;
                 }
             }
 
@@ -447,7 +453,7 @@
         }
 
         @media (max-width: $sm-x) {
-            padding: 4rem 0 5rem 0;
+            padding: 5rem 0 5rem 0;
         }
     }
 

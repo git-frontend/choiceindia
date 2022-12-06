@@ -1274,12 +1274,16 @@
 		}
 
 		.faq-header {
-			font-family: $font-family-poppins-semibold;
-			color: $primary;
-			font-size: 2rem;
-            @media (max-width:$sm) {
-                font-size: 1.65rem;
-            }
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
 		}
 	}
 

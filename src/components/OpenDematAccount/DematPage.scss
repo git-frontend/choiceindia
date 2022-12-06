@@ -143,8 +143,6 @@
 	}
 
 }
-
-
 .adv-sect {
 	background-color: $abt-bg;
 	padding: 9.375rem 0;
@@ -153,7 +151,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		padding-right: 6rem;
+		padding-right: 2rem;
 
 		h2 {
 			font-size: 3.125rem;
@@ -186,7 +184,6 @@
 			padding-right: 0;
 		}
 	}
-
 	.slick-dots {
 		position: absolute;
 		bottom: 0;
@@ -202,15 +199,13 @@
 		}
 
 		@media (min-width:$sm) and (max-width:768px) {
-			// left: -15.75rem;
-			// top: 63%;
-			left: -20.25rem;
-            top: 71%;
+			left: -20.125rem;
+			top: 80%;
 		}
 
 		@media (min-width:769px) and (max-width:1024px) {
-			left: -20.375rem;
-			top: 73%;
+			left: -20.125rem;
+			top: 80%;
 		}
 
 		li {
@@ -245,22 +240,6 @@
 			}
 		}
 	}
-	.adv-sect-adddots{
-		.slick-dots {
-			@media (min-width:$sm) and (max-width:768px) {
-				
-				left: -20.25rem;
-				top: 82%;
-			}
-	
-			@media (min-width:769px) and (max-width:1024px) {
-				left: -20.375rem;
-				top: 82%;
-			}
-		}
-	}
-	
-
 
 	.card {
 		background-color: $whiteColor;
@@ -279,17 +258,16 @@
 		@media (max-width:$sm) {
 			width: 90%;
 			margin: 0 auto;
-			background-color: $whiteColor;
+
 		}
 
-		// @media (min-width:$sm) and (max-width:768px) {
-		// 	min-height: 21.25rem;
-		// }
+		 @media (min-width:$sm) and (max-width:768px) {
+			padding: 1.625rem;
+		 }
 
-		// @media (min-width:769px) and (max-width:1024px) {
-		// 	min-height: 32rem;
-
-		// }
+		@media (min-width:769px) and (max-width:1024px) {
+			padding: 1.625rem;
+		 }
 
 		&:hover {
 			background-color: $whiteColor;
@@ -349,21 +327,6 @@
 		padding: 4rem 0;
 	}
 }
-.adv-sect-dots{
-	.slick-dots {
-		@media (min-width:$sm) and (max-width:768px) {
-			
-			left: -20.25rem;
-            top: 52%;
-		}
-
-		@media (min-width:769px) and (max-width:1024px) {
-			left: -20.375rem;
-			top: 52%;
-		}
-	}
-}
-
 
 .ml-3 {
 	margin-left: 3%;
@@ -658,15 +621,15 @@
 			padding: 1rem 2.5rem;
 		}
 
-		@media  (max-width:992px) {
+		@media (min-width:768px) and (max-width:769px) {
 			width: 100%;
-			min-height: 33rem;
+			min-height: 34rem;
 			padding: 1rem;
 		}
 
-		@media (min-width:992px) and (max-width:1024px) {
+		@media (min-width:769px) and (max-width:1024px) {
 			padding: 1rem;
-			min-height: 30.625rem;
+			min-height: 34rem;
 		}
 
 		.icon-wrap {
@@ -701,7 +664,6 @@
 		.charge-lists {
 			list-style: none;
 			margin-top: 2rem;
-			
 			padding: 0;
 
 			li {
@@ -712,10 +674,6 @@
 				margin-top: 1rem;
 				font-weight: 500;
 			}
-			@media (max-width:$md) {
-				margin-top: 1rem;
-			}
-
 
 		}
 	}
@@ -1045,12 +1003,16 @@
 		}
 
 		.faq-header {
-			font-family: $font-family-poppins-semibold;
-			color: $primary;
-			font-size: 2rem;
-			@media (max-width:$sm) {
-				font-size: 1.75rem;
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
 			}
+			
+			
 		}
 	}
 
@@ -1101,10 +1063,6 @@
                 list-style: none;
                 padding-left: 3rem;
                 padding-right:8rem;
-				@media (max-width: $sm) {
-					padding-right:0;
-					padding-left: 1rem;
-				}
 			}
 			.font-bold{
 				font-weight: 700;
