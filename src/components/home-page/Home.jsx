@@ -34,9 +34,9 @@ function Home() {
 	useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-          // let parser = new DOMParser();
-          // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-          // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+          let parser = new DOMParser();
+          let doc = parser.parseFromString(meta_tags['https://choiceindia.com/'].faqscript, 'text/html');
+          document.head.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
           document.title = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags["https://choiceindia.com/"] ? meta_tags["https://choiceindia.com/"].content : '';
