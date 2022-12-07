@@ -53,7 +53,7 @@ autoplay: true,
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
-                            <div className="sectext">
+                            <div className="sectext" id="showForm">
                                 <h2>Why Open A Commodity Trading Account Online With Us?</h2>
                             </div>
                         </div>

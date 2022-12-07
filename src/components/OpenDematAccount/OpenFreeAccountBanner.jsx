@@ -33,6 +33,24 @@ const OpenFreeAccountBanner = () => {
           behavior: "smooth"
         });
       }
+
+      const [name, setName ] = useState('hideform');
+      const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }   
+        }
+    };
+
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
      
      
       
@@ -43,14 +61,8 @@ const OpenFreeAccountBanner = () => {
             
             setTimeout(()=>{
                 chapterScroll("dematform");
-              },1000)
-            
-            
+              },1000)    
         }
-
-            
-
-
     }
 
       useEffect(() => {
@@ -61,10 +73,7 @@ const OpenFreeAccountBanner = () => {
             let mediaQuery = window.matchMedia("(min-width: 770px)");
 			mediaQuery.addListener(setView);
 			// this is the cleanup function to remove the listener
-			return () => mediaQuery.removeListener(setView);
-            
-          
-            
+			return () => mediaQuery.removeListener(setView); 
         }
         
         
@@ -159,8 +168,10 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                     </div>
+                    <div className={name}>
                     <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                         <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+                    </div>
                     </div>
                 </div>
             </section>

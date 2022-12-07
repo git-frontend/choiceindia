@@ -48,7 +48,7 @@ function WhyOpenFreeCorporateAccount() {
 
   return (
     <div>
-       <section className="adv-sect adv-sect-adddots " >
+       <section className="adv-sect adv-sect-adddots " id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">

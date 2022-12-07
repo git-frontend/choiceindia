@@ -47,7 +47,7 @@ function HindiWhyOpenTradingAccount() {
 
   return (
     <div>
-       <section className="adv-sect adv-sect-dots" >
+       <section className="adv-sect adv-sect-dots" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
