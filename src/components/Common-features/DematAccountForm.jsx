@@ -302,7 +302,9 @@ function DematAccountForm(props) {
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
             "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMMedium.current || null,
-            "utm_term": UTMTerm.current || null
+            "utm_term": UTMTerm.current || null,
+            "captchaResp": captchaToken,
+            "captcha": "1"
         };
         openAccountService.sendOTP(request,type1).then((res) => {
             hideLoader('sendOTPLoader');

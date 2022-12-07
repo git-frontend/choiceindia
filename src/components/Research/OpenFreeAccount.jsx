@@ -42,7 +42,7 @@ function OpenFreeAccount() {
                             
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
-                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                        <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
                             <DematAccountForm />
                         </GoogleReCaptchaProvider>
                         </div>

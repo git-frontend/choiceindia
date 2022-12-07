@@ -22,7 +22,7 @@ function Banner() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="mutualid">
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>
