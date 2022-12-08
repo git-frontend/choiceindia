@@ -85,6 +85,7 @@ const meta_tags = {
     "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
     "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -253,6 +254,7 @@ const meta_tags = {
         'title': "Open Free Demat Account Online without Annual Charges at Choice",'lang':"en", 'content': "Open free Demat account online without annual charges for the first year at Choice. Easy paperless online Demat account opening, free expert research, low DP, and brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -540,6 +542,7 @@ const meta_tags = {
         'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice",'lang':"en", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.","link":"https://choiceindia.com/brokerage-charges",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -586,6 +589,7 @@ const meta_tags = {
         "link": "https://choiceindia.com/open-trading-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -670,6 +674,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/open-brokerage-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -772,6 +777,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/corporate-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
      {
+      "@context": "https://schema.org",
        "@type": "FAQPage",
        "mainEntity": [{
          "@type": "Question",
@@ -834,6 +840,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/minor-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -960,6 +967,7 @@ const meta_tags = {
         'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",'link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1088,6 +1096,7 @@ const meta_tags = {
         'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "lang":'mr',"faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1258,6 +1267,7 @@ const meta_tags = {
         'link': 'https://choiceindia.com/authorised-person','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
         {
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [{
             "@type": "Question",
@@ -1296,6 +1306,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/remisier','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1454,6 +1465,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Best Share Market App in India - Download Choice FinX Trading App",'lang':"en", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.","link":"https://choiceindia.com/share-market-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqcript": `<script type="application/ld+json">
      {
+      "@context": "https://schema.org",
        "@type": "FAQPage",
        "mainEntity": [{
          "@type": "Question",
@@ -1518,6 +1530,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqcript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1599,6 +1612,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         "link": 'https://choiceindia.com/hindi/trading-account','lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1682,6 +1696,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)",'lang':"en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.",'link':"https://choiceindia.com/online-trading-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1938,6 +1953,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
       "content":"फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।","link":"https://choiceindia.com/hindi/online-trading-app",'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
       "faqscript": `<script type="application/ld+json">
       {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",
