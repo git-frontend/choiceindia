@@ -49,7 +49,7 @@ function WhyOpenDerivativeTrading() {
 
     return (
         <div>
-            <section className="adv-sect" >
+            <section className="adv-sect" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
@@ -62,7 +62,7 @@ function WhyOpenDerivativeTrading() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                     <div className="card adv-card">
                                         <div className="icon-wrap">
-                                            <LazyLoader src={Image7} className={"img-fluid"} width={"40"} height={"41"} alt={"Low Brokerage Demat Account"} />
+                                            <LazyLoader src={Image7} className={"img-fluid"} width={"40"} height={"41"} alt={"Open Derivatives Trading Account with Low Brokerage Charges"} />
                                             {/* <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage" /> */}
                                         </div>
                                         <div className="card-block">
@@ -73,7 +73,7 @@ function WhyOpenDerivativeTrading() {
                                     </div>
                                     <div className="card adv-card">
                                         <div className="icon-wrap">
-                                            <LazyLoader src={Image8} className={"img-fluid lazyload"} width={"40"} height={"41"} alt={"Free Call for Trade Facility"} />
+                                            <LazyLoader src={Image8} className={"img-fluid lazyload"} width={"40"} height={"41"} alt={"Open Derivatives Trading with Free Call for Trade Facility"} />
                                             {/* <img src={Image8} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                         </div>
                                         <div className="card-block">
@@ -84,7 +84,7 @@ function WhyOpenDerivativeTrading() {
                                     </div>
                                     <div className="card adv-card">
                                         <div className="icon-wrap">
-                                            <LazyLoader src={Image9} width={"40"} height={"41"} alt={"Free Paperless Demat Account Opening"} className={"img-fluid lazyload"} />
+                                            <LazyLoader src={Image9} width={"40"} height={"41"} alt={"Open Paperless Derivatives Trading Account"} className={"img-fluid lazyload"} />
                                             {/* <img src={Image9} width={"40"} height={"41"} alt="Paperless Account Opening" className="img-fluid lazyload" /> */}
                                         </div>
                                         <div className="card-block">
@@ -97,7 +97,7 @@ function WhyOpenDerivativeTrading() {
                                     </div>
                                     <div className="card adv-card">
                                         <div className="icon-wrap">
-                                            <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className={"img-fluid lazyload"} />
+                                            <img src={Image10} width={"50"} height={"50"} alt={"Open Derivatives Trading Account with Advance Trading Platform"} className={"img-fluid lazyload"} />
                                             {/* <img src={Image10} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                         </div>
                                         <div className="card-block">
@@ -110,7 +110,7 @@ function WhyOpenDerivativeTrading() {
                                     </div>
                                     <div className="card adv-card">
                                         <div className="icon-wrap">
-                                            <img src={Image11} width={"40"} height={"41"} alt={"Refer and Earn Demat Account"} className={"img-fluid lazyload"} />
+                                            <img src={Image11} width={"40"} height={"41"} alt={"Open Derivatives Trading Account and earn more from referrals"} className={"img-fluid lazyload"} />
                                             {/* <img src={Image11} width={"40"} height={"41"} alt="Free call Trade Facility" className="img-fluid lazyload" /> */}
                                         </div>
                                         <div className="card-block">
