@@ -77,11 +77,6 @@ function HindiTradingFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
 
-
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>क्या ऑनलाइन ट्रेडिंग अकाउंट खोलना सुरक्षित है?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -96,16 +91,8 @@ function HindiTradingFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                        
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => setview(false)} >&nbsp;View less</button>
-
                                     </Accordion>
 
-
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
-                                    </div>
-                            }
                         </div>
                     </div>
                 </div>
