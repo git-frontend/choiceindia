@@ -246,7 +246,7 @@ function Opendemat(){
                             {/* <img src='./images/difference-between-demat-account-and-trading-account.svg' className=""
                                     alt="Demat Account vs Trading Account" /> */}
                             <h4>Chapter 9</h4>
-                            <p>Demat Vs Trading Account</p>
+                            <p>Difference Between Demat Account and Trading Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTen') }}>
@@ -360,7 +360,7 @@ function Opendemat(){
                             {/* <img src='./images/difference-between-demat-account-and-trading-account.svg' className=""
                                     alt="Demat Account vs Trading Account" /> */}
                             <h4>Chapter 9</h4>
-                            <p>Demat Vs Trading Account</p>
+                            <p>Difference Between Demat Account and Trading Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTen') }}>
@@ -542,9 +542,10 @@ function Opendemat(){
                           </li>
                           <li className="subheadtxt">
                             <p className='subheadtxt'>
-                              <h4 className="inline">2. Repatriable Demat Account: <a href='https://choiceindia.com/nri-demat-account'
-                                className='linking'>(NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
+                            <h4 className="inline">2. Repatriable Demat Account <a href='https://choiceindia.com/nri-demat-account'
+                                className='linking'> (NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
                               funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
+
 
                           </li>
                           <li className="subheadtxt">
@@ -1050,7 +1051,7 @@ function Opendemat(){
                   <div className='row' id="ChapterNine">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 9</p>
-                      <h2 className="title">Demat Account Vs Trading Account</h2>
+                      <h2 className="title">Difference Between Demat Account and Trading Account</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="demat-vs-trading-img">
                           {/* <img src='./images/difference-between-demat-account-and-trading-account.webp' className="img-fluid"
