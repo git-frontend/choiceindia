@@ -2,7 +2,31 @@ const meta_tags = {
 
     "services": { 'title': "Get Financial Services in India - Choice",'lang':"en", 'content': 'Choice is the leading financial service provider in India that offers the best financial services such as stock market investing, wealth management, loans, insurance & tax advisory services etc.',"link":"https://choiceindia.com/services",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
-    "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India','lang':"en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "https://choiceindia.com/": { 'title': 'Choice - Stock Broker & Full Service Stock Brokerage Firm in India','lang':"en", 'content': `Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.`,'link': "https://choiceindia.com/",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript":`<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Choice India",
+      "alternateName": "Choice",
+      "url": "https://choiceindia.com/",
+      "logo": "https://choiceindia.com/static/media/choice-logo.1d914765c11f128e8039bf4e174af2ee.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-022-6707 9999",
+        "contactType": "customer service",
+        "areaServed": "IN"
+      },
+      "sameAs": [
+        "https://www.facebook.com/ChoiceHQ/",
+        "https://twitter.com/ChoiceHQ_Social",
+        "https://www.instagram.com/choicehq_social/",
+        "https://www.youtube.com/c/ChoiceHQ",
+        "https://www.linkedin.com/company/choice-broking/",
+        "https://choiceindia.com/"
+      ]
+    }
+    </script>
+    `},
 
     "career": {
         'title': `Career At Choice | Work With India's Leading FinTech Company`,'lang':"en", 'content': ` Work with Choice India's leading Fintech company. Visit us to know the current job openings.`,"link":"https://choiceindia.com/career",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""
@@ -61,6 +85,7 @@ const meta_tags = {
     "marathi/open-demat-account":{'title':"मोफत डीमॅट खाते उघडा + पहिल्या वर्षासाठी AMC शुल्क नाही",'content':"चॉईससह पहिल्या वर्षासाठी AMC शुल्काशिवाय विनामूल्य डीमॅट खाते उघडा. चॉईससह कमी ब्रोकरेज ट्रेडिंग खात्यासह स्टॉक मार्केटमध्ये गुंतवणूक करा आणि कमी डीपी चार्जेस मिळवा.",'link':"https://choiceindia.com/marathi/open-demat-account","lang":'mr','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
     "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -229,6 +254,7 @@ const meta_tags = {
         'title': "Open Free Demat Account Online without Annual Charges at Choice",'lang':"en", 'content': "Open free Demat account online without annual charges for the first year at Choice. Easy paperless online Demat account opening, free expert research, low DP, and brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -423,7 +449,76 @@ const meta_tags = {
 
     "code-conduct": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
-    "commodity-trading":{'title':"Open Commodity Trading Account Online for Free at Choice",'lang':"en",'content':"Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.",'link':"https://choiceindia.com/commodity-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "commodity-trading":{'title':"Open Commodity Trading Account Online for Free at Choice",'lang':"en",'content':"Open a free online commodity trading account at Choice. Start trading commodities with Choice and benefit from low brokerage fees, low dp charges, free research assistance, and more.",'link':"https://choiceindia.com/commodity-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript":`<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [{
+        "@type": "Question",
+        "name": "How much time does it take to complete the registration of a commodity trading account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It takes about 48 hours for a commodity account in the online process and for the offline process it may take 4 days to 10 days."
+        }
+      },{
+        "@type": "Question",
+        "name": "What are the documents required to open a commodity trading account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "To open a commodity trading account, you need to submit the following documents:
+    Proof of Identity (PAN Card, Aadhar card, ID card, etc)
+    Proof of Address (Aadhar card, utility bills, etc)
+    Photographs
+    Proof of Income (ITR slip, Salary Slip, Bank Statement)
+    Bank details
+    Signature"
+        }
+      },{
+        "@type": "Question",
+        "name": "Is it necessary to provide power of Attorney (POA) while opening a commodity trading account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. The Power of Attorney is important for executing trades in a commodity account. Hence, one has to provide the same as per the regulators."
+        }
+      },{
+        "@type": "Question",
+        "name": "Are any charges applicable while opening a commodity trading account with Choice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. There are no account opening charges with Choice. However, one should take into account the brokerage charges associated."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I use the same commodity trading account for all segments?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Once you open an account with Choice, you have the authority to trade with equity, commodity, currency and derivatives. The procedure for all of them is constant."
+        }
+      },{
+        "@type": "Question",
+        "name": "How long will it take for the commodity trading account to be activated?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A commodity trading account takes 4 hours to be activated through an online process after providing the documents."
+        }
+      },{
+        "@type": "Question",
+        "name": "Are NRIs able to open a commodity trading account in India?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. An NRI can start a trading account with Choice with the same procedure of any citizen residing in India."
+        }
+      },{
+        "@type": "Question",
+        "name": "Can I trade in multiple types of commodities through a commodity account?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. With choice, you have the privilege to trade in multiple types of commodities."
+        }
+      }]
+    }
+    </script>
+    `},
 
     "derivatives-trading":{"title":"Open Derivatives Trading Account Online for Free with Choice",'lang':"en","content":"Open a free online derivatives trading account to trade futures and options contracts while taking advantage of free research and advisory services and cheap brokerage and dp charges.","link":"https://choiceindia.com/derivatives-trading",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
    
@@ -447,6 +542,7 @@ const meta_tags = {
         'title': "Brokerage Charges: Lowest Brokerage Charges In India | Choice",'lang':"en", "content": "Brokerage Charges:  Get the lowest brokerage charges in India for delivery, intraday, derivatives, commodities, and currencies with Choice.","link":"https://choiceindia.com/brokerage-charges",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -493,6 +589,7 @@ const meta_tags = {
         "link": "https://choiceindia.com/open-trading-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -577,6 +674,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/open-brokerage-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -679,6 +777,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/corporate-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
      {
+      "@context": "https://schema.org",
        "@type": "FAQPage",
        "mainEntity": [{
          "@type": "Question",
@@ -741,6 +840,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/minor-demat-account','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -867,6 +967,7 @@ const meta_tags = {
         'title': "मुफ़्त डीमैट खाता खोलें | डीमैट अकाउंट पर प्रथम वर्ष के लिए निःशुल्क AMC",'lang':"hi", "content": "चॉइस के साथ नि: शुल्क ऑनलाइन डीमैट खाता खोलें और फ्री एएमसी प्राप्त करें पहले वर्ष के लिए। हमारी पेपरलेस डीमैट अकाउंट खोलने की प्रक्रिया आपको 15 मिनट के भीतर खाता खोलने में मदद करती है।","link":"https://choiceindia.com/hindi/open-demat-trading-account",'link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -995,6 +1096,7 @@ const meta_tags = {
         'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "lang":'mr',"faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1165,6 +1267,7 @@ const meta_tags = {
         'link': 'https://choiceindia.com/authorised-person','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
         {
+          "@context": "https://schema.org",
           "@type": "FAQPage",
           "mainEntity": [{
             "@type": "Question",
@@ -1203,6 +1306,7 @@ const meta_tags = {
         "link": 'https://choiceindia.com/remisier','link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1361,6 +1465,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Best Share Market App in India - Download Choice FinX Trading App",'lang':"en", "content": "Choice FinX is the best share market in India to invest in stocks, commodities, derivatives, currencies, and IPOs.Download Choice FinX Stock Market App now.","link":"https://choiceindia.com/share-market-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqcript": `<script type="application/ld+json">
      {
+      "@context": "https://schema.org",
        "@type": "FAQPage",
        "mainEntity": [{
          "@type": "Question",
@@ -1425,6 +1530,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India",'lang':"en", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqcript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1506,6 +1612,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         "link": 'https://choiceindia.com/hindi/trading-account','lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1589,6 +1696,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
         'title': "Choice FinX Trading App - Best Indian Online Stock Trading App (Android & iOS)",'lang':"en", "content": "Choice FinX is the best Indian trading app to trade in stocks, commodities, currencies, futures & options. Choice FinX online mobile trading app is available for Android & iPhone devices.",'link':"https://choiceindia.com/online-trading-app",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
         "faqscript": `<script type="application/ld+json">
     {
+      "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [{
         "@type": "Question",
@@ -1666,7 +1774,174 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
 
     "campaign/free-amc-demat-account": {
       'title': "Open a Free AMC Demat Account + Zero Account Opening Fee",'lang':"en", "content": "Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Up to 25X Margin Available, Free Research with 78% Success Ratio & more.",
-      "link": "https://choiceindia.com/campaign/free-amc-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""
+      "link": "https://choiceindia.com/campaign/free-amc-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"","faqscript": `<script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+          "@type": "Question",
+          "name": "How long will it take for the Demat Account to be activated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice Broking support team will reach out to you. Once your account is activated you will receive an email from Choice Broking informing you about the same."
+          }
+        },{
+          "@type": "Question",
+          "name": "What are the documents required to open a Demat Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The following documents will be required to open an account for a resident individual with Choice Broking:
+      PAN Card
+      Cancelled Cheque (that captures the MICR Code)
+      Passport Size Photograph
+      Aadhaar Card"
+          }
+        },{
+          "@type": "Question",
+          "name": "What is the Power of Attorney (PoA) and why is it needed?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time. A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - https://choiceindia.com"
+          }
+        },{
+          "@type": "Question",
+          "name": "Where should I courier the Power of Attorney?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can courier the signed copy of the POA to our Head Office address mentioned below.
+      Choice International Limited,
+      Sunil Patodia Tower,
+      J B Nagar, Andheri (East), Mumbai 400099."
+          }
+        },{
+          "@type": "Question",
+          "name": "Are there any charges for Demat Account opening with Choice Broking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can open a low brokerage Demat Account with Choice Broking at zero account opening charges"
+          }
+        },{
+          "@type": "Question",
+          "name": "How do I open a Trading Account Online without opening a Demat Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "NSE/BSE mandates a Demat with your Trading Account for securities. Currency and Commodities do not require a Demat Account, so if your trading requirements are restricted to that; a Trading Account can be opted for. This will have to be specified in the documentation process with the broker. For more information regarding the same, you can contact our customer care team at care@choiceindia.com"
+          }
+        },{
+          "@type": "Question",
+          "name": "How do I switch my Demat from another broker to Choice Broking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You will be required to provide us with the CML (Client Master List) Copy of your earlier DP and open a new Demat Account with us."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can I map multiple Demat Accounts to my Trading Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can link multiple Demat Accounts to your Trading Account, even with different DP's, but they should all be in your name. However, an important thing to note is that from all the linked Demat Accounts you can give shares for Pay In/Pledge, etc; but the payout from the Trading Account will only get credited to the primary Demat Account."
+          }
+        },{
+          "@type": "Question",
+          "name": "How can I transfer shares from another Demat Account to my Choice Broking Demat Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You will be required to provide the Off Market Delivery Instruction Slip (DIS) to your previous DP, mentioning the target DP ID of the Demat Account you are holding in Choice Equity Broking Private Limited."
+          }
+        },{
+          "@type": "Question",
+          "name": "Is opening a Demat account necessary for stock market investment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Demat account is mandatory if you are going to trade / invest in equities. Demat accounts hold your shares in electronic form. If you are going to simply trade in futures and options then Demat is not required."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can I use my previous Demat Account with Choice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There are 2 options, either you open a new Demat account with Choice and transfer all shares from the old Demat, or merge the old Demat into the new one.
+      You can opt for manual or online transfer of shares.
+      Manual Transfer
+      Ascertain which DP (Depository Participant) is holding the shares, there are 2 depositories in India, National Securities Depository Limited (NSDL) and Central Depository Services Limited (CDSL)
+      If your new Demat is with the same DP then it will be an inter-depository transfer, and if it's different; it will be an intra-depository transfer
+      Next, fill the Delivery Instruction slip (DIS) provided by the DP of your old account. In the 'Mode of Transfer' field, please select whether the transfer is inter-depository or intra-depository. This is crucial
+      Fill all required details like names of shares, quantity and their ISIN numbers
+      Enter the 16-character ID of the new account
+      Submit the signed DIS to old broker and take acknowledgement slip
+      Shares will be transferred to new account in 3-5 working days
+      Online Transfer
+      This option is much simpler, just visit the CDSL website and register with all required details
+      You will be required to fill a form and use the 'Print Form' option; this notifies CDSL to start the verification process
+      After verification is completed, Login details to your account will be sent on your email id
+      Login to your account from CDSL website and start transferring shares to the new account"
+          }
+        },{
+          "@type": "Question",
+          "name": "Can I hold money in a Demat Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely, you can keep money in the Demat/Trading account. It is, however, advisable to hold only the amount that will be required for trading/investing."
+          }
+        },{
+          "@type": "Question",
+          "name": "Is Opening a Demat Account Online Safe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's absolutely safe to open a Demat account online but choosing the right broker is essential for this."
+          }
+        },{
+          "@type": "Question",
+          "name": "Is there a limit for Deposit and Withdrawal Money from a Trading Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no limit as such for depositing or withdrawing money, however, it will need multiple transactions. For MPS/NEFT/RTGS/ the maximum amount allowed in a single transaction is decided by the bank. UPI transfers have a limit of 1 lakh per transaction. In the case of most brokers, there is no withdrawal limit but do check once with your broker."
+          }
+        },{
+          "@type": "Question",
+          "name": "Can I use the same Demat or Trading account for Stock, Currency, Derivatives and Commodity Trading?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, you can use the same account for trading/investing in any asset class."
+          }
+        },{
+          "@type": "Question",
+          "name": "How much Demat Account Opening Fee charged by Choice?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's free. There is no Demat A/c opening fee charged by Choice."
+          }
+        },{
+          "@type": "Question",
+          "name": "What are the eligibility criteria for opening an online Demat & Trading Account?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "As far as age is concerned, there is no minimum age criterion i.e., under 18 can also have Demat & Trading accounts opened. The parents or guardians will be in-charge of the account until the minor comes of age.
+      Below are the common requirements,
+      Must be Indian Citizen residing in India
+      Must be 18 years of age
+      Have valid Pan Card
+      Valid Address Proof (Aadhar, Voter ID, Passport, Driving License, utility bills (not more than 3 months old))
+      You will be required to provide recent photos along with proof of Identity, Address and Income (ITR) to open a Demat account in India."
+          }
+        },{
+          "@type": "Question",
+          "name": "How long will it take for the Demat account to be activated?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If the documents are in order, the Demat account will be activated in 24 – 48 working hours."
+          }
+        },{
+          "@type": "Question",
+          "name": "What is Paperless Demat account opening?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In this option for Demat account opening, there is no physical submission of any document involved. All documents are submitted online and take only 10 minutes to complete!"
+          }
+        }]
+      }
+      </script>
+      `
     },
 
 
@@ -1678,6 +1953,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
       "content":"फिनएक्स ट्रेडिंग ऐप भारत का श्रेष्ठ मोबाइल ट्रेडिंग ऐप है। ऑनलाइन ट्रेडिंग ऐप -  फिनएक्स (एंड्रॉइड और आईओएस) डाउनलोड करें और शेयर बाज़ार में तेजी निवेश करें।","link":"https://choiceindia.com/hindi/online-trading-app",'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"",
       "faqscript": `<script type="application/ld+json">
       {
+        "@context": "https://schema.org",
         "@type": "FAQPage",
         "mainEntity": [{
           "@type": "Question",

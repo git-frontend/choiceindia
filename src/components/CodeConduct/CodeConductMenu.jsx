@@ -7,7 +7,7 @@ function CodeConductMenu() {
             <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Code of Conduct</h2>
                             <Navbar />
                         </div>
