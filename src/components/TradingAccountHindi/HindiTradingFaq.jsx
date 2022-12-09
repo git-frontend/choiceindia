@@ -76,10 +76,6 @@ function HindiTradingFaq() {
                                         अंधेरी (पूर्व), मुंबई 400099।, महाराष्ट्र<br />
                                     </Accordion.Body>
                                 </Accordion.Item>
-
-
-                          
-                                   
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>क्या ऑनलाइन ट्रेडिंग अकाउंट खोलना सुरक्षित है?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
