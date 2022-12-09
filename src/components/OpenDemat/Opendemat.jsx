@@ -225,7 +225,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                             <h4>Chapter 7</h4>
-                            <p>How to Best Demat Account</p>
+                            <p>How to Choose Best Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
@@ -339,7 +339,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                             <h4>Chapter 7</h4>
-                            <p>How to Best Demat Account</p>
+                            <p>How to Choose Best Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
@@ -856,7 +856,7 @@ function Opendemat(){
                         <p className='subheadtxt'>Mostly the below-mentioned two charges are levied on clients by stockbrokers:</p>
                         <ul className='numberlist'>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='inline'> 1. Demat account opening charges: </h4> Earlier, <a
                                 href='https://choiceindia.com/blog/demat-account-opening-charges/' className='linking'>Demat account
                                 opening charges</a> levied by the stockbrokers were very high. Most stockbrokers are now offering
@@ -866,7 +866,7 @@ function Opendemat(){
 
                           </li>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='inline'> 2. AMC charges: </h4> The annual charges that an investor pays to their brokers
                               are AMC charges. Most stockbrokers charge it annually, while some charge it quarterly or monthly.
                               The <a href='https://choiceindia.com/blog/demat-account-amc-charges/' className='linking'>AMC
@@ -1071,7 +1071,7 @@ function Opendemat(){
                         <ul className='bullet mt10'>
                           <li className='subheadtxt '>
 
-                            <p>
+                            <p className='subheadtxt '>
                               <h4 className='listhead inline'>Key role: </h4>- A Demat account ensures safety, whereas a trading
                               account is used to purchase/sell shares.</p>
 
@@ -1155,7 +1155,7 @@ function Opendemat(){
                         <h3 className="subhead">What are the Types of Demat Account Closure?</h3>
                         <ul className='bullet'>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='listhead inline'>Transfer and account closure: </h4>- Suppose your Demat account has some
                               holdings, and you haven't made full payment for the pending payments to the Depository Participant.
                               You will then have first to transfer the holdings to a different Demat account; as soon as the
