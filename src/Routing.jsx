@@ -121,7 +121,7 @@ const LazyChannelFinance = React.lazy(() => import('./components/Channel-Finance
 const LazyCommercialVehicleLoan = React.lazy(() => import('./components/Commercial-Vehicle-Loan/CommercialVehicleLoan'));
 const LazyTermLoans = React.lazy(() => import('./components/Term-Loans/TermLoans'));
 const LazyFlexiCreditBusiness = React.lazy(() => import('./components/Flexi-Credit-Business/FlexiCreditBusiness'));
-
+const LazySolarFinance = React.lazy(() => import('./components/Solar-Finance/SolarFinance'));
 
 
 function Routing() {
@@ -648,6 +648,11 @@ function Routing() {
                          <Route exact path='/flexi-credit-loan' element={
                             <React.Suspense>
                                 < LazyFlexiCreditBusiness />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/solar-finance' element={
+                            <React.Suspense>
+                                < LazySolarFinance />
                             </React.Suspense>
                         } />
  
