@@ -44,7 +44,7 @@ function ClientDetailMain() {
                                         </Form.Group>
                                     </div>
                                     <div className="col-md-6">
-                                        <Form.Group className="mb-4 formgrp width95 float-right" controlId="formBasicEmail">
+                                        <Form.Group className="mb-4 smt-3 formgrp width95 float-right" controlId="formBasicEmail">
                                             <Form.Label className="formlabel">New Email ID </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your New Email Id " className="formcontrol " />
                                             {/* <span className="text-danger"> error message </span> */}
@@ -60,7 +60,7 @@ function ClientDetailMain() {
                                         </Form.Group>
                                     </div>
                                     <div className="col-md-6">
-                                        <Form.Group className="mb-4 formgrp width95 float-right" controlId="formBasicPassword">
+                                        <Form.Group className="mb-4 formgrp smt-3 width95 float-right" controlId="formBasicPassword">
                                             <Form.Label className="formlabel"> New Phone Number </Form.Label>
                                             <Form.Control type="text" placeholder="Enter your New Phone Number" maxLength={10} className="formcontrol " />
                                             {/* <span className="text-danger">error message </span> */}

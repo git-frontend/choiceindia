@@ -128,8 +128,8 @@ function Opendemat(){
                       <hr />
 
                       <div className="bannertext">
-                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must
-                          <a href="https://choiceindia.com/open-free-demat-account" className="linking"> open a Demat account.</a>
+                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must&nbsp;
+                           <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account.</a>
                         </p>
                         <p> Demat account is necessary to start your investment journey into the stock market.</p>
                         <p>Let’s get started to understand everything about the Demat account through this guide.</p>
@@ -546,7 +546,6 @@ function Opendemat(){
                                 className='linking'> (NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
                               funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
 
-
                           </li>
                           <li className="subheadtxt">
                             <p className='subheadtxt'>
@@ -820,7 +819,7 @@ function Opendemat(){
                         <h3 className="subhead">Documents Required for Demat Account Opening:</h3>
                         <p className='subheadtxt'>For opening a Demat account, you must have certain documents with you. Here's the
                           list of <a href='https://choiceindia.com/blog/documents-required-for-demat-account-opening/'
-                            className='linking'> documents required for Demat account opening:</a></p>
+                            className='linking'> documents required for Demat account opening</a></p>
                         <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>Identity Proof ( Aadhar card, PAN card, any other identity proof issued by the

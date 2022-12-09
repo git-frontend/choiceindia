@@ -35,7 +35,7 @@ function BannerSection() {
 
 			<section className="fables-banner">
 				<div className="container">
-					<div className="row">
+					<div className="row mt2">
 						<div className="col-md-12 d-flex justify-content-between flex-wrap">
 							<div className="fables-caption-left">
 								<h2 className="big-ttl">

@@ -16,7 +16,7 @@ const HindiTradingWhyChoice = () => {
                                 <div className="leftsect">
                                     <h2 className="secttile">चॉइस के साथ ट्रेडिंग अकाउंट क्यों खोलें?</h2>
                                     <div className="img">
-                                        <img src={Image16} alt={"चॉइस फ्री डीमैट खाता खोलना"} width={"365"} height={"788"} className="img-fluid" />
+                                        <img src={Image16} alt={"चॉइस सह ट्रेडिंग अकाउंट उघडणे"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
                                 </div>
                                 <div className="rightsect">
@@ -66,19 +66,19 @@ const HindiTradingWhyChoice = () => {
                                     <div className="iconwrap">
                                         <a href="https://finx.choiceindia.com/" target="_blank">
                                             <div className="icon">
-                                                <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
+                                                <img src={Image13} alt="चॉइस फिनएक्स ट्रेडिंग प्लेटफॉर्म" width={"45"} height={"46"} className="img-fluid " />
                                                 <p>वेब</p>
                                             </div>
                                         </a>
                                         <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank">
                                             <div className="icon">
-                                                <img src={Image14} alt="Android" width={"35"} height={"36"} className="img-fluid " />
+                                                <img src={Image14} alt="एंड्राइड के लिए चॉइस फिनएक्स ट्रेडिंग ऐप" width={"35"} height={"36"} className="img-fluid " />
                                                 <p>एंड्रॉइड</p>
                                             </div>
                                         </a>
                                         <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261" target="_blank">
                                             <div className="icon">
-                                                <img src={Image15} width={"45"} height={"46"} alt="IOS" className="img-fluid " />
+                                                <img src={Image15} width={"45"} height={"46"} alt="आईओएस के लिए चॉइस फिनएक्स ट्रेडिंग ऐप" className="img-fluid " />
                                                 <p>आईओएस</p>
                                             </div>
                                         </a>
