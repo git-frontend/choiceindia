@@ -23,13 +23,13 @@ function AmcFaq() {
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>How long will it take for the Demat Account to be activated?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice Broking support team will reach out to you. Once your account is activated you will receive an email from Choice Broking informing you about the same.
+                                        Your account will be activated within 4 hours of document submission. If there is any gap in the documentation, the Choice support team will reach out to you. Once your account is activated you will receive an email from Choice informing you about the same.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>What are the documents required to open a Demat Account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        The following documents will be required to open an account for a resident individual with Choice Broking:
+                                        The following documents will be required to open an account for a resident individual with Choice:
                                         <ul>
                                             <li>PAN Card</li>
                                             <li>Cancelled Cheque (that captures the MICR Code)</li>
@@ -56,9 +56,9 @@ function AmcFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice Broking? </Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>Are there any charges for Demat Account opening with Choice? </Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                    You can open a low brokerage Demat Account with Choice Broking at zero account opening charges
+                                    You can open a low brokerage Demat Account with Choice at zero account opening charges
                                     </Accordion.Body>
                                 </Accordion.Item>
 
@@ -71,7 +71,7 @@ function AmcFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="6" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How do I switch my Demat from another broker to Choice Broking?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'>How do I switch my Demat from another broker to Choice?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             You will be required to provide us with the CML (Client Master List) Copy of your earlier DP and open a new Demat Account with us.
                                             </Accordion.Body>
@@ -83,7 +83,7 @@ function AmcFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="8" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>How can I transfer shares from another Demat Account to my Choice Broking Demat Account? </Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'>How can I transfer shares from another Demat Account to my Choice Demat Account? </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             You will be required to provide the Off Market Delivery Instruction Slip (DIS) to your previous DP, mentioning the target DP ID of the Demat Account you are holding in Choice Equity Broking Private Limited.
                                             </Accordion.Body>

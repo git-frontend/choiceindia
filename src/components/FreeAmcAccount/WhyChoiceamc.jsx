@@ -14,7 +14,7 @@ const WhyChoiceamc = () => {
                         <div className='col-md-12'>
                             <div className="wrap">
                                 <div className="leftsect">
-                                    <h2 className="secttile">Why Choice Broking?</h2>
+                                    <h2 className="secttile">Why Choice?</h2>
                                     <div className="img">
                                         <img src={Image16} alt={"Why to Open Zero AMC Demat Account with Choice"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>

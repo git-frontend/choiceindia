@@ -63,9 +63,9 @@ function MinorDemateAccount() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap ">Can parents instill the value of investing and economic planning in their children at an early age? Surely they can do so by <Link to="/open-free-demat-account "><strong>opening free Demat Account</strong></Link> for their Minor children.<br/>
+                                <span className="read-more-wrap ">Can parents instill the value of investing and economic planning in their children at an early age? Surely they can do so by opening free Demat Account for their Minor children.<br/>
                                     <span className="read-more-target"> 
-                                    A  <Link to="/demat-account "><strong>Demat account</strong></Link> for Minors is opened by a Parent or a Legal Guardian in the minor's name (below the age of 18, in India). One can open a Minor Demat account and invest in mutual funds, stocks, and other investment opportunities through this account. In fact, with Choice India, many Parents are rapidly opting for easy Minor Demat Account opening online. <br /><br />
+                                    A  <Link to="/demat-account"><strong>Demat account</strong></Link> for Minors is opened by a Parent or a Legal Guardian in the minor's name (below the age of 18, in India). One can open a Minor Demat account and invest in mutual funds, stocks, and other investment opportunities through this account. In fact, with Choice India, many Parents are rapidly opting for easy Minor Demat Account opening online. <br /><br />
           The <Link to="/blog/demat-account-for-minors/"><strong>Demat Account for minors</strong></Link> can be operated by a Guardian till the Minor attains a legal age of an adult (Above 18). The Guardian has to be the Father. In case of the absence of the Father, the Mother can be a Guardian. In case of the absence of both the Parents, the Guardian can be appointed by the Court of Law.<br /> <br />
 
 
