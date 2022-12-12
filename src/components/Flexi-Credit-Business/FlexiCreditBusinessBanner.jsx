@@ -46,15 +46,19 @@ function FlexiCreditBusinessBanner() {
             <section className="inv-fin-banner flexi-credit-banner">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-xl-7 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                        <div className="col-md-7">
+                            <div className="fin-banner-caption">
                                 <h1 className="big-ttl"> Apply for Business Flexi<br /> Credit in India </h1>
                                 <p>  Our Flexi-Credit gives you the freedom to withdraw or deposit money multiple times from your loan account and only pay interest on the utilized amount with our efficient business loan facility.</p>
-                                <p>Get a Flexi business loan up to<br />
-                                Rs. 25 lakhs online. <br />
+                                <p>Get a Flexi business loan up to Rs. 25 lakhs online. <br />
 
           
                                     <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                            </div>
+                        </div>
+                        <div className="col-md-5">
+                            <div className="formwrap">
+
                             </div>
                         </div>
                     </div>

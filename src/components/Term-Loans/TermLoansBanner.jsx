@@ -45,16 +45,22 @@ function TermLoansBanner() {
         <div>
             <section className="inv-fin-banner term-loan-ban">
                 <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-xl-8 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                    <div className="row">
+                        <div className=" col-md-7">
+                            <div className="fin-banner-caption">
                                 <h1 className="big-ttl"> Get Term Loan for <br /> Business Online</h1>
                                 <p>Our Term Loans are designed to suit your various financial business needs and help offer capital for expenditure and expansion and are best suited for your pre-defined expenditures.</p>
-                                <p>Apply for business term loan online<br />
+                                <p>Apply for business term loan online
                                     at the lowest interest rate.<br />
                                     <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
                         </div>
+                        <div className=" col-md-5">
+                            <div className="formwrap">
+                                
+                            </div>
+                        </div>
+
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-xl-8 col-md-12">

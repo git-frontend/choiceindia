@@ -22,21 +22,7 @@
                     display: none;
                 }
             }
-            &::after {
-                content: '';
-                width: 9rem;
-                height: 7rem;
-                display: block;
-                position: absolute;
-                right: -1rem;
-                top: 19rem;
-                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top right;
-                background-size: contain;
-        
-                @media (max-width: $md) {
-                    display: none;
-                }
-            }
+            
         }
     }
 }

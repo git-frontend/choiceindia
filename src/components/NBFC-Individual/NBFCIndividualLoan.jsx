@@ -38,7 +38,9 @@ function NBFCloan() {
          
          <Banner />
           <Loantabs />
-          
+          <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+            <button className=" primary-orange-btn scroll-top-account openbtn" >Open Free Account</button>
+          </div>   
           
        </div> 
       

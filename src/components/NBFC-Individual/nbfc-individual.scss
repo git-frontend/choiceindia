@@ -136,34 +136,34 @@ body{
       }
     .flexititle{
         position: relative;
-        &:before{
-            display: block;
-            position: absolute;
-            content: '';
-            top: -2.5rem;
-            right: 10.3125rem;
-            width: 7.5rem;
-            height: 6.5625rem;
-            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
-            background-size: contain;
-            @media (max-width:$sm) {
-              display: none;
-            }
-        }
-        &:after{
-            display: block;
-            position: absolute;
-            content: '';
-            top: 10rem;
-            left: -4.6875rem;
-            width: 22rem;
-            height: 16rem;
-            background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
-            background-size: contain;
-            @media (max-width:$sm) {
-                display: none;
-              }
-        }
+        // &:before{
+        //     display: block;
+        //     position: absolute;
+        //     content: '';
+        //     top: -2.5rem;
+        //     right: 10.3125rem;
+        //     width: 7.5rem;
+        //     height: 6.5625rem;
+        //     background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+        //     background-size: contain;
+        //     @media (max-width:$sm) {
+        //       display: none;
+        //     }
+        // }
+        // &:after{
+        //     display: block;
+        //     position: absolute;
+        //     content: '';
+        //     top: 10rem;
+        //     left: -4.6875rem;
+        //     width: 22rem;
+        //     height: 16rem;
+        //     background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+        //     background-size: contain;
+        //     @media (max-width:$sm) {
+        //         display: none;
+        //       }
+        // }
     }
     .para{
         position: relative;
@@ -189,6 +189,24 @@ body{
     }
     @media (max-width:$sm) {
         padding: 0 0 4rem 0;
+    }
+    .formwrap{
+        position: relative;
+        &:after{
+                display: block;
+                 position: absolute;
+                content: '';
+                top: 26rem;
+                z-index: -1;
+                left: -4.6875rem;
+                width: 22rem;
+                 height: 16rem;
+                 background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
+                background-size: contain;
+                 @media (max-width:$sm) {
+                    display: none;
+                   }
+             }
     }
 }
 

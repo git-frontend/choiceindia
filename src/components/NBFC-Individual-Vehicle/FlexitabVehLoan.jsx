@@ -48,8 +48,8 @@ function FlexitabVehLoan() {
             <section className="flexitabcontent">
                 <div className="container">
                     <div className="row">
-                    <div className="col-xl-10 col-md-12 mx-auto">
-                            <div className="heading-sec text-center">
+                    <div className=" col-md-7">
+                            <div className="heading-sec">
                                 <h2 className="title-first flexititle">Apply for Vehicle Loan Online</h2>
                                 <p className="para">Are you struggling for days and still unable to find a way to get your desired vehicle financed even after multiple attempts? Do not worry!
                                     Your search can stop right here with us. We are a customer-oriented organization where we treat our customers like family. We at Choice Finserv offer affordable and budget-friendly vehicle loans making sure that the wheels of your growth keep moving.</p>
@@ -58,7 +58,11 @@ function FlexitabVehLoan() {
                             </div>
 
                         </div>
-
+                        <div className=" col-md-5">
+                            <div className="formwrap">
+                                
+                            </div>
+                        </div>
 
                     </div>
 

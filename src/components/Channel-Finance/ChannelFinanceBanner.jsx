@@ -48,15 +48,20 @@ function ChannelFinanceBanner() {
         <div>
             <section className="inv-fin-banner channel-ban-bg">
                 <div className="container">
-                    <div className="row justify-content-center">
-                        <div className="col-xl-8 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                    <div className="row">
+                        <div className="col-md-7">
+                            <div className="fin-banner-caption ">
                                 <h1 className="big-ttl"> Empower Your Business <br/>
                                     With Channel Finance</h1>
                                 <p>We provide Working capital finance like in form of channel finance limit generally to selected “Spoke” on the recommendation of anchor, for the purpose of selling or buying of products and services.</p>
-                                <p>Apply for channel finance<br />
+                                <p>Apply for channel finance
                                 facility up to 50 crores.<br />
                                     <Link to="/invoice-financing"><span className="aply-btn">Apply Now!</span></Link></p>
+                            </div>
+                        </div>
+                        <div className=" col-md-5">
+                            <div className="formwrap">
+                                
                             </div>
                         </div>
                     </div>
