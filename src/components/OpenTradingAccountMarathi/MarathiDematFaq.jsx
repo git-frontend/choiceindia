@@ -72,7 +72,7 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                <Accordion.Header as="h3" className='faq-header'>चॉईस ब्रोकिंगसह डिमॅट खाते उघडण्यासाठी काही शुल्क आकारले जाते का?</Accordion.Header>
+                                <Accordion.Header as="h3" className='faq-header'>चॉईस सह डिमॅट खाते उघडण्यासाठी काही शुल्क आकारले जाते का?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     तुम्ही चॉईस ब्रोकिंगसह किमान शून्य शुल्कातही डिमॅट खाते सुरु करु शकता.
                                     </Accordion.Body>
@@ -90,7 +90,7 @@ function DematFaq() {
                                  
                                       
                                         <Accordion.Item eventKey="6" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>मी माझे जुने डिमॅट दुसऱ्या ब्रोकरकडून चॉईस ब्रोकिंगमध्ये कसे बदलू शकतो?</Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'>मी माझे जुने डिमॅट दुसऱ्या ब्रोकरकडून चॉईस मध्ये कसे बदलू शकतो?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             तुम्हाला तुमच्या जुन्या डीपीची CML (क्लायंट मास्टर लिस्ट) देऊन, आमच्याकडे नवीन डिमॅट खाते ओपन करणे आवश्यक आहे.
                                             </Accordion.Body>
@@ -102,7 +102,7 @@ function DematFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
                                         <Accordion.Item eventKey="8" className='faq-item'>
-                                            <Accordion.Header as="h3" className='faq-header'>मी दुसऱ्या एखाद्या डिमॅट खात्यातून माझ्या चॉईस ब्रोकिंगच्या डिमॅट खात्यात शेअर्स कसे हस्तांतरित करु शकतो? </Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'>मी दुसऱ्या एखाद्या डिमॅट खात्यातून माझ्या चॉईसच्या डिमॅट खात्यात शेअर्स कसे हस्तांतरित करु शकतो? </Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             चॉईस इक्विटी ब्रोकिंग प्रायव्हेट लिमिटेडमध्ये तुम्ही घेत असलेल्या डिमॅट खात्याच्या टार्गेट डीपी आयडीचा उल्लेख करावा लागेल. त्यानंतर तुम्हाला तुमच्या आधीच्या डीपीला ऑफ मार्केट डिलिव्हरी इन्स्ट्रक्शन स्पिल (DIS) प्रदान करणे आवश्यक असते.
                                             </Accordion.Body>
@@ -116,7 +116,7 @@ function DematFaq() {
                                         <Accordion.Item eventKey="10" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>मी माझे जुने डिमॅट खाते चॉईससह वापरू शकतो का?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
-                                            यासाठी दोन पर्याय आहेत. एकतर तुम्ही चॉईस ब्रोकिंगमध्ये नवीन डिमॅट खाते ओपन करा. आणि जुन्या डिमॅटमधून सर्व शेअर हस्तांतरित करा किंवा ते चॉईसच्या खात्यात विलीन करा. यासाठी तुम्ही शेअर हस्तांतरणासाठी मॅन्यूअल किंवा ऑनलाईन पर्यांयाची निवड करु शकता.<br />
+                                            यासाठी दोन पर्याय आहेत. एकतर तुम्ही चॉईस मध्ये नवीन डिमॅट खाते ओपन करा. आणि जुन्या डिमॅटमधून सर्व शेअर हस्तांतरित करा किंवा ते चॉईसच्या खात्यात विलीन करा. यासाठी तुम्ही शेअर हस्तांतरणासाठी मॅन्यूअल किंवा ऑनलाईन पर्यांयाची निवड करु शकता.<br />
                                                 <strong>मॅन्यूअल केल्यास</strong>
                                                 <ul>
                                                     <li>कोणता डीपी (डिपॉझिटरी पार्टिसिपंट) समभाग घेत आहे. ते तपासा. कारण आपल्याकडे दोनप्रकारचे डिपॉझिटर्स आहेत. पहिले म्हणजे नॅशनल सेक्युरिटीज डिपॉझिटरी लिमिटेड (NSDL) आणि दुसरे म्हणजे सेंट्रल डिपॉझिटरी सर्व्हिसेस लिमिटेड (CDSL)</li>

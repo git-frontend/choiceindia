@@ -8,7 +8,7 @@ import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 import meta_tags from "../../Data/MetaTags";
 
-import "./ipo-Investment.scss";
+import "./ipo-investment.scss";
 
 
 function EquityBrokingMain() {

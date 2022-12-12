@@ -129,7 +129,7 @@ function Opendemat(){
 
                       <div className="bannertext">
                         <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must&nbsp;
-                           <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account.</a>
+                           <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account</a>.
                         </p>
                         <p> Demat account is necessary to start your investment journey into the stock market.</p>
                         <p>Let’s get started to understand everything about the Demat account through this guide.</p>
@@ -542,8 +542,8 @@ function Opendemat(){
                           </li>
                           <li className="subheadtxt">
                             <p className='subheadtxt'>
-                            <h4 className="inline">2. Repatriable Demat Account <a href='https://choiceindia.com/nri-demat-account'
-                                className='linking'> (NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
+                            <h4 className="inline">2. Repatriable Demat Account (<a href='https://choiceindia.com/nri-demat-account'
+                                className='linking'>NRI Demat Account</a>): </h4> A Demat account used by NRIs allows transferring
                               funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
 
                           </li>
