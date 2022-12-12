@@ -59,11 +59,11 @@ function NRIDemateAccount() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> Simply put, NRIs are the Indians who are currently residing abroad (outside of India). With Choice India, NRIs (Non Resident Indians) who want to invest in Indian Equity Markets can open a Demat Account for NRI. By following our simple account opening procedure the NRIs can venture into shares, bonds, debentures of various Indian companies.
-                                    <span className="read-more-target"> The most accurate definition of NRI is given by FEMA (Foreign Exchange Management Act): NRI is referred to as an individual who is -<br/>
+                                <span className="read-more-wrap "> Simply put, NRIs are the Indians who are currently residing abroad (outside of India). With Choice India, NRIs (Non Resident Indians) who want to invest in Indian Equity Markets can open a <Link to="/demat-account"><strong>Demat Account</strong></Link> for NRI. By following our simple account opening procedure the NRIs can venture into shares, bonds, debentures of various Indian companies.
+                                    <span className="read-more-target"> The most accurate definition of NRI is given by FEMA (Foreign Exchange Management Act): NRI is referred to as an individual who is -<br/><br />
                                         <ul>
                                             <li>An Indian citizen or a person of Indian Origin who lives in a foreign country for employment, business, or other reasons.</li>
-                                            <li>An Indian Citizen who has lived in India for less than 182 days during the preceding financial year is also referred to as an NRI.</li>
+                                            <li>An Indian Citizen who has lived in India for less than 182 days during the preceding financial year is also referred to as an NRI.</li><br />
                                         </ul>
                                         The procedure of <Link to="/open-free-demat-account"><strong>opening a Demat Account</strong></Link> for NRIs is quite similar to that of opening the regular Demat Accounts. The only difference is that an NRI needs to declare his/her NRI residence status and then choose the appropriate subtype of the NRI Demat Account.
                                         <br /><br />
@@ -72,12 +72,13 @@ function NRIDemateAccount() {
 <br /><br />
                                         <strong>Below are the easy steps to open NRI Demat account:</strong><br /><br />
                                         <ul>
-                                            <li>To open an NRI Account with us, you can register online on our website.</li>
-                                            Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.<br />
-                                            <li>You can also download our Choice FinX App ( Android &amp; iOS) and Sign Up via your smartphone.</li>
-                                            <li>It is advisable to download the app since signing up will need the upload of your latest photo, which can be easily clicked from the camera of your phone.</li>
-                                            <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li>
-                                            <li>Once you upload all the necessary documents they are up for verification.</li>
+                                            <li>To open an NRI Account with us, you can register online on our website.<br />
+                                            Individual Demat account is a fairly simple one and the name itself is explanatory. It is a Demat account dedicated to an individual who operates it themselves.
+                                            </li><br />
+                                            <li>You can also download our Choice FinX App ( Android &amp; iOS) and Sign Up via your smartphone.</li><br />
+                                            <li>It is advisable to download the app since signing up will need the upload of your latest photo, which can be easily clicked from the camera of your phone.</li><br />
+                                            <li>If your documents are up-to-date, it will take you about 5 minutes to Sign Up.</li><br />
+                                            <li>Once you upload all the necessary documents they are up for verification.</li><br />
                                             <li>Upon the successful verification of the documents, you will have successfully opened an NRI Demat Account online.</li>
                                            
                                         </ul>
@@ -91,7 +92,7 @@ function NRIDemateAccount() {
                                             The Annual Maintenance fee is charged for the general maintenance of the Demat Account for NRIs and keeping it functional. At Choice India, we offer our customers a One Year free AMC on demat account.
                                         </div><br />
 
-                                        <h3 className="font-bold">Benefits Of Opening NRI Demat Account</h3>
+                                        <h2 className="font-bold">Benefits Of Opening NRI Demat Account</h2>
                                         Investing in the Indian Stock Markets while you are abroad is advantageous. Demat account opening online for an NRI with us comes with the benefits like:<br />
                                         <div className="ml-3">
                                             <h3 className="font-bold"> 1. Financial Planning</h3>
@@ -108,7 +109,7 @@ function NRIDemateAccount() {
                                             <Link to="/"><strong>Choice India</strong></Link> has mastery in portfolio management of NRI accounts. Over the years, we have garnered a loyal customer base because of our client-centric approach.
                                         </div><br/>
 
-                                        <h3 className="font-bold">Documents Required to Open A NRI Demat Account</h3>
+                                        <h2 className="font-bold">Documents Required to Open A NRI Demat Account</h2>
                                         Below is the comprehensive list of documents required to open the Demat Account for NRIs:<br />
                                         <h4 className="font-bold"> 1. Current Residential Status</h4>
                                         <h4 className="font-bold"> 2. For Indian Passport Holders</h4>

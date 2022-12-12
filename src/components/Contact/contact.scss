@@ -182,6 +182,7 @@
     }
 
     .address {
+        width: 38%;
         @media (max-width: $sm) {
             text-align: left !important;
             margin-top: 3rem;

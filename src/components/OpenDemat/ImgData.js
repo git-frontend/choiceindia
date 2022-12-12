@@ -103,17 +103,17 @@ const img_data = [
 
     {
         "id": "account-type-img",
-        "img": `<img src=${image14} class="img-fluid chapter-content-img" alt="Demat Account Types" />`
+        "img": `<img src=${image14} class="img-fluid chapter-content-img" alt="Types of Demat Account" />`
     },
 
     {
         "id": "account-benefits-img",
-        "img": `<img src=${image15} class="img-fluid chapter-content-img" alt="Demat Account Benefits" />`
+        "img": `<img src=${image15} class="img-fluid chapter-content-img" alt="Benefits of Demat Account" />`
     },
 
     {
         "id": "demat-features-img",
-        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt=" Featues of Demat Account" />`
+        "img": `<img src=${image16} class="img-fluid chapter-content-img" alt="Demat account Features" />`
     },
 
     {
@@ -129,7 +129,7 @@ const img_data = [
 
     {
         "id": "how-to-use-demat-img",
-        "img": `<img src=${image19} class="img-fluid chapter-content-img" alt="Uses of Demat Account" />`
+        "img": `<img src=${image19} class="img-fluid chapter-content-img" alt="How to Use a Demat Account" />`
     },
 
     {
@@ -141,7 +141,7 @@ const img_data = [
     {
         "id": "how-to-close-demat-img",
         "img": ` <img src=${image21} class="img-fluid chapter-content-img"
-        alt="How to Deactivate Demat Account" />`
+        alt="How to Close Demat Account" />`
     },
 
     {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import pin from '../../assets/images/contact/office.svg';
 import clock from '../../assets/images/contact/business-hours.webp';
 import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
@@ -20,12 +20,17 @@ import Modal from 'react-bootstrap/Modal';
 
 
 function Contactdetail() {
+   const [address, setaddress] = useState({});
+   const [city, setcity] = useState('MUMBAI');
+   const [check, setcheck] = useState(false);
+   const [trigger, setTrigger] = useState(false);
+   let citylists = [];
 
    // let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
    const [MapNumber, setMapNumber] = useState(() => 0);
    const [firstMap, setIsFirstMap] = useState(() => true);
    const [showMap, setShowMap] = useState(() => false);
-   const [check, setcheck] = useState(false);
+   // const [check, setcheck] = useState(false);
    const handleShow = () => setShow(true);
    const handleClose = () => setShow(false);
    const [show, setShow] = useState(false);
@@ -47,19 +52,21 @@ function Contactdetail() {
    function checktable() {
       check = !check;
    }
-   setTimeout(() => {
-      setShowMap(() => true);
-   }, 200)
 
-   function selectCity(event) {
-      // console.log("event",event.target.value)
-      setIsFirstMap(() => false);
-      setMapNumber(() => event.target.value);
+   function selectCity() {
+      setcity(event.target.value); 
    }
+
+   useEffect(() => {
+      setTrigger(true)
+      if (trigger === true) {
+          cityList()
+      }
+
+  }, [trigger])
 
    return (
 
-      /**======= */
       <div>
          <section className="contactdetail contactdetail-new">
             <div className="container">
@@ -272,29 +279,68 @@ function Contactdetail() {
 
             </div>
             {
-               showMap ? firstMap ?
-                  <div className='container-fluid mt-10'>
+               address  ?
+               <div>
+            <div className="container mt-10 "  >
+                     <div className="d-flex justify-content-between detailwrap">
+
+                           <div className='d-flex flex-column flex-column-left'>
+                              <div>
+                                 <p className="maintitle">120+ branches and partner offices</p>
+                                 <p className="subhead">Locate and office in your city</p>
+                              </div>
+
+                              <div className='cust-dropdown'>
+
+                                 <Form.Select variant="Info" id="dropdown-basic" onChange={()=>selectCity()}>
+
+                                    {
+
+                                       Object.keys(address)?.map((keyValue, i) => {
+                                          return (
+                                             <option  value={keyValue}>{keyValue}</option>
+
+                                          )
+                                       }
+                                       )
+
+                                    }
+
+
+                                 </Form.Select>
+                              </div>
+                           </div>
+
+                           <div className="text-right address" >
+                           <p className="maintitle">{address && address[city] && address[city][0] && address[city][0].address_title}</p>
+                           <p className="subtext cursor-pointer"><a href="mailto:`${address && address[city] && address[city][0] && address[city][0].email}`" target="_blank">{address && address[city] && address[city][0] && address[city][0].email}</a></p>
+                           <p className="subtext">{address && address[city] && address[city][0] && address[city][0].branch_address}</p>
+                        </div>
+
+                     </div> 
+            </div>
+           
+               <div className='container-fluid mt-10'>
                      <div className='row'>
                         <div className='map '>
-                           <div>
-                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.0467468308443!2d72.86217461437725!3d19.10560505600722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c839a2cd1731%3A0xb39db16c9cf8362b!2sChoice!5e0!3m2!1sen!2sin!4v1655288552703!5m2!1sen!2sin"><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
+                        {
+                            address && address[city] && address[city][0] && address[city][0].link ?
+                              <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={address && address[city] && address[city][0] && address[city][0].link} ><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe>:""
+                        }
                         </div>
                      </div>
-                  </div> :
-                  <div className='container-fluid mt-10'>
-                     <div className='row'>
-                        {
-                           data[MapNumber].mapSrc === "" ?
-                              <div></div> :
-                              <div className='map '>
-                                 <div>
-                                    <iframe className="gm-control-active contact-map" title="Choiceindia" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0" src={data[MapNumber].mapSrc}><a href="https://www.gps.ie/sport-gps/">ChoiceIndia</a></iframe></div>
-                              </div>
-                        }
+                  </div>
+                  </div>
 
-                     </div>
-                  </div> : ''
+                  : <div className="text-center">
+                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                  
+              </div>
+
+
             }
+
+                   
          </section>
       </div>
    );

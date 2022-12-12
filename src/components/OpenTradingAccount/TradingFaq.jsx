@@ -34,20 +34,20 @@ function DematFaq() {
                         <div className="col-md-12">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'> How much time is required to open a trading account online?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'> How much time is required to open a trading account online?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Online account opening has become fairly convenient not to mention quick. If you have all the required documents handy, and the KYC is done, then the account can be opened in 15 minutes. If the KYC is not done then it could take a couple of working days.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="1" className='faq-item'>
-                                    <Accordion.Header> <h4 className='faq-header'>Are there any charges applied by stock brokers while opening a trading account online?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Are there any charges applied by stock brokers while opening a trading account online?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     It’s hard to say about other brokers, but Online Trading Account opening or Online Demat Account opening with Choice broking is absolutely free. There are no charges whatsoever.
                                         
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>What are the AMC charges for trading accounts with Choice?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What are the AMC charges for trading accounts with Choice?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     First year AMC is free, next year onwards Choice Broking takes minimal charges for maintaining and keeping your trading account ready to use whenever you’d like to.<br /><br />
                                     First Year AMC is Free and then *3 plans to choose from:
@@ -59,7 +59,7 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
-                                    <Accordion.Header><h4 className='faq-header'>What documents are required to open a trading account online?</h4> </Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>What documents are required to open a trading account online? </Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Below are the documents required to open a trading account online, it is helpful to keep them handy when you try to open a trading account online.<br /><br />
                                         <ul>
@@ -80,7 +80,7 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="4" className='faq-item'>
-                                    <Accordion.Header > <h4 className='faq-header'>Is it necessary to provide power of Attorney (POA) while opening a trading account?</h4></Accordion.Header>
+                                    <Accordion.Header as="h3" className='faq-header'>Is it necessary to provide power of Attorney (POA) while opening a trading account?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
                                     Yes, it is necessary to provide Power of Attorney to your broker. This is part of the account opening procedure and can be directly downloaded from the site. The POA is a critical document so it has to be filled and the attested hard copy has to be mailed to Choice Broking’s HQ. Below is the address,<br /><br />
                                     Courier Address: Courier Address: Choice International Limited,<br />
@@ -89,10 +89,22 @@ function DematFaq() {
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="5" className='faq-item' id="faqid">
-                                            <Accordion.Header> <h4 className='faq-header'> Is it Safe to Open a Trading Account Online?</h4></Accordion.Header>
+                                            <Accordion.Header as="h3" className='faq-header'> Is it Safe to Open a Trading Account Online?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
                                             It’s alright to be concerned about security when it comes to money, but the regulators that govern the market have very strict guidelines about maintaining and operating demat accounts. The technology employed is safe and done in a way that makes Trading/Demat Accounts virtually unhackable.<br />
                                             It’s completely safe to open a trading account online.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="6" className='faq-item'>
+                                            <Accordion.Header as="h3" className='faq-header'>How much money can I add to my trading account?</Accordion.Header>
+                                            <Accordion.Body className='open-demat-faq-body'>
+                                            There are limits as such to the maximum amount that can be added to your account. You will need to check with your back regarding transfers to Demat/ Trading accounts.
+                                            </Accordion.Body>
+                                        </Accordion.Item>
+                                        <Accordion.Item eventKey="7" className='faq-item'>
+                                            <Accordion.Header as="h3" className='faq-header'>Can I use the same trading account for all segments?</Accordion.Header>
+                                            <Accordion.Body className='open-demat-faq-body'>
+                                            Absolutely, Stocks, Currencies, commodities and F&amp;O, you can use the same account for trading in all segments.
                                             </Accordion.Body>
                                         </Accordion.Item>
 
@@ -102,28 +114,17 @@ function DematFaq() {
                                 view ?
                                     <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
                                     
-                                        <Accordion.Item eventKey="6" className='faq-item'>
-                                            <Accordion.Header> <h4 className='faq-header'>How much money can I add to my trading account?</h4></Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                            There are limits as such to the maximum amount that can be added to your account. You will need to check with your back regarding transfers to Demat/ Trading accounts.
-                                            </Accordion.Body>
-                                        </Accordion.Item>
-                                        <Accordion.Item eventKey="7" className='faq-item'>
-                                            <Accordion.Header><h4 className='faq-header'>Can I use the same trading account for all segments?</h4></Accordion.Header>
-                                            <Accordion.Body className='open-demat-faq-body'>
-                                            Absolutely, Stocks, Currencies, commodities and F&amp;O, you can use the same account for trading in all segments.
-                                            </Accordion.Body>
-                                        </Accordion.Item>
+                                        
                                         
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button>
+                                        {/* <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('faqid')}} >&nbsp;View less</button> */}
 
                                     </Accordion>
 
 
                                     :
                                     <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button>
+                                       {/* <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6" onClick={() => setview(!show)}>View more</button> */}
                                     </div>
                             }
                         </div>

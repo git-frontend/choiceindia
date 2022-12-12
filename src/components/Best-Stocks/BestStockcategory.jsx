@@ -23,7 +23,7 @@ import { useEffect } from "react";
 function BestStockcategory() {
   
   let tokenList = [{}]
-  let multiValue = [{}]
+  let multiValue = [];
   let AllFilesValue = {};
   let tokens="";
   let storefile;
@@ -124,7 +124,7 @@ function urlLink(){
           res.response.research.forEach(ele => {
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })  
         });
-        for (let i = 1; i < tokenList.length; i++) {
+        for (let i = 0; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
             
           
@@ -212,7 +212,7 @@ function urlLink(){
 
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token }) 
         });
-        for (let i = 1; i < tokenList.length; i++) {
+        for (let i = 0; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
             
           
@@ -301,7 +301,7 @@ function urlLink(){
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
             
         });
-        for (let i = 1; i < tokenList.length; i++) {
+        for (let i = 0; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
             
           
@@ -375,11 +375,23 @@ function urlLink(){
       
         if (res) {
           storefile=res.Response.Data
+
           res.Response.Data.forEach(ele => {
 
             tokenList.push({ 'SegmentId': ele.Seg, 'Token': ele.Tok }) 
-        });
-        for (let i = 1; i < tokenList.length; i++) {
+            let dateData = ele.TATime;
+                    if (dateData) {
+                        let len = dateData.split(" ")
+                        if (len.length) {
+                            ele.date = len[0];
+                            
+                        }
+                    }
+                    ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0]),  "dd MMMM'yy")
+                    ele.call_type= ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell'||ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
+
+                  });
+        for (let i = 0; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
             
           
@@ -419,6 +431,7 @@ function urlLink(){
           })
           
           setlist(multiValue) ;
+         
             }else{
               setlist([])
             }
@@ -548,7 +561,7 @@ function urlLink(){
                         list && list.length ?
                                 <div className="row gx-5">
                                   {
-                                    (list || []).slice(1, 5).map((response, index) => {
+                                    (list || []).slice(0, 4).map((response, index) => {
 
 
                                       return (
@@ -560,21 +573,27 @@ function urlLink(){
                                             <div className="top-section" >
                                               <div className="top-left">
                                                 <h6 className="top-text">Reco Date</h6>
+                                               
                                                 {
                                                   toggleState==1?
                                                   <div>
-                                                  <h6 className="top-date">{utils.formatDate(new Date(response.TATime), "dd MMMM , yyyy")}</h6>
+                                                  <h6 className="top-date">{(response?.published_date)}</h6>
                                                   </div>:
+                                                  toggleState==2?
                                                   <div>
-                                                  <h6 className="top-date">{utils.formatDate(new Date(response.updated_datetime), "dd MMMM , yyyy")}</h6></div>
+                                                  <h6 className="top-date">{utils.formatDate(new Date(response?.updated_datetime), "dd MMMM , yyyy")}</h6></div>
+                                                  :
+                                                  <div>
+                                                  <h6 className="top-date">{utils.formatDate(new Date(response?.reco_date), "dd MMMM , yyyy")}</h6></div>
+                                                
                                                 }
                                                 
-                                              </div>
-                                              {
-                                                toggleState == 1?
-                                                <div className="top-right"><button className="btn-buy sellbtn" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">Sell</a></button></div>:
-                                                <div className="top-right"><button className="btn-buy" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response.call_type}</a></button></div>
-                                              }
+                                              </div>  
+                                              
+                                                
+                                                <div className="top-right"><button className={"btn-buy " + ((response.call_type=="SELL")?" sellbtn":" buybtn")} > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response?.call_type}</a></button></div>
+                                                {/* <div className="top-right"><button className="btn-buy" > <a className="links1" href={checkdevice?checkdevice:[]} target="_blank">{response.call_type}</a></button></div> */}
+                                              
                                               
                                             </div>
                                             
@@ -583,19 +602,19 @@ function urlLink(){
                                                 {
                                                   toggleState==1?
                                                   <div>
-                                                  <h4 className="big-text">{response.Sym}</h4>
-                                                  <span className="small-text">{response.Name}</span>
+                                                  <h4 className="big-text">{response?.Sym}</h4>
+                                                  <span className="small-text">{response?.Name}</span>
                                                   </div>:
-                                                  <div> <h4 className="big-text">{response.scrip_name}</h4>
-                                                  <span className="small-text">{response.scrip_sec_desc}</span></div>
+                                                  <div> <h4 className="big-text">{response?.scrip_name}</h4>
+                                                  <span className="small-text">{response?.scrip_sec_desc}</span></div>
 
 
                                                 }
                                                
                                               </div>
                                               <div className="middle-right">
-                                              <span className="right-big-text">{response.LTP}</span>
-                                              <h6 className={"right-small-text " + ((response.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
+                                              <span className="right-big-text">{response?.LTP}</span>
+                                              <h6 className={"right-small-text " + ((response?.ChangePer<0) ? 'text_red' :(response.ChangePer >0) ? 'text_green':'')}>{Math.abs((response.Change||0)).toFixed(2) +"(" +Math.abs((response?.ChangePer||0)).toFixed(2) +'%'+")"}</h6>
                                               </div>
                                             </div>
                                             {
@@ -604,20 +623,20 @@ function urlLink(){
                                           <div className="d-flex justify-content-between pt-3">
                                             <div className="bottom">
                                               <h6 className="bottom_small_text">Stop Loss</h6>
-                                              <h4 className="bottom_big_text">{((response.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                             </div>
                                             <div className="bottom">
                                               <h6 className="bottom_small_text">Entry Price</h6>
-                                              <h4 className="bottom_big_text">{((response.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              <h4 className="bottom_big_text">{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                               {/* <h4 className="bottom_big_text">{(response.EP/100).toFixed(2)}</h4> */}
                                             </div>
                                             <div className="bottom">
                                               <h6 className="bottom_small_text"> Target Price </h6>
-                                              <h4 className="bottom_big_text" >{((response.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              <h4 className="bottom_big_text" >{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                             </div>
                                             <div className="bottom">
                                               <h6 className="bottom_small_text">2nd Target</h6>
-                                              <h4 className="bottom_big_text">{((response.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                             </div>
                                             <div className="bottom">
                                               <h6 className="bottom_small_text">3rd Target</h6>
@@ -630,15 +649,15 @@ function urlLink(){
                                             <div className="d-flex justify-content-between pt-3">
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text">Stop Loss</h6>
-                                                <h4 className="bottom_big_text" >{parseFloat((response.datapoints||[])[2].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints||[])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                               </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text">Entry Price</h6>
-                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[0].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                               </div>
                                               <div className="bottom">
                                                 <h6 className="bottom_small_text"> Target Price </h6>
-                                                <h4 className="bottom_big_text">{parseFloat((response.datapoints||[])[1].value).toFixed(2)}</h4>
+                                                <h4 className="bottom_big_text">{(parseFloat((response?.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                               </div>
                                             </div>
                                           </div>:
@@ -646,15 +665,15 @@ function urlLink(){
                                            <div className="d-flex justify-content-between pt-3">
                                              <div className="bottom">
                                                <h6 className="bottom_small_text">Entry Price</h6>
-                                               <h4 className="bottom_big_text">{(parseFloat((response.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                               <h4 className="bottom_big_text">{(parseFloat((response?.datapoints||[])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                              </div>
                                              <div className="bottom">
                                                <h6 className="bottom_small_text">Potential Price</h6>
-                                               <h4 className="bottom_big_text" >{(parseFloat((response.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                               <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                              </div>
                                              <div className="bottom">
                                                <h6 className="bottom_small_text">Exp. Returns</h6>
-                                               <h4 className="bottom_big_text">{utils.formatDate(new Date(response.report_expiry), "dd MMM , yyyy")}</h4>
+                                               <h4 className="bottom_big_text">{utils.formatDate(new Date(response?.report_expiry), "dd MMM , yyyy")}</h4>
                                              </div>
                                            </div>
                                          </div>

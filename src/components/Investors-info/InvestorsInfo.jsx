@@ -4,7 +4,7 @@ import Banner from './Banner';
 // import InvestorInfoMenu from './InvestorInfoMenu';
 // import Yeardetail from './Yeardetail';
 import "../Common-features/navbar.scss";
-import "../Corporate-Governance/corporate-governance.scss"
+// import "../Corporate-Governance/corporate-governance.scss"
 import Navbar from "../Common-features/Navbar";
 
 import { useState } from 'react';
@@ -71,7 +71,7 @@ function InvestorInfo() {
 
       {
         skeleton ? <Template1 /> :
-          <div className="investor-info-parent">
+          <div className="investor-info-parent investorinfo">
             <div className="mainwrapper">
 
               <Banner />
@@ -80,8 +80,8 @@ function InvestorInfo() {
           <div className="Investormenu pb0 page-height">
             <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
-                            {/* <h2 className="title">Disclosures under regulation 46 of the LODR</h2> */}
+                        <div className="col-md-12 menuposition">
+                            <h2 className="title">Disclosures under regulation 46 of the LODR</h2>
                             <div className="check-menu-main">
 
                             <Navbar />

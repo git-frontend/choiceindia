@@ -17,24 +17,21 @@ return (
             <div className="col-md-12">
                <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                   <Accordion.Item eventKey="0" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>  How much time is required to open an account with Choice FinX - Share Market App?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>  How much time is required to open an account with Choice FinX - Share Market App?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      To open an account online with Choice FinX it takes 5-7 minutes if you have all the documents handy.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="1" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>What are the charges for opening an account in Choice FinX?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>What are the charges for opening an account in Choice FinX?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      There are no charges for opening an account in the stock market app - Choice FinX.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="2" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>What are the documents required to open an account in Choice FinX?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>What are the documents required to open an account in Choice FinX?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      You will require the following documents to open an account in the Choice FinX share market app:<br/><br/>
@@ -53,24 +50,21 @@ return (
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="3" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>Can anyone open a free trading account with Choice FinX?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>Can anyone open a free trading account with Choice FinX?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      Any individual of 18 years and above can open a free trading account with Choice FinX. However, the individual must hold the required documents to open an account.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="4" className='faq-item'>
-                     <Accordion.Header >
-                        <h4 className='faq-header'>What are the brokerage charges in Choice FinX - Share Market App?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>What are the brokerage charges in Choice FinX - Share Market App?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      Choice offers the lowest brokerage charges in the industry. Check the <Link to="/brokerage-charges">brokerage charges</Link> on our website.
                      </Accordion.Body>
                   </Accordion.Item>
                   <Accordion.Item eventKey="5" className='faq-item'>
-                     <Accordion.Header>
-                        <h4 className='faq-header'>Can I trade in all segments using the Choice FinX App?</h4>
+                  <Accordion.Header as="h3" className='faq-header'>Can I trade in all segments using the Choice FinX App?
                      </Accordion.Header>
                      <Accordion.Body className='open-demat-faq-body'>
                      Yes, you can trade in Equity, Currency, Commodity, and F&amp;O using the Choice FinX app.
