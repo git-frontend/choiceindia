@@ -778,8 +778,8 @@ function Opendemat(){
                             <p className='subheadtxt'>Open Choice India's official website </p>
                           </li>
                           <li>
-                            <p className='subheadtxt'> Click on the <a href='https://choiceindia.com/open-free-demat-account'
-                              className='linking'>'open Demat account.'</a></p>
+                            <p className='subheadtxt'> Click on the '<a href='https://choiceindia.com/open-free-demat-account'
+                              className='linking'>open Demat account</a>.'</p>
                           </li>
                           <li>
                             <p className='subheadtxt'> Then enter your primary details such as name, phone number, and the name of
