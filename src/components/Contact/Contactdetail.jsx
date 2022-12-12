@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import pin from '../../assets/images/contact/office.svg';
 import clock from '../../assets/images/contact/business-hours.webp';
-import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
 import contactMap from "../../Data/ContactMapData";
 import city_list from "../../Data/ContactCity";
@@ -9,48 +8,42 @@ import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, faClose, faHeadph
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import ContactTemplate from "../Common-features/ContactTemplate";
 import "../Investorcomplaints/investorcomplaints.scss";
-import Image2 from '../../assets/images/icons/security.svg';
-import Button from 'react-bootstrap/Button';
-
 import "../CEBPLPolicies/CEBPL-Policies.scss";
+import contactService from "../../Services/contactService";
+import noDataimg from '../../assets/images/no-data.webp';
 import Modal from 'react-bootstrap/Modal';
-
-
-
-
+import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
+import Image2 from '../../assets/images/icons/security.svg';
 
 function Contactdetail() {
    const [address, setaddress] = useState({});
    const [city, setcity] = useState('MUMBAI');
    const [check, setcheck] = useState(false);
    const [trigger, setTrigger] = useState(false);
-   let citylists = [];
-
-   // let temp = "https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Choice%20International%20Limited,%20Sunil%20Patodia%20Tower,%20J%20B%20Nagar,%20Andheri%20(East),%20Mumbai%20400099.+(ChoiceIndia)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed";
-   const [MapNumber, setMapNumber] = useState(() => 0);
-   const [firstMap, setIsFirstMap] = useState(() => true);
-   const [showMap, setShowMap] = useState(() => false);
-   // const [check, setcheck] = useState(false);
    const handleShow = () => setShow(true);
    const handleClose = () => setShow(false);
    const [show, setShow] = useState(false);
-   let data = {};
 
-   let data2 = {}
-   contactMap.forEach(ele => {
+   let citylists = [];
 
+   function cityList() {
+      contactService.contactCity().then(res => {
+         if (res && res.data && res.data.data) {
+            console.log(res.data.data);
+            
+            res.data.data.forEach(ele => {
 
-      data[ele.id] = ele
-   })
-
-   city_list.forEach(ele => {
-
-      console.log(ele.id, ele.city_name, " == ", data[ele.id] ? data[ele.id].id : 'no id', data[ele.id] ? data[ele.id].city : "")
-      data2[ele.id] = ele
-   })
-
-   function checktable() {
-      check = !check;
+               if (!citylists[ele.branch_name]) {
+                  citylists[ele.branch_name] = [];
+                  citylists[ele.branch_name].push(ele);
+               } else {
+                  citylists[ele.branch_name].push(ele);
+               }
+               
+            })
+            setaddress(citylists);   
+         }
+      })
    }
 
    function selectCity() {
@@ -68,7 +61,7 @@ function Contactdetail() {
    return (
 
       <div>
-         <section className="contactdetail contactdetail-new">
+        <section className="contactdetail contactdetail-new">
             <div className="container">
                <div className="row">
                   <div className="col-md-12" >
@@ -198,13 +191,13 @@ function Contactdetail() {
             <div className=" office-details mt-7 gap-5">
                   <div className="contactoffice">
                      <div className="officedeatil">
-                        <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
+                        <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'40'} height={'40'} />
                         {/* <img src={pin} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Corporate office </p>
                         <p className="subtext">Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar,<br /> Andheri (East), Mumbai 400099</p>
                      </div>
                      <div className="officedeatil">
-                        <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
+                        <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Business Hours</p>
                         <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm </p>
@@ -214,7 +207,7 @@ function Contactdetail() {
                   </div>
                   <div className="contactcyber">
                      <div >
-                        <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
+                        <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Cyber Security</p>
                         <p className="subtext">+(91) 88 2424 2424 ( IVR Option 5 )</p>
@@ -224,60 +217,6 @@ function Contactdetail() {
                </div>
                </div>
 
-            <div className="container mt-10 "  >
-               <div className="d-flex justify-content-between detailwrap">
-
-                  <div className='d-flex flex-column flex-column-left'>
-                     <div>
-                        <p className="maintitle">120+ branches and partner offices</p>
-                        <p className="subhead">Locate and office in your city</p>
-                     </div>
-                     <div className='cust-dropdown'>
-
-                        <Form.Select variant="Info" id="dropdown-basic" onChange={selectCity}>
-                           {
-                              firstMap ? <option defaultValue>Mumbai</option> :
-                                 ''
-                           }
-
-                           {/* <option value="0" >Pune</option>
-                                 <option value="1">Mumbai</option> */}
-                           {
-                              city_list.map((item, i) => {
-
-                                 return (
-
-                                    <option key={item.id} value={item.id}>{item && item.city_name ? item.city_name.toUpperCase() : 'NA'}</option>
-
-                                 )
-                              })
-                           }
-                        </Form.Select>
-                     </div>
-                  </div>
-                  {
-                     firstMap ?
-                        <div className="text-right address">
-                           <p className="maintitle">Mumbai, Maharashtra</p>
-                           {/* <p className="subtext mb-0">(+91) - 8080-80-8875</p> */}
-                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
-                           <p className="subtext">Choice International Limited, Sunil Patodia Tower,<br />
-                              J B Nagar, Andheri East, Mumbai, Maharashtra 400099
-                           </p>
-                        </div> :
-                        <div className="text-right address" key={data[MapNumber].id}>
-                           <p className="maintitle">{data[MapNumber].city}</p>
-                           {/* <p className="subtext mb-0">{data[MapNumber].mobNum}</p> */}
-                           {/* <p className="subtext">{data[MapNumber].support}</p> */}
-                           <p className="subtext cursor-pointer"><a href="mailto:support@choiceindia.com" target="_blank">support@choiceindia.com</a></p>
-                           <p className="subtext">{data[MapNumber].address1}<br />
-                              {data[MapNumber].address2} <br />{data[MapNumber].address3}
-                           </p>
-                        </div>
-                  }
-               </div>
-
-            </div>
             {
                address  ?
                <div>
@@ -298,7 +237,7 @@ function Contactdetail() {
 
                                        Object.keys(address)?.map((keyValue, i) => {
                                           return (
-                                             <option  value={keyValue}>{keyValue}</option>
+                                             <option value={keyValue}key={i}>{keyValue}</option>
 
                                           )
                                        }

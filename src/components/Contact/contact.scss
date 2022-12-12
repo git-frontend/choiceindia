@@ -67,7 +67,7 @@
     width: 100%;
     background-color: #EFE0E0;
     padding-top: 2rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem;
 }
 
 .banner-contact {
@@ -135,7 +135,7 @@
             }
 
             .department {
-                width: 70%;
+                width: 90%;
                 padding: 0.775rem 2.25rem 0.775rem 0.75rem;
                 display: inline-block;
 
@@ -146,6 +146,11 @@
             @media (max-width: $sm) {
                 padding: 2rem 0 3rem 0;
                 text-align: center;
+            }
+        }
+        .request-dropdown{
+            @media (max-width: $sm) {
+                padding: 0rem 0 3rem 0;
             }
         }
     }
@@ -186,6 +191,7 @@
         @media (max-width: $sm) {
             text-align: left !important;
             margin-top: 3rem;
+            width: 100%;
         }
     }
 
@@ -407,7 +413,17 @@
 .cnt-banner-bottm {
     // position: relative;
     animation: hideMe 4s forwards;
-
+    .esctext {
+        font-size: 1.688rem;
+        line-height: 2.5rem;
+        color: #111111;
+        font-family: "PoppinsMedium", sans-serif;
+        margin-top: 4rem;
+        a {
+            text-decoration: none;
+            color: #0046AE;
+        }
+    }
     .writebtn {
         position: relative;
         left: 0;

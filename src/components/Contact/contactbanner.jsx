@@ -6,19 +6,18 @@ import phoneicon from '../../assets/images/contact/phone-icon.svg';
 import openicon from '../../assets/images/contact/open-icon.svg';
 import emailicon from '../../assets/images/contact/email-icon.svg';
 import officeicon from '../../assets/images/contact/office-icon.svg';
-
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
-
+import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, faClose, faHeadphones } from '@fortawesome/free-solid-svg-icons';
 import { CgAsterisk } from 'react-icons/cg';
 import contactService from '../../Services/contactService'
 import LazyLoader from '../Common-features/LazyLoader';
 import Spinner from 'react-bootstrap/Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, } from '@fortawesome/free-solid-svg-icons';
+import Modal from 'react-bootstrap/Modal';
+import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 
 function Contactbanner() {
 
@@ -26,8 +25,9 @@ function Contactbanner() {
   let inputRef = "";
   const [data, setData] = useState("");
   const [isloader, setIsloader] = useState(false);
-
-
+  
+  const [nbfc, setNbfc] = useState(false);
+  
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
 
 
@@ -85,22 +85,45 @@ function Contactbanner() {
                   <div className='caption-cont'>
                     <h1 className='big-ttl'>We’re here! <br /> Let’s have a talk</h1>
                   </div>
+                 <div className="row">
+                  <div className="col-md-5">
                   <div className='dipar-dropdown'>
-                    <p className="depart-text">Department *</p>
-                    <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
-                      <option value="Select here" selected>Select here</option>
-                      <option className="option">Feedback</option>
-                      <option className="option">Compliance & Complaint.</option>
-                      <option className="option">Partner related</option>
-                      <option className="option">Broking & Distribution</option>
-                      <option className="option">Wealth planning</option>
-                      <option className="option">Insurance related query</option>
-                      <option className="option">NBFC related query</option>
-                      <option className="option">Government Advisory</option>
-                      <option className="option">Enquiry</option>
-                      <option className="option">Others</option>
-                    </Form.Select>
+                      <p className="depart-text">Department *</p>
+                      <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
+                        <option value="Select here" selected>Select here</option>
+                        <option className="option">Feedback</option>
+                        <option className="option">Compliance & Complaint.</option>
+                        <option className="option">Partner related</option>
+                        <option className="option">Broking & Distribution</option>
+                        <option className="option">Wealth planning</option>
+                        <option className="option">Insurance related query</option>
+                        <option className="option">NBFC related query</option>
+                        <option className="option">Government Advisory</option>
+                        <option className="option">Enquiry</option>
+                        <option className="option">Others</option>
+                      </Form.Select>
+                    </div>
                   </div>
+                  <div className="col-md-5">
+                  <div className='dipar-dropdown request-dropdown'>
+                      <p className="depart-text">Request type *</p>
+                      <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
+                        <option value="Select here" selected>Select here</option>
+                        <option className="option">Feedback</option>
+                        <option className="option">Compliance & Complaint.</option>
+                        <option className="option">Partner related</option>
+                        <option className="option">Broking & Distribution</option>
+                        <option className="option">Wealth planning</option>
+                        <option className="option">Insurance related query</option>
+                        <option className="option">NBFC related query</option>
+                        <option className="option">Government Advisory</option>
+                        <option className="option">Enquiry</option>
+                        <option className="option">Others</option>
+                      </Form.Select>
+                    </div>
+                  </div>
+                 </div>
+                  
                 </div>
 
                 <div className="col-md-4">
@@ -212,8 +235,82 @@ function Contactbanner() {
                 </div>
 
               </div>
+              <div className="col-md-12">
+                  <p className="text-center esctext ">For any NBFC related grievances reach out to our <a variant="primary" onClick={() => { setNbfc(true) }} className="cursor-pointer">
+                     Escalation Matrix
+                     </a></p>
+              </div>
             </div>
           </div>
+          <Modal show={nbfc} onHide={()=>{setNbfc(false)}} size="xl"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+            
+            <div className="container mainwrapquick-table">
+            <div className="row ">
+                     <div className="col-md-12">
+                     
+                        <div className="quicklinkswrap mt-5 mb-5">
+                        <ModalHeader>
+                       
+                           <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={()=>{setNbfc(false)}} />
+                           <div className="clearfix"></div>
+                           <h4 className="text-center text-uppercase mt-5 mb-5"><strong>CUSTOMER GRIEVANCE REDRESSAL MECHANISM</strong></h4>
+                           {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
+                           
+                        </ModalHeader>
+                          
+                          
+                           <Modal.Body>
+                           <div className="table-responsive">
+                              <table className="table table-striped">
+                                 <tbody>
+                                    <tr>
+                                       <th>Level 1 - Customer Care</th>
+                                    </tr>
+                                    <tr>
+                                       <td className="pb-5">Write in to <strong>customercare.finserv@choiceindia.com</strong> or call us on our customer care number <strong>1800 203 5193</strong></td>
+                                    </tr>
+                                    <tr>
+                                       <th>Level 2 - Grievance & Redressal Officer</th>
+                                    </tr>
+                                    <tr>
+                                       <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <strong>Grievances@choiceindia.com</strong></td>
+                                    </tr>
+                                    <tr>
+                                       <th>Level 3 - Customer Principal Nodal Officer</th>
+                                    </tr>
+                                    <tr>
+                                       <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <strong>principalnodalofficer@choiceindia.com</strong></td>
+                                    </tr>
+                                    <tr>
+                                       <th>Level 4 - Centralised Receipt and Processing Centre </th>
+                                    </tr>
+                                    <tr>
+                                       <td className="pb-5">In case your complaint has not been addressed to your satisfaction within 30 days at all Levels, you can approach the regulatory authority at the address given below:</td>
+                                    </tr>
+                                    <tr>
+                                      <td>
+                                      Centralised Receipt and Processing Centre (CRPC)<br/>
+                                      Reserve Bank of India<br/>
+                                      Central Vista, Sector 17<br/>
+                                      Chandigarh – 160017<br/>
+                                      Email id: crpc@rbi.org.in
+                                      </td>
+                                    </tr>
+                                 </tbody>
+                              </table>
+                           </div>
+                           </Modal.Body>
+                        </div>
+                     </div>
+                     </div>
+                  
+            
+
+
+            
+         </div>
+         
+         </Modal>
         </section>
 
       </div>
