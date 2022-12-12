@@ -81,7 +81,7 @@ function TimelineStepsSlider() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="heading-sec text-center">
-                                <h2 className="title-first">How to Apply for Channel  <br/> Finance Facility</h2>
+                                <h2 className="title-first">How to apply for solar finance  <br/> with Choice Finserv</h2>
                             </div>
                         </div>
                     </div>
@@ -94,8 +94,8 @@ function TimelineStepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
-                                        <h3>Process Your Documents</h3>
-                                        <p>Submit the required documents online i.e. KYC, Business and others to check your eligibility</p>
+                                        <h3>Submit your documents</h3>
+                                        <p>Submit required documents online to check your eligibility</p>
                                     </div>
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
@@ -104,8 +104,8 @@ function TimelineStepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
-                                        <h3>Get It Approved</h3>
-                                        <p>All the documents are under review of the approval team, post which one can get an approval within 48 hours, if all requirements are met.</p>
+                                        <h3>Application review</h3>
+                                        <p>Your documents along with application is reviewed by our experts post which one can get an approval within 48 hours if all requirements are met</p>
                                     </div>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
@@ -114,17 +114,11 @@ function TimelineStepsSlider() {
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>
-                                        <h3>Fast &amp; Quick Loan Disbursal</h3>
-                                        <p>Within a span of few hours of approval, the loan is disbursed.</p>
+                                        <h3>Quick loan disbursal</h3>
+                                        <p>Within a span of few hours of approval, the loan is disbursed</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div className="row mt-5">
-                        <div className="col-md-12 mt-5 text-center">
-                            <h5 className="elg-text">With our eligibility calculator</h5>
-                            <a href="#"><span className="btn-bg">Check your Eligibility</span></a>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,7 @@
 
 import React from "react";
 import SolarFinanceBanner from './SolarFinanceBanner.jsx'
+import AvailSolarFin from './AvailSolarFin';
 import TimelineStepsSlider from './TimelineStepsSlider.jsx'
 import SolarFinanceDocument from './SolarFinanceDocument.jsx'
 import Features from './Features.jsx'
@@ -37,6 +38,7 @@ function SolarFinance() {
   return (
     <div>
         <SolarFinanceBanner/>
+        <AvailSolarFin/>
         <TimelineStepsSlider/>
         <SolarFinanceDocument/>
         <Features/>
