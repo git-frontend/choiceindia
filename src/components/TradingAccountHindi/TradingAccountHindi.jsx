@@ -16,9 +16,9 @@ function TradingAccountHindi() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+      document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
@@ -160,7 +160,7 @@ function TradingAccountHindi() {
                                     रु.1500/- + जीएसटी - लाइफटाइम एएमसी कवर 
                                     </li>
                                     <li>
-                                    3000/- पूर्ण वापसी योग्य एएमसी (चॉइस के साथ खाता बंद करने पर पूरी राशि वापस कर दी जाएगी) 
+                                    रु.3000/- पूर्ण वापसी योग्य एएमसी (चॉइस के साथ खाता बंद करने पर पूरी राशि वापस कर दी जाएगी) 
                                     </li>
                                 </ul>
                                

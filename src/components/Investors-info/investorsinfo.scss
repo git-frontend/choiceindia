@@ -282,7 +282,7 @@ body{
             line-height: 3rem;
             text-align: left;
             padding-bottom: 3rem;
-            max-width: 200px;
+            // max-width: 200px;
         }
     }
 
@@ -593,4 +593,8 @@ body{
 .dflex{
     display: flex;
     padding: 0px;
+}
+
+.menuposition{
+    position: relative;
 }

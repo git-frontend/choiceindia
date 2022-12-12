@@ -47,7 +47,7 @@ function WhyOpenFreeDematAccount() {
 
   return (
     <div>
-       <section className="adv-sect" >
+       <section className="adv-sect" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
@@ -60,7 +60,7 @@ function WhyOpenFreeDematAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"Low Brokerage Demat Account"} />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt={"Open Free Trading Account with Low Brokerage Charges"} />
                                             </div>
                                             <div className="card-block">
 
@@ -70,7 +70,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt={"Free Call for Trade Facility"} className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt={"Trading Account Opening with Free Call for Trade Facility"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -80,7 +80,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image11} width={"40"} height={"41"} alt={"Refer and Earn Demat Account"} className="img-fluid lazyload" />
+                                                <img src={Image11} width={"40"} height={"41"} alt={"Open trading account online and earn more from referrals"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -92,7 +92,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
+                                                <img src={Image10} width={"50"} height={"50"} alt={"Open Free Trading Account with Advance Trading Platform"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -104,7 +104,7 @@ function WhyOpenFreeDematAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image9} width={"40"} height={"41"} alt={"Free Paperless Demat Account Opening"} className="img-fluid lazyload" />
+                                                <img src={Image9} width={"40"} height={"41"} alt={"Paperless Free Trading Account Opening"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 

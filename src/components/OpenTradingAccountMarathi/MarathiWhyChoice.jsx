@@ -66,19 +66,19 @@ const WhyChoice = () => {
                                     <div className="iconwrap">
                                         <a href="https://finx.choiceindia.com/" target="_blank">
                                             <div className="icon">
-                                                <img src={Image13} alt="Web" width={"45"} height={"46"} className="img-fluid " />
+                                                <img src={Image13} alt="चॉईस फिनएक्स ट्रेडिंग प्लॅटफॉर्म" width={"45"} height={"46"} className="img-fluid " />
                                                 <p>वेब</p>
                                             </div>
                                         </a>
                                         <a href="https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy" target="_blank">
                                             <div className="icon">
-                                                <img src={Image14} alt="Android" width={"35"} height={"36"} className="img-fluid " />
+                                                <img src={Image14} alt="एंड्राइड साठी चॉइस फिनएक्स ट्रेडिंग ऐप" width={"35"} height={"36"} className="img-fluid " />
                                                 <p>अँड्रॉईड</p>
                                             </div>
                                         </a>
                                         <a href="https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261" target="_blank">
                                             <div className="icon">
-                                                <img src={Image15} width={"45"} height={"46"} alt="IOS" className="img-fluid " />
+                                                <img src={Image15} width={"45"} height={"46"} alt="एंड्राइड साठी चॉइस फिनएक्स ट्रेडिंग ऐप" className="img-fluid " />
                                                 <p>आयओएस</p>
                                             </div>
                                         </a>

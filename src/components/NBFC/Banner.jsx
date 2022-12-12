@@ -12,10 +12,10 @@ function Banner() {
      
     <section className="loans-bannersection">
         <div className="container">
-            <div className="row gx-5">
-                <div className="col-md-6 lft-sec">
+            <div className="row gx-5 align-items-center">
+                <div className="col-xl-6 col-md-6 lft-sec">
                     <h1 className="big-ttl">Loans</h1>
-                    <p className="para">Choice Finserve, our tech enabled platform dedicated for providing loans, with special focus on the under-served and unserved parts of the MSME sector is bridging the credit gap by facilitating efficient service delivery, better risk management and seamless lending operations.</p>
+                    <p className="para">Choice Finserv, our tech enabled platform dedicated for providing loans, with special focus on the under-served and unserved parts of the MSME sector is bridging the credit gap by facilitating efficient service delivery, better risk management and seamless lending operations.</p>
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">

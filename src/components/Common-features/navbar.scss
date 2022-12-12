@@ -3,28 +3,33 @@
 
 /* ---------------- Navbar and burger menu ------------------ */
 
-
-.investor-info-menu {
-    width: 100%;
-    height: 4.6em;
-    background-color: transparent;
-    display: flex;
-    justify-content: flex-end;
-    top: 22px;
-    // right: 7%;
-    right:0;
-    padding: 1em;
-    box-shadow: none;
-    position: absolute;
-    @media screen and (max-width:767px) {
-        top: 12px;
-        right: 5%;
-        height: 4em;
-    }
-    @media screen and (max-width:$xs) {
-        right: 0;
+.menuwrap{
+    position: relative;
+    .investor-info-menu {
+        width: 100%;
+        height: 4.6em;
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+        // right: 7%;
+        right:0;
+        padding: 1em;
+        box-shadow: none;
+        position: absolute;
+        @media screen and (max-width:767px) {
+            top: 12px;
+            right: 5%;
+            height: 4em;
+        }
+        @media screen and (max-width:$sm) {
+            right: 0;
+            padding: 0 1.5rem;
+            height: 2em;
+        }
     }
 }
+
 
 .burger-menu {
     height: 82%;
@@ -63,7 +68,7 @@
 
 
 .menu {
-    width: 80%;
+    width: 100%;
     // width: 100%;
     height: auto;
     margin: 0 auto;
@@ -78,9 +83,10 @@
     border-radius: 1.923rem;
     @media screen and (max-width:767px) {
         width: 90%;
+        top: 6.2rem;
     }
-    @media screen and (max-width:768px) {
-        width: 90%;
+    @media (min-width:767px) and (max-width:768px) {
+        width: 100%;
     }
 
     
@@ -272,6 +278,7 @@
 .investor-info-menu-list{
     display: flex;
     flex-wrap: wrap;
+    list-style: none;
     
     .menu-itm{
         margin-bottom: 2.5rem;
