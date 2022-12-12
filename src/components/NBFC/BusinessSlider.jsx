@@ -3,7 +3,7 @@ import { useState } from 'react';
 import imageDataProducts from '../../Data/businessloan';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
-
+import { Link} from "react-router-dom";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
@@ -72,7 +72,7 @@ function IndividualSlider() {
         })
       }
     </Slider>
-    <a href="#"><span class="btn-bg">Learn more</span></a>
+    <Link to="/business-loan"><span class="btn-bg">Learn more</span></Link>
   </div>
 
 

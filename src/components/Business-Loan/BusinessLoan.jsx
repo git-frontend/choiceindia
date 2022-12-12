@@ -40,10 +40,6 @@ function BusinessLoan() {
         <LoansFinance/>
         <TypesOfCommercial/>
         <TypeSolarFinance/>
-        {/* <TimelineStepsSlider/>
-        <Documents/>
-        <Features/>
-        <WhyChoose/> */}
     </div>
   );
 }

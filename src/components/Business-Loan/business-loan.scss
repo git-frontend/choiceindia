@@ -60,6 +60,12 @@
             p{
                 padding-right: 3.5rem;
                 margin: 2.5rem 0 4.5rem 0;
+                .read-ext{
+                    font-style: normal;
+                    font-family: $font-family-poppins-medium;
+                    color: $blueColortext;
+                    cursor: pointer;
+                }
                 @media (max-width: $md){
                     padding-right: 0;
                 }
@@ -104,6 +110,7 @@
                     font-style: normal;
                     font-family: $font-family-poppins-medium;
                     color: $blueColortext;
+                    cursor: pointer;
                 }
             }
         }
