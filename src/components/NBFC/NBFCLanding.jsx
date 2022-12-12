@@ -49,8 +49,6 @@ function NBFCLanding() {
          <Banner />
          <OurProducts />
          <ApplicationFeatures />
-         
-         
         
          
        </div> 
