@@ -5,7 +5,7 @@ import Image15 from '../../assets/images/open-demat-account/ios.svg';
 import Image16 from '../../assets/images/open-demat-account/choice-free-demat-account-opening.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
-const WhyDerivativeTrading = () => {
+const WhyChoice = () => {
     return (
         <div>
           
@@ -18,27 +18,27 @@ const WhyDerivativeTrading = () => {
                                 <div className="leftsect">
                                     <h2 className="secttile">Why Choice?</h2>
                                     <div className="img">
-                                        <img src={Image16} alt={"Why to Open Derivatives Trading Account with Choice"} width={"365"} height={"788"} className="img-fluid" />
+                                        <img src={Image16} alt={"Why to Open Corporate Demat Account with Choice"} width={"365"} height={"788"} className="img-fluid" />
                                     </div>
                                 </div>
                                 <div className="rightsect">
                                     <div className="rightsect-sub">
-                                        <p className="headtxt">RESEARCH &amp;<br /> ADVISORY SERVICES</p>
-                                        <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research on the derivatives market at no extra cost.</p>
+                                        <p className="headtxt">Research &amp; <br /> Advisory Services</p>
+                                        <p className="subtxt">A dedicated research team that provides Technical and Fundamental Research at no extra cost.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">
-                                        <p className="headtxt">CUSTOMER <br />SUPPORT</p>
+                                        <p className="headtxt">Customer <br />Support</p>
                                         <p className="subtxt">An excellent support team that guides you at every step available via phone and emails and branch offices.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">
-                                        <p className="headtxt">LOCAL <br />OFFICES</p>
+                                        <p className="headtxt">Local <br />Offices</p>
                                         <p className="subtxt">We have 54 local offices available across the country at your service.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">
-                                        <p className="headtxt">25+ YEARS OF  <br />EXPERIENCE</p>
+                                        <p className="headtxt">25+ Years of <br />Experience</p>
                                         <p className="subtxt">A trusted name in the broking industry backed by 25+ years of experience in the finance domain.</p>
                                     </div>
                                 </div>
@@ -97,5 +97,5 @@ const WhyDerivativeTrading = () => {
     )
 }
 
-export default WhyDerivativeTrading;
+export default WhyChoice;
 

@@ -4,7 +4,7 @@ import Banner from './Banner';
 // import InvestorInfoMenu from './InvestorInfoMenu';
 // import Yeardetail from './Yeardetail';
 import "../Common-features/navbar.scss";
-import "../Corporate-Governance/corporate-governance.scss"
+// import "../Corporate-Governance/corporate-governance.scss"
 import Navbar from "../Common-features/Navbar";
 
 import { useState } from 'react';
@@ -71,7 +71,7 @@ function InvestorInfo() {
 
       {
         skeleton ? <Template1 /> :
-          <div className="investor-info-parent">
+          <div className="investor-info-parent investorinfo">
             <div className="mainwrapper">
 
               <Banner />

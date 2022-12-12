@@ -51,7 +51,7 @@ function AppStrategies() {
                         </div>
                     </div>
                     <div className='row d-flex justify-content-center'>
-                        <div className='col-md-9'>
+                        <div className='col-xl-9'>
                             <div className="row app-trade-easy-div d-flex align-items-top">
 
                                 <div className='col-md-4'>

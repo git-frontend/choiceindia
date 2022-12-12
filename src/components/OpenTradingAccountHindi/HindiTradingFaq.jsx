@@ -77,10 +77,8 @@ function HindiTradingFaq() {
                                 </Accordion.Item>
 
 
-                            </Accordion>
-                            {
-                                view ?
-                                    <Accordion defaultActiveKey="" flush className='open-demat-faqs-accordion'>
+                           
+                                   
                                         <Accordion.Item eventKey="5" className='faq-item'>
                                             <Accordion.Header as="h3" className='faq-header'>क्या मैं अपने ट्रेडिंग खाते में कई डीमैट खातों को मैप कर सकता हूं?</Accordion.Header>
                                             <Accordion.Body className='open-demat-faq-body'>
@@ -154,16 +152,11 @@ function HindiTradingFaq() {
                                             </Accordion.Body>
                                         </Accordion.Item>
 
-                                        <button className="btn-bg btn-banner justify-content-center d-flex mx-auto mt-6" onClick={() => {setview(false);chapterScroll('Faqid')}} >&nbsp;View less</button>
+                                      
 
                                     </Accordion>
 
 
-                                    :
-                                    <div className="accordion-view-more">
-                                        <button className="btn-bg btn-banner  justify-content-center d-flex mx-auto mt-6"  onClick={() => setview(!show)}>View more</button>
-                                    </div>
-                            }
                         </div>
                     </div>
                 </div>
