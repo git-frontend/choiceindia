@@ -1,21 +1,52 @@
+import React from 'react';
+import { useState } from 'react';
+import imageDataProducts from '../../Data/businessloan';
 
-import React from "react";
-import Business from '../../assets/images/nbfc-loans/business.webp';
-import Individual from '../../assets/images/nbfc-loans/individual.webp';
-import PaymentSolutions from '../../assets/images/nbfc-loans/payment-solutions.webp';
-import NBFCMenu from '../Common-features/NBFCMenu';
+import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
+import NBFCMenu from '../Common-features/NBFCMenu';
+import BusinessSlider from './BusinessSlider';
+import IndividualSlider from './IndividualSlider';
 
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
 function OurProducts() {
+  const [isShown2, setIsShown2] = useState(0);
+  const settings1 = {
+    infinite: true,
+    speed: 1000,
+    vertical: true,
+    focusOnSelect: true,
+    touchMove: true,
+    arrows: false,
+    slidesToShow: 4,
+    autoplay: false,
+    dots: false,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          vertical: false,
+          autoplaySpeed: 3000,
+        }
+      }
+
+    ]
+
+  };
 
   return (
-    <div>
-      
-     
-    <section className="loans-our-products">
-        <div className="container">
-            <div className="row">
+    <div className='App-main'>
+
+      <div className='loans-our-products'>
+        <div className='container'>
+        <div className="row">
                 <div className="col-md-12">
                 <div className="products-menu-flx">
                     <h2 className="title-secnd">Our Products</h2>
@@ -23,84 +54,24 @@ function OurProducts() {
                 </div>
                 </div>
             </div>
-            <div className="row justify-content-center">
-                <div className="col-xl-11 col-md-12">
-                    <div className="loans-products-list">
-                        <div className="products-list-item">
-                            <div className="list-item-left">
-                                <LazyLoader src={Business} alt={"Types of Loans Offered by Choice Finserv"} className={"img-fluid"} width={"586"} height={"366"} />
-                            </div>
-                            <div className="list-item-right">
-                                <h3>Business</h3>
-                                <div className="cont-list">
-                                    <div className="cont-list-itm">
-                                        <h5>MSME Loans</h5>
-                                        <p>Financing all the needs of MSMEs with wide range of solutions.</p>
-                                    </div>
-                                    <div className="cont-list-itm">
-                                        <h5>Supply Chain Finance</h5>
-                                        <p>This is a set of business financing processes that link various parties in a transaction.</p>
-                                    </div>
-                                    <div className="cont-list-itm">
-                                        <h5>Vehicle Loan</h5>
-                                        <p>We offer affordable vehicle loans making sure that you own your dream wheels.</p>
-                                    </div>
-                                </div>
-                                <a href="/"><span className="btn-bg">Learn more</span></a>
-                            </div>
-                        </div>
-                        <div className="products-list-item list-item-reverse">
-                            <div className="list-item-left">
-                                <LazyLoader src={Individual} alt={"Vehicle Loan"} className={"img-fluid"} width={"586"} height={"366"} />
-                            </div>
-                            <div className="list-item-right">
-                                <h3>Individual</h3>
-                                <div className="cont-list">
-                                    <div className="cont-list-itm">
-                                        <h5>Vehicle Loan</h5>
-                                        <p>We offer affordable vehicle loans making sure that you own your dream wheels.</p>
-                                    </div>
-                                    <div className="cont-list-itm">
-                                        <h5>Flexi Credit</h5>
-                                        <p>Our Flexi-Credit gives the freedom to withdraw or deposit multiple times from loan accounts.</p>
-                                    </div>
-                                    <div className="cont-list-itm">
-                                        <h5>Study Loan</h5>
-                                        <p>Our loans aim to help parents to get financial assistance for their children’s higher studies</p>
-                                    </div>
-                                </div>
-                                <a href="/"><span className="btn-bg">Learn more</span></a>
-                            </div>
-                        </div>
-                        <div className="products-list-item">
-                            <div className="list-item-left">
-                                <LazyLoader src={PaymentSolutions} alt={"Payment Solutions"} className={"img-fluid"} width={"586"} height={"366"} />
-                            </div>
-                            <div className="list-item-right">
-                                <h3>Payment Solutions</h3>
-                                <div className="cont-list">
-                                    <div className="cont-list-itm">
-                                        <h5>Prepaid Cards</h5>
-                                        <p>Pay securely and earn cash back when you use your card on ecommerce, retail stores and more.</p>
-                                    </div>
-                                    <div className="cont-list-itm">
-                                        <h5>QR Codes</h5>
-                                        <p>Scanning the QR code through your mobile is the easiest method of payment for users. </p>
-                                    </div>
-                                </div>
-                                <a href="/"><span className="btn-bg">Learn more</span></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <div className='row justify-content-center'>
+            <div className='col-xl-11 col-md-12'>
+              <div className="loans-products-list">
+                <BusinessSlider />
+                <IndividualSlider />
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    
 
-   
-    
+
+
+
+
+
+
     </div>
   );
 }

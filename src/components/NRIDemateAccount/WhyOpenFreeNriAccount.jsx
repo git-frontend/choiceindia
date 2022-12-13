@@ -47,7 +47,7 @@ function WhyOpenFreeNriAccount() {
 
   return (
     <div>
-       <section className="adv-sect" >
+       <section className="adv-sect" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">

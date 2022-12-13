@@ -30,9 +30,9 @@ function Opendemat(){
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+      let parser = new DOMParser();
+      let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+      document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
       document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
       // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
@@ -128,8 +128,8 @@ function Opendemat(){
                       <hr />
 
                       <div className="bannertext">
-                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must
-                          <a href="https://choiceindia.com/open-free-demat-account" className="linking"> open a Demat account.</a>
+                        <p>In India, any person who wants to invest or trade securities like stocks, mutual funds and bonds must&nbsp;
+                           <a href="https://choiceindia.com/open-free-demat-account" className="linking">open a Demat account</a>.
                         </p>
                         <p> Demat account is necessary to start your investment journey into the stock market.</p>
                         <p>Let’s get started to understand everything about the Demat account through this guide.</p>
@@ -225,7 +225,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                             <h4>Chapter 7</h4>
-                            <p>How to Best Demat Account</p>
+                            <p>How to Choose Best Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
@@ -246,7 +246,7 @@ function Opendemat(){
                             {/* <img src='./images/difference-between-demat-account-and-trading-account.svg' className=""
                                     alt="Demat Account vs Trading Account" /> */}
                             <h4>Chapter 9</h4>
-                            <p>Demat Vs Trading Account</p>
+                            <p>Difference Between Demat Account and Trading Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTen') }}>
@@ -339,7 +339,7 @@ function Opendemat(){
                             </span>
                             {/* <img src='./images/best-demat-account.svg' className="" alt="How to Choose Best Demat Account" /> */}
                             <h4>Chapter 7</h4>
-                            <p>How to Best Demat Account</p>
+                            <p>How to Choose Best Demat Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterEight') }}>
@@ -360,7 +360,7 @@ function Opendemat(){
                             {/* <img src='./images/difference-between-demat-account-and-trading-account.svg' className=""
                                     alt="Demat Account vs Trading Account" /> */}
                             <h4>Chapter 9</h4>
-                            <p>Demat Vs Trading Account</p>
+                            <p>Difference Between Demat Account and Trading Account</p>
                           </div>
                         </a>
                         <a className="same-bx-item" onClick={() => { chapterScroll('ChapterTen') }}>
@@ -542,8 +542,8 @@ function Opendemat(){
                           </li>
                           <li className="subheadtxt">
                             <p className='subheadtxt'>
-                              <h4 className="inline">2. Repatriable Demat Account: <a href='https://choiceindia.com/nri-demat-account'
-                                className='linking'>(NRI Demat Account)</a>: </h4> A Demat account used by NRIs allows transferring
+                            <h4 className="inline">2. Repatriable Demat Account (<a href='https://choiceindia.com/nri-demat-account'
+                                className='linking'>NRI Demat Account</a>): </h4> A Demat account used by NRIs allows transferring
                               funds abroad. Moreover, this type of Demat account needs an NRE bank account.</p>
 
                           </li>
@@ -778,8 +778,8 @@ function Opendemat(){
                             <p className='subheadtxt'>Open Choice India's official website </p>
                           </li>
                           <li>
-                            <p className='subheadtxt'> Click on the <a href='https://choiceindia.com/open-free-demat-account'
-                              className='linking'>'open Demat account.'</a></p>
+                            <p className='subheadtxt'> Click on the '<a href='https://choiceindia.com/open-free-demat-account'
+                              className='linking'>open Demat account</a>.'</p>
                           </li>
                           <li>
                             <p className='subheadtxt'> Then enter your primary details such as name, phone number, and the name of
@@ -819,7 +819,7 @@ function Opendemat(){
                         <h3 className="subhead">Documents Required for Demat Account Opening:</h3>
                         <p className='subheadtxt'>For opening a Demat account, you must have certain documents with you. Here's the
                           list of <a href='https://choiceindia.com/blog/documents-required-for-demat-account-opening/'
-                            className='linking'> documents required for Demat account opening:</a></p>
+                            className='linking'> documents required for Demat account opening</a></p>
                         <ul className='bullet'>
                           <li>
                             <p className='subheadtxt'>Identity Proof ( Aadhar card, PAN card, any other identity proof issued by the
@@ -856,7 +856,7 @@ function Opendemat(){
                         <p className='subheadtxt'>Mostly the below-mentioned two charges are levied on clients by stockbrokers:</p>
                         <ul className='numberlist'>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='inline'> 1. Demat account opening charges: </h4> Earlier, <a
                                 href='https://choiceindia.com/blog/demat-account-opening-charges/' className='linking'>Demat account
                                 opening charges</a> levied by the stockbrokers were very high. Most stockbrokers are now offering
@@ -866,7 +866,7 @@ function Opendemat(){
 
                           </li>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='inline'> 2. AMC charges: </h4> The annual charges that an investor pays to their brokers
                               are AMC charges. Most stockbrokers charge it annually, while some charge it quarterly or monthly.
                               The <a href='https://choiceindia.com/blog/demat-account-amc-charges/' className='linking'>AMC
@@ -1050,7 +1050,7 @@ function Opendemat(){
                   <div className='row' id="ChapterNine">
                     <div className='col-md-12 col-sm-12 col-lg-8'>
                       <p className='chapter'>Chapter 9</p>
-                      <h2 className="title">Demat Account Vs Trading Account</h2>
+                      <h2 className="title">Difference Between Demat Account and Trading Account</h2>
                       <div className='row pb52'>
                         <div className='col-md-6' id="demat-vs-trading-img">
                           {/* <img src='./images/difference-between-demat-account-and-trading-account.webp' className="img-fluid"
@@ -1071,7 +1071,7 @@ function Opendemat(){
                         <ul className='bullet mt10'>
                           <li className='subheadtxt '>
 
-                            <p>
+                            <p className='subheadtxt '>
                               <h4 className='listhead inline'>Key role: </h4>- A Demat account ensures safety, whereas a trading
                               account is used to purchase/sell shares.</p>
 
@@ -1155,7 +1155,7 @@ function Opendemat(){
                         <h3 className="subhead">What are the Types of Demat Account Closure?</h3>
                         <ul className='bullet'>
                           <li className='subheadtxt'>
-                            <p>
+                            <p className='subheadtxt'>
                               <h4 className='listhead inline'>Transfer and account closure: </h4>- Suppose your Demat account has some
                               holdings, and you haven't made full payment for the pending payments to the Depository Participant.
                               You will then have first to transfer the holdings to a different Demat account; as soon as the

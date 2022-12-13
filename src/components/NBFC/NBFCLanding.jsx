@@ -45,10 +45,10 @@ function NBFCLanding() {
       
       <div className="mainwrapper brokerage-charges-temp">
          
+         
          <Banner />
          <OurProducts />
          <ApplicationFeatures />
-         
         
          
        </div> 
