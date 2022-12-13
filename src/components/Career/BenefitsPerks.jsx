@@ -6,6 +6,7 @@ import CareerImage9 from '../../assets/images/career/skill-upgradation.svg';
 import CareerImage10 from '../../assets/images/career/free-internet.svg';
 import CareerImage11 from '../../assets/images/career/youtube-premium.svg';
 import CareerImage12 from '../../assets/images/career/free-therapy-sessions.svg';
+import hiring from '../../assets/images/career/hiring.svg';
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -77,11 +78,19 @@ function BenefitsPerks() {
 
                     </div>
                 </div>
+
+                <div className="container">
+                <div className="middle-bar-cont">
+                    <div className="bar-cont-des">
+                    <h3 className="title-fourth">
+                    { <img src={hiring} alt='Loading' className={'img-fluid'} width={"42"} height={"37"} />}
+                    <span>We’re hiring !</span> To join our team</h3>
+                    <a href="https://hrconnect.qandle.com/#/jobs" target="_blank" className="btn-bg btn-light">Click Here</a>
+                    </div>
+                </div>
+                </div>
+
             </section>
-
-
-
-
         </div>
     );
 }
