@@ -91,6 +91,9 @@
                 font-size: 2.5rem;
                 img{
                     margin-right: 2rem;
+                    @media (max-width: $sm-x) {
+                        display: none;
+                    }
                 }
                 span{
                     color: $yellowColor;
