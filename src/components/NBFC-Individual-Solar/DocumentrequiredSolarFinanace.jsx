@@ -19,7 +19,7 @@ function DocumentrequiredSolarFinanace() {
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-5 col-md-6">
               <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
@@ -28,26 +28,25 @@ function DocumentrequiredSolarFinanace() {
                   <h3 className="title-doc">KYC</h3>
                 </div>
                 <ul className="list-item">
-                  <li>ID Proof</li>
-                  <li>Address Proof</li>
+                  <li>KYC</li>
+                  <li>ID proof</li>
+                  <li>Address proof</li>
                   <li>PAN Card</li>
                 </ul>
               </div>
             </div>
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-5 col-md-6">
               <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Business Proof Documents for Individual Loan"} />
+                    <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof Documents for Individual Loan"} />
                   </div>
-                  <h3 className="title-doc">Business Proof</h3>
+                  <h3 className="title-doc">Income Proof</h3>
                 </div>
                 <ul className="list-item">
 
-                  <li>Business registration certificate</li>
-                  <li>Business vintage proof</li>
-                  <li>GST/ITR returns</li>
-                  <li>Bank statement of last 1 year</li>
+                  <li>Salary slip of last 6 months</li>
+                  <li>Last 2 years ITR</li>
                 </ul>
               </div>
             </div>
