@@ -36,7 +36,7 @@ function Documentrequired() {
                   <h3 className="title-doc text-center ">KYC</h3>
                 
                 <ul className="list-item">
-                  <li >Aadhar Card</li>
+                  <li>Aadhar Card</li>
                   <li>Pan Card</li>
                   <li>Driving Licence</li>
                   <li>Income Proof</li>

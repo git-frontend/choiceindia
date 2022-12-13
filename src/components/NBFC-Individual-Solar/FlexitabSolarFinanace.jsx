@@ -48,8 +48,8 @@ function FlexitabSolarFinanace() {
             <section className="flexitabcontent">
                 <div className="container">
                     <div className="row">
-                    <div className="col-xl-10 col-md-12 mx-auto">
-                            <div className="heading-sec text-center">
+                        <div className=" col-md-7">
+                            <div className="heading-sec ">
                                 <h2 className="title-first flexititle">Apply for Solar Finance!</h2>
                                 <p className="para">Our solar financing solution allows you to purchase your solar power system and pay for the installation
 costs upfront and then repay the loan over time.</p>
@@ -58,7 +58,11 @@ costs upfront and then repay the loan over time.</p>
                             </div>
 
                         </div>
-
+                        <div className=" col-md-5">
+                                <div className="formwrap solarformwrap">
+                                    
+                                </div>
+                        </div>
 
                     </div>
 

@@ -43,7 +43,7 @@ function InvoiceFinancingBanner() {
       };
     return (
         <div>
-            <section className="inv-fin-banner">
+            <section className="inv-fin-banner invoicefinance-banner">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className=" col-md-7">

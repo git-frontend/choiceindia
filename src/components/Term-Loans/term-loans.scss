@@ -5,7 +5,30 @@
 .inv-fin-banner{
     &.term-loan-ban{
         background: $bg-sky2 !important;
+        .fin-banner-caption{
+            position: relative;
+            &::after{
+                display: none;
+            }
+            &::before{
+                content: '';
+                width: 17rem;
+                height: 12rem;
+                display: block;
+                position: absolute;
+                left: 44rem;
+                top: 16rem;
+                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat bottom right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+       
     }
+
 }
 
 .term-loan-steps{

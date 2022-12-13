@@ -2,6 +2,31 @@
 @import '../../assets/css/customvariable.scss';
 
 
+.inv-fin-banner{
+    &.invoicefinance-banner{
+        .fin-banner-caption{
+            position: relative;
+            &::after{
+                display: none;
+            }
+            &::before{
+                content: '';
+                width: 17rem;
+                height: 12rem;
+                display: block;
+                position: absolute;
+                left: 12rem;
+                top: 11rem;            
+                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat bottom right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
 
 
 .anchor-spoke-sec{
@@ -125,3 +150,26 @@
 
 
 
+.invoicefinance-banner{
+    .fin-banner-caption{
+        position: relative;
+        &::after{
+            display: none;
+        }
+        &::before{
+            content: '';
+            width: 17rem;
+            height: 12rem;
+            display: block;
+            position: absolute;
+            left: 44rem;
+            top: 16rem;
+            background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat bottom right;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+    }
+}

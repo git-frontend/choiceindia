@@ -5,6 +5,15 @@
 .inv-fin-banner{
     &.channel-ban-bg{
         background: $bg-sky !important;
+        .fin-banner-caption {
+            position: relative;
+            &::after{
+                display: none;
+            }
+            &::before{
+                display: none;
+            }
+        }
     }
 }
 
