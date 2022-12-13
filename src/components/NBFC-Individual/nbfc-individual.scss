@@ -84,15 +84,11 @@ body{
                 font-size: 1.75rem;
               }
             @media (max-width:$sm) {
-                font-size: 1.45rem;
+                font-size: 1.25rem;
                 padding: 0.8rem 0.5rem;
                     line-height: 2.5rem;
             }
-            @media (max-width:$sm) {
-                font-size: 1.45rem;
-                padding: 0.8rem 0.5rem;
-                    line-height: 2.5rem;
-            }
+           
             &:last-child{
                 border-right: none;
             }
@@ -106,6 +102,10 @@ body{
                     bottom: 0;
                     left: 0;
                     background: $yellowColor;
+                    @media (max-width:$sm) {
+                        height: 6px;
+                    }
+
                 }
             }
         }

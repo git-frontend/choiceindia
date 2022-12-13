@@ -27,7 +27,7 @@
                 width: 30px;
                 height: 3px;
                 background-color: $primary;
-                margin: 8px 0;
+                margin: 8px auto;
                 transition: 0.4s;
                 &.clicked{
                     &:nth-child(1n){
@@ -48,7 +48,7 @@
                 }
                 @media (max-width: $sm) {
                     width: 25px;
-                    margin: 5px 0;
+                    margin: 5px auto;
                 }
                 
             }
