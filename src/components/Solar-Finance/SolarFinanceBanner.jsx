@@ -49,8 +49,8 @@ function SolarFinanceBanner() {
             <section className="solar-fin-banner solar-ban-bg">
                 <div className="container">
                     <div className="row gx-5 justify-content-center">
-                        <div className="col-xl-8 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                        <div className="col-md-7">
+                            <div className="fin-banner-caption ">
                                 <h1 className="big-ttl">Apply for<br/>
                                     solar finance!</h1>
                                 <p>Our solar financing solution allows you to purchase your solar power system and pay for the installation
@@ -60,9 +60,10 @@ function SolarFinanceBanner() {
                                 <Link to="/invoice-financing"><span className="aply-btn">Apply Now!</span></Link></p>
                             </div>
                         </div>
-                        {/* <div className="col-md-6">
-
-                        </div> */}
+                        <div className=" col-md-5">
+                                <div className="formwrap">
+                                </div>
+                        </div>
                     </div>
                     <div className="row justify-content-center">
                         <div className="col-md-12">
