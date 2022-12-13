@@ -312,14 +312,15 @@ function Footer() {
                 <Link to="/file-download">File Download</Link>
               </li> */}
               {/* <li>
-                    <a href="/" target="_blank">Sitemap</a>
+                    <a href="/" target="_blank">Sitemap</a>CFPL Disclosures
                   </li> */}
               <li>
-                <a href="/cebpl-policies">CEBPL Policies</a>
+                <Link to="/cebpl-policies">CEBPL Policies</Link>
               </li>
-              {/* <li>
-                    <Link to="/client-details-update" target="_blank">Client Details Update</Link>
-                  </li> */}
+
+              <li>
+                    <Link to="/cfpl-policies">CFPL Policies</Link>
+                  </li>
             </ul>
           </div>
 
