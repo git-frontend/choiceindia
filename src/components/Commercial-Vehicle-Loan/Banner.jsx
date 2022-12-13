@@ -56,8 +56,11 @@ function ChannelFinanceBanner() {
                                     <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
                         </div>
-                        <div className="col-md-5 d-flex justify-content-end">
-                            <LazyLoader src={banner} alt={"Commercial Vehicle Loan"} className={"img-fluid img-banner"} width={"450"} height={"406"} />
+                       
+                        <div className=" col-md-5">
+                            <div className="formwrap">
+                                
+                            </div>
                         </div>
                     </div>
                     <div className="row justify-content-center">

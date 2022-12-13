@@ -59,7 +59,7 @@ function FlexitabVehLoan() {
 
                         </div>
                         <div className=" col-md-5">
-                            <div className="formwrap">
+                            <div className="formwrap vehicleloan">
                                 
                             </div>
                         </div>
