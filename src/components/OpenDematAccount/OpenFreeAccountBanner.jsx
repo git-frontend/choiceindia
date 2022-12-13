@@ -34,7 +34,25 @@ const OpenFreeAccountBanner = () => {
         });
       }
 
+      const [name, setName ] = useState('hideform');
+      const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }   
+        }
+    };
 
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
+     
+     
       
     function fetchQueryParams() {
         refercodecheck.current = searchParams.get('refercode') || '';
@@ -43,14 +61,8 @@ const OpenFreeAccountBanner = () => {
             
             setTimeout(()=>{
                 chapterScroll("dematform");
-              },1000)
-            
-            
+              },1000)    
         }
-
-            
-
-
     }
 
       useEffect(() => {
@@ -61,10 +73,7 @@ const OpenFreeAccountBanner = () => {
             let mediaQuery = window.matchMedia("(min-width: 770px)");
 			mediaQuery.addListener(setView);
 			// this is the cleanup function to remove the listener
-			return () => mediaQuery.removeListener(setView);
-            
-          
-            
+			return () => mediaQuery.removeListener(setView); 
         }
         
         
@@ -90,7 +99,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Lowest DP Charges"} />
+                                                <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt={"Open Free Demat Account with Low DP Charges"} />
                                                     {/* <img src={Image2} width={"30"} height={"30"} alt="Zero Account Opening Fee" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -104,7 +113,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Low Brokerage Charges"} />
+                                                    <LazyLoader src={Image3} className={'img-fluid'} width={"28"} height={"24"} alt={"Open Low Brokerage Demat Account"} />
                                                     {/* <img src={Image3} width={"28"} height={"24"} alt="No Square Off Charges" className="img-fluid " /> */}
                                                 </div>
                                             </div>
@@ -119,7 +128,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free Research Advisory"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"Free demat account with expert research advisory"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -131,7 +140,7 @@ const OpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Demat Account without Annual Charges"} />
+                                                <LazyLoader src={Image5} className={'img-fluid'} width={"32"} height={"20"} alt={"Free demat account with no annual charges"} />
                                                     {/* <img src={Image5} width={"32"} height={"20"} alt="Free Call For Trade Facility" className="img-fluid" /> */}
                                                 </div>
                                             </div>
@@ -158,6 +167,11 @@ const OpenFreeAccountBanner = () => {
 
                         </div>
 
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+                    </div>
                     </div>
                 </div>
             </section>

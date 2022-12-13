@@ -99,6 +99,7 @@ function StepsSlider() {
                                     <div className="steps-itm-left itm-left-img">
                                         <LazyLoader src={vehicleFirstStep} alt={"Submit the Documents"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
+                                  
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
                                         <h3>Submit the Documents</h3>

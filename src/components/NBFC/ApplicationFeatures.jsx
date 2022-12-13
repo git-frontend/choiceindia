@@ -37,35 +37,35 @@ function ApplicationFeatures() {
                                         <LazyLoader src={img2} alt={"Easy Loan Repayment Options"} className={"img-fluid"} width={"60"} height={"60"} />
                                     </span>
                                     <h3>Easy <br/>Repayment Options</h3>
-                                    <p>Our app features an option of re-payment reminders so that you never miss out on payments</p>
+                                    <p>We offer multiple options for repaying your loan to give you a hassle free experience </p>
                                 </div>
                                 <div className="loans-feat-itm">
                                     <span>
                                         <LazyLoader src={img3} alt={"Check SOA"} className={"img-fluid"} width={"60"} height={"60"} />
                                     </span>
                                     <h3>Check <br/> SOA</h3>
-                                    <p>Our app features an option of re-payment reminders so that you never miss out on payments</p>
+                                    <p>Keeping track of your payments, EMIs and remaining principal gets easier with SOA features</p>
                                 </div>
                                 <div className="loans-feat-itm">
                                     <span>
                                         <LazyLoader src={img4} alt={"Easy Documentation"} className={"img-fluid"} width={"60"} height={"60"} />
                                     </span>
                                     <h3>Easy <br/>Documentation</h3>
-                                    <p>Our app features an option of re-payment reminders so that you never miss out on payments</p>
+                                    <p>Get everything done from availing a loan to modifying the terms with minimal documentation</p>
                                 </div>
                                 <div className="loans-feat-itm">
                                     <span>
                                         <LazyLoader src={img5} alt={"Fast Loan Disbursal"} className={"img-fluid"} width={"60"} height={"60"} />
                                     </span>
                                     <h3>Fast <br/>Loan Disbursal</h3>
-                                    <p>Our app features an option of re-payment reminders so that you never miss out on payments</p>
+                                    <p>We have minimized the time between application of loan to its disbursal to a new benchmark</p>
                                 </div>
                                 <div className="loans-feat-itm">
                                     <span>
                                         <LazyLoader src={img6} alt={"Multiple Platform Access"} className={"img-fluid"} width={"60"} height={"60"} />
                                     </span>
                                     <h3>Multiple <br/>Platform Access</h3>
-                                    <p>Our app features an option of re-payment reminders so that you never miss out on payments</p>
+                                    <p>Apply for loans, keep track of your applications and accounts with Web, Android applications. </p>
                                 </div>
                             </div>
                         </div>

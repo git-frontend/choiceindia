@@ -16,6 +16,12 @@ import AvailPurposeIndivLoan from './AvailPurposeIndivLoan';
 import WhyFlexiIndivLoan from './WhyFlexiIndivLoan';
 import StepsliderIndivLoan from './StepsliderIndivLoan';
 
+import FlexitabSolarFinanace from '../NBFC-Individual-Solar/FlexitabSolarFinanace';
+import DocumentrequiredSolarFinanace from '../NBFC-Individual-Solar/DocumentrequiredSolarFinanace';
+import FeaturesSolarFinanace from '../NBFC-Individual-Solar/FeaturesSolarFinanace';
+import AvailPurposeSolarFinanace from '../NBFC-Individual-Solar/AvailPurposeSolarFinanace';
+import StepsliderSolarFinanace from '../NBFC-Individual-Solar/StepsliderSolarFinanace';
+
 import NBFCMenu from '../Common-features/NBFCMenu';
 
 function Loantabs() {
@@ -51,7 +57,7 @@ function Loantabs() {
             className={toggleState === 3 ? "loanbtn tabs active" : "loanbtn"}
             onClick={() => toggleTab(3)}
           >
-            Study Loan
+            Solar Finance
           </button>
           </div>
           <div className="menu-sub-tabs">
@@ -67,14 +73,14 @@ function Loantabs() {
                 className={toggleState === 1 ? "content  active-content" : "content"}
               >
 
-                <div id="flexitab">
+                {/* <div id="flexitab"> */}
                   <FlexitabIndivLoan />
                   <AvailPurposeIndivLoan/>
                   <StepsliderIndivLoan/>
                   <DocumentrequiredIndivLoan/>
                   <FeaturesIndivLoan/>
                   <WhyFlexiIndivLoan/>
-                </div>
+                {/* </div> */}
 
               </div>
 
@@ -92,14 +98,11 @@ function Loantabs() {
               <div
                 className={toggleState === 3 ? "content  active-content" : "content"}
               >
-                <div className="container">
-                  <div className="row">
-                      <div className="col-md-12">
-                          <h2 className="title-first text-center"> Study Loan</h2>
-                      </div>
-                  </div>
-                </div>
-               
+                  <FlexitabSolarFinanace />
+                  <AvailPurposeSolarFinanace/>
+                  <StepsliderSolarFinanace/>
+                  <DocumentrequiredSolarFinanace/>
+                  <FeaturesSolarFinanace/>
               </div>
             </div>
           </div>

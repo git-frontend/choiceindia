@@ -98,6 +98,12 @@ body{
                 background: $whiteColor;
                 @extend .box-shadow;
                 border-radius: 1rem;
+                min-height: 26.5rem;
+                height: 100%;
+                @media (max-width: $sm) {
+                    min-height: 23.5rem;
+                    height: 100%;
+                }
                 .mf-sm-img{
                     display: inline-block;
                     margin-bottom: 3rem;
@@ -609,7 +615,7 @@ body{
                     display: none;
                 }
                 @media (max-width:$md) {
-                    left: 0;
+                    left: -8rem;
                 }
             }
             .slick-next{
@@ -623,7 +629,7 @@ body{
                     display: none;
                 }
                 @media (max-width:$md) {
-                    right: 0;
+                    right: -8rem;
                 }
             }
         }

@@ -14,7 +14,7 @@ body{
 
 .loans-bannersection{
     background: #F9EFF1;
-    padding: 10rem 0 6rem 0;
+    padding: 7rem 0 6rem 0;
     .lft-sec{
         .big-ttl{
             color: $primary;
@@ -66,7 +66,7 @@ body{
 
 
 .loans-our-products{
-    padding: 5rem 0;
+    padding: 5rem 0 0 0;
     .products-menu-flx{
         display: flex;
         align-items: center;
@@ -82,9 +82,9 @@ body{
             justify-content: space-between;
             flex-wrap: wrap;
             align-items: center;
-            margin-bottom: 12rem;
+            margin-bottom: 10rem;
             .list-item-left{
-                width: 35%;
+                width: 45%;
                 img{
                     max-width: 100%;
                 }
@@ -93,18 +93,23 @@ body{
                 }
             }
             .list-item-right{
-                width: 40%;
+                width: 45%;
                 h3{
                     margin-bottom: 2rem;
                     font-family: $font-family-poppins-medium;
                     color:$darkblack;
+                    padding-left: 3rem;
                 }
                 .cont-list{
                     list-style: none;
                     padding: 0;
                     margin: 0;
                     .cont-list-itm{
-                        margin-bottom: 1.8rem;
+                        margin: 0;  
+                        background: $whiteColor;
+                        padding: 1.5rem 3rem;
+                        border-radius: 9px;
+                        cursor: pointer;
                         h5{
                             font-family: $font-family-poppins-medium;
                             color: $darkblack;
@@ -112,7 +117,18 @@ body{
                         p{
                             font-size: 1.25rem;
                             line-height: 1.5;
+                            margin: 0;
+                            padding: 0;
                         }
+                        &.list-itm-active{
+                            box-shadow: 9px 9px 15px rgba(0, 0, 0, 0.25);
+                        }
+                    }
+                }
+                a{
+                    margin-left: 3rem;
+                    @media (max-width: $sm) {
+                        margin-left: 0;
                     }
                 }
                 .btn-bg{
@@ -127,6 +143,20 @@ body{
                     margin-top: 4rem;
                     text-align: center;
                 }
+                .cont-list{
+                    .slick-track{
+                        height: auto !important; 
+                        .slick-slide{
+                            padding: 1.7rem;
+                            padding-top: 0.3rem;
+                            padding-left: 0.3rem;
+                            @media (max-width: $sm) {
+                                padding: 1.5rem;
+                            }
+                        }
+                    }
+                }
+                
             }
             &.list-item-reverse{
                 flex-direction: row-reverse;
@@ -175,5 +205,7 @@ body{
         text-align: center;
     }
 }
+
+
 
 

@@ -51,7 +51,7 @@ function InvestorInfoMenu() {
             <section className="Investormenu mt7 page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Board Of Directors</h2>
                             <Navbar />
                         </div>

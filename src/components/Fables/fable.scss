@@ -10,7 +10,12 @@
     // padding-top: 1rem;
     overflow-x: hidden;
     padding-bottom: 1rem;
-
+    .mt2{
+        @media (min-width:$md) and (max-width: 1281px) {
+            margin-top: 1.8rem;
+         }
+    }
+  
     .fables-caption-left {
         width: 58%;
         padding: 5rem;

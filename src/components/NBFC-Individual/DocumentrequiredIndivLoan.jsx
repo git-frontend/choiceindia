@@ -44,7 +44,6 @@ function Documentrequired() {
           </div>
             <ul className="list-item">
           
-              <li>  Salary slips of last 3 months</li>
               <li>Last Income tax return / Form 16</li>
               <li>Proof of Service Vintage</li>
             </ul>

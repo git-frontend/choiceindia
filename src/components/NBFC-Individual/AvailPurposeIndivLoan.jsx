@@ -32,7 +32,7 @@ function AvailPurpose() {
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">For what purposes?</h2>
-                              <p>The loan amount can be used to fulfil any needs like purchase of goods & services, asset creation, housing (purchase/renovation), investments in financial
+                              <p>The loan amount can be used to fulfil any needs like purchase of goods & services, asset creation, investments in financial
 assets, events expenses etc.</p>
                           </div>
                          

@@ -203,16 +203,21 @@
                 }
                 h3{
                     color: $darkblack;
-                    font-family: $font-family-poppins-medium;
+                    font-family: $font-family-poppins-semibold;
+                    margin-bottom: 1.5rem;
                 }
                 p{
                     color: $darkblack;
+                    font-size: 1.45rem;
+                    line-height: 1.6;
                 }
             }
             &.steps-itm-reverse{
                 flex-direction: row-reverse;
                 .steps-itm-right{
-                    text-align: right;
+                    h2, h3{
+                        text-align: right;
+                    }
                 }
                 .steps-itm-left{
                     justify-content: flex-start;

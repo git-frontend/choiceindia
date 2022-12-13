@@ -1,3 +1,4 @@
+
 @import 'common.scss';
 
 .main-footer{
@@ -60,6 +61,7 @@
         }
         .footer-cont-details{
             text-align: right;
+            
             p{
                 color: $lightColor;
                 font-size: 1.2rem;
@@ -73,7 +75,7 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: $lightColor;
-                    @media (max-width: $sm-x){
+                    @media (max-width: $md){
                         right: inherit;
                         left: 0;
                     }
@@ -85,7 +87,7 @@
                     right: 0;
                     font-size: 1.5rem;
                     color: $lightColor;
-                    @media (max-width: $sm-x){
+                    @media (max-width: $md){
                         right: inherit;
                         left: 0;
                     }
@@ -97,11 +99,11 @@
                         color: $bgcolor-yellow;
                     }
                 }
-                @media (max-width: $sm-x){
+                @media (max-width: $md){
                     padding-left: 2.5rem;
                 }
             }
-            @media (max-width: $sm-x){
+            @media (max-width: $md){
                 text-align: left;
                 margin-top: 2rem;
             }
@@ -124,7 +126,7 @@
                         width: 100%;
                         flex-wrap: wrap;
                     }
-                    @media (min-width:769px) and (max-width:1200px){
+                    @media (min-width:768px) and (max-width:1200px){
                         flex-direction: column;
                     }
                     a{

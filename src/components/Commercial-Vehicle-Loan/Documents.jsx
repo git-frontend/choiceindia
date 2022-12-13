@@ -1,7 +1,7 @@
 
 import React from "react";
 import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
-import IncomeProofimage from '../../assets/images/invoice-financing/income-proof-documents-for-invoice-financing-application.svg';
+import IncomeProofimage from '../../assets/images/com-vehicle-loan/vehicle-document.svg';
 import BusinessProofimage from '../../assets/images/invoice-financing/business-proof-documents-for-invoice-financing-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -38,7 +38,7 @@ function Documents() {
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Vehicle Documents"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"Vehicle Documents"}/>
                   </div>
                     <h3 className="title-doc">Vehicle Documents</h3>
                 </div>
