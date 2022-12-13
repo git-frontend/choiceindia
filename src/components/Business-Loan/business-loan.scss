@@ -12,7 +12,7 @@
             }
             &::before{
                 left: inherit;
-                right: 10rem;
+                right: 2rem;
                 top: 1rem;
                 opacity: 0.8;
             }
@@ -62,8 +62,8 @@
                 margin: 2.5rem 0 4.5rem 0;
                 .read-ext{
                     font-style: normal;
-                    font-family: $font-family-poppins-medium;
-                    color: $blueColortext;
+                    font-family: $font-family-poppins-semibold;
+                    color: $linkcolor;
                     cursor: pointer;
                 }
                 @media (max-width: $md){
@@ -89,7 +89,7 @@
         .nbfc-info-menu-main{
             position: absolute;
             right: 0;
-            top: -5.5rem;
+            top: -4rem;
         }
     }
     .loans-finance-sec{
@@ -111,8 +111,8 @@
                 }
                 .btn-read{
                     font-style: normal;
-                    font-family: $font-family-poppins-medium;
-                    color: $blueColortext;
+                    font-family: $font-family-poppins-semibold;
+                    color: $linkcolor;
                     cursor: pointer;
                 }
             }
@@ -147,8 +147,8 @@
                         line-height: 1.5;
                         .btn-read{
                             font-style: normal;
-                            font-family: $font-family-poppins-medium;
-                            color: $blueColortext;
+                            font-family: $font-family-poppins-semibold;
+                            color: $linkcolor;
                             cursor: pointer;
                         }
                     }
