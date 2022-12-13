@@ -11,7 +11,7 @@ function ChannelFinanceBanner() {
             <section className="inv-fin-banner nbfc-business-loan">
                 <div className="container">
                     <div className="row align-items-start">
-                        <div className="col-md-5">
+                        <div className="col-xl-5 col-md-6">
                             <div className="fin-banner-caption">
                                 <h1 className="big-ttl">Business Loan</h1>
                                 <p>We at Choice Finserv understand and value the business needs and requirement of our customers.</p>
