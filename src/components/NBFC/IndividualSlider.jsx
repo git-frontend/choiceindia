@@ -3,7 +3,7 @@ import { useState } from 'react';
 import imageData from '../../Data/individualoan';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
-
+import { Link} from "react-router-dom";
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
 
@@ -17,7 +17,7 @@ function BusinessSlider() {
     touchMove: true,
     arrows: false,
     slidesToShow: 3,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
@@ -72,7 +72,7 @@ function BusinessSlider() {
         })
       }
     </Slider>
-    <a href="#"><span class="btn-bg">Learn more</span></a>
+    <Link to="/individual-loan"><span class="btn-bg">Learn more</span></Link>
   </div>
 
 

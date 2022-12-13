@@ -105,7 +105,8 @@ function TimelineStepsSlider() {
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
                                         <h3>Get It Approved</h3>
-                                        <p>All the documents are under review of the approval team, post which one can get an approval within 48 hours, if all requirements are met.</p>
+                                        <p>All the documents are under review of the approval team, post which one can get an
+approval within 48 hours, if all requirements are met.</p>
                                     </div>
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">

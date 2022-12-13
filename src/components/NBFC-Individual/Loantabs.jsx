@@ -51,7 +51,7 @@ function Loantabs() {
             className={toggleState === 3 ? "loanbtn tabs active" : "loanbtn"}
             onClick={() => toggleTab(3)}
           >
-            Study Loan
+            Solar Finance
           </button>
           </div>
           <div className="menu-sub-tabs">
@@ -95,7 +95,7 @@ function Loantabs() {
                 <div className="container">
                   <div className="row">
                       <div className="col-md-12">
-                          <h2 className="title-first text-center"> Study Loan</h2>
+                          <h2 className="title-first text-center"> Solar Finance</h2>
                       </div>
                   </div>
                 </div>

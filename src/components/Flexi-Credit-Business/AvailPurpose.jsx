@@ -42,7 +42,9 @@ function AvailPurpose() {
                                     </div>
                                     <div className="bnr-list-left">
                                         <h2 className="title-secnd">For what purposes?</h2>
-                                        <p>The loan amount can be used to fulfil any needs like purchase of goods &amp; services, asset creation, housing (purchase/renovation), investments in financial assets, events expenses etc.</p>
+                                        <p>The funds from Flexi Credit can be used to meet the working capital and capital expenditure
+requirements of the business, general business purposes, business Expansion capital requirements,
+setting up of business.</p>
                                     </div>
 
                                 </div>

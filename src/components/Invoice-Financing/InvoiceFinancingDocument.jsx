@@ -43,7 +43,7 @@ function InvoiceFinancingDocument() {
                 </div>
                   <ul className="list-item">
                     <li>ITR of minimum 2 years</li>
-                    <li>Turnover of Business</li>
+                    <li>Business turnover</li>
                   </ul>
                 </div>
             </div>
@@ -56,7 +56,7 @@ function InvoiceFinancingDocument() {
                     <h3 className="title-doc">Business Proof</h3>
                   </div>
                   <ul className="list-item">
-                    <li>Residential/Business Address</li>
+                    <li>Business Address</li>
                     <li>Bank Statement</li>
                     <li>GST Certificate</li>
                   </ul>
