@@ -39,7 +39,7 @@ function LoansFinance() {
                 <div className="fin-list-itm">
                   <div className="list-itm">
                     <div className="itm-img">
-                      <LazyLoader src={termloan} alt={"Business Loan"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                      <LazyLoader src={termloan} alt={"Term Business Loan"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
                     </div>
                     <div className="itm-desc">
                       <h4 className="title-secnd">Term Loan</h4>
@@ -51,7 +51,7 @@ You will also have the ease to plan your future finances (starting a new sector,
                   </div>
                   <div className="list-itm">
                     <div className="itm-img">
-                      <LazyLoader src={flexicredit} alt={"Flexi Credit"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                      <LazyLoader src={flexicredit} alt={"Flexi Credit Business Loan"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
                     </div>
                     <div className="itm-desc">
                       <h4>Flexi Credit</h4>
