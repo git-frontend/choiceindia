@@ -650,7 +650,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                         <Route exact path='/solar-finance' element={
+                         <Route exact path='/solar-financing' element={
                             <React.Suspense>
                                 < LazySolarFinance />
                             </React.Suspense>

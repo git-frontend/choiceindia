@@ -70,7 +70,7 @@ function SolarFinanceBanner() {
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             {/* <LazyLoader src={zerocollateral} alt={"Zero Collateral for Channel Finnacing"} className={"img-fluid img"} width={"50"} height={"50"} /> */}
-                                            <img src={LoanSanction} alt="Loan Sanction Time" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                            <img src={LoanSanction} alt="Quick Solar Loan Sanctioned" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                         </span>
                                         <h3 className="card-ttl">10 Mins</h3>
                                         <p className="subtext">Loan Sanction Time</p>
@@ -78,7 +78,7 @@ function SolarFinanceBanner() {
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             {/* <LazyLoader src={FullFledged} alt={"Full Feldge Channel Financing Assistance"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
-                                            <img src={GetLoan} alt="Get Loan Disbursed" className="img-fluid img"  width={"60"} height={"50"}></img> 
+                                            <img src={GetLoan} alt="Instant Solar Loan Disbursal" className="img-fluid img"  width={"60"} height={"50"}></img> 
                                         </span>
                                         <h3 className="card-ttl">48 Hours</h3>
                                         <p className="subtext">to Get Loan Disbursed</p>
@@ -86,7 +86,7 @@ function SolarFinanceBanner() {
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             {/* <LazyLoader src={HighValue} alt={"High Value Channel Financing"} className={"img-fluid img"} width={"45"} height={"50"} /> */}
-                                            <img src={Paperwork} alt="Paperwork" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                            <img src={Paperwork} alt="Minimum Paperwork for Solar Loans" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Minimum</h3>
                                         <p className="subtext">Paperwork</p>
@@ -94,7 +94,7 @@ function SolarFinanceBanner() {
                                     <div className="carditem-nbfc">
                                         <span className='cardimg'>
                                             {/* <LazyLoader src={Documentation} alt={"Digital Channel Financing Documentation"} className={"img-fluid img"} width={"30"} height={"45"} /> */}
-                                            <img src={ProcessingFee} alt="Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                            <img src={ProcessingFee} alt="Low Processing for Solar Financing" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                         </span>
                                         <h3 className="card-ttl">Low</h3>
                                         <p className="subtext">Processing Fee</p>

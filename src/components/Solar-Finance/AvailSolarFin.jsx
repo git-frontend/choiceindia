@@ -16,7 +16,7 @@ function AvailSolar() {
                 <div className="veh-bnr-list">
                       <div className="bnr-list-itm">
                         <div className="bnr-list-right d-flex justify-content-end">
-                              <LazyLoader src={avail} alt={"Individual Loan Eligibility"} className={"img-fluid img"} width={"572"} height={"573"} />
+                              <LazyLoader src={avail} alt={"Solar Financing for MSME"} className={"img-fluid img"} width={"572"} height={"573"} />
                           </div>
                           <div className="bnr-list-left">
                               <h2 className="title-secnd">Who can avail?</h2>

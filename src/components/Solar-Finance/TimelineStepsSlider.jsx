@@ -90,7 +90,7 @@ function TimelineStepsSlider() {
                             <div className="how-works-steps">
                                 <div ref={myRef1} className={"works-steps-itm " + name} id="how1">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={FirstStep} alt={"Process Channel Financing Documents"} className={"img-fluid"} width={"154"} height={"198"} />
+                                        <LazyLoader src={FirstStep} alt={"Documents for Solar Financing"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>01</h2>
@@ -100,7 +100,7 @@ function TimelineStepsSlider() {
                                 </div>
                                 <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={SecndStep} alt={"Channel Financing Loan Approval"} className={"img-fluid"} width={"154"} height={"229"} />
+                                        <LazyLoader src={SecndStep} alt={"Review Solar Financing Application"} className={"img-fluid"} width={"154"} height={"229"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>02</h2>
@@ -110,7 +110,7 @@ function TimelineStepsSlider() {
                                 </div>
                                 <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
                                     <div className="steps-itm-left itm-left-img">
-                                        <LazyLoader src={ThirdStep} alt={"Quick Channel Financing Loan Disbursal"} className={"img-fluid"} width={"154"} height={"185"} />
+                                        <LazyLoader src={ThirdStep} alt={"Quick Solar Loan Disbursal"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
                                     <div className="steps-itm-right">
                                         <h2>03</h2>

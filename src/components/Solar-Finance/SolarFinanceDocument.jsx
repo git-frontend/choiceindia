@@ -22,7 +22,7 @@ function SolarFinanceDocument() {
             <div className="Doc-rq-card cap-right">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents for Term Loan Application"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC Documents for Solar Financing"}/>
                     </div>
                     <h3 className="title-doc">KYC</h3>
                   </div>
@@ -37,7 +37,7 @@ function SolarFinanceDocument() {
             <div className="Doc-rq-card cap-left">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Documents for Term Loan Application"}/>
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Doucments for Solar Financing"}/>
                     </div>
                     <h3 className="title-doc">Business Proof</h3>
                   </div>
