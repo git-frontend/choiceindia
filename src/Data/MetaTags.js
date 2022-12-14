@@ -2074,6 +2074,10 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'title': "Apply for Loan Online & Get Instant Loan within Few Hours",'lang':"en", "content": "Apply for loan online at Choice FinServ. Get a instant loan for your business, buying a commercial vehicle, flexi credit, invoice financing and channel financing at attractive interest rates.",
     "link": "https://choiceindia.com/loan"
   },
+  "business-loan": {
+    'title': "Apply for Business Loan & Get Instant Business Loan Online",'lang':"en", "content": "Apply for business loan online at Choice FinServ. Get a instant business loan upto 25 Lakhs at attractive interest rates, low processing fees. Visit to apply now.",
+    "link": "https://choiceindia.com/business-loan"
+  },
   "term-business-loan": {
     'title': "Apply for Term Business Loan Online at Choice FinServ",'lang':"en", "content": "Apply online at Choice FinServ for a term business loan. Get a fast business loan with low processing costs and attractive interest rates. Visit now to apply.",
     "link": "https://choiceindia.com/term-business-loan"

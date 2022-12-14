@@ -82,6 +82,7 @@ body{
             cursor: pointer;
             @media (min-width:768px)and (max-width:$md) {
                 font-size: 1.75rem;
+                padding: 1.5rem;
               }
             @media (max-width:$sm) {
                 font-size: 1.25rem;
