@@ -8,6 +8,7 @@ const imageDataProducts =
 [
     {
         "image":`${ImageSub0}`,
+        "alttag":'1',
         "id": 3,
         "title":'MSME Loans',
         "description":'Financing all the needs of MSMEs with wide range of solutions.'
@@ -16,6 +17,7 @@ const imageDataProducts =
     },
     {
         "image":`${ImageSub1}`,
+        "alttag":'2',
         "id": 2,
         "title":'Supply Chain Finance',
         "description":'This is a set of business financing processes that link various parties in a transaction.'
@@ -24,6 +26,7 @@ const imageDataProducts =
     },
     {
         "image":`${ImageSub2}`,
+        "alttag":'3',
         "id": 1,
         "title":'Vehicle Loan',
         "description":'We offer affordable vehicle loans making sure that you own your dream wheels.'
@@ -33,6 +36,7 @@ const imageDataProducts =
     ,{
 
         "image":`${ImageSub3}`,
+        "alttag":'4',
         "id": 0,
         "title":'Solar Finance',
         "description":'A loan that allows you to purchase your solar power system and then repay the loan over time.'
