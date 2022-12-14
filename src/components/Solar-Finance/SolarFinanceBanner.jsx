@@ -51,8 +51,8 @@ function SolarFinanceBanner() {
                     <div className="row gx-5 justify-content-center">
                         <div className="col-md-7">
                             <div className="fin-banner-caption ">
-                                <h1 className="big-ttl">Apply for<br/>
-                                     solar finance!</h1>
+                            <h1 className="big-ttl">Apply for <br/>
+solar finance!</h1>
                                 <p>Our solar financing solution allows you to purchase your solar power system and pay for the installation
                                     costs upfront and then repay the loan over time.
                                 </p>
