@@ -42,7 +42,7 @@ function BusinessSlider() {
       <div className='products-list-item list-item-reverse'>
 
 <div className="list-item-left" >
-  <LazyLoader src={imageData[isShown2].image} className={"img-fluid"} width={"536"} height={"392"} alt={"Loading"} />
+  <LazyLoader src={imageData[isShown2].image} className={"img-fluid"} width={"536"} height={"392"} alt={imageData[isShown2].alttag} />
 </div>
 <div className='list-item-right'>
   <h3>Individual</h3>

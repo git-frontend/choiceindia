@@ -42,7 +42,7 @@ function IndividualSlider() {
       <div className='products-list-item'>
 
 <div className="list-item-left" >
-  <LazyLoader src={imageDataProducts[isShown2].image} className={"img-fluid"} width={"536"} height={"392"} alt={"Loading"} />
+  <LazyLoader src={imageDataProducts[isShown2].image} className={"img-fluid"} width={"536"} height={"392"} alt={imageDataProducts[isShown2].alttag} />
 </div>
 <div className='list-item-right'>
   <h3>Business</h3>
