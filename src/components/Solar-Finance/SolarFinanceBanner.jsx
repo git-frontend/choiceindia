@@ -56,7 +56,7 @@ function SolarFinanceBanner() {
                                 <p>Our solar financing solution allows you to purchase your solar power system and pay for the installation
                                     costs upfront and then repay the loan over time.
                                 </p>
-                                <p>Get solar finance loan up to Rs25 lakh online.<br />
+                                <p>Get solar finance loan up to Rs25 lakh online. <br />
                                 <Link to="/invoice-financing"><span className="aply-btn">Apply Now!</span></Link></p>
                             </div>
                         </div>
