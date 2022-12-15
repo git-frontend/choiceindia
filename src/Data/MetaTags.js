@@ -2068,6 +2068,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "best-stocks-for-long-term-investment": {
     'title': "Best Stocks to Buy for Long Term Investment - Choice",'lang':"en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
     "link": "https://choiceindia.com/best-stocks-for-long-term-investment"
+  },
+
+  "cfpl-policies":{
+    'title': "CFPL Policies - Choice International Limited",'lang':"en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
+    "link": "https://choiceindia.com/cfpl-policies"
+
   }
 
 
