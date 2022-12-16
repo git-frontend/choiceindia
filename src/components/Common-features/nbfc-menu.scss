@@ -77,6 +77,7 @@
                 margin: 0;
                 position: relative;
                 z-index: 99;
+                width: 100%;
                 > .menu-itm{
                     margin-bottom: 2rem;
                     .menu-itm-link{
@@ -85,16 +86,20 @@
                         text-decoration: none;
                         display: block;
                         font-family: $font-family-poppins-medium;
+                        svg{
+                            width:20%;
+                        }
                         .menu_item_text{
                             color: $darkblack;
                             margin-left: 1rem;
+                            width: 80%;
                         }
-                        .menu-icom{
-                            width: 28px;
-                            @media (max-width: $sm) {
-                                width: 23px;
-                            }
-                        }
+                        // .menu-icom{
+                        //     width: 28px;
+                        //     @media (max-width: $sm) {
+                        //         width: 23px;
+                        //     }
+                        // }
                         &:hover{
                             svg{
                                 path{
