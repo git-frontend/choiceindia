@@ -6,6 +6,7 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 import NBFCMenu from '../Common-features/NBFCMenu';
 import "../Invoice-Financing/nbfc-common.scss";
 import "../Solar-Finance-Sub/solar-fin-sub.scss";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 function SolarFinanceSub() {
   return (
     <div>
@@ -14,10 +15,10 @@ function SolarFinanceSub() {
           <div className="row">
               <div className="col-md-12">
               <div className="solar-finance-sub-menu">
-                  <a href="/">
+                <Link to="/business-loan">
                       <FontAwesomeIcon icon={faArrowLeft} />
                       <span className='back'>Back</span>
-                  </a>
+                 </Link>
                   <NBFCMenu />
                 </div>
               </div>

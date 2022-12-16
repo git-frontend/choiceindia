@@ -8,6 +8,7 @@ import "../Invoice-Financing/nbfc-common.scss";
 import "../Supply-Chain-Finance/supply-chain-fin.scss";
 import SupplyChainBan from '../../assets/images/supply-chain-finance/supply-chain-ban.webp';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link, useNavigate, NavLink } from "react-router-dom";
 function SupplyChainFin() {
   return (
     <div>
@@ -16,10 +17,10 @@ function SupplyChainFin() {
           <div className="row">
               <div className="col-md-12">
               <div className="supply-chain-menu">
-                  <a href="/">
+              <Link to="/business-loan">
                       <FontAwesomeIcon icon={faArrowLeft} />
                       <span className='back'>Back</span>
-                  </a>
+                </Link>
                   <NBFCMenu />
                 </div>
               </div>
