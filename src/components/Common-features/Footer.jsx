@@ -319,7 +319,7 @@ function Footer() {
               </li>
 
               <li>
-                <Link to="/cfpl-policies">CFPL Policies</Link>
+                <Link to="/cfpl-disclosures">CFPL Policies</Link>
               </li>
               <li>
                 <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>
