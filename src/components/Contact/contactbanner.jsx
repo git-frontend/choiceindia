@@ -92,14 +92,13 @@ function Contactbanner() {
   useEffect(() => {	
     setTrigger(true)	
     if (trigger == true) {	
-      loadDepartmentList()	
-      loadSubDepartmentList(1)	
-      // selectdepartment()	
-      // selectSubdepartment()	
+      loadDepartmentList()
+     	
+      	
     }	
   }, [trigger])
 
-
+  console.log("check",event.target)
 
 
 
