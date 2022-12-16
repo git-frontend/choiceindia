@@ -2087,6 +2087,16 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link": "https://choiceindia.com/flexi-credit-loan"
   },
 
+  "cfpl-policies":{
+    'title': "CFPL Policies - Choice International Limited",'lang':"en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
+    "link": "https://choiceindia.com/cfpl-policies"
+
+  },
+
+
+
+
+
   "invoice-financing": {
     'title': "Apply for Invoice Financing & Get Funds within 48 Hours",'lang':"en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
     "link": "https://choiceindia.com/invoice-financing"
