@@ -612,7 +612,7 @@ function Routing() {
                                 < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
                         } />
-                         <Route exact path='/cfpl-disclosures' element={
+                         <Route exact path='/cfpl-policies' element={
                             <React.Suspense>
                                 < LazyCfplPolicies />
                             </React.Suspense>

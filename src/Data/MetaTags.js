@@ -2091,7 +2091,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'title': "CFPL Policies - Choice International Limited",'lang':"en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
     "link": "https://choiceindia.com/cfpl-policies"
 
-  }
+  },
 
 
 

@@ -317,12 +317,14 @@ function Footer() {
               <li>
                 <Link to="/cebpl-policies">CEBPL Policies</Link>
               </li>
+
               <li>
-                    <Link to="/" target="_blank">CFPL Disclosures</Link>
+                <Link to="/cfpl-policies">CFPL Disclosures</Link>
               </li>
               <li>
-                    <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>
+                <a href="https://sachet.rbi.org.in/" target="_blank">Sachet Portal</a>
               </li>
+
             </ul>
           </div>
 
