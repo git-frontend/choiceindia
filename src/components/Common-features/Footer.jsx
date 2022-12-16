@@ -150,13 +150,13 @@ function Footer() {
                         </div>
                       </div>
                       <div className="col-md-12 col-lg-4">
-                      <div className="footer-cont-details">
-                      <p>Choice International Limited , Sunil Patodia Tower, <br /> J B Nagar, Andheri(East), <br />Mumbai 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
-                      <p>Monday - Friday : 08:30 am - 7:00 pm <br />
-                        Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                      <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
-                      <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
-                      </div>
+                        <div className="footer-cont-details">
+                          <p>Choice International Limited , Sunil Patodia Tower, <br /> J B Nagar, Andheri(East), <br />Mumbai 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
+                          <p>Monday - Friday : 08:30 am - 7:00 pm <br />
+                            Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
+                          <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                          <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
+                        </div>
 
                       </div>
                     </div>
@@ -238,25 +238,25 @@ function Footer() {
                 <div className="col-md-12">
                   <div className="article">
                     <p><strong>Choiceinternational. CIN - L67190MH1993PLC071117</strong><br />
-                      <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ). <br/> Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
-                      <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. <br/> Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
+                      <strong>Choice Equity Broking Private Limited</strong>: SEBI Reg No. Broking - INZ000160131 ( BSE - 3299 )  | ( NSE - 13773 ) | ( MSEI - 73200 ) | ( MCX - 40585 ) | ( NCDEX - 01006 ). <br /> Depository Participant SEBI Reg. No. - IN - DP - 84 - 2015 , DP ID CDSL - 12066900 , NSDL ID - IN301895. Research Analyst - INH000000222<br />
+                      <strong>Choice Wealth Private Limited</strong>: AMFI - Registered Mutual Fund Distributor. Association of Mutual Funds in India Registeration Number - ARN - 78908. <br /> Pension Fund Regulatory and Development Authority (PFRDA) - POPSE52022022 | Affiliated with POP HDFC Pension Management Company.<br />
                       <strong>Choice Finserv Private Limited</strong>: NBFC Registration Number : N - 13.02216 <br />
                     </p>
                     <p>
-                     <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
+                      <strong> Choice Insurance Broking Private Limited</strong>: IRDAI License No: 167, License Valid Till: 29-05-2024
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
-                     
+
                       Cautionary Message :
-                    <ol  style={{marginleft:"-1rem"}}> 
-                    <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
-                    <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
-                    <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>
-                    <li>Dealing in unsolicited tips through Whatsapp, Telegram, YouTube, Facebook, SMS, calls, etc.</li>
-                    <li>Trading in “Options” based on recommendations from unauthorised / unregistered investment advisors and influencers</li>
-                     </ol>
-                     
+                      <ol style={{ marginleft: "-1rem" }}>
+                        <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
+                        <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
+                        <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>
+                        <li>Dealing in unsolicited tips through Whatsapp, Telegram, YouTube, Facebook, SMS, calls, etc.</li>
+                        <li>Trading in “Options” based on recommendations from unauthorised / unregistered investment advisors and influencers</li>
+                      </ol>
+
                       Disclaimer: <br />
                       1. *Investments in securities market are subject to market risks, read all the related documents carefully before investing.<br />
                       2. In addition to client based business, we are also doing proprietary trading. <br />
@@ -312,10 +312,10 @@ function Footer() {
                 <Link to="/file-download">File Download</Link>
               </li> */}
               {/* <li>
-                    <a href="/" target="_blank">Sitemap</a>
+                    <a href="/" target="_blank">Sitemap</a>CFPL Disclosures
                   </li> */}
               <li>
-                <a href="/cebpl-policies">CEBPL Policies</a>
+                <Link to="/cebpl-policies">CEBPL Policies</Link>
               </li>
               <li>
                     <Link to="/" target="_blank">CFPL Disclosures</Link>
