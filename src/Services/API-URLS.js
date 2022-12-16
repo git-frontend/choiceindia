@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -108,7 +108,7 @@ export class API_URLS {
 
     /** contact form */
 
-    contactURL = 'contact-us/'
+    contactURL = 'contact-us/send-email'
     researchReport = '/research-report'
 
     /** API URL For guest Token Generation*/
@@ -182,6 +182,10 @@ export class API_URLS {
 /** contact us city detail */
     contactCityURL='items/branch_details?filter[status][_eq]=published&limit=1000';
     cfplURL='items/NBFC?limit=100&sort[]=id';
+    /** Department */
+    departmentURL='items/department';
+    /** Sub Department  */
+    subdepartmentURL = 'items/sub_department?filter[department_id][_eq]=1'
 
 
 
@@ -664,6 +668,12 @@ export class API_URLS {
     }
     getCfplPolicyURL(){
         return this.bannerURL + this.cfplURL
+    }
+    getDepartmentURL(){
+        return this.bannerURL + this.departmentURL
+    }
+    getSubDepartmentURL(id){
+        return this.bannerURL + `items/sub_department?filter[department_id][_eq]=${id}`
     }
     
     

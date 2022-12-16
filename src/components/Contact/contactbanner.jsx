@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
 import phoneicon from '../../assets/images/contact/phone-icon.svg';
@@ -27,9 +27,15 @@ function Contactbanner() {
   const [isloader, setIsloader] = useState(false);
   
   const [nbfc, setNbfc] = useState(false);
-  
+  const [list, setList] = useState();	
+  const [sublist, setSublist] = useState();	
+  const [dept, setdept] = useState();	
+  const [subdept, setSubdept] = useState();	
+  const [trigger, setTrigger] = useState(false);
+  // const [listid,setListid] = useState();
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
-
+  let departmentlist={};	
+  let subdepartmentlist={}
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
@@ -40,6 +46,58 @@ function Contactbanner() {
     question: yup.string().max(40).required("Need to fill your question")
 
   })
+
+  function loadDepartmentList() {	
+    contactService.departmentCollection().then(	
+      res => {	
+        if (res) {	
+          setList(res.data.data);	
+          console.log("che", res.data.data)	
+        } else {	
+          setList([]);	
+        }	
+      }	
+    ).catch((error) => {	
+      setList([]);	
+    });	
+  }	
+  function loadSubDepartmentList(id) {	
+    contactService.subDepartmentCollection(id).then(	
+      res => {	
+        if (res) {	
+          setSublist(res.data.data);	
+          console.log("ddd",res.data.data)	
+        } else {	
+          setSublist([]);	
+        }	
+      }	
+    ).catch((error) => {	
+      setSublist([]);	
+    });	
+  }	
+  function selectdepartment() {	
+    departmentlist = event.target.value.split("-")	
+  console.log("email",departmentlist[0])
+  setdept(departmentlist)	
+    	
+    loadSubDepartmentList(departmentlist[0])	
+  	
+  }	
+ function  selectSubdepartment(){	
+  subdepartmentlist = event.target.value.split("-")	
+  console.log("email",subdepartmentlist)	
+  setSubdept(subdepartmentlist)
+  	
+  }	
+  useEffect(() => {	
+    setTrigger(true)	
+    if (trigger == true) {	
+      loadDepartmentList()	
+      loadSubDepartmentList(1)	
+      // selectdepartment()	
+      // selectSubdepartment()	
+    }	
+  }, [trigger])
 
 
 
@@ -52,12 +110,21 @@ function Contactbanner() {
     resolver: yupResolver(schema)
   });
   const submitFormData = (FormData) => {
-    setdatas(FormData)
-    // console.log("data", FormData);
+   
+    
+    
+    let formData = FormData;
+    formData['department'] = dept[1];
+    formData['sub_department'] = subdept[0];
+    formData['email_to'] = subdept[1];
+    console.log("data", formData);
+    setdatas(formData)
+
+    
 
     setIsloader(true)
 
-    contactService.contactForm(FormData).then(res => {
+    contactService.contactForm(formData).then(res => {
       setIsloader(false)
       reset();
       setData("Mail sent Successfully")
@@ -89,39 +156,59 @@ function Contactbanner() {
                   <div className="col-md-5">
                   <div className='dipar-dropdown'>
                       <p className="depart-text">Department *</p>
-                      <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
-                        <option value="Select here" selected>Select here</option>
-                        <option className="option">Feedback</option>
-                        <option className="option">Compliance & Complaint.</option>
-                        <option className="option">Partner related</option>
-                        <option className="option">Broking & Distribution</option>
-                        <option className="option">Wealth planning</option>
-                        <option className="option">Insurance related query</option>
-                        <option className="option">NBFC related query</option>
-                        <option className="option">Government Advisory</option>
-                        <option className="option">Enquiry</option>
-                        <option className="option">Others</option>
-                      </Form.Select>
+                      <Form.Select variant="Info" id="dropdown-basic"  onChange={()=>selectdepartment()} className=" department" >	
+                        <option value="Select here" selected>Select here</option>	
+                          {/* <option value="Select here" selected>Select here</option>	
+                          <option className="option">Compliance & Complaint.</option>	
+                        <option className="option">Partner related</option>	
+                        <option className="option">Broking & Distribution</option>	
+                        <option className="option">Wealth planning</option> */}	
+                          {	
+                            list?.map((res, i) => {	
+                              return (	
+                                	
+                                <option value={res.id+'-'+res.department}>{res.department}</option>	
+                               	
+                              )	
+                            })	
+                          }	
+                          {/* <Select }	
+                            placeholder="select department" className="formcontrol formpadding"  options={citiesDropdown}  onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />	
+                          {	
+                            errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''	
+                          } */}	
+                          {/* <option className="option">Feedback</option>	
+                        <option className="option">Compliance & Complaint.</option>	
+                        <option className="option">Partner related</option>	
+                        <option className="option">Broking & Distribution</option>	
+                        <option className="option">Wealth planning</option>	
+                        <option className="option">Insurance related query</option>	
+                        <option className="option">NBFC related query</option>	
+                        <option className="option">Government Advisory</option>	
+                        <option className="option">Enquiry</option>	
+                        <option className="option">Others</option> */}	
+                        </Form.Select>	
+                      </div>	
+                    </div>	
+                    <div className="col-md-5">	
+                      <div className='dipar-dropdown request-dropdown'>	
+                        <p className="depart-text">Request type *</p>	
+                        <Form.Select variant="Info" id="dropdown-basic" className=" department" onChange={()=>selectSubdepartment()} >	
+                        <option value="Select here" selected>Select here</option>	
+                        {	
+                            sublist?.map((res, i) => {	
+                              	
+                              return (	
+                                	
+                                <option value={res.sub_department+'-'+res.email_id}>{res.sub_department}</option>	
+                               	
+                              )	
+                            })	
+                          }	
+                        </Form.Select>
                     </div>
                   </div>
-                  <div className="col-md-5">
-                  <div className='dipar-dropdown request-dropdown'>
-                      <p className="depart-text">Request type *</p>
-                      <Form.Select variant="Info" id="dropdown-basic"  className=" department" {...register('purpose')}>
-                        <option value="Select here" selected>Select here</option>
-                        <option className="option">Feedback</option>
-                        <option className="option">Compliance & Complaint.</option>
-                        <option className="option">Partner related</option>
-                        <option className="option">Broking & Distribution</option>
-                        <option className="option">Wealth planning</option>
-                        <option className="option">Insurance related query</option>
-                        <option className="option">NBFC related query</option>
-                        <option className="option">Government Advisory</option>
-                        <option className="option">Enquiry</option>
-                        <option className="option">Others</option>
-                      </Form.Select>
-                    </div>
-                  </div>
+                 
                  </div>
                   
                 </div>
@@ -170,67 +257,68 @@ function Contactbanner() {
                     <p className="whiteus-text">Write to Us</p>
 
                     <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
-                      <div>
-                        <Form.Group className="mb-3 formgrp formgrp1" controlId="formBasicEmail">
-                          <Form.Label className="formlabel" >Your name <span className="warning">*</span> </Form.Label>
-                          <Form.Control type="text" name="firstName" placeholder="Pushkar" className="formcontrol" {...register('firstName',)} />
-                          <span className="text-danger"> {errors?.firstName?.message} </span>
-                        </Form.Group>
-                      </div>
-
-                      <div className="row mt-3 d-flex justify-content-between">
-                        <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                          <Form.Label className="formlabel mt-5">Email  <span className="warning">*</span></Form.Label>
-                          <Form.Control type="text" placeholder="design@choiceindia.com" className="formcontrol"  {...register('email')} />
-                          <span className="text-danger"> {errors?.email?.message} </span>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                          <Form.Label className="formlabel mt-5"> Mobile number <span className="warning">*</span> </Form.Label>
-                          <Form.Control type="tel" placeholder="1234 567 890" pattern="\d*" maxLength={10} className="formcontrol" {...register('mobile')} />
-                          <span className="text-danger"> {errors?.mobile?.message} </span>
-                        </Form.Group>
-                      </div>
-                      <div>
-                        <Form.Group className="mb-3  formgrp formgrp1" controlId="formBasicEmail">
-                          <Form.Label className="formlabel mt-5" >Add a description <span className="warning">*</span> </Form.Label>
-                          <Form.Control type="text" name="firstName" placeholder="Your message" className="formcontrol" {...register('firstName',)} />
-                          <span className="text-danger"> {errors?.firstName?.message} </span>
-                        </Form.Group>
-                      </div>
+              <div className="row d-flex justify-content-between">
+                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                  <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="text" name="firstName"  className="formcontrol" {...register('firstName',)} />
+                  <span className="text-danger"> {errors?.firstName?.message} </span>
+                </Form.Group>
 
 
-                      {/* <Form.Group className="mb-3">
-    <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
-    <div className='cust-dropdown'>
-      <div className="downar"></div>
-      <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
-        <option className="option">Feedback</option>
-        <option className="option">View</option>
-        <option className="option">Review</option>
+                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                  <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="text"  className="formcontrol" {...register('lastName')} />
+                  <span className="text-danger"> {errors?.lastName?.message} </span>
+                </Form.Group>
+              </div>
 
-      </Form.Select>
-    </div>
-  </Form.Group> */}
+              <div className="row mt-3 d-flex justify-content-between">
+                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                  <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
+                  <Form.Control type="text"  className="formcontrol" {...register('email')} />
+                  <span className="text-danger"> {errors?.email?.message} </span>
+                </Form.Group>
+
+                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                  <Form.Label className="formlabel"> Mobile Number <span className="warning">*</span> </Form.Label>
+                  <Form.Control type="tel" pattern="\d*"   maxLength={10} className="formcontrol" {...register('mobile')} />
+                  <span className="text-danger"> {errors?.mobile?.message} </span>
+                </Form.Group>
+              </div>
+
+
+              {/* <Form.Group className="mb-3">
+                <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
+                <div className='cust-dropdown'>
+                  <div className="downar"></div>
+                  <Form.Select variant="Info" id="dropdown-basic" className="dropdowntoggle" {...register('purpose')}>
+                    <option className="option">Feedback</option>
+                    <option className="option">View</option>
+                    <option className="option">Review</option>
+
+                  </Form.Select>
+                </div>
+              </Form.Group> */}
 
 
 
-                      {/* <label className="formlabel mt-5"> Add a description <span className="warning">*</span></label>
-                    <div className=" messagefield">
-                      <textarea className="messagearea" placeholder="Your message" {...register('question')} />
-                      <span className="text-danger"> {errors?.question?.message} </span>
-                    </div> */}
+              <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
+              <div className=" messagefield">
+                <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
+                <span className="text-danger"> {errors?.question?.message} </span>
+              </div>
+              
+              <div className="uploadbtn mt-3 d-flex align-items-center">
+              <div className="feel-msg">{data}</div>
+                <Button variant="primary"
+                  type="submit" className="btn-bg btn-bg-dark sendbtn">
+                  { isloader===false ? 
+                  "Send" : <Spinner animation="border" />
+                  }
+                </Button>
+              </div>
+            </Form>
 
-                      <div className="uploadbtn mt-5 d-flex align-items-center">
-                        <div className="feel-msg">{data}</div>
-                        <Button variant="primary"
-                          type="submit" className="btn-bg btn-bg-dark ">
-                          {isloader === false ?
-                            "Submit" : <Spinner animation="border" />
-                          }
-                        </Button>
-                      </div>
-                    </Form>
                   </div>
                 </div>
 
