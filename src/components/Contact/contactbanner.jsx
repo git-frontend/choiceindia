@@ -18,6 +18,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'react-bootstrap/Modal';
 import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
+import utils from "../../Services/utils";
 
 function Contactbanner() {
 
@@ -32,7 +33,7 @@ function Contactbanner() {
   const [dept, setdept] = useState();	
   const [subdept, setSubdept] = useState();	
   const [trigger, setTrigger] = useState(false);
-  // const [listid,setListid] = useState();
+  const [listid,setListid] = useState(true);
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
   let departmentlist={};	
   let subdepartmentlist={}
@@ -79,6 +80,7 @@ function Contactbanner() {
     departmentlist = event.target.value.split("-")	
   console.log("email",departmentlist[0])
   setdept(departmentlist)	
+  setListid(true);
     	
     loadSubDepartmentList(departmentlist[0])	
   	
@@ -87,6 +89,7 @@ function Contactbanner() {
   subdepartmentlist = event.target.value.split("-")	
   console.log("email",subdepartmentlist)	
   setSubdept(subdepartmentlist)
+  setListid(true);
   	
   }	
   useEffect(() => {	
@@ -98,41 +101,54 @@ function Contactbanner() {
     }	
   }, [trigger])
 
-  console.log("check",event.target)
+  function checklist(){
+    if(document.getElementById('dropdown-basic').value=="Select here"){
 
+      utils.scrollToId('dropdown-basic');
+      setListid(false);
+      console.log("chss",listid)
+      
+      
+     }
+  }
 
-
-
+  // console.log("check",event)dropdown
+  
+  console.log("check124",document.getElementById('dropdown-basic').value)
+  console.log("check124",document.getElementById('dropdown').value)
+ 
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
   const submitFormData = (FormData) => {
+
+
+  
    
-    
-    
     let formData = FormData;
-    formData['department'] = dept[1];
-    formData['sub_department'] = subdept[0];
-    formData['email_to'] = subdept[1];
+    formData['department'] = dept[1]||'';
+    formData['sub_department'] = subdept[0]||'';
+    formData['email_to'] = subdept[1]||'';
     console.log("data", formData);
     setdatas(formData)
-
-    
-
     setIsloader(true)
+  
+      contactService.contactForm(formData).then(res => {
+        setIsloader(false)
+        reset();
+        setData("Mail sent Successfully")
+        // console.log("check",data)
+  
+      })
 
-    contactService.contactForm(formData).then(res => {
-      setIsloader(false)
-      reset();
-      setData("Mail sent Successfully")
-      // console.log("check",data)
-
-    })
+     
+    
 
 
   }
+ 
 
 
 
@@ -155,7 +171,7 @@ function Contactbanner() {
                   <div className="col-md-5">
                   <div className='dipar-dropdown'>
                       <p className="depart-text">Department *</p>
-                      <Form.Select variant="Info" id="dropdown-basic"  onChange={()=>selectdepartment()} className=" department" >	
+                      <Form.Select variant="Info" id="dropdown-basic hij"  onChange={()=>selectdepartment()} className=" department" >	
                         <option value="Select here" selected>Select here</option>	
                           {/* <option value="Select here" selected>Select here</option>	
                           <option className="option">Compliance & Complaint.</option>	
@@ -186,13 +202,16 @@ function Contactbanner() {
                         <option className="option">Government Advisory</option>	
                         <option className="option">Enquiry</option>	
                         <option className="option">Others</option> */}	
-                        </Form.Select>	
+                        </Form.Select>
+                        {
+                          listid ? '':<span className="text-danger">Need to choose Department </span>
+                        }	
                       </div>	
                     </div>	
                     <div className="col-md-5">	
                       <div className='dipar-dropdown request-dropdown'>	
                         <p className="depart-text">Request type *</p>	
-                        <Form.Select variant="Info" id="dropdown-basic" className=" department" onChange={()=>selectSubdepartment()} >	
+                        <Form.Select variant="Info" id="dropdown-basic" onChange={()=>selectSubdepartment()} className=" department" >	
                         <option value="Select here" selected>Select here</option>	
                         {	
                             sublist?.map((res, i) => {	
@@ -205,6 +224,9 @@ function Contactbanner() {
                             })	
                           }	
                         </Form.Select>
+                        {
+                          listid ? '':<span className="text-danger">Need to choose Sub-Department </span>
+                        }
                     </div>
                   </div>
                  
@@ -309,7 +331,7 @@ function Contactbanner() {
               
               <div className="uploadbtn mt-3 d-flex align-items-center">
               <div className="feel-msg">{data}</div>
-                <Button variant="primary"
+                <Button variant="primary" onClick={()=>checklist()}
                   type="submit" className="btn-bg btn-bg-dark sendbtn">
                   { isloader===false ? 
                   "Send" : <Spinner animation="border" />
