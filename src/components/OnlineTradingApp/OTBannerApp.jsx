@@ -33,7 +33,7 @@ function BannerCareer() {
                         <div className="top-title pl8">
                            <h1>Choice FinX Trading  <span className="mb-br">App For</span> </h1> 
 
-                           <Slider {...settings1} className='slider-ver'>
+                           <Slider {...settings1} className='slider-ver slider-newver'>
                                 <div>
                                     <h4>Stocks</h4>
                                 </div>

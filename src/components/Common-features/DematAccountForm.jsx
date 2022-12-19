@@ -281,7 +281,6 @@ function DematAccountForm(props) {
     }
 
     function sendOTP() {
-        console.log(mobileNumber,"sendOTP");
         showLoader('sendOTPLoader');
         let request = {
             "whatsapp_consent":true,
@@ -303,6 +302,7 @@ function DematAccountForm(props) {
             // 'blog_leads'
             "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMMedium.current || null,
             "utm_term": UTMTerm.current || null,
+            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
             "captcha": "1"
         };
@@ -600,7 +600,6 @@ function DematAccountForm(props) {
 
                         <div className="sub-formgrp mt-5 mb-0">
                             {
-                                // onClick={handleReCaptchaVerify}
                                 <Button variant="primary"
                                     type="submit" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                     {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'otpbtn')}</Button>

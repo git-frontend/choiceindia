@@ -22,17 +22,17 @@ const openAccountService = {
 
   sendOTP: function (request,type) {
     let url =((type=='MF')? apiURL.getSendInvesOTPURL() : apiURL.getSendOTPURL());
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, headers))
+    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }))
   },
 
   resendOTPAgain: function (request,type) {
     let url = ((type=='MF')? apiURL.getResendInvestOTPURL() : apiURL.getResendOTPURL()); 
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, headers))
+    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }))
   },
 
   OTPOnCall: function (request,type) {
     let url = ((type=='MF')? apiURL.getOTPInvesOnCallURL() : apiURL.getOTPOnCallURL()); 
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, headers));
+    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }));
   },
 
   verifyOTP: function (request,type) {

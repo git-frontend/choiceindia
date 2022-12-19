@@ -21,9 +21,9 @@ function OpenTradingAccountHindi() {
     useEffect(() => {
         setRenderCount(true)
         if (rendercount === true) {
-        //   let parser = new DOMParser();
-        //   let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
-        //   document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
+          let parser = new DOMParser();
+          let doc = parser.parseFromString(meta_tags[location.pathname.replace('/', "")].faqscript, 'text/html');
+          document.body.appendChild(doc.getElementsByTagName('script')[0]||[]? doc.getElementsByTagName('script')[0]||[]: '' );
           document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
           // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
           document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
@@ -122,8 +122,8 @@ function OpenTradingAccountHindi() {
                                             जब आप अपने ट्रेडिंग खाते में पैसा जोड़ते हैं तो आप आगे बढ़ सकते हैं और स्टॉक खरीद सकते हैं जो आपके डीमैट खाते में संग्रहीत होंगे और यदि आप अपने स्टॉक बेचते हैं, तो आपके डीमैट खाते से उन शेयरों से छुटकारा मिल जाएगा और पैसा आपके ट्रेडिंग खाते में जमा हो जाएगा और वहां से यह आपकी सुविधा के अनुसार आपके बैंक खाते में ट्रांसफर कर दिया जाएगा।
                                         </div><br /><br />
 
-                                        <h3 className="font-bold">डीमैट अकाउंट खोलने के लाभ  </h3>
-                                        उपर्युक्त अनुभागों में हमने आपको बताया है कि डीमैट खाता क्यों आवश्यक है लेकिन डीमैट खाता वास्तव में आपके लिए फायदेमंद क्यों है <Link to="/blog/demat-account-benefits-in-hindi/"> (demat account benefits in hindi)</Link> इस बारे में बहुत कम बताया गया है,<br />
+                                        <h2 className="font-bold">डीमैट अकाउंट खोलने के लाभ  </h2>
+                                        उपर्युक्त अनुभागों में हमने आपको बताया है कि डीमैट खाता क्यों आवश्यक है लेकिन डीमैट खाता वास्तव में आपके लिए फायदेमंद क्यों है <Link to="/blog/demat-account-benefits-in-hindi/"> demat account benefits in hindi</Link> इस बारे में बहुत कम बताया गया है,<br />
                                         <div >
                                             <h3 className="font-bold"> 1. कॉर्पोरेट लाभ </h3>
                                             स्टॉक ट्रेडिंग से जुड़े होते हैं, जब आप कोई स्टॉक खरीदते हैं तो आप स्टॉक स्प्लिट, बोनस, लाभांश भुगतान आदि जैसे कई कॉर्पोरेट लाभों के योग्य होते हैं।<br /><br />
@@ -158,7 +158,7 @@ function OpenTradingAccountHindi() {
                                         </div><br />
                                         अब जब हमने कवर कर लिया है और यह भी समझ लिया है कि भारत में शेयरों में निवेश करने के लिए डीमैट क्या है और डीमैट हमारे लिए कैसे आवश्यक है, तो अब देखते हैं कि हम ऑनलाइन डीमैट खाता कैसे खोलते हैं या कैसे खोलते हैं।<br /><br /><br />
 
-                                        <h3 className="font-bold">डीमैट अकाउंट खोलने के लिए आवश्यकताएँ </h3>
+                                        <h2 className="font-bold">डीमैट अकाउंट खोलने के लिए आवश्यकताएँ </h2>
                                         यदि आप अपना डीमैट अकाउंट ऑफ़लाइन खोलना चाहते हैं, तो आप शायद एक ऑफ़लाइन साधन का विकल्प चुनेंगे और एक डीमैट खाता ऑफ़लाइन खोलने के लिए आपको दस्तावेजों के साथ तैयार रहना होगा और हम इसमें आपकी सहायता करेंगे;<br /><br />
                                         सबसे पहले, आपको अपने डीपी या डिपॉजिटरी पार्टिसिपेंट पर फैसला करना होगा, डीपी आपके और आपके निवेश के बीच एक मध्यवर्ती है और डीपी आमतौर पर बैंक, वित्तीय संस्थान और दलाल होते हैं।<br />
                                         उपयुक्त डीपी चुनने के लिए आपको ब्रोकरेज शुल्क और वार्षिक रखरखाव शुल्क पर निर्णय लेना होगा। आपके पास एक बैंक खाता होना चाहिए और अपना केवाईसी पूरा करना चाहिए<br />
@@ -201,10 +201,10 @@ function OpenTradingAccountHindi() {
                                             डीमैट अकाउंट रखने का मुख्य उद्देश्य भारतीय बाजारों में भाग लेना है और ऐसा करते समय यह स्पष्ट है कि डीमैट खाते पर आप जो भी लेन-देन करते हैं वह आपके भविष्य की ओर एक कदम है।<br />
                                             डीपी क्रेडिट और डेबिट दोनों पर लेन-देन शुल्क लेते हैं, जहां हर बार जब आप किसी व्यापार में शामिल होते हैं तो आपके डीमैट खाते और बाजार के बीच सुचारू लेनदेन की सुविधा के लिए आपकी ओर से एक मामूली राशि का शुल्क लिया जाता है।<br />
                                         </div><br /><br />
-                                        <h3 className="font-bold">चॉइस के साथ डीमैट खाता क्यों खोलना चाहिए? </h3>
+                                        <h2 className="font-bold">चॉइस के साथ डीमैट खाता क्यों खोलना चाहिए? </h2>
                                         आपने डीमैट के बारे में सभी जानकारी को पढ़ लिया है और आपने यह समझने के लिए पर्याप्त ज्ञान हासिल कर लिया है कि डीपी चुनना कोई आसान काम नहीं है,<br />
                                         आपको शुल्क और उनके द्वारा प्रदान की जाने वाली सेवाओं जैसे कई कारकों पर विचार करना होगा और यदि यह आपकी अंतरात्मा से मेल खाता है, तो आप उन्हें चुनते हैं।<br />
-                                        लेकिन आइए हम खुद को पेश करें और आपको बताएं कि आपको चॉइस के साथ डीमैट खाता खोलने की आवश्यकता क्यों है;<br />
+                                        लेकिन आइए हम खुद को पेश करें और आपको बताएं कि आपको चॉइस के साथ डीमैट खाता खोलने की आवश्यकता क्यों है।<br />
                                     </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                             </div>
                         </div>

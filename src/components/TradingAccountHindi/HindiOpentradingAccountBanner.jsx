@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState,useEffect } from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
 import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
@@ -10,6 +10,35 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const HindiOpenFreeAccountBanner = () => {
+    function chapterScroll(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
+      const [name, setName ] = useState('hideform');
+      const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }   
+        }
+    };
+
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
     return (
         <div>
              <section className="banner-sect" >
@@ -28,7 +57,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image2} width={"30"} height={"30"} alt={"न्यूनतम डीपी प्रभार"} className="img-fluid " />
+                                                    <img src={Image2} width={"30"} height={"30"} alt={"सबसे कम डीपी शुल्क के साथ ट्रेडिंग अकाउंट खोलें"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -42,7 +71,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image3} width={"28"} height={"28"} alt={"कम ब्रोकरेज शुल्क"} className="img-fluid " />
+                                                    <img src={Image3} width={"28"} height={"28"} alt={"कम ब्रोकरेज ट्रेडिंग अकाउंट शुल्क "} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -56,7 +85,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image4} width={"24"} height={"24"} alt={"नि:शुल्क शोध परामर्श"} className="img-fluid " />
+                                                    <img src={Image4} width={"24"} height={"24"} alt={"नि:शुल्क शोध परामर्श के साथ ट्रेडिंग अकाउंट खोलें"} className="img-fluid " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -68,7 +97,7 @@ const HindiOpenFreeAccountBanner = () => {
                                         <div className="bannerbox mt-sm2 ">
                                             <div className="respgrid">
                                                 <div className="iconwrap">
-                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्क के बिना डीमैट खाता"} className="img-fluid   " />
+                                                    <img src={Image5} width={"32"} height={"20"} alt={"वार्षिक शुल्क के बिना ट्रेडिंग अकाउंट खोलें"} className="img-fluid   " />
                                                 </div>
                                             </div>
                                             <div className="resptext">
@@ -95,6 +124,11 @@ const HindiOpenFreeAccountBanner = () => {
 
                         </div>
 
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+                    </div>
                     </div>
                 </div>
             </section>
