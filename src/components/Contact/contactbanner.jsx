@@ -54,7 +54,6 @@ function Contactbanner() {
       res => {
         if (res) {
           setList(res.data.data);
-          // console.log("che", res.data.data)
         } else {
           setList([]);
         }
@@ -68,7 +67,6 @@ function Contactbanner() {
       res => {
         if (res) {
           setSublist(res.data.data);
-          // console.log("ddd", res.data.data)
         } else {
           setSublist([]);
         }
@@ -79,7 +77,6 @@ function Contactbanner() {
   }
   function selectdepartment() {
     departmentlist = event.target.value.split("-")
-    // console.log("email", departmentlist[0])
     setdept(departmentlist)
     setSubListid(true);
     document.getElementById('dropdown-basic').value = "Select here"
@@ -88,7 +85,6 @@ function Contactbanner() {
   }
   function selectSubdepartment() {
     subdepartmentlist = event.target.value.split("+")
-    // console.log("email", subdepartmentlist)
     setSubdept(subdepartmentlist)
     setListid(true);
 
@@ -106,16 +102,11 @@ function Contactbanner() {
     if (document.getElementById('dropdown-basic').value == "Select here") {
       utils.scrollToId('dropdown-basic');
       setListid(false);
-
-      // console.log("chss",listid)
     }
 
     if (document.getElementById('dropdown') && document.getElementById('dropdown').value == "Select here") {
       utils.scrollToId('dropdown');
       setSubListid(false);
-
-      // console.log("chss555",subList[])
-
     }
 
 
@@ -127,26 +118,15 @@ function Contactbanner() {
 
  }
 
-  // console.log("check",event)dropdown
-
-
-
-
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     mode: 'onChange',
     resolver: yupResolver(schema)
   });
   const submitFormData = (FormData) => {
-
-
-
-
     let formData = FormData;
     formData['department'] = (dept || [])[1] || '';
     formData['sub_department'] = (subdept || [])[0] || '';
     formData['email_to'] = (subdept || [])[1] || '';
-    // console.log("data", formData);
-    // setdatas(formData)
     if(listid && subListid){
       setIsloader(true)
       contactService.contactForm(formData).then(res => {
@@ -154,8 +134,6 @@ function Contactbanner() {
         reset();
         restBanneForm();
         setData("Mail sent Successfully")
-        // console.log("check",data)
-  
       })
 
     }else{
@@ -379,9 +357,14 @@ function Contactbanner() {
 
               </div>
               <div className="col-md-12">
-                <p className="text-center esctext ">For any NBFC related grievances reach out to our <a variant="primary" onClick={() => { setNbfc(true) }} className="cursor-pointer">
+                {
+                 (dept || [])[1] == "NBFC" ?
+                 <p className="text-center esctext ">For any NBFC related grievances reach out to our <a variant="primary" onClick={() => { setNbfc(true) }} className="cursor-pointer">
                   Escalation Matrix
-                </a></p>
+                </a></p>:""
+                }
+              
+                
               </div>
             </div>
           </div>
