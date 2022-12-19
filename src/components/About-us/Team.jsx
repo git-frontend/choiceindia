@@ -24,7 +24,6 @@ import BoardOfDirector from '../../Data/Strategies';
 function Team() {
   const [value, setValue] = useState(0);
   const[IsShown2,setIsShown2]= useState(false)
-  const[IsShown3,setIsShown3]= useState()
 
   const settings = {
     infinite: true,
@@ -58,7 +57,6 @@ function Team() {
 
 function closesection(){
   setIsShown2(false)
-  console.log("check",IsShown2);
 }
 
   return (
@@ -90,16 +88,18 @@ function closesection(){
                       </div>
 
 
-                    </div>
+                    </div> 
+                  </div>
+                   )
+                      })
 
+                    }
+                 
+                </Slider>
 
-                      
-                    
-
-                    <Modal show={IsShown2}  size="md"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+                <Modal show={IsShown2} onHide={!IsShown2} size="md"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
                     <div className="content-extra" >
-                      <Button onClick={() => {setIsShown2(false),console.log("kk",IsShown2) }}>close</Button>
-                    <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setIsShown3("kkk"),console.log("kk",IsShown3) }} />
+                    <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
                       <div className="team-img-pos">
                           <div className="team-img">
                           <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
@@ -110,15 +110,6 @@ function closesection(){
                         </div>
                     </div>
                     </Modal>
-
-                   
-                  </div>
-                   )
-                      })
-
-                    }
-                 
-                </Slider>
               </div>
             </div>
           </div>
