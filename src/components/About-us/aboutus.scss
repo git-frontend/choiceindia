@@ -220,6 +220,35 @@ body{
             top: 0;
             left: 50%;
             transform: translate(-50%, 0);
+            border-radius: 1rem;
+            box-shadow: 10px 10px 25px 7px $shadowdark;
+            padding: 1rem 3rem;
+            .icon-table{
+                float: right;
+            }
+            .team-img-pos {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                align-items: center;
+                padding-bottom: 4rem;
+                .team-img{
+                    width: 45%;
+                }
+                .team-position{
+                    width: 45%;
+                    h4{
+                        font-size: 1.625rem;
+                        font-weight: 600;
+                        line-height: 39px;
+                    }
+                }
+            }
+            p{
+                color: $secondary;
+                line-height: 36px;
+                font-size: 1.5rem;
+            }
         }
 
         .slick-arrow {
