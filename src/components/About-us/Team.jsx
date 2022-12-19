@@ -1,5 +1,5 @@
+import React, { useState, useEffect } from "react";
 
-import React from "react";
 
 import image1 from '../../assets/images/about-us/vinita-patodia.webp';
 import image2 from '../../assets/images/about-us/kamal-poddar.webp';
@@ -16,6 +16,7 @@ import Slider from "react-slick";
 import LazyLoader from '../Common-features/LazyLoader';
 
 function Team() {
+  const [check, setcheck] = useState(false);
   const settings = {
     infinite: true,
     speed: 2000,
@@ -59,124 +60,69 @@ function Team() {
             <div className="col-md-12">
               <div className="team-list">
                 <Slider {...settings} className="team-list-slider">
-                  <div className="team-item">
-                    <span className="img-itm">
-                      <LazyLoader src={image1} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mrs. Vinita Patodia</h5>
-                      <p className="designation">Non-Executive Chairperson</p>
+                  <div className="">
+                    <div onClick={() => { setcheck(true) }} className="team-item">
+                      <span className="img-itm">
+                        <LazyLoader src={image1} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h5>Mrs. Vinita Patodia</h5>
+                        <p className="designation">Non-Executive Chairperson</p>
+                      </div>
+
+
                     </div>
-
-
+                    {
+                    check ?
+                    <div className="content-extra">
+                      <span className="icon-table cursor-pointer" onClick={() => { setcheck(false) }}>close</span>
+                        <p>loream</p>
+                    </div>:
+                    ""
+                    }
                   </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                      <LazyLoader src={image2} className={"img-fluid"} width={"224"} height={"349"} alt={"Kamal Poddar"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. Kamal Poddar</h5>
-                      <p className="designation">Managing Director</p>
+                  <div className="">
+                    <div className="team-item">
+                      <span className="img-itm">
+                        <LazyLoader src={image1} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h5>Mrs. Vinita Patodia</h5>
+                        <p className="designation">Non-Executive Chairperson</p>
+                      </div>
+
+
                     </div>
-
-
                   </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image3} className={"img-fluid"} width={"224"} height={"349"} alt={"Suyash Patodia"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. Suyash Patodia</h5>
-                      <p className="designation">Joint Managing Director</p>
+                  <div className="">
+                    <div className="team-item">
+                      <span className="img-itm">
+                        <LazyLoader src={image1} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h5>Mrs. Vinita Patodia</h5>
+                        <p className="designation">Non-Executive Chairperson</p>
+                      </div>
+
+
                     </div>
-
-
                   </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image4} className={"img-fluid"} width={"224"} height={"349"} alt={"Arun Poddar"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5 className="name">Mr. Arun Poddar</h5>
-                      <p className="designation">Executive Director &amp; CEO</p>
+                  <div className="">
+                    <div className="team-item">
+                      <span className="img-itm">
+                        <LazyLoader src={image1} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
+                      </span>
+                      <div className="namedesg">
+                        <h5>Mrs. Vinita Patodia</h5>
+                        <p className="designation">Non-Executive Chairperson</p>
+                      </div>
+
+
                     </div>
-
-                  </div>
-                  
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image5} className={"img-fluid"} width={"224"} height={"349"} alt={"Ajay Kejriwal"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. Ajay Kejriwal</h5>
-                      <p className="designation">Executive Director</p>
-                    </div>
-
-                  </div>
-
-                  <div className="team-item">
-                    <span className="img-itm">
-                      <LazyLoader src={image6} className={"img-fluid"} width={"224"} height={"349"} alt={"Subodh Kumar Agarwal"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. Subodh Kumar Agarwal</h5>
-                      <p className="designation">Independent Director</p>
-                    </div>
-
-
-                  </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                      <LazyLoader src={image7} className={"img-fluid"} width={"224"} height={"349"} alt={"A K Thakur"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. A. K. Thakur</h5>
-                      <p className="designation">Independent Director</p>
-                    </div>
-
-
-                  </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image8} className={"img-fluid"} width={"224"} height={"349"} alt={"Sudha Bhushan"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mrs. Sudha Bhushan</h5>
-                      <p className="designation">Independent Director</p>
-                    </div>
-
-
-                  </div>
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image9} className={"img-fluid"} width={"224"} height={"349"} alt={"Sandeep Singh"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5 className="name">Mr. Sandeep Singh</h5>
-                      <p className="designation">Independent Director</p>
-                    </div>
-
-                  </div>
-                  
-                  <div className="team-item">
-                    <span className="img-itm">
-                    <LazyLoader src={image10} className={"img-fluid"} width={"224"} height={"349"} alt={"Kanhaiyalal Beriwal"} />
-                      {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
-                    </span>
-                    <div className="namedesg">
-                      <h5>Mr. Kanhaiya Lal Berwal</h5>
-                      <p className="designation">Independent Director</p>
-                    </div>
-
                   </div>
                 </Slider>
               </div>

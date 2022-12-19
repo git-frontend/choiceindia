@@ -211,6 +211,16 @@ body{
                 }
             }
         }
+        .content-extra{
+            position: fixed;
+            z-index: 9999;
+            background: $whiteColor;
+            width: 600px;
+            height: 500px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+        }
 
         .slick-arrow {
             z-index: 1;
