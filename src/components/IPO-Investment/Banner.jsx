@@ -42,7 +42,7 @@ function Banner() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="ipoForm">
-                                <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>

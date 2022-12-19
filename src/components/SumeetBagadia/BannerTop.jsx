@@ -26,7 +26,7 @@ function BannerTop() {
               </div>
             </div>
             <div className="col-xl-4 col-md-6 d-flex justify-content-end">
-            <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
               <DematAccountForm />
             </GoogleReCaptchaProvider>
             </div>

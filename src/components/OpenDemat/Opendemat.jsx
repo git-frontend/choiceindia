@@ -140,7 +140,7 @@ function Opendemat(){
                       <div className="rightsec">
                         <div className="popmd">
 
-                        <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
+                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                           <DematAccountForm />
                         </GoogleReCaptchaProvider>
                         </div>

@@ -117,7 +117,7 @@ const OpenFreeAccountBanner = () => {
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
-                                <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>

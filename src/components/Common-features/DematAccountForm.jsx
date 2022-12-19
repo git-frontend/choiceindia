@@ -19,7 +19,6 @@ import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function DematAccountForm(props) {
-    // console.log('DDDDDDDD', props.page);
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const [searchParams, setSearchParams] = useSearchParams();
     const [mobileNumber, setMobileNumber] = useState('');
@@ -75,7 +74,6 @@ function DematAccountForm(props) {
     }
 
     function showOpenAccountAdPopup() {
-        // console.log('SHOWW!!!!')
         if (!showOTP) {
             setShowOpenAccountPopup(true);
         } else {
@@ -85,8 +83,6 @@ function DematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
-        
-        // console.log('SSS@@@',showThanku)
         if(showAdValues.link){
             setShowThanku(prevState => {
                 return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
@@ -137,7 +133,6 @@ function DematAccountForm(props) {
     }
 
     function handleOTPClose(link,msg,info) {
-        // console.log('closeModal22',link,msg);
         setShowOTP(false);
 
         if (link) {
@@ -184,12 +179,10 @@ function DematAccountForm(props) {
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
             if (props.page == 'add-lead') {
-                // console.log('Addd lead page');
                 sendNewLeadOTP();
             } else {
                 // sendOTP();
                 handleReCaptchaVerify();
-                console.log(mobileNumber,"mobileNumber handleSendOTP");
             }
             // sendOTP();
         }
@@ -270,7 +263,6 @@ function DematAccountForm(props) {
                     return {...prevState, showModal: true, isFailure: true, titleText: 'Oops' ,msgText: res.data.Message, closeMd: closeModal}
                 });
             }
-           // console.log('RRR',res);
         })
         setShowLead(true);
         hideLoader('sendOTPLoader');
@@ -304,7 +296,7 @@ function DematAccountForm(props) {
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "captcha": "1"
+            // "captcha": "1"
         };
         openAccountService.sendOTP(request,type1).then((res) => {
             hideLoader('sendOTPLoader');
@@ -318,7 +310,6 @@ function DematAccountForm(props) {
                 
             } else {
                 setAPIError("Something went wrong, please try again later!");
-               // console.log("check session",res.Body.session_id);
                 showAPIErrorToaster();
             }
         }).catch((error) => {
@@ -537,7 +528,6 @@ function DematAccountForm(props) {
     // Create an event handler so you can call the verification on button click event or form submit
     const handleReCaptchaVerify = useCallback(async () => {
         if (!executeRecaptcha) {
-            console.log('Execute recaptcha not yet available');
             return;
         }
         showLoader('sendOTPLoader');
@@ -546,13 +536,12 @@ function DematAccountForm(props) {
         // sendOTP();
         if (token) {
             setCaptchaToken(token);
-            alert("Token : "+token);
+            // alert("Token : "+token);
         }
         hideLoader('sendOTPLoader');
     }, [executeRecaptcha]);
 
     useEffect(() => {
-        console.log(captchaToken, "captchaToken");
         if (captchaToken) {
             sendOTP();
         }

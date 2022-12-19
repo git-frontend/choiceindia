@@ -113,7 +113,7 @@ function Fabdetailsbanner(props) {
                                 ((props.showForm) ?
                                     (props.formName === 'form-demat' ? <div className="col-md-5" id="open-account-wrap">
                                         <div className="stickyform formwrap d-flex justify-content-end ">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6LewqLgiAAAAACEQ8ckj8CqS-CARdQhaTGwRgn3t">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
                                         </GoogleReCaptchaProvider>
                                         </div>
