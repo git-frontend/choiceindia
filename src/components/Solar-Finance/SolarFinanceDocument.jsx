@@ -1,7 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/solar-finance/kyc.webp';
-import BusinessProofimage from '../../assets/images/solar-finance/business-proof.webp';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
+import BusinessProofimage from '../../assets/images/solar-finance/business-proof.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function SolarFinanceDocument() {
@@ -17,14 +17,14 @@ function SolarFinanceDocument() {
                 </div>
               </div>
           </div>
-          <div className="row justify-content-between">
+          <div className="row  justify-content-center h-100">
             <div className="col-xl-5 col-md-6">
             <div className="Doc-rq-card cap-right">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC Documents for Solar Financing"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"255"} alt={"KYC Documents for Solar Financing"}/>
                     </div>
-                    <h3 className="title-doc">KYC</h3>
+                    <h3 className="title-doc">For KYC</h3>
                   </div>
                     <ul className="list-item">
                       <li>ID proof</li>
@@ -39,7 +39,7 @@ function SolarFinanceDocument() {
                     <div className="img-height">
                       <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Doucments for Solar Financing"}/>
                     </div>
-                    <h3 className="title-doc">Business Proof</h3>
+                    <h3 className="title-doc">Business Documents</h3>
                   </div>
                   <ul className="list-item">
                     <li>Business registration certificate</li>
