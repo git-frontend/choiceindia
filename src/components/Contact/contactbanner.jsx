@@ -1,5 +1,5 @@
 
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
 import phoneicon from '../../assets/images/contact/phone-icon.svg';
@@ -26,17 +26,18 @@ function Contactbanner() {
   let inputRef = "";
   const [data, setData] = useState("");
   const [isloader, setIsloader] = useState(false);
-  
+
   const [nbfc, setNbfc] = useState(false);
-  const [list, setList] = useState();	
-  const [sublist, setSublist] = useState();	
-  const [dept, setdept] = useState();	
-  const [subdept, setSubdept] = useState();	
+  const [list, setList] = useState();
+  const [sublist, setSublist] = useState();
+  const [dept, setdept] = useState();
+  const [subdept, setSubdept] = useState();
   const [trigger, setTrigger] = useState(false);
-  const [listid,setListid] = useState(true);
+  const [listid, setListid] = useState(true);
+  const [subListid, setSubListid] = useState(true);
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
-  let departmentlist={};	
-  let subdepartmentlist={}
+  let departmentlist = {};
+  let subdepartmentlist = {}
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
@@ -48,75 +49,88 @@ function Contactbanner() {
 
   })
 
-  function loadDepartmentList() {	
-    contactService.departmentCollection().then(	
-      res => {	
-        if (res) {	
-          setList(res.data.data);	
-          console.log("che", res.data.data)	
-        } else {	
-          setList([]);	
-        }	
-      }	
-    ).catch((error) => {	
-      setList([]);	
-    });	
-  }	
-  function loadSubDepartmentList(id) {	
-    contactService.subDepartmentCollection(id).then(	
-      res => {	
-        if (res) {	
-          setSublist(res.data.data);	
-          console.log("ddd",res.data.data)	
-        } else {	
-          setSublist([]);	
-        }	
-      }	
-    ).catch((error) => {	
-      setSublist([]);	
-    });	
-  }	
-  function selectdepartment() {	
-    departmentlist = event.target.value.split("-")	
-  console.log("email",departmentlist[0])
-  setdept(departmentlist)	
-  setListid(true);
-    	
-    loadSubDepartmentList(departmentlist[0])	
-  	
-  }	
- function  selectSubdepartment(){	
-  subdepartmentlist = event.target.value.split("-")	
-  console.log("email",subdepartmentlist)	
-  setSubdept(subdepartmentlist)
-  setListid(true);
-  	
-  }	
-  useEffect(() => {	
-    setTrigger(true)	
-    if (trigger == true) {	
+  function loadDepartmentList() {
+    contactService.departmentCollection().then(
+      res => {
+        if (res) {
+          setList(res.data.data);
+          // console.log("che", res.data.data)
+        } else {
+          setList([]);
+        }
+      }
+    ).catch((error) => {
+      setList([]);
+    });
+  }
+  function loadSubDepartmentList(id) {
+    contactService.subDepartmentCollection(id).then(
+      res => {
+        if (res) {
+          setSublist(res.data.data);
+          // console.log("ddd", res.data.data)
+        } else {
+          setSublist([]);
+        }
+      }
+    ).catch((error) => {
+      setSublist([]);
+    });
+  }
+  function selectdepartment() {
+    departmentlist = event.target.value.split("-")
+    // console.log("email", departmentlist[0])
+    setdept(departmentlist)
+    setSubListid(true);
+    document.getElementById('dropdown-basic').value = "Select here"
+    loadSubDepartmentList(departmentlist[0])
+
+  }
+  function selectSubdepartment() {
+    subdepartmentlist = event.target.value.split("+")
+    // console.log("email", subdepartmentlist)
+    setSubdept(subdepartmentlist)
+    setListid(true);
+
+  }
+  useEffect(() => {
+    setTrigger(true)
+    if (trigger == true) {
       loadDepartmentList()
-     	
-      	
-    }	
+
+
+    }
   }, [trigger])
 
-  function checklist(){
-    if(document.getElementById('dropdown-basic').value=="Select here"){
-
+  function checklist() {
+    if (document.getElementById('dropdown-basic').value == "Select here") {
       utils.scrollToId('dropdown-basic');
       setListid(false);
-      console.log("chss",listid)
-      
-      
-     }
+
+      // console.log("chss",listid)
+    }
+
+    if (document.getElementById('dropdown') && document.getElementById('dropdown').value == "Select here") {
+      utils.scrollToId('dropdown');
+      setSubListid(false);
+
+      // console.log("chss555",subList[])
+
+    }
+
+
   }
 
+ function restBanneForm(){
+  document.getElementById('dropdown-basic').value = "Select here"
+  document.getElementById('dropdown').value = "Select here"
+
+ }
+
   // console.log("check",event)dropdown
-  
-  console.log("check124",document.getElementById('dropdown-basic').value)
-  console.log("check124",document.getElementById('dropdown').value)
- 
+
+
+
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm({
     mode: 'onChange',
@@ -125,35 +139,31 @@ function Contactbanner() {
   const submitFormData = (FormData) => {
 
 
-  
-   
+
+
     let formData = FormData;
-    formData['department'] = dept[1]||'';
-    formData['sub_department'] = subdept[0]||'';
-    formData['email_to'] = subdept[1]||'';
-    console.log("data", formData);
-    setdatas(formData)
-    setIsloader(true)
-  
+    formData['department'] = (dept || [])[1] || '';
+    formData['sub_department'] = (subdept || [])[0] || '';
+    formData['email_to'] = (subdept || [])[1] || '';
+    // console.log("data", formData);
+    // setdatas(formData)
+    if(listid && subListid){
+      setIsloader(true)
       contactService.contactForm(formData).then(res => {
         setIsloader(false)
         reset();
+        restBanneForm();
         setData("Mail sent Successfully")
         // console.log("check",data)
   
       })
 
-     
-    
+    }else{
+      setIsloader(false)
 
+    }
 
   }
- 
-
-
-
-
-
 
   return (
     <div>
@@ -167,31 +177,31 @@ function Contactbanner() {
                   <div className='caption-cont'>
                     <h1 className='big-ttl'>We’re here! <br /> Let’s have a talk</h1>
                   </div>
-                 <div className="row">
-                  <div className="col-md-5">
-                  <div className='dipar-dropdown'>
-                      <p className="depart-text">Department *</p>
-                      <Form.Select variant="Info" id="dropdown-basic hij"  onChange={()=>selectdepartment()} className=" department" >	
-                        <option value="Select here" selected>Select here</option>	
+                  <div className="row">
+                    <div className="col-md-5">
+                      <div className='dipar-dropdown'>
+                        <p className="depart-text">Department *</p>
+                        <Form.Select variant="Info" id="dropdown" onChange={() => selectdepartment()} className=" department getvalue" >
+                          <option value="Select here" selected>Select here</option>
                           {/* <option value="Select here" selected>Select here</option>	
                           <option className="option">Compliance & Complaint.</option>	
                         <option className="option">Partner related</option>	
                         <option className="option">Broking & Distribution</option>	
-                        <option className="option">Wealth planning</option> */}	
-                          {	
-                            list?.map((res, i) => {	
-                              return (	
-                                	
-                                <option value={res.id+'-'+res.department}>{res.department}</option>	
-                               	
-                              )	
-                            })	
-                          }	
+                        <option className="option">Wealth planning</option> */}
+                          {
+                            list?.map((res, i) => {
+                              return (
+
+                                <option value={res.id + '-' + res.department}>{res.department}</option>
+
+                              )
+                            })
+                          }
                           {/* <Select }	
                             placeholder="select department" className="formcontrol formpadding"  options={citiesDropdown}  onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />	
                           {	
                             errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''	
-                          } */}	
+                          } */}
                           {/* <option className="option">Feedback</option>	
                         <option className="option">Compliance & Complaint.</option>	
                         <option className="option">Partner related</option>	
@@ -201,37 +211,37 @@ function Contactbanner() {
                         <option className="option">NBFC related query</option>	
                         <option className="option">Government Advisory</option>	
                         <option className="option">Enquiry</option>	
-                        <option className="option">Others</option> */}	
+                        <option className="option">Others</option> */}
                         </Form.Select>
                         {
-                          listid ? '':<span className="text-danger">Need to choose Department </span>
-                        }	
-                      </div>	
-                    </div>	
-                    <div className="col-md-5">	
-                      <div className='dipar-dropdown request-dropdown'>	
-                        <p className="depart-text">Request type *</p>	
-                        <Form.Select variant="Info" id="dropdown-basic" onChange={()=>selectSubdepartment()} className=" department" >	
-                        <option value="Select here" selected>Select here</option>	
-                        {	
-                            sublist?.map((res, i) => {	
-                              	
-                              return (	
-                                	
-                                <option value={res.sub_department+'-'+res.email_id}>{res.sub_department}</option>	
-                               	
-                              )	
-                            })	
-                          }	
-                        </Form.Select>
-                        {
-                          listid ? '':<span className="text-danger">Need to choose Sub-Department </span>
+                          subListid ? '' : <span className="text-danger">Need to choose Department </span>
                         }
+                      </div>
                     </div>
+                    <div className="col-md-5">
+                      <div className='dipar-dropdown request-dropdown'>
+                        <p className="depart-text">Request type *</p>
+                        <Form.Select variant="Info" id="dropdown-basic" onChange={() => selectSubdepartment()} className=" department" >
+                          <option value="Select here" selected>Select here</option>
+                          {
+                            sublist?.map((res, i) => {
+
+                              return (
+
+                                <option value={res.sub_department + '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.sub_department}</option>
+
+                              )
+                            })
+                          }
+                        </Form.Select>
+                        {
+                          listid ? '' : <span className="text-danger">Need to choose Sub-Department </span>
+                        }
+                      </div>
+                    </div>
+
                   </div>
-                 
-                 </div>
-                  
+
                 </div>
 
                 <div className="col-md-4">
@@ -252,63 +262,87 @@ function Contactbanner() {
             <div className="row">
               <div className="col-md-12">
                 <div className="cnt-form-details">
-                  <div className="left-from">
-                    <p className="whiteus-text colorchange">Contact information</p>
-                    <div className="form-data">
-                      <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
-                      <div className="form-data-right"><a href="tel:02267079999" target="_blank"><p className="form-right-text" >+91-022-6707 9999</p></a> </div>
+                  {
+                     subdept ?
+                      <div className="left-from">
+                        <p className="whiteus-text colorchange">Contact information</p>
+                        <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
+                          <div className="form-data-right"><p className="form-right-text" >{(subdept || [])[2] || '+91-022-6707 9999'}</p></div>
+                        </div>
+                        <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
+                          <div className="form-data-right"> <p className="form-right-text" >{(subdept || [])[4] ||'Between 9:30 AM to 6:30 PM Monday to Saturday'}</p></div>
+                        </div>
+                        <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
+                          <div className="form-data-right"><p className="form-right-text">{(subdept || [])[1] || 'customercare@choiceindia.com'}</p></div>
+                        </div>
+                        <div className="form-data">
+                          <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
+                          <div className="form-data-right"><p className="form-right-text" >{(subdept || [])[3] || 'Choice International Limited, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
+                        </div>
+                      </div>
+                     :
+                      <div className="left-from">
+                      <p className="whiteus-text colorchange">Contact information</p>
+                      <div className="form-data">
+                        <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
+                        <div className="form-data-right"><a href="tel:02267079999" target="_blank"><p className="form-right-text" >+91-022-6707 9999</p></a> </div>
+                      </div>
+                      <div className="form-data">
+                        <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
+                        <div className="form-data-right"> <p className="form-right-text" >Between 9:30 AM to 6:30 PM<br />
+                          Monday to Saturday</p></div>
+                      </div>
+                      <div className="form-data">
+                        <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
+                        <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
+                      </div>
+                      <div className="form-data">
+                        <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
+                        <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
+                          J.B. Nagar, Andheri (East),
+                          Mumbai 400099</p> </div>
+                      </div>
                     </div>
-                    <div className="form-data">
-                      <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
-                      <div className="form-data-right"> <p className="form-right-text" >Between 9:30 AM to 6:30 PM<br />
-                        Monday to Saturday</p></div>
-                    </div>
-                    <div className="form-data">
-                      <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "}  width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                      <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
-                    </div>
-                    <div className="form-data">
-                      <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "}  width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                      <div className="form-data-right"><p className="form-right-text" >Choice International Limited, Sunil Patodia Tower,
-                        J.B. Nagar, Andheri (East),
-                        Mumbai 400099</p> </div>
-                    </div>
-                  </div>
+
+                  }
                   <div className="right-form form">
                     <p className="whiteus-text">Write to Us</p>
 
                     <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off">
-              <div className="row d-flex justify-content-between">
-                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text" name="firstName"  className="formcontrol" {...register('firstName',)} />
-                  <span className="text-danger"> {errors?.firstName?.message} </span>
-                </Form.Group>
+                      <div className="row d-flex justify-content-between">
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                          <Form.Label className="formlabel">First Name  <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="text" name="firstName" className="formcontrol" {...register('firstName',)} />
+                          <span className="text-danger"> {errors?.firstName?.message} </span>
+                        </Form.Group>
 
 
-                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="text"  className="formcontrol" {...register('lastName')} />
-                  <span className="text-danger"> {errors?.lastName?.message} </span>
-                </Form.Group>
-              </div>
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                          <Form.Label className="formlabel"> Last Name <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="text" className="formcontrol" {...register('lastName')} />
+                          <span className="text-danger"> {errors?.lastName?.message} </span>
+                        </Form.Group>
+                      </div>
 
-              <div className="row mt-3 d-flex justify-content-between">
-                <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
-                  <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
-                  <Form.Control type="text"  className="formcontrol" {...register('email')} />
-                  <span className="text-danger"> {errors?.email?.message} </span>
-                </Form.Group>
+                      <div className="row mt-3 d-flex justify-content-between">
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicEmail">
+                          <Form.Label className="formlabel">Email  <span className="warning">*</span></Form.Label>
+                          <Form.Control type="text" className="formcontrol" {...register('email')} />
+                          <span className="text-danger"> {errors?.email?.message} </span>
+                        </Form.Group>
 
-                <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
-                  <Form.Label className="formlabel"> Mobile Number <span className="warning">*</span> </Form.Label>
-                  <Form.Control type="tel" pattern="\d*"   maxLength={10} className="formcontrol" {...register('mobile')} />
-                  <span className="text-danger"> {errors?.mobile?.message} </span>
-                </Form.Group>
-              </div>
+                        <Form.Group className="mb-3 formgrp" controlId="formBasicPassword">
+                          <Form.Label className="formlabel"> Mobile Number <span className="warning">*</span> </Form.Label>
+                          <Form.Control type="tel" pattern="\d*" maxLength={10} className="formcontrol" {...register('mobile')} />
+                          <span className="text-danger"> {errors?.mobile?.message} </span>
+                        </Form.Group>
+                      </div>
 
 
-              {/* <Form.Group className="mb-3">
+                      {/* <Form.Group className="mb-3">
                 <Form.Label className="formlabel mt-3" >Purpose</Form.Label>
                 <div className='cust-dropdown'>
                   <div className="downar"></div>
@@ -323,103 +357,103 @@ function Contactbanner() {
 
 
 
-              <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
-              <div className=" messagefield">
-                <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
-                <span className="text-danger"> {errors?.question?.message} </span>
-              </div>
-              
-              <div className="uploadbtn mt-3 d-flex align-items-center">
-              <div className="feel-msg">{data}</div>
-                <Button variant="primary" onClick={()=>checklist()}
-                  type="submit" className="btn-bg btn-bg-dark sendbtn">
-                  { isloader===false ? 
-                  "Send" : <Spinner animation="border" />
-                  }
-                </Button>
-              </div>
-            </Form>
+                      <label className="formlabel mt-5"> Your Question <span className="warning">*</span></label>
+                      <div className=" messagefield">
+                        <textarea className="messagearea" placeholder="Enter text here..." {...register('question')} />
+                        <span className="text-danger"> {errors?.question?.message} </span>
+                      </div>
+
+                      <div className="uploadbtn mt-3 d-flex align-items-center">
+                        <div className="feel-msg">{data}</div>
+                        <Button variant="primary" onClick={() => checklist()}
+                          type="submit" className="btn-bg btn-bg-dark sendbtn">
+                          {isloader === false ?
+                            "Send" : <Spinner animation="border" />
+                          }
+                        </Button>
+                      </div>
+                    </Form>
 
                   </div>
                 </div>
 
               </div>
               <div className="col-md-12">
-                  <p className="text-center esctext ">For any NBFC related grievances reach out to our <a variant="primary" onClick={() => { setNbfc(true) }} className="cursor-pointer">
-                     Escalation Matrix
-                     </a></p>
+                <p className="text-center esctext ">For any NBFC related grievances reach out to our <a variant="primary" onClick={() => { setNbfc(true) }} className="cursor-pointer">
+                  Escalation Matrix
+                </a></p>
               </div>
             </div>
           </div>
-          <Modal show={nbfc} onHide={()=>{setNbfc(false)}} size="xl"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
-            
+          <Modal show={nbfc} onHide={() => { setNbfc(false) }} size="xl" aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+
             <div className="container mainwrapquick-table">
-            <div className="row ">
-                     <div className="col-md-12">
-                     
-                        <div className="quicklinkswrap mt-5 mb-5">
-                        <ModalHeader>
-                       
-                           <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={()=>{setNbfc(false)}} />
-                           <div className="clearfix"></div>
-                           <h4 className="text-center text-uppercase mt-5 mb-5"><strong>CUSTOMER GRIEVANCE REDRESSAL MECHANISM</strong></h4>
-                           {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
-                           
-                        </ModalHeader>
-                          
-                          
-                           <Modal.Body>
-                           <div className="table-responsive">
-                              <table className="table table-striped">
-                                 <tbody>
-                                    <tr>
-                                       <th>Level 1 - Customer Care</th>
-                                    </tr>
-                                    <tr>
-                                       <td className="pb-5">Write in to <strong>customercare.finserv@choiceindia.com</strong> or call us on our customer care number <strong>1800 203 5193</strong></td>
-                                    </tr>
-                                    <tr>
-                                       <th>Level 2 - Grievance & Redressal Officer</th>
-                                    </tr>
-                                    <tr>
-                                       <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <strong>Grievances@choiceindia.com</strong></td>
-                                    </tr>
-                                    <tr>
-                                       <th>Level 3 - Customer Principal Nodal Officer</th>
-                                    </tr>
-                                    <tr>
-                                       <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <strong>principalnodalofficer@choiceindia.com</strong></td>
-                                    </tr>
-                                    <tr>
-                                       <th>Level 4 - Centralised Receipt and Processing Centre </th>
-                                    </tr>
-                                    <tr>
-                                       <td className="pb-5">In case your complaint has not been addressed to your satisfaction within 30 days at all Levels, you can approach the regulatory authority at the address given below:</td>
-                                    </tr>
-                                    <tr>
-                                      <td>
-                                      Centralised Receipt and Processing Centre (CRPC)<br/>
-                                      Reserve Bank of India<br/>
-                                      Central Vista, Sector 17<br/>
-                                      Chandigarh – 160017<br/>
-                                      Email id: crpc@rbi.org.in
-                                      </td>
-                                    </tr>
-                                 </tbody>
-                              </table>
-                           </div>
-                           </Modal.Body>
-                        </div>
-                     </div>
-                     </div>
-                  
-            
+              <div className="row ">
+                <div className="col-md-12">
+
+                  <div className="quicklinkswrap mt-5 mb-5">
+                    <ModalHeader>
+
+                      <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setNbfc(false) }} />
+                      <div className="clearfix"></div>
+                      <h4 className="text-center text-uppercase mt-5 mb-5"><strong>CUSTOMER GRIEVANCE REDRESSAL MECHANISM</strong></h4>
+                      {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
+
+                    </ModalHeader>
 
 
-            
-         </div>
-         
-         </Modal>
+                    <Modal.Body>
+                      <div className="table-responsive">
+                        <table className="table table-striped">
+                          <tbody>
+                            <tr>
+                              <th>Level 1 - Customer Care</th>
+                            </tr>
+                            <tr>
+                              <td className="pb-5">Write in to <strong>customercare.finserv@choiceindia.com</strong> or call us on our customer care number <strong>1800 203 5193</strong></td>
+                            </tr>
+                            <tr>
+                              <th>Level 2 - Grievance & Redressal Officer</th>
+                            </tr>
+                            <tr>
+                              <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <strong>Grievances@choiceindia.com</strong></td>
+                            </tr>
+                            <tr>
+                              <th>Level 3 - Customer Principal Nodal Officer</th>
+                            </tr>
+                            <tr>
+                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <strong>principalnodalofficer@choiceindia.com</strong></td>
+                            </tr>
+                            <tr>
+                              <th>Level 4 - Centralised Receipt and Processing Centre </th>
+                            </tr>
+                            <tr>
+                              <td className="pb-5">In case your complaint has not been addressed to your satisfaction within 30 days at all Levels, you can approach the regulatory authority at the address given below:</td>
+                            </tr>
+                            <tr>
+                              <td>
+                                Centralised Receipt and Processing Centre (CRPC)<br />
+                                Reserve Bank of India<br />
+                                Central Vista, Sector 17<br />
+                                Chandigarh – 160017<br />
+                                Email id: crpc@rbi.org.in
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </Modal.Body>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+            </div>
+
+          </Modal>
         </section>
 
       </div>
