@@ -1,8 +1,8 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
 import IncomeProofimage from '../../assets/images/invoice-financing/income-proof-documents-for-invoice-financing-application.svg';
-import BusinessProofimage from '../../assets/images/invoice-financing/business-proof-documents-for-invoice-financing-application.svg';
+import BusinessProofimage from '../../assets/images/term-loans/business-documents-for-term-loan-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function InvoiceFinancingDocument() {
@@ -18,14 +18,14 @@ function InvoiceFinancingDocument() {
                 </div>
               </div>
           </div>
-          <div className="row justify-content-between">
-            <div className="col-xl-3 col-md-4">
+          <div className="row h-100">
+            <div className=" col-md-4">
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"KYC Documents for Invoice Financing"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"KYC Documents for Invoice Financing"}/>
                     </div>
-                    <h3 className="title-doc">KYC</h3>
+                    <h3 className="title-doc">For KYC</h3>
                   </div>
                     <ul className="list-item">
                       <li>ID Proof</li>
@@ -33,11 +33,11 @@ function InvoiceFinancingDocument() {
                     </ul>
                 </div>
             </div>
-            <div className="col-xl-3 col-md-4">
+            <div className=" col-md-4">
             <div className="Doc-rq-card">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"364"} height={"227"} alt={"Income Proof Documents for Invoice Financing Application"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"304"} height={"255"} alt={"Income Proof Documents for Invoice Financing Application"}/>
                   </div>
                     <h3 className="title-doc">Income Proof</h3>
                 </div>
@@ -47,13 +47,13 @@ function InvoiceFinancingDocument() {
                   </ul>
                 </div>
             </div>
-            <div className="col-xl-3 col-md-4">
+            <div className=" col-md-4">
             <div className="Doc-rq-card">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Proof Documents for Invoice Financing"}/>
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"254"} height={"255"} alt={"Business Proof Documents for Invoice Financing"}/>
                     </div>
-                    <h3 className="title-doc">Business Proof</h3>
+                    <h3 className="title-doc">Business Documents</h3>
                   </div>
                   <ul className="list-item">
                     <li>Business Address</li>

@@ -1,7 +1,8 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/channel-finance/personal-dcouments-for-channel-financing.webp';
-import BusinessProofimage from '../../assets/images/channel-finance/business-dcouments-for-channel-financing.webp';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
+import IncomeProofimage from '../../assets/images/invoice-financing/income-proof-documents-for-invoice-financing-application.svg';
+import BusinessProofimage from '../../assets/images/term-loans/business-documents-for-term-loan-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function ChannelFinanceDocument() {
@@ -17,50 +18,51 @@ function ChannelFinanceDocument() {
                 </div>
               </div>
           </div>
-          <div className="row justify-content-center">
-            <div className="col-xl-11 col-md-12">
+          <div className="row h-100">
+            <div className=" col-md-4">
             <div className="Doc-rq-card">
-              <div className="card-item-chanFin">
-                  <div className="chanFin-cont">
-                    <h3 className="title-doc">Personal Documents</h3>
-                    <h3 className="title-doc-sub">KYC</h3>
+                  <div className="text-center">
+                    <div className="img-height">
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"KYC Documents for Invoice Financing"}/>
+                    </div>
+                    <h3 className="title-doc">For KYC</h3>
+                  </div>
                     <ul className="list-item">
                       <li>ID Proof</li>
                       <li>Aadhar Card</li>
                     </ul>
-                  </div>
-                  <div className="chanFin-img img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"550"} height={"362"} alt={"Personal Documents for Channel Financing"}/>
-                  </div>
-              </div>
-              </div>
+                </div>
             </div>
-        </div>
-        <div className="row mrg-top justify-content-center">
-        <div className="col-xl-11 col-md-12">
+            <div className=" col-md-4">
             <div className="Doc-rq-card">
-            <div className="card-item-chanFin">
-                  <div className="chanFin-cont">
-                    <h3 className="title-doc">Business Documents</h3>
-                    <h3 className="title-doc-sub">Income Proof</h3>
-                    <ul className="list-item">
-                      <li>ITR of minimum 2 years</li>
-                      <li>Turnover of Business</li>
-                    </ul>
-                    <h3 className="title-doc-sub">Business Proof</h3>
-                    <ul className="list-item">
-                      <li>Business Address</li>
-                      <li>Bank Statement</li>
-                      <li>GST Certificate</li>
-                    </ul>
+                <div className="text-center">
+                  <div className="img-height">
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"304"} height={"255"} alt={"Income Proof Documents for Invoice Financing Application"}/>
                   </div>
-                  <div className="chanFin-img img-height">
-                  <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"500"} height={"373"} alt={"Business Documents for Channel Financing"}/>
+                    <h3 className="title-doc">Income Proof</h3>
+                </div>
+                  <ul className="list-item">
+                    <li>ITR of minimum 2 years</li>
+                    <li>Business turnover</li>
+                  </ul>
+                </div>
+            </div>
+            <div className=" col-md-4">
+            <div className="Doc-rq-card">
+                  <div className="text-center">
+                    <div className="img-height">
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"254"} height={"255"} alt={"Business Proof Documents for Invoice Financing"}/>
                     </div>
-              </div>
+                    <h3 className="title-doc">Business Documents</h3>
+                  </div>
+                  <ul className="list-item">
+                    <li>Business Address</li>
+                    <li>Bank Statement</li>
+                    <li>GST Certificate</li>
+                  </ul>
+                </div>
             </div>
           </div>
-        </div>
       </div>
     </section>
     </div>
