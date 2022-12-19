@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,10 +7,14 @@ import NBFCMenu from '../Common-features/NBFCMenu';
 import "../Invoice-Financing/nbfc-common.scss";
 import "../Solar-Finance-Sub/solar-fin-sub.scss";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+import utils from "../../Services/utils";
 function SolarFinanceSub() {
+  useEffect(() => {
+    utils.scrollToId('supply-chain')
+}, []);
   return (
     <div>
-      <section className="solar-finance-sub">
+      <section className="solar-finance-sub" id='supply-chain'>
         <div className="container">
           <div className="row">
               <div className="col-md-12">

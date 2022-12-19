@@ -77,7 +77,7 @@ You will also have the ease to plan your future finances (starting a new sector,
               <div className="loans-finance-sec">
                 <div className="head-sec">
                   <h2 className="title-secnd">Supply Chain Finance</h2>
-                  <p>We understand the process of taking a loan is very long and too much paperwork makes this process  more difficult. The biggest problem is inappropriate requisitions by the unorganized lending channels. Business owners fail to ach....<a href="/"><span className="btn-read">Read more</span></a></p>
+                  <p>We understand the process of taking a loan is very long and too much paperwork makes this process  more difficult. The biggest problem is inappropriate requisitions by the unorganized lending channels. Business owners fail to ach....<Link to="/business-loan?active=Supply-Chain-Finance"><span className="btn-read" >Read more</span></Link></p>
                 </div>
                 <div className="fin-list-itm">
                   <div className="list-itm">

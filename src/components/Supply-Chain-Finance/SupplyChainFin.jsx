@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,10 +9,15 @@ import "../Supply-Chain-Finance/supply-chain-fin.scss";
 import SupplyChainBan from '../../assets/images/supply-chain-finance/supply-chain-ban.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link, useNavigate, NavLink } from "react-router-dom";
+import utils from "../../Services/utils";
 function SupplyChainFin() {
+
+  useEffect(() => {
+    utils.scrollToId('supply-chain')
+}, []);
   return (
     <div>
-      <section className="supply-chain-finance">
+      <section className="supply-chain-finance" id="supply-chain">
         <div className="container">
           <div className="row">
               <div className="col-md-12">
