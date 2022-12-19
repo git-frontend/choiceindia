@@ -22,7 +22,7 @@ function Banner() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="mutualid">
-                                <GoogleReCaptchaProvider reCaptchaKey={(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? "6Leg-I4jAAAAAExpL1suOuo79wXRPZWpHtilOE4j" : "6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"} >
+                                <GoogleReCaptchaProvider reCaptchaKey={(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? "6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz" : "6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz"} >
                                     <DematAccountForm language='hindimutualfund' />
                                 </GoogleReCaptchaProvider>
                             </div>
