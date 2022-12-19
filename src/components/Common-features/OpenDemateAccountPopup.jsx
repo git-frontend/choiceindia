@@ -147,6 +147,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "utm_medium": UTMMedium.current || null,
             // blog_leads'
             "utm_source": UTMSource.current || null,
+            "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
