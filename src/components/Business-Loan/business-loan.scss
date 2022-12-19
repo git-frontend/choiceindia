@@ -1,0 +1,221 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.inv-fin-banner{
+    &.nbfc-business-loan{
+        background: $bg-sky2;
+        .fin-banner-caption{
+            padding-top: 4rem;
+            &::after{
+                display: none;
+            }
+            &::before{
+                left: inherit;
+                right: 2rem;
+                top: 1rem;
+                opacity: 0.8;
+            }
+            @media (max-width: $md) {
+                padding-top: 0;
+            }
+        }
+        .bus-loan-img{
+            position: relative;
+            &::after {
+                content: '';
+                width: 7rem;
+                height: 5rem;
+                display: block;
+                position: absolute;
+                right: 0;
+                transform: rotate(-180deg);
+                top: 0;
+                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+        .inv-banner-slider{
+            .carditem-nbfc{
+                .cardimg{
+                    min-height: 4rem;
+                }
+            }
+        }
+        .img-banner{
+            @media (max-width: $sm) {
+                padding-top: 2rem;
+            }
+        }
+    }
+    &.com-vehlc2{
+        .fin-banner-caption{
+            &::before, &::after{
+                display: none;
+            }
+            p{
+                padding-right: 3.5rem;
+                margin: 2.5rem 0 4.5rem 0;
+                .read-ext{
+                    font-style: normal;
+                    font-family: $font-family-poppins-semibold;
+                    color: $linkcolor;
+                    cursor: pointer;
+                }
+                @media (max-width: $md){
+                    padding-right: 0;
+                }
+            }
+            @media (max-width: $sm){
+                margin-bottom: 3rem;
+            }
+        }
+        &.solr-finance{
+            background: $abt-bg;
+        }
+    }
+}
+
+
+.other-loans-finance{
+    position: relative;
+    padding: 8rem 0 0 0;
+    .Anchor-heading{
+        position: relative;
+        .nbfc-info-menu-main{
+            position: absolute;
+            right: 0;
+            top: -4rem;
+        }
+    }
+    .loans-finance-sec{
+        margin-bottom: 10rem;
+        @media (max-width: $sm){
+            margin-bottom: 5rem;
+        }
+        .head-sec{
+            margin-bottom: 4.5rem;
+           .title-secnd{
+            margin-bottom: 2rem;
+           }
+            p{
+                font-size: 1.75rem;
+                line-height: 1.5;
+                color: $primary;
+                a{
+                    text-decoration: none;
+                }
+                .btn-read{
+                    font-style: normal;
+                    font-family: $font-family-poppins-semibold;
+                    color: $linkcolor;
+                    cursor: pointer;
+                }
+            }
+        }
+        .fin-list-itm{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            .list-itm{
+                width: 44.5%;
+                border-radius: 15px;
+                overflow: hidden;
+                border: 1px solid $bgcolor-fadegray;
+                .itm-img{
+                    display: flex;
+                    justify-content: center;
+                    padding: 0;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .itm-desc{
+                    background: $bg-sky3;
+                    padding: 2rem;
+                    h4{
+                        font-family: $font-family-poppins-medium;
+                        font-size: 2.2rem;
+                    }
+                    p{
+                        font-size: 1.75rem;
+                        line-height: 1.5;
+                        .btn-read{
+                            font-style: normal;
+                            font-family: $font-family-poppins-semibold;
+                            color: $linkcolor;
+                            cursor: pointer;
+                        }
+                    }
+                    .moreless-button {
+                        font-size: 1.6875rem !important;
+                        font-family: $font-family-poppins-bold;
+                        font-weight: 700;
+                        color: $bgcolor-blue;
+                        line-height: 2.75rem !important;
+                
+                    }
+                
+                    .read-more-state {
+                        display: none;
+                    }
+                    .read-more-wrap{
+                        font-size: 1.75rem;
+                        line-height: 1.5;
+                        color: $primary;
+                    }
+                    .read-more-target {
+                        display: none;
+                        max-height: 0;
+                        font-size: 0;
+                        transition: .25s ease;
+                        padding-top: 0;
+                    }
+                
+                    .read-more-state:checked~.read-more-wrap .read-more-target {
+                        opacity: 1;
+                        font-size: inherit;
+                        max-height: 999em;
+                        display: block;
+                    }
+                
+                    .read-more-state~.read-more-trigger:before {
+                        content: 'Read more';
+                    }
+                
+                    .read-more-state:checked~.read-more-trigger:before {
+                        content: 'Read less';
+                    }
+                
+                    .read-more-trigger {
+                        cursor: pointer;
+                        display: inline-block;
+                        /*padding: 0 .5em;*/
+                
+                        font-size: .9em;
+                        line-height: 2;
+                        border-radius: .25em;
+                    }
+                }
+                @media (max-width: $md){
+                    width: 100%;
+                    margin-bottom: 3rem;
+                }
+                
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
