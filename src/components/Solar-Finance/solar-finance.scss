@@ -1,0 +1,158 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.solar-fin-banner{
+    &.solar-ban-bg{
+        background: $bg-sky2 !important;
+        padding: 10rem 0;
+        @media (max-width: $md) {
+            padding: 5rem 0;
+        }
+    }
+    .fin-banner-caption{
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        
+        &::before {
+            content: "";
+            width: 17rem;
+            height: 12rem;
+            display: block;
+            position: absolute;
+            left: 13rem;
+            top: -3rem;
+            background: url(../../assets/images/solar-finance/dot-bg.svg) no-repeat top left;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+        .big-ttl{
+           
+            color: $primary;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            @media (max-width: $md) {
+                br{
+                    display: none;
+                }
+            }
+        }
+        .aply-btn{
+            color: $darkblack;
+        }
+        p{
+            font-size: 1.75rem;
+            line-height: 1.5;
+            color: $primary;
+            a{
+                text-decoration: none;
+            }
+            .aply-btn{
+                font-family: $font-family-poppins-semibold;
+                color: $darkblack;
+            }
+        }
+        @media (max-width: $sm) {
+            text-align: center;
+        }
+    }
+}
+.solar-banner-slider {
+    padding-top: 8rem;
+    @media (max-width: $sm) {
+        padding-top: 4rem;
+    }
+    .slick-track {
+        margin-bottom: 2rem;
+    }
+}
+
+
+
+.solar-fin-doc-req{
+    padding: 7rem 0 6rem 0;
+    
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .cap-right{
+        float: right;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .Doc-rq-card{
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px $boxshadow;
+            margin-bottom: 3rem;
+         }
+        .img-height{
+            min-height: 275px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width:$sm) {
+                min-height: inherit;
+                margin-bottom: 2rem;
+            }
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-medium;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            @media screen and (max-width:$md) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+         }
+        .list-item{
+            li{
+                font-size: 1.9rem;
+                line-height: 1.5;
+                color: $graylight;
+                font-family: $font-family-poppins-medium;
+                padding-left: 0.5rem;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                 }
+            }
+        }
+    }
+}
+.solar-avail-bnr{
+    .veh-bnr-list{
+        position: relative;
+        .bnr-list-itm {
+            margin-bottom: 4rem;
+            margin-top: 7rem;
+        }
+        .nbfc-info-menu-main {
+            position: absolute;
+            right: 0;
+            top: -4.5rem;
+            z-index: 99;
+        }
+    }
+}
+
+
