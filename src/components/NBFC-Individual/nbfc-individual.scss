@@ -209,40 +209,71 @@ body{
             margin-bottom: 4rem;
          }
     }
+    .cap-right{
+        float: right;
+        
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+         
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
     .Doc-rq-card{
+        &.bringown{
+            background-color: none;
+            box-shadow: none;
+        }
+        width: 100%;
+        background: $whiteColor;
+        box-shadow: 10px 10px 25px $nbfcboxshadow;
+        border-radius: 20px;
+        padding: 2rem 3rem;
+        height: 100%;
+        margin: 0 1rem;
         @media screen and (max-width:$sm) {
             padding:2rem;
             border-radius: 20px;
-            box-shadow: 0px 0px 8px $boxshadow;
-            margin-bottom: 3rem;
+            box-shadow: 0px 0px 8px $nbfcboxshadow;
+            margin: 0 auto 3rem;
+            height: auto;
          }
         .img-height{
             min-height: 24rem;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             // margin-bottom: 3rem;
             @media screen and (max-width:$sm) {
-                min-height: 15rem;  
+                min-height: inherit;  
+                margin-bottom: 2rem;
              }
         }
         .title-doc{
             font-size: 2.5rem;
             color: $primary;
             font-family: $font-family-poppins-semibold;
-            // margin-top: 3rem;
+            margin-top: 3.5rem;
             margin-bottom: 3rem;
+            text-align: left;
          }
         .list-item{
-            padding: 0 4.5rem;
-            @media (max-width: $sm) {
-                padding: 0rem 2rem 0rem 2rem;
-             }
+            padding: 0 3rem;
+            @media screen and (max-width:$md) {
+               padding: 0 2rem;
+            }
             li{
-                font-size: 2rem;
+                font-size: 1.9rem;
+                line-height: 1.5;
                 color: $graylight;
+                font-family: $font-family-poppins-medium;
                  @media screen and (max-width:$md) {
-                    font-size: 1.8rem;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
                  }
             }
         }
