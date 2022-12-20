@@ -84,7 +84,7 @@ function closesection(){
                       </span>
                       <div className="namedesg">
                         <h5>{res.title}</h5>
-                        <p className="designation">{res.description}</p>
+                        <p className="designation">{res.designation}</p>
                       </div>
 
 
@@ -105,9 +105,12 @@ function closesection(){
                           <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
                           </div>
                           <div className="team-position">
-                              <h4>{BoardOfDirector[value].title}</h4>
+                              <h4>{BoardOfDirector[value].title}<br/> ({BoardOfDirector[value].designation})</h4>
                           </div>
                         </div>
+                        <p>
+                        <h4>{BoardOfDirector[value].description}</h4>
+                        </p>
                     </div>
                     </Modal>
               </div>
