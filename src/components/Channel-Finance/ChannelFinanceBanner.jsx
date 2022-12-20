@@ -9,6 +9,7 @@ import FullFledged from '../../assets/images/channel-finance/full-fledge-channel
 import HighValue from '../../assets/images/channel-finance/high-value-channel-financing.svg';
 import Documentation from '../../assets/images/channel-finance/digital-channel-financing-documentation.svg';
 import {Link} from 'react-router-dom';
+import NbfcForm from "../Common-features/NbfcForm";
 
 function ChannelFinanceBanner() {
     const settings1 = {
@@ -61,7 +62,7 @@ function ChannelFinanceBanner() {
                         </div>
                         <div className=" col-md-5">
                             <div className="formwrap">
-                                
+                              <NbfcForm></NbfcForm>  
                             </div>
                         </div>
                     </div>
