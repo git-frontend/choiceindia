@@ -1,10 +1,11 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { useSearchParams } from "react-router-dom";
 import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import Thankyoupopup from './Thanku-popup.jsx';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -25,6 +26,9 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var source = useRef('');
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ) ? 'Best-Stock' : "Blog";
+
+    const [captchaToken, setCaptchaToken] = useState('');
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
@@ -128,7 +132,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     function handleSendOTP(e) {
         fetchQueryParams();
-        sendOTP();
+        // sendOTP();
+        handleReCaptchaVerify();
     }
 
     function sendOTP() {
@@ -151,7 +156,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             "utm_medium": UTMMedium.current || null,
             // 'blog_leads'
             "utm_source": UTMSource.current || null,
-            "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
+            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
+            "captchaResp": captchaToken,
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -174,6 +180,28 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+        // Create an event handler so you can call the verification on button click event or form submit
+        const handleReCaptchaVerify = useCallback(async () => {
+            if (!executeRecaptcha) {
+                return;
+            }
+            showLoader('sendOTPLoader');
+            const token = await executeRecaptcha('sendOTP');
+            // Do whatever you want with the token
+            // sendOTP();
+            if (token) {
+                setCaptchaToken(token);
+                // alert("Token : "+token);
+            }
+            hideLoader('sendOTPLoader');
+        }, [executeRecaptcha]);
+    
+        useEffect(() => {
+            if (captchaToken) {
+                sendOTP();
+            }
+        }, [captchaToken]);
 
     return (
         <>
