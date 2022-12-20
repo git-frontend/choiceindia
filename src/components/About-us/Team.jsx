@@ -97,7 +97,7 @@ function closesection(){
                  
                 </Slider>
 
-                <Modal show={IsShown2} onHide={!IsShown2} size="md"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+                <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
                     <div className="content-extra" >
                     <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
                       <div className="team-img-pos">
