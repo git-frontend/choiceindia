@@ -319,7 +319,7 @@ body{
     // transform: translate(-50%, 0);
     border-radius: 1rem;
     box-shadow: 10px 10px 25px 7px $shadowdark;
-    padding: 1rem 2rem;
+    padding:2rem;
     .icon-table{
         float: right;
     }
@@ -329,8 +329,15 @@ body{
         flex-wrap: wrap;
         align-items: center;
         padding-bottom: 4rem;
+        @media (max-width:$sm) {
+           padding-bottom: 2rem;
+        }
         .team-img{
             width: 45%;
+            @media (max-width:$sm) {
+                width: 100%;
+                text-align: center;
+            }
             img{
                 width: 13rem;
                 height: 13rem;
@@ -339,16 +346,23 @@ body{
         }
         .team-position{
             width: 55%;
+            @media (max-width:$sm) {
+                width: 100%;
+            }
             h4{
                 font-size: 1.625rem;
                 font-weight: 600;
-                line-height: 39px;
+                line-height: 32px;
+                @media (max-width:$sm) {
+                    text-align: center;
+                    padding-top: 2rem;
+                }
             }
         }
     }
     p{
         color: $secondary;
-        line-height: 36px;
+        line-height: 32px;
         font-size: 1.5rem;
     }
 }
