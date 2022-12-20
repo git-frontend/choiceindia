@@ -141,13 +141,12 @@ body{
             border-radius: 20px;
             background: #ad8b73;
             padding: 0;
+            margin: 0 auto;
             transition: 0.3s all ease-in;
 
             @media (max-width:$sm) {
                 width: 95% !important;
                 display: block !important;
-                margin: 0 auto;
-                
             }
 
             .namedesg {
@@ -1141,4 +1140,10 @@ body{
 
 .mb3{
     margin-bottom: 2rem;
+}
+
+.about-team-modal{
+    .modal-dialog{
+        max-width: 680px !important;
+    }
 }
