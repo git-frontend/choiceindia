@@ -46,8 +46,8 @@ function InvoiceFinancingBanner() {
             <section className="inv-fin-banner invoicefinance-banner">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-xl-8 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                        <div className=" col-md-7">
+                            <div className="fin-banner-caption ">
                                 <h1 className="big-ttl"> Apply for Invoice
 <br /> Financing Online </h1>
                                 <p>Choice is offering loans to the anchor’s ecosystem against selling or purchasing invoices. Borrower as Anchor “or” spoke may be decided as per the deal structure and mutual agreement.</p>
