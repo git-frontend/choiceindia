@@ -22,7 +22,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import BoardOfDirector from '../../Data/Strategies';
 
 function Team() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState();
   const[IsShown2,setIsShown2]= useState(false)
 
   const settings = {
@@ -96,20 +96,27 @@ function closesection(){
                     }
                  
                 </Slider>
+{
+  BoardOfDirector && BoardOfDirector[value] ?
+  <div show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
+  <div className="content-extra" >
+  <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
+    <div className="team-img-pos">
+        <div className="team-img">
+        <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+        </div>
+        <div className="team-position">
+            <h4>{BoardOfDirector[value].title}<br/> ({BoardOfDirector[value].designation})</h4>
+        </div>
+      </div>
+      <p>{BoardOfDirector[value].description}
+      </p>
+  </div>
+  </div>:
+  ""
+}
 
-                <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
-                    <div className="content-extra" >
-                    <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
-                      <div className="team-img-pos">
-                          <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid img-profile"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
-                          <div className="team-position">
-                              <h4>{BoardOfDirector[value].title}<br/> ({BoardOfDirector[value].designation})</h4>
-                          </div>
-                        </div>
-                        <p>{BoardOfDirector[value].description}
-                        </p>
-                    </div>
-                    </Modal>
+               
               </div>
             </div>
           </div>
