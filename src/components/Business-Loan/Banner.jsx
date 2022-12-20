@@ -19,7 +19,7 @@ function ChannelFinanceBanner() {
                             </div>
                         </div>
                         <div className="col-md-6 d-flex justify-content-end bus-loan-img">
-                            <LazyLoader src={banner} alt={"Business Loan"} className={"img-fluid img-banner"} width={"550"} height={"378"} />
+                            <LazyLoader src={banner} alt={"Apply for Business Loan"} className={"img-fluid img-banner"} width={"550"} height={"378"} />
                         </div>
                     </div>
                 </div>

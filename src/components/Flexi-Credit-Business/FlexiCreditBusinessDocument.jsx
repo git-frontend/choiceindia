@@ -1,7 +1,7 @@
 
 import React from "react";
-import Kycimage from '../../assets/images/invoice-financing/kyc-documents-invoice-financing.svg';
-import IncomeProofimage from '../../assets/images/nbfc-flexi-credit-business/business-documents-for-flexi-loan.svg';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
+import IncomeProofimage from '../../assets/images/term-loans/business-documents-for-term-loan-application.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function FlexiCreditBusinessDocument() {
@@ -17,14 +17,14 @@ function FlexiCreditBusinessDocument() {
                 </div>
               </div>
           </div>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center h-100">
             <div className="col-xl-5 col-md-6">
-            <div className="Doc-rq-card">
+            <div className="Doc-rq-card cap-right">
                   <div className="text-center">
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"320"} height={"240"} alt={"Kyc Documents For Flexi Credit"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"Kyc Documents For Flexi Credit"}/>
                     </div>
-                    <h3 className="title-doc">KYC</h3>
+                    <h3 className="title-doc">For KYC</h3>
                   </div>
                     <ul className="list-item">
                     
@@ -37,10 +37,10 @@ function FlexiCreditBusinessDocument() {
                 </div>
             </div>
             <div className="col-xl-5 col-md-6">
-            <div className="Doc-rq-card">
+            <div className="Doc-rq-card cap-left">
                 <div className="text-center">
                   <div className="img-height">
-                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"267"} height={"267"} alt={"Business Documents For Flexi Credit"}/>
+                    <LazyLoader src={IncomeProofimage} className={'img-fluid'} width={"254"} height={"255"} alt={"Business Documents For Flexi Credit"}/>
                   </div>
                     <h3 className="title-doc">Business Documents</h3>
                 </div>

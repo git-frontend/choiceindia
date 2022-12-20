@@ -75,4 +75,24 @@
     
 }
 
+.Doc-rq-card{
+    &.vehcard{
+        padding:5rem 3rem;
+        .individiualvehloan{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .img-height{
+                width: 50%;
+            }
+            .vehicle-right{
+                width: 50%;
+                padding-left: 3rem;
+            }
+        }
+    }
+}
+
+
+
 

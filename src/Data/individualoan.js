@@ -7,6 +7,7 @@ const imageData =
 [
     {
         "image":`${ImageSub0}`,
+        "alttag":'Individual-Vehicle-Loan',
         "id": 5,
         "title":'Vehicle Loan',
         "description":'We offer affordable vehicle loans making sure that you own your dream wheels..'
@@ -15,6 +16,7 @@ const imageData =
     },
     {
         "image":`${ImageSub1}`,
+        "alttag":'Individual-Flexi-Credit',
         "id": 4,
         "title":'Flexi Credit',
         "description":'Our Flexi-Credit gives the freedom to withdraw or deposit multiple times from loan accounts.'
@@ -23,6 +25,7 @@ const imageData =
     },
     {
         "image":`${ImageSub2}`,
+        "alttag":'Individual-Solar-Finance',
         "id": 3,
         "title":'Solar Finance',
         "description":'A loan that allows you to purchase your solar power system and then repay the loan over time.'

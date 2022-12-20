@@ -2069,10 +2069,14 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'title': "Best Stocks to Buy for Long Term Investment - Choice",'lang':"en", "content": "Selecting the best stocks for long-term investments is a challenging task. The best stocks to purchase for long-term investing horizons are available at Choice. To begin purchasing long-term stocks, go to our website.",
     "link": "https://choiceindia.com/best-stocks-for-long-term-investment"
   },
-
+  
   "loan": {
     'title': "Apply for Loan Online & Get Instant Loan within Few Hours",'lang':"en", "content": "Apply for loan online at Choice FinServ. Get a instant loan for your business, buying a commercial vehicle, flexi credit, invoice financing and channel financing at attractive interest rates.",
     "link": "https://choiceindia.com/loan"
+  },
+  "business-loan": {
+    'title': "Apply for Business Loan & Get Instant Business Loan Online",'lang':"en", "content": "Apply for business loan online at Choice FinServ. Get a instant business loan upto 25 Lakhs at attractive interest rates, low processing fees. Visit to apply now.",
+    "link": "https://choiceindia.com/business-loan"
   },
   "term-business-loan": {
     'title': "Apply for Term Business Loan Online at Choice FinServ",'lang':"en", "content": "Apply online at Choice FinServ for a term business loan. Get a fast business loan with low processing costs and attractive interest rates. Visit now to apply.",
@@ -2082,6 +2086,16 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'title': "Apply Flexi Credit Loan for Business Online at Choice FinServ",'lang':"en", "content": "Visit Choice FinServ to apply for a Flexi Credit Loan online. Get a flexible credit loan quickly into your bank account with low processing costs and competitive interest rates. Visit to apply instantly.",
     "link": "https://choiceindia.com/flexi-credit-loan"
   },
+
+  "cfpl-policies":{
+    'title': "CFPL Policies - Choice International Limited",'lang':"en", "content": "Read the latest CFPL policies at Choice International Limited's official website.",
+    "link": "https://choiceindia.com/cfpl-policies"
+
+  },
+
+
+
+
 
   "invoice-financing": {
     'title': "Apply for Invoice Financing & Get Funds within 48 Hours",'lang':"en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
@@ -2094,6 +2108,10 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
   "commercial-vehicle-loan": {
     'title': "Get Commercial Vehicle Loan Online at Choice FinServ",'lang':"en", "content": "Apply a commercial vehicle loan online at Choice FinServ. Get a quick commercial car loan with minimal processing fees and attractive interest rates. Visit instantly to apply.",
     "link": "https://choiceindia.com/commercial-vehicle-loan"
+  },
+  "solar-financing": {
+    'title': "Solar Financing - Get Solar Panels on Loan for Businesses",'lang':"en", "content": "Apply for solar financing at Choice FinServ at best rates. Get a loan for purchasing solar panels for MSME and small businesses upto 25 Lakhs within 2 days.",
+    "link": "https://choiceindia.com/solar-financing"
   },
 }
 

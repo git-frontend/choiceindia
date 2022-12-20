@@ -19,7 +19,7 @@ function Banner() {
                 </div>
                 <div className="col-md-6">
                     <div className="rightsec">
-                        <LazyLoader src={bannerimg} alt={"Applyt for Instant Loan Online"} className={"img-fluid"} width={"586"} height={"366"} />
+                        <LazyLoader src={bannerimg} alt={"Apply for Instant Loan Online"} className={"img-fluid"} width={"586"} height={"366"} />
                         {/* <div className='home-banner-ved'>
 							<div className="overlay"></div>
 							<video src={videoBg} autoPlay loop muted className='banner-ved' />

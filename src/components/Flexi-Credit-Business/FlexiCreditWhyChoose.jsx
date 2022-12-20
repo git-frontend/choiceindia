@@ -61,7 +61,7 @@ function WhyChoose() {
                       <LazyLoader src={low} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Low</h3>
-                    <p className="subtext">Processing speed</p>
+                    <p className="subtext">Processing Fee</p>
                   </div>
                   <div className="carditem-nbfc">
                     <span className='cardimg'>
