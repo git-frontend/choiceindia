@@ -38,6 +38,13 @@
   src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
   font-display: swap;
 }
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg"), url("../fonts/Poppins-Regular.ttf") format("truetype"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /*Bootstrap Override*/
 /*Font family*/
 /*bg varibales*/
@@ -47,7 +54,7 @@
   font-family: "PoppinsSemiBold", sans-serif;
   color: #ffffff !important;
   background: #221F20 !important;
-  padding: 1.3rem 3rem !important;
+  padding: 1.3rem 2.8rem !important;
   display: inline-block;
   border-radius: 16px !important;
   min-width: 16rem;
@@ -102,9 +109,16 @@
   transition-timing-function: ease-out;
   position: relative;
   font-family: "PoppinsRegular", sans-serif;
+  min-height: 4rem;
+}
+.link-nrl img {
+  margin-right: 0.5rem;
 }
 .link-nrl.white {
   background-color: #F5F5F5;
+}
+.link-nrl.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl .img-ico {
   width: 17rem;
@@ -126,7 +140,7 @@
 }
 .link-nrl .blackcolor {
   color: #13151A;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media (max-width: 768px) {
   .link-nrl .blackcolor {
@@ -162,6 +176,9 @@
 }
 .link-nrl.link-nrl-sm.white {
   background-color: #F5F5F5;
+}
+.link-nrl.link-nrl-sm.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl.link-nrl-sm:hover {
   transform: translateY(-8px);
@@ -201,20 +218,20 @@
 .scroll-top {
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 70px;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   border: 0;
   font-size: 1.9rem;
-  z-index: 999;
+  z-index: 9999;
   color: #ffffff;
   background: #FFCE02;
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 @media (max-width: 767px) {
   .scroll-top {
-    bottom: 58px;
+    display: none;
   }
 }
 .scroll-top .fa-angle-up {
@@ -274,13 +291,16 @@ body {
 .title-first {
   font-size: 3.5rem;
   color: #221F20;
+  font-weight: 600;
   font-family: "PoppinsSemiBold", sans-serif;
 }
 @media (max-width: 767px) {
   .title-first {
     font-size: 2.5rem;
-    line-height: 4rem;
-    font-size: 2.3rem;
+    line-height: 3.5rem;
+  }
+  .title-first br {
+    display: none;
   }
 }
 
@@ -292,6 +312,7 @@ body {
 @media (max-width: 767px) {
   .title-secnd {
     font-size: 2rem;
+    line-height: 3rem;
   }
 }
 
@@ -322,11 +343,6 @@ body {
 @media (max-width: 768px) {
   .heading-sec p br {
     display: none;
-  }
-}
-@media (max-width: 767px) {
-  .heading-sec p {
-    font-size: 1.4rem;
   }
 }
 .heading-sec p.nm-text {
@@ -365,7 +381,7 @@ body {
 
 .App-Body {
   min-height: 100vh;
-  margin-top: 9.5rem;
+  margin-top: 9.25rem;
 }
 @media screen and (max-width: 767px) {
   .App-Body {
@@ -376,7 +392,12 @@ body {
 }
 @media screen and (max-width: 992px) {
   .App-Body {
-    margin-top: 8.6rem;
+    margin-top: 8.45rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .App-Body {
+    margin-top: 6rem;
   }
 }
 
@@ -384,6 +405,76 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.modal-backdrop {
+  z-index: 99999;
+}
+
+.modal {
+  z-index: 99999;
+}
+
+@-webkit-keyframes toTopFromBottom {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toTopFromBottom {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+.common-modal-thankyou .modal-content .modal-header {
+  border: 0;
+}
+.common-modal-thankyou .modal-content .modal-body {
+  padding: 2rem;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.common-modal-thankyou .modal-content .modal-body h4 {
+  margin-top: 1rem;
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  font-size: 1.65rem;
+}
+.common-modal-thankyou .modal-content .modal-body h3 {
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  margin-top: 2rem;
+}
+.common-modal-thankyou .modal-content .modal-footer {
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  padding-bottom: 1.5em;
+}
+.common-modal-thankyou .modal-content .modal-footer .btn-yellow {
+  background-color: #FFCE02;
+  border-radius: 27px;
+  color: #221F20;
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  display: inline-block;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem 0;
 }
 
 .app-skeleton-parent {
@@ -416,7 +507,7 @@ body {
   width: 100%;
   height: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .App-main .banner-app .ban-img {
     height: 350px;
     -o-object-fit: cover;
@@ -460,6 +551,11 @@ body {
   .App-main .banner-app .app-banner-caption .wrap-app-links {
     margin: 2rem 0;
     flex-direction: column;
+  }
+}
+@media (max-width: 590px) {
+  .App-main .banner-app .app-banner-caption .wrap-app-links .link-nrl {
+    width: 55%;
   }
 }
 .App-main .app-benefits-section {
@@ -608,6 +704,7 @@ body {
 .App-main .app-cont-sec .cont-sec-list .cont-sec-item .title-secnd {
   font-size: 3rem;
   margin-bottom: 0.5rem;
+  color: #221F20;
 }
 @media (max-width: 768px) {
   .App-main .app-cont-sec .cont-sec-list .cont-sec-item .title-secnd {
@@ -661,17 +758,18 @@ body {
 }
 .App-main .app-cont-sec .wrap-app-links .link-nrl:hover {
   transform: translateY(-8px);
+  background: #FFCE02;
 }
 @media (max-width: 768px) {
   .App-main .app-cont-sec .wrap-app-links .link-nrl {
     margin-right: 1rem;
-    width: 42%;
+    width: 60%;
     margin-bottom: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
   .App-main .app-cont-sec .wrap-app-links .link-nrl {
-    width: 23%;
+    width: 30%;
   }
 }
 @media (max-width: 768px) {
@@ -731,6 +829,7 @@ body {
   padding-left: 3.5rem;
   margin-bottom: 5rem;
   position: relative;
+  cursor: pointer;
 }
 .App-main .app-banner-bottom .content-list .content-list-itm.list-itm-active::before {
   content: "";
@@ -741,6 +840,11 @@ body {
   position: absolute;
   left: 0;
   display: block;
+}
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .content-list .content-list-itm.list-itm-active::before {
+    display: none;
+  }
 }
 .App-main .app-banner-bottom .content-list .content-list-itm.list-itm-active .single-ttl {
   color: #221F20;
@@ -756,6 +860,23 @@ body {
 .App-main .app-banner-bottom .content-list .content-list-itm .para {
   display: none;
 }
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .content-list .content-list-itm .para {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .content-list .content-list-itm {
+    padding-bottom: 0;
+    margin: 0;
+  }
+}
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .content-list .content-list-itm {
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
 .App-main .app-banner-bottom .content-list::before {
   content: "";
   background: #FFCE02;
@@ -766,6 +887,11 @@ body {
   top: 0;
   opacity: 0.1;
   border-radius: 9px;
+}
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .content-list::before {
+    display: none;
+  }
 }
 @media (max-width: 992px) {
   .App-main .app-banner-bottom .content-list {
@@ -786,9 +912,14 @@ body {
     padding: 0;
   }
 }
+@media (max-width: 767px) {
+  .App-main .app-banner-bottom .trade-easy-images-div {
+    padding-top: 2rem;
+  }
+}
 @media (max-width: 768px) {
   .App-main .app-banner-bottom {
-    padding: 4rem 0 5rem 0;
+    padding: 5rem 0 5rem 0;
   }
 }
 .App-main .app-strategies-bottom {
@@ -835,6 +966,11 @@ body {
   justify-content: flex-end;
   flex-wrap: wrap;
 }
+@media (max-width: 992px) {
+  .App-main .app-strategies-bottom .content-list {
+    padding-left: 0rem;
+  }
+}
 .App-main .app-strategies-bottom .content-list .content-list-itm {
   border: 2px solid #F5F5F5;
   border-radius: 20px;
@@ -873,6 +1009,11 @@ body {
   background: #FFCE02;
   border-radius: 20px 0 0 20px;
 }
+@media (max-width: 767px) {
+  .App-main .app-strategies-bottom .content-list .content-list-itm.list-itm-active::before {
+    display: none;
+  }
+}
 .App-main .app-strategies-bottom .content-list .content-list-itm.list-itm-active::after {
   content: "";
   width: 100%;
@@ -887,11 +1028,17 @@ body {
 @media (max-width: 767px) {
   .App-main .app-strategies-bottom .content-list .content-list-itm.list-itm-active {
     left: 0;
+    width: 95% !important;
   }
 }
 @media (max-width: 767px) {
   .App-main .app-strategies-bottom .content-list .content-list-itm {
-    width: 100%;
+    width: 95% !important;
+  }
+}
+@media (max-width: 767px) {
+  .App-main .app-strategies-bottom .content-list .content-list-itm {
+    margin: 0 auto;
   }
 }
 @media (max-width: 767px) {
@@ -906,6 +1053,12 @@ body {
 @media (max-width: 992px) {
   .App-main .app-strategies-bottom .content-list {
     margin-left: 2rem;
+  }
+}
+@media (max-width: 767px) {
+  .App-main .app-strategies-bottom .content-list {
+    margin-left: 0;
+    display: block;
   }
 }
 .App-main .app-strategies-bottom .title-secnd {
@@ -928,12 +1081,12 @@ body {
 }
 @media (max-width: 767px) {
   .App-main .app-strategies-bottom {
-    padding-bottom: 3rem;
+    padding: 5rem 0;
   }
 }
 
 .trade-benefits-section {
-  background: url(../../assets/images/app/banner-botttom.jpg) no-repeat bottom left;
+  background: url(../../assets/images/app/open-free-demat-account.webp) no-repeat bottom left;
   background-size: cover;
   padding: 12rem 0;
   position: relative;

@@ -328,6 +328,44 @@ body {
   font-family: "PoppinsRegular", sans-serif;
 }
 
+/** keyframes added */
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+@-webkit-keyframes hideMe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hideMe {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.stratezy-faq-temp {
+  width: 80%;
+  height: 400px;
+  margin: auto;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+
 .statezy-banner {
   padding: 17rem 0;
   background: url("../images/stratezy-page/banner-bg.webp") no-repeat;
@@ -349,7 +387,8 @@ body {
 }
 @media (max-width: 767px) {
   .statezy-banner .banner-caption h1 {
-    font-size: 2.4rem;
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -373,9 +412,19 @@ body {
 .statezy-banner .banner-caption p span {
   font-family: "PoppinsSemiBold", sans-serif;
 }
+@media (max-width: 767px) {
+  .statezy-banner .banner-caption p span {
+    display: block;
+  }
+}
 .statezy-banner .banner-caption p a {
   text-decoration: none;
   color: #221F20;
+}
+@media (max-width: 767px) {
+  .statezy-banner .banner-caption p {
+    padding-bottom: 0;
+  }
 }
 .statezy-banner .banner-caption .btn-banner {
   margin-top: 3rem;
@@ -404,7 +453,7 @@ body {
 }
 @media (max-width: 767px) {
   .statezy-banner {
-    padding: 12rem 0 5.75rem 0;
+    padding: 5rem 0 8rem 0;
   }
 }
 .statezy-banner .rightsection {
@@ -435,7 +484,7 @@ body {
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wrap {
     padding: 1rem 1rem;
-    height: 6.6rem;
+    height: 7.6rem;
     width: 6.6rem;
   }
 }
@@ -461,8 +510,7 @@ body {
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wrap p {
     font-size: 1rem;
-    margin-top: 0;
-    line-height: 0.9375rem;
+    line-height: 1.5;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -497,7 +545,7 @@ body {
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wrapone {
     padding: 1rem 1rem;
-    height: 6.6rem;
+    height: 7.6rem;
     width: 6.6rem;
   }
 }
@@ -523,8 +571,7 @@ body {
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wrapone p {
     font-size: 1rem;
-    margin-top: 0;
-    line-height: 0.9375rem;
+    line-height: 1.5;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -559,9 +606,11 @@ body {
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wraptwo {
     padding: 1rem 1rem;
-    height: 6.6rem;
+    height: 7.6rem;
     width: 6.6rem;
-    right: 0;
+    right: 50px;
+    bottom: 0;
+    top: 140px;
   }
 }
 @media (min-width: 767px) and (max-width: 768px) {
@@ -586,9 +635,8 @@ body {
 }
 @media (max-width: 767px) {
   .statezy-banner .rightsection .wraptwo p {
-    font-size: 1rem;
-    margin-top: 0;
-    line-height: 0.9375rem;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -631,6 +679,11 @@ body {
 .basket-faqs {
   padding: 8rem 0;
 }
+@media (max-width: 767px) {
+  .basket-faqs {
+    padding: 4rem 0;
+  }
+}
 .basket-faqs .heading-sec {
   margin-bottom: 4rem;
 }
@@ -655,6 +708,10 @@ body {
   .basket-faqs .accordion-container .ac {
     padding: 2rem 1.5rem;
   }
+}
+.basket-faqs .accordion-container .ac img {
+  max-width: 100%;
+  height: auto;
 }
 
 .why-stratezy {
@@ -687,7 +744,7 @@ body {
 @media (max-width: 767px) {
   .why-stratezy .screen {
     margin-top: 4rem;
-    height: 32rem;
+    height: auto;
   }
 }
 .why-stratezy .screen img {
@@ -698,8 +755,8 @@ body {
 }
 @media (max-width: 767px) {
   .why-stratezy .rightwrap {
-    padding-left: 1rem;
-    margin-top: 4rem;
+    padding-left: 0;
+    margin-top: 0rem;
     text-align: center;
   }
 }
@@ -770,6 +827,7 @@ body {
 @media (max-width: 767px) {
   .why-stratezy .sliderbtn {
     justify-content: center;
+    margin-top: 0;
   }
 }
 .why-stratezy .sliderbtn a {
@@ -831,6 +889,11 @@ body {
 .stratezy {
   padding: 9rem 0 13rem;
 }
+@media (max-width: 767px) {
+  .stratezy {
+    padding: 4rem 0 0 0;
+  }
+}
 .stratezy .headingsec {
   text-align: center;
 }
@@ -840,6 +903,13 @@ body {
   line-height: 4rem;
   font-family: "PoppinsBold", sans-serif;
   padding-bottom: 1.625rem;
+}
+@media (max-width: 767px) {
+  .stratezy .headingsec .title {
+    padding-bottom: 0;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
 }
 .stratezy .headingsec .para {
   font-size: 1.67rem;
@@ -863,7 +933,7 @@ body {
   .stratezy .featureone {
     width: 100%;
     margin-bottom: 4rem;
-    padding-bottom: 0;
+    padding: 2rem;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -907,7 +977,7 @@ body {
 }
 @media (max-width: 767px) {
   .stratezy .featureone .imgtextwrap .subtext {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     line-height: 2rem;
     width: 100%;
   }
@@ -939,6 +1009,7 @@ body {
   .stratezy .featureone .imgtextwrap .imgwrap img {
     width: 100%;
     padding-top: 3rem;
+    display: none;
   }
 }
 .stratezy .featureone .imgtextwrap .imgwrap img:hover {
@@ -957,7 +1028,7 @@ body {
   .stratezy .featuretwo {
     width: 100%;
     margin-bottom: 4rem;
-    padding-bottom: 0;
+    padding: 2rem;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -1032,6 +1103,7 @@ body {
   .stratezy .featuretwo .imgtextwrap .imgwrap img {
     width: 90%;
     padding-top: 3rem;
+    display: none;
   }
 }
 .stratezy .featuretwo .imgtextwrap .imgwrap img:hover {
@@ -1051,7 +1123,7 @@ body {
   .stratezy .featurethree {
     width: 100%;
     margin-bottom: 4rem;
-    padding-bottom: 0;
+    padding: 2rem;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -1128,6 +1200,7 @@ body {
   .stratezy .featurethree .imgtextwrap .imgwrap img {
     width: 90%;
     padding-top: 3rem;
+    display: none;
   }
 }
 .stratezy .featurethree .imgtextwrap .imgwrap img:hover {
@@ -1146,7 +1219,7 @@ body {
   .stratezy .featurefour {
     width: 100%;
     margin-bottom: 4rem;
-    padding-bottom: 0;
+    padding: 2rem;
   }
 }
 @media (min-width: 767px) and (max-width: 1024px) {
@@ -1221,6 +1294,7 @@ body {
   .stratezy .featurefour .imgtextwrap .imgwrap img {
     width: 90%;
     padding-top: 3rem;
+    display: none;
   }
 }
 .stratezy .featurefour .imgtextwrap .imgwrap img:hover {
@@ -1313,7 +1387,8 @@ body {
 }
 @media (max-width: 767px) {
   .algorithmstrategy .wrap .headingtext {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    line-height: 1.5;
   }
 }
 
@@ -1371,6 +1446,7 @@ body {
 .youtube-container-img {
   width: 100%;
   border-radius: 20px;
+  height: auto;
 }
 
 .ytubeBg {
@@ -1416,6 +1492,12 @@ body {
   outline: none;
   transition: 0.4s;
 }
+@media (max-width: 767px) {
+  .acc {
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
 
 .accitem {
   max-height: 0;
@@ -1447,5 +1529,10 @@ body {
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 767px) {
+  .mt-5-0-mb {
+    margin-top: 0 !important;
   }
 }/*# sourceMappingURL=stratezy-landing-page.css.map */

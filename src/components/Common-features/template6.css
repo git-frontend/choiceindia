@@ -1,0 +1,137 @@
+/** keyframes added */
+@-webkit-keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
+.template-child3-img {
+  height: 1rem;
+  margin: 5rem;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .template-child3-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 480px) {
+  .template-child3-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template-child3-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+
+.template-child4-img {
+  width: 50%;
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .template-child4-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 480px) {
+  .template-child4-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template-child4-img {
+    width: auto;
+    margin: 1rem;
+  }
+}
+
+.template-child-6 {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .template-child-6 {
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .template-child-6 {
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template-child-6 {
+    display: block;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  .template-child-6 {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+
+.template-child-11 {
+  width: 100%;
+  height: 40rem;
+  display: flex;
+}
+.template-child-11 div {
+  background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+  border-radius: 5px;
+  background-size: 200% 100%;
+  -webkit-animation: 1.5s shine linear infinite;
+          animation: 1.5s shine linear infinite;
+  width: 80%;
+  height: 30rem;
+  margin: 3rem 7rem 0rem 8rem;
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .template-child-11 div {
+    width: auto;
+    margin: 2rem;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .template-child-11 div {
+    width: auto;
+    margin: 2rem;
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .template-child-11 div {
+    width: auto;
+    margin: 2rem;
+  }
+}/*# sourceMappingURL=template6.css.map */

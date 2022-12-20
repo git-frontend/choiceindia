@@ -33,6 +33,13 @@
   src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
   font-display: swap;
 }
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg"), url("../fonts/Poppins-Regular.ttf") format("truetype"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /*Bootstrap Override*/
 /*Font family*/
 /*bg varibales*/
@@ -42,7 +49,7 @@
   font-family: "PoppinsSemiBold", sans-serif;
   color: #ffffff !important;
   background: #221F20 !important;
-  padding: 1.3rem 3rem !important;
+  padding: 1.3rem 2.8rem !important;
   display: inline-block;
   border-radius: 16px !important;
   min-width: 16rem;
@@ -97,9 +104,16 @@
   transition-timing-function: ease-out;
   position: relative;
   font-family: "PoppinsRegular", sans-serif;
+  min-height: 4rem;
+}
+.link-nrl img {
+  margin-right: 0.5rem;
 }
 .link-nrl.white {
   background-color: #F5F5F5;
+}
+.link-nrl.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl .img-ico {
   width: 17rem;
@@ -121,7 +135,7 @@
 }
 .link-nrl .blackcolor {
   color: #13151A;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media (max-width: 768px) {
   .link-nrl .blackcolor {
@@ -157,6 +171,9 @@
 }
 .link-nrl.link-nrl-sm.white {
   background-color: #F5F5F5;
+}
+.link-nrl.link-nrl-sm.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl.link-nrl-sm:hover {
   transform: translateY(-8px);
@@ -196,20 +213,20 @@
 .scroll-top {
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 70px;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   border: 0;
   font-size: 1.9rem;
-  z-index: 999;
+  z-index: 9999;
   color: #ffffff;
   background: #FFCE02;
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 @media (max-width: 767px) {
   .scroll-top {
-    bottom: 58px;
+    display: none;
   }
 }
 .scroll-top .fa-angle-up {
@@ -269,13 +286,16 @@ body {
 .title-first {
   font-size: 3.5rem;
   color: #221F20;
+  font-weight: 600;
   font-family: "PoppinsSemiBold", sans-serif;
 }
 @media (max-width: 767px) {
   .title-first {
     font-size: 2.5rem;
-    line-height: 4rem;
-    font-size: 2.3rem;
+    line-height: 3.5rem;
+  }
+  .title-first br {
+    display: none;
   }
 }
 
@@ -287,6 +307,7 @@ body {
 @media (max-width: 767px) {
   .title-secnd {
     font-size: 2rem;
+    line-height: 3rem;
   }
 }
 
@@ -317,11 +338,6 @@ body {
 @media (max-width: 768px) {
   .heading-sec p br {
     display: none;
-  }
-}
-@media (max-width: 767px) {
-  .heading-sec p {
-    font-size: 1.4rem;
   }
 }
 .heading-sec p.nm-text {
@@ -360,7 +376,7 @@ body {
 
 .App-Body {
   min-height: 100vh;
-  margin-top: 9.5rem;
+  margin-top: 9.25rem;
 }
 @media screen and (max-width: 767px) {
   .App-Body {
@@ -371,7 +387,12 @@ body {
 }
 @media screen and (max-width: 992px) {
   .App-Body {
-    margin-top: 8.6rem;
+    margin-top: 8.45rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .App-Body {
+    margin-top: 6rem;
   }
 }
 
@@ -379,6 +400,76 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.modal-backdrop {
+  z-index: 99999;
+}
+
+.modal {
+  z-index: 99999;
+}
+
+@-webkit-keyframes toTopFromBottom {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toTopFromBottom {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+.common-modal-thankyou .modal-content .modal-header {
+  border: 0;
+}
+.common-modal-thankyou .modal-content .modal-body {
+  padding: 2rem;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.common-modal-thankyou .modal-content .modal-body h4 {
+  margin-top: 1rem;
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  font-size: 1.65rem;
+}
+.common-modal-thankyou .modal-content .modal-body h3 {
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  margin-top: 2rem;
+}
+.common-modal-thankyou .modal-content .modal-footer {
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  padding-bottom: 1.5em;
+}
+.common-modal-thankyou .modal-content .modal-footer .btn-yellow {
+  background-color: #FFCE02;
+  border-radius: 27px;
+  color: #221F20;
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  display: inline-block;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem 0;
 }
 
 /*Bootstrap Override*/
@@ -390,6 +481,63 @@ body {
   -webkit-animation: hideMe 4s forwards;
           animation: hideMe 4s forwards;
 }
+@media screen and (max-width: 767px) {
+  .investor-info-parent {
+    min-height: 1213px;
+  }
+}
+.investor-info-parent .bannersection .wrap {
+  display: flex;
+}
+.investor-info-parent .bannersection .wrap .text {
+  background-color: #221F20;
+  width: 25%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .investor-info-parent .bannersection .wrap .text {
+    width: 100%;
+  }
+}
+.investor-info-parent .bannersection .wrap .text h1 {
+  color: #F5F5F5;
+  font-size: 4.125rem;
+  line-height: 6.1875rem;
+  font-family: "PoppinsBold", sans-serif;
+}
+@media screen and (max-width: 767px) {
+  .investor-info-parent .bannersection .wrap .text h1 {
+    top: 0;
+    font-size: 3rem;
+    line-height: 4rem;
+    padding: 2rem;
+  }
+}
+@media (min-width: 767px) and (max-width: 768px) {
+  .investor-info-parent .bannersection .wrap .text h1 {
+    font-size: 2.75rem;
+    line-height: 3.1875rem;
+  }
+}
+@media (min-width: 820px) and (max-width: 1024px) {
+  .investor-info-parent .bannersection .wrap .text h1 {
+    font-size: 2.75rem;
+  }
+}
+.investor-info-parent .bannersection .wrap .img {
+  width: 75%;
+}
+.investor-info-parent .bannersection .wrap .img img {
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .investor-info-parent .bannersection .wrap .img {
+    display: none;
+  }
+}
 
 body {
   background-color: #ffffff;
@@ -399,51 +547,23 @@ body {
   padding: 0 !important;
 }
 
-.bannersection .wrap {
-  display: flex;
+.invest-iframe {
+  margin-bottom: 5rem;
 }
-.bannersection .wrap .text {
-  background-color: #221F20;
-  width: 25%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.invest-iframe .content {
+  display: none;
 }
-@media screen and (max-width: 767px) {
-  .bannersection .wrap .text {
-    width: 100%;
-  }
-}
-.bannersection .wrap .text h1 {
-  color: #F5F5F5;
-  font-size: 4.125rem;
-  line-height: 6.1875rem;
-  font-family: "PoppinsBold", sans-serif;
-}
-@media screen and (max-width: 767px) {
-  .bannersection .wrap .text h1 {
-    top: 0;
-    font-size: 3rem;
-    line-height: 4rem;
-    padding: 2rem;
-  }
-}
-.bannersection .wrap .img {
-  width: 75%;
-}
-@media screen and (max-width: 767px) {
-  .bannersection .wrap .img {
-    display: none;
-  }
+
+.wrapper {
+  display: none;
 }
 
 .countsect {
-  padding: 9.125rem 0;
+  padding: 5rem 0 3rem 0;
 }
 @media screen and (max-width: 767px) {
   .countsect {
-    padding: 5.125rem 0;
+    padding: 3.125rem 0;
   }
 }
 .countsect .counttext {
@@ -455,8 +575,52 @@ body {
 }
 @media screen and (max-width: 767px) {
   .countsect .counttext {
+    font-size: 1.75rem;
+    line-height: 3.25rem;
+  }
+}
+@media (min-width: 767px) and (max-width: 768px) {
+  .countsect .counttext {
     font-size: 2rem;
   }
+}
+@media (min-width: 820px) and (max-width: 1024px) {
+  .countsect .counttext {
+    font-size: 2rem;
+  }
+}
+.countsect .count .time svg {
+  padding-left: 3px;
+  font-size: 30px;
+}
+.countsect .count .time .green {
+  color: #0BA04A;
+}
+.countsect .count .time .red {
+  color: #ff1a1a;
+}
+.countsect .count .time .result {
+  display: flex;
+  flex-direction: column;
+}
+.countsect .count .time .result svg {
+  height: 1.875rem;
+  width: 1.875rem;
+}
+.countsect .count .time .result .percentage {
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  color: #221F20;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  font-weight: 600;
+}
+.countsect .count .time .result .percentage .green {
+  color: #0BA04A;
+}
+.countsect .count .time .result .percentage .red {
+  color: #ff1a1a;
 }
 .countsect .count .number {
   font-size: 4.125rem;
@@ -465,6 +629,7 @@ body {
   font-family: "PoppinsBold", sans-serif;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 @media screen and (max-width: 767px) {
   .countsect .count .number {
@@ -473,6 +638,11 @@ body {
 }
 .countsect .count .number .green {
   color: #0BA04A;
+  width: 100%;
+}
+.countsect .count .number .red {
+  color: #ff1a1a;
+  width: 100%;
 }
 .countsect .count .number .result {
   display: flex;
@@ -487,9 +657,16 @@ body {
   font-size: 1.5rem;
   line-height: 2.25rem;
   color: #221F20;
+  font-weight: 600;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
 }
 .countsect .count .number .result .percentage .green {
   color: #0BA04A;
+}
+.countsect .count .number .result .percentage .red {
+  color: #ff1a1a;
 }
 .countsect .subtextwrap .nse {
   width: 30%;
@@ -502,7 +679,9 @@ body {
   font-family: "PoppinsRegular", sans-serif;
 }
 .countsect .subtextwrap .time {
-  width: 70%;
+  width: 100%;
+  padding-left: 0.8vw;
+  display: flex;
 }
 .countsect .subtextwrap .time .subtext {
   color: #707070;
@@ -528,6 +707,11 @@ body {
   background: url("../../assets/images/investor-info/investorinfoafterimage.png") top left no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 767px) {
+  .Investormenu:after {
+    display: none;
+  }
+}
 .Investormenu:before {
   content: "";
   position: absolute;
@@ -540,14 +724,35 @@ body {
   background: url("../../assets/images/investor-info/info-bottom.png") bottom right no-repeat;
   background-size: contain;
 }
+@media screen and (max-width: 767px) {
+  .Investormenu:before {
+    display: none;
+  }
+}
 .Investormenu .title {
-  color: #221F20;
-  font-size: 3.5rem;
-  line-height: 5.25rem;
+  color: #221f20;
   font-family: "PoppinsRegular", sans-serif;
+  font-size: 3.5rem;
   font-weight: 600;
+  line-height: 5.25rem;
+  padding-bottom: 6rem;
   text-align: center;
-  padding-bottom: 4.75rem;
+}
+@media screen and (max-width: 767px) {
+  .Investormenu .title {
+    font-size: 2.3rem;
+    line-height: 3.25rem;
+    text-align: left;
+    padding-bottom: 4rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .Investormenu .title {
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: left;
+    padding-bottom: 3rem;
+  }
 }
 .Investormenu .wrap {
   background: #ffffff;
@@ -779,4 +984,51 @@ body {
 }
 .Yeardetail .investor-info-tabs .active-content {
   display: block;
+}
+
+.voting-result .result-ttl {
+  flex-wrap: wrap;
+}
+.voting-result .result-ttl .head {
+  width: 44%;
+}
+.voting-result .result-ttl .head:last-child {
+  width: 12%;
+  text-align: right;
+}
+.voting-result .result-item {
+  flex-wrap: wrap;
+}
+.voting-result .result-item .itm-nm {
+  width: 44%;
+}
+.voting-result .result-item .itm-nm:last-child {
+  width: 12%;
+  text-align: right;
+}
+
+.check-menu-main {
+  min-height: 300px;
+  margin-bottom: 25rem;
+}
+
+.m-auto {
+  margin: auto;
+  transform: scale(0.9);
+}
+
+.m-auto-break {
+  width: 1px;
+  padding: 0px;
+  margin: 0px !important;
+  border: 1px solid;
+}
+
+.dflex {
+  display: flex;
+  padding: 0px;
+}
+
+.menuposition {
+  position: relative;
 }/*# sourceMappingURL=investorsinfo.css.map */
