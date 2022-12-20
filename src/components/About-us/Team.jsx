@@ -101,9 +101,7 @@ function closesection(){
                     <div className="content-extra" >
                     <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
                       <div className="team-img-pos">
-                          <div className="team-img">
-                          <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
-                          </div>
+                          <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid img-profile"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
                           <div className="team-position">
                               <h4>{BoardOfDirector[value].title}<br/> ({BoardOfDirector[value].designation})</h4>
                           </div>
