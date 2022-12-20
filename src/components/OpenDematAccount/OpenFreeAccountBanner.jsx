@@ -80,7 +80,9 @@ const OpenFreeAccountBanner = () => {
         
     }, [toggle]);
 
-    
+    // useEffect(() => {
+    //     console.log('')
+    // },[])    
     return (
         <div>
              <section className="banner-sect" >
