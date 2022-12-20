@@ -108,8 +108,7 @@ function closesection(){
                               <h4>{BoardOfDirector[value].title}<br/> ({BoardOfDirector[value].designation})</h4>
                           </div>
                         </div>
-                        <p>
-                        <h4>{BoardOfDirector[value].description}</h4>
+                        <p>{BoardOfDirector[value].description}
                         </p>
                     </div>
                     </Modal>
