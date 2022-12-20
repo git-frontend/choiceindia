@@ -97,10 +97,10 @@ function closesection(){
                  
                 </Slider>
 {
-  BoardOfDirector && BoardOfDirector[value] ?
+  BoardOfDirector && BoardOfDirector[value] && IsShown2  ?
   <div show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
   <div className="content-extra" >
-  <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => {closesection() }} />
+  <button  className="icon-table cursor-pointer" onClick={() => {closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
     <div className="team-img-pos">
         <div className="team-img">
         <LazyLoader src={BoardOfDirector[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />

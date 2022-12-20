@@ -308,15 +308,15 @@ body{
         }
     }
 }
-.content-extra{
-    // position: fixed;
-    // z-index: 9999;
-    // background: $whiteColor;
-    // width: 600px;
-    // height: 500px;
-    // top: 0;
-    // left: 50%;
-    // transform: translate(-50%, 0);
+.about-team-modal{
+    position: absolute;
+    z-index: 9999999;
+    background: $whiteColor;
+    width: 670px;
+    height: auto;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
     border-radius: 1rem;
     box-shadow: 10px 10px 25px 7px $shadowdark;
     padding:2.5rem 3rem;
@@ -325,6 +325,10 @@ body{
         right: 1.5rem;
         top: 1.5rem;
         z-index: 99;
+        border: 0;
+        padding: 0;
+        outline: none;
+        background: transparent;
     }
     .team-img-pos {
         display: flex;
@@ -335,15 +339,11 @@ body{
         @media (max-width:$sm) {
            padding-bottom: 2rem;
         }
-        .img-profile{
-            width: 240px;
-            height: 240px;
-            object-fit: cover;
-            border-radius: 50%;
-            @media (max-width:$sm) {
-                margin: 0 auto;
-                width: 190px;
-                height: 190px;
+        .team-img{
+            width: 235px;
+            img{
+                width: 100%;
+                border-radius: 10px;
             }
         }
         
@@ -788,6 +788,7 @@ body{
         }
 
         .team-list {
+            position: relative;
             @media (max-width:$sm) {
                 margin-top: 5rem;
             }
