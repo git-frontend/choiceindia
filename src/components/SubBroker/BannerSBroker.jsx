@@ -2,6 +2,7 @@
 import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-without-deposit.webp';
 import SubBrokerForm from './SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function BannerSBroker() {
 

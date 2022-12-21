@@ -11,7 +11,7 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function Banner() {
     const [selected, setSelected] = useState(0);
-    console.log('RRR',reCaptchaKey);
+    // console.log('RRR',reCaptchaKey);
     return (
         <div>
             <section className="mfi-bannersection">
