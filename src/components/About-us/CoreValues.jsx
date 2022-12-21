@@ -1,12 +1,11 @@
 
 import React from "react";
-
 import Innovation from '../../assets/images/about-us/innovation.svg';
-import Optimism from '../../assets/images/about-us/Optimism.svg';
-import Consistency from '../../assets/images/about-us/Consistency.svg';
-import Empowerment from '../../assets/images/about-us/Empowerment.svg';
-import Commitment from '../../assets/images/about-us/Commitment.svg';
-import Honesty from '../../assets/images/about-us/Honesty.svg';
+import Optimism from '../../assets/images/about-us/optimism.svg';
+import Consistency from '../../assets/images/about-us/consistency.svg';
+import Empowerment from '../../assets/images/about-us/empowerment.svg';
+import Commitment from '../../assets/images/about-us/commitment.svg';
+import Honesty from '../../assets/images/about-us/honesty.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from "react-slick";
 function CoreValues() {
