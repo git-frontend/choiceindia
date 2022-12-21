@@ -19,7 +19,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">Whether you want to be a sub broker or require their services, this article will walk you through all the details. Let’s begin exactly who is the sub broker?</p>
 
                                     <h3>What is a Sub Broker?</h3>
-                                        <p className="sml-para-dv">To understand <a href="https://choiceindia.com/blog/sub-broker-meaning/">what is a sub broker</a>, it’s essential to know how they work</p>
+                                        <p className="sml-para-dv">To understand <a href="https://choiceindia.com/blog/sub-broker-meaning/">what is a sub broker</a>, it’s essential to know how they work.</p>
                                         <p className="sml-para-dv">A sub broker is not a trading member of a stock exchange. Instead, these professionals will work on behalf of a stock broker. They will promote and sell the services of this stock broker to interested customers and clients.</p>
                                         <p className="sml-para-dv">So, sub brokers will not have unique services but will connect customers to the stock broker. They will help customers with paperwork, payment and making smarter investment decisions.</p>
                                         <p className="sml-para-dv">According to the number of clients the stock broker receives, they will pay the sub brokers a fixed commission. The agreement document between the sub broker and the broker will specify the earnings and associated formalities.</p>
@@ -79,6 +79,7 @@ function MoreContent() {
                                         <li>Professional stock market experience certificate submission (if applicable)</li>
                                     </ul>
 
+                                    <br />
                                     <h3>Steps to Become a Sub Broker in India</h3>
                                     <p className="sml-para-dv">To be a sub broker in India, you have to first select a stock brokerage company to join. This firm will guide you through the steps required to work with them.</p>
                                     <p className="sml-para-dv">However, the fundamental steps of becoming a sub broker remain the same –</p>

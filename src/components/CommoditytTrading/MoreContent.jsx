@@ -17,95 +17,91 @@ function MoreContent() {
                                     <p className="sml-para-dv">Commodity trades can only be performed only if you open a commodity trading account with a trusted source like Choice. Avail of several benefits like low brokerage on commodity trading and free commodity trading advisory to investing in the commodities suited for your goal, long-term or short-term.</p>
                                     <p className="sml-para-dv">If you are familiar with the nuances of the commodity market, <a href="https://choiceindia.com/open-free-demat-account">open a free demat account</a> with us and break free from significant annual charges. Minimal DP charges of Rs 10 add to the appeal of our platform and make investing economical and accessible for everyone.</p>
                                     <p className="sml-para-dv">However, if you are new to commodities in general, make investment decisions after extensive research. To make learning more accessible, we have compiled the fundamentals of commodities and the associated commodity trading account to ease your transition into an investor.</p>
-
-                                    <h3>What is a Sub Broker?</h3>
-                                        <p className="sml-para-dv">To understand <a href="https://choiceindia.com/blog/sub-broker-meaning/">what is a sub broker</a>, it’s essential to know how they work</p>
-                                        <p className="sml-para-dv">A sub broker is not a trading member of a stock exchange. Instead, these professionals will work on behalf of a stock broker. They will promote and sell the services of this stock broker to interested customers and clients.</p>
-                                        <p className="sml-para-dv">So, sub brokers will not have unique services but will connect customers to the stock broker. They will help customers with paperwork, payment and making smarter investment decisions.</p>
-                                        <p className="sml-para-dv">According to the number of clients the stock broker receives, they will pay the sub brokers a fixed commission. The agreement document between the sub broker and the broker will specify the earnings and associated formalities.</p>
+                                    <br />
+                                    <h3><a href="https://choiceindia.com/blog/what-is-commodity-trading/">What is a Commodity Trading Account?</a></h3>
+                                        <p className="sml-para-dv">The concept of a commodity trading account can be better grasped by understanding the term' commodities.'</p>
+                                        <p className="sml-para-dv">Commodities are raw materials or primary agricultural products that can be traded or used for specific applications. Some common commodities include the following.</p>
+                                        <ul className="terms-list sml-para-dv">
+                                        <li  className="sml-para-dv">Precious metals like gold, silver and platinum</li>
+                                        <li>Agricultural materials like rice, coffee, cocoa, wheat and soybeans</li>
+                                        <li>Energy sector essentials like natural gas</li>
+                                    </ul>
                                       
-
-                                    <h3>How to Start Sub Broker Franchise?</h3>
-                                    <p className="sml-para-dv">To start a sub broker franchise, you must partner with a well-known stock brokerage company. Your objective will be to sell products on behalf of this company to your customers.</p>
-                                    <p className="sml-para-dv">You need to be a SEBI registered sub broker and have cleared the associated exams to begin this franchise. Then, you have to submit the required documents like identity proof and educational certificates.</p>
-                                    <p className="sml-para-dv">The franchise will be functional after you make the required initial payments.</p>
+                                    <p className="sml-para-dv">Certain commodities like rice and wheat are standard household purchases, while precious metals are luxurious. Given that the definition of commodities is clear, we are in a better position to answer the question:</p>
                                     
-                                    <h3>Sub Broker Business Model</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-business-model">sub broker business model</a> has two primary members - the stock brokerage firm and the sub broker professional.</p>
-                                    <p className="sml-para-dv">The broker provides training, support and assistance to the sub broker to deal with clients. In return, the sub broker brings customers to the broker for them to purchase the broker's services and products.</p>
-                                    <p className="sml-para-dv">With every product purchase and financial transaction, the broker will pay a certain amount to the sub broker.</p>
-                                    <p className="sml-para-dv">All the partnership terms will be discussed before the sub broker and broker join forces. In general, the stockbroker decides the terms of the partnership.</p>
-                                    <p className="sml-para-dv">In addition to the sub broker business model, brokerage firms also provide <a href="https://choiceindia.com/authorised-person">Authorised Person</a>, for whom SEBI registration is required, and <a href="https://choiceindia.com/remisier">Remisier</a> , who can function in the same capacity but does not need to register with SEBI and does not require an initial deposit. However, Remisier will get less brokerage sharing than a sub broker or an Authorised Person.</p>
+                                    <h4>What is a Commodity Account?</h4>
+                                    <p className="sml-para-dv">A commodity trading account, or a commodity account, is a consolidated platform for the buying and selling of several commodities and their derivatives. The basic commodity account meaning defines it as an exclusive internet portal for exchanging items - namely gold, energy and agricultural products.</p>
+                                 
+                                    <h3>Benefits of a Commodity Trading Account</h3>
+                                    <p className="sml-para-dv">The commodity trading segment has been rising since 2005, reaching a peak value of 1.8 billion options and futures for agricultural materials in 2019. This popularity arises from several benefits associated with commodity trading, as listed below.</p>
 
-                                    <h3>How Does A Sub Broker Franchise Work?</h3>
-                                    <p className="sml-para-dv">In any sub broker franchise, the sub broker acquires clients, or the broker provides them with their customers. Then, the franchise offers complete support to improve the customer's investments.</p>
-                                    <p className="sml-para-dv">If the customer has queries, they will ask the sub broker, who might direct those to the stock broker for clarification.</p>
 
-                                    <h3>Sub Broker Franchise Cost</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-franchise-cost">sub broker franchise cost</a> can range anywhere between INR 50,000 and 3,00,000. Interested franchisees may need to pay a security deposit to the franchisor. A portion of the initial deposit might be refundable, but it will purely depend upon the franchisor or broker.</p>
-                                    <p className="sml-para-dv">However, the payment terms might vary according to the stock broker.</p>
+                                    <h4>Commodities act as a hedge against inflation</h4>
+                                    <p className="sml-para-dv">Whenever inflation strikes, it leads to an increase in the prices of goods and items around you. Since commodities are primarily raw materials used in everyday products, their price shoots up significantly and helps you balance your portfolio in these trying times.</p>
+                                    
+                                    <h4>Commodities increase in value during geopolitical events</h4>
+                                    <p className="sml-para-dv">The simple principle of demand and supply comes into the picture here. When geopolitical tensions between core export regions arise, it causes a shortage of several essential resources. In turn, the demand for raw materials increases exponentially while their supply is limited.</p>
+                                    <p className="sml-para-dv">In such cases, the market is expected to take a hit, with company stocks faltering to record-low levels. Investing in certain commodities will help you deal with this better and prevent your portfolio from entering a negative value.</p>
 
-                                    <h3><a href="https://choiceindia.com/blog/how-much-does-a-sub-broker-earns-in-india/">How Much a Sub Broker Earns in India?</a></h3>
-                                    <p className="sml-para-dv">A sub broker earns through a fixed commission rate decided beforehand with the stock broker. This amount will depend upon the customer's purchase and associated financial transactions. In short, the better the trade, the more the earnings will be for the sub broker.</p>
-                              
-                                    <h3>Sub Broker Commission</h3>
-                                    <p className="sml-para-dv">The sub broker commission might be between 40% and 80% of the total business transaction amount. Moreover, the commission rate can be high if the stock broker is reputed and has a flourishing business.</p>
-                                    <p className="sml-para-dv">If the broker follows a lump sum payment model, the sub broker will receive a fixed amount on every construction. On the other hand, if the broker chooses a percentage-based model, then the sub broker gets a pre-decided percentage of the transaction as a commission.</p>
-                              
-                                    <h3>Start a Sub Brokership without Deposit with Choice</h3>
-                                    <p className="sml-para-dv">It is possible to be a sub broker without paying the initial deposit. However, you need to identify a stock broker who allows this. So, if you want to begin sub brokership without deposit, Choice will be the best platform.</p>
-                                    <p className="sml-para-dv">Choice has developed an impressive portfolio by walking in the investment sector for more than 25 years. So, you can expect a high revenue-sharing rate by partnering with them.</p>
-                                    <p className="sml-para-dv">The benefits of working with Choice are –</p>
+                                    <h4>Portfolio Diversification</h4>
+                                    <p className="sml-para-dv">Financial experts constantly stress the importance of investing in multiple investment avenues. However, this is often misinterpreted in diversifying your portfolio concerning company stocks spanning different industrial sectors.</p>
+                                    <p className="sml-para-dv">Diversification should span more than a single instrument due to the market's fluctuations. Events like inflation cause high borrowing rates for companies and may cause a decrease in stock value. At times like these, alternate instruments like commodities witness a rise, thereby balancing your overall portfolio.</p>
+
+                                    <h3>Types and Classification of Commodities in India</h3>
+                                    <p className="sml-para-dv">In the developing country of India, commodities are classified mainly into the following categories.</p>
                                     <ul className="terms-list sml-para-dv">
-                                        <li>Exposure to multiple investment products like insurance, retail loans, mutual funds and currency broking</li>
-                                        <li>Approximately INR 2100 incentive per account</li>
-                                        <li>Marketing assistance and professional training</li>
-                                        <li>Cutting-edge software for business management</li>
+                                        <li>Agriculture</li>
+                                        <li>Energy</li>
+                                        <li>Services</li>
+                                        <li>Precious and non-precious metals</li>
+                                    </ul>
+                                    <p className="sml-para-dv">These four influential groups comprise materials like gold, copper, palladium and wheat, which can be traded using two <a href="https://choiceindia.com/blog/types-of-commodity-market/">types of trading in the commodity market</a>.</p>
+                                    <ul className="terms-list sml-para-dv">
+                                    <li><strong className="bold-color">Options contract:</strong> With the options contract, the individual who purchases the options of a particular commodity from the seller has the right (but not the legal obligation) to buy or sell the item at will. Option trading in commodity allows the buyer to utilise the fluctuating price of the entity to book profits.</li>
+                                        <li><strong className="bold-color">Futures contract:</strong> Choosing commodity futures trading enables the buyer to purchase specific quantities of commodities at a fixed and predetermined price (which changes according to market behaviour). The item can then be sold later at a higher price for profit.</li>
+                                        
+                                       
+                                        
                                     </ul>
 
-                                    <h3>Become a Sub Broker in Stock Market</h3>
-                                    <p className="sml-para-dv">If you wish to dip your toes into the stock market and set up a business, being a sub broker is an excellent option. You can guide investors in selecting the best stock options and learn about the broker's investment products.</p>
-                                    <h3>Who Can Become a Sub Broker?</h3>
-                                    <p className="sml-para-dv">Anybody interested in launching a business in the investment domain or needing passive income can become a sub broker. It includes students, working professionals, retired executives and homemakers.</p>
-                                    <p className="sml-para-dv">However, knowing how the stock market works and the various investment options is crucial.</p>
-                              
-                                    <h3>Sub Broker Eligibility</h3>
-                                    <p className="sml-para-dv">You must have completed senior school education to become a sub broker. The <a href="https://choiceindia.com/blog/sub-broker-eligibility/">sub broker eligibility</a> also includes the following criteria –</p>
-                                    <ul className="terms-list sml-para-dv">
-                                        <li>The minimum age for the profession is 21 or above</li>
-                                        <li>You must have a registration form authorized by SEBI</li>
-                                        <li>Must have school and college education documents</li>
-                                        <li>Completion of the National Institute of Securities Markets (NISM) certification is mandatory</li>
-                                        <li>Professional stock market experience certificate submission (if applicable)</li>
-                                    </ul>
+                                    <p className="sml-para-dv">With the knowledge of all commodity trading essentials, it is time to learn how to do commodity trading.</p>
 
-                                    <h3>Steps to Become a Sub Broker in India</h3>
-                                    <p className="sml-para-dv">To be a sub broker in India, you have to first select a stock brokerage company to join. This firm will guide you through the steps required to work with them.</p>
-                                    <p className="sml-para-dv">However, the fundamental steps of becoming a sub broker remain the same –</p>
-                                    <ul className="terms-list sml-para-dv">
-                                        <li>Choose a broker and pay their initial deposit, registration and security amount</li>
-                                        <li>Submit address proof like an Aadhar card, PAN card or electricity bill</li>
-                                        <li>Submit educational qualification proof like your 12th pass certificate or graduation/post-graduate certificate</li>
-                                        <li>Submission of identity proof like your Passport, Aadhar card or Voter ID card is also necessary</li>
-                                    </ul>
 
-                                    <h3>Role of a Sub Broker</h3>
-                                    <p className="sml-para-dv">The responsibility of a sub broker is to help investors obtain excellent returns. They introduce customers to various insurance products and opportunities the stock broker provides. These professionals will work according to the agreement between them and the broker.</p>
-                                    <p className="sml-para-dv">So, sub brokers act as representatives of the brokerage organization to serve investors.</p>
+                                    <h3>How to Start with Commodity Trading?</h3>
+                                    <p className="sml-para-dv">The primary step of commodity trading in India is creating a Demat account from a trusted broker like Choice. Riddled with advantages like <a href="https://choiceindia.com/brokerage-charges"> low brokerage charges</a> and a seamless system of paperless account opening, it is the perfect platform to kickstart your investment journey.</p>
+                                    <p className="sml-para-dv">After creating the initial Demat account, here are the additional steps to make your first trade.</p>
+                                    <ul className="terms-list sml-para-dv">
+                                        <li>Start with depositing a sum into your Demat account equating to the price and quantity of the commodity you plan to purchase</li>
+                                        <li>You can choose from direct commodities, stocks or mutual funds to mark your first investment in commodities</li>
+                                        
+                                    </ul>
+                                    <p className="sml-para-dv">  Each of these instruments has its own merits and demerits. For instance, direct commodities enable you to purchase gold or silver items like coins but possess a high transaction fee. Research wisely and experiment with small sums before making a hefty investment.</p>
+
+                                    <h3>Is Intraday Trading Available for Commodities?</h3>
+                                    <p className="sml-para-dv">You can conduct commodity intraday trading to prevent long-term commitment to commodities. However, intraday trading in commodity comes with a certain amount of risk, and it is preferable to conduct extensive research before trying this option.</p>
+                                    <p className="sml-para-dv">Most brokerage platforms allow for intraday trading from Monday through Saturday. While the weekday trading sessions usually start at 10 am and continue until 11 pm, the Saturday session begins at 10 am and closes at 1:30 pm.</p>
                               
-                                    <h3>Difference between Stock Broker and Sub Broker</h3>
-                                    <p className="sml-para-dv">Let's now focus on the <a href="https://choiceindia.com/blog/difference-between-stock-broker-and-sub-broker/">difference between stock broker and sub broker.</a></p>
-                                    <p className="sml-para-dv">The primary <a href="https://choiceindia.com/blog/role-of-broker-and-sub-broker-in-capital-market/">role of broker and sub broker in capital market</a> is to guide their clients to better investment earnings. However, they differ in their method of working and earning.</p>
+                                    <h3>Does the Commodities Market Offer Options and Futures Trading? </h3>
+                                    <p className="sml-para-dv">Commodity options trading and commodity futures trading comprise a significant chunk of the commodities market. The standard timings for intraday are also applicable for both these options, and you can purchase commodities within the specified time.</p>
+                                    
+
+                                    <h3>How to Choose the Best Commodity Trading Platform in India?</h3>
+                                    <p className="sml-para-dv">For a beginner, it is advisable to check for the following factors before choosing a commodity trading app.</p>
+                                    <ul className="terms-list sml-para-dv">
+                                    <li><strong className="bold-color">Additional costs:</strong> Online commodity platforms may demand a hefty brokerage on commodity trading or increased Demat account charges. Look for platforms that focus on user satisfaction while charging nominal fees.</li>
+                                    <li><strong className="bold-color">Introductory offers:</strong> While introductory offers might be prevalent among various brokers, it is crucial to recognize the ones explicitly suited to your needs. Look for valuable resources like in-built online commodity advisories to learn along with investing.</li>
+                                    <li><strong className="bold-color">User-friendly interface:</strong> A friendly user interface is fundamental for users taking their first steps into commodity trading. Easy access to important pages and sections on the broker platform will help you better get acquainted with the website.</li>
+                                         
+                                    </ul>
+                                    <p className="sml-para-dv">With over 25 years of experience in the field and a host of exciting offers, Choice India supplements its position as one of the best commodity trading platforms in India.</p>
+
+
+                                    <h3>What are the Tax Implications on Commodity Trading?</h3>
+                                    <p className="sml-para-dv">The taxation system in India does not focus on levying a tax on your capital gains. The tax on commodity trading blends your profits from selling the commodities with your existing annual income. You are then asked to add these figures and pay the appropriate tax as per the current tax slabs specified by the Government of India every fiscal year.</p>
+                                    <p className="sml-para-dv">The taxes on commodity trading are relaxed compared to stocks, where you have to pay significant sums on booking profits, both on short-term and long-term gains.</p>
+                                    <p className="sml-para-dv">Overall, indulging in commodity training is an excellent choice for diversifying your portfolio to combat inflation and geopolitical tensions and also helps you save significantly on taxes.</p>
                               
-                                    <h4>Responsibilities of Brokers</h4>
-                                    <p className="sml-para-dv">Brokers handle multiple investment deals, including mutual funds, securities and commodities. They offer investment advice and assistance to their clients.</p>
-                                    <p className="sml-para-dv">Moreover, they may have an online platform where customers can invest conveniently, factoring in the advice. They are a part of the stock exchange and charge a brokerage fee to offer services. Also, they can collaborate with sub brokers to improve their business.</p>
-                              
-                                    <h4>Responsibilities of Sub Brokers</h4>
-                                    <p className="sml-para-dv">Sub brokers are not directly a part of the stock exchange but work with brokers to run their businesses. They bring customers to the stock brokers and earn a commission for each trade.</p>
-                                    <p className="sml-para-dv">They help clients submit the correct documents and invest in the appropriate stocks and investment avenues. In addition, they handle many formalities and transaction details. All this allows brokers to keep customers satisfied and loyal to their brand.</p>
-                                    <p className="sml-para-dv">Before starting your sub broker business, talk to the broker about all the associated details. Focus on the payment terms, payment cycle and business opportunities the broker offers.</p>
-                                    <p className="sml-para-dv">Conduct thorough research about your preferred broker before finalizing them to maximize your earnings. Always choose an established stock broker to access a vast customer base and boost your brand.</p>
+                                    
                               </div>
                           </div>
                       </div>
