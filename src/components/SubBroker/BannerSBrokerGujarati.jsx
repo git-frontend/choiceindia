@@ -40,7 +40,9 @@ function BannerSBroker() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm language='gujarati'/>
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <SubBrokerForm language='gujarati' />
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

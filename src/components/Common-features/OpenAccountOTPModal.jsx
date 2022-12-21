@@ -194,12 +194,12 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 "mobile_no": mobileNumber,
                 "old_session_id": otpID.current,
                 "request_source": "CHOICEINDIA",
-                "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+                // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
             let requestMF = {
                 
                 "old_session_id": otpID.current,
-                "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+                // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
 
             openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
@@ -233,7 +233,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 "mobile_no": mobileNumber,
                 "request_source": ((type2=='MF' )? "MF" : "CHOICEINDIA"),
                 "session_id": otpID.current,
-                "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+                // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
             }
             openAccountService.OTPOnCall(request,type2).then((res) => {
                 hideLoader('OTPOnCallLoader');
