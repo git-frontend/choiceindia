@@ -4,19 +4,7 @@ import { Accordion, Button } from "react-bootstrap";
 
 
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, faClose, faHeadphones } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import image1 from '../../assets/images/about-us/vinita-patodia.webp';
-import image2 from '../../assets/images/about-us/kamal-poddar.webp';
-import image3 from '../../assets/images/about-us/suyash-patodia.webp';
-import image4 from '../../assets/images/about-us/arun-poddar.webp';
-import image5 from '../../assets/images/about-us/ajay-kejriwal.webp';
-import image6 from '../../assets/images/about-us/subodh-kumar-agarwal.webp';
-import image7 from '../../assets/images/about-us/akthakur.webp';
-import image8 from '../../assets/images/about-us/sudha-bhushan.webp';
-import image9 from '../../assets/images/about-us/sandeep-singh.webp';
-import image10 from '../../assets/images/about-us/kanhaiyalal-beriwal.webp';
-import image11 from '../../assets/images/about-us/kamal-poddar-2.webp';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from "react-slick";
 import LazyLoader from '../Common-features/LazyLoader';
 import BoardOfDirector from '../../Data/Strategies';
@@ -30,7 +18,7 @@ function Team() {
     speed: 2000,
     arrows: false,
     slidesToShow: 4,
-    autoplay: false,
+    autoplay: true,
     margin: 15,
     dots: true,
     autoplaySpeed: 800,
@@ -97,26 +85,26 @@ function closesection(){
                  
                 </Slider>
 
-  <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
-  <div className="content-extra" >
-  <button  className="icon-table cursor-pointer" onClick={() => {closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
- 
-    <div>
-      <div className="team-img-pos" key={(BoardOfDirector||[])[value].id}>
-        <div className="team-img">
-        <LazyLoader src={(BoardOfDirector||[])[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
-        </div>
-        <div className="team-position">
-            <h4>{(BoardOfDirector||[])[value].title}<br/> ({(BoardOfDirector||[])[value].designation})</h4>
-        </div>
-      </div>
-      <p>{(BoardOfDirector||[])[value].description}
-      </p>
+                  <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
+                  <div className="content-extra" >
+                  <button  className="icon-table cursor-pointer" onClick={() => {closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
+                
+                    <div>
+                      <div className="team-img-pos" key={(BoardOfDirector||[])[value].id}>
+                        <div className="team-img">
+                        <LazyLoader src={(BoardOfDirector||[])[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        </div>
+                        <div className="team-position">
+                            <h4>{(BoardOfDirector||[])[value].title}<br/> ({(BoardOfDirector||[])[value].designation})</h4>
+                        </div>
+                      </div>
+                      <p>{(BoardOfDirector||[])[value].description}
+                      </p>
 
-    </div>
-    
-  </div>
-  </Modal>
+                    </div>
+                    
+                  </div>
+                  </Modal>
 
                
               </div>

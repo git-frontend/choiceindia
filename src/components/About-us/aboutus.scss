@@ -340,36 +340,39 @@ body{
         outline: none;
         background: transparent;
         @media (max-width:$sm) {
-            right: 0.4rem;
-            top: 0.2rem;
+            right: 0.8rem;
+            top: 0.4rem;
         }
     }
     .team-img-pos {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
         align-items: center;
         padding-bottom: 2rem;
+        justify-content: space-between;
         @media (max-width:$sm) {
            padding-bottom: 2rem;
         }
         .team-img{
-            width: 235px;
+            width: 156;
             img{
-                width: 100%;
                 border-radius: 10px;
-                height: 18rem;
+                height: 172px;
+                width: 156px;
+                object-fit: cover;
+                object-position: top;
                 @media (max-width:$sm) {
                     height: auto;
                 }
             }
             @media (max-width:$sm) {
                 width: 100%;
+                text-align: center;
             }
         }
         
         .team-position{
-            width: calc(100% - 260px);
+            width: calc(100% - 180px);
             @media (max-width:$sm) {
                 width: 100%;
             }
