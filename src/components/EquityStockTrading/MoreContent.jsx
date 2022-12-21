@@ -81,26 +81,19 @@ function MoreContent() {
                                     <p className="sml-para-dv"> Lastly, the closing session is between 15.40 and 16.00 hrs, where the final exchanges take place.</p>
                                     <br />
                                     <h3>Documents Required To Open Equity Trading Account </h3>
-                                    
+                                    <p className="sml-para-dv"> When you contact a firm to <a href="https://choiceindia.com/open-trading-account">open a trading account</a>, they'll inform you about the necessary documents. These will probably include the following – </p>
                                     <ul className="terms-list sml-para-dv">
-                                        <li><strong className="bold-color">Forex Trading Brokerage charges :</strong> While this depends on your choice of online broker, the forex trading brokerage charges in India are usually 0.02% for futures and for options Rs. 20 per trade or lot.</li>
-                                        <li><strong className="bold-color">Goods and Services Tax (GST) :</strong> The GST levied depends on the value of the transaction undertaken. For instance, transactions lesser than 1 lakh only comprise a 1% taxable value. The tax amount attracted is 18% of this taxable value.</li>
-                                        <li><strong className="bold-color">Stamp duties :</strong>The payable stamp duty differs according to the state where you reside.</li>
-                                        <li><strong className="bold-color">Direct tax :</strong> The profits acquired from forex trading are added to your overall income, and you are taxed according to the relevant pre-defined tax slabs as per the Government of India.</li>
+                                        <li>Identity proof, such as a PAN card or Aadhar card </li>
+                                        <li>Address proof, such as an Aadhar card, driving license, or electricity bill</li>
+                                        <li>Income proof, which can include salary slips or Income Tax Return document </li>
+                                        <li>Bank account proof, like your passbook or a canceled cheque</li>
+                                        <li>A passport-size photograph</li>
+                                        <li>Your official signature on a white sheet of paper</li>
                                     
                                     </ul>
-
-                                    <br />
-                                    <h3>What documents are required to Open a Forex Currency Trading Account in India?</h3>
-                                    <p className="sml-para-dv">Opening a forex trading account is no different than opening a trading account. Hence, it requires some standard documents, as listed below.</p>
-                                    <ul className="terms-list sml-para-dv">
-                                        <li>Proof-of-identity (can include government-issued documents like passport, driver's licence aadhar, voter's ID, pan card)</li>
-                                        <li>Address proof (voter's ID, driver's licence, ration card, aadhar)</li>
-                                        <li>Income proof (bank account statements of the last six months)</li>
-                                        <li>Proof of bank account (Cancelled check from your bank)</li>
-                                    
-                                    </ul>
-                                    <p className="sml-para-dv">Once you confirm your identity and verify your credentials with these documents, you are in possession of a <a href="https://choiceindia.com/demat-account">Demat account</a>. You can use it to trade derivatives or forex and explore other financial instruments!</p>
+                                    <p className="sml-para-dv"> Before opening your equity trading account, discuss all the associated fees with the broker. With complete transparency, you can increase your wealth in the long run. However, it is vital to take fewer risks if you're inexperienced.</p>
+                                    <p className="sml-para-dv">Even if you find a share lucrative, start by investing a low sum into it. You can slowly increase your investment amount according to your risk-taking appetite. Keep improving your market knowledge to make better investment decisions.</p>
+                                   
 
                               </div>
                           </div>
