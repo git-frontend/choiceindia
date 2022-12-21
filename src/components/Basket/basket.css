@@ -521,12 +521,12 @@ body {
 .baskets-features-cont {
   padding: 0 0 0 0;
 }
-.baskets-features-cont .exp-btn {
+.baskets-features-cont .exp-btn a {
   color: #FFFFFF;
   font-family: "PoppinsSemiBold", sans-serif;
   font-size: 2rem;
 }
-.baskets-features-cont .exp-btn:hover {
+.baskets-features-cont .exp-btn a:hover {
   color: #FFCE02;
 }
 .baskets-features-cont .heading-sec {

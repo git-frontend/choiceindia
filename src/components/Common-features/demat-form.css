@@ -38,6 +38,13 @@
   src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
   font-display: swap;
 }
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg"), url("../fonts/Poppins-Regular.ttf") format("truetype"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /*Bootstrap Override*/
 /*Font family*/
 /*bg varibales*/
@@ -47,7 +54,7 @@
   font-family: "PoppinsSemiBold", sans-serif;
   color: #ffffff !important;
   background: #221F20 !important;
-  padding: 1.3rem 3rem !important;
+  padding: 1.3rem 2.8rem !important;
   display: inline-block;
   border-radius: 16px !important;
   min-width: 16rem;
@@ -102,9 +109,16 @@
   transition-timing-function: ease-out;
   position: relative;
   font-family: "PoppinsRegular", sans-serif;
+  min-height: 4rem;
+}
+.link-nrl img {
+  margin-right: 0.5rem;
 }
 .link-nrl.white {
   background-color: #F5F5F5;
+}
+.link-nrl.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl .img-ico {
   width: 17rem;
@@ -126,7 +140,7 @@
 }
 .link-nrl .blackcolor {
   color: #13151A;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media (max-width: 768px) {
   .link-nrl .blackcolor {
@@ -162,6 +176,9 @@
 }
 .link-nrl.link-nrl-sm.white {
   background-color: #F5F5F5;
+}
+.link-nrl.link-nrl-sm.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl.link-nrl-sm:hover {
   transform: translateY(-8px);
@@ -201,20 +218,20 @@
 .scroll-top {
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 70px;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   border: 0;
   font-size: 1.9rem;
-  z-index: 999;
+  z-index: 9999;
   color: #ffffff;
   background: #FFCE02;
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 @media (max-width: 767px) {
   .scroll-top {
-    bottom: 58px;
+    display: none;
   }
 }
 .scroll-top .fa-angle-up {
@@ -274,13 +291,16 @@ body {
 .title-first {
   font-size: 3.5rem;
   color: #221F20;
+  font-weight: 600;
   font-family: "PoppinsSemiBold", sans-serif;
 }
 @media (max-width: 767px) {
   .title-first {
     font-size: 2.5rem;
-    line-height: 4rem;
-    font-size: 2.3rem;
+    line-height: 3.5rem;
+  }
+  .title-first br {
+    display: none;
   }
 }
 
@@ -292,6 +312,7 @@ body {
 @media (max-width: 767px) {
   .title-secnd {
     font-size: 2rem;
+    line-height: 3rem;
   }
 }
 
@@ -322,11 +343,6 @@ body {
 @media (max-width: 768px) {
   .heading-sec p br {
     display: none;
-  }
-}
-@media (max-width: 767px) {
-  .heading-sec p {
-    font-size: 1.4rem;
   }
 }
 .heading-sec p.nm-text {
@@ -365,7 +381,7 @@ body {
 
 .App-Body {
   min-height: 100vh;
-  margin-top: 9.5rem;
+  margin-top: 9.25rem;
 }
 @media screen and (max-width: 767px) {
   .App-Body {
@@ -376,7 +392,12 @@ body {
 }
 @media screen and (max-width: 992px) {
   .App-Body {
-    margin-top: 8.6rem;
+    margin-top: 8.45rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .App-Body {
+    margin-top: 6rem;
   }
 }
 
@@ -384,6 +405,76 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.modal-backdrop {
+  z-index: 99999;
+}
+
+.modal {
+  z-index: 99999;
+}
+
+@-webkit-keyframes toTopFromBottom {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toTopFromBottom {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+.common-modal-thankyou .modal-content .modal-header {
+  border: 0;
+}
+.common-modal-thankyou .modal-content .modal-body {
+  padding: 2rem;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.common-modal-thankyou .modal-content .modal-body h4 {
+  margin-top: 1rem;
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  font-size: 1.65rem;
+}
+.common-modal-thankyou .modal-content .modal-body h3 {
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  margin-top: 2rem;
+}
+.common-modal-thankyou .modal-content .modal-footer {
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  padding-bottom: 1.5em;
+}
+.common-modal-thankyou .modal-content .modal-footer .btn-yellow {
+  background-color: #FFCE02;
+  border-radius: 27px;
+  color: #221F20;
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  display: inline-block;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem 0;
 }
 
 .demat-account-form {
@@ -397,6 +488,7 @@ body {
 }
 .demat-account-form .sub-formgrp {
   margin-bottom: 1.5rem;
+  position: relative;
 }
 .demat-account-form .sub-formgrp .formcontrol {
   background: #ffffff;
@@ -413,6 +505,22 @@ body {
 .demat-account-form .sub-formgrp .formcontrol.formpadding {
   padding: 1.2rem 1.5rem;
 }
+.demat-account-form .sub-formgrp .formcontrol.formpadding .react-dropdown-select-content {
+  flex-wrap: inherit;
+}
+.demat-account-form .sub-formgrp .formcontrol.formpadding .react-dropdown-select-content > span {
+  font-size: 1.2rem;
+}
+.demat-account-form .sub-formgrp .react-dropdown-select .react-dropdown-select-input {
+  width: 100% !important;
+  font-size: 1.2rem;
+}
+.demat-account-form .sub-formgrp .react-dropdown-select .react-dropdown-select-item {
+  font-size: 1.2rem !important;
+}
+.demat-account-form .sub-formgrp .react-dropdown-select .react-dropdown-select-no-data {
+  color: #221F20 !important;
+}
 .demat-account-form .sub-formgrp input[type=number]::-webkit-inner-spin-button,
 .demat-account-form .sub-formgrp input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -421,9 +529,11 @@ body {
 .demat-account-form .sub-formgrp.cust-checkbox {
   display: flex;
   align-items: flex-start;
+  text-align: left;
 }
 .demat-account-form .sub-formgrp.cust-checkbox .form-check {
   margin-right: 0;
+  font-size: 1.2rem;
 }
 .demat-account-form .sub-formgrp.cust-checkbox .lbl {
   font-size: 1.2rem;
@@ -431,13 +541,14 @@ body {
   font-family: "PoppinsRegular", sans-serif;
 }
 .demat-account-form .sub-formgrp.cust-checkbox .lbl .link-tc {
-  color: #0066B3;
+  color: #0066B3 !important;
   font-family: "PoppinsSemiBold", sans-serif;
   text-decoration: none;
   display: block;
 }
 .demat-account-form .sub-formgrp.cust-checkbox .link-tc {
   cursor: pointer;
+  color: #0066B3 !important;
 }
 .demat-account-form .sub-formgrp .sendbtn {
   width: 100%;
@@ -445,6 +556,14 @@ body {
 .demat-account-form .sub-formgrp .sendbtn:hover {
   background: #221F20 !important;
   color: #ffffff !important;
+}
+.demat-account-form .sub-formgrp .valid-ss {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: -3.5rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
 .demat-account-form .form-ttl {
   text-align: center;
@@ -454,10 +573,62 @@ body {
   margin-bottom: 3rem;
 }
 @media (max-width: 768px) {
+  .demat-account-form .form-ttl {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 768px) {
   .demat-account-form {
     width: 100%;
     max-width: inherit;
   }
+}
+.demat-account-form .valid-ss {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  font-size: 1.3rem;
+}
+
+.otp-mdl-input-chk {
+  /* Chrome, Safari, Edge, Opera */
+  /* Firefox */
+}
+.otp-mdl-input-chk input::-webkit-outer-spin-button,
+.otp-mdl-input-chk input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.otp-mdl-input-chk input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/** success or error modal (add-lead) */
+.ad-ld-mdl-head {
+  border: none;
+}
+
+.ad-ld-mdl-bdy {
+  border: none;
+  margin: 0 auto;
+  text-align: center;
+}
+.ad-ld-mdl-bdy img, .ad-ld-mdl-bdy p {
+  padding: 1rem;
+}
+
+.ad-ld-mdl-ftr {
+  border: none;
+  margin: 0 auto;
+}
+.ad-ld-mdl-ftr button {
+  padding: 10px 32px 10px 32px;
+}
+
+.ad-ld-mdl-btn {
+  background-color: rgb(140, 212, 245);
+  border: none;
 }
 
 .opt-body {
@@ -486,10 +657,6 @@ body {
 .otp-modal-footer {
   border: none;
   text-align: center;
-}
-
-.otp-modal-footer,
-p {
   margin: 0.5em;
 }
 
@@ -570,15 +737,13 @@ p {
 
 .marginLoader {
   /* margin: 0 3.9rem 0 3.9rem; */
-  margin-left: 4.2rem;
-  margin-right: 4.2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   /* padding-left: 4rem;
   padding-right: 4rem; */
 }
 
 .exit-intent-sleekbox-overlay {
-  display: none;
-  position: fixed;
   left: 0;
   top: 0;
   width: 100%;
@@ -586,23 +751,7 @@ p {
   background: rgba(62, 64, 79, 0.3019607843);
 }
 .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup {
-  box-sizing: border-box;
   background: #ffffff;
-  max-width: 502px;
-  margin: 0 auto;
-  border-radius: 16px;
-  margin: 0 auto;
-  margin-top: 11rem;
-  position: relative;
-}
-.exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .closebtn {
-  color: #221F20;
-  text-decoration: none;
-  float: right;
-  top: 0;
-  right: 15px;
-  position: absolute;
-  font-size: 3rem;
 }
 .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .digit-otp {
   width: 90% !important;
@@ -617,6 +766,7 @@ p {
   color: #221F20;
   margin: 0 2px;
   letter-spacing: 10px;
+  margin: 0 auto;
 }
 .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .digit-otp::-moz-placeholder {
   color: transparent;
@@ -628,7 +778,7 @@ p {
   color: transparent;
 }
 .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row {
-  padding: 56px 70px;
+  padding: 1rem 0;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -715,6 +865,7 @@ p {
   outline: none !important;
   transition: 0.5s;
   -webkit-transition: 0.5s;
+  margin-bottom: 2rem;
 }
 .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row .popup-sub-right .btn-bg:hover {
   background: #FFCE02 !important;
@@ -723,6 +874,11 @@ p {
 @media only screen and (max-width: 992px) {
   .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row .popup-sub-right .btn-bg {
     font-size: 14px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row .popup-sub-right .btn-bg {
+    margin-bottom: 2rem;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -738,12 +894,18 @@ p {
   margin-bottom: 0;
   background-color: transparent;
   border: none;
-  margin: 2rem 1rem;
+  margin: 1rem;
 }
 @media only screen and (max-width: 767px) {
   .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row .popup-sub-right .resend {
     font-size: 14px;
     line-height: 22px;
+    margin: 0.5rem;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup .popup-sub-row .popup-sub-right .ortext {
+    display: block;
   }
 }
 @media only screen and (max-width: 767px) {
@@ -767,7 +929,7 @@ p {
 @media only screen and (max-width: 767px) {
   .exit-intent-sleekbox-overlay .exit-intent-sleekbox-popup {
     max-width: 400px;
-    margin-top: 1rem;
+    margin-top: 7rem;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -775,10 +937,6 @@ p {
     max-width: 94%;
     padding: 30px 10px 10px 10px;
   }
-}
-.exit-intent-sleekbox-overlay.sleekbox-popup-active {
-  display: block;
-  z-index: 99999;
 }
 
 .digit-group input {
@@ -820,4 +978,29 @@ p {
   height: 100%;
   background: rgba(62, 64, 79, 0.3019607843);
   overflow: auto;
+}
+
+.info-mdl-pup {
+  margin: auto;
+}
+
+.otp-main-modal .modal-dialog {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0;
+  width: 500px;
+}
+.otp-main-modal .modal-dialog .modal-content .exit-intent-sleekbox-popup {
+  padding: 0;
+  margin: 0;
+}
+.otp-main-modal .modal-dialog .modal-content .exit-intent-sleekbox-overlay {
+  background: #ffffff;
+}
+@media (max-width: 767px) {
+  .otp-main-modal .modal-dialog {
+    width: 98%;
+  }
 }/*# sourceMappingURL=demat-form.css.map */
