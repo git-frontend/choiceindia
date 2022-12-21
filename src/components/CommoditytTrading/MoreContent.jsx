@@ -10,13 +10,13 @@ function MoreContent() {
               <div className="container">
                   <div className="row">
                       <div className="col-md-12 text-center">
-                          <h2 className="title-secnd">How To Become a Sub Broker</h2>
+                          <h2 className="title-secnd">Open Commodity Trading Account Online for Free</h2>
                      </div>
                           <div className="col-md-12">
                               <div className="terms-cont" id="style-1">
-                                    <p className="sml-para-dv">As many working professionals are interested in starting stock investment, being a sub broker can be a great career option. You can help these customers get into the stock market and begin investing.</p>
-                                    <p className="sml-para-dv">For this, you have to work with established stock brokers to help expand their business.</p>
-                                    <p className="sml-para-dv">Whether you want to be a sub broker or require their services, this article will walk you through all the details. Let’s begin exactly who is the sub broker?</p>
+                                    <p className="sml-para-dv">Commodity trades can only be performed only if you open a commodity trading account with a trusted source like Choice. Avail of several benefits like low brokerage on commodity trading and free commodity trading advisory to investing in the commodities suited for your goal, long-term or short-term.</p>
+                                    <p className="sml-para-dv">If you are familiar with the nuances of the commodity market, <a href="https://choiceindia.com/open-free-demat-account">open a free demat account</a> with us and break free from significant annual charges. Minimal DP charges of Rs 10 add to the appeal of our platform and make investing economical and accessible for everyone.</p>
+                                    <p className="sml-para-dv">However, if you are new to commodities in general, make investment decisions after extensive research. To make learning more accessible, we have compiled the fundamentals of commodities and the associated commodity trading account to ease your transition into an investor.</p>
 
                                     <h3>What is a Sub Broker?</h3>
                                         <p className="sml-para-dv">To understand <a href="https://choiceindia.com/blog/sub-broker-meaning/">what is a sub broker</a>, it’s essential to know how they work</p>
