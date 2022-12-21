@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -14,6 +14,7 @@ import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
 import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
 import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function SubBrokerForm(props) {
 
@@ -59,6 +60,8 @@ function SubBrokerForm(props) {
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const [captchaToken, setCaptchaToken] = useState('');
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -387,6 +390,28 @@ function SubBrokerForm(props) {
             setStatesDropdown([]);
         });
     }
+
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('sendOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('sendOTPLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            sendOTP();
+        }
+    }, [captchaToken]);
 
     useEffect(() => {
         fetchQueryParams();
