@@ -210,7 +210,7 @@ function Contactdetail() {
                         <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
                         {/* <img src={clock} alt="Loading" /> */}
                         <p className="mt-4 maintitle">Cyber Security</p>
-                        <p className="subtext">+(91) 88 2424 2424 ( IVR Option 5 )</p>
+                        <p className="subtext"><a href="tel:8824242424">+(91) 88 2424 2424 ( IVR Option 5 )</a></p>
                         <p className="subtext"><a href="mailto:security.support@choiceindia.com" target="_blank">security.support@choiceindia.com</a></p>
                      </div>
                   </div>

@@ -76,7 +76,7 @@ function Contactbanner() {
     });
   }
   function selectdepartment() {
-    departmentlist = event.target.value.split("-")
+    departmentlist = event.target.value.split("+")
     setdept(departmentlist)
     setSubListid(true);
     document.getElementById('dropdown-basic').value = "Select here"
@@ -170,7 +170,7 @@ function Contactbanner() {
                             list?.map((res, i) => {
                               return (
 
-                                <option value={res.id + '-' + res.department}>{res.department}</option>
+                                <option value={res.id + '+' + res.department+ '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.department}</option>
 
                               )
                             })
@@ -206,7 +206,7 @@ function Contactbanner() {
 
                               return (
 
-                                <option value={res.sub_department + '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.sub_department}</option>
+                                <option value={res.sub_department + '+' + res.email_id}>{res.sub_department}</option>
 
                               )
                             })
@@ -241,24 +241,24 @@ function Contactbanner() {
               <div className="col-md-12">
                 <div className="cnt-form-details">
                   {
-                     subdept ?
+                     dept ?
                       <div className="left-from">
                         <p className="whiteus-text colorchange">Contact information</p>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
-                          <div className="form-data-right"><p className="form-right-text" >{(subdept || [])[2] || '+91-022-6707 9999'}</p></div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[3] || '+91-022-6707 9999'}</p></div>
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
-                          <div className="form-data-right"> <p className="form-right-text" >{(subdept || [])[4] ||'Between 9:30 AM to 6:30 PM Monday to Saturday'}</p></div>
+                          <div className="form-data-right"> <p className="form-right-text" >{(dept || [])[5] ||'Between 9:30 AM to 6:30 PM Monday to Saturday'}</p></div>
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                          <div className="form-data-right"><p className="form-right-text">{(subdept || [])[1] || 'customercare@choiceindia.com'}</p></div>
+                          <div className="form-data-right"><p className="form-right-text">{(dept || [])[2] || 'customercare@choiceindia.com'}</p></div>
                         </div>
                         <div className="form-data">
                           <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
-                          <div className="form-data-right"><p className="form-right-text" >{(subdept || [])[3] || 'Choice International Limited, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
+                          <div className="form-data-right"><p className="form-right-text" >{(dept || [])[4] || 'Choice International Limited, Sunil Patodia Tower,J.B. Nagar, Andheri (East),Mumbai 400099'}</p> </div>
                         </div>
                       </div>
                      :
@@ -266,7 +266,7 @@ function Contactbanner() {
                       <p className="whiteus-text colorchange">Contact information</p>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={phoneicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Phone</span> </div>
-                        <div className="form-data-right"><a href="tel:02267079999" target="_blank"><p className="form-right-text" >+91-022-6707 9999</p></a> </div>
+                        <div className="form-data-right"><p className="form-right-text" >+91-022-6707 9999</p></div>
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={openicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding"> Open</span></div>
@@ -275,7 +275,7 @@ function Contactbanner() {
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={emailicon} className={"img-fluid "} width={'18'} height={'18'} /><span className="svgpadding"> Email</span> </div>
-                        <div className="form-data-right"><a href="mailto:customercare@choiceindia.com" target="_blank"><p className="form-right-text">customercare@choiceindia.com</p></a></div>
+                        <div className="form-data-right"><p className="form-right-text">customercare@choiceindia.com</p></div>
                       </div>
                       <div className="form-data">
                         <div className="form-data-left"><LazyLoader src={officeicon} className={"img-fluid "} width={'18'} height={'18'} /> <span className="svgpadding">Office</span></div>
