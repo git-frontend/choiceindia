@@ -956,6 +956,28 @@
 
 
             }
+            .customer-grivence{
+                .table {
+                    td {
+    
+                        font-size: 1.3rem;
+                        line-height: 1.5;
+                        .mail-a {
+                            font-weight: bold;
+                            text-decoration: none;
+                            color: $blacktext;
+                        }
+                    }
+    
+                    th {
+                        vertical-align: top;
+                        font-size: 1.4rem;
+                        line-height: 1.5;
+                    }
+    
+    
+                }
+            }
         }
 
         // .subtxtcontent {

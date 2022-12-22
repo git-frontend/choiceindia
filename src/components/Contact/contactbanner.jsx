@@ -368,7 +368,7 @@ function Contactbanner() {
               </div>
             </div>
           </div>
-          <Modal show={nbfc} onHide={() => { setNbfc(false) }} size="xl" aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+          <Modal show={nbfc} onHide={() => { setNbfc(false) }} size="lg" aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
 
             <div className="container mainwrapquick-table">
               <div className="row ">
@@ -386,26 +386,26 @@ function Contactbanner() {
 
 
                     <Modal.Body>
-                      <div className="table-responsive">
+                      <div className="table-responsive customer-grivence">
                         <table className="table table-striped">
                           <tbody>
                             <tr>
                               <th>Level 1 - Customer Care</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">Write in to <strong>customercare.finserv@choiceindia.com</strong> or call us on our customer care number <strong>1800 203 5193</strong></td>
+                              <td className="pb-5">Write in to <a href="mailto:customercare.finserv@choiceindia.com" target="_blank" className="mail-a">customercare.finserv@choiceindia.com</a> or call us on our customer care number <strong>1800 203 5193</strong></td>
                             </tr>
                             <tr>
                               <th>Level 2 - Grievance & Redressal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <strong>Grievances@choiceindia.com</strong></td>
+                              <td className="pb-5">If you are not satisfied with the resolution provided to you, you may please reach to Customer Grievances Redressal Officer on <a href="mailto:Grievances@choiceindia.com" target="_blank" className="mail-a">Grievances@choiceindia.com</a></td>
                             </tr>
                             <tr>
                               <th>Level 3 - Customer Principal Nodal Officer</th>
                             </tr>
                             <tr>
-                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <strong>principalnodalofficer@choiceindia.com</strong></td>
+                              <td className="pb-5">If you are still not satisfied with the resolution provided by the Officials on above mentioned Levels, we request you to kindly reach to our Principal Nodal Officer on <a href="mailto:principalnodalofficer@choiceindia.com" target="_blank" className="mail-a">principalnodalofficer@choiceindia.com</a></td>
                             </tr>
                             <tr>
                               <th>Level 4 - Centralised Receipt and Processing Centre </th>
@@ -419,7 +419,7 @@ function Contactbanner() {
                                 Reserve Bank of India<br />
                                 Central Vista, Sector 17<br />
                                 Chandigarh – 160017<br />
-                                Email id: crpc@rbi.org.in
+                                Email id: <a href="mailto:crpc@rbi.org.in" target="_blank" className="mail-a">crpc@rbi.org.in</a>
                               </td>
                             </tr>
                           </tbody>
