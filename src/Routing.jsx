@@ -115,6 +115,7 @@ const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubB
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
 const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
+const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/NachCancellation'));
 
 
 function Routing() {
@@ -606,6 +607,12 @@ function Routing() {
                          <Route exact path='/cfpl-policies' element={
                             <React.Suspense>
                                 < LazyCfplPolicies />
+                            </React.Suspense>
+                        } />
+
+                         <Route exact path='/nach-cancellation' element={
+                            <React.Suspense>
+                                < LazyNachCancellation />
                             </React.Suspense>
                         } />
 
