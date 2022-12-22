@@ -114,6 +114,7 @@ const LazyHindiMutualFundDistributor = React.lazy(() => import('./components/Mut
 const Lazysubbrokertelagu = React.lazy(() => import('./components/SubBroker/SubBrokerTelagu'));
 const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestStock'));
 const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
+const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
 
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 function Routing() {
@@ -465,11 +466,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/ipo-investment-account' element={
+                        {/* <Route exact path='/ipo-investment-account' element={
                             <React.Suspense>
                                 < LazyIPOInvestment />
                             </React.Suspense>
-                        } />
+                        } /> */}
 
 
                         <Route exact path='/client-details-update' element={
@@ -570,11 +571,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                         {/* <Route exact path='/intraday-charges' element={
+                         <Route exact path='/intraday-charges' element={
                             <React.Suspense>
                                 < LazyIntradayCharges />
                             </React.Suspense>
-                        } /> */}
+                        } />
                          <Route exact path='/marathi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokermarathi />
@@ -605,6 +606,11 @@ function Routing() {
                         <Route exact path='/government-advisory' element={
                             <React.Suspense>
                                 < Lazygovernementadvisory />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/cfpl-policies' element={
+                            <React.Suspense>
+                                < LazyCfplPolicies />
                             </React.Suspense>
                         } />
 

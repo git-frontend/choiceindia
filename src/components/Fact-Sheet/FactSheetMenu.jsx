@@ -49,7 +49,7 @@ function FactSheetMenu() {
             <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 ">
+                        <div className="col-md-12 menuwrap">
                             <h2 className="title">Fact Sheet</h2>
                             <Navbar />
                         </div>

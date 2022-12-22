@@ -53,7 +53,7 @@ const HindiTradingAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Register Online"} />
+                                <LazyLoader src={Image19} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"नि:शुल्क ट्रेडिंग अकाउंट खोलने के लिए रजिस्टर करें"} />
                                     {/* <img src={Image19}  width={"93"} height={"93"} alt="Step One" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step One"} />
                                     {/* <img src={Image20}  width={"127"} height={"23"} alt="Step One" className="img-fluid lazyload image deskimg" /> */}
@@ -70,7 +70,7 @@ const HindiTradingAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap">
-                                <LazyLoader src={Image22} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"In Person Verification"} />
+                                <LazyLoader src={Image22} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"मुफ़्त ट्रेडिंग अकाउंट खोलने के लिए पूरा आईपीवी करें"} />
                                     {/* <img src={Image22}  width={"93"} height={"93"} alt="Step Two" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Two"} />
                                     {/* <img src={Image20}  width={"127"} height={"23"} alt="Step Two" className="img-fluid lazyload image deskimg" /> */}
@@ -87,7 +87,7 @@ const HindiTradingAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                <LazyLoader src={Image23} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"Registration Complete"} />
+                                <LazyLoader src={Image23} className={'img-fluid lazyload image'} width={"93"} height={"93"} alt={"निःशुल्क ट्रेडिंग अकाउंट के लिए रजिस्ट्रेशन करें"} />
                                     {/* <img src={Image23}  width={"93"} height={"93"} alt="Step Three" className="img-fluid lazyload image" /> */}
                                     <LazyLoader src={Image20} className={'img-fluid lazyload image deskimg'} width={"127"} height={"23"} alt={"Step Three"} />
                                     {/* <img src={Image20} width={"127"} height={"23"} alt="Step Three" className="img-fluid lazyload image deskimg" /> */}
@@ -105,7 +105,7 @@ const HindiTradingAccountOpeningProcess = () => {
                         <div className="col-sm-6 col-md-3 mt-lg-0 mt-5 mt-sm-2 mt-md-4 ">
                             <div className="demat-steps">
                                 <div className="imgwrap width66">
-                                <LazyLoader src={Image24} className={'img-fluid lazyload'} width={"93"} height={"93"} alt={"Courier POA"} />
+                                <LazyLoader src={Image24} className={'img-fluid lazyload'} width={"93"} height={"93"} alt={"आपके ट्रेडिंग अकाउंट को सक्रिय करने के लिए कूरियर पीओए करें"} />
                                     {/* <img src={Image24}  width={"93"} height={"93"}  alt="Step Four" className="img-fluid lazyload" /> */}
                                 </div>
                                 <div className="info" >

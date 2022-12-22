@@ -7,7 +7,7 @@ import Slider from 'react-slick';
 function IPOProcess() {
 
   const [view,setView]=useState({
-		matches: window.innerWidth < 770 ? false : true ,
+		matches: window.innerWidth < 760 ? false : true ,
 	  });
 
     const settings  = {
@@ -23,7 +23,7 @@ function IPOProcess() {
 		};
 
     useEffect(() => {
-			let mediaQuery = window.matchMedia("(min-width: 770px)");
+			let mediaQuery = window.matchMedia("(min-width: 760px)");
 			mediaQuery.addListener(setView);
 			// this is the cleanup function to remove the listener
 			return () => mediaQuery.removeListener(setView);
@@ -34,13 +34,14 @@ function IPOProcess() {
       
       <section className="process-ipo">
         <div className="container">
-          <div className="row">
-            <div className="col-md-12">
-              <h2 className="title-first">Hassle Free IPO Investment Process</h2>
-            </div>
-          </div>
           <div className="row justify-content-center">
-              <div className="col-md-9">
+          <div className="col-xl-4 col-md-4">
+              <h2 className="title-first">Hassle Free IPO Investment Process</h2>
+              <div className="Process-para">
+                <p>Subscribe upcoming IPOs with us <br/> through a minimal process. <br/> <strong>Invest money not time.</strong></p>
+              </div>
+            </div>
+              <div className="col-xl-8 col-md-8">
                 
               {
 									view && !view.matches ? 
@@ -82,7 +83,7 @@ function IPOProcess() {
                         </div>
                         <div className="ipo-list-itm">
                             <h3>03</h3>
-                            <h4>IPO Allotment</h4>
+                            <h4>IPO <br/>Allotment</h4>
                         </div>
                         <div className="ipo-list-itm">
                             <h3>04</h3>

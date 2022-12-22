@@ -8,6 +8,7 @@ import Image8 from '../../assets/images/open-demat-account/free-call-for-trade-f
 import Image9 from '../../assets/images/open-demat-account/free-paperless-demat-account-opening.svg';
 import Image10 from '../../assets/images/open-demat-account/advanced-trading-app-platform.svg';
 import Image11 from '../../assets/images/open-demat-account/refer-and-earn-demat-account.svg';
+import "./corporatedemateaccount.scss";
 function WhyOpenFreeCorporateAccount() {
 
   const settings = {
@@ -47,7 +48,7 @@ function WhyOpenFreeCorporateAccount() {
 
   return (
     <div>
-       <section className="adv-sect" >
+       <section className="adv-sect adv-sect-adddots " id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
@@ -60,7 +61,7 @@ function WhyOpenFreeCorporateAccount() {
                                 <Slider {...settings} id="advslider" className="adv-sect-slider">
                                 <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Low Brokerage Demat Account" />
+                                                <img src={Image7} width={"40"} height={"41"} className="img-fluid" alt="Free Corporate Demat Account with Low Brokerage Charges" />
                                             </div>
                                             <div className="card-block">
 
@@ -70,7 +71,7 @@ function WhyOpenFreeCorporateAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image8} width={"40"} height={"41"} alt="Free Call for Trade Facility" className="img-fluid lazyload" />
+                                                <img src={Image8} width={"40"} height={"41"} alt="Open Corporate Demat Account with Free Call for Trade Facility" className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -80,7 +81,7 @@ function WhyOpenFreeCorporateAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                          <img src={Image11} width={"48"} height={"36"} alt={"Refer and Earn Demat Account"} className="img-fluid lazyload" />
+                                          <img src={Image11} width={"48"} height={"36"} alt={"Refer and Earn Program for Corporate Demat Account "} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -92,7 +93,7 @@ function WhyOpenFreeCorporateAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                                <img src={Image10} width={"50"} height={"50"} alt={"Advanced Trading App &amp; Platform"} className="img-fluid lazyload" />
+                                                <img src={Image10} width={"50"} height={"50"} alt={"Advance Trading Platform to Open Corporate Demat Account"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
@@ -104,7 +105,7 @@ function WhyOpenFreeCorporateAccount() {
                                         </div>
                                         <div className="card adv-card">
                                             <div className="icon-wrap">
-                                          <img src={Image9} width={"48"} height={"36"} alt={"Free Paperless Demat Account Opening"} className="img-fluid lazyload" />
+                                          <img src={Image9} width={"48"} height={"36"} alt={"Papeless Free Corporate Demat Account Opening"} className="img-fluid lazyload" />
                                             </div>
                                             <div className="card-block">
 
