@@ -25,12 +25,13 @@ function SubBrokerForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
     const [brokerName, setBrokerName] = useState('');
+    const [lastName, setLastName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
     const [brokerCityBranch, setBrokerCityBranch] = useState('');
     const [brokerState, setBrokerState] = useState('');
     const [showState, setShowState] = useState(false);
-    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
+    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'lastName': {}});
     const [showTermsCondition, setShowTermsCondition] = useState(false);
     const [loaders, setLoaders] = useState({});
     const [showOTPPopup, setShowOTPPopup] = useState(false);
@@ -108,6 +109,15 @@ function SubBrokerForm(props) {
         }));
     }
 
+    function handleLastName(e) {
+        let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
+        setLastName(value);
+        setErrors((prevError) => ({
+            ...prevError,
+            'lastName': {}
+        }));
+    }
+
     function handleMobileNumber(e) {
         let value = e.target.value.replace(/\D/g, "");
         setBrokerMobileNumber(value);
@@ -148,18 +158,18 @@ function SubBrokerForm(props) {
 
     function handleSendOTP(e) {
         e.preventDefault();
-        let isBrokerNameValid, isBrokerMobileNumberValid = false;
+        let isBrokerNameValid, isBrokerMobileNumberValid,isBrokerLastNameValid = false;
         //brokerName Validation
         isBrokerNameValid = validateBrokerName(brokerName, false);
         //brokerMobileNumber Validation
         isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, false);
-        //brokerEmail Validation
-        // isBrokerEmailValid = validateBrokerEmail(brokerEmail, false);
+        //LastName Validation
+        isBrokerLastNameValid = validateLastName(lastName, false);
         //brokerCityBranch Validation
        
         //brokerState Validation
        
-        if (isBrokerNameValid && isBrokerMobileNumberValid) {
+        if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerLastNameValid) {
             sendOTP(false);
         }
     }
@@ -184,6 +194,27 @@ function SubBrokerForm(props) {
             isBrokerNameValid = true;
         }
         return isBrokerNameValid;
+    }
+    function validateLastName(lastName, fromUseEffect) {
+        let isBrokerLastNameValid = false;
+        if (!lastName.length) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'lastName': { 'required': true }
+                }));
+            }
+        } else if (lastName.length && !nameRegex.test(lastName)) {
+            if (!fromUseEffect) {
+                setErrors((prevError) => ({
+                    ...prevError,
+                    'lastName': { 'invalid': true }
+                }));
+            }
+        } else if (lastName.length && nameRegex.test(lastName)) {
+            isBrokerLastNameValid = true;
+        }
+        return isBrokerLastNameValid;
     }
 
     function validateBrokerMobileNumber(brokerMobileNumber, fromUseEffect) {
@@ -220,7 +251,7 @@ function SubBrokerForm(props) {
     function resetOTPPopup() {
         setOtp('');
         setOTPErrors('');
-        setCount(60);
+        setCount(10);
     }
 
     function fetchQueryParams() {
@@ -332,46 +363,7 @@ function SubBrokerForm(props) {
         }
     }
 
-    // function checkExistence(value) {
-    //     showLoader('sendOTPLoader');
-    //     setValue(value);
-    //     setisCheck(true);
-    //     let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-    //     let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-    //     let request = {
-    //         "serviceCode": "CBAEF",
-    //         "firstName": brokerName,
-    //         "mobileNum": brokerMobileNumber,
-    //         "emailID": brokerEmail
-    //     };
-    //     if (!isBrokerMobileNumberValid)
-    //         delete request.mobileNum;
-    //     if (!isBrokerEmailValid)
-    //         delete request.emailID;
-    //     subBrokerService.checkExistence(request).then((res) => {
-    //         // console.log(res, "checkExistence");
-    //         if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
-    //             setErrors((prevError) => ({
-    //                 ...prevError,
-    //                 'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
-    //             }));
-    //         } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
-    //             setErrors((prevError) => ({
-    //                 ...prevError,
-    //                 'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
-    //             }));
-    //         } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
-    //             // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
-    //                 // showAPIErrorToaster();
-    //         }
-    //         setisCheck(false);
-    //         hideLoader('sendOTPLoader');
-    //     }).catch((error) => {
-    //         hideLoader('sendOTPLoader');
-    //         setisCheck(false);
-    //         // console.log(error, "checkExistence error");
-    //     });
-    // }
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -394,7 +386,12 @@ function SubBrokerForm(props) {
     }
 
     function sendOTP(isResend) {
-        showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        isResend? nbfcResend(true) :nbfcsendOtp(false)
+   
+    }
+
+    function nbfcsendOtp(){
+        showLoader('sendOTPLoader');
         let request = {
             "product": 'NBFC',
             "mobile_number": brokerMobileNumber,
@@ -405,85 +402,63 @@ function SubBrokerForm(props) {
             "user_name": brokerMobileNumber,
             
         };
+        
         NbfcService.mobileduplicate(brokerMobileNumber).then(res =>{
             if(res.data.Body.mobile_exist == true){
 
                 NbfcService.login(request1).then(res =>{
-            // console.log(res, "sendOTP");
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+           
+            hideLoader('sendOTPLoader');
             if (res && res.data && res.data.Body) {
                 otpSessionID.current = res.data.Body.session_id;
-                // if (!isResend)
-                resetOTPPopup();
-                if (!isResend)
-                    handleOTPPopupShow();
-                if (isResend)
-                    handleOTPResendSuccessToaster();
+                resetOTPPopup()
+                handleOTPPopupShow();
+               
             } else {
-                if (isResend) {
-                    setOTPErrors((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message: SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                } else {
+               
                     setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
                     showAPIErrorToaster();
                 }
-            }
+            
         }).catch((error) => {
             // console.log(error, "sendOTP error");
-            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (isResend) {
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setOTPErrors(error.response.data.message);
-                } else {
-                    setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
-            } else {
+            hideLoader('sendOTPLoader');
+        
                 if (error && error.response && error.response.data && error.response.data.message) {
                     setAPIError(error.response.data.message);
                 } else {
                     setAPIError("Something went wrong, please try again later!");
                 }
                 showAPIErrorToaster();
-            }
+        
         });
     }else{
         NbfcService.register(request).then(res =>{
             
                 NbfcService.login(request1).then(res =>{
-                    // console.log(res, "sendOTP");
-                    hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+                    hideLoader('sendOTPLoader');
                     if (res && res.data && res.data.Body) {
                         otpSessionID.current = res.data.Body.session_id;
-                        // if (!isResend)
-                        resetOTPPopup();
-                        if (!isResend)
-                            handleOTPPopupShow();
-                        if (isResend)
-                            handleOTPResendSuccessToaster();
+                        resetOTPPopup()
+                        handleOTPPopupShow();
+                        
                     } else {
-                        if (isResend) {
-                            setOTPErrors((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message: SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                        } else {
+                       
                             setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
                             showAPIErrorToaster();
-                        }
+                        
                     }
                 }).catch((error) => {
                     // console.log(error, "sendOTP error");
-                    hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-                    if (isResend) {
-                        if (error && error.response && error.response.data && error.response.data.message) {
-                            setOTPErrors(error.response.data.message);
-                        } else {
-                            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                        }
-                    } else {
+                    hideLoader('sendOTPLoader');
+                     
                         if (error && error.response && error.response.data && error.response.data.message) {
                             setAPIError(error.response.data.message);
                         } else {
                             setAPIError("Something went wrong, please try again later!");
                         }
                         showAPIErrorToaster();
-                    }
+                    
                 });
 
             })
@@ -492,25 +467,58 @@ function SubBrokerForm(props) {
 })
     }
 
-    function addNewLead() {
+    function nbfcResend(){
+        hideLoader('resendOTPLoader');
         let request = {
-            "firstName": brokerName,
-            "mobileNo1": brokerMobileNumber,
-            "emailId1": brokerEmail,
-            "leadCityName": brokerCityBranch,
-            "leadSource": "CHOICEINDIA",
-            "leadState": brokerState,
-            "referredId": refercode.current || null,
-            "serviceCode": "CBAEF",
-            "utm_source": UTMSource.current || null,
-            "utm_medium": UTMMedium.current || null,
-            "utm_campaign": UTMCampaign.current || null,
-            "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
-            "utm_content": UTMContent.current || null
+            "mobile_no":brokerMobileNumber,
+            "old_session_id":otpSessionID.current
+            
+        };
+        NbfcService.resend(request).then(res =>{
+            // console.log(res, "sendOTP");
+            hideLoader('resendOTPLoader');
+            if (res && res.data && res.data.Body) {
+                otpSessionID.current = res.data.Body.session_id;
+                resetOTPPopup()
+                // if (!isResend)
+                resetOTPPopup();
+                
+               
+                    handleOTPResendSuccessToaster();
+            } else {
+               
+                    setOTPErrors((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message: SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                
+            }
+        }).catch((error) => {
+            // console.log(error, "sendOTP error");
+            hideLoader('resendOTPLoader');
+           
+                if (error && error.response && error.response.data && error.response.data.message) {
+                    setOTPErrors(error.response.data.message);
+                } else {
+                    setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                }
+        
+        });
+
+    }
+
+    function NbfcLead() {
+        let request = {
+            "firstName"  :  "ANURAG",
+            "middleName" : "KUMAR",
+            "lastName" : "SONI",
+            "phoneNo" : "8005728488",
+            "emailId": "anurag.kumar@gmail.com",
+            "userId" : "123",
+            "userName" : "xyz",
+            "dsaId" : "789",
+            "dsaName" : "abc"
+    
         };
         showLoader('addLeadLoader');
-        subBrokerService.addNewLead(request).then((res) => {
+        NbfcServicef.addNewLead(request).then((res) => {
             hideLoader('addLeadLoader');
             // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
@@ -553,8 +561,15 @@ function SubBrokerForm(props) {
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
                 if (res && res.data) {
-                    fetchQueryParams();
-                    addNewLead();
+                    console.log("check now",res)
+                    handleOTPPopupClose();
+                    handleBrokerCreatedSuccessShow();
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
+                    });
+                    resetBrokerForm();
+                    
+                    console.log("checkmodal",showThanku.showModal)
                 } else {
                     setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
@@ -583,13 +598,14 @@ function SubBrokerForm(props) {
     const selectInputRef = useRef();
     function resetBrokerForm() {
         setBrokerName('');
+        setLastName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
         selectInputRef.current.clearAll();
         setBrokerCityBranch("");
         setBrokerState('');
         setShowState(false);
-        setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
+        setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'lastName': {} });
         setLoaders({});
         setOtp('');
         setOTPErrors('');
@@ -600,12 +616,7 @@ function SubBrokerForm(props) {
 
     return (
         <>
-         {
-                showOpenAccountPopup ? <SubbrokerpopupForm hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></SubbrokerpopupForm> : ''
-            }
-                 {
-                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <SubbrokerStickyFooter SubbrokerpopupForm={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></SubbrokerStickyFooter> : ''
-            }
+         
             <div className="demat-account-form" id="sub-broker-form">
 
 
@@ -614,18 +625,28 @@ function SubBrokerForm(props) {
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
                 
-                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Sub Broker')}</h3>
+                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Get a Call from us')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
 
                         <div className="sub-formgrp">
                             {/* <Form.Control type="text" name="brokerName" placeholder="Name" className="formcontrol formpadding" /> */}
-                            <Form.Control type="text" name="brokerName" id="brokerName" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelbl', 'Name')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerName.invalid || errors.brokerName.required} value={brokerName} onChange={handleName} />
+                            <Form.Control type="text" name="brokerName" id="brokerName" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelbl', 'First Name')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.brokerName.invalid || errors.brokerName.required} value={brokerName} onChange={handleName} />
                             {
                                 errors.brokerName.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror1', 'Invalid Name')}</Form.Control.Feedback> : ''
                             }
                             {
-                                errors.brokerName.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror2', 'Name is Required')}</Form.Control.Feedback> : ''
+                                errors.brokerName.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror2', 'First Name is Required')}</Form.Control.Feedback> : ''
+                            }
+                        </div>
+                        <div className="sub-formgrp">
+                           
+                            <Form.Control type="text" name="lastName" id="lastName" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelbl', 'Last Name')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.lastName.invalid || errors.lastName.required} value={lastName} onChange={handleLastName} />
+                            {
+                                errors.lastName.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror1', 'Invalid Name')}</Form.Control.Feedback> : ''
+                            }
+                            {
+                                errors.lastName.required ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror2', 'Last Name is Required')}</Form.Control.Feedback> : ''
                             }
                         </div>
                         <div className="sub-formgrp">
@@ -823,7 +844,7 @@ function SubBrokerForm(props) {
             </Modal>
 
             {
-                showThanku.showModal?<Thankyoupopup isShow={showThanku} isBlog={'blog'} />: ''
+                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
             }
 
             {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"

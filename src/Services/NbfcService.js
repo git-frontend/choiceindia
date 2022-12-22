@@ -28,14 +28,14 @@ const NbfcService = {
     return  axios.post(url, request,headers)
   },
 
-  login: function (request,type) {
+  login: function (request) {
     let url = apiURL.getNbfcLogin();
     return  axios.post(url, request,headers)
   },
 
-  OTPOnCall: function (request,type) {
-    let url = ((type=='MF')? apiURL.getOTPInvesOnCallURL() : apiURL.getOTPOnCallURL()); 
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }));
+  resend: function (request) {
+    let url =  apiURL.getNbfcResendOTPURL(); 
+    return  axios.post(url, request,headers);
   },
 
   nbfcVerifyOTP: function (request,type) {

@@ -156,6 +156,7 @@ export class API_URLS {
     resendInvesOTPURL='investica-resendotp'
     sendOTPURL = 'sign-up';
     resendOTPURL = 'resend-otp';
+    nbfcResendOTPURL = 'api/resend-otp';
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
@@ -489,6 +490,9 @@ export class API_URLS {
         return this.SSOServerURL + this.resendInvesOTPURL;
     }
     
+    getNbfcResendOTPURL() {
+        return this.SSOServerURL + this.nbfcResendOTPURL;
+    }
 
 
     
