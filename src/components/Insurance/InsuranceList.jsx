@@ -53,7 +53,7 @@ function InsuranceList() {
                         </li>
                       
                         <li className="ins-list-item">
-                            <a href="http://choiceconnect.in/life-insurance/Q0JBMTUwOTI1MA==?lead_source=jiffy" target="_blank" className="list-item-link">
+                            <a href="http://choiceconnect.in/life-insurance/Q0JBMTUwOTI1MA==?lead_source=choiceindia" target="_blank" className="list-item-link">
                             <span className="img-txt">
                                     <LazyLoader src={term} alt={"Banner Images"} className={"img-fluid sm-img"} width={"100"} height={"130"} />
                                 </span>
