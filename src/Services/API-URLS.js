@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -158,6 +158,7 @@ export class API_URLS {
     resendOTPURL = 'resend-otp';
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
+    nbfcverifyOTPURL = 'api/verify-otp';
   /** pdf API */
   
 //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
@@ -182,11 +183,6 @@ export class API_URLS {
 /** contact us city detail */
     contactCityURL='items/branch_details?filter[status][_eq]=published&limit=1000';
     cfplURL='items/NBFC?limit=100&sort[]=id';
-
-
-
-
-
     /** Sub Broker APIs */
     // ?is_refresh=Y
     getCityURL = 'city/list';
@@ -199,11 +195,12 @@ export class API_URLS {
     getExpertResearchURL = 'api/research-report-new';
     subBrokerSendOtpURL = 'https://neuron.choicebroking.in/api/jiffy/generate-otp';
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
+    nbfcRegister='api/register';
+    nbfcLogin ='api/login';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
-
 
 
 
@@ -665,7 +662,21 @@ export class API_URLS {
     getCfplPolicyURL(){
         return this.bannerURL + this.cfplURL
     }
+
+    getNbfcMobile(id) {
+        return this.SSOServerURL + `api/is-mobile-unique?mobile_number=${id}`;
+    }
     
+    getNbfcRegister() {
+        return this.SSOServerURL + this.nbfcRegister;
+    }
+    getNbfcLogin() {
+        return this.SSOServerURL + this.nbfcLogin;
+    }
+
+    getNbfcVerifyOTP() {
+        return this.SSOServerURL + this.nbfcverifyOTPURL;
+    }
     
 
 }
