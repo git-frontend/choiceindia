@@ -9,15 +9,6 @@
 
     .left-sec {
         width: 60%;
-
-        @media (max-width:$lg) {
-            width: 100%;
-        }
-
-        @media (max-width:$md) {
-            width: 100%;
-        }
-
         @media (max-width:$sm) {
             width: 100%;
         }
@@ -51,6 +42,15 @@
 
     .right-sec {
         width: 40%;
+        img{
+            margin-top: 5rem;
+            @media (max-width:$md) {
+                margin-top: 0;
+            }
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
     }
 }
 
