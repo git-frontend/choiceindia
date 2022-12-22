@@ -117,7 +117,7 @@ const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mut
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/NachCancellation'));
 
-
+const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 function Routing() {
 
 
@@ -603,13 +603,17 @@ function Routing() {
                             <React.Suspense>
                                 < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
+                        } /> 
+                        <Route exact path='/government-advisory' element={
+                            <React.Suspense>
+                                < Lazygovernementadvisory />
+                            </React.Suspense>
                         } />
                          <Route exact path='/cfpl-policies' element={
                             <React.Suspense>
                                 < LazyCfplPolicies />
                             </React.Suspense>
                         } />
-
                          <Route exact path='/nach-cancellation' element={
                             <React.Suspense>
                                 < LazyNachCancellation />
