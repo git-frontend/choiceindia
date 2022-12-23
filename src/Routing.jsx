@@ -127,7 +127,7 @@ const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFP
 const LazySupplyChainFinance = React.lazy(() => import('./components/Supply-Chain-Finance/SupplyChainFin'));
 const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-Sub/SolarFinanceSub'));
 
-
+const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 function Routing() {
 
 
@@ -612,6 +612,11 @@ function Routing() {
                         <Route exact path='/hindi/mutual-funds-investment' element={
                             <React.Suspense>
                                 < LazyMutualFundsInvestmentHindi />
+                            </React.Suspense>
+                        } /> 
+                        <Route exact path='/government-advisory' element={
+                            <React.Suspense>
+                                < Lazygovernementadvisory />
                             </React.Suspense>
                         } />
                          <Route exact path='/cfpl-policies' element={
