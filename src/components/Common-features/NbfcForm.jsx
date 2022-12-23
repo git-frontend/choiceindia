@@ -251,7 +251,7 @@ function SubBrokerForm(props) {
     function resetOTPPopup() {
         setOtp('');
         setOTPErrors('');
-        setCount(10);
+        setCount(60);
     }
 
     function fetchQueryParams() {

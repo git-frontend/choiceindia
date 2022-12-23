@@ -9,18 +9,6 @@ const headers = {
   'Content-Type': 'application/json'
 };
 
-let langtype = (window.location.pathname.indexOf('hindi') > -1) ? 'hi' :(window.location.pathname.indexOf('gujarati') > -1) ? 'gu' :(window.location.pathname.indexOf('marathi') > -1) ? 'mr' :(window.location.pathname.indexOf('telugu') > -1) ? 'te':'en';
-
-
-const newheaders = {
-  
-  'Accept': 'application.json',
-  'Content-Type': 'application/json',
-  'lang': langtype
-  
-
-};
-
 const NbfcService = {
 
   register: function (request) {
