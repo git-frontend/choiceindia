@@ -116,7 +116,7 @@ const LazyBestStocks = React.lazy(() => import('./components/Best-Stocks/BestSto
 const LazyMutualFundsInvestmentHindi = React.lazy(() => import('./components/Mutual-fund-seo-hindi/MutualFundsSEO'));
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
 
-
+const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 function Routing() {
 
 
@@ -602,12 +602,18 @@ function Routing() {
                             <React.Suspense>
                                 < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
+                        } /> 
+                        <Route exact path='/government-advisory' element={
+                            <React.Suspense>
+                                < Lazygovernementadvisory />
+                            </React.Suspense>
                         } />
                          <Route exact path='/cfpl-policies' element={
                             <React.Suspense>
                                 < LazyCfplPolicies />
                             </React.Suspense>
                         } />
+
 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
