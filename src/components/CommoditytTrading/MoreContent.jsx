@@ -18,7 +18,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">If you are familiar with the nuances of the commodity market, <a href="https://choiceindia.com/open-free-demat-account">open a free demat account</a> with us and break free from significant annual charges. Minimal DP charges of Rs 10 add to the appeal of our platform and make investing economical and accessible for everyone.</p>
                                     <p className="sml-para-dv">However, if you are new to commodities in general, make investment decisions after extensive research. To make learning more accessible, we have compiled the fundamentals of commodities and the associated commodity trading account to ease your transition into an investor.</p>
                                     <br />
-                                    <h3><a href="https://choiceindia.com/blog/what-is-commodity-trading/">What is a Commodity Trading Account?</a></h3>
+                                    <h3><a href="https://choiceindia.com/blog/what-is-commodity-trading/">What is a Commodity Trading Account</a>?</h3>
                                         <p className="sml-para-dv">The concept of a commodity trading account can be better grasped by understanding the term' commodities.'</p>
                                         <p className="sml-para-dv">Commodities are raw materials or primary agricultural products that can be traded or used for specific applications. Some common commodities include the following.</p>
                                         <ul className="terms-list sml-para-dv">

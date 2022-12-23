@@ -31,7 +31,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">The franchise will be functional after you make the required initial payments.</p>
                                     
                                     <h3>Sub Broker Business Model</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-business-model">sub broker business model</a> has two primary members - the stock brokerage firm and the sub broker professional.</p>
+                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-business-model/">sub broker business model</a> has two primary members - the stock brokerage firm and the sub broker professional.</p>
                                     <p className="sml-para-dv">The broker provides training, support and assistance to the sub broker to deal with clients. In return, the sub broker brings customers to the broker for them to purchase the broker's services and products.</p>
                                     <p className="sml-para-dv">With every product purchase and financial transaction, the broker will pay a certain amount to the sub broker.</p>
                                     <p className="sml-para-dv">All the partnership terms will be discussed before the sub broker and broker join forces. In general, the stockbroker decides the terms of the partnership.</p>
@@ -42,10 +42,10 @@ function MoreContent() {
                                     <p className="sml-para-dv">If the customer has queries, they will ask the sub broker, who might direct those to the stock broker for clarification.</p>
 
                                     <h3>Sub Broker Franchise Cost</h3>
-                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-franchise-cost">sub broker franchise cost</a> can range anywhere between INR 50,000 and 3,00,000. Interested franchisees may need to pay a security deposit to the franchisor. A portion of the initial deposit might be refundable, but it will purely depend upon the franchisor or broker.</p>
+                                    <p className="sml-para-dv">The <a href="https://choiceindia.com/blog/sub-broker-franchise-cost/">sub broker franchise cost</a> can range anywhere between INR 50,000 and 3,00,000. Interested franchisees may need to pay a security deposit to the franchisor. A portion of the initial deposit might be refundable, but it will purely depend upon the franchisor or broker.</p>
                                     <p className="sml-para-dv">However, the payment terms might vary according to the stock broker.</p>
 
-                                    <h3><a href="https://choiceindia.com/blog/how-much-does-a-sub-broker-earns-in-india/">How Much a Sub Broker Earns in India?</a></h3>
+                                    <h3><a href="https://choiceindia.com/blog/how-much-does-a-sub-broker-earns-in-india/">How Much a Sub Broker Earns in India</a>?</h3>
                                     <p className="sml-para-dv">A sub broker earns through a fixed commission rate decided beforehand with the stock broker. This amount will depend upon the customer's purchase and associated financial transactions. In short, the better the trade, the more the earnings will be for the sub broker.</p>
                               
                                     <h3>Sub Broker Commission</h3>
@@ -79,7 +79,6 @@ function MoreContent() {
                                         <li>Professional stock market experience certificate submission (if applicable)</li>
                                     </ul>
 
-                                    <br />
                                     <h3>Steps to Become a Sub Broker in India</h3>
                                     <p className="sml-para-dv">To be a sub broker in India, you have to first select a stock brokerage company to join. This firm will guide you through the steps required to work with them.</p>
                                     <p className="sml-para-dv">However, the fundamental steps of becoming a sub broker remain the same –</p>
@@ -95,7 +94,7 @@ function MoreContent() {
                                     <p className="sml-para-dv">So, sub brokers act as representatives of the brokerage organization to serve investors.</p>
                               
                                     <h3>Difference between Stock Broker and Sub Broker</h3>
-                                    <p className="sml-para-dv">Let's now focus on the <a href="https://choiceindia.com/blog/difference-between-stock-broker-and-sub-broker/">difference between stock broker and sub broker.</a></p>
+                                    <p className="sml-para-dv">Let's now focus on the <a href="https://choiceindia.com/blog/difference-between-stock-broker-and-sub-broker/">difference between stock broker and sub broker</a>.</p>
                                     <p className="sml-para-dv">The primary <a href="https://choiceindia.com/blog/role-of-broker-and-sub-broker-in-capital-market/">role of broker and sub broker in capital market</a> is to guide their clients to better investment earnings. However, they differ in their method of working and earning.</p>
                               
                                     <h4>Responsibilities of Brokers</h4>
