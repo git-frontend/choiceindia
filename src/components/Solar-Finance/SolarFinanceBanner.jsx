@@ -9,7 +9,8 @@ import GetLoan from '../../assets/images/solar-finance/get-loan.svg';
 import Paperwork from '../../assets/images/solar-finance/paperwork.svg';
 import ProcessingFee from '../../assets/images/solar-finance/processing-fee.svg';
 import {Link} from 'react-router-dom';
-
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function SolarFinanceBanner() {
     const settings1 = {
         infinite: true,
@@ -61,8 +62,11 @@ solar finance!</h1>
                             </div>
                         </div>
                         <div className=" col-md-5">
-                                <div className="formwrap">
-                                </div>
+                            <div className="formwrap">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>  
+                            </div>
                         </div>
                     </div>
                     <div className="row justify-content-center">

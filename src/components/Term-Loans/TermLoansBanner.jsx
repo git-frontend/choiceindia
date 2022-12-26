@@ -7,7 +7,8 @@ import LazyLoader from "../Common-features/LazyLoader";
 import Quick from '../../assets/images/term-loans/quick-term-business-loan-sanctioned.svg';
 import Digital from '../../assets/images/term-loans/digital-term-business-loan-disbursement.svg';
 import Minimum from '../../assets/images/term-loans/minimum-paper-work-for-term-business-loan.svg';
-
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function TermLoansBanner() {
     const settings1 = {
         infinite: true,
@@ -57,7 +58,9 @@ function TermLoansBanner() {
                         </div>
                         <div className=" col-md-5">
                             <div className="formwrap">
-                                
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>  
                             </div>
                         </div>
 

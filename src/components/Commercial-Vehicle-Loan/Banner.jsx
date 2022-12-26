@@ -8,7 +8,8 @@ import banner from '../../assets/images/com-vehicle-loan/commercial-vehicle-loan
 import Noadditionalsecurity from '../../assets/images/com-vehicle-loan/no-additional-security-for-commercial-vehicle-loan.svg';
 import HassleFreeProcess from '../../assets/images/com-vehicle-loan/hassle-free-commercial-vehicle-loan-process.svg';
 import Customisedsolutions from '../../assets/images/com-vehicle-loan/customised-commercial-vehicle-loan-solutions.svg';
-
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function ChannelFinanceBanner() {
     const settings1 = {
@@ -59,7 +60,9 @@ function ChannelFinanceBanner() {
                        
                         <div className=" col-md-5">
                             <div className="formwrap">
-                                
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

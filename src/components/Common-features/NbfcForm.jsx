@@ -16,7 +16,7 @@ import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
 import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import NbfcService from "../../Services/NbfcService";
-function SubBrokerForm(props) {
+function nbfcForm(props) {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
@@ -60,9 +60,10 @@ function SubBrokerForm(props) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
-    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
+    let type=(window.location.pathname.indexOf('channel-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('commercial-vehicle-loan') > -1) ? 'vehicle_loan':(window.location.pathname.indexOf('flexi-credit-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('invoice-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('individual-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('business-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('term-business-loan') > -1) ? ' term_loan':"";
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -127,7 +128,6 @@ function SubBrokerForm(props) {
         }));
     }
 
-  
 
     useEffect(() => {
         if (props.isFromFableDetails) {
@@ -170,7 +170,8 @@ function SubBrokerForm(props) {
         //brokerState Validation
        
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerLastNameValid) {
-            sendOTP(false);
+            // sendOTP(false);
+            handleReCaptchaVerify()
         }
     }
 
@@ -334,7 +335,7 @@ function SubBrokerForm(props) {
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP();
+            sendOTP(false);
         }
     }, [captchaToken]);
 
@@ -400,6 +401,7 @@ function SubBrokerForm(props) {
         let request1 = {
             "product": 'NBFC',
             "user_name": brokerMobileNumber,
+            "captchaResp": captchaToken,
             
         };
         
@@ -506,45 +508,56 @@ function SubBrokerForm(props) {
 
     function NbfcLead() {
         let request = {
-            "firstName"  :  "ANURAG",
-            "middleName" : "KUMAR",
-            "lastName" : "SONI",
-            "phoneNo" : "8005728488",
-            "emailId": "anurag.kumar@gmail.com",
-            "userId" : "123",
-            "userName" : "xyz",
-            "dsaId" : "789",
+            "data":{
+            "firstName"  :brokerName,
+            "middleName" :"",
+            "lastName" :lastName,
+            "phoneNo" :brokerMobileNumber,
+            "emailId": "kprasadideal@gmail.com",
+            "userId" : "",
+            "userName" : "",
+            "dsaId" : "113",
             "dsaName" : "abc"
+
+            }
+            
     
         };
         showLoader('addLeadLoader');
-        NbfcServicef.addNewLead(request).then((res) => {
+        NbfcService.nbfcLead(request,type).then((res) => {
             hideLoader('addLeadLoader');
             // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
               //  console.log('TTT',res);
                 handleOTPPopupClose();
                 handleBrokerCreatedSuccessShow();
-                resetBrokerForm();
+               
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
+                    return { ...prevState, showModal: true,resText:'Lead added successfully', closeMd: closeModal }
                 });
+                resetBrokerForm();
             } else {
                 // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
                 // showAPIErrorToaster();
                 setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                showAPIErrorToaster();
             }
 
         }).catch((error) => {
             hideLoader('addLeadLoader');
-            // console.log(error, "addNewLead error");
-            // if (error && error.response && error.response.data && error.response.data.message) {
-            //     setAPIError(error.response.data.message);
-            // } else {
-            //     setAPIError("Something went wrong, please try again later!");
-            // }
-            // showAPIErrorToaster();
-            setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            console.log("error",error.response.data.message)
+            handleOTPPopupClose();
+            // // console.log(error, "addNewLead error");
+            if (error && error.response && error.response.data && error.response.data.message) {
+                setAPIError(error.response.data.message);
+            } else {
+                setAPIError("Something went wrong, please try again later!");
+            }
+            showAPIErrorToaster();
+           
+            // setOTPErrors((error && error.response && error.response.data && error.response.data.message) ? error.response.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            
+            
         });
     }
 
@@ -561,15 +574,8 @@ function SubBrokerForm(props) {
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
                 if (res && res.data) {
-                    console.log("check now",res)
-                    handleOTPPopupClose();
-                    handleBrokerCreatedSuccessShow();
-                    setShowThanku(prevState => {
-                        return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
-                    });
-                    resetBrokerForm();
-                    
-                    console.log("checkmodal",showThanku.showModal)
+                    NbfcLead()
+                 
                 } else {
                     setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
@@ -903,4 +909,4 @@ function SubBrokerForm(props) {
     );
 }
 
-export default SubBrokerForm;
+export default nbfcForm;

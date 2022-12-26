@@ -7,7 +7,8 @@ import LazyLoader from "../Common-features/LazyLoader";
 import zerocollateral from '../../assets/images/invoice-financing/zero-collateral-for-invoice-finnacing.svg';
 import documentation from '../../assets/images/invoice-financing/simple-invoice-financing-documention.svg';
 import liquidity from '../../assets/images/invoice-financing/enhance-invoice-financing-liquidity.svg';
-
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function InvoiceFinancingBanner() {
     const settings1 = {
         infinite: true,
@@ -58,7 +59,9 @@ function InvoiceFinancingBanner() {
                         </div>
                         <div className=" col-md-5">
                             <div className="formwrap">
-                                
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

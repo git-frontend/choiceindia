@@ -8,6 +8,8 @@ import time from '../../assets/images/nbfc-indivial-loan/quick-flexi-loan-approv
 import disburse from '../../assets/images/nbfc-indivial-loan/flexi-loan-disbursed-in-48-hours.svg';
 import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work-for-flexi-business-loan.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function FlexiCreditBusinessBanner() {
     const settings1 = {
         infinite: true,
@@ -56,9 +58,11 @@ function FlexiCreditBusinessBanner() {
                                     <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
                             </div>
                         </div>
-                        <div className="col-md-5">
+                        <div className=" col-md-5">
                             <div className="formwrap">
-
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

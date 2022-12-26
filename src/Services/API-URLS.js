@@ -36,7 +36,9 @@ const config = {
     liveperformanceURL: "https://finx.choiceindia.com/api/",
     UATperformanceURL: "https://uat.jiffy.in/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
-    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
+    UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
+    livenbfcBaseURL:"https://choice-dev.synofin.tech/api/od/od-application-creation/",
 }
 
 export class API_URLS {
@@ -59,7 +61,8 @@ export class API_URLS {
     jiffySignalPageURL = "research-report/research/signals/EQ/all/"
     /** banner URL */
     bannerURL = "https://cmsapi.choiceindia.com/"
-
+    /** NBFC URL */
+    nbfcBaseURL = '';
 
     /** Base URL for JIFFY APIs */
     jiffyServerURL = "https://api.jiffy.in/";
@@ -232,6 +235,7 @@ export class API_URLS {
         this.setreferURL(config[configKey + 'referURL']);
         this.setresearchURL(config[configKey + 'researchURL']);
         this.setperformanceURL(config[configKey + 'performanceURL']);
+        this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
     }
 
     setJiffyBaseURL = (url) => {
@@ -295,13 +299,22 @@ export class API_URLS {
     setJiffyURL = (url) => {
         this.jiffyURL = url;
     }
-
+   
 
     /**
+     * Set NBFC URL 
+     * @param {*} url 
+     */
+     setnbfcBaseURL = (url) => {
+
+        this.nbfcBaseURL = url;
+    }
+
+     /**
      * Set Banner URL 
      * @param {*} url 
      */
-    setBannerURL = (url) => {
+      setBannerURL = (url) => {
 
         this.bannerURL = url;
     }
@@ -680,6 +693,10 @@ export class API_URLS {
 
     getNbfcVerifyOTP() {
         return this.SSOServerURL + this.nbfcverifyOTPURL;
+    }
+
+    getNbfcLead(subProduct){
+        return  this.nbfcBaseURL + `v1/lead/source/${subProduct}`
     }
     
 

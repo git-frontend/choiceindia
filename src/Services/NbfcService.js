@@ -4,10 +4,18 @@
 import axios from "axios";
 import { API_URLS } from "./API-URLS";
 const apiURL = new API_URLS()
+// let token ='bfed47dc-84ec-43e8-aecc-81601d0134c1'
 const headers = {
   'Accept': 'application.json',
   'Content-Type': 'application/json'
 };
+const newHeaders = {
+  'Accept': '*/*',
+  'Content-Type': 'application/json',
+    // 'Authorization': `bearer ${token}`
+  'Authorization': 'Bearer '+'bfed47dc-84ec-43e8-aecc-81601d0134c1'
+
+}
 
 const NbfcService = {
 
@@ -26,9 +34,15 @@ const NbfcService = {
     return  axios.post(url, request,headers);
   },
 
-  nbfcVerifyOTP: function (request,type) {
+  nbfcVerifyOTP: function (request) {
     let url =  apiURL.getNbfcVerifyOTP() 
      return  axios.post(url, request,headers);
+  },
+
+
+  nbfcLead: function (request,type) {
+    let url =  apiURL.getNbfcLead(type) 
+     return  axios.post(url, request,{ headers: newHeaders });
   },
 
 
