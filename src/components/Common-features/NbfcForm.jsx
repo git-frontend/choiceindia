@@ -38,7 +38,7 @@ function nbfcForm(props) {
     const [APIError, setAPIError] = useState('');
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const [citiesDropdown, setCitiesDropdown] = useState([]);
-    const [statesDropdown, setStatesDropdown] = useState([]);
+    const [msg, setmsg] = useState();
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
     const [count, setCount] = useState(0);
@@ -60,7 +60,7 @@ function nbfcForm(props) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
-    
+    const [captchaTokenre, setCaptchaTokenre] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
     let type=(window.location.pathname.indexOf('channel-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('commercial-vehicle-loan') > -1) ? 'vehicle_loan':(window.location.pathname.indexOf('flexi-credit-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('invoice-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('individual-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('business-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('term-business-loan') > -1) ? ' term_loan':"";
@@ -157,7 +157,11 @@ function nbfcForm(props) {
  
 
     function handleSendOTP(e) {
-        e.preventDefault();
+       e == 'resend'? setmsg(e): e.preventDefault();
+       
+        
+        console.log("check")
+
         let isBrokerNameValid, isBrokerMobileNumberValid,isBrokerLastNameValid = false;
         //brokerName Validation
         isBrokerNameValid = validateBrokerName(brokerName, false);
@@ -171,7 +175,11 @@ function nbfcForm(props) {
        
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerLastNameValid) {
             // sendOTP(false);
-            handleReCaptchaVerify()
+            handleCaptchaVerify()
+            setTimeout(()=>{
+                handleReCaptchaVerify()
+              },10)
+            
         }
     }
 
@@ -315,6 +323,22 @@ function nbfcForm(props) {
         }));
     }
 
+     // Create an event handler so you can call the verification on button click event or form submit
+     const handleCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('resendOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaTokenre(token);
+            // alert("Token : "+token);
+        }
+      
+    }, [executeRecaptcha]);
+
     
 
     // Create an event handler so you can call the verification on button click event or form submit
@@ -330,12 +354,13 @@ function nbfcForm(props) {
             setCaptchaToken(token);
             // alert("Token : "+token);
         }
-        hideLoader('sendOTPLoader');
+        
     }, [executeRecaptcha]);
 
     useEffect(() => {
         if (captchaToken) {
-            sendOTP(false);
+            msg == 'resend'?sendOTP(true):sendOTP(false);
+            
         }
     }, [captchaToken]);
 
@@ -395,6 +420,7 @@ function nbfcForm(props) {
         showLoader('sendOTPLoader');
         let request = {
             "product": 'NBFC',
+            "name":brokerName+" "+lastName,
             "mobile_number": brokerMobileNumber,
             "captchaResp": captchaToken,
             
@@ -402,24 +428,26 @@ function nbfcForm(props) {
         let request1 = {
             "product": 'NBFC',
             "user_name": brokerMobileNumber,
-            "captchaResp": captchaToken,
+            "captchaResp": captchaTokenre,
             
         };
 
         
         NbfcService.mobileduplicate(brokerMobileNumber).then(res =>{
+            
             if(res.data.Body.mobile_exist == true){
-
+              
                 NbfcService.login(request1).then(res =>{
            
-            hideLoader('sendOTPLoader');
+                    
             if (res && res.data && res.data.Body) {
+                hideLoader('sendOTPLoader');
                 otpSessionID.current = res.data.Body.session_id;
                 resetOTPPopup()
                 handleOTPPopupShow();
                
             } else {
-               
+                hideLoader('sendOTPLoader');
                     setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
                     showAPIErrorToaster();
                 }
@@ -437,17 +465,19 @@ function nbfcForm(props) {
         
         });
     }else{
+       
         NbfcService.register(request).then(res =>{
             
                 NbfcService.login(request1).then(res =>{
-                    hideLoader('sendOTPLoader');
+                   
                     if (res && res.data && res.data.Body) {
+                        hideLoader('sendOTPLoader');
                         otpSessionID.current = res.data.Body.session_id;
                         resetOTPPopup()
                         handleOTPPopupShow();
                         
                     } else {
-                       
+                        hideLoader('sendOTPLoader');
                             setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
                             showAPIErrorToaster();
                         
@@ -475,7 +505,8 @@ function nbfcForm(props) {
         hideLoader('resendOTPLoader');
         let request = {
             "mobile_no":brokerMobileNumber,
-            "old_session_id":otpSessionID.current
+            "old_session_id":otpSessionID.current,
+            "captchaResp": captchaToken
             
         };
         NbfcService.resend(request).then(res =>{
@@ -808,7 +839,7 @@ function nbfcForm(props) {
 
                                                 {
                                                     !count ?
-                                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
+                                                        <button className="resend" onClick={() => handleSendOTP('resend')}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
                                                 }
 
 
