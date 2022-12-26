@@ -574,17 +574,19 @@ function nbfcForm(props) {
             }
             NbfcService.nbfcVerifyOTP(request).then((res) => {
                 hideLoader('verifyLoader');
+             
                 // console.log(res, "verifyOTPN");
                 if (res && res.data) {
                     NbfcLead()
                  
                 } else {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                    setOTPErrors((res.data && res.message) ? res.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             }).catch((error) => {
+               
                 hideLoader('verifyLoader');
-                // console.log(error, "verifyOTPN error");
-                setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                console.log(error.response.data.Message, "verifyOTPN error");
+                setOTPErrors((error && error.response && error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
     }
