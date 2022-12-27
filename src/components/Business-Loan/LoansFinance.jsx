@@ -29,7 +29,7 @@ function LoansFinance() {
               </div>
             </div>
           </div>
-          <div className="row">
+          <div className="row" id="showForm">
             <div className="col-md-12">
               <div className="loans-finance-sec">
                 <div className="head-sec">

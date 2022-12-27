@@ -90,7 +90,10 @@ solar finance!</h1>
                                     costs upfront and then repay the loan over time.
                                 </p>
                                 <p>Get solar finance loan up to Rs25 lakh online. <br />
-                                <Link to="/invoice-financing"><span className="aply-btn">Apply Now!</span></Link></p>
+                                {/* <Link to="/invoice-financing"> */}
+                                    <span className="aply-btn">Apply Now!</span>
+                                    {/* </Link> */}
+                                    </p>
                             </div>
                         </div>
                         <div className=" col-md-5">

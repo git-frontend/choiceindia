@@ -86,7 +86,11 @@ function chapterScroll(id) {
                                 <h2 className="title-first flexititle">Apply for Flexi Credit in India</h2>
                                 <p className="para">Our Flexi-Credit has the freedom to withdraw or deposit money at the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.</p>
                                 <br /> <p className="para"> Get a Flexi business loan up to Rs. 25 lakhs online.
-                                    <br /><a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    <br />
+                                    <a >
+                                        <span className="aply-btn">Apply Now!</span>
+                                        </a>
+                                        </p>
                             </div>
 
                         </div>

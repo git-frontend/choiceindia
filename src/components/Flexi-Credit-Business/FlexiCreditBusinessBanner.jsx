@@ -87,7 +87,10 @@ function chapterScroll(id) {
                                 <p>Get a Flexi business loan up to Rs. 25 lakhs online. <br />
 
           
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    {/* <a href="#"> */}
+                                        <span className="aply-btn">Apply Now!</span>
+                                    {/* </a> */}
+                                    </p>
                             </div>
                         </div>
                         <div className=" col-md-5">
