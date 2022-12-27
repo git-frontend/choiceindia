@@ -12,22 +12,28 @@ import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function FlexitabSolarFinanace() {
     const [idscroll2, setIdScroll2 ] = useState('');
    /** scroll purpose */
-   function chapterScroll(id) {
-    setIdScroll2(id)
-    var element = document.getElementById(idscroll2);
+   function chapterScroll2(id) {
+    
+    console.log("checkal",id)
+    var element2 = document.getElementById(id);
     var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    var elementPosition2 = element2.getBoundingClientRect().top;
+    var offsetPosition2 = elementPosition2 + window.pageYOffset - headerOffset;
+    
     window.scrollTo({
-      top: offsetPosition,
+      top: offsetPosition2+200,
       behavior: "smooth"
     });
+
   }
+  
+  
+  
 
   const [name, setName ] = useState('hideform');
   /** hide and show section */
   const getPosition = () => {
-    const element = document.getElementById("showForm");
+    const element = document.getElementById("showForm2");
     if(element){
         const rect = element.getBoundingClientRect();
         
@@ -78,33 +84,6 @@ function FlexitabSolarFinanace() {
     return (
         <div>
 
-
-            <section className="flexitabcontent">
-                <div className="container">
-                    <div className="row">
-                        <div className=" col-md-7">
-                            <div className="heading-sec ">
-                                <h2 className="title-first flexititle">Apply for Solar Finance!</h2>
-                                <p className="para">Our solar financing solution allows you to purchase your solar power system and pay for the installation
-costs upfront and then repay the loan over time.</p>
-                                 <p className="para">Get solar finance loan upto Rs10 lakh online.
-                                    <br />  <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
-                            </div>
-
-                        </div>
-                        <div className=" col-md-5">
-                                <div className="formwrap solarformwrap">
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            <NbfcForm/> 
-                                </GoogleReCaptchaProvider>  
-                                </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
             <section className="card-wrap-nbfc">
                 <div className="container">
                     <div className="row">
@@ -147,7 +126,7 @@ costs upfront and then repay the loan over time.</p>
                     </div>
                     <div className={name}>
                     <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcform')}}>Get a Call from us</button>
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll2('nbfcForm')}}>Get a Call from us</button>
                     </div>
                     </div>
                 </div>

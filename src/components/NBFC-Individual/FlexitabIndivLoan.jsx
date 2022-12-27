@@ -11,16 +11,17 @@ import NbfcForm from "../Common-features/NbfcForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { set } from "react-hook-form";
 function flexitab() {
-    const [idscroll3, setIdScroll3 ] = useState('');
+    
     /** scroll purpose */
-function chapterScroll(id) {
-    setIdScroll3(id)
-    var element = document.getElementById(idscroll3);
+function chapterScroll3(id) {
+    
+    console.log("checkal",id)
+    var element3 = document.getElementById(id);
     var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    var elementPosition3 = element3.getBoundingClientRect().top;
+    var offsetPosition3 = elementPosition3 + window.pageYOffset - headerOffset;
     window.scrollTo({
-      top: offsetPosition,
+      top: offsetPosition3,
       behavior: "smooth"
     });
   }
@@ -78,33 +79,6 @@ function chapterScroll(id) {
     };
     return (
         <div>
-
-
-            <section className="flexitabcontent" >
-                <div className="container">
-                    <div className="row ">
-                        <div className=" col-md-7">
-                            <div className="heading-sec ">
-                                <h2 className="title-first flexititle">Apply for Flexi Credit in India</h2>
-                                <p className="para">Our Flexi-Credit has the freedom to withdraw or deposit money at the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.</p>
-                                <br /> <p className="para"> Get a Flexi business loan up to Rs. 25 lakhs online.
-                                    <br /><a href="#"><span className="aply-btn">Apply Now!</span></a></p>
-                            </div>
-
-                        </div>
-                        <div className=" col-md-5">
-                                <div className="formwrap float-rights">
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            <NbfcForm/> 
-                                </GoogleReCaptchaProvider>  
-                                </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
             <section className="card-wrap-nbfc">
                 <div className="container">
                     <div className="row">
@@ -148,7 +122,7 @@ function chapterScroll(id) {
                     </div>
                     <div className={name}>
                     <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcform')}}>Get a Call from us</button>
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll3('nbfcForm')}}>Get a Call from us</button>
                     </div>
                     </div>
                 </div>

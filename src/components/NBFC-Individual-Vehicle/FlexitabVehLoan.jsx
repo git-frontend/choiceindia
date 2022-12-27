@@ -14,21 +14,24 @@ function FlexitabVehLoan() {
     const [idscroll, setIdScroll ] = useState('');
     /** scroll purpose */
     function chapterScroll(id) {
-        setIdScroll(id)
-        var element = document.getElementById(idscroll);
+  
+        console.log("checkal",id)
+        var element = document.getElementById(id);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
+      
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+        
       }
     
       
       /** hide and show section */
       const getPosition = () => {
-        const element = document.getElementById("showForm");
+        const element = document.getElementById("showForm3");
         if(element){
             const rect = element.getBoundingClientRect();
             
@@ -80,33 +83,6 @@ function FlexitabVehLoan() {
     return (
         <div>
 
-
-            <section className="flexitabcontent">
-                <div className="container">
-                    <div className="row">
-                    <div className=" col-md-7">
-                            <div className="heading-sec">
-                                <h2 className="title-first flexititle">Apply for Vehicle Loan Online</h2>
-                                <p className="para">Are you struggling for days and still unable to find a way to get your desired vehicle financed even after multiple attempts? Do not worry!
-                                    Your search can stop right here with us. We are a customer-oriented organization where we treat our customers like family. We at Choice Finserv offer affordable and budget-friendly vehicle loans making sure that the wheels of your growth keep moving.</p>
-                                <br /> <p className="para">Own Your Dream Car and drive away happy with an instant vehicle loan with 100% asset value.
-                                    <br />  <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
-                            </div>
-
-                        </div>
-                        <div className=" col-md-5">
-                            <div className="formwrap vehicleloan float-right">
-                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            <NbfcForm/> 
-                                </GoogleReCaptchaProvider> 
-                            </div>
-                        </div>
-
-                    </div>
-
-                </div>
-            </section>
-
             <section className="card-wrap-nbfc">
                 <div className="container">
                     <div className="row">
@@ -149,7 +125,7 @@ function FlexitabVehLoan() {
                     </div>
                     <div className={name}>
                     <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcform')}}>Get a Call from us</button>
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcForm')}}>Get a Call from us</button>
                     </div>
                     </div>
                 </div>
