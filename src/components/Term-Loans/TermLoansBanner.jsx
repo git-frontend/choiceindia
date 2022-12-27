@@ -86,7 +86,10 @@ function chapterScroll(id) {
                                 <p>Our Term Loans are designed to suit your various financial business needs and help offer capital for expenditure and expansion and are best suited for your pre-defined expenditures.</p>
                                 <p>Apply for business term loan online
                                     at the lowest interest rate.<br />
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    {/* <a href="#"> */}
+                                        <span className="aply-btn">Apply Now!</span>
+                                    {/* </a> */}
+                                        </p>
                             </div>
                         </div>
                         <div className=" col-md-5">

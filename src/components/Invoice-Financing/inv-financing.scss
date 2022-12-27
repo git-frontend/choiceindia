@@ -89,6 +89,9 @@
                 p{
                     font-size: 1.75rem;
                     line-height: 1.5;
+                    @media (max-width: $sm){
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }

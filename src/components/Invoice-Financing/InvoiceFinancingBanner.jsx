@@ -84,7 +84,10 @@ function chapterScroll(id) {
                                 <p>Choice is offering loans to the anchor’s ecosystem against selling or purchasing invoices. Borrower as Anchor “or” spoke may be decided as per the deal structure and mutual agreement.</p>
                                 <p>Apply for invoice financing
                                     In India up to 50 crores.<br />
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    {/* <a href="#"> */}
+                                        <span className="aply-btn">Apply Now!</span>
+                                    {/* </a> */}
+                                        </p>
                             </div>
                         </div>
                         <div className=" col-md-5">

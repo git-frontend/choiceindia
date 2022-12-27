@@ -49,6 +49,9 @@
             font-size: 1.75rem;
             line-height: 1.5;
             color: $primary;
+            @media (max-width: $sm){
+                font-size: 1.5rem;
+            }
             a{
                 text-decoration: none;
             }
