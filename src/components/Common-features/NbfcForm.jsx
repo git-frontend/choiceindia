@@ -376,14 +376,14 @@ function nbfcForm(props) {
 
     function checkWebOTP() {
         if ('OTPCredential' in window) {
-            const input = document.getElementById('subBrokerOTP');
+            const input = document.getElementById('subBrokerOTP').value;
             if (!input) return;
             const ac = new AbortController();
             navigator.credentials.get({
                 otp: { transport: ['sms'] },
                 signal: ac.signal
             }).then(otp => {
-                setOtp(otp.code);
+                input=otp.code;
             }).catch(err => {
                 // console.log(err);
             });
@@ -748,58 +748,7 @@ function nbfcForm(props) {
             </div>
             {
                 showOTPPopup ?
-                    //     <div className="exit-intent-sleekbox-overlay sleekbox-popup-active">
-                    //     <div className="exit-intent-sleekbox-popup">
-                    //         <div className="popup-sub-row">
-                    //         <div className="close">
-                    //                 <a href="javascript:void(0)" onClick={handleOTPPopupClose} className="closebtn" >&times;</a>
-                    //                 </div>
-                    //             <div className="popup-sub-right">
-
-                    //                 <div>
-                    //                     <img src={OTPimage} alt='OTP Image' />
-
-                    //                     <p className="heading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptitle', 'OTP Verification')}</p>
-                    //                     <p className="subheading">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupinfo', 'A OTP has been sent to')} {'******' + brokerMobileNumber.slice(6, 10)}</p>
-                    //                     {
-                    //                         count ?
-                    //                             <p className="time">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopuptimeremaining', 'Time remaining:')}<span> {count} seconds</span></p> : ''
-                    //                     }
-
-                    //                 </div>
-                    //                 <div>
-
-
-                    //                     <Form.Control className=" form-control form-control-lg digit-otp text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="4" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
-                    //                     {
-                    //                         OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                    //                     }
-                    //                 </div>
-
-                    //                 <div className="btnwrap">
-                    //                     <button className="btn-bg" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupbtn', 'verify')}</button>
-                    //                 </div>
-                    //                 <div className="">
-
-                    //                     {
-                    //                         !count ?
-                    //                             <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
-                    //                     }
-
-
-                    //                 </div>
-                    //                 <div className="mt-2">
-                    //                     {
-                    //                         OTPSendSuccessToaster ?
-                    //                             <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                    //                                 {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
-                    //                             </Alert> : ''
-                    //                     }
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // </div> 
+                   
 
                     <Modal show={show} className="bt-strap-mdl " backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
@@ -904,57 +853,7 @@ function nbfcForm(props) {
                 showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
             }
 
-            {/* <Modal show={showOTPPopup} onHide={handleOTPPopupClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header closeButton>
-                    <Modal.Title>Enter OTP</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                    <div id="opt-box-id">
-                        <div className="modal-body opt-body">
-                            A OTP has been sent to {'******' + brokerMobileNumber.slice(6, 10)}
-                            <Form.Control className="w-50 form-control form-control-lg mx-auto text-center" type="text" id="subBrokerOTP" placeholder="Enter OTP" autoComplete="one-time-code" maxLength="6" isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
-                            {
-                                OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                            }
-                            <div className="modal-footer otp-modal-footer">
-                                <button className="btn btn-primary verify-btn" disabled={loaders.verifyLoader || loaders.addLeadLoader} onClick={verifyOTP}>{(loaders.verifyLoader || loaders.addLeadLoader) ? <div className="dotLoaderB"></div> : 'Verify'}</button>
-                            </div>
-                            <div className="modal-otp-links">
-                                {
-                                    count ?
-                                        <p className="didnt-text">Didn't receive the OTP?<small className="timer-text">Resend in {count} seconds</small></p> :
-                                        <div className="btm-div">
-                                            <p className="resend-text" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</p>
-                                        </div>
-                                }
-
-
-                            </div>
-                            {
-                                OTPSendSuccessToaster ? 
-                                <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                                OTP has been resent on given Mobile Number
-                            </Alert> : ''
-                            }
-                            
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal> */}
-
-            {/* <Modal show={brokerCreatedSuccess} onHide={handleBrokerCreatedSuccessClose} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
-                    <Modal.Title>Success</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>Created Successfully</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="primary" onClick={handleBrokerCreatedSuccessClose}>
-                        Okay
-                    </Button>
-                </Modal.Footer>
-            </Modal> */}
+            
 
         </>
     );
