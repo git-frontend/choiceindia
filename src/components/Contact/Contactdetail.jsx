@@ -252,7 +252,7 @@ function Contactdetail() {
 
                            <div className="text-right address" >
                            <p className="maintitle">{address && address[city] && address[city][0] && address[city][0].address_title}</p>
-                           <p className="subtext cursor-pointer"><a href="mailto:`${address && address[city] && address[city][0] && address[city][0].email}`" target="_blank">{address && address[city] && address[city][0] && address[city][0].email}</a></p>
+                           {/* <p className="subtext cursor-pointer"><a href="mailto:`${address && address[city] && address[city][0] && address[city][0].email}`" target="_blank">{address && address[city] && address[city][0] && address[city][0].email}</a></p> */}
                            <p className="subtext">{address && address[city] && address[city][0] && address[city][0].branch_address}</p>
                         </div>
 
