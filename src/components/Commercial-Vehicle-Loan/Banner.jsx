@@ -93,7 +93,7 @@ function chapterScroll(id) {
                         </div>
                        
                         <div className=" col-md-5">
-                            <div className="formwrap">
+                            <div className="formwrap float-right">
                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                             <NbfcForm/> 
                                 </GoogleReCaptchaProvider>
