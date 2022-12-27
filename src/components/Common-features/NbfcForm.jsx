@@ -16,6 +16,7 @@ import SubbrokerpopupForm from "../Common-features/Subbrokerpopupform";
 import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import NbfcService from "../../Services/NbfcService";
+import failureimg from '../../assets/images/failure.svg';
 function nbfcForm(props) {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
@@ -658,7 +659,7 @@ function nbfcForm(props) {
     return (
         <>
          
-            <div className="demat-account-form" id="sub-broker-form">
+            <div className="demat-account-form" id="nbfcform">
 
 
                 {
@@ -871,17 +872,32 @@ function nbfcForm(props) {
                     </Button>
                 </Modal.Footer> */}
             </Modal>
-            <Modal show={showErrorToaster} onHide={hideAPIErrorToaster} backdrop="static"
-                keyboard={false} centered>
-                <Modal.Header>
-                    <Modal.Title>Error</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{APIError}</Modal.Body>
-                <Modal.Footer>
-                    <Button variant="warning" onClick={hideAPIErrorToaster}>
-                        Okay
-                    </Button>
-                </Modal.Footer>
+            <Modal className='common-modal-css common-modal-thankyou'
+              show={showErrorToaster}
+              size="md"
+              aria-labelledby="contained-modal-title-vcenter"
+              backdrop='static'
+              keyboard={false}
+              centered
+              onHide={hideAPIErrorToaster}
+            >
+              <Modal.Header closeButton>
+                <Modal.Title id="contained-modal-title-vcenter">
+
+                </Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                {
+                  <img src={failureimg} height="80" width="80" alt='Failure' />
+                }
+                <h4>Oops</h4>
+                <h3>
+                  {APIError}
+                </h3>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
+              </Modal.Footer>
             </Modal>
 
             {
