@@ -10,10 +10,11 @@ import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processin
 import NbfcForm from "../Common-features/NbfcForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function FlexitabSolarFinanace() {
+    const [idscroll2, setIdScroll2 ] = useState('');
    /** scroll purpose */
    function chapterScroll(id) {
-    console.log("check",id);
-    var element = document.getElementById(id);
+    setIdScroll2(id)
+    var element = document.getElementById(idscroll2);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -39,6 +40,7 @@ function FlexitabSolarFinanace() {
 };
 
   useEffect(() => {
+    
     window.addEventListener('scroll', getPosition);
 }, []);
     const settings1 = {

@@ -9,12 +9,13 @@ import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work
 import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
 import NbfcForm from "../Common-features/NbfcForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { set } from "react-hook-form";
 function flexitab() {
-
+    const [idscroll3, setIdScroll3 ] = useState('');
     /** scroll purpose */
 function chapterScroll(id) {
-    console.log("check",id);
-    var element = document.getElementById(id);
+    setIdScroll3(id)
+    var element = document.getElementById(idscroll3);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
     var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -40,6 +41,7 @@ function chapterScroll(id) {
 };
 
   useEffect(() => {
+    
     window.addEventListener('scroll', getPosition);
 }, []);
     const settings1 = {

@@ -10,10 +10,12 @@ import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processin
 import NbfcForm from "../Common-features/NbfcForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function FlexitabVehLoan() {
+    const [name, setName ] = useState('hideform');
+    const [idscroll, setIdScroll ] = useState('');
     /** scroll purpose */
     function chapterScroll(id) {
-        console.log("check",id);
-        var element = document.getElementById(id);
+        setIdScroll(id)
+        var element = document.getElementById(idscroll);
         var headerOffset = 140;
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -23,7 +25,7 @@ function FlexitabVehLoan() {
         });
       }
     
-      const [name, setName ] = useState('hideform');
+      
       /** hide and show section */
       const getPosition = () => {
         const element = document.getElementById("showForm");
@@ -39,6 +41,7 @@ function FlexitabVehLoan() {
     };
     
       useEffect(() => {
+      
         window.addEventListener('scroll', getPosition);
     }, []);
     

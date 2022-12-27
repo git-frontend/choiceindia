@@ -376,7 +376,7 @@ function nbfcForm(props) {
 
     function checkWebOTP() {
         if ('OTPCredential' in window) {
-            const input = document.getElementById('subBrokerOTP').value;
+            const input = document.getElementById('subBrokerOTP');
             if (!input) return;
             const ac = new AbortController();
             navigator.credentials.get({
