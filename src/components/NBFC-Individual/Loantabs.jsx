@@ -62,7 +62,7 @@ function Loantabs() {
             Solar Finance
           </button>
           </div>
-          <div className="menu-sub-tabs" id="gggkkk">
+          <div className="menu-sub-tabs">
               <NBFCMenu />
           </div>
         </div>
