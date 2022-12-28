@@ -124,8 +124,8 @@ const LazyFlexiCreditBusiness = React.lazy(() => import('./components/Flexi-Cred
 const LazySolarFinance = React.lazy(() => import('./components/Solar-Finance/SolarFinance'));
 const LazyBusinessLoan = React.lazy(() => import('./components/Business-Loan/BusinessLoan'));
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
-
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
+const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 function Routing() {
 
 
@@ -674,6 +674,11 @@ function Routing() {
                                 < LazyBusinessLoan />
                             </React.Suspense>
                         } /> */}
+                        <Route exact path='/offer-document' element={
+                            <React.Suspense>
+                                < LazyOfferDocument />
+                            </React.Suspense>
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

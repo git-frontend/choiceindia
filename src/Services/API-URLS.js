@@ -186,6 +186,8 @@ export class API_URLS {
     departmentURL='items/department';
     /** Sub Department  */
     subdepartmentURL = 'items/sub_department?filter[department_id][_eq]=1'
+    /** Offer Document */
+    offerUrl='items/OfferDocument'
 
 
 
@@ -674,6 +676,9 @@ export class API_URLS {
     }
     getSubDepartmentURL(id){
         return this.bannerURL + `items/sub_department?filter[department_id][_eq]=${id}`
+    }
+    getOfferDocumnetURL(){
+        return this.bannerURL + this.offerUrl
     }
     
     
