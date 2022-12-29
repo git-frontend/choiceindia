@@ -45,7 +45,7 @@ function offerDocument() {
   useEffect(()=>{
     setTimeout(()=>{
       window.scrollTo({ top: 0, behavior: 'smooth' })
-    },500)
+    },600)
     })
 
   return (
