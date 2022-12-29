@@ -94,7 +94,7 @@ function OfferDocumentMenu() {
                                                                                             <div className="text">{res.sub_title}</div>
                                                                                             {
                                                                                                 res.pdf ?
-                                                                                                    <div className="cursor-pointer"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(res.pdf) }} className="downloadtext">Download</span></div> :
+                                                                                                    <div className="cursor-pointer"><img src={download} className={"img-fluid"} alt={"Loading"} width={""} height={""} /> <span onClick={() => { window.open(`https://cmsapi.choiceindia.com/assets/${res.pdf}`) }} className="downloadtext">Download</span></div> :
                                                                                                     <div></div>
                                                                                             }
 
