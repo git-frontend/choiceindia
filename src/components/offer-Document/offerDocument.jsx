@@ -42,6 +42,11 @@ function offerDocument() {
       }
     }
   }, [rendercount])
+  useEffect(()=>{
+    setTimeout(()=>{
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    },500)
+    })
 
   return (
   
