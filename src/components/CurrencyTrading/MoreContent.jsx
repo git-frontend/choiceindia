@@ -37,7 +37,7 @@ function MoreContent() {
                                     <h3>How to do Forex Trading in India?</h3>
                                     <p className="sml-para-dv">Unlike most countries, the forex market in India is regulated by SEBI, and the trades take place on standardised exchanges, namely the National Stock Exchange (NSE), Bombay Stock Exchange (BSE), and lastly, the Metropolitan Stock Exchange (MSE)</p>
                                     <p className="sml-para-dv">The difference in forex regulation raises a question: How to do forex trading in India?</p>
-                                    <p className="sml-para-dv">The first step is to <a href="https://choiceindia.com/open-free-demat-account">open a free Demat account</a> with an online brokerage firm and get accepted for executing trades. The registration process mandates copies of documents for address and identity proof, along with a know-your-customer (KYC) process</p>
+                                    <p className="sml-para-dv">The first step is to <a href="https://choiceindia.com/open-free-demat-account">open a free Demat account</a> with an online brokerage firm and get accepted for executing trades. The registration process mandates copies of documents for address and identity proof, along with a know-your-customer (KYC) process.</p>
                                     <p className="sml-para-dv">Remember that only four pairs exist in the Indian forex market. So, if you want to exchange USD for GBP, you must execute two separate trades - INR/USD and INR/GBP.</p>
                                     <p className="sml-para-dv">However, the limited opportunities in the market are also beneficial in the long term since they help you track currency exchange rates more quickly. Tracking impactful events in major countries like the US, the UK, and Japan is more effortless, helping you rapidly identify discrepancies in exchange rates.</p>
 
@@ -68,7 +68,7 @@ function MoreContent() {
                                     <ul className="terms-list sml-para-dv">
                                         <li><strong className="bold-color">Forex Trading Brokerage charges :</strong> While this depends on your choice of online broker, the forex trading brokerage charges in India are usually 0.02% for futures and for options Rs. 20 per trade or lot.</li>
                                         <li><strong className="bold-color">Goods and Services Tax (GST) :</strong> The GST levied depends on the value of the transaction undertaken. For instance, transactions lesser than 1 lakh only comprise a 1% taxable value. The tax amount attracted is 18% of this taxable value.</li>
-                                        <li><strong className="bold-color">Stamp duties :</strong>The payable stamp duty differs according to the state where you reside.</li>
+                                        <li><strong className="bold-color">Stamp duties :</strong> The payable stamp duty differs according to the state where you reside.</li>
                                         <li><strong className="bold-color">Direct tax :</strong> The profits acquired from forex trading are added to your overall income, and you are taxed according to the relevant pre-defined tax slabs as per the Government of India.</li>
                                     
                                     </ul>

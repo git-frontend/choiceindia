@@ -69,7 +69,7 @@ function MoreContent() {
 
                                     <h3>How to Start with Commodity Trading?</h3>
                                     <p className="sml-para-dv">The primary step of commodity trading in India is creating a Demat account from a trusted broker like Choice. Riddled with advantages like <a href="https://choiceindia.com/brokerage-charges"> low brokerage charges</a> and a seamless system of paperless account opening, it is the perfect platform to kickstart your investment journey.</p>
-                                    <p className="sml-para-dv">After creating the initial Demat account, here are the additional steps to make your first trade.</p>
+                                    <p className="sml-para-dv">After creating the initial <a href="https://choiceindia.com/demat-account"> Demat account</a>, here are the additional steps to make your first trade.</p>
                                     <ul className="terms-list sml-para-dv">
                                         <li>Start with depositing a sum into your Demat account equating to the price and quantity of the commodity you plan to purchase</li>
                                         <li>You can choose from direct commodities, stocks or mutual funds to mark your first investment in commodities</li>
@@ -88,7 +88,7 @@ function MoreContent() {
                                     <h3>How to Choose the Best Commodity Trading Platform in India?</h3>
                                     <p className="sml-para-dv">For a beginner, it is advisable to check for the following factors before choosing a commodity trading app.</p>
                                     <ul className="terms-list sml-para-dv">
-                                    <li><strong className="bold-color">Additional costs:</strong> Online commodity platforms may demand a hefty brokerage on commodity trading or increased Demat account charges. Look for platforms that focus on user satisfaction while charging nominal fees.</li>
+                                    <li><strong className="bold-color">Additional costs:</strong> Online commodity platforms may demand a hefty brokerage on commodity trading or increased <a href="https://choiceindia.com/blog/demat-account-charges/">Demat account charges</a>. Look for platforms that focus on user satisfaction while charging nominal fees.</li>
                                     <li><strong className="bold-color">Introductory offers:</strong> While introductory offers might be prevalent among various brokers, it is crucial to recognize the ones explicitly suited to your needs. Look for valuable resources like in-built online commodity advisories to learn along with investing.</li>
                                     <li><strong className="bold-color">User-friendly interface:</strong> A friendly user interface is fundamental for users taking their first steps into commodity trading. Easy access to important pages and sections on the broker platform will help you better get acquainted with the website.</li>
                                          
