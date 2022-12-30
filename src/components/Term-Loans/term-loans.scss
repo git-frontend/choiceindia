@@ -1,0 +1,91 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.inv-fin-banner{
+    &.term-loan-ban{
+        background: $bg-sky2 !important;
+    }
+}
+
+.term-loan-steps{
+    .heading-sec {
+        position: relative;
+        .nbfc-info-menu-main{
+            position: absolute;
+            right: 0;
+            top: -4.5rem;
+            z-index: 99;
+            
+         }
+    }
+}
+
+.terms-loan-doc-req{
+    padding: 7rem 0 6rem 0;
+    
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .cap-right{
+        float: right;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .Doc-rq-card{
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px $boxshadow;
+            margin-bottom: 3rem;
+         }
+        .img-height{
+            min-height: 275px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            @media screen and (max-width:$sm) {
+                min-height: inherit;
+                margin-bottom: 2rem;
+            }
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-medium;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            @media screen and (max-width:$md) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+         }
+        .list-item{
+            li{
+                font-size: 1.9rem;
+                line-height: 1.5;
+                color: $graylight;
+                font-family: $font-family-poppins-medium;
+                padding-left: 0.5rem;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                 }
+            }
+        }
+    }
+}
+
+
+

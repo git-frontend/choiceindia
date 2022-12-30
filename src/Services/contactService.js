@@ -23,7 +23,25 @@ const contact = {
         return data;
     })
 
-   }
+   },
+
+   departmentCollection: function () {
+
+    let api = new API_URLS()
+    let url = api.getDepartmentURL()
+    return axios.get(url).then((data) => {
+        return data
+    })
+   },
+
+   subDepartmentCollection: function (id) {
+
+    let api = new API_URLS()
+    let url = api.getSubDepartmentURL(id)
+    return axios.get(url).then((data) => {
+        return data
+    })
+   },
 
 }
 export default contact;
