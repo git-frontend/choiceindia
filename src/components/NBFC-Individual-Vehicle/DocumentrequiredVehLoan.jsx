@@ -13,12 +13,12 @@ function Documentrequired() {
           <div className="row">
             <div className="col-md-12">
               <div className="Doc-rqrd-heading">
-                <h2 className="title-first">Documents Required for <br/> Vehicle Loan </h2>
+                <h2 className="title-first">Documents Required for <br /> Vehicle Loan </h2>
               </div>
             </div>
           </div>
           <div className="row justify-content-center">
-            <div className="col-md-8">
+            <div className="col-xl-8 col-md-10">
               <div className="Doc-rq-card vehcard">
                 <div className="individiualvehloan">
                   <div className="img-height">
