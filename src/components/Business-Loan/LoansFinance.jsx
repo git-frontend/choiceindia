@@ -6,7 +6,7 @@ import flexicredit from '../../assets/images/business-loan/flexi-credit.webp';
 import invoicefinancing from '../../assets/images/business-loan/invoice-financing.webp';
 import channelfinancing from '../../assets/images/business-loan/channel-financing.webp';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { Link, useNavigate, NavLink } from "react-router-dom";
 
 
 function LoansFinance() {
@@ -37,9 +37,13 @@ function LoansFinance() {
                   <p>We at Choice Finserv understand that being a business owner has certain challenges if funds are not sufficient for either meeting business requirements or for planning a{!show ? <span onClick={()=>{setshow(true);console.log("hhh")}}>... <em className="btn-read">Read more</em></span>:""}{show ?<span>&nbsp;business expansion. Business loans could be of great help in meeting capital requirements to ensure the smooth operations of business activities and help scale new heights of the growth opportunities. <br/>You require sufficient funds for your business to keep the operations alive and thus, require loans or credit facilities to help meet your capital demands. We are here to ensure that the lack of financing never stops your businesses from growing and expanding by giving you the financial push to make your business vision come true. <br/>We can help offer finances for your business in the form of a Term-Loan and Flexi-Credit.<span onClick={()=>{setshow(false);console.log("hhh")}}>&nbsp;<em className="btn-read">Read less</em></span></span>:""}</p>
                 </div>
                 <div className="fin-list-itm">
-                  <div className="list-itm">
+                
+                  <div className="list-itm" >
+                 
                     <div className="itm-img">
+                    <Link to="/term-business-loan">
                       <LazyLoader src={termloan} alt={"Term Business Loan"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                      </Link>
                     </div>
                     <div className="itm-desc">
                       <h4 className="title-secnd">Term Loan</h4>
@@ -48,10 +52,15 @@ function LoansFinance() {
 You will also have the ease to plan your future finances (starting a new sector, buying new machinery, planning to expand) as the Payables of your loan will be fixed. Your gradual and timely repayment will automatically turn your debt to zero.<span onClick={()=>{setshowterm(false);console.log("hhh")}}>&nbsp;<em className="btn-read">Read less</em></span></span>:""}</p>
                       </div>
                     </div>
+                    
                   </div>
+                 
                   <div className="list-itm">
+                 
                     <div className="itm-img">
+                    <Link to="/flexi-credit-loan">
                       <LazyLoader src={flexicredit} alt={"Flexi Credit Business Loan"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                      </Link>
                     </div>
                     <div className="itm-desc">
                       <h4>Flexi Credit</h4>
@@ -61,18 +70,21 @@ You will also have the ease to plan your future finances (starting a new sector,
                       <p>Our Flexi-Credit has the freedom to withdraw or deposit money at{!showflexi ? <span onClick={()=>{setshowflexi(true);console.log("hhh")}}>... <em className="btn-read">Read more</em></span>:""}{showflexi ?<span>&nbsp;the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.<span onClick={()=>{setshowflexi(false);console.log("hhh")}}>&nbsp;<em className="btn-read">Read less</em></span></span>:""}</p>
                       </div>
                     </div>
+                    
                   </div>
                 </div>
               </div>
               <div className="loans-finance-sec">
                 <div className="head-sec">
                   <h2 className="title-secnd">Supply Chain Finance</h2>
-                  <p>We understand the process of taking a loan is very long and too much paperwork makes this process  more difficult. The biggest problem is inappropriate requisitions by the unorganized lending channels. Business owners fail to ach....<a href="/"><span className="btn-read">Read more</span></a></p>
+                  <p>We understand the process of taking a loan is very long and too much paperwork makes this process  more difficult. The biggest problem is inappropriate requisitions by the unorganized lending channels. Business owners fail to ach....<Link to="/business-loan?active=Supply-Chain-Finance"><span className="btn-read" >Read more</span></Link></p>
                 </div>
                 <div className="fin-list-itm">
                   <div className="list-itm">
                     <div className="itm-img">
+                    <Link to="/invoice-financing">
                       <LazyLoader src={invoicefinancing} alt={"Invoice Financing"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                    </Link>
                     </div>
                     <div className="itm-desc">
                       <h4 className="title-secnd">Invoice Financing</h4>
@@ -84,7 +96,9 @@ Choice is offering loans to the anchor's ecosystem against selling or purchasing
                   </div>
                   <div className="list-itm">
                     <div className="itm-img">
+                    <Link to="/channel-financing">
                       <LazyLoader src={channelfinancing} alt={"Channel Financing"} className={"img-fluid img-banner"} width={"570"} height={"320"} />
+                    </Link>
                     </div>
                     <div className="itm-desc">
                       <h4>Channel Financing</h4>

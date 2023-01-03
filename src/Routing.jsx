@@ -123,6 +123,11 @@ const LazyTermLoans = React.lazy(() => import('./components/Term-Loans/TermLoans
 const LazyFlexiCreditBusiness = React.lazy(() => import('./components/Flexi-Credit-Business/FlexiCreditBusiness'));
 const LazySolarFinance = React.lazy(() => import('./components/Solar-Finance/SolarFinance'));
 const LazyBusinessLoan = React.lazy(() => import('./components/Business-Loan/BusinessLoan'));
+const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
+const LazySupplyChainFinance = React.lazy(() => import('./components/Supply-Chain-Finance/SupplyChainFin'));
+const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-Sub/SolarFinanceSub'));
+
+
 function Routing() {
 
 
@@ -609,6 +614,11 @@ function Routing() {
                                 < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
                         } />
+                         <Route exact path='/cfpl-policies' element={
+                            <React.Suspense>
+                                < LazyCfplPolicies />
+                            </React.Suspense>
+                        } />
 
                         <Route exact path='/loan' element={
                             <React.Suspense>
@@ -659,6 +669,16 @@ function Routing() {
                         <Route exact path='/business-loan' element={
                             <React.Suspense>
                                 < LazyBusinessLoan />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/supply-chain-finance' element={
+                            <React.Suspense>
+                                < LazySupplyChainFinance />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/solar-finance-sub' element={
+                            <React.Suspense>
+                                < LazySolarFinanceSub />
                             </React.Suspense>
                         } />
  

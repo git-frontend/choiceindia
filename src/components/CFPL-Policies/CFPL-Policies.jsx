@@ -1,25 +1,21 @@
 
 import React from "react";
-import Banner from './Banner.jsx'
-import LoansFinance from './LoansFinance.jsx'
-import TypesOfCommercial from './TypesOfCommercial.jsx'
-import TypeSolarFinance from './TypeSolarFinance.jsx'
-import "../Invoice-Financing/nbfc-common.scss";
-import "./business-loan.scss";
-import { useState,useEffect,useRef} from "react";
+import  CFPLPoliciesMain from './CFPLPoliciesMain';
+import { useState, useEffect } from 'react';
+import{ useLocation
+} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useSearchParams } from "react-router-dom";
-import SolarFinanceSub from "../Solar-Finance-Sub/SolarFinanceSub.jsx";
-import SupplyChainFin from "../Supply-Chain-Finance/SupplyChainFin.jsx";
 
-function BusinessLoan() {
+
+function CFPLPolicies() {
+
   
   const [rendercount, setRenderCount] = useState(() => false);
-  var active = useRef('');
-  const [searchParams, setSearchParams] = useSearchParams();
-  active.current = searchParams.get('active') || '';
-  // console.log(active.current)
+
+  const location = useLocation();
+
  
+
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -42,25 +38,18 @@ function BusinessLoan() {
       }
     }
   }, [rendercount])
+
   return (
     <div>
-      {
-        
-        active.current === 'Supply-Chain-Finance'?
-        
-        <SupplyChainFin></SupplyChainFin>:
-        active.current === 'SolarFinance'?
-        <SolarFinanceSub></SolarFinanceSub>:
-        <div>
-        <Banner/>
-          <LoansFinance/>
-          <TypesOfCommercial/>
-          <TypeSolarFinance/>
-  
-        </div>
-      }  
+
+          <div className="code-conduct-parent investor-info-parent">
+            <div className="mainwrapper">
+              <CFPLPoliciesMain />
+            </div>
+          </div>
+ 
     </div>
   );
 }
 
-export default BusinessLoan;
+export default CFPLPolicies;

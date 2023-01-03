@@ -56,7 +56,7 @@ function AvailPurposeVehLoan() {
                     </div>
                     <div className="row justify-content-between">
                         <div className="col-xl-5 col-md-6">
-                            <div className="Doc-rq-card vehicle-right">
+                            <div className="Doc-rq-card vehicle-right bringown">
                                 <div className="text-left">
                                     <div className="img-height vehicle-imgheight">
                                         <LazyLoader src={bringvehicle} className={'img-fluid'} width={"441"} height={"294"} alt={"KYC"} />
@@ -71,7 +71,7 @@ function AvailPurposeVehLoan() {
                             </div>
                         </div>
                         <div className="col-xl-5 col-md-6">
-                            <div className="Doc-rq-card vehicle-left">
+                            <div className="Doc-rq-card vehicle-left bringown">
                                 <div className="text-left">
                                     <div className="img-height vehicle-imgheight">
                                         <LazyLoader src={usedvehicle} className={'img-fluid'} width={"307"} height={"294"} alt={"Income Proof"} />
