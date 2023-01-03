@@ -465,3 +465,26 @@ nav .navbar-collapse{
 
 }
 
+.service-section{
+   
+    //opacity: 0;
+    #navbarScrollingDropdown{
+        &::before{
+            opacity: 0; 
+        }
+        color: transparent !important;
+        &::after{
+            color: rgba(34, 31, 32, 0.7490196078);
+        }
+    } 
+}
+
+.service-section-sub{
+    .single-nav-links{
+        color: transparent;
+        position: absolute !important;
+        z-index: 99999;
+    }
+ 
+}
+

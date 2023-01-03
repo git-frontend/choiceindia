@@ -11,7 +11,10 @@ export default function Header() {
 
     const [show, setShow] = useState(true)
 
-  
+  function check(){
+    window.location.pathname="/services"
+    console.log("checking",window.location.pathname);
+  }
    
     
         return (
@@ -37,17 +40,17 @@ export default function Header() {
                             <li className="nav-item">
                                 <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
-                            <li className="nav-item">
-                                {/* <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
-                                 */}
-                                 <NavDropdown title="Services" id="navbarScrollingDropdown" className="top-nav-links">
-                                <NavDropdown.Item className="nav-dropdown-links" as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
+                            <li className="nav-item service-section-sub">
+                                <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                                
+                                 <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
+                                <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
                                   {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking'>Wealth Planning</NavDropdown.Item> */}
-                                 <NavDropdown.Item className="nav-dropdown-links" as={Link} to='/insurance'>Insurance</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" as={Link} to='/loan'>Loans</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/insurance'>Insurance</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Capital Advisory</NavDropdown.Item> */}
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Management Consultancy</NavDropdown.Item> */}
-                                 <NavDropdown.Item className="nav-dropdown-links"  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)}  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Tax Advisory</NavDropdown.Item> */}
                                 </NavDropdown>
                             </li>
