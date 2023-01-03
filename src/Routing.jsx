@@ -126,6 +126,8 @@ const LazyBusinessLoan = React.lazy(() => import('./components/Business-Loan/Bus
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
+const LazyStockBroker = React.lazy(() => import('./components/Stock-Broker-Mumbai/Stock-Broker'));
+
 function Routing() {
 
 
@@ -677,6 +679,11 @@ function Routing() {
                         <Route exact path='/offer-document' element={
                             <React.Suspense>
                                 < LazyOfferDocument />
+                            </React.Suspense>
+                        } />
+                          <Route exact path='/stock-broker-in-mumbai' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
                             </React.Suspense>
                         } />
  
