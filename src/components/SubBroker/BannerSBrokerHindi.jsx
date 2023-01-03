@@ -2,7 +2,7 @@
 import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-without-deposit.webp';
 import SubBrokerForm from './SubBrokerForm'
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function BannerSBrokerHindi() {
 
     return (
@@ -38,7 +38,9 @@ function BannerSBrokerHindi() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm language='hindi' />
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <SubBrokerForm language='hindi' />
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

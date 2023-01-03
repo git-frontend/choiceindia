@@ -2,6 +2,7 @@
 import React from "react";
 import Bannerimage from '../../assets/images/services/government-advisory-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
 
 function GovernmentAdvisory() {
 
@@ -45,7 +46,7 @@ function GovernmentAdvisory() {
                                     <p>We use effective M&amp;E frameworks to analyse and improve outcomes and impact of policies and projects.</p>
                                 </div>
                             </div>
-                            {/* <a href="/" className="btn-bg">Explore</a> */}
+                            <Link to="/government-advisory" className="btn-bg">Explore</Link>
                         </div>
                     </div>
 
