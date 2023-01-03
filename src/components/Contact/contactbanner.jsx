@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
 import phoneicon from '../../assets/images/contact/phone-icon.svg';
@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'react-bootstrap/Modal';
 import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 import utils from "../../Services/utils";
+import { useSearchParams } from "react-router-dom";
 
 function Contactbanner() {
 
@@ -38,6 +39,10 @@ function Contactbanner() {
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
   let departmentlist = {};
   let subdepartmentlist = {}
+  var active = useRef('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  active.current = searchParams.get('active') || '';
+  console.log("check",active.current)
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
@@ -93,7 +98,11 @@ function Contactbanner() {
     setTrigger(true)
     if (trigger == true) {
       loadDepartmentList()
-
+      // const nbfclist="5+NBFC+choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )+1800-203-5193 ( Toll No. )+Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099+Between 9:30 AM to 6:30 PM Monday to Saturdaysdvcd"
+      active.current =='NBFC'? loadSubDepartmentList('5'):"";
+      // active.current =='NBFC'? setdept(nbfclist):""
+      console.log("sdcsz",document.getElementById('dropdown').value);
+      
 
     }
   }, [trigger])
@@ -124,7 +133,7 @@ function Contactbanner() {
   });
   const submitFormData = (FormData) => {
     let formData = FormData;
-    formData['department'] = (dept || [])[1] || '';
+    formData['department'] = (dept || [])[1] || 'NBFC';
     formData['sub_department'] = (subdept || [])[0] || '';
     formData['email_to'] = (subdept || [])[1] || '';
     if(listid && subListid){
@@ -160,7 +169,12 @@ function Contactbanner() {
                       <div className='dipar-dropdown'>
                         <p className="depart-text">Department *</p>
                         <Form.Select variant="Info" id="dropdown" onChange={() => selectdepartment()} className=" department getvalue" >
-                          <option value="Select here" selected>Select here</option>
+                          {
+                            active.current =='NBFC'?
+                            <option value={"5"+"NBFC"+"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )"+"1800-203-5193 ( Toll No. )"+"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099"+"Between 9:30 AM to 6:30 PM Monday to Saturday"} >NBFC</option>:
+                            <option value="Select here" selected>Select here</option>
+                          }
+                          
                           {/* <option value="Select here" selected>Select here</option>	
                           <option className="option">Compliance & Complaint.</option>	
                         <option className="option">Partner related</option>	

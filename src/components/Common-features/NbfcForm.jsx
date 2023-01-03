@@ -27,7 +27,7 @@ function nbfcForm(props) {
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
     const [brokerName, setBrokerName] = useState('');
     const [lastName, setLastName] = useState('');
-    const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
+    const [brokerMobileNumber, setBrokerMobileNumber] = useState();
     const [brokerEmail, setBrokerEmail] = useState('');
     const [brokerCityBranch, setBrokerCityBranch] = useState('');
     const [brokerState, setBrokerState] = useState('');
@@ -428,7 +428,7 @@ function nbfcForm(props) {
         };
         let request1 = {
             "product": 'NBFC',
-            "user_name": brokerMobileNumber,
+            "user_name": parseInt(brokerMobileNumber) ,
             "captchaResp": captchaTokenre,
             
         };
