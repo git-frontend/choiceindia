@@ -6,12 +6,20 @@ import TypesOfCommercial from './TypesOfCommercial.jsx'
 import TypeSolarFinance from './TypeSolarFinance.jsx'
 import "../Invoice-Financing/nbfc-common.scss";
 import "./business-loan.scss";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef} from "react";
 import meta_tags from "../../Data/MetaTags";
+import { useSearchParams } from "react-router-dom";
+import SolarFinanceSub from "../Solar-Finance-Sub/SolarFinanceSub.jsx";
+import SupplyChainFin from "../Supply-Chain-Finance/SupplyChainFin.jsx";
+
 function BusinessLoan() {
   
   const [rendercount, setRenderCount] = useState(() => false);
-  
+  var active = useRef('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  active.current = searchParams.get('active') || '';
+  // console.log(active.current)
+ 
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -36,10 +44,21 @@ function BusinessLoan() {
   }, [rendercount])
   return (
     <div>
+      {
+        
+        active.current === 'Supply-Chain-Finance'?
+        
+        <SupplyChainFin></SupplyChainFin>:
+        active.current === 'SolarFinance'?
+        <SolarFinanceSub></SolarFinanceSub>:
+        <div>
         <Banner/>
-        <LoansFinance/>
-        <TypesOfCommercial/>
-        <TypeSolarFinance/>
+          <LoansFinance/>
+          <TypesOfCommercial/>
+          <TypeSolarFinance/>
+  
+        </div>
+      }  
     </div>
   );
 }

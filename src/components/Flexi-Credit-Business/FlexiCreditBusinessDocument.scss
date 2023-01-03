@@ -13,8 +13,8 @@
                 height: 12rem;
                 display: block;
                 position: absolute;
-                left: 0;
-                top: -4rem;
+                left: 14rem;
+                top: -5rem;
                 background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top left;
                 background-size: contain;
         
@@ -22,21 +22,10 @@
                     display: none;
                 }
             }
-            &::after {
-                content: '';
-                width: 9rem;
-                height: 7rem;
-                display: block;
-                position: absolute;
-                right: -1rem;
-                top: 19rem;
-                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top right;
-                background-size: contain;
-        
-                @media (max-width: $md) {
-                    display: none;
-                }
+            &::after{
+                display: none;
             }
+            
         }
     }
 }
@@ -73,18 +62,40 @@
             margin-bottom: 4rem;
          }
     }
+    .cap-right{
+        float: right;
+        
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+         
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
     .Doc-rq-card{
+        width: 100%;
+        background: $whiteColor;
+        box-shadow: 10px 10px 25px $nbfcboxshadow;
+        border-radius: 20px;
+        padding: 2rem 3rem;
+        height: 100%;
+        margin: 0 1rem;
         @media screen and (max-width:$sm) {
             padding:2rem;
             border-radius: 20px;
-            box-shadow: 0px 0px 8px $boxshadow;
-            margin-bottom: 3rem;
+            box-shadow: 0px 0px 8px $nbfcboxshadow;
+            margin: 0 auto 3rem;
+            height: auto;
          }
         .img-height{
             min-height: 275px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             @media screen and (max-width:$sm) {
                 min-height: inherit;
                 margin-bottom: 2rem;
@@ -94,15 +105,17 @@
             font-size: 2.5rem;
             color: $primary;
             font-family: $font-family-poppins-medium;
-            margin-top: 0.5rem;
+            margin-top: 3.5rem;
             margin-bottom: 3rem;
+            text-align: left;
+
             @media screen and (max-width:$md) {
                 font-size: 2rem;
                 margin-bottom: 2rem;
             }
          }
         .list-item{
-            padding: 0 6rem;
+            padding: 0 3rem;
             @media screen and (max-width:$md) {
                padding: 0 2rem;
             }

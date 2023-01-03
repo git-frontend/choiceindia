@@ -9,7 +9,7 @@ function AvailSolar() {
         <div>
 
 
-<section className="solar-avail-bnr">
+<section className="solar-avail-bnr" id="showForm">
       <div className="container">
         <div className="row">
             <div className="col-md-12">

@@ -37,8 +37,8 @@ function NBFCloan() {
       <div className="mainwrapper">
          
          <Banner />
-         <Loantabs />
-          
+          <Loantabs />
+       
           
        </div> 
       

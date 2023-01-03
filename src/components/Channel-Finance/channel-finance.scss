@@ -5,6 +5,15 @@
 .inv-fin-banner{
     &.channel-ban-bg{
         background: $bg-sky !important;
+        .fin-banner-caption {
+            position: relative;
+            &::after{
+                display: none;
+            }
+            &::before{
+                display: none;
+            }
+        }
     }
 }
 
@@ -68,6 +77,9 @@
                 p{
                     font-size: 1.75rem;
                     line-height: 1.5;
+                    @media (max-width: $sm){
+                        font-size: 1.5rem;
+                    }
                 }
             }
         }
@@ -95,11 +107,20 @@
          }
     }
     .Doc-rq-card{
+        width: 95%;
+        background: $whiteColor;
+        box-shadow: 10px 10px 25px $nbfcboxshadow;
+        border-radius: 20px;
+        padding: 2rem 3rem;
+        height: 100%;
+        margin: 0 1rem;
         @media screen and (max-width:$sm) {
             padding:2rem;
             border-radius: 20px;
-            box-shadow: 0px 0px 8px $boxshadow;
-            margin-bottom: 3rem;
+            box-shadow: 0px 0px 8px $nbfcboxshadow;
+            margin: 0 auto 3rem;
+            height: auto;
+            width: 100%;
          }
          .card-item-chanFin {
             display: flex;
@@ -132,20 +153,24 @@
             min-height: 275px;
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: flex-start;
             @media screen and (max-width:$sm) {
                 min-height: inherit;
                 margin-bottom: 2rem;
             }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                min-height: 175px;
+              }
         }
         .title-doc{
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: $primary;
             font-family: $font-family-poppins-medium;
-            margin-top: 0.5rem;
+            margin-top: 3.5rem;
             margin-bottom: 3rem;
+            text-align: left;
             @media screen and (max-width:$md) {
-                font-size: 2rem;
+                font-size: 1.75rem;
                 margin-bottom: 2rem;
             }
          }
@@ -156,12 +181,15 @@
             margin-top: 0.5rem;
             margin-bottom: 1rem;
             opacity: 0.8;
+           
             @media screen and (max-width:$md) {
                 font-size: 2rem;
                 margin-bottom: 2rem;
             }
          }
         .list-item{
+            padding: 0 2rem;
+            
             li{
                 font-size: 1.9rem;
                 line-height: 1.5;
@@ -175,6 +203,20 @@
                  }
             }
         }
+    }
+   
+}
+
+.hideform{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: $sm) {
+    display: block !important;
     }
 }
 
