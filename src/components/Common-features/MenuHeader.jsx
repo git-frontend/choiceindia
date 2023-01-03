@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import  ImageSub0  from '../../assets/images/choice-logo.svg';
 //import  ImageSub1  from '../../assets/images/logo-white.svg';
-import {NavLink} from 'react-router-dom';
+import {NavLink, Link} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faBars } from '@fortawesome/free-solid-svg-icons'
 import Nav from 'react-bootstrap/Nav';
@@ -11,7 +11,10 @@ export default function Header() {
 
     const [show, setShow] = useState(true)
 
-  
+  function check(){
+    window.location.pathname="/services"
+    console.log("checking",window.location.pathname);
+  }
    
     
         return (
@@ -37,18 +40,18 @@ export default function Header() {
                             <li className="nav-item">
                                 <NavLink to= '/investment-app'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>App</NavLink>
                             </li>
-                            <li className="nav-item">
-                                {/* <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
-                                 */}
-                                 <NavDropdown title="Services" id="navbarScrollingDropdown" className="top-nav-links">
-                                <NavDropdown.Item className="nav-dropdown-links" href='/' target="_blank">Broking & Distribution</NavDropdown.Item>
-                                  <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Wealth Planning</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Insurance</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Loans</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Capital Advisory</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Management Consultancy</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Government Advisory</NavDropdown.Item>
-                                 <NavDropdown.Item className="nav-dropdown-links" target="_blank" href='/'>Tax Advisory</NavDropdown.Item>
+                            <li className="nav-item service-section-sub">
+                                <NavLink to= '/services'   onClick={ ()=>setShow(!show)} className={({isActive}) => "single-nav-links nav-link" + (isActive ? "single-nav-links nav-link active-header" :'')}>Services</NavLink>
+                                
+                                 <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
+                                <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
+                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking'>Wealth Planning</NavDropdown.Item> */}
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/insurance'>Insurance</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
+                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Capital Advisory</NavDropdown.Item> */}
+                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Management Consultancy</NavDropdown.Item> */}
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)}  as={Link} to='/government-advisory'>Government Advisory</NavDropdown.Item>
+                                 {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Tax Advisory</NavDropdown.Item> */}
                                 </NavDropdown>
                             </li>
                             <li className="nav-item">
