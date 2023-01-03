@@ -90,6 +90,7 @@ body{
                 }
                 @media (max-width: $sm) {
                     width: 100%;
+                    display: none;
                 }
             }
             .list-item-right{

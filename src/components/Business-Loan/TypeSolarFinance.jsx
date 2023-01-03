@@ -21,7 +21,7 @@ function TypeSolarFinance() {
                 <Link to="/solar-financing"><span class="btn-bg">Know more</span></Link>
               </div>
             </div>
-            <div className="col-md-6 d-flex justify-content-center">
+            <div className="col-md-6 d-flex justify-content-center d-none d-sm-block">
               <LazyLoader src={solar} alt={"Solar Finance"} className={"img-fluid img-banner"} width={"550"} height={"331"} />
             </div>
           </div>
