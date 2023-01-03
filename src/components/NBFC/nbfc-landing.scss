@@ -100,6 +100,9 @@ body{
                     font-family: $font-family-poppins-medium;
                     color:$darkblack;
                     padding-left: 3rem;
+                    @media (max-width: $sm) {
+                        padding-left: 0;
+                    }
                 }
                 .cont-list{
                     list-style: none;
