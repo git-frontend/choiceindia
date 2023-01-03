@@ -6,6 +6,7 @@ import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountS
 import Template2 from "../Common-features/Template2";
 import{ useLocation} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Slider from "react-slick";
 function Opendemat(){
     
@@ -139,7 +140,9 @@ function Opendemat(){
                       <div className="rightsec">
                         <div className="popmd">
 
-                            <DematAccountForm></DematAccountForm>
+                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                          <DematAccountForm />
+                        </GoogleReCaptchaProvider>
                         </div>
                       </div>
                     </div>

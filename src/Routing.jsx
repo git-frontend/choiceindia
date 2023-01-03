@@ -128,7 +128,9 @@ const LazySupplyChainFinance = React.lazy(() => import('./components/Supply-Chai
 const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-Sub/SolarFinanceSub'));
 
 
-function Routing() {
+
+const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
+const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));function Routing() {
 
 
 
@@ -613,6 +615,11 @@ function Routing() {
                             <React.Suspense>
                                 < LazyMutualFundsInvestmentHindi />
                             </React.Suspense>
+                        } /> 
+                        <Route exact path='/government-advisory' element={
+                            <React.Suspense>
+                                < Lazygovernementadvisory />
+                            </React.Suspense>
                         } />
                          <Route exact path='/cfpl-policies' element={
                             <React.Suspense>
@@ -681,6 +688,12 @@ function Routing() {
                                 < LazySolarFinanceSub />
                             </React.Suspense>
                         } />
+                         <Route exact path='/offer-document' element={
+                            <React.Suspense>
+                                < LazyOfferDocument />
+                            </React.Suspense>
+                        } />
+ 
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

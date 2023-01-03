@@ -1,11 +1,12 @@
 import './OpenDemateAccountPopup.scss';
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
 import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import { Link } from "react-router-dom";
 import Thankyoupopup from './Thanku-popup.jsx';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
 
@@ -27,6 +28,9 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
+
+    const [captchaToken, setCaptchaToken] = useState('');
+    const { executeRecaptcha } = useGoogleReCaptcha();
 
     /** state to show thankyou popup default */
     // const [showAdPopUp, setshowAdPopUp] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
@@ -123,7 +127,8 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             }));
         } else if (mobileNumber.length === 10 && mobileRegex.test(mobileNumber)) {
             fetchQueryParams();
-            sendOTP();
+            // sendOTP();
+            handleReCaptchaVerify();
         }
     }
 
@@ -147,7 +152,8 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "utm_medium": UTMMedium.current || null,
             // blog_leads'
             "utm_source": UTMSource.current || null,
-            "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+            "captchaResp": captchaToken,
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -171,6 +177,28 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('sendOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('sendOTPLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            sendOTP();
+        }
+    }, [captchaToken]);
 
     return (
         <>
