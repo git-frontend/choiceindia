@@ -24,23 +24,23 @@ function Documentrequired() {
                   <div className="img-height">
                     <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"KYC Documents for Individual Loan"} />
                   </div>
-                  <div className=" vehicle-right ">
-           
-                  <h3 className="title-doc text-left ">For KYC</h3>
-                
-                <ul className="list-item">
-                  <li>Aadhar Card</li>
-                  <li>Pan Card</li>
-                  <li>Driving Licence</li>
-                  <li>Income Proof</li>
-                </ul>
-              </div>
+                  <div className="vehicle-right ">
+
+                    <h3 className="title-doc text-left ">For KYC</h3>
+
+                    <ul className="list-item">
+                      <li >Aadhar card</li>
+                      <li>Pan Card</li>
+                      <li>Driving Licence</li>
+                      <li>Income Proof</li>
+                    </ul>
+                  </div>
                 </div>
-                
+
               </div>
             </div>
-           
-           
+
+
           </div>
         </div>
       </section>
