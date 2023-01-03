@@ -147,7 +147,7 @@ body{
             height: 6.5625rem;
             background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
             background-size: contain;
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
               display: none;
             }
         }
@@ -161,9 +161,9 @@ body{
             height: 16rem;
             background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
             background-size: contain;
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
                 display: none;
-              }
+            }
         }
     }
     .para{

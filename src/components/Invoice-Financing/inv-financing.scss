@@ -107,9 +107,11 @@
             @media screen and (max-width:$sm) {
                 min-height: inherit;
                 margin-bottom: 2rem;
+                display: block;
             }
             @media (min-width:$sm-x) and (max-width:$md) {
               min-height: 175px;
+              display: block;
             }
         }
         .title-doc{
