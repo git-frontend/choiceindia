@@ -1,0 +1,623 @@
+@import '../../assets/css/header.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+
+.contactbody {
+    height: inherit;
+    background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
+}
+
+/** temporarychanges */
+// .banner-parent-temp {
+  
+//     position: relative;
+//     background-color: #F4F6F7;
+//     height: 800px;
+//     width: 100%;
+// }
+
+.banner-contact1 {
+    // border:2px solid red;
+    display: flex;
+    position: relative;
+    padding-bottom: 4rem;
+    width: 100%;
+
+    .banner-img-temp {
+       
+        width: 60%;
+        height: 500px;
+      
+        .img-temp {
+            width: 600px;
+            height: 500px;
+            margin-top: 100px;
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            border-radius: 5px;
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+        }
+    }
+
+    .banner-content-temp {
+       
+        width: 40%;
+        height: 500px;
+
+        h2 {
+            width: 200px;
+            margin-top: 70%;
+        }
+
+        p {
+            width: 300px;
+        }
+
+        h2,
+        p {
+           
+            height: 30px;
+            margin-left: 100px;
+            margin-bottom: 20px;
+            background: #eee;
+            background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+            border-radius: 5px;
+            background-size: 200% 100%;
+            animation: 1.5s shine linear infinite;
+        }
+    }
+}
+
+
+/** changes below */
+.banner-parent {
+    width: 100%;
+}
+
+.banner-contact {
+    position: relative;
+    padding-bottom: 4rem;
+    animation: hideMe 4s forwards;
+    @media (max-width: $sm) {
+        min-height: 200px;
+    }
+    
+    
+
+    .ban-img {
+        width: 100%;
+        @media (max-width: $sm) {
+            display: none;
+        }
+    }
+
+    .banner-caption {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        top: 50%;
+        transform: translate(0, -50%);
+        z-index: 9;
+        color: $primary;
+
+        .big-ttl {
+            @media (max-width: $sm) {
+                font-size: 3rem;
+                line-height: 1.5;
+            }
+        }
+    }
+}
+
+
+.contactdetail {
+    padding: 3rem 0 0 0;
+    position: relative;
+    animation: hideMe 4s forwards;
+
+    @media (max-width: 1024px) {
+    }
+
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     display: block;
+    //     height: 57rem;
+    //     width: 21rem;
+    //     right: 0;
+    //     top: -10%;
+    //     background: url('../../assets/images/contact/contactbefore.png');
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    // }
+
+    .mt-10 {
+        margin-top: 10rem;
+
+        @media (max-width: $sm) {
+            margin-top: 6rem;
+        }
+    }
+
+    .detailwrap {
+        @media (max-width: $sm) {
+            flex-direction: column;
+        }
+    }
+
+    .address {
+        @media (max-width: $sm) {
+            text-align: left !important;
+            margin-top: 3rem;
+        }
+    }
+
+    .maintitle {
+        color: $primary;
+        font-weight: 600;
+        font-size: 1.875rem;
+        line-height: 2.8125rem;
+        font-family: $font-family-poppins-medium;
+    }
+
+    .subtext {
+        color: $secondary;
+        font-weight: 400;
+        font-size: 1.4rem;
+        line-height: 2.5rem;
+        font-family: $font-family-poppins-regular;
+    }
+
+    .subhead {
+        color: $primary;
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 2.125rem;
+        font-family: $font-family-poppins-regular;
+    }
+
+    .cust-dropdown {
+        background: $whiteColor;
+        box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.1);
+        border-radius: 7px;
+        margin-top: 4.5625rem;
+
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+
+        .form-select {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 48px;
+            position: relative;
+            color: $primary;
+            font-size: 1.4rem;
+            padding: 0 2rem;
+            font-family: $font-family-poppins-regular, sans-serif;
+            outline: none;
+            border: 0;
+            box-shadow: inherit;
+        }
+
+        .dropdown-toggle {
+            width: 100%;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 48px;
+            position: relative;
+            color: #221F2040;
+            font-size: 1.4rem;
+            padding: 0 2rem;
+            font-family: $font-family-poppins-regular, sans-serif;
+
+            &::after {
+                background: url(../../assets/images/career/arrow-sort.svg) no-repeat top 9px left 6px $bgcolordark;
+                right: 4px;
+                position: absolute;
+                width: 3rem;
+                height: 3rem;
+                border-radius: 7px;
+                top: 4px;
+                background-size: 1.2rem;
+            }
+        }
+
+
+        .dropdowntoggle {
+            background: transparent;
+            border: 0px solid $lightColor;
+            filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+            border-radius: 0px;
+            width: 100%;
+            font-family: $font-family-poppins-regular, sans-serif;
+        }
+
+        .option {
+            color: $primary;
+            background: transparent;
+            border: 0px solid $lightColor;
+            filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+        }
+
+        .dropdown-menu {
+            width: 100%;
+
+            .dropdown-item {
+                font-size: 1.4rem;
+                font-family: "PoppinsRegular", sans-serif, sans-serif;
+            }
+        }
+    }
+
+    .flex-column-left {
+        width: 35%;
+
+        @media (max-width: $sm) {
+            width: 100%;
+        }
+    }
+    @media (max-width: $sm) {
+        padding: 5rem 0 0 0;
+    }
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.attach {
+    cursor: pointer;
+}
+
+
+
+
+.cnt-banner-bottm {
+    position: relative;
+    margin-top: -208px;
+    animation: hideMe 4s forwards;
+
+    .writebtn {
+        position: relative;
+        left: 0;
+        border-radius: 0;
+        display: inline-block;
+
+        .writeus {
+            background-color: $bgcolor-yellow;
+            border: none;
+            color: $primary;
+            font-weight: 700;
+            padding: 1.5rem 2.5rem;
+            font-size: 1.375rem;
+            display: inline-block;
+            font-family: $font-family-poppins-semibold;
+        }
+    }
+
+    .form {
+        position: relative;
+        background-color: $primary;
+        left: 0;
+        right: 0;
+        width: 100%;
+        // top: 127%;
+        margin: 0 auto;
+        // transform: translate(0, -50%);
+        z-index: 9;
+        padding: 3rem 2.8rem;
+
+        @media (max-width: $sm) {
+            
+            padding: 3rem 2rem;
+        }
+
+       
+        .formgrp {
+            width: 49%;
+            @media (max-width:$sm) {
+                width:100%;
+            }
+
+            .formcontrol {
+                background: transparent;
+                border: 1px solid $lightColor;
+                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                border-radius: 3px;
+                padding: 14px 12px;
+                color: $whiteColor;
+                font-size: 1.5rem;
+                line-height: 0;
+
+                @media (max-width: $sm) {
+                    padding: 12px 10px;
+                }
+            }
+
+            ::placeholder {
+                color: $lightColor;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+
+                @media (max-width: $sm) {
+                    font-size: 1.2rem;
+                }
+            }
+
+            .formlabel {
+                color: $lightColor;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                font-weight: 600;
+                font-family: $font-family-poppins-regular;
+                margin-bottom: 1.0625rem;
+
+                @media (max-width: $sm) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .formlabel {
+            color: $lightColor;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 600;
+            font-family: $font-family-poppins-regular;
+            margin-bottom: 1.0625rem;
+
+            @media (max-width: $sm) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .cust-dropdown {
+            background: $primary;
+            border: 1px solid $lightColor;
+            filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+            border-radius: 3px;
+            padding: 10px;
+            position: relative;
+
+            .downar {
+                position: absolute;
+                right: 10px;
+                top: 20px;
+                z-index: 99;
+
+
+                &::after {
+                    content: url('../../assets/images/contact/soliddownarrow.svg');
+                    position: absolute;
+                    display: block;
+                    height: 11px;
+                    width: 16px;
+                    color: $lightColor;
+                    right: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+
+            .dropdowntoggle {
+                background: $primary;
+                border: 0px solid $lightColor;
+                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                border-radius: 0px;
+                width: 100%;
+                text-align: left;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                position: relative;
+                color: $lightColor;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+
+                @media (max-width: $sm) {
+                    font-size: 1.2rem;
+                    padding: 0 10px;
+                }
+
+                &::after {
+                    content: url('../../assets/images/contact/soliddownarrow.svg');
+                    position: absolute;
+                    display: block;
+                    height: 11px;
+                    width: 16px;
+                    color: transparent;
+                    right: 10px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+            .dropdown-menu {
+                width: 100%;
+                font-family: $font-family-poppins-regular, sans-serif;
+            }
+        }
+
+        .messagefield {
+
+            .messagearea {
+                min-height: 200px;
+                width: 100%;
+                background: transparent;
+                border: 1px solid $lightColor;
+                color: $lightColor;
+                font-weight: 400;
+                font-family: $font-family-poppins-regular;
+                font-size: 1.5rem;
+                line-height: 2.25rem;
+                padding: 14px;
+
+                @media (max-width: $sm) {
+                    font-size: 1.2rem;
+                    padding: 12px 10px;
+                }
+            }
+        }
+
+        .uploadbtn {
+            position: relative;
+            margin-bottom: 0rem;
+            justify-content: flex-end;
+            cursor: pointer;
+        }
+        .feel-msg{
+            margin-right:2rem;
+            font-family: $font-family-poppins-medium;
+            color: green;
+        }
+
+        .attachement {
+            color: $lightColor;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            font-weight: 400;
+            font-family: $font-family-poppins-regular;
+            margin-bottom: 1.0625rem;
+            display: flex;
+            align-items: center;
+
+            .fa-link {
+                margin-left: 1rem;
+            }
+
+            @media (max-width: $sm) {
+                font-size: 1.2rem;
+            }
+        }
+
+        .filename {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        input::-webkit-file-upload-button {
+            background-color: transparent;
+            color: $lightColor;
+            font-size: 1rem;
+            line-height: 24px;
+            font-weight: 400;
+            border: none;
+            font-family: $font-family-poppins-regular;
+        }
+
+        .sendbtn {
+            min-width: 11rem;
+            border-radius: 10px;
+            
+        }
+    }
+    @media (max-width: $md) {
+        margin-top: -158px;
+    }
+    @media (max-width: $sm) {
+        margin-top: 0;
+    }
+}
+
+
+
+.text-danger {
+    font-family: $font-family-poppins-regular;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.warning {
+   color:red ;
+   margin-top:-40px;
+}
+.contact-map{
+    width: 100%;
+    min-height: 400px;
+}
+
+.m01{
+    @media (max-width: $sm) {
+        margin: 0 1.3rem;
+    } 
+    .icon-table{
+        float: right;
+    }
+    .support-md{
+        display: flex;
+        justify-content: space-around;
+        @media (max-width: $sm) {
+            flex-direction: column;
+        }
+
+    }
+    .support-related{
+        
+        margin-right: 10rem;
+        @media (max-width: $sm) {
+            margin-right: 1rem;
+        }
+    }
+    .txt-center{
+        text-align: center;
+    }
+
+}
+
+.contactdetail-new{
+    .maintitle{
+        margin-bottom: 2rem;
+    }
+    .support-md{
+        margin-bottom: 3.5rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .support-itm{
+            display: flex;
+            align-items: center;
+            margin: 0.5rem 0;
+            p{
+                font-size: 1.4rem;
+                font-family: $font-family-poppins-regular;
+                padding-left: 0.6rem;
+                margin: 0;
+                a{
+                    text-decoration: none;
+                    color: $secondary;
+                    &:hover{
+                        color: $bluetext;
+                    }
+                }
+            }
+        }
+    }
+    .mainwrapquick-table{
+        .icon-table{
+            float: right;
+        }
+        .quicklinkswrap{
+            border-radius: 20px;
+            border: #C2C2C2 solid 1px;
+            padding: 1.5rem;
+        }
+    }
+}

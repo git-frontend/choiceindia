@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import pin from '../../assets/images/contact/office.svg';
 import clock from '../../assets/images/contact/business-hours.webp';
-import { Form } from "react-bootstrap";
 import LazyLoader from '../Common-features/LazyLoader';
 import contactMap from "../../Data/ContactMapData";
 import city_list from "../../Data/ContactCity";
@@ -12,12 +11,19 @@ import "../Investorcomplaints/investorcomplaints.scss";
 import "../CEBPLPolicies/CEBPL-Policies.scss";
 import contactService from "../../Services/contactService";
 import noDataimg from '../../assets/images/no-data.webp';
+import Modal from 'react-bootstrap/Modal';
+import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
+import Image2 from '../../assets/images/icons/security.svg';
 
 function Contactdetail() {
    const [address, setaddress] = useState({});
    const [city, setcity] = useState('MUMBAI');
    const [check, setcheck] = useState(false);
    const [trigger, setTrigger] = useState(false);
+   const handleShow = () => setShow(true);
+   const handleClose = () => setShow(false);
+   const [show, setShow] = useState(false);
+
    let citylists = [];
 
    function cityList() {
@@ -55,41 +61,49 @@ function Contactdetail() {
    return (
 
       <div>
-         <section className="contactdetail contactdetail-new">
+        <section className="contactdetail contactdetail-new">
             <div className="container">
                <div className="row">
                   <div className="col-md-12" >
-                     <div className="text-center">
-                        {/* <FontAwesomeIcon icon={faHeadphones} /><br/> */}
-                        <p className="maintitle">Support Related Queries</p>
-                     </div>
                      <div className="support-md">
-                        <div className="text-center support-itm">
+                        <h3 className="maintitle resmaintitle">Support Related Queries</h3>
+                        <div className=" support-itm">
                            <FontAwesomeIcon icon={faPhone} />
-                           <p><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
+                           <p className="subtitle"><a href="tel:+918824242424" target="_blank">+91 88 24 24 24 24</a></p>
                         </div>
-                        <div className="text-center support-itm">
+                        <div className=" support-itm">
                            <FontAwesomeIcon icon={faEnvelope} />
-                           <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
+                           <p className="subtitle"><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a></p>
                         </div>
                      </div>
 
-                     <h3 className="text-center ">For any grievances reach out to our <a onClick={() => { setcheck(true) }} className="cursor-pointer">Escalation Matrix</a></h3>
+                     
+                     <p className="text-center esctext ">For any grievances reach out to our <a variant="primary" onClick={() => { setShow(true) }} className="cursor-pointer">
+                     Escalation Matrix
+                     </a></p>
                   </div>
                </div>
 
             </div>
-            <div className="container mainwrapquick-table">
-               {
-                  check ?
-                     <div className="row ">
+            <Modal show={show} onHide={handleClose} size="xl"  aria-labelledby="contained-modal-title-vcenter" className="contact-modal" centered>
+            
+               <div className="container mainwrapquick-table">
+               <div className="row ">
                         <div className="col-md-12">
+                        
                            <div className="quicklinkswrap mt-5 mb-5">
-                              <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setcheck(false) }} />
+                           <ModalHeader>
+                          
+                              <FontAwesomeIcon icon={faClose} className="icon-table cursor-pointer" onClick={() => { setShow(false) }} />
                               <div className="clearfix"></div>
                               <h4 className="text-center text-uppercase mt-5 mb-5"><strong>Investor Grievance Redressal Mechanism</strong></h4>
-                              <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4>
+                              {/* <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Escalation Matrix:</strong></h4> */}
                               <h4 className="text-left text-uppercase mt-5 mb-5"><strong>Annexure A</strong></h4>
+                              
+                           </ModalHeader>
+                             
+                             
+                              <Modal.Body>
                               <div className="table-responsive">
                                  <table className="table table-striped">
                                     <thead>
@@ -104,16 +118,16 @@ function Contactdetail() {
                                     <tbody>
                                        <tr>
                                           <td >Customer care</td>
-                                          <td>Shwetha S. Gupta</td>
+                                          <td>Shweta Gupta</td>
                                           <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                          <td className="text-left">022-69092489</td>
+                                          <td className="text-left">02267079813</td>
                                           <td className="text-left">customercare@choiceindia.com</td>
                                        </tr>
                                        <tr>
                                           <td>Head of Customer care</td>
                                           <td>Swetha Devadiga</td>
                                           <td className="text-left">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri(East),Mumbai 400099.</td>
-                                          <td className="text-left">022-69092483</td>
+                                          <td className="text-left">02267079461</td>
                                           <td className="text-left">swetha.devadiga@choiceindia.com</td>
                                        </tr>
                                        <tr>
@@ -137,40 +151,72 @@ function Contactdetail() {
                                  </table>
 
                               </div>
-                           </div>
+                              <div className="subtxtcontent " >
+                               <p>In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
+                              https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
+                              BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
+                              MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
+                              CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
+                              (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
+                              <br /><br />
+                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
 
                         </div>
-                        <p className="subtxt">In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at
-                           https://scores.gov.in/scores/Welcome.html or Exchange /DP at: <br /><br />
-                           BSE: https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx | NSE: https://investorhelpline.nseindia.com/NICEPLUS/ <br />
-                           MCX: https://www.mcxindia.com/Investor-Services | NCDEX: https://ncdex.com/investor_complaint <br />
-                           CDSL: https://www.cdslindia.com/Footer/grievances.aspx | NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
-                           (Working hours of each escalation level- Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)
-                           <br /><br />
-                           Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
-                        <br></br></div> :
-                     ""
-               }
-               <div className="row gap-5 mt-10">
-                  <div className="col-md-5">
-                     <div>
-                        <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'50'} height={'50'} />
+                              </Modal.Body>
+                              {/* <Modal.Footer className="subtxtcontent " >
+                               <p>In absence of response/complaint not addressed to your satisfaction, you may lodge a complaint with SEBI: at <br />
+                              https://scores.gov.in/scores/Welcome.html <br /><br /> or Exchange /DP at: <br /><br />
+                              BSE:  https://bsecrs.bseindia.com/ecomplaint/frmInvestorHome.aspx |<br /> NSE:  https://investorhelpline.nseindia.com/NICEPLUS/ <br />
+                              MCX: https://www.mcxindia.com/Investor-Services |<br /> NCDEX:https://ncdex.com/investor_complaint  <br />
+                              CDSL:https://www.cdslindia.com/Footer/grievances.aspx  |<br /> NSDL: https://www.epass.nsdl.com/complaints/websitecomplaints.aspx <br /><br />
+                              (Working hours of each escalation level- <strong>Monday to Friday 9.30 am to 12.30 pm and 2.00 pm to 6.00 pm &amp; Saturday 9.30 am to 4.00 PM)</strong>
+                              <br /><br />
+                              Please quote your Service Ticket/Complaint Ref No. while raising your complaint at SEBI SCORES/Exchange portal.</p>
+
+                        </Modal.Footer> */}
+                           </div>
+                         
+
+                        </div>
+                        </div>
+                     
+               
+
+
+               
+            </div>
+            
+            </Modal>
+            <div  className="container mainwrapquick-table">
+            <div className=" office-details mt-7 gap-5">
+                  <div className="contactoffice">
+                     <div className="officedeatil">
+                        <LazyLoader src={pin} className={"img-fluid"} alt={"Office"} width={'40'} height={'40'} />
                         {/* <img src={pin} alt="Loading" /> */}
-                        <p className="mt-3 maintitle">The Office </p>
-                        <p className="subtext">Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar, Andheri (East),<br /> Mumbai 400099</p>
+                        <p className="mt-4 maintitle">Corporate office </p>
+                        <p className="subtext">Choice International Limited,<br /> Sunil Patodia Tower, J.B. Nagar,<br /> Andheri (East), Mumbai 400099</p>
                      </div>
-                  </div>
-                  <div className="col-md-4">
-                     <div className="">
-                        <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'50'} height={'50'} />
+                     <div className="officedeatil">
+                        <LazyLoader src={clock} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
                         {/* <img src={clock} alt="Loading" /> */}
-                        <p className="mt-3 maintitle">Business Hours</p>
-                        <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm <br />
+                        <p className="mt-4 maintitle">Business Hours</p>
+                        <p className="subtext">Monday-Friday: 8:30 am - 7:00 pm </p>
+                        <p className="subtext">
                            Saturday: 10:00 am - 4:00 pm</p>
                      </div>
                   </div>
+                  <div className="contactcyber">
+                     <div >
+                        <LazyLoader src={Image2} className={"img-fluid"} alt={"Business Hours"} width={'40'} height={'40'} />
+                        {/* <img src={clock} alt="Loading" /> */}
+                        <p className="mt-4 maintitle">Cyber Security</p>
+                        <p className="subtext"><a href="tel:8824242424">+(91) 88 2424 2424 ( IVR Option 5 )</a></p>
+                        <p className="subtext"><a href="mailto:security.support@choiceindia.com" target="_blank">security.support@choiceindia.com</a></p>
+                     </div>
+                  </div>
                </div>
-            </div>
+               </div>
+
             {
                address  ?
                <div>
@@ -191,7 +237,7 @@ function Contactdetail() {
 
                                        Object.keys(address)?.map((keyValue, i) => {
                                           return (
-                                             <option  value={keyValue}>{keyValue}</option>
+                                             <option value={keyValue}key={i}>{keyValue}</option>
 
                                           )
                                        }

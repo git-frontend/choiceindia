@@ -128,6 +128,7 @@ const LazySupplyChainFinance = React.lazy(() => import('./components/Supply-Chai
 const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-Sub/SolarFinanceSub'));
 
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
+const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 function Routing() {
 
 
@@ -684,6 +685,11 @@ function Routing() {
                          <Route exact path='/solar-finance-sub' element={
                             <React.Suspense>
                                 < LazySolarFinanceSub />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/offer-document' element={
+                            <React.Suspense>
+                                < LazyOfferDocument />
                             </React.Suspense>
                         } />
  

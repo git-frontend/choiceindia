@@ -2113,10 +2113,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'title': "Solar Financing - Get Solar Panels on Loan for Businesses",'lang':"en", "content": "Apply for solar financing at Choice FinServ at best rates. Get a loan for purchasing solar panels for MSME and small businesses upto 25 Lakhs within 2 days.",
     "link": "https://choiceindia.com/solar-financing"
   },
-  "individual-loan": {
-    'title': "Get Individual Loan Online at Choice FinServ",'lang':"en", "content": "Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
-    "link": "https://choiceindia.com/individual-loan"
-  },
+  "offer-document": {
+    "title":"Public Issue Offer Document of Equity and Debt - Choice",
+    'lang':"en",
+    'content':"Check out the latest public issue document of equity and debt at Choice's official website.",
+    "link":"https://choiceindia.com/offer-document"
+  }
 }
 
 export default meta_tags;

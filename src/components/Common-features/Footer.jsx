@@ -146,6 +146,9 @@ function Footer() {
                             <li>
                               <NavLink to="/news-media">News &amp; Media</NavLink>
                             </li>
+                            <li>
+                              <Link to="/offer-document">Offer Document</Link>
+                            </li>
                           </ul>
                         </div>
                       </div>
