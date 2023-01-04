@@ -40,9 +40,12 @@ function Contactbanner() {
   let departmentlist = {};
   let subdepartmentlist = {}
   var active = useRef('');
+  let nbfclist={};
+  
+ 
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get('active') || '';
-  console.log("check",active.current)
+  // console.log("check",active.current)
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
@@ -98,10 +101,15 @@ function Contactbanner() {
     setTrigger(true)
     if (trigger == true) {
       loadDepartmentList()
-      // const nbfclist="5+NBFC+choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )+1800-203-5193 ( Toll No. )+Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099+Between 9:30 AM to 6:30 PM Monday to Saturdaysdvcd"
-      active.current =='NBFC'? loadSubDepartmentList('5'):"";
-      // active.current =='NBFC'? setdept(nbfclist):""
-      console.log("sdcsz",document.getElementById('dropdown').value);
+      if(active.current =='NBFC'){
+        departmentlist={0:"5",1:"NBFC",2:"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )",3:"1800-203-5193 ( Toll No. )",4:"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday"}
+         loadSubDepartmentList('5');
+         setdept(departmentlist);
+       
+      }
+      
+      
+   
       
 
     }
@@ -133,7 +141,7 @@ function Contactbanner() {
   });
   const submitFormData = (FormData) => {
     let formData = FormData;
-    formData['department'] = (dept || [])[1] || 'NBFC';
+    formData['department'] = (dept || [])[1] || '';
     formData['sub_department'] = (subdept || [])[0] || '';
     formData['email_to'] = (subdept || [])[1] || '';
     if(listid && subListid){
@@ -171,10 +179,11 @@ function Contactbanner() {
                         <Form.Select variant="Info" id="dropdown" onChange={() => selectdepartment()} className=" department getvalue" >
                           {
                             active.current =='NBFC'?
-                            <option value={"5"+"NBFC"+"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )"+"1800-203-5193 ( Toll No. )"+"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099"+"Between 9:30 AM to 6:30 PM Monday to Saturday"} >NBFC</option>:
-                            <option value="Select here" selected>Select here</option>
+                            <option value="select here" >Select here</option>:
+                            <option value="select here" selected >Select here</option>
                           }
-                          
+                            
+                        
                           {/* <option value="Select here" selected>Select here</option>	
                           <option className="option">Compliance & Complaint.</option>	
                         <option className="option">Partner related</option>	
@@ -184,7 +193,7 @@ function Contactbanner() {
                             list?.map((res, i) => {
                               return (
 
-                                <option value={res.id + '+' + res.department+ '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.department}</option>
+                                <option selected={active.current =='NBFC'&& res.department=='NBFC'} value={res.id + '+' + res.department+ '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.department}</option>
 
                               )
                             })

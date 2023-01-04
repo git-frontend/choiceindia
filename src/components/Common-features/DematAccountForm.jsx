@@ -296,6 +296,7 @@ function DematAccountForm(props) {
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
+            "account_type" :type1=='MF' ? "":"all"
             // "captcha": "1"
         };
         openAccountService.sendOTP(request,type1).then((res) => {
