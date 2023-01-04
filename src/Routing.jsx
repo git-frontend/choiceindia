@@ -628,7 +628,7 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/loan' element={
+                        <Route exact path='/loan' element={
                             <React.Suspense>
                                 < LazyNBFCLanding />
                             </React.Suspense>
@@ -688,7 +688,7 @@ function Routing() {
                             <React.Suspense>
                                 < LazySolarFinanceSub />
                             </React.Suspense>
-                        } /> */}
+                        } />
                          <Route exact path='/offer-document' element={
                             <React.Suspense>
                                 < LazyOfferDocument />
