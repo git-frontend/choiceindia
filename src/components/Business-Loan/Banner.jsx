@@ -18,7 +18,7 @@ function ChannelFinanceBanner() {
                                 <p>We offer Business Loans to meet capital requirement and give you the financial push to make your business vision come true.</p>
                             </div>
                         </div>
-                        <div className="col-md-6 d-flex justify-content-end bus-loan-img">
+                        <div className="col-md-6 d-flex justify-content-end bus-loan-img d-none d-sm-block">
                             <LazyLoader src={banner} alt={"Apply for Business Loan"} className={"img-fluid img-banner"} width={"550"} height={"378"} />
                         </div>
                     </div>

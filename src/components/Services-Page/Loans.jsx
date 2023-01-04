@@ -2,6 +2,7 @@
 import React from "react";
 import Bannerimage from '../../assets/images/services/loan-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
 
 function Loans() {
 
@@ -46,7 +47,8 @@ function Loans() {
                                 </div>
 
                             </div>
-                            {/* <a href="/" className="btn-bg">Explore</a> */}
+                            <Link to='/loan' className="btn-bg">Explore</Link>
+                            {/* <a href="/" >Explore</a> */}
                         </div>
                     </div>
 

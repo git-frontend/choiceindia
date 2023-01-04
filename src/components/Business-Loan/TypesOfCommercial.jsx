@@ -19,7 +19,7 @@ Your search can stop right here with us. We are a customer-oriented organization
                 <Link to="/commercial-vehicle-loan"><span class="btn-bg">Know more</span></Link>
               </div>
             </div>
-            <div className="col-md-6 d-flex justify-content-end">
+            <div className="col-md-6 d-flex justify-content-end d-none d-sm-block">
               <LazyLoader src={commercialvehicle} alt={"Commercial Vehicle Loan"} className={"img-fluid img-banner"} width={"650"} height={"251"} />
             </div>
           </div>

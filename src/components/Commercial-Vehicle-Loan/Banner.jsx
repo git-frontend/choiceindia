@@ -12,8 +12,6 @@ import NbfcForm from "../Common-features/NbfcForm";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function ChannelFinanceBanner() {
-
-
 /** scroll purpose */
 function chapterScroll(id) {
     console.log("check",id);
@@ -45,6 +43,8 @@ function chapterScroll(id) {
   useEffect(() => {
     window.addEventListener('scroll', getPosition);
 }, []);
+
+
 
     const settings1 = {
         infinite: true,

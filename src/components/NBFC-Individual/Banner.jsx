@@ -49,7 +49,7 @@ function chapterScroll(id) {
                     <p className="para">At Choice Finserv we understand the value of personal aspirations and the value of assistance that is often required to fulfil such aspirations. That’s why we offer various individual loans with easy terms.</p>
                     </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 d-none d-sm-block">
                     <div className="rightsec">
                         <LazyLoader src={bannerimg} alt={"Apply for individual Loan"} className={"img-fluid"} width={"586"} height={"366"} />
                     </div>

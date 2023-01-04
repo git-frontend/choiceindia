@@ -18,7 +18,7 @@ function Banner() {
                     <p className="para">Choice Finserv, our tech enabled platform dedicated for providing loans, with special focus on the under-served and unserved parts of the MSME sector is bridging the credit gap by facilitating efficient service delivery, better risk management and seamless lending operations.</p>
                 </div>
                 <div className="col-md-6">
-                    <div className="rightsec">
+                    <div className="rightsec d-none d-sm-block">
                         <LazyLoader src={bannerimg} alt={"Apply for Instant Loan Online"} className={"img-fluid"} width={"586"} height={"366"} />
                         {/* <div className='home-banner-ved'>
 							<div className="overlay"></div>
