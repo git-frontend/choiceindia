@@ -323,6 +323,8 @@ body{
             @media screen and (max-width:$sm) {
                 min-height: inherit;  
                 margin-bottom: 2rem;
+                display: block;
+                text-align: center;
              }
         }
         .title-doc{

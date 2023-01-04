@@ -7,6 +7,7 @@ import IPOProcess from './IPOProcess';
 import WhyChoiceIPO from './WhyChoiceIPO';
 import IPOFaq from './IPOFaq';
 import meta_tags from "../../Data/MetaTags";
+
 import "./ipo-investments.scss";
 
 
