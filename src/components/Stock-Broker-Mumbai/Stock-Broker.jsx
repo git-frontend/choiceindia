@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import LazyLoader from '../Common-features/LazyLoader';
 import Banner from '../Stock-Broker-Mumbai/Banner';
+import FinancialServices from '../Stock-Broker-Mumbai/FinancialServices';
+import Openaccount from '../Stock-Broker-Mumbai/Openaccount';
+import Branches from '../Stock-Broker-Mumbai/Branches';
+import BestInMumbai from '../Stock-Broker-Mumbai/BestInMumbai';
+
 import "./style.scss"
 
 import {useLocation,} from 'react-router-dom';
@@ -54,10 +59,10 @@ function StockBroker() {
 					<main className='home-main'>
 					
 					<Banner />
-						
-				
-
-
+					<FinancialServices />
+					<Openaccount />
+					<Branches />
+					<BestInMumbai />
 
 
 					</main>

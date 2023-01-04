@@ -3,8 +3,7 @@ import React, { useState } from "react";
 import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from '../Common-features/LazyLoader';
 import Navigation from '../../assets/images/stock-broker-mumbai/navigation.svg';
-// import Call from '../../assets/images/stock-broker-mumbai/call.json';
-// import data from './data.json';
+import Call from '../../assets/images/stock-broker-mumbai/call.gif';
 function Banner() {
   const [showterm, setshowterm]=useState(false);
 
@@ -18,7 +17,7 @@ function Banner() {
               <div className="wrap-banner">
                 <div className="heading-sec">
                   <h1 className="big-ttl"><span className='highlightblue'>Stock Broker</span>  in Mumbai</h1>
-                  <p>Choice is one of the best stock brokers in Mumbai, offering financial services in addition to investing in stocks, mutual funds, bonds, NPS, PPF, corporate FDs, and other financial instruments.{!showterm ? <span onClick={()=>{setshowterm(true);console.log("hhh")}}>... <em className="btn-read">View more</em></span>:""}{showterm ?<span>&nbsp;Open a free Demat account with us to begin your investment journey with India's leading stock broker, headquartered in Mumbai. If you are looking for a stock broker in your area, we have two branches in Mumbai that can offer you support and assistance with your financial needs.
+                  <p className="text">Choice is one of the best stock brokers in Mumbai, offering financial services in addition to investing in stocks, mutual funds, bonds, NPS, PPF, corporate FDs, and other financial instruments.{!showterm ? <span onClick={()=>{setshowterm(true);console.log("hhh")}}>... <em className="btn-read">View more</em></span>:""}{showterm ?<span>&nbsp;Open a free Demat account with us to begin your investment journey with India's leading stock broker, headquartered in Mumbai. If you are looking for a stock broker in your area, we have two branches in Mumbai that can offer you support and assistance with your financial needs.
                   <span onClick={()=>{setshowterm(false);console.log("hhh")}}>&nbsp;<em className="btn-read">View less</em></span></span>:""}</p>
                 </div>
                 <div className="details">
@@ -26,7 +25,8 @@ function Banner() {
                     <LazyLoader src={Navigation} alt={"Navigation"} className={"img-fluid"} width={"28"} height={"28"}/>
                     </div>
                     <div className="calldetail">
-                    {/* <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={""} height={""}/> */}
+                    <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
+                    <a href="tel:022 6707 9999" target="_blank">022 6707 9999</a>
                     </div>
                 </div>
 
@@ -37,14 +37,14 @@ function Banner() {
                     </div>
                     <div className="timing">
                         <p className="heading">Business Hours:</p>
-                        <p className="text">Monday to Friday: 8:30 am - 7:00 pm</p>
-                        <p className="text">Saturday: 10:00 am - 4:00 pm</p>
+                        <p className="text"><span className="day">Monday to Friday:</span> <span className="time">8:30 am - 7:00 pm</span></p>
+                        <p className="text"><span className="day">Saturday:</span> <span className="time">10:00 am - 4:00 pm</span></p>
                     </div>
                 </div>
                 
               </div>
             </div>
-            <div className="col-xl-4 col-md-6 d-flex justify-content-end">
+            <div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
            
               <DematAccountForm />
             </div>
