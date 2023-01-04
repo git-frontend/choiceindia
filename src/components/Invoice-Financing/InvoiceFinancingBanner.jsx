@@ -1,5 +1,4 @@
-
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
@@ -7,8 +6,40 @@ import LazyLoader from "../Common-features/LazyLoader";
 import zerocollateral from '../../assets/images/invoice-financing/zero-collateral-for-invoice-finnacing.svg';
 import documentation from '../../assets/images/invoice-financing/simple-invoice-financing-documention.svg';
 import liquidity from '../../assets/images/invoice-financing/enhance-invoice-financing-liquidity.svg';
-
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function InvoiceFinancingBanner() {
+    /** scroll purpose */
+function chapterScroll(id) {
+    console.log("check",id);
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  const [name, setName ] = useState('hideform');
+  /** hide and show section */
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if(element){
+        const rect = element.getBoundingClientRect();
+        
+        if(rect.top.toFixed() < 259){
+            setName('visibleform');
+        }else{
+            setName('hideform');
+        }   
+    }
+};
+
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
     const settings1 = {
         infinite: true,
         speed: 1500,
@@ -43,16 +74,27 @@ function InvoiceFinancingBanner() {
       };
     return (
         <div>
-            <section className="inv-fin-banner">
+            <section className="inv-fin-banner invoicefinance-banner">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-xl-8 col-md-12">
-                            <div className="fin-banner-caption text-center">
-                                <h1 className="big-ttl"> Invest in Invoice <br /> Financing Online</h1>
+                        <div className=" col-md-7">
+                            <div className="fin-banner-caption ">
+                                <h1 className="big-ttl"> Apply for Invoice
+<br /> Financing Online </h1>
                                 <p>Choice is offering loans to the anchor’s ecosystem against selling or purchasing invoices. Borrower as Anchor “or” spoke may be decided as per the deal structure and mutual agreement.</p>
-                                <p>Apply for invoice financing<br />
+                                <p>Apply for invoice financing
                                     In India up to 50 crores.<br />
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    {/* <a href="#"> */}
+                                        <span className="aply-btn">Apply Now!</span>
+                                    {/* </a> */}
+                                        </p>
+                            </div>
+                        </div>
+                        <div className=" col-md-5">
+                            <div className="formwrap float-right">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>
@@ -82,6 +124,11 @@ function InvoiceFinancingBanner() {
                                     </div>
                             </Slider>
                         </div>
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcform')}}>Get a Call from us</button>
+                    </div>
                     </div>
                 </div>
             </section>

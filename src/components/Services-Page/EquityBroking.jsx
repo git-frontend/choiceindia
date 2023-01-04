@@ -48,7 +48,7 @@ function EquityBroking() {
                                     <p>We have advised numerous companies across industries and concluded dozens of transactions. </p>
                                 </div>
                             </div>
-                            {/* <Link to="/equity-broking" className="btn-bg">Explore</Link> */}
+                            <Link to="/equity-broking" className="btn-bg">Explore</Link>
                         </div>
                     </div>
 

@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useRef } from "react";
 import Bannerimage from '../../assets/images/contact/contact-us-new.webp';
 import dotsimage from '../../assets/images/contact/dots.webp';
 import phoneicon from '../../assets/images/contact/phone-icon.svg';
@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Modal from 'react-bootstrap/Modal';
 import { Form, ModalFooter, ModalHeader } from "react-bootstrap";
 import utils from "../../Services/utils";
+import { useSearchParams } from "react-router-dom";
 
 function Contactbanner() {
 
@@ -38,6 +39,13 @@ function Contactbanner() {
   const phoneRegExp = /^(6|7|8|9)([0-9]{9})$/
   let departmentlist = {};
   let subdepartmentlist = {}
+  var active = useRef('');
+  let nbfclist={};
+  
+ 
+  const [searchParams, setSearchParams] = useSearchParams();
+  active.current = searchParams.get('active') || '';
+  // console.log("check",active.current)
 
   const schema = yup.object().shape({
     firstName: yup.string().required("First Name is required").matches(/^[aA-zZ\s]+$/, "Only alphabets are allowed"),
@@ -93,7 +101,16 @@ function Contactbanner() {
     setTrigger(true)
     if (trigger == true) {
       loadDepartmentList()
-
+      if(active.current =='NBFC'){
+        departmentlist={0:"5",1:"NBFC",2:"choicefinserv@choiceindia.com ( For Queries ),  customercare.finserv@choiceindia.com ( For Feedback )",3:"1800-203-5193 ( Toll No. )",4:"Choice International Limited, Sunil Patodia Tower, J.B. Nagar, Andheri (East), Mumbai 400099",5:"Between 9:30 AM to 6:30 PM Monday to Saturday"}
+         loadSubDepartmentList('5');
+         setdept(departmentlist);
+       
+      }
+      
+      
+   
+      
 
     }
   }, [trigger])
@@ -160,7 +177,13 @@ function Contactbanner() {
                       <div className='dipar-dropdown'>
                         <p className="depart-text">Department *</p>
                         <Form.Select variant="Info" id="dropdown" onChange={() => selectdepartment()} className=" department getvalue" >
-                          <option value="Select here" selected>Select here</option>
+                          {
+                            active.current =='NBFC'?
+                            <option value="select here" >Select here</option>:
+                            <option value="select here" selected >Select here</option>
+                          }
+                            
+                        
                           {/* <option value="Select here" selected>Select here</option>	
                           <option className="option">Compliance & Complaint.</option>	
                         <option className="option">Partner related</option>	
@@ -170,7 +193,7 @@ function Contactbanner() {
                             list?.map((res, i) => {
                               return (
 
-                                <option value={res.id + '+' + res.department+ '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.department}</option>
+                                <option selected={active.current =='NBFC'&& res.department=='NBFC'} value={res.id + '+' + res.department+ '+' + res.email_id+ '+' + res.contact+ '+' + res.office+ '+' + res.open}>{res.department}</option>
 
                               )
                             })

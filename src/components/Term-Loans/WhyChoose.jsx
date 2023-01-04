@@ -1,6 +1,6 @@
 
 import React from "react";
-import low from '../../assets/images/term-loans/low-term-loan-processing-fees.svg';
+import low from '../../assets/images/nbfc-indivial-loan/low-processing-speed.svg';
 import digital from '../../assets/images/term-loans/digital-term-business-loan-disbursement.svg';
 import attractive from '../../assets/images/term-loans/attractive-term-loan-interest-rates.svg';
 import flexible from '../../assets/images/term-loans/flexible-term-loan-repayment-options.svg';

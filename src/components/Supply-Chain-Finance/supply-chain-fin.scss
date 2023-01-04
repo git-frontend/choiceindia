@@ -1,0 +1,53 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+.supply-chain-finance{
+    padding-top: 2rem;
+    .supply-chain-menu{
+        position: relative;
+        padding-top: 1rem;
+        a{
+            color: $darkblack;
+            text-decoration: none;
+            .back{
+                margin-left: 1rem;
+                font-size: 1.5rem;
+                line-height: 36px;
+                font-weight: 400;
+            }
+        }
+        .nbfc-info-menu-main {
+            position: absolute;
+            right: 0;
+            top: 1.5rem;
+            z-index: 99;
+        }
+    }
+    .heading-sec{
+        margin-top: 7rem;
+        @media (max-width:$sm) {
+            margin-top: 4rem;
+        }
+    }
+    .supply-chain-img{
+        text-align: center;
+        padding-bottom: 8rem;
+    }
+    .supply-chain-p {
+        margin-bottom: 7rem;
+        .supply-p {
+            font-size: 1.5rem;
+            line-height: 36px;
+            color: $bgcolordark;
+        }
+    }
+}
+
+
+
+
+
+
+
+

@@ -62,6 +62,9 @@
             font-size: 1.75rem;
             line-height: 1.5;
             color: $primary;
+            @media (max-width: $sm){
+                font-size: 1.5rem;
+            }
             a{
                 text-decoration: none;
             }
@@ -290,7 +293,7 @@
             margin-bottom: 1rem;
             font-family: $font-family-poppins-medium;
             @media (max-width:$sm) {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
         margin-bottom: 5.063rem;
@@ -360,6 +363,9 @@
                 font-size: 1.75rem;
                 line-height: 1.5;
                 color: $txtgrey;
+                @media (max-width: $sm){
+                    font-size: 1.5rem;
+                }
             }
             .title-secnd{
                 margin-bottom: 2rem;
@@ -386,3 +392,54 @@
         }
     }
 }
+
+
+  
+.btn-view-more-sticky.btn-fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 99999999;
+    width: 100%;
+    left: 0;
+    display: none !important;
+    @media (max-width: $sm) {
+        display: block !important;
+    }
+  }
+  
+ 
+  .openbtn {
+    border-radius: 0 !important;
+    width: 100%;
+    background-color: #231F20;
+    font-size: 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #FFCB05;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 11px 13px;
+    font-family: "PoppinsRegular", sans-serif;
+  }
+  
+  .openbtn:active {
+    transform: scale(1.07);
+  }
+
+ 
+
+.hideform{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: $sm) {
+    display: block !important;
+    }
+}
+

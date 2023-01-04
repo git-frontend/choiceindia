@@ -36,7 +36,9 @@ const config = {
     liveperformanceURL: "https://finx.choiceindia.com/api/",
     UATperformanceURL: "https://uat.jiffy.in/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
-    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/"
+    UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
+    UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
+    livenbfcBaseURL:"https://choice-dev.synofin.tech/api/od/od-application-creation/",
 }
 
 export class API_URLS {
@@ -59,7 +61,8 @@ export class API_URLS {
     jiffySignalPageURL = "research-report/research/signals/EQ/all/"
     /** banner URL */
     bannerURL = "https://cmsapi.choiceindia.com/"
-
+    /** NBFC URL */
+    nbfcBaseURL = '';
 
     /** Base URL for JIFFY APIs */
     jiffyServerURL = "https://api.jiffy.in/";
@@ -156,8 +159,10 @@ export class API_URLS {
     resendInvesOTPURL='investica-resendotp'
     sendOTPURL = 'sign-up';
     resendOTPURL = 'resend-otp';
+    nbfcResendOTPURL = 'api/resend-otp';
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
+    nbfcverifyOTPURL = 'api/verify-otp';
   /** pdf API */
   
 //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
@@ -205,11 +210,12 @@ export class API_URLS {
     getExpertResearchURL = 'api/research-report-new';
     subBrokerSendOtpURL = 'https://neuron.choicebroking.in/api/jiffy/generate-otp';
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
+    nbfcRegister='api/register';
+    nbfcLogin ='api/login';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
-
 
 
 
@@ -240,6 +246,7 @@ export class API_URLS {
         this.setreferURL(config[configKey + 'referURL']);
         this.setresearchURL(config[configKey + 'researchURL']);
         this.setperformanceURL(config[configKey + 'performanceURL']);
+        this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
     }
 
     setJiffyBaseURL = (url) => {
@@ -303,13 +310,22 @@ export class API_URLS {
     setJiffyURL = (url) => {
         this.jiffyURL = url;
     }
-
+   
 
     /**
+     * Set NBFC URL 
+     * @param {*} url 
+     */
+     setnbfcBaseURL = (url) => {
+
+        this.nbfcBaseURL = url;
+    }
+
+     /**
      * Set Banner URL 
      * @param {*} url 
      */
-    setBannerURL = (url) => {
+      setBannerURL = (url) => {
 
         this.bannerURL = url;
     }
@@ -498,6 +514,9 @@ export class API_URLS {
         return this.SSOServerURL + this.resendInvesOTPURL;
     }
     
+    getNbfcResendOTPURL() {
+        return this.SSOServerURL + this.nbfcResendOTPURL;
+    }
 
 
     
@@ -671,7 +690,25 @@ export class API_URLS {
     getCfplPolicyURL(){
         return this.bannerURL + this.cfplURL
     }
-    getDepartmentURL(){
+
+    getNbfcMobile(id) {
+        return this.SSOServerURL + `api/is-mobile-unique?mobile_number=${id}`;
+    }
+    
+    getNbfcRegister() {
+        return this.SSOServerURL + this.nbfcRegister;
+    }
+    getNbfcLogin() {
+        return this.SSOServerURL + this.nbfcLogin;
+    }
+     getNbfcVerifyOTP() {
+        return this.SSOServerURL + this.nbfcverifyOTPURL;
+    }
+
+    getNbfcLead(subProduct){
+        return  this.nbfcBaseURL + `v1/lead/source/${subProduct}`
+    }
+ getDepartmentURL(){
         return this.bannerURL + this.departmentURL
     }
     getSubDepartmentURL(id){
@@ -680,7 +717,6 @@ export class API_URLS {
     getOfferDocumnetURL(){
         return this.bannerURL + this.offerUrl
     }
-    
     
 
 }

@@ -42,6 +42,7 @@ function SolarFinance() {
         <TimelineStepsSlider/>
         <SolarFinanceDocument/>
         <Features/>
+       
     </div>
   );
 }
