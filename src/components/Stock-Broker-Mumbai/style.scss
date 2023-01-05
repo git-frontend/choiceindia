@@ -73,6 +73,8 @@
             justify-content: center;
             flex-wrap: wrap;
             text-decoration: none;
+            transition:width 0.2s;
+            margin-left: 2rem;
             
             .text{
                 width: calc(100% - 70px);
@@ -82,27 +84,38 @@
                 color: #000000;
               }
             @media (max-width:$sm) {
-                background-color: #fff;
+                background-color: transparent;
                 text-decoration: none;
                 border-radius: 60px;
-                height: 30px;
-                overflow:hidden;
-                width: auto;
-                max-width: 42px;
-                transition: max-width 0.3s;
-                box-shadow: 0 0 10px #C8C8C8;
+                height: 40px;
+                width: 42px;
+                max-width: inherit;
+                overflow: hidden;
                 position: fixed;
                 right: 16px;
+                z-index: 9999;
                 bottom: 90px;
+                flex-wrap: nowrap;
+                margin-left: 0;
              
-            .calldetail2:hover {
-                max-width: 300px;
+            &:hover {
+                width: 180px;
+                overflow: inherit;
               }
               .text{
                 white-space: nowrap;
-                padding: 3rem;
-                padding-right: 1.5rem;
+                padding: 0;
+                padding-left: 0;
                 font-size: 1.2rem;
+                background: #FFFFFF;
+                height: 30px;
+                line-height: 30px;
+                border-radius:0 20px 20px 0;
+                width: calc(100% - 45px);
+                box-shadow: 0 0 10px #ccc;
+                text-align: center;
+                position: relative;
+                left: -10px;
               }
               
             
@@ -123,9 +136,12 @@
                     width: 42px;
                     height: 42px;
                     padding: 0;
-                    position: absolute;
+                   
                     left: 0;
                     box-shadow: 0 0 10px #C8C8C8;
+                    border-radius: 50%;
+                    margin-right: 0;
+                    z-index: 99;
              }
             //  &::before{
             //     content: '';
@@ -139,6 +155,9 @@
             //     transform: translate(-50%, -50%);
             //     background-size: contain;
             //  }
+            img{
+                border-radius: 50%;
+            }
           }
        
         }

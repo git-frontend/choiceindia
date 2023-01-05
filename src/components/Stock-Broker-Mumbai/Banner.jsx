@@ -24,7 +24,7 @@ function Banner() {
                     <div className="navigation">
                     <LazyLoader src={Navigation} alt={"Navigation"} className={"img-fluid"} width={"28"} height={"28"}/>
                     </div>
-                    <a  class="calldetail2" href="tel:022 6707 9999" target="_blank">
+                    <a  class="calldetail2">
                       <span className="callwrap">
                         <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
                         </span>
