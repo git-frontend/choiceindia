@@ -24,16 +24,12 @@ function Banner() {
                     <div className="navigation">
                     <LazyLoader src={Navigation} alt={"Navigation"} className={"img-fluid"} width={"28"} height={"28"}/>
                     </div>
-                    <div className="calldetail">
-                    {/* <span className="callwrap active"><LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/></span>
-                    <a href="tel:022 6707 9999" target="_blank">022 6707 9999</a> */}
-                    <a  class="calldetail2">
+                    <a  class="calldetail2" href="tel:022 6707 9999" target="_blank">
                       <span className="callwrap">
-                        {/* <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/> */}
+                        <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
                         </span>
                         <span class="text">022 6707 9999</span>
                     </a>
-                    </div>
                 </div>
 
                 <div className="companydetail">
