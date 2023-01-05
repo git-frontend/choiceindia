@@ -74,25 +74,25 @@ function Footer() {
                               <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Wealth Planning</NavLink>
+                              <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/insurance" >Insurance</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
+                              <NavLink className="cursor-pointer" to="/services" >Loans</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Capital Advisory</NavLink>
+                              <NavLink className="cursor-pointer" to="/services" >Capital Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Management Consultancy</NavLink>
+                              <NavLink className="cursor-pointer" to="/services" >Management Consultancy</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer">Tax Advisory</NavLink>
+                              <NavLink className="cursor-pointer" to="/services" >Tax Advisory</NavLink>
                             </li>
                           </ul>
                           <ul className="reset quicklink2">
