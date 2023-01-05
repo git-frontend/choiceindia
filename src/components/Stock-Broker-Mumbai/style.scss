@@ -8,9 +8,12 @@
 // banner section
 .stockbanner{
     padding: 12rem 0;
-    background-color: #F6F6F6;
+    background-color: #F3F3F3;
     @media (max-width:$sm) {
         padding: 4rem 0;
+    }
+    @media (min-width:$sm-x) and (max-width:$md) {
+        padding: 6rem 0;
     }
     .highlightblue{
         color: $gradientclr2;
@@ -54,7 +57,7 @@
             }
         }
         .calldetail{
-            margin-left: 1.5rem;
+            margin-left: 1.3rem;
             @media (max-width:$sm) {
                 margin-left: 0;
                 
@@ -62,7 +65,7 @@
           
            
             a{
-                padding-left: 1rem;
+                // padding-left: 1rem;
                 text-decoration: none;
                 color: $primary;
                 @media (max-width:$sm) {
@@ -114,9 +117,13 @@
             padding: 18px 0 18px 15px;
             width: 100%;
         }
+        @media (min-width:$sm-x) and (max-width:$md) {
+            width: 100%;
+        }
         .address{
             width: 50%;
             border-right: 1px solid #989898;
+            
             .heading{
                 color: $whiteColor;
                 font-size: 14px;
@@ -127,6 +134,8 @@
                 font-size: 14px;
                 line-height: 22px;
                 width: 98% !important;
+                margin-bottom: 0;
+                padding-bottom: 0;
                 .day{
                     width: 50%;
                 }
@@ -138,6 +147,9 @@
             @media (max-width:$sm) {
                 padding-left: 1.5rem;
             }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                padding-left: 1rem;
+            }
             .heading{
                 color: $whiteColor;
                 font-size: 14px;
@@ -148,20 +160,23 @@
                 font-size: 14px;
                 line-height: 22px;
                 display: flex;
-                @media (max-width:$sm) {
+                margin-bottom: 0;
+                @media (max-width:$md) {
                     flex-direction: column;
                 }
                 .day{
                     width: 50%;
-                    @media (max-width:$sm) {
+                    @media (max-width:$md) {
                         width: 100%;
                     }
+                    
                 }
                 .time{
                     width: 50%;
-                    @media (max-width:$sm) {
+                    @media (max-width:$md) {
                         width: 100%;
                     }
+                   
                 }
             }
         }
@@ -177,6 +192,12 @@
         display: flex;
         flex-wrap: wrap;
         justify-content:center;
+        .slick-dots{
+            @media (max-width:$sm) {
+                bottom: -60px;
+            }
+
+        }
         .service-item{
             padding: 1.5rem 2rem;
             border: 1px solid #C8C8C8;
@@ -184,23 +205,26 @@
             margin:2rem 1rem;
             width: 19%;
             text-align: center;
-            .slick-dots{
-                @media (max-width:$sm) {
-                    bottom: -45px;
-                }
-
-            }
+            
+            
             @media (max-width:$sm) {
                 width: 75% !important;
                 display: block !important;
                 margin: 0 auto ;
                
             }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                width: 21%;
+                padding: 1.5rem 0.5rem;
+            }
             h5{
                 margin-top: 1.5rem;
                 color: #333333;
                 font-size: 1.5rem;
                 line-height: 1.875rem;
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    font-size: 1.3rem;
+                }
             }
             &:hover{
                 background-color: #0068B3;
@@ -222,7 +246,12 @@
 // open now section
 
 .openaccount-sec{
-    padding: 2rem 0 8.5rem 0;
+    padding: 0rem 0 5.5rem 0;
+    .padding-mb-0{
+        @media (max-width:$sm) {
+            padding: 0;
+        }
+    }
     .wrapper{
         background-image: url(../../assets/images/stock-broker-mumbai/open-now-bg.svg);
         background-size: cover;
@@ -230,12 +259,16 @@
         background-position: center;
         background-repeat: no-repeat;
         border-radius: 16px;
-        padding: 60px;
+        padding: 4.5rem 4.5rem 3.0625rem;
         display: flex;
         align-items: center;
         @media (max-width:$sm) {
             flex-direction: column;
             padding: 35px;
+            border-radius: 0;
+        }
+        @media (min-width:$sm-x) and (max-width:$md) {
+            padding: 2.5rem;
         }
         .left-sec{
             width: 60%;
@@ -316,7 +349,7 @@
                             background-size: cover;
                         }
                         span{
-                            padding-left: 2.5rem;
+                            padding-left: 3rem;
                             font-size:1.5rem;
                             line-height: 2rem;
                             color: #000000;
@@ -336,6 +369,9 @@
                 position: relative;
                 padding: 1.3rem 2rem !important;
                 text-align: left;
+                @media (max-width:$sm) {
+                    padding: 1rem 2rem !important;
+                }
                 &::before{
                     content: '';
                     position: absolute;
@@ -347,6 +383,9 @@
                     background-size: cover;
                     top: 19px;
                     right: 15px;
+                    @media (max-width:$sm) {
+                        top: 13px;
+                    }
                 }
             }
         }
@@ -378,6 +417,9 @@
             text-align: center;
             @media (max-width:$sm) {
                 width: 50%;
+            }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                width: 22%;
             }
             h5{
                 margin-top: 1.5rem;
@@ -411,6 +453,7 @@
             font-style: normal;
             font-size: 1.75rem;
             color: #707070;
+            font-weight: 700;
             @media (max-width:$sm) {
                 font-size: 1.5rem;
             }
@@ -429,3 +472,12 @@
     }
 }
 // end best in mumbai section
+
+
+.heading-sec{
+    p{
+        br{
+            display: block;
+        }
+    }
+}  
