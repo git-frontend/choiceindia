@@ -59,7 +59,7 @@ function flexitab() {
                                 <LazyLoader src={low} alt={"Low Processing Fee"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Low</h3>
-                                <p className="subtext">Processing speed</p>
+                                <p className="subtext">Processing Fee</p>
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>

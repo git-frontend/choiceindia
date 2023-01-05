@@ -114,7 +114,7 @@ function chapterScroll3(id) {
                                 <img src={fee} alt="Low Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
                             </span>
                                 <h3 className="card-ttl">Low</h3>
-                                <p className="subtext">Low Processing Speed</p>
+                                <p className="subtext">processing Fee</p>
                             </div>
                         </Slider>
                         </div>

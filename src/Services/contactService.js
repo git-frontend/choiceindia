@@ -43,5 +43,14 @@ const contact = {
     })
    },
 
+   escalationMatrix: function () {
+
+    let api = new API_URLS()
+    let url = api.getEscalationURL()
+    return axios.get(url).then((data) => {
+        return data
+    })
+   },
+
 }
 export default contact;
