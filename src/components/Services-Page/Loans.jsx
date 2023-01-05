@@ -30,16 +30,17 @@ function Loans() {
                         <div className="col-md-8">
                             <div className="benifit-list">
                                 <div className="benifit-list-itm">
-                                    <h5 className="title-fourth">Personal Loans</h5>
-                                    <p>We provide personal loans for your urgent financial needs through hassle free process.</p>
+                                    <h5 className="title-fourth">Solar Finance</h5>
+                                    <p>A loan that allows you to purchase your solar
+                                       power system and then repay the loan over time.</p>
                                 </div>
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Business Loans</h5>
                                     <p>We help businesses  to cover thier financing needs through our easy business loans with competitive interest rates.</p>
                                 </div>
                                 <div className="benifit-list-itm">
-                                    <h5 className="title-fourth">Home Loan</h5>
-                                    <p>Choice provides home loans to help you fulfill your dream of owning a house with ease.</p>
+                                    <h5 className="title-fourth">Vehicle Loan</h5>
+                                    <p>We offer affordable vehicle loans making sure that you own your dream wheels.</p>
                                 </div>
                                 <div className="benifit-list-itm">
                                     <h5 className="title-fourth">Loan Against Securities</h5>

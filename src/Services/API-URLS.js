@@ -38,7 +38,7 @@ const config = {
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
-    livenbfcBaseURL:"https://choice-dev.synofin.tech/api/od/od-application-creation/",
+    livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
 }
 
 export class API_URLS {
