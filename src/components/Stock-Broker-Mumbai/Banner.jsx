@@ -24,14 +24,12 @@ function Banner() {
                     <div className="navigation">
                    <a href="https://goo.gl/maps/nVAcmGtwDV5wQVbA9" target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"}/></a>
                     </div>
-                    <div className="calldetail">
-                    {/* <span className="callwrap active"><LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/></span>
-                    <a href="tel:022 6707 9999" target="_blank">022 6707 9999</a> */}
-                    <a href="tel:022 6707 9999" target="_blank" class="calldetail">
-                    <span className="callwrap "><LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"}/></span>
-                      <span class="text">022 6707 9999</span>
+                    <a  class="calldetail2" href="tel:022 6707 9999" target="_blank">
+                      <span className="callwrap">
+                        <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
+                        </span>
+                        <span class="text">022 6707 9999</span>
                     </a>
-                    </div>
                 </div>
 
                 <div className="companydetail">

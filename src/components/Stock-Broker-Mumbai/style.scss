@@ -39,14 +39,18 @@
         align-items: center;
         @media (max-width:$sm) {
             justify-content: flex-end;
-            position: fixed;
             flex-direction: column-reverse;
             bottom: 24px;
             right: 9px;
             z-index: 999999;
         }
         .navigation{
-            padding: 12px ;
+            padding: 0 ;
+            justify-content: center;
+                display: flex;
+                align-items: center;
+                width: 52px;
+                height: 52px;
             border-radius: 12px;
             border: 1px solid #FFFFFF;
             background-color: #fff;
@@ -54,12 +58,101 @@
             @media (max-width:$sm) {
                 border-radius: 50%;
                 margin-top: 3rem;
+                position: fixed;
+                z-index: 999;
+                bottom: 25px;
+                right: 16px;
+                padding: 0;
+                width: 42px;
+                height: 42px;
+                border-radius: 50%;
+                
+
             }
+        }
+        .calldetail2{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            text-decoration: none;
+            
+            .text{
+                width: calc(100% - 70px);
+                white-space: nowrap;
+                padding: 0;
+                font-size: 1.2rem;
+                color: #000000;
+              }
+            @media (max-width:$sm) {
+                background-color: #fff;
+                text-decoration: none;
+                border-radius: 60px;
+                height: 30px;
+                overflow:hidden;
+                width: auto;
+                max-width: 42px;
+                transition: max-width 0.3s;
+                box-shadow: 0 0 10px #C8C8C8;
+                position: fixed;
+                right: 16px;
+                bottom: 90px;
+             
+            .calldetail2:hover {
+                max-width: 300px;
+              }
+              .text{
+                white-space: nowrap;
+                padding: 3rem;
+                padding-right: 1.5rem;
+                font-size: 1.2rem;
+              }
+              
+            
+        }
+        .callwrap{
+            
+            width: 52px;
+            height: 52px;
+            margin-right: 15px;
+            padding: 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background: #FFFFFF;
+            border-radius: 12px;
+            position: relative;
+             @media (max-width:$sm) {
+                    width: 42px;
+                    height: 42px;
+                    padding: 0;
+                    position: absolute;
+                    left: 0;
+                    box-shadow: 0 0 10px #C8C8C8;
+             }
+            //  &::before{
+            //     content: '';
+            //     background: url(../../assets/images/stock-broker-mumbai/call.gif) no-repeat;
+            //     background-position: center;
+            //     width: 35px;
+            //     height: 35px;
+            //     position: absolute;
+            //     left: 50%;
+            //     top: 50%;
+            //     transform: translate(-50%, -50%);
+            //     background-size: contain;
+            //  }
+          }
+       
         }
         .calldetail{
             margin-left: 1.3rem;
             @media (max-width:$sm) {
                 margin-left: 0;
+                position: fixed;
+                bottom: 90px;
+                z-index: 99999;
+                right: 16px;
                 
             }
           
@@ -72,11 +165,11 @@
                   
                     overflow:hidden;
                 width: auto;
-                max-width: 32px;
+                width: 32px !important;
                 transition: max-width 0.5s;
                     }
                     .callwrap{
-                        padding: 14px 10px 16px;
+                        padding: 0;
                         border-radius: 12px;
                         border: 1px solid #FFFFFF;
                         background-color: #fff;
@@ -89,7 +182,7 @@
                        
                     }
                     .text{
-                        padding-left:1rem ;
+                        padding-left:0 ;
                         @media (max-width:$sm) {
                             border-radius: 50%;
                             background: #fff;
@@ -99,7 +192,7 @@
                         }
                     }
                     &:hover{
-                        max-width: 300px;
+                        width: 300px;
                     }
             }
             
