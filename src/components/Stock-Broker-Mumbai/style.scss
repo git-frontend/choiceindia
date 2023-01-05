@@ -9,36 +9,97 @@
 .stockbanner{
     padding: 12rem 0;
     background-color: #F6F6F6;
+    @media (max-width:$sm) {
+        padding: 4rem 0;
+    }
     .highlightblue{
         color: $gradientclr2;
     }
     .text{
         width: 90%;
         padding-bottom: 14px;
+        @media (max-width:$sm) {
+            width: 100%;
+        }
         .btn-read{
             font-weight: 700;
             font-style: normal;
             font-size: 1.75rem;
+            @media (max-width:$sm) {
+                font-size: 1.5rem;
+            }
         }
     }
     .details{
         display: flex;
         justify-content: flex-start;
         align-items: center;
+        @media (max-width:$sm) {
+            justify-content: flex-end;
+            position: fixed;
+            flex-direction: column-reverse;
+            bottom: 24px;
+            right: 9px;
+            z-index: 999999;
+        }
         .navigation{
             padding: 12px ;
             border-radius: 12px;
             border: 1px solid #FFFFFF;
             background-color: #fff;
             box-shadow: 0px 0px 24px $stockboxshadow;
+            @media (max-width:$sm) {
+                border-radius: 50%;
+                margin-top: 3rem;
+            }
         }
         .calldetail{
-            padding-left: 2.1875rem;
+            margin-left: 1.5rem;
+            @media (max-width:$sm) {
+                margin-left: 0;
+                
+            }
+          
+           
             a{
                 padding-left: 1rem;
                 text-decoration: none;
                 color: $primary;
+                @media (max-width:$sm) {
+                  
+                    overflow:hidden;
+                width: auto;
+                max-width: 32px;
+                transition: max-width 0.5s;
+                    }
+                    .callwrap{
+                        padding: 14px 10px 16px;
+                        border-radius: 12px;
+                        border: 1px solid #FFFFFF;
+                        background-color: #fff;
+                        box-shadow: 0px 0px 24px $stockboxshadow;
+                        
+                        @media (max-width:$sm) {
+                            border-radius: 50%;
+                           
+                        }
+                       
+                    }
+                    .text{
+                        padding-left:1rem ;
+                        @media (max-width:$sm) {
+                            border-radius: 50%;
+                            background: #fff;
+                            padding: 0.3rem;
+                            border-radius: 11px;
+                            white-space: nowrap;
+                        }
+                    }
+                    &:hover{
+                        max-width: 300px;
+                    }
             }
+            
         }
     }
     .companydetail{
@@ -123,10 +184,17 @@
             margin:2rem 1rem;
             width: 19%;
             text-align: center;
+            .slick-dots{
+                @media (max-width:$sm) {
+                    bottom: -45px;
+                }
+
+            }
             @media (max-width:$sm) {
-                width: 100% !important;
+                width: 75% !important;
                 display: block !important;
                 margin: 0 auto ;
+               
             }
             h5{
                 margin-top: 1.5rem;
@@ -291,6 +359,14 @@
 
 .branch{
     padding: 6rem 0;
+    @media (max-width:$sm) {
+        padding: 0 0 6rem 0;
+      }
+    .branchsubtext{
+        @media (max-width:$sm) {
+          margin-bottom: 0 !important;
+        }
+    }
     .branches-list{
         display: flex;
         flex-wrap: wrap;
@@ -300,6 +376,9 @@
             border-radius: 12px;
             width: 15%;
             text-align: center;
+            @media (max-width:$sm) {
+                width: 50%;
+            }
             h5{
                 margin-top: 1.5rem;
                 color: #333333;
@@ -324,18 +403,28 @@
     padding: 12rem 0;
     background-color: #F6F6F6;
     align-items: center;
+    @media (max-width:$sm) {
+        padding: 6rem 0;
+    }
     .left-sec{
         .btn-read{
-            font-weight: 700;
             font-style: normal;
             font-size: 1.75rem;
+            color: #707070;
+            @media (max-width:$sm) {
+                font-size: 1.5rem;
+            }
         }
     }
     .right-sec{
         display: flex;
         align-items: center;
         justify-content: center;
-           
+       
+            @media (max-width:$sm) {
+                display: none;
+            }
+       
         
     }
 }
