@@ -24,7 +24,7 @@ function Banner() {
                     <div className="navigation">
                    <a href="https://goo.gl/maps/nVAcmGtwDV5wQVbA9" target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"}/></a>
                     </div>
-                    <a  class="calldetail2">
+                    <a href="tel:02267079999" target="_blank" class="calldetail2">
                       <span className="callwrap">
                         <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
                         </span>
