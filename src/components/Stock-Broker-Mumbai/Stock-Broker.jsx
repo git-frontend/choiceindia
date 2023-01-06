@@ -7,7 +7,7 @@ import Openaccount from '../Stock-Broker-Mumbai/Openaccount';
 import Branches from '../Stock-Broker-Mumbai/Branches';
 import BestInMumbai from '../Stock-Broker-Mumbai/BestInMumbai';
 
-import "./style.scss"
+import "./stock-broker-mumbai.scss"
 
 import {useLocation,} from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
