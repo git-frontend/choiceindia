@@ -68,8 +68,8 @@ function ClosureTradingMenu() {
 
                                     <div className="d-flex justify-content-between result-ttl">
                                         <h3 className="head">Month</h3>
-                                        <h3 className="head">View</h3>
                                         <h3 className="head"></h3>
+                                        <h3 className="head">View</h3>
                                     </div>
                                     <div className="subtext">
 
