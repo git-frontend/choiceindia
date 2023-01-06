@@ -69,6 +69,48 @@
   }
 }
 
+.career-main .middle-bar-cont {
+  padding: 3rem;
+  background: #221F20;
+  border-radius: 15px;
+  position: relative;
+  top: -12.5rem;
+}
+@media (max-width: 992px) {
+  .career-main .middle-bar-cont {
+    top: -5.5rem;
+  }
+}
+.career-main .middle-bar-cont .bar-cont-des {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 992px) {
+  .career-main .middle-bar-cont .bar-cont-des {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+  }
+}
+.career-main .middle-bar-cont .bar-cont-des h3 {
+  color: #ffffff;
+}
+.career-main .middle-bar-cont .bar-cont-des .title-fourth {
+  font-size: 2.5rem;
+  line-height: 1.5;
+}
+.career-main .middle-bar-cont .bar-cont-des .title-fourth img {
+  margin-right: 2rem;
+}
+@media (max-width: 768px) {
+  .career-main .middle-bar-cont .bar-cont-des .title-fourth img {
+    display: none;
+  }
+}
+.career-main .middle-bar-cont .bar-cont-des .title-fourth span {
+  color: #FFCE02;
+}
 .career-main .bannersection {
   padding-bottom: 0;
 }
@@ -99,12 +141,17 @@
   display: block;
   position: absolute;
   right: 0;
-  bottom: 90px;
+  top: 10rem;
   background: url("../../assets/images/career/benifitbefore.png") no-repeat bottom right;
-  background-size: contain;
+  background-size: cover;
   z-index: 1;
 }
 @media (max-width: 768px) {
+  .career-main .benefits-perks-main::after {
+    display: none;
+  }
+}
+@media (max-width: 992px) {
   .career-main .benefits-perks-main::after {
     display: none;
   }
@@ -114,7 +161,7 @@
   padding: 12rem 0;
   position: relative;
   border-radius: 20px;
-  top: -320px;
+  top: -30rem;
   right: 0;
   left: 0;
   z-index: 9;

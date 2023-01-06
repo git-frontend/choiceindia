@@ -1,0 +1,18 @@
+/*Bootstrap Override*/
+/*Font family*/
+/*bg varibales*/
+/*textvaribales*/
+/*Responsive screen width*/
+.seo-privacy-policy-div {
+  padding: 4rem 0 0;
+  text-align: center;
+}
+
+.privacy-policy-content-div {
+  padding: 5rem 0 5rem 0;
+}
+.privacy-policy-content-div .privacy-policy-content p {
+  font-size: 1.5rem;
+  line-height: 2.4rem;
+  margin-bottom: 2rem;
+}/*# sourceMappingURL=disclaimer.css.map */

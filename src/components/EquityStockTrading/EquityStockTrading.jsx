@@ -6,6 +6,7 @@ import EquityStockTradingOpeningProcess from "./EquityStockTradingOpeningProcess
 import LowBrokerageEquityStockTrading from "./LowBrokerageEquityStockTrading";
 import WhyEquityStockTrading from "./WhyEquityStockTrading";
 // import EquityStockTradingFaq from "./EquityStockTradingFaq";
+import MoreContent from './MoreContent';
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
@@ -49,6 +50,7 @@ function EquityStockTrading() {
             <WhyEquityStockTrading />
             <LowBrokerageEquityStockTrading />
             <EquityStockTradingOpeningProcess />
+            <MoreContent />
             {/* <EquityStockTradingFaq /> */}
             {/* <section className="readmoresection">
 

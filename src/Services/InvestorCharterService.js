@@ -5,10 +5,10 @@ const InvestorCharterService = {
 
     
 
-    InvestorCharter: function (id) {
+    InvestorCharter: function () {
 
         let api = new API_URLS()
-        let url = api.getInvestorStockURL(id)
+        let url = api.getInvestorStockURL()
         return axios.get(url).then((data) => {
             return data
         })

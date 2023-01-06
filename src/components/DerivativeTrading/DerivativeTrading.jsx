@@ -8,6 +8,7 @@ import WhyDerivativeTrading from "./WhyDerivativeTrading";
 import DerivativeTradingFaq from "./DerivativeTradingFaq";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
+import MoreContent from './MoreContent';
 import { useState,useEffect } from "react";
 
 function DerivativeTrading() {
@@ -49,6 +50,7 @@ function DerivativeTrading() {
             <WhyDerivativeTrading />
             <LowBrokerageDerivativeTrading />
             <DerivativeTradingOpeningProcess />
+            <MoreContent />
             {/* <DerivativeTradingFaq /> */}
             {/* <section className="readmoresection">
 
