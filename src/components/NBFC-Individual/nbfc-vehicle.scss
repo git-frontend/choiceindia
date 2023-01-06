@@ -22,11 +22,6 @@
 
 .card-wrap-nbfc{
     padding-bottom: 3rem;
-    &.veh-card{
-    @media (min-width:$sm-x)and (max-width:$md) {
-        padding-bottom:0;
-      }
-    }
     @media (max-width: $sm) {
         padding-bottom: 6rem;
     }
@@ -59,6 +54,9 @@
         float: right;
         .vehicle-imgheight{
             min-height: 27rem;
+            @media (max-width: $sm) {
+                min-height: 19rem;
+             }
         }
         .vehicle-listitem{
             padding: 0 2.5rem;
