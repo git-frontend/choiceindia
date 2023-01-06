@@ -15,6 +15,11 @@
     @media (min-width:$sm-x) and (max-width:$md) {
         padding: 6rem 0;
     }
+    .big-ttl{
+        @media (max-width:$sm) {
+           margin-bottom: 2rem;
+        }
+    }
     .highlightblue{
         color: $gradientclr2;
     }
@@ -320,10 +325,15 @@
             
             
             @media (max-width:$sm) {
-                width: 75% !important;
+                width: 90% !important;
                 display: block !important;
-                margin: 0 auto ;
-               
+                // margin: 0 1rem ;
+                min-height: 13rem;
+                height: 100%;
+               margin-left: 4rem;
+            //    &:nth-child(even){
+            //     margin-left: -4rem;
+            //    }
             }
             @media (min-width:$sm-x) and (max-width:$md) {
                 width: 21%;

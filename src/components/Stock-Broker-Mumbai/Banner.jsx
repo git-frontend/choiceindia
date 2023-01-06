@@ -26,7 +26,7 @@ function Banner() {
                     </div>
                     <a href="tel:02267079999" target="_blank" class="calldetail2">
                       <span className="callwrap">
-                        <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
+                        <LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"}/>
                         </span>
                         <span class="text">022 6707 9999</span>
                     </a>
