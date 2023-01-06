@@ -21,7 +21,7 @@ function Openaccount() {
           <section className="openaccount-sec">
               <div className="container">
                   <div className="row">
-                      <div className="col-md-12">
+                      <div className="col-md-12 padding-mb-0">
                           <div className="wrapper">
                               <div className="left-sec">
                                  
@@ -30,11 +30,11 @@ function Openaccount() {
                                 <div className="listing">
                                     <div className="firstrow">
                                         <div className="texting"><span>Zero Account Opening Fee</span></div>
-                                        <div className="texting"><span>Zero Account Opening Fee</span></div>
+                                        <div className="texting"><span>Free AMC for First Year</span></div>
                                     </div>
                                     <div className="secondrow">
-                                        <div className="texting"><span>Zero Account Opening Fee</span></div>
-                                        <div className="texting"><span>Zero Account Opening Fee</span></div>
+                                        <div className="texting"><span>Low DP Charges (₹10)</span></div>
+                                        <div className="texting"><span>Expert Research Advisory</span></div>
                                     </div>
                                 </div>
                             </div>

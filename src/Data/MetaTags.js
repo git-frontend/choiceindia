@@ -2114,6 +2114,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Check out the latest public issue document of equity and debt at Choice's official website.",
     "link":"https://choiceindia.com/offer-document"
   },
+  "stock-broker-in-mumbai": {
+    "title":"Choice - Stock Broker in Mumbai | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Mumbai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +022 67079999.",
+    "link":"https://choiceindia.com/stock-broker-in-mumbai"
+  },
   "individual-loan":{
     "title":"Get Individual Loan Online at Choice FinServ",
     'lang':"en",

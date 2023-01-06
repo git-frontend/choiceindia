@@ -2,8 +2,8 @@
 import React, { useState } from "react";
 import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from '../Common-features/LazyLoader';
-import Navigation from '../../assets/images/stock-broker-mumbai/navigation.svg';
-import Call from '../../assets/images/stock-broker-mumbai/call.gif';
+import Navigation from '../../assets/images/stock-broker-mumbai/stock-broker-google-map-location.svg';
+import Call from '../../assets/images/stock-broker-mumbai/stock-broker-contact-number.gif';
 function Banner() {
   const [showterm, setshowterm]=useState(false);
 
@@ -22,12 +22,14 @@ function Banner() {
                 </div>
                 <div className="details">
                     <div className="navigation">
-                    <LazyLoader src={Navigation} alt={"Navigation"} className={"img-fluid"} width={"28"} height={"28"}/>
+                   <a href="https://goo.gl/maps/nVAcmGtwDV5wQVbA9" target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"}/></a>
                     </div>
-                    <div className="calldetail">
-                    <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
-                    <a href="tel:022 6707 9999" target="_blank">022 6707 9999</a>
-                    </div>
+                    <a href="tel:02267079999" target="_blank" class="calldetail2">
+                      <span className="callwrap">
+                        <LazyLoader src={Call} alt={"Banner Images"} className={"img-fluid"} width={"34"} height={"34"}/>
+                        </span>
+                        <span class="text">022 6707 9999</span>
+                    </a>
                 </div>
 
                 <div className="companydetail">
