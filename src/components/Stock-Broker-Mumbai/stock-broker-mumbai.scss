@@ -396,9 +396,8 @@
                     font-size: 2rem;
                 }
                 .free{
-                    background-image: url(../../assets/images/stock-broker-mumbai/zigzag-bg.svg);
+                    background-image: url(../../assets/images/stock-broker-mumbai/free-bg.png);
                     background-size: contain;
-                    object-fit: contain;
                     background-position: center;
                     background-repeat: no-repeat;
                     padding: 1.7rem;
@@ -523,6 +522,7 @@
         padding: 0 0 6rem 0;
       }
     .branchsubtext{
+        font-size: 2.3rem;
         @media (max-width:$sm) {
           margin-bottom: 0 !important;
         }
@@ -605,3 +605,7 @@
         }
     }
 }  
+
+.mb-0{
+    margin-bottom: 0 !important;
+}
