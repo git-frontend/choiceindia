@@ -250,7 +250,7 @@ function Footer() {
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
-
+                     
                       Cautionary Message :
                       <ol style={{ marginleft: "-1rem" }}>
                         <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>

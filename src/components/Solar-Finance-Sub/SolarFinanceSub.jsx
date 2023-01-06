@@ -44,7 +44,7 @@ function SolarFinanceSub() {
                     <li>Get convenient and fastening installation and subsidy approval with the expertise of impaneled EPCs</li>
                     <li>You can now obtain assistance and services to far-flung places with our wide branch reach.</li>
                     <li>Get hands-on experience with self/ Assistance Onboarding through our app.</li>
-                    <li>You can keep your mind at ease as we help offer the availability of long repayment tenors.</li>
+                    <li>You can keep your mind at ease as we help offer the availability of long repayment tenures.</li>
                     <li>With this hassle-free loan comes a hassle-free process. Here, we will help you to connect with the best EPCs for faster installation, subsidy approval, DISCOM-related approvals, and maintenance.</li>
                     <li>Some of the Advantages of having an Enabler:-</li>
                     <li>Arranging multiple purchase options with the lowest possible cost with the best quality material.</li>

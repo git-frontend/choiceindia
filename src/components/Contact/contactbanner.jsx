@@ -53,7 +53,7 @@ function Contactbanner() {
     mobile: yup.string().required("Phone Number is required").matches(phoneRegExp, "Invalid number").matches(/^\d+$/, 'The field should have digits only'),
     email: yup.string().email(" Invalid Email ").required("Email Id is required"),
     // purpose: yup.string().required("Need to choose purpose"),
-    question: yup.string().max(40).required("Need to fill your question")
+    question: yup.string().max(200).required("Need to fill your question")
 
   })
 

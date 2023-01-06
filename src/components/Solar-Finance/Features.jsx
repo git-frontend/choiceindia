@@ -22,7 +22,7 @@ function Features() {
                                 <li>Get convenient and fastening installation and subsidy approval with the expertise of impaneled EPCs</li>
                                 <li>You can now obtain assistance and services to far-flung places with our wide branch reach.</li>
                                 <li>Get hands-on experience with self/ Assistance Onboarding through our app.</li>
-                                <li>You can keep your mind at ease as we help offer the availability of long repayment tenors.</li>
+                                <li>You can keep your mind at ease as we help offer the availability of long repayment tenures.</li>
                             </ul>
                         </div>
                         <div className="col-md-12 text-center"> <Link to="/" className=" text-center cursor-pointer" >
