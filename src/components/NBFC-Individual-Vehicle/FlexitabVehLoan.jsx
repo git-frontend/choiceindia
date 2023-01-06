@@ -82,7 +82,7 @@ function FlexitabVehLoan() {
 
         
 
-            <section className="card-wrap-nbfc">
+            <section className="card-wrap-nbfc veh-card">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

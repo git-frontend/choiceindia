@@ -5,6 +5,9 @@
 
 .avail{
     padding: 6rem 6rem 0 6rem;
+    @media (min-width:$sm-x)and (max-width:$md) {
+        padding:0;
+      }
     @media (max-width: $sm) {
        padding: 6rem 2rem 0 2rem;
     }
@@ -19,6 +22,11 @@
 
 .card-wrap-nbfc{
     padding-bottom: 3rem;
+    &.veh-card{
+    @media (min-width:$sm-x)and (max-width:$md) {
+        padding-bottom:0;
+      }
+    }
     @media (max-width: $sm) {
         padding-bottom: 6rem;
     }

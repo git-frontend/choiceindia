@@ -38,7 +38,7 @@ const config = {
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
-    livenbfcBaseURL:"https://choice-dev.synofin.tech/api/od/od-application-creation/",
+    livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
 }
 
 export class API_URLS {
@@ -193,6 +193,8 @@ export class API_URLS {
     subdepartmentURL = 'items/sub_department?filter[department_id][_eq]=1'
     /** Offer Document */
     offerUrl='items/OfferDocument'
+    /** escalation matrix */
+    escalation ='items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
 
 
 
@@ -716,6 +718,10 @@ export class API_URLS {
     }
     getOfferDocumnetURL(){
         return this.bannerURL + this.offerUrl
+    }
+
+    getEscalationURL(){
+        return this.bannerURL + this.escalation
     }
     
 

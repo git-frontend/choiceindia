@@ -2092,11 +2092,6 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link": "https://choiceindia.com/cfpl-policies"
 
   },
-
-
-
-
-
   "invoice-financing": {
     'title': "Apply for Invoice Financing & Get Funds within 48 Hours",'lang':"en", "content": "Apply online at Choice FinServ for invoice financing. Get quick invoice financing within just as 48 hours with low processing fees and appealing interest rates. To apply, go to the website right now.",
     "link": "https://choiceindia.com/invoice-financing"
@@ -2118,6 +2113,13 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'lang':"en",
     'content':"Check out the latest public issue document of equity and debt at Choice's official website.",
     "link":"https://choiceindia.com/offer-document"
+  },
+  "individual-loan":{
+    "title":"Get Individual Loan Online at Choice FinServ",
+    'lang':"en",
+    'content':"Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
+    "link":"https://choiceindia.com/individual-loan"
+
   }
 }
 

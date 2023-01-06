@@ -45,7 +45,7 @@
             background: url(../../assets/images/loan-bg.webp) no-repeat top left;
             background-size: contain;
     
-            @media (max-width: $sm) {
+            @media (max-width: $md) {
                 display: none;
             }
         }
