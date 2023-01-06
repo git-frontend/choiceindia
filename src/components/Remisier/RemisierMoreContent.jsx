@@ -64,7 +64,7 @@ const RemisierMoreContent = () => {
         <h3 className='ttl-para'>Remisiers vs Sub Brokers</h3>
         <p>In theory, the role of remisiers and sub brokers is to acquire clients for their respective stockbrokers. However, this is the last point of similarity, where the remisier vs sub broker debate begins.</p>
         <p>A sub broker does not merely help onboard clients, but they also offer investment advice and guide the individuals through the fluctuating market movements. Hence, sub brokers are mandated to be aware of the fundamentals of financial markets. Due to these responsibilities, they also earn a higher commission than remisiers.</p>
-        <p>Comparatively, remisiers are chosen based on their comfort in interacting with clients. Their primary role is to convince potential investors to <Link to="/open-free-demat-account">open a trading account</Link> with a particular stockbroker.</p>
+        <p>Comparatively, remisiers are chosen based on their comfort in interacting with clients. Their primary role is to convince potential investors to <Link to="/open-trading-account">open a trading account</Link> with a particular stockbroker.</p>
         <br/>
         <h3 className='ttl-para'>Who can Become a Remisier?</h3>
         <p>The role of a remisier is not restricted to a particular set of individuals. The only requirement for the role is that you are comfortable with prolonged communication with various clients.</p>

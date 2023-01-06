@@ -72,7 +72,7 @@ const RemisierMoreContent = () => {
           <li>Financial markets, especially the intricacies of the securities and stock market. In-depth knowledge of trading, Demat accounts and the concept of analysing risks and returns to provide sound financial advice to clients.</li>
           <li>Solid knowledge of global events and international markets to analyse and study the market shifts that may increase or decrease the value of a particular asset.</li>
           <li>Basic computer skills since most stockbrokers employ an online platform to help investors trade from the comfort of their homes.</li>
-          <li>Proficiency in communication to facilitate discussions with potential investors and convince them to open a Demat account with the concerned stockbroker.</li>
+          <li>Proficiency in communication to facilitate discussions with potential investors and convince them to <Link to="/open-free-demat-account">open a Demat account</Link> with the concerned stockbroker.</li>
           <li>Minimal educational requirement, the candidate should have passed intermediate (10 +2).</li>
         </ul>
         <p>Apart from these skills, stockbrokers might also require mandatory documents to confirm certain aspects of your identity. </p>
