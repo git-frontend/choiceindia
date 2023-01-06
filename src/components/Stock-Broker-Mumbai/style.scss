@@ -407,26 +407,32 @@
                 .borderbottom{
                    position: relative;
                    z-index: 1;
+                   background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
+                   background-repeat: no-repeat;
+                   background-size: contain;
+                   object-fit: contain;
+                   /* bottom: 1px; */
+                   background-position: 50% 74%;
                    @media (max-width:$sm) {
                     font-size: 2.5rem;
-                }
-                   &:before{
-                    content: '';
-                    position: absolute;
-                    display: block;
-                    height: 5px;
-                    width: 100%;
-                    right: 0;
-                    top: 25px;
-                    background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
-                    background-repeat: no-repeat;
-                    background-size: cover;
-                    z-index: -1;
-                    @media (max-width:$sm) {
-                        width: 260px;
-                        top: 69px;
                     }
-                   }
+                //    &:before{
+                //     content: '';
+                //     position: absolute;
+                //     display: block;
+                //     height: 5px;
+                //     width: 100%;
+                //     right: 0;
+                //     top: 25px;
+                //     background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
+                //     background-repeat: no-repeat;
+                //     background-size: cover;
+                //     z-index: -1;
+                //     @media (max-width:$sm) {
+                //         width: 260px;
+                //         top: 69px;
+                //     }
+                //    }
                 }
             }
          
