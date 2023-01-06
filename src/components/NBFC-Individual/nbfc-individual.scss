@@ -132,9 +132,13 @@ body{
 .flexitabcontent{
     padding:9rem 0 4rem 0;
     @media (min-width:768px)and (max-width:$md) {
-        padding:4rem 0 10rem 0  ;
+        padding:5rem 0 6rem 0  ;
       }
-     
+      .heading-sec {
+        @media (max-width:$sm) {
+            text-align: center;
+          }
+      }
     .flexititle{
         position: relative;
         // &:before{
@@ -209,7 +213,7 @@ body{
                  height: 16rem;
                  background: url(../../assets/images/nbfc-indivial-loan/gridone.webp) no-repeat top right;
                 background-size: contain;
-                 @media (max-width:$sm) {
+                 @media (max-width:$md) {
                     display: none;
                    }
              }
@@ -378,6 +382,9 @@ body{
                 &.active-content{
                     display: block;
                 }
+            }
+            @media(min-width:$sm-x) and (max-width: $md) {
+                padding:0;
             }
             @media (max-width: $sm) {
                 padding: 6rem 0 0 0;

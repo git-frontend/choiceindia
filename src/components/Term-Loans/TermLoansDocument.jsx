@@ -13,7 +13,7 @@ function TermLoansDocument() {
           <div className="row">
               <div className="col-md-12">
               <div className="Doc-rqrd-heading">
-                  <h2 className="title-first">Documents Required <br/>for Flexi Loan </h2>
+                  <h2 className="title-first">Documents Required <br/>for Term Loan </h2>
                 </div>
               </div>
           </div>
