@@ -17,12 +17,7 @@ function Fabdetailsbanner(props) {
     const [linkage, setLinkage] = useState(['facebook', 'whatsapp', 'linkedin', 'twitter']);
     const descr = "Stay updated with up-to-date thoughts, stories, and ideas about finance only at Choice";
    
-    // console.log("check url",pageUrl);
-    // https://www.facebook.com/dialog/share?
-// app_id=140586622674265
-// &display=popup
-// &href=https%3A%2F%2Fdev-ghost.choiceindia.com%2Fhow-to-invest-in-baskets%2F%23.YxScijm2YVU.facebook
-// &redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fthankyou.htmla.0
+    
 
     function shareiconLink(key) {
 
@@ -124,17 +119,14 @@ function Fabdetailsbanner(props) {
                                     </div>)
                                     : '')
                             }
-                            {/* <div className="col-md-5">
-
-                                        </div> */}
+                           
                         </div>
                         <div className="row">
                             <div className="col-md-11">
 
                                 <div className="textwrap" dangerouslySetInnerHTML={createMarkup()} />
                             </div>
-
-
+                            
                             <div className="col-md-1">
                                 <div className="right-social-links">
                                     <ul>
@@ -155,15 +147,7 @@ function Fabdetailsbanner(props) {
                                         </a>
                                         </li>
 
-                                        {/* <li > <a href="/" className="instagram" target="_blank">
-                                                        <FontAwesomeIcon icon={faInstagram} />
-                                                    </a>
-                                                    </li>
-                                                   
-                                                    <li > <a href="/" className="telegram" target="_blank">
-                                                        <FontAwesomeIcon icon={faTelegramPlane} />
-                                                    </a>
-                                                    </li> */}
+                                        
                                     </ul>
 
                                 </div>
@@ -173,29 +157,7 @@ function Fabdetailsbanner(props) {
 
                         </div>
                     </div>
-                    {/* {
-                                    props.showForm ?
-                                        props.formName === 'form-demat' ? <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
-                                            <div className="stickyform formwrap d-flex justify-content-end ">
-                                                <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true}/>
-                                            </div>
-                                        </div> : <div className="col-md-5 col-lg-4 col-sm-6" id="sub-broker-wrap">
-                                            <div className="franchise-form justify-content-end d-flex">
-                                                <SubBrokerForm />
-                                            </div>
-                                        </div>
-                                        : ''
-                                } */}
-                    {/* <div className="col-md-5 col-sm-6 col-lg-4" id="open-account-wrap">
-                                    <div className="formwrap d-flex justify-content-end ">
-                                        <DematAccountForm />
-                                    </div>
-                                </div> */}
-                    {/* <div className="col-md-5 col-lg-4 col-sm-6" id="sub-broker-wrap">
-                                    <div className="franchise-form justify-content-end d-flex">
-                                        <SubBrokerForm />
-                                    </div>
-                                </div> */}
+                    
 
 
                 </div>
@@ -210,16 +172,3 @@ function Fabdetailsbanner(props) {
 }
 
 export default Fabdetailsbanner;
-
-
-// https://www.facebook.com/dialog/share?
-// app_id=140586622674265
-// &display=popup
-// &href=https%3A%2F%2Fdev-ghost.choiceindia.com%2Fhow-to-invest-in-baskets%2F%23.YxScijm2YVU.facebook
-// &redirect_uri=http%3A%2F%2Fs7.addthis.com%2Fstatic%2Fthankyou.html
-
-// https://www.facebook.com/dialog/share?
-// app_id=140586622674265
-// &display=popup
-// &href=https3A2F2Fdev-ghost.choiceindia.comFeverything-you-need-to-know-about-choice-research%2F%23.YxSea4vsIe0.facebook
-// &redirect_uri=http3A2F2Fs7.addthis.com2FstaticFthankyou.html
