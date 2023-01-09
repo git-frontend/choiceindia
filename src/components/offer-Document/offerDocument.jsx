@@ -60,7 +60,7 @@ function offerDocument() {
 						<div className="col-md-12">
               
             <h1 className='text-center mt-5 mb-5 title-first'>Offer Document</h1>
-                  <p className="subtextheading"> ( Choice Capital Advisors Pvt Ltd, a SEBI Registered Category 1 Merchant Banker with license number: INM000011872 is a wholly owned subsidiary of Choice International Limited. )</p>
+                  <p className="text"> ( Choice Capital Advisors Pvt Ltd, a SEBI Registered Category 1 Merchant Banker with license number: INM000011872 is a wholly owned subsidiary of Choice International Limited. )</p>
                   
 						</div>
 					  </div>
