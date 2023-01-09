@@ -128,6 +128,9 @@ body{
             padding-bottom: 2.5rem;
         }
     }
+    .team-list{
+        position: relative;
+    }
 
     .team-list-slider {
         position: relative;
@@ -141,13 +144,12 @@ body{
             border-radius: 20px;
             background: #ad8b73;
             padding: 0;
+            margin: 0 auto;
             transition: 0.3s all ease-in;
 
             @media (max-width:$sm) {
                 width: 95% !important;
                 display: block !important;
-                margin: 0 auto;
-                
             }
 
             .namedesg {
@@ -211,6 +213,7 @@ body{
                 }
             }
         }
+       
 
         .slick-arrow {
             z-index: 1;
@@ -307,6 +310,90 @@ body{
             }
         }
     }
+}
+.about-team-modal{
+    // position: absolute;
+    // z-index: 9999999;
+    // background: $whiteColor;
+    // max-width: 670px;
+    // height: auto;
+    // top: 0;
+    // left: 0;
+    // right: 0;
+    // margin: 0 auto;
+    // border-radius: 1rem;
+    // box-shadow: 10px 10px 25px 7px $shadowdark;
+    // padding:2.5rem 3rem;
+    .content-extra{
+        padding: 2.5rem;
+        @media (max-width:$sm) {
+            padding: 1.5rem;
+        }
+    }
+    .icon-table{
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        z-index: 99;
+        border: 0;
+        padding: 0;
+        outline: none;
+        background: transparent;
+        @media (max-width:$sm) {
+            right: 0.8rem;
+            top: 0.4rem;
+        }
+    }
+    .team-img-pos {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: 2rem;
+        justify-content: space-between;
+        @media (max-width:$sm) {
+           padding-bottom: 2rem;
+        }
+        .team-img{
+            width: 156;
+            img{
+                border-radius: 10px;
+                height: 172px;
+                width: 156px;
+                object-fit: cover;
+                object-position: top;
+                @media (max-width:$sm) {
+                    height: auto;
+                }
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        
+        .team-position{
+            width: calc(100% - 180px);
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            h4{
+                font-size: 1.625rem;
+                font-weight: 600;
+                line-height: 32px;
+                @media (max-width:$sm) {
+                    text-align: center;
+                    padding-top: 2rem;
+                }
+            }
+        }
+    }
+    p{
+        color: $secondary;
+        line-height: 32px;
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+    
 }
 
 
@@ -724,6 +811,7 @@ body{
         }
 
         .team-list {
+            position: relative;
             @media (max-width:$sm) {
                 margin-top: 5rem;
             }
@@ -1082,4 +1170,10 @@ body{
 
 .mb3{
     margin-bottom: 2rem;
+}
+
+.about-team-modal{
+    .modal-dialog{
+        max-width: 650px !important;
+    }
 }

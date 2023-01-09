@@ -1,8 +1,8 @@
 
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-import Kyc from '../../assets/images/nbfc-indivial-loan/kyc.webp';
-import incomeProof from '../../assets/images/nbfc-indivial-loan/incomeproof.webp';
+import Kycimage from '../../assets/images/term-loans/personal-documents-for-term-loan-application.svg';
+import incomeProof from '../../assets/images/nbfc-indivial-loan/incomeproof.svg';
 
 function Documentrequired() {
 
@@ -14,18 +14,18 @@ function Documentrequired() {
     <div className="row">
         <div className="col-md-12">
         <div className="Doc-rqrd-heading">
-            <h2 className="title-first">Documents Required <br/>for Flexi Loan </h2>
+            <h2 className="title-first">Documents Required <br/>for Flexi Credit </h2>
           </div>
         </div>
     </div>
-    <div className="row justify-content-center">
+    <div className="row justify-content-center h-100">
       <div className="col-xl-5 col-md-6">
-      <div className="Doc-rq-card">
+      <div className="Doc-rq-card cap-right">
             <div className="text-center">
               <div className="img-height">
-                <LazyLoader src={Kyc} className={'img-fluid'} width={"320"} height={"240"} alt={"KYC Documents for Individual Loan"}/>
+                <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"KYC Documents for Individual Loan"}/>
               </div>
-              <h3 className="title-doc">KYC</h3>
+              <h3 className="title-doc">For KYC</h3>
             </div>
               <ul className="list-item">
                 <li>ID Proof</li>
@@ -35,10 +35,10 @@ function Documentrequired() {
           </div>
       </div>
       <div className="col-xl-5 col-md-6">
-      <div className="Doc-rq-card">
+      <div className="Doc-rq-card cap-left">
           <div className="text-center">
             <div className="img-height">
-              <LazyLoader src={incomeProof} className={'img-fluid'} width={"267"} height={"267"} alt={"Income Proof Documents for Individual Loan"}/>
+              <LazyLoader src={incomeProof} className={'img-fluid'} width={"305"} height={"255"} alt={"Income Proof Documents for Individual Loan"}/>
             </div>
               <h3 className="title-doc">Income Proof</h3>
           </div>

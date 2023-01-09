@@ -44,6 +44,7 @@ function FlexiCreditBusiness() {
         <FlexiCreditBusinessDocument/>
         <FlexiCreditFeatures/>
         <FlexiCreditWhyChoose/>
+        
     </div>
   );
 }

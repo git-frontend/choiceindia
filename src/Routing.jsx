@@ -124,6 +124,11 @@ const LazyFlexiCreditBusiness = React.lazy(() => import('./components/Flexi-Cred
 const LazySolarFinance = React.lazy(() => import('./components/Solar-Finance/SolarFinance'));
 const LazyBusinessLoan = React.lazy(() => import('./components/Business-Loan/BusinessLoan'));
 const LazyCfplPolicies = React.lazy(() => import('./components/CFPL-Policies/CFPL-Policies'));
+const LazySupplyChainFinance = React.lazy(() => import('./components/Supply-Chain-Finance/SupplyChainFin'));
+const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-Sub/SolarFinanceSub'));
+
+
+
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 function Routing() {
@@ -623,62 +628,73 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/loan' element={
+                        <Route exact path='/loan' element={
                             <React.Suspense>
                                 < LazyNBFCLanding />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
-                         {/* <Route exact path='/individual-loan' element={
+                         <Route exact path='/individual-loan' element={
                             <React.Suspense>
                                 < LazyIndivialLoan />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
 
-                        {/* <Route exact path='/invoice-financing' element={
+                        <Route exact path='/invoice-financing' element={
                             <React.Suspense>
                                 < LazyInvoiceFinancing />
                             </React.Suspense>
-                        } /> */}
-                         {/* <Route exact path='/channel-financing' element={
+                        } />
+                         <Route exact path='/channel-financing' element={
                             <React.Suspense>
                                 < LazyChannelFinance />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/commercial-vehicle-loan' element={
+                        } />
+                        <Route exact path='/commercial-vehicle-loan' element={
                             <React.Suspense>
                                 < LazyCommercialVehicleLoan />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/term-business-loan' element={
+                        } />
+                        <Route exact path='/term-business-loan' element={
                             <React.Suspense>
                                 < LazyTermLoans />
                                 </React.Suspense>
-                        } /> */}
+                        } />
                                 
-                         {/* <Route exact path='/flexi-credit-loan' element={
+                         <Route exact path='/flexi-credit-loan' element={
                             <React.Suspense>
                                 < LazyFlexiCreditBusiness />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
-                         {/* <Route exact path='/solar-financing' element={
+                         <Route exact path='/solar-financing' element={
                             <React.Suspense>
                                 < LazySolarFinance />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
-                        {/* <Route exact path='/business-loan' element={
+                        <Route exact path='/business-loan' element={
                             <React.Suspense>
                                 < LazyBusinessLoan />
                             </React.Suspense>
-                        } /> */}
-                        <Route exact path='/offer-document' element={
+                        } />
+                         <Route exact path='/supply-chain-finance' element={
+                            <React.Suspense>
+                                < LazySupplyChainFinance />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/solar-finance-sub' element={
+                            <React.Suspense>
+                                < LazySolarFinanceSub />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/offer-document' element={
                             <React.Suspense>
                                 < LazyOfferDocument />
                             </React.Suspense>
                         } />
+ 
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

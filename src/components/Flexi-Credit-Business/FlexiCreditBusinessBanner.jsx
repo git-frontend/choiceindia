@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useState,useEffect} from "react";
 import Slider from 'react-slick';
 import "../../../node_modules/slick-carousel/slick/slick.css"
 import "../../../node_modules/slick-carousel/slick/slick-theme.css"
@@ -8,37 +8,71 @@ import time from '../../assets/images/nbfc-indivial-loan/quick-flexi-loan-approv
 import disburse from '../../assets/images/nbfc-indivial-loan/flexi-loan-disbursed-in-48-hours.svg';
 import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work-for-flexi-business-loan.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function FlexiCreditBusinessBanner() {
+    /** scroll purpose */
+function chapterScroll(id) {
+    console.log("check",id);
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
+  const [name, setName ] = useState('hideform');
+  /** hide and show section */
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if(element){
+        const rect = element.getBoundingClientRect();
+        
+        if(rect.top.toFixed() < 259){
+            setName('visibleform');
+        }else{
+            setName('hideform');
+        }   
+    }
+};
+
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
+
     const settings1 = {
         infinite: true,
         speed: 1500,
         slidesToShow:4,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
-        
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              infinite: false,
-              slidesToScroll: 1,
+
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                dots: true,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+              }
             }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots:true,
-            }
-          }
-         
-        ]
+      
+          ]
     
       };
     return (
@@ -46,15 +80,24 @@ function FlexiCreditBusinessBanner() {
             <section className="inv-fin-banner flexi-credit-banner">
                 <div className="container">
                     <div className="row justify-content-center">
-                        <div className="col-xl-7 col-md-12">
-                            <div className="fin-banner-caption text-center">
+                        <div className="col-md-7">
+                            <div className="fin-banner-caption">
                                 <h1 className="big-ttl"> Apply for Business Flexi<br /> Credit in India </h1>
                                 <p>  Our Flexi-Credit gives you the freedom to withdraw or deposit money multiple times from your loan account and only pay interest on the utilized amount with our efficient business loan facility.</p>
-                                <p>Get a Flexi business loan up to<br />
-                                Rs. 25 lakhs online. <br />
+                                <p>Get a Flexi business loan up to Rs. 25 lakhs online. <br />
 
           
-                                    <a href="#"><span className="aply-btn">Apply Now!</span></a></p>
+                                    {/* <a href="#"> */}
+                                        <span className="aply-btn">Apply Now!</span>
+                                    {/* </a> */}
+                                    </p>
+                            </div>
+                        </div>
+                        <div className=" col-md-5">
+                            <div className="formwrap float-right">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm/> 
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>
@@ -95,6 +138,11 @@ function FlexiCreditBusinessBanner() {
                             </div>
                         </Slider> 
                         </div>
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('nbfcform')}}>Get a Call from us</button>
+                    </div>
                     </div>
                 </div>
             </section>

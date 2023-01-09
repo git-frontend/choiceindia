@@ -44,6 +44,7 @@ function TermLoans() {
         <TermLoansDocument/>
         <Features/>
         <WhyChoose/>
+           
     </div>
   );
 }

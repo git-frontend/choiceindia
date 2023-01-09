@@ -9,7 +9,7 @@ function AvailPurpose() {
   return (
     <div>
       
-    <section className="veh-bnr-btm">
+    <section className="veh-bnr-btm" id="showForm">
       <div className="container">
         <div className="row">
             <div className="col-md-12">
@@ -18,7 +18,7 @@ function AvailPurpose() {
                 </div>
             </div>
         </div>
-        <div className="row">
+        <div className="row" >
             <div className="col-md-12">
                 <div className="veh-bnr-list">
                       <div className="bnr-list-itm">

@@ -13,16 +13,16 @@ function TermLoansDocument() {
           <div className="row">
               <div className="col-md-12">
               <div className="Doc-rqrd-heading">
-                  <h2 className="title-first">Documents Required <br/>for Flexi Loan </h2>
+                  <h2 className="title-first">Documents Required <br/>for Term Loan </h2>
                 </div>
               </div>
           </div>
-          <div className="row justify-content-between">
+          <div className="row justify-content-center h-100">
             <div className="col-xl-5 col-md-6">
             <div className="Doc-rq-card cap-right">
                   <div>
                     <div className="img-height">
-                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"311"} height={"233"} alt={"Personal Documents for Term Loan Application"}/>
+                      <LazyLoader src={Kycimage} className={'img-fluid'} width={"218"} height={"254"} alt={"Personal Documents for Term Loan Application"}/>
                     </div>
                     <h3 className="title-doc">Personal Documents</h3>
                   </div>
@@ -36,7 +36,7 @@ function TermLoansDocument() {
             <div className="Doc-rq-card cap-left">
                   <div>
                     <div className="img-height">
-                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"250"} height={"250"} alt={"Business Documents for Term Loan Application"}/>
+                      <LazyLoader src={BusinessProofimage} className={'img-fluid'} width={"253"} height={"255"} alt={"Business Documents for Term Loan Application"}/>
                     </div>
                     <h3 className="title-doc">Business Documents</h3>
                   </div>

@@ -33,6 +33,13 @@
   src: url("../fonts/RedHatDisplayBold.eot") format("embedded-opentype"), url("../fonts/RedHatDisplayBold.woff2") format("woff2"), url("../fonts/RedHatDisplayBold.woff") format("woff"), url("../fonts/RedHatDisplayBold.ttf") format("truetype"), url("../fonts/RedHatDisplayBold.svg#RedHatDisplayBold") format("svg");
   font-display: swap;
 }
+@font-face {
+  font-family: "Poppins-Regular";
+  src: url("../fonts/Poppins-Regular.eot");
+  src: url("../fonts/Poppins-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Poppins-Regular.svg#Poppins-Regular") format("svg"), url("../fonts/Poppins-Regular.ttf") format("truetype"), url("../fonts/Poppins-Regular.woff") format("woff"), url("../fonts/Poppins-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 /*Bootstrap Override*/
 /*Font family*/
 /*bg varibales*/
@@ -42,7 +49,7 @@
   font-family: "PoppinsSemiBold", sans-serif;
   color: #ffffff !important;
   background: #221F20 !important;
-  padding: 1.3rem 3rem !important;
+  padding: 1.3rem 2.8rem !important;
   display: inline-block;
   border-radius: 16px !important;
   min-width: 16rem;
@@ -97,9 +104,16 @@
   transition-timing-function: ease-out;
   position: relative;
   font-family: "PoppinsRegular", sans-serif;
+  min-height: 4rem;
+}
+.link-nrl img {
+  margin-right: 0.5rem;
 }
 .link-nrl.white {
   background-color: #F5F5F5;
+}
+.link-nrl.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl .img-ico {
   width: 17rem;
@@ -121,7 +135,7 @@
 }
 .link-nrl .blackcolor {
   color: #13151A;
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 @media (max-width: 768px) {
   .link-nrl .blackcolor {
@@ -157,6 +171,9 @@
 }
 .link-nrl.link-nrl-sm.white {
   background-color: #F5F5F5;
+}
+.link-nrl.link-nrl-sm.white:hover {
+  background-color: #FFCE02;
 }
 .link-nrl.link-nrl-sm:hover {
   transform: translateY(-8px);
@@ -196,20 +213,20 @@
 .scroll-top {
   position: fixed;
   right: 30px;
-  bottom: 30px;
+  bottom: 70px;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
   border: 0;
   font-size: 1.9rem;
-  z-index: 999;
+  z-index: 9999;
   color: #ffffff;
   background: #FFCE02;
   box-shadow: 0px 0px 8px #d6d6d6;
 }
 @media (max-width: 767px) {
   .scroll-top {
-    bottom: 58px;
+    display: none;
   }
 }
 .scroll-top .fa-angle-up {
@@ -269,13 +286,16 @@ body {
 .title-first {
   font-size: 3.5rem;
   color: #221F20;
+  font-weight: 600;
   font-family: "PoppinsSemiBold", sans-serif;
 }
 @media (max-width: 767px) {
   .title-first {
     font-size: 2.5rem;
-    line-height: 4rem;
-    font-size: 2.3rem;
+    line-height: 3.5rem;
+  }
+  .title-first br {
+    display: none;
   }
 }
 
@@ -287,6 +307,7 @@ body {
 @media (max-width: 767px) {
   .title-secnd {
     font-size: 2rem;
+    line-height: 3rem;
   }
 }
 
@@ -317,11 +338,6 @@ body {
 @media (max-width: 768px) {
   .heading-sec p br {
     display: none;
-  }
-}
-@media (max-width: 767px) {
-  .heading-sec p {
-    font-size: 1.4rem;
   }
 }
 .heading-sec p.nm-text {
@@ -360,7 +376,7 @@ body {
 
 .App-Body {
   min-height: 100vh;
-  margin-top: 9.5rem;
+  margin-top: 9.25rem;
 }
 @media screen and (max-width: 767px) {
   .App-Body {
@@ -371,7 +387,12 @@ body {
 }
 @media screen and (max-width: 992px) {
   .App-Body {
-    margin-top: 8.6rem;
+    margin-top: 8.45rem;
+  }
+}
+@media screen and (max-width: 590px) {
+  .App-Body {
+    margin-top: 6rem;
   }
 }
 
@@ -379,6 +400,76 @@ body {
   width: 100%;
   margin: 0 auto;
   overflow: hidden;
+}
+
+.modal-backdrop {
+  z-index: 99999;
+}
+
+.modal {
+  z-index: 99999;
+}
+
+@-webkit-keyframes toTopFromBottom {
+  49% {
+    -webkit-transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    -webkit-transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+@keyframes toTopFromBottom {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+.common-modal-thankyou .modal-content .modal-header {
+  border: 0;
+}
+.common-modal-thankyou .modal-content .modal-body {
+  padding: 2rem;
+  padding-bottom: 1.5em;
+  text-align: center;
+}
+.common-modal-thankyou .modal-content .modal-body h4 {
+  margin-top: 1rem;
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  font-size: 1.65rem;
+}
+.common-modal-thankyou .modal-content .modal-body h3 {
+  font-family: "PoppinsMedium", sans-serif;
+  color: #221F20;
+  margin-top: 2rem;
+}
+.common-modal-thankyou .modal-content .modal-footer {
+  text-align: center;
+  justify-content: center;
+  border: 0;
+  padding-bottom: 1.5em;
+}
+.common-modal-thankyou .modal-content .modal-footer .btn-yellow {
+  background-color: #FFCE02;
+  border-radius: 27px;
+  color: #221F20;
+  font-size: 1.5rem;
+  line-height: 1.375rem;
+  font-family: "PoppinsSemiBold", sans-serif;
+  display: inline-block;
+  border: none;
+  padding: 0.8rem 2rem;
+  margin-top: 1rem 0;
 }
 
 /*Bootstrap Override*/
@@ -404,6 +495,7 @@ body {
 @media (max-width: 767px) {
   .bannersection {
     padding: 0 0 4rem;
+    text-align: center;
   }
 }
 .bannersection .title {
@@ -415,12 +507,26 @@ body {
   padding-top: 1.25rem;
   font-family: "PoppinsBold", sans-serif;
 }
+@media (max-width: 992px) {
+  .bannersection .title {
+    line-height: 4rem;
+    font-size: 3.125rem;
+    padding-bottom: 2rem;
+    padding-top: 4rem;
+  }
+}
 .bannersection .para {
   font-weight: 400;
   font-size: 1.75rem;
   line-height: 2.375rem;
   color: #707070;
   font-family: "PoppinsRegular", sans-serif;
+}
+@media (max-width: 767px) {
+  .bannersection .para {
+    line-height: 2.65rem;
+    font-size: 1.75rem;
+  }
 }
 .bannersection .rightsec {
   padding-left: 2rem;
@@ -443,7 +549,9 @@ body {
 }
 @media (max-width: 767px) {
   .heading {
-    font-size: 3rem;
+    line-height: 4rem;
+    font-size: 2.5rem;
+    padding-bottom: 2rem;
   }
 }
 
@@ -502,13 +610,16 @@ body {
 .managementteam .team-list-slider {
   position: relative;
 }
+.managementteam .team-list-slider .slick-slide {
+  height: auto;
+}
 .managementteam .team-list-slider .team-item {
   width: 90% !important;
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   background: #ad8b73;
-  padding: 1rem 1rem 0 1rem;
+  padding: 0;
   transition: 0.3s all ease-in;
 }
 @media (max-width: 767px) {
@@ -565,6 +676,15 @@ body {
 }
 .managementteam .team-list-slider .team-item .img-itm img {
   margin: 0 auto;
+  width: 100%;
+  height: 349px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 767px) {
+  .managementteam .team-list-slider .team-item .img-itm img {
+    height: 400px;
+  }
 }
 .managementteam .team-list-slider .slick-arrow {
   z-index: 1;
@@ -630,6 +750,7 @@ body {
 }
 .managementteam .team-list-slider .slick-dots {
   bottom: -80px;
+  z-index: 99;
 }
 .managementteam .team-list-slider .slick-dots li {
   width: 12px;
@@ -642,6 +763,7 @@ body {
   background: #E6E7E8;
   content: "";
   border-radius: 50%;
+  opacity: 1;
 }
 .managementteam .team-list-slider .slick-dots .slick-active button:before {
   background-color: #797A7D;
@@ -716,6 +838,11 @@ body {
 .Journey .heading {
   padding-bottom: 1.25rem;
 }
+@media (max-width: 767px) {
+  .Journey .heading {
+    padding-bottom: 2rem;
+  }
+}
 .Journey .journeyinfo {
   font-weight: 400;
   font-size: 1.875rem;
@@ -729,7 +856,8 @@ body {
 }
 @media (max-width: 767px) {
   .Journey .journeyinfo {
-    font-size: 1.8rem;
+    line-height: 2.15rem;
+    font-size: 1.45rem;
     width: 95%;
   }
 }
@@ -823,6 +951,7 @@ body {
   background: #E6E7E8;
   content: "";
   border-radius: 50%;
+  opacity: 1;
 }
 .Journey .Journeyyear .slick-dots .slick-active button:before {
   background-color: #797A7D;
@@ -841,6 +970,7 @@ body {
   .Vissionmissionsection .order2 {
     order: 2;
     padding: 8rem 0 13rem;
+    display: none;
   }
 }
 .Vissionmissionsection:after {
@@ -901,6 +1031,11 @@ body {
   text-align: left;
   padding-bottom: 1rem;
 }
+@media (max-width: 767px) {
+  .Vissionmissionsection .rightsec .heading {
+    padding-bottom: 2rem;
+  }
+}
 .Vissionmissionsection .rightsec .yellow {
   color: #FFCE02;
   font-size: 1.5rem;
@@ -915,6 +1050,12 @@ body {
   font-weight: 400;
   font-family: "PoppinsRegular", sans-serif;
   margin-bottom: 2rem;
+}
+@media (max-width: 767px) {
+  .Vissionmissionsection .rightsec .para {
+    font-size: 1.4rem;
+    line-height: 2.15rem;
+  }
 }
 
 .corevalues {
@@ -973,6 +1114,7 @@ body {
 @media (max-width: 767px) {
   .corevalues .wrap .card .cardtile {
     font-size: 2.5rem;
+    line-height: 3rem;
   }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -987,6 +1129,12 @@ body {
   font-family: "PoppinsRegular", sans-serif;
   color: #707070;
   margin: 0;
+}
+@media (max-width: 767px) {
+  .corevalues .wrap .card .cardsubtext {
+    line-height: 2.15rem;
+    font-size: 1.4rem;
+  }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .corevalues .wrap .card .cardsubtext {
@@ -1030,6 +1178,11 @@ body {
   font-family: "PoppinsSemiBold", sans-serif;
   margin-bottom: 18px;
 }
+@media (max-width: 767px) {
+  .corevalues .wrap .team-list .team-list-slider .team-item .namedesg .title {
+    font-size: 1.6rem;
+  }
+}
 @media (min-width: 769px) and (max-width: 1024px) {
   .corevalues .wrap .team-list .team-list-slider .team-item .namedesg .title {
     font-size: 1.5rem;
@@ -1040,6 +1193,11 @@ body {
   line-height: 2.4rem;
   font-weight: 400;
   font-family: "PoppinsRegular", sans-serif;
+}
+@media (max-width: 767px) {
+  .corevalues .wrap .team-list .team-list-slider .team-item .namedesg .text {
+    font-size: 1.4rem;
+  }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
   .corevalues .wrap .team-list .team-list-slider .team-item .namedesg .text {
@@ -1066,9 +1224,10 @@ body {
 .corevalues .wrap .team-list .team-list-slider .slick-dots li button:before {
   height: 10px;
   width: 10px;
-  background-color: #707070;
+  background-color: #D7DEEF;
   content: "";
   border-radius: 50%;
+  opacity: 1;
 }
 .corevalues .wrap .team-list .team-list-slider .slick-dots .slick-active button:before {
   opacity: 0.75;
@@ -1080,12 +1239,12 @@ body {
 }
 
 .Offer {
-  padding: 9.375rem 0;
+  padding: 9.375rem 0 13rem 0;
   position: relative;
 }
 @media (max-width: 767px) {
   .Offer {
-    padding: 0 0 8rem;
+    padding: 0 0 7rem 0;
   }
 }
 .Offer:after {
@@ -1137,10 +1296,14 @@ body {
   font-weight: 600;
   font-family: "PoppinsSemiBold", sans-serif;
   margin-bottom: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 @media (max-width: 767px) {
   .Offer .offer-list .card .namedesg .title {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
+    text-align: center;
   }
 }
 .Offer .offer-list .card .namedesg .text {
@@ -1153,8 +1316,15 @@ body {
 }
 @media (max-width: 767px) {
   .Offer .offer-list .card .namedesg .text {
-    font-size: 1.5rem;
+    line-height: 2.625rem;
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 767px) {
+  .Offer .offer-list .card .namedesg .text {
+    font-size: 1.4rem;
     margin-top: 1.5rem;
+    line-height: 2.15rem;
   }
 }
 .Offer .offer-list .card .img-itm {
@@ -1175,6 +1345,11 @@ body {
   text-align: center;
   bottom: -5.4375rem;
 }
+@media (max-width: 767px) {
+  .Offer .offer-list .slick-dots {
+    bottom: -3rem;
+  }
+}
 .Offer .offer-list .slick-dots li {
   width: 12px;
   height: 12px;
@@ -1186,6 +1361,7 @@ body {
   background: #E6E7E8;
   content: "";
   border-radius: 50%;
+  opacity: 1;
 }
 .Offer .offer-list .slick-dots .slick-active button:before {
   background-color: #797A7D;
@@ -1214,6 +1390,18 @@ body {
   display: none;
 }
 
+.Clients .client-list .image_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+@media (max-width: 767px) {
+  .Clients .client-list .image_wrapper {
+    padding: 0 40px;
+    display: flex !important;
+  }
+}
 .Clients .Marquee {
   width: 100%;
   box-sizing: border-box;
@@ -1264,4 +1452,8 @@ body {
   100% {
     transform: translate(-50%);
   }
+}
+
+.mb3 {
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=aboutus.css.map */

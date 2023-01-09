@@ -16,7 +16,7 @@ function WhyChoose() {
     speed: 1500,
     slidesToShow: 4,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 1500,
     slidesToScroll: 1,
@@ -61,7 +61,7 @@ function WhyChoose() {
                       <LazyLoader src={low} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"50"} height={"50"} />
                     </span>
                     <h3 className="card-ttl">Low</h3>
-                    <p className="subtext">Processing speed</p>
+                    <p className="subtext">Processing Fee</p>
                   </div>
                   <div className="carditem-nbfc">
                     <span className='cardimg'>

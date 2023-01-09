@@ -1,5 +1,5 @@
 
-import React from "react";
+import React,{useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
@@ -7,14 +7,50 @@ import time from '../../assets/images/nbfc-indivial-loan/quick-flexi-loan-approv
 import disburse from '../../assets/images/nbfc-indivial-loan/flexi-loan-disbursed-in-48-hours.svg';
 import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work-for-flexi-business-loan.svg';
 import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
+import NbfcForm from "../Common-features/NbfcForm";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { set } from "react-hook-form";
 function flexitab() {
+    
+    /** scroll purpose */
+function chapterScroll3(id) {
+    
+    console.log("checkal",id)
+    var element3 = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition3 = element3.getBoundingClientRect().top;
+    var offsetPosition3 = elementPosition3 + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition3,
+      behavior: "smooth"
+    });
+  }
 
+  const [name, setName ] = useState('hideform');
+  /** hide and show section */
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if(element){
+        const rect = element.getBoundingClientRect();
+        
+        if(rect.top.toFixed() < 259){
+            setName('visibleform');
+        }else{
+            setName('hideform');
+        }   
+    }
+};
+
+  useEffect(() => {
+    
+    window.addEventListener('scroll', getPosition);
+}, []);
     const settings1 = {
         infinite: true,
         speed: 1500,
         slidesToShow: 4,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,
@@ -22,49 +58,27 @@ function flexitab() {
         responsive: [
 
             {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    infinite: false,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                dots: true,
+                slidesToScroll: 1,
+              }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: true,
-                }
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+              }
             }
-
-        ]
+      
+          ]
 
     };
     return (
         <div>
-
-
-            <section className="flexitabcontent">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-xl-10 col-md-12 mx-auto">
-                            <div className="heading-sec text-center">
-                                <h2 className="title-first flexititle">Apply for Flexi Credit Loan in India</h2>
-                                <p className="para">Our Flexi-Credit has the freedom to withdraw or deposit money at the same or multiple times from your loan accounts as desired with our efficient business loan facility. We at Choice Finserv understand the management of finances and value money and thus, only charge the interest on the utilized amount. You will have the flexibility of reducing or increasing the repayment amount and tenure period.</p>
-                                <br /> <p className="para"> Get a Flexi business loan up to
-                                    <br /> Rs. 25 lakhs online.
-                                    <br /><a href="#"><span className="aply-btn">Apply Now!</span></a></p>
-                            </div>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </section>
-
             <section className="card-wrap-nbfc">
                 <div className="container">
                     <div className="row">
@@ -105,6 +119,11 @@ function flexitab() {
                         </Slider>
                         </div>
                        
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll3('nbfcForm')}}>Get a Call from us</button>
+                    </div>
                     </div>
                 </div>
             </section>

@@ -5,6 +5,7 @@ import WhyOpenCurrencyTrading from "./WhyOpenCurrencyTrading";
 import CurrencyTradingOpeningProcess from "./CurrencyTradingOpeningProcess";
 import LowBrokerageCurrencyTrading from "./LowBrokerageCurrencyTrading";
 import WhyCurrencyTrading from "./WhyCurrencyTrading";
+import MoreContent from './MoreContent';
 import CurrencyTradingFaq from "./CurrencyTradingFaq";
 import { Link } from "react-router-dom";
 import { useState,useEffect } from "react";
@@ -49,7 +50,7 @@ function CurrencyTrading() {
             <WhyCurrencyTrading />
             <LowBrokerageCurrencyTrading />
             <CurrencyTradingOpeningProcess />
-            
+            <MoreContent />
             {/* <section className="readmoresection">
 
               <div className="container">

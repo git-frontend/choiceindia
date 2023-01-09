@@ -6,6 +6,7 @@ import CommodityOpeningProcess from "./CommodityOpeningProcess";
 import LowBrokerageCommodity from "./LowBrokerageCommodity";
 import WhyChoiceCommodity from "./WhyChoiceCommodity";
 import CommodityFaq from "./CommodityFaq";
+import MoreContent from "./MoreContent";
 import { Link } from "react-router-dom";
 import meta_tags from "../../Data/MetaTags";
 import { useState,useEffect } from "react";
@@ -48,6 +49,7 @@ function Commodity() {
             <LowBrokerageCommodity />
             <CommodityOpeningProcess />
             <CommodityFaq />
+            <MoreContent />
             {/* <section className="readmoresection">
 
               <div className="container">

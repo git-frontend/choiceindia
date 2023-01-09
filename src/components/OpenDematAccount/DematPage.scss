@@ -84,7 +84,7 @@
 
 	.demat-account-form {
 		@media (max-width:$sm) {
-			margin-top: 0rem;
+			margin-top: 2rem;
 		}
 	}
 
@@ -1149,4 +1149,115 @@
     @media (max-width: $sm) {
     display: block !important;
     }
+}
+
+.ref-sec-terms {
+    padding: 7rem 0 10rem 0;
+    background: $abt-bg;
+    .title-secnd{
+        font-size: 2.688rem;
+        line-height: 1.5;
+        @media (max-width: $sm) {
+            font-size: 2rem;
+            br{
+                display: none;
+            }
+        }
+    }
+    .terms-cont {
+        margin-top: 5.5rem;
+        height: 380px;
+        overflow-y: scroll;
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+        h3{
+            font-size: 2rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        h4{
+            font-size: 1.6rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+        }
+        .sml-para-dv{
+                font-size: 1.5rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 2rem;
+                list-style: none;
+                padding-right:8rem;
+                margin: 0;
+                margin-bottom: 1.5rem;
+                position: relative;
+                @media (max-width: $sm) {
+                    font-size: 1.4rem;
+                    padding-right: 2rem;
+                }
+        }
+        .terms-list {
+            padding-left: 0;
+            li {
+                font-size: 1.5rem;
+                line-height: 1.6;
+                color: $secondary;
+                margin-bottom: 1rem;
+                list-style: none;
+                padding-left: 3rem;
+                padding-right:8rem;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    width: 0.8rem;
+                    height: 0.8rem;
+                    background: $secondary;
+                    display: block;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 0;
+                    top: 0.9rem;
+                    @media (max-width: $sm) {
+                        top: 0.7rem;
+                    }
+                }
+                @media (max-width: $sm) {
+                    padding-left: 2rem;
+                    padding-right: 3rem;
+                    font-size: 1.4rem;
+                }
+            }
+        }
+        @media (max-width: $sm) {
+            height: 430px;
+        }
+    }
+}
+
+
+#style-1 {
+    &::-webkit-scrollbar-track {
+        
+        border-radius: 10px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar {
+        width: 5px;
+        background-color: $whiteColor;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color:$yellowColor ;
+    }
+}
+
+.bold-color{
+	color: $primary;
 }

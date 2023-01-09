@@ -13,7 +13,7 @@ function AvailPurposeSolarFinanace() {
         <div>
 
 
-            <section className="avail">
+            <section className="veh-bnr-btm" id="showForm2">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

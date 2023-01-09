@@ -14,31 +14,31 @@ function flexitab() {
         speed: 1500,
         slidesToShow: 4,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
-        
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 1,
-              infinite: false,
-              slidesToScroll: 1,
+
+            {
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                dots: true,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+              }
             }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-              dots:true,
-            }
-          }
-         
-        ]
+      
+          ]
     
       };
     return (
@@ -49,7 +49,7 @@ function flexitab() {
                 <div className="container">
                     <div className="row">
                         <div className="heading-sec text-center">
-                            <h2 className="title-first pb-5">Why Choose Us For Felxi<br/>Credit  Loan?</h2>
+                            <h2 className="title-first pb-5">Why Choose Us For Felxi<br/>Credit?</h2>
                         </div>
                     </div>
                     <div className="row">
@@ -59,7 +59,7 @@ function flexitab() {
                                 <LazyLoader src={low} alt={"Low Processing Fee"} className={"img-fluid img"} width={"50"} height={"34"} />
                             </span>
                                 <h3 className="card-ttl">Low</h3>
-                                <p className="subtext">Processing speed</p>
+                                <p className="subtext">Processing fee</p>
                             </div>
                             <div className="carditem-nbfc">
                             <span className='cardimg'>

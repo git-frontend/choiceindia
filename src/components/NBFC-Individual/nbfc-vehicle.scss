@@ -5,6 +5,9 @@
 
 .avail{
     padding: 6rem 6rem 0 6rem;
+    @media (min-width:$sm-x)and (max-width:$md) {
+        padding:0;
+      }
     @media (max-width: $sm) {
        padding: 6rem 2rem 0 2rem;
     }
@@ -51,6 +54,9 @@
         float: right;
         .vehicle-imgheight{
             min-height: 27rem;
+            @media (max-width: $sm) {
+                min-height: 19rem;
+             }
         }
         .vehicle-listitem{
             padding: 0 2.5rem;
@@ -74,5 +80,36 @@
     }
     
 }
+
+.Doc-rq-card{
+    &.vehcard{
+        padding:5rem 3rem;
+        @media (max-width: $sm) {
+            padding: 2rem;
+        }
+        .individiualvehloan{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            .img-height{
+                width: 50%;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+            .vehicle-right{
+                width: 50%;
+                padding-left: 3rem;
+                @media (max-width: $sm) {
+                    width: 100%;
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
 
 

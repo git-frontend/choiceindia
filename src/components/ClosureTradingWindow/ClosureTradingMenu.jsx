@@ -67,9 +67,9 @@ function ClosureTradingMenu() {
                                 <div className="col-md-12">
 
                                     <div className="d-flex justify-content-between result-ttl">
-                                        <h3 className="head">Date of the General Meeting</h3>
-                                        <h3 className="head">Voting Result of the General Meeting</h3>
+                                        <h3 className="head">Month</h3>
                                         <h3 className="head"></h3>
+                                        <h3 className="head">View</h3>
                                     </div>
                                     <div className="subtext">
 
