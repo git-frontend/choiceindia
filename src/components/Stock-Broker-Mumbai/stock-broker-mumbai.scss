@@ -16,6 +16,9 @@
         padding: 6rem 0;
     }
     .big-ttl{
+        @media (min-width:$sm-x) and (max-width:$md) {
+            font-size: 2.5rem;
+        }
         @media (max-width:$sm) {
            margin-bottom: 2rem;
         }
@@ -26,6 +29,10 @@
     .text{
         width: 90%;
         padding-bottom: 14px;
+        @media (min-width:$sm-x) and (max-width:$md) {
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
         @media (max-width:$sm) {
             width: 100%;
         }
@@ -34,6 +41,9 @@
             font-style: normal;
             font-size: 1.75rem;
             cursor: pointer;
+            @media (min-width:$sm-x) and (max-width:$md) {
+                font-size: 1.5rem;
+            }
             @media (max-width:$sm) {
                 font-size: 1.5rem;
             }
