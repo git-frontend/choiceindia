@@ -53,7 +53,7 @@ function BannerSBroker() {
                                 {/* <SubBrokerForm /> */}
                             </div>
                         </div>:
-                         <div className="col-md-6 col-lg-4 ">
+                         <div className="col-md-6 col-lg-4 " onMouseOver={()=>setIscheck(true)}>
                          <div className="franchise-form justify-content-end d-flex" id="form-banner">
                          
                              <SubBrokerForm />
