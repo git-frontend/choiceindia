@@ -11,7 +11,7 @@ function BannerSBroker() {
 
     return (
         <div>
-            <section className="franchise-banner" >
+            <section className="franchise-banner" onMouseOver={()=>setIscheck(true)} >
                 <div className="container">
                     <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">
@@ -53,7 +53,7 @@ function BannerSBroker() {
                                 {/* <SubBrokerForm /> */}
                             </div>
                         </div>:
-                         <div className="col-md-6 col-lg-4 " onMouseOver={()=>setIscheck(true)}>
+                         <div className="col-md-6 col-lg-4 ">
                          <div className="franchise-form justify-content-end d-flex" id="form-banner">
                          
                              <SubBrokerForm />
