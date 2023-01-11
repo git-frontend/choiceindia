@@ -12,7 +12,7 @@ function BestInMumbai() {
       <div className="container">
         <div className="row">
     
-            <div className="col-md-6">
+            <div className="col-md-12">
               <div className="left-sec heading-sec">
                 <h2 className="title-secnd mb-4">Best Stock Broker in Mumbai</h2>
                
@@ -43,11 +43,11 @@ function BestInMumbai() {
               </div>
 
             </div>
-            <div className="col-md-6 d-flex align-items-center justify-content-center">
+            {/* <div className="col-md-6 d-flex align-items-center justify-content-center">
               <div className="right-sec  best-mumbai-img">
               <LazyLoader src={BestMumbai} alt={"Best Stock Broker in Mumbai"} className={"img img-fluid"} width={"258"} height={"238"}/>
               </div>
-            </div>
+            </div> */}
           
         </div>
       </div>

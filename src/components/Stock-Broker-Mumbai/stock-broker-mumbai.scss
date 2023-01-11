@@ -1,5 +1,5 @@
 @import '../../assets/css/customvariable.scss';
-
+@import '../../assets/css/common.scss';
 
 
 
@@ -33,6 +33,7 @@
             font-weight: 700;
             font-style: normal;
             font-size: 1.75rem;
+            cursor: pointer;
             @media (max-width:$sm) {
                 font-size: 1.5rem;
             }
@@ -232,10 +233,12 @@
         @media (max-width:$sm) {
             padding: 18px 0 18px 15px;
             width: 100%;
-            margin-top: 0;
+            margin-top: 1rem;
         }
         @media (min-width:$sm-x) and (max-width:$md) {
+            margin-top: 4rem;
             width: 100%;
+            display: none;
         }
         .address{
             width: 50%;
@@ -243,13 +246,14 @@
             
             .heading{
                 color: $whiteColor;
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-semibold;
             }
             .text{
                 color: $textcolor;    
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 1.25rem;
+                line-height: 1.5;
                 width: 98% !important;
                 margin-bottom: 0;
                 padding-bottom: 0;
@@ -269,32 +273,39 @@
             }
             .heading{
                 color: $whiteColor;
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-semibold;
             }
             .text{
                 color: $textcolor;    
-                font-size: 14px;
-                line-height: 22px;
+                font-size: 1.25rem;
+                line-height: 1.5;
                 display: flex;
                 margin-bottom: 0;
-                @media (max-width:$md) {
+                @media (max-width:$sm) {
                     flex-direction: column;
                 }
                 .day{
                     width: 50%;
-                    @media (max-width:$md) {
+                    @media (max-width:$sm) {
                         width: 100%;
                     }
                     
                 }
                 .time{
                     width: 50%;
-                    @media (max-width:$md) {
+                    @media (max-width:$sm) {
                         width: 100%;
                     }
                    
                 }
+            }
+        }
+        &.companydetail-tab{
+            display: none;
+            @media (min-width:$sm-x) and (max-width:$md) {
+                display: flex;
             }
         }
     }
@@ -588,6 +599,7 @@
             font-size: 1.75rem;
             color: $secondary;
             font-weight: 700;
+            cursor: pointer;
             @media (max-width:$sm) {
                 font-size: 1.5rem;
             }
