@@ -11,87 +11,92 @@ const RemisierMoreContent = () => {
 <div className="container">
   <div className="row">
     <div className="col-md-12">
-      <h2 className="secttitle">Authorised Person</h2>
+      <h2 className="secttitle">Authorised Person in Stock Market</h2>
     </div>
     <div className="col-md-12">
       <div className="para">
         <input type="checkbox" className="read-more-state" id="post-1" />
-        <span className="read-more-wrap "> The stock market investors can opt to invest via an Authorised person, who is a professional who can guide investors through the process.
+        <span className="read-more-wrap "> The Securities and Exchanges Board of India (SEBI) incorporated the concept of an authorised person in the stock market in 2009. This was when the idea of capital markets was relatively new, and retail investors required assistance to access the trading platform of popular exchanges like the Bombay Stock Exchange (BSE) or the National Stock Exchange (NSE).
 
           <span className="read-more-target">
-        <p>Authorised persons are those who function as a point of contact between investors and stockbrokers to make the entire investment process easier. They match the investing needs of the investors with the greatest bargains available, allowing them to maximize their earnings.</p>
-        <p>Choice has a diverse product portfolio that is supported by more than 25 years of experience. Authorised Persons have the ability to provide the full range of financial products such as -</p>
-        
-        
+        <p>Over the years, the responsibilities of an authorised person have primarily remained the same. However, an increase in the number of Demat accounts has impacted these professionals' commissions and general earnings.</p>
+        <p>But before diving deep into the nuances of the role, it is crucial to delve into the standard definition of an authorised person and understand why stockbrokers are constantly looking to employ them.</p>
+        <br/>
+        <h3 className='ttl-para'>What is an Authorised Person?</h3>
+        <p>NSE defines an authorised person as a "person who is appointed as such by a trading member and who provides access to trading platform of a stock exchange as an agent of the stock broker."</p>
+        <p>The simplest <Link to="/blog/who-is-an-authorised-person/">authorised person meaning</Link> can be translated as 'an individual registered with a particular exchange to execute trades on behalf of an investor.'</p>
+        <p>Essentially, an authorised person does not hold power to execute trades or charge brokerage fees from investors looking to start their investment journey. However, they are recognised by SEBI to work under a stockbroker, provided a written agreement is in place.</p>
+        <p>However, the meaning of authorised person does not mean the role is only restricted to individuals. It can also be provided to organisations, provided they follow some set guidelines by SEBI.</p>
+        <p>An authorised person is only permitted to work with one stockbroker per exchange. They also require certification from the relevant exchanges. For instance, a BSE-authorised person can only work with NSE if they acquire a certificate from the latter.</p>
+        <p>Authorised persons can either work with one stockbroker who deals with various segments or collaborate with different brokers targeting different segments in the market.</p>
+        <br/>
+        <h3 className='ttl-para'>What is the Authorised Person Franchise Model?</h3>
+        <p>While a stock market authorised person usually works individually with different stockbrokers, they can choose to pursue a more significant business opportunity with the franchise model. This model is primarily employed by colossal broking houses, which permit authorised persons to operate under their brand name under a set of predetermined commercial terms.</p>
+        <p>Think of it as a restaurant trying to expand by awarding franchises in different locations.</p>
+        <p>Stockbrokers follow the same model. Granting franchise rights allows them to expand their visibility while helping the authorised persons to attract significant investors. These franchisees also train authorised persons in several facets of the securities and stock market, adding to their knowledge of equity trading.</p>
+        <p>Overall, working in a franchise provides individuals with the initial push they need to supplement a reliable reputation in the market. But it comes with its fair share of challenges, including a binding agreement with fixed earnings that may be lower than commissions enjoyed by authorised persons.</p>
+        <br/>
+        <h3 className='ttl-para'>Who can Become an Authorised Person?</h3>
+        <p>SEBI has laid down specific eligibility criteria for individuals looking to enjoy a flourishing career as authorised persons with various Indian exchanges. The principle requirements are:</p>
         <ul>
-            <li>Stock Market Investment</li>
-            <li>Mutual Funds</li>
-            <li>Insurance</li>
-            <li>Retail Loans</li>
-            <li>Portfolio Management Services</li>
+          <li>The person must be a resident of India</li>
+          <li>For partnership firms, the firm must be registered under the Indian Partnership Act of 1932</li>
+          <li>An LLP or Limited Liability Partnership firm that is registered under the Indian Limited Liability Partnership Act, 2008</li>
+          <li>Corporate body recognised by the Indian Companies Act, 1956</li>
         </ul>
-        <h3 className='ttl-para'>Work of An Authorised Person</h3>
-        <p>The most important task of an Authorised person is to become a bridge between the investors and the brokerage firms. An Authorised person's main work responsibilities include -</p>
-        
+        <p>For franchise models, individuals have to fulfil additional criteria which differ according to the stockbroker.</p>
+        <br/>
+        <h3 className='ttl-para'>What is the Difference Between an Authorised Person and a Sub Broker?</h3>
+        <p>More often than not, the terms authorised persons and sub brokers are used interchangeably. While the functions of these two professionals are strikingly similar, they are inherently different from each other.</p>
+        <p>The significant points of <Link to="/blog/difference-between-sub-broker-and-authorized-person/">difference between authorised person and sub broker</Link> are:</p>
         <ul>
-            <li>Buying, selling, and dealing with securities</li>
-            <li>Bringing in new investors</li>
-            <li>Assisting stockbrokers in increasing their business volume</li>
-            <li>Assisting existing clients in reinvesting</li>
+            <li>Sub brokers are required to be licensed with SEBI to offer investment advice under the employment of stockbrokers. On the other hand, an authorised person is recognised by SEBI but does not need any certification or licence to work under stockbrokers.</li>
+            <li>Adherence to SEBI regulations and code of conduct decreases the flexibility of a sub broker. At the same time, an authorised person is only supervised by the stockbroker and the exchanges, leading to more liberation.</li>
+            <li>The responsibilities of a sub broker are limited to the equity cash market. Authorised persons can participate in equity cash, futures and derivatives, and currency derivatives.</li>
+            <li>Higher registration fees plague sub brokers, with standard charges of up to ₹20,000 for the first five fiscal years levied by SEBI. In comparison, authorised persons enjoy a nominal registration fee of around ₹2,000.</li>
         </ul>
-        <h3 className='ttl-para'>Who can become an Authorised Person</h3>
-        <p>Unlike <Link to="/sub-broker-franchise">sub-brokers</Link>, who are registered entities, the authorised person enjoys the freedom to serve with an approval of SEBI. The <Link to="/blog/difference-between-sub-broker-and-authorized-person/">difference between the sub-broker and authorised person</Link> needs to be specified.</p>
-        <p>However, anyone who wants to earn money in a passive way can become an Authorised Person. With Choice, the benchmarks to become an Authorised person are as follows -</p>
+        <p>However, both these roles thrive on commission and cannot indulge in receiving direct payments or <Link to="/brokerage-charges">brokerage charges</Link> from investing parties. Hence, there is no winner in the authorised person vs <Link to="/sub-broker-franchise">sub broker</Link> debate; both possess their own merits.</p>
+        <br/>
+        <h3 className='ttl-para'>What are the Duties of an Authorised Person?</h3>
+        <p>Once the agreement between a stockbroker and an authorised person is confirmed, the duties of authorised person include the following:</p>
         <ul>
-            <li>There are no educational requirements.</li>
-            <li>Individuals willing to become Authorised Person must be at least 18 years old.</li>
-            <li>An uncanny ability to communicate and sell in equity markets.</li>
-            <li>A desire to be your own boss is a strong motivator.</li>
+          <li>Assist the existing clients of the stockbroker with investment decisions and help them recognise the opportunities in the stock market.</li>
+          <li>Identify and facilitate contact with potential investors looking to invest in securities and stocks and guide them through the process of creating a <Link to="/demat-account">Demat account</Link> with the stockbroker.</li>
+          <li>Help investors learn about the requirements of a Demat account by advising them on relevant documents. However, an authorised person responsibility does not include document verification.</li>
         </ul>
-        <p>Generally speaking, there are no strict criteria for being an Authorised Person in the Stock Market. Following entities can be designated as an Authorised person:</p>
+        <p>An authorised person earns a fixed commission for every trade executed by the investors they helped bring to the stockbroker. This scalable payscale is highly lucrative and can trump other income sources during high trading volumes.</p>
+        <br/>
+        <h3 className='ttl-para'>Eligibility and Qualification to Become an Authorised Person</h3>
+        <p>Given the nature of their role in simplifying investment decisions and helping onboard more clients for stockbrokers, the individuals applying for this role are expected to be well-versed with:</p>
         <ul>
-                                            <li>Any person – individual, partnership firm, LLP, or body corporate – who is appointed by <Link to="/">stock broker</Link> / trading member and who provides access to the Exchange's trading platform as the stock broker's agent</li>
-          <li>The eligibility and qualifying requirements are minimal; all we want is willingness and passion.</li>
-          <li>Excellent Communication Skills and Sales Aptitudes are an added benefit.</li>
+          <li>Financial markets, especially the intricacies of the securities and stock market. In-depth knowledge of trading, Demat accounts and the concept of analysing risks and returns to provide sound financial advice to clients.</li>
+          <li>Solid knowledge of global events and international markets to analyse and study the market shifts that may increase or decrease the value of a particular asset.</li>
+          <li>Basic computer skills since most stockbrokers employ an online platform to help investors trade from the comfort of their homes.</li>
+          <li>Proficiency in communication to facilitate discussions with potential investors and convince them to <Link to="/open-free-demat-account">open a Demat account</Link> with the concerned stockbroker.</li>
+          <li>Minimal educational requirement, the candidate should have passed intermediate (10 +2).</li>
         </ul>
-        <h3 className='ttl-para'>How To Become An Authorised Person</h3>
+        <p>Apart from these skills, stockbrokers might also require mandatory documents to confirm certain aspects of your identity. </p>
         <ul>
-          <li>In general, becoming an Authorised person in the stock market is a straightforward procedure. The only difficult aspect of the application is the verification process.</li>
-          <li>Go to our official website to start registration to become a Choice Authorised Person.</li>
-          <li>Feel in your details and share required documents with us to complete your registration.</li>
-          <li>After a quick verification by our Choice India expert executives, your registration gets approved.</li>
-          <li>The entire registration process is overseen by the authorities. The applicant must have all of the necessary documentation and qualifications for this position.</li>
-        </ul>
-        <h3 className='ttl-para'>Benefits Of Becoming An Authorised Person</h3>
-        <p>You can join the well-known and respected Choice group as a SEBI Authorised Person. Join our reputable brand and enjoy the following advantages –</p>
-        <ul>
-            <li>
-            High Incentives
-                <ol>
-                    <li>Highest Revenue Sharing</li>
-                    <li>Up to ₹ 2100 Per A/C Opening Incentive</li>
-                    <li>No Registration Charges</li>
-                    <li>Earn For A Lifetime</li>
-                </ol>
-            </li>
-            <li>Transparent and Growth-Oriented Business Model</li>
-            <li>
-            Advanced Technical Assistance
-                <ol>
-                    <li>Cutting-edge Trading Platforms (<Link to="/online-trading-app">Choice FinX Trading App</Link> &amp; Advanced Website)</li>
-                    <li>Hassle-Free Software for Tracking and Monthly Reports</li>
-                    <li>Dedicated Whatsapp and Telegram Channels</li>
-                    <li>Training through Webinars and Conferences</li>
-                </ol>
-            </li>
-            <li>
-            Support
-                <ol>
-                    <li>Marketing and Sales Support</li>
-                    <li>Local Relationship Manager Assistance</li>
-                </ol>
-            </li>
-        </ul>
+          <li>PAN card</li>
+          <li>Aadhar card</li>
+          <li>Educational proof</li>
+          <li>Residential address proof</li>
+          <li>Four photographs</li>
+          </ul>
+          <p>The documents might vary according to the stockbroker.</p>
+          <br/>
+          <h3 className='ttl-para'>Steps for Registering as an Authorised Person</h3>
+          <p>Unlike sub brokers, registering to become an authorised person does not involve a complex registration process to gain the SEBI licence.</p>
+          <p>On the contrary, NSE claims that a person or a firm can be qualified as an authorised person when they enter into a written agreement with a stockbroker using a form mandated by the relevant exchange. The form should entail the following:</p>
+          <ul>
+            <li>Scope of the activities</li>
+            <li>Responsibilities</li>
+            <li>Confidentiality of information</li>
+            <li>Commission sharing</li>
+            <li>Termination clause</li>
+          </ul>
+          <p>Once the agreement is completed and verified, the individual is officially recognised as an authorised person for the stockbroker.</p>
+          <p>So, if you plan to become a stockbroker, study the financial markets extensively. Once you acquire the relevant knowledge and understand the working of different segments, you can register as an authorised person with a reputed stockbroker like <Link to="/">Choice India</Link> and earn significant commissions!</p>
           </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
       </div>
     </div>

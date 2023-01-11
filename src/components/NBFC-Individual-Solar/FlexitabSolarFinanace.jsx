@@ -54,7 +54,7 @@ function FlexitabSolarFinanace() {
         speed: 1500,
         slidesToShow: 4,
         arrows: false,
-        autoplay: false,
+        autoplay: true,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,
@@ -62,23 +62,23 @@ function FlexitabSolarFinanace() {
         responsive: [
 
             {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 1,
-                    infinite: false,
-                    slidesToScroll: 1,
-                }
+              breakpoint: 992,
+              settings: {
+                slidesToShow: 3,
+                dots: true,
+                slidesToScroll: 1,
+              }
             },
             {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    dots: true,
-                }
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+              }
             }
-
-        ]
+      
+          ]
 
     };
     return (
