@@ -12,6 +12,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import Marquee from 'react-fast-marquee';
 function Footer() {
+  const [hide,setHide] =useState(false)
   let toggleModal = (val) => {
     setData1(val)
   }
@@ -46,6 +47,10 @@ function Footer() {
     setData(obj);
 
   }
+  setTimeout(() => {
+    setHide(() => true);
+  }, 5000)
+
 
   return (
     <>
@@ -192,7 +197,9 @@ function Footer() {
                             </a>
 
                           </div>
-                          <div className="footer-social-links">
+                          {
+                            hide ?
+                            <div className="footer-social-links">
                             <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
@@ -211,7 +218,9 @@ function Footer() {
                             <a href="https://t.me/CEBPL" target="_blank">
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
-                          </div>
+                          </div>:""
+                          }
+                          
                         </div>
                       </div>
                       <div className="col-md-5">

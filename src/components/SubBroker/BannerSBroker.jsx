@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function BannerSBroker() {
     const[ischeck,setIscheck]=useState(false);
-    console.log("check",ischeck);
+    
 
     return (
         <div>
