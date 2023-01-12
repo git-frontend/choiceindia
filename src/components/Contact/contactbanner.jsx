@@ -179,8 +179,8 @@ function Contactbanner() {
                         <Form.Select variant="Info" id="dropdown" onChange={() => selectdepartment()} className=" department getvalue" >
                           {
                             active.current =='NBFC'?
-                            <option value="select here" >Select here</option>:
-                            <option value="select here" selected >Select here</option>
+                            <option value="Select here" >Select here</option>:
+                            <option value="Select here" selected >Select here</option>
                           }
                             
                         
