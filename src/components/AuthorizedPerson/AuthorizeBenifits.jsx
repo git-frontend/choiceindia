@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import Manager from '../../assets/images/sub-broker/local-relationship-manager-assistance.svg';
 import Software from '../../assets/images/sub-broker/advanced-software-to-manage-business.svg';
 import Sales from '../../assets/images/sub-broker/marketing-and-sales-support.svg';
@@ -8,17 +8,45 @@ import Trading from '../../assets/images/sub-broker/cutting-edge-trading-platfor
 import Transport from '../../assets/images/sub-broker/transparent-and-growth-oriented-business-model.svg';
 import { Link } from 'react-router-dom';
 import utils from "../../Services/utils";
+import Slider from 'react-slick';
 
 
 function RemisierBenifits() {
 
     const [defaultOption, setdefaultOption] = useState(() => 'sl-slider-active');
 
+    const [view, setView] = useState({
+        matches: window.innerWidth < 768 ? false : true,
+    });
+
+    const settings = {
+        infinite: true,
+        speed: 1500,
+        arrows: false,
+        slidesToShow: 1,
+        autoplay: false,
+        dots: true,
+        autoplaySpeed: 3000,
+        slidesToScroll: 1,
+
+    };
+
+    useEffect(() => {
+       
+           
+        let mediaQuery = window.matchMedia("(min-width: 768px)");
+        mediaQuery.addListener(setView);
+        // this is the cleanup function to remove the listener
+        return () => mediaQuery.removeListener(setView);
+    
+
+}, [])
+
     return (
         <div>
 
 
-            <section className="broker-benifits">
+            <section className="broker-benifits" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -27,7 +55,12 @@ function RemisierBenifits() {
                     </div>
                     <div className="row relative">
                         <div className="col-md-12">
-                            <div className="benifits-list slider-hide">
+                        <div>
+
+                        {
+                                view && !view.matches ?
+                                    <Slider {...settings} className="benifits-list slider-hide">
+                            
                                 <div className={"sl-slider " + defaultOption }>
                                     <div className="benifits-item">
                                         <span>
@@ -84,6 +117,68 @@ function RemisierBenifits() {
                                         <h4>Transparent &amp; Growth-oriented Business Model</h4>
                                     </div>
                                 </div>
+                                </Slider>
+                            :
+                            <div className="benifits-list slider-hide">
+                            
+                                <div className={"sl-slider " + defaultOption }>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Manager} alt="Authorised Person with local RM assistance" className="img-fluid" width="74" height="73"/>
+                                        </span>
+                                        <h4>Local Relationship Manager Assistance</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Software} alt="Authorised Person with Advanced software to manage business" className="img-fluid" width="74" height="73"/>
+                                        </span>
+                                        <h4>Advanced Software to Manage Business</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Sales} alt="Dedicated marketing &amp; sales support for Authorised Person" className="img-fluid" width="74" height="73"/>
+                                        </span>
+                                        <h4>Marketing &amp; Sales Support</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Channels} alt="Dedicated whatsapp &amp; telegram channels for Authorised Person" className="img-fluid" width="74" height="73" />
+                                        </span>
+                                        <h4>Dedicated WhatsApp &amp; Telegram Channels</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Training} alt="Training through webinars and conferences for Authorised Person" className="img-fluid" width="74" height="73" />
+                                        </span>
+                                        <h4>Training through Webinars &amp; Conferences</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Trading} alt="Cutting-edge trading platforms for Authorised Person" className="img-fluid" width="74" height="73" />
+                                        </span>
+                                        <h4>Cutting-edge Trading Platforms (App &amp; Web)</h4>
+                                    </div>
+                                </div>
+                                <div className="sl-slider" onMouseOver={() => { setdefaultOption(() => '' ) }}>
+                                    <div className="benifits-item">
+                                        <span>
+                                            <img src={Transport} alt="Authorised Person with transparent &amp; growth-oriented business model" className="img-fluid" width="74" height="73" />
+                                        </span>
+                                        <h4>Transparent &amp; Growth-oriented Business Model</h4>
+                                    </div>
+                                </div>
+                                </div>
+                        }
                             </div>
                             <div className="item-next1">
                                 <h3>Become a Choice Authorised Person</h3>
