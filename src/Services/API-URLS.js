@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -214,6 +214,10 @@ export class API_URLS {
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
     nbfcRegister='api/register';
     nbfcLogin ='api/login';
+
+    subBrokerSendOtpURLNew = 'https://sso-api.choicetechlab.com/sub-broker/signup';
+    subBrokerResendOtpURLNew = 'https://sso-api.choicetechlab.com/resendotp';
+    subBrokerVerifyOtpURLNew = 'https://sso-api.choicetechlab.com/verifyotp';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -722,6 +726,18 @@ export class API_URLS {
 
     getEscalationURL(){
         return this.bannerURL + this.escalation
+    }
+
+    getSubBrokerNewSendOtpUrl() {
+        return this.subBrokerSendOtpURLNew;
+    }
+
+    getSubBrokerNewResendOtpURL() {
+        return this.subBrokerResendOtpURLNew;
+    }
+
+    getSubBrokerNewVerifyOtpURL() {
+        return this.subBrokerVerifyOtpURLNew;
     }
     
 
