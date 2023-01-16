@@ -8,14 +8,6 @@
     background: linear-gradient(180deg, #EFECEB 42.06%, rgba(239, 236, 235, 0) 107.29%);
 }
 
-/** temporarychanges */
-// .banner-parent-temp {
-  
-//     position: relative;
-//     background-color: #F4F6F7;
-//     height: 800px;
-//     width: 100%;
-// }
 
 .banner-contact1 {
     // border:2px solid red;
@@ -25,10 +17,10 @@
     width: 100%;
 
     .banner-img-temp {
-       
+
         width: 60%;
         height: 500px;
-      
+
         .img-temp {
             width: 600px;
             height: 500px;
@@ -41,7 +33,7 @@
     }
 
     .banner-content-temp {
-       
+
         width: 40%;
         height: 500px;
 
@@ -56,7 +48,7 @@
 
         h2,
         p {
-           
+
             height: 30px;
             margin-left: 100px;
             margin-bottom: 20px;
@@ -73,64 +65,112 @@
 /** changes below */
 .banner-parent {
     width: 100%;
+    background-color: #EFE0E0;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .banner-contact {
     position: relative;
-    padding-bottom: 4rem;
     animation: hideMe 4s forwards;
+
     @media (max-width: $sm) {
         min-height: 200px;
     }
-    
-    
-
-    .ban-img {
-        width: 100%;
-        @media (max-width: $sm) {
-            display: none;
-        }
-    }
 
     .banner-caption {
-        position: absolute;
+        // position: absolute;
         left: 0;
         width: 100%;
         top: 50%;
-        transform: translate(0, -50%);
+        // transform: translate(0, -50%);
         z-index: 9;
         color: $primary;
 
         .big-ttl {
+            margin-top: 14rem;
+            @media (max-width: $md) {
+                margin-top: 6rem;
+            }
+
             @media (max-width: $sm) {
                 font-size: 3rem;
                 line-height: 1.5;
+                margin-top: 2rem;
+                text-align: center;
+            }
+        }
+
+        .bannerbg {
+
+            position: relative;
+            @media (max-width: $sm) {
+                display: none;
+            }
+
+        }
+
+        .bannerbg::before {
+            content: url(../../assets/images/contact/dots.webp);
+            position: absolute;
+            top: 33%;
+            right: 47%;
+            z-index: -1;
+            @media (max-width: $md) {
+                display: none;
+            }
+
+        }
+
+        .dipar-dropdown {
+            padding-top: 9rem;
+
+            .depart-text {
+                color: $blacktext;
+                font-family: $font-family-poppins-medium;
+                font-size: 1.688rem;
+                line-height: 2.5rem;
+                font-weight: 500;
+                padding-bottom: 1rem;
+            }
+
+            .department {
+                width: 90%;
+                padding: 0.775rem 2.25rem 0.775rem 0.75rem;
+                display: inline-block;
+
+            }
+            @media (max-width: $md) {
+                padding: 3rem 0;
+            }
+            @media (max-width: $sm) {
+                padding: 2rem 0 3rem 0;
+                text-align: center;
+            }
+        }
+        .request-dropdown{
+            @media (max-width: $sm) {
+                padding: 0rem 0 3rem 0;
             }
         }
     }
 }
 
-
 .contactdetail {
-    padding: 3rem 0 0 0;
+    // padding: 3rem 0 0 0;
     position: relative;
     animation: hideMe 4s forwards;
 
-    @media (max-width: 1024px) {
-    }
 
-    // &:before {
-    //     content: '';
-    //     position: absolute;
-    //     display: block;
-    //     height: 57rem;
-    //     width: 21rem;
-    //     right: 0;
-    //     top: -10%;
-    //     background: url('../../assets/images/contact/contactbefore.png');
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    // }
+    @media (max-width: 1024px) {}
+
+    .mt-7 {
+        margin-top: 7rem;
+
+        @media (max-width: $sm) {
+            margin-top: 3rem;
+        }
+    }
 
     .mt-10 {
         margin-top: 10rem;
@@ -151,27 +191,41 @@
         @media (max-width: $sm) {
             text-align: left !important;
             margin-top: 3rem;
+            width: 100%;
         }
     }
 
     .maintitle {
-        color: $primary;
+        color: $blacktext;
         font-weight: 600;
         font-size: 1.875rem;
         line-height: 2.8125rem;
         font-family: $font-family-poppins-medium;
+        margin: 0;
+        padding-bottom: 1rem;
+    }
+
+    .resmaintitle {
+        @media (max-width: $sm-xs) {
+            font-size: 1.775rem;
+        }
     }
 
     .subtext {
         color: $secondary;
         font-weight: 400;
-        font-size: 1.4rem;
-        line-height: 2.5rem;
+        font-size: 1.25rem;
+        line-height: 1.875rem;
         font-family: $font-family-poppins-regular;
+
+        a {
+            text-decoration: none;
+            color: $bgcolor-blue;
+        }
     }
 
     .subhead {
-        color: $primary;
+        color: $secondary;
         font-weight: 400;
         font-size: 1.25rem;
         line-height: 2.125rem;
@@ -203,7 +257,11 @@
             outline: none;
             border: 0;
             box-shadow: inherit;
+
+
         }
+
+
 
         .dropdown-toggle {
             width: 100%;
@@ -264,10 +322,78 @@
             width: 100%;
         }
     }
-    @media (max-width: $sm) {
-        padding: 5rem 0 0 0;
+
+    // @media (max-width: $sm) {
+    //     padding: 5rem 0 0 0;
+    // }
+
+    .esctext {
+        font-size: 1.688rem;
+        line-height: 2.5rem;
+        color: $blacktext;
+        font-family: $font-family-poppins-medium;
+
+        a {
+            text-decoration: none;
+            color: #0046AE;
+        }
+    }
+
+    .office-details {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $lg) {
+            flex-direction: column;
+        }
+
+        .contactoffice {
+            width: 70%;
+            display: flex;
+            background-color: $whiteColorlight;
+            border-radius: 0.5rem;
+
+            @media (min-width: $sm-x) and (max-width: $lg) {
+                width: 100%;
+            }
+
+            @media (max-width: $sm) {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .officedeatil {
+                width: 50%;
+                padding: 3rem;
+
+                @media (max-width: $sm) {
+                    width: 100%;
+                    padding: 2rem;
+                }
+            }
+        }
+
+        .contactcyber {
+            width: 30%;
+            padding: 3rem;
+            background-color: $whiteColorlight;
+            border-radius: 0.5rem;
+
+            @media (min-width: $sm-x) and (max-width: $lg) {
+                width: 50%;
+                margin: 0 auto;
+                text-align: center;
+            }
+
+            @media (max-width: $sm) {
+                width: 100%;
+                padding: 2rem;
+            }
+
+        }
     }
 }
+
 
 .text-right {
     text-align: right !important;
@@ -285,10 +411,19 @@
 
 
 .cnt-banner-bottm {
-    position: relative;
-    margin-top: -208px;
+    // position: relative;
     animation: hideMe 4s forwards;
-
+    .esctext {
+        font-size: 1.688rem;
+        line-height: 2.5rem;
+        color: #111111;
+        font-family: "PoppinsMedium", sans-serif;
+        margin-top: 4rem;
+        a {
+            text-decoration: none;
+            color: #0046AE;
+        }
+    }
     .writebtn {
         position: relative;
         left: 0;
@@ -307,232 +442,363 @@
         }
     }
 
-    .form {
-        position: relative;
-        background-color: $primary;
-        left: 0;
-        right: 0;
-        width: 100%;
-        // top: 127%;
-        margin: 0 auto;
-        // transform: translate(0, -50%);
-        z-index: 9;
-        padding: 3rem 2.8rem;
+    .cnt-form-details {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.375rem;
 
-        @media (max-width: $sm) {
-            
-            padding: 3rem 2rem;
-        }
-
-       
-        .formgrp {
-            width: 49%;
-            @media (max-width:$sm) {
-                width:100%;
+        .left-from {
+            width: 40%;
+            background: linear-gradient(90deg, #232526 0%, #000000 100%);
+            border-radius: 0.375rem;
+            padding: 3rem 4.8rem;
+            @media (max-width: $md) {
+                
+                width: 100%;
+                
+               
+            }
+            @media  (max-width: $sm){
+                padding: 3rem 1.5rem;
+            }
+            @media  (max-width: $sm-xs){
+                padding: 3rem 1rem;
             }
 
-            .formcontrol {
-                background: transparent;
-                border: 1px solid $lightColor;
-                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-                border-radius: 3px;
-                padding: 14px 12px;
+            
+
+            .whiteus-text {
+                font-size: 1.688rem;
+                line-height: 2.5rem;
+                font-family: "PoppinsBold", sans-serif;
+                color: #111111;
+                // padding-bottom: 3rem;
+            }
+            .colorchange {
                 color: $whiteColor;
-                font-size: 1.5rem;
-                line-height: 0;
-
-                @media (max-width: $sm) {
-                    padding: 12px 10px;
+                padding-bottom: 4rem;
+                @media  (max-width: $sm){
+                    padding-bottom: 2rem;
                 }
             }
 
-            ::placeholder {
-                color: $lightColor;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                }
-            }
-
-            .formlabel {
-                color: $lightColor;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-                font-weight: 600;
-                font-family: $font-family-poppins-regular;
-                margin-bottom: 1.0625rem;
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                }
-            }
-        }
-
-        .formlabel {
-            color: $lightColor;
-            font-size: 1.5rem;
-            line-height: 2.25rem;
-            font-weight: 600;
-            font-family: $font-family-poppins-regular;
-            margin-bottom: 1.0625rem;
-
-            @media (max-width: $sm) {
-                font-size: 1.2rem;
-            }
-        }
-
-        .cust-dropdown {
-            background: $primary;
-            border: 1px solid $lightColor;
-            filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-            border-radius: 3px;
-            padding: 10px;
-            position: relative;
-
-            .downar {
-                position: absolute;
-                right: 10px;
-                top: 20px;
-                z-index: 99;
-
-
-                &::after {
-                    content: url('../../assets/images/contact/soliddownarrow.svg');
-                    position: absolute;
-                    display: block;
-                    height: 11px;
-                    width: 16px;
-                    color: $lightColor;
-                    right: 10px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            }
-
-
-            .dropdowntoggle {
-                background: $primary;
-                border: 0px solid $lightColor;
-                filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
-                border-radius: 0px;
-                width: 100%;
-                text-align: left;
+            .form-data {
                 display: flex;
-                align-items: center;
+                flex-wrap: wrap;
                 justify-content: space-between;
+
+                .form-data-left {
+                    color: $whiteColor;
+                    font-size: 1.25rem;
+                    line-height: 1.875rem;
+                    font-family: $font-family-poppins-bold;
+                    font-weight: 700;
+                    
+                    .svgpadding{
+                        padding-left: 0.5rem;
+                    }
+                    
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .form-data-right {
+                    width: calc(100% - 100px);
+
+                    a {
+                        color: $whiteColor;
+                        text-decoration: none;
+                    }
+
+                    .form-right-text {
+                        color: #f5f5f5;
+                        font-size: 1.2rem;
+                        margin-bottom: 4rem;
+                        padding-right: 2.5rem;
+                        position: relative;
+                        @media  (max-width: $sm){
+                            margin-bottom: 2rem;
+                            font-size: 1.1rem;
+                        }
+                    }
+                    @media (max-width: $md) {
+                        width: calc(100% - 90px);
+                    }
+                    @media (max-width: $sm) {
+                        width: calc(100% - 80px);
+                    }
+                }
+            }
+        }
+
+        .right-form {
+            width: 60%;
+            @media (max-width: $md) {
+
+                width: 100%;
+            }
+
+            &.form {
                 position: relative;
-                color: $lightColor;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
+                background-color: $whiteColor;
+                padding: 3rem 4.8rem;
 
                 @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                    padding: 0 10px;
+
+                    padding: 3rem 2rem;
                 }
 
-                &::after {
-                    content: url('../../assets/images/contact/soliddownarrow.svg');
-                    position: absolute;
-                    display: block;
-                    height: 11px;
-                    width: 16px;
-                    color: transparent;
-                    right: 10px;
+                .whiteus-text {
+                    font-size: 1.688rem;
+                    line-height: 2.5rem;
+                    font-family: $font-family-poppins-bold;
+                    color: $blacktext;
+                    padding-bottom: 3rem;
+                }
+
+
+                .formgrp {
+                    width: 49%;
+
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+
+                    .formcontrol {
+                        background: transparent;
+                        border-bottom: 0.5px solid #1111114d !important;
+                        color: $blacktext;
+                        font-size: 1.5rem;
+                        line-height: 0;
+                        transition: none;
+                        border: none;
+                        border-radius: unset;
+
+                        @media (max-width: $sm) {
+                            padding: 12px 10px;
+                        }
+                    }
+
+                    .formcontrol:focus {
+                        box-shadow: none;
+                    }
+
+                    ::placeholder {
+                        color: $lightColor;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                    .formlabel {
+                        color: $blacktext;
+                        
+    font-family: PoppinsRegular,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    // margin-bottom: 1.0625rem;
+
+
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                        }
+                    }
+
+                }
+
+                .formgrp1 {
+                    width: 100%;
+
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+
+                }
+
+
+                .formlabel {
+                    color: $blacktext;
+                    
+    font-family: PoppinsRegular,sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    margin-bottom: 0rem;
+
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .cust-dropdown {
+                    background: $primary;
+                    border: 1px solid $lightColor;
+                    filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                    border-radius: 3px;
+                    padding: 10px;
+                    position: relative;
+
+                    .downar {
+                        position: absolute;
+                        right: 10px;
+                        top: 20px;
+                        z-index: 99;
+
+
+                        &::after {
+                            content: url('../../assets/images/contact/soliddownarrow.svg');
+                            position: absolute;
+                            display: block;
+                            height: 11px;
+                            width: 16px;
+                            color: $lightColor;
+                            right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+
+
+                    .dropdowntoggle {
+                        background: $primary;
+                        border: 0px solid $lightColor;
+                        filter: drop-shadow(0px 0px 7px rgba(0, 0, 0, 0.25));
+                        border-radius: 0px;
+                        width: 100%;
+                        text-align: left;
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        position: relative;
+                        color: $lightColor;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                            padding: 0 10px;
+                        }
+
+                        &::after {
+                            content: url('../../assets/images/contact/soliddownarrow.svg');
+                            position: absolute;
+                            display: block;
+                            height: 11px;
+                            width: 16px;
+                            color: transparent;
+                            right: 10px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                    }
+
+                    .dropdown-menu {
+                        width: 100%;
+                        font-family: $font-family-poppins-regular, sans-serif;
+                    }
+
+                }
+
+
+                .messagefield {
+
+                    .messagearea {
+                        // min-height: 200px;
+                        width: 100%;
+                        background: transparent;
+                        border-bottom: 1px solid #111111 !important;
+                        color: $blacktext;
+                        font-weight: 400;
+                        font-family: $font-family-poppins-regular;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+                        border: none;
+                        // padding: 14px;
+
+                        @media (max-width: $sm) {
+                            font-size: 1.2rem;
+                            padding: 12px 10px;
+                        }
+                    }
+
+                    .messagearea:focus {
+                        box-shadow: unset !important;
+                    }
+
+                }
+
+                .uploadbtn {
+                    position: relative;
+                    margin-bottom: 0rem;
+                    justify-content: flex-end;
+                    cursor: pointer;
+                }
+
+                .feel-msg {
+                    margin-right: 2rem;
+                    font-family: $font-family-poppins-medium;
+                    color: green;
+                }
+
+                .attachement {
+                    color: $lightColor;
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    font-weight: 400;
+                    font-family: $font-family-poppins-regular;
+                    margin-bottom: 1.0625rem;
                     display: flex;
-                    justify-content: center;
                     align-items: center;
+
+                    .fa-link {
+                        margin-left: 1rem;
+                    }
+
+                    @media (max-width: $sm) {
+                        font-size: 1.2rem;
+                    }
+                }
+
+                .filename {
+                    padding-left: 20px;
+                    margin: 0;
+                }
+
+                input::-webkit-file-upload-button {
+                    background-color: transparent;
+                    color: $lightColor;
+                    font-size: 1rem;
+                    line-height: 24px;
+                    font-weight: 400;
+                    border: none;
+                    font-family: $font-family-poppins-regular;
+                }
+
+                .sendbtn {
+                    min-width: 11rem;
+                    border-radius: 10px;
+
                 }
             }
-
-            .dropdown-menu {
-                width: 100%;
-                font-family: $font-family-poppins-regular, sans-serif;
-            }
-        }
-
-        .messagefield {
-
-            .messagearea {
-                min-height: 200px;
-                width: 100%;
-                background: transparent;
-                border: 1px solid $lightColor;
-                color: $lightColor;
-                font-weight: 400;
-                font-family: $font-family-poppins-regular;
-                font-size: 1.5rem;
-                line-height: 2.25rem;
-                padding: 14px;
-
-                @media (max-width: $sm) {
-                    font-size: 1.2rem;
-                    padding: 12px 10px;
-                }
-            }
-        }
-
-        .uploadbtn {
-            position: relative;
-            margin-bottom: 0rem;
-            justify-content: flex-end;
-            cursor: pointer;
-        }
-        .feel-msg{
-            margin-right:2rem;
-            font-family: $font-family-poppins-medium;
-            color: green;
-        }
-
-        .attachement {
-            color: $lightColor;
-            font-size: 1.5rem;
-            line-height: 2.25rem;
-            font-weight: 400;
-            font-family: $font-family-poppins-regular;
-            margin-bottom: 1.0625rem;
-            display: flex;
-            align-items: center;
-
-            .fa-link {
-                margin-left: 1rem;
-            }
-
-            @media (max-width: $sm) {
-                font-size: 1.2rem;
-            }
-        }
-
-        .filename {
-            padding-left: 20px;
-            margin: 0;
-        }
-
-        input::-webkit-file-upload-button {
-            background-color: transparent;
-            color: $lightColor;
-            font-size: 1rem;
-            line-height: 24px;
-            font-weight: 400;
-            border: none;
-            font-family: $font-family-poppins-regular;
-        }
-
-        .sendbtn {
-            min-width: 11rem;
-            border-radius: 10px;
-            
         }
     }
-    @media (max-width: $md) {
-        margin-top: -158px;
-    }
+
+
+    // @media (max-width: $md) {
+    //     margin-top: -158px;
+    // }
+
     @media (max-width: $sm) {
         margin-top: 0;
     }
@@ -547,78 +813,209 @@
 }
 
 .warning {
-   color:red ;
-   margin-top:-40px;
+    color: red;
+    margin-top: -40px;
 }
-.contact-map{
+
+.contact-map {
     width: 100%;
     min-height: 400px;
 }
 
-.m01{
+.m01 {
     @media (max-width: $sm) {
         margin: 0 1.3rem;
-    } 
-    .icon-table{
+    }
+
+    .icon-table {
         float: right;
     }
-    .support-md{
+
+    .support-md {
         display: flex;
         justify-content: space-around;
+
         @media (max-width: $sm) {
             flex-direction: column;
         }
 
     }
-    .support-related{
-        
+
+    .support-related {
+
         margin-right: 10rem;
+
         @media (max-width: $sm) {
             margin-right: 1rem;
         }
     }
-    .txt-center{
+
+    .txt-center {
         text-align: center;
     }
 
 }
 
-.contactdetail-new{
-    .maintitle{
-        margin-bottom: 2rem;
-    }
-    .support-md{
-        margin-bottom: 3.5rem;
+.contactdetail-new {
+    background-color: $whiteColor;
+
+    .support-md {
+        margin: 5.5rem 0rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        .support-itm{
+        background-color: $whiteColorlight;
+        padding: 3rem 4rem;
+        border-radius: 0.5rem;
+        align-items: center;
+
+        @media (max-width: $md) {
+            flex-direction: column;
+        }
+
+        @media (max-width: $sm) {
+            justify-content: left;
+            padding: 3rem 4rem;
+        }
+
+        @media (max-width: $xs) {
+
+            padding: 3rem 0rem;
+        }
+
+        .support-itm {
             display: flex;
             align-items: center;
             margin: 0.5rem 0;
-            p{
-                font-size: 1.4rem;
+
+
+            .subtitle {
+                font-size: 1.3rem;
+                line-height: 1.875rem;
                 font-family: $font-family-poppins-regular;
-                padding-left: 0.6rem;
+                padding-left: 1.2rem;
                 margin: 0;
-                a{
+
+                a {
                     text-decoration: none;
                     color: $secondary;
-                    &:hover{
+
+                    &:hover {
                         color: $bluetext;
                     }
                 }
             }
         }
+
+        .support-main {
+            display: flex;
+            flex-direction: row;
+
+
+
+        }
     }
-    .mainwrapquick-table{
-        .icon-table{
+
+    
+
+}
+
+
+.contact-modal{
+    padding-left: 0 !important;
+    .mainwrapquick-table {
+
+        .icon-table {
             float: right;
         }
-        .quicklinkswrap{
+
+        .quicklinkswrap {
             border-radius: 20px;
             border: #C2C2C2 solid 1px;
             padding: 1.5rem;
+            @media (max-width: $xs) {
+                padding: 0;
+            }
+            .modal-header{
+                display: block;
+                border-bottom: none;
+            }
+
+            .table {
+                td {
+
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                }
+
+                th {
+                    vertical-align: top;
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                }
+
+
+            }
+            .customer-grivence{
+                .table {
+                    td {
+    
+                        font-size: 1.3rem;
+                        line-height: 1.5;
+                        .mail-a {
+                            font-weight: bold;
+                            text-decoration: none;
+                            color: $blacktext;
+                        }
+                    }
+    
+                    th {
+                        vertical-align: top;
+                        font-size: 1.4rem;
+                        line-height: 1.5;
+                    }
+    
+    
+                }
+            }
         }
+
+        // .subtxtcontent {
+        //     background-color: blue !important;
+        //     border-radius: 0.5rem;
+        //     padding: 4rem 6rem;
+
+        //     .subtxt {
+        //         font-weight: 400;
+
+        //     }
+        // }
     }
+   
+
+    .subtxtcontent {
+        background-color: $bglightpinkish;
+        border-radius: 0.5rem;
+        padding: 4rem 6rem;
+        border-top: none;
+        @media (max-width: $md) {
+
+            padding: 3rem 1.5rem;
+            word-wrap: break-word;
+            p{
+                font-size: 1.25rem;
+            }
+        }
+        @media (max-width: $xs) {
+
+            padding: 3rem 1.5rem;
+            word-wrap: break-word;
+            p{
+                font-size: 1.25rem;
+            }
+        }
+
+        
+    }
+
 }

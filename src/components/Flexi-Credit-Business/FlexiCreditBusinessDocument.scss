@@ -1,0 +1,170 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+@import '../../components/Invoice-Financing/nbfc-common.scss';
+
+.inv-fin-banner{
+    &.flexi-credit-banner{
+        background-color: $bluebg;
+        .fin-banner-caption{
+            position: relative;
+            &::before {
+                content: '';
+                width: 17rem;
+                height: 12rem;
+                display: block;
+                position: absolute;
+                left: 14rem;
+                top: -5rem;
+                background: url(../../assets/images/invoice-financing/dots-bg-banner.svg) no-repeat top left;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+            &::after{
+                display: none;
+            }
+            
+        }
+    }
+}
+
+.features-nbfc{
+    &.features-flexi{
+        position: relative;
+        &::before {
+            content: '';
+            width: 22rem;
+            height: 42rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top:11rem;
+            z-index: 1;
+            background: url(../../assets/images/loan-bg.webp) no-repeat top left;
+            background-size: contain;
+    
+            @media (max-width: $md) {
+                display: none;
+            }
+        }
+    }
+}
+
+.Doc-rqrd-sec{
+    padding: 9rem 0;
+    
+    .Doc-rqrd-heading{
+        margin-bottom: 8rem;
+        text-align: center;
+        @media screen and (max-width:$sm) {
+            margin-bottom: 4rem;
+         }
+    }
+    .cap-right{
+        float: right;
+        
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+         
+    }
+    .cap-left{
+        float: left;
+        @media screen and (max-width:$md) {
+            float: none;
+         }
+    }
+    .Doc-rq-card{
+        width: 100%;
+        background: $whiteColor;
+        box-shadow: 10px 10px 25px $nbfcboxshadow;
+        border-radius: 20px;
+        padding: 2rem 3rem;
+        height: 100%;
+        margin: 0 1rem;
+        @media screen and (max-width:$sm) {
+            padding:2rem;
+            border-radius: 20px;
+            box-shadow: 0px 0px 8px $nbfcboxshadow;
+            margin: 0 auto 3rem;
+            height: auto;
+         }
+        .img-height{
+            min-height: 275px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @media screen and (max-width:$sm) {
+                min-height: inherit;
+                margin-bottom: 2rem;
+                display: block;
+                text-align: center;
+            }
+        }
+        .title-doc{
+            font-size: 2.5rem;
+            color: $primary;
+            font-family: $font-family-poppins-medium;
+            margin-top: 3.5rem;
+            margin-bottom: 3rem;
+            text-align: left;
+
+            @media screen and (max-width:$md) {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+         }
+        .list-item{
+            padding: 0 3rem;
+            @media screen and (max-width:$md) {
+               padding: 0 2rem;
+            }
+            li{
+                font-size: 1.9rem;
+                line-height: 1.5;
+                color: $graylight;
+                font-family: $font-family-poppins-medium;
+                 @media screen and (max-width:$md) {
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                 }
+            }
+        }
+    }
+}
+
+
+
+
+
+.avail{
+    padding:3rem 0 0;
+    @media screen and (max-width: $sm) {
+        padding:6rem 0 0 0; 
+         }
+    .menu{
+        float: right;
+    }
+    .purpose{
+        padding-top: 9rem;
+        @media screen and (max-width: $sm) {
+       padding-top: 5rem;
+        }
+    }
+    .whoavail{
+        padding: 4rem 0;
+    }
+}
+
+
+.inv-fin-why-ch{
+    .slick-list{
+        padding: 2rem 0;
+        @media screen and (max-width: $sm) {
+            padding: 2rem 0 0;
+             }
+    }
+}
+

@@ -39,6 +39,7 @@ body{
 
 .title-first{
     font-size: 3.5rem;
+    line-height: 1.5;
     color: $primary;
     // text-shadow:0 0 4px #00000040;
     font-weight: 600;
@@ -89,6 +90,9 @@ body{
         font-size: 1.75rem;
         line-height: 2.625rem;
         font-family: $font-family-poppins-regular, sans-serif;
+        @media (max-width: $sm){
+            font-size: 1.5rem;
+        }
         @media (max-width: 768px){
            br{
                display: none;
@@ -250,3 +254,66 @@ body{
        
     }
 }
+
+/* common card styling */
+
+
+            .carditem-nbfc{
+                        background: $whiteColor;
+                        box-shadow: 0px 0px 8px $boxshadow;
+                        border-radius: 20px;
+                        padding: 2.5rem 2rem;
+                        text-decoration: none;
+                        display: block !important;
+                        width: 90% !important;
+                        margin: 0 auto;
+                        height: 100%;
+                        min-height: 17rem;
+                        text-align: center;
+                        @media (min-width:$sm-x) and (max-width: $md) {
+                            padding: 1.8rem;
+                            font-size: 1.1rem;
+                        }
+
+        &:hover {
+            .cardimg {
+                .img {
+                    -webkit-animation: toTopFromBottom 0.5s forwards;
+                    -moz-animation: toTopFromBottom 0.5s forwards;
+                    animation: toTopFromBottom 0.5s forwards;
+                }
+            }
+        }
+        .cardimg{
+            display: inline-block;
+            overflow: hidden;
+            height: 54px;
+            font-size: 0.8rem;
+        }
+        .card-ttl{
+            font-size: 1.625rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-semibold;
+            color: $bgcolordark;
+            margin: 1rem 0 0 0;
+        }
+        .subtext{
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            margin: 1rem 0 0 0;
+            color: $bgcolordark;
+            font-family:  $font-family-poppins-regular;
+            @media (min-width:$sm-x) and (max-width: $md) {
+                font-size: 1.1rem;
+            }
+        }
+    }
+  
+
+    .grecaptcha-badge{
+        z-index: 999999999;
+    }
+
+    .float-right{
+        float: right;
+    }

@@ -13,16 +13,16 @@ import meta_tags from "../../Data/MetaTags";
 
 function Fables() {
 //  console.log('Fables.jsx')
-  const [skeleton, setSkeleton] = useState(() => true);
+  // const [skeleton, setSkeleton] = useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
 
   const location = useLocation();
 
   
 
-  setTimeout(() => {
-    setSkeleton(() => false);
-  }, 200)
+  // setTimeout(() => {
+  //   setSkeleton(() => false);
+  // }, 200)
 
   useEffect(() => {
     setRenderCount(true)
@@ -50,14 +50,14 @@ function Fables() {
   return (
     <div>
 
-  {
-    skeleton? <Template5/>:
+  {/* {
+    skeleton? <Template5/>: */}
     <div className="fables-single-parent">
      <BannerSection/>
      <FableBlog/>
      <FableBlogList/>
     </div>
-  }         
+  {/* }          */}
     
     </div>
   );

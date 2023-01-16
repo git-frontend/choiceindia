@@ -47,6 +47,7 @@ function Footer() {
 
   }
 
+
   return (
     <>
       <div className="Footer">
@@ -74,25 +75,25 @@ function Footer() {
                               <NavLink className="cursor-pointer" to="/equity-broking" >Broking &amp; Distribution</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Wealth Planning</NavLink>
+                              <NavLink className="cursor-pointer">Wealth Planning</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/insurance" >Insurance</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Loans</NavLink>
+                              <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Capital Advisory</NavLink>
+                              <NavLink className="cursor-pointer">Capital Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Management Consultancy</NavLink>
+                              <NavLink className="cursor-pointer">Management Consultancy</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Government Advisory</NavLink>
+                              <NavLink className="cursor-pointer" to="/government-advisory" >Government Advisory</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/services" >Tax Advisory</NavLink>
+                              <NavLink className="cursor-pointer">Tax Advisory</NavLink>
                             </li>
                           </ul>
                           <ul className="reset quicklink2">
@@ -146,6 +147,9 @@ function Footer() {
                             <li>
                               <NavLink to="/news-media">News &amp; Media</NavLink>
                             </li>
+                            <li>
+                              <Link to="/offer-document">Offer Document</Link>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -189,7 +193,8 @@ function Footer() {
                             </a>
 
                           </div>
-                          <div className="footer-social-links">
+                          
+                            <div className="footer-social-links">
                             <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
@@ -209,6 +214,7 @@ function Footer() {
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
                           </div>
+                          
                         </div>
                       </div>
                       <div className="col-md-5">
@@ -247,7 +253,7 @@ function Footer() {
                       | Category : Direct ( Life &amp; General )<br />
                       Registered Office:  Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099.<br />
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
-
+                     
                       Cautionary Message :
                       <ol style={{ marginleft: "-1rem" }}>
                         <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
