@@ -195,6 +195,11 @@ export class API_URLS {
     offerUrl='items/OfferDocument'
     /** escalation matrix */
     escalation ='items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
+    /** stock broker content */
+    contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
+    /** sub broker city */
+    cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+
 
 
 
@@ -722,6 +727,14 @@ export class API_URLS {
 
     getEscalationURL(){
         return this.bannerURL + this.escalation
+    }
+
+    getSubBrokerURL(){
+        return this.bannerURL + this.contentUrl
+    }
+
+    getSubBrokerCityURL(){
+        return this.bannerURL + this.cityUrl
     }
     
 

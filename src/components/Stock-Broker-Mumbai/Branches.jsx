@@ -9,8 +9,54 @@ import Hydrabad from '../../assets/images/stock-broker-mumbai/stock-broker-in-hy
 import Jaipur from '../../assets/images/stock-broker-mumbai/stock-broker-in-jaipur.svg';
 import Delhi from '../../assets/images/stock-broker-mumbai/stock-broker-in-delhi.svg';
 import Pune from '../../assets/images/stock-broker-mumbai/stock-broker-in-pune.svg';
+import stockBrokerCityService from '../../Services/StockBrokerCityContent';
 function Branches() {
- 
+  const [rendercount, setRenderCount] = useState(() => false);
+  const [isloading, setisloading] = useState(true);
+  const [content, setcontent] = useState({});
+  let values;
+  let AllFilesValue = {};
+  let pageLocation =window.location.pathname==="/stock-broker-in-mumbai" ? "Mumbai":""
+// console.log("location",window.location.pathname)
+  function stockBrokerContent() {
+    stockBrokerCityService.stockCityContent().
+      then(
+        res => {
+          if (res && res.data && res.data.data) {
+            setisloading(false)
+            values = res.data.data;
+            values.forEach(ele => {
+
+              if (!AllFilesValue[ele.city_name]) {
+                AllFilesValue[ele.city_name] = [];
+                AllFilesValue[ele.city_name].push(ele)
+              } else {
+                AllFilesValue[ele.city_name].push(ele)
+
+              }
+            })
+            setcontent(AllFilesValue);
+            console.log("datasdcsc", AllFilesValue)
+          } else {
+            setisloading(false)
+            setcontent([]);
+
+          }
+
+        }
+      ).catch((error) => {
+        setisloading(false)
+        setcontent([]);
+      });
+
+  }
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      stockBrokerContent()
+    }
+
+  }, [rendercount])
 
 
   return (
@@ -27,68 +73,51 @@ function Branches() {
             </div>
           </div>
           <div className="row" >
+
             <div className="col-md-12">
-              <div>
-                
-                    <div className="branches-list">
+
+
+              <div className="branches-list">
+                {
+                  Object.keys(content)?.map((key, i) => {
+                    return (
 
                       <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Bangalore} alt={"Stock Broker in Bangalore"} className={"img-fluid"} width={"144"} height={"144"}/>
+                        {
+                          content[key]?.map((res, index) => {
+                            return (
+                              <div>
+                                <span className="img-itm">
+                                  <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={"Stock Broker in Bangalore"} className={"img-fluid"} width={"144"} height={"144"} />
 
-                        </span>
-                        <h5>Bangalore</h5>
+                                </span>
+                                <h5>{res.city_name}</h5>
 
-                      </div>
+                              </div>
+                            )
+                          }
+                          )
+                        }
 
-                      <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Chennai} alt={"Stock Broker in Chennai"} className={"img-fluid"} width={"144"} height={"144"}/>
-
-                        </span>
-                        <h5>Chennai</h5>
-
-                      </div>
-
-                      <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Hydrabad} alt={"Stock Broker in Hyderabad"} className={"img-fluid"} width={"144"} height={"144"}/>
-
-                        </span>
-                        <h5>Hyderabad</h5>
 
                       </div>
+                    )
+                  })
+                }
 
-                      {/* <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Jaipur} alt={"Stock Broker in Jaipur"} className={"img-fluid"} width={"144"} height={"144"}/>
 
-                        </span>
-                        <h5>Jaipur</h5>
 
-                      </div> */}
-                      <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Delhi} alt={"Stock Broker in Delhi"} className={"img-fluid"} width={"144"} height={"144"}/>
 
-                        </span>
-                        <h5>Delhi</h5>
 
-                      </div>
-                      {/* <div className="branch-item">
-                        <span className="img-itm">
-                        <LazyLoader src={Pune} alt={"Stock Broker in Pune"} className={"img-fluid"} width={"144"} height={"144"}/>
 
-                        </span>
-                        <h5>Pune</h5>
-
-                      </div> */}
-                      
-
-                    </div>
-                
               </div>
+
+
+
+
+
             </div>
+
           </div>
         </div>
       </section>
