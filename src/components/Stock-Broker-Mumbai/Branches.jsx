@@ -59,14 +59,14 @@ function Branches() {
 
                       </div>
 
-                      <div className="branch-item">
+                      {/* <div className="branch-item">
                         <span className="img-itm">
                         <LazyLoader src={Jaipur} alt={"Stock Broker in Jaipur"} className={"img-fluid"} width={"144"} height={"144"}/>
 
                         </span>
                         <h5>Jaipur</h5>
 
-                      </div>
+                      </div> */}
                       <div className="branch-item">
                         <span className="img-itm">
                         <LazyLoader src={Delhi} alt={"Stock Broker in Delhi"} className={"img-fluid"} width={"144"} height={"144"}/>
@@ -75,14 +75,14 @@ function Branches() {
                         <h5>Delhi</h5>
 
                       </div>
-                      <div className="branch-item">
+                      {/* <div className="branch-item">
                         <span className="img-itm">
                         <LazyLoader src={Pune} alt={"Stock Broker in Pune"} className={"img-fluid"} width={"144"} height={"144"}/>
 
                         </span>
                         <h5>Pune</h5>
 
-                      </div>
+                      </div> */}
                       
 
                     </div>
