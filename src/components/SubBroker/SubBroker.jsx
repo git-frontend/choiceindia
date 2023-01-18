@@ -105,8 +105,7 @@ function SubBroker() {
   return (
     <div>
 
-      {
-        skeleton ? <Template5 /> :
+      
 
           <div className="sub-broker-skeleton-parent">
 
@@ -119,7 +118,7 @@ function SubBroker() {
             <MoreContent />
             
           </div>
-      }
+      
 
     </div>
   );

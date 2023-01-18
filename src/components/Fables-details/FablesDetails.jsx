@@ -22,13 +22,13 @@ function Fablesdetails() {
   const [trigger, setTrigger] = useState();
   const { id } = useParams();
   // let data = [];
-const [skeleton, setSkeleton] = useState(() => true);
+// const [skeleton, setSkeleton] = useState(() => true);
 const [showForm, setShowForm] = useState(false);
 var formName = useRef('');
 
-  setTimeout(() => {
-    setSkeleton(() => false);
-  }, 200)
+  // setTimeout(() => {
+  //   setSkeleton(() => false);
+  // }, 200)
 
     /** to call single fabal detail */
     function getSingleFablesDetail() {
@@ -98,14 +98,14 @@ setTrigger(true)
 
   return (
     <div>
-
+{/* 
       {
-        skeleton ? <Template1 /> :
+        skeleton ? <Template1 /> : */}
           <div className="fables-details-parent">
             <Fabdetailsbanner single_data={single_detail} isdetail={IsDetail} html_content={htmlContent} showForm={showForm || false} formName={formName.current}/>
             <Recommendation name={allFabalData} Id={id} single_data={single_detail} />
           </div>
-      }
+      {/* } */}
       
      {/* {
         showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup}></OpenDemateAccountPopup> : ''

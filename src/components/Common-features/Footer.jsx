@@ -47,6 +47,7 @@ function Footer() {
 
   }
 
+
   return (
     <>
       <div className="Footer">
@@ -192,7 +193,8 @@ function Footer() {
                             </a>
 
                           </div>
-                          <div className="footer-social-links">
+                          
+                            <div className="footer-social-links">
                             <a href="https://www.facebook.com/ChoiceHQ/" target="_blank">
                               <FontAwesomeIcon icon={faFacebookF} />
                             </a>
@@ -212,6 +214,7 @@ function Footer() {
                               <FontAwesomeIcon icon={faTelegramPlane} />
                             </a>
                           </div>
+                          
                         </div>
                       </div>
                       <div className="col-md-5">

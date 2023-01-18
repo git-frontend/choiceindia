@@ -4,7 +4,7 @@ import  ImageSub1  from '../assets/images/app/readymade-baskets.webp';
 import  ImageSub2  from '../assets/images/app/easy-investment-app.webp';
 import  ImageSub3  from '../assets/images/app/wealth-management-app.webp';
 
-const imageData =
+const imageDataapp =
 [
     {
         "image":`${ImageSub2}`,
@@ -53,4 +53,4 @@ const imageData =
     // }
 ]
 
-export default imageData
+export default imageDataapp

@@ -16,7 +16,7 @@ function WhyChoose() {
     speed: 1500,
     slidesToShow: 4,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 1500,
     slidesToScroll: 1,

@@ -3,12 +3,15 @@ import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-
 import SubBrokerForm from './SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { useState } from "react";
 
 function BannerSBroker() {
+    const[ischeck,setIscheck]=useState(false);
+    
 
     return (
         <div>
-            <section className="franchise-banner" >
+            <section className="franchise-banner" onMouseOver={()=>setIscheck(true)} >
                 <div className="container">
                     <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">
@@ -39,14 +42,30 @@ function BannerSBroker() {
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-md-6 col-lg-4 ">
+                        {
+                            
+                            ischeck ?
+                            <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
                             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                 <SubBrokerForm />
                             </GoogleReCaptchaProvider>
                                 {/* <SubBrokerForm /> */}
                             </div>
-                        </div>
+                        </div>:
+                         <div className="col-md-6 col-lg-4 " onMouseOver={()=>setIscheck(true)}>
+                         <div className="franchise-form justify-content-end d-flex" id="form-banner">
+                         
+                             <SubBrokerForm />
+                         
+                             {/* <SubBrokerForm /> */}
+                         </div>
+                     </div>
+
+
+                        }
+                        
+                       
                     </div>
                 </div>
             </section>

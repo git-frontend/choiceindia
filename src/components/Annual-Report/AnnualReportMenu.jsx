@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import pdf1 from "../../assets/pdf/annual-report/Annual Report.pdf";
 import AnnualReportService from "../../Services/AnnualReportService";
 import Navbar from "../Common-features/Navbar";
-import { Accordion } from "react-bootstrap";
+import { Accordion, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import noDataimg from '../../assets/images/no-data.webp';
@@ -17,7 +17,7 @@ function AnnualReportMenu() {
     const [list, setList] = useState();
     const [isloading, setisloading] = useState(true);
     const [trigger, setTrigger] = useState(false);
-
+    const[IsShown3,setIsShown3]= useState()
 
 
     function loadAnnualReportpdf() {
@@ -104,11 +104,12 @@ function AnnualReportMenu() {
 
     return (
         <div>
+
             <section className="Investormenu page-height">
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-12 menuwrap">
-                            <h2 className="title">Annual Report</h2>
+                        <div className="col-md-12 menuwrap" >
+                            <Button className="title" >Annual Report</Button>
                             <Navbar />
                         </div>
                     </div>

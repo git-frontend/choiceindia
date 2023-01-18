@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import imageData from '../../Data/Strategies';
+import imageDataapp from '../../Data/images';
 import Slider from 'react-slick';
 import LazyLoader from '../Common-features/LazyLoader';
 
@@ -57,7 +57,7 @@ function AppStrategies() {
                                 <div className='col-md-4'>
 
                                     <div className="trade-easy-images-div">
-                                        <LazyLoader src={imageData[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
+                                        <LazyLoader src={imageDataapp[isShown3].image} className={"img-fluid single-trade-easy-images"} alt={"Loading"} width={"312"} height={"632"}/>
                                         {/* <img src={imageData[isShown3].image}
 
                                             className="single-trade-easy-images" alt='Loading'></img> */}
@@ -77,7 +77,7 @@ function AppStrategies() {
                                         >
 
                                             {
-                                                imageData?.map((response, index) => {
+                                                imageDataapp?.map((response, index) => {
 
                                                     let classNm = "content-list-itm " + ((index === isShown3) ? "list-itm-active" : "")
 

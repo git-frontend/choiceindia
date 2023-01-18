@@ -13,7 +13,7 @@ function AvailPurposeVehLoan() {
         <div>
 
 
-            <section className="avail" id="showForm3">
+            <section className="veh-bnr-btm" id="showForm3">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
