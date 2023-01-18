@@ -103,11 +103,11 @@ function StockBroker() {
 					{
 						content?.map((res, i) => {
 							return (
-								<div className="container">
+								<div className="container" >
 									<div className="row align-items-start">
 										<div className="col-xl-8 col-md-6">
 											<div className="wrap-banner">
-												<div className="heading-sec">
+												<div className="heading-sec" key={i}>
 													<h1 className="big-ttl"><span className='highlightblue'>{res.bannerheading}</span>  {res.bannerheadingright}</h1>
 													<p className="text">{res.banner_view_less}{!showterm ? <span onClick={() => { setshowterm(true) }}>... <em className="btn-read">View more</em></span> : ""}{showterm ? <span>&nbsp;{res.banner_view_more}
 														<span onClick={() => { setshowterm(false) }}>&nbsp;<em className="btn-read">View less</em></span></span> : ""}</p>

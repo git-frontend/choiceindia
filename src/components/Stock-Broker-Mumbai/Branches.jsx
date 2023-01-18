@@ -28,9 +28,12 @@ function Branches() {
             values.forEach(ele => {
 
               if (!AllFilesValue[ele.city_name]) {
-                AllFilesValue[ele.city_name] = [];
-                AllFilesValue[ele.city_name].push(ele)
-              } else {
+                if(!(pageLocation == ele.city_name)){
+                  AllFilesValue[ele.city_name] = [];
+                  AllFilesValue[ele.city_name].push(ele)
+                }
+              }
+               else {
                 AllFilesValue[ele.city_name].push(ele)
 
               }
@@ -82,11 +85,11 @@ function Branches() {
                   Object.keys(content)?.map((key, i) => {
                     return (
 
-                      <div className="branch-item">
+                      <div className="branch-item" key={i}>
                         {
                           content[key]?.map((res, index) => {
                             return (
-                              <div>
+                              <div key={index}>
                                 <span className="img-itm">
                                   <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={"Stock Broker in Bangalore"} className={"img-fluid"} width={"144"} height={"144"} />
 
