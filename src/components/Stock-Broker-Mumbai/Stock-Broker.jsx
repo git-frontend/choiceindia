@@ -59,7 +59,7 @@ function StockBroker() {
 	useEffect(() => {
 		setRenderCount(true)
 		if (rendercount === true) {
-			let pageLocation =window.location.pathname==="/stock-broker-in-mumbai" ? "Mumbai":""
+			let pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore": ""
 			stockBrokerContent(pageLocation)
 			// let parser = new DOMParser();
 			// let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');

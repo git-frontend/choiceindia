@@ -11,13 +11,18 @@ import Delhi from '../../assets/images/stock-broker-mumbai/stock-broker-in-delhi
 import Pune from '../../assets/images/stock-broker-mumbai/stock-broker-in-pune.svg';
 import stockBrokerCityService from '../../Services/StockBrokerCityContent';
 function Branches() {
+  const [view, setView] = useState({
+    matches: window.innerWidth < 768 ? false : true,
+});
   const [rendercount, setRenderCount] = useState(() => false);
   const [isloading, setisloading] = useState(true);
   const [content, setcontent] = useState({});
   let values;
   let AllFilesValue = {};
-  let pageLocation =window.location.pathname==="/stock-broker-in-mumbai" ? "Mumbai":""
-// console.log("location",window.location.pathname)
+  let pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore": ""
+
+
+
   function stockBrokerContent() {
     stockBrokerCityService.stockCityContent().
       then(
@@ -39,7 +44,7 @@ function Branches() {
               }
             })
             setcontent(AllFilesValue);
-            console.log("datasdcsc", AllFilesValue)
+            
           } else {
             setisloading(false)
             setcontent([]);
@@ -56,11 +61,28 @@ function Branches() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      stockBrokerContent()
+      stockBrokerContent();
+      let mediaQuery = window.matchMedia("(min-width: 768px)");
+  mediaQuery.addListener(setView);
+  // this is the cleanup function to remove the listener
+  return () => mediaQuery.removeListener(setView);
+
     }
 
   }, [rendercount])
+ 
 
+  const settings = {
+    // infinite: true,
+    speed: 1500,
+    arrows: false,
+    slidesToShow: 4,
+    autoplay: false,
+    dots: false,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
+
+};
 
   return (
     <div>
@@ -80,12 +102,14 @@ function Branches() {
             <div className="col-md-12">
 
 
+            
               <div className="branches-list">
+              
                 {
                   Object.keys(content)?.map((key, i) => {
                     return (
-
                       <div className="branch-item" key={i}>
+                      
                         {
                           content[key]?.map((res, index) => {
                             return (
@@ -102,8 +126,8 @@ function Branches() {
                           )
                         }
 
-
                       </div>
+                      
                     )
                   })
                 }
@@ -111,9 +135,9 @@ function Branches() {
 
 
 
+</div>
 
-
-              </div>
+             
 
 
 
