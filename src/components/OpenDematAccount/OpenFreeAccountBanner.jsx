@@ -89,7 +89,7 @@ const OpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                            <h2 className="banner-title2">All in 1 Account</h2>
+                            <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
@@ -158,7 +158,7 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                            <h2 className="banner-title2 mobile">All in 1 Account</h2>
+                            <span className="banner-title2 mobile">All in 1 Account</span>
                             <h1 className="banner-title mbtitle" >
                                 
                                 <div className="mobile"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>

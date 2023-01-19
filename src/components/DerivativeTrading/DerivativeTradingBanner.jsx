@@ -47,6 +47,7 @@ const DerivativeTradingBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                        <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                             <div className="desktop">Open a  Derivatives <br />  Trading Account <br /> </div>
                             </h1>
@@ -63,7 +64,7 @@ const DerivativeTradingBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span> Account Opening
+                                            <p><span className="fontbold" >One</span> Account for Everything
                                                 </p>
                                             </div>
                                         </div>
@@ -113,6 +114,7 @@ const DerivativeTradingBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <span className="banner-title2 mobile">All in 1 Account</span>
                         <h1 className="banner-title mbtitle" >
                             <div className="mobile">Open a  Derivatives <br />  Trading Account <br /> </div>
                             </h1>

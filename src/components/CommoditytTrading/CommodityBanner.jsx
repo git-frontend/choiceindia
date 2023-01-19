@@ -46,6 +46,7 @@ const CommodityBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                        <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                             <div className="desktop">Open a Commodity Trading <br /> Account <span className="yellow">Online For Free</span></div>
                             </h1>
@@ -62,7 +63,7 @@ const CommodityBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Free </span> Account Opening
+                                            <p><span className="fontbold" >One</span> Account for Everything
                                                 </p>
                                             </div>
                                         </div>
@@ -112,6 +113,7 @@ const CommodityBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <span className="banner-title2 mobile">All in 1 Account</span>
                             <h1 className="banner-title mbtitle" >
                                 <div className="mobile">Open a Commodity Trading  Account <span className="yellow">Online For Free</span></div>
                             </h1>

@@ -323,6 +323,7 @@ body{
         color: $yellowColor;
         font-size: 2.1rem;
         margin-bottom: 2rem;
+        display: block;
         
         @media (max-width:$sm) {
             display: none;
@@ -336,4 +337,8 @@ body{
                 font-size: 1.7rem;
             }
         }
+    }
+
+    .term_link{
+        text-decoration: none;
     }

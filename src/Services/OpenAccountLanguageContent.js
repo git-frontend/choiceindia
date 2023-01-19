@@ -18,7 +18,8 @@ const language = {
         otptime: 'Resend OTP in',
         otpsec: 'seconds',
         termsheader: 'Attention',
-        terms: "We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.",
+        terms: "We are capturing this data for communication and account opening (Demat and Mutual Fund) purpose and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.",
+        termlink:"Read Here.",
         termsbtn: 'Okay',
         otpresendsuccess1: 'You will soon receive an automated call on given Mobile Number',
         otpresendsuccess2: 'OTP has been resent on given Mobile Number'
