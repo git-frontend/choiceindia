@@ -5,10 +5,10 @@ const stockBrokerCityService = {
 
     
 
-    stockContent: function () {
+    stockContent: function (type) {
 
         let api = new API_URLS()
-        let url = api.getSubBrokerURL()
+        let url = api.getSubBrokerURL(type)
         return axios.get(url).then((data) => {
             return data
         })

@@ -729,8 +729,8 @@ export class API_URLS {
         return this.bannerURL + this.escalation
     }
 
-    getSubBrokerURL(){
-        return this.bannerURL + this.contentUrl
+    getSubBrokerURL(location){
+        return this.bannerURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
     }
 
     getSubBrokerCityURL(){

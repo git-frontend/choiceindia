@@ -23,9 +23,7 @@ function StockBroker() {
 	const location = useLocation();
 	const [isloading, setisloading] = useState(true);
 	const [content, setcontent] = useState();
-	let values;
-	let AllFilesValue = {};
-	let pageLocation =window.location.pathname==="/stock-broker-in-mumbai" ? "Mumbai":""
+	
 	// const myTimeout = setTimeout(myGreeting, 1500);
 	// function myGreeting() {
 	//   setSkeleton(() => false);
@@ -33,26 +31,15 @@ function StockBroker() {
 	// setTimeout(() => {
 	// 	setSkeleton(() => false);
 	// }, 200)
-
-	function stockBrokerContent() {
-		stockBrokerCityService.stockContent().
+	
+	function stockBrokerContent(type) {
+		stockBrokerCityService.stockContent(type).
 			then(
 				res => {
 					if (res && res.data && res.data.data) {
 						setisloading(false)
-						values = res.data.data;
-						values.forEach(ele => {
-
-							if (!AllFilesValue[ele.city]) {
-								AllFilesValue[ele.city] = [];
-								AllFilesValue[ele.city].push(ele)
-							} else {
-								AllFilesValue[ele.city].push(ele)
-
-							}
-						})
-						setcontent(AllFilesValue.Mumbai);
-						console.log("data", AllFilesValue.pageLocation)
+						setcontent(res.data.data) ;
+						
 					} else {
 						setisloading(false)
 						setcontent([]);
@@ -72,7 +59,8 @@ function StockBroker() {
 	useEffect(() => {
 		setRenderCount(true)
 		if (rendercount === true) {
-			stockBrokerContent()
+			let pageLocation =window.location.pathname==="/stock-broker-in-mumbai" ? "Mumbai":""
+			stockBrokerContent(pageLocation)
 			// let parser = new DOMParser();
 			// let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
 			// document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
