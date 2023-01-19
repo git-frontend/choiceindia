@@ -701,6 +701,11 @@ function Routing() {
                                 < LazyStockBroker />
                             </React.Suspense>
                         } />
+                        <Route exact path='/stock-broker-in-bangalore' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
  
  
                         <Route path="*" element={<ErrorPage />} />
