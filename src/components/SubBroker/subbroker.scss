@@ -2293,3 +2293,15 @@
 	background-color: #0068b3;
   border-radius: 10px;
 }
+.hideform{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: $sm) {
+    display: block !important;
+    }
+}
