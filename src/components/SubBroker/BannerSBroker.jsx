@@ -3,11 +3,30 @@ import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-
 import SubBrokerForm from './SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import utils from "../../Services/utils";
 
 function BannerSBroker() {
     const[ischeck,setIscheck]=useState(false);
-    
+    const [name, setName ] = useState('hideform');
+
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }   
+        }
+    };
+
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
+     
 
     return (
         <div>
@@ -66,6 +85,11 @@ function BannerSBroker() {
                         }
                         
                        
+                    </div>
+                    <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>Become a Sub Broker</button>
+                    </div>
                     </div>
                 </div>
             </section>
