@@ -3,10 +3,22 @@ import { API_URLS } from "./API-URLS";
 
 const rest = {
 
-    headerConfig: {
-        headers: {  'Content-Type': 'application/json',
-        'accept': 'application/json'}
-},
+  getCryptoNACHKey: function () {
+    const crypto = require('crypto');
+    const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, "");
+    const secretKey = "NEESISHKRUTRI";
+    const data = currentDate + secretKey;
+    var SHA256 = require("crypto-js/sha256");
+    const apiKey = SHA256(data);
+    return apiKey;
+  },
+
+  headerConfig: {
+    headers: {
+      'Content-Type': 'application/json',
+      'accept': 'application/json'
+    }
+  },
 
 expertReportData: function (postdata) {
 
@@ -47,7 +59,17 @@ multipleTokensURLData: function (postdata) {
       userId = this.decryptText(userId)
     }
     return userId || '';
-  }
+  },
+
+  NACHCancellation: function (request) {
+    let api = new API_URLS()
+    let url = api.getNACHCancellationURL()
+    return axios.post(url, request, {
+      headers: {
+        'x-api-key': this.getCryptoNACHKey()
+      }
+    });
+}
 
 }
 export default rest;
