@@ -706,6 +706,21 @@ function Routing() {
                                 < LazyStockBroker />
                             </React.Suspense>
                         } />
+                        <Route exact path='/stock-broker-in-chennai' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-hyderabad' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-delhi' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
  
  
                         <Route path="*" element={<ErrorPage />} />

@@ -59,7 +59,7 @@ function StockBroker() {
 	useEffect(() => {
 		setRenderCount(true)
 		if (rendercount === true) {
-			let pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore": ""
+			let pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore":(window.location.pathname.indexOf('/stock-broker-in-chennai') > -1) ? "Chennai":(window.location.pathname.indexOf('/stock-broker-in-hyderabad') > -1) ? "Hyderabad":(window.location.pathname.indexOf('/stock-broker-in-delhi') > -1) ? "Delhi": ""
 			stockBrokerContent(pageLocation)
 			// let parser = new DOMParser();
 			// let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
