@@ -558,9 +558,12 @@
         }
     }
     .branches-list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:center;
+        // display: flex;
+        // flex-wrap: wrap;
+        // justify-content:center;
+        // .slick-slide{
+        //     width: auto !important;
+        // }
         .branch-item{
             
             padding: 1rem 2.5rem;

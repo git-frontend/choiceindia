@@ -62,7 +62,7 @@ function Branches() {
 
   const settings = {
 		infinite: false,
-		speed: 2500,
+		speed: 1500,
 		arrows: false,
 		slidesToShow: 3,
 		autoplay: false,
@@ -73,7 +73,7 @@ function Branches() {
 			{
 				breakpoint: 992,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 					adaptiveHeight: true,
 				},
