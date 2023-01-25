@@ -443,7 +443,6 @@
                    background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
                    background-repeat: no-repeat;
                    background-size: contain;
-                   object-fit: contain;
                    /* bottom: 1px; */
                    background-position: 50% 74%;
                    @media (max-width:$sm) {
@@ -566,13 +565,13 @@
             
             padding: 1rem 2.5rem;
             border-radius: 12px;
-            width: 15%;
+            // width: 15%;
             text-align: center;
             @media (max-width:$sm) {
-                width: 50%;
+                // width: 50%;
             }
             @media (min-width:$sm-x) and (max-width:$md) {
-                width: 22%;
+                // width: 22%;
             }
             h5{
                 margin-top: 1.5rem;

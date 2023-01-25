@@ -25,7 +25,7 @@ function Openaccount() {
                           <div className="wrapper">
                               <div className="left-sec">
                                  
-                                      <h3 className="title-secnd">Open a 100% <span className="free">Free</span><span className="borderbottom"> Demat Account</span></h3>
+                                      <h3 className="title-secnd">Open a 100% <span className="free">Free</span> <span className="borderbottom">Demat Account</span></h3>
 
                                 <div className="listing">
                                     <div className="firstrow">
