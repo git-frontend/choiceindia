@@ -3,7 +3,7 @@ const language = {
     en: {
         title: 'Open Account Now',
         moblbl: 'Mobile Number',
-        referId: 'Have a referal code?',
+        referId: 'Have a referral code?',
         invalidmob: 'Invalid Mobile Number',
         reqmob: 'Mobile Number is Required',
         otpbtn: 'Send OTP',
