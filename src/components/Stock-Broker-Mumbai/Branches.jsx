@@ -109,7 +109,7 @@ function Branches() {
                   Object.keys(content)?.map((key, i) => {
                     return (
 
-                      <div>
+                      <div className="branch-item">
                           {
                           content[key]?.map((res, index) => {
                             return (
