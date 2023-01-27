@@ -66,7 +66,9 @@ multipleTokensURLData: function (postdata) {
     let url = api.getNACHCancellationURL()
     return axios.post(url, request, {
       headers: {
-        'x-api-key': this.getCryptoNACHKey()
+        'x-api-key': this.getCryptoNACHKey(),
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Accept': '*/*',
       }
     });
 }

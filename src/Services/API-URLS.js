@@ -39,7 +39,8 @@ const config = {
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
     livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
-    UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
+    // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
+    UATNachBaseURL:"https://dev-api.choicetechlab.com/",
     liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
 }
 
@@ -219,6 +220,7 @@ export class API_URLS {
     /** NACH URL */
     nachCancellationUATURL = 'sendMailNBFCv2';
     nachCancellationliveURL = 'sendMailNBFC';
+    nachCancellationURL = 'api/newdetail'
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -734,7 +736,7 @@ export class API_URLS {
     }
 
     getNACHCancellationURL() {
-        return this.nachBaseURL + (environment ? this.nachCancellationliveURL : this.nachCancellationUATURL);
+        return "http://localhost:9001/api/newdetail"
     }
     
 

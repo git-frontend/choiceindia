@@ -63,12 +63,13 @@ function NachCancellation() {
     setShowLoader(true);
     rest.NACHCancellation(request).then(res => {
       setShowLoader(false);
-      if (res && res.status === 200 && res.data && res.data.status === 'Success') {
+      console.log("check",res)
+      if (res && res.status === 200 && res.data && res.data.Message === 'success') {
         reset();
         setIsError(false);
         setShow(true);
       } else {
-        setIsError(res && res.status === 200 && res.data && res.data.status !== 'Success' && res.data.message ? res.data.message : 'Something went wrong. Please try again later');
+        setIsError(res && res.status === 200 && res.data && res.data.Message !== 'success' && res.data.message ? res.data.message : 'Something went wrong. Please try again later');
         setShow(true);
       }
     }).catch((error) => {
