@@ -188,7 +188,7 @@ function StockBroker() {
 															{res.bottom_view_more_text2}
 
 														</p>
-														<span onClick={() => { setshowterm(false) }}>&nbsp;<em className="btn-read">Read less</em></span></span> : ""}</p>
+														<span onClick={() => { setshowterm(false) }}><em className="btn-read">Read less</em></span></span> : ""}</p>
 
 
 											</div>

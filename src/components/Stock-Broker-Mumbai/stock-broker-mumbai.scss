@@ -90,7 +90,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            // flex-wrap: wrap;
             text-decoration: none;
             transition:width 0.2s;
             margin-left: 2rem;
@@ -161,76 +160,14 @@
                     margin-right: 0;
                     z-index: 99;
              }
-            //  &::before{
-            //     content: '';
-            //     background: url(../../assets/images/stock-broker-mumbai/call.gif) no-repeat;
-            //     background-position: center;
-            //     width: 35px;
-            //     height: 35px;
-            //     position: absolute;
-            //     left: 50%;
-            //     top: 50%;
-            //     transform: translate(-50%, -50%);
-            //     background-size: contain;
-            //  }
+            
             img{
                 border-radius: 50%;
             }
           }
        
         }
-        // .calldetail{
-        //     margin-left: 1.3rem;
-        //     @media (max-width:$sm) {
-        //         margin-left: 0;
-        //         position: fixed;
-        //         bottom: 90px;
-        //         z-index: 99999;
-        //         right: 16px;
-                
-        //     }
-          
-           
-        //     a{
-        //         // padding-left: 1rem;
-        //         text-decoration: none;
-        //         color: $primary;
-        //         @media (max-width:$sm) {
-                  
-        //             overflow:hidden;
-        //         width: auto;
-        //         width: 32px !important;
-        //         transition: max-width 0.5s;
-        //             }
-        //             .callwrap{
-        //                 padding: 0;
-        //                 border-radius: 12px;
-        //                 border: 1px solid $whiteColor;
-        //                 background-color: $whiteColor;
-        //                 box-shadow: 0px 0px 24px $stockboxshadow;
-                        
-        //                 @media (max-width:$sm) {
-        //                     border-radius: 50%;
-                           
-        //                 }
-                       
-        //             }
-        //             .text{
-        //                 padding-left:0 ;
-        //                 @media (max-width:$sm) {
-        //                     border-radius: 50%;
-        //                     background: $whiteColor;
-        //                     padding: 0.3rem;
-        //                     border-radius: 11px;
-        //                     white-space: nowrap;
-        //                 }
-        //             }
-        //             &:hover{
-        //                 width: 300px;
-        //             }
-        //     }
-            
-        // }
+        
     }
     .companydetail{
         background-color: $primary;
@@ -348,13 +285,10 @@
             @media (max-width:$sm) {
                 width: 90% !important;
                 display: block !important;
-                // margin: 0 1rem ;
                 min-height: 13rem;
                 height: 100%;
                margin-left: 4rem;
-            //    &:nth-child(even){
-            //     margin-left: -4rem;
-            //    }
+            
             }
             @media (min-width:$sm-x) and (max-width:$md) {
                 width: 21%;
@@ -443,29 +377,12 @@
                    background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
                    background-repeat: no-repeat;
                    background-size: contain;
-                   object-fit: contain;
                    /* bottom: 1px; */
                    background-position: 50% 74%;
                    @media (max-width:$sm) {
                     font-size: 2.5rem;
                     }
-                //    &:before{
-                //     content: '';
-                //     position: absolute;
-                //     display: block;
-                //     height: 5px;
-                //     width: 100%;
-                //     right: 0;
-                //     top: 25px;
-                //     background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
-                //     background-repeat: no-repeat;
-                //     background-size: cover;
-                //     z-index: -1;
-                //     @media (max-width:$sm) {
-                //         width: 260px;
-                //         top: 69px;
-                //     }
-                //    }
+               
                 }
             }
          
@@ -559,20 +476,15 @@
         }
     }
     .branches-list{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content:center;
+
         .branch-item{
             
             padding: 1rem 2.5rem;
             border-radius: 12px;
-            width: 15%;
             text-align: center;
             @media (max-width:$sm) {
-                width: 50%;
             }
             @media (min-width:$sm-x) and (max-width:$md) {
-                width: 22%;
             }
             h5{
                 margin-top: 1.5rem;
