@@ -44,6 +44,7 @@ const MinorDematAccountBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                        <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                                 <div className="desktop">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 
@@ -60,7 +61,7 @@ const MinorDematAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Low</span> DP Charges<span className="subtxt"> (Rs. 10 Only)</span>
+                                            <p><span className="fontbold" >One</span> Account for Everything
                                                 </p>
                                             </div>
                                         </div>
@@ -108,6 +109,7 @@ const MinorDematAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <span className="banner-title2 mobile">All in 1 Account</span>
                         <h1 className="banner-title mbtitle">
                                 <div className="mobile">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 

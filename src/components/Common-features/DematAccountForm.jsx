@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
@@ -317,6 +317,7 @@ function DematAccountForm(props) {
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
+            "account_type" :type1=='MF'?"":"all"
             // "captcha": "1"
             
         };
@@ -651,7 +652,7 @@ function DematAccountForm(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
+                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
