@@ -66,6 +66,7 @@ function DematAccountForm(props) {
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
     const [IsIssue, setIsIssue] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
+    const [showReferInput, setShowReferInput] = useState(() => false);
 
     const { executeRecaptcha } = useGoogleReCaptcha();
     
@@ -376,6 +377,10 @@ function DematAccountForm(props) {
         fetchQueryParams();
     }, []);
 
+    function showReferBlock() {
+        setShowReferInput(() => true);
+    }
+
     // useEffect(() => {
     //     const interval = setInterval(() => {
     //         if (!count) {
@@ -593,9 +598,19 @@ function DematAccountForm(props) {
 
                         </div>
 
-                        <div className="sub-formgrp">
-                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')} className="formcontrol digit-otp" autoComplete="off" isInvalid={errors.invalidMobile || errors.required} value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                        </div>
+                        {
+    refercode.current? '':
+    <span className="referal-link" onClick={showReferBlock}>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')}</span>
+}
+                        
+
+                        {
+                            (showReferInput)?
+                            <div className="sub-formgrp sub-fromgrp2">
+                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" className="formcontrol digit-otp" autoComplete="off" isInvalid={errors.invalidMobile || errors.required} value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            </div> : ''
+                        }
+
 
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                             <Form.Check
