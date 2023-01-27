@@ -1,9 +1,10 @@
-import "./DematPage.scss"
+
 import OpenFreeAccountBanner from "./OpenFreeAccountBanner";
 import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
 import DematAccountOpeningProcess from "./DematAccountOpeningProcess";
 import LowBrokerageDematAccount from "./LowBrokerageDematAccount";
 import WhyChoice from "./WhyChoice";
+import FeaturesDemat from "./FeaturesDemat";
 import DematFaq from "./DematFaq";
 import Template2 from '../Common-features/Template2';
 import { useState, useEffect } from 'react';
@@ -12,7 +13,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-
+import "./DematPage.scss"
 function DematPage() {
 
   const [skeleton, setSkeleton] = useState(() => true);
@@ -88,6 +89,7 @@ function DematPage() {
             <OpenFreeAccountBanner />
             <WhyOpenFreeDematAccount />
             <WhyChoice />
+            <FeaturesDemat />
             <LowBrokerageDematAccount />
             <DematAccountOpeningProcess />
             <DematFaq />
