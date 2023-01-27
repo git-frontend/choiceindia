@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -41,7 +41,8 @@ const config = {
     livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
     // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
     UATNachBaseURL:"https://dev-api.choicetechlab.com/",
-    liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
+    // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
+    liveNachBaseURL:"https://go.choiceindia.com/"
 }
 
 export class API_URLS {
@@ -736,7 +737,7 @@ export class API_URLS {
     }
 
     getNACHCancellationURL() {
-        return "http://localhost:9001/api/newdetail"
+        return this.nachBaseURL + this.nachCancellationURL
     }
     
 
