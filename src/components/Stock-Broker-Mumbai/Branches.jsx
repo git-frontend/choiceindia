@@ -115,7 +115,7 @@ function Branches() {
                             return (
                               <div key={index}>
                                 <span className="img-itm">
-                                  <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={"Stock Broker in Bangalore"} className={"img-fluid"} width={"144"} height={"144"} />
+                                  <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
 
                                 </span>
                                 <h5>{res.city_name}</h5>
