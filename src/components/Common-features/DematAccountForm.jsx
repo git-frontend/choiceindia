@@ -30,6 +30,7 @@ function DematAccountForm(props) {
     const [showErrorToaster, setShowErrorToaster] = useState(false);
     const type1=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const [referID, setReferID] = useState('');
 
     
 
@@ -65,9 +66,14 @@ function DematAccountForm(props) {
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
     const [IsIssue, setIsIssue] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
+    const [showReferInput, setShowReferInput] = useState(() => false);
 
     const { executeRecaptcha } = useGoogleReCaptcha();
     
+
+    useEffect(() => {
+        console.log('PRR',props.language)
+    },[])
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -117,6 +123,21 @@ function DematAccountForm(props) {
         //     setErrors({});
         // }
         setMobileNumber(value);
+        setErrors({});
+    }
+
+    function handleReferID(e) {
+        let value = e.target.value.replace(/([^\w]+|\s+)/g, "");
+        // if (value) {
+        //     setMobileNumber(value);
+        //     setErrors({});
+        // } else {
+        //     setMobileNumber(value);
+        //     setErrors({});
+        // }
+        setReferID(value);
+        // console.log('RID',referID);
+        // console.log('RID2',refercode.current)
         setErrors({});
     }
 
@@ -282,7 +303,7 @@ function DematAccountForm(props) {
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
-            "referred_id": refercode.current || null,
+            "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
@@ -339,6 +360,8 @@ function DematAccountForm(props) {
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
         source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
         subrefercodeInv.current = (searchParams.get('subref'))||'';
+
+        setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     }
 
     // function handleOTP(e) {
@@ -354,6 +377,10 @@ function DematAccountForm(props) {
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+    function showReferBlock() {
+        setShowReferInput(() => true);
+    }
 
     // useEffect(() => {
     //     const interval = setInterval(() => {
@@ -571,6 +598,20 @@ function DematAccountForm(props) {
                             }
 
                         </div>
+
+                        {
+    refercode.current? '':
+    <span className="referal-link" onClick={showReferBlock}>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')}</span>
+}
+                        
+
+                        {
+                            (showReferInput)?
+                            <div className="sub-formgrp sub-fromgrp2">
+                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" className="formcontrol digit-otp" autoComplete="off" isInvalid={errors.invalidMobile || errors.required} value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            </div> : ''
+                        }
+
 
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                             <Form.Check
