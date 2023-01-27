@@ -4,7 +4,6 @@ import { API_URLS } from "./API-URLS";
 const rest = {
 
   getCryptoNACHKey: function () {
-    const crypto = require('crypto');
     const currentDate = new Date().toISOString().slice(0, 10).replace(/-/g, "");
     const secretKey = "NEESISHKRUTRI";
     const data = currentDate + secretKey;

@@ -160,7 +160,7 @@ function NachCancellation() {
           {
             isError ? <p>{isError}</p> : <p>Thank you for providing your details. We are in receipt of your request. Our representative will reach to you shortly.</p>
           }
-            <Button variant="warning" className='btn-yellow' size="lg" onClick={() => { handleClose() }}>Ok</Button>
+            <Button variant="warning" className='btn-yellow' size="lg" onClick={() => { handleClose() }}>OK</Button>
         </div>
       </Modal>
 
