@@ -3,6 +3,7 @@ const language = {
     en: {
         title: 'Open Account Now',
         moblbl: 'Mobile Number',
+        referId: 'Have a referral code?',
         invalidmob: 'Invalid Mobile Number',
         reqmob: 'Mobile Number is Required',
         otpbtn: 'Send OTP',
@@ -26,6 +27,7 @@ const language = {
     hindi: {
         title: 'मुफ़्त ट्रेडिंग खाता खोलें',
         moblbl: 'मोबाइल नंबर',
+        referId: 'रेफ़रल कोड है?',
         invalidmob: 'वैध मोबाइल नंबर दर्ज करें',
         reqmob: 'मोबाइल नंबर आवश्यक है',
         otpbtn: 'OTP भेजें',
@@ -72,6 +74,7 @@ const language = {
     marathi: {
         title: 'मोफत डिमॅट अकाऊंट',
         moblbl: 'मोबाईल क्रमांक',
+        referId: 'रेफरल कोड आहे का?',
         invalidmob: 'वैध मोबाइल नंबर टाका',
         reqmob: 'मोबाईल नंबर आवश्यक आहे',
         otpbtn: 'OTP पाठवा',

@@ -11,6 +11,7 @@
     position: relative;
     z-index: 9;
     .sub-formgrp{
+		margin-top: 1rem;
         margin-bottom: 1.5rem;
 		position: relative;
         .formcontrol{
@@ -99,6 +100,21 @@
 			text-align: center;
 		}
     }
+
+	.referal-link{
+		cursor: pointer;
+		color: #0066B3 !important;
+		font-size: 1.2rem;
+	}
+
+	.sub-fromgrp2{
+		.formcontrol{
+			border-style: dashed ;
+			background: #EFEFEF;
+			color: #999999;
+		}
+	}
+
     .form-ttl{
         text-align: center;
         font-size: 2rem;
