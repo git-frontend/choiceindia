@@ -15,7 +15,7 @@ import Navigation from '../../assets/images/stock-broker-mumbai/stock-broker-goo
 import Call from '../../assets/images/stock-broker-mumbai/stock-broker-contact-number.gif';
 import stockBrokerCityService from '../../Services/StockBrokerCityContent';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import Image6 from '../../assets/images/open-demat-account/form-bg.webp';
+
 function StockBroker() {
 
 
@@ -130,8 +130,7 @@ function StockBroker() {
 										</div>
 										<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
 
-									
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+										<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
 										</div>

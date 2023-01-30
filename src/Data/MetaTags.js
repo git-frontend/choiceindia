@@ -2126,7 +2126,36 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
     "link":"https://choiceindia.com/individual-loan"
 
-  }
+  },
+
+  "stock-broker-in-bangalore": {
+    "title":"Choice - Stock Broker in Bangalore | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Bangalore. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9886062043.",
+    "link":"https://choiceindia.com/stock-broker-in-bangalore"
+  },
+
+  "stock-broker-in-chennai": {
+    "title":"Choice - Stock Broker in Chennai | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Chennai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9884580688.",
+    "link":"https://choiceindia.com/stock-broker-in-chennai"
+  },
+
+  "stock-broker-in-hyderabad": {
+    "title":"Choice - Stock Broker in Hyderabad | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Hyderabad. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +02267079999.",
+    "link":"https://choiceindia.com/stock-broker-in-hyderabad"
+  },
+
+  "stock-broker-in-delhi": {
+    "title":"Choice - Stock Broker in Delhi | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
+    "link":"https://choiceindia.com/stock-broker-in-delhi"
+  },
+
 }
 
 export default meta_tags;

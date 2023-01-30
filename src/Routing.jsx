@@ -131,8 +131,7 @@ const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-
 
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
-const LazyStockBroker = React.lazy(() => import('./components/Stock-Broker-Mumbai/Stock-Broker'));
-
+const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/NachCancellation'));
 function Routing() {
 
 
@@ -719,6 +718,11 @@ function Routing() {
                         <Route exact path='/stock-broker-in-delhi' element={
                             <React.Suspense>
                                 < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/nach-cancellation' element={
+                            <React.Suspense>
+                                < LazyNachCancellation />
                             </React.Suspense>
                         } />
  

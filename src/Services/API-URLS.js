@@ -39,6 +39,10 @@ const config = {
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
     livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
+    // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
+    UATNachBaseURL:"https://dev-api.choicetechlab.com/",
+    // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
+    liveNachBaseURL:"https://go.choiceindia.com/"
 }
 
 export class API_URLS {
@@ -76,8 +80,8 @@ export class API_URLS {
     fetchResearchReport = "/research-report-new"
     /** Research URL */
     researchURL = "https://uatapi.choicebroking.in/api/middleware"
-
-
+    /** NACH Base URL */
+    nachBaseURL = '';
     /** PV breakout API data URL */
     pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     /**Market Insights , fabal URL */
@@ -219,6 +223,10 @@ export class API_URLS {
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
     nbfcRegister='api/register';
     nbfcLogin ='api/login';
+    /** NACH URL */
+    nachCancellationUATURL = 'sendMailNBFCv2';
+    nachCancellationliveURL = 'sendMailNBFC';
+    nachCancellationURL = 'api/newdetail'
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -254,6 +262,7 @@ export class API_URLS {
         this.setresearchURL(config[configKey + 'researchURL']);
         this.setperformanceURL(config[configKey + 'performanceURL']);
         this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
+        this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
     }
 
     setJiffyBaseURL = (url) => {
@@ -337,6 +346,9 @@ export class API_URLS {
         this.bannerURL = url;
     }
 
+    setNACHBaseURL = (url) => {
+        this.nachBaseURL = url;
+    }
 
     getExpertDetailURL = (id) => {
         return this.jiffyURL + this.jiffyExpertPageURL + id
@@ -735,6 +747,9 @@ export class API_URLS {
 
     getSubBrokerCityURL(){
         return this.bannerURL + this.cityUrl
+    }
+    getNACHCancellationURL() {
+        return this.nachBaseURL + this.nachCancellationURL
     }
     
 

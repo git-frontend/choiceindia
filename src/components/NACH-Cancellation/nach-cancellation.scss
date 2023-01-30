@@ -1,0 +1,129 @@
+@import '../../assets/css/header.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+
+.nach-cancellation-top{
+    padding: 3rem 0 7rem 0;
+    .nach-flex{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .nach-caption{
+            background: rgba(255, 206, 2, 0.6);
+            border-radius: 20px;
+            padding: 2rem 3rem 5rem 3rem;
+            width: 35%;
+            padding-right: 6rem;
+            .title-first{
+                line-height: 1.5;
+                font-family: $font-family-poppins-medium;
+                color: $darkblack;
+                font-weight: 500;
+                margin: 3rem 0 2rem 0;
+            }
+            @media (max-width: $md){
+                width: 50%;
+                padding: 2.5rem;
+            }
+            @media (max-width: $sm){
+                width: 100%;
+                margin-bottom: 3rem;
+            }
+        }
+        .nach-form-sec{
+            width: 60%;
+            .form-prnt{
+                display: flex;
+                flex-wrap: wrap;
+                align-items: flex-start;
+                justify-content: space-between;
+                .formgrp{
+                    margin-bottom: 4rem;
+                    @media (max-width: $md){
+                        margin-bottom: 2rem;
+                    }
+                    .formcontrol{
+                        width: 100%;
+                        background: $input-bg;
+                        border: 0;
+                        outline: none;
+                        box-shadow: none;
+                        font-size: 1.2rem;
+                        font-family: $font-family-poppins-medium;
+                        color: $color-input;
+                        padding: 1rem 1.5em;
+                        border-radius: 5px;
+                        &::placeholder{
+                            color: $label-clr;
+                        }
+                        &.messagearea{
+                            height: 150px;
+                            @media (max-width: $md){
+                                height: 120px;
+                            }
+                        }
+                    }
+                    .formlabel{
+                        font-size: 1.1rem;
+                        font-family: $font-family-poppins-medium;
+                        color: $label-clr;
+                    }
+                    &.formgrp-txt{
+                        width: 46%;
+                        @media (max-width: $md){
+                            width: 100%;
+                        }
+                    }
+                    &.messagefield{
+                        width: 100%;
+                    }
+                }
+                .button-filed{
+                    width: 100%;
+                    .btn-bg{
+                        min-width: inherit;
+                        padding: 1.2rem 1.8rem !important;
+                        border-radius: 10px !important;
+                        &.btn-back{
+                            background: $input-bg !important;
+                            color: $primary !important;
+                            margin-left: 2rem;
+                        }
+                    }
+                }
+                
+            }
+            @media (max-width: $md){
+                width: 46%;
+            }
+            @media (max-width: $sm){
+                width: 100%;
+            }
+        }   
+    }
+    
+}
+
+.nach-modal{
+    .modal-content{
+        padding:3rem 2.5rem;
+        text-align: center;
+        .icon-table{
+            position: absolute;
+            right: 1.5rem;
+            top: 1.5rem;
+        }
+        .nach-modal-cont{
+            p{  
+                margin-top: 2.5rem;
+                font-family: $font-family-poppins-medium;
+                color: $darkblack;
+            }
+        }
+    }
+}
+.warning {
+    color: red;
+}
