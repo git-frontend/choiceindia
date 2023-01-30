@@ -65,8 +65,8 @@ function Branches() {
 		speed: 1500,
 		arrows: false,
 		slidesToShow: 4,
-		autoplay: false,
-		dots: true,
+		autoplay: Object. keys(content). length ===6 ? true :false,
+		dots: Object. keys(content). length ===6 ? true :false,
 		autoplaySpeed: 5000,
 		slidesToScroll: 1,
 		responsive: [
@@ -76,6 +76,8 @@ function Branches() {
 					slidesToShow: 3,
 					slidesToScroll: 1,
 					adaptiveHeight: true,
+          dots:true,
+          autoplay:true
 				},
 			},
 			{
@@ -83,10 +85,13 @@ function Branches() {
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1,
+          dots:true,
+          autoplay:true
 				},
 			},
 		],
 	};
+  // console.log("check",Object. keys(content). length)
   return (
     <div>
       <section className="branch" >
