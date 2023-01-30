@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import LazyLoader from '../Common-features/LazyLoader';
 import Banner from '../Stock-Broker-Mumbai/Banner';
@@ -29,9 +29,27 @@ function StockBroker() {
 	const [content, setcontent] = useState();
 	const [content2, setcontent2] = useState({});
 	const[ischeck,setIscheck]=useState(false);
+	const [name, setName ] = useState('');
 	let values;
 	let AllFilesValue = {};
-	let pageLocation
+	let pageLocation;
+	const myRef1 = useRef(null);
+
+
+
+
+	const getPosition = () => {
+	const element = document.getElementById("branch1");
+	if(element){
+		const rect = element.getBoundingClientRect();
+	
+		if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
+			setIscheck(true);
+			// console.log('inside name', name);
+		}
+	
+	}
+}
 	
 	// const myTimeout = setTimeout(myGreeting, 1500);
 	// function myGreeting() {
@@ -142,6 +160,8 @@ function StockBroker() {
 				document.getElementById('link5').remove();
 				document.getElementById('link6').remove();
 			}
+
+			window.addEventListener('scroll', getPosition);
 		}
 	}, [rendercount])
 
@@ -178,10 +198,10 @@ function StockBroker() {
 		],
 	};
 
-	
+
 
 	return (
-		<div className="Home" onMouseOver={()=>setIscheck(true)}>
+		<div className="Home" onMouseOver={()=>setIscheck(true)} >
 
 			{/* {
 				skeleton ? <Template1 /> : */}
@@ -267,8 +287,8 @@ function StockBroker() {
 				</section>
 				<FinancialServices />
 				<Openaccount />
-				<section className="branch" >
-        <div className="container">
+				<section className="branch"  onScroll={getPosition}>
+        <div className="container" ref={myRef1} id="branch1">
           <div className="row">
             <div className="col-md-12 ">
               <div className="heading-sec">
@@ -281,6 +301,8 @@ function StockBroker() {
           <div className="row" >
 
             <div className="col-md-12">
+			{
+                                ischeck ?
 
             <Slider {...settings} className="branches-list" >
             {
@@ -308,7 +330,9 @@ function StockBroker() {
                     )}
               
                
-              </Slider>                
+              </Slider>     :
+			  ""
+							}           
 									
                                    
                                     
@@ -329,7 +353,9 @@ function StockBroker() {
           </div>
         </div>
       </section>
-				<section className="best-in-mumbai">
+	  {
+		ischeck ?
+		<section className="best-in-mumbai">
 					{
 						content?.map((res, i) => {
 							return (
@@ -380,7 +406,10 @@ function StockBroker() {
 						})
 					}
 
-				</section>
+				</section>:""
+
+	  }
+				
 
 
 			</main>
