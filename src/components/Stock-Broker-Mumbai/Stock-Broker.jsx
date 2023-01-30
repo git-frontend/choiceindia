@@ -28,6 +28,7 @@ function StockBroker() {
 	const [isloading, setisloading] = useState(true);
 	const [content, setcontent] = useState();
 	const [content2, setcontent2] = useState({});
+	const[ischeck,setIscheck]=useState(false);
 	let values;
 	let AllFilesValue = {};
 	let pageLocation
@@ -102,7 +103,7 @@ function StockBroker() {
 				  AllFilesValue[ele.city_name].push(ele)
 				}
 			  })
-			  console.log("checkk",AllFilesValue)
+			 
 			  setcontent2(AllFilesValue);
 			} else {
 			  setisloading(false)
@@ -177,10 +178,10 @@ function StockBroker() {
 		],
 	};
 
-	console.log("checkk",content2)
+	
 
 	return (
-		<div className="Home">
+		<div className="Home" onMouseOver={()=>setIscheck(true)}>
 
 			{/* {
 				skeleton ? <Template1 /> : */}
@@ -225,12 +226,22 @@ function StockBroker() {
 
 											</div>
 										</div>
+										{
+                                ischeck ?
 										<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
 
 										<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
+										</div>:
+										<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm" onMouseOver={()=>setIscheck(true)}>
+
+										
+                                    <DematAccountForm />
+                               
 										</div>
+						}
+
 									</div>
 									<div className="row">
 										<div className="col-xl-8 col-md-12">
