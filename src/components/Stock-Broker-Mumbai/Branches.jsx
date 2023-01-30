@@ -57,7 +57,7 @@ function Branches() {
     }
   }, [rendercount])
 
-  
+ 
  
 
 
@@ -119,7 +119,7 @@ function Branches() {
                           {
                           content[key]?.map((res, index) => {
                             return (
-                              <div key={index}>
+                              <div key={index} >
                                 <Link to={`${res.link}`}>
                                 <span className="img-itm">
                                   <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
