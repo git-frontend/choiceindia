@@ -10,6 +10,7 @@ import Hydrabad from '../../assets/images/stock-broker-mumbai/stock-broker-in-hy
 import Jaipur from '../../assets/images/stock-broker-mumbai/stock-broker-in-jaipur.svg';
 import Delhi from '../../assets/images/stock-broker-mumbai/stock-broker-in-delhi.svg';
 import Pune from '../../assets/images/stock-broker-mumbai/stock-broker-in-pune.svg';
+import { Link } from "react-router-dom";
 
 function Branches() {
 
@@ -56,7 +57,7 @@ function Branches() {
     }
   }, [rendercount])
 
-  
+ 
  
 
 
@@ -65,8 +66,8 @@ function Branches() {
 		speed: 1500,
 		arrows: false,
 		slidesToShow: 4,
-		autoplay: Object. keys(content). length ===6 ? true :false,
-		dots: Object. keys(content). length ===6 ? true :false,
+		autoplay: Object. keys(content). length === 6 ? true :false,
+		dots: Object. keys(content). length === 6 ? true :false,
 		autoplaySpeed: 5000,
 		slidesToScroll: 1,
 		responsive: [
@@ -118,13 +119,14 @@ function Branches() {
                           {
                           content[key]?.map((res, index) => {
                             return (
-                              <div key={index}>
+                              <div key={index} >
+                                <Link to={`${res.link}`}>
                                 <span className="img-itm">
                                   <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
 
                                   </span>
                                   <h5>{res.city_name}</h5>
-
+                                  </Link>
                                 </div>
                             )}
                           )}   

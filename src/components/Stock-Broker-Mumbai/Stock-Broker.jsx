@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import LazyLoader from '../Common-features/LazyLoader';
 import Banner from '../Stock-Broker-Mumbai/Banner';
 import FinancialServices from '../Stock-Broker-Mumbai/FinancialServices';
 import Openaccount from '../Stock-Broker-Mumbai/Openaccount';
-import Branches from '../Stock-Broker-Mumbai/Branches';
+
 import BestInMumbai from '../Stock-Broker-Mumbai/BestInMumbai';
 
 import "./stock-broker-mumbai.scss"
@@ -15,6 +15,8 @@ import Navigation from '../../assets/images/stock-broker-mumbai/stock-broker-goo
 import Call from '../../assets/images/stock-broker-mumbai/stock-broker-contact-number.gif';
 import stockBrokerCityService from '../../Services/StockBrokerCityContent';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { Link } from "react-router-dom";
+import Slider from 'react-slick';
 
 function StockBroker() {
 
@@ -25,6 +27,29 @@ function StockBroker() {
 	const location = useLocation();
 	const [isloading, setisloading] = useState(true);
 	const [content, setcontent] = useState();
+	const [content2, setcontent2] = useState({});
+	const[ischeck,setIscheck]=useState(false);
+	const [name, setName ] = useState('');
+	let values;
+	let AllFilesValue = {};
+	let pageLocation;
+	const myRef1 = useRef(null);
+
+
+
+
+	const getPosition = () => {
+	const element = document.getElementById("branch1");
+	if(element){
+		const rect = element.getBoundingClientRect();
+	
+		if(rect.top.toFixed() > 140 && rect.top.toFixed() <350){
+			setIscheck(true);
+			// console.log('inside name', name);
+		}
+	
+	}
+}
 	
 	// const myTimeout = setTimeout(myGreeting, 1500);
 	// function myGreeting() {
@@ -33,9 +58,15 @@ function StockBroker() {
 	// setTimeout(() => {
 	// 	setSkeleton(() => false);
 	// }, 200)
+	function pageDetect(){
+		 pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore":(window.location.pathname.indexOf('/stock-broker-in-chennai') > -1) ? "Chennai":(window.location.pathname.indexOf('/stock-broker-in-hyderabad') > -1) ? "Hyderabad":(window.location.pathname.indexOf('/stock-broker-in-delhi') > -1) ? "Delhi": ""
+
+	}
 	
-	function stockBrokerContent(type) {
-		stockBrokerCityService.stockContent(type).
+	function stockBrokerContent() {
+		pageDetect();
+		
+		stockBrokerCityService.stockContent(pageLocation).
 			then(
 				res => {
 					if (res && res.data && res.data.data) {
@@ -56,13 +87,63 @@ function StockBroker() {
 
 	}
 
+	
+		
+	
+
+	
+		
+	
+	
 
 
-	useEffect(() => {
+
+
+	
+	
+  
+	function stockBrokerContent2() {
+		pageDetect();
+	  stockBrokerCityService.stockCityContent().
+		then(
+		  res => {
+			if (res && res.data && res.data.data) {
+			  setisloading(false)
+			  values = res.data.data;
+			  values.forEach(ele => {
+				if (!AllFilesValue[ele.city_name]) {
+				  if(!(pageLocation == ele.city_name)){
+					AllFilesValue[ele.city_name] = [];
+					AllFilesValue[ele.city_name].push(ele)
+				  }
+				}
+				 else {
+				  AllFilesValue[ele.city_name].push(ele)
+				}
+			  })
+			 
+			  setcontent2(AllFilesValue);
+			} else {
+			  setisloading(false)
+			  setcontent2([]);
+			}
+		  }
+		).catch((error) => {
+		  setisloading(false)
+		  setcontent2([]);
+		});
+	}
+
+	
+	
+
+	  useEffect(() => {
 		setRenderCount(true)
 		if (rendercount === true) {
-			let pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore":(window.location.pathname.indexOf('/stock-broker-in-chennai') > -1) ? "Chennai":(window.location.pathname.indexOf('/stock-broker-in-hyderabad') > -1) ? "Hyderabad":(window.location.pathname.indexOf('/stock-broker-in-delhi') > -1) ? "Delhi": ""
-			stockBrokerContent(pageLocation)
+			
+			// locationDetect();
+			stockBrokerContent();
+			stockBrokerContent2();
 			// let parser = new DOMParser();
 			// let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
 			// document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
@@ -79,11 +160,48 @@ function StockBroker() {
 				document.getElementById('link5').remove();
 				document.getElementById('link6').remove();
 			}
+
+			window.addEventListener('scroll', getPosition);
 		}
 	}, [rendercount])
 
+	
+	const settings = {
+		infinite: false,
+		speed: 1500,
+		arrows: false,
+		slidesToShow: 4,
+		autoplay: Object. keys(content2). length === 6 ? true :false,
+		dots: Object. keys(content2). length === 6 ? true :false,
+		autoplaySpeed: 5000,
+		slidesToScroll: 1,
+		responsive: [
+			{
+				breakpoint: 992,
+				settings: {
+					slidesToShow: 3,
+					slidesToScroll: 1,
+					adaptiveHeight: true,
+		  dots:true,
+		  autoplay:true
+				},
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 1,
+					slidesToScroll: 1,
+		  dots:true,
+		  autoplay:true
+				},
+			},
+		],
+	};
+
+
+
 	return (
-		<div className="Home">
+		<div className="Home" onMouseOver={()=>setIscheck(true)} >
 
 			{/* {
 				skeleton ? <Template1 /> : */}
@@ -93,7 +211,12 @@ function StockBroker() {
 					{
 						content?.map((res, i) => {
 							return (
-								<div className="container" >
+								
+
+								<div>
+									{
+										ischeck?
+										<div className="container" >
 									<div className="row align-items-start">
 										<div className="col-xl-8 col-md-6">
 											<div className="wrap-banner">
@@ -128,12 +251,22 @@ function StockBroker() {
 
 											</div>
 										</div>
+										{
+                                ischeck ?
 										<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
 
 										<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
+										</div>:
+										<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm" onMouseOver={()=>setIscheck(true)}>
+
+										
+                                    <DematAccountForm />
+                               
 										</div>
+						}
+
 									</div>
 									<div className="row">
 										<div className="col-xl-8 col-md-12">
@@ -150,6 +283,65 @@ function StockBroker() {
 											</div>
 										</div>
 									</div>
+								</div>:
+								 <div className="container">
+								 <div className="row align-items-start">
+								   <div className="col-xl-8 col-md-6">
+									 <div className="wrap-banner">
+									   <div className="heading-sec">
+										 <h1 className="big-ttl"><span className='highlightblue'>Stock Broker</span>  in Mumbai</h1>
+										 <p className="text">Choice is one of the best stock brokers in Mumbai, offering financial services in addition to investing in stocks, mutual funds, bonds, NPS, PPF, corporate FDs, and other financial instruments.{!showterm ? <span onClick={()=>{setshowterm(true);console.log("hhh")}}>... <em className="btn-read">View more</em></span>:""}{showterm ?<span>&nbsp;Open a free Demat account with us to begin your investment journey with India's leading stock broker, headquartered in Mumbai. If you are looking for a stock broker in your area, we have two branches in Mumbai that can offer you support and assistance with your financial needs.
+										 <span onClick={()=>{setshowterm(false);console.log("hhh")}}>&nbsp;<em className="btn-read">View less</em></span></span>:""}</p>
+									   </div>
+									   <div className="details">
+										   <div className="navigation">
+										  <a href="https://goo.gl/maps/nVAcmGtwDV5wQVbA9" target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"}/></a>
+										   </div>
+										   <a href="tel:02267079999" target="_blank" class="calldetail2">
+											 <span className="callwrap">
+											   <LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"}/>
+											   </span>
+											   <span class="text">022 6707 9999</span>
+										   </a>
+									   </div>
+									   <div className="companydetail">
+										   <div className="address">
+											   <p className="heading">Address:</p>
+											   <p className="text">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099</p>
+										   </div>
+										   <div className="timing">
+											   <p className="heading">Business Hours:</p>
+											   <p className="text"><span className="day">Monday to Friday:</span> <span className="time">8:30 am - 7:00 pm</span></p>
+											   <p className="text"><span className="day">Saturday:</span> <span className="time">10:00 am - 4:00 pm</span></p>
+										   </div>
+									   </div>
+									   
+									   
+									 </div>
+								   </div>
+								   <div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
+								  
+									 <DematAccountForm />
+								   </div>
+								 </div>
+								 <div className="row">
+									 <div className="col-xl-8 col-md-12">
+									   <div className="companydetail companydetail-tab">
+										   <div className="address">
+											   <p className="heading">Address:</p>
+											   <p className="text">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099</p>
+										   </div>
+										   <div className="timing">
+											   <p className="heading">Business Hours:</p>
+											   <p className="text"><span className="day">Monday to Friday:</span> <span className="time">8:30 am - 7:00 pm</span></p>
+											   <p className="text"><span className="day">Saturday:</span> <span className="time">10:00 am - 4:00 pm</span></p>
+										   </div>
+									   </div>
+									 </div>
+								 </div> 
+							   </div>
+									}
+									
 								</div>
 
 							)
@@ -159,8 +351,75 @@ function StockBroker() {
 				</section>
 				<FinancialServices />
 				<Openaccount />
-				<Branches />
-				<section className="best-in-mumbai">
+				<section className="branch"  onScroll={getPosition}>
+        <div className="container" ref={myRef1} id="branch1">
+          <div className="row">
+            <div className="col-md-12 ">
+              <div className="heading-sec">
+                <h2 className="title-first text-center">Our Other Branches Near You</h2>
+                <p className="text-center mb-5 branchsubtext">Stock Broker in</p>
+              </div>
+
+            </div>
+          </div>
+          <div className="row" >
+
+            <div className="col-md-12">
+			{
+                                ischeck ?
+
+            <Slider {...settings} className="branches-list" >
+            {
+                  Object.keys(content2)?.map((key, i) => {
+                    return (
+
+                      <div className="branch-item">
+                          {
+                          content2[key]?.map((res, index) => {
+                            return (
+                              <div key={index}  onClick={()=>{stockBrokerContent();stockBrokerContent2();}}>
+                                <Link to={`${res.link}`}>
+                                <span className="img-itm">
+                                  <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
+
+                                  </span>
+                                  <h5>{res.city_name}</h5>
+                                  </Link>
+                                </div>
+                            )}
+                          )}   
+                    </div>
+
+                    )}
+                    )}
+              
+               
+              </Slider>     :
+			  ""
+							}           
+									
+                                   
+                                    
+										
+                  
+
+                
+
+
+             
+
+
+
+
+
+            </div>
+
+          </div>
+        </div>
+      </section>
+	  {
+		ischeck ?
+		<section className="best-in-mumbai">
 					{
 						content?.map((res, i) => {
 							return (
@@ -211,7 +470,10 @@ function StockBroker() {
 						})
 					}
 
-				</section>
+				</section>:""
+
+	  }
+				
 
 
 			</main>
