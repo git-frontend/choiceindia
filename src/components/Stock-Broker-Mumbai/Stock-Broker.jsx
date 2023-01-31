@@ -253,11 +253,16 @@ function StockBroker() {
 															</GoogleReCaptchaProvider>
 														</div> :
 														<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm" onMouseOver={() => setIscheck(true)}>
-
-
-															<DematAccountForm />
-
-														</div>
+														{
+															view && !view.matches ?
+																"" :
+																<DematAccountForm />
+														}
+	
+	
+	
+	
+													</div>
 												}
 
 											</div>
@@ -305,8 +310,7 @@ function StockBroker() {
 									<div className="row" >
 	
 										<div className="col-md-12">
-											{
-												ischeck ?
+											
 	
 													<Slider {...settings} className="branches-list" >
 														{
@@ -336,17 +340,16 @@ function StockBroker() {
 															)}
 	
 	
-													</Slider> :
-													""
-											}
+													</Slider> 
+												
+											
 	
 										</div>
 	
 									</div>
 								</div>
 							</section>
-							{
-								ischeck ?
+							
 									<section className="best-in-mumbai">
 										{
 											content?.map((res, i) => {
@@ -398,9 +401,9 @@ function StockBroker() {
 											})
 										}
 	
-									</section> : ""
+									</section> 
 	
-							}
+							
 	</div>:""
 						}
 		
