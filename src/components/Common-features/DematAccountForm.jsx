@@ -17,6 +17,7 @@ import infoimg from '../../assets/images/Info.svg';
 import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import backIcon from '../../assets/images/backspace.svg';
 
 function DematAccountForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -384,6 +385,11 @@ function DematAccountForm(props) {
         setShowReferInput(() => true);
     }
 
+    function showReferBlock2() {
+        setReferID(() => '');
+        setShowReferInput(() => false);
+    }
+
     // useEffect(() => {
     //     const interval = setInterval(() => {
     //         if (!count) {
@@ -609,8 +615,9 @@ function DematAccountForm(props) {
 
                         {
                             (showReferInput)?
-                            <div className="sub-formgrp sub-fromgrp2">
-                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" className="formcontrol digit-otp" autoComplete="off" isInvalid={errors.invalidMobile || errors.required} value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            <div className="sub-formgrp">
+                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" maxLength="12" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
                             </div> : ''
                         }
 
