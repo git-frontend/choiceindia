@@ -43,7 +43,7 @@ function StockBroker() {
 		const element = document.getElementById("branch1");
 		if (element) {
 			const rect = element.getBoundingClientRect();
-			console.log("checkmate", rect.top.toFixed())
+			// console.log("checkmate", rect.top.toFixed())
 			if (rect.top.toFixed() < 350) {
 				setIscheck(true);
 				// console.log('inside name', name);
@@ -197,9 +197,7 @@ function StockBroker() {
 
 	return (
 		<div className="Home" onMouseOver={() => setIscheck(true)} >
-			{
-
-				ischeck ?
+			
 
 
 					<main className='home-main'>
@@ -287,224 +285,129 @@ function StockBroker() {
 							}
 
 						</section>
-						<FinancialServices />
-						<Openaccount />
-						<section className="branch"  >
-							<div className="container" >
-								<div className="row">
-									<div className="col-md-12 ">
-										<div className="heading-sec">
-											<h2 className="title-first text-center">Our Other Branches Near You</h2>
-											<p className="text-center mb-5 branchsubtext">Stock Broker in</p>
-										</div>
-
-
-									</div>
-								</div>
-								<div className="row" >
-
-									<div className="col-md-12">
-										{
-											ischeck ?
-
-												<Slider {...settings} className="branches-list" >
-													{
-														Object.keys(content2)?.map((key, i) => {
-															return (
-
-																<div className="branch-item">
-																	{
-																		content2[key]?.map((res, index) => {
-																			return (
-																				<div key={index} onClick={() => { stockBrokerContent(); stockBrokerContent2(); }}>
-																					<Link to={`${res.link}`}>
-																						<span className="img-itm">
-																							<LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
-
-																						</span>
-																						<h5>{res.city_name}</h5>
-																					</Link>
-																				</div>
-																			)
-																		}
-																		)}
-																</div>
-
-															)
-														}
-														)}
-
-
-												</Slider> :
-												""
-										}
-
-									</div>
-
-								</div>
-							</div>
-						</section>
 						{
 							ischeck ?
-								<section className="best-in-mumbai">
-									{
-										content?.map((res, i) => {
-											return (
-												<div className="container">
-													<div className="row">
-
-														<div className="col-md-12">
-															<div className="left-sec heading-sec">
-																<h2 className="title-secnd mb-4">{res.bottom_heading}</h2>
-
-
-
-
-
-																<p className="">
+							<div>
+							<FinancialServices />
+							<Openaccount />
+							<section className="branch"  >
+								<div className="container" >
+									<div className="row">
+										<div className="col-md-12 ">
+											<div className="heading-sec">
+												<h2 className="title-first text-center">Our Other Branches Near You</h2>
+												<p className="text-center mb-5 branchsubtext">Stock Broker in</p>
+											</div>
+	
+	
+										</div>
+									</div>
+									<div className="row" >
+	
+										<div className="col-md-12">
+											{
+												ischeck ?
+	
+													<Slider {...settings} className="branches-list" >
+														{
+															Object.keys(content2)?.map((key, i) => {
+																return (
+	
+																	<div className="branch-item">
+																		{
+																			content2[key]?.map((res, index) => {
+																				return (
+																					<div key={index} onClick={() => { stockBrokerContent(); stockBrokerContent2(); }}>
+																						<Link to={`${res.link}`}>
+																							<span className="img-itm">
+																								<LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.file_name}`} alt={res.alt} className={"img-fluid"} width={"144"} height={"144"} />
+	
+																							</span>
+																							<h5>{res.city_name}</h5>
+																						</Link>
+																					</div>
+																				)
+																			}
+																			)}
+																	</div>
+	
+																)
+															}
+															)}
+	
+	
+													</Slider> :
+													""
+											}
+	
+										</div>
+	
+									</div>
+								</div>
+							</section>
+							{
+								ischeck ?
+									<section className="best-in-mumbai">
+										{
+											content?.map((res, i) => {
+												return (
+													<div className="container">
+														<div className="row">
+	
+															<div className="col-md-12">
+																<div className="left-sec heading-sec">
+																	<h2 className="title-secnd mb-4">{res.bottom_heading}</h2>
+	
+	
+	
+	
+	
 																	<p className="">
-																		{res.bottom_view_less_text}
-																	</p>
-																	<p className="mb-0">
-																		{res.bottom_view_less_text2}
-																	</p>
-
-																	{!showterm ? <span onClick={() => { setshowterm(true) }}> <em className="btn-read">Read more</em></span> : ""}
-																	{showterm ? <span>&nbsp;
 																		<p className="">
-																			{res.bottom_view_more_text}
+																			{res.bottom_view_less_text}
 																		</p>
 																		<p className="mb-0">
-																			{res.bottom_view_more_text2}
-
+																			{res.bottom_view_less_text2}
 																		</p>
-																		<span onClick={() => { setshowterm(false) }}><em className="btn-read">Read less</em></span></span> : ""}</p>
-
-
+	
+																		{!showterm ? <span onClick={() => { setshowterm(true) }}> <em className="btn-read">Read more</em></span> : ""}
+																		{showterm ? <span>&nbsp;
+																			<p className="">
+																				{res.bottom_view_more_text}
+																			</p>
+																			<p className="mb-0">
+																				{res.bottom_view_more_text2}
+	
+																			</p>
+																			<span onClick={() => { setshowterm(false) }}><em className="btn-read">Read less</em></span></span> : ""}</p>
+	
+	
+																</div>
+	
 															</div>
-
-														</div>
-														{/* <div className="col-md-6 d-flex align-items-center justify-content-center">
-              <div className="right-sec  best-mumbai-img">
-              <LazyLoader src={BestMumbai} alt={"Best Stock Broker in Mumbai"} className={"img img-fluid"} width={"258"} height={"238"}/>
-              </div>
-            </div> */}
-
-													</div>
-												</div>
-
-											)
-										})
-									}
-
-								</section> : ""
-
-						}
-
-
-
-					</main> :
-					<main className='home-main'>
-
-
-
-
-						<section className="stockbanner">
-							{
-								content?.map((res, i) => {
-									return (
-
-
-
-
-										<div className="container" onScroll={getPosition}>
-											<div className="row align-items-start" ref={myRef1} id="branch1">
-												<div className="col-xl-8 col-md-6">
-													<div className="wrap-banner">
-														<div className="heading-sec" key={i}>
-															<h1 className="big-ttl"><span className='highlightblue'>{res.bannerheading}</span>  {res.bannerheadingright}</h1>
-															<p className="text">{res.banner_view_less}{!showterm ? <span onClick={() => { setshowterm(true) }}>... <em className="btn-read">View more</em></span> : ""}{showterm ? <span>&nbsp;{res.banner_view_more}
-																<span onClick={() => { setshowterm(false) }}>&nbsp;<em className="btn-read">View less</em></span></span> : ""}</p>
-														</div>
-														<div className="details">
-															<div className="navigation">
-																<a href={res.direction} target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"} /></a>
-															</div>
-															<a href={`tel:${res.contact_no}`} target="_blank" class="calldetail2">
-																<span className="callwrap">
-																	<LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"} />
-																</span>
-																<span class="text">{res.contact_no}</span>
-															</a>
-														</div>
-														<div className="companydetail">
-															<div className="address">
-																<p className="heading">{res.address}</p>
-																<p className="text">{res.address_detail}</p>
-															</div>
-															<div className="timing">
-																<p className="heading">{res.hours}</p>
-																<p className="text"><span className="day">{res.day}</span> <span className="time">{res.working_time}</span></p>
-																<p className="text"><span className="day">{res.extra_day}</span> <span className="time">{res.extra_hour}</span></p>
-															</div>
-														</div>
-
-
-													</div>
-												</div>
-
-
-
-
-												<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm" onMouseOver={() => setIscheck(true)}>
-													{
-														view && !view.matches ?
-															"" :
-															<DematAccountForm />
-													}
-
-
-
-
-												</div>
-
-
-											</div>
-											<div className="row">
-												<div className="col-xl-8 col-md-12">
-													<div className="companydetail companydetail-tab">
-														<div className="address">
-															<p className="heading">{res.address}</p>
-															<p className="text">{res.address_detail}</p>
-														</div>
-														<div className="timing">
-															<p className="heading">{res.hours}</p>
-															<p className="text"><span className="day">{res.day}</span> <span className="time">{res.working_time}</span></p>
-															<p className="text"><span className="day">{res.extra_day}</span> <span className="time">{res.extra_hour}</span></p>
+															{/* <div className="col-md-6 d-flex align-items-center justify-content-center">
+				  <div className="right-sec  best-mumbai-img">
+				  <LazyLoader src={BestMumbai} alt={"Best Stock Broker in Mumbai"} className={"img img-fluid"} width={"258"} height={"238"}/>
+				  </div>
+				</div> */}
+	
 														</div>
 													</div>
-												</div>
-											</div>
-										</div>
-
-
-
-									)
-								})
+	
+												)
+											})
+										}
+	
+									</section> : ""
+	
 							}
-
-						</section>
-					</main>
-
-			}
-
-			{/* {
-				skeleton ? <Template1 /> : */}
+	</div>:""
+						}
+		
 
 
-			{/* } */}
-
-
+					</main> 
+					
 
 
 		</div>
