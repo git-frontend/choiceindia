@@ -40,25 +40,25 @@ function WhyChoiceIPO() {
                   <div className="why-ipo-list">
                       <div className="why-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img1} alt={"IPO invesment with expert report"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h4>IPO Report by <br/> Experts</h4>
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img3} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img3} alt={"IPO Clients"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h4>1.5 + Lakhs<br/> Clients</h4>
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img2} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img2} alt={"IPO investment with advisory video on YouTube"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h4>IPO Advisory <br/> Video on YouTube</h4>
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img4} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img4} alt={"IPO investment with 25+ year of experienced broker"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h4>25 + years of <br/>Experience</h4>
                       </div>
