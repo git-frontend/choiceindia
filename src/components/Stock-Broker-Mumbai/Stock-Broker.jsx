@@ -35,9 +35,6 @@ function StockBroker() {
 	let pageLocation;
 	const myRef1 = useRef(null);
 
-
-
-
 	const getPosition = () => {
 	const element = document.getElementById("branch1");
 	if(element){
@@ -51,13 +48,7 @@ function StockBroker() {
 	}
 }
 	
-	// const myTimeout = setTimeout(myGreeting, 1500);
-	// function myGreeting() {
-	//   setSkeleton(() => false);
-	// }
-	// setTimeout(() => {
-	// 	setSkeleton(() => false);
-	// }, 200)
+	
 	function pageDetect(){
 		 pageLocation =(window.location.pathname.indexOf('/stock-broker-in-mumbai') > -1) ? "Mumbai":(window.location.pathname.indexOf('/stock-broker-in-bangalore') > -1)? "Bangalore":(window.location.pathname.indexOf('/stock-broker-in-chennai') > -1) ? "Chennai":(window.location.pathname.indexOf('/stock-broker-in-hyderabad') > -1) ? "Hyderabad":(window.location.pathname.indexOf('/stock-broker-in-delhi') > -1) ? "Delhi": ""
 
@@ -87,21 +78,7 @@ function StockBroker() {
 
 	}
 
-	
-		
-	
-
-	
-		
-	
-	
-
-
-
-
-	
-	
-  
+	  
 	function stockBrokerContent2() {
 		pageDetect();
 	  stockBrokerCityService.stockCityContent().
