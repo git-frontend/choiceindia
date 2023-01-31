@@ -112,7 +112,7 @@ function NBFCMenu() {
               </svg>
               <span className="menu_item_text">Partnership Module</span></Link>
               </li> */}
-              <li className="menu-itm">
+              {/* <li className="menu-itm">
 
                 <Link to="/nach-cancellation" className="menu-itm-link"> 
                 <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -120,7 +120,7 @@ function NBFCMenu() {
                 </svg>
 
                 <span className="menu_item_text">NACH Cancel Request</span></Link>
-              </li>
+              </li> */}
              
             </ul>
           </div>
