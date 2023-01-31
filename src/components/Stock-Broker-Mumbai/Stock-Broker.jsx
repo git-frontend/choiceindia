@@ -202,22 +202,22 @@ function StockBroker() {
 
 	return (
 		<div className="Home" onMouseOver={()=>setIscheck(true)} >
-
-			{/* {
-				skeleton ? <Template1 /> : */}
-			<main className='home-main'>
-
+			{
+				
+					ischeck ?
+					
+				
+				<main className='home-main'>
 				<section className="stockbanner">
 					{
 						content?.map((res, i) => {
 							return (
 								
 
-								<div>
-									{
-										ischeck?
-										<div className="container" >
-									<div className="row align-items-start">
+								
+				
+										<div className="container" onScroll={getPosition}>
+									<div className="row align-items-start" ref={myRef1} id="branch1">
 										<div className="col-xl-8 col-md-6">
 											<div className="wrap-banner">
 												<div className="heading-sec" key={i}>
@@ -283,66 +283,9 @@ function StockBroker() {
 											</div>
 										</div>
 									</div>
-								</div>:
-								 <div className="container">
-								 <div className="row align-items-start">
-								   <div className="col-xl-8 col-md-6">
-									 <div className="wrap-banner">
-									   <div className="heading-sec">
-										 <h1 className="big-ttl"><span className='highlightblue'>Stock Broker</span>  in Mumbai</h1>
-										 <p className="text">Choice is one of the best stock brokers in Mumbai, offering financial services in addition to investing in stocks, mutual funds, bonds, NPS, PPF, corporate FDs, and other financial instruments.{!showterm ? <span onClick={()=>{setshowterm(true);console.log("hhh")}}>... <em className="btn-read">View more</em></span>:""}{showterm ?<span>&nbsp;Open a free Demat account with us to begin your investment journey with India's leading stock broker, headquartered in Mumbai. If you are looking for a stock broker in your area, we have two branches in Mumbai that can offer you support and assistance with your financial needs.
-										 <span onClick={()=>{setshowterm(false);console.log("hhh")}}>&nbsp;<em className="btn-read">View less</em></span></span>:""}</p>
-									   </div>
-									   <div className="details">
-										   <div className="navigation">
-										  <a href="https://goo.gl/maps/nVAcmGtwDV5wQVbA9" target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"}/></a>
-										   </div>
-										   <a href="tel:02267079999" target="_blank" class="calldetail2">
-											 <span className="callwrap">
-											   <LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"}/>
-											   </span>
-											   <span class="text">022 6707 9999</span>
-										   </a>
-									   </div>
-									   <div className="companydetail">
-										   <div className="address">
-											   <p className="heading">Address:</p>
-											   <p className="text">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099</p>
-										   </div>
-										   <div className="timing">
-											   <p className="heading">Business Hours:</p>
-											   <p className="text"><span className="day">Monday to Friday:</span> <span className="time">8:30 am - 7:00 pm</span></p>
-											   <p className="text"><span className="day">Saturday:</span> <span className="time">10:00 am - 4:00 pm</span></p>
-										   </div>
-									   </div>
-									   
-									   
-									 </div>
-								   </div>
-								   <div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
-								  
-									 <DematAccountForm />
-								   </div>
-								 </div>
-								 <div className="row">
-									 <div className="col-xl-8 col-md-12">
-									   <div className="companydetail companydetail-tab">
-										   <div className="address">
-											   <p className="heading">Address:</p>
-											   <p className="text">Choice International Limited, Sunil Patodia Tower, J B Nagar, Andheri East, Mumbai, Maharashtra 400099</p>
-										   </div>
-										   <div className="timing">
-											   <p className="heading">Business Hours:</p>
-											   <p className="text"><span className="day">Monday to Friday:</span> <span className="time">8:30 am - 7:00 pm</span></p>
-											   <p className="text"><span className="day">Saturday:</span> <span className="time">10:00 am - 4:00 pm</span></p>
-										   </div>
-									   </div>
-									 </div>
-								 </div> 
-							   </div>
-									}
-									
 								</div>
+									
+								
 
 							)
 						})
@@ -351,8 +294,8 @@ function StockBroker() {
 				</section>
 				<FinancialServices />
 				<Openaccount />
-				<section className="branch"  onScroll={getPosition}>
-        <div className="container" ref={myRef1} id="branch1">
+				<section className="branch"  >
+        <div className="container" >
           <div className="row">
             <div className="col-md-12 ">
               <div className="heading-sec">
@@ -476,7 +419,102 @@ function StockBroker() {
 				
 
 
+			</main>:
+			<main className='home-main'>
+
+
+			<section className="stockbanner">
+				{
+					content?.map((res, i) => {
+						return (
+							
+
+							
+			
+									<div className="container" onScroll={getPosition}>
+								<div className="row align-items-start" ref={myRef1} id="branch1">
+									<div className="col-xl-8 col-md-6">
+										<div className="wrap-banner">
+											<div className="heading-sec" key={i}>
+												<h1 className="big-ttl"><span className='highlightblue'>{res.bannerheading}</span>  {res.bannerheadingright}</h1>
+												<p className="text">{res.banner_view_less}{!showterm ? <span onClick={() => { setshowterm(true) }}>... <em className="btn-read">View more</em></span> : ""}{showterm ? <span>&nbsp;{res.banner_view_more}
+													<span onClick={() => { setshowterm(false) }}>&nbsp;<em className="btn-read">View less</em></span></span> : ""}</p>
+											</div>
+											<div className="details">
+												<div className="navigation">
+													<a href={res.direction} target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"} /></a>
+												</div>
+												<a href={`tel:${res.contact_no}`} target="_blank" class="calldetail2">
+													<span className="callwrap">
+														<LazyLoader src={Call} alt={"Contact Number for Stock Broker in Mumbai"} className={"img-fluid"} width={"34"} height={"34"} />
+													</span>
+													<span class="text">{res.contact_no}</span>
+												</a>
+											</div>
+											<div className="companydetail">
+												<div className="address">
+													<p className="heading">{res.address}</p>
+													<p className="text">{res.address_detail}</p>
+												</div>
+												<div className="timing">
+													<p className="heading">{res.hours}</p>
+													<p className="text"><span className="day">{res.day}</span> <span className="time">{res.working_time}</span></p>
+													<p className="text"><span className="day">{res.extra_day}</span> <span className="time">{res.extra_hour}</span></p>
+												</div>
+											</div>
+
+
+										</div>
+									</div>
+									{
+							ischeck ?
+									<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
+
+									<GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+								<DematAccountForm />
+							</GoogleReCaptchaProvider>
+									</div>:
+									<div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm" onMouseOver={()=>setIscheck(true)}>
+
+									
+								<DematAccountForm />
+						   
+									</div>
+					}
+
+								</div>
+								<div className="row">
+									<div className="col-xl-8 col-md-12">
+										<div className="companydetail companydetail-tab">
+											<div className="address">
+												<p className="heading">{res.address}</p>
+												<p className="text">{res.address_detail}</p>
+											</div>
+											<div className="timing">
+												<p className="heading">{res.hours}</p>
+												<p className="text"><span className="day">{res.day}</span> <span className="time">{res.working_time}</span></p>
+												<p className="text"><span className="day">{res.extra_day}</span> <span className="time">{res.extra_hour}</span></p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+								
+							
+
+						)
+					})
+				}
+
+			</section>
 			</main>
+					
+			}
+
+			{/* {
+				skeleton ? <Template1 /> : */}
+			
+				
 			{/* } */}
 
 
