@@ -8,12 +8,39 @@ import LazyLoader from '../Common-features/LazyLoader';
 import Equity from "../../Data/Equity";
 import DematAccountForm from '../Common-features/DematAccountForm'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { useEffect } from "react";
 
 function Banner() {
     const [selected, setSelected] = useState(0);
+    // const[showCaptcha, setshowCaptcha ] = useState(false);
+	const [ischeck, setIscheck] = useState(false);
+    const [view, setView] = useState({
+		matches: window.innerWidth < 767 ? false : true,
+	});
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //         setshowCaptcha(true);
+    //     },3000) 
+    // },[])
+
+    useEffect(() => {
+		let mediaQuery = window.matchMedia("(min-width: 767px)");
+		mediaQuery.addListener(setView);
+		// this is the cleanup function to remove the listener
+		return () => mediaQuery.removeListener(setView);
+	}, []);
+
+    useEffect(() => {
+        new PerformanceObserver((entryList) => {
+            for (const entry of entryList.getEntriesByName('first-contentful-paint')) {
+              console.log('FCP candidate:', entry.startTime, entry);
+            }
+          }).observe({type: 'paint', buffered: true});
+    },[])
 
     return (
-        <div>
+        <div onMouseOver={() => setIscheck(true)}>
             <section className="equity-bannersection ipo-equity">
                 <div className="container">
                     <div className="row gx-5 align-items-center">
@@ -42,9 +69,16 @@ function Banner() {
                         </div>
                         <div className="col-md-6">
                             <div className="rightsec d-flex justify-content-end" id="ipoForm">
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                    <DematAccountForm />
-                                </GoogleReCaptchaProvider>
+                                {
+                                   ischeck ?
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            <DematAccountForm />
+                                        </GoogleReCaptchaProvider>:
+                                        view && !view.matches ?
+                                        "" :
+                                        <DematAccountForm />
+                                }
+                                
                             </div>
                         </div>
                     </div>
