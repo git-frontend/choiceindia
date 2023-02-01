@@ -82,9 +82,8 @@
                 width: 3.8rem;
                 height: 3.8rem;
                 border-radius: 50%;
-                
-
             }
+            
         }
         .calldetail2{
             display: inline-flex;
@@ -105,8 +104,8 @@
                 background-color: transparent;
                 text-decoration: none;
                 border-radius: 60px;
-                height: 3.8rem;
-                width: 3.8rem;
+                height: 3.7rem;
+                width: 3.7rem;
                 max-width: inherit;
                 overflow: hidden;
                 position: fixed;
@@ -166,6 +165,18 @@
             }
           }
        
+        }
+        &.details-top{
+            .navigation{
+                @media (max-width:$sm) {
+                    bottom: 90px;
+                }
+            }
+            .calldetail2{
+                @media (max-width:$sm) {
+                    bottom: 150px;
+                }
+            }       
         }
         
     }

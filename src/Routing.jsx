@@ -696,31 +696,31 @@ function Routing() {
                                 < LazyOfferDocument />
                             </React.Suspense>
                         } />
-                          {/* <Route exact path='/stock-broker-in-mumbai' element={
+                          <Route exact path='/stock-broker-in-mumbai' element={
                             <React.Suspense>
                                 < LazyStockBroker />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/stock-broker-in-bangalore' element={
+                        } />
+                        <Route exact path='/stock-broker-in-bangalore' element={
                             <React.Suspense>
                                 < LazyStockBroker />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/stock-broker-in-chennai' element={
+                        } />
+                        <Route exact path='/stock-broker-in-chennai' element={
                             <React.Suspense>
                                 < LazyStockBroker />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/stock-broker-in-hyderabad' element={
+                        } />
+                        <Route exact path='/stock-broker-in-hyderabad' element={
                             <React.Suspense>
                                 < LazyStockBroker />
                             </React.Suspense>
-                        } /> */}
-                        {/* <Route exact path='/stock-broker-in-delhi' element={
+                        } />
+                        <Route exact path='/stock-broker-in-delhi' element={
                             <React.Suspense>
                                 < LazyStockBroker />
                             </React.Suspense>
-                        } /> */}
+                        } />
                         <Route exact path='/nach-cancellation' element={
                             <React.Suspense>
                                 < LazyNachCancellation />
