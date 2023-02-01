@@ -660,7 +660,7 @@ function DematAccountForm(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
+                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" target="_blank" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}
