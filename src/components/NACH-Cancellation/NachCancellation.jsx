@@ -63,7 +63,7 @@ function NachCancellation() {
     setShowLoader(true);
     rest.NACHCancellation(request).then(res => {
       setShowLoader(false);
-      console.log("check",res)
+      // console.log("check",res)
       if (res && res.status === 200 && res.data && res.data.Message === 'success') {
         reset();
         setIsError(false);
