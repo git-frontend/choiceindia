@@ -24,20 +24,20 @@ function Banner() {
     //     },3000) 
     // },[])
 
-    useEffect(() => {
-		let mediaQuery = window.matchMedia("(min-width: 767px)");
-		mediaQuery.addListener(setView);
-		// this is the cleanup function to remove the listener
-		return () => mediaQuery.removeListener(setView);
-	}, []);
+    // useEffect(() => {
+	// 	let mediaQuery = window.matchMedia("(min-width: 767px)");
+	// 	mediaQuery.addListener(setView);
+	// 	// this is the cleanup function to remove the listener
+	// 	return () => mediaQuery.removeListener(setView);
+	// }, []);
 
-    useEffect(() => {
-        new PerformanceObserver((entryList) => {
-            for (const entry of entryList.getEntriesByName('first-contentful-paint')) {
-              console.log('FCP candidate:', entry.startTime, entry);
-            }
-          }).observe({type: 'paint', buffered: true});
-    },[])
+    // useEffect(() => {
+    //     new PerformanceObserver((entryList) => {
+    //         for (const entry of entryList.getEntriesByName('first-contentful-paint')) {
+    //           console.log('FCP candidate:', entry.startTime, entry);
+    //         }
+    //       }).observe({type: 'paint', buffered: true});
+    // },[])
 
     return (
         <div onMouseOver={() => setIscheck(true)}>
@@ -74,8 +74,6 @@ function Banner() {
                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm />
                                         </GoogleReCaptchaProvider>:
-                                        view && !view.matches ?
-                                        "" :
                                         <DematAccountForm />
                                 }
                                 
