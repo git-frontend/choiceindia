@@ -4,7 +4,7 @@ const language = {
         title: 'Open Account Now',
         moblbl: 'Mobile Number',
         referId: 'Have a referral code?',
-        referPlaceholder: 'Referral code',
+        referPlaceholder: 'Referral Code',
         invalidmob: 'Invalid Mobile Number',
         reqmob: 'Mobile Number is Required',
         otpbtn: 'Send OTP',
