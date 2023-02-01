@@ -1,0 +1,559 @@
+@import '../../assets/css/customvariable.scss';
+@import '../../assets/css/common.scss';
+
+
+
+
+
+// banner section
+.stockbanner{
+    padding: 12rem 0;
+    background-color: $bgolor-lightwhite;
+    @media (max-width:$sm) {
+        padding: 4rem 0;
+    }
+    @media (min-width:$sm-x) and (max-width:$md) {
+        padding: 6rem 0;
+    }
+    .big-ttl{
+        @media (min-width:$sm-x) and (max-width:$md) {
+            font-size: 2.5rem;
+        }
+        @media (max-width:$sm) {
+           margin-bottom: 2rem;
+        }
+    }
+    .highlightblue{
+        color: $gradientclr2;
+    }
+    .text{
+        width: 90%;
+        padding-bottom: 14px;
+        @media (min-width:$sm-x) and (max-width:$md) {
+            font-size: 1.5rem;
+            line-height: 1.5;
+        }
+        @media (max-width:$sm) {
+            width: 100%;
+        }
+        .btn-read{
+            font-weight: 700;
+            font-style: normal;
+            font-size: 1.75rem;
+            cursor: pointer;
+            @media (min-width:$sm-x) and (max-width:$md) {
+                font-size: 1.5rem;
+            }
+            @media (max-width:$sm) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .details{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @media (max-width:$sm) {
+            justify-content: flex-end;
+            flex-direction: column-reverse;
+            bottom: 1.5rem;
+            right: 9px;
+            z-index: 999999;
+        }
+        .navigation{
+                padding: 0 ;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                width: 4.8rem;
+                height: 4.8rem;
+                border-radius: 12px;
+                border: 1px solid $whiteColor;
+                background-color: $whiteColor;
+                box-shadow: 0px 0px 24px $stockboxshadow;
+            @media (max-width:$sm) {
+                border-radius: 50%;
+                margin-top: 3rem;
+                position: fixed;
+                z-index: 999;
+                bottom: 25px;
+                right: 16px;
+                padding: 0;
+                width: 3.8rem;
+                height: 3.8rem;
+                border-radius: 50%;
+                
+
+            }
+        }
+        .calldetail2{
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition:width 0.2s;
+            margin-left: 2rem;
+            
+            .text{
+                width: calc(100% - 70px);
+                white-space: nowrap;
+                padding: 0;
+                font-size: 1.3rem;
+                color: $primary;
+              }
+            @media (max-width:$sm) {
+                background-color: transparent;
+                text-decoration: none;
+                border-radius: 60px;
+                height: 3.8rem;
+                width: 3.8rem;
+                max-width: inherit;
+                overflow: hidden;
+                position: fixed;
+                right: 16px;
+                z-index: 9999;
+                bottom: 90px;
+                flex-wrap: nowrap;
+                margin-left: 0;
+             
+            &:hover {
+                width: 14rem;
+                overflow: inherit;
+              }
+              .text{
+                white-space: nowrap;
+                padding: 0;
+                padding-left: 0;
+                font-size: 1.2rem;
+                background: $whiteColor;
+                height: 1.875rem;
+                line-height: 1.875rem;
+                border-radius: 0 1.25rem 1.25rem 0;
+                width: calc(100% - 45px);
+                box-shadow: 0 0 10px $boxshadow;
+                text-align: center;
+                position: relative;
+                left: -10px;
+              }
+              
+            
+        }
+        .callwrap{
+            
+            width: 4.8rem;
+            height: 4.8rem;
+            margin-right: 0.9375rem;
+            padding: 0;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+            background: $whiteColor;
+            border-radius: 12px;
+            position: relative;
+             @media (max-width:$sm) {
+                    width: 3.8rem;
+                    height: 3.8rem;
+                    padding: 0;
+                    left: 0;
+                    box-shadow: 0 0 10px $stockboxshadow;
+                    border-radius: 50%;
+                    margin-right: 0;
+                    z-index: 99;
+             }
+            
+            img{
+                border-radius: 50%;
+            }
+          }
+       
+        }
+        
+    }
+    .companydetail{
+        background-color: $primary;
+        border-radius: 1rem;
+        margin-top: 4rem;
+        padding: 18px 15px;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        @media (max-width:$sm) {
+            padding: 18px 0 18px 15px;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        @media (min-width:$sm-x) and (max-width:$md) {
+            margin-top: 4rem;
+            width: 100%;
+            display: none;
+        }
+        .address{
+            width: 50%;
+            border-right: 1px solid $darkColorgray;
+            
+            .heading{
+                color: $whiteColor;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-semibold;
+            }
+            .text{
+                color: $textcolor;    
+                font-size: 1.25rem;
+                line-height: 1.5;
+                width: 98% !important;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                .day{
+                    width: 50%;
+                }
+            }
+        }
+        .timing{
+            width: 50%;
+            padding-left: 2rem;
+            @media (max-width:$sm) {
+                padding-left: 1rem;
+            }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                padding-left: 1rem;
+            }
+            .heading{
+                color: $whiteColor;
+                font-size: 1.25rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-semibold;
+            }
+            .text{
+                color: $textcolor;    
+                font-size: 1.25rem;
+                line-height: 1.5;
+                display: flex;
+                margin-bottom: 0;
+                @media (max-width:$sm) {
+                    flex-direction: column;
+                }
+                .day{
+                    width: 50%;
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                    
+                }
+                .time{
+                    width: 50%;
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                   
+                }
+            }
+        }
+        &.companydetail-tab{
+            display: none;
+            @media (min-width:$sm-x) and (max-width:$md) {
+                display: flex;
+            }
+        }
+    }
+}
+// end banner section
+
+
+// financial service
+.financialservices{
+    padding: 8.5rem 0;
+    .services-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content:center;
+        .slick-dots{
+            @media (max-width:$sm) {
+                bottom: -60px;
+            }
+
+        }
+        .service-item{
+            padding: 1.5rem 1.3rem;
+            border: 1px solid $lightgray2;
+            border-radius: 12px;
+            margin:2rem 1rem;
+            width: 19%;
+            text-align: center;
+            
+            
+            @media (max-width:$sm) {
+                width: 90% !important;
+                display: block !important;
+                min-height: 13rem;
+                height: 100%;
+               margin-left: 4rem;
+            
+            }
+            @media (min-width:$sm-x) and (max-width:$md) {
+                width: 21%;
+                padding: 1.5rem 0.5rem;
+            }
+            h5{
+                margin-top: 1.5rem;
+                color: $primary;
+                font-size: 1.75rem;
+                line-height: 1.875rem;
+                @media (max-width:$sm) {
+                    font-size: 1.5rem;
+                }
+                @media (min-width:$sm-x) and (max-width:$md) {
+                    font-size: 1.3rem;
+                }
+            }
+            &:hover{
+                background-color: $bluetext;
+                h5{
+                    color: $whiteColor;
+                }
+                svg{
+                    path{
+                        fill: $whiteColor;
+                    }
+                  
+                }
+            }
+        }
+    }
+}
+// end financial services
+
+// open now section
+
+.openaccount-sec{
+    padding: 0rem 0 5.5rem 0;
+    .padding-mb-0{
+        @media (max-width:$sm) {
+            padding: 0;
+        }
+    }
+    .wrapper{
+        background-image: url(../../assets/images/stock-broker-mumbai/open-now-bg.svg);
+        background-size: cover;
+        object-fit: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 1rem;
+        padding: 4.5rem 4.5rem 3.0625rem;
+        display: flex;
+        align-items: center;
+        @media (max-width:$sm) {
+            flex-direction: column;
+            padding: 4rem 2.5rem;
+            border-radius: 0;
+        }
+        @media (min-width:$sm-x) and (max-width:$md) {
+            padding: 2.5rem;
+        }
+        .left-sec{
+            width: 60%;
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .title-secnd{
+                font-size: 2.5rem;
+                @media (max-width:$sm) {
+                    font-size: 2rem;
+                }
+                .free{
+                    background-image: url(../../assets/images/stock-broker-mumbai/free-bg.png);
+                    background-size: contain;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    padding: 1.7rem;
+                    color: $bluetext;
+                  
+                    line-height: 3.125rem;
+    
+                }
+                .borderbottom{
+                   position: relative;
+                   z-index: 1;
+                   background-image: url(../../assets/images/stock-broker-mumbai/line.svg);
+                   background-repeat: no-repeat;
+                   background-size: contain;
+                   /* bottom: 1px; */
+                   background-position: 50% 74%;
+                   @media (max-width:$sm) {
+                    font-size: 2.5rem;
+                    }
+               
+                }
+            }
+         
+            .listing{
+                margin-top: 3.5rem;
+                @media (max-width:$sm) {
+                    margin: 2.5rem 0;
+                 }
+                .firstrow, .secondrow{
+                    display: flex;
+                    @media (max-width:$sm) {
+                       flex-direction: column;
+                    }
+                    .texting{
+                        width: 50%;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 1.375rem;
+                        @media (max-width:$sm) {
+                            width: 100%;
+                        }
+                        &:before{
+                            content: '';
+                            position: absolute;
+                            display: block;
+                            width: 1.4rem;
+                            height: 1.4rem;
+                           
+                            background-image: url(../../assets/images/stock-broker-mumbai/tick.svg);
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                        }
+                        span{
+                            padding-left: 3rem;
+                            font-size:1.5rem;
+                            line-height: 2rem;
+                            color: $darkblack;
+                        }
+                    }
+                }
+            }
+        }
+        .right-sec{
+            width: 40%;
+            text-align: right;
+            @media (max-width:$sm) {
+                width: 100%;
+                text-align: left;
+            }
+            .btn-bg-dark{
+                position: relative;
+                padding: 1.3rem 2rem !important;
+                text-align: left;
+                @media (max-width:$sm) {
+                    padding: 1rem 2rem !important;
+                }
+                &::before{
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 2rem;
+                    height: 2rem;
+                    background-image: url(../../assets/images/stock-broker-mumbai/arrow.svg);
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    top: 1.4rem;
+                    right: 1rem;
+                    @media (max-width:$sm) {
+                        top: 13px;
+                    }
+                }
+            }
+        }
+    }
+    
+}
+
+
+
+
+.branch{
+    padding: 6rem 0;
+    @media (max-width:$sm) {
+        padding: 0 0 6rem 0;
+      }
+    .branchsubtext{
+        font-size: 2.3rem;
+        @media (max-width:$sm) {
+          margin-bottom: 0 !important;
+        }
+    }
+    .branches-list{
+
+        .branch-item{
+            
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            @media (max-width:$sm) {
+            }
+            @media (min-width:$sm-x) and (max-width:$md) {
+            }
+            h5{
+                margin-top: 1.5rem;
+                color: $primary;
+                font-size: 1.75rem;
+                line-height: 1.875rem;
+                font-weight: 600;
+                @media (max-width:$sm) {
+                    font-size: 1.5rem;
+                }
+            }
+            a{
+                text-decoration: none;
+            }
+            img{
+                margin: 0 auto;
+            }
+            &:hover{
+                h5{
+                    color: $bluetext;
+                }
+            }
+        }
+    }
+}
+
+// best in mumbai
+.best-in-mumbai{
+    padding: 12rem 0;
+    background-color: $bgolor-lightwhite;
+    align-items: center;
+    @media (max-width:$sm) {
+        padding: 6rem 0;
+    }
+    .left-sec{
+        .btn-read{
+            font-style: normal;
+            font-size: 1.75rem;
+            color: $secondary;
+            font-weight: 700;
+            cursor: pointer;
+            @media (max-width:$sm) {
+                font-size: 1.5rem;
+            }
+        }
+    }
+    .right-sec{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+            @media (max-width:$sm) {
+                display: none;
+            }
+       
+        
+    }
+}
+// end best in mumbai section
+
+
+.heading-sec{
+    p{
+        br{
+            display: block;
+        }
+    }
+}  
+
+.mb-0{
+    margin-bottom: 0 !important;
+}

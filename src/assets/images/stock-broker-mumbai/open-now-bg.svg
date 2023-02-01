@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1238" height="268" viewBox="0 0 1238 268">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_4028" data-name="Rectangle 4028" width="1238" height="268" rx="20" transform="translate(64 1573)" fill="rgba(37,184,175,0.76)"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="0.5" cy="0.5" r="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#919191"/>
+    </radialGradient>
+    <linearGradient id="linear-gradient" x1="-0.018" y1="0.358" x2="1.023" y2="0.29" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="0.495" stop-color="#b2b2b2"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-0.018" y1="0.358" x2="1.023" y2="0.29" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#777"/>
+      <stop offset="0.495" stop-color="#fff"/>
+      <stop offset="1" stop-color="#878787"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_28082" data-name="Group 28082" transform="translate(-64 -1581)">
+    <rect id="Rectangle_4007" data-name="Rectangle 4007" width="1238" height="268" rx="20" transform="translate(64 1581)" fill="rgba(37,184,175,0.76)"/>
+    <g id="Mask_Group_131" data-name="Mask Group 131" transform="translate(0 8)" clip-path="url(#clip-path)">
+      <g id="Group_26929" data-name="Group 26929" transform="translate(1154.421 2256.406) rotate(-126)" opacity="0.28">
+        <g id="Group_26897" data-name="Group 26897" transform="matrix(0.999, 0.035, -0.035, 0.999, 320.917, -20.561)">
+          <path id="Path_19930" data-name="Path 19930" d="M117.362,0A117.362,117.362,0,1,1,0,117.362,117.362,117.362,0,0,1,117.362,0Z" transform="translate(104.405 104.405)" opacity="0.16" fill="url(#radial-gradient)"/>
+          <path id="Subtraction_1" data-name="Subtraction 1" d="M161.614,323.227a164.193,164.193,0,0,1-16.524-.834A161.373,161.373,0,0,1,.834,178.137a164.032,164.032,0,0,1,0-33.048A161.371,161.371,0,0,1,145.089.834a164.034,164.034,0,0,1,33.048,0A161.37,161.37,0,0,1,322.392,145.089a164.02,164.02,0,0,1,0,33.048A161.371,161.371,0,0,1,178.138,322.392,164.193,164.193,0,0,1,161.614,323.227Zm0-319.877C74.346,3.35,3.35,74.346,3.35,161.613s71,158.264,158.264,158.264,158.264-71,158.264-158.264a159.065,159.065,0,0,0-4.4-37.239A158.134,158.134,0,0,0,161.614,3.35Z" transform="translate(166.474 0) rotate(31)" fill="url(#linear-gradient)"/>
+          <circle id="Ellipse_63" data-name="Ellipse 63" cx="8.236" cy="8.236" r="8.236" transform="translate(60.58 254.121)" fill="#e2e2e2"/>
+          <ellipse id="Ellipse_64" data-name="Ellipse 64" cx="8.236" cy="8.459" rx="8.236" ry="8.459" transform="translate(316.24 90.939)" fill="#e2e2e2"/>
+          <path id="Subtraction_2" data-name="Subtraction 2" d="M117.314,234.629a119.21,119.21,0,0,1-11.995-.606A117.14,117.14,0,0,1,.606,129.309a119.071,119.071,0,0,1,0-23.989A117.139,117.139,0,0,1,105.32.606a119.071,119.071,0,0,1,23.989,0A117.139,117.139,0,0,1,234.023,105.32a119.076,119.076,0,0,1,0,23.989A117.139,117.139,0,0,1,129.309,234.023,119.211,119.211,0,0,1,117.314,234.629Zm0-232.2a114.438,114.438,0,1,0,37.43,6.239A115.013,115.013,0,0,0,117.314,2.431Z" transform="translate(104.23 104.23)" opacity="0.27" fill="url(#linear-gradient-2)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
