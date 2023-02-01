@@ -33,7 +33,7 @@ function StockBroker() {
 	const [view, setView] = useState({
 		matches: window.innerWidth < 767 ? false : true,
 	});
-
+	let storeclass="details " + (ischeck ? "details-top":"")
 	let values;
 	let AllFilesValue = {};
 	let pageLocation;
@@ -218,7 +218,7 @@ function StockBroker() {
 															<p className="text">{res.banner_view_less}{!showterm ? <span onClick={() => { setshowterm(true) }}>... <em className="btn-read">View more</em></span> : ""}{showterm ? <span>&nbsp;{res.banner_view_more}
 																<span onClick={() => { setshowterm(false) }}>&nbsp;<em className="btn-read">View less</em></span></span> : ""}</p>
 														</div>
-														<div className="details">
+														<div className={storeclass}>
 															<div className="navigation">
 																<a href={res.direction} target="_blank"> <LazyLoader src={Navigation} alt={"Google Map Location for Stock Broker in Mumbai"} className={"img-fluid"} width={"28"} height={"28"} /></a>
 															</div>
