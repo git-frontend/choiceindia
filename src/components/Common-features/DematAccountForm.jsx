@@ -17,6 +17,7 @@ import infoimg from '../../assets/images/Info.svg';
 import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import backIcon from '../../assets/images/backspace.svg';
 
 function DematAccountForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -28,7 +29,7 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const type1= (window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
     const [referID, setReferID] = useState('');
 
@@ -384,6 +385,11 @@ function DematAccountForm(props) {
         setShowReferInput(() => true);
     }
 
+    function showReferBlock2() {
+        setReferID(() => '');
+        setShowReferInput(() => false);
+    }
+
     // useEffect(() => {
     //     const interval = setInterval(() => {
     //         if (!count) {
@@ -609,8 +615,9 @@ function DematAccountForm(props) {
 
                         {
                             (showReferInput)?
-                            <div className="sub-formgrp sub-fromgrp2">
-                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" className="formcontrol digit-otp" autoComplete="off" isInvalid={errors.invalidMobile || errors.required} value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            <div className="sub-formgrp">
+                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
                             </div> : ''
                         }
 
@@ -653,7 +660,7 @@ function DematAccountForm(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
+                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" target="_blank" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}

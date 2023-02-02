@@ -63,7 +63,7 @@ function NachCancellation() {
     setShowLoader(true);
     rest.NACHCancellation(request).then(res => {
       setShowLoader(false);
-      console.log("check",res)
+      // console.log("check",res)
       if (res && res.status === 200 && res.data && res.data.Message === 'success') {
         reset();
         setIsError(false);
@@ -102,22 +102,22 @@ function NachCancellation() {
                   <Form onSubmit={handleSubmit(submitFormData)} autoComplete="off" className="form-prnt">
                     <Form.Group className="formgrp formgrp-txt" controlId="fullNameControl">
                       <Form.Label className="formlabel">Full Name<span className="warning">*</span> </Form.Label>
-                      <Form.Control type="text" name="fullName" className="formcontrol" placeholder="Jake paul" {...register('fullName')} />
+                      <Form.Control type="text" name="fullName" className="formcontrol" placeholder="Enter Full Name" {...register('fullName')} />
                       <span className="text-danger"> {errors?.fullName?.message} </span>
                     </Form.Group>
                     <Form.Group className="formgrp formgrp-txt" controlId="accountNumControl">
                       <Form.Label className="formlabel">Loan Account Number<span className="warning">*</span> </Form.Label>
-                      <Form.Control type="text" name="accountNum" className="formcontrol" placeholder="356323568923" {...register('accountNum')} onChange={(e) => handleNumbers(e, 'accountNum')} />
+                      <Form.Control type="text" name="accountNum" className="formcontrol" placeholder="Enter Loan Account Number" {...register('accountNum')} onChange={(e) => handleNumbers(e, 'accountNum')} />
                       <span className="text-danger"> {errors?.accountNum?.message} </span>
                     </Form.Group>
                     <Form.Group className="formgrp formgrp-txt" controlId="mobileControl">
                       <Form.Label className="formlabel">Registered Mobile Number<span className="warning">*</span> </Form.Label>
-                      <Form.Control type="text" name="mobile" className="formcontrol" placeholder="8462950637" {...register('mobile')} onChange={(e) => handleNumbers(e, 'mobile')} />
+                      <Form.Control type="text" name="mobile" className="formcontrol" placeholder="Enter Registered Mobile Number" {...register('mobile')} onChange={(e) => handleNumbers(e, 'mobile')} />
                       <span className="text-danger"> {errors?.mobile?.message} </span>
                     </Form.Group>
                     <Form.Group className="formgrp formgrp-txt" controlId="emailControl">
                       <Form.Label className="formlabel">Email<span className="warning">*</span> </Form.Label>
-                      <Form.Control type="text" name="email" className="formcontrol" placeholder="vjkrstamio@gmail.com" {...register('email')} />
+                      <Form.Control type="text" name="email" className="formcontrol" placeholder="Enter Email Id" {...register('email')} />
                       <span className="text-danger"> {errors?.email?.message} </span>
                     </Form.Group>
 
