@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import img1 from '../../assets/images/ipo/tag-list.svg'
+import img1 from '../../assets/images/ipo/ipo-investment-process.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';

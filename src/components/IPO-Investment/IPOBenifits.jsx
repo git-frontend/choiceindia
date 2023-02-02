@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from '../../assets/images/ipo/discount-price.svg'
-import img2 from '../../assets/images/ipo/short-term.svg'
-import img3 from '../../assets/images/ipo/listing-gains.svg'
+import img1 from '../../assets/images/ipo/ipo-account/ipo-investment-at-discounted-price.svg'
+import img2 from '../../assets/images/ipo/ipo-account/ipo-investment-with-more-profit-in-short-term.svg'
+import img3 from '../../assets/images/ipo/ipo-account/invest-in-ipo-for-listing-gains.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";

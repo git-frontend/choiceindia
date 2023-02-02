@@ -1,8 +1,8 @@
 import React from "react";
-import img1 from '../../assets/images/ipo/ipo-report.svg'
-import img2 from '../../assets/images/ipo/ipo-recommendation.svg'
-import img3 from '../../assets/images/ipo/ipo-clients.svg'
-import img4 from '../../assets/images/ipo/experience.svg'
+import img1 from '../../assets/images/ipo/ipo-account/ipo-invesment-with-expert-report.svg'
+import img2 from '../../assets/images/ipo/ipo-account/ipo-investment-with-advisory-video-on-youtube.svg'
+import img3 from '../../assets/images/ipo/ipo-account/ipo-clients.svg'
+import img4 from '../../assets/images/ipo/ipo-account/ipo-investment-with-25-year-of-experienced-broker.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
