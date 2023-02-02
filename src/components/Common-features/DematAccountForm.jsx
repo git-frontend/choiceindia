@@ -72,9 +72,9 @@ function DematAccountForm(props) {
     const { executeRecaptcha } = useGoogleReCaptcha();
     
 
-    useEffect(() => {
-        console.log('PRR',props.language)
-    },[])
+    // useEffect(() => {
+    //     console.log('PRR',props.language)
+    // },[])
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
