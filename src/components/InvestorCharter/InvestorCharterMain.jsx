@@ -90,7 +90,7 @@ function InvestorCharterMain() {
                                 return (
                                     <div className="row quicklinkswrap">
                                         <div className="col-md-12">
-                                            <h3 className="head"></h3>
+                                            <h3 className="head">{key}</h3>
 
                                             <div className="subtext">
 
