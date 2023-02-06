@@ -8,8 +8,67 @@ import Vector1 from '../../assets/images/app/signal-arrow.svg';
 import Vector2 from '../../assets/images/app/sector.svg';
 import appstorelight from '../../assets/images/icons/app-store-light.svg';
 import LazyLoader from '../Common-features/LazyLoader';
+import {useEffect, useState} from 'react';
 
 function AppTradeBenefits() {
+
+  const[checkBrowser, setcheckBrowser] = useState(() => '');
+  const[checkDevice, setcheckDevice] = useState(() => '');
+
+  function getBrowserDetails() {
+
+    console.log('TRR',navigator.userAgent)
+   
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
+    {
+        setcheckBrowser(() => 'Opera');
+    }
+    else if(navigator.userAgent.indexOf("Edg") != -1 )
+    {
+        setcheckBrowser(() => 'Edge');
+    }
+    else if(navigator.userAgent.indexOf("Chrome") != -1 )
+    {
+        setcheckBrowser(() => 'Chrome');
+    }
+    else if(navigator.userAgent.indexOf("Safari") != -1)
+    {
+        setcheckBrowser(() => 'Safari');
+    }
+    else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+        setcheckBrowser(() => 'Firefox');
+    }
+    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+        setcheckBrowser(() => 'IE');
+    }  
+    else 
+    {
+        setcheckBrowser(() => 'unknown');
+    }
+
+    
+  }
+
+  function getDeviceDetails() {
+    var platform = ["Windows", "Android", "iOS"];
+
+    console.log('DD',navigator.userAgentData.platform)
+    for (var i = 0; i < platform.length; i++) {
+
+        if (navigator.userAgentData.platform.indexOf(platform[i]) >- 1) {
+
+            console.log('DEEVID',platform[i])
+        }
+    }
+  }
+
+  useEffect(() => {
+    getBrowserDetails();
+    getDeviceDetails();
+    console.log('BROW',checkBrowser);
+  },[])
 
   return (
     <div className='App-main'>
@@ -111,6 +170,10 @@ function AppTradeBenefits() {
 
                 <span className='whitecolor'>App Store</span>
               </a>
+            </div>
+
+            <div>
+
             </div>
           </div>
         </div>

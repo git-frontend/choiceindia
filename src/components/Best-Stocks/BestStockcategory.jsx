@@ -672,7 +672,7 @@ function urlLink(){
                                                <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                              </div>
                                              <div className="bottom">
-                                               <h6 className="bottom_small_text">Exp. Returns</h6>
+                                               <h6 className="bottom_small_text">Expected By</h6>
                                                <h4 className="bottom_big_text">{utils.formatDate(new Date(response?.report_expiry), "dd MMM , yyyy")}</h4>
                                              </div>
                                            </div>

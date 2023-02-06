@@ -199,6 +199,11 @@ export class API_URLS {
     offerUrl='items/OfferDocument'
     /** escalation matrix */
     escalation ='items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
+    /** stock broker content */
+    contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
+    /** sub broker city */
+    cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+
 
 
 
@@ -736,6 +741,13 @@ export class API_URLS {
         return this.bannerURL + this.escalation
     }
 
+    getSubBrokerURL(location){
+        return this.bannerURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
+    }
+
+    getSubBrokerCityURL(){
+        return this.bannerURL + this.cityUrl
+    }
     getNACHCancellationURL() {
         return this.nachBaseURL + this.nachCancellationURL
     }

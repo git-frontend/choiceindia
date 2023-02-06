@@ -323,6 +323,14 @@ body{
         float: right;
     }
 
+
+    .text-danger{
+        font-size: 1.2rem;
+        font-family: $font-family-poppins-regular;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
     .banner-title2{
         font-family: $font-family-poppins-semibold;
         color: $yellowColor;
