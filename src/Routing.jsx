@@ -133,6 +133,7 @@ const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/NachCancellation'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
+const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'))
 function Routing() {
 
 
@@ -724,6 +725,26 @@ function Routing() {
                         <Route exact path='/nach-cancellation' element={
                             <React.Suspense>
                                 < LazyNachCancellation />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/All-Share-Market-Holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/NSE-Holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/BSE-Holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/MCX-Holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
                             </React.Suspense>
                         } />
  
