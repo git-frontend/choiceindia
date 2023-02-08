@@ -177,7 +177,7 @@ function hideLoader(type) {
         return () => clearInterval(interval);
       }
       setCount(seconds => seconds - 1);
-    }, 100);
+    }, 1000);
     return () => clearInterval(interval);
   }, [count]);
 
