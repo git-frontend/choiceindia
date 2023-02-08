@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import "../Best-Stocks/best-stock.scss";
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import "./share-marlet-holiday.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
-import rest from "../../Services/rest";
-import utils from "../../Services/utils";
-import { API_URLS } from "../../Services/API-URLS";
+
 import "../Remisier/Remisier.scss";
 import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
@@ -52,7 +52,7 @@ function Holidayscategory() {
       behavior: "smooth"
     });
   }
- 
+
   setTimeout(() => {
     setSkeleton(() => false);
   }, 200)
@@ -105,7 +105,10 @@ function Holidayscategory() {
                       <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/BSE-Holidays" >BSE Holidays</Link></li>
                       <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/MCX-Holidays" >MCX Holidays</Link></li>
                     </ul>
-                    <p>Trading Holidays in 2023</p>
+
+                  </div>
+                  <div>
+                    <p className="title_para-second">Trading Holidays in 2023</p>
                   </div>
                 </div>
               </div>
@@ -114,7 +117,7 @@ function Holidayscategory() {
 
             <section className="main-parent">
               <div className="container">
-                <div className="content-tabs best-stock-tabs-cont active-content">
+                <div className="content-tabs best-stock-tabs-cont active-content holiday-content">
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
                       <div>
@@ -128,25 +131,156 @@ function Holidayscategory() {
                           </div> :
                           <div>
                             {
-                                <div className="row gx-5">
-                                        <div className="container">
-                                          {
-                                            toggleState == 0 ?
-                                            <div>hello 0</div>:
-                                            toggleState == 1 ?
-                                            <div>hello 1</div>:
-                                            toggleState == 2 ?
-                                            <div>hello 2</div>:
-                                            toggleState == 3 ?
-                                            <div>hello 3</div>:
-                                            ""
-                                          }
+                              <div className="row gx-5">
+                                <div className="container">
+                                  {
+                                    toggleState == 0 ?
+                                      <div className="row">
+                                        <div className="col-md-12">
+                                          <div className="holidays-table">
+                                            <div className="table-responsive wow fadeInUp">
+                                              <table class="table table-hover table-striped ">
+                                                <thead>
+                                                  <tr>
+                                                    <th width="20%">S.No </th>
+                                                    <th>Holidays</th>
+                                                    <th className="dropdown"> <NavDropdown title="All" id="navbarScrollingDropdown" className="top-nav-links login-btn ">
+                                                      <NavDropdown.Item className="nav-dropdown-links" href='' target="_blank"> January</NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>february</NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>March </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>April </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>May </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>June </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>July </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>August </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>September  </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>October </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>November </NavDropdown.Item>
+                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>December </NavDropdown.Item>
+                                                    </NavDropdown> </th>
+                                                    <th>Day</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td class="charges-heads">1</td>
+                                                    <td>Republic Day</td>
+                                                    <td>January 26, 2023</td>
+                                                    <td>Thursday</td>
+                                                  </tr>
+                                                  <tr class="grey-back">
+                                                    <td class="charges-heads">2</td>
+                                                    <td>Holi</td>
+                                                    <td>March 07, 2023</td>
+                                                    <td>Wednesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">3</td>
+                                                    <td>Ram Navami</td>
+                                                    <td>March 30, 2023</td>
+                                                    <td>Thursday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">4</td>
+                                                    <td>Mahavir Jayanti</td>
+                                                    <td>April 04, 2023</td>
+                                                    <td>Tuesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">5</td>
+                                                    <td>Good Friday</td>
+                                                    <td>April 07, 2023</td>
+                                                    <td>Friday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">6</td>
+                                                    <td>Dr.Baba Saheb Ambedkar Jayanti</td>
+                                                    <td>April 14, 2023</td>
+                                                    <td>Friday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">7</td>
+                                                    <td>Id-ul-fitr (Ramzan Id)</td>
+                                                    <td>April 21, 2023</td>
+                                                    <td>Friday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">8</td>
+                                                    <td>Maharashtra Day</td>
+                                                    <td>May 01, 2023</td>
+                                                    <td>Monday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">9</td>
+                                                    <td>Id-ul-adha (Bakri Id)</td>
+                                                    <td>June 28, 2023</td>
+                                                    <td>Wednesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">10</td>
+                                                    <td>Independence Day</td>
+                                                    <td>August 15, 2023</td>
+                                                    <td>Tuesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">11</td>
+                                                    <td>Ganesh Chaturthi</td>
+                                                    <td>September 19, 2023</td>
+                                                    <td>Tuesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">12</td>
+                                                    <td>Mahatma Gandhi Jayanti</td>
+                                                    <td>October 02, 2023</td>
+                                                    <td>Monday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">13</td>
+                                                    <td>Dussehra</td>
+                                                    <td>October 24, 2023</td>
+                                                    <td>Tuesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">14</td>
+                                                    <td>Diwali Balipratipada</td>
+                                                    <td>November 14, 2023</td>
+                                                    <td>Tuesday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">15</td>
+                                                    <td>Gurunanak Jayanti</td>
+                                                    <td>November 27, 2023</td>
+                                                    <td>Monday</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td class="charges-heads">16</td>
+                                                    <td>Christmas</td>
+                                                    <td>December 25, 2023</td>
+                                                    <td>Monday</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                            </div>
+                                          </div>
+                                          <div className="download_pdf">
+                                            <h3>NSE Holidays 2023 List</h3>
+                                          </div>
                                         </div>
-                                      
-                                   
-                                  
+                                      </div> :
+                                      toggleState == 1 ?
+                                        <div>hello 1</div> :
+                                        toggleState == 2 ?
+                                          <div>hello 2</div> :
+                                          toggleState == 3 ?
+                                            <div>hello 3</div> :
+                                            ""
+                                  }
                                 </div>
-                              
+
+
+
+                              </div>
+
                             }
 
                           </div>
