@@ -131,7 +131,7 @@ const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-
 
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
-const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/NachCancellation'));
+const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
 function Routing() {
 
