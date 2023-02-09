@@ -6,19 +6,16 @@ import "./share-marlet-holiday.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
 import "../Remisier/Remisier.scss";
-
-import "../Remisier/Remisier.scss";
-import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
-import noDataimg from '../../assets/images/no-data.webp';
-import { useRef } from 'react';
 import {
   useLocation,
 } from 'react-router-dom';
-import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import stockmarketholidays from "../../assets/images/share-market-holidays/pdf/stock-market-holidays-2023.pdf";
+import { FaRegFilePdf } from 'react-icons/fa';
 
+import Dropdown from 'react-bootstrap/Dropdown';
+import Form from 'react-bootstrap/Form';
 
 function Holidayscategory() {
 
@@ -100,10 +97,10 @@ function Holidayscategory() {
                   </div>
                   <div className="col-xl-8 col-md-12" id="best-stock">
                     <ul className="list-group list_group1">
-                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/All-Share-Market-Holidays"  > All</Link></li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/NSE-Holidays" >NSE Holidays</Link></li>
-                      <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/BSE-Holidays" >BSE Holidays</Link></li>
-                      <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/MCX-Holidays" >MCX Holidays</Link></li>
+                      <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/stock-market-holidays"  > All</Link></li>
+                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/nse-holidays" >NSE Holidays</Link></li>
+                      <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/bse-holidays" >BSE Holidays</Link></li>
+                      <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/mcx-ncdex-holidays" >MCX Holidays</Link></li>
                     </ul>
 
                   </div>
@@ -139,121 +136,140 @@ function Holidayscategory() {
                                         <div className="col-md-12">
                                           <div className="holidays-table">
                                             <div className="table-responsive wow fadeInUp">
-                                              <table class="table table-hover table-striped ">
+                                              <table className="table table-hover table-striped ">
                                                 <thead>
                                                   <tr>
                                                     <th width="20%">S.No </th>
                                                     <th>Holidays</th>
-                                                    <th className="dropdown"> <NavDropdown title="All" id="navbarScrollingDropdown" className="top-nav-links login-btn ">
-                                                      <NavDropdown.Item className="nav-dropdown-links" href='' target="_blank"> January</NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>february</NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>March </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>April </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>May </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>June </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>July </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>August </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>September  </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>October </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>November </NavDropdown.Item>
-                                                      <NavDropdown.Item className="nav-dropdown-links" target="_blank" href=''>December </NavDropdown.Item>
-                                                    </NavDropdown> </th>
+                                                    <th className="holidaydropdown">
+                                                      {/* <span className="downkey">All</span> */}
+                                                      {/* <div className="month-list">
+                                                        <form>
+                                                          <div class="form-group">
+                                                            <input type="checkbox" id="html"/>
+                                                              <label for="html">HTML</label>
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <input type="checkbox" id="css"/>
+                                                              <label for="css">CSS</label>
+                                                          </div>
+                                                          <div class="form-group">
+                                                            <input type="checkbox" id="javascript"/>
+                                                              <label for="javascript">Javascript</label>
+                                                          </div>
+                                                        </form>
+                                                      </div> */}
+                                                   <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        Dropdown Button
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item > <Form.Check type="checkbox" label="ALL" /></Dropdown.Item>
+        <Dropdown.Item > <Form.Check type="checkbox" label="jan" /></Dropdown.Item>
+        <Dropdown.Item > <Form.Check type="checkbox" label="feb" /> </Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+    
+
+                                                    </th>
+                                                    
                                                     <th>Day</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
                                                   <tr>
-                                                    <td class="charges-heads">1</td>
+                                                    <td className="charges-heads">1</td>
                                                     <td>Republic Day</td>
                                                     <td>January 26, 2023</td>
                                                     <td>Thursday</td>
                                                   </tr>
-                                                  <tr class="grey-back">
-                                                    <td class="charges-heads">2</td>
+                                                  <tr className="grey-back">
+                                                    <td className="charges-heads">2</td>
                                                     <td>Holi</td>
                                                     <td>March 07, 2023</td>
                                                     <td>Wednesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">3</td>
+                                                    <td className="charges-heads">3</td>
                                                     <td>Ram Navami</td>
                                                     <td>March 30, 2023</td>
                                                     <td>Thursday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">4</td>
+                                                    <td className="charges-heads">4</td>
                                                     <td>Mahavir Jayanti</td>
                                                     <td>April 04, 2023</td>
                                                     <td>Tuesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">5</td>
+                                                    <td className="charges-heads">5</td>
                                                     <td>Good Friday</td>
                                                     <td>April 07, 2023</td>
                                                     <td>Friday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">6</td>
+                                                    <td className="charges-heads">6</td>
                                                     <td>Dr.Baba Saheb Ambedkar Jayanti</td>
                                                     <td>April 14, 2023</td>
                                                     <td>Friday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">7</td>
+                                                    <td className="charges-heads">7</td>
                                                     <td>Id-ul-fitr (Ramzan Id)</td>
                                                     <td>April 21, 2023</td>
                                                     <td>Friday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">8</td>
+                                                    <td className="charges-heads">8</td>
                                                     <td>Maharashtra Day</td>
                                                     <td>May 01, 2023</td>
                                                     <td>Monday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">9</td>
+                                                    <td className="charges-heads">9</td>
                                                     <td>Id-ul-adha (Bakri Id)</td>
                                                     <td>June 28, 2023</td>
                                                     <td>Wednesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">10</td>
+                                                    <td className="charges-heads">10</td>
                                                     <td>Independence Day</td>
                                                     <td>August 15, 2023</td>
                                                     <td>Tuesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">11</td>
+                                                    <td className="charges-heads">11</td>
                                                     <td>Ganesh Chaturthi</td>
                                                     <td>September 19, 2023</td>
                                                     <td>Tuesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">12</td>
+                                                    <td className="charges-heads">12</td>
                                                     <td>Mahatma Gandhi Jayanti</td>
                                                     <td>October 02, 2023</td>
                                                     <td>Monday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">13</td>
+                                                    <td className="charges-heads">13</td>
                                                     <td>Dussehra</td>
                                                     <td>October 24, 2023</td>
                                                     <td>Tuesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">14</td>
+                                                    <td className="charges-heads">14</td>
                                                     <td>Diwali Balipratipada</td>
                                                     <td>November 14, 2023</td>
                                                     <td>Tuesday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">15</td>
+                                                    <td className="charges-heads">15</td>
                                                     <td>Gurunanak Jayanti</td>
                                                     <td>November 27, 2023</td>
                                                     <td>Monday</td>
                                                   </tr>
                                                   <tr>
-                                                    <td class="charges-heads">16</td>
+                                                    <td className="charges-heads">16</td>
                                                     <td>Christmas</td>
                                                     <td>December 25, 2023</td>
                                                     <td>Monday</td>
@@ -262,8 +278,9 @@ function Holidayscategory() {
                                               </table>
                                             </div>
                                           </div>
-                                          <div className="download_pdf">
-                                            <h3>NSE Holidays 2023 List</h3>
+                                          <div className="holiday-list d-flex justify-content-between pb-3 pt-3">
+                                            <div className="holiday-text">Stock Market Holidays 2023 List PDF</div>
+                                            <div className="holiday-text"><strong className="mr4">Download PDF</strong><FaRegFilePdf onClick={() => { window.open(stockmarketholidays) }} className="cursor-pointer" /></div>
                                           </div>
                                         </div>
                                       </div> :
@@ -302,36 +319,30 @@ function Holidayscategory() {
                   toggleState == 0 ?
                     <div className="row">
                       <div className="col-md-12">
-                        <h2 className="secttitle text-center">DFCdAXFCGet the Best Intraday Stocks to Buy Today with Choice</h2>
+                        <h2 className="secttitle text-center">NSE & BSE HOLIDAYS 2023</h2>
                       </div>
                       <div className="col-md-12">
                         <div className="para px-3">
                           <input type="checkbox" className="read-more-state" id="post-1" />
-                          <span className="read-more-wrap restext"> Choice India , a part of Choice Group has excelled in providing various strategies
-                            over a span of 25+ years serving the finance industry. In this section, we bring to you the best intraday stocks to buy
-                            today with expert research recommendations from one of our features - Signal.
+                          <span className="read-more-wrap restext"> It’s important to know NSE/BSE holiday list 2023 in advance so that Traders/Investors can square off or carry-forward their positions.
+                            <br />
+                            <br />
+                            <h2 className="font-bold">Share Market Holidays</h2>
+                            <br />
+
+                            The Holiday Calendar section will show you the entire list of Market Holidays 2023 that will be observed by all the exchanges including the primary, NSE and BSE. During Market Holidays the Share, Currency or Commodity Trading segments remain closed apart from weekends.
+                            <br />
+                            <br />
+                            <h2 className="font-bold">Muhurat Trading 2023</h2>
+                            <br />
+                            Muhurat Trading shall be held on Thursday, November 04, 2023 (Diwali – Laxmi Pujan). Timings of Muhurat Trading shall be notified subsequently.
+                            Please Note: The Exchange may alter/change any of the above Share Market Holidays for 2023, for which a separate circular shall be issued in advance. The Exchange may, however, close the market on days other than the above schedule holidays or may open the market on days originally declared as holidays. The Exchange may also extend, advance or reduce trading hours when it deems fit and necessary.
                             <span className="read-more-target restext">
                               Signal, an Automated Research Engine that provides research advisory with customised strategies for all types of Traders
                               has been back tested by our in-house advisory with a proven track record that has been in existence for almost a decade
                               now to provide the best intraday stocks to buy and sell.
                               <br />
-                              <br />
-                              Signal, as a feature, was designed  after continuous testing and analyzing for app users with no human intervention. Hence, the research calls are completely unbiased and are a projection of complete analysis
-                              <br />
-                              <br />
-                              The feature is an initiative as a solution to the question’ which is the <Link to="/best-stocks-to-buy" onClick={() => setToggleState(0)}> best stock to buy </Link> in intraday’
-                              as it is created to generate Intraday Research Calls for Intraday traders based on pattern breakout on a
-                              multi-time frame along with volume criteria.
-                              <br />
-                              <br />
-                              The USP of the Intraday stocks to buy today is they come with a Stop Loss as well as targets. However, there is no auto-execution system. It is upto the traders discretion to execute it or not.
-                              <br />
-                              <br />
-                              The basket of stocks to buy today for intraday has been well researched by our expert Mr. Kkunal Parar who is also the developer of the feature. Therefore, the recommendations hold a high success ratio. Here, you can get a variety of stock recommendations that are subjective to intraday trades only.
-                              <br />
-                              <br />
                               For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
-
                             </span></span> <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
                         </div>
                       </div>

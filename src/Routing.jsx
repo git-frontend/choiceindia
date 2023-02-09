@@ -727,22 +727,22 @@ function Routing() {
                                 < LazyNachCancellation />
                             </React.Suspense>
                         } />
-                        <Route exact path='/All-Share-Market-Holidays' element={
+                        <Route exact path='/stock-market-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                         <Route exact path='/NSE-Holidays' element={
+                         <Route exact path='/nse-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        <Route exact path='/BSE-Holidays' element={
+                        <Route exact path='/bse-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        <Route exact path='/MCX-Holidays' element={
+                        <Route exact path='/mcx-ncdex-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
