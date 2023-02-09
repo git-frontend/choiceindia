@@ -61,7 +61,7 @@ function NachCancellation(props) {
 
   const nachSchema = yup.object().shape({
     fullName: yup.string().required("Full Name is required").matches(nameRegex, "Invalid Full Name"),
-    accountNum: yup.string().required("Account Number is required").matches(accNoRegex, "Invalid Account Number"),
+    accountNum: yup.string().required("Account Number is required").matches(remarkRegex, "Invalid Account Number"),
     mobile: yup.string().required("Mobile Number is required").matches(mobileNumberRegex, "Invalid Mobile Number"),
     email: yup.string().required("Email is required").email("Invalid Email"),
     remarks: yup.string().matches(remarkRegex, "Invalid Remarks").max(300, "Remarks must be within 300 characters")
@@ -366,7 +366,7 @@ function hideLoader(type) {
   function nachLead() {
     const request = {
       "fullName": formData.fullName,
-      "accountNum": Number(formData.accountNum),
+      "accountNum": formData.accountNum,
       "mobile": Number(formData.mobile),
       "email": formData.email,
       "remarks": formData.remarks
@@ -384,14 +384,17 @@ function hideLoader(type) {
         setIsError(false);
         setShow(true);
         setLoaders({});
+        handleOTPPopupClose();
       } else {
         setIsError(res && res.status === 200 && res.data && res.data.Message !== 'success' && res.data.message ? res.data.message : 'Something went wrong. Please try again later');
         setShow(true);
+        handleOTPPopupClose();
       }
     }).catch((error) => {
       hideLoader('addLeadLoader');
       setIsError('Something went wrong. Please try again later');
       setShow(true);
+      handleOTPPopupClose();
     });
 
   }
@@ -437,7 +440,7 @@ function hideLoader(type) {
                     </Form.Group>
                     <Form.Group className="formgrp formgrp-txt" controlId="accountNumControl">
                       <Form.Label className="formlabel">Loan Account Number<span className="warning">*</span> </Form.Label>
-                      <Form.Control type="text" name="accountNum" className="formcontrol" placeholder="Enter Loan Account Number" {...register('accountNum')} onChange={(e) => handleNumbers(e, 'accountNum')} />
+                      <Form.Control type="text" name="accountNum" className="formcontrol" placeholder="Enter Loan Account Number" {...register('accountNum')} />
                       <span className="text-danger"> {errors?.accountNum?.message} </span>
                     </Form.Group>
                     <Form.Group className="formgrp formgrp-txt" controlId="mobileControl">
