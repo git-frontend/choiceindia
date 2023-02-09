@@ -160,16 +160,16 @@ function Holidayscategory() {
                                                         </form>
                                                       </div> */}
                                                    <Dropdown>
-      <Dropdown.Toggle variant="success" id="dropdown-basic">
-        Dropdown Button
-      </Dropdown.Toggle>
+                                                      <Dropdown.Toggle variant="success" id="dropdown-basic">
+                                                        Dropdown Button
+                                                      </Dropdown.Toggle>
 
-      <Dropdown.Menu>
-        <Dropdown.Item > <Form.Check type="checkbox" label="ALL" /></Dropdown.Item>
-        <Dropdown.Item > <Form.Check type="checkbox" label="jan" /></Dropdown.Item>
-        <Dropdown.Item > <Form.Check type="checkbox" label="feb" /> </Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+                                                      <Dropdown.Menu>
+                                                        <Form.Check type="checkbox" label="ALL" />
+                                                        <Form.Check type="checkbox" label="jan" />
+                                                        <Form.Check type="checkbox" label="feb" /> 
+                                                      </Dropdown.Menu>
+                                                    </Dropdown>
     
 
                                                     </th>
