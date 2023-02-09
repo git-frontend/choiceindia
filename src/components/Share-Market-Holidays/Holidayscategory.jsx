@@ -16,6 +16,7 @@ import { FaRegFilePdf } from 'react-icons/fa';
 
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
+import { useEffect } from "react";
 
 function Holidayscategory() {
 
@@ -24,7 +25,7 @@ function Holidayscategory() {
   let AllFilesValue = {};
   let tokens = "";
   let storefile;
-  // let checkurl = (window.location.pathname == "/best-stocks-to-buy") ? "all-stock" : (window.location.pathname == "/best-intraday-stocks-to-buy") ? "intraday" : (window.location.pathname == "/best-short-term-stocks-to-buy") ? "short-term" : (window.location.pathname == "/best-stocks-for-long-term-investment") ? "long-term" : "";
+  let checkurl = (window.location.pathname == "/stock-market-holidays") ? "stock-market-holidays" : (window.location.pathname == "/nse-holidays") ? "nse-holidays" : (window.location.pathname == "/bse-holidays") ? "bse-holidays" : (window.location.pathname == "/mcx-ncdex-holidays") ? "mcx-ncdex-holidays" : "";
 
   const [toggleState, setToggleState] = useState(0);
   const [list, setlist] = useState();
@@ -54,7 +55,15 @@ function Holidayscategory() {
     setSkeleton(() => false);
   }, 200)
   const location = useLocation();
-
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      checkurl == 'stock-market-holidays' ;
+      checkurl == 'nse-holidays';
+      checkurl=='bse-holidays';
+      checkurl=='mcx-ncdex-holidays';
+    }
+  }, [rendercount])
 
 
 
@@ -64,7 +73,7 @@ function Holidayscategory() {
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
-            <section className="mainhead">
+            <section className="mainhead holiday-main">
               <div className="container">
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
@@ -112,7 +121,7 @@ function Holidayscategory() {
             </section>
 
 
-            <section className="main-parent">
+            <section className="main-parent holiday-parent">
               <div className="container">
                 <div className="content-tabs best-stock-tabs-cont active-content holiday-content">
                   <div className="row d-flex justify-content-center">

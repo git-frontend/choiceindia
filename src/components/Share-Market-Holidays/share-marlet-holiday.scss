@@ -1,13 +1,16 @@
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
-.mainhead {
+.holiday-main {
     .title_para-second {
         font-size: 1.125rem;
         line-height: 1.688rem;
         text-align: center;
         font-weight: 600;
         color: $primary;
+        @media (max-width: 767px){
+           margin-top: 1rem;
+        }
     }
 
 
@@ -15,7 +18,11 @@
 
 }
 
-.main-parent {
+.holiday-parent {
+    @media (max-width: 767px){
+        padding-top: 16rem;
+        height: 100%;
+    }
     .holiday-content {
         .holidays-table {
             border: 1px solid rgba(194, 194, 194, 0.3);
