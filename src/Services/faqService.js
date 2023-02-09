@@ -4,7 +4,7 @@ import { API_URLS } from "./API-URLS";
 const faqService = {
 
     headerConfig: {
-        headers: { "authorization": "Basic d09tdkVOeXJSZElaMW9oOXNpVE86eA==" }
+        headers: { "authorization": "Basic Z0h2bnRuWjhCajhZeXQ3TjFYVA==" }
     },
 
     FaqCategory: function () {
