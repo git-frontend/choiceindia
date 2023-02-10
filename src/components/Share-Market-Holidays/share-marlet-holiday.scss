@@ -3,12 +3,8 @@
 
 .holiday-main {
     .title_para-second {
-        font-size: 1.125rem;
-        line-height: 1.688rem;
-        text-align: center;
         font-weight: 600;
         color: $primary;
-
         @media (max-width: 767px) {
             margin-top: 1rem;
         }
@@ -72,8 +68,8 @@
                                 box-shadow: none;
                                 color: $primary;
                                 font-size: 1.375rem;
-                                color: #221F20;
-                                font-family: "PoppinsMedium", sans-serif;
+                                color:$bgcolordark;
+                                font-family: $font-family-poppins-medium;
                                 border: 0;
                                 vertical-align: top;
                                 text-align: left;
@@ -198,7 +194,7 @@
 
                 svg {
                     height: 33px;
-                    width: 26px;
+                    width: 26px;  
 
                     @media (max-width: $sm) {
                         height: 25px;
