@@ -83,7 +83,7 @@
                 .button-filed{
                     width: 100%;
                     .btn-bg{
-                        min-width: 10rem;
+                        min-width: 10rem !important;
                         padding: 1.2rem 1.8rem !important;
                         border-radius: 10px !important;
                         &.btn-back{

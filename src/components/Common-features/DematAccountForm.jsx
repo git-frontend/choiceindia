@@ -617,10 +617,10 @@ function DematAccountForm(props) {
                             {/* (showReferInput)? */}
                             <div className="sub-formgrp">
                             <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                            {
+                            {/* {
                                 refercode.current? '': 
                                 <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
-                            }
+                            } */}
                             
                             </div>
                              {/* : '' */}
