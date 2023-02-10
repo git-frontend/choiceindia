@@ -6,14 +6,22 @@
     padding: 5rem 0;
     position: relative;
 
+    .digi-title {
+        @media (max-width:$sm) {
+            text-align: center !important;
+        }
+    }
+
     .carditem-list {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
         margin: 4rem 0rem;
-        .slick-list{
+
+        .slick-list {
             padding: 1rem;
         }
+
         .digital-carditem {
             // width: 30.55%;
             background: #ffffff;
@@ -27,6 +35,7 @@
             min-height: 38rem;
             position: relative;
             width: 90% !important;
+
             .digiimg {
                 display: inline-block;
                 overflow: hidden;
@@ -98,5 +107,9 @@
         top: 29%;
         left: 0%;
         background: url('../../assets/images/Digital-Lending-Partners/bigimg.svg') no-repeat;
+
+        @media (max-width:$sm) {
+            display: none;
+        }
     }
 }

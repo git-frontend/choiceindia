@@ -63,7 +63,7 @@ function DigitalLendingBanner() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="big-ttl mb-4">
+              <h1 className="big-ttl mb-4 digi-title">
                 Digital Lending Partners
               </h1>
             </div>
