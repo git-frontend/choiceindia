@@ -80,22 +80,22 @@ function Holidayscategory() {
                     {
                       toggleState == 0 ?
                         <div>
-                          <h2 className="title-secnd1">Stock Market Holidays 2023</h2>
+                          <h2 className="title-secnd title-secnd1">Stock Market Holidays 2023</h2>
                           <p className="title_para res_para ">Here is the complete list of Indian stock market holidays for the year 2023.</p>
                         </div> :
                         toggleState == 1 ?
                           <div>
-                            <h2 className="title-secnd1">nsc  </h2>
+                            <h2 className="title-secnd title-secnd1">nsc  </h2>
                             <p className="title_para res_para ">Get the list of the best stocks to buy today for short-term investing.</p>
                           </div> :
                           toggleState == 2 ?
                             <div>
-                              <h2 className="title-secnd1">bsc </h2>
+                              <h2 className="title-secnd title-secnd1">bsc </h2>
                               <p className="title_para res_para ">Get a list of the best stocks to buy today for long-term investment.</p>
                             </div> :
                             toggleState == 3 ?
                               <div>
-                                <h2 className="title-secnd1">mcx</h2>
+                                <h2 className="title-secnd title-secnd1">mcx</h2>
                                 <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                               </div> :
                               ""
