@@ -133,7 +133,8 @@ const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
-const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'))
+const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
+const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 function Routing() {
 
 
@@ -745,6 +746,11 @@ function Routing() {
                         <Route exact path='/mcx-ncdex-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/digital-lending-partners' element={
+                            <React.Suspense>
+                                < LazyDigitalLendingBanner />
                             </React.Suspense>
                         } />
  
