@@ -133,6 +133,8 @@ const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
+
 function Routing() {
 
 
@@ -726,7 +728,11 @@ function Routing() {
                                 < LazyNachCancellation />
                             </React.Suspense>
                         } />
- 
+                         <Route exact path='/cfpl-impact' element={
+                            <React.Suspense>
+                                < LazyCfplImpact />
+                            </React.Suspense>
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

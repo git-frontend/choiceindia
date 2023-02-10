@@ -1,0 +1,57 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-cfpl{
+    padding: 5rem 0rem;
+    background-color: #FCF0D2;
+    position: relative;
+    @media (max-width:$sm) {
+        text-align: center;
+    }
+    .big-ttl{
+        margin-bottom: 5rem;
+    }
+    .para{
+        font-size: 1.45rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+        font-family: "PoppinsRegular", sans-serif;
+        margin-bottom: 2rem;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        height: 38rem;
+        width: 20rem;
+        background: url(../../assets/images/cfpl-impact/cfpl-before.png) no-repeat;
+        background-size: contain;
+        left: 0;
+        top: 30%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        height: 9rem;
+        width: 9rem;
+        background: url(../../assets/images/cfpl-impact/dot.png) no-repeat;
+        background-size: contain;
+        right: 0;
+        top: 15%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    .banner-image{
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+}
