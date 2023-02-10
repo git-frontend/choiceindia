@@ -6,15 +6,54 @@ import digitalpart2 from '../../assets/images/Digital-Lending-Partners/digitalpa
 import digitalpart3 from '../../assets/images/Digital-Lending-Partners/digitalpart3.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
-
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 import {
   useLocation,
 } from 'react-router-dom';
+import Slider from "react-slick";
 
 function DigitalLendingBanner() {
 
-
+  const settings = {
+    infinite: true,
+    speed: 1000,
+    arrows: true,
+    slidesToShow: 3,
+    autoplay: false,
+    margin: 15,
+    dots: true,
+    autoplaySpeed: 800,
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+          dots:false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots:false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots:false,
+        },
+      },
+    ],
+  };
   const location = useLocation();
 
 
@@ -24,15 +63,16 @@ function DigitalLendingBanner() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h1 className="big-ttl mb-5">
+              <h1 className="big-ttl mb-4">
                 Digital Lending Partners
               </h1>
             </div>
           </div>
           <div className="row">
             <div className="col-md-12">
-              <div className="carditem-list">
-                <div className="digital-carditem">
+              {/* <div className="carditem-list"> */}
+              <Slider {...settings} className="carditem-list">
+              <div className="digital-carditem">
                   <span className="digiimg">
                     <LazyLoader src={digitalpart1} alt={"Banner Images"} className={"img-fluid"} />
                   </span>
@@ -68,7 +108,9 @@ function DigitalLendingBanner() {
                   </p>
                   <span className="knw-btn"><a href="">Know More</a></span>
                 </div>
-              </div>
+                </Slider>
+                
+              {/* </div> */}
             </div>
           </div>
         </div>
