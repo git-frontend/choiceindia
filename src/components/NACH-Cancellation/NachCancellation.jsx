@@ -463,7 +463,7 @@ function hideLoader(type) {
                     </div> */}
                     <div className="button-filed">
                       {/* onClick={() => { setShow(true) }} */}
-                      <Button type="submit" className="btn-bg">{(loaders.verifyLoader || loaders.addLeadLoader) ? <Spinner animation="border" /> : "Submit"}</Button>
+                      <Button type="submit" className="btn-bg">{(loaders.verifyLoader || loaders.sendOTPLoader) ? <Spinner animation="border" /> : "Submit"}</Button>
                       {/* <Button className="btn-bg btn-back">Back</Button> */}
                     </div>
                   </Form>
