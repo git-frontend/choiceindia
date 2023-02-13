@@ -1,11 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import "../Best-Stocks/best-stock.scss";
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import "./share-marlet-holiday.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
-import "../Remisier/Remisier.scss";
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter";
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import {
@@ -13,28 +9,21 @@ import {
 } from 'react-router-dom';
 import stockmarketholidays from "../../assets/images/share-market-holidays/pdf/stock-market-holidays-2023.pdf";
 import { FaRegFilePdf } from 'react-icons/fa';
-
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import { useEffect } from "react";
 
 function Holidayscategory() {
 
-  let tokenList = [{}]
-  let multiValue = [];
-  let AllFilesValue = {};
-  let tokens = "";
-  let storefile;
+  
   let checkurl = (window.location.pathname == "/stock-market-holidays") ? "stock-market-holidays" : (window.location.pathname == "/nse-holidays") ? "nse-holidays" : (window.location.pathname == "/bse-holidays") ? "bse-holidays" : (window.location.pathname == "/mcx-ncdex-holidays") ? "mcx-ncdex-holidays" : "";
 
   const [toggleState, setToggleState] = useState(0);
-  const [list, setlist] = useState();
-  const [Data1, setData1] = useState();
   const [rendercount, setRenderCount] = useState(() => false);
   const [skeleton, setSkeleton] = useState(() => true);
   /**Show loader */
   const [showLoader, setShowLoader] = useState(false)
-  const [checkdevice, setcheckdevice] = useState();
+ 
 
   const toggleTab = (index) => {
     setToggleState(index);

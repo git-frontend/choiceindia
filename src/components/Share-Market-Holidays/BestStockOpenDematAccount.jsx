@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../Best-Stocks/best-stock.scss";
 import Template5 from '../Common-features/Template5';
 import { Link } from "react-router-dom";
-import "../Remisier/Remisier.scss";
+
 
 
 function BestStockOpenDematAccount() {

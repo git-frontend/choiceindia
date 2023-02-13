@@ -5,7 +5,7 @@
     .title_para-second {
         font-weight: 600;
         color: $primary;
-        @media (max-width: 767px) {
+        @media (max-width: $sm) {
             margin-top: 1rem;
         }
     }
@@ -16,7 +16,7 @@
 }
 
 .holiday-parent {
-    @media (max-width: 767px) {
+    @media (max-width: $sm) {
         padding-top: 16rem;
         height: 100%;
     }
