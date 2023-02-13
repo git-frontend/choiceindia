@@ -3,19 +3,22 @@
 
 .banner-cfpl{
     padding: 5rem 0rem;
-    background-color: #FCF0D2;
+    background-color: $darkyellow;
     position: relative;
     @media (max-width:$sm) {
         text-align: center;
     }
     .big-ttl{
         margin-bottom: 5rem;
+        @media (max-width:$sm) {
+            margin-bottom: 3rem;
+        }
     }
     .para{
         font-size: 1.45rem;
         line-height: 2.5rem;
         font-weight: 400;
-        font-family: "PoppinsRegular", sans-serif;
+        font-family: $font-family-poppins-regular;
         margin-bottom: 2rem;
     }
     &:before{
@@ -60,19 +63,19 @@
 }
 .cfpl-details{
     position: relative;
-    padding: 6rem 0rem 10rem 0rem;
+    padding: 10rem 0rem;
     @media (max-width: $sm) {
-        padding: 6rem 0rem 6rem 0rem;
+        padding: 6rem 0rem;
     }
     &:before{
         content: '';
         position: absolute;
-        height: 32rem;
-        width: 14rem;
+        height: 38rem;
+        width: 17rem;
         background: url(../../assets/images/cfpl-impact/cfpl-before2.png) no-repeat;
         background-size: contain;
         left: 0;
-        top: 0;
+        top: 5%;
         z-index: 1;
         @media (max-width:$md) {
             display: none;
@@ -81,12 +84,12 @@
     &:after{
         content: '';
         position: absolute;
-        height: 32rem;
-        width: 14rem;
+        height: 38rem;
+        width: 17rem;
         background: url(../../assets/images/cfpl-impact/cfpl-after.png) no-repeat;
         background-size: contain;
         right: 0;
-        top: 0;
+        top: 5%;
         z-index: 1;
         @media (max-width:$md) {
             display: none;
@@ -96,12 +99,12 @@
         &:before{
             content: '';
             position: absolute;
-            height: 32rem;
-            width: 14rem;
+            height: 38rem;
+            width: 17rem;
             background: url(../../assets/images/cfpl-impact/cfpl-before3.png) no-repeat;
             background-size: contain;
             left: 0;
-            top: 60%;
+            top: 50%;
             z-index: 1;
             @media (max-width:$md) {
                 display: none;
@@ -110,12 +113,12 @@
         &:after{
             content: '';
             position: absolute;
-            height: 32rem;
-            width: 14rem;
+            height: 38rem;
+            width: 17rem;
             background: url(../../assets/images/cfpl-impact/cfpl-after2.png) no-repeat;
             background-size: contain;
             right: 0;
-            top: 62%;
+            top: 50%;
             z-index: 1;
             @media (max-width:$md) {
                 display: none;
@@ -178,20 +181,10 @@
             padding: 1.8rem;
             font-size: 1.1rem;
         }
-
-        &:hover {
-            .cardimg {
-                .img {
-                    -webkit-animation: toTopFromBottom 0.5s forwards;
-                    -moz-animation: toTopFromBottom 0.5s forwards;
-                    animation: toTopFromBottom 0.5s forwards;
-                }
-        }
-        }
         .cardimg{
             display: inline-block;
             overflow: hidden;
-            height: 75px;
+            height: 90px;
         }
         .card-ttl{
             font-size: 1.5rem;
@@ -218,8 +211,7 @@
    
     .carditem-count{
         padding: 2.5rem 2rem;
-        width: 25%;
-        margin: 0 auto;
+        text-align: center;
         height: 100%;
         @media (max-width: $sm) {
             width: 50%;
@@ -229,12 +221,15 @@
             font-size: 1.1rem;
         }
         .card-ttl{
-            font-size: 3.5rem;
+            font-size: 4rem;
             line-height: 1.5;
             font-family:  $font-family-poppins-bold;
             color: $bgcolordark;
             margin: 1rem 0 0 0;
-            @media (max-width: $md) {
+            @media (min-width: $sm) and (max-width: $md) {
+                font-size: 3.5rem;
+            }
+            @media (max-width: $sm) {
                 font-size: 2.5rem;
             }
         }
