@@ -20,7 +20,7 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
-    const type2=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const type2= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const [show,setShow] = useState(true);
     // console.log('SSS',show);
     function handleClose(){
