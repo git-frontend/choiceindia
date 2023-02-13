@@ -14,11 +14,12 @@
             position: absolute;
             display: block;
             content: '';
-            height: 65rem;
-            width: 12rem;
+            height: 40rem;
+            width: 32rem;
             top: 11%;
             left: 0;
             background: url(../../assets/images/fabledetails/detailbefore.png) no-repeat top left;
+            background-size: contain;
             z-index: -1;
     
             @media screen and (max-width: $sm) {
@@ -113,12 +114,51 @@
             margin-top: 3rem;
         }
         .textwrap {
-            margin-top: 5.5rem;
+            margin-top: 3rem;
             font-size: 1.25rem;
             line-height: 2rem;
             color: $primary;
             text-align: justify;
             position: relative;
+            iframe{
+                margin: 2rem 0;
+                @media screen and (max-width: $xs) {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            table {
+                width: auto;
+                margin: 1rem 0;
+              }
+              table{    
+                border: 1px solid #c2c2c24d;
+                th, td {
+                    border: 1px solid #c2c2c24d;
+                    padding: 1rem !important;
+                    font-family: $font-family-poppins-regular;
+                    font-size: 1.25rem;
+              
+              }
+              @media screen and (max-width: $sm) {
+                max-width: 350px;
+                overflow: auto;
+                display: block;
+              }
+              tr{
+                &:nth-child(odd){
+                    background-color: #F5F5F5;
+                }
+              }
+              thead{
+                tr{
+                    background-color: $whiteColor;
+                    &:nth-child(odd){
+                        background-color: $whiteColor;
+                    }
+                }
+              }
+            }
             img{
                 max-width: 100%;
                 height: auto;
@@ -160,9 +200,9 @@
                 }
             }
             h3,h2{
-                padding: 1rem 0 0.5rem 0;
+                padding: 3rem 0 1.5rem 0;
                 font-weight: 700;
-                margin-top: 1rem;
+                margin: 0rem;
                 color: $primary;
                 font-size: 2rem;
                 font-family: $font-family-poppins-semibold;
@@ -178,6 +218,9 @@
                 color: $primary;
                 line-height: 2.75rem;
                 padding-left: 4%;
+            }
+            @media screen and (max-width: $sm) {
+                text-align: left;
             }
         }
     
