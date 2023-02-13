@@ -57,25 +57,25 @@ function LandingPartners() {
               <Slider {...settings1} className="why-ch-slider">
                   <div className="carditem-cfpl">
                     <span className='cardimg'>
-                      <LazyLoader src={StateBank} alt={"Low Channel Financing Processing Fee"} className={"img-fluid img"} width={"70"} height={"70"} />
+                      <LazyLoader src={StateBank} alt={"State Bank of India"} className={"img-fluid img"} width={"70"} height={"70"} />
                     </span>
                     <h6 className="card-ttl">State Bank of <br/> India</h6>
                   </div>
                   <div className="carditem-cfpl">
                     <span className='cardimg'>
-                      <LazyLoader src={SBMBank} alt={"Digital Assistance for Channel Financing"} className={"img-fluid img"} width={"70"} height={"70"} />
+                      <LazyLoader src={SBMBank} alt={"SBM Bank India"} className={"img-fluid img"} width={"70"} height={"70"} />
                     </span>
                     <h6 className="card-ttl">SBM Bank <br/> India</h6>
                   </div>
                   <div className="carditem-cfpl">
                     <span className='cardimg'>
-                      <LazyLoader src={AUSmallFinance} alt={"Attractive Channel Financing Interest Rates"} className={"img-fluid img"} width={"70"} height={"70"} />
+                      <LazyLoader src={AUSmallFinance} alt={"AU Small Finance Bank"} className={"img-fluid img"} width={"70"} height={"70"} />
                     </span>
                     <h6 className="card-ttl">AU Small Finance <br/> Bank</h6>
                   </div>
                   <div className="carditem-cfpl">
                     <span className='cardimg'>
-                      <LazyLoader src={BajajFinance} alt={"Flexible Channel Financing Repayment Options"} className={"img-fluid img"} width={"70"} height={"70"} />
+                      <LazyLoader src={BajajFinance} alt={"Bajaj Finance"} className={"img-fluid img"} width={"70"} height={"70"} />
                     </span>
                     <h6 className="card-ttl">Bajaj Finance</h6>
                   </div>
