@@ -11,6 +11,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import meta_tags from "../../Data/MetaTags";
 
 import {
+  Link,
   useLocation,
 } from 'react-router-dom';
 import Slider from "react-slick";
@@ -97,7 +98,7 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     Choice Group, incorporated in 1992, is a financial institution which finds its legacy in solving financial problems and bridging gaps for individuals, institutions and governments.
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <span className="knw-btn"><a href="https://choiceconnect.in/">Know More</a></span>
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
@@ -109,7 +110,7 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     SEEDS FINCAP PVT. LTD. is a Delhi NCR-based non-deposit-taking NBFC. With its headquarters in Gurugram (erstwhile ‘Gurgaon), its aim to serve a million MSMEs - Micro, Small, and Medium Enterprises in India in this decade!
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <span className="knw-btn"><a href="https://www.seedsfincap.com/">Know More</a></span>
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
@@ -121,7 +122,7 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     Cashinvoice leverages technology to transform supply chain finance. Their mission is to help corporates of all sizes unlock value locked within the supply chain to optimize their working capital more efficiently.
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <span className="knw-btn"><a href="https://cashinvoice.in/">Know More</a></span>
                 </div>
                 </Slider>
                 
