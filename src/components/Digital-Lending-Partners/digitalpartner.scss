@@ -40,6 +40,7 @@
             width: 90% !important;
             @media (max-width:$sm) {
             margin: 0 auto;
+            min-height: 40rem;
             }
             .digiimg {
                 display: inline-block;
