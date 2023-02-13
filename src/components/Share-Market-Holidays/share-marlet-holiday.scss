@@ -115,8 +115,12 @@
                                         background-color: transparent;
                                         border-color: none;
                                         border: none;
-                                        &:checked{
+                                        &:checked {
                                             background-image: url('../../assets/images/share-market-holidays/ticked_img.svg');
+                                            &+.form-check-label{
+                                                color: $bgcolordark;
+                                                 
+                                            }
                                         }
                                         &:focus{
                                            box-shadow: none;
