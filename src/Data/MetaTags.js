@@ -2155,6 +2155,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
     "link":"https://choiceindia.com/stock-broker-in-delhi"
   },
+  "digital-lending-partners": {
+    "title":"Digital Lending Partners with Choice Finserv",
+    'lang':"en",
+    'content':"In our portfolio, we're working with digital lending institutions. Visit to view a complete list of our partners for digital lending.",
+    "link":"https://choiceindia.com/digital-lending-partners"
+  },
 
 }
 
