@@ -19,7 +19,10 @@
         margin: 4rem 0rem;
 
         .slick-list {
-            padding: 1rem;
+            padding: 1rem ;
+            @media (max-width:$sm) {
+                padding: 1rem 0rem;
+                }
         }
 
         .digital-carditem {
@@ -35,7 +38,9 @@
             min-height: 38rem;
             position: relative;
             width: 90% !important;
-
+            @media (max-width:$sm) {
+            margin: 0 auto;
+            }
             .digiimg {
                 display: inline-block;
                 overflow: hidden;
