@@ -9,7 +9,7 @@ import MilestonesJourney from './MilestonesJourney';
 
 function CFPLImpact(){
     return (
-        <div className="">
+        <div>
            <BannerCFPL/>
            <CFPLDetails/>
            <OurValueProposition/>
