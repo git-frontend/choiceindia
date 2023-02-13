@@ -29,7 +29,7 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1= (window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const type1= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
     const [referID, setReferID] = useState('');
 
