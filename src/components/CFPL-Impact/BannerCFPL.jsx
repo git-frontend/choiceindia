@@ -14,7 +14,7 @@ function BannerCFPL(){
                         </div>
                         <div className="col-xl-6 col-md-6">
                             <div className='banner-image'>
-                                <LazyLoader src={choiceFinserv} alt={"Banner Images"} className={"img-fluid sm-img"} width={"500"} height={"400"} />
+                                <LazyLoader src={choiceFinserv} alt={"Banner Images"} className={"img-fluid sm-img"} width={"400"} height={"262"} />
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-6">

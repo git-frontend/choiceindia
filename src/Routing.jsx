@@ -728,7 +728,7 @@ function Routing() {
                                 < LazyNachCancellation />
                             </React.Suspense>
                         } />
-                         <Route exact path='/cfpl-impact' element={
+                         <Route exact path='/about-choice-finserv' element={
                             <React.Suspense>
                                 < LazyCfplImpact />
                             </React.Suspense>
