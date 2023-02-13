@@ -12,6 +12,7 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Form from 'react-bootstrap/Form';
 import { useEffect } from "react";
+import { MDBCheckbox } from 'mdb-react-ui-kit';
 
 function Holidayscategory() {
 
@@ -147,19 +148,26 @@ function Holidayscategory() {
                                                       </Dropdown.Toggle>
 
                                                       <Dropdown.Menu>
-                                                        <Form.Check type="checkbox" label="All" />
-                                                        <Form.Check type="checkbox" label="January" />
-                                                        <Form.Check type="checkbox" label="February" />
-                                                        <Form.Check type="checkbox" label="March" /> 
-                                                        <Form.Check type="checkbox" label="April" /> 
-                                                        <Form.Check type="checkbox" label="May" /> 
-                                                        <Form.Check type="checkbox" label="June" /> 
-                                                        <Form.Check type="checkbox" label="July" /> 
-                                                        <Form.Check type="checkbox" label="August" /> 
-                                                        <Form.Check type="checkbox" label="September" />
-                                                        <Form.Check type="checkbox" label="October" />
-                                                        <Form.Check type="checkbox" label="November" />
-                                                        <Form.Check type="checkbox" label="December" /> 
+                                                      <div className="months-custom">
+                                                      <MDBCheckbox name='flexCheck' value='' id='check1' label='All' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check2' label='January' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check3' label='February' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check4' label='March' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check5' label='April' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check6' label='May' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check7' label='June' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check8' label='July' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check9' label='August' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check10' label='September' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check11' label='October' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check12' label='November' />
+                                                      <MDBCheckbox name='flexCheck' value='' id='check13' label='December' />
+                                                      </div>
+                                                      
+                                                     
+                                                      
+
+                                                 
 
                                                       </Dropdown.Menu>
                                                     </Dropdown>

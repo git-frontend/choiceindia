@@ -5,6 +5,7 @@
     .title_para-second {
         font-weight: 600;
         color: $primary;
+
         @media (max-width: $sm) {
             margin-top: 1rem;
         }
@@ -68,14 +69,14 @@
                                 box-shadow: none;
                                 color: $primary;
                                 font-size: 1.375rem;
-                                color:$bgcolordark;
+                                color: $bgcolordark;
                                 font-family: $font-family-poppins-medium;
                                 border: 0;
                                 vertical-align: top;
                                 text-align: left;
                                 font-weight: 600;
                                 position: relative;
-                               
+
                             }
 
                             .dropdown-toggle {
@@ -91,7 +92,7 @@
                                 }
                             }
 
-                          
+
                             .dropdown-menu {
                                 position: absolute !important;
                                 transform: translate(0px, 33px) !important;
@@ -104,30 +105,36 @@
                                 left: -1% !important;
                                 right: 47% !important;
                                 padding-top: 1.5rem;
+
                                 .form-check {
                                     margin-bottom: 0.8rem;
+
                                     .form-check-label {
-                                        font-size: 1rem;
+                                        font-size: 1.125rem;
                                         line-height: 1.5rem;
                                         color: $graylight;
                                         font-family: $font-family-poppins-regular;
                                         font-weight: 400;
                                     }
-                                    .form-check-input{
+
+                                    .form-check-input {
                                         background-color: transparent;
                                         border-color: none;
                                         border: none;
+
                                         &:checked {
                                             background-image: url('../../assets/images/share-market-holidays/ticked_img.svg');
-                                            &+.form-check-label{
+
+                                            &+.form-check-label {
                                                 color: $bgcolordark;
-                                                 
+
                                             }
                                         }
-                                        &:focus{
-                                           box-shadow: none;
+
+                                        &:focus {
+                                            box-shadow: none;
                                         }
-                                        
+
                                     }
                                 }
                             }
@@ -137,7 +144,7 @@
 
                     }
 
-                   
+
                 }
 
                 tbody {
@@ -200,7 +207,7 @@
 
                 svg {
                     height: 33px;
-                    width: 26px;  
+                    width: 26px;
 
                     @media (max-width: $sm) {
                         height: 25px;
@@ -220,3 +227,66 @@
 
 }
 
+.drop_list {
+    .months-custom {
+        position: relative;
+
+        .form-check {
+            padding-left: 0;
+        }
+
+        .form-check-input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+
+        .form-check-label {
+            position: relative;
+            padding-left: 1.7rem;
+            cursor: pointer;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            color: $graylight;
+            font-family: $font-family-poppins-regular;
+            font-weight: 400;
+
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 1.7rem;
+                width: 1.7rem;
+                display: block;
+                
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0.5rem;
+                height: 1.7rem;
+                width: 1.7rem;
+                display: block;
+                background-image: url('../../assets/images/share-market-holidays/ticked_img.svg');
+                background-repeat: no-repeat;
+                display: none;
+                z-index: 99;
+            }
+
+            @media (max-width: $sm-x) {
+                font-size: 1.4rem;
+                padding-left: 3rem;
+            }
+        }
+
+        input:checked~.form-check-label::before {
+            display: block;
+        }
+    }
+
+}
