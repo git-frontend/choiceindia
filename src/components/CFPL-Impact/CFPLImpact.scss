@@ -196,8 +196,11 @@
     }
 }
 .milestones-journey{
-    padding: 6rem 0rem;
+    padding: 2rem 0rem 6rem 0rem;
     position: relative;
+    @media (max-width: $md) {
+        padding:6rem 0rem;
+     }
     @media (max-width: $sm) {
        text-align: center;
     }
