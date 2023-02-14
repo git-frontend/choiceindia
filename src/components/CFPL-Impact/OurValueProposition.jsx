@@ -1,11 +1,11 @@
 
 import React from "react";
-import img1 from '../../assets/images/cfpl-impact/loan-repayment-reminders.svg';
-import img2 from '../../assets/images/cfpl-impact/easy-loan-repayment-options.svg';
-import img3 from '../../assets/images/cfpl-impact/check-soa.svg';
-import img4 from '../../assets/images/cfpl-impact/easy-documentation.svg';
-import img5 from '../../assets/images/cfpl-impact/fast-loan-disbursal.svg';
-import img6 from '../../assets/images/cfpl-impact/multipe-platform-access.svg';
+import img1 from '../../assets/images/cfpl-impact/serving-the-underserved.svg';
+import img2 from '../../assets/images/cfpl-impact/minimum-documentation.svg';
+import img3 from '../../assets/images/cfpl-impact/machine-based-credit-underwriting-payments.svg';
+import img4 from '../../assets/images/cfpl-impact/digital-payments.svg';
+import img5 from '../../assets/images/cfpl-impact/ensuring-transparency.svg';
+import img6 from '../../assets/images/cfpl-impact/end-to-end-digital-process.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 

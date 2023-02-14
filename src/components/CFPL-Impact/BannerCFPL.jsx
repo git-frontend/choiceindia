@@ -1,6 +1,6 @@
 
 import React from 'react';
-import choiceFinserv from '../../assets/images/cfpl-impact/choice-finserv.webp';
+import choiceFinserv from '../../assets/images/cfpl-impact/about-choice-finserv.webp';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function BannerCFPL(){
@@ -14,7 +14,7 @@ function BannerCFPL(){
                         </div>
                         <div className="col-xl-6 col-md-6">
                             <div className='banner-image'>
-                                <LazyLoader src={choiceFinserv} alt={"Banner Images"} className={"img-fluid sm-img"} width={"400"} height={"262"} />
+                                <LazyLoader src={choiceFinserv} alt={"About Choice Finserv"} className={"img-fluid sm-img"} width={"400"} height={"262"} />
                             </div>
                         </div>
                         <div className="col-xl-6 col-md-6">
