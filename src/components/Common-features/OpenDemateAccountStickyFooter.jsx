@@ -222,9 +222,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                     <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
                                     <label className="form_check_text">I agree that I have read and  accept<br /> the <a  onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
                                 </div>
+                                <div className='api_errornew'>
+                                <button type="submit" className="form-btn sendotp btn-bg-dark btn-bg" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                                </div>
                                 {/* <button type="submit" className=" OPt_item sub_group btnsub"><span className="send_OPT_btn" >Send OTP</span></button> */}
-                                <button type="submit" className=" OPt_item sub_group btnsub" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}><span className="send_OPT_btn" >{loaders.sendOTPLoader ? <div className="send_OPT_btn"></div> : 'Send OTP'}</span></button>
-                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                               
+                                                
                                 {/* <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div> */}
                             </div>
                         </div>
@@ -260,7 +264,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                             </div>
                                             <div className="form-group">
                                                 <button type="submit" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                                                <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
                                             </div>
                                         </form>
 
