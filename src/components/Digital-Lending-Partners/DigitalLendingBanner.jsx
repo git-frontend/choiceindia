@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "./digitalpartner.scss";
-import digitalpart1 from '../../assets/images/Digital-Lending-Partners/digitalpart1.svg';
-import digitalpart2 from '../../assets/images/Digital-Lending-Partners/digitalpart2.svg';
-import digitalpart3 from '../../assets/images/Digital-Lending-Partners/digitalpart3.svg';
+import choiceconnect from '../../assets/images/Digital-Lending-Partners/choice-connect.svg';
+import seedsfincap from '../../assets/images/Digital-Lending-Partners/seeds-fincap.svg';
+import cashinvoice from '../../assets/images/Digital-Lending-Partners/cashinvoice.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -90,7 +90,7 @@ function DigitalLendingBanner() {
               <Slider {...settings} className="carditem-list">
               <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart1} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={choiceconnect} alt={"Choice Connect"} className={"img-fluid"} />
                   </span>
                   <h3 className="digi-card-title">
                     Choice International Ltd.
@@ -102,7 +102,7 @@ function DigitalLendingBanner() {
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart2} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={seedsfincap} alt={"Seeds Fincap"} className={"img-fluid"} />
                   </span>
                   <h3 className="digi-card-title">
                     Seeds Fincap Pvt Ltd
@@ -114,7 +114,7 @@ function DigitalLendingBanner() {
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart3} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} />
                   </span>
                   <h3 className="digi-card-title">
                     Indinvoice Tech Solutions Pvt Ltd
