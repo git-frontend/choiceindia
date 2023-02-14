@@ -792,7 +792,7 @@ function urlLink(){
               </div>
             </section>
             <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                    <OpenDemateAccountStickyFooter/>
+                                    <OpenDemateAccountStickyFooter />
                                 </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">
