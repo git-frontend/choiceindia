@@ -2161,6 +2161,31 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"In our portfolio, we're working with digital lending institutions. Visit to view a complete list of our partners for digital lending.",
     "link":"https://choiceindia.com/digital-lending-partners"
   },
+  "stock-market-holidays": {
+    "title":"Stock Market Holidays 2023 - List of Indian Share Market Holidays",
+    'lang':"en",
+    'content':"Check out the stock market holidays in 2023 on Choice. Stay updated with Indian share market holidays in 2023 & plan your investment accordingly.",
+    "link":"https://choiceindia.com/stock-market-holidays"
+  },
+  "nse-holidays": {
+    "title":"NSE Holidays 2023 List - Check NSE Trading Holidays of 2023",
+    'lang':"en",
+    'content':"Find a comprehensive list of NSE holidays in 2023 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    "link":"https://choiceindia.com/nse-holidays"
+  },
+  "bse-holidays": {
+    "title":"BSE Holidays 2023 List - Check BSE Trading Holidays of 2023",
+    'lang':"en",
+    'content':"Check out the complete list of BSE holidays for 2023 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    "link":"https://choiceindia.com/bse-holidays"
+  },
+  "mcx-ncdex-holidays": {
+    "title":"MCX Holidays 2023 List - Check MCX & NCDEX Trading Holidays in 2023",
+    'lang':"en",
+    'content':"Check the list of MCX and NCDEX holidays for 2023. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
+    "link":"https://choiceindia.com/mcx-ncdex-holidays"
+  },
+
 
   "about-choice-finserv": {
     "title":" About Choice Finserv",
