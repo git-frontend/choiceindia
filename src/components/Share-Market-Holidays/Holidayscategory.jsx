@@ -79,17 +79,17 @@ function Holidayscategory() {
                         toggleState == 1 ?
                           <div>
                             <h2 className=" title-secnd1">NSE Holidays 2023</h2>
-                            <p className="title_para res_para ">Get the list of the best stocks to buy today for short-term investing.</p>
+                            <p className="title_para res_para ">Here is the complete list of Indian stock market holidays for the year 2023.</p>
                           </div> :
                           toggleState == 2 ?
                             <div>
                               <h2 className=" title-secnd1">BSE Holidays 2023</h2>
-                              <p className="title_para res_para ">Get a list of the best stocks to buy today for long-term investment.</p>
+                              <p className="title_para res_para ">Here is the complete list of Indian stock market holidays for the year 2023.</p>
                             </div> :
                             toggleState == 3 ?
                               <div>
                                 <h2 className=" title-secnd1">MCX/NCDEX Holidays 2023</h2>
-                                <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
+                                <p className="title_para">Here is the complete list of Indian stock market holidays for the year 2023.</p>
                               </div> :
                               ""
                     }
@@ -141,7 +141,7 @@ function Holidayscategory() {
                                               <table className="table table-hover table-striped ">
                                                 <thead>
                                                   <tr>
-                                                    <th width="20%">S.No </th>
+                                                    <th width="15%">S.No </th>
                                                     <th>Holidays</th>
                                                     <th className="holidaydropdown">
 
@@ -311,7 +311,7 @@ function Holidayscategory() {
                                             <table className="table table-hover table-striped ">
                                               <thead>
                                                 <tr>
-                                                  <th width="20%">S.No </th>
+                                                  <th width="15%">S.No </th>
                                                   <th>Holidays</th>
                                                   <th className="holidaydropdown">
 
@@ -451,7 +451,7 @@ function Holidayscategory() {
                                               <table className="table table-hover table-striped ">
                                                 <thead>
                                                   <tr>
-                                                    <th width="20%">S.No </th>
+                                                    <th width="15%">S.No </th>
                                                     <th>Holidays</th>
                                                     <th className="holidaydropdown">
   
@@ -591,7 +591,7 @@ function Holidayscategory() {
                                                 <table className="table table-hover table-striped ">
                                                   <thead>
                                                     <tr>
-                                                      <th width="20%">S.No </th>
+                                                      <th width="15%">S.No </th>
                                                       <th>Holidays</th>
                                                       <th className="holidaydropdown">
     
@@ -752,106 +752,6 @@ function Holidayscategory() {
                   toggleState == 0 ?
                     <div className="row">
                       <div className="col-md-12">
-                        <h2 className="secttitle text-center">NSE & BSE HOLIDAYS 2023</h2>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="para px-3">
-                          <input type="checkbox" className="read-more-state" id="post-1" />
-                          <span className="read-more-wrap restext"> It’s important to know NSE/BSE holiday list 2023 in advance so that Traders/Investors can square off or carry-forward their positions.
-                            <br />
-                            <br />
-                            <h2 className="font-bold">Share Market Holidays</h2>
-                            <br />
-
-                            The Holiday Calendar section will show you the entire list of Market Holidays 2023 that will be observed by all the exchanges including the primary, NSE and BSE. During Market Holidays the Share, Currency or Commodity Trading segments remain closed apart from weekends.
-                            <br />
-                            <br />
-                            <h2 className="font-bold">Muhurat Trading 2023</h2>
-                            <br />
-                            Muhurat Trading shall be held on Thursday, November 04, 2023 (Diwali – Laxmi Pujan). Timings of Muhurat Trading shall be notified subsequently.
-                            Please Note: The Exchange may alter/change any of the above Share Market Holidays for 2023, for which a separate circular shall be issued in advance. The Exchange may, however, close the market on days other than the above schedule holidays or may open the market on days originally declared as holidays. The Exchange may also extend, advance or reduce trading hours when it deems fit and necessary.
-                            {/* <span className="read-more-target restext">
-                              Signal, an Automated Research Engine that provides research advisory with customised strategies for all types of Traders
-                              has been back tested by our in-house advisory with a proven track record that has been in existence for almost a decade
-                              now to provide the best intraday stocks to buy and sell.
-                              <br />
-                              For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
-                            </span> */}
-                            </span>
-                             {/* <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
-                        </div>
-                      </div>
-                    </div> :
-                    toggleState == 1 ?
-
-                    <div className="row">
-                    <div className="col-md-12">
-                      <h2 className="secttitle text-center">NSE & BSE HOLIDAYS 2023</h2>
-                    </div>
-                    <div className="col-md-12">
-                      <div className="para px-3">
-                        <input type="checkbox" className="read-more-state" id="post-1" />
-                        <span className="read-more-wrap restext"> It’s important to know NSE/BSE holiday list 2023 in advance so that Traders/Investors can square off or carry-forward their positions.
-                          <br />
-                          <br />
-                          <h2 className="font-bold">Share Market Holidays</h2>
-                          <br />
-
-                          The Holiday Calendar section will show you the entire list of Market Holidays 2023 that will be observed by all the exchanges including the primary, NSE and BSE. During Market Holidays the Share, Currency or Commodity Trading segments remain closed apart from weekends.
-                          <br />
-                          <br />
-                          <h2 className="font-bold">Muhurat Trading 2023</h2>
-                          <br />
-                          Muhurat Trading shall be held on Thursday, November 04, 2023 (Diwali – Laxmi Pujan). Timings of Muhurat Trading shall be notified subsequently.
-                          Please Note: The Exchange may alter/change any of the above Share Market Holidays for 2023, for which a separate circular shall be issued in advance. The Exchange may, however, close the market on days other than the above schedule holidays or may open the market on days originally declared as holidays. The Exchange may also extend, advance or reduce trading hours when it deems fit and necessary.
-                          {/* <span className="read-more-target restext">
-                            Signal, an Automated Research Engine that provides research advisory with customised strategies for all types of Traders
-                            has been back tested by our in-house advisory with a proven track record that has been in existence for almost a decade
-                            now to provide the best intraday stocks to buy and sell.
-                            <br />
-                            For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
-                          </span> */}
-                          </span>
-                           {/* <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
-                      </div>
-                    </div>
-                  </div> :
-                      toggleState == 2 ?
-                      <div className="row">
-                      <div className="col-md-12">
-                        <h2 className="secttitle text-center">NSE & BSE HOLIDAYS 2023</h2>
-                      </div>
-                      <div className="col-md-12">
-                        <div className="para px-3">
-                          <input type="checkbox" className="read-more-state" id="post-1" />
-                          <span className="read-more-wrap restext"> It’s important to know NSE/BSE holiday list 2023 in advance so that Traders/Investors can square off or carry-forward their positions.
-                            <br />
-                            <br />
-                            <h2 className="font-bold">Share Market Holidays</h2>
-                            <br />
-
-                            The Holiday Calendar section will show you the entire list of Market Holidays 2023 that will be observed by all the exchanges including the primary, NSE and BSE. During Market Holidays the Share, Currency or Commodity Trading segments remain closed apart from weekends.
-                            <br />
-                            <br />
-                            <h2 className="font-bold">Muhurat Trading 2023</h2>
-                            <br />
-                            Muhurat Trading shall be held on Thursday, November 04, 2023 (Diwali – Laxmi Pujan). Timings of Muhurat Trading shall be notified subsequently.
-                            Please Note: The Exchange may alter/change any of the above Share Market Holidays for 2023, for which a separate circular shall be issued in advance. The Exchange may, however, close the market on days other than the above schedule holidays or may open the market on days originally declared as holidays. The Exchange may also extend, advance or reduce trading hours when it deems fit and necessary.
-                            {/* <span className="read-more-target restext">
-                              Signal, an Automated Research Engine that provides research advisory with customised strategies for all types of Traders
-                              has been back tested by our in-house advisory with a proven track record that has been in existence for almost a decade
-                              now to provide the best intraday stocks to buy and sell.
-                              <br />
-                              For all stock recommendations for intra day trades, short-term trades and long-term trades , you can refer to the segment providing you with the latest research calls from the experts. <Link to="/open-free-demat-account"> Open a free demat account  </Link> with us to get the best intraday stocks to buy today in India.
-                            </span> */}
-                            </span>
-                             {/* <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
-                        </div>
-                      </div>
-                    </div> :
-                        toggleState == 3 ?
-                        <div className="row">
-                        <div className="col-md-12">
                           <h2 className="secttitle text-center">NSE & BSE HOLIDAYS 2023</h2>
                         </div>
                         <div className="col-md-12">
@@ -881,6 +781,18 @@ function Holidayscategory() {
                                {/* <label htmlFor="post-1" className="read-more-trigger moreless-button"></label> */}
                           </div>
                         </div>
+                    </div> :
+                    toggleState == 1 ?
+                    <div className="row">
+                   
+                  </div> :
+                      toggleState == 2 ?
+                      <div className="row">
+                      
+                    </div> :
+                        toggleState == 3 ?
+                        <div className="row">
+                       
                       </div> :
                           ""
                 }
