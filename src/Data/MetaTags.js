@@ -2162,6 +2162,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link":"https://choiceindia.com/digital-lending-partners"
   },
 
+  "about-choice-finserv": {
+    "title":" About Choice Finserv",
+    'lang':"en",
+    'content':"A part of the Choice Group, Choice Finserv aims to support the capital needs of India's MSME sector by offering a variety of loans.",
+    "link":"https://choiceindia.com/about-choice-finserv"
+  },
 }
 
 export default meta_tags;

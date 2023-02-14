@@ -135,6 +135,8 @@ const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancella
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
+
 function Routing() {
 
 
@@ -754,6 +756,11 @@ function Routing() {
                             </React.Suspense>
                         } />
  
+                         <Route exact path='/about-choice-finserv' element={
+                            <React.Suspense>
+                                < LazyCfplImpact />
+                            </React.Suspense>
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
