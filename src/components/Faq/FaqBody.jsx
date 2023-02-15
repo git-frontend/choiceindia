@@ -354,8 +354,9 @@ export default function FaqBody() {
                                           <Accordion.Item eventKey={index}>
                                             <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                             {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                            <Accordion.Body>
-                                              {res.description_text || 'Loading'}
+                                            <Accordion.Body  dangerouslySetInnerHTML={{__html: res.description}}>
+                                              
+                                              {/* {res.description_text  || 'Loading'} */}
                                             </Accordion.Body>
                                             {/**</div>*/}
                                           </Accordion.Item>
@@ -414,8 +415,8 @@ export default function FaqBody() {
                                         <Accordion.Item eventKey={index}>
                                           <Accordion.Header >{res.title || 'Loading'}</Accordion.Header>
                                           {/**<div className={"ac-a accordion-collapse collapse" + ((active && index == 0) ? " show" : "")}>*/}
-                                          <Accordion.Body>
-                                            {res.description_text || 'Loading'}
+                                          <Accordion.Body dangerouslySetInnerHTML={{__html: res.description}}>
+                                            {/* {res.description_text || 'Loading'} */}
                                           </Accordion.Body>
                                           {/**</div>*/}
                                         </Accordion.Item>
