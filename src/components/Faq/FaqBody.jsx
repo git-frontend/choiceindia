@@ -10,6 +10,7 @@ import { useForm, useFormState } from 'react-hook-form';
 import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
+import { useSearchParams } from "react-router-dom";
 
 
 
@@ -30,6 +31,10 @@ export default function FaqBody() {
   const [isloading, setisloading] = useState(true);
   const [iscategory, setiscategory] = useState(true);
   let data = '';
+  var active = useRef('');
+  const [searchParams, setSearchParams] = useSearchParams();
+  active.current = searchParams.get('active') || '';
+  console.log("check",active.current)
 
   /** yup validation search text */
   const schema = yup.object().shape({
@@ -108,7 +113,15 @@ export default function FaqBody() {
         if (res) {
           setiscategory(false)
           setList(res);
-          loadfaqFolder(res[0].category_linkage);
+          if(active.current == 'loan') {
+            loadfaqFolder("22000109076");
+            setSelected(5)
+            setList2("Loans")
+
+          } else{
+            loadfaqFolder(res[0].category_linkage);
+
+          } 
 
         } else {
           setiscategory(false)
@@ -126,6 +139,7 @@ export default function FaqBody() {
   /** FAQ Folder section */
 
   function loadfaqFolder(id) {
+    console.log("id " ,id)
     setisloading(true);
     faqService.FaqFolder(id).then(
       res => {
@@ -256,6 +270,7 @@ export default function FaqBody() {
 
                               {
                                 list.map((response, i) => {
+                                   
 
                                   let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
 
