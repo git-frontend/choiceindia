@@ -65,7 +65,7 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:false,
+          dots:true,
         },
       },
     ],
@@ -90,7 +90,8 @@ function DigitalLendingBanner() {
               <Slider {...settings} className="carditem-list">
               <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={choiceconnect} alt={"Choice Connect"} className={"img-fluid"} />
+                    <LazyLoader src={choiceconnect} alt={"Choice Connect"} className={"img-fluid"} width={"138"} height={"59"} />
+                   
                   </span>
                   <h3 className="digi-card-title">
                     Choice International Ltd.
@@ -102,7 +103,7 @@ function DigitalLendingBanner() {
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={seedsfincap} alt={"Seeds Fincap"} className={"img-fluid"} />
+                    <LazyLoader src={seedsfincap} alt={"Seeds Fincap"} className={"img-fluid"} width={"222"} height={"80"} />
                   </span>
                   <h3 className="digi-card-title">
                     Seeds Fincap Pvt Ltd
@@ -114,7 +115,7 @@ function DigitalLendingBanner() {
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} />
+                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} width={"264"} height={"47"}/>
                   </span>
                   <h3 className="digi-card-title">
                     Indinvoice Tech Solutions Pvt Ltd
