@@ -25,7 +25,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
-    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ) ? 'Best-Stock' : "Blog";
+    const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1) ) ? 'Best-Stock' : "Blog";
 
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
@@ -131,9 +131,19 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function handleSendOTP(e) {
-        fetchQueryParams();
+        if(document.getElementById("mobile_no").value == ""){
+            setErrors({
+                ...errors,
+                'invalidMobile': true
+            });
+
+        }else{
+             fetchQueryParams();
         // sendOTP();
         handleReCaptchaVerify();
+
+        }
+       
     }
 
     function sendOTP() {
@@ -207,9 +217,9 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         <>
             {
                 webcheck == "Best-Stock" ?
-                    <section className="sendopt">
+                    <section className="sendopt  beststockres">
                         <div className="container">
-                            <div className="form_main">
+                            <div className="form_main ">
                                 <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
                                 <div className="  Mobile_text">
                                     <input type="text"  className="form-textbox" id="mobile_no" name="mobile_no" placeholder='Mobile Number' autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
@@ -222,9 +232,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                     <input type="checkbox" className="form_check" id="terms_and_conditions" checked readOnly />
                                     <label className="form_check_text">I agree that I have read and  accept<br /> the <a  onClick={handleTermsConditionShow}><span className="link_tc">Terms and Conditions</span></a></label>
                                 </div>
+                                <div className='api_errornew'>
+                                <button type="submit" className="form-btn  btn-bg-dark btn-bg"  onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
+                                <div><small id="API_error" className="errormsg text-danger api-text-danger">{APIError || ''}</small></div>
+                                </div>
                                 {/* <button type="submit" className=" OPt_item sub_group btnsub"><span className="send_OPT_btn" >Send OTP</span></button> */}
-                                <button type="submit" className=" OPt_item sub_group btnsub" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}><span className="send_OPT_btn" >{loaders.sendOTPLoader ? <div className="send_OPT_btn"></div> : 'Send OTP'}</span></button>
-                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                               
+                                                
                                 {/* <div className=" OPt_item sub_group"><a href="/" ><span className="send_OPT_btn" >Send OTP</span></a></div> */}
                             </div>
                         </div>
@@ -260,7 +274,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                             </div>
                                             <div className="form-group">
                                                 <button type="submit" className="form-btn sendotp" disabled={errors.invalidMobile || mobileNumber.length !== 10 || loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
-                                                <div><small id="API_error" className="errormsg text-danger">{APIError || ''}</small></div>
+                                                
                                             </div>
                                         </form>
 
