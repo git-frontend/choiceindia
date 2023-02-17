@@ -11,8 +11,9 @@ import Spinner from 'react-bootstrap/Spinner';
 import noDataimg from '../../assets/images/no-data.webp';
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import { useSearchParams } from "react-router-dom";
-
-
+import Slider from "react-slick";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 
 
 // const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)
@@ -41,7 +42,45 @@ export default function FaqBody() {
     faq: yup.string().required("plz write your queries")
   })
 
-
+  const settings = {
+    infinite: true,
+    speed: 1000,
+    arrows: true,
+    slidesToShow: 6,
+    autoplay: false,
+    margin: 10,
+    dots: false,
+    autoplaySpeed: 800,
+    slidesToScroll: 1,
+    adaptiveHeight: true,
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          adaptiveHeight: true,
+          dots:false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots:false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots:true,
+        },
+      },
+    ],
+  };
 
   /** Get Faq qus  */
   const faqChange = (e2) => {
@@ -266,9 +305,42 @@ export default function FaqBody() {
                             <div className="text-center">
                               <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
                             </div> :
-                            <div className="same-list-bx-list">
+                            // <div className="same-list-bx-list">
 
-                              {
+                            //   {
+                            //     list.map((response, i) => {
+                                   
+
+                            //       let classNameNm2 = "same-list-bx-item" + ((i === selected) ? ' bx-item-cont-active' : "")
+
+
+                            //       return (
+                            //         <div key={response.id} className={classNameNm2} onClick={() => {
+
+                            //           loadfaqFolder(response.category_linkage);
+                            //           setList2(response.category_name);
+                            //           setSelectedId(0);
+                            //           setSelected(i);
+                            //           setIsarticle(false);
+                            //           // scrollToElement();
+                            //         }}>
+                            //           <div className="bx-item-cont" onClick={() => { chapterScroll('faq-section'); categoryClick() }}  >
+                            //             <span className='cont-img'>
+                            //               <img src={`https://cmsapi.choiceindia.com/assets/${response.category_icon || 'No data'}`} className="sl-img" alt="" width={"50"} height={"50"} />
+                            //             </span>
+                            //             <h4>{response.category_name || 'No data'}</h4>
+                            //             {/* <p>{response.category_description || 'No data'}</p> */}
+                            //           </div>
+                            //         </div>
+                            //       )
+                            //     }
+                            //     )
+                            //   }
+
+
+                            // </div>
+                            <Slider {...settings} className="same-list-bx-list same-list-faq">
+                             {
                                 list.map((response, i) => {
                                    
 
@@ -298,14 +370,14 @@ export default function FaqBody() {
                                 )
                               }
 
-
-                            </div>
+                              </Slider>
                         }
 
                       </div>
+                      
                   }
 
-
+                  
 
                 </div>
               </div>
