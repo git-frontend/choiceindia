@@ -15,7 +15,7 @@ import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+
 function Sharemarketholidays() {
   const [toggleState, setToggleState] = useState(1);
   const toggleTab = (index) => {

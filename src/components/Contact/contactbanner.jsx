@@ -367,7 +367,7 @@ function Contactbanner() {
                       <div className="uploadbtn mt-3 d-flex align-items-center">
                         <div className="feel-msg">{data}</div>
                         <Button variant="primary" onClick={() => checklist()}
-                          type="submit" className="btn-bg btn-bg-dark sendbtn">
+                          type="submit" className="btn-bg sendbtn ">
                           {isloader === false ?
                             "Send" : <Spinner animation="border" />
                           }

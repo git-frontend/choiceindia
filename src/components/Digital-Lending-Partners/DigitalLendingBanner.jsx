@@ -1,9 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import "./digitalpartner.scss";
-import digitalpart1 from '../../assets/images/Digital-Lending-Partners/digitalpart1.svg';
-import digitalpart2 from '../../assets/images/Digital-Lending-Partners/digitalpart2.svg';
-import digitalpart3 from '../../assets/images/Digital-Lending-Partners/digitalpart3.svg';
+import choiceconnect from '../../assets/images/Digital-Lending-Partners/choice-connect.svg';
+import seedsfincap from '../../assets/images/Digital-Lending-Partners/seeds-fincap.svg';
+import cashinvoice from '../../assets/images/Digital-Lending-Partners/cashinvoice.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
 import "../../../node_modules/slick-carousel/slick/slick.css";
@@ -11,6 +11,7 @@ import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import meta_tags from "../../Data/MetaTags";
 
 import {
+  Link,
   useLocation,
 } from 'react-router-dom';
 import Slider from "react-slick";
@@ -89,7 +90,8 @@ function DigitalLendingBanner() {
               <Slider {...settings} className="carditem-list">
               <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart1} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={choiceconnect} alt={"Choice Connect"} className={"img-fluid"} width={"138"} height={"59"} />
+                   
                   </span>
                   <h3 className="digi-card-title">
                     Choice International Ltd.
@@ -97,11 +99,11 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     Choice Group, incorporated in 1992, is a financial institution which finds its legacy in solving financial problems and bridging gaps for individuals, institutions and governments.
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <a href="https://choiceconnect.in/" target="_blank"><span className="knw-btn">Know More</span></a>
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart2} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={seedsfincap} alt={"Seeds Fincap"} className={"img-fluid"} width={"222"} height={"80"} />
                   </span>
                   <h3 className="digi-card-title">
                     Seeds Fincap Pvt Ltd
@@ -109,11 +111,11 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     SEEDS FINCAP PVT. LTD. is a Delhi NCR-based non-deposit-taking NBFC. With its headquarters in Gurugram (erstwhile ‘Gurgaon), its aim to serve a million MSMEs - Micro, Small, and Medium Enterprises in India in this decade!
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <a href="https://www.seedsfincap.com/" target="_blank"> <span className="knw-btn">Know More</span></a>
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={digitalpart3} alt={"Banner Images"} className={"img-fluid"} />
+                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} width={"264"} height={"47"}/>
                   </span>
                   <h3 className="digi-card-title">
                     Indinvoice Tech Solutions Pvt Ltd
@@ -121,7 +123,7 @@ function DigitalLendingBanner() {
                   <p className="digi-subtext">
                     Cashinvoice leverages technology to transform supply chain finance. Their mission is to help corporates of all sizes unlock value locked within the supply chain to optimize their working capital more efficiently.
                   </p>
-                  <span className="knw-btn"><a href="">Know More</a></span>
+                  <a href="https://cashinvoice.in/" target="_blank"><span className="knw-btn">Know More</span></a>
                 </div>
                 </Slider>
                 

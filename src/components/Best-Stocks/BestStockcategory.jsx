@@ -12,6 +12,7 @@ import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter"; 
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import  { useRef } from 'react';
 import {
   useLocation,
@@ -790,7 +791,9 @@ function urlLink(){
                 </div>
               </div>
             </section>
-            <OpenDemateAccountStickyFooter/>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <OpenDemateAccountStickyFooter />
+                                </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">
                 

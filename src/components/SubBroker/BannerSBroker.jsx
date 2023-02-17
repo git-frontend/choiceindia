@@ -39,7 +39,7 @@ function BannerSBroker() {
                                     <h1 className="tlt1">
                                         <span className="tlt2">Start Sub Broker</span>
                                         Franchise
-                                        <span className="tlt2">without Deposit*</span>
+                                        <span className="tlt2">with Low Deposit*</span>
                                     </h1>
                                 </div>
                                 <div className="right-sec">

@@ -1,0 +1,252 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.banner-cfpl{
+    padding: 5rem 0rem;
+    background-color: $darkyellow;
+    position: relative;
+    @media (max-width:$sm) {
+        text-align: center;
+    }
+    .big-ttl{
+        margin-bottom: 5rem;
+        @media (max-width:$sm) {
+            margin-bottom: 3rem;
+        }
+    }
+    .para{
+        font-size: 1.45rem;
+        line-height: 2.5rem;
+        font-weight: 400;
+        font-family: $font-family-poppins-regular;
+        margin-bottom: 2rem;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        height: 38rem;
+        width: 22rem;
+        background: url(../../assets/images/cfpl-impact/cfpl-before.png) no-repeat;
+        background-size: contain;
+        left: 0;
+        top: 25%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        height: 9rem;
+        width: 9rem;
+        background: url(../../assets/images/cfpl-impact/dot.png) no-repeat;
+        background-size: contain;
+        right: 0;
+        top: 10%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    .banner-image{
+        position: relative;
+        z-index: 1;
+        padding-left: 5rem;
+        @media (max-width:$md) {
+            padding-left: 0rem;
+        }
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+}
+.cfpl-details{
+    position: relative;
+    padding: 10rem 0rem;
+    @media (max-width: $sm) {
+        padding: 6rem 0rem;
+    }
+    &:before{
+        content: '';
+        position: absolute;
+        height: 38rem;
+        width: 17rem;
+        background: url(../../assets/images/cfpl-impact/cfpl-before2.png) no-repeat;
+        background-size: contain;
+        left: 0;
+        top: 5%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    &:after{
+        content: '';
+        position: absolute;
+        height: 38rem;
+        width: 17rem;
+        background: url(../../assets/images/cfpl-impact/cfpl-after.png) no-repeat;
+        background-size: contain;
+        right: 0;
+        top: 5%;
+        z-index: 1;
+        @media (max-width:$md) {
+            display: none;
+        }
+    }
+    .cfpl-bg{
+        &:before{
+            content: '';
+            position: absolute;
+            height: 38rem;
+            width: 17rem;
+            background: url(../../assets/images/cfpl-impact/cfpl-before3.png) no-repeat;
+            background-size: contain;
+            left: 0;
+            top: 50%;
+            z-index: 1;
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
+        &:after{
+            content: '';
+            position: absolute;
+            height: 38rem;
+            width: 17rem;
+            background: url(../../assets/images/cfpl-impact/cfpl-after2.png) no-repeat;
+            background-size: contain;
+            right: 0;
+            top: 50%;
+            z-index: 1;
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
+    }
+}
+.value-propositon{
+    background: $lightblue;
+    padding: 5rem 0 0 0;
+    .title-secnd{
+        margin-bottom: 4rem;
+    }
+    .loans-features-list{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        .loans-feat-itm{
+            width: 26%;
+            margin-bottom: 5rem;
+            h3{
+                color: $darkblack;
+                font-family: $font-family-poppins-medium;
+                margin-top: 2rem;
+            }
+            p{
+                font-size: 1.25rem;
+                line-height: 1.5;
+                color: $darkblack;
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+    @media (max-width: $sm) {
+        text-align: center;
+    }
+}
+.landing-partners{
+    position: relative;
+    padding: 6rem 0rem;
+    @media (max-width:$sm) {
+        text-align: center;
+    }
+    .title-secnd{
+        margin-bottom: 2rem;
+    }
+    .carditem-cfpl{
+        padding: 2.5rem 2rem;
+        display: block !important;
+        width: 90% !important;
+        margin: 0 auto;
+        height: 100%;
+        min-height: 17rem;
+        text-align: center;
+        @media (min-width:$sm-x) and (max-width: $md) {
+            padding: 1.8rem;
+            font-size: 1.1rem;
+        }
+        .cardimg{
+            display: inline-block;
+            overflow: hidden;
+            height: 90px;
+        }
+        .card-ttl{
+            font-size: 1.5rem;
+            line-height: 1.5;
+            font-family:  $font-family-poppins-medium;
+            color: $bgcolordark;
+            margin: 1rem 0 0 0;
+            
+        }
+    }
+}
+.milestones-journey{
+    padding: 2rem 0rem 6rem 0rem;
+    position: relative;
+    @media (max-width: $md) {
+        padding:6rem 0rem;
+     }
+    @media (max-width: $sm) {
+       text-align: center;
+    }
+    .title-secnd{
+        margin-bottom: 2rem;
+    }
+    .counter-section{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+   
+    .carditem-count{
+        padding: 2.5rem 2rem;
+        text-align: center;
+        height: 100%;
+        @media (max-width: $sm) {
+            width: 50%;
+        }
+        @media (min-width:$sm-x) and (max-width: $md) {
+            padding: 1.8rem;
+            font-size: 1.1rem;
+        }
+        .card-ttl{
+            font-size: 4rem;
+            line-height: 1.5;
+            font-family:  $font-family-poppins-bold;
+            color: $bgcolordark;
+            margin: 1rem 0 0 0;
+            @media (min-width: $sm) and (max-width: $md) {
+                font-size: 3.5rem;
+            }
+            @media (max-width: $sm) {
+                font-size: 2.45rem;
+            }
+        }
+        .subtext{
+            font-size: 1.3rem;
+            line-height: 1.9rem;
+            margin: 1rem 0 0 0;
+            color: $bgcolordark;
+            font-family:  $font-family-poppins-regular;
+            @media (min-width:$sm-x) and (max-width: $md) {
+                font-size: 1.1rem;
+            }
+        }
+    }
+    }
+}

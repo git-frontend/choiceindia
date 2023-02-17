@@ -5,8 +5,16 @@
     .title_para-second {
         font-weight: 600;
         color: $primary;
-        @media (max-width: 767px) {
+
+        @media (max-width: $sm) {
             margin-top: 1rem;
+        }
+    }
+    .list_group1{
+        .list{
+            @media (min-width: $sm-x) and (max-width: $md) {
+                font-size: 1.14rem;
+            }
         }
     }
 
@@ -15,14 +23,17 @@
 
 }
 
+
+
 .holiday-parent {
-    @media (max-width: 767px) {
+    @media (max-width: $sm) {
         padding-top: 16rem;
         height: 100%;
     }
 
     .holiday-content {
         .holidays-table {
+           
             border: 1px solid $lightgray;
             border-radius: 8px;
             background: $whiteColor;
@@ -30,7 +41,7 @@
             margin-top: 0.5rem;
             position: relative;
             z-index: 9;
-
+            
             .table-striped {
                 margin: 0;
 
@@ -68,12 +79,14 @@
                                 box-shadow: none;
                                 color: $primary;
                                 font-size: 1.375rem;
-                                color:$bgcolordark;
+                                color: $bgcolordark;
                                 font-family: $font-family-poppins-medium;
                                 border: 0;
                                 vertical-align: top;
                                 text-align: left;
                                 font-weight: 600;
+                                position: relative;
+
                             }
 
                             .dropdown-toggle {
@@ -88,8 +101,6 @@
                                     border-left: 0.4em solid transparent;
                                 }
                             }
-
-                           
                             .dropdown-menu {
                                 position: absolute !important;
                                 transform: translate(0px, 33px) !important;
@@ -102,36 +113,86 @@
                                 left: -1% !important;
                                 right: 47% !important;
                                 padding-top: 1.5rem;
-                                .form-check {
-                                    margin-bottom: 0.8rem;
+                                .months-custom {
+                                    position: relative;
+                            
+                                    .form-check {
+                                        padding-left: 0;
+                                        margin-bottom: 0.8rem;
+                                    }
+                            
+                                    .form-check-input {
+                                        position: absolute;
+                                        opacity: 0;
+                                        cursor: pointer;
+                                        height: 0;
+                                        width: 0;
+                                    }
+                            
                                     .form-check-label {
-                                        font-size: 1rem;
+                                        position: relative;
+                                        padding-left: 1.7rem;
+                                        cursor: pointer;
+                                        font-size: 1.125rem;
                                         line-height: 1.5rem;
                                         color: $graylight;
                                         font-family: $font-family-poppins-regular;
                                         font-weight: 400;
-                                    }
-                                    .form-check-input{
-                                        background-color: transparent;
-                                        border-color: none;
-                                        border: none;
-                                        &:checked{
+                            
+                                        &::after {
+                                            content: "";
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0;
+                                            height: 1.7rem;
+                                            width: 1.7rem;
+                                            display: block;
+                                            
+                                        }
+                            
+                                        &::before {
+                                            content: '';
+                                            position: absolute;
+                                            left: 0;
+                                            top: 0.5rem;
+                                            height: 1.7rem;
+                                            width: 1.7rem;
+                                            display: block;
                                             background-image: url('../../assets/images/share-market-holidays/ticked_img.svg');
+                                            background-repeat: no-repeat;
+                                            display: none;
+                                            z-index: 99;
+                                           
+                        
                                         }
-                                        &:focus{
-                                           box-shadow: none;
+                            
+                                        @media (max-width: $sm-x) {
+                                            font-size: 1.4rem;
+                                            padding-left: 2rem;
                                         }
+                                    }
+                            
+                                    input:checked~.form-check-label::before {
+                                        display: block;
                                         
                                     }
+                                    input:checked~.form-check-label{
+                                        color:$bgcolordark;
+                                    }
+                                    
                                 }
+                            
                             }
+
+
+                           
                         }
 
 
 
                     }
 
-                   
+
                 }
 
                 tbody {
@@ -194,7 +255,7 @@
 
                 svg {
                     height: 33px;
-                    width: 26px;  
+                    width: 26px;
 
                     @media (max-width: $sm) {
                         height: 25px;
@@ -212,5 +273,14 @@
 
     }
 
+}
+
+
+.table-desk{
+    overflow-x: unset;
+    @media (max-width: $sm) {
+        overflow-x: auto;
+
+    }
 }
 
