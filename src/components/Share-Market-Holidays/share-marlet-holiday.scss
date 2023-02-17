@@ -33,6 +33,7 @@
 
     .holiday-content {
         .holidays-table {
+           
             border: 1px solid $lightgray;
             border-radius: 8px;
             background: $whiteColor;
@@ -40,7 +41,7 @@
             margin-top: 0.5rem;
             position: relative;
             z-index: 9;
-
+            
             .table-striped {
                 margin: 0;
 
@@ -178,6 +179,7 @@
                                     input:checked~.form-check-label{
                                         color:$bgcolordark;
                                     }
+                                    
                                 }
                             
                             }
@@ -271,5 +273,14 @@
 
     }
 
+}
+
+
+.table-desk{
+    overflow-x: unset;
+    @media (max-width: $sm) {
+        overflow-x: auto;
+
+    }
 }
 

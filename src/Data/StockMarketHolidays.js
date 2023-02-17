@@ -38,28 +38,28 @@ const holidaylist=[
         "id":6,
         "holidayName":"Mahavir Jayanti",
         "date":"April 04, 2023",
-        "month":"April ",
+        "month":"April",
         "day":"Tuesday"
     },
     {
         "id":7,
         "holidayName":"Good Friday",
         "date":"April 07, 2023",
-        "month":"April ",
+        "month":"April",
         "day":"Friday"
     },
     {
         "id":8,
         "holidayName":"Dr. Baba Saheb Ambedkar Jayanti",
         "date":"April 14, 2023",
-        "month":"April ",
+        "month":"April",
         "day":"Friday"
     },
     {
         "id":9,
         "holidayName":"Id-UI-Fitr (Ramzan Id)",
         "date":"April 22, 2023",
-        "month":"April ",
+        "month":"April",
         "day":"Saturday"
     },
     {
@@ -73,14 +73,14 @@ const holidaylist=[
         "id":11,
         "holidayName":"Bakri Eid",
         "date":"June 28, 2023",
-        "month":"June ",
+        "month":"June",
         "day":"Wednesday"
     },
     {
         "id":12,
         "holidayName":"Muharram",
         "date":"July 29, 2023",
-        "month":"July  ",
+        "month":"July",
         "day":"Saturday"
     },
     {
@@ -94,7 +94,7 @@ const holidaylist=[
         "id":14,
         "holidayName":"Ganesh Chaturthi",
         "date":"September  19, 2023",
-        "month":"September ",
+        "month":"September",
         "day":"Tuesday"
     },
     {
