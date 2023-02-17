@@ -5,6 +5,7 @@ import "../Common-features/nbfc-menu.scss";
 
 
 
+
 function NBFCMenu() {
 
   // to change burger classes
@@ -12,6 +13,8 @@ function NBFCMenu() {
   const [menu_class, setMenuClass] = useState("menu hidden")
   const [isMenuClicked, setIsMenuClicked] = useState(false)
   let check = window.location.pathname == "/investors" ? 'show' : "notshow";
+
+ 
   // toggle burger menu change
   const updateMenu = () => {
     if (!isMenuClicked) {
@@ -70,14 +73,14 @@ function NBFCMenu() {
               
               <span className="menu_item_text">Calculators</span></Link>
               </li> */}
-            {/* <li className="menu-itm">
-                <Link to="" className="menu-itm-link"> 
+            <li className="menu-itm">
+                <Link to="/faq?active=loan" className="menu-itm-link"> 
                 <svg width="16" height="26" viewBox="0 0 16 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.75875 13.1333C7.78542 11.28 9.75875 10.1867 10.9054 8.54667C12.1188 6.82667 11.4388 3.61333 7.99875 3.61333C5.74542 3.61333 4.63875 5.32 4.17208 6.73333L0.71875 5.28C1.66542 2.44 4.23875 0 7.98542 0C11.1187 0 13.2654 1.42667 14.3588 3.21333C15.2921 4.74667 15.8387 7.61333 14.3987 9.74667C12.7987 12.1067 11.2654 12.8267 10.4388 14.3467C10.1054 14.96 9.97208 15.36 9.97208 17.3333H6.11875C6.10542 16.2933 5.94542 14.6 6.75875 13.1333ZM10.6654 22.6667C10.6654 24.1333 9.46542 25.3333 7.99875 25.3333C6.53208 25.3333 5.33208 24.1333 5.33208 22.6667C5.33208 21.2 6.53208 20 7.99875 20C9.46542 20 10.6654 21.2 10.6654 22.6667Z" fill="black"/>
                 </svg>
 
               <span className="menu_item_text">FAQs</span></Link>
-              </li> */}
+              </li>
             {/* <li className="menu-itm">
                 <Link to="" className="menu-itm-link"> 
                 <svg width="30" height="23" viewBox="0 0 30 23" fill="none" xmlns="http://www.w3.org/2000/svg">
