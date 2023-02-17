@@ -33,6 +33,7 @@ function Holidayscategory() {
   const [showdata, setShowdata] = useState(() => true);
   const [filterlist, setfilterlist] = useState({});
   const [month, setmonth] = useState();
+  const [isActive, setIsActive] = useState(0);
 
 
   const toggleTab = (index) => {
@@ -49,6 +50,9 @@ function Holidayscategory() {
       behavior: "smooth"
     });
   }
+
+
+  console.log("fgh", holidaylist)
 
   setTimeout(() => {
     setSkeleton(() => false);
@@ -81,14 +85,22 @@ function Holidayscategory() {
     })
     setDatalist(AllmonthValue);
 
+
   }
 
   function monthFliter(id) {
+
     setmonth(id)
     setShowdata(() => false);
-    setfilterlist(datalist[id]) 
+    id == "All" ? setfilterlist(holidaylist) : setfilterlist(datalist[id])
+    console.log("acsdncj", filterlist)
+    setIsActive(current => !current);
+    // var labels = document.getElementsByTagName('LABEL');
+    // for (var i = 1; i < labels.length; i++) {
+    //   labels.classList.add("active")
 
-    console.log("acsdncj", filtervalue)
+    // }
+    
   }
 
 
@@ -147,11 +159,11 @@ function Holidayscategory() {
                   <div>
                     {
                       showdata ?
-                      <p className="title_para title_para-second">Trading Holidays in 2023</p>:
-                      <p className="title_para title_para-second">Stock Market Holidays in {month} 2023</p>
+                        <p className="title_para title_para-second">Trading Holidays in 2023</p> :
+                        <p className="title_para title_para-second">Stock Market Holidays in {month} 2023</p>
                     }
-                    
-                    
+
+
 
                   </div>
                 </div>
@@ -182,7 +194,7 @@ function Holidayscategory() {
                                       <div className="row">
                                         <div className="col-md-12">
                                           <div className="holidays-table">
-                                            <div className="table-responsive wow fadeInUp">
+                                            <div className="table-responsive wow fadeInUp table-desk">
                                               <table className="table table-hover table-striped ">
                                                 <thead>
                                                   <tr>
@@ -194,27 +206,27 @@ function Holidayscategory() {
                                                         <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
                                                           All
                                                         </Dropdown.Toggle>
-                                                        
-                                                            <Dropdown.Menu  >
-                                                              <div className="months-custom" >
-                                                                <MDBCheckbox name='flexCheck' value='' id='check1' label='All' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check2' onClick={() => monthFliter('January')} label='January' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check3' onClick={() => monthFliter('February')} label='February' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check4' onClick={() => monthFliter('March')} label='March' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check5' onClick={() => monthFliter('April')} label='April' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check6' onClick={() => monthFliter('May')} label='May' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check7' onClick={() => monthFliter('June')} label='June' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check8' onClick={() => monthFliter('July')} label='July' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check9' onClick={() => monthFliter('August')} label='August' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check10' onClick={() => monthFliter('September')} label='September' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check11' onClick={() => monthFliter('October')} label='October' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check12' onClick={() => monthFliter('November')} label='November' />
-                                                                <MDBCheckbox name='flexCheck' value='' id='check13' onClick={() => monthFliter('December')} label='December' />
-                                                              </div>
-                                                            </Dropdown.Menu>
-                                                        
 
-                                                        
+                                                        <Dropdown.Menu  >
+                                                          <div className="months-custom" >
+                                                            <MDBCheckbox name='flexCheck' value='' id='check1' onClick={() => {monthFliter("All"),setIsActive(1)} } label='All' className={isActive==1 ? "activemonth" : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check2' onClick={() => {monthFliter('January'),setIsActive(2)}} label='January'  className={isActive==2 ? 'activemonth' : ''}/>
+                                                            <MDBCheckbox name='flexCheck' value='' id='check3' onClick={() => {monthFliter('February'),setIsActive(3)}} label='February' className={isActive==3 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check4' onClick={() => {monthFliter('March'),setIsActive(4)}} label='March' className={isActive==4 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check5' onClick={() => {monthFliter('April'),setIsActive(5)}} label='April' className={isActive==5 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check6' onClick={() => {monthFliter('May'),setIsActive(6)}}label='May' className={isActive==6 ? 'activemonth' : ''}/>
+                                                            <MDBCheckbox name='flexCheck' value='' id='check7' onClick={() => {monthFliter('June'),setIsActive(7)}} label='June' className={isActive==7 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check8' onClick={() => {monthFliter('July'),setIsActive(8)}} label='July' className={isActive==8 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check9' onClick={() => {monthFliter('August'),setIsActive(9)}} label='August' className={isActive==9 ? 'activemonth' : ''}/>
+                                                            <MDBCheckbox name='flexCheck' value='' id='check10' onClick={() =>{monthFliter('September'),setIsActive(10)}} label='September' className={isActive==10 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check11' onClick={() =>{monthFliter('October'),setIsActive(11)}} label='October' className={isActive==11 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check12' onClick={() =>{monthFliter('November'),setIsActive(12)} }label='November' className={isActive==12 ? 'activemonth' : ''} />
+                                                            <MDBCheckbox name='flexCheck' value='' id='check13' onClick={() =>{monthFliter('December'),setIsActive(13)}} label='December' className={isActive==13 ? 'activemonth' : ''} />
+                                                          </div>
+                                                        </Dropdown.Menu>
+
+
+
                                                       </Dropdown>
 
 
@@ -222,40 +234,40 @@ function Holidayscategory() {
                                                     <th>Day</th>
                                                   </tr>
                                                 </thead>
-{
-  showdata ?
-                                               <tbody>
-                                                  {
-                                                    holidaylist.map((res, i) => {
-                                                      return (
-                                                        <tr key={i}>
-                                                          <td className="charges-heads">{res.id}</td>
-                                                          <td>{res.holidayName}</td>
-                                                          <td>{res.date}</td>
-                                                          <td>{res.day}</td>
-                                                        </tr>
-                                                      )
-                                                    })
-                                                  }
-                                                </tbody>:
-                                                <tbody>
                                                 {
-                                                  
-                                                  filterlist?.map((res, i) => {
-                                                    return (
-                                                      <tr key={i}>
-                                                        <td className="charges-heads">{res.id}</td>
-                                                        <td>{res.holidayName}</td>
-                                                        <td>{res.date}</td>
-                                                        <td>{res.day}</td>
-                                                      </tr>
-                                                    )
-                                                  })
+                                                  showdata ?
+                                                    <tbody>
+                                                      {
+                                                        holidaylist.map((res, i) => {
+                                                          return (
+                                                            <tr key={i}>
+                                                              <td className="charges-heads">{res.id}</td>
+                                                              <td>{res.holidayName}</td>
+                                                              <td>{res.date}</td>
+                                                              <td>{res.day}</td>
+                                                            </tr>
+                                                          )
+                                                        })
+                                                      }
+                                                    </tbody> :
+                                                    <tbody>
+                                                      {
+
+                                                        filterlist?.map((res, i) => {
+                                                          return (
+                                                            <tr key={i}>
+                                                              <td className="charges-heads">{res.id}</td>
+                                                              <td>{res.holidayName}</td>
+                                                              <td>{res.date}</td>
+                                                              <td>{res.day}</td>
+                                                            </tr>
+                                                          )
+                                                        })
+                                                      }
+                                                    </tbody>
                                                 }
-                                              </tbody>
-}
-                                                
-                                                
+
+
 
 
 

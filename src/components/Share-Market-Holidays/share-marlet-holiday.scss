@@ -122,11 +122,15 @@
                                     }
                             
                                     .form-check-input {
-                                        position: absolute;
+                                        padding: 0;
+                                        border: 0;
+                                        position: relative;
+                                        width: 12px;
+                                        height: 12px;
+                                        margin-left: 0;
                                         opacity: 0;
-                                        cursor: pointer;
-                                        height: 0;
-                                        width: 0;
+                                        outline: none;
+                                        box-shadow: none;
                                     }
                             
                                     .form-check-label {
@@ -171,14 +175,20 @@
                                             padding-left: 2rem;
                                         }
                                     }
+                                   
+                                    
+                                    
                             
-                                    input:checked~.form-check-label::before {
-                                        display: block;
-                                        
+                                    input.activemonth {
+                                       
+                                        background: url('../../assets/images/share-market-holidays/ticked_img.svg') no-repeat top left;
+                                        background-size: contain;
+                                        opacity: 1;
                                     }
-                                    input:checked~.form-check-label{
-                                        color:$bgcolordark;
-                                    }
+                                    // input:checked~.form-check-label{
+                                    //     color:$bgcolordark;
+                                    // }
+                                    
                                     
                                 }
                             
@@ -281,6 +291,12 @@
     @media (max-width: $sm) {
         overflow-x: auto;
 
+    }
+}
+.form-check{
+    .activemonth{
+        color: aqua;
+        background-color: brown;
     }
 }
 
