@@ -47,8 +47,8 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          adaptiveHeight: true,
-          dots:false,
+          adaptiveHeight: false,
+          dots:true,
         },
       },
       {
@@ -56,7 +56,7 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          dots:false,
+          dots:true,
         },
       },
       {
@@ -64,7 +64,7 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:false,
+          dots:true,
         },
       },
     ],
