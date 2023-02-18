@@ -60,14 +60,26 @@ multipleTokensURLData: function (postdata) {
     return userId || '';
   },
 
+
+  IpAddress: function () {
+    let api = new API_URLS()
+    let url = api.getIpaddressURL()
+    return axios.get(url).then(({data})=>{
+      return data
+    })
+    },
+
   NACHCancellation: function (request) {
     let api = new API_URLS()
     let url = api.getNACHCancellationURL()
+    let ipAddress = request.ip
     return axios.post(url, request, {
       headers: {
         'x-api-key': this.getCryptoNACHKey(),
         'Content-Type': 'application/json;charset=UTF-8',
         'Accept': '*/*',
+        'ip':ipAddress
+
       }
     });
 }
