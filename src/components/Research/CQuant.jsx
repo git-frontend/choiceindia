@@ -289,7 +289,7 @@ function CQuant() {
             SessionId: session,
             Start: 0,
             startDate: utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-            status: 'ALL',
+            status: 'T1',
             type: 'EQ',
             UserId: 'guest',
             search: ''
@@ -302,9 +302,6 @@ function CQuant() {
                 let response = []
                 response = res.Response.Data;
                 console.log("all response",response)
-                let tokenList = {};
-
-                if(response.TACode === 2 || response.TACode === 3 || response.TACode === 4){
 
 
                     response = response.map(ele => {
@@ -329,7 +326,7 @@ function CQuant() {
                     //FUTURE REFERENCE
                     // subscribeMultitouchline(tokenList,onRealtimeCallback,session);
                     setResearchReport(response)
-                }
+                
    
             } else {
                 setResearchReport([])
