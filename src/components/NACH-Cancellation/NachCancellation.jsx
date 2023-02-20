@@ -50,6 +50,8 @@ function NachCancellation(props) {
   const [loaders, setLoaders] = useState({});
   const [showotp, setShowotp] = useState(true);
   var otpSessionID = useRef('');
+  const[ip, setip] = useState();
+  const[trigger,settrigger]= useState(false)
   /** Regex for Name */
   const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
   /**Regex for Account Number*/
@@ -114,12 +116,7 @@ function NachCancellation(props) {
 
   }, [executeRecaptcha]);
 
-  // useEffect(() => {
-  //     if (captchaToken) {
-  //         msg == 'resend'?sendOTP(true):sendOTP(false);
-
-  //     }
-  // }, [captchaToken]);
+  
 
   function showLoader(type) {
     setLoaders((prevLoaders) => ({
@@ -169,7 +166,7 @@ function hideLoader(type) {
       setOTPSendSuccessToaster(false);
     }, 2000)
   }
-  console.log("check", showOTPPopup)
+  // console.log("check", showOTPPopup)
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -203,7 +200,18 @@ function hideLoader(type) {
   // }
   useEffect(() => {
     checkWebOTP();
+    
 }, [loaders.resendOTPLoader || loaders.sendOTPLoader]);
+
+useEffect(() => {
+  settrigger(true)
+  if(trigger == true){
+    storeIpAddress();
+
+  }
+  
+  
+}, [trigger]);
 
 
 
@@ -266,7 +274,7 @@ function hideLoader(type) {
       }).catch((error) => {
 
         hideLoader('verifyLoader');
-        console.log(error.response.data.Message, "verifyOTPN error");
+        // console.log(error.response.data.Message, "verifyOTPN error");
         setOTPErrors((error && error.response && error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
       });
     }
@@ -369,7 +377,8 @@ function hideLoader(type) {
       "accountNum": formData.accountNum,
       "mobile": Number(formData.mobile),
       "email": formData.email,
-      "remarks": formData.remarks
+      "remarks": formData.remarks,
+      "ip": ip
     };
     showLoader('addLeadLoader');
 
@@ -414,6 +423,14 @@ function hideLoader(type) {
     
     
     
+  }
+
+  function storeIpAddress(){
+
+    rest.IpAddress().then(res=>{
+       setip(res.IPv4)
+      
+    })
   }
 
 
@@ -463,7 +480,7 @@ function hideLoader(type) {
                     </div> */}
                     <div className="button-filed">
                       {/* onClick={() => { setShow(true) }} */}
-                      <Button type="submit" className="btn-bg">{(loaders.verifyLoader || loaders.addLeadLoader) ? <Spinner animation="border" /> : "Submit"}</Button>
+                      <Button type="submit" className="btn-bg">{(loaders.verifyLoader || loaders.sendOTPLoader) ? <Spinner animation="border" /> : "Submit"}</Button>
                       {/* <Button className="btn-bg btn-back">Back</Button> */}
                     </div>
                   </Form>
