@@ -301,29 +301,33 @@ function CQuant() {
 
                 let response = []
                 response = res.Response.Data;
-                let tokenList = [];
-                response = response.map(ele => {
+                console.log("all response",response)
 
-                    ele = JSON.parse(JSON.stringify(getFormattedResearch(ele)))
 
-                    let dateData = ele.ATime;
-                    if (dateData) {
-                        let len = dateData.split(" ")
-                        if (len.length) {
-                            ele.date = len[0];
-                            ele.time = len[1];
+                    response = response.map(ele => {
+
+                        ele = JSON.parse(JSON.stringify(getFormattedResearch(ele)))
+    
+                        let dateData = ele.ATime;
+                        if (dateData) {
+                            let len = dateData.split(" ")
+                            if (len.length) {
+                                ele.date = len[0];
+                                ele.time = len[1];
+                            }
                         }
-                    }
-                    ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0], ele.time.split(':')[0], ele.time.split(':')[1], ele.time.split(':')[2]), "dd MMMM'yy hh:mm:ss TT")
-
-
-                     //FUTURE REFERENCE
-                    // tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
-                    return ele
-                })
-                //FUTURE REFERENCE
-                // subscribeMultitouchline(tokenList,onRealtimeCallback,session);
-                setResearchReport(response)
+                        ele.published_date = utils.formatDate(new Date(ele.date.split('-')[2], (ele.date.split('-')[1] - 1), ele.date.split('-')[0], ele.time.split(':')[0], ele.time.split(':')[1], ele.time.split(':')[2]), "dd MMMM'yy hh:mm:ss TT")
+    
+    
+                         //FUTURE REFERENCE
+                        // tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+                        return ele
+                    })
+                    //FUTURE REFERENCE
+                    // subscribeMultitouchline(tokenList,onRealtimeCallback,session);
+                    setResearchReport(response)
+                
+   
             } else {
                 setResearchReport([])
             }

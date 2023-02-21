@@ -183,8 +183,9 @@
                 font-family: $font-family-poppins-regular;
                 font-weight: 400;
                 color: $primary;
-                line-height: 4.75rem;
+                line-height: 1.6;
                 position: relative;
+                padding: 1rem 0;
                 padding-left: 2rem;
                 @media screen and (max-width: $sm) {
                     line-height: 2.5rem;
@@ -193,13 +194,16 @@
                 &::before{
                     content: '';
                     width: 4px;
-                    height: 70%;
+                    height: 75%;
                     display: block;
                     position: absolute;
                     left: 0;
                     top: 50%;
                     background: $yellowColor;
                     transform: translate(0, -50%);
+                    @media screen and (max-width: $sm) {
+                        height: 85%;
+                    }
                 }
             }
             h3,h2{
