@@ -34,7 +34,7 @@ async function generateSitemap() {
           new Sitemap(router)
             .applyParams(paramsConfig)
             .build("https://dev.choiceindia.com/")
-            .save("./public/sitemap.xml")
+            .save("./public/sitemap-posts.xml")
         );
       })
   } catch (e) {
