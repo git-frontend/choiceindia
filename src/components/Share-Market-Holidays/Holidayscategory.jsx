@@ -42,20 +42,10 @@ function Holidayscategory() {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-  function chapterScroll(id) {
-    console.log("called", id)
-    var element = document.getElementById(id);
-    var headerOffset = 140;
-    var elementPosition = element.getBoundingClientRect().top;
-    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth"
-    });
-  }
+ 
 
 
-  console.log("fgh", holidaylist)
+  // console.log("fgh", holidaylist)
 
   setTimeout(() => {
     setSkeleton(() => false);
@@ -68,7 +58,7 @@ function Holidayscategory() {
       checkurl == 'nse-holidays';
       checkurl == 'bse-holidays';
       checkurl == 'mcx-ncdex-holidays';
-      console.log(holidaylist)
+      // console.log(holidaylist)
       FilterMonth()
       OtherHolidays()
     
@@ -104,7 +94,7 @@ function Holidayscategory() {
       
     
     setNselist(nsebsevalue.nsebse);
-    console.log("new r3w",nsebsevalue)
+    // console.log("new r3w",nsebsevalue)
 
     nsebsevalue.nsebse.forEach((ele)=>{
       if (!nseMonthvalue[ele.month]) {
@@ -141,7 +131,7 @@ function Holidayscategory() {
     
     setDatalist(AllmonthValue);
   }
-  console.log("toggleafter",toggleState)
+  // console.log("toggleafter",toggleState)
   function monthFliter(id,value) {
     value ? setToggleState(value):""
     // console.log (toggleState,"toggle3")
@@ -157,15 +147,11 @@ function Holidayscategory() {
     
     // console.log("acsdncj", filterlist)
     setIsActive(current => !current);
-    // var labels = document.getElementsByTagName('LABEL');
-    // for (var i = 1; i < labels.length; i++) {
-    //   labels.classList.add("active")
-
-    // }
+    
     
   }
 
-  console.log("month value",nseMonthvalue)
+  // console.log("month value",nseMonthvalue)
 
 
 
@@ -297,7 +283,7 @@ function Holidayscategory() {
                                                         holidaylist.map((res, i) => {
                                                           return (
                                                             <tr key={i}>
-                                                              <td className="charges-heads">{res.id}</td>
+                                                              <td className="charges-heads">{i+1}</td>
                                                               <td>{res.holidayName}</td>
                                                               <td>{res.date}</td>
                                                               <td>{res.day}</td>
@@ -312,7 +298,7 @@ function Holidayscategory() {
                                                         filterlist?.map((res, i) => {
                                                           return (
                                                             <tr key={i}>
-                                                              <td className="charges-heads">{res.id}</td>
+                                                              <td className="charges-heads">{i+1}</td>
                                                               <td>{res.holidayName}</td>
                                                               <td>{res.date}</td>
                                                               <td>{res.day}</td>

@@ -320,6 +320,7 @@
     overflow-x: unset;
     @media (max-width: $sm) {
         overflow-x: auto;
+        min-height: 378px;
 
     }
 }
