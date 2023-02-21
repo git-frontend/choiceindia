@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -215,9 +215,9 @@ export class API_URLS {
     nbfcRegister='api/register';
     nbfcLogin ='api/login';
 
-    subBrokerSendOtpURLNew = 'https://sso-api.choicetechlab.com/sub-broker/signup';
-    subBrokerResendOtpURLNew = 'https://sso-api.choicetechlab.com/resendotp';
-    subBrokerVerifyOtpURLNew = 'https://sso-api.choicetechlab.com/verifyotp';
+    subBrokerSendOtpURLNew = 'sub-broker/signup';
+    subBrokerResendOtpURLNew = 'resendotp';
+    subBrokerVerifyOtpURLNew = 'verifyotp';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -729,15 +729,15 @@ export class API_URLS {
     }
 
     getSubBrokerNewSendOtpUrl() {
-        return this.subBrokerSendOtpURLNew;
+        return this.SSOServerURL + this.subBrokerSendOtpURLNew;
     }
 
     getSubBrokerNewResendOtpURL() {
-        return this.subBrokerResendOtpURLNew;
+        return this.SSOServerURL + this.subBrokerResendOtpURLNew;
     }
 
     getSubBrokerNewVerifyOtpURL() {
-        return this.subBrokerVerifyOtpURLNew;
+        return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
     }
     
 
