@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import img1 from '../../assets/images/ipo/tag-list.svg'
+import img1 from '../../assets/images/ipo/ipo-investment-process.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
 import Slider from 'react-slick';
@@ -90,7 +90,7 @@ function IPOProcess() {
                             <h4>Shares Credited in Demat Account</h4>
                         </div>
                     </div>
-                     <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid mn-img-big"} width={"900"} height={"248"} />
+                     <LazyLoader src={img1} alt={"IPO investment process"} className={"img-fluid mn-img-big"} width={"900"} height={"248"} />
                   </div>
               }
               </div>

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
 import openAccountService from '../../Services/openAccountService';
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import "./demat-form.scss"
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import OpenDemateAccountPopup from './OpenDemateAccountPopup.jsx';
@@ -17,6 +17,7 @@ import infoimg from '../../assets/images/Info.svg';
 import failureimg from '../../assets/images/failure.svg';
 import './Thankyoupopup.scss';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import backIcon from '../../assets/images/backspace.svg';
 
 function DematAccountForm(props) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -28,8 +29,9 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1=(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const type1= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const [referID, setReferID] = useState('');
 
     
 
@@ -65,9 +67,14 @@ function DematAccountForm(props) {
     const [OTPInfoPopupMsg, setOTPInfoPopupMsg] = useState('');
     const [IsIssue, setIsIssue] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
+    const [showReferInput, setShowReferInput] = useState(() => false);
 
     const { executeRecaptcha } = useGoogleReCaptcha();
     
+
+    // useEffect(() => {
+    //     console.log('PRR',props.language)
+    // },[])
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
@@ -117,6 +124,21 @@ function DematAccountForm(props) {
         //     setErrors({});
         // }
         setMobileNumber(value);
+        setErrors({});
+    }
+
+    function handleReferID(e) {
+        let value = e.target.value.replace(/([^\w]+|\s+)/g, "");
+        // if (value) {
+        //     setMobileNumber(value);
+        //     setErrors({});
+        // } else {
+        //     setMobileNumber(value);
+        //     setErrors({});
+        // }
+        setReferID(value);
+        // console.log('RID',referID);
+        // console.log('RID2',refercode.current)
         setErrors({});
     }
 
@@ -249,6 +271,7 @@ function DematAccountForm(props) {
             "utm_content": UTMContent.current || null
         };
 
+        
         // setTimeout(() => {
         //     hideLoader('sendOTPLoader');
         // }, 4000);
@@ -282,7 +305,7 @@ function DematAccountForm(props) {
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": type1=='MF' ?"true":"1",
-            "referred_id": refercode.current || null,
+            "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
@@ -292,11 +315,13 @@ function DematAccountForm(props) {
             // 'sidebar_seo_leads'
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMMedium.current || null,
+            "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
+            "account_type" :type1=='MF'?"":"all"
             // "captcha": "1"
+            
         };
         openAccountService.sendOTP(request,type1).then((res) => {
             hideLoader('sendOTPLoader');
@@ -338,6 +363,8 @@ function DematAccountForm(props) {
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
         source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
         subrefercodeInv.current = (searchParams.get('subref'))||'';
+
+        setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     }
 
     // function handleOTP(e) {
@@ -353,6 +380,15 @@ function DematAccountForm(props) {
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+    function showReferBlock() {
+        setShowReferInput(() => true);
+    }
+
+    function showReferBlock2() {
+        setReferID(() => '');
+        setShowReferInput(() => false);
+    }
 
     // useEffect(() => {
     //     const interval = setInterval(() => {
@@ -571,6 +607,26 @@ function DematAccountForm(props) {
 
                         </div>
 
+                        {/* {
+    refercode.current? '':
+    <span className="referal-link" onClick={showReferBlock}>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')}</span>
+} */}
+                        
+
+                        {/* { */}
+                            {/* (showReferInput)? */}
+                            <div className="sub-formgrp">
+                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                            {/* {
+                                refercode.current? '': 
+                                <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
+                            } */}
+                            
+                            </div>
+                             {/* : '' */}
+                         {/* } */}
+
+
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
@@ -609,7 +665,7 @@ function DematAccountForm(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsheader')}</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')}</Modal.Body>
+                <Modal.Body>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'terms')} <Link to="/terms-conditions" target="_blank" className="term_link">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termlink')}</Link> </Modal.Body>
                 {/* <Modal.Footer>
                     <Button variant="warning" onClick={handleTermsConditionClose}>
                     {OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'termsbtn')}

@@ -1,7 +1,7 @@
 import React from "react";
-import img1 from '../../assets/images/ipo/discount-price.svg'
-import img2 from '../../assets/images/ipo/short-term.svg'
-import img3 from '../../assets/images/ipo/listing-gains.svg'
+import img1 from '../../assets/images/ipo/ipo-account/ipo-investment-at-discounted-price.svg'
+import img2 from '../../assets/images/ipo/ipo-account/ipo-investment-with-more-profit-in-short-term.svg'
+import img3 from '../../assets/images/ipo/ipo-account/invest-in-ipo-for-listing-gains.svg'
 
 import LazyLoader from '../Common-features/LazyLoader';
 import { Link } from "react-router-dom";
@@ -38,19 +38,19 @@ function IPOBenifits() {
                   <div className="ipo-benifits-list">
                       <div className="benifits-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img1} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img1} alt={"IPO investment at discounted price"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h3>Discounted <br/>Price</h3>
                       </div>
                       <div className="benifits-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img2} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img2} alt={"IPO investment with more profit in short term"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h3>More profit in <br/>short term</h3>
                       </div>
                       <div className="benifits-itm">
                           <span className="sm-img-itm">
-                            <LazyLoader src={img3} alt={" insurance  services"} className={"img-fluid"} width={"60"} height={"60"} />
+                            <LazyLoader src={img3} alt={"Invest in IPO for listing gains"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
                           <h3>Listing Gains</h3>
                       </div>

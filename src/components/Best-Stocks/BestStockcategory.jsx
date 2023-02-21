@@ -12,6 +12,7 @@ import BestStockOpenDematAccount from './BestStockOpenDematAccount';
 import OpenDemateAccountStickyFooter from "../Common-features/OpenDemateAccountStickyFooter"; 
 import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import noDataimg from '../../assets/images/no-data.webp';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import  { useRef } from 'react';
 import {
   useLocation,
@@ -672,7 +673,7 @@ function urlLink(){
                                                <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints||[])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                              </div>
                                              <div className="bottom">
-                                               <h6 className="bottom_small_text">Exp. Returns</h6>
+                                               <h6 className="bottom_small_text">Expected By</h6>
                                                <h4 className="bottom_big_text">{utils.formatDate(new Date(response?.report_expiry), "dd MMM , yyyy")}</h4>
                                              </div>
                                            </div>
@@ -790,7 +791,9 @@ function urlLink(){
                 </div>
               </div>
             </section>
-            <OpenDemateAccountStickyFooter/>
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <OpenDemateAccountStickyFooter />
+                                </GoogleReCaptchaProvider>
             <section className="readmoresection readmorecontent">
               <div className="container">
                 

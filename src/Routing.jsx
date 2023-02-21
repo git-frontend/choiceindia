@@ -131,6 +131,12 @@ const LazySolarFinanceSub = React.lazy(() => import('./components/Solar-Finance-
 
 const Lazygovernementadvisory = React.lazy(() => import('./components/Goverment-advisory/GovernmentAdvisory'));
 const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/offerDocument'));
+const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
+const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
+const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
+const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
+
 function Routing() {
 
 
@@ -480,11 +486,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        {/* <Route exact path='/ipo-investment-account' element={
+                        <Route exact path='/ipo-investment-account' element={
                             <React.Suspense>
                                 < LazyIPOInvestment />
                             </React.Suspense>
-                        } /> */}
+                        } />
 
 
                         <Route exact path='/client-details-update' element={
@@ -694,7 +700,67 @@ function Routing() {
                                 < LazyOfferDocument />
                             </React.Suspense>
                         } />
+                          <Route exact path='/stock-broker-in-mumbai' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-bangalore' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-chennai' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-hyderabad' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-broker-in-delhi' element={
+                            <React.Suspense>
+                                < LazyStockBroker />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/nach-cancellation' element={
+                            <React.Suspense>
+                                < LazyNachCancellation />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/stock-market-holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/nse-holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/bse-holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        {/* <Route exact path='/mcx-ncdex-holidays' element={
+                            <React.Suspense>
+                                < LazySharemarketholidays />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/digital-lending-partners' element={
+                            <React.Suspense>
+                                < LazyDigitalLendingBanner />
+                            </React.Suspense>
+                        } /> */}
  
+                         {/* <Route exact path='/about-choice-finserv' element={
+                            <React.Suspense>
+                                < LazyCfplImpact />
+                            </React.Suspense>
+                        } /> */}
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

@@ -63,7 +63,7 @@ const meta_tags = {
 
     "faq": { 'title': "Frequently Asked Questions | Choice",'lang':"en", 'content': "Find FAQs related to our products, services, investment advisory, account opening, and more. Get answers to all your queries about the stock market at Choice.", "link":"https://choiceindia.com/faq",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
-    "sub-broker-franchise": { 'title': "Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise without deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+    "sub-broker-franchise": { 'title': "Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en", 'content': "Start a sub broker franchise with minimum deposit. Become a stock market sub broker and start your own stock broker franchise business in India with Choice.", 'link': "https://choiceindia.com/sub-broker-franchise",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
 
     "refer-and-earn": { 'title': " Best Refer and Earn Demat Account - Earn upto Rs. 100 Per Referral",'lang':"en",'content': "Join the best refer and earn demat account opening referral program by Choice. Refer your friends to Choice and earn upto Rs.100 incentive per referral. Your friend will get upto Rs 100 after activating their account.", 'link': "https://choiceindia.com/refer-and-earn",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -528,9 +528,9 @@ const meta_tags = {
 
     "campaign/open-demat-account":{'title':"Open a Free Demat Account Online - Low Brokerage + No AMC For 1st Year",'lang':"en",'content':"Open a Free Demat Account Online at Choice with Low Brokerage Charges, First Year AMC Free, Free Research with 78% Success Ratio & more.",'link':"https://choiceindia.com/campaign/open-demat-account",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
-    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
+    "hindi/sub-broker-franchise":{'title':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी बिना डिपोजिट",'content':"चॉइस सब ब्रोकर बनें और शूरू करे सब ब्रोकर फ्रैंचाइज़ी सबसे कम डिपॉजिट में और कमाईये जीवनभर ब्रोकेरज शेअर ७५% तक आपसे जुडी हुए ग्राहकोसे, आजही चॉइस सब ब्रोकर बनें|",'link':"https://choiceindia.com/hindi/sub-broker-franchise",'lang':"hi",'link1': "https://choiceindia.com/sub-broker-franchise",'link2':"https://choiceindia.com/hindi/sub-broker-franchise",'link3':"https://choiceindia.com/gujarati/sub-broker-franchise","link4":"https://choiceindia.com/telugu/sub-broker-franchise","link5":"https://choiceindia.com/marathi/sub-broker-franchise","link6":"https://choiceindia.com/sub-broker-franchise","href1":"en","href2":"hi","href3":"gu","href4":"te","href5":"mr","href6":"x-default"},
 
-    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise without Deposit - Become a Choice Sub Broker",'lang':"en",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise without deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "campaign/sub-broker-franchise":{'title':"Sub Broker Franchise with Low Deposit - Become a Choice Sub Broker",'lang':"en",'content':"Become a Sub Broker with Choice. Open a sub brokership business or franchise with minimum deposit* & get upto 75% of total brokerage for whole trading life-span of the client.",'link':"https://choiceindia.com/sub-broker-franchise",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "corporate-governance":{'title':"Corporate Goveranc - Choice International Limited",'lang':"en",'content':"",'link':"https://choiceindia.com/corporate-governance",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -2114,13 +2114,85 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Check out the latest public issue document of equity and debt at Choice's official website.",
     "link":"https://choiceindia.com/offer-document"
   },
+  "stock-broker-in-mumbai": {
+    "title":"Choice - Stock Broker in Mumbai | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Mumbai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +022 67079999.",
+    "link":"https://choiceindia.com/stock-broker-in-mumbai"
+  },
   "individual-loan":{
     "title":"Get Individual Loan Online at Choice FinServ",
     'lang':"en",
     'content':"Individual loans are available through Choice FinServ. Get a quick individual loan with low processing fees and low interest rates. Visit instantly to apply.",
     "link":"https://choiceindia.com/individual-loan"
 
-  }
+  },
+
+  "stock-broker-in-bangalore": {
+    "title":"Choice - Stock Broker in Bangalore | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Bangalore. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9886062043.",
+    "link":"https://choiceindia.com/stock-broker-in-bangalore"
+  },
+
+  "stock-broker-in-chennai": {
+    "title":"Choice - Stock Broker in Chennai | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Chennai. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9884580688.",
+    "link":"https://choiceindia.com/stock-broker-in-chennai"
+  },
+
+  "stock-broker-in-hyderabad": {
+    "title":"Choice - Stock Broker in Hyderabad | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Hyderabad. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +02267079999.",
+    "link":"https://choiceindia.com/stock-broker-in-hyderabad"
+  },
+
+  "stock-broker-in-delhi": {
+    "title":"Choice - Stock Broker in Delhi | Official Branch",
+    'lang':"en",
+    'content':"Stock Broker in Delhi. Get address, phone number, photos, maps location, timings & nearby branches of Choice. Connect with us at +91 9322512424.",
+    "link":"https://choiceindia.com/stock-broker-in-delhi"
+  },
+  "digital-lending-partners": {
+    "title":"Digital Lending Partners with Choice Finserv",
+    'lang':"en",
+    'content':"In our portfolio, we're working with digital lending institutions. Visit to view a complete list of our partners for digital lending.",
+    "link":"https://choiceindia.com/digital-lending-partners"
+  },
+  "stock-market-holidays": {
+    "title":"Stock Market Holidays 2023 - List of Indian Share Market Holidays",
+    'lang':"en",
+    'content':"Check out the stock market holidays in 2023 on Choice. Stay updated with Indian share market holidays in 2023 & plan your investment accordingly.",
+    "link":"https://choiceindia.com/stock-market-holidays"
+  },
+  "nse-holidays": {
+    "title":"NSE Holidays 2023 List - Check NSE Trading Holidays of 2023",
+    'lang':"en",
+    'content':"Find a comprehensive list of NSE holidays in 2023 on Choice. Visit to download a PDF of the 2023 NSE trading holidays.",
+    "link":"https://choiceindia.com/nse-holidays"
+  },
+  "bse-holidays": {
+    "title":"BSE Holidays 2023 List - Check BSE Trading Holidays of 2023",
+    'lang':"en",
+    'content':"Check out the complete list of BSE holidays for 2023 on Choice. To download a PDF of the 2023 BSE trading holidays, visit Choice India.",
+    "link":"https://choiceindia.com/bse-holidays"
+  },
+  "mcx-ncdex-holidays": {
+    "title":"MCX Holidays 2023 List - Check MCX & NCDEX Trading Holidays in 2023",
+    'lang':"en",
+    'content':"Check the list of MCX and NCDEX holidays for 2023. Visit Choice India to download the complete trading holidays of MCX and NCDEX in pdf format.",
+    "link":"https://choiceindia.com/mcx-ncdex-holidays"
+  },
+
+
+  "about-choice-finserv": {
+    "title":" About Choice Finserv",
+    'lang':"en",
+    'content':"A part of the Choice Group, Choice Finserv aims to support the capital needs of India's MSME sector by offering a variety of loans.",
+    "link":"https://choiceindia.com/about-choice-finserv"
+  },
 }
 
 export default meta_tags;

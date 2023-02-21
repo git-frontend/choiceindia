@@ -60,7 +60,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>MTAR Technologies</h4>
-                              <LazyLoader src={brand5} alt={"MTAR Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand5} alt={"Recently listed IPO & it's listing gain - MTAR Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
@@ -75,7 +75,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>Indigo Paints</h4>
-                              <LazyLoader src={brand2} alt={"MTAR Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand2} alt={"Recently listed IPO & it's listing gain - Indigo Paints"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
@@ -90,7 +90,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>Burger King</h4>
-                              <LazyLoader src={brand4} alt={"Burger King"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand4} alt={"Recently listed IPO & it's listing gain - Burger King"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
@@ -105,7 +105,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>Mrs Bector’s Foods</h4>
-                              <LazyLoader src={brand1} alt={"Mrs Bector’s Foods"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand1} alt={"Recently listed IPO & it's listing gain - Cremica"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 
@@ -120,7 +120,7 @@ function IPOStocks() {
                       <div className="service-item" >
                           <div className="stock-itm-top d-flex">
                               <h4>Happiest Minds Technologies</h4>
-                              <LazyLoader src={brand3} alt={"Happiest Minds Technologies"} className={"img-fluid"} width={"126"} height={"56"} />
+                              <LazyLoader src={brand3} alt={"Recently listed IPO & it's listing gain - Happiest Minds"} className={"img-fluid"} width={"126"} height={"56"} />
                           </div>
                           <div className="stock-itm-btm">
                               <h4>Listing Date 

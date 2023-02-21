@@ -8,7 +8,12 @@ p{
     line-height: 2.15rem;
 }
 
-
+.text-danger {
+    font-family: $font-family-poppins-regular;
+    margin-top: 0.5rem;
+    display: block;
+    font-size: 1.2rem;
+}
 html{
     
     
@@ -316,4 +321,42 @@ body{
 
     .float-right{
         float: right;
+    }
+
+
+    .text-danger{
+        font-size: 1.2rem;
+        font-family: $font-family-poppins-regular;
+        margin-top: 0.5rem;
+        display: block;
+    }
+
+    .banner-title2{
+        font-family: $font-family-poppins-semibold;
+        color: $yellowColor;
+        font-size: 2.1rem;
+        margin-bottom: 2rem;
+        display: block;
+        
+        @media (max-width:$sm) {
+            display: none;
+        }
+        &.mf-ttl{
+            color: $blueColortext;
+            display: block !important;
+            font-size: 2.4rem;
+        }
+        &.mobile{
+            display: none;
+            @media (max-width:$sm) {
+                display: block !important;
+                text-align: center;
+                margin-bottom: 1.2rem;
+                font-size: 1.7rem;
+            }
+        }
+    }
+
+    .term_link{
+        text-decoration: none;
     }

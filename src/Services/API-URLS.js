@@ -39,6 +39,10 @@ const config = {
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
     livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
+    // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
+    UATNachBaseURL:"https://dev-api.choicetechlab.com/",
+    // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
+    liveNachBaseURL:"https://go.choiceindia.com/"
 }
 
 export class API_URLS {
@@ -76,8 +80,8 @@ export class API_URLS {
     fetchResearchReport = "/research-report-new"
     /** Research URL */
     researchURL = "https://uatapi.choicebroking.in/api/middleware"
-
-
+    /** NACH Base URL */
+    nachBaseURL = '';
     /** PV breakout API data URL */
     pvBreakoutURL = 'api/techanalysis/v3/GetMessages';
     /**Market Insights , fabal URL */
@@ -195,6 +199,11 @@ export class API_URLS {
     offerUrl='items/OfferDocument'
     /** escalation matrix */
     escalation ='items/investor_grievance?filter[status][_eq]=active&limit=1000&sort[]=id'
+    /** stock broker content */
+    contentUrl ='items/stock_broker_city?limit=1000&sort[]=id'
+    /** sub broker city */
+    cityUrl = 'items/sub_broker_branch_city?limit=1000&sort[]=id'
+
 
 
 
@@ -214,6 +223,10 @@ export class API_URLS {
     subBrokerVerifyOtpURL = 'https://neuron.choicebroking.in/api/jiffy/verify-otp';
     nbfcRegister='api/register';
     nbfcLogin ='api/login';
+    /** NACH URL */
+    nachCancellationUATURL = 'sendMailNBFCv2';
+    nachCancellationliveURL = 'sendMailNBFC';
+    nachCancellationURL = 'api/newdetail'
 
     subBrokerSendOtpURLNew = 'sub-broker/signup';
     subBrokerResendOtpURLNew = 'resendotp';
@@ -253,6 +266,7 @@ export class API_URLS {
         this.setresearchURL(config[configKey + 'researchURL']);
         this.setperformanceURL(config[configKey + 'performanceURL']);
         this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
+        this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
     }
 
     setJiffyBaseURL = (url) => {
@@ -336,6 +350,9 @@ export class API_URLS {
         this.bannerURL = url;
     }
 
+    setNACHBaseURL = (url) => {
+        this.nachBaseURL = url;
+    }
 
     getExpertDetailURL = (id) => {
         return this.jiffyURL + this.jiffyExpertPageURL + id
@@ -728,6 +745,10 @@ export class API_URLS {
         return this.bannerURL + this.escalation
     }
 
+
+
+
+
     getSubBrokerNewSendOtpUrl() {
         return this.SSOServerURL + this.subBrokerSendOtpURLNew;
     }
@@ -738,6 +759,20 @@ export class API_URLS {
 
     getSubBrokerNewVerifyOtpURL() {
         return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
+    }
+    getSubBrokerURL(location){
+        return this.bannerURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
+    }
+
+    getSubBrokerCityURL(){
+        return this.bannerURL + this.cityUrl
+    }
+    getNACHCancellationURL() {
+        return this.nachBaseURL + this.nachCancellationURL
+    }
+
+    getIpaddressURL(){
+        return "https://geolocation-db.com/json/"
     }
     
 

@@ -31,7 +31,7 @@ function Contactdetail() {
    function cityList() {
       contactService.contactCity().then(res => {
          if (res && res.data && res.data.data) {
-            console.log(res.data.data);
+            // console.log(res.data.data);
 
             res.data.data.forEach(ele => {
 

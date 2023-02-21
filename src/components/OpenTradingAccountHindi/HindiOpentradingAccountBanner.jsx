@@ -45,6 +45,7 @@ const HindiOpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                        <span className="banner-title2">ऑल इन वन अकाउंट</span>
                             <h1 className="banner-title" >
                                 <div className="desktop">मुफ़्त डीमैट खाता खोलें</div>
                                 
@@ -61,8 +62,7 @@ const HindiOpenFreeAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >कम </span>डीपी शुल्क<span className="subtxt">(केवल 10 रुपये)
-</span>
+                                                <p>सभी इन्वेस्टमेंट के लिए एकही अकाउंट
                                                 </p>
                                             </div>
                                         </div>
@@ -110,6 +110,7 @@ const HindiOpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <span className="banner-title2 mobile">ऑल इन वन अकाउंट</span>
                         <h1 className="banner-title mbtitle" >
                         <div className="mobile">मुफ़्त डीमैट खाता खोलें</div>
                             </h1>

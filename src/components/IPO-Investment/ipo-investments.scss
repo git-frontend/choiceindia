@@ -34,9 +34,11 @@ body{
                     display: flex;
                     align-items: center;
                     text-align: left;
+                    gap: 10px;
                 }
                 @media (max-width: $sm) {
                     width: 85%;
+                    gap: 27px;
                     span{
                         .img-fluid{
                             width: 90px;
@@ -148,6 +150,9 @@ body{
                     width: 90% !important;
                     margin: 0 auto;
                     display: block;
+                    @media (max-width:$md) {
+                        min-height: 26rem;
+                    }
                     .stck-gn{
                         position: absolute;
                         text-align: center;
@@ -347,8 +352,11 @@ body{
 .why-choice-ipo{
     background: $primary;
     padding: 8rem 0 10rem 0;
+    @media (max-width: $md) {
+        padding: 8rem 0 8rem 0;
+    }
     @media (max-width: $sm) {
-        padding: 6rem 0 10rem 0;
+        padding: 6rem 0 6rem 0;
     }
     .title-first{
         margin-bottom: 5rem;
@@ -401,6 +409,7 @@ body{
         top: 47%;
         background: url(../../assets/images/insurance/bg2.webp) no-repeat top right;
         background-size: contain;
+        z-index: -1;
         @media (max-width: $md) {
             display: none;
         }

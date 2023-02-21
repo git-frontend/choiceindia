@@ -428,7 +428,7 @@ function nbfcForm(props) {
         };
         let request1 = {
             "product": 'NBFC',
-            "user_name": parseInt(brokerMobileNumber) ,
+            "user_name": brokerMobileNumber ,
             "captchaResp": captchaTokenre,
             
         };

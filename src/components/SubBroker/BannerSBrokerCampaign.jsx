@@ -3,11 +3,28 @@ import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-
 import SubBrokerForm from './SubBrokerForm'
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import utils from "../../Services/utils";
+import { useState,useEffect } from "react";
 function BannerSBroker() {
-
+    const[ischeck,setIscheck]=useState(false);
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }
+        }
+    };
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
     return (
         <div>
-            <section className="franchise-banner" >
+            <section className="franchise-banner" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row align-items-end">
                         <div className="col-md-6 col-lg-8 ">
@@ -15,7 +32,7 @@ function BannerSBroker() {
                                 <div className="left-sec">
                                 <h1 className="tlt1"><span className="tlt2">Start Sub Broker</span>
                                     Franchise
-                                    <span className="tlt2">without Deposit*</span></h1>
+                                    <span className="tlt2">with Low Deposit*</span></h1>
                                 </div>
                                 <div className="right-sec">
                                     <LazyLoader src={SubBannerimage} alt={"Sub Broker Franchise Without Deposit"} className={"img-fluid"} width={"400"} height={"391"} />
@@ -43,15 +60,15 @@ function BannerSBroker() {
                                 </GoogleReCaptchaProvider>
                             </div>
                         </div>
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>Become a Sub Broker</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-
-
-
         </div>
-
     );
 }
-
 export default BannerSBroker;

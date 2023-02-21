@@ -44,6 +44,7 @@ const OpenFreeAccountBanner = () => {
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                            <span className="banner-title2">ऑल इन वन अकाउंट</span>
                             <h1 className="banner-title" >
                                 <div className="desktop"><span> मोफत डीमॅट खाते उघडा</span></div>
                                 
@@ -60,7 +61,7 @@ const OpenFreeAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p>कमी डिपी चार्जेस<span className="subtxt"> (१० रुपये मात्र)</span>
+                                                <p>सर्व गुंतवणुकीसाठी एकच खाते
                                                 </p>
                                             </div>
                                         </div>
@@ -108,6 +109,7 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
+                        <span className="banner-title2 mobile">ऑल इन वन अकाउंट</span>
                         <h1 className="banner-title mbtitle" >
                         <div className="mobile"><span> मोफत डीमॅट खाते उघडा</span></div>
                                 

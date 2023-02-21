@@ -20,7 +20,7 @@ const OpenFreeAccountBanner = () => {
     const [view,setView]=useState({
 		matches: window.innerWidth < 770 ? false : true ,
 	  });
-
+    const[ischeck,setIscheck]=useState(false);
 
 
     function chapterScroll(id) {
@@ -85,10 +85,11 @@ const OpenFreeAccountBanner = () => {
     // },[])    
     return (
         <div>
-             <section className="banner-sect" >
+             <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
+                            <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                                 <div className="desktop"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
@@ -107,7 +108,7 @@ const OpenFreeAccountBanner = () => {
                                                 </div>
                                             </div>
                                             <div className="resptext">
-                                                <p><span className="fontbold" >Low</span> DP Charges<span className="subtxt"> (Rs. 10 Only)</span>
+                                                <p><span className="fontbold" >One</span> Account for Everything
                                                 </p>
                                             </div>
                                         </div>
@@ -157,18 +158,33 @@ const OpenFreeAccountBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        <h1 className="banner-title mbtitle" >
+                            <span className="banner-title2 mobile">All in 1 Account</span>
+                            <h1 className="banner-title mbtitle" >
+                                
                                 <div className="mobile"><span> Open a <span className="free">Free</span></span><br /> Demat Account <br />with <span className="yellow">No Annual Charges*</span></div>
                                 
                             </h1>
-                            <div className="formwrap d-flex justify-content-end ">
+                            {
+                                ischeck ?
+                                <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
+                            </div>:
+                            <div className="formwrap d-flex justify-content-end " onMouseOver={()=>setIscheck(true)}>
+                                {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
+                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                
+                                    <DematAccountForm />
+                                
                             </div>
+
+                            }
+                          
 
                         </div>
 
