@@ -11,7 +11,7 @@ function Expert() {
         infinite: true,
         speed: 2000,
         arrows: false,
-        slidesToShow: 3,
+        slidesToShow: 2,
         autoplay: false,
         margin:15,
         dots:true,
@@ -46,7 +46,7 @@ function Expert() {
                     </div>
                 </div>
                 <div className="row justify-content-center">
-                <div className="col-md-9">
+                <div className="col-md-6">
                   <div className="team-list">
                   <Slider {...settings} className="expert-list-slider">
                       <div className="expert-item">
@@ -60,7 +60,7 @@ function Expert() {
                        
                         
                       </div>
-                      <div className="expert-item">
+                      {/* <div className="expert-item">
                         <span className="img-itm">
                                           <img src={image2} width="224" height="349" className="img-fluid" alt="loading" />
                         </span>
@@ -70,7 +70,7 @@ function Expert() {
                         </div>
                        
                         
-                      </div>
+                      </div> */}
                       <div className="expert-item">
                         <span className="img-itm">
                                           <img src={image3} width="224" height="349" className="img-fluid" alt="loading"/>
