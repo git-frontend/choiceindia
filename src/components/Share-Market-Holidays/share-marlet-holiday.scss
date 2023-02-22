@@ -8,6 +8,7 @@
 
         @media (max-width: $sm) {
             margin-top: 1rem;
+            padding: 0.5rem 0rem;
         }
     }
     .list_group1{
@@ -42,7 +43,10 @@
             margin-top: 0.5rem;
             position: relative;
             z-index: 9;
-            
+            @media (max-width: $sm) {
+                margin-top: 3.5rem;
+            }
+
             .table-striped {
                 margin: 0;
 
@@ -242,7 +246,7 @@
                         border: 0;
                         color: $primary;
                         font-family: $font-family-poppins-regular;
-                        font-size: 1.375rem;
+                        font-size: 1.3rem;
                         text-align: left;
                         padding: 1.375rem;
                         box-shadow: inherit;
@@ -331,3 +335,8 @@
     }
 }
 
+.holidayOTP{
+    @media (max-width: 767px){
+        padding-bottom: 4rem !important;
+    }
+}
