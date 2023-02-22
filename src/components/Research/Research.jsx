@@ -42,8 +42,8 @@ function Research() {
     <div className="wrapper-rsrch">
 
         <Banner />
-        <LongTermResearch />
         <ShortTermResearch />
+        <LongTermResearch />
         <CollectionSlider />
         <Expert />
         <OurPerformance />
