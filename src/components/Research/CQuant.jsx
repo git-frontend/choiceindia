@@ -284,12 +284,12 @@ function CQuant() {
     let getSignalResearch = (session) => {
         setShowLoader(true)
         let payload = {
-            Count: 6,
+            Count: 1000,
             endDate: utils.formatDate(new Date(), "dd-MM-yyyy"),
             SessionId: session,
             Start: 0,
             startDate: utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-            status: 'T1',
+            status: 'ALL',
             type: 'EQ',
             UserId: 'guest',
             search: ''
@@ -300,8 +300,16 @@ function CQuant() {
             if (res.Status == "SUCCESS") {
 
                 let response = []
-                response = res.Response.Data;
+                // response = res.Response.Data;
                 console.log("all response",response)
+                res.Response.Data.forEach(ele => {
+                    if ((ele.TACode == 2)||(ele.TACode == 3)||(ele.TACode == 5)||(ele.TACode == 12)||(ele.TACode == 13)||(ele.TACode == 22)||(ele.TACode == 23)||(ele.TACode == 32)||(ele.TACode == 33)||(ele.TACode == 35)||(ele.TACode == 52) ) {
+                    
+                        response.push(ele)
+                   
+                }
+                
+                })
 
 
                     response = response.map(ele => {
@@ -375,7 +383,7 @@ function CQuant() {
                         (researchReport && researchReport?.length) ?
                         <div className="cquant-tab-cont">
                 <div className="cquant-tab-list">
-                    {researchReport.map((report, index) => {
+                    {researchReport.slice(0,6).map((report, index) => {
                         return (<div className="cquant-tab-itm" key={index}>
                             <div className="tab-itm-top inactive-call">
                                 <div className="itm-top-ttl">
