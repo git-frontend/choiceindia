@@ -52,8 +52,8 @@ function MoreContent() {
                                     <p className="sml-para-dv">The sub broker commission might be between 40% and 80% of the total business transaction amount. Moreover, the commission rate can be high if the stock broker is reputed and has a flourishing business.</p>
                                     <p className="sml-para-dv">If the broker follows a lump sum payment model, the sub broker will receive a fixed amount on every construction. On the other hand, if the broker chooses a percentage-based model, then the sub broker gets a pre-decided percentage of the transaction as a commission.</p>
                               
-                                    <h3>Start a Sub Brokership without Deposit with Choice</h3>
-                                    <p className="sml-para-dv">It is possible to be a sub broker without paying the initial deposit. However, you need to identify a stock broker who allows this. So, if you want to begin sub brokership without deposit, Choice will be the best platform.</p>
+                                    <h3>Start a Sub Brokership with Minimum Deposit with Choice</h3>
+                                    <p className="sml-para-dv">It is possible to be a sub broker without paying the initial deposit. However, you need to identify a stock broker who allows this. So, if you want to begin sub brokership with minimum deposit, Choice will be the best platform.</p>
                                     <p className="sml-para-dv">Choice has developed an impressive portfolio by walking in the investment sector for more than 25 years. So, you can expect a high revenue-sharing rate by partnering with them.</p>
                                     <p className="sml-para-dv">The benefits of working with Choice are –</p>
                                     <ul className="terms-list sml-para-dv">

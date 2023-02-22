@@ -751,6 +751,10 @@ export class API_URLS {
     getNACHCancellationURL() {
         return this.nachBaseURL + this.nachCancellationURL
     }
+
+    getIpaddressURL(){
+        return "https://geolocation-db.com/json/"
+    }
     
 
 }
