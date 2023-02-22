@@ -590,7 +590,7 @@ function SubBrokerForm(props) {
                     handleOTPResendSuccessToaster();
             } else {
                 if (isResend) {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 } else {
                     setAPIError((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
                     showAPIErrorToaster();
@@ -600,14 +600,14 @@ function SubBrokerForm(props) {
             // console.log(error, "sendOTP error");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (isResend) {
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setOTPErrors(error.response.data.message);
+                if (error && error.response && error.response.data && error.response.data.Message) {
+                    setOTPErrors(error.response.data.Message);
                 } else {
                     setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             } else {
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setAPIError(error.response.data.message);
+                if (error && error.response && error.response.data && error.response.data.Message) {
+                    setAPIError(error.response.data.Message);
                 } else {
                     setAPIError("Something went wrong, please try again later!");
                 }
@@ -635,14 +635,14 @@ function SubBrokerForm(props) {
                 handleOTPResendSuccessToaster();
             }else{
                 if (isResend) {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             }
         }).catch((error) => {
 
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (error && error.response && error.response.data && error.response.data.message) {
-                setOTPErrors(error.response.data.message);
+            if (error && error.response && error.response.data && error.response.data.Message) {
+                setOTPErrors(error.response.data.Message);
             } else {
                 setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             }
@@ -668,16 +668,16 @@ function SubBrokerForm(props) {
                     handleBrokerCreatedSuccessShow();
                     resetBrokerForm();
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
+                        return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
                     });
                     // addNewLead();
                 } else {
-                    setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
                 // console.log(error, "verifyOTPN error");
-                setOTPErrors((error.data && error.data.message) ? error.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                setOTPErrors((error.data && error.data.Message) ? error.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
     }
