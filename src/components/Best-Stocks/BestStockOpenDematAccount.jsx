@@ -12,7 +12,7 @@ function BestStockOpenDematAccount() {
   return (
     <div>
       {
-        <section className="sendopt">
+        <section className="sendopt ">
           <div className="container">
             <div className="form_main">
               <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
