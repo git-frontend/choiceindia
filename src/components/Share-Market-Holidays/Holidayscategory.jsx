@@ -858,7 +858,7 @@ function Holidayscategory() {
                             Besides, there are many <strong>BSE holidays</strong> when you can’t trade. Take a look at the <strong>BSE holidays 2023</strong> list to plan your trading strategy successfully. 
                             <br /><br />
                               <h2 className="font-bold">BSE Stock Market Holidays in India 2023</h2>
-                              Let’s delve into the major BSE stock market holidays of 2023 and their significance.
+                              Let’s delve into the major <strong>BSE</strong> <Link to="/stock-market-holidays" onClick={()=>setToggleState(0)}>stock market holidays of 2023</Link> and their significance.
                               <h3>1. Republic Day</h3>
                               <strong>Date –</strong> 26th January, Thursday
                               <br /><br />
@@ -871,9 +871,70 @@ function Holidayscategory() {
                               <strong>Date –</strong> 7th March, Tuesday
                               <br /><br />
                               Known as the festival of colors, Holi signifies the victory of good over evil. People celebrate it by using colors and arranging events.
-                              4.     Ram Navami
-                              Date – 30th March, Thursday
-                              Ram Navami is next on the list of BSE stock market holidays. It is a celebration of the body of Ram, as an avatar of Vishnu.
+                              <h3>4. Ram Navami</h3>
+                              <strong>Date –</strong> 30th March, Thursday
+                              <br /><br />
+                              Ram Navami is next on the list of <strong>BSE stock market holidays.</strong> It is a celebration of the body of Ram, as an avatar of Vishnu.
+                              <h3>5. Mahavir Jayanti</h3>
+                              <strong>Date –</strong> 4th April, Tuesday
+                              <br /><br />
+                              Mahavir Jayanti is the most important festival of the Jain community. It celebrates the birth of the last Tirthankara, Mahavir.
+                              <h3>6. Good Friday</h3>
+                              <strong>Date –</strong> 7th April, Friday
+                              <br /><br />
+                              A famous <strong>BSE trading holiday,</strong> Good Friday, commemorates the crucifixion and death of Jesus. It is also called Holy Friday by the Christian community.
+                              <h3>7. Dr.Baba Saheb Ambedkar Jayanti</h3>
+                              <strong>Date –</strong> 14th April, Friday
+                              <br /><br />
+                              Also known as Bhim Jayanti, this holiday marks the birthday of Dr.Baba Saheb Ambedkar. He was a social reformer who helped draft the constitution and fought for India’s independence.
+                              <h3>8. Maharashtra Day</h3>
+                              <strong>Date –</strong> 1st May, Monday
+                              <br /><br />
+                              Maharashtra Day is an important holiday as it celebrates the formation of Maharashtra as a state.
+                              <h3>9. Id-ul-Fitr</h3>
+                              <strong>Date –</strong> 3rd May, Tuesday
+                              <br /><br />
+                              Id-ul-Fitr is also called the festival of sweets and is celebrated by the Muslim community as the end of Ramadan.
+                              <h3>10. Bakri Eid</h3>
+                              <strong>Date –</strong> 28th June, Wednesday
+                              <br /><br />
+                              Bakri Eid is an essential Muslim holiday. It is a representation of how Abraham sacrificed his son Ishmael to God.
+                              <h3>11. Muharram</h3>
+                              <strong>Date –</strong> 9th August, Tuesday
+                              <br /><br />
+                              After Ramadan, Muharram is considered to be the second holiest month. During this time, warfare is completely forbidden.  
+                              <h3>12. Independence Day</h3>
+                              <strong>Date –</strong> 15th August, Tuesday
+                              <br /><br />
+                              It is the most essential <strong>BSE stock market holiday</strong> as it celebrates India's Independence from British rule. India achieved independence on 15 August 1947, after 200 years of struggle.
+                              <h3>13. Ganesh Chaturthi</h3>
+                              <strong>Date –</strong> 19th September, Tuesday
+                              <br /><br />
+                              This is one of the biggest Hindu festivals that celebrates Ganesha’s birth. Public pandals and clay idols are created to worship God.
+                              <h3>14. Mahatma Gandhi Jayanti</h3>
+                              <strong>Date –</strong> 2nd October, Monday
+                              <br /><br />
+                              This <strong>BSE holiday</strong> marks the birthday of Mahatma Gandhi, the father of our nation.
+                              <h3>15. Dussehra</h3>
+                              <strong>Date –</strong> 24th October, Tuesday
+                              <br /><br />
+                              Dussehra or Vijayadashmi celebrates the triumph of Lord Rama over Ravana. The event takes place when Navaratri ends.
+                              <h3>16. Diwali Balipratipada</h3>
+                              <strong>Date –</strong> 14th November, Tuesday
+                              <br /><br />
+                              Diwali is also known as the festival of lights and is famous across the globe. It celebrates the victory of good over evil and lights over darkness.  
+                              <h3>17. Gurunanak Jayanti</h3>
+                              <strong>Date –</strong> 27th November, Monday
+                              <br /><br />
+                              Guru Nanak Jayanti is another BSE holiday. On this day, Guru Nanak Dev Ji Gurpurab was born. As he founded the religion of Sikhism, this day is important to many people.  
+                              <h3>18. Christmas</h3>
+                              <strong>Date –</strong> 25th December, Monday
+                              <br /><br />
+                              Christmas is among the most celebrated festivals in the world and is the final one of the BSE <strong>stock market holidays.</strong> This holiday is a celebration of the birth of Jesus Christ, whose teachings form the foundation of Christianity.
+                              <br/><br/>
+                              Although the primary list of <strong>BSE holidays 2023</strong> is given here, BSE may modify the schedule. That's why it is important to keep an eye out on the official website for an updated holiday list. So, plan your trades according to the holiday list and the availability of shares.
+                              <br/><br/>
+                              Also, remember that market trading hours can differ according to the trading instrument.
 
                             </span>
                           </span>
