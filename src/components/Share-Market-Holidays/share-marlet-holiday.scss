@@ -11,8 +11,9 @@
             padding: 0.5rem 0rem;
         }
     }
-    .list_group1{
-        .list{
+
+    .list_group1 {
+        .list {
             @media (min-width: $sm-x) and (max-width: $md) {
                 font-size: 1.14rem;
             }
@@ -28,6 +29,7 @@
 
 .holiday-parent {
     min-height: inherit;
+
     @media (max-width: $sm) {
         padding-top: 16rem;
         height: 100%;
@@ -35,7 +37,7 @@
 
     .holiday-content {
         .holidays-table {
-           
+
             border: 1px solid $lightgray;
             border-radius: 8px;
             background: $whiteColor;
@@ -43,6 +45,7 @@
             margin-top: 0.5rem;
             position: relative;
             z-index: 9;
+
             @media (max-width: $sm) {
                 margin-top: 3.5rem;
             }
@@ -100,7 +103,7 @@
                                 &::after {
                                     display: inline-block;
                                     margin-left: 2.255em;
-                                    vertical-align:middle;
+                                    vertical-align: middle;
                                     content: "";
                                     border-top: 0.4em solid;
                                     border-right: 0.4em solid transparent;
@@ -108,6 +111,7 @@
                                     border-left: 0.4em solid transparent;
                                 }
                             }
+
                             .dropdown-menu {
                                 padding-left: 1rem !important;
                                 bottom: inherit !important;
@@ -117,11 +121,13 @@
                                 border: none;
                                 top: 0 !important;
                                 transform: inherit !important;
-                               
+
                                 padding-top: 1.5rem;
+
                                 .months-custom {
                                     position: relative;
-                                    .dropdown-item{
+
+                                    .dropdown-item {
                                         position: relative;
                                         padding-left: 1.5rem;
                                         cursor: pointer;
@@ -130,9 +136,11 @@
                                         color: $graylight;
                                         font-family: $font-family-poppins-regular;
                                         font-weight: 400;
-                                        &.activemonth{
-                                            color:$primary ;
-                                            &::before{
+
+                                        &.activemonth {
+                                            color: $primary ;
+
+                                            &::before {
                                                 content: '';
                                                 position: absolute;
                                                 left: 0;
@@ -146,15 +154,17 @@
                                                 z-index: 99;
                                             }
                                         }
-                                        &:hover{
+
+                                        &:hover {
                                             background-color: transparent;
                                         }
                                     }
+
                                     .form-check {
                                         padding-left: 0;
                                         margin-bottom: 0.8rem;
                                     }
-                            
+
                                     .form-check-input {
                                         padding: 0;
                                         border: 0;
@@ -166,7 +176,7 @@
                                         outline: none;
                                         box-shadow: none;
                                     }
-                            
+
                                     .form-check-label {
                                         position: relative;
                                         padding-left: 0.6rem;
@@ -176,7 +186,7 @@
                                         color: $graylight;
                                         font-family: $font-family-poppins-regular;
                                         font-weight: 400;
-                            
+
                                         &::after {
                                             content: "";
                                             position: absolute;
@@ -185,9 +195,9 @@
                                             height: 1.7rem;
                                             width: 1.7rem;
                                             display: block;
-                                            
+
                                         }
-                            
+
                                         &::before {
                                             content: '';
                                             position: absolute;
@@ -200,36 +210,37 @@
                                             background-repeat: no-repeat;
                                             display: none;
                                             z-index: 99;
-                                           
-                        
+
+
                                         }
-                            
+
                                         @media (max-width: $sm-x) {
                                             font-size: 1.4rem;
                                             padding-left: 2rem;
                                         }
                                     }
-                                   
-                                    
-                                    
-                            
+
+
+
+
                                     input.activemonth {
-                                       
+
                                         background: url('../../assets/images/share-market-holidays/ticked_img.svg') no-repeat top left;
                                         background-size: contain;
                                         opacity: 1;
                                     }
+
                                     // input:checked~.form-check-label{
                                     //     color:$bgcolordark;
                                     // }
-                                    
-                                    
+
+
                                 }
-                            
+
                             }
 
 
-                           
+
                         }
 
 
@@ -320,23 +331,44 @@
 }
 
 
-.table-desk{
+.table-desk {
     overflow-x: unset;
+
     @media (max-width: $sm) {
         overflow-x: auto;
         min-height: 378px;
 
     }
 }
-.form-check{
-    .activemonth{
+
+.form-check {
+    .activemonth {
         color: aqua;
         background-color: brown;
     }
 }
 
-.holidayOTP{
-    @media (max-width: 767px){
+.holidayOTP {
+    @media (max-width: 767px) {
         padding-bottom: 4rem !important;
     }
+}
+
+.holiday-readmore {
+    .read-more-wrap {
+        .read-more-target {
+            .third-heading-para {
+                padding: 1rem 0 0.5rem 0;
+                font-weight: 700;
+                font-size: 2rem;
+            }
+
+            .fourth-heading-para {
+                font-size: 1.75rem;
+                padding: 1rem 0 1.5rem 0;
+                margin-top: 2rem;
+            }
+        }
+    }
+
 }
