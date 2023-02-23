@@ -37,14 +37,22 @@ function Thankyoupopup({ isShow,isBlog }) {
 
   useEffect(() => {
   //  console.log('Inside thanku',isShow)
-    if(isShow.page != 'add-lead'){
+    if(isShow.page != 'add-lead' && !isShow.redirectionLink){
       setTimeout(() => {
-        if(isShow.redirectionLink === null){
+        if (isShow.redirectionLink === null) {
           isShow.closeMd();
-        }else{
+        } else {
           isShow.closeMd(isShow.redirectionLink);
         }
-      },2000)
+      }, 10000)
+    } else if (isShow.page != 'add-lead' && isShow.redirectionLink) {
+      setTimeout(() => {
+        if (isShow.redirectionLink === null) {
+          isShow.closeMd();
+        } else {
+          isShow.closeMd(isShow.redirectionLink);
+        }
+      }, 2000)
     }
   }, [])
 
