@@ -143,10 +143,11 @@
                     font-size: 1.25rem;
               
               }
-              @media screen and (max-width: $sm) {
-                max-width: 350px;
-                overflow: auto;
-                display: block;
+              @media screen and (max-width: $md) {
+               border: 0;
+               display: block;
+               overflow: auto;
+               width: 100%;
               }
               tr{
                 &:nth-child(odd){
@@ -325,8 +326,11 @@
                     border-radius: 20px;
                     background: $whiteColor;
                     text-decoration: none;
-        
-                    .blog-item-img {
+                    @media (min-width:768px) and (max-width: 1024px) {
+                        width: 47%;
+                        margin-bottom: 2rem;
+                    }
+                    .blog-item-img {        
                         img {
                             width: 100%;
                             border-radius: 20px 20px 0 0;
@@ -358,7 +362,7 @@
                             -webkit-box-orient: vertical;
         
                             @media (min-width:$sm-x) and (max-width: 1024px) {
-                                font-size: 1rem;
+                                // font-size: 1rem;
                             }
                         }
         
@@ -383,11 +387,14 @@
                             }
                         }
                     }
+
+                    
         
                     @media screen and (max-width: $sm) {
                         width: 97%;
                         margin-bottom: 3rem;
                     }
+                    
                 }
             }
             @media screen and (max-width: $sm) {
