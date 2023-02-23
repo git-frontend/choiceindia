@@ -15,7 +15,6 @@ import { FaRegFilePdf } from 'react-icons/fa';
 import Dropdown from 'react-bootstrap/Dropdown';
 
 import { useEffect } from "react";
-import { MDBCheckbox } from 'mdb-react-ui-kit';
 import holidaylist from '../../Data/StockMarketHolidays';
 
 
@@ -607,7 +606,7 @@ function Holidayscategory() {
                             However, as an investor, you should know that the stock market does not operate 24x7. There are predefined <strong>stock market holidays</strong> during which there are no trading activities.
                             <br /><br />
                             So, the equity sector does not witness any trading activity. This article aims to inform you about the <strong>stock market holidays 2023</strong> and their significance.
-                            
+                            <br/>
                             <span className="read-more-target restext">
                               Ensure you note these dates before planning a well-thought 2023 share market trading schedule.
                               <br /><br />
@@ -723,7 +722,7 @@ function Holidayscategory() {
                           The institution offers investors several options, from equities and mutual funds to currency and commodities. However, trading is not available on all days.
                           <br /><br />
                           For instance, regular market sessions on weekdays last from 9:15 a.m. to 3:30 p.m. Following a 10-minute hiatus, closing sessions begin at 3:40 p.m. and end at 4:00 p.m. The NSE is also closed for trading on Saturdays and Sundays.
-                          
+                          <br/>
                           <span className="read-more-target restext">
                           If you are a frequent investor, you must keep track of the NSE holidays to maintain a consistent trading routine. 
                           <br /><br />
@@ -852,7 +851,7 @@ function Holidayscategory() {
                           <span className="read-more-wrap restext"> The Bombay Stock Exchange (BSE) is among the largest and oldest stock exchanges globally in India. It provides multiple earning opportunities to investors who want to explore the stock market. However, the trading opportunities are not available all day. 
                             <br /><br />
                             If you are an investor, it’s important to keep the main operating hours of the BSE in mind. For instance, on weekdays, trade-in hours are 9.15 a.m. to 3.30 p.m. Pre-market open trading time is between 9.00 to 9.15 a.m. Furthermore, both Saturday and Sunday are holidays.
-                            
+                            <br/>
                             <span className="read-more-target restext">
                             <br/>
                             Besides, there are many <strong>BSE holidays</strong> when you can’t trade. Take a look at the <strong>BSE holidays 2023</strong> list to plan your trading strategy successfully. 
