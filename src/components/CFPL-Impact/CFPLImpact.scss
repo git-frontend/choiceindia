@@ -192,6 +192,7 @@
             font-family:  $font-family-poppins-medium;
             color: $bgcolordark;
             margin: 1rem 0 0 0;
+            
         }
     }
 }
@@ -211,11 +212,14 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: center;
    
     .carditem-count{
         padding: 2.5rem 2rem;
         text-align: center;
+        position: relative;
         height: 100%;
+        width: 25%;
         @media (max-width: $sm) {
             width: 50%;
         }
@@ -230,10 +234,10 @@
             color: $bgcolordark;
             margin: 1rem 0 0 0;
             @media (min-width: $sm) and (max-width: $md) {
-                font-size: 3.5rem;
+                font-size: 2.5rem;
             }
             @media (max-width: $sm) {
-                font-size: 2.5rem;
+                font-size: 2.45rem;
             }
         }
         .subtext{
@@ -241,6 +245,11 @@
             line-height: 1.9rem;
             margin: 1rem 0 0 0;
             color: $bgcolordark;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
             font-family:  $font-family-poppins-regular;
             @media (min-width:$sm-x) and (max-width: $md) {
                 font-size: 1.1rem;

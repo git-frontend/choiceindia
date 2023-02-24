@@ -755,13 +755,13 @@ function Routing() {
                             <React.Suspense>
                                 < LazyDigitalLendingBanner />
                             </React.Suspense>
-                        } /> */}
+                        } /> 
  
-                         {/* <Route exact path='/about-choice-finserv' element={
+                          <Route exact path='/about-choice-finserv' element={
                             <React.Suspense>
                                 < LazyCfplImpact />
                             </React.Suspense>
-                        } /> */}
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
