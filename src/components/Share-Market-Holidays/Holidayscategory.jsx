@@ -203,7 +203,7 @@ function Holidayscategory() {
                     </ul>
 
                   </div>
-                  <div>
+                  {/* <div>
                     {
                       showdata ?
                         <p className="title_para title_para-second">Trading Holidays in 2023</p> :
@@ -212,7 +212,7 @@ function Holidayscategory() {
 
 
 
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </section>
