@@ -940,8 +940,129 @@ function Holidayscategory() {
                       </div>
                     </div> :
                       toggleState == 3 ?
-                        <div className="row">
-                          </div> :
+                      <div className="row">
+                      <div className="col-md-12">
+                        <h2 className="secttitle text-center">A List of MCX Holidays in 2023</h2>
+                      </div>
+                      <div className="col-md-12">
+                        <div className="para px-3">
+                          <input type="checkbox" className="read-more-state" id="post-1" />
+                          <span className="read-more-wrap restext"> The multi-commodity exchange (MCX) is an established commodity derivatives exchange in India registered with the Securities and Exchange Board of India (SEBI). It is the largest commodity exchange in India, allowing users to freely buy and sell commodities like metals, oil or even coffee. 
+                            <br /><br />
+                            MCX offers an attractive option for investors looking to diversify beyond stocks or bonds and invest in commodities. The trading window opens at 9 AM and closes at 11:30 PM, operational from Monday to Friday. 
+                            <br/>
+                            <span className="read-more-target restext">
+                            <br/>
+                            Usually, the MCX trading window only remains closed for the weekend. But the exchange has also specified a list of holidays that coincide with major Indian festivals. Read on to understand why it's important to keep track of MCX holidays 2023 and get information about each designated holiday.
+                              <h3 className="third-heading-para">Why You Should Track MCX Holidays</h3>
+                              On standard trading days, MCX conducts two sessions - one in the morning and another in the evening. Morning sessions begin at 9 AM and continue until 5 PM, while the evening session starts at 5 PM and ends by 11:30 PM. MCX also constantly alters the closing times according to the changes in daylight saving hours.
+                              <br/><br/>
+                              If you are an investor who regularly deals with commodities, it is natural that you are aware of the market movements that influence the price of these commodities. Staying updated about upcoming MCX holidays can help you better plan your strategy and allow you to decide whether to hold your assets for another trading day or sell them before they depreciate in value.
+                              <br/><br/>
+                              Every year, the multi-commodity exchange decides on a list of holidays and releases a circular to inform investors. The exchange can also alter or change these holidays with appropriate prior notice.
+                              <h3 className="third-heading-para">MCX Trading Holidays for 2023</h3>
+                              The circular for MCX holidays 2023 in India has already been released. According to the contents of the notice, here are the days on which the commodity market will either remain completely closed or close off a particular trading section. 
+                              <h4 className="fourth-heading-para">1st January 2023 - New Year's Day</h4>
+                              <strong>Status:</strong> The evening session remains closed.
+                              <br /><br />
+                              Traders and investors can utilise the morning session of the first day of the year to indulge in the market. But as soon as it is 5 PM, MCX will end the trading window, and you can only buy and sell commodities starting from 9 AM the next day. 
+                              <h4 className="fourth-heading-para">26th January 2023 - Republic Day</h4>
+                              <strong>Status:</strong> Closed all day.
+                              <br /><br />
+                              2023 will mark the 74th republic day for India. Every year, the 26th of January is marked as a national holiday for drafting the Indian Constitution on the same date in the year 1950. The commodity trading exchange will remain shut to honour this day. 
+                              <h4 className="fourth-heading-para">8th March 2023 - Holi</h4>
+                              <strong>Status:</strong> The morning session will remain closed.
+                              <br /><br />
+                              The festival of colours is celebrated with pomp and celebration around the country. Since the primary celebrations of Holi occur during the early morning hours and extend up to the afternoon, MCX has decided to close off the morning session and strictly limit the operational hours to the evening session.
+
+                              <h4 className="fourth-heading-para">30th March 2023 - Ram Navami</h4>
+                              <strong>Status:</strong> The commodity market is shut for the entire day.
+                              <br /><br />
+                              The birth of the Indian god, Rama, is regarded as one of the most key events in India. Celebrations in various cities last throughout the day and extend to later hours of the night. Considering this, MCX has decided to shut off trading for the day. 
+
+                              <h4 className="fourth-heading-para">4th April 2023 - Mahavir Jayanti</h4>
+                              <strong>Status:</strong> The morning session will remain closed.
+                              <br /><br />
+                              Mahavir Jayanti is one of the most important festivals for the Jain community in India, celebrating the birth of Mahavir, an important figure. The festival is marked by prayers and fasting throughout the day. In recognition of the important festival, MCX has declared that the morning session of commodity trading will remain closed. 
+                              <h4 className="fourth-heading-para">7th April 2023 - Good Friday</h4>
+                              <strong>Status:</strong> Closed for the entire day.
+                              <br /><br />
+                              Every year, Good Friday is celebrated to commemorate the crucifixion of Jesus, which led to his death. It is regarded as one of the most important days for Christians and is synonymous with prayers and fasting. The commodity trading market considers this and grants investors an off-day.
+
+                              <h4 className="fourth-heading-para">14th April 2023 - Dr. Baba Saheb Ambedkar Jayanti</h4>
+                              <strong>Status:</strong> All sessions closed.
+                              <br /><br />
+                              Marking the birth of the architect of the Indian constitution, the 14th of April is celebrated across the world as an ode to the celebrated Dr Baba Saheb Ambedkar. In recognition of his achievements for independent India, MCX has suspended all daily trading activities.
+                              <h4 className="fourth-heading-para">22nd April 2023 - Ramzan Eid</h4>
+                              <strong>Status:</strong> Completely closed.
+                              <br /><br />
+                              Ramzan Eid marks the end of a 30-day fasting period for Muslims, where they do not consume food or water from the first light of dawn to the setting of the sun. Ramzan Eid is a day of celebration, with feasts and other activities that last the entire day. Hence, MCX has included the 22nd of April as a holiday for the commodity trading space. 
+
+                              <h4 className="fourth-heading-para">1st May 2023 - Maharashtra Day</h4>
+                              <strong>Status:</strong> Only morning session closed.
+                              <br /><br />
+                              It marks the day on which the prosperous state of Maharashtra was formed. Maharashtra Day is a state-wide holiday celebrated with a flag hoisting and function. Hence, the commodity exchanges have decided to address the early morning festivities and declare a holiday for the morning session.
+
+                              <h4 className="fourth-heading-para">28th June 2023 - Eid ul -Adha</h4>
+                              <strong>Status:</strong> Morning session closed.
+                              <br /><br />
+                              In recognition of the one of the largest Islamic festivals, the MCX has decided to pause trading activities for the morning session.
+
+                              <h4 className="fourth-heading-para">29th July 2023 - Muharram</h4>
+                              <strong>Status:</strong> Morning session closed.
+                              <br /><br />
+                              The first day of the year in the Islamic calendar is crucial for the Islamic community, marking the start of the holy month. As an ode to the community celebrations, the commodity exchange only permits trading in the evening session.
+
+                              <h4 className="fourth-heading-para">15th August 2023 - Independence Day</h4>
+                              <strong>Status:</strong> Closed for the entire day.
+                              <br /><br />
+                              One of the three national holidays in India, Independence day marks a memorable moment in Indian history. On this day in 1947, India was finally freed from British Rule and ushered in a new era. The significance of this feat compels MCX to suspend all trading activities for the day.
+
+                              <h4 className="fourth-heading-para">19th September 2023 - Ganesh Chaturthi</h4> 
+                              <strong>Status:</strong> Morning session paused.
+                              <br /><br />
+                              The commodity market witnesses no activity during the morning of the start of Ganesh Chaturthi, a festival where people install idols of Ganpati in their houses for 1, 3, 5, 7 or 11 days.
+
+                              <h4 className="fourth-heading-para">2nd October 2023 - Gandhi Jayanti</h4>
+                              <strong>Status:</strong> All trading sessions closed.
+                              <br /><br />
+                              The birthday of the father of the nation is celebrated as a national holiday in India. Gandhi Jayanti is characterised by prayer services and tributes to Mahatma Gandhi all over India. Hence, it is no surprise that the commodity market remains shut for the entire day on 2nd October.
+
+                              <h4 className="fourth-heading-para">24th October 2023 - Dussehra</h4>
+                              <strong>Status:</strong> Trades paused during the morning session.
+                              <br /><br />
+                              The festival of Dussehra marks the victory of good over evil, with the effigies of the demon king, Ravana, burnt throughout the country. The extent of the festivities and celebration have convinced MCX and other commodity exchanges to stop trades from 9 AM to 5 PM during this day.
+
+                              <h4 className="fourth-heading-para">12th November 2023 - Laxmi Poojan</h4>
+                              <strong>Status:</strong> Morning sessions off.
+                              <br /><br />
+                              The third day of Diwali is celebrated with devotion throughout the country. Since the puja primary takes place during the initial hours of the day, MCX has decided to close the morning trading sessions for this day.
+
+                              <h4 className="fourth-heading-para">14th November 2023 - Balipratipada</h4>
+                              <strong>Status:</strong> No morning trading session.
+                              <br /><br />
+                              The fourth day of Diwali is celebrated as Balipratipada, a commemoration of the return of King Bali to earth. The morning trading sessions are completely paused on this day.
+
+                              <h4 className="fourth-heading-para">27th November 2023 - Guru Nanak Jayanti</h4>
+                              <strong>Status:</strong> The morning trading session was called off.
+                              <br /><br />
+                              The birth of Guru Nanak, the founder of Sikhism, is celebrated all over the country. It is the most important festival for the Sikh community. MCX has decided to continue only the evening trading sessions during this festival.
+
+                              <h4 className="fourth-heading-para">25th December 2023 - Christmas</h4> 
+                              <strong>Status:</strong> Full day off.
+                              <br /><br />
+                              Christmas is marked by decorations, lit-up trees and several types of sweets to celebrate the birth of Jesus Christ. It is a religious and cultural celebration that takes up the entire day, making it possible for MCX to pause all trading activities on the 25th of December.
+                              <br/><br/>
+                              India is home to only two major commodity exchanges- MCX and NCDEX. The list of <strong>NCDEX holidays 2023</strong> matches the ones specified by MCX. Hence, the entire commodity market follows a similar pattern in terms of holidays.
+                              <br/><br/>
+                              So, why not keep this list handy and start derivative trading if you haven’t yet? Simply <Link to="/open-free-demat-account"> open a demat account with Choice India </Link>to be eligible for executing trades in the commodity market and diversify your portfolio!
+
+                            </span>
+                          </span>
+                          <label htmlFor="post-1" className="read-more-trigger moreless-button"></label>
+                        </div>
+                      </div>
+                    </div> :
                           ""
                 }
 
