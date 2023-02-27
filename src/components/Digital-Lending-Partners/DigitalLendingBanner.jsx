@@ -6,6 +6,7 @@ import seedsfincap from '../../assets/images/Digital-Lending-Partners/seeds-finc
 import cashinvoice from '../../assets/images/Digital-Lending-Partners/cashinvoice.svg';
 import LazyLoader from '../Common-features/LazyLoader';
 
+import NBFCMenu from '../Common-features/NBFCMenu';
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import meta_tags from "../../Data/MetaTags";
@@ -17,18 +18,18 @@ import {
 import Slider from "react-slick";
 
 document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
-      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
-      if(!(document.getElementById('link1')==null)){
-        document.getElementById('link1').remove();
-      document.getElementById('link2').remove();
-      document.getElementById('link3').remove();
-      document.getElementById('link4').remove();
-      document.getElementById('link5').remove();
-      document.getElementById('link6').remove();
-      
-      }
+document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+if (!(document.getElementById('link1') == null)) {
+  document.getElementById('link1').remove();
+  document.getElementById('link2').remove();
+  document.getElementById('link3').remove();
+  document.getElementById('link4').remove();
+  document.getElementById('link5').remove();
+  document.getElementById('link6').remove();
+
+}
 
 function DigitalLendingBanner() {
 
@@ -49,7 +50,7 @@ function DigitalLendingBanner() {
           slidesToShow: 2,
           slidesToScroll: 2,
           adaptiveHeight: false,
-          dots:true,
+          dots: true,
         },
       },
       {
@@ -57,7 +58,7 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          dots:true,
+          dots: true,
         },
       },
       {
@@ -65,7 +66,7 @@ function DigitalLendingBanner() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:true,
+          dots: true,
         },
       },
     ],
@@ -79,6 +80,13 @@ function DigitalLendingBanner() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
+              <div className="digi-products-menu">
+                <NBFCMenu />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-12">
               <h1 className="big-ttl mb-4 digi-title">
                 Digital Lending Partners
               </h1>
@@ -88,10 +96,10 @@ function DigitalLendingBanner() {
             <div className="col-md-12">
               {/* <div className="carditem-list"> */}
               <Slider {...settings} className="carditem-list">
-              <div className="digital-carditem">
+                <div className="digital-carditem">
                   <span className="digiimg">
                     <LazyLoader src={choiceconnect} alt={"Choice Connect"} className={"img-fluid"} width={"138"} height={"59"} />
-                   
+
                   </span>
                   <h3 className="digi-card-title">
                     Choice International Ltd.
@@ -115,7 +123,7 @@ function DigitalLendingBanner() {
                 </div>
                 <div className="digital-carditem">
                   <span className="digiimg">
-                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} width={"264"} height={"47"}/>
+                    <LazyLoader src={cashinvoice} alt={"Cashinvoice"} className={"img-fluid"} width={"264"} height={"47"} />
                   </span>
                   <h3 className="digi-card-title">
                     Indinvoice Tech Solutions Pvt Ltd
@@ -125,8 +133,8 @@ function DigitalLendingBanner() {
                   </p>
                   <a href="https://cashinvoice.in/" target="_blank"><span className="knw-btn">Know More</span></a>
                 </div>
-                </Slider>
-                
+              </Slider>
+
               {/* </div> */}
             </div>
           </div>
