@@ -65,7 +65,7 @@
     position: relative;
     padding: 10rem 0rem;
     @media (max-width: $sm) {
-        padding: 6rem 0rem;
+        padding: 8rem 0rem;
     }
     &:before{
         content: '';
@@ -76,7 +76,7 @@
         background-size: contain;
         left: 0;
         top: 5%;
-        z-index: 1;
+        z-index: -1;
         @media (max-width:$md) {
             display: none;
         }
@@ -90,7 +90,7 @@
         background-size: contain;
         right: 0;
         top: 5%;
-        z-index: 1;
+        z-index: -1;
         @media (max-width:$md) {
             display: none;
         }
@@ -125,6 +125,15 @@
             }
         }
     }
+    .nbfc-info-menu-main{
+        position: relative;
+        text-align: left;
+        width: 56px;
+        float: right;
+        top: -69px;
+    }
+
+
 }
 .value-propositon{
     background: $lightblue;
