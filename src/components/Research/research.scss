@@ -1690,7 +1690,7 @@
     }
     .slider-caption{
       position: absolute;
-      width:43%;
+      width:44%;
       left: 0;
       top: 0;
       height: 100%;
@@ -1717,6 +1717,27 @@
           margin: 2rem 0 3rem 0;
           font-size: 1.75rem;
           line-height: 2.625rem;
+        }
+        .btn-bg{
+          border-radius: 8px;
+          position: relative;
+          padding: 1rem 2rem !important;
+          padding-right: 4rem !important;
+          a{
+            text-decoration: none;
+            color: $primary;
+          }
+          &::before{
+            content: '';
+            background: url(../../assets/images/research/arrow-left-new.svg) no-repeat;
+            background-size: contain;
+            width: 2rem;
+            height: 2rem;
+            right: 1rem;
+            top: 1rem;
+            display: block;
+            position: absolute;
+          }
         }
 
         
