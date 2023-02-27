@@ -2,7 +2,7 @@
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
 import SubBrokerForm from './SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function BannerMFDistributor() {
 
     return (
@@ -39,7 +39,9 @@ function BannerMFDistributor() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm page='mutual-fund-distributor'/>
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <SubBrokerForm page='mutual-fund-distributor'/>
+                            </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>

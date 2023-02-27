@@ -3,6 +3,7 @@ import { useState,useEffect } from "react";
 import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-without-deposit.webp';
 import SubBrokerForm from '../SubBroker/SubBrokerForm'
 import utils from "../../Services/utils";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function RemisierBanner() {
 
     const[ischeck,setIscheck]=useState(false);
@@ -59,7 +60,9 @@ function RemisierBanner() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                 <SubBrokerForm />
+                            </GoogleReCaptchaProvider>
                             </div>
                         </div>
                         <div className={name}>
