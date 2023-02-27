@@ -37,8 +37,8 @@ function Banner() {
       <section className="research-banner-slider">
         <Slider {...settings} className="team-list-slider">
           <div className="slider-sub">
-                {/* <LazyLoader src={ImageBanner2} className={"img-fluid"} width={"1300"} height={"500"} alt={""} /> */}
-                <img src={ImageBanner2} className="banner-img"/>
+                <LazyLoader src={ImageBanner2} className={"banner-img"} width={"1300"} height={"500"} alt={""} />
+                {/* <img src={ImageBanner2} className="banner-img"/> */}
                 <div className="slider-caption">
                     <div className="container">
                         <div className="slider-caption-sub">
@@ -49,45 +49,7 @@ function Banner() {
                     </div>
                 </div>   
             </div>
-            <div className="slider-sub">
-                {/* <LazyLoader src={ImageBanner2} className={"img-fluid"} width={"1300"} height={"500"} alt={""} /> */}
-                <img src={ImageBanner2} className="banner-img"/>
-                <div className="slider-caption">
-                    <div className="container">
-                        <div className="slider-caption-sub">
-                          <h2 className="big-ttl"><span>Monthly Picks</span> Feb’23</h2>
-                          <p>The report highlights investment opportunities  identified by our research team during the month.</p>
-                          <span className="btn-bg btn-bg-dark"><a href="">Explore All Recommendations </a></span>
-                        </div>
-                    </div>
-                </div>   
-            </div>
-            <div className="slider-sub">
-                {/* <LazyLoader src={ImageBanner2} className={"img-fluid"} width={"1300"} height={"500"} alt={""} /> */}
-                <img src={ImageBanner2} className="banner-img"/>
-                <div className="slider-caption">
-                    <div className="container">
-                        <div className="slider-caption-sub">
-                          <h2 className="big-ttl"><span>Monthly Picks</span> Feb’23</h2>
-                          <p>The report highlights investment opportunities  identified by our research team during the month.</p>
-                          <span className="btn-bg btn-bg-dark"><a href="">Explore All Recommendations </a></span>
-                        </div>
-                    </div>
-                </div>   
-            </div>
-            <div className="slider-sub">
-                {/* <LazyLoader src={ImageBanner2} className={"img-fluid"} width={"1300"} height={"500"} alt={""} /> */}
-                <img src={ImageBanner2} className="banner-img"/>
-                <div className="slider-caption">
-                    <div className="container">
-                        <div className="slider-caption-sub">
-                          <h2 className="big-ttl"><span>Monthly Picks</span> Feb’23</h2>
-                          <p>The report highlights investment opportunities  identified by our research team during the month.</p>
-                          <span className="btn-bg btn-bg-dark"><a href="">Explore All Recommendations </a></span>
-                        </div>
-                    </div>
-                </div>   
-            </div>
+            
         </Slider>
       </section>
 
