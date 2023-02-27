@@ -6,6 +6,7 @@ import img2 from '../../assets/images/intraday-charges/quandle.svg';
 import LazyLoader from "../Common-features/LazyLoader";
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { Link } from 'react-router-dom';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function BannerIntraCharges() {
     function scrollToId(id) {
         var element = document.getElementById(id);
@@ -56,7 +57,9 @@ function BannerIntraCharges() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <DematAccountForm />
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <DematAccountForm />
+                                </GoogleReCaptchaProvider>
                             </div>
                         </div>
                     </div>
