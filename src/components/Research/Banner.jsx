@@ -9,6 +9,7 @@ import Slider from "react-slick";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import LazyLoader from "../Common-features/LazyLoader";
+import topPicks from "../../assets/images/research/pdf/CHOICE TOP PICKS FEB 2023.pdf"
 
 function Banner() {
 
@@ -44,7 +45,7 @@ function Banner() {
                         <div className="slider-caption-sub">
                           <h2 className="big-ttl"><span>Monthly Picks</span> Feb’23</h2>
                           <p>The report highlights investment opportunities  identified by our research team during the month.</p>
-                          <a href=""><span className="btn-bg btn-bg-dark">Explore All Recommendations</span></a>
+                          <a onClick={() => { window.open(topPicks) }}  target="_blank" className="cursor-pointer"><span className="btn-bg btn-bg-dark">Explore All Recommendations</span></a>
                         </div>
                     </div>
                 </div>   
