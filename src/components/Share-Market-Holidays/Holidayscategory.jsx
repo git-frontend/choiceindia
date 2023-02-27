@@ -53,10 +53,13 @@ function Holidayscategory() {
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
-      checkurl == 'stock-market-holidays';
-      checkurl == 'nse-holidays';
-      checkurl == 'bse-holidays';
-      checkurl == 'mcx-ncdex-holidays';
+      checkurl == 'stock-market-holidays'?setToggleState(0):
+
+      checkurl == 'nse-holidays' ? setToggleState(1):
+
+      checkurl == 'bse-holidays'? setToggleState(2):
+
+      checkurl == 'mcx-ncdex-holidays'? setToggleState(3):
       // console.log(holidaylist)
       FilterMonth()
       OtherHolidays()
