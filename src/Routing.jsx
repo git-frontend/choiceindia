@@ -745,22 +745,23 @@ function Routing() {
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        {/* <Route exact path='/mcx-ncdex-holidays' element={
+                        <Route exact path='/mcx-ncdex-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        <Route exact path='/digital-lending-partners' element={
+                        
+                         <Route exact path='/digital-lending-partners' element={
                             <React.Suspense>
                                 < LazyDigitalLendingBanner />
                             </React.Suspense>
-                        } /> */}
+                        } /> 
  
-                         {/* <Route exact path='/about-choice-finserv' element={
+                          <Route exact path='/about-choice-finserv' element={
                             <React.Suspense>
                                 < LazyCfplImpact />
                             </React.Suspense>
-                        } /> */}
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

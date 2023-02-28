@@ -4,7 +4,7 @@ import React from "react";
 import pricingimage1 from '../../assets/images/pricing/demat-arrow.svg';
 import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function OpenFreeAccount() {
 
 
@@ -42,7 +42,9 @@ function OpenFreeAccount() {
                             
                         </div>
                         <div className="col-xl-6 col-md-5 d-flex justify-content-end">
-                            <DematAccountForm />
+                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                    <DematAccountForm />
+                                </GoogleReCaptchaProvider>
                         </div>
                     </div>
                 </div>

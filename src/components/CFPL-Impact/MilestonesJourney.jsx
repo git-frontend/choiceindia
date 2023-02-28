@@ -52,19 +52,19 @@ function MilestonesJourney() {
                 <div className="col-xl-12">
                     <div className="counter-section">
                         <div className="carditem-count">
-                            <h3 className="card-ttl counterValue"  data-val="25">00</h3>
+                            <h3 className="card-ttl "><span className="counterValue" data-val="25">00</span><span>+</span></h3>
                             <p className="subtext" id='startcount'>Branches</p>
                         </div>
                         <div className="carditem-count">
-                            <h3 className="card-ttl counterValue"  data-val="100">000</h3>
-                            <p className="subtext">Cities & Towns</p>
+                            <h3 className="card-ttl"><span className="counterValue" data-val="100">000</span><span>+</span></h3>
+                            <p className="subtext">Cities &amp; Towns</p>
                         </div>
                         <div className="carditem-count">
-                            <h3 className="card-ttl counterValue"  data-val="300">000 Cr</h3>
+                            <h3 className="card-ttl" ><span className="counterValue"  data-val="300">000</span><span>+ Cr</span></h3>
                             <p className="subtext">Loan book value</p>
                         </div>
                         <div className="carditem-count">
-                            <h3 className="card-ttl counterValue"  data-val="400">000</h3>
+                            <h3 className="card-ttl" ><span className="counterValue"  data-val="400">000</span><span>+</span></h3>
                             <p className="subtext">Employees</p>
                         </div>
                     </div>
