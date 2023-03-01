@@ -148,12 +148,12 @@ function Holidayscategory() {
     }
 
     // console.log("acsdncj", filterlist)
-    setIsActive(current => !current);
+    // setIsActive(current => !current);
 
 
   }
 
-  // console.log("month value",nseMonthvalue)
+  // console.log("month value",isActive)
 
 
 
