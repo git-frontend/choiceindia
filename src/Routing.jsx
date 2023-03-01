@@ -421,11 +421,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/add-lead' element={
+                        {/* <Route exact path='/add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/hindi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokerhindi />
