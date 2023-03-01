@@ -44,7 +44,7 @@ function Thankyoupopup({ isShow,isBlog }) {
         } else {
           isShow.closeMd(isShow.redirectionLink);
         }
-      }, 10000)
+      }, 15000)
     } else if (isShow.page != 'add-lead' && isShow.redirectionLink) {
       setTimeout(() => {
         if (isShow.redirectionLink === null) {
