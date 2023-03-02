@@ -68,23 +68,33 @@ function InvestorAwarenessMain() {
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">BSE </div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.bseindia.com/" target={"_blank"} className="text-decoration-none">www.bseindia.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 2272 8517 / 8097" className="text-decoration-none">(91 22) 2272 8517 / 8097</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:02222728097" className="text-decoration-none">022-22728097</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">NSE</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.nseindia.com/" target={"_blank"} className="text-decoration-none">www.nseindia.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 2659 8190 / 91" className="text-decoration-none">(91 22) 2659 8190 / 91</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="1800220058" className="text-decoration-none">1800220058</a></div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-4 col-3 pb-3 pt-3">MCX</div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.mcxindia.com/" target={"_blank"} className="text-decoration-none">www.mcxindia.com</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="02266494000" className="text-decoration-none">022-66494000</a></div>
+                        </div>
+                        <div className="row border-bottom ">
+                            <div className=" col-md-4 col-3 pb-3 pt-3">NCDEX</div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.ncdex.com/" target={"_blank"} className="text-decoration-none">www.ncdex.com</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="02266406789" className="text-decoration-none">022-66406789</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">MSEI</div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.mcxindia.com/" target={"_blank"} className="text-decoration-none">www.mcxindia.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:(91 22) 6649 4070" className="text-decoration-none">(91 22) 6649 4070</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.msei.in/" target={"_blank"} className="text-decoration-none">www.msei.in</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:02261129000" className="text-decoration-none">022-61129000</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">SEBI</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.sebi.gov.in/" target={"_blank"} className="text-decoration-none">www.sebi.gov.in</a>
                             </div>
-                            <div className=" col-md-4 col-4 pb-3 pt-3"><a href="tel:(91 22) 6731 9000" className="text-decoration-none">(91 22) 6731 9000</a></div>
+                            <div className=" col-md-4 col-4 pb-3 pt-3"><a href="tel:18002667575" className="text-decoration-none">18002667575</a></div>
                         </div>
 
                     </div>
