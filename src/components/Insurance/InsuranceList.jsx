@@ -25,7 +25,7 @@ function InsuranceList() {
                 <div className="col-md-12">
                     <ul className="reset">
                         <li className="ins-list-item">
-                            <a href= "https://choiceinsurance.in/buy-online/motor-insurance/car/Q0JBMjQwOTU5OA==?lead_source=choiceindia" target="_blank" className="list-item-link">
+                            <a href= "https://choiceinsurance.in/buy-online/motor-insurance/car/Q0JBMjQwOTU5OA?lead_source=choiceindia" target="_blank" className="list-item-link">
 
 
                             <div >
@@ -38,7 +38,7 @@ function InsuranceList() {
                             </a>
                         </li>
                         <li className="ins-list-item">
-                            <a href=" https://choiceinsurance.in/buy-online/motor-insurance/bike/Q0JBMjQwOTU5OA==?lead_source=choiceindia" target="_blank" className="list-item-link">
+                            <a href=" https://choiceinsurance.in/buy-online/motor-insurance/bike/Q0JBMjQwOTU5OA?lead_source=choiceindia" target="_blank" className="list-item-link">
                             <div >
                                 <span className="img-txt">
                                     <LazyLoader src={bike} alt={"Banner Images"} className={"img-fluid sm-img"} width={"203"} height={"116"} />
@@ -49,7 +49,7 @@ function InsuranceList() {
                             </a>
                         </li>
                         <li className="ins-list-item">
-                            <a href="https://choiceinsurance.in/buy-online/health-insurance/Q0JBMjQwOTU5OA==?lead_source=choiceindia" target="_blank" className="list-item-link">
+                            <a href="https://choiceinsurance.in/buy-online/health-insurance/Q0JBMjQwOTU5OA?lead_source=choiceindia" target="_blank" className="list-item-link">
                             <div >
                              <span className="img-txt">
                                     <LazyLoader src={health} alt={"Banner Images"} className={"img-fluid sm-img"} width={"108"} height={"152"} />
@@ -61,7 +61,7 @@ function InsuranceList() {
                         </li>
                       
                         <li className="ins-list-item">
-                            <a href="https://choiceinsurance.in/buy-online/term-insurance/Q0JBMjQwOTU5OA==?lead_source=choiceindia" target="_blank" className="list-item-link">
+                            <a href="https://choiceinsurance.in/buy-online/term-insurance/Q0JBMjQwOTU5OA?lead_source=choiceindia" target="_blank" className="list-item-link">
                             <div >
                             <span className="img-txt">
                                     <LazyLoader src={term} alt={"Banner Images"} className={"img-fluid sm-img"} width={"100"} height={"130"} />
