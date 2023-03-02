@@ -37,6 +37,7 @@ const subBrokerService = {
     return axios.post(url, request, { headers: OnbHeaders });
   },
 
+  /**Old send otp for sub broker forms */
   sendOTP: function (request) {
     let url = apiURL.getSubBrokerSendOtpUrl();
     return axios.post(url, request, { headers: OnbHeaders2 });
@@ -52,5 +53,21 @@ const subBrokerService = {
     return axios.post(url, request, { headers: OnbHeaders });
   },
 
+  /**New send otp for sub broker forms */
+  sendOTPNew: function (request) {
+    let url = apiURL.getSubBrokerNewSendOtpUrl();
+    return axios.post(url, request, { headers: OnbHeaders2 });
+  },
+
+  /**New resend otp for sub broker forms */
+  resendOTPNew: function (request) {
+    let url = apiURL.getSubBrokerNewResendOtpURL();
+    return axios.post(url, request, { headers: OnbHeaders2 });
+  },
+
+  verifyOTPNew: function (request) {
+    let url = apiURL.getSubBrokerNewVerifyOtpURL();
+    return axios.post(url, request, { headers: OnbHeaders2 });
+  },
 };
 export default subBrokerService;
