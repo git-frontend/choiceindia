@@ -114,7 +114,9 @@ function Fabdetailsbanner(props) {
                                         </div>
                                     </div> : <div className="col-md-5" id="sub-broker-wrap">
                                         <div className="franchise-form justify-content-end d-flex">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <SubBrokerForm  isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true}/>
+                                            </GoogleReCaptchaProvider>
                                         </div>
                                     </div>)
                                     : '')
