@@ -73,17 +73,17 @@ function InvestorAwarenessMain() {
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">NSE</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.nseindia.com/" target={"_blank"} className="text-decoration-none">www.nseindia.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="1800220058" className="text-decoration-none">1800220058</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:1800220058" className="text-decoration-none">1800220058</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">MCX</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.mcxindia.com/" target={"_blank"} className="text-decoration-none">www.mcxindia.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="02266494000" className="text-decoration-none">022-66494000</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:02266494000" className="text-decoration-none">022-66494000</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">NCDEX</div>
                             <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="https://www.ncdex.com/" target={"_blank"} className="text-decoration-none">www.ncdex.com</a></div>
-                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="02266406789" className="text-decoration-none">022-66406789</a></div>
+                            <div className="col-md-4 col-4 pb-3 pt-3 word-wrap"><a href="tel:02266406789" className="text-decoration-none">022-66406789</a></div>
                         </div>
                         <div className="row border-bottom ">
                             <div className=" col-md-4 col-3 pb-3 pt-3">MSEI</div>
