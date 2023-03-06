@@ -3,8 +3,11 @@
 
 .loan-privacy-policy {
     padding: 5rem 0rem;
+    @media (max-width:$sm){
+        padding: 4rem 0rem;
+    }
     a{
-        color: $darkblack;
+        
         text-decoration: none;
 
         .back-btn {
@@ -13,6 +16,10 @@
             font-size: 1.5rem;
             line-height: 2.25rem;
             padding-left: 3.5rem;
+            color: $darkblack;
+            @media (max-width:$sm){
+                padding-left: 3.0rem;
+            }
             &::before{
                 background:url('../../assets/images/Loan-Privacy-Policy/back-arrow.svg') no-repeat ;
                 content: "";
@@ -23,12 +30,17 @@
                 background-size: contain;
                 @media (max-width:$sm){
                     width: 33px; 
+                    height: 20px;
+                    top: 4px;
                 }
             }
         }
     }
     .topmr{
-        margin-top: 7rem;
+        margin-top: 5.5rem;
+        @media (max-width:$sm){
+            margin-top: 4rem;
+        }
     }
 
     .loan-privacy-content {

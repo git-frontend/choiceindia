@@ -10,7 +10,7 @@ function LoanPrivacyPolicy() {
                 <div className="container">
                     <div className='row'>
                         <div className='col-md-12'>
-                        <a href="https://choiceindia.com/loan" target=""><span className="back-btn">Back</span></a>
+                        <Link to="/loan" ><span className="back-btn">Back</span></Link>
                         </div>
                     </div>
                     <div className="row">
