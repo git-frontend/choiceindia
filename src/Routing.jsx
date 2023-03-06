@@ -136,7 +136,7 @@ const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
-
+const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 function Routing() {
 
 
@@ -760,6 +760,11 @@ function Routing() {
                           <Route exact path='/about-choice-finserv' element={
                             <React.Suspense>
                                 < LazyCfplImpact />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/loan/privacy-policy' element={
+                            <React.Suspense>
+                                < LazyLoanPrivacyPolicy />
                             </React.Suspense>
                         } />
  
