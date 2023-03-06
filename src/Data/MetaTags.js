@@ -2193,6 +2193,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"A part of the Choice Group, Choice Finserv aims to support the capital needs of India's MSME sector by offering a variety of loans.",
     "link":"https://choiceindia.com/about-choice-finserv"
   },
+  "loan/privacy-policy": {
+    "title":" Privacy Policy - Choice Finserv",
+    'lang':"en",
+    'content':"Visit us to know more about our privacy policy",
+    "link":"https://choiceindia.com/loan/privacy-policy"
+  },
 }
 
 export default meta_tags;
