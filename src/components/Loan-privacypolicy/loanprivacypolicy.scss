@@ -1,8 +1,44 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
-.loan-privacy-policy{
+
+.loan-privacy-policy {
     padding: 5rem 0rem;
-    .loan-privacy-content{
-        padding: 3rem  0rem;
+    a{
+        color: $darkblack;
+        text-decoration: none;
+
+        .back-btn {
+            display: inline-block;
+            position: relative;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            padding-left: 3.5rem;
+            &::before{
+                background:url('../../assets/images/Loan-Privacy-Policy/back-arrow.svg') no-repeat ;
+                content: "";
+                width: 37px;
+                position: absolute;
+                left: 0;
+                height: 31px;
+                background-size: contain;
+                @media (max-width:$sm){
+                    width: 33px; 
+                }
+            }
+        }
+    }
+    .topmr{
+        margin-top: 7rem;
+    }
+
+    .loan-privacy-content {
+        padding: 2.7rem 0rem;
+
+        p {
+            font-size: 1.5rem;
+            line-height: 2.4rem;
+            margin-bottom: 2rem;
+            // color:$darkblack;
+        }
     }
 }
