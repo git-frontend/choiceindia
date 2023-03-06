@@ -676,8 +676,7 @@ function SubBrokerForm(props) {
                 }
             }).catch((error) => {
                 hideLoader('verifyLoader');
-                // console.log(error, "verifyOTPN error");
-                setOTPErrors((error.data && error.data.Message) ? error.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                setOTPErrors((error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
     }
