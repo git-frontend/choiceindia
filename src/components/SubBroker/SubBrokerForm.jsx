@@ -563,6 +563,7 @@ function SubBrokerForm(props) {
             "emailId1": brokerEmail,
             "leadCityName": brokerCityBranch,
             "leadSource": "CHOICEINDIA",
+            "leadState": brokerState,
             // "messgae": '',
             "referredId": refercode.current || null,
             "serviceCode": "CBAEF",
