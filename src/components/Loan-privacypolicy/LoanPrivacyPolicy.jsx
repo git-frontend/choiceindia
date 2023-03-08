@@ -125,41 +125,42 @@ function LoanPrivacyPolicy() {
                                     XVII.No contractual obligation<br />
                                     Please note that this Privacy Policy does not create any contractual or other legal rights on or on behalf of any party, nor is it intended to do so.
                                 </p>
+                                
                                 <p>
                                     APPENDIX- 1<br />
                                     Details of the third parties we share your personal information with are set out below:<br />
                                     S.NO.<br />
                                     NAME OF THIRD PARTY<br />
                                     ADDRESS<br />
-                                    1.Karza Technologies Private Limited<br />
-                                    1302, Orchid, Campacola Compound, 18 BG Kher Road, Worli, Mumbai, 400018<br />
-                                    2.Digiotech Solutions Private Limited<br />
-                                    Flat C-1603, Oak Block, Salarpuria Greenage Apts Bomanhalli, Hosur Main Road, Bangalore - 560068. Karnataka<br />
-                                    3.Transunion CIBIL Limited<br />
-                                    19th Floor, One World Center, Elphinstone Road, Mumbai 400 021, Maharashtra, India (CIR)<br />
-                                    4.Moshpit Technologies Private Limited<br />
-                                    501-G, Maple Heights, Sushant Lok-1, Block C, Gurgaon&#60; Haryana- 122 002 <br />
-                                    5.Signzy Technologies Private Limited<br />
-                                    603 Coworking,Marathon Innova Corporate Centre,101 ,C Wing, Ganpatrao Kadam Marg, Next Gen, Lower Parel,Mumbai- 400013<br />
-                                    6.Paytm Payments Services Limited<br />
-                                    136, First Floor, Devika Tower Nehru Place New Delhi South Delhi DL 110019 India<br />
-                                    7.AU Small Finance Bank<br />
-                                    19-A, Dhuleshwar Garden, Ajmer Road, Jaipur – 302001, Rajasthan<br />
-                                    8.Pravaa Infosystems<br />
-                                    No. 48, 3rd Floor, RV Road, Basavanagudi, Bengaluru, Karnataka – 560004<br />
-                                    9.GupShup Technology India Private Limited<br />
-                                    Unit 101, 1st Floor, Silver Metropolis, Western Express Highway, Goregaon (E), Mumbai 400063, India<br />
-                                    10.Choice Equity Broking Private Limited<br />
-                                    Sunil Patodia Tower, Plot No. 156-158 J.B. Nagar, Andheri (East) Mumbai Mumbai City MH 400099<br />
-                                    11.Central Depository Services (India) Limited<br />
-                                    Unit No. A-2501, Marathon Futurex, Mafatlal Mills Compound, N.M. Joshi Marg, Lower Parel (E) Mumbai Mumbai City MH 400013 IN<br />
-                                    12.Computer Age Management Services Limited<br />
-                                    New No.10, Old No.178, M.G.R.Salai, Nungambakkam Chennai TN 600034 IN<br />
-                                    13.CKYC - Central Registry of Securitisation Asset Reconstruction and Security Interest of India<br />
-                                    Tower – 1, Office Block, 4th Floor, Plate-A, (Adjacent to Ring Road), NBCC, Kidwai Nagar East, New Delhi –110023<br />
-                                    14.NSDL E-Governance Account Aggregator Limited<br />
-                                    Times Tower, 1st Floor, Kamala Mills Compound, Senapati Bapat Marg, Lower Parel Mumbai Mumbai City MH 400013 IN<br />
-                                    15.Razorpay Software Private Limited<br />
+                                    <p className='mb-1'>1. Karza Technologies Private Limited<br />
+                                    1302, Orchid, Campacola Compound, 18 BG Kher Road, Worli, Mumbai, 400018<br /></p>
+                                    <p className='mb-1'>2. Digiotech Solutions Private Limited<br />
+                                    Flat C-1603, Oak Block, Salarpuria Greenage Apts Bomanhalli, Hosur Main Road, Bangalore - 560068. Karnataka</p>
+                                    <p className='mb-1'>3. Transunion CIBIL Limited<br />
+                                    19th Floor, One World Center, Elphinstone Road, Mumbai 400 021, Maharashtra, India (CIR)</p>
+                                    <p className='mb-1'>4. Moshpit Technologies Private Limited<br />
+                                    501-G, Maple Heights, Sushant Lok-1, Block C, Gurgaon&#60; Haryana- 122 002 </p>
+                                    <p className='mb-1'>5. Signzy Technologies Private Limited<br />
+                                    603 Coworking,Marathon Innova Corporate Centre,101 ,C Wing, Ganpatrao Kadam Marg, Next Gen, Lower Parel,Mumbai- 400013</p>
+                                    <p className='mb-1'>6. Paytm Payments Services Limited<br />
+                                    136, First Floor, Devika Tower Nehru Place New Delhi South Delhi DL 110019 India</p>
+                                    <p className='mb-1'>7. AU Small Finance Bank<br />
+                                    19-A, Dhuleshwar Garden, Ajmer Road, Jaipur – 302001, Rajasthan</p>
+                                    <p className='mb-1'>8. Pravaa Infosystems<br />
+                                    No. 48, 3rd Floor, RV Road, Basavanagudi, Bengaluru, Karnataka – 560004</p>
+                                    <p className='mb-1'>9. GupShup Technology India Private Limited<br />
+                                    Unit 101, 1st Floor, Silver Metropolis, Western Express Highway, Goregaon (E), Mumbai 400063, India</p>
+                                    <p className='mb-1'>10. Choice Equity Broking Private Limited<br />
+                                    Sunil Patodia Tower, Plot No. 156-158 J.B. Nagar, Andheri (East) Mumbai Mumbai City MH 400099</p>
+                                    <p className='mb-1'>11. Central Depository Services (India) Limited<br />
+                                    Unit No. A-2501, Marathon Futurex, Mafatlal Mills Compound, N.M. Joshi Marg, Lower Parel (E) Mumbai Mumbai City MH 400013 IN</p>
+                                    <p className='mb-1'>12. Computer Age Management Services Limited<br />
+                                    New No.10, Old No.178, M.G.R.Salai, Nungambakkam Chennai TN 600034 IN</p>
+                                    <p className='mb-1'>13. CKYC - Central Registry of Securitisation Asset Reconstruction and Security Interest of India<br />
+                                    Tower – 1, Office Block, 4th Floor, Plate-A, (Adjacent to Ring Road), NBCC, Kidwai Nagar East, New Delhi –110023</p>
+                                    <p className='mb-1'>14. NSDL E-Governance Account Aggregator Limited<br />
+                                    Times Tower, 1st Floor, Kamala Mills Compound, Senapati Bapat Marg, Lower Parel Mumbai Mumbai City MH 400013 IN</p>
+                                    15. Razorpay Software Private Limited<br />
                                     1st Floor, SJR Cyber, 22 Laskar Hosur Road, Adugodi Bangalore Bangalore KA 560030 IN
                                 </p>
                             </div>
