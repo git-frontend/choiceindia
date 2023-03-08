@@ -315,7 +315,7 @@ function DematAccountForm(props) {
             // 'sidebar_seo_leads'
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog =="yes" ?UTMSource.current || 'demat_lead_generation' : UTMSource.current || null,
+            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
