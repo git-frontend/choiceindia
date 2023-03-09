@@ -4,9 +4,9 @@ import React,{useState,useEffect} from "react";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
 import time from '../../assets/images/nbfc-indivial-loan/quick-flexi-loan-approval.svg';
-import disburse from '../../assets/images/nbfc-indivial-loan/flexi-loan-disbursed-in-48-hours.svg';
-import paperwork from '../../assets/images/nbfc-indivial-loan/minimum-paper-work-for-flexi-business-loan.svg';
-import fee from '../../assets/images/nbfc-indivial-loan/low-flexi-loan-processing-fees.svg';
+import fixedrate from '../../assets/images/NBFCPersonalLoan/fixedrate.svg';
+import custservice from '../../assets/images/NBFCPersonalLoan/custservice.svg';
+import flexibleoption from '../../assets/images/nbfc-indivial-loan/flexibleoption.svg';
 
 function AdvantagesPersonal() {
     const [name, setName ] = useState('hideform');
@@ -85,38 +85,43 @@ function AdvantagesPersonal() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
+                            <h2 className="title-secnd text-center mb-5 mt-5">Advantages</h2>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-12">
                         <Slider {...settings1}>
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        {/* <LazyLoader src={time} alt={"Quick Flexi Loan Approval"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                        <img src={time} alt="Quick Flexi Loan Approval" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                       
+                                        <img src={time} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
-                                    <h3 className="card-ttl">10 Mins</h3>
-                                    <p className="subtext">Loan Sanctioned Time</p>
+                                    <h3 className="card-ttl">Quick</h3>
+                                    <p className="subtext">Loan Sanction</p>
                                 </div>
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        {/* <LazyLoader src={disburse} alt={"Flexi Loan Disbursed in 48 Hours"} className={"img-fluid img"} width={"50"} height={"34"} /> */}
-                                        <img src={disburse} alt="Flexi Loan Disbursed in 48 Hours" className="img-fluid img"  width={"50"} height={"34"}></img> 
+                                       
+                                        <img src={fixedrate} alt="" className="img-fluid img"  width={"50"} height={"34"}></img> 
                                     </span>
-                                    <h3 className="card-ttl">48 Hours</h3>
-                                    <p className="subtext">to Get Loan Disbursed</p>
+                                    <h3 className="card-ttl">Fixed</h3>
+                                    <p className="subtext">Interest Rate</p>
                                 </div>
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        {/* <LazyLoader src={paperwork} alt={"Minimum Paper Work for Flexi Business Loan"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                        <img src={paperwork} alt="Minimum Paper Work for Flexi Business Loan" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                        
+                                        <img src={flexibleoption} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
-                                    <h3 className="card-ttl">Minimum</h3>
-                                    <p className="subtext">Paperwork</p>
+                                    <h3 className="card-ttl">Flexible</h3>
+                                    <p className="subtext">Loan Terms</p>
                                 </div>
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
-                                        {/* <LazyLoader src={fee} alt={"Low Flexi Loan Processing Fee"} className={"img-fluid img"} width={"45"} height={"34"} /> */}
-                                        <img src={fee} alt="Low Flexi Loan Processing Fee" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                       
+                                        <img src={custservice} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
-                                    <h3 className="card-ttl">Low</h3>
-                                    <p className="subtext">processing Fee</p>
+                                    <h3 className="card-ttl">Personalized</h3>
+                                    <p className="subtext">Customer Services </p>
                                 </div>
                         </Slider>
                         </div>

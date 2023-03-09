@@ -21,7 +21,11 @@ import DocumentrequiredSolarFinanace from '../NBFC-Individual-Solar/Documentrequ
 import FeaturesSolarFinanace from '../NBFC-Individual-Solar/FeaturesSolarFinanace';
 import AvailPurposeSolarFinanace from '../NBFC-Individual-Solar/AvailPurposeSolarFinanace';
 import StepsliderSolarFinanace from '../NBFC-Individual-Solar/StepsliderSolarFinanace';
-import AdvantagesPersonal from '../NBFC-Individual-Personal/AdvantagesPersonal'
+import AdvantagesPersonal from '../NBFC-Individual-Personal/AdvantagesPersonal';
+import AvailPurposePersonalFinanace from '../NBFC-Individual-Personal/AvailPurposePersonalFinanace';
+import EligiblePersonal from '../NBFC-Individual-Personal/EligiblePersonal';
+import PurposePersonal from '../NBFC-Individual-Personal/PurposePersonal';
+import StepsliderPersonalFinanace from '../NBFC-Individual-Personal/StepsliderPersonalFinanace';
 import nbfcFormPage from "../../Data/nbfcformpage";
 import NBFCMenu from '../Common-features/NBFCMenu';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -158,8 +162,10 @@ function Loantabs() {
                 className={toggleState === 4 ? "content  active-content" : "content"}
               >
                 <AdvantagesPersonal/>
-                <AvailPurposeSolarFinanace />
-                <StepsliderSolarFinanace />
+                <AvailPurposePersonalFinanace />
+                <EligiblePersonal/>
+                <PurposePersonal/>
+                <StepsliderPersonalFinanace/>
                 <DocumentrequiredSolarFinanace />
                 <FeaturesSolarFinanace />
               </div>
