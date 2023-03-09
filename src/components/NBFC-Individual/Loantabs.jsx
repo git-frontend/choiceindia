@@ -107,11 +107,20 @@ function Loantabs() {
 
               </div>
               <div className=" col-md-5" id="nbfcForm">
-                <div className="formwrap float-rights">
-                  <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                    <NbfcForm />
-                  </GoogleReCaptchaProvider>
-                </div>
+              {
+                        toggleState === 4 ?
+                                <div className="formwrap float-rights">
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm  ispersonal={true}/> 
+                                </GoogleReCaptchaProvider>  
+                                </div>:
+
+                                <div className="formwrap float-rights">
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm /> 
+                                </GoogleReCaptchaProvider>  
+                                </div>
+                    }
               </div>
 
             </div>
