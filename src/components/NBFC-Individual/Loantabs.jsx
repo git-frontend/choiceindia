@@ -26,6 +26,8 @@ import AvailPurposePersonalFinanace from '../NBFC-Individual-Personal/AvailPurpo
 import EligiblePersonal from '../NBFC-Individual-Personal/EligiblePersonal';
 import PurposePersonal from '../NBFC-Individual-Personal/PurposePersonal';
 import StepsliderPersonalFinanace from '../NBFC-Individual-Personal/StepsliderPersonalFinanace';
+import DocumentrequiredPersonalFinanace from '../NBFC-Individual-Personal/DocumentrequiredPersonalFinanace';
+import FeaturesPersonalFinanace from '../NBFC-Individual-Personal/FeaturesPersonalFinanace';
 import nbfcFormPage from "../../Data/nbfcformpage";
 import NBFCMenu from '../Common-features/NBFCMenu';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -166,8 +168,8 @@ function Loantabs() {
                 <EligiblePersonal/>
                 <PurposePersonal/>
                 <StepsliderPersonalFinanace/>
-                <DocumentrequiredSolarFinanace />
-                <FeaturesSolarFinanace />
+                <DocumentrequiredPersonalFinanace />
+                <FeaturesPersonalFinanace />
               </div>
             </div>
           </div>
