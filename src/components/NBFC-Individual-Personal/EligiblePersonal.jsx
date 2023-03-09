@@ -77,25 +77,31 @@ function EligiblePersonal() {
                             {/* <Slider {...settings1}> */}
                             <div className="card-nbfc-personal">
                                 <div className="carditem-nbfc-personal">
-                                    <h3 className="card-ttl">Age</h3>
-                                    <p className="subtext">Minimum : 21 years</p>
-                                    <p className="subtext">Maximum: 60 years</p>
+                                    <div className="carditem-nbfc">
+                                        <h3 className="card-ttl">Age</h3>
+                                        <p className="subtext">Minimum : 21 years</p>
+                                        <p className="subtext">Maximum: 60 years</p>
+                                    </div>
+                                </div>
+                                <div className="carditem-nbfc-personal">
+                                    <img src={personalellipse} alt="" className="img-fluid img"  width={"66"} height={"64"}></img> 
+                                </div>
+                                <div className="carditem-nbfc-personal">
+                                    <div className="carditem-nbfc">
+                                        <h3 className="card-ttl">Income</h3>
+                                        <p className="subtext">Non-metro: Minimum Rs15,000</p>
+                                        <p className="subtext">Metro cities: Minimum Rs20,000</p>
+                                    </div>
                                 </div>
                                 <div className="carditem-nbfc-personal">
                                 <img src={personalellipse} alt="" className="img-fluid img"  width={"66"} height={"64"}></img> 
                                 </div>
                                 <div className="carditem-nbfc-personal">
-                                    <h3 className="card-ttl">Age</h3>
-                                    <p className="subtext">Minimum : 21 years</p>
-                                    <p className="subtext">Maximum: 60 years</p>
-                                </div>
-                                <div className="carditem-nbfc-personal">
-                                <img src={personalellipse} alt="" className="img-fluid img"  width={"66"} height={"64"}></img> 
-                                </div>
-                                <div className="carditem-nbfc-personal">
-                                    <h3 className="card-ttl">Age</h3>
-                                    <p className="subtext">Minimum : 21 years</p>
-                                    <p className="subtext">Maximum: 60 years</p>
+                                    <div className="carditem-nbfc">
+                                        <h3 className="card-ttl">Work Experience</h3>
+                                        <p className="subtext">Salaried : minimum 6 months</p>
+                                        <p className="subtext">Self employed : minimum 3 years</p>
+                                    </div>
                                 </div>
                             </div>
 
