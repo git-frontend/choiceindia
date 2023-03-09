@@ -55,6 +55,7 @@ function nbfcForm(props) {
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
     const [isChecked, setIsChecked] = useState(true);
     const [isChecked2, setIsChecked2] = useState(true);
+    const [isChecked3, setIsChecked3] = useState(true);
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -139,9 +140,11 @@ function nbfcForm(props) {
         if (props.ispersonal === true) {
             setIsChecked(false) 
             setIsChecked2(false) 
+            setIsChecked3(false)
         }else{
             setIsChecked(true)
             setIsChecked2(true)
+            setIsChecked3(true)
         }
     }, [props.ispersonal]);
 
@@ -721,7 +724,11 @@ function nbfcForm(props) {
                             }
                         </div>
 
-                        <div className="sub-formgrp cust-checkbox">
+                        
+                        {
+                            props.ispersonal === true ?
+                            <div>
+                                <div className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
                                 name="terms_and_conditions"
@@ -729,15 +736,12 @@ function nbfcForm(props) {
                                 id="terms_and_conditions"
                             >
 
-                                <Form.Check.Input type="checkbox" checked readOnly />
+                                <Form.Check.Input type="checkbox" onChange={() => setIsChecked3((prev) => !prev)} checked={isChecked3} />
 
                                 <Form.Check.Label>I agree to the Privacy Policy and Terms of Use  <a href="https://cmsapi.choiceindia.com/assets/bc27ce53-0a89-4f31-adea-d0262051fc92" target="_blank">privacy policy</a> and <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f" target="_blank" >{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> documents </Form.Check.Label>
 
                             </Form.Check>
                         </div>
-                        {
-                            props.ispersonal === true ?
-                            <div>
                             <div className="sub-formgrp cust-checkbox">
                                 <Form.Check
                                     inline
@@ -780,12 +784,26 @@ function nbfcForm(props) {
 
                                 </Form.Check>
                             </div>
-                        </div>:""
+                        </div>:<div className="sub-formgrp cust-checkbox">
+                            <Form.Check
+                                inline
+                                name="terms_and_conditions"
+                                type="checkbox"
+                                id="terms_and_conditions"
+                            >
+                            
+                                <Form.Check.Input type="checkbox" checked readOnly />
+                                
+                            <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term2', '')} </Form.Check.Label>
+                                
+                            </Form.Check>
+                        </div>
+
 }
     
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
-                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2} onClick={handleSendOTP}>
+                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}
                             </Button>
                             {/* <Button variant="primary"
