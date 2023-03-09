@@ -85,7 +85,10 @@ function AdvantagesPersonal() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
-                            <h2 className="title-secnd text-center mb-5 mt-5">Advantages</h2>
+                            <div className="personal-sectitle">
+                            <h2 className="title-secnd text-center">Advantages</h2>
+                            </div>
+                            
                         </div>
                     </div>
                     <div className="row">

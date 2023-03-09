@@ -20,7 +20,7 @@ function DocumentrequiredPersonalFinanace() {
             </div>
           </div>
           <div className="row justify-content-center h-100">
-            <div className="col-xl-4 col-md-4">
+            <div className="col-xl-4 col-md-6">
               <div className="Doc-rq-card cap-right">
                 <div className="">
                   <div className="img-height">
@@ -35,7 +35,7 @@ function DocumentrequiredPersonalFinanace() {
                 </ul>
               </div>
             </div>
-            <div className="col-xl-4 col-md-4">
+            <div className="col-xl-4 col-md-6">
               <div className="Doc-rq-card cap-left">
                 <div className="">
                   <div className="img-height">
@@ -51,8 +51,8 @@ function DocumentrequiredPersonalFinanace() {
                 </ul>
               </div>
             </div>
-            <div className="col-xl-4 col-md-4">
-              <div className="Doc-rq-card cap-left">
+            <div className="col-xl-4 col-md-6">
+              <div className="Doc-rq-card cap-right">
                 <div className="">
                   <div className="img-height">
                     <LazyLoader src={businessdocu} className={'img-fluid'} width={"253"} height={"254"} alt={""} />
