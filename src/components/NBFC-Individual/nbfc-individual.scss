@@ -60,12 +60,12 @@ body{
     .loan-bloc-tabs{
         display: flex;
         flex-wrap: wrap;
-        width:75%;
+        width:100%;
         @media (max-width: $sm) {
             width:100%;
           }
         .loanbtn{
-            width: 33.33%;
+            width: 24.33%;
             text-align: center;
             padding: 2.375rem;
             color: $darkblack;
@@ -191,6 +191,12 @@ body{
        
      
        
+    }
+    .personal-text{
+        font-size: 2.5rem;
+        line-height:4.875rem;
+        // font-weight: 600;
+        font-family: $font-family-poppins-regular;
     }
     .pb24{
         padding-bottom: 24px;
