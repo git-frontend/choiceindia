@@ -89,8 +89,8 @@ function Loantabs() {
                   toggleState == 4 ? <div className="heading-sec ">
                     <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
                     <p className="para">{nbfcFormPage[data].content}</p>
-                    <br /> <p className="para"> {nbfcFormPage[data].content2}<br /></p>
-                    <p className="para personal-text"> {nbfcFormPage[data].content3} 
+                    <br /> <p className="para"> {nbfcFormPage[data].content2}<br /><br/></p>
+                    <p className="para"> {nbfcFormPage[data].content3} <br /><br /><br/>
                       <a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
                   </div> : 
                   <div className="heading-sec ">
