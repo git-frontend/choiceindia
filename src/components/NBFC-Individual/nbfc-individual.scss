@@ -81,7 +81,7 @@ body {
         .loanbtn {
             width: 24.33%;
             text-align: center;
-            padding: 2.375rem;
+            padding: 2.375rem 1.5rem;
             color: $darkblack;
             font-size: 2rem;
             line-height: 3.75rem;
@@ -493,6 +493,7 @@ body {
         justify-content: space-between;
         align-items: center;
         flex-wrap: wrap;
+        margin-top: 3rem;
 
         .carditem-nbfc {
             width: 305px !important;

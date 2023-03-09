@@ -152,6 +152,9 @@
                         border-bottom: 1px solid #ccc;
                         padding: 0.4rem 1em;
                     }
+                    &:last-child{
+                        margin: 0;
+                    }
                 }
                 .dropdown{
                     .dropdown-menu{
