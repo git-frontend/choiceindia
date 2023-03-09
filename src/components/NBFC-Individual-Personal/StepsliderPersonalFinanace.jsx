@@ -22,10 +22,10 @@ function StepsSlider() {
 
 
 
-        const element = document.getElementById("how1");
-        const element2 = document.getElementById("how2");
-        const element3 = document.getElementById("how3");
-        const element4 = document.getElementById("how4");
+        const element = document.getElementById("howp1");
+        const element2 = document.getElementById("howp2");
+        const element3 = document.getElementById("howp3");
+        const element4 = document.getElementById("howp4");
         if (element && element2 && element3 && element4) {
             const rect = element.getBoundingClientRect();
             const rect2 = element.getBoundingClientRect();
@@ -95,7 +95,7 @@ function StepsSlider() {
                     <div className="row justify-content-center" onScroll={getPosition}>
                         <div className="col-md-9">
                             <div className="how-works-steps">
-                                <div ref={myRef1} className={"works-steps-itm " + name} id="how1">
+                                <div ref={myRef1} className={"works-steps-itm " + name} id="howp1">
                                     <div className="steps-itm-left itm-left-img">
                                         <LazyLoader src={vehicleFirstStep} alt={"Submit the Documents"} className={"img-fluid"} width={"154"} height={"198"} />
                                     </div>
@@ -106,7 +106,7 @@ function StepsSlider() {
                                         <p>With the help of our eligibility calculator find out your eligibility for the loan to start the process</p>
                                     </div>
                                 </div>
-                                <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="how2">
+                                <div ref={myRef2} className={"works-steps-itm steps-itm-reverse " + name2} id="howp2">
                                     <div className="steps-itm-left itm-left-img">
                                         <LazyLoader src={vehicleSecndStep} alt={"Check Your Eligibility"} className={"img-fluid"} width={"154"} height={"229"} />
                                     </div>
@@ -116,7 +116,7 @@ function StepsSlider() {
                                         <p>By submitting your paperwork digitally and include your KYC, business owner/business documents, and income proof</p>
                                     </div>
                                 </div>
-                                <div ref={myRef3} className={"works-steps-itm " + name3} id="how3">
+                                <div ref={myRef3} className={"works-steps-itm " + name3} id="howp3">
                                     <div className="steps-itm-left itm-left-img">
                                         <LazyLoader src={vehicleThirdStep} alt={"Quick Loan Approval"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>
@@ -127,7 +127,7 @@ function StepsSlider() {
 speeding up the process so that an approval can be given within 48 hours.</p>
                                     </div>
                                 </div>
-                                <div ref={myRef4} className={"works-steps-itm steps-itm-reverse " + name4} id="how4">
+                                <div ref={myRef4} className={"works-steps-itm steps-itm-reverse " + name4} id="howp4">
                                     <div className="steps-itm-left itm-left-img">
                                         <LazyLoader src={vehicleFourthStep} alt={"Loan Disbursed"} className={"img-fluid"} width={"154"} height={"185"} />
                                     </div>

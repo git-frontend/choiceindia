@@ -452,6 +452,9 @@ body {
             margin-top: 3rem;
         }
     }
+    .Doc-rq-card{
+        width: auto;
+    }
 }
 
 
@@ -517,6 +520,13 @@ body {
         align-items: center;
         flex-wrap: wrap;
         margin-top: 3rem;
+        .carditem-nbfc-personal{
+            @media (max-width: $sm) {
+                width: 100%;
+                text-align: center;
+                margin: 1rem 0;
+            }
+        }
 
         .carditem-nbfc {
             width: 305px !important;
@@ -538,8 +548,8 @@ body {
 
             @media (max-width: $sm) {
                 min-height: 17rem;
-                width: 300px !important;
-                margin: 2rem 1rem;
+                width: 100% !important;
+                margin: 0;
             }
         }
 
@@ -551,6 +561,9 @@ body {
             @media (max-width: $md) {
                 width: 40px;
             }
+        }
+        @media (max-width: $sm) {
+            margin-top: 0;
         }
     }
 }
