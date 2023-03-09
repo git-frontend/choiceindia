@@ -412,9 +412,35 @@ body{
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
             .carditem-nbfc{
-                width: 255px !important;
+                width: 305px !important;
                 min-height: 22rem;
+                @media only screen and (min-width: $lg) {
+                    width: 255px !important;
+                  }
+                 
+                  @media only screen and (min-width: 1400px) {
+                    width: 305px !important;
+                  }
+                @media (max-width: $md) {
+                    min-height: 20rem;
+                    width: 180px !important;
+                    margin: 2rem 1rem;
+                }
+                @media (max-width: $sm) {
+                    min-height: 17rem;
+                    width: 300px !important;
+                    margin: 2rem 1rem;
+                }
+            }
+            @media (max-width: $sm) {
+                justify-content: center;
+            }
+            .img{
+                @media (max-width: $md) {
+                    width: 40px;
+                }
             }
         }
     }
