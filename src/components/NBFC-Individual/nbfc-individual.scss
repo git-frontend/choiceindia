@@ -410,7 +410,14 @@ body{
     .elligiblae-personal{
         .card-nbfc-personal{
             display: flex;
-            
+            justify-content: space-between;
+            align-items: center;
+            .carditem-nbfc{
+                width: 255px !important;
+                min-height: 22rem;
+            }
         }
     }
   
+
+
