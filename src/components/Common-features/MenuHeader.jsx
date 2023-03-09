@@ -14,6 +14,12 @@ export default function Header() {
   function check(){
     window.location.pathname="/services"
     console.log("checking",window.location.pathname);
+
+    
+  }
+  function check2(){
+    console.log("checking")
+   location.href = "https://choiceinsurance.in/";    
   }
    
     
@@ -46,7 +52,7 @@ export default function Header() {
                                  <NavDropdown  title="Services" id="navbarScrollingDropdown" className="top-nav-links service-section serv-drop">
                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to="/equity-broking">Broking &amp; Distribution</NavDropdown.Item>
                                   {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking'>Wealth Planning</NavDropdown.Item> */}
-                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/insurance'>Insurance</NavDropdown.Item>
+                                 <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>{setShow(!show),check2()}} >Insurance</NavDropdown.Item>
                                  <NavDropdown.Item className="nav-dropdown-links" onClick={ ()=>setShow(!show)} as={Link} to='/loan'>Loans</NavDropdown.Item>
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Capital Advisory</NavDropdown.Item> */}
                                  {/* <NavDropdown.Item className="nav-dropdown-links"><NavLink to='/equity-broking' className="sub-link">Management Consultancy</NavDropdown.Item> */}
