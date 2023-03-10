@@ -23,6 +23,15 @@ const nbfcFormPage = [
         "Link":"#"
         
     },
+    {
+        "title": "Are you looking for a flexible personal loan to achieve your goals?",
+        "content": "Consider a personal loan from us providing a range of financial services to help you manage your money and achieve your dreams.",
+        "content2": "A personal loan from us can provide you with access to the funds you need to consolidate high-interest debt, make a large purchase, or cover unexpected expenses. With flexible loan amounts and repayment terms, you can customize your loan to meet your individual needs and budget.",
+        "content3":"Get personal loan upto Rs50 lakh online. ",
+        "button":"Apply Now!",
+        "Link":"#"
+        
+    }
 
    
 

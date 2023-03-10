@@ -21,6 +21,13 @@ import DocumentrequiredSolarFinanace from '../NBFC-Individual-Solar/Documentrequ
 import FeaturesSolarFinanace from '../NBFC-Individual-Solar/FeaturesSolarFinanace';
 import AvailPurposeSolarFinanace from '../NBFC-Individual-Solar/AvailPurposeSolarFinanace';
 import StepsliderSolarFinanace from '../NBFC-Individual-Solar/StepsliderSolarFinanace';
+import AdvantagesPersonal from '../NBFC-Individual-Personal/AdvantagesPersonal';
+import AvailPurposePersonalFinanace from '../NBFC-Individual-Personal/AvailPurposePersonalFinanace';
+import EligiblePersonal from '../NBFC-Individual-Personal/EligiblePersonal';
+import PurposePersonal from '../NBFC-Individual-Personal/PurposePersonal';
+import StepsliderPersonalFinanace from '../NBFC-Individual-Personal/StepsliderPersonalFinanace';
+import DocumentrequiredPersonalFinanace from '../NBFC-Individual-Personal/DocumentrequiredPersonalFinanace';
+import FeaturesPersonalFinanace from '../NBFC-Individual-Personal/FeaturesPersonalFinanace';
 import nbfcFormPage from "../../Data/nbfcformpage";
 import NBFCMenu from '../Common-features/NBFCMenu';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -32,6 +39,7 @@ function Loantabs() {
     setToggleState(index);
   };
 
+  
   return (
     <div>
 
@@ -39,58 +47,89 @@ function Loantabs() {
       <section className="Loan-tabs" >
 
 
-       
+
 
         <div className="d-flex align-items-center tabwrapper" >
           <div className="loan-bloc-tabs bloc-tabs">
-          <button
-            className={toggleState === 1 ? "loanbtn tabs active" : "loanbtn"}
-            onClick={() => {toggleTab(1);setData(0)}}
-          >
-            Flexi Credit
-          </button>
-          <button
-            className={toggleState === 2 ? "loanbtn tabs active" : "loanbtn"}
-            onClick={() => {toggleTab(2);setData(1)}}
-          >
-            Vehicle Loan
-          </button>
-          <button
-            className={toggleState === 3 ? "loanbtn tabs active" : "loanbtn"}
-            onClick={() => {toggleTab(3);setData(2)}}
-          >
-            Solar Finance
-          </button>
+            <button
+              className={toggleState === 1 ? "loanbtn tabs active" : "loanbtn"}
+              onClick={() => { toggleTab(1); setData(0) }}
+            >
+              Flexi Credit
+            </button>
+            <button
+              className={toggleState === 2 ? "loanbtn tabs active" : "loanbtn"}
+              onClick={() => { toggleTab(2); setData(1) }}
+            >
+              Vehicle Loan
+            </button>
+            <button
+              className={toggleState === 3 ? "loanbtn tabs active" : "loanbtn"}
+              onClick={() => { toggleTab(3); setData(2) }}
+            >
+              Solar Finance
+            </button>
+            <button
+              className={toggleState === 4 ? "loanbtn tabs active" : "loanbtn"}
+              onClick={() => { toggleTab(4); setData(3) }}
+            >
+              Personal Finance
+            </button>
           </div>
           <div className="menu-sub-tabs">
-              <NBFCMenu />
+            <NBFCMenu />
           </div>
         </div>
 
         <section className="flexitabcontent" >
-                <div className="container">
-                    <div className="row ">
-                        <div className=" col-md-7">
-                            <div className="heading-sec ">
-                                <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
-                                <p className="para">{nbfcFormPage[data].content}</p>
-                                <br /> <p className="para"> {nbfcFormPage[data].content2}
-                                    <br /><a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
-                            </div>
+          <div className="container">
+            <div className="row ">
+              <div className=" col-md-7">
+                {
+                  toggleState == 4 ? <div className="heading-sec ">
+                    <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
+                    <p className="para">{nbfcFormPage[data].content}</p>
+                    <br /> <p className="para"> {nbfcFormPage[data].content2}<br /><br/></p>
+                    <p className="para"> {nbfcFormPage[data].content3} <br /><br /><br/>
+                      <a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
+                  </div> : 
+                  <div className="heading-sec ">
+                    <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
+                    <p className="para">{nbfcFormPage[data].content}</p>
+                    <br /> <p className="para"> {nbfcFormPage[data].content2}<br />
+                    <br/>
+                      <br /><a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
+                  </div>}
+                {/* <div className="heading-sec ">
+                  <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
+                  <p className="para">{nbfcFormPage[data].content}</p>
+                  <br /> <p className="para"> {nbfcFormPage[data].content2}<br /></p>
+                  <p className="para"> {nbfcFormPage[data].content3}
+                    <br /><a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
+                </div> */}
 
-                        </div>
-                        <div className=" col-md-5" id="nbfcForm">
+              </div>
+              <div className=" col-md-5" id="nbfcForm">
+              {
+                        toggleState === 4 ?
                                 <div className="formwrap float-rights">
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                            <NbfcForm/> 
+                            <NbfcForm  ispersonal={true}/> 
+                                </GoogleReCaptchaProvider>  
+                                </div>:
+
+                                <div className="formwrap float-rights">
+                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <NbfcForm /> 
                                 </GoogleReCaptchaProvider>  
                                 </div>
-                        </div>
+                    }
+              </div>
 
-                    </div>
+            </div>
 
-                </div>
-            </section>
+          </div>
+        </section>
 
 
         <div className="indiv-tabs-cont">
@@ -101,12 +140,12 @@ function Loantabs() {
               >
 
                 {/* <div id="flexitab"> */}
-                  <FlexitabIndivLoan />
-                  <AvailPurposeIndivLoan/>
-                  <StepsliderIndivLoan/>
-                  <DocumentrequiredIndivLoan/>
-                  <FeaturesIndivLoan/>
-                  <WhyFlexiIndivLoan/>
+                <FlexitabIndivLoan />
+                <AvailPurposeIndivLoan />
+                <StepsliderIndivLoan />
+                <DocumentrequiredIndivLoan />
+                <FeaturesIndivLoan />
+                <WhyFlexiIndivLoan />
                 {/* </div> */}
 
               </div>
@@ -114,30 +153,41 @@ function Loantabs() {
               <div
                 className={toggleState === 2 ? "content  active-content" : "content"}
               >
-                  <FlexitabVehLoan />
-                  <AvailPurposeVehLoan/>
-                  <StepsliderVehLoan/>
-                  <DocumentrequiredVehLoan/>
-                  <FeaturesVehLoan/>
-                  <WhyFlexiVehLoan/>
+                <FlexitabVehLoan />
+                <AvailPurposeVehLoan />
+                <StepsliderVehLoan />
+                <DocumentrequiredVehLoan />
+                <FeaturesVehLoan />
+                <WhyFlexiVehLoan />
               </div>
 
               <div
                 className={toggleState === 3 ? "content  active-content" : "content"}
               >
-                  <FlexitabSolarFinanace />
-                  <AvailPurposeSolarFinanace/>
-                  <StepsliderSolarFinanace/>
-                  <DocumentrequiredSolarFinanace/>
-                  <FeaturesSolarFinanace/>
+                <FlexitabSolarFinanace />
+                <AvailPurposeSolarFinanace />
+                <StepsliderSolarFinanace />
+                <DocumentrequiredSolarFinanace />
+                <FeaturesSolarFinanace />
+              </div>
+              <div
+                className={toggleState === 4 ? "content  active-content" : "content"}
+              >
+                <AdvantagesPersonal/>
+                <AvailPurposePersonalFinanace />
+                <EligiblePersonal/>
+                <PurposePersonal/>
+                <StepsliderPersonalFinanace/>
+                <DocumentrequiredPersonalFinanace />
+                <FeaturesPersonalFinanace />
               </div>
             </div>
           </div>
         </div>
 
-        
 
-        
+
+
 
       </section>
 
