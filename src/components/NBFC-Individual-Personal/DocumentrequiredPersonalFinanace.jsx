@@ -55,7 +55,7 @@ function DocumentrequiredPersonalFinanace() {
               <div className="Doc-rq-card personal-res">
                 <div className="">
                   <div className="img-height">
-                    <LazyLoader src={businessdocu} className={'img-fluid'} width={"253"} height={"254"} alt={""} />
+                    <LazyLoader src={businessdocu} className={'img-fluid'} width={"253"} height={"254"} alt={"Business Document Requiremnts"} />
                   </div>
                   <h3 className="title-doc">Business Documents</h3>
                 </div>
