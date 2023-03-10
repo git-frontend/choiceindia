@@ -90,7 +90,7 @@ function Loantabs() {
                     <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
                     <p className="para">{nbfcFormPage[data].content}</p>
                     <br /> <p className="para"> {nbfcFormPage[data].content2}<br /><br/></p>
-                    <p className="para"> {nbfcFormPage[data].content3} <span className="psnl-click">Click here<a href="https://www.hdfcbank.com/personal/borrow/popular-loans/personal-loan" target="_blank"></a></span> to know more <br/><br/><br/>
+                    <p className="para"> {nbfcFormPage[data].content3} <span className="psnl-click"><a href="https://www.hdfcbank.com/personal/borrow/popular-loans/personal-loan" target="_blank">Click here</a></span> to know more <br/><br/><br/>
                       <a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
                   </div> : 
                   <div className="heading-sec ">
