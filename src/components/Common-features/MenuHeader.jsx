@@ -19,7 +19,8 @@ export default function Header() {
   }
   function check2(){
     console.log("checking")
-   location.href = "https://choiceinsurance.in/";    
+    //  window.open = "https://choiceinsurance.in/";    
+     window.open("https://choiceinsurance.in/");   
   }
    
     
