@@ -46,7 +46,11 @@ function Footer() {
     setData(obj);
 
   }
-
+  function check2(){
+    console.log("checking")
+    //  window.open = "https://choiceinsurance.in/";    
+     window.open("https://choiceinsurance.in/");   
+  }
 
   return (
     <>
@@ -78,7 +82,7 @@ function Footer() {
                               <NavLink className="cursor-pointer">Wealth Planning</NavLink>
                             </li>
                             <li>
-                              <NavLink className="cursor-pointer" to="/insurance" >Insurance</NavLink>
+                              <NavLink className="cursor-pointer" to="/insurance" onClick={check2}>Insurance</NavLink>
                             </li>
                             <li>
                               <NavLink className="cursor-pointer" to="/loan" >Loans</NavLink>
