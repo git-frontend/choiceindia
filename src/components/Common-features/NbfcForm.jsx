@@ -139,10 +139,16 @@ function nbfcForm(props) {
     }
 
     useEffect(() => {
-        
+       if(props.ispersonal === true){
+
+            setIsChecked(false)
+            setIsChecked2(false)
+            setIsChecked3(false)
+       }else{
             setIsChecked(true)
             setIsChecked2(true)
             setIsChecked3(true)
+       }
             
         
     }, [props.ispersonal]);
