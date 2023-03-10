@@ -56,7 +56,7 @@ function nbfcForm(props) {
     const [isChecked, setIsChecked] = useState(true);
     const [isChecked2, setIsChecked2] = useState(true);
     const [isChecked3, setIsChecked3] = useState(true);
-    const [isChecked4, setIsChecked4] = useState(true);
+    
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -143,7 +143,7 @@ function nbfcForm(props) {
             setIsChecked(true)
             setIsChecked2(true)
             setIsChecked3(true)
-            setIsChecked4(true)
+            
         
     }, [props.ispersonal]);
 
@@ -777,7 +777,7 @@ function nbfcForm(props) {
                                     id="terms_and_conditions"
                                 >
 
-                                    <Form.Check.Input type="checkbox" onChange={() => setIsChecked4((prev) => !prev)} checked={isChecked4} />
+                                    <Form.Check.Input type="checkbox"  />
 
                                     <Form.Check.Label> I/we hereby give the consent in relation to Other Products <a className="link-tc" href={consent2}target="_blank">Consent II</a></Form.Check.Label>
 
