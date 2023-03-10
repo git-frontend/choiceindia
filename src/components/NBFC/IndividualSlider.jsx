@@ -16,7 +16,7 @@ function BusinessSlider() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 3,
+    slidesToShow: 4,
     autoplay: true,
     dots: false,
     autoplaySpeed: 2000,

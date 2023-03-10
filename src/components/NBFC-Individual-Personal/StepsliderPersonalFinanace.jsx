@@ -143,8 +143,7 @@ speeding up the process so that an approval can be given within 48 hours.</p>
                     </div>
                     <div className="row mt-5">
                         <div className="col-md-12 mt-5 text-center">
-                            <h5 className="elg-text psnl-text">For accessing APR Calculator Navigate to Loans section on the page <br/> and view APR Calculator</h5>
-                            
+                            <h5 className="elg-text psnl-text">For accessing APR Calculator Navigate to Loans section on the page <br/> and view <a href="https://www.hdfcbank.com/personal/tools-and-calculators" target="_blank"><span className="apr_cal">APR Calculator</span></a> </h5> 
                         </div>
                     </div>
                 </div>

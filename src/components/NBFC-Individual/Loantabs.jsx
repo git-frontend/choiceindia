@@ -73,7 +73,7 @@ function Loantabs() {
               className={toggleState === 4 ? "loanbtn tabs active" : "loanbtn"}
               onClick={() => { toggleTab(4); setData(3) }}
             >
-              Personal Finance
+              Personal Loan
             </button>
           </div>
           <div className="menu-sub-tabs">
@@ -90,7 +90,7 @@ function Loantabs() {
                     <h2 className="title-first flexititle">{nbfcFormPage[data].title}</h2>
                     <p className="para">{nbfcFormPage[data].content}</p>
                     <br /> <p className="para"> {nbfcFormPage[data].content2}<br /><br/></p>
-                    <p className="para"> {nbfcFormPage[data].content3} <br /><br /><br/>
+                    <p className="para"> {nbfcFormPage[data].content3} <a href="https://www.hdfcbank.com/personal/borrow/popular-loans/personal-loan" target="_blank"><span className="psnl-click">Click here</span></a> to know more<br/><br/>
                       <a href={nbfcFormPage[data].Link}><span className="aply-btn">{nbfcFormPage[data].button}</span></a></p>
                   </div> : 
                   <div className="heading-sec ">
