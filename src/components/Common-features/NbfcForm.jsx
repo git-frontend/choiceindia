@@ -56,6 +56,7 @@ function nbfcForm(props) {
     const [isChecked, setIsChecked] = useState(true);
     const [isChecked2, setIsChecked2] = useState(true);
     const [isChecked3, setIsChecked3] = useState(true);
+    
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -136,16 +137,20 @@ function nbfcForm(props) {
             'brokerMobileNumber': {}
         }));
     }
+
     useEffect(() => {
-        if (props.ispersonal === true) {
-            setIsChecked(false) 
-            setIsChecked2(false) 
+       if(props.ispersonal === true){
+
+            setIsChecked(false)
+            setIsChecked2(false)
             setIsChecked3(false)
-        }else{
+       }else{
             setIsChecked(true)
             setIsChecked2(true)
             setIsChecked3(true)
-        }
+       }
+            
+        
     }, [props.ispersonal]);
 
 
@@ -738,7 +743,7 @@ function nbfcForm(props) {
 
                                 <Form.Check.Input type="checkbox" onChange={() => setIsChecked3((prev) => !prev)} checked={isChecked3} />
 
-                                <Form.Check.Label>I agree to the Privacy Policy and Terms of Use  <a href="https://cmsapi.choiceindia.com/assets/bc27ce53-0a89-4f31-adea-d0262051fc92" target="_blank">privacy policy</a> and <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f" target="_blank" >{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> documents </Form.Check.Label>
+                                <Form.Check.Label>*I agree to the Privacy Policy and Terms of Use  <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/bc27ce53-0a89-4f31-adea-d0262051fc92" target="_blank">privacy policy</a> and <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f" target="_blank" >{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> documents </Form.Check.Label>
 
                             </Form.Check>
                         </div>
@@ -752,7 +757,7 @@ function nbfcForm(props) {
 
                                     <Form.Check.Input type="checkbox" onChange={() => setIsChecked2((prev) => !prev)} checked={isChecked2}/>
 
-                                    <Form.Check.Label>I have read, understood and hereby accept the customized Privacy Policy for Choice Finserv Private Limited in relation to collection of information for HDFC Bank <a href={hdfcprivacy}target="_blank">Privacy Policy</a></Form.Check.Label>
+                                    <Form.Check.Label>*I have read, understood and hereby accept the customized Privacy Policy for Choice Finserv Private Limited in relation to collection of information for HDFC Bank <a className="link-tc" href={hdfcprivacy}target="_blank">Privacy Policy</a></Form.Check.Label>
 
                                 </Form.Check>
                             </div>
@@ -766,7 +771,7 @@ function nbfcForm(props) {
 
                                     <Form.Check.Input type="checkbox" onChange={() => setIsChecked((prev) => !prev)} checked={isChecked} />
 
-                                    <Form.Check.Label>I/we hereby give the consent in relation to Requested Products <a href={consent1}target="_blank">Consent I</a></Form.Check.Label>
+                                    <Form.Check.Label>*I/we hereby give the consent in relation to Requested Products <a className="link-tc" href={consent1}target="_blank">Consent I</a></Form.Check.Label>
 
                                 </Form.Check>
                             </div>
@@ -778,9 +783,9 @@ function nbfcForm(props) {
                                     id="terms_and_conditions"
                                 >
 
-                                    <Form.Check.Input type="checkbox" />
+                                    <Form.Check.Input type="checkbox"  />
 
-                                    <Form.Check.Label> I/we hereby give the consent in relation to Other Products <a href={consent2}target="_blank">Consent II</a></Form.Check.Label>
+                                    <Form.Check.Label> I/we hereby give the consent in relation to Other Products <a className="link-tc" href={consent2}target="_blank">Consent II</a></Form.Check.Label>
 
                                 </Form.Check>
                             </div>

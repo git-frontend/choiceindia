@@ -97,7 +97,7 @@ function AdvantagesPersonal() {
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                        
-                                        <img src={time} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                        <img src={time} alt="Quick Flexi Loan Approval" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
                                     <h3 className="card-ttl">Quick</h3>
                                     <p className="subtext">Loan Sanction</p>
@@ -105,7 +105,7 @@ function AdvantagesPersonal() {
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                        
-                                        <img src={fixedrate} alt="" className="img-fluid img"  width={"50"} height={"34"}></img> 
+                                        <img src={fixedrate} alt="fixed interest rate on personal loan" className="img-fluid img"  width={"50"} height={"34"}></img> 
                                     </span>
                                     <h3 className="card-ttl">Fixed</h3>
                                     <p className="subtext">Interest Rate</p>
@@ -113,7 +113,7 @@ function AdvantagesPersonal() {
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                         
-                                        <img src={flexibleoption} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                        <img src={flexibleoption} alt="Flexible Repayment Options" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
                                     <h3 className="card-ttl">Flexible</h3>
                                     <p className="subtext">Loan Terms</p>
@@ -121,7 +121,7 @@ function AdvantagesPersonal() {
                                 <div className="carditem-nbfc">
                                     <span className='cardimg'>
                                        
-                                        <img src={custservice} alt="" className="img-fluid img"  width={"45"} height={"34"}></img> 
+                                        <img src={custservice} alt="Personalized Customer Services" className="img-fluid img"  width={"45"} height={"34"}></img> 
                                     </span>
                                     <h3 className="card-ttl">Personalized</h3>
                                     <p className="subtext">Customer Services </p>

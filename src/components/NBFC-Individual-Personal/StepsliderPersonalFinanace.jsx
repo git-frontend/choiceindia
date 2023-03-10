@@ -81,7 +81,7 @@ function StepsSlider() {
         <div id='how-it-works'>
 
 
-            <section className="nbfc-steps-works" onScroll={getPosition}>
+            <section className="nbfc-steps-works nbfc-personal-steps" onScroll={getPosition}>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">
@@ -143,8 +143,7 @@ speeding up the process so that an approval can be given within 48 hours.</p>
                     </div>
                     <div className="row mt-5">
                         <div className="col-md-12 mt-5 text-center">
-                            <h5 className="elg-text">With our eligibility calculator</h5>
-                            <a href="#"><span className="btn-bg">Check your Eligibility</span></a>
+                            <h5 className="elg-text psnl-text">For accessing APR Calculator Navigate to Loans section on the page <br/> and view <a href="https://www.hdfcbank.com/personal/tools-and-calculators" target="_blank"><span className="apr_cal">APR Calculator</span></a> </h5> 
                         </div>
                     </div>
                 </div>
