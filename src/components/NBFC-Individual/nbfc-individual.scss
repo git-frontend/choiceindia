@@ -167,6 +167,9 @@ body {
         }
         .psnl-click{
             color: $bgcolor-blue;
+            a{
+                display: inline-block;
+            }
         }
     }
 
