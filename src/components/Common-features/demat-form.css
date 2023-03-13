@@ -533,7 +533,7 @@ body {
 }
 .demat-account-form .sub-formgrp.cust-checkbox .form-check {
   margin-right: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem !important;
 }
 .demat-account-form .sub-formgrp.cust-checkbox .lbl {
   font-size: 1.2rem;

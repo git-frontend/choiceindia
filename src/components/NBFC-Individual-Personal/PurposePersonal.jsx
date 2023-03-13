@@ -23,7 +23,7 @@ function PurposePersonal() {
                                         <p>Personal loans are ideal for covering urgent medical expenses, vacations, weddings, home improvements and more. They can be obtained quickly with minimal paperwork and make your life easier in times of financial need.</p>
                                     </div>
                                     <div className="bnr-list-right">
-                                        <LazyLoader src={personalpur} alt={""} className={"img-fluid img"} width={"653"} height={"434"} />
+                                        <LazyLoader src={personalpur} alt={"personal loan requirement"} className={"img-fluid img"} width={"653"} height={"434"} />
                                     </div>
 
                                 </div>
