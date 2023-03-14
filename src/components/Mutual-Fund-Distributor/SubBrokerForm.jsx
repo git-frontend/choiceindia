@@ -12,9 +12,10 @@ import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
+import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyFooter";
 
 function SubBrokerForm(props) {
-
+    // console.log("check",props)
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
@@ -56,6 +57,34 @@ function SubBrokerForm(props) {
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
+    const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
+    useEffect(() => {
+        if (props.isFromFableDetails) {
+            window.addEventListener("scroll", onScroll);
+
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
+        }
+    }, [props.isFromFableDetails]);
+
+    function onScroll() {
+        let element = document.getElementById('fablesdetail-title');
+        if (element) {
+            
+            const rect = element.getBoundingClientRect();
+            
+            setFablesDetailTitleId(
+                rect.top < -600 &&//-609
+                rect.left > 0  &&//109
+                rect.bottom <=  (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <  (window.innerWidth || document.documentElement.clientWidth) //1409
+            );
+          
+
+        }
+        
+    }
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -621,8 +650,12 @@ function SubBrokerForm(props) {
         setOTPErrors('');
     }
 
+
     return (
         <>
+        {
+               (props.isFromFableDetails ? (props.isFooterVisible && fablesDetailTitleId) : props.isFooterVisible)? <MutualFundStickyFooter ></MutualFundStickyFooter>:""
+            }
             <div className="demat-account-form" id="sub-broker-form">
 
 
