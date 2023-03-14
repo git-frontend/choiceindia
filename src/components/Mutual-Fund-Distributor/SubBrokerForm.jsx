@@ -13,6 +13,7 @@ import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
 import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyFooter";
+import MutualFundpopupform from "../Common-features/MutualFundpopupform";
 
 function SubBrokerForm(props) {
     // console.log("check",props)
@@ -58,6 +59,18 @@ function SubBrokerForm(props) {
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
+    const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    function showOpenAccountAdPopup() {
+        // console.log('SHOWW!!!!')
+        
+            setShowOpenAccountPopup(true);
+        
+    }
+    function hideOpenAccountAdPopup(showAdValues) {
+        
+        setShowOpenAccountPopup(false);
+        // callOpenAccountAdPopupAgain();
+    }
     useEffect(() => {
         if (props.isFromFableDetails) {
             window.addEventListener("scroll", onScroll);
@@ -68,6 +81,7 @@ function SubBrokerForm(props) {
         }
     }, [props.isFromFableDetails]);
 
+    
     function onScroll() {
         let element = document.getElementById('fablesdetail-title');
         if (element) {
@@ -653,8 +667,11 @@ function SubBrokerForm(props) {
 
     return (
         <>
+         {
+                showOpenAccountPopup ? <MutualFundpopupform hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundpopupform> : ''
+            }
         {
-               (props.isFromFableDetails ? (props.isFooterVisible && fablesDetailTitleId) : props.isFooterVisible)? <MutualFundStickyFooter ></MutualFundStickyFooter>:""
+               (props.isFromFableDetails ? (props.isFooterVisible && fablesDetailTitleId) : props.isFooterVisible)? <MutualFundStickyFooter MutualFundpopupform={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundStickyFooter>:""
             }
             <div className="demat-account-form" id="sub-broker-form">
 
