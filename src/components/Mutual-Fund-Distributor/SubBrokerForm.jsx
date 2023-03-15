@@ -89,7 +89,7 @@ function SubBrokerForm(props) {
             const rect = element.getBoundingClientRect();
             
             setFablesDetailTitleId(
-                rect.top < -600 &&//-609
+                rect.top < -300 &&//-609
                 rect.left > 0  &&//109
                 rect.bottom <=  (window.innerHeight || document.documentElement.clientHeight) &&
                 rect.right <  (window.innerWidth || document.documentElement.clientWidth) //1409
