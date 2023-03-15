@@ -3,8 +3,25 @@ import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-f
 import SubBrokerForm from '../Mutual-Fund-Distributor/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import utils from "../../Services/utils";
+import { useState,useEffect } from "react";
+import "../SubBroker/subbroker.scss";
 function BannerMFDistributorHindi() {
-
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }
+        }
+    };
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
     return (
         <div>
             <section className="franchise-banner" >
@@ -46,6 +63,11 @@ function BannerMFDistributorHindi() {
                                 
                             </div>
                            
+                        </div>
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>म्यूचुअल फंड वितरक बनें</button>
+                            </div>
                         </div>
                     </div>
                 </div>
