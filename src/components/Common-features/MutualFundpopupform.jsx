@@ -703,34 +703,6 @@ function MutualFundpopupform({hideComponent, openInfoPopup}) {
                             
                         </div>
                         
-                           
-                                <div className="sub-formgrp">
-                                    
-                                <Select ref={selectInputRef}
-                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
-                            {
-                                errors.brokerCityBranch.required ? <small className="text-danger"> Nearest City Branch is required</small> : ''
-                            }
-                                  
-                                </div>
-                                {
-                            showState ?
-                                <div className="sub-formgrp">
-                                    {/* <Form.Select placeholder="Search State" className="formcontrol formpadding" isInvalid={errors.brokerState.required} value={brokerState} onChange={handleBrokerState}>
-                                        <option value="">Select State</option>
-                                        {
-                                            statesDropdown.map((item) => {
-                                                return <option key={item.id} value={item.stateName}>{item.stateName}</option>;
-                                            })
-                                        }
-                                    </Form.Select> */}
-                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
-                                    {
-                                        errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
-                                    }
-                                </div> : ''
-                        }
-                        
                         <div className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
