@@ -254,6 +254,10 @@
 					margin-bottom: 0 !important;
 					padding: 1rem !important;
                     width: 100%;
+                    &:hover{
+                        background: $primary !important;
+                        color: $whiteColor !important;
+                    }
 				}
 				.remindMeLater{
 					font-size: 14px;
@@ -263,6 +267,15 @@
 				}
 			}
 		}
+        .subbroker-signal-form{
+            .sub-formgrp{
+                margin-bottom: 1.5rem;
+                .form-control{
+                    margin-bottom: 0;
+                }
+            }
+            
+        }
 }
 }
 .popup-sub-right {

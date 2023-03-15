@@ -17,7 +17,6 @@ import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function SubBrokerForm(props) {
-
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/

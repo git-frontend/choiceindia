@@ -657,7 +657,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                         </div>  */}
                     <div class="popup-sub-right">
                        
-                        <div class="signal-form" id="form-banner">
+                        <div class="signal-form subbroker-signal-form" id="form-banner">
                         <h4>Start <span>Sub Broker Franchise</span> without Deposit</h4>
                         <Form>
                             <Form.Group className="mb-3 formgrp">

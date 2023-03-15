@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
-import "../Common-features/demat-form.scss"
+import "../Common-features/demat-form.scss";
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
@@ -16,7 +16,7 @@ import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyF
 import MutualFundpopupform from "../Common-features/MutualFundpopupform";
 
 function SubBrokerForm(props) {
-    // console.log("check",props)
+    console.log("check",props)
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
