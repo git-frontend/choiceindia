@@ -43,29 +43,18 @@ async function generateSitemap() {
 
         };
 
-        // var mySitemap = new Sitemap(router).build("https://dev.choiceindia.com/");
-        // for (let i = 0; i < mySitemap.sitemaps[0].urls.length; i++) {
-        //   mySitemap.sitemaps[0].urls[i].changefreq =  'daily';
-        //   mySitemap.sitemaps[0].urls[i].priority = 0.8;
-        // }
-
-        // for (const entry of idMap.id) {
-        //   // entry.lastmod = date;
-        //   entry.changefreq = 'weekly';
-        //   entry.priority = 0.8;
-        // }
-        console.log(paramsConfig, "router");
     
         const mySitemap = new Sitemap(router)
         .applyParams(paramsConfig)
         .build("https://dev.choiceindia.com/");
         
-        for (let i = 0; i < mySitemap.sitemaps[0].urls.length; i++) {
+        for (let i = 2; i < mySitemap.sitemaps[0].urls.length; i++) {
         mySitemap.sitemaps[0].urls[i].changefreq = "weekly"; // set desired value here
         mySitemap.sitemaps[0].urls[i].priority = 0.75; // set desired value here lastmod
         
         }
-        
+        delete mySitemap.sitemaps[0].urls[0]
+        delete mySitemap.sitemaps[0].urls[1]
         return mySitemap.save("./public/sitemap-posts.xml");
 
        
