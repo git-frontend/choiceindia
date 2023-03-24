@@ -57,7 +57,8 @@
 
                 @media (max-width:$sm) {
                     width: 100%;
-                    padding:20px 20px
+                    padding: 2rem 1.5rem;
+                    padding-bottom: 1.5rem;
                 }
             }
 
@@ -69,7 +70,7 @@
 
                 @media (max-width:$sm) {
                     width: 100%;
-                    padding: 25px 20px;
+                    padding: 2rem;
                 }
             }
 
@@ -79,7 +80,7 @@
                     display: none;
 
                     @media (max-width:$sm) {
-                        display: block;
+                        display: none;
                         font-size: 22px;
                         line-height: 34px;
                         color: $bgcolor-yellow;
@@ -95,8 +96,8 @@
                 }
 
                 h4 {
-                    font-size: 26px;
-                    line-height: 40px;
+                    font-size: 1.8rem;
+                    line-height: 1.5;
                     color: $bgcolor-yellow;
                     padding: 0;
                     margin: 0;
@@ -117,8 +118,8 @@
                     li {
                         position: relative;
                         font-family: $font-family-poppins-regular;
-                        font-size: 18px;
-                        line-height: 25px;
+                        font-size: 1.5rem;
+                        line-height: 1.5;
                         margin-bottom: 25px;
                         padding-left: 35px;
                         color: $whiteColor;
@@ -144,6 +145,10 @@
                                 display: none;
                             }
                         }
+                        @media (max-width:$sm) {
+                            font-size: 1.3rem;
+                            margin-bottom: 20px;
+                        }
                     }
                 }
 
@@ -152,7 +157,8 @@
                         text-align: center;
                         display: block;
                         font-size: 16px;
-                        color: #97999B;
+                        color: $whiteColor;
+                        text-decoration: underline !important;
                         font-family: $font-family-poppins-regular;
                         margin-top: 44px;
                         cursor: pointer;
@@ -163,15 +169,18 @@
 
                 }
             }
+            @media (max-width:$sm) {
+                flex-direction: column-reverse;
+            }
         }
     }
 
     .signal-form {
         .signal-same-btn {
             display: block;
-            background: $primary;
-            border: 1px solid $primary;
-            color: $whiteColor;
+            background: $yellowColor;
+            border: 1px solid $yellowColor;
+            color: $primary;
             font-family: $font-family-poppins-semibold;
             padding: 10px 30px;
             display: block;
@@ -269,8 +278,8 @@
     }
 
     h4 {
-        font-size: 26px;
-        line-height: 40px;
+        font-size: 2rem;
+        line-height: 1.5;
         color: $primary;
         padding: 0;
         margin: 0;
@@ -282,6 +291,13 @@
 
         @media (max-width:$sm) {
             display: none;
+        }
+        &.desktopshow{
+            display: none;
+            @media (max-width:$sm) {
+                display: block;
+                font-size: 1.6rem;
+            }
         }
     }
 

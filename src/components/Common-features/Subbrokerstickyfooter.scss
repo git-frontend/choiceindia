@@ -52,7 +52,7 @@
 
 
     form .form-group .write {
-        color: $whiteColor;
+        color: $primary;
         width: 100%;
         padding: 5px 13px 5px 17px;
         border: 1px solid $whiteColor;
@@ -61,9 +61,10 @@
         padding-bottom: 5px;
         min-height: 42px;
         box-shadow: none;
-        font-size: 14px;
+        font-size: 1.2rem;
         font-weight: 500;
         background: transparent;
+        background: $whiteColor;
     }
 
 
@@ -104,7 +105,7 @@
     }
 
     .tnc {
-        width: 35%;
+        width: 23%;
 
         .checkbox {
             margin-top: 5px;
@@ -124,7 +125,7 @@
         border-radius: 8px;
         padding: 12px 24px;
         color: $primary;
-        margin-left: 5rem;
+        margin-left: 0;
         span {
             color: $primary;
             font-size: 1.5rem;

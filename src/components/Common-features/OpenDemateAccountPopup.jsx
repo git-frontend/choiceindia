@@ -237,6 +237,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     <input type="hidden" name="scode" id="scode" value="JFP" />
                                     <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
                                     <h4 className="desktophide">+ 1st Year Free AMC </h4>
+                                    <h4 className="desktopshow">100% Free <span> Demat Account + 1st Year</span> Free AMC</h4>
                                     <div className="form-group">
                                         {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
                                         <input type="text" pattern='\d*' autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
