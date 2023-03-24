@@ -28,7 +28,8 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     var refercode = useRef('');
     var source = useRef('');
     var otpSessionID = useRef('');
-
+    var subrefercode = useRef('');
+    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -107,7 +108,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         UTMCustom.current = searchParams.get('utm_custom') || '';
         UTMTerm.current = searchParams.get('utm_term') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
-  
+        subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
         source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
     }
 
@@ -135,25 +136,30 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
-            "service_code": "JF",
+            "whatsapp_consent":true,
+            "service_code":type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": "FINX",
+            "product": type1=='MF' ? "INVESTICA":"FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current?source.current:"CHOICEINDIA",
-            "user_consent": "1",
-            "referred_id": refercode.current || null,
-            "sub_ref": null,
+            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            "user_consent": type1=='MF' ?"true":"1",
+            "referred_id": refercode.current || referID || null,
+            "sub_ref": subrefercode.current || null,
+           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": UTMCampaign.current || null,
-            "utm_term":UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
-            // 'popup_seo_leads'
-            "utm_medium": UTMMedium.current || null,
-            // blog_leads'
-            "utm_source": UTMSource.current || null,
-            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm"
+            "utm_custom": UTMCustom.current || null,
+            // 'sidebar_seo_leads'
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
+            // 'blog_leads'
+            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_term": UTMTerm.current || null,
+            // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
+            "account_type" :type1=='MF'?"":"all"
+            // "captcha": "1"
+          
         };
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
@@ -264,7 +270,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                 <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Body>We are capturing this data for communication and account opening (Demat and Mutual Fund) purpose and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override &amp; will not be termed as violation of DND <Link to="/terms-conditions" target="_blank" className="term_link">Read Here.</Link></Modal.Body>
                 {/* <Modal.Footer>
                     <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
                 </Modal.Footer> */}

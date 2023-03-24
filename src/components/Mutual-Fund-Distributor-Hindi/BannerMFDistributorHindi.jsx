@@ -2,9 +2,26 @@
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
 import SubBrokerForm from '../Mutual-Fund-Distributor/SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import utils from "../../Services/utils";
+import { useState,useEffect } from "react";
+import "../SubBroker/subbroker.scss";
 function BannerMFDistributorHindi() {
-
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if(element){
+            const rect = element.getBoundingClientRect();
+            if(rect.top.toFixed() < 259){
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }
+        }
+    };
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
     return (
         <div>
             <section className="franchise-banner" >
@@ -40,9 +57,17 @@ function BannerMFDistributorHindi() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm language="mutualDistributorhindi"/>
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <SubBrokerForm language="mutualDistributorhindi"/>
+                            </GoogleReCaptchaProvider>
+                                
                             </div>
                            
+                        </div>
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>म्यूचुअल फंड वितरक बनें</button>
+                            </div>
                         </div>
                     </div>
                 </div>

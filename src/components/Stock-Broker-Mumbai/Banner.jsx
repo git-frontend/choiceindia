@@ -4,6 +4,7 @@ import DematAccountForm from '../Common-features/DematAccountForm'
 import LazyLoader from '../Common-features/LazyLoader';
 import Navigation from '../../assets/images/stock-broker-mumbai/stock-broker-google-map-location.svg';
 import Call from '../../assets/images/stock-broker-mumbai/stock-broker-contact-number.gif';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function Banner() {
   const [showterm, setshowterm]=useState(false);
 
@@ -48,7 +49,9 @@ function Banner() {
             </div>
             <div className="col-xl-4 col-md-6 d-flex justify-content-end mt-5" id="DematAccountForm">
            
-              <DematAccountForm />
+            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <DematAccountForm />
+                        </GoogleReCaptchaProvider>
             </div>
           </div>
           <div className="row">

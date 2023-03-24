@@ -3,6 +3,7 @@ import SubBannerimage from '../../assets/images/sub-broker/sub-broker-franchise-
 import SubBrokerForm from './../SubBroker/SubBrokerForm'
 import { useState,useEffect } from "react";
 import utils from "../../Services/utils";
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 function AuthorizeBanner() {
     const[ischeck,setIscheck]=useState(false);
     const [name, setName ] = useState('hideform');
@@ -57,7 +58,9 @@ function AuthorizeBanner() {
                         </div>
                         <div className="col-md-6 col-lg-4 " id="sub-broker-form">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                 <SubBrokerForm />
+                            </GoogleReCaptchaProvider>
                             </div>
                         </div>
                         <div className={name}>

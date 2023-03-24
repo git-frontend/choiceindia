@@ -88,7 +88,7 @@ setTrigger(true)
     setShowForm(false);
     if (details[0].tags) {
       details[0].tags.forEach((item, i) => {
-        if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker') {
+        if (item.slug === 'form-demat' || item.slug === 'form-equity-subbroker' || item.slug === 'form-mutual-fund-distributor') {
           setShowForm(true);
           formName.current = item.slug;
         }

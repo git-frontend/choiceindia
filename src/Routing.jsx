@@ -136,7 +136,7 @@ const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
-
+const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 function Routing() {
 
 
@@ -421,11 +421,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/add-lead' element={
+                        {/* <Route exact path='/add-lead' element={
                             <React.Suspense>
                                 < LazyAddLead />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/hindi/sub-broker-franchise' element={
                             <React.Suspense>
                                 < Lazysubbrokerhindi />
@@ -745,22 +745,28 @@ function Routing() {
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        {/* <Route exact path='/mcx-ncdex-holidays' element={
+                        <Route exact path='/mcx-ncdex-holidays' element={
                             <React.Suspense>
                                 < LazySharemarketholidays />
                             </React.Suspense>
                         } />
-                        <Route exact path='/digital-lending-partners' element={
+                        
+                         <Route exact path='/digital-lending-partners' element={
                             <React.Suspense>
                                 < LazyDigitalLendingBanner />
                             </React.Suspense>
-                        } /> */}
+                        } /> 
  
-                         {/* <Route exact path='/about-choice-finserv' element={
+                          <Route exact path='/about-choice-finserv' element={
                             <React.Suspense>
                                 < LazyCfplImpact />
                             </React.Suspense>
-                        } /> */}
+                        } />
+                        <Route exact path='/loan/privacy-policy' element={
+                            <React.Suspense>
+                                < LazyLoanPrivacyPolicy />
+                            </React.Suspense>
+                        } />
  
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>

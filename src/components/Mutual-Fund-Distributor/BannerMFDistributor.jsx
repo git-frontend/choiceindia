@@ -2,8 +2,31 @@
 import SubBannerimage from '../../assets/images/mutual-fund-distributor/mutual-fund-distributor.webp';
 import SubBrokerForm from './SubBrokerForm';
 import LazyLoader from "../Common-features/LazyLoader";
-
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { useState,useEffect } from "react";
+import utils from "../../Services/utils";
+import "../SubBroker/subbroker.scss";
 function BannerMFDistributor() {
+    
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        console.log("check",element)
+        if(element){
+            const rect = element.getBoundingClientRect();
+            // console.log("check", rect)
+            if(rect.top.toFixed() < 259){
+                
+                setName('visibleform');
+            }else{
+                setName('hideform');
+            }
+            
+        }
+    };
+      useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
 
     return (
         <div>
@@ -39,7 +62,15 @@ function BannerMFDistributor() {
                         </div>
                         <div className="col-md-6 col-lg-4 ">
                             <div className="franchise-form justify-content-end d-flex" id="form-banner">
-                                <SubBrokerForm page='mutual-fund-distributor'/>
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                            <SubBrokerForm page='mutual-fund-distributor'/>
+                            </GoogleReCaptchaProvider>
+                            </div>
+                        </div>
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{utils.scrollToId('sub-broker-form')}}>Become a MF Distributor
+</button>
                             </div>
                         </div>
                     </div>

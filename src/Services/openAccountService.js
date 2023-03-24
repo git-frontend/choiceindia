@@ -21,22 +21,22 @@ const newheaders = {
 const openAccountService = {
 
   sendOTP: function (request,type) {
-    let url =((type=='MF')? apiURL.getSendInvesOTPURL() : apiURL.getSendOTPURL());
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }))
+    let url = apiURL.getSendOTPURL();
+    return axios.post(url, request, { headers: newheaders })
   },
 
   resendOTPAgain: function (request,type) {
-    let url = ((type=='MF')? apiURL.getResendInvestOTPURL() : apiURL.getResendOTPURL()); 
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }))
+    let url = apiURL.getResendOTPURL(); 
+    return axios.post(url, request, { headers: newheaders })
   },
 
   OTPOnCall: function (request,type) {
-    let url = ((type=='MF')? apiURL.getOTPInvesOnCallURL() : apiURL.getOTPOnCallURL()); 
-    return ((type=='MF')? axios.post(url, request,{ headers: newheaders } ):axios.post(url, request, { headers: newheaders }));
+    let url = apiURL.getOTPOnCallURL(); 
+    return axios.post(url, request, { headers: newheaders });
   },
 
   verifyOTP: function (request,type) {
-    let url = ((type=='MF')? apiURL.getVerifyInvestOTPURL() : apiURL.getVerifyOTPURL()); 
+    let url = apiURL.getVerifyOTPURL(); 
      return  axios.post(url, request,{ headers: newheaders } );
   },
 

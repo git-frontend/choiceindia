@@ -3,7 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Alert from 'react-bootstrap/Alert';
-import "../Common-features/demat-form.scss"
+import "../Common-features/demat-form.scss";
 import subBrokerService from '../../Services/subBrokerService';
 import { useSearchParams } from "react-router-dom";
 import OTPimage from '../../assets/images/otp.svg';
@@ -12,9 +12,11 @@ import { Link } from "react-router-dom";
 import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
+import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyFooter";
+import MutualFundpopupform from "../Common-features/MutualFundpopupform";
 
 function SubBrokerForm(props) {
-
+    console.log("check",props)
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
@@ -56,6 +58,47 @@ function SubBrokerForm(props) {
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
+    const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
+    const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    function showOpenAccountAdPopup() {
+        // console.log('SHOWW!!!!')
+        
+            setShowOpenAccountPopup(true);
+        
+    }
+    function hideOpenAccountAdPopup(showAdValues) {
+        
+        setShowOpenAccountPopup(false);
+        // callOpenAccountAdPopupAgain();
+    }
+    useEffect(() => {
+        if (props.isFromFableDetails) {
+            window.addEventListener("scroll", onScroll);
+
+            return () => {
+                window.removeEventListener("scroll", onScroll);
+            };
+        }
+    }, [props.isFromFableDetails]);
+
+    
+    function onScroll() {
+        let element = document.getElementById('fablesdetail-title');
+        if (element) {
+            
+            const rect = element.getBoundingClientRect();
+            
+            setFablesDetailTitleId(
+                rect.top < -300 &&//-609
+                rect.left > 0  &&//109
+                rect.bottom <=  (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <  (window.innerWidth || document.documentElement.clientWidth) //1409
+            );
+          
+
+        }
+        
+    }
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -621,8 +664,15 @@ function SubBrokerForm(props) {
         setOTPErrors('');
     }
 
+
     return (
         <>
+         {
+                showOpenAccountPopup ? <MutualFundpopupform hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundpopupform> : ''
+            }
+        {
+               (props.isFromFableDetails ? (props.isFooterVisible && fablesDetailTitleId) : props.isFooterVisible)? <MutualFundStickyFooter MutualFundpopupform={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundStickyFooter>:""
+            }
             <div className="demat-account-form" id="sub-broker-form">
 
 

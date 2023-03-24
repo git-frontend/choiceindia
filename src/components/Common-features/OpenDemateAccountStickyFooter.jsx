@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import openAccountService from '../../Services/openAccountService';
 import Modal from 'react-bootstrap/Modal';
 import './OpenDemateAccountStickyFooter.scss';
@@ -23,6 +23,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var UTMCustom = useRef('');
     var UTMContent = useRef('');
     var refercode = useRef('');
+    var subrefercode = useRef('');
+    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
     var source = useRef('');
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1) ) ? 'Best-Stock' : "Blog";
@@ -128,6 +130,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         UTMTerm.current = searchParams.get('utm_term') || '';
         refercode.current = (searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '';
         source.current = (searchParams.get('source') && window.atob(searchParams.get('source'))) || '';
+        subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
     }
 
     function handleSendOTP(e) {
@@ -149,26 +152,30 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
+            "whatsapp_consent":true,
             "service_code": "JF",
             "mobile_number": mobileNumber,
             "product": "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current ? source.current : "CHOICEINDIA",
+            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
             "user_consent": "1",
             "referred_id": refercode.current || null,
-            "sub_ref": null,
+            "sub_ref": subrefercode.current || null,
+           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": UTMCampaign.current || null,
-            "utm_term": UTMTerm.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
             "utm_content": UTMContent.current || null,
-            // 'footer_seo_leads'
-            "utm_medium": UTMMedium.current || null,
+            "utm_custom": UTMCustom.current || null,
+            // 'sidebar_seo_leads'
+            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": UTMSource.current || null,
+            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-        };
+            "account_type" :"all"
+            // "captcha": "1"
+        }
         openAccountService.sendOTP(request).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
@@ -217,7 +224,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         <>
             {
                 webcheck == "Best-Stock" ?
-                    <section className="sendopt  beststockres">
+                    <section className="sendopt  beststockres holidayOTP">
                         <div className="container">
                             <div className="form_main ">
                                 <div className=" demat_text"><span className="form-ttl">Open a Free <span className="reshide"> Demat</span> Account <span className="reshide"><br />+ Free 1st Year AMC</span></span></div>
@@ -304,7 +311,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                 <Modal.Header closeButton>
                     <Modal.Title>Attention</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>We are capturing this data for communication purpose only and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override & will not be termed as violation of DND.</Modal.Body>
+                <Modal.Body>We are capturing this data for communication and account opening (Demat and Mutual Fund) purpose and it's stored securely. We protect your privacy like it's ours! By agreeing you are allowing us to send updates via SMS/WhatsApp/Email/Call which will also override &amp; will not be termed as violation of DND <Link to="/terms-conditions" target="_blank" className="term_link">Read Here.</Link></Modal.Body>
                 {/* <Modal.Footer>
                     <button type="button" className="btn btn-primary btn-primary-terms" onClick={handleTermsConditionClose}>Okay</button>
                 </Modal.Footer> */}

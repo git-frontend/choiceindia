@@ -12,7 +12,7 @@
     height: 100%;
     background: #3e404f4d;
     overflow: auto;
-    z-index: 999999999 !important;
+    z-index: 99999 !important;
 	.exit-intent-sleekbox-popup{
 		box-sizing: border-box;
         background: $whiteColor;
@@ -254,6 +254,10 @@
 					margin-bottom: 0 !important;
 					padding: 1rem !important;
                     width: 100%;
+                    &:hover{
+                        background: $primary !important;
+                        color: $whiteColor !important;
+                    }
 				}
 				.remindMeLater{
 					font-size: 14px;
@@ -263,6 +267,15 @@
 				}
 			}
 		}
+        .subbroker-signal-form{
+            .sub-formgrp{
+                margin-bottom: 1.5rem;
+                .form-control{
+                    margin-bottom: 0;
+                }
+            }
+            
+        }
 }
 }
 .popup-sub-right {
