@@ -338,7 +338,7 @@
 
     span {
       font-size: 11px;
-      color: #000000;
+      color: $darkblack;
       font-weight: 500;
       display: inline-block;
       width: 30%;
@@ -359,7 +359,7 @@
         width: 10px;
         height: 10px;
         border: 2px solid #e1e1e1;
-        background: #ffffff;
+        background: $whiteColor;
         position: absolute;
         left: -8px;
         top: -4px;
@@ -371,7 +371,7 @@
         width: 10px;
         height: 10px;
         border: 2px solid #e1e1e1;
-        background: #ffffff;
+        background: $whiteColor;
         position: absolute;
         right: -8px;
         top: -4px;
@@ -422,7 +422,7 @@
     margin-bottom: 5rem;
     .title-secnd{
       font-size: 2.4rem;
-      @media (max-width: 767px){
+      @media (max-width: $sm){
         font-size: 2rem;
       }
     }
@@ -1056,7 +1056,9 @@
               background: #221F2080;
               border-radius: 0 0 20px 20px;
               transition: 0.3s all ease-in;
-
+              @media (min-width:$sm) and (max-width:$md) {
+                transform: translateY(10.5rem);
+            }
               h5 {
                   margin: 0;
                   padding: 0.75rem;
@@ -1190,7 +1192,7 @@
           .slick-active {
               button {
                   &:before {
-                      background-color: #797A7D;
+                      background-color: $graycolor;
                   }
               }
           }
@@ -1407,7 +1409,7 @@
       .sb-bar {
         circle {
           &:last-of-type {
-            stroke: #0066B3;
+            stroke: $blueColortext;
             stroke-width: 20px;
           }
         }
@@ -1448,7 +1450,7 @@
           align-items: flex-start;
           justify-content: flex-start;
           flex-wrap: wrap;
-          @media  (min-width:768px) and (max-width:1024px) {
+          @media  (min-width:$sm-x) and (max-width:1024px) {
              padding-left: 20px;
           }
           .wrap{
@@ -1527,7 +1529,7 @@
 .loaderB {
   border: 5px solid #f3f3f3;
   border-radius: 50%;
-  border-top: 5px solid #221F20;
+  border-top: 5px solid $bgcolordark;
   width: 30px;
   height: 30px;
   -webkit-animation: spin 2s linear infinite;
@@ -1826,7 +1828,7 @@
       transform: scale(1);
       button{
         font-size: 1rem;
-        color: #ffffff;
+        color: $whiteColor;
         width: 100%;
         height: 100%;
         font-family: $font-family-poppins-semibold;
