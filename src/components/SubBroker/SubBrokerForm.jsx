@@ -578,7 +578,7 @@ function SubBrokerForm(props) {
         };
         subBrokerService.sendOTPNew(request).then((res) => {
             // console.log(res, "sendOTP");
-            console.log('SUBCP',res)
+            // console.log('SUBCP',res)
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && res.data.Body && res.data.Body.session_id) {
                 otpSessionID.current = res.data.Body.session_id;

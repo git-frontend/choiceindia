@@ -16,7 +16,7 @@ import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyF
 import MutualFundpopupform from "../Common-features/MutualFundpopupform";
 
 function SubBrokerForm(props) {
-    console.log("check",props)
+    // console.log("check",props)
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
