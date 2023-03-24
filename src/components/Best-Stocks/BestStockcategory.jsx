@@ -130,7 +130,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -218,7 +218,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -265,7 +265,7 @@ function urlLink(){
 
   function ShortTermStocks() {
     setToggleState(2)
-    console.log("change",toggleState)
+    // console.log("change",toggleState)
     setlist([]);
     tokens='';
     tokenList=[];
@@ -293,7 +293,7 @@ function urlLink(){
       res => {
        
         if (res) {
-          console.log("checkdd",res.response.research);
+          // console.log("checkdd",res.response.research);
           storefile=res.response.research;
           // setlist(res.response.research);
 
@@ -307,7 +307,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -397,7 +397,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
        
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
