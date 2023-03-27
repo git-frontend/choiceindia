@@ -35,7 +35,7 @@ export default function FaqBody() {
   var active = useRef('');
   const [searchParams, setSearchParams] = useSearchParams();
   active.current = searchParams.get('active') || '';
-  console.log("check",active.current)
+  // console.log("check",active.current)
 
   /** yup validation search text */
   const schema = yup.object().shape({
@@ -178,7 +178,7 @@ export default function FaqBody() {
   /** FAQ Folder section */
 
   function loadfaqFolder(id) {
-    console.log("id " ,id)
+    // console.log("id " ,id)
     setisloading(true);
     faqService.FaqFolder(id).then(
       res => {

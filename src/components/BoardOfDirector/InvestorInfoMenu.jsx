@@ -27,7 +27,7 @@ function InvestorInfoMenu() {
         matches: window.innerWidth < 767 ? false : true,
     });
 
-console.log(BoardOfDirector)
+// console.log(BoardOfDirector)
 
     const settings = {
         infinite: true,
