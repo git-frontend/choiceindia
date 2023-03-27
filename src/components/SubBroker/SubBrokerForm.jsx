@@ -569,7 +569,7 @@ function SubBrokerForm(props) {
             "serviceCode": "CBAEF",
             "utm_source":isBlog =="yes" ? UTMSource.current || 'sb_lead_generation':UTMSource.current || null,
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
-            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMMedium.current || null,
+            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || null,
             "utm_content": UTMContent.current || null,
