@@ -42,9 +42,9 @@ function Service() {
 
 
   function chapterScroll(id) {
-    console.log("called",id)
+    // console.log("called",id)
     setTimeout(() => {
-      console.log("called-after",id)
+      // console.log("called-after",id)
       var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
