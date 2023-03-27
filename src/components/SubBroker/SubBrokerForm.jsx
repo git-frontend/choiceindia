@@ -41,7 +41,7 @@ function SubBrokerForm(props) {
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
     const [count, setCount] = useState(0);
-    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState(false);
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
     const [show, setShow] = useState(true);
@@ -633,7 +633,7 @@ function SubBrokerForm(props) {
                 otpSessionID.current = res.data.Body.session_id;
                 resetOTPPopup();
                 if (isResend)
-                handleOTPResendSuccessToaster();
+                handleOTPResendSuccessToaster('otp');
             }else{
                 if (isResend) {
                     setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
@@ -651,7 +651,8 @@ function SubBrokerForm(props) {
     }
 //to get otp on call
 function getOTPOnCall(isResend){
-    console.log("check")
+    // console.log("check")
+    showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
     console.log("old_session_id",otpSessionID.current)
     let request = {
         "mobile_no": brokerMobileNumber,
@@ -660,7 +661,27 @@ function getOTPOnCall(isResend){
     };
     openAccountService.OTPOnCall(request).then((res)=>{
         console.log("OTPOnCall",res)
-    }).catch((error) => {})
+        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        if(res && res.data && res.data.Body && res.data.Body.session_id){
+
+            otpSessionID.current = res.data.Body.session_id;
+            resetOTPPopup();
+            if (isResend)
+            handleOTPResendSuccessToaster('call');
+        }else{
+            if (isResend) {
+                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            }
+        }
+    }).catch((error) => {
+        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+                // setCount(30);
+                if (error && error.response && error.response.data && error.response.data.Message) {
+                    setOTPErrors(error.response.data.Message);
+                } else {
+                    setOTPErrors("Something went wrong, please try again later!");
+                }
+    })
 }
     function verifyOTP() {
         if (!otp.length) {
@@ -749,12 +770,13 @@ function getOTPOnCall(isResend){
         });
     }
 
-    function handleOTPResendSuccessToaster() {
-        setOTPSendSuccessToaster(true);
+    function handleOTPResendSuccessToaster(type) {
+        setOTPSendSuccessToaster({[type]: true});
         setTimeout(() => {
-            setOTPSendSuccessToaster(false);
+            setOTPSendSuccessToaster({[type]: false});
         }, 2000)
     }
+    
     const selectInputRef = useRef();
     function resetBrokerForm() {
         setBrokerName('');
@@ -1011,9 +1033,12 @@ function getOTPOnCall(isResend){
                                             </div>
                                             <div className="mt-2">
                                                 {
-                                                    OTPSendSuccessToaster ?
+                                                    (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call)?
                                                         <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                                                            {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
+                                                            {/* {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')} */}
+                                                            {
+                                                            (OTPSendSuccessToaster.call)?  SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otpresendsuccess1', 'You will soon receive an automated call on given Mobile Number'):SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')
+}
                                                         </Alert> : ''
                                                 }
                                             </div>
