@@ -295,7 +295,7 @@ function SubBrokerForm(props) {
     function resetOTPPopup() {
         setOtp('');
         setOTPErrors('');
-        setCount(10);
+        setCount(60);
     }
 
     function fetchQueryParams() {
@@ -652,16 +652,16 @@ function SubBrokerForm(props) {
 //to get otp on call
 function getOTPOnCall(isResend){
     // console.log("check")
-    showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-    console.log("old_session_id",otpSessionID.current)
+    showLoader('callOtpLoader2');
+    // console.log("old_session_id",otpSessionID.current)
     let request = {
         "mobile_no": brokerMobileNumber,
         "request_source":"CHOICEINDIA",
         "session_id":  otpSessionID.current? otpSessionID.current : null   
     };
     openAccountService.OTPOnCall(request).then((res)=>{
-        console.log("OTPOnCall",res)
-        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        // console.log("OTPOnCall",res)
+        hideLoader('callOtpLoader2');
         if(res && res.data && res.data.Body && res.data.Body.session_id){
 
             otpSessionID.current = res.data.Body.session_id;
@@ -674,7 +674,7 @@ function getOTPOnCall(isResend){
             }
         }
     }).catch((error) => {
-        hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        hideLoader('callOtpLoader2');
                 // setCount(30);
                 if (error && error.response && error.response.data && error.response.data.Message) {
                     setOTPErrors(error.response.data.Message);
@@ -1023,7 +1023,7 @@ function getOTPOnCall(isResend){
                                                         <div className="d-flex align-items-center justify-content-center">
                                                             <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
                                                             <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
-                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Get OTP on Call')}</button>
+                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
                                                         </div>
                                                        : ''
                                                         
