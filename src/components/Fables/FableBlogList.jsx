@@ -44,7 +44,7 @@ function FableBlogList() {
     };
 
     function goToScroll(value){
-        console.log('GGG');
+        // console.log('GGG');
         if(value === true){
             // console.log(demo_ref2)
             // demo_ref2?.current?.scrollIntoView({behavior: 'smooth'})

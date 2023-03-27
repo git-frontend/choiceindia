@@ -17,7 +17,7 @@ function AppTradeBenefits() {
 
   function getBrowserDetails() {
 
-    console.log('TRR',navigator.userAgent)
+    // console.log('TRR',navigator.userAgent)
    
     if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
     {
@@ -54,7 +54,7 @@ function AppTradeBenefits() {
   function getDeviceDetails() {
     var platform = ["Windows", "Android", "iOS"];
 
-    console.log('DD',navigator.userAgentData.platform)
+    // console.log('DD',navigator.userAgentData.platform)
     for (var i = 0; i < platform.length; i++) {
 
         if (navigator.userAgentData.platform.indexOf(platform[i]) >- 1) {
@@ -67,7 +67,7 @@ function AppTradeBenefits() {
   useEffect(() => {
     getBrowserDetails();
     getDeviceDetails();
-    console.log('BROW',checkBrowser);
+    // console.log('BROW',checkBrowser);
   },[])
 
   return (
