@@ -260,7 +260,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                 <div className="container mx-auto">
                                         <form className="d-flex justify-content-between align-items-center">
                                             <div className='form-group'>
-                                                <h2 className="text"><span>Open Free</span> Demat Account</h2>
+                                                <h2 className="text">Open <span>100% Free</span> Demat Account+ <br/><span>Free</span> First Year <span>AMC</span></h2>
                                             </div>
                                             <div className="form-group ">
                                                 <input type="text" className="form-control numberonly mobile write mobilewrite" id="mobile_no" name="mobile_no" placeholder="Mobile Number*" autoComplete="off" maxLength="10" value={mobileNumber} onChange={handleMobile} />
@@ -274,7 +274,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                                                     <input type="checkbox" className="checkbox termcon" id="terms_and_conditions" checked readOnly />
                                                 </label>
                                                 <div className="termcon termcon1 ">
-                                                    <div> I agree that <a className="tc" onClick={handleTermsConditionShow}> Terms &amp; Conditions</a>
+                                                    <div> I agree &amp; accept<a className="tc" onClick={handleTermsConditionShow}> T&amp;C</a>
                                                     </div>
                                                 </div>
                                             </div>

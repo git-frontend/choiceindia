@@ -31,10 +31,17 @@
             // z-index: 1;
             // top: 5rem;
             // display: block;
-            margin: 0 auto;
+            width: 30rem;
             // right: 10%;
             // transform: translate(20%);
+            float: right;
+            position: sticky;
+            top: 145px;
             @media screen and (max-width: $sm) {
+                top: inherit;
+                position: static;
+            }
+            @media screen and (max-width: $md) {
                 display: none;
                 width: 90%;
             }
@@ -56,7 +63,7 @@
     
             @media screen and (max-width: $sm) {
                 font-size: 2rem;
-                line-height: 1.9375rem;
+                line-height: 1.35;
             }
         }
     
@@ -225,7 +232,7 @@
                 font-weight: 400;
                 color: $primary;
                 line-height: 2.75rem;
-                padding-left: 4%;
+                padding-left: 2rem;
             }
             @media screen and (max-width: $sm) {
                 text-align: left;
@@ -408,13 +415,11 @@
 }
 
  
-.detailbanner{
-    .stickyform{
-        position: sticky;
-        top: 145px;
-        @media screen and (max-width: $sm) {
-            top: inherit;
-            position: static;
-        }
-    }
-}
+// .detailbanner{
+//     .stickyform{
+        
+//     }
+//     .demat-account-form{
+       
+//     }
+// }

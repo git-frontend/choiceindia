@@ -79,6 +79,7 @@
                 cursor: pointer;
 				
 				color: $bgcolor-blue !important;
+				font-family: $font-family-poppins-bold;
 				&:hover{
 					// border-bottom: 1px solid;
 				}
@@ -127,7 +128,7 @@
         font-size: 2rem;
         font-family: $font-family-poppins-semibold;
         color: $primary;
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
 		@media (max-width: $sm-x) {
 			font-size: 1.5rem;
 		}

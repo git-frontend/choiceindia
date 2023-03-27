@@ -237,7 +237,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     <input type="hidden" name="scode" id="scode" value="JFP" />
                                     <input type="hidden" id="source" name="source" value="CHOICEINDIA" />
                                     <h4 className="desktophide">+ 1st Year Free AMC </h4>
-                                    <h4 className="desktopshow">100% Free <span> Demat Account <br/>+ 1st Year</span> Free AMC</h4>
+                                    <h4 className="desktopshow">100% Free <span> Demat Account+ <br/>1st Year</span> Free AMC</h4>
                                     <div className="form-group">
                                         {/* <label htmlFor="mobile-number" hidden="">Mobile Number<span style={{ 'color': 'red' }}>*</span></label> */}
                                         <input type="text" pattern='\d*' autoComplete="off" maxLength="10" className="write numberonly input-type dmt" id="mobile_no" name="mobile_no" placeholder="Mobile Number" value={mobileNumber} onChange={handleMobile}/>
@@ -248,9 +248,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     </div>
                                     <div className="form-check">
                                         <input type="checkbox" className="tick_by_def" data="JFP" id="terms_and_conditions" name="terms_and_conditions" checked readOnly />
-                                        <label className="tc" target="_blank" htmlFor="exampleCheck1">I agree that I have read
-                                            &amp; accept the <a className="termsPopup" onClick={handleTermsConditionShow}>Terms
-                                                &amp; Conditions</a></label>
+                                        <label className="tc" target="_blank" htmlFor="exampleCheck1">I agree & accept <a className="termsPopup" onClick={handleTermsConditionShow}>T&C</a></label>
                                     </div>
                                     <button type="submit" id="dem_btn_submit" className="btn btn-primary w-100 btn-f-sm signal-same-btn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>{loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : 'Send OTP'}</button>
                                     <div style={{ textAlign: 'center' }}>

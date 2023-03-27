@@ -860,7 +860,7 @@ function SubBrokerForm(props) {
                             
                                 <Form.Check.Input type="checkbox" checked readOnly />
                                 
-                            <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term2', '')} </Form.Check.Label>
+                            <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree & accept ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'T&C')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term2', '')} </Form.Check.Label>
                                 
                             </Form.Check>
                         </div>

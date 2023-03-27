@@ -288,10 +288,13 @@
         position: relative;
         left: -26px;
         top: 0;
-
-        @media (max-width:$sm) {
-            display: none;
+        &.desktophide{
+            @media (max-width:$sm) {
+                display: none;
+            }
+           
         }
+        
         &.desktopshow{
             display: none;
             @media (max-width:$sm) {
