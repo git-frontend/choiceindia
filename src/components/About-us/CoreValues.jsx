@@ -1,6 +1,6 @@
 
 import React from "react";
-import Innovation from '../../assets/images/about-us/Innovation.svg';
+import Innovation from '../../assets/images/about-us/innovation.svg';
 import Optimism from '../../assets/images/about-us/Optimism.svg';
 import Consistency from '../../assets/images/about-us/Consistency.svg';
 import Empowerment from '../../assets/images/about-us/Empowerment.svg';
