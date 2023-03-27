@@ -160,7 +160,7 @@ body{
 .App{
     width: 100%;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: inherit;
 }
 
 .modal-backdrop{
