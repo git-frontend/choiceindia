@@ -20,6 +20,7 @@ function SubBrokerForm(props) {
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
+    console.log(props,"props")
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
@@ -58,7 +59,7 @@ function SubBrokerForm(props) {
     const [showOTP, setShowOTP] = useState(false);
     const [isCheck, setisCheck] = useState(false);
     const [value, setValue] = useState('Details');
-    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const isBlog=(window.location.pathname.indexOf('blog') > -1)|| (window.location.pathname.indexOf('campaign/sub-broker-franchise') > -1) ? 'yes':'';
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -568,7 +569,7 @@ function SubBrokerForm(props) {
             "serviceCode": "CBAEF",
             "utm_source":isBlog =="yes" ? UTMSource.current || 'sb_lead_generation':UTMSource.current || null,
             "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog':UTMMedium.current || null,
-            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMMedium.current || null,
+            "utm_campaign":isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads':UTMCampaign.current || null,
             "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || null,
             "utm_content": UTMContent.current || null,
