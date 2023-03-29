@@ -224,7 +224,7 @@ return isBrokerEmailValid;
 function resetOTPPopup() {
 setOtp('');
 setOTPErrors('');
-setCount(10);
+setCount(60);
 }
 
 //UTM Identifier
