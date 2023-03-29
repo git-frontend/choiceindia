@@ -11,15 +11,16 @@ import OTPimage from '../../assets/images/otp.svg';
 import Select from 'react-dropdown-select';
 import { Link } from "react-router-dom";
 import Alert from 'react-bootstrap/Alert';
-import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
+// import SubBrokerLanguageContent from '../../Services/SubBrokerLanguageContent';
 import subBrokerService from '../../Services/subBrokerService';
 import Thankyoupopup from './Thanku-popup';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import openAccountService from "../../Services/openAccountService";
 
 
 
 
-function MutualFundpopupform({hideComponent, openInfoPopup, props})  {
+function MutualFundpopupform({hideComponent, openInfoPopup, })  {
 // props.language=props?props:'en'
 const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
 const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -525,7 +526,7 @@ function resendOTP(isResend) {
             handleOTPResendSuccessToaster('otp');
         }else{
             if (isResend) {
-                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                setOTPErrors((res.data && res.data.Message) ? res.data.Message :  "Something went wrong, please try again later!");
             }
         }
     }).catch((error) => {
@@ -534,7 +535,7 @@ function resendOTP(isResend) {
         if (error && error.response && error.response.data && error.response.data.Message) {
             setOTPErrors(error.response.data.Message);
         } else {
-            setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            setOTPErrors("Something went wrong, please try again later!");
         }
     });
 }
@@ -558,7 +559,7 @@ function getOTPOnCall(isResend){
             handleOTPResendSuccessToaster('call');
         }else{
             if (isResend) {
-                setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                setOTPErrors((res.data && res.data.Message) ? res.data.Message :  "Something went wrong, please try again later!");
             }
         }
     }).catch((error) => {
@@ -581,18 +582,21 @@ if (!otp.length) {
         session_id: otpSessionID.current,
         otp: otp
     }
-    subBrokerService.verifyOTPN(request).then((res) => {
+    subBrokerService.verifyOTPNew(request).then((res) => {
         hideLoader('verifyLoader');
         // console.log(res, "verifyOTPN");
         if (res && res.data && res.data.status != 'error') {
+            console.log("verify",res)
             fetchQueryParams();
             // addNewLead();
             handleOTPPopupClose();
                     handleBrokerCreatedSuccessShow();
                     resetBrokerForm();
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
+                        return { ...prevState, showModal: true, resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal 
+                    }
                     });
+                    
         } else {
             setOTPErrors((res.data && res.data.message) ? res.data.message :  "Something went wrong, please try again later!");
         }
@@ -629,7 +633,7 @@ subBrokerService.addNewLead(request).then((res) => {
       //  console.log('TTT',res);
         handleOTPPopupClose();
         handleBrokerCreatedSuccessShow();
-        
+        resetBrokerForm();
         setShowThanku(prevState => {
             return { ...prevState, showModal: true,resText: res.data.message? res.data.message: 'Lead added successfully', closeMd: closeModal }
         });
@@ -672,7 +676,7 @@ function resetBrokerForm() {
 setBrokerName('');
 setBrokerMobileNumber('');
 setBrokerEmail('');
-selectInputRef.current.clearAll();
+// selectInputRef.current.clearAll();
 // setShowState(false);
 setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}});
 setLoaders({});
@@ -889,9 +893,9 @@ return (
                                     !count ?
                                         // <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button> : ''
                                         <div className="d-flex align-items-center justify-content-center">
-                                                            <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
-                                                            <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
-                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
+                                                            <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : 'Resend OTP'}</button>
+                                                            <span className="ortext">{'OR'}</span>
+                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> :  'Get OTP on Call'}</button>
                                                         </div>:''
                                 }
 
@@ -903,7 +907,7 @@ return (
                                         (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call)?
                                             <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
                                                 {
-                                                (OTPSendSuccessToaster.call)?  SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otpresendsuccess1', 'You will soon receive an automated call on given Mobile Number'):SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')
+                                                (OTPSendSuccessToaster.call)?   'You will soon receive an automated call on given Mobile Number': 'OTP has been resent on given Mobile Number'
 }
                                             </Alert> : ''
                                     

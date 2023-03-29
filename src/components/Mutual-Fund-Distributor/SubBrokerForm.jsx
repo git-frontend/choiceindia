@@ -751,7 +751,7 @@ function SubBrokerForm(props) {
     return (
         <>
          {
-                showOpenAccountPopup ? <MutualFundpopupform hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} language='en' ></MutualFundpopupform> : ''
+                showOpenAccountPopup ? <MutualFundpopupform hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundpopupform> : ''
             }
         {
                (props.isFromFableDetails ? (props.isFooterVisible && fablesDetailTitleId) : props.isFooterVisible)? <MutualFundStickyFooter MutualFundpopupform={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></MutualFundStickyFooter>:""
