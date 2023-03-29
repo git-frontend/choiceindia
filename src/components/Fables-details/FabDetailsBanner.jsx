@@ -58,7 +58,7 @@ function Fabdetailsbanner(props) {
 
     function fetchContainerClassName() {
         if (props.showForm) {
-            return 'col-md-7';
+            return 'col-xl-8 col-md-12';
         } else {
             return 'col-md-12';
         }
@@ -80,7 +80,7 @@ function Fabdetailsbanner(props) {
                                 <p className="text-center date">Published  {utils.formatDate(new Date(props.single_data[0].published_at), "MMMM dd, yyyy")}</p>
                                 <h1 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h1>
                                 {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
-                                <ul className="tabs">
+                                {/* <ul className="tabs">
                                     <li>
                                         International
                                     </li>
@@ -93,7 +93,7 @@ function Fabdetailsbanner(props) {
                                     <li>
                                         Trending
                                     </li>
-                                </ul>
+                                </ul> */}
 
                             </div>
 
@@ -104,41 +104,7 @@ function Fabdetailsbanner(props) {
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} />
                                 </div>
-                            </div>
-                            {
-                                ((props.showForm) ?
-                                    (props.formName === 'form-demat' ?
-                                     <div className="col-md-5" id="open-account-wrap">
-                                        <div className="stickyform formwrap d-flex justify-content-end ">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
-                                        </GoogleReCaptchaProvider>
-                                        </div>
-                                    </div> :
-                                    props.formName==='form-mutual-fund-distributor' ?
-                                    <div className="col-md-5" id="open-account-wrap">
-                                    <div className="stickyform formwrap d-flex justify-content-end ">
-                                    <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                        <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
-                                    </GoogleReCaptchaProvider>
-                                    </div>
-                                </div>
-
-                                    :
-                                    <div className="col-md-5" id="sub-broker-wrap">
-                                        <div className="franchise-form justify-content-end d-flex">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            <SubBrokerForm  isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true}/>
-                                            </GoogleReCaptchaProvider>
-                                        </div>
-                                    </div>)
-                                    :
-
-                                     '')
-                            }
-                           
-                        </div>
-                        <div className="row">
+                                <div className="row">
                             <div className="col-md-11">
 
                                 <div className="textwrap" dangerouslySetInnerHTML={createMarkup()} />
@@ -173,6 +139,44 @@ function Fabdetailsbanner(props) {
                             </div>
 
                         </div>
+                            </div>
+                            {
+                                ((props.showForm) ?
+                                    (props.formName === 'form-demat' ?
+                                     <div className="col-md-4" id="open-account-wrap">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
+                                        </GoogleReCaptchaProvider>
+                                        <div className="stickyform formwrap d-flex justify-content-end ">
+                                        
+                                        </div>
+                                    </div> :
+                                    props.formName==='form-mutual-fund-distributor' ?
+                                    <div className="col-md-4" id="open-account-wrap">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                        <MutualSubBrokerForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
+                                    </GoogleReCaptchaProvider>
+                                    <div className="stickyform formwrap d-flex justify-content-end ">
+                                    
+                                    </div>
+                                </div>
+
+                                    :
+                                    <div className="col-md-4" id="sub-broker-wrap">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            <SubBrokerForm  isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true}/>
+                                            </GoogleReCaptchaProvider>
+                                        <div className="franchise-form justify-content-end d-flex">
+                                        
+                                        </div>
+                                    </div>)
+                                    :
+
+                                     '')
+                            }
+                           
+                        </div>
+                        
                     </div>
                     
 

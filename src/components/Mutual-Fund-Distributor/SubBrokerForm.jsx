@@ -763,7 +763,7 @@ function SubBrokerForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a Mutual Fund Distributor')}</h3>
+                <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Become a MF Distributor')}</h3>
                 {/* <h3 className="form-ttl">Become a Mutual Fund Distributor</h3> */}
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -846,12 +846,12 @@ function SubBrokerForm(props) {
                                 id="terms_and_conditions"
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
-                                <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree that I have read & accept the ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', '')} </Form.Check.Label>
+                                <Form.Check.Label>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'term1', 'I agree & accept ')} <a className="link-tc" onClick={handleTermsConditionShow}>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'T&C')}</a> {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', '')} </Form.Check.Label>
                             </Form.Check>
                         </div>
 
 
-                        <div className="sub-formgrp mt-5 mb-0">
+                        <div className="sub-formgrp mt-3 mb-0">
                             <Button variant="primary"
                                 type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}

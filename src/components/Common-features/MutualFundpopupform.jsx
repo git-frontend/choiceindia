@@ -760,7 +760,8 @@ return (
             <div className="popup-sub-right">
                
                 <div className="signal-form subbroker-signal-form" id="form-banner">
-                <h4>Form Mutual Fund Distributor</h4>
+                <h4>Be a <span>MF Distributor</span> &<br/>
+                Earn High Commission</h4>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
 
