@@ -101,8 +101,16 @@ function Fabdetailsbanner(props) {
                         <div className="row">
                             <div className={fetchContainerClassName()}>
                                 <div className="imgblock">
+                                    {
+                                        
+                                            props.single_data[0].feature_image ?
+                                            <img src={props.single_data[0].feature_image} className="img-fluid" alt={props.single_data[0].title} />:
+                                            ""
+    
+                                        
+                                    }
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
-                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} />
+                                    {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} /> */}
                                 </div>
                                 <div className="row">
                             <div className="col-md-11">
