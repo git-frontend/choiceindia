@@ -47,7 +47,7 @@ function SubBrokerForm(props) {
     const [show, setShow] = useState(true);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
-    const [value2, setValue2] = useState();
+    // const [value2, setValue2] = useState();
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -156,9 +156,9 @@ function SubBrokerForm(props) {
     function handleBrokerCityBranch(e) {
         
         if (e[0]) {
-            setValue2(e[0].leadCity);
+            let value = e[0].leadCity;
+            setBrokerCityBranch(value);
             
-            setBrokerCityBranch(value2);
             // console.log("cc",brokerCityBranch)
             setErrors((prevError) => ({
                 ...prevError,
@@ -166,7 +166,7 @@ function SubBrokerForm(props) {
             }));
 
             
-            if (value2 === 'OTHERS' ) {
+            if (value === 'OTHERS') {
                 
                 setBrokerState('');
                 setShowState(true);
@@ -176,13 +176,17 @@ function SubBrokerForm(props) {
             }
         }
     }
-    const renderNoDataLabel=()=>(
+    const renderNoDataLabel=(e)=>(
         <div className="p-2" onClick={() =>{
-            setBrokerCityBranch('OTHERS')
+                var  value2=document.getElementsByClassName("p-2")[0];
+                value2.innerHTML="OTHERS";
+                console.log("value2",value2)
+                 setBrokerCityBranch(value2);
         } }>
             {noDataLabel}
         </div>
     )
+    
 
     function handleBrokerState(e) {
         if (e[0]) {
