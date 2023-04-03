@@ -1586,6 +1586,9 @@ nav {
 	width: 400px;
 	height: 400px;
 	aspect-ratio: 400/400;
+	@media (max-width:992px) {
+		height: auto;
+	}
 }
 .dotLoaderB {
 	width: 24px;
@@ -2012,5 +2015,25 @@ nav {
 	.popmd {
 		position: relative !important;
 		right: 1%;
+	}
+}
+
+
+.hideform{
+
+    @media (max-width: 768px) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: 768px) {
+    display: block !important;
+    }
+}
+
+.demat-cam-page-new{
+	.btn-fixed{
+		display: none !important;
 	}
 }

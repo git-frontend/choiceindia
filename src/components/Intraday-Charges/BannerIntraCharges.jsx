@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import {useState,useEffect} from 'react';
 import SubBannerimage from '../../assets/images/intraday-charges/intraday-charges.webp';
 import img1 from '../../assets/images/intraday-charges/ratio-icon.svg';
 import img2 from '../../assets/images/intraday-charges/quandle.svg';
@@ -18,6 +18,35 @@ function BannerIntraCharges() {
             behavior: "smooth"
         });
     }
+
+    function chapterScroll(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+      const element = document.getElementById("showForm");
+      if(element){
+          const rect = element.getBoundingClientRect();
+          
+          if(rect.top.toFixed() < 259){
+              setName('visibleform');
+          }else{
+              setName('hideform');
+          }   
+      }
+  };
+
+    useEffect(() => {
+      window.addEventListener('scroll', getPosition);
+  }, []);
     return (
         <div>
             <section className="intrc-banner" >
@@ -64,6 +93,11 @@ function BannerIntraCharges() {
                         </div>
                     </div>
                 </div>
+                <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+                    </div>
+                    </div>
             </section>
 
 

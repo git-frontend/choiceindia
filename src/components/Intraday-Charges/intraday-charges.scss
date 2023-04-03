@@ -149,6 +149,19 @@
     @media (max-width: $sm) {
         padding: 4rem 0;
     }
+
+    .hideform{
+
+        @media (max-width: $sm) {
+        display: none !important;
+        }
+    }
+    .visibleform{
+    
+        @media (max-width: $sm) {
+        display: block !important;
+        }
+    }
 }
 
 .ttl2-sm{

@@ -1593,6 +1593,9 @@ nav {
 	width: 400px;
 	height: 400px;
 	aspect-ratio: 400/400;
+	@media (max-width:992px) {
+		height: auto;
+	}
 }
 .dotLoaderB {
 	width: 24px;
@@ -2026,4 +2029,17 @@ nav {
 
 .mb0{
 	margin-bottom: 0;
+}
+
+.hideform{
+
+    @media (max-width: 768px) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: 768px) {
+    display: block !important;
+    }
 }
