@@ -81,6 +81,14 @@ function nbfcForm(props) {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     }
 
+   function nbfcAuthsecurity(request){
+    NbfcService.authorization(request).then((res) => {
+           
+        console.log(res)
+            
+                })
+   }
+
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
 
@@ -96,20 +104,7 @@ function nbfcForm(props) {
     }
 
 
-    // function callOpenAccountAdPopupAgain() {
-    //     //after 15min
-    //     setTimeout(() => {
-    //         showOpenAccountAdPopup();
-    //     }, 9000)
-    // }
-
-    // useEffect(() => {
-    //     if (!isMobile.current && props.isPopupVisible) {
-    //         setTimeout(() => {
-    //             showOpenAccountAdPopup();
-    //         }, 6000);
-    //     }
-    // }, []);
+    
 
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
@@ -137,8 +132,10 @@ function nbfcForm(props) {
             'brokerMobileNumber': {}
         }));
     }
+    
 
     useEffect(() => {
+        
        if(props.ispersonal === true){
 
             setIsChecked(false)
@@ -392,6 +389,8 @@ function nbfcForm(props) {
     useEffect(() => {
         fetchQueryParams();
     }, []);
+
+   
 
 
     useEffect(() => {
@@ -808,7 +807,7 @@ function nbfcForm(props) {
     
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
-                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} onClick={handleSendOTP}>
+                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} onClick={nbfcAuthsecurity}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}
                             </Button>
                             {/* <Button variant="primary"

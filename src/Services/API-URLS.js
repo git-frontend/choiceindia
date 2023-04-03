@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -42,10 +42,12 @@ const config = {
     // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
     UATNachBaseURL:"https://dev-api.choicetechlab.com/",
     // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
-    liveNachBaseURL:"https://go.choiceindia.com/"
+    liveNachBaseURL:"https://go.choiceindia.com/",
+    UATNbfcAuthURL:"https://api-uat.synofin.tech/oauth/"
 }
 
 export class API_URLS {
+    NbfcAuthURL='';
     newResearchReportURL = 'https://finx.choiceindia.com/api/researchreport/v2/api';
     JiffyBaseURL = '';
     LMSBaseURL = '';
@@ -231,6 +233,7 @@ export class API_URLS {
     subBrokerSendOtpURLNew = 'sub-broker/signup';
     subBrokerResendOtpURLNew = 'resendotp';
     subBrokerVerifyOtpURLNew = 'verifyotp';
+    NbfcAuthF = 'authorization';
 
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
@@ -267,6 +270,7 @@ export class API_URLS {
         this.setperformanceURL(config[configKey + 'performanceURL']);
         this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
         this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
+        this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL'])
     }
 
     setJiffyBaseURL = (url) => {
@@ -352,6 +356,10 @@ export class API_URLS {
 
     setNACHBaseURL = (url) => {
         this.nachBaseURL = url;
+    }
+
+    setNbfcAuthURL = (url) => {
+        this.NbfcAuthURL = url;
     }
 
     getExpertDetailURL = (id) => {
@@ -773,6 +781,11 @@ export class API_URLS {
 
     getIpaddressURL(){
         return "https://geolocation-db.com/json/"
+    }
+
+    getNbfcAuthorization() {
+
+        return this.NbfcAuthURL + this.NbfcAuthF
     }
     
 

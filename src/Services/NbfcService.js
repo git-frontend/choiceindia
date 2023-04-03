@@ -10,12 +10,21 @@ const headers = {
   'Content-Type': 'application/json'
 };
 const newHeaders = {
-  'Accept': '*/*',
+  'accept': '*/*',
   'Content-Type': 'application/json',
     // 'Authorization': `bearer ${token}`
   'Authorization': 'Bearer '+'69102921-3a7b-49cf-bde0-f2c7bb32fa10'
 
 }
+const authHeaders = {
+  'accept': '*/*',
+  'Source': 'choice',
+  // "Username":"dc1b5058275941149e3457b73ae4b17a",
+  // "Password":"99c0259a-ed0c-401d-a786-603a842ea64e",
+  // 'Authorization':"Basic YmFramhramZhZmtmZTpydGhqa2p5dGh0cWVncndoZWg=",
+  'Authorization': 'Basic ' + btoa('dc1b5058275941149e3457b73ae4b17a' + ":" + '99c0259a-ed0c-401d-a786-603a842ea64e'),
+}
+
 
 const NbfcService = {
 
@@ -51,6 +60,11 @@ const NbfcService = {
   mobileduplicate: function (id) {
     let url = apiURL.getNbfcMobile(id);
     return axios.get(url);
+  },
+
+  authorization : function (){
+    let url = apiURL.getNbfcAuthorization();
+    return axios.post(url,"",{ headers: authHeaders});
   }
 
   
