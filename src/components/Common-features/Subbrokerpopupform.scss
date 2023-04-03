@@ -12,7 +12,7 @@
     height: 100%;
     background: #3e404f4d;
     overflow: auto;
-    z-index: 999999999 !important;
+    z-index: 99999 !important;
 	.exit-intent-sleekbox-popup{
 		box-sizing: border-box;
         background: $whiteColor;
@@ -39,6 +39,7 @@
             margin-top: 7rem;
             padding: 0;
 			display: block;
+            margin-bottom: 5rem;
         }
 
         .popup-sub-row-box {
@@ -202,6 +203,9 @@
                     input{
                         margin-left: 0;
                     }
+                    .react-dropdown-select-loading{
+                        padding: 0 !important;
+                    }
 				}
 				
 				.form-check {
@@ -254,21 +258,38 @@
 					margin-bottom: 0 !important;
 					padding: 1rem !important;
                     width: 100%;
+                    &:hover{
+                        background: $primary !important;
+                        color: $whiteColor !important;
+                    }
 				}
 				.remindMeLater{
 					font-size: 14px;
-					margin-top: 1rem;
+					margin-top: 0;
 					text-align: center;
 
 				}
 			}
 		}
+        .subbroker-signal-form{
+            .sub-formgrp{
+                margin-bottom: 1.5rem;
+                .form-control{
+                    margin-bottom: 0;
+                }
+                .sleekbox-a{
+                    text-decoration: underline !important;
+                }
+                
+            }
+            
+        }
 }
 }
 .popup-sub-right {
 	h4 {
-		font-size: 25px;
-		line-height: 40px;
+		font-size: 2rem;
+		line-height: 1.5;
 		color: #221F20;
 		padding: 0;
 		margin: 0;
@@ -280,6 +301,9 @@
 		span{
 			color:  #FFCE02;
 		}
+        @media (max-width:$sm) {
+            font-size: 1.6rem;
+        }
 	}
 }
 

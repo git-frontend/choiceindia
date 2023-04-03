@@ -58,7 +58,7 @@ function MFDistributorBenifits() {
         <div>
 
 
-            <section className="broker-benifits">
+            <section className="broker-benifits" id="showForm">
                 <div className="container">
                     <div className="row">
                         <div className="col-md-12">

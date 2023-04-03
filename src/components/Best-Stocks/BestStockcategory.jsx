@@ -130,7 +130,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -218,7 +218,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -265,7 +265,7 @@ function urlLink(){
 
   function ShortTermStocks() {
     setToggleState(2)
-    console.log("change",toggleState)
+    // console.log("change",toggleState)
     setlist([]);
     tokens='';
     tokenList=[];
@@ -293,7 +293,7 @@ function urlLink(){
       res => {
        
         if (res) {
-          console.log("checkdd",res.response.research);
+          // console.log("checkdd",res.response.research);
           storefile=res.response.research;
           // setlist(res.response.research);
 
@@ -307,7 +307,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
           'UserId': 'guest',
@@ -397,7 +397,7 @@ function urlLink(){
             
           
         }
-        console.log("SegmentId",tokens);
+        // console.log("SegmentId",tokens);
        
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
@@ -506,22 +506,22 @@ function urlLink(){
                     {
                       toggleState==1?
                       <div>
-                    <h2 className="title-secnd1">Best Intraday Stocks To Buy Today</h2>
+                    <h1 className="title-secnd1">Best Intraday Stocks To Buy Today</h1>
                     <p className="title_para res_para ">Get the list of the best stocks to buy today for intraday trading.</p>
                     </div>:
                     toggleState==2?
                     <div>
-                    <h2 className="title-secnd1">Best Short Term Stocks To Buy Today  </h2>
+                    <h1 className="title-secnd1">Best Short Term Stocks To Buy Today  </h1>
                     <p className="title_para res_para ">Get the list of the best stocks to buy today for short-term investing.</p>
                     </div>:
                     toggleState==3?
                     <div>
-                    <h2 className="title-secnd1">Best Long Term Stocks To Buy Today </h2>
+                    <h1 className="title-secnd1">Best Long Term Stocks To Buy Today </h1>
                     <p className="title_para res_para ">Get a list of the best stocks to buy today for long-term investment.</p>
                     </div>:
                     toggleState==0?
                     <div>
-                    <h2 className="title-secnd1">Best Stocks to Buy Today</h2>
+                    <h1 className="title-secnd1">Best Stocks to Buy Today</h1>
                     <p className="title_para">Choose the best stocks to buy today according to the holding period.</p>
                     </div>:
                     ""

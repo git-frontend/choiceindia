@@ -6,6 +6,8 @@ import LazyLoader from "../Common-features/LazyLoader";
 
 function Insurance() {
 
+    
+
     return (
         <div>
 
@@ -46,7 +48,7 @@ function Insurance() {
                                     <p>Get accidental damage cover, third party car insurance, comprehensive car insurance, as per your needs.</p>
                                 </div>
                             </div>
-                            <Link to="/insurance" className="btn-bg">Explore</Link>
+                            <a href="https://choiceinsurance.in/" target="blank" className="btn-bg">Explore</a>
                         </div>
                     </div>
 

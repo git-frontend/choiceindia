@@ -17,6 +17,10 @@ import SubbrokerStickyFooter from "../Common-features/SubbrokerStickyFooter";
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import NbfcService from "../../Services/NbfcService";
 import failureimg from '../../assets/images/failure.svg';
+import hdfcprivacy from '../../assets/images/nbfc-loans/HDFC Bank Privacy Policy.pdf';
+import consent1 from '../../assets/images/nbfc-loans/Consent I.pdf';
+import consent2 from '../../assets/images/nbfc-loans/Consent II.pdf'
+
 function nbfcForm(props) {
 
     // words: /^([A-z-\s\'\.]*)*$/g,
@@ -32,7 +36,7 @@ function nbfcForm(props) {
     const [brokerCityBranch, setBrokerCityBranch] = useState('');
     const [brokerState, setBrokerState] = useState('');
     const [showState, setShowState] = useState(false);
-    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'lastName': {}});
+    const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'lastName': {} });
     const [showTermsCondition, setShowTermsCondition] = useState(false);
     const [loaders, setLoaders] = useState({});
     const [showOTPPopup, setShowOTPPopup] = useState(false);
@@ -49,6 +53,10 @@ function nbfcForm(props) {
     const [show, setShow] = useState(true);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
+    const [isChecked, setIsChecked] = useState(true);
+    const [isChecked2, setIsChecked2] = useState(true);
+    const [isChecked3, setIsChecked3] = useState(true);
+    
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -64,7 +72,7 @@ function nbfcForm(props) {
     const [captchaTokenre, setCaptchaTokenre] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
-    let type=(window.location.pathname.indexOf('channel-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('commercial-vehicle-loan') > -1) ? 'vehicle_loan':(window.location.pathname.indexOf('flexi-credit-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('invoice-financing') > -1) ? 'supply_chain':(window.location.pathname.indexOf('individual-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('business-loan') > -1) ? 'od_loan':(window.location.pathname.indexOf('term-business-loan') > -1) ? ' term_loan':"";
+    let type = (window.location.pathname.indexOf('channel-financing') > -1) ? 'supply_chain' : (window.location.pathname.indexOf('commercial-vehicle-loan') > -1) ? 'vehicle_loan' : (window.location.pathname.indexOf('flexi-credit-loan') > -1) ? 'od_loan' : (window.location.pathname.indexOf('invoice-financing') > -1) ? 'supply_chain' : (window.location.pathname.indexOf('individual-loan') > -1) ? 'od_loan' : (window.location.pathname.indexOf('business-loan') > -1) ? 'od_loan' : (window.location.pathname.indexOf('term-business-loan') > -1) ? ' term_loan' : "";
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -75,17 +83,18 @@ function nbfcForm(props) {
 
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
-        
-            setShowOpenAccountPopup(true);
-        
+
+        setShowOpenAccountPopup(true);
+
     }
 
-     /**function executes to close the ad popup */
-     function hideOpenAccountAdPopup(showAdValues) {
-        
+    /**function executes to close the ad popup */
+    function hideOpenAccountAdPopup(showAdValues) {
+
         setShowOpenAccountPopup(false);
         // callOpenAccountAdPopupAgain();
     }
+
 
     // function callOpenAccountAdPopupAgain() {
     //     //after 15min
@@ -129,6 +138,21 @@ function nbfcForm(props) {
         }));
     }
 
+    useEffect(() => {
+       if(props.ispersonal === true){
+
+            setIsChecked(false)
+            setIsChecked2(false)
+            setIsChecked3(false)
+       }else{
+            setIsChecked(true)
+            setIsChecked2(true)
+            setIsChecked3(true)
+       }
+            
+        
+    }, [props.ispersonal]);
+
 
     useEffect(() => {
         if (props.isFromFableDetails) {
@@ -139,7 +163,7 @@ function nbfcForm(props) {
             };
         }
     }, [props.isFromFableDetails]);
-// console.log("check",document.documentElement.clientWidth)
+    // console.log("check",document.documentElement.clientWidth)
     function onScroll() {
         let element = document.getElementById('fablesdetail-title');
         if (element) {
@@ -153,17 +177,17 @@ function nbfcForm(props) {
         }
     }
 
-    
 
- 
+
+
 
     function handleSendOTP(e) {
-       e == 'resend'? setmsg(e): e.preventDefault();
-       
-        
+        e == 'resend' ? setmsg(e) : e.preventDefault();
+
+
         console.log("check")
 
-        let isBrokerNameValid, isBrokerMobileNumberValid,isBrokerLastNameValid = false;
+        let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerLastNameValid = false;
         //brokerName Validation
         isBrokerNameValid = validateBrokerName(brokerName, false);
         //brokerMobileNumber Validation
@@ -171,16 +195,16 @@ function nbfcForm(props) {
         //LastName Validation
         isBrokerLastNameValid = validateLastName(lastName, false);
         //brokerCityBranch Validation
-       
+
         //brokerState Validation
-       
+
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerLastNameValid) {
             // sendOTP(false);
             handleCaptchaVerify()
-            setTimeout(()=>{
+            setTimeout(() => {
                 handleReCaptchaVerify()
-              },10)
-            
+            }, 10)
+
         }
     }
 
@@ -256,7 +280,7 @@ function nbfcForm(props) {
         return isBrokerMobileNumberValid;
     }
 
- 
+
 
     function resetOTPPopup() {
         setOtp('');
@@ -324,8 +348,8 @@ function nbfcForm(props) {
         }));
     }
 
-     // Create an event handler so you can call the verification on button click event or form submit
-     const handleCaptchaVerify = useCallback(async () => {
+    // Create an event handler so you can call the verification on button click event or form submit
+    const handleCaptchaVerify = useCallback(async () => {
         if (!executeRecaptcha) {
             return;
         }
@@ -337,10 +361,10 @@ function nbfcForm(props) {
             setCaptchaTokenre(token);
             // alert("Token : "+token);
         }
-      
+
     }, [executeRecaptcha]);
 
-    
+
 
     // Create an event handler so you can call the verification on button click event or form submit
     const handleReCaptchaVerify = useCallback(async () => {
@@ -355,13 +379,13 @@ function nbfcForm(props) {
             setCaptchaToken(token);
             // alert("Token : "+token);
         }
-        
+
     }, [executeRecaptcha]);
 
     useEffect(() => {
         if (captchaToken) {
-            msg == 'resend'?sendOTP(true):sendOTP(false);
-            
+            msg == 'resend' ? sendOTP(true) : sendOTP(false);
+
         }
     }, [captchaToken]);
 
@@ -413,104 +437,104 @@ function nbfcForm(props) {
     }
 
     function sendOTP(isResend) {
-        isResend? nbfcResend(true) :nbfcsendOtp(false)
-   
+        isResend ? nbfcResend(true) : nbfcsendOtp(false)
+
     }
 
-    function nbfcsendOtp(){
+    function nbfcsendOtp() {
         showLoader('sendOTPLoader');
         let request = {
             "product": 'NBFC',
-            "name":brokerName+" "+lastName,
+            "name": brokerName + " " + lastName,
             "mobile_number": brokerMobileNumber,
             "captchaResp": captchaToken,
-            
+
         };
         let request1 = {
             "product": 'NBFC',
-            "user_name": brokerMobileNumber ,
+            "user_name": brokerMobileNumber,
             "captchaResp": captchaTokenre,
-            
+
         };
 
-        
-        NbfcService.mobileduplicate(brokerMobileNumber).then(res =>{
-            
-            if(res.data.Body.mobile_exist == true){
-              
-                NbfcService.login(request1).then(res =>{
-           
-                    
-            if (res && res.data && res.data.Body) {
-                hideLoader('sendOTPLoader');
-                otpSessionID.current = res.data.Body.session_id;
-                resetOTPPopup()
-                handleOTPPopupShow();
-               
-            } else {
-                hideLoader('sendOTPLoader');
-                    setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
-                    showAPIErrorToaster();
-                }
-            
-        }).catch((error) => {
-            // console.log(error, "sendOTP error");
-            hideLoader('sendOTPLoader');
-        
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setAPIError(error.response.data.message);
-                } else {
-                    setAPIError("Something went wrong, please try again later!");
-                }
-                showAPIErrorToaster();
-        
-        });
-    }else{
-       
-        NbfcService.register(request).then(res =>{
-            
-                NbfcService.login(request1).then(res =>{
-                   
+
+        NbfcService.mobileduplicate(brokerMobileNumber).then(res => {
+
+            if (res.data.Body.mobile_exist == true) {
+
+                NbfcService.login(request1).then(res => {
+
+
                     if (res && res.data && res.data.Body) {
                         hideLoader('sendOTPLoader');
                         otpSessionID.current = res.data.Body.session_id;
                         resetOTPPopup()
                         handleOTPPopupShow();
-                        
+
                     } else {
                         hideLoader('sendOTPLoader');
-                            setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
-                            showAPIErrorToaster();
-                        
+                        setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
+                        showAPIErrorToaster();
                     }
+
                 }).catch((error) => {
                     // console.log(error, "sendOTP error");
                     hideLoader('sendOTPLoader');
-                     
+
+                    if (error && error.response && error.response.data && error.response.data.message) {
+                        setAPIError(error.response.data.message);
+                    } else {
+                        setAPIError("Something went wrong, please try again later!");
+                    }
+                    showAPIErrorToaster();
+
+                });
+            } else {
+
+                NbfcService.register(request).then(res => {
+
+                    NbfcService.login(request1).then(res => {
+
+                        if (res && res.data && res.data.Body) {
+                            hideLoader('sendOTPLoader');
+                            otpSessionID.current = res.data.Body.session_id;
+                            resetOTPPopup()
+                            handleOTPPopupShow();
+
+                        } else {
+                            hideLoader('sendOTPLoader');
+                            setAPIError((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : "Something went wrong, please try again later!");
+                            showAPIErrorToaster();
+
+                        }
+                    }).catch((error) => {
+                        // console.log(error, "sendOTP error");
+                        hideLoader('sendOTPLoader');
+
                         if (error && error.response && error.response.data && error.response.data.message) {
                             setAPIError(error.response.data.message);
                         } else {
                             setAPIError("Something went wrong, please try again later!");
                         }
                         showAPIErrorToaster();
-                    
-                });
 
-            })
-        
-    }
-})
+                    });
+
+                })
+
+            }
+        })
     }
 
-    function nbfcResend(){
+    function nbfcResend() {
         hideLoader('resendOTPLoader');
         let request = {
-            "mobile_no":brokerMobileNumber,
-            "old_session_id":otpSessionID.current,
+            "mobile_no": brokerMobileNumber,
+            "old_session_id": otpSessionID.current,
             "captchaResp": captchaToken
-            
+
         };
-        NbfcService.resend(request).then(res =>{
+        NbfcService.resend(request).then(res => {
             // console.log(res, "sendOTP");
             hideLoader('resendOTPLoader');
             if (res && res.data && res.data.Body) {
@@ -518,56 +542,56 @@ function nbfcForm(props) {
                 resetOTPPopup()
                 // if (!isResend)
                 resetOTPPopup();
-                
-               
-                    handleOTPResendSuccessToaster();
+
+
+                handleOTPResendSuccessToaster();
             } else {
-               
-                    setOTPErrors((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message: SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                
+
+                setOTPErrors((res.data && res.data.Body && res.data.Body.message) ? res.data.Body.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+
             }
         }).catch((error) => {
             // console.log(error, "sendOTP error");
             hideLoader('resendOTPLoader');
-           
-                if (error && error.response && error.response.data && error.response.data.message) {
-                    setOTPErrors(error.response.data.message);
-                } else {
-                    setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
-        
+
+            if (error && error.response && error.response.data && error.response.data.message) {
+                setOTPErrors(error.response.data.message);
+            } else {
+                setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            }
+
         });
 
     }
 
     function NbfcLead() {
         let request = {
-            "data":{
-            "firstName"  :brokerName,
-            "middleName" :"",
-            "lastName" :lastName,
-            "phoneNo" :brokerMobileNumber,
-            "emailId": "kprasadideal@gmail.com",
-            "userId" : "",
-            "userName" : "",
-            "dsaId" : "113",
-            "dsaName" : "abc"
+            "data": {
+                "firstName": brokerName,
+                "middleName": "",
+                "lastName": lastName,
+                "phoneNo": brokerMobileNumber,
+                "emailId": "kprasadideal@gmail.com",
+                "userId": "",
+                "userName": "",
+                "dsaId": "113",
+                "dsaName": "abc"
 
             }
-            
-    
+
+
         };
         showLoader('addLeadLoader');
-        NbfcService.nbfcLead(request,type).then((res) => {
+        NbfcService.nbfcLead(request, type).then((res) => {
             hideLoader('addLeadLoader');
             // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
-              //  console.log('TTT',res);
+                //  console.log('TTT',res);
                 handleOTPPopupClose();
                 handleBrokerCreatedSuccessShow();
-               
+
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: true,resText:'Lead added successfully', closeMd: closeModal }
+                    return { ...prevState, showModal: true, resText: 'Lead added successfully', closeMd: closeModal }
                 });
                 resetBrokerForm();
             } else {
@@ -579,7 +603,7 @@ function nbfcForm(props) {
 
         }).catch((error) => {
             hideLoader('addLeadLoader');
-            console.log("error",error.response.data.message)
+            console.log("error", error.response.data.message)
             handleOTPPopupClose();
             // // console.log(error, "addNewLead error");
             if (error && error.response && error.response.data && error.response.data.message) {
@@ -588,10 +612,10 @@ function nbfcForm(props) {
                 setAPIError("Something went wrong, please try again later!");
             }
             showAPIErrorToaster();
-           
+
             // setOTPErrors((error && error.response && error.response.data && error.response.data.message) ? error.response.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-            
-            
+
+
         });
     }
 
@@ -606,16 +630,16 @@ function nbfcForm(props) {
             }
             NbfcService.nbfcVerifyOTP(request).then((res) => {
                 hideLoader('verifyLoader');
-             
+
                 // console.log(res, "verifyOTPN");
                 if (res && res.data) {
                     NbfcLead()
-                 
+
                 } else {
                     setOTPErrors((res.data && res.message) ? res.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
             }).catch((error) => {
-               
+
                 hideLoader('verifyLoader');
                 console.log(error.response.data.Message, "verifyOTPN error");
                 setOTPErrors((error && error.response && error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
@@ -627,7 +651,7 @@ function nbfcForm(props) {
     /**to hide thank you popup */
     function closeModal() {
         setShowThanku(prevState => {
-            return { ...prevState, showModal: false}
+            return { ...prevState, showModal: false }
         });
     }
 
@@ -658,7 +682,7 @@ function nbfcForm(props) {
 
     return (
         <>
-         
+
             <div className="demat-account-form" id="nbfcform">
 
 
@@ -666,7 +690,7 @@ function nbfcForm(props) {
                     (brokerCreatedSuccess) ?
                         <Alert key='success' variant='success' className={(window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) ? "sub-broker-success" : ""} onClose={handleBrokerCreatedSuccessClose} dismissible>{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'formsuccess', 'Successfully!')}</Alert> : ''
                 }
-                
+
                 <h3 className="form-ttl">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'title', 'Get a Call from us')}</h3>
                 <Form>
                     <Form.Group className="mb-3 formgrp">
@@ -682,7 +706,7 @@ function nbfcForm(props) {
                             }
                         </div>
                         <div className="sub-formgrp">
-                           
+
                             <Form.Control type="text" name="lastName" id="lastName" placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelbl', 'Last Name')} className="formcontrol formpadding" autoComplete="off" isInvalid={errors.lastName.invalid || errors.lastName.required} value={lastName} onChange={handleLastName} />
                             {
                                 errors.lastName.invalid ? <Form.Control.Feedback type="invalid">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'namelblerror1', 'Invalid Name')}</Form.Control.Feedback> : ''
@@ -704,8 +728,68 @@ function nbfcForm(props) {
                                 errors.brokerMobileNumber.unique ? <Form.Control.Feedback type="invalid">{errors.brokerMobileNumber.uniqueError}</Form.Control.Feedback> : ''
                             }
                         </div>
-                       
-                        <div className="sub-formgrp cust-checkbox">
+
+                        
+                        {
+                            props.ispersonal === true ?
+                            <div>
+                                <div className="sub-formgrp cust-checkbox">
+                            <Form.Check
+                                inline
+                                name="terms_and_conditions"
+                                type="checkbox"
+                                id="terms_and_conditions"
+                            >
+
+                                <Form.Check.Input type="checkbox" onChange={() => setIsChecked3((prev) => !prev)} checked={isChecked3} />
+
+                                <Form.Check.Label>*I agree to the Privacy Policy and Terms of Use  <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/bc27ce53-0a89-4f31-adea-d0262051fc92" target="_blank">privacy policy</a> and <a className="link-tc" href="https://cmsapi.choiceindia.com/assets/656d16e2-f799-406e-911b-b9b2f7e5406f" target="_blank" >{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'termconditionlink', 'Terms & Conditions')}</a> documents </Form.Check.Label>
+
+                            </Form.Check>
+                        </div>
+                            <div className="sub-formgrp cust-checkbox">
+                                <Form.Check
+                                    inline
+                                    name="terms_and_conditions"
+                                    type="checkbox"
+                                    id="terms_and_conditions"
+                                >
+
+                                    <Form.Check.Input type="checkbox" onChange={() => setIsChecked2((prev) => !prev)} checked={isChecked2}/>
+
+                                    <Form.Check.Label>*I have read, understood and hereby accept the customized Privacy Policy for Choice Finserv Private Limited in relation to collection of information for HDFC Bank <a className="link-tc" href={hdfcprivacy}target="_blank">Privacy Policy</a></Form.Check.Label>
+
+                                </Form.Check>
+                            </div>
+                            <div className="sub-formgrp cust-checkbox">
+                                <Form.Check
+                                    inline
+                                    name="terms_and_conditions"
+                                    type="checkbox"
+                                    id="terms_and_conditions"
+                                >
+
+                                    <Form.Check.Input type="checkbox" onChange={() => setIsChecked((prev) => !prev)} checked={isChecked} />
+
+                                    <Form.Check.Label>*I/we hereby give the consent in relation to Requested Products <a className="link-tc" href={consent1}target="_blank">Consent I</a></Form.Check.Label>
+
+                                </Form.Check>
+                            </div>
+                            <div className="sub-formgrp cust-checkbox">
+                                <Form.Check
+                                    inline
+                                    name="terms_and_conditions"
+                                    type="checkbox"
+                                    id="terms_and_conditions"
+                                >
+
+                                    <Form.Check.Input type="checkbox"  />
+
+                                    <Form.Check.Label> I/we hereby give the consent in relation to Other Products <a className="link-tc" href={consent2}target="_blank">Consent II</a></Form.Check.Label>
+
+                                </Form.Check>
+                            </div>
+                        </div>:<div className="sub-formgrp cust-checkbox">
                             <Form.Check
                                 inline
                                 name="terms_and_conditions"
@@ -720,10 +804,11 @@ function nbfcForm(props) {
                             </Form.Check>
                         </div>
 
-
+}
+    
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
-                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader} onClick={handleSendOTP}>
+                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} onClick={handleSendOTP}>
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}
                             </Button>
                             {/* <Button variant="primary"
@@ -741,14 +826,14 @@ function nbfcForm(props) {
                             </div>
                         </div>
 
-                        
+
                     </Form.Group>
                 </Form>
 
             </div>
             {
                 showOTPPopup ?
-                   
+
 
                     <Modal show={show} className="bt-strap-mdl " backdrop='static' keyboard={false} onHide={handleOTPPopupClose}>
                         <Modal.Header className="border-0" closeButton>
@@ -822,38 +907,38 @@ function nbfcForm(props) {
                 </Modal.Footer> */}
             </Modal>
             <Modal className='common-modal-css common-modal-thankyou'
-              show={showErrorToaster}
-              size="md"
-              aria-labelledby="contained-modal-title-vcenter"
-              backdrop='static'
-              keyboard={false}
-              centered
-              onHide={hideAPIErrorToaster}
+                show={showErrorToaster}
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                backdrop='static'
+                keyboard={false}
+                centered
+                onHide={hideAPIErrorToaster}
             >
-              <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
 
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                {
-                  <img src={failureimg} height="80" width="80" alt='Failure' />
-                }
-                <h4>Oops</h4>
-                <h3>
-                  {APIError}
-                </h3>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
-              </Modal.Footer>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {
+                        <img src={failureimg} height="80" width="80" alt='Failure' />
+                    }
+                    <h4>Oops</h4>
+                    <h3>
+                        {APIError}
+                    </h3>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
+                </Modal.Footer>
             </Modal>
 
             {
-                showThanku.showModal?<Thankyoupopup isShow={showThanku} />: ''
+                showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
             }
 
-            
+
 
         </>
     );

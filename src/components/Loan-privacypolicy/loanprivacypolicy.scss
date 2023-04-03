@@ -1,0 +1,55 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.loan-privacy-policy {
+    padding: 5rem 0rem;
+    @media (max-width:$sm){
+        padding: 4rem 0rem;
+    }
+    a{
+        
+        text-decoration: none;
+
+        .back-btn {
+            display: inline-block;
+            position: relative;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            padding-left: 2.2rem;
+            color: $darkblack;
+           
+            &::before{
+                background:url('../../assets/images/Loan-Privacy-Policy/back-arrow.svg') no-repeat ;
+                content: "";
+                width: 33px;
+                position: absolute;
+                left: 0;
+                height: 17px;
+                top: 6px;
+                background-size: contain;
+                // @media (max-width:$sm){
+                //     width: 33px; 
+                //     height: 20px;
+                    
+                // }
+            }
+        }
+    }
+    .topmr{
+        margin-top: 0.5rem;
+        // @media (max-width:$sm){
+        //     margin-top: 4rem;
+        // }
+    }
+
+    .loan-privacy-content {
+        padding: 2.7rem 0rem;
+
+        p {
+            font-size: 1.5rem;
+            line-height: 2.4rem;
+            margin-bottom: 2rem;
+            // color:$darkblack;
+        }
+    }
+}

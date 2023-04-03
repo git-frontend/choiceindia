@@ -228,6 +228,10 @@ export class API_URLS {
     nachCancellationliveURL = 'sendMailNBFC';
     nachCancellationURL = 'api/newdetail'
 
+    subBrokerSendOtpURLNew = 'sub-broker/signup';
+    subBrokerResendOtpURLNew = 'resendotp';
+    subBrokerVerifyOtpURLNew = 'verifyotp';
+
     constructor() {
         this.setConfig(environment ? "live" : "UAT")
     }
@@ -741,6 +745,21 @@ export class API_URLS {
         return this.bannerURL + this.escalation
     }
 
+
+
+
+
+    getSubBrokerNewSendOtpUrl() {
+        return this.SSOServerURL + this.subBrokerSendOtpURLNew;
+    }
+
+    getSubBrokerNewResendOtpURL() {
+        return this.SSOServerURL + this.subBrokerResendOtpURLNew;
+    }
+
+    getSubBrokerNewVerifyOtpURL() {
+        return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
+    }
     getSubBrokerURL(location){
         return this.bannerURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
     }
