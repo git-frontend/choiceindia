@@ -1365,7 +1365,7 @@ function Opendemat(){
 
               </section>
 
-              <section className="stickybottom">
+              <section className="">
               <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>

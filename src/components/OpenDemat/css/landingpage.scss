@@ -1628,6 +1628,12 @@ nav {
 	html {
 		font-size: 11px;
 	}
+	.btn-view-more-sticky.btn-fixed {
+		display: block !important;
+	}
+	.bannersection{
+		padding: 7rem 0;
+	}
 }
 @media (max-width: 767px) {
 	html {
@@ -1749,9 +1755,7 @@ nav {
 	.m52 {
 		margin: 42px 0;
 	}
-	.btn-view-more-sticky.btn-fixed {
-		display: block !important;
-	}
+	
 	.demat-modal-sleekbox-overlay {
 		.exit-intent-sleekbox-popup {
 			width: 90%;
