@@ -137,6 +137,8 @@ const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
+const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
+
 function Routing() {
 
 
@@ -767,7 +769,11 @@ function Routing() {
                                 < LazyLoanPrivacyPolicy />
                             </React.Suspense>
                         } />
- 
+                        <Route exact path='/emi-calculator' element={
+                            <React.Suspense>
+                                < LazyEmiCalculator />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
