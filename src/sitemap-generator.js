@@ -46,7 +46,7 @@ async function generateSitemap() {
     
         const mySitemap = new Sitemap(router)
         .applyParams(paramsConfig)
-        .build("https://dev.choiceindia.com/");
+        .build("https://choiceindia.com/");
         
         for (let i = 2; i < mySitemap.sitemaps[0].urls.length; i++) {
         mySitemap.sitemaps[0].urls[i].changefreq = "weekly"; // set desired value here
