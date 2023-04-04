@@ -26,7 +26,7 @@ function IPOBenifits() {
   return (
     <div>
       
-      <section className="ipo-more-benifits">
+      <section className="ipo-more-benifits" >
         <div className="container">
           <div className="row">
             <div className="col-md-12">
