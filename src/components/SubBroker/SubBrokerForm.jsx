@@ -73,6 +73,10 @@ function SubBrokerForm(props) {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     }
 
+    function handleToggle(event) {
+        console.log('TTT',event);
+    }
+
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
         
@@ -153,8 +157,10 @@ function SubBrokerForm(props) {
     }
     
 
-    function handleBrokerCityBranch(e) {
+    function handleBrokerCityBranch(e,isOther) {
         
+        console.log('ooo',isOther);
+        console.log('DDDD',e);
         if (e[0]) {
             let value = e[0].leadCity;
             setBrokerCityBranch(value);
@@ -178,10 +184,16 @@ function SubBrokerForm(props) {
     }
     const renderNoDataLabel=(e)=>(
         <div className="p-2" onClick={() =>{
-                var  value2=document.getElementsByClassName("p-2")[0];
-                value2.innerHTML="OTHERS";
-                console.log("value2",value2)
-                 setBrokerCityBranch(value2);
+                // var  value2=document.getElementsByClassName("p-2")[0];
+                // value2.innerHTML="OTHERS";
+                // console.log("value2",value2)
+                //  setBrokerCityBranch(value2);
+                // setBrokerCityBranch(value);
+                console.log('FFFF',citiesDropdown )
+                console.log('FFFF2', brokerCityBranch)
+                let isOther = true;
+                handleBrokerCityBranch(e,isOther);
+
         } }>
             {noDataLabel}
         </div>
@@ -385,6 +397,9 @@ function SubBrokerForm(props) {
             hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
+                if(res.data.Body.CityMasterList.length ===0 ){
+                    setCitiesDropdown([])
+                }
             } else {
                 
                 setCitiesDropdown([]);
@@ -515,46 +530,46 @@ function SubBrokerForm(props) {
         }
     }
 
-    function checkExistence(value) {
-        showLoader('sendOTPLoader');
-        setValue(value);
-        setisCheck(true);
-        let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-        let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-        let request = {
-            "serviceCode": "CBAEF",
-            "firstName": brokerName,
-            "mobileNum": brokerMobileNumber,
-            "emailID": brokerEmail
-        };
-        if (!isBrokerMobileNumberValid)
-            delete request.mobileNum;
-        if (!isBrokerEmailValid)
-            delete request.emailID;
-        subBrokerService.checkExistence(request).then((res) => {
-            // console.log(res, "checkExistence");
-            if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
-                setErrors((prevError) => ({
-                    ...prevError,
-                    'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
-                }));
-            } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
-                setErrors((prevError) => ({
-                    ...prevError,
-                    'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
-                }));
-            } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
-                // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
-                    // showAPIErrorToaster();
-            }
-            setisCheck(false);
-            hideLoader('sendOTPLoader');
-        }).catch((error) => {
-            hideLoader('sendOTPLoader');
-            setisCheck(false);
-            // console.log(error, "checkExistence error");
-        });
-    }
+    // function checkExistence(value) {
+    //     showLoader('sendOTPLoader');
+    //     setValue(value);
+    //     setisCheck(true);
+    //     let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+    //     let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+    //     let request = {
+    //         "serviceCode": "CBAEF",
+    //         "firstName": brokerName,
+    //         "mobileNum": brokerMobileNumber,
+    //         "emailID": brokerEmail
+    //     };
+    //     if (!isBrokerMobileNumberValid)
+    //         delete request.mobileNum;
+    //     if (!isBrokerEmailValid)
+    //         delete request.emailID;
+    //     subBrokerService.checkExistence(request).then((res) => {
+    //         // console.log(res, "checkExistence");
+    //         if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
+    //             setErrors((prevError) => ({
+    //                 ...prevError,
+    //                 'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
+    //             }));
+    //         } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
+    //             setErrors((prevError) => ({
+    //                 ...prevError,
+    //                 'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
+    //             }));
+    //         } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
+    //             // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+    //                 // showAPIErrorToaster();
+    //         }
+    //         setisCheck(false);
+    //         hideLoader('sendOTPLoader');
+    //     }).catch((error) => {
+    //         hideLoader('sendOTPLoader');
+    //         setisCheck(false);
+    //         // console.log(error, "checkExistence error");
+    //     });
+    // }
 
     useEffect(() => {
         const interval = setInterval(() => {
