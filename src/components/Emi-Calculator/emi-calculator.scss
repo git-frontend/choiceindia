@@ -3,7 +3,7 @@
 
 
 .emi-calculator {
-    padding: 5rem 0rem;
+    padding: 7rem 0rem;
     background-color: $lightsky;
     position: relative;
     &::after{
@@ -16,6 +16,14 @@
         top: -13rem;
         background: url(../../assets/images/emi-calculator/emi-banner.webp) no-repeat top right;
         background-size: contain;
+        @media (max-width:$md) {
+            width:50rem;
+            height: 50rem;
+            top: 0;       
+        }
+        @media (max-width:$sm){
+          display: none;
+        }
     }
     @media (max-width:$sm){
         padding: 4rem 0rem;
@@ -25,32 +33,47 @@
         display: flex;
         justify-content: space-between;
         position: relative;
+        flex-direction: row-reverse;
         z-index: 9;
+        @media (max-width:$sm){
+            // flex-direction: column-reverse;
+        }
         .leftsec{
             width: 48%;
+            @media (max-width:$sm){
+                width:100%;
+            }
             .cal-opt{
                 margin-top: 6rem;
+                &.mrg-top{
+                    @media (max-width:$md) {
+                       margin-top: 10rem;
+                    }
+                }
                 p{
                     font-family: $font-family-poppins-medium;
                     font-weight: 500;
                     font-size: 2rem;
                     line-height: 1.5;
                     color: $bgcolordark;
+                    @media (max-width:$md) {
+                        font-size: 1.5rem;
+                    }
                 }
                 .value-card{
                     display: flex;
                     justify-content: space-between;
                     position: relative;
-                    &::after{
-                        position: absolute;
-                        top: 11px;
-                        display: inline-block;
-                        content: "";
-                        border: 1px solid $darkblack;
-                        opacity: 0.4;
-                        height: 3rem;
-                        right: 4rem;
-                    }
+                    // &::after{
+                    //     position: absolute;
+                    //     top: 11px;
+                    //     display: inline-block;
+                    //     content: "";
+                    //     border: 1px solid $darkblack;
+                    //     opacity: 0.4;
+                    //     height: 3rem;
+                    //     right: 4rem;
+                    // }
                     .form-ctr{
                         background:$whiteColor;
                         border: 2px solid $stockboxshadow;
@@ -65,197 +88,118 @@
                     margin-top: 2rem;
                     margin-bottom: 1rem;
                 }
-                // .slidercontainer {
-                //     margin-top: 15px;
-                //     .slider {
-                //         width: 100%;
-                //         height: 20px;
-                //         appearance: none;
-                //         margin: 0;
-                //         border-radius: 25px;
-                //         background: $lightsky;
-                //         outline: none;
-                //         border: 2px solid $stockboxshadow;
-                //         &:focus {
-                //             outline: none;
-                //           }
-                //         &::-webkit-slider-runnable-track {
-                //             width: 100%;
-                //             height: 8px;
-                //             cursor: pointer;
-                //             transition: all 0.2s ease;
-                //             background: $lightsky;
-                //             border: none;
-                //             border-radius: 4px;
-                           
-                //         }
-                //         &::-webkit-slider-thumb {
-                //             border: 3px solid rgba(0, 0, 0, 0.1);
-                //             height: 35px;
-                //             width: 35px;
-                //             border-radius: 50%;
-                //             background: $range-green;
-                //             cursor: pointer;
-                //             appearance: none;
-                //             margin-top: -14px;
-                //           }
-                //       }
-                //   }
+
+                .slidecontainer {
+                    width: 100%;
+                    position: relative;
+                    z-index: 99999999999;
+                    .middle {
+                        width: 100%;
+                        max-width: inherit;
+                        .slider-container {
+                            position: relative;
+                            .bar {
+                                position: absolute;
+                                z-index: 1;
+                                left: 0;
+                                top: 4px;
+                                width: 100%;
+                                height: 25px;
+                                border-radius: 15px;
+                                overflow: hidden;
+                                border: 2px solid rgba(0, 0, 0, 0.1);
+                                @media (max-width:$sm) {
+                                    height: 18px;
+                                }
+                                .fill {
+                                    display: block;
+                                    width: 0;
+                                    height: 100%;
+                                    background-color: $whiteColor;
+                                    border:2px solid $border-green;
+                                }
+                            }
+                            .slider {
+                                position: relative;
+                                z-index: 2;
+                                appearance: none;
+                                width: 100%;
+                                height: 10px;
+                                border-radius: 5px;
+                                outline: none;
+                                background-color: transparent;
+                                &::-webkit-slider-thumb {
+                                    appearance: none;
+                                    width: 45px;
+                                    height: 45px;
+                                    background-color: $range-green;
+                                    border-radius: 50%;
+                                    cursor: pointer;
+                                    outline: none;
+                                    border: 3px solid rgba(0, 0, 0, 0.1);
+                                    opacity: 1;
+                                    @media (max-width:$sm) {
+                                        width: 25px;
+                                        height: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                  }
             }
         }
         .rightsec{
             width: 44%;
             position: relative;
-            .monthly-emi {
-                background: $whiteColor;
-                text-align: center;
-                padding: 1rem 9rem;
-                border-radius: 15px;
-                top: 12rem;
-                position: absolute;
-                z-index: 1;
-                right: 0;
-                p{
-                    font-family: $font-family-poppins-medium;
-                    font-weight: 500;
-                    font-size: 2rem;
-                    line-height: 1.5;
-                    color: $bgcolordark;
-                    margin: 0;
-                }
-                h6{
-                    font-family: $font-family-poppins-medium;
-                    font-weight: 500;
-                    font-size: 3.5rem;
-                    line-height: 1.5;
-                    color: $bgcolordark;
-                    margin: 0;
+            @media (max-width:$sm){
+                width:100%;
+            }
+            .sticy{
+                // position: sticky;
+                // top: 100px;
+                .monthly-emi {
+                    background: $whiteColor;
+                    text-align: center;
+                    padding: 1rem 9rem;
+                    border-radius: 15px;
+                    top: 12rem;
+                    position: absolute;
+                    z-index: 1;
+                    right: 0;
+                    @media (max-width:$md) {
+                        padding: 1rem 5rem;
+                    }
+                    @media (max-width:$sm) {
+                        margin-top: 2rem;
+                        width: 100%;
+                    }
+                    p{
+                        font-family: $font-family-poppins-medium;
+                        font-weight: 500;
+                        font-size: 2rem;
+                        line-height: 1.5;
+                        color: $bgcolordark;
+                        margin: 0;
+                        @media (max-width:$md) {
+                            font-size: 1.5rem;
+                        }
+                    }
+                    h6{
+                        font-family: $font-family-poppins-medium;
+                        font-weight: 500;
+                        font-size: 3.5rem;
+                        line-height: 1.5;
+                        color: $bgcolordark;
+                        margin: 0;
+                        @media (max-width:$md) {
+                            font-size: 2.5rem;
+                        }
+                    }
                 }
             }
         }
-    }
-   
-}
-.slider-parent{
-    input[type="range:"]{
-        
-        &::-webkit-slider-thumb {
-            border: 3px solid rgba(0, 0, 0, 0.1);
-            height: 35px;
-            width: 35px;
-            border-radius: 50%;
-            background: $range-green;
-            cursor: pointer;
-            appearance: none;
-            margin-top: -0;
-          }
-          &::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 8px;
-            cursor: pointer;
-            transition: all 0.2s ease;
-            background: $lightsky;
-            border: none;
-            border-radius: 4px;
-           
         }
-    }
 }
 
-.slidecontainer {
-    width: 100%;
-    position: relative;
-    z-index: 99999999999;
-  }
-  
-  .slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 25px;
-    background: #000;
-    outline: none;
-    opacity: 1;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-  }
-  
-  .slider:hover {
-    opacity: 1;
-  }
-  
-  .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #04AA6D;
-    cursor: pointer;
-  }
 
-  .slidecontainer{
-    .buble{
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: red;
-        display: block;
-        height: 25px;
-    }
-  }
-
-
-  .middle {
-	width: 100%;
-	max-width: inherit;
-}
-.slider-container {
-	position: relative;
-}
-.slider-container .bar {
-	position: absolute;
-	z-index: 1;
-	left: 0;
-	top: 4px;
-	width: 100%;
-	height: 25px;
-	border-radius: 15px;
-	background-color: #F5FFE9;
-	overflow: hidden;
-    border: 2px solid rgba(0, 0, 0, 0.1);
-}
-.slider-container .bar .fill {
-	display: block;
-	width: 0;
-	height: 100%;
-	background-color: #D9FFBB;
-}
-.slider-container .slider {
-	position: relative;
-	z-index: 2;
-	-webkit-appearance: none;
-	width: 100%;
-	height: 10px;
-	border-radius: 5px;
-	outline: none;
-	background-color: transparent;
-}
-.slider-container .slider::-webkit-slider-thumb {
-	-webkit-appearance: none;
-	width: 45px;
-	height: 45px;
-	background-color: #66DB1E;
-	border-radius: 50%;
-	cursor: pointer;
-	outline: none;
-	// box-shadow: 0 0 0 0 rgba(98,0,238,.1);
-	// transition: .3s ease-in-out;
-    border: 3px solid rgba(0, 0, 0, 0.1);
-    opacity: 1;
-}
