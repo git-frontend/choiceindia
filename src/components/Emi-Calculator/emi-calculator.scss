@@ -13,7 +13,7 @@
         display: block;
         position: absolute;
         right: 0;
-        top: 0;
+        top: -13rem;
         background: url(../../assets/images/emi-calculator/emi-banner.webp) no-repeat top right;
         background-size: contain;
     }
@@ -23,9 +23,11 @@
     .emi-flex {
         flex-wrap: wrap;
         display: flex;
+        justify-content: space-between;
         .leftsec{
             width: 48%;
             .cal-opt{
+                margin-top: 6rem;
                 p{
                     font-family: $font-family-poppins-medium;
                     font-weight: 500;
@@ -99,7 +101,34 @@
             }
         }
         .rightsec{
-            width: 48%;
+            width: 44%;
+            position: relative;
+            .monthly-emi {
+                background: $whiteColor;
+                text-align: center;
+                padding: 1rem 9rem;
+                border-radius: 15px;
+                top: 12rem;
+                position: absolute;
+                z-index: 1;
+                right: 0;
+                p{
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    font-size: 2rem;
+                    line-height: 1.5;
+                    color: $bgcolordark;
+                    margin: 0;
+                }
+                h6{
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    font-size: 3.5rem;
+                    line-height: 1.5;
+                    color: $bgcolordark;
+                    margin: 0;
+                }
+            }
         }
     }
    

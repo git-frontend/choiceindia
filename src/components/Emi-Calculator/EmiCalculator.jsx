@@ -30,18 +30,53 @@ function EmiCalculator() {
                                             <div className='range-item'>
                                             <span>₹ 50,00,000</span>
                                             </div>
-                                        </div>  
-                                        {/* <div className='progress-slider'>
-                                            <div className='slider-range'></div>
-                                            <span className='slider-handle'></span>
-                                        </div> */}
-                                         <div class="slidercontainer">
-                                            <input class="slider" type="range" min="0" max="100"/>
                                         </div>
-                                </div>
+                                         <div class="slidercontainer">
+                                            <input className="slider" type="range" min="0" max="100"/>
+                                        </div>
+                                    </div>
+                                    <div className='cal-opt'>
+                                        <p>Interest Rate (per annum)</p>
+                                        <div className='value-card'>
+                                            <div></div>
+                                            <input type="text" value="11%" className="form-ctr"/>
+                                        </div>
+                                        <div class="range-figures">
+                                            <div className='range-item'>
+                                            <span>10%</span>
+                                            </div>
+                                            <div className='range-item'>
+                                            <span>36%</span>
+                                            </div>
+                                        </div>
+                                         <div class="slidercontainer">
+                                            <input className="slider" type="range" min="0" max="100"/>
+                                        </div>
+                                    </div>
+                                    <div className='cal-opt'>
+                                        <p>Tenure (in months)</p>
+                                        <div className='value-card'>
+                                            <div></div>
+                                            <input type="text" value="12" className="form-ctr"/>
+                                        </div>
+                                        <div class="range-figures">
+                                            <div className='range-item'>
+                                            <span>12 months</span>
+                                            </div>
+                                            <div className='range-item'>
+                                            <span>120 months</span>
+                                            </div>
+                                        </div>
+                                         <div class="slidercontainer">
+                                            <input className="slider" type="range" min="0" max="100"/>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div className='rightsec'>
-                                   
+                                   <div className='monthly-emi'>
+                                        <p>Monthly EMI</p>
+                                        <h6>26,514</h6>
+                                   </div>
                                 </div>
                             </div>                            
                            
