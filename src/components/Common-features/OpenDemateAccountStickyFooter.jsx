@@ -54,6 +54,18 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
     }
 
+    function chapterScroll1(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
+
     function handleTermsConditionShow() {
         setShowTermsCondition(true);
     }
@@ -254,7 +266,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                     webcheck == "Blog" ?
                         <div>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button>
+                                <div></div>
+                                {
+                                window.location.pathname.indexOf("demat-account") > -1
+                                ?
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button>
+                                :
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button> }
                             </div>
                             <section className="stickybottom">
                                 <div className="container mx-auto">

@@ -45,7 +45,7 @@ function IPOStocks() {
   return (
     <div>
       
-      <section className="ipo-stocks">
+      <section className="ipo-stocks" id="showForm">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
