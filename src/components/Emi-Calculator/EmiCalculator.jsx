@@ -1,10 +1,17 @@
 
-import React from 'react';
+// import React from 'react';
+import React,{useState,useEffect} from "react";
 import './emi-calculator.scss';
 
 
 function EmiCalculator() {
-    
+    const [value,onChange]=useState(0);
+    useEffect(()=>{
+        const ele = document.querySelector('.buble');
+    //   if (ele) {
+    //     ele.style.left = `${Number(value / 4)}px`;
+    //   }
+    })
     return (
         <div>
             <section className="emi-calculator">
@@ -31,12 +38,20 @@ function EmiCalculator() {
                                             <span>₹ 50,00,000</span>
                                             </div>
                                         </div>  
-                                        {/* <div className='progress-slider'>
-                                            <div className='slider-range'></div>
-                                            <span className='slider-handle'></span>
-                                        </div> */}
+                                       
                                          <div class="slidercontainer">
-                                            <input class="slider" type="range" min="0" max="100"/>
+                                            <div class="slidecontainer">
+                                                <div class="middle">
+                                                    <div class="slider-container">
+                                                        <span class="bar"><span class="fill" style={{width : `${value}%`}}></span></span>
+                                                        <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
+                                                    onChange={({ target: { value: radius } }) => {
+                                                                onChange(radius);
+                                                            }}
+                                                />
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                 </div>
                                 </div>
@@ -49,6 +64,17 @@ function EmiCalculator() {
                     </div>
                 </div>
             </section>
+
+            {/* <div className="slider-parent">
+                <input type="range" min="1" max="100" value={value}
+                    onChange={({ target: { value: radius } }) => {
+                                onChange(radius);
+                            }}
+                />
+                <div className="buble" width={value}> 
+                
+                </div>
+            </div> */}
         </div>
     );
 };
