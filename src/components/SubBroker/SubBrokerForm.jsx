@@ -27,7 +27,7 @@ function SubBrokerForm(props) {
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
-    const [brokerCityBranch, setBrokerCityBranch] = useState('');
+    const [brokerCityBranch, setBrokerCityBranch] = useState([]);
     const [brokerState, setBrokerState] = useState('');
     const [showState, setShowState] = useState(false);
     const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
@@ -47,6 +47,8 @@ function SubBrokerForm(props) {
     const [show, setShow] = useState(true);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
+    const [showNoDataLabel, setShowNoDataLabel] = useState(false);
+    const [showNoData1, setShowNoDataL] = useState(false);
     // const [value2, setValue2] = useState();
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
@@ -65,6 +67,8 @@ function SubBrokerForm(props) {
     const { executeRecaptcha } = useGoogleReCaptcha();
     const noDataLabel ="City not found. Select 'Other'";
     
+
+    console.log(`citiesDropdown : `,citiesDropdown)
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -160,7 +164,7 @@ function SubBrokerForm(props) {
     function handleBrokerCityBranch(e,isOther) {
         
         console.log('ooo',isOther);
-        console.log('DDDD',e);
+        console.log('DDDD',e[0]);
         if (e[0]) {
             let value = e[0].leadCity;
             setBrokerCityBranch(value);
@@ -174,16 +178,26 @@ function SubBrokerForm(props) {
             
             if (value === 'OTHERS') {
                 
+                
+
                 setBrokerState('');
                 setShowState(true);
             } else {
+                // console.log(`random value : `,value);
                 setBrokerState('');
                 setShowState(false);
             }
+        }else{
+            setBrokerState('');
+                setShowState(true);
+            setBrokerCityBranch("OTHERS")
         }
     }
-    const renderNoDataLabel=(e)=>(
-        <div className="p-2" onClick={() =>{
+    const renderNoDataLabel=(e)=>{
+        setShowNoDataLabel(false);
+
+            <div className="p-2" onClick={() =>{
+            
                 // var  value2=document.getElementsByClassName("p-2")[0];
                 // value2.innerHTML="OTHERS";
                 // console.log("value2",value2)
@@ -193,11 +207,16 @@ function SubBrokerForm(props) {
                 console.log('FFFF2', brokerCityBranch)
                 let isOther = true;
                 handleBrokerCityBranch(e,isOther);
+                
 
         } }>
-            {noDataLabel}
+           
+            { setShowNoDataL() ?
+            noDataLabel: ""}
         </div>
-    )
+        
+      
+    }
     
 
     function handleBrokerState(e) {
@@ -864,7 +883,7 @@ function SubBrokerForm(props) {
                                 }
                             </Form.Select> */}
                             <Select ref={selectInputRef}
-                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} noDataLabel={noDataLabel} noDataRenderer={renderNoDataLabel}/>
+                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} noDataLabel={noDataLabel} noDataRenderer={ ()=>{setShowNoDataLabel(true); return renderNoDataLabel } } />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
