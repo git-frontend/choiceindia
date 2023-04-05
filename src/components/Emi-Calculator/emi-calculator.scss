@@ -6,6 +6,7 @@
     padding: 7rem 0rem;
     background-color: $lightsky;
     position: relative;
+    min-height: 100vh;
     &::after{
         content: '';
         width:70rem;
@@ -46,6 +47,7 @@
             .heading-sec{
                 @media (max-width:$sm){
                     text-align: center;
+                    margin-top: 3rem;
                 }
             }
             .cal-opt{
@@ -55,13 +57,13 @@
                  }
                 &.mrg-top{
                     @media (max-width:$sm) {
-                       margin-top: 15rem;
+                       margin-top: 5rem;
                     }
                 }
                 p{
                     font-family: $font-family-poppins-medium;
                     font-weight: 500;
-                    font-size: 2rem;
+                    font-size: 1.8rem;
                     line-height: 1.5;
                     color: $bgcolordark;
                     @media (max-width:$md) {
@@ -88,6 +90,14 @@
                         border-radius: 15px;
                         padding: 15px 25px;
                         width: 13rem;
+                        font-size: 1.8rem;
+                        color: $primary;
+                        &::placeholder{
+                            color: $primary;
+                        }
+                        &:focus{
+                            outline: none;
+                        }
                     }
                 }
                 .range-figures{
@@ -95,12 +105,20 @@
                     justify-content: space-between;
                     margin-top: 2rem;
                     margin-bottom: 1rem;
+                    .range-item{
+                        .sm-tln{
+                            color: $primary;
+                            opacity: 0.6;
+                            font-size: 1.6rem;
+                            font-family: $font-family-poppins-medium;
+                        }
+                    }
                 }
 
                 .slidecontainer {
                     width: 100%;
                     position: relative;
-                    z-index: 99999999999;
+                    z-index: 9;
                     .middle {
                         width: 100%;
                         max-width: inherit;
@@ -165,28 +183,29 @@
                 width:100%;
             }
             .sticy{
-                // position: sticky;
-                // top: 100px;
+                display: flex;
+                justify-content: center;
+                padding-top: 10rem;
                 .monthly-emi {
                     background: $whiteColor;
                     text-align: center;
                     padding: 1rem 9rem;
                     border-radius: 15px;
-                    top: 12rem;
-                    position: absolute;
+                    position: relative;
+                    display: inline-block;
                     z-index: 1;
                     right: 0;
                     @media (max-width:$md) {
                         padding: 1rem 5rem;
                     }
                     @media (max-width:$sm) {
-                        margin-top: 5rem;
+                        // margin-top: 5rem;
                         width: 100%;
                     }
                     p{
                         font-family: $font-family-poppins-medium;
                         font-weight: 500;
-                        font-size: 2rem;
+                        font-size: 1.8rem;
                         line-height: 1.5;
                         color: $bgcolordark;
                         margin: 0;
@@ -206,6 +225,14 @@
                         }
                     }
                 }
+                @media (max-width:$sm){
+                    padding-top: 0;
+                }
+            }
+            @media (max-width:$sm){
+                position: sticky;
+                top: 76px;
+                z-index: 999999;
             }
         }
         }

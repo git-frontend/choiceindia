@@ -13,7 +13,7 @@ function EmiCalculator() {
     //   }
     })
     return (
-        <div>
+        <>
             <section className="emi-calculator">
                 <div className="container">
                     <div className="row">
@@ -40,15 +40,15 @@ function EmiCalculator() {
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
-                                            <span>₹  50,000</span>
+                                            <span className="sm-tln">₹  50,000</span>
                                             </div>
                                             <div className='range-item'>
-                                            <span>₹ 50,00,000</span>
+                                            <span className="sm-tln">₹ 50,00,000</span>
                                             </div>
                                         </div>  
                                             <div className="slidecontainer">
                                                 <div className="middle">
-                                                    <div class="slider-container">
+                                                    <div className="slider-container">
                                                         <span className="bar"><span className="fill" style={{width : `${value}%`}}></span></span>
                                                         <input type="range" className="slider" id="myRange1" min="0" max="100" value={value}
                                                     onChange={({ target: { value: radius } }) => {
@@ -67,10 +67,10 @@ function EmiCalculator() {
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
-                                            <span>10%</span>
+                                            <span className="sm-tln">10%</span>
                                             </div>
                                             <div className='range-item'>
-                                            <span>36%</span>
+                                            <span className="sm-tln">36%</span>
                                             </div>
                                         </div>
                                             <div className="slidecontainer">
@@ -94,10 +94,10 @@ function EmiCalculator() {
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
-                                            <span>12 months</span>
+                                            <span className="sm-tln">12 months</span>
                                             </div>
                                             <div className='range-item'>
-                                            <span>120 months</span>
+                                            <span className="sm-tln">120 months</span>
                                             </div>
                                         </div>
                                             <div className="slidecontainer">
@@ -119,7 +119,7 @@ function EmiCalculator() {
                     </div>
                 </div>
             </section>
-        </div>
+        </>
     );
 };
 export default EmiCalculator;
