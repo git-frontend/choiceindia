@@ -27,6 +27,9 @@ function SubBrokerForm(props) {
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
+    const [isOther, setIsOther] = useState(false);
+
+    
     const [brokerCityBranch, setBrokerCityBranch] = useState([]);
     const [brokerState, setBrokerState] = useState('');
     const [showState, setShowState] = useState(false);
@@ -47,8 +50,7 @@ function SubBrokerForm(props) {
     const [show, setShow] = useState(true);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
-    const [showNoDataLabel, setShowNoDataLabel] = useState(false);
-    const [showNoData1, setShowNoDataL] = useState(false);
+   
     // const [value2, setValue2] = useState();
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
@@ -160,6 +162,7 @@ function SubBrokerForm(props) {
         }
     }
     
+    
 
     function handleBrokerCityBranch(e,isOther) {
         
@@ -167,19 +170,13 @@ function SubBrokerForm(props) {
         console.log('DDDD',e[0]);
         if (e[0]) {
             let value = e[0].leadCity;
-            setBrokerCityBranch(value);
-            
+            setBrokerCityBranch([e[0]]);
             // console.log("cc",brokerCityBranch)
             setErrors((prevError) => ({
                 ...prevError,
                 'brokerCityBranch': {}
             }));
-
-            
             if (value === 'OTHERS') {
-                
-                
-
                 setBrokerState('');
                 setShowState(true);
             } else {
@@ -188,35 +185,56 @@ function SubBrokerForm(props) {
                 setShowState(false);
             }
         }else{
-            setBrokerState('');
-                setShowState(true);
-            setBrokerCityBranch("OTHERS")
+            // setBrokerState('');
+            //     setShowState(true);
+
+                
+            // let otherData  = e.props.options.find(e=>{
+            //     return e.leadCity=='OTHERS'
+            // })
+            // if(otherData){
+            //     console.log("otherData",otherData)
+            //     setBrokerCityBranch([otherData])
+            // }
+           // setBrokerCityBranch([otherData])
         }
     }
-    const renderNoDataLabel=(e)=>{
-        setShowNoDataLabel(false);
-
+    const renderNoDataLabel=(e)=>(
             <div className="p-2" onClick={() =>{
+                // e.methods.clearAll()
+               let otherData  = e.props.options.find(e=>{
+                return e.leadCity=='OTHERS'
+            })
+              setTimeout(() => {
             
+                if(otherData){
+                    console.log("otherData",otherData)
+                    setBrokerCityBranch([otherData])
+
+                    document.body.click()
+                    setBrokerState('');
+                setShowState(true);
+                }
+              }, 1000);
+              //  setBrokerCityBranch([otherData])
                 // var  value2=document.getElementsByClassName("p-2")[0];
                 // value2.innerHTML="OTHERS";
                 // console.log("value2",value2)
                 //  setBrokerCityBranch(value2);
                 // setBrokerCityBranch(value);
                 console.log('FFFF',citiesDropdown )
-                console.log('FFFF2', brokerCityBranch)
+                console.log('FFFF2', e)
                 let isOther = true;
-                handleBrokerCityBranch(e,isOther);
+               
+                
                 
 
         } }>
-           
-            { setShowNoDataL() ?
-            noDataLabel: ""}
+            {noDataLabel}
         </div>
         
       
-    }
+    )
     
 
     function handleBrokerState(e) {
@@ -803,8 +821,8 @@ function SubBrokerForm(props) {
         setBrokerName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
-        selectInputRef.current.clearAll();
-        setBrokerCityBranch("");
+        // selectInputRef.current.clearAll();
+        setBrokerCityBranch([]);
         setBrokerState('');
         setShowState(false);
         setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
@@ -883,7 +901,7 @@ function SubBrokerForm(props) {
                                 }
                             </Form.Select> */}
                             <Select ref={selectInputRef}
-                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} noDataLabel={noDataLabel} noDataRenderer={ ()=>{setShowNoDataLabel(true); return renderNoDataLabel } } />
+                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} values={brokerCityBranch} style={{ 'fontSize': 'large' }} noDataLabel={noDataLabel} noDataRenderer={renderNoDataLabel} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }
