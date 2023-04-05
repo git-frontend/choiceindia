@@ -512,7 +512,7 @@ export class API_URLS {
     }
 
     getOTPOnCallURL() {
-        return this.SSOServerURL + this.OTPOnCallURL;
+        return "https://sso-api.choiceindia.com/" + this.OTPOnCallURL;
     }
 
     getResendOTPURL() {
