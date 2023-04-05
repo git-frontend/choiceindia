@@ -540,7 +540,7 @@ function resendOTP(isResend) {
     });
 }
 //To verify OTP on call
-function getOTPOnCall(isResend){
+function getOTPOnCall(){
     // console.log("getOTPOnCall")
     showLoader('callOtpLoader2');
     let request = {
@@ -555,12 +555,12 @@ function getOTPOnCall(isResend){
 
             otpSessionID.current = res.data.Body.session_id;
             resetOTPPopup();
-            if (isResend)
+            
             handleOTPResendSuccessToaster('call');
         }else{
-            if (isResend) {
+            
                 setOTPErrors((res.data && res.data.Message) ? res.data.Message :  "Something went wrong, please try again later!");
-            }
+            
         }
     }).catch((error) => {
         hideLoader('callOtpLoader2');

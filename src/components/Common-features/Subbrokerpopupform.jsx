@@ -604,7 +604,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
             });
         }
     //to get otp on call
-    function getOTPOnCall(isResend){
+    function getOTPOnCall(){
         // console.log("check")
         showLoader('callOtpLoader2');
         // console.log("old_session_id",otpSessionID.current)
@@ -620,12 +620,12 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
     
                 otpSessionID.current = res.data.Body.session_id;
                 resetOTPPopup();
-                if (isResend)
+               
                 handleOTPResendSuccessToaster('call');
             }else{
-                if (isResend) {
+               
                     setOTPErrors((res.data && res.data.Message) ? res.data.Message : "Something went wrong, please try again later!");
-                }
+                
             }
         }).catch((error) => {
             hideLoader('callOtpLoader2');

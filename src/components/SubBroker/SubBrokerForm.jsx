@@ -584,6 +584,7 @@ function SubBrokerForm(props) {
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && res.data.Body && res.data.Body.session_id) {
                 otpSessionID.current = res.data.Body.session_id;
+                console.log("send otp session",otpSessionID.current)
                 // if (!isResend)
                 resetOTPPopup();
                 if (!isResend)
@@ -632,6 +633,7 @@ function SubBrokerForm(props) {
             if(res && res.data && res.data.Body && res.data.Body.session_id){
 
                 otpSessionID.current = res.data.Body.session_id;
+                // console.log("resnd OTP otpSessionID",res.data.Body.session_id)
                 resetOTPPopup();
                 if (isResend)
                 handleOTPResendSuccessToaster('otp');
@@ -651,7 +653,7 @@ function SubBrokerForm(props) {
         });
     }
 //to get otp on call
-function getOTPOnCall(isResend){
+function getOTPOnCall(){
     // console.log("check")
     showLoader('callOtpLoader2');
     // console.log("old_session_id",otpSessionID.current)
@@ -664,15 +666,12 @@ function getOTPOnCall(isResend){
         // console.log("OTPOnCall",res)
         hideLoader('callOtpLoader2');
         if(res && res.data && res.data.Body && res.data.Body.session_id){
-
             otpSessionID.current = res.data.Body.session_id;
+            // console.log("call  OTP otpSessionID",otpSessionID.current)
             resetOTPPopup();
-            if (isResend)
             handleOTPResendSuccessToaster('call');
         }else{
-            if (isResend) {
                 setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-            }
         }
     }).catch((error) => {
         hideLoader('callOtpLoader2');

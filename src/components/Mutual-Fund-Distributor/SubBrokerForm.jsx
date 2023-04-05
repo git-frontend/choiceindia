@@ -606,7 +606,7 @@ function SubBrokerForm(props) {
     }
 
     //To verify OTP on call
-    function getOTPOnCall(isResend){
+    function getOTPOnCall(){
         // console.log("getOTPOnCall")
         showLoader('callOtpLoader2');
         let request = {
@@ -621,12 +621,12 @@ function SubBrokerForm(props) {
     
                 otpSessionID.current = res.data.Body.session_id;
                 resetOTPPopup();
-                if (isResend)
+              
                 handleOTPResendSuccessToaster('call');
             }else{
-                if (isResend) {
+                
                     setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
-                }
+                
             }
         }).catch((error) => {
             hideLoader('callOtpLoader2');
