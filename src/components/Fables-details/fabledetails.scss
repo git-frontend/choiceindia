@@ -237,6 +237,65 @@
             @media screen and (max-width: $sm) {
                 text-align: left;
             }
+            .blog-cta {
+                background: $pinklight2;
+                padding: 3rem 2rem;
+                margin-top: 4rem;
+                text-align: left;
+                max-width: 790px;
+               
+                h3{
+                    font-size: 2.7rem;
+                    font-family: $font-family-poppins-medium;
+                    font-weight: 500;
+                    padding: 0;
+                    padding-bottom: 2rem;
+                    @media (max-width:$md) {
+                        font-size: 2.5rem;
+                    }
+                    @media (max-width:$sm) {
+                        text-align: center;
+                        font-size: 2rem;
+                    }
+                    strong, b{
+                        font-family: $font-family-poppins-bold;
+                        font-weight: bold;
+                    }
+                }
+                ul{
+                    list-style: none;
+                    padding: 0;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    li{
+                        width: 47%;
+                        font-size: 1.7rem;
+                        line-height: 1.5;
+                        margin-bottom: 1.5rem;
+                        position: relative;
+                        padding-left: 2.5rem;
+                        @media (max-width:$sm) {
+                            width: 100%;
+                        }
+                        &::before{
+                            content: '✓';
+                            color: $whiteColor;
+                            font-size: 14px;
+                            font-weight: bold;
+                            background-color: $bg-check;
+                            display: inline-block;
+                            border-radius: 50%;
+                            height: 20px;
+                            width: 20px;
+                            text-align: center;
+                            position: absolute;
+                            left: 0;
+                            top: 4px;
+                        }
+                    }
+                }
+            }
         }
     
         .right-social-links {
@@ -285,59 +344,7 @@
             }
         }
 
-        .blog-cta {
-            background: $pinklight2;
-            padding: 3rem 4rem;
-            margin-top: 4rem;
-            @media (max-width:$sm) {
-                padding: 3rem 2rem;
-            }
-            h3{
-                font-size: 3rem;
-                font-weight: 500;
-                padding-bottom: 2rem;
-                @media (max-width:$md) {
-                    font-size: 2.5rem;
-                }
-                @media (max-width:$sm) {
-                    text-align: center;
-                    font-size: 2rem;
-                }
-            }
-            ul{
-                list-style: none;
-                padding: 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-                li{
-                    width: 47%;
-                    font-size: 1.5rem;
-                    line-height: 1.5;
-                    margin-bottom: 1.5rem;
-                    position: relative;
-                    padding-left: 2.5rem;
-                    @media (max-width:$sm) {
-                        width: 100%;
-                    }
-                    &::before{
-                        content: '✓';
-                        color: $whiteColor;
-                        font-size: 14px;
-                        font-weight: bold;
-                        background-color: $bg-check;
-                        display: inline-block;
-                        border-radius: 50%;
-                        height: 20px;
-                        width: 20px;
-                        text-align: center;
-                        position: absolute;
-                        left: 0;
-                        top: 4px;
-                    }
-                }
-            }
-        }
+      
        
     }
      .recommendation {
@@ -477,3 +484,4 @@
        
 //     }
 // }
+

@@ -111,18 +111,7 @@ function Fabdetailsbanner(props) {
                                     }
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} /> */}
-                                    <div className="blog-cta">
-                                        <h3>Open a <strong>FREE</strong> Demat Account in <strong>5 Mins.</strong></h3>
-                                        <ul>
-                                            <li><strong>Free AMC</strong> for First Year</li>
-                                            <li><strong>Low DP</strong> Charges (₹ 10)</li>
-                                            <li><strong>No Auto Square Off</strong> Charges</li>
-                                            <li><strong>Free Research</strong> Advisory</li>
-                                        </ul>
-                                        <div className="text-center">
-                                                <a href="/" className="btn-bg">Open Now</a>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
                                 <div className="row">
                             <div className="col-md-11">
