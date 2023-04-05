@@ -5,6 +5,7 @@ import './emi-calculator.scss';
 
 
 function EmiCalculator() {
+    const [loanvalue, Setloanvalue]=useState(500000)
     const [value,onChange]=useState(0);
     useEffect(()=>{
         const ele = document.querySelector('.buble');
@@ -12,6 +13,10 @@ function EmiCalculator() {
     //     ele.style.left = `${Number(value / 4)}px`;
     //   }
     })
+
+    const handleInputChange = (event) => {
+        Setloanvalue(event.target.value);
+      };
     return (
         <>
             <section className="emi-calculator">
@@ -36,11 +41,11 @@ function EmiCalculator() {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder="3,00,000" className="form-ctr"/>
+                                            <input type="text" placeholder=" " className="form-ctr" value={loanvalue} onChange={handleInputChange}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
-                                            <span className="sm-tln">₹  50,000</span>
+                                            <span className="sm-tln">₹ 50,000</span>
                                             </div>
                                             <div className='range-item'>
                                             <span className="sm-tln">₹ 50,00,000</span>
@@ -49,11 +54,9 @@ function EmiCalculator() {
                                             <div className="slidecontainer">
                                                 <div className="middle">
                                                     <div className="slider-container">
-                                                        <span className="bar"><span className="fill" style={{width : `${value}%`}}></span></span>
-                                                        <input type="range" className="slider" id="myRange1" min="0" max="100" value={value}
-                                                    onChange={({ target: { value: radius } }) => {
-                                                                onChange(radius);
-                                                            }}
+                                                        <span className="bar"><span className="fill" style={{width :`${loanvalue}%`}}></span></span>
+                                                        <input type="range" className="slider"  min="50000" max="5000000" value={loanvalue}
+                                                    onChange={handleInputChange}
                                                 />
                                                     </div>
                                                 </div>
