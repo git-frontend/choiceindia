@@ -58,7 +58,6 @@ function EmiCalculator() {
                                                     </div>
                                                 </div>
                                             </div>
-                                        
                                     </div>
                                     <div className='cal-opt'>
                                         <p>Interest Rate (per annum)</p>
@@ -115,15 +114,11 @@ function EmiCalculator() {
                                             </div>
                                     </div>
                                 </div>
-                                
                             </div>                            
-                           
                         </div>
                     </div>
                 </div>
             </section>
-
-           
         </div>
     );
 };
