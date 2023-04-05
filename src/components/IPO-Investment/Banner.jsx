@@ -1,5 +1,5 @@
 
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 // import videoBg from '../../assets/images/insurance/insuringShield.mp4'
 import icon1 from '../../assets/images/ipo/ipo-account/ipo-analysis-by-experts.svg'
 import icon2 from '../../assets/images/ipo/ipo-account/ipo-report-to-take-decision.svg'
@@ -8,7 +8,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import Equity from "../../Data/Equity";
 import DematAccountForm from '../Common-features/DematAccountForm'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
-import { useEffect } from "react";
+// import { useEffect } from "react";
 
 function Banner() {
     const [selected, setSelected] = useState(0);
@@ -18,26 +18,39 @@ function Banner() {
 		matches: window.innerWidth < 767 ? false : true,
 	});
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //         setshowCaptcha(true);
-    //     },3000) 
-    // },[])
+    /** scroll purpose */
+    function chapterScroll(id) {
+        console.log("check",id);
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
 
-    // useEffect(() => {
-	// 	let mediaQuery = window.matchMedia("(min-width: 767px)");
-	// 	mediaQuery.addListener(setView);
-	// 	// this is the cleanup function to remove the listener
-	// 	return () => mediaQuery.removeListener(setView);
-	// }, []);
+      const [name, setName ] = useState('hideform1');
+      /** hide and show section */
+      const getPosition = () => {
+        const element = document.getElementById("showForm");
+        console.log(element,"hgfh")
+        if(element){
+            const rect = element.getBoundingClientRect();
+          
+            if(rect.top.toFixed() < 259){
+                setName('visibleform1');
+            }else{
+                setName('hideform1');
+            }   
+        }
+    };
+    
+    useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
 
-    // useEffect(() => {
-    //     new PerformanceObserver((entryList) => {
-    //         for (const entry of entryList.getEntriesByName('first-contentful-paint')) {
-    //           console.log('FCP candidate:', entry.startTime, entry);
-    //         }
-    //       }).observe({type: 'paint', buffered: true});
-    // },[])
 
     return (
         <div onMouseOver={() => setIscheck(true)}>
@@ -80,8 +93,15 @@ function Banner() {
                             </div>
                         </div>
                     </div>
+                   
                 </div>
             </section>
+
+            <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn"  onClick={()=>{chapterScroll('ipoForm')}}>Open Free Account</button>
+                    </div>
+                    </div>
         </div>
     );
 }

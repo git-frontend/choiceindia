@@ -71,7 +71,7 @@ function BannerSection() {
 															{/* <img src={response.feature_image} alt="loading" className="img-blog"/> */}
 														</div>
 														<div className="trending-itm-des">
-															<p>{response.meta_description}</p>
+															<p>{response.meta_title}</p>
 														</div>
 													</Link>
 													{/**</a>*/}
