@@ -201,20 +201,24 @@ function SubBrokerForm(props) {
     }
     const renderNoDataLabel=(e)=>(
             <div className="p-2" onClick={() =>{
-                // e.methods.clearAll()
+                
                let otherData  = e.props.options.find(e=>{
                 return e.leadCity=='OTHERS'
             })
               setTimeout(() => {
-            
+                setBrokerCityBranch([])
+             setTimeout(() => {
                 if(otherData){
-                    console.log("otherData",otherData)
+                    // console.log("otherData",otherData)
+                    //e.methods.clearAll()
+                    // console.log("e.methods",e.methods)
                     setBrokerCityBranch([otherData])
-
-                    document.body.click()
                     setBrokerState('');
-                setShowState(true);
+                    setShowState(true);
+                    document.body.click()
+  
                 }
+             }, 500);
               }, 1000);
               //  setBrokerCityBranch([otherData])
                 // var  value2=document.getElementsByClassName("p-2")[0];
