@@ -8,7 +8,7 @@ import { useState,useEffect } from "react";
 import Template2 from '../Common-features/Template2';
 
 import "../home-page/style.scss"
-import "./services.scss";
+import "./inv-banking.scss";
 import {
   useLocation,
 } from 'react-router-dom';
