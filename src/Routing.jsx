@@ -137,6 +137,7 @@ const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
 function Routing() {
 
 
@@ -765,6 +766,11 @@ function Routing() {
                         <Route exact path='/loan/privacy-policy' element={
                             <React.Suspense>
                                 < LazyLoanPrivacyPolicy />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/services/investment-banking' element={
+                            <React.Suspense>
+                                < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
  
