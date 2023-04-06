@@ -88,6 +88,11 @@ function nbfcForm(props) {
             
                 })
    }
+   useEffect(() => {
+   
+        nbfcAuthsecurity();
+   
+}, []);
 
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
@@ -807,7 +812,7 @@ function nbfcForm(props) {
     
                         <div className="sub-formgrp mt-5 mb-0">
                             <Button variant="primary"
-                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} onClick={nbfcAuthsecurity}>
+                                type="button" className="btn-bg btn-bg-dark sendbtn" disabled={loaders.sendOTPLoader || !isChecked || !isChecked2||!isChecked3} >
                                 {loaders.sendOTPLoader ? <div className="loaderB mx-auto"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'sendotpbtn', 'Send OTP')}
                             </Button>
                             {/* <Button variant="primary"
