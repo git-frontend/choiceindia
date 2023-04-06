@@ -24,15 +24,10 @@ function Banner() {
                                 <h1 className="title">Merchant Banking and Investment Banking</h1>
                             </div>
                         </div>
-                        <div className="col-md-7 d-none d-sm-block">
-
-                            {
-                                skeleton?
-                                <SingleTemplate/>:
-                                <div className="rightsec ">
-                                    <LazyLoader src={Bannerimage} alt={"Merchant Banking and Investment Banking"} className={"img-fluid top-banner-img"} width={"780"} height={"517"}/>
+                        <div className="col-md-7 d-none d-sm-block">                           
+                             <div className="rightsec ">
+                                <LazyLoader src={Bannerimage} alt={"Merchant Banking and Investment Banking"} className={"img-fluid top-banner-img"} width={"780"} height={"517"}/>
                             </div>
-                            }
                         </div>
                     </div>
                 </div>

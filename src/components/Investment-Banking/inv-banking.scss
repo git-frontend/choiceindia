@@ -7,6 +7,7 @@
     animation: hideMe 4s forwards;
 }
 
+
 .investment-banking-banner{
     background: $pinklight3;
     padding: 5rem 0 7rem;
@@ -73,6 +74,10 @@
 }
 
 .inv-banking{
+    img{
+        border: 0;
+        outline: none;
+    }
     .banking-about{
         padding: 10rem 0 2rem 0;
         .ttl-new{
