@@ -21,8 +21,9 @@ const authHeaders = {
   'Source': 'choice',
   // "Username":"dc1b5058275941149e3457b73ae4b17a",
   // "Password":"99c0259a-ed0c-401d-a786-603a842ea64e",
-  // 'Authorization':"Basic YmFramhramZhZmtmZTpydGhqa2p5dGh0cWVncndoZWg=",
-  'Authorization': 'Bearer '+ btoa('dc1b5058275941149e3457b73ae4b17a' + ":" + '99c0259a-ed0c-401d-a786-603a842ea64e'),
+  //  'Authorization':"Basic ZGMxYjUwNTgyNzU5NDExNDllMzQ1N2I3M2FlNGIxN2E6OTljMDI1OWEtZWQwYy00MDFkLWE3ODYtNjAzYTg0MmVhNjRl",
+ 
+  'Authorization': 'Basic '+ btoa('dc1b5058275941149e3457b73ae4b17a' + ":" + '99c0259a-ed0c-401d-a786-603a842ea64e'),
 }
 
 
@@ -49,7 +50,8 @@ const NbfcService = {
   },
 
 
-  nbfcLead: function (request,type) {
+  nbfcLead: function (request,type,token) {
+    
     let url =  apiURL.getNbfcLead(type) 
      return  axios.post(url, request,{ headers: newHeaders });
   },

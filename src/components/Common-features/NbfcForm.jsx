@@ -568,7 +568,7 @@ function nbfcForm(props) {
 
     }
 
-    function NbfcLead() {
+    function NbfcLead(token) {
         let request = {
             "data": {
                 "firstName": brokerName,
@@ -586,7 +586,7 @@ function nbfcForm(props) {
 
         };
         showLoader('addLeadLoader');
-        NbfcService.nbfcLead(request, type).then((res) => {
+        NbfcService.nbfcLead(request, type,token).then((res) => {
             hideLoader('addLeadLoader');
             // console.log(res, "addNewLead");
             if (res && res.data && !res.data.errorCode) {
