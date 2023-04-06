@@ -37,7 +37,7 @@ const config = {
     UATperformanceURL: "https://uat.jiffy.in/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
-    UATnbfcBaseURL: "https://choice-dev.synofin.tech/api/od/od-application-creation/",
+    UATnbfcBaseURL: "https://api-uat.synofin.tech/od/od-application-creation/",
     livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
     // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
     UATNachBaseURL:"https://dev-api.choicetechlab.com/",
@@ -737,7 +737,7 @@ export class API_URLS {
     }
 
     getNbfcLead(subProduct){
-        return  this.nbfcBaseURL + `v1/lead/source/${subProduct}`
+        return  this.nbfcBaseURL + `/v1/lead/source/${subProduct}`
     }
     getDepartmentURL(){
         return this.bannerURL + this.departmentURL
