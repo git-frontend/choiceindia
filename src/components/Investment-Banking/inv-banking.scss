@@ -117,6 +117,9 @@
         .nt-ttle{
             font-family: $font-family-poppins-medium;
             margin-bottom: 2rem;
+            @media (max-width: $sm) {
+               text-align: center;
+            }
         }
         .bnr-left{
             
@@ -170,6 +173,9 @@
             @media (max-width: $sm) {
                 padding: 3rem 2rem;
             }
+        }
+        @media (max-width: $sm) {
+            padding-top: 4rem;
         }
     }
 }

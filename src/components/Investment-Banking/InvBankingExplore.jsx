@@ -59,7 +59,7 @@ function InvBankingExplore() {
                                             <div className="col-xl-5 col-md-6">
                                                 <div className="bnr-left">
                                                     <h3 className="title-secnd nt-ttle">Merchant banking:</h3>
-                                                    <p>It’s a division responsible for growing your business while partnering with your firm for a progressive synergy.</p>
+                                                    <p className="mb-0">It’s a division responsible for growing your business while partnering with your firm for a progressive synergy.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -107,7 +107,7 @@ function InvBankingExplore() {
                                     <div className="col-xl-5 col-md-6">
                                         <div className="bnr-left">
                                             <h3 className="title-secnd nt-ttle">IPO Readiness:</h3>
-                                            <p>Our team understands the dynamics of various industries for assisting our clients looking for going public</p>
+                                            <p className="mb-0">Our team understands the dynamics of various industries for assisting our clients looking for going public</p>
                                         </div>
                                     </div>
                                 </div>
@@ -129,7 +129,7 @@ function InvBankingExplore() {
                                             <div className="col-xl-5 col-md-6">
                                                 <div className="bnr-left">
                                                     <h3 className="title-secnd nt-ttle">Valuation:</h3>
-                                                    <p>We carry more than 20 years of cumulative core valuation experience, spread across more than 10 sectors and have successfully executed more than 150 valuation assignments.</p>
+                                                    <p className="mb-0">We carry more than 20 years of cumulative core valuation experience, spread across more than 10 sectors and have successfully executed more than 150 valuation assignments.</p>
                                                 </div>
                                             </div>
                                         </div>
