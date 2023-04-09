@@ -5,18 +5,32 @@ import './emi-calculator.scss';
 
 
 function EmiCalculator() {
-    const [loanvalue, Setloanvalue]=useState(500000)
-    const [value,onChange]=useState(0);
+    const [loanAmount, setLoanAmount]=useState(50000);
+    const [interestRate, setInterestRate] = useState(10);
+    const [tenure, setTenure] = useState(12);
+    const [monthlyEMI, setMonthlyEMI] = useState(0);
+    const value="";
     useEffect(()=>{
         const ele = document.querySelector('.buble');
-    //   if (ele) {
-    //     ele.style.left = `${Number(value / 4)}px`;
-    //   }
+        calculateEmi();
     })
+    const handleInterestRateChange = (event) => {
+        const newInterestRate = Number(event.target.value);
+        setInterestRate(newInterestRate);
+      }
+   // function to handle changes to the tenure value
+  const handleTenureChange = (event) => {
+    const newTenure = Number(event.target.value);
+    setTenure(newTenure);
+  }
 
-    const handleInputChange = (event) => {
-        Setloanvalue(event.target.value);
-      };
+  const calculateEmi = () => {
+    const r = interestRate / (12 * 100); // monthly interest rate
+    const n = tenure; // tenure in months
+    const p = loanAmount; // loan amount
+    const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    setMonthlyEMI(emiValue.toFixed(0));
+  }
     return (
         <>
             <section className="emi-calculator">
@@ -26,10 +40,12 @@ function EmiCalculator() {
                             <div className='emi-flex'>
                                 <div className='rightsec'>
                                     <div className="sticy">
+                                    {monthlyEMI > 0 &&
                                         <div className='monthly-emi'>
                                             <p>Monthly EMI</p>
-                                            <h6>26,514</h6>
+                                            <h6><span>{monthlyEMI}</span></h6>
                                         </div>
+}
                                     </div>
                                 </div>
                                 <div className='leftsec'>
@@ -41,7 +57,7 @@ function EmiCalculator() {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder=" " className="form-ctr" value={loanvalue} onChange={handleInputChange}/>
+                                            <input type="text" placeholder=" " className="form-ctr" value={loanAmount} onChange={(event) => setLoanAmount(event.target.value)}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -54,9 +70,9 @@ function EmiCalculator() {
                                             <div className="slidecontainer">
                                                 <div className="middle">
                                                     <div className="slider-container">
-                                                        <span className="bar"><span className="fill" style={{width :`${loanvalue}%`}}></span></span>
-                                                        <input type="range" className="slider"  min="50000" max="5000000" value={loanvalue}
-                                                    onChange={handleInputChange}
+                                                        <span className="bar"><span className="fill" style={{width :`${loanAmount}%`}}></span></span>
+                                                        <input type="range" className="slider"  min="50000" max="5000000" value={loanAmount}
+                                                    onChange={(event) => setLoanAmount(event.target.value)}
                                                 />
                                                     </div>
                                                 </div>
@@ -66,7 +82,7 @@ function EmiCalculator() {
                                         <p>Interest Rate (per annum)</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder="11%" className="form-ctr"/>
+                                            <input type="text" placeholder="11%" step="1" className="form-ctr" value={interestRate} onChange={(event) => setInterestRate(event.target.value)}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -79,11 +95,9 @@ function EmiCalculator() {
                                             <div className="slidecontainer">
                                                 <div className="middle">
                                                     <div className="slider-container">
-                                                        <span className="bar"><span className="fill" style={{width : `${value}%`}}></span></span>
-                                                        <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
-                                                    onChange={({ target: { value: radius } }) => {
-                                                                onChange(radius);
-                                                            }}
+                                                        <span className="bar"><span className="fill" style={{width : `${interestRate}%`}}></span></span>
+                                                        <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
+                                                    onChange={handleInterestRateChange}
                                                 />
                                                     </div>
                                                 </div>
@@ -93,7 +107,7 @@ function EmiCalculator() {
                                         <p>Tenure (in months)</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder="12" className="form-ctr"/>
+                                            <input type="text" placeholder="12" className="form-ctr" value={tenure}  onChange={handleTenureChange}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -107,11 +121,7 @@ function EmiCalculator() {
                                                 <div className="middle">
                                                     <div className="slider-container">
                                                         <span className="bar"><span className="fill" style={{width : `${value}%`}}></span></span>
-                                                        <input type="range" className="slider" id="myRange" min="0" max="100" value={value}
-                                                    onChange={({ target: { value: radius } }) => {
-                                                                onChange(radius);
-                                                            }}
-                                                />
+                                                        <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleTenureChange}/>
                                                     </div>
                                                 </div>
                                             </div>
