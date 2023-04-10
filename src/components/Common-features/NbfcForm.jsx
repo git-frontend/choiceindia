@@ -80,13 +80,13 @@ function nbfcForm(props) {
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
     }
-
+//authentication api for access token
     function nbfcAuthsecurity(request) {
         NbfcService.authorization(request).then((res) => {
             // console.log("res",res)
             if (res && res.data && res.data.data) {
                 let tokenid = res.data.data
-                console.log("check",tokenid.auth_data.access_token,res.data.data.auth_data.access_token)
+                // console.log("check",tokenid.auth_data.access_token,res.data.data.auth_data.access_token)
 
                     NbfcLead(tokenid.auth_data.access_token);
                 
@@ -198,11 +198,9 @@ function nbfcForm(props) {
 
 
 
-
+//To send OTP
     function handleSendOTP(e) {
         e == 'resend' ? setmsg(e) : e.preventDefault();
-
-
         console.log("check")
 
         let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerLastNameValid = false;
@@ -225,7 +223,7 @@ function nbfcForm(props) {
 
         }
     }
-
+//for validating Name field
     function validateBrokerName(brokerName, fromUseEffect) {
         let isBrokerNameValid = false;
         if (!brokerName.length) {
@@ -247,6 +245,8 @@ function nbfcForm(props) {
         }
         return isBrokerNameValid;
     }
+
+    //for validating last name field
     function validateLastName(lastName, fromUseEffect) {
         let isBrokerLastNameValid = false;
         if (!lastName.length) {
@@ -269,6 +269,7 @@ function nbfcForm(props) {
         return isBrokerLastNameValid;
     }
 
+    //for validating mobile number field
     function validateBrokerMobileNumber(brokerMobileNumber, fromUseEffect) {
         let isBrokerMobileNumberValid = false;
         if (!brokerMobileNumber.length) {
@@ -305,7 +306,7 @@ function nbfcForm(props) {
         setOTPErrors('');
         setCount(60);
     }
-
+//UTM Identifier
     function fetchQueryParams() {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
@@ -460,7 +461,7 @@ function nbfcForm(props) {
         isResend ? nbfcResend(true) : nbfcsendOtp(false)
 
     }
-
+// for Mobile OTP
     function nbfcsendOtp() {
         showLoader('sendOTPLoader');
         let request = {
@@ -546,6 +547,8 @@ function nbfcForm(props) {
         })
     }
 
+    // for resend  OTP
+
     function nbfcResend() {
         hideLoader('resendOTPLoader');
         let request = {
@@ -583,7 +586,7 @@ function nbfcForm(props) {
         });
 
     }
-
+//to lead generate
     function NbfcLead(authtoken) {
         let request = {
             "data": {
@@ -638,7 +641,7 @@ function nbfcForm(props) {
 
         });
     }
-
+// for verify OTP
     function verifyOTP() {
         if (!otp.length) {
             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
