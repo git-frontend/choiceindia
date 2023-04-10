@@ -561,3 +561,26 @@ body{
 		}
 	}
 }
+
+.btn-fixed {
+    @media (max-width:$sm) {
+    .openbtn{
+        &:hover{
+            background: #FFCE02 !important;
+            color: #221F20 !important;
+        }
+    }
+}
+} 
+.hideform1{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform1{
+
+    @media (max-width: $sm) {
+    display: block !important;
+    }
+}

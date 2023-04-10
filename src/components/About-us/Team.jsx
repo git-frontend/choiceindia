@@ -8,10 +8,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Slider from "react-slick";
 import LazyLoader from '../Common-features/LazyLoader';
 import BoardOfDirector from '../../Data/Strategies';
+import { useEffect } from "react";
+import { useRef } from "react";
 
 function Team() {
   const [value, setValue] = useState(0);
   const[IsShown2,setIsShown2]= useState(false)
+
+  /**use Ref hook to get actual instance and sliderRef constant of type Slider */
+  const sliderRef = useRef(<Slider></Slider>);
 
   const settings = {
     infinite: true,
@@ -47,6 +52,17 @@ function closesection(){
   setIsShown2(false)
 }
 
+function openPopup() {
+  sliderRef.current.slickPause();
+  setIsShown2(true);
+}
+
+function closesection(){
+sliderRef.current.slickPlay();
+setIsShown2(false)
+}
+
+
   return (
     <div>
 
@@ -60,11 +76,11 @@ function closesection(){
           <div className="row">
             <div className="col-md-12">
               <div className="team-list">
-                <Slider {...settings} className="team-list-slider">
+                <Slider ref={sliderRef} {...settings} className="team-list-slider">
                 {
                       BoardOfDirector?.map((res,i)=>{
                         return(
-                  <div className="" onClick={() => {setValue(i),setIsShown2(true)}}>
+                  <div className="" onClick={() => {setValue(i),openPopup()}} key={i}>
                    <div className="team-item">
                       <span className="img-itm">
                         <LazyLoader src={res.image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />

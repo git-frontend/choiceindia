@@ -1,6 +1,6 @@
 
 import React, { useState,useEffect } from "react";
-import Bannerimage from '../../assets/images/fabledetails/detailbanner.png';
+import Bannerimage from '../../assets/images/fabledetails/choice-blog-default.png';
 // import twitterone from '../../assets/images/fabledetails/twitterone.png';
 // import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -101,16 +101,17 @@ function Fabdetailsbanner(props) {
                         <div className="row">
                             <div className={fetchContainerClassName()}>
                                 <div className="imgblock">
-                                    {
+                                    {/* {
                                         
                                             props.single_data[0].feature_image ?
                                             <img src={props.single_data[0].feature_image} className="img-fluid" alt={props.single_data[0].title} />:
                                             ""
     
                                         
-                                    }
+                                    } */}
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} /> */}
+                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title || 'Choice Blog'} />
                                 </div>
                                 <div className="row">
                             <div className="col-md-11">
