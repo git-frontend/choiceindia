@@ -5,8 +5,8 @@ import './emi-calculator.scss';
 
 
 function EmiCalculator() {
-    const [loanAmount, setLoanAmount]=useState(50000);
-    const [interestRate, setInterestRate] = useState(10);
+    const [loanAmount, setLoanAmount]=useState(300000);
+    const [interestRate, setInterestRate] = useState(11);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
     const value="";
@@ -30,6 +30,7 @@ function EmiCalculator() {
     const p = loanAmount; // loan amount
     const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
     setMonthlyEMI(emiValue.toFixed(0));
+
   }
     return (
         <>
@@ -43,7 +44,7 @@ function EmiCalculator() {
                                     {monthlyEMI > 0 &&
                                         <div className='monthly-emi'>
                                             <p>Monthly EMI</p>
-                                            <h6><span>{monthlyEMI}</span></h6>
+                                            <h6><span>{(monthlyEMI).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span></h6>
                                         </div>
 }
                                     </div>
@@ -57,7 +58,7 @@ function EmiCalculator() {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder=" " className="form-ctr" value={loanAmount} onChange={(event) => setLoanAmount(event.target.value)}/>
+                                            <input type="text" placeholder=" " className="form-ctr" value={(loanAmount).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")} onChange={(event) => setLoanAmount(event.target.value)}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -71,7 +72,7 @@ function EmiCalculator() {
                                                 <div className="middle">
                                                     <div className="slider-container">
                                                         <span className="bar"><span className="fill" style={{width :`${loanAmount}%`}}></span></span>
-                                                        <input type="range" className="slider"  min="50000" max="5000000" value={loanAmount}
+                                                        <input type="range" className="slider"  min="50000" max="5000000" value={(loanAmount)}
                                                     onChange={(event) => setLoanAmount(event.target.value)}
                                                 />
                                                     </div>
