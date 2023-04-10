@@ -1,9 +1,9 @@
 
 import React from "react";
-import image1 from '../../assets/images/investment-banking/investment-banking.webp';
+import image1 from '../../assets/images/investment-banking/investment-banking-advisory.webp';
 import image2 from '../../assets/images/investment-banking/merchant-banking.webp';
-import image3 from '../../assets/images/investment-banking/ipo-readiness.webp';
-import image4 from '../../assets/images/investment-banking/valuation.webp';
+import image3 from '../../assets/images/investment-banking/ipo-review.webp';
+import image4 from '../../assets/images/investment-banking/business-valuation.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 
 function InvBankingExplore() {
@@ -28,7 +28,7 @@ function InvBankingExplore() {
                                 <div className="row gx-5 align-items-center flex-md-row-reverse">
                                     <div className="col-xl-7 col-md-6 d-flex justify-content-end">
                                         <div className="rightsec ">
-                                            <LazyLoader src={image1} alt={""} className={"img-fluid"} width={"443"} height={"334"} />
+                                            <LazyLoader src={image1} alt={"Investment Banking Advisory"} className={"img-fluid"} width={"443"} height={"334"} />
                                         </div>
                                     </div>
                                     <div className="col-xl-5 col-md-6">
@@ -53,7 +53,7 @@ function InvBankingExplore() {
 
                                             <div className="col-xl-7 col-md-6 d-flex justify-content-start">
                                                 <div className="rightsec ">
-                                                    <LazyLoader src={image2} alt={""} className={"img-fluid"} width={"419"} height={"411"} />
+                                                    <LazyLoader src={image2} alt={"Merchant Banking"} className={"img-fluid"} width={"419"} height={"411"} />
                                                 </div>
                                             </div>
                                             <div className="col-xl-5 col-md-6">
@@ -101,7 +101,7 @@ function InvBankingExplore() {
                                 <div className="row gx-5 align-items-center flex-md-row-reverse">
                                     <div className="col-xl-7 col-md-6 d-flex justify-content-end">
                                         <div className="rightsec ">
-                                            <LazyLoader src={image3} alt={"IPO Readiness"} className={"img-fluid"} width={"420"} height={"407"} />
+                                            <LazyLoader src={image3} alt={"IPO Review"} className={"img-fluid"} width={"420"} height={"407"} />
                                         </div>
                                     </div>
                                     <div className="col-xl-5 col-md-6">
@@ -123,7 +123,7 @@ function InvBankingExplore() {
 
                                             <div className="col-xl-7 col-md-6 d-flex justify-content-start">
                                                 <div className="rightsec ">
-                                                    <LazyLoader src={image4} alt={"Valuation"} className={"img-fluid"} width={"419"} height={"411"} />
+                                                    <LazyLoader src={image4} alt={"Business Valuation"} className={"img-fluid"} width={"419"} height={"411"} />
                                                 </div>
                                             </div>
                                             <div className="col-xl-5 col-md-6">

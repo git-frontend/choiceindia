@@ -1,7 +1,7 @@
 
 import React from "react";
-import Bannerimage1 from '../../assets/images/investment-banking/about-banner1.webp';
-import Bannerimage2 from '../../assets/images/investment-banking/about-banner2.webp';
+import Bannerimage1 from '../../assets/images/investment-banking/merchant-banking-services.webp';
+import Bannerimage2 from '../../assets/images/investment-banking/merchant-banking-advisory.webp';
 import LazyLoader from "../Common-features/LazyLoader";
 function InvBankingAbout() {
 
@@ -22,7 +22,7 @@ function InvBankingAbout() {
                         
                         <div className="col-xl-7 col-md-6 d-flex justify-content-end">
                             <div className="rightsec ">
-                                <LazyLoader src={Bannerimage1} alt={""} className={"img-fluid"} width={"700"} height={"623"}/>
+                                <LazyLoader src={Bannerimage1} alt={"Merchant Banking Services"} className={"img-fluid"} width={"700"} height={"623"}/>
                             </div>
                         </div>
                         <div className="col-xl-5 col-md-6">
@@ -35,7 +35,7 @@ function InvBankingAbout() {
                         
                         <div className="col-xl-7 col-md-6 d-flex justify-content-start">
                             <div className="rightsec ">
-                                <LazyLoader src={Bannerimage2} alt={""} className={"img-fluid"} width={"500"} height={"570"}/>
+                                <LazyLoader src={Bannerimage2} alt={"Merchant Banking Advisory"} className={"img-fluid"} width={"500"} height={"570"}/>
                             </div>
                         </div>
                         <div className="col-xl-5 col-md-6">

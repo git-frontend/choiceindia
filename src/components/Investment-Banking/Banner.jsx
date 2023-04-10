@@ -1,8 +1,8 @@
 
 import React from "react";
-import Bannerimage from '../../assets/images/investment-banking/investment-banking-banner.webp';
+import Bannerimage from '../../assets/images/investment-banking/merchant-investment-banking-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
-import SingleTemplate from "../Common-features/SingleTemplate";
+// import SingleTemplate from "../Common-features/SingleTemplate";
 import { useState } from "react";
 
 function Banner() {
@@ -26,7 +26,7 @@ function Banner() {
                         </div>
                         <div className="col-md-7 d-none d-sm-block">                           
                              <div className="rightsec ">
-                                <LazyLoader src={Bannerimage} alt={"Merchant Banking and Investment Banking"} className={"img-fluid top-banner-img"} width={"780"} height={"517"}/>
+                                <LazyLoader src={Bannerimage} alt={"Merchant and Investment Banking Services"} className={"img-fluid top-banner-img"} width={"780"} height={"517"}/>
                             </div>
                         </div>
                     </div>
