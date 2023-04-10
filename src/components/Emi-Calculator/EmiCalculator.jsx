@@ -63,7 +63,7 @@ const handleInterestRateChange = (event) => {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="text" placeholder=" " className="form-ctr" maxLength="7" min="50000" max="5000000" value={(loanAmount)} onChange={handleLoanAmount}/>
+                                            <input type="text" placeholder=" " className="form-ctr" maxLength="7" min="50000" max="5000000" value={(loanAmount).toLocaleString('en-IN')} onChange={handleLoanAmount}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
