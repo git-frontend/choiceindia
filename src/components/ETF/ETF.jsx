@@ -124,7 +124,23 @@ function ETF() {
       behavior: "smooth"
     });
   }
+  const [name, setName ] = useState('hideform');
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if(element){
+        const rect = element.getBoundingClientRect();
+        
+        if(rect.top.toFixed() < 259){
+            setName('visibleform');
+        }else{
+            setName('hideform');
+        }   
+    }
+};
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
 
 
   return (
@@ -136,7 +152,7 @@ function ETF() {
             :
             <main>
 
-              <section className="bannersection">
+              <section className="bannersection etf-banner">
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-7">
@@ -164,7 +180,7 @@ function ETF() {
                 </div>
               </section>
 
-              <section className="tablecontent">
+              <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-12" id="fablesdetail-title">
@@ -732,10 +748,12 @@ function ETF() {
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
-
-              <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                  <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
-              </div>       
+              <div className={name}>
+                <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                    <button className="primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn"  onClick={()=>{chapterScroll('dematform')}}>Open Free Account</button>
+                </div> 
+              </div>
+                  
 
             </main>
         }

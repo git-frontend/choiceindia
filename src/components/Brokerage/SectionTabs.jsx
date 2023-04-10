@@ -88,14 +88,14 @@ function SectionTabs() {
                                           <td className="charges-heads">STT</td>
                                           <td>0.025% on the sell side</td>
                                           <td>0.1% on buy &amp; sell</td>
-                                          <td>0.01% on sell side</td>
-                                          <td>0.053% on sell side (on premium). In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
+                                          <td>0.0125% on sell side</td>
+                                          <td>0.0625% on sell side (on premium). In case of Options Exercise 0.125% on (Settlement Price * Quantity) to be paid by Buyer</td>
                                        </tr>
                                        <tr>
                                           <td className="charges-heads">Transaction charges</td>
-                                          <td>NSE/BSE: 0.00345%</td>
-                                          <td>NSE/BSE: 0.00345%</td>
-                                          <td>NSE: Exchange transaction charge: 0.002% Clearing charge: 0.0005%</td>
+                                          <td>NSE/BSE: 0.00325%</td>
+                                          <td>NSE/BSE: 0.00325%</td>
+                                          <td>NSE: Exchange transaction charge: 0.0019% Clearing charge: 0.0005%</td>
                                           <td>NSE: Exchange transaction charge: 0.05% Clearing charge: 0.002%</td>
                                        </tr>
                                        <tr className="grey-back">
@@ -111,6 +111,13 @@ function SectionTabs() {
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
                                           <td>₹ 10 / crore</td>
+                                       </tr>
+                                       <tr>
+                                          <td className="charges-heads">NSE IPFT Charges</td>
+                                          <td>₹ 10 / crore</td>
+                                          <td>₹ 10 / crore</td>
+                                          <td>₹ 10 / crore</td>
+                                          <td>₹ 50 / crore (On Premium)</td>
                                        </tr>
                                     </tbody>
                                  </table>

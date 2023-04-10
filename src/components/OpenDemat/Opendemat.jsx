@@ -76,7 +76,7 @@ function Opendemat(){
   }
 
 
-  function chapterScroll(id) {
+  function chapterScrolln(id) {
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
@@ -87,6 +87,23 @@ function Opendemat(){
     });
   }
 
+  const [name, setName ] = useState('hideform');
+  const getPosition = () => {
+    const element = document.getElementById("showForm");
+    if(element){
+        const rect = element.getBoundingClientRect();
+        
+        if(rect.top.toFixed() < 259){
+            setName('visibleform');
+        }else{
+            setName('hideform');
+        }   
+    }
+};
+
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
   useEffect(() => {
     setTimeout(DelayloadingImages, 900);
     let mediaQuery = window.matchMedia("(min-width: 770px)");
@@ -147,10 +164,15 @@ function Opendemat(){
                       </div>
                     </div>
                   </div>
+                  <div className={name}>
+                    <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                        <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn"  onClick={()=>{chapterScrolln('dematform')}}>Open Free Account</button>
+                    </div>
+                    </div>
                 </div>
               </section>
 
-              <section className="tablecontent">
+              <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-12">
@@ -1365,8 +1387,8 @@ function Opendemat(){
 
               </section>
 
-              <section className="stickybottom">
-              <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
+              <section className="demat-cam-page-new">
+                <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
 

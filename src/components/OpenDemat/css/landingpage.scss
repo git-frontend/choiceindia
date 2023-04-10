@@ -486,6 +486,15 @@ nav {
 		background: #FFFFFF !important;
 	}
 }
+.btn-fixed{
+	.btn-bg.btn-bg-dark {
+		background: #FFCE02 !important;
+		color: $color_1 !important;
+		&:hover {
+			background: #FFCE02 !important;
+		}
+	}
+}
 .link-nrl {
 	display: flex;
 	align-items: center;
@@ -1272,9 +1281,9 @@ nav {
 				padding-bottom: 5px;
 				min-height: 42px;
 				box-shadow: none;
-				font-size: 14px;
+				font-size: 1.2rem;
 				font-weight: 500;
-				background: transparent;
+				background: #ffffff;
 			}
 			.signal-same-btn {
 				width: 100%;
@@ -1306,7 +1315,7 @@ nav {
 		}
 	}
 	.tnc {
-		width: 35%;
+		width: 23%;
 		.checkbox {
 			margin-top: 5px;
 			margin-right: 5px;
@@ -1314,7 +1323,7 @@ nav {
 		.tc {
 			color: $color_9;
 			font-weight: 600;
-			text-decoration: none;
+			text-decoration: underline !important;
 		}
 	}
 	.sendotp {
@@ -1586,6 +1595,9 @@ nav {
 	width: 400px;
 	height: 400px;
 	aspect-ratio: 400/400;
+	@media (max-width:992px) {
+		height: auto;
+	}
 }
 .dotLoaderB {
 	width: 24px;
@@ -1627,6 +1639,12 @@ nav {
 @media (max-width: 992px) {
 	html {
 		font-size: 11px;
+	}
+	.btn-view-more-sticky.btn-fixed {
+		display: block !important;
+	}
+	.bannersection{
+		padding: 7rem 0;
 	}
 }
 @media (max-width: 767px) {
@@ -1749,9 +1767,7 @@ nav {
 	.m52 {
 		margin: 42px 0;
 	}
-	.btn-view-more-sticky.btn-fixed {
-		display: block !important;
-	}
+	
 	.demat-modal-sleekbox-overlay {
 		.exit-intent-sleekbox-popup {
 			width: 90%;
@@ -2008,5 +2024,25 @@ nav {
 	.popmd {
 		position: relative !important;
 		right: 1%;
+	}
+}
+
+
+.hideform{
+
+    @media (max-width: 768px) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: 768px) {
+    display: block !important;
+    }
+}
+
+.demat-cam-page-new{
+	.btn-fixed{
+		display: none !important;
 	}
 }
