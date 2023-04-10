@@ -737,7 +737,7 @@ export class API_URLS {
     }
 
     getNbfcLead(subProduct){
-        return  this.nbfcBaseURL + `/v1/lead/source/${subProduct}`
+        return  this.nbfcBaseURL + `v1/lead/source/${subProduct}/choicewebsite`;
     }
     getDepartmentURL(){
         return this.bannerURL + this.departmentURL
