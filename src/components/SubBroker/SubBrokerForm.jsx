@@ -164,10 +164,7 @@ function SubBrokerForm(props) {
     
     
 
-    function handleBrokerCityBranch(e,isOther) {
-        
-        console.log('ooo',isOther);
-        console.log('DDDD',e[0]);
+    function handleBrokerCityBranch(e) {
         if (e[0]) {
             let value = e[0].leadCity;
             setBrokerCityBranch([e[0]]);
@@ -185,18 +182,6 @@ function SubBrokerForm(props) {
                 setShowState(false);
             }
         }else{
-            // setBrokerState('');
-            //     setShowState(true);
-
-                
-            // let otherData  = e.props.options.find(e=>{
-            //     return e.leadCity=='OTHERS'
-            // })
-            // if(otherData){
-            //     console.log("otherData",otherData)
-            //     setBrokerCityBranch([otherData])
-            // }
-           // setBrokerCityBranch([otherData])
         }
     }
     const renderNoDataLabel=(e)=>(
@@ -220,19 +205,7 @@ function SubBrokerForm(props) {
                 }
              }, 500);
               }, 1000);
-              //  setBrokerCityBranch([otherData])
-                // var  value2=document.getElementsByClassName("p-2")[0];
-                // value2.innerHTML="OTHERS";
-                // console.log("value2",value2)
-                //  setBrokerCityBranch(value2);
-                // setBrokerCityBranch(value);
-                console.log('FFFF',citiesDropdown )
-                console.log('FFFF2', e)
-                let isOther = true;
                
-                
-                
-
         } }>
             {noDataLabel}
         </div>
