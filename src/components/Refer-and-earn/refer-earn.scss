@@ -276,10 +276,10 @@
         &::before {
             content: "";
             border-top: 2px dashed $bgcolor-fadegray;
-            width: 72%;
+            width: 73%;
             position: absolute;
-            left: 17rem;
-            top: 1.8rem;
+            left: 15rem;
+            top: 1.7rem;
             @media (max-width: $md) {
                 display: none;
             }

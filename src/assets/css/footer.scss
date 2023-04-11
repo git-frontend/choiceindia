@@ -127,7 +127,7 @@
                         flex-wrap: wrap;
                     }
                     @media (min-width:768px) and (max-width:1200px){
-                        flex-direction: column;
+                        flex-direction: inherit;
                     }
                     a{
                         text-decoration: none;
@@ -253,6 +253,9 @@
         font-size: 1.2rem;
         text-decoration: none;
         cursor: pointer;
+    }
+    .ol-p0{
+        padding-left: 1.2rem;
     }
 }
 
