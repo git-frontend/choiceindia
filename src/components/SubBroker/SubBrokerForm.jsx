@@ -611,7 +611,7 @@ function SubBrokerForm(props) {
             "firstName": brokerName,
             "mobileNo1": brokerMobileNumber,
             "emailId1": brokerEmail,
-            "leadCityName": brokerCityBranch,
+            "leadCityName": brokerCityBranch[0].leadCity,
             "leadSource": "CHOICEINDIA",
             "leadState": brokerState,
             // "messgae": '',
