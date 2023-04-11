@@ -175,13 +175,14 @@
 
                             .slider {
                                 position: relative;
-                                z-index: 2;
+                                // z-index: 2;
                                 appearance: none;
                                 width: 100%;
-                                height: 8px;
-                                border-radius: 5px;
+                                height: 25px;
+                                border-radius: 15px;
                                 outline: none;
                                 background-color: transparent;
+                                border: 2px solid rgba(0, 0, 0, 0.1);
 
                                 &::-webkit-slider-thumb {
                                     appearance: none;
