@@ -185,7 +185,7 @@ function SubBrokerForm(props) {
         }
     }
     const renderNoDataLabel=(e)=>(
-            <div className="p-2" onClick={() =>{
+            <div className="p-2 nodatalebel" onClick={() =>{
                 
                let otherData  = e.props.options.find(e=>{
                 return e.leadCity=='OTHERS'
