@@ -10,20 +10,22 @@ function EmiCalculator() {
     const [monthlyEMI, setMonthlyEMI] = useState(0);
     const [value, setValue] = useState('');
     useEffect(() => {
-        const ele = document.querySelector('.fill');
-        if (ele) {
-            ele.style.left = `${Number(value / 4)}px`;
-          }
         calculateEmi();
     })
+    // Calculate EMi 
     const calculateEmi = () => {
+        if (loanAmount && tenure && interestRate) {
         const r = interestRate / (12 * 100); // monthly interest rate
         const n = tenure; // tenure in months
         const p = loanAmount; // loan amount
         const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-        setMonthlyEMI(emiValue);
+        setMonthlyEMI(emiValue);}
+        else{
+            setMonthlyEMI(0);   
+        }
 
     }
+    // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
         const newloanamount= event.target.value;
         if (newloanamount <= 5000000 ) {
@@ -33,6 +35,7 @@ function EmiCalculator() {
             setLoanAmount("5000000");
           }
       };
+      // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
         const newinterestRate=event.target.value
         if(newinterestRate <= 36){
@@ -42,6 +45,7 @@ function EmiCalculator() {
           }
         
       };
+      // TO handle Tenure 
       const handleLoanTenureChange = (event) => {
         const newtenure=event.target.value
         if(newtenure <= 120){
@@ -71,12 +75,10 @@ function EmiCalculator() {
                             <div className='emi-flex'>
                                 <div className='rightsec'>
                                     <div className="sticy">
-                                        
                                             <div className='monthly-emi'>
                                                 <p>Monthly EMI</p>
                                                 <h6><span>{Number(monthlyEMI).toLocaleString('en-IN', { maximumFractionDigits: 0 })}</span></h6>
                                             </div>
-                                        
                                     </div>
                                 </div>
                                 <div className='leftsec'>
