@@ -163,7 +163,7 @@ function InvBankingExplore() {
                                                     <ul className="reset">
                                                         <li>M&amp;A Valuation and SWAP Ratio</li>
                                                         <li>Brand Valuation</li>
-                                                        <li>ESOP &map; SWEAT Equity Valuation</li>
+                                                        <li>ESOP &amp; SWEAT Equity Valuation</li>
                                                     </ul>
                                                 </div>
                                             </div>
