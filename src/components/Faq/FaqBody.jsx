@@ -61,6 +61,7 @@ export default function FaqBody() {
           slidesToScroll: 2,
           adaptiveHeight: true,
           dots:true,
+          arrows: false,
         },
       },
       {
