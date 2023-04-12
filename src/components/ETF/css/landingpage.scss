@@ -486,6 +486,13 @@ nav {
 		background: #FFFFFF !important;
 	}
 }
+.btn-fixed .btn-bg.btn-bg-dark {
+	background: #FFCE02 !important;
+	color: $color_1 !important;
+	&:hover {
+		background: #FFCE02 !important;
+	}
+}
 .link-nrl {
 	display: flex;
 	align-items: center;
@@ -1279,9 +1286,9 @@ nav {
 				padding-bottom: 5px;
 				min-height: 42px;
 				box-shadow: none;
-				font-size: 14px;
+				font-size: 1.2rem;
 				font-weight: 500;
-				background: transparent;
+				background: #ffffff;
 			}
 			.signal-same-btn {
 				width: 100%;
@@ -1313,7 +1320,7 @@ nav {
 		}
 	}
 	.tnc {
-		width: 35%;
+		width: 23%;
 		.checkbox {
 			margin-top: 5px;
 			margin-right: 5px;
@@ -1321,7 +1328,7 @@ nav {
 		.tc {
 			color: $color_9;
 			font-weight: 600;
-			text-decoration: none;
+			text-decoration: underline !important;
 		}
 	}
 	.sendotp {
