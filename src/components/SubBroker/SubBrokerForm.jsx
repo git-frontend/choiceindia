@@ -21,14 +21,17 @@ function SubBrokerForm(props) {
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
-    console.log(props,"props")
+    // console.log(props,"props")
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
     const [brokerName, setBrokerName] = useState('');
     const [brokerMobileNumber, setBrokerMobileNumber] = useState('');
     const [brokerEmail, setBrokerEmail] = useState('');
-    const [brokerCityBranch, setBrokerCityBranch] = useState('');
+    const [isOther, setIsOther] = useState(false);
+
+    
+    const [brokerCityBranch, setBrokerCityBranch] = useState([]);
     const [brokerState, setBrokerState] = useState('');
     const [showState, setShowState] = useState(false);
     const [errors, setErrors] = useState({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
@@ -48,6 +51,8 @@ function SubBrokerForm(props) {
     const [show, setShow] = useState(true);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(true);
+   
+    // const [value2, setValue2] = useState();
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -63,12 +68,20 @@ function SubBrokerForm(props) {
     const isBlog=(window.location.pathname.indexOf('blog') > -1)|| (window.location.pathname.indexOf('campaign/sub-broker-franchise') > -1) ? 'yes':'';
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
+    const noDataLabel ="City not found. Select 'Other'";
+    
+
+    // console.log(`citiesDropdown : `,citiesDropdown)
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
 
     function isMobileDevice() {
         return (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+    }
+
+    function handleToggle(event) {
+        // console.log('TTT',event);
     }
 
     function showOpenAccountAdPopup() {
@@ -149,11 +162,13 @@ function SubBrokerForm(props) {
             );
         }
     }
+    
+    
 
     function handleBrokerCityBranch(e) {
         if (e[0]) {
             let value = e[0].leadCity;
-            setBrokerCityBranch(value);
+            setBrokerCityBranch([e[0]]);
             // console.log("cc",brokerCityBranch)
             setErrors((prevError) => ({
                 ...prevError,
@@ -163,11 +178,42 @@ function SubBrokerForm(props) {
                 setBrokerState('');
                 setShowState(true);
             } else {
+                // console.log(`random value : `,value);
                 setBrokerState('');
                 setShowState(false);
             }
+        }else{
         }
     }
+    const renderNoDataLabel=(e)=>(
+            <div className="p-2 nodatalebel" onClick={() =>{
+                
+               let otherData  = e.props.options.find(e=>{
+                return e.leadCity=='OTHERS'
+            })
+              setTimeout(() => {
+                setBrokerCityBranch([])
+             setTimeout(() => {
+                if(otherData){
+                    // console.log("otherData",otherData)
+                    //e.methods.clearAll()
+                    // console.log("e.methods",e.methods)
+                    setBrokerCityBranch([otherData])
+                    setBrokerState('');
+                    setShowState(true);
+                    document.body.click()
+  
+                }
+             }, 500);
+              }, 1000);
+               
+        } }>
+            {noDataLabel}
+        </div>
+        
+      
+    )
+    
 
     function handleBrokerState(e) {
         if (e[0]) {
@@ -366,7 +412,11 @@ function SubBrokerForm(props) {
             hideLoader('citiesLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200 && res.data.Body && res.data.Body.CityMasterList) {
                 setCitiesDropdown(res.data.Body.CityMasterList);
+                if(res.data.Body.CityMasterList.length ===0 ){
+                    setCitiesDropdown([])
+                }
             } else {
+                
                 setCitiesDropdown([]);
             }
         }).catch((error) => {
@@ -495,46 +545,46 @@ function SubBrokerForm(props) {
         }
     }
 
-    function checkExistence(value) {
-        showLoader('sendOTPLoader');
-        setValue(value);
-        setisCheck(true);
-        let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-        let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-        let request = {
-            "serviceCode": "CBAEF",
-            "firstName": brokerName,
-            "mobileNum": brokerMobileNumber,
-            "emailID": brokerEmail
-        };
-        if (!isBrokerMobileNumberValid)
-            delete request.mobileNum;
-        if (!isBrokerEmailValid)
-            delete request.emailID;
-        subBrokerService.checkExistence(request).then((res) => {
-            // console.log(res, "checkExistence");
-            if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
-                setErrors((prevError) => ({
-                    ...prevError,
-                    'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
-                }));
-            } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
-                setErrors((prevError) => ({
-                    ...prevError,
-                    'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
-                }));
-            } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
-                // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
-                    // showAPIErrorToaster();
-            }
-            setisCheck(false);
-            hideLoader('sendOTPLoader');
-        }).catch((error) => {
-            hideLoader('sendOTPLoader');
-            setisCheck(false);
-            // console.log(error, "checkExistence error");
-        });
-    }
+    // function checkExistence(value) {
+    //     showLoader('sendOTPLoader');
+    //     setValue(value);
+    //     setisCheck(true);
+    //     let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+    //     let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+    //     let request = {
+    //         "serviceCode": "CBAEF",
+    //         "firstName": brokerName,
+    //         "mobileNum": brokerMobileNumber,
+    //         "emailID": brokerEmail
+    //     };
+    //     if (!isBrokerMobileNumberValid)
+    //         delete request.mobileNum;
+    //     if (!isBrokerEmailValid)
+    //         delete request.emailID;
+    //     subBrokerService.checkExistence(request).then((res) => {
+    //         // console.log(res, "checkExistence");
+    //         if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0011") {
+    //             setErrors((prevError) => ({
+    //                 ...prevError,
+    //                 'brokerMobileNumber': { 'unique': true, 'uniqueError': res.data.message }
+    //             }));
+    //         } else if (res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0012") {
+    //             setErrors((prevError) => ({
+    //                 ...prevError,
+    //                 'brokerEmail': { 'unique': true, 'uniqueError': res.data.message }
+    //             }));
+    //         } else if(res && res.status === 200 && res.data && res.data.errorCode && res.data.errorCode === "0008") {
+    //             // setAPIError((res.data && res.data.message) ? res.data.message : "Something went wrong, please try again later!");
+    //                 // showAPIErrorToaster();
+    //         }
+    //         setisCheck(false);
+    //         hideLoader('sendOTPLoader');
+    //     }).catch((error) => {
+    //         hideLoader('sendOTPLoader');
+    //         setisCheck(false);
+    //         // console.log(error, "checkExistence error");
+    //     });
+    // }
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -562,7 +612,7 @@ function SubBrokerForm(props) {
             "firstName": brokerName,
             "mobileNo1": brokerMobileNumber,
             "emailId1": brokerEmail,
-            "leadCityName": brokerCityBranch,
+            "leadCityName": brokerCityBranch[0].leadCity,
             "leadSource": "CHOICEINDIA",
             "leadState": brokerState,
             // "messgae": '',
@@ -782,8 +832,8 @@ function getOTPOnCall(){
         setBrokerName('');
         setBrokerMobileNumber('');
         setBrokerEmail('');
-        selectInputRef.current.clearAll();
-        setBrokerCityBranch("");
+        // selectInputRef.current.clearAll();
+        setBrokerCityBranch([]);
         setBrokerState('');
         setShowState(false);
         setErrors({ 'brokerName': {}, 'brokerMobileNumber': {}, 'brokerEmail': {}, 'brokerCityBranch': {}, 'brokerState': {} });
@@ -862,7 +912,7 @@ function getOTPOnCall(){
                                 }
                             </Form.Select> */}
                             <Select ref={selectInputRef}
-                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
+                                placeholder={SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylbl', 'Search Nearest City Branch')} className="formcontrol formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} values={brokerCityBranch} style={{ 'fontSize': 'large' }} noDataLabel={noDataLabel} noDataRenderer={renderNoDataLabel} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'citylblerror1', 'Nearest City Branch is required')}</small> : ''
                             }

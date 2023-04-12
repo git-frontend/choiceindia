@@ -23,7 +23,7 @@ async function generateSitemap() {
     })
       .then(data => {
         for (var i = 0; i < data.posts.length; i++) {
-          idMap.push({ id: data.posts[i].slug });
+          idMap.push({ id: data.posts[i].slug + "/"});
           idaddress.push({ changefreq: data.posts[i].updated_at });
 
 
