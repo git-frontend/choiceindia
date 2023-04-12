@@ -20,7 +20,7 @@ function SubBrokerForm(props) {
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
-    console.log(props,"props")
+    // console.log(props,"props")
     const nameRegex = /^(?!.*[\s]{2,})(?!.*[\.]{2,})(?!.*[\']{2,})(?!.*[\-]{2,})(?=.{2,}$)(([A-Za-z\.\'\- ])\2?(?!\2))+$/;
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})$/;
@@ -70,7 +70,7 @@ function SubBrokerForm(props) {
     const noDataLabel ="City not found. Select 'Other'";
     
 
-    console.log(`citiesDropdown : `,citiesDropdown)
+    // console.log(`citiesDropdown : `,citiesDropdown)
 
     /** state to show thankyou popup default */
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
@@ -80,7 +80,7 @@ function SubBrokerForm(props) {
     }
 
     function handleToggle(event) {
-        console.log('TTT',event);
+        // console.log('TTT',event);
     }
 
     function showOpenAccountAdPopup() {
@@ -629,7 +629,7 @@ function SubBrokerForm(props) {
         };
         subBrokerService.sendOTPNew(request).then((res) => {
             // console.log(res, "sendOTP");
-            console.log('SUBCP',res)
+            // console.log('SUBCP',res)
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
             if (res && res.data && res.data.Body && res.data.Body.session_id) {
                 otpSessionID.current = res.data.Body.session_id;
