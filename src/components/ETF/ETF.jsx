@@ -12,7 +12,7 @@ import invesrtetf from "../../assets/images/how-to-invest-in-etf-online.webp";
 import Slider from 'react-slick';
 function ETF() {
   function chapterScroll(id) {
-    console.log("check",id);
+    // console.log("check",id);
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;

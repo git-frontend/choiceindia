@@ -11,7 +11,7 @@ function BannerMFDistributor() {
     const [name, setName ] = useState('hideform');
     const getPosition = () => {
         const element = document.getElementById("showForm");
-        console.log("check",element)
+        // console.log("check",element)
         if(element){
             const rect = element.getBoundingClientRect();
             // console.log("check", rect)
