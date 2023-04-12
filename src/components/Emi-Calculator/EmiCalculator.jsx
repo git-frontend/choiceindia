@@ -50,15 +50,15 @@ function EmiCalculator() {
             setTenure("120");
           }
       };
-      const fillPercentageloan = (loanAmount / 5000000) * 100; // 100000 is the maximum value of the range input
+      const fillPercentageloan = (loanAmount / 5000000) * 100; 
       const fillStyle = {
         background: `linear-gradient(to right, #FFF ${fillPercentageloan}%, #F5FFE9 ${fillPercentageloan}%)`,
       };
-      const fillPercentageint = (loanAmount / 36) * 100; // 100000 is the maximum value of the range input
+      const fillPercentageint = ((interestRate - 10) / 26) * 100 + 1; // 100000 is the maximum value of the range input
       const fillStyle1 = {
         background: `linear-gradient(to right, #FFF ${fillPercentageint}%, #F5FFE9 ${fillPercentageint}%)`,
       };
-      const fillPercentageteenure = (loanAmount / 120) * 100; // 100000 is the maximum value of the range input
+      const fillPercentageteenure = ((tenure-12) / 108) * 100+1; // 100000 is the maximum value of the range input
       const fillStyle2= {
         background: `linear-gradient(to right, #FFF ${fillPercentageteenure}%, #F5FFE9 ${fillPercentageteenure}%)`,
       };
@@ -113,7 +113,7 @@ function EmiCalculator() {
                                         <p>Interest Rate (per annum)</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="number"  step="1" className="form-ctr"  min="10" max="36" value={interestRate} onChange={handleInterestRateChange} />
+                                            <input type="number"  className="form-ctr"  min="10" max="36" value={interestRate} onChange={handleInterestRateChange} />
                                             <span>%</span>
                                         </div>
                                         <div className="range-figures">
@@ -128,7 +128,7 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
-                                                    <input type="range" className="slider" id="myRange" step="1" min="10" max="36" value={interestRate}
+                                                    <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
                                                         onChange={handleInterestRateChange} style={fillStyle1}
                                                     />
                                                 </div>
@@ -152,7 +152,7 @@ function EmiCalculator() {
                                         <div className="slidecontainer">
                                             <div className="middle">
                                                 <div className="slider-container">
-                                                    <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span>
+                                                    {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                     <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
                                                 </div>
                                             </div>
