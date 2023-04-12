@@ -8,7 +8,7 @@ function EmiCalculator() {
     const [interestRate, setInterestRate] = useState(11);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
-    const [value, setValue] = useState('');
+ 
     useEffect(() => {
         calculateEmi();
     })
