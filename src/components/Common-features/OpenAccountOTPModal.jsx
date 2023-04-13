@@ -240,6 +240,10 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                 // setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     setCount(30);
+                    // console.log("res",res)
+                    // console.log("res.status",res.status)
+                    // console.log("res.data",res.data)
+                    // console.log("res.data.Body",res.data.Body)
                     otpID.current = res.data.Body.session_id;
                     handleOTPResendSuccessToaster('call');
                 } else {
