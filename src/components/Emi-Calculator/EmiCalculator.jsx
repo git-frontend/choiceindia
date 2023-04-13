@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import './emi-calculator.scss';
 
 function EmiCalculator() {
-    const [loanAmount, setLoanAmount] = useState(300000);
+    const [loanAmount, setLoanAmount] = useState(50000);
     const [interestRate, setInterestRate] = useState(11);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
@@ -14,35 +14,46 @@ function EmiCalculator() {
     })
     // Calculate EMi 
     const calculateEmi = () => {
-        if (loanAmount && tenure && interestRate) {
+
+
+        if ((loanAmount >=50000 && loanAmount <= 5000000) && (tenure>=10 && tenure<=36) && interestRate) {
+            
         const r = interestRate / (12 * 100); // monthly interest rate
         const n = tenure; // tenure in months
         const p = loanAmount; // loan amount
         const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-        setMonthlyEMI(emiValue);}
+        setMonthlyEMI(emiValue);
+        setValue('')
+    }
         else{
-            setMonthlyEMI(0);   
+            setMonthlyEMI(0);
+            setValue("Please Enter Valid Amount")  
         }
+        
 
     }
     // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
-        const newloanamount= event.target.value;
-        if (newloanamount <= 5000000 ) {
-            setLoanAmount(newloanamount);
-          }
-          else{
-            setLoanAmount("5000000");
-          }
+        if(event.target.value == ""){
+            setLoanAmount(50000)
+        }else{
+            setLoanAmount(event.target.value)
+        }
+        
       };
       // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
-        const newinterestRate=event.target.value
-        if(newinterestRate <= 36){
-            setInterestRate(newinterestRate);
+        if(event.target.value == ""){
+            setInterestRate(10)
         }else{
-            setInterestRate("36");
-          }
+            setInterestRate(event.target.value)
+        }
+        // const newinterestRate=event.target.value
+        // if(newinterestRate <= 36){
+        //     setInterestRate(newinterestRate);
+        // }else{
+        //     setInterestRate("36");
+        //   }
         
       };
       // TO handle Tenure 
@@ -90,7 +101,7 @@ function EmiCalculator() {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="number"  className="form-ctr"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
+                                            <input type="tel"  className="form-ctr"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -104,9 +115,10 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span style={fillStyle}></span></span> */}
-                                                    <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount }
+                                                    <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount}
                                                         onChange={handleLoanAmountChange} style={fillStyle}
                                                     />
+                                                    <span className="text-danger">{value}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -133,6 +145,7 @@ function EmiCalculator() {
                                                     <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
                                                         onChange={handleInterestRateChange} style={fillStyle1}
                                                     />
+                                                    {/* <span className="text-danger">{value}</span> */}
                                                 </div>
                                             </div>
                                         </div>
