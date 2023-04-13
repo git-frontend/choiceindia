@@ -2199,6 +2199,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
+  "merchant-investment-banking": {
+    "title":" Merchant and Investment Banking Advisory Services - Choice India",
+    'lang':"en",
+    'content':"Looking for Merchant and investment bankking advisory services in India. Choice provides end to end merchant and investment banking services to Indian businesses.",
+    "link":"https://choiceindia.com/merchant-investment-banking"
+  },
 }
 
 export default meta_tags;

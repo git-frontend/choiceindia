@@ -2,6 +2,7 @@
 import React from "react";
 import Bannerimage from '../../assets/images/services/capital-advisory-services.webp';
 import LazyLoader from "../Common-features/LazyLoader";
+import { Link } from "react-router-dom";
 
 function CapitalAdvisory() {
 
@@ -45,7 +46,7 @@ function CapitalAdvisory() {
                                     <p>Our team understands the dynamics of various industries for assisting our clients looking for going public.</p>
                                 </div>
                             </div>
-                            {/* <a href="/" className="btn-bg">Explore</a> */}
+                            <Link to="/merchant-investment-banking" className="btn-bg">Explore</Link>
                         </div>
                     </div>
 

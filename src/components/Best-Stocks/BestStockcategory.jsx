@@ -43,7 +43,7 @@ function BestStockcategory() {
     setToggleState(index);
   };
   function chapterScroll(id) {
-    console.log("called",id)
+    // console.log("called",id)
     var element = document.getElementById(id);
     var headerOffset = 140;
     var elementPosition = element.getBoundingClientRect().top;
