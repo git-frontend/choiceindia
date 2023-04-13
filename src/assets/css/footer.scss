@@ -137,6 +137,9 @@
                             width: auto;
                             margin-right: 1.5rem;
                         }
+                        @media (max-width: $md){
+                            margin-right: 0.5rem;
+                        }
                     }
 
                         
