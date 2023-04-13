@@ -8,10 +8,10 @@ function EmiCalculator() {
     const [interestRate, setInterestRate] = useState(11);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
- 
+    const [value, setValue] = useState('');
     useEffect(() => {
         calculateEmi();
-    },[])
+    })
     // Calculate EMi 
     const calculateEmi = () => {
         if (loanAmount && tenure && interestRate) {
@@ -28,17 +28,13 @@ function EmiCalculator() {
     // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
         const newloanamount= event.target.value;
-        if (newloanamount >= 50000 && newloanamount <= 5000000 ) {
+        if (newloanamount <= 5000000 ) {
             setLoanAmount(newloanamount);
-          }else{
-            setLoanAmount(50000);
+          }
+          else{
+            setLoanAmount("5000000");
           }
       };
-      useEffect(() => {
-        if (loanAmount < 50000 || loanAmount > 5000000) {
-          setLoanAmount(50000);
-        }
-      }, []);
       // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
         const newinterestRate=event.target.value
@@ -94,7 +90,7 @@ function EmiCalculator() {
                                         <p>Loan Amount</p>
                                         <div className='value-card'>
                                             <div></div>
-                                            <input type="number"  className="form-ctr" id="loan-amount" name="loan-amount"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
+                                            <input type="number"  className="form-ctr"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -108,7 +104,7 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span style={fillStyle}></span></span> */}
-                                                    <input type="range" className="slider" id="loan-amount" name="loan-amount" step="1000" min="50000" max="5000000" value={loanAmount }
+                                                    <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount }
                                                         onChange={handleLoanAmountChange} style={fillStyle}
                                                     />
                                                 </div>
