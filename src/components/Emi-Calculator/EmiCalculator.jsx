@@ -14,7 +14,6 @@ function EmiCalculator() {
     })
 
     // Calculate EMi 
-    
     const calculateEmi = () => {
         const errors = {
           loanAmount: '',
