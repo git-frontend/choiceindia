@@ -55,7 +55,7 @@ const settings = {
 		settings: {
 		  slidesToShow: 3,
 		  slidesToScroll: 3,
-		  adaptiveHeight: true,
+		  adaptiveHeight: false,
 		},
 	  },
 	  {

@@ -87,6 +87,16 @@ function Opendemat(){
     });
   }
 
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   const [name, setName ] = useState('hideform');
   const getPosition = () => {
     const element = document.getElementById("showForm");
@@ -1190,7 +1200,7 @@ function Opendemat(){
                           </li>
 
                           <li className='subheadtxt'>
-                            <p className=' paraspace'>
+                            <p className=' subheadtxt paraspace'>
                               <h4 className='listhead inline'> Full account closure: </h4> - If you have no holdings in your Demat
                               account and have cleared all your pending payments to the DP, you can raise a request to your DP for
                               your Demat Account closure.</p>

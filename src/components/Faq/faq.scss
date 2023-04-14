@@ -312,6 +312,30 @@
                 position: relative;
                 z-index: 999;
                 margin-left: inherit;
+                @media (max-width:$md) {
+                    .slick-prev{
+                        &::before {
+                            color: $bgcolordark;
+                        }
+                    }
+                    .slick-next{
+                        &::before{
+                            color: $bgcolordark;
+                        }
+                    }
+                }
+                @media (max-width:$sm) {
+                    .slick-prev{
+                        &::before {
+                            color: inherit;
+                        }
+                    }
+                    .slick-next{
+                        &::before{
+                            color: inherit;
+                        }
+                    }
+                }
                 .slick-list{
                     padding: 1rem 0;
                 }
@@ -373,7 +397,7 @@
             }
         }
         @media (max-width: $sm) {
-            padding: 0;
+            padding: 0 0 7rem 0;
         }
     }
 

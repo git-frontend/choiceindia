@@ -67,7 +67,7 @@ function Footer() {
                   </div>
                   <div className="top-sec-quick-links">
                     <div className="row">
-                      <div className="col-md-8">
+                      <div className="col-lg-8 col-md-12 col-sm-12">
                         <div className="quick-links-list">
                           <ul className="reset">
                             <li>
@@ -258,7 +258,7 @@ function Footer() {
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
                      
                       Cautionary Message :
-                      <ol style={{ marginleft: "-1rem" }}>
+                      <ol style={{ marginleft: "-1rem" }} className="ol-p0">
                         <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
                         <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
                         <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>

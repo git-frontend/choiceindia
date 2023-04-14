@@ -20,7 +20,9 @@
 
 .partner-main-pg{
     .bloc-tabs {
-        // display: flex;
+        @media (max-width:$md) {
+            padding-top: 5rem;
+        }
       }
       .tabs {
       

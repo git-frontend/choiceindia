@@ -665,10 +665,14 @@ body{
             width: 12.5rem;
             background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
             background-size: contain;
-            top: -13%;
+            top: -14%;
             left: 2rem;
             z-index: -1;
-
+            @media (max-width:$md) {
+                height: 4.1875rem;
+                width: 11.5rem;
+                top: -22%;
+            }
             @media (max-width:$sm) {
                 display: none;
             }
@@ -682,9 +686,15 @@ body{
             width: 12.5rem;
             background: url('../../assets/images/about-us/vissionbefore.png') no-repeat;
             background-size: contain;
-            bottom: -13%;
+            bottom: -22%;
             right: 12%;
             z-index: -1;
+            @media (max-width:$md) {
+                height: 4.1875rem;
+                width: 11.5rem;
+                bottom: -30%;
+                right: 0;
+            }
         }
         //     img{
         //         width: 90% !important;
@@ -696,7 +706,9 @@ body{
 
     .rightsec {
         padding-left: 2rem;
-
+        @media (max-width:$sm) {
+            padding-left: 0;
+        }
         .heading {
             text-align: left;
             padding-bottom: 1rem;

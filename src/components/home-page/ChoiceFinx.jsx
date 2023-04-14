@@ -31,13 +31,19 @@ function ChoiceFinx() {
           slidesToShow: 1,
           infinite: false,
           slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite:true
         }
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          autoplay: true,
+          autoplaySpeed: 3000,
+          infinite:true
         }
       }
       // You can unslick at a given breakpoint now by adding:
