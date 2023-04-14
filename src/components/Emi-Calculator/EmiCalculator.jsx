@@ -28,6 +28,9 @@ function EmiCalculator() {
         if (interestRate < 10 || interestRate > 36) {
           errors.interestRate = 'Please Enter Valid Interest Rate';
         }
+        // if (!/^\d{1,2}(\.\d)?|3[0-6](\.\d)?$/.test(interestRate)) {
+        //     errors.interestRate = 'Please Enter Valid Interest Rate';
+        //   }
       
         if (tenure < 12 || tenure > 120) {
           errors.tenure = 'Please Enter Valid Tenure In month';
@@ -58,7 +61,7 @@ function EmiCalculator() {
       // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
       
-            setInterestRate((event.target.value).replace(/\D/g, ""))
+            setInterestRate((event.target.value))
       
       };
       // TO handle Tenure 
@@ -117,7 +120,7 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span style={fillStyle}></span></span> */}
-                                                    <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount}
+                                                    <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount} 
                                                         onChange={handleLoanAmountChange} style={fillStyle}
                                                     />
                                                     {errorMessages.loanAmount && <span className="text-danger">{errorMessages.loanAmount}</span>}
@@ -129,7 +132,7 @@ function EmiCalculator() {
                                         {/* <p>Interest Rate (per annum)</p> */}
                                         <div className='value-card'>
                                             <div><p>Interest Rate (per annum)</p></div>
-                                            <div><input type="tel"  className="form-ctr"  min="10" max="36" value={interestRate}  maxLength={4} onChange={handleInterestRateChange} />
+                                            <div><input type="text" className="form-ctr"  min="10" max="36"  value={interestRate} maxLength={4} onChange={handleInterestRateChange}/>
                                             <span>%</span>
                                             </div>
                                         </div>
@@ -145,7 +148,7 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
-                                                    <input type="range" className="slider" id="myRange"  min="10" max="36" value={interestRate}
+                                                    <input type="range" className="slider" id="myRange"  min="10" max="36" value={interestRate} 
                                                         onChange={handleInterestRateChange}  style={fillStyle1}
                                                     />
                                                     {errorMessages.interestRate && <span className="text-danger">{errorMessages.interestRate}</span>}
