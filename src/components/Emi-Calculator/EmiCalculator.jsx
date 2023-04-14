@@ -8,33 +8,48 @@ function EmiCalculator() {
     const [interestRate, setInterestRate] = useState(10);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
-    const [value, setValue] = useState('');
-    const [intvalue, setIntvalue] = useState('');
-    const [tenurevalue, settenurevalue] = useState('');
+    const [errorMessages, setErrorMessages] = useState({loanAmount: '',interestRate: '',tenure: ''});
     useEffect(() => {
         calculateEmi();
     })
-    // Calculate EMi 
-    const calculateEmi = () => {
-        if ((loanAmount >=50000 && loanAmount <= 5000000) && (interestRate>=10 && interestRate <= 36) && (tenure >= 12 && tenure <= 120)) {
-        const r = interestRate / (12 * 100); // monthly interest rate
-        const n = tenure; // tenure in months
-        const p = loanAmount; // loan amount
-        const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-        setMonthlyEMI(emiValue);
-        setValue('')
-        setIntvalue('')
-        settenurevalue('')
-    }
-        else{
-            setMonthlyEMI(0);
-            setValue("Please Enter Valid Amount") 
-            setIntvalue("Please Enter Valid Interest Rate")
-            settenurevalue("Please Enter Valid Tenure In month")
-        }
-        
 
-    }
+    // Calculate EMi 
+    
+    const calculateEmi = () => {
+        const errors = {
+          loanAmount: '',
+          interestRate: '',
+          tenure: ''
+        };
+        
+        if (loanAmount < 50000 || loanAmount > 5000000) {
+          errors.loanAmount = 'Please Enter Valid Amount';
+        }
+      
+        if (interestRate < 10 || interestRate > 36) {
+          errors.interestRate = 'Please Enter Valid Interest Rate';
+        }
+      
+        if (tenure < 12 || tenure > 120) {
+          errors.tenure = 'Please Enter Valid Tenure In month';
+        }
+      
+        if (errors.loanAmount || errors.interestRate || errors.tenure) {
+          setMonthlyEMI(0);
+          setErrorMessages(errors);
+        } else {
+          const r = interestRate / (12 * 100); // monthly interest rate
+          const n = tenure; // tenure in months
+          const p = loanAmount; // loan amount
+          const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+          setMonthlyEMI(emiValue);
+          setErrorMessages({
+            loanAmount: '',
+            interestRate: '',
+            tenure: ''
+          });
+        }
+      }
     // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
         if(event.target.value == ""){
@@ -113,7 +128,7 @@ function EmiCalculator() {
                                                     <input type="range" className="slider" step="1000" min="50000" max="5000000" value={loanAmount}
                                                         onChange={handleLoanAmountChange} style={fillStyle}
                                                     />
-                                                    <span className="text-danger">{value}</span>
+                                                    {errorMessages.loanAmount && <span className="text-danger">{errorMessages.loanAmount}</span>}
                                                 </div>
                                             </div>
                                         </div>
@@ -140,7 +155,7 @@ function EmiCalculator() {
                                                     <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
                                                         onChange={handleInterestRateChange} style={fillStyle1}
                                                     />
-                                                    <span className="text-danger">{intvalue}</span>
+                                                    {errorMessages.interestRate && <span className="text-danger">{errorMessages.interestRate}</span>}
                                                 </div>
                                             </div>
                                         </div>
@@ -164,7 +179,7 @@ function EmiCalculator() {
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                     <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
-                                                    <span className="text-danger">{tenurevalue}</span>
+                                                    {errorMessages.tenure && <span className="text-danger">{errorMessages.tenure}</span>}
                                                 </div>
                                             </div>
                                         </div>
