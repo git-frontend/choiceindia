@@ -5,29 +5,32 @@ import './emi-calculator.scss';
 
 function EmiCalculator() {
     const [loanAmount, setLoanAmount] = useState(50000);
-    const [interestRate, setInterestRate] = useState(11);
+    const [interestRate, setInterestRate] = useState(10);
     const [tenure, setTenure] = useState(12);
     const [monthlyEMI, setMonthlyEMI] = useState(0);
     const [value, setValue] = useState('');
+    const [intvalue, setIntvalue] = useState('');
+    const [tenurevalue, settenurevalue] = useState('');
     useEffect(() => {
         calculateEmi();
     })
     // Calculate EMi 
     const calculateEmi = () => {
-
-
-        if ((loanAmount >=50000 && loanAmount <= 5000000) && (tenure>=10 && tenure<=36) && interestRate) {
-            
+        if ((loanAmount >=50000 && loanAmount <= 5000000) && (interestRate>=10 && interestRate <= 36) && (tenure >= 12 && tenure <= 120)) {
         const r = interestRate / (12 * 100); // monthly interest rate
         const n = tenure; // tenure in months
         const p = loanAmount; // loan amount
         const emiValue = (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
         setMonthlyEMI(emiValue);
         setValue('')
+        setIntvalue('')
+        settenurevalue('')
     }
         else{
             setMonthlyEMI(0);
-            setValue("Please Enter Valid Amount")  
+            setValue("Please Enter Valid Amount") 
+            setIntvalue("Please Enter Valid Interest Rate")
+            settenurevalue("Please Enter Valid Tenure In month")
         }
         
 
@@ -48,22 +51,14 @@ function EmiCalculator() {
         }else{
             setInterestRate(event.target.value)
         }
-        // const newinterestRate=event.target.value
-        // if(newinterestRate <= 36){
-        //     setInterestRate(newinterestRate);
-        // }else{
-        //     setInterestRate("36");
-        //   }
-        
       };
       // TO handle Tenure 
       const handleLoanTenureChange = (event) => {
-        const newtenure=event.target.value
-        if(newtenure <= 120){
-            setTenure(newtenure);
+          if(event.target.value == ""){
+            setTenure(12)
         }else{
-            setTenure("120");
-          }
+            setTenure(event.target.value)
+        }
       };
       const fillPercentageloan = (loanAmount / 5000000) * 100; 
       const fillStyle = {
@@ -145,7 +140,7 @@ function EmiCalculator() {
                                                     <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
                                                         onChange={handleInterestRateChange} style={fillStyle1}
                                                     />
-                                                    {/* <span className="text-danger">{value}</span> */}
+                                                    <span className="text-danger">{intvalue}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -169,6 +164,7 @@ function EmiCalculator() {
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span className="" style={{ width: `(${value} - 12) / (120 - 12) * 100` }}></span></span> */}
                                                     <input type="range" className="slider" id="myRange" min="12" max="120" value={tenure} onChange={handleLoanTenureChange} style={fillStyle2} />
+                                                    <span className="text-danger">{tenurevalue}</span>
                                                 </div>
                                             </div>
                                         </div>
