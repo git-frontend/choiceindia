@@ -107,9 +107,9 @@ function EmiCalculator() {
                                         <p className='para'>Check out our calculator to calculate the amount of EMI for different loans and tenures</p>
                                     </div>
                                     <div className='cal-opt mrg-top'>
-                                        <p>Loan Amount</p>
+                                        {/* <p>Loan Amount</p> */}
                                         <div className='value-card'>
-                                            <div></div>
+                                            <div><p>Loan Amount</p></div>
                                             <input type="tel"  className="form-ctr"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
                                         </div>
                                         <div className="range-figures">
@@ -133,11 +133,12 @@ function EmiCalculator() {
                                         </div>
                                     </div>
                                     <div className='cal-opt'>
-                                        <p>Interest Rate (per annum)</p>
+                                        {/* <p>Interest Rate (per annum)</p> */}
                                         <div className='value-card'>
-                                            <div></div>
-                                            <input type="number"  className="form-ctr"  min="10" max="36" value={interestRate} onChange={handleInterestRateChange} />
+                                            <div><p>Interest Rate (per annum)</p></div>
+                                            <div><input type="number"  className="form-ctr"  min="10" max="36" value={interestRate} onChange={handleInterestRateChange} />
                                             <span>%</span>
+                                            </div>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -160,9 +161,9 @@ function EmiCalculator() {
                                         </div>
                                     </div>
                                     <div className='cal-opt'>
-                                        <p>Tenure (in months)</p>
+                                        {/* <p>Tenure (in months)</p> */}
                                         <div className='value-card'>
-                                            <div></div>
+                                            <div><p>Tenure (in months)</p></div>
                                             <input type="number"  className="form-ctr" value={tenure} min="12" max="120" onChange={handleLoanTenureChange} />
                                         </div>
                                         <div className="range-figures">

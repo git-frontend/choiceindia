@@ -61,7 +61,7 @@
             }
 
             .cal-opt {
-                margin-top: 6rem;
+                margin-top: 4rem;
 
                 @media (max-width:$md) {
                     margin-top: 4rem;
@@ -87,7 +87,7 @@
 
                 .value-card {
                     display: flex;
-                    justify-content: end;
+                    justify-content: space-between;
                     position: relative;
                     align-items: center;
 
