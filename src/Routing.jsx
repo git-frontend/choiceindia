@@ -768,7 +768,7 @@ function Routing() {
                                 < LazyLoanPrivacyPolicy />
                             </React.Suspense>
                         } />
-                        <Route exact path='/merchant-investment-banking' element={
+                        <Route exact path='/merchant-investment-' element={
                             <React.Suspense>
                                 < LazyInvestmentBanking />
                             </React.Suspense>
