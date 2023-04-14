@@ -51,28 +51,28 @@ function EmiCalculator() {
       }
     // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
-        if(event.target.value == ""){
-            setLoanAmount(50000)
-        }else{
+        // if(event.target.value == ""){
+        //     setLoanAmount(50000)
+        // }else{
             setLoanAmount(event.target.value)
-        }
+        // }
         
       };
       // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
-        if(event.target.value == ""){
-            setInterestRate(10)
-        }else{
+        // if(event.target.value == ""){
+        //     setInterestRate(10)
+        // }else{
             setInterestRate(event.target.value)
-        }
+        // }
       };
       // TO handle Tenure 
       const handleLoanTenureChange = (event) => {
-          if(event.target.value == ""){
-            setTenure(12)
-        }else{
+        //   if(event.target.value == ""){
+        //     setTenure(12)
+        // }else{
             setTenure(event.target.value)
-        }
+        // }
       };
       const fillPercentageloan = (loanAmount / 5000000) * 100; 
       const fillStyle = {
@@ -110,7 +110,7 @@ function EmiCalculator() {
                                         {/* <p>Loan Amount</p> */}
                                         <div className='value-card'>
                                             <div><p>Loan Amount</p></div>
-                                            <input type="tel"  className="form-ctr"  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
+                                            <input type="tel"  className="form-ctr" maxLength={7}  min="50000" max="5000000"  value={loanAmount} onChange={handleLoanAmountChange}/>
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
@@ -136,7 +136,7 @@ function EmiCalculator() {
                                         {/* <p>Interest Rate (per annum)</p> */}
                                         <div className='value-card'>
                                             <div><p>Interest Rate (per annum)</p></div>
-                                            <div><input type="number"  className="form-ctr"  min="10" max="36" value={interestRate} onChange={handleInterestRateChange} />
+                                            <div><input type="tel"  className="form-ctr"  min="10" max="36" value={interestRate}  maxLength={4} onChange={handleInterestRateChange} />
                                             <span>%</span>
                                             </div>
                                         </div>
@@ -152,8 +152,8 @@ function EmiCalculator() {
                                             <div className="middle">
                                                 <div className="slider-container">
                                                     {/* <span className="bar"><span className="" style={{ width: `${interestRate}%` }}></span></span> */}
-                                                    <input type="range" className="slider" id="myRange" min="10" max="36" value={interestRate}
-                                                        onChange={handleInterestRateChange} style={fillStyle1}
+                                                    <input type="range" className="slider" id="myRange"  min="10" max="36" value={interestRate}
+                                                        onChange={handleInterestRateChange}  style={fillStyle1}
                                                     />
                                                     {errorMessages.interestRate && <span className="text-danger">{errorMessages.interestRate}</span>}
                                                 </div>
@@ -164,7 +164,7 @@ function EmiCalculator() {
                                         {/* <p>Tenure (in months)</p> */}
                                         <div className='value-card'>
                                             <div><p>Tenure (in months)</p></div>
-                                            <input type="number"  className="form-ctr" value={tenure} min="12" max="120" onChange={handleLoanTenureChange} />
+                                            <input type="tel"  className="form-ctr" value={tenure} maxLength={3} min="12" max="120"  onChange={handleLoanTenureChange} />
                                         </div>
                                         <div className="range-figures">
                                             <div className='range-item'>
