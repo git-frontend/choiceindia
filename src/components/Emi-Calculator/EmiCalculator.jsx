@@ -51,28 +51,21 @@ function EmiCalculator() {
       }
     // TO handle Loan Amount
     const handleLoanAmountChange = (event) => {
-        // if(event.target.value == ""){
-        //     setLoanAmount(50000)
-        // }else{
-            setLoanAmount(event.target.value)
-        // }
         
+            setLoanAmount((event.target.value).replace(/\D/g, ""))
+       
       };
       // TO handle Interest Rate
       const handleInterestRateChange = (event) => {
-        // if(event.target.value == ""){
-        //     setInterestRate(10)
-        // }else{
-            setInterestRate(event.target.value)
-        // }
+      
+            setInterestRate((event.target.value).replace(/\D/g, ""))
+      
       };
       // TO handle Tenure 
       const handleLoanTenureChange = (event) => {
-        //   if(event.target.value == ""){
-        //     setTenure(12)
-        // }else{
-            setTenure(event.target.value)
-        // }
+        
+            setTenure((event.target.value).replace(/\D/g, ""))
+      
       };
       const fillPercentageloan = (loanAmount / 5000000) * 100; 
       const fillStyle = {
