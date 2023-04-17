@@ -139,6 +139,7 @@ const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpac
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
 function Routing() {
 
 
@@ -774,6 +775,12 @@ function Routing() {
                                 < LazyEmiCalculator />
                             </React.Suspense>
                         } />
+                        <Route exact path='/merchant-investment-banking' element={
+                            <React.Suspense>
+                                < LazyInvestmentBanking />
+                            </React.Suspense>
+                        } />
+ 
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
