@@ -27,7 +27,10 @@ function FeaturesSolarFinanace() {
                         </div>
                         <div className="col-md-12 text-center"> <Link to="/" className=" text-center cursor-pointer" >
                             <span className="btn-bg">Apply Now</span>
-                        </Link></div>
+                        </Link>
+                        <br/>
+                            <Link to="https://cmsapi.choiceindia.com/assets/49dfa23f-9910-4c78-ae63-57f49e5af157" className="soc-links" target="_blank">To view our Schedule of Charges, click here!</Link>
+                        </div>
 
                     </div>
 
