@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef ,useCallback} from "react";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -14,9 +14,11 @@ import { Ref } from "react";
 import Thankyoupopup from "../Common-features/Thanku-popup";
 import MutualFundStickyFooter from "../Mutual-Fund-Distributor/MutualFundStickyFooter";
 import MutualFundpopupform from "../Common-features/MutualFundpopupform";
+import openAccountService from "../../Services/openAccountService";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 
 function SubBrokerForm(props) {
-    console.log("check",props)
+    // console.log("check",props)
     // words: /^([A-z-\s\'\.]*)*$/g,
     // email: /^[A-Za-z0-9._%+-@.]*$/g,
     /**Regex for Name*/
@@ -40,10 +42,12 @@ function SubBrokerForm(props) {
     const [otp, setOtp] = useState('');
     const [OTPErrors, setOTPErrors] = useState('');
     const [count, setCount] = useState(0);
-    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState(false);
+    const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     const [brokerCreatedSuccess, setBrokerCreatedSuccess] = useState(false);
     const [searchParams, setSearchParams] = useSearchParams();
+    const [captchaToken, setCaptchaToken] = useState('');
     const [show, setShow] = useState(true);
+    const { executeRecaptcha } = useGoogleReCaptcha();
     var otpSessionID = useRef('');
     var UTMCampaign = useRef('');
     var UTMMedium = useRef('');
@@ -66,6 +70,7 @@ function SubBrokerForm(props) {
             setShowOpenAccountPopup(true);
         
     }
+    /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
         
         setShowOpenAccountPopup(false);
@@ -99,7 +104,7 @@ function SubBrokerForm(props) {
         }
         
     }
-
+//regular expression for  Name field
     function handleName(e) {
         let value = e.target.value.replace(/([^A-z-\s\'\.]*)*/g, "");
         setBrokerName(value);
@@ -108,7 +113,7 @@ function SubBrokerForm(props) {
             'brokerName': {}
         }));
     }
-
+//regular expression for Mobile Number field
     function handleMobileNumber(e) {
         let value = e.target.value.replace(/\D/g, "");
         setBrokerMobileNumber(value);
@@ -117,7 +122,7 @@ function SubBrokerForm(props) {
             'brokerMobileNumber': {}
         }));
     }
-
+//regular expression for mobile number
     function handleEmail(e) {
         let value = e.target.value.replace(/[^A-Za-z0-9._%+-@.]*/g, "");
         setBrokerEmail(value);
@@ -156,7 +161,7 @@ function SubBrokerForm(props) {
             }));
         }
     }
-
+//To send OTP
     function handleSendOTP(e) {
         e.preventDefault();
         if (errors.brokerMobileNumber.unique || errors.brokerEmail.unique) {
@@ -170,32 +175,13 @@ function SubBrokerForm(props) {
         //brokerEmail Validation
         isBrokerEmailValid = validateBrokerEmail(brokerEmail, false);
         //brokerCityBranch Validation
-        if (!brokerCityBranch.length) {
-            setErrors((prevError) => ({
-                ...prevError,
-                'brokerCityBranch': { 'required': true }
-            }));
-        } else if (brokerCityBranch.length) {
-            isBrokerCityBranchValid = true;
-        }
-        //brokerState Validation
-        if (showState) {
-            if (!brokerState.length) {
-                setErrors((prevError) => ({
-                    ...prevError,
-                    'brokerState': { 'required': true }
-                }));
-            } else if (brokerState.length) {
-                isBrokerStateValid = true;
-            }
-        } else {
-            isBrokerStateValid = true;
-        }
+        
         if (isBrokerNameValid && isBrokerMobileNumberValid && isBrokerEmailValid) {
-            sendOTP(false);
+            // sendOTP(false);
+            handleReCaptchaVerify();
         }
     }
-
+//for validating Name field
     function validateBrokerName(brokerName, fromUseEffect) {
         let isBrokerNameValid = false;
         if (!brokerName.length) {
@@ -217,7 +203,7 @@ function SubBrokerForm(props) {
         }
         return isBrokerNameValid;
     }
-
+//for validating mobile number field
     function validateBrokerMobileNumber(brokerMobileNumber, fromUseEffect) {
         let isBrokerMobileNumberValid = false;
         if (!brokerMobileNumber.length) {
@@ -246,7 +232,7 @@ function SubBrokerForm(props) {
         }
         return isBrokerMobileNumberValid;
     }
-
+////for validating email id  field
     function validateBrokerEmail(brokerEmail, fromUseEffect) {
         let isBrokerEmailValid = false;
         if (!brokerEmail.length) {
@@ -274,7 +260,7 @@ function SubBrokerForm(props) {
         setOTPErrors('');
         setCount(60);
     }
-
+//UTM Identifier
     function fetchQueryParams() {
         UTMCampaign.current = searchParams.get('utm_campaign') || '';
         UTMMedium.current = searchParams.get('utm_medium') || '';
@@ -319,14 +305,14 @@ function SubBrokerForm(props) {
     function hideAPIErrorToaster() {
         setShowErrorToaster(false);
     }
-
+//to show loader
     function showLoader(type) {
         setLoaders((prevLoaders) => ({
             ...prevLoaders,
             [type]: true
         }));
     }
-
+//to hide loader
     function hideLoader(type) {
         setLoaders((prevLoaders) => ({
             ...prevLoaders,
@@ -367,6 +353,26 @@ function SubBrokerForm(props) {
             setStatesDropdown([]);
         });
     }
+    const handleReCaptchaVerify = useCallback(async () => {
+        if (!executeRecaptcha) {
+            return;
+        }
+        showLoader('sendOTPLoader');
+        const token = await executeRecaptcha('sendOTP');
+        // Do whatever you want with the token
+        // sendOTP();
+        if (token) {
+            setCaptchaToken(token);
+            // alert("Token : "+token);
+        }
+        hideLoader('sendOTPLoader');
+    }, [executeRecaptcha]);
+
+    useEffect(() => {
+        if (captchaToken) {
+            sendOTP();
+        }
+    }, [captchaToken]);
 
     useEffect(() => {
         fetchQueryParams();
@@ -382,52 +388,52 @@ function SubBrokerForm(props) {
         }
     }, [showState]);
 
-    useEffect(() => {
-        const delayDebounceFn = setTimeout(() => {
-            let isBrokerNameValid = validateBrokerName(brokerName, true);
-            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerNameValid) {
-                // console.log(brokerName, "brokerName");
-                checkExistence('Name');
-                // Send Axios request here
-            }
-        }, 300)
-        return () => clearTimeout(delayDebounceFn)
-    }, [brokerName]);
+    // useEffect(() => {
+    //     const delayDebounceFn = setTimeout(() => {
+    //         let isBrokerNameValid = validateBrokerName(brokerName, true);
+    //         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+    //         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+    //         if (isBrokerNameValid) {
+    //             // console.log(brokerName, "brokerName");
+    //             checkExistence('Name');
+    //             // Send Axios request here
+    //         }
+    //     }, 300)
+    //     return () => clearTimeout(delayDebounceFn)
+    // }, [brokerName]);
 
-    useEffect(() => {
-        const delayDebounceFn = setTimeout(() => {
-            let isBrokerNameValid = validateBrokerName(brokerName, true);
-            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerMobileNumberValid) {
-                // console.log(brokerMobileNumber, "brokerMobileNumber");
-                checkExistence('Mobile Number');
-                // Send Axios request here
-            }
-        }, 300)
-        return () => clearTimeout(delayDebounceFn)
-    }, [brokerMobileNumber]);
+    // useEffect(() => {
+    //     const delayDebounceFn = setTimeout(() => {
+    //         let isBrokerNameValid = validateBrokerName(brokerName, true);
+    //         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+    //         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+    //         if (isBrokerMobileNumberValid) {
+    //             // console.log(brokerMobileNumber, "brokerMobileNumber");
+    //             checkExistence('Mobile Number');
+    //             // Send Axios request here
+    //         }
+    //     }, 300)
+    //     return () => clearTimeout(delayDebounceFn)
+    // }, [brokerMobileNumber]);
 
-    useEffect(() => {
-        const delayDebounceFn = setTimeout(() => {
-            let isBrokerNameValid = validateBrokerName(brokerName, true);
-            let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
-            let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
-            if (isBrokerEmailValid) {
-                // console.log(brokerEmail, "brokerEmail");
-                checkExistence('Email');
-                // Send Axios request here
-            }
-        }, 300);
-        return () => clearTimeout(delayDebounceFn)
-    }, [brokerEmail]);
+    // useEffect(() => {
+    //     const delayDebounceFn = setTimeout(() => {
+    //         let isBrokerNameValid = validateBrokerName(brokerName, true);
+    //         let isBrokerMobileNumberValid = validateBrokerMobileNumber(brokerMobileNumber, true);
+    //         let isBrokerEmailValid = validateBrokerEmail(brokerEmail, true);
+    //         if (isBrokerEmailValid) {
+    //             // console.log(brokerEmail, "brokerEmail");
+    //             checkExistence('Email');
+    //             // Send Axios request here
+    //         }
+    //     }, 300);
+    //     return () => clearTimeout(delayDebounceFn)
+    // }, [brokerEmail]);
 
     useEffect(() => {
         checkWebOTP();
     }, [loaders.resendOTPLoader || loaders.sendOTPLoader]);
-
+// for Mobile web OTP
     function checkWebOTP() {
         if ('OTPCredential' in window) {
             const input = document.getElementById('subBrokerOTP');
@@ -508,26 +514,31 @@ function SubBrokerForm(props) {
     function sendOTP(isResend) {
         showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
         let request = {
-            "name": brokerName,
-            "mobile_number": brokerMobileNumber,
-            "email": brokerEmail,
-            "city": '',
-            "source": "CHOICEINDIA",
-            "messgae": '',
+            "firstName": brokerName,
+            "mobileNo1": brokerMobileNumber,
+            "emailId1": brokerEmail,
+            "leadCityName": '',
+            "leadSource": "CHOICEINDIA",
+            // "messgae": '',
             "referredId": refercode.current || null,
-            "service_code": "CBAMF",
-            "utm_source": UTMSource.current || null,
-            "utm_medium": UTMMedium.current || null,
+            "serviceCode": "CBAMF",
+            "utm_source": UTMSource.current ||null,
+            "utm_medium":UTMMedium.current || null,
             "utm_campaign": UTMCampaign.current || null,
-            "utm_term":UTMTerm.current || null,
+            "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || null,
-            "utm_content": UTMContent.current || null
+            "utm_content": UTMContent.current || null,
+            "whatsappConsent": true,
+            "master_service_name":"CBA", 
+            "captchaResp": captchaToken
         };
-        subBrokerService.sendOTP(request).then((res) => {
+        subBrokerService.sendOTPNew(request).then((res) => {
             // console.log(res, "sendOTP");
             hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
-            if (res && res.data && res.data.status != 'error') {
-                otpSessionID.current = res.data.session_id;
+            if (res && res.data && res.data.Body && res.data.Body.session_id) {
+                
+                otpSessionID.current = res.data.Body.session_id;
+                // console.log("otpSessionID.current",otpSessionID.current)
                 // if (!isResend)
                 resetOTPPopup();
                 if (!isResend)
@@ -561,7 +572,73 @@ function SubBrokerForm(props) {
             }
         });
     }
+    // for resend OTP
+    function resendOTP(isResend) {
+        showLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+        let request = {
+            "mobile_no": brokerMobileNumber,
+            "old_session_id":  otpSessionID.current? otpSessionID.current : null       
+        };
 
+        subBrokerService.resendOTPNew(request).then((res) => {
+
+            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+            if(res && res.data && res.data.Body && res.data.Body.session_id){
+
+                otpSessionID.current = res.data.Body.session_id;
+                resetOTPPopup();
+                if (isResend)
+                handleOTPResendSuccessToaster('otp');
+            }else{
+                if (isResend) {
+                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                }
+            }
+        }).catch((error) => {
+
+            hideLoader(isResend ? 'resendOTPLoader' : 'sendOTPLoader');
+            if (error && error.response && error.response.data && error.response.data.Message) {
+                setOTPErrors(error.response.data.Message);
+            } else {
+                setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+            }
+        });
+    }
+
+    //To verify OTP on call
+    function getOTPOnCall(){
+        // console.log("getOTPOnCall")
+        showLoader('callOtpLoader2');
+        let request = {
+            "mobile_no": brokerMobileNumber,
+            "request_source":"CHOICEINDIA",
+            "session_id":  otpSessionID.current? otpSessionID.current : null   
+        };
+        openAccountService.OTPOnCall(request).then((res)=>{
+            // console.log("OTPOnCall",res)
+            hideLoader('callOtpLoader2');
+            if(res && res.data && res.data.Body && res.data.Body.session_id){
+    
+                otpSessionID.current = res.data.Body.session_id;
+                resetOTPPopup();
+              
+                handleOTPResendSuccessToaster('call');
+            }else{
+                
+                    setOTPErrors((res.data && res.data.Message) ? res.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
+                
+            }
+        }).catch((error) => {
+            hideLoader('callOtpLoader2');
+                    // setCount(30);
+                    if (error && error.response && error.response.data && error.response.data.Message) {
+                        setOTPErrors(error.response.data.Message);
+                    } else {
+                        setOTPErrors("Something went wrong, please try again later!");
+                    }
+        })
+    }
+//To verify OTP
     function verifyOTP() {
         if (!otp.length) {
             setOTPErrors(SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror1', 'OTP is required'));
@@ -571,12 +648,18 @@ function SubBrokerForm(props) {
                 session_id: otpSessionID.current,
                 otp: otp
             }
-            subBrokerService.verifyOTPN(request).then((res) => {
+            subBrokerService.verifyOTPNew(request).then((res) => {
                 hideLoader('verifyLoader');
                 // console.log(res, "verifyOTPN");
                 if (res && res.data && res.data.status != 'error') {
                     fetchQueryParams();
-                    addNewLead();
+                    // addNewLead();
+                    handleOTPPopupClose();
+                    handleBrokerCreatedSuccessShow();
+                    resetBrokerForm();
+                    setShowThanku(prevState => {
+                        return { ...prevState, showModal: true,resText: res.data.Message? res.data.Message: 'Lead added successfully', closeMd: closeModal }
+                    });
                 } else {
                     setOTPErrors((res.data && res.data.message) ? res.data.message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
                 }
@@ -642,11 +725,11 @@ function SubBrokerForm(props) {
             return { ...prevState, showModal: false}
         });
     }
-
-    function handleOTPResendSuccessToaster() {
-        setOTPSendSuccessToaster(true);
+//OTP resend success toaster
+    function handleOTPResendSuccessToaster(type) {
+        setOTPSendSuccessToaster({[type]: true});
         setTimeout(() => {
-            setOTPSendSuccessToaster(false);
+            setOTPSendSuccessToaster({[type]: false});
         }, 2000)
     }
     // const selectInputRef = useRef();
@@ -883,16 +966,23 @@ function SubBrokerForm(props) {
 
                                                 {
                                                     !count ?
-                                                        <button className="resend" onClick={() => sendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button> : ''
+                                                        
+                                                        <div className="d-flex align-items-center justify-content-center">
+                                                            <button className="resend" onClick={() => resendOTP(true)}>{loaders.resendOTPLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'Resend OTP')}</button>
+                                                            <span className="ortext">{SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otppopupresend', 'OR')}</span>
+                                                            <button className="resend" onClick={getOTPOnCall}>{loaders.callOtpLoader ? <div className="dotLoaderB colorB marginLoader"></div> : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otponcall', 'Get OTP on Call')}</button>
+                                                        </div>:''
                                                 }
 
 
                                             </div>
                                             <div className="mt-2">
                                                 {
-                                                    OTPSendSuccessToaster ?
+                                                    (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call)?
                                                         <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster(false)} dismissible>
-                                                            {SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')}
+                                                            {
+                                                            (OTPSendSuccessToaster.call)?  SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otpresendsuccess1', 'You will soon receive an automated call on given Mobile Number'):SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otptoastermsg', 'OTP has been resent on given Mobile Number')
+}
                                                         </Alert> : ''
                                                 }
                                             </div>
