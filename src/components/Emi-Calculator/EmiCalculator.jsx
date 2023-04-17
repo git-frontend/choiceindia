@@ -11,7 +11,7 @@ function EmiCalculator() {
     const [errorMessages, setErrorMessages] = useState({loanAmount: '',interestRate: '',tenure: ''});
     useEffect(() => {
         calculateEmi();
-    })
+    },[loanAmount,interestRate,tenure])
 
     // Calculate EMi 
     const calculateEmi = () => {
@@ -58,11 +58,16 @@ function EmiCalculator() {
             setLoanAmount((event.target.value).replace(/\D/g, ""))
        
       };
-      // TO handle Interest Rate
-      const handleInterestRateChange = (event) => {
-      
-            setInterestRate((event.target.value))
-      
+
+    const handleInterestRateChange = (event) => {
+        const value = event.target.value;
+        const regex = /^[1-9][0-9]?(\.\d{1,2})?$|^0\.\d{1,2}$/;
+        if (regex.test(value)) {
+          setInterestRate(event.target.value);
+        }
+        else{
+            setInterestRate("");
+        }
       };
       // TO handle Tenure 
       const handleLoanTenureChange = (event) => {
@@ -132,7 +137,8 @@ function EmiCalculator() {
                                         {/* <p>Interest Rate (per annum)</p> */}
                                         <div className='value-card'>
                                             <div><p>Interest Rate (per annum)</p></div>
-                                            <div><input type="text" className="form-ctr"  min="10" max="36"  value={interestRate} maxLength={4} onChange={handleInterestRateChange}/>
+                                            <div><input type="number" className="form-ctr" min="10" max="36"   value={interestRate}  
+                                            onChange={handleInterestRateChange}/>
                                             <span>%</span>
                                             </div>
                                         </div>
