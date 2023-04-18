@@ -517,7 +517,8 @@ function SubBrokerForm(props) {
             "firstName": brokerName,
             "mobileNo1": brokerMobileNumber,
             "emailId1": brokerEmail,
-            "leadCityName": '',
+            "leadCityName": 'OTHERS',
+            "leadState":'OTHERS', //FOR MF
             "leadSource": "CHOICEINDIA",
             // "messgae": '',
             "referredId": refercode.current || null,
