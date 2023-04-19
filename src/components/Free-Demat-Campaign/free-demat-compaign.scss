@@ -1,0 +1,165 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+
+.free-dematbanner{
+    padding-top: 7rem;
+    position: relative;
+    .brd-bottom{
+        border-bottom: 1px solid $border-gray;
+        padding-bottom: 6rem;
+        @media (max-width:$sm) {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+    .banner-btn{
+        padding-bottom: 3rem;
+        @media (max-width:$sm) {
+            text-align: center;
+        }
+        .all-account{
+            background-color: $bgcolor-lightyellow;
+            color: $yellowColor;
+            border: 1px solid $yellowColor;
+            font-size: 18px;
+            font-family: $font-family-poppins-medium;
+            line-height: 1.5;
+            padding: 7px 15px;
+            text-transform: capitalize;
+            border-radius: 25px;
+        }
+    }
+    .free-banner-caption{
+        .big-ttl{
+            @media (max-width:$sm) {
+                text-align: center;
+             }
+            br{
+                @media (max-width:$sm) {
+                   display: none;
+                }
+            }
+        }
+        .clock{
+            position: relative;
+            padding: 0 2rem;
+            &::before {
+                content: '';
+                width: 7rem;
+                height: 7rem;
+                display: block;
+                position: absolute;
+                left: 0.3rem;
+                top: -1rem;
+                background: url(../../assets/images/free-demat-compaign/clock.svg) no-repeat top left;
+                background-size: contain;
+                z-index: -1;
+                @media (max-width:$md) {
+                    width: 6rem;
+                    height: 6rem;
+                }
+            }
+        }
+        .campaign-banner-features {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding-top: 6rem;
+            .campaign-features-list {
+                width: 29%;
+                text-align: center;
+                position: relative;
+                .campaign-img{
+                    &::before {
+                        content: "";
+                        width: 8rem;
+                        height: 8rem;
+                        display: block;
+                        position: absolute;
+                        left: 3rem;
+                        top: -2rem;
+                        background: url(../../assets/images/free-demat-compaign/bg-circle.svg) no-repeat top left;
+                        background-size: contain;
+                        z-index: -1;
+                        @media (max-width:$md) {
+                            left: 1rem;
+                        }
+                        @media (max-width:$sm) {
+                            left: 0;
+                        }
+                    }
+                }
+                h3{
+                    font-family: $font-family-poppins-medium;
+                    font-size: 18px;
+                    padding-top: 2rem;
+                    line-height: 1.5;
+                    @media (max-width:$md) {
+                        font-size: 16px;
+                    }
+                    @media (max-width:$sm) {
+                        padding-left: 3rem;
+                        margin-top: -1rem;
+                    }
+                    br{
+                        @media (max-width:$sm) {
+                           display: none;
+                        } 
+                    }
+                }
+
+                @media (max-width:$md) {
+                    width: 31%;
+                }
+                @media (max-width:$sm) {
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    padding-bottom: 5rem;
+                }
+            }
+            @media (max-width:$sm) {
+               display: inline-block;
+            }
+        }
+    }
+    @media (max-width:$sm) {
+       padding: 4rem 0 6rem 0;
+    }
+}
+
+.create-backtest-sec{
+    padding: 7rem 0 6rem 0;
+   .create-backtest{
+    display: flex;
+    flex-wrap: wrap;
+    .left-sec{
+        width: 30%;
+        .create-backtest-list{
+            list-style: none;
+            .backtest-item{
+                background: $whiteColor;
+                border: 2px solid $bgolor-lightwhite;
+                border-radius: 16px;
+                display: inline-block;
+                margin: 1rem 0;
+                min-width: 290px;
+                padding: 1rem 2rem;
+                text-transform: capitalize;
+            }
+        }
+}
+    .right-sec{
+        width:70%
+    }
+   }
+}
+
+
+
+
+
+
+

@@ -138,8 +138,9 @@ const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Len
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
-
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
+const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
+
 function Routing() {
 
 
@@ -778,6 +779,11 @@ function Routing() {
                         <Route exact path='/merchant-investment-banking' element={
                             <React.Suspense>
                                 < LazyInvestmentBanking />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/free-demat-compaign' element={
+                            <React.Suspense>
+                                < LazyFreeDematCompaign />
                             </React.Suspense>
                         } />
  
