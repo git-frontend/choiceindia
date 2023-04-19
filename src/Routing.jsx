@@ -140,6 +140,7 @@ const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypo
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
+const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
 function Routing() {
 
 
@@ -778,6 +779,11 @@ function Routing() {
                         <Route exact path='/merchant-investment-banking' element={
                             <React.Suspense>
                                 < LazyInvestmentBanking />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/futures-options-trading' element={
+                            <React.Suspense>
+                                < LazyFuturesOptionsTrading />
                             </React.Suspense>
                         } />
  
