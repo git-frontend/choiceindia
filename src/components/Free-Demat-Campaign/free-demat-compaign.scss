@@ -344,18 +344,12 @@
     @media (max-width:$sm) {
         height: 100%;
     }
-    .cols{
-        .cols-item{
-            width: 48% !important;
-        }
-    }
     .main-left {
         background-color: $whiteColor;
         border-radius: 0.5rem;
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
-
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
@@ -368,7 +362,6 @@
                     font-family: $font-family-poppins-regular;
                     color: $redbg;
                 }
-
                 .top-date {
                     font-size: 0.923rem;
                     line-height: 1.385rem;
@@ -376,7 +369,6 @@
                     color: $primary;
                 }
             }
-
             .top-right {
                 .btn-buy {
                     padding: 10px 10px;
@@ -393,20 +385,17 @@
                     text-transform: capitalize;
                     min-width: 7.188rem;
                 }
-
                 .sellbtn {
                     color: #fff;
                     background: #ee404a !important;
                     border-color: #ee404a !important;
                 }
-
                 .buybtn {
                     color: #fff;
                     background: #004393 !important;
                     border-color: #004393 !important;
 
                 }
-
                 a {
 
                     text-decoration: none !important;

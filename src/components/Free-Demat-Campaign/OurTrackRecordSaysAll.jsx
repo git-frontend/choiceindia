@@ -47,9 +47,8 @@ function OurTrackRecordSaysAll() {
                 <div  className="content-tabs active-content">
                   <div className="row d-flex justify-content-center">
                       <div className="col-md-12">
-                        <div >
-                          <Slider {...settings} className="cols">
-                          <div className="cols-item">
+                          <div className="row gx-5">
+                          <div className="col-xl-6 col-md-12">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -95,7 +94,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="cols-item">
+                          <div className="col-xl-6 col-md-12">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -141,7 +140,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="cols-item">
+                          <div className="col-xl-6 col-md-12">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -187,7 +186,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="cols-item">
+                          <div className="col-xl-6 col-md-12">
                             <div className="main-left">
                             <div className="top-section">
                                 <div className="top-left">
@@ -233,7 +232,6 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          </Slider>
                         </div>
                       </div>
                     </div> 
