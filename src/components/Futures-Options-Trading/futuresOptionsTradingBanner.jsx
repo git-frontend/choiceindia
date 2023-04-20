@@ -12,6 +12,7 @@ import LazyLoader from '../Common-features/LazyLoader';
 import ResearchCalls from './ResearchCalls';
 import FuturesTradingNeeds from './FuturesTradingNeeds';
 import FandOopendematAc from './FandOopendematAc';
+import WhyChoice from './WhyChoice';
 import './futuresoptionstrading.scss';
 function futuresOptionsTradingBanner() {
     const settings1 = {
@@ -97,6 +98,7 @@ function futuresOptionsTradingBanner() {
             </section>
             <FuturesTradingNeeds/>
             <FandOopendematAc/>
+            <WhyChoice/>
            
 
         </>

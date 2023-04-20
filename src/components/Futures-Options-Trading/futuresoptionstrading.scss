@@ -334,6 +334,9 @@
             text-decoration: none;
             width: 90% !important;
             text-align: center;
+            @media (min-width:$sm)and (max-width:$md) {
+                width: 100% !important;
+            }
             .fandoimg {
                 display: flex;
                 align-items: center;
@@ -343,6 +346,9 @@
                 min-height: 13rem;
                 height: 100%;
                 margin: 0 auto;
+                @media (min-width:$sm)and (max-width:$md) {
+                    min-height: 11rem;
+                }
 
             }
             .fando-head{
@@ -359,5 +365,12 @@
             min-width: 25rem;
             padding: 1.5rem 2.8rem !important;
         }
+    }
+}
+.fand-why-choice{
+    background-color:$lightColor ;
+    padding: 10rem 0;
+    @media (max-width: $md) {
+        padding: 5rem 0;
     }
 }
