@@ -7,8 +7,11 @@ import icon1 from '../../assets/images/Futures-Options-Trading/demat-account-wit
 import icon2 from '../../assets/images/Futures-Options-Trading/free-demat-account-with-advanced-trading-platform.svg';
 import icon3 from '../../assets/images/Futures-Options-Trading/demat-account-with-free-premium-research-tools.svg';
 import Slider from 'react-slick';
+import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
-import ResearchCalls from '../Futures-Options-Trading/ResearchCalls';
+import ResearchCalls from './ResearchCalls';
+import FuturesTradingNeeds from './FuturesTradingNeeds';
+import FandOopendematAc from './FandOopendematAc';
 import './futuresoptionstrading.scss';
 function futuresOptionsTradingBanner() {
     const settings1 = {
@@ -79,8 +82,23 @@ function futuresOptionsTradingBanner() {
 
                 </div>
             </section>
-            <ResearchCalls/>
+            <ResearchCalls />
+            <section className="getstart-signup">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="signup-text">
+                                <div className="signup-left"><h3 className="signup-ttl">Sign up  to check out more research calls.</h3></div>
+                                <div className="signup-right"><Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark signup-btn">Get Started</span></Link></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <FuturesTradingNeeds/>
+            <FandOopendematAc/>
            
+
         </>
     );
 };
