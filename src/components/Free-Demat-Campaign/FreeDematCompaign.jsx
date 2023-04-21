@@ -7,6 +7,10 @@ import Banner from './Banner';
 import CreateBacktestStrategies from "./CreateBacktestStrategies";
 import GetFreeResearchCall from "./GetFreeResearchCall";
 import OurTrackRecordSaysAll from "./OurTrackRecordSaysAll";
+import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
+import OneAccountFinancialNeeds from "./OneAccountFinancialNeeds";
+import OpenLowBrokerageDematAccount from "./OpenLowBrokerageDematAccount";
+import DematAccountOnlineSteps from "./OpenDematAccountOnlineSteps";
 
 
 
@@ -19,6 +23,10 @@ function FreeDematCompaign() {
           <CreateBacktestStrategies/>
           <GetFreeResearchCall/>
           <OurTrackRecordSaysAll/>
+          <WhyOpenFreeDematAccount/>
+          <OneAccountFinancialNeeds/>
+          <OpenLowBrokerageDematAccount/>
+          <DematAccountOnlineSteps/>
        </div> 
       
     </div>

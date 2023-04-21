@@ -23,7 +23,7 @@
             background-color: $bgcolor-lightyellow;
             color: $yellowColor;
             border: 1px solid $yellowColor;
-            font-size: 18px;
+            font-size: 1.5;
             font-family: $font-family-poppins-medium;
             line-height: 1.5;
             padding: 7px 15px;
@@ -92,13 +92,10 @@
                     }
                 }
                 h3{
-                    font-family: $font-family-poppins-medium;
-                    font-size: 18px;
+                    font-family: $font-family-poppins-semibold;
+                    font-size: 1.3rem;
                     padding-top: 2rem;
                     line-height: 1.5;
-                    @media (max-width:$md) {
-                        font-size: 16px;
-                    }
                     @media (max-width:$sm) {
                         padding-left: 3rem;
                         margin-top: -1rem;
@@ -185,7 +182,7 @@
                     .hideShow{
                         display: block;
                         padding-top: 1rem;
-                        font-size: 16px;
+                        font-size: 1.125rem;
                     }
                 }
                 .hideShow{
@@ -244,18 +241,16 @@
             }
             h3{
                 color: $whiteColor;
-                font-size: 24px;
-                font-family: $font-family-poppins-medium;
+                font-size: 1.5rem;
+                font-family: $font-family-poppins-semibold;
                 line-height: 1.5;
-                @media (max-width:$md) {
-                    font-size: 21px;
-                }
             }
             p{
                 color:  $text-gray;
                 text-transform: capitalize;
                 min-height: 11rem;
                 padding-top: 1rem;
+                font-size: 1.125rem;
                 @media (max-width:$md) {
                     min-height: 12rem;
                 }
@@ -499,9 +494,249 @@
     }
 }
 
+.why-open-freedematac{
+    background: $bgcolordark;
+    padding: 6rem 0;
+    .title-secnd{
+        color: $whiteColor;
+        span{
+            color: $bgcolor-yellow;
+        }
+        br{
+            @media (max-width:$sm) {
+               display: none;
+            }
+        }
+    }
+    .row-pd{
+        padding:3rem 0;
+    .benefit-list {
+        padding: 3rem;
+        text-align: center;
+        .benefit-img{
+            @media (max-width:$sm) {
+                width: 40%;
+            }
+        }
+        .benefit-item {
+            padding-top: 2rem;
+            .title-cam{
+                color: $whiteColor;
+                font-size:1.5rem ;
+                font-family: $font-family-poppins-semibold;
+                line-height: 1.5;
+                @media (max-width:$md) {
+                    font-size: 1.3rem ;
+                }
+            }
+            @media (max-width:$sm) {
+                padding-top: 0;
+                width: 56%;
+                text-align: left;
+            }
+        }
+        @media (max-width:$md) {
+            padding:0;
+        }
+        @media (max-width:$sm) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 0 3rem 0;
+        }
+    }
+}
+}
 
+.one-ac-financial{
+    padding: 6rem 0;
+    .title-secnd{
+        span{
+            color: $bgcolor-yellow;
+        }
+    }
+    .main-services-list{
+        padding: 5rem 0;
+        position: relative;
+        &::before{
+            content: 'ALL IN ONE';
+            display: block;
+            position: absolute;
+            font-size: 14rem;
+            font-family: $font-family-poppins-bold;
+            text-transform: capitalize;
+            color:$whiteColor;
+            text-shadow: -1px 1px 0 #221f2029, -1px -1px 0 #221f2029, 1px -1px 0 #221f2029,-1px 1px 0 #221f2029, 1px 1px 0 #221f2029;
+            right: 0;
+            left: 0;
+            text-align: center;
+            line-height: 336px;
+            top: 30%;
+            @media (max-width:$md) {
+                font-size: 10rem;
+            }
+            @media (max-width:$sm) {
+                display: none;
+            }
+        }
+    .slick-slider{
+        .slick-prev{
+            z-index: 1;
+            left: -10px;
+            top: 44%;
+                &:before {
+                    content: "";
+                    width: 72px;
+                    height: 72px;
+                    display: block;
+                    background: url(../../assets/images/free-demat-compaign/arrow-pre.svg) no-repeat center center;
+                    background-size: contain;
+                    opacity: 1;
+                    @media (max-width:$sm) {
+                        width: 50px;
+                        height: 50px;
+                    }
+            }
+            @media (max-width:$sm) {
+                left:0 ;
+            }
+        }
+        .slick-next{
+            z-index: 1;
+            right: 40px;
+            top: 44%;
+            &:before {
+                    content: "";
+                    width: 72px;
+                    height: 72px;
+                    display: block;
+                    background: url(../../assets/images/free-demat-compaign/arrow-next.svg) no-repeat center center;
+                    background-size: contain;
+                    opacity: 1;
+                    @media (max-width:$sm) {
+                        width: 50px;
+                        height: 50px;
+                    }
+                }
+            }
+    }
+    .carditem-nbfc {
+        background: $bg-sky4;
+        border: 1px solid $bg-lightgreen;
+        width: 85% !important;
+        min-height: 14rem;
+       .cardimg {
+            background: $bg-lightgreen;
+            padding: 1rem;
+            border-radius: 16px;
+            height: 74px;
+            align-items: center;
+            display: inline-flex;
+            justify-content: center;
+        }
+    }
+}
+.btn-open{
+    text-align: center;
+    padding-top: 7rem;
+    @media (max-width:$sm) {
+        padding-top: 0;
+    }
+}
+}
 
+.open-low-brokerage {
+	padding: 7rem 0 9rem 0;
+	@media (max-width:$sm) {
+		padding: 5rem 0;
+	}
+	.secttitle {
+		color: $primary;
+		font-size: 3.25rem;
+		line-height: 4.875rem;
+		font-weight: 700;
+		padding-bottom: 2.375rem;
+		font-family: $font-family-poppins-bold;
+        span{
+            color: $bgcolor-yellow
+        };
+		@media (max-width:$sm) {
+			font-size: 2rem;
+			line-height: 3rem;
+		}
+	}
+	p {
+		color: $secondary;
+		font-size: 1.5rem;
+		line-height: 2.375rem;
+		font-weight: 500;
+		padding-bottom: 4.375rem;
+		font-family: $font-family-poppins-medium;
+		margin: 0 auto;
+		text-align: center;
+		width: 64%;
+        @media (max-width:$md) {
+			width: 90%;
+		}
+		@media (max-width:$sm) {
+			width: 100%;
+		}
+	}
+	.card {
+		border: 1px solid $primary;
+		background-color: $whiteColor;
+		border-radius: 1.875rem;
+		min-height: 26rem;
+		width: 90%;
+		margin: 0 auto;
+        @media (max-width:$md) {
+            width: 100%;
+		}
+		@media (max-width:$sm) {
+            width: 90%;
+		}
+		.icon-wrap {
+			padding: 2rem;
+            border-top-left-radius: 1.875rem;
+            border-top-right-radius: 1.875rem;
+            background: $primary;
+            text-align: center;
+            .card-title {
+				font-size: 1.625rem;
+				line-height: 2.438rem;
+                color: $whiteColor;
+				font-family: $font-family-poppins-semibold;
+			}
+		}
+		.card-block {
+			text-align: center;
+            padding:0 2.5rem;
+            @media (max-width:$md) {
+                padding:0 1rem;
+            }
+		}
+		.charge-lists {
+			list-style: none;
+			margin-top: 2rem;
+			padding: 0;
 
+			li {
+				display: flex;
+				justify-content: space-between;
+				padding: 0.5rem 0;
+				font-family: $font-family-poppins-medium;
+				margin-top: 1rem;
+				font-weight: 500;
+			}
+
+		}
+	}
+}
+.open-account-steps{
+    .steps-banner{
+        
+    }
+}
 
 
 
