@@ -69,7 +69,7 @@ function futuresOptionsTradingBanner() {
         <>
             <section className="futureoptionbenner">
                 <div className="container">
-                    <div className="row gx-5">
+                    <div className="row ">
                         <div className="col-md-7 fandoleft">
                             <h1 className="big-ttl">Don’t Miss <span> F&O </span><br />
                                 Trading Opportunities!</h1>
