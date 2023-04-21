@@ -76,7 +76,6 @@
                     padding-top: 2rem;
                     color: $primary;
                     font-family: $font-family-poppins-semibold;
-                    padding: 1rem 1.4rem;
                     @media (max-width:$md) {
                         padding: 1rem 1.4rem;
                     }
@@ -215,7 +214,7 @@
 
         .content-list-itm {
             padding-left: 3.5rem;
-            margin-bottom: -0.6rem;
+            // margin-bottom: -0.6rem;
             position: relative;
             cursor: pointer;
             border-bottom: 1px solid $border-gray;
@@ -389,7 +388,10 @@
                 font-family: $font-family-poppins-semibold;
                 font-size: 1.625rem;
                 line-height: 1.5;
-                padding-top: 4rem 0.3rem;
+                padding-top: 4rem;
+                @media (max-width:$sm){
+                    padding: 4rem 0.3rem;
+                } 
             }
         }
     }
