@@ -27,6 +27,7 @@ function FuturesTradingNeeds() {
           slidesToShow: 1,
           slidesToScroll: 1,
           vertical: false,
+          dots:true,
           autoplaySpeed: 3000,
         }
       }
@@ -40,7 +41,7 @@ function FuturesTradingNeeds() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center treding-mr">A perfect platform for your <br /> F&O trading needs</h2>
+              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br /> F&O Trading Needs</h2>
             </div>
           </div>
           <div className='row justify-content-center'>

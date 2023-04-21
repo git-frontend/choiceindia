@@ -41,7 +41,7 @@ function futuresOptionsTradingBanner() {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 1.5,
                     slidesToScroll: 1,
                     dots: false,
                 }

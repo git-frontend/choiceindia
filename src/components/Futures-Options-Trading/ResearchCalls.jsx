@@ -29,7 +29,7 @@ function ResearchCalls() {
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                dots: false,
+                dots: true,
             }
         }
 
@@ -42,7 +42,7 @@ function ResearchCalls() {
                 <div className="container">
                 <h2 className="title-first research-title">Our Recent Research Calls</h2>
                     <div className="">
-                        <Slider {...settings} className="research-calls-tab gx-5">
+                        <Slider {...settings} className="research-calls-tab">
                         <div className="calls-tab-item">
                             <div className="main-left">
                               <div className="top-section">
@@ -65,15 +65,15 @@ function ResearchCalls() {
 
                               <div className="bottom-section">
                                 <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Entry Price</h6>
                                     <h4 className="bottom_big_text">165.00</h4>
                                   </div>
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Potential Price</h6>
                                     <h4 className="bottom_big_text" >182.00</h4>
                                   </div>
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Exp. Returns</h6>
                                     <h4 className="bottom_big_text">15 Nov, 2023</h4>
                                   </div>
@@ -103,15 +103,15 @@ function ResearchCalls() {
 
                               <div className="bottom-section">
                                 <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Entry Price</h6>
                                     <h4 className="bottom_big_text">242.40</h4>
                                   </div>
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Potential Price</h6>
                                     <h4 className="bottom_big_text" >324.82</h4>
                                   </div>
-                                  <div className="bottom">
+                                  <div className="bottom fandores">
                                     <h6 className="bottom_small_text">Exp. Returns</h6>
                                     <h4 className="bottom_big_text">23 Jun ,2023</h4>
                                   </div>
