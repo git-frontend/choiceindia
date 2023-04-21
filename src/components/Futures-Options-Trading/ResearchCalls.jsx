@@ -48,18 +48,18 @@ function ResearchCalls() {
                               <div className="top-section">
                                 <div className="top-left">
                                   <h6 className="top-text">Reco Date</h6>
-                                  <h6 className="top-date">17 March’23</h6>
+                                  <h6 className="top-date">15 November ,23</h6>
                                 </div>
-                                <div className="top-right"><button className="btn-buy">buy</button></div>
+                                <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
                               </div>
                               <div className="middle-section">
                                 <div className="middle-left">
-                                  <h4 className="big-text">BOB</h4>
-                                  <span className="small-text">UPL LIMITED</span>
+                                  <h4 className="big-text">BANKBARODA</h4>
+                                  <span className="small-text">BANK OF BARODA</span>
                                 </div>
                                 <div className="middle-right">
-                                  <span className="right-big-text">715.65</span>
-                                  <h6 className="right-small-text text_color">19.25(2.76%)</h6>
+                                  <span className="right-big-text">165.65</span>
+                                  <h6 className="right-small-text text_color">6.95(4.37%)</h6>
                                 </div>
                               </div>
 
@@ -67,15 +67,15 @@ function ResearchCalls() {
                                 <div className="d-flex justify-content-between pt-3">
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">697.40</h4>
+                                    <h4 className="bottom_big_text">165.00</h4>
                                   </div>
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >713.90</h4>
+                                    <h4 className="bottom_big_text" >182.00</h4>
                                   </div>
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">17 March’24</h4>
+                                    <h4 className="bottom_big_text">15 Nov, 2023</h4>
                                   </div>
                                 </div>
                               </div>
@@ -88,16 +88,16 @@ function ResearchCalls() {
                                   <h6 className="top-text">Reco Date</h6>
                                   <h6 className="top-date">17 March’23</h6>
                                 </div>
-                                <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
+                                <div className="top-right"><button className="btn-buy">BUY</button></div>
                               </div>
                               <div className="middle-section">
                                 <div className="middle-left">
-                                  <h4 className="big-text">BOB</h4>
-                                  <span className="small-text">UPL LIMITED</span>
+                                  <h4 className="big-text">SIGACHI</h4>
+                                  <span className="small-text">SIGACHI INDUSTRIES LIMITE</span>
                                 </div>
                                 <div className="middle-right">
-                                  <span className="right-big-text">715.65</span>
-                                  <h6 className="right-small-text">19.25(2.76%)</h6>
+                                  <span className="right-big-text">291</span>
+                                  <h6 className="right-small-text">22.70(7.24%)</h6>
                                 </div>
                               </div>
 
@@ -105,15 +105,15 @@ function ResearchCalls() {
                                 <div className="d-flex justify-content-between pt-3">
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">697.40</h4>
+                                    <h4 className="bottom_big_text">242.40</h4>
                                   </div>
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >713.90</h4>
+                                    <h4 className="bottom_big_text" >324.82</h4>
                                   </div>
                                   <div className="bottom">
                                     <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">17 March’24</h4>
+                                    <h4 className="bottom_big_text">23 Jun ,2023</h4>
                                   </div>
                                 </div>
                               </div>

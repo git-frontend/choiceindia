@@ -1,6 +1,8 @@
 
 // import React from 'react';
 import React from "react";
+import { useState,useEffect } from 'react';
+import meta_tags from '../../Data/MetaTags';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import icon1 from '../../assets/images/Futures-Options-Trading/demat-account-with-daily-research-calls-from-experts.svg';
@@ -15,6 +17,7 @@ import FandOopendematAc from './FandOopendematAc';
 import WhyChoice from './WhyChoice';
 import './futuresoptionstrading.scss';
 function futuresOptionsTradingBanner() {
+    const [rendercount, setRenderCount] = useState(() => false);
     const settings1 = {
         infinite: true,
         speed: 1500,
@@ -47,6 +50,21 @@ function futuresOptionsTradingBanner() {
         ]
 
     };
+
+
+  useEffect(() => {
+    setRenderCount(true)
+    if (rendercount === true) {
+      // let parser = new DOMParser();
+      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+    }
+  }, [rendercount])
     return (
         <>
             <section className="futureoptionbenner">
