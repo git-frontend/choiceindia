@@ -214,7 +214,7 @@
 
         .content-list-itm {
             padding-left: 3.5rem;
-            margin-bottom: -0.2rem;
+            margin-bottom: -0.6rem;
             position: relative;
             cursor: pointer;
             border-bottom: 1px solid $border-gray;
@@ -316,7 +316,9 @@
 
     .fando-ttl {
         color: $whiteColor;
-
+        @media (max-width: $sm) {
+           margin-bottom: 1rem;
+        }
     }
 
     .fando-open-demat-slider {
@@ -340,6 +342,9 @@
                         min-height: inherit;
                         height: 100%;
                         padding: 4.5rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem 3rem ;
+                        }
                     }
                 }
             }
@@ -384,6 +389,9 @@
                 font-size: 1.625rem;
                 line-height: 1.5;
                 padding-top: 4rem;
+                @media (max-width:$sm){
+                    padding: 4rem 0.3rem;
+                }
             }
         }
     }
