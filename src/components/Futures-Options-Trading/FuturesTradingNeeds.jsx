@@ -7,7 +7,7 @@ import tradingdata from '../../Data/FandOTrading';
 import LazyLoader from '../Common-features/LazyLoader';
 function FuturesTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
-  const [isShown3, setIsShown3] = useState(0);
+  const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
     infinite: true,
     speed: 1000,
