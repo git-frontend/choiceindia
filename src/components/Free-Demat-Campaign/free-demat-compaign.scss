@@ -260,9 +260,9 @@
     }
 }
 
-.mainhead {
+.track-record-sec {
     background-color: $abt-bg;
-
+    padding: 6rem 0;
     .title-secnd1 {
         font-size: 3.077rem;
         color: $bgcolorblackdark;
@@ -335,9 +335,10 @@
 .main-parent {
     padding: 1.438rem 0rem;
     background-color: $abt-bg;
-    min-height: 646px;
+   
     @media (max-width:$sm) {
         height: 100%;
+        min-height: 0;
     }
     .main-left {
         background-color: $whiteColor;
@@ -345,6 +346,8 @@
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
+        width: 95% !important;
+        margin: 0 auto;
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
@@ -739,24 +742,16 @@
         display: flex;
         flex-wrap: wrap;
         padding-top: 6rem;
+        align-items: center;
         .left-sec{
             width: 40%;
             .steps-card {
                 position: relative;
                 padding: 4rem;
-               &::before{
-                content: '';
                 background: linear-gradient(180deg, #ffffff66 0%, #ffffff29 100%, #ffffff1a 100%);
                 border-radius: 15px;
-                padding: 4rem;
                 border: 2px solid #ffffff54;
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                top: 0;
-                left: 0;
                 z-index: 1;
-               }
                 .steps-card-list{
                     display: flex;
                     place-items: baseline;
@@ -792,6 +787,9 @@
                                     right: 0;
                                     margin: 0 auto;
                                     top: 73px;
+                                    @media (max-width:$md) {
+                                        top: 66px;
+                                    }
                                 }
                         span{
                             font-size: 2rem;
@@ -806,10 +804,16 @@
                         h5{
                             font-size: 1.75rem;
                             font-family: $font-family-poppins-semibold;
+                            @media (max-width:$sm) {
+                                font-size: 1.5rem;
+                              }
                         }
                         p{
                             font-size: 1.375rem;
                             line-height: 1.5;
+                            @media (max-width:$sm) {
+                                font-size: 1.25rem;
+                              }
                         }
                     }
                     &:last-child{
@@ -838,22 +842,285 @@
                         opacity: 0;
                         visibility: hidden;
                         transition-duration: 1.5s;
+                        @media (max-width:$sm) {
+                            top: 3rem;
+                          }
                     }
 
                 }
+                @media (max-width:$sm) {
+                   padding: 1rem 1rem 7rem 1rem;
+                 }
                
             }
+            @media (max-width:$md) {
+                width: 65%;
+            }
+            @media (max-width:$sm) {
+                width: 100%;
+             }
         }
         .right-sec{
             width: 60%;
+            @media (max-width:$md) {
+                width: 35%;
+            }
             .step-banner {
                 position: relative;
                 right: 5rem;
-                top: 16rem;
+                top: 12rem;
+                @media (max-width:$md) {
+                    right: 2rem;
+                    top: 17rem;
+                }
+                @media (max-width:$sm) {
+                   display: none;
+                }
             }
         }
     }
 }
 
+.documents-required-sec{
+    padding: 6rem 0;
+    span{
+        color: $bgcolor-yellow;
+    }
+    .title-secnd{
+        br{
+            @media (max-width:$md) {
+                display: none;
+            }
+        }
+    }
+    .scroll-mobile{
+
+    .list_group1 {
+        box-shadow: 0px 3px 6px #c8c8d6;
+        border-radius: 2.231rem;
+        background-color: $whiteColor;
+        margin-top: 1rem;
+        display: flex;
+        padding: 0.5rem;
+        margin-bottom: 7rem;
+        flex-direction: row;
+        @media (max-width:$sm) {
+            overflow: auto;
+        }
+        .list {
+            color: $bgcolorblackdark;
+            font-size: 1.385rem;
+            line-height: 2.077rem;
+            width: 100%;
+            text-align: center;
+            font-family: $font-family-poppins-medium;
+            border-radius: 1.375rem;
+            border: none;
+            background: $whiteColor;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            text-decoration: none;
+            @media (max-width:$sm) {
+                white-space: nowrap;
+            }
+        }
+        .urllinks1 {
+            text-decoration: none;
+            color: $bgcolorblackdark;
+        }
+
+        .listsec {
+            color: $bgcolor-blue;
+            background-color: rgb(0 102 178 / 10%);
+            .urllinks1 {
+                color: $bgcolor-blue;
+            }
+
+        }
+    }
+}
+.doc-rec-list{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    .comman-sec {
+        width: 47%;
+        @media (max-width:$sm) {
+            width: 100%;
+        }
+        .doc-rec-details{
+            display: flex;
+            padding-bottom: 3rem;
+            .doc-caption{
+                padding-left: 2rem;
+                .count{
+                    &::before{
+                        content: "01";
+                        display: block;
+                        position: absolute;
+                        font-size: 4rem;
+                        font-family: $font-family-poppins-semibold;
+                        text-transform: capitalize;
+                        color: $whiteColor;
+                        text-shadow: -1px 1px 0 rgba(34, 31, 32, 0.1607843137), -1px -1px 0 rgba(34, 31, 32, 0.1607843137), 1px -1px 0 rgba(34, 31, 32, 0.1607843137), -1px 1px 0 rgba(34, 31, 32, 0.1607843137), 1px 1px 0 rgba(34, 31, 32, 0.1607843137);
+                        left: 0;
+                        text-align: center;
+                        line-height: 22px;
+                        top: 20%;
+                        z-index: -1;
+                    }
+                    &.count-2{
+                        &::before{
+                        content: "02";
+                     }
+                    }
+                    &.count-3{
+                        &::before{
+                            content: "03";
+                         }
+                    }
+                    &.count-4{
+                        &::before{
+                            content: "04";
+                         }
+                    }
+                    &.count-5{
+                        &::before{
+                            content: "05";
+                         }
+                    }
+                }
+                h3{
+                    position: relative;
+                    font-size: 1.5rem;
+                    line-height: 1.5;
+                    font-family: $font-family-poppins-semibold;
+                }
+                p{
+                    color: $secondary;
+                    font-size: 1.3rem;
+                    line-height: 1.5;
+                }
+            }
+        }
+    
+    }
+}
+   
+}
+
+.why-choice-open-ac{
+    padding: 6rem 0 16rem 0;
+    background: $abt-bg;
+    position: relative;
+    .title-secnd{
+        span{
+            color: $bgcolor-yellow;
+        }
+    }
+    .company-why-list{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 10rem;
+        position: relative;
+        z-index: 1;
+        @media (max-width: $sm) {
+            padding-top: 2rem;
+         }
+        &::before{
+            content: "CHOICE";
+            display: block;
+            position: absolute;
+            font-size: 19rem;
+            font-family: $font-family-poppins-semibold;
+            text-transform: capitalize;
+            color: $abt-bg;
+            text-shadow: -1px 1px 0 rgba(34, 31, 32, 0.1607843137), -1px -1px 0 rgba(34, 31, 32, 0.1607843137), 1px -1px 0 rgba(34, 31, 32, 0.1607843137), -1px 1px 0 rgba(34, 31, 32, 0.1607843137), 1px 1px 0 rgba(34, 31, 32, 0.1607843137);
+            left: 0;
+            text-align: center;
+            line-height: 222px;
+            top: 25%;
+            z-index: -1;
+            width: 100%;
+            @media (max-width: $sm) {
+               display: none;
+            }
+        }
+        @media (max-width: $sm) {
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+        .why-list-itm{
+            text-align: center;
+            h3{
+                font-size: 4.231rem;
+                font-family: $font-family-poppins-bold;
+                color: $primary;
+                text-align: center;
+                .hvr-txt{
+                    display: inline-block;
+                    overflow: hidden;
+                    vertical-align: bottom;
+                    span{
+                        animation: toBottomFromTop 0.5s forwards;
+                    }
+                }
+                &:hover{
+                    .hvr-txt{
+                        span{
+                            animation: toTopFromBottom 0.5s forwards;
+                            display: block;
+                        }
+                        
+                    }
+                    
+                }
+                small{
+                    font-size: 3rem;
+                }
+            }
+            h4{
+                color: $secondary;
+                font-size: 1.5rem;
+                font-family: $font-family-poppins-medium;
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                padding: 2rem 0;
+            }
+    }
+}
+
+.awarded-industry-experts{
+    padding-top: 12rem;
+    .awarded-card{
+        padding-top: 4rem;
+        .awarded-card-item{
+            width: 90% !important;
+            margin: 0 auto;
+            background: $whiteColor;
+            border-radius: 20px;
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            box-shadow: 0px 6px 12px 3px $bx-shadow;
+            min-height: 28rem !important;
+            h5{
+                font-size: 1.3rem;
+                font-family: $font-family-poppins-semibold;
+                line-height: 1.5;
+                padding-bottom: 1rem;
+            }
+            img{
+                display: inline-block;
+            }
+        }
+        .slick-track{
+            padding: 2rem 0;
+            display: flex;
+        }
+    }
+}
+
+}
 
 

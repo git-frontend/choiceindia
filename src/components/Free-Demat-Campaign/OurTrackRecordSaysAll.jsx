@@ -6,15 +6,34 @@ import Slider from "react-slick";
 function OurTrackRecordSaysAll() {
   const settings = {
     infinite: true,
-    speed: 1500,
+    speed: 2000,
     arrows: false,
-    slidesToShow: 1,
-    autoplay: false,
-    dots: true,
+    slidesToShow: 2,
+    autoplay: true,
+    dots: false,
+    adaptiveHeight: false,
     autoplaySpeed: 3000,
-    slidesToScroll: false,
-
-  };
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                dots: true,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                dots: true,
+                autoplay: true,
+            },
+        },
+    ],
+};
   
   const [toggleState, setToggleState] = useState(0);
   const [list, setlist] = useState();
@@ -25,7 +44,7 @@ function OurTrackRecordSaysAll() {
   return (
     <div>
           <div>
-            <section className="mainhead">
+            <section className="track-record-sec">
               <div className="container">
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
@@ -41,14 +60,14 @@ function OurTrackRecordSaysAll() {
                   </div>
                 </div>
               </div>
-            </section>
-            <section className="main-parent">
+            <div className="main-parent">
               <div className="container">
                 <div  className="content-tabs active-content">
                   <div className="row d-flex justify-content-center">
                       <div className="col-md-12">
                           <div className="row gx-5">
-                          <div className="col-xl-6 col-md-12">
+                          <Slider {...settings} className="awarded-card">
+                          <div className="col-xl-6">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -94,7 +113,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="col-xl-6 col-md-12">
+                          <div className="col-xl-6">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -140,7 +159,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="col-xl-6 col-md-12">
+                          <div className="col-xl-6">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -186,7 +205,7 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
-                          <div className="col-xl-6 col-md-12">
+                          <div className="col-xl-6">
                             <div className="main-left">
                             <div className="top-section">
                                 <div className="top-left">
@@ -232,10 +251,12 @@ function OurTrackRecordSaysAll() {
                               </div>
                             </div>
                           </div>
+                          </Slider>
                         </div>
                       </div>
                     </div> 
                 </div>
+              </div>
               </div>
             </section>
          
