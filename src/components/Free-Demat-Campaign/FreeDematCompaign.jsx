@@ -11,6 +11,7 @@ import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
 import OneAccountFinancialNeeds from "./OneAccountFinancialNeeds";
 import OpenLowBrokerageDematAccount from "./OpenLowBrokerageDematAccount";
 import DematAccountOnlineSteps from "./OpenDematAccountOnlineSteps";
+import DocumentsRequiredDematAccountOpeningOnline from "./DocumentsRequiredDematAccountOpeningOnline";
 
 
 
@@ -27,6 +28,7 @@ function FreeDematCompaign() {
           <OneAccountFinancialNeeds/>
           <OpenLowBrokerageDematAccount/>
           <DematAccountOnlineSteps/>
+          <DocumentsRequiredDematAccountOpeningOnline/>
        </div> 
       
     </div>
