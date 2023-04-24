@@ -211,6 +211,13 @@
 
         .slick-track {
             height: auto !important;
+            .slick-slide{
+                &:first-child{
+                    .content-list-itm{
+                        border-top: 0;
+                    }
+                }
+            }
         }
 
         .content-list-itm {
