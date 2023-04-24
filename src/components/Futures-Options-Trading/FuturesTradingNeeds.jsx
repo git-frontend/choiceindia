@@ -7,6 +7,7 @@ import tradingdata from '../../Data/FandOTrading';
 import LazyLoader from '../Common-features/LazyLoader';
 function FuturesTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
+  const [isShown3, setIsShown3] = useState(0);
   const settings1 = {
     infinite: true,
     speed: 1000,
@@ -57,11 +58,11 @@ function FuturesTradingNeeds() {
                     >
                       {
                         tradingdata?.map((response, index) => {
-                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "")
+                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "") + ((index ===isShown3 ) ? "list-itmive" : "")
 
                           return (
 
-                            <div key={response.id} className={classNm} onMouseOver={() => setIsShown2(index)} >
+                            <div key={response.id} className={classNm} onMouseOver={() => {setIsShown2(index);setIsShown3(index +1 ==5 ?0:index +1)}} >
                               <h4 className="single-ttl">{response.title}</h4>
                               <p className="para">
                                 {response.description}
