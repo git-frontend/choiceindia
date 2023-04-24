@@ -15,7 +15,7 @@ function FuturesTradingNeeds() {
     touchMove: true,
     arrows: false,
     slidesToShow: 5,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
@@ -41,7 +41,7 @@ function FuturesTradingNeeds() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br /> F&O Trading Needs</h2>
+              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br /> F&amp;O Trading Needs</h2>
             </div>
           </div>
           <div className='row justify-content-center'>
@@ -81,7 +81,7 @@ function FuturesTradingNeeds() {
                 <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                    <LazyLoader src={tradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={"Loading"} />
+                    <LazyLoader src={tradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={tradingdata[isShown2].alt} />
                     
                   </div>
 

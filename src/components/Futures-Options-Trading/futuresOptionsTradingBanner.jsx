@@ -51,7 +51,16 @@ function futuresOptionsTradingBanner() {
 
     };
 
-
+    function scrollToId(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -71,13 +80,13 @@ function futuresOptionsTradingBanner() {
                 <div className="container">
                     <div className="row ">
                         <div className="col-md-7 fandoleft">
-                            <h1 className="big-ttl">Don’t Miss <span> F&O </span><br />
+                            <h1 className="big-ttl">Don’t Miss <span> F&amp;O </span><br />
                                 Trading Opportunities!</h1>
                             {/* <div className="carditem-option-tab"> */}
                             <Slider {...settings1} className="carditem-option-tab">
                                 <div className="carditem-option">
                                     <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily F&O Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
-                                    <h4 className="cardoption-ttl">Daily F&O Calls from Experts</h4>
+                                    <h4 className="cardoption-ttl">Daily F&amp;O Calls from Experts</h4>
                                 </div>
                                 <div className="carditem-option">
                                     <span className="carditem-option-img"><LazyLoader src={icon2} alt={"Free Demat Account with Advanced Trading Platform"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
@@ -108,7 +117,10 @@ function futuresOptionsTradingBanner() {
                         <div className="col-md-12">
                             <div className="signup-text">
                                 <div className="signup-left"><h3 className="signup-ttl">Sign up  to check out more research calls.</h3></div>
-                                <div className="signup-right"><Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark signup-btn">Get Started</span></Link></div>
+                                <div className="signup-right">
+                                    {/* <Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark signup-btn">Get Started</span></Link> */}
+                                    <Link onClick={()=>scrollToId('campaignForm')}> <span className="btn-bg btn-bg-dark fando-btn ">Get Started</span></Link>
+                                </div>
                             </div>
                         </div>
                     </div>
