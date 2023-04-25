@@ -4,8 +4,8 @@ import { useState,useEffect } from "react";
 import meta_tags from "../../Data/MetaTags";
 import "./trading-strategies.scss";
 import Banner from './Banner';
-import CreateBacktestStrategies from "./CreateBacktestStrategies";
 import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
+import DevelopYourOwnStrategy from "./DevelopYourOwnStrategy";
 
 
 function TradingStrategies() {
@@ -13,7 +13,7 @@ function TradingStrategies() {
     <div>
       <div>
           <Banner />
-          <CreateBacktestStrategies/>
+          <DevelopYourOwnStrategy/>
           <WhyOpenFreeDematAccount/>
        </div> 
     </div>

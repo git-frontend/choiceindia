@@ -49,78 +49,127 @@
        padding: 4rem 0 6rem 0;
     }
 }
+.Trading-Needs {
+    padding: 10rem 0;
+    position: relative;
 
-.create-backtest-sec{
-    padding: 7rem 0 6rem 0;
-    @media (max-width:$sm) {
-        padding: 1rem 0 6rem 0;
-     }
-    .title-secnd{
-        br{
-            @media (max-width:$sm) {
-               display: none;
-             } 
-        }
+    .treding-mr {
+        padding-bottom: 5rem;
     }
-   .create-backtest{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 5rem 0;
-    @media (max-width:$md) {
-       align-items: center;
-    }
-    @media (max-width:$sm) {
-        padding: 2rem 0;
-     }
-    .left-sec{
-        width: 32%;
-        @media (max-width:$md) {
-            width: 49%;
-         }
-         @media (max-width:$sm) {
-            width: 100%;
-         }
-        .create-backtest-list{
-            list-style: none;
-            @media (max-width:$sm) {
-                display: flex;
-                overflow: auto;
-                gap: 1rem;
-                padding-left: 1rem;
-                place-items: flex-start;
-            }
-            .backtest-item{
-                background: $whiteColor;
-                border: 2px solid $bgolor-lightwhite;
-                border-radius: 16px;
-                display: inline-block;
-                margin: 1rem 0;
-                min-width: 390px;
-                padding: 1rem 2rem;
-                text-transform: capitalize;
-                &:hover{
-                    border:2px solid $bgcolor-yellow;
-                    background: $bgcolor-lightyellow;
-                }
-                @media (max-width:$md) {
-                    min-width: 320px;
+
+    .content-list {
+        position: relative;
+        padding: 0;
+        margin-top: 0;
+        padding-right: 8rem;
+
+        .slick-track {
+            height: auto !important;
+            .slick-slide{
+                &:first-child{
+                    .content-list-itm{
+                        border-top: 0;
+                    }
                 }
             }
         }
-}
-    .right-sec{
-        width:60%;
-        @media (max-width:$md) {
-            width:49%;
+
+        .content-list-itm {
+            padding-left: 3.5rem;
+            margin-bottom: -0.2rem;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid $border-gray;
+
+            &.list-itm-active {
+                padding: 2rem;
+                background-color: $primary;
+                border-radius: 24px;
+                border-top: 0;
+
+                @media (min-width:$sm)and (max-width:$md) {
+                    padding: 1rem;
+                }
+                @media (max-width:$sm) {
+                    margin-bottom: 0.8rem;
+                }
+
+                .single-ttl {
+                    color: $bgcolor-yellow;
+                    margin-bottom: 0;
+
+                    @media (min-width:$sm)and (max-width:$md) {
+                        padding: 1.1rem 0rem;
+                    }
+                }
+
+                .para {
+                    display: block;
+                    color: $whiteColor;
+                }
+            }
+            &.list-itmive{
+                border-top: 0;
+            }
+
+            .single-ttl {
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.75rem;
+                color: $primary;
+                padding: 1.7rem 0rem;
+            }
+
+            .para {
+                display: none;
+
+                @media (max-width:$sm) {
+                    display: block;
+                }
+            }
+
+
+            @media (max-width:$sm) {
+                padding-bottom: 0;
+                margin: 0;
+            }
+
+            @media (max-width:$sm) {
+                padding: 0 1rem;
+                text-align: center;
+            }
         }
+
+
+        @media (max-width:$md) {
+            padding-right: 0;
+        }
+    }
+
+    .trade-easy-images-div {
+        display: flex;
+        justify-content: center;
+        padding: 0 4rem;
+
+        .single-trade-easy-images {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+        }
+
+        @media (max-width:$md) {
+            padding: 0;
+        }
+
         @media (max-width:$sm) {
-            width: 100%;
-         }
+            padding-top: 4rem;
+        }
     }
-   }
-}
 
+    @media (max-width: $sm-x) {
+        padding: 5rem 0 5rem 0;
+    }
+}
 
 .why-open-freedematac{
     background: $bgcolordark;
