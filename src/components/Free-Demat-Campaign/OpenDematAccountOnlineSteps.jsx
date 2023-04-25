@@ -1,7 +1,7 @@
 
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-import StepsBanner from '../../assets/images/free-demat-compaign/open-demat-account-online-in-four-steps.webp';
+import StepsBanner from '../../assets/images/free-demat-compaign/how-to-open-demat-account-with-choice.webp';
 
 function DematAccountOnlineSteps() {
   return (
@@ -66,7 +66,7 @@ function DematAccountOnlineSteps() {
                       </div>
                     <div className="right-sec">
                       <div className="step-banner">
-                       <LazyLoader src={StepsBanner} className={'img-fluid'} width={"796"} height={"522"} alt={""}/>
+                       <LazyLoader src={StepsBanner} className={'img-fluid'} width={"796"} height={"522"} alt={"How to Open Demat Account with Choice"}/>
                       </div>
                     </div>
                 </div>

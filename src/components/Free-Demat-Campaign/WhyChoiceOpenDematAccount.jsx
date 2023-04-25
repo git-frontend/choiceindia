@@ -24,9 +24,9 @@ function WhyChoiceOpenDematAccount() {
         {
             breakpoint: 992,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
-                dots: false,
+                dots: true,
             },
         },
         {

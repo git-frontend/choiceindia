@@ -946,6 +946,9 @@
     .comman-sec {
         width: 47%;
         @media (max-width:$sm) {
+            width: 49%;
+        }
+        @media (max-width:$sm) {
             width: 100%;
         }
         .doc-rec-details{
@@ -1000,6 +1003,7 @@
                     color: $secondary;
                     font-size: 1.3rem;
                     line-height: 1.5;
+                    padding-top: 1rem;
                 }
             }
         }
