@@ -22,20 +22,7 @@ function SliderApp() {
     dots: false,
     autoplaySpeed: 3000,
     slidesToScroll: 1,
-    swipeToSlide: false,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          vertical: false,
-          autoplaySpeed: 3000,
-        }
-      }
-      
-    ]
-   
+    swipeToSlide: true,
   };
 
   return (
