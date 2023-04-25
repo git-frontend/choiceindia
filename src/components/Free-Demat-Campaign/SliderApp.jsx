@@ -22,19 +22,6 @@ function SliderApp() {
     autoplaySpeed: 3000,
     slidesToScroll: 1,
     swipeToSlide: true,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          vertical: false,
-          autoplaySpeed: 3000,
-        }
-      }
-      
-    ]
-   
   };
 
   return (
