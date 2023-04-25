@@ -1,0 +1,178 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+
+.trading-Stratebanner{
+    padding-top: 7rem;
+    position: relative;
+    .banner-btn{
+        padding-bottom: 3rem;
+        @media (max-width:$sm) {
+            text-align: center;
+        }
+        .all-account{
+            background-color: $bgcolor-lightyellow;
+            color: $yellowColor;
+            border: 1px solid $yellowColor;
+            font-size: 1.5;
+            font-family: $font-family-poppins-medium;
+            line-height: 1.5;
+            padding: 7px 15px;
+            text-transform: capitalize;
+            border-radius: 25px;
+        }
+    }
+    .trading-banner-caption{
+        .big-ttl{
+            span{
+                color: $bgcolor-yellow;
+            }
+            @media (max-width:$sm) {
+                text-align: center;
+             }
+            br{
+                @media (max-width:$sm) {
+                   display: none;
+                }
+            }
+        }
+        .para{
+            color:$secondary;
+            font-family: $font-family-poppins-regular;
+            font-size: 1.75rem;
+            line-height: 2.625rem;
+            padding: 2rem 10rem 2rem 0;
+        }
+    }
+    @media (max-width:$sm) {
+       padding: 4rem 0 6rem 0;
+    }
+}
+
+.create-backtest-sec{
+    padding: 7rem 0 6rem 0;
+    @media (max-width:$sm) {
+        padding: 1rem 0 6rem 0;
+     }
+    .title-secnd{
+        br{
+            @media (max-width:$sm) {
+               display: none;
+             } 
+        }
+    }
+   .create-backtest{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 5rem 0;
+    @media (max-width:$md) {
+       align-items: center;
+    }
+    @media (max-width:$sm) {
+        padding: 2rem 0;
+     }
+    .left-sec{
+        width: 32%;
+        @media (max-width:$md) {
+            width: 49%;
+         }
+         @media (max-width:$sm) {
+            width: 100%;
+         }
+        .create-backtest-list{
+            list-style: none;
+            @media (max-width:$sm) {
+                display: flex;
+                overflow: auto;
+                gap: 1rem;
+                padding-left: 1rem;
+                place-items: flex-start;
+            }
+            .backtest-item{
+                background: $whiteColor;
+                border: 2px solid $bgolor-lightwhite;
+                border-radius: 16px;
+                display: inline-block;
+                margin: 1rem 0;
+                min-width: 390px;
+                padding: 1rem 2rem;
+                text-transform: capitalize;
+                &:hover{
+                    border:2px solid $bgcolor-yellow;
+                    background: $bgcolor-lightyellow;
+                }
+                @media (max-width:$md) {
+                    min-width: 320px;
+                }
+            }
+        }
+}
+    .right-sec{
+        width:60%;
+        @media (max-width:$md) {
+            width:49%;
+        }
+        @media (max-width:$sm) {
+            width: 100%;
+         }
+    }
+   }
+}
+
+
+.why-open-freedematac{
+    background: $bgcolordark;
+    padding: 6rem 0;
+    .title-secnd{
+        color: $whiteColor;
+        span{
+            color: $bgcolor-yellow;
+        }
+        br{
+            @media (max-width:$sm) {
+               display: none;
+            }
+        }
+    }
+    .row-pd{
+        padding:3rem 0;
+    .benefit-list {
+        padding: 3rem;
+        text-align: center;
+        .benefit-img{
+            @media (max-width:$sm) {
+                width: 40%;
+            }
+        }
+        .benefit-item {
+            padding-top: 2rem;
+            .title-cam{
+                color: $whiteColor;
+                font-size:1.5rem ;
+                font-family: $font-family-poppins-semibold;
+                line-height: 1.5;
+                @media (max-width:$md) {
+                    font-size: 1.3rem ;
+                }
+            }
+            @media (max-width:$sm) {
+                padding-top: 0;
+                width: 56%;
+                text-align: left;
+            }
+        }
+        @media (max-width:$md) {
+            padding:0;
+        }
+        @media (max-width:$sm) {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 0 3rem 0;
+        }
+    }
+}
+}
+

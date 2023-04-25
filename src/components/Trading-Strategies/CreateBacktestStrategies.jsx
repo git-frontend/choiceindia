@@ -10,7 +10,7 @@ function CreateBacktestStrategies() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">Create and Backtest Your Strategies <br/>Free of Cost</h2>
+                   <h2 className="title-secnd text-center">Develop Your Own Strategy in 5 Minutes!</h2>
                 </div>
                <div className="create-backtest">
                 <div className="left-sec">
@@ -23,9 +23,7 @@ function CreateBacktestStrategies() {
                         </ul>
                     </div>
                     <div className="right-sec">
-                      <div>
-                         <iframe src="https://www.youtube.com/watch?v=8PTpITpHSMw" width="420" height="345"></iframe>
-                      </div>
+                    <LazyLoader src={CreateBacktestStrategie} className={'img-fluid'} width={"800"} height={"600"} alt={""}/>
                     </div>
                </div>
                <div className="col-md-12">
