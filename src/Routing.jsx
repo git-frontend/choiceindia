@@ -134,12 +134,13 @@ const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/o
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
-const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
-const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
-const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
-const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
-const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
+const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'));
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'));
+const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'));
+const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'));
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
+const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'))
 
 function Routing() {
 
@@ -781,9 +782,14 @@ function Routing() {
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
-                         <Route exact path='/free-demat-compaign' element={
+                         <Route exact path='/free-demat-account' element={
                             <React.Suspense>
                                 < LazyFreeDematCompaign />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/trading-strategies' element={
+                            <React.Suspense>
+                                < LazyTradingStrategies />
                             </React.Suspense>
                         } />
  

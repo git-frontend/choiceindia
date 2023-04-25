@@ -70,7 +70,9 @@ function CreateBacktestStrategies() {
                         </Slider>
                     </div>
                     <div className="right-sec">
-                    <LazyLoader src={CreateBacktestStrategie} className={'img-fluid'} width={"800"} height={"600"} alt={""}/>
+                      <div>
+                         <iframe src="https://www.youtube.com/watch?v=8PTpITpHSMw" width="420" height="345"></iframe>
+                      </div>
                     </div>
                </div>
                </div>
