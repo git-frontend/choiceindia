@@ -28,9 +28,6 @@
             span{
                 color: $bgcolor-yellow;
             }
-            @media (max-width:$sm) {
-                text-align: center;
-             }
             br{
                 @media (max-width:$sm) {
                    display: none;
@@ -43,6 +40,9 @@
             font-size: 1.75rem;
             line-height: 2.625rem;
             padding: 2rem 10rem 2rem 0;
+            @media (max-width:$sm) {
+                padding: 2rem 0rem 2rem 0;
+             }
         }
     }
     @media (max-width:$sm) {

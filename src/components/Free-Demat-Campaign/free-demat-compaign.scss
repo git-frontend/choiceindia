@@ -100,6 +100,9 @@
                     font-size: 1.5rem;
                     padding-top: 2rem;
                     line-height: 1.5;
+                    @media (max-width:$md) {
+                        font-size: 1.3rem;
+                    }
                     @media (max-width:$sm) {
                         padding-left: 3rem;
                         width: 74%;
@@ -658,6 +661,9 @@
                                     right: 0;
                                     margin: 0 auto;
                                     top: 80px;
+                                    @media (max-width:$md) {
+                                        top: 72px;
+                                      }
                                 }
                         span{
                             font-size: 2rem;
@@ -722,7 +728,7 @@
                
             }
             @media (max-width:$md) {
-                width: 65%;
+                width: 100%;
             }
             @media (max-width:$sm) {
                 width: 100%;
@@ -738,8 +744,7 @@
                 right: 5rem;
                 top: 12rem;
                 @media (max-width:$md) {
-                    right: 2rem;
-                    top: 17rem;
+                    display: none;
                 }
                 @media (max-width:$sm) {
                    display: none;
