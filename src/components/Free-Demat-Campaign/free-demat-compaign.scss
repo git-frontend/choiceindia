@@ -664,6 +664,9 @@
                                     @media (max-width:$md) {
                                         top: 72px;
                                       }
+                                      @media (max-width:$sm) {
+                                        top: 85px;
+                                      }
                                 }
                         span{
                             font-size: 2rem;
