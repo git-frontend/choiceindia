@@ -16,7 +16,7 @@ function OneAccountFinancialNeeds() {
     dots: false,
     autoplaySpeed: 3000,
     slidesToScroll: 3,
-    adaptiveHeight: true,
+    adaptiveHeight: false,
     responsive: [
       {
         breakpoint: 992,

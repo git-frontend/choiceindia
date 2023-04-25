@@ -14,6 +14,7 @@ import OpenLowBrokerageDematAccount from "./OpenLowBrokerageDematAccount";
 import DematAccountOnlineSteps from "./OpenDematAccountOnlineSteps";
 import DocumentsRequiredDematAccountOpeningOnline from "./DocumentsRequiredDematAccountOpeningOnline";
 import WhyChoiceOpenDematAccount from "./WhyChoiceOpenDematAccount";
+
 import BChargesMoreContent from "./BChargesMoreContent";
 import Faq from "./Faqs";
 

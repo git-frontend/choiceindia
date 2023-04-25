@@ -2,8 +2,38 @@
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
 import CreateBacktestStrategie from '../../assets/images/free-demat-compaign/create-backtest-strategies.webp'
-
+import { useState } from 'react';
+import basketStrategie from '../../Data/basketStrategie';
+import Slider from 'react-slick';
 function CreateBacktestStrategies() {
+  const [isShown2, setIsShown2] = useState(0);
+  const settings1 = {
+    infinite: true,
+    speed: 1000,
+    vertical: true,
+    focusOnSelect: true,
+    touchMove: true,
+    arrows: false,
+    slidesToShow: 5,
+    autoplay: true,
+    dots: false,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          vertical: false,
+          autoplaySpeed: 3000,
+        }
+      }
+      
+    ]
+   
+  };
   return (
     <div>
     <section className="create-backtest-sec">
@@ -12,19 +42,37 @@ function CreateBacktestStrategies() {
                 <div className="col-md-12">
                    <h2 className="title-secnd text-center">Create and Backtest Your Strategies <br/>Free of Cost</h2>
                 </div>
+               <div className="col-md-12">
                <div className="create-backtest">
                 <div className="left-sec">
-                        <ul className="create-backtest-list">
-                            <li className="backtest-item cursor-pointer">Create a Trading Strategy</li>
-                            <li className="backtest-item cursor-pointer">Backtest Your Strategy</li>
-                            <li className="backtest-item cursor-pointer">Virtual and Auto Trade Strategy</li>
-                            <li className="backtest-item cursor-pointer">Advanced Scanners</li>
-                            <li className="backtest-item cursor-pointer">Connect with TradingView</li>
-                        </ul>
+                    <Slider {...settings1}
+                          afterChange={(ev) => {
+                            setIsShown2(ev)
+                          }}
+                          className="create-backtest-list"
+                        >
+
+                          {
+                            basketStrategie?.map((response, index) => {
+                              let classNm = "backtest-item " + ((index === isShown2) ? "backtest-item-active" : "")
+
+                              return (
+
+                                <div key={response.id} className={classNm} onMouseOver={() => setIsShown2(index)} >
+                                  <h4 className="single-ttl">{response.title}</h4>
+                                  
+                                </div>
+                              )
+
+
+                            })
+                          }
+                        </Slider>
                     </div>
                     <div className="right-sec">
                     <LazyLoader src={CreateBacktestStrategie} className={'img-fluid'} width={"800"} height={"600"} alt={""}/>
                     </div>
+               </div>
                </div>
                <div className="col-md-12">
                   <div className="text-center">
