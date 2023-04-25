@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
-import tradingdata from '../../Data/TradingStrategies';
+import tradingStrategies from '../../Data/tradingStrategiesData';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function DevelopYourOwnStrategy() {
@@ -57,7 +57,7 @@ function DevelopYourOwnStrategy() {
 
                     >
                       {
-                        tradingdata?.map((response, index) => {
+                        tradingStrategies?.map((response, index) => {
                           let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "") + ((index ===isShown3 ) ? "list-itmive" : "")
 
                           return (
@@ -82,7 +82,7 @@ function DevelopYourOwnStrategy() {
                 <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                    <LazyLoader src={tradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={tradingdata[isShown2].alt} />
+                    <LazyLoader src={tradingStrategies[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={tradingStrategies[isShown2].alt} />
                     
                   </div>
 

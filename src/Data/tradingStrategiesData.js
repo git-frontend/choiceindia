@@ -5,7 +5,7 @@ import  ImageSub2  from '../assets/images/trading-strategies/trading-platform-wi
 import  ImageSub3  from '../assets/images/trading-strategies/free-demat-account-with-in-app-research-calls.webp';
 import  ImageSub4  from '../assets/images/trading-strategies/demat-account-with-multi-leg-and-options-spread.webp';
 
-const tradingdata =
+const tradingStrategiesData =
 [
     {
         "image":`${ImageSub0}`,
@@ -51,4 +51,4 @@ const tradingdata =
   
 ]
 
-export default tradingdata;
+export default tradingStrategiesData;
