@@ -179,14 +179,6 @@
                 &:hover{
                     border:2px solid $bgcolor-yellow;
                     background: $bgcolor-lightyellow;
-                    .hideShow{
-                        display: block;
-                        padding-top: 1rem;
-                        font-size: 1.125rem;
-                    }
-                }
-                .hideShow{
-                    display: none;
                 }
                 @media (max-width:$md) {
                     min-width: 320px;
@@ -1014,7 +1006,7 @@
 }
 
 .why-choice-open-ac{
-    padding: 6rem 0 16rem 0;
+    padding: 6rem 0 0 0;
     background: $abt-bg;
     position: relative;
     .title-secnd{
@@ -1046,6 +1038,9 @@
             top: 25%;
             z-index: -1;
             width: 100%;
+            @media (max-width: $md) {
+                font-size: 15rem;
+             }
             @media (max-width: $sm) {
                display: none;
             }
@@ -1096,7 +1091,9 @@
 }
 
 .awarded-industry-experts{
-    padding-top: 12rem;
+    position: relative;
+    top: 190px;
+    margin-bottom: 20rem;
     .awarded-card{
         padding-top: 4rem;
         .awarded-card-item{
@@ -1127,4 +1124,10 @@
 
 }
 
-
+.demat-campaign-faq{
+    background-color: $whiteColor !important;
+    margin-top: 12rem;
+    .related-faq{
+        color: $bgcolor-yellow;
+    }
+}
