@@ -49,7 +49,7 @@
        padding: 4rem 0 6rem 0;
     }
 }
-.Trading-Needs {
+.develop-strategies {
     padding: 10rem 0;
     position: relative;
 
@@ -83,7 +83,7 @@
 
             &.list-itm-active {
                 padding: 2rem;
-                background-color: $primary;
+                background-color: $bgcolor-hover;
                 border-radius: 24px;
                 border-top: 0;
 
@@ -95,7 +95,7 @@
                 }
 
                 .single-ttl {
-                    color: $bgcolor-yellow;
+                    color: $primary;
                     margin-bottom: 0;
 
                     @media (min-width:$sm)and (max-width:$md) {
@@ -105,7 +105,7 @@
 
                 .para {
                     display: block;
-                    color: $whiteColor;
+                    color: $primary;
                 }
             }
             &.list-itmive{

@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
-// import tradingdata from '../../Data/TradingStrategies';
+import tradingdata from '../../Data/TradingStrategies';
 import LazyLoader from '../Common-features/LazyLoader';
 
 function DevelopYourOwnStrategy() {
@@ -38,11 +38,11 @@ function DevelopYourOwnStrategy() {
   };
   return (
     <div>
-    <section className="Trading-Needs">
+    <section className="develop-strategies">
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br /> F&amp;O Trading Needs</h2>
+              <h2 className="title-first text-center treding-mr">Develop Your Own Strategy in 5 Minutes!</h2>
             </div>
           </div>
           <div className='row justify-content-center'>

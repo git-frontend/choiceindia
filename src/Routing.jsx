@@ -782,12 +782,12 @@ function Routing() {
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
-                         <Route exact path='/free-demat-account' element={
+                         <Route exact path='/campaign/free-demat-account' element={
                             <React.Suspense>
                                 < LazyFreeDematCompaign />
                             </React.Suspense>
                         } />
-                        <Route exact path='/trading-strategies' element={
+                        <Route exact path='/campaign/trading-strategies' element={
                             <React.Suspense>
                                 < LazyTradingStrategies />
                             </React.Suspense>
