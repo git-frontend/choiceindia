@@ -70,8 +70,8 @@ function CreateBacktestStrategies() {
                         </Slider>
                     </div>
                     <div className="right-sec">
-                      <div>
-                         <iframe src="https://www.youtube.com/watch?v=8PTpITpHSMw" width="420" height="345"></iframe>
+                      <div className="video-height">
+                        <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
                       </div>
                     </div>
                </div>
