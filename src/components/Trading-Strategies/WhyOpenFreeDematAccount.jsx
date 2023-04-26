@@ -1,63 +1,63 @@
 
 import React from "react";
 import LazyLoader from '../Common-features/LazyLoader';
-import LowDPCharges from '../../assets/images/free-demat-compaign/free-demat-account-opening-with-low-dp-charges.svg';
-import PaisaBrokerage from '../../assets/images/free-demat-compaign/open-low-brokerage-demat-account.svg';
-import ZeroAutoSquare from '../../assets/images/free-demat-compaign/free-demat-account-with-zero-auto-square-off-charges.svg';
-import FreeCall from '../../assets/images/free-demat-compaign/open-demat-account-with-free-call-for-trade-facility.svg';
+import LowDPCharges from '../../assets/images/trading-strategies/free-demat-account-with-low-dp-charges.svg';
+import PaisaBrokerage from '../../assets/images/trading-strategies/zero-amc-demat-account.svg';
+import ZeroAutoSquare from '../../assets/images/trading-strategies/demat-account-with-free-research.svg';
+import FreeCall from '../../assets/images/trading-strategies/demat-account-with-no-auto-square-off-charges.svg';
 
 function WhyOpenFreeDematAccount() {
   return (
     <div>
-    <section className="why-open-freedematac">
+    <section className="open-Demat-sec">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">Why Open a <span>Free Demat Account </span><br/>with Choice?</h2>
-                  <div className="row justify-content-center row-pd">
-                      <div className="col-md-3 col-sm-12">
+                   <h2 className="title-secnd text-center">Open 100% Free Demat Account</h2>
+                  <div className="open-percent-row">
+                      <div className="open-percent-item">
                        <div className="benefit-list">
                           <div className="benefit-img">
-                            <LazyLoader src={LowDPCharges} className={'img-fluid'} width={"76"} height={"109"} alt={"Free Demat Account Opening with Low DP Charges"}/>
+                            <LazyLoader src={LowDPCharges} className={'img-fluid'} width={"63"} height={"64"} alt={"Free Demat Account with Low DP Charges"}/>
                           </div>
                           <div className="benefit-item">
-                            <h3 className="title-cam">Low DP Charges</h3>
+                            <h3 className="title-cam">Low DP Charges (Rs. 10 Only)</h3>
                           </div>
                        </div>
                       </div>
-                      <div className="col-md-3 col-sm-12">
+                      <div className="open-percent-item">
                         <div className="benefit-list">
                             <div className="benefit-img">
-                              <LazyLoader src={PaisaBrokerage} className={'img-fluid'} width={"109"} height={"109"} alt={"Open a Low Brokerage Demat Account"}/>
+                              <LazyLoader src={PaisaBrokerage} className={'img-fluid'} width={"63"} height={"64"} alt={"Zero AMC Demat Account"}/>
                             </div>
                             <div className="benefit-item">
-                              <h3 className="title-cam">2 Paisa Brokerage for Intraday Trades</h3>
+                              <h3 className="title-cam">Free AMC for First Year</h3>
                             </div>
                         </div>
                       </div>
-                      <div className="col-md-3 col-sm-12">
+                      <div className="open-percent-item">
                         <div className="benefit-list">
                             <div className="benefit-img">
-                              <LazyLoader src={ZeroAutoSquare} className={'img-fluid'} width={"109"} height={"109"} alt={"Free Demat Account with Zero Auto Sqare Off Charges"}/>
+                              <LazyLoader src={ZeroAutoSquare} className={'img-fluid'} width={"63"} height={"64"} alt={"Demat Account with Free Research"}/>
                             </div>
                             <div className="benefit-item">
-                              <h3 className="title-cam">Zero Auto Square off Charges</h3>
+                              <h3 className="title-cam">Free Research Advisory</h3>
                             </div>
                         </div>
                       </div>
-                      <div className="col-md-3 col-sm-12">
+                      <div className="open-percent-item">
                         <div className="benefit-list">
                             <div className="benefit-img">
-                              <LazyLoader src={FreeCall} className={'img-fluid'} width={"110"} height={"108"} alt={"Open Demat Account with Free Call for Trade Facility"}/>
+                              <LazyLoader src={FreeCall} className={'img-fluid'} width={"63"} height={"64"} alt={"Demat Account with No Auto Sqare Off Charges"}/>
                             </div>
                             <div className="benefit-item">
-                              <h3 className="title-cam">Free Call for Trade Facility</h3>
+                              <h3 className="title-cam">No Auto Square-off fee</h3>
                             </div>
                         </div>
                       </div>
                   </div>
                   <div className="text-center">
-                    <a target="_blank" class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Now</span></a>
+                    <a target="_blank" class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open My Account</span></a>
                   </div>
                </div>
             </div>

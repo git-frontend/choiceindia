@@ -6,6 +6,7 @@ import "./trading-strategies.scss";
 import Banner from './Banner';
 import WhyOpenFreeDematAccount from "./WhyOpenFreeDematAccount";
 import DevelopYourOwnStrategy from "./DevelopYourOwnStrategy";
+import WhyStrategies from "./WhyStrategies";
 
 
 function TradingStrategies() {
@@ -14,6 +15,7 @@ function TradingStrategies() {
       <div>
           <Banner />
           <DevelopYourOwnStrategy/>
+          <WhyStrategies/>
           <WhyOpenFreeDematAccount/>
        </div> 
     </div>

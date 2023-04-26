@@ -50,7 +50,7 @@
     }
 }
 .develop-strategies {
-    padding: 10rem 0;
+    padding: 6rem 0;
     position: relative;
 
     .treding-mr {
@@ -165,17 +165,203 @@
             padding-top: 4rem;
         }
     }
+}
+.stratezy-card-sec{
+    .own-startezy-card{
+        background: $bgcolor-green;
+        border-radius: 15px;
+        top: 7rem;
+        padding: 2rem 3rem;
+        position: relative;
+        z-index: 1;
+        @media (max-width:$sm) {
+            top: 0;
+            margin-bottom: 2rem;
+        }
+        .bar-cont-des {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .title-fourth{
+                color: $whiteColor;
+                font-size: 2.5rem;
+                line-height: 1.5;
+                @media (max-width:$sm) {
+                    font-size: 1.8rem;
+                    text-align: center;
+                }
+                br{
+                    @media (max-width:$md) {
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width:$md) {
+                justify-content: center;
+            }
+        }
+    }
+}
+.why-stratezy-sec{
+    background: $primary;
+    padding:20rem 0 38rem 0;
+    position: relative;
+    overflow: hidden;
+    @media (max-width:$sm) {
+        padding:6rem 0 12rem 0;
+    }
+    &::before{
+        content: '';
+        width: 30rem;
+        height: 24rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 38rem;
+        background: url(../../assets/images/trading-strategies/before-bg.svg) no-repeat bottom left;
+        background-size: contain;
+        @media (max-width:$md) {
+            width: 20rem;
+            height: 24rem;
+        }
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+    .why-startezy {
+        display: flex;
+        flex-wrap: wrap;
+        .left-sec {
+            width: 22%;
+            .title-secnd{
+                color: $whiteColor;
+                @media (max-width: $sm) {
+                   text-align: center;
+                }
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+             }
+        }
+        .right-sec {
+            // width: 70%;
+            position: absolute;
+            bottom: 8rem;
+            width: 78%;
+            right: -15%;
+            @media (max-width: $sm) {
+                position: inherit;
+                bottom: inherit;
+                width: 100%;
+                right: inherit;
+            }
+            .finx-app-list {
+                @media (max-width:$sm) {
+                    padding-top: 3rem;
+                }
+                .app-list-item {
+                    width: 95% !important;
+                    background: $whiteColor;
+                    border-radius: 20px;
+                    display: block;
+                    height: 100%;
+                    padding: 3rem;
+                    text-decoration: none;
+                    img {
+                        height: 100px;
+                    }
+                    p {
+                        font-size: 1.625rem;
+                        line-height: 2rem;
+                        margin-bottom: 0;
+                        color: $primary;
+                        font-family: $font-family-poppins-regular;
+                    }
+                  h3{
+                        font-size: 1.8rem;
+                        margin: 1rem 0;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        min-height: 8rem;
+                        padding-top: 3rem;
+                  }
+                    @media (max-width: $sm) {
+                        width: 97%;
+                        margin-bottom: 2rem;
+                    }
 
-    @media (max-width: $sm-x) {
-        padding: 5rem 0 5rem 0;
+                }
+                .slick-slider{
+                    .slick-list{
+                        .slick-track{
+                            display: flex;
+                            padding-bottom: 1rem;
+                            .slick-slide{
+                                height: inherit;
+                                > div{
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                    .slick-prev {
+                        left: -38%;
+                        border: 1px solid $whiteColor;
+                        border-radius: 50%;
+                        width: 4rem;
+                        height: 4rem;
+                        top: 35%;
+                        &::before{
+                            content: '';
+                            width: 2rem;
+                            height: 2rem;
+                            position:absolute;
+                            background: url(../../assets/images/trading-strategies/arrow-pre.svg) no-repeat top center;
+                            background-size: contain;
+                            left: 25%;
+                            top: 25%;
+                        }
+                        @media (max-width:$sm) {
+                            top:38rem;
+                            left: 25%;
+                        }
+                    }
+                    .slick-next {
+                        left: -30%;
+                        border: 1px solid $whiteColor;
+                        border-radius: 50%;
+                        width: 4rem;
+                        height: 4rem;
+                        top: 35%;
+                        &::before{
+                            content: '';
+                            width: 2rem;
+                            height: 2rem;
+                            position:absolute;
+                            background: url(../../assets/images/trading-strategies/arrow-next.svg) no-repeat top center;
+                            background-size: contain;
+                            left: 25%;
+                            top: 25%;
+                        }
+                        @media (max-width:$md) {
+                            left: -25%;
+                        }
+                        @media (max-width:$sm) {
+                            top:38rem;
+                            right: 30%;
+                            left: inherit;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 
-.why-open-freedematac{
-    background: $bgcolordark;
+.open-Demat-sec{
     padding: 6rem 0;
     .title-secnd{
-        color: $whiteColor;
         span{
             color: $bgcolor-yellow;
         }
@@ -185,43 +371,47 @@
             }
         }
     }
-    .row-pd{
+    .open-percent-row{
         padding:3rem 0;
-    .benefit-list {
-        padding: 3rem;
-        text-align: center;
-        .benefit-img{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .open-percent-item{
+            width: 19%;
             @media (max-width:$sm) {
-                width: 40%;
+                width: 100%;
             }
-        }
-        .benefit-item {
-            padding-top: 2rem;
-            .title-cam{
-                color: $whiteColor;
-                font-size:1.5rem ;
-                font-family: $font-family-poppins-semibold;
-                line-height: 1.5;
+            .benefit-list {
+                padding: 3rem;
+                text-align: center;
+                .benefit-img{
+                    background: $bgcolor-blue-light;
+                    width: 9rem;
+                    height: 9rem;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .benefit-item {
+                    padding-top: 2rem;
+                    .title-cam{
+                        font-size:1.5rem ;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        @media (max-width:$md) {
+                            font-size: 1.3rem ;
+                        }
+                    }
+                }
                 @media (max-width:$md) {
-                    font-size: 1.3rem ;
+                    padding:0;
+                }
+                @media (max-width:$sm) {
+                    padding: 0 0 3rem 0;
                 }
             }
-            @media (max-width:$sm) {
-                padding-top: 0;
-                width: 56%;
-                text-align: left;
-            }
-        }
-        @media (max-width:$md) {
-            padding:0;
-        }
-        @media (max-width:$sm) {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 0 0 3rem 0;
-        }
-    }
 }
 }
-
+}
