@@ -11,7 +11,7 @@ function SliderApp() {
   const [isShown2, setIsShown2] = useState(0);
   const settings1 = {
     infinite: true,
-    speed: 1000,
+    speed: 1200,
     vertical: true,
     focusOnSelect: false,
     touchMove: false,
