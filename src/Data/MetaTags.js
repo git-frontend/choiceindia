@@ -2199,6 +2199,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
+  "campaign/trading-strategies": {
+    "title":"Trading Strategies - Best Intraday & Options Trading Strategies",
+    'lang':"en",
+    'content':"Create your own trading strategies with Strategy by Choice. Stratezy is one of the best intraday & options trading strategy builder for Indian market.",
+    "link":"https://choiceindia.com/campaign/trading-strategies"
+  },
 }
 
 export default meta_tags;
