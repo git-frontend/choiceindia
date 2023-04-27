@@ -3,11 +3,11 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
-import Image1 from '../../assets/images/free-demat-compaign/identity-proof.svg';
-import Image2 from '../../assets/images/free-demat-compaign/address-proof.svg';
-import Image3 from '../../assets/images/free-demat-compaign/income-proof.svg';
-import Image4 from '../../assets/images/free-demat-compaign/bank-proof.svg';
-import Image5 from '../../assets/images/free-demat-compaign/signature.svg';
+import Image1 from '../../assets/images/free-demat-compaign/identity-proof-to-open-free-demat-account.svg';
+import Image2 from '../../assets/images/free-demat-compaign/address-proof-to-open-demat-account.svg';
+import Image3 from '../../assets/images/free-demat-compaign/income-proof-to-open-a-demat-account.svg';
+import Image4 from '../../assets/images/free-demat-compaign/bank-proof-to-open-a-free-demat-account.svg';
+import Image5 from '../../assets/images/free-demat-compaign/upload-signature-to-complete-demat-account-opening-process.svg';
 
 function DocumentsRequiredDematAccountOpeningOnline() {
   const [toggleState, setToggleState] = useState(1);
@@ -44,7 +44,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                       <div className="comman-sec">
                         <div className="doc-rec-details">
                           <div className="doc-img">
-                            <LazyLoader src={Image1} className={'img-fluid'} width={"100"} height={"100"} alt={"Identity Proof"}/>
+                            <LazyLoader src={Image1} className={'img-fluid'} width={"100"} height={"100"} alt={"Identity Proof to Open Free Demat Account"}/>
                           </div>
                         <div className="doc-caption">
                           <h3 className="count">Identity Proof</h3>
@@ -53,7 +53,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                   </div>
                   <div className="doc-rec-details">
                       <div className="doc-img">
-                        <LazyLoader src={Image2} className={'img-fluid'} width={"100"} height={"100"} alt={"Address Proof"}/>
+                        <LazyLoader src={Image2} className={'img-fluid'} width={"100"} height={"100"} alt={"Address Proof to Open Demat Account"}/>
                       </div>
                       <div className="doc-caption">
                         <h3 className="count count-2">Address Proof</h3>
@@ -62,7 +62,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                   </div>
                   <div className="doc-rec-details">
                       <div className="doc-img">
-                        <LazyLoader src={Image3} className={'img-fluid'} width={"100"} height={"100"} alt={"Income Proof"}/>
+                        <LazyLoader src={Image3} className={'img-fluid'} width={"100"} height={"100"} alt={"Income Proof to Open a Demat Account"}/>
                       </div>
                       <div className="doc-caption">
                         <h3 className="count count-3">Income Proof</h3>
@@ -73,7 +73,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                 <div className="comman-sec">
                 <div className="doc-rec-details">
                       <div className="doc-img">
-                        <LazyLoader src={Image4} className={'img-fluid'} width={"100"} height={"100"} alt={"Bank Proof"}/>
+                        <LazyLoader src={Image4} className={'img-fluid'} width={"100"} height={"100"} alt={"Bank Proof to Open a Free Demat Account"}/>
                       </div>
                       <div className="doc-caption">
                         <h3 className="count count-4">Bank Proof</h3>
@@ -82,7 +82,7 @@ function DocumentsRequiredDematAccountOpeningOnline() {
                   </div>
                   <div className="doc-rec-details">
                       <div className="doc-img">
-                        <LazyLoader src={Image5} className={'img-fluid'} width={"100"} height={"100"} alt={"Signature Proof"}/>
+                        <LazyLoader src={Image5} className={'img-fluid'} width={"100"} height={"100"} alt={"Upload Signature to Complete Demat Account Opening Process"}/>
                       </div>
                       <div className="doc-caption">
                         <h3 className="count count-5">Signature</h3>

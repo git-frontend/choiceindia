@@ -1,0 +1,397 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+
+
+.trading-Stratebanner{
+    padding-top: 7rem;
+    position: relative;
+    .banner-btn{
+        padding-bottom: 3rem;
+        @media (max-width:$sm) {
+            text-align: center;
+        }
+        .all-account{
+            background-color: $bgcolor-lightyellow;
+            color: $yellowColor;
+            border: 1px solid $yellowColor;
+            font-size: 1.5;
+            font-family: $font-family-poppins-medium;
+            line-height: 1.5;
+            padding: 7px 15px;
+            text-transform: capitalize;
+            border-radius: 25px;
+        }
+    }
+    .trading-banner-caption{
+        .big-ttl{
+            span{
+                color: $bgcolor-yellow;
+            }
+            br{
+                @media (max-width:$sm) {
+                   display: none;
+                }
+            }
+        }
+        .para{
+            color:$secondary;
+            font-family: $font-family-poppins-regular;
+            font-size: 1.75rem;
+            line-height: 2.625rem;
+            padding: 2rem 10rem 2rem 0;
+            @media (max-width:$sm) {
+                padding: 2rem 0rem 2rem 0;
+             }
+        }
+    }
+    @media (max-width:$sm) {
+       padding: 4rem 0 6rem 0;
+    }
+}
+.develop-strategies {
+    padding: 6rem 0;
+    position: relative;
+
+    .treding-mr {
+        padding-bottom: 5rem;
+    }
+
+    .content-list {
+        position: relative;
+        padding: 0;
+        margin-top: 0;
+        padding-right: 8rem;
+
+        .slick-track {
+            height: auto !important;
+            .slick-slide{
+                &:first-child{
+                    .content-list-itm{
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+
+        .content-list-itm {
+            padding-left: 3.5rem;
+            margin-bottom: -0.2rem;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid $border-gray;
+
+            &.list-itm-active {
+                padding: 2rem;
+                background-color: $bgcolor-hover;
+                border-radius: 24px;
+                border-top: 0;
+
+                @media (min-width:$sm)and (max-width:$md) {
+                    padding: 1rem;
+                }
+                @media (max-width:$sm) {
+                    margin-bottom: 0.8rem;
+                }
+
+                .single-ttl {
+                    color: $primary;
+                    margin-bottom: 0;
+
+                    @media (min-width:$sm)and (max-width:$md) {
+                        padding: 1.1rem 0rem;
+                    }
+                }
+
+                .para {
+                    display: block;
+                    color: $primary;
+                }
+            }
+            &.list-itmive{
+                border-top: 0;
+            }
+
+            .single-ttl {
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.75rem;
+                color: $primary;
+                padding: 1.7rem 0rem;
+            }
+
+            .para {
+                display: none;
+
+                @media (max-width:$sm) {
+                    display: block;
+                }
+            }
+
+
+            @media (max-width:$sm) {
+                padding-bottom: 0;
+                margin: 0;
+            }
+
+            @media (max-width:$sm) {
+                padding: 0 1rem;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width:$md) {
+            padding-right: 0;
+        }
+    }
+
+    .trade-easy-images-div {
+        display: flex;
+        justify-content: center;
+        padding: 0 4rem;
+
+        .single-trade-easy-images {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+        }
+
+        @media (max-width:$md) {
+            padding: 0;
+        }
+
+        @media (max-width:$sm) {
+            padding-top: 4rem;
+        }
+    }
+}
+.stratezy-card-sec{
+    .own-startezy-card{
+        background: $bgcolor-green;
+        border-radius: 15px;
+        top: 7rem;
+        padding: 2rem 3rem;
+        position: relative;
+        z-index: 1;
+        @media (max-width:$sm) {
+            top: 0;
+            margin-bottom: 2rem;
+        }
+        .bar-cont-des {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            .title-fourth{
+                color: $whiteColor;
+                font-size: 2.5rem;
+                line-height: 1.5;
+                @media (max-width:$sm) {
+                    font-size: 1.8rem;
+                    text-align: center;
+                }
+                br{
+                    @media (max-width:$md) {
+                        display: none;
+                    }
+                }
+            }
+            @media (max-width:$md) {
+                justify-content: center;
+            }
+        }
+    }
+}
+.why-stratezy-sec{
+    background: $primary;
+    padding:20rem 0 35rem 0;
+    position: relative;
+    overflow: hidden;
+    @media (max-width:$sm) {
+        padding:6rem 0 12rem 0;
+    }
+    &::before{
+        content: '';
+        width: 32rem;
+        height: 24rem;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 38rem;
+        background: url(../../assets/images/trading-strategies/before-bg.svg) no-repeat bottom left;
+        background-size: contain;
+        @media (max-width:$md) {
+            width: 20rem;
+            height: 24rem;
+        }
+        @media (max-width:$sm) {
+            display: none;
+        }
+    }
+    .why-startezy {
+        display: flex;
+        flex-wrap: wrap;
+        .left-sec {
+            width: 22%;
+            .title-secnd{
+                color: $whiteColor;
+                @media (max-width: $sm) {
+                   text-align: center;
+                }
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+             }
+             .slick-button {
+                display: flex;
+                gap: 46px;
+                position: relative;
+                top: 6rem;
+                .btn-arrow {
+                    background: transparent;
+                    border: 0;
+                    .arrow-hover{
+                        &:hover{
+                            rect{
+                                    fill:$bgcolor-hover;
+                            }
+                            path{
+                                    fill: #111;
+                               }
+                        }
+                    }
+                }
+                @media (max-width:$sm) {
+                    top: 47rem;
+                    left: 26%;
+                }
+            }
+        }
+        .right-sec {
+            position: absolute;
+            width: 78%;
+            right: -15%;
+            @media (max-width: $sm) {
+                position: inherit;
+                bottom: inherit;
+                width: 100%;
+                right: inherit;
+            }
+            .finx-app-list {
+                @media (max-width:$sm) {
+                    padding-top: 3rem;
+                }
+                .app-list-item {
+                    width: 95% !important;
+                    background: $whiteColor;
+                    border-radius: 20px;
+                    display: block;
+                    height: 100%;
+                    padding: 3rem;
+                    text-decoration: none;
+                    img {
+                        height: 100px;
+                    }
+                    p {
+                        font-size: 1.625rem;
+                        line-height: 2rem;
+                        margin-bottom: 0;
+                        color: $primary;
+                        font-family: $font-family-poppins-regular;
+                    }
+                  h3{
+                        font-size: 1.8rem;
+                        margin: 1rem 0;
+                        font-family: $font-family-poppins-semibold;
+                        color: $primary;
+                        min-height: 8rem;
+                        padding-top: 3rem;
+                  }
+                    @media (max-width: $sm) {
+                        width: 97%;
+                        margin-bottom: 2rem;
+                    }
+
+                }
+                .slick-slider{
+                    .slick-list{
+                        .slick-track{
+                            display: flex;
+                            padding-bottom: 1rem;
+                            .slick-slide{
+                                height: inherit;
+                                > div{
+                                    height: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.open-Demat-sec{
+    padding: 6rem 0;
+    .title-secnd{
+        span{
+            color: $bgcolor-yellow;
+        }
+        br{
+            @media (max-width:$sm) {
+               display: none;
+            }
+        }
+    }
+    .open-percent-row{
+        padding:3rem 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .open-percent-item{
+            width: 19%;
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+            .benefit-list {
+                padding: 3rem;
+                text-align: center;
+                .benefit-img{
+                    background: $bgcolor-blue-light;
+                    width: 9rem;
+                    height: 9rem;
+                    margin: 0 auto;
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        height: 64px;
+                        @media (max-width:$sm) {
+                            height: auto;
+                        }
+                    }
+                }
+                .benefit-item {
+                    padding-top: 2rem;
+                    .title-cam{
+                        font-size:1.5rem ;
+                        font-family: $font-family-poppins-semibold;
+                        line-height: 1.5;
+                        @media (max-width:$md) {
+                            font-size: 1.3rem ;
+                        }
+                    }
+                }
+                @media (max-width:$md) {
+                    padding:0;
+                }
+                @media (max-width:$sm) {
+                    padding: 0 0 3rem 0;
+                }
+            }
+}
+}
+}

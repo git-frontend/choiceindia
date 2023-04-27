@@ -2211,6 +2211,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Create your own trading strategies with Strategy by Choice. Stratezy is one of the best intraday & options trading strategy builder for Indian market.",
     "link":"https://choiceindia.com/campaign/trading-strategies"
   },
+  "campaign/hindi/trading-strategies": {
+    "title":"ट्रेडिंग रणनीतियाँ - सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीतियाँ",
+    'lang':"hi",
+    'content':"चॉइस द्वारा Stratezy के साथ अपनी खुद की ट्रेडिंग रणनीतियां बनाएं। Stratezy भारतीय बाजार के लिए सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीति बिल्डरों में से एक है।",
+    "link":"https://choiceindia.com/campaign/hindi/trading-strategies"
+  },
 }
 
 export default meta_tags;
