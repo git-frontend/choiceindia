@@ -154,7 +154,7 @@ function Footer() {
                               <Link to="/offer-document">Offer Document</Link>
                             </li>
                             <li>
-                              <Link to="https://accounts.choiceindia.com/modification/trading/client-login" target="_blank">Online KYC Updation</Link>
+                            <a href="https://finx.choiceindia.com/"  target="_blank">Online KYC Updation</a>
                             </li>
                           </ul>
                         </div>
