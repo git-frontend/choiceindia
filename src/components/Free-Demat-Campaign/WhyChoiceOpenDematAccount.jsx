@@ -95,11 +95,11 @@ function WhyChoiceOpenDematAccount() {
                             <LazyLoader src={MCXAwards} className={'img-fluid'} width={"181"} height={"227"} alt={"MCX Awards 2022"}/>
                       </div>
                       <div className="awarded-card-item">
-                          <h5>MCX AWARDS - 2022</h5>
+                          <h5>Gratitude AWARD</h5>
                           <LazyLoader src={GratitudeAward} className={'img-fluid'} width={"181"} height={"227"} alt={"Gratitude Awards"}/>
                       </div>
                       <div className="awarded-card-item">
-                          <h5>MCX AWARDS - 2022</h5>
+                          <h5>ACHIEVERS BROKER’S CLUB</h5>
                           <LazyLoader src={AchieversBrokersClub} className={'img-fluid'} width={"181"} height={"227"} alt={"Achievers Broker's Club"}/>
                       </div>
                       </Slider>

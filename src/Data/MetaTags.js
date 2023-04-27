@@ -2199,6 +2199,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
+  "campaign/free-demat-account": {
+    "title":"Free Demat Account Opening Online with No Annual Charges",
+    'lang':"en",
+    'content':"Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/campaign/free-demat-account"
+  },
   "campaign/trading-strategies": {
     "title":"Trading Strategies - Best Intraday & Options Trading Strategies",
     'lang':"en",
