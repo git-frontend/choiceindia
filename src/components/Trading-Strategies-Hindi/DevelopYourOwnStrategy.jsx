@@ -7,7 +7,6 @@ import LazyLoader from '../Common-features/LazyLoader';
 function DevelopYourOwnStrategy() {
 
   const [isShown2, setIsShown2] = useState(0);
-  const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
     infinite: true,
     speed: 1000,
@@ -16,7 +15,7 @@ function DevelopYourOwnStrategy() {
     touchMove: true,
     arrows: false,
     slidesToShow: 5,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
@@ -58,11 +57,11 @@ function DevelopYourOwnStrategy() {
                     >
                       {
                         tradingStrategiesHindiData?.map((response, index) => {
-                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "") + ((index ===isShown3 ) ? "list-itmive" : "")
+                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "")
 
                           return (
 
-                            <div key={response.id} className={classNm} onMouseOver={() => {setIsShown2(index);setIsShown3(index +1 ==5 ?0:index +1)}} >
+                            <div key={response.id} className={classNm} onMouseOver={() => {setIsShown2(index)}}>
                               <h4 className="single-ttl">{response.title}</h4>
                               <p className="para">
                                 {response.description}
@@ -79,15 +78,10 @@ function DevelopYourOwnStrategy() {
 
 
                 </div>
-                <div className='col-xl-5 col-md-6'>
-
-                  <div className="trade-easy-images-div" >
-                    <LazyLoader src={tradingStrategiesHindiData[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={tradingStrategiesHindiData[isShown2].alt} />
-                    
+                <div className='col-md-6'>
+                  <div className="video-height">
+                        <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
                   </div>
-
-
-
                 </div>
               </div>
             </div>
