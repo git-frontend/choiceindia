@@ -11,94 +11,95 @@ import whyStrategyCampaign from "../../Data/whyStratezyCampaign";
 
 
 function WhyStrategies() {
+  const slider = React.useRef(null);
 
-  
-    const settings1 = {
-        infinite: true,
-        speed: 1000,
-        slidesToShow: 3,
-        arrows: true,
-        autoplay: true,
-        dots: false,
-        autoplaySpeed: 2000,
-        slidesToScroll: 1,
-        swipeToSlide: true,
-        adaptiveHeight: false,
-        
-        responsive: [
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                adaptiveHeight: true,
-              },
-            },
-            {
-              breakpoint: 600,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              },
-            },
-          ],
-      };
+  const settings1 = {
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 3,
+    arrows: true,
+    autoplay: false,
+    dots: false,
+    autoplaySpeed: 2000,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    adaptiveHeight: false,
+
+    responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          adaptiveHeight: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
+  };
 
   return (
     <div>
 
-        <section className="stratezy-card-sec">
-            <div className="container">
-            <div className="row">
-                        <div className="co-md-12">
-                            <div className="own-startezy-card">
-                                <div class="bar-cont-des">
-                                    <h3 class="title-fourth">Don’t rely on the strategy developed by others. <br/>Develop your own strategy</h3>
-                                    <a href="/" target="_blank" class="btn-bg btn-bg-dark">Get Started</a>
-                                </div>
-                            </div>
-                        </div>
-                </div>
-            </div>
-        </section>
-
-    <section className="why-stratezy-sec">
+      <section className="stratezy-card-sec">
         <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <div className="why-startezy">
-                        <div className="left-sec">
-                            <h2 className="title-secnd">Why Stratezy?</h2>
-                            
-                        </div>
-                        <div className="right-sec">
-                        <div className="finx-app-list">
-                            <Slider {...settings1} className="stratezy-slider">
-                              {
-                                whyStrategyCampaign.map((res)=>{
-
-                                  return(
-                                    <div className="app-list-item">
-                                    <img src={res.image} alt="Ready-Made Strategies to Start Trading" className="img-fluid" width={"100"} height={"100"}/>
-                                    <h3>Ready-Made strategies to start with</h3>
-                                    <p>Our experts have created ready to use strategies for you to get started with your custom strategies.</p>
-                                    </div>
-
-                                  )
-                                })
-                              }
-                               
-                                </Slider>
-                            </div>
-                        </div>
-                    </div>
+          <div className="row">
+            <div className="co-md-12">
+              <div className="own-startezy-card">
+                <div class="bar-cont-des">
+                  <h3 class="title-fourth">Don’t rely on the strategy developed by others. <br />Develop your own strategy</h3>
+                  <a href="/" target="_blank" class="btn-bg btn-bg-dark">Get Started</a>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
+
+      <section className="why-stratezy-sec">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="why-startezy">
+                <div className="left-sec">
+                  <h2 className="title-secnd">Why Stratezy?</h2>
+                  <button onClick={() => slider?.current?.slickPrev()}>Prev</button>
+                  <button onClick={() => slider?.current?.slickNext()}>Next</button>
+                </div>
+                <div className="right-sec">
+                  <div className="finx-app-list">
+                    <Slider ref={slider} {...settings1} className="stratezy-slider">
+                      {
+                        whyStrategyCampaign.map((res) => {
+
+                          return (
+                            <div className="app-list-item">
+                              <img src={res.image} alt="Ready-Made Strategies to Start Trading" className="img-fluid" width={"100"} height={"100"} />
+                              <h3>Ready-Made strategies to start with</h3>
+                              <p>Our experts have created ready to use strategies for you to get started with your custom strategies.</p>
+                            </div>
+
+                          )
+                        })
+                      }
+
+                    </Slider>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
-    {/* <div className="app-list-item">
+      {/* <div className="app-list-item">
                                     <img src={Image1} alt="Ready-Made Strategies to Start Trading" className="img-fluid" width={"100"} height={"100"}/>
                                     <h3>Ready-Made strategies to start with</h3>
                                     <p>Our experts have created ready to use strategies for you to get started with your custom strategies.</p>
@@ -124,10 +125,10 @@ function WhyStrategies() {
                                     <p>Stratezy is the easiest tool to build your own trading strategies without any coding skills.</p>
                                 </div> */}
 
-    
 
-   
-    
+
+
+
     </div>
   );
 }
