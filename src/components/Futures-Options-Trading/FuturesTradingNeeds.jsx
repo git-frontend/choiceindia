@@ -9,14 +9,14 @@ function FuturesTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
   const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
-    infinite: true,
+    infinite: false,
     speed: 1000,
     vertical: true,
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
     slidesToShow: 5,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
