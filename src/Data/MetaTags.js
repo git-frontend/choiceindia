@@ -2217,6 +2217,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"चॉइस द्वारा Stratezy के साथ अपनी खुद की ट्रेडिंग रणनीतियां बनाएं। Stratezy भारतीय बाजार के लिए सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीति बिल्डरों में से एक है।",
     "link":"https://choiceindia.com/campaign/hindi/trading-strategies"
   },
+  "campaign/commodity-trading": {
+    "title":"Commodity Trading - Don't Miss Commodity Trading Opportunities",
+    'lang':"en",
+    'content':"Start trading in commodity market with Choice. Open a free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
 }
 
 export default meta_tags;

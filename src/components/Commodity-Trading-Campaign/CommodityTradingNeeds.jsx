@@ -3,7 +3,7 @@
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
-import tradingdata from '../../Data/FandOTrading';
+import Commoditytradingdata from '../../Data/CommodityTradingCampaign';
 import LazyLoader from '../Common-features/LazyLoader';
 function FuturesTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
@@ -15,10 +15,10 @@ function FuturesTradingNeeds() {
     focusOnSelect: true,
     touchMove: true,
     arrows: false,
-    slidesToShow: 5,
-    autoplay: false,
+    slidesToShow: 3,
+    autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1000,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -42,7 +42,7 @@ function FuturesTradingNeeds() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br /> F&amp;O Trading Needs</h2>
+              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br />Commodity Trading Needs</h2>
             </div>
           </div>
           <div className='row justify-content-center'>
@@ -57,7 +57,7 @@ function FuturesTradingNeeds() {
 
                     >
                       {
-                        tradingdata?.map((response, index) => {
+                        Commoditytradingdata?.map((response, index) => {
                           let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "") + ((index ===isShown3 ) ? "list-itmive" : "")
 
                           return (
@@ -82,7 +82,7 @@ function FuturesTradingNeeds() {
                 <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                    <LazyLoader src={tradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={tradingdata[isShown2].alt} />
+                    <LazyLoader src={Commoditytradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={Commoditytradingdata[isShown2].alt} />
                     
                   </div>
 

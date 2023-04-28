@@ -12,10 +12,10 @@ import Slider from 'react-slick';
 import { Link } from "react-router-dom";
 import LazyLoader from '../Common-features/LazyLoader';
 import ResearchCalls from './ResearchCalls';
-import FuturesTradingNeeds from './FuturesTradingNeeds';
-import FandOopendematAc from './FandOopendematAc';
+import CommodityTradingNeeds from './CommodityTradingNeeds';
+import CommodityTradingOpenDematAc from './CommodityOpenDematAc';
 import WhyChoice from './WhyChoice';
-import './futuresoptionstrading.scss';
+import './commodity-trading.scss';
 function CommodityTradingCampaign() {
     const [rendercount, setRenderCount] = useState(() => false);
     const settings1 = {
@@ -80,13 +80,12 @@ function CommodityTradingCampaign() {
                 <div className="container">
                     <div className="row ">
                         <div className="col-md-7 fandoleft">
-                            <h1 className="big-ttl">Don’t Miss <span> F&amp;O </span><br />
-                                Trading Opportunities!</h1>
+                            <h1 className="big-ttl">Don’t Miss <span> Commodity </span><br />Trading Opportunities!</h1>
                             {/* <div className="carditem-option-tab"> */}
                             <Slider {...settings1} className="carditem-option-tab">
                                 <div className="carditem-option">
-                                    <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily F&O Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
-                                    <h4 className="cardoption-ttl">Daily F&amp;O Calls from Experts</h4>
+                                    <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily Commodity Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
+                                    <h4 className="cardoption-ttl">Daily Commodity Calls from Experts</h4>
                                 </div>
                                 <div className="carditem-option">
                                     <span className="carditem-option-img"><LazyLoader src={icon2} alt={"Free Demat Account with Advanced Trading Platform"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
@@ -126,8 +125,8 @@ function CommodityTradingCampaign() {
                     </div>
                 </div>
             </section>
-            <FuturesTradingNeeds/>
-            <FandOopendematAc/>
+            <CommodityTradingNeeds/>
+            <CommodityTradingOpenDematAc/>
             <WhyChoice/>
            
 

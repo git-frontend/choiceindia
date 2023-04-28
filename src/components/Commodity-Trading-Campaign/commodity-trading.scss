@@ -160,11 +160,9 @@
         }
 
         .signup-left {
-            width: 42%;
             text-align: start;
 
             @media (max-width: $sm) {
-                width: 65%;
                 text-align: center;
             }
 
@@ -188,11 +186,8 @@
         }
 
         .signup-right {
-            width: 58%;
             text-align: end;
-
             @media (max-width: $sm) {
-                width: 100%;
                 text-align: center;
             }
 
@@ -487,7 +482,7 @@
                 position: absolute;
                 right:0;
                 top: 0; 
-                background: url(../../assets/images/Futures-Options-Trading/why1.svg) no-repeat top right;
+                background: url(../../assets/images/commodity-trading-campaign/why1.svg) no-repeat top right;
                 background-size: contain;
         
                 @media (max-width: $md) {
@@ -505,7 +500,7 @@
                 position: absolute;
                 right:0;
                 top: 0; 
-                background: url(../../assets/images/Futures-Options-Trading/why2.svg) no-repeat top right;
+                background: url(../../assets/images/commodity-trading-campaign/why2.svg) no-repeat top right;
                 background-size: contain;
         
                 @media (max-width: $md) {
@@ -523,7 +518,7 @@
                 position: absolute;
                 right:0;
                 top: 0; 
-                background: url(../../assets/images/Futures-Options-Trading/why3.svg) no-repeat top right;
+                background: url(../../assets/images/commodity-trading-campaign/why3.svg) no-repeat top right;
                 background-size: contain;
         
                 @media (max-width: $md) {
