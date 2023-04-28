@@ -9,7 +9,7 @@ function FuturesTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
   const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
-    infinite: false,
+    infinite: true,
     speed: 1000,
     vertical: true,
     focusOnSelect: true,
