@@ -142,6 +142,7 @@ const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Ban
 const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
 const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'))
 const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading-Strategies-Hindi/TradingStrategiesHindi'))
+const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'))
 
 function Routing() {
 
@@ -796,6 +797,11 @@ function Routing() {
                          <Route exact path='/campaign/hindi/trading-strategies' element={
                             <React.Suspense>
                                 < LazyTradingStrategiesHindi />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/commodity-trading' element={
+                            <React.Suspense>
+                                < LazyCommodityTradingCampaign />
                             </React.Suspense>
                         } />
  
