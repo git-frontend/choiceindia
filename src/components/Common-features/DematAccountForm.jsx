@@ -40,7 +40,7 @@ function DematAccountForm(props) {
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'' });
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'',isNewLead:null });
 
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -328,7 +328,9 @@ function DematAccountForm(props) {
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 otpSessionID.current =(type1=='MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
                 
-                
+                setShowThanku(prevState => {
+                    return { ...prevState,  showModal: false, page: 'no-addlead', resText: '',isOnboarding:'',isNewLead: res.data.Body.new_lead?  res.data.Body.new_lead : false}
+                });
                 fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();

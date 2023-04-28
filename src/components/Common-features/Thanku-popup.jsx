@@ -119,7 +119,7 @@ function Thankyoupopup({ isShow,isBlog }) {
                       <div className="close">
                         {/* <Link to="" className="closebtn" onClick={()=>isShow.closeMd(isShow.redirectionLink)} >&times;</Link> */}
                       </div>
-                      <div  className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog=='blog')) ? "thanku sub-broker-success" :((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1))? 'thanku mf-distributor-leads': ((!isShow.isOnboarding) && ((window.location.pathname.indexOf('sub-broker-franchise') == -1) && (window.location.pathname.indexOf('authorised-person') == -1) && (window.location.pathname.indexOf('remisier') == -1)))?"thanku campaign-success":"thanku "}>
+                      <div  className={((window.location.pathname.indexOf('sub-broker-franchise') > -1) || (window.location.pathname.indexOf('authorised-person') > -1) || (window.location.pathname.indexOf('remisier') > -1) || (isBlog=='blog')) ? "thanku sub-broker-success" :((!isShow.isOnboarding) && (window.location.pathname.indexOf('mutual-fund-distributor') > -1))? 'thanku mf-distributor-leads': ((isShow.isNewLead) && ((window.location.pathname.indexOf('sub-broker-franchise') == -1) && (window.location.pathname.indexOf('authorised-person') == -1) && (window.location.pathname.indexOf('remisier') == -1)))?"thanku campaign-success":"thanku "}>
                         <h1>Thank You !</h1>
                       </div>
                       <div className="body-content">
