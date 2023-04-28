@@ -140,9 +140,11 @@ const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypo
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'));
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
-const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'))
-const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading-Strategies-Hindi/TradingStrategiesHindi'))
-const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'))
+const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'));
+const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading-Strategies-Hindi/TradingStrategiesHindi'));
+const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'));
+const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
+const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
 
 function Routing() {
 
@@ -802,6 +804,16 @@ function Routing() {
                          <Route exact path='/campaign/commodity-trading' element={
                             <React.Suspense>
                                 < LazyCommodityTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/forex-trading' element={
+                            <React.Suspense>
+                                < LazyCurrencyTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/technical-analysis' element={
+                            <React.Suspense>
+                                < LazyTechnicalAnalysis />
                             </React.Suspense>
                         } />
  

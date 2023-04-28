@@ -58,11 +58,11 @@ function DevelopYourOwnStrategy() {
                     >
                       {
                         tradingStrategiesHindiData?.map((response, index) => {
-                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "")+ ((index ===isShown3 ) ? "list-itmive" : "")
+                          let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "")+ ((index === isShown2 + 1 ) ? "list-itmive" : "")
 
                           return (
 
-                            <div key={response.id} className={classNm} onMouseOver={() => {setIsShown2(index);setIsShown3(index +1 ==5 ?0:index +1)}}>
+                            <div key={response.id} className={classNm} onMouseOver={() => setIsShown2(index)}>
                               <h4 className="single-ttl">{response.title}</h4>
                               <p className="para">
                                 {response.description}

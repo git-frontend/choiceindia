@@ -3,9 +3,10 @@
 import React from "react";
 import { useState } from 'react';
 import Slider from 'react-slick';
-import Commoditytradingdata from '../../Data/CommodityTradingCampaign';
+import Currencytradingdata from '../../Data/CurrencyTradingCampaign';
 import LazyLoader from '../Common-features/LazyLoader';
-function CommodityTradingNeeds() {
+
+function CurrencyTradingNeeds() {
   const [isShown2, setIsShown2] = useState(0);
   // const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
@@ -42,7 +43,7 @@ function CommodityTradingNeeds() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br />Commodity Trading Needs</h2>
+              <h2 className="title-first text-center treding-mr">A Perfect Platform For Your <br />Currency Trading Needs</h2>
             </div>
           </div>
           <div className='row justify-content-center'>
@@ -57,7 +58,7 @@ function CommodityTradingNeeds() {
 
                     >
                       {
-                        Commoditytradingdata?.map((response, index) => {
+                        Currencytradingdata?.map((response, index) => {
                           let classNm = "content-list-itm " + ((index === isShown2) ? "list-itm-active" : "") + ((index === isShown2 + 1 ) ? "list-itmive" : "")
 
                           return (
@@ -82,7 +83,7 @@ function CommodityTradingNeeds() {
                 <div className='col-xl-5 col-md-6'>
 
                   <div className="trade-easy-images-div" >
-                    <LazyLoader src={Commoditytradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={Commoditytradingdata[isShown2].alt} />
+                    <LazyLoader src={Currencytradingdata[isShown2].image} className={"single-trade-easy-images"} width={"500"} height={"570"} alt={Currencytradingdata[isShown2].alt} />
                     
                   </div>
 
@@ -97,4 +98,4 @@ function CommodityTradingNeeds() {
     </>
   );
 };
-export default CommodityTradingNeeds;
+export default CurrencyTradingNeeds;

@@ -3,12 +3,11 @@ import React from "react";
 import Slider from 'react-slick';
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from "react-router-dom";
-import image1  from '../../assets/images/commodity-trading-campaign/free-demat-account-with-low-dp-charges.svg';
-import image2  from '../../assets/images/commodity-trading-campaign/zero-amc-demat-account.svg';
-import image3  from '../../assets/images/commodity-trading-campaign/demat-account-with-free-research.svg';
-import image4  from '../../assets/images/commodity-trading-campaign/demat-account-with-zero-auto-square-off-charges.svg';
-
-function CommodityOpendematAc() {
+import image1  from '../../assets/images/currency-trading-campaign/free-demat-account-with-low-dp-charges.svg';
+import image2  from '../../assets/images/currency-trading-campaign/zero-amc-demat-account.svg';
+import image3  from '../../assets/images/currency-trading-campaign/demat-account-with-free-research.svg';
+import image4  from '../../assets/images/currency-trading-campaign/demat-account-with-zero-auto-square-off-charges.svg';
+function CurrencyOpendematAc() {
   const settings1 = {
     infinite: true,
     speed: 1500,
@@ -101,4 +100,4 @@ function CommodityOpendematAc() {
     </>
   );
 };
-export default CommodityOpendematAc;
+export default CurrencyOpendematAc;

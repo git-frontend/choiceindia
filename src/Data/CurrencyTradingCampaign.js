@@ -1,7 +1,7 @@
 
-import  ImageSub2  from '../assets/images/commodity-trading-campaign/trading-platform-with-chartiq-tradingview-charts.webp';
-import  ImageSub3  from '../assets/images/commodity-trading-campaign/free-demat-account-with-in-app-research-calls.webp';
-import  ImageSub4  from '../assets/images/commodity-trading-campaign/demat-account-with-multi-leg-and-options-spread.webp';
+import  ImageSub2  from '../assets/images/currency-trading-campaign/trading-platform-with-chartiq-tradingview-charts.webp';
+import  ImageSub3  from '../assets/images/currency-trading-campaign/free-demat-account-with-in-app-research-calls.webp';
+import  ImageSub4  from '../assets/images/currency-trading-campaign/demat-account-with-multi-leg-and-options-spread.webp';
 
 const Commoditytradingdata =
 [

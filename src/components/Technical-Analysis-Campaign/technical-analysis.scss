@@ -1,8 +1,6 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
-
-
 .trading-Stratebanner{
     padding-top: 7rem;
     position: relative;
@@ -220,7 +218,7 @@
         position: absolute;
         left: 0;
         top: 38rem;
-        background: url(../../assets/images/trading-strategies/before-bg.svg) no-repeat bottom left;
+        background: url(../../assets/images/technical-analysis/befor-bg.svg) no-repeat bottom left;
         background-size: contain;
         @media (max-width:$md) {
             width: 20rem;
@@ -266,7 +264,7 @@
                 @media (max-width:$sm) {
                     top: 47rem;
                     left: 26%;
-                    gap: 20px;
+                    gap:20px;
                 }
             }
         }

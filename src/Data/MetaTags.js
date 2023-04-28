@@ -2223,6 +2223,18 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Start trading in commodity market with Choice. Open a free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
     "link":"https://choiceindia.com/open-free-demat-account"
   },
+  "campaign/forex-trading": {
+    "title":"Forex Trading - Don't Miss Trading Opportunities in Currency Market",
+    'lang':"en",
+    'content':"Start trading in forex (currency market) with Choice. Open free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
+  "campaign/technical-analysis": {
+    "title":"Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
+    'lang':"en",
+    'content':"Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
 }
 
 export default meta_tags;
