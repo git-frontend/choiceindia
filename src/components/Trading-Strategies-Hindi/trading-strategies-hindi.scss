@@ -6,7 +6,7 @@
 .trading-Stratebanner{
     padding-top: 7rem;
     position: relative;
-    .banner-btn{
+    .btn-open{
         padding-bottom: 3rem;
         @media (max-width:$sm) {
             text-align: center;
@@ -234,11 +234,13 @@
         display: flex;
         flex-wrap: wrap;
         .left-sec {
-            width: 22%;
-            .title-secnd{
+            width: 30%;
+            .title-first{
                 color: $whiteColor;
+                margin-bottom: 4rem;
                 @media (max-width: $sm) {
                    text-align: center;
+                   margin-bottom: 0;
                 }
             }
             @media (max-width: $sm) {
@@ -246,9 +248,8 @@
              }
              .slick-button {
                 display: flex;
-                gap: 46px;
+                gap: 2rem;
                 position: relative;
-                top: 6rem;
                 .btn-arrow {
                     background: transparent;
                     border: 0;
@@ -266,7 +267,6 @@
                 @media (max-width:$sm) {
                     top: 47rem;
                     left: 26%;
-                    gap: 20px;
                 }
             }
         }

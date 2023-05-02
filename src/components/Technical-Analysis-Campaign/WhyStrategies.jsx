@@ -14,7 +14,7 @@ function WhyStrategies() {
   const settings1 = {
     infinite: true,
     speed: 1000,
-    slidesToShow: 3,
+    slidesToShow: 2,
     arrows: false,
     autoplay: true,
     dots: false,
@@ -27,9 +27,8 @@ function WhyStrategies() {
       {
         breakpoint: 992,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 1,
           slidesToScroll: 1,
-          adaptiveHeight: true,
         },
       },
       {
@@ -66,20 +65,23 @@ function WhyStrategies() {
             <div className="col-md-12">
               <div className="why-startezy">
                 <div className="left-sec">
-                  <h2 className="title-secnd">Why Stratezy?</h2>
-                  <div className="slick-button">
-                    <button onClick={() => slider?.current?.slickPrev()} className="btn-arrow">
-                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-hover">
-                    <rect x="-0.5" y="0.5" width="55" height="55" rx="27.5" transform="matrix(-1 0 0 1 55 0)" stroke="white"/>
-                    <path d="M35.4507 40.4908C34.7208 41.1697 33.544 41.1697 32.8141 40.4908L20.4357 28.9768C19.8548 28.4365 19.8548 27.5635 20.4357 27.0232L32.8141 15.5092C33.544 14.8303 34.7208 14.8303 35.4507 15.5092C36.1806 16.1881 36.1806 17.2827 35.4507 17.9616L24.6661 28.0069L35.4656 38.0522C36.1806 38.7173 36.1806 39.8257 35.4507 40.4908Z" fill="white"/>
-                    </svg>
-                    </button>
-                    <button onClick={() => slider?.current?.slickNext()} className="btn-arrow">
-                    <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-hover">
+                  <div className="stratezy-left-cap">
+                    <h6>FEATURES</h6>
+                    <h2 className="title-first">Why <br/>Stratezy?</h2>
+                    <div className="slick-button">
+                      <button onClick={() => slider?.current?.slickPrev()} className="btn-arrow">
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-hover">
                       <rect x="-0.5" y="0.5" width="55" height="55" rx="27.5" transform="matrix(-1 0 0 1 55 0)" stroke="white"/>
-                      <path d="M20.5493 40.4908C21.2792 41.1697 22.456 41.1697 23.1859 40.4908L35.5643 28.9768C36.1452 28.4365 36.1452 27.5635 35.5643 27.0232L23.1859 15.5092C22.456 14.8303 21.2792 14.8303 20.5493 15.5092C19.8194 16.1881 19.8194 17.2827 20.5493 17.9616L31.3339 28.0069L20.5344 38.0522C19.8194 38.7173 19.8194 39.8257 20.5493 40.4908Z" fill="white"/>
+                      <path d="M35.4507 40.4908C34.7208 41.1697 33.544 41.1697 32.8141 40.4908L20.4357 28.9768C19.8548 28.4365 19.8548 27.5635 20.4357 27.0232L32.8141 15.5092C33.544 14.8303 34.7208 14.8303 35.4507 15.5092C36.1806 16.1881 36.1806 17.2827 35.4507 17.9616L24.6661 28.0069L35.4656 38.0522C36.1806 38.7173 36.1806 39.8257 35.4507 40.4908Z" fill="white"/>
                       </svg>
-                    </button>
+                      </button>
+                      <button onClick={() => slider?.current?.slickNext()} className="btn-arrow">
+                      <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-hover">
+                        <rect x="-0.5" y="0.5" width="55" height="55" rx="27.5" transform="matrix(-1 0 0 1 55 0)" stroke="white"/>
+                        <path d="M20.5493 40.4908C21.2792 41.1697 22.456 41.1697 23.1859 40.4908L35.5643 28.9768C36.1452 28.4365 36.1452 27.5635 35.5643 27.0232L23.1859 15.5092C22.456 14.8303 21.2792 14.8303 20.5493 15.5092C19.8194 16.1881 19.8194 17.2827 20.5493 17.9616L31.3339 28.0069L20.5344 38.0522C19.8194 38.7173 19.8194 39.8257 20.5493 40.4908Z" fill="white"/>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div className="right-sec">

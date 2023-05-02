@@ -66,7 +66,7 @@ function WhyStrategies() {
             <div className="col-md-12">
               <div className="why-startezy">
                 <div className="left-sec">
-                  <h2 className="title-secnd">Stratezy क्यूँ ?</h2>
+                  <h2 className="title-first">Stratezy क्यूँ ?</h2>
                   <div className="slick-button">
                     <button onClick={() => slider?.current?.slickPrev()} className="btn-arrow">
                     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="arrow-hover">
