@@ -85,7 +85,7 @@ const LazyTermsConditions = React.lazy(() => import('./components/Terms-Conditio
 const Lazysubbrokerhindi = React.lazy(() => import('./components/SubBroker/SubBrokerHindi'));
 const Lazysubbrokercampaign = React.lazy(() => import('./components/SubBroker/SubBrokerCampaign'));
 const LazyBrokerageCharges = React.lazy(() => import('./components/Brokerage/BrokerageCharges'));
-const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
+// const LazyInsurance = React.lazy(() => import('./components/Insurance/Insurance'));
 const LazyFileDownload = React.lazy(() => import('./components/FilesDownload/FileDownload'));
 const LazyEquityBroking = React.lazy(() => import('./components/Equity-Broking/EquityBrokingMain'));
 const LazyBoardOfDirectors = React.lazy(() => import('./components/BoardOfDirector/BoardOfInvestor'));
@@ -137,6 +137,9 @@ const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market
 const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
 const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
+const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
+
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
 function Routing() {
 
 
@@ -465,11 +468,11 @@ function Routing() {
                             </React.Suspense>
                         } />
 
-                        <Route exact path='/insurance' element={
+                        {/* <Route exact path='/insurance' element={
                             <React.Suspense>
                                 < LazyInsurance />
                             </React.Suspense>
-                        } />
+                        } /> */}
                         <Route exact path='/file-download' element={
                             <React.Suspense>
                                 < LazyFileDownload />
@@ -765,6 +768,16 @@ function Routing() {
                         <Route exact path='/loan/privacy-policy' element={
                             <React.Suspense>
                                 < LazyLoanPrivacyPolicy />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/emi-calculator' element={
+                            <React.Suspense>
+                                < LazyEmiCalculator />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/merchant-investment-banking' element={
+                            <React.Suspense>
+                                < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
  

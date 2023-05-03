@@ -120,7 +120,7 @@ function urlLink(){
         if (res) {
           
           storefile=res.response.research;
-          setlist(res.response.research);
+          // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })  
@@ -207,17 +207,24 @@ function urlLink(){
         if (res) {
           
           storefile=res.response.research;
-          setlist(res.response.research);
+          // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
 
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token }) 
         });
+
+      let unique=[]
         for (let i = 0; i < tokenList.length; i++) {
-           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
-            
-          
+          unique.push (tokenList[i].SegmentId + "@" + tokenList[i].Token + ","); 
         }
+        unique.forEach(element => {
+          if (!tokens.includes(element)) {
+              tokens += element
+          }
+      });
+      
+        
         // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
@@ -302,6 +309,8 @@ function urlLink(){
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
             
         });
+
+        
         for (let i = 0; i < tokenList.length; i++) {
            tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
             

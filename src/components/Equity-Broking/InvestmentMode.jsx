@@ -16,7 +16,7 @@ function InvestmentMode() {
       
       <section className="investment-mode">
         <div className="container">
-            <div className="row flex-sm-row-reverse">
+            <div className="row flex-sm-row-reverse align-items-center">
                 <div className="col-md-6 justify-content-end d-flex">
                     {/* <LazyLoader src={BrandLogos} alt={"Banner Images"} className={"img-fluid ban-img"} width={"501"} height={"400"} /> */}
                     <video className='img-fluid ban-img' autoPlay loop muted width={"501"} height={"400"}>

@@ -67,7 +67,7 @@ function Footer() {
                   </div>
                   <div className="top-sec-quick-links">
                     <div className="row">
-                      <div className="col-md-8">
+                      <div className="col-lg-8 col-md-12 col-sm-12">
                         <div className="quick-links-list">
                           <ul className="reset">
                             <li>
@@ -153,6 +153,9 @@ function Footer() {
                             <li>
                               <Link to="/offer-document">Offer Document</Link>
                             </li>
+                            <li>
+                            <a href="https://finx.choiceindia.com/"  target="_blank">Online KYC Updation</a>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -161,7 +164,7 @@ function Footer() {
                           <p>Choice International Limited , Sunil Patodia Tower, <br /> J B Nagar, Andheri(East), <br />Mumbai 400099. <FontAwesomeIcon icon={faLocationDot} /></p>
                           <p>Monday - Friday : 08:30 am - 7:00 pm <br />
                             Saturday : 10:00 am - 4:00 pm  <FontAwesomeIcon icon={faClock} /> </p>
-                          <p><a href="tel:02267079999" target="_blank">+91-022-6707 9999</a>  <FontAwesomeIcon icon={faPhone} /> </p>
+                          <p><a href="tel:8824242424" target="_blank">+91-88-2424-2424</a>  <FontAwesomeIcon icon={faPhone} /> </p>
                           <p><a href="mailto:customercare@choiceindia.com" target="_blank">customercare@choiceindia.com</a>   <FontAwesomeIcon icon={faEnvelope} /> </p>
                         </div>
 
@@ -258,7 +261,7 @@ function Footer() {
                       For any Grievances / Queries email at <a href="mailto:info@choiceindia.com">ig@choiceindia.com</a> &amp; <a href="mailto:customercare@choiceindia.com">customercare@choiceindia.com</a> <br /><br />
                      
                       Cautionary Message :
-                      <ol style={{ marginleft: "-1rem" }}>
+                      <ol style={{ marginleft: "-1rem" }} className="ol-p0">
                         <li>Sharing of trading credentials – login id &amp; passwords including OTP’s:- Keep Your Password/Pin and OTP’s private &amp; confidential to avoid any misuse or unauthorised trades. Please ensure that you do not share it with any one.</li>
                         <li>Trading in leveraged products like options without proper understanding, which could lead to losses</li>
                         <li>Writing/ selling options or trading in option strategies based on tips, without basic knowledge &amp; understanding of the product and its risks</li>

@@ -34,7 +34,6 @@ function PartnerBannerTab() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          adaptiveHeight: true,
         },
       },
       {
@@ -162,7 +161,7 @@ function PartnerBannerTab() {
             >
               {
                 partnerBanner?.map((res,index) => {
-                  let classNameNm = ((index === count) ?  "tabs active-tabs" : "tabs")
+                  let classNameNm = ((index === count) ?  "tabs active-tabs" : "tabs ")
 
                   return (
                     <button key={res.id}  className={classNameNm}

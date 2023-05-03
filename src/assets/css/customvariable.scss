@@ -29,8 +29,14 @@ $bg-sky:#E0EFE4;
 $bg-sky2:#E1EEFF;
 $bg-sky3:#F8FAFD;
 $txtgrey: #585858;
+$lightsky:#F8FFF0;
+$range-green:#66DB1E;
 $pinklight2:#FFF6DF;
 $bg-check:#00AA69;
+$pinklight3:#FFFBF4;
+$bluelight3:#F9FFF4;
+$bluelight4:#F4FCFF;
+
 
 /*textvaribales*/
 $primary: #221F20;
@@ -77,10 +83,14 @@ $bluebg:#E1EEFF;
 $darkyellow:#FCF0D2;
 $boxshadow:#F0F0F0;
 $stockboxshadow: #00000014;
-
+$border-light: rgba(0, 0, 0, 0.1);
 $nbfcboxshadow:rgba(0, 0, 0, 0.25);
 $textcolor: #CFCFCF;
 /*Responsive screen width*/
+
+//border color
+
+$border-green:#D9FFBB;
 
 $xs: 590px;
 $sm-x: 768px;
@@ -89,5 +99,4 @@ $sm: 767px;
 $md: 992px;
 $lg: 1200px;
 $xl: 1500px;
-
 

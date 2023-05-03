@@ -60,7 +60,8 @@ export default function FaqBody() {
           slidesToShow: 2,
           slidesToScroll: 2,
           adaptiveHeight: true,
-          dots:false,
+          dots:true,
+          arrows: false,
         },
       },
       {
@@ -68,7 +69,8 @@ export default function FaqBody() {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          dots:false,
+          dots:true,
+          arrows: false,
         },
       },
       {
@@ -77,6 +79,7 @@ export default function FaqBody() {
           slidesToShow: 1,
           slidesToScroll: 1,
           dots:true,
+          arrows: false,
         },
       },
     ],

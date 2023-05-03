@@ -30,6 +30,9 @@ function WhyOpenFreeDematAccount() {
           slidesToShow: 2,
           slidesToScroll: 1,
           adaptiveHeight: false,
+          autoplaySpeed: 5000,
+          autoplay: true,
+          infinite:true,
         },
       },
       {
