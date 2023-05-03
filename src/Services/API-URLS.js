@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -38,12 +38,13 @@ const config = {
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://api-uat.synofin.tech/od/od-application-creation/",
-    livenbfcBaseURL:" https://api-prod.synofin.tech/od/od-application-creation/",
+    livenbfcBaseURL:" https://api-prod.synofin.tech/api/od/od-application-creation/",
     // UATNachBaseURL:"https://us-central1-neuron-uat.cloudfunctions.net/",
     UATNachBaseURL:"https://dev-api.choicetechlab.com/",
     // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
     liveNachBaseURL:"https://go.choiceindia.com/",
-    UATNbfcAuthURL:"https://api-uat.synofin.tech/oauth/"
+    UATNbfcAuthURL:"https://api-uat.synofin.tech/oauth/",
+    liveNbfcAuthURL:"https://api-prod.synofin.tech/oauth/"
 }
 
 export class API_URLS {

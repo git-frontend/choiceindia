@@ -12,14 +12,23 @@ const headers = {
   'Content-Type': 'application/json'
 };
 
-const authHeaders = {
+const liveauthHeaders = {
   'accept': '*/*',
   'Source': 'choice',
   // "Username":"dc1b5058275941149e3457b73ae4b17a",
   // "Password":"99c0259a-ed0c-401d-a786-603a842ea64e",
   //  'Authorization':"Basic ZGMxYjUwNTgyNzU5NDExNDllMzQ1N2I3M2FlNGIxN2E6OTljMDI1OWEtZWQwYy00MDFkLWE3ODYtNjAzYTg0MmVhNjRl",
  
-  'Authorization': 'Basic '+ btoa('dc1b5058275941149e3457b73ae4b17a' + ":" + '99c0259a-ed0c-401d-a786-603a842ea64e'),
+  'Authorization': 'Basic '+ btoa('f58dea3d3aa449109b167e3a4c28e238' + ":" + '83a54391-5f17-4948-bf5d-99d55bfa183b'),
+}
+const devauthHeaders = {
+  'accept': '*/*',
+  'Source': 'choice',
+  // "Username":"dc1b5058275941149e3457b73ae4b17a",
+  // "Password":"99c0259a-ed0c-401d-a786-603a842ea64e",
+  //  'Authorization':"Basic ZGMxYjUwNTgyNzU5NDExNDllMzQ1N2I3M2FlNGIxN2E6OTljMDI1OWEtZWQwYy00MDFkLWE3ODYtNjAzYTg0MmVhNjRl",
+ 
+  'Authorization': 'Basic '+ btoa('dc1b5058275941149e3457b73ae4b17a' + ":" + ' 99c0259a-ed0c-401d-a786-603a842ea64e '),
 }
 
 const NbfcService = {
@@ -68,7 +77,13 @@ const NbfcService = {
 
   authorization : function (){
     let url = apiURL.getNbfcAuthorization();
-    return axios.post(url,"",{ headers: authHeaders});
+    if(url=="https://api-prod.synofin.tech/oauth/authorization"){
+      return axios.post(url,"",{ headers: liveauthHeaders});
+    }
+    else{
+      return axios.post(url,"",{ headers: devauthHeaders});
+    }
+    
   }
 
   
