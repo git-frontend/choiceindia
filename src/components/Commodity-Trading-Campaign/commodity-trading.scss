@@ -532,3 +532,15 @@
         }
     }
 }
+.hideform{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: $sm) {
+    display: block !important;
+    }
+}

@@ -7,6 +7,16 @@ import ZeroAutoSquare from '../../assets/images/free-demat-compaign/free-demat-a
 import FreeCall from '../../assets/images/free-demat-compaign/open-demat-account-with-free-call-for-trade-facility.svg';
 
 function WhyOpenFreeDematAccount() {
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   return (
     <div>
     <section className="why-open-freedematac">
@@ -57,7 +67,7 @@ function WhyOpenFreeDematAccount() {
                       </div>
                   </div>
                   <div className="text-center">
-                    <a target="_blank" class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Now</span></a>
+                    <a onClick={()=>{chapterScroll('dematform')}} class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Now</span></a>
                   </div>
                </div>
             </div>

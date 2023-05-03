@@ -1,5 +1,6 @@
 
 import React from "react";
+import { useState,useEffect } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
 import NoAmc from '../../assets/images/free-demat-compaign/free-demat-account-with-no-annual-charges.svg';
 import ResearchCalls from '../../assets/images/free-demat-compaign/free-demat-account-with-expert-research-calls.svg';
@@ -8,6 +9,35 @@ import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function Banner() {
+    const [name, setName ] = useState('hideform');
+    const getPosition = () => {
+      const element = document.getElementById("showForm");
+      if(element){
+          const rect = element.getBoundingClientRect();
+          
+          if(rect.top.toFixed() < 259){
+              setName('visibleform');
+          }else{
+              setName('hideform');
+          }   
+      }
+  };
+  
+    useEffect(() => {
+      window.addEventListener('scroll', getPosition);
+  }, []);
+  
+  
+  function chapterScroll2(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   return (
     <div>
     <section className="free-dematbanner">
@@ -49,6 +79,11 @@ function Banner() {
                             <DematAccountForm />
                         </GoogleReCaptchaProvider>
                     </div>
+                </div>
+            </div>
+            <div className={name}>
+                <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                    <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll2('dematform')}}>Open Free Account</button>
                 </div>
             </div>
         </div>

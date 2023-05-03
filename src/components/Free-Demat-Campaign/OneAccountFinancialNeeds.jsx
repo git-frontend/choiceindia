@@ -36,6 +36,17 @@ function OneAccountFinancialNeeds() {
     ],
   };
 
+  function chapterScroll2(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div>
       <section className="one-ac-financial">
@@ -111,7 +122,7 @@ function OneAccountFinancialNeeds() {
             <div className="row">
             <div className="col-md-12">
              <div className="btn-open">
-                    <a target="_blank" class="cursor-pointer"><span class="btn-bg">Open My Account</span></a>
+                    <a onClick={()=>{chapterScroll2('dematform')}} class="cursor-pointer"><span class="btn-bg">Open My Account</span></a>
               </div>
             </div>
           </div>

@@ -11,16 +11,10 @@
         @media (max-width:$sm) {
             text-align: center;
         }
-        .all-account{
-            background-color: $bgcolor-lightyellow;
-            color: $yellowColor;
-            border: 1px solid $yellowColor;
-            font-size: 1.5;
-            font-family: $font-family-poppins-medium;
-            line-height: 1.5;
-            padding: 7px 15px;
-            text-transform: capitalize;
-            border-radius: 25px;
+        .btn-bg{
+            @media (max-width:$sm) {
+               width: 100%;
+            } 
         }
     }
     .trading-banner-caption{
@@ -49,6 +43,7 @@
        padding: 4rem 0 6rem 0;
     }
 }
+
 .develop-strategies {
     padding: 10rem 0;
     position: relative;
@@ -156,6 +151,8 @@
         .video-width {
             width: 100%;
             height: 100%;
+            box-shadow: 0px 4px 24px $bx-shadow;
+            border-radius: 20px;
         }
         @media (max-width:$sm) {
             padding: 4rem 0 8rem 0;
@@ -200,6 +197,11 @@
             }
             @media (max-width:$md) {
                 justify-content: center;
+            }
+            .btn-bg{
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
             }
         }
     }
@@ -336,7 +338,14 @@
 }
 
 .open-Demat-sec{
-    padding: 6rem 0;
+    padding: 10rem 0;
+    .btn-open{
+        .btn-bg{
+            @media (max-width:$sm) {
+                width: 100%;
+            }
+        }
+    }
     .title-secnd{
         span{
             color: $bgcolor-yellow;
@@ -385,6 +394,11 @@
                         @media (max-width:$md) {
                             font-size: 1.3rem ;
                         }
+                        br{
+                            @media (max-width:$sm) {
+                                display: none;
+                            }
+                        }
                     }
                 }
                 @media (max-width:$md) {
@@ -396,4 +410,17 @@
             }
 }
 }
+}
+
+.hideform{
+
+    @media (max-width: $sm) {
+    display: none !important;
+    }
+}
+.visibleform{
+
+    @media (max-width: $sm) {
+    display: block !important;
+    }
 }

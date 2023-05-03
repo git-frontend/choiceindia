@@ -37,7 +37,7 @@ function DevelopYourOwnStrategy() {
   };
   return (
     <div>
-    <section className="develop-strategies">
+    <section className="develop-strategies" id="showForm">
         <div className="container">
           <div className="row">
             <div className="col-md-12">

@@ -36,15 +36,15 @@ function CreateBacktestStrategies() {
   };
   return (
     <div>
-    <section className="create-backtest-sec">
+    <section className="create-backtest-sec" id="showForm">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
                    <h2 className="title-secnd text-center">Create and Backtest Your Strategies <br/>Free of Cost</h2>
                 </div>
                <div className="col-md-12">
-               <div className="create-backtest">
-                <div className="left-sec">
+               <div className="row justify-content-between create-backtest">
+                <div className="col-md-4">
                     <Slider {...settings1}
                           afterChange={(ev) => {
                             setIsShown2(ev)
@@ -69,9 +69,9 @@ function CreateBacktestStrategies() {
                           }
                         </Slider>
                     </div>
-                    <div className="right-sec">
+                    <div className="col-md-7">
                       <div className="video-height">
-                        <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
+                      <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
                       </div>
                     </div>
                </div>

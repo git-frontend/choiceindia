@@ -5,6 +5,16 @@ import StepsBanner from '../../assets/images/free-demat-compaign/how-to-open-dem
 import SliderApp from "./SliderApp";
 
 function DematAccountOnlineSteps() {
+  function chapterScroll3(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   return (
     <div>
     <section className="open-account-steps">
@@ -15,14 +25,10 @@ function DematAccountOnlineSteps() {
                 </div>
                 <div className="account-steps-list">
                     <div className="left-sec">
-                        
-
-
                         <SliderApp />
                         <div className="text-center pt-5">
-                          <a target="_blank" class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Free Account</span></a>
+                          <a onClick={()=>{chapterScroll3('dematform')}} class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Free Account</span></a>
                         </div>
-
                       </div>
                     <div className="right-sec">
                       <div className="step-banner">

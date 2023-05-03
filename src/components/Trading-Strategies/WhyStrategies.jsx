@@ -42,6 +42,16 @@ function WhyStrategies() {
     ],
   };
 
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   return (
     <div>
 
@@ -52,7 +62,7 @@ function WhyStrategies() {
               <div className="own-startezy-card">
                 <div class="bar-cont-des">
                   <h3 class="title-fourth">Don’t rely on the strategy developed by others. <br />Develop your own strategy</h3>
-                  <a href="/" target="_blank" class="btn-bg btn-bg-dark">Get Started</a>
+                  <a onClick={()=>{chapterScroll('dematform')}} class="btn-bg btn-bg-dark cursor-pointer">Get Started</a>
                 </div>
               </div>
             </div>

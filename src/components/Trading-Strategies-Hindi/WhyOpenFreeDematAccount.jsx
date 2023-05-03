@@ -7,6 +7,18 @@ import ZeroAutoSquare from '../../assets/images/trading-strategies/demat-account
 import FreeCall from '../../assets/images/trading-strategies/demat-account-with-no-auto-square-off-charges.svg';
 
 function WhyOpenFreeDematAccount() {
+
+  function chapterScroll(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   return (
     <div>
     <section className="open-Demat-sec">
@@ -51,13 +63,13 @@ function WhyOpenFreeDematAccount() {
                               <LazyLoader src={FreeCall} className={'img-fluid'} width={"63"} height={"64"} alt={"Demat Account with No Auto Sqare Off Charges"}/>
                             </div>
                             <div className="benefit-item">
-                              <h3 className="title-cam">कोई ऑटो स्क्वायर-ऑफ शुल्क नहीं</h3>
+                              <h3 className="title-cam">कोई ऑटो <br/> स्क्वायर-ऑफ शुल्क नहीं</h3>
                             </div>
                         </div>
                       </div>
                   </div>
-                  <div className="text-center">
-                    <a target="_blank" class="cursor-pointer"><span class="btn-bg btn-bg-dark">मेरा खाता खोलें</span></a>
+                  <div className="btn-open text-center">
+                    <a onClick={()=>{chapterScroll('dematform')}} class="btn-bg btn-bg-dark cursor-pointer">मेरा खाता खोलें</a>
                   </div>
                </div>
             </div>
