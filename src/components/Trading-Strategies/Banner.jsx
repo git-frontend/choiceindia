@@ -33,6 +33,16 @@ function Banner() {
       behavior: "smooth"
     });
   }
+  function chapterScroll3(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
   return (
     <div>
     <section className="trading-Stratebanner">
@@ -42,7 +52,7 @@ function Banner() {
                     <div className="trading-banner-caption">
                         <h1 className="big-ttl">Don’t rely on others' strategy.<br/> <span>Create your own</span> strategy.</h1>
                        <p className="para">Stratezy helps you to create, backtest and verify your own trading on the past market data.</p>
-                       <div class="btn-open"><a target="_blank" class="cursor-pointer"><span class="btn-bg">Explore Stratezy</span></a></div>
+                       <div class="btn-open"><a onClick={()=>{chapterScroll3('dematform')}} class="cursor-pointer"><span class="btn-bg">Explore Stratezy</span></a></div>
                     </div>
                 </div>
                 <div className="col-xl-4 col-md-5">
