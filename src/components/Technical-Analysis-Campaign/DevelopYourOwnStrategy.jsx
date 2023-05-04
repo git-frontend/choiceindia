@@ -15,7 +15,7 @@ function DevelopYourOwnStrategy() {
     touchMove: true,
     arrows: false,
     slidesToShow: 5,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
