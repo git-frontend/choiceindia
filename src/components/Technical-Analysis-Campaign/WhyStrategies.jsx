@@ -16,7 +16,7 @@ function WhyStrategies() {
     speed: 1000,
     slidesToShow: 2,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,

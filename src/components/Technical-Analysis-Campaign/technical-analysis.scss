@@ -150,7 +150,8 @@
                     padding: 1rem;
                 }
                 @media (max-width:$sm) {
-                    margin-bottom: 0.8rem;
+                    margin-bottom:0;
+                    padding: 2rem;
                 }
 
                 .single-ttl {
@@ -193,7 +194,7 @@
             }
 
             @media (max-width:$sm) {
-                padding: 0 1rem;
+                padding: 2rem;
                 text-align: center;
             }
         }
@@ -284,6 +285,7 @@
             background: $primary;
             border-radius: 20px;
             position: relative;
+            min-height: 32rem;
             &::before{
                 content: '';
                 width: 15rem;
@@ -370,8 +372,9 @@
         }
         .right-sec {
             position: absolute;
-            width: 54%;
-            right: 2%;
+            width: 56%;
+            right: 1.5%;
+            top: 5rem;
             @media (max-width: $sm) {
                 position: inherit;
                 bottom: inherit;
@@ -383,15 +386,23 @@
                     padding-top: 3rem;
                 }
                 .app-list-item {
-                    width: 95% !important;
+                    width: 100% !important;
                     background: $whiteColor;
                     border-radius: 20px;
-                    display: block;
+                    display: block !important;
                     height: 100%;
                     padding: 3rem;
                     text-decoration: none;
                     box-shadow: 0px 0px 8px 0px $stockboxshadow;
-                    margin: 5px;
+                    margin: 0 auto;
+                    min-height: 33rem;
+                    @media only screen and (min-width: 1200px) {
+                        min-height: 33.5rem;
+                      }
+                     
+                      @media only screen and (min-width: 1400px) {
+                        min-height: 33rem;
+                      }
                     img {
                         height: 100px;
                     }
@@ -419,13 +430,14 @@
                     }
 
                 }
-                .slick-slider{
+                .stratezy-slider{
                     .slick-list{
                         .slick-track{
                             display: flex;
-                            padding-bottom: 1rem;
+                            padding: 1rem 0;
                             .slick-slide{
                                 height: inherit;
+                                margin: 0 1.5rem;
                                 > div{
                                     height: 100%;
                                 }
