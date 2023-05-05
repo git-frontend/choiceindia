@@ -366,7 +366,7 @@ function DematAccountForm(props) {
         source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
         subrefercodeInv.current = (searchParams.get('subref'))||'';
 
-        setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
+        // setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     }
 
     // function handleOTP(e) {
