@@ -360,7 +360,7 @@ function DematAccountForm(props) {
         UTMTerm.current = searchParams.get('utm_term') || '';
 
         refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
-      
+        refercode.current ? setReferID(refercode.current):"" 
         refercodeInv.current=(searchParams.get('refercode')?(searchParams.get('refercode')):(searchParams.get('ref')||''))// 
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
         source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
