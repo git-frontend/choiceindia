@@ -110,8 +110,9 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
         } else {
             showLoader('verifyLoader');
             let request = {
-                otp: otp,
-                session_id: otpID.current
+                "mobile_number": mobileNumber,
+                 otp: otp,
+                 session_id: otpID.current
             };
 
             openAccountService.verifyOTP(request, type2).then((res) => {
