@@ -201,7 +201,7 @@ function nbfcForm(props) {
 //To send OTP
     function handleSendOTP(e) {
         e == 'resend' ? setmsg(e) : e.preventDefault();
-        console.log("check")
+        // console.log("check")
 
         let isBrokerNameValid, isBrokerMobileNumberValid, isBrokerLastNameValid = false;
         //brokerName Validation
@@ -626,7 +626,7 @@ function nbfcForm(props) {
 
         }).catch((error) => {
             hideLoader('addLeadLoader');
-            console.log("error", error.response.data.message)
+            // console.log("error", error.response.data.message)
             handleOTPPopupClose();
             // // console.log(error, "addNewLead error");
             if (error && error.response && error.response.data && error.response.data.message) {
@@ -664,7 +664,7 @@ function nbfcForm(props) {
             }).catch((error) => {
 
                 hideLoader('verifyLoader');
-                console.log(error.response.data.Message, "verifyOTPN error");
+                // console.log(error.response.data.Message, "verifyOTPN error");
                 setOTPErrors((error && error.response && error.response.data && error.response.data.Message) ? error.response.data.Message : SubBrokerLanguageContent.getContent(props.language ? props.language : 'en', 'otperror2', "Something went wrong, please try again later!"));
             });
         }
