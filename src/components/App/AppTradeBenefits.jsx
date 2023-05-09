@@ -15,60 +15,62 @@ function AppTradeBenefits() {
   const[checkBrowser, setcheckBrowser] = useState(() => '');
   const[checkDevice, setcheckDevice] = useState(() => '');
 
-  // function getBrowserDetails() {
+  function getBrowserDetails() {
 
-  //   // console.log('TRR',navigator.userAgent)
+    // console.log('TRR',navigator.userAgent)
    
-  //   if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
-  //   {
-  //       setcheckBrowser(() => 'Opera');
-  //   }
-  //   else if(navigator.userAgent.indexOf("Edg") != -1 )
-  //   {
-  //       setcheckBrowser(() => 'Edge');
-  //   }
-  //   else if(navigator.userAgent.indexOf("Chrome") != -1 )
-  //   {
-  //       setcheckBrowser(() => 'Chrome');
-  //   }
-  //   else if(navigator.userAgent.indexOf("Safari") != -1)
-  //   {
-  //       setcheckBrowser(() => 'Safari');
-  //   }
-  //   else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
-  //   {
-  //       setcheckBrowser(() => 'Firefox');
-  //   }
-  //   else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
-  //   {
-  //       setcheckBrowser(() => 'IE');
-  //   }  
-  //   else 
-  //   {
-  //       setcheckBrowser(() => 'unknown');
-  //   }
+    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) 
+    {
+        setcheckBrowser(() => 'Opera');
+    }
+    else if(navigator.userAgent.indexOf("Edg") != -1 )
+    {
+        setcheckBrowser(() => 'Edge');
+    }
+    else if(navigator.userAgent.indexOf("Chrome") != -1 )
+    {
+        setcheckBrowser(() => 'Chrome');
+    }
+    else if(navigator.userAgent.indexOf("Safari") != -1)
+    {
+        setcheckBrowser(() => 'Safari');
+    }
+    else if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+        setcheckBrowser(() => 'Firefox');
+    }
+    else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )) //IF IE > 10
+    {
+        setcheckBrowser(() => 'IE');
+    }  
+    else 
+    {
+        setcheckBrowser(() => 'unknown');
+    }
 
     
-  // }
+  }
 
-  // function getDeviceDetails() {
-  //   var platform = ["Windows", "Android", "iOS"];
+  function getDeviceDetails() {
+    var platform = ["Windows", "Android", "iOS"];
 
-  //   // console.log('DD',navigator.userAgentData.platform)
-  //   for (var i = 0; i < platform.length; i++) {
+    // console.log('DD',navigator.userAgentData.platform)
+    for (var i = 0; i < platform.length; i++) {
 
-  //       if (navigator.userAgentData.platform.indexOf(platform[i]) >- 1) {
+        if (navigator.userAgentData.platform.indexOf(platform[i]) >- 1) {
 
-  //           console.log('DEEVID',platform[i])
-  //       }
-  //   }
-  // }
+            console.log('DEEVID',platform[i])
+        }
+    }
+  }
 
-  // useEffect(() => {
-  //   getBrowserDetails();
-  //   getDeviceDetails();
-  //   // console.log('BROW',checkBrowser);
-  // },[])
+  useEffect(() => {
+    if(navigator.userAgentData){
+      getBrowserDetails();
+      getDeviceDetails();
+    }
+    // console.log('BROW',checkBrowser);
+  },[])
 
   return (
     <div className='App-main'>
