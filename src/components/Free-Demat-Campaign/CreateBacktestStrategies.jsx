@@ -55,7 +55,7 @@ function CreateBacktestStrategies() {
                 </div>
                <div className="col-md-12">
                <div className="row justify-content-between create-backtest">
-                <div className="col-md-4">
+                <div className="col-xl-4 col-md-6">
                     <Slider {...settings1}
                           afterChange={(ev) => {
                             setIsShown2(ev)
@@ -80,7 +80,7 @@ function CreateBacktestStrategies() {
                           }
                         </Slider>
                     </div>
-                    <div className="col-md-7">
+                    <div className="col-xl-7 col-md-6">
                       <div className="video-height">
                       <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
                       </div>
