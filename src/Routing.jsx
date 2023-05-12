@@ -139,7 +139,8 @@ const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpac
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
-const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
+const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
 
@@ -149,7 +150,7 @@ function Routing() {
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/aof-page") === -1) ? <Header /> : <CampaignHeader />}
                
                 {/* <Header /> */}
                 <div className='App-Body'>
@@ -780,7 +781,11 @@ function Routing() {
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
- 
+                        <Route exact path='/aof-page' element={
+                            <React.Suspense>
+                                < LazyAfpage />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>

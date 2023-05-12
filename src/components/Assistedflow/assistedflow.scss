@@ -1,0 +1,185 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.afsec{
+    padding-bottom: 4rem;
+    .subhead{
+        color: #25B8AF;
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 1.688rem;
+        padding-bottom: 2.563rem;
+    }
+    .left-sec{
+        width: 70%;
+        @media (max-width:767px) {
+            width: 100%;
+        }
+        .table-sec{
+            border: 1px solid #C2C2C2;
+            padding: 2rem;
+            border-radius: 8px;
+            .rowwrap{
+                display: flex;
+                justify-content: space-between;
+                border-bottom: 1px solid #DDDDDD;
+                padding: 24px 0;
+                @media (max-width:767px) {
+                    padding: 12px  0;
+                }
+                &:first-child{
+                    padding: 0 0 24px 0;
+                    @media (max-width:767px) {
+                        padding: 0 0 12px 0;
+                    }
+                }
+                &:last-child{
+                    border:none;
+                    padding: 24px 0 0 0;
+                    @media (max-width:767px) {
+                        padding: 12px 0 0 0;
+                    }
+                }
+                @media (max-width:767px) {
+                    flex-direction: column;
+                }
+                .name{
+                    font-size: 1.35rem;
+                    color: #000;
+                    text-transform: capitalize;
+                    line-height: 1.625rem;
+                    font-weight: 500;
+                }
+                
+                .textwrap{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 50%;
+                    .numberwrap{
+                        .number{
+                            color:  #25B8AF;
+                            font-size: 1.25rem;
+                            font-weight: 600;
+                        }
+                        .percent{
+                            color:  #666666;
+                            font-size: 1rem;
+                            font-weight: 400;
+                        }
+                    }
+                    .amount{
+                        .rupee{
+                            color: #221F20;
+                            font-size:1.25rem ;
+                           line-height: 1.875rem;
+                        }
+                        .text{
+                            color: #666666;
+                            font-size:1rem ;
+                           line-height: 1.5rem;
+                           text-align: right;
+                        }
+                    }
+                    
+                    
+                    p{
+                        margin: 0;
+                    }
+                    @media (max-width:767px) {
+                        flex-direction: row;
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        margin-top: 1.5rem;
+                    }
+                }
+            }
+        }
+    }
+    .right-sec{
+        width: 30%;
+        @media (max-width:767px) {
+            width: 100%;
+        }
+
+        .formwrapper{
+            padding: 24px;
+            background-color: #25B8AF;
+            border-radius: 8px;
+            .infowrap{
+                padding-bottom: 2.375rem;
+                p{
+                    color: #fff;
+                    text-transform: capitalize;
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                    font-weight: 600;
+                    margin: 0;
+                }
+              
+            }
+            .amtwrap{
+                .investmentamount{
+                    margin: 0;
+                    font-size: 1.188rem;
+                    line-height: 1.75rem;
+                    color:#fff;
+                }
+                .amountrs{
+                    margin: 0;
+                    font-size: 1.5rem;
+                    line-height: 2.25rem;
+                    color:#fff;
+                }
+            }
+            .investnowbtn{
+                margin-top: 3.75rem;
+                @media (max-width:767px) {
+                    display: none;
+                }
+            }
+        }
+      
+    }
+    .sticky-investnow{
+        position: fixed;
+        bottom: 0;
+        z-index: 99999999;
+        width: 100%;
+        left: 0;
+        display: none !important;
+        background-color: #25B8AF;
+        .stickywrap{
+            display: flex;
+            justify-content: space-between;
+            padding: 1.125rem 1rem;
+            .left{
+                .text{
+                    font-weight: 500;
+                    font-size: 12px;
+                    line-height: 18px;
+                    color: #FFFFFF;
+                    margin: 0;
+                }
+                .num{
+                    font-weight: 600;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #FFFFFF;
+                    margin: 0;
+                }
+            }
+            .rightbtn{
+                .investnowbtn{
+                    padding: 1rem !important;
+                    min-width: 14rem;
+                }
+            }
+        }
+        @media (max-width:767px) {
+            display: block !important;
+        }
+    }
+}
+
