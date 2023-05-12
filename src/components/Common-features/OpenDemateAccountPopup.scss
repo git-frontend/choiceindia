@@ -25,16 +25,22 @@
         margin-bottom: 1rem;
         position: relative;
         padding: 0;
-        .closebtn {
-            color:$primary;
-            text-decoration: none;
-            float: right;
-            top: 0;
-            right: 15px;
-            position: absolute;
-            font-size: 3rem;
+        .close{
+           
             @media (max-width:$sm) {
-                color: $whiteColor;
+                padding-bottom: 1rem;
+                }
+            .closebtn {
+                color:$primary;
+                text-decoration: none;
+                float: right;
+                top: 0;
+                right: 15px;
+                position: absolute;
+                font-size: 3rem;
+                // @media (max-width:$sm) {
+                //     color: $whiteColor;
+                // }
             }
         }
         @media (max-width:$sm) {

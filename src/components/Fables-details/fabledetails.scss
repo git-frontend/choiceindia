@@ -125,7 +125,7 @@
             font-size: 1.25rem;
             line-height: 2rem;
             color: $primary;
-            text-align: justify;
+            // text-align: justify;
             position: relative;
             iframe{
                 margin: 2rem 0;
@@ -345,6 +345,19 @@
             }
         }
 
+
+        .cta-content{
+            background-color: #0066B3;
+            .ban-cap {
+                display: flex;
+                justify-content: space-around;
+                .ban-item{
+                    span{
+                        color: $whiteColor;
+                    }
+                }
+            }
+        }
       
        
     }

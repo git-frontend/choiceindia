@@ -864,7 +864,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                 <div className="sub-formgrp">
                                     
                                 <Select ref={selectInputRef}
-                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
+                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'medium' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger"> Nearest City Branch is required</small> : ''
                             }
@@ -881,7 +881,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
+                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'medium' }} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
