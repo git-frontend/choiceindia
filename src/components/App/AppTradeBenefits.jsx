@@ -65,8 +65,10 @@ function AppTradeBenefits() {
   }
 
   useEffect(() => {
-    getBrowserDetails();
-    getDeviceDetails();
+    if(navigator.userAgentData){
+      getBrowserDetails();
+      getDeviceDetails();
+    }
     // console.log('BROW',checkBrowser);
   },[])
 
