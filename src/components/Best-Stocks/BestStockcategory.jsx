@@ -120,16 +120,20 @@ function urlLink(){
         if (res) {
           
           storefile=res.response.research;
-          setlist(res.response.research);
+          // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })  
         });
+        let unique=[]
         for (let i = 0; i < tokenList.length; i++) {
-           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
-            
-          
+          unique.push (tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
         }
+        unique.forEach(element => {
+          if (!tokens.includes(element)) {
+              tokens += element
+          }
+      });
         // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
@@ -207,17 +211,24 @@ function urlLink(){
         if (res) {
           
           storefile=res.response.research;
-          setlist(res.response.research);
+          // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
 
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token }) 
         });
+
+      let unique=[]
         for (let i = 0; i < tokenList.length; i++) {
-           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
-            
-          
+          unique.push (tokenList[i].SegmentId + "@" + tokenList[i].Token + ","); 
         }
+        unique.forEach(element => {
+          if (!tokens.includes(element)) {
+              tokens += element
+          }
+      });
+      
+        
         // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
@@ -302,11 +313,17 @@ function urlLink(){
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
             
         });
+
+        
+        let unique=[]
         for (let i = 0; i < tokenList.length; i++) {
-           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
-            
-          
+          unique.push (tokenList[i].SegmentId + "@" + tokenList[i].Token + ","); 
         }
+        unique.forEach(element => {
+          if (!tokens.includes(element)) {
+              tokens += element
+          }
+      });
         // console.log("SegmentId",tokens);
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
         const payload = {
@@ -392,11 +409,15 @@ function urlLink(){
                     ele.call_type= ele.HLType ? (ele.HLType == 'High' ? 'BUY' : (ele.HLType == 'sell'||ele.HLType == 'Low') ? 'SELL' : '') : (ele.Side ? ((['B', 'BUY', 'Buy'].indexOf(ele.Side) > -1) ? 'BUY' : ['S', 'SELL', 'Sell'].indexOf(ele.Side) > -1 ? 'SELL' : '') : '')
 
                   });
-        for (let i = 0; i < tokenList.length; i++) {
-           tokens += tokenList[i].SegmentId + "@" + tokenList[i].Token + ",";
-            
-          
-        }
+                  let unique=[]
+                  for (let i = 0; i < tokenList.length; i++) {
+                    unique.push (tokenList[i].SegmentId + "@" + tokenList[i].Token + ","); 
+                  }
+                  unique.forEach(element => {
+                    if (!tokens.includes(element)) {
+                        tokens += element
+                    }
+                });
         // console.log("SegmentId",tokens);
        
         // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');

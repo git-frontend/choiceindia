@@ -33,14 +33,14 @@ function StepsSlider() {
                             setName('');       
         }
             if (rect2.top.toFixed() < 140 && rect2.top.toFixed() > -150) {
-                 console.log('inside name155', rect2.top.toFixed());
+                //  console.log('inside name155', rect2.top.toFixed());
                 setName2('steps-itm-active');
            
         } else {
             setName2('');
         }
         if (rect3.top.toFixed() < -150 && rect3.top.toFixed() > -600) {
-            console.log('inside name35', rect3.top.toFixed());
+            // console.log('inside name35', rect3.top.toFixed());
             setName3('steps-itm-active');
             
         } else {

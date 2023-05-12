@@ -1,3 +1,9 @@
-# https://www.robotstxt.org/robotstxt.html
-User-Agent: *
-Disallow: /
+User-agent: *
+Allow: /
+Disallow: /research/
+Disallow: /research-new/
+Disallow: /fables
+Disallow: /fables/
+Disallow: /partner-assests
+Sitemap: https://choiceindia.com/sitemap.xml
+Sitemap: https://choiceindia.com/sitemap-posts.xml
