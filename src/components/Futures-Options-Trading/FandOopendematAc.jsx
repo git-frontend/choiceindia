@@ -40,6 +40,18 @@ function FandOopendematAc() {
     ]
 
   };
+ 
+  function scrollToId(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+  
   return (
     <>
       <section className="fando-open-demat">
@@ -80,7 +92,7 @@ function FandOopendematAc() {
               </div>
             </Slider>
             <div className="fando-open-demat-btn text-center">
-            <Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark fando-btn ">Open My Account</span></Link>
+            <Link onClick={()=>scrollToId('campaignForm')}> <span className="btn-bg btn-bg-dark fando-btn ">Open My Account</span></Link>
             </div>
           </div>
         </div>
