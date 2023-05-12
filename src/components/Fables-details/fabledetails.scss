@@ -214,12 +214,24 @@
                     }
                 }
             }
-            h3,h2{
+            h2{
                 padding: 3rem 0 1.5rem 0;
                 font-weight: 700;
                 margin: 0rem;
                 color: $primary;
                 font-size: 2rem;
+                font-family: $font-family-poppins-semibold;
+                text-decoration: none;
+                a{
+                    color: $blueColortext;
+                }
+            }
+            h3{
+                padding: 3rem 0 1.5rem 0;
+                font-weight: 700;
+                margin: 0rem;
+                color: $primary;
+                font-size: 1.725rem;
                 font-family: $font-family-poppins-semibold;
                 text-decoration: none;
                 a{
@@ -347,13 +359,124 @@
 
 
         .cta-content{
-            background-color: #0066B3;
+            border: 1px solid $lightColor;
+            background-color: $whiteColor;
+            @media (max-width:$sm) {
+                background-color: transparent;
+                border: 0;
+            }
             .ban-cap {
-                display: flex;
-                justify-content: space-around;
-                .ban-item{
-                    span{
+                background-color: $blueColortext;
+                margin-bottom: -2.3rem;
+                margin-top: 2rem;
+                @media (max-width:$sm) {
+                    margin-bottom: -5.1rem;
+                    margin-top: 0;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    margin: 0;
+                    align-items: flex-start;
+                    justify-content: center;
+                    padding: 0;
+                    .ban-item2{
+                        position: relative;
+                        top: -2.1rem;
+                        left: 0;
+                        @media (max-width:$sm) {
+                            top: -1.5rem;
+                        }
+                    }
+                    li{ 
+                        h2{
+                            color: $whiteColor;
+                            font-size: 2rem;
+                        }
+                        .btn{
+                            padding-top: 4rem;
+                            @media (max-width:$sm) {
+                                padding-top: 0;
+                                position: relative;
+                                top: 12rem;
+                            }
+                            .btn-open{
+                                background: transparent;
+                                border: 1px solid $whiteColor;
+                                border-radius: 5px;
+                                color: $whiteColor;
+                                display: inline-block;
+                                font-weight: bold;
+                                font-size: 1.5rem;
+                                min-width: 6rem;
+                                outline: none;
+                                padding: 0.5rem 1rem;
+                                text-align: center;
+                                text-decoration: none;
+                                @media (max-width:$sm) {
+                                    background: $yellowColor;
+                                    border: 0;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                }
+               
+            }
+            .ban-footer{
+                background: $cta-f;
+                padding: 1rem 3rem;
+                @media (max-width:$sm) {
+                    padding: 1rem 3rem 7rem;
+                    margin-top: 0.6rem;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    margin: 0;
+                    justify-content: space-between;
+                    padding: 0;
+                    li{
                         color: $whiteColor;
+                        font-size: 18px;
+                        position: relative;
+                        line-height: 1.5;
+                        padding-left: 2rem;
+                        @media (max-width:$sm) {
+                            padding-left: 1rem;
+                            padding-bottom: 5px;
+                        }
+                        &::before{
+                            // background: url(./images/border-before.svg) no-repeat top center;
+                            content: "";
+                            display: inline-block;
+                            height: 57px;
+                            left: 0;
+                            position: absolute;
+                            top: 0;
+                            width: 4px;
+                            @media (max-width:$sm) {
+                                content: "\2022";
+                                color: $yellowColor;
+                                font-weight: bold;
+                                margin-left: -1em;
+                                background: initial;
+                                left: initial;
+                            }
+                            &:first-child::before{
+                                background: transparent;
+                            }
+                        }
+                        span{
+                            font-weight: bold;
+                            display: block;
+                            @media (max-width:$sm) {
+                                display: inline-block;
+                            }
+                        }
                     }
                 }
             }

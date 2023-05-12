@@ -118,20 +118,44 @@ function Fabdetailsbanner(props) {
 
                                 <div className="textwrap" dangerouslySetInnerHTML={createMarkup()} />
 
-
                                 {/* <div className="cta-content">
                                     <div className="ban-cap">
-                                        <div className="ban-item">
-                                        <span>Open a Demat Account in</span>
-                                        </div>
-                                        <div className="ban-item">
-                                        Open a
-                                        </div>
-                                        <div className="ban-item">
-                                            <a className="btn-open">Open Now</a>
-                                        </div>
+                                        <ul>
+                                            <li>
+                                                <h2>Open a <span>
+                                                <img src="images/free.png" alt="" height={45} width={116} className="img-fluid"/>
+                                                </span><br/>Demat Account in</h2>
+                                            </li>
+                                            <li>
+                                                <div className="ban-item2">
+                                                    <img src="images/cta-banner.png" alt="" height={212} width={315} className="img-fluid"/>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div className="btn">
+                                                    <a className="btn-open">Open Now</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="ban-footer">
+                                        <ul>
+                                            <li>
+                                                <span>Free AMC</span> for First Year
+                                            </li>
+                                            <li>
+                                                <span>No Auto Square</span> <strong>Off</strong> Charges
+                                            </li>
+                                            <li>
+                                                <span>Low DP Charges</span> (₹10)
+                                            </li>
+                                            <li>
+                                                <span>Free Research</span> Advisory
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div> */}
+                              
                             </div>
                             
                             <div className="col-md-1">
