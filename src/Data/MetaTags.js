@@ -2203,7 +2203,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "title":"F&O Trading - Don't Miss Futures & Options Trading Opportunities",
     'lang':"en",
     'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
-    "link":"https://choiceindia.com/campaign/futures-options-trading"
+    "link":"https://choiceindia.com/open-free-demat-account"
   },
 }
 
