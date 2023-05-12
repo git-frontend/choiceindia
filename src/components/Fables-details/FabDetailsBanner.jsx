@@ -119,7 +119,7 @@ function Fabdetailsbanner(props) {
                                 <div className="textwrap" dangerouslySetInnerHTML={createMarkup()} />
 
 
-                                <div className="cta-content">
+                                {/* <div className="cta-content">
                                     <div className="ban-cap">
                                         <div className="ban-item">
                                         <span>Open a Demat Account in</span>
@@ -131,7 +131,7 @@ function Fabdetailsbanner(props) {
                                             <a className="btn-open">Open Now</a>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                             
                             <div className="col-md-1">
