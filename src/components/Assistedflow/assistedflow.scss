@@ -101,44 +101,62 @@
         width: 30%;
         @media (max-width:767px) {
             width: 100%;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            left: 0;
+            z-index: 99999999;
+            padding: 0;
         }
 
         .formwrapper{
             padding: 24px;
             background-color: #25B8AF;
             border-radius: 8px;
-            .infowrap{
-                padding-bottom: 2.375rem;
-                p{
-                    color: #fff;
-                    text-transform: capitalize;
-                    font-size: 1.5rem;
-                    line-height: 2.5rem;
-                    font-weight: 600;
-                    margin: 0;
-                }
-              
-            }
-            .amtwrap{
-                .investmentamount{
-                    margin: 0;
-                    font-size: 1.188rem;
-                    line-height: 1.75rem;
-                    color:#fff;
-                }
-                .amountrs{
-                    margin: 0;
-                    font-size: 1.5rem;
-                    line-height: 2.25rem;
-                    color:#fff;
-                }
-            }
-            .investnowbtn{
-                margin-top: 3.75rem;
+            .new-wrapp{
                 @media (max-width:767px) {
-                    display: none;
+                    display: flex;
+                    flex-direction: row;
+                }
+                .infowrap{
+
+                    padding-bottom: 2.375rem;
+                    p{
+                        color: #fff;
+                        text-transform: capitalize;
+                        font-size: 1.5rem;
+                        line-height: 2.5rem;
+                        font-weight: 600;
+                        margin: 0;
+                    }
+                    @media (max-width:767px) {
+                        display: none;
+                    }
+                  
+                }
+                .amtwrap{
+                    .investmentamount{
+                        margin: 0;
+                        font-size: 1.188rem;
+                        line-height: 1.75rem;
+                        color:#fff;
+                    }
+                    .amountrs{
+                        margin: 0;
+                        font-size: 1.5rem;
+                        line-height: 2.25rem;
+                        color:#fff;
+                    }
+                }
+                .investnowbtn{
+                    margin-top: 3.75rem;
+                    @media (max-width:767px) {
+                        // display: none;
+                        margin-top: 0rem;
+                    }
                 }
             }
+           
         }
       
     }
@@ -178,7 +196,7 @@
             }
         }
         @media (max-width:767px) {
-            display: block !important;
+            display: none !important;
         }
     }
 }

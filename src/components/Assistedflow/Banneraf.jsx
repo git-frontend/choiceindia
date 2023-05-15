@@ -134,7 +134,7 @@ function Banneraf() {
                         <div className="right-sec">
                             <div className="formwrapper">
                                 {showFirstButton && (
-                                    <div>
+                                    <div className='new-wrapp'>
                                         <div className="infowrap">
                                             <p>A Nishant Patil</p>
                                             <p>X008593</p>
