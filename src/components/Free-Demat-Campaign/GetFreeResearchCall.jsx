@@ -7,7 +7,7 @@ import AutomatedTradingCalls from '../../assets/images/free-demat-compaign/open-
 function GetFreeResearchCall() {
   return (
     <div>
-    <section className="get-research-call">
+    <section className="get-research-call" id="showForm">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">

@@ -375,7 +375,7 @@
                         height: 100%;
                         padding: 4.5rem;
                         @media (max-width:$sm) {
-                            padding: 1rem 2rem ;
+                            padding: 1rem 1rem ;
                         }
                         @media (min-width:$sm-x) and (max-width:$md) {
                            padding: 1.5rem;
@@ -473,7 +473,7 @@
             .why-choice-head {
                 color: $darkblue;
                 font-family: $font-family-poppins-bold;
-                font-size: 3rem;
+                font-size: 3.5rem;
                 margin-bottom: 1.5rem;
             }
 

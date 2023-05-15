@@ -210,7 +210,7 @@
 }
 
 .get-research-call{
-    padding: 4rem 0 10rem 0;
+    padding: 5rem 0 10rem 0;
     .title-first{
         span{
             color: $bgcolor-yellow;
@@ -619,7 +619,7 @@
     .account-steps-list{
         display: flex;
         flex-wrap: wrap;
-        padding-top: 6rem;
+        padding-top: 3rem;
         align-items: center;
         .left-sec{
             width: 40%;
@@ -639,7 +639,7 @@
                     // cursor: pointer;
                     padding: 0.5rem 0;
                     padding-left: 1rem;
-                     min-height: 14rem;
+                     min-height: 12rem;
                     .count-circle{
                         position: relative;
                         border:2px solid transparent;
@@ -668,9 +668,12 @@
                                     left: 0;
                                     right: 0;
                                     margin: 0 auto;
-                                    top: 94px;
+                                    top: 80px;
                                     @media (max-width:$md) {
-                                        top: 86px;
+                                        top: 73px;
+                                      }
+                                      @media (max-width:$sm) {
+                                        top: 80px;
                                       }
                                 }
                         span{
@@ -728,6 +731,9 @@
                             top: 0;
                           }
                     }
+                    @media (max-width:$sm) {
+                        min-height: 13rem;
+                      }
 
                 }
                 @media (max-width:$sm) {
@@ -755,7 +761,7 @@
             .step-banner {
                 position: relative;
                 right: 5rem;
-                top: 12rem;
+                top: 15rem;
                 @media (max-width:$md) {
                     display: none;
                 }
@@ -949,8 +955,6 @@
         }
     }
     .company-why-list{
-        display: flex;
-        justify-content: space-between;
         padding-top: 10rem;
         position: relative;
         z-index: 1;
@@ -985,6 +989,7 @@
         }
         .why-list-itm{
             text-align: center;
+            width: 22%;
             h3{
                 font-size: 4.231rem;
                 font-family: $font-family-poppins-bold;
@@ -1153,6 +1158,9 @@
         @media only screen and (min-width: 1400px) {
             left: 7.5px;
             top: 3px;
+        }
+        @media (max-width:$sm) {
+            left: 6.5px;
         }
       }
       

@@ -23,7 +23,7 @@ function CommodityTradingCampaign() {
         speed: 1500,
         slidesToShow: 3,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,

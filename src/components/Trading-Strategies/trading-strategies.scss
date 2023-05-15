@@ -45,7 +45,7 @@
 }
 
 .develop-strategies {
-    padding: 10rem 0;
+    padding: 10rem 0 0 0;
     position: relative;
 
     .treding-mr {
@@ -161,7 +161,9 @@
             padding: 4rem 0 0 0;
         }
     }
-
+    @media (max-width: $md) {
+        padding: 5rem 0 0 0;
+    }
     @media (max-width: $sm) {
         padding: 5rem 0 5rem 0;
     }
@@ -291,7 +293,7 @@
                     padding-top: 3rem;
                 }
                 .app-list-item {
-                    width: 95% !important;
+                    width: 90% !important;
                     background: $whiteColor;
                     border-radius: 20px;
                     display: block;
@@ -345,6 +347,10 @@
     padding: 10rem 0;
     .btn-open{
         .btn-bg{
+            &:hover{
+                background: $primary !important;
+                color: $whiteColor !important;
+            }
             @media (max-width:$sm) {
                 width: 100%;
             }
