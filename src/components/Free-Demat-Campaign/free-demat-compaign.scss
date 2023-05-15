@@ -139,7 +139,11 @@
 
 .create-backtest-sec{
     padding: 7rem 0 6rem 0;
-    .btn-bg{
+    .btn-bg-dark{
+        &:hover{
+            background: $primary;
+            color: $whiteColor;
+        }
         @media (max-width:$sm) {
             width: 100%;
         }
@@ -147,7 +151,7 @@
     @media (max-width:$sm) {
         padding: 1rem 0 6rem 0;
      }
-    .title-secnd{
+    .title-first{
         br{
             @media (max-width:$sm) {
                display: none;
@@ -173,12 +177,8 @@
                 display: inline-block;
                 margin: 1rem 0;
                 min-width: 390px;
-                padding: 1rem 2rem;
+                padding: 1.25rem 2rem;
                 text-transform: capitalize;
-                &.backtest-item-active{
-                    border:2px solid $bgcolor-yellow;
-                    background: $bgcolor-lightyellow;
-                }
                 @media (max-width:$md) {
                     min-width: 320px;
                 }
@@ -202,7 +202,7 @@
 
 .get-research-call{
     padding: 4rem 0 6rem 0;
-    .title-secnd{
+    .title-first{
         span{
             color: $bgcolor-yellow;
         }
@@ -257,7 +257,7 @@
 .track-record-sec {
     background-color: $abt-bg;
     padding: 6rem 0;
-    .title-secnd1 {
+    .title-first {
         font-size: 3.077rem;
         color: $bgcolorblackdark;
         font-family: $font-family-poppins-bold;
@@ -366,7 +366,7 @@
             width: 100%;
         }
     }
-    .title-secnd{
+    .title-first{
         color: $whiteColor;
         span{
             color: $bgcolor-yellow;
@@ -430,7 +430,7 @@
             width: 100%;
         }
     }
-    .title-secnd{
+    .title-first{
         span{
             color: $bgcolor-yellow;
         }
@@ -792,7 +792,7 @@
     span{
         color: $bgcolor-yellow;
     }
-    .title-secnd{
+    .title-first{
         br{
             @media (max-width:$md) {
                 display: none;
@@ -942,7 +942,7 @@
     padding: 6rem 0 0 0;
     background: $abt-bg;
     position: relative;
-    .title-secnd{
+    .title-first{
         span{
             color: $bgcolor-yellow;
         }
