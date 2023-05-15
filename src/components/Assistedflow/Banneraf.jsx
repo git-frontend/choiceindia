@@ -1,9 +1,12 @@
 ﻿import { useState, useEffect } from 'react';
-// import SubBannerimage from '../../assets/images/intraday-charges/intraday-charges.webp';
+import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import LazyLoader from "../Common-features/LazyLoader";
 import { Link } from 'react-router-dom';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import Redirect from '../../assets/images/aof/redirect-arrow.gif';
+import ThumbUp from '../../assets/images/aof/thumb-up.png';
+
 function Banneraf() {
 
     const [showFirstButton, setShowFirstButton] = useState(true);
@@ -45,6 +48,7 @@ function Banneraf() {
                             Investments for you!
                         </h1>
                         <p className='subhead'>Funds for Children's Education</p>
+                        <p className="profile">X008593 | Nishant Patil  </p>
                     </div>
                     <div className="row">
 
@@ -147,24 +151,35 @@ function Banneraf() {
                                     </div>
                                 )}
                                 {showSecondDiv && (
-                                    <div>
-                                        <div className="infowrap">
-                                            <p>B Nishant Patil</p>
-                                            <p>X008593</p>
+                                    <div className="otpsec">
+                                        <div className="otpmodal">
+                                            <p className="otptext">Enter One Time Authentication Code</p>
+                                            <p className="subtext">Code sent to your registered mobile number +91 87******68</p>
                                         </div>
-                                        <div className="amtwrap">
-                                            <p className="investmentamount">Total Investment Amount</p>
-                                            <p className="amountrs">₹ 15,000</p>
+                                        <div class="otp-wrapper" >
+                                            <input type="number" class="otp-input" maxlength="1" / >
+                                            <input type="number" class="otp-input"  maxlength="1"/ >
+                                            <input type="number" class="otp-input" maxlength="1"/ >
+                                            <input type="number" class="otp-input" maxlength="1"/ >
+                                            <input type="number" class="otp-input" maxlength="1"/ >
+                                            <input type="number"  class="otp-input" maxlength="1"/ >
                                         </div>
-                                        <Button className="btn-bg btn-bg-dark investnowbtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
+                                        <p className="warning">Resend OTP in 30 sec</p>
+                                        <div>
+                                             <p  id="message"></p>
+                                        </div>   
+                                        <Button className="btn-bg btn-bg-dark mt-2 investnowbtn disablebtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
                                     </div>
                                 )}
                                 {showThirdDiv && (
-                                    <div>
-                                        Third Div
+                                    <div className="redirectwrap">
+                                      <LazyLoader src={Redirect} alt={""} className={"img-fluid redirectimg"} width={"74"} height={"74"} />
+                                       <p className="redirecttext">Redirecting to Payment Page</p>
                                     </div>
                                 )}
                             </div>
+
+                            
 
 
                         </div>
@@ -180,8 +195,23 @@ function Banneraf() {
                             </div>
                         </div>
                     </div>
-
-                </div>
+                                <div className="successful">
+                                    <LazyLoader src={ThumbUp} alt={""} className={"img-fluid redirectimg"} width={"74"} height={"74"} />
+                                    <p className="sucesstext">Your order is successful!</p>
+                                    <div className="rightbtn">
+                                        <Link to="/" className="btn-bg btn-bg-dark " onClick=""><span>Awesome !</span> </Link>
+                                     </div>
+                                </div>
+                 
+                             <div className="order-register">
+                                    
+                                    <p className="sucesstext">Order Registered!</p>
+                                    <p className="subtext">Copy &amp; Share link with client to complete the payment.</p>
+                                    <div className="rightbtn">
+                                        <Link to="/" className="btn-bg btn-bg-dark " onClick=""><span>Copy Link</span> </Link>
+                                    </div>
+                             </div>
+                    </div>
 
             </section>
 
