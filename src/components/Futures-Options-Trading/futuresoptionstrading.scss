@@ -142,7 +142,7 @@
 }
 
 .getstart-signup {
-    padding: 3.5rem 0;
+    padding: 5rem 0;
     background-color: $bgcolor-green;
 
     @media (max-width: $sm) {
@@ -152,19 +152,16 @@
     .signup-text {
         align-items: center;
         display: flex;
-        flex-wrap: wrap;
         justify-content: space-between;
 
         @media (max-width: $sm) {
             flex-direction: column;
+            flex-wrap: wrap;
         }
 
         .signup-left {
-            width: 42%;
             text-align: start;
-
             @media (max-width: $sm) {
-                width: 65%;
                 text-align: center;
             }
 
@@ -188,9 +185,7 @@
         }
 
         .signup-right {
-            width: 58%;
             text-align: end;
-
             @media (max-width: $sm) {
                 width: 100%;
                 text-align: center;
@@ -364,7 +359,7 @@
                     .fando-open-demat-item {
                         min-height: inherit;
                         height: 100%;
-                        padding: 4.5rem;
+                        padding: 4rem;
                         @media (max-width:$sm) {
                             padding: 1rem 2rem ;
                         }
@@ -412,7 +407,7 @@
             .fando-head {
                 color: $whiteColor;
                 font-family: $font-family-poppins-semibold;
-                font-size: 1.625rem;
+                font-size: 1.75rem;
                 line-height: 1.5;
                 padding-top: 3rem;
                 // padding:3rem 0.4rem 0;
@@ -467,7 +462,7 @@
             .why-choice-head {
                 color: $darkblue;
                 font-family: $font-family-poppins-bold;
-                font-size: 3rem;
+                font-size: 3.5rem;
                 margin-bottom: 1.5rem;
             }
 
