@@ -161,8 +161,12 @@
 
         .signup-left {
             text-align: start;
+            @media (max-width: $md) {
+                width: 62%;
+            }
             @media (max-width: $sm) {
                 text-align: center;
+                width: 100%;
             }
 
             .signup-ttl {
@@ -365,7 +369,7 @@
                         height: 100%;
                         padding: 4rem;
                         @media (max-width:$sm) {
-                            padding: 1rem 2rem ;
+                            padding: 1rem 1rem ;
                         }
                         @media (min-width:$sm-x) and (max-width:$md) {
                            padding: 2.5rem;
