@@ -53,7 +53,7 @@ function OneAccountFinancialNeeds() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <h2 className="title-secnd text-center">One Account for All Your <span>Financial Needs</span></h2>
+              <h2 className="title-first text-center">One Account for All Your <span>Financial Needs</span></h2>
             </div>
           </div>
                 <div className="row">

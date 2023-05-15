@@ -21,7 +21,7 @@ function DematAccountOnlineSteps() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">Open a Demat Account Online in 4 Steps</h2>
+                   <h2 className="title-first text-center">Open a Demat Account Online in 4 Steps</h2>
                 </div>
                 <div className="account-steps-list">
                     <div className="left-sec">

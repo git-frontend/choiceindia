@@ -139,21 +139,23 @@
 
 .create-backtest-sec{
     padding: 7rem 0 6rem 0;
+    .btn2{
     .btn-bg-dark{
         &:hover{
-            background: $primary;
-            color: $whiteColor;
+            background: $primary !important;
+            color: $whiteColor !important;
         }
         @media (max-width:$sm) {
             width: 100%;
         }
     }
+}
     @media (max-width:$sm) {
         padding: 1rem 0 6rem 0;
      }
     .title-first{
         br{
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
                display: none;
              } 
         }
@@ -167,9 +169,13 @@
         padding: 2rem 0;
      }
         .create-backtest-list{
-            .slick-track{
-                height: auto !important;
+            @media (max-width:$sm) {
+                    text-align: center;
+                    padding-bottom: 3rem;
             }
+            // .slick-track{
+            //     height: auto !important;
+            // }
             .backtest-item{
                 background: $whiteColor;
                 border: 2px solid $bgolor-lightwhite;
@@ -180,10 +186,13 @@
                 padding: 1.25rem 2rem;
                 text-transform: capitalize;
                 @media (max-width:$md) {
-                    min-width: 320px;
+                    min-width: 330px;
                 }
                 @media (max-width:$sm) {
                     text-align: center;
+                }
+                .single-ttl{
+                    margin-bottom: 0;
                 }
             }
         }
@@ -201,7 +210,7 @@
 }
 
 .get-research-call{
-    padding: 4rem 0 6rem 0;
+    padding: 4rem 0 10rem 0;
     .title-first{
         span{
             color: $bgcolor-yellow;
@@ -263,8 +272,7 @@
         font-family: $font-family-poppins-bold;
         line-height: 4.615rem;
         text-align: center;
-        padding-top: 4rem;
-
+        padding-top: 2rem;
         @media (max-width: $sm) {
             font-size: 2rem;
             line-height: 3rem;
@@ -360,7 +368,7 @@
 
 .why-open-freedematac{
     background: $bgcolordark;
-    padding: 6rem 0;
+    padding: 8rem 0;
     .btn-bg{
         @media (max-width:$sm) {
             width: 100%;
@@ -372,7 +380,7 @@
             color: $bgcolor-yellow;
         }
         br{
-            @media (max-width:$sm) {
+            @media (max-width:$md) {
                display: none;
             }
         }
@@ -397,7 +405,7 @@
             padding-top: 2rem;
             .title-cam{
                 color: $whiteColor;
-                font-size:1.5rem ;
+                font-size:1.75rem ;
                 font-family: $font-family-poppins-semibold;
                 line-height: 1.5;
                 @media (max-width:$md) {
@@ -526,20 +534,14 @@
 }
 
 .open-low-brokerage {
-	padding: 7rem 0 9rem 0;
+	padding: 4rem 0 9rem 0;
 	@media (max-width:$sm) {
 		padding: 5rem 0;
 	}
-	.secttitle {
-		color: $primary;
-		font-size: 3.25rem;
-		line-height: 4.875rem;
-		font-weight: 700;
-		padding-bottom: 2.375rem;
-		font-family: $font-family-poppins-bold;
+	.title-first {
         span{
-            color: $bgcolor-yellow
-        };
+            color: $bgcolor-yellow;
+        }
 		@media (max-width:$sm) {
 			font-size: 2rem;
 			line-height: 3rem;
@@ -549,7 +551,6 @@
 		color: $secondary;
 		font-size: 1.5rem;
 		line-height: 2.375rem;
-		font-weight: 500;
 		padding-bottom: 4.375rem;
 		font-family: $font-family-poppins-medium;
 		margin: 0 auto;
@@ -638,7 +639,7 @@
                     // cursor: pointer;
                     padding: 0.5rem 0;
                     padding-left: 1rem;
-                    // min-height: 10rem;
+                     min-height: 14rem;
                     .count-circle{
                         position: relative;
                         border:2px solid transparent;
@@ -658,8 +659,8 @@
                             position: relative;
                                 &::after{
                                     content: "";
-                                    width: 50px;
-                                    height: 50px;
+                                    width: 70px;
+                                    height: 70px;
                                     display: block;
                                     background: url(../../assets/images/free-demat-compaign/line-before.png) no-repeat top center;
                                     background-size: contain;
@@ -667,12 +668,9 @@
                                     left: 0;
                                     right: 0;
                                     margin: 0 auto;
-                                    top: 80px;
+                                    top: 94px;
                                     @media (max-width:$md) {
-                                        top: 72px;
-                                      }
-                                      @media (max-width:$sm) {
-                                        top: 85px;
+                                        top: 86px;
                                       }
                                 }
                         span{
@@ -869,6 +867,9 @@
                     min-height: 12rem;
                     flex-wrap: wrap;
                     align-items: flex-start;
+                    @media (max-width:$md) {
+                        min-height: 13rem;
+                    }
                     .doc-img {
                         width: 20%;
                         img{
@@ -1017,7 +1018,7 @@
                 font-family: $font-family-poppins-medium;
             }
             @media (max-width: $sm) {
-                width: 100%;
+                width: 44%;
                 padding: 2rem 0;
             }
     }
@@ -1025,8 +1026,12 @@
 
 .awarded-industry-experts{
     position: relative;
-    top: 190px;
-    margin-bottom: 20rem;
+    top: 15rem;
+    margin-bottom: 25rem;
+    @media (max-width:$sm) {
+     top: 4rem;
+     margin-bottom: 10rem;
+    }
     .awarded-card{
         padding-top: 4rem;
         .awarded-card-item{

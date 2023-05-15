@@ -104,8 +104,8 @@ function CreateBacktestStrategies() {
                </div>
                </div>
                <div className="col-md-12">
-                  <div className="text-center">
-                    <a onClick={()=>{chapterScroll3('dematform')}} class="cursor-pointer"><span class="btn-bg btn-bg-dark">Get Free Access Now</span></a>
+                  <div className="text-center btn2">
+                    <a onClick={()=>{chapterScroll3('dematform')}} class="btn-bg btn-bg-dark cursor-pointer"><span>Get Free Access Now</span></a>
                   </div>
                </div>
             </div>

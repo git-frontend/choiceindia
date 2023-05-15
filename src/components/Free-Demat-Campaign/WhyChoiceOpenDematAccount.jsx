@@ -40,19 +40,48 @@ function WhyChoiceOpenDematAccount() {
         },
     ],
 };
-
+const settings1 = {
+    infinite: true,
+    speed: 2000,
+    arrows: false,
+    slidesToShow: 4,
+    autoplay: false,
+    dots: false,
+    adaptiveHeight: false,
+    autoplaySpeed: 3000,
+    slidesToScroll: 1,
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                dots: false,
+            },
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                dots: false,
+                autoplay: true,
+            },
+        },
+    ],
+};
   return (
     <div>
     <section className="why-choice-open-ac">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center"><span>Why Choice</span> to Open a Demat Account?</h2>
+                   <h2 className="title-first text-center"><span>Why Choice</span> to Open a Demat Account?</h2>
                 </div>
             </div>
             <div className="row">
                 <div className="col-md-12">
-                  <div className="company-why-list">
+                  <Slider {...settings1} className="company-why-list">
                         <div className="why-list-itm">
                             <h3>
                                 <span className="hvr-txt"><span>5L</span></span><small>+</small>
@@ -77,14 +106,14 @@ function WhyChoiceOpenDematAccount() {
                             </h3>
                             <h4>Employees</h4>
                         </div>
-                    </div>
+                    </Slider>
                   </div>
             </div>
 
           <div className="awarded-industry-experts">
             <div className="row justify-content-center">
                   <div className="col-md-12">
-                    <h2 className="title-secnd text-center">Awarded by Industry Experts</h2>
+                    <h2 className="title-first text-center">Awarded by Industry Experts</h2>
                   </div>
               </div>
               <div className="row justify-content-center">
