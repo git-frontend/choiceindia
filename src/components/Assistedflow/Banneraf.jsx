@@ -140,7 +140,7 @@ function Banneraf() {
                                 {showFirstButton && (
                                     <div className='new-wrapp'>
                                         <div className="infowrap">
-                                            <p>A Nishant Patil</p>
+                                            <p>Nishant Patil</p>
                                             <p>X008593</p>
                                         </div>
                                         <div className="amtwrap">
@@ -154,7 +154,7 @@ function Banneraf() {
                                     <div className="otpsec">
                                         <div className="resdiv">
                                             <div className="otpmodal">
-                                                <p className="otptext">Enter One Time Authentication Code</p>
+                                                <p className="otptext">Enter One Time<br/> Authentication Code</p>
                                                 <p className="subtext">Code sent to your registered mobile number +91 87******68</p>
                                             </div>
                                             {/* <div class="otp-wrapper" >
@@ -171,9 +171,18 @@ function Banneraf() {
                                                     <input formcontrolname="otpValue" id="partitioned" maxlength="6" type="text" class="" />
                                                     <i class="bar"></i>
                                                 </div>
+                                              
                                             </div>
+                                            {/* <div class="otp-input-wrapper">
+  <input type="text" maxlength="6" pattern="[0-9]*" autocomplete="off"/>
+  <svg viewBox="0 0 240 1" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="0" x2="240" y2="0" stroke="#fff" stroke-width="2" stroke-dasharray="22,22,22,22,22,22" />
+  </svg>
+</div> */}
+                                            <p className="warning mb-4">Resend OTP in 30 sec</p>
+                                            {/* <div className="mb-4"><a href="#" className=" resend">Resend OTP</a></div> */}
                                             </div>
-                                            <Button className="btn-bg btn-bg-dark mt-2 submitbtn disablebtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
+                                            <Button className="btn-bg btn-bg-dark submitbtn disablebtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
                                       
                                         </div>
                                 )}
@@ -205,7 +214,7 @@ function Banneraf() {
                             <LazyLoader src={ThumbUp} alt={""} className={"img-fluid redirectimg"} width={"74"} height={"74"} />
                             <p className="sucesstext">Your order is successful!</p>
                             <div className="rightbtn">
-                                <Link to="/" className="btn-bg btn-bg-dark " onClick=""><span>Awesome !</span> </Link>
+                                <Link to="/" className="btn-bg btn-bg-dark awesomebtn" onClick=""><span>Awesome!</span> </Link>
                             </div>
                         </div>
 
@@ -214,7 +223,7 @@ function Banneraf() {
                             <p className="sucesstext">Order Registered!</p>
                             <p className="subtext">Copy &amp; Share link with client to complete the payment.</p>
                             <div className="rightbtn">
-                                <Link to="/" className="btn-bg btn-bg-dark " onClick=""><span>Copy Link</span> </Link>
+                                <Link to="/" className="btn-bg btn-bg-dark copybtn" onClick="" ><span>Copy Link</span> </Link>
                             </div>
                         </div>
                     </div>
