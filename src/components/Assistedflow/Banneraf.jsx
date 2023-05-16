@@ -168,7 +168,7 @@ function Banneraf() {
 
                                             <div id="divOuter">
                                                 <div id="divInner">
-                                                    <input formcontrolname="otpValue" id="partitioned" maxlength="6" onkeypress="if(this.value.length==6) return false;" type="text" class="" />
+                                                    <input formcontrolname="otpValue" id="partitioned" maxlength="6" type="text" class="" />
                                                     <i class="bar"></i>
                                                 </div>
                                             </div>
