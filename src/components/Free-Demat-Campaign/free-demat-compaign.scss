@@ -211,6 +211,9 @@
 
 .get-research-call{
     padding: 5rem 0 10rem 0;
+    @media (max-width:$sm) {
+        padding: 0 0 10rem 0;
+    }
     .title-first{
         span{
             color: $bgcolor-yellow;
@@ -425,7 +428,7 @@
         @media (max-width:$sm) {
           display: flex;
           align-items: center;
-          padding: 0 0 3rem 0;
+          padding:1rem 2rem;
         }
     }
 }
@@ -673,7 +676,7 @@
                                         top: 73px;
                                       }
                                       @media (max-width:$sm) {
-                                        top: 80px;
+                                        top: 86px;
                                       }
                                 }
                         span{
@@ -732,12 +735,12 @@
                           }
                     }
                     @media (max-width:$sm) {
-                        min-height: 13rem;
+                        min-height: 14rem;
                       }
 
                 }
                 @media (max-width:$sm) {
-                   padding: 1rem 1rem 7rem 1rem;
+                   padding: 1rem;
                  }
                
             }

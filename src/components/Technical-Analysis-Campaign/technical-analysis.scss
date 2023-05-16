@@ -59,12 +59,15 @@
                     height: 100%;
 
                     .carditem-option {
+                        width: 76% !important;
                         min-height: inherit;
                         height: 100%;
-                        padding: 1rem 2rem;
+                        padding: 1rem 0;
                         margin-bottom: 5px;
                         @media (max-width:$md) {
                             padding: 1rem;
+                            text-align: center;
+                            width: 86% !important;
                         }
                         @media (max-width:$sm) {
                             padding: 1rem;
@@ -85,6 +88,9 @@
                             }
                             &.bg-3{
                                 background: $bgCircle-3;
+                            }
+                            @media (max-width:$sm) {
+                                margin: 0 auto;
                             }
                         }
         
@@ -390,9 +396,9 @@
                 right: inherit;
             }
             .finx-app-list {
-                @media (max-width:$sm) {
-                    padding-top: 3rem;
-                }
+                // @media (max-width:$sm) {
+                //     padding-top: 3rem;
+                // }
                 .app-list-item {
                     width: 100% !important;
                     background: $whiteColor;
@@ -433,7 +439,7 @@
                         width: 90% !important;
                     }
                     @media (max-width: $sm) {
-                        width: 95% !important;
+                        width: 100% !important;
                     }
 
                 }

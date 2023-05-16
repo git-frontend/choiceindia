@@ -25,7 +25,7 @@ function WhyOpenFreeDematAccount() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">100% मुफ्त डीमैट खाता खोलें</h2>
+                   <h2 className="title-first text-center">100% मुफ्त डीमैट खाता खोलें</h2>
                   <div className="open-percent-row">
                       <div className="open-percent-item">
                        <div className="benefit-list">

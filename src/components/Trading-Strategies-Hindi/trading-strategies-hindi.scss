@@ -174,7 +174,7 @@
         padding: 5rem 0 5rem 0;
     }
     @media (max-width: $sm) {
-        padding: 5rem 0 5rem 0;
+        padding: 2rem 0 5rem 0;
     }
     }
 
@@ -354,6 +354,9 @@
 
 .open-Demat-sec{
     padding: 10rem 0;
+    @media (max-width:$sm) {
+        padding: 6rem 0;
+    }
     .btn-open{
         .btn-bg{
             &:hover{
@@ -381,7 +384,10 @@
         justify-content: space-between;
         flex-wrap: wrap;
         .open-percent-item{
-            width: 19%;
+            width: 23%;
+            @media (max-width:$md) {
+                width: 20%;
+            }
             @media (max-width:$sm) {
                 width: 100%;
             }
