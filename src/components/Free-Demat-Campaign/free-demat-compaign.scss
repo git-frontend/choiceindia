@@ -247,7 +247,7 @@
             }
             h3{
                 color: $whiteColor;
-                font-size: 1.5rem;
+                font-size: 1.8rem;
                 font-family: $font-family-poppins-semibold;
                 line-height: 1.5;
             }
@@ -256,7 +256,7 @@
                 text-transform: capitalize;
                 min-height: 11rem;
                 padding-top: 1rem;
-                font-size: 1.125rem;
+                font-size: 1.4rem;
                 @media (max-width:$md) {
                     min-height: 12rem;
                 }
@@ -270,17 +270,8 @@
     background-color: $abt-bg;
     padding: 6rem 0;
     .title-first {
-        font-size: 3.077rem;
-        color: $bgcolorblackdark;
-        font-family: $font-family-poppins-bold;
-        line-height: 4.615rem;
         text-align: center;
         padding-top: 2rem;
-        @media (max-width: $sm) {
-            font-size: 2rem;
-            line-height: 3rem;
-
-        }
     }
 
     .title_para {
@@ -679,6 +670,11 @@
                                     right: 0;
                                     margin: 0 auto;
                                     top: 80px;
+                                    @media (min-width:1200px) and (max-width:1400px) {
+                                        top: 75px;
+                                        width: 55px;
+                                        height: 55px;
+                                    }
                                     @media (max-width:$md) {
                                         top: 73px;
                                       }
