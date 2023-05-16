@@ -4,34 +4,34 @@
 .afsec{
     padding-bottom: 4rem;
     .subhead{
-        color: #25B8AF;
+        color: $bgcolor-green;
         font-size: 1.125rem;
         font-weight: 500;
         line-height: 1.688rem;
         padding-bottom: 2.563rem;
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             padding-bottom: 0;
         }
     }
     .profile{
        display: none;
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             display: block;
             font-weight: 400;
             font-size: 1.3rem;
             line-height: 1.3125rem;
-            color: #221F20;
+            color: $bgcolordark;
             padding-bottom: 2.5rem;
             margin: 0;
         }
     }
     .left-sec{
         width: 68%;
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             width: 100%;
         }
         .table-sec{
-            border: 1px solid #C2C2C2;
+            border: 1px solid $lightgray;
             padding: 2rem;
             border-radius: 8px;
             .rowwrap{
@@ -39,28 +39,28 @@
                 justify-content: space-between;
                 border-bottom: 1px solid #DDDDDD;
                 padding: 24px 0;
-                @media (max-width:767px) {
+                @media (max-width:$sm) {
                     padding: 12px  0;
                 }
                 &:first-child{
                     padding: 0 0 24px 0;
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         padding: 0 0 12px 0;
                     }
                 }
                 &:last-child{
                     border:none;
                     padding: 24px 0 0 0;
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         padding: 12px 0 0 0;
                     }
                 }
-                @media (max-width:767px) {
+                @media (max-width:$sm) {
                     flex-direction: column;
                 }
                 .name{
                     font-size: 1.35rem;
-                    color: #000;
+                    color: $darkblack;
                     text-transform: capitalize;
                     line-height: 1.625rem;
                     font-weight: 500;
@@ -73,24 +73,24 @@
                     width: 50%;
                     .numberwrap{
                         .number{
-                            color:  #25B8AF;
+                            color:  $bgcolor-green;
                             font-size: 1.25rem;
                             font-weight: 600;
                         }
                         .percent{
-                            color:  #666666;
+                            color:  $textgray;
                             font-size: 1rem;
                             font-weight: 400;
                         }
                     }
                     .amount{
                         .rupee{
-                            color: #221F20;
+                            color: $bgcolordark;
                             font-size:1.25rem ;
                            line-height: 1.875rem;
                         }
                         .text{
-                            color: #666666;
+                            color: $textgray;
                             font-size:1rem ;
                            line-height: 1.5rem;
                            text-align: right;
@@ -101,7 +101,7 @@
                     p{
                         margin: 0;
                     }
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         flex-direction: row;
                         display: flex;
                         justify-content: space-between;
@@ -115,7 +115,7 @@
     .right-sec{
         width: 30%;
         margin-left:2%;
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             width: 100%;
             position: fixed;
             bottom: 0;
@@ -130,35 +130,78 @@
            
            .otpsec{
             padding: 1.5rem;
-            background-color: #25B8AF;
+            background-color: $bgcolor-green;
             border-radius: 8px;
-            @media (max-width:767px) {
+            @media (max-width:$sm) {
                 border-radius: 8px 8px 0 0;
+                padding: 0;
+            }
+            .resdiv{
+                @media (max-width:$sm) {
+                   padding: 1.5rem;
+                } 
             }
             .otpmodal{
                 .otptext{
-                    color: #fff;
+                    color: $whiteColor;
                     text-transform: capitalize;
                     font-size: 1.55rem;
                     line-height: 2.5rem;
                     font-weight: 600;
                 }
                 .subtext{
-                    color: #F5F5F5;
+                    color: $bgolor-lightwhite;
                     text-transform: capitalize;
                     font-size: 1.188rem;
                     line-height: 1.75rem;
                     margin: 0;
                 }
             }
+            
+        .otp-wrapper{
+            display: flex;
+            align-items: center;
+            input{
+                width: 25px;
+                height: 35px;
+                margin: 5px;
+                text-align:left;  
+                border: none;
+                border-bottom: 1px solid $whiteColor;
+                background-color: transparent;
+                outline: 0;
+                color:$whiteColor;
+                
+            }
+        }
+        
+
+        .warning{
+            color: $yellowColor;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            padding-top: 5px;
+            font-weight: 600;
+        }
+        .submitbtn{
+            @media (max-width:$sm) {
+                width: 100%;
+                border-radius: 0 !important;
+            }
+        }
+        .disablebtn{
+            background-color: #DBDBDB !important;
+        }
+
+
            }
             
             .new-wrapp{
                 padding: 1.5rem;
-                background-color: #25B8AF;
+                background-color: $bgcolor-green;
                 border-radius: 8px;
                 
-                @media (max-width:767px) {
+                @media (max-width:$sm) {
                     border-radius: 8px 8px 0 0;
                     display: flex;
                     flex-direction: row;
@@ -169,14 +212,14 @@
 
                     padding-bottom: 2.375rem;
                     p{
-                        color: #fff;
+                        color: $whiteColor;
                         text-transform: capitalize;
                         font-size: 1.5rem;
                         line-height: 2.5rem;
                         font-weight: 600;
                         margin: 0;
                     }
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         display: none;
                     }
                   
@@ -187,8 +230,8 @@
                         margin: 0;
                         font-size: 1.188rem;
                         line-height: 1.75rem;
-                        color:#fff;
-                        @media (max-width:767px) {
+                        color:$whiteColor;
+                        @media (max-width:$sm) {
                             font-size: 12px;
                         }
                     }
@@ -196,14 +239,20 @@
                         margin: 0;
                         font-size: 1.5rem;
                         line-height: 2.25rem;
-                        color:#fff;
+                        color:$whiteColor;
                     }
                 }
                 .investnowbtn{
                     margin-top: 3.75rem;
-                    @media (max-width:767px) {
+                    @media (max-width:$sm) {
                         margin-top: 0rem;
                         min-width: 13rem;
+                        // margin-left: 1.5rem;
+                        padding: 1rem !important;
+                    }
+                    @media (min-width:768px) and (max-width:920px) {
+                        margin-top: 2rem;
+                        min-width: 14rem;
                         // margin-left: 1.5rem;
                         padding: 1rem !important;
                     }
@@ -213,9 +262,9 @@
            .redirectwrap{
             text-align: center;
             padding: 1.5rem;
-            background-color: #25B8AF;
+            background-color: $bgcolor-green;
             border-radius: 8px;
-            @media (max-width:767px) {
+            @media (max-width:$sm) {
                 border-radius: 8px 8px 0 0;
             }
             .redirectimg{
@@ -228,7 +277,7 @@
                 line-height: 2.25rem;
                 text-align: center;
                 padding: 2.5rem 4.5rem;
-                color: #fff;
+                color: $whiteColor;
              
             }
            }
@@ -244,7 +293,7 @@
         width: 100%;
         left: 0;
         display: none !important;
-        background-color: #25B8AF;
+        background-color: $bgcolor-green;
         .stickywrap{
             display: flex;
             justify-content: space-between;
@@ -254,14 +303,14 @@
                     font-weight: 500;
                     font-size: 12px;
                     line-height: 18px;
-                    color: #FFFFFF;
+                    color: $whiteColor;
                     margin: 0;
                 }
                 .num{
                     font-weight: 600;
                     font-size: 16px;
                     line-height: 24px;
-                    color: #FFFFFF;
+                    color: $whiteColor;
                     margin: 0;
                 }
             }
@@ -272,99 +321,55 @@
                 }
             }
         }
-        @media (max-width:767px) {
+        @media (max-width:$sm) {
             display: none !important;
         }
     }
 }
 
-.otp-wrapper{
-    display: flex;
-    align-items: center;
-  }
-  
-  .otp-wrapper input{
-    width: 25px;
-    height: 35px;
-    margin: 5px;
-    text-align:left;  
-    border: none;
-    border-bottom: 1px solid #fff;
-    background-color: transparent;
-    outline: 0;
-    color:#fff;
-    
-  }
-  .warning{
-    color: #FFCE02;
-    font-size: 1rem;
-    line-height: 1.5rem;
-    padding-top: 5px;
-    font-weight: 600;
-  }
 
-  .disablebtn{
-    background-color: #DBDBDB;
-  }
-
-
-  
-  #message{
-    text-align: center;
-  }
-  
  
-  @keyframes animate-success {
-      0% {
-        background-color:#fff;
-        color: #000;
-      }
+//   @keyframes animate-success {
+//       0% {
+//         background-color:$whiteColor;
+//         color: $darkblack;
+//       }
       
-    50%{
-       background-color:#28a745;
-        color: #fff;
-    }
+//     50%{
+//        background-color:#28a745;
+//         color: $whiteColor;
+//     }
    
-      100% {
-         background-color:#fff;
-        color: #000;
+//       100% {
+//          background-color:$whiteColor;
+//         color: $darkblack;
        
-      }
-  }
+//       }
+//   }
 
 
-  @keyframes animate-danger {
-    0% {
-      background-color:#fff;
-      color: #000;
-    }
+//   @keyframes animate-danger {
+//     0% {
+//       background-color:$whiteColor;
+//       color: $darkblack;
+//     }
   
-    50%{
-      background-color:#ff6363;
-      color: #fff;
-    }
+//     50%{
+//       background-color:#ff6363;
+//       color: $whiteColor;
+//     }
  
-    100% {
-      background-color:#fff;
-      color: #000;
-    }
-}
+//     100% {
+//       background-color:$whiteColor;
+//       color: $darkblack;
+//     }
+// }
 
-/* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
 
 
 .successful{
-    background: #FAFAFA;
+    background: $popupbg;
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
     padding: 1rem 3rem 3rem;
@@ -372,21 +377,21 @@ input[type=number] {
     width: 40%;
     display: block;
     margin: 0 auto;
-    @media (max-width:767px) {
+    @media (max-width:$sm) {
         width: 100%;
     }
         .sucesstext{
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 2.25rem;
-            color: #00AE6F;
+            color: $sucessgreen;
             padding-bottom: 36px;
             margin: 0;
         }
    }
    
 .order-register{
-    background: #FAFAFA;
+    background: $popupbg;
     box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.16);
     border-radius: 8px;
     padding:  3rem;
@@ -394,14 +399,14 @@ input[type=number] {
     width: 40%;
     display: block;
     margin: 0 auto;
-    @media (max-width:767px) {
+    @media (max-width:$sm) {
         width: 100%;
     }
         .sucesstext{
             font-size: 1.5rem;
             font-weight: 600;
             line-height: 2.25rem;
-            color: #00AE6F;
+            color: $sucessgreen;
             padding-bottom: 36px;
             margin: 0;
         }

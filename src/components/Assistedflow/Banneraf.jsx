@@ -152,23 +152,24 @@ function Banneraf() {
                                 )}
                                 {showSecondDiv && (
                                     <div className="otpsec">
+                                        <div className="resdiv">
                                         <div className="otpmodal">
                                             <p className="otptext">Enter One Time Authentication Code</p>
                                             <p className="subtext">Code sent to your registered mobile number +91 87******68</p>
                                         </div>
                                         <div class="otp-wrapper" >
-                                            <input type="number" class="otp-input" maxlength="1" / >
-                                            <input type="number" class="otp-input"  maxlength="1"/ >
-                                            <input type="number" class="otp-input" maxlength="1"/ >
-                                            <input type="number" class="otp-input" maxlength="1"/ >
-                                            <input type="number" class="otp-input" maxlength="1"/ >
-                                            <input type="number"  class="otp-input" maxlength="1"/ >
+                                            <input type="text" class="otp-input" maxlength="1" / >
+                                            <input type="text" class="otp-input"  maxlength="1"/ >
+                                            <input type="text" class="otp-input" maxlength="1"/ >
+                                            <input type="text" class="otp-input" maxlength="1"/ >
+                                            <input type="text" class="otp-input" maxlength="1"/ >
+                                            <input type="text"  class="otp-input" maxlength="1"/ >
                                         </div>
                                         <p className="warning">Resend OTP in 30 sec</p>
-                                        <div>
-                                             <p  id="message"></p>
-                                        </div>   
-                                        <Button className="btn-bg btn-bg-dark mt-2 investnowbtn disablebtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
+                                        
+                                        </div>
+                                       
+                                        <Button className="btn-bg btn-bg-dark mt-2 submitbtn disablebtn" onClick={handleSecondButtonClick}><span>Submit</span></Button>
                                     </div>
                                 )}
                                 {showThirdDiv && (
