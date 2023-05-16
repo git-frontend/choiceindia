@@ -805,7 +805,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                         <Alert key='success' variant='success' className="sub-broker-success" onClose={handleBrokerCreatedSuccessClose} dismissible> Successfully! </Alert> : ''
                 }
         
-        <div class="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup">
+        <div class="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup show-res">
             <div class="exit-intent-sleekbox-popup">
             
                 <div class="popup-sub-row-box">

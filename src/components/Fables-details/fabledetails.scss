@@ -369,9 +369,11 @@
                 background-color: $blueColortext;
                 margin-bottom: -2.3rem;
                 margin-top: 2rem;
+                padding-top: 2rem;
                 @media (max-width:$sm) {
                     margin-bottom: -5.1rem;
                     margin-top: 0;
+                    padding-top: 2rem;
                 }
                 ul{
                     display: flex;
@@ -379,8 +381,11 @@
                     list-style: none;
                     margin: 0;
                     align-items: flex-start;
-                    justify-content: center;
+                    justify-content: space-around;
                     padding: 0;
+                    @media (max-width:$sm) {
+                        justify-content: center;
+                    }
                     .ban-item2{
                         position: relative;
                         top: -2.1rem;
@@ -393,13 +398,18 @@
                         h2{
                             color: $whiteColor;
                             font-size: 2rem;
+                            font-family: $font-family-poppins-bold;
                         }
                         .btn{
                             padding-top: 4rem;
+                            @media (max-width:$md) {
+                                padding-bottom: 4rem;
+                            }
                             @media (max-width:$sm) {
                                 padding-top: 0;
+                                padding-bottom: 0;
                                 position: relative;
-                                top: 12rem;
+                                top: 14rem;
                             }
                             .btn-open{
                                 background: transparent;
@@ -429,7 +439,7 @@
                 background: $cta-f;
                 padding: 1rem 3rem;
                 @media (max-width:$sm) {
-                    padding: 1rem 3rem 7rem;
+                    padding: 2rem 3rem 10rem;
                     margin-top: 0.6rem;
                 }
                 ul{
@@ -441,13 +451,16 @@
                     padding: 0;
                     li{
                         color: $whiteColor;
-                        font-size: 18px;
+                        font-size: 1.125rem;
                         position: relative;
                         line-height: 1.5;
-                        padding-left: 2rem;
+                        padding:0 2rem;
+                        @media (max-width:$md) {
+                            padding:0;
+                        }
                         @media (max-width:$sm) {
-                            padding-left: 1rem;
-                            padding-bottom: 5px;
+                            padding:0 1rem;
+                            padding-bottom: 1rem;
                         }
                         &::before{
                             // background: url(./images/border-before.svg) no-repeat top center;
@@ -461,10 +474,10 @@
                             @media (max-width:$sm) {
                                 content: "\2022";
                                 color: $yellowColor;
-                                font-weight: bold;
-                                margin-left: -1em;
+                                margin-left: -0.5rem;
                                 background: initial;
-                                left: initial;
+                                top: -8px;
+                                font-size: 2rem;
                             }
                             &:first-child::before{
                                 background: transparent;

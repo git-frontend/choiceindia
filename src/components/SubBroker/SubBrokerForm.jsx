@@ -844,7 +844,11 @@ function getOTPOnCall(){
     function handleOTPShow() {
         setShowOTP(true);
     }
-
+    useEffect(() => {
+        setTimeout(() => {
+            showOpenAccountAdPopup()
+        }, 15000);
+    }, []);
     return (
         <>
          {

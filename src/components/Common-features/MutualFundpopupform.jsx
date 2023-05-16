@@ -741,6 +741,7 @@ function hideAPIErrorToaster() {
 setShowErrorToaster(false);
 }
 
+ 
 
 
 
@@ -751,7 +752,7 @@ return (
                 <Alert key='success' variant='success' className="sub-broker-success" onClose={handleBrokerCreatedSuccessClose} dismissible> Successfully! </Alert> : ''
         }
 
-<div className="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup">
+<div className="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup show-res">
     <div className="exit-intent-sleekbox-popup">
     
         <div className="popup-sub-row-box">

@@ -64,6 +64,12 @@ function SubBrokerForm(props) {
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    
+    useEffect(() => {
+        setTimeout(() => {
+            showOpenAccountAdPopup()
+        }, 15000);
+    }, []);
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
         

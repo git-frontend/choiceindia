@@ -13,7 +13,12 @@
     background: #3e404f4d;
     overflow: auto;
     z-index: 999999999 !important;
-
+    &.show-res{
+        display: none;
+        @media (max-width:$md) {
+            display: block;
+        }
+    }
     .exit-intent-sleekbox-popup {
         box-sizing: border-box;
         background: $whiteColor;
@@ -35,9 +40,9 @@
                 text-decoration: none;
                 float: right;
                 top: 0;
-                right: 15px;
+                right: 0.8rem;
                 position: absolute;
-                font-size: 3rem;
+                font-size: 2.5rem;
                 // @media (max-width:$sm) {
                 //     color: $whiteColor;
                 // }
