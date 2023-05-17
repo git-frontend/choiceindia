@@ -103,7 +103,7 @@ function DematAccountForm(props) {
         //after 15min
         setTimeout(() => {
             showOpenAccountAdPopup();
-        }, 5000)
+        }, 900000)
     }
 
     useEffect(() => {
@@ -113,11 +113,7 @@ function DematAccountForm(props) {
             }, 60000);
         }
     }, []);
-    useEffect(() => {
-        setTimeout(() => {
-            showOpenAccountAdPopup()
-        }, 15000);
-    }, []);
+    
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -590,13 +586,21 @@ function DematAccountForm(props) {
         }
     }, [captchaToken]);
 
+    useEffect(() => {
+        if(isBlog){
+            setTimeout(() => {
+                showOpenAccountAdPopup()
+            }, 15000);
+        }
+        
+    }, []);
     return (
         <>
             {
                 showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
             }
             {
-                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter OpenDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
+                (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
             }
             <div className="demat-account-form" id="dematform">
 
