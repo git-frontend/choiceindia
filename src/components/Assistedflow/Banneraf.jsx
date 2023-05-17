@@ -1,11 +1,18 @@
 ﻿import { useState, useEffect } from 'react';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import LazyLoader from "../Common-features/LazyLoader";
-import { Link } from 'react-router-dom';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Redirect from '../../assets/images/aof/redirect-arrow.gif';
 import ThumbUp from '../../assets/images/aof/thumb-up.png';
+import {
+    BrowserRouter as Router,
+    Link,
+    useParams,
+    useLocation
+  } from "react-router-dom";
+
+import AssistedFlowService from '../../Services/AssistedFlowService';
+import Basket from '../Basket/Basket';
 
 function Banneraf() {
 
@@ -25,6 +32,8 @@ function Banneraf() {
             }
         }
     };
+    const [trigger, setTrigger] = useState(false);
+    const[BasketData, setBasketData] = useState(null);
 
     useEffect(() => {
         window.addEventListener('scroll', getPosition);
@@ -39,22 +48,70 @@ function Banneraf() {
         setShowSecondDiv(false);
         setShowThirdDiv(true);
     };
+
+    /**to get URL query params */
+    const search = useLocation().search;
+
+    /**Query Params Data */
+    const userDetails = {uniqueId: new URLSearchParams(search).get('unique_id'), bucketId: new URLSearchParams(search).get('bucket_id'), clientId: new URLSearchParams(search).get('client_id'), rmId: new URLSearchParams(search).get('rm_id')};
+
+    console.log('details',userDetails);
+
+    /**Basket Listing API call */
+    useEffect(() => {
+        setTrigger(true)
+        if(trigger){
+            AssistedFlowService.BasketDetails({ "bucketId":"BASKET-2"}).then((res) => {
+                console.log('Response',res.data.Body);
+                setBasketData(()=> res.data.Body.data? res.data.Body.data : '');
+                console.log('state',BasketData)
+            })
+        }
+    },[trigger])
+
     return (
         <div>
             <section className='afsec'>
                 <div className="container">
-                    <div className="row">
+                    {
+                        BasketData?<div className="row">
                         <h1 className="title-secnd pt-5">
                             Investments for you!
                         </h1>
-                        <p className='subhead'>Funds for Children's Education</p>
-                        <p className="profile">X008593 | Nishant Patil  </p>
-                    </div>
-                    <div className="row">
+                        {/* <p className='subhead'>Funds for Children's Education</p> */}
+                        <p className='subhead'>{BasketData.BucketTitle? BasketData.BucketTitle : 'NA'}</p>
+                        <p className="profile">X008593 | Nishant Patil</p>
+                    </div> : ''
+                    }
+  {
+    BasketData? 
+    <div className="row">
 
                         <div className="left-sec">
                             <div className="table-sec">
-                                <div className="rowwrap">
+                                {
+                                    BasketData.ListFundData.map((item,index) => {
+
+                                        return(<>
+                                            <div className="rowwrap">
+                                                <div className="name">
+                                                    {item.FundName? item.FundName : 'NA' }
+                                                </div>
+                                                <div className="textwrap">
+                                                    <div className="numberwrap">
+                                                        <div className="number">{item.FundPer? item.FundPer : 'NA'}</div>
+                                                        <p className="percent">3 yrs Returns %</p>
+                                                    </div>
+                                                    <div className="amount">
+                                                        <div className="rupee">₹ {item.FundA? item.FundA : 'NA'}</div>
+                                                        <p className="text">Amount</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </>)
+                                    })
+                                }
+                                {/* <div className="rowwrap">
                                     <div className="name">
                                         DSP Tax Saver Fund Growth
                                     </div>
@@ -68,8 +125,8 @@ function Banneraf() {
                                             <p className="text">Amount</p>
                                         </div>
                                     </div>
-                                </div>
-                                <div className="rowwrap">
+                                </div> */}
+                                {/* <div className="rowwrap">
                                     <div className="name">
                                         DSP Tax Saver Fund Growth
                                     </div>
@@ -128,7 +185,7 @@ function Banneraf() {
                                             <p className="text">Amount</p>
                                         </div>
                                     </div>
-                                </div>
+                                </div> */}
 
 
 
@@ -195,7 +252,9 @@ function Banneraf() {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>: ''
+  }                  
+                    
                                 <div className="successful">
                                     <LazyLoader src={ThumbUp} alt={""} className={"img-fluid redirectimg"} width={"74"} height={"74"} />
                                     <p className="sucesstext">Your order is successful!</p>

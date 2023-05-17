@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = true;
+const environment = false;
 
 
 /**URL Config */
@@ -789,5 +789,11 @@ export class API_URLS {
         return this.NbfcAuthURL + this.NbfcAuthF
     }
     
+
+    /**Assited Order Flow api's */
+    
+    getBasketDetailsURL(){
+        return "https://apidev.choiceconnect.in/connect/api/basket/details";
+    }
 
 }
