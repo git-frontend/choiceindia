@@ -359,17 +359,15 @@
 
 
         .cta-content{
-            border: 1px solid $lightColor;
             background-color: $whiteColor;
+            padding: 2rem 0;
             @media (max-width:$sm) {
                 background-color: transparent;
-                border: 0;
             }
             .ban-cap {
                 background-color: $blueColortext;
                 margin-bottom: -2.3rem;
                 margin-top: 2rem;
-                padding-top: 2rem;
                 @media (max-width:$sm) {
                     margin-bottom: -5.1rem;
                     margin-top: 0;
@@ -388,7 +386,7 @@
                     }
                     .ban-item2{
                         position: relative;
-                        top: -2.1rem;
+                        top: -2.3rem;
                         left: 0;
                         @media (max-width:$sm) {
                             top: -1.5rem;
