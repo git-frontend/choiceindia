@@ -134,12 +134,18 @@ const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/o
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
-const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
-const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
-const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
-const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
+const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'));
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'));
+const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'));
+const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'));
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
+const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
+const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'));
+const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading-Strategies-Hindi/TradingStrategiesHindi'));
+const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'));
+const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
+const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
 
-const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
 function Routing() {
 
 
@@ -778,6 +784,36 @@ function Routing() {
                         <Route exact path='/merchant-investment-banking' element={
                             <React.Suspense>
                                 < LazyInvestmentBanking />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/free-demat-account' element={
+                            <React.Suspense>
+                                < LazyFreeDematCompaign />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/trading-strategies' element={
+                            <React.Suspense>
+                                < LazyTradingStrategies />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/hindi/trading-strategies' element={
+                            <React.Suspense>
+                                < LazyTradingStrategiesHindi />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/commodity-trading' element={
+                            <React.Suspense>
+                                < LazyCommodityTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/forex-trading' element={
+                            <React.Suspense>
+                                < LazyCurrencyTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/technical-analysis' element={
+                            <React.Suspense>
+                                < LazyTechnicalAnalysis />
                             </React.Suspense>
                         } />
  
