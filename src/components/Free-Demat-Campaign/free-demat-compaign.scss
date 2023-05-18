@@ -1063,6 +1063,9 @@
     }
     .awarded-card{
         padding-top: 4rem;
+        @media (max-width:$sm) {
+            padding-top: 0;
+        }
         .awarded-card-item{
             width: 90% !important;
             margin: 1.5625rem 1rem;
