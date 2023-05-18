@@ -97,6 +97,10 @@
                             height: 7rem;
                         }
                     }
+                    @media (max-width:$sm) {
+                        position: relative;
+                        width: 30%;
+                    }
                 }
                 h3{
                     font-family: $font-family-poppins-semibold;
@@ -107,9 +111,11 @@
                         font-size: 1.3rem;
                     }
                     @media (max-width:$sm) {
-                        padding-left: 2rem;
+                        padding-left: 1rem;
                         padding-top: 0;
                         margin-bottom: 2rem;
+                        width: 60%;
+                        text-align: left;
                     }
                     br{
                         @media (max-width:$sm) {
@@ -126,6 +132,7 @@
                     display: flex;
                     padding-bottom: 5rem;
                     align-items: center;
+                    justify-content: center;
                 }
             }
             // @media (max-width:$sm) {
@@ -213,7 +220,7 @@
 .get-research-call{
     padding: 5rem 0 10rem 0;
     @media (max-width:$sm) {
-        padding: 0 0 10rem 0;
+        padding: 0 0 7rem 0;
     }
     .title-first{
         span{
@@ -273,6 +280,9 @@
     .title-first {
         text-align: center;
         padding-top: 2rem;
+        @media (max-width:$sm) {
+            padding-top: 0;
+        }
     }
 
     .title_para {
@@ -292,6 +302,10 @@
         padding: 0.5rem;
         margin-bottom: 2.5rem;
         flex-direction: row;
+        @media (max-width:$sm) {
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
         .list {
             color: $bgcolorblackdark;
             font-size: 1.385rem;
@@ -533,15 +547,14 @@
 .open-low-brokerage {
 	padding: 4rem 0 9rem 0;
 	@media (max-width:$sm) {
-		padding: 5rem 0;
+		padding: 1rem 0 10rem;
 	}
 	.title-first {
         span{
             color: $bgcolor-yellow;
         }
 		@media (max-width:$sm) {
-			font-size: 2rem;
-			line-height: 3rem;
+			padding-bottom: 2rem;
 		}
 	}
 	p {
@@ -813,7 +826,9 @@
         }
     }
     .scroll-mobile{
-
+        @media (max-width:$sm) {
+            padding-top: 1rem;
+        }
     .list_group1 {
         box-shadow: 0px 3px 6px #c8c8d6;
         border-radius: 2.231rem;
@@ -825,6 +840,7 @@
         flex-direction: row;
         @media (max-width:$sm) {
             overflow: auto;
+            margin-bottom: 4rem;
         }
         .list {
             color: $bgcolorblackdark;
@@ -857,6 +873,7 @@
 
         }
     }
+   
 }
 
 .content-tabs{
@@ -950,8 +967,7 @@
         }
     }
 }
-
-   
+ 
 }
 
 .why-choice-open-ac{
@@ -1033,7 +1049,6 @@
             }
             @media (max-width: $sm) {
                 width: 44%;
-                padding: 2rem 0;
             }
     }
 }
@@ -1043,7 +1058,7 @@
     top: 15rem;
     margin-bottom: 25rem;
     @media (max-width:$sm) {
-     top: 4rem;
+     top: 6rem;
      margin-bottom: 10rem;
     }
     .awarded-card{
