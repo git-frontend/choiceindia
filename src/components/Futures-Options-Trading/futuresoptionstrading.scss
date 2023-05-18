@@ -103,41 +103,46 @@
     }
 
     .research-calls-tab {
-        .calls-tab-item {
-            width: 95% !important;
-            margin: 2rem auto;
-            display: block !important;
-
-            @media (max-width: $md) {
-                width: 90% !important;
-            }
-
-            .main-left {
-                margin: 0;
-                border-radius: 1rem;
-                box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+        .slick-track {
+            display: flex;
+            width: 100%  !important;
+            .calls-tab-item {
+                width: 95% !important;
+                margin: 2rem auto;
+                display: block !important;
+    
                 @media (max-width: $md) {
-                    padding: 1.923rem 1rem;
+                    width: 90% !important;
                 }
-                .bottom-section{
-                    .fandores{
-                        @media (max-width:$md) {
-                            padding: 0 0.5rem;
-                            border-right: 1px solid rgba(0, 0, 0, 0.1);
-                            height: 50px;
-                        }
-                        &:last-child {
+    
+                .main-left {
+                    margin: 0;
+                    border-radius: 1rem;
+                    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+                    @media (max-width: $md) {
+                        padding: 1.923rem 1rem;
+                    }
+                    .bottom-section{
+                        .fandores{
                             @media (max-width:$md) {
-                                border-right: none;
-                                padding-right: 0;
-        
+                                padding: 0 0.5rem;
+                                border-right: 1px solid rgba(0, 0, 0, 0.1);
+                                height: 50px;
                             }
+                            &:last-child {
+                                @media (max-width:$md) {
+                                    border-right: none;
+                                    padding-right: 0;
+            
+                                }
+                            }
+                 
                         }
-             
                     }
                 }
             }
         }
+        
     }
 }
 
@@ -436,7 +441,7 @@
 }
 
 .fand-why-choice {
-    background-color: $lightColor ;
+    background-color: $lightColor;
     padding: 10rem 0;
     @media (max-width: $md) {
         padding: 5rem 0;
