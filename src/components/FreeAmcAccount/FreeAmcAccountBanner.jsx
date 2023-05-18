@@ -1,5 +1,5 @@
 import { useState,useEffect } from 'react';
-import NewDematAccountForm from '../Common-features/NewDematAccountForm';
+import DematAccountForm from '../Common-features/DematAccountForm';
 import Image1 from '../../assets/images/open-demat-account/zigzagline.webp';
 import Image2 from '../../assets/images/open-demat-account/lowest-dp-charges.svg';
 import Image3 from '../../assets/images/open-demat-account/low-charges.svg';
@@ -119,7 +119,7 @@ const FreeAmcAccountBanner = () => {
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                    <NewDematAccountForm />
+                                    <DematAccountForm />
                                 </GoogleReCaptchaProvider>
                             </div>
 
