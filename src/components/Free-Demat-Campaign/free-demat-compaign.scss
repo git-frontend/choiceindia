@@ -75,7 +75,7 @@
                     img{
                         height: 85px;
                         @media (max-width:$sm) {
-                            height: auto;
+                            height: 65px;
                         }
                     }
                     &::before {
@@ -93,7 +93,8 @@
                             left: 1rem;
                         }
                         @media (max-width:$sm) {
-                            left: 0;
+                            width: 7rem;
+                            height: 7rem;
                         }
                     }
                 }
@@ -106,9 +107,9 @@
                         font-size: 1.3rem;
                     }
                     @media (max-width:$sm) {
-                        padding-left: 3rem;
-                        width: 74%;
+                        padding-left: 2rem;
                         padding-top: 0;
+                        margin-bottom: 2rem;
                     }
                     br{
                         @media (max-width:$sm) {
@@ -123,13 +124,13 @@
                 @media (max-width:$sm) {
                     width: 100%;
                     display: flex;
-                    justify-content: flex-start;
                     padding-bottom: 5rem;
+                    align-items: center;
                 }
             }
-            @media (max-width:$sm) {
-               display: inline-block;
-            }
+            // @media (max-width:$sm) {
+            //    display: inline-block;
+            // }
         }
     }
     @media (max-width:$sm) {
@@ -256,7 +257,7 @@
                 text-transform: capitalize;
                 min-height: 11rem;
                 padding-top: 1rem;
-                font-size: 1.4rem;
+                font-size: 1.3rem;
                 @media (max-width:$md) {
                     min-height: 12rem;
                 }
@@ -464,7 +465,7 @@
     .slick-slider{
         .slick-prev{
             z-index: 1;
-            left: -10px;
+            left: -20px;
             top: 44%;
                 &:before {
                     content: "";
@@ -485,7 +486,7 @@
         }
         .slick-next{
             z-index: 1;
-            right: 40px;
+            right: 30px;
             top: 44%;
             &:before {
                     content: "";
@@ -505,16 +506,18 @@
     .carditem-nbfc {
         background: $bg-sky4;
         border: 1px solid $bg-lightgreen;
-        width: 85% !important;
-        min-height: 14rem;
+        min-height: 15rem;
        .cardimg {
             background: $bg-lightgreen;
             padding: 1rem;
             border-radius: 16px;
-            height: 74px;
+            height: 76px;
             align-items: center;
             display: inline-flex;
             justify-content: center;
+            .fill-w{
+                height: 48px;
+            }
         }
     }
 }
@@ -1047,7 +1050,7 @@
         padding-top: 4rem;
         .awarded-card-item{
             width: 90% !important;
-            margin: 0 auto;
+            margin: 1.5625rem 1rem;
             background: $whiteColor;
             border-radius: 20px;
             padding: 3rem 2rem 2rem;
