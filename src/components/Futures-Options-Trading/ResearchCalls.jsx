@@ -7,11 +7,15 @@ import Slider from 'react-slick';
 import rest from "../../Services/rest";
 import utils from "../../Services/utils";
 import noDataimg from '../../assets/images/no-data.webp';
+import { API_URLS } from "../../Services/API-URLS";
 function ResearchCalls() {
   let tokenList = [{}];
+  let multiValue = [];
+  let AllFilesValue = {};
   let tokens = "";
   let storefile;
   const [list, setlist] = useState();
+  const [Data1, setData1] = useState();
   const [showLoader, setShowLoader] = useState(false)
   const settings = {
     infinite: true,
@@ -45,6 +49,30 @@ function ResearchCalls() {
     ]
 
   };
+  function generateSessionId() {
+    
+    
+    let api = new API_URLS()
+    fetch(api.getSessionUrl())
+      .then(response => {
+        return response.json();
+      })
+      .then(res => {
+        if (res.Status == 'Success') {
+         
+          setData1(res.Response);
+
+
+        } else {
+         
+        }
+
+      }, err => {
+        
+      })
+
+  }
+  
 
   function LongTermStocks() {
 
@@ -57,7 +85,7 @@ function ResearchCalls() {
 
       "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
       "is_expert": 0,
-      "research_type": "Medium To Long Term",
+      "research_type": "",
       "limit": 10,
       "offset": 0,
       "segment": "FO",
@@ -68,7 +96,7 @@ function ResearchCalls() {
       "id": "",
       "user_id": "",
       "timeline_enabled": 1,
-      "category_id": 1
+      "category_id": 2
 
 
 
@@ -76,9 +104,10 @@ function ResearchCalls() {
     rest.expertReportData(request).then(
       res => {
         if (res) {
-          console.log("res",res)
+         
 
           storefile = res.response.research;
+          console.log("res",storefile)
           // setlist(res.response.research);
 
           res.response.research.forEach(ele => {
@@ -142,7 +171,8 @@ function ResearchCalls() {
       });
   }
   useEffect(() => {
-    LongTermStocks()
+    LongTermStocks();
+    generateSessionId();
   }, [])
   return (
     <>
@@ -150,13 +180,15 @@ function ResearchCalls() {
         <div className="container">
           <h2 className="title-first research-title">Our Recent Research Calls</h2>
           <div className="">
+          {
+                                list.length ?
             <Slider {...settings} className="research-calls-tab">
               {
                 list && list.length ?
                   <div className="calls-tab-item">
                     {
-                      (list || []).slice(0, 4).map((response, index) => {
-
+                      (list || []).slice(0, 2).map((response, index) => {
+                        // console.log("response",response)
 
                         return (
                           <div className="main-left" key={index}>
@@ -243,7 +275,10 @@ function ResearchCalls() {
                             </div>
                           </div> */}
             </Slider>
+            :
+            ""}
           </div>
+
         </div>
       </section>
     </>
