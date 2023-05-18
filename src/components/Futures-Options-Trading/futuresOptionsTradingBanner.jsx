@@ -23,7 +23,7 @@ function futuresOptionsTradingBanner() {
         speed: 1500,
         slidesToShow: 3,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         dots: false,
         autoplaySpeed: 1500,
         slidesToScroll: 1,
@@ -36,6 +36,7 @@ function futuresOptionsTradingBanner() {
                     slidesToShow: 2,
                     dots: false,
                     slidesToScroll: 1,
+                    autoplay: true,
                 }
             },
             {
@@ -44,6 +45,7 @@ function futuresOptionsTradingBanner() {
                     slidesToShow: 1.5,
                     slidesToScroll: 1,
                     dots: false,
+                    autoplay: true,
                 }
             }
 
