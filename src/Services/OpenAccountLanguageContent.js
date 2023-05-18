@@ -24,7 +24,8 @@ const language = {
         termlink:"Read Here.",
         termsbtn: 'Okay',
         otpresendsuccess1: 'You will soon receive an automated call on given Mobile Number',
-        otpresendsuccess2: 'OTP has been resent on given Mobile Number'
+        otpresendsuccess2: 'OTP has been resent on given Mobile Number',
+        otplblnew:'OTP sent on'
     },
     hindi: {
         title: 'मुफ़्त ट्रेडिंग खाता खोलें',
