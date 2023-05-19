@@ -1,9 +1,12 @@
 
 // import React from 'react';
 import React from "react";
+
 import '../Best-Stocks/best-stock.scss';
 import Slider from 'react-slick';
+
 function ResearchCalls() {
+  
   const settings = {
     infinite: true,
     speed: 1500,
@@ -16,72 +19,79 @@ function ResearchCalls() {
     swipeToSlide: true,
     responsive: [
 
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                dots: false,
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-            }
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          dots: false,
+          slidesToScroll: 1,
         }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        }
+      }
 
     ]
 
-};
-    return (
-        <>
-            <section className="research-calls main-parent">
-                <div className="container">
-                <h2 className="title-first research-title">Our Recent Research Calls</h2>
-                    <div className="">
-                        <Slider {...settings} className="research-calls-tab">
-                        <div className="calls-tab-item">
-                            <div className="main-left">
-                              <div className="top-section">
-                                <div className="top-left">
-                                  <h6 className="top-text">Reco Date</h6>
-                                  <h6 className="top-date">15 November ,23</h6>
-                                </div>
-                                <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
-                              </div>
-                              <div className="middle-section">
-                                <div className="middle-left">
-                                  <h4 className="big-text">BANKBARODA</h4>
-                                  <span className="small-text">BANK OF BARODA</span>
-                                </div>
-                                <div className="middle-right">
-                                  <span className="right-big-text">165.65</span>
-                                  <h6 className="right-small-text text_color">6.95(4.37%)</h6>
-                                </div>
-                              </div>
+  };
 
-                              <div className="bottom-section">
-                                <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">165.00</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >182.00</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">15 Nov, 2023</h4>
-                                  </div>
+  return (
+    <>
+      <section className="research-calls main-parent">
+        <div className="container">
+          <h2 className="title-first research-title">Our Recent Research Calls</h2>
+          <div className="">
+         
+            <Slider {...settings} className="research-calls-tab">
+              
+                  <div className="calls-tab-item">
+                    
+                          <div className="main-left">
+                            <div className="top-section">
+                              <div className="top-left">
+                                <h6 className="top-text">Reco Date</h6>
+                                <h6 className="top-date">15 November ,23</h6>
+                              </div>
+                              <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
+                            </div>
+                            <div className="middle-section">
+                              <div className="middle-left">
+                                <h4 className="big-text">BANKBARODA</h4>
+                                <span className="small-text">BANK OF BARODA</span>
+                              </div>
+                              <div className="middle-right">
+                                <span className="right-big-text">165.65</span>
+                                <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                              </div>
+                            </div>
+
+                            <div className="bottom-section">
+                              <div className="d-flex justify-content-between pt-3">
+                                <div className="bottom fandores">
+                                  <h6 className="bottom_small_text">Entry Price</h6>
+                                  <h4 className="bottom_big_text">165.00</h4>
+                                </div>
+                                <div className="bottom fandores">
+                                  <h6 className="bottom_small_text">Potential Price</h6>
+                                  <h4 className="bottom_big_text" >182.00</h4>
+                                </div>
+                                <div className="bottom fandores">
+                                  <h6 className="bottom_small_text">Exp. Returns</h6>
+                                  <h4 className="bottom_big_text">15 Nov, 2023</h4>
                                 </div>
                               </div>
                             </div>
                           </div>
-                          <div className="calls-tab-item">
+                       
+                  </div>
+                 
+
+              <div className="calls-tab-item">
                             <div className="main-left">
                               <div className="top-section">
                                 <div className="top-left">
@@ -119,11 +129,13 @@ function ResearchCalls() {
                               </div>
                             </div>
                           </div>
-                          </Slider>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+            </Slider>
+           
+          </div>
+
+        </div>
+      </section>
+    </>
+  );
 };
 export default ResearchCalls;
