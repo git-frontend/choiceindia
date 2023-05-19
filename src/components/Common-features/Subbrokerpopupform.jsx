@@ -809,9 +809,9 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
             <div class="exit-intent-sleekbox-popup">
             
                 <div class="popup-sub-row-box">
-                    {/* <div className="close">
+                    <div className="close">
                         <a  onClick={hideComponent} class="closebtn" >&times;</a>
-                        </div>  */}
+                        </div> 
                     <div class="popup-sub-right">
                        
                         <div class="signal-form subbroker-signal-form" id="form-banner">
@@ -922,7 +922,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                 } */}
                             </div>
                             <br/>
-                            <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
+                            {/* <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p> */}
                         </div>
 
                         
