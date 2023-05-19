@@ -752,9 +752,9 @@
                         position: relative;
                         left: 0;
                         top: 0;
-                        opacity: 0;
-                        visibility: hidden;
-                        transition-duration: 15s;
+                        // opacity: 0;
+                        // visibility: hidden;
+                        // transition-duration: 15s;
                         @media (max-width:$sm) {
                             top: 0;
                           }
