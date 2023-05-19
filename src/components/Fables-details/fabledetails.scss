@@ -378,15 +378,15 @@
                     flex-wrap: wrap;
                     list-style: none;
                     margin: 0;
-                    align-items: flex-start;
-                    justify-content: space-around;
+                    align-items: center;
+                    justify-content: center;
                     padding: 0;
                     @media (max-width:$sm) {
                         justify-content: center;
                     }
                     .ban-item2{
                         position: relative;
-                        top: -2.3rem;
+                        top: -2.8rem;
                         left: 0;
                         @media (max-width:$sm) {
                             top: -1rem;
@@ -395,16 +395,16 @@
                     li{ 
                         h2{
                             color: $whiteColor;
-                            font-size: 2rem;
+                            font-size: 2.5rem;
                             font-family: $font-family-poppins-bold;
-                            padding-top: 2rem;
+                            padding-bottom: 6rem;
                             @media (max-width:$sm) {
                                 padding-top: 1rem;
                                 padding-bottom: 1rem;
                             }
                         }
                         .btn{
-                            padding-top: 4rem;
+                            padding-bottom: 2rem;
                             @media (max-width:$md) {
                                 padding-bottom: 4rem;
                             }
@@ -441,6 +441,7 @@
             .ban-footer{
                 background: $cta-f;
                 padding: 1rem 3rem;
+                margin-top: -2.9rem;
                 @media (max-width:$sm) {
                     padding: 2rem 3rem 10rem;
                     margin-top: 0.6rem;
@@ -451,14 +452,15 @@
                     list-style: none;
                     justify-content: space-between;
                     padding: 0;
+                    margin: 0;
                     li{
                         color: $whiteColor;
-                        font-size: 1.125rem;
+                        font-size: 1.3rem;
                         position: relative;
                         line-height: 1.5;
-                        padding:0 2rem;
+                        padding:0 1rem;
                         @media (max-width:$md) {
-                            padding:0 1rem;
+                            padding:0;
                         }
                         @media (max-width:$sm) {
                             padding:0 1rem;
