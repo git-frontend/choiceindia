@@ -36,6 +36,7 @@ function CurrencyTradingCampaign() {
                     slidesToShow: 2,
                     dots: false,
                     slidesToScroll: 1,
+                    autoplay: true,
                 }
             },
             {
@@ -44,6 +45,7 @@ function CurrencyTradingCampaign() {
                     slidesToShow: 1.5,
                     slidesToScroll: 1,
                     dots: false,
+                    autoplay: true,
                 }
             }
 

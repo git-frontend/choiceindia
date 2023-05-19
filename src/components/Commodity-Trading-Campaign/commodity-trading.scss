@@ -4,7 +4,7 @@
 .futureoptionbenner {
     padding: 8rem 0;
 
-    @media (max-width: $md) {
+    @media (max-width: $sm) {
         padding: 5rem 0;
     }
 
@@ -93,7 +93,7 @@
     height: 100%;
     min-height: auto;
 
-    @media (max-width: $md) {
+    @media (max-width: $sm) {
         padding: 5rem 0;
     }
 
@@ -176,7 +176,7 @@
                 font-family: $font-family-poppins-semibold;
 
                 @media (max-width: $md) {
-                    font-size: 2rem;
+                    font-size: 2.5rem;
                     line-height: 3rem;
                 }
 
@@ -333,8 +333,8 @@
         }
     }
 
-    @media (max-width: $sm-x) {
-        padding: 5rem 0 5rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0 6rem 0;
     }
 }
 
@@ -342,8 +342,8 @@
     background-color: $primary;
     padding: 10rem 0;
 
-    @media (max-width: $md) {
-        padding: 5rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0;
     }
 
     .fando-ttl {
@@ -438,9 +438,9 @@
 }
 
 .fand-why-choice {
-    background-color: $lightColor ;
+    background-color: $whiteColor ;
     padding: 10rem 0;
-    @media (max-width: $md) {
+    @media (max-width: $sm) {
         padding: 5rem 0;
     }
 

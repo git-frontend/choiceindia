@@ -102,24 +102,24 @@ function WhyStrategies() {
                             <p>हमारे विशेषज्ञों ने आपके अनुकूल रणनीतियों के लिए तैयार मेड रणनीतियां बनाई हैं।</p>
                         </div>
                         <div className="app-list-item">
-                            <img src={Image2} alt="Unlimited Backtests" className="img-fluid"  width={"100"} height={"100"}/>
-                            <h3>असीमित बैकटेस्ट</h3>
-                            <p>बैकटेस्ट और अपनी रणनीतियों को बैकटेस्ट करें बिना किसी बैकटेस्ट सीमा के।</p>
-                        </div>
-                        <div className="app-list-item">
                             <img src={Image3} alt="Timely Alerts on Your Virtual & Live Trades" className="img-fluid"  width={"100"} height={"100"}/>
                             <h3>वर्चुअल और लाइव ट्रेड पर समय पर चेतावनियां</h3>
                             <p>जब आपकी ट्रेड ट्रिगर होती है, तो समय पर चेतावनियां प्राप्त करें। जब भी आपके ट्रेड शुरू हों, समय पर अलर्ट प्राप्त करें।</p>
                         </div>
                         <div className="app-list-item">
-                            <img src={Image4} alt="In-Built Charting Tool" className="img-fluid"  width={"100"} height={"100"}/>
-                            <h3>इन-बिल्ट चार्टिंग टूल</h3>
-                            <p>चार्टिंग टूल में अपनी रणनीति और ट्रेड को दृश्यीकरण करने के लिए चार्टिंग टूल शामिल है।</p>
-                        </div>
-                        <div className="app-list-item">
                             <img src={Image5} alt="No Coding Skills Required" className="img-fluid"  width={"100"} height={"100"}/>
                             <h3>कोडिंग कौशल की आवश्यकता नहीं</h3>
                             <p>Stratezy बिना किसी कोडिंग कौशल के अपनी खुद की ट्रेडिंग रणनीति बनाने का सबसे आसान टूल है।</p>
+                        </div>
+                        <div className="app-list-item">
+                            <img src={Image2} alt="Unlimited Backtests" className="img-fluid"  width={"100"} height={"100"}/>
+                            <h3>असीमित बैकटेस्ट</h3>
+                            <p>बैकटेस्ट और अपनी रणनीतियों को बैकटेस्ट करें बिना किसी बैकटेस्ट सीमा के।</p>
+                        </div>
+                        <div className="app-list-item">
+                            <img src={Image4} alt="In-Built Charting Tool" className="img-fluid"  width={"100"} height={"100"}/>
+                            <h3>इन-बिल्ट चार्टिंग टूल</h3>
+                            <p>चार्टिंग टूल में अपनी रणनीति और ट्रेड को दृश्यीकरण करने के लिए चार्टिंग टूल शामिल है।</p>
                         </div>
                     </Slider>
                   </div>
