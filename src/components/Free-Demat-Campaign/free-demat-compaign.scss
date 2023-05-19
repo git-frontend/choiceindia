@@ -57,8 +57,11 @@
                 background-size: contain;
                 z-index: -1;
                 @media (max-width:$md) {
-                    width: 6rem;
-                    height: 6rem;
+                    width: 5rem;
+                    height: 5rem;
+                    top: -0.5rem;
+                    right: 0;
+                    left: initial;
                 }
             }
         }
