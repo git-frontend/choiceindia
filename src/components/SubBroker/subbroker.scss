@@ -690,26 +690,26 @@
             bottom: inherit;
             border-radius: 0;
             margin-top: 40px;
-            &::before{
-                content: '';
-                height: 100%;
-                display: block;
-                background-color: $bgcolor-green;
-                width: 10%;
-                left: -5%;
-                position: absolute;
-                top: 0;
-            }
-            &::after{
-                content: '';
-                height: 100%;
-                display: block;
-                background-color: $bgcolor-green;
-                width: 10%;
-                right: -5%;
-                position: absolute;
-                top: 0;
-            }
+            // &::before{
+            //     content: '';
+            //     height: 100%;
+            //     display: block;
+            //     background-color: $bgcolor-green;
+            //     width: 10%;
+            //     left: -5%;
+            //     position: absolute;
+            //     top: 0;
+            // }
+            // &::after{
+            //     content: '';
+            //     height: 100%;
+            //     display: block;
+            //     background-color: $bgcolor-green;
+            //     width: 10%;
+            //     right: -5%;
+            //     position: absolute;
+            //     top: 0;
+            // }
         }
         h3 {
             font-size: 1.7rem;
@@ -1412,7 +1412,11 @@
             border-radius: 12px;
             
         }
-
+        .btn-fixed{
+            .openbtn{
+                border-radius: 0;
+            }
+        }
         
     }
 
