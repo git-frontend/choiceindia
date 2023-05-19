@@ -124,17 +124,17 @@ function Fabdetailsbanner(props) {
                                 <div className="cta-content">
                                     <div className="ban-cap">
                                         <ul>
-                                            <li>
+                                            <li className="w40">
                                                 <h2>Open a <span>
                                                 <img src={Free} alt="" height={45} width={116} className="img-fluid"/>
                                                 </span><br/>Demat Account in</h2>
                                             </li>
-                                            <li>
+                                            <li className="w40">
                                                 <div className="ban-item2">
                                                     <img src={ctaBanner} alt="" height={212} width={315} className="img-fluid"/>
                                                 </div>
                                             </li>
-                                            <li>
+                                            <li className="w20">
                                                 <div className="btn">
                                                     <a className="btn-open">Open Now</a>
                                                 </div>
