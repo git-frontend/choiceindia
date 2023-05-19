@@ -389,7 +389,7 @@
                         top: -2.3rem;
                         left: 0;
                         @media (max-width:$sm) {
-                            top: -1.5rem;
+                            top: -1rem;
                         }
                     }
                     li{ 
@@ -397,6 +397,11 @@
                             color: $whiteColor;
                             font-size: 2rem;
                             font-family: $font-family-poppins-bold;
+                            padding-top: 2rem;
+                            @media (max-width:$sm) {
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                            }
                         }
                         .btn{
                             padding-top: 4rem;
@@ -444,7 +449,6 @@
                     display: flex;
                     flex-wrap: wrap;
                     list-style: none;
-                    margin: 0;
                     justify-content: space-between;
                     padding: 0;
                     li{
@@ -454,18 +458,18 @@
                         line-height: 1.5;
                         padding:0 2rem;
                         @media (max-width:$md) {
-                            padding:0;
+                            padding:0 1rem;
                         }
                         @media (max-width:$sm) {
                             padding:0 1rem;
                             padding-bottom: 1rem;
                         }
                         &::before{
-                            // background: url(./images/border-before.svg) no-repeat top center;
+                            background: url(../../assets/images/fable/border-before.svg) no-repeat top center;
                             content: "";
                             display: inline-block;
                             height: 57px;
-                            left: 0;
+                            left: -10%;
                             position: absolute;
                             top: 0;
                             width: 4px;
@@ -476,9 +480,14 @@
                                 background: initial;
                                 top: -8px;
                                 font-size: 2rem;
+                                left: -10px;
                             }
-                            &:first-child::before{
-                                background: transparent;
+                        }
+                        &:first-child::before{
+                            background: transparent;
+                            display: none;
+                            @media (max-width:$sm) {
+                                display: block;
                             }
                         }
                         span{

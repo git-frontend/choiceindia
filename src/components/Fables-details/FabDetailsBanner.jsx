@@ -1,6 +1,9 @@
 
 import React, { useState,useEffect } from "react";
 import Bannerimage from '../../assets/images/fabledetails/choice-blog-default.png';
+import ctaBanner from '../../assets/images/fable/cta-banner.png';
+import Free from '../../assets/images/fable/free.png';
+
 // import twitterone from '../../assets/images/fabledetails/twitterone.png';
 // import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -123,12 +126,12 @@ function Fabdetailsbanner(props) {
                                         <ul>
                                             <li>
                                                 <h2>Open a <span>
-                                                <img src="images/free.png" alt="" height={45} width={116} className="img-fluid"/>
+                                                <img src={Free} alt="" height={45} width={116} className="img-fluid"/>
                                                 </span><br/>Demat Account in</h2>
                                             </li>
                                             <li>
                                                 <div className="ban-item2">
-                                                    <img src="images/cta-banner.png" alt="" height={212} width={315} className="img-fluid"/>
+                                                    <img src={ctaBanner} alt="" height={212} width={315} className="img-fluid"/>
                                                 </div>
                                             </li>
                                             <li>
