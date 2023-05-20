@@ -531,3 +531,64 @@
         margin-bottom: 0 !important;
     }
 }
+
+.cursor{
+    cursor: not-allowed;
+}
+
+.resend-otp-mf{
+    cursor: pointer;
+}
+
+.loaderB {
+    border: 5px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 5px solid $primary;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    /* Safari */
+    animation: spin 2s linear infinite;
+  }
+
+    
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .successful {
+    margin: auto;
+    position: absolute;
+    // top: 50px;
+    left: 50px;
+    bottom: 150px; right: 50px;
+    color: #FFF;
+    z-index:999999;
+    }
+
+.order-message{
+    font-size: 1.1rem;;
+    border: 1px solid #f6b900;
+    text-align: center;
+    padding: 1.125rem;
+    // display: block;
+    background: #f6f2df;
+    color: #000;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.sucesstext{
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    color: $sucessgreen;
+    padding-bottom: 24px;
+    margin: 0;
+}

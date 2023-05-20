@@ -44,7 +44,14 @@ const config = {
     // liveNachBaseURL:"https://asia-south1-neuron-live-6e391.cloudfunctions.net/"
     liveNachBaseURL:"https://go.choiceindia.com/",
     UATNbfcAuthURL:"https://api-uat.synofin.tech/oauth/",
-    liveNbfcAuthURL:"https://api-prod.synofin.tech/oauth/"
+    liveNbfcAuthURL:"https://api-prod.synofin.tech/oauth/",
+
+    liveMFBaseURL: "https://mf.choiceindia.com/api/mf/",
+    UATMFBaseURL: "https://dev.investica.com/api/mf/",
+
+    liveConnectBaseURL: "https://api.choiceconnect.in/api/",
+    UATConnectBaseURL: "https://apidev.choiceconnect.in/connect/api/"
+
 }
 
 export class API_URLS {
@@ -58,6 +65,12 @@ export class API_URLS {
     SSOServerURL = '';
     /**File Download Base URL*/
     FileURL='';
+
+    /**MF base URL */
+    MFBaseURL = '';
+
+    /**connect base URL */
+    ConnectBaseURL = '';
 
     /**Server URL */
     serverURL = "https://choiceindia.com/fables/ghost/api/v3/";
@@ -271,7 +284,19 @@ export class API_URLS {
         this.setperformanceURL(config[configKey + 'performanceURL']);
         this.setnbfcBaseURL(config[configKey + 'nbfcBaseURL']);
         this.setNACHBaseURL(config[configKey + 'NachBaseURL']);
-        this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL'])
+        this.setNbfcAuthURL(config[configKey + 'NbfcAuthURL']);
+        this.setMFBaseURL(config[configKey + 'MFBaseURL']);
+        this.setConnectBaseURL(config[configKey + 'ConnectBaseURL']);
+    }
+
+    /**set Connect base URL */
+    setConnectBaseURL = (url) => {
+        this.ConnectBaseURL = url;
+    }
+
+    /**set MF base URL */
+    setMFBaseURL = (url) => {
+        this.MFBaseURL = url;
     }
 
     setJiffyBaseURL = (url) => {
@@ -793,7 +818,50 @@ export class API_URLS {
     /**Assited Order Flow api's */
     
     getBasketDetailsURL(){
-        return "https://apidev.choiceconnect.in/connect/api/basket/details";
+        return this.ConnectBaseURL + 'basket/order/details';
+        // return "https://apidev.choiceconnect.in/connect/api/basket/details";
     }
 
+    /**send otp api url */
+    getMFAssistedSendOtpURL(){
+
+        return this.MFBaseURL + 'sms/SendOTP';
+        // return "https://dev.investica.com//api/mf/sms/SendOTP";
+    }
+
+    /**verify otp api url */
+    getMFAssistedVerifyOTPURL(){
+        return this.MFBaseURL + 'sms/VerifyOTP';
+        // return "https://dev.investica.com//api/mf/sms/VerifyOTP";
+    }
+
+    /**place lumpsum order */
+    getLumpsumOrderURL(){
+        return this.MFBaseURL + 'MFOrders/V3/LumpSum';
+        // return "https://dev.investica.com/api/mf/MFOrders/V3/LumpSum"
+    }
+
+    /**place SIP order */
+    getSIPOrderURL(){
+        return this.MFBaseURL + 'MFOrders/V2/XSIP';
+        // return "https://dev.investica.com/api/mf/MFOrders/V2/XSIP"
+    }
+
+    /**ref number api url */
+    getRefNoURL(){
+        return this.MFBaseURL + 'MFOrders/OrderMetaData';
+        // return "https://dev.investica.com/api/mf/MFOrders/OrderMetaData"
+    }
+
+    /**payment link api url */
+    getPaymentLinkURL(){
+        return this.MFBaseURL + 'mforders/payment';
+        // return "https://dev.investica.com/api/mf/mforders/payment"
+    }
+
+    /**order status update api url */
+    orderStatusUpdateURL(){
+        return this.ConnectBaseURL + 'basket/order/status-update'
+        // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
+    }
 }

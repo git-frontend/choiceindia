@@ -1,4 +1,4 @@
-
+import CryptoJS from "crypto-js";
 
 
 const utils ={
@@ -134,6 +134,27 @@ const utils ={
         }
         return tokens.substring(0, tokens.length - 1);
       },
+
+    /**Function to decrypt encrypted data */
+    decryptText(text){
+        if (text) {
+            let key = CryptoJS.enc.Utf8.parse('2b7e151628aed2a6abf7158809cf4f3c');
+            let iv = CryptoJS.enc.Utf8.parse('3ad77bb40d7a3660');
+            let config = { keySize: 128, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 };
+            try {
+                let encPassword = CryptoJS.AES.decrypt(text, key, config);
+                return encPassword.toString(CryptoJS.enc.Utf8);
+            } catch (err) {
+                try {
+                    return JSON.parse(text)
+                } catch (err1) {
+                    return text || ''
+                }
+            }
+        } else {
+            return ''
+        }
+    }
       
 
 }
