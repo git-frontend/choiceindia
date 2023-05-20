@@ -631,7 +631,10 @@ function Banneraf() {
                                     </div>
 
                                 </div>
-                                <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</span>
+                                {
+                                    OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage ?
+                                    <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</span>: ''
+                                }
                             </>
                             :
                             <>
