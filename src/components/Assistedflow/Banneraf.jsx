@@ -322,7 +322,7 @@ function Banneraf() {
                 generatePaymentLink();
             }else{
                 setVerifyLoader(() => false);
-                setErrors(() => response.data.Reason? response.data.Reason : '')
+                setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
 
         }).catch((error) => {
@@ -397,7 +397,7 @@ function Banneraf() {
                 generatePaymentLink();
             }else{
                 setVerifyLoader(() => false);
-                setErrors(() => response.data.Reason? response.data.Reason : '')
+                setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
         }).catch((error) => {
             console.log(error);
