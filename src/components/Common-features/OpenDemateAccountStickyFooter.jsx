@@ -267,12 +267,13 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                         <div>
                             <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
                                 <div></div>
-                                {
-                                window.location.pathname.indexOf("demat-account") > -1
-                                ?
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button>
-                                :
-                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button> }
+                                {/* { */}
+                                {/* window.location.pathname.indexOf("demat-account") > -1 */}
+                                {/* ? */}
+                                {/* <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={()=>{chapterScroll1  ('dematform')}}>Open Free Account</button> */}
+                                {/* : */}
+                                <button className=" primary-orange-btn scroll-top-account btn-bg btn-bg-dark openbtn" onClick={openDemateAccountPopup}>Open Free Account</button> 
+                                {/* } */}
                             </div>
                             <section className="stickybottom">
                                 <div className="container mx-auto">
