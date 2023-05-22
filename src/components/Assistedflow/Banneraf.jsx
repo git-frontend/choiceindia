@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Redirect from '../../assets/images/aof/redirect-arrow.gif';
-import ThumbUp from '../../assets/images/aof/thumb-up.png';
+import ThumbUp from '../../assets/images/aof/thumb-up.gif';
 import {
     BrowserRouter as Router,
     Link,
@@ -594,6 +594,10 @@ function Banneraf() {
                                                 })
                                             }
                                         </div>
+                                        {
+                                    OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage ?
+                                    <div className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</div>: ''
+                                }
                                     </div>
                                     <div className="right-sec">
                                         <div className="formwrapper">
@@ -660,7 +664,7 @@ function Banneraf() {
                                                     {
                                                         (errors && showSecondDiv) ?
                                                             <div className='text-center'>
-                                                                <span className='text-danger'>{errors}</span>
+                                                                <span className='text-danger errormsg'>{errors}</span>
                                                             </div> : ''
                                                     }
                                                 </>
@@ -678,10 +682,7 @@ function Banneraf() {
                                     </div>
 
                                 </div>
-                                {
-                                    OrderMetaData.placeOrderMessage ?
-                                    <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : '' }</span>: ''
-                                }
+                               
                             </>
                             :
                             <>
@@ -724,7 +725,7 @@ function Banneraf() {
                             </div> : ''
                     } */}
 
-                        <Modal show={showPopUp == 'RMFlow'} onHide={false}
+                        <Modal className="ordermodal" show={showPopUp == 'RMFlow'} onHide={false}
                             size="md"
                             aria-labelledby="contained-modal-title-vcenter"
                             backdrop='static'
@@ -765,7 +766,7 @@ function Banneraf() {
                         </div> : '' 
                     } */}
                         
-                        <Modal show={showPopUp == 'ClientFlow'} onHide={false}
+                        <Modal className="successfulmodal" show={showPopUp == 'ClientFlow'} onHide={false}
                             size="md"
                             aria-labelledby="contained-modal-title-vcenter"
                             backdrop='static'
