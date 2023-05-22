@@ -381,6 +381,7 @@
                     align-items: center;
                     justify-content: center;
                     padding: 0 1rem;
+                    position: relative;
                     @media (max-width:$sm) {
                         justify-content: center;
                     }
@@ -398,9 +399,18 @@
                             font-size: 2.5rem;
                             font-family: $font-family-poppins-bold;
                             padding-bottom:5rem;
+                            @media (max-width:$md) {
+                                padding-bottom:8rem;
+                            }
                             @media (max-width:$sm) {
                                 padding-top: 1rem;
                                 padding-bottom: 1rem;
+                                text-align: center;
+                            }
+                            img{
+                                @media (max-width:$md) {
+                                    width: 7rem;
+                                }
                             }
                         }
                         .btn{
@@ -438,13 +448,23 @@
                     .w20{
                         width: 20%;
                         @media (max-width:$md) {
-                         width: auto;
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                        }
+                        @media (max-width:$sm) {
+                            position: relative;
+                            text-align: center;
                         }
                     }
                     .w40{
                         width: 40%;
                         @media (max-width:$md) {
-                            width: auto;
+                            width: 50%;
+                           }
+                           @media (max-width:$sm) {
+                            width: 100%;
                            }
                     }
                 }
