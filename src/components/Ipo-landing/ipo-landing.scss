@@ -1,0 +1,28 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.ipo-banner{
+    padding: 6rem 0;
+    .banner-caption{
+        display: flex;
+        align-items: center;
+        .cmp-logo{
+            .img-brder{
+                padding: 1.5rem 0;
+                border: 1px solid $lightgray;
+                align-items: center;
+                display: flex;
+                border-radius: 15px;
+            }
+        }
+        .heading-sec{
+            padding-left: 2rem;
+            .title-secnd{
+                margin-bottom: 1rem;
+            }  
+            p{
+                margin: 0;
+            }
+        }
+    }
+}
