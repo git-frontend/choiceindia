@@ -818,8 +818,8 @@ export class API_URLS {
     /**Assited Order Flow api's */
     
     getBasketDetailsURL(){
-        // return this.ConnectBaseURL + 'basket/order/details';
-        return "https://apidev.choiceconnect.in/connect/api/basket/order/details";
+        return this.ConnectBaseURL + 'basket/order/details';
+        // return "https://apidev.choiceconnect.in/connect/api/basket/order/details";
     }
 
     /**send otp api url */
@@ -861,7 +861,7 @@ export class API_URLS {
 
     /**order status update api url */
     orderStatusUpdateURL(){
-        // return this.ConnectBaseURL + 'basket/order/status-update'
-        return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
+        return this.ConnectBaseURL + 'basket/order/status-update'
+        // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
     }
 }
