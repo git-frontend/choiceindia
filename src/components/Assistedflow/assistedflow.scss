@@ -295,7 +295,7 @@
                 }
                 .infowrap{
 
-                    padding-bottom: 2.375rem;
+                    padding-bottom: 3.5rem;
                     p{
                         color: $whiteColor;
                         text-transform: capitalize;
@@ -330,7 +330,7 @@
                     }
                 }
                 .investnowbtn{
-                    margin-top: 3.75rem;
+                    margin-top: 3.5rem;
                     @media (max-width:$sm) {
                         margin-top: 0rem;
                         min-width: 13rem;
@@ -516,8 +516,12 @@
     // display: block;
     background: #f6f2df;
     color: #000;
-    width: 100%;
+    width: 75%;
     border-radius: 8px;
+    margin-top: 3rem;
+    @media (max-width:$md) {
+        width: 100%;
+    }
 }
 
 .sucesstext{
@@ -593,4 +597,15 @@
                 color: $whiteColor !important;
             }
         }
+}
+
+.errormsg{
+   
+    @media (max-width:$sm) {
+        margin: 0;
+        background-color: $whiteColor;
+        z-index: 9999;
+        font-size: 12px;
+        padding: 0.2px 0;
+    }
 }

@@ -547,6 +547,10 @@ function Banneraf() {
                                                 })
                                             }
                                         </div>
+                                        {
+                                    OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage ?
+                                    <div className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</div>: ''
+                                }
                                     </div>
                                     <div className="right-sec">
                                         <div className="formwrapper">
@@ -613,7 +617,7 @@ function Banneraf() {
                                                     {
                                                         errors && showSecondDiv ?
                                                             <div className='text-center'>
-                                                                <span className='text-danger'>{errors}</span>
+                                                                <span className='text-danger errormsg'>{errors}</span>
                                                             </div> : ''
                                                     }
                                                 </>
@@ -631,10 +635,7 @@ function Banneraf() {
                                     </div>
 
                                 </div>
-                                {
-                                    OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage ?
-                                    <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</span>: ''
-                                }
+                               
                             </>
                             :
                             <>
