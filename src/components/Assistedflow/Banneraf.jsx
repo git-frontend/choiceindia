@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Redirect from '../../assets/images/aof/redirect-arrow.gif';
-import ThumbUp from '../../assets/images/aof/thumb-up.png';
+import ThumbUp from '../../assets/images/aof/thumb-up.gif';
 import {
     BrowserRouter as Router,
     Link,
@@ -677,7 +677,7 @@ function Banneraf() {
                             </div> : ''
                     } */}
 
-                        <Modal show={showPopUp == 'RMFlow'} onHide={false}
+                        <Modal className="ordermodal" show={showPopUp == 'RMFlow'} onHide={false}
                             size="md"
                             aria-labelledby="contained-modal-title-vcenter"
                             backdrop='static'
@@ -718,7 +718,7 @@ function Banneraf() {
                         </div> : '' 
                     } */}
                         
-                        <Modal show={showPopUp == 'ClientFlow'} onHide={false}
+                        <Modal className="successfulmodal" show={showPopUp == 'ClientFlow'} onHide={false}
                             size="md"
                             aria-labelledby="contained-modal-title-vcenter"
                             backdrop='static'
