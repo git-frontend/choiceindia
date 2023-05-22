@@ -51,7 +51,7 @@ function Banneraf() {
     const [count, setCount] = useState(0);
 
     /**variable for loaders */
-    const [loaders, setLoaders] = useState({ "SendOtpLoader": false, "reSendOtpLoader": false });
+    const [loaders, setLoaders] = useState({ "SendOtpLoader": false, "reSendOtpLoader": false, "verifyLoader": false });
 
     /**to get URL query params */
     const search = useLocation().search;
@@ -82,7 +82,7 @@ function Banneraf() {
     
     const [userStatus, setUserStatus] = useState(new URLSearchParams(search).get('status'));
 
-    const [verifyLoader, setVerifyLoader] = useState(false);
+    // const [verifyLoader, setVerifyLoader] = useState(false);
 
     const [dataNotFound, setDataNotFound] = useState(false);
 
@@ -146,12 +146,12 @@ function Banneraf() {
                 increment = parseInt(response.data.Response.RefNumber);
                 // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
                 // setIsRefNo(RefNo + 1)
-                if(bucketType != 'SIP'){
+                if(bucketType && bucketType != 'SIP' && isOrder){
                     placeLumpSumOrder(increment);
-                }else{
+                }else if(bucketType && bucketType == 'SIP' && isOrder){
                     placeSIPOrder(increment);
                 }
-                console.log('REFF',RefNo);
+                // console.log('REFF',RefNo);
             }
         }).catch((error) => {
             console.log(error);
@@ -188,6 +188,7 @@ function Banneraf() {
     /**function for send otp */
     function sendOtp(isResend) {
 
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() => null);
         if (isResend) {
             setLoaders({ ...loaders, reSendOtpLoader: true })
@@ -239,9 +240,9 @@ function Banneraf() {
 
     /**Verify OTP */
     const submitOTP = () => {
-
+        
         setErrors(() => null);
-        setVerifyLoader(() => true);
+        setLoaders({...loaders, verifyLoader: true, SendOtpLoader: false, reSendOtpLoader: false});
         setCount(0);
         let payload = {
             "ClientId": userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
@@ -295,14 +296,14 @@ function Banneraf() {
                 // }
 
             }else{
+                setLoaders({...loaders, verifyLoader: false});
                 setErrors(() => response.data.Reason? response.data.Reason: 'Something Went Wrong');
             }
         }).catch((error) => {
-            setVerifyLoader(() => false);
+            setLoaders({...loaders, verifyLoader: false});
             setErrors(() => error.message ? error.message : 'Something Went Wrong')
             console.log(error)
         })
-
 
     };
 
@@ -357,7 +358,7 @@ function Banneraf() {
                 // setIsLast(() => isLast + 1);
                 placeLumpSumOrder(increment)
             }else{
-                setVerifyLoader(() => false);
+                setLoaders({...loaders, verifyLoader: false});
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
 
@@ -365,13 +366,13 @@ function Banneraf() {
             if (response && response.data && response.data.Status != "Fail" && (isLast >= BasketData.list_fund_data.length)) {
                 generatePaymentLink();
             }else{
-                setVerifyLoader(() => false);
+                setLoaders({...loaders, verifyLoader: false});
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
 
         }).catch((error) => {
             console.log(error);
-            setVerifyLoader(() => false);
+            setLoaders({...loaders, verifyLoader: false});
             setErrors(() => error.message? error.message : '')
         })
     }
@@ -445,7 +446,7 @@ function Banneraf() {
                 // setIsLast(() => isLast + 1);
                 placeSIPOrder(increment)
             }else{
-                setVerifyLoader(() => false);
+                setLoaders({...loaders, verifyLoader: false});
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
 
@@ -453,12 +454,12 @@ function Banneraf() {
             if (response && response.data && response.data.Status != "Fail" && (isLast >= BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED') {
                 generatePaymentLink();
             }else{
-                setVerifyLoader(() => false);
+                setLoaders({...loaders, verifyLoader: false});
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
             }
         }).catch((error) => {
             console.log(error);
-            setVerifyLoader(() => false);
+            setLoaders({...loaders, verifyLoader: false});
             setErrors(() => error.message? error.message : '')
         })
 
@@ -484,16 +485,19 @@ function Banneraf() {
                     setPaymentLink(() => response.data.Response? response.data.Response : '')
                     setShowPopUp(() => 'RMFlow')
                 }else{
-                    setVerifyLoader(() => false);
+                    setLoaders({...loaders, verifyLoader: false});
                     setPaymentLink(() => response.data.response? response.data.response : '')
                     // setShowPopUp(() => 'ClientFlow')
                 }
                 
                 UpdateOrderStatus();
+            }else{
+                setLoaders({ ...loaders, verifyLoader: false });
+                setErrors(() => (response && response.data && response.data.response)? response.data.response : 'Something Went Wrong')
             }
         }).catch((error) => {
             console.log(error);
-            setVerifyLoader(() => false);
+            setLoaders({...loaders, verifyLoader: false});
             setErrors(() => error.message? error.message : '')
         })
     }
