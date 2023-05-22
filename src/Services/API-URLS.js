@@ -1,5 +1,5 @@
 /**Environment Variable */
-const environment = false;
+const environment = true;
 
 
 /**URL Config */
@@ -818,50 +818,50 @@ export class API_URLS {
     /**Assited Order Flow api's */
     
     getBasketDetailsURL(){
-        return this.ConnectBaseURL + 'basket/order/details';
-        // return "https://apidev.choiceconnect.in/connect/api/basket/details";
+        // return this.ConnectBaseURL + 'basket/order/details';
+        return "https://apidev.choiceconnect.in/connect/api/basket/order/details";
     }
 
     /**send otp api url */
     getMFAssistedSendOtpURL(){
 
-        return this.MFBaseURL + 'sms/SendOTP';
-        // return "https://dev.investica.com//api/mf/sms/SendOTP";
+        // return this.MFBaseURL + 'sms/SendOTP';
+        return "https://dev.investica.com//api/mf/sms/SendOTP";
     }
 
     /**verify otp api url */
     getMFAssistedVerifyOTPURL(){
-        return this.MFBaseURL + 'sms/VerifyOTP';
-        // return "https://dev.investica.com//api/mf/sms/VerifyOTP";
+        // return this.MFBaseURL + 'sms/VerifyOTP';
+        return "https://dev.investica.com//api/mf/sms/VerifyOTP";
     }
 
     /**place lumpsum order */
     getLumpsumOrderURL(){
-        return this.MFBaseURL + 'MFOrders/V3/LumpSum';
-        // return "https://dev.investica.com/api/mf/MFOrders/V3/LumpSum"
+        // return this.MFBaseURL + 'MFOrders/V3/LumpSum';
+        return "https://dev.investica.com/api/mf/MFOrders/V3/LumpSum"
     }
 
     /**place SIP order */
     getSIPOrderURL(){
-        return this.MFBaseURL + 'MFOrders/V2/XSIP';
-        // return "https://dev.investica.com/api/mf/MFOrders/V2/XSIP"
+        // return this.MFBaseURL + 'MFOrders/V2/XSIP';
+        return "https://dev.investica.com/api/mf/MFOrders/V2/XSIP"
     }
 
     /**ref number api url */
     getRefNoURL(){
-        return this.MFBaseURL + 'MFOrders/OrderMetaData';
-        // return "https://dev.investica.com/api/mf/MFOrders/OrderMetaData"
+        // return this.MFBaseURL + 'MFOrders/OrderMetaData';
+        return "https://dev.investica.com/api/mf/MFOrders/OrderMetaData"
     }
 
     /**payment link api url */
     getPaymentLinkURL(){
-        return this.MFBaseURL + 'mforders/payment';
-        // return "https://dev.investica.com/api/mf/mforders/payment"
+        // return this.MFBaseURL + 'mforders/payment';
+        return "https://dev.investica.com/api/mf/mforders/payment"
     }
 
     /**order status update api url */
     orderStatusUpdateURL(){
-        return this.ConnectBaseURL + 'basket/order/status-update'
-        // return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
+        // return this.ConnectBaseURL + 'basket/order/status-update'
+        return "https://apidev.choiceconnect.in/connect/api/basket/order/status-update"
     }
 }

@@ -85,6 +85,12 @@ function Banneraf() {
 
     const [dataNotFound, setDataNotFound] = useState(false);
 
+    const [isLast , setIsLast] = useState(0);
+
+    // const [RefNo, setIsRefNo] = useState(() => null);
+
+    let increment; 
+
     /**to show client popup */
     useEffect(() => {
         // let status = new URLSearchParams(search).get('status');
@@ -115,6 +121,7 @@ function Banneraf() {
                     if (res && res.data && res.data.Body && res.data.Body.data) {
                         setDataNotFound(() => false);
                         setBasketData(() => res.data.Body.data ? res.data.Body.data : {});
+                        refCallAPI();
                     }else{
                         setDataNotFound(() => true);
                     }
@@ -124,16 +131,24 @@ function Banneraf() {
                     setDataNotFound(() => true);
                 })
     
-                //Reference Number API Call
-                AssistedFlowService.RefNo(utils.decryptText(userDetails.clientId).toString()).then((response) => {
-                    if (response && response.data && response.data.Response) {
-                        setOrderMetaData({ ...OrderMetaData, refNo: response.data.Response.RefNumber, placeOrderMessage: response.data.Response.PlaceOrderMessage, serverDownMessage: response.data.Response.ServerDownMessage });
-                    }
-                }).catch((error) => {
-                    console.log(error);
-                })
             }
     }, [trigger])
+
+    function refCallAPI() {
+        //Reference Number API Call
+        AssistedFlowService.RefNo(utils.decryptText(userDetails.clientId).toString()).then((response) => {
+            if (response && response.data && response.data.Response) {
+                setOrderMetaData({ ...OrderMetaData, refNo: parseInt(response.data.Response.RefNumber), placeOrderMessage: response.data.Response.PlaceOrderMessage, serverDownMessage: response.data.Response.ServerDownMessage });
+
+                increment = parseInt(OrderMetaData.refNo);
+                // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
+                // setIsRefNo(RefNo + 1)
+                console.log('REFF',RefNo);
+            }
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
 
     /**to set the resend counter interval */
     useEffect(() => {
@@ -219,6 +234,7 @@ function Banneraf() {
 
         setErrors(() => null);
         setVerifyLoader(() => true);
+        setCount(0);
         let payload = {
             "ClientId": userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
             "OTP":  OtpValue ? OtpValue : '',
@@ -237,28 +253,37 @@ function Banneraf() {
             // setVerifyLoader(() => false);
             if (response && response.data && response.data.Response) {
 
+                
+                refCallAPI();
                 if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
-                    BasketData.list_fund_data.forEach((element, index) => {
+                    // let refNo = parseInt(OrderMetaData.refNo);
+                    // BasketData.list_fund_data.forEach((element, index) => {
 
-                        if (index == BasketData.list_fund_data.length - 1) {
-                            placeLumpSumOrder(element, true);
-                        } else {
-                            placeLumpSumOrder(element, false);
-                        }
+                        // if (index == BasketData.list_fund_data.length - 1 && !errors) {
+                        //     refNo = refNo + 1;
+                            placeLumpSumOrder();
+                        // } else if(!errors) {
+                        //     refNo = refNo + 1;
+                        //     placeLumpSumOrder(element, false,refNo);
+                        // }
 
-                    });
+                    // });
                 } else {
                     // console.log('data',BasketData.list_fund_data)
-                    BasketData.list_fund_data.forEach((element, index) => {
+                    // let refNo = parseInt(OrderMetaData.refNo);
+                    // BasketData.list_fund_data.forEach((element, index) => {
+                        
+                        
+                        // if (index == BasketData.list_fund_data.length - 1) {
+                            // refNo = refNo + 1;
+                            placeSIPOrder();
+                        // } else if(!errors){
+                        //     refNo = refNo + 1;
+                        //     placeSIPOrder();
+                        // }
 
-                        if (index == BasketData.list_fund_data.length - 1) {
-                            placeSIPOrder(element, true);
-                        } else {
-                            placeSIPOrder(element, false);
-                        }
-
-                    })
+                    // })
                 }
 
             }else{
@@ -274,25 +299,27 @@ function Banneraf() {
     };
 
     /**to place LumpSumOrder */
-    function placeLumpSumOrder(fundData, isLast) {
+    function placeLumpSumOrder() {
 
         // console.log('funddata', fundData);
+
+        increment = parseInt(increment + 1);
 
         let payload = {
             "TransCode": "NEW",
             "TransNo": "",
             "OrderId": "",
             "Client":  userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
-            "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode : '',
+            "SchemeCD": BasketData.list_fund_data[isLast].BSESchemeCode,
             "SchemeName": "",
             "BS": "P",
             "BSType": "FRESH",
             "DPTxn": "P",
-            "Amt": fundData.FundA ? ParseInt(fundData.FundA) : '',
+            "Amt": parseInt(BasketData.list_fund_data[isLast].FundA),
             "Qty": "",
             "AllRedeem": "N",
             "FolioNo": "",
-            "RefNo": OrderMetaData.refNo ? OrderMetaData.refNo : '',
+            "RefNo": increment,
             "Remarks": "Web",
             "OrderStatus": "",
             "Reason": "",
@@ -300,7 +327,7 @@ function Banneraf() {
             "FinalStatus": "",
             "MinRedeem": "",
             "ActualOrderId": "",
-            "SchemePlanCode": fundData.FundPlanCode ? fundData.FundPlanCode : '',
+            "SchemePlanCode": BasketData.list_fund_data[isLast].FundPlanCode,
             "SubscriptionId": null,
             "SubscriptionType": "Basket",
             "Id": null,
@@ -317,8 +344,16 @@ function Banneraf() {
         AssistedFlowService.Lumpsum(payload).then((response) => {
             // console.log('Lumpsum', response)
 
+            if(response && response.data && response.data.Status != "Fail" && (isLast < BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED'){
+                setIsLast(() => isLast + 1);
+                placeLumpSumOrder()
+            }else{
+                setVerifyLoader(() => false);
+                setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
+            }
+
             /**api call for generate payment link */
-            if (response && response.data && response.data.Status != "Fail" && isLast) {
+            if (response && response.data && response.data.Status != "Fail" && (isLast >= BasketData.list_fund_data.length)) {
                 generatePaymentLink();
             }else{
                 setVerifyLoader(() => false);
@@ -333,11 +368,11 @@ function Banneraf() {
     }
 
     /**to place XSIP order */
-    function placeSIPOrder(fundData, isLast) {
+    function placeSIPOrder() {
 
         const today = new Date();
         const yyyy = today.getFullYear();
-        let mm = today.getMonth() + 1; // Months start at 0!
+        let mm = today.getMonth() + 2; // Months start at 0!
         let dd = today.getDate();
 
         if (dd < 10) dd = '0' + dd;
@@ -345,20 +380,25 @@ function Banneraf() {
 
         const formattedToday = dd + '/' + mm + '/' + yyyy;
 
+        // let refNo = parseInt(OrderMetaData.refNo);
+        // refNo = refNo + 1;
+        //  setIsRefNo(RefNo + 1);
+        increment = parseInt(increment + 1);
+
         let payload = {
             "TransCode": "NEW",
             "TransNo": "",
             "OrderId": "",
             "Client":  userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
-            "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode : '',
+            "SchemeCD": BasketData.list_fund_data[isLast].BSESchemeCode, // "SchemeCD": fundData.BSESchemeCode ? fundData.BSESchemeCode
             "BS": "P",
             "BSType": "FRESH",
             "DPTxn": "P",
-            "Amt": fundData.FundA ? parseInt(fundData.FundA): '',
-            "Qty": "0",
+            "Amt":   BasketData.list_fund_data[isLast].FundA,   //fundData.FundA ? parseInt(fundData.FundA): '',
+            "Qty": "",
             "AllRedeem": "N",
             "FolioNo": "",
-            "RefNo": OrderMetaData.refNo ? OrderMetaData.refNo : '',
+            "RefNo": increment,
             "Remarks": "Web",
             "SchemeType": null,
             "AMCCode": "",
@@ -390,10 +430,17 @@ function Banneraf() {
 
         AssistedFlowService.XSIP(payload).then((response) => {
 
-            // console.log('XSIP respone', response);
+            console.log('XSIP respone', response);
+            if(response && response.data && response.data.Status != "Fail" && (isLast < BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED'){
+                setIsLast(() => isLast + 1);
+                placeSIPOrder()
+            }else{
+                setVerifyLoader(() => false);
+                setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
+            }
 
             /**api call for generate payment link */
-            if (response && response.data && response.data.Status != "Fail" && isLast) {
+            if (response && response.data && response.data.Status != "Fail" && (isLast >= BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED') {
                 generatePaymentLink();
             }else{
                 setVerifyLoader(() => false);
@@ -411,7 +458,7 @@ function Banneraf() {
     function generatePaymentLink(){
 
         let payload = {
-            "Client": "M06894", //userDetails.clientId ? utils.decryptText(userDetails.clientId).toString() : '',
+            "Client": userDetails.clientId ? utils.decryptText(userDetails.clientId).toString() : '',
             "IsDirect": "N",
             // "LogoutURL": (window.location.origin + window.location.pathname + '?' + 'status=success').toString()
             "LogoutURL": window.location.href + '&' + 'status=success'
@@ -419,12 +466,13 @@ function Banneraf() {
 
         AssistedFlowService.PaymentLink(payload).then((response) => {
             console.log('paymentlinkresponse', response);
-            if(response && response.data && response.data.response){
+            if(response && response.data && response.data.Response){
 
+                console.log('userdetails',userDetails);
                 /**for RM if subId is present in URL */
                 if(userDetails.subId){
-                    setPaymentLink(() => response.data.response? response.data.response : '')
-                    // setShowPopUp(() => 'RMFlow')
+                    setPaymentLink(() => response.data.Response? response.data.Response : '')
+                    setShowPopUp(() => 'RMFlow')
                 }else{
                     setVerifyLoader(() => false);
                     setPaymentLink(() => response.data.response? response.data.response : '')
@@ -462,11 +510,10 @@ function Banneraf() {
                 if(!userDetails.subId){
                     setShowSecondDiv(false);
                     setShowThirdDiv(true);
+                    setTimeout(() => {
+                        window.open(paymentLink,"_self")
+                    },3000)
                 }
-                
-                setTimeout(() => {
-                    window.open(paymentLink,"_self")
-                },3000)
             }else{
                 setErrors(() => response.data.Message? response.data.Message : 'Something Went Wrong')
             }
@@ -562,7 +609,7 @@ function Banneraf() {
                                                             <p className="amountrs">₹ {BasketData.bucket_min_amt ? BasketData.bucket_min_amt : 'NA'}</p>
                                                         </div>
                                                         <Button className="btn-bg btn-bg-dark investnowbtn" onClick={() => { loaders.SendOtpLoader? '':handleFirstButtonClick(false) }}
-                                                        //  disabled={OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage}
+                                                        //  disabled={OrderMetaData.placeOrderMessage}
                                                         >
                                                             {loaders.SendOtpLoader ? <div className="loaderB mx-auto"></div> : <span>Invest Now</span>}
                                                         </Button>
@@ -611,7 +658,7 @@ function Banneraf() {
 
                                                     </div>
                                                     {
-                                                        errors && showSecondDiv ?
+                                                        (errors && showSecondDiv) ?
                                                             <div className='text-center'>
                                                                 <span className='text-danger'>{errors}</span>
                                                             </div> : ''
@@ -632,8 +679,8 @@ function Banneraf() {
 
                                 </div>
                                 {
-                                    OrderMetaData.placeOrderMessage || OrderMetaData.serverDownMessage ?
-                                    <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : OrderMetaData.serverDownMessage? OrderMetaData.serverDownMessage : '' }</span>: ''
+                                    OrderMetaData.placeOrderMessage ?
+                                    <span className='text-center order-message'>{OrderMetaData.placeOrderMessage ? OrderMetaData.placeOrderMessage : '' }</span>: ''
                                 }
                             </>
                             :
