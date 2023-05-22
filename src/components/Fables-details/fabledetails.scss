@@ -422,7 +422,7 @@
                                 padding-top: 0;
                                 padding-bottom: 0;
                                 position: relative;
-                                top: 14rem;
+                                top: 17rem;
                             }
                             .btn-open{
                                 background: transparent;
@@ -475,7 +475,7 @@
                 padding: 1.3rem 3rem;
                 margin-top: -2.9rem;
                 @media (max-width:$sm) {
-                    padding: 2rem 3rem 10rem;
+                    padding: 3rem 3rem 10rem;
                     margin-top: 0.6rem;
                 }
                 ul{
@@ -483,7 +483,7 @@
                     flex-wrap: wrap;
                     list-style: none;
                     justify-content: space-between;
-                    padding: 0;
+                    padding-left: 1rem;
                     margin: 0;
                     li{
                         color: $whiteColor;
@@ -497,6 +497,7 @@
                         @media (max-width:$sm) {
                             padding:0 1rem;
                             padding-bottom: 1rem;
+                            font-size: 1.4rem;
                         }
                         &::before{
                             background: url(../../assets/images/fable/border-before.svg) no-repeat top center;
@@ -512,9 +513,9 @@
                                 color: $yellowColor;
                                 margin-left: -0.5rem;
                                 background: initial;
-                                top: -8px;
-                                font-size: 2rem;
-                                left: -10px;
+                                top: -10px;
+                                font-size: 2.5rem;
+                                left: -5px;
                             }
                         }
                         &:first-child::before{
