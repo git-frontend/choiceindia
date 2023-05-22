@@ -52,6 +52,7 @@ function Banneraf() {
   const [loaders, setLoaders] = useState({
     SendOtpLoader: false,
     reSendOtpLoader: false,
+    verifyLoader: false
   });
 
   /**to get URL query params */
@@ -99,7 +100,7 @@ function Banneraf() {
     new URLSearchParams(search).get("status")
   );
 
-  const [verifyLoader, setVerifyLoader] = useState(false);
+//   const [verifyLoader, setVerifyLoader] = useState(false);
 
   const [dataNotFound, setDataNotFound] = useState(false);
 
@@ -244,6 +245,7 @@ function Banneraf() {
     AssistedFlowService.SendOTP(payload)
       .then((response) => {
         if (response && response.data && response.data.Response) {
+            setLoaders({...loaders, verifyLoader: false});
           if (isResend) {
             setLoaders({ ...loaders, reSendOtpLoader: false });
           } else {
@@ -274,7 +276,7 @@ function Banneraf() {
   /**Verify OTP */
   const submitOTP = () => {
     setErrors(() => null);
-    setVerifyLoader(() => true);
+    setLoaders({...loaders, verifyLoader: true, SendOtpLoader: false, reSendOtpLoader: false});
     setCount(0);
     let payload = {
       ClientId: userDetails.clientId
@@ -331,13 +333,14 @@ function Banneraf() {
           //     // })
           // }
         } else {
+          setLoaders({...loaders, verifyLoader: false});
           setErrors(() =>
             response.data.Reason ? response.data.Reason : "Something Went Wrong"
           );
         }
       })
       .catch((error) => {
-        setVerifyLoader(() => false);
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() =>
           error.message ? error.message : "Something Went Wrong"
         );
@@ -424,7 +427,7 @@ function Banneraf() {
         ) {
           generatePaymentLink();
         } else {
-          setVerifyLoader(() => false);
+          setLoaders({...loaders, verifyLoader: false});
           setErrors(() =>
             response && response.data && response.data.Reason
               ? response.data.Reason
@@ -434,7 +437,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setVerifyLoader(() => false);
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -506,7 +509,7 @@ function Banneraf() {
 
     AssistedFlowService.XSIP(payload)
       .then((response) => {
-        console.log("XSIP respone", response);
+        // console.log("XSIP respone", response);
         if (
           response &&
           response.data &&
@@ -537,7 +540,7 @@ function Banneraf() {
         ) {
           generatePaymentLink();
         } else {
-          setVerifyLoader(() => false);
+            setLoaders({...loaders, verifyLoader: false});
           setErrors(() =>
             response && response.data && response.data.Reason
               ? response.data.Reason
@@ -547,7 +550,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setVerifyLoader(() => false);
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() => (error.message ? error.message : ""));
       });
   }
@@ -575,7 +578,7 @@ function Banneraf() {
             );
             setShowPopUp(() => "RMFlow");
           } else {
-            setVerifyLoader(() => false);
+             setLoaders({...loaders, verifyLoader: false});
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
@@ -587,7 +590,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
-        setVerifyLoader(() => false);
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() => (error.message ? error.message : ""));
       });
   }
