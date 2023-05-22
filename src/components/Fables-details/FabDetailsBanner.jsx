@@ -111,7 +111,7 @@ function Fabdetailsbanner(props) {
                                     } */}
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} /> */}
-                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title || 'Choice Blog'} />
+                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title || 'Choice Blog'} height={484} width={860} />
                                 </div>
                                 <div className="row">
                             <div className="col-md-11">
