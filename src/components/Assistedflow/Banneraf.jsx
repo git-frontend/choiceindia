@@ -17,6 +17,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 import utils from '../../Services/utils';
 import Modal from 'react-bootstrap/Modal';
 import noDataimg from '../../assets/images/no-data.webp';
+import IntraChargesBenifits from '../Intraday-Charges/IntraChargesBenifits';
 
 
 function Banneraf() {
@@ -85,11 +86,13 @@ function Banneraf() {
 
     const [dataNotFound, setDataNotFound] = useState(false);
 
-    const [isLast , setIsLast] = useState(0);
+    // const [isLast , setIsLast] = useState(0);
 
     // const [RefNo, setIsRefNo] = useState(() => null);
 
     let increment; 
+
+    let isLast = 0;
 
     /**to show client popup */
     useEffect(() => {
@@ -134,15 +137,20 @@ function Banneraf() {
             }
     }, [trigger])
 
-    function refCallAPI() {
+    function refCallAPI(bucketType, isOrder) {
         //Reference Number API Call
         AssistedFlowService.RefNo(utils.decryptText(userDetails.clientId).toString()).then((response) => {
             if (response && response.data && response.data.Response) {
                 setOrderMetaData({ ...OrderMetaData, refNo: parseInt(response.data.Response.RefNumber), placeOrderMessage: response.data.Response.PlaceOrderMessage, serverDownMessage: response.data.Response.ServerDownMessage });
 
-                increment = parseInt(OrderMetaData.refNo);
+                increment = parseInt(response.data.Response.RefNumber);
                 // setIsRefNo(() => parseInt(response.data.Response.RefNumber))
                 // setIsRefNo(RefNo + 1)
+                if(bucketType != 'SIP'){
+                    placeLumpSumOrder(increment);
+                }else{
+                    placeSIPOrder(increment);
+                }
                 console.log('REFF',RefNo);
             }
         }).catch((error) => {
@@ -254,37 +262,37 @@ function Banneraf() {
             if (response && response.data && response.data.Response) {
 
                 
-                refCallAPI();
-                if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
+                refCallAPI(BasketData.BucketType, true);
+                // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
-                    // let refNo = parseInt(OrderMetaData.refNo);
-                    // BasketData.list_fund_data.forEach((element, index) => {
+                //     // let refNo = parseInt(OrderMetaData.refNo);
+                //     // BasketData.list_fund_data.forEach((element, index) => {
 
-                        // if (index == BasketData.list_fund_data.length - 1 && !errors) {
-                        //     refNo = refNo + 1;
-                            placeLumpSumOrder();
-                        // } else if(!errors) {
-                        //     refNo = refNo + 1;
-                        //     placeLumpSumOrder(element, false,refNo);
-                        // }
+                //         // if (index == BasketData.list_fund_data.length - 1 && !errors) {
+                //         //     refNo = refNo + 1;
+                //             placeLumpSumOrder();
+                //         // } else if(!errors) {
+                //         //     refNo = refNo + 1;
+                //         //     placeLumpSumOrder(element, false,refNo);
+                //         // }
 
-                    // });
-                } else {
-                    // console.log('data',BasketData.list_fund_data)
-                    // let refNo = parseInt(OrderMetaData.refNo);
-                    // BasketData.list_fund_data.forEach((element, index) => {
+                //     // });
+                // } else {
+                //     // console.log('data',BasketData.list_fund_data)
+                //     // let refNo = parseInt(OrderMetaData.refNo);
+                //     // BasketData.list_fund_data.forEach((element, index) => {
                         
                         
-                        // if (index == BasketData.list_fund_data.length - 1) {
-                            // refNo = refNo + 1;
-                            placeSIPOrder();
-                        // } else if(!errors){
-                        //     refNo = refNo + 1;
-                        //     placeSIPOrder();
-                        // }
+                //         // if (index == BasketData.list_fund_data.length - 1) {
+                //             // refNo = refNo + 1;
+                //             placeSIPOrder();
+                //         // } else if(!errors){
+                //         //     refNo = refNo + 1;
+                //         //     placeSIPOrder();
+                //         // }
 
-                    // })
-                }
+                //     // })
+                // }
 
             }else{
                 setErrors(() => response.data.Reason? response.data.Reason: 'Something Went Wrong');
@@ -299,11 +307,11 @@ function Banneraf() {
     };
 
     /**to place LumpSumOrder */
-    function placeLumpSumOrder() {
+    function placeLumpSumOrder(refNo) {
 
         // console.log('funddata', fundData);
 
-        increment = parseInt(increment + 1);
+        increment = parseInt(refNo + 1);
 
         let payload = {
             "TransCode": "NEW",
@@ -345,8 +353,9 @@ function Banneraf() {
             // console.log('Lumpsum', response)
 
             if(response && response.data && response.data.Status != "Fail" && (isLast < BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED'){
-                setIsLast(() => isLast + 1);
-                placeLumpSumOrder()
+                isLast = isLast + 1;
+                // setIsLast(() => isLast + 1);
+                placeLumpSumOrder(increment)
             }else{
                 setVerifyLoader(() => false);
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')
@@ -368,7 +377,7 @@ function Banneraf() {
     }
 
     /**to place XSIP order */
-    function placeSIPOrder() {
+    function placeSIPOrder(refNo) {
 
         const today = new Date();
         const yyyy = today.getFullYear();
@@ -383,7 +392,7 @@ function Banneraf() {
         // let refNo = parseInt(OrderMetaData.refNo);
         // refNo = refNo + 1;
         //  setIsRefNo(RefNo + 1);
-        increment = parseInt(increment + 1);
+        increment = parseInt(refNo + 1);
 
         let payload = {
             "TransCode": "NEW",
@@ -432,8 +441,9 @@ function Banneraf() {
 
             console.log('XSIP respone', response);
             if(response && response.data && response.data.Status != "Fail" && (isLast < BasketData.list_fund_data.length) && response.data.OrderStatus != 'FAILED'){
-                setIsLast(() => isLast + 1);
-                placeSIPOrder()
+                isLast = isLast + 1;
+                // setIsLast(() => isLast + 1);
+                placeSIPOrder(increment)
             }else{
                 setVerifyLoader(() => false);
                 setErrors(() => (response && response.data && response.data.Reason)? response.data.Reason : 'Something Went Wrong')

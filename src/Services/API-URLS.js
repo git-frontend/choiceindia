@@ -49,7 +49,7 @@ const config = {
     liveMFBaseURL: "https://mf.choiceindia.com/api/mf/",
     UATMFBaseURL: "https://dev.investica.com/api/mf/",
 
-    liveConnectBaseURL: "https://api.choiceconnect.in/api/",
+    liveConnectBaseURL: "https://api.choiceconnect.in/connect/api/",
     UATConnectBaseURL: "https://apidev.choiceconnect.in/connect/api/"
 
 }
