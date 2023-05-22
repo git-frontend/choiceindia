@@ -23,6 +23,34 @@ function Banner() {
                             <p>Bajaj Energy Limited</p>
                         </div>
                     </div>
+                    <div className="banner-card">
+                        <ul>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                          <li>
+                            <span className="scr-date">Open Date</span>
+                            <span className="date">11th May 2023</span>
+                          </li>
+                        </ul>
+                    </div>
                 </div>
                 <div className="col-md-5">
                     <div className="">
