@@ -12,7 +12,7 @@ import { useEffect } from "react";
 import { useRef } from "react";
 
 function Team() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState();
   const[IsShown2,setIsShown2]= useState(false)
   const [data, setData] = useState();
   const [trigger, setTrigger] = useState(false);
@@ -138,7 +138,7 @@ useEffect(() => {
                 </Slider>
 
                 {
-                  value ?
+                  value || value == 0 ?
                   <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
                   <div className="content-extra" >
                   <button  className="icon-table cursor-pointer" onClick={() => {closesection() }} ><FontAwesomeIcon icon={faClose} /></button>

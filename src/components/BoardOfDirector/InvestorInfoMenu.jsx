@@ -21,7 +21,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LazyLoader from '../Common-features/LazyLoader';
 function InvestorInfoMenu() {
     const [show, setshow] = useState()
-    const [value, setValue] = useState(0);
+    const [value, setValue] = useState();
     const[IsShown2,setIsShown2]= useState(false);
     const [data, setData] = useState();
     const [trigger, setTrigger] = useState(false);
@@ -203,7 +203,7 @@ function InvestorInfoMenu() {
                             }
 
 {
-    value ?
+    (value || value == 0) ?
     <Modal show={IsShown2} onHide={() => { closesection() }} size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
                                 <div className="content-extra" >
                                     <button className="icon-table cursor-pointer" onClick={() => { closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
