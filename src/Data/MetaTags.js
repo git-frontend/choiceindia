@@ -2156,10 +2156,10 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link":"https://choiceindia.com/stock-broker-in-delhi"
   },
   "digital-lending-partners": {
-    "title":"Digital Lending Partners with Choice Finserv",
+    "title":"Lending Partners with Choice Finserv",
     'lang':"en",
-    'content':"In our portfolio, we're working with digital lending institutions. Visit to view a complete list of our partners for digital lending.",
-    "link":"https://choiceindia.com/digital-lending-partners"
+    'content':"In our portfolio, we're working with lending institutions. Visit to view a complete list of our partners for lending.",
+    "link":"https://choiceindia.com/lending-partners"
   },
   "stock-market-holidays": {
     "title":"Stock Market Holidays 2023 - List of Indian Share Market Holidays",

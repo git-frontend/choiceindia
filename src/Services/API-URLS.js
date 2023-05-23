@@ -6,8 +6,8 @@ const environment = true;
 const config = {
     liveServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
     UATServerURL: "https://choiceindia.com/fables/ghost/api/v3/",
-    liveBannerURL: "https://cmsapi.choiceindia.com/",
-    UATBannerURL: "https://cmsapi.choiceindia.com/",
+    liveCMSURL: "https://cmsapi.choiceindia.com/",
+    UATCMSURL: "https://cmsapi.choiceindia.com/",
     liveFileURL: "https://cms.jiffy.in/",
     UATFileURL:"https://cms.jiffy.in/",
 
@@ -67,7 +67,7 @@ export class API_URLS {
     jiffyFundamentalPageURL = "research-report/research/fundamental/EQ/all/"
     jiffySignalPageURL = "research-report/research/signals/EQ/all/"
     /** banner URL */
-    bannerURL = "https://cmsapi.choiceindia.com/"
+    CMSURL = "https://cmsapi.choiceindia.com/"
     /** NBFC URL */
     nbfcBaseURL = '';
 
@@ -170,6 +170,7 @@ export class API_URLS {
     OTPOnCallURL = 'otp-on-call';
     verifyOTPURL = 'verify-otp';
     nbfcverifyOTPURL = 'api/verify-otp';
+    
   /** pdf API */
   
 //   newsURL='items/news?filter[status][_eq]=published&limit=1000&sort[]=-id';
@@ -191,6 +192,7 @@ export class API_URLS {
   cebplURL='items/cebpl_policies?limit=1000&sort[]=id';
   filedownloadURL ='api/get-download-listing?limit=1000&sort[]=id';
   investorStockURL ='items/investor_charter?limit=1000&sort[]=id';
+  boardOfDirector = 'items/board_of_directors?limit=1000&sort[]=id'
 /** contact us city detail */
     contactCityURL='items/branch_details?filter[status][_eq]=published&limit=1000';
     cfplURL='items/NBFC?limit=100&sort[]=id';
@@ -261,7 +263,7 @@ export class API_URLS {
         this.setJiffyServerURL(config[configKey + 'JiffyServerURL']);
         this.setServerURL(config[configKey + 'ServerURL']);
 
-        this.setBannerURL(config[configKey + 'BannerURL']);
+        this.setBannerURL(config[configKey + 'CMSURL']);
 
         this.setfaqURL(config[configKey + 'faqURL']);
         this.setJiffyResearchURL(config[configKey + 'JiffyResearchURL']);
@@ -352,7 +354,7 @@ export class API_URLS {
      */
       setBannerURL = (url) => {
 
-        this.bannerURL = url;
+        this.CMSURL = url;
     }
 
     setNACHBaseURL = (url) => {
@@ -461,7 +463,7 @@ export class API_URLS {
 
     getHomePrimaryBannerURL() {
 
-        return this.bannerURL + this.primaryURL
+        return this.CMSURL + this.primaryURL
     }
 
 
@@ -469,12 +471,12 @@ export class API_URLS {
 
     getHomeSecondaryBannerURL() {
 
-        return this.bannerURL + this.secondaryURL
+        return this.CMSURL + this.secondaryURL
     }
 
 
     getContactFormURL() {
-        return this.bannerURL + this.contactURL
+        return this.CMSURL + this.contactURL
     }
 
     getSessionUrl() {
@@ -486,7 +488,7 @@ export class API_URLS {
     }
 
     getFaqCategoryURL() {
-        return this.bannerURL + this.faqCategoryURL
+        return this.CMSURL + this.faqCategoryURL
     }
 
     getFaqfolderURL(id) {
@@ -502,7 +504,7 @@ export class API_URLS {
 
 
     getFableCategoryURL() {
-        return this.bannerURL + this.fableCategoryURL
+        return this.CMSURL + this.fableCategoryURL
     }
     getFableFolderURL(id) {
         return this.serverURL + `content/posts/?key=280c55197998a010569e5d612a&filter=tag:${id}`
@@ -651,76 +653,76 @@ export class API_URLS {
     }
 
     getNewsUrl(){
-        return this.bannerURL + this.newsURL
+        return this.CMSURL + this.newsURL
     }
 
     getNoticesUrl(){
-        return this.bannerURL + this.noticeURL
+        return this.CMSURL + this.noticeURL
     }
 
     getNoticesUrlR(){
-        return this.bannerURL + this.noticeRightURL
+        return this.CMSURL + this.noticeRightURL
     }
     getcorporateURL(){
-        return this.bannerURL + this.corporateURL
+        return this.CMSURL + this.corporateURL
     }
     getcorporatecommiteeURL(){
-        return this.bannerURL + this.corporatecommiteeURL
+        return this.CMSURL + this.corporatecommiteeURL
 
     }
     getShareholdingURL(){
-        return this.bannerURL + this.shareholdingURL
+        return this.CMSURL + this.shareholdingURL
     }
 
     getTransactionURL(){
-        return this.bannerURL + this.transactionURL
+        return this.CMSURL + this.transactionURL
     }
     getClosureTradingURL(){
-        return this.bannerURL + this.closureURL
+        return this.CMSURL + this.closureURL
     }
     getInvestorURL(){
-        return this.bannerURL + this.investorURL
+        return this.CMSURL + this.investorURL
     }
 
     getVotingResultURL(){
-        return this.bannerURL + this.votingresultURL
+        return this.CMSURL + this.votingresultURL
     }
 
     getFinancialURL(){
-        return this.bannerURL + this.financeURL
+        return this.CMSURL + this.financeURL
     }
     getAnnualReportURL(){
-        return this.bannerURL + this.annualURL
+        return this.CMSURL + this.annualURL
     }
 
     getAnnualReport2URL(){
-        return this.bannerURL + this.annual2URL
+        return this.CMSURL + this.annual2URL
 
     }
 
     getFactSheetURL(){
-        return this.bannerURL + this.factsheetURL
+        return this.CMSURL + this.factsheetURL
     }
 
     getMarginURL(){
         return this.FileURL + this.filedownloadURL
     }
     getInvestorAwareURL(){
-        return this.bannerURL + this.investorawareURL
+        return this.CMSURL + this.investorawareURL
     }
     getCebplPolicyURL(){
-        return this.bannerURL + this.cebplURL
+        return this.CMSURL + this.cebplURL
     }
 
     getInvestorStockURL(id){
-        return this.bannerURL + this.investorStockURL 
+        return this.CMSURL + this.investorStockURL 
     }
 
     getcontactCityURL(){
-        return this.bannerURL + this.contactCityURL
+        return this.CMSURL + this.contactCityURL
     }
     getCfplPolicyURL(){
-        return this.bannerURL + this.cfplURL
+        return this.CMSURL + this.cfplURL
     }
 
     getNbfcMobile(id) {
@@ -741,17 +743,17 @@ export class API_URLS {
         return  this.nbfcBaseURL + `v1/lead/source/${subProduct}/choicewebsite`;
     }
     getDepartmentURL(){
-        return this.bannerURL + this.departmentURL
+        return this.CMSURL + this.departmentURL
     }
     getSubDepartmentURL(id){
-        return this.bannerURL + `items/sub_department?filter[department_id][_eq]=${id}`
+        return this.CMSURL + `items/sub_department?filter[department_id][_eq]=${id}`
     }
     getOfferDocumnetURL(){
-        return this.bannerURL + this.offerUrl
+        return this.CMSURL + this.offerUrl
     }
 
     getEscalationURL(){
-        return this.bannerURL + this.escalation
+        return this.CMSURL + this.escalation
     }
 
 
@@ -770,11 +772,11 @@ export class API_URLS {
         return this.SSOServerURL + this.subBrokerVerifyOtpURLNew;
     }
     getSubBrokerURL(location){
-        return this.bannerURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
+        return this.CMSURL + `items/stock_broker_city?filter[city][_eq]=${location}&limit=1000&sort[]=id`
     }
 
     getSubBrokerCityURL(){
-        return this.bannerURL + this.cityUrl
+        return this.CMSURL + this.cityUrl
     }
     getNACHCancellationURL() {
         return this.nachBaseURL + this.nachCancellationURL
@@ -787,6 +789,11 @@ export class API_URLS {
     getNbfcAuthorization() {
 
         return this.NbfcAuthURL + this.NbfcAuthF
+    }
+
+    getBoardOfDirector(){
+
+        return this.CMSURL + this.boardOfDirector
     }
     
 
