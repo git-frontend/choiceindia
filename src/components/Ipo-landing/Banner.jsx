@@ -1,12 +1,32 @@
 import React from "react";
 import icon1 from '../../assets/images/ipo-landing/bajaj-energy.svg'
 import LazyLoader from '../Common-features/LazyLoader';
-
+import { useState,useEffect } from 'react';
 
 function Banner() {
 
+  const [name, setName ] = useState('form-sticky');
+    const getPosition = () => {
+      const element = document.getElementById("showForm");
+      if(element){
+          const rect = element.getBoundingClientRect();
+          
+          if(rect.top.toFixed() < 400){
+              setName('form-sticky visibleform');
+          }else{
+              setName('form-sticky');
+          }   
+      }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', getPosition);
+}, []);
+
+
   return (
     <>
+     
       <section className="ipo-banner">
         <div className="container">
             <div className="row">
@@ -61,7 +81,8 @@ function Banner() {
                 </div>
                 <div className="col-md-5">
                     <div className="sticy-card">
-                        <h3 className="title-secnd">Invest in <br/> Bajaj Energy IPO</h3>
+                      <div className="sticy-card-sub">
+                      <h3 className="title-secnd">Invest in <br/> Bajaj Energy IPO</h3>
                         <ul>
                           <li>
                           <span className="bx-icon">
@@ -95,6 +116,8 @@ function Banner() {
                         <div className="btn-open">
                           <button className="btn-bg btn-bg-dark">Open Now</button>
                         </div>
+                      </div>
+                        
                     </div>
                 </div>
             </div>

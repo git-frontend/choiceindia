@@ -71,45 +71,60 @@
         }
     }
     .sticy-card{
-        position: relative;
-        padding: 3rem 4rem 0;
-        &::before{
+    //    display: none !important;
+        .sticy-card-sub{
+            position: relative;
+            padding: 3rem 4rem;
             background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
-            background-size: contain;
-            top: 0;
-            left: 0;
-            content: '';
-            position: absolute;
-            height: 38rem;
-            width: 40rem;
-            display: block;
-            z-index: -1;
-        }
-        .title-secnd{
-                color: $whiteColor;
-                padding-bottom: 1rem;
-        }
-       ul{
-        list-style: none;
-        padding: 0;
-            li{
-                padding: 1rem 0;
-                .bx-icon{
-                    padding-right: 1rem;
-                }
-                .bx-text{
+            background-size: cover;
+            border-radius: 14px;
+            // &::before{
+                
+            //     background-size: contain;
+            //     top: 0;
+            //     left: 0;
+            //     content: '';
+            //     position: absolute;
+            //     height: 38rem;
+            //     width: 40rem;
+            //     display: block;
+            //     z-index: -1;
+            // }
+            .title-secnd{
                     color: $whiteColor;
-                    font-family: $font-family-poppins-medium;
-                    font-size: 1.5rem;
-                    .fw-regular{
-                        font-family: $font-family-poppins-regular;
+                    padding-bottom: 1rem;
+            }
+           ul{
+            list-style: none;
+            padding: 0;
+                li{
+                    padding: 1rem 0;
+                    .bx-icon{
+                        padding-right: 1rem;
+                    }
+                    .bx-text{
+                        color: $whiteColor;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.5rem;
+                        .fw-regular{
+                            font-family: $font-family-poppins-regular;
+                        }
                     }
                 }
+           }
+           .btn-open{
+            padding-top: 2rem;
+           }
+        }
+        &.visibleform{
+            display: flex;
+            justify-content: flex-end;
+            width: 33.33%;
+            .sticy-card-sub{
+                width: 340px;
             }
-       }
-       .btn-open{
-        padding-top: 2rem;
-       }
+        }
+       
     }
 }
 .ipo-details{
@@ -308,6 +323,7 @@
 .investment-opportunity{
     padding: 8rem 0;
     background: $primary;
+    position: relative;
     .left-sec{
         .title-first{
             color: $whiteColor;
@@ -317,30 +333,205 @@
             }
         }
     }
-        .all-features-list{
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            .feature-item{
-                margin-bottom: 5rem;
-                width: 45%;
-                img{
-                    height: 76px;
+    .all-features-list{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .feature-item{
+            margin-bottom: 5rem;
+            width: 45%;
+            img{
+                height: 76px;
+            }
+            .feature-ttl{
+                color: $whiteColor;
+                font-size: 1.8rem;
+                margin: 2rem 0 1.5rem;
+                font-family: $font-family-poppins-medium;
+                line-height: 1.5;
+                span{
+                    display: block;
+                    font-family: $font-family-poppins-regular;
                 }
-                .feature-ttl{
+            }
+            p{
+                color: $whiteColor;
+            }
+        }
+    }
+    }
+
+.form-sticky{
+    position: sticky;
+    top: 100px;
+    margin-bottom: -586px;
+    .sticy-card-sub{
+        position: relative;
+        padding: 3rem 4rem;
+        background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
+        background-size: cover;
+        border-radius: 14px;
+        margin-top: 100px;
+        width: 40%;
+        transition-duration: 0.6s;
+        // &::before{
+            
+        //     background-size: contain;
+        //     top: 0;
+        //     left: 0;
+        //     content: '';
+        //     position: absolute;
+        //     height: 38rem;
+        //     width: 40rem;
+        //     display: block;
+        //     z-index: -1;
+        // }
+        .title-secnd{
+                color: $whiteColor;
+                padding-bottom: 1rem;
+        }
+       ul{
+        list-style: none;
+        padding: 0;
+            li{
+                padding: 1rem 0;
+                .bx-icon{
+                    padding-right: 1rem;
+                }
+                .bx-text{
                     color: $whiteColor;
-                    font-size: 1.8rem;
-                    margin: 2rem 0 1.5rem;
                     font-family: $font-family-poppins-medium;
-                    line-height: 1.5;
-                    span{
-                        display: block;
+                    font-size: 1.5rem;
+                    .fw-regular{
                         font-family: $font-family-poppins-regular;
                     }
                 }
-                p{
-                    color: $whiteColor;
+            }
+       }
+       .btn-open{
+        padding-top: 2rem;
+       }
+    }
+    &.visibleform{
+        .sticy-card-sub{
+            width: 33.33%;
+        }
+    }
+    @media only screen and (max-width: 1399px) {
+        margin-bottom: -513px;
+    }
+}
+.ipo-breakup{
+    padding: 8rem 0;
+    .title-first{
+        padding-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+    }
+    .ipo-dates-table{
+        border:1px solid $lightgray;
+        border-radius: 8px;
+        overflow: hidden;
+        .table-striped2{
+            margin: 0;
+            tbody{
+                tr{
+                    &:nth-of-type(even) {
+                       background: $lightColor;
+                    }
+                    td{
+                        border: 0;
+                        padding: 1rem 2rem;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.3rem;
+                        &.txt-right{
+                            text-align: right;
+                        }
+                    }
                 }
             }
         }
+    }
+}
+.how-apply-ipo{
+    background: $abt-bg;
+    padding: 8rem 0;
+    .title-first{
+        span{
+            color: $yellowColor;
+        }
+    }
+    .steps-sec{
+        padding: 2rem 0;
+        .steps-item{
+            padding: 2rem 6rem 0 0;
+            h5{
+                font-size: 2rem;
+                font-family: $font-family-poppins-bold;
+                line-height: 1.5;
+            }
+            p{
+                font-size: 1.538rem;
+                line-height: 1.5;
+                font-family: $font-family-poppins-regular;
+            }
+        }
+    }
+}
+.ipo-faq {
+	padding: 9rem 0;
+	background-color: $whiteColor ;
+	.title-first {
+		margin-bottom: 2rem;
+        span{
+            color: $yellowColor;
+        }
+	}
+
+	.faq-item {
+		border: 1px solid $lightgray !important;
+		border-radius: 20px;
+		background: $whiteColor;
+		padding: 2.5rem 3rem;
+		margin-bottom: 2rem;
+
+		@media (max-width:$sm) {
+			padding: 1.5rem 1rem;
+		}
+
+		.faq-header {
+			.accordion-button{
+				font-family: $font-family-poppins-semibold;
+				color: $primary;
+				font-size: 2rem;
+				@media (max-width:$sm) {
+					font-size: 1.75rem;
+				}
+			}
+			
+			
+		}
+	}
+
+	.accordion-button {
+
+		&:not(.collapsed) {
+			background-color: transparent !important;
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:focus {
+			border: none !important;
+			box-shadow: none !important;
+		}
+
+		&:after {
+			display: none !important;
+		}
+	}
+	@media (max-width:$xs) {
+		padding: 5rem 0;
+	}
 }

@@ -140,7 +140,7 @@ const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypo
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
-const LazyIPOLanding=React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
+const LazyIPOLanding =React.lazy(()=> import('./components/Ipo-landing/IPOLanding'))
 
 
 function Routing() {
