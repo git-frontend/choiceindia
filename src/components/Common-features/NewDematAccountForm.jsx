@@ -75,7 +75,9 @@ function NewDematAccountForm(props) {
     const[form, setForm]=useState("Open-demat-account")
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-
+    const handleButtonClick = () => {
+        setShowOTP(false);
+      };
     // useEffect(() => {
     //     console.log('PRR',props.language)
     // },[])
@@ -586,7 +588,7 @@ function NewDematAccountForm(props) {
             {
                 showOTP && !showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new">
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} setparam={form} ></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} setparam={form} onButtonClick={handleButtonClick} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>

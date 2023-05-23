@@ -12,7 +12,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,setparam}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,setparam,onButtonClick}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -25,6 +25,11 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     const [otpparam, setOtpparam] = useState('');
+
+
+    const handleButtonClick = () => {
+        onButtonClick(); 
+      };
     // console.log('SSS',show);
     function handleClose(){
       //  console.log('Handleclose');
@@ -392,14 +397,15 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                                 <div className="popup-sub-right">
+                                
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
                                     <div className="otpform-new">
                                         {/* <img src={OTPimage} /> */}
 
-                                       
-                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {'******' + (mobileNumber).slice(6, 10)}</p>
-                                        
-
+                                       <div className="d-flex">
+                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
+                                        <button className="changenumbtn" onClick={handleButtonClick}>(change)</button>
+                                        </div>
                                   
                                     <div className="otp-mdl-input-chk">
 
