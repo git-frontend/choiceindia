@@ -35,14 +35,14 @@ function WhyOpenFreeCommodity() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots:false,
-          loop: true,
-infinite:true,
-autoplaySpeed: 5000,
-autoplay: true,
-        },
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots:true,
+            loop: true,
+            infinite:true,
+            autoplaySpeed: 5000,
+            autoplay: true,
+            },
       },
     ],
   };

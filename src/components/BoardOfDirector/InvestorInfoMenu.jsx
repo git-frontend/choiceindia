@@ -15,13 +15,17 @@ import image9 from '../../assets/images/about-us/sandeep-singh.webp';
 import image10 from '../../assets/images/about-us/kanhaiyalal-beriwal.webp';
 import Slider from "react-slick";
 import BoardOfDirector from '../../Data/Strategies';
+import cmsService from "../../Services/cmsService";
 import Modal from 'react-bootstrap/Modal';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LazyLoader from '../Common-features/LazyLoader';
 function InvestorInfoMenu() {
     const [show, setshow] = useState()
-    const [value, setValue] = useState(0);
-    const[IsShown2,setIsShown2]= useState(false)
+    const [value, setValue] = useState();
+    const[IsShown2,setIsShown2]= useState(false);
+    const [data, setData] = useState();
+    const [trigger, setTrigger] = useState(false);
+    const [isloading,setisloading ] = useState(true);
 
     const [view, setView] = useState({
         matches: window.innerWidth < 767 ? false : true,
@@ -33,7 +37,7 @@ function InvestorInfoMenu() {
         infinite: true,
         speed: 1500,
         arrows: false,
-        slidesToShow: 1,
+        slidesToShow: 4,
         autoplay: true,
         dots: true,
         autoplaySpeed: 3000,
@@ -51,6 +55,42 @@ function InvestorInfoMenu() {
         // this is the cleanup function to remove the listener
         return () => mediaQuery.removeListener(setView);
     }, []);
+
+   
+
+    function loadBoardOfDirector() {
+        cmsService.BoardOfdirector().then(
+            res => {
+                if (res) {
+                    setisloading(false)
+                    setData(res.data.data);
+
+
+                } else {
+                    setisloading(false)
+                    setData([]);
+
+                }
+
+            }
+        ).catch((error) => {
+            setisloading(false)
+            setData([]);
+        });
+    }
+
+
+
+
+    useEffect(() => {
+        setTrigger(true)
+
+        if (trigger === true) {
+            loadBoardOfDirector()
+
+        }
+
+    }, [trigger])
 
     return (
         <div>
@@ -75,14 +115,14 @@ function InvestorInfoMenu() {
 
                                     <Slider {...settings} className="mt5" >
                                         {
-                                            BoardOfDirector?.map((res,i)=>{
+                                            data?.map((res,i)=>{
                                                 return(
                                                     <div className="col-xl-3 col-md-6">
                                                     <div className="team-list">
                                                         <div className="team-list-slider" onClick={() => {setValue(i),setIsShown2(true)}}>
                                                             <div className="team-item">
                                                                 <span className="img-itm">
-                                                                    <LazyLoader src={res.image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                                                                <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.image}`} className={"img-fluid"} width={"224"} height={"349"} alt={res.title} />
                                                                     {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
                                                                 </span>
                                                                 <div className="namedesg">
@@ -109,14 +149,14 @@ function InvestorInfoMenu() {
                                     
                                         <div className="row mt5 justify-content-center">
                                         {
-                                            BoardOfDirector?.map((res,i)=>{
+                                            data?.map((res,i)=>{
                                                 return(
                                                     <div className="col-xl-3 col-md-6">
                                                     <div className="team-list">
                                                         <div className="team-list-slider" onClick={() => {setValue(i),setIsShown2(true)}}>
                                                             <div className="team-item">
                                                                 <span className="img-itm">
-                                                                    <LazyLoader src={res.image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                                                                <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.image}`} className={"img-fluid"} width={"224"} height={"349"} alt={res.title} />
                                                                     {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
                                                                 </span>
                                                                 <div className="namedesg">
@@ -135,14 +175,14 @@ function InvestorInfoMenu() {
                                      :
                                     <div className="row mt5">
                                         {
-                                            BoardOfDirector?.slice(0,4).map((res,i)=>{
+                                            data?.slice(0,4).map((res,i)=>{
                                                 return(
                                                     <div className="col-xl-3 col-md-6">
                                                     <div className="team-list">
                                                         <div className="team-list-slider" onClick={() => {setValue(i),setIsShown2(true)}}>
                                                             <div className="team-item">
                                                                 <span className="img-itm">
-                                                                    <LazyLoader src={res.image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                                                                    <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.image}`} className={"img-fluid"} width={"224"} height={"349"} alt={res.title} />
                                                                     {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
                                                                 </span>
                                                                 <div className="namedesg">
@@ -162,32 +202,36 @@ function InvestorInfoMenu() {
                                     </div>
                             }
 
-                            <Modal show={IsShown2} onHide={() => { closesection() }} size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
+{
+    (value || value == 0) ?
+    <Modal show={IsShown2} onHide={() => { closesection() }} size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
                                 <div className="content-extra" >
                                     <button className="icon-table cursor-pointer" onClick={() => { closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
 
                                     <div>
-                                        <div className="team-img-pos" key={(BoardOfDirector || [])[value].id}>
+                                        <div className="team-img-pos" key={(data || [])[value].id}>
                                             <div className="team-img">
-                                                <LazyLoader src={(BoardOfDirector || [])[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                                                <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${(data || [])[value].image}`} className={"img-fluid"} width={"224"} height={"349"} alt={(data || [])[value].title} />
                                             </div>
                                             <div className="team-position">
-                                                <h4>{(BoardOfDirector || [])[value].title}<br /> ({(BoardOfDirector || [])[value].designation})</h4>
+                                                <h4>{(data   || [])[value].title}<br /> ({(data    || [])[value].designation})</h4>
                                             </div>
                                         </div>
-                                        <p>{(BoardOfDirector || [])[value].description}
+                                        <p>{(data    || [])[value].description}
                                         </p>
 
                                     </div>
 
                                 </div>
-                            </Modal>
+                            </Modal>:""
+}
+                            
 
                         </div>
 
                     </div>
 
-                    <div className="mt7 d-flex justify-content-center cursor-pointer btnshow">{show ? <a onClick={() => { setshow(false) }}><span className="btn-bg">View Less</span></a> : <a onClick={() => { setshow(true) }}><span className="btn-bg">View More</span></a>}</div>
+                    <div className=" d-flex justify-content-center cursor-pointer btnshow">{show ? <a onClick={() => { setshow(false) }}><span className="btn-bg">View Less</span></a> : <a onClick={() => { setshow(true) }}><span className="btn-bg">View More</span></a>}</div>
                 </div>
 
 

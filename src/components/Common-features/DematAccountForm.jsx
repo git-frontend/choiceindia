@@ -113,6 +113,7 @@ function DematAccountForm(props) {
             }, 60000);
         }
     }, []);
+    
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -585,6 +586,14 @@ function DematAccountForm(props) {
         }
     }, [captchaToken]);
 
+    useEffect(() => {
+        if(isBlog){
+            setTimeout(() => {
+                showOpenAccountAdPopup()
+            }, 15000);
+        }
+        
+    }, []);
     return (
         <>
             {

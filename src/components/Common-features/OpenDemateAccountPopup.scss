@@ -13,7 +13,12 @@
     background: #3e404f4d;
     overflow: auto;
     z-index: 999999999 !important;
-
+    &.show-res{
+        display: none;
+        @media (max-width:$md) {
+            display: block;
+        }
+    }
     .exit-intent-sleekbox-popup {
         box-sizing: border-box;
         background: $whiteColor;
@@ -25,16 +30,22 @@
         margin-bottom: 1rem;
         position: relative;
         padding: 0;
-        .closebtn {
-            color:$primary;
-            text-decoration: none;
-            float: right;
-            top: 0;
-            right: 15px;
-            position: absolute;
-            font-size: 3rem;
+        .close{
+           
             @media (max-width:$sm) {
-                color: $whiteColor;
+                padding-bottom: 1rem;
+                }
+            .closebtn {
+                color:$primary;
+                text-decoration: none;
+                float: right;
+                top: 0;
+                right: 0.8rem;
+                position: absolute;
+                font-size: 2.5rem;
+                // @media (max-width:$sm) {
+                //     color: $whiteColor;
+                // }
             }
         }
         @media (max-width:$sm) {

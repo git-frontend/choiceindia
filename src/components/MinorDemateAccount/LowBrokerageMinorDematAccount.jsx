@@ -34,7 +34,7 @@ function LowBrokerageMinorDematAccount() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots:false,
+                    dots:true,
                 },
             },
         ],
