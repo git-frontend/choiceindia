@@ -1,6 +1,7 @@
 
 import React from "react";
 import Banner from "./Banner";
+import IpoDetails from "./IpoDetails";
 import "./ipo-landing.scss";
 
 function IPOLanding() {
@@ -8,6 +9,7 @@ function IPOLanding() {
   return (
     <div>
       <Banner/>
+      <IpoDetails/>
     </div>
   );
 }

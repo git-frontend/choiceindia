@@ -2,7 +2,7 @@
 @import '../../assets/css/customvariable.scss';
 
 .ipo-banner{
-    padding: 6rem 0;
+    padding: 8rem 0;
     .banner-caption{
         display: flex;
         align-items: center;
@@ -19,10 +19,100 @@
             padding-left: 2rem;
             .title-secnd{
                 margin-bottom: 1rem;
+                font-family: $font-family-poppins-bold;
             }  
             p{
                 margin: 0;
             }
         }
     }
+    .banner-card{
+        background: $whiteColor;
+        box-shadow: 0px 0px 15px 1px $lightgray;
+        border-radius: 20px;
+        position: relative;
+        margin-top: 5rem;
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            li{
+                width: 33.33%;
+                padding: 2rem;
+                .scr-date{
+                    display: block;
+                    font-size: 1.5rem;
+                    font-family:$font-family-poppins-regular;
+                    color: $listcolor;
+                }
+                .date{
+                    display: block;
+                    font-size: 1.5rem;
+                    font-family:$font-family-poppins-medium;
+                }
+                &:nth-child(n + 4) {
+                    background: $bg-li;
+                }
+            }
+        }
+        .card-bottom{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 2rem;
+            .dont-ac{
+                padding-left: 2rem;
+                a{
+                    color: $primary;
+                }
+            }
+        }
+    }
+    .sticy-card{
+        position: relative;
+        padding: 3rem 4rem 0;
+        &::before{
+            background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
+            background-size: contain;
+            top: 0;
+            left: 0;
+            content: '';
+            position: absolute;
+            height: 38rem;
+            width: 40rem;
+            display: block;
+            z-index: -1;
+        }
+        .title-secnd{
+                color: $whiteColor;
+                padding-bottom: 1rem;
+        }
+       ul{
+        list-style: none;
+        padding: 0;
+            li{
+                padding: 1rem 0;
+                .bx-icon{
+                    padding-right: 1rem;
+                }
+                .bx-text{
+                    color: $whiteColor;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.5rem;
+                    .fw-regular{
+                        font-family: $font-family-poppins-regular;
+                    }
+                }
+            }
+       }
+       .btn-open{
+        padding-top: 2rem;
+       }
+    }
+}
+.ipo-details{
+    background: $abt-bg;
+    padding: 8rem 0;
 }
