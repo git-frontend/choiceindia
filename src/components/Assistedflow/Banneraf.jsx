@@ -263,7 +263,8 @@ function Banneraf() {
         let mobileNo;
         let pattern = /[0-9]{8,10}/i;
         mobileNo = response.data.Response.toString();
-        mobileNo = mobileNo.match(pattern)[0];
+        mobileNo = mobileNo.match(pattern)[0].toString();
+        mobileNo = mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)
         setMobileNumber(() => (mobileNo ? mobileNo : null));
       })
       .catch((error) => {
@@ -811,13 +812,11 @@ function Banneraf() {
                                         userDetails.subId ? 
                                             <p className="subtext">
                                                 Code sent to your registered
-                                                mobile number +91
-                                                {mobileNumber}
+                                                mobile number +91 {mobileNumber}
                                             </p> :
                                             <p className="subtext">
                                                 Code sent to client’s registered
-                                                mobile number +91
-                                                {mobileNumber}
+                                                mobile number +91 {mobileNumber}
                                             </p>
                                     }                      
 
