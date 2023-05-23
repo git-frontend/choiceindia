@@ -146,6 +146,8 @@ const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commo
 const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
 const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
 
+
+const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
 function Routing() {
 
 
@@ -814,6 +816,10 @@ function Routing() {
                          <Route exact path='/campaign/technical-analysis' element={
                             <React.Suspense>
                                 < LazyTechnicalAnalysis />
+                                </React.Suspense>}/>
+                        <Route exact path='/campaign/futures-options-trading' element={
+                            <React.Suspense>
+                                < LazyFuturesOptionsTrading />
                             </React.Suspense>
                         } />
  

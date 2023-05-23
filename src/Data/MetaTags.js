@@ -2235,6 +2235,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
     "link":"https://choiceindia.com/open-free-demat-account"
   },
+  "campaign/futures-options-trading": {
+    "title":"F&O Trading - Don't Miss Futures & Options Trading Opportunities",
+    'lang':"en",
+    'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
 }
 
 export default meta_tags;

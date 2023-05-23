@@ -1,0 +1,541 @@
+@import '../../assets/css/common.scss';
+@import '../../assets/css/customvariable.scss';
+
+.futureoptionbenner {
+    padding: 8rem 0;
+
+    @media (max-width: $md) {
+        padding: 5rem 0;
+    }
+
+    .fandoleft {
+        .big-ttl {
+            color: $primary;
+            margin-bottom: 4rem;
+            text-transform: capitalize;
+            font-weight: 700;
+
+            @media (max-width: $md) {
+
+                margin-bottom: 2.5rem;
+
+            }
+
+            span {
+                color: $yellowColor;
+            }
+        }
+
+        .carditem-option-tab {
+            .slick-track {
+                display: flex;
+                padding: 10px 0;
+                @media (max-width: $sm) {
+
+                    margin-left: 8rem;
+    
+                }
+
+                .slick-slide {
+                    float: none;
+                    height: inherit !important;
+
+                    >div {
+                        height: 100%;
+
+                        .carditem-option {
+                            min-height: inherit;
+                            height: 100%;
+                            padding: 1rem 0.5rem;
+
+                            @media (max-width:$sm) {
+                                padding: 0;
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width:$md) {
+                    margin-bottom: 2rem;
+                }
+            }
+
+            .carditem-option {
+                text-align: center;
+                margin-bottom: 5px;
+                min-height: 17.5rem;
+
+                .carditem-option-img {
+                    min-height: 6rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .cardoption-ttl {
+                    padding-top: 2rem;
+                    color: $primary;
+                    font-family: $font-family-poppins-semibold;
+                    // padding: 2rem 1rem 0;
+                    @media (max-width:$md) {
+                        padding: 1rem 1.4rem;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.research-calls {
+    background-color: $abt-bg;
+    padding: 10rem 0;
+    height: 100%;
+    min-height: auto;
+
+    @media (max-width: $sm) {
+        padding: 6rem 0;
+    }
+
+    .research-title {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .research-calls-tab {
+        
+            .calls-tab-item {
+                width: 95% !important;
+                margin: 2rem auto;
+                display: block !important;
+    
+                @media (max-width: $md) {
+                    width: 90% !important;
+                }
+    
+                .main-left {
+                    margin: 0;
+                    border-radius: 1rem;
+                    box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+                    @media (max-width: $md) {
+                        padding: 1.923rem 1rem;
+                    }
+                    .bottom-section{
+                        .fandores{
+                            @media (max-width:$md) {
+                                padding: 0 0.5rem;
+                                border-right: 1px solid rgba(0, 0, 0, 0.1);
+                                height: 50px;
+                            }
+                            &:last-child {
+                                @media (max-width:$md) {
+                                    border-right: none;
+                                    padding-right: 0;
+            
+                                }
+                            }
+                 
+                        }
+                    }
+                }
+            }
+        
+        
+    }
+}
+
+.getstart-signup {
+    padding: 5rem 0;
+    background-color: $bgcolor-green;
+
+    @media (max-width: $sm) {
+        padding: 5rem 0;
+    }
+
+    .signup-text {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $sm) {
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+        .signup-left {
+            text-align: start;
+            @media (max-width: $md) {
+                width: 62%;
+            }
+            @media (max-width: $sm) {
+                text-align: center;
+                width: 100%;
+            }
+
+            .signup-ttl {
+                font-size: 3rem;
+                line-height: 3.75rem;
+                color: $whiteColor;
+                font-family: $font-family-poppins-semibold;
+
+                @media (max-width: $md) {
+                    font-size: 2.5rem;
+                    line-height: 3rem;
+                }
+
+                @media (max-width: $sm) {
+                    font-size: 2.4rem;
+                    line-height: 3.75rem;
+                    padding-bottom: 3.5rem;
+                }
+            }
+        }
+
+        .signup-right {
+            text-align: end;
+            @media (max-width: $sm) {
+                width: 100%;
+                text-align: center;
+            }
+
+            .signup-btn {
+                @media (max-width: $sm) {
+                    min-width: 26rem;
+                    padding: 1.5rem 2.8rem !important;
+                }
+            }
+        }
+
+    }
+}
+
+.Trading-Needs {
+    padding: 10rem 0;
+    position: relative;
+
+    .treding-mr {
+        padding-bottom: 5rem;
+    }
+
+    .content-list {
+        position: relative;
+        padding: 0;
+        margin-top: 0;
+        padding-right: 8rem;
+
+        .slick-track {
+            height: auto !important;
+            .slick-slide{
+                &:first-child{
+                    .content-list-itm{
+                        border-top: 0;
+                    }
+                }
+            }
+        }
+
+        .content-list-itm {
+            padding-left: 3.5rem;
+            margin-bottom: -0.2rem;
+            position: relative;
+            cursor: pointer;
+            border-top: 1px solid $border-gray;
+            @media (min-width:$sm)and (max-width:$md) {
+                padding-left: 3rem;
+            }
+
+            &.list-itm-active {
+                padding: 2rem 3.5rem;
+                background-color: $primary;
+                border-radius: 24px;
+                border-top: 0;
+
+
+                @media (min-width:$sm)and (max-width:$md) {
+                    padding: 1rem 3rem;
+                }
+                @media (max-width:$sm) {
+                    margin-bottom: 0.8rem;
+                }
+
+                .single-ttl {
+                    color: $bgcolor-yellow;
+                    margin-bottom: 0;
+
+                    @media (min-width:$sm)and (max-width:$md) {
+                        padding: 1.1rem 0rem;
+                    }
+                }
+
+                .para {
+                    display: block;
+                    color: $whiteColor;
+                }
+            }
+            &.list-itmive{
+                border-top: 0;
+            }
+
+            .single-ttl {
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.75rem;
+                color: $primary;
+                padding: 2.1rem  0rem;
+            }
+
+            .para {
+                display: none;
+
+                @media (max-width:$sm) {
+                    display: block;
+                }
+            }
+
+
+            @media (max-width:$sm) {
+                padding-bottom: 0;
+                margin: 0;
+            }
+
+            @media (max-width:$sm) {
+                padding: 0 1rem;
+                text-align: center;
+            }
+        }
+
+
+        @media (max-width:$md) {
+            padding-right: 0;
+        }
+    }
+
+    .trade-easy-images-div {
+        display: flex;
+        justify-content: center;
+        padding: 0 4rem;
+
+        .single-trade-easy-images {
+            max-width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
+        }
+
+        @media (max-width:$md) {
+            padding: 0;
+        }
+
+        @media (max-width:$sm) {
+            padding-top: 4rem;
+        }
+    }
+
+    @media (max-width: $sm) {
+        padding: 5rem 0 8rem 0;
+    }
+}
+
+.fando-open-demat {
+    background-color: $primary;
+    padding: 10rem 0;
+
+    @media (max-width: $sm) {
+        padding: 6rem 0;
+    }
+
+    .fando-ttl {
+        color: $whiteColor;
+        @media (max-width: $sm) {
+           margin-bottom: 1rem;
+        }
+    }
+
+    .fando-open-demat-slider {
+        .slick-track {
+            display: flex;
+            padding: 10px 0;
+            height: 100% !important;
+            @media (max-width: $sm) {
+
+                margin-left: 8rem;
+
+            }
+            .slick-slide {
+                float: none;
+                height: inherit !important;
+
+                >div {
+                    height: 100%;
+
+                    .fando-open-demat-item {
+                        min-height: inherit;
+                        height: 100%;
+                        padding: 4rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem 1rem ;
+                        }
+                        @media (min-width:$sm-x) and (max-width:$md) {
+                           padding: 2.5rem;
+                        }
+                    }
+                }
+            }
+
+            @media (max-width:$md) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        .fando-open-demat-item {
+            // margin-top: 5px;
+            margin-bottom: 5px;
+
+            display: flex;
+            text-decoration: none;
+            width: 90% !important;
+            text-align: center;
+
+            @media (min-width:$sm)and (max-width:$md) {
+                width: 100% !important;
+            }
+
+            .fandoimg {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: linear-gradient(180deg, #00EFD1 -2.24%, #00ACEA 100.35%);
+                border-radius: 16px;
+                min-height: 13rem;
+                height: 100%;
+                margin: 0 auto;
+
+                @media (min-width:$sm)and (max-width:$md) {
+                    min-height: 11rem;
+                }
+
+            }
+
+            .fando-head {
+                color: $whiteColor;
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.75rem;
+                line-height: 1.5;
+                padding-top: 3rem;
+                // padding:3rem 0.4rem 0;
+                @media (max-width:$sm){
+                    padding: 4rem 0.3rem;
+                } 
+            }
+        }
+    }
+
+    .fando-open-demat-btn {
+        .fando-btn {
+            min-width: 25rem;
+            padding: 1.5rem 2.8rem !important;
+        }
+    }
+}
+
+.fand-why-choice {
+    background-color: $whiteColor ;
+    padding: 10rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0;
+    }
+
+    .why-choice {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5rem 0 0; 
+        padding: 0;
+        justify-content: space-between;
+        // background: $bgcolor-green;
+        // opacity: 0.1;
+        @media (max-width: $sm) {
+            margin: 0rem 0;
+        }
+
+        .why-choice-tab {
+            background: rgba(37, 184, 175, 0.1);
+            width: 30%;
+            padding: 6.9rem;
+            border-radius: 16px;
+            @media (max-width: $md) {
+                padding: 3.9rem;
+            }
+            @media (max-width: $sm) {
+                width: 100%;
+                padding: 5rem 0rem;
+                margin: 2rem;
+            }
+
+            .why-choice-head {
+                color: $darkblue;
+                font-family: $font-family-poppins-bold;
+                font-size: 3.5rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .why-choice-text {
+                color: $darkblack;
+                font-family: $font-family-poppins-semibold;
+                font-size: 1.8rem;
+            }
+        }
+        .first-tab{
+            position: relative;
+            &::before{
+                content: '';
+                width: 15.313rem;
+                height: 9.563rem;
+                display: block;
+                position: absolute;
+                right:0;
+                top: 0; 
+                background: url(../../assets/images/Futures-Options-Trading/why1.svg) no-repeat top right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+        .second-tab{
+            position: relative;
+            &::before{
+                content: '';
+                width: 15.313rem;
+                height: 9.563rem;
+                display: block;
+                position: absolute;
+                right:0;
+                top: 0; 
+                background: url(../../assets/images/Futures-Options-Trading/why2.svg) no-repeat top right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+        .third-tab{
+            position: relative;
+            &::before{
+                content: '';
+                width: 15.313rem;
+                height: 9.563rem;
+                display: block;
+                position: absolute;
+                right:0;
+                top: 0; 
+                background: url(../../assets/images/Futures-Options-Trading/why3.svg) no-repeat top right;
+                background-size: contain;
+        
+                @media (max-width: $md) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
