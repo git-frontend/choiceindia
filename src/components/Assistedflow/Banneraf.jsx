@@ -133,7 +133,7 @@ function Banneraf() {
     // console.log('status',userStatus)
     setTrigger(true);
     setUserDetails(() => JSON.parse(details));
-    // console.log('userdetails', userDetails)
+    console.log('userdetails', details)
     if (trigger) {
       setDataNotFound(() => false);
       let payload = {
@@ -307,7 +307,7 @@ function Banneraf() {
         // console.log('Verifyresponse', response);
         // setVerifyLoader(() => false);
         if (response && response.data && response.data.Response) {
-          refCallAPI(BasketData.BucketType, true);
+          refCallAPI(BasketData.bucket_type, true);
           // if (BasketData.BucketType && BasketData.BucketType != 'SIP') {
 
           //     // let refNo = parseInt(OrderMetaData.refNo);
@@ -578,6 +578,7 @@ function Banneraf() {
           console.log("userdetails", userDetails);
           /**for RM if subId is present in URL */
           if (userDetails.subId) {
+            setLoaders({...loaders, verifyLoader: false});
             setPaymentLink(() =>
               response.data.Response ? response.data.Response : ""
             );
@@ -607,7 +608,7 @@ function Banneraf() {
         ? utils.decryptText(userDetails.orderUniqueId)
         : "",
       client_id: userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
-      bucket_id: userDetails.bucketId ? utils.decryptText(userDetails.bucketId) : "",
+      bucket_id: BasketData.bucket_id? BasketData.bucket_id : "",
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
@@ -618,7 +619,7 @@ function Banneraf() {
     AssistedFlowService.OrderStatus(payload)
       .then((response) => {
         console.log("order status reponse", response);
-
+        setLoaders({...loaders, verifyLoader: false});
         if (response && response.data && response.data.StatusCode == 200) {
           if (!userDetails.subId) {
             setShowSecondDiv(false);
@@ -628,6 +629,7 @@ function Banneraf() {
             }, 3000);
           }
         } else {
+          setLoaders({...loaders, verifyLoader: false});
           setErrors(() =>
             response.data.Message
               ? response.data.Message
@@ -637,6 +639,7 @@ function Banneraf() {
       })
       .catch((error) => {
         console.log(error);
+        setLoaders({...loaders, verifyLoader: false});
         setErrors(() =>
           error.response.data.Message
             ? error.response.data.Message
@@ -671,6 +674,7 @@ function Banneraf() {
   }
   
   function closesection(){
+    setErrors(() => null);
     setShowSecondDiv(() => false);
     setShowFirstButton(() => true);
     setisModalClose(() => false)
@@ -803,10 +807,21 @@ function Banneraf() {
                                   Enter One Time
                                   <br /> Authentication Code
                                 </p>
-                                <p className="subtext">
-                                  Code sent to your registered mobile number +91{" "}
-                                  {mobileNumber}
-                                </p>
+                                    {
+                                        userDetails.subId ? 
+                                            <p className="subtext">
+                                                Code sent to your registered
+                                                mobile number +91
+                                                {mobileNumber}
+                                            </p> :
+                                            <p className="subtext">
+                                                Code sent to client’s registered
+                                                mobile number +91
+                                                {mobileNumber}
+                                            </p>
+                                    }                      
+
+      
                               </div>
 
                               <div id="divOuter">
@@ -829,7 +844,7 @@ function Banneraf() {
 
                               {count ? (
                                 <p className="warning mb-4">
-                                  Resend OTP in {count} secs
+                                  Resend Code in {count} secs
                                 </p>
                               ) : (
                                 <p
@@ -838,7 +853,7 @@ function Banneraf() {
                                     handleFirstButtonClick(true);
                                   }}
                                 >
-                                  Resend OTP
+                                  Resend Code
                                 </p>
                               )}
 
@@ -850,7 +865,7 @@ function Banneraf() {
                                   ? "btn-bg btn-bg-dark submitbtn disablebtn"
                                   : "btn-bg btn-bg-dark submitbtn"
                               }
-                              onClick={loaders.verifyLoader ? "" : submitOTP}
+                              onClick={loaders.verifyLoader ? null : submitOTP}
                               disabled={
                                 !OtpValue || OtpValue.toString().length < 6
                               }
@@ -959,12 +974,10 @@ function Banneraf() {
                 <div className="order-register">
                   <p className="sucesstext">Order Registered!</p>
                   <p className="subtext">
-                    Copy &amp; Share link with client to complete the payment.
+                    Copy &amp; Share link with Client - <b>{userDetails && userDetails.clientId
+                                  ? utils.decryptText(userDetails.clientId)
+                                  : ""}</b> to complete the payment.
                   </p>
-                  {/* {
-                                        showToast ?
-                                            <span>Link Copied</span> : ''
-                                    } */}
                   <div className="rightbtn">
                     <Button
                       className="btn-bg btn-bg-dark copybtn"
