@@ -601,7 +601,7 @@ function Banneraf() {
       order_unique_id: userDetails.orderUniqueId
         ? userDetails.orderUniqueId
         : "",
-      client_id: "kjsdkjas", //userDetails.clientId ? userDetails.clientId : '',
+      client_id: userDetails.clientId ? userDetails.clientId : '',
       bucket_id: userDetails.bucketId ? userDetails.bucketId : "",
       status: "payment_pending",
       order_date: "",
