@@ -153,7 +153,7 @@ function Routing() {
                 {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
                
                 {/* <Header /> */}
-                <div className='App-Body'>
+                <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
                     <Routes>
                         <Route exact path='/' element={
                             <Home></Home>} />

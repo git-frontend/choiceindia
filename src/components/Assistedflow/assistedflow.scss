@@ -1,8 +1,32 @@
 @import '../../assets/css/common.scss';
 @import '../../assets/css/customvariable.scss';
 
+
+
+
+.assist-body{
+
+        margin-top: 9.25rem;
+        @media screen and (max-width: $sm) {
+           
+            display: block;
+            width: 100%;
+            overflow: inherit;
+        }
+        @media screen and (max-width: $md) {
+            margin-top: 8.45rem;
+        }
+        @media screen and (max-width: $xs) {
+            margin-top: 6rem;
+        }
+    
+    
+}
 .afsec{
     padding-bottom: 4rem;
+    @media screen and (max-width: $sm) {
+        padding-bottom: 10rem;
+    }
     .subhead{
         color: $bgcolor-green;
         font-size: 1.25rem;
