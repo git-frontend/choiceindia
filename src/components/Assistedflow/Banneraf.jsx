@@ -84,6 +84,8 @@ function Banneraf() {
   /**to show toast message */
   const [showToast, setShowToast] = useState(false);
 
+  const [isModalClose, setisModalClose] = useState(false);
+
   /**Query Params Data */
   // const userDetails = { uniqueId: new URLSearchParams(search).get('order_unique_id').replaceAll(' ', '+').toString(), bucketId: new URLSearchParams(search).get('bucketId').replaceAll(' ', '+').toString(), clientId: new URLSearchParams(search).get('clientId').replaceAll(' ', '+').toString(), rmId: new URLSearchParams(search).get('rm_id') ? new URLSearchParams(search).get('rm_id').replaceAll(' ', '+').toString() : null, subjectId: new URLSearchParams(search).get('subid') ? new URLSearchParams(search).get('subid').replaceAll(' ', '+').toString() : null, };
 
@@ -204,6 +206,7 @@ function Banneraf() {
   /**Invest Now Button Click Function */
   function handleFirstButtonClick(isResend) {
     setOtpValue(() => null);
+    setisModalClose(() => true)
 
     if (isResend) {
       document.getElementById("partitioned").value = "";
@@ -601,10 +604,10 @@ function Banneraf() {
   function UpdateOrderStatus(paymntLink) {
     let payload = {
       order_unique_id: userDetails.orderUniqueId
-        ? userDetails.orderUniqueId
+        ? utils.decryptText(userDetails.orderUniqueId)
         : "",
-      client_id: userDetails.clientId ? userDetails.clientId : '',
-      bucket_id: userDetails.bucketId ? userDetails.bucketId : "",
+      client_id: userDetails.clientId ? utils.decryptText(userDetails.clientId) : '',
+      bucket_id: userDetails.bucketId ? utils.decryptText(userDetails.bucketId) : "",
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
@@ -668,7 +671,9 @@ function Banneraf() {
   }
   
   function closesection(){
-    setIsShown2(false)
+    setShowSecondDiv(() => false);
+    setShowFirstButton(() => true);
+    setisModalClose(() => false)
   }
 
   return (
@@ -787,11 +792,11 @@ function Banneraf() {
                           )}
                         </>
                       )}
-                      {showSecondDiv && (
+                      {showSecondDiv && isModalClose ?
                         <>
                           <div className="otpsec">
                             <div className="resdiv">
-                            <button className="closebtn cursor-pointer" onClick={() => { closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
+                            <Button className="closebtn cursor-pointer" onClick={closesection} ><FontAwesomeIcon icon={faClose} /></Button>
 
                               <div className="otpmodal">
                                 <p className="otptext">
@@ -866,8 +871,8 @@ function Banneraf() {
                           ) : (
                             ""
                           )}
-                        </>
-                      )}
+                        </> : ''
+                      }
                       {showThirdDiv && (
                         <>
                           <div className="redirectwrap">
