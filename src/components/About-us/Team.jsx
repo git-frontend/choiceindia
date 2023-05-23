@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Modal from 'react-bootstrap/Modal';
 import { Accordion, Button } from "react-bootstrap";
-
+import cmsService from "../../Services/cmsService";
 
 import { faClock, faLocationDot, faPhone, faEnvelope, faHeart, faClose, faHeadphones } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,9 +12,11 @@ import { useEffect } from "react";
 import { useRef } from "react";
 
 function Team() {
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState();
   const[IsShown2,setIsShown2]= useState(false)
-
+  const [data, setData] = useState();
+  const [trigger, setTrigger] = useState(false);
+  const [isloading,setisloading ] = useState(true);
   /**use Ref hook to get actual instance and sliderRef constant of type Slider */
   const sliderRef = useRef(<Slider></Slider>);
 
@@ -62,6 +64,40 @@ sliderRef.current.slickPlay();
 setIsShown2(false)
 }
 
+function loadBoardOfDirector() {
+  cmsService.BoardOfdirector().then(
+      res => {
+          if (res) {
+              setisloading(false)
+              setData(res.data.data);
+
+
+          } else {
+              setisloading(false)
+              setData([]);
+
+          }
+
+      }
+  ).catch((error) => {
+      setisloading(false)
+      setData([]);
+  });
+}
+
+
+
+
+useEffect(() => {
+  setTrigger(true)
+
+  if (trigger === true) {
+      loadBoardOfDirector()
+
+  }
+
+}, [trigger])
+
 
   return (
     <div>
@@ -78,12 +114,12 @@ setIsShown2(false)
               <div className="team-list">
                 <Slider ref={sliderRef} {...settings} className="team-list-slider">
                 {
-                      BoardOfDirector?.map((res,i)=>{
+                      data?.map((res,i)=>{
                         return(
                   <div className="" onClick={() => {setValue(i),openPopup()}} key={i}>
                    <div className="team-item">
                       <span className="img-itm">
-                        <LazyLoader src={res.image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                      <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.image}`} className={"img-fluid"} width={"224"} height={"349"} alt={res.title} />
                         {/* <img src={imageP} width="224" height="349" className="img-fluid" alt="loading" /> */}
                       </span>
                       <div className="namedesg">
@@ -101,26 +137,31 @@ setIsShown2(false)
                  
                 </Slider>
 
+                {
+                  value || value == 0 ?
                   <Modal show={IsShown2} onHide={() => {closesection()}}  size="lg" aria-labelledby="contained-modal-title-vcenter" className="about-team-modal" centered>
                   <div className="content-extra" >
                   <button  className="icon-table cursor-pointer" onClick={() => {closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
                 
                     <div>
-                      <div className="team-img-pos" key={(BoardOfDirector||[])[value].id}>
+                      <div className="team-img-pos" key={(data||[])[value].id}>
                         <div className="team-img">
-                        <LazyLoader src={(BoardOfDirector||[])[value].image} className={"img-fluid"} width={"224"} height={"349"} alt={"Vinita Patodia"} />
+                        <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${(data || [])[value].image}`} className={"img-fluid"} width={"224"} height={"349"} alt={(data||[])[value].title} />
                         </div>
                         <div className="team-position">
-                            <h4>{(BoardOfDirector||[])[value].title}<br/> ({(BoardOfDirector||[])[value].designation})</h4>
+                            <h4>{(data||[])[value].title}<br/> ({(data||[])[value].designation})</h4>
                         </div>
                       </div>
-                      <p>{(BoardOfDirector||[])[value].description}
+                      <p>{(data||[])[value].description}
                       </p>
 
                     </div>
                     
                   </div>
-                  </Modal>
+                  </Modal>:""
+                }
+
+                 
 
                
               </div>
