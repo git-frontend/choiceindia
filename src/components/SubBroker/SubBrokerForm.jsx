@@ -69,7 +69,7 @@ function SubBrokerForm(props) {
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
     const noDataLabel ="City not found. Select 'Other'";
-    
+    const onlyblog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
 
     // console.log(`citiesDropdown : `,citiesDropdown)
 
@@ -844,7 +844,14 @@ function getOTPOnCall(){
     function handleOTPShow() {
         setShowOTP(true);
     }
-
+    useEffect(() => {
+        if(onlyblog){
+            setTimeout(() => {
+                showOpenAccountAdPopup()
+            }, 15000);
+        }
+       
+    }, []);
     return (
         <>
          {

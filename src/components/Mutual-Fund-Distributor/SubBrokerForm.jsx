@@ -64,6 +64,14 @@ function SubBrokerForm(props) {
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '' });
     const [fablesDetailTitleId, setFablesDetailTitleId] = useState(false);
     const [showOpenAccountPopup, setShowOpenAccountPopup] = useState(false);
+    const onlyblog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    useEffect(() => {
+        if(onlyblog){
+            setTimeout(() => {
+                showOpenAccountAdPopup()
+            }, 15000);
+        }   
+    }, []);
     function showOpenAccountAdPopup() {
         // console.log('SHOWW!!!!')
         

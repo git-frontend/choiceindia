@@ -251,7 +251,7 @@ const meta_tags = {
     ` },
 
     "open-free-demat-account": {
-        'title': "Open Free Demat Account Online without Annual Charges at Choice",'lang':"en", 'content': "Open free Demat account online without annual charges for the first year at Choice. Easy paperless online Demat account opening, free expert research, low DP, and brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
+        'title': "Free Demat Account Opening Online with No Annual Charges",'lang':"en", 'content': "Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.", 'link': 'https://choiceindia.com/open-free-demat-account','link1': "https://choiceindia.com/open-free-demat-account",'link2':"https://choiceindia.com/hindi/open-demat-trading-account",'link3':"","link4":"","link5":"https://choiceindia.com/marathi/open-demat-account","link6":"https://choiceindia.com/open-free-demat-account","href1":"en","href2":"hi","href3":"","href4":"","href5":"mr","href6":"x-default",
         "faqscript": `<script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -2156,10 +2156,10 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link":"https://choiceindia.com/stock-broker-in-delhi"
   },
   "digital-lending-partners": {
-    "title":"Digital Lending Partners with Choice Finserv",
+    "title":"Lending Partners with Choice Finserv",
     'lang':"en",
-    'content':"In our portfolio, we're working with digital lending institutions. Visit to view a complete list of our partners for digital lending.",
-    "link":"https://choiceindia.com/digital-lending-partners"
+    'content':"In our portfolio, we're working with lending institutions. Visit to view a complete list of our partners for lending.",
+    "link":"https://choiceindia.com/lending-partners"
   },
   "stock-market-holidays": {
     "title":"Stock Market Holidays 2023 - List of Indian Share Market Holidays",

@@ -62,7 +62,7 @@
             text-align: center;
     
             @media screen and (max-width: $sm) {
-                font-size: 2rem;
+                font-size: 2.5rem;
                 line-height: 1.35;
             }
         }
@@ -125,7 +125,7 @@
             font-size: 1.25rem;
             line-height: 2rem;
             color: $primary;
-            text-align: justify;
+            // text-align: justify;
             position: relative;
             iframe{
                 margin: 2rem 0;
@@ -214,12 +214,24 @@
                     }
                 }
             }
-            h3,h2{
+            h2{
                 padding: 3rem 0 1.5rem 0;
                 font-weight: 700;
                 margin: 0rem;
                 color: $primary;
                 font-size: 2rem;
+                font-family: $font-family-poppins-semibold;
+                text-decoration: none;
+                a{
+                    color: $blueColortext;
+                }
+            }
+            h3{
+                padding: 3rem 0 1.5rem 0;
+                font-weight: 700;
+                margin: 0rem;
+                color: $primary;
+                font-size: 1.725rem;
                 font-family: $font-family-poppins-semibold;
                 text-decoration: none;
                 a{
@@ -345,6 +357,185 @@
             }
         }
 
+
+        .cta-content{
+            background-color: $whiteColor;
+            padding: 2rem 0;
+            @media (max-width:$sm) {
+                background-color: transparent;
+            }
+            .ban-cap {
+                background-color: $blueColortext;
+                margin-bottom: -2.3rem;
+                margin-top: 2rem;
+                @media (max-width:$sm) {
+                    margin-bottom: -5.1rem;
+                    margin-top: 0;
+                    padding-top: 2rem;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    margin: 0;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0 1rem;
+                    position: relative;
+                    @media (max-width:$sm) {
+                        justify-content: center;
+                    }
+                    .ban-item2{
+                        position: relative;
+                        top: -2.8rem;
+                        left: 0;
+                        @media (max-width:$sm) {
+                            top: -1rem;
+                        }
+                    }
+                    li{ 
+                        h2{
+                            color: $whiteColor;
+                            font-size: 2.5rem;
+                            font-family: $font-family-poppins-bold;
+                            padding-bottom:5rem;
+                            @media (max-width:$md) {
+                                padding-bottom:8rem;
+                            }
+                            @media (max-width:$sm) {
+                                padding-top: 1rem;
+                                padding-bottom: 1rem;
+                                text-align: center;
+                            }
+                            img{
+                                @media (max-width:$md) {
+                                    width: 7rem;
+                                }
+                            }
+                        }
+                        .btn{
+                            padding-bottom: 2rem;
+                            @media (max-width:$md) {
+                                padding-bottom: 4rem;
+                            }
+                            @media (max-width:$sm) {
+                                padding-top: 0;
+                                padding-bottom: 0;
+                                position: relative;
+                                top: 17rem;
+                            }
+                            .btn-open{
+                                background: transparent;
+                                border: 1px solid $whiteColor;
+                                border-radius: 5px;
+                                color: $whiteColor;
+                                display: inline-block;
+                                font-weight: bold;
+                                font-size: 1.5rem;
+                                min-width: 6rem;
+                                outline: none;
+                                padding: 0.5rem 1rem;
+                                text-align: center;
+                                text-decoration: none;
+                                @media (max-width:$sm) {
+                                    background: $yellowColor;
+                                    border: 0;
+                                    color: $primary;
+                                }
+                            }
+                        }
+                    }
+                    .w20{
+                        width: 20%;
+                        @media (max-width:$md) {
+                            width: 100%;
+                            position: absolute;
+                            left: 0;
+                            bottom: 0;
+                        }
+                        @media (max-width:$sm) {
+                            position: relative;
+                            text-align: center;
+                        }
+                    }
+                    .w40{
+                        width: 40%;
+                        @media (max-width:$md) {
+                            width: 50%;
+                           }
+                           @media (max-width:$sm) {
+                            width: 100%;
+                           }
+                    }
+                }
+               
+            }
+            .ban-footer{
+                background: $cta-f;
+                padding: 1.3rem 3rem;
+                margin-top: -2.9rem;
+                @media (max-width:$sm) {
+                    padding: 3rem 3rem 10rem;
+                    margin-top: 0.6rem;
+                }
+                ul{
+                    display: flex;
+                    flex-wrap: wrap;
+                    list-style: none;
+                    justify-content: space-between;
+                    padding-left: 1rem;
+                    margin: 0;
+                    li{
+                        color: $whiteColor;
+                        font-size: 1.3rem;
+                        position: relative;
+                        line-height: 1.5;
+                        padding:0 1rem;
+                        @media (max-width:$md) {
+                            padding:0;
+                        }
+                        @media (max-width:$sm) {
+                            padding:0 1rem;
+                            padding-bottom: 1rem;
+                            font-size: 1.4rem;
+                        }
+                        &::before{
+                            background: url(../../assets/images/fable/border-before.svg) no-repeat top center;
+                            content: "";
+                            display: inline-block;
+                            height: 57px;
+                            left: -10%;
+                            position: absolute;
+                            top: -3px;
+                            width: 4px;
+                            @media (max-width:$sm) {
+                                content: "\2022";
+                                color: $yellowColor;
+                                margin-left: -0.5rem;
+                                background: initial;
+                                top: -10px;
+                                font-size: 2.5rem;
+                                left: -5px;
+                            }
+                        }
+                        &:first-child::before{
+                            background: transparent;
+                            display: none;
+                            @media (max-width:$sm) {
+                                display: block;
+                            }
+                        }
+                        span{
+                            font-weight: bold;
+                            display: block;
+                            @media (max-width:$sm) {
+                                display: inline-block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
       
        
     }

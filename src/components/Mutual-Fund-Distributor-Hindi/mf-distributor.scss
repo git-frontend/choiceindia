@@ -65,8 +65,9 @@
             }
         }
         @media (max-width: $sm) {
-            text-align: left !important;
+            // text-align: left !important;
             width: 95%;
+            margin: 0 auto;
 
         }
     }
@@ -109,8 +110,8 @@
                     margin: 0 auto;
                     top: 0;
                     @media (max-width: $sm) {
-                        left: 0;
-                        right: inherit;
+                        // left: 0;
+                        // right: inherit;
                     }
                 }
 
@@ -122,23 +123,26 @@
                 span {
                     font-family: $font-family-poppins-semibold;
                     display: block;
+                    @media (max-width: $sm) {
+                        display: inline-block;
+                    }
                 }
                 @media (max-width: $sm) {
-                    text-align: left;
-                    color: $primary;
-                    padding: 0;
-                    padding-left: 2.8rem;
-                    font-size: 1.5rem;
-                    span{
-                        display: inline;
-                    }
+                    // text-align: left;
+                    // color: $primary;
+                    // padding: 0;
+                    // padding-left: 2.8rem;
+                    // font-size: 1.5rem;
+                    // span{
+                    //     display: inline;
+                    // }
                 }
             }
         }
         @media (max-width: $sm) {
-            background: transparent;
-            width: 95% !important;
-            padding: 0 !important;
+            // background: transparent;
+            // width: 95% !important;
+            // padding: 0 !important;
         }
     }
     
@@ -622,7 +626,7 @@
                     border: 1px solid rgba(37, 184, 175, 0.5);
                     width: 95%;
                     margin: 0 auto;
-                    min-height: 255px;
+                    min-height: 300px;
                 }
             }
 
@@ -708,6 +712,7 @@
                 button {
                     border-color: $bgcolor-green;
                     background-color: $bgcolor-green;
+                    width: 10px;
                 }
             }
         }
@@ -738,7 +743,7 @@
         }
 
         @media (max-width: $md) {
-            width: 31%;
+            width: 35%;
         }
         @media (max-width: $sm) {
             width: 100%;
@@ -747,26 +752,26 @@
             bottom: inherit;
             border-radius: 0;
             margin-top: 40px;
-            &::before{
-                content: '';
-                height: 100%;
-                display: block;
-                background-color: $bgcolor-green;
-                width: 10%;
-                left: -5%;
-                position: absolute;
-                top: 0;
-            }
-            &::after{
-                content: '';
-                height: 100%;
-                display: block;
-                background-color: $bgcolor-green;
-                width: 10%;
-                right: -5%;
-                position: absolute;
-                top: 0;
-            }
+            // &::before{
+            //     content: '';
+            //     height: 100%;
+            //     display: block;
+            //     background-color: $bgcolor-green;
+            //     width: 10%;
+            //     left: -5%;
+            //     position: absolute;
+            //     top: 0;
+            // }
+            // &::after{
+            //     content: '';
+            //     height: 100%;
+            //     display: block;
+            //     background-color: $bgcolor-green;
+            //     width: 10%;
+            //     right: -5%;
+            //     position: absolute;
+            //     top: 0;
+            // }
         }
     }
 
@@ -1311,6 +1316,7 @@
                         background: $bgcolor-green;
                         min-height: 200px;
                         margin-bottom: 2rem;
+                        display: block !important;
                         h3{
                             color: $whiteColor;
                             br{
@@ -2103,8 +2109,8 @@
         .benifits-list {
             .sl-slider.sl-slider-active {
                 .benifits-item {
-                    background: inherit;
-                    box-shadow: inherit;
+                    // background: inherit;
+                    // box-shadow: inherit;
                 }
             }
 
