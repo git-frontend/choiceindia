@@ -71,45 +71,60 @@
         }
     }
     .sticy-card{
-        position: relative;
-        padding: 3rem 4rem 0;
-        &::before{
+       display: none !important;
+        .sticy-card-sub{
+            position: relative;
+            padding: 3rem 4rem;
             background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
-            background-size: contain;
-            top: 0;
-            left: 0;
-            content: '';
-            position: absolute;
-            height: 38rem;
-            width: 40rem;
-            display: block;
-            z-index: -1;
-        }
-        .title-secnd{
-                color: $whiteColor;
-                padding-bottom: 1rem;
-        }
-       ul{
-        list-style: none;
-        padding: 0;
-            li{
-                padding: 1rem 0;
-                .bx-icon{
-                    padding-right: 1rem;
-                }
-                .bx-text{
+            background-size: cover;
+            border-radius: 14px;
+            // &::before{
+                
+            //     background-size: contain;
+            //     top: 0;
+            //     left: 0;
+            //     content: '';
+            //     position: absolute;
+            //     height: 38rem;
+            //     width: 40rem;
+            //     display: block;
+            //     z-index: -1;
+            // }
+            .title-secnd{
                     color: $whiteColor;
-                    font-family: $font-family-poppins-medium;
-                    font-size: 1.5rem;
-                    .fw-regular{
-                        font-family: $font-family-poppins-regular;
+                    padding-bottom: 1rem;
+            }
+           ul{
+            list-style: none;
+            padding: 0;
+                li{
+                    padding: 1rem 0;
+                    .bx-icon{
+                        padding-right: 1rem;
+                    }
+                    .bx-text{
+                        color: $whiteColor;
+                        font-family: $font-family-poppins-medium;
+                        font-size: 1.5rem;
+                        .fw-regular{
+                            font-family: $font-family-poppins-regular;
+                        }
                     }
                 }
+           }
+           .btn-open{
+            padding-top: 2rem;
+           }
+        }
+        &.visibleform{
+            display: flex;
+            justify-content: flex-end;
+            width: 33.33%;
+            .sticy-card-sub{
+                width: 340px;
             }
-       }
-       .btn-open{
-        padding-top: 2rem;
-       }
+        }
+       
     }
 }
 .ipo-details{
@@ -303,5 +318,66 @@
                 }
             }
         }
+    }
+}
+
+.form-sticky{
+    position: sticky;
+    top: 100px;
+    margin-bottom: -586px;
+    .sticy-card-sub{
+        position: relative;
+        padding: 3rem 4rem;
+        background: url(../../assets/images/ipo-landing/card-ipo.webp) no-repeat top center;
+        background-size: cover;
+        border-radius: 14px;
+        margin-top: 100px;
+        width: 40%;
+        transition-duration: 0.6s;
+        // &::before{
+            
+        //     background-size: contain;
+        //     top: 0;
+        //     left: 0;
+        //     content: '';
+        //     position: absolute;
+        //     height: 38rem;
+        //     width: 40rem;
+        //     display: block;
+        //     z-index: -1;
+        // }
+        .title-secnd{
+                color: $whiteColor;
+                padding-bottom: 1rem;
+        }
+       ul{
+        list-style: none;
+        padding: 0;
+            li{
+                padding: 1rem 0;
+                .bx-icon{
+                    padding-right: 1rem;
+                }
+                .bx-text{
+                    color: $whiteColor;
+                    font-family: $font-family-poppins-medium;
+                    font-size: 1.5rem;
+                    .fw-regular{
+                        font-family: $font-family-poppins-regular;
+                    }
+                }
+            }
+       }
+       .btn-open{
+        padding-top: 2rem;
+       }
+    }
+    &.visibleform{
+        .sticy-card-sub{
+            width: 33.33%;
+        }
+    }
+    @media only screen and (max-width: 1399px) {
+        margin-bottom: -513px;
     }
 }

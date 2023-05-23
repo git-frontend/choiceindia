@@ -6,7 +6,7 @@ function IpoDetails() {
   const [show, setshow]=useState(false);
   return (
     <>
-      <section className="ipo-details">
+      <section className="ipo-details" id="showForm">
             <div className="container">
                 <div className="row">
                     <div className="col-md-8">
