@@ -305,3 +305,44 @@
         }
     }
 }
+.investment-opportunity{
+    padding: 8rem 0;
+    background: $primary;
+    .left-sec{
+        .title-first{
+            color: $whiteColor;
+            padding: 0 2rem 3rem 0;
+            .yello-txt{
+                color: $yellowColor;
+            }
+        }
+    }
+    .right-sec{
+        .all-features-list{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .feature-item{
+                margin-bottom: 5rem;
+                width: 45%;
+                img{
+                    height: 76px;
+                }
+                .feature-ttl{
+                    color: $whiteColor;
+                    font-size: 1.8rem;
+                    margin: 2rem 0 1.5rem;
+                    font-family: $font-family-poppins-medium;
+                    line-height: 1.5;
+                    span{
+                        display: block;
+                        font-family: $font-family-poppins-regular;
+                    }
+                }
+                p{
+                    color: $whiteColor;
+                }
+            }
+        }
+    }
+}
