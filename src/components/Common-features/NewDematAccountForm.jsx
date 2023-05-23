@@ -113,6 +113,7 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
+     
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
@@ -263,7 +264,7 @@ function NewDematAccountForm(props) {
     }
 
     function sendNewLeadOTP() {
-        // showLoader('sendOTPLoader');
+        showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
             "product": "FINX",

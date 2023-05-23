@@ -92,10 +92,16 @@
         }
         .sendbtn{
             width: 100%;
+			position: relative;
+			min-height: 5rem;
             &:hover{
                 background: $primary !important;
                 color: $whiteColor !important;
             }
+			.loaderB{
+				width: 20px;
+				height: 20px;
+			}
         }
 		.valid-ss{
 			width: 100%;
@@ -781,3 +787,7 @@
 			font-size: 0.8rem;
 		}
 	}
+
+.banner-sect{
+	overflow: hidden;
+}
