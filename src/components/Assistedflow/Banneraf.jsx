@@ -4,6 +4,8 @@ import LazyLoader from "../Common-features/LazyLoader";
 import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import Redirect from "../../assets/images/aof/redirect-arrow.gif";
 import ThumbUp from "../../assets/images/aof/thumb-up.gif";
+import {faClose} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   BrowserRouter as Router,
   Link,
@@ -664,6 +666,10 @@ function Banneraf() {
       setShowToast(() => false);
     }, 2000);
   }
+  
+  function closesection(){
+    setIsShown2(false)
+  }
 
   return (
     <>
@@ -785,6 +791,8 @@ function Banneraf() {
                         <>
                           <div className="otpsec">
                             <div className="resdiv">
+                            <button className="closebtn cursor-pointer" onClick={() => { closesection() }} ><FontAwesomeIcon icon={faClose} /></button>
+
                               <div className="otpmodal">
                                 <p className="otptext">
                                   Enter One Time
