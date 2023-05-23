@@ -5,8 +5,8 @@
     padding: 7rem 0;
     position: relative;
     .btn-open{
-        padding-bottom: 3rem;
         @media (max-width:$sm) {
+            padding-bottom: 3rem;
             text-align: center;
         }
         .btn-bg{
@@ -18,6 +18,9 @@
     .trading-banner-caption{
         .big-ttl{
             margin-bottom: 4rem;
+            @media (max-width:$md) {
+                margin-bottom: 2rem;
+             }
             span{
                 color: $bgcolor-yellow;
             }
@@ -66,11 +69,11 @@
                         margin-bottom: 5px;
                         @media (max-width:$md) {
                             padding: 1rem;
-                            text-align: center;
-                            width: 86% !important;
+                            width: 100% !important;
                         }
                         @media (max-width:$sm) {
-                            padding: 1rem;
+                            width: 90% !important;
+                            text-align: center;
                         }
                         .carditem-option-img {
                             min-height: 6rem;
@@ -365,7 +368,7 @@
                     }
                 }
                 @media (max-width:$sm) {
-                    top: 47rem;
+                    top: 45rem;
                     left: 26%;
                    position: relative;
                 }
@@ -464,7 +467,10 @@
 }
 
 .open-Demat-sec{
-    padding: 6rem 0;
+    padding: 6rem 0 10rem 0;
+    @media (max-width:$sm) {
+        padding: 6rem 0 8rem 0;
+    }
     .btn-open{
         .btn-bg{
             &:hover{
@@ -493,6 +499,9 @@
         flex-wrap: wrap;
         .open-percent-item{
             width: 19%;
+            @media (max-width:$md) {
+                width: 22%;
+            }
             @media (max-width:$sm) {
                 width: 100%;
             }
@@ -521,9 +530,9 @@
                         font-size:1.5rem ;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5;
-                        @media (max-width:$md) {
-                            font-size: 1.3rem ;
-                        }
+                        // @media (max-width:$md) {
+                        //     font-size: 1.3rem ;
+                        // }
                         br{
                             @media (max-width:$sm) {
                                 display: none;

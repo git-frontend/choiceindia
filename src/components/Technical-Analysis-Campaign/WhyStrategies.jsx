@@ -104,24 +104,24 @@ function WhyStrategies() {
                             <p>Our experts have created ready to use strategies for you to get started with your custom strategies.</p>
                         </div>
                         <div className="app-list-item">
-                            <img src={Image2} alt="Unlimited Backtests" className="img-fluid"  width={"100"} height={"100"}/>
-                            <h3>Unlimited Backtests</h3>
-                            <p>Backtest and optimize your strategies without any capping on the number of backtests.</p>
-                        </div>
-                        <div className="app-list-item">
                             <img src={Image3} alt="Timely Alerts on Your Virtual & Live Trades" className="img-fluid"  width={"100"} height={"100"}/>
                             <h3>Timely alerts on your Virtual & Live trades</h3>
                             <p>Get timely alerts as and when your trades are triggered.</p>
                         </div>
                         <div className="app-list-item">
-                            <img src={Image4} alt="In-Built Charting Tool" className="img-fluid"  width={"100"} height={"100"}/>
-                            <h3>In-built Charting tool</h3>
-                            <p>In Charting tool to visualize your strategy & trades.</p>
-                        </div>
-                        <div className="app-list-item">
                             <img src={Image5} alt="No Coding Skills Required" className="img-fluid"  width={"100"} height={"100"}/>
                             <h3>No Coding Skills required</h3>
                             <p>Stratezy is the easiest tool to build your own trading strategies without any coding skills.</p>
+                        </div>
+                        <div className="app-list-item">
+                            <img src={Image2} alt="Unlimited Backtests" className="img-fluid"  width={"100"} height={"100"}/>
+                            <h3>Unlimited Backtests</h3>
+                            <p>Backtest and optimize your strategies without any capping on the number of backtests.</p>
+                        </div>
+                        <div className="app-list-item">
+                            <img src={Image4} alt="In-Built Charting Tool" className="img-fluid"  width={"100"} height={"100"}/>
+                            <h3>In-built Charting tool</h3>
+                            <p>In Charting tool to visualize your strategy & trades.</p>
                         </div>
                     </Slider>
                   </div>

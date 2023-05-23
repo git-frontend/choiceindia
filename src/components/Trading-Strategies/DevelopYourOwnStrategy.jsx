@@ -81,7 +81,7 @@ function DevelopYourOwnStrategy() {
                 </div>
                 <div className='col-md-6'>
                     <div className="video-height">
-                          <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" frameborder="0" allowfullscreen className="video-width"></iframe>
+                          <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" allow="fullscreen;"  allowfullscreen="true" className="video-width"></iframe>
                     </div>
                 </div>
               </div>

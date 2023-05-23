@@ -51,7 +51,7 @@ function Banner() {
                     <div className="trading-banner-caption">
                         <h1 className="big-ttl">क्या आपकी टेक्निकल अनॅलिसिस <br/>स्कील्स नहीं  देते हैं रिटर्न्स ?</h1>
                        <p className="para">अपने पैसे न गवाइए, 5 मिनट में अपनी खुद की स्ट्रेटेजी बनाएं, उच्च लाभदायक स्ट्रेटेजी विकसित करें</p>
-                       <div class="btn-open"><a onClick={()=>{chapterScroll2('dematform')}} class="cursor-pointer"><span class="btn-bg">स्ट्रेटेजी बनाएं</span></a></div>
+                       <div class="btn-open"><a onClick={()=>{chapterScroll2('showForm')}} class="cursor-pointer"><span class="btn-bg">स्ट्रेटेजी बनाएं</span></a></div>
                     </div>
                 </div>
                 <div className="col-xl-4 col-md-5">
