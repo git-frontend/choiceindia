@@ -1,6 +1,9 @@
 
 import React, { useState,useEffect } from "react";
 import Bannerimage from '../../assets/images/fabledetails/choice-blog-default.png';
+import ctaBanner from '../../assets/images/fable/cta-banner.png';
+import Free from '../../assets/images/fable/free.png';
+
 // import twitterone from '../../assets/images/fabledetails/twitterone.png';
 // import twittertwo from '../../assets/images/fabledetails/twittertwo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -111,12 +114,51 @@ function Fabdetailsbanner(props) {
                                     } */}
                                     {/* <img src={Bannerimage} className="img-fluid" alt="Loading" /> */}
                                     {/* <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title} /> */}
-                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title || 'Choice Blog'} height={484} width={860} />
+                                    <img src={props.single_data[0].feature_image || Bannerimage} className="img-fluid" alt={props.single_data[0].title || 'Choice Blog'} width={860} height={484}/>
                                 </div>
                                 <div className="row">
                             <div className="col-md-11">
 
                                 <div className="textwrap" dangerouslySetInnerHTML={createMarkup()} />
+
+                                {/* <div className="cta-content">
+                                    <div className="ban-cap">
+                                        <ul>
+                                            <li className="w40">
+                                                <h2>Open a <span>
+                                                <img src={Free} alt="" height={45} width={116} className="img-fluid"/>
+                                                </span><br/>Demat Account in</h2>
+                                            </li>
+                                            <li className="w40">
+                                                <div className="ban-item2">
+                                                    <img src={ctaBanner} alt="" height={212} width={315} className="img-fluid"/>
+                                                </div>
+                                            </li>
+                                            <li className="w20">
+                                                <div className="btn">
+                                                    <a className="btn-open">Open Now</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div className="ban-footer">
+                                        <ul>
+                                            <li>
+                                                <span>Free AMC</span> for First Year
+                                            </li>
+                                            <li>
+                                                <span>No Auto Square</span> <strong>Off</strong> Charges
+                                            </li>
+                                            <li>
+                                                <span>Low DP Charges</span> (₹10)
+                                            </li>
+                                            <li>
+                                                <span>Free Research</span> Advisory
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div> */}
+                              
                             </div>
                             
                             <div className="col-md-1">

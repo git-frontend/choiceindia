@@ -210,11 +210,11 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         <>
         {
             showOpenAccountPopup ?
-            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay">
+            <div className="exit-intent-sleekbox-overlay sleekbox-popup-active otp-main-modal demat-modal-sleekbox-overlay show-res">
                 <div className="exit-intent-sleekbox-popup">
-                {/* <div className="close">
-                            <Link to="" class="closebtn" >&times;</Link>
-                            </div> */}
+                    <div className="close">
+                        <a onClick={hideComponent} class="closebtn cursor-pointer" >&times;</a>
+                    </div>
                     <div className="popup-sub-row">
                         <div className="leftwrap">
                             <div className="popup-sub">
@@ -226,7 +226,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
                                     <li> <span>Zero Auto Square Off </span>Charges</li>
                                     <li><span>Free Call</span>  for Trade Facility</li>
                                 </ul>
-                                <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
+                                {/* <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p> */}
                             </div>
                         </div>
                         <div className="popup-sub-right">

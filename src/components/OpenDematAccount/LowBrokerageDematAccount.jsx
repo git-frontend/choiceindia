@@ -33,9 +33,9 @@ function LowBrokerageDematAccount() {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 1,
-                    dots:false,
+                    dots:true,
                     autoplay: true,
-                    speed: 5000,
+                    speed: 1500,
                 },
             },
         ],

@@ -757,7 +757,7 @@ function Routing() {
                             </React.Suspense>
                         } />
                         
-                         <Route exact path='/digital-lending-partners' element={
+                         <Route exact path='/lending-partners' element={
                             <React.Suspense>
                                 < LazyDigitalLendingBanner />
                             </React.Suspense>

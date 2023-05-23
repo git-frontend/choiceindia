@@ -204,6 +204,11 @@
 
 		@media (max-width:$sm) {
 			display: block !important;
+			left: 0;
+			right: 0;
+			text-align: center;
+			position: relative;
+			margin-top: 20px;
 		}
 
 		@media (min-width:$sm) and (max-width:768px) {
@@ -266,6 +271,8 @@
 		@media (max-width:$sm) {
 			width: 90%;
 			margin: 0 auto;
+			background-color: $whiteColor;
+			border: 1px solid transparent;
 
 		}
 
@@ -683,6 +690,11 @@
 				font-weight: 500;
 			}
 
+		}
+	}
+	.slick-slider{
+		.slick-dots{
+			position: relative;
 		}
 	}
 }
