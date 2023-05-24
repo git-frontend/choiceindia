@@ -63,7 +63,7 @@ function OurTrackRecordSaysAll() {
       .then(res => {
         if (res.Status == 'Success') {
           IntraStocks(res.Response);
-          // setData1(res.Response);
+          setData1(res.Response);
         } else {
           IntraStocks([])
         }
@@ -357,7 +357,7 @@ function OurTrackRecordSaysAll() {
                                                     <div><h4 className="big-text">{response?.Sym}</h4>
                                                       <span className="small-text">{response?.Name}</span></div>
                                                     :
-                                                    <div> <h4 className="big-text">{response?.scrip_name}</h4>
+                                                    <div> <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
                                                       <span className="small-text">{response?.scrip_s_expiry}</span></div>
                                                 }
                                               </div>
@@ -936,7 +936,7 @@ function OurTrackRecordSaysAll() {
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
 
-                      {/* {
+                      {
                             view && !view.matches ?
 
                               <Slider {...settings} className='awarded-card'>
