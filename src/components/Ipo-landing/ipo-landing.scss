@@ -47,7 +47,7 @@
         box-shadow: 0px 0px 15px 1px $lightgray;
         border-radius: 20px;
         position: relative;
-        margin-top: 5rem;
+        margin-top: 4.1rem;
         @media (max-width:$sm) {
             margin-top: 3rem;
         }
@@ -435,7 +435,7 @@
 }
 .investment-opportunity{
     padding: 8rem 0 3rem;
-    background: $primary;
+    background: $darkblack;
     position: relative;
     @media (max-width:$sm) {
         padding: 5rem 0 3rem;
@@ -502,7 +502,7 @@
         background-size: cover;
         border-radius: 14px;
         margin-top: 100px;
-        width: 38%;
+        width: 40%;
         transition-duration: 0.6s;
         .title-secnd{
             color: $whiteColor;
@@ -723,6 +723,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 0 2rem;
+        margin-top: 4.5rem;
         .sub-l1{
             width: 18%;
             display: flex;
@@ -848,8 +849,14 @@
           }
           .paid {
            
-            background-color: #00AE6F;
+            
             border-color: transparent;
+            &.profit{
+                background-color: #00AE6F;
+            }
+            &.loss{
+                background-color: #EF404A;
+            }
           }
           &.q-graph-loss{
             tbody {

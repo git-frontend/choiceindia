@@ -38,7 +38,7 @@ function Revenue(){
                                       </tr>
                                       <tr className='qtr' id="q3">
                                           <td className='sent bar'  style={{height:"70.18%"}}><p>+7.18</p></td>
-                                          <td className='paid bar profit' style={{height:"0"}}><p style={{display:"none"}}>0</p></td>
+                                          <td className='paid bar loss' style={{height:"6.1%"}}><p>-0.61</p></td>
                                       </tr>
                                       <tr className='qtr' id="q4">
                                           <td className='sent bar'  style={{height:"80.91%"}}><p>+8.91</p></td>
@@ -56,25 +56,6 @@ function Revenue(){
                                   <div className='tick' ><p>2</p></div>
                                   <div className='tick' ><p>0</p></div>
                               </div>
-
-                              
-
-                              <table className='q-graph q-graph-loss'>
-                                  <tbody>
-                                      <tr className='qtr' id="q1">
-                                          <td className='paid bar loss' style={{height:"0"}}><p style={{display:"none"}}>0</p></td>
-                                      </tr>
-                                      <tr className='qtr' id="q2">
-                                          <td className='paid bar loss' style={{height:"0"}}><p style={{display:"none"}}>0</p></td>
-                                      </tr>
-                                      <tr className='qtr' id="q3" >
-                                          <td className='paid bar loss' style={{height:"6.1%"}}><p>-0.61</p></td>
-                                      </tr>
-                                      <tr className='qtr' id="q4">
-                                        <td className='paid bar loss' style={{height:"0"}}><p style={{display:"none"}}>0</p></td>
-                                      </tr>
-                                  </tbody>
-                              </table>
                               <div className='for-date'>
                                     <div className='sub-l1'>
                                         2020
