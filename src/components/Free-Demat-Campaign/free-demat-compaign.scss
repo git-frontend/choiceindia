@@ -72,8 +72,11 @@
             padding-top: 6rem;
             .campaign-features-list {
                 width: 29%;
-                text-align: center;
+                text-align: left;
                 position: relative;
+                @media (max-width:$sm) {
+                    text-align: center;
+                }
                 .campaign-img{
                     img{
                         height: 85px;
@@ -87,7 +90,7 @@
                         height: 8rem;
                         display: block;
                         position: absolute;
-                        left: 3rem;
+                        left: 0rem;
                         top: -2rem;
                         background: url(../../assets/images/free-demat-compaign/bg-circle.svg) no-repeat top left;
                         background-size: contain;
@@ -98,6 +101,7 @@
                         @media (max-width:$sm) {
                             width: 7rem;
                             height: 7rem;
+                            
                         }
                     }
                     @media (max-width:$sm) {
