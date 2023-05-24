@@ -37,7 +37,7 @@ function OurTrackRecordSaysAll() {
     speed: 1500,
     arrows: false,
     slidesToShow: 1,
-    autoplay: false,
+    autoplay: true,
     dots: true,
     autoplaySpeed: 3000,
     slidesToScroll: 1,
@@ -233,7 +233,7 @@ function OurTrackRecordSaysAll() {
               if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
 
                 res.Response.lMT.forEach((ele, index) => {
-                    console.log("ele",ele)
+                  console.log("ele", ele)
                   ele['LTP'] = ele['LTP'] / 100;
                   ele.PrevClose = ele.PC / 100;
                   ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
@@ -317,23 +317,16 @@ function OurTrackRecordSaysAll() {
                   className="content">
                   <div className="row d-flex justify-content-center">
                     <div className="col-md-12">
-                      <div>
-                        {showLoader ?
 
-                          <div className="text-center">
-                            <div>
-                              {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
-                              <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
-                            </div>
-                          </div> :
+
+                      {
+                        view && !view.matches ?
                           <div>
                             {
                               list && list.length ?
-                                <div className="row gx-5">
+                                <Slider {...settings} className='awarded-card'>
                                   {
                                     (list || []).slice(0, 4).map((response, index) => {
-
-
                                       return (
                                         <div className="col-xl-6" key={index}>
                                           <div className="main-left">
@@ -347,8 +340,14 @@ function OurTrackRecordSaysAll() {
                                                     <div><h6 className="top-date">{(response?.updated_datetime)}</h6></div>
                                                 }
                                               </div>
+                                              {
+                                                toggleState == 1 ?
+                                                  <div className="top-right"><button className={"btn-buy " + ((response.Side == "S") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                  :
+                                                  <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                              }
 
-                                              <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+
                                             </div>
                                             <div className="middle-section">
                                               <div className="middle-left">
@@ -362,7 +361,7 @@ function OurTrackRecordSaysAll() {
                                                 }
                                               </div>
                                               <div className="middle-right">
-                                                <span className="right-big-text">{response?.LTP}</span>
+                                                <span className="right-big-text">{(response?.LTP).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
                                                 <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
                                               </div>
                                             </div>
@@ -405,13 +404,13 @@ function OurTrackRecordSaysAll() {
                                                     <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                                   </div>
                                                   {/* <div className="bottom">
-                                                <h6 className="bottom_small_text">2nd Target Price</h6>
-                                                <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
-                                              </div>
-                                              <div className="bottom">
-                                                <h6 className="bottom_small_text">3rd Target Price</h6>
-                                                <h4 className="bottom_big_text">-</h4>
-                                              </div> */}
+                                              <h6 className="bottom_small_text">2nd Target Price</h6>
+                                              <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                            </div>
+                                            <div className="bottom">
+                                              <h6 className="bottom_small_text">3rd Target Price</h6>
+                                              <h4 className="bottom_big_text">-</h4>
+                                            </div> */}
                                                 </div>
                                             }
 
@@ -420,7 +419,122 @@ function OurTrackRecordSaysAll() {
                                       )
                                     })
                                   }
-                                  {/* <div className="col-xl-6">
+                                </Slider>
+                                : <div className="text-center">
+                                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                </div>}
+                          </div>
+
+                          :
+                          <div>
+                            {showLoader ?
+
+                              <div className="text-center">
+                                <div>
+                                  {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                                  <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
+                                </div>
+                              </div> :
+                              <div>
+                                {
+                                  list && list.length ?
+                                    <div className="row gx-5">
+                                      {
+                                        (list || []).slice(0, 4).map((response, index) => {
+
+
+                                          return (
+                                            <div className="col-xl-6" key={index}>
+                                              <div className="main-left">
+                                                <div className="top-section">
+                                                  <div className="top-left">
+                                                    <h6 className="top-text">Stop Loss</h6>
+                                                    {
+                                                      toggleState == 1 ?
+                                                        <div><h6 className="top-date">{(response?.published_date)}</h6></div>
+                                                        :
+                                                        <div><h6 className="top-date">{(response?.updated_datetime)}</h6></div>
+                                                    }
+                                                  </div>
+
+                                                  {
+                                                    toggleState == 1 ?
+                                                      <div className="top-right"><button className={"btn-buy " + ((response.Side == "S") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                      :
+                                                      <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                  }
+                                                </div>
+                                                <div className="middle-section">
+                                                  <div className="middle-left">
+                                                    {
+                                                      toggleState == 1 ?
+                                                        <div><h4 className="big-text">{response?.Sym}</h4>
+                                                          <span className="small-text">{response?.Name}</span></div>
+                                                        :
+                                                        <div> <h4 className="big-text">{(response?.scrip_name).replace(/(\|\d{2}[A-Z]{3}\d{2})/, '')}</h4>
+                                                          <span className="small-text">{response?.scrip_s_expiry}</span></div>
+                                                    }
+                                                  </div>
+                                                  <div className="middle-right">
+                                                    <span className="right-big-text">{response?.LTP}</span>
+                                                    <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                                  </div>
+                                                </div>
+                                                {
+                                                  toggleState == 1 ?
+                                                    <div className="bottom-section">
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Stop Loss</h6>
+                                                        <h4 className="bottom_big_text">{((response?.SL / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Entry Price</h6>
+                                                        <h4 className="bottom_big_text" >{((response?.EP / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Target Price</h6>
+                                                        <h4 className="bottom_big_text">{((response?.TP1 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">2nd Target Price</h6>
+                                                        <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">3rd Target Price</h6>
+                                                        <h4 className="bottom_big_text">-</h4>
+                                                      </div>
+                                                    </div>
+                                                    :
+                                                    <div className="bottom-section">
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Stop Loss</h6>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Entry Price</h6>
+                                                        <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      <div className="bottom">
+                                                        <h6 className="bottom_small_text">Target Price</h6>
+                                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                                      </div>
+                                                      {/* <div className="bottom">
+                                                <h6 className="bottom_small_text">2nd Target Price</h6>
+                                                <h4 className="bottom_big_text">{((response?.TP2 / 100).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                              </div>
+                                              <div className="bottom">
+                                                <h6 className="bottom_small_text">3rd Target Price</h6>
+                                                <h4 className="bottom_big_text">-</h4>
+                                              </div> */}
+                                                    </div>
+                                                }
+
+                                              </div>
+                                            </div>
+                                          )
+                                        })
+                                      }
+                                      {/* <div className="col-xl-6">
                                 <div className="main-left">
                                   <div className="top-section">
                                     <div className="top-left">
@@ -552,199 +666,16 @@ function OurTrackRecordSaysAll() {
                                   </div>
                                 </div>
                               </div> */}
-                                </div>
-                                :
-                                <div className="text-center">
-                                  <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
-                                </div>
+                                    </div>
+                                    :
+                                    <div className="text-center">
+                                      <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                                    </div>
+                                }
+                              </div>
                             }
-                          </div>
-                        }
 
-                      </div>
-                      {/*                       
-                          {
-                            view && !view.matches ?
-
-                              <Slider {...settings} className='awarded-card'>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy">buy</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">JUPL</h4>
-                                        <span className="small-text">UPL LIMITED</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy sellbtn">Sell</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">NAVINFLOUR</h4>
-                                        <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy  sellbtn">Sell</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">NAVINFLOUR</h4>
-                                        <span className="small-text">NAVIN FLOURINE INT. LTD.</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-xl-6">
-                                  <div className="main-left">
-                                    <div className="top-section">
-                                      <div className="top-left">
-                                        <h6 className="top-text">Stop Loss</h6>
-                                        <h6 className="top-date">17 March’23</h6>
-                                      </div>
-                                      <div className="top-right"><button className="btn-buy">buy</button></div>
-                                    </div>
-                                    <div className="middle-section">
-                                      <div className="middle-left">
-                                        <h4 className="big-text">JUPL</h4>
-                                        <span className="small-text">UPL LIMITED</span>
-                                      </div>
-                                      <div className="middle-right">
-                                        <span className="right-big-text">715.65</span>
-                                        <h6 className="right-small-text text_color">19.25(2.76%)</h6>
-                                      </div>
-                                    </div>
-
-                                    <div className="bottom-section">
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Stop Loss</h6>
-                                          <h4 className="bottom_big_text">697.40</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Entry Price</h6>
-                                          <h4 className="bottom_big_text" >704.00</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">Target Price</h6>
-                                          <h4 className="bottom_big_text">713.90</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">2nd Target Price</h6>
-                                          <h4 className="bottom_big_text">720.55</h4>
-                                        </div>
-                                        <div className="bottom">
-                                          <h6 className="bottom_small_text">3rd Target Price</h6>
-                                          <h4 className="bottom_big_text">--</h4>
-                                        </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </Slider> */}
-
+                          </div>}
 
                       {/* : */}
                       {/* // <div className="row gx-5">
