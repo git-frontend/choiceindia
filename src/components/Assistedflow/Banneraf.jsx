@@ -810,14 +810,15 @@ function Banneraf() {
                                 </p>
                                     {
                                         userDetails.subId ? 
-                                            <p className="subtext">
-                                                Code sent to your registered
-                                                mobile number +91 {mobileNumber}
-                                            </p> :
-                                            <p className="subtext">
-                                                Code sent to client’s registered
-                                                mobile number +91 {mobileNumber}
-                                            </p>
+                                          <p className="subtext">
+                                            Code sent to client’s registered
+                                            mobile number +91 {mobileNumber}
+                                          </p>
+                                          :
+                                          <p className="subtext">
+                                            Code sent to your registered
+                                            mobile number +91 {mobileNumber}
+                                          </p> 
                                     }                      
 
       
