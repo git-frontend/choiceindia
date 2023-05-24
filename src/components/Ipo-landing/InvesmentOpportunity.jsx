@@ -17,9 +17,9 @@ function InvesmentOpportunity() {
 			infinite: true,
 			speed: 1500,
 			arrows: false,
-			slidesToShow: 1,
+			slidesToShow: 2,
 			autoplay: true,
-			dots: true,
+			dots: false,
 			autoplaySpeed: 3000,
 			slidesToScroll: 1,
 
@@ -42,7 +42,9 @@ function InvesmentOpportunity() {
                     <div className='col-md-6'>
                         <div className='left-sec'>
                             <h2 className='title-first'><span className='yello-txt'>Don’t Miss</span> the Investment <span className='yello-txt'>Opportunity</span> in Bajaj Energy IPO?</h2>
-                            <button className="btn-bg btn-bg-dark">Open Free Account</button>
+                            <div className='btn-open'>
+                                <button className="btn-bg btn-bg-dark">Open Free Account</button>
+                            </div>
                         </div>
                     </div>
                     <div className='col-md-6'>

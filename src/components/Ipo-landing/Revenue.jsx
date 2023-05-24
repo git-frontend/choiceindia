@@ -32,7 +32,7 @@ function Revenue(){
             <div className='row'>
                 <div className='col-md-8'>
                     <div>
-                        <h2 className='title-first'>Bajaj Energy <span>IPO Lot Size</span></h2>
+                        <h2 className='title-first'>Bajaj Energy <span>IPO Dates</span></h2>
                     </div>
                     <div className="ipo-dates-table">
                         <table className='table table-striped2'>
