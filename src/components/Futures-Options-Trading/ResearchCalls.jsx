@@ -17,7 +17,7 @@ function ResearchCalls() {
   const [Data1, setData1] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [view, setView] = useState({
-    matches: window.innerWidth < 767 ? false : true,
+    matches: window.innerWidth < 768 ? false : true,
   });
   let tokenList = [{}]
   let multiValue = [];
@@ -191,6 +191,12 @@ function ResearchCalls() {
 
     }
   }, [trigger])
+  useEffect(() => {
+    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    mediaQuery.addListener(setView);
+    // this is the cleanup function to remove the listener
+    return () => mediaQuery.removeListener(setView);
+  }, [])
   return (
     <>
       <section className="research-calls main-parent" id="showForm">

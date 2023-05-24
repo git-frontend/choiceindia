@@ -22,7 +22,7 @@ function ResearchCalls() {
   let tokens = "";
   let storefile;
   const [view, setView] = useState({
-    matches: window.innerWidth < 767 ? false : true,
+    matches: window.innerWidth < 768 ? false : true,
   });
   function FandOstocks() {
     // setToggleState(2)
@@ -191,6 +191,12 @@ function ResearchCalls() {
     ]
 
 };
+useEffect(() => {
+  let mediaQuery = window.matchMedia("(min-width: 770px)");
+  mediaQuery.addListener(setView);
+  // this is the cleanup function to remove the listener
+  return () => mediaQuery.removeListener(setView);
+}, [])
     return (
         <>
             <section className="research-calls main-parent" id="showForm">

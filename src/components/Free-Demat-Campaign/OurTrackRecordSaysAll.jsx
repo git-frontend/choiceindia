@@ -27,7 +27,7 @@ function OurTrackRecordSaysAll() {
   };
 
   const [view, setView] = useState({
-    matches: window.innerWidth < 767 ? false : true,
+    matches: window.innerWidth < 768 ? false : true,
   });
 
 
@@ -289,6 +289,12 @@ function OurTrackRecordSaysAll() {
 
     }
   }, [rendercount])
+  useEffect(() => {
+    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    mediaQuery.addListener(setView);
+    // this is the cleanup function to remove the listener
+    return () => mediaQuery.removeListener(setView);
+  }, [])
   return (
     <div>
       <div>
