@@ -22,7 +22,52 @@ function Revenue(){
                                 <span className='value-all'>All value in ₹ Lakh cr.</span>
                             </div>
                         </div>
+                        <div className='chart-custom'>
+                              <table id="q-graph">
+                                  <tbody>
+                                      <tr className='qtr' id="q1">
+                                          <th scope="row">2020</th>
+                                          <td className='sent bar'><p>+6.11</p></td>
+                                          <td className='paid bar' ><p>+0.39</p></td>
+                                      </tr>
+                                      <tr className='qtr' id="q2">
+                                          <th scope="row">2021</th>
+                                          <td className='sent bar'><p>+6.11</p></td>
+                                          <td className='paid bar' ><p>+0.39</p></td>
+                                      </tr>
+                                      <tr className='qtr' id="q3">
+                                          <th scope="row">2022</th>
+                                          <td className='sent bar'><p>+6.11</p></td>
+                                          <td className='paid bar' ><p>+0.39</p></td>
+                                      </tr>
+                                      <tr className='qtr' id="q4">
+                                          <th scope="row">2023</th>
+                                          <td className='sent bar'><p>+6.11</p></td>
+                                          <td className='paid bar' ><p>+0.39</p></td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+
+                              <div className='ticks'>
+                                  <div className='tick' ><p>10</p></div>
+                                  <div className='tick' ><p>8</p></div>
+                                  <div className='tick' ><p>6</p></div>
+                                  <div className='tick' ><p>4</p></div>
+                                  <div className='tick' ><p>2</p></div>
+                                  <div className='tick' ><p>0</p></div>
+                              </div>
+                              <div className='ticks ticks-bottom'>
+                                  <div className='tick' ><p>10</p></div>
+                                  <div className='tick' ><p>8</p></div>
+                                  <div className='tick' ><p>6</p></div>
+                                  <div className='tick' ><p>4</p></div>
+                                  <div className='tick' ><p>2</p></div>
+                                  <div className='tick' ><p>0</p></div>
+                              </div>
+                          </div>
                     </div>
+
+                          
             </div>
         </div>
         </div>
