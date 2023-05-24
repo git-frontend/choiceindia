@@ -613,7 +613,7 @@ function Banneraf() {
       status: "payment_pending",
       order_date: "",
       payment_type: "Cash",
-      link: "",
+      link: paymntLink,
       action_by: "",
     };
 
