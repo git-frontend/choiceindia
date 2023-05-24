@@ -12,7 +12,7 @@ import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function ResearchCalls() {
   const [list, setlist] = useState();
   const [showLoader, setShowLoader] = useState(false);
-  const [rendercount, setRenderCount] = useState(() => false);
+  const [trigger, setTrigger] = useState(false);
   
   const [Data1, setData1] = useState();
   const [checkdevice, setcheckdevice] = useState();
@@ -166,8 +166,12 @@ function ResearchCalls() {
       })
   }
   useEffect(() => {
-    FandOstocks();
-    setRenderCount(true)
+    
+    setTrigger(true)
+
+        if (trigger === true) {
+          FandOstocks();
+        }
     if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
 
       setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
@@ -183,7 +187,7 @@ function ResearchCalls() {
       setcheckdevice('https://finx.choiceindia.com/auth/login')
 
     }
-  }, [rendercount])
+  }, [trigger])
   return (
     <>
       <section className="research-calls main-parent" id="showForm">
@@ -194,7 +198,6 @@ function ResearchCalls() {
               showLoader ?
                 <div className="text-center">
                   <div>
-                    {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
                     <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
                   </div>
                 </div> :
@@ -204,7 +207,7 @@ function ResearchCalls() {
                       <div className="row gx-5">
                         {
                           (list || []).slice(0, 2).map((response, index) => {
-                            console.log("ff", response)
+                          
                             return (
                               <div className="calls-tab-item col-xl-6" key={index}>
                                 <div className="main-left" >
@@ -213,7 +216,7 @@ function ResearchCalls() {
                                       <h6 className="top-text">Reco Date</h6>
                                       <h6 className="top-date">{(response?.updated_datetime)}</h6>
                                     </div>
-                                    <div className="top-right"><button className={"btn-buy " + ((response.call_type == "SELL") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                    <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : "buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                   </div>
                                   <div className="middle-section">
                                     <div className="middle-left">
@@ -221,24 +224,24 @@ function ResearchCalls() {
                                       <span className="small-text">{response?.scrip_s_expiry}</span>
                                     </div>
                                     <div className="middle-right">
-                                      <span className="right-big-text">165.65</span>
-                                      <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                                      <span className="right-big-text">{(response?.LTP).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
+                                      <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
                                     </div>
                                   </div>
 
                                   <div className="bottom-section">
                                     <div className="d-flex justify-content-between pt-3">
                                       <div className="bottom fandores">
+                                        <h6 className="bottom_small_text">Stop Loss</h6>
+                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                      </div>
+                                      <div className="bottom fandores">
                                         <h6 className="bottom_small_text">Entry Price</h6>
-                                        <h4 className="bottom_big_text">165.00</h4>
+                                        <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                       </div>
                                       <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Potential Price</h6>
-                                        <h4 className="bottom_big_text" >182.00</h4>
-                                      </div>
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Exp. Returns</h6>
-                                        <h4 className="bottom_big_text">15 Nov, 2023</h4>
+                                        <h6 className="bottom_small_text">Target Price</h6>
+                                        <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                       </div>
                                     </div>
                                   </div>
