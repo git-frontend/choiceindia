@@ -799,7 +799,7 @@
                 height: 214px;
                 padding-top: 2px;
                 border-right: 0;
-                color: #AAA;
+                color: $trcolor;
                 display: flex;
                 align-items: flex-end;
                 justify-content: space-between;
@@ -808,7 +808,7 @@
                 bottom: -1.75em;
                 vertical-align: top;
                 font-weight: normal;
-                color: #333;
+                color: $tcolor;
             }
           
           }
@@ -829,7 +829,7 @@
             width: 49.55%;
             border: 0;
             border-bottom: none;
-            color: #000;
+            color: $primary;
             position: relative;
             p {
                 margin: 0;
@@ -843,13 +843,13 @@
               }
           }
           .sent {
-            
-            background-color: #004393;
+            background-color: $pricolor;
             border-color: transparent;
           }
           .paid {
            
             
+            background-color: $pluscolor;
             border-color: transparent;
             &.profit{
                 background-color: #00AE6F;
@@ -871,7 +871,7 @@
                     }
                 }
                 .loss{
-                    background: #EF404A;
+                    background: $redbg;
                 }
             }
           }
@@ -888,7 +888,7 @@
         font-family: "fira-sans-2", Verdana, sans-serif;
         .tick {
             position: relative;
-            border-bottom: 1px solid #ECECEC;
+            border-bottom: 1px solid $tickshadow;
             width: 100%;
             height: 42px;
             p {
