@@ -35,10 +35,10 @@ function WhyOpenFreeNriAccount() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:false,
+          dots:true,
           loop: true,
           infinite:true,
-          autoplaySpeed: 5000,
+          autoplaySpeed:5000,
           autoplay: true,
         },
       },

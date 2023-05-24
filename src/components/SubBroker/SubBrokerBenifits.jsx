@@ -1,4 +1,6 @@
-import React from 'react';
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
+import React from "react";
 import Manager from '../../assets/images/sub-broker/local-relationship-manager-assistance.svg';
 import Software from '../../assets/images/sub-broker/advanced-software-to-manage-business.svg';
 import Sales from '../../assets/images/sub-broker/marketing-and-sales-support.svg';
@@ -29,6 +31,17 @@ function SubBrokerBenifits() {
         dots: true,
         autoplaySpeed: 3000,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 600,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots:true,
+                    autoplay: true,
+                },
+            },
+        ],
 
     };
 

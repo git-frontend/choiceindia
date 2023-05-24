@@ -35,10 +35,10 @@ function WhyOpenFreeMinorAccount() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots:false,
+          dots:true,
           loop: true,
           infinite:true,
-          autoplaySpeed: 5000,
+          autoplaySpeed: 3000,
           autoplay: true,
         },
       },

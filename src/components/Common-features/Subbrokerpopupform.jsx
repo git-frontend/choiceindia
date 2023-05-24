@@ -805,13 +805,13 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                         <Alert key='success' variant='success' className="sub-broker-success" onClose={handleBrokerCreatedSuccessClose} dismissible> Successfully! </Alert> : ''
                 }
         
-        <div class="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup">
+        <div class="exit-intent-sleekbox-overlay sleekbox-popup-active subbrokerpopup show-res">
             <div class="exit-intent-sleekbox-popup">
             
                 <div class="popup-sub-row-box">
-                    {/* <div className="close">
+                    <div className="close">
                         <a  onClick={hideComponent} class="closebtn" >&times;</a>
-                        </div>  */}
+                        </div> 
                     <div class="popup-sub-right">
                        
                         <div class="signal-form subbroker-signal-form" id="form-banner">
@@ -864,7 +864,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                 <div className="sub-formgrp">
                                     
                                 <Select ref={selectInputRef}
-                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'large' }} />
+                                placeholder="Search Nearest City Branch" className="formcontrol form-control formpadding" searchable={true} options={citiesDropdown} labelField="leadCity" valueField="leadCity" onChange={handleBrokerCityBranch} loading={loaders.citiesLoader} value={brokerCityBranch} style={{ 'fontSize': 'medium' }} />
                             {
                                 errors.brokerCityBranch.required ? <small className="text-danger"> Nearest City Branch is required</small> : ''
                             }
@@ -881,7 +881,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                             })
                                         }
                                     </Form.Select> */}
-                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'large' }} />
+                                    <Select placeholder='Search State' className="formcontrol form-control formpadding" searchable={true} options={statesDropdown} labelField="stateName" valueField="stateName" onChange={handleBrokerState} loading={loaders.stateLoader} value={brokerState} style={{ 'fontSize': 'medium' }} />
                                     {
                                         errors.brokerState.required ? <small className="text-danger">State is required</small> : ''
                                     }
@@ -922,7 +922,7 @@ function SubbrokerpopupForm({hideComponent, openInfoPopup}) {
                                 } */}
                             </div>
                             <br/>
-                            <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p>
+                            {/* <p className="sleekbox-link remindMeLater"><a className="sleekbox-a" onClick={hideComponent}>Remind Me Later</a></p> */}
                         </div>
 
                         
