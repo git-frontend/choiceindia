@@ -29,7 +29,7 @@ function FuturesTradingNeeds() {
           slidesToScroll: 1,
           vertical: false,
           dots:true,
-          autoplay: true,
+          autoplay: false,
           autoplaySpeed: 3000,
         }
       }
