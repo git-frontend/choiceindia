@@ -656,12 +656,16 @@ function Banneraf() {
 
   /**copy payment link to clipboard */
   function copyToClipboard() {
+    let msg = "Find a curated customized Mutual Fund basket that perfectly aligns with your investment goals."
+    let msg2 = "\nTo complete your investment, please initiate payment by clicking on the following link:\n" 
+    let msg3 = "\nThe payment process is fast and simple. if you require any assistance, I am available to guide you through the process"
+
     const selBox = document.createElement("textarea");
     selBox.style.position = "fixed";
     selBox.style.left = "0";
     selBox.style.top = "0";
     selBox.style.opacity = "0";
-    selBox.value = paymentLink;
+    selBox.value = msg + msg2 + paymentLink.toString() + msg3 ;
     document.body.appendChild(selBox);
     selBox.focus();
     selBox.select();
@@ -690,12 +694,32 @@ function Banneraf() {
               <div className="row">
                 <h1 className="title-secnd pt-5">Investments for you!</h1>
                 {/* <p className='subhead'>Funds for Children's Education</p> */}
-                <p className="subhead">
-                  {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
-                </p>
-                <p className="profile">
-                  {BasketData.bucket_type ? BasketData.bucket_type : "NA"}
-                </p>
+                {
+                  (name == 'visibleform') ? 
+                  <>
+                      <p className="subhead">
+                        {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
+                      </p>
+                      <p className="profile">
+                        {BasketData.bucket_type ? BasketData.bucket_type : "NA"}
+                      </p>
+                    </>
+                    :
+                    <>
+                      <p className="subhead">
+                        {BasketData.bucket_title ? BasketData.bucket_title : "NA"}
+                      </p>
+                      <p className="profile">
+                        {userDetails.clientId
+                          ? utils.decryptText(userDetails.clientId)
+                          : "NA"} | {BasketData.client_name
+                            ? BasketData.client_name
+                            : "NA"}
+                      </p>
+                    </>
+
+                }
+
               </div>
             ) : (
               ""
