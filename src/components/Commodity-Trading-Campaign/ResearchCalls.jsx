@@ -1,9 +1,161 @@
 
 // import React from 'react';
 import React from "react";
+import { useState, useEffect } from 'react';
 import '../Best-Stocks/best-stock.scss';
 import Slider from 'react-slick';
+import rest from "../../Services/rest";
+import utils from "../../Services/utils";
+import { API_URLS } from "../../Services/API-URLS";
+import noDataimg from '../../assets/images/no-data.webp';
+import loaderimg2 from '../../assets/vedio/loader2.mp4';
 function ResearchCalls() {
+  const [list, setlist] = useState();
+  const [showLoader, setShowLoader] = useState(false);
+  const [trigger, setTrigger] = useState(false);
+
+  const [Data1, setData1] = useState();
+  const [checkdevice, setcheckdevice] = useState();
+  let tokenList = [{}]
+  let multiValue = [];
+  let AllFilesValue = {};
+  let tokens = "";
+  let storefile;
+  function FandOstocks() {
+    // setToggleState(2)
+    // console.log("change",toggleState)
+    setlist([]);
+    tokens = '';
+    tokenList = [];
+    storefile = '';
+    setShowLoader(true)
+    let request = {
+
+      "end_date": utils.formatDate(new Date(), "yyyy-MM-dd"),
+      "is_expert": 0,
+      "research_type": "",
+      "limit": 10,
+      "offset": 0,
+      "segment": "COM",
+      "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
+      "status": "",
+      "subcategory_id": "",
+      "search": "",
+      "id": "",
+      "user_id": "",
+      "timeline_enabled": 1,
+      "category_id": 2
+    }
+    rest.expertReportData(request).then(
+
+      res => {
+
+        if (res) {
+          // console.log("checkdd",res.response.research);
+          storefile = res.response.research;
+          // setlist(res.response.research);
+          console.log("storefile", storefile)
+          res.response.research.forEach(ele => {
+
+            tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })
+
+          });
+
+
+          let unique = []
+          for (let i = 0; i < tokenList.length; i++) {
+            unique.push(tokenList[i].SegmentId + "@" + tokenList[i].Token + ",");
+          }
+          unique.forEach(element => {
+            if (!tokens.includes(element)) {
+              tokens += element
+            }
+          });
+          // console.log("SegmentId",tokens);
+          // const tokens = this.utils.generateTokens(this.researchList, 'segment_id', 'token');
+          const payload = {
+            'UserId': 'guest',
+            'SessionId': Data1,
+            'MultipleTokens': tokens
+          }
+
+          rest.multipleTokensURLData(payload).then(
+            res => {
+              if (res && res.Response && res.Response.lMT && res.Response.lMT.length) {
+
+                res.Response.lMT.forEach((ele, index) => {
+                  // console.log("ele", ele)
+                  ele['LTP'] = ele['LTP'] / 100;
+                  ele.PrevClose = ele.PC / 100;
+                  ele.Change = Number(ele.LTP) - Number(ele.PrevClose);
+                  ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
+                  // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
+                  for (let i = 0; i < storefile.length; i++) {
+
+                    if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
+                      AllFilesValue = Object.assign(storefile[i], ele);
+                      multiValue.push(AllFilesValue)
+                      setShowLoader(false)
+                    } else {
+
+
+
+                    }
+                  }
+                })
+
+                setlist(multiValue);
+
+              }
+            })
+        }
+      })
+
+      .catch((error) => {
+        setShowLoader(false)
+        setlist([]);
+      });
+  }
+  function generateSessionId() {
+    let api = new API_URLS()
+    fetch(api.getSessionUrl())
+      .then(response => {
+        return response.json();
+      })
+      .then(res => {
+        if (res.Status == 'Success') {
+          // IntraStocks(res.Response);
+          setData1(res.Response);
+        } else {
+          // IntraStocks([])
+        }
+      }, err => {
+        // IntraStocks([])
+      })
+  }
+  useEffect(() => {
+
+    setTrigger(true)
+
+    if (trigger === true) {
+      FandOstocks();
+    }
+    if (/Android|BlackBerry|IEMobile|IEMobile|Opera Mini|CriOS/i.test(navigator.userAgent)) {
+
+      setcheckdevice('https://play.google.com/store/apps/details?id=com.choiceequitybroking.jiffy')
+
+    } else if (/iPod|iPhone|iPad/i.test(navigator.userAgent)) {
+
+      setcheckdevice('https://apps.apple.com/us/app/jiffy-mobile-trading-app/id1327801261?ls=1')
+
+    } else if (/webOS|windows/i.test(navigator.userAgent)) {
+      setcheckdevice('https://finx.choiceindia.com/auth/login')
+    }
+    else {
+      setcheckdevice('https://finx.choiceindia.com/auth/login')
+
+    }
+  }, [trigger])
   const settings = {
     infinite: true,
     speed: 1500,
@@ -16,114 +168,163 @@ function ResearchCalls() {
     swipeToSlide: true,
     responsive: [
 
-        {
-            breakpoint: 992,
-            settings: {
-                slidesToShow: 2,
-                dots: false,
-                slidesToScroll: 1,
-            }
-        },
-        {
-            breakpoint: 600,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-            }
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          dots: false,
+          slidesToScroll: 1,
         }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+        }
+      }
 
     ]
 
-};
-    return (
-        <>
-            <section className="research-calls main-parent" id="showForm">
-                <div className="container">
-                <h2 className="title-first research-title">Our Recent Research Calls</h2>
-                    <div className="">
-                        <Slider {...settings} className="research-calls-tab">
-                        <div className="calls-tab-item">
-                            <div className="main-left">
-                              <div className="top-section">
-                                <div className="top-left">
-                                  <h6 className="top-text">Reco Date</h6>
-                                  <h6 className="top-date">15 November ,23</h6>
-                                </div>
-                                <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
-                              </div>
-                              <div className="middle-section">
-                                <div className="middle-left">
-                                  <h4 className="big-text">BANKBARODA</h4>
-                                  <span className="small-text">BANK OF BARODA</span>
-                                </div>
-                                <div className="middle-right">
-                                  <span className="right-big-text">165.65</span>
-                                  <h6 className="right-small-text text_color">6.95(4.37%)</h6>
-                                </div>
-                              </div>
+  };
+  const [view, setView] = useState({
+    matches: window.innerWidth < 767 ? false : true,
+  });
 
-                              <div className="bottom-section">
-                                <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">165.00</h4>
+  return (
+    <>
+      <section className="research-calls main-parent" id="showForm">
+        <div className="container">
+          <h2 className="title-first research-title">Our Recent Research Calls</h2>
+          <div className="col-md-12">
+            {
+              view && !view.matches ?
+                <div>
+                  {
+                    list && list.length ?
+                      <Slider {...settings} className="research-calls-tab">
+                        {
+                          (list || []).slice(0, 2).map((response, index) => {
+                            return (
+                              <div className="calls-tab-item col-xl-6" key={index}>
+                                <div className="main-left">
+                                  <div className="top-section">
+                                    <div className="top-left">
+                                      <h6 className="top-text">Reco Date</h6>
+                                      <h6 className="top-date">15 November ,23</h6>
+                                    </div>
+                                    <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
                                   </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >182.00</h4>
+                                  <div className="middle-section">
+                                    <div className="middle-left">
+                                      <h4 className="big-text">BANKBARODA</h4>
+                                      <span className="small-text">BANK OF BARODA</span>
+                                    </div>
+                                    <div className="middle-right">
+                                      <span className="right-big-text">165.65</span>
+                                      <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                                    </div>
                                   </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">15 Nov, 2023</h4>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="calls-tab-item">
-                            <div className="main-left">
-                              <div className="top-section">
-                                <div className="top-left">
-                                  <h6 className="top-text">Reco Date</h6>
-                                  <h6 className="top-date">17 March’23</h6>
-                                </div>
-                                <div className="top-right"><button className="btn-buy">BUY</button></div>
-                              </div>
-                              <div className="middle-section">
-                                <div className="middle-left">
-                                  <h4 className="big-text">SIGACHI</h4>
-                                  <span className="small-text">SIGACHI INDUSTRIES LIMITE</span>
-                                </div>
-                                <div className="middle-right">
-                                  <span className="right-big-text">291</span>
-                                  <h6 className="right-small-text">22.70(7.24%)</h6>
-                                </div>
-                              </div>
 
-                              <div className="bottom-section">
-                                <div className="d-flex justify-content-between pt-3">
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Entry Price</h6>
-                                    <h4 className="bottom_big_text">242.40</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Potential Price</h6>
-                                    <h4 className="bottom_big_text" >324.82</h4>
-                                  </div>
-                                  <div className="bottom fandores">
-                                    <h6 className="bottom_small_text">Exp. Returns</h6>
-                                    <h4 className="bottom_big_text">23 Jun ,2023</h4>
+                                  <div className="bottom-section">
+                                    <div className="d-flex justify-content-between pt-3">
+                                      <div className="bottom fandores">
+                                        <h6 className="bottom_small_text">Entry Price</h6>
+                                        <h4 className="bottom_big_text">165.00</h4>
+                                      </div>
+                                      <div className="bottom fandores">
+                                        <h6 className="bottom_small_text">Potential Price</h6>
+                                        <h4 className="bottom_big_text" >182.00</h4>
+                                      </div>
+                                      <div className="bottom fandores">
+                                        <h6 className="bottom_small_text">Exp. Returns</h6>
+                                        <h4 className="bottom_big_text">15 Nov, 2023</h4>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                          </div>
-                          </Slider>
+                            )
+                          })
+                        }
+                      </Slider>
+                      : <div className="text-center">
+                        <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                      </div>}
+                </div> :
+                <div>
+                  {showLoader ?
+                    <div className="text-center">
+                      <div>
+                        {/* <img src={loaderimg2} className="img-fluid d-block mx-auto" alt='loading' height={250} width={250} />  */}
+                        <video src={loaderimg2} autoPlay loop muted className='img-fluid d-block mx-auto' height={100} width={100} />
+                      </div>
                     </div>
+                    :
+                    <div>
+                      {
+                        list && list.length ?
+                          <div className="row gx-5">
+                            {
+                              (list || []).slice(0, 2).map((response, index) => {
+                                return (
+                                  <div className="calls-tab-item col-xl-6" key={index}>
+                                    <div className="main-left">
+                                      <div className="top-section">
+                                        <div className="top-left">
+                                          <h6 className="top-text">Reco Date</h6>
+                                          <h6 className="top-date">15 November ,23</h6>
+                                        </div>
+                                        <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
+                                      </div>
+                                      <div className="middle-section">
+                                        <div className="middle-left">
+                                          <h4 className="big-text">BANKBARODA</h4>
+                                          <span className="small-text">BANK OF BARODA</span>
+                                        </div>
+                                        <div className="middle-right">
+                                          <span className="right-big-text">165.65</span>
+                                          <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                                        </div>
+                                      </div>
+
+                                      <div className="bottom-section">
+                                        <div className="d-flex justify-content-between pt-3">
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Entry Price</h6>
+                                            <h4 className="bottom_big_text">165.00</h4>
+                                          </div>
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Potential Price</h6>
+                                            <h4 className="bottom_big_text" >182.00</h4>
+                                          </div>
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Exp. Returns</h6>
+                                            <h4 className="bottom_big_text">15 Nov, 2023</h4>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                )
+                              })
+                            }
+                          </div>
+                          :
+                          <div className="text-center">
+                            <img src={noDataimg} className="img-fluid" alt='No Data Found' height={250} width={250} />
+                          </div>
+                      }
+                    </div>
+
+                  }
                 </div>
-            </section>
-        </>
-    );
+            }
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 export default ResearchCalls;
