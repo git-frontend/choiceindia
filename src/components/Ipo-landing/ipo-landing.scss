@@ -9,6 +9,7 @@
     .banner-caption{
         display: flex;
         align-items: center;
+        position: relative;
         .cmp-logo{
             .img-brder{
                 padding: 1.5rem 0;
@@ -44,6 +45,7 @@
         @media (max-width:$sm) {
             margin-top: 3rem;
         }
+        
         ul{
             display: flex;
             flex-wrap: wrap;
@@ -181,6 +183,7 @@
         padding: 5rem 0;
     }
     .ipo-text-details{
+        position: relative;
         .title-first{
             span{
                 color:$yellowColor;
@@ -206,6 +209,7 @@
         }
     }
    .ipo-strength{
+    position: relative;
         h4{
             line-height: 1.5;
             font-size: 2rem;
@@ -232,6 +236,7 @@
         }
     }
     .ipo-weekness{
+        position: relative;
         h4{
             line-height: 1.5;
             font-size: 2rem;
@@ -264,14 +269,16 @@
     }
     .title-first{
         padding-bottom: 2rem;
+        position: relative;
         span{
             color: $yellowColor;
         }
     }
     .chart-card{
         border: 1px solid $lightgray;
-        padding: 2rem;
+        padding: 4rem 5rem;
         border-radius: 8px;
+        position: relative;
         .chart-header{
             display: flex;
             justify-content: space-between;
@@ -322,6 +329,7 @@
         border:1px solid $lightgray;
         border-radius: 8px;
         overflow: hidden;
+        position: relative;
         .table-striped2{
             margin: 0;
             tbody{
@@ -354,6 +362,7 @@
     }
     .title-first{
         padding-bottom: 2rem;
+        position: relative;
         span{
             color: $yellowColor;
         }
@@ -362,6 +371,7 @@
         border:1px solid $lightgray;
         border-radius: 8px;
         overflow: hidden;
+        position: relative;
         .table-striped2{
             margin: 0;
             tbody{
@@ -494,7 +504,7 @@
     }
     &.visibleform{
         .sticy-card-sub{
-            width: 33.33%;
+            width: 31.33%;
         }
     }
     @media only screen and (max-width: 1399px) {
@@ -550,6 +560,7 @@
     }
     .steps-sec{
         padding: 2rem 0;
+        position: relative;
         .steps-item{
             padding: 2rem 6rem 0 0;
             h5{
@@ -563,6 +574,9 @@
                 font-family: $font-family-poppins-regular;
             }
         }
+    }
+    .btn-open{
+        position: relative;
     }
 }
 .ipo-faq {
@@ -620,4 +634,134 @@
 	@media (max-width:$xs) {
 		padding: 5rem 0;
 	}
+}
+
+
+// chart css
+.revenue-chart-sec{
+    #q-graph {
+        display: block;
+        /* fixes layout wonkiness in FF1.5 */
+        position: relative;
+        width: 600px;
+        height: 300px;
+        margin: 1.1em 0 0;
+        padding: 0;
+        background: transparent;
+        font-size: 11px;
+        caption {
+            caption-side: top;
+            width: 600px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            top: -40px;
+            position: relative;
+            z-index: 10;
+            font-weight: bold;
+          }
+          tr, td, th{
+            position: absolute;
+            bottom: 0;
+            width: 150px;
+            z-index: 2;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+          }
+          thead{
+            tr {
+                left: 100%;
+                top: 50%;
+                bottom: auto;
+                margin: -2.5em 0 0 5em;
+              }
+              th {
+                width: 7.5em;
+                height: auto;
+                padding: 0.5em 1em;
+                &.sent {
+                    top: 0;
+                    left: 0;
+                    line-height: 2;
+                }
+                &.paid {
+                    top: 2.75em;
+                    line-height: 2;
+                    left: 0;
+                }
+              }
+          }
+          tbody {
+            tr {
+                height: 296px;
+                padding-top: 2px;
+                border-right: 0;
+                color: #AAA;
+            }
+            th {
+                bottom: -1.75em;
+                vertical-align: top;
+                font-weight: normal;
+                color: #333;
+            }
+          
+          }
+          #q1 {
+            left: 0;
+          }
+          #q2 {
+            left: 150px;
+          }
+          #q3 {
+            left: 300px;
+          }
+          #q4 {
+            left: 450px;
+            border-right: none;
+          }
+          .bar {
+            width: 60px;
+            border: 1px solid;
+            border-bottom: none;
+            color: #000;
+            p {
+                margin: 5px 0 0;
+                padding: 0;
+                opacity: 0.4;
+              }
+          }
+          .sent {
+            left: 13px;
+            background-color: #004393;
+            border-color: transparent;
+          }
+          .paid {
+            left: 77px;
+            background-color: #00AE6F;
+            border-color: transparent;
+          }
+      }
+      .ticks {
+        position: relative;
+        top: -300px;
+        left: 2px;
+        width: 596px;
+        height: 300px;
+        z-index: 1;
+        margin-bottom: -300px;
+        font-size: 10px;
+        font-family: "fira-sans-2", Verdana, sans-serif;
+        .tick {
+            position: relative;
+            border-bottom: 1px solid #ECECEC;
+            width: 600px;
+            height: 42px;
+            p {
+                position: absolute;
+                left: -5em;
+                top: -0.8em;
+                margin: 0 0 0 0.5em;
+              }
+          }
+      }
 }
