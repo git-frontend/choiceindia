@@ -148,6 +148,12 @@
             position: relative;
             cursor: pointer;
             border-top: 1px solid $border-gray;
+            @media (max-width:$sm) {
+                background-color: $bgcolor-hover;
+                border-radius: 24px;
+                width: 98% !important;
+                min-height: 18rem;
+            }
             @media (min-width:$sm)and (max-width:$md) {
                 padding-left: 3rem;
             }
@@ -162,17 +168,18 @@
                     padding: 1rem 3rem;
                 }
                 @media (max-width:$sm) {
-                    margin-bottom:0;
+                    // margin-bottom:0;
                     padding: 2rem;
                 }
 
                 .single-ttl {
                     color: $primary;
-                    margin-bottom: 0;
+                    // margin-bottom: 0;
 
                     @media (min-width:$sm)and (max-width:$md) {
                         padding: 1.1rem 0rem;
                     }
+                    
                 }
 
                 .para {
@@ -189,6 +196,7 @@
                 font-size: 1.75rem;
                 color: $primary;
                 padding: 1.7rem 0rem;
+                margin: 0;
             }
 
             .para {
@@ -208,6 +216,7 @@
             @media (max-width:$sm) {
                 padding: 2rem;
                 text-align: center;
+                margin-bottom: 1rem;
             }
         }
 
