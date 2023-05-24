@@ -739,7 +739,7 @@ function Banneraf() {
                               <div className="textwrap">
                                 <div className="numberwrap">
                                   <div className="number">
-                                    {item.ThreeYrNavper ? item.ThreeYrNavper : "NA"}
+                                    {item.ThreeYrNavper ? parseInt(item.ThreeYrNavper).toFixed(2) : "NA"}
                                   </div>
                                   <p className="percent">3 yrs Returns %</p>
                                 </div>
