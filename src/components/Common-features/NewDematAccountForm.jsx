@@ -522,7 +522,7 @@ function NewDematAccountForm(props) {
                 !showOTP && !showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new" id="dematform">
 
-                        <h2 className="form-ttl">Open Demat Account</h2>
+                        <h2 className="heading">Open Demat Account</h2>
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
                                 <Form.Label>Mobile Number*</Form.Label>

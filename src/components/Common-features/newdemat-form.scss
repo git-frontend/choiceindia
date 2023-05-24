@@ -481,19 +481,7 @@
 					margin: 0 auto;
 				}
 
-				.heading {
-					color: $primary;
-					font-size: 24px;
-					line-height: 42px;
-					font-weight: 700;
-					// margin: 30px 0 15px;
-					font-family: $font-family-poppins-bold;
-					padding-bottom: 0;
-					@media only screen and (max-width: $sm) {
-						font-size: 24px;
-						line-height: 33px;
-					}
-				}
+				
 
 				.subheading {
 					color: $secondary;
@@ -502,7 +490,7 @@
 					margin: 0;
 					font-family: $font-family-poppins-regular;
 					@media only screen and (max-width: $sm) {
-						font-size: 16px;
+						font-size: 14px;
 						// line-height: 22px;
 					}
 				}
@@ -597,14 +585,14 @@
 
 			@media only screen and (max-width: $sm) {
 				display: block;
-				padding: 10px;
+				padding: 0;
 			}
 		}
 
 		@media only screen and (max-width: 1023px) {
 			max-width: 94%;
 			padding: 30px 40px;
-			margin-top: 2rem;
+			// margin-top: 2rem;
 		}
 
 		@media only screen and (max-width: 992px) {
@@ -613,12 +601,12 @@
 
 		@media only screen and (max-width: $sm) {
 			max-width: 400px;
-			margin-top: 7rem;
+			// margin-top: 7rem;
 		}
 
 		@media only screen and (max-width: 480px) {
-			max-width: 94%;
-			padding: 30px 10px 10px 10px;
+			max-width: 100%;
+			padding: 0px;
 		}
 	}
 
@@ -764,20 +752,32 @@
 	}
 
 
-	.fade-right{
-		animation: fadeInRight 0.8s ease-in-out;
+	.fade-in{
+		animation: fadeIn 1.5s both;
 	}
 	
-	
-	@keyframes fadeInRight {
+	@-webkit-keyframes fadeIn {
 		from {
-		opacity: 0;
-		transform: translateX(300px);
+		  opacity: 0;
 		}
+	  
 		to {
-		opacity: 1;
+		  opacity: 1;
 		}
-	}
+	  }
+	  @keyframes fadeIn {
+		from {
+		  opacity: 0;
+		}
+	  
+		to {
+		  opacity: 1;
+		}
+	  }
+	  .fadeIn {
+		-webkit-animation-name: fadeIn;
+		animation-name: fadeIn;
+	  }
 
 	.alertmsg{
 		background-color: $whiteColor;
@@ -790,4 +790,47 @@
 
 .banner-sect{
 	overflow: hidden;
+}
+
+
+
+.userInput{
+	display: flex;
+	justify-content: center;
+	input{
+		margin: 7px;
+		height: 20px;
+		width: 15px;
+		border: none;
+		text-align: center;
+		font-size: 1.2rem;
+		background: transparent;
+		color: $primary;
+		position: relative;
+		top: 3px;
+		&:focus{
+			outline: none;
+		}
+		// &::placeholder{
+		// 	color: red;
+		// }
+	}
+}
+
+
+
+.heading {
+	color: $primary;
+	font-size: 24px;
+	line-height: 42px;
+	font-weight: 700;
+	margin-bottom: 2rem;
+	text-align: center;
+	// margin: 30px 0 15px;
+	font-family: $font-family-poppins-bold;
+	padding-bottom: 0;
+	@media only screen and (max-width: $sm) {
+		font-size: 24px;
+		line-height: 33px;
+	}
 }

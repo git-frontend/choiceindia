@@ -399,7 +399,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                 <div className="popup-sub-right">
                                 
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                    <div className="otpform-new  fade-right" >
+                                    <div className="otpform-new  fade-in" >
                                         {/* <img src={OTPimage} /> */}
 
                                        <div className="d-flex">
@@ -410,7 +410,17 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <div className="otp-mdl-input-chk">
 
 
-                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="* * * * * *" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+                                        {/* <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="* * * * * *" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} /> */}
+
+                                        <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}>
+                                            <input type="text" id='ist' maxlength="1" placeholder="*" onkeyup="clickEvent(this,'sec')"/>
+                                            <input type="text" id="sec" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'third')"/>
+                                            <input type="text" id="third" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'fourth')"/>
+                                            <input type="text" id="fourth" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'fifth')"/>
+                                            <input type="text" id="fifth" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'sixth')"/>
+                                            <input type="text" id="six" maxlength="1" placeholder="*"/>
+                                        </div>
+
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }
