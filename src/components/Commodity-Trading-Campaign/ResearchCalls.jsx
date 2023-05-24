@@ -261,7 +261,7 @@ function ResearchCalls() {
                                       </div>
                                       <div className="middle-section">
                                         <div className="middle-left">
-                                          <h4 className="big-text">{(response?.scrip_name).replace('|'," ")}</h4>
+                                          <h4 className="big-text">{(response?.scrip_name).replace("|", " ")}</h4>
                                           <span className="small-text">{response?.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
@@ -323,7 +323,7 @@ function ResearchCalls() {
                                       </div>
                                       <div className="middle-section">
                                         <div className="middle-left">
-                                          <h4 className="big-text">{response?.scrip_name}</h4>
+                                          <h4 className="big-text">{(response?.scrip_name).replace("|", " ")}</h4>
                                           <span className="small-text">{response?.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
