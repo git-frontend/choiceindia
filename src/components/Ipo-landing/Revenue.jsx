@@ -8,7 +8,7 @@ function Revenue(){
             <div className='row'>
                 <div className='col-md-8'>
                     <h2 className='title-first'>Bajaj Energy <span>Revenue & Profit</span></h2>
-                    {/* <div className='chart-card'>
+                    <div className='chart-card'>
                         <div className='chart-header'>
                             <div className='header-item'>
                                 <div className='item1'>
@@ -91,7 +91,7 @@ function Revenue(){
                               </div>
                               
                           </div>
-                    </div> */}
+                    </div>
 
                           
             </div>
