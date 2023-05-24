@@ -21,6 +21,9 @@ function ResearchCalls() {
   let AllFilesValue = {};
   let tokens = "";
   let storefile;
+  const [view, setView] = useState({
+    matches: window.innerWidth < 768 ? false : true,
+  });
   function FandOstocks() {
     // setToggleState(2)
     // console.log("change",toggleState)
@@ -161,7 +164,7 @@ function ResearchCalls() {
     speed: 1500,
     slidesToShow: 2,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 3000,
     slidesToScroll: 1,
@@ -188,10 +191,12 @@ function ResearchCalls() {
     ]
 
   };
-  const [view, setView] = useState({
-    matches: window.innerWidth < 767 ? false : true,
-  });
-
+  useEffect(() => {
+    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    mediaQuery.addListener(setView);
+    // this is the cleanup function to remove the listener
+    return () => mediaQuery.removeListener(setView);
+  }, [])
   return (
     <>
       <section className="research-calls main-parent" id="showForm">
@@ -207,44 +212,82 @@ function ResearchCalls() {
                         {
                           (list || []).slice(0, 2).map((response, index) => {
                             return (
-                              <div className="calls-tab-item col-xl-6" key={index}>
-                                <div className="main-left">
-                                  <div className="top-section">
-                                    <div className="top-left">
-                                      <h6 className="top-text">Reco Date</h6>
-                                      <h6 className="top-date">15 November ,23</h6>
-                                    </div>
-                                    <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
-                                  </div>
-                                  <div className="middle-section">
-                                    <div className="middle-left">
-                                      <h4 className="big-text">BANKBARODA</h4>
-                                      <span className="small-text">BANK OF BARODA</span>
-                                    </div>
-                                    <div className="middle-right">
-                                      <span className="right-big-text">165.65</span>
-                                      <h6 className="right-small-text text_color">6.95(4.37%)</h6>
-                                    </div>
-                                  </div>
+                              // <div className="calls-tab-item col-xl-6" key={index}>
+                              //   <div className="main-left">
+                              //     <div className="top-section">
+                              //       <div className="top-left">
+                              //         <h6 className="top-text">Reco Date</h6>
+                              //         <h6 className="top-date">15 November ,23</h6>
+                              //       </div>
+                              //       <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
+                              //     </div>
+                              //     <div className="middle-section">
+                              //       <div className="middle-left">
+                              //         <h4 className="big-text">BANKBARODA</h4>
+                              //         <span className="small-text">BANK OF BARODA</span>
+                              //       </div>
+                              //       <div className="middle-right">
+                              //         <span className="right-big-text">165.65</span>
+                              //         <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                              //       </div>
+                              //     </div>
 
-                                  <div className="bottom-section">
-                                    <div className="d-flex justify-content-between pt-3">
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Entry Price</h6>
-                                        <h4 className="bottom_big_text">165.00</h4>
+                              //     <div className="bottom-section">
+                              //       <div className="d-flex justify-content-between pt-3">
+                              //         <div className="bottom fandores">
+                              //           <h6 className="bottom_small_text">Entry Price</h6>
+                              //           <h4 className="bottom_big_text">165.00</h4>
+                              //         </div>
+                              //         <div className="bottom fandores">
+                              //           <h6 className="bottom_small_text">Potential Price</h6>
+                              //           <h4 className="bottom_big_text" >182.00</h4>
+                              //         </div>
+                              //         <div className="bottom fandores">
+                              //           <h6 className="bottom_small_text">Exp. Returns</h6>
+                              //           <h4 className="bottom_big_text">15 Nov, 2023</h4>
+                              //         </div>
+                              //       </div>
+                              //     </div>
+                              //   </div>
+                              // </div>
+                              <div className="calls-tab-item col-xl-6" key={index}>
+                                    <div className="main-left">
+                                      <div className="top-section">
+                                        <div className="top-left">
+                                          <h6 className="top-text">Reco Date</h6>
+                                          <h6 className="top-date">{response?.updated_datetime}</h6>
+                                        </div>
+                                        <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                       </div>
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Potential Price</h6>
-                                        <h4 className="bottom_big_text" >182.00</h4>
+                                      <div className="middle-section">
+                                        <div className="middle-left">
+                                          <h4 className="big-text">{(response?.scrip_name).replace('|'," ")}</h4>
+                                          <span className="small-text">{response?.scrip_sec_desc}</span>
+                                        </div>
+                                        <div className="middle-right">
+                                          <span className="right-big-text">{response.LTP}</span>
+                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                        </div>
                                       </div>
-                                      <div className="bottom fandores">
-                                        <h6 className="bottom_small_text">Exp. Returns</h6>
-                                        <h4 className="bottom_big_text">15 Nov, 2023</h4>
+
+                                      <div className="bottom-section">
+                                        <div className="d-flex justify-content-between pt-3">
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Stop Loss</h6>
+                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                          </div>
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Entry Price</h6>
+                                            <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                          </div>
+                                          <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Target Price</h6>
+                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
                             )
                           })
                         }
@@ -274,34 +317,34 @@ function ResearchCalls() {
                                       <div className="top-section">
                                         <div className="top-left">
                                           <h6 className="top-text">Reco Date</h6>
-                                          <h6 className="top-date">15 November ,23</h6>
+                                          <h6 className="top-date">{response?.updated_datetime}</h6>
                                         </div>
-                                        <div className="top-right"><button className="btn-buy">BUY, Add on Dips</button></div>
+                                        <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                       </div>
                                       <div className="middle-section">
                                         <div className="middle-left">
-                                          <h4 className="big-text">BANKBARODA</h4>
-                                          <span className="small-text">BANK OF BARODA</span>
+                                          <h4 className="big-text">{response?.scrip_name}</h4>
+                                          <span className="small-text">{response?.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
-                                          <span className="right-big-text">165.65</span>
-                                          <h6 className="right-small-text text_color">6.95(4.37%)</h6>
+                                          <span className="right-big-text">{response.LTP}</span>
+                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
                                         </div>
                                       </div>
 
                                       <div className="bottom-section">
                                         <div className="d-flex justify-content-between pt-3">
                                           <div className="bottom fandores">
+                                            <h6 className="bottom_small_text">Stop Loss</h6>
+                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[2].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
+                                          </div>
+                                          <div className="bottom fandores">
                                             <h6 className="bottom_small_text">Entry Price</h6>
-                                            <h4 className="bottom_big_text">165.00</h4>
+                                            <h4 className="bottom_big_text" >{(parseFloat((response?.datapoints || [])[0].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                           </div>
                                           <div className="bottom fandores">
-                                            <h6 className="bottom_small_text">Potential Price</h6>
-                                            <h4 className="bottom_big_text" >182.00</h4>
-                                          </div>
-                                          <div className="bottom fandores">
-                                            <h6 className="bottom_small_text">Exp. Returns</h6>
-                                            <h4 className="bottom_big_text">15 Nov, 2023</h4>
+                                            <h6 className="bottom_small_text">Target Price</h6>
+                                            <h4 className="bottom_big_text">{(parseFloat((response?.datapoints || [])[1].value).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h4>
                                           </div>
                                         </div>
                                       </div>
