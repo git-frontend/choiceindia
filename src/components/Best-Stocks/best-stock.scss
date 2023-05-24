@@ -130,7 +130,11 @@
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
-
+        box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+        @media (max-width: $sm) {
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.16);
+            width: 98%;
+        }
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
