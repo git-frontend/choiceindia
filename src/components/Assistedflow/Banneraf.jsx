@@ -47,6 +47,8 @@ function Banneraf() {
   /**variable for mobile number */
   const [mobileNumber, setMobileNumber] = useState(null);
 
+  const [email, setEmail] = useState(null);
+
   /**variable for timer */
   const [count, setCount] = useState(0);
 
@@ -74,9 +76,7 @@ function Banneraf() {
   });
 
   /**to store payment link */
-  const [paymentLink, setPaymentLink] = useState(
-    "end value has mixed support, consider using flex-end instead"
-  );
+  const [paymentLink, setPaymentLink] = useState();
 
   /**to show popup */
   const [showPopUp, setShowPopUp] = useState("");
@@ -261,11 +261,20 @@ function Banneraf() {
           setCount(30);
         }
         let mobileNo;
+        let emailId;
+        let emailId2;
         let pattern = /[0-9]{8,10}/i;
+        let pattern2 = /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/i;
+        let index ; 
         mobileNo = response.data.Response.toString();
-        mobileNo = mobileNo.match(pattern)[0].toString();
-        mobileNo = mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)
+        mobileNo = (mobileNo.match(pattern) && mobileNo.match(pattern).length > 0) ? mobileNo.match(pattern)[0].toString() : '';
+        emailId =  (response.data.Response.match(pattern2) && response.data.Response.match(pattern2).length > 0) ? response.data.Response.match(pattern2)[0].toString() : '';
+        index = emailId.indexOf('@');
+        mobileNo = (mobileNo.length > 0) ? (mobileNo.charAt(0) + mobileNo.charAt(1) + '******' + mobileNo.charAt(8) + mobileNo.charAt(9)) : '';
+
+        emailId2 = (emailId && emailId.length > 0) ? (emailId.charAt(0) + emailId.charAt(1)+ '*****' + emailId.charAt(index-2) + emailId.charAt(index-1) + emailId.substring(index)) : '';
         setMobileNumber(() => (mobileNo ? mobileNo : null));
+        setEmail(() => emailId2? emailId2 : null);
       })
       .catch((error) => {
         if (isResend) {
@@ -628,6 +637,8 @@ function Banneraf() {
             setTimeout(() => {
               window.open(paymntLink, "_self");
             }, 3000);
+          }else{
+            closesection();
           }
         } else {
           setLoaders({...loaders, verifyLoader: false});
@@ -803,7 +814,7 @@ function Banneraf() {
                                   ? ""
                                   : handleFirstButtonClick(false);
                               }}
-                              //  disabled={OrderMetaData.placeOrderMessage}
+                               disabled={paymentLink}
                             >
                               {loaders.SendOtpLoader ? (
                                 <div className="loaderB mx-auto"></div>
@@ -836,12 +847,18 @@ function Banneraf() {
                                         userDetails.subId ? 
                                           <p className="subtext">
                                             Code sent to client’s registered
-                                            mobile number +91 {mobileNumber}
+                                            mobile number +91 {mobileNumber} 
+                                            {
+                                              email? <span> and Email {email}</span> : ""
+                                            }
                                           </p>
                                           :
                                           <p className="subtext">
                                             Code sent to your registered
                                             mobile number +91 {mobileNumber}
+                                            {
+                                              email? <span> and Email {email}</span> : ""
+                                            }
                                           </p> 
                                     }                      
 
