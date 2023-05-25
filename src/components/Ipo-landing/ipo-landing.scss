@@ -437,6 +437,9 @@
                         }
                         &.txt-right{
                             text-align: right;
+                            @media (max-width:$sm) {
+                                white-space: nowrap;
+                            }
                         }
                     }
                 }
@@ -476,8 +479,15 @@
                         padding: 1rem 2rem;
                         font-family: $font-family-poppins-medium;
                         font-size: 1.3rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem;
+                            font-size: 1.25rem;
+                        }
                         &.txt-right{
                             text-align: right;
+                            @media (max-width:$sm) {
+                                white-space: nowrap;
+                            }
                         }
                     }
                 }
@@ -680,8 +690,15 @@
                         padding: 1rem 2rem;
                         font-family: $font-family-poppins-medium;
                         font-size: 1.3rem;
+                        @media (max-width:$sm) {
+                            padding: 1rem;
+                            font-size: 1.25rem;
+                        }
                         &.txt-right{
                             text-align: right;
+                            @media (max-width:$sm) {
+                               white-space: nowrap;
+                            }
                         }
                     }
                 }
