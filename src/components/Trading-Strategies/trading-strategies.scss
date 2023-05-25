@@ -311,6 +311,10 @@
                     height: 100%;
                     padding: 3rem;
                     text-decoration: none;
+                    @media (max-width: $sm) {
+                        width: 97% !important;
+                        margin: 0 0.4rem;
+                    }
                     img {
                         height: 100px;
                     }
