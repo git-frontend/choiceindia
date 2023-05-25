@@ -28,19 +28,19 @@ function Revenue(){
                         <div className='chart-custom'>
                               <table className='q-graph'>
                                   <tbody>
-                                      <tr className='qtr' id="q1">
+                                      <tr className='qtr'>
                                           <td className='sent bar' style={{height:"60.11%"}}><p>+6.11</p></td>
                                           <td className='paid bar profit' style={{height:"3.9%"}}><p>+0.39</p></td>
                                       </tr>
-                                      <tr className='qtr' id="q2">
+                                      <tr className='qtr'>
                                           <td className='sent bar' style={{height:"50.5%"}}><p>+5.05</p></td>
                                           <td className='paid bar profit'  style={{height:"4.9%"}}><p>+0.49</p></td>
                                       </tr>
-                                      <tr className='qtr' id="q3">
+                                      <tr className='qtr'>
                                           <td className='sent bar'  style={{height:"70.18%"}}><p>+7.18</p></td>
                                           <td className='paid bar loss' style={{height:"6.1%"}}><p>-0.61</p></td>
                                       </tr>
-                                      <tr className='qtr' id="q4">
+                                      <tr className='qtr'>
                                           <td className='sent bar'  style={{height:"89.10%"}}><p>+8.91</p></td>
                                           <td className='paid bar profit'  style={{height:"6.7%"}}><p>+0.67</p></td>
                                           
