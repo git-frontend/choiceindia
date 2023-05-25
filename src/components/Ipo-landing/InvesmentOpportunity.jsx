@@ -17,7 +17,7 @@ function InvesmentOpportunity() {
 			infinite: true,
 			speed: 1500,
 			arrows: false,
-			slidesToShow: 2,
+			slidesToShow: 1.5,
 			autoplay: true,
 			dots: false,
 			autoplaySpeed: 3000,

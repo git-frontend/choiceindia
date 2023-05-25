@@ -454,7 +454,7 @@
     background: $darkblack;
     position: relative;
     @media (max-width:$sm) {
-        padding: 5rem 0 3rem;
+        padding: 5rem 0;
     }
     .left-sec{
         .title-first{
@@ -477,7 +477,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         .feature-item{
-            margin-bottom: 3rem;
+            margin:0 10rem;
             width: 45%;
             img{
                 height: 76px;
@@ -496,7 +496,7 @@
                     font-family: $font-family-poppins-regular;
                 }
                 @media (max-width:$sm) {
-                    font-size: 1.4rem;
+                    font-size: 1.538rem;
                     margin: 2rem 0 0 0.7rem;
                 }
             }
@@ -613,6 +613,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        }
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
@@ -649,6 +652,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        }
     }
     .steps-sec{
         padding: 2rem 0;
@@ -678,6 +684,9 @@
 		margin-bottom: 2rem;
         span{
             color: $yellowColor;
+        }
+        @media (max-width:$sm) {
+            text-align: center;
         }
 	}
 
