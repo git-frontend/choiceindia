@@ -41,6 +41,10 @@
                 padding-left: 0;
             }
         }
+        @media (max-width:$sm) {
+            display: block;
+            text-align: center;
+         }
     }
     .banner-card{
         background: $whiteColor;
@@ -219,6 +223,9 @@
             span{
                 color:$yellowColor;
             }
+            @media (max-width:$sm) {
+               text-align: center;
+            }
         }
         .para-sec{
             padding: 2.769rem 0 4.538rem;
@@ -304,6 +311,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .chart-card{
         border: 1px solid $lightgray;
@@ -364,6 +374,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
@@ -406,6 +419,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
