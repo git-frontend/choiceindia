@@ -6,7 +6,7 @@ function HowtoApplySteps() {
           <section className='how-apply-ipo'>
             <div className='container'>
                 <div className='row'>
-                    <div className='col-md-8'>
+                    <div className='col-xl-8'>
                         <div>
                             <h2 className='title-first'>How to Apply <span>for Bajaj Energy IPO?</span></h2>
                         </div>
