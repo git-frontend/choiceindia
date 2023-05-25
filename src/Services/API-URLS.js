@@ -11,7 +11,7 @@ const config = {
     liveFileURL: "https://cms.jiffy.in/",
     UATFileURL:"https://cms.jiffy.in/",
 
-    UATJiffyServerURL: "https://uat.jiffy.in/",
+    UATJiffyServerURL: "https://finx.choiceindia.com/",
     liveJiffyServerURL: "https://finx.choiceindia.com/",
 
     UATJiffyURL: "http://devjiffy.choicebroking.in/",
