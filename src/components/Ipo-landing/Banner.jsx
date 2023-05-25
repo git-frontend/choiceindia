@@ -11,7 +11,7 @@ function Banner() {
       if(element){
           const rect = element.getBoundingClientRect();
           
-          if(rect.top.toFixed() < 400){
+          if(rect.top.toFixed() < 530){
               setName('card-sticky visibleCard');
           }else{
               setName('card-sticky');

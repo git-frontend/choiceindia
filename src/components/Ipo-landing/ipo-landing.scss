@@ -619,9 +619,12 @@
        }
     }
     &.visibleCard{
+        margin: 0;
+        margin-bottom: 11rem;
         .sticy-card-sub{
             width: 31.33%;
             padding: 3rem;
+           
             .title-secnd{
                 font-size: 2.5rem;
                 @media (max-width:$md) {
@@ -730,7 +733,7 @@
         .steps-item{
             padding-bottom: 2rem;
             h5{
-                font-size: 2rem;
+                font-size: 1.8rem;
                 font-family: $font-family-poppins-bold;
                 line-height: 1.5;
             }
