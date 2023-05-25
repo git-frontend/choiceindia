@@ -348,7 +348,7 @@ function OurTrackRecordSaysAll() {
                                               </div>
                                               {
                                                 toggleState == 1 ?
-                                                  <div className="top-right"><button className={"btn-buy " + ((response.Side == "S") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                  <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                                   :
                                                   <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                               }
@@ -466,7 +466,7 @@ function OurTrackRecordSaysAll() {
 
                                                   {
                                                     toggleState == 1 ?
-                                                      <div className="top-right"><button className={"btn-buy " + ((response.Side == "S") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                      <div className="top-right"><button className={"btn-buy " + ((response.call_type == "SELL") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                                       :
                                                       <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
                                                   }
