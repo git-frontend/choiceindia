@@ -13,23 +13,30 @@ function HowtoApplySteps() {
                         <div className='steps-sec'>
                             <div className='steps-item'>
                                 <h5>Step 1</h5>
-                                <p>Go to the IPO Section &#61;&#62; IPO Listing &#61;&#62; Open IPO.</p>
+                                <p>First, you need to visit the IPO section on our website.</p>
                             </div>
                             <div className='steps-item'>
                                 <h5>Step 2</h5>
-                                <p>On tapping LIC IPO, you can directly click on Subscribe to apply or even view the IPO details.</p>
+                                <p>Then, click on the 'IPO Listing' option to view the IPO.</p>
                             </div>
                             <div className='steps-item'>
                                 <h5>Step 3</h5>
-                                <p>On the Subscribe Screen/Page, you will be required to enter the number of lots, cut-off price, UPI ID and tap Verify.</p>
+                                <p>Open the Bajaj Energy IPO by tapping on it. </p>
                             </div>
                             <div className='steps-item'>
                                 <h5>Step 4</h5>
-                                <p>Once you select ‘Subscribe’. Your bid will be executed.</p>
+                                <p>You will see an option to subscribe that you need to click on.</p>
                             </div>
                             <div className='steps-item'>
                                 <h5>Step 5</h5>
-                                <p>You can check the status of your IPO bid in the IPO Transactions section.</p>
+                                <p>Now that you can see the IPO details, you must enter details like cut-off price, number of lots, and UPI ID. </p>
+                            </div>
+                            <div className='steps-item'>
+                                <h5>Step 6</h5>
+                                <p>Next, verify your details and select the 'Subscribe' option to complete the bidding. </p>
+                            </div>
+                            <div className='steps-item'>
+                                <p>You have completed your bidding for the Bajaj Energy IPO. Log in and go to the 'IPO Transactions' section to track your allotment status.</p>
                             </div>
                         </div>
                         <div className="btn-open">

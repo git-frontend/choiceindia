@@ -26,29 +26,43 @@ function IpoFaq() {
                                 <Accordion.Item eventKey="1" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>What is the last date and time for the Bajaj Energy IPO subscription?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        The following documents will be required to open an account for a resident individual with Choice :
-                                        <ul>
-                                            <li>PAN Card</li>
-                                            <li>Cancelled Cheque (that captures the MICR Code)</li>
-                                            <li>Passport Size Photograph</li>
-                                            <li>Aadhaar Card</li>
-                                        </ul>
+                                    Since the company has not issued the IPO officially yet, there is no information on the subscription closing date and time. However, investors usually have three to six days to bid for an IPO subscription. Beyond this, the IPOs have another lock-in period of up to 180 days. So, it is vital to keep these factors in mind when investing.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="2" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>How can I check my Bajaj Energy IPO allotment status?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        The Power of Attorney is a document that gives us the authorization to debit your shares from your Demat Account whenever you sell them. However, till the time you do not submit a POA, you can avail the eDIS facility to sell your holdings. This will require you to authorise your holdings once daily before doing any holding's sell transactions. It is recommended to send a signed copy of your POA since it enables you to sell your holdings seamlessly without the need to authorise online all the time.
-                                        A copy of the POA gets emailed to you on your registered email ID, which needs to be physically signed and couriered to us. You can send us the signed POA to our head-office address mentioned on our website - <a href="https://choiceindia.com">https://choiceindia.com</a>
+                                    It is possible to check the Bajaj Energy IPO allotment status on the portal of your broker or registrar. Information regarding the allotment status is also conveyed via email and SMS from issuing and holding authorities, like the BSE, NSE, CDSL, and NSDL.
                                     </Accordion.Body>
                                 </Accordion.Item>
                                 <Accordion.Item eventKey="3" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>When will Bajaj Energy IPO be listed?</Accordion.Header>
                                     <Accordion.Body className='open-demat-faq-body'>
-                                        You can courier the signed copy of the POA to our Head Office address mentioned below.<br />
-                                        Choice International Limited,<br />
-                                        Sunil Patodia Tower,<br />
-                                        J B Nagar, Andheri (East), Mumbai 400099.
+                                    The Bajaj Energy IPO aims to raise Rs. 5450 crores of capital to acquire 6,99,36,900 equity shares of Lalitpur Power Generation Company. However, despite getting approval from SEBI for a 2021 launch, the company is yet to issue its IPO in the market. 
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="4" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>When will the Bajaj Energy IPO refund initiate?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    The IPO refunds are usually initiated based on the refund date issued by SEBI. Once the dates are finalized, your respective banks can initiate the refund if the allotment is not obtained. If the banks cannot unlock your funds within the fund initiation date, it is relieved by the mandate end date. If there is any discrepancy regarding this, investors need to reach out to the banks immediately.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="5" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>When will Bajaj Energy shares be credited?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    The shares are credited to the investor's DEMAT account once allotment is issued successfully. This can only be viewed after the declared period is over.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="6" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>Can I revise or cancel my IPO application?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    Yes, it is possible to revise or cancel an IPO application if you do it within the IPO subscription closing date. 
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                                <Accordion.Item eventKey="7" className='faq-item'>
+                                    <Accordion.Header as="h3" className='faq-header'>When can I apply for an IPO on the last day of an IPO?</Accordion.Header>
+                                    <Accordion.Body className='open-demat-faq-body'>
+                                    The time of applying for any IPO is usually between Monday to Friday each week, which are the normal business days for the market. Still, it is recommended to contact your registrar for any further information. 
                                     </Accordion.Body>
                                 </Accordion.Item>
                             </Accordion>

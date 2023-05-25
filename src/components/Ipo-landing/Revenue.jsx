@@ -91,27 +91,27 @@ function Revenue(){
                             <tbody>
                                 <tr>
                                     <td>Open Date</td>
-                                    <td className='txt-right'>11th May 2023</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Closed Date</td>
-                                    <td className='txt-right'>14th May 2023</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Allotment Date</td>
-                                    <td className='txt-right'>19th May 2023</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Initiation of Refunds</td>
-                                    <td className='txt-right'>20th May 2023</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
-                                    <td>Credit of Shares</td>
-                                    <td className='txt-right'>23rd May 2023</td>
+                                    <td>Credit of Shares to Demat Account</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Listing Date</td>
-                                    <td className='txt-right'>24th May 2023</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -132,11 +132,11 @@ function Revenue(){
                             <tbody>
                                 <tr>
                                     <td>Minimum Lot Size</td>
-                                    <td className='txt-right'>1</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Maximum Lot Size</td>
-                                    <td className='txt-right'>14</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                             </tbody>
                         </table>

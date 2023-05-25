@@ -781,7 +781,7 @@ function Routing() {
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
-                         <Route exact path='/ipo-landing' element={
+                         <Route exact path='/bajaj-energy-ipo' element={
                             <React.Suspense>
                                 < LazyIPOLanding />
                             </React.Suspense>

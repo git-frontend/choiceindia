@@ -2199,6 +2199,13 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
+  "bajaj-energy-ipo": {
+    "title":"Bajaj Energy IPO - Check Issue Date, Price, Lot Size & Details",
+    'lang':"en",
+    'content':"Discover the latest details about the Bajaj Energy IPO, including the issue date, price, lot size, and other information. Stay updated and make informed investment decisions.",
+    "link":"https://choiceindia.com/bajaj-energy-ipo"
+  },
+  
 }
 
 export default meta_tags;

@@ -15,15 +15,15 @@ function IpoSubscriptionBreakup() {
                             <tbody>
                                 <tr>
                                     <td>QIBs</td>
-                                    <td className='txt-right'>50%</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
                                     <td>Non-Institutional Investors</td>
-                                    <td className='txt-right'>15%</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                                 <tr>
-                                    <td>Retail Individual Investors</td>
-                                    <td className='txt-right'>35%</td>
+                                    <td>Retail Investors</td>
+                                    <td className='txt-right'>To be announced</td>
                                 </tr>
                             </tbody>
                         </table>

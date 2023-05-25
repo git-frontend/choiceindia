@@ -103,27 +103,27 @@ useEffect(() => {
                         <ul>
                           <li>
                             <span className="scr-date">Open Date</span>
-                            <span className="date">11th May 2023</span>
+                            <span className="date">To be announced</span>
                           </li>
                           <li>
-                            <span className="scr-date">Closed Date</span>
-                            <span className="date">14th May 2023</span>
+                            <span className="scr-date">Close Date</span>
+                            <span className="date">To be announced</span>
                           </li>
                           <li>
                             <span className="scr-date">Price Band</span>
-                            <span className="date">Rs. 480 - 500</span>
+                            <span className="date">To be announced</span>
                           </li>
                           <li>
                             <span className="scr-date">Lot Size</span>
-                            <span className="date">30 Shares</span>
+                            <span className="date">To be announced</span>
                           </li>
                           <li>
                             <span className="scr-date">Investment Per Lot</span>
-                            <span className="date">Rs. 14,400</span>
+                            <span className="date">To be announced</span>
                           </li>
                           <li>
                             <span className="scr-date">Listing at</span>
-                            <span className="date">NSE & BSE</span>
+                            <span className="date">To be announced</span>
                           </li>
                         </ul>
                         <div className="card-bottom">
