@@ -138,7 +138,7 @@ useEffect(() => {
                 </div>
             </div>
             <div className={name2}>
-                <div className="mt-5 btn-fixed">
+                <div className="btn-fixed">
                   <a className="openbtn">
                     <span>Invest in Bajaj Energy IPO </span>
                     <span>

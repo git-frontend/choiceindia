@@ -213,6 +213,11 @@
                 display: flex;
                 justify-content: space-between;
                 text-decoration: none;
+                align-items: center;
+                @media (max-width: $md) {
+                    font-size: 1.25rem;
+                    padding: 1rem;
+                }
             }
         }
     }
@@ -341,30 +346,28 @@
                     align-items: center;
                     color: $secondary;
                     font-size: 1.231rem;
-                    .revenue-color {
-                        background: $pricolor;
+                    .cir-col{
                         width: 1.8rem;
                         height: 1.8rem;
                         display: inline-block;
                         border-radius: 8px;
                         margin-right: 1rem;
+                        &.revenue-color {
+                            background: $pricolor;
+                        }
+                        &.profit-color {
+                            background: $pluscolor;
+                        }
+                        &.loss-color{
+                            background: #EF404A;
+                        }
+                        @media (max-width:$sm) {
+                            width: 1.5rem;
+                            height: 1.5rem;
+                            border-radius: 5px;
+                        }
                     }
-                    .profit-color {
-                        background: $pluscolor;
-                        width: 1.8rem;
-                        height: 1.8rem;
-                        display: inline-block;
-                        border-radius: 8px;
-                        margin-right: 1rem;
-                    }
-                    .loss-color{
-                        background: #EF404A;
-                        width: 1.8rem;
-                        height: 1.8rem;
-                        display: inline-block;
-                        border-radius: 8px;
-                        margin-right: 1rem;
-                    }
+                   
                     @media (max-width:$sm) {
                         margin-right: 0;
                     }
@@ -929,6 +932,9 @@
                     top: -1.8rem;
                     font-size: 0.9rem;
                 }
+              }
+              @media (max-width:$sm) {
+                width: 49%;
               }
           }
           .sent {

@@ -12,13 +12,13 @@ function Revenue(){
                         <div className='chart-header'>
                             <div className='header-item'>
                                 <div className='item1'>
-                                    <span className='revenue-color'></span> Revenue
+                                    <span className='cir-col revenue-color'></span> Revenue
                                 </div>
                                 <div className='item1'>
-                                    <span className='profit-color'></span> Profit
+                                    <span className='cir-col profit-color'></span> Profit
                                 </div>
                                 <div className='item1'>
-                                    <span className='loss-color'></span> Loss
+                                    <span className='cir-col loss-color'></span> Loss
                                 </div>
                             </div>
                             <div className='header-item'>
