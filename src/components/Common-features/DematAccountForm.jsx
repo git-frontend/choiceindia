@@ -90,11 +90,13 @@ function DematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
+        
         if(showAdValues.link){
             setShowThanku(prevState => {
                 return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
             });
         }
+        localStorage.setItem('hideAdPopUp',true);
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
     }
@@ -592,18 +594,19 @@ function DematAccountForm(props) {
         if(isBlog){
             setTimeout(() => {
                 showOpenAccountAdPopup()
-            }, 15000);
+            }, 1500);
         }
         
-    }, []);
+    }, []);     
     return (
         <>
             {
-                showOpenAccountPopup ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
+                (showOpenAccountPopup && (localStorage.getItem('hideAdPopUp') != 'true')) ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
             }
             {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
             }
+            
             <div className="demat-account-form" id="dematform">
 
                 <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
