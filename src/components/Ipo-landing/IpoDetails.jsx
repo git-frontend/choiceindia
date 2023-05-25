@@ -9,7 +9,7 @@ function IpoDetails() {
       <section className="ipo-details" id="showCard">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-8">
+                    <div className="col-xl-8">
                         <div className="ipo-text-details">
                           <h2 className="title-first">Bajaj Energy <span>IPO Details</span></h2>
                         <div className="para-sec">

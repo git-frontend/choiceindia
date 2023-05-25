@@ -10,12 +10,12 @@ function IpoFaq() {
         <section className='ipo-faq'>
                 <div className="container">
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-xl-8">
                             <h2 className="title-first">Bajaj Energy <span>IPO FAQs</span></h2>
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-md-8">
+                        <div className="col-xl-8">
                             <Accordion defaultActiveKey="0" flush className='open-demat-faqs-accordion'>
                                 <Accordion.Item eventKey="0" className='faq-item'>
                                     <Accordion.Header as="h3" className='faq-header'>When will Bajaj Energy IPO open?</Accordion.Header>

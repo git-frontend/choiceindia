@@ -6,23 +6,23 @@ function Revenue(){
     <section className='revenue-chart-sec'>
         <div className='container'>
             <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-xl-8'>
                     <h2 className='title-first'>Bajaj Energy <span>Revenue & Profit</span></h2>
                     <div className='chart-card'>
                         <div className='chart-header'>
                             <div className='header-item'>
                                 <div className='item1'>
-                                    <span className='revenue-color'></span> Revenue
+                                    <span className='cir-col revenue-color'></span> Revenue
                                 </div>
                                 <div className='item1'>
-                                    <span className='profit-color'></span> Profit
+                                    <span className='cir-col profit-color'></span> Profit
                                 </div>
                                 <div className='item1'>
-                                    <span className='loss-color'></span> Loss
+                                    <span className='cir-col loss-color'></span> Loss
                                 </div>
                             </div>
                             <div className='header-item'>
-                                <span className='value-all'>All value in ₹ Lakh cr.</span>
+                                <span className='value-all'>All value in ₹ Lakh/cr.</span>
                             </div>
                         </div>
                         <div className='chart-custom'>
@@ -41,7 +41,7 @@ function Revenue(){
                                           <td className='paid bar loss' style={{height:"6.1%"}}><p>-0.61</p></td>
                                       </tr>
                                       <tr className='qtr' id="q4">
-                                          <td className='sent bar'  style={{height:"80.91%"}}><p>+8.91</p></td>
+                                          <td className='sent bar'  style={{height:"89.10%"}}><p>+8.91</p></td>
                                           <td className='paid bar profit'  style={{height:"6.7%"}}><p>+0.67</p></td>
                                           
                                       </tr>
@@ -82,7 +82,7 @@ function Revenue(){
     <section className='ipo-dates-section'>
         <div className='container'>
             <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-xl-8'>
                     <div>
                         <h2 className='title-first'>Bajaj Energy <span>IPO Dates</span></h2>
                     </div>
@@ -123,7 +123,7 @@ function Revenue(){
     <section className='ipo-lotsize'>
         <div className='container'>
             <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-xl-8'>
                     <div>
                         <h2 className='title-first'>Bajaj Energy <span>IPO Lot Size</span></h2>
                     </div>

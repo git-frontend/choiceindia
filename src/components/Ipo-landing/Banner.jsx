@@ -87,7 +87,7 @@ useEffect(() => {
       <section className="ipo-banner">
         <div className="container">
             <div className="row">
-                <div className="col-md-7">
+                <div className="col-xl-7">
                     <div className="banner-caption">
                         <div className="cmp-logo">
                           <span className="img-brder">
@@ -138,7 +138,7 @@ useEffect(() => {
                 </div>
             </div>
             <div className={name2}>
-                <div className="mt-5 btn-fixed">
+                <div className="btn-fixed">
                   <a className="openbtn">
                     <span>Invest in Bajaj Energy IPO </span>
                     <span>

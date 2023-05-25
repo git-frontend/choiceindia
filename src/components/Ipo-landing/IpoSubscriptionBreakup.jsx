@@ -6,7 +6,7 @@ function IpoSubscriptionBreakup() {
        <section className='ipo-breakup'>
         <div className='container'>
             <div className='row'>
-                <div className='col-md-8'>
+                <div className='col-xl-8'>
                     <div>
                         <h2 className='title-first'>Bajaj Energy IPO <span>Subscription Breakup</span></h2>
                     </div>
