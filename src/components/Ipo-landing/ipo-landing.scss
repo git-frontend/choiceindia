@@ -41,6 +41,10 @@
                 padding-left: 0;
             }
         }
+        @media (max-width:$sm) {
+            display: block;
+            text-align: center;
+         }
     }
     .banner-card{
         background: $whiteColor;
@@ -121,6 +125,13 @@
                 }
                 a{
                     color: $primary;
+                }
+            }
+            .btn-sec{
+                .btn-bg{
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
                 }
             }
         }
@@ -219,6 +230,9 @@
             span{
                 color:$yellowColor;
             }
+            @media (max-width:$sm) {
+               text-align: center;
+            }
         }
         .para-sec{
             padding: 2.769rem 0 4.538rem;
@@ -304,6 +318,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .chart-card{
         border: 1px solid $lightgray;
@@ -385,6 +402,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
@@ -427,6 +447,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        } 
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
@@ -459,7 +482,7 @@
     background: $darkblack;
     position: relative;
     @media (max-width:$sm) {
-        padding: 5rem 0 3rem;
+        padding: 5rem 0;
     }
     .left-sec{
         .title-first{
@@ -475,6 +498,14 @@
                 padding-top: 2rem;
                 padding-bottom: 3rem;
             }
+            .btn-bg{
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width:$sm) {
+            padding: 0 1rem;
         }
     }
     .all-features-list{
@@ -482,7 +513,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         .feature-item{
-            margin-bottom: 3rem;
+            margin:0 10rem;
             width: 45%;
             img{
                 height: 76px;
@@ -501,7 +532,7 @@
                     font-family: $font-family-poppins-regular;
                 }
                 @media (max-width:$sm) {
-                    font-size: 1.4rem;
+                    font-size: 1.538rem;
                     margin: 2rem 0 0 0.7rem;
                 }
             }
@@ -618,6 +649,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        }
     }
     .ipo-dates-table{
         border:1px solid $lightgray;
@@ -654,6 +688,9 @@
         span{
             color: $yellowColor;
         }
+        @media (max-width:$sm) {
+            text-align: center;
+        }
     }
     .steps-sec{
         padding: 2rem 0;
@@ -670,10 +707,21 @@
                 line-height: 1.5;
                 font-family: $font-family-poppins-regular;
             }
+            @media (max-width:$sm) {
+                padding: 2rem 0 0 0;
+            }
         }
     }
     .btn-open{
         position: relative;
+        .btn-bg{
+            @media (max-width:$sm) {
+                width:100%;
+            }
+        }
+        @media (max-width:$sm) {
+           padding: 0 1rem;
+        }
     }
 }
 .ipo-faq {
@@ -683,6 +731,9 @@
 		margin-bottom: 2rem;
         span{
             color: $yellowColor;
+        }
+        @media (max-width:$sm) {
+            text-align: center;
         }
 	}
 
