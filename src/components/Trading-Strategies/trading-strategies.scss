@@ -95,7 +95,9 @@
                 .single-ttl {
                     color: $primary;
                     margin-bottom: 0;
-
+                    @media (max-width:$sm) {
+                        margin-bottom: 0.8rem;
+                    }
                     @media (min-width:$sm)and (max-width:$md) {
                         padding: 1.1rem 0rem;
                     }
@@ -115,6 +117,9 @@
                 font-size: 1.75rem;
                 color: $primary;
                 padding: 1.7rem 0rem;
+                @media (max-width:$sm) {
+                    margin-bottom: 0.8rem;
+                }
             }
 
             .para {
@@ -134,6 +139,12 @@
             @media (max-width:$sm) {
                 padding: 0 1rem;
                 text-align: center;
+                background-color: $bgcolor-hover;
+                margin-bottom: 0.8rem;
+                padding: 2rem 3.5rem;
+                border-radius: 24px;
+                border-top: 0;
+                width: 98% !important;
             }
         }
 

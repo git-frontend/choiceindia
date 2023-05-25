@@ -76,9 +76,11 @@
                                 text-align: left;
                                 @media (max-width:$sm) {
                                     text-align: center;
+                                    padding-left: 10px;
                                 }
                                 @media (max-width:$md) {
                                     font-size: 1.3rem;
+
                                 }
                             }
                         }
@@ -293,6 +295,10 @@
                 font-size: 1.75rem;
                 color: $primary;
                 padding: 1.7rem 0rem;
+                @media (max-width:$sm) {
+                    color: $bgcolor-yellow;
+                    margin-bottom: 0;
+                }
             }
 
             .para {
@@ -300,6 +306,7 @@
 
                 @media (max-width:$sm) {
                     display: block;
+                    color: $whiteColor;
                 }
             }
 
@@ -313,6 +320,11 @@
                 padding: 0 1rem;
                 text-align: center;
                 min-height: 19rem;
+                padding: 2rem 3.5rem;
+                background-color: $primary;
+                border-radius: 24px;
+                border-top: 0;
+                width: 98% !important;
             }
         }
 
