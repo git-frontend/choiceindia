@@ -41,7 +41,7 @@ function ResearchCalls() {
       "offset": 0,
       "segment": "CDS",
       "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
-      "status": "",
+      "status": "Target Achieved",
       "subcategory_id": "",
       "search": "",
       "id": "",
@@ -94,7 +94,6 @@ function ResearchCalls() {
                   ele.ChangePer = (ele.Change * 100) / Number(ele.PrevClose);
                   // storefile.keys(Tok).find(key => Tok[key] === ele.Tok)
                   for (let i = 0; i < storefile.length; i++) {
-
                     if (storefile[i].token == ele.Tok && storefile[i].segment_id == ele.Seg) {
                       AllFilesValue = Object.assign(storefile[i], ele);
                       multiValue.push(AllFilesValue)
@@ -227,8 +226,9 @@ useEffect(() => {
                                           <span className="small-text">{response?.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
-                                          <span className="right-big-text">{response.LTP}</span>
-                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                          <span className="right-big-text">{((response?.LTP).toString().replace(/(\d{3})(\d{4})$/, '$1.$2')).padStart(8, '0')}</span>
+                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
+                                          {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                         </div>
                                       </div>
 
@@ -289,8 +289,9 @@ useEffect(() => {
                                           <span className="small-text">{response?.scrip_sec_desc}</span>
                                         </div>
                                         <div className="middle-right">
-                                          <span className="right-big-text">{response.LTP}</span>
-                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                          <span className="right-big-text">{((response?.LTP).toString().replace(/(\d{3})(\d{4})$/, '$1.$2')).padStart(8, '0')}</span>
+                                          <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
+                                          {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                         </div>
                                       </div>
 

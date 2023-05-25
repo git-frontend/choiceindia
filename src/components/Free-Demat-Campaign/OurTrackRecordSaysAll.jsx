@@ -85,7 +85,7 @@ function OurTrackRecordSaysAll() {
       "SessionId": session,
       "Start": 0,
       "startDate": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "dd-MM-yyyy"),
-      "status": "",
+      "status": "Book Profit",
       "type": "EQ",
       "UserId": "guest",
       "search": ""
@@ -187,7 +187,7 @@ function OurTrackRecordSaysAll() {
       "offset": 0,
       "segment": "FO",
       "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
-      "status": "",
+      "status": "Target Achieved",
       "subcategory_id": "",
       "search": "",
       "id": "",
@@ -368,7 +368,8 @@ function OurTrackRecordSaysAll() {
                                               </div>
                                               <div className="middle-right">
                                                 <span className="right-big-text">{((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-                                                <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{(Math.abs((response.Change || 0))).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                                <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
+                                                  {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                               </div>
                                             </div>
                                             {
@@ -483,7 +484,8 @@ function OurTrackRecordSaysAll() {
                                                   </div>
                                                   <div className="middle-right">
                                                     <span className="right-big-text">{((response?.LTP).toFixed(2)).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</span>
-                                                    <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>{ Math.abs((response.Change || 0)).toFixed(2) + "(" + Math.abs((response?.ChangePer || 0)).toFixed(2) + '%' + ")"}</h6>
+                                                    <h6 className={"right-small-text " + ((response?.ChangePer < 0) ? 'text_red' : (response.ChangePer > 0) ? 'text_green' : '')}>
+                                                      {`${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response.Change || 0).toFixed(2)} (${response?.ChangePer < 0 ? '-' : ''}${Math.abs(response?.ChangePer || 0).toFixed(2)}%)`}</h6>
                                                   </div>
                                                 </div>
                                                 {
