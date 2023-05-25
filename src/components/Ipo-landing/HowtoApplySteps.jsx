@@ -8,7 +8,7 @@ function HowtoApplySteps() {
                 <div className='row'>
                     <div className='col-xl-8'>
                         <div>
-                            <h2 className='title-first'>How to Apply <span>for Bajaj Energy IPO?</span></h2>
+                            <h2 className='title-first'><span>How to Apply</span> for Bajaj Energy IPO?</h2>
                         </div>
                         <div className='steps-sec'>
                             <div className='steps-item'>
