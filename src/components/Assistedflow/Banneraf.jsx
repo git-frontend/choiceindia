@@ -847,17 +847,22 @@ function Banneraf() {
                                         userDetails.subId ? 
                                           <p className="subtext">
                                             Code sent to client’s registered
-                                            mobile number +91 {mobileNumber} 
                                             {
-                                              email? <span> and Email {email}</span> : ""
+                                              mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
+                                            }
+                                            
+                                            {
+                                              email?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
                                             }
                                           </p>
                                           :
                                           <p className="subtext">
                                             Code sent to your registered
-                                            mobile number +91 {mobileNumber}
                                             {
-                                              email? <span> and Email {email}</span> : ""
+                                              mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
+                                            }
+                                            {
+                                              email?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
                                             }
                                           </p> 
                                     }                      
