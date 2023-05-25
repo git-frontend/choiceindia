@@ -850,9 +850,13 @@ function Banneraf() {
                                             {
                                               mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
                                             }
-                                            
+
                                             {
-                                              email?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                              (email && !mobileNumber)?<><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                            }
+
+                                            {
+                                              (email && mobileNumber)?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
                                             }
                                           </p>
                                           :
@@ -862,7 +866,11 @@ function Banneraf() {
                                               mobileNumber?<><span> mobile number +91 <span className="temp-text"> {mobileNumber} </span></span></> : ''
                                             }
                                             {
-                                              email?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                              (email && !mobileNumber)?<><span>Email ID</span> <span className="temp-text">{email}</span></> : ''
+                                            }
+
+                                            {
+                                              (email && mobileNumber)?<><span>and Email ID</span> <span className="temp-text">{email}</span></> : ''
                                             }
                                           </p> 
                                     }                      
