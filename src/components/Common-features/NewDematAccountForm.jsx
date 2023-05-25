@@ -75,7 +75,9 @@ function NewDematAccountForm(props) {
     const[form, setForm]=useState("Open-demat-account")
     const { executeRecaptcha } = useGoogleReCaptcha();
 
-
+    const handleButtonClick = () => {
+        setShowOTP(false);
+      };
     // useEffect(() => {
     //     console.log('PRR',props.language)
     // },[])
@@ -111,6 +113,7 @@ function NewDematAccountForm(props) {
     }
 
     useEffect(() => {
+     
         if (!isMobile.current && props.isPopupVisible) {
             setTimeout(() => {
                 showOpenAccountAdPopup();
@@ -261,7 +264,7 @@ function NewDematAccountForm(props) {
     }
 
     function sendNewLeadOTP() {
-        // showLoader('sendOTPLoader');
+        showLoader('sendOTPLoader');
         let request = {
             "mobile_number": mobileNumber,
             "product": "FINX",
@@ -484,23 +487,27 @@ function NewDematAccountForm(props) {
 
     useEffect(() => {
         //  console.log('Inside thanku',isShow)
-          if(showThanku.page != 'add-lead' && !showThanku.redirectionLink){
-            setTimeout(() => {
-              if (isShow.redirectionLink === null) {
-                isShow.closeMd();
-              } else {
-                isShow.closeMd(isShow.redirectionLink);
+        if(showThanku.showModal){
+            if(showThanku.page != 'add-lead' && !showThanku.redirectionLink){
+                setTimeout(() => {
+                  if (showThanku.redirectionLink === null) {
+                    showThanku.closeMd();
+                  } else {
+                    showThanku.closeMd(showThanku.redirectionLink);
+                  }
+                }, 15000)
+              } else if (showThanku.page != 'add-lead' && showThanku.redirectionLink) {
+                setTimeout(() => {
+                  if (showThanku.redirectionLink === null) {
+                    showThanku.closeMd();
+                  } else {
+                    showThanku.closeMd(showThanku.redirectionLink);
+                  }
+                }, 2000)
               }
-            }, 15000)
-          } else if (showThanku.page != 'add-lead' && showThanku.redirectionLink) {
-            setTimeout(() => {
-              if (showThanku.redirectionLink === null) {
-                showThanku.closeMd();
-              } else {
-                showThanku.closeMd(showThanku.redirectionLink);
-              }
-            }, 2000)
-          }
+
+        }
+          
         }, [showThanku.showModal])
 
     return (
@@ -515,20 +522,24 @@ function NewDematAccountForm(props) {
                 !showOTP && !showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new" id="dematform">
 
-                        <h2 className="form-ttl">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'title')}</h2>
+                        <h2 className="heading">Open Demat Account</h2>
                         <Form>
                             <Form.Group className="mb-3 formgrp formgrp-new">
                                 <Form.Label>Mobile Number*</Form.Label>
+                               
                                 <div className="sub-formgrp sub-formgrp-new">
+                               
                                     <Form.Control isValid={!errors.invalidMobile || !errors.required} type="tel" pattern="\d*" name="mobile_no" id="mobile_no" placeholder="0000000000" className="formcontrol digit-otp " autoComplete="off" maxLength="10" isInvalid={errors.invalidMobile || errors.required} value={mobileNumber} onChange={handleMobile} />
+                                    
                                     {
                                         errors.invalidMobile ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'invalidmob')}</Form.Control.Feedback> : ''
                                     }
                                     {
                                         errors.required ? <Form.Control.Feedback type="invalid">{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'reqmob')}</Form.Control.Feedback> : ''
                                     }
-                                    <span className="state-code">+91</span>
+                                    {/* <span className="state-code">+91</span> */}
                                 </div>
+                              
                                 <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
                                     <Form.Check
                                         inline
@@ -566,8 +577,8 @@ function NewDematAccountForm(props) {
                     <div className="demat-account-form demat-account-form-new">
                         <div className="thank-you-msg">
                         <LazyLoader src={thumbsup} className={'img-fluid'} width={"160"} height={"160"} alt="Loading" />
-                            <h2 className="thankyou-title">Thank You For Your Registration!</h2>
-                            <p className="subheading">You are being redirected to onboarding page!</p>
+                            <h2 className="thankyou-title">Thank You!</h2>
+                            <p className="subheading">{showThanku.resText? showThanku.resText: "You are being redirected to onboarding page!"}</p>
                         </div>
                         
                     </div>
@@ -578,7 +589,7 @@ function NewDematAccountForm(props) {
             {
                 showOTP && !showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new">
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} setparam={form} ></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} setparam={form} onButtonClick={handleButtonClick} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>

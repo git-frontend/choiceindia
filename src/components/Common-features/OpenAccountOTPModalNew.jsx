@@ -12,7 +12,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,setparam}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,setparam,onButtonClick}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -25,6 +25,11 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     const [otpparam, setOtpparam] = useState('');
+
+
+    const handleButtonClick = () => {
+        onButtonClick(); 
+      };
     // console.log('SSS',show);
     function handleClose(){
       //  console.log('Handleclose');
@@ -211,7 +216,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
             openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
                 hideLoader('resendOTPLoader');
-                setCount(30);
+                setCount(3);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
                     handleOTPResendSuccessToaster('otp');
@@ -392,19 +397,30 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                     <a href="javascript:void(0)" onClick={onClose} className="closebtn" >&times;</a>
                                 </div> */}
                                 <div className="popup-sub-right">
+                                
                                 <p className="heading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpmodalheader')}</p>
-                                    <div className="otpform-new">
+                                    <div className="otpform-new  fade-in" >
                                         {/* <img src={OTPimage} /> */}
 
-                                       
-                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {'******' + (mobileNumber).slice(6, 10)}</p>
-                                        
-
+                                       <div className="d-flex">
+                                        <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
+                                        <button className="changenumbtn" onClick={handleButtonClick}>(change)</button>
+                                        </div>
                                   
                                     <div className="otp-mdl-input-chk">
 
 
                                         <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="* * * * * *" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+
+                                        {/* <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}>
+                                            <input type="text" id='ist' maxlength="1" placeholder="*" onkeyup="clickEvent(this,'sec')"/>
+                                            <input type="text" id="sec" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'third')"/>
+                                            <input type="text" id="third" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'fourth')"/>
+                                            <input type="text" id="fourth" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'fifth')"/>
+                                            <input type="text" id="fifth" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'sixth')"/>
+                                            <input type="text" id="six" maxlength="1" placeholder="*"/>
+                                        </div> */}
+
                                         {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         }
@@ -415,28 +431,36 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                                         }
                                         {/* </div> */}
                                     </div>
-
-                                    <div className="btnwrap">
-                                        <button className="btn-bg" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
-                                    </div>
-                                    </div>
-                                    <div>
+ <div>
                                         {
                                             !count ?
                                                 <div className="d-flex align-items-center justify-content-between pt-3">
-                                                    <button className="resend" onClick={resendOTP}>{loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
-                                                        // <div className="dotLoaderB colorB marginLoader"></div>
-                                                        : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')}</button>
+                                                    <button className="resend" onClick={resendOTP}>
+                                                        {/* {loaders.resendOTPLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading123...</span></Spinner>
+                                                        : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresend')} */}
+                                                        Get OTP <span className="bluetxt">SMS</span>
+                                                        </button>
+
                                                     <span className="ortext">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otportext')}</span>
-                                                    <button className="resend" onClick={getOTPOnCall}>{loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
-                                                        // <div className="dotLoaderB colorB marginLoader"></div>
-                                                        : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')}</button></div> : ''
+
+                                                    
+                                                    <button className="resend" onClick={getOTPOnCall}>
+                                                        {/* {loaders.OTPOnCallLoader ? <Spinner className="marginLoader" animation="border" role="status"><span className="visually-hidden">Loading456...</span></Spinner>
+                                                        
+                                                        : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otponcall')} */}
+                                                        Get OTP <span className="bluetxt">Call</span>
+                                                        </button></div> : ''
                                         }
                                     </div>
-                                    <div className="mt-2">
+                                    <div className="btnwrap">
+                                        <button className="btn-bg btn-bg-dark" disabled={loaders.verifyLoader} onClick={verifyOTP}>{loaders.verifyLoader ? <div className="dotLoaderB"></div> : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpverifybtn')}</button>
+                                    </div>
+                                    </div>
+                                   
+                                    <div className="mt-2 ">
                                         {
                                             (OTPSendSuccessToaster.otp || OTPSendSuccessToaster.call) ?
-                                                <Alert key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
+                                                <Alert className="alertmsg" key='success' variant='success' onClose={() => setOTPSendSuccessToaster({})} dismissible>
                                                     {
                                                         (OTPSendSuccessToaster.call) ? OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresendsuccess1') : OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpresendsuccess2')
                                                     }
