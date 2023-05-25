@@ -38,7 +38,7 @@ function FreeDematCompaign() {
       
       <div>
           <Banner />
-          <CreateBacktestStrategies/>
+          {/* <CreateBacktestStrategies/> */}
           <GetFreeResearchCall/>
           <OurTrackRecordSaysAll/>
           <WhyOpenFreeDematAccount/>

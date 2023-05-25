@@ -11,7 +11,7 @@ function SliderApp() {
   const [isShown2, setIsShown2] = useState(0);
   const settings1 = {
     infinite: true,
-    speed: 1200,
+    speed: 5000,
     vertical: true,
     focusOnSelect: false,
     touchMove: false,
@@ -20,7 +20,7 @@ function SliderApp() {
     autoplay: true,
     pauseOnHover:false,
     dots: false,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 10000,
     slidesToScroll: 1,
     swipeToSlide: true,
   };

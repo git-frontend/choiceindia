@@ -106,7 +106,7 @@ function Banner() {
                                 </div>
                     </Slider>
                     <div class="btn-open">
-                        <a  onClick={()=>{chapterScroll3('dematform')}} class="cursor-pointer"><span class="btn-bg">Explore Stratezy</span></a>
+                        <a  onClick={()=>{chapterScroll3('showForm')}} class="cursor-pointer"><span class="btn-bg">Explore Stratezy</span></a>
                     </div>
                 </div>
                 <div className="col-xl-4 col-md-5">

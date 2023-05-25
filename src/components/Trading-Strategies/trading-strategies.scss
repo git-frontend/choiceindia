@@ -7,9 +7,9 @@
     padding-top: 7rem;
     position: relative;
     .btn-open{
-        padding-bottom: 3rem;
         @media (max-width:$sm) {
             text-align: center;
+            padding-bottom: 3rem;
         }
         .btn-bg{
             @media (max-width:$sm) {
@@ -45,7 +45,7 @@
 }
 
 .develop-strategies {
-    padding: 10rem 0;
+    padding: 10rem 0 0 0;
     position: relative;
 
     .treding-mr {
@@ -75,15 +75,18 @@
             position: relative;
             cursor: pointer;
             border-top: 1px solid $border-gray;
+            @media (min-width:$sm)and (max-width:$md) {
+                padding-left: 3rem;
+            }
 
             &.list-itm-active {
-                padding: 2rem;
+                padding: 2rem 3.5rem;
                 background-color: $bgcolor-hover;
                 border-radius: 24px;
                 border-top: 0;
 
                 @media (min-width:$sm)and (max-width:$md) {
-                    padding: 1rem;
+                    padding: 1rem 3rem;
                 }
                 @media (max-width:$sm) {
                     margin-bottom: 0.8rem;
@@ -92,7 +95,9 @@
                 .single-ttl {
                     color: $primary;
                     margin-bottom: 0;
-
+                    @media (max-width:$sm) {
+                        margin-bottom: 0.8rem;
+                    }
                     @media (min-width:$sm)and (max-width:$md) {
                         padding: 1.1rem 0rem;
                     }
@@ -112,6 +117,9 @@
                 font-size: 1.75rem;
                 color: $primary;
                 padding: 1.7rem 0rem;
+                @media (max-width:$sm) {
+                    margin-bottom: 0.8rem;
+                }
             }
 
             .para {
@@ -131,6 +139,12 @@
             @media (max-width:$sm) {
                 padding: 0 1rem;
                 text-align: center;
+                background-color: $bgcolor-hover;
+                margin-bottom: 0.8rem;
+                padding: 2rem 3.5rem;
+                border-radius: 24px;
+                border-top: 0;
+                width: 98% !important;
             }
         }
 
@@ -158,9 +172,11 @@
             padding: 4rem 0 0 0;
         }
     }
-
+    @media (max-width: $md) {
+        padding: 5rem 0 0 0;
+    }
     @media (max-width: $sm) {
-        padding: 5rem 0 5rem 0;
+        padding: 2rem 0 5rem 0;
     }
     }
 
@@ -212,7 +228,7 @@
     position: relative;
     overflow: hidden;
     @media (max-width:$sm) {
-        padding:6rem 0 12rem 0;
+        padding:6rem 0 15rem 0;
     }
     &::before{
         content: '';
@@ -284,11 +300,11 @@
                 right: inherit;
             }
             .finx-app-list {
-                @media (max-width:$sm) {
-                    padding-top: 3rem;
-                }
+                // @media (max-width:$sm) {
+                //     padding-top: 3rem;
+                // }
                 .app-list-item {
-                    width: 95% !important;
+                    width: 90% !important;
                     background: $whiteColor;
                     border-radius: 20px;
                     display: block;
@@ -340,14 +356,21 @@
 
 .open-Demat-sec{
     padding: 10rem 0;
+    @media (max-width:$sm) {
+        padding: 6rem 0;
+    }
     .btn-open{
         .btn-bg{
+            &:hover{
+                background: $primary !important;
+                color: $whiteColor !important;
+            }
             @media (max-width:$sm) {
                 width: 100%;
             }
         }
     }
-    .title-secnd{
+    .title-first{
         span{
             color: $bgcolor-yellow;
         }
@@ -364,6 +387,9 @@
         flex-wrap: wrap;
         .open-percent-item{
             width: 19%;
+            @media (max-width:$md) {
+                width: 22%;
+            }
             @media (max-width:$sm) {
                 width: 100%;
             }
@@ -392,9 +418,6 @@
                         font-size:1.5rem ;
                         font-family: $font-family-poppins-semibold;
                         line-height: 1.5;
-                        @media (max-width:$md) {
-                            font-size: 1.3rem ;
-                        }
                         br{
                             @media (max-width:$sm) {
                                 display: none;

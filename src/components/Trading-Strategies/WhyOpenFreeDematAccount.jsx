@@ -23,7 +23,7 @@ function WhyOpenFreeDematAccount() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">Open 100% Free Demat Account</h2>
+                   <h2 className="title-first text-center">Open 100% Free Demat Account</h2>
                   <div className="open-percent-row">
                       <div className="open-percent-item">
                        <div className="benefit-list">

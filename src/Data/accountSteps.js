@@ -13,16 +13,16 @@ const accountSteps =
     {
        
         "id":2,
-        "title":'Wealth Managment App',
-        "description":'Grow your Investments smoothly in Mutual  Funds'
+        "title":'Verify Bank Details',
+        "description":'Verify your account number by uploading your cancelled cheque.'
         
         
     },
     {
         
         "id": 3,
-        "title":'Get Insurance Policy',
-        "description":'Get insured as per your need for everything right here'
+        "title":'Complete eSign',
+        "description":'eSign documents via mobile number and email address registered with Aadhar.'
     
         
     }
@@ -30,8 +30,8 @@ const accountSteps =
 
        
         "id": 4,
-        "title":'Invest in Readymade Stock Baskets',
-        "description":'Try our curated baskets to invest on autopilot'
+        "title":'Singed and Courier DDPI',
+        "description":'Courier us the signed copy of the Demat Debit and Pledge Instruction (DDPI) sent on your registered Email ID.'
     }
 ]
 

@@ -145,6 +145,10 @@ const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading
 const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'));
 const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
 const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
+
+
+const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
+// const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
@@ -814,6 +818,10 @@ function Routing() {
                          <Route exact path='/campaign/technical-analysis' element={
                             <React.Suspense>
                                 < LazyTechnicalAnalysis />
+                                </React.Suspense>}/>
+                        <Route exact path='/campaign/futures-options-trading' element={
+                            <React.Suspense>
+                                < LazyFuturesOptionsTrading />
                             </React.Suspense>
                         } />
  

@@ -23,15 +23,15 @@ function DocumentsRequiredDematAccountOpeningOnline() {
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center"><span>Documents Required</span> for Demat Account <br/>Opening Online</h2>
+                   <h2 className="title-first text-center"><span>Documents Required</span> for Demat Account <br/>Opening Online</h2>
                 </div>
                 <div className="col-xl-6 col-md-8">
                   <div className="scroll-mobile">
                     <ul className="list-group list_group1">
                         <li className= {toggleState === 1 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={() => { toggleTab(1); setData(0) }} >KRA Verified Users</li>
+                    onClick={() => { toggleTab(1); setData(0) }} >Non KRA Verified Users</li>
                         <li className= {toggleState === 2 ? "list-group-item list listsec" : "list-group-item list"}
-                    onClick={() => { toggleTab(2); setData(2) }} >Non KRA Verified Users </li>
+                    onClick={() => { toggleTab(2); setData(2) }} >KRA Verified Users </li>
                       </ul>
                   </div>
                 </div>

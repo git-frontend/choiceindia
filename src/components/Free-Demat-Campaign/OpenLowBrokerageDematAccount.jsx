@@ -26,6 +26,7 @@ function OpenLowBrokerageDematAccount() {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 1,
+                    adaptiveHeight: true,
                 },
             },
             {
@@ -35,7 +36,6 @@ function OpenLowBrokerageDematAccount() {
                     slidesToScroll: 1,
                     autoplay: true,
                     dots:true,
-                    adaptiveHeight: true,
                 },
             },
         ],
@@ -48,7 +48,7 @@ function OpenLowBrokerageDematAccount() {
                     <div className="row">
                         <div className="col-md-12">
                             <div className="text-center">
-                                <h2 className="secttitle">Open a <span>Low Brokerage</span> Demat Account</h2>
+                                <h2 className="title-first">Open a <span>Low Brokerage</span> Demat Account</h2>
                                 <p>Brokerage is charged on a percentage basis for Intraday, Delivery and Futures while the brokerage for Options is calculated on the basis of a flat fee.</p>
                             </div>
                         </div>

@@ -7,11 +7,11 @@ import AutomatedTradingCalls from '../../assets/images/free-demat-compaign/open-
 function GetFreeResearchCall() {
   return (
     <div>
-    <section className="get-research-call">
+    <section className="get-research-call" id="showForm">
         <div className="container">
             <div className="row justify-content-center">
                 <div className="col-md-12">
-                   <h2 className="title-secnd text-center">Open Demat Account to Get <br/><span>Free Research Calls</span></h2>
+                   <h2 className="title-first text-center">Open Demat Account to Get <br/><span>Free Research Calls</span></h2>
                 </div>
                <div className="daily-automated-call">
                   <div className="daily-automated-card left-sec">

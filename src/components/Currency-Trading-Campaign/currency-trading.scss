@@ -61,7 +61,10 @@
                                 min-height: 6rem;
                                 display: flex;
                                 align-items: center;
-                                justify-content: center;
+                                justify-content: left;
+                                @media (max-width:$sm) {
+                                    justify-content: center;
+                                }
                             }
             
                             .cardoption-ttl {
@@ -70,8 +73,14 @@
                                 font-family: $font-family-poppins-semibold;
                                 font-size: 1.5rem;
                                 line-height: 1.5;
+                                text-align: left;
+                                @media (max-width:$sm) {
+                                    text-align: center;
+                                    padding-left: 10px;
+                                }
                                 @media (max-width:$md) {
                                     font-size: 1.3rem;
+
                                 }
                             }
                         }
@@ -93,8 +102,8 @@
     height: 100%;
     min-height: auto;
 
-    @media (max-width: $md) {
-        padding: 5rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0;
     }
 
     .research-title {
@@ -109,7 +118,7 @@
             display: block !important;
 
             @media (max-width: $md) {
-                width: 90% !important;
+                width: 98% !important;
             }
 
             .main-left {
@@ -118,6 +127,7 @@
                 box-shadow: 0px 6px 24px rgba(0, 0, 0, 0.16);
                 @media (max-width: $md) {
                     padding: 1.923rem 1rem;
+                    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
                 }
                 .bottom-section{
                     .fandores{
@@ -245,15 +255,18 @@
             position: relative;
             cursor: pointer;
             border-top: 1px solid $border-gray;
+            @media (min-width:$sm)and (max-width:$md) {
+                padding-left: 3rem;
+            }
 
             &.list-itm-active {
-                padding: 2rem;
+                padding: 2rem 3.5rem;
                 background-color: $primary;
                 border-radius: 24px;
                 border-top: 0;
 
                 @media (min-width:$sm)and (max-width:$md) {
-                    padding: 1rem;
+                    padding: 1rem 3rem;
                 }
                 @media (max-width:$sm) {
                     margin-bottom: 0.8rem;
@@ -282,6 +295,10 @@
                 font-size: 1.75rem;
                 color: $primary;
                 padding: 1.7rem 0rem;
+                @media (max-width:$sm) {
+                    color: $bgcolor-yellow;
+                    margin-bottom: 0;
+                }
             }
 
             .para {
@@ -289,6 +306,7 @@
 
                 @media (max-width:$sm) {
                     display: block;
+                    color: $whiteColor;
                 }
             }
 
@@ -301,6 +319,12 @@
             @media (max-width:$sm) {
                 padding: 0 1rem;
                 text-align: center;
+                min-height: 19rem;
+                padding: 2rem 3.5rem;
+                background-color: $primary;
+                border-radius: 24px;
+                border-top: 0;
+                width: 98% !important;
             }
         }
 
@@ -332,7 +356,7 @@
     }
 
     @media (max-width: $sm-x) {
-        padding: 5rem 0 5rem 0;
+        padding: 6rem 0 6rem 0;
     }
 }
 
@@ -340,8 +364,8 @@
     background-color: $primary;
     padding: 10rem 0;
 
-    @media (max-width: $md) {
-        padding: 5rem 0;
+    @media (max-width: $sm) {
+        padding: 6rem 0;
     }
 
     .fando-ttl {
@@ -371,12 +395,12 @@
                     .fando-open-demat-item {
                         min-height: inherit;
                         height: 100%;
-                        padding: 4.5rem;
+                        padding: 4rem;
                         @media (max-width:$sm) {
-                            padding: 1rem 2rem ;
+                            padding: 1rem 1rem ;
                         }
                         @media (min-width:$sm-x) and (max-width:$md) {
-                           padding: 1.5rem;
+                           padding: 2.5rem;
                         }
                     }
                 }
@@ -416,7 +440,7 @@
             .fando-head {
                 color: $whiteColor;
                 font-family: $font-family-poppins-semibold;
-                font-size: 1.625rem;
+                font-size: 1.75rem;
                 line-height: 1.5;
                 padding-top: 3rem;
                 // padding:3rem 0.4rem 0;
@@ -436,9 +460,9 @@
 }
 
 .fand-why-choice {
-    background-color: $lightColor ;
+    background-color: $whiteColor ;
     padding: 10rem 0;
-    @media (max-width: $md) {
+    @media (max-width: $sm) {
         padding: 5rem 0;
     }
 
@@ -471,7 +495,7 @@
             .why-choice-head {
                 color: $darkblue;
                 font-family: $font-family-poppins-bold;
-                font-size: 3rem;
+                font-size: 3.5rem;
                 margin-bottom: 1.5rem;
             }
 

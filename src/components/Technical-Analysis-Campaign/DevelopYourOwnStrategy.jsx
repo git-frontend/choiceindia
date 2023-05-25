@@ -15,7 +15,7 @@ function DevelopYourOwnStrategy() {
     touchMove: true,
     arrows: false,
     slidesToShow: 5,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 2000,
     slidesToScroll: 1,
@@ -29,6 +29,7 @@ function DevelopYourOwnStrategy() {
           vertical: false,
           dots:true,
           autoplaySpeed: 3000,
+          autoplay: true,
         }
       }
 
@@ -81,7 +82,7 @@ function DevelopYourOwnStrategy() {
                 </div>
                 <div className='col-md-6'>
                     <div className="video-height">
-                          <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className="video-width"></iframe>
+                          <iframe src="https://www.youtube.com/embed/8PTpITpHSMw" allow="fullscreen;"  allowfullscreen="true" className="video-width"></iframe>
                     </div>
                 </div>
               </div>
