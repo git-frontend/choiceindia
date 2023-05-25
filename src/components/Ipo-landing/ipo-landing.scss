@@ -593,13 +593,16 @@
         padding: 0;
             li{
                 padding: 1rem 0;
+                display: flex;
+                align-items: center;
                 .bx-icon{
                     padding-right: 1rem;
                 }
                 .bx-text{
                     color: $whiteColor;
                     font-family: $font-family-poppins-medium;
-                    font-size: 1.5rem;
+                    font-size: 1.7rem;
+                    white-space: nowrap;
                     .fw-regular{
                         font-family: $font-family-poppins-regular;
                     }
