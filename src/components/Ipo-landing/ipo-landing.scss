@@ -533,8 +533,11 @@
         .feature-item{
             width: 45%;
             margin-bottom: 3rem;
-            img{
+            .svg-w{
                 height: 76px;
+                @media (max-width:$md) {
+                    height: 65px;
+                }
                 @media (max-width:$sm) {
                     height: 56px;
                 }
