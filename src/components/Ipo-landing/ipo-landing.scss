@@ -127,6 +127,13 @@
                     color: $primary;
                 }
             }
+            .btn-sec{
+                .btn-bg{
+                    @media (max-width:$sm) {
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
     .sticy-card{
@@ -470,6 +477,14 @@
                 padding-top: 2rem;
                 padding-bottom: 3rem;
             }
+            .btn-bg{
+                @media (max-width:$sm) {
+                    width: 100%;
+                }
+            }
+        }
+        @media (max-width:$sm) {
+            padding: 0 1rem;
         }
     }
     .all-features-list{
@@ -671,10 +686,21 @@
                 line-height: 1.5;
                 font-family: $font-family-poppins-regular;
             }
+            @media (max-width:$sm) {
+                padding: 2rem 0 0 0;
+            }
         }
     }
     .btn-open{
         position: relative;
+        .btn-bg{
+            @media (max-width:$sm) {
+                width:100%;
+            }
+        }
+        @media (max-width:$sm) {
+           padding: 0 1rem;
+        }
     }
 }
 .ipo-faq {
