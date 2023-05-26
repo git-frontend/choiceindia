@@ -388,15 +388,15 @@ function OpenAccountOTPModal({mobileNumber, otpSessionID, onClose, language, ope
                                     <div className="otp-mdl-input-chk">
 
 
-                                        {/* <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} /> */}
-
+                                        <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="Enter OTP" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} />
+{/* 
                                         <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp">
                                             <input type="text" id='ist' maxlength="1" onkeyup="clickEvent(this,'sec')"/>
                                             <input type="text" id="sec" maxlength="1" onkeyup="clickEvent(this,'third')"/>
                                             <input type="text" id="third" maxlength="1" onkeyup="clickEvent(this,'fourth')"/>
                                             <input type="text" id="fourth" maxlength="1" onkeyup="clickEvent(this,'fifth')"/>
                                             <input type="text" id="fifth" maxlength="1"/>
-                                        </div>
+                                        </div> */}
                                         {/* {
                                             OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
                                         } */}
