@@ -17,13 +17,24 @@ function ResearchCalls() {
   const [Data1, setData1] = useState();
   const [checkdevice, setcheckdevice] = useState();
   const [view, setView] = useState({
-    matches: window.innerWidth < 768 ? false : true,
+    matches: window.innerWidth < 767 ? false : true,
   });
   let tokenList = [{}]
   let multiValue = [];
   let AllFilesValue = {};
   let tokens = "";
   let storefile;
+  function chapterScroll3(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+
   const settings = {
     infinite: true,
     speed: 1500,
@@ -193,7 +204,7 @@ function ResearchCalls() {
     }
   }, [trigger])
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    let mediaQuery = window.matchMedia("(min-width: 767px)");
     mediaQuery.addListener(setView);
     // this is the cleanup function to remove the listener
     return () => mediaQuery.removeListener(setView);
@@ -220,7 +231,7 @@ function ResearchCalls() {
                                       <h6 className="top-text">Reco Date</h6>
                                       <h6 className="top-date">{response?.updated_datetime}</h6>
                                     </div>
-                                    <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                    <div className="top-right"><button  onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                   </div>
                                   <div className="middle-section">
                                     <div className="middle-left">
@@ -283,7 +294,7 @@ function ResearchCalls() {
                                           <h6 className="top-text">Reco Date</h6>
                                           <h6 className="top-date">{response?.updated_datetime}</h6>
                                         </div>
-                                        <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                        <div className="top-right"><button  onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                       </div>
                                       <div className="middle-section">
                                         <div className="middle-left">

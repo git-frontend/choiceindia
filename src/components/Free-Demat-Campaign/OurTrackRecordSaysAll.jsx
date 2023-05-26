@@ -27,10 +27,19 @@ function OurTrackRecordSaysAll() {
   };
 
   const [view, setView] = useState({
-    matches: window.innerWidth < 768 ? false : true,
+    matches: window.innerWidth < 767 ? false : true,
   });
 
-
+  function chapterScroll3(id) {
+    var element = document.getElementById(id);
+    var headerOffset = 140;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
 
   const settings = {
     infinite: true,
@@ -45,12 +54,7 @@ function OurTrackRecordSaysAll() {
   };
 
 
-  useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 767px)");
-    mediaQuery.addListener(setView);
-    // this is the cleanup function to remove the listener
-    return () => mediaQuery.removeListener(setView);
-  }, []);
+ 
 
 
   //for session Id 
@@ -290,7 +294,7 @@ function OurTrackRecordSaysAll() {
     }
   }, [rendercount])
   useEffect(() => {
-    let mediaQuery = window.matchMedia("(min-width: 770px)");
+    let mediaQuery = window.matchMedia("(min-width: 767px)");
     mediaQuery.addListener(setView);
     // this is the cleanup function to remove the listener
     return () => mediaQuery.removeListener(setView);
@@ -348,9 +352,9 @@ function OurTrackRecordSaysAll() {
                                               </div>
                                               {
                                                 toggleState == 1 ?
-                                                  <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                  <div className="top-right"><button onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                                   :
-                                                  <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                  <div className="top-right"><button onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                               }
 
 
@@ -466,9 +470,9 @@ function OurTrackRecordSaysAll() {
 
                                                   {
                                                     toggleState == 1 ?
-                                                      <div className="top-right"><button className={"btn-buy " + ((response.call_type == "SELL") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                      <div className="top-right"><button onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "SELL") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                                       :
-                                                      <div className="top-right"><button className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > <a className="links1" href={checkdevice ? checkdevice : []} target="_blank">{response?.call_type}</a></button></div>
+                                                      <div className="top-right"><button  onClick={()=>{chapterScroll3('dematform')}} className={"btn-buy " + ((response.call_type == "Sell") ? " sellbtn" : " buybtn")} > {response?.call_type}</button></div>
                                                   }
                                                 </div>
                                                 <div className="middle-section">
