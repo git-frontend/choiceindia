@@ -25,6 +25,7 @@ function OpenAccountOTPModalNew({ mobileNumber, otpSessionID, onClose, language,
     const [show, setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
     const [otpparam, setOtpparam] = useState('');
+    const otpInputRefs = Array(6).fill(0).map(() => useRef(null));
 
 
     const handleButtonClick = () => {
@@ -62,15 +63,35 @@ function OpenAccountOTPModalNew({ mobileNumber, otpSessionID, onClose, language,
         }));
     }
 
-    function handleOTP(e) {
-        const { value } = e.target;
-        setOTP(value)
+    function handleOTP(e, index) {
+        const value = e.target.value;
+
+        // Update the OTP value
+        setOtp((prevOtp) => {
+            const updatedOtp = prevOtp.split('');
+            updatedOtp[index] = value;
+            return updatedOtp.join('');
+        });
+        console.log(value, "jhklhjkk", index, 'value', value.length,)
+        // Move to the next input field
+        if (value.length === 0 && value == '') {
+            otpInputRefs[index].current.focus();
+            console.log(value, "jh")
+
+        }
+        if (value.length === 1 && index < 5) {
+            otpInputRefs[index + 1].current.focus();
+        }
+        if (value.length === 0 && index > 0) {
+            otpInputRefs[index - 1].current.focus();
+        }
         if (!value.length) {
             setOTPErrors(OpenAccountLanguageContent.getContent(language ? language : 'en', 'otprequired'));
         } else {
             setOTPErrors('');
         }
     }
+    
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -404,32 +425,39 @@ function OpenAccountOTPModalNew({ mobileNumber, otpSessionID, onClose, language,
 
                             <div className="d-flex">
                                 <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
-                                <button className="changenumbtn" onClick={handleButtonClick}>(change)</button>
+                                <button className="changenumbtn" onClick={handleButtonClick}>(Change)</button>
                             </div>
 
-                            <div className="otp-mdl-input-chk">
-                                <div className="">
-                                    {[...Array(6)].map((_, index) => (
-                                        <input
-                                            key={index}
-                                            className="form-control form-control-lg mx-auto text-center digit-otp"
-                                            type="tel"
-                                            pattern="\d*"
-                                            placeholder="*"
-                                            autoComplete="off"
-                                            maxLength="1"
-                                            value={otp[index] || ''}
-                                            onChange={(e) => {
-                                                const newOTP = [...otp];
-                                                newOTP[index] = e.target.value.replace(/\D/g, '').slice(0, 1);
-                                                setOtp(newOTP.join(''));
-                                            }}
-                                        />
-                                    ))}
-                                </div>
-                                {/* <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="* * * * * *" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} /> */}
 
-                                {/* <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}>
+                            <div className="digit-otp">
+                                {Array.from({ length: 6 }, (_, index) => (
+                                    <input
+                                        key={index}
+                                        className="newotpsend"
+                                        type="tel"
+                                        pattern="\d*"
+                                        placeholder="*"
+                                        autoComplete="off"
+                                        maxLength="1"
+                                        value={otp[index] || ''}
+                                        onChange={(e) => handleOTP(e, index)}
+                                        ref={otpInputRefs[index]}
+                                        onKeyUp={(e) => onOtpKeyup(e, 6)}
+                                    />
+
+                                ))}
+
+
+
+                                {/* <div className="time-otp"> */}
+
+                            </div>
+                            {
+                                OTPErrors ? <div className="otperror">{OTPErrors}</div> : ''
+                            }
+                            {/* <Form.Control className="w-50 form-control form-control-lg mx-auto text-center digit-otp" type="tel" pattern="\d*"  id="openAccountOTP" placeholder="* * * * * *" autoComplete="off" maxLength="6"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)} /> */}
+
+                            {/* <div class="userInput w-50 form-control form-control-lg mx-auto text-center digit-otp"  isInvalid={OTPErrors} value={otp} onChange={(e) => handleOTP(e)}>
                                             <input type="text" id='ist' maxlength="1" placeholder="*" onkeyup="clickEvent(this,'sec')"/>
                                             <input type="text" id="sec" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'third')"/>
                                             <input type="text" id="third" maxlength="1" placeholder="*" onkeyup="clickEvent(this,'fourth')"/>
@@ -438,16 +466,16 @@ function OpenAccountOTPModalNew({ mobileNumber, otpSessionID, onClose, language,
                                             <input type="text" id="six" maxlength="1" placeholder="*"/>
                                         </div> */}
 
-                                {
-                                    OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
-                                }
-                                {/* <div className="time-otp"> */}
-                                {
-                                    count ?
-                                        <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
-                                }
-                                {/* </div> */}
-                            </div>
+                            {
+                                OTPErrors ? <Form.Control.Feedback type="invalid">{OTPErrors}</Form.Control.Feedback> : ''
+                            }
+                            {/* <div className="time-otp"> */}
+                            {
+                                count ?
+                                    <p className="time">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otptime')}:<span > {count} {OpenAccountLanguageContent.getContent(language ? language : 'en', 'otpsec')}</span></p> : ''
+                            }
+                            {/* </div> */}
+
                             <div>
                                 {
                                     !count ?
