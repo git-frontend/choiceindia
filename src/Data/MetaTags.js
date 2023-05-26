@@ -2199,6 +2199,42 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     'content':"Visit us to know more about our privacy policy",
     "link":"https://choiceindia.com/loan/privacy-policy"
   },
+  "upcoming-agm": {
+    "title":"Upcoming AGM - List of Upcoming AGM Dates & Companies in 2023",
+    'lang':"en",
+    'content':"Find the list of upcoming AGM/EGM on Choice. Get updated with upcoming Annual General Meeting/Extraordinary General Meeting along with it's dates & companies.",
+    "link":"https://choiceindia.com/upcoming-agm"
+  },
+  "upcoming-board-meeting": {
+    "title":"Upcoming Board Meetings - Latest & Forthcoming Board Meetings Dates",
+    'lang':"en",
+    'content':"Find out the list of upcoming board meetings at Choice. Get the updates on forthcoming & latest company board meeting dates of NSE/BSE listed companies.",
+    "link":"https://choiceindia.com/upcoming-board-meeting"
+  },
+  "upcoming-bonus-shares": {
+    "title":"Upcoming Bonus Shares in 2023 - List of Bonus Shares to Buy",
+    'lang':"en",
+    'content':"Check out upcoming bonus shares in 2023 on Choice. Get the list of all upcoming bonus shares companies in India likely to declare/issue bonus shares.",
+    "link":"https://choiceindia.com/upcoming-bonus-shares"
+  },
+  "upcoming-dividend-paying-stocks": {
+    "title":"Upcoming Dividend in 2023 - List of Upcoming Dividend Paying Stocks in India",
+    'lang':"en",
+    'content':"Get the list of upcoming dividend paying stocks in 2023 on Choice. Check out the upcoming dividend dates declared by companies in NSE.",
+    "link":"https://choiceindia.com/upcoming-dividend-paying-stocks"
+  },
+  "upcoming-stock-splits": {
+    "title":"Upcoming Stock Splits in 2023 - List of Recent Share Splits in India",
+    'lang':"en",
+    'content':"Find out upcoming stock splits in 2023 on Choice. View the list recent share splits in India by NSE & BSE listed companies along with it's face value.",
+    "link":"https://choiceindia.com/upcoming-stock-splits"
+  },
+  "upcoming-rights-issue": {
+    "title":"Upcoming Rights Issue in 2023 - List of Upcoming Rights Issue of Shares",
+    'lang':"en",
+    'content':"Find the list of upcoming rights issue in 2023 on Choice. Get the complete list of recently announced rights issue of shares in Indian stock market.",
+    "link":"https://choiceindia.com/upcoming-rights-issue"
+  },
 }
 
 export default meta_tags;

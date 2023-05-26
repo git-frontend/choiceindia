@@ -141,6 +141,8 @@ const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/Emi
 
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
+const LazyUpcomingAGM =React.lazy(()=> import('./components/Upcoming-AGM/UpcomingAGM'));
+
 function Routing() {
 
 
@@ -784,6 +786,36 @@ function Routing() {
                         <Route exact path='/assisted-order-flow' element={
                             <React.Suspense>
                                 < LazyAfpage />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-agm' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-board-meeting' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-bonus-shares' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-dividend-paying-stocks' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-stock-splits' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/upcoming-rights-issue' element={
+                            <React.Suspense>
+                                < LazyUpcomingAGM />
                             </React.Suspense>
                         } />
                         <Route path="*" element={<ErrorPage />} />
