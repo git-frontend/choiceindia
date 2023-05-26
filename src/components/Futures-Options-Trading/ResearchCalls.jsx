@@ -74,7 +74,7 @@ function ResearchCalls() {
       "offset": 0,
       "segment": "FO",
       "start_date": utils.formatDate(new Date(new Date().setFullYear(new Date().getFullYear() - 1)), "yyyy-MM-dd"),
-      "status": "Book Profit",
+      "status": "Target Achieved",
       "subcategory_id": "",
       "search": "",
       "id": "",
