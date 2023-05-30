@@ -13,9 +13,9 @@ function CurrencyOpendematAc() {
     speed: 1500,
     slidesToShow: 4,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     dots: false,
-    autoplaySpeed: 1500,
+    autoplaySpeed: 2500,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -31,9 +31,11 @@ function CurrencyOpendematAc() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 2,
           slidesToScroll: 1,
+          autoplaySpeed: 3000,
           dots: false,
+          speed: 2500,
         }
       }
 

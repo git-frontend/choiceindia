@@ -230,6 +230,9 @@
             }
         }
     }
+    @media (max-width:$sm) {
+        background: $bgcolor-green;
+    }
 }
 .why-stratezy-sec{
     background: $primary;
@@ -237,7 +240,7 @@
     position: relative;
     overflow: hidden;
     @media (max-width:$sm) {
-        padding:6rem 0 15rem 0;
+        padding:6rem 0 12.5rem 0;
     }
     &::before{
         content: '';
@@ -290,10 +293,16 @@
                                }
                         }
                     }
+                    @media (max-width:$sm) {
+                        .arrow-hover{
+                            width: 48px;
+                        }
+                    }
                 }
                 @media (max-width:$sm) {
-                    top: 45rem;
-                    left: 26%;
+                    top: 43rem;
+                    left: 0;
+                    justify-content: center;
                 }
             }
         }

@@ -13,12 +13,12 @@ function WhyStrategies() {
 
   const settings1 = {
     infinite: true,
-    speed: 1000,
+    speed: 2000,
     slidesToShow: 2,
     arrows: false,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     slidesToScroll: 1,
     swipeToSlide: true,
     adaptiveHeight: false,
@@ -36,6 +36,8 @@ function WhyStrategies() {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          speed: 2500,
+          autoplaySpeed: 3000,
         },
       },
     ],

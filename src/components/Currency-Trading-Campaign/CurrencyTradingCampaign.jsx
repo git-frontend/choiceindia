@@ -42,10 +42,12 @@ function CurrencyTradingCampaign() {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     dots: false,
                     autoplay: true,
+                    speed: 2500,
+                    autoplaySpeed: 3000,
                 }
             }
 

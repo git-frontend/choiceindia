@@ -11,7 +11,7 @@ function CurrencyTradingNeeds() {
   // const [isShown3, setIsShown3] = useState(1);
   const settings1 = {
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     vertical: true,
     focusOnSelect: true,
     touchMove: true,
@@ -19,7 +19,7 @@ function CurrencyTradingNeeds() {
     slidesToShow: 3,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -29,6 +29,7 @@ function CurrencyTradingNeeds() {
           slidesToShow: 1,
           slidesToScroll: 1,
           vertical: false,
+          speed: 2500,
           dots:true,
           autoplaySpeed: 3000,
         }

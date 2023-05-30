@@ -90,6 +90,7 @@
                 }
                 @media (max-width:$sm) {
                     margin-bottom: 0.8rem;
+                   
                 }
 
                 .single-ttl {
@@ -145,6 +146,8 @@
                 border-radius: 24px;
                 border-top: 0;
                 width: 98% !important;
+                padding: 2rem 2rem !important;
+                min-height: 18rem;
             }
         }
 
@@ -191,6 +194,7 @@
         @media (max-width:$sm) {
             top: 0;
             margin-bottom: 2rem;
+            padding: 2rem 1.5rem;
         }
         .bar-cont-des {
             align-items: center;
@@ -221,6 +225,9 @@
             }
         }
     }
+    @media (max-width: $sm) {
+        background: $bgcolor-green;
+    }
 }
 .why-stratezy-sec{
     background: $primary;
@@ -228,7 +235,7 @@
     position: relative;
     overflow: hidden;
     @media (max-width:$sm) {
-        padding:6rem 0 15rem 0;
+        padding:6rem 0 12.5rem 0;
     }
     &::before{
         content: '';
@@ -280,10 +287,16 @@
                                }
                         }
                     }
+                    @media (max-width:$sm) {
+                        .arrow-hover{
+                            width: 48px;
+                        }
+                    }
                 }
                 @media (max-width:$sm) {
-                    top: 47rem;
-                    left: 26%;
+                    top: 43rem;
+                    left: 0;
+                    justify-content: center;
                     position: relative;
                 }
             }
