@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
@@ -9,7 +9,8 @@ import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
-
+import AboutUs from './components/About-us/AboutUs';
+import { NavLink } from 'react-router-dom';
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -139,27 +140,69 @@ const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpac
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
-const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
-
+    // const { pathname } = useLocation();
+const [path, setPath] = useState(window.location.pathname);
+const [fullPath, setFullPath] = useState(window.location.href.toString())
+const [redirect, isredirect] = useState(false);
+// console.log('ttttt',path)
+useEffect(() => {
+    console.log('BODYYY',window.location.href);
+    <Navigate to={<ErrorPage/>}/>
+},[redirect])
+console.log('routing')
 
     return (
         <>
+        {
+            (( fullPath.charAt(fullPath.length-1) == '/') && path.length-1 > 0 )?
+             <><Router>
+                <ScrolltoTop />
+                <OpentoTop />
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
+                <Routes>
+                    <Route path="*(/+)"
+   loader={({ params }) => redirect(params['*'] || '/')} />
+                </Routes>
+             </Router>
+                        
+                
+             </> 
+        :
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
-               
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
+                
                 {/* <Header /> */}
-                <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
-                    <Routes>
+                <div className='App-Body'>
+                    {
+    //                     (( fullPath.charAt(fullPath.length-1) == '/') && path.length-1 > 0 )?
+    //                     <>
+    //                     {/* <Navigate to={<ErrorPage />}/> */}
+    //                         {/* <Routes>
+    //                             <Route path='*' element={<ErrorPage/>} />
+    //                         </Routes> */}
+    //                         <Routes>
+    //                             <Route path={path.substring()} element={<AboutUs/>} />
+    //                         </Routes>
+                            
+    //                         {/* <Navigate replace to="/" /> */}
+    //                         {/* {isredirect(()=> true)} */}
+    // {/* {
+    // window.open('http://localhost:3000/investment-app', '_self')} */}
+    //                     </>
+    //                         :
+                        <Routes >
+                       
                         <Route exact path='/' element={
                             <Home></Home>} />
                         {/* <Route exact path='/' element={< Home />} /> */}
 
-                        <Route exact path='/about-us' element={
+                        <Route exact strict path='/about-us' element={
                             <React.Suspense>
                                 < LazyAbout />
                             </React.Suspense>
@@ -788,9 +831,12 @@ function Routing() {
                         } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
+                    }
+
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
+}
         </>
     )
 }
