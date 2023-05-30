@@ -11,7 +11,31 @@ import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
 import AboutUs from './components/About-us/AboutUs';
 import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
+const Remo=()=>{
+    const location = useLocation();
+  
+    return (
+      <>
+        {location.pathname.match(/.*\/$/)  ? (
+          <Navigate
+        to={{
+          pathname: location.pathname.replace(/\/+$/, ""),
+          search: location.search,
+        }}
+      />
+        ) : 
+    //     <Navigate
+    //     to={{
+    //       pathname: location.pathname.replace(/\/+$/, "/"),
+    //       search: location.search,
+    //     }}
+    //   />
+        null}
+      </>
+    );
+}
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
@@ -144,60 +168,23 @@ const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Ban
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
-    // const { pathname } = useLocation();
 const [path, setPath] = useState(window.location.pathname);
 const [fullPath, setFullPath] = useState(window.location.href.toString())
 const [redirect, isredirect] = useState(false);
-// console.log('ttttt',path)
-useEffect(() => {
-    console.log('BODYYY',window.location.href);
-    <Navigate to={<ErrorPage/>}/>
-},[redirect])
-console.log('routing')
 
     return (
         <>
-        {
-            (( fullPath.charAt(fullPath.length-1) == '/') && path.length-1 > 0 )?
-             <><Router>
-                <ScrolltoTop />
-                <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
-                <Routes>
-                    <Route path="*(/+)"
-   loader={({ params }) => redirect(params['*'] || '/')} />
-                </Routes>
-             </Router>
-                        
-                
-             </> 
-        :
+  
             <Router>
+                <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
                 {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
                 
                 {/* <Header /> */}
                 <div className='App-Body'>
-                    {
-    //                     (( fullPath.charAt(fullPath.length-1) == '/') && path.length-1 > 0 )?
-    //                     <>
-    //                     {/* <Navigate to={<ErrorPage />}/> */}
-    //                         {/* <Routes>
-    //                             <Route path='*' element={<ErrorPage/>} />
-    //                         </Routes> */}
-    //                         <Routes>
-    //                             <Route path={path.substring()} element={<AboutUs/>} />
-    //                         </Routes>
-                            
-    //                         {/* <Navigate replace to="/" /> */}
-    //                         {/* {isredirect(()=> true)} */}
-    // {/* {
-    // window.open('http://localhost:3000/investment-app', '_self')} */}
-    //                     </>
-    //                         :
+
                         <Routes >
-                       
                         <Route exact path='/' element={
                             <Home></Home>} />
                         {/* <Route exact path='/' element={< Home />} /> */}
@@ -831,12 +818,10 @@ console.log('routing')
                         } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
-                    }
 
                 </div>
                 {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
             </Router>
-}
         </>
     )
 }
