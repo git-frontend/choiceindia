@@ -1,103 +1,120 @@
-
 @import '../../assets/css/customvariable.scss';
 @import '../../assets/css/common.scss';
 
-.demat-account-form{
-    box-shadow: 0px 0px 15px #00000040;
-    border-radius: 1.25rem;
-    background: $whiteColor;
-    padding: 3rem 2rem 2rem 2rem;
-    // max-width: 30rem;
+.demat-account-form {
+	box-shadow: 0px 0px 15px #00000040;
+	border-radius: 1.25rem;
+	background: $whiteColor;
+	padding: 3rem 2rem 2rem 2rem;
+	// max-width: 30rem;
 	width: 30rem;
-    position: relative;
-    z-index: 9;
-    .sub-formgrp{
+	position: relative;
+	z-index: 9;
+
+	.sub-formgrp {
 		margin-top: 1rem;
-        margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
 		position: relative;
-        .formcontrol{
-            background: $whiteColor;
-            outline: none;
-            box-shadow: inherit;
-            border: 1px solid $bgcolor-blue;
-            padding: 1.6rem 1.5rem;
-            border-radius: 12px;
-            font-family: $font-family-poppins-regular;
-            font-size: 1.2rem;
+
+		.formcontrol {
+			background: $whiteColor;
+			outline: none;
+			box-shadow: inherit;
+			border: 1px solid $bgcolor-blue;
+			padding: 1.6rem 1.5rem;
+			border-radius: 12px;
+			font-family: $font-family-poppins-regular;
+			font-size: 1.2rem;
 			background: $whiteColor;
 			background-image: inherit !important;
-            &.formpadding{
-                padding: 1.2rem 1.5rem;
-				.react-dropdown-select-content{
+
+			&.formpadding {
+				padding: 1.2rem 1.5rem;
+
+				.react-dropdown-select-content {
 					flex-wrap: inherit;
-					
-					>span{
+
+					>span {
 						font-size: 1.2rem;
 					}
 				}
-            }
-			.react-dropdown-select-dropdown{
-				.nodatalebel{
+			}
+
+			.react-dropdown-select-dropdown {
+				.nodatalebel {
 					font-size: 1.2rem;
 				}
 			}
-			
-        }
-		.react-dropdown-select{
-			.react-dropdown-select-input{
+
+		}
+
+		.react-dropdown-select {
+			.react-dropdown-select-input {
 				// width: 100% !important;
 				font-size: 1.2rem;
 			}
+
 			.react-dropdown-select-item {
 				font-size: 1.2rem !important;
 			}
-			.react-dropdown-select-no-data{
+
+			.react-dropdown-select-no-data {
 				color: $primary !important;
 			}
 
 		}
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-            -webkit-appearance: none; 
-            margin: 0; 
-        }
-        &.cust-checkbox{
-            display: flex;
-            align-items: flex-start;
+
+		input[type=number]::-webkit-inner-spin-button,
+		input[type=number]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		&.cust-checkbox {
+			display: flex;
+			align-items: flex-start;
 			text-align: left;
-            .form-check{
-                margin-right: 0;
+
+			.form-check {
+				margin-right: 0;
 				font-size: 1.1rem;
-            }
-            .lbl{
-                font-size: 1.2rem;
-                color: $secondary;
-                font-family: $font-family-poppins-regular;
-                .link-tc{
-                    color: $bgcolor-blue !important;
-                    font-family:$font-family-poppins-semibold;
-                    text-decoration: none;
-                    display: block;
-                }
-            }
-            .link-tc{
-                cursor: pointer;
-				
+			}
+
+			.lbl {
+				font-size: 1.2rem;
+				color: $secondary;
+				font-family: $font-family-poppins-regular;
+
+				.link-tc {
+					color: $bgcolor-blue !important;
+					font-family: $font-family-poppins-semibold;
+					text-decoration: none;
+					display: block;
+				}
+			}
+
+			.link-tc {
+				cursor: pointer;
+
 				color: $bgcolor-blue !important;
 				font-family: $font-family-poppins-bold;
-				&:hover{
+
+				&:hover {
 					// border-bottom: 1px solid;
 				}
-            }
-        }
-        .sendbtn{
-            width: 100%;
-            &:hover{
-                background: $primary !important;
-                color: $whiteColor !important;
-            }
-        }
-		.valid-ss{
+			}
+		}
+
+		.sendbtn {
+			width: 100%;
+
+			&:hover {
+				background: $primary !important;
+				color: $whiteColor !important;
+			}
+		}
+
+		.valid-ss {
 			width: 100%;
 			position: absolute;
 			left: 0;
@@ -105,100 +122,107 @@
 			font-size: 1.2rem;
 			text-align: center;
 		}
-    }
+	}
 
-	.referal-link{
+	.referal-link {
 		cursor: pointer;
 		color: #0066B3 !important;
 		font-size: 1.2rem;
 	}
 
-	.sub-fromgrp2{
-		.formcontrol{
-			border-style: dashed ;
+	.sub-fromgrp2 {
+		.formcontrol {
+			border-style: dashed;
 			background: #EFEFEF;
 			color: #999999;
 
 		}
 	}
 
-	.cross-refer-img{
+	.cross-refer-img {
 		position: absolute;
 		right: 1rem;
 		top: 1.5rem;
 		cursor: pointer;
 	}
 
-    .form-ttl{
-        text-align: center;
-        font-size: 2rem;
-        font-family: $font-family-poppins-semibold;
-        color: $primary;
-        margin-bottom: 2.5rem;
+	.form-ttl {
+		text-align: center;
+		font-size: 2rem;
+		font-family: $font-family-poppins-semibold;
+		color: $primary;
+		margin-bottom: 2.5rem;
+
 		@media (max-width: $sm-x) {
 			font-size: 1.5rem;
 		}
-    }
+	}
+
 	@media (max-width: $sm) {
-       margin-top: 2rem;
-    }
-    @media (max-width: $sm-x) {
-        width: 100%;
-        max-width: inherit;
-    }
-	.valid-ss{
+		margin-top: 2rem;
+	}
+
+	@media (max-width: $sm-x) {
+		width: 100%;
+		max-width: inherit;
+	}
+
+	.valid-ss {
 		position: absolute;
 		width: 100%;
 		text-align: center;
 		left: 0;
 		font-size: 1.3rem;
 	}
+
 	@media (max-width: $md) {
 		width: 100%;
 	}
 }
 
-.otp-mdl-input-chk{
+.otp-mdl-input-chk {
+
 	/* Chrome, Safari, Edge, Opera */
-		input::-webkit-outer-spin-button,
-		input::-webkit-inner-spin-button {
-			-webkit-appearance: none;
-			margin: 0;
-		}
-	
-		/* Firefox */
-		input[type=number] {
-			-moz-appearance: textfield;
-		}
-}
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
 
-/** success or error modal (add-lead) */
-.ad-ld-mdl-head{
-	border:none;
-}
-
-.ad-ld-mdl-bdy{
-	border:none;
-	margin: 0 auto;
-	text-align: center;
-	
-	img, p{
-		padding:1rem;
+	/* Firefox */
+	input[type=number] {
+		-moz-appearance: textfield;
 	}
 }
 
-.ad-ld-mdl-ftr{
-	border:none;
+/** success or error modal (add-lead) */
+.ad-ld-mdl-head {
+	border: none;
+}
+
+.ad-ld-mdl-bdy {
+	border: none;
+	margin: 0 auto;
+	text-align: center;
+
+	img,
+	p {
+		padding: 1rem;
+	}
+}
+
+.ad-ld-mdl-ftr {
+	border: none;
 	margin: 0 auto;
 
-	button{
+	button {
 		padding: 10px 32px 10px 32px;
 	}
 }
 
-.ad-ld-mdl-btn{
+.ad-ld-mdl-btn {
 	background-color: rgb(140, 212, 245);
-	border:none;
+	border: none;
 }
 
 
@@ -206,7 +230,7 @@
 // OTP MODAL
 
 .opt-body {
-    text-align: center;
+	text-align: center;
 }
 
 // .modal-head {
@@ -215,117 +239,127 @@
 // }
 
 .verify-btn {
-    display: inline-block;
-    margin: auto;
-    font-weight: bold;
-    color: $whiteColor;
-    background-color: $bgcolor-blue;
-    border-color: $bgcolor-blue;
-    text-align: center;
-    vertical-align: middle;
-    user-select: none;
-    border: 1px solid transparent;
-    padding: 0.375rem 1.25rem;
-    // font-size: 1.15rem;
-    line-height: 1.4;
-    border-radius: 4px;
+	display: inline-block;
+	margin: auto;
+	font-weight: bold;
+	color: $whiteColor;
+	background-color: $bgcolor-blue;
+	border-color: $bgcolor-blue;
+	text-align: center;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 0.375rem 1.25rem;
+	// font-size: 1.15rem;
+	line-height: 1.4;
+	border-radius: 4px;
 }
 
 .otp-modal-footer {
-    border: none;
-    text-align: center;
+	border: none;
+	text-align: center;
 	margin: 0.5em;
 }
 
 
 
 .modal-otp-links {
-    /* display: flex; */
-    text-align: center;
+	/* display: flex; */
+	text-align: center;
 }
 
 .or-text {
-    color: $blackColorlight;
-    /* margin: 0rem 0.8rem 0rem 0.8rem; */
-    cursor: default !important;
+	color: $blackColorlight;
+	/* margin: 0rem 0.8rem 0rem 0.8rem; */
+	cursor: default !important;
 }
 
 .resend-text {
-    color: $bgcolor-blue;
-    cursor: pointer;
-    margin-left: 0.7rem;
+	color: $bgcolor-blue;
+	cursor: pointer;
+	margin-left: 0.7rem;
 }
 
 .timer-text {
-    color: $bgcolor-blue;
-    display: inline-block;
-    // font-size: 1rem;
-    margin: 0rem 0rem 0rem 0.4rem;
+	color: $bgcolor-blue;
+	display: inline-block;
+	// font-size: 1rem;
+	margin: 0rem 0rem 0rem 0.4rem;
 }
 
 .didnt-text {
-    margin-left: 0.6rem;
+	margin-left: 0.6rem;
 }
 
 .btm-div {
-    display: flex;
-    justify-content: center;
-    // margin-left: 0.7rem;
+	display: flex;
+	justify-content: center;
+	// margin-left: 0.7rem;
 }
-  
-  .loaderB {
-    border: 5px solid #f3f3f3;
-    border-radius: 50%;
-    border-top: 5px solid $primary;
-    width: 30px;
-    height: 30px;
-    -webkit-animation: spin 2s linear infinite;
-    /* Safari */
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  .dotLoaderB {
-    width: 24px;
-    height: 24px;
-    top: 2px;
-    border: 2px dotted $whiteColor;
-    border-radius: 50%;
-    display: inline-block;
-    position: relative;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  .colorB {
-    border: 2px dotted #484848;
-  }
 
-  .marginLoader {
-    /* margin: 0 3.9rem 0 3.9rem; */
-    margin-left: 3rem;
-    margin-right: 3rem;
-    // margin-top: -0.4rem;
-    /* padding-left: 4rem;
+.loaderB {
+	border: 5px solid #f3f3f3;
+	border-radius: 50%;
+	border-top: 5px solid $primary;
+	width: 30px;
+	height: 30px;
+	-webkit-animation: spin 2s linear infinite;
+	/* Safari */
+	animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+.dotLoaderB {
+	width: 24px;
+	height: 24px;
+	top: 2px;
+	border: 2px dotted $whiteColor;
+	border-radius: 50%;
+	display: inline-block;
+	position: relative;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+
+.colorB {
+	border: 2px dotted #484848;
+}
+
+.marginLoader {
+	/* margin: 0 3.9rem 0 3.9rem; */
+	margin-left: 3rem;
+	margin-right: 3rem;
+	// margin-top: -0.4rem;
+	/* padding-left: 4rem;
     padding-right: 4rem; */
-  }
+}
 
-  //sub broker popup
+//sub broker popup
 
 //   .bt-strap-mdl{
 // 	border-radius: 16px;
 //   }
 
-  .exit-intent-sleekbox-overlay {
+.exit-intent-sleekbox-overlay {
 	// display: none;
 	// position: fixed;
 	left: 0;
@@ -344,17 +378,17 @@
 		// margin-top: 11rem;
 		// position: relative;
 		// .closebtn {
-        //     color:$primary;
-        //     text-decoration: none;
-        //     float: right;
-        //     top: 0;
-        //     right: 15px;
-        //     position: absolute;
-        //     font-size: 3rem;
-           
-        // }
-		.digit-otp{
-   
+		//     color:$primary;
+		//     text-decoration: none;
+		//     float: right;
+		//     top: 0;
+		//     right: 15px;
+		//     position: absolute;
+		//     font-size: 3rem;
+
+		// }
+		.digit-otp {
+
 			width: 90% !important;
 			height: 48px;
 			border-radius: 4px;
@@ -368,11 +402,13 @@
 			margin: 0 2px;
 			letter-spacing: 10px;
 			margin: 0 auto;
-			&::placeholder{
-			  color: transparent;
+
+			&::placeholder {
+				color: transparent;
 			}
-		
-		} 
+
+		}
+
 		// padding:40px 60px;
 		.popup-sub-row {
 			padding: 1rem 0;
@@ -411,6 +447,7 @@
 					margin: 30px 0 15px;
 					font-family: $font-family-poppins-bold;
 					padding-bottom: 0;
+
 					@media only screen and (max-width: $sm) {
 						font-size: 24px;
 						line-height: 33px;
@@ -420,9 +457,10 @@
 				.subheading {
 					color: $secondary;
 					font-size: 18px;
-					line-height: 42px;
+					line-height: 29px;
 					margin: 0;
 					font-family: $font-family-poppins-regular;
+
 					@media only screen and (max-width: $sm) {
 						font-size: 16px;
 						// line-height: 22px;
@@ -435,6 +473,7 @@
 					line-height: 42px;
 					margin: 0 0 20px;
 					font-family: $font-family-poppins-regular;
+
 					@media only screen and (max-width: $sm) {
 						font-size: 16px;
 						line-height: 22px;
@@ -453,8 +492,8 @@
 
 				.btn-bg {
 					font-family: $font-family-poppins-semibold;
-					color: $whiteColor !important;
-					background: $primary !important;
+					color: $whiteColor;
+					background: $primary;
 					padding: 1rem 3rem !important;
 					display: inline-block;
 					border-radius: 8px !important;
@@ -468,6 +507,7 @@
 					transition: 0.5s;
 					-webkit-transition: 0.5s;
 					margin-bottom: 2rem;
+
 					&:hover {
 						background: $yellowColor !important;
 						color: $primary !important;
@@ -476,38 +516,41 @@
 					@media only screen and (max-width: 992px) {
 						font-size: 14px;
 					}
+
 					@media only screen and (max-width: $sm) {
 						margin-bottom: 2rem;
 					}
 				}
 
-				
+
 				@media only screen and (max-width: $sm) {
 					width: 100%;
 				}
-		
-					.resend {
-						color: $secondary;
-						margin-top: 1.75rem;
-						font-size: 18px;
-						line-height: 42px;
-						margin-bottom: 0;
-						background-color: transparent;
-						border: none;
-						margin: 1rem;
-						@media only screen and (max-width: $sm) {
-							font-size: 14px;
-							line-height: 22px;
-							margin: 0.5rem;
-						}
+
+				.resend {
+					color: $secondary;
+					margin-top: 1.75rem;
+					font-size: 18px;
+					line-height: 42px;
+					margin-bottom: 0;
+					background-color: transparent;
+					border: none;
+					margin: 1rem;
+
+					@media only screen and (max-width: $sm) {
+						font-size: 14px;
+						line-height: 22px;
+						margin: 0.5rem;
 					}
-					.ortext{
-						@media only screen and (max-width: $sm) {
+				}
+
+				.ortext {
+					@media only screen and (max-width: $sm) {
 						display: block;
-						}
 					}
-				
-				
+				}
+
+
 			}
 
 			@media only screen and (max-width: $sm) {
@@ -557,10 +600,12 @@
 		color: $primary;
 		margin: 0 2px;
 		letter-spacing: 10px;
-		&:focus{
+
+		&:focus {
 			border: none;
 			outline: 0;
 		}
+
 		@media only screen and (max-width: $sm) {
 			width: 70%;
 			height: 30px;
@@ -574,42 +619,89 @@
 	}
 }
 
-.termcondition{
-	z-index: 9999999999!important;
-    display: block;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(62, 64, 79, 0.3019607843);
-    overflow: auto;
+.termcondition {
+	z-index: 9999999999 !important;
+	display: block;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(62, 64, 79, 0.3019607843);
+	overflow: auto;
 
 }
 
-.info-mdl-pup{
-	margin:auto;
+.info-mdl-pup {
+	margin: auto;
 }
 
 
-.otp-main-modal{
-	.modal-dialog{
+.otp-main-modal {
+	.modal-dialog {
 		position: absolute;
 		left: 50%;
 		top: 50%;
-		transform: translate(-50%, -50%) !important; 
+		transform: translate(-50%, -50%) !important;
 		margin: 0;
 		width: 500px;
-		.modal-content{
-			.exit-intent-sleekbox-popup{
+
+		.modal-content {
+			.exit-intent-sleekbox-popup {
 				padding: 0;
 				margin: 0;
 			}
-			.exit-intent-sleekbox-overlay{
+
+			.exit-intent-sleekbox-overlay {
 				background: $whiteColor;
 			}
 		}
-		@media (max-width: $sm){
+
+		@media (max-width: $sm) {
 			width: 98%;
 		}
+	}
+}
+
+.Referral-code-model {
+	.referral-overlay {
+		.exit-intent-sleekbox-popup {
+			@media only screen and (max-width: 480px) {
+				max-width: 100% !important;
+			}
+			.popup-sub-row {
+				.popup-sub-right {
+					.btnwrap {
+						display: flex;
+						justify-content: space-around;
+						@media only screen and (max-width: $sm) {
+							flex-direction: column;
+							align-items: center;
+						}
+						.btn-bg {
+							&.referral-btn {
+								width: 28% !important;
+								padding: 0.8rem !important;
+								font-size: 13px !important;
+								line-height: 20px !important;   
+								
+								@media only screen and (max-width: $sm) {
+									margin-top: 1rem !important;
+									margin-bottom: 0rem;
+
+								}
+							}
+						}
+
+						.referral-btn-hover {
+							&:hover {
+								background: $primary !important;
+								color: $whiteColor !important;
+							}
+						}
+					}
+				}
+			}
+		}
+
 	}
 }
