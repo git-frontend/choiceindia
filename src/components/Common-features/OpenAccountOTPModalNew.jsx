@@ -12,7 +12,7 @@ import Modal from 'react-bootstrap/Modal';
 import { useSearchParams } from "react-router-dom";
 
 
-function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,setparam,onButtonClick}) {
+function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup,onButtonClick}) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -24,7 +24,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
     const type2= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const [show,setShow] = useState(true);
     const [searchParams, setSearchParams] = useSearchParams();
-    const [otpparam, setOtpparam] = useState('');
+    // const [otpparam, setOtpparam] = useState('');
 
 
     const handleButtonClick = () => {
@@ -128,7 +128,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
                 hideLoader('verifyLoader');
                 if (res && res.status === 200 && res.data && res.data.Body) {
                    //  console.log('HANDLER',res);
-                    setOtpparam("Otp-success")
+                    // setOtpparam("Otp-success")
                    
                     // if (res.data.Body.isOnboardFlag === 'Y') {
                     //Your Onboarding has been completed
@@ -283,12 +283,12 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
         
     }
 
-    useEffect(() => {
-        setSearchParams((params) => {
-            params.set('form', "Otp-success");
-            return params;
-          }); 
-    }, [otpparam]);
+    // useEffect(() => {
+    //     setSearchParams((params) => {
+    //         params.set('form', "Otp-success");
+    //         return params;
+    //       }); 
+    // }, [otpparam]);
     
     return (
         <>
@@ -404,7 +404,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
                                        <div className="d-flex">
                                         <p className="subheading">{OpenAccountLanguageContent.getContent(language ? language : 'en', 'otplblnew')} {mobileNumber}</p>
-                                        <button className="changenumbtn" onClick={handleButtonClick}>(change)</button>
+                                        <button className="changenumbtn" onClick={handleButtonClick}>(Change)</button>
                                         </div>
                                   
                                     <div className="otp-mdl-input-chk">

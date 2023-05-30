@@ -72,7 +72,7 @@ function NewDematAccountForm(props) {
     const [IsIssue, setIsIssue] = useState('');
     const [captchaToken, setCaptchaToken] = useState('');
     const [showReferInput, setShowReferInput] = useState(() => false);
-    const[form, setForm]=useState("Open-demat-account")
+    // const[form, setForm]=useState("Open-demat-account")
     const { executeRecaptcha } = useGoogleReCaptcha();
 
     const handleButtonClick = () => {
@@ -120,9 +120,9 @@ function NewDematAccountForm(props) {
             }, 60000);
         }
     }, []);
-    useEffect(()=>{
-        setformdata()
-    },[form])
+    // useEffect(()=>{
+    //     setformdata()
+    // },[form])
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -337,8 +337,8 @@ function NewDematAccountForm(props) {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
-                setForm('sent-otp')
-                setformdata()
+                // setForm('sent-otp')
+                // setformdata()
                 setShowThanku(prevState => {
                     return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
                 });
@@ -392,13 +392,13 @@ function NewDematAccountForm(props) {
         // setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     
     }
-    function setformdata(){
-        setSearchParams((params) => {
-            params.set('form', form);
-            return params;
-          });
+    // function setformdata(){
+    //     setSearchParams((params) => {
+    //         params.set('form', form);
+    //         return params;
+    //       });
         
-    }
+    // }
 
     // function handleOTP(e) {
     //     let value = e.target.value.replace(/\D/g, "");
@@ -589,7 +589,7 @@ function NewDematAccountForm(props) {
             {
                 showOTP && !showThanku.showModal && (
                     <div className="demat-account-form demat-account-form-new">
-                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} setparam={form} onButtonClick={handleButtonClick} ></OpenAccountOTPModalNew>
+                        <OpenAccountOTPModalNew mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} language={props.language} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} showPopup={showOTP} onButtonClick={handleButtonClick} ></OpenAccountOTPModalNew>
                         <div className="slider-btns">
                         <Button variant="primary" type="submit" className={!showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}  ></Button>
                         <Button variant="primary" type="submit" className={showOTP ? "btn-bg-slider active-slide-tab":" btn-bg-slider"}></Button>
