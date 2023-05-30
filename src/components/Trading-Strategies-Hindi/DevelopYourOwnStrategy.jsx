@@ -10,7 +10,7 @@ function DevelopYourOwnStrategy() {
   
   const settings1 = {
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     vertical: true,
     focusOnSelect: true,
     touchMove: true,
@@ -18,7 +18,7 @@ function DevelopYourOwnStrategy() {
     slidesToShow: 5,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2500,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -29,6 +29,7 @@ function DevelopYourOwnStrategy() {
           slidesToScroll: 1,
           vertical: false,
           dots:true,
+          speed: 2500,
           autoplaySpeed: 3000,
         }
       }

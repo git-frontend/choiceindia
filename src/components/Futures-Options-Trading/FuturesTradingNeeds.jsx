@@ -10,7 +10,7 @@ function FuturesTradingNeeds() {
   
   const settings1 = {
     infinite: true,
-    speed: 1000,
+    speed: 1500,
     vertical: true,
     focusOnSelect: true,
     touchMove: true,
@@ -18,7 +18,7 @@ function FuturesTradingNeeds() {
     slidesToShow: 5,
     autoplay: true,
     dots: false,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     slidesToScroll: 1,
     swipeToSlide: true,
     responsive: [
@@ -29,8 +29,9 @@ function FuturesTradingNeeds() {
           slidesToScroll: 1,
           vertical: false,
           dots:true,
-          autoplay: false,
-          autoplaySpeed: 3000,
+          autoplay: true,
+          speed:2500,
+          autoplaySpeed:4000,
         }
       }
 

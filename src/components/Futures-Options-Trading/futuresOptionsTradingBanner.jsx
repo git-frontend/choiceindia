@@ -54,12 +54,12 @@ function chapterScroll2(id) {
     const [rendercount, setRenderCount] = useState(() => false);
     const settings1 = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         slidesToShow: 3,
         arrows: false,
         autoplay: false,
         dots: false,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2500,
         slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
@@ -70,13 +70,13 @@ function chapterScroll2(id) {
                     slidesToShow: 2,
                     dots: false,
                     slidesToScroll: 1,
-                    autoplay: true,
+                    autoplay: false,
                 }
             },
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     dots: false,
                     autoplay: true,

@@ -3,7 +3,7 @@
 
 .futureoptionbenner {
     padding: 8rem 0;
-
+    overflow: hidden;
     @media (max-width: $md) {
         padding: 5rem 0;
     }
@@ -27,12 +27,17 @@
         }
 
         .carditem-option-tab {
+            .slick-list{
+                @media (max-width: $sm) {
+                    margin-right: -15%;
+                }
+            }
             .slick-track {
                 display: flex;
                 padding: 10px 0;
                 @media (max-width: $sm) {
 
-                    margin-left: 8rem;
+                    margin-left: 0;
     
                 }
 
@@ -81,6 +86,7 @@
                     font-family: $font-family-poppins-semibold;
                     // padding: 2rem 1rem 0;
                     text-align: left;
+                    line-height: 1.7;
                     @media (max-width:$sm) {
                         text-align: center;
                     }
@@ -266,12 +272,12 @@
                 border-top: 0;
 
 
-                @media (min-width:$sm)and (max-width:$md) {
-                    padding: 1rem 3rem;
-                }
-                @media (max-width:$sm) {
-                    margin-bottom: 0.8rem;
-                }
+                // @media (min-width:$sm)and (max-width:$md) {
+                //     padding: 1rem 3rem;
+                // }
+                // @media (max-width:$sm) {
+                //     padding: 0 1rem;
+                // }
 
                 .single-ttl {
                     color: $bgcolor-yellow;
@@ -299,6 +305,7 @@
                 @media (max-width:$sm) {
                     color: #FFCE02;
                     margin-bottom: 0;
+                    padding-top: 0;
                 }
             }
 
@@ -318,7 +325,7 @@
             }
 
             @media (max-width:$sm) {
-                padding: 0 1rem;
+                padding: 2.5rem 2rem !important;
                 text-align: center;
                 padding: 2rem 3.5rem;
                 background-color: #221F20;
@@ -326,6 +333,7 @@
                 border-top: 0;
                 min-height: 20rem;
                 width: 99% !important;
+                margin-bottom: 1rem;
             }
         }
 
@@ -364,6 +372,7 @@
 .fando-open-demat {
     background-color: $primary;
     padding: 10rem 0;
+    overflow: hidden;
 
     @media (max-width: $sm) {
         padding: 6rem 0;
@@ -377,13 +386,19 @@
     }
 
     .fando-open-demat-slider {
+        .slick-list{
+            
+            @media (max-width: $sm) {
+                margin-right: -30%;
+            }
+        }
         .slick-track {
             display: flex;
             padding: 10px 0;
             height: 100% !important;
             @media (max-width: $sm) {
 
-                margin-left: 8rem;
+                margin-left: 0;
 
             }
             .slick-slide {
@@ -450,6 +465,7 @@
                 // padding:3rem 0.4rem 0;
                 @media (max-width:$sm){
                     padding: 4rem 0.3rem;
+                    padding-bottom: 0;
                 } 
             }
         }

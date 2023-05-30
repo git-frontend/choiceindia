@@ -12,12 +12,12 @@ function Banner() {
 
     const settings1 = {
         infinite: true,
-        speed: 1500,
+        speed: 2000,
         slidesToShow: 3,
         arrows: false,
-        autoplay: true,
+        autoplay: false,
         dots: false,
-        autoplaySpeed: 1500,
+        autoplaySpeed: 2500,
         slidesToScroll: 1,
         swipeToSlide: true,
         responsive: [
@@ -33,7 +33,7 @@ function Banner() {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     dots: false,
                 }

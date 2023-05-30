@@ -4,6 +4,7 @@
 .trading-Stratebanner{
     padding: 7rem 0;
     position: relative;
+    overflow: hidden;
     .btn-open{
         @media (max-width:$sm) {
             padding-bottom: 3rem;
@@ -45,14 +46,15 @@
        padding: 4rem 0 6rem 0;
     }
     .carditem-option-tab {
+        .slick-list{
+            @media (max-width: $sm) {
+                margin-right: -15%;
+            }
+        }
         .slick-track {
             display: flex;
             padding: 10px 0;
-            @media (max-width: $sm) {
-
-                margin-left: 8rem;
-
-            }
+            
 
             .slick-slide {
                 float: none;
@@ -259,7 +261,8 @@
         position: relative;
         z-index: 1;
         @media (max-width:$sm) {
-            top: 4rem;
+            top: 0;
+            padding: 3rem 2rem;
         }
         .bar-cont-des {
             align-items: center;
@@ -278,6 +281,8 @@
                 @media (max-width:$sm) {
                     font-size: 1.8rem;
                     text-align: center;
+                    margin-top: 0;
+                    padding-bottom: 1.5rem;
                 }
                 br{
                     @media (max-width:$md) {
@@ -290,6 +295,9 @@
             }
         }
     }
+    @media (max-width:$sm) {
+        background: $bgcolor-green;
+    }
 }
 .why-stratezy-sec{
     padding:6rem 0;
@@ -297,6 +305,7 @@
     overflow: hidden;
     @media (max-width:$sm) {
         padding:6rem 0 12rem 0;
+        background: $abt-bg;
     }
     .why-startezy {
         display: flex;
@@ -332,6 +341,9 @@
                     font-family: $font-family-poppins-regular;
                     line-height: 1.5;
                     color: $text-gray;
+                    @media (max-width:$sm) {
+                        display: none;
+                    }
                 }
                 .title-first{
                     color: $whiteColor;
@@ -375,10 +387,16 @@
                             }
                         }
                     }
+                    @media (max-width:$sm) {
+                        .arrow-hover{
+                            width: 48px;
+                        }
+                    }
                 }
                 @media (max-width:$sm) {
-                    top: 45rem;
-                    left: 26%;
+                    top: 43rem;
+                    left:0;
+                    justify-content: center;
                    position: relative;
                 }
             }
@@ -557,6 +575,9 @@
                 }
             }
 }
+}
+@media (max-width:$sm) {
+    padding: 6rem 0;
 }
 }
 
