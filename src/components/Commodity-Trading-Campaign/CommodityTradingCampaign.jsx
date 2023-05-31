@@ -42,10 +42,11 @@ function CommodityTradingCampaign() {
             {
                 breakpoint: 600,
                 settings: {
-                    slidesToShow: 1.5,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                     dots: false,
-                    autoplay: true,
+                    autoplay: false,
+                    autoplaySpeed: 2500,
                 }
             }
 

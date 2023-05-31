@@ -32,9 +32,10 @@ function CommodityOpendematAc() {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 1.5,
+          slidesToShow: 2,
           slidesToScroll: 1,
           dots: false,
+          autoplaySpeed: 2500,
         }
       }
 
