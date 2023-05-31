@@ -216,7 +216,7 @@ function OpenAccountOTPModalNew({mobileNumber, otpSessionID, onClose, language, 
 
             openAccountService.resendOTPAgain((type2=='MF' )? requestMF:request,type2).then((res) => {
                 hideLoader('resendOTPLoader');
-                setCount(3);
+                setCount(30);
                 if (res && res.status === 200 && res.data && res.data.Body) {
                     otpID.current = res.data.Body.session_id;
                     handleOTPResendSuccessToaster('otp');
