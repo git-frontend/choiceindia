@@ -56,20 +56,20 @@ function CreateBacktestStrategies() {
                <div className="row justify-content-between create-backtest">
                 <div className="col-xl-4 col-md-6">
                   <div className="create-backtest-list">
-                     <div class="backtest-item">
-                        <h4 class="single-ttl">Create a Trading Strategy</h4>
+                     <div className="backtest-item">
+                        <h4 className="single-ttl">Create a Trading Strategy</h4>
                       </div>
-                     <div class="backtest-item">
-                        <h4 class="single-ttl">Backtest Your Strategy</h4>
+                     <div className="backtest-item">
+                        <h4 className="single-ttl">Backtest Your Strategy</h4>
                       </div>
-                      <div class="backtest-item">
-                        <h4 class="single-ttl">Virtual and Auto Trade Strategy</h4>
+                      <div className="backtest-item">
+                        <h4 className="single-ttl">Virtual and Auto Trade Strategy</h4>
                       </div>
-                      <div class="backtest-item">
-                        <h4 class="single-ttl">Advanced Scanners</h4>
+                      <div className="backtest-item">
+                        <h4 className="single-ttl">Advanced Scanners</h4>
                       </div>
-                      <div class="backtest-item">
-                        <h4 class="single-ttl">Connect with TradingView</h4>
+                      <div className="backtest-item">
+                        <h4 className="single-ttl">Connect with TradingView</h4>
                         </div>
                   </div>
                     {/* <Slider {...settings1}
@@ -105,7 +105,7 @@ function CreateBacktestStrategies() {
                </div>
                <div className="col-md-12">
                   <div className="text-center btn2">
-                    <a onClick={()=>{chapterScroll3('dematform')}} class="btn-bg btn-bg-dark cursor-pointer"><span>Get Free Access Now</span></a>
+                    <a onClick={()=>{chapterScroll3('dematform')}} className="btn-bg btn-bg-dark cursor-pointer"><span>Get Free Access Now</span></a>
                   </div>
                </div>
             </div>
