@@ -78,7 +78,7 @@ function FableBlog() {
                                                             <h6 className="tag-act">Published at: {(data[0]?.published_at) ? new Date(data[0].published_at).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', hourCycle: 'h12' }) : ''}</h6>
                                                             {/* str.substring(0, str.length - 1);
                                                     {(data[0].meta_description) ? data[0].meta_description.substring(0, 25) : ''} */}
-                                                            <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}`} className="fw-bold">Read More</Link></p>
+                                                            <p className="des-cont mt-3">{(data[0]?.meta_description) ? data[0].meta_description.substring(0, 100) : ''}... <Link to={`/blog/${data[0]?.slug}/`} className="fw-bold">Read More</Link></p>
                                                         </div>
                                                     </div>:
                                                     <div className="text-center">
@@ -110,7 +110,7 @@ function FableBlog() {
                                                             if (index !== 0) {
                                                                 return (
                                                                     <div className="latest-blog-itm" key={item.id}>
-                                                                        <Link to={`/blog/${item.slug}`} className="blog-itm">
+                                                                        <Link to={`/blog/${item.slug}/`} className="blog-itm">
                                                                             <div className="blog-itm-des">
                                                                                 <p className="itm-des-cont">{item.title}</p>
                                                                                 {/* <h6 className="tag-act">Published at: 14th July, 2022</h6> */}

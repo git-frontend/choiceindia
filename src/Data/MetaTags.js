@@ -2206,6 +2206,48 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     "link":"https://choiceindia.com/bajaj-energy-ipo"
   },
   
+  "campaign/free-demat-account": {
+    "title":"Free Demat Account Opening Online with No Annual Charges",
+    'lang':"en",
+    'content':"Free demat account opening online with no annual charges* (AMC) at Choice. Open demat account with free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/campaign/free-demat-account"
+  },
+  "campaign/trading-strategies": {
+    "title":"Trading Strategies - Best Intraday & Options Trading Strategies",
+    'lang':"en",
+    'content':"Create your own trading strategies with Strategy by Choice. Stratezy is one of the best intraday & options trading strategy builder for Indian market.",
+    "link":"https://choiceindia.com/campaign/trading-strategies"
+  },
+  "campaign/hindi/trading-strategies": {
+    "title":"ट्रेडिंग रणनीतियाँ - सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीतियाँ",
+    'lang':"hi",
+    'content':"चॉइस द्वारा Stratezy के साथ अपनी खुद की ट्रेडिंग रणनीतियां बनाएं। Stratezy भारतीय बाजार के लिए सर्वश्रेष्ठ इंट्राडे और ऑप्शंस ट्रेडिंग रणनीति बिल्डरों में से एक है।",
+    "link":"https://choiceindia.com/campaign/hindi/trading-strategies"
+  },
+  "campaign/commodity-trading": {
+    "title":"Commodity Trading - Don't Miss Commodity Trading Opportunities",
+    'lang':"en",
+    'content':"Start trading in commodity market with Choice. Open a free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
+  "campaign/forex-trading": {
+    "title":"Forex Trading - Don't Miss Trading Opportunities in Currency Market",
+    'lang':"en",
+    'content':"Start trading in forex (currency market) with Choice. Open free demat account with zero AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
+  "campaign/technical-analysis": {
+    "title":"Your Technical Analysis Skills Don’t Pay Off - Explore Stratezy",
+    'lang':"en",
+    'content':"Don't have time for daily chart analysis? Trade with daily stock recommendation from the expert at Choice. Start creating your own strategy now!",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
+  "campaign/futures-options-trading": {
+    "title":"F&O Trading - Don't Miss Futures & Options Trading Opportunities",
+    'lang':"en",
+    'content':"Start trading in Futures and Options (F&O) with Choice. Open a free demat account with No AMC for first year, free expert research, low DP & brokerage charges.",
+    "link":"https://choiceindia.com/open-free-demat-account"
+  },
 }
 
 export default meta_tags;
