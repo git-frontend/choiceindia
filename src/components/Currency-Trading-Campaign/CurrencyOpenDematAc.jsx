@@ -13,7 +13,7 @@ function CurrencyOpendematAc() {
     speed: 1500,
     slidesToShow: 4,
     arrows: false,
-    autoplay: false,
+    autoplay: true,
     dots: false,
     autoplaySpeed: 2500,
     slidesToScroll: 1,
