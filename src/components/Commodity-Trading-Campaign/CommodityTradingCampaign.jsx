@@ -1,7 +1,7 @@
 
 // import React from 'react';
 import React from "react";
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import meta_tags from '../../Data/MetaTags';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -18,6 +18,7 @@ import WhyChoice from './WhyChoice';
 import './commodity-trading.scss';
 function CommodityTradingCampaign() {
     const [rendercount, setRenderCount] = useState(() => false);
+    const [isCheck, setIsCheck] = useState(false)
     const settings1 = {
         infinite: true,
         speed: 1500,
@@ -59,57 +60,57 @@ function CommodityTradingCampaign() {
         var elementPosition = element.getBoundingClientRect().top;
         var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
         window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
+            top: offsetPosition,
+            behavior: "smooth"
         });
-      }
-  useEffect(() => {
-    setRenderCount(true)
-    if (rendercount === true) {
-      // let parser = new DOMParser();
-      // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
-      // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
-      document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
-      // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
-      document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
-      document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
-      document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
     }
-  }, [rendercount])
+    useEffect(() => {
+        setRenderCount(true)
+        if (rendercount === true) {
+            // let parser = new DOMParser();
+            // let doc = parser.parseFromString(meta_tags['sub-broker'].faqscript, 'text/html');
+            // document.body.appendChild(doc.getElementsByTagName('script')[0]? doc.getElementsByTagName('script')[0]: '' );
+            document.title = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].title : '';
+            // document.getElementById('meta-tags').name= meta_tags[location.pathname.replace('/',"")]? meta_tags[location.pathname.replace('/',"")].title : ''  ;
+            document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
+            document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
+            document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+        }
+    }, [rendercount])
 
-  const [name, setName ] = useState('hideform');
-  const getPosition = () => {
-    const element = document.getElementById("showForm");
-    if(element){
-        const rect = element.getBoundingClientRect();
-        
-        if(rect.top.toFixed() < 259){
-            setName('visibleform');
-        }else{
-            setName('hideform');
-        }   
+    const [name, setName] = useState('hideform');
+    const getPosition = () => {
+        const element = document.getElementById("showForm");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+
+            if (rect.top.toFixed() < 259) {
+                setName('visibleform');
+            } else {
+                setName('hideform');
+            }
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', getPosition);
+    }, []);
+
+
+    function chapterScroll2(id) {
+        var element = document.getElementById(id);
+        var headerOffset = 140;
+        var elementPosition = element.getBoundingClientRect().top;
+        var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+        });
     }
-};
-
-  useEffect(() => {
-    window.addEventListener('scroll', getPosition);
-}, []);
-
-
-function chapterScroll2(id) {
-  var element = document.getElementById(id);
-  var headerOffset = 140;
-  var elementPosition = element.getBoundingClientRect().top;
-  var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-  window.scrollTo({
-    top: offsetPosition,
-    behavior: "smooth"
-  });
-}
 
     return (
         <>
-            <section className="futureoptionbenner">
+            <section className="futureoptionbenner" onMouseOver={() => setIsCheck(true)}>
                 <div className="container">
                     <div className="row ">
                         <div className="col-md-7 fandoleft">
@@ -131,17 +132,25 @@ function chapterScroll2(id) {
                             </Slider>
                             {/* </div> */}
                         </div>
-                        <div className="col-md-5">
-                            <div className="d-flex justify-content-end" id="campaignForm">
-                                <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                    <DematAccountForm />
-                                </GoogleReCaptchaProvider>
-                            </div>
-                        </div>
+                        {
+                            isCheck ?
+                                <div className="col-md-5">
+                                    <div className="d-flex justify-content-end" id="campaignForm">
+                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                            <DematAccountForm />
+                                        </GoogleReCaptchaProvider>
+                                    </div>
+                                </div> :
+                                <div className="col-md-5">
+                                    <div className="d-flex justify-content-end" id="campaignForm">
+                                        <DematAccountForm />
+                                    </div>
+                                </div>
+                        }
                     </div>
                     <div className={name}>
                         <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                            <button className=" primary-orange-btn scroll-top-account openbtn"  onClick={()=>{chapterScroll2('dematform')}}>Open Free Account</button>
+                            <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
                         </div>
                     </div>
                 </div>
@@ -155,17 +164,17 @@ function chapterScroll2(id) {
                                 <div className="signup-left"><h3 className="signup-ttl">Sign up  to check out more research calls.</h3></div>
                                 <div className="signup-right">
                                     {/* <Link to="/campaign/open-demat-account"> <span className="btn-bg btn-bg-dark signup-btn">Get Started</span></Link> */}
-                                    <Link onClick={()=>scrollToId('campaignForm')}> <span className="btn-bg btn-bg-dark fando-btn ">Get Started</span></Link>
+                                    <Link onClick={() => scrollToId('campaignForm')}> <span className="btn-bg btn-bg-dark fando-btn ">Get Started</span></Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <CommodityTradingNeeds/>
-            <CommodityTradingOpenDematAc/>
-            <WhyChoice/>
-           
+            <CommodityTradingNeeds />
+            <CommodityTradingOpenDematAc />
+            <WhyChoice />
+
 
         </>
     );

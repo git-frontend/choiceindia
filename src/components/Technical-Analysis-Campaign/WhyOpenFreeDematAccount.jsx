@@ -67,7 +67,7 @@ function WhyOpenFreeDematAccount() {
                       </div>
                   </div>
                   <div className="text-center btn-open">
-                    <a onClick={()=>{chapterScroll('dematform')}} class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open My Account</span></a>
+                    <a onClick={()=>{chapterScroll('dematform')}} className="cursor-pointer"><span className="btn-bg btn-bg-dark">Open My Account</span></a>
                   </div>
                </div>
             </div>

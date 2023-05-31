@@ -17,7 +17,7 @@ function TradingStrategies() {
     const element = document.getElementById("branch1");
     if (element) {
       const rect = element.getBoundingClientRect();
-console.log("rect.top.toFixed()",rect.top.toFixed())
+// console.log("rect.top.toFixed()",rect.top.toFixed())
       if (rect.top.toFixed() < 350) {
       setIsCheck(true)
     }

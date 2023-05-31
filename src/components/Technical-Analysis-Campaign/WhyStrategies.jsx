@@ -62,9 +62,9 @@ function WhyStrategies() {
           <div className="row">
             <div className="co-md-12">
               <div className="own-startezy-card">
-                <div class="bar-cont-des">
-                  <h3 class="title-fourth">Don’t rely on the strategy developed by others. <br />Develop your own strategy</h3>
-                  <a onClick={()=>{chapterScroll3('dematform')}} class="btn-bg btn-bg-dark cursor-pointer">Create Now</a>
+                <div className="bar-cont-des">
+                  <h3 className="title-fourth">Don’t rely on the strategy developed by others. <br />Develop your own strategy</h3>
+                  <a onClick={()=>{chapterScroll3('dematform')}} className="btn-bg btn-bg-dark cursor-pointer">Create Now</a>
                 </div>
               </div>
             </div>
