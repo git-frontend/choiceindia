@@ -87,11 +87,13 @@
                     // padding: 2rem 1rem 0;
                     text-align: left;
                     line-height: 1.7;
-                    @media (max-width:$sm) {
-                        text-align: center;
-                    }
+                    
                     @media (max-width:$md) {
                         padding: 1rem 1.4rem;
+                    }
+                    @media (max-width:$sm) {
+                        text-align: center;
+                        padding: 1rem 0;
                     }
                 }
             }
@@ -167,7 +169,7 @@
     background-color: $bgcolor-green;
 
     @media (max-width: $sm) {
-        padding: 5rem 0;
+        padding: 4rem 0;
     }
 
     .signup-text {
@@ -178,6 +180,7 @@
         @media (max-width: $sm) {
             flex-direction: column;
             flex-wrap: wrap;
+            padding: 0 2rem;
         }
 
         .signup-left {
@@ -203,8 +206,8 @@
 
                 @media (max-width: $sm) {
                     font-size: 2.4rem;
-                    line-height: 3.75rem;
-                    padding-bottom: 3.5rem;
+                    line-height: 1.5;
+                    padding-bottom: 2.5rem;
                 }
             }
         }
@@ -214,6 +217,9 @@
             @media (max-width: $sm) {
                 width: 100%;
                 text-align: center;
+                .fando-btn{
+                    width: 100%;
+                }
             }
 
             .signup-btn {

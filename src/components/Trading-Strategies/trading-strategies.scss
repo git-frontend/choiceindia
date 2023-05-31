@@ -193,8 +193,8 @@
         z-index: 1;
         @media (max-width:$sm) {
             top: 0;
-            margin-bottom: 2rem;
-            padding: 2rem 1.5rem;
+            margin-bottom: 0;
+            padding: 0 2rem;
         }
         .bar-cont-des {
             align-items: center;
@@ -206,8 +206,10 @@
                 font-size: 2.5rem;
                 line-height: 1.5;
                 @media (max-width:$sm) {
-                    font-size: 1.8rem;
+                    font-size: 2.4rem;
                     text-align: center;
+                    margin: 0;
+                    margin-bottom: 2.5rem;
                 }
                 br{
                     @media (max-width:$md) {
@@ -227,6 +229,7 @@
     }
     @media (max-width: $sm) {
         background: $bgcolor-green;
+        padding: 4rem 0;
     }
 }
 .why-stratezy-sec{

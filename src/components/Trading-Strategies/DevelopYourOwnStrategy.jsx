@@ -30,7 +30,7 @@ function DevelopYourOwnStrategy() {
           dots:true,
           autoplaySpeed: 3000,
           speed: 2500,
-          autoplay: false,
+          autoplay: true,
         }
       }
 
