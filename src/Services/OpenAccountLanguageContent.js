@@ -24,7 +24,8 @@ const language = {
         termlink:"Read Here.",
         termsbtn: 'Okay',
         otpresendsuccess1: 'You will soon receive an automated call on given Mobile Number',
-        otpresendsuccess2: 'OTP has been resent on given Mobile Number'
+        otpresendsuccess2: 'OTP has been resent on given Mobile Number',
+        otplblnew:'OTP sent on'
     },
     hindi: {
         title: 'मुफ़्त ट्रेडिंग खाता खोलें',
@@ -33,8 +34,8 @@ const language = {
         referPlaceholder: 'रेफरल कोड (वैकल्पिक)',
         invalidmob: 'वैध मोबाइल नंबर दर्ज करें',
         reqmob: 'मोबाइल नंबर आवश्यक है',
-        otpbtn: 'OTP भेजें',
-        otpmodalheader: 'OTP सत्यापन',
+        otpbtn: 'ओटीपी भेजें',
+        otpmodalheader: 'ओटीपी सत्यापन',
         otplbl: 'ओटीपी भेज दिया गया है',
         otptextbox: 'ओटीपी दर्ज करें',
         otprequired: 'ओटीपी आवश्यक है',
