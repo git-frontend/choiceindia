@@ -200,6 +200,7 @@
         @media (max-width:$sm) {
             top: 0;
             margin-bottom: 2rem;
+            padding: 2rem 2rem;
         }
         .bar-cont-des {
             align-items: center;
@@ -216,7 +217,7 @@
                 font-size: 2.5rem;
                 line-height: 1.5;
                 @media (max-width:$sm) {
-                    font-size: 1.8rem;
+                    font-size: 2.2rem;
                     text-align: center;
                 }
                 br{
