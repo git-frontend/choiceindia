@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
@@ -9,8 +9,7 @@ import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
-import { useState } from 'react';
-import AboutUs from './components/About-us/AboutUs';
+
 
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
@@ -140,16 +139,10 @@ const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpac
 const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
 const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
 
-const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'))
+const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
+const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
-    // const { pathname } = useLocation();
-const [path, setPath] = useState(window.location.pathname);
-const [fullPath, setFullPath] = useState(window.location.href.toString())
-// console.log('ttttt',path)
-// useEffect(() => {
-//     console.log('BODYYY',window.location.href)
-// },[fullPath,path])
 
 
     return (
@@ -157,21 +150,11 @@ const [fullPath, setFullPath] = useState(window.location.href.toString())
             <Router>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1) ? <Header /> : <CampaignHeader />}
-                
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
+               
                 {/* <Header /> */}
-                <div className='App-Body'>
-                    {
-                        (( fullPath.charAt(fullPath.length-1) == '/') && path.length-1 > 0 )?
-                        <>
-                        {/* <Navigate to={<ErrorPage />}/> */}
-                            <Routes>
-                                <Route path="*" element={<ErrorPage />} />
-                            </Routes>
-                        </>
-                            :
-                        <Routes >
-                       
+                <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
+                    <Routes>
                         <Route exact path='/' element={
                             <Home></Home>} />
                         {/* <Route exact path='/' element={< Home />} /> */}
@@ -798,13 +781,15 @@ const [fullPath, setFullPath] = useState(window.location.href.toString())
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
- 
+                        <Route exact path='/assisted-order-flow' element={
+                            <React.Suspense>
+                                < LazyAfpage />
+                            </React.Suspense>
+                        } />
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
-                    }
-
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1) ? <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

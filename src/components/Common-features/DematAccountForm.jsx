@@ -96,7 +96,6 @@ function DematAccountForm(props) {
                 return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
             });
         }
-        localStorage.setItem('hideAdPopUp',true);
         setShowOpenAccountPopup(false);
         callOpenAccountAdPopupAgain();
     }
@@ -300,7 +299,6 @@ function DematAccountForm(props) {
     }
 
     function sendOTP() {
-        console.log('UTTM',(window.location.pathname.indexOf("/minor-demat-account") > -1)? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1)? 'DL_NRI' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : 'EMPTYYYY' )
         showLoader('sendOTPLoader');
         let request = {
             "whatsapp_consent":true,
@@ -601,7 +599,7 @@ function DematAccountForm(props) {
     return (
         <>
             {
-                (showOpenAccountPopup && (localStorage.getItem('hideAdPopUp') != 'true')) ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
+                (showOpenAccountPopup) ? <OpenDemateAccountPopup hideComponent={hideOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)} ></OpenDemateAccountPopup> : ''
             }
             {
                 (props.isFromFableDetails ? (props.isFooterVisible && !fablesDetailTitleId) : props.isFooterVisible) ? <OpenDemateAccountStickyFooter openDemateAccountPopup={showOpenAccountAdPopup} openInfoPopup={(msg) => triggerOTPInfoPopup(msg)}></OpenDemateAccountStickyFooter> : ''
