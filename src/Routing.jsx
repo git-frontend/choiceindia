@@ -18,7 +18,7 @@ const Remo=()=>{
   
     return (
       <>
-        {location.pathname.match(/.*\/$/)  ? (
+        {(location.pathname.match(/.*\/$/) && location.pathname.length > 1)  ? (
           <Navigate
         to={{
           pathname: location.pathname.replace(/\/+$/, ""),
