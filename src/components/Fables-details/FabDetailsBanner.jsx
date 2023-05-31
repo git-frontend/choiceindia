@@ -14,6 +14,7 @@ import SubBrokerForm from '../SubBroker/SubBrokerForm';
 import MutualSubBrokerForm from "../Mutual-Fund-Distributor/SubBrokerForm";
 import utils from "../../Services/utils";
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import DematFormCta from "../Common-features/DematFormCta";
 
 function Fabdetailsbanner(props) {
     const [rendercount, setRenderCount] = useState(() => false);
@@ -74,7 +75,7 @@ function Fabdetailsbanner(props) {
 
             {
                 props.isdetail ?
-                    <section className="detailbanner">
+                    <section className="detailbanner" id="showCard">
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
@@ -195,9 +196,10 @@ function Fabdetailsbanner(props) {
                                 ((props.showForm) ?
                                     (props.formName === 'form-demat' ?
                                      <div className="col-md-4" id="open-account-wrap">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                        {/* <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                             <DematAccountForm isFooterVisible={true} isFromFableDetails={true} isPopupVisible={true} />
-                                        </GoogleReCaptchaProvider>
+                                        </GoogleReCaptchaProvider> */}
+                                        <DematFormCta />
                                         <div className="stickyform formwrap d-flex justify-content-end ">
                                         
                                         </div>

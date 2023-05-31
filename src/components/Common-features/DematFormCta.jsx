@@ -1,20 +1,23 @@
 import React from "react";
-import icon1 from '../../assets/images/ipo-landing/bajaj-energy.svg'
-import LazyLoader from '../Common-features/LazyLoader';
-import { useState,useEffect } from 'react';
+import { useState, useEffect } from "react";
+// import { Link } from "react-router-dom";
 
-function Banner() {
 
-  const [name, setName ] = useState('card-sticky');
+
+function DematFormCta() {
+
+  const [show, setShow] = useState();
+
+  const [name, setName ] = useState('card-sticky-blog');
     const getPosition = () => {
       const element = document.getElementById("showCard");
       if(element){
           const rect = element.getBoundingClientRect();
           
           if(rect.top.toFixed() < 530){
-              setName('card-sticky visibleCard');
+              setName('card-sticky-blog visibleBlog');
           }else{
-              setName('card-sticky');
+              setName('card-sticky-blog');
           }   
       }
   };
@@ -23,30 +26,12 @@ function Banner() {
     window.addEventListener('scroll', getPosition);
 }, []);
 
-const [name2, setName2 ] = useState('hideform');
-const getPosition2 = () => {
-  const element = document.getElementById("showCard");
-  if(element){
-      const rect = element.getBoundingClientRect();
-      
-      if(rect.top.toFixed() < 259){
-          setName2('visibleform');
-      }else{
-          setName2('hideform');
-      }   
-  }
-};
-
-useEffect(() => {
-  window.addEventListener('scroll', getPosition2);
-}, []);
-
   return (
     <>
+
       <div className={name}>
-        <div className="container d-flex justify-content-end">
-          <div className="sticy-card-sub">
-            <div className="sticy-card-sub-new">
+        <div className={show ? "show" : ""}>
+          <div className="sticy-card-sub-new sub-new-small">
             <h3 className="title-secnd">Invest in <br /> Bajaj Energy IPO</h3>
             <ul>
               <li>
@@ -81,83 +66,13 @@ useEffect(() => {
             <div className="btn-open">
               <button className="btn-bg btn-bg-dark">Open Now</button>
             </div>
-            </div>
-            
           </div>
         </div>
+        <button className="add" onClick={() => setShow(true)}>Click Please</button>
       </div>
-      
-      <section className="ipo-banner">
-        <div className="container">
-            <div className="row">
-                <div className="col-xl-7">
-                    <div className="banner-caption">
-                        <div className="cmp-logo">
-                          <span className="img-brder">
-                            <LazyLoader src={icon1} alt={""} className={"img-fluid"} width={"117"} height={"45"} />
-                          </span>
-                        </div>
-                        <div className="heading-sec">
-                            <h3 className="title-secnd">Bajaj Energy IPO</h3>
-                            <p>Bajaj Energy Limited</p>
-                        </div>
-                    </div>
-                    <div className="banner-card">
-                        <ul>
-                          <li>
-                            <span className="scr-date">Open Date</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                          <li>
-                            <span className="scr-date">Close Date</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                          <li>
-                            <span className="scr-date">Price Band</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                          <li>
-                            <span className="scr-date">Lot Size</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                          <li>
-                            <span className="scr-date">Investment Per Lot</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                          <li>
-                            <span className="scr-date">Listing at</span>
-                            <span className="date">To be announced</span>
-                          </li>
-                        </ul>
-                        <div className="card-bottom">
-                            <div className="btn-sec">
-                              <button className="btn-bg">Subscribe to IPO</button>
-                            </div>
-                            <div className="dont-ac">
-                              <a href="">Don’t Have an Account?</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className={name2}>
-                <div className="btn-fixed">
-                  <a className="openbtn">
-                    <span>Invest in Bajaj Energy IPO </span>
-                    <span>
-                      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="16" cy="16" r="16" fill="#FFCE02"/>
-                        <path d="M8 16H24.6667H8ZM24.6667 16L16.6667 8L24.6667 16ZM24.6667 16L16.6667 24L24.6667 16Z" fill="#FFCE02"/>
-                        <path d="M8 16H24.6667M24.6667 16L16.6667 8M24.6667 16L16.6667 24" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                  </a>
-                </div>
-            </div>
-        </div>
-      </section>
+
     </>
   );
 }
 
-export default Banner;
+export default DematFormCta;
