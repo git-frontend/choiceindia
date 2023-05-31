@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
@@ -9,8 +9,33 @@ import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
+import AboutUs from './components/About-us/AboutUs';
+import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-
+const Remo=()=>{
+    const location = useLocation();
+  
+    return (
+      <>
+        {(location.pathname.match(/.*\/$/) && location.pathname.length > 1)  ? (
+          <Navigate
+        to={{
+          pathname: location.pathname.replace(/\/+$/, ""),
+          search: location.search,
+        }}
+      />
+        ) : 
+    //     <Navigate
+    //     to={{
+    //       pathname: location.pathname.replace(/\/+$/, "/"),
+    //       search: location.search,
+    //     }}
+    //   />
+        null}
+      </>
+    );
+}
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
@@ -157,6 +182,7 @@ function Routing() {
     return (
         <>
             <Router>
+                <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
                 {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1  && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
