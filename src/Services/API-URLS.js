@@ -11,7 +11,7 @@ const config = {
     liveFileURL: "https://cms.jiffy.in/",
     UATFileURL:"https://cms.jiffy.in/",
 
-    UATJiffyServerURL: "https://uat.jiffy.in/",
+    UATJiffyServerURL: "https://finx.choiceindia.com/",
     liveJiffyServerURL: "https://finx.choiceindia.com/",
 
     UATJiffyURL: "http://devjiffy.choicebroking.in/",
@@ -20,7 +20,7 @@ const config = {
     livefaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATfaqURL: "https://choicebroking.freshdesk.com/api/v2/",
     UATJiffyResearchURL: "https://researchreportdevapi.choicetechlab.com/api/report/",
-    UATNewResearchReportURL: "https://research-api-dev.choicetechlab.com/api",
+    UATNewResearchReportURL: "https://finx.choiceindia.com/api/researchreport/v2/api",
     liveJiffyResearchURL: "https://researchreportapi.jiffy.in/api/report/",
     liveNewResearchReportURL: "https://finx.choiceindia.com/api/researchreport/v2/api",
     UATSSOBaseURL: 'https://sso-api.choicetechlab.com/',
@@ -34,7 +34,7 @@ const config = {
     liveresearchURL: "https://researchreportapi.jiffy.in/",
     UATresearchURL: "https://researchreportdevapi.choicetechlab.com/",
     liveperformanceURL: "https://finx.choiceindia.com/api/",
-    UATperformanceURL: "https://uat.jiffy.in/api/",
+    UATperformanceURL: "https://finx.choiceindia.com/api/",
     liveJiffyBaseURL: "https://finx.choiceindia.com/api/researchreport/v2/",
     UATJiffyBaseURL: " https://research-api-dev.choicetechlab.com/",
     UATnbfcBaseURL: "https://api-uat.synofin.tech/od/od-application-creation/",

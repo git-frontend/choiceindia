@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate, Link } from 'react-router-dom';
 import ScrolltoTop from './components/Common-features/ScrolltoTop';
 import ErrorPage from './components/Common-features/ErrorPage';
 import Header from './components/Contact/ContactHeader';
@@ -9,8 +9,33 @@ import '../src/assets/css/common.scss';
 import Home from './components/home-page/Home';
 import CampaignHeader from './components/Contact/CampaignHeader';
 import CampaignFooter from './components/Common-features/CampaignFooter';
+import AboutUs from './components/About-us/AboutUs';
+import { NavLink } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
-
+const Remo=()=>{
+    const location = useLocation();
+  
+    return (
+      <>
+        {(location.pathname.match(/.*\/$/) && location.pathname.length > 1)  ? (
+          <Navigate
+        to={{
+          pathname: location.pathname.replace(/\/+$/, ""),
+          search: location.search,
+        }}
+      />
+        ) : 
+    //     <Navigate
+    //     to={{
+    //       pathname: location.pathname.replace(/\/+$/, "/"),
+    //       search: location.search,
+    //     }}
+    //   />
+        null}
+      </>
+    );
+}
 const LazyHome = React.lazy(() => import('./components/home-page/Home'));
 // import Home from './components/Home';
 
@@ -134,23 +159,33 @@ const LazyOfferDocument = React.lazy(() => import('./components/offer-Document/o
 const LazyNachCancellation = React.lazy(() => import('./components/NACH-Cancellation/nach-cancellation-main'));
 const LazyStockBroker =React.lazy(()=> import('./components/Stock-Broker-Mumbai/Stock-Broker'))
 const LazySharemarketholidays =React.lazy(()=> import('./components/Share-Market-Holidays/Sharemarketholidays'));
-const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'))
-const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'))
-const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'))
-const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'))
-
+const LazyDigitalLendingBanner =React.lazy(()=> import('./components/Digital-Lending-Partners/DigitalLendingBanner'));
+const LazyCfplImpact =React.lazy(()=> import('./components/CFPL-Impact/CFPLImpact'));
+const LazyLoanPrivacyPolicy =React.lazy(()=> import('./components/Loan-privacypolicy/LoanPrivacyPolicy'));
+const LazyEmiCalculator =React.lazy(()=> import('./components/Emi-Calculator/EmiCalculator'));
 const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
+const LazyFreeDematCompaign = React.lazy(() => import('./components/Free-Demat-Campaign/FreeDematCompaign'));
+const LazyTradingStrategies = React.lazy(() => import('./components/Trading-Strategies/TradingStrategies'));
+const LazyTradingStrategiesHindi = React.lazy(() => import('./components/Trading-Strategies-Hindi/TradingStrategiesHindi'));
+const LazyCommodityTradingCampaign = React.lazy(() => import('./components/Commodity-Trading-Campaign/CommodityTradingCampaign'));
+const LazyCurrencyTradingCampaign = React.lazy(() => import('./components/Currency-Trading-Campaign/CurrencyTradingCampaign'));
+const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-Analysis-Campaign/TechnicalAnalysis'));
+
+
+const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
+// const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
 function Routing() {
 
-
+    
 
     return (
         <>
             <Router>
+                <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1  && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
                
                 {/* <Header /> */}
                 <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
@@ -781,6 +816,41 @@ function Routing() {
                                 < LazyInvestmentBanking />
                             </React.Suspense>
                         } />
+                         <Route exact path='/campaign/free-demat-account' element={
+                            <React.Suspense>
+                                < LazyFreeDematCompaign />
+                            </React.Suspense>
+                        } />
+                        <Route exact path='/campaign/trading-strategies' element={
+                            <React.Suspense>
+                                < LazyTradingStrategies />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/hindi/trading-strategies' element={
+                            <React.Suspense>
+                                < LazyTradingStrategiesHindi />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/commodity-trading' element={
+                            <React.Suspense>
+                                < LazyCommodityTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/forex-trading' element={
+                            <React.Suspense>
+                                < LazyCurrencyTradingCampaign />
+                            </React.Suspense>
+                        } />
+                         <Route exact path='/campaign/technical-analysis' element={
+                            <React.Suspense>
+                                < LazyTechnicalAnalysis />
+                                </React.Suspense>}/>
+                        <Route exact path='/campaign/futures-options-trading' element={
+                            <React.Suspense>
+                                < LazyFuturesOptionsTrading />
+                            </React.Suspense>
+                        } />
+ 
                         <Route exact path='/assisted-order-flow' element={
                             <React.Suspense>
                                 < LazyAfpage />
@@ -789,7 +859,7 @@ function Routing() {
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )

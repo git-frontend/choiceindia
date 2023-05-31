@@ -155,7 +155,7 @@ function FablesStories() {
 																{
 																	fslider && fslider.length && fslider[sliderimag] ?
 																		<div className="stories-sec-right-des">
-																			<Link to={`/blog/${fslider[sliderimag].slug}`}>
+																			<Link to={`/blog/${fslider[sliderimag].slug}/`}>
 																				<h4>{fslider[sliderimag].meta_title}</h4>
 																				<p>{fslider[sliderimag].excerpt} <span className="read-btn"><em>...</em>Read More</span></p>
 																			</Link>

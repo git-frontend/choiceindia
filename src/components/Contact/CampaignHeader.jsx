@@ -8,9 +8,9 @@ function CampaignHeader() {
         <nav className="navbar navbar-expand-lg">
           <div className="container">
 
-            <a className="navbar-brand logo-main" href="/">
+            <div className="navbar-brand logo-main">
               <img src={ImageSub0} width="150" height="37" className="img-fluid logo-dark" alt="Choice India" />
-            </a>
+            </div>
             {/* <div className="collapse navbar-collapse">
               <ul className="navbar-nav ms-auto nav-header">
 
