@@ -1,6 +1,6 @@
 
 import React from "react";
-import { useState,useEffect } from "react";
+import { useState, useEffect,useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 import "./free-demat-compaign.scss";
 import "./../OpenDematAccount/DematPage.scss";
@@ -20,9 +20,22 @@ import Faq from "./Faqs";
 
 
 function FreeDematCompaign() {
-
+  const [ischeck, setIscheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
+  const myRef1 = useRef(null);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    
+    if (element) {
+      const rect = element.getBoundingClientRect();
+      // console.log("checkmate", rect.top.toFixed())
+      if (rect.top.toFixed() < 350) {
+        setIscheck(true);
+        // console.log('inside name', name);
+      }
 
+    }
+  }
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -30,28 +43,38 @@ function FreeDematCompaign() {
       document.getElementById('meta-tags').content = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].content : '';
       document.getElementById('canonical-link').href = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].link : '';
       document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
+      window.addEventListener('scroll', getPositionnew);
     }
+    
   }, [rendercount])
 
   return (
     <div>
+
+      <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIscheck(true)}>
+      <Banner/>
+      </div>
       
-      <div>
-          <Banner />
-          {/* <CreateBacktestStrategies/> */}
-          <GetFreeResearchCall/>
-          <OurTrackRecordSaysAll/>
-          <WhyOpenFreeDematAccount/>
-          <OneAccountFinancialNeeds/>
-          <OpenLowBrokerageDematAccount/>
-          <DematAccountOnlineSteps/>
-          <DocumentsRequiredDematAccountOpeningOnline/>
-          <WhyChoiceOpenDematAccount/>
-          {/* <Faq/>
+        {/* <CreateBacktestStrategies/> */}
+        {
+          ischeck ?
+            <div>
+              <GetFreeResearchCall />
+              <OurTrackRecordSaysAll />
+              <WhyOpenFreeDematAccount />
+              <OneAccountFinancialNeeds />
+              <OpenLowBrokerageDematAccount />
+              <DematAccountOnlineSteps />
+              <DocumentsRequiredDematAccountOpeningOnline />
+              <WhyChoiceOpenDematAccount />
+            </div>
+            : ""}
+
+        {/* <Faq/>
           <BChargesMoreContent/> */}
-       </div> 
-      
-    </div>
+      </div>
+
+  
   );
 }
 

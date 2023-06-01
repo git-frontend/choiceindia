@@ -149,7 +149,7 @@ function OneAccountFinancialNeeds() {
             <div className="row">
             <div className="col-md-12">
              <div className="btn-open">
-                    <a onClick={()=>{chapterScroll2('dematform')}} class="cursor-pointer"><span class="btn-bg">Open My Account</span></a>
+                    <a onClick={()=>{chapterScroll2('dematform')}} className="cursor-pointer"><span className="btn-bg">Open My Account</span></a>
               </div>
             </div>
           </div>

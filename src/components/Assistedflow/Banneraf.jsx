@@ -149,6 +149,7 @@ function Banneraf() {
           if (res && res.data && res.data.Body && res.data.Body.data) {
             setDataNotFound(() => false);
             setBasketData(() => (res.data.Body.data ? res.data.Body.data : {}));
+            console.log('datttttt',BasketData.sip_date)
             refCallAPI();
           } else {
             setDataNotFound(() => true);
@@ -467,7 +468,9 @@ function Banneraf() {
     if (dd < 10) dd = "0" + dd;
     if (mm < 10) mm = "0" + mm;
 
-    const formattedToday = dd + "/" + mm + "/" + yyyy;
+    let day = BasketData.sip_date.split(',');
+
+    const formattedToday = (day[day.length -1]).toString() + "/" + mm + "/" + yyyy;
 
     // let refNo = parseInt(OrderMetaData.refNo);
     // refNo = refNo + 1;

@@ -51,10 +51,10 @@ function SliderApp() {
                                       <h5>{response.title}</h5>
                                       <p className="detail-show">{response.description}</p>
                                   </div>
-                              <div class="circle-big">
+                              <div className="circle-big">
                                 
                                 <svg>
-                                  <circle class="progress" cx="45" cy="42" r="40"></circle>
+                                  <circle className="progress" cx="45" cy="42" r="40"></circle>
                                 </svg>
                               </div>
                             </div>
