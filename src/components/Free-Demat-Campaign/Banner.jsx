@@ -80,15 +80,15 @@ function Banner() {
                                 <div className="col-lg-5 col-md-5">
                                     <div className="d-flex justify-content-end" id="campaignForm">
                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            {/* <DematAccountForm /> */}
-                                            <NewDematAccountForm />
+                                            <DematAccountForm />
+                                            {/* <NewDematAccountForm /> */}
                                         </GoogleReCaptchaProvider>
                                     </div>
                                 </div> :
                                 <div className="col-lg-5 col-md-5">
                                     <div className="d-flex justify-content-end" id="campaignForm">
-                                        {/* <DematAccountForm /> */}
-                                        <NewDematAccountForm />
+                                        <DematAccountForm />
+                                        {/* <NewDematAccountForm /> */}
                                     </div>
                                 </div>
                         }
