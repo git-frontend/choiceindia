@@ -418,6 +418,9 @@ body{
             @media (max-width:$md) {
                 font-size: 1.7rem;
             }
+            @media (max-width:$sm) {
+                font-size: 2.0rem;
+            }
         }
         ul{
             li{
@@ -431,12 +434,20 @@ body{
                     @media (max-width:$md) {
                         font-size: 1.3rem;
                     }
+                    @media (max-width:$sm) {
+                        white-space: initial;
+                    }
                 }
             }
         }
         .btn-open{
             @media (max-width:$md) {
                padding-top: 1rem;
+            }
+            @media (max-width:$sm) {
+                .btn-bg{
+                    width: 100%;
+                }
             }
         }
         @media (max-width:$md) {
