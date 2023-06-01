@@ -2,9 +2,9 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
-import NoAmc from '../../assets/images/free-demat-compaign/free-demat-account-with-no-annual-charges.svg';
-import ResearchCalls from '../../assets/images/free-demat-compaign/free-demat-account-with-expert-research-calls.svg';
-import ResearchTools from '../../assets/images/free-demat-compaign/open-demat-account-with-free-research-tools.svg';
+import NoAmc from '../../assets/images/free-demat-compaign/free-demat-account-with-no-annual-charges.png';
+import ResearchCalls from '../../assets/images/free-demat-compaign/free-demat-account-with-expert-research-calls.png';
+import ResearchTools from '../../assets/images/free-demat-compaign/open-demat-account-with-free-research-tools.png';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -80,15 +80,15 @@ function Banner() {
                                 <div className="col-lg-5 col-md-5">
                                     <div className="d-flex justify-content-end" id="campaignForm">
                                         <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                                            <DematAccountForm />
-                                            {/* <NewDematAccountForm /> */}
+                                            {/* <DematAccountForm /> */}
+                                            <NewDematAccountForm />
                                         </GoogleReCaptchaProvider>
                                     </div>
                                 </div> :
                                 <div className="col-lg-5 col-md-5">
                                     <div className="d-flex justify-content-end" id="campaignForm">
-                                        <DematAccountForm />
-                                        {/* <NewDematAccountForm /> */}
+                                        {/* <DematAccountForm /> */}
+                                        <NewDematAccountForm />
                                     </div>
                                 </div>
                         }

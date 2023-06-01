@@ -394,7 +394,7 @@
     padding: 8rem 0;
     .btn-bg{
         @media (max-width:$sm) {
-            width: 100%;
+            // width: 100%;
         }
     }
     .title-first{
@@ -456,6 +456,9 @@
 
 .one-ac-financial{
     padding: 6rem 0;
+    @media (max-width:$sm) {
+        overflow: hidden;
+    }
     .btn-bg{
         @media (max-width:$sm) {
             width: 100%;
@@ -491,6 +494,12 @@
             }
         }
     .slick-slider{
+        .slick-list{
+            @media (max-width:$sm) {
+                margin-right: -30%;
+            }
+        }
+        
         .slick-prev{
             z-index: 1;
             left: -20px;
@@ -511,6 +520,7 @@
             @media (max-width:$sm) {
                 left:0 ;
             }
+            
         }
         .slick-next{
             z-index: 1;
