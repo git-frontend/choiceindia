@@ -6,6 +6,7 @@ import './OpenDemateAccountStickyFooter.scss';
 import OpenAccountOTPModal from './OpenAccountOTPModal.jsx';
 import Thankyoupopup from './Thanku-popup.jsx';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import '../Common-features/demat-form.scss'
 
 function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }) {
     const mobileRegex = /^(6|9|8|7)([0-9]{9})$/i;
@@ -29,6 +30,8 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     var otpSessionID = useRef('');
     const webcheck = ((window.location.pathname.indexOf('best-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('best-intraday-stocks-to-buy') > -1) || (window.location.pathname.indexOf('best-stocks-for-long-term-investment') > -1)||(window.location.pathname.indexOf('best-short-term-stocks-to-buy') > -1) ||(window.location.pathname.indexOf('nse-holidays') > -1)||(window.location.pathname.indexOf('bse-holidays') > -1)||(window.location.pathname.indexOf('mcx-ncdex-holidays') > -1)||(window.location.pathname.indexOf('stock-market-holidays') > -1) ) ? 'Best-Stock' : "Blog";
 
+    var otpLeadID = useRef('');
+    var referLink = useRef('');
     const [captchaToken, setCaptchaToken] = useState('');
     const { executeRecaptcha } = useGoogleReCaptcha();
 
@@ -36,6 +39,17 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '' });
 
     const [showlead, setShowLead] = useState({ showModal: false });
+
+    /**to show consent popup */
+    const [consent, setShowConsent] = useState(false);
+
+    const [otperror, setOTPErrors] = useState();
+
+      /**variable for loaders */
+  const [consentLoaders, setConsentLoaders] = useState({
+    consentYesLoader: false,
+    consentNoLoader: false
+  });
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -92,10 +106,10 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
         setShowOTP(true);
     }
 
-    function handleOTPClose(link, msg) {
+    function handleOTPClose(link, msg, onboardFlag, actionType, leadID) {
         //   console.log('CCMMM', link, msg);
         setShowOTP(false);
-
+        if(actionType != 'popup_and_no_update'){
         if (link) {
 
             let result = link.match("respond-issue");
@@ -120,6 +134,11 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                 return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', closeMd: closeModal }
             });
         }
+    }else{
+        referLink.current = link? link : null;
+        otpLeadID.current = leadID? leadID : null;
+        setShowConsent(() => true)
+    }
     }
 
 
@@ -146,7 +165,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
     }
 
     function handleSendOTP(e) {
-        if(document.getElementById("mobile_no").value == ""){
+        if(mobileNumber && mobileNumber < 10 && !mobileRegex.test(mobileNumber)){
             setErrors({
                 ...errors,
                 'invalidMobile': true
@@ -192,6 +211,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
                 otpSessionID.current = res.data.Body.otp_session_id;
+                otpLeadID.current = res.data.Body.lid
                 handleOTPShow();
             } else {
                 setAPIError("Something went wrong, please try again later!");
@@ -231,6 +251,49 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
                 sendOTP();
             }
         }, [captchaToken]);
+
+            /**on click no consent */
+    function submitConsent(consent){
+
+        setOTPErrors(null);
+        if(consent == 'yes'){
+            setConsentLoaders({...consentLoaders, consentYesLoader: true, consentNoLoader: false});
+        }else{
+            setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: true});
+        }
+        
+        let request = {
+            "mobile_number": null,
+            otp: null,
+            session_id: null,
+            is_consent: consent? consent : null,
+            lid: otpLeadID.current? otpLeadID.current : null
+        };
+        
+        openAccountService.verifyOTP(request, "JF").then((res) => {
+            if (res && res.status === 200 && res.data && res.data.Body) {
+                setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
+                console.log('Success',res);
+                if(consent == "yes"){
+                    window.location.href = referLink? referLink: null;
+                }else{
+                    setShowConsent(false)
+                }
+            } else {
+                setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
+                // setOTPErrors((res && res.data && res.data.Body && res.data.Body.Message) ? res.data.Body.Message : 'Something Went Wrong');
+            }
+        }).catch((error) => {
+            setConsentLoaders({...consentLoaders, consentYesLoader: false, consentNoLoader: false});
+            if (error && error.response && error.response.data && error.response.data.Message) {
+                // setOTPErrors(error.response.data.Message);
+                // setMobileNumber('')
+            } else {
+                // setOTPErrors('Something Went Wrong.');
+            }
+        });
+    }
+
 
     return (
         <>
@@ -311,7 +374,7 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
 
             {
                 showOTP ?
-                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
+                    <OpenAccountOTPModal mobileNumber={mobileNumber} otpSessionID={otpSessionID.current} otpLeadID={otpLeadID.current} onClose={handleOTPClose} openInfoPopup={(msg) => openInfoPopup(msg)}></OpenAccountOTPModal> : ''
             }
             {/* <Modal show={showOTP} onHide={handleOTPClose} backdrop="static"
                 keyboard={false} centered>
@@ -336,6 +399,43 @@ function OpenDemateAccountStickyFooter({ openDemateAccountPopup, openInfoPopup }
             {
                 showThanku.showModal ? <Thankyoupopup isShow={showThanku} /> : ''
             }
+
+            {/* for referral code */}
+            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" show={consent} onHide={() => { setShowConsent(false) }} backdrop='static' keyboard={false}>
+                <Modal.Header className="border-0" closeButton>
+                </Modal.Header>
+                <Modal.Body className="border-0">
+                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
+                        <div className="exit-intent-sleekbox-popup">
+                            <div className="popup-sub-row">
+                                <div className="popup-sub-right">
+                                    <div>
+                                        <p className="heading">Dear Investor</p>
+                                        <p className="subheading mb-3 mb-sm-0">Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:</p>
+                                    </div>
+                                    <div className="btnwrap">
+                                        <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover" onClick={() => { consentLoaders.consentNoLoader ? null : submitConsent('no') }} disabled={consentLoaders.consentYesLoader}>
+                                            {
+                                                consentLoaders.consentNoLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>No, Cancel Onboarding and Connect RM</span>
+                                            }
+                                        </button>
+                                        <button className="btn-bg referral-btn" onClick={() => { consentLoaders.consentYesLoader ? null : submitConsent('yes') }} disabled={consentLoaders.consentNoLoader}>
+                                            {
+                                                consentLoaders.consentYesLoader ?
+                                                    <div className="loaderB mx-auto"></div> : <span>Yes, continue with Existing Referral Code</span>
+                                            } </button>
+                                    </div>
+                                    {
+                                       otperror?
+                                       <span class="text-danger">{otperror}</span> : ''  
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </Modal.Body>
+            </Modal>
         </>
     )
 }

@@ -68,10 +68,10 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link,msg,info) {
+    function handleOTPClose(link,msg,info,actionType,leadId) {
         // console.log('TTYTYTYTY',link,msg,info);
         setShowOTP(false);
-        let obj = {"link": link, "msg":msg, "info":info};
+        let obj = {"link": link, "msg":msg, "info":info, "actionType":actionType, "leadId":leadId};
         // if (link) {
 
         //     let result = link.match("respond-issue");
@@ -137,13 +137,13 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
         showLoader('sendOTPLoader');
         let request = {
             "whatsapp_consent":true,
-            "service_code":type1=='MF' ? "MF": "JF",
+            "service_code": "JF", // type1=='MF' ? "MF": "JF",
             "mobile_number": mobileNumber,
-            "product": type1=='MF' ? "INVESTICA":"FINX",
+            "product": "FINX", //type1=='MF' ? "INVESTICA":"FINX",
             "request_source": "CHOICEINDIA",
             "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
-            "user_consent": type1=='MF' ?"true":"1",
-            "referred_id": refercode.current || referID || null,
+            "user_consent": "1", // type1=='MF' ?"true":"1",
+            "referred_id": refercode.current || null , //|| referID || null,
             "sub_ref": subrefercode.current || null,
            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
@@ -157,7 +157,7 @@ function OpenDemateAccountPopup({hideComponent, openInfoPopup}) {
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "account_type" :type1=='MF'?"":"all"
+            "account_type" :  "all" // type1=='MF'?"":"all"
             // "captcha": "1"
           
         };

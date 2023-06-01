@@ -544,7 +544,8 @@ export class API_URLS {
         return this.jiffyResearchURL + this.addMarketInsiteNewURL;
     }
     getSendOTPURL() {
-        return this.SSOServerURL + this.sendOTPURL;
+        // return this.SSOServerURL + this.sendOTPURL;
+        return "https://sso-beta.choiceindia.com/" + this.sendOTPURL;
     }
 
     getOTPOnCallURL() {
@@ -556,7 +557,8 @@ export class API_URLS {
     }
 
     getVerifyOTPURL() {
-        return this.SSOServerURL + this.verifyOTPURL;
+        // return this.SSOServerURL + this.verifyOTPURL;
+        return "https://sso-beta.choiceindia.com/" + this.verifyOTPURL;
     }
 
     getSendInvesOTPURL() {

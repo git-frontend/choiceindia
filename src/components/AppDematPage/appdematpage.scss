@@ -1,0 +1,17 @@
+@import '../../assets/css/common.scss';
+
+.app-dmt-page{
+    margin: 13rem auto;
+
+    @media (max-width: $md) {
+        margin: 13rem auto;
+        width: 90%;
+	}
+
+    @media (max-width: $sm) {
+		margin: 13rem auto;
+        width: 90%;
+	}
+
+}
+

@@ -11,7 +11,7 @@ import Thankyoupopup from './Thanku-popup.jsx';
 import Modal from 'react-bootstrap/Modal'
 
 
-function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, openInfoPopup, showPopup }) {
+function OpenAccountOTPModal({ mobileNumber, otpSessionID,otpLeadID, onClose, language, openInfoPopup, showPopup }) {
     // console.log('PPP',onClose.handleOTPClose());
     // props -> mobileNumber, otpSessionID
     const [loaders, setLoaders] = useState({});
@@ -20,6 +20,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, op
     const [OTPErrors, setOTPErrors] = useState('');
     const [OTPSendSuccessToaster, setOTPSendSuccessToaster] = useState({});
     var otpID = useRef(otpSessionID);
+    var otpLID = useRef(otpLeadID);
     const type2 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
     const [show, setShow] = useState(true);
     // console.log('SSS',show);
@@ -31,6 +32,10 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, op
     /**props object for Thankyou popup */
     const [showlead, setShowLead] = useState({ showModal: false, page: 'no-addlead' });
     // console.log('OOOO',showlead.showModal)
+
+
+
+    const [redirectURL, setRedirectURL] = useState(() => null);
 
     /**to close the thankyou popup */
     function closeModal() {
@@ -132,15 +137,22 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, op
                         // setShowLead(prevState => {
                         //     return {...prevState, showModal: true, redirectLink: res.data.Body.url, closeOTP: onClose}
                         // });
-
+                        setRedirectURL(() => res.data.Body.url);
+                        
                         let result = res.data.Body.url.match("respond-issue");
-                        if (result && result.length && result[0] === 'respond-issue') {
-                            openInfoPopup(res.data.Message);
-                            onClose(res.data.Body.url);
-                        } else {
-                            // console.log('Else onboard');
-                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "");
+                        if(res.data.Body.action_type && res.data.Body.action_type != 'popup_and_no_update'){
+                            if (result && result.length && result[0] === 'respond-issue') {
+                                openInfoPopup(res.data.Message);
+                                onClose(res.data.Body.url);
+                            } else {
+                                // console.log('Else onboard');
+                                onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "");
+                            }
+                        }else{
+                            onClose(res.data.Body.url, res.data.Message ? res.data.Message : '', res.data.Body.isOnboardFlag ? res.data.Body.isOnboardFlag : "", res.data.Body.action_type? res.data.Body.action_type : "",res.data.Body.lid ? res.data.Body.lid : '');
+                            // setShowConsent(() => (res.data.Body.action_type && res.data.Body.action_type == 'no_action') ? true: false);
                         }
+
 
                         // console.log('inside call',showlead.showModal);
                         // window.location.href = res.data.Body.url;
@@ -265,6 +277,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, op
             setOTPSendSuccessToaster({ [type]: false });
         }, 5000)
     }
+
 
     return (
         <>
@@ -428,29 +441,7 @@ function OpenAccountOTPModal({ mobileNumber, otpSessionID, onClose, language, op
             </Modal>
 
 
-            {/* for referral code */}
-            <Modal className="bt-strap-mdl otp-main-modal Referral-code-model" onHide={onClose} backdrop='static' keyboard={false}>
-                <Modal.Header className="border-0" closeButton>
-                </Modal.Header>
-                <Modal.Body className="border-0">
-                    <div className="exit-intent-sleekbox-overlay sleekbox-popup-active referral-overlay">
-                        <div className="exit-intent-sleekbox-popup">
-                            <div className="popup-sub-row">
-                                <div className="popup-sub-right">
-                                    <div>
-                                        <p className="heading">Dear Investor</p>
-                                        <p className="subheading mb-3 mb-sm-0">Your mobile number is already associated with another refercode. To proceed with your onboarding, please select one of the following options:</p>
-                                    </div>
-                                    <div className="btnwrap">
-                                        <button className="btn-bg btn-bg-dark sendbtn btn btn-primary referral-btn referral-btn-hover">No, Cancel Onboarding and Connect RM</button>
-                                        <button className="btn-bg referral-btn">Yes, continue with Existing Referral Code </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Modal.Body>
-            </Modal>
+
 
 
             {/* {

@@ -175,6 +175,8 @@ const LazyTechnicalAnalysis = React.lazy(() => import('./components/Technical-An
 const LazyFuturesOptionsTrading =React.lazy(()=> import('./components/Futures-Options-Trading/futuresOptionsTradingBanner'))
 // const LazyInvestmentBanking =React.lazy(()=> import('./components/Investment-Banking/InvestmentBanking'));
 const LazyAfpage = React.lazy(() => import('./components/Assistedflow/AssistedFlow'));
+const LazyAppDematPage = React.lazy(() => import('./components/AppDematPage/AppDematPage'));
+
 function Routing() {
 
     
@@ -185,7 +187,7 @@ function Routing() {
                 <Remo></Remo>
                 <ScrolltoTop />
                 <OpentoTop />
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1  && window.location.pathname.indexOf("/assisted-order-flow") === -1) ? <Header /> : <CampaignHeader />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") ==-1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 && window.location.pathname.indexOf("/intraday-charges") === -1  && window.location.pathname.indexOf("/assisted-order-flow") === -1 && window.location.pathname.indexOf("open-free-demat-account-app") == -1) ? <Header /> : <CampaignHeader />}
                
                 {/* <Header /> */}
                 <div className={ (window.location.pathname.indexOf("/assisted-order-flow") === -1) ? 'App-Body' : 'assist-body'}>
@@ -856,10 +858,17 @@ function Routing() {
                                 < LazyAfpage />
                             </React.Suspense>
                         } />
+
+                        <Route exact path='/open-free-demat-account-app' element={
+                            <React.Suspense>
+                                < LazyAppDematPage />
+                            </React.Suspense>
+                        } />
+
                         <Route path="*" element={<ErrorPage />} />
                     </Routes>
                 </div>
-                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1)? '': <Footer /> : <CampaignFooter />}
+                {(window.location.pathname.indexOf("/campaign/sub-broker") === -1 && window.location.pathname.indexOf("/campaign/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/hindi/trading-strategies") === -1 && window.location.pathname.indexOf("/campaign/commodity-trading") ==-1 && window.location.pathname.indexOf("/campaign/forex-trading") ==-1 && window.location.pathname.indexOf("/campaign/free-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/technical-analysis") ==-1 && window.location.pathname.indexOf("/campaign/futures-options-trading") ==-1 && window.location.pathname.indexOf("/campaign/open-demat-account") ==-1 && window.location.pathname.indexOf("/campaign/free-amc-demat-account") ==-1 && window.location.pathname.indexOf("/intraday-charges") === -1 && window.location.pathname.indexOf("/partner-assests/emitra") === -1 ) ? (window.location.pathname.indexOf("/assisted-order-flow") > -1 || window.location.pathname.indexOf("/open-free-demat-account-app") > -1)? '': <Footer /> : <CampaignFooter />}
             </Router>
         </>
     )
