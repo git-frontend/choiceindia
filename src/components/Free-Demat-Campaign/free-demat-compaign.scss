@@ -119,12 +119,12 @@
                     padding-top: 2rem;
                     line-height: 1.5;
                     @media (max-width:$md) {
-                        font-size: 1.3rem;
+                        font-size: 1.5rem;
                     }
                     @media (max-width:$sm) {
                         padding-left: 1rem;
                         padding-top: 0;
-                        margin-bottom: 2rem;
+                        // margin-bottom: 2rem;
                         width: 60%;
                         text-align: left;
                     }
@@ -432,7 +432,7 @@
                 font-family: $font-family-poppins-semibold;
                 line-height: 1.5;
                 @media (max-width:$md) {
-                    font-size:1.3rem ;
+                    font-size:1.5rem ;
                 }
             }
             @media (max-width:$sm) {

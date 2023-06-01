@@ -1,18 +1,1 @@
-<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_258_315)">
-<rect x="6" width="60" height="60" rx="30" fill="#221F20"/>
-</g>
-<path d="M28.5836 44.4125C29.3591 45.1958 30.6095 45.1958 31.385 44.4125L44.5371 31.1271C45.1543 30.5036 45.1543 29.4964 44.5371 28.8729L31.385 15.5875C30.6095 14.8042 29.3591 14.8042 28.5836 15.5875C27.8081 16.3709 27.8081 17.6339 28.5836 18.4173L40.0422 30.008L28.5678 41.5987C27.8081 42.3661 27.8081 43.6451 28.5836 44.4125Z" fill="white"/>
-<defs>
-<filter id="filter0_d_258_315" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="6"/>
-<feGaussianBlur stdDeviation="3"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_258_315"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_258_315" result="shape"/>
-</filter>
-</defs>
-</svg>
+<svg width="72" height="72" fill="none" xmlns="http://www.w3.org/2000/svg"><g filter="url(#a)"><rect x="6" width="60" height="60" rx="30" fill="#221F20"/></g><path d="M28.584 44.413a1.964 1.964 0 0 0 2.801 0l13.152-13.286a1.604 1.604 0 0 0 0-2.254L31.385 15.587a1.964 1.964 0 0 0-2.801 0 2.012 2.012 0 0 0 0 2.83l11.458 11.591-11.474 11.59c-.76.768-.76 2.047.016 2.815z" fill="#fff"/><defs><filter id="a" x="0" y="0" width="72" height="72" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feOffset dy="6"/><feGaussianBlur stdDeviation="3"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.16 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_258_315"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_258_315" result="shape"/></filter></defs></svg>
