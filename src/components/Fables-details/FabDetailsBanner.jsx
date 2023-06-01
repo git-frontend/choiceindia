@@ -98,8 +98,8 @@ function Fabdetailsbanner(props) {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="row ">
-                            <div className="col-md-12">
+                        <div className="row justify-content-center">
+                            <div className="col-xl-9 col-md-12">
                                 <p className="text-center date">Published  {utils.formatDate(new Date(props.single_data[0].published_at), "MMMM dd, yyyy")}</p>
                                 <h1 className="heading title-secnd text-center" id="fablesdetail-title">{props.single_data[0].title || 'Texxt'}</h1>
                                 {/* <h2 className="heading title-secnd text-center">TEST</h2> */}
