@@ -68,23 +68,23 @@ function Fabdetailsbanner(props) {
 
     }
 
-    const Remo = () => {
-        const location = useLocation();
+    // const Remo = () => {
+    //     const location = useLocation();
 
-        return (
-            <>
-                {location.pathname.match(/.*\/$/) ? (
-                    //     <Navigate
-                    //   to={{
-                    //     pathname: location.pathname.replace(/\/+$/, ""),
-                    //     search: location.search,
-                    //   }}
-                    // />
-                    location.pathname.replace(/\/+$/, "")
-                ) : null}
-            </>
-        );
-    }
+    //     return (
+    //         <>
+    //             {location.pathname.match(/.*\/$/) ? (
+    //                 //     <Navigate
+    //                 //   to={{
+    //                 //     pathname: location.pathname.replace(/\/+$/, ""),
+    //                 //     search: location.search,
+    //                 //   }}
+    //                 // />
+    //                 location.pathname.replace(/\/+$/, "")
+    //             ) : null}
+    //         </>
+    //     );
+    // }
 
     return (
 

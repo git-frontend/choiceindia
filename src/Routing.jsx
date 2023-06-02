@@ -18,7 +18,7 @@ const Remo=()=>{
   
     return (
       <>
-        {(location.pathname.match(/.*\/$/) && location.pathname.length > 1)  ? (
+        {(location.pathname.match(/.*\/$/) && location.pathname.length > 1 && location.pathname.indexOf('blog') < 0)  ? (
           <Navigate
         to={{
           pathname: location.pathname.replace(/\/+$/, ""),

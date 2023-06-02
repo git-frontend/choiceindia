@@ -30,7 +30,7 @@ function Recommendation(props) {
 	function Demo(slug) {
 		// console.log('Demo called',id);
 		// setID(() => id);
-		navigate(`/blog/${slug}/`, { replace: true });
+		navigate(`/blog/${slug}`, { replace: true });
 		// <Link to={`/fablesdetail/${data.name?data.name[1].id : 'NA'}`} >
 
 		// </Link>
