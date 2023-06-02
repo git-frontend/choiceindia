@@ -2,9 +2,9 @@
 import React from "react";
 import { useState, useEffect } from 'react';
 import LazyLoader from '../Common-features/LazyLoader';
-import NoAmc from '../../assets/images/free-demat-compaign/free-demat-account-with-no-annual-charges.svg';
-import ResearchCalls from '../../assets/images/free-demat-compaign/free-demat-account-with-expert-research-calls.svg';
-import ResearchTools from '../../assets/images/free-demat-compaign/open-demat-account-with-free-research-tools.svg';
+import NoAmc from '../../assets/images/free-demat-compaign/free-demat-account-with-no-annual-charges.png';
+import ResearchCalls from '../../assets/images/free-demat-compaign/free-demat-account-with-expert-research-calls.png';
+import ResearchTools from '../../assets/images/free-demat-compaign/open-demat-account-with-free-research-tools.png';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import NewDematAccountForm from '../Common-features/NewDematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
