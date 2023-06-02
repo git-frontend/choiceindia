@@ -103,7 +103,7 @@ useEffect(() => {
 ///sticky footer
                      <div className="btn-fixed">
                      <a className="openbtn"  onClick={()=>{setShow(true)}} >
-                       <span>Invest in Bajaj Energy IPO </span>
+                       <span>Open Free Demat Account in 5 Mins</span>
                        <span>
                          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                            <circle cx="16" cy="16" r="16" fill="#FFCE02"/>
