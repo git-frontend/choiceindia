@@ -378,7 +378,7 @@ function DematAccountForm(props) {
             "sub_ref": subrefercode.current || null,
             /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || (window.location.pathname.indexOf("/minor-demat-account") > -1)? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1)? 'DL_NRI' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
+            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current? UTMCampaign.current :  (window.location.pathname.indexOf("/minor-demat-account") > -1)? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1)? 'DL_NRI' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
             "utm_content": UTMContent.current || null,
             "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             // 'sidebar_seo_leads'
