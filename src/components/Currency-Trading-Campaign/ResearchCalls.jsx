@@ -67,7 +67,7 @@ function ResearchCalls() {
           // console.log("checkdd",res.response.research);
           storefile = res.response.research;
           // setlist(res.response.research);
-          console.log("storefile", storefile)
+          // console.log("storefile", storefile)
           res.response.research.forEach(ele => {
 
             tokenList.push({ 'SegmentId': ele.segment_id, 'Token': ele.token })

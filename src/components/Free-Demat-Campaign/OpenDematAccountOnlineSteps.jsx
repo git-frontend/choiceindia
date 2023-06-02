@@ -27,7 +27,7 @@ function DematAccountOnlineSteps() {
                     <div className="left-sec">
                         <SliderApp />
                         <div className="text-center pt-5">
-                          <a onClick={()=>{chapterScroll3('dematform')}} class="cursor-pointer"><span class="btn-bg btn-bg-dark">Open Free Account</span></a>
+                          <a onClick={()=>{chapterScroll3('dematform')}} className="cursor-pointer"><span className="btn-bg btn-bg-dark">Open Free Account</span></a>
                         </div>
                       </div>
                     <div className="right-sec">

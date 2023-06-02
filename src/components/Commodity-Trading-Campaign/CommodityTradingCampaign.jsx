@@ -1,7 +1,7 @@
 
 // import React from 'react';
 import React from "react";
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import meta_tags from '../../Data/MetaTags';
 import DematAccountForm from '../Common-features/DematAccountForm';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -92,8 +92,22 @@ function CommodityTradingCampaign() {
             }
         }
     };
+    const myRef1 = useRef(null);
+    const getPositionnew = () => {
+        const element = document.getElementById("branch1");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            // console.log("checkmate", rect.top.toFixed())
+            if (rect.top.toFixed() < 350) {
+                setIsCheck(true);
+                // console.log('inside name', name);
+            }
+
+        }
+    }
 
     useEffect(() => {
+        window.addEventListener('scroll', getPositionnew);
         window.addEventListener('scroll', getPosition);
     }, []);
 
@@ -111,51 +125,56 @@ function CommodityTradingCampaign() {
 
     return (
         <>
-            <section className="futureoptionbenner" onMouseOver={() => setIsCheck(true)}>
-                <div className="container">
-                    <div className="row ">
-                        <div className="col-md-7 fandoleft">
-                            <h1 className="big-ttl">Don’t Miss <span> Commodity </span><br />Trading Opportunities!</h1>
-                            {/* <div className="carditem-option-tab"> */}
-                            <Slider {...settings1} className="carditem-option-tab">
-                                <div className="carditem-option">
-                                    <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily Commodity Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
-                                    <h4 className="cardoption-ttl">Daily Commodity Calls from Experts</h4>
-                                </div>
-                                <div className="carditem-option">
-                                    <span className="carditem-option-img"><LazyLoader src={icon2} alt={"Free Demat Account with Advanced Trading Platform"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
-                                    <h4 className="cardoption-ttl">Advanced Trading Platform</h4>
-                                </div>
-                                <div className="carditem-option">
-                                    <span className="carditem-option-img"><LazyLoader src={icon3} alt={"Demat Account with Free Premium Research Tools"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
-                                    <h4 className="cardoption-ttl">Free Access to Premium Research Tools</h4>
-                                </div>
-                            </Slider>
-                            {/* </div> */}
-                        </div>
-                        {
-                            isCheck ?
-                                <div className="col-md-5">
-                                    <div className="d-flex justify-content-end" id="campaignForm">
-                                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+                <section className="futureoptionbenner" onMouseOver={() => setIsCheck(true)}>
+                    <div className="container">
+                        <div className="row ">
+                            <div className="col-md-7 fandoleft">
+                                <h1 className="big-ttl">Don’t Miss <span> Commodity </span><br />Trading Opportunities!</h1>
+                                {/* <div className="carditem-option-tab"> */}
+                                <Slider {...settings1} className="carditem-option-tab">
+                                    <div className="carditem-option">
+                                        <span className="carditem-option-img"><LazyLoader src={icon1} alt={"Demat Account with Daily Commodity Calls from Experts"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
+                                        <h4 className="cardoption-ttl">Daily Commodity Calls from Experts</h4>
+                                    </div>
+                                    <div className="carditem-option">
+                                        <span className="carditem-option-img"><LazyLoader src={icon2} alt={"Free Demat Account with Advanced Trading Platform"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
+                                        <h4 className="cardoption-ttl">Advanced Trading Platform</h4>
+                                    </div>
+                                    <div className="carditem-option">
+                                        <span className="carditem-option-img"><LazyLoader src={icon3} alt={"Demat Account with Free Premium Research Tools"} className={"img-fluid ban-img"} width={"130"} height={"130"} /></span>
+                                        <h4 className="cardoption-ttl">Free Access to Premium Research Tools</h4>
+                                    </div>
+                                </Slider>
+                                {/* </div> */}
+                            </div>
+                            {
+                                isCheck ?
+                                    <div className="col-md-5">
+                                        <div className="d-flex justify-content-end" id="campaignForm">
+                                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                                                <DematAccountForm />
+                                            </GoogleReCaptchaProvider>
+                                        </div>
+                                    </div> :
+                                    <div className="col-md-5">
+                                        <div className="d-flex justify-content-end" id="campaignForm">
                                             <DematAccountForm />
-                                        </GoogleReCaptchaProvider>
+                                        </div>
                                     </div>
-                                </div> :
-                                <div className="col-md-5">
-                                    <div className="d-flex justify-content-end" id="campaignForm">
-                                        <DematAccountForm />
-                                    </div>
-                                </div>
-                        }
-                    </div>
-                    <div className={name}>
-                        <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
-                            <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
+                            }
+                        </div>
+                        <div className={name}>
+                            <div className="d-flex justify-content-center btn-view-more-sticky  mt-5 btn-fixed">
+                                <button className=" primary-orange-btn scroll-top-account openbtn" onClick={() => { chapterScroll2('dematform') }}>Open Free Account</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
+            {
+                isCheck ?
+            <div>
             <ResearchCalls />
             <section className="getstart-signup">
                 <div className="container">
@@ -175,7 +194,8 @@ function CommodityTradingCampaign() {
             <CommodityTradingNeeds />
             <CommodityTradingOpenDematAc />
             <WhyChoice />
-
+            </div>
+            :""}
 
         </>
     );
