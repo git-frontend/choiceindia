@@ -29,18 +29,18 @@ function DematAccountForm(props) {
     const [loaders, setLoaders] = useState({});
     const [APIError, setAPIError] = useState();
     const [showErrorToaster, setShowErrorToaster] = useState(false);
-    const type1= "JF" ; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
-    const isBlog=(window.location.pathname.indexOf('blog') > -1) ? 'yes':'';
+    const type1 = "JF"; //(window.location.pathname.indexOf('mutual-funds-investment') > -1) ? 'MF':"JF";
+    const isBlog = (window.location.pathname.indexOf('blog') > -1) ? 'yes' : '';
     const [referID, setReferID] = useState('');
 
-    
 
+    const webcheck = ((window.location.pathname.indexOf('campaign/commodity-trading') > -1) || (window.location.pathname.indexOf('campaign/forex-trading') > -1))||(window.location.pathname.indexOf('campaign/trading-strategies') > -1)||(window.location.pathname.indexOf('campaign/hindi/trading-strategies') > -1)||(window.location.pathname.indexOf('technical-analysis') > -1)||(window.location.pathname.indexOf('futures-options-trading') > -1)? 'campaign' : " ";
 
     /** state to show thankyou popup (add-lead) */
     const [showlead, setShowLead] = useState({ showModal: false, isFailure: false, titleText: 'Success', msgText: '' });
 
     /** state to show thankyou popup default */
-    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '',isOnboarding:'',isNewLead:null });
+    const [showThanku, setShowThanku] = useState({ showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: null });
 
     const [ischeck, setIsCheck] = useState(false);
     // const [count, setCount] = useState(0);
@@ -70,7 +70,7 @@ function DematAccountForm(props) {
     const [showReferInput, setShowReferInput] = useState(() => false);
 
     const { executeRecaptcha } = useGoogleReCaptcha();
-    
+
 
     // useEffect(() => {
     //     console.log('PRR',props.language)
@@ -90,9 +90,9 @@ function DematAccountForm(props) {
 
     /**function executes to close the ad popup */
     function hideOpenAccountAdPopup(showAdValues) {
-        if(showAdValues.link){
+        if (showAdValues.link) {
             setShowThanku(prevState => {
-                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link,resText: showAdValues?.msg,isOnboarding: showAdValues?.info, closeMd: closeModal }
+                return { ...prevState, showModal: true, redirectionLink: showAdValues?.link, resText: showAdValues?.msg, isOnboarding: showAdValues?.info, closeMd: closeModal }
             });
         }
         setShowOpenAccountPopup(false);
@@ -113,7 +113,7 @@ function DematAccountForm(props) {
             }, 60000);
         }
     }, []);
-    
+
 
     function handleMobile(e) {
         let value = e.target.value.replace(/\D/g, "");
@@ -155,31 +155,31 @@ function DematAccountForm(props) {
         setShowOTP(true);
     }
 
-    function handleOTPClose(link,msg,info) {
+    function handleOTPClose(link, msg, info) {
         setShowOTP(false);
 
         if (link) {
 
             let result = link.match("respond-issue");
-            if (result&&result.length&&result[0] === 'respond-issue') {
+            if (result && result.length && result[0] === 'respond-issue') {
                 setIsIssue(() => link);
                 setShowThanku(prevState => {
-                    return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                    return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                 });
             } else {
                 if (link._reactName) {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: false, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                        return { ...prevState, showModal: false, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                     });
                 } else {
                     setShowThanku(prevState => {
-                        return { ...prevState, showModal: true, redirectionLink: link,resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                        return { ...prevState, showModal: true, redirectionLink: link, resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
                     });
                 }
             }
         } else {
             setShowThanku(prevState => {
-                return { ...prevState, showModal: false, redirectionLink: '',resText: msg? msg:'',isOnboarding:info? info:"", closeMd: closeModal }
+                return { ...prevState, showModal: false, redirectionLink: '', resText: msg ? msg : '', isOnboarding: info ? info : "", closeMd: closeModal }
             });
         }
 
@@ -246,10 +246,10 @@ function DematAccountForm(props) {
 
     function closeModal(link) {
         setShowLead(prevState => {
-            return { ...prevState, showModal: false}
+            return { ...prevState, showModal: false }
         });
 
-        if(link){
+        if (link) {
             window.location.href = link;
         }
     }
@@ -267,24 +267,24 @@ function DematAccountForm(props) {
             "utm_campaign": UTMCampaign.current || 'seo_demat_leads',
             "utm_medium": UTMMedium.current || 'sidebar_seo_leads',
             "utm_source": UTMSource.current || 'blog_leads',
-            "utm_term":UTMTerm.current || null,
+            "utm_term": UTMTerm.current || null,
             "utm_custom": UTMCustom.current || null,
             "utm_content": UTMContent.current || null
         };
 
-        
+
         // setTimeout(() => {
         //     hideLoader('sendOTPLoader');
         // }, 4000);
         openAccountService.addNewLead(request).then((res) => {
 
-            if(res && res.status === 200){
+            if (res && res.status === 200) {
                 setShowLead(prevState => {
-                    return {...prevState, showModal: true, isFailure: false, titleText: 'Success' ,msgText: res.data.Message, closeMd: closeModal}
+                    return { ...prevState, showModal: true, isFailure: false, titleText: 'Success', msgText: res.data.Message, closeMd: closeModal }
                 });
-            }else{
+            } else {
                 setShowLead(prevState => {
-                    return {...prevState, showModal: true, isFailure: true, titleText: 'Oops' ,msgText: res.data.Message, closeMd: closeModal}
+                    return { ...prevState, showModal: true, isFailure: true, titleText: 'Oops', msgText: res.data.Message, closeMd: closeModal }
                 });
             }
         })
@@ -299,43 +299,43 @@ function DematAccountForm(props) {
     function sendOTP() {
         showLoader('sendOTPLoader');
         let request = {
-            "whatsapp_consent":true,
-            "service_code":type1=='MF' ? "MF": "JF",
+            "whatsapp_consent": true,
+            "service_code": type1 == 'MF' ? "MF" : "JF",
             "mobile_number": mobileNumber,
-            "product": type1=='MF' ? "INVESTICA":"FINX",
+            "product": type1 == 'MF' ? "INVESTICA" : "FINX",
             "request_source": "CHOICEINDIA",
-            "source": source.current?source.current:"CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
-            "user_consent": type1=='MF' ?"true":"1",
+            "source": source.current ? source.current : "CHOICEINDIA",//type1=='MF' ?"CHOICEINDIA":"CHOICEINDIA",
+            "user_consent": type1 == 'MF' ? "true" : "1",
             "referred_id": refercode.current || referID || null,
             "sub_ref": subrefercode.current || null,
-           /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
+            /*  "lead_source":type1=='MF' ?"CHOICEINDIA":"", */
             // 'seo_demat_leads'
-            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current || null,
+            "utm_campaign": isBlog =="yes" ? UTMCampaign.current || 'choice_blog_leads' : UTMCampaign.current? UTMCampaign.current :  (window.location.pathname.indexOf("/minor-demat-account") > -1)? 'DL_Minor' : (window.location.pathname.indexOf("/nri-demat-account") > -1)? 'DL_NRI' : (window.location.pathname.indexOf("/corporate-demat-account") > -1) ? 'DL_Corporate' : null,
             "utm_content": UTMContent.current || null,
-            "utm_custom": UTMCustom.current || null,
+            "utm_custom": UTMCustom.current || window.location.pathname.toString().replace('/',''),
             // 'sidebar_seo_leads'
-            "utm_medium":isBlog =="yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
+            "utm_medium": isBlog == "yes" ? UTMMedium.current || 'choice_blog' : UTMMedium.current || null,
             // 'blog_leads'
-            "utm_source": isBlog =="yes" ?UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
+            "utm_source": isBlog == "yes" ? UTMSource.current || 'seo_demat_lead_generation' : UTMSource.current || null,
             "utm_term": UTMTerm.current || null,
             // "captcha":"f9A0RMq3vF7fPYkEiqZToKUKdneNzA2YWfMeKSHhkm",
             "captchaResp": captchaToken,
-            "account_type" :type1=='MF'?"":"all"
+            "account_type": type1 == 'MF' ? "" : "all"
             // "captcha": "1"
-            
+
         };
-        openAccountService.sendOTP(request,type1).then((res) => {
+        openAccountService.sendOTP(request, type1).then((res) => {
             hideLoader('sendOTPLoader');
             if (res && res.status === 200 && res.data && res.data.StatusCode === 200) {
-                otpSessionID.current =(type1=='MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
-                
+                otpSessionID.current = (type1 == 'MF') ? res.data.Body.session_id : res.data.Body.otp_session_id;
+
                 setShowThanku(prevState => {
-                    return { ...prevState,  showModal: false, page: 'no-addlead', resText: '',isOnboarding:'',isNewLead: res.data.Body.new_lead?  res.data.Body.new_lead : false}
+                    return { ...prevState, showModal: false, page: 'no-addlead', resText: '', isOnboarding: '', isNewLead: res.data.Body.new_lead ? res.data.Body.new_lead : false }
                 });
                 fetchQueryParams();
                 // resetOTPPopup();
                 handleOTPShow();
-                
+
             } else {
                 setAPIError("Something went wrong, please try again later!");
                 showAPIErrorToaster();
@@ -361,11 +361,11 @@ function DematAccountForm(props) {
         UTMTerm.current = searchParams.get('utm_term') || '';
 
         refercode.current = ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '';
-        refercode.current ? setReferID(refercode.current):"" 
-        refercodeInv.current=(searchParams.get('refercode')?(searchParams.get('refercode')):(searchParams.get('ref')||''))// 
+        refercode.current ? setReferID(refercode.current) : ""
+        refercodeInv.current = (searchParams.get('refercode') ? (searchParams.get('refercode')) : (searchParams.get('ref') || ''))// 
         subrefercode.current = (searchParams.get('subref') && window.atob(searchParams.get('subref'))) || '';
-        source.current = (searchParams.get('source'))?window.atob(searchParams.get('source')):'';
-        subrefercodeInv.current = (searchParams.get('subref'))||'';
+        source.current = (searchParams.get('source')) ? window.atob(searchParams.get('source')) : '';
+        subrefercodeInv.current = (searchParams.get('subref')) || '';
 
         // setReferID(() => ((searchParams.get('refercode') && window.atob(searchParams.get('refercode'))) || '') || ((searchParams.get('ref') && window.atob(searchParams.get('ref'))) || '') || '')
     }
@@ -558,7 +558,7 @@ function DematAccountForm(props) {
     }
 
     function hideOTPInfoPopup() {
-        if(IsIssue){
+        if (IsIssue) {
             window.location.href = IsIssue;
         }
         setOTPInfoPopup(false);
@@ -587,12 +587,12 @@ function DematAccountForm(props) {
     }, [captchaToken]);
 
     useEffect(() => {
-        if(isBlog){
+        if (isBlog) {
             setTimeout(() => {
                 showOpenAccountAdPopup()
             }, 15000);
         }
-        
+
     }, []);
     return (
         <>
@@ -622,20 +622,25 @@ function DematAccountForm(props) {
     refercode.current? '':
     <span className="referal-link" onClick={showReferBlock}>{OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referId')}</span>
 } */}
-                        
+
 
                         {/* { */}
-                            {/* (showReferInput)? */}
-                            <div className="sub-formgrp">
-                            <Form.Control pattern="[a-zA-Z0-9]*"  name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
-                            {/* {
-                                refercode.current? '': 
-                                <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
-                            } */}
-                            
+                        {/* (showReferInput)? */}
+                        {
+                            webcheck == "campaign" ?
+                                ""
+                                :
+                                <div className="sub-formgrp">
+                                <Form.Control pattern="[a-zA-Z0-9]*" name="refer_id" id="refer_id" placeholder={OpenAccountLanguageContent.getContent(props.language ? props.language : 'en', 'referPlaceholder')} className="formcontrol digit-otp" autoComplete="off" value={referID} readOnly={refercode.current} onChange={handleReferID} />
+                                {/* {
+                            refercode.current? '': 
+                            <span className="cross-refer-img" onClick={showReferBlock2}><img src={backIcon}/></span>
+                        } */}
+
                             </div>
-                             {/* : '' */}
-                         {/* } */}
+                               }
+                        {/* : '' */}
+                        {/* } */}
 
 
                         <div key="inline-checkbox" className="sub-formgrp cust-checkbox">
@@ -647,7 +652,7 @@ function DematAccountForm(props) {
                             >
                                 <Form.Check.Input type="checkbox" checked readOnly />
                                 {
-                                    props.language === 'hindi' || props.language === 'hindimutualfund' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम और शर्तों</span></a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a  onClick={handleTermsConditionShow}><span className="link-tc">नियम आणि अटी </span></a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree &amp; accept <a  onClick={handleTermsConditionShow}><span className="link-tc">T&C</span></a></Form.Check.Label>
+                                    props.language === 'hindi' || props.language === 'hindimutualfund' ? <Form.Check.Label>मैं सहमत हूं कि मैंने <a onClick={handleTermsConditionShow}><span className="link-tc">नियम और शर्तों</span></a> को पढ़ और स्वीकार कर लिया है</Form.Check.Label> : props.language === 'marathi' ? <Form.Check.Label>आपल्या <a onClick={handleTermsConditionShow}><span className="link-tc">नियम आणि अटी </span></a>मी काळजीपूर्वक वाचल्या असून, त्या मला मान्य आहेत.</Form.Check.Label> : <Form.Check.Label>I agree &amp; accept <a onClick={handleTermsConditionShow}><span className="link-tc">T&C</span></a></Form.Check.Label>
                                 }
 
                             </Form.Check>
@@ -740,38 +745,38 @@ function DematAccountForm(props) {
                     </Button>
                 </Modal.Footer>
             </Modal> */}
-            
-            <Modal className='common-modal-css common-modal-thankyou'
-              show={showErrorToaster}
-              size="md"
-              aria-labelledby="contained-modal-title-vcenter"
-              backdrop='static'
-              keyboard={false}
-              centered
-              onHide={hideAPIErrorToaster}
-            >
-              <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
 
-                </Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                {
-                  <img src={failureimg} height="80" width="80" alt='Failure' />
-                }
-                <h4>Oops</h4>
-                <h3>
-                  {APIError}
-                </h3>
-              </Modal.Body>
-              <Modal.Footer>
-                <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
-              </Modal.Footer>
+            <Modal className='common-modal-css common-modal-thankyou'
+                show={showErrorToaster}
+                size="md"
+                aria-labelledby="contained-modal-title-vcenter"
+                backdrop='static'
+                keyboard={false}
+                centered
+                onHide={hideAPIErrorToaster}
+            >
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    {
+                        <img src={failureimg} height="80" width="80" alt='Failure' />
+                    }
+                    <h4>Oops</h4>
+                    <h3>
+                        {APIError}
+                    </h3>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="warning" className='btn-yellow' onClick={hideAPIErrorToaster}>Ok</Button>
+                </Modal.Footer>
             </Modal>
 
             <Modal show={OTPInfoPopup} onHide={hideOTPInfoPopup} backdrop="static"
                 keyboard={false} centered>
-                <Modal.Body className="info-mdl-pup"><img src={infoimg} width='52' height='52' alt="Info"/></Modal.Body>
+                <Modal.Body className="info-mdl-pup"><img src={infoimg} width='52' height='52' alt="Info" /></Modal.Body>
                 <Modal.Body>{OTPInfoPopupMsg}</Modal.Body>
                 <Modal.Footer>
                     <Button variant="warning" onClick={hideOTPInfoPopup}>Okay</Button>
@@ -796,8 +801,8 @@ function DematAccountForm(props) {
             </Modal> */}
 
             {
-                showlead.showModal ? <Thankyoupopup isShow={showlead}/>: '' 
-            }   
+                showlead.showModal ? <Thankyoupopup isShow={showlead} /> : ''
+            }
             {/* <Thankyoupopup isShow={showlead} /> */}
 
             {

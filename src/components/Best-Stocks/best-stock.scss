@@ -130,7 +130,11 @@
         margin-left: 1%;
         padding: 1.923rem;
         margin-bottom: 2.462rem;
-
+        box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+        @media (max-width: $sm) {
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+            // width: 98%;
+        }
         .top-section {
             display: flex;
             padding-bottom: 0.313rem;
@@ -160,7 +164,7 @@
                     margin: 0;
                     color: $whiteColor;
                     background: $bgcolor-blue;
-                    height: 2.938rem;
+                    // height: 2.938rem;
                     line-height: 1.615rem;
                     text-align: center;
                     font-size: 1.231rem;
@@ -266,7 +270,7 @@
                 .bottom_small_text {
                     font-size: 1.077rem;
                     color: $secondary;
-                    line-height: 1.769rem;
+                    line-height: 1.5;
                     font-family: $font-family-poppins-regular;
                 }
 
