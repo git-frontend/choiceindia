@@ -47,7 +47,7 @@ function BannerCareer() {
                                     <h4>Currencies</h4>
                                 </div>
                                 <div>
-                                    <h4>IPO investment</h4>
+                                    <h4>IPO</h4>
                                 </div>
                                 <div>
                                     <h4>ETF</h4>
@@ -73,9 +73,9 @@ function BannerCareer() {
                 </div>
                 <div className="col-md-5 d-none d-sm-block">
                     <div className="sec1-right">
-                        <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Loading"} width={"334"} height={"661"}/>
-                        <LazyLoader src={AppImage2} className={"img-fluid mn-img1"} alt={"Loading"} width={"260"} height={"197"}/>
-                        <LazyLoader src={AppImage3} className={"img-fluid mn-img2"} alt={"Loading"} width={"260"} height={"87"}/>
+                        <LazyLoader src={AppImage1} className={"img-fluid mn-img"} alt={"Trading App"} width={"334"} height={"661"}/>
+                        <LazyLoader src={AppImage2} className={"img-fluid mn-img1"} alt={"Trading App"} width={"260"} height={"197"}/>
+                        <LazyLoader src={AppImage3} className={"img-fluid mn-img2"} alt={"Trading App"} width={"260"} height={"87"}/>
                     </div>
                 </div>
             </div>

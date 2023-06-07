@@ -429,7 +429,7 @@ const meta_tags = {
 
     // "contact": { 'title': "Choice - Stock Broker & Full Service Stock Brokerage Firm in India", "content": "Choice (formerly Choice Broking) is one of the best stock brokers in India. Start online trading in stocks, commodities, currencies, derivatives with India's leading full-service brokerage firm.", "faqscript": `` },
 
-    "partner": { 'title': "Become a Stock Market Agent with Choice",'lang':"en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://dev.choiceindia.com/partner", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "partner": { 'title': "Become a Stock Market Agent with Choice",'lang':"en", "content": "Become a stock market agent with India’s leading full service broker. Get the highest revenue share, local branch support, and training to start your entrepreneurship journey.","link":"https://choiceindia.com/partner", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "investors": { 'title': "Choice International Limted's Quarterly Results, Corporate Annoucement",'lang':"en", "content": "Stay tuned with us to know more about Choice International Limited's most recent happenings, including its quarterly earnings, corporate announcements, shareholding patterns, and AGM.","link":"https://choiceindia.com/investors", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
@@ -1457,7 +1457,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     
     `},
 
-    "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice",'lang':"en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
@@ -2024,12 +2024,12 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
 
   "partner-assets/emitra": { 'title': "Basket Investing - चॉइस पार्टनर ई-मित्र की प्रचार सामग्री",'lang':"en", "content": "","link":'https://choiceindia.com/partner-assests/emitra/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
   "mutual-fund-distributor": { 'title': "Become a Mutual Fund Distributor with Choice", 'lang':"en",
-  "content": " Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
-  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
+  "content": "Become a Mutual Fund Distributor with Choice to have the chance to leverage your distribution business by selling mutual funds together with stock market investing, loans, and insurance.",
+  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":"" },
 
   "hindi/mutual-fund-distributor": { 'title': "चॉइस म्यूचुअल फंड वितरक/ डिस्ट्रीब्यूटर बनें", 
   "content": "चॉइस म्यूचुअल फंड वितरक बनें और आय का एक आजीवन स्रोत बनाएं। म्यूचुअल फंड डिस्ट्रीब्यूटर बनने के साथ अपने ग्राहकों को कई वित्तीय प्रोडक्ट्स की पेशकश भी करें।",
-  "link":' https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+  "link":'https://choiceindia.com/mutual-fund-distributor',"faqscript": `` ,'lang':"hi",'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
   "gujarati/sub-broker-franchise": { 'title': "ડિપોઝિટ વિના સબ બ્રોકર ફ્રેન્ચાઇઝ - ચોઇસ સબ બ્રોકર બનો", 
   "content": "ચોઇસ સાથે સબ બ્રોકર બનો. ડિપોઝિટ વિના સબ બ્રોકરશિપ બિઝનેસ અથવા ફ્રેન્ચાઇઝ ખોલો* અને ક્લાયન્ટના સમગ્ર ટ્રેડિંગ આયુષ્ય માટે સર્વોચ્ચ બ્રોકરેજ શેરિંગ મેળવો.",

@@ -40,16 +40,32 @@ const CommodityBanner = () => {
       useEffect(() => {
         window.addEventListener('scroll', getPosition);
     }, []);
+
+    const [view,setView]=useState({
+		matches: window.innerWidth < 768 ? false : true ,
+	  });
+
     return (
         <div>
              <section className="banner-sect" >
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
-                        <span className="banner-title2">All in 1 Account</span>
+                        {
+                                view && !view.matches ?
+                                <div>
+                           
+                            </div>
+                            :
+                            <div>
+                                <span className="banner-title2">All in 1 Account</span>
                             <h1 className="banner-title" >
                             <div className="desktop">Open a Commodity Trading <br /> Account <span className="yellow">Online For Free</span></div>
                             </h1>
+                            </div>
+
+                        }
+                      
                             {/* <LazyLoader src={Image1} className={'img-fluid zigzagline'} alt="zigzagline" /> */}
                             {/* <img src={Image1} alt="zigzagline" className="img-fluid zigzagline" /> */}
                             <div className="banner-txt">
@@ -113,14 +129,24 @@ const CommodityBanner = () => {
                         </div>
 
                         <div className="col-md-5 col-sm-6" id="open-account-wrap">
-                        <span className="banner-title2 mobile">All in 1 Account</span>
+                        {
+                                view && !view.matches ?
+                                <div>
+                            <span className="banner-title2 mobile">All in 1 Account</span>
                             <h1 className="banner-title mbtitle" >
                                 <div className="mobile">Open a Commodity Trading  Account <span className="yellow">Online For Free</span></div>
                             </h1>
+                            </div>
+                            :
+                            <div>
+                            </div>
+
+                        }
+                       
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <LazyLoader src={Image2} className={'img-fluid'} width={"30"} height={"30"} alt="Background Image" /> */}
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
-                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                {/* <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} /> */}
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>

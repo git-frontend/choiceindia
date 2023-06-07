@@ -449,7 +449,7 @@ function Opendemat(){
                         <h3 className="subhead">What is a Demat Account?</h3>
                         <p className='subheadtxt'>Let's start with the Demat account in full form; Dematerialised Account, yes!
                           That's the <a href='https://choiceindia.com/blog/demat-account-full-form/' className='linking'> full form
-                            of Demat account.</a></p>
+                            of Demat account</a></p>
                         <p className='subheadtxt'>If you are looking to open a Demat account, you first need to understand what a
                           Demat account is? A Demat account allows holding shares and securities in electronic form. </p>
                         <p className='subheadtxt'>A Demat account allows the investors to buy and hold shares in it; not only this,
@@ -668,7 +668,7 @@ function Opendemat(){
 
                           </li>
                           <li>
-                            <p className='listhead'>One storage for all assets</p>
+                            <h4 className='listhead'>One storage for all assets</h4>
                             <p className='subheadtxt'>A Demat account stores all your financial assets, including bonds, debentures,
                               ETFs, unit-linked insurance policies etc. Therefore, the Demat account holds assets under one roof
                               making maintenance and tracking easy.</p>
