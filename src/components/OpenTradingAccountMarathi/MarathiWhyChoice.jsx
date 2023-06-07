@@ -32,7 +32,7 @@ const WhyChoice = () => {
                                     <hr></hr>
                                     <div className="rightsect-sub">
                                         <p className="headtxt">स्थानिक कार्यालय</p>
-                                        <p className="subtxt">तुमच्या सेवेसाठी आमचे देशभरात एकूण ४८ कार्यालये कार्यरत आहेत.</p>
+                                        <p className="subtxt">तुमच्या सेवेसाठी आमचे देशभरात एकूण ९५+ कार्यालये कार्यरत आहेत.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">

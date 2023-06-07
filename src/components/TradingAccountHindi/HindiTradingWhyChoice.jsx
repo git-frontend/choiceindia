@@ -32,7 +32,7 @@ const HindiTradingWhyChoice = () => {
                                     <hr></hr>
                                     <div className="rightsect-sub">
                                         <p className="headtxt">स्थानीय <br />कार्यालय</p>
-                                        <p className="subtxt">आपकी सेवा के लिए देश भर में हमारे पास 48 स्थानीय कार्यालय उपलब्ध हैं।</p>
+                                        <p className="subtxt">आपकी सेवा के लिए देश भर में हमारे पास 95+ स्थानीय कार्यालय उपलब्ध हैं।</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">

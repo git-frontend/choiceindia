@@ -34,7 +34,7 @@ const WhyChoiceCommodity = () => {
                                     <hr></hr>
                                     <div className="rightsect-sub">
                                         <p className="headtxt">LOCAL <br />OFFICES</p>
-                                        <p className="subtxt">We have 54 local offices available across the country at your service.</p>
+                                        <p className="subtxt">We have 95+ local offices available across the country at your service.</p>
                                     </div>
                                     <hr></hr>
                                     <div className="rightsect-sub">
