@@ -17,7 +17,7 @@ function Banner() {
   const [apiData, setApiData] = useState();
   const [show, setshow] = useState(false);
   const [rendercount, setRenderCount] = useState(false);
-
+ const AllFilesValue={}
 /**mobile view */
   const [view, setView] = useState({
     matches: window.innerWidth < 767 ? false : true,
@@ -65,12 +65,26 @@ function Banner() {
 
   /** company ipo detail */
   function loadCompanyIpo() {
+    let urlIdentity=window.location.pathname.split('/')[1]
+    let values ={}
     cmsService.companyIpoService().then(
       res => {
         if (res) {
 
-          setApiData(res.data.data);
+          // setApiData(res.data.data);
 
+          values = res.data.data;
+          values.forEach(ele => {
+            if (!AllFilesValue[ele.slug_url]) {
+              if ((urlIdentity == ele.slug_url)) {
+                
+                AllFilesValue['Body'] = [];
+                AllFilesValue['Body'].push(ele)
+              }
+            }
+           
+          })
+          setApiData(AllFilesValue.Body);
         } else {
           setApiData([]);
         }
