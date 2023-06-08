@@ -14,6 +14,7 @@
 
     .list_group1 {
         overflow: auto;
+
         .list {
             @media (min-width: $sm-x) and (max-width: $md) {
                 font-size: 1.14rem;
@@ -39,6 +40,21 @@
 
     .holiday-content {
         .holidays-table {
+            .event-table {
+                height: 100%;
+                max-height: 536px;
+                overflow: auto;
+
+                .event-table-strip {
+                    position: relative;
+
+                    .event-sticky {
+                        position: sticky;
+                        top: 0;
+                        background: #fff;
+                    }
+                }
+            }
 
             border: 1px solid $lightgray;
             border-radius: 8px;
@@ -275,6 +291,7 @@
                     }
                 }
             }
+
         }
 
         .holiday-list {
@@ -374,3 +391,10 @@
     }
 
 }
+
+// //for event calendar
+// .event-table {
+//     height: 100%;
+//     max-height: 500px;
+//     overflow: auto;
+// }

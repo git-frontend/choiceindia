@@ -82,7 +82,17 @@ multipleTokensURLData: function (postdata) {
 
       }
     });
-}
+},
+EventDetails: function (postdata) {
+
+  let api = new API_URLS()
+  let url = api.getEventDetails()
+ // console.log("url",url)
+  return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
+     console.log("event details",data)
+      return data
+  })
+},
 
 }
 export default rest;
