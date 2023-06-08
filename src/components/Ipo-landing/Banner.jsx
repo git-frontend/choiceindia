@@ -457,7 +457,7 @@ function Banner() {
 
                         <Slider {...settings} className='all-features-list'>
                           <div className="feature-item">
-                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${investment_image_1}`} alt={res.investment_image_1_alt} className={"img-fluid svg-w"} width={"84"} height={"76"} />
+                            <LazyLoader src={`https://cmsapi.choiceindia.com/assets/${res.investment_image_1}`} alt={res.investment_image_1_alt} className={"img-fluid svg-w"} width={"84"} height={"76"} />
                             <h5 className="feature-ttl"><div dangerouslySetInnerHTML={{ __html: res.investment_name_1 }}></div></h5>
                           </div>
                           <div className="feature-item">
