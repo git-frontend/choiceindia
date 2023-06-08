@@ -157,7 +157,7 @@ useEffect(() => {
                     </li>
                   </ul>
                   <div className="btn-open">
-                    <a href="https://choiceindia.com/open-free-demat-account?utm_source=seo_demat_lead_generation[…]utm_campaign=choice_blog_leads&utm_content=desktop_sticky_cta" className="btn-bg btn-bg-dark">Open Now</a>
+                    <a href="https://choiceindia.com/open-free-demat-account?utm_source=seo_demat_lead_generation&utm_medium=choice_blog&utm_campaign=choice_blog_leads&utm_content=desktop_sticky_cta" className="btn-bg btn-bg-dark">Open Now</a>
                   </div>
                 </div>
               
