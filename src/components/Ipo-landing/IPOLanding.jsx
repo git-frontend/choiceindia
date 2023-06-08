@@ -43,12 +43,12 @@ function IPOLanding() {
   return (
     <div>
       <Banner/>
-      <IpoDetails/>
+      {/* <IpoDetails/>
       <Revenue/>
       <InvesmentOpportunity/>
       <IpoSubscriptionBreakup/>
       <HowtoApplySteps/>
-      <IpoFaq/>
+      <IpoFaq/> */}
     </div>
   );
 }

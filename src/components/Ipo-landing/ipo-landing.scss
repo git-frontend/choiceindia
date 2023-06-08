@@ -147,7 +147,7 @@
             border-radius: 14px;
             .title-secnd{
                 color: $whiteColor;
-                padding-bottom: 1rem;
+                padding-bottom: 3rem;
             }
            ul{
                 list-style: none;
@@ -248,15 +248,15 @@
                 a{
                     text-decoration: none;
                 }
-                .btn-read{
-                    font-style: normal;
-                    font-family: $font-family-poppins-semibold;
-                    color: $bgcolor-blue;
-                    cursor: pointer;
-                }
                 &.pd-1{
                     padding-top: 2rem;
                 }
+            }
+            .btn-read{
+                font-style: normal;
+                font-family: $font-family-poppins-semibold;
+                color: $bgcolor-blue;
+                cursor: pointer;
             }
         }
     }
@@ -715,19 +715,18 @@
     .steps-sec{
         padding: 2rem 0;
         position: relative;
-        .steps-item{
-            padding-bottom: 2rem;
-            h5{
-                font-size: 1.8rem;
-                font-family: $font-family-poppins-bold;
-                line-height: 1.5;
-            }
-            p{
-                font-size: 1.538rem;
-                line-height: 1.5;
-                font-family: $font-family-poppins-regular;
-            }
+        h5{
+            font-size: 1.8rem;
+            font-family: $font-family-poppins-bold;
+            line-height: 1.5;
         }
+        p{
+            font-size: 1.538rem;
+            line-height: 1.5;
+            font-family: $font-family-poppins-regular;
+            padding-bottom: 2rem;
+        }
+        
     }
     .btn-open{
         position: relative;

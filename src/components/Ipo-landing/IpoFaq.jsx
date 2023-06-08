@@ -3,8 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
 
 function IpoFaq() {
-    const [view, setview] = useState(false);
-    const [show, setshow] = useState(false);
   return (
     <>
         <section className='ipo-faq'>
