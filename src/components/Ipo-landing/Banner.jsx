@@ -151,7 +151,7 @@ function Banner() {
                       </li>
                     </ul>
                     <div className="btn-open">
-                      <button className="btn-bg btn-bg-dark">Open Now</button>
+                      <button className="btn-bg btn-bg-dark" onClick={() => window.open(res.form_submit_desktop_link || '')}>Open Now</button>
                     </div>
                   </div>
 
