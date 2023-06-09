@@ -49,6 +49,7 @@
             }
             .event-table {
                 height: 100%;
+                min-height: 200px;
                 @media (max-width: $sm) {
                     overflow-x: initial;
                 }

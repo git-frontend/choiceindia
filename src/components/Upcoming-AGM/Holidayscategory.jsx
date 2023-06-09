@@ -13,6 +13,8 @@ import {
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import Dropdown from 'react-bootstrap/Dropdown';
 import { useEffect } from "react";
+import meta_tags from "../../Data/MetaTags";
+import Sharemarketholidays from "./UpcomingAGM";
 
 
 function Holidayscategory() {
@@ -24,6 +26,8 @@ function Holidayscategory() {
   const [skeleton, setSkeleton] = useState(() => true);
   /**Show loader */
   const [showLoader, setShowLoader] = useState(false)
+  const [ndata, setNdata] = useState()
+
   const { segment } = useParams();
   const location = useLocation();
   const [events, setEvents] = useState({
@@ -71,8 +75,7 @@ function Holidayscategory() {
     ],
 
     activeTab: [
-      { key: 'lBoardMeetings' },
-
+      { key: 'lBoardMeetings' }
     ]
   })
   useEffect(() => {
@@ -147,9 +150,13 @@ function Holidayscategory() {
       setConfig({ ...config, activeTab: item })
       filterCalendar(config.activeFilter.name, isForce);
       window.history.replaceState(null, '', `${item.slug}`);
-      // seo.setMeta(item.slug);
+ 
+        setNdata(meta_tags[config.eventCategories.slug])
+       
     }
   };
+   
+     
 
   const filterCalendar = (key, isForce) => {
     let temp1 = config.activeFilter.dates[0];
@@ -204,6 +211,13 @@ function Holidayscategory() {
 
   return (
     <div>
+       {
+       ndata ?  
+      <Sharemarketholidays
+        holiday={ndata}
+      />:""
+       }
+  
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
@@ -261,7 +275,7 @@ function Holidayscategory() {
                           onClick={() => activateSegment(item)}
                           key={item.key}
                         >
-                          <a>{item.value}</a>
+                           <a>{item.value}</a>
                         </li>
                       )
 
@@ -311,7 +325,7 @@ function Holidayscategory() {
                                                           </Dropdown.Toggle>
                                                           <Dropdown.Menu>
                                                             <div className="months-custom">
-                                                              <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                              <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                               <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                               <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                               <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
@@ -367,7 +381,7 @@ function Holidayscategory() {
                                                             </Dropdown.Toggle>
                                                             <Dropdown.Menu>
                                                               <div className="months-custom">
-                                                                <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                                <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                                 <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                                 <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                                 <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
@@ -427,7 +441,7 @@ function Holidayscategory() {
                                                               </Dropdown.Toggle>
                                                               <Dropdown.Menu>
                                                                 <div className="months-custom">
-                                                                  <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                                  <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                                   <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                                   <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                                   <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
@@ -484,7 +498,7 @@ function Holidayscategory() {
                                                                 </Dropdown.Toggle>
                                                                 <Dropdown.Menu>
                                                                   <div className="months-custom">
-                                                                    <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                                    <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                                     <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                                     <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                                     <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
@@ -543,7 +557,7 @@ function Holidayscategory() {
                                                                   </Dropdown.Toggle>
                                                                   <Dropdown.Menu>
                                                                     <div className="months-custom">
-                                                                      <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                                      <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                                       <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                                       <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                                       <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
@@ -600,7 +614,7 @@ function Holidayscategory() {
                                                                     </Dropdown.Toggle>
                                                                     <Dropdown.Menu>
                                                                       <div className="months-custom">
-                                                                        <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>all</Dropdown.Item>
+                                                                        <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
                                                                         <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
                                                                         <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
                                                                         <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>

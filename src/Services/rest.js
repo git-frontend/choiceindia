@@ -89,7 +89,7 @@ EventDetails: function (postdata) {
   let url = api.getEventDetails()
  // console.log("url",url)
   return axios.post(url, postdata, this.headerConfig).then(({ data }) => {
-     console.log("event details",data)
+    //  console.log("event details",data)
       return data
   })
 },
