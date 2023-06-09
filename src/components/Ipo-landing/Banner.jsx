@@ -309,23 +309,32 @@ function Banner() {
                       <div className='chart-custom'>
                         <table className='q-graph'>
                           <tbody>
-                            <tr className='qtr'>
+                            {(res?.revenue_first && res ?.profit_loss_1) ? 
+                              <tr className='qtr'>
                               <td className='sent bar' style={{ height: `${res.revenue_first.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_first.split(' ')[0]}</p></td>
                               <td className={res.profit_loss_1 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_1.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_1}</p></td>
-                            </tr>
+                            </tr>:''
+                            }
+                          {(res?.revenue_second && res ?.profit_loss_2) ? 
+                          <tr className='qtr'>
+                          <td className='sent bar' style={{ height: `${res.revenue_second.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_second.split(' ')[0]}</p></td>
+                          <td className={res.profit_loss_2 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_2.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_2}</p></td>
+                        </tr>:''
+                          }
+                            {(res?.revenue_third && res ?.profit_loss_3) ? 
                             <tr className='qtr'>
-                              <td className='sent bar' style={{ height: `${res.revenue_second.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_second.split(' ')[0]}</p></td>
-                              <td className={res.profit_loss_2 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_2.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_2}</p></td>
-                            </tr>
-                            <tr className='qtr'>
-                              <td className='sent bar' style={{ height: `${res.revenue_third.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_third.split(' ')[0]}</p></td>
-                              <td className={res.profit_loss_3 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_3.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_3}</p></td>
-                            </tr>
-                            <tr className='qtr'>
-                              <td className='sent bar' style={{ height: `${res.revenue_fourth.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_fourth.split(' ')[0]}</p></td>
-                              <td className={res.profit_loss_4 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_4.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_4}</p></td>
+                            <td className='sent bar' style={{ height: `${res.revenue_third.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_third.split(' ')[0]}</p></td>
+                            <td className={res.profit_loss_3 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_3.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_3}</p></td>
+                          </tr>:''}
 
-                            </tr>
+                            {(res?.revenue_fourth && res ?.profit_loss_4) ? 
+                            <tr className='qtr'>
+                            <td className='sent bar' style={{ height: `${res.revenue_fourth.split(' ')[0]}` * 10 + '%' }}><p>{res.revenue_fourth.split(' ')[0]}</p></td>
+                            <td className={res.profit_loss_4 < 0 ? 'paid bar loss' : 'paid bar profit'} style={{ height: `${res.profit_loss_4.replace('-', '+')}` * 10 + '%' }}><p>{res.profit_loss_4}</p></td>
+
+                          </tr>:''}
+
+                            
                           </tbody>
                         </table>
 
@@ -338,18 +347,32 @@ function Banner() {
                           <div className='tick' ><p>0</p></div>
                         </div>
                         <div className='for-date'>
+                        {
+                          res?.revenue_first ?
                           <div className='sub-l1'>
-                            {res.revenue_first.split(' ')[1]}
-                          </div>
+                            {res?.revenue_first.split(' ')[1]}
+                          </div>:''
+                        }
+                        {
+                          res?.revenue_second ?
                           <div className='sub-l1'>
-                            {res.revenue_second.split(' ')[1]}
-                          </div>
+                          {res?.revenue_second.split(' ')[1]}
+                        </div>:''
+                        }
+                        {
+                          res?.revenue_third ?
                           <div className='sub-l1'>
-                            {res.revenue_third.split(' ')[1]}
-                          </div>
+                            {res?.revenue_third.split(' ')[1]}
+                          </div>:''
+                        }
+                        {
+                          res?.revenue_fourth ?
                           <div className='sub-l1'>
-                            {res.revenue_fourth.split(' ')[1]}
-                          </div>
+                            {res?.revenue_fourth.split(' ')[1]}
+                          </div>:''
+                        }
+                          
+                          
                         </div>
 
                       </div>
