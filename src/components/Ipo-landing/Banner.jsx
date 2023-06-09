@@ -65,7 +65,7 @@ function Banner() {
 
   /** company ipo detail */
   function loadCompanyIpo() {
-    let urlIdentity=window.location.pathname.split('/')[1]
+    let urlIdentity=window.location.pathname.split('/ipo/')[1]
     let values ={}
     cmsService.companyIpoService().then(
       res => {
