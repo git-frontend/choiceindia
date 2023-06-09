@@ -49,7 +49,9 @@
             }
             .event-table {
                 height: 100%;
-              
+                @media (max-width: $sm) {
+                    overflow-x: initial;
+                }
 
                 .event-table-strip {
                     position: relative;
