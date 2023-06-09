@@ -81,7 +81,7 @@ function Holidayscategory() {
     activateSegment(eventObject, true);
   }, [segment]);
 
-  let checkurl = (window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? "board-meetings" : (window.location.pathname.indexOf('upcoming-agm') > -1) ? "agm-egm":(window.location.pathname.indexOf('upcoming-bonus-shares') > -1) ? "upcoming-bonus-shares":(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) ? "highest-dividend-paying-stocks":(window.location.pathname.indexOf('upcoming-rights-issue') > -1) ? "rights-issue-shares":(window.location.pathname.indexOf('upcoming-stock-splits') > -1) ? "upcoming-stock-splits":"";
+  let checkurl = (window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? "board-meetings" : (window.location.pathname.indexOf('upcoming-agm') > -1) ? "agm-egm" : (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) ? "upcoming-bonus-shares" : (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) ? "highest-dividend-paying-stocks" : (window.location.pathname.indexOf('upcoming-rights-issue') > -1) ? "rights-issue-shares" : (window.location.pathname.indexOf('upcoming-stock-splits') > -1) ? "upcoming-stock-splits" : "";
   useEffect(() => {
     checkurl == "board-meetings" ?
       activateSegment(config.eventCategories[0]) : checkurl == "agm-egm" ?
@@ -89,8 +89,8 @@ function Holidayscategory() {
           activateSegment(config.eventCategories[2]) : checkurl == "highest-dividend-paying-stocks" ?
             activateSegment(config.eventCategories[3]) : checkurl == "rights-issue-shares" ?
               activateSegment(config.eventCategories[4]) : checkurl == "upcoming-stock-splits" ?
-                activateSegment(config.eventCategories[5]):""
-  
+                activateSegment(config.eventCategories[5]) : ""
+
   }, []);
   // console.log("config?.activeTab?.key", config?.activeTab?.key)
   const fetchEvents = (request) => {
@@ -252,12 +252,7 @@ function Holidayscategory() {
                   </div>
                   <div className="col-xl-10 col-md-12" id="best-stock">
                     <ul className="list-group list_group1  holiday-list">
-                      {/* <li className={toggleState === 0 ? "list-group-item list listsec " : "list-group-item list"} > <Link className="urllinks1" to="/upcoming-dividend-paying-stocks" onClick={() => { setToggleState(0), monthFliter(month, 0) }} >Dividend </Link></li>
-                      <li className={toggleState === 1 ? "list-group-item list listsec " : "list-group-item list"} ><Link className="urllinks1" to="/upcoming-bonus-shares" onClick={() => { setToggleState(1), monthFliter(month, 1) }} >Bonus Shares</Link></li>
-                      <li className={toggleState === 2 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/upcoming-stock-splits" onClick={() => { setToggleState(2), monthFliter(month, 2) }} >Splits</Link></li>
-                      <li className={toggleState === 3 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/upcoming-agm" onClick={() => { setToggleState(3), monthFliter(month, 3) }}>AGM</Link></li>
-                      <li className={toggleState === 4 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/upcoming-board-meeting" onClick={() => { setToggleState(4), monthFliter(month, 4) }}>Board Meetings</Link></li>
-                      <li className={toggleState === 5 ? "list-group-item list listsec " : "list-group-item list"}><Link className="urllinks1" to="/upcoming-rights-issue" onClick={() => { setToggleState(5), monthFliter(month, 5) }}>Rights</Link></li> */}
+                     
                       {config.eventCategories.map((item) =>
 
                       (
@@ -274,16 +269,7 @@ function Holidayscategory() {
                     </ul>
 
                   </div>
-                  {/* <div>
-                    {
-                      showdata ?
-                        <p className="title_para title_para-second">Trading Holidays in 2023</p> :
-                        <p className="title_para title_para-second">Stock Market Holidays in {month} 2023</p>
-                    }
-
-
-
-                  </div> */}
+                 
                 </div>
               </div>
             </section>
@@ -311,14 +297,14 @@ function Holidayscategory() {
                                     config?.activeTab?.key === 'lBoardMeetings' ?
                                       <div className="row">
                                         <div className="col-md-12">
-                                          <div className="holidays-table">
+                                          <div className="holidays-table event-table-prnt">
                                             <div className="table-responsive wow fadeInUp table-desk event-table">
                                               {config.isServiceHit && (
                                                 <table className="table table-hover table-striped event-table-strip">
                                                   <thead className="event-sticky">
-                                                    <tr >
+                                                    <tr className="event-tr-fix">
                                                       <th width="35%">Company Name</th>
-                                                      <th className="holidaydropdown">
+                                                      <th width="25%" className="holidaydropdown">
                                                         <Dropdown className="drop_list">
                                                           <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
                                                             Meeting Date
@@ -337,19 +323,26 @@ function Holidayscategory() {
                                                       <th>Agenda</th>
                                                     </tr>
                                                   </thead>
-                                                  <tbody>
-                                                    {events.lBoardMeetings.data.map((row, index) => {
-                                                      // console.log("rr", row);
-                                                      return (
-                                                        <tr key={index}>
-                                                          {/* <td className="charges-heads">{index + 1}</td> */}
-                                                          <td><a >{row.SecName || row.SecDesc}</a></td>
-                                                          <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
-                                                          <td>{row.Agenda}</td>
-                                                        </tr>
-                                                      );
-                                                    })}
-                                                  </tbody>
+                                                  {
+                                                    events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
+                                                      <tbody>
+                                                        {events.lBoardMeetings.data.map((row, index) => {
+                                                          // console.log("rr", row);
+                                                          return (
+                                                            <tr key={index}>
+                                                              {/* <td className="charges-heads">{index + 1}</td> */}
+                                                              <td><a >{row.SecName || row.SecDesc}</a></td>
+                                                              <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
+                                                              <td>{row.Agenda}</td>
+                                                            </tr>
+                                                          );
+                                                        })}
+                                                      </tbody>
+                                                      :
+                                                      <div className="mt- mb-2 empty-row">
+                                                        <div className="pl-4">No data to display</div>
+                                                      </div>
+                                                  }
                                                 </table>
                                               )}
                                             </div>
@@ -360,7 +353,7 @@ function Holidayscategory() {
                                       config?.activeTab?.key == 'lAGMEGM' ?
                                         <div className="row">
                                           <div className="col-md-12">
-                                            <div className="holidays-table">
+                                            <div className="holidays-table event-table-prnt">
                                               <div className="table-responsive wow fadeInUp table-desk event-table">
                                                 {config.isServiceHit && (
                                                   <table className="table table-hover table-striped event-table-strip">
@@ -386,21 +379,28 @@ function Holidayscategory() {
                                                         <th>Agenda</th>
                                                       </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    {
+                                                      events.lAGMEGM.data && (events.lAGMEGM.data).length ?
+                                                        <tbody>
 
-                                                      {events.lAGMEGM.data.map((row, index) => {
-                                                        // console.log("lAGMEGM",events.lAGMEGM.data)
-                                                        return (
-                                                          <tr key={index}>
-                                                            {/* <td className="charges-heads">{i + 1}</td> */}
-                                                            <td>{row.SecName || row.SecDesc}</td>
-                                                            <td>{utils.formatDate(new Date(row.Date), 'dd-MMM-yyyy')}</td>
-                                                            <td>{row.Agenda + '(' + row.Purpose + ')'}</td>
-                                                          </tr>
-                                                        )
-                                                      })
-                                                      }
-                                                    </tbody>
+                                                          {events.lAGMEGM.data.map((row, index) => {
+                                                            // console.log("lAGMEGM",events.lAGMEGM.data)
+                                                            return (
+                                                              <tr key={index}>
+                                                                {/* <td className="charges-heads">{i + 1}</td> */}
+                                                                <td>{row.SecName || row.SecDesc}</td>
+                                                                <td>{utils.formatDate(new Date(row.Date), 'dd-MMM-yyyy')}</td>
+                                                                <td>{row.Agenda + '(' + row.Purpose + ')'}</td>
+                                                              </tr>
+                                                            )
+                                                          })
+                                                          }
+                                                        </tbody>
+                                                        :
+                                                        <div className="mt- mb-2 empty-row">
+                                                          <div className="pl-4">No data to display</div>
+                                                        </div>
+                                                    }
                                                   </table>
                                                 )}
                                               </div>
@@ -410,7 +410,7 @@ function Holidayscategory() {
                                         config?.activeTab?.key == 'lBonus' ?
                                           <div className="row">
                                             <div className="col-md-12">
-                                              <div className="holidays-table">
+                                              <div className="holidays-table event-table-prnt">
                                                 <div className="table-responsive wow fadeInUp table-desk event-table">
                                                   {config.isServiceHit && (
                                                     <table className="table table-hover table-striped event-table-strip">
@@ -440,23 +440,26 @@ function Holidayscategory() {
 
                                                         </tr>
                                                       </thead>
-
-                                                      <tbody>
-                                                        {
-                                                          events.lBonus.data.map((row, index) => {
-                                                            // console.log("lBonus",row)
-                                                            return (
-                                                              <tr key={index}>
-                                                                <td>{row.SecName || row.SecDesc}</td>
-                                                                <td>{utils.formatDate(new Date(row.ExBonus), 'dd-MMM-yyyy')}</td>
-                                                                <td>{utils.formatDate(new Date(row.RecordDate), 'dd-MMM-yyyy')}</td>
-                                                                <td>{row.BonusRatio}</td>
-                                                              </tr>
-                                                            )
-                                                          })
-                                                        }
-                                                      </tbody>
-
+                                                      {
+                                                        events.lBonus.data && (events.lBonus.data).length ?
+                                                          <tbody>
+                                                            {
+                                                              events.lBonus.data.map((row, index) => {
+                                                                // console.log("lBonus",row)
+                                                                return (
+                                                                  <tr key={index}>
+                                                                    <td>{row.SecName || row.SecDesc}</td>
+                                                                    <td>{utils.formatDate(new Date(row.ExBonus), 'dd-MMM-yyyy')}</td>
+                                                                    <td>{utils.formatDate(new Date(row.RecordDate), 'dd-MMM-yyyy')}</td>
+                                                                    <td>{row.BonusRatio}</td>
+                                                                  </tr>
+                                                                )
+                                                              })
+                                                            }
+                                                          </tbody>
+                                                          : <div className="mt- mb-2 empty-row">
+                                                            <div className="pl-4">No data to display</div>
+                                                          </div>}
                                                     </table>
                                                   )}
                                                 </div>
@@ -466,7 +469,7 @@ function Holidayscategory() {
                                           config?.activeTab?.key == 'lDividend' ?
                                             <div className="row">
                                               <div className="col-md-12">
-                                                <div className="holidays-table">
+                                                <div className="holidays-table event-table-prnt">
                                                   <div className="table-responsive wow fadeInUp table-desk event-table">
                                                     {config.isServiceHit && (
                                                       <table className="table table-hover table-striped event-table-strip">
@@ -494,7 +497,8 @@ function Holidayscategory() {
                                                             <th>Remarks</th>
                                                           </tr>
                                                         </thead>
-
+                                                        {
+                                                        events.lDividend.data && (events.lDividend.data).length ?
                                                         <tbody>
                                                           {
                                                             events.lDividend.data.map((row, index) => {
@@ -511,6 +515,10 @@ function Holidayscategory() {
                                                             })
                                                           }
                                                         </tbody>
+                                                        :
+                                                        <div className="mt- mb-2 empty-row">
+                                                            <div className="pl-4">No data to display</div>
+                                                          </div>}
                                                       </table>
                                                     )}
                                                   </div>
@@ -520,7 +528,7 @@ function Holidayscategory() {
                                             config?.activeTab?.key == 'lRights' ?
                                               <div className="row">
                                                 <div className="col-md-12">
-                                                  <div className="holidays-table">
+                                                  <div className="holidays-table event-table-prnt">
                                                     <div className="table-responsive wow fadeInUp table-desk event-table">
                                                       {config.isServiceHit && (
                                                         <table className="table table-hover table-striped event-table-strip">
@@ -548,6 +556,8 @@ function Holidayscategory() {
                                                               <th>Premium</th>
                                                             </tr>
                                                           </thead>
+                                                          {
+                                                        events.lRights.data && (events.lRights.data).length ?
                                                           <tbody>
                                                             {
                                                               events.lRights.data.map((row, index) => {
@@ -562,6 +572,10 @@ function Holidayscategory() {
                                                               })
                                                             }
                                                           </tbody>
+                                                          :<div className="mt- mb-2 empty-row">
+                                                          <div className="pl-4">No data to display</div>
+                                                        </div>}
+
                                                         </table>
                                                       )}
                                                     </div>
@@ -571,7 +585,7 @@ function Holidayscategory() {
                                               config?.activeTab?.key == 'lSplits' ?
                                                 <div className="row">
                                                   <div className="col-md-12">
-                                                    <div className="holidays-table">
+                                                    <div className="holidays-table event-table-prnt">
                                                       <div className="table-responsive wow fadeInUp table-desk event-table">
                                                         {config.isServiceHit && (
                                                           <table className="table table-hover table-striped event-table-strip">
@@ -599,7 +613,8 @@ function Holidayscategory() {
                                                                 <th>FV After</th>
                                                               </tr>
                                                             </thead>
-
+                                                            {
+                                                        events.lSplits.data && (events.lSplits.data).length ?
                                                             <tbody>
                                                               {
                                                                 events.lSplits.data.map((row, index) => {
@@ -614,6 +629,9 @@ function Holidayscategory() {
                                                                 })
                                                               }
                                                             </tbody>
+                                                            :<div className="mt- mb-2 empty-row">
+                                                            <div className="pl-4">No data to display</div>
+                                                          </div>}
                                                           </table>
                                                         )}
                                                       </div>
