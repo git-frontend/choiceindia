@@ -950,14 +950,14 @@ body {
 }
 
 .algorithmstrategy {
-    padding: 10rem 0 8rem;
+    padding: 5rem 0;
     position: relative;
     background-color: #D8E9DB;
-    margin-top: 30rem;
+    margin-top: 0;
 
     .wrapper {
         position: relative;
-        margin-top: -40rem;
+        margin-top: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1003,7 +1003,7 @@ body {
         .wrap {
             margin-top: 10rem;
             display: block;
-            margin: 12rem auto 0;
+            margin: 0;
             justify-content: space-between;
             @media (max-width:$sm){
                 flex-direction: column;
