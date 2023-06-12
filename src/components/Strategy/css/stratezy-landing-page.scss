@@ -470,8 +470,12 @@ body {
                 padding-top: 2rem;
                 margin-bottom: 0;
                 padding-bottom: 2rem;
+                text-align: left;
                 @media (min-width:$sm) and (max-width: 1024px) {
                     font-size: 1.5rem;
+                    }
+                    @media (max-width:$sm){
+                        text-align: center;
                     }
             }
             .subtext{
@@ -626,10 +630,13 @@ body {
             color: $primary;
             padding-bottom: 1rem;
             width: 70%;
+            text-align: left;
             @media (max-width:$sm){
                 font-size: 1.5rem;
                 line-height: 2rem;
                 padding-bottom: 0;
+                width: 100%;
+                text-align: left;
             }
             @media (min-width:$sm) and (max-width: 1024px) {
                 font-size: 1.75rem;
@@ -712,6 +719,7 @@ body {
             line-height: 2.5rem;
             color: $primary;
             padding-bottom: 1rem;
+            text-align: left;
             @media (max-width:$sm){
                 font-size: 1.5rem;
                 line-height: 2rem;
@@ -799,10 +807,12 @@ body {
             color: $primary;
             padding-bottom: 1rem;
             width: 60%;
+            text-align: left;
             @media (max-width:$sm){
                 font-size: 1.5rem;
                 line-height: 2rem;
                 padding-bottom: 0;
+                width: 100%;
             }
             @media (min-width:$sm) and (max-width: 1024px) {
                 font-size: 1.75rem;
@@ -886,6 +896,7 @@ body {
             line-height: 2.5rem;
             color: $primary;
             padding-bottom: 1rem;
+            text-align: left;
             @media (max-width:$sm){
                 font-size: 1.5rem;
                 line-height: 2rem;
