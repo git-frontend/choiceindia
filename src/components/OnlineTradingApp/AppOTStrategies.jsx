@@ -40,6 +40,8 @@ function AppOTStrategies() {
                     slidesToScroll: 1,
                     vertical: false,
                     autoplaySpeed: 3000,
+                    adaptiveHeight: false,
+                    dots: true,
                 },
               },
           ]

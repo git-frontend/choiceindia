@@ -29,10 +29,10 @@ function MoreContent() {
                                     <p className="sml-para-dv">Derivatives trading is associated with four major types of contracts.</p>
                                     
                                     <ul className="terms-list sml-para-dv">
-                                    <li><strong className="bold-color">Options:</strong> Entering into an options contract grants rights to the buyer to buy or sell an underlying asset at a fixed price before a predetermined date. However, they have no obligation to do so.</li>
-                                        <li><strong className="bold-color">Forward:</strong> Famous for customisable contracts, forwards involve a binding derivatives contract between two parties to buy or sell a particular asset at a given date. However, it is a private agreement that does not involve exchanges.</li>
-                                        <li><strong className="bold-color">Futures:</strong> Similar to forwards, futures comprise standardised terms, and the trade occurs on an exchange.</li>
-                                        <li><strong className="bold-color">Swaps:</strong> As the name suggests, swaps involve the trade of cash flows from varying financial instruments based on mutual agreement between two parties.</li>
+                                        <li className="mt-5"><strong className="bold-color">Options:</strong> Entering into an options contract grants rights to the buyer to buy or sell an underlying asset at a fixed price before a predetermined date. However, they have no obligation to do so.</li>
+                                        <li className="mt-5"><strong className="bold-color">Forward:</strong> Famous for customisable contracts, forwards involve a binding derivatives contract between two parties to buy or sell a particular asset at a given date. However, it is a private agreement that does not involve exchanges.</li>
+                                        <li className="mt-5"><strong className="bold-color">Futures:</strong> Similar to forwards, futures comprise standardised terms, and the trade occurs on an exchange.</li>
+                                        <li className="mt-5"><strong className="bold-color">Swaps:</strong> As the name suggests, swaps involve the trade of cash flows from varying financial instruments based on mutual agreement between two parties.</li>
                                         
                                     </ul>
                                     <br />
@@ -46,10 +46,10 @@ function MoreContent() {
                                     <h3>What are the Charges Associated with Derivatives Trading?</h3>
                                     <p className="sml-para-dv">The entirety of derivatives trading involves the following charges.</p>
                                     <ul className="terms-list sml-para-dv">
-                                    <li><strong className="bold-color">Brokerage charges:</strong> Similar to how agents require a commission, <a href="https://choiceindia.com/brokerage-charges">brokerage charges</a> cover the platform's fee that facilitates derivatives trading. However, these charges are usually nominal.</li>
-                                        <li><strong className="bold-color">Transaction charges:</strong> These are levied according to the type of derivatives trading chosen by the user. For instance, futures contracts attract a different transaction fee than options.</li>
-                                        <li><strong className="bold-color">SEBI turnover charges:</strong> Usually, SEBI charges Rs 0.1 per lakh as a standard fee.</li>
-                                        <li><strong className="bold-color">Stamp duty:</strong> A uniform charge imposed on issuing, selling, or transferring the derivatives.</li>
+                                    <li className="mt-5"><strong className="bold-color">Brokerage charges:</strong> Similar to how agents require a commission, <a href="https://choiceindia.com/brokerage-charges">brokerage charges</a> cover the platform's fee that facilitates derivatives trading. However, these charges are usually nominal.</li>
+                                        <li className="mt-5"><strong className="bold-color">Transaction charges:</strong> These are levied according to the type of derivatives trading chosen by the user. For instance, futures contracts attract a different transaction fee than options.</li>
+                                        <li className="mt-5"><strong className="bold-color">SEBI turnover charges:</strong> Usually, SEBI charges Rs 0.1 per lakh as a standard fee.</li>
+                                        <li className="mt-5"><strong className="bold-color">Stamp duty:</strong> A uniform charge imposed on issuing, selling, or transferring the derivatives.</li>
                                         
                                     </ul>
                                     <p className="sml-para-dv">Depending on the type of derivatives trading, you might also incur securities transaction tax (STT), and clearing member (CM) charges on your derivatives.</p>
@@ -57,9 +57,9 @@ function MoreContent() {
                                     <h3>How to Choose the Best Derivatives Trading Platform in India?</h3>
                                     <p className="sml-para-dv">Before committing to a particular derivatives trading broker, here are some factors you must consider.</p>
                                     <ul className="terms-list sml-para-dv">
-                                    <li><strong className="bold-color">Accessibility:</strong> Browse through the platform and check the ease of reaching from point A to point B. If the interface is user-friendly, with well-placed elements distributed throughout the page, it might provide a seamless trading experience.</li>
-                                        <li><strong className="bold-color">Rapid order placement:</strong> Derivatives are subject to constant price fluctuations. Hence, it is vital to execute the order immediately when you notice an increase or decrease in price. Ensure that the trading platform has well-segregated features that simplify the order-placing process.</li>
-                                        <li><strong className="bold-color">Trading tools:</strong> Various online brokers provide free resources like online research advisories and 24/7 customer support to ease your transition into the derivatives trading segment. Look out for these tools and choose the platform providing the most value.</li>
+                                    <li className="mt-5"><strong className="bold-color">Accessibility:</strong> Browse through the platform and check the ease of reaching from point A to point B. If the interface is user-friendly, with well-placed elements distributed throughout the page, it might provide a seamless trading experience.</li>
+                                        <li className="mt-5"><strong className="bold-color">Rapid order placement:</strong> Derivatives are subject to constant price fluctuations. Hence, it is vital to execute the order immediately when you notice an increase or decrease in price. Ensure that the trading platform has well-segregated features that simplify the order-placing process.</li>
+                                        <li className="mt-5"><strong className="bold-color">Trading tools:</strong> Various online brokers provide free resources like online research advisories and 24/7 customer support to ease your transition into the derivatives trading segment. Look out for these tools and choose the platform providing the most value.</li>
                                        
                                         
                                     </ul>

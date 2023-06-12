@@ -20,7 +20,7 @@ function WhyChoice() {
                 <h4 className="why-choice-text">Years Of <br/>Experience</h4>
               </div>
               <div className="why-choice-tab third-tab">
-                <h3 className="why-choice-head">85+</h3>
+                <h3 className="why-choice-head">95+</h3>
                 <h4 className="why-choice-text">Local<br/> Branches</h4>
               </div>
             </div>

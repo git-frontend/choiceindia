@@ -61,24 +61,24 @@ function OpenBrokerageAccount() {
                         <div className="col-md-12">
                             <div className="para">
                                 <input type="checkbox" className="read-more-state" id="post-1" />
-                                <span className="read-more-wrap "> A brokerage account is a type of account that allows the purchase and sale of securities like stocks, bonds, and mutual funds. The account can be opened with a variety of regulated brokerage firms. These brokerage companies range from full-service stockbrokers to low-cost internet bargain brokers.
+                                <span className="read-more-wrap ">A brokerage account is a type of account that allows the purchase and sale of securities like stocks, bonds, and mutual funds. The account can be opened with a variety of regulated brokerage firms. These brokerage companies range from full-service stockbrokers to low-cost internet bargain brokers.
 
                                     <span className="read-more-target"> 
                                     Similar to a bank account, you can transfer money in and out of your online brokerage account, but unlike banks, these accounts provide you access to the stock market and other investments.<br /><br />
           Because investment income in this account is taxed as capital gains, these accounts are often referred to as taxable accounts. When compared to other types of accounts, brokerage accounts serve as a beneficial option. You can open your account with a service provider who is known to be the provider of the <Link to="/blog/best-brokerage-account-in-india/">best brokerage account in India</Link>.<br /><br />
 
           <h2 className="font-bold"> Who Can Open A Brokerage Account </h2>
-          The purpose of opening a Brokerage Account is for trading in stocks, investing in mutual funds, bonds, and other commodities in a variety of ways. They are as follows:<br /><br />
-          <li className="font-bold">Individuals from India</li>
+          The purpose of opening a Brokerage Account is for trading in stocks, investing in mutual funds, bonds, and other commodities in a variety of ways. They are as follows:
+          <li className="font-bold mrg-y">Individuals from India</li>
           Anyone over the age of 18 who has a valid PAN card and a bank account in India is eligible to open a Brokerage account.
-          <li className="font-bold">Minors</li>
+          <li className="font-bold mrg-y">Minors</li>
           Even minors, contrary to popular thought, can invest in the stock market. Parents or authorized guardians can <Link to="/minor-demat-account">open a minor Demat account</Link> after uploading the necessary papers.
-          <li className="font-bold">NRIs</li>
+          <li className="font-bold mrg-y">NRIs</li>
           <Link to="/nri-demat-account">NRI Brokerage accounts</Link>  are for Indians who are currently residing outside of India (outside of India). NRIs (non-resident Indians) can open a Brokerage Account to participate in Indian equity markets.<br /><br />
 
           <h3 className="font-bold">Benefits of Opening A Brokerage Account</h3>
           Here are following benefits of opening a brokerage account - <br />
-          <h4 className="font-bold"> Accessibility </h4>
+          <h4 className="font-bold mrg-y"> Accessibility </h4>
           Companies may easily transmit dividends, bonuses, stock splits, interest, and other items to their shareholders via these accounts, and you can easily receive them.<br /><br />
           <h4 className="font-bold"> Extremely Liquid </h4>
           Getting profits on shares is much easier with brokerage accounts because trading is so fluid.<br /><br />

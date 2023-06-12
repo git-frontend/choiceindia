@@ -48,7 +48,7 @@ function WhyChoiceIPO() {
                           <span className="sm-img-itm">
                             <LazyLoader src={img3} alt={"IPO Clients"} className={"img-fluid"} width={"60"} height={"60"} />
                           </span>
-                          <h4>1.5 + Lakhs<br/> Clients</h4>
+                          <h4>7.5 + Lakhs<br/> Clients</h4>
                       </div>
                       <div className="why-itm">
                           <span className="sm-img-itm">

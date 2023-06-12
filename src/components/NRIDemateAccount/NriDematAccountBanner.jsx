@@ -60,8 +60,7 @@ const NriDematAccountBanner = () => {
                             <div>
                                 <span className="banner-title2">All in 1 Account</span>
                                 <h1 className="banner-title" >
-                                    <div className="desktop">Open a NRI Demat Account <br /> <span className="yellow">Online For Free</span></div>
-                                    
+                                    <div className="desktop">Open NRI Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 </h1>
                             </div>
 

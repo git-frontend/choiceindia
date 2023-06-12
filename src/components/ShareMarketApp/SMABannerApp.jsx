@@ -61,7 +61,7 @@ function SMABannerApp() {
                     </a>
                   </div>
                         <div className="star-line">
-                            <img src={AppImage6} alt="" className="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>5 Lakhs + Users</span> </h5>
+                            <img src={AppImage6} alt="" className="img-responsive" width={"27"} height={"26"} /> <h5> Trusted by <span>7.5 Lakhs + Users</span> </h5>
                         </div>
                     </div>
                 </div>

@@ -51,9 +51,9 @@ function MoreContent() {
                                     <p className="sml-para-dv">Several forex trading platforms in India ease the exchange process and help you hedge against the falling currency value. However, the best forex trading platform in India can be determined by adherence to one or more of the following.</p>
 
                                     <ul className="terms-list sml-para-dv">
-                                        <li><strong className="bold-color">Compliance :</strong> Authorisation by SEBI is the most critical factor to look out for since regulatory compliance is established to help guard you against market volatility.</li>
-                                        <li><strong className="bold-color">Optimisation :</strong> In the world of portable technology like mobiles and tablets, choosing a platform that runs smoothly on desktops and phones is crucial. Look for a forex trading app with a friendly user interface to help you rapidly make purchases and add funds to execute trades quickly.</li>
-                                        <li><strong className="bold-color">Customer service :</strong> A responsive and dedicated customer service program is vital to help you address queries regarding the elements of the platform and solve any transaction or forex trading issues.</li>
+                                        <li className="mt-5"><strong className="bold-color">Compliance :</strong> Authorisation by SEBI is the most critical factor to look out for since regulatory compliance is established to help guard you against market volatility.</li>
+                                        <li className="mt-5"><strong className="bold-color">Optimisation :</strong> In the world of portable technology like mobiles and tablets, choosing a platform that runs smoothly on desktops and phones is crucial. Look for a forex trading app with a friendly user interface to help you rapidly make purchases and add funds to execute trades quickly.</li>
+                                        <li className="mt-5"><strong className="bold-color">Customer service :</strong> A responsive and dedicated customer service program is vital to help you address queries regarding the elements of the platform and solve any transaction or forex trading issues.</li>
                                       
                                        
                                 
@@ -66,10 +66,10 @@ function MoreContent() {
                                     <p className="sml-para-dv">Forex trading in India is synonymous with some standard forex charges, irrespective of the platform and nature of the trade executed.</p>
                                    
                                     <ul className="terms-list sml-para-dv">
-                                        <li><strong className="bold-color">Forex Trading Brokerage charges :</strong> While this depends on your choice of online broker, the forex trading brokerage charges in India are usually 0.02% for futures and for options Rs. 20 per trade or lot.</li>
-                                        <li><strong className="bold-color">Goods and Services Tax (GST) :</strong> The GST levied depends on the value of the transaction undertaken. For instance, transactions lesser than 1 lakh only comprise a 1% taxable value. The tax amount attracted is 18% of this taxable value.</li>
-                                        <li><strong className="bold-color">Stamp duties :</strong> The payable stamp duty differs according to the state where you reside.</li>
-                                        <li><strong className="bold-color">Direct tax :</strong> The profits acquired from forex trading are added to your overall income, and you are taxed according to the relevant pre-defined tax slabs as per the Government of India.</li>
+                                        <li className="mt-5"><strong className="bold-color">Forex Trading Brokerage charges :</strong> While this depends on your choice of online broker, the forex trading brokerage charges in India are usually 0.02% for futures and for options Rs. 20 per trade or lot.</li>
+                                        <li className="mt-5"><strong className="bold-color">Goods and Services Tax (GST) :</strong> The GST levied depends on the value of the transaction undertaken. For instance, transactions lesser than 1 lakh only comprise a 1% taxable value. The tax amount attracted is 18% of this taxable value.</li>
+                                        <li className="mt-5"><strong className="bold-color">Stamp duties :</strong> The payable stamp duty differs according to the state where you reside.</li>
+                                        <li className="mt-5"><strong className="bold-color">Direct tax :</strong> The profits acquired from forex trading are added to your overall income, and you are taxed according to the relevant pre-defined tax slabs as per the Government of India.</li>
                                     
                                     </ul>
 
