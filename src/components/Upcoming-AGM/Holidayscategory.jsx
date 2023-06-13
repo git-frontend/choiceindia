@@ -29,7 +29,6 @@ function Holidayscategory() {
   const [ndata, setNdata] = useState()
 
   const { segment } = useParams();
-  const location = useLocation();
   const [events, setEvents] = useState({
     lBoardMeetings: { key: 'lBoardMeetings', value: 'Board Meeting', data: [] },
     lAGMEGM: { key: 'lAGMEGM', value: 'AGM/EGM', data: [] },
@@ -92,10 +91,11 @@ function Holidayscategory() {
           activateSegment(config.eventCategories[2]) : checkurl == "highest-dividend-paying-stocks" ?
             activateSegment(config.eventCategories[3]) : checkurl == "rights-issue-shares" ?
               activateSegment(config.eventCategories[4]) : checkurl == "upcoming-stock-splits" ?
-                activateSegment(config.eventCategories[5]) : ""
+                activateSegment(config.eventCategories[5]) : " "
 
   }, []);
-  // console.log("config?.activeTab?.key", config?.activeTab?.key)
+
+
   const fetchEvents = (request) => {
     config.isServiceHit = true;
     rest.EventDetails(request)
@@ -144,19 +144,17 @@ function Holidayscategory() {
 
     return categories;
   };
-  const activateSegment = (item, isForce) => {
-    if (item.key !== config.activeTab.key || isForce) {
-      // config.activeTab = item;
-      setConfig({ ...config, activeTab: item })
+  const activateSegment = (slug, isForce) => {
+    const item = config.eventCategories.find((event) => event.slug === slug);
+    if (item && (item.key !== config.activeTab.key || isForce)) {
+      setConfig({ ...config, activeTab: item });
       filterCalendar(config.activeFilter.name, isForce);
       window.history.replaceState(null, '', `${item.slug}`);
- 
-        setNdata(meta_tags[config.eventCategories.slug])
-       
+      setNdata(meta_tags[item.slug]);
     }
   };
-   
-     
+
+
 
   const filterCalendar = (key, isForce) => {
     let temp1 = config.activeFilter.dates[0];
@@ -211,13 +209,12 @@ function Holidayscategory() {
 
   return (
     <div>
-       {
-       ndata ?  
-      <Sharemarketholidays
-        holiday={ndata}
-      />:""
-       }
-  
+      { config?.activeTab?.key && ndata ? (
+        <Sharemarketholidays holiday={ndata} />
+      ) : (
+        ''
+      )}
+
       {
         skeleton ? <Template5 /> :
           <div className="sub-broker-skeleton-parent">
@@ -266,24 +263,20 @@ function Holidayscategory() {
                   </div>
                   <div className="col-xl-10 col-md-12" id="best-stock">
                     <ul className="list-group list_group1  holiday-list">
-                     
-                      {config.eventCategories.map((item) =>
 
-                      (
+                      {config.eventCategories.map((item) => (
                         <li
-                          className={config?.activeTab?.key === item.key ? 'list-group-item list listsec' : 'list-group-item list'}
-                          onClick={() => activateSegment(item)}
-                          key={item.key}
+                          className={config.activeTab.key === item.key ? 'list-group-item list listsec' : 'list-group-item list'}
+                          onClick={() => activateSegment(item.slug)}
+                          key={item.slug}
                         >
-                           <a>{item.value}</a>
+                          <a>{item.value}</a>
                         </li>
-                      )
-
-                      )}
+                      ))}
                     </ul>
 
                   </div>
-                 
+
                 </div>
               </div>
             </section>
@@ -313,52 +306,52 @@ function Holidayscategory() {
                                         <div className="col-md-12">
                                           <div className="holidays-table event-table-prnt">
                                             <div className="table-responsive wow fadeInUp table-desk event-table">
-                                              {config.isServiceHit && (
-                                                <table className="table table-hover table-striped event-table-strip">
-                                                  <thead className="event-sticky">
-                                                    <tr className="event-tr-fix">
-                                                      <th width="35%">Company Name</th>
-                                                      <th width="25%" className="holidaydropdown">
-                                                        <Dropdown className="drop_list">
-                                                          <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
-                                                            Meeting Date
-                                                          </Dropdown.Toggle>
-                                                          <Dropdown.Menu>
-                                                            <div className="months-custom">
-                                                              <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
-                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
-                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
-                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
-                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('nextWeek')} className={config?.activeFilter?.name === 'nextWeek' ? 'activemonth' : ''}>Next Week</Dropdown.Item>
-                                                            </div>
-                                                          </Dropdown.Menu>
-                                                        </Dropdown>
-                                                      </th>
-                                                      <th>Agenda</th>
-                                                    </tr>
-                                                  </thead>
-                                                  {
-                                                    events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
-                                                      <tbody>
-                                                        {events.lBoardMeetings.data.map((row, index) => {
-                                                          // console.log("rr", row);
-                                                          return (
-                                                            <tr key={index}>
-                                                              {/* <td className="charges-heads">{index + 1}</td> */}
-                                                              <td><a >{row.SecName || row.SecDesc}</a></td>
-                                                              <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
-                                                              <td>{row.Agenda}</td>
-                                                            </tr>
-                                                          );
-                                                        })}
-                                                      </tbody>
-                                                      :
-                                                      <div className="mt- mb-2 empty-row">
-                                                        <div className="pl-4">No data to display</div>
-                                                      </div>
-                                                  }
-                                                </table>
-                                              )}
+
+                                              <table className="table table-hover table-striped event-table-strip">
+                                                <thead className="event-sticky">
+                                                  <tr className="event-tr-fix">
+                                                    <th width="35%">Company Name</th>
+                                                    <th width="25%" className="holidaydropdown">
+                                                      <Dropdown className="drop_list">
+                                                        <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
+                                                          Meeting Date
+                                                        </Dropdown.Toggle>
+                                                        <Dropdown.Menu>
+                                                          <div className="months-custom">
+                                                            <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
+                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
+                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
+                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
+                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('nextWeek')} className={config?.activeFilter?.name === 'nextWeek' ? 'activemonth' : ''}>Next Week</Dropdown.Item>
+                                                          </div>
+                                                        </Dropdown.Menu>
+                                                      </Dropdown>
+                                                    </th>
+                                                    <th>Agenda</th>
+                                                  </tr>
+                                                </thead>
+                                                {
+                                                  events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
+                                                    <tbody>
+                                                      {events.lBoardMeetings.data.map((row, index) => {
+                                                        // console.log("rr", row);
+                                                        return (
+                                                          <tr key={index}>
+                                                            {/* <td className="charges-heads">{index + 1}</td> */}
+                                                            <td><a >{row.SecName || row.SecDesc}</a></td>
+                                                            <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
+                                                            <td>{row.Agenda}</td>
+                                                          </tr>
+                                                        );
+                                                      })}
+                                                    </tbody>
+                                                    :
+                                                    <div className="mt- mb-2 empty-row">
+                                                      <div className="pl-4">No data to display</div>
+                                                    </div>
+                                                }
+                                              </table>
+
                                             </div>
                                           </div>
                                         </div>
@@ -369,7 +362,7 @@ function Holidayscategory() {
                                           <div className="col-md-12">
                                             <div className="holidays-table event-table-prnt">
                                               <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                {config.isServiceHit && (
+                                               
                                                   <table className="table table-hover table-striped event-table-strip">
                                                     <thead className="event-sticky">
                                                       <tr>
@@ -416,7 +409,7 @@ function Holidayscategory() {
                                                         </div>
                                                     }
                                                   </table>
-                                                )}
+                                              
                                               </div>
                                             </div>
                                           </div>
@@ -426,7 +419,7 @@ function Holidayscategory() {
                                             <div className="col-md-12">
                                               <div className="holidays-table event-table-prnt">
                                                 <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                  {config.isServiceHit && (
+                                                  
                                                     <table className="table table-hover table-striped event-table-strip">
                                                       <thead className="event-sticky">
                                                         <tr>
@@ -475,7 +468,7 @@ function Holidayscategory() {
                                                             <div className="pl-4">No data to display</div>
                                                           </div>}
                                                     </table>
-                                                  )}
+                                                  
                                                 </div>
                                               </div>
                                             </div>
@@ -485,7 +478,7 @@ function Holidayscategory() {
                                               <div className="col-md-12">
                                                 <div className="holidays-table event-table-prnt">
                                                   <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                    {config.isServiceHit && (
+                                                   
                                                       <table className="table table-hover table-striped event-table-strip">
                                                         <thead className="event-sticky">
                                                           <tr>
@@ -512,29 +505,29 @@ function Holidayscategory() {
                                                           </tr>
                                                         </thead>
                                                         {
-                                                        events.lDividend.data && (events.lDividend.data).length ?
-                                                        <tbody>
-                                                          {
-                                                            events.lDividend.data.map((row, index) => {
-                                                              return (
-                                                                <tr key={index}>
+                                                          events.lDividend.data && (events.lDividend.data).length ?
+                                                            <tbody>
+                                                              {
+                                                                events.lDividend.data.map((row, index) => {
+                                                                  return (
+                                                                    <tr key={index}>
 
-                                                                  <td>{row.SecName || row.SecDesc}</td>
-                                                                  <td>{utils.formatDate(new Date(row.AnnouncementDate), 'dd-MMM-yyyy')}</td>
-                                                                  <td>{utils.formatDate(new Date(row.ExDividendDate), 'dd-MMM-yyyy')}</td>
-                                                                  <td>{((row.DividendPercentage).toString()).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00"}</td>
-                                                                  <td>{row.DividendType}</td>
-                                                                </tr>
-                                                              )
-                                                            })
-                                                          }
-                                                        </tbody>
-                                                        :
-                                                        <div className="mt- mb-2 empty-row">
-                                                            <div className="pl-4">No data to display</div>
-                                                          </div>}
+                                                                      <td>{row.SecName || row.SecDesc}</td>
+                                                                      <td>{utils.formatDate(new Date(row.AnnouncementDate), 'dd-MMM-yyyy')}</td>
+                                                                      <td>{utils.formatDate(new Date(row.ExDividendDate), 'dd-MMM-yyyy')}</td>
+                                                                      <td>{((row.DividendPercentage).toString()).replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ".00"}</td>
+                                                                      <td>{row.DividendType}</td>
+                                                                    </tr>
+                                                                  )
+                                                                })
+                                                              }
+                                                            </tbody>
+                                                            :
+                                                            <div className="mt- mb-2 empty-row">
+                                                              <div className="pl-4">No data to display</div>
+                                                            </div>}
                                                       </table>
-                                                    )}
+                                                    
                                                   </div>
                                                 </div>
                                               </div>
@@ -544,7 +537,7 @@ function Holidayscategory() {
                                                 <div className="col-md-12">
                                                   <div className="holidays-table event-table-prnt">
                                                     <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                      {config.isServiceHit && (
+                                                      
                                                         <table className="table table-hover table-striped event-table-strip">
                                                           <thead className="event-sticky">
                                                             <tr>
@@ -571,27 +564,27 @@ function Holidayscategory() {
                                                             </tr>
                                                           </thead>
                                                           {
-                                                        events.lRights.data && (events.lRights.data).length ?
-                                                          <tbody>
-                                                            {
-                                                              events.lRights.data.map((row, index) => {
-                                                                return (
-                                                                  <tr key={index}>
-                                                                    <td>{row.SecName || row.SecDesc}</td>
-                                                                    <td>{utils.formatDate(new Date(row.ExRightsDate), 'dd-MMM-yyyy')}</td>
-                                                                    <td>{row.RightsRatio}</td>
-                                                                    <td>{row.Premium + ".00"}</td>
-                                                                  </tr>
-                                                                )
-                                                              })
-                                                            }
-                                                          </tbody>
-                                                          :<div className="mt- mb-2 empty-row">
-                                                          <div className="pl-4">No data to display</div>
-                                                        </div>}
+                                                            events.lRights.data && (events.lRights.data).length ?
+                                                              <tbody>
+                                                                {
+                                                                  events.lRights.data.map((row, index) => {
+                                                                    return (
+                                                                      <tr key={index}>
+                                                                        <td>{row.SecName || row.SecDesc}</td>
+                                                                        <td>{utils.formatDate(new Date(row.ExRightsDate), 'dd-MMM-yyyy')}</td>
+                                                                        <td>{row.RightsRatio}</td>
+                                                                        <td>{row.Premium + ".00"}</td>
+                                                                      </tr>
+                                                                    )
+                                                                  })
+                                                                }
+                                                              </tbody>
+                                                              : <div className="mt- mb-2 empty-row">
+                                                                <div className="pl-4">No data to display</div>
+                                                              </div>}
 
                                                         </table>
-                                                      )}
+                                                    
                                                     </div>
                                                   </div>
                                                 </div>
@@ -601,7 +594,7 @@ function Holidayscategory() {
                                                   <div className="col-md-12">
                                                     <div className="holidays-table event-table-prnt">
                                                       <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                        {config.isServiceHit && (
+                                                       
                                                           <table className="table table-hover table-striped event-table-strip">
                                                             <thead className="event-sticky">
                                                               <tr>
@@ -628,26 +621,26 @@ function Holidayscategory() {
                                                               </tr>
                                                             </thead>
                                                             {
-                                                        events.lSplits.data && (events.lSplits.data).length ?
-                                                            <tbody>
-                                                              {
-                                                                events.lSplits.data.map((row, index) => {
-                                                                  return (
-                                                                    <tr key={index}>
-                                                                      <td>{row.SecName || row.SecDesc}</td>
-                                                                      <td>{utils.formatDate(new Date(row.SplitDate), 'dd-MMM-yyyy')}</td>
-                                                                      <td>{(row.OldFacevalue) + ".00"}</td>
-                                                                      <td>{(row.NewFaceValue) + ".00"}</td>
-                                                                    </tr>
-                                                                  )
-                                                                })
-                                                              }
-                                                            </tbody>
-                                                            :<div className="mt- mb-2 empty-row">
-                                                            <div className="pl-4">No data to display</div>
-                                                          </div>}
+                                                              events.lSplits.data && (events.lSplits.data).length ?
+                                                                <tbody>
+                                                                  {
+                                                                    events.lSplits.data.map((row, index) => {
+                                                                      return (
+                                                                        <tr key={index}>
+                                                                          <td>{row.SecName || row.SecDesc}</td>
+                                                                          <td>{utils.formatDate(new Date(row.SplitDate), 'dd-MMM-yyyy')}</td>
+                                                                          <td>{(row.OldFacevalue) + ".00"}</td>
+                                                                          <td>{(row.NewFaceValue) + ".00"}</td>
+                                                                        </tr>
+                                                                      )
+                                                                    })
+                                                                  }
+                                                                </tbody>
+                                                                : <div className="mt- mb-2 empty-row">
+                                                                  <div className="pl-4">No data to display</div>
+                                                                </div>}
                                                           </table>
-                                                        )}
+                                                        
                                                       </div>
                                                     </div>
                                                   </div>
