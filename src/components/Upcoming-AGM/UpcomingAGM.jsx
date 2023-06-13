@@ -18,7 +18,12 @@ function Sharemarketholidays(holiday) {
   const toggleTab = (index) => {
     setToggleState(index);
   };
-console.log(holiday,'prop')
+  if(holiday.ischeck){
+    console.log(holiday,'prop')
+  }else{
+    console.log('fsdprop')
+  }
+
   const [skeleton, setSkeleton] = useState(() => true);
  
   const [rendercount, setRenderCount] = useState(() => false);
@@ -57,7 +62,9 @@ console.log(holiday,'prop')
     <div>
       {
         skeleton ? <Template5 /> :
+        holiday.ischeck ? "":
           <div className="sub-broker-skeleton-parent">
+
             <Holidayscategory  />
             {/* <BestStockOpenDematAccount /> */}
             {/* <BestStockreadMore /> */}

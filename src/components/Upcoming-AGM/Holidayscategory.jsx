@@ -26,6 +26,8 @@ function Holidayscategory() {
   const [skeleton, setSkeleton] = useState(() => true);
   /**Show loader */
   const [showLoader, setShowLoader] = useState(false)
+  const [check3, setcheck3] = useState(false)
+
   const [ndata, setNdata] = useState()
 
   const { segment } = useParams();
@@ -56,12 +58,12 @@ function Holidayscategory() {
 
   const [config, setConfig] = useState({
     activeFilter: {
-      name: 'thisWeek',
-      min: new Date(filterRanges['thisWeek'].min).toISOString(),
-      max: new Date(filterRanges['thisWeek'].max).toISOString(),
+      name: 'all',
+      min: new Date(filterRanges['all'].min).toISOString(),
+      max: new Date(filterRanges['all'].max).toISOString(),
       dates: [
-        utils.formatDate(new Date(filterRanges['thisWeek'].min), 'YYYY-MM-DD'),
-        utils.formatDate(new Date(filterRanges['thisWeek'].max), 'YYYY-MM-DD')
+        utils.formatDate(new Date(filterRanges['all'].min), 'YYYY-MM-DD'),
+        utils.formatDate(new Date(filterRanges['all'].max), 'YYYY-MM-DD')
       ]
     },
     eventCategories: [
@@ -79,20 +81,19 @@ function Holidayscategory() {
   })
   useEffect(() => {
     const eventName = (segment || '').toLowerCase().trim();
-    const eventObject = config.eventCategories.find((event) => event.slug === checkurl) || config.eventCategories[0];
+   const eventObject = config.eventCategories.find((event) => event.slug === eventName) || (window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? config.eventCategories[0]:(window.location.pathname.indexOf('upcoming-agm') > -1)? config.eventCategories[1]:(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)?config.eventCategories[2]:(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)?config.eventCategories[3]:(window.location.pathname.indexOf('upcoming-rights-issue') > -1)?config.eventCategories[4]:(window.location.pathname.indexOf('upcoming-stock-splits') > -1)?config.eventCategories[5]:"";
     activateSegment(eventObject, true);
+    activateSegment(eventObject, true);
+   
   }, [segment]);
 
-  let checkurl = (window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? "board-meetings" : (window.location.pathname.indexOf('upcoming-agm') > -1) ? "agm-egm" : (window.location.pathname.indexOf('upcoming-bonus-shares') > -1) ? "upcoming-bonus-shares" : (window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1) ? "highest-dividend-paying-stocks" : (window.location.pathname.indexOf('upcoming-rights-issue') > -1) ? "rights-issue-shares" : (window.location.pathname.indexOf('upcoming-stock-splits') > -1) ? "upcoming-stock-splits" : "";
-  useEffect(() => {
-    checkurl == "board-meetings" ?
-      activateSegment(config.eventCategories[0]) : checkurl == "agm-egm" ?
-        activateSegment(config.eventCategories[1]) : checkurl == "upcoming-bonus-shares" ?
-          activateSegment(config.eventCategories[2]) : checkurl == "highest-dividend-paying-stocks" ?
-            activateSegment(config.eventCategories[3]) : checkurl == "rights-issue-shares" ?
-              activateSegment(config.eventCategories[4]) : checkurl == "upcoming-stock-splits" ?
-                activateSegment(config.eventCategories[5]) : " "
 
+  
+  
+  useEffect(() => {
+    config.activeTab.key =(window.location.pathname.indexOf('upcoming-board-meeting') > -1) ? config.activeTab[0].key:(window.location.pathname.indexOf('upcoming-agm') > -1)? "lAGMEGM":(window.location.pathname.indexOf('upcoming-bonus-shares') > -1)?"lBonus":(window.location.pathname.indexOf('upcoming-dividend-paying-stocks') > -1)?"lDividend":(window.location.pathname.indexOf('upcoming-rights-issue') > -1)?"lRights":(window.location.pathname.indexOf('upcoming-stock-splits') > -1)?"lSplits":"";
+    // config.activeTab.key=config.activeTab[0].key
+    console.log("config.activeTab.key",config.activeTab.key)
   }, []);
 
 
@@ -145,13 +146,16 @@ function Holidayscategory() {
     return categories;
   };
   const activateSegment = (item, isForce) => {
+    // const item = config.eventCategories.find((event) => event.slug === slug);
     if (item && (item.key !== config.activeTab.key || isForce)) {
       setConfig({ ...config, activeTab: item });
       filterCalendar(config.activeFilter.name, isForce);
       window.history.replaceState(null, '', `${item.slug}`);
       setNdata(meta_tags[item.slug]);
+      
     }
   };
+
 
 
 
@@ -208,11 +212,11 @@ function Holidayscategory() {
 
   return (
     <div>
-      {/* { config?.activeTab?.key && ndata ? (
-        <Sharemarketholidays holiday={ndata} />
+      { check3 && ndata   ? (
+        <Sharemarketholidays holiday={ndata} ischeck={check3}/>
       ) : (
         ''
-      )} */}
+      )}
 
       {
         skeleton ? <Template5 /> :
@@ -222,7 +226,7 @@ function Holidayscategory() {
                 <div className="row d-flex justify-content-center ">
                   <div className="col-md-12 ">
                     {
-                      config?.activeTab?.key == 'lBoardMeetings' ?
+                      config?.activeTab.key == 'lBoardMeetings' ?
                         <div>
                           <h1 className=" title-secnd1">Upcoming Board Meetings</h1>
                           <p className="title_para res_para">Following are the complete list of upcoming board meetings in 2023.</p>
@@ -266,7 +270,7 @@ function Holidayscategory() {
                       {config.eventCategories.map((item) => (
                         <li
                           className={config.activeTab.key === item.key ? 'list-group-item list listsec' : 'list-group-item list'}
-                          onClick={() => activateSegment(item)}
+                          onClick={() => {activateSegment(item),setcheck3(true)}}
                           key={item.key}
                         >
                           <a>{item.value}</a>
@@ -300,57 +304,57 @@ function Holidayscategory() {
                               <div className=" gx-5">
                                 <div className="">
                                   {
-                                    config?.activeTab?.key === 'lBoardMeetings' ?
+                                    config?.activeTab.key === 'lBoardMeetings' ?
                                       <div className="row">
                                         <div className="col-md-12">
                                           <div className="holidays-table event-table-prnt">
                                             <div className="table-responsive wow fadeInUp table-desk event-table">
-
-                                              <table className="table table-hover table-striped event-table-strip">
-                                                <thead className="event-sticky">
-                                                  <tr className="event-tr-fix">
-                                                    <th width="35%">Company Name</th>
-                                                    <th width="25%" className="holidaydropdown">
-                                                      <Dropdown className="drop_list">
-                                                        <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
-                                                          Meeting Date
-                                                        </Dropdown.Toggle>
-                                                        <Dropdown.Menu>
-                                                          <div className="months-custom">
-                                                            <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
-                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
-                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
-                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
-                                                            <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('nextWeek')} className={config?.activeFilter?.name === 'nextWeek' ? 'activemonth' : ''}>Next Week</Dropdown.Item>
-                                                          </div>
-                                                        </Dropdown.Menu>
-                                                      </Dropdown>
-                                                    </th>
-                                                    <th>Agenda</th>
-                                                  </tr>
-                                                </thead>
-                                                {
-                                                  events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
-                                                    <tbody>
-                                                      {events.lBoardMeetings.data.map((row, index) => {
-                                                        // console.log("rr", row);
-                                                        return (
-                                                          <tr key={index}>
-                                                            {/* <td className="charges-heads">{index + 1}</td> */}
-                                                            <td><a >{row.SecName || row.SecDesc}</a></td>
-                                                            <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
-                                                            <td>{row.Agenda}</td>
-                                                          </tr>
-                                                        );
-                                                      })}
-                                                    </tbody>
-                                                    :
-                                                    <div className="mt- mb-2 empty-row">
-                                                      <div className="pl-4">No data to display</div>
-                                                    </div>
-                                                }
-                                              </table>
-
+                                              
+                                                <table className="table table-hover table-striped event-table-strip">
+                                                  <thead className="event-sticky">
+                                                    <tr className="event-tr-fix">
+                                                      <th width="35%">Company Name</th>
+                                                      <th width="25%" className="holidaydropdown">
+                                                        <Dropdown className="drop_list">
+                                                          <Dropdown.Toggle variant="success" id="dropdown-basic" className="drop-btn">
+                                                            Meeting Date
+                                                          </Dropdown.Toggle>
+                                                          <Dropdown.Menu>
+                                                            <div className="months-custom">
+                                                              <Dropdown.Item name="flexCheck" value="" id="check1" onClick={() => filterCalendar('all')} className={config?.activeFilter?.name === 'all' ? 'activemonth' : ''}>All</Dropdown.Item>
+                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('today')} className={config?.activeFilter?.name === 'today' ? 'activemonth' : ''}>Today</Dropdown.Item>
+                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('tommorow')} className={config?.activeFilter?.name === 'tommorow' ? 'activemonth' : ''}>Tomorrow</Dropdown.Item>
+                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('thisWeek')} className={config?.activeFilter?.name === 'thisWeek' ? 'activemonth' : ''}>This Week</Dropdown.Item>
+                                                              <Dropdown.Item name="flexCheck" value="" id="check2" onClick={() => filterCalendar('nextWeek')} className={config?.activeFilter?.name === 'nextWeek' ? 'activemonth' : ''}>Next Week</Dropdown.Item>
+                                                            </div>
+                                                          </Dropdown.Menu>
+                                                        </Dropdown>
+                                                      </th>
+                                                      <th>Agenda</th>
+                                                    </tr>
+                                                  </thead>
+                                                  {
+                                                    events.lBoardMeetings.data && (events.lBoardMeetings.data).length ?
+                                                      <tbody>
+                                                        {events.lBoardMeetings.data.map((row, index) => {
+                                                          // console.log("rr", row);
+                                                          return (
+                                                            <tr key={index}>
+                                                              {/* <td className="charges-heads">{index + 1}</td> */}
+                                                              <td><a >{row.SecName || row.SecDesc}</a></td>
+                                                              <td>{utils.formatDate(new Date(row.EndDate), 'dd-MMM-yyyy')}</td>
+                                                              <td>{row.Agenda}</td>
+                                                            </tr>
+                                                          );
+                                                        })}
+                                                      </tbody>
+                                                      :
+                                                      <div className="mt- mb-2 empty-row">
+                                                        <div className="pl-4">No data to display</div>
+                                                      </div>
+                                                  }
+                                                </table>
+                                           
                                             </div>
                                           </div>
                                         </div>
@@ -361,7 +365,7 @@ function Holidayscategory() {
                                           <div className="col-md-12">
                                             <div className="holidays-table event-table-prnt">
                                               <div className="table-responsive wow fadeInUp table-desk event-table">
-                                               
+                                                {config.isServiceHit && (
                                                   <table className="table table-hover table-striped event-table-strip">
                                                     <thead className="event-sticky">
                                                       <tr>
@@ -408,7 +412,7 @@ function Holidayscategory() {
                                                         </div>
                                                     }
                                                   </table>
-                                              
+                                                )}
                                               </div>
                                             </div>
                                           </div>
@@ -418,7 +422,7 @@ function Holidayscategory() {
                                             <div className="col-md-12">
                                               <div className="holidays-table event-table-prnt">
                                                 <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                  
+                                                  {config.isServiceHit && (
                                                     <table className="table table-hover table-striped event-table-strip">
                                                       <thead className="event-sticky">
                                                         <tr>
@@ -467,7 +471,7 @@ function Holidayscategory() {
                                                             <div className="pl-4">No data to display</div>
                                                           </div>}
                                                     </table>
-                                                  
+                                                  )}
                                                 </div>
                                               </div>
                                             </div>
@@ -477,7 +481,7 @@ function Holidayscategory() {
                                               <div className="col-md-12">
                                                 <div className="holidays-table event-table-prnt">
                                                   <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                   
+                                                    {config.isServiceHit && (
                                                       <table className="table table-hover table-striped event-table-strip">
                                                         <thead className="event-sticky">
                                                           <tr>
@@ -526,7 +530,7 @@ function Holidayscategory() {
                                                               <div className="pl-4">No data to display</div>
                                                             </div>}
                                                       </table>
-                                                    
+                                                    )}
                                                   </div>
                                                 </div>
                                               </div>
@@ -536,7 +540,7 @@ function Holidayscategory() {
                                                 <div className="col-md-12">
                                                   <div className="holidays-table event-table-prnt">
                                                     <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                      
+                                                      {config.isServiceHit && (
                                                         <table className="table table-hover table-striped event-table-strip">
                                                           <thead className="event-sticky">
                                                             <tr>
@@ -583,7 +587,7 @@ function Holidayscategory() {
                                                               </div>}
 
                                                         </table>
-                                                    
+                                                      )}
                                                     </div>
                                                   </div>
                                                 </div>
@@ -593,7 +597,7 @@ function Holidayscategory() {
                                                   <div className="col-md-12">
                                                     <div className="holidays-table event-table-prnt">
                                                       <div className="table-responsive wow fadeInUp table-desk event-table">
-                                                       
+                                                        {config.isServiceHit && (
                                                           <table className="table table-hover table-striped event-table-strip">
                                                             <thead className="event-sticky">
                                                               <tr>
@@ -639,7 +643,7 @@ function Holidayscategory() {
                                                                   <div className="pl-4">No data to display</div>
                                                                 </div>}
                                                           </table>
-                                                        
+                                                        )}
                                                       </div>
                                                     </div>
                                                   </div>
@@ -672,7 +676,7 @@ function Holidayscategory() {
               <div className="container">
 
                 {
-                  config?.activeTab?.key == 'lBoardMeetings' ?
+                  config?.activeTab.key == 'lBoardMeetings' ?
                     <div className="row">
                       <div className="col-md-12">
                         <h2 className="secttitle text-center">Latest & Forthcoming Board Meetings Dates</h2>
