@@ -7,7 +7,7 @@ import TradingAccountOpeningProcess from "./TradingAccountOpeningProcess";
 import LowBrokerageTradingAccount from "./LowBrokerageTradingAccount";
 import WhyChoice from "./TradingWhyChoice";
 import TradingFaq from "./TradingFaq";
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
@@ -15,6 +15,7 @@ import {
   import { Link } from "react-router-dom";
   
 function OpenTradingAccount() {
+    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -32,11 +33,31 @@ function OpenTradingAccount() {
           document.getElementById('language').lang = meta_tags[location.pathname.replace('/', "")] ? meta_tags[location.pathname.replace('/', "")].lang : '';
         }
       }, [rendercount])
+
+      useEffect(() => {
+        window.addEventListener('scroll', getPositionnew);
+    }, []);
+      const getPositionnew = () => {
+        const element = document.getElementById("branch1");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top.toFixed() < 300) {
+                setIsCheck(true);
+            }
+    
+        }
+    }
+    const myRef1 = useRef(null);
     return (
         <>
             {/* Open Trading Account
             <DematAccountForm></DematAccountForm> */}
-            <OpentradingAccountBanner />
+             <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+                <OpentradingAccountBanner />
+            </div>
+            {
+              isCheck ?
+            <div> 
             <WhyOpenTradingAccount />
             <WhyChoice />
             <LowBrokerageTradingAccount />
@@ -252,7 +273,10 @@ function OpenTradingAccount() {
                 </div>
 
             </section>
-
+            </div>
+             :
+             ""
+           }
         </>
     );
 }

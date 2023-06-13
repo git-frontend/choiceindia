@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 import Spinner from 'react-bootstrap/Spinner';
 
 function Banner() {
+    const[ischeck,setIscheck]=useState(false);
     let referid='';
     const[referal,setreferal]=useState();
     const[referal1,setreferal1]=useState();
@@ -117,7 +118,7 @@ const { register,formState: reset } = useForm({
         <div>
 
 
-            <section className="ref-sec-banner">
+            <section className="ref-sec-banner" onMouseOver={()=>setIscheck(true)}>
                 <div className="container" id="refer&amp;earn">
                     <div className="row align-items-center">
                         <div className="col-xl-6 col-md-7">

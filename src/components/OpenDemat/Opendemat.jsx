@@ -20,7 +20,8 @@ function Opendemat(){
   /**to set the skeleton */
   const [skeleton, setSkeleton] =useState(() => true);
   const [rendercount, setRenderCount] = useState(() => false);
-
+  const [isCheck, setIsCheck] = useState(false);
+  const[ischeck,setIscheck]=useState(false);
   const location = useLocation();
   const [view, setView] = useState({
     matches: window.innerWidth < 768 ? false : true,
@@ -135,7 +136,20 @@ function Opendemat(){
 
   };
 
- 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+
+    }
+}
+const myRef1 = useRef(null);
 
   return (
     <div className="Home" id="root">
@@ -145,8 +159,8 @@ function Opendemat(){
         <Template2 />
          :
             <main>
-
-              <section className="bannersection">
+              <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <section className="bannersection" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                   <div className="row  align-items-center">
                     <div className="col-md-7">
@@ -166,10 +180,17 @@ function Opendemat(){
                     <div className="col-md-5">
                       <div className="rightsec">
                         <div className="popmd">
-
-                        <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
-                          <DematAccountForm />
-                        </GoogleReCaptchaProvider>
+                        {
+                          ischeck ?
+                          <div>
+                            <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
+                              <DematAccountForm />
+                            </GoogleReCaptchaProvider>
+                          </div>:
+                          <div onMouseOver={()=>setIscheck(true)}>
+                            <DematAccountForm />
+                          </div>
+                            }
                         </div>
                       </div>
                     </div>
@@ -181,7 +202,10 @@ function Opendemat(){
                     </div>
                 </div>
               </section>
-
+              </div>
+              {
+                isCheck ?
+                <div>
               <section className="tablecontent" id="showForm">
                 <div className="container">
                   <div className="row  align-items-center">
@@ -1401,7 +1425,10 @@ function Opendemat(){
                 <OpenDemateAccountStickyFooter></OpenDemateAccountStickyFooter>
 
               </section>
-
+              </div>
+            :
+            ""
+          }
              
 
             </main>

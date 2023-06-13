@@ -8,11 +8,11 @@ import WhyCurrencyTrading from "./WhyCurrencyTrading";
 import MoreContent from './MoreContent';
 import CurrencyTradingFaq from "./CurrencyTradingFaq";
 import { Link } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useRef } from "react";
 import meta_tags from "../../Data/MetaTags";
 
 function CurrencyTrading() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [rendercount, setRenderCount] = useState(() => false);
 
   useEffect(() => {
@@ -38,14 +38,32 @@ function CurrencyTrading() {
     }
   }, [rendercount])
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
 
+    }
+}
+const myRef1 = useRef(null);
   
   return (
   
     
      
           <div className="demat-page-parent">
-            <CurrencyTradingBanner />
+             <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <CurrencyTradingBanner />
+            </div>
+            {
+                isCheck ?
+            <div> 
             <WhyOpenCurrencyTrading />
             <WhyCurrencyTrading />
             <LowBrokerageCurrencyTrading />
@@ -190,6 +208,10 @@ function CurrencyTrading() {
               </div>
 
             </section> */}
+          </div>
+          :
+          ""
+        }
           </div>
     
   );

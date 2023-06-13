@@ -7,13 +7,13 @@ import MarathiDematAccountOpeningProcess from "./MarathiDematAccountOpeningProce
 import MarathiLowBrokerageDematAccount from "./MarathiLowBrokerageDematAccount";
 import MarathiWhyChoice from "./MarathiWhyChoice";
 import MarathiDematFaq from "./MarathiDematFaq";
-import { useState, useEffect } from 'react';
+import { useState, useEffect,useRef } from 'react';
 import {
     useLocation,
   } from 'react-router-dom';
   import meta_tags from "../../Data/MetaTags";
 function OpenTradingAccountMarathi() {
-
+    const [isCheck, setIsCheck] = useState(false);
     const [rendercount, setRenderCount] = useState(() => false);
 
     const location = useLocation();
@@ -72,17 +72,39 @@ function OpenTradingAccountMarathi() {
 
         }
       }, [rendercount])
+      useEffect(() => {
+        window.addEventListener('scroll', getPositionnew);
+    }, []);
+      const getPositionnew = () => {
+        const element = document.getElementById("branch1");
+        if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top.toFixed() < 300) {
+                setIsCheck(true);
+            }
+    
+        }
+    }
+    const myRef1 = useRef(null);
     return (
         <>
             {/* <p>Open Trading Account Marathi</p>
             <DematAccountForm></DematAccountForm> */}
-            <MarathiOpenFreeAccountBanner />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <MarathiOpenFreeAccountBanner />
+            </div>
+            {
+                isCheck ?
+                <div>
             <MarathiWhyOpenFreeDematAccount />
             <MarathiWhyChoice />
             <MarathiLowBrokerageDematAccount />
             <MarathiDematAccountOpeningProcess />
             <MarathiDematFaq />
-           
+            </div>
+            :
+            ""
+          }
 
         </>
     );

@@ -5,13 +5,13 @@ import InvestmentStrategies from './InvestmentStrategies';
 import TrackRecord from './TrackRecord';
 import DematBenifits from './DematBenifits';
 import "./open-demat-account.scss";
-import { useState,useEffect } from 'react';
+import { useState,useEffect,useRef } from 'react';
 import meta_tags from "../../Data/MetaTags";
 
 
 function MutualFundsSEO() {
   const [rendercount, setRenderCount] = useState(() => false);
-
+  const [isCheck, setIsCheck] = useState(false);
   useEffect(() => {
     setRenderCount(true)
     if (rendercount === true) {
@@ -35,24 +35,39 @@ function MutualFundsSEO() {
     }
   }, [rendercount])
 
-  
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+
+    }
+}
+const myRef1 = useRef(null);
+
 
   
 
   return (
-    <div>
-      
-      <div className="mainwrapper mfi-main">
-         
-         <Banner />
+      <div className="mainwrapper mfi-main"> 
+        <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+          <Banner />
+        </div>
+        {
+          isCheck ?
+        <div>
          <InvestmentStrategies />
          <TrackRecord />
          <DematBenifits />
-        
-         
-       </div> 
-      
-    
+       </div>
+       :
+       ""
+     }
     </div>
   );
 }

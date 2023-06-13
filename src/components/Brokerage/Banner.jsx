@@ -1,4 +1,4 @@
-
+import { useState } from "react";
 import React from "react";
 import Bannerimage from '../../assets/images/brokerage-charges/banner-img.webp';
 import glossary from '../../assets/images/brokerage-charges/money.svg';
@@ -9,12 +9,12 @@ import { Link } from "react-router-dom";
 import { Accordion } from "react-bootstrap";
 
 function Banner() {
-
+    const[ischeck,setIscheck]=useState(false);
   return (
     <div>
       
      
-    <section className="bannersection">
+    <section className="bannersection" onMouseOver={()=>setIscheck(true)}>
         <div className="container">
             <div className="row gx-5 align-items-center">
                 <div className="col-md-6">

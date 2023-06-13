@@ -10,11 +10,12 @@ import DematAccountForm from '../Common-features/DematAccountForm'
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 function OpenDematAccount() {
+    const[ischeck,setIscheck]=useState(false);
     const [selected, setSelected] = useState(0);
 
     return (
         <div>
-            <section className="demat-camp-bannersection">
+            <section className="demat-camp-bannersection" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row gx-5">
                         <div className="col-md-6 lft-sec">
@@ -32,11 +33,17 @@ function OpenDematAccount() {
                     </div>
                         </div>
                         <div className="col-md-6">
+                        {
+                          ischeck ?
                             <div className="rightsec d-flex justify-content-end" id="campaignForm">
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
+                            </div>:
+                            <div className="rightsec d-flex justify-content-end" id="campaignForm" onMouseOver={()=>setIscheck(true)}>
+                                <DematAccountForm />
                             </div>
+                            }
                         </div>
                     </div>
                 </div>

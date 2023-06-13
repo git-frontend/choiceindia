@@ -7,17 +7,17 @@ import WhyBecomeSubBrokerHindi from './WhyBecomeSubBrokerHindi';
 import WhoEligibleToSubBrokerHindi from './WhoEligibleToSubBrokerHindi';
 import MoreContent from './MoreContent';
 import SubBrokerOffersHindi from './SubBrokerOffersHindi';
-import { useState } from "react";
+
 import Template5 from '../Common-features/Template5';
 import "./subbroker.scss";
 import {
   useLocation,
 } from 'react-router-dom';
 import meta_tags from "../../Data/MetaTags";
-import { useEffect } from "react";
+import {useState, useEffect,useRef } from "react";
 
 function SubBrokerHindi() {
-
+  const [isCheck, setIsCheck] = useState(false);
   const [skeleton, setSkeleton] = useState(() => true);
   // const myTimeout = setTimeout(myGreeting, 900);
   // function myGreeting() {
@@ -91,6 +91,20 @@ function SubBrokerHindi() {
     }
   }, [rendercount])
 
+  useEffect(() => {
+    window.addEventListener('scroll', getPositionnew);
+}, []);
+  const getPositionnew = () => {
+    const element = document.getElementById("branch1");
+    if (element) {
+        const rect = element.getBoundingClientRect();
+        if (rect.top.toFixed() < 300) {
+            setIsCheck(true);
+        }
+
+    }
+}
+const myRef1 = useRef(null);
   return (
     <div>
 
@@ -98,15 +112,22 @@ function SubBrokerHindi() {
         skeleton ? <Template5 /> :
 
           <div className="sub-broker-skeleton-parent">
-
-            <BannerSBrokerHindi />
+            <div onScroll={getPositionnew} ref={myRef1} id="branch1" onMouseOver={() => setIsCheck(true)}>
+              <BannerSBrokerHindi />
+            </div>
+            {
+              isCheck ?
+            <div>
             <SubBrokerBenifitsHindi />
             <SubBrokerSellMoreHindi />
             <WhyBecomeSubBrokerHindi />
             <WhoEligibleToSubBrokerHindi />
             <SubBrokerOffersHindi />
             {/* <MoreContent /> */}
-            
+            </div>
+            :
+            ""
+          }
           </div>
       }
 

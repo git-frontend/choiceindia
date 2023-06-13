@@ -10,6 +10,8 @@ import LazyLoader from '../Common-features/LazyLoader';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 const MinorDematAccountBanner = () => {
+    const[ischeck,setIscheck]=useState(false);
+    
     function chapterScroll(id) {
         var element = document.getElementById(id);
         var headerOffset = 140;
@@ -40,7 +42,7 @@ const MinorDematAccountBanner = () => {
 
     return (
         <div>
-             <section className="banner-sect" >
+             <section className="banner-sect" onMouseOver={()=>setIscheck(true)}>
                 <div className="container">
                     <div className="row colreverse">
                         <div className="col-md-7 col-sm-6">
@@ -114,14 +116,21 @@ const MinorDematAccountBanner = () => {
                                 <div className="mobile">Open a Minor Demat Account <br /> <span className="yellow">Online For Free</span></div>
                                 
                             </h1>
+                            {
+                                ischeck ?
                             <div className="formwrap d-flex justify-content-end ">
                                 {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
                                 <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
                                 <GoogleReCaptchaProvider reCaptchaKey="6Lc9qf4hAAAAABMa3-oFLk9BAkvihcEhVHnnS7Uz">
                                     <DematAccountForm />
                                 </GoogleReCaptchaProvider>
-                            </div>
-
+                            </div>:
+                                <div className="formwrap d-flex justify-content-end" onMouseOver={()=>setIscheck(true)}>
+                                {/* <img src={Image6} className="formbgtop img-fluid" draggable="false" alt="Background Image" /> */}
+                                <LazyLoader src={Image6} className={'formbgtop img-fluid'} draggable="false" width={'531'} height={'573'} alt={'Background Image'} />
+                                    <DematAccountForm />
+                                </div>
+                            }
                         </div>
 
                     </div>
