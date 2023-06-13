@@ -12,7 +12,7 @@ function WhyChoice() {
             </div>
             <div className="why-choice text-center">
               <div className="why-choice-tab first-tab">
-                <h3 className="why-choice-head">5L+</h3>
+                <h3 className="why-choice-head">750K+</h3>
                 <h4 className="why-choice-text">Investor <br/>Community</h4>
               </div>
               <div className="why-choice-tab second-tab">
