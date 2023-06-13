@@ -79,7 +79,7 @@ function Holidayscategory() {
   })
   useEffect(() => {
     const eventName = (segment || '').toLowerCase().trim();
-    const eventObject = config.eventCategories.find((event) => event.slug === eventName) || config.eventCategories[0];
+    const eventObject = config.eventCategories.find((event) => event.slug === checkurl) || config.eventCategories[0];
     activateSegment(eventObject, true);
   }, [segment]);
 
@@ -144,8 +144,7 @@ function Holidayscategory() {
 
     return categories;
   };
-  const activateSegment = (slug, isForce) => {
-    const item = config.eventCategories.find((event) => event.slug === slug);
+  const activateSegment = (item, isForce) => {
     if (item && (item.key !== config.activeTab.key || isForce)) {
       setConfig({ ...config, activeTab: item });
       filterCalendar(config.activeFilter.name, isForce);
@@ -209,11 +208,11 @@ function Holidayscategory() {
 
   return (
     <div>
-      { config?.activeTab?.key && ndata ? (
+      {/* { config?.activeTab?.key && ndata ? (
         <Sharemarketholidays holiday={ndata} />
       ) : (
         ''
-      )}
+      )} */}
 
       {
         skeleton ? <Template5 /> :
@@ -267,8 +266,8 @@ function Holidayscategory() {
                       {config.eventCategories.map((item) => (
                         <li
                           className={config.activeTab.key === item.key ? 'list-group-item list listsec' : 'list-group-item list'}
-                          onClick={() => activateSegment(item.slug)}
-                          key={item.slug}
+                          onClick={() => activateSegment(item)}
+                          key={item.key}
                         >
                           <a>{item.value}</a>
                         </li>
