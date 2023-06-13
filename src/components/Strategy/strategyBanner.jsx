@@ -29,7 +29,7 @@ function StrategyBanner() {
                         <div className="col-xl-5 col-md-6">
                             <div className="banner-caption">
                                 <h1>Simplifying Algorithmic<br />Trading</h1>
-                                <p>We provide a simple way to build, test, and go live with your algorithmic trading strategy</p>
+                                <p>We provide a simple way to build, optimise, and go live with your algorithmic trading strategy</p>
 
                                 <div style={{ 'cursor': 'pointer' }} onClick={() => { chapterScroll('explore') }} className="btn-bg btn-banner">Explore Stratezy</div>
 
@@ -45,17 +45,17 @@ function StrategyBanner() {
                                 <div className="wrap">
                                     {/* <LazyLoader src={bannericon1} className={"img-fluid banner-icon"} width={'22'} height={'26'} alt={"create stratezy"} /> */}
                                     <img src={bannericon1} className="banner-icon img-fluid" width="26" height="31" alt="create stratezy" />
-                                    <p>create stratezy</p>
+                                    <p>Create Strategy</p>
                                 </div>
                                 <div className="wrapone">
                                     {/* <LazyLoader src={bannericon3} className={"img-fluid banner-icon"} width={'22'} height={'20'} alt={"Run Backtest"} /> */}
                                     <img src={bannericon3} className="banner-icon img-fluid" width="26" height="24" alt="Run Backtest" />
-                                    <p>Run Backtest</p>
+                                    <p>Run Optimise</p>
                                 </div>
                                 <div className="wraptwo">
                                     {/* <LazyLoader src={bannericon2} className={"img-fluid banner-icon"} width={'22'} height={'34'} alt={"Virtual/Live Trade"} /> */}
                                     <img src={bannericon2} className="banner-icon img-fluid" width="26" height="41" alt="Virtual/Live Trade" />
-                                    <p>Virtual/Live Trade</p>
+                                    <p>Live Trade</p>
                                 </div>
                             </div>
 

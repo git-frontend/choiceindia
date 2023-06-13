@@ -26,13 +26,13 @@ function WhyStrategy() {
             description: "Create unlimited strategies with a wide variety of Technical Indicators"
         },
 
-        {
-            image: `${slider2}`,
-            icon: `${icon4}`,
-            heading: "Backtest in Choice FinX",
-            description: "Backtest Your created strategy with Profit & Stoploss percentage"
+        // {
+        //     image: `${slider2}`,
+        //     icon: `${icon4}`,
+        //     heading: "Backtest in Choice FinX",
+        //     description: "Backtest Your created strategy with Profit & Stoploss percentage"
 
-        },
+        // },
 
         {
             image: `${slider1}`,
@@ -42,18 +42,18 @@ function WhyStrategy() {
 
         },
 
-        {
-            image: `${slider5}`,
-            icon: `${icon5}`,
-            heading: "Virtual Trade",
-            description: "Virtual Trade your Strategies without utilizing real funds"
+        // {
+        //     image: `${slider5}`,
+        //     icon: `${icon5}`,
+        //     heading: "Virtual Trade",
+        //     description: "Virtual Trade your Strategies without utilizing real funds"
 
-        },
+        // },
         {
             image: `${slider4}`,
             icon: `${icon3}`,
             heading: "Live Trade",
-            description: "Automate your trades by going live with your backtested strategies"
+            description: "Automate your trades by going live with your optimised strategies"
 
         },
 
@@ -67,7 +67,7 @@ function WhyStrategy() {
   function toggleForward() {
     setcounterRight(() => counterRight + 1);
     
-    if(counterRight == 3) {
+    if(counterRight == 1) {
       setdisableRight(true);
       setdisableLeft(false);
     }else{

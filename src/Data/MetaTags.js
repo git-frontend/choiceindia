@@ -1457,7 +1457,7 @@ Currently, the Government is planning to revisit the e-KYC process and linking A
     
     `},
 
-    "info/stratezy": { 'title': "CStratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy is the free-trading strategy builder for intraday and options trades. Backtest your trading strategies on the past data through virtual trades with Strategy by Choice.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
+    "info/stratezy": { 'title': "Stratezy - A Free Trading Strategy Builder by Choice",'lang':"en", "content": "Stratezy - A Free Trading Strategy Builder by Choice. Stratezy is the free-trading strategy builder for intraday and options trades. Optimise your trading strategies and make it lives with Strategy.","link":"https://choiceindia.com/info/stratezy/", "faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 
     "baskets": { 'title': "Basket Investing - Invest in Thematic Baskets of Your Choice",'lang':"en", "content": "Choice FinX Trading app introduces the Basket Investing function to make stock market investing simpler for everyone. To reach your long-term financial goals, explore through our themed baskets.","link":'https://choiceindia.com/baskets/',"faqscript": ``,'link1': "",'link2':"",'link3':"","link4":"","link5":"","link6":"","href1":"","href2":"","href3":"","href4":"","href5":"","href6":""},
 

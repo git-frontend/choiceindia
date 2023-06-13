@@ -68,9 +68,9 @@ function Strategy() {
           <WhyStrategy></WhyStrategy>
           <StrategyBody></StrategyBody>
 
-          {
+          {/* {
             isFaq? <div className="stratezy-faq-temp"></div>: <FaqAccordion></FaqAccordion> 
-          }
+          } */}
         
 
         </main>
