@@ -52,7 +52,7 @@ function AppOTStrategies() {
     return (
         <div className='App-main'>
 
-            <div className='app-strategies-bottom'>
+            <div className='app-strategies-bottom online-tr-ap'>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
